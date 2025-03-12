@@ -27,3 +27,11 @@ Please use this GitHub repository's [Issue tracker](https://github.com/berkeleyb
 ## Acknowledgements
 
 This ontology repository was created using the [Ontology Development Kit (ODK)](https://github.com/INCATools/ontology-development-kit).
+
+----
+
+## Input:
+- https://docs.google.com/spreadsheets/d/1_Lr-9_5QHi8QLvRyTZFSciUhzGKD4DbUObyTpJ16_RU/edit?gid=0#gid=0
+
+## Notes
+- https://github.com/berkeleybop/group-meetings/issues/155#issuecomment-2715444097
