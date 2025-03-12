@@ -1,0 +1,28 @@
+# PURL configuration for http://purl.obolibrary.org/obo/metpo
+
+idspace: METPO
+base_url: /obo/metpo
+
+products:
+- metpo.owl: https://raw.githubusercontent.com/berkeleybop/metpo/main/metpo.owl
+- metpo.obo: https://raw.githubusercontent.com/berkeleybop/metpo/main/metpo.obo
+
+term_browser: ontobee
+example_terms:
+- METPO_0000000
+
+entries:
+
+- prefix: /releases/
+  replacement: https://raw.githubusercontent.com/berkeleybop/metpo/v
+
+- prefix: /tracker/
+  replacement: https://github.com/berkeleybop/metpo/issues
+
+- prefix: /about/
+  replacement: http://www.ontobee.org/ontology/METPO?iri=http://purl.obolibrary.org/obo/
+
+## generic fall-through, serve direct from github by default
+- prefix: /
+  replacement: https://raw.githubusercontent.com/berkeleybop/metpo/main/
+
