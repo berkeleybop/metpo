@@ -1,19 +1,22 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://purl.obolibrary.org/obo/metpo/metpo-full.owl#"
-     xml:base="http://purl.obolibrary.org/obo/metpo/metpo-full.owl"
+<rdf:RDF xmlns="https://w3id.org/metpo/metpo-full.owl#"
+     xml:base="https://w3id.org/metpo/metpo-full.owl"
      xmlns:dce="http://purl.org/dc/elements/1.1/"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:dcterms="http://purl.org/dc/terms/">
-    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/metpo/metpo-full.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/metpo/releases/2025-03-12/metpo-full.owl"/>
+     xmlns:METPO="https://w3id.org/metpo/"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
+    <owl:Ontology rdf:about="https://w3id.org/metpo/metpo-full.owl">
+        <owl:versionIRI rdf:resource="https://w3id.org/metpo/releases/2025-03-13/metpo-full.owl"/>
         <dcterms:description>None</dcterms:description>
         <dcterms:license rdf:resource="https://creativecommons.org/licenses/unspecified"/>
         <dcterms:title>METPO</dcterms:title>
-        <owl:versionInfo>2025-03-12</owl:versionInfo>
+        <owl:versionInfo>2025-03-13</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -26,6 +29,12 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000115 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000115"/>
     
 
 
@@ -53,6 +62,18 @@
     
 
 
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasExactSynonym -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+    
+
+
+    <!-- https://w3id.org/metpo/BactoTrait -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/metpo/BactoTrait"/>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -64,11 +85,2973 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/METPO_0000000 -->
+    <!-- https://w3id.org/metpo/GenomicFeature -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/METPO_0000000">
-        <rdfs:label xml:lang="en">root node</rdfs:label>
+    <owl:Class rdf:about="https://w3id.org/metpo/GenomicFeature"/>
+    
+
+
+    <!-- https://w3id.org/metpo/NamedThing -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/NamedThing"/>
+    
+
+
+    <!-- https://w3id.org/metpo/000001 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000001">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/NamedThing"/>
+        <rdfs:label>Temperature</rdfs:label>
     </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000002 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000002">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/NamedThing"/>
+        <rdfs:label>Salinity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000003 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000003">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/NamedThing"/>
+        <rdfs:label>pH</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000004 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000004">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/NamedThing"/>
+        <rdfs:label>Oxygen</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000005 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000005">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/NamedThing"/>
+        <rdfs:label>Trophic type</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000006 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000006">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/NamedThing"/>
+        <rdfs:label>Motility</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000007 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000007">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/NamedThing"/>
+        <rdfs:label>Sporulation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000008 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000008">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/NamedThing"/>
+        <rdfs:label>Pressure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000009 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000009">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/GenomicFeature"/>
+        <rdfs:label>GC content</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000010 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000010">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/NamedThing"/>
+        <rdfs:label>Cell Width</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000011 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000011">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/NamedThing"/>
+        <rdfs:label>Cell Length</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000012 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000012">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/NamedThing"/>
+        <rdfs:label>Temperature Optimum</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000013 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000013">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/NamedThing"/>
+        <rdfs:label>Temperature Range</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000014 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000014">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/NamedThing"/>
+        <rdfs:label>pH Optimum</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000015 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000015">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/NamedThing"/>
+        <rdfs:label>pH Range</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000016 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000016">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/NamedThing"/>
+        <rdfs:label>NaCl Optimum</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000017 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000017">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/NamedThing"/>
+        <rdfs:label>NaCl Range</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000018 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000018">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/NamedThing"/>
+        <rdfs:label>pH delta</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000019 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000019">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/NamedThing"/>
+        <rdfs:label>NaCl delta</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000020 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000020">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/NamedThing"/>
+        <rdfs:label>Temperature Delta</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000021 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000021">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/NamedThing"/>
+        <rdfs:label>Morphology</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000022 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000022">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/NamedThing"/>
+        <rdfs:label>Other</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000023 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000023">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0001"/>
+        <obo:IAO_0000115>A microorganism that grows optimally at temperatures below 15°C and can grow at temperatures below 20°C.</obo:IAO_0000115>
+        <rdfs:label>Psychrophile</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000024 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000024">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0001"/>
+        <obo:IAO_0000115>A microorganism that can grow at temperatures near 0°C but has optimal growth at higher temperatures.</obo:IAO_0000115>
+        <rdfs:label>Psychrotolerant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000025 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000025">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0001"/>
+        <obo:IAO_0000115>A microorganism that grows optimally at moderate temperatures, typically between 20°C and 45°C.</obo:IAO_0000115>
+        <rdfs:label>Mesophilie</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000026 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000026">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0001"/>
+        <obo:IAO_0000115>A microorganism that can grow at temperatures near 50°C but has optimal growth at lower temperatures.</obo:IAO_0000115>
+        <rdfs:label>Thermotolerant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000027 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000027">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0001"/>
+        <obo:IAO_0000115>A microorganism that grows optimally at relatively high temperatures, typically between 45°C and 80°C.</obo:IAO_0000115>
+        <rdfs:label>Thermophile</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000028 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000028">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0001"/>
+        <obo:IAO_0000115>A microorganism that grows optimally at temperatures between 60°C and 80°C.</obo:IAO_0000115>
+        <rdfs:label>Extreme thermophile</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000029 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000029">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0001"/>
+        <obo:IAO_0000115>A microorganism that grows optimally at very high temperatures, above 80°C.</obo:IAO_0000115>
+        <rdfs:label>Hyperthermophile</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000030 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000030">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0001"/>
+        <obo:IAO_0000115>A microorganism that grows optimally at temperatures above 90°C.</obo:IAO_0000115>
+        <rdfs:label>Extreme hyperthermophile</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000031 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000031">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0002"/>
+        <obo:IAO_0000115>A microorganism that requires salt for optimal growth and survival.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Halophilic</oboInOwl:hasExactSynonym>
+        <rdfs:label>Halophile</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000032 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000032">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0002"/>
+        <obo:IAO_0000115>A microorganism that does not require salt for optimal growth and survival.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Non-halophilic</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Nonhalophile</oboInOwl:hasExactSynonym>
+        <rdfs:label>Non-halophile</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000033 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000033">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0002"/>
+        <obo:IAO_0000115>A microorganism that grows optimally in environments with low salt concentrations, typically between 2-5% NaCl.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Slightly halophilic</oboInOwl:hasExactSynonym>
+        <rdfs:label>Slight halophile</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000034 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000034">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0002"/>
+        <obo:IAO_0000115>A microorganism that grows optimally in environments with moderate salt concentrations, typically between 5-20% NaCl.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Moderately halophilic</oboInOwl:hasExactSynonym>
+        <rdfs:label>Moderate halophile</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000035 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000035">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0002"/>
+        <obo:IAO_0000115>A microorganism that grows optimally in environments with high salt concentrations, typically above 20% NaCl.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Extremely halophilic</oboInOwl:hasExactSynonym>
+        <rdfs:label>Extreme halophile</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000036 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000036">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0002"/>
+        <obo:IAO_0000115>A microorganism that grows optimally in environments with both high salt concentrations and high pH (alkaline conditions).</obo:IAO_0000115>
+        <rdfs:label>Halotolerant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000037 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000037">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0002"/>
+        <obo:IAO_0000115>A microorganism that grows optimally in environments with both high salt concentrations (typically 2-5% NaCl, but can tolerate up to 25% NaCl) and high pH (typically 9-11, but can grow at pH values up to 12).</obo:IAO_0000115>
+        <rdfs:label>Haloalkaliphile</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000038 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000038">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0003"/>
+        <obo:IAO_0000115>A microorganism that grows optimally at very low pH values, typically between pH 1 and 3.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Extreme acidophilic</oboInOwl:hasExactSynonym>
+        <rdfs:label>Extreme Acidophile</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000039 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000039">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0003"/>
+        <obo:IAO_0000115>A microorganism that grows optimally at low pH values, typically below pH 5.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Acidophilic</oboInOwl:hasExactSynonym>
+        <rdfs:label>Acidophile</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000040 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000040">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0003"/>
+        <obo:IAO_0000115>A microorganism that grows optimally at neutral pH values, typically around pH 7.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Neutrophilic</oboInOwl:hasExactSynonym>
+        <rdfs:label>Neutrophile</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000041 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000041">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0003"/>
+        <obo:IAO_0000115>A microorganism that grows optimally at high pH values, typically above pH 9.</obo:IAO_0000115>
+        <rdfs:label>Alkaliphile</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000042 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000042">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0003"/>
+        <obo:IAO_0000115>A microorganism that can grow in acidic conditions below pH 5 but does not require them for optimal growth.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Alkaliphilic</oboInOwl:hasExactSynonym>
+        <rdfs:label>Acid Tolerant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000043 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000043">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0003"/>
+        <obo:IAO_0000115>A microorganism that can grow in alkaline conditions above pH 9 but does not require them for optimal growth.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Acid-tolerant</oboInOwl:hasExactSynonym>
+        <rdfs:label>Alkali Tolerant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000044 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000044">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0003"/>
+        <obo:IAO_0000115>A microorganism that grows optimally at very high pH values, typically above pH 10.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Alkali-tolerant</oboInOwl:hasExactSynonym>
+        <rdfs:label>Extreme Alkaliphile</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000045 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000045">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0003"/>
+        <obo:IAO_0000115>A microorganism that can grow in acidic conditions but does not require them for optimal growth.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Extreme alkaliphilic</oboInOwl:hasExactSynonym>
+        <rdfs:label>Facultative acidophile</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000046 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000046">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0003"/>
+        <obo:IAO_0000115>A microorganism that requires acidic conditions for growth and survival.</obo:IAO_0000115>
+        <rdfs:label>Obligative acidophile</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000047 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000047">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0004"/>
+        <obo:IAO_0000115>A microorganism that requires oxygen for growth and metabolism.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Obligate aerobe</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Strict aerobe</oboInOwl:hasExactSynonym>
+        <rdfs:label>Aerobe</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000048 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000048">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0004"/>
+        <obo:IAO_0000115>A microorganism that grows in the absence of oxygen and is unable to use oxygen for growth.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Obligate anaerobe</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Strict anaerobe</oboInOwl:hasExactSynonym>
+        <rdfs:label>Anaerobe</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000049 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000049">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0004"/>
+        <obo:IAO_0000115>A microorganism that can grow with or without oxygen, using oxygen for respiration when available but capable of fermentation or anaerobic respiration in its absence.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Facultative aerobe</oboInOwl:hasExactSynonym>
+        <rdfs:label>Facultative anaerobe</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000050 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000050">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0004"/>
+        <obo:IAO_0000115>A microorganism that primarily uses oxygen for respiration but can also grow without it using alternative metabolic pathways.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Facultative anaerobe</oboInOwl:hasExactSynonym>
+        <rdfs:label>Facultative aerobe</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000051 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000051">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0004"/>
+        <obo:IAO_0000115>A microorganism that requires oxygen for growth but at concentrations lower than those found in air (typically 2-10% oxygen).</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Microaerobe</oboInOwl:hasExactSynonym>
+        <rdfs:label>Microaerophile</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000052 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000052">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0004"/>
+        <obo:IAO_0000115>A microorganism that does not use oxygen for growth but can survive and grow in its presence without being harmed.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Oxygen-tolerant</oboInOwl:hasExactSynonym>
+        <rdfs:label>Aerotolerant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000053 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000053">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0004"/>
+        <obo:IAO_0000115>A microorganism that can tolerate low levels of oxygen but does not require such conditions for growth.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Microoxic-tolerant</oboInOwl:hasExactSynonym>
+        <rdfs:label>Microaerotolerant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000054 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000054">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0004"/>
+        <obo:IAO_0000115>An anaerobic microorganism that does not use oxygen for metabolism but is not inhibited by its presence.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Oxygen-tolerant anaerobe</oboInOwl:hasExactSynonym>
+        <rdfs:label>Aerotolerant anaerobe</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000055 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000055">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0004"/>
+        <obo:IAO_0000115>A microorganism that absolutely requires oxygen for growth and cannot grow under anaerobic conditions.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Aerobe</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Strict aerobe</oboInOwl:hasExactSynonym>
+        <rdfs:label>Obligate aerobe</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000056 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000056">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0004"/>
+        <obo:IAO_0000115>A microorganism for which oxygen is toxic and inhibits growth, requiring strictly anaerobic conditions.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Anaerobe</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Strict anaerobe</oboInOwl:hasExactSynonym>
+        <rdfs:label>Obligate anaerobe</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000057 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000057">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0004"/>
+        <obo:IAO_0000115>An organism that uses light energy for photosynthesis, producing oxygen as a byproduct.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Oxygenic phototrophic</oboInOwl:hasExactSynonym>
+        <rdfs:label>Oxygenic phototroph</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000058 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000058">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0004"/>
+        <obo:IAO_0000115>An organism that uses light energy for photosynthesis without producing oxygen.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Anoxygenic phototrophic</oboInOwl:hasExactSynonym>
+        <rdfs:label>Anoxygenic phototroph</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000059 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000059">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0005"/>
+        <obo:IAO_0000115>An organism that produces its own food from inorganic compounds.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Autotrophic</oboInOwl:hasExactSynonym>
+        <rdfs:label>Autotroph</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000060 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000060">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0005"/>
+        <obo:IAO_0000115>An organism that uses light energy to fix carbon dioxide for growth.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Photoautotrophic</oboInOwl:hasExactSynonym>
+        <rdfs:label>Photoautotroph</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000061 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000061">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0005"/>
+        <obo:IAO_0000115>An organism that uses energy from chemical reactions to fix carbon dioxide for growth.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Chemoautotrophic</oboInOwl:hasExactSynonym>
+        <rdfs:label>Chemoautotroph</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000062 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000062">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0005"/>
+        <obo:IAO_0000115>An organism that obtains carbon from organic compounds.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Heterotrophic</oboInOwl:hasExactSynonym>
+        <rdfs:label>Heterotroph</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000063 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000063">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0005"/>
+        <obo:IAO_0000115>An organism that uses light energy but obtains carbon from organic compounds.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Photoheterotrophic</oboInOwl:hasExactSynonym>
+        <rdfs:label>Photoheterotroph</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000064 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000064">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0005"/>
+        <obo:IAO_0000115>An organism that obtains both energy and carbon from organic compounds.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Chemoheterotrophic</oboInOwl:hasExactSynonym>
+        <rdfs:label>Chemoheterotroph</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000065 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000065">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0005"/>
+        <obo:IAO_0000115>An organism that obtains energy from the oxidation of inorganic compounds.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Lithotrophic</oboInOwl:hasExactSynonym>
+        <rdfs:label>Lithotroph</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000066 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000066">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0005"/>
+        <obo:IAO_0000115>An organism that obtains energy from the oxidation of organic compounds.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Organotrophic</oboInOwl:hasExactSynonym>
+        <rdfs:label>Organotroph</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000067 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000067">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0005"/>
+        <obo:IAO_0000115>An organism that uses light as its primary energy source.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Phototrophic</oboInOwl:hasExactSynonym>
+        <rdfs:label>Phototroph</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000068 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000068">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0005"/>
+        <obo:IAO_0000115>An organism that obtains energy from chemical reactions.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Chemotrophic</oboInOwl:hasExactSynonym>
+        <rdfs:label>Chemotroph</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000069 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000069">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0005"/>
+        <obo:IAO_0000115>An organism adapted to environments with low nutrient levels.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Oligotrophic</oboInOwl:hasExactSynonym>
+        <rdfs:label>Oligotroph</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000070 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000070">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0005"/>
+        <obo:IAO_0000115>An organism adapted to environments with high nutrient levels.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Copiotrophic</oboInOwl:hasExactSynonym>
+        <rdfs:label>Copiotroph</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000071 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000071">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0005"/>
+        <obo:IAO_0000115>An organism that uses inorganic compounds for both energy and carbon.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Lithoautotrophic</oboInOwl:hasExactSynonym>
+        <rdfs:label>Lithoautotroph</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000072 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000072">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0005"/>
+        <obo:IAO_0000115>An organism capable of both autotrophic and heterotrophic nutrition.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Mixotrophic</oboInOwl:hasExactSynonym>
+        <rdfs:label>Mixotroph</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000073 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000073">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0005"/>
+        <obo:IAO_0000115>An organism that uses inorganic compounds for energy but organic compounds for carbon.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Lithoheterotrophic</oboInOwl:hasExactSynonym>
+        <rdfs:label>Lithoheterotroph</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000074 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000074">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0005"/>
+        <obo:IAO_0000115>An organism that uses organic compounds for both energy and carbon.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Chemoorganoheterotrophic</oboInOwl:hasExactSynonym>
+        <rdfs:label>Chemoorganoheterotroph</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000075 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000075">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0005"/>
+        <obo:IAO_0000115>An organism that uses inorganic compounds for energy and CO2 for carbon.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Chemolithoautotrophic</oboInOwl:hasExactSynonym>
+        <rdfs:label>Chemolithoautotroph</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000076 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000076">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0005"/>
+        <obo:IAO_0000115>An organism that can use one-carbon compounds as a source of energy and carbon.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Methylotrophic</oboInOwl:hasExactSynonym>
+        <rdfs:label>Methylotroph</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000077 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000077">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0005"/>
+        <obo:IAO_0000115>An organism that uses methane as its sole source of carbon and energy.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Methanotrophic</oboInOwl:hasExactSynonym>
+        <rdfs:label>Methanotroph</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000078 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000078">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0005"/>
+        <obo:IAO_0000115>An organism that can use carbon monoxide as its sole source of energy and carbon.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Carbohydrogenotroph</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Carboxydrophile</oboInOwl:hasExactSynonym>
+        <rdfs:label>Carboxydotroph</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000079 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000079">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0005"/>
+        <obo:IAO_0000115>An organism that obtains energy from the oxidation of molecular hydrogen.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Hydrogenophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Hydrogenophilic</oboInOwl:hasExactSynonym>
+        <rdfs:label>Hydrogenotroph</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000080 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000080">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0005"/>
+        <obo:IAO_0000115>An organism that oxidizes hydrogen for energy.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Hydrogen-oxidizing</oboInOwl:hasExactSynonym>
+        <rdfs:label>Hydrogen oxidizer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000081 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000081">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0005"/>
+        <obo:IAO_0000115>An organism that produces hydrogen as a byproduct of its metabolism.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Hydrogen-producing</oboInOwl:hasExactSynonym>
+        <rdfs:label>Hydrogen producer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000082 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000082">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0005"/>
+        <obo:IAO_0000115>An organism capable of converting atmospheric nitrogen into ammonia.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Nitrogen-fixing</oboInOwl:hasExactSynonym>
+        <rdfs:label>Nitrogen fixer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000083 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000083">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0005"/>
+        <obo:IAO_0000115>An organism that produces methane as a byproduct of its metabolism.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Methanogenic</oboInOwl:hasExactSynonym>
+        <rdfs:label>Methanogen</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000084 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000084">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0005"/>
+        <obo:IAO_0000115>An organism that uses sulfate as an electron acceptor in anaerobic respiration.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Sulfate-reducing</oboInOwl:hasExactSynonym>
+        <rdfs:label>Sulfate reducer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000085 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000085">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0005"/>
+        <obo:IAO_0000115>An organism that oxidizes sulfur compounds for energy.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Sulfur-oxidizing</oboInOwl:hasExactSynonym>
+        <rdfs:label>Sulfur oxidizer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000086 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000086">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0005"/>
+        <obo:IAO_0000115>An organism that reduces nitrate to nitrogen gas in anaerobic respiration.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Denitrifying</oboInOwl:hasExactSynonym>
+        <rdfs:label>Denitrifier</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000087 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000087">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0005"/>
+        <obo:IAO_0000115>An organism that requires or grows better in the presence of elevated levels of carbon dioxide.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Capnophilic</oboInOwl:hasExactSynonym>
+        <rdfs:label>Capnophile</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000088 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000088">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0006"/>
+        <obo:IAO_0000115>A microorganism capable of self-propelled movement.</obo:IAO_0000115>
+        <rdfs:label>Motile</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000089 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000089">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0006"/>
+        <obo:IAO_0000115>A microorganism incapable of self-propelled movement.</obo:IAO_0000115>
+        <rdfs:label>Non-motile</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000090 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000090">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0006"/>
+        <obo:IAO_0000115>A motile microorganism that moves using one or more flagella.</obo:IAO_0000115>
+        <rdfs:label>Flagellated</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000091 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000091">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0006"/>
+        <obo:IAO_0000115>A flagellated microorganism with flagella distributed over the entire cell surface.</obo:IAO_0000115>
+        <rdfs:label>Peritrichous</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000092 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000092">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0006"/>
+        <obo:IAO_0000115>A flagellated microorganism with a tuft of flagella at one or both poles of the cell.</obo:IAO_0000115>
+        <rdfs:label>Lophotrichous</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000093 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000093">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0006"/>
+        <obo:IAO_0000115>A flagellated microorganism with a single flagellum at one pole of the cell.</obo:IAO_0000115>
+        <rdfs:label>Monotrichous</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000094 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000094">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0006"/>
+        <obo:IAO_0000115>A motile microorganism that moves using numerous short, hair-like structures called cilia.</obo:IAO_0000115>
+        <rdfs:label>Ciliated</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000095 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000095">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0006"/>
+        <obo:IAO_0000115>A motile microorganism that moves by sliding over surfaces without the use of flagella or cilia.</obo:IAO_0000115>
+        <rdfs:label>Gliding</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000096 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000096">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0006"/>
+        <obo:IAO_0000115>A motile microorganism that moves using type IV pili in a jerky, start-stop motion.</obo:IAO_0000115>
+        <rdfs:label>Twitching</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000097 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000097">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0006"/>
+        <obo:IAO_0000115>A motile microorganism that moves passively over surfaces due to the production of extracellular substances.</obo:IAO_0000115>
+        <rdfs:label>Sliding</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000098 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000098">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0006"/>
+        <obo:IAO_0000115>A motile microorganism capable of rapid, coordinated movement across surfaces in groups.</obo:IAO_0000115>
+        <rdfs:label>Swarming</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000099 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000099">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0007"/>
+        <obo:IAO_0000115>A dormant, resistant structure formed within a bacterial cell.</obo:IAO_0000115>
+        <rdfs:label>Endospores</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/0001 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/0001"/>
+    
+
+
+    <!-- https://w3id.org/metpo/000100 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000100">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0007"/>
+        <obo:IAO_0000115>A spore formed outside the parent cell.</obo:IAO_0000115>
+        <rdfs:label>Exospores</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000101 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000101">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0007"/>
+        <obo:IAO_0000115>A resting spore produced by myxobacteria during unfavorable conditions.</obo:IAO_0000115>
+        <rdfs:label>Myxospores</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000102 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000102">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0007"/>
+        <obo:IAO_0000115>A type of spore formed by the fragmentation of fungal hyphae.</obo:IAO_0000115>
+        <rdfs:label>Arthrospores</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000103 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000103">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0007"/>
+        <obo:IAO_0000115>Asexual spores produced by fungi, typically at the tips of specialized hyphae.</obo:IAO_0000115>
+        <rdfs:label>Conidia</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000104 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000104">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0007"/>
+        <obo:IAO_0000115>Asexual spores produced within a sporangium.</obo:IAO_0000115>
+        <rdfs:label>Sporangiospores</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000105 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000105">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0007"/>
+        <obo:IAO_0000115>A thick-walled resting spore resulting from the fusion of two compatible hyphae.</obo:IAO_0000115>
+        <rdfs:label>Zygospores</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000106 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000106">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0007"/>
+        <obo:IAO_0000115>A large, thick-walled dormant cell formed by some cyanobacteria.</obo:IAO_0000115>
+        <rdfs:label>Akinetes</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000107 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000107">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0007"/>
+        <obo:IAO_0000115>A thick-walled resting spore formed from a cell of a fungal hypha.</obo:IAO_0000115>
+        <rdfs:label>Chlamydospores</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000108 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000108">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0007"/>
+        <obo:IAO_0000115>A protective cyst-like structure containing sporozoites in some protists.</obo:IAO_0000115>
+        <rdfs:label>Sporocysts</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000109 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000109">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0007"/>
+        <obo:IAO_0000115>A dormant stage of some dinoflagellates, formed under unfavorable conditions.</obo:IAO_0000115>
+        <rdfs:label>Hypnospores</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000110 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000110">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0007"/>
+        <obo:IAO_0000115>Small, multicellular propagules produced by some bryophytes for asexual reproduction.</obo:IAO_0000115>
+        <rdfs:label>Gemmae</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000111 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000111">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0007"/>
+        <obo:IAO_0000115>A thick-walled sexual spore produced by oomycetes.</obo:IAO_0000115>
+        <rdfs:label>Oospores</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000112 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000112">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0007"/>
+        <obo:IAO_0000115>A spore formed without fusion of gametes, typically in zygomycetes.</obo:IAO_0000115>
+        <rdfs:label>Azygospores</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000113 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000113">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0007"/>
+        <obo:IAO_0000115>A resistant, dormant stage formed by some protists and bacteria.</obo:IAO_0000115>
+        <rdfs:label>Cysts</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000114 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000114">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0007"/>
+        <obo:IAO_0000115>Sexual spores produced in an ascus, typically by ascomycete fungi.</obo:IAO_0000115>
+        <rdfs:label>Ascospores</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000115 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000115">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0007"/>
+        <obo:IAO_0000115>Sexual spores produced on a basidium, typically by basidiomycete fungi.</obo:IAO_0000115>
+        <rdfs:label>Basidiospores</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000116 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000116">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0007"/>
+        <obo:IAO_0000115>Asexual spores formed by the disarticulation of vegetative hyphae.</obo:IAO_0000115>
+        <rdfs:label>Aleuriospores</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000117 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000117">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0007"/>
+        <obo:IAO_0000115>Asexual spores produced on a stalk-like structure called a sterigma.</obo:IAO_0000115>
+        <rdfs:label>Stylospores</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000118 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000118">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0007"/>
+        <obo:IAO_0000115>A compact mass of hardened fungal mycelium containing food reserves.</obo:IAO_0000115>
+        <rdfs:label>Sclerotia</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000119 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000119">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0007"/>
+        <obo:IAO_0000115>Motile spores with flagella, typically produced by algae and some fungi.</obo:IAO_0000115>
+        <rdfs:label>Zoospores</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000120 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000120">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0007"/>
+        <obo:IAO_0000115>A type of resting spore produced by rust and smut fungi.</obo:IAO_0000115>
+        <rdfs:label>Teliospores</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000121 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000121">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0007"/>
+        <obo:IAO_0000115>Asexual spores produced by rust fungi during their life cycle.</obo:IAO_0000115>
+        <rdfs:label>Urediniospores</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000122 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000122">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0007"/>
+        <obo:IAO_0000115>Asexual spores produced within a pycnidium, a flask-shaped fruiting body.</obo:IAO_0000115>
+        <rdfs:label>Pycnidiospores</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000123 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000123">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0007"/>
+        <obo:IAO_0000115>Asexual spores produced in chains at the tips of conidiophores.</obo:IAO_0000115>
+        <rdfs:label>Acriospores</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000124 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000124">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0007"/>
+        <obo:IAO_0000115>Non-motile spores that lack flagella, typically produced by algae.</obo:IAO_0000115>
+        <rdfs:label>Aplanospores</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000125 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000125">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0007"/>
+        <obo:IAO_0000115>Non-motile spores that lack the ability to swim.</obo:IAO_0000115>
+        <rdfs:label>Statismospores</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000126 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000126">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0008"/>
+        <obo:IAO_0000115>An organism that can survive high pressure but does not require it for optimal growth.</obo:IAO_0000115>
+        <rdfs:label>Barotolerant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000127 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000127">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0008"/>
+        <obo:IAO_0000115>An organism that grows optimally under high pressure conditions.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Barophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Barophilic</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Piezophilic</oboInOwl:hasExactSynonym>
+        <rdfs:label>Piezophile</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000128 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000128">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0008"/>
+        <obo:IAO_0000115>An organism that can tolerate high pressure but grows optimally at normal atmospheric pressure.</obo:IAO_0000115>
+        <rdfs:label>Piezotolerant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000129 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000129">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0008"/>
+        <obo:IAO_0000115>An organism that is adversely affected by high pressure conditions.</obo:IAO_0000115>
+        <rdfs:label>Piezosensitive</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000130 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000130">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0008"/>
+        <obo:IAO_0000115>An organism that requires high pressure for growth and cannot grow at atmospheric pressure.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Obligate piezophile</oboInOwl:hasExactSynonym>
+        <rdfs:label>Obligate barophile</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000131 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000131">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0008"/>
+        <obo:IAO_0000115>An organism that grows optimally under high pressure but can also grow at atmospheric pressure.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Facultative piezophile</oboInOwl:hasExactSynonym>
+        <rdfs:label>Facultative barophile</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000132 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000132">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0008"/>
+        <obo:IAO_0000115>An organism adapted to extremely high pressure environments.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Hyperbarophilic</oboInOwl:hasExactSynonym>
+        <rdfs:label>Hyperbarophile</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000133 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000133">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0008"/>
+        <obo:IAO_0000115>An organism adapted to low pressure environments.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Hypobarophilic</oboInOwl:hasExactSynonym>
+        <rdfs:label>Hypobarophile</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000134 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000134">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0008"/>
+        <obo:IAO_0000115>An organism adapted to grow at standard atmospheric pressure.</obo:IAO_0000115>
+        <rdfs:label>Atmospheric pressure-adapted</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000135 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000135">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0008"/>
+        <obo:IAO_0000115>An organism that grows optimally at moderately high pressures.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Moderate barophile</oboInOwl:hasExactSynonym>
+        <rdfs:label>Moderate piezophile</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000136 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000136">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0008"/>
+        <obo:IAO_0000115>An organism that grows optimally at very high pressures.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Extreme barophile</oboInOwl:hasExactSynonym>
+        <rdfs:label>Extreme piezophile</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000137 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000137">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0008"/>
+        <obo:IAO_0000115>An organism that can only grow within a narrow range of pressures.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Stenobaric</oboInOwl:hasExactSynonym>
+        <rdfs:label>Stenopiezic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000138 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000138">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0008"/>
+        <obo:IAO_0000115>An organism that can grow across a wide range of pressures.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Eurybaric</oboInOwl:hasExactSynonym>
+        <rdfs:label>Eurypiezic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000139 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000139">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0008"/>
+        <obo:IAO_0000115>An organism whose growth or metabolism is negatively affected by changes in pressure.</obo:IAO_0000115>
+        <rdfs:label>Pressure-sensitive</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000140 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000140">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0008"/>
+        <obo:IAO_0000115>An organism that can withstand significant changes in pressure without adverse effects.</obo:IAO_0000115>
+        <rdfs:label>Pressure-resistant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000141 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000141">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0008"/>
+        <obo:IAO_0000115>An organism that has evolved to thrive under specific pressure conditions.</obo:IAO_0000115>
+        <rdfs:label>Pressure-adapted</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000142 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000142">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0008"/>
+        <obo:IAO_0000115>An organism that grows optimally under both high pressure and acidic conditions.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Piezo-acidophilic</oboInOwl:hasExactSynonym>
+        <rdfs:label>Piezo-acidophile</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000143 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000143">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0008"/>
+        <obo:IAO_0000115>An organism that grows optimally under both high pressure and alkaline conditions.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Piezo-alkaliphilic</oboInOwl:hasExactSynonym>
+        <rdfs:label>Piezo-alkaliphile</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000144 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000144">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0008"/>
+        <obo:IAO_0000115>An organism that grows optimally under both high pressure and high salinity conditions.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Piezo-halophilic</oboInOwl:hasExactSynonym>
+        <rdfs:label>Piezo-halophile</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000145 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000145">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0008"/>
+        <obo:IAO_0000115>An organism that grows optimally under both high pressure and low temperature conditions.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Piezo-psychrophilic</oboInOwl:hasExactSynonym>
+        <rdfs:label>Piezo-psychrophile</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000146 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000146">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0008"/>
+        <obo:IAO_0000115>An organism that grows optimally under both high pressure and high temperature conditions.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Piezo-thermophilic</oboInOwl:hasExactSynonym>
+        <rdfs:label>Piezo-thermophile</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000147 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000147">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0008"/>
+        <obo:IAO_0000115>An organism that uses inorganic compounds for energy and carbon under high pressure conditions.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Piezo-lithoautotrophic</oboInOwl:hasExactSynonym>
+        <rdfs:label>Piezo-lithoautotrophe</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000148 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000148">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0008"/>
+        <obo:IAO_0000115>An organism that uses organic compounds for energy and carbon under high pressure conditions.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Piezo-chemoheterotrophic</oboInOwl:hasExactSynonym>
+        <rdfs:label>Piezo-chemoheterotroph</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000149 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000149">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0008"/>
+        <obo:IAO_0000115>An organism adapted to low-nutrient environments under high pressure conditions.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Piezo-oligotrophic</oboInOwl:hasExactSynonym>
+        <rdfs:label>Piezo-oligotroph</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000150 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000150">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0008"/>
+        <obo:IAO_0000115>An organism that lives within rock or mineral substrates under high pressure conditions.</obo:IAO_0000115>
+        <rdfs:label>Piezo-endolithic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000151 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000151">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0008"/>
+        <obo:IAO_0000115>An organism that can tolerate a range of pressure conditions but does not necessarily require high pressure for optimal growth.</obo:IAO_0000115>
+        <rdfs:label>Piezo-tolerant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000152 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000152">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0009"/>
+        <oboInOwl:hasExactSynonym>gc:low</oboInOwl:hasExactSynonym>
+        <rdfs:label>GC% low ( &lt; 42.65)</rdfs:label>
+        <METPO:BactoTrait>GC_&lt;=42.65</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000153 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000153">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0009"/>
+        <rdfs:label>GC% mid1 (42.65 - 57)</rdfs:label>
+        <METPO:BactoTrait>GC_42.65_57.0</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000154 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000154">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0009"/>
+        <rdfs:label>GC% mid2 (57 - 66.3)</rdfs:label>
+        <METPO:BactoTrait>GC_57.0_66.3</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000155 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000155">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0009"/>
+        <rdfs:label>GC% high ( &gt; 66.3)</rdfs:label>
+        <METPO:BactoTrait>GC_&gt;66.3</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000156 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000156">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0010"/>
+        <rdfs:label>Cell width uM very low (&lt; 0.5)</rdfs:label>
+        <METPO:BactoTrait>W_&lt;=0.5</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000157 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000157">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0010"/>
+        <rdfs:label>Cell width uM low (0.5 - 0.65)</rdfs:label>
+        <METPO:BactoTrait>W_0.5_0.65</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000158 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000158">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0010"/>
+        <rdfs:label>Cell width uM mid (0.65 - 0.9)</rdfs:label>
+        <METPO:BactoTrait>W_0.65_0.9</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000159 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000159">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0010"/>
+        <rdfs:label>Cell width uM high (&gt; 0.9)</rdfs:label>
+        <METPO:BactoTrait>W_&gt;0.9</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000160 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000160">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0011"/>
+        <rdfs:label>Cell length uM very low (&lt;= 1.3)</rdfs:label>
+        <METPO:BactoTrait>L_&lt;=1.3</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000161 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000161">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0011"/>
+        <rdfs:label>Cell length uM low (1.3 - 2)</rdfs:label>
+        <METPO:BactoTrait>L_1.3_2</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000162 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000162">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0011"/>
+        <rdfs:label>Cell length uM mid (2 - 3)</rdfs:label>
+        <METPO:BactoTrait>L_2_3</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000163 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000163">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0011"/>
+        <rdfs:label>Cell length uM high (&gt; 3)</rdfs:label>
+        <METPO:BactoTrait>L_&gt;3</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000164 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000164">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0012"/>
+        <oboInOwl:hasExactSynonym>Psychrophile</oboInOwl:hasExactSynonym>
+        <rdfs:label>Temperature Optimum C very low (&lt;= 10)</rdfs:label>
+        <METPO:BactoTrait>TO_&lt;=10</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000165 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000165">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0012"/>
+        <oboInOwl:hasExactSynonym>Psychrophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Psychrotolerant</oboInOwl:hasExactSynonym>
+        <rdfs:label>Temperature Optimum C low (10 - 22)</rdfs:label>
+        <METPO:BactoTrait>TO_10_to_22</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000166 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000166">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0012"/>
+        <oboInOwl:hasExactSynonym>Mesophilie</oboInOwl:hasExactSynonym>
+        <rdfs:label>Temperature Optimum C mid1 (22 - 27)</rdfs:label>
+        <METPO:BactoTrait>TO_22_to_27</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000167 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000167">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0012"/>
+        <oboInOwl:hasExactSynonym>Mesophilie</oboInOwl:hasExactSynonym>
+        <rdfs:label>Temperature Optimum C mid2 (27 - 30)</rdfs:label>
+        <METPO:BactoTrait>TO_27_to_30</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000168 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000168">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0012"/>
+        <oboInOwl:hasExactSynonym>Mesophilie</oboInOwl:hasExactSynonym>
+        <rdfs:label>Temperature Optimum C mid3 (30 - 34)</rdfs:label>
+        <METPO:BactoTrait>TO_30_to_34</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000169 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000169">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0012"/>
+        <oboInOwl:hasExactSynonym>Mesophilie</oboInOwl:hasExactSynonym>
+        <rdfs:label>Temperature Optimum C mid4 (34 - 40)</rdfs:label>
+        <METPO:BactoTrait>TO_34_to_40</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000170 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000170">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0012"/>
+        <oboInOwl:hasExactSynonym>Thermophile</oboInOwl:hasExactSynonym>
+        <rdfs:label>Temperature Optimum C high (&gt; 40)</rdfs:label>
+        <METPO:BactoTrait>TO_&gt;40</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000171 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000171">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0013"/>
+        <oboInOwl:hasExactSynonym>Psychrophile</oboInOwl:hasExactSynonym>
+        <rdfs:label>Temperature Range C very low (&lt;= 10)</rdfs:label>
+        <METPO:BactoTrait>TR_&lt;=10</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000172 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000172">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0013"/>
+        <oboInOwl:hasExactSynonym>Psychrophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Psychrotolerant</oboInOwl:hasExactSynonym>
+        <rdfs:label>Temperature Range C low (10 - 22)</rdfs:label>
+        <METPO:BactoTrait>TR_10_to_22</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000173 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000173">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0013"/>
+        <oboInOwl:hasExactSynonym>Mesophilie</oboInOwl:hasExactSynonym>
+        <rdfs:label>Temperature Range C mid1 (22 - 27)</rdfs:label>
+        <METPO:BactoTrait>TR_22_to_27</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000174 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000174">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0013"/>
+        <oboInOwl:hasExactSynonym>Mesophilie</oboInOwl:hasExactSynonym>
+        <rdfs:label>Temperature Range C mid2 (27 - 30)</rdfs:label>
+        <METPO:BactoTrait>TR_27_to_30</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000175 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000175">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0013"/>
+        <oboInOwl:hasExactSynonym>Mesophilie</oboInOwl:hasExactSynonym>
+        <rdfs:label>Temperature Range C mid3 (30 - 34)</rdfs:label>
+        <METPO:BactoTrait>TR_30_to_34</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000176 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000176">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0013"/>
+        <oboInOwl:hasExactSynonym>Mesophilie</oboInOwl:hasExactSynonym>
+        <rdfs:label>Temperature Range C mid4 (34 - 40)</rdfs:label>
+        <METPO:BactoTrait>TR_34_to_40</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000177 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000177">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0013"/>
+        <oboInOwl:hasExactSynonym>Thermophile</oboInOwl:hasExactSynonym>
+        <rdfs:label>Temperature Range C high (&gt; 40)</rdfs:label>
+        <METPO:BactoTrait>TR_&gt;40</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000178 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000178">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0014"/>
+        <oboInOwl:hasExactSynonym>Acid Tolerant</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Acidophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Extreme Acidophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Facultative acidophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Obligative acidophile</oboInOwl:hasExactSynonym>
+        <rdfs:label>pH Optimum low (0 - 6)</rdfs:label>
+        <METPO:BactoTrait>pHO_0_to_6</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000179 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000179">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0014"/>
+        <oboInOwl:hasExactSynonym>Alkali Tolerant</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Neutrophile</oboInOwl:hasExactSynonym>
+        <rdfs:label>pH Optimum mid1 (6 - 7)</rdfs:label>
+        <METPO:BactoTrait>pHO_6_to_7</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000180 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000180">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0014"/>
+        <oboInOwl:hasExactSynonym>Alkali Tolerant</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Alkaliphile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Neutrophile</oboInOwl:hasExactSynonym>
+        <rdfs:label>pH Optimum mid2 (7 - 8)</rdfs:label>
+        <METPO:BactoTrait>pHO_7_to_8</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000181 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000181">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0014"/>
+        <oboInOwl:hasExactSynonym>Alkali Tolerant</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Alkaliphile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Extreme Alkaliphile</oboInOwl:hasExactSynonym>
+        <rdfs:label>pH Optimum high (8 - 14)</rdfs:label>
+        <METPO:BactoTrait>pHO_8_to_14</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000182 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000182">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0015"/>
+        <oboInOwl:hasExactSynonym>Acid Tolerant</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Acidophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Extreme Acidophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Facultative acidophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Obligative acidophile</oboInOwl:hasExactSynonym>
+        <rdfs:label>pH Range very low (0 - 4)</rdfs:label>
+        <METPO:BactoTrait>pHR_0_to_4</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000183 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000183">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0015"/>
+        <oboInOwl:hasExactSynonym>Acid Tolerant</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Acidophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Facultative acidophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Obligative acidophile</oboInOwl:hasExactSynonym>
+        <rdfs:label>pH Range low (4 - 6)</rdfs:label>
+        <METPO:BactoTrait>pHR_4_to_6</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000184 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000184">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0015"/>
+        <oboInOwl:hasExactSynonym>Alkali Tolerant</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Facultative acidophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Neutrophile</oboInOwl:hasExactSynonym>
+        <rdfs:label>pH Range mid1 (6 - 7)</rdfs:label>
+        <METPO:BactoTrait>pHR_6_to_7</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000185 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000185">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0015"/>
+        <oboInOwl:hasExactSynonym>Alkali Tolerant</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Alkaliphile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Facultative acidophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Neutrophile</oboInOwl:hasExactSynonym>
+        <rdfs:label>pH Range mid2 (7 - 8)</rdfs:label>
+        <METPO:BactoTrait>pHR_7_to_8</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000186 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000186">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0015"/>
+        <oboInOwl:hasExactSynonym>Alkali Tolerant</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Alkaliphile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Extreme Alkaliphile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Facultative acidophile</oboInOwl:hasExactSynonym>
+        <rdfs:label>pH Range mid3 (8 - 10)</rdfs:label>
+        <METPO:BactoTrait>pHR_8_to_10</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000187 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000187">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0015"/>
+        <oboInOwl:hasExactSynonym>Alkali Tolerant</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Alkaliphile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Extreme Alkaliphile</oboInOwl:hasExactSynonym>
+        <rdfs:label>pH Range high (10 - 14)</rdfs:label>
+        <METPO:BactoTrait>10_to_14</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000188 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000188">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0016"/>
+        <oboInOwl:hasExactSynonym>Halotolerant</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Non-halophile</oboInOwl:hasExactSynonym>
+        <rdfs:label>% NaCl Optimum low (&lt;= 1)</rdfs:label>
+        <METPO:BactoTrait>NaR_&lt;=1</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000189 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000189">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0016"/>
+        <oboInOwl:hasExactSynonym>Halotolerant</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Slight halophile</oboInOwl:hasExactSynonym>
+        <rdfs:label>% NaCl Optimum mid1 (1 - 3)</rdfs:label>
+        <METPO:BactoTrait>NaR_1_to_3</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000190 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000190">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0016"/>
+        <oboInOwl:hasExactSynonym>Halotolerant</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Moderate halophile</oboInOwl:hasExactSynonym>
+        <rdfs:label>% NaCl Optimum mid2 (3 - 8)</rdfs:label>
+        <METPO:BactoTrait>NaR_3_to_8</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000191 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000191">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0016"/>
+        <oboInOwl:hasExactSynonym>Extreme halophile</oboInOwl:hasExactSynonym>
+        <rdfs:label>% NaCl Optimum high (&gt; 8)</rdfs:label>
+        <METPO:BactoTrait>NaR_&gt;8</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000192 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000192">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0017"/>
+        <oboInOwl:hasExactSynonym>Halotolerant</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Non-halophile</oboInOwl:hasExactSynonym>
+        <rdfs:label>% NaCl Range low (&lt;= 1)</rdfs:label>
+        <METPO:BactoTrait>NaO_&lt;=1</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000193 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000193">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0017"/>
+        <oboInOwl:hasExactSynonym>Halotolerant</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Slight halophile</oboInOwl:hasExactSynonym>
+        <rdfs:label>% NaCl Range mid1 (1 - 3)</rdfs:label>
+        <METPO:BactoTrait>NaO_1_to_3</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000194 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000194">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0017"/>
+        <oboInOwl:hasExactSynonym>Halotolerant</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Moderate halophile</oboInOwl:hasExactSynonym>
+        <rdfs:label>% NaCl Range mid2 (3 - 8)</rdfs:label>
+        <METPO:BactoTrait>NaO_3_to_8</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000195 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000195">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0017"/>
+        <oboInOwl:hasExactSynonym>Extreme halophile</oboInOwl:hasExactSynonym>
+        <rdfs:label>% NaCl Range high (&gt; 8)</rdfs:label>
+        <METPO:BactoTrait>NaO_&gt;8</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000196 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000196">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0018"/>
+        <rdfs:label>pH delta very low (&lt;= 1)</rdfs:label>
+        <METPO:BactoTrait>pHd_&lt;=1</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000197 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000197">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0018"/>
+        <rdfs:label>pH delta low (1 - 2)</rdfs:label>
+        <METPO:BactoTrait>pHd_1_2</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000198 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000198">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0018"/>
+        <rdfs:label>pH delta mid1 (2 - 3)</rdfs:label>
+        <METPO:BactoTrait>pHd_2_3</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000199 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000199">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0018"/>
+        <rdfs:label>pH delta mid2 (3 - 4)</rdfs:label>
+        <METPO:BactoTrait>pHd_3_4</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/0002 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/0002"/>
+    
+
+
+    <!-- https://w3id.org/metpo/000200 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000200">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0018"/>
+        <rdfs:label>pH delta mid3 (4 - 5)</rdfs:label>
+        <METPO:BactoTrait>pHd_4_5</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000201 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000201">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0018"/>
+        <rdfs:label>pH delta high (5 - 9)</rdfs:label>
+        <METPO:BactoTrait>pHd_5_9</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000202 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000202">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0019"/>
+        <rdfs:label>% NaCl delta low (&lt;= 1)</rdfs:label>
+        <METPO:BactoTrait>Nad_&lt;=1</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000203 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000203">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0019"/>
+        <rdfs:label>% NaCl delta mid2 (1 - 3)</rdfs:label>
+        <METPO:BactoTrait>Nad_1_3</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000204 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000204">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0019"/>
+        <rdfs:label>% NaCl delta mid2 (3 - 8)</rdfs:label>
+        <METPO:BactoTrait>Nad_3_8</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000205 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000205">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0019"/>
+        <rdfs:label>% NaCl delta high (&gt;= 8)</rdfs:label>
+        <METPO:BactoTrait>Nad_&gt;8</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000206 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000206">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0020"/>
+        <rdfs:label>Temperature C delta very low (1 - 5)</rdfs:label>
+        <METPO:BactoTrait>Td_1_5</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000207 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000207">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0020"/>
+        <rdfs:label>Temperature C delta low (5 - 10)</rdfs:label>
+        <METPO:BactoTrait>Td_5_10</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000208 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000208">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0020"/>
+        <rdfs:label>Temperature C delta mid1 (10 - 20)</rdfs:label>
+        <METPO:BactoTrait>Td_10_20</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000209 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000209">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0020"/>
+        <rdfs:label>Temperature C delta mid2 (20 - 30)</rdfs:label>
+        <METPO:BactoTrait>Td_20_30</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000210 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000210">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0020"/>
+        <rdfs:label>Temperature C delta high (&gt;= 30)</rdfs:label>
+        <METPO:BactoTrait>Td_&gt;30</METPO:BactoTrait>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000211 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000211">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0021"/>
+        <obo:IAO_0000115>A rod-shaped cell.</obo:IAO_0000115>
+        <rdfs:label>bacillus</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000212 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000212">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0021"/>
+        <obo:IAO_0000115>A cell with multiple branches or extensions.</obo:IAO_0000115>
+        <rdfs:label>branced</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000213 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000213">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0021"/>
+        <obo:IAO_0000115>A short rod-shaped cell, intermediate between bacillus and coccus.</obo:IAO_0000115>
+        <rdfs:label>coccobacillus</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000214 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000214">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0021"/>
+        <obo:IAO_0000115>A spherical cell.</obo:IAO_0000115>
+        <rdfs:label>coccus</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000215 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000215">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0021"/>
+        <obo:IAO_0000115>A curved, crescent-shaped cell.</obo:IAO_0000115>
+        <rdfs:label>crescent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000216 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000216">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0021"/>
+        <obo:IAO_0000115>A cell with a slight curve or bend.</obo:IAO_0000115>
+        <rdfs:label>curved</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000217 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000217">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0021"/>
+        <obo:IAO_0000115>A cell with a curved spiral shape.</obo:IAO_0000115>
+        <rdfs:label>curved spiral</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000218 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000218">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0021"/>
+        <obo:IAO_0000115>Two spherical cells attached to each other.</obo:IAO_0000115>
+        <rdfs:label>diplococcus</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000219 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000219">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0021"/>
+        <obo:IAO_0000115>A flat, circular-shaped cell.</obo:IAO_0000115>
+        <rdfs:label>disc</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000220 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000220">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0021"/>
+        <obo:IAO_0000115>A cell shaped like two spheres connected by a narrow bridge.</obo:IAO_0000115>
+        <rdfs:label>dumbbell</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000221 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000221">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0021"/>
+        <obo:IAO_0000115>A cell with an elongated oval shape.</obo:IAO_0000115>
+        <rdfs:label>ellipsoidal</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000222 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000222">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0021"/>
+        <obo:IAO_0000115>A long, thin, thread-like cell.</obo:IAO_0000115>
+        <rdfs:label>filament</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000223 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000223">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0021"/>
+        <obo:IAO_0000115>A cell shaped like a laboratory flask.</obo:IAO_0000115>
+        <rdfs:label>flask</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000224 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000224">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0021"/>
+        <obo:IAO_0000115>A cell with a spindle-like shape, wider in the middle and tapering at both ends.</obo:IAO_0000115>
+        <rdfs:label>fusiform</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000225 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000225">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0021"/>
+        <obo:IAO_0000115>A cell with a spiral shape, forming a three-dimensional helix.</obo:IAO_0000115>
+        <rdfs:label>helical</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000226 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000226">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0021"/>
+        <obo:IAO_0000115>A cell with an inconsistent or non-uniform shape.</obo:IAO_0000115>
+        <rdfs:label>irregular</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000227 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000227">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0021"/>
+        <obo:IAO_0000115>A cell with an egg-shaped outline.</obo:IAO_0000115>
+        <rdfs:label>oval</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000228 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000228">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0021"/>
+        <obo:IAO_0000115>A cell with an egg-like shape, slightly elongated.</obo:IAO_0000115>
+        <rdfs:label>ovoid</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000229 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000229">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0021"/>
+        <obo:IAO_0000115>A cell capable of assuming various shapes.</obo:IAO_0000115>
+        <rdfs:label>pleomorphic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000230 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000230">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0021"/>
+        <obo:IAO_0000115>A cell shaped like a circular band or loop.</obo:IAO_0000115>
+        <rdfs:label>ring</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000231 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000231">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0021"/>
+        <obo:IAO_0000115>A straight, elongated cell.</obo:IAO_0000115>
+        <rdfs:label>rod</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000232 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000232">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0021"/>
+        <obo:IAO_0000115>A perfectly round cell.</obo:IAO_0000115>
+        <rdfs:label>sphere</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000233 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000233">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0021"/>
+        <obo:IAO_0000115>A cell with a shape that tapers at both ends.</obo:IAO_0000115>
+        <rdfs:label>spindle</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000234 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000234">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0021"/>
+        <obo:IAO_0000115>A cell with a tight, coiled shape.</obo:IAO_0000115>
+        <rdfs:label>spiral</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000235 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000235">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0021"/>
+        <obo:IAO_0000115>A cell with a long, thin, flexible spiral shape.</obo:IAO_0000115>
+        <rdfs:label>spirochete</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000236 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000236">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0021"/>
+        <obo:IAO_0000115>A dormant, resistant form of a cell.</obo:IAO_0000115>
+        <rdfs:label>spore</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000237 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000237">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0021"/>
+        <obo:IAO_0000115>A cell with a cube-like shape.</obo:IAO_0000115>
+        <rdfs:label>square</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000238 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000238">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0021"/>
+        <obo:IAO_0000115>A cell with multiple pointed projections, resembling a star.</obo:IAO_0000115>
+        <rdfs:label>star</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000239 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000239">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0021"/>
+        <obo:IAO_0000115>A cell that can assume star-shaped, dumbbell-shaped, or various other forms.</obo:IAO_0000115>
+        <rdfs:label>star - dumbbell - pleomorphic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000240 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000240">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0021"/>
+        <obo:IAO_0000115>A cell with a main body and a tail-like extension.</obo:IAO_0000115>
+        <rdfs:label>tailed</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000241 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000241">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0021"/>
+        <obo:IAO_0000115>A cell with a three-sided shape.</obo:IAO_0000115>
+        <rdfs:label>triangular</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000242 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000242">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0021"/>
+        <obo:IAO_0000115>A curved rod-shaped cell, resembling a comma.</obo:IAO_0000115>
+        <rdfs:label>vibrio</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000243 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000243">
+        <obo:IAO_0000115>A measurable property of the external environment that influences microbial growth or behavior.</obo:IAO_0000115>
+        <rdfs:label>Environmental Parameter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000244 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000244">
+        <obo:IAO_0000115>A specific combination of environmental factors under which a microorganism can maintain its lifecycle.</obo:IAO_0000115>
+        <rdfs:label>Growth Condition</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000245 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000245">
+        <obo:IAO_0000115>An inherent characteristic of an organism related to its biological functioning and metabolic processes.</obo:IAO_0000115>
+        <rdfs:label>Physiological Trait</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000246 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000246">
+        <obo:IAO_0000115>A categorization of an organism based on its specific patterns of energy acquisition and material transformation.</obo:IAO_0000115>
+        <rdfs:label>Metabolic Classification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000247 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000247">
+        <obo:IAO_0000115>A distinctive property of a cell that contributes to its structure, function, or behavior.</obo:IAO_0000115>
+        <rdfs:label>Cellular Characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000248 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000248">
+        <obo:IAO_0000115>A morphological, genetic, or physiological characteristic used for classifying organisms within a systematic hierarchy.</obo:IAO_0000115>
+        <rdfs:label>Taxonomic Feature</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000249 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000249">
+        <obo:IAO_0000115>A heritable change in structure, function, or behavior that increases a microorganism&apos;s fitness in a specific environment.</obo:IAO_0000115>
+        <rdfs:label>Microbial Adaptation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000250 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000250">
+        <obo:IAO_0000115>A quantifiable factor that affects or describes the rate or extent of microbial population increase.</obo:IAO_0000115>
+        <rdfs:label>Growth Parameter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000251 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000251">
+        <obo:IAO_0000115>A physical component or arrangement of components that contributes to an organism&apos;s form or architecture.</obo:IAO_0000115>
+        <rdfs:label>Structural Feature</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000252 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000252">
+        <obo:IAO_0000115>A physiological adjustment that enables an organism to survive and reproduce at a specific temperature range.</obo:IAO_0000115>
+        <rdfs:label>Temperature Adaptation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000253 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000253">
+        <obo:IAO_0000115>A set of mechanisms that allows an organism to maintain homeostasis in environments with particular salt concentrations.</obo:IAO_0000115>
+        <rdfs:label>Salinity Adaptation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000254 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000254">
+        <obo:IAO_0000115>A combination of cellular processes that permits survival and growth under specific hydrogen ion concentrations.</obo:IAO_0000115>
+        <rdfs:label>pH Adaptation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000255 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000255">
+        <obo:IAO_0000115>The specific need for or tolerance of molecular oxygen that characterizes an organism&apos;s metabolic processes.</obo:IAO_0000115>
+        <rdfs:label>Oxygen Requirement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000256 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000256">
+        <obo:IAO_0000115>The ability to assimilate and metabolize specific carbon-containing compounds for cellular growth and maintenance.</obo:IAO_0000115>
+        <rdfs:label>Carbon Source Utilization</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000257 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000257">
+        <obo:IAO_0000115>The mechanism by which an organism obtains energy for cellular activities and biosynthesis.</obo:IAO_0000115>
+        <rdfs:label>Energy Acquisition Mode</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000258 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000258">
+        <obo:IAO_0000115>The class of compounds or elements from which an organism extracts electrons for energy-generating reactions.</obo:IAO_0000115>
+        <rdfs:label>Electron Donor Type</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000259 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000259">
+        <obo:IAO_0000115>The biochemical and mechanical processes that enable an organism to move through its environment.</obo:IAO_0000115>
+        <rdfs:label>Motility Mechanism</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000260 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000260">
+        <obo:IAO_0000115>A specialized cellular component that generates force or facilitates movement in microorganisms.</obo:IAO_0000115>
+        <rdfs:label>Motility Structure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000261 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000261">
+        <obo:IAO_0000115>A classification of resistant dormant structures produced by bacteria based on their formation and properties.</obo:IAO_0000115>
+        <rdfs:label>Bacterial Spore Type</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000262 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000262">
+        <obo:IAO_0000115>A distinct category of reproductive or survival structures produced by fungi, characterized by specific morphology and function.</obo:IAO_0000115>
+        <rdfs:label>Fungal Spore Type</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000263 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000263">
+        <obo:IAO_0000115>A specialized cellular formation that functions in the propagation of genetic material to produce new individuals.</obo:IAO_0000115>
+        <rdfs:label>Reproductive Structure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000264 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000264">
+        <obo:IAO_0000115>A specialized cellular state or formation that enables survival during adverse environmental conditions with reduced metabolic activity.</obo:IAO_0000115>
+        <rdfs:label>Dormancy Structure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000265 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000265">
+        <obo:IAO_0000115>A set of physiological and molecular mechanisms that enable survival under specific hydrostatic pressure conditions.</obo:IAO_0000115>
+        <rdfs:label>Pressure Adaptation Type</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000266 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000266">
+        <obo:IAO_0000115>The span of hydrostatic pressures within which an organism can maintain viability and cellular functions.</obo:IAO_0000115>
+        <rdfs:label>Pressure Tolerance Range</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000267 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000267">
+        <obo:IAO_0000115>A distinctive characteristic of an organism&apos;s genetic material related to its sequence, structure, or organization.</obo:IAO_0000115>
+        <rdfs:label>GenomicFeature</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000268 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000268">
+        <obo:IAO_0000115>A measurable spatial attribute of a cell that describes its size in one or more directions.</obo:IAO_0000115>
+        <rdfs:label>Cell Dimension</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000269 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000269">
+        <obo:IAO_0000115>The specific environmental condition at which an organism achieves its maximum growth rate or metabolic efficiency.</obo:IAO_0000115>
+        <rdfs:label>Optimal Growth Parameter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000270 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000270">
+        <obo:IAO_0000115>The span of environmental conditions within which an organism can sustain growth and reproduction.</obo:IAO_0000115>
+        <rdfs:label>Growth Range Parameter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000271 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000271">
+        <obo:IAO_0000115>A quantitative measure of an organism&apos;s ability to withstand variations in a specific environmental factor.</obo:IAO_0000115>
+        <rdfs:label>Growth Tolerance Metric</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000272 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000272">
+        <obo:IAO_0000115>The three-dimensional geometric form of a microbial cell as determined by its cell wall and cytoskeletal structures.</obo:IAO_0000115>
+        <rdfs:label>Cell Shape</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000273 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000273">
+        <obo:IAO_0000115>The spatial organization of multiple cells in relation to each other following cell division.</obo:IAO_0000115>
+        <rdfs:label>Cell Arrangement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/000274 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/000274">
+        <obo:IAO_0000115>The macroscopic appearance and structure of a population of microorganisms growing on a solid medium.</obo:IAO_0000115>
+        <rdfs:label>Colony Morphology</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/0003 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/0003"/>
+    
+
+
+    <!-- https://w3id.org/metpo/0004 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/0004"/>
+    
+
+
+    <!-- https://w3id.org/metpo/0005 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/0005"/>
+    
+
+
+    <!-- https://w3id.org/metpo/0006 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/0006"/>
+    
+
+
+    <!-- https://w3id.org/metpo/0007 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/0007"/>
+    
+
+
+    <!-- https://w3id.org/metpo/0008 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/0008"/>
+    
+
+
+    <!-- https://w3id.org/metpo/0009 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/0009"/>
+    
+
+
+    <!-- https://w3id.org/metpo/0010 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/0010"/>
+    
+
+
+    <!-- https://w3id.org/metpo/0011 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/0011"/>
+    
+
+
+    <!-- https://w3id.org/metpo/0012 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/0012"/>
+    
+
+
+    <!-- https://w3id.org/metpo/0013 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/0013"/>
+    
+
+
+    <!-- https://w3id.org/metpo/0014 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/0014"/>
+    
+
+
+    <!-- https://w3id.org/metpo/0015 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/0015"/>
+    
+
+
+    <!-- https://w3id.org/metpo/0016 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/0016"/>
+    
+
+
+    <!-- https://w3id.org/metpo/0017 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/0017"/>
+    
+
+
+    <!-- https://w3id.org/metpo/0018 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/0018"/>
+    
+
+
+    <!-- https://w3id.org/metpo/0019 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/0019"/>
+    
+
+
+    <!-- https://w3id.org/metpo/0020 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/0020"/>
+    
+
+
+    <!-- https://w3id.org/metpo/0021 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/0021"/>
 </rdf:RDF>
 
 
