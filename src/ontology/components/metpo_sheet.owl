@@ -1,0 +1,2057 @@
+Prefix(:=<http://purl.obolibrary.org/obo/metpo/components/metpo_sheet.owl#>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+Prefix(METPO:=<https://w3id.org/metpo/>)
+
+
+Ontology(<http://purl.obolibrary.org/obo/metpo/components/metpo_sheet.owl>
+<http://purl.obolibrary.org/obo/metpo/releases/2025-03-13/components/metpo_sheet.owl>
+Annotation(owl:versionInfo "2025-03-13")
+
+Declaration(Class(METPO:GenomicFeature))
+Declaration(Class(METPO:NamedThing))
+Declaration(Class(<https://w3id.org/metpo/000001>))
+Declaration(Class(<https://w3id.org/metpo/000002>))
+Declaration(Class(<https://w3id.org/metpo/000003>))
+Declaration(Class(<https://w3id.org/metpo/000004>))
+Declaration(Class(<https://w3id.org/metpo/000005>))
+Declaration(Class(<https://w3id.org/metpo/000006>))
+Declaration(Class(<https://w3id.org/metpo/000007>))
+Declaration(Class(<https://w3id.org/metpo/000008>))
+Declaration(Class(<https://w3id.org/metpo/000009>))
+Declaration(Class(<https://w3id.org/metpo/000010>))
+Declaration(Class(<https://w3id.org/metpo/000011>))
+Declaration(Class(<https://w3id.org/metpo/000012>))
+Declaration(Class(<https://w3id.org/metpo/000013>))
+Declaration(Class(<https://w3id.org/metpo/000014>))
+Declaration(Class(<https://w3id.org/metpo/000015>))
+Declaration(Class(<https://w3id.org/metpo/000016>))
+Declaration(Class(<https://w3id.org/metpo/000017>))
+Declaration(Class(<https://w3id.org/metpo/000018>))
+Declaration(Class(<https://w3id.org/metpo/000019>))
+Declaration(Class(<https://w3id.org/metpo/000020>))
+Declaration(Class(<https://w3id.org/metpo/000021>))
+Declaration(Class(<https://w3id.org/metpo/000022>))
+Declaration(Class(<https://w3id.org/metpo/000023>))
+Declaration(Class(<https://w3id.org/metpo/000024>))
+Declaration(Class(<https://w3id.org/metpo/000025>))
+Declaration(Class(<https://w3id.org/metpo/000026>))
+Declaration(Class(<https://w3id.org/metpo/000027>))
+Declaration(Class(<https://w3id.org/metpo/000028>))
+Declaration(Class(<https://w3id.org/metpo/000029>))
+Declaration(Class(<https://w3id.org/metpo/000030>))
+Declaration(Class(<https://w3id.org/metpo/000031>))
+Declaration(Class(<https://w3id.org/metpo/000032>))
+Declaration(Class(<https://w3id.org/metpo/000033>))
+Declaration(Class(<https://w3id.org/metpo/000034>))
+Declaration(Class(<https://w3id.org/metpo/000035>))
+Declaration(Class(<https://w3id.org/metpo/000036>))
+Declaration(Class(<https://w3id.org/metpo/000037>))
+Declaration(Class(<https://w3id.org/metpo/000038>))
+Declaration(Class(<https://w3id.org/metpo/000039>))
+Declaration(Class(<https://w3id.org/metpo/000040>))
+Declaration(Class(<https://w3id.org/metpo/000041>))
+Declaration(Class(<https://w3id.org/metpo/000042>))
+Declaration(Class(<https://w3id.org/metpo/000043>))
+Declaration(Class(<https://w3id.org/metpo/000044>))
+Declaration(Class(<https://w3id.org/metpo/000045>))
+Declaration(Class(<https://w3id.org/metpo/000046>))
+Declaration(Class(<https://w3id.org/metpo/000047>))
+Declaration(Class(<https://w3id.org/metpo/000048>))
+Declaration(Class(<https://w3id.org/metpo/000049>))
+Declaration(Class(<https://w3id.org/metpo/000050>))
+Declaration(Class(<https://w3id.org/metpo/000051>))
+Declaration(Class(<https://w3id.org/metpo/000052>))
+Declaration(Class(<https://w3id.org/metpo/000053>))
+Declaration(Class(<https://w3id.org/metpo/000054>))
+Declaration(Class(<https://w3id.org/metpo/000055>))
+Declaration(Class(<https://w3id.org/metpo/000056>))
+Declaration(Class(<https://w3id.org/metpo/000057>))
+Declaration(Class(<https://w3id.org/metpo/000058>))
+Declaration(Class(<https://w3id.org/metpo/000059>))
+Declaration(Class(<https://w3id.org/metpo/000060>))
+Declaration(Class(<https://w3id.org/metpo/000061>))
+Declaration(Class(<https://w3id.org/metpo/000062>))
+Declaration(Class(<https://w3id.org/metpo/000063>))
+Declaration(Class(<https://w3id.org/metpo/000064>))
+Declaration(Class(<https://w3id.org/metpo/000065>))
+Declaration(Class(<https://w3id.org/metpo/000066>))
+Declaration(Class(<https://w3id.org/metpo/000067>))
+Declaration(Class(<https://w3id.org/metpo/000068>))
+Declaration(Class(<https://w3id.org/metpo/000069>))
+Declaration(Class(<https://w3id.org/metpo/000070>))
+Declaration(Class(<https://w3id.org/metpo/000071>))
+Declaration(Class(<https://w3id.org/metpo/000072>))
+Declaration(Class(<https://w3id.org/metpo/000073>))
+Declaration(Class(<https://w3id.org/metpo/000074>))
+Declaration(Class(<https://w3id.org/metpo/000075>))
+Declaration(Class(<https://w3id.org/metpo/000076>))
+Declaration(Class(<https://w3id.org/metpo/000077>))
+Declaration(Class(<https://w3id.org/metpo/000078>))
+Declaration(Class(<https://w3id.org/metpo/000079>))
+Declaration(Class(<https://w3id.org/metpo/000080>))
+Declaration(Class(<https://w3id.org/metpo/000081>))
+Declaration(Class(<https://w3id.org/metpo/000082>))
+Declaration(Class(<https://w3id.org/metpo/000083>))
+Declaration(Class(<https://w3id.org/metpo/000084>))
+Declaration(Class(<https://w3id.org/metpo/000085>))
+Declaration(Class(<https://w3id.org/metpo/000086>))
+Declaration(Class(<https://w3id.org/metpo/000087>))
+Declaration(Class(<https://w3id.org/metpo/000088>))
+Declaration(Class(<https://w3id.org/metpo/000089>))
+Declaration(Class(<https://w3id.org/metpo/000090>))
+Declaration(Class(<https://w3id.org/metpo/000091>))
+Declaration(Class(<https://w3id.org/metpo/000092>))
+Declaration(Class(<https://w3id.org/metpo/000093>))
+Declaration(Class(<https://w3id.org/metpo/000094>))
+Declaration(Class(<https://w3id.org/metpo/000095>))
+Declaration(Class(<https://w3id.org/metpo/000096>))
+Declaration(Class(<https://w3id.org/metpo/000097>))
+Declaration(Class(<https://w3id.org/metpo/000098>))
+Declaration(Class(<https://w3id.org/metpo/000099>))
+Declaration(Class(<https://w3id.org/metpo/0001>))
+Declaration(Class(<https://w3id.org/metpo/000100>))
+Declaration(Class(<https://w3id.org/metpo/000101>))
+Declaration(Class(<https://w3id.org/metpo/000102>))
+Declaration(Class(<https://w3id.org/metpo/000103>))
+Declaration(Class(<https://w3id.org/metpo/000104>))
+Declaration(Class(<https://w3id.org/metpo/000105>))
+Declaration(Class(<https://w3id.org/metpo/000106>))
+Declaration(Class(<https://w3id.org/metpo/000107>))
+Declaration(Class(<https://w3id.org/metpo/000108>))
+Declaration(Class(<https://w3id.org/metpo/000109>))
+Declaration(Class(<https://w3id.org/metpo/000110>))
+Declaration(Class(<https://w3id.org/metpo/000111>))
+Declaration(Class(<https://w3id.org/metpo/000112>))
+Declaration(Class(<https://w3id.org/metpo/000113>))
+Declaration(Class(<https://w3id.org/metpo/000114>))
+Declaration(Class(<https://w3id.org/metpo/000115>))
+Declaration(Class(<https://w3id.org/metpo/000116>))
+Declaration(Class(<https://w3id.org/metpo/000117>))
+Declaration(Class(<https://w3id.org/metpo/000118>))
+Declaration(Class(<https://w3id.org/metpo/000119>))
+Declaration(Class(<https://w3id.org/metpo/000120>))
+Declaration(Class(<https://w3id.org/metpo/000121>))
+Declaration(Class(<https://w3id.org/metpo/000122>))
+Declaration(Class(<https://w3id.org/metpo/000123>))
+Declaration(Class(<https://w3id.org/metpo/000124>))
+Declaration(Class(<https://w3id.org/metpo/000125>))
+Declaration(Class(<https://w3id.org/metpo/000126>))
+Declaration(Class(<https://w3id.org/metpo/000127>))
+Declaration(Class(<https://w3id.org/metpo/000128>))
+Declaration(Class(<https://w3id.org/metpo/000129>))
+Declaration(Class(<https://w3id.org/metpo/000130>))
+Declaration(Class(<https://w3id.org/metpo/000131>))
+Declaration(Class(<https://w3id.org/metpo/000132>))
+Declaration(Class(<https://w3id.org/metpo/000133>))
+Declaration(Class(<https://w3id.org/metpo/000134>))
+Declaration(Class(<https://w3id.org/metpo/000135>))
+Declaration(Class(<https://w3id.org/metpo/000136>))
+Declaration(Class(<https://w3id.org/metpo/000137>))
+Declaration(Class(<https://w3id.org/metpo/000138>))
+Declaration(Class(<https://w3id.org/metpo/000139>))
+Declaration(Class(<https://w3id.org/metpo/000140>))
+Declaration(Class(<https://w3id.org/metpo/000141>))
+Declaration(Class(<https://w3id.org/metpo/000142>))
+Declaration(Class(<https://w3id.org/metpo/000143>))
+Declaration(Class(<https://w3id.org/metpo/000144>))
+Declaration(Class(<https://w3id.org/metpo/000145>))
+Declaration(Class(<https://w3id.org/metpo/000146>))
+Declaration(Class(<https://w3id.org/metpo/000147>))
+Declaration(Class(<https://w3id.org/metpo/000148>))
+Declaration(Class(<https://w3id.org/metpo/000149>))
+Declaration(Class(<https://w3id.org/metpo/000150>))
+Declaration(Class(<https://w3id.org/metpo/000151>))
+Declaration(Class(<https://w3id.org/metpo/000152>))
+Declaration(Class(<https://w3id.org/metpo/000153>))
+Declaration(Class(<https://w3id.org/metpo/000154>))
+Declaration(Class(<https://w3id.org/metpo/000155>))
+Declaration(Class(<https://w3id.org/metpo/000156>))
+Declaration(Class(<https://w3id.org/metpo/000157>))
+Declaration(Class(<https://w3id.org/metpo/000158>))
+Declaration(Class(<https://w3id.org/metpo/000159>))
+Declaration(Class(<https://w3id.org/metpo/000160>))
+Declaration(Class(<https://w3id.org/metpo/000161>))
+Declaration(Class(<https://w3id.org/metpo/000162>))
+Declaration(Class(<https://w3id.org/metpo/000163>))
+Declaration(Class(<https://w3id.org/metpo/000164>))
+Declaration(Class(<https://w3id.org/metpo/000165>))
+Declaration(Class(<https://w3id.org/metpo/000166>))
+Declaration(Class(<https://w3id.org/metpo/000167>))
+Declaration(Class(<https://w3id.org/metpo/000168>))
+Declaration(Class(<https://w3id.org/metpo/000169>))
+Declaration(Class(<https://w3id.org/metpo/000170>))
+Declaration(Class(<https://w3id.org/metpo/000171>))
+Declaration(Class(<https://w3id.org/metpo/000172>))
+Declaration(Class(<https://w3id.org/metpo/000173>))
+Declaration(Class(<https://w3id.org/metpo/000174>))
+Declaration(Class(<https://w3id.org/metpo/000175>))
+Declaration(Class(<https://w3id.org/metpo/000176>))
+Declaration(Class(<https://w3id.org/metpo/000177>))
+Declaration(Class(<https://w3id.org/metpo/000178>))
+Declaration(Class(<https://w3id.org/metpo/000179>))
+Declaration(Class(<https://w3id.org/metpo/000180>))
+Declaration(Class(<https://w3id.org/metpo/000181>))
+Declaration(Class(<https://w3id.org/metpo/000182>))
+Declaration(Class(<https://w3id.org/metpo/000183>))
+Declaration(Class(<https://w3id.org/metpo/000184>))
+Declaration(Class(<https://w3id.org/metpo/000185>))
+Declaration(Class(<https://w3id.org/metpo/000186>))
+Declaration(Class(<https://w3id.org/metpo/000187>))
+Declaration(Class(<https://w3id.org/metpo/000188>))
+Declaration(Class(<https://w3id.org/metpo/000189>))
+Declaration(Class(<https://w3id.org/metpo/000190>))
+Declaration(Class(<https://w3id.org/metpo/000191>))
+Declaration(Class(<https://w3id.org/metpo/000192>))
+Declaration(Class(<https://w3id.org/metpo/000193>))
+Declaration(Class(<https://w3id.org/metpo/000194>))
+Declaration(Class(<https://w3id.org/metpo/000195>))
+Declaration(Class(<https://w3id.org/metpo/000196>))
+Declaration(Class(<https://w3id.org/metpo/000197>))
+Declaration(Class(<https://w3id.org/metpo/000198>))
+Declaration(Class(<https://w3id.org/metpo/000199>))
+Declaration(Class(<https://w3id.org/metpo/0002>))
+Declaration(Class(<https://w3id.org/metpo/000200>))
+Declaration(Class(<https://w3id.org/metpo/000201>))
+Declaration(Class(<https://w3id.org/metpo/000202>))
+Declaration(Class(<https://w3id.org/metpo/000203>))
+Declaration(Class(<https://w3id.org/metpo/000204>))
+Declaration(Class(<https://w3id.org/metpo/000205>))
+Declaration(Class(<https://w3id.org/metpo/000206>))
+Declaration(Class(<https://w3id.org/metpo/000207>))
+Declaration(Class(<https://w3id.org/metpo/000208>))
+Declaration(Class(<https://w3id.org/metpo/000209>))
+Declaration(Class(<https://w3id.org/metpo/000210>))
+Declaration(Class(<https://w3id.org/metpo/000211>))
+Declaration(Class(<https://w3id.org/metpo/000212>))
+Declaration(Class(<https://w3id.org/metpo/000213>))
+Declaration(Class(<https://w3id.org/metpo/000214>))
+Declaration(Class(<https://w3id.org/metpo/000215>))
+Declaration(Class(<https://w3id.org/metpo/000216>))
+Declaration(Class(<https://w3id.org/metpo/000217>))
+Declaration(Class(<https://w3id.org/metpo/000218>))
+Declaration(Class(<https://w3id.org/metpo/000219>))
+Declaration(Class(<https://w3id.org/metpo/000220>))
+Declaration(Class(<https://w3id.org/metpo/000221>))
+Declaration(Class(<https://w3id.org/metpo/000222>))
+Declaration(Class(<https://w3id.org/metpo/000223>))
+Declaration(Class(<https://w3id.org/metpo/000224>))
+Declaration(Class(<https://w3id.org/metpo/000225>))
+Declaration(Class(<https://w3id.org/metpo/000226>))
+Declaration(Class(<https://w3id.org/metpo/000227>))
+Declaration(Class(<https://w3id.org/metpo/000228>))
+Declaration(Class(<https://w3id.org/metpo/000229>))
+Declaration(Class(<https://w3id.org/metpo/000230>))
+Declaration(Class(<https://w3id.org/metpo/000231>))
+Declaration(Class(<https://w3id.org/metpo/000232>))
+Declaration(Class(<https://w3id.org/metpo/000233>))
+Declaration(Class(<https://w3id.org/metpo/000234>))
+Declaration(Class(<https://w3id.org/metpo/000235>))
+Declaration(Class(<https://w3id.org/metpo/000236>))
+Declaration(Class(<https://w3id.org/metpo/000237>))
+Declaration(Class(<https://w3id.org/metpo/000238>))
+Declaration(Class(<https://w3id.org/metpo/000239>))
+Declaration(Class(<https://w3id.org/metpo/000240>))
+Declaration(Class(<https://w3id.org/metpo/000241>))
+Declaration(Class(<https://w3id.org/metpo/000242>))
+Declaration(Class(<https://w3id.org/metpo/000243>))
+Declaration(Class(<https://w3id.org/metpo/000244>))
+Declaration(Class(<https://w3id.org/metpo/000245>))
+Declaration(Class(<https://w3id.org/metpo/000246>))
+Declaration(Class(<https://w3id.org/metpo/000247>))
+Declaration(Class(<https://w3id.org/metpo/000248>))
+Declaration(Class(<https://w3id.org/metpo/000249>))
+Declaration(Class(<https://w3id.org/metpo/000250>))
+Declaration(Class(<https://w3id.org/metpo/000251>))
+Declaration(Class(<https://w3id.org/metpo/000252>))
+Declaration(Class(<https://w3id.org/metpo/000253>))
+Declaration(Class(<https://w3id.org/metpo/000254>))
+Declaration(Class(<https://w3id.org/metpo/000255>))
+Declaration(Class(<https://w3id.org/metpo/000256>))
+Declaration(Class(<https://w3id.org/metpo/000257>))
+Declaration(Class(<https://w3id.org/metpo/000258>))
+Declaration(Class(<https://w3id.org/metpo/000259>))
+Declaration(Class(<https://w3id.org/metpo/000260>))
+Declaration(Class(<https://w3id.org/metpo/000261>))
+Declaration(Class(<https://w3id.org/metpo/000262>))
+Declaration(Class(<https://w3id.org/metpo/000263>))
+Declaration(Class(<https://w3id.org/metpo/000264>))
+Declaration(Class(<https://w3id.org/metpo/000265>))
+Declaration(Class(<https://w3id.org/metpo/000266>))
+Declaration(Class(<https://w3id.org/metpo/000267>))
+Declaration(Class(<https://w3id.org/metpo/000268>))
+Declaration(Class(<https://w3id.org/metpo/000269>))
+Declaration(Class(<https://w3id.org/metpo/000270>))
+Declaration(Class(<https://w3id.org/metpo/000271>))
+Declaration(Class(<https://w3id.org/metpo/000272>))
+Declaration(Class(<https://w3id.org/metpo/000273>))
+Declaration(Class(<https://w3id.org/metpo/000274>))
+Declaration(Class(<https://w3id.org/metpo/0003>))
+Declaration(Class(<https://w3id.org/metpo/0004>))
+Declaration(Class(<https://w3id.org/metpo/0005>))
+Declaration(Class(<https://w3id.org/metpo/0006>))
+Declaration(Class(<https://w3id.org/metpo/0007>))
+Declaration(Class(<https://w3id.org/metpo/0008>))
+Declaration(Class(<https://w3id.org/metpo/0009>))
+Declaration(Class(<https://w3id.org/metpo/0010>))
+Declaration(Class(<https://w3id.org/metpo/0011>))
+Declaration(Class(<https://w3id.org/metpo/0012>))
+Declaration(Class(<https://w3id.org/metpo/0013>))
+Declaration(Class(<https://w3id.org/metpo/0014>))
+Declaration(Class(<https://w3id.org/metpo/0015>))
+Declaration(Class(<https://w3id.org/metpo/0016>))
+Declaration(Class(<https://w3id.org/metpo/0017>))
+Declaration(Class(<https://w3id.org/metpo/0018>))
+Declaration(Class(<https://w3id.org/metpo/0019>))
+Declaration(Class(<https://w3id.org/metpo/0020>))
+Declaration(Class(<https://w3id.org/metpo/0021>))
+Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/IAO_0000115>))
+Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>))
+Declaration(AnnotationProperty(METPO:BactoTrait))
+
+
+############################
+#   Classes
+############################
+
+# Class: <https://w3id.org/metpo/000001> (Temperature)
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000001> "Temperature")
+SubClassOf(<https://w3id.org/metpo/000001> METPO:NamedThing)
+
+# Class: <https://w3id.org/metpo/000002> (Salinity)
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000002> "Salinity")
+SubClassOf(<https://w3id.org/metpo/000002> METPO:NamedThing)
+
+# Class: <https://w3id.org/metpo/000003> (pH)
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000003> "pH")
+SubClassOf(<https://w3id.org/metpo/000003> METPO:NamedThing)
+
+# Class: <https://w3id.org/metpo/000004> (Oxygen)
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000004> "Oxygen")
+SubClassOf(<https://w3id.org/metpo/000004> METPO:NamedThing)
+
+# Class: <https://w3id.org/metpo/000005> (Trophic type)
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000005> "Trophic type")
+SubClassOf(<https://w3id.org/metpo/000005> METPO:NamedThing)
+
+# Class: <https://w3id.org/metpo/000006> (Motility)
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000006> "Motility")
+SubClassOf(<https://w3id.org/metpo/000006> METPO:NamedThing)
+
+# Class: <https://w3id.org/metpo/000007> (Sporulation)
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000007> "Sporulation")
+SubClassOf(<https://w3id.org/metpo/000007> METPO:NamedThing)
+
+# Class: <https://w3id.org/metpo/000008> (Pressure)
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000008> "Pressure")
+SubClassOf(<https://w3id.org/metpo/000008> METPO:NamedThing)
+
+# Class: <https://w3id.org/metpo/000009> (GC content)
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000009> "GC content")
+SubClassOf(<https://w3id.org/metpo/000009> METPO:GenomicFeature)
+
+# Class: <https://w3id.org/metpo/000010> (Cell Width)
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000010> "Cell Width")
+SubClassOf(<https://w3id.org/metpo/000010> METPO:NamedThing)
+
+# Class: <https://w3id.org/metpo/000011> (Cell Length)
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000011> "Cell Length")
+SubClassOf(<https://w3id.org/metpo/000011> METPO:NamedThing)
+
+# Class: <https://w3id.org/metpo/000012> (Temperature Optimum)
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000012> "Temperature Optimum")
+SubClassOf(<https://w3id.org/metpo/000012> METPO:NamedThing)
+
+# Class: <https://w3id.org/metpo/000013> (Temperature Range)
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000013> "Temperature Range")
+SubClassOf(<https://w3id.org/metpo/000013> METPO:NamedThing)
+
+# Class: <https://w3id.org/metpo/000014> (pH Optimum)
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000014> "pH Optimum")
+SubClassOf(<https://w3id.org/metpo/000014> METPO:NamedThing)
+
+# Class: <https://w3id.org/metpo/000015> (pH Range)
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000015> "pH Range")
+SubClassOf(<https://w3id.org/metpo/000015> METPO:NamedThing)
+
+# Class: <https://w3id.org/metpo/000016> (NaCl Optimum)
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000016> "NaCl Optimum")
+SubClassOf(<https://w3id.org/metpo/000016> METPO:NamedThing)
+
+# Class: <https://w3id.org/metpo/000017> (NaCl Range)
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000017> "NaCl Range")
+SubClassOf(<https://w3id.org/metpo/000017> METPO:NamedThing)
+
+# Class: <https://w3id.org/metpo/000018> (pH delta)
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000018> "pH delta")
+SubClassOf(<https://w3id.org/metpo/000018> METPO:NamedThing)
+
+# Class: <https://w3id.org/metpo/000019> (NaCl delta)
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000019> "NaCl delta")
+SubClassOf(<https://w3id.org/metpo/000019> METPO:NamedThing)
+
+# Class: <https://w3id.org/metpo/000020> (Temperature Delta)
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000020> "Temperature Delta")
+SubClassOf(<https://w3id.org/metpo/000020> METPO:NamedThing)
+
+# Class: <https://w3id.org/metpo/000021> (Morphology)
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000021> "Morphology")
+SubClassOf(<https://w3id.org/metpo/000021> METPO:NamedThing)
+
+# Class: <https://w3id.org/metpo/000022> (Other)
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000022> "Other")
+SubClassOf(<https://w3id.org/metpo/000022> METPO:NamedThing)
+
+# Class: <https://w3id.org/metpo/000023> (Psychrophile)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000023> "A microorganism that grows optimally at temperatures below 15°C and can grow at temperatures below 20°C.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000023> "Psychrophile")
+SubClassOf(<https://w3id.org/metpo/000023> <https://w3id.org/metpo/0001>)
+
+# Class: <https://w3id.org/metpo/000024> (Psychrotolerant)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000024> "A microorganism that can grow at temperatures near 0°C but has optimal growth at higher temperatures.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000024> "Psychrotolerant")
+SubClassOf(<https://w3id.org/metpo/000024> <https://w3id.org/metpo/0001>)
+
+# Class: <https://w3id.org/metpo/000025> (Mesophilie)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000025> "A microorganism that grows optimally at moderate temperatures, typically between 20°C and 45°C.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000025> "Mesophilie")
+SubClassOf(<https://w3id.org/metpo/000025> <https://w3id.org/metpo/0001>)
+
+# Class: <https://w3id.org/metpo/000026> (Thermotolerant)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000026> "A microorganism that can grow at temperatures near 50°C but has optimal growth at lower temperatures.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000026> "Thermotolerant")
+SubClassOf(<https://w3id.org/metpo/000026> <https://w3id.org/metpo/0001>)
+
+# Class: <https://w3id.org/metpo/000027> (Thermophile)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000027> "A microorganism that grows optimally at relatively high temperatures, typically between 45°C and 80°C.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000027> "Thermophile")
+SubClassOf(<https://w3id.org/metpo/000027> <https://w3id.org/metpo/0001>)
+
+# Class: <https://w3id.org/metpo/000028> (Extreme thermophile)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000028> "A microorganism that grows optimally at temperatures between 60°C and 80°C.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000028> "Extreme thermophile")
+SubClassOf(<https://w3id.org/metpo/000028> <https://w3id.org/metpo/0001>)
+
+# Class: <https://w3id.org/metpo/000029> (Hyperthermophile)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000029> "A microorganism that grows optimally at very high temperatures, above 80°C.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000029> "Hyperthermophile")
+SubClassOf(<https://w3id.org/metpo/000029> <https://w3id.org/metpo/0001>)
+
+# Class: <https://w3id.org/metpo/000030> (Extreme hyperthermophile)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000030> "A microorganism that grows optimally at temperatures above 90°C.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000030> "Extreme hyperthermophile")
+SubClassOf(<https://w3id.org/metpo/000030> <https://w3id.org/metpo/0001>)
+
+# Class: <https://w3id.org/metpo/000031> (Halophile)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000031> "A microorganism that requires salt for optimal growth and survival.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000031> "Halophilic")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000031> "Halophile")
+SubClassOf(<https://w3id.org/metpo/000031> <https://w3id.org/metpo/0002>)
+
+# Class: <https://w3id.org/metpo/000032> (Non-halophile)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000032> "A microorganism that does not require salt for optimal growth and survival.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000032> "Non-halophilic")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000032> "Nonhalophile")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000032> "Non-halophile")
+SubClassOf(<https://w3id.org/metpo/000032> <https://w3id.org/metpo/0002>)
+
+# Class: <https://w3id.org/metpo/000033> (Slight halophile)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000033> "A microorganism that grows optimally in environments with low salt concentrations, typically between 2-5% NaCl.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000033> "Slightly halophilic")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000033> "Slight halophile")
+SubClassOf(<https://w3id.org/metpo/000033> <https://w3id.org/metpo/0002>)
+
+# Class: <https://w3id.org/metpo/000034> (Moderate halophile)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000034> "A microorganism that grows optimally in environments with moderate salt concentrations, typically between 5-20% NaCl.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000034> "Moderately halophilic")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000034> "Moderate halophile")
+SubClassOf(<https://w3id.org/metpo/000034> <https://w3id.org/metpo/0002>)
+
+# Class: <https://w3id.org/metpo/000035> (Extreme halophile)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000035> "A microorganism that grows optimally in environments with high salt concentrations, typically above 20% NaCl.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000035> "Extremely halophilic")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000035> "Extreme halophile")
+SubClassOf(<https://w3id.org/metpo/000035> <https://w3id.org/metpo/0002>)
+
+# Class: <https://w3id.org/metpo/000036> (Halotolerant)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000036> "A microorganism that grows optimally in environments with both high salt concentrations and high pH (alkaline conditions).")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000036> "Halotolerant")
+SubClassOf(<https://w3id.org/metpo/000036> <https://w3id.org/metpo/0002>)
+
+# Class: <https://w3id.org/metpo/000037> (Haloalkaliphile)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000037> "A microorganism that grows optimally in environments with both high salt concentrations (typically 2-5% NaCl, but can tolerate up to 25% NaCl) and high pH (typically 9-11, but can grow at pH values up to 12).")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000037> "Haloalkaliphile")
+SubClassOf(<https://w3id.org/metpo/000037> <https://w3id.org/metpo/0002>)
+
+# Class: <https://w3id.org/metpo/000038> (Extreme Acidophile)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000038> "A microorganism that grows optimally at very low pH values, typically between pH 1 and 3.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000038> "Extreme acidophilic")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000038> "Extreme Acidophile")
+SubClassOf(<https://w3id.org/metpo/000038> <https://w3id.org/metpo/0003>)
+
+# Class: <https://w3id.org/metpo/000039> (Acidophile)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000039> "A microorganism that grows optimally at low pH values, typically below pH 5.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000039> "Acidophilic")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000039> "Acidophile")
+SubClassOf(<https://w3id.org/metpo/000039> <https://w3id.org/metpo/0003>)
+
+# Class: <https://w3id.org/metpo/000040> (Neutrophile)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000040> "A microorganism that grows optimally at neutral pH values, typically around pH 7.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000040> "Neutrophilic")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000040> "Neutrophile")
+SubClassOf(<https://w3id.org/metpo/000040> <https://w3id.org/metpo/0003>)
+
+# Class: <https://w3id.org/metpo/000041> (Alkaliphile)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000041> "A microorganism that grows optimally at high pH values, typically above pH 9.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000041> "Alkaliphile")
+SubClassOf(<https://w3id.org/metpo/000041> <https://w3id.org/metpo/0003>)
+
+# Class: <https://w3id.org/metpo/000042> (Acid Tolerant)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000042> "A microorganism that can grow in acidic conditions below pH 5 but does not require them for optimal growth.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000042> "Alkaliphilic")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000042> "Acid Tolerant")
+SubClassOf(<https://w3id.org/metpo/000042> <https://w3id.org/metpo/0003>)
+
+# Class: <https://w3id.org/metpo/000043> (Alkali Tolerant)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000043> "A microorganism that can grow in alkaline conditions above pH 9 but does not require them for optimal growth.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000043> "Acid-tolerant")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000043> "Alkali Tolerant")
+SubClassOf(<https://w3id.org/metpo/000043> <https://w3id.org/metpo/0003>)
+
+# Class: <https://w3id.org/metpo/000044> (Extreme Alkaliphile)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000044> "A microorganism that grows optimally at very high pH values, typically above pH 10.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000044> "Alkali-tolerant")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000044> "Extreme Alkaliphile")
+SubClassOf(<https://w3id.org/metpo/000044> <https://w3id.org/metpo/0003>)
+
+# Class: <https://w3id.org/metpo/000045> (Facultative acidophile)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000045> "A microorganism that can grow in acidic conditions but does not require them for optimal growth.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000045> "Extreme alkaliphilic")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000045> "Facultative acidophile")
+SubClassOf(<https://w3id.org/metpo/000045> <https://w3id.org/metpo/0003>)
+
+# Class: <https://w3id.org/metpo/000046> (Obligative acidophile)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000046> "A microorganism that requires acidic conditions for growth and survival.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000046> "Obligative acidophile")
+SubClassOf(<https://w3id.org/metpo/000046> <https://w3id.org/metpo/0003>)
+
+# Class: <https://w3id.org/metpo/000047> (Aerobe)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000047> "A microorganism that requires oxygen for growth and metabolism.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000047> "Obligate aerobe")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000047> "Strict aerobe")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000047> "Aerobe")
+SubClassOf(<https://w3id.org/metpo/000047> <https://w3id.org/metpo/0004>)
+
+# Class: <https://w3id.org/metpo/000048> (Anaerobe)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000048> "A microorganism that grows in the absence of oxygen and is unable to use oxygen for growth.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000048> "Obligate anaerobe")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000048> "Strict anaerobe")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000048> "Anaerobe")
+SubClassOf(<https://w3id.org/metpo/000048> <https://w3id.org/metpo/0004>)
+
+# Class: <https://w3id.org/metpo/000049> (Facultative anaerobe)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000049> "A microorganism that can grow with or without oxygen, using oxygen for respiration when available but capable of fermentation or anaerobic respiration in its absence.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000049> "Facultative aerobe")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000049> "Facultative anaerobe")
+SubClassOf(<https://w3id.org/metpo/000049> <https://w3id.org/metpo/0004>)
+
+# Class: <https://w3id.org/metpo/000050> (Facultative aerobe)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000050> "A microorganism that primarily uses oxygen for respiration but can also grow without it using alternative metabolic pathways.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000050> "Facultative anaerobe")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000050> "Facultative aerobe")
+SubClassOf(<https://w3id.org/metpo/000050> <https://w3id.org/metpo/0004>)
+
+# Class: <https://w3id.org/metpo/000051> (Microaerophile)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000051> "A microorganism that requires oxygen for growth but at concentrations lower than those found in air (typically 2-10% oxygen).")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000051> "Microaerobe")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000051> "Microaerophile")
+SubClassOf(<https://w3id.org/metpo/000051> <https://w3id.org/metpo/0004>)
+
+# Class: <https://w3id.org/metpo/000052> (Aerotolerant)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000052> "A microorganism that does not use oxygen for growth but can survive and grow in its presence without being harmed.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000052> "Oxygen-tolerant")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000052> "Aerotolerant")
+SubClassOf(<https://w3id.org/metpo/000052> <https://w3id.org/metpo/0004>)
+
+# Class: <https://w3id.org/metpo/000053> (Microaerotolerant)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000053> "A microorganism that can tolerate low levels of oxygen but does not require such conditions for growth.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000053> "Microoxic-tolerant")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000053> "Microaerotolerant")
+SubClassOf(<https://w3id.org/metpo/000053> <https://w3id.org/metpo/0004>)
+
+# Class: <https://w3id.org/metpo/000054> (Aerotolerant anaerobe)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000054> "An anaerobic microorganism that does not use oxygen for metabolism but is not inhibited by its presence.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000054> "Oxygen-tolerant anaerobe")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000054> "Aerotolerant anaerobe")
+SubClassOf(<https://w3id.org/metpo/000054> <https://w3id.org/metpo/0004>)
+
+# Class: <https://w3id.org/metpo/000055> (Obligate aerobe)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000055> "A microorganism that absolutely requires oxygen for growth and cannot grow under anaerobic conditions.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000055> "Aerobe")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000055> "Strict aerobe")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000055> "Obligate aerobe")
+SubClassOf(<https://w3id.org/metpo/000055> <https://w3id.org/metpo/0004>)
+
+# Class: <https://w3id.org/metpo/000056> (Obligate anaerobe)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000056> "A microorganism for which oxygen is toxic and inhibits growth, requiring strictly anaerobic conditions.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000056> "Anaerobe")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000056> "Strict anaerobe")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000056> "Obligate anaerobe")
+SubClassOf(<https://w3id.org/metpo/000056> <https://w3id.org/metpo/0004>)
+
+# Class: <https://w3id.org/metpo/000057> (Oxygenic phototroph)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000057> "An organism that uses light energy for photosynthesis, producing oxygen as a byproduct.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000057> "Oxygenic phototrophic")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000057> "Oxygenic phototroph")
+SubClassOf(<https://w3id.org/metpo/000057> <https://w3id.org/metpo/0004>)
+
+# Class: <https://w3id.org/metpo/000058> (Anoxygenic phototroph)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000058> "An organism that uses light energy for photosynthesis without producing oxygen.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000058> "Anoxygenic phototrophic")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000058> "Anoxygenic phototroph")
+SubClassOf(<https://w3id.org/metpo/000058> <https://w3id.org/metpo/0004>)
+
+# Class: <https://w3id.org/metpo/000059> (Autotroph)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000059> "An organism that produces its own food from inorganic compounds.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000059> "Autotrophic")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000059> "Autotroph")
+SubClassOf(<https://w3id.org/metpo/000059> <https://w3id.org/metpo/0005>)
+
+# Class: <https://w3id.org/metpo/000060> (Photoautotroph)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000060> "An organism that uses light energy to fix carbon dioxide for growth.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000060> "Photoautotrophic")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000060> "Photoautotroph")
+SubClassOf(<https://w3id.org/metpo/000060> <https://w3id.org/metpo/0005>)
+
+# Class: <https://w3id.org/metpo/000061> (Chemoautotroph)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000061> "An organism that uses energy from chemical reactions to fix carbon dioxide for growth.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000061> "Chemoautotrophic")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000061> "Chemoautotroph")
+SubClassOf(<https://w3id.org/metpo/000061> <https://w3id.org/metpo/0005>)
+
+# Class: <https://w3id.org/metpo/000062> (Heterotroph)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000062> "An organism that obtains carbon from organic compounds.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000062> "Heterotrophic")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000062> "Heterotroph")
+SubClassOf(<https://w3id.org/metpo/000062> <https://w3id.org/metpo/0005>)
+
+# Class: <https://w3id.org/metpo/000063> (Photoheterotroph)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000063> "An organism that uses light energy but obtains carbon from organic compounds.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000063> "Photoheterotrophic")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000063> "Photoheterotroph")
+SubClassOf(<https://w3id.org/metpo/000063> <https://w3id.org/metpo/0005>)
+
+# Class: <https://w3id.org/metpo/000064> (Chemoheterotroph)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000064> "An organism that obtains both energy and carbon from organic compounds.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000064> "Chemoheterotrophic")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000064> "Chemoheterotroph")
+SubClassOf(<https://w3id.org/metpo/000064> <https://w3id.org/metpo/0005>)
+
+# Class: <https://w3id.org/metpo/000065> (Lithotroph)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000065> "An organism that obtains energy from the oxidation of inorganic compounds.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000065> "Lithotrophic")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000065> "Lithotroph")
+SubClassOf(<https://w3id.org/metpo/000065> <https://w3id.org/metpo/0005>)
+
+# Class: <https://w3id.org/metpo/000066> (Organotroph)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000066> "An organism that obtains energy from the oxidation of organic compounds.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000066> "Organotrophic")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000066> "Organotroph")
+SubClassOf(<https://w3id.org/metpo/000066> <https://w3id.org/metpo/0005>)
+
+# Class: <https://w3id.org/metpo/000067> (Phototroph)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000067> "An organism that uses light as its primary energy source.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000067> "Phototrophic")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000067> "Phototroph")
+SubClassOf(<https://w3id.org/metpo/000067> <https://w3id.org/metpo/0005>)
+
+# Class: <https://w3id.org/metpo/000068> (Chemotroph)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000068> "An organism that obtains energy from chemical reactions.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000068> "Chemotrophic")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000068> "Chemotroph")
+SubClassOf(<https://w3id.org/metpo/000068> <https://w3id.org/metpo/0005>)
+
+# Class: <https://w3id.org/metpo/000069> (Oligotroph)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000069> "An organism adapted to environments with low nutrient levels.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000069> "Oligotrophic")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000069> "Oligotroph")
+SubClassOf(<https://w3id.org/metpo/000069> <https://w3id.org/metpo/0005>)
+
+# Class: <https://w3id.org/metpo/000070> (Copiotroph)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000070> "An organism adapted to environments with high nutrient levels.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000070> "Copiotrophic")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000070> "Copiotroph")
+SubClassOf(<https://w3id.org/metpo/000070> <https://w3id.org/metpo/0005>)
+
+# Class: <https://w3id.org/metpo/000071> (Lithoautotroph)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000071> "An organism that uses inorganic compounds for both energy and carbon.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000071> "Lithoautotrophic")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000071> "Lithoautotroph")
+SubClassOf(<https://w3id.org/metpo/000071> <https://w3id.org/metpo/0005>)
+
+# Class: <https://w3id.org/metpo/000072> (Mixotroph)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000072> "An organism capable of both autotrophic and heterotrophic nutrition.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000072> "Mixotrophic")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000072> "Mixotroph")
+SubClassOf(<https://w3id.org/metpo/000072> <https://w3id.org/metpo/0005>)
+
+# Class: <https://w3id.org/metpo/000073> (Lithoheterotroph)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000073> "An organism that uses inorganic compounds for energy but organic compounds for carbon.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000073> "Lithoheterotrophic")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000073> "Lithoheterotroph")
+SubClassOf(<https://w3id.org/metpo/000073> <https://w3id.org/metpo/0005>)
+
+# Class: <https://w3id.org/metpo/000074> (Chemoorganoheterotroph)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000074> "An organism that uses organic compounds for both energy and carbon.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000074> "Chemoorganoheterotrophic")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000074> "Chemoorganoheterotroph")
+SubClassOf(<https://w3id.org/metpo/000074> <https://w3id.org/metpo/0005>)
+
+# Class: <https://w3id.org/metpo/000075> (Chemolithoautotroph)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000075> "An organism that uses inorganic compounds for energy and CO2 for carbon.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000075> "Chemolithoautotrophic")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000075> "Chemolithoautotroph")
+SubClassOf(<https://w3id.org/metpo/000075> <https://w3id.org/metpo/0005>)
+
+# Class: <https://w3id.org/metpo/000076> (Methylotroph)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000076> "An organism that can use one-carbon compounds as a source of energy and carbon.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000076> "Methylotrophic")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000076> "Methylotroph")
+SubClassOf(<https://w3id.org/metpo/000076> <https://w3id.org/metpo/0005>)
+
+# Class: <https://w3id.org/metpo/000077> (Methanotroph)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000077> "An organism that uses methane as its sole source of carbon and energy.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000077> "Methanotrophic")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000077> "Methanotroph")
+SubClassOf(<https://w3id.org/metpo/000077> <https://w3id.org/metpo/0005>)
+
+# Class: <https://w3id.org/metpo/000078> (Carboxydotroph)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000078> "An organism that can use carbon monoxide as its sole source of energy and carbon.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000078> "Carbohydrogenotroph")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000078> "Carboxydrophile")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000078> "Carboxydotroph")
+SubClassOf(<https://w3id.org/metpo/000078> <https://w3id.org/metpo/0005>)
+
+# Class: <https://w3id.org/metpo/000079> (Hydrogenotroph)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000079> "An organism that obtains energy from the oxidation of molecular hydrogen.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000079> "Hydrogenophile")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000079> "Hydrogenophilic")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000079> "Hydrogenotroph")
+SubClassOf(<https://w3id.org/metpo/000079> <https://w3id.org/metpo/0005>)
+
+# Class: <https://w3id.org/metpo/000080> (Hydrogen oxidizer)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000080> "An organism that oxidizes hydrogen for energy.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000080> "Hydrogen-oxidizing")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000080> "Hydrogen oxidizer")
+SubClassOf(<https://w3id.org/metpo/000080> <https://w3id.org/metpo/0005>)
+
+# Class: <https://w3id.org/metpo/000081> (Hydrogen producer)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000081> "An organism that produces hydrogen as a byproduct of its metabolism.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000081> "Hydrogen-producing")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000081> "Hydrogen producer")
+SubClassOf(<https://w3id.org/metpo/000081> <https://w3id.org/metpo/0005>)
+
+# Class: <https://w3id.org/metpo/000082> (Nitrogen fixer)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000082> "An organism capable of converting atmospheric nitrogen into ammonia.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000082> "Nitrogen-fixing")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000082> "Nitrogen fixer")
+SubClassOf(<https://w3id.org/metpo/000082> <https://w3id.org/metpo/0005>)
+
+# Class: <https://w3id.org/metpo/000083> (Methanogen)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000083> "An organism that produces methane as a byproduct of its metabolism.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000083> "Methanogenic")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000083> "Methanogen")
+SubClassOf(<https://w3id.org/metpo/000083> <https://w3id.org/metpo/0005>)
+
+# Class: <https://w3id.org/metpo/000084> (Sulfate reducer)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000084> "An organism that uses sulfate as an electron acceptor in anaerobic respiration.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000084> "Sulfate-reducing")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000084> "Sulfate reducer")
+SubClassOf(<https://w3id.org/metpo/000084> <https://w3id.org/metpo/0005>)
+
+# Class: <https://w3id.org/metpo/000085> (Sulfur oxidizer)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000085> "An organism that oxidizes sulfur compounds for energy.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000085> "Sulfur-oxidizing")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000085> "Sulfur oxidizer")
+SubClassOf(<https://w3id.org/metpo/000085> <https://w3id.org/metpo/0005>)
+
+# Class: <https://w3id.org/metpo/000086> (Denitrifier)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000086> "An organism that reduces nitrate to nitrogen gas in anaerobic respiration.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000086> "Denitrifying")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000086> "Denitrifier")
+SubClassOf(<https://w3id.org/metpo/000086> <https://w3id.org/metpo/0005>)
+
+# Class: <https://w3id.org/metpo/000087> (Capnophile)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000087> "An organism that requires or grows better in the presence of elevated levels of carbon dioxide.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000087> "Capnophilic")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000087> "Capnophile")
+SubClassOf(<https://w3id.org/metpo/000087> <https://w3id.org/metpo/0005>)
+
+# Class: <https://w3id.org/metpo/000088> (Motile)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000088> "A microorganism capable of self-propelled movement.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000088> "Motile")
+SubClassOf(<https://w3id.org/metpo/000088> <https://w3id.org/metpo/0006>)
+
+# Class: <https://w3id.org/metpo/000089> (Non-motile)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000089> "A microorganism incapable of self-propelled movement.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000089> "Non-motile")
+SubClassOf(<https://w3id.org/metpo/000089> <https://w3id.org/metpo/0006>)
+
+# Class: <https://w3id.org/metpo/000090> (Flagellated)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000090> "A motile microorganism that moves using one or more flagella.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000090> "Flagellated")
+SubClassOf(<https://w3id.org/metpo/000090> <https://w3id.org/metpo/0006>)
+
+# Class: <https://w3id.org/metpo/000091> (Peritrichous)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000091> "A flagellated microorganism with flagella distributed over the entire cell surface.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000091> "Peritrichous")
+SubClassOf(<https://w3id.org/metpo/000091> <https://w3id.org/metpo/0006>)
+
+# Class: <https://w3id.org/metpo/000092> (Lophotrichous)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000092> "A flagellated microorganism with a tuft of flagella at one or both poles of the cell.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000092> "Lophotrichous")
+SubClassOf(<https://w3id.org/metpo/000092> <https://w3id.org/metpo/0006>)
+
+# Class: <https://w3id.org/metpo/000093> (Monotrichous)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000093> "A flagellated microorganism with a single flagellum at one pole of the cell.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000093> "Monotrichous")
+SubClassOf(<https://w3id.org/metpo/000093> <https://w3id.org/metpo/0006>)
+
+# Class: <https://w3id.org/metpo/000094> (Ciliated)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000094> "A motile microorganism that moves using numerous short, hair-like structures called cilia.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000094> "Ciliated")
+SubClassOf(<https://w3id.org/metpo/000094> <https://w3id.org/metpo/0006>)
+
+# Class: <https://w3id.org/metpo/000095> (Gliding)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000095> "A motile microorganism that moves by sliding over surfaces without the use of flagella or cilia.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000095> "Gliding")
+SubClassOf(<https://w3id.org/metpo/000095> <https://w3id.org/metpo/0006>)
+
+# Class: <https://w3id.org/metpo/000096> (Twitching)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000096> "A motile microorganism that moves using type IV pili in a jerky, start-stop motion.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000096> "Twitching")
+SubClassOf(<https://w3id.org/metpo/000096> <https://w3id.org/metpo/0006>)
+
+# Class: <https://w3id.org/metpo/000097> (Sliding)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000097> "A motile microorganism that moves passively over surfaces due to the production of extracellular substances.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000097> "Sliding")
+SubClassOf(<https://w3id.org/metpo/000097> <https://w3id.org/metpo/0006>)
+
+# Class: <https://w3id.org/metpo/000098> (Swarming)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000098> "A motile microorganism capable of rapid, coordinated movement across surfaces in groups.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000098> "Swarming")
+SubClassOf(<https://w3id.org/metpo/000098> <https://w3id.org/metpo/0006>)
+
+# Class: <https://w3id.org/metpo/000099> (Endospores)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000099> "A dormant, resistant structure formed within a bacterial cell.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000099> "Endospores")
+SubClassOf(<https://w3id.org/metpo/000099> <https://w3id.org/metpo/0007>)
+
+# Class: <https://w3id.org/metpo/000100> (Exospores)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000100> "A spore formed outside the parent cell.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000100> "Exospores")
+SubClassOf(<https://w3id.org/metpo/000100> <https://w3id.org/metpo/0007>)
+
+# Class: <https://w3id.org/metpo/000101> (Myxospores)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000101> "A resting spore produced by myxobacteria during unfavorable conditions.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000101> "Myxospores")
+SubClassOf(<https://w3id.org/metpo/000101> <https://w3id.org/metpo/0007>)
+
+# Class: <https://w3id.org/metpo/000102> (Arthrospores)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000102> "A type of spore formed by the fragmentation of fungal hyphae.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000102> "Arthrospores")
+SubClassOf(<https://w3id.org/metpo/000102> <https://w3id.org/metpo/0007>)
+
+# Class: <https://w3id.org/metpo/000103> (Conidia)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000103> "Asexual spores produced by fungi, typically at the tips of specialized hyphae.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000103> "Conidia")
+SubClassOf(<https://w3id.org/metpo/000103> <https://w3id.org/metpo/0007>)
+
+# Class: <https://w3id.org/metpo/000104> (Sporangiospores)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000104> "Asexual spores produced within a sporangium.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000104> "Sporangiospores")
+SubClassOf(<https://w3id.org/metpo/000104> <https://w3id.org/metpo/0007>)
+
+# Class: <https://w3id.org/metpo/000105> (Zygospores)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000105> "A thick-walled resting spore resulting from the fusion of two compatible hyphae.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000105> "Zygospores")
+SubClassOf(<https://w3id.org/metpo/000105> <https://w3id.org/metpo/0007>)
+
+# Class: <https://w3id.org/metpo/000106> (Akinetes)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000106> "A large, thick-walled dormant cell formed by some cyanobacteria.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000106> "Akinetes")
+SubClassOf(<https://w3id.org/metpo/000106> <https://w3id.org/metpo/0007>)
+
+# Class: <https://w3id.org/metpo/000107> (Chlamydospores)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000107> "A thick-walled resting spore formed from a cell of a fungal hypha.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000107> "Chlamydospores")
+SubClassOf(<https://w3id.org/metpo/000107> <https://w3id.org/metpo/0007>)
+
+# Class: <https://w3id.org/metpo/000108> (Sporocysts)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000108> "A protective cyst-like structure containing sporozoites in some protists.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000108> "Sporocysts")
+SubClassOf(<https://w3id.org/metpo/000108> <https://w3id.org/metpo/0007>)
+
+# Class: <https://w3id.org/metpo/000109> (Hypnospores)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000109> "A dormant stage of some dinoflagellates, formed under unfavorable conditions.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000109> "Hypnospores")
+SubClassOf(<https://w3id.org/metpo/000109> <https://w3id.org/metpo/0007>)
+
+# Class: <https://w3id.org/metpo/000110> (Gemmae)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000110> "Small, multicellular propagules produced by some bryophytes for asexual reproduction.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000110> "Gemmae")
+SubClassOf(<https://w3id.org/metpo/000110> <https://w3id.org/metpo/0007>)
+
+# Class: <https://w3id.org/metpo/000111> (Oospores)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000111> "A thick-walled sexual spore produced by oomycetes.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000111> "Oospores")
+SubClassOf(<https://w3id.org/metpo/000111> <https://w3id.org/metpo/0007>)
+
+# Class: <https://w3id.org/metpo/000112> (Azygospores)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000112> "A spore formed without fusion of gametes, typically in zygomycetes.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000112> "Azygospores")
+SubClassOf(<https://w3id.org/metpo/000112> <https://w3id.org/metpo/0007>)
+
+# Class: <https://w3id.org/metpo/000113> (Cysts)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000113> "A resistant, dormant stage formed by some protists and bacteria.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000113> "Cysts")
+SubClassOf(<https://w3id.org/metpo/000113> <https://w3id.org/metpo/0007>)
+
+# Class: <https://w3id.org/metpo/000114> (Ascospores)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000114> "Sexual spores produced in an ascus, typically by ascomycete fungi.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000114> "Ascospores")
+SubClassOf(<https://w3id.org/metpo/000114> <https://w3id.org/metpo/0007>)
+
+# Class: <https://w3id.org/metpo/000115> (Basidiospores)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000115> "Sexual spores produced on a basidium, typically by basidiomycete fungi.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000115> "Basidiospores")
+SubClassOf(<https://w3id.org/metpo/000115> <https://w3id.org/metpo/0007>)
+
+# Class: <https://w3id.org/metpo/000116> (Aleuriospores)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000116> "Asexual spores formed by the disarticulation of vegetative hyphae.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000116> "Aleuriospores")
+SubClassOf(<https://w3id.org/metpo/000116> <https://w3id.org/metpo/0007>)
+
+# Class: <https://w3id.org/metpo/000117> (Stylospores)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000117> "Asexual spores produced on a stalk-like structure called a sterigma.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000117> "Stylospores")
+SubClassOf(<https://w3id.org/metpo/000117> <https://w3id.org/metpo/0007>)
+
+# Class: <https://w3id.org/metpo/000118> (Sclerotia)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000118> "A compact mass of hardened fungal mycelium containing food reserves.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000118> "Sclerotia")
+SubClassOf(<https://w3id.org/metpo/000118> <https://w3id.org/metpo/0007>)
+
+# Class: <https://w3id.org/metpo/000119> (Zoospores)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000119> "Motile spores with flagella, typically produced by algae and some fungi.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000119> "Zoospores")
+SubClassOf(<https://w3id.org/metpo/000119> <https://w3id.org/metpo/0007>)
+
+# Class: <https://w3id.org/metpo/000120> (Teliospores)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000120> "A type of resting spore produced by rust and smut fungi.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000120> "Teliospores")
+SubClassOf(<https://w3id.org/metpo/000120> <https://w3id.org/metpo/0007>)
+
+# Class: <https://w3id.org/metpo/000121> (Urediniospores)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000121> "Asexual spores produced by rust fungi during their life cycle.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000121> "Urediniospores")
+SubClassOf(<https://w3id.org/metpo/000121> <https://w3id.org/metpo/0007>)
+
+# Class: <https://w3id.org/metpo/000122> (Pycnidiospores)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000122> "Asexual spores produced within a pycnidium, a flask-shaped fruiting body.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000122> "Pycnidiospores")
+SubClassOf(<https://w3id.org/metpo/000122> <https://w3id.org/metpo/0007>)
+
+# Class: <https://w3id.org/metpo/000123> (Acriospores)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000123> "Asexual spores produced in chains at the tips of conidiophores.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000123> "Acriospores")
+SubClassOf(<https://w3id.org/metpo/000123> <https://w3id.org/metpo/0007>)
+
+# Class: <https://w3id.org/metpo/000124> (Aplanospores)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000124> "Non-motile spores that lack flagella, typically produced by algae.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000124> "Aplanospores")
+SubClassOf(<https://w3id.org/metpo/000124> <https://w3id.org/metpo/0007>)
+
+# Class: <https://w3id.org/metpo/000125> (Statismospores)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000125> "Non-motile spores that lack the ability to swim.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000125> "Statismospores")
+SubClassOf(<https://w3id.org/metpo/000125> <https://w3id.org/metpo/0007>)
+
+# Class: <https://w3id.org/metpo/000126> (Barotolerant)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000126> "An organism that can survive high pressure but does not require it for optimal growth.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000126> "Barotolerant")
+SubClassOf(<https://w3id.org/metpo/000126> <https://w3id.org/metpo/0008>)
+
+# Class: <https://w3id.org/metpo/000127> (Piezophile)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000127> "An organism that grows optimally under high pressure conditions.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000127> "Barophile")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000127> "Barophilic")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000127> "Piezophilic")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000127> "Piezophile")
+SubClassOf(<https://w3id.org/metpo/000127> <https://w3id.org/metpo/0008>)
+
+# Class: <https://w3id.org/metpo/000128> (Piezotolerant)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000128> "An organism that can tolerate high pressure but grows optimally at normal atmospheric pressure.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000128> "Piezotolerant")
+SubClassOf(<https://w3id.org/metpo/000128> <https://w3id.org/metpo/0008>)
+
+# Class: <https://w3id.org/metpo/000129> (Piezosensitive)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000129> "An organism that is adversely affected by high pressure conditions.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000129> "Piezosensitive")
+SubClassOf(<https://w3id.org/metpo/000129> <https://w3id.org/metpo/0008>)
+
+# Class: <https://w3id.org/metpo/000130> (Obligate barophile)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000130> "An organism that requires high pressure for growth and cannot grow at atmospheric pressure.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000130> "Obligate piezophile")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000130> "Obligate barophile")
+SubClassOf(<https://w3id.org/metpo/000130> <https://w3id.org/metpo/0008>)
+
+# Class: <https://w3id.org/metpo/000131> (Facultative barophile)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000131> "An organism that grows optimally under high pressure but can also grow at atmospheric pressure.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000131> "Facultative piezophile")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000131> "Facultative barophile")
+SubClassOf(<https://w3id.org/metpo/000131> <https://w3id.org/metpo/0008>)
+
+# Class: <https://w3id.org/metpo/000132> (Hyperbarophile)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000132> "An organism adapted to extremely high pressure environments.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000132> "Hyperbarophilic")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000132> "Hyperbarophile")
+SubClassOf(<https://w3id.org/metpo/000132> <https://w3id.org/metpo/0008>)
+
+# Class: <https://w3id.org/metpo/000133> (Hypobarophile)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000133> "An organism adapted to low pressure environments.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000133> "Hypobarophilic")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000133> "Hypobarophile")
+SubClassOf(<https://w3id.org/metpo/000133> <https://w3id.org/metpo/0008>)
+
+# Class: <https://w3id.org/metpo/000134> (Atmospheric pressure-adapted)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000134> "An organism adapted to grow at standard atmospheric pressure.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000134> "Atmospheric pressure-adapted")
+SubClassOf(<https://w3id.org/metpo/000134> <https://w3id.org/metpo/0008>)
+
+# Class: <https://w3id.org/metpo/000135> (Moderate piezophile)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000135> "An organism that grows optimally at moderately high pressures.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000135> "Moderate barophile")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000135> "Moderate piezophile")
+SubClassOf(<https://w3id.org/metpo/000135> <https://w3id.org/metpo/0008>)
+
+# Class: <https://w3id.org/metpo/000136> (Extreme piezophile)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000136> "An organism that grows optimally at very high pressures.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000136> "Extreme barophile")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000136> "Extreme piezophile")
+SubClassOf(<https://w3id.org/metpo/000136> <https://w3id.org/metpo/0008>)
+
+# Class: <https://w3id.org/metpo/000137> (Stenopiezic)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000137> "An organism that can only grow within a narrow range of pressures.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000137> "Stenobaric")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000137> "Stenopiezic")
+SubClassOf(<https://w3id.org/metpo/000137> <https://w3id.org/metpo/0008>)
+
+# Class: <https://w3id.org/metpo/000138> (Eurypiezic)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000138> "An organism that can grow across a wide range of pressures.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000138> "Eurybaric")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000138> "Eurypiezic")
+SubClassOf(<https://w3id.org/metpo/000138> <https://w3id.org/metpo/0008>)
+
+# Class: <https://w3id.org/metpo/000139> (Pressure-sensitive)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000139> "An organism whose growth or metabolism is negatively affected by changes in pressure.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000139> "Pressure-sensitive")
+SubClassOf(<https://w3id.org/metpo/000139> <https://w3id.org/metpo/0008>)
+
+# Class: <https://w3id.org/metpo/000140> (Pressure-resistant)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000140> "An organism that can withstand significant changes in pressure without adverse effects.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000140> "Pressure-resistant")
+SubClassOf(<https://w3id.org/metpo/000140> <https://w3id.org/metpo/0008>)
+
+# Class: <https://w3id.org/metpo/000141> (Pressure-adapted)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000141> "An organism that has evolved to thrive under specific pressure conditions.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000141> "Pressure-adapted")
+SubClassOf(<https://w3id.org/metpo/000141> <https://w3id.org/metpo/0008>)
+
+# Class: <https://w3id.org/metpo/000142> (Piezo-acidophile)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000142> "An organism that grows optimally under both high pressure and acidic conditions.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000142> "Piezo-acidophilic")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000142> "Piezo-acidophile")
+SubClassOf(<https://w3id.org/metpo/000142> <https://w3id.org/metpo/0008>)
+
+# Class: <https://w3id.org/metpo/000143> (Piezo-alkaliphile)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000143> "An organism that grows optimally under both high pressure and alkaline conditions.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000143> "Piezo-alkaliphilic")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000143> "Piezo-alkaliphile")
+SubClassOf(<https://w3id.org/metpo/000143> <https://w3id.org/metpo/0008>)
+
+# Class: <https://w3id.org/metpo/000144> (Piezo-halophile)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000144> "An organism that grows optimally under both high pressure and high salinity conditions.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000144> "Piezo-halophilic")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000144> "Piezo-halophile")
+SubClassOf(<https://w3id.org/metpo/000144> <https://w3id.org/metpo/0008>)
+
+# Class: <https://w3id.org/metpo/000145> (Piezo-psychrophile)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000145> "An organism that grows optimally under both high pressure and low temperature conditions.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000145> "Piezo-psychrophilic")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000145> "Piezo-psychrophile")
+SubClassOf(<https://w3id.org/metpo/000145> <https://w3id.org/metpo/0008>)
+
+# Class: <https://w3id.org/metpo/000146> (Piezo-thermophile)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000146> "An organism that grows optimally under both high pressure and high temperature conditions.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000146> "Piezo-thermophilic")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000146> "Piezo-thermophile")
+SubClassOf(<https://w3id.org/metpo/000146> <https://w3id.org/metpo/0008>)
+
+# Class: <https://w3id.org/metpo/000147> (Piezo-lithoautotrophe)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000147> "An organism that uses inorganic compounds for energy and carbon under high pressure conditions.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000147> "Piezo-lithoautotrophic")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000147> "Piezo-lithoautotrophe")
+SubClassOf(<https://w3id.org/metpo/000147> <https://w3id.org/metpo/0008>)
+
+# Class: <https://w3id.org/metpo/000148> (Piezo-chemoheterotroph)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000148> "An organism that uses organic compounds for energy and carbon under high pressure conditions.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000148> "Piezo-chemoheterotrophic")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000148> "Piezo-chemoheterotroph")
+SubClassOf(<https://w3id.org/metpo/000148> <https://w3id.org/metpo/0008>)
+
+# Class: <https://w3id.org/metpo/000149> (Piezo-oligotroph)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000149> "An organism adapted to low-nutrient environments under high pressure conditions.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000149> "Piezo-oligotrophic")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000149> "Piezo-oligotroph")
+SubClassOf(<https://w3id.org/metpo/000149> <https://w3id.org/metpo/0008>)
+
+# Class: <https://w3id.org/metpo/000150> (Piezo-endolithic)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000150> "An organism that lives within rock or mineral substrates under high pressure conditions.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000150> "Piezo-endolithic")
+SubClassOf(<https://w3id.org/metpo/000150> <https://w3id.org/metpo/0008>)
+
+# Class: <https://w3id.org/metpo/000151> (Piezo-tolerant)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000151> "An organism that can tolerate a range of pressure conditions but does not necessarily require high pressure for optimal growth.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000151> "Piezo-tolerant")
+SubClassOf(<https://w3id.org/metpo/000151> <https://w3id.org/metpo/0008>)
+
+# Class: <https://w3id.org/metpo/000152> (GC% low ( < 42.65))
+
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000152> "gc:low")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000152> "GC% low ( < 42.65)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000152> "GC_<=42.65")
+SubClassOf(<https://w3id.org/metpo/000152> <https://w3id.org/metpo/0009>)
+
+# Class: <https://w3id.org/metpo/000153> (GC% mid1 (42.65 - 57))
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000153> "GC% mid1 (42.65 - 57)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000153> "GC_42.65_57.0")
+SubClassOf(<https://w3id.org/metpo/000153> <https://w3id.org/metpo/0009>)
+
+# Class: <https://w3id.org/metpo/000154> (GC% mid2 (57 - 66.3))
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000154> "GC% mid2 (57 - 66.3)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000154> "GC_57.0_66.3")
+SubClassOf(<https://w3id.org/metpo/000154> <https://w3id.org/metpo/0009>)
+
+# Class: <https://w3id.org/metpo/000155> (GC% high ( > 66.3))
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000155> "GC% high ( > 66.3)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000155> "GC_>66.3")
+SubClassOf(<https://w3id.org/metpo/000155> <https://w3id.org/metpo/0009>)
+
+# Class: <https://w3id.org/metpo/000156> (Cell width uM very low (< 0.5))
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000156> "Cell width uM very low (< 0.5)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000156> "W_<=0.5")
+SubClassOf(<https://w3id.org/metpo/000156> <https://w3id.org/metpo/0010>)
+
+# Class: <https://w3id.org/metpo/000157> (Cell width uM low (0.5 - 0.65))
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000157> "Cell width uM low (0.5 - 0.65)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000157> "W_0.5_0.65")
+SubClassOf(<https://w3id.org/metpo/000157> <https://w3id.org/metpo/0010>)
+
+# Class: <https://w3id.org/metpo/000158> (Cell width uM mid (0.65 - 0.9))
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000158> "Cell width uM mid (0.65 - 0.9)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000158> "W_0.65_0.9")
+SubClassOf(<https://w3id.org/metpo/000158> <https://w3id.org/metpo/0010>)
+
+# Class: <https://w3id.org/metpo/000159> (Cell width uM high (> 0.9))
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000159> "Cell width uM high (> 0.9)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000159> "W_>0.9")
+SubClassOf(<https://w3id.org/metpo/000159> <https://w3id.org/metpo/0010>)
+
+# Class: <https://w3id.org/metpo/000160> (Cell length uM very low (<= 1.3))
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000160> "Cell length uM very low (<= 1.3)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000160> "L_<=1.3")
+SubClassOf(<https://w3id.org/metpo/000160> <https://w3id.org/metpo/0011>)
+
+# Class: <https://w3id.org/metpo/000161> (Cell length uM low (1.3 - 2))
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000161> "Cell length uM low (1.3 - 2)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000161> "L_1.3_2")
+SubClassOf(<https://w3id.org/metpo/000161> <https://w3id.org/metpo/0011>)
+
+# Class: <https://w3id.org/metpo/000162> (Cell length uM mid (2 - 3))
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000162> "Cell length uM mid (2 - 3)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000162> "L_2_3")
+SubClassOf(<https://w3id.org/metpo/000162> <https://w3id.org/metpo/0011>)
+
+# Class: <https://w3id.org/metpo/000163> (Cell length uM high (> 3))
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000163> "Cell length uM high (> 3)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000163> "L_>3")
+SubClassOf(<https://w3id.org/metpo/000163> <https://w3id.org/metpo/0011>)
+
+# Class: <https://w3id.org/metpo/000164> (Temperature Optimum C very low (<= 10))
+
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000164> "Psychrophile")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000164> "Temperature Optimum C very low (<= 10)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000164> "TO_<=10")
+SubClassOf(<https://w3id.org/metpo/000164> <https://w3id.org/metpo/0012>)
+
+# Class: <https://w3id.org/metpo/000165> (Temperature Optimum C low (10 - 22))
+
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000165> "Psychrophile")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000165> "Psychrotolerant")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000165> "Temperature Optimum C low (10 - 22)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000165> "TO_10_to_22")
+SubClassOf(<https://w3id.org/metpo/000165> <https://w3id.org/metpo/0012>)
+
+# Class: <https://w3id.org/metpo/000166> (Temperature Optimum C mid1 (22 - 27))
+
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000166> "Mesophilie")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000166> "Temperature Optimum C mid1 (22 - 27)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000166> "TO_22_to_27")
+SubClassOf(<https://w3id.org/metpo/000166> <https://w3id.org/metpo/0012>)
+
+# Class: <https://w3id.org/metpo/000167> (Temperature Optimum C mid2 (27 - 30))
+
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000167> "Mesophilie")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000167> "Temperature Optimum C mid2 (27 - 30)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000167> "TO_27_to_30")
+SubClassOf(<https://w3id.org/metpo/000167> <https://w3id.org/metpo/0012>)
+
+# Class: <https://w3id.org/metpo/000168> (Temperature Optimum C mid3 (30 - 34))
+
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000168> "Mesophilie")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000168> "Temperature Optimum C mid3 (30 - 34)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000168> "TO_30_to_34")
+SubClassOf(<https://w3id.org/metpo/000168> <https://w3id.org/metpo/0012>)
+
+# Class: <https://w3id.org/metpo/000169> (Temperature Optimum C mid4 (34 - 40))
+
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000169> "Mesophilie")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000169> "Temperature Optimum C mid4 (34 - 40)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000169> "TO_34_to_40")
+SubClassOf(<https://w3id.org/metpo/000169> <https://w3id.org/metpo/0012>)
+
+# Class: <https://w3id.org/metpo/000170> (Temperature Optimum C high (> 40))
+
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000170> "Thermophile")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000170> "Temperature Optimum C high (> 40)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000170> "TO_>40")
+SubClassOf(<https://w3id.org/metpo/000170> <https://w3id.org/metpo/0012>)
+
+# Class: <https://w3id.org/metpo/000171> (Temperature Range C very low (<= 10))
+
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000171> "Psychrophile")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000171> "Temperature Range C very low (<= 10)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000171> "TR_<=10")
+SubClassOf(<https://w3id.org/metpo/000171> <https://w3id.org/metpo/0013>)
+
+# Class: <https://w3id.org/metpo/000172> (Temperature Range C low (10 - 22))
+
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000172> "Psychrophile")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000172> "Psychrotolerant")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000172> "Temperature Range C low (10 - 22)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000172> "TR_10_to_22")
+SubClassOf(<https://w3id.org/metpo/000172> <https://w3id.org/metpo/0013>)
+
+# Class: <https://w3id.org/metpo/000173> (Temperature Range C mid1 (22 - 27))
+
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000173> "Mesophilie")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000173> "Temperature Range C mid1 (22 - 27)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000173> "TR_22_to_27")
+SubClassOf(<https://w3id.org/metpo/000173> <https://w3id.org/metpo/0013>)
+
+# Class: <https://w3id.org/metpo/000174> (Temperature Range C mid2 (27 - 30))
+
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000174> "Mesophilie")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000174> "Temperature Range C mid2 (27 - 30)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000174> "TR_27_to_30")
+SubClassOf(<https://w3id.org/metpo/000174> <https://w3id.org/metpo/0013>)
+
+# Class: <https://w3id.org/metpo/000175> (Temperature Range C mid3 (30 - 34))
+
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000175> "Mesophilie")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000175> "Temperature Range C mid3 (30 - 34)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000175> "TR_30_to_34")
+SubClassOf(<https://w3id.org/metpo/000175> <https://w3id.org/metpo/0013>)
+
+# Class: <https://w3id.org/metpo/000176> (Temperature Range C mid4 (34 - 40))
+
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000176> "Mesophilie")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000176> "Temperature Range C mid4 (34 - 40)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000176> "TR_34_to_40")
+SubClassOf(<https://w3id.org/metpo/000176> <https://w3id.org/metpo/0013>)
+
+# Class: <https://w3id.org/metpo/000177> (Temperature Range C high (> 40))
+
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000177> "Thermophile")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000177> "Temperature Range C high (> 40)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000177> "TR_>40")
+SubClassOf(<https://w3id.org/metpo/000177> <https://w3id.org/metpo/0013>)
+
+# Class: <https://w3id.org/metpo/000178> (pH Optimum low (0 - 6))
+
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000178> "Acid Tolerant")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000178> "Acidophile")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000178> "Extreme Acidophile")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000178> "Facultative acidophile")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000178> "Obligative acidophile")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000178> "pH Optimum low (0 - 6)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000178> "pHO_0_to_6")
+SubClassOf(<https://w3id.org/metpo/000178> <https://w3id.org/metpo/0014>)
+
+# Class: <https://w3id.org/metpo/000179> (pH Optimum mid1 (6 - 7))
+
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000179> "Alkali Tolerant")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000179> "Neutrophile")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000179> "pH Optimum mid1 (6 - 7)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000179> "pHO_6_to_7")
+SubClassOf(<https://w3id.org/metpo/000179> <https://w3id.org/metpo/0014>)
+
+# Class: <https://w3id.org/metpo/000180> (pH Optimum mid2 (7 - 8))
+
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000180> "Alkali Tolerant")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000180> "Alkaliphile")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000180> "Neutrophile")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000180> "pH Optimum mid2 (7 - 8)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000180> "pHO_7_to_8")
+SubClassOf(<https://w3id.org/metpo/000180> <https://w3id.org/metpo/0014>)
+
+# Class: <https://w3id.org/metpo/000181> (pH Optimum high (8 - 14))
+
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000181> "Alkali Tolerant")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000181> "Alkaliphile")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000181> "Extreme Alkaliphile")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000181> "pH Optimum high (8 - 14)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000181> "pHO_8_to_14")
+SubClassOf(<https://w3id.org/metpo/000181> <https://w3id.org/metpo/0014>)
+
+# Class: <https://w3id.org/metpo/000182> (pH Range very low (0 - 4))
+
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000182> "Acid Tolerant")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000182> "Acidophile")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000182> "Extreme Acidophile")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000182> "Facultative acidophile")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000182> "Obligative acidophile")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000182> "pH Range very low (0 - 4)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000182> "pHR_0_to_4")
+SubClassOf(<https://w3id.org/metpo/000182> <https://w3id.org/metpo/0015>)
+
+# Class: <https://w3id.org/metpo/000183> (pH Range low (4 - 6))
+
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000183> "Acid Tolerant")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000183> "Acidophile")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000183> "Facultative acidophile")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000183> "Obligative acidophile")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000183> "pH Range low (4 - 6)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000183> "pHR_4_to_6")
+SubClassOf(<https://w3id.org/metpo/000183> <https://w3id.org/metpo/0015>)
+
+# Class: <https://w3id.org/metpo/000184> (pH Range mid1 (6 - 7))
+
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000184> "Alkali Tolerant")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000184> "Facultative acidophile")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000184> "Neutrophile")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000184> "pH Range mid1 (6 - 7)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000184> "pHR_6_to_7")
+SubClassOf(<https://w3id.org/metpo/000184> <https://w3id.org/metpo/0015>)
+
+# Class: <https://w3id.org/metpo/000185> (pH Range mid2 (7 - 8))
+
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000185> "Alkali Tolerant")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000185> "Alkaliphile")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000185> "Facultative acidophile")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000185> "Neutrophile")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000185> "pH Range mid2 (7 - 8)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000185> "pHR_7_to_8")
+SubClassOf(<https://w3id.org/metpo/000185> <https://w3id.org/metpo/0015>)
+
+# Class: <https://w3id.org/metpo/000186> (pH Range mid3 (8 - 10))
+
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000186> "Alkali Tolerant")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000186> "Alkaliphile")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000186> "Extreme Alkaliphile")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000186> "Facultative acidophile")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000186> "pH Range mid3 (8 - 10)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000186> "pHR_8_to_10")
+SubClassOf(<https://w3id.org/metpo/000186> <https://w3id.org/metpo/0015>)
+
+# Class: <https://w3id.org/metpo/000187> (pH Range high (10 - 14))
+
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000187> "Alkali Tolerant")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000187> "Alkaliphile")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000187> "Extreme Alkaliphile")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000187> "pH Range high (10 - 14)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000187> "10_to_14")
+SubClassOf(<https://w3id.org/metpo/000187> <https://w3id.org/metpo/0015>)
+
+# Class: <https://w3id.org/metpo/000188> (% NaCl Optimum low (<= 1))
+
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000188> "Halotolerant")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000188> "Non-halophile")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000188> "% NaCl Optimum low (<= 1)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000188> "NaR_<=1")
+SubClassOf(<https://w3id.org/metpo/000188> <https://w3id.org/metpo/0016>)
+
+# Class: <https://w3id.org/metpo/000189> (% NaCl Optimum mid1 (1 - 3))
+
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000189> "Halotolerant")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000189> "Slight halophile")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000189> "% NaCl Optimum mid1 (1 - 3)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000189> "NaR_1_to_3")
+SubClassOf(<https://w3id.org/metpo/000189> <https://w3id.org/metpo/0016>)
+
+# Class: <https://w3id.org/metpo/000190> (% NaCl Optimum mid2 (3 - 8))
+
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000190> "Halotolerant")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000190> "Moderate halophile")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000190> "% NaCl Optimum mid2 (3 - 8)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000190> "NaR_3_to_8")
+SubClassOf(<https://w3id.org/metpo/000190> <https://w3id.org/metpo/0016>)
+
+# Class: <https://w3id.org/metpo/000191> (% NaCl Optimum high (> 8))
+
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000191> "Extreme halophile")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000191> "% NaCl Optimum high (> 8)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000191> "NaR_>8")
+SubClassOf(<https://w3id.org/metpo/000191> <https://w3id.org/metpo/0016>)
+
+# Class: <https://w3id.org/metpo/000192> (% NaCl Range low (<= 1))
+
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000192> "Halotolerant")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000192> "Non-halophile")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000192> "% NaCl Range low (<= 1)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000192> "NaO_<=1")
+SubClassOf(<https://w3id.org/metpo/000192> <https://w3id.org/metpo/0017>)
+
+# Class: <https://w3id.org/metpo/000193> (% NaCl Range mid1 (1 - 3))
+
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000193> "Halotolerant")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000193> "Slight halophile")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000193> "% NaCl Range mid1 (1 - 3)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000193> "NaO_1_to_3")
+SubClassOf(<https://w3id.org/metpo/000193> <https://w3id.org/metpo/0017>)
+
+# Class: <https://w3id.org/metpo/000194> (% NaCl Range mid2 (3 - 8))
+
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000194> "Halotolerant")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000194> "Moderate halophile")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000194> "% NaCl Range mid2 (3 - 8)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000194> "NaO_3_to_8")
+SubClassOf(<https://w3id.org/metpo/000194> <https://w3id.org/metpo/0017>)
+
+# Class: <https://w3id.org/metpo/000195> (% NaCl Range high (> 8))
+
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/000195> "Extreme halophile")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000195> "% NaCl Range high (> 8)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000195> "NaO_>8")
+SubClassOf(<https://w3id.org/metpo/000195> <https://w3id.org/metpo/0017>)
+
+# Class: <https://w3id.org/metpo/000196> (pH delta very low (<= 1))
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000196> "pH delta very low (<= 1)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000196> "pHd_<=1")
+SubClassOf(<https://w3id.org/metpo/000196> <https://w3id.org/metpo/0018>)
+
+# Class: <https://w3id.org/metpo/000197> (pH delta low (1 - 2))
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000197> "pH delta low (1 - 2)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000197> "pHd_1_2")
+SubClassOf(<https://w3id.org/metpo/000197> <https://w3id.org/metpo/0018>)
+
+# Class: <https://w3id.org/metpo/000198> (pH delta mid1 (2 - 3))
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000198> "pH delta mid1 (2 - 3)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000198> "pHd_2_3")
+SubClassOf(<https://w3id.org/metpo/000198> <https://w3id.org/metpo/0018>)
+
+# Class: <https://w3id.org/metpo/000199> (pH delta mid2 (3 - 4))
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000199> "pH delta mid2 (3 - 4)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000199> "pHd_3_4")
+SubClassOf(<https://w3id.org/metpo/000199> <https://w3id.org/metpo/0018>)
+
+# Class: <https://w3id.org/metpo/000200> (pH delta mid3 (4 - 5))
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000200> "pH delta mid3 (4 - 5)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000200> "pHd_4_5")
+SubClassOf(<https://w3id.org/metpo/000200> <https://w3id.org/metpo/0018>)
+
+# Class: <https://w3id.org/metpo/000201> (pH delta high (5 - 9))
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000201> "pH delta high (5 - 9)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000201> "pHd_5_9")
+SubClassOf(<https://w3id.org/metpo/000201> <https://w3id.org/metpo/0018>)
+
+# Class: <https://w3id.org/metpo/000202> (% NaCl delta low (<= 1))
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000202> "% NaCl delta low (<= 1)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000202> "Nad_<=1")
+SubClassOf(<https://w3id.org/metpo/000202> <https://w3id.org/metpo/0019>)
+
+# Class: <https://w3id.org/metpo/000203> (% NaCl delta mid2 (1 - 3))
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000203> "% NaCl delta mid2 (1 - 3)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000203> "Nad_1_3")
+SubClassOf(<https://w3id.org/metpo/000203> <https://w3id.org/metpo/0019>)
+
+# Class: <https://w3id.org/metpo/000204> (% NaCl delta mid2 (3 - 8))
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000204> "% NaCl delta mid2 (3 - 8)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000204> "Nad_3_8")
+SubClassOf(<https://w3id.org/metpo/000204> <https://w3id.org/metpo/0019>)
+
+# Class: <https://w3id.org/metpo/000205> (% NaCl delta high (>= 8))
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000205> "% NaCl delta high (>= 8)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000205> "Nad_>8")
+SubClassOf(<https://w3id.org/metpo/000205> <https://w3id.org/metpo/0019>)
+
+# Class: <https://w3id.org/metpo/000206> (Temperature C delta very low (1 - 5))
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000206> "Temperature C delta very low (1 - 5)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000206> "Td_1_5")
+SubClassOf(<https://w3id.org/metpo/000206> <https://w3id.org/metpo/0020>)
+
+# Class: <https://w3id.org/metpo/000207> (Temperature C delta low (5 - 10))
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000207> "Temperature C delta low (5 - 10)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000207> "Td_5_10")
+SubClassOf(<https://w3id.org/metpo/000207> <https://w3id.org/metpo/0020>)
+
+# Class: <https://w3id.org/metpo/000208> (Temperature C delta mid1 (10 - 20))
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000208> "Temperature C delta mid1 (10 - 20)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000208> "Td_10_20")
+SubClassOf(<https://w3id.org/metpo/000208> <https://w3id.org/metpo/0020>)
+
+# Class: <https://w3id.org/metpo/000209> (Temperature C delta mid2 (20 - 30))
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000209> "Temperature C delta mid2 (20 - 30)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000209> "Td_20_30")
+SubClassOf(<https://w3id.org/metpo/000209> <https://w3id.org/metpo/0020>)
+
+# Class: <https://w3id.org/metpo/000210> (Temperature C delta high (>= 30))
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000210> "Temperature C delta high (>= 30)")
+AnnotationAssertion(METPO:BactoTrait <https://w3id.org/metpo/000210> "Td_>30")
+SubClassOf(<https://w3id.org/metpo/000210> <https://w3id.org/metpo/0020>)
+
+# Class: <https://w3id.org/metpo/000211> (bacillus)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000211> "A rod-shaped cell.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000211> "bacillus")
+SubClassOf(<https://w3id.org/metpo/000211> <https://w3id.org/metpo/0021>)
+
+# Class: <https://w3id.org/metpo/000212> (branced)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000212> "A cell with multiple branches or extensions.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000212> "branced")
+SubClassOf(<https://w3id.org/metpo/000212> <https://w3id.org/metpo/0021>)
+
+# Class: <https://w3id.org/metpo/000213> (coccobacillus)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000213> "A short rod-shaped cell, intermediate between bacillus and coccus.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000213> "coccobacillus")
+SubClassOf(<https://w3id.org/metpo/000213> <https://w3id.org/metpo/0021>)
+
+# Class: <https://w3id.org/metpo/000214> (coccus)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000214> "A spherical cell.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000214> "coccus")
+SubClassOf(<https://w3id.org/metpo/000214> <https://w3id.org/metpo/0021>)
+
+# Class: <https://w3id.org/metpo/000215> (crescent)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000215> "A curved, crescent-shaped cell.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000215> "crescent")
+SubClassOf(<https://w3id.org/metpo/000215> <https://w3id.org/metpo/0021>)
+
+# Class: <https://w3id.org/metpo/000216> (curved)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000216> "A cell with a slight curve or bend.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000216> "curved")
+SubClassOf(<https://w3id.org/metpo/000216> <https://w3id.org/metpo/0021>)
+
+# Class: <https://w3id.org/metpo/000217> (curved spiral)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000217> "A cell with a curved spiral shape.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000217> "curved spiral")
+SubClassOf(<https://w3id.org/metpo/000217> <https://w3id.org/metpo/0021>)
+
+# Class: <https://w3id.org/metpo/000218> (diplococcus)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000218> "Two spherical cells attached to each other.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000218> "diplococcus")
+SubClassOf(<https://w3id.org/metpo/000218> <https://w3id.org/metpo/0021>)
+
+# Class: <https://w3id.org/metpo/000219> (disc)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000219> "A flat, circular-shaped cell.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000219> "disc")
+SubClassOf(<https://w3id.org/metpo/000219> <https://w3id.org/metpo/0021>)
+
+# Class: <https://w3id.org/metpo/000220> (dumbbell)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000220> "A cell shaped like two spheres connected by a narrow bridge.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000220> "dumbbell")
+SubClassOf(<https://w3id.org/metpo/000220> <https://w3id.org/metpo/0021>)
+
+# Class: <https://w3id.org/metpo/000221> (ellipsoidal)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000221> "A cell with an elongated oval shape.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000221> "ellipsoidal")
+SubClassOf(<https://w3id.org/metpo/000221> <https://w3id.org/metpo/0021>)
+
+# Class: <https://w3id.org/metpo/000222> (filament)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000222> "A long, thin, thread-like cell.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000222> "filament")
+SubClassOf(<https://w3id.org/metpo/000222> <https://w3id.org/metpo/0021>)
+
+# Class: <https://w3id.org/metpo/000223> (flask)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000223> "A cell shaped like a laboratory flask.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000223> "flask")
+SubClassOf(<https://w3id.org/metpo/000223> <https://w3id.org/metpo/0021>)
+
+# Class: <https://w3id.org/metpo/000224> (fusiform)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000224> "A cell with a spindle-like shape, wider in the middle and tapering at both ends.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000224> "fusiform")
+SubClassOf(<https://w3id.org/metpo/000224> <https://w3id.org/metpo/0021>)
+
+# Class: <https://w3id.org/metpo/000225> (helical)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000225> "A cell with a spiral shape, forming a three-dimensional helix.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000225> "helical")
+SubClassOf(<https://w3id.org/metpo/000225> <https://w3id.org/metpo/0021>)
+
+# Class: <https://w3id.org/metpo/000226> (irregular)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000226> "A cell with an inconsistent or non-uniform shape.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000226> "irregular")
+SubClassOf(<https://w3id.org/metpo/000226> <https://w3id.org/metpo/0021>)
+
+# Class: <https://w3id.org/metpo/000227> (oval)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000227> "A cell with an egg-shaped outline.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000227> "oval")
+SubClassOf(<https://w3id.org/metpo/000227> <https://w3id.org/metpo/0021>)
+
+# Class: <https://w3id.org/metpo/000228> (ovoid)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000228> "A cell with an egg-like shape, slightly elongated.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000228> "ovoid")
+SubClassOf(<https://w3id.org/metpo/000228> <https://w3id.org/metpo/0021>)
+
+# Class: <https://w3id.org/metpo/000229> (pleomorphic)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000229> "A cell capable of assuming various shapes.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000229> "pleomorphic")
+SubClassOf(<https://w3id.org/metpo/000229> <https://w3id.org/metpo/0021>)
+
+# Class: <https://w3id.org/metpo/000230> (ring)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000230> "A cell shaped like a circular band or loop.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000230> "ring")
+SubClassOf(<https://w3id.org/metpo/000230> <https://w3id.org/metpo/0021>)
+
+# Class: <https://w3id.org/metpo/000231> (rod)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000231> "A straight, elongated cell.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000231> "rod")
+SubClassOf(<https://w3id.org/metpo/000231> <https://w3id.org/metpo/0021>)
+
+# Class: <https://w3id.org/metpo/000232> (sphere)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000232> "A perfectly round cell.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000232> "sphere")
+SubClassOf(<https://w3id.org/metpo/000232> <https://w3id.org/metpo/0021>)
+
+# Class: <https://w3id.org/metpo/000233> (spindle)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000233> "A cell with a shape that tapers at both ends.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000233> "spindle")
+SubClassOf(<https://w3id.org/metpo/000233> <https://w3id.org/metpo/0021>)
+
+# Class: <https://w3id.org/metpo/000234> (spiral)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000234> "A cell with a tight, coiled shape.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000234> "spiral")
+SubClassOf(<https://w3id.org/metpo/000234> <https://w3id.org/metpo/0021>)
+
+# Class: <https://w3id.org/metpo/000235> (spirochete)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000235> "A cell with a long, thin, flexible spiral shape.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000235> "spirochete")
+SubClassOf(<https://w3id.org/metpo/000235> <https://w3id.org/metpo/0021>)
+
+# Class: <https://w3id.org/metpo/000236> (spore)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000236> "A dormant, resistant form of a cell.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000236> "spore")
+SubClassOf(<https://w3id.org/metpo/000236> <https://w3id.org/metpo/0021>)
+
+# Class: <https://w3id.org/metpo/000237> (square)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000237> "A cell with a cube-like shape.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000237> "square")
+SubClassOf(<https://w3id.org/metpo/000237> <https://w3id.org/metpo/0021>)
+
+# Class: <https://w3id.org/metpo/000238> (star)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000238> "A cell with multiple pointed projections, resembling a star.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000238> "star")
+SubClassOf(<https://w3id.org/metpo/000238> <https://w3id.org/metpo/0021>)
+
+# Class: <https://w3id.org/metpo/000239> (star - dumbbell - pleomorphic)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000239> "A cell that can assume star-shaped, dumbbell-shaped, or various other forms.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000239> "star - dumbbell - pleomorphic")
+SubClassOf(<https://w3id.org/metpo/000239> <https://w3id.org/metpo/0021>)
+
+# Class: <https://w3id.org/metpo/000240> (tailed)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000240> "A cell with a main body and a tail-like extension.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000240> "tailed")
+SubClassOf(<https://w3id.org/metpo/000240> <https://w3id.org/metpo/0021>)
+
+# Class: <https://w3id.org/metpo/000241> (triangular)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000241> "A cell with a three-sided shape.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000241> "triangular")
+SubClassOf(<https://w3id.org/metpo/000241> <https://w3id.org/metpo/0021>)
+
+# Class: <https://w3id.org/metpo/000242> (vibrio)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000242> "A curved rod-shaped cell, resembling a comma.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000242> "vibrio")
+SubClassOf(<https://w3id.org/metpo/000242> <https://w3id.org/metpo/0021>)
+
+# Class: <https://w3id.org/metpo/000243> (Environmental Parameter)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000243> "A measurable property of the external environment that influences microbial growth or behavior.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000243> "Environmental Parameter")
+
+# Class: <https://w3id.org/metpo/000244> (Growth Condition)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000244> "A specific combination of environmental factors under which a microorganism can maintain its lifecycle.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000244> "Growth Condition")
+
+# Class: <https://w3id.org/metpo/000245> (Physiological Trait)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000245> "An inherent characteristic of an organism related to its biological functioning and metabolic processes.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000245> "Physiological Trait")
+
+# Class: <https://w3id.org/metpo/000246> (Metabolic Classification)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000246> "A categorization of an organism based on its specific patterns of energy acquisition and material transformation.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000246> "Metabolic Classification")
+
+# Class: <https://w3id.org/metpo/000247> (Cellular Characteristic)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000247> "A distinctive property of a cell that contributes to its structure, function, or behavior.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000247> "Cellular Characteristic")
+
+# Class: <https://w3id.org/metpo/000248> (Taxonomic Feature)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000248> "A morphological, genetic, or physiological characteristic used for classifying organisms within a systematic hierarchy.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000248> "Taxonomic Feature")
+
+# Class: <https://w3id.org/metpo/000249> (Microbial Adaptation)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000249> "A heritable change in structure, function, or behavior that increases a microorganism's fitness in a specific environment.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000249> "Microbial Adaptation")
+
+# Class: <https://w3id.org/metpo/000250> (Growth Parameter)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000250> "A quantifiable factor that affects or describes the rate or extent of microbial population increase.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000250> "Growth Parameter")
+
+# Class: <https://w3id.org/metpo/000251> (Structural Feature)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000251> "A physical component or arrangement of components that contributes to an organism's form or architecture.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000251> "Structural Feature")
+
+# Class: <https://w3id.org/metpo/000252> (Temperature Adaptation)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000252> "A physiological adjustment that enables an organism to survive and reproduce at a specific temperature range.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000252> "Temperature Adaptation")
+
+# Class: <https://w3id.org/metpo/000253> (Salinity Adaptation)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000253> "A set of mechanisms that allows an organism to maintain homeostasis in environments with particular salt concentrations.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000253> "Salinity Adaptation")
+
+# Class: <https://w3id.org/metpo/000254> (pH Adaptation)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000254> "A combination of cellular processes that permits survival and growth under specific hydrogen ion concentrations.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000254> "pH Adaptation")
+
+# Class: <https://w3id.org/metpo/000255> (Oxygen Requirement)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000255> "The specific need for or tolerance of molecular oxygen that characterizes an organism's metabolic processes.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000255> "Oxygen Requirement")
+
+# Class: <https://w3id.org/metpo/000256> (Carbon Source Utilization)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000256> "The ability to assimilate and metabolize specific carbon-containing compounds for cellular growth and maintenance.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000256> "Carbon Source Utilization")
+
+# Class: <https://w3id.org/metpo/000257> (Energy Acquisition Mode)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000257> "The mechanism by which an organism obtains energy for cellular activities and biosynthesis.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000257> "Energy Acquisition Mode")
+
+# Class: <https://w3id.org/metpo/000258> (Electron Donor Type)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000258> "The class of compounds or elements from which an organism extracts electrons for energy-generating reactions.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000258> "Electron Donor Type")
+
+# Class: <https://w3id.org/metpo/000259> (Motility Mechanism)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000259> "The biochemical and mechanical processes that enable an organism to move through its environment.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000259> "Motility Mechanism")
+
+# Class: <https://w3id.org/metpo/000260> (Motility Structure)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000260> "A specialized cellular component that generates force or facilitates movement in microorganisms.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000260> "Motility Structure")
+
+# Class: <https://w3id.org/metpo/000261> (Bacterial Spore Type)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000261> "A classification of resistant dormant structures produced by bacteria based on their formation and properties.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000261> "Bacterial Spore Type")
+
+# Class: <https://w3id.org/metpo/000262> (Fungal Spore Type)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000262> "A distinct category of reproductive or survival structures produced by fungi, characterized by specific morphology and function.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000262> "Fungal Spore Type")
+
+# Class: <https://w3id.org/metpo/000263> (Reproductive Structure)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000263> "A specialized cellular formation that functions in the propagation of genetic material to produce new individuals.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000263> "Reproductive Structure")
+
+# Class: <https://w3id.org/metpo/000264> (Dormancy Structure)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000264> "A specialized cellular state or formation that enables survival during adverse environmental conditions with reduced metabolic activity.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000264> "Dormancy Structure")
+
+# Class: <https://w3id.org/metpo/000265> (Pressure Adaptation Type)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000265> "A set of physiological and molecular mechanisms that enable survival under specific hydrostatic pressure conditions.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000265> "Pressure Adaptation Type")
+
+# Class: <https://w3id.org/metpo/000266> (Pressure Tolerance Range)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000266> "The span of hydrostatic pressures within which an organism can maintain viability and cellular functions.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000266> "Pressure Tolerance Range")
+
+# Class: <https://w3id.org/metpo/000267> (GenomicFeature)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000267> "A distinctive characteristic of an organism's genetic material related to its sequence, structure, or organization.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000267> "GenomicFeature")
+
+# Class: <https://w3id.org/metpo/000268> (Cell Dimension)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000268> "A measurable spatial attribute of a cell that describes its size in one or more directions.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000268> "Cell Dimension")
+
+# Class: <https://w3id.org/metpo/000269> (Optimal Growth Parameter)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000269> "The specific environmental condition at which an organism achieves its maximum growth rate or metabolic efficiency.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000269> "Optimal Growth Parameter")
+
+# Class: <https://w3id.org/metpo/000270> (Growth Range Parameter)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000270> "The span of environmental conditions within which an organism can sustain growth and reproduction.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000270> "Growth Range Parameter")
+
+# Class: <https://w3id.org/metpo/000271> (Growth Tolerance Metric)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000271> "A quantitative measure of an organism's ability to withstand variations in a specific environmental factor.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000271> "Growth Tolerance Metric")
+
+# Class: <https://w3id.org/metpo/000272> (Cell Shape)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000272> "The three-dimensional geometric form of a microbial cell as determined by its cell wall and cytoskeletal structures.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000272> "Cell Shape")
+
+# Class: <https://w3id.org/metpo/000273> (Cell Arrangement)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000273> "The spatial organization of multiple cells in relation to each other following cell division.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000273> "Cell Arrangement")
+
+# Class: <https://w3id.org/metpo/000274> (Colony Morphology)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/000274> "The macroscopic appearance and structure of a population of microorganisms growing on a solid medium.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/000274> "Colony Morphology")
+
+
+)

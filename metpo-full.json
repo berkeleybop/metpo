@@ -1,6 +1,6 @@
 {
   "graphs" : [ {
-    "id" : "http://purl.obolibrary.org/obo/metpo/metpo-full.json",
+    "id" : "https://w3id.org/metpo/metpo-full.json",
     "meta" : {
       "basicPropertyValues" : [ {
         "pred" : "http://purl.org/dc/terms/description",
@@ -13,14 +13,3039 @@
         "val" : "METPO"
       }, {
         "pred" : "http://www.w3.org/2002/07/owl#versionInfo",
-        "val" : "2025-03-12"
+        "val" : "2025-03-13"
       } ],
-      "version" : "http://purl.obolibrary.org/obo/metpo/releases/2025-03-12/metpo-full.json"
+      "version" : "https://w3id.org/metpo/releases/2025-03-13/metpo-full.json"
     },
     "nodes" : [ {
-      "id" : "http://purl.obolibrary.org/obo/METPO_0000000",
-      "lbl" : "root node",
+      "id" : "https://w3id.org/metpo/GenomicFeature",
       "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/NamedThing",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/000001",
+      "lbl" : "Temperature",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/000002",
+      "lbl" : "Salinity",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/000003",
+      "lbl" : "pH",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/000004",
+      "lbl" : "Oxygen",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/000005",
+      "lbl" : "Trophic type",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/000006",
+      "lbl" : "Motility",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/000007",
+      "lbl" : "Sporulation",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/000008",
+      "lbl" : "Pressure",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/000009",
+      "lbl" : "GC content",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/000010",
+      "lbl" : "Cell Width",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/000011",
+      "lbl" : "Cell Length",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/000012",
+      "lbl" : "Temperature Optimum",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/000013",
+      "lbl" : "Temperature Range",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/000014",
+      "lbl" : "pH Optimum",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/000015",
+      "lbl" : "pH Range",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/000016",
+      "lbl" : "NaCl Optimum",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/000017",
+      "lbl" : "NaCl Range",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/000018",
+      "lbl" : "pH delta",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/000019",
+      "lbl" : "NaCl delta",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/000020",
+      "lbl" : "Temperature Delta",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/000021",
+      "lbl" : "Morphology",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/000022",
+      "lbl" : "Other",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/000023",
+      "lbl" : "Psychrophile",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A microorganism that grows optimally at temperatures below 15°C and can grow at temperatures below 20°C."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000024",
+      "lbl" : "Psychrotolerant",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A microorganism that can grow at temperatures near 0°C but has optimal growth at higher temperatures."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000025",
+      "lbl" : "Mesophilie",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A microorganism that grows optimally at moderate temperatures, typically between 20°C and 45°C."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000026",
+      "lbl" : "Thermotolerant",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A microorganism that can grow at temperatures near 50°C but has optimal growth at lower temperatures."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000027",
+      "lbl" : "Thermophile",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A microorganism that grows optimally at relatively high temperatures, typically between 45°C and 80°C."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000028",
+      "lbl" : "Extreme thermophile",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A microorganism that grows optimally at temperatures between 60°C and 80°C."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000029",
+      "lbl" : "Hyperthermophile",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A microorganism that grows optimally at very high temperatures, above 80°C."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000030",
+      "lbl" : "Extreme hyperthermophile",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A microorganism that grows optimally at temperatures above 90°C."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000031",
+      "lbl" : "Halophile",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A microorganism that requires salt for optimal growth and survival."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Halophilic"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000032",
+      "lbl" : "Non-halophile",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A microorganism that does not require salt for optimal growth and survival."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Non-halophilic"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Nonhalophile"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000033",
+      "lbl" : "Slight halophile",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A microorganism that grows optimally in environments with low salt concentrations, typically between 2-5% NaCl."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Slightly halophilic"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000034",
+      "lbl" : "Moderate halophile",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A microorganism that grows optimally in environments with moderate salt concentrations, typically between 5-20% NaCl."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Moderately halophilic"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000035",
+      "lbl" : "Extreme halophile",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A microorganism that grows optimally in environments with high salt concentrations, typically above 20% NaCl."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Extremely halophilic"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000036",
+      "lbl" : "Halotolerant",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A microorganism that grows optimally in environments with both high salt concentrations and high pH (alkaline conditions)."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000037",
+      "lbl" : "Haloalkaliphile",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A microorganism that grows optimally in environments with both high salt concentrations (typically 2-5% NaCl, but can tolerate up to 25% NaCl) and high pH (typically 9-11, but can grow at pH values up to 12)."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000038",
+      "lbl" : "Extreme Acidophile",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A microorganism that grows optimally at very low pH values, typically between pH 1 and 3."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Extreme acidophilic"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000039",
+      "lbl" : "Acidophile",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A microorganism that grows optimally at low pH values, typically below pH 5."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Acidophilic"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000040",
+      "lbl" : "Neutrophile",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A microorganism that grows optimally at neutral pH values, typically around pH 7."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Neutrophilic"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000041",
+      "lbl" : "Alkaliphile",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A microorganism that grows optimally at high pH values, typically above pH 9."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000042",
+      "lbl" : "Acid Tolerant",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A microorganism that can grow in acidic conditions below pH 5 but does not require them for optimal growth."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Alkaliphilic"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000043",
+      "lbl" : "Alkali Tolerant",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A microorganism that can grow in alkaline conditions above pH 9 but does not require them for optimal growth."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Acid-tolerant"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000044",
+      "lbl" : "Extreme Alkaliphile",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A microorganism that grows optimally at very high pH values, typically above pH 10."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Alkali-tolerant"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000045",
+      "lbl" : "Facultative acidophile",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A microorganism that can grow in acidic conditions but does not require them for optimal growth."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Extreme alkaliphilic"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000046",
+      "lbl" : "Obligative acidophile",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A microorganism that requires acidic conditions for growth and survival."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000047",
+      "lbl" : "Aerobe",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A microorganism that requires oxygen for growth and metabolism."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Obligate aerobe"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Strict aerobe"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000048",
+      "lbl" : "Anaerobe",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A microorganism that grows in the absence of oxygen and is unable to use oxygen for growth."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Obligate anaerobe"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Strict anaerobe"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000049",
+      "lbl" : "Facultative anaerobe",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A microorganism that can grow with or without oxygen, using oxygen for respiration when available but capable of fermentation or anaerobic respiration in its absence."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Facultative aerobe"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000050",
+      "lbl" : "Facultative aerobe",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A microorganism that primarily uses oxygen for respiration but can also grow without it using alternative metabolic pathways."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Facultative anaerobe"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000051",
+      "lbl" : "Microaerophile",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A microorganism that requires oxygen for growth but at concentrations lower than those found in air (typically 2-10% oxygen)."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Microaerobe"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000052",
+      "lbl" : "Aerotolerant",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A microorganism that does not use oxygen for growth but can survive and grow in its presence without being harmed."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Oxygen-tolerant"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000053",
+      "lbl" : "Microaerotolerant",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A microorganism that can tolerate low levels of oxygen but does not require such conditions for growth."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Microoxic-tolerant"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000054",
+      "lbl" : "Aerotolerant anaerobe",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An anaerobic microorganism that does not use oxygen for metabolism but is not inhibited by its presence."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Oxygen-tolerant anaerobe"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000055",
+      "lbl" : "Obligate aerobe",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A microorganism that absolutely requires oxygen for growth and cannot grow under anaerobic conditions."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Aerobe"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Strict aerobe"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000056",
+      "lbl" : "Obligate anaerobe",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A microorganism for which oxygen is toxic and inhibits growth, requiring strictly anaerobic conditions."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Anaerobe"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Strict anaerobe"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000057",
+      "lbl" : "Oxygenic phototroph",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism that uses light energy for photosynthesis, producing oxygen as a byproduct."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Oxygenic phototrophic"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000058",
+      "lbl" : "Anoxygenic phototroph",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism that uses light energy for photosynthesis without producing oxygen."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Anoxygenic phototrophic"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000059",
+      "lbl" : "Autotroph",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism that produces its own food from inorganic compounds."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Autotrophic"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000060",
+      "lbl" : "Photoautotroph",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism that uses light energy to fix carbon dioxide for growth."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Photoautotrophic"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000061",
+      "lbl" : "Chemoautotroph",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism that uses energy from chemical reactions to fix carbon dioxide for growth."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Chemoautotrophic"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000062",
+      "lbl" : "Heterotroph",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism that obtains carbon from organic compounds."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Heterotrophic"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000063",
+      "lbl" : "Photoheterotroph",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism that uses light energy but obtains carbon from organic compounds."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Photoheterotrophic"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000064",
+      "lbl" : "Chemoheterotroph",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism that obtains both energy and carbon from organic compounds."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Chemoheterotrophic"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000065",
+      "lbl" : "Lithotroph",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism that obtains energy from the oxidation of inorganic compounds."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Lithotrophic"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000066",
+      "lbl" : "Organotroph",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism that obtains energy from the oxidation of organic compounds."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Organotrophic"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000067",
+      "lbl" : "Phototroph",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism that uses light as its primary energy source."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Phototrophic"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000068",
+      "lbl" : "Chemotroph",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism that obtains energy from chemical reactions."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Chemotrophic"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000069",
+      "lbl" : "Oligotroph",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism adapted to environments with low nutrient levels."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Oligotrophic"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000070",
+      "lbl" : "Copiotroph",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism adapted to environments with high nutrient levels."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Copiotrophic"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000071",
+      "lbl" : "Lithoautotroph",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism that uses inorganic compounds for both energy and carbon."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Lithoautotrophic"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000072",
+      "lbl" : "Mixotroph",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism capable of both autotrophic and heterotrophic nutrition."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Mixotrophic"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000073",
+      "lbl" : "Lithoheterotroph",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism that uses inorganic compounds for energy but organic compounds for carbon."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Lithoheterotrophic"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000074",
+      "lbl" : "Chemoorganoheterotroph",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism that uses organic compounds for both energy and carbon."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Chemoorganoheterotrophic"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000075",
+      "lbl" : "Chemolithoautotroph",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism that uses inorganic compounds for energy and CO2 for carbon."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Chemolithoautotrophic"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000076",
+      "lbl" : "Methylotroph",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism that can use one-carbon compounds as a source of energy and carbon."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Methylotrophic"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000077",
+      "lbl" : "Methanotroph",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism that uses methane as its sole source of carbon and energy."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Methanotrophic"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000078",
+      "lbl" : "Carboxydotroph",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism that can use carbon monoxide as its sole source of energy and carbon."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Carbohydrogenotroph"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Carboxydrophile"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000079",
+      "lbl" : "Hydrogenotroph",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism that obtains energy from the oxidation of molecular hydrogen."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Hydrogenophile"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Hydrogenophilic"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000080",
+      "lbl" : "Hydrogen oxidizer",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism that oxidizes hydrogen for energy."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Hydrogen-oxidizing"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000081",
+      "lbl" : "Hydrogen producer",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism that produces hydrogen as a byproduct of its metabolism."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Hydrogen-producing"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000082",
+      "lbl" : "Nitrogen fixer",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism capable of converting atmospheric nitrogen into ammonia."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Nitrogen-fixing"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000083",
+      "lbl" : "Methanogen",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism that produces methane as a byproduct of its metabolism."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Methanogenic"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000084",
+      "lbl" : "Sulfate reducer",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism that uses sulfate as an electron acceptor in anaerobic respiration."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Sulfate-reducing"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000085",
+      "lbl" : "Sulfur oxidizer",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism that oxidizes sulfur compounds for energy."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Sulfur-oxidizing"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000086",
+      "lbl" : "Denitrifier",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism that reduces nitrate to nitrogen gas in anaerobic respiration."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Denitrifying"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000087",
+      "lbl" : "Capnophile",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism that requires or grows better in the presence of elevated levels of carbon dioxide."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Capnophilic"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000088",
+      "lbl" : "Motile",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A microorganism capable of self-propelled movement."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000089",
+      "lbl" : "Non-motile",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A microorganism incapable of self-propelled movement."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000090",
+      "lbl" : "Flagellated",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A motile microorganism that moves using one or more flagella."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000091",
+      "lbl" : "Peritrichous",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A flagellated microorganism with flagella distributed over the entire cell surface."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000092",
+      "lbl" : "Lophotrichous",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A flagellated microorganism with a tuft of flagella at one or both poles of the cell."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000093",
+      "lbl" : "Monotrichous",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A flagellated microorganism with a single flagellum at one pole of the cell."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000094",
+      "lbl" : "Ciliated",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A motile microorganism that moves using numerous short, hair-like structures called cilia."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000095",
+      "lbl" : "Gliding",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A motile microorganism that moves by sliding over surfaces without the use of flagella or cilia."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000096",
+      "lbl" : "Twitching",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A motile microorganism that moves using type IV pili in a jerky, start-stop motion."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000097",
+      "lbl" : "Sliding",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A motile microorganism that moves passively over surfaces due to the production of extracellular substances."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000098",
+      "lbl" : "Swarming",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A motile microorganism capable of rapid, coordinated movement across surfaces in groups."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000099",
+      "lbl" : "Endospores",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A dormant, resistant structure formed within a bacterial cell."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/0001",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/000100",
+      "lbl" : "Exospores",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A spore formed outside the parent cell."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000101",
+      "lbl" : "Myxospores",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A resting spore produced by myxobacteria during unfavorable conditions."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000102",
+      "lbl" : "Arthrospores",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A type of spore formed by the fragmentation of fungal hyphae."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000103",
+      "lbl" : "Conidia",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "Asexual spores produced by fungi, typically at the tips of specialized hyphae."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000104",
+      "lbl" : "Sporangiospores",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "Asexual spores produced within a sporangium."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000105",
+      "lbl" : "Zygospores",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A thick-walled resting spore resulting from the fusion of two compatible hyphae."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000106",
+      "lbl" : "Akinetes",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A large, thick-walled dormant cell formed by some cyanobacteria."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000107",
+      "lbl" : "Chlamydospores",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A thick-walled resting spore formed from a cell of a fungal hypha."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000108",
+      "lbl" : "Sporocysts",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A protective cyst-like structure containing sporozoites in some protists."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000109",
+      "lbl" : "Hypnospores",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A dormant stage of some dinoflagellates, formed under unfavorable conditions."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000110",
+      "lbl" : "Gemmae",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "Small, multicellular propagules produced by some bryophytes for asexual reproduction."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000111",
+      "lbl" : "Oospores",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A thick-walled sexual spore produced by oomycetes."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000112",
+      "lbl" : "Azygospores",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A spore formed without fusion of gametes, typically in zygomycetes."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000113",
+      "lbl" : "Cysts",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A resistant, dormant stage formed by some protists and bacteria."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000114",
+      "lbl" : "Ascospores",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "Sexual spores produced in an ascus, typically by ascomycete fungi."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000115",
+      "lbl" : "Basidiospores",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "Sexual spores produced on a basidium, typically by basidiomycete fungi."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000116",
+      "lbl" : "Aleuriospores",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "Asexual spores formed by the disarticulation of vegetative hyphae."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000117",
+      "lbl" : "Stylospores",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "Asexual spores produced on a stalk-like structure called a sterigma."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000118",
+      "lbl" : "Sclerotia",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A compact mass of hardened fungal mycelium containing food reserves."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000119",
+      "lbl" : "Zoospores",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "Motile spores with flagella, typically produced by algae and some fungi."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000120",
+      "lbl" : "Teliospores",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A type of resting spore produced by rust and smut fungi."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000121",
+      "lbl" : "Urediniospores",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "Asexual spores produced by rust fungi during their life cycle."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000122",
+      "lbl" : "Pycnidiospores",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "Asexual spores produced within a pycnidium, a flask-shaped fruiting body."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000123",
+      "lbl" : "Acriospores",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "Asexual spores produced in chains at the tips of conidiophores."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000124",
+      "lbl" : "Aplanospores",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "Non-motile spores that lack flagella, typically produced by algae."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000125",
+      "lbl" : "Statismospores",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "Non-motile spores that lack the ability to swim."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000126",
+      "lbl" : "Barotolerant",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism that can survive high pressure but does not require it for optimal growth."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000127",
+      "lbl" : "Piezophile",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism that grows optimally under high pressure conditions."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Barophile"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Barophilic"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Piezophilic"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000128",
+      "lbl" : "Piezotolerant",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism that can tolerate high pressure but grows optimally at normal atmospheric pressure."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000129",
+      "lbl" : "Piezosensitive",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism that is adversely affected by high pressure conditions."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000130",
+      "lbl" : "Obligate barophile",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism that requires high pressure for growth and cannot grow at atmospheric pressure."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Obligate piezophile"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000131",
+      "lbl" : "Facultative barophile",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism that grows optimally under high pressure but can also grow at atmospheric pressure."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Facultative piezophile"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000132",
+      "lbl" : "Hyperbarophile",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism adapted to extremely high pressure environments."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Hyperbarophilic"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000133",
+      "lbl" : "Hypobarophile",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism adapted to low pressure environments."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Hypobarophilic"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000134",
+      "lbl" : "Atmospheric pressure-adapted",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism adapted to grow at standard atmospheric pressure."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000135",
+      "lbl" : "Moderate piezophile",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism that grows optimally at moderately high pressures."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Moderate barophile"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000136",
+      "lbl" : "Extreme piezophile",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism that grows optimally at very high pressures."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Extreme barophile"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000137",
+      "lbl" : "Stenopiezic",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism that can only grow within a narrow range of pressures."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Stenobaric"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000138",
+      "lbl" : "Eurypiezic",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism that can grow across a wide range of pressures."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Eurybaric"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000139",
+      "lbl" : "Pressure-sensitive",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism whose growth or metabolism is negatively affected by changes in pressure."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000140",
+      "lbl" : "Pressure-resistant",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism that can withstand significant changes in pressure without adverse effects."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000141",
+      "lbl" : "Pressure-adapted",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism that has evolved to thrive under specific pressure conditions."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000142",
+      "lbl" : "Piezo-acidophile",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism that grows optimally under both high pressure and acidic conditions."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Piezo-acidophilic"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000143",
+      "lbl" : "Piezo-alkaliphile",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism that grows optimally under both high pressure and alkaline conditions."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Piezo-alkaliphilic"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000144",
+      "lbl" : "Piezo-halophile",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism that grows optimally under both high pressure and high salinity conditions."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Piezo-halophilic"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000145",
+      "lbl" : "Piezo-psychrophile",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism that grows optimally under both high pressure and low temperature conditions."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Piezo-psychrophilic"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000146",
+      "lbl" : "Piezo-thermophile",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism that grows optimally under both high pressure and high temperature conditions."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Piezo-thermophilic"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000147",
+      "lbl" : "Piezo-lithoautotrophe",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism that uses inorganic compounds for energy and carbon under high pressure conditions."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Piezo-lithoautotrophic"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000148",
+      "lbl" : "Piezo-chemoheterotroph",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism that uses organic compounds for energy and carbon under high pressure conditions."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Piezo-chemoheterotrophic"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000149",
+      "lbl" : "Piezo-oligotroph",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism adapted to low-nutrient environments under high pressure conditions."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Piezo-oligotrophic"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000150",
+      "lbl" : "Piezo-endolithic",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism that lives within rock or mineral substrates under high pressure conditions."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000151",
+      "lbl" : "Piezo-tolerant",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An organism that can tolerate a range of pressure conditions but does not necessarily require high pressure for optimal growth."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000152",
+      "lbl" : "GC% low ( < 42.65)",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "gc:low"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "GC_<=42.65"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000153",
+      "lbl" : "GC% mid1 (42.65 - 57)",
+      "type" : "CLASS",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "GC_42.65_57.0"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000154",
+      "lbl" : "GC% mid2 (57 - 66.3)",
+      "type" : "CLASS",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "GC_57.0_66.3"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000155",
+      "lbl" : "GC% high ( > 66.3)",
+      "type" : "CLASS",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "GC_>66.3"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000156",
+      "lbl" : "Cell width uM very low (< 0.5)",
+      "type" : "CLASS",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "W_<=0.5"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000157",
+      "lbl" : "Cell width uM low (0.5 - 0.65)",
+      "type" : "CLASS",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "W_0.5_0.65"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000158",
+      "lbl" : "Cell width uM mid (0.65 - 0.9)",
+      "type" : "CLASS",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "W_0.65_0.9"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000159",
+      "lbl" : "Cell width uM high (> 0.9)",
+      "type" : "CLASS",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "W_>0.9"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000160",
+      "lbl" : "Cell length uM very low (<= 1.3)",
+      "type" : "CLASS",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "L_<=1.3"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000161",
+      "lbl" : "Cell length uM low (1.3 - 2)",
+      "type" : "CLASS",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "L_1.3_2"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000162",
+      "lbl" : "Cell length uM mid (2 - 3)",
+      "type" : "CLASS",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "L_2_3"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000163",
+      "lbl" : "Cell length uM high (> 3)",
+      "type" : "CLASS",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "L_>3"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000164",
+      "lbl" : "Temperature Optimum C very low (<= 10)",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Psychrophile"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "TO_<=10"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000165",
+      "lbl" : "Temperature Optimum C low (10 - 22)",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Psychrophile"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Psychrotolerant"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "TO_10_to_22"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000166",
+      "lbl" : "Temperature Optimum C mid1 (22 - 27)",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Mesophilie"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "TO_22_to_27"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000167",
+      "lbl" : "Temperature Optimum C mid2 (27 - 30)",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Mesophilie"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "TO_27_to_30"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000168",
+      "lbl" : "Temperature Optimum C mid3 (30 - 34)",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Mesophilie"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "TO_30_to_34"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000169",
+      "lbl" : "Temperature Optimum C mid4 (34 - 40)",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Mesophilie"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "TO_34_to_40"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000170",
+      "lbl" : "Temperature Optimum C high (> 40)",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Thermophile"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "TO_>40"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000171",
+      "lbl" : "Temperature Range C very low (<= 10)",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Psychrophile"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "TR_<=10"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000172",
+      "lbl" : "Temperature Range C low (10 - 22)",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Psychrophile"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Psychrotolerant"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "TR_10_to_22"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000173",
+      "lbl" : "Temperature Range C mid1 (22 - 27)",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Mesophilie"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "TR_22_to_27"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000174",
+      "lbl" : "Temperature Range C mid2 (27 - 30)",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Mesophilie"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "TR_27_to_30"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000175",
+      "lbl" : "Temperature Range C mid3 (30 - 34)",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Mesophilie"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "TR_30_to_34"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000176",
+      "lbl" : "Temperature Range C mid4 (34 - 40)",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Mesophilie"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "TR_34_to_40"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000177",
+      "lbl" : "Temperature Range C high (> 40)",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Thermophile"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "TR_>40"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000178",
+      "lbl" : "pH Optimum low (0 - 6)",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Acid Tolerant"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Acidophile"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Extreme Acidophile"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Facultative acidophile"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Obligative acidophile"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "pHO_0_to_6"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000179",
+      "lbl" : "pH Optimum mid1 (6 - 7)",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Alkali Tolerant"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Neutrophile"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "pHO_6_to_7"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000180",
+      "lbl" : "pH Optimum mid2 (7 - 8)",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Alkali Tolerant"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Alkaliphile"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Neutrophile"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "pHO_7_to_8"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000181",
+      "lbl" : "pH Optimum high (8 - 14)",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Alkali Tolerant"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Alkaliphile"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Extreme Alkaliphile"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "pHO_8_to_14"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000182",
+      "lbl" : "pH Range very low (0 - 4)",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Acid Tolerant"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Acidophile"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Extreme Acidophile"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Facultative acidophile"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Obligative acidophile"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "pHR_0_to_4"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000183",
+      "lbl" : "pH Range low (4 - 6)",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Acid Tolerant"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Acidophile"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Facultative acidophile"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Obligative acidophile"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "pHR_4_to_6"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000184",
+      "lbl" : "pH Range mid1 (6 - 7)",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Alkali Tolerant"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Facultative acidophile"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Neutrophile"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "pHR_6_to_7"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000185",
+      "lbl" : "pH Range mid2 (7 - 8)",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Alkali Tolerant"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Alkaliphile"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Facultative acidophile"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Neutrophile"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "pHR_7_to_8"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000186",
+      "lbl" : "pH Range mid3 (8 - 10)",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Alkali Tolerant"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Alkaliphile"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Extreme Alkaliphile"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Facultative acidophile"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "pHR_8_to_10"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000187",
+      "lbl" : "pH Range high (10 - 14)",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Alkali Tolerant"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Alkaliphile"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Extreme Alkaliphile"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "10_to_14"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000188",
+      "lbl" : "% NaCl Optimum low (<= 1)",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Halotolerant"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Non-halophile"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "NaR_<=1"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000189",
+      "lbl" : "% NaCl Optimum mid1 (1 - 3)",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Halotolerant"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Slight halophile"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "NaR_1_to_3"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000190",
+      "lbl" : "% NaCl Optimum mid2 (3 - 8)",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Halotolerant"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Moderate halophile"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "NaR_3_to_8"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000191",
+      "lbl" : "% NaCl Optimum high (> 8)",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Extreme halophile"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "NaR_>8"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000192",
+      "lbl" : "% NaCl Range low (<= 1)",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Halotolerant"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Non-halophile"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "NaO_<=1"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000193",
+      "lbl" : "% NaCl Range mid1 (1 - 3)",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Halotolerant"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Slight halophile"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "NaO_1_to_3"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000194",
+      "lbl" : "% NaCl Range mid2 (3 - 8)",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Halotolerant"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Moderate halophile"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "NaO_3_to_8"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000195",
+      "lbl" : "% NaCl Range high (> 8)",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Extreme halophile"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "NaO_>8"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000196",
+      "lbl" : "pH delta very low (<= 1)",
+      "type" : "CLASS",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "pHd_<=1"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000197",
+      "lbl" : "pH delta low (1 - 2)",
+      "type" : "CLASS",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "pHd_1_2"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000198",
+      "lbl" : "pH delta mid1 (2 - 3)",
+      "type" : "CLASS",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "pHd_2_3"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000199",
+      "lbl" : "pH delta mid2 (3 - 4)",
+      "type" : "CLASS",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "pHd_3_4"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/0002",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/000200",
+      "lbl" : "pH delta mid3 (4 - 5)",
+      "type" : "CLASS",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "pHd_4_5"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000201",
+      "lbl" : "pH delta high (5 - 9)",
+      "type" : "CLASS",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "pHd_5_9"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000202",
+      "lbl" : "% NaCl delta low (<= 1)",
+      "type" : "CLASS",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "Nad_<=1"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000203",
+      "lbl" : "% NaCl delta mid2 (1 - 3)",
+      "type" : "CLASS",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "Nad_1_3"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000204",
+      "lbl" : "% NaCl delta mid2 (3 - 8)",
+      "type" : "CLASS",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "Nad_3_8"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000205",
+      "lbl" : "% NaCl delta high (>= 8)",
+      "type" : "CLASS",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "Nad_>8"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000206",
+      "lbl" : "Temperature C delta very low (1 - 5)",
+      "type" : "CLASS",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "Td_1_5"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000207",
+      "lbl" : "Temperature C delta low (5 - 10)",
+      "type" : "CLASS",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "Td_5_10"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000208",
+      "lbl" : "Temperature C delta mid1 (10 - 20)",
+      "type" : "CLASS",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "Td_10_20"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000209",
+      "lbl" : "Temperature C delta mid2 (20 - 30)",
+      "type" : "CLASS",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "Td_20_30"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000210",
+      "lbl" : "Temperature C delta high (>= 30)",
+      "type" : "CLASS",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/BactoTrait",
+          "val" : "Td_>30"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000211",
+      "lbl" : "bacillus",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A rod-shaped cell."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000212",
+      "lbl" : "branced",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A cell with multiple branches or extensions."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000213",
+      "lbl" : "coccobacillus",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A short rod-shaped cell, intermediate between bacillus and coccus."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000214",
+      "lbl" : "coccus",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A spherical cell."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000215",
+      "lbl" : "crescent",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A curved, crescent-shaped cell."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000216",
+      "lbl" : "curved",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A cell with a slight curve or bend."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000217",
+      "lbl" : "curved spiral",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A cell with a curved spiral shape."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000218",
+      "lbl" : "diplococcus",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "Two spherical cells attached to each other."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000219",
+      "lbl" : "disc",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A flat, circular-shaped cell."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000220",
+      "lbl" : "dumbbell",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A cell shaped like two spheres connected by a narrow bridge."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000221",
+      "lbl" : "ellipsoidal",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A cell with an elongated oval shape."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000222",
+      "lbl" : "filament",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A long, thin, thread-like cell."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000223",
+      "lbl" : "flask",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A cell shaped like a laboratory flask."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000224",
+      "lbl" : "fusiform",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A cell with a spindle-like shape, wider in the middle and tapering at both ends."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000225",
+      "lbl" : "helical",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A cell with a spiral shape, forming a three-dimensional helix."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000226",
+      "lbl" : "irregular",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A cell with an inconsistent or non-uniform shape."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000227",
+      "lbl" : "oval",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A cell with an egg-shaped outline."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000228",
+      "lbl" : "ovoid",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A cell with an egg-like shape, slightly elongated."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000229",
+      "lbl" : "pleomorphic",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A cell capable of assuming various shapes."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000230",
+      "lbl" : "ring",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A cell shaped like a circular band or loop."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000231",
+      "lbl" : "rod",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A straight, elongated cell."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000232",
+      "lbl" : "sphere",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A perfectly round cell."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000233",
+      "lbl" : "spindle",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A cell with a shape that tapers at both ends."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000234",
+      "lbl" : "spiral",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A cell with a tight, coiled shape."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000235",
+      "lbl" : "spirochete",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A cell with a long, thin, flexible spiral shape."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000236",
+      "lbl" : "spore",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A dormant, resistant form of a cell."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000237",
+      "lbl" : "square",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A cell with a cube-like shape."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000238",
+      "lbl" : "star",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A cell with multiple pointed projections, resembling a star."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000239",
+      "lbl" : "star - dumbbell - pleomorphic",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A cell that can assume star-shaped, dumbbell-shaped, or various other forms."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000240",
+      "lbl" : "tailed",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A cell with a main body and a tail-like extension."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000241",
+      "lbl" : "triangular",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A cell with a three-sided shape."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000242",
+      "lbl" : "vibrio",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A curved rod-shaped cell, resembling a comma."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000243",
+      "lbl" : "Environmental Parameter",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A measurable property of the external environment that influences microbial growth or behavior."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000244",
+      "lbl" : "Growth Condition",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A specific combination of environmental factors under which a microorganism can maintain its lifecycle."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000245",
+      "lbl" : "Physiological Trait",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An inherent characteristic of an organism related to its biological functioning and metabolic processes."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000246",
+      "lbl" : "Metabolic Classification",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A categorization of an organism based on its specific patterns of energy acquisition and material transformation."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000247",
+      "lbl" : "Cellular Characteristic",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A distinctive property of a cell that contributes to its structure, function, or behavior."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000248",
+      "lbl" : "Taxonomic Feature",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A morphological, genetic, or physiological characteristic used for classifying organisms within a systematic hierarchy."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000249",
+      "lbl" : "Microbial Adaptation",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A heritable change in structure, function, or behavior that increases a microorganism's fitness in a specific environment."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000250",
+      "lbl" : "Growth Parameter",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A quantifiable factor that affects or describes the rate or extent of microbial population increase."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000251",
+      "lbl" : "Structural Feature",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A physical component or arrangement of components that contributes to an organism's form or architecture."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000252",
+      "lbl" : "Temperature Adaptation",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A physiological adjustment that enables an organism to survive and reproduce at a specific temperature range."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000253",
+      "lbl" : "Salinity Adaptation",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A set of mechanisms that allows an organism to maintain homeostasis in environments with particular salt concentrations."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000254",
+      "lbl" : "pH Adaptation",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A combination of cellular processes that permits survival and growth under specific hydrogen ion concentrations."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000255",
+      "lbl" : "Oxygen Requirement",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "The specific need for or tolerance of molecular oxygen that characterizes an organism's metabolic processes."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000256",
+      "lbl" : "Carbon Source Utilization",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "The ability to assimilate and metabolize specific carbon-containing compounds for cellular growth and maintenance."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000257",
+      "lbl" : "Energy Acquisition Mode",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "The mechanism by which an organism obtains energy for cellular activities and biosynthesis."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000258",
+      "lbl" : "Electron Donor Type",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "The class of compounds or elements from which an organism extracts electrons for energy-generating reactions."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000259",
+      "lbl" : "Motility Mechanism",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "The biochemical and mechanical processes that enable an organism to move through its environment."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000260",
+      "lbl" : "Motility Structure",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A specialized cellular component that generates force or facilitates movement in microorganisms."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000261",
+      "lbl" : "Bacterial Spore Type",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A classification of resistant dormant structures produced by bacteria based on their formation and properties."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000262",
+      "lbl" : "Fungal Spore Type",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A distinct category of reproductive or survival structures produced by fungi, characterized by specific morphology and function."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000263",
+      "lbl" : "Reproductive Structure",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A specialized cellular formation that functions in the propagation of genetic material to produce new individuals."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000264",
+      "lbl" : "Dormancy Structure",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A specialized cellular state or formation that enables survival during adverse environmental conditions with reduced metabolic activity."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000265",
+      "lbl" : "Pressure Adaptation Type",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A set of physiological and molecular mechanisms that enable survival under specific hydrostatic pressure conditions."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000266",
+      "lbl" : "Pressure Tolerance Range",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "The span of hydrostatic pressures within which an organism can maintain viability and cellular functions."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000267",
+      "lbl" : "GenomicFeature",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A distinctive characteristic of an organism's genetic material related to its sequence, structure, or organization."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000268",
+      "lbl" : "Cell Dimension",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A measurable spatial attribute of a cell that describes its size in one or more directions."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000269",
+      "lbl" : "Optimal Growth Parameter",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "The specific environmental condition at which an organism achieves its maximum growth rate or metabolic efficiency."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000270",
+      "lbl" : "Growth Range Parameter",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "The span of environmental conditions within which an organism can sustain growth and reproduction."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000271",
+      "lbl" : "Growth Tolerance Metric",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A quantitative measure of an organism's ability to withstand variations in a specific environmental factor."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000272",
+      "lbl" : "Cell Shape",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "The three-dimensional geometric form of a microbial cell as determined by its cell wall and cytoskeletal structures."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000273",
+      "lbl" : "Cell Arrangement",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "The spatial organization of multiple cells in relation to each other following cell division."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/000274",
+      "lbl" : "Colony Morphology",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "The macroscopic appearance and structure of a population of microorganisms growing on a solid medium."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/0003",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/0004",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/0005",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/0006",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/0007",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/0008",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/0009",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/0010",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/0011",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/0012",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/0013",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/0014",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/0015",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/0016",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/0017",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/0018",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/0019",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/0020",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/0021",
+      "type" : "CLASS"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/IAO_0000115",
+      "type" : "PROPERTY",
+      "propertyType" : "ANNOTATION"
     }, {
       "id" : "http://purl.org/dc/terms/description",
       "lbl" : "description",
@@ -36,6 +3061,983 @@
       "lbl" : "title",
       "type" : "PROPERTY",
       "propertyType" : "ANNOTATION"
+    }, {
+      "id" : "http://www.geneontology.org/formats/oboInOwl#hasExactSynonym",
+      "type" : "PROPERTY",
+      "propertyType" : "ANNOTATION"
+    }, {
+      "id" : "https://w3id.org/metpo/BactoTrait",
+      "type" : "PROPERTY",
+      "propertyType" : "ANNOTATION"
+    } ],
+    "edges" : [ {
+      "sub" : "https://w3id.org/metpo/000001",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/NamedThing"
+    }, {
+      "sub" : "https://w3id.org/metpo/000002",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/NamedThing"
+    }, {
+      "sub" : "https://w3id.org/metpo/000003",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/NamedThing"
+    }, {
+      "sub" : "https://w3id.org/metpo/000004",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/NamedThing"
+    }, {
+      "sub" : "https://w3id.org/metpo/000005",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/NamedThing"
+    }, {
+      "sub" : "https://w3id.org/metpo/000006",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/NamedThing"
+    }, {
+      "sub" : "https://w3id.org/metpo/000007",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/NamedThing"
+    }, {
+      "sub" : "https://w3id.org/metpo/000008",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/NamedThing"
+    }, {
+      "sub" : "https://w3id.org/metpo/000009",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/GenomicFeature"
+    }, {
+      "sub" : "https://w3id.org/metpo/000010",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/NamedThing"
+    }, {
+      "sub" : "https://w3id.org/metpo/000011",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/NamedThing"
+    }, {
+      "sub" : "https://w3id.org/metpo/000012",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/NamedThing"
+    }, {
+      "sub" : "https://w3id.org/metpo/000013",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/NamedThing"
+    }, {
+      "sub" : "https://w3id.org/metpo/000014",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/NamedThing"
+    }, {
+      "sub" : "https://w3id.org/metpo/000015",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/NamedThing"
+    }, {
+      "sub" : "https://w3id.org/metpo/000016",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/NamedThing"
+    }, {
+      "sub" : "https://w3id.org/metpo/000017",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/NamedThing"
+    }, {
+      "sub" : "https://w3id.org/metpo/000018",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/NamedThing"
+    }, {
+      "sub" : "https://w3id.org/metpo/000019",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/NamedThing"
+    }, {
+      "sub" : "https://w3id.org/metpo/000020",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/NamedThing"
+    }, {
+      "sub" : "https://w3id.org/metpo/000021",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/NamedThing"
+    }, {
+      "sub" : "https://w3id.org/metpo/000022",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/NamedThing"
+    }, {
+      "sub" : "https://w3id.org/metpo/000023",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0001"
+    }, {
+      "sub" : "https://w3id.org/metpo/000024",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0001"
+    }, {
+      "sub" : "https://w3id.org/metpo/000025",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0001"
+    }, {
+      "sub" : "https://w3id.org/metpo/000026",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0001"
+    }, {
+      "sub" : "https://w3id.org/metpo/000027",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0001"
+    }, {
+      "sub" : "https://w3id.org/metpo/000028",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0001"
+    }, {
+      "sub" : "https://w3id.org/metpo/000029",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0001"
+    }, {
+      "sub" : "https://w3id.org/metpo/000030",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0001"
+    }, {
+      "sub" : "https://w3id.org/metpo/000031",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0002"
+    }, {
+      "sub" : "https://w3id.org/metpo/000032",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0002"
+    }, {
+      "sub" : "https://w3id.org/metpo/000033",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0002"
+    }, {
+      "sub" : "https://w3id.org/metpo/000034",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0002"
+    }, {
+      "sub" : "https://w3id.org/metpo/000035",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0002"
+    }, {
+      "sub" : "https://w3id.org/metpo/000036",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0002"
+    }, {
+      "sub" : "https://w3id.org/metpo/000037",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0002"
+    }, {
+      "sub" : "https://w3id.org/metpo/000038",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0003"
+    }, {
+      "sub" : "https://w3id.org/metpo/000039",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0003"
+    }, {
+      "sub" : "https://w3id.org/metpo/000040",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0003"
+    }, {
+      "sub" : "https://w3id.org/metpo/000041",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0003"
+    }, {
+      "sub" : "https://w3id.org/metpo/000042",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0003"
+    }, {
+      "sub" : "https://w3id.org/metpo/000043",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0003"
+    }, {
+      "sub" : "https://w3id.org/metpo/000044",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0003"
+    }, {
+      "sub" : "https://w3id.org/metpo/000045",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0003"
+    }, {
+      "sub" : "https://w3id.org/metpo/000046",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0003"
+    }, {
+      "sub" : "https://w3id.org/metpo/000047",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0004"
+    }, {
+      "sub" : "https://w3id.org/metpo/000048",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0004"
+    }, {
+      "sub" : "https://w3id.org/metpo/000049",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0004"
+    }, {
+      "sub" : "https://w3id.org/metpo/000050",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0004"
+    }, {
+      "sub" : "https://w3id.org/metpo/000051",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0004"
+    }, {
+      "sub" : "https://w3id.org/metpo/000052",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0004"
+    }, {
+      "sub" : "https://w3id.org/metpo/000053",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0004"
+    }, {
+      "sub" : "https://w3id.org/metpo/000054",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0004"
+    }, {
+      "sub" : "https://w3id.org/metpo/000055",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0004"
+    }, {
+      "sub" : "https://w3id.org/metpo/000056",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0004"
+    }, {
+      "sub" : "https://w3id.org/metpo/000057",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0004"
+    }, {
+      "sub" : "https://w3id.org/metpo/000058",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0004"
+    }, {
+      "sub" : "https://w3id.org/metpo/000059",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0005"
+    }, {
+      "sub" : "https://w3id.org/metpo/000060",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0005"
+    }, {
+      "sub" : "https://w3id.org/metpo/000061",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0005"
+    }, {
+      "sub" : "https://w3id.org/metpo/000062",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0005"
+    }, {
+      "sub" : "https://w3id.org/metpo/000063",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0005"
+    }, {
+      "sub" : "https://w3id.org/metpo/000064",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0005"
+    }, {
+      "sub" : "https://w3id.org/metpo/000065",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0005"
+    }, {
+      "sub" : "https://w3id.org/metpo/000066",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0005"
+    }, {
+      "sub" : "https://w3id.org/metpo/000067",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0005"
+    }, {
+      "sub" : "https://w3id.org/metpo/000068",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0005"
+    }, {
+      "sub" : "https://w3id.org/metpo/000069",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0005"
+    }, {
+      "sub" : "https://w3id.org/metpo/000070",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0005"
+    }, {
+      "sub" : "https://w3id.org/metpo/000071",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0005"
+    }, {
+      "sub" : "https://w3id.org/metpo/000072",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0005"
+    }, {
+      "sub" : "https://w3id.org/metpo/000073",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0005"
+    }, {
+      "sub" : "https://w3id.org/metpo/000074",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0005"
+    }, {
+      "sub" : "https://w3id.org/metpo/000075",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0005"
+    }, {
+      "sub" : "https://w3id.org/metpo/000076",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0005"
+    }, {
+      "sub" : "https://w3id.org/metpo/000077",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0005"
+    }, {
+      "sub" : "https://w3id.org/metpo/000078",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0005"
+    }, {
+      "sub" : "https://w3id.org/metpo/000079",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0005"
+    }, {
+      "sub" : "https://w3id.org/metpo/000080",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0005"
+    }, {
+      "sub" : "https://w3id.org/metpo/000081",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0005"
+    }, {
+      "sub" : "https://w3id.org/metpo/000082",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0005"
+    }, {
+      "sub" : "https://w3id.org/metpo/000083",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0005"
+    }, {
+      "sub" : "https://w3id.org/metpo/000084",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0005"
+    }, {
+      "sub" : "https://w3id.org/metpo/000085",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0005"
+    }, {
+      "sub" : "https://w3id.org/metpo/000086",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0005"
+    }, {
+      "sub" : "https://w3id.org/metpo/000087",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0005"
+    }, {
+      "sub" : "https://w3id.org/metpo/000088",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0006"
+    }, {
+      "sub" : "https://w3id.org/metpo/000089",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0006"
+    }, {
+      "sub" : "https://w3id.org/metpo/000090",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0006"
+    }, {
+      "sub" : "https://w3id.org/metpo/000091",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0006"
+    }, {
+      "sub" : "https://w3id.org/metpo/000092",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0006"
+    }, {
+      "sub" : "https://w3id.org/metpo/000093",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0006"
+    }, {
+      "sub" : "https://w3id.org/metpo/000094",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0006"
+    }, {
+      "sub" : "https://w3id.org/metpo/000095",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0006"
+    }, {
+      "sub" : "https://w3id.org/metpo/000096",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0006"
+    }, {
+      "sub" : "https://w3id.org/metpo/000097",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0006"
+    }, {
+      "sub" : "https://w3id.org/metpo/000098",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0006"
+    }, {
+      "sub" : "https://w3id.org/metpo/000099",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0007"
+    }, {
+      "sub" : "https://w3id.org/metpo/000100",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0007"
+    }, {
+      "sub" : "https://w3id.org/metpo/000101",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0007"
+    }, {
+      "sub" : "https://w3id.org/metpo/000102",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0007"
+    }, {
+      "sub" : "https://w3id.org/metpo/000103",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0007"
+    }, {
+      "sub" : "https://w3id.org/metpo/000104",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0007"
+    }, {
+      "sub" : "https://w3id.org/metpo/000105",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0007"
+    }, {
+      "sub" : "https://w3id.org/metpo/000106",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0007"
+    }, {
+      "sub" : "https://w3id.org/metpo/000107",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0007"
+    }, {
+      "sub" : "https://w3id.org/metpo/000108",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0007"
+    }, {
+      "sub" : "https://w3id.org/metpo/000109",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0007"
+    }, {
+      "sub" : "https://w3id.org/metpo/000110",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0007"
+    }, {
+      "sub" : "https://w3id.org/metpo/000111",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0007"
+    }, {
+      "sub" : "https://w3id.org/metpo/000112",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0007"
+    }, {
+      "sub" : "https://w3id.org/metpo/000113",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0007"
+    }, {
+      "sub" : "https://w3id.org/metpo/000114",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0007"
+    }, {
+      "sub" : "https://w3id.org/metpo/000115",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0007"
+    }, {
+      "sub" : "https://w3id.org/metpo/000116",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0007"
+    }, {
+      "sub" : "https://w3id.org/metpo/000117",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0007"
+    }, {
+      "sub" : "https://w3id.org/metpo/000118",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0007"
+    }, {
+      "sub" : "https://w3id.org/metpo/000119",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0007"
+    }, {
+      "sub" : "https://w3id.org/metpo/000120",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0007"
+    }, {
+      "sub" : "https://w3id.org/metpo/000121",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0007"
+    }, {
+      "sub" : "https://w3id.org/metpo/000122",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0007"
+    }, {
+      "sub" : "https://w3id.org/metpo/000123",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0007"
+    }, {
+      "sub" : "https://w3id.org/metpo/000124",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0007"
+    }, {
+      "sub" : "https://w3id.org/metpo/000125",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0007"
+    }, {
+      "sub" : "https://w3id.org/metpo/000126",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0008"
+    }, {
+      "sub" : "https://w3id.org/metpo/000127",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0008"
+    }, {
+      "sub" : "https://w3id.org/metpo/000128",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0008"
+    }, {
+      "sub" : "https://w3id.org/metpo/000129",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0008"
+    }, {
+      "sub" : "https://w3id.org/metpo/000130",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0008"
+    }, {
+      "sub" : "https://w3id.org/metpo/000131",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0008"
+    }, {
+      "sub" : "https://w3id.org/metpo/000132",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0008"
+    }, {
+      "sub" : "https://w3id.org/metpo/000133",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0008"
+    }, {
+      "sub" : "https://w3id.org/metpo/000134",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0008"
+    }, {
+      "sub" : "https://w3id.org/metpo/000135",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0008"
+    }, {
+      "sub" : "https://w3id.org/metpo/000136",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0008"
+    }, {
+      "sub" : "https://w3id.org/metpo/000137",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0008"
+    }, {
+      "sub" : "https://w3id.org/metpo/000138",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0008"
+    }, {
+      "sub" : "https://w3id.org/metpo/000139",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0008"
+    }, {
+      "sub" : "https://w3id.org/metpo/000140",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0008"
+    }, {
+      "sub" : "https://w3id.org/metpo/000141",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0008"
+    }, {
+      "sub" : "https://w3id.org/metpo/000142",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0008"
+    }, {
+      "sub" : "https://w3id.org/metpo/000143",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0008"
+    }, {
+      "sub" : "https://w3id.org/metpo/000144",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0008"
+    }, {
+      "sub" : "https://w3id.org/metpo/000145",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0008"
+    }, {
+      "sub" : "https://w3id.org/metpo/000146",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0008"
+    }, {
+      "sub" : "https://w3id.org/metpo/000147",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0008"
+    }, {
+      "sub" : "https://w3id.org/metpo/000148",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0008"
+    }, {
+      "sub" : "https://w3id.org/metpo/000149",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0008"
+    }, {
+      "sub" : "https://w3id.org/metpo/000150",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0008"
+    }, {
+      "sub" : "https://w3id.org/metpo/000151",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0008"
+    }, {
+      "sub" : "https://w3id.org/metpo/000152",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0009"
+    }, {
+      "sub" : "https://w3id.org/metpo/000153",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0009"
+    }, {
+      "sub" : "https://w3id.org/metpo/000154",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0009"
+    }, {
+      "sub" : "https://w3id.org/metpo/000155",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0009"
+    }, {
+      "sub" : "https://w3id.org/metpo/000156",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0010"
+    }, {
+      "sub" : "https://w3id.org/metpo/000157",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0010"
+    }, {
+      "sub" : "https://w3id.org/metpo/000158",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0010"
+    }, {
+      "sub" : "https://w3id.org/metpo/000159",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0010"
+    }, {
+      "sub" : "https://w3id.org/metpo/000160",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0011"
+    }, {
+      "sub" : "https://w3id.org/metpo/000161",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0011"
+    }, {
+      "sub" : "https://w3id.org/metpo/000162",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0011"
+    }, {
+      "sub" : "https://w3id.org/metpo/000163",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0011"
+    }, {
+      "sub" : "https://w3id.org/metpo/000164",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0012"
+    }, {
+      "sub" : "https://w3id.org/metpo/000165",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0012"
+    }, {
+      "sub" : "https://w3id.org/metpo/000166",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0012"
+    }, {
+      "sub" : "https://w3id.org/metpo/000167",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0012"
+    }, {
+      "sub" : "https://w3id.org/metpo/000168",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0012"
+    }, {
+      "sub" : "https://w3id.org/metpo/000169",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0012"
+    }, {
+      "sub" : "https://w3id.org/metpo/000170",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0012"
+    }, {
+      "sub" : "https://w3id.org/metpo/000171",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0013"
+    }, {
+      "sub" : "https://w3id.org/metpo/000172",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0013"
+    }, {
+      "sub" : "https://w3id.org/metpo/000173",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0013"
+    }, {
+      "sub" : "https://w3id.org/metpo/000174",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0013"
+    }, {
+      "sub" : "https://w3id.org/metpo/000175",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0013"
+    }, {
+      "sub" : "https://w3id.org/metpo/000176",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0013"
+    }, {
+      "sub" : "https://w3id.org/metpo/000177",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0013"
+    }, {
+      "sub" : "https://w3id.org/metpo/000178",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0014"
+    }, {
+      "sub" : "https://w3id.org/metpo/000179",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0014"
+    }, {
+      "sub" : "https://w3id.org/metpo/000180",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0014"
+    }, {
+      "sub" : "https://w3id.org/metpo/000181",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0014"
+    }, {
+      "sub" : "https://w3id.org/metpo/000182",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0015"
+    }, {
+      "sub" : "https://w3id.org/metpo/000183",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0015"
+    }, {
+      "sub" : "https://w3id.org/metpo/000184",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0015"
+    }, {
+      "sub" : "https://w3id.org/metpo/000185",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0015"
+    }, {
+      "sub" : "https://w3id.org/metpo/000186",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0015"
+    }, {
+      "sub" : "https://w3id.org/metpo/000187",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0015"
+    }, {
+      "sub" : "https://w3id.org/metpo/000188",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0016"
+    }, {
+      "sub" : "https://w3id.org/metpo/000189",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0016"
+    }, {
+      "sub" : "https://w3id.org/metpo/000190",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0016"
+    }, {
+      "sub" : "https://w3id.org/metpo/000191",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0016"
+    }, {
+      "sub" : "https://w3id.org/metpo/000192",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0017"
+    }, {
+      "sub" : "https://w3id.org/metpo/000193",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0017"
+    }, {
+      "sub" : "https://w3id.org/metpo/000194",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0017"
+    }, {
+      "sub" : "https://w3id.org/metpo/000195",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0017"
+    }, {
+      "sub" : "https://w3id.org/metpo/000196",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0018"
+    }, {
+      "sub" : "https://w3id.org/metpo/000197",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0018"
+    }, {
+      "sub" : "https://w3id.org/metpo/000198",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0018"
+    }, {
+      "sub" : "https://w3id.org/metpo/000199",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0018"
+    }, {
+      "sub" : "https://w3id.org/metpo/000200",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0018"
+    }, {
+      "sub" : "https://w3id.org/metpo/000201",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0018"
+    }, {
+      "sub" : "https://w3id.org/metpo/000202",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0019"
+    }, {
+      "sub" : "https://w3id.org/metpo/000203",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0019"
+    }, {
+      "sub" : "https://w3id.org/metpo/000204",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0019"
+    }, {
+      "sub" : "https://w3id.org/metpo/000205",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0019"
+    }, {
+      "sub" : "https://w3id.org/metpo/000206",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0020"
+    }, {
+      "sub" : "https://w3id.org/metpo/000207",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0020"
+    }, {
+      "sub" : "https://w3id.org/metpo/000208",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0020"
+    }, {
+      "sub" : "https://w3id.org/metpo/000209",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0020"
+    }, {
+      "sub" : "https://w3id.org/metpo/000210",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0020"
+    }, {
+      "sub" : "https://w3id.org/metpo/000211",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0021"
+    }, {
+      "sub" : "https://w3id.org/metpo/000212",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0021"
+    }, {
+      "sub" : "https://w3id.org/metpo/000213",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0021"
+    }, {
+      "sub" : "https://w3id.org/metpo/000214",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0021"
+    }, {
+      "sub" : "https://w3id.org/metpo/000215",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0021"
+    }, {
+      "sub" : "https://w3id.org/metpo/000216",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0021"
+    }, {
+      "sub" : "https://w3id.org/metpo/000217",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0021"
+    }, {
+      "sub" : "https://w3id.org/metpo/000218",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0021"
+    }, {
+      "sub" : "https://w3id.org/metpo/000219",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0021"
+    }, {
+      "sub" : "https://w3id.org/metpo/000220",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0021"
+    }, {
+      "sub" : "https://w3id.org/metpo/000221",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0021"
+    }, {
+      "sub" : "https://w3id.org/metpo/000222",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0021"
+    }, {
+      "sub" : "https://w3id.org/metpo/000223",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0021"
+    }, {
+      "sub" : "https://w3id.org/metpo/000224",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0021"
+    }, {
+      "sub" : "https://w3id.org/metpo/000225",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0021"
+    }, {
+      "sub" : "https://w3id.org/metpo/000226",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0021"
+    }, {
+      "sub" : "https://w3id.org/metpo/000227",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0021"
+    }, {
+      "sub" : "https://w3id.org/metpo/000228",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0021"
+    }, {
+      "sub" : "https://w3id.org/metpo/000229",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0021"
+    }, {
+      "sub" : "https://w3id.org/metpo/000230",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0021"
+    }, {
+      "sub" : "https://w3id.org/metpo/000231",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0021"
+    }, {
+      "sub" : "https://w3id.org/metpo/000232",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0021"
+    }, {
+      "sub" : "https://w3id.org/metpo/000233",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0021"
+    }, {
+      "sub" : "https://w3id.org/metpo/000234",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0021"
+    }, {
+      "sub" : "https://w3id.org/metpo/000235",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0021"
+    }, {
+      "sub" : "https://w3id.org/metpo/000236",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0021"
+    }, {
+      "sub" : "https://w3id.org/metpo/000237",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0021"
+    }, {
+      "sub" : "https://w3id.org/metpo/000238",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0021"
+    }, {
+      "sub" : "https://w3id.org/metpo/000239",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0021"
+    }, {
+      "sub" : "https://w3id.org/metpo/000240",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0021"
+    }, {
+      "sub" : "https://w3id.org/metpo/000241",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0021"
+    }, {
+      "sub" : "https://w3id.org/metpo/000242",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/0021"
     } ]
   } ]
 }
