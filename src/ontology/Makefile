@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                fe1e89af86db18d804f7e99ed4a16bf374f3f1018b8ba3df0589f6706579ddbe
+CONFIG_HASH=                e0c597ef04b6feca811a2297677da528665c842e0160e9542b78ae808fa4d3b6
 
 
 # ----------------------------------------
@@ -26,7 +26,9 @@ EDIT_FORMAT=                owl
 SRC =                       $(ONT)-edit.$(EDIT_FORMAT)
 MAKE_FAST=                  $(MAKE) IMP=false PAT=false COMP=false MIR=false
 CATALOG=                    catalog-v001.xml
-ROBOT=                      robot --catalog $(CATALOG)
+#ROBOT=                      robot --catalog $(CATALOG)
+ROBOT=                      robot --catalog $(CATALOG) --add-prefix 'METPO: https://w3id.org/metpo/' # MAM 2025-03-13
+
 
 OWLTOOLS=                   owltools --use-catalog
 RELEASEDIR=                 ../..
@@ -42,10 +44,10 @@ SPARQLDIR =                 ../sparql
 COMPONENTSDIR =             components
 REPORT_FAIL_ON =            None
 REPORT_LABEL =              -l true
-REPORT_PROFILE_OPTS =       
-OBO_FORMAT_OPTIONS =        
-SPARQL_VALIDATION_CHECKS =  owldef-self-reference iri-range label-with-iri multiple-replaced_by dc-properties 
-SPARQL_EXPORTS =            basic-report class-count-by-prefix edges xrefs obsoletes synonyms 
+REPORT_PROFILE_OPTS =
+OBO_FORMAT_OPTIONS =
+SPARQL_VALIDATION_CHECKS =  owldef-self-reference iri-range label-with-iri multiple-replaced_by dc-properties
+SPARQL_EXPORTS =            basic-report class-count-by-prefix edges xrefs obsoletes synonyms
 ODK_VERSION_MAKEFILE =      v1.5.4
 
 TODAY ?=                    $(shell date +%Y-%m-%d)
@@ -53,7 +55,7 @@ OBODATE ?=                  $(shell date +'%d:%m:%Y %H:%M')
 VERSION=                    $(TODAY)
 ANNOTATE_ONTOLOGY_VERSION = annotate -V $(ONTBASE)/releases/$(VERSION)/$@ --annotation owl:versionInfo $(VERSION)
 ANNOTATE_CONVERT_FILE =     annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) convert -f ofn --output $@.tmp.owl && mv $@.tmp.owl $@
-OTHER_SRC =                 
+OTHER_SRC =                 $(COMPONENTSDIR)/metpo_sheet.owl
 ONTOLOGYTERMS =             $(TMPDIR)/ontologyterms.txt
 EDIT_PREPROCESSED =         $(TMPDIR)/$(ONT)-preprocess.owl
 
@@ -121,7 +123,7 @@ custom_robot_plugins:
 
 
 .PHONY: extra_robot_plugins
-extra_robot_plugins: 
+extra_robot_plugins:
 
 
 # Install all ROBOT plugins to the runtime plugins directory
@@ -147,7 +149,7 @@ $(ROBOT_PLUGINS_DIRECTORY)/%.jar:
 # ----------------------------------------
 
 MAIN_PRODUCTS = $(sort $(foreach r,$(RELEASE_ARTEFACTS), $(r)) $(ONT))
-MAIN_GZIPPED  = 
+MAIN_GZIPPED  =
 MAIN_FILES    = $(foreach n,$(MAIN_PRODUCTS), $(foreach f,$(FORMATS), $(n).$(f))) $(MAIN_GZIPPED)
 SRCMERGED     = $(TMPDIR)/merged-$(SRC)
 
@@ -159,7 +161,7 @@ all_main: $(MAIN_FILES)
 # ----------------------------------------
 
 
-IMPORTS = 
+IMPORTS =
 
 IMPORT_ROOTS = $(patsubst %, $(IMPORTDIR)/%_import, $(IMPORTS))
 IMPORT_OWL_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl)
@@ -174,7 +176,7 @@ all_imports: $(IMPORT_FILES)
 # ----------------------------------------
 
 
-SUBSETS = 
+SUBSETS =
 
 SUBSET_ROOTS = $(patsubst %, $(SUBSETDIR)/%, $(SUBSETS))
 SUBSET_FILES = $(foreach n,$(SUBSET_ROOTS), $(foreach f,$(FORMATS_INCL_TSV), $(n).$(f)))
@@ -187,7 +189,7 @@ all_subsets: $(SUBSET_FILES)
 # ----------------------------------------
 
 
-MAPPINGS = 
+MAPPINGS =
 
 MAPPING_FILES = $(patsubst %, $(MAPPINGDIR)/%.sssom.tsv, $(MAPPINGS))
 
@@ -233,7 +235,7 @@ SPARQL_VALIDATION_QUERIES = $(foreach V,$(SPARQL_VALIDATION_CHECKS),$(SPARQLDIR)
 
 sparql_test:  $(EDIT_PREPROCESSED) | $(REPORTDIR)
 ifneq ($(SPARQL_VALIDATION_QUERIES),)
-  
+
 	$(ROBOT) verify -i $(EDIT_PREPROCESSED) --queries $(SPARQL_VALIDATION_QUERIES) -O $(REPORTDIR)
 endif
 
@@ -314,7 +316,7 @@ $(REPORTDIR)/release-diff.md: $(ONT).owl $(TMPDIR)/current-release.owl
 	$(ROBOT) diff --labels true --left $(TMPDIR)/current-release.owl --right $(ONT).owl -f markdown -o $@
 
 # ------------------------
-# Imports: Seeding system 
+# Imports: Seeding system
 # ------------------------
 
 # seed.txt contains all referenced entities
@@ -379,6 +381,46 @@ refresh-%:
 no-mirror-refresh-%:
 	$(MAKE) IMP=true IMP_LARGE=true MIR=false PAT=false $(IMPORTDIR)/$*_import.owl -B
 
+
+# ----------------------------------------
+# Components
+# ----------------------------------------
+# Some ontologies contain external and internal components. A component is included in the ontology in its entirety.
+
+COMP=true # Global parameter to bypass component generation
+
+.PHONY: all_components
+all_components: $(OTHER_SRC)
+
+.PHONY: recreate-components
+recreate-components:
+	$(MAKE) COMP=true IMP=false MIR=true PAT=true IMP_LARGE=false all_components -B
+
+.PHONY: no-mirror-recreate-components
+no-mirror-recreate-components:
+	$(MAKE) COMP=true IMP=false MIR=false PAT=true IMP_LARGE=false all_components -B
+
+.PHONY: recreate-%
+recreate-%:
+	$(MAKE) COMP=true IMP=false IMP_LARGE=false MIR=true PAT=true $(COMPONENTSDIR)/$*.owl -B
+
+.PHONY: no-mirror-recreate-%
+no-mirror-recreate-%:
+	$(MAKE) COMP=true IMP=false IMP_LARGE=false MIR=false PAT=true $(COMPONENTSDIR)/$*.owl -B
+
+$(COMPONENTSDIR)/%.owl: | $(COMPONENTSDIR)
+	test -f $@ || touch $@
+.PRECIOUS: $(COMPONENTSDIR)/%.owl
+
+
+
+$(COMPONENTSDIR)/metpo_sheet.owl: $(TEMPLATEDIR)/metpo_sheet.tsv
+	if [ $(COMP) = true ] ; then $(ROBOT) template  \
+		$(patsubst %, --template %, $^) \
+		$(ANNOTATE_CONVERT_FILE); fi
+
+
+.PRECIOUS: $(COMPONENTSDIR)/metpo_sheet.owl
 # ----------------------------------------
 # Mirroring upstream ontologies
 # ----------------------------------------
@@ -469,13 +511,13 @@ $(ONT).json: $(ONT).owl
 # -----------------------------------------------------
 # Release artefacts: variants (base, full, simple, etc)
 # -----------------------------------------------------
-SHARED_ROBOT_COMMANDS = 
+SHARED_ROBOT_COMMANDS =
 
 $(ONTOLOGYTERMS): $(SRCMERGED)
 	$(ROBOT) query -f csv -i $< --query ../sparql/metpo_terms.sparql $@
 
 # ROBOT pipeline that merges imports, including components.
-ROBOT_RELEASE_IMPORT_MODE=$(ROBOT) merge --input $< 
+ROBOT_RELEASE_IMPORT_MODE=$(ROBOT) remove --input $< --select imports --trim false merge $(patsubst %, -i %, $(OTHER_SRC)) merge $(patsubst %, -i %, $(IMPORT_FILES))
 
 # ROBOT pipeline that removes imports, then merges components. This is for release artefacts that start from "base"
 ROBOT_RELEASE_IMPORT_MODE_BASE=$(ROBOT) remove --input $< --select imports --trim false merge $(patsubst %, -i %, $(OTHER_SRC)) 
