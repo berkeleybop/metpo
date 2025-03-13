@@ -1,12 +1,11 @@
 id: metpo
 title: "METPO"
+git_main_branch: main
 github_org: berkeleybop
 repo: metpo
 release_artefacts:
   - base
   - full
-# import_group:
-#   products: {}
 primary_release: full
 export_formats:
   - owl
@@ -15,3 +14,14 @@ export_formats:
 robot_java_args: '-Xmx8G'
 use_robot_templates: TRUE
 robot_template_directory: src/templates
+components:
+  products:
+    - filename: metpo_sheet.owl
+      use_template: TRUE
+      templates:
+        - metpo_sheet.tsv
+# import_group:
+#   products: {}
+use_dosdps: FALSE
+use_mappings: FALSE
+use_edit_file_imports: FALSE
