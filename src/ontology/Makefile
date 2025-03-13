@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                e0c597ef04b6feca811a2297677da528665c842e0160e9542b78ae808fa4d3b6
+CONFIG_HASH=                cff1ca9f98a13a9580ade473baf0f126e1f42927126adba4747a8833b43489cb
 
 
 # ----------------------------------------
@@ -19,16 +19,14 @@ CONFIG_HASH=                e0c597ef04b6feca811a2297677da528665c842e0160e9542b78
 # these can be overwritten on the command line
 
 OBOBASE=                    http://purl.obolibrary.org/obo
-URIBASE=                    https://w3id.org/metpo# MAM 2025-03-13
+URIBASE=                    https://w3id.org/metpo
 ONT=                        metpo
-ONTBASE=                    https://w3id.org/metpo# MAM 2025-03-13
+ONTBASE=                    https://w3id.org/metpo/metpo
 EDIT_FORMAT=                owl
 SRC =                       $(ONT)-edit.$(EDIT_FORMAT)
 MAKE_FAST=                  $(MAKE) IMP=false PAT=false COMP=false MIR=false
 CATALOG=                    catalog-v001.xml
-#ROBOT=                      robot --catalog $(CATALOG)
-ROBOT=                      robot --catalog $(CATALOG) --add-prefix 'METPO: https://w3id.org/metpo/' # MAM 2025-03-13
-
+ROBOT=                      robot --catalog $(CATALOG)
 
 OWLTOOLS=                   owltools --use-catalog
 RELEASEDIR=                 ../..
@@ -44,10 +42,10 @@ SPARQLDIR =                 ../sparql
 COMPONENTSDIR =             components
 REPORT_FAIL_ON =            None
 REPORT_LABEL =              -l true
-REPORT_PROFILE_OPTS =
-OBO_FORMAT_OPTIONS =
-SPARQL_VALIDATION_CHECKS =  owldef-self-reference iri-range label-with-iri multiple-replaced_by dc-properties
-SPARQL_EXPORTS =            basic-report class-count-by-prefix edges xrefs obsoletes synonyms
+REPORT_PROFILE_OPTS =       
+OBO_FORMAT_OPTIONS =        
+SPARQL_VALIDATION_CHECKS =  owldef-self-reference iri-range label-with-iri multiple-replaced_by dc-properties 
+SPARQL_EXPORTS =            basic-report class-count-by-prefix edges xrefs obsoletes synonyms 
 ODK_VERSION_MAKEFILE =      v1.5.4
 
 TODAY ?=                    $(shell date +%Y-%m-%d)
@@ -55,7 +53,7 @@ OBODATE ?=                  $(shell date +'%d:%m:%Y %H:%M')
 VERSION=                    $(TODAY)
 ANNOTATE_ONTOLOGY_VERSION = annotate -V $(ONTBASE)/releases/$(VERSION)/$@ --annotation owl:versionInfo $(VERSION)
 ANNOTATE_CONVERT_FILE =     annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) convert -f ofn --output $@.tmp.owl && mv $@.tmp.owl $@
-OTHER_SRC =                 $(COMPONENTSDIR)/metpo_sheet.owl
+OTHER_SRC =                 $(COMPONENTSDIR)/metpo_sheet.owl 
 ONTOLOGYTERMS =             $(TMPDIR)/ontologyterms.txt
 EDIT_PREPROCESSED =         $(TMPDIR)/$(ONT)-preprocess.owl
 
@@ -123,7 +121,7 @@ custom_robot_plugins:
 
 
 .PHONY: extra_robot_plugins
-extra_robot_plugins:
+extra_robot_plugins: 
 
 
 # Install all ROBOT plugins to the runtime plugins directory
@@ -149,7 +147,7 @@ $(ROBOT_PLUGINS_DIRECTORY)/%.jar:
 # ----------------------------------------
 
 MAIN_PRODUCTS = $(sort $(foreach r,$(RELEASE_ARTEFACTS), $(r)) $(ONT))
-MAIN_GZIPPED  =
+MAIN_GZIPPED  = 
 MAIN_FILES    = $(foreach n,$(MAIN_PRODUCTS), $(foreach f,$(FORMATS), $(n).$(f))) $(MAIN_GZIPPED)
 SRCMERGED     = $(TMPDIR)/merged-$(SRC)
 
@@ -161,7 +159,7 @@ all_main: $(MAIN_FILES)
 # ----------------------------------------
 
 
-IMPORTS =
+IMPORTS = 
 
 IMPORT_ROOTS = $(patsubst %, $(IMPORTDIR)/%_import, $(IMPORTS))
 IMPORT_OWL_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl)
@@ -176,7 +174,7 @@ all_imports: $(IMPORT_FILES)
 # ----------------------------------------
 
 
-SUBSETS =
+SUBSETS = 
 
 SUBSET_ROOTS = $(patsubst %, $(SUBSETDIR)/%, $(SUBSETS))
 SUBSET_FILES = $(foreach n,$(SUBSET_ROOTS), $(foreach f,$(FORMATS_INCL_TSV), $(n).$(f)))
@@ -189,7 +187,7 @@ all_subsets: $(SUBSET_FILES)
 # ----------------------------------------
 
 
-MAPPINGS =
+MAPPINGS = 
 
 MAPPING_FILES = $(patsubst %, $(MAPPINGDIR)/%.sssom.tsv, $(MAPPINGS))
 
@@ -235,7 +233,7 @@ SPARQL_VALIDATION_QUERIES = $(foreach V,$(SPARQL_VALIDATION_CHECKS),$(SPARQLDIR)
 
 sparql_test:  $(EDIT_PREPROCESSED) | $(REPORTDIR)
 ifneq ($(SPARQL_VALIDATION_QUERIES),)
-
+  
 	$(ROBOT) verify -i $(EDIT_PREPROCESSED) --queries $(SPARQL_VALIDATION_QUERIES) -O $(REPORTDIR)
 endif
 
@@ -316,7 +314,7 @@ $(REPORTDIR)/release-diff.md: $(ONT).owl $(TMPDIR)/current-release.owl
 	$(ROBOT) diff --labels true --left $(TMPDIR)/current-release.owl --right $(ONT).owl -f markdown -o $@
 
 # ------------------------
-# Imports: Seeding system
+# Imports: Seeding system 
 # ------------------------
 
 # seed.txt contains all referenced entities
@@ -415,10 +413,9 @@ $(COMPONENTSDIR)/%.owl: | $(COMPONENTSDIR)
 
 
 $(COMPONENTSDIR)/metpo_sheet.owl: $(TEMPLATEDIR)/metpo_sheet.tsv
-	if [ $(COMP) = true ] ; then $(ROBOT) template  \
+	if [ $(COMP) = true ] ; then $(ROBOT) template --add-prefix 'METPO: https://w3id.org/metpo/' \
 		$(patsubst %, --template %, $^) \
 		$(ANNOTATE_CONVERT_FILE); fi
-
 
 .PRECIOUS: $(COMPONENTSDIR)/metpo_sheet.owl
 # ----------------------------------------
@@ -511,7 +508,7 @@ $(ONT).json: $(ONT).owl
 # -----------------------------------------------------
 # Release artefacts: variants (base, full, simple, etc)
 # -----------------------------------------------------
-SHARED_ROBOT_COMMANDS =
+SHARED_ROBOT_COMMANDS = 
 
 $(ONTOLOGYTERMS): $(SRCMERGED)
 	$(ROBOT) query -f csv -i $< --query ../sparql/metpo_terms.sparql $@

@@ -8,11 +8,11 @@
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:METPO="https://w3id.org/metpo/"
+     xmlns:metpo="https://w3id.org/metpo/"
      xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="https://w3id.org/metpo/metpo.owl">
-        <owl:versionIRI rdf:resource="https://w3id.org/metpo/releases/2025-03-13/metpo.owl"/>
+        <owl:versionIRI rdf:resource="https://w3id.org/metpo/metpo/releases/2025-03-13/metpo.owl"/>
         <dcterms:description>None</dcterms:description>
         <dcterms:license rdf:resource="https://creativecommons.org/licenses/unspecified"/>
         <dcterms:title>METPO</dcterms:title>
@@ -1676,7 +1676,7 @@
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0009"/>
         <oboInOwl:hasExactSynonym>gc:low</oboInOwl:hasExactSynonym>
         <rdfs:label>GC% low ( &lt; 42.65)</rdfs:label>
-        <METPO:BactoTrait>GC_&lt;=42.65</METPO:BactoTrait>
+        <metpo:BactoTrait>GC_&lt;=42.65</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -1686,7 +1686,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000153">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0009"/>
         <rdfs:label>GC% mid1 (42.65 - 57)</rdfs:label>
-        <METPO:BactoTrait>GC_42.65_57.0</METPO:BactoTrait>
+        <metpo:BactoTrait>GC_42.65_57.0</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -1696,7 +1696,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000154">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0009"/>
         <rdfs:label>GC% mid2 (57 - 66.3)</rdfs:label>
-        <METPO:BactoTrait>GC_57.0_66.3</METPO:BactoTrait>
+        <metpo:BactoTrait>GC_57.0_66.3</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -1706,7 +1706,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000155">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0009"/>
         <rdfs:label>GC% high ( &gt; 66.3)</rdfs:label>
-        <METPO:BactoTrait>GC_&gt;66.3</METPO:BactoTrait>
+        <metpo:BactoTrait>GC_&gt;66.3</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -1716,7 +1716,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000156">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0010"/>
         <rdfs:label>Cell width uM very low (&lt; 0.5)</rdfs:label>
-        <METPO:BactoTrait>W_&lt;=0.5</METPO:BactoTrait>
+        <metpo:BactoTrait>W_&lt;=0.5</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -1726,7 +1726,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000157">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0010"/>
         <rdfs:label>Cell width uM low (0.5 - 0.65)</rdfs:label>
-        <METPO:BactoTrait>W_0.5_0.65</METPO:BactoTrait>
+        <metpo:BactoTrait>W_0.5_0.65</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -1736,7 +1736,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000158">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0010"/>
         <rdfs:label>Cell width uM mid (0.65 - 0.9)</rdfs:label>
-        <METPO:BactoTrait>W_0.65_0.9</METPO:BactoTrait>
+        <metpo:BactoTrait>W_0.65_0.9</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -1746,7 +1746,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000159">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0010"/>
         <rdfs:label>Cell width uM high (&gt; 0.9)</rdfs:label>
-        <METPO:BactoTrait>W_&gt;0.9</METPO:BactoTrait>
+        <metpo:BactoTrait>W_&gt;0.9</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -1756,7 +1756,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000160">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0011"/>
         <rdfs:label>Cell length uM very low (&lt;= 1.3)</rdfs:label>
-        <METPO:BactoTrait>L_&lt;=1.3</METPO:BactoTrait>
+        <metpo:BactoTrait>L_&lt;=1.3</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -1766,7 +1766,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000161">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0011"/>
         <rdfs:label>Cell length uM low (1.3 - 2)</rdfs:label>
-        <METPO:BactoTrait>L_1.3_2</METPO:BactoTrait>
+        <metpo:BactoTrait>L_1.3_2</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -1776,7 +1776,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000162">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0011"/>
         <rdfs:label>Cell length uM mid (2 - 3)</rdfs:label>
-        <METPO:BactoTrait>L_2_3</METPO:BactoTrait>
+        <metpo:BactoTrait>L_2_3</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -1786,7 +1786,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000163">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0011"/>
         <rdfs:label>Cell length uM high (&gt; 3)</rdfs:label>
-        <METPO:BactoTrait>L_&gt;3</METPO:BactoTrait>
+        <metpo:BactoTrait>L_&gt;3</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -1797,7 +1797,7 @@
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0012"/>
         <oboInOwl:hasExactSynonym>Psychrophile</oboInOwl:hasExactSynonym>
         <rdfs:label>Temperature Optimum C very low (&lt;= 10)</rdfs:label>
-        <METPO:BactoTrait>TO_&lt;=10</METPO:BactoTrait>
+        <metpo:BactoTrait>TO_&lt;=10</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -1809,7 +1809,7 @@
         <oboInOwl:hasExactSynonym>Psychrophile</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Psychrotolerant</oboInOwl:hasExactSynonym>
         <rdfs:label>Temperature Optimum C low (10 - 22)</rdfs:label>
-        <METPO:BactoTrait>TO_10_to_22</METPO:BactoTrait>
+        <metpo:BactoTrait>TO_10_to_22</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -1820,7 +1820,7 @@
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0012"/>
         <oboInOwl:hasExactSynonym>Mesophilie</oboInOwl:hasExactSynonym>
         <rdfs:label>Temperature Optimum C mid1 (22 - 27)</rdfs:label>
-        <METPO:BactoTrait>TO_22_to_27</METPO:BactoTrait>
+        <metpo:BactoTrait>TO_22_to_27</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -1831,7 +1831,7 @@
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0012"/>
         <oboInOwl:hasExactSynonym>Mesophilie</oboInOwl:hasExactSynonym>
         <rdfs:label>Temperature Optimum C mid2 (27 - 30)</rdfs:label>
-        <METPO:BactoTrait>TO_27_to_30</METPO:BactoTrait>
+        <metpo:BactoTrait>TO_27_to_30</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -1842,7 +1842,7 @@
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0012"/>
         <oboInOwl:hasExactSynonym>Mesophilie</oboInOwl:hasExactSynonym>
         <rdfs:label>Temperature Optimum C mid3 (30 - 34)</rdfs:label>
-        <METPO:BactoTrait>TO_30_to_34</METPO:BactoTrait>
+        <metpo:BactoTrait>TO_30_to_34</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -1853,7 +1853,7 @@
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0012"/>
         <oboInOwl:hasExactSynonym>Mesophilie</oboInOwl:hasExactSynonym>
         <rdfs:label>Temperature Optimum C mid4 (34 - 40)</rdfs:label>
-        <METPO:BactoTrait>TO_34_to_40</METPO:BactoTrait>
+        <metpo:BactoTrait>TO_34_to_40</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -1864,7 +1864,7 @@
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0012"/>
         <oboInOwl:hasExactSynonym>Thermophile</oboInOwl:hasExactSynonym>
         <rdfs:label>Temperature Optimum C high (&gt; 40)</rdfs:label>
-        <METPO:BactoTrait>TO_&gt;40</METPO:BactoTrait>
+        <metpo:BactoTrait>TO_&gt;40</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -1875,7 +1875,7 @@
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0013"/>
         <oboInOwl:hasExactSynonym>Psychrophile</oboInOwl:hasExactSynonym>
         <rdfs:label>Temperature Range C very low (&lt;= 10)</rdfs:label>
-        <METPO:BactoTrait>TR_&lt;=10</METPO:BactoTrait>
+        <metpo:BactoTrait>TR_&lt;=10</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -1887,7 +1887,7 @@
         <oboInOwl:hasExactSynonym>Psychrophile</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Psychrotolerant</oboInOwl:hasExactSynonym>
         <rdfs:label>Temperature Range C low (10 - 22)</rdfs:label>
-        <METPO:BactoTrait>TR_10_to_22</METPO:BactoTrait>
+        <metpo:BactoTrait>TR_10_to_22</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -1898,7 +1898,7 @@
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0013"/>
         <oboInOwl:hasExactSynonym>Mesophilie</oboInOwl:hasExactSynonym>
         <rdfs:label>Temperature Range C mid1 (22 - 27)</rdfs:label>
-        <METPO:BactoTrait>TR_22_to_27</METPO:BactoTrait>
+        <metpo:BactoTrait>TR_22_to_27</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -1909,7 +1909,7 @@
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0013"/>
         <oboInOwl:hasExactSynonym>Mesophilie</oboInOwl:hasExactSynonym>
         <rdfs:label>Temperature Range C mid2 (27 - 30)</rdfs:label>
-        <METPO:BactoTrait>TR_27_to_30</METPO:BactoTrait>
+        <metpo:BactoTrait>TR_27_to_30</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -1920,7 +1920,7 @@
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0013"/>
         <oboInOwl:hasExactSynonym>Mesophilie</oboInOwl:hasExactSynonym>
         <rdfs:label>Temperature Range C mid3 (30 - 34)</rdfs:label>
-        <METPO:BactoTrait>TR_30_to_34</METPO:BactoTrait>
+        <metpo:BactoTrait>TR_30_to_34</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -1931,7 +1931,7 @@
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0013"/>
         <oboInOwl:hasExactSynonym>Mesophilie</oboInOwl:hasExactSynonym>
         <rdfs:label>Temperature Range C mid4 (34 - 40)</rdfs:label>
-        <METPO:BactoTrait>TR_34_to_40</METPO:BactoTrait>
+        <metpo:BactoTrait>TR_34_to_40</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -1942,7 +1942,7 @@
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0013"/>
         <oboInOwl:hasExactSynonym>Thermophile</oboInOwl:hasExactSynonym>
         <rdfs:label>Temperature Range C high (&gt; 40)</rdfs:label>
-        <METPO:BactoTrait>TR_&gt;40</METPO:BactoTrait>
+        <metpo:BactoTrait>TR_&gt;40</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -1957,7 +1957,7 @@
         <oboInOwl:hasExactSynonym>Facultative acidophile</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Obligative acidophile</oboInOwl:hasExactSynonym>
         <rdfs:label>pH Optimum low (0 - 6)</rdfs:label>
-        <METPO:BactoTrait>pHO_0_to_6</METPO:BactoTrait>
+        <metpo:BactoTrait>pHO_0_to_6</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -1969,7 +1969,7 @@
         <oboInOwl:hasExactSynonym>Alkali Tolerant</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Neutrophile</oboInOwl:hasExactSynonym>
         <rdfs:label>pH Optimum mid1 (6 - 7)</rdfs:label>
-        <METPO:BactoTrait>pHO_6_to_7</METPO:BactoTrait>
+        <metpo:BactoTrait>pHO_6_to_7</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -1982,7 +1982,7 @@
         <oboInOwl:hasExactSynonym>Alkaliphile</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Neutrophile</oboInOwl:hasExactSynonym>
         <rdfs:label>pH Optimum mid2 (7 - 8)</rdfs:label>
-        <METPO:BactoTrait>pHO_7_to_8</METPO:BactoTrait>
+        <metpo:BactoTrait>pHO_7_to_8</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -1995,7 +1995,7 @@
         <oboInOwl:hasExactSynonym>Alkaliphile</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Extreme Alkaliphile</oboInOwl:hasExactSynonym>
         <rdfs:label>pH Optimum high (8 - 14)</rdfs:label>
-        <METPO:BactoTrait>pHO_8_to_14</METPO:BactoTrait>
+        <metpo:BactoTrait>pHO_8_to_14</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -2010,7 +2010,7 @@
         <oboInOwl:hasExactSynonym>Facultative acidophile</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Obligative acidophile</oboInOwl:hasExactSynonym>
         <rdfs:label>pH Range very low (0 - 4)</rdfs:label>
-        <METPO:BactoTrait>pHR_0_to_4</METPO:BactoTrait>
+        <metpo:BactoTrait>pHR_0_to_4</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -2024,7 +2024,7 @@
         <oboInOwl:hasExactSynonym>Facultative acidophile</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Obligative acidophile</oboInOwl:hasExactSynonym>
         <rdfs:label>pH Range low (4 - 6)</rdfs:label>
-        <METPO:BactoTrait>pHR_4_to_6</METPO:BactoTrait>
+        <metpo:BactoTrait>pHR_4_to_6</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -2037,7 +2037,7 @@
         <oboInOwl:hasExactSynonym>Facultative acidophile</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Neutrophile</oboInOwl:hasExactSynonym>
         <rdfs:label>pH Range mid1 (6 - 7)</rdfs:label>
-        <METPO:BactoTrait>pHR_6_to_7</METPO:BactoTrait>
+        <metpo:BactoTrait>pHR_6_to_7</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -2051,7 +2051,7 @@
         <oboInOwl:hasExactSynonym>Facultative acidophile</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Neutrophile</oboInOwl:hasExactSynonym>
         <rdfs:label>pH Range mid2 (7 - 8)</rdfs:label>
-        <METPO:BactoTrait>pHR_7_to_8</METPO:BactoTrait>
+        <metpo:BactoTrait>pHR_7_to_8</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -2065,7 +2065,7 @@
         <oboInOwl:hasExactSynonym>Extreme Alkaliphile</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Facultative acidophile</oboInOwl:hasExactSynonym>
         <rdfs:label>pH Range mid3 (8 - 10)</rdfs:label>
-        <METPO:BactoTrait>pHR_8_to_10</METPO:BactoTrait>
+        <metpo:BactoTrait>pHR_8_to_10</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -2078,7 +2078,7 @@
         <oboInOwl:hasExactSynonym>Alkaliphile</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Extreme Alkaliphile</oboInOwl:hasExactSynonym>
         <rdfs:label>pH Range high (10 - 14)</rdfs:label>
-        <METPO:BactoTrait>10_to_14</METPO:BactoTrait>
+        <metpo:BactoTrait>10_to_14</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -2090,7 +2090,7 @@
         <oboInOwl:hasExactSynonym>Halotolerant</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Non-halophile</oboInOwl:hasExactSynonym>
         <rdfs:label>% NaCl Optimum low (&lt;= 1)</rdfs:label>
-        <METPO:BactoTrait>NaR_&lt;=1</METPO:BactoTrait>
+        <metpo:BactoTrait>NaR_&lt;=1</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -2102,7 +2102,7 @@
         <oboInOwl:hasExactSynonym>Halotolerant</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Slight halophile</oboInOwl:hasExactSynonym>
         <rdfs:label>% NaCl Optimum mid1 (1 - 3)</rdfs:label>
-        <METPO:BactoTrait>NaR_1_to_3</METPO:BactoTrait>
+        <metpo:BactoTrait>NaR_1_to_3</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -2114,7 +2114,7 @@
         <oboInOwl:hasExactSynonym>Halotolerant</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Moderate halophile</oboInOwl:hasExactSynonym>
         <rdfs:label>% NaCl Optimum mid2 (3 - 8)</rdfs:label>
-        <METPO:BactoTrait>NaR_3_to_8</METPO:BactoTrait>
+        <metpo:BactoTrait>NaR_3_to_8</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -2125,7 +2125,7 @@
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0016"/>
         <oboInOwl:hasExactSynonym>Extreme halophile</oboInOwl:hasExactSynonym>
         <rdfs:label>% NaCl Optimum high (&gt; 8)</rdfs:label>
-        <METPO:BactoTrait>NaR_&gt;8</METPO:BactoTrait>
+        <metpo:BactoTrait>NaR_&gt;8</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -2137,7 +2137,7 @@
         <oboInOwl:hasExactSynonym>Halotolerant</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Non-halophile</oboInOwl:hasExactSynonym>
         <rdfs:label>% NaCl Range low (&lt;= 1)</rdfs:label>
-        <METPO:BactoTrait>NaO_&lt;=1</METPO:BactoTrait>
+        <metpo:BactoTrait>NaO_&lt;=1</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -2149,7 +2149,7 @@
         <oboInOwl:hasExactSynonym>Halotolerant</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Slight halophile</oboInOwl:hasExactSynonym>
         <rdfs:label>% NaCl Range mid1 (1 - 3)</rdfs:label>
-        <METPO:BactoTrait>NaO_1_to_3</METPO:BactoTrait>
+        <metpo:BactoTrait>NaO_1_to_3</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -2161,7 +2161,7 @@
         <oboInOwl:hasExactSynonym>Halotolerant</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Moderate halophile</oboInOwl:hasExactSynonym>
         <rdfs:label>% NaCl Range mid2 (3 - 8)</rdfs:label>
-        <METPO:BactoTrait>NaO_3_to_8</METPO:BactoTrait>
+        <metpo:BactoTrait>NaO_3_to_8</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -2172,7 +2172,7 @@
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0017"/>
         <oboInOwl:hasExactSynonym>Extreme halophile</oboInOwl:hasExactSynonym>
         <rdfs:label>% NaCl Range high (&gt; 8)</rdfs:label>
-        <METPO:BactoTrait>NaO_&gt;8</METPO:BactoTrait>
+        <metpo:BactoTrait>NaO_&gt;8</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -2182,7 +2182,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000196">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0018"/>
         <rdfs:label>pH delta very low (&lt;= 1)</rdfs:label>
-        <METPO:BactoTrait>pHd_&lt;=1</METPO:BactoTrait>
+        <metpo:BactoTrait>pHd_&lt;=1</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -2192,7 +2192,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000197">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0018"/>
         <rdfs:label>pH delta low (1 - 2)</rdfs:label>
-        <METPO:BactoTrait>pHd_1_2</METPO:BactoTrait>
+        <metpo:BactoTrait>pHd_1_2</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -2202,7 +2202,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000198">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0018"/>
         <rdfs:label>pH delta mid1 (2 - 3)</rdfs:label>
-        <METPO:BactoTrait>pHd_2_3</METPO:BactoTrait>
+        <metpo:BactoTrait>pHd_2_3</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -2212,7 +2212,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000199">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0018"/>
         <rdfs:label>pH delta mid2 (3 - 4)</rdfs:label>
-        <METPO:BactoTrait>pHd_3_4</METPO:BactoTrait>
+        <metpo:BactoTrait>pHd_3_4</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -2228,7 +2228,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000200">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0018"/>
         <rdfs:label>pH delta mid3 (4 - 5)</rdfs:label>
-        <METPO:BactoTrait>pHd_4_5</METPO:BactoTrait>
+        <metpo:BactoTrait>pHd_4_5</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -2238,7 +2238,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000201">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0018"/>
         <rdfs:label>pH delta high (5 - 9)</rdfs:label>
-        <METPO:BactoTrait>pHd_5_9</METPO:BactoTrait>
+        <metpo:BactoTrait>pHd_5_9</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -2248,7 +2248,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000202">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0019"/>
         <rdfs:label>% NaCl delta low (&lt;= 1)</rdfs:label>
-        <METPO:BactoTrait>Nad_&lt;=1</METPO:BactoTrait>
+        <metpo:BactoTrait>Nad_&lt;=1</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -2258,7 +2258,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000203">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0019"/>
         <rdfs:label>% NaCl delta mid2 (1 - 3)</rdfs:label>
-        <METPO:BactoTrait>Nad_1_3</METPO:BactoTrait>
+        <metpo:BactoTrait>Nad_1_3</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -2268,7 +2268,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000204">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0019"/>
         <rdfs:label>% NaCl delta mid2 (3 - 8)</rdfs:label>
-        <METPO:BactoTrait>Nad_3_8</METPO:BactoTrait>
+        <metpo:BactoTrait>Nad_3_8</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -2278,7 +2278,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000205">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0019"/>
         <rdfs:label>% NaCl delta high (&gt;= 8)</rdfs:label>
-        <METPO:BactoTrait>Nad_&gt;8</METPO:BactoTrait>
+        <metpo:BactoTrait>Nad_&gt;8</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -2288,7 +2288,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000206">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0020"/>
         <rdfs:label>Temperature C delta very low (1 - 5)</rdfs:label>
-        <METPO:BactoTrait>Td_1_5</METPO:BactoTrait>
+        <metpo:BactoTrait>Td_1_5</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -2298,7 +2298,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000207">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0020"/>
         <rdfs:label>Temperature C delta low (5 - 10)</rdfs:label>
-        <METPO:BactoTrait>Td_5_10</METPO:BactoTrait>
+        <metpo:BactoTrait>Td_5_10</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -2308,7 +2308,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000208">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0020"/>
         <rdfs:label>Temperature C delta mid1 (10 - 20)</rdfs:label>
-        <METPO:BactoTrait>Td_10_20</METPO:BactoTrait>
+        <metpo:BactoTrait>Td_10_20</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -2318,7 +2318,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000209">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0020"/>
         <rdfs:label>Temperature C delta mid2 (20 - 30)</rdfs:label>
-        <METPO:BactoTrait>Td_20_30</METPO:BactoTrait>
+        <metpo:BactoTrait>Td_20_30</metpo:BactoTrait>
     </owl:Class>
     
 
@@ -2328,7 +2328,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000210">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/0020"/>
         <rdfs:label>Temperature C delta high (&gt;= 30)</rdfs:label>
-        <METPO:BactoTrait>Td_&gt;30</METPO:BactoTrait>
+        <metpo:BactoTrait>Td_&gt;30</metpo:BactoTrait>
     </owl:Class>
     
 
