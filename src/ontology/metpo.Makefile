@@ -3,7 +3,7 @@
 ## If you need to customize your Makefile, make
 ## changes here rather than in the main Makefile
 
-SRC_URL = 'https://docs.google.com/spreadsheets/d/1_Lr-9_5QHi8QLvRyTZFSciUhzGKD4DbUObyTpJ16_RU/export?exportFormat=tsv'
+SRC_URL = 'https://docs.google.com/spreadsheets/d/1_Lr-9_5QHi8QLvRyTZFSciUhzGKD4DbUObyTpJ16_RU/export?exportFormat=tsv&gid=1905096712'
 
 .PHONY: squeaky-clean clean-templates
 

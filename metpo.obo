@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: https://w3id.org/metpo/metpo/releases/2025-03-13/metpo.owl
+data-version: https://w3id.org/metpo/metpo/releases/2025-03-18/metpo.owl
 idspace: dce http://purl.org/dc/elements/1.1/ 
 idspace: dcterms http://purl.org/dc/terms/ 
 idspace: metpo https://w3id.org/metpo/ 
@@ -8,1741 +8,2333 @@ ontology: https://w3id.org/metpo/metpo.owl
 property_value: dcterms:description "None" xsd:string
 property_value: dcterms:license https://creativecommons.org/licenses/unspecified
 property_value: dcterms:title "METPO" xsd:string
-property_value: owl:versionInfo "2025-03-13" xsd:string
+property_value: owl:versionInfo "2025-03-18" xsd:string
 
 [Term]
-id: metpo:000001
-name: Temperature
-is_a: metpo:NamedThing
+id: metpo:0000001
+name: 'Temperature'
+def: "A physical property of matter that quantitatively expresses the degree of thermal energy in a system, affecting the rate of microbial metabolic processes and growth." []
+is_a: metpo:0001019 ! 'sensitivity toward temperature'
+property_value: metpo:Unit "C" xsd:string
 
 [Term]
-id: metpo:000002
-name: Salinity
-is_a: metpo:NamedThing
+id: metpo:0000002
+name: 'Salinity'
+def: "A measure of the concentration of dissolved salts in an aqueous environment that influences osmotic pressure across microbial cell membranes." []
+is_a: metpo:0001017 ! 'sensitivity toward NaCl'
+property_value: metpo:Unit "% NaCl" xsd:string
 
 [Term]
-id: metpo:000003
-name: pH
-is_a: metpo:NamedThing
+id: metpo:0000003
+name: 'pH'
+def: "A quantitative scale that expresses the acidity or alkalinity of an environment based on hydrogen ion concentration, affecting enzyme activity and cellular functions in microorganisms." []
+is_a: metpo:0001018 ! 'sensitivity toward pH'
+property_value: metpo:Unit "pH" xsd:string
 
 [Term]
-id: metpo:000004
-name: Oxygen
-is_a: metpo:NamedThing
+id: metpo:0000004
+name: 'Oxygen'
+def: "A gaseous element required by or toxic to different microorganisms, determining their respiratory metabolism and ecological distribution." []
+is_a: metpo:9999999 ! 'obsolete'
+property_value: metpo:Unit "% O2" xsd:string
 
 [Term]
-id: metpo:000005
-name: Trophic type
-is_a: metpo:NamedThing
+id: metpo:0000005
+name: 'Trophic type'
+def: "A classification of an organism based on its mechanisms of energy acquisition and carbon assimilation for cellular maintenance and growth." []
+is_a: metpo:0001010 ! 'prokaryotic metabolically differentiated cell'
 
 [Term]
-id: metpo:000006
-name: Motility
-is_a: metpo:NamedThing
+id: metpo:0000006
+name: 'Motility'
+def: "The capacity of an organism to move independently using metabolic energy, facilitated by specialized cellular structures." []
 
 [Term]
-id: metpo:000007
-name: Sporulation
-is_a: metpo:NamedThing
+id: metpo:0000007
+name: 'Sporulation'
+def: "A process of differentiation in which a microorganism produces specialized resistant structures for survival or reproduction in response to environmental conditions." []
 
 [Term]
-id: metpo:000008
-name: Pressure
-is_a: metpo:NamedThing
+id: metpo:0000008
+name: 'Pressure'
+def: "A physical force exerted per unit area in an environment that influences microbial cellular processes, protein structure, and membrane fluidity." []
+is_a: metpo:0001016 ! 'sensitivity toward pressure'
+property_value: metpo:Unit "atm" xsd:string
 
 [Term]
-id: metpo:000009
-name: GC content
-is_a: metpo:GenomicFeature
+id: metpo:0000009
+name: 'GC content'
+def: "The percentage of nitrogenous bases in DNA that are either guanine or cytosine, reflecting genomic adaptation to environmental conditions." []
+property_value: metpo:Unit "% GC" xsd:string
 
 [Term]
-id: metpo:000010
-name: Cell Width
-is_a: metpo:NamedThing
+id: metpo:0000010
+name: 'Cell Width'
+def: "The measurable lateral dimension of a microbial cell perpendicular to its longitudinal axis, contributing to its surface area-to-volume ratio." []
+is_a: metpo:0001008 ! 'width'
+property_value: metpo:Unit "uM" xsd:string
 
 [Term]
-id: metpo:000011
-name: Cell Length
-is_a: metpo:NamedThing
+id: metpo:0000011
+name: 'Cell Length'
+def: "The measurable longitudinal dimension of a microbial cell, influencing its surface exposure to the environment and internal diffusion distances." []
+is_a: metpo:0001009 ! 'length'
+property_value: metpo:Unit "uM" xsd:string
 
 [Term]
-id: metpo:000012
-name: Temperature Optimum
-is_a: metpo:NamedThing
+id: metpo:0000012
+name: 'Temperature Optimum'
+def: "The specific temperature at which a microorganism exhibits maximum metabolic activity and growth rate within its viable range." []
+is_a: metpo:0001019 ! 'sensitivity toward temperature'
+property_value: metpo:Unit "C" xsd:string
 
 [Term]
-id: metpo:000013
-name: Temperature Range
-is_a: metpo:NamedThing
+id: metpo:0000013
+name: 'Temperature Range'
+def: "The span of temperatures within which a microorganism can maintain metabolic functions and population viability." []
+is_a: metpo:0001019 ! 'sensitivity toward temperature'
+property_value: metpo:Unit "C" xsd:string
 
 [Term]
-id: metpo:000014
-name: pH Optimum
-is_a: metpo:NamedThing
+id: metpo:0000014
+name: 'pH Optimum'
+def: "The specific hydrogen ion concentration at which a microorganism achieves its maximum growth rate and metabolic efficiency." []
+is_a: metpo:0001018 ! 'sensitivity toward pH'
+property_value: metpo:Unit "pH" xsd:string
 
 [Term]
-id: metpo:000015
-name: pH Range
-is_a: metpo:NamedThing
+id: metpo:0000015
+name: 'pH Range'
+def: "The span of hydrogen ion concentrations within which a microorganism can maintain cellular homeostasis and sustain growth." []
+is_a: metpo:0001018 ! 'sensitivity toward pH'
+property_value: metpo:Unit "pH" xsd:string
 
 [Term]
-id: metpo:000016
-name: NaCl Optimum
-is_a: metpo:NamedThing
+id: metpo:0000016
+name: 'NaCl Optimum'
+def: "The specific concentration of sodium chloride at which a microorganism exhibits maximum growth rate and metabolic efficiency." []
+is_a: metpo:0001017 ! 'sensitivity toward NaCl'
+property_value: metpo:Unit "% NaCl" xsd:string
 
 [Term]
-id: metpo:000017
-name: NaCl Range
-is_a: metpo:NamedThing
+id: metpo:0000017
+name: 'NaCl Range'
+def: "The span of sodium chloride concentrations within which a microorganism can maintain osmotic balance and cellular functions." []
+is_a: metpo:0001017 ! 'sensitivity toward NaCl'
+property_value: metpo:Unit "% NaCl" xsd:string
 
 [Term]
-id: metpo:000018
-name: pH delta
-is_a: metpo:NamedThing
+id: metpo:0000018
+name: 'pH delta'
+def: "A measure of the breadth of hydrogen ion concentrations that a microorganism can tolerate, calculated as the difference between the maximum and minimum viable pH values." []
+is_a: metpo:0001018 ! 'sensitivity toward pH'
+property_value: metpo:Unit "pH" xsd:string
 
 [Term]
-id: metpo:000019
-name: NaCl delta
-is_a: metpo:NamedThing
+id: metpo:0000019
+name: 'NaCl delta'
+def: "A measure of the breadth of sodium chloride concentrations that a microorganism can tolerate, calculated as the difference between the maximum and minimum viable salinity values." []
+is_a: metpo:0001017 ! 'sensitivity toward NaCl'
+property_value: metpo:Unit "% NaCl" xsd:string
 
 [Term]
-id: metpo:000020
-name: Temperature Delta
-is_a: metpo:NamedThing
+id: metpo:0000020
+name: 'Temperature Delta'
+def: "A measure of the breadth of thermal conditions that a microorganism can withstand, calculated as the difference between the maximum and minimum viable temperature values." []
+is_a: metpo:0001019 ! 'sensitivity toward temperature'
+property_value: metpo:Unit "C" xsd:string
 
 [Term]
-id: metpo:000021
-name: Morphology
-is_a: metpo:NamedThing
+id: metpo:0000021
+name: 'Morphology'
+def: "The structural characteristics and spatial arrangement of a microbial cell or colony, determined by genetic factors and influenced by environmental conditions." []
+is_a: metpo:0001003 ! 'physicial object quality'
 
 [Term]
-id: metpo:000022
-name: Other
-is_a: metpo:NamedThing
-
-[Term]
-id: metpo:000023
-name: Psychrophile
+id: metpo:0000022
+name: 'Psychrophile'
 def: "A microorganism that grows optimally at temperatures below 15°C and can grow at temperatures below 20°C." []
-is_a: metpo:000001 ! Temperature
+is_a: metpo:0000001 ! 'Temperature'
+property_value: metpo:RangeMax "20" xsd:string
+property_value: metpo:RangeMin "0" xsd:string
+property_value: metpo:Unit "C" xsd:string
 
 [Term]
-id: metpo:000024
-name: Psychrotolerant
+id: metpo:0000023
+name: 'Psychrotolerant'
 def: "A microorganism that can grow at temperatures near 0°C but has optimal growth at higher temperatures." []
-is_a: metpo:000001 ! Temperature
+is_a: metpo:0000001 ! 'Temperature'
+property_value: metpo:RangeMax "45" xsd:string
+property_value: metpo:RangeMin "0" xsd:string
+property_value: metpo:Unit "C" xsd:string
 
 [Term]
-id: metpo:000025
-name: Mesophilie
+id: metpo:0000024
+name: 'Mesophilie'
 def: "A microorganism that grows optimally at moderate temperatures, typically between 20°C and 45°C." []
-is_a: metpo:000001 ! Temperature
+is_a: metpo:0000001 ! 'Temperature'
+property_value: metpo:RangeMax "45" xsd:string
+property_value: metpo:RangeMin "20" xsd:string
+property_value: metpo:Unit "C" xsd:string
 
 [Term]
-id: metpo:000026
-name: Thermotolerant
+id: metpo:0000025
+name: 'Thermotolerant'
 def: "A microorganism that can grow at temperatures near 50°C but has optimal growth at lower temperatures." []
-is_a: metpo:000001 ! Temperature
+is_a: metpo:0000001 ! 'Temperature'
+property_value: metpo:RangeMax "50" xsd:string
+property_value: metpo:RangeMin "0" xsd:string
+property_value: metpo:Unit "C" xsd:string
 
 [Term]
-id: metpo:000027
-name: Thermophile
+id: metpo:0000026
+name: 'Thermophile'
 def: "A microorganism that grows optimally at relatively high temperatures, typically between 45°C and 80°C." []
-is_a: metpo:000001 ! Temperature
+is_a: metpo:0000001 ! 'Temperature'
+property_value: metpo:RangeMax "80" xsd:string
+property_value: metpo:RangeMin "45" xsd:string
+property_value: metpo:Unit "C" xsd:string
 
 [Term]
-id: metpo:000028
-name: Extreme thermophile
+id: metpo:0000027
+name: 'Extreme thermophile'
 def: "A microorganism that grows optimally at temperatures between 60°C and 80°C." []
-is_a: metpo:000001 ! Temperature
+is_a: metpo:0000001 ! 'Temperature'
+property_value: metpo:RangeMax "80" xsd:string
+property_value: metpo:RangeMin "60" xsd:string
+property_value: metpo:Unit "C" xsd:string
 
 [Term]
-id: metpo:000029
-name: Hyperthermophile
+id: metpo:0000028
+name: 'Hyperthermophile'
 def: "A microorganism that grows optimally at very high temperatures, above 80°C." []
-is_a: metpo:000001 ! Temperature
+is_a: metpo:0000001 ! 'Temperature'
+property_value: metpo:RangeMax "115" xsd:string
+property_value: metpo:RangeMin "80" xsd:string
+property_value: metpo:Unit "C" xsd:string
 
 [Term]
-id: metpo:000030
-name: Extreme hyperthermophile
+id: metpo:0000029
+name: 'Extreme hyperthermophile'
 def: "A microorganism that grows optimally at temperatures above 90°C." []
-is_a: metpo:000001 ! Temperature
+is_a: metpo:0000001 ! 'Temperature'
+property_value: metpo:RangeMax "125" xsd:string
+property_value: metpo:RangeMin "90" xsd:string
+property_value: metpo:Unit "C" xsd:string
 
 [Term]
-id: metpo:000031
-name: Halophile
+id: metpo:0000030
+name: 'Halophile'
 def: "A microorganism that requires salt for optimal growth and survival." []
 synonym: "Halophilic" EXACT []
-is_a: metpo:000002 ! Salinity
+is_a: metpo:0000002 ! 'Salinity'
+property_value: metpo:RangeMax "35" xsd:string
+property_value: metpo:RangeMin "0" xsd:string
+property_value: metpo:Unit "% NaCl" xsd:string
 
 [Term]
-id: metpo:000032
-name: Non-halophile
+id: metpo:0000031
+name: 'Non-halophile'
 def: "A microorganism that does not require salt for optimal growth and survival." []
 synonym: "Non-halophilic" EXACT []
 synonym: "Nonhalophile" EXACT []
-is_a: metpo:000002 ! Salinity
+is_a: metpo:0000002 ! 'Salinity'
+property_value: metpo:RangeMax "2" xsd:string
+property_value: metpo:RangeMin "0" xsd:string
+property_value: metpo:Unit "% NaCl" xsd:string
 
 [Term]
-id: metpo:000033
-name: Slight halophile
+id: metpo:0000032
+name: 'Slight halophile'
 def: "A microorganism that grows optimally in environments with low salt concentrations, typically between 2-5% NaCl." []
 synonym: "Slightly halophilic" EXACT []
-is_a: metpo:000002 ! Salinity
+is_a: metpo:0000002 ! 'Salinity'
+property_value: metpo:RangeMax "5" xsd:string
+property_value: metpo:RangeMin "2" xsd:string
+property_value: metpo:Unit "% NaCl" xsd:string
 
 [Term]
-id: metpo:000034
-name: Moderate halophile
+id: metpo:0000033
+name: 'Moderate halophile'
 def: "A microorganism that grows optimally in environments with moderate salt concentrations, typically between 5-20% NaCl." []
 synonym: "Moderately halophilic" EXACT []
-is_a: metpo:000002 ! Salinity
+is_a: metpo:0000002 ! 'Salinity'
+property_value: metpo:RangeMax "20" xsd:string
+property_value: metpo:RangeMin "5" xsd:string
+property_value: metpo:Unit "% NaCl" xsd:string
 
 [Term]
-id: metpo:000035
-name: Extreme halophile
+id: metpo:0000034
+name: 'Extreme halophile'
 def: "A microorganism that grows optimally in environments with high salt concentrations, typically above 20% NaCl." []
 synonym: "Extremely halophilic" EXACT []
-is_a: metpo:000002 ! Salinity
+is_a: metpo:0000002 ! 'Salinity'
+property_value: metpo:RangeMax "35" xsd:string
+property_value: metpo:RangeMin "20" xsd:string
+property_value: metpo:Unit "% NaCl" xsd:string
 
 [Term]
-id: metpo:000036
-name: Halotolerant
+id: metpo:0000035
+name: 'Halotolerant'
 def: "A microorganism that grows optimally in environments with both high salt concentrations and high pH (alkaline conditions)." []
-is_a: metpo:000002 ! Salinity
+is_a: metpo:0000002 ! 'Salinity'
+property_value: metpo:RangeMax "20" xsd:string
+property_value: metpo:RangeMin "0" xsd:string
+property_value: metpo:Unit "% NaCl" xsd:string
 
 [Term]
-id: metpo:000037
-name: Haloalkaliphile
+id: metpo:0000036
+name: 'Haloalkaliphile'
 def: "A microorganism that grows optimally in environments with both high salt concentrations (typically 2-5% NaCl, but can tolerate up to 25% NaCl) and high pH (typically 9-11, but can grow at pH values up to 12)." []
-is_a: metpo:000002 ! Salinity
+is_a: metpo:0000002 ! 'Salinity'
+property_value: metpo:RangeMax "20" xsd:string
+property_value: metpo:RangeMin "0" xsd:string
+property_value: metpo:Unit "% NaCl" xsd:string
 
 [Term]
-id: metpo:000038
-name: Extreme Acidophile
+id: metpo:0000037
+name: 'Extreme Acidophile'
 def: "A microorganism that grows optimally at very low pH values, typically between pH 1 and 3." []
 synonym: "Extreme acidophilic" EXACT []
-is_a: metpo:000003 ! pH
+is_a: metpo:0000003 ! 'pH'
+property_value: metpo:RangeMax "3" xsd:string
+property_value: metpo:RangeMin "1" xsd:string
+property_value: metpo:Unit "pH" xsd:string
 
 [Term]
-id: metpo:000039
-name: Acidophile
+id: metpo:0000038
+name: 'Acidophile'
 def: "A microorganism that grows optimally at low pH values, typically below pH 5." []
 synonym: "Acidophilic" EXACT []
-is_a: metpo:000003 ! pH
+is_a: metpo:0000003 ! 'pH'
+property_value: metpo:RangeMax "5" xsd:string
+property_value: metpo:RangeMin "0" xsd:string
+property_value: metpo:Unit "pH" xsd:string
 
 [Term]
-id: metpo:000040
-name: Neutrophile
+id: metpo:0000039
+name: 'Neutrophile'
 def: "A microorganism that grows optimally at neutral pH values, typically around pH 7." []
 synonym: "Neutrophilic" EXACT []
-is_a: metpo:000003 ! pH
+is_a: metpo:0000003 ! 'pH'
+property_value: metpo:RangeMax "8" xsd:string
+property_value: metpo:RangeMin "6" xsd:string
+property_value: metpo:Unit "pH" xsd:string
 
 [Term]
-id: metpo:000041
-name: Alkaliphile
+id: metpo:0000040
+name: 'Alkaliphile'
 def: "A microorganism that grows optimally at high pH values, typically above pH 9." []
-is_a: metpo:000003 ! pH
+is_a: metpo:0000003 ! 'pH'
+property_value: metpo:RangeMax "14" xsd:string
+property_value: metpo:RangeMin "7" xsd:string
+property_value: metpo:Unit "pH" xsd:string
 
 [Term]
-id: metpo:000042
-name: Acid Tolerant
+id: metpo:0000041
+name: 'Acid Tolerant'
 def: "A microorganism that can grow in acidic conditions below pH 5 but does not require them for optimal growth." []
 synonym: "Alkaliphilic" EXACT []
-is_a: metpo:000003 ! pH
+is_a: metpo:0000003 ! 'pH'
+property_value: metpo:RangeMax "14" xsd:string
+property_value: metpo:RangeMin "0" xsd:string
+property_value: metpo:Unit "pH" xsd:string
 
 [Term]
-id: metpo:000043
-name: Alkali Tolerant
+id: metpo:0000042
+name: 'Alkali Tolerant'
 def: "A microorganism that can grow in alkaline conditions above pH 9 but does not require them for optimal growth." []
 synonym: "Acid-tolerant" EXACT []
-is_a: metpo:000003 ! pH
+is_a: metpo:0000003 ! 'pH'
+property_value: metpo:RangeMax "14" xsd:string
+property_value: metpo:RangeMin "6" xsd:string
+property_value: metpo:Unit "pH" xsd:string
 
 [Term]
-id: metpo:000044
-name: Extreme Alkaliphile
+id: metpo:0000043
+name: 'Extreme Alkaliphile'
 def: "A microorganism that grows optimally at very high pH values, typically above pH 10." []
 synonym: "Alkali-tolerant" EXACT []
-is_a: metpo:000003 ! pH
+is_a: metpo:0000003 ! 'pH'
+property_value: metpo:RangeMax "14" xsd:string
+property_value: metpo:RangeMin "9" xsd:string
+property_value: metpo:Unit "pH" xsd:string
 
 [Term]
-id: metpo:000045
-name: Facultative acidophile
+id: metpo:0000044
+name: 'Facultative acidophile'
 def: "A microorganism that can grow in acidic conditions but does not require them for optimal growth." []
 synonym: "Extreme alkaliphilic" EXACT []
-is_a: metpo:000003 ! pH
+is_a: metpo:0000003 ! 'pH'
+property_value: metpo:RangeMax "14" xsd:string
+property_value: metpo:RangeMin "0" xsd:string
+property_value: metpo:Unit "pH" xsd:string
 
 [Term]
-id: metpo:000046
-name: Obligative acidophile
+id: metpo:0000045
+name: 'Obligative acidophile'
 def: "A microorganism that requires acidic conditions for growth and survival." []
-is_a: metpo:000003 ! pH
+is_a: metpo:0000003 ! 'pH'
+property_value: metpo:RangeMax "5" xsd:string
+property_value: metpo:RangeMin "0" xsd:string
+property_value: metpo:Unit "pH" xsd:string
 
 [Term]
-id: metpo:000047
-name: Aerobe
+id: metpo:0000046
+name: 'Aerobe'
 def: "A microorganism that requires oxygen for growth and metabolism." []
 synonym: "Obligate aerobe" EXACT []
 synonym: "Strict aerobe" EXACT []
-is_a: metpo:000004 ! Oxygen
+is_a: metpo:0001000 ! 'sensitivity to oxygen'
+property_value: metpo:RangeMax "100" xsd:string
+property_value: metpo:RangeMin "1" xsd:string
+property_value: metpo:Unit "% O2" xsd:string
 
 [Term]
-id: metpo:000048
-name: Anaerobe
+id: metpo:0000047
+name: 'Anaerobe'
 def: "A microorganism that grows in the absence of oxygen and is unable to use oxygen for growth." []
 synonym: "Obligate anaerobe" EXACT []
 synonym: "Strict anaerobe" EXACT []
-is_a: metpo:000004 ! Oxygen
+is_a: metpo:0001000 ! 'sensitivity to oxygen'
+property_value: metpo:RangeMax "0" xsd:string
+property_value: metpo:RangeMin "0" xsd:string
+property_value: metpo:Unit "% O2" xsd:string
 
 [Term]
-id: metpo:000049
-name: Facultative anaerobe
+id: metpo:0000048
+name: 'Facultative anaerobe'
 def: "A microorganism that can grow with or without oxygen, using oxygen for respiration when available but capable of fermentation or anaerobic respiration in its absence." []
 synonym: "Facultative aerobe" EXACT []
-is_a: metpo:000004 ! Oxygen
+is_a: metpo:0001000 ! 'sensitivity to oxygen'
+property_value: metpo:RangeMax "100" xsd:string
+property_value: metpo:RangeMin "0" xsd:string
+property_value: metpo:Unit "% O2" xsd:string
 
 [Term]
-id: metpo:000050
-name: Facultative aerobe
+id: metpo:0000049
+name: 'Facultative aerobe'
 def: "A microorganism that primarily uses oxygen for respiration but can also grow without it using alternative metabolic pathways." []
 synonym: "Facultative anaerobe" EXACT []
-is_a: metpo:000004 ! Oxygen
+is_a: metpo:0001000 ! 'sensitivity to oxygen'
+property_value: metpo:RangeMax "100" xsd:string
+property_value: metpo:RangeMin "0" xsd:string
+property_value: metpo:Unit "% O2" xsd:string
 
 [Term]
-id: metpo:000051
-name: Microaerophile
+id: metpo:0000050
+name: 'Microaerophile'
 def: "A microorganism that requires oxygen for growth but at concentrations lower than those found in air (typically 2-10% oxygen)." []
 synonym: "Microaerobe" EXACT []
-is_a: metpo:000004 ! Oxygen
+is_a: metpo:0001000 ! 'sensitivity to oxygen'
+property_value: metpo:RangeMax "10" xsd:string
+property_value: metpo:RangeMin "0.5" xsd:string
+property_value: metpo:Unit "% O2" xsd:string
 
 [Term]
-id: metpo:000052
-name: Aerotolerant
+id: metpo:0000051
+name: 'Aerotolerant'
 def: "A microorganism that does not use oxygen for growth but can survive and grow in its presence without being harmed." []
 synonym: "Oxygen-tolerant" EXACT []
-is_a: metpo:000004 ! Oxygen
+is_a: metpo:0001000 ! 'sensitivity to oxygen'
+property_value: metpo:RangeMax "100" xsd:string
+property_value: metpo:RangeMin "0" xsd:string
+property_value: metpo:Unit "% O2" xsd:string
 
 [Term]
-id: metpo:000053
-name: Microaerotolerant
+id: metpo:0000052
+name: 'Microaerotolerant'
 def: "A microorganism that can tolerate low levels of oxygen but does not require such conditions for growth." []
 synonym: "Microoxic-tolerant" EXACT []
-is_a: metpo:000004 ! Oxygen
+is_a: metpo:0001000 ! 'sensitivity to oxygen'
+property_value: metpo:RangeMax "10" xsd:string
+property_value: metpo:RangeMin "0" xsd:string
+property_value: metpo:Unit "% O2" xsd:string
 
 [Term]
-id: metpo:000054
-name: Aerotolerant anaerobe
+id: metpo:0000053
+name: 'Aerotolerant anaerobe'
 def: "An anaerobic microorganism that does not use oxygen for metabolism but is not inhibited by its presence." []
 synonym: "Oxygen-tolerant anaerobe" EXACT []
-is_a: metpo:000004 ! Oxygen
+is_a: metpo:0001000 ! 'sensitivity to oxygen'
+property_value: metpo:RangeMax "100" xsd:string
+property_value: metpo:RangeMin "0" xsd:string
+property_value: metpo:Unit "% O2" xsd:string
 
 [Term]
-id: metpo:000055
-name: Obligate aerobe
+id: metpo:0000054
+name: 'Obligate aerobe'
 def: "A microorganism that absolutely requires oxygen for growth and cannot grow under anaerobic conditions." []
 synonym: "Aerobe" EXACT []
 synonym: "Strict aerobe" EXACT []
-is_a: metpo:000004 ! Oxygen
+is_a: metpo:0001000 ! 'sensitivity to oxygen'
+property_value: metpo:RangeMax "100" xsd:string
+property_value: metpo:RangeMin "1" xsd:string
+property_value: metpo:Unit "% O2" xsd:string
 
 [Term]
-id: metpo:000056
-name: Obligate anaerobe
+id: metpo:0000055
+name: 'Obligate anaerobe'
 def: "A microorganism for which oxygen is toxic and inhibits growth, requiring strictly anaerobic conditions." []
 synonym: "Anaerobe" EXACT []
 synonym: "Strict anaerobe" EXACT []
-is_a: metpo:000004 ! Oxygen
+is_a: metpo:0001000 ! 'sensitivity to oxygen'
+property_value: metpo:RangeMax "0" xsd:string
+property_value: metpo:RangeMin "0" xsd:string
+property_value: metpo:Unit "% O2" xsd:string
 
 [Term]
-id: metpo:000057
-name: Oxygenic phototroph
+id: metpo:0000056
+name: 'Oxygenic phototroph'
 def: "An organism that uses light energy for photosynthesis, producing oxygen as a byproduct." []
 synonym: "Oxygenic phototrophic" EXACT []
-is_a: metpo:000004 ! Oxygen
+is_a: metpo:0001000 ! 'sensitivity to oxygen'
 
 [Term]
-id: metpo:000058
-name: Anoxygenic phototroph
+id: metpo:0000057
+name: 'Anoxygenic phototroph'
 def: "An organism that uses light energy for photosynthesis without producing oxygen." []
 synonym: "Anoxygenic phototrophic" EXACT []
-is_a: metpo:000004 ! Oxygen
+is_a: metpo:0001000 ! 'sensitivity to oxygen'
 
 [Term]
-id: metpo:000059
-name: Autotroph
+id: metpo:0000058
+name: 'Autotroph'
 def: "An organism that produces its own food from inorganic compounds." []
 synonym: "Autotrophic" EXACT []
-is_a: metpo:000005 ! Trophic type
+is_a: metpo:0000005 ! 'Trophic type'
 
 [Term]
-id: metpo:000060
-name: Photoautotroph
+id: metpo:0000059
+name: 'Photoautotroph'
 def: "An organism that uses light energy to fix carbon dioxide for growth." []
 synonym: "Photoautotrophic" EXACT []
-is_a: metpo:000005 ! Trophic type
+is_a: metpo:0000005 ! 'Trophic type'
 
 [Term]
-id: metpo:000061
-name: Chemoautotroph
+id: metpo:0000060
+name: 'Chemoautotroph'
 def: "An organism that uses energy from chemical reactions to fix carbon dioxide for growth." []
 synonym: "Chemoautotrophic" EXACT []
-is_a: metpo:000005 ! Trophic type
+is_a: metpo:0000005 ! 'Trophic type'
 
 [Term]
-id: metpo:000062
-name: Heterotroph
+id: metpo:0000061
+name: 'Heterotroph'
 def: "An organism that obtains carbon from organic compounds." []
 synonym: "Heterotrophic" EXACT []
-is_a: metpo:000005 ! Trophic type
+is_a: metpo:0000005 ! 'Trophic type'
 
 [Term]
-id: metpo:000063
-name: Photoheterotroph
+id: metpo:0000062
+name: 'Photoheterotroph'
 def: "An organism that uses light energy but obtains carbon from organic compounds." []
 synonym: "Photoheterotrophic" EXACT []
-is_a: metpo:000005 ! Trophic type
+is_a: metpo:0000005 ! 'Trophic type'
 
 [Term]
-id: metpo:000064
-name: Chemoheterotroph
+id: metpo:0000063
+name: 'Chemoheterotroph'
 def: "An organism that obtains both energy and carbon from organic compounds." []
 synonym: "Chemoheterotrophic" EXACT []
-is_a: metpo:000005 ! Trophic type
+is_a: metpo:0000005 ! 'Trophic type'
 
 [Term]
-id: metpo:000065
-name: Lithotroph
+id: metpo:0000064
+name: 'Lithotroph'
 def: "An organism that obtains energy from the oxidation of inorganic compounds." []
 synonym: "Lithotrophic" EXACT []
-is_a: metpo:000005 ! Trophic type
+is_a: metpo:0000005 ! 'Trophic type'
 
 [Term]
-id: metpo:000066
-name: Organotroph
+id: metpo:0000065
+name: 'Organotroph'
 def: "An organism that obtains energy from the oxidation of organic compounds." []
 synonym: "Organotrophic" EXACT []
-is_a: metpo:000005 ! Trophic type
+is_a: metpo:0000005 ! 'Trophic type'
 
 [Term]
-id: metpo:000067
-name: Phototroph
+id: metpo:0000066
+name: 'Phototroph'
 def: "An organism that uses light as its primary energy source." []
 synonym: "Phototrophic" EXACT []
-is_a: metpo:000005 ! Trophic type
+is_a: metpo:0000005 ! 'Trophic type'
 
 [Term]
-id: metpo:000068
-name: Chemotroph
+id: metpo:0000067
+name: 'Chemotroph'
 def: "An organism that obtains energy from chemical reactions." []
 synonym: "Chemotrophic" EXACT []
-is_a: metpo:000005 ! Trophic type
+is_a: metpo:0000005 ! 'Trophic type'
 
 [Term]
-id: metpo:000069
-name: Oligotroph
+id: metpo:0000068
+name: 'Oligotroph'
 def: "An organism adapted to environments with low nutrient levels." []
 synonym: "Oligotrophic" EXACT []
-is_a: metpo:000005 ! Trophic type
+is_a: metpo:0000005 ! 'Trophic type'
 
 [Term]
-id: metpo:000070
-name: Copiotroph
+id: metpo:0000069
+name: 'Copiotroph'
 def: "An organism adapted to environments with high nutrient levels." []
 synonym: "Copiotrophic" EXACT []
-is_a: metpo:000005 ! Trophic type
+is_a: metpo:0000005 ! 'Trophic type'
 
 [Term]
-id: metpo:000071
-name: Lithoautotroph
+id: metpo:0000070
+name: 'Lithoautotroph'
 def: "An organism that uses inorganic compounds for both energy and carbon." []
 synonym: "Lithoautotrophic" EXACT []
-is_a: metpo:000005 ! Trophic type
+is_a: metpo:0000005 ! 'Trophic type'
 
 [Term]
-id: metpo:000072
-name: Mixotroph
+id: metpo:0000071
+name: 'Mixotroph'
 def: "An organism capable of both autotrophic and heterotrophic nutrition." []
 synonym: "Mixotrophic" EXACT []
-is_a: metpo:000005 ! Trophic type
+is_a: metpo:0000005 ! 'Trophic type'
 
 [Term]
-id: metpo:000073
-name: Lithoheterotroph
+id: metpo:0000072
+name: 'Lithoheterotroph'
 def: "An organism that uses inorganic compounds for energy but organic compounds for carbon." []
 synonym: "Lithoheterotrophic" EXACT []
-is_a: metpo:000005 ! Trophic type
+is_a: metpo:0000005 ! 'Trophic type'
 
 [Term]
-id: metpo:000074
-name: Chemoorganoheterotroph
+id: metpo:0000073
+name: 'Chemoorganoheterotroph'
 def: "An organism that uses organic compounds for both energy and carbon." []
 synonym: "Chemoorganoheterotrophic" EXACT []
-is_a: metpo:000005 ! Trophic type
+is_a: metpo:0000005 ! 'Trophic type'
 
 [Term]
-id: metpo:000075
-name: Chemolithoautotroph
+id: metpo:0000074
+name: 'Chemolithoautotroph'
 def: "An organism that uses inorganic compounds for energy and CO2 for carbon." []
 synonym: "Chemolithoautotrophic" EXACT []
-is_a: metpo:000005 ! Trophic type
+is_a: metpo:0000005 ! 'Trophic type'
 
 [Term]
-id: metpo:000076
-name: Methylotroph
+id: metpo:0000075
+name: 'Methylotroph'
 def: "An organism that can use one-carbon compounds as a source of energy and carbon." []
 synonym: "Methylotrophic" EXACT []
-is_a: metpo:000005 ! Trophic type
+is_a: metpo:0000005 ! 'Trophic type'
 
 [Term]
-id: metpo:000077
-name: Methanotroph
+id: metpo:0000076
+name: 'Methanotroph'
 def: "An organism that uses methane as its sole source of carbon and energy." []
 synonym: "Methanotrophic" EXACT []
-is_a: metpo:000005 ! Trophic type
+is_a: metpo:0000005 ! 'Trophic type'
 
 [Term]
-id: metpo:000078
-name: Carboxydotroph
+id: metpo:0000077
+name: 'Carboxydotroph'
 def: "An organism that can use carbon monoxide as its sole source of energy and carbon." []
 synonym: "Carbohydrogenotroph" EXACT []
 synonym: "Carboxydrophile" EXACT []
-is_a: metpo:000005 ! Trophic type
+is_a: metpo:0000005 ! 'Trophic type'
 
 [Term]
-id: metpo:000079
-name: Hydrogenotroph
+id: metpo:0000078
+name: 'Hydrogenotroph'
 def: "An organism that obtains energy from the oxidation of molecular hydrogen." []
 synonym: "Hydrogenophile" EXACT []
 synonym: "Hydrogenophilic" EXACT []
-is_a: metpo:000005 ! Trophic type
+is_a: metpo:0000005 ! 'Trophic type'
 
 [Term]
-id: metpo:000080
-name: Hydrogen oxidizer
+id: metpo:0000079
+name: 'Hydrogen oxidizer'
 def: "An organism that oxidizes hydrogen for energy." []
 synonym: "Hydrogen-oxidizing" EXACT []
-is_a: metpo:000005 ! Trophic type
+is_a: metpo:0000005 ! 'Trophic type'
 
 [Term]
-id: metpo:000081
-name: Hydrogen producer
+id: metpo:0000080
+name: 'Hydrogen producer'
 def: "An organism that produces hydrogen as a byproduct of its metabolism." []
 synonym: "Hydrogen-producing" EXACT []
-is_a: metpo:000005 ! Trophic type
+is_a: metpo:0001021 ! 'cell by chemical produced'
 
 [Term]
-id: metpo:000082
-name: Nitrogen fixer
+id: metpo:0000081
+name: 'Nitrogen fixer'
 def: "An organism capable of converting atmospheric nitrogen into ammonia." []
 synonym: "Nitrogen-fixing" EXACT []
-is_a: metpo:000005 ! Trophic type
+is_a: metpo:0000005 ! 'Trophic type'
 
 [Term]
-id: metpo:000083
-name: Methanogen
+id: metpo:0000082
+name: 'Methanogen'
 def: "An organism that produces methane as a byproduct of its metabolism." []
 synonym: "Methanogenic" EXACT []
-is_a: metpo:000005 ! Trophic type
+is_a: metpo:0001021 ! 'cell by chemical produced'
 
 [Term]
-id: metpo:000084
-name: Sulfate reducer
+id: metpo:0000083
+name: 'Sulfate reducer'
 def: "An organism that uses sulfate as an electron acceptor in anaerobic respiration." []
 synonym: "Sulfate-reducing" EXACT []
-is_a: metpo:000005 ! Trophic type
+is_a: metpo:0000005 ! 'Trophic type'
 
 [Term]
-id: metpo:000085
-name: Sulfur oxidizer
+id: metpo:0000084
+name: 'Sulfur oxidizer'
 def: "An organism that oxidizes sulfur compounds for energy." []
 synonym: "Sulfur-oxidizing" EXACT []
-is_a: metpo:000005 ! Trophic type
+is_a: metpo:0000005 ! 'Trophic type'
 
 [Term]
-id: metpo:000086
-name: Denitrifier
+id: metpo:0000085
+name: 'Denitrifier'
 def: "An organism that reduces nitrate to nitrogen gas in anaerobic respiration." []
 synonym: "Denitrifying" EXACT []
-is_a: metpo:000005 ! Trophic type
+is_a: metpo:0000005 ! 'Trophic type'
 
 [Term]
-id: metpo:000087
-name: Capnophile
+id: metpo:0000086
+name: 'Capnophile'
 def: "An organism that requires or grows better in the presence of elevated levels of carbon dioxide." []
 synonym: "Capnophilic" EXACT []
-is_a: metpo:000005 ! Trophic type
+is_a: metpo:0000005 ! 'Trophic type'
 
 [Term]
-id: metpo:000088
-name: Motile
+id: metpo:0000087
+name: 'Motile'
 def: "A microorganism capable of self-propelled movement." []
-is_a: metpo:000006 ! Motility
+is_a: metpo:0000006 ! 'Motility'
 
 [Term]
-id: metpo:000089
-name: Non-motile
+id: metpo:0000088
+name: 'Non-motile'
 def: "A microorganism incapable of self-propelled movement." []
-is_a: metpo:000006 ! Motility
+is_a: metpo:0000006 ! 'Motility'
 
 [Term]
-id: metpo:000090
-name: Flagellated
+id: metpo:0000089
+name: 'Flagellated'
 def: "A motile microorganism that moves using one or more flagella." []
-is_a: metpo:000006 ! Motility
+is_a: metpo:0000006 ! 'Motility'
 
 [Term]
-id: metpo:000091
-name: Peritrichous
+id: metpo:0000090
+name: 'Peritrichous'
 def: "A flagellated microorganism with flagella distributed over the entire cell surface." []
-is_a: metpo:000006 ! Motility
+is_a: metpo:0000006 ! 'Motility'
 
 [Term]
-id: metpo:000092
-name: Lophotrichous
+id: metpo:0000091
+name: 'Lophotrichous'
 def: "A flagellated microorganism with a tuft of flagella at one or both poles of the cell." []
-is_a: metpo:000006 ! Motility
+is_a: metpo:0000006 ! 'Motility'
 
 [Term]
-id: metpo:000093
-name: Monotrichous
+id: metpo:0000092
+name: 'Monotrichous'
 def: "A flagellated microorganism with a single flagellum at one pole of the cell." []
-is_a: metpo:000006 ! Motility
+is_a: metpo:0000006 ! 'Motility'
 
 [Term]
-id: metpo:000094
-name: Ciliated
+id: metpo:0000093
+name: 'Ciliated'
 def: "A motile microorganism that moves using numerous short, hair-like structures called cilia." []
-is_a: metpo:000006 ! Motility
+is_a: metpo:0000006 ! 'Motility'
 
 [Term]
-id: metpo:000095
-name: Gliding
+id: metpo:0000094
+name: 'Gliding'
 def: "A motile microorganism that moves by sliding over surfaces without the use of flagella or cilia." []
-is_a: metpo:000006 ! Motility
+is_a: metpo:0000006 ! 'Motility'
 
 [Term]
-id: metpo:000096
-name: Twitching
+id: metpo:0000095
+name: 'Twitching'
 def: "A motile microorganism that moves using type IV pili in a jerky, start-stop motion." []
-is_a: metpo:000006 ! Motility
+is_a: metpo:0000006 ! 'Motility'
 
 [Term]
-id: metpo:000097
-name: Sliding
+id: metpo:0000096
+name: 'Sliding'
 def: "A motile microorganism that moves passively over surfaces due to the production of extracellular substances." []
-is_a: metpo:000006 ! Motility
+is_a: metpo:0000006 ! 'Motility'
 
 [Term]
-id: metpo:000098
-name: Swarming
+id: metpo:0000097
+name: 'Swarming'
 def: "A motile microorganism capable of rapid, coordinated movement across surfaces in groups." []
-is_a: metpo:000006 ! Motility
+is_a: metpo:0000006 ! 'Motility'
 
 [Term]
-id: metpo:000099
-name: Endospores
+id: metpo:0000098
+name: 'Endospores'
 def: "A dormant, resistant structure formed within a bacterial cell." []
-is_a: metpo:000007 ! Sporulation
+is_a: metpo:0000007 ! 'Sporulation'
 
 [Term]
-id: metpo:000100
-name: Exospores
+id: metpo:0000099
+name: 'Exospores'
 def: "A spore formed outside the parent cell." []
-is_a: metpo:000007 ! Sporulation
+is_a: metpo:0000007 ! 'Sporulation'
 
 [Term]
-id: metpo:000101
-name: Myxospores
+id: metpo:0000100
+name: 'Myxospores'
 def: "A resting spore produced by myxobacteria during unfavorable conditions." []
-is_a: metpo:000007 ! Sporulation
+is_a: metpo:0000007 ! 'Sporulation'
 
 [Term]
-id: metpo:000102
-name: Arthrospores
+id: metpo:0000101
+name: 'Arthrospores'
 def: "A type of spore formed by the fragmentation of fungal hyphae." []
-is_a: metpo:000007 ! Sporulation
+is_a: metpo:0000007 ! 'Sporulation'
 
 [Term]
-id: metpo:000103
-name: Conidia
+id: metpo:0000102
+name: 'Conidia'
 def: "Asexual spores produced by fungi, typically at the tips of specialized hyphae." []
-is_a: metpo:000007 ! Sporulation
+is_a: metpo:0000007 ! 'Sporulation'
 
 [Term]
-id: metpo:000104
-name: Sporangiospores
+id: metpo:0000103
+name: 'Sporangiospores'
 def: "Asexual spores produced within a sporangium." []
-is_a: metpo:000007 ! Sporulation
+is_a: metpo:0000007 ! 'Sporulation'
 
 [Term]
-id: metpo:000105
-name: Zygospores
+id: metpo:0000104
+name: 'Zygospores'
 def: "A thick-walled resting spore resulting from the fusion of two compatible hyphae." []
-is_a: metpo:000007 ! Sporulation
+is_a: metpo:0000007 ! 'Sporulation'
 
 [Term]
-id: metpo:000106
-name: Akinetes
+id: metpo:0000105
+name: 'Akinetes'
 def: "A large, thick-walled dormant cell formed by some cyanobacteria." []
-is_a: metpo:000007 ! Sporulation
+is_a: metpo:0000007 ! 'Sporulation'
 
 [Term]
-id: metpo:000107
-name: Chlamydospores
+id: metpo:0000106
+name: 'Chlamydospores'
 def: "A thick-walled resting spore formed from a cell of a fungal hypha." []
-is_a: metpo:000007 ! Sporulation
+is_a: metpo:0000007 ! 'Sporulation'
 
 [Term]
-id: metpo:000108
-name: Sporocysts
+id: metpo:0000107
+name: 'Sporocysts'
 def: "A protective cyst-like structure containing sporozoites in some protists." []
-is_a: metpo:000007 ! Sporulation
+is_a: metpo:0000007 ! 'Sporulation'
 
 [Term]
-id: metpo:000109
-name: Hypnospores
+id: metpo:0000108
+name: 'Hypnospores'
 def: "A dormant stage of some dinoflagellates, formed under unfavorable conditions." []
-is_a: metpo:000007 ! Sporulation
+is_a: metpo:0000007 ! 'Sporulation'
 
 [Term]
-id: metpo:000110
-name: Gemmae
+id: metpo:0000109
+name: 'Gemmae'
 def: "Small, multicellular propagules produced by some bryophytes for asexual reproduction." []
-is_a: metpo:000007 ! Sporulation
+is_a: metpo:0000007 ! 'Sporulation'
 
 [Term]
-id: metpo:000111
-name: Oospores
+id: metpo:0000110
+name: 'Oospores'
 def: "A thick-walled sexual spore produced by oomycetes." []
-is_a: metpo:000007 ! Sporulation
+is_a: metpo:0000007 ! 'Sporulation'
 
 [Term]
-id: metpo:000112
-name: Azygospores
+id: metpo:0000111
+name: 'Azygospores'
 def: "A spore formed without fusion of gametes, typically in zygomycetes." []
-is_a: metpo:000007 ! Sporulation
+is_a: metpo:0000007 ! 'Sporulation'
 
 [Term]
-id: metpo:000113
-name: Cysts
+id: metpo:0000112
+name: 'Cysts'
 def: "A resistant, dormant stage formed by some protists and bacteria." []
-is_a: metpo:000007 ! Sporulation
+is_a: metpo:0000007 ! 'Sporulation'
 
 [Term]
-id: metpo:000114
-name: Ascospores
+id: metpo:0000113
+name: 'Ascospores'
 def: "Sexual spores produced in an ascus, typically by ascomycete fungi." []
-is_a: metpo:000007 ! Sporulation
+is_a: metpo:0000007 ! 'Sporulation'
 
 [Term]
-id: metpo:000115
-name: Basidiospores
+id: metpo:0000114
+name: 'Basidiospores'
 def: "Sexual spores produced on a basidium, typically by basidiomycete fungi." []
-is_a: metpo:000007 ! Sporulation
+is_a: metpo:0000007 ! 'Sporulation'
 
 [Term]
-id: metpo:000116
-name: Aleuriospores
+id: metpo:0000115
+name: 'Aleuriospores'
 def: "Asexual spores formed by the disarticulation of vegetative hyphae." []
-is_a: metpo:000007 ! Sporulation
+is_a: metpo:0000007 ! 'Sporulation'
 
 [Term]
-id: metpo:000117
-name: Stylospores
+id: metpo:0000116
+name: 'Stylospores'
 def: "Asexual spores produced on a stalk-like structure called a sterigma." []
-is_a: metpo:000007 ! Sporulation
+is_a: metpo:0000007 ! 'Sporulation'
 
 [Term]
-id: metpo:000118
-name: Sclerotia
+id: metpo:0000117
+name: 'Sclerotia'
 def: "A compact mass of hardened fungal mycelium containing food reserves." []
-is_a: metpo:000007 ! Sporulation
+is_a: metpo:0000007 ! 'Sporulation'
 
 [Term]
-id: metpo:000119
-name: Zoospores
+id: metpo:0000118
+name: 'Zoospores'
 def: "Motile spores with flagella, typically produced by algae and some fungi." []
-is_a: metpo:000007 ! Sporulation
+is_a: metpo:0000007 ! 'Sporulation'
 
 [Term]
-id: metpo:000120
-name: Teliospores
+id: metpo:0000119
+name: 'Teliospores'
 def: "A type of resting spore produced by rust and smut fungi." []
-is_a: metpo:000007 ! Sporulation
+is_a: metpo:0000007 ! 'Sporulation'
 
 [Term]
-id: metpo:000121
-name: Urediniospores
+id: metpo:0000120
+name: 'Urediniospores'
 def: "Asexual spores produced by rust fungi during their life cycle." []
-is_a: metpo:000007 ! Sporulation
+is_a: metpo:0000007 ! 'Sporulation'
 
 [Term]
-id: metpo:000122
-name: Pycnidiospores
+id: metpo:0000121
+name: 'Pycnidiospores'
 def: "Asexual spores produced within a pycnidium, a flask-shaped fruiting body." []
-is_a: metpo:000007 ! Sporulation
+is_a: metpo:0000007 ! 'Sporulation'
 
 [Term]
-id: metpo:000123
-name: Acriospores
+id: metpo:0000122
+name: 'Acriospores'
 def: "Asexual spores produced in chains at the tips of conidiophores." []
-is_a: metpo:000007 ! Sporulation
+is_a: metpo:0000007 ! 'Sporulation'
 
 [Term]
-id: metpo:000124
-name: Aplanospores
+id: metpo:0000123
+name: 'Aplanospores'
 def: "Non-motile spores that lack flagella, typically produced by algae." []
-is_a: metpo:000007 ! Sporulation
+is_a: metpo:0000007 ! 'Sporulation'
 
 [Term]
-id: metpo:000125
-name: Statismospores
+id: metpo:0000124
+name: 'Statismospores'
 def: "Non-motile spores that lack the ability to swim." []
-is_a: metpo:000007 ! Sporulation
+is_a: metpo:0000007 ! 'Sporulation'
 
 [Term]
-id: metpo:000126
-name: Barotolerant
+id: metpo:0000125
+name: 'Barotolerant'
 def: "An organism that can survive high pressure but does not require it for optimal growth." []
-is_a: metpo:000008 ! Pressure
+is_a: metpo:0000008 ! 'Pressure'
+property_value: metpo:RangeMax "1000" xsd:string
+property_value: metpo:RangeMin "1" xsd:string
+property_value: metpo:Unit "atm" xsd:string
 
 [Term]
-id: metpo:000127
-name: Piezophile
+id: metpo:0000126
+name: 'Piezophile'
 def: "An organism that grows optimally under high pressure conditions." []
 synonym: "Barophile" EXACT []
 synonym: "Barophilic" EXACT []
 synonym: "Piezophilic" EXACT []
-is_a: metpo:000008 ! Pressure
+is_a: metpo:0000008 ! 'Pressure'
+property_value: metpo:RangeMax "1000" xsd:string
+property_value: metpo:RangeMin "10" xsd:string
+property_value: metpo:Unit "atm" xsd:string
 
 [Term]
-id: metpo:000128
-name: Piezotolerant
+id: metpo:0000127
+name: 'Piezotolerant'
 def: "An organism that can tolerate high pressure but grows optimally at normal atmospheric pressure." []
-is_a: metpo:000008 ! Pressure
+is_a: metpo:0000008 ! 'Pressure'
+property_value: metpo:RangeMax "100" xsd:string
+property_value: metpo:RangeMin "1" xsd:string
+property_value: metpo:Unit "atm" xsd:string
 
 [Term]
-id: metpo:000129
-name: Piezosensitive
+id: metpo:0000128
+name: 'Piezosensitive'
 def: "An organism that is adversely affected by high pressure conditions." []
-is_a: metpo:000008 ! Pressure
+is_a: metpo:0000008 ! 'Pressure'
+property_value: metpo:RangeMax "10" xsd:string
+property_value: metpo:RangeMin "1" xsd:string
+property_value: metpo:Unit "atm" xsd:string
 
 [Term]
-id: metpo:000130
-name: Obligate barophile
+id: metpo:0000129
+name: 'Obligate barophile'
 def: "An organism that requires high pressure for growth and cannot grow at atmospheric pressure." []
 synonym: "Obligate piezophile" EXACT []
-is_a: metpo:000008 ! Pressure
+is_a: metpo:0000008 ! 'Pressure'
+property_value: metpo:RangeMax "1000" xsd:string
+property_value: metpo:RangeMin "10" xsd:string
+property_value: metpo:Unit "atm" xsd:string
 
 [Term]
-id: metpo:000131
-name: Facultative barophile
+id: metpo:0000130
+name: 'Facultative barophile'
 def: "An organism that grows optimally under high pressure but can also grow at atmospheric pressure." []
 synonym: "Facultative piezophile" EXACT []
-is_a: metpo:000008 ! Pressure
+is_a: metpo:0000008 ! 'Pressure'
+property_value: metpo:RangeMax "1000" xsd:string
+property_value: metpo:RangeMin "1" xsd:string
+property_value: metpo:Unit "atm" xsd:string
 
 [Term]
-id: metpo:000132
-name: Hyperbarophile
+id: metpo:0000131
+name: 'Hyperbarophile'
 def: "An organism adapted to extremely high pressure environments." []
 synonym: "Hyperbarophilic" EXACT []
-is_a: metpo:000008 ! Pressure
+is_a: metpo:0000008 ! 'Pressure'
+property_value: metpo:RangeMax "1500" xsd:string
+property_value: metpo:RangeMin "100" xsd:string
+property_value: metpo:Unit "atm" xsd:string
 
 [Term]
-id: metpo:000133
-name: Hypobarophile
+id: metpo:0000132
+name: 'Hypobarophile'
 def: "An organism adapted to low pressure environments." []
 synonym: "Hypobarophilic" EXACT []
-is_a: metpo:000008 ! Pressure
+is_a: metpo:0000008 ! 'Pressure'
+property_value: metpo:RangeMax "1" xsd:string
+property_value: metpo:RangeMin "0.1" xsd:string
+property_value: metpo:Unit "atm" xsd:string
 
 [Term]
-id: metpo:000134
-name: Atmospheric pressure-adapted
+id: metpo:0000133
+name: 'Atmospheric pressure-adapted'
 def: "An organism adapted to grow at standard atmospheric pressure." []
-is_a: metpo:000008 ! Pressure
+is_a: metpo:0000008 ! 'Pressure'
+property_value: metpo:RangeMax "1" xsd:string
+property_value: metpo:RangeMin "1" xsd:string
+property_value: metpo:Unit "atm" xsd:string
 
 [Term]
-id: metpo:000135
-name: Moderate piezophile
+id: metpo:0000134
+name: 'Moderate piezophile'
 def: "An organism that grows optimally at moderately high pressures." []
 synonym: "Moderate barophile" EXACT []
-is_a: metpo:000008 ! Pressure
+is_a: metpo:0000008 ! 'Pressure'
+property_value: metpo:RangeMax "100" xsd:string
+property_value: metpo:RangeMin "10" xsd:string
+property_value: metpo:Unit "atm" xsd:string
 
 [Term]
-id: metpo:000136
-name: Extreme piezophile
+id: metpo:0000135
+name: 'Extreme piezophile'
 def: "An organism that grows optimally at very high pressures." []
 synonym: "Extreme barophile" EXACT []
-is_a: metpo:000008 ! Pressure
+is_a: metpo:0000008 ! 'Pressure'
+property_value: metpo:RangeMax "1500" xsd:string
+property_value: metpo:RangeMin "100" xsd:string
+property_value: metpo:Unit "atm" xsd:string
 
 [Term]
-id: metpo:000137
-name: Stenopiezic
+id: metpo:0000136
+name: 'Stenopiezic'
 def: "An organism that can only grow within a narrow range of pressures." []
 synonym: "Stenobaric" EXACT []
-is_a: metpo:000008 ! Pressure
+is_a: metpo:0000008 ! 'Pressure'
+property_value: metpo:RangeMax "100" xsd:string
+property_value: metpo:RangeMin "1" xsd:string
+property_value: metpo:Unit "atm" xsd:string
 
 [Term]
-id: metpo:000138
-name: Eurypiezic
+id: metpo:0000137
+name: 'Eurypiezic'
 def: "An organism that can grow across a wide range of pressures." []
 synonym: "Eurybaric" EXACT []
-is_a: metpo:000008 ! Pressure
+is_a: metpo:0000008 ! 'Pressure'
+property_value: metpo:RangeMax "1000" xsd:string
+property_value: metpo:RangeMin "1" xsd:string
+property_value: metpo:Unit "atm" xsd:string
 
 [Term]
-id: metpo:000139
-name: Pressure-sensitive
+id: metpo:0000138
+name: 'Pressure-sensitive'
 def: "An organism whose growth or metabolism is negatively affected by changes in pressure." []
-is_a: metpo:000008 ! Pressure
+is_a: metpo:0000008 ! 'Pressure'
+property_value: metpo:RangeMax "10" xsd:string
+property_value: metpo:RangeMin "1" xsd:string
+property_value: metpo:Unit "atm" xsd:string
 
 [Term]
-id: metpo:000140
-name: Pressure-resistant
+id: metpo:0000139
+name: 'Pressure-resistant'
 def: "An organism that can withstand significant changes in pressure without adverse effects." []
-is_a: metpo:000008 ! Pressure
+is_a: metpo:0000008 ! 'Pressure'
+property_value: metpo:RangeMax "1000" xsd:string
+property_value: metpo:RangeMin "1" xsd:string
+property_value: metpo:Unit "atm" xsd:string
 
 [Term]
-id: metpo:000141
-name: Pressure-adapted
+id: metpo:0000140
+name: 'Pressure-adapted'
 def: "An organism that has evolved to thrive under specific pressure conditions." []
-is_a: metpo:000008 ! Pressure
+is_a: metpo:0000008 ! 'Pressure'
+property_value: metpo:RangeMax "1000" xsd:string
+property_value: metpo:RangeMin "1" xsd:string
+property_value: metpo:Unit "atm" xsd:string
 
 [Term]
-id: metpo:000142
-name: Piezo-acidophile
+id: metpo:0000141
+name: 'Piezo-acidophile'
 def: "An organism that grows optimally under both high pressure and acidic conditions." []
 synonym: "Piezo-acidophilic" EXACT []
-is_a: metpo:000008 ! Pressure
+is_a: metpo:0000008 ! 'Pressure'
+property_value: metpo:RangeMax "1000" xsd:string
+property_value: metpo:RangeMin "10" xsd:string
+property_value: metpo:Unit "atm" xsd:string
 
 [Term]
-id: metpo:000143
-name: Piezo-alkaliphile
+id: metpo:0000142
+name: 'Piezo-alkaliphile'
 def: "An organism that grows optimally under both high pressure and alkaline conditions." []
 synonym: "Piezo-alkaliphilic" EXACT []
-is_a: metpo:000008 ! Pressure
+is_a: metpo:0000008 ! 'Pressure'
+property_value: metpo:RangeMax "1000" xsd:string
+property_value: metpo:RangeMin "10" xsd:string
+property_value: metpo:Unit "atm" xsd:string
 
 [Term]
-id: metpo:000144
-name: Piezo-halophile
+id: metpo:0000143
+name: 'Piezo-halophile'
 def: "An organism that grows optimally under both high pressure and high salinity conditions." []
 synonym: "Piezo-halophilic" EXACT []
-is_a: metpo:000008 ! Pressure
+is_a: metpo:0000008 ! 'Pressure'
+property_value: metpo:RangeMax "1000" xsd:string
+property_value: metpo:RangeMin "10" xsd:string
+property_value: metpo:Unit "atm" xsd:string
 
 [Term]
-id: metpo:000145
-name: Piezo-psychrophile
+id: metpo:0000144
+name: 'Piezo-psychrophile'
 def: "An organism that grows optimally under both high pressure and low temperature conditions." []
 synonym: "Piezo-psychrophilic" EXACT []
-is_a: metpo:000008 ! Pressure
+is_a: metpo:0000008 ! 'Pressure'
+property_value: metpo:RangeMax "1000" xsd:string
+property_value: metpo:RangeMin "10" xsd:string
+property_value: metpo:Unit "atm" xsd:string
 
 [Term]
-id: metpo:000146
-name: Piezo-thermophile
+id: metpo:0000145
+name: 'Piezo-thermophile'
 def: "An organism that grows optimally under both high pressure and high temperature conditions." []
 synonym: "Piezo-thermophilic" EXACT []
-is_a: metpo:000008 ! Pressure
+is_a: metpo:0000008 ! 'Pressure'
+property_value: metpo:RangeMax "1000" xsd:string
+property_value: metpo:RangeMin "10" xsd:string
+property_value: metpo:Unit "atm" xsd:string
 
 [Term]
-id: metpo:000147
-name: Piezo-lithoautotrophe
+id: metpo:0000146
+name: 'Piezo-lithoautotrophe'
 def: "An organism that uses inorganic compounds for energy and carbon under high pressure conditions." []
 synonym: "Piezo-lithoautotrophic" EXACT []
-is_a: metpo:000008 ! Pressure
+is_a: metpo:0000008 ! 'Pressure'
+property_value: metpo:RangeMax "1000" xsd:string
+property_value: metpo:RangeMin "10" xsd:string
+property_value: metpo:Unit "atm" xsd:string
 
 [Term]
-id: metpo:000148
-name: Piezo-chemoheterotroph
+id: metpo:0000147
+name: 'Piezo-chemoheterotroph'
 def: "An organism that uses organic compounds for energy and carbon under high pressure conditions." []
 synonym: "Piezo-chemoheterotrophic" EXACT []
-is_a: metpo:000008 ! Pressure
+is_a: metpo:0000008 ! 'Pressure'
+property_value: metpo:RangeMax "1000" xsd:string
+property_value: metpo:RangeMin "10" xsd:string
+property_value: metpo:Unit "atm" xsd:string
 
 [Term]
-id: metpo:000149
-name: Piezo-oligotroph
+id: metpo:0000148
+name: 'Piezo-oligotroph'
 def: "An organism adapted to low-nutrient environments under high pressure conditions." []
 synonym: "Piezo-oligotrophic" EXACT []
-is_a: metpo:000008 ! Pressure
+is_a: metpo:0000008 ! 'Pressure'
+property_value: metpo:RangeMax "1000" xsd:string
+property_value: metpo:RangeMin "10" xsd:string
+property_value: metpo:Unit "atm" xsd:string
 
 [Term]
-id: metpo:000150
-name: Piezo-endolithic
+id: metpo:0000149
+name: 'Piezo-endolithic'
 def: "An organism that lives within rock or mineral substrates under high pressure conditions." []
-is_a: metpo:000008 ! Pressure
+is_a: metpo:0000008 ! 'Pressure'
+property_value: metpo:RangeMax "1000" xsd:string
+property_value: metpo:RangeMin "10" xsd:string
+property_value: metpo:Unit "atm" xsd:string
 
 [Term]
-id: metpo:000151
-name: Piezo-tolerant
+id: metpo:0000150
+name: 'Piezo-tolerant'
 def: "An organism that can tolerate a range of pressure conditions but does not necessarily require high pressure for optimal growth." []
-is_a: metpo:000008 ! Pressure
+is_a: metpo:0000008 ! 'Pressure'
+property_value: metpo:RangeMax "1000" xsd:string
+property_value: metpo:RangeMin "1" xsd:string
+property_value: metpo:Unit "atm" xsd:string
 
 [Term]
-id: metpo:000152
-name: GC% low ( < 42.65)
-synonym: "gc:low" EXACT []
-is_a: metpo:000009 ! GC content
-property_value: metpo:BactoTrait "GC_<=42.65" xsd:string
+id: metpo:0000151
+name: 'GC low'
+def: "A genomic feature characterized by a guanine-cytosine content percentage below 42.65% in an organism's DNA." []
+is_a: metpo:0000009 ! 'GC content'
+property_value: metpo:BactoTrait "GC_<42.65" xsd:string
+property_value: metpo:RangeMax "42.65" xsd:string
+property_value: metpo:Unit "% GC" xsd:string
 
 [Term]
-id: metpo:000153
-name: GC% mid1 (42.65 - 57)
-is_a: metpo:000009 ! GC content
+id: metpo:0000152
+name: 'GC mid1'
+def: "A genomic feature characterized by a guanine-cytosine content percentage between 42.65% and 57% in an organism's DNA." []
+is_a: metpo:0000009 ! 'GC content'
 property_value: metpo:BactoTrait "GC_42.65_57.0" xsd:string
+property_value: metpo:RangeMax "57" xsd:string
+property_value: metpo:RangeMin "42.65" xsd:string
+property_value: metpo:Unit "% GC" xsd:string
 
 [Term]
-id: metpo:000154
-name: GC% mid2 (57 - 66.3)
-is_a: metpo:000009 ! GC content
+id: metpo:0000153
+name: 'GC mid2'
+def: "A genomic feature characterized by a guanine-cytosine content percentage between 57% and 66.3% in an organism's DNA." []
+is_a: metpo:0000009 ! 'GC content'
 property_value: metpo:BactoTrait "GC_57.0_66.3" xsd:string
+property_value: metpo:RangeMax "66.3" xsd:string
+property_value: metpo:RangeMin "57" xsd:string
+property_value: metpo:Unit "% GC" xsd:string
 
 [Term]
-id: metpo:000155
-name: GC% high ( > 66.3)
-is_a: metpo:000009 ! GC content
+id: metpo:0000154
+name: 'GC high'
+def: "A genomic feature characterized by a guanine-cytosine content percentage above 66.3% in an organism's DNA." []
+is_a: metpo:0000009 ! 'GC content'
 property_value: metpo:BactoTrait "GC_>66.3" xsd:string
+property_value: metpo:RangeMin "66.3" xsd:string
+property_value: metpo:Unit "% GC" xsd:string
 
 [Term]
-id: metpo:000156
-name: Cell width uM very low (< 0.5)
-is_a: metpo:000010 ! Cell Width
-property_value: metpo:BactoTrait "W_<=0.5" xsd:string
+id: metpo:0000155
+name: 'Cell width very low'
+def: "A cell dimension characterized by a lateral measurement less than 0.5 micrometers across the microbial cell." []
+is_a: metpo:0000010 ! 'Cell Width'
+property_value: metpo:BactoTrait "W_<0.5" xsd:string
+property_value: metpo:RangeMax "0.5" xsd:string
+property_value: metpo:Unit "uM" xsd:string
 
 [Term]
-id: metpo:000157
-name: Cell width uM low (0.5 - 0.65)
-is_a: metpo:000010 ! Cell Width
+id: metpo:0000156
+name: 'Cell width low'
+def: "A cell dimension characterized by a lateral measurement between 0.5 and 0.65 micrometers across the microbial cell." []
+is_a: metpo:0000010 ! 'Cell Width'
 property_value: metpo:BactoTrait "W_0.5_0.65" xsd:string
+property_value: metpo:RangeMax "0.65" xsd:string
+property_value: metpo:RangeMin "0.5" xsd:string
+property_value: metpo:Unit "uM" xsd:string
 
 [Term]
-id: metpo:000158
-name: Cell width uM mid (0.65 - 0.9)
-is_a: metpo:000010 ! Cell Width
+id: metpo:0000157
+name: 'Cell width mid'
+def: "A cell dimension characterized by a lateral measurement between 0.65 and 0.9 micrometers across the microbial cell." []
+is_a: metpo:0000010 ! 'Cell Width'
 property_value: metpo:BactoTrait "W_0.65_0.9" xsd:string
+property_value: metpo:RangeMax "0.9" xsd:string
+property_value: metpo:RangeMin "0.65" xsd:string
+property_value: metpo:Unit "uM" xsd:string
 
 [Term]
-id: metpo:000159
-name: Cell width uM high (> 0.9)
-is_a: metpo:000010 ! Cell Width
+id: metpo:0000158
+name: 'Cell width high'
+def: "A cell dimension characterized by a lateral measurement greater than 0.9 micrometers across the microbial cell." []
+is_a: metpo:0000010 ! 'Cell Width'
 property_value: metpo:BactoTrait "W_>0.9" xsd:string
+property_value: metpo:RangeMin "0.9" xsd:string
+property_value: metpo:Unit "uM" xsd:string
 
 [Term]
-id: metpo:000160
-name: Cell length uM very low (<= 1.3)
-is_a: metpo:000011 ! Cell Length
-property_value: metpo:BactoTrait "L_<=1.3" xsd:string
+id: metpo:0000159
+name: 'Cell length very low'
+def: "A cell dimension characterized by a longitudinal measurement less than 1.3 micrometers along the microbial cell's primary axis." []
+is_a: metpo:0000011 ! 'Cell Length'
+property_value: metpo:BactoTrait "L_<1.3" xsd:string
+property_value: metpo:RangeMax "1.3" xsd:string
+property_value: metpo:Unit "uM" xsd:string
 
 [Term]
-id: metpo:000161
-name: Cell length uM low (1.3 - 2)
-is_a: metpo:000011 ! Cell Length
+id: metpo:0000160
+name: 'Cell length low'
+def: "A cell dimension characterized by a longitudinal measurement between 1.3 and 2 micrometers along the microbial cell's primary axis." []
+is_a: metpo:0000011 ! 'Cell Length'
 property_value: metpo:BactoTrait "L_1.3_2" xsd:string
+property_value: metpo:RangeMax "2" xsd:string
+property_value: metpo:RangeMin "1.3" xsd:string
+property_value: metpo:Unit "uM" xsd:string
 
 [Term]
-id: metpo:000162
-name: Cell length uM mid (2 - 3)
-is_a: metpo:000011 ! Cell Length
+id: metpo:0000161
+name: 'Cell length mid'
+def: "A cell dimension characterized by a longitudinal measurement between 2 and 3 micrometers along the microbial cell's primary axis." []
+is_a: metpo:0000011 ! 'Cell Length'
 property_value: metpo:BactoTrait "L_2_3" xsd:string
+property_value: metpo:RangeMax "3" xsd:string
+property_value: metpo:RangeMin "2" xsd:string
+property_value: metpo:Unit "uM" xsd:string
 
 [Term]
-id: metpo:000163
-name: Cell length uM high (> 3)
-is_a: metpo:000011 ! Cell Length
+id: metpo:0000162
+name: 'Cell length high'
+def: "A cell dimension characterized by a longitudinal measurement greater than 3 micrometers along the microbial cell's primary axis." []
+is_a: metpo:0000011 ! 'Cell Length'
 property_value: metpo:BactoTrait "L_>3" xsd:string
+property_value: metpo:RangeMin "3" xsd:string
+property_value: metpo:Unit "uM" xsd:string
 
 [Term]
-id: metpo:000164
-name: Temperature Optimum C very low (<= 10)
+id: metpo:0000163
+name: 'Temperature Optimum very low'
+def: "A temperature optimum manifested as maximum microbial growth at temperatures below 10°C, typical of psychrophilic organisms." []
 synonym: "Psychrophile" EXACT []
-is_a: metpo:000012 ! Temperature Optimum
-property_value: metpo:BactoTrait "TO_<=10" xsd:string
+is_a: metpo:0000012 ! 'Temperature Optimum'
+property_value: metpo:BactoTrait "TO_<10" xsd:string
+property_value: metpo:RangeMax "10" xsd:string
+property_value: metpo:Unit "C" xsd:string
 
 [Term]
-id: metpo:000165
-name: Temperature Optimum C low (10 - 22)
+id: metpo:0000164
+name: 'Temperature Optimum low'
+def: "A temperature optimum manifested as maximum microbial growth at temperatures between 10°C and 22°C, common in psychrophilic or psychrotolerant organisms." []
 synonym: "Psychrophile" EXACT []
 synonym: "Psychrotolerant" EXACT []
-is_a: metpo:000012 ! Temperature Optimum
+is_a: metpo:0000012 ! 'Temperature Optimum'
 property_value: metpo:BactoTrait "TO_10_to_22" xsd:string
+property_value: metpo:RangeMax "22" xsd:string
+property_value: metpo:RangeMin "10" xsd:string
+property_value: metpo:Unit "C" xsd:string
 
 [Term]
-id: metpo:000166
-name: Temperature Optimum C mid1 (22 - 27)
+id: metpo:0000165
+name: 'Temperature Optimum mid1'
+def: "A temperature optimum manifested as maximum microbial growth at temperatures between 22°C and 27°C, characteristic of mesophilic organisms." []
 synonym: "Mesophilie" EXACT []
-is_a: metpo:000012 ! Temperature Optimum
+is_a: metpo:0000012 ! 'Temperature Optimum'
 property_value: metpo:BactoTrait "TO_22_to_27" xsd:string
+property_value: metpo:RangeMax "27" xsd:string
+property_value: metpo:RangeMin "22" xsd:string
+property_value: metpo:Unit "C" xsd:string
 
 [Term]
-id: metpo:000167
-name: Temperature Optimum C mid2 (27 - 30)
+id: metpo:0000166
+name: 'Temperature Optimum mid2'
+def: "A temperature optimum manifested as maximum microbial growth at temperatures between 27°C and 30°C, characteristic of mesophilic organisms." []
 synonym: "Mesophilie" EXACT []
-is_a: metpo:000012 ! Temperature Optimum
+is_a: metpo:0000012 ! 'Temperature Optimum'
 property_value: metpo:BactoTrait "TO_27_to_30" xsd:string
+property_value: metpo:RangeMax "30" xsd:string
+property_value: metpo:RangeMin "27" xsd:string
+property_value: metpo:Unit "C" xsd:string
 
 [Term]
-id: metpo:000168
-name: Temperature Optimum C mid3 (30 - 34)
+id: metpo:0000167
+name: 'Temperature Optimum mid3'
+def: "A temperature optimum manifested as maximum microbial growth at temperatures between 30°C and 34°C, characteristic of mesophilic organisms." []
 synonym: "Mesophilie" EXACT []
-is_a: metpo:000012 ! Temperature Optimum
+is_a: metpo:0000012 ! 'Temperature Optimum'
 property_value: metpo:BactoTrait "TO_30_to_34" xsd:string
+property_value: metpo:RangeMax "34" xsd:string
+property_value: metpo:RangeMin "30" xsd:string
+property_value: metpo:Unit "C" xsd:string
 
 [Term]
-id: metpo:000169
-name: Temperature Optimum C mid4 (34 - 40)
+id: metpo:0000168
+name: 'Temperature Optimum mid4'
+def: "A temperature optimum manifested as maximum microbial growth at temperatures between 34°C and 40°C, characteristic of mesophilic organisms." []
 synonym: "Mesophilie" EXACT []
-is_a: metpo:000012 ! Temperature Optimum
+is_a: metpo:0000012 ! 'Temperature Optimum'
 property_value: metpo:BactoTrait "TO_34_to_40" xsd:string
+property_value: metpo:RangeMax "40" xsd:string
+property_value: metpo:RangeMin "34" xsd:string
+property_value: metpo:Unit "C" xsd:string
 
 [Term]
-id: metpo:000170
-name: Temperature Optimum C high (> 40)
+id: metpo:0000169
+name: 'Temperature Optimum high'
+def: "A temperature optimum manifested as maximum microbial growth at temperatures above 40°C, typical of thermophilic organisms." []
 synonym: "Thermophile" EXACT []
-is_a: metpo:000012 ! Temperature Optimum
+is_a: metpo:0000012 ! 'Temperature Optimum'
 property_value: metpo:BactoTrait "TO_>40" xsd:string
+property_value: metpo:RangeMin "40" xsd:string
+property_value: metpo:Unit "C" xsd:string
 
 [Term]
-id: metpo:000171
-name: Temperature Range C very low (<= 10)
+id: metpo:0000170
+name: 'Temperature Range very low'
+def: "A temperature range allowing microbial growth at temperatures below 10°C, characteristic of psychrophilic organisms." []
 synonym: "Psychrophile" EXACT []
-is_a: metpo:000013 ! Temperature Range
-property_value: metpo:BactoTrait "TR_<=10" xsd:string
+is_a: metpo:0000013 ! 'Temperature Range'
+property_value: metpo:BactoTrait "TR_<10" xsd:string
+property_value: metpo:RangeMax "10" xsd:string
+property_value: metpo:Unit "C" xsd:string
 
 [Term]
-id: metpo:000172
-name: Temperature Range C low (10 - 22)
+id: metpo:0000171
+name: 'Temperature Range low'
+def: "A temperature range allowing microbial growth at temperatures between 10°C and 22°C, characteristic of psychrophilic or psychrotolerant organisms." []
 synonym: "Psychrophile" EXACT []
 synonym: "Psychrotolerant" EXACT []
-is_a: metpo:000013 ! Temperature Range
+is_a: metpo:0000013 ! 'Temperature Range'
 property_value: metpo:BactoTrait "TR_10_to_22" xsd:string
+property_value: metpo:RangeMax "22" xsd:string
+property_value: metpo:RangeMin "10" xsd:string
+property_value: metpo:Unit "C" xsd:string
 
 [Term]
-id: metpo:000173
-name: Temperature Range C mid1 (22 - 27)
+id: metpo:0000172
+name: 'Temperature Range mid1'
+def: "A temperature range allowing microbial growth at temperatures between 22°C and 27°C, characteristic of mesophilic organisms." []
 synonym: "Mesophilie" EXACT []
-is_a: metpo:000013 ! Temperature Range
+is_a: metpo:0000013 ! 'Temperature Range'
 property_value: metpo:BactoTrait "TR_22_to_27" xsd:string
+property_value: metpo:RangeMax "27" xsd:string
+property_value: metpo:RangeMin "22" xsd:string
+property_value: metpo:Unit "C" xsd:string
 
 [Term]
-id: metpo:000174
-name: Temperature Range C mid2 (27 - 30)
+id: metpo:0000173
+name: 'Temperature Range mid2'
+def: "A temperature range allowing microbial growth at temperatures between 27°C and 30°C, characteristic of mesophilic organisms." []
 synonym: "Mesophilie" EXACT []
-is_a: metpo:000013 ! Temperature Range
+is_a: metpo:0000013 ! 'Temperature Range'
 property_value: metpo:BactoTrait "TR_27_to_30" xsd:string
+property_value: metpo:RangeMax "30" xsd:string
+property_value: metpo:RangeMin "27" xsd:string
+property_value: metpo:Unit "C" xsd:string
 
 [Term]
-id: metpo:000175
-name: Temperature Range C mid3 (30 - 34)
+id: metpo:0000174
+name: 'Temperature Range mid3'
+def: "A temperature range allowing microbial growth at temperatures between 30°C and 34°C, characteristic of mesophilic organisms." []
 synonym: "Mesophilie" EXACT []
-is_a: metpo:000013 ! Temperature Range
+is_a: metpo:0000013 ! 'Temperature Range'
 property_value: metpo:BactoTrait "TR_30_to_34" xsd:string
+property_value: metpo:RangeMax "34" xsd:string
+property_value: metpo:RangeMin "30" xsd:string
+property_value: metpo:Unit "C" xsd:string
 
 [Term]
-id: metpo:000176
-name: Temperature Range C mid4 (34 - 40)
+id: metpo:0000175
+name: 'Temperature Range mid4'
+def: "A temperature range allowing microbial growth at temperatures between 34°C and 40°C, characteristic of mesophilic organisms." []
 synonym: "Mesophilie" EXACT []
-is_a: metpo:000013 ! Temperature Range
+is_a: metpo:0000013 ! 'Temperature Range'
 property_value: metpo:BactoTrait "TR_34_to_40" xsd:string
+property_value: metpo:RangeMax "40" xsd:string
+property_value: metpo:RangeMin "34" xsd:string
+property_value: metpo:Unit "C" xsd:string
 
 [Term]
-id: metpo:000177
-name: Temperature Range C high (> 40)
+id: metpo:0000176
+name: 'Temperature Range high'
+def: "A temperature range allowing microbial growth at temperatures above 40°C, characteristic of thermophilic organisms." []
 synonym: "Thermophile" EXACT []
-is_a: metpo:000013 ! Temperature Range
+is_a: metpo:0000013 ! 'Temperature Range'
 property_value: metpo:BactoTrait "TR_>40" xsd:string
+property_value: metpo:RangeMin "40" xsd:string
+property_value: metpo:Unit "C" xsd:string
 
 [Term]
-id: metpo:000178
-name: pH Optimum low (0 - 6)
+id: metpo:0000177
+name: 'pH Optimum low'
+def: "A pH optimum manifested as maximum microbial growth at hydrogen ion concentrations between pH 0 and 6, characteristic of acidophilic organisms." []
 synonym: "Acid Tolerant" EXACT []
 synonym: "Acidophile" EXACT []
 synonym: "Extreme Acidophile" EXACT []
 synonym: "Facultative acidophile" EXACT []
 synonym: "Obligative acidophile" EXACT []
-is_a: metpo:000014 ! pH Optimum
+is_a: metpo:0000014 ! 'pH Optimum'
 property_value: metpo:BactoTrait "pHO_0_to_6" xsd:string
+property_value: metpo:RangeMax "6" xsd:string
+property_value: metpo:RangeMin "0" xsd:string
+property_value: metpo:Unit "pH" xsd:string
 
 [Term]
-id: metpo:000179
-name: pH Optimum mid1 (6 - 7)
+id: metpo:0000178
+name: 'pH Optimum mid1'
+def: "A pH optimum manifested as maximum microbial growth at hydrogen ion concentrations between pH 6 and 7, characteristic of neutrophilic or alkali-tolerant organisms." []
 synonym: "Alkali Tolerant" EXACT []
 synonym: "Neutrophile" EXACT []
-is_a: metpo:000014 ! pH Optimum
+is_a: metpo:0000014 ! 'pH Optimum'
 property_value: metpo:BactoTrait "pHO_6_to_7" xsd:string
+property_value: metpo:RangeMax "7" xsd:string
+property_value: metpo:RangeMin "6" xsd:string
+property_value: metpo:Unit "pH" xsd:string
 
 [Term]
-id: metpo:000180
-name: pH Optimum mid2 (7 - 8)
+id: metpo:0000179
+name: 'pH Optimum mid2'
+def: "A pH optimum manifested as maximum microbial growth at hydrogen ion concentrations between pH 7 and 8, characteristic of neutrophilic, alkaliphilic, or alkali-tolerant organisms." []
 synonym: "Alkali Tolerant" EXACT []
 synonym: "Alkaliphile" EXACT []
 synonym: "Neutrophile" EXACT []
-is_a: metpo:000014 ! pH Optimum
+is_a: metpo:0000014 ! 'pH Optimum'
 property_value: metpo:BactoTrait "pHO_7_to_8" xsd:string
+property_value: metpo:RangeMax "8" xsd:string
+property_value: metpo:RangeMin "7" xsd:string
+property_value: metpo:Unit "pH" xsd:string
 
 [Term]
-id: metpo:000181
-name: pH Optimum high (8 - 14)
+id: metpo:0000180
+name: 'pH Optimum high'
+def: "A pH optimum manifested as maximum microbial growth at hydrogen ion concentrations between pH 8 and 14, characteristic of alkaliphilic or extremely alkaliphilic organisms." []
 synonym: "Alkali Tolerant" EXACT []
 synonym: "Alkaliphile" EXACT []
 synonym: "Extreme Alkaliphile" EXACT []
-is_a: metpo:000014 ! pH Optimum
+is_a: metpo:0000014 ! 'pH Optimum'
 property_value: metpo:BactoTrait "pHO_8_to_14" xsd:string
+property_value: metpo:RangeMax "14" xsd:string
+property_value: metpo:RangeMin "8" xsd:string
+property_value: metpo:Unit "pH" xsd:string
 
 [Term]
-id: metpo:000182
-name: pH Range very low (0 - 4)
+id: metpo:0000181
+name: 'pH Range very low'
+def: "A pH range allowing microbial growth at hydrogen ion concentrations between pH 0 and 4, characteristic of extremely acidophilic organisms." []
 synonym: "Acid Tolerant" EXACT []
 synonym: "Acidophile" EXACT []
 synonym: "Extreme Acidophile" EXACT []
 synonym: "Facultative acidophile" EXACT []
 synonym: "Obligative acidophile" EXACT []
-is_a: metpo:000015 ! pH Range
+is_a: metpo:0000015 ! 'pH Range'
 property_value: metpo:BactoTrait "pHR_0_to_4" xsd:string
+property_value: metpo:RangeMax "4" xsd:string
+property_value: metpo:RangeMin "0" xsd:string
+property_value: metpo:Unit "pH" xsd:string
 
 [Term]
-id: metpo:000183
-name: pH Range low (4 - 6)
+id: metpo:0000182
+name: 'pH Range low'
+def: "A pH range allowing microbial growth at hydrogen ion concentrations between pH 4 and 6, characteristic of acidophilic organisms." []
 synonym: "Acid Tolerant" EXACT []
 synonym: "Acidophile" EXACT []
 synonym: "Facultative acidophile" EXACT []
 synonym: "Obligative acidophile" EXACT []
-is_a: metpo:000015 ! pH Range
+is_a: metpo:0000015 ! 'pH Range'
 property_value: metpo:BactoTrait "pHR_4_to_6" xsd:string
+property_value: metpo:RangeMax "6" xsd:string
+property_value: metpo:RangeMin "4" xsd:string
+property_value: metpo:Unit "pH" xsd:string
 
 [Term]
-id: metpo:000184
-name: pH Range mid1 (6 - 7)
+id: metpo:0000183
+name: 'pH Range mid1'
+def: "A pH range allowing microbial growth at hydrogen ion concentrations between pH 6 and 7, characteristic of neutrophilic organisms." []
 synonym: "Alkali Tolerant" EXACT []
 synonym: "Facultative acidophile" EXACT []
 synonym: "Neutrophile" EXACT []
-is_a: metpo:000015 ! pH Range
+is_a: metpo:0000015 ! 'pH Range'
 property_value: metpo:BactoTrait "pHR_6_to_7" xsd:string
+property_value: metpo:RangeMax "7" xsd:string
+property_value: metpo:RangeMin "6" xsd:string
+property_value: metpo:Unit "pH" xsd:string
 
 [Term]
-id: metpo:000185
-name: pH Range mid2 (7 - 8)
+id: metpo:0000184
+name: 'pH Range mid2'
+def: "A pH range allowing microbial growth at hydrogen ion concentrations between pH 7 and 8, characteristic of neutrophilic or alkaliphilic organisms." []
 synonym: "Alkali Tolerant" EXACT []
 synonym: "Alkaliphile" EXACT []
 synonym: "Facultative acidophile" EXACT []
 synonym: "Neutrophile" EXACT []
-is_a: metpo:000015 ! pH Range
+is_a: metpo:0000015 ! 'pH Range'
 property_value: metpo:BactoTrait "pHR_7_to_8" xsd:string
+property_value: metpo:RangeMax "8" xsd:string
+property_value: metpo:RangeMin "7" xsd:string
+property_value: metpo:Unit "pH" xsd:string
 
 [Term]
-id: metpo:000186
-name: pH Range mid3 (8 - 10)
+id: metpo:0000185
+name: 'pH Range mid3'
+def: "A pH range allowing microbial growth at hydrogen ion concentrations between pH 8 and 10, characteristic of alkaliphilic organisms." []
 synonym: "Alkali Tolerant" EXACT []
 synonym: "Alkaliphile" EXACT []
 synonym: "Extreme Alkaliphile" EXACT []
 synonym: "Facultative acidophile" EXACT []
-is_a: metpo:000015 ! pH Range
+is_a: metpo:0000015 ! 'pH Range'
 property_value: metpo:BactoTrait "pHR_8_to_10" xsd:string
+property_value: metpo:RangeMax "10" xsd:string
+property_value: metpo:RangeMin "8" xsd:string
+property_value: metpo:Unit "pH" xsd:string
 
 [Term]
-id: metpo:000187
-name: pH Range high (10 - 14)
+id: metpo:0000186
+name: 'pH Range high'
+def: "A pH range allowing microbial growth at hydrogen ion concentrations between pH 10 and 14, characteristic of extremely alkaliphilic organisms." []
 synonym: "Alkali Tolerant" EXACT []
 synonym: "Alkaliphile" EXACT []
 synonym: "Extreme Alkaliphile" EXACT []
-is_a: metpo:000015 ! pH Range
+is_a: metpo:0000015 ! 'pH Range'
 property_value: metpo:BactoTrait "10_to_14" xsd:string
+property_value: metpo:RangeMax "14" xsd:string
+property_value: metpo:RangeMin "10" xsd:string
+property_value: metpo:Unit "pH" xsd:string
 
 [Term]
-id: metpo:000188
-name: % NaCl Optimum low (<= 1)
+id: metpo:0000187
+name: 'NaCl Optimum low'
+def: "A salinity optimum manifested as maximum microbial growth at sodium chloride concentrations below 1%, characteristic of non-halophilic or halotolerant organisms." []
 synonym: "Halotolerant" EXACT []
 synonym: "Non-halophile" EXACT []
-is_a: metpo:000016 ! NaCl Optimum
-property_value: metpo:BactoTrait "NaR_<=1" xsd:string
+is_a: metpo:0000016 ! 'NaCl Optimum'
+property_value: metpo:BactoTrait "NaR_<1" xsd:string
+property_value: metpo:RangeMax "1" xsd:string
+property_value: metpo:Unit "% NaCl" xsd:string
 
 [Term]
-id: metpo:000189
-name: % NaCl Optimum mid1 (1 - 3)
+id: metpo:0000188
+name: 'NaCl Optimum mid1'
+def: "A salinity optimum manifested as maximum microbial growth at sodium chloride concentrations between 1% and 3%, characteristic of slight halophiles or halotolerant organisms." []
 synonym: "Halotolerant" EXACT []
 synonym: "Slight halophile" EXACT []
-is_a: metpo:000016 ! NaCl Optimum
+is_a: metpo:0000016 ! 'NaCl Optimum'
 property_value: metpo:BactoTrait "NaR_1_to_3" xsd:string
+property_value: metpo:RangeMax "3" xsd:string
+property_value: metpo:RangeMin "1" xsd:string
+property_value: metpo:Unit "% NaCl" xsd:string
 
 [Term]
-id: metpo:000190
-name: % NaCl Optimum mid2 (3 - 8)
+id: metpo:0000189
+name: 'NaCl Optimum mid2'
+def: "A salinity optimum manifested as maximum microbial growth at sodium chloride concentrations between 3% and 8%, characteristic of moderate halophiles or halotolerant organisms." []
 synonym: "Halotolerant" EXACT []
 synonym: "Moderate halophile" EXACT []
-is_a: metpo:000016 ! NaCl Optimum
+is_a: metpo:0000016 ! 'NaCl Optimum'
 property_value: metpo:BactoTrait "NaR_3_to_8" xsd:string
+property_value: metpo:RangeMax "8" xsd:string
+property_value: metpo:RangeMin "3" xsd:string
+property_value: metpo:Unit "% NaCl" xsd:string
 
 [Term]
-id: metpo:000191
-name: % NaCl Optimum high (> 8)
+id: metpo:0000190
+name: 'NaCl Optimum high'
+def: "A salinity optimum manifested as maximum microbial growth at sodium chloride concentrations above 8%, characteristic of extreme halophiles." []
 synonym: "Extreme halophile" EXACT []
-is_a: metpo:000016 ! NaCl Optimum
+is_a: metpo:0000016 ! 'NaCl Optimum'
 property_value: metpo:BactoTrait "NaR_>8" xsd:string
+property_value: metpo:RangeMin "8" xsd:string
+property_value: metpo:Unit "% NaCl" xsd:string
 
 [Term]
-id: metpo:000192
-name: % NaCl Range low (<= 1)
+id: metpo:0000191
+name: 'NaCl Range low'
+def: "A salinity range allowing microbial growth at sodium chloride concentrations below 1%, characteristic of non-halophilic organisms." []
 synonym: "Halotolerant" EXACT []
 synonym: "Non-halophile" EXACT []
-is_a: metpo:000017 ! NaCl Range
-property_value: metpo:BactoTrait "NaO_<=1" xsd:string
+is_a: metpo:0000017 ! 'NaCl Range'
+property_value: metpo:BactoTrait "NaO_<1" xsd:string
+property_value: metpo:RangeMax "1" xsd:string
+property_value: metpo:Unit "% NaCl" xsd:string
 
 [Term]
-id: metpo:000193
-name: % NaCl Range mid1 (1 - 3)
+id: metpo:0000192
+name: 'NaCl Range mid1'
+def: "A salinity range allowing microbial growth at sodium chloride concentrations between 1% and 3%, characteristic of slight halophiles." []
 synonym: "Halotolerant" EXACT []
 synonym: "Slight halophile" EXACT []
-is_a: metpo:000017 ! NaCl Range
+is_a: metpo:0000017 ! 'NaCl Range'
 property_value: metpo:BactoTrait "NaO_1_to_3" xsd:string
+property_value: metpo:RangeMax "3" xsd:string
+property_value: metpo:RangeMin "1" xsd:string
+property_value: metpo:Unit "% NaCl" xsd:string
 
 [Term]
-id: metpo:000194
-name: % NaCl Range mid2 (3 - 8)
+id: metpo:0000193
+name: 'NaCl Range mid2'
+def: "A salinity range allowing microbial growth at sodium chloride concentrations between 3% and 8%, characteristic of moderate halophiles." []
 synonym: "Halotolerant" EXACT []
 synonym: "Moderate halophile" EXACT []
-is_a: metpo:000017 ! NaCl Range
+is_a: metpo:0000017 ! 'NaCl Range'
 property_value: metpo:BactoTrait "NaO_3_to_8" xsd:string
+property_value: metpo:RangeMax "8" xsd:string
+property_value: metpo:RangeMin "3" xsd:string
+property_value: metpo:Unit "% NaCl" xsd:string
 
 [Term]
-id: metpo:000195
-name: % NaCl Range high (> 8)
+id: metpo:0000194
+name: 'NaCl Range high'
+def: "A salinity range allowing microbial growth at sodium chloride concentrations above 8%, characteristic of extreme halophiles." []
 synonym: "Extreme halophile" EXACT []
-is_a: metpo:000017 ! NaCl Range
+is_a: metpo:0000017 ! 'NaCl Range'
 property_value: metpo:BactoTrait "NaO_>8" xsd:string
+property_value: metpo:RangeMin "8" xsd:string
+property_value: metpo:Unit "% NaCl" xsd:string
 
 [Term]
-id: metpo:000196
-name: pH delta very low (<= 1)
-is_a: metpo:000018 ! pH delta
-property_value: metpo:BactoTrait "pHd_<=1" xsd:string
+id: metpo:0000195
+name: 'pH Delta very low'
+def: "A growth tolerance metric measuring the span of pH conditions that support an organism's growth, with a narrow range less than 1 pH unit." []
+is_a: metpo:0000018 ! 'pH delta'
+property_value: metpo:BactoTrait "pHd_<1" xsd:string
+property_value: metpo:RangeMax "1" xsd:string
+property_value: metpo:Unit "pH" xsd:string
 
 [Term]
-id: metpo:000197
-name: pH delta low (1 - 2)
-is_a: metpo:000018 ! pH delta
+id: metpo:0000196
+name: 'pH Delta low'
+def: "A growth tolerance metric measuring the span of pH conditions that support an organism's growth, with a range between 1 and 2 pH units." []
+is_a: metpo:0000018 ! 'pH delta'
 property_value: metpo:BactoTrait "pHd_1_2" xsd:string
+property_value: metpo:RangeMax "2" xsd:string
+property_value: metpo:RangeMin "1" xsd:string
+property_value: metpo:Unit "pH" xsd:string
 
 [Term]
-id: metpo:000198
-name: pH delta mid1 (2 - 3)
-is_a: metpo:000018 ! pH delta
+id: metpo:0000197
+name: 'pH Delta mid1'
+def: "A growth tolerance metric measuring the span of pH conditions that support an organism's growth, with a range between 2 and 3 pH units." []
+is_a: metpo:0000018 ! 'pH delta'
 property_value: metpo:BactoTrait "pHd_2_3" xsd:string
+property_value: metpo:RangeMax "3" xsd:string
+property_value: metpo:RangeMin "2" xsd:string
+property_value: metpo:Unit "pH" xsd:string
 
 [Term]
-id: metpo:000199
-name: pH delta mid2 (3 - 4)
-is_a: metpo:000018 ! pH delta
+id: metpo:0000198
+name: 'pH Delta mid2'
+def: "A growth tolerance metric measuring the span of pH conditions that support an organism's growth, with a range between 3 and 4 pH units." []
+is_a: metpo:0000018 ! 'pH delta'
 property_value: metpo:BactoTrait "pHd_3_4" xsd:string
+property_value: metpo:RangeMax "4" xsd:string
+property_value: metpo:RangeMin "3" xsd:string
+property_value: metpo:Unit "pH" xsd:string
 
 [Term]
-id: metpo:000200
-name: pH delta mid3 (4 - 5)
-is_a: metpo:000018 ! pH delta
+id: metpo:0000199
+name: 'pH Delta mid3'
+def: "A growth tolerance metric measuring the span of pH conditions that support an organism's growth, with a range between 4 and 5 pH units." []
+is_a: metpo:0000018 ! 'pH delta'
 property_value: metpo:BactoTrait "pHd_4_5" xsd:string
+property_value: metpo:RangeMax "5" xsd:string
+property_value: metpo:RangeMin "4" xsd:string
+property_value: metpo:Unit "pH" xsd:string
 
 [Term]
-id: metpo:000201
-name: pH delta high (5 - 9)
-is_a: metpo:000018 ! pH delta
+id: metpo:0000200
+name: 'pH Delta high'
+def: "A growth tolerance metric measuring the span of pH conditions that support an organism's growth, with a wide range between 5 and 9 pH units." []
+is_a: metpo:0000018 ! 'pH delta'
 property_value: metpo:BactoTrait "pHd_5_9" xsd:string
+property_value: metpo:RangeMax "9" xsd:string
+property_value: metpo:RangeMin "5" xsd:string
+property_value: metpo:Unit "pH" xsd:string
 
 [Term]
-id: metpo:000202
-name: % NaCl delta low (<= 1)
-is_a: metpo:000019 ! NaCl delta
-property_value: metpo:BactoTrait "Nad_<=1" xsd:string
+id: metpo:0000201
+name: 'NaCl Delta low'
+def: "A growth tolerance metric measuring the span of sodium chloride concentrations that support an organism's growth, with a narrow range less than 1%." []
+is_a: metpo:0000019 ! 'NaCl delta'
+property_value: metpo:BactoTrait "Nad_<1" xsd:string
+property_value: metpo:RangeMax "1" xsd:string
+property_value: metpo:Unit "C" xsd:string
 
 [Term]
-id: metpo:000203
-name: % NaCl delta mid2 (1 - 3)
-is_a: metpo:000019 ! NaCl delta
+id: metpo:0000202
+name: 'NaCl Delta mid2'
+def: "A growth tolerance metric measuring the span of sodium chloride concentrations that support an organism's growth, with a range between 1% and 3%." []
+is_a: metpo:0000019 ! 'NaCl delta'
 property_value: metpo:BactoTrait "Nad_1_3" xsd:string
+property_value: metpo:RangeMax "3" xsd:string
+property_value: metpo:RangeMin "1" xsd:string
+property_value: metpo:Unit "C" xsd:string
 
 [Term]
-id: metpo:000204
-name: % NaCl delta mid2 (3 - 8)
-is_a: metpo:000019 ! NaCl delta
+id: metpo:0000203
+name: 'NaCl Delta mid2'
+def: "A growth tolerance metric measuring the span of sodium chloride concentrations that support an organism's growth, with a range between 3% and 8%." []
+is_a: metpo:0000019 ! 'NaCl delta'
 property_value: metpo:BactoTrait "Nad_3_8" xsd:string
+property_value: metpo:RangeMax "8" xsd:string
+property_value: metpo:RangeMin "3" xsd:string
+property_value: metpo:Unit "C" xsd:string
 
 [Term]
-id: metpo:000205
-name: % NaCl delta high (>= 8)
-is_a: metpo:000019 ! NaCl delta
+id: metpo:0000204
+name: 'NaCl Delta high'
+def: "A growth tolerance metric measuring the span of sodium chloride concentrations that support an organism's growth, with a wide range greater than 8%." []
+is_a: metpo:0000019 ! 'NaCl delta'
 property_value: metpo:BactoTrait "Nad_>8" xsd:string
+property_value: metpo:RangeMax "8" xsd:string
+property_value: metpo:Unit "C" xsd:string
 
 [Term]
-id: metpo:000206
-name: Temperature C delta very low (1 - 5)
-is_a: metpo:000020 ! Temperature Delta
+id: metpo:0000205
+name: 'Temperature Delta very low'
+def: "A growth tolerance metric measuring the span of temperatures that support an organism's growth, with a narrow range between 1°C and 5°C." []
+is_a: metpo:0000020 ! 'Temperature Delta'
 property_value: metpo:BactoTrait "Td_1_5" xsd:string
+property_value: metpo:RangeMax "5" xsd:string
+property_value: metpo:RangeMin "1" xsd:string
+property_value: metpo:Unit "C" xsd:string
 
 [Term]
-id: metpo:000207
-name: Temperature C delta low (5 - 10)
-is_a: metpo:000020 ! Temperature Delta
+id: metpo:0000206
+name: 'Temperature Delta low'
+def: "A growth tolerance metric measuring the span of temperatures that support an organism's growth, with a range between 5°C and 10°C." []
+is_a: metpo:0000020 ! 'Temperature Delta'
 property_value: metpo:BactoTrait "Td_5_10" xsd:string
+property_value: metpo:RangeMax "10" xsd:string
+property_value: metpo:RangeMin "5" xsd:string
+property_value: metpo:Unit "C" xsd:string
 
 [Term]
-id: metpo:000208
-name: Temperature C delta mid1 (10 - 20)
-is_a: metpo:000020 ! Temperature Delta
+id: metpo:0000207
+name: 'Temperature Delta mid1'
+def: "A growth tolerance metric measuring the span of temperatures that support an organism's growth, with a range between 10°C and 20°C." []
+is_a: metpo:0000020 ! 'Temperature Delta'
 property_value: metpo:BactoTrait "Td_10_20" xsd:string
+property_value: metpo:RangeMax "20" xsd:string
+property_value: metpo:RangeMin "10" xsd:string
+property_value: metpo:Unit "C" xsd:string
 
 [Term]
-id: metpo:000209
-name: Temperature C delta mid2 (20 - 30)
-is_a: metpo:000020 ! Temperature Delta
+id: metpo:0000208
+name: 'Temperature Delta mid2'
+def: "A growth tolerance metric measuring the span of temperatures that support an organism's growth, with a range between 20°C and 30°C." []
+is_a: metpo:0000020 ! 'Temperature Delta'
 property_value: metpo:BactoTrait "Td_20_30" xsd:string
+property_value: metpo:RangeMax "30" xsd:string
+property_value: metpo:RangeMin "20" xsd:string
+property_value: metpo:Unit "C" xsd:string
 
 [Term]
-id: metpo:000210
-name: Temperature C delta high (>= 30)
-is_a: metpo:000020 ! Temperature Delta
+id: metpo:0000209
+name: 'Temperature Delta high'
+def: "A growth tolerance metric measuring the span of temperatures that support an organism's growth, with a wide range greater than 30°C." []
+is_a: metpo:0000020 ! 'Temperature Delta'
 property_value: metpo:BactoTrait "Td_>30" xsd:string
+property_value: metpo:RangeMin "30" xsd:string
+property_value: metpo:Unit "C" xsd:string
 
 [Term]
-id: metpo:000211
-name: bacillus
+id: metpo:0000210
+name: 'Bacillus'
 def: "A rod-shaped cell." []
-is_a: metpo:000021 ! Morphology
+is_a: metpo:0000021 ! 'Morphology'
 
 [Term]
-id: metpo:000212
-name: branced
+id: metpo:0000211
+name: 'Branced'
 def: "A cell with multiple branches or extensions." []
-is_a: metpo:000021 ! Morphology
+is_a: metpo:0000021 ! 'Morphology'
 
 [Term]
-id: metpo:000213
-name: coccobacillus
+id: metpo:0000212
+name: 'Coccobacillus'
 def: "A short rod-shaped cell, intermediate between bacillus and coccus." []
-is_a: metpo:000021 ! Morphology
+is_a: metpo:0000021 ! 'Morphology'
 
 [Term]
-id: metpo:000214
-name: coccus
+id: metpo:0000213
+name: 'Coccus'
 def: "A spherical cell." []
-is_a: metpo:000021 ! Morphology
+is_a: metpo:0000021 ! 'Morphology'
 
 [Term]
-id: metpo:000215
-name: crescent
+id: metpo:0000214
+name: 'Crescent'
 def: "A curved, crescent-shaped cell." []
-is_a: metpo:000021 ! Morphology
+is_a: metpo:0000021 ! 'Morphology'
 
 [Term]
-id: metpo:000216
-name: curved
+id: metpo:0000215
+name: 'Curved'
 def: "A cell with a slight curve or bend." []
-is_a: metpo:000021 ! Morphology
+is_a: metpo:0000021 ! 'Morphology'
 
 [Term]
-id: metpo:000217
-name: curved spiral
+id: metpo:0000216
+name: 'Curved Spiral'
 def: "A cell with a curved spiral shape." []
-is_a: metpo:000021 ! Morphology
+is_a: metpo:0000021 ! 'Morphology'
 
 [Term]
-id: metpo:000218
-name: diplococcus
+id: metpo:0000217
+name: 'Diplococcus'
 def: "Two spherical cells attached to each other." []
-is_a: metpo:000021 ! Morphology
+is_a: metpo:0000021 ! 'Morphology'
 
 [Term]
-id: metpo:000219
-name: disc
+id: metpo:0000218
+name: 'Disc'
 def: "A flat, circular-shaped cell." []
-is_a: metpo:000021 ! Morphology
+is_a: metpo:0000021 ! 'Morphology'
 
 [Term]
-id: metpo:000220
-name: dumbbell
+id: metpo:0000219
+name: 'Dumbbell'
 def: "A cell shaped like two spheres connected by a narrow bridge." []
-is_a: metpo:000021 ! Morphology
+is_a: metpo:0000021 ! 'Morphology'
 
 [Term]
-id: metpo:000221
-name: ellipsoidal
+id: metpo:0000220
+name: 'Ellipsoidal'
 def: "A cell with an elongated oval shape." []
-is_a: metpo:000021 ! Morphology
+is_a: metpo:0000021 ! 'Morphology'
 
 [Term]
-id: metpo:000222
-name: filament
+id: metpo:0000221
+name: 'Filament'
 def: "A long, thin, thread-like cell." []
-is_a: metpo:000021 ! Morphology
+is_a: metpo:0000021 ! 'Morphology'
 
 [Term]
-id: metpo:000223
-name: flask
+id: metpo:0000222
+name: 'Flask'
 def: "A cell shaped like a laboratory flask." []
-is_a: metpo:000021 ! Morphology
+is_a: metpo:0000021 ! 'Morphology'
 
 [Term]
-id: metpo:000224
-name: fusiform
+id: metpo:0000223
+name: 'Fusiform'
 def: "A cell with a spindle-like shape, wider in the middle and tapering at both ends." []
-is_a: metpo:000021 ! Morphology
+is_a: metpo:0000021 ! 'Morphology'
 
 [Term]
-id: metpo:000225
-name: helical
+id: metpo:0000224
+name: 'Helical'
 def: "A cell with a spiral shape, forming a three-dimensional helix." []
-is_a: metpo:000021 ! Morphology
+is_a: metpo:0000021 ! 'Morphology'
 
 [Term]
-id: metpo:000226
-name: irregular
+id: metpo:0000225
+name: 'Irregular'
 def: "A cell with an inconsistent or non-uniform shape." []
-is_a: metpo:000021 ! Morphology
+is_a: metpo:0000021 ! 'Morphology'
 
 [Term]
-id: metpo:000227
-name: oval
+id: metpo:0000226
+name: 'Oval'
 def: "A cell with an egg-shaped outline." []
-is_a: metpo:000021 ! Morphology
+is_a: metpo:0000021 ! 'Morphology'
 
 [Term]
-id: metpo:000228
-name: ovoid
+id: metpo:0000227
+name: 'Ovoid'
 def: "A cell with an egg-like shape, slightly elongated." []
-is_a: metpo:000021 ! Morphology
+is_a: metpo:0000021 ! 'Morphology'
 
 [Term]
-id: metpo:000229
-name: pleomorphic
+id: metpo:0000228
+name: 'Pleomorphic'
 def: "A cell capable of assuming various shapes." []
-is_a: metpo:000021 ! Morphology
+is_a: metpo:0000021 ! 'Morphology'
 
 [Term]
-id: metpo:000230
-name: ring
+id: metpo:0000229
+name: 'Ring'
 def: "A cell shaped like a circular band or loop." []
-is_a: metpo:000021 ! Morphology
+is_a: metpo:0000021 ! 'Morphology'
 
 [Term]
-id: metpo:000231
-name: rod
+id: metpo:0000230
+name: 'Rod'
 def: "A straight, elongated cell." []
-is_a: metpo:000021 ! Morphology
+is_a: metpo:0000021 ! 'Morphology'
 
 [Term]
-id: metpo:000232
-name: sphere
+id: metpo:0000231
+name: 'Sphere'
 def: "A perfectly round cell." []
-is_a: metpo:000021 ! Morphology
+is_a: metpo:0000021 ! 'Morphology'
 
 [Term]
-id: metpo:000233
-name: spindle
+id: metpo:0000232
+name: 'Spindle'
 def: "A cell with a shape that tapers at both ends." []
-is_a: metpo:000021 ! Morphology
+is_a: metpo:0000021 ! 'Morphology'
 
 [Term]
-id: metpo:000234
-name: spiral
+id: metpo:0000233
+name: 'Spiral'
 def: "A cell with a tight, coiled shape." []
-is_a: metpo:000021 ! Morphology
+is_a: metpo:0000021 ! 'Morphology'
 
 [Term]
-id: metpo:000235
-name: spirochete
+id: metpo:0000234
+name: 'Spirochete'
 def: "A cell with a long, thin, flexible spiral shape." []
-is_a: metpo:000021 ! Morphology
+is_a: metpo:0000021 ! 'Morphology'
 
 [Term]
-id: metpo:000236
-name: spore
+id: metpo:0000235
+name: 'Spore'
 def: "A dormant, resistant form of a cell." []
-is_a: metpo:000021 ! Morphology
+is_a: metpo:0000021 ! 'Morphology'
 
 [Term]
-id: metpo:000237
-name: square
+id: metpo:0000236
+name: 'Square'
 def: "A cell with a cube-like shape." []
-is_a: metpo:000021 ! Morphology
+is_a: metpo:0000021 ! 'Morphology'
 
 [Term]
-id: metpo:000238
-name: star
+id: metpo:0000237
+name: 'Star'
 def: "A cell with multiple pointed projections, resembling a star." []
-is_a: metpo:000021 ! Morphology
+is_a: metpo:0000021 ! 'Morphology'
 
 [Term]
-id: metpo:000239
-name: star - dumbbell - pleomorphic
+id: metpo:0000238
+name: 'Star - Dumbbell - Pleomorphic'
 def: "A cell that can assume star-shaped, dumbbell-shaped, or various other forms." []
-is_a: metpo:000021 ! Morphology
+is_a: metpo:0000021 ! 'Morphology'
 
 [Term]
-id: metpo:000240
-name: tailed
+id: metpo:0000239
+name: 'Tailed'
 def: "A cell with a main body and a tail-like extension." []
-is_a: metpo:000021 ! Morphology
+is_a: metpo:0000021 ! 'Morphology'
 
 [Term]
-id: metpo:000241
-name: triangular
+id: metpo:0000240
+name: 'Triangular'
 def: "A cell with a three-sided shape." []
-is_a: metpo:000021 ! Morphology
+is_a: metpo:0000021 ! 'Morphology'
 
 [Term]
-id: metpo:000242
-name: vibrio
+id: metpo:0000241
+name: 'Vibrio'
 def: "A curved rod-shaped cell, resembling a comma." []
-is_a: metpo:000021 ! Morphology
+is_a: metpo:0000021 ! 'Morphology'
 
 [Term]
-id: metpo:000243
-name: Environmental Parameter
+id: metpo:0000242
+name: 'Environmental Parameter'
 def: "A measurable property of the external environment that influences microbial growth or behavior." []
+is_a: metpo:9999999 ! 'obsolete'
 
 [Term]
-id: metpo:000244
-name: Growth Condition
+id: metpo:0000243
+name: 'Growth Condition'
 def: "A specific combination of environmental factors under which a microorganism can maintain its lifecycle." []
+is_a: metpo:9999999 ! 'obsolete'
 
 [Term]
-id: metpo:000245
-name: Physiological Trait
+id: metpo:0000244
+name: 'Physiological Trait'
 def: "An inherent characteristic of an organism related to its biological functioning and metabolic processes." []
+is_a: metpo:9999999 ! 'obsolete'
 
 [Term]
-id: metpo:000246
-name: Metabolic Classification
+id: metpo:0000245
+name: 'Metabolic Classification'
 def: "A categorization of an organism based on its specific patterns of energy acquisition and material transformation." []
+is_a: metpo:9999999 ! 'obsolete'
 
 [Term]
-id: metpo:000247
-name: Cellular Characteristic
+id: metpo:0000246
+name: 'Cellular Characteristic'
 def: "A distinctive property of a cell that contributes to its structure, function, or behavior." []
+is_a: metpo:9999999 ! 'obsolete'
 
 [Term]
-id: metpo:000248
-name: Taxonomic Feature
+id: metpo:0000247
+name: 'Taxonomic Feature'
 def: "A morphological, genetic, or physiological characteristic used for classifying organisms within a systematic hierarchy." []
+is_a: metpo:9999999 ! 'obsolete'
 
 [Term]
-id: metpo:000249
-name: Microbial Adaptation
+id: metpo:0000248
+name: 'Microbial Adaptation'
 def: "A heritable change in structure, function, or behavior that increases a microorganism's fitness in a specific environment." []
+is_a: metpo:9999999 ! 'obsolete'
 
 [Term]
-id: metpo:000250
-name: Growth Parameter
+id: metpo:0000249
+name: 'Growth Parameter'
 def: "A quantifiable factor that affects or describes the rate or extent of microbial population increase." []
+is_a: metpo:9999999 ! 'obsolete'
 
 [Term]
-id: metpo:000251
-name: Structural Feature
+id: metpo:0000250
+name: 'Structural Feature'
 def: "A physical component or arrangement of components that contributes to an organism's form or architecture." []
+is_a: metpo:9999999 ! 'obsolete'
 
 [Term]
-id: metpo:000252
-name: Temperature Adaptation
+id: metpo:0000251
+name: 'Temperature Adaptation'
 def: "A physiological adjustment that enables an organism to survive and reproduce at a specific temperature range." []
+is_a: metpo:0001019 ! 'sensitivity toward temperature'
 
 [Term]
-id: metpo:000253
-name: Salinity Adaptation
+id: metpo:0000252
+name: 'Salinity Adaptation'
 def: "A set of mechanisms that allows an organism to maintain homeostasis in environments with particular salt concentrations." []
+is_a: metpo:0001017 ! 'sensitivity toward NaCl'
 
 [Term]
-id: metpo:000254
-name: pH Adaptation
+id: metpo:0000253
+name: 'pH Adaptation'
 def: "A combination of cellular processes that permits survival and growth under specific hydrogen ion concentrations." []
+is_a: metpo:0001018 ! 'sensitivity toward pH'
 
 [Term]
-id: metpo:000255
-name: Oxygen Requirement
+id: metpo:0000254
+name: 'Oxygen Requirement'
 def: "The specific need for or tolerance of molecular oxygen that characterizes an organism's metabolic processes." []
+is_a: metpo:9999999 ! 'obsolete'
 
 [Term]
-id: metpo:000256
-name: Carbon Source Utilization
+id: metpo:0000255
+name: 'Carbon Source Utilization'
 def: "The ability to assimilate and metabolize specific carbon-containing compounds for cellular growth and maintenance." []
+is_a: metpo:0000279 ! 'Biological Process'
 
 [Term]
-id: metpo:000257
-name: Energy Acquisition Mode
+id: metpo:0000256
+name: 'Energy Acquisition Mode'
 def: "The mechanism by which an organism obtains energy for cellular activities and biosynthesis." []
+is_a: metpo:0001020 ! 'metabolic constraints'
 
 [Term]
-id: metpo:000258
-name: Electron Donor Type
+id: metpo:0000257
+name: 'Electron Donor Type'
 def: "The class of compounds or elements from which an organism extracts electrons for energy-generating reactions." []
+is_a: metpo:0001020 ! 'metabolic constraints'
 
 [Term]
-id: metpo:000259
-name: Motility Mechanism
+id: metpo:0000258
+name: 'Motility Mechanism'
 def: "The biochemical and mechanical processes that enable an organism to move through its environment." []
 
 [Term]
-id: metpo:000260
-name: Motility Structure
+id: metpo:0000259
+name: 'Motility Structure'
 def: "A specialized cellular component that generates force or facilitates movement in microorganisms." []
+is_a: metpo:0001013 ! 'structure'
 
 [Term]
-id: metpo:000261
-name: Bacterial Spore Type
+id: metpo:0000260
+name: 'Bacterial Spore Type'
 def: "A classification of resistant dormant structures produced by bacteria based on their formation and properties." []
+is_a: metpo:0001014 ! 'spore type'
 
 [Term]
-id: metpo:000262
-name: Fungal Spore Type
+id: metpo:0000261
+name: 'Fungal Spore Type'
 def: "A distinct category of reproductive or survival structures produced by fungi, characterized by specific morphology and function." []
+is_a: metpo:0001014 ! 'spore type'
 
 [Term]
-id: metpo:000263
-name: Reproductive Structure
+id: metpo:0000262
+name: 'Reproductive Structure'
 def: "A specialized cellular formation that functions in the propagation of genetic material to produce new individuals." []
+is_a: metpo:0001013 ! 'structure'
 
 [Term]
-id: metpo:000264
-name: Dormancy Structure
+id: metpo:0000263
+name: 'Dormancy Structure'
 def: "A specialized cellular state or formation that enables survival during adverse environmental conditions with reduced metabolic activity." []
+is_a: metpo:0001013 ! 'structure'
 
 [Term]
-id: metpo:000265
-name: Pressure Adaptation Type
+id: metpo:0000264
+name: 'Pressure Adaptation Type'
 def: "A set of physiological and molecular mechanisms that enable survival under specific hydrostatic pressure conditions." []
+is_a: metpo:0001016 ! 'sensitivity toward pressure'
 
 [Term]
-id: metpo:000266
-name: Pressure Tolerance Range
+id: metpo:0000265
+name: 'Pressure Tolerance Range'
 def: "The span of hydrostatic pressures within which an organism can maintain viability and cellular functions." []
+is_a: metpo:0001016 ! 'sensitivity toward pressure'
 
 [Term]
-id: metpo:000267
-name: GenomicFeature
+id: metpo:0000266
+name: 'Genomic Feature'
 def: "A distinctive characteristic of an organism's genetic material related to its sequence, structure, or organization." []
+is_a: metpo:9999999 ! 'obsolete'
 
 [Term]
-id: metpo:000268
-name: Cell Dimension
+id: metpo:0000267
+name: 'Cell Dimension'
 def: "A measurable spatial attribute of a cell that describes its size in one or more directions." []
+is_a: metpo:9999999 ! 'obsolete'
 
 [Term]
-id: metpo:000269
-name: Optimal Growth Parameter
+id: metpo:0000268
+name: 'Optimal Growth Parameter'
 def: "The specific environmental condition at which an organism achieves its maximum growth rate or metabolic efficiency." []
+is_a: metpo:9999999 ! 'obsolete'
 
 [Term]
-id: metpo:000270
-name: Growth Range Parameter
+id: metpo:0000269
+name: 'Growth Range Parameter'
 def: "The span of environmental conditions within which an organism can sustain growth and reproduction." []
+is_a: metpo:9999999 ! 'obsolete'
 
 [Term]
-id: metpo:000271
-name: Growth Tolerance Metric
+id: metpo:0000270
+name: 'Growth Tolerance Metric'
 def: "A quantitative measure of an organism's ability to withstand variations in a specific environmental factor." []
+is_a: metpo:9999999 ! 'obsolete'
 
 [Term]
-id: metpo:000272
-name: Cell Shape
+id: metpo:0000271
+name: 'Cell Shape'
 def: "The three-dimensional geometric form of a microbial cell as determined by its cell wall and cytoskeletal structures." []
+is_a: metpo:0000021 ! 'Morphology'
 
 [Term]
-id: metpo:000273
-name: Cell Arrangement
+id: metpo:0000272
+name: 'Cell Arrangement'
 def: "The spatial organization of multiple cells in relation to each other following cell division." []
+is_a: metpo:0000021 ! 'Morphology'
 
 [Term]
-id: metpo:000274
-name: Colony Morphology
+id: metpo:0000273
+name: 'Colony Morphology'
 def: "The macroscopic appearance and structure of a population of microorganisms growing on a solid medium." []
+is_a: metpo:0000021 ! 'Morphology'
+
+[Term]
+id: metpo:0000274
+name: 'Physical Property'
+def: "A measurable attribute of matter or energy that can be quantified and observed independently of living systems." []
+is_a: metpo:9999999 ! 'obsolete'
+
+[Term]
+id: metpo:0000275
+name: 'Environmental Context'
+def: "A set of interrelated external conditions that influence the growth, behavior, or survival of an organism." []
+is_a: metpo:9999999 ! 'obsolete'
+
+[Term]
+id: metpo:0000276
+name: 'Biological Property'
+def: "An inherent characteristic of a living organism that contributes to its structure, function, or behavior at any level of organization." []
+is_a: metpo:9999999 ! 'obsolete'
+
+[Term]
+id: metpo:0000277
+name: 'Functional Classification'
+def: "A systematic categorization of organisms based on their metabolic activities, energy utilization, or biochemical processes." []
+is_a: metpo:9999999 ! 'obsolete'
+
+[Term]
+id: metpo:0000278
+name: 'Classification Property'
+def: "A distinctive characteristic used to organize organisms into taxonomic groups according to evolutionary relationships or shared traits." []
+is_a: metpo:9999999 ! 'obsolete'
+
+[Term]
+id: metpo:0000279
+name: 'Biological Process'
+def: "A sequence of molecular or cellular events that transforms biological materials, energy, or information to achieve a specific physiological outcome." []
+
+[Term]
+id: metpo:0000280
+name: 'Measurable Property'
+def: "A quantifiable attribute that can be determined through observation or experimentation with a defined unit of measurement." []
+is_a: metpo:9999999 ! 'obsolete'
+
+[Term]
+id: metpo:0001000
+name: 'sensitivity to oxygen'
+is_a: metpo:0001001 ! 'sensitivity toward'
+
+[Term]
+id: metpo:0001001
+name: 'sensitivity toward'
+is_a: metpo:0001002 ! 'organismal quality'
+
+[Term]
+id: metpo:0001002
+name: 'organismal quality'
+is_a: metpo:0001003 ! 'physicial object quality'
+
+[Term]
+id: metpo:0001003
+name: 'physicial object quality'
+is_a: metpo:0001004 ! 'quality'
+
+[Term]
+id: metpo:0001004
+name: 'quality'
+
+[Term]
+id: metpo:0001006
+name: 'size'
+is_a: metpo:0000021 ! 'Morphology'
+
+[Term]
+id: metpo:0001007
+name: '1-D extent'
+is_a: metpo:0001006 ! 'size'
+
+[Term]
+id: metpo:0001008
+name: 'width'
+is_a: metpo:0001007 ! '1-D extent'
+
+[Term]
+id: metpo:0001009
+name: 'length'
+is_a: metpo:0001007 ! '1-D extent'
+
+[Term]
+id: metpo:0001010
+name: 'prokaryotic metabolically differentiated cell'
+
+[Term]
+id: metpo:0001012
+name: 'heterotrophy'
+is_a: metpo:0000279 ! 'Biological Process'
+
+[Term]
+id: metpo:0001013
+name: 'structure'
+
+[Term]
+id: metpo:0001014
+name: 'spore type'
+
+[Term]
+id: metpo:0001016
+name: 'sensitivity toward pressure'
+is_a: metpo:0001001 ! 'sensitivity toward'
+
+[Term]
+id: metpo:0001017
+name: 'sensitivity toward NaCl'
+is_a: metpo:0001001 ! 'sensitivity toward'
+
+[Term]
+id: metpo:0001018
+name: 'sensitivity toward pH'
+is_a: metpo:0001001 ! 'sensitivity toward'
+
+[Term]
+id: metpo:0001019
+name: 'sensitivity toward temperature'
+is_a: metpo:0001001 ! 'sensitivity toward'
+
+[Term]
+id: metpo:0001020
+name: 'metabolic constraints'
+
+[Term]
+id: metpo:0001021
+name: 'cell by chemical produced'
+
+[Term]
+id: metpo:9999999
+name: 'obsolete'
 
