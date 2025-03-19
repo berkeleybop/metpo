@@ -21,8 +21,17 @@ components:
       templates:
         - metpo_sheet.tsv
       template_options: "--add-prefix 'METPO: https://w3id.org/metpo/'"
-# import_group:
-#   products: {}
+import_group:
+  use_base_merging: TRUE
+  slme_individuals: exclude
+  annotation_properties:
+    - rdfs:label
+    - IAO:0000115
+    - oboInOwl:is_metadata_tag
+    - OMO:0002000 # defined by construct
+  products:
+    - id: pato
+    - id: bfo
 use_dosdps: FALSE
 use_mappings: FALSE
 use_edit_file_imports: FALSE
