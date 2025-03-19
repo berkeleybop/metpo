@@ -13,11 +13,209 @@
         "val" : "METPO"
       }, {
         "pred" : "http://www.w3.org/2002/07/owl#versionInfo",
-        "val" : "2025-03-18"
+        "val" : "2025-03-19"
       } ],
-      "version" : "https://w3id.org/metpo/metpo/releases/2025-03-18/metpo.json"
+      "version" : "https://w3id.org/metpo/metpo/releases/2025-03-19/metpo.json"
     },
     "nodes" : [ {
+      "id" : "http://purl.obolibrary.org/obo/BFO_0000001",
+      "lbl" : "entity",
+      "type" : "CLASS"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/BFO_0000002",
+      "lbl" : "continuant",
+      "type" : "CLASS"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/BFO_0000020",
+      "lbl" : "specifically dependent continuant",
+      "type" : "CLASS"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0000001",
+      "lbl" : "quality",
+      "type" : "CLASS"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0000033",
+      "lbl" : "concentration of",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "concentration"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0000051",
+      "lbl" : "morphology",
+      "type" : "CLASS"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0000052",
+      "lbl" : "shape",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "relational shape quality"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0000070",
+      "lbl" : "amount",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "presence or absence in organism"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "quantitative"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0000146",
+      "lbl" : "temperature",
+      "type" : "CLASS"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0000406",
+      "lbl" : "curved",
+      "type" : "CLASS"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0000413",
+      "lbl" : "square",
+      "type" : "CLASS"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001018",
+      "lbl" : "physical quality",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "relational physical quality"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001025",
+      "lbl" : "pressure",
+      "type" : "CLASS"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001241",
+      "lbl" : "physical object quality",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "monadic quality of a continuant"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "multiply inhering quality of a physical entity"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "quality of a continuant"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "quality of a single physical entity"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "quality of an object"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "quality of continuant"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001356",
+      "lbl" : "pleomorphic",
+      "type" : "CLASS"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001396",
+      "lbl" : "cellular quality",
+      "type" : "CLASS"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001408",
+      "lbl" : "ciliated",
+      "type" : "CLASS"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001409",
+      "lbl" : "spindle-shaped",
+      "type" : "CLASS"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001555",
+      "lbl" : "has number of",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "extra or missing physical or functional parts"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "has or lacks parts of type"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "mereological quality"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "number of"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001591",
+      "lbl" : "curvature",
+      "type" : "CLASS"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001655",
+      "lbl" : "osmolarity",
+      "type" : "CLASS"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001875",
+      "lbl" : "triangular",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "deltoid"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0001988",
+      "lbl" : "quadrangular",
+      "type" : "CLASS"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0002006",
+      "lbl" : "2-D shape",
+      "type" : "CLASS"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0002007",
+      "lbl" : "convex 3-D shape",
+      "type" : "CLASS"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0002266",
+      "lbl" : "3-D shape",
+      "type" : "CLASS"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0002317",
+      "lbl" : "parallelogram",
+      "type" : "CLASS"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0002400",
+      "lbl" : "fusiform",
+      "type" : "CLASS"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0070044",
+      "lbl" : "anatomical structure quality",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A quality of continuant that exist at the anatomical level of organisation and anything under it. This includes, but is not limited to, cells , tissues, and components."
+        }
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0085001",
+      "lbl" : "salinity",
+      "type" : "CLASS"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0103000",
+      "lbl" : "quantitative",
+      "type" : "CLASS"
+    }, {
       "id" : "https://w3id.org/metpo/0000001",
       "lbl" : "'Temperature'",
       "type" : "CLASS",
@@ -4536,7 +4734,30 @@
       "lbl" : "'obsolete'",
       "type" : "CLASS"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/RO_0015011",
+      "lbl" : "has cross section",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/RO_0015012",
+      "lbl" : "reciprocal of",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/IAO_0000115",
+      "lbl" : "definition",
+      "type" : "PROPERTY",
+      "propertyType" : "ANNOTATION"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/IAO_0000700",
+      "type" : "PROPERTY",
+      "propertyType" : "ANNOTATION"
+    }, {
+      "id" : "http://purl.org/dc/elements/1.1/description",
+      "type" : "PROPERTY",
+      "propertyType" : "ANNOTATION"
+    }, {
+      "id" : "http://purl.org/dc/elements/1.1/title",
       "type" : "PROPERTY",
       "propertyType" : "ANNOTATION"
     }, {
@@ -4555,7 +4776,16 @@
       "type" : "PROPERTY",
       "propertyType" : "ANNOTATION"
     }, {
+      "id" : "http://www.geneontology.org/formats/oboInOwl#default-namespace",
+      "type" : "PROPERTY",
+      "propertyType" : "ANNOTATION"
+    }, {
       "id" : "http://www.geneontology.org/formats/oboInOwl#hasExactSynonym",
+      "lbl" : "has_exact_synonym",
+      "type" : "PROPERTY",
+      "propertyType" : "ANNOTATION"
+    }, {
+      "id" : "http://www.geneontology.org/formats/oboInOwl#hasOBOFormatVersion",
       "type" : "PROPERTY",
       "propertyType" : "ANNOTATION"
     }, {
@@ -4576,6 +4806,134 @@
       "propertyType" : "ANNOTATION"
     } ],
     "edges" : [ {
+      "sub" : "http://purl.obolibrary.org/obo/BFO_0000002",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/BFO_0000001"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/BFO_0000020",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/BFO_0000002"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0000001",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/BFO_0000020"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0000033",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0000070"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0000051",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0001241"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0000052",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0000051"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0000070",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0103000"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0000070",
+      "pred" : "http://purl.obolibrary.org/obo/RO_0015012",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0001555"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0000146",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0001018"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0000406",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0001591"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0000413",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0002317"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001018",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0001241"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001025",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0001018"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001241",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0000001"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001356",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0000052"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001396",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0070044"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001408",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0001396"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001409",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0002007"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001555",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0000070"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001591",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0000052"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001655",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0000033"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001875",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0002006"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0001988",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0002006"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0002006",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0000052"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0002007",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0002266"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0002007",
+      "pred" : "http://purl.obolibrary.org/obo/RO_0015011",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0002006"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0002266",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0000052"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0002317",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0001988"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0002400",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0001409"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0070044",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0001241"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0085001",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0001655"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0103000",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0000001"
+    }, {
       "sub" : "https://w3id.org/metpo/0000001",
       "pred" : "is_a",
       "obj" : "https://w3id.org/metpo/0001019"

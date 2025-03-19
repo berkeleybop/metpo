@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                cff1ca9f98a13a9580ade473baf0f126e1f42927126adba4747a8833b43489cb
+CONFIG_HASH=                168ce334bc5309375918a8a9acdac3747f0da01c121a77ab70025b0a4a59e638
 
 
 # ----------------------------------------
@@ -159,9 +159,9 @@ all_main: $(MAIN_FILES)
 # ----------------------------------------
 
 
-IMPORTS = 
+IMPORTS =  pato bfo
 
-IMPORT_ROOTS = $(patsubst %, $(IMPORTDIR)/%_import, $(IMPORTS))
+IMPORT_ROOTS =  $(IMPORTDIR)/merged_import
 IMPORT_OWL_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl)
 IMPORT_FILES = $(IMPORT_OWL_FILES)
 
@@ -340,7 +340,7 @@ ALLSEED = $(PRESEED) \
 $(IMPORTSEED): $(ALLSEED) | $(TMPDIR)
 	if [ $(IMP) = true ]; then cat $(ALLSEED) | sort | uniq > $@; fi
 
-ANNOTATION_PROPERTIES=
+ANNOTATION_PROPERTIES=rdfs:label IAO:0000115 oboInOwl:is_metadata_tag OMO:0002000 
 
 # ----------------------------------------
 # Import modules
@@ -354,7 +354,26 @@ $(IMPORTDIR)/%_terms_combined.txt: $(IMPORTSEED) $(IMPORTDIR)/%_terms.txt
 	if [ $(IMP) = true ]; then cat $^ | grep -v ^# | sort | uniq >  $@; fi
 
 
+ALL_TERMS_COMBINED = $(patsubst %, $(IMPORTDIR)/%_terms_combined.txt, $(IMPORTS))
+$(IMPORTDIR)/merged_terms_combined.txt: $(ALL_TERMS_COMBINED)
+	if [ $(IMP) = true ]; then cat $^ | grep -v ^# | sort | uniq >  $@; fi
 
+
+$(IMPORTDIR)/merged_import.owl: $(MIRRORDIR)/merged.owl $(IMPORTDIR)/merged_terms_combined.txt
+	if [ $(IMP) = true ]; then $(ROBOT) merge -i $< \
+		extract -T $(IMPORTDIR)/merged_terms_combined.txt --force true --copy-ontology-annotations true --individuals exclude --method BOT \
+		remove $(patsubst %, --term %, $(ANNOTATION_PROPERTIES)) -T $(IMPORTDIR)/merged_terms_combined.txt --select complement --select annotation-properties \
+		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/inject-synonymtype-declaration.ru --update ../sparql/postprocess-module.ru \
+		$(ANNOTATE_CONVERT_FILE); fi
+
+
+
+
+$(IMPORTDIR)/%_import.owl: $(MIRRORDIR)/merged.owl $(IMPORTDIR)/%_terms_combined.txt
+	if [ $(IMP) = true ]; then $(ROBOT) query -i $< --update ../sparql/preprocess-module.ru \
+		extract -T $(IMPORTDIR)/$*_terms_combined.txt --force true --copy-ontology-annotations true --individuals exclude --method BOT \
+		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/inject-synonymtype-declaration.ru --update ../sparql/postprocess-module.ru \
+		$(ANNOTATE_CONVERT_FILE); fi
 
 .PRECIOUS: $(IMPORTDIR)/%_import.owl
 
@@ -427,6 +446,31 @@ MIR=true # Global parameter to bypass mirror generation
 IMP_LARGE=true # Global parameter to bypass handling of large imports
 
 ifeq ($(strip $(MIR)),true)
+
+
+## ONTOLOGY: pato
+.PHONY: mirror-pato
+.PRECIOUS: $(MIRRORDIR)/pato.owl
+mirror-pato: | $(TMPDIR)
+	curl -L $(OBOBASE)/pato.owl --create-dirs -o $(TMPDIR)/pato-download.owl --retry 4 --max-time 200 && \
+	$(ROBOT) convert -i $(TMPDIR)/pato-download.owl -o $(TMPDIR)/$@.owl
+
+
+## ONTOLOGY: bfo
+.PHONY: mirror-bfo
+.PRECIOUS: $(MIRRORDIR)/bfo.owl
+mirror-bfo: | $(TMPDIR)
+	curl -L $(OBOBASE)/bfo.owl --create-dirs -o $(TMPDIR)/bfo-download.owl --retry 4 --max-time 200 && \
+	$(ROBOT) convert -i $(TMPDIR)/bfo-download.owl -o $(TMPDIR)/$@.owl
+
+ALL_MIRRORS = $(patsubst %, $(MIRRORDIR)/%.owl, $(IMPORTS))
+MERGE_MIRRORS = true
+
+ifeq ($(strip $(MERGE_MIRRORS)),true)
+$(MIRRORDIR)/merged.owl: $(ALL_MIRRORS)
+	$(ROBOT) merge $(patsubst %, -i %, $^)  -o $@
+.PRECIOUS: $(MIRRORDIR)/merged.owl
+endif
 
 
 $(MIRRORDIR)/%.owl: mirror-% | $(MIRRORDIR)
