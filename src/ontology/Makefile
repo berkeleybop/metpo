@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                168ce334bc5309375918a8a9acdac3747f0da01c121a77ab70025b0a4a59e638
+CONFIG_HASH=                16a50e401298feb777dc11b4382f4596c3f116882f52f12512857b648a3f2455
 
 
 # ----------------------------------------
@@ -159,7 +159,7 @@ all_main: $(MAIN_FILES)
 # ----------------------------------------
 
 
-IMPORTS =  pato bfo
+IMPORTS =  bfo obi omp pato so mpo
 
 IMPORT_ROOTS =  $(IMPORTDIR)/merged_import
 IMPORT_OWL_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl)
@@ -448,6 +448,30 @@ IMP_LARGE=true # Global parameter to bypass handling of large imports
 ifeq ($(strip $(MIR)),true)
 
 
+## ONTOLOGY: bfo
+.PHONY: mirror-bfo
+.PRECIOUS: $(MIRRORDIR)/bfo.owl
+mirror-bfo: | $(TMPDIR)
+	curl -L $(OBOBASE)/bfo.owl --create-dirs -o $(TMPDIR)/bfo-download.owl --retry 4 --max-time 200 && \
+	$(ROBOT) convert -i $(TMPDIR)/bfo-download.owl -o $(TMPDIR)/$@.owl
+
+
+## ONTOLOGY: obi
+.PHONY: mirror-obi
+.PRECIOUS: $(MIRRORDIR)/obi.owl
+mirror-obi: | $(TMPDIR)
+	curl -L $(OBOBASE)/obi.owl --create-dirs -o $(TMPDIR)/obi-download.owl --retry 4 --max-time 200 && \
+	$(ROBOT) convert -i $(TMPDIR)/obi-download.owl -o $(TMPDIR)/$@.owl
+
+
+## ONTOLOGY: omp
+.PHONY: mirror-omp
+.PRECIOUS: $(MIRRORDIR)/omp.owl
+mirror-omp: | $(TMPDIR)
+	curl -L $(OBOBASE)/omp.owl --create-dirs -o $(TMPDIR)/omp-download.owl --retry 4 --max-time 200 && \
+	$(ROBOT) convert -i $(TMPDIR)/omp-download.owl -o $(TMPDIR)/$@.owl
+
+
 ## ONTOLOGY: pato
 .PHONY: mirror-pato
 .PRECIOUS: $(MIRRORDIR)/pato.owl
@@ -456,12 +480,19 @@ mirror-pato: | $(TMPDIR)
 	$(ROBOT) convert -i $(TMPDIR)/pato-download.owl -o $(TMPDIR)/$@.owl
 
 
-## ONTOLOGY: bfo
-.PHONY: mirror-bfo
-.PRECIOUS: $(MIRRORDIR)/bfo.owl
-mirror-bfo: | $(TMPDIR)
-	curl -L $(OBOBASE)/bfo.owl --create-dirs -o $(TMPDIR)/bfo-download.owl --retry 4 --max-time 200 && \
-	$(ROBOT) convert -i $(TMPDIR)/bfo-download.owl -o $(TMPDIR)/$@.owl
+## ONTOLOGY: so
+.PHONY: mirror-so
+.PRECIOUS: $(MIRRORDIR)/so.owl
+mirror-so: | $(TMPDIR)
+	curl -L $(OBOBASE)/so.owl --create-dirs -o $(TMPDIR)/so-download.owl --retry 4 --max-time 200 && \
+	$(ROBOT) convert -i $(TMPDIR)/so-download.owl -o $(TMPDIR)/$@.owl
+
+
+## ONTOLOGY: mpo
+.PHONY: mirror-mpo
+.PRECIOUS: $(MIRRORDIR)/mpo.owl
+mirror-mpo: | $(TMPDIR)
+	$(ROBOT) convert -I https://github.com/berkeleybop/metpo/raw/refs/heads/main/assets/mpo_v0.74.en_only.owl -o $(TMPDIR)/$@.owl
 
 ALL_MIRRORS = $(patsubst %, $(MIRRORDIR)/%.owl, $(IMPORTS))
 MERGE_MIRRORS = true
