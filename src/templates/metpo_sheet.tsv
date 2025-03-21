@@ -1,302 +1,302 @@
 identifier	Term	Parent CURIe, disabled SPLIT=|	Parent quoted label	Category, disabled AI oio:inSubset SPLIT=|	synonym	BactoTraits	Definition	Unit	Min	Max
 ID	LABEL		SC %		A oboInOwl:hasExactSynonym SPLIT=|	A METPO:BactoTrait	A IAO:0000115	A METPO:Unit	A METPO:RangeMin	A METPO:RangeMax
-METPO:0000001	'Temperature'	METPO:0001019	'sensitivity toward temperature'	Environmental Parameter			A physical property of matter that quantitatively expresses the degree of thermal energy in a system, affecting the rate of microbial metabolic processes and growth.	C		
-METPO:0000002	'Salinity'	METPO:0001017	'sensitivity toward NaCl'	Environmental Parameter			A measure of the concentration of dissolved salts in an aqueous environment that influences osmotic pressure across microbial cell membranes.	% NaCl		
-METPO:0000003	'pH'	METPO:0001018	'sensitivity toward pH'	Environmental Parameter			A quantitative scale that expresses the acidity or alkalinity of an environment based on hydrogen ion concentration, affecting enzyme activity and cellular functions in microorganisms.	pH		
-METPO:0000004	'Oxygen'	METPO:9999999	'obsolete'	Environmental Parameter			A gaseous element required by or toxic to different microorganisms, determining their respiratory metabolism and ecological distribution.	% O2		
-METPO:0000005	'Trophic type'	METPO:0001010	'prokaryotic metabolically differentiated cell'	Metabolic Classification			A classification of an organism based on its mechanisms of energy acquisition and carbon assimilation for cellular maintenance and growth.			
-METPO:0000006	'Motility'			Physiological Trait			The capacity of an organism to move independently using metabolic energy, facilitated by specialized cellular structures.			
-METPO:0000007	'Sporulation'			Physiological Trait			A process of differentiation in which a microorganism produces specialized resistant structures for survival or reproduction in response to environmental conditions.			
-METPO:0000008	'Pressure'	METPO:0001016	'sensitivity toward pressure'	Environmental Parameter			A physical force exerted per unit area in an environment that influences microbial cellular processes, protein structure, and membrane fluidity.	atm		
-METPO:0000009	'GC content'			GenomicFeature			The percentage of nitrogenous bases in DNA that are either guanine or cytosine, reflecting genomic adaptation to environmental conditions.	% GC		
-METPO:0000010	'Cell Width'	METPO:0001008	'width'	Cellular Characteristic			The measurable lateral dimension of a microbial cell perpendicular to its longitudinal axis, contributing to its surface area-to-volume ratio.	uM		
-METPO:0000011	'Cell Length'	METPO:0001009	'length'	Cellular Characteristic			The measurable longitudinal dimension of a microbial cell, influencing its surface exposure to the environment and internal diffusion distances.	uM		
-METPO:0000012	'Temperature Optimum'	METPO:0001019	'sensitivity toward temperature'	Growth Parameter			The specific temperature at which a microorganism exhibits maximum metabolic activity and growth rate within its viable range.	C		
-METPO:0000013	'Temperature Range'	METPO:0001019	'sensitivity toward temperature'	Growth Parameter			The span of temperatures within which a microorganism can maintain metabolic functions and population viability.	C		
-METPO:0000014	'pH Optimum'	METPO:0001018	'sensitivity toward pH'	Growth Parameter			The specific hydrogen ion concentration at which a microorganism achieves its maximum growth rate and metabolic efficiency.	pH		
-METPO:0000015	'pH Range'	METPO:0001018	'sensitivity toward pH'	Growth Parameter			The span of hydrogen ion concentrations within which a microorganism can maintain cellular homeostasis and sustain growth.	pH		
-METPO:0000016	'NaCl Optimum'	METPO:0001017	'sensitivity toward NaCl'	Growth Parameter			The specific concentration of sodium chloride at which a microorganism exhibits maximum growth rate and metabolic efficiency.	% NaCl		
-METPO:0000017	'NaCl Range'	METPO:0001017	'sensitivity toward NaCl'	Growth Parameter			The span of sodium chloride concentrations within which a microorganism can maintain osmotic balance and cellular functions.	% NaCl		
-METPO:0000018	'pH delta'	METPO:0001018	'sensitivity toward pH'	Growth Tolerance Metric			A measure of the breadth of hydrogen ion concentrations that a microorganism can tolerate, calculated as the difference between the maximum and minimum viable pH values.	pH		
-METPO:0000019	'NaCl delta'	METPO:0001017	'sensitivity toward NaCl'	Growth Tolerance Metric			A measure of the breadth of sodium chloride concentrations that a microorganism can tolerate, calculated as the difference between the maximum and minimum viable salinity values.	% NaCl		
-METPO:0000020	'Temperature Delta'	METPO:0001019	'sensitivity toward temperature'	Growth Tolerance Metric			A measure of the breadth of thermal conditions that a microorganism can withstand, calculated as the difference between the maximum and minimum viable temperature values.	C		
-METPO:0000021	'Morphology'	METPO:0001003	'physicial object quality'	Structural Feature			The structural characteristics and spatial arrangement of a microbial cell or colony, determined by genetic factors and influenced by environmental conditions.			
-METPO:0000022	'Psychrophile'	METPO:0000001	'Temperature'	Temperature			A microorganism that grows optimally at temperatures below 15°C and can grow at temperatures below 20°C.	C	0	20
-METPO:0000023	'Psychrotolerant'	METPO:0000001	'Temperature'	Temperature			A microorganism that can grow at temperatures near 0°C but has optimal growth at higher temperatures.	C	0	45
-METPO:0000024	'Mesophilie'	METPO:0000001	'Temperature'	Temperature			A microorganism that grows optimally at moderate temperatures, typically between 20°C and 45°C.	C	20	45
-METPO:0000025	'Thermotolerant'	METPO:0000001	'Temperature'	Temperature			A microorganism that can grow at temperatures near 50°C but has optimal growth at lower temperatures.	C	0	50
-METPO:0000026	'Thermophile'	METPO:0000001	'Temperature'	Temperature			A microorganism that grows optimally at relatively high temperatures, typically between 45°C and 80°C.	C	45	80
-METPO:0000027	'Extreme thermophile'	METPO:0000001	'Temperature'	Temperature			A microorganism that grows optimally at temperatures between 60°C and 80°C.	C	60	80
-METPO:0000028	'Hyperthermophile'	METPO:0000001	'Temperature'	Temperature			A microorganism that grows optimally at very high temperatures, above 80°C.	C	80	115
-METPO:0000029	'Extreme hyperthermophile'	METPO:0000001	'Temperature'	Temperature			A microorganism that grows optimally at temperatures above 90°C.	C	90	125
-METPO:0000030	'Halophile'	METPO:0000002	'Salinity'	Salinity	Halophilic		A microorganism that requires salt for optimal growth and survival.	% NaCl	0	35
-METPO:0000031	'Non-halophile'	METPO:0000002	'Salinity'	Salinity	Nonhalophile|Non-halophilic		A microorganism that does not require salt for optimal growth and survival.	% NaCl	0	2
-METPO:0000032	'Slight halophile'	METPO:0000002	'Salinity'	Salinity	Slightly halophilic		A microorganism that grows optimally in environments with low salt concentrations, typically between 2-5% NaCl.	% NaCl	2	5
-METPO:0000033	'Moderate halophile'	METPO:0000002	'Salinity'	Salinity	Moderately halophilic		A microorganism that grows optimally in environments with moderate salt concentrations, typically between 5-20% NaCl.	% NaCl	5	20
-METPO:0000034	'Extreme halophile'	METPO:0000002	'Salinity'	Salinity	Extremely halophilic		A microorganism that grows optimally in environments with high salt concentrations, typically above 20% NaCl.	% NaCl	20	35
-METPO:0000035	'Halotolerant'	METPO:0000002	'Salinity'	Salinity			A microorganism that grows optimally in environments with both high salt concentrations and high pH (alkaline conditions).	% NaCl	0	20
-METPO:0000036	'Haloalkaliphile'	METPO:0000002	'Salinity'	Salinity			A microorganism that grows optimally in environments with both high salt concentrations (typically 2-5% NaCl, but can tolerate up to 25% NaCl) and high pH (typically 9-11, but can grow at pH values up to 12).	% NaCl	0	20
-METPO:0000037	'Extreme Acidophile'	METPO:0000003	'pH'	pH	Extreme acidophilic		A microorganism that grows optimally at very low pH values, typically between pH 1 and 3.	pH	1	3
-METPO:0000038	'Acidophile'	METPO:0000003	'pH'	pH	Acidophilic		A microorganism that grows optimally at low pH values, typically below pH 5.	pH	0	5
-METPO:0000039	'Neutrophile'	METPO:0000003	'pH'	pH	Neutrophilic		A microorganism that grows optimally at neutral pH values, typically around pH 7.	pH	6	8
-METPO:0000040	'Alkaliphile'	METPO:0000003	'pH'	pH			A microorganism that grows optimally at high pH values, typically above pH 9.	pH	7	14
-METPO:0000041	'Acid Tolerant'	METPO:0000003	'pH'	pH	Alkaliphilic		A microorganism that can grow in acidic conditions below pH 5 but does not require them for optimal growth.	pH	0	14
-METPO:0000042	'Alkali Tolerant'	METPO:0000003	'pH'	pH	Acid-tolerant		A microorganism that can grow in alkaline conditions above pH 9 but does not require them for optimal growth.	pH	6	14
-METPO:0000043	'Extreme Alkaliphile'	METPO:0000003	'pH'	pH	Alkali-tolerant		A microorganism that grows optimally at very high pH values, typically above pH 10.	pH	9	14
-METPO:0000044	'Facultative acidophile'	METPO:0000003	'pH'	pH	Extreme alkaliphilic		A microorganism that can grow in acidic conditions but does not require them for optimal growth.	pH	0	14
-METPO:0000045	'Obligative acidophile'	METPO:0000003	'pH'	pH			A microorganism that requires acidic conditions for growth and survival.	pH	0	5
-METPO:0000046	'Aerobe'	METPO:0001000	'sensitivity to oxygen'	Oxygen	Obligate aerobe|Strict aerobe		A microorganism that requires oxygen for growth and metabolism.	% O2	1	100
-METPO:0000047	'Anaerobe'	METPO:0001000	'sensitivity to oxygen'	Oxygen	Obligate anaerobe|Strict anaerobe		A microorganism that grows in the absence of oxygen and is unable to use oxygen for growth.	% O2	0	0
-METPO:0000048	'Facultative anaerobe'	METPO:0001000	'sensitivity to oxygen'	Oxygen	Facultative aerobe		A microorganism that can grow with or without oxygen, using oxygen for respiration when available but capable of fermentation or anaerobic respiration in its absence.	% O2	0	100
-METPO:0000049	'Facultative aerobe'	METPO:0001000	'sensitivity to oxygen'	Oxygen	Facultative anaerobe		A microorganism that primarily uses oxygen for respiration but can also grow without it using alternative metabolic pathways.	% O2	0	100
-METPO:0000050	'Microaerophile'	METPO:0001000	'sensitivity to oxygen'	Oxygen	Microaerobe		A microorganism that requires oxygen for growth but at concentrations lower than those found in air (typically 2-10% oxygen).	% O2	0.5	10
-METPO:0000051	'Aerotolerant'	METPO:0001000	'sensitivity to oxygen'	Oxygen	Oxygen-tolerant		A microorganism that does not use oxygen for growth but can survive and grow in its presence without being harmed.	% O2	0	100
-METPO:0000052	'Microaerotolerant'	METPO:0001000	'sensitivity to oxygen'	Oxygen	Microoxic-tolerant		A microorganism that can tolerate low levels of oxygen but does not require such conditions for growth.	% O2	0	10
-METPO:0000053	'Aerotolerant anaerobe'	METPO:0001000	'sensitivity to oxygen'	Oxygen	Oxygen-tolerant anaerobe		An anaerobic microorganism that does not use oxygen for metabolism but is not inhibited by its presence.	% O2	0	100
-METPO:0000054	'Obligate aerobe'	METPO:0001000	'sensitivity to oxygen'	Oxygen	Strict aerobe|Aerobe		A microorganism that absolutely requires oxygen for growth and cannot grow under anaerobic conditions.	% O2	1	100
-METPO:0000055	'Obligate anaerobe'	METPO:0001000	'sensitivity to oxygen'	Oxygen	Strict anaerobe|Anaerobe		A microorganism for which oxygen is toxic and inhibits growth, requiring strictly anaerobic conditions.	% O2	0	0
-METPO:0000056	'Oxygenic phototroph'	METPO:0001000	'sensitivity to oxygen'	Trophic type	Oxygenic phototrophic		An organism that uses light energy for photosynthesis, producing oxygen as a byproduct.			
-METPO:0000057	'Anoxygenic phototroph'	METPO:0001000	'sensitivity to oxygen'	Trophic type	Anoxygenic phototrophic		An organism that uses light energy for photosynthesis without producing oxygen.			
-METPO:0000058	'Autotroph'	METPO:0000005	'Trophic type'	Trophic type	Autotrophic		An organism that produces its own food from inorganic compounds.			
-METPO:0000059	'Photoautotroph'	METPO:0000005	'Trophic type'	Trophic type	Photoautotrophic		An organism that uses light energy to fix carbon dioxide for growth.			
-METPO:0000060	'Chemoautotroph'	METPO:0000005	'Trophic type'	Trophic type	Chemoautotrophic		An organism that uses energy from chemical reactions to fix carbon dioxide for growth.			
-METPO:0000061	'Heterotroph'	METPO:0000005	'Trophic type'	Trophic type	Heterotrophic		An organism that obtains carbon from organic compounds.			
-METPO:0000062	'Photoheterotroph'	METPO:0000005	'Trophic type'	Trophic type	Photoheterotrophic		An organism that uses light energy but obtains carbon from organic compounds.			
-METPO:0000063	'Chemoheterotroph'	METPO:0000005	'Trophic type'	Trophic type	Chemoheterotrophic		An organism that obtains both energy and carbon from organic compounds.			
-METPO:0000064	'Lithotroph'	METPO:0000005	'Trophic type'	Trophic type	Lithotrophic		An organism that obtains energy from the oxidation of inorganic compounds.			
-METPO:0000065	'Organotroph'	METPO:0000005	'Trophic type'	Trophic type	Organotrophic		An organism that obtains energy from the oxidation of organic compounds.			
-METPO:0000066	'Phototroph'	METPO:0000005	'Trophic type'	Trophic type	Phototrophic		An organism that uses light as its primary energy source.			
-METPO:0000067	'Chemotroph'	METPO:0000005	'Trophic type'	Trophic type	Chemotrophic		An organism that obtains energy from chemical reactions.			
-METPO:0000068	'Oligotroph'	METPO:0000005	'Trophic type'	Trophic type	Oligotrophic		An organism adapted to environments with low nutrient levels.			
-METPO:0000069	'Copiotroph'	METPO:0000005	'Trophic type'	Trophic type	Copiotrophic		An organism adapted to environments with high nutrient levels.			
-METPO:0000070	'Lithoautotroph'	METPO:0000005	'Trophic type'	Trophic type	Lithoautotrophic		An organism that uses inorganic compounds for both energy and carbon.			
-METPO:0000071	'Mixotroph'	METPO:0000005	'Trophic type'	Trophic type	Mixotrophic		An organism capable of both autotrophic and heterotrophic nutrition.			
-METPO:0000072	'Lithoheterotroph'	METPO:0000005	'Trophic type'	Trophic type	Lithoheterotrophic		An organism that uses inorganic compounds for energy but organic compounds for carbon.			
-METPO:0000073	'Chemoorganoheterotroph'	METPO:0000005	'Trophic type'	Trophic type	Chemoorganoheterotrophic		An organism that uses organic compounds for both energy and carbon.			
-METPO:0000074	'Chemolithoautotroph'	METPO:0000005	'Trophic type'	Trophic type	Chemolithoautotrophic		An organism that uses inorganic compounds for energy and CO2 for carbon.			
-METPO:0000075	'Methylotroph'	METPO:0000005	'Trophic type'	Trophic type	Methylotrophic		An organism that can use one-carbon compounds as a source of energy and carbon.			
-METPO:0000076	'Methanotroph'	METPO:0000005	'Trophic type'	Trophic type	Methanotrophic		An organism that uses methane as its sole source of carbon and energy.			
-METPO:0000077	'Carboxydotroph'	METPO:0000005	'Trophic type'	Trophic type	Carboxydrophile|Carbohydrogenotroph		An organism that can use carbon monoxide as its sole source of energy and carbon.			
-METPO:0000078	'Hydrogenotroph'	METPO:0000005	'Trophic type'	Trophic type	Hydrogenophile|Hydrogenophilic		An organism that obtains energy from the oxidation of molecular hydrogen.			
-METPO:0000079	'Hydrogen oxidizer'	METPO:0000005	'Trophic type'	Trophic type	Hydrogen-oxidizing		An organism that oxidizes hydrogen for energy.			
-METPO:0000080	'Hydrogen producer'	METPO:0001021	'cell by chemical produced'	Trophic type	Hydrogen-producing		An organism that produces hydrogen as a byproduct of its metabolism.			
-METPO:0000081	'Nitrogen fixer'	METPO:0000005	'Trophic type'	Trophic type	Nitrogen-fixing		An organism capable of converting atmospheric nitrogen into ammonia.			
-METPO:0000082	'Methanogen'	METPO:0001021	'cell by chemical produced'	Trophic type	Methanogenic		An organism that produces methane as a byproduct of its metabolism.			
-METPO:0000083	'Sulfate reducer'	METPO:0000005	'Trophic type'	Trophic type	Sulfate-reducing		An organism that uses sulfate as an electron acceptor in anaerobic respiration.			
-METPO:0000084	'Sulfur oxidizer'	METPO:0000005	'Trophic type'	Trophic type	Sulfur-oxidizing		An organism that oxidizes sulfur compounds for energy.			
-METPO:0000085	'Denitrifier'	METPO:0000005	'Trophic type'	Trophic type	Denitrifying		An organism that reduces nitrate to nitrogen gas in anaerobic respiration.			
-METPO:0000086	'Capnophile'	METPO:0000005	'Trophic type'	Trophic type	Capnophilic		An organism that requires or grows better in the presence of elevated levels of carbon dioxide.			
-METPO:0000087	'Motile'	METPO:0000006	'Motility'	Motility			A microorganism capable of self-propelled movement.			
-METPO:0000088	'Non-motile'	METPO:0000006	'Motility'	Motility			A microorganism incapable of self-propelled movement.			
-METPO:0000089	'Flagellated'	METPO:0000006	'Motility'	Motility			A motile microorganism that moves using one or more flagella.			
-METPO:0000090	'Peritrichous'	METPO:0000006	'Motility'	Motility			A flagellated microorganism with flagella distributed over the entire cell surface.			
-METPO:0000091	'Lophotrichous'	METPO:0000006	'Motility'	Motility			A flagellated microorganism with a tuft of flagella at one or both poles of the cell.			
-METPO:0000092	'Monotrichous'	METPO:0000006	'Motility'	Motility			A flagellated microorganism with a single flagellum at one pole of the cell.			
-METPO:0000093	'Ciliated'	METPO:0000006	'Motility'	Motility			A motile microorganism that moves using numerous short, hair-like structures called cilia.			
-METPO:0000094	'Gliding'	METPO:0000006	'Motility'	Motility			A motile microorganism that moves by sliding over surfaces without the use of flagella or cilia.			
-METPO:0000095	'Twitching'	METPO:0000006	'Motility'	Motility			A motile microorganism that moves using type IV pili in a jerky, start-stop motion.			
-METPO:0000096	'Sliding'	METPO:0000006	'Motility'	Motility			A motile microorganism that moves passively over surfaces due to the production of extracellular substances.			
-METPO:0000097	'Swarming'	METPO:0000006	'Motility'	Motility			A motile microorganism capable of rapid, coordinated movement across surfaces in groups.			
-METPO:0000098	'Endospores'	METPO:0000007	'Sporulation'	Sporulation			A dormant, resistant structure formed within a bacterial cell.			
-METPO:0000099	'Exospores'	METPO:0000007	'Sporulation'	Sporulation			A spore formed outside the parent cell.			
-METPO:0000100	'Myxospores'	METPO:0000007	'Sporulation'	Sporulation			A resting spore produced by myxobacteria during unfavorable conditions.			
-METPO:0000101	'Arthrospores'	METPO:0000007	'Sporulation'	Sporulation			A type of spore formed by the fragmentation of fungal hyphae.			
-METPO:0000102	'Conidia'	METPO:0000007	'Sporulation'	Sporulation			Asexual spores produced by fungi, typically at the tips of specialized hyphae.			
-METPO:0000103	'Sporangiospores'	METPO:0000007	'Sporulation'	Sporulation			Asexual spores produced within a sporangium.			
-METPO:0000104	'Zygospores'	METPO:0000007	'Sporulation'	Sporulation			A thick-walled resting spore resulting from the fusion of two compatible hyphae.			
-METPO:0000105	'Akinetes'	METPO:0000007	'Sporulation'	Sporulation			A large, thick-walled dormant cell formed by some cyanobacteria.			
-METPO:0000106	'Chlamydospores'	METPO:0000007	'Sporulation'	Sporulation			A thick-walled resting spore formed from a cell of a fungal hypha.			
-METPO:0000107	'Sporocysts'	METPO:0000007	'Sporulation'	Sporulation			A protective cyst-like structure containing sporozoites in some protists.			
-METPO:0000108	'Hypnospores'	METPO:0000007	'Sporulation'	Sporulation			A dormant stage of some dinoflagellates, formed under unfavorable conditions.			
-METPO:0000109	'Gemmae'	METPO:0000007	'Sporulation'	Sporulation			Small, multicellular propagules produced by some bryophytes for asexual reproduction.			
-METPO:0000110	'Oospores'	METPO:0000007	'Sporulation'	Sporulation			A thick-walled sexual spore produced by oomycetes.			
-METPO:0000111	'Azygospores'	METPO:0000007	'Sporulation'	Sporulation			A spore formed without fusion of gametes, typically in zygomycetes.			
-METPO:0000112	'Cysts'	METPO:0000007	'Sporulation'	Sporulation			A resistant, dormant stage formed by some protists and bacteria.			
-METPO:0000113	'Ascospores'	METPO:0000007	'Sporulation'	Sporulation			Sexual spores produced in an ascus, typically by ascomycete fungi.			
-METPO:0000114	'Basidiospores'	METPO:0000007	'Sporulation'	Sporulation			Sexual spores produced on a basidium, typically by basidiomycete fungi.			
-METPO:0000115	'Aleuriospores'	METPO:0000007	'Sporulation'	Sporulation			Asexual spores formed by the disarticulation of vegetative hyphae.			
-METPO:0000116	'Stylospores'	METPO:0000007	'Sporulation'	Sporulation			Asexual spores produced on a stalk-like structure called a sterigma.			
-METPO:0000117	'Sclerotia'	METPO:0000007	'Sporulation'	Sporulation			A compact mass of hardened fungal mycelium containing food reserves.			
-METPO:0000118	'Zoospores'	METPO:0000007	'Sporulation'	Sporulation			Motile spores with flagella, typically produced by algae and some fungi.			
-METPO:0000119	'Teliospores'	METPO:0000007	'Sporulation'	Sporulation			A type of resting spore produced by rust and smut fungi.			
-METPO:0000120	'Urediniospores'	METPO:0000007	'Sporulation'	Sporulation			Asexual spores produced by rust fungi during their life cycle.			
-METPO:0000121	'Pycnidiospores'	METPO:0000007	'Sporulation'	Sporulation			Asexual spores produced within a pycnidium, a flask-shaped fruiting body.			
-METPO:0000122	'Acriospores'	METPO:0000007	'Sporulation'	Sporulation			Asexual spores produced in chains at the tips of conidiophores.			
-METPO:0000123	'Aplanospores'	METPO:0000007	'Sporulation'	Sporulation			Non-motile spores that lack flagella, typically produced by algae.			
-METPO:0000124	'Statismospores'	METPO:0000007	'Sporulation'	Sporulation			Non-motile spores that lack the ability to swim.			
-METPO:0000125	'Barotolerant'	METPO:0000008	'Pressure'	Pressure			An organism that can survive high pressure but does not require it for optimal growth.	atm	1	1000
-METPO:0000126	'Piezophile'	METPO:0000008	'Pressure'	Pressure	Piezophilic|Barophile|Barophilic		An organism that grows optimally under high pressure conditions.	atm	10	1000
-METPO:0000127	'Piezotolerant'	METPO:0000008	'Pressure'	Pressure			An organism that can tolerate high pressure but grows optimally at normal atmospheric pressure.	atm	1	100
-METPO:0000128	'Piezosensitive'	METPO:0000008	'Pressure'	Pressure			An organism that is adversely affected by high pressure conditions.	atm	1	10
-METPO:0000129	'Obligate barophile'	METPO:0000008	'Pressure'	Pressure	Obligate piezophile		An organism that requires high pressure for growth and cannot grow at atmospheric pressure.	atm	10	1000
-METPO:0000130	'Facultative barophile'	METPO:0000008	'Pressure'	Pressure	Facultative piezophile		An organism that grows optimally under high pressure but can also grow at atmospheric pressure.	atm	1	1000
-METPO:0000131	'Hyperbarophile'	METPO:0000008	'Pressure'	Pressure	Hyperbarophilic		An organism adapted to extremely high pressure environments.	atm	100	1500
-METPO:0000132	'Hypobarophile'	METPO:0000008	'Pressure'	Pressure	Hypobarophilic		An organism adapted to low pressure environments.	atm	0.1	1
-METPO:0000133	'Atmospheric pressure-adapted'	METPO:0000008	'Pressure'	Pressure			An organism adapted to grow at standard atmospheric pressure.	atm	1	1
-METPO:0000134	'Moderate piezophile'	METPO:0000008	'Pressure'	Pressure	Moderate barophile		An organism that grows optimally at moderately high pressures.	atm	10	100
-METPO:0000135	'Extreme piezophile'	METPO:0000008	'Pressure'	Pressure	Extreme barophile		An organism that grows optimally at very high pressures.	atm	100	1500
-METPO:0000136	'Stenopiezic'	METPO:0000008	'Pressure'	Pressure	Stenobaric		An organism that can only grow within a narrow range of pressures.	atm	1	100
-METPO:0000137	'Eurypiezic'	METPO:0000008	'Pressure'	Pressure	Eurybaric		An organism that can grow across a wide range of pressures.	atm	1	1000
-METPO:0000138	'Pressure-sensitive'	METPO:0000008	'Pressure'	Pressure			An organism whose growth or metabolism is negatively affected by changes in pressure.	atm	1	10
-METPO:0000139	'Pressure-resistant'	METPO:0000008	'Pressure'	Pressure			An organism that can withstand significant changes in pressure without adverse effects.	atm	1	1000
-METPO:0000140	'Pressure-adapted'	METPO:0000008	'Pressure'	Pressure			An organism that has evolved to thrive under specific pressure conditions.	atm	1	1000
-METPO:0000141	'Piezo-acidophile'	METPO:0000008	'Pressure'	Pressure	Piezo-acidophilic		An organism that grows optimally under both high pressure and acidic conditions.	atm	10	1000
-METPO:0000142	'Piezo-alkaliphile'	METPO:0000008	'Pressure'	Pressure	Piezo-alkaliphilic		An organism that grows optimally under both high pressure and alkaline conditions.	atm	10	1000
-METPO:0000143	'Piezo-halophile'	METPO:0000008	'Pressure'	Pressure	Piezo-halophilic		An organism that grows optimally under both high pressure and high salinity conditions.	atm	10	1000
-METPO:0000144	'Piezo-psychrophile'	METPO:0000008	'Pressure'	Pressure	Piezo-psychrophilic		An organism that grows optimally under both high pressure and low temperature conditions.	atm	10	1000
-METPO:0000145	'Piezo-thermophile'	METPO:0000008	'Pressure'	Pressure	Piezo-thermophilic		An organism that grows optimally under both high pressure and high temperature conditions.	atm	10	1000
-METPO:0000146	'Piezo-lithoautotrophe'	METPO:0000008	'Pressure'	Pressure	Piezo-lithoautotrophic		An organism that uses inorganic compounds for energy and carbon under high pressure conditions.	atm	10	1000
-METPO:0000147	'Piezo-chemoheterotroph'	METPO:0000008	'Pressure'	Pressure	Piezo-chemoheterotrophic		An organism that uses organic compounds for energy and carbon under high pressure conditions.	atm	10	1000
-METPO:0000148	'Piezo-oligotroph'	METPO:0000008	'Pressure'	Pressure	Piezo-oligotrophic		An organism adapted to low-nutrient environments under high pressure conditions.	atm	10	1000
-METPO:0000149	'Piezo-endolithic'	METPO:0000008	'Pressure'	Pressure			An organism that lives within rock or mineral substrates under high pressure conditions.	atm	10	1000
-METPO:0000150	'Piezo-tolerant'	METPO:0000008	'Pressure'	Pressure			An organism that can tolerate a range of pressure conditions but does not necessarily require high pressure for optimal growth.	atm	1	1000
-METPO:0000151	'GC low'	METPO:0000009	'GC content'	GenomicFeature		GC_<42.65	A genomic feature characterized by a guanine-cytosine content percentage below 42.65% in an organism's DNA.	% GC		42.65
-METPO:0000152	'GC mid1'	METPO:0000009	'GC content'	GenomicFeature		GC_42.65_57.0	A genomic feature characterized by a guanine-cytosine content percentage between 42.65% and 57% in an organism's DNA.	% GC	42.65	57
-METPO:0000153	'GC mid2'	METPO:0000009	'GC content'	GenomicFeature		GC_57.0_66.3	A genomic feature characterized by a guanine-cytosine content percentage between 57% and 66.3% in an organism's DNA.	% GC	57	66.3
-METPO:0000154	'GC high'	METPO:0000009	'GC content'	GenomicFeature		GC_>66.3	A genomic feature characterized by a guanine-cytosine content percentage above 66.3% in an organism's DNA.	% GC	66.3	
-METPO:0000155	'Cell width very low'	METPO:0000010	'Cell Width'	Cell Dimension		W_<0.5	A cell dimension characterized by a lateral measurement less than 0.5 micrometers across the microbial cell.	uM		0.5
-METPO:0000156	'Cell width low'	METPO:0000010	'Cell Width'	Cell Dimension		W_0.5_0.65	A cell dimension characterized by a lateral measurement between 0.5 and 0.65 micrometers across the microbial cell.	uM	0.5	0.65
-METPO:0000157	'Cell width mid'	METPO:0000010	'Cell Width'	Cell Dimension		W_0.65_0.9	A cell dimension characterized by a lateral measurement between 0.65 and 0.9 micrometers across the microbial cell.	uM	0.65	0.9
-METPO:0000158	'Cell width high'	METPO:0000010	'Cell Width'	Cell Dimension		W_>0.9	A cell dimension characterized by a lateral measurement greater than 0.9 micrometers across the microbial cell.	uM	0.9	
-METPO:0000159	'Cell length very low'	METPO:0000011	'Cell Length'	Cell Dimension		L_<1.3	A cell dimension characterized by a longitudinal measurement less than 1.3 micrometers along the microbial cell's primary axis.	uM		1.3
-METPO:0000160	'Cell length low'	METPO:0000011	'Cell Length'	Cell Dimension		L_1.3_2	A cell dimension characterized by a longitudinal measurement between 1.3 and 2 micrometers along the microbial cell's primary axis.	uM	1.3	2
-METPO:0000161	'Cell length mid'	METPO:0000011	'Cell Length'	Cell Dimension		L_2_3	A cell dimension characterized by a longitudinal measurement between 2 and 3 micrometers along the microbial cell's primary axis.	uM	2	3
-METPO:0000162	'Cell length high'	METPO:0000011	'Cell Length'	Cell Dimension		L_>3	A cell dimension characterized by a longitudinal measurement greater than 3 micrometers along the microbial cell's primary axis.	uM	3	
-METPO:0000163	'Temperature Optimum very low'	METPO:0000012	'Temperature Optimum'	Temperature Optimum	Psychrophile	TO_<10	A temperature optimum manifested as maximum microbial growth at temperatures below 10°C, typical of psychrophilic organisms.	C		10
-METPO:0000164	'Temperature Optimum low'	METPO:0000012	'Temperature Optimum'	Temperature Optimum	Psychrophile|Psychrotolerant	TO_10_to_22	A temperature optimum manifested as maximum microbial growth at temperatures between 10°C and 22°C, common in psychrophilic or psychrotolerant organisms.	C	10	22
-METPO:0000165	'Temperature Optimum mid1'	METPO:0000012	'Temperature Optimum'	Temperature Optimum	Mesophilie	TO_22_to_27	A temperature optimum manifested as maximum microbial growth at temperatures between 22°C and 27°C, characteristic of mesophilic organisms.	C	22	27
-METPO:0000166	'Temperature Optimum mid2'	METPO:0000012	'Temperature Optimum'	Temperature Optimum	Mesophilie	TO_27_to_30	A temperature optimum manifested as maximum microbial growth at temperatures between 27°C and 30°C, characteristic of mesophilic organisms.	C	27	30
-METPO:0000167	'Temperature Optimum mid3'	METPO:0000012	'Temperature Optimum'	Temperature Optimum	Mesophilie	TO_30_to_34	A temperature optimum manifested as maximum microbial growth at temperatures between 30°C and 34°C, characteristic of mesophilic organisms.	C	30	34
-METPO:0000168	'Temperature Optimum mid4'	METPO:0000012	'Temperature Optimum'	Temperature Optimum	Mesophilie	TO_34_to_40	A temperature optimum manifested as maximum microbial growth at temperatures between 34°C and 40°C, characteristic of mesophilic organisms.	C	34	40
-METPO:0000169	'Temperature Optimum high'	METPO:0000012	'Temperature Optimum'	Temperature Optimum	Thermophile	TO_>40	A temperature optimum manifested as maximum microbial growth at temperatures above 40°C, typical of thermophilic organisms.	C	40	
-METPO:0000170	'Temperature Range very low'	METPO:0000013	'Temperature Range'	Temperature Range	Psychrophile	TR_<10	A temperature range allowing microbial growth at temperatures below 10°C, characteristic of psychrophilic organisms.	C		10
-METPO:0000171	'Temperature Range low'	METPO:0000013	'Temperature Range'	Temperature Range	Psychrophile|Psychrotolerant	TR_10_to_22	A temperature range allowing microbial growth at temperatures between 10°C and 22°C, characteristic of psychrophilic or psychrotolerant organisms.	C	10	22
-METPO:0000172	'Temperature Range mid1'	METPO:0000013	'Temperature Range'	Temperature Range	Mesophilie	TR_22_to_27	A temperature range allowing microbial growth at temperatures between 22°C and 27°C, characteristic of mesophilic organisms.	C	22	27
-METPO:0000173	'Temperature Range mid2'	METPO:0000013	'Temperature Range'	Temperature Range	Mesophilie	TR_27_to_30	A temperature range allowing microbial growth at temperatures between 27°C and 30°C, characteristic of mesophilic organisms.	C	27	30
-METPO:0000174	'Temperature Range mid3'	METPO:0000013	'Temperature Range'	Temperature Range	Mesophilie	TR_30_to_34	A temperature range allowing microbial growth at temperatures between 30°C and 34°C, characteristic of mesophilic organisms.	C	30	34
-METPO:0000175	'Temperature Range mid4'	METPO:0000013	'Temperature Range'	Temperature Range	Mesophilie	TR_34_to_40	A temperature range allowing microbial growth at temperatures between 34°C and 40°C, characteristic of mesophilic organisms.	C	34	40
-METPO:0000176	'Temperature Range high'	METPO:0000013	'Temperature Range'	Temperature Range	Thermophile	TR_>40	A temperature range allowing microbial growth at temperatures above 40°C, characteristic of thermophilic organisms.	C	40	
-METPO:0000177	'pH Optimum low'	METPO:0000014	'pH Optimum'	pH Optimum	Extreme Acidophile|Acidophile|Acid Tolerant|Facultative acidophile|Obligative acidophile	pHO_0_to_6	A pH optimum manifested as maximum microbial growth at hydrogen ion concentrations between pH 0 and 6, characteristic of acidophilic organisms.	pH	0	6
-METPO:0000178	'pH Optimum mid1'	METPO:0000014	'pH Optimum'	pH Optimum	Neutrophile|Alkali Tolerant	pHO_6_to_7	A pH optimum manifested as maximum microbial growth at hydrogen ion concentrations between pH 6 and 7, characteristic of neutrophilic or alkali-tolerant organisms.	pH	6	7
-METPO:0000179	'pH Optimum mid2'	METPO:0000014	'pH Optimum'	pH Optimum	Neutrophile|Alkaliphile|Alkali Tolerant	pHO_7_to_8	A pH optimum manifested as maximum microbial growth at hydrogen ion concentrations between pH 7 and 8, characteristic of neutrophilic, alkaliphilic, or alkali-tolerant organisms.	pH	7	8
-METPO:0000180	'pH Optimum high'	METPO:0000014	'pH Optimum'	pH Optimum	Alkaliphile|Alkali Tolerant|Extreme Alkaliphile	pHO_8_to_14	A pH optimum manifested as maximum microbial growth at hydrogen ion concentrations between pH 8 and 14, characteristic of alkaliphilic or extremely alkaliphilic organisms.	pH	8	14
-METPO:0000181	'pH Range very low'	METPO:0000015	'pH Range'	pH Range	Extreme Acidophile|Acidophile|Acid Tolerant|Facultative acidophile|Obligative acidophile	pHR_0_to_4	A pH range allowing microbial growth at hydrogen ion concentrations between pH 0 and 4, characteristic of extremely acidophilic organisms.	pH	0	4
-METPO:0000182	'pH Range low'	METPO:0000015	'pH Range'	pH Range	Acidophile|Acid Tolerant|Facultative acidophile|Obligative acidophile	pHR_4_to_6	A pH range allowing microbial growth at hydrogen ion concentrations between pH 4 and 6, characteristic of acidophilic organisms.	pH	4	6
-METPO:0000183	'pH Range mid1'	METPO:0000015	'pH Range'	pH Range	Neutrophile|Alkali Tolerant|Facultative acidophile	pHR_6_to_7	A pH range allowing microbial growth at hydrogen ion concentrations between pH 6 and 7, characteristic of neutrophilic organisms.	pH	6	7
-METPO:0000184	'pH Range mid2'	METPO:0000015	'pH Range'	pH Range	Neutrophile|Alkaliphile|Alkali Tolerant|Facultative acidophile	pHR_7_to_8	A pH range allowing microbial growth at hydrogen ion concentrations between pH 7 and 8, characteristic of neutrophilic or alkaliphilic organisms.	pH	7	8
-METPO:0000185	'pH Range mid3'	METPO:0000015	'pH Range'	pH Range	Alkaliphile|Alkali Tolerant|Extreme Alkaliphile|Facultative acidophile	pHR_8_to_10	A pH range allowing microbial growth at hydrogen ion concentrations between pH 8 and 10, characteristic of alkaliphilic organisms.	pH	8	10
-METPO:0000186	'pH Range high'	METPO:0000015	'pH Range'	pH Range	Extreme Alkaliphile|Alkaliphile|Alkali Tolerant	10_to_14	A pH range allowing microbial growth at hydrogen ion concentrations between pH 10 and 14, characteristic of extremely alkaliphilic organisms.	pH	10	14
-METPO:0000187	'NaCl Optimum low'	METPO:0000016	'NaCl Optimum'	NaCl Optimum	Non-halophile|Halotolerant	NaR_<1	A salinity optimum manifested as maximum microbial growth at sodium chloride concentrations below 1%, characteristic of non-halophilic or halotolerant organisms.	% NaCl		1
-METPO:0000188	'NaCl Optimum mid1'	METPO:0000016	'NaCl Optimum'	NaCl Optimum	Slight halophile|Halotolerant	NaR_1_to_3	A salinity optimum manifested as maximum microbial growth at sodium chloride concentrations between 1% and 3%, characteristic of slight halophiles or halotolerant organisms.	% NaCl	1	3
-METPO:0000189	'NaCl Optimum mid2'	METPO:0000016	'NaCl Optimum'	NaCl Optimum	Moderate halophile|Halotolerant	NaR_3_to_8	A salinity optimum manifested as maximum microbial growth at sodium chloride concentrations between 3% and 8%, characteristic of moderate halophiles or halotolerant organisms.	% NaCl	3	8
-METPO:0000190	'NaCl Optimum high'	METPO:0000016	'NaCl Optimum'	NaCl Optimum	Extreme halophile	NaR_>8	A salinity optimum manifested as maximum microbial growth at sodium chloride concentrations above 8%, characteristic of extreme halophiles.	% NaCl	8	
-METPO:0000191	'NaCl Range low'	METPO:0000017	'NaCl Range'	NaCl Range	Non-halophile|Halotolerant	NaO_<1	A salinity range allowing microbial growth at sodium chloride concentrations below 1%, characteristic of non-halophilic organisms.	% NaCl		1
-METPO:0000192	'NaCl Range mid1'	METPO:0000017	'NaCl Range'	NaCl Range	Slight halophile|Halotolerant	NaO_1_to_3	A salinity range allowing microbial growth at sodium chloride concentrations between 1% and 3%, characteristic of slight halophiles.	% NaCl	1	3
-METPO:0000193	'NaCl Range mid2'	METPO:0000017	'NaCl Range'	NaCl Range	Moderate halophile|Halotolerant	NaO_3_to_8	A salinity range allowing microbial growth at sodium chloride concentrations between 3% and 8%, characteristic of moderate halophiles.	% NaCl	3	8
-METPO:0000194	'NaCl Range high'	METPO:0000017	'NaCl Range'	NaCl Range	Extreme halophile	NaO_>8	A salinity range allowing microbial growth at sodium chloride concentrations above 8%, characteristic of extreme halophiles.	% NaCl	8	
-METPO:0000195	'pH Delta very low'	METPO:0000018	'pH delta'	pH delta		pHd_<1	A growth tolerance metric measuring the span of pH conditions that support an organism's growth, with a narrow range less than 1 pH unit.	pH		1
-METPO:0000196	'pH Delta low'	METPO:0000018	'pH delta'	pH delta		pHd_1_2	A growth tolerance metric measuring the span of pH conditions that support an organism's growth, with a range between 1 and 2 pH units.	pH	1	2
-METPO:0000197	'pH Delta mid1'	METPO:0000018	'pH delta'	pH delta		pHd_2_3	A growth tolerance metric measuring the span of pH conditions that support an organism's growth, with a range between 2 and 3 pH units.	pH	2	3
-METPO:0000198	'pH Delta mid2'	METPO:0000018	'pH delta'	pH delta		pHd_3_4	A growth tolerance metric measuring the span of pH conditions that support an organism's growth, with a range between 3 and 4 pH units.	pH	3	4
-METPO:0000199	'pH Delta mid3'	METPO:0000018	'pH delta'	pH delta		pHd_4_5	A growth tolerance metric measuring the span of pH conditions that support an organism's growth, with a range between 4 and 5 pH units.	pH	4	5
-METPO:0000200	'pH Delta high'	METPO:0000018	'pH delta'	pH delta		pHd_5_9	A growth tolerance metric measuring the span of pH conditions that support an organism's growth, with a wide range between 5 and 9 pH units.	pH	5	9
-METPO:0000201	'NaCl Delta low'	METPO:0000019	'NaCl delta'	NaCl delta		Nad_<1	A growth tolerance metric measuring the span of sodium chloride concentrations that support an organism's growth, with a narrow range less than 1%.	C		1
-METPO:0000202	'NaCl Delta mid2'	METPO:0000019	'NaCl delta'	NaCl delta		Nad_1_3	A growth tolerance metric measuring the span of sodium chloride concentrations that support an organism's growth, with a range between 1% and 3%.	C	1	3
-METPO:0000203	'NaCl Delta mid2'	METPO:0000019	'NaCl delta'	NaCl delta		Nad_3_8	A growth tolerance metric measuring the span of sodium chloride concentrations that support an organism's growth, with a range between 3% and 8%.	C	3	8
-METPO:0000204	'NaCl Delta high'	METPO:0000019	'NaCl delta'	NaCl delta		Nad_>8	A growth tolerance metric measuring the span of sodium chloride concentrations that support an organism's growth, with a wide range greater than 8%.	C		8
-METPO:0000205	'Temperature Delta very low'	METPO:0000020	'Temperature Delta'	Temperature delta		Td_1_5	A growth tolerance metric measuring the span of temperatures that support an organism's growth, with a narrow range between 1°C and 5°C.	C	1	5
-METPO:0000206	'Temperature Delta low'	METPO:0000020	'Temperature Delta'	Temperature delta		Td_5_10	A growth tolerance metric measuring the span of temperatures that support an organism's growth, with a range between 5°C and 10°C.	C	5	10
-METPO:0000207	'Temperature Delta mid1'	METPO:0000020	'Temperature Delta'	Temperature delta		Td_10_20	A growth tolerance metric measuring the span of temperatures that support an organism's growth, with a range between 10°C and 20°C.	C	10	20
-METPO:0000208	'Temperature Delta mid2'	METPO:0000020	'Temperature Delta'	Temperature delta		Td_20_30	A growth tolerance metric measuring the span of temperatures that support an organism's growth, with a range between 20°C and 30°C.	C	20	30
-METPO:0000209	'Temperature Delta high'	METPO:0000020	'Temperature Delta'	Temperature delta		Td_>30	A growth tolerance metric measuring the span of temperatures that support an organism's growth, with a wide range greater than 30°C.	C	30	
-METPO:0000210	'Bacillus'	METPO:0000021	'Morphology'	Morphology			A rod-shaped cell.			
-METPO:0000211	'Branced'	METPO:0000021	'Morphology'	Morphology			A cell with multiple branches or extensions.			
-METPO:0000212	'Coccobacillus'	METPO:0000021	'Morphology'	Morphology			A short rod-shaped cell, intermediate between bacillus and coccus.			
-METPO:0000213	'Coccus'	METPO:0000021	'Morphology'	Morphology			A spherical cell.			
-METPO:0000214	'Crescent'	METPO:0000021	'Morphology'	Morphology			A curved, crescent-shaped cell.			
-METPO:0000215	'Curved'	METPO:0000021	'Morphology'	Morphology			A cell with a slight curve or bend.			
-METPO:0000216	'Curved Spiral'	METPO:0000021	'Morphology'	Morphology			A cell with a curved spiral shape.			
-METPO:0000217	'Diplococcus'	METPO:0000021	'Morphology'	Morphology			Two spherical cells attached to each other.			
-METPO:0000218	'Disc'	METPO:0000021	'Morphology'	Morphology			A flat, circular-shaped cell.			
-METPO:0000219	'Dumbbell'	METPO:0000021	'Morphology'	Morphology			A cell shaped like two spheres connected by a narrow bridge.			
-METPO:0000220	'Ellipsoidal'	METPO:0000021	'Morphology'	Morphology			A cell with an elongated oval shape.			
-METPO:0000221	'Filament'	METPO:0000021	'Morphology'	Morphology			A long, thin, thread-like cell.			
-METPO:0000222	'Flask'	METPO:0000021	'Morphology'	Morphology			A cell shaped like a laboratory flask.			
-METPO:0000223	'Fusiform'	METPO:0000021	'Morphology'	Morphology			A cell with a spindle-like shape, wider in the middle and tapering at both ends.			
-METPO:0000224	'Helical'	METPO:0000021	'Morphology'	Morphology			A cell with a spiral shape, forming a three-dimensional helix.			
-METPO:0000225	'Irregular'	METPO:0000021	'Morphology'	Morphology			A cell with an inconsistent or non-uniform shape.			
-METPO:0000226	'Oval'	METPO:0000021	'Morphology'	Morphology			A cell with an egg-shaped outline.			
-METPO:0000227	'Ovoid'	METPO:0000021	'Morphology'	Morphology			A cell with an egg-like shape, slightly elongated.			
-METPO:0000228	'Pleomorphic'	METPO:0000021	'Morphology'	Morphology			A cell capable of assuming various shapes.			
-METPO:0000229	'Ring'	METPO:0000021	'Morphology'	Morphology			A cell shaped like a circular band or loop.			
-METPO:0000230	'Rod'	METPO:0000021	'Morphology'	Morphology			A straight, elongated cell.			
-METPO:0000231	'Sphere'	METPO:0000021	'Morphology'	Morphology			A perfectly round cell.			
-METPO:0000232	'Spindle'	METPO:0000021	'Morphology'	Morphology			A cell with a shape that tapers at both ends.			
-METPO:0000233	'Spiral'	METPO:0000021	'Morphology'	Morphology			A cell with a tight, coiled shape.			
-METPO:0000234	'Spirochete'	METPO:0000021	'Morphology'	Morphology			A cell with a long, thin, flexible spiral shape.			
-METPO:0000235	'Spore'	METPO:0000021	'Morphology'	Morphology			A dormant, resistant form of a cell.			
-METPO:0000236	'Square'	METPO:0000021	'Morphology'	Morphology			A cell with a cube-like shape.			
-METPO:0000237	'Star'	METPO:0000021	'Morphology'	Morphology			A cell with multiple pointed projections, resembling a star.			
-METPO:0000238	'Star - Dumbbell - Pleomorphic'	METPO:0000021	'Morphology'	Morphology			A cell that can assume star-shaped, dumbbell-shaped, or various other forms.			
-METPO:0000239	'Tailed'	METPO:0000021	'Morphology'	Morphology			A cell with a main body and a tail-like extension.			
-METPO:0000240	'Triangular'	METPO:0000021	'Morphology'	Morphology			A cell with a three-sided shape.			
-METPO:0000241	'Vibrio'	METPO:0000021	'Morphology'	Morphology			A curved rod-shaped cell, resembling a comma.			
-METPO:0000242	'Environmental Parameter'	METPO:9999999	'obsolete'	Environmental Context			A measurable property of the external environment that influences microbial growth or behavior.			
-METPO:0000243	'Growth Condition'	METPO:9999999	'obsolete'	Environmental Context			A specific combination of environmental factors under which a microorganism can maintain its lifecycle.			
-METPO:0000244	'Physiological Trait'	METPO:9999999	'obsolete'	Biological Property			An inherent characteristic of an organism related to its biological functioning and metabolic processes.			
-METPO:0000245	'Metabolic Classification'	METPO:9999999	'obsolete'	Functional Classification			A categorization of an organism based on its specific patterns of energy acquisition and material transformation.			
-METPO:0000246	'Cellular Characteristic'	METPO:9999999	'obsolete'	Biological Property			A distinctive property of a cell that contributes to its structure, function, or behavior.			
-METPO:0000247	'Taxonomic Feature'	METPO:9999999	'obsolete'	Classification Property			A morphological, genetic, or physiological characteristic used for classifying organisms within a systematic hierarchy.			
-METPO:0000248	'Microbial Adaptation'	METPO:9999999	'obsolete'	Biological Process			A heritable change in structure, function, or behavior that increases a microorganism's fitness in a specific environment.			
-METPO:0000249	'Growth Parameter'	METPO:9999999	'obsolete'	Measurable Property			A quantifiable factor that affects or describes the rate or extent of microbial population increase.			
-METPO:0000250	'Structural Feature'	METPO:9999999	'obsolete'	Physical Property			A physical component or arrangement of components that contributes to an organism's form or architecture.			
-METPO:0000251	'Temperature Adaptation'	METPO:0001019	'sensitivity toward temperature'	Temperature			A physiological adjustment that enables an organism to survive and reproduce at a specific temperature range.			
-METPO:0000252	'Salinity Adaptation'	METPO:0001017	'sensitivity toward NaCl'	Salinity			A set of mechanisms that allows an organism to maintain homeostasis in environments with particular salt concentrations.			
-METPO:0000253	'pH Adaptation'	METPO:0001018	'sensitivity toward pH'	pH			A combination of cellular processes that permits survival and growth under specific hydrogen ion concentrations.			
-METPO:0000254	'Oxygen Requirement'	METPO:9999999	'obsolete'	Oxygen			The specific need for or tolerance of molecular oxygen that characterizes an organism's metabolic processes.			
-METPO:0000255	'Carbon Source Utilization'	METPO:0000279	'Biological Process'	Trophic type			The ability to assimilate and metabolize specific carbon-containing compounds for cellular growth and maintenance.			
-METPO:0000256	'Energy Acquisition Mode'	METPO:0001020	'metabolic constraints'	Trophic type			The mechanism by which an organism obtains energy for cellular activities and biosynthesis.			
-METPO:0000257	'Electron Donor Type'	METPO:0001020	'metabolic constraints'	Trophic type			The class of compounds or elements from which an organism extracts electrons for energy-generating reactions.			
-METPO:0000258	'Motility Mechanism'			Motility			The biochemical and mechanical processes that enable an organism to move through its environment.			
-METPO:0000259	'Motility Structure'	METPO:0001013	'structure'	Motility			A specialized cellular component that generates force or facilitates movement in microorganisms.			
-METPO:0000260	'Bacterial Spore Type'	METPO:0001014	'spore type'	Sporulation			A classification of resistant dormant structures produced by bacteria based on their formation and properties.			
-METPO:0000261	'Fungal Spore Type'	METPO:0001014	'spore type'	Sporulation			A distinct category of reproductive or survival structures produced by fungi, characterized by specific morphology and function.			
-METPO:0000262	'Reproductive Structure'	METPO:0001013	'structure'	Sporulation			A specialized cellular formation that functions in the propagation of genetic material to produce new individuals.			
-METPO:0000263	'Dormancy Structure'	METPO:0001013	'structure'	Sporulation			A specialized cellular state or formation that enables survival during adverse environmental conditions with reduced metabolic activity.			
-METPO:0000264	'Pressure Adaptation Type'	METPO:0001016	'sensitivity toward pressure'	Pressure			A set of physiological and molecular mechanisms that enable survival under specific hydrostatic pressure conditions.			
-METPO:0000265	'Pressure Tolerance Range'	METPO:0001016	'sensitivity toward pressure'	Pressure			The span of hydrostatic pressures within which an organism can maintain viability and cellular functions.			
-METPO:0000266	'Genomic Feature'	METPO:9999999	'obsolete'	Measurable Property			A distinctive characteristic of an organism's genetic material related to its sequence, structure, or organization.			
-METPO:0000267	'Cell Dimension'	METPO:9999999	'obsolete'	Measurable Property			A measurable spatial attribute of a cell that describes its size in one or more directions.			
-METPO:0000268	'Optimal Growth Parameter'	METPO:9999999	'obsolete'	Environmental Parameter			The specific environmental condition at which an organism achieves its maximum growth rate or metabolic efficiency.			
-METPO:0000269	'Growth Range Parameter'	METPO:9999999	'obsolete'	Environmental Parameter			The span of environmental conditions within which an organism can sustain growth and reproduction.			
-METPO:0000270	'Growth Tolerance Metric'	METPO:9999999	'obsolete'	Environmental Parameter			A quantitative measure of an organism's ability to withstand variations in a specific environmental factor.			
-METPO:0000271	'Cell Shape'	METPO:0000021	'Morphology'	Morphology			The three-dimensional geometric form of a microbial cell as determined by its cell wall and cytoskeletal structures.			
-METPO:0000272	'Cell Arrangement'	METPO:0000021	'Morphology'	Morphology			The spatial organization of multiple cells in relation to each other following cell division.			
-METPO:0000273	'Colony Morphology'	METPO:0000021	'Morphology'	Morphology			The macroscopic appearance and structure of a population of microorganisms growing on a solid medium.			
-METPO:0000274	'Physical Property'	METPO:9999999	'obsolete'	Top Level			A measurable attribute of matter or energy that can be quantified and observed independently of living systems.			
-METPO:0000275	'Environmental Context'	METPO:9999999	'obsolete'	Top Level			A set of interrelated external conditions that influence the growth, behavior, or survival of an organism.			
-METPO:0000276	'Biological Property'	METPO:9999999	'obsolete'	Top Level			An inherent characteristic of a living organism that contributes to its structure, function, or behavior at any level of organization.			
-METPO:0000277	'Functional Classification'	METPO:9999999	'obsolete'	Top Level			A systematic categorization of organisms based on their metabolic activities, energy utilization, or biochemical processes.			
-METPO:0000278	'Classification Property'	METPO:9999999	'obsolete'	Top Level			A distinctive characteristic used to organize organisms into taxonomic groups according to evolutionary relationships or shared traits.			
-METPO:0000279	'Biological Process'			Top Level			A sequence of molecular or cellular events that transforms biological materials, energy, or information to achieve a specific physiological outcome.			
-METPO:0000280	'Measurable Property'	METPO:9999999	'obsolete'	Top Level			A quantifiable attribute that can be determined through observation or experimentation with a defined unit of measurement.			
-METPO:0001000	'sensitivity to oxygen'	METPO:0001001	'sensitivity toward'							
-METPO:0001001	'sensitivity toward'	METPO:0001002	'organismal quality'							
-METPO:0001002	'organismal quality'	METPO:0001003	'physicial object quality'							
-METPO:0001003	'physicial object quality'	METPO:0001004	'quality'							
-METPO:0001004	'quality'									
-METPO:0001006	'size'	METPO:0000021	'Morphology'							
-METPO:0001007	'1-D extent'	METPO:0001006	'size'							
-METPO:0001008	'width'	METPO:0001007	'1-D extent'							
-METPO:0001009	'length'	METPO:0001007	'1-D extent'							
-METPO:0001010	'prokaryotic metabolically differentiated cell'									
-METPO:0001012	'heterotrophy'	METPO:0000279	'Biological Process'							
-METPO:0001013	'structure'									
-METPO:0001014	'spore type'									
-METPO:0001016	'sensitivity toward pressure'	METPO:0001001	'sensitivity toward'							
-METPO:0001017	'sensitivity toward NaCl'	METPO:0001001	'sensitivity toward'							
-METPO:0001018	'sensitivity toward pH'	METPO:0001001	'sensitivity toward'							
-METPO:0001019	'sensitivity toward temperature'	METPO:0001001	'sensitivity toward'							
-METPO:0001020	'metabolic constraints'									
-METPO:0001021	'cell by chemical produced'									
-METPO:9999999	'obsolete'									
+METPO:0000001	Temperature	METPO:0001019	sensitivity toward temperature	Environmental Parameter			A physical property of matter that quantitatively expresses the degree of thermal energy in a system, affecting the rate of microbial metabolic processes and growth.	C		
+METPO:0000002	Salinity	METPO:0001017	sensitivity toward NaCl	Environmental Parameter			A measure of the concentration of dissolved salts in an aqueous environment that influences osmotic pressure across microbial cell membranes.	% NaCl		
+METPO:0000003	pH	METPO:0001018	sensitivity toward pH	Environmental Parameter			A quantitative scale that expresses the acidity or alkalinity of an environment based on hydrogen ion concentration, affecting enzyme activity and cellular functions in microorganisms.	pH		
+METPO:0000004	Oxygen	METPO:9999999	obsolete	Environmental Parameter			A gaseous element required by or toxic to different microorganisms, determining their respiratory metabolism and ecological distribution.	% O2		
+METPO:0000005	Trophic type	MICRO:0001444	MICRO:0001444	Metabolic Classification			A classification of an organism based on its mechanisms of energy acquisition and carbon assimilation for cellular maintenance and growth.			
+METPO:0000006	Motility			Physiological Trait			The capacity of an organism to move independently using metabolic energy, facilitated by specialized cellular structures.			
+METPO:0000007	Sporulation			Physiological Trait			A process of differentiation in which a microorganism produces specialized resistant structures for survival or reproduction in response to environmental conditions.			
+METPO:0000008	Pressure	METPO:0001016	sensitivity toward pressure	Environmental Parameter			A physical force exerted per unit area in an environment that influences microbial cellular processes, protein structure, and membrane fluidity.	atm		
+METPO:0000009	GC content			GenomicFeature			The percentage of nitrogenous bases in DNA that are either guanine or cytosine, reflecting genomic adaptation to environmental conditions.	% GC		
+METPO:0000010	Cell Width	METPO:0001008	width	Cellular Characteristic			The measurable lateral dimension of a microbial cell perpendicular to its longitudinal axis, contributing to its surface area-to-volume ratio.	uM		
+METPO:0000011	Cell Length	METPO:0001009	length	Cellular Characteristic			The measurable longitudinal dimension of a microbial cell, influencing its surface exposure to the environment and internal diffusion distances.	uM		
+METPO:0000012	Temperature Optimum	METPO:0001019	sensitivity toward temperature	Growth Parameter			The specific temperature at which a microorganism exhibits maximum metabolic activity and growth rate within its viable range.	C		
+METPO:0000013	Temperature Range	METPO:0001019	sensitivity toward temperature	Growth Parameter			The span of temperatures within which a microorganism can maintain metabolic functions and population viability.	C		
+METPO:0000014	pH Optimum	METPO:0001018	sensitivity toward pH	Growth Parameter			The specific hydrogen ion concentration at which a microorganism achieves its maximum growth rate and metabolic efficiency.	pH		
+METPO:0000015	pH Range	METPO:0001018	sensitivity toward pH	Growth Parameter			The span of hydrogen ion concentrations within which a microorganism can maintain cellular homeostasis and sustain growth.	pH		
+METPO:0000016	NaCl Optimum	METPO:0001017	sensitivity toward NaCl	Growth Parameter			The specific concentration of sodium chloride at which a microorganism exhibits maximum growth rate and metabolic efficiency.	% NaCl		
+METPO:0000017	NaCl Range	METPO:0001017	sensitivity toward NaCl	Growth Parameter			The span of sodium chloride concentrations within which a microorganism can maintain osmotic balance and cellular functions.	% NaCl		
+METPO:0000018	pH delta	METPO:0001018	sensitivity toward pH	Growth Tolerance Metric			A measure of the breadth of hydrogen ion concentrations that a microorganism can tolerate, calculated as the difference between the maximum and minimum viable pH values.	pH		
+METPO:0000019	NaCl delta	METPO:0001017	sensitivity toward NaCl	Growth Tolerance Metric			A measure of the breadth of sodium chloride concentrations that a microorganism can tolerate, calculated as the difference between the maximum and minimum viable salinity values.	% NaCl		
+METPO:0000020	Temperature Delta	METPO:0001019	sensitivity toward temperature	Growth Tolerance Metric			A measure of the breadth of thermal conditions that a microorganism can withstand, calculated as the difference between the maximum and minimum viable temperature values.	C		
+METPO:0000021	METPO Morphology	METPO:9999999	obsolete	Structural Feature			The structural characteristics and spatial arrangement of a microbial cell or colony, determined by genetic factors and influenced by environmental conditions.			
+METPO:0000022	Psychrophile	METPO:0000001	Temperature	Temperature			A microorganism that grows optimally at temperatures below 15°C and can grow at temperatures below 20°C.	C	0	20
+METPO:0000023	Psychrotolerant	METPO:0000001	Temperature	Temperature			A microorganism that can grow at temperatures near 0°C but has optimal growth at higher temperatures.	C	0	45
+METPO:0000024	Mesophilie	METPO:0000001	Temperature	Temperature			A microorganism that grows optimally at moderate temperatures, typically between 20°C and 45°C.	C	20	45
+METPO:0000025	Thermotolerant	METPO:0000001	Temperature	Temperature			A microorganism that can grow at temperatures near 50°C but has optimal growth at lower temperatures.	C	0	50
+METPO:0000026	Thermophile	METPO:0000001	Temperature	Temperature			A microorganism that grows optimally at relatively high temperatures, typically between 45°C and 80°C.	C	45	80
+METPO:0000027	Extreme thermophile	METPO:0000001	Temperature	Temperature			A microorganism that grows optimally at temperatures between 60°C and 80°C.	C	60	80
+METPO:0000028	Hyperthermophile	METPO:0000001	Temperature	Temperature			A microorganism that grows optimally at very high temperatures, above 80°C.	C	80	115
+METPO:0000029	Extreme hyperthermophile	METPO:0000001	Temperature	Temperature			A microorganism that grows optimally at temperatures above 90°C.	C	90	125
+METPO:0000030	Halophile	METPO:0000002	Salinity	Salinity	Halophilic		A microorganism that requires salt for optimal growth and survival.	% NaCl	0	35
+METPO:0000031	Non-halophile	METPO:0000002	Salinity	Salinity	Nonhalophile|Non-halophilic		A microorganism that does not require salt for optimal growth and survival.	% NaCl	0	2
+METPO:0000032	Slight halophile	METPO:0000002	Salinity	Salinity	Slightly halophilic		A microorganism that grows optimally in environments with low salt concentrations, typically between 2-5% NaCl.	% NaCl	2	5
+METPO:0000033	Moderate halophile	METPO:0000002	Salinity	Salinity	Moderately halophilic		A microorganism that grows optimally in environments with moderate salt concentrations, typically between 5-20% NaCl.	% NaCl	5	20
+METPO:0000034	Extreme halophile	METPO:0000002	Salinity	Salinity	Extremely halophilic		A microorganism that grows optimally in environments with high salt concentrations, typically above 20% NaCl.	% NaCl	20	35
+METPO:0000035	Halotolerant	METPO:0000002	Salinity	Salinity			A microorganism that grows optimally in environments with both high salt concentrations and high pH (alkaline conditions).	% NaCl	0	20
+METPO:0000036	Haloalkaliphile	METPO:0000002	Salinity	Salinity			A microorganism that grows optimally in environments with both high salt concentrations (typically 2-5% NaCl, but can tolerate up to 25% NaCl) and high pH (typically 9-11, but can grow at pH values up to 12).	% NaCl	0	20
+METPO:0000037	Extreme Acidophile	METPO:0000003	pH	pH	Extreme acidophilic		A microorganism that grows optimally at very low pH values, typically between pH 1 and 3.	pH	1	3
+METPO:0000038	Acidophile	METPO:0000003	pH	pH	Acidophilic		A microorganism that grows optimally at low pH values, typically below pH 5.	pH	0	5
+METPO:0000039	Neutrophile	METPO:0000003	pH	pH	Neutrophilic		A microorganism that grows optimally at neutral pH values, typically around pH 7.	pH	6	8
+METPO:0000040	Alkaliphile	METPO:0000003	pH	pH			A microorganism that grows optimally at high pH values, typically above pH 9.	pH	7	14
+METPO:0000041	Acid Tolerant	METPO:0000003	pH	pH	Alkaliphilic		A microorganism that can grow in acidic conditions below pH 5 but does not require them for optimal growth.	pH	0	14
+METPO:0000042	Alkali Tolerant	METPO:0000003	pH	pH	Acid-tolerant		A microorganism that can grow in alkaline conditions above pH 9 but does not require them for optimal growth.	pH	6	14
+METPO:0000043	Extreme Alkaliphile	METPO:0000003	pH	pH	Alkali-tolerant		A microorganism that grows optimally at very high pH values, typically above pH 10.	pH	9	14
+METPO:0000044	Facultative acidophile	METPO:0000003	pH	pH	Extreme alkaliphilic		A microorganism that can grow in acidic conditions but does not require them for optimal growth.	pH	0	14
+METPO:0000045	Obligative acidophile	METPO:0000003	pH	pH			A microorganism that requires acidic conditions for growth and survival.	pH	0	5
+METPO:0000046	Aerobe	METPO:0001000	sensitivity to oxygen	Oxygen	Obligate aerobe|Strict aerobe		A microorganism that requires oxygen for growth and metabolism.	% O2	1	100
+METPO:0000047	Anaerobe	METPO:0001000	sensitivity to oxygen	Oxygen	Obligate anaerobe|Strict anaerobe		A microorganism that grows in the absence of oxygen and is unable to use oxygen for growth.	% O2	0	0
+METPO:0000048	Facultative anaerobe	METPO:0001000	sensitivity to oxygen	Oxygen	Facultative aerobe		A microorganism that can grow with or without oxygen, using oxygen for respiration when available but capable of fermentation or anaerobic respiration in its absence.	% O2	0	100
+METPO:0000049	Facultative aerobe	METPO:0001000	sensitivity to oxygen	Oxygen	Facultative anaerobe		A microorganism that primarily uses oxygen for respiration but can also grow without it using alternative metabolic pathways.	% O2	0	100
+METPO:0000050	Microaerophile	METPO:0001000	sensitivity to oxygen	Oxygen	Microaerobe		A microorganism that requires oxygen for growth but at concentrations lower than those found in air (typically 2-10% oxygen).	% O2	0.5	10
+METPO:0000051	Aerotolerant	METPO:0001000	sensitivity to oxygen	Oxygen	Oxygen-tolerant		A microorganism that does not use oxygen for growth but can survive and grow in its presence without being harmed.	% O2	0	100
+METPO:0000052	Microaerotolerant	METPO:0001000	sensitivity to oxygen	Oxygen	Microoxic-tolerant		A microorganism that can tolerate low levels of oxygen but does not require such conditions for growth.	% O2	0	10
+METPO:0000053	Aerotolerant anaerobe	METPO:0001000	sensitivity to oxygen	Oxygen	Oxygen-tolerant anaerobe		An anaerobic microorganism that does not use oxygen for metabolism but is not inhibited by its presence.	% O2	0	100
+METPO:0000054	Obligate aerobe	METPO:0001000	sensitivity to oxygen	Oxygen	Strict aerobe|Aerobe		A microorganism that absolutely requires oxygen for growth and cannot grow under anaerobic conditions.	% O2	1	100
+METPO:0000055	Obligate anaerobe	METPO:0001000	sensitivity to oxygen	Oxygen	Strict anaerobe|Anaerobe		A microorganism for which oxygen is toxic and inhibits growth, requiring strictly anaerobic conditions.	% O2	0	0
+METPO:0000056	Oxygenic phototroph	METPO:0001000	sensitivity to oxygen	Trophic type	Oxygenic phototrophic		An organism that uses light energy for photosynthesis, producing oxygen as a byproduct.			
+METPO:0000057	Anoxygenic phototroph	METPO:0001000	sensitivity to oxygen	Trophic type	Anoxygenic phototrophic		An organism that uses light energy for photosynthesis without producing oxygen.			
+METPO:0000058	Autotroph	METPO:0000005	Trophic type	Trophic type	Autotrophic		An organism that produces its own food from inorganic compounds.			
+METPO:0000059	Photoautotroph	METPO:0000005	Trophic type	Trophic type	Photoautotrophic		An organism that uses light energy to fix carbon dioxide for growth.			
+METPO:0000060	Chemoautotroph	METPO:0000005	Trophic type	Trophic type	Chemoautotrophic		An organism that uses energy from chemical reactions to fix carbon dioxide for growth.			
+METPO:0000061	Heterotroph	METPO:0000005	Trophic type	Trophic type	Heterotrophic		An organism that obtains carbon from organic compounds.			
+METPO:0000062	Photoheterotroph	METPO:0000005	Trophic type	Trophic type	Photoheterotrophic		An organism that uses light energy but obtains carbon from organic compounds.			
+METPO:0000063	Chemoheterotroph	METPO:0000005	Trophic type	Trophic type	Chemoheterotrophic		An organism that obtains both energy and carbon from organic compounds.			
+METPO:0000064	Lithotroph	METPO:0000005	Trophic type	Trophic type	Lithotrophic		An organism that obtains energy from the oxidation of inorganic compounds.			
+METPO:0000065	Organotroph	METPO:0000005	Trophic type	Trophic type	Organotrophic		An organism that obtains energy from the oxidation of organic compounds.			
+METPO:0000066	Phototroph	METPO:0000005	Trophic type	Trophic type	Phototrophic		An organism that uses light as its primary energy source.			
+METPO:0000067	Chemotroph	METPO:0000005	Trophic type	Trophic type	Chemotrophic		An organism that obtains energy from chemical reactions.			
+METPO:0000068	Oligotroph	METPO:0000005	Trophic type	Trophic type	Oligotrophic		An organism adapted to environments with low nutrient levels.			
+METPO:0000069	Copiotroph	METPO:0000005	Trophic type	Trophic type	Copiotrophic		An organism adapted to environments with high nutrient levels.			
+METPO:0000070	Lithoautotroph	METPO:0000005	Trophic type	Trophic type	Lithoautotrophic		An organism that uses inorganic compounds for both energy and carbon.			
+METPO:0000071	Mixotroph	METPO:0000005	Trophic type	Trophic type	Mixotrophic		An organism capable of both autotrophic and heterotrophic nutrition.			
+METPO:0000072	Lithoheterotroph	METPO:0000005	Trophic type	Trophic type	Lithoheterotrophic		An organism that uses inorganic compounds for energy but organic compounds for carbon.			
+METPO:0000073	Chemoorganoheterotroph	METPO:0000005	Trophic type	Trophic type	Chemoorganoheterotrophic		An organism that uses organic compounds for both energy and carbon.			
+METPO:0000074	Chemolithoautotroph	METPO:0000005	Trophic type	Trophic type	Chemolithoautotrophic		An organism that uses inorganic compounds for energy and CO2 for carbon.			
+METPO:0000075	Methylotroph	METPO:0000005	Trophic type	Trophic type	Methylotrophic		An organism that can use one-carbon compounds as a source of energy and carbon.			
+METPO:0000076	Methanotroph	METPO:0000005	Trophic type	Trophic type	Methanotrophic		An organism that uses methane as its sole source of carbon and energy.			
+METPO:0000077	Carboxydotroph	METPO:0000005	Trophic type	Trophic type	Carboxydrophile|Carbohydrogenotroph		An organism that can use carbon monoxide as its sole source of energy and carbon.			
+METPO:0000078	Hydrogenotroph	METPO:0000005	Trophic type	Trophic type	Hydrogenophile|Hydrogenophilic		An organism that obtains energy from the oxidation of molecular hydrogen.			
+METPO:0000079	Hydrogen oxidizer	METPO:0000005	Trophic type	Trophic type	Hydrogen-oxidizing		An organism that oxidizes hydrogen for energy.			
+METPO:0000080	Hydrogen producer	METPO:0001021	cell by chemical produced	Trophic type	Hydrogen-producing		An organism that produces hydrogen as a byproduct of its metabolism.			
+METPO:0000081	Nitrogen fixer	METPO:0000005	Trophic type	Trophic type	Nitrogen-fixing		An organism capable of converting atmospheric nitrogen into ammonia.			
+METPO:0000082	Methanogen	METPO:0001021	cell by chemical produced	Trophic type	Methanogenic		An organism that produces methane as a byproduct of its metabolism.			
+METPO:0000083	Sulfate reducer	METPO:0000005	Trophic type	Trophic type	Sulfate-reducing		An organism that uses sulfate as an electron acceptor in anaerobic respiration.			
+METPO:0000084	Sulfur oxidizer	METPO:0000005	Trophic type	Trophic type	Sulfur-oxidizing		An organism that oxidizes sulfur compounds for energy.			
+METPO:0000085	Denitrifier	METPO:0000005	Trophic type	Trophic type	Denitrifying		An organism that reduces nitrate to nitrogen gas in anaerobic respiration.			
+METPO:0000086	Capnophile	METPO:0000005	Trophic type	Trophic type	Capnophilic		An organism that requires or grows better in the presence of elevated levels of carbon dioxide.			
+METPO:0000087	Motile	METPO:0000006	Motility	Motility			A microorganism capable of self-propelled movement.			
+METPO:0000088	Non-motile	METPO:0000006	Motility	Motility			A microorganism incapable of self-propelled movement.			
+METPO:0000089	Flagellated	METPO:0000006	Motility	Motility			A motile microorganism that moves using one or more flagella.			
+METPO:0000090	Peritrichous	METPO:0000006	Motility	Motility			A flagellated microorganism with flagella distributed over the entire cell surface.			
+METPO:0000091	Lophotrichous	METPO:0000006	Motility	Motility			A flagellated microorganism with a tuft of flagella at one or both poles of the cell.			
+METPO:0000092	Monotrichous	METPO:0000006	Motility	Motility			A flagellated microorganism with a single flagellum at one pole of the cell.			
+METPO:0000093	Ciliated	METPO:0000006	Motility	Motility			A motile microorganism that moves using numerous short, hair-like structures called cilia.			
+METPO:0000094	Gliding	METPO:0000006	Motility	Motility			A motile microorganism that moves by sliding over surfaces without the use of flagella or cilia.			
+METPO:0000095	Twitching	METPO:0000006	Motility	Motility			A motile microorganism that moves using type IV pili in a jerky, start-stop motion.			
+METPO:0000096	Sliding	METPO:0000006	Motility	Motility			A motile microorganism that moves passively over surfaces due to the production of extracellular substances.			
+METPO:0000097	Swarming	METPO:0000006	Motility	Motility			A motile microorganism capable of rapid, coordinated movement across surfaces in groups.			
+METPO:0000098	Endospores	METPO:0000007	Sporulation	Sporulation			A dormant, resistant structure formed within a bacterial cell.			
+METPO:0000099	Exospores	METPO:0000007	Sporulation	Sporulation			A spore formed outside the parent cell.			
+METPO:0000100	Myxospores	METPO:0000007	Sporulation	Sporulation			A resting spore produced by myxobacteria during unfavorable conditions.			
+METPO:0000101	Arthrospores	METPO:0000007	Sporulation	Sporulation			A type of spore formed by the fragmentation of fungal hyphae.			
+METPO:0000102	Conidia	METPO:0000007	Sporulation	Sporulation			Asexual spores produced by fungi, typically at the tips of specialized hyphae.			
+METPO:0000103	Sporangiospores	METPO:0000007	Sporulation	Sporulation			Asexual spores produced within a sporangium.			
+METPO:0000104	Zygospores	METPO:0000007	Sporulation	Sporulation			A thick-walled resting spore resulting from the fusion of two compatible hyphae.			
+METPO:0000105	Akinetes	METPO:0000007	Sporulation	Sporulation			A large, thick-walled dormant cell formed by some cyanobacteria.			
+METPO:0000106	Chlamydospores	METPO:0000007	Sporulation	Sporulation			A thick-walled resting spore formed from a cell of a fungal hypha.			
+METPO:0000107	Sporocysts	METPO:0000007	Sporulation	Sporulation			A protective cyst-like structure containing sporozoites in some protists.			
+METPO:0000108	Hypnospores	METPO:0000007	Sporulation	Sporulation			A dormant stage of some dinoflagellates, formed under unfavorable conditions.			
+METPO:0000109	Gemmae	METPO:0000007	Sporulation	Sporulation			Small, multicellular propagules produced by some bryophytes for asexual reproduction.			
+METPO:0000110	Oospores	METPO:0000007	Sporulation	Sporulation			A thick-walled sexual spore produced by oomycetes.			
+METPO:0000111	Azygospores	METPO:0000007	Sporulation	Sporulation			A spore formed without fusion of gametes, typically in zygomycetes.			
+METPO:0000112	Cysts	METPO:0000007	Sporulation	Sporulation			A resistant, dormant stage formed by some protists and bacteria.			
+METPO:0000113	Ascospores	METPO:0000007	Sporulation	Sporulation			Sexual spores produced in an ascus, typically by ascomycete fungi.			
+METPO:0000114	Basidiospores	METPO:0000007	Sporulation	Sporulation			Sexual spores produced on a basidium, typically by basidiomycete fungi.			
+METPO:0000115	Aleuriospores	METPO:0000007	Sporulation	Sporulation			Asexual spores formed by the disarticulation of vegetative hyphae.			
+METPO:0000116	Stylospores	METPO:0000007	Sporulation	Sporulation			Asexual spores produced on a stalk-like structure called a sterigma.			
+METPO:0000117	Sclerotia	METPO:0000007	Sporulation	Sporulation			A compact mass of hardened fungal mycelium containing food reserves.			
+METPO:0000118	Zoospores	METPO:0000007	Sporulation	Sporulation			Motile spores with flagella, typically produced by algae and some fungi.			
+METPO:0000119	Teliospores	METPO:0000007	Sporulation	Sporulation			A type of resting spore produced by rust and smut fungi.			
+METPO:0000120	Urediniospores	METPO:0000007	Sporulation	Sporulation			Asexual spores produced by rust fungi during their life cycle.			
+METPO:0000121	Pycnidiospores	METPO:0000007	Sporulation	Sporulation			Asexual spores produced within a pycnidium, a flask-shaped fruiting body.			
+METPO:0000122	Acriospores	METPO:0000007	Sporulation	Sporulation			Asexual spores produced in chains at the tips of conidiophores.			
+METPO:0000123	Aplanospores	METPO:0000007	Sporulation	Sporulation			Non-motile spores that lack flagella, typically produced by algae.			
+METPO:0000124	Statismospores	METPO:0000007	Sporulation	Sporulation			Non-motile spores that lack the ability to swim.			
+METPO:0000125	Barotolerant	METPO:0000008	Pressure	Pressure			An organism that can survive high pressure but does not require it for optimal growth.	atm	1	1000
+METPO:0000126	Piezophile	METPO:0000008	Pressure	Pressure	Piezophilic|Barophile|Barophilic		An organism that grows optimally under high pressure conditions.	atm	10	1000
+METPO:0000127	Piezotolerant	METPO:0000008	Pressure	Pressure			An organism that can tolerate high pressure but grows optimally at normal atmospheric pressure.	atm	1	100
+METPO:0000128	Piezosensitive	METPO:0000008	Pressure	Pressure			An organism that is adversely affected by high pressure conditions.	atm	1	10
+METPO:0000129	Obligate barophile	METPO:0000008	Pressure	Pressure	Obligate piezophile		An organism that requires high pressure for growth and cannot grow at atmospheric pressure.	atm	10	1000
+METPO:0000130	Facultative barophile	METPO:0000008	Pressure	Pressure	Facultative piezophile		An organism that grows optimally under high pressure but can also grow at atmospheric pressure.	atm	1	1000
+METPO:0000131	Hyperbarophile	METPO:0000008	Pressure	Pressure	Hyperbarophilic		An organism adapted to extremely high pressure environments.	atm	100	1500
+METPO:0000132	Hypobarophile	METPO:0000008	Pressure	Pressure	Hypobarophilic		An organism adapted to low pressure environments.	atm	0.1	1
+METPO:0000133	Atmospheric pressure-adapted	METPO:0000008	Pressure	Pressure			An organism adapted to grow at standard atmospheric pressure.	atm	1	1
+METPO:0000134	Moderate piezophile	METPO:0000008	Pressure	Pressure	Moderate barophile		An organism that grows optimally at moderately high pressures.	atm	10	100
+METPO:0000135	Extreme piezophile	METPO:0000008	Pressure	Pressure	Extreme barophile		An organism that grows optimally at very high pressures.	atm	100	1500
+METPO:0000136	Stenopiezic	METPO:0000008	Pressure	Pressure	Stenobaric		An organism that can only grow within a narrow range of pressures.	atm	1	100
+METPO:0000137	Eurypiezic	METPO:0000008	Pressure	Pressure	Eurybaric		An organism that can grow across a wide range of pressures.	atm	1	1000
+METPO:0000138	Pressure-sensitive	METPO:0000008	Pressure	Pressure			An organism whose growth or metabolism is negatively affected by changes in pressure.	atm	1	10
+METPO:0000139	Pressure-resistant	METPO:0000008	Pressure	Pressure			An organism that can withstand significant changes in pressure without adverse effects.	atm	1	1000
+METPO:0000140	Pressure-adapted	METPO:0000008	Pressure	Pressure			An organism that has evolved to thrive under specific pressure conditions.	atm	1	1000
+METPO:0000141	Piezo-acidophile	METPO:0000008	Pressure	Pressure	Piezo-acidophilic		An organism that grows optimally under both high pressure and acidic conditions.	atm	10	1000
+METPO:0000142	Piezo-alkaliphile	METPO:0000008	Pressure	Pressure	Piezo-alkaliphilic		An organism that grows optimally under both high pressure and alkaline conditions.	atm	10	1000
+METPO:0000143	Piezo-halophile	METPO:0000008	Pressure	Pressure	Piezo-halophilic		An organism that grows optimally under both high pressure and high salinity conditions.	atm	10	1000
+METPO:0000144	Piezo-psychrophile	METPO:0000008	Pressure	Pressure	Piezo-psychrophilic		An organism that grows optimally under both high pressure and low temperature conditions.	atm	10	1000
+METPO:0000145	Piezo-thermophile	METPO:0000008	Pressure	Pressure	Piezo-thermophilic		An organism that grows optimally under both high pressure and high temperature conditions.	atm	10	1000
+METPO:0000146	Piezo-lithoautotrophe	METPO:0000008	Pressure	Pressure	Piezo-lithoautotrophic		An organism that uses inorganic compounds for energy and carbon under high pressure conditions.	atm	10	1000
+METPO:0000147	Piezo-chemoheterotroph	METPO:0000008	Pressure	Pressure	Piezo-chemoheterotrophic		An organism that uses organic compounds for energy and carbon under high pressure conditions.	atm	10	1000
+METPO:0000148	Piezo-oligotroph	METPO:0000008	Pressure	Pressure	Piezo-oligotrophic		An organism adapted to low-nutrient environments under high pressure conditions.	atm	10	1000
+METPO:0000149	Piezo-endolithic	METPO:0000008	Pressure	Pressure			An organism that lives within rock or mineral substrates under high pressure conditions.	atm	10	1000
+METPO:0000150	Piezo-tolerant	METPO:0000008	Pressure	Pressure			An organism that can tolerate a range of pressure conditions but does not necessarily require high pressure for optimal growth.	atm	1	1000
+METPO:0000151	GC low	METPO:0000009	GC content	GenomicFeature		GC_<42.65	A genomic feature characterized by a guanine-cytosine content percentage below 42.65% in an organism's DNA.	% GC		42.65
+METPO:0000152	GC mid1	METPO:0000009	GC content	GenomicFeature		GC_42.65_57.0	A genomic feature characterized by a guanine-cytosine content percentage between 42.65% and 57% in an organism's DNA.	% GC	42.65	57
+METPO:0000153	GC mid2	METPO:0000009	GC content	GenomicFeature		GC_57.0_66.3	A genomic feature characterized by a guanine-cytosine content percentage between 57% and 66.3% in an organism's DNA.	% GC	57	66.3
+METPO:0000154	GC high	METPO:0000009	GC content	GenomicFeature		GC_>66.3	A genomic feature characterized by a guanine-cytosine content percentage above 66.3% in an organism's DNA.	% GC	66.3	
+METPO:0000155	Cell width very low	METPO:0000010	Cell Width	Cell Dimension		W_<0.5	A cell dimension characterized by a lateral measurement less than 0.5 micrometers across the microbial cell.	uM		0.5
+METPO:0000156	Cell width low	METPO:0000010	Cell Width	Cell Dimension		W_0.5_0.65	A cell dimension characterized by a lateral measurement between 0.5 and 0.65 micrometers across the microbial cell.	uM	0.5	0.65
+METPO:0000157	Cell width mid	METPO:0000010	Cell Width	Cell Dimension		W_0.65_0.9	A cell dimension characterized by a lateral measurement between 0.65 and 0.9 micrometers across the microbial cell.	uM	0.65	0.9
+METPO:0000158	Cell width high	METPO:0000010	Cell Width	Cell Dimension		W_>0.9	A cell dimension characterized by a lateral measurement greater than 0.9 micrometers across the microbial cell.	uM	0.9	
+METPO:0000159	Cell length very low	METPO:0000011	Cell Length	Cell Dimension		L_<1.3	A cell dimension characterized by a longitudinal measurement less than 1.3 micrometers along the microbial cell's primary axis.	uM		1.3
+METPO:0000160	Cell length low	METPO:0000011	Cell Length	Cell Dimension		L_1.3_2	A cell dimension characterized by a longitudinal measurement between 1.3 and 2 micrometers along the microbial cell's primary axis.	uM	1.3	2
+METPO:0000161	Cell length mid	METPO:0000011	Cell Length	Cell Dimension		L_2_3	A cell dimension characterized by a longitudinal measurement between 2 and 3 micrometers along the microbial cell's primary axis.	uM	2	3
+METPO:0000162	Cell length high	METPO:0000011	Cell Length	Cell Dimension		L_>3	A cell dimension characterized by a longitudinal measurement greater than 3 micrometers along the microbial cell's primary axis.	uM	3	
+METPO:0000163	Temperature Optimum very low	METPO:0000012	Temperature Optimum	Temperature Optimum	Psychrophile	TO_<10	A temperature optimum manifested as maximum microbial growth at temperatures below 10°C, typical of psychrophilic organisms.	C		10
+METPO:0000164	Temperature Optimum low	METPO:0000012	Temperature Optimum	Temperature Optimum	Psychrophile|Psychrotolerant	TO_10_to_22	A temperature optimum manifested as maximum microbial growth at temperatures between 10°C and 22°C, common in psychrophilic or psychrotolerant organisms.	C	10	22
+METPO:0000165	Temperature Optimum mid1	METPO:0000012	Temperature Optimum	Temperature Optimum	Mesophilie	TO_22_to_27	A temperature optimum manifested as maximum microbial growth at temperatures between 22°C and 27°C, characteristic of mesophilic organisms.	C	22	27
+METPO:0000166	Temperature Optimum mid2	METPO:0000012	Temperature Optimum	Temperature Optimum	Mesophilie	TO_27_to_30	A temperature optimum manifested as maximum microbial growth at temperatures between 27°C and 30°C, characteristic of mesophilic organisms.	C	27	30
+METPO:0000167	Temperature Optimum mid3	METPO:0000012	Temperature Optimum	Temperature Optimum	Mesophilie	TO_30_to_34	A temperature optimum manifested as maximum microbial growth at temperatures between 30°C and 34°C, characteristic of mesophilic organisms.	C	30	34
+METPO:0000168	Temperature Optimum mid4	METPO:0000012	Temperature Optimum	Temperature Optimum	Mesophilie	TO_34_to_40	A temperature optimum manifested as maximum microbial growth at temperatures between 34°C and 40°C, characteristic of mesophilic organisms.	C	34	40
+METPO:0000169	Temperature Optimum high	METPO:0000012	Temperature Optimum	Temperature Optimum	Thermophile	TO_>40	A temperature optimum manifested as maximum microbial growth at temperatures above 40°C, typical of thermophilic organisms.	C	40	
+METPO:0000170	Temperature Range very low	METPO:0000013	Temperature Range	Temperature Range	Psychrophile	TR_<10	A temperature range allowing microbial growth at temperatures below 10°C, characteristic of psychrophilic organisms.	C		10
+METPO:0000171	Temperature Range low	METPO:0000013	Temperature Range	Temperature Range	Psychrophile|Psychrotolerant	TR_10_to_22	A temperature range allowing microbial growth at temperatures between 10°C and 22°C, characteristic of psychrophilic or psychrotolerant organisms.	C	10	22
+METPO:0000172	Temperature Range mid1	METPO:0000013	Temperature Range	Temperature Range	Mesophilie	TR_22_to_27	A temperature range allowing microbial growth at temperatures between 22°C and 27°C, characteristic of mesophilic organisms.	C	22	27
+METPO:0000173	Temperature Range mid2	METPO:0000013	Temperature Range	Temperature Range	Mesophilie	TR_27_to_30	A temperature range allowing microbial growth at temperatures between 27°C and 30°C, characteristic of mesophilic organisms.	C	27	30
+METPO:0000174	Temperature Range mid3	METPO:0000013	Temperature Range	Temperature Range	Mesophilie	TR_30_to_34	A temperature range allowing microbial growth at temperatures between 30°C and 34°C, characteristic of mesophilic organisms.	C	30	34
+METPO:0000175	Temperature Range mid4	METPO:0000013	Temperature Range	Temperature Range	Mesophilie	TR_34_to_40	A temperature range allowing microbial growth at temperatures between 34°C and 40°C, characteristic of mesophilic organisms.	C	34	40
+METPO:0000176	Temperature Range high	METPO:0000013	Temperature Range	Temperature Range	Thermophile	TR_>40	A temperature range allowing microbial growth at temperatures above 40°C, characteristic of thermophilic organisms.	C	40	
+METPO:0000177	pH Optimum low	METPO:0000014	pH Optimum	pH Optimum	Extreme Acidophile|Acidophile|Acid Tolerant|Facultative acidophile|Obligative acidophile	pHO_0_to_6	A pH optimum manifested as maximum microbial growth at hydrogen ion concentrations between pH 0 and 6, characteristic of acidophilic organisms.	pH	0	6
+METPO:0000178	pH Optimum mid1	METPO:0000014	pH Optimum	pH Optimum	Neutrophile|Alkali Tolerant	pHO_6_to_7	A pH optimum manifested as maximum microbial growth at hydrogen ion concentrations between pH 6 and 7, characteristic of neutrophilic or alkali-tolerant organisms.	pH	6	7
+METPO:0000179	pH Optimum mid2	METPO:0000014	pH Optimum	pH Optimum	Neutrophile|Alkaliphile|Alkali Tolerant	pHO_7_to_8	A pH optimum manifested as maximum microbial growth at hydrogen ion concentrations between pH 7 and 8, characteristic of neutrophilic, alkaliphilic, or alkali-tolerant organisms.	pH	7	8
+METPO:0000180	pH Optimum high	METPO:0000014	pH Optimum	pH Optimum	Alkaliphile|Alkali Tolerant|Extreme Alkaliphile	pHO_8_to_14	A pH optimum manifested as maximum microbial growth at hydrogen ion concentrations between pH 8 and 14, characteristic of alkaliphilic or extremely alkaliphilic organisms.	pH	8	14
+METPO:0000181	pH Range very low	METPO:0000015	pH Range	pH Range	Extreme Acidophile|Acidophile|Acid Tolerant|Facultative acidophile|Obligative acidophile	pHR_0_to_4	A pH range allowing microbial growth at hydrogen ion concentrations between pH 0 and 4, characteristic of extremely acidophilic organisms.	pH	0	4
+METPO:0000182	pH Range low	METPO:0000015	pH Range	pH Range	Acidophile|Acid Tolerant|Facultative acidophile|Obligative acidophile	pHR_4_to_6	A pH range allowing microbial growth at hydrogen ion concentrations between pH 4 and 6, characteristic of acidophilic organisms.	pH	4	6
+METPO:0000183	pH Range mid1	METPO:0000015	pH Range	pH Range	Neutrophile|Alkali Tolerant|Facultative acidophile	pHR_6_to_7	A pH range allowing microbial growth at hydrogen ion concentrations between pH 6 and 7, characteristic of neutrophilic organisms.	pH	6	7
+METPO:0000184	pH Range mid2	METPO:0000015	pH Range	pH Range	Neutrophile|Alkaliphile|Alkali Tolerant|Facultative acidophile	pHR_7_to_8	A pH range allowing microbial growth at hydrogen ion concentrations between pH 7 and 8, characteristic of neutrophilic or alkaliphilic organisms.	pH	7	8
+METPO:0000185	pH Range mid3	METPO:0000015	pH Range	pH Range	Alkaliphile|Alkali Tolerant|Extreme Alkaliphile|Facultative acidophile	pHR_8_to_10	A pH range allowing microbial growth at hydrogen ion concentrations between pH 8 and 10, characteristic of alkaliphilic organisms.	pH	8	10
+METPO:0000186	pH Range high	METPO:0000015	pH Range	pH Range	Extreme Alkaliphile|Alkaliphile|Alkali Tolerant	10_to_14	A pH range allowing microbial growth at hydrogen ion concentrations between pH 10 and 14, characteristic of extremely alkaliphilic organisms.	pH	10	14
+METPO:0000187	NaCl Optimum low	METPO:0000016	NaCl Optimum	NaCl Optimum	Non-halophile|Halotolerant	NaR_<1	A salinity optimum manifested as maximum microbial growth at sodium chloride concentrations below 1%, characteristic of non-halophilic or halotolerant organisms.	% NaCl		1
+METPO:0000188	NaCl Optimum mid1	METPO:0000016	NaCl Optimum	NaCl Optimum	Slight halophile|Halotolerant	NaR_1_to_3	A salinity optimum manifested as maximum microbial growth at sodium chloride concentrations between 1% and 3%, characteristic of slight halophiles or halotolerant organisms.	% NaCl	1	3
+METPO:0000189	NaCl Optimum mid2	METPO:0000016	NaCl Optimum	NaCl Optimum	Moderate halophile|Halotolerant	NaR_3_to_8	A salinity optimum manifested as maximum microbial growth at sodium chloride concentrations between 3% and 8%, characteristic of moderate halophiles or halotolerant organisms.	% NaCl	3	8
+METPO:0000190	NaCl Optimum high	METPO:0000016	NaCl Optimum	NaCl Optimum	Extreme halophile	NaR_>8	A salinity optimum manifested as maximum microbial growth at sodium chloride concentrations above 8%, characteristic of extreme halophiles.	% NaCl	8	
+METPO:0000191	NaCl Range low	METPO:0000017	NaCl Range	NaCl Range	Non-halophile|Halotolerant	NaO_<1	A salinity range allowing microbial growth at sodium chloride concentrations below 1%, characteristic of non-halophilic organisms.	% NaCl		1
+METPO:0000192	NaCl Range mid1	METPO:0000017	NaCl Range	NaCl Range	Slight halophile|Halotolerant	NaO_1_to_3	A salinity range allowing microbial growth at sodium chloride concentrations between 1% and 3%, characteristic of slight halophiles.	% NaCl	1	3
+METPO:0000193	NaCl Range mid2	METPO:0000017	NaCl Range	NaCl Range	Moderate halophile|Halotolerant	NaO_3_to_8	A salinity range allowing microbial growth at sodium chloride concentrations between 3% and 8%, characteristic of moderate halophiles.	% NaCl	3	8
+METPO:0000194	NaCl Range high	METPO:0000017	NaCl Range	NaCl Range	Extreme halophile	NaO_>8	A salinity range allowing microbial growth at sodium chloride concentrations above 8%, characteristic of extreme halophiles.	% NaCl	8	
+METPO:0000195	pH Delta very low	METPO:0000018	pH delta	pH delta		pHd_<1	A growth tolerance metric measuring the span of pH conditions that support an organism's growth, with a narrow range less than 1 pH unit.	pH		1
+METPO:0000196	pH Delta low	METPO:0000018	pH delta	pH delta		pHd_1_2	A growth tolerance metric measuring the span of pH conditions that support an organism's growth, with a range between 1 and 2 pH units.	pH	1	2
+METPO:0000197	pH Delta mid1	METPO:0000018	pH delta	pH delta		pHd_2_3	A growth tolerance metric measuring the span of pH conditions that support an organism's growth, with a range between 2 and 3 pH units.	pH	2	3
+METPO:0000198	pH Delta mid2	METPO:0000018	pH delta	pH delta		pHd_3_4	A growth tolerance metric measuring the span of pH conditions that support an organism's growth, with a range between 3 and 4 pH units.	pH	3	4
+METPO:0000199	pH Delta mid3	METPO:0000018	pH delta	pH delta		pHd_4_5	A growth tolerance metric measuring the span of pH conditions that support an organism's growth, with a range between 4 and 5 pH units.	pH	4	5
+METPO:0000200	pH Delta high	METPO:0000018	pH delta	pH delta		pHd_5_9	A growth tolerance metric measuring the span of pH conditions that support an organism's growth, with a wide range between 5 and 9 pH units.	pH	5	9
+METPO:0000201	NaCl Delta low	METPO:0000019	NaCl delta	NaCl delta		Nad_<1	A growth tolerance metric measuring the span of sodium chloride concentrations that support an organism's growth, with a narrow range less than 1%.	C		1
+METPO:0000202	NaCl Delta mid2	METPO:0000019	NaCl delta	NaCl delta		Nad_1_3	A growth tolerance metric measuring the span of sodium chloride concentrations that support an organism's growth, with a range between 1% and 3%.	C	1	3
+METPO:0000203	NaCl Delta mid2	METPO:0000019	NaCl delta	NaCl delta		Nad_3_8	A growth tolerance metric measuring the span of sodium chloride concentrations that support an organism's growth, with a range between 3% and 8%.	C	3	8
+METPO:0000204	NaCl Delta high	METPO:0000019	NaCl delta	NaCl delta		Nad_>8	A growth tolerance metric measuring the span of sodium chloride concentrations that support an organism's growth, with a wide range greater than 8%.	C		8
+METPO:0000205	Temperature Delta very low	METPO:0000020	Temperature Delta	Temperature delta		Td_1_5	A growth tolerance metric measuring the span of temperatures that support an organism's growth, with a narrow range between 1°C and 5°C.	C	1	5
+METPO:0000206	Temperature Delta low	METPO:0000020	Temperature Delta	Temperature delta		Td_5_10	A growth tolerance metric measuring the span of temperatures that support an organism's growth, with a range between 5°C and 10°C.	C	5	10
+METPO:0000207	Temperature Delta mid1	METPO:0000020	Temperature Delta	Temperature delta		Td_10_20	A growth tolerance metric measuring the span of temperatures that support an organism's growth, with a range between 10°C and 20°C.	C	10	20
+METPO:0000208	Temperature Delta mid2	METPO:0000020	Temperature Delta	Temperature delta		Td_20_30	A growth tolerance metric measuring the span of temperatures that support an organism's growth, with a range between 20°C and 30°C.	C	20	30
+METPO:0000209	Temperature Delta high	METPO:0000020	Temperature Delta	Temperature delta		Td_>30	A growth tolerance metric measuring the span of temperatures that support an organism's growth, with a wide range greater than 30°C.	C	30	
+METPO:0000210	Bacillus	PATO:0000051	PATO:0000051	Morphology			A rod-shaped cell.			
+METPO:0000211	Branced	PATO:0000051	PATO:0000051	Morphology			A cell with multiple branches or extensions.			
+METPO:0000212	Coccobacillus	PATO:0000051	PATO:0000051	Morphology			A short rod-shaped cell, intermediate between bacillus and coccus.			
+METPO:0000213	Coccus	PATO:0000051	PATO:0000051	Morphology			A spherical cell.			
+METPO:0000214	Crescent	PATO:0000051	PATO:0000051	Morphology			A curved, crescent-shaped cell.			
+METPO:0000215	Curved	PATO:0000051	PATO:0000051	Morphology			A cell with a slight curve or bend.			
+METPO:0000216	Curved Spiral	PATO:0000051	PATO:0000051	Morphology			A cell with a curved spiral shape.			
+METPO:0000217	Diplococcus	PATO:0000051	PATO:0000051	Morphology			Two spherical cells attached to each other.			
+METPO:0000218	Disc	PATO:0000051	PATO:0000051	Morphology			A flat, circular-shaped cell.			
+METPO:0000219	Dumbbell	PATO:0000051	PATO:0000051	Morphology			A cell shaped like two spheres connected by a narrow bridge.			
+METPO:0000220	Ellipsoidal	PATO:0000051	PATO:0000051	Morphology			A cell with an elongated oval shape.			
+METPO:0000221	Filament	PATO:0000051	PATO:0000051	Morphology			A long, thin, thread-like cell.			
+METPO:0000222	Flask	PATO:0000051	PATO:0000051	Morphology			A cell shaped like a laboratory flask.			
+METPO:0000223	Fusiform	PATO:0000051	PATO:0000051	Morphology			A cell with a spindle-like shape, wider in the middle and tapering at both ends.			
+METPO:0000224	Helical	PATO:0000051	PATO:0000051	Morphology			A cell with a spiral shape, forming a three-dimensional helix.			
+METPO:0000225	Irregular	PATO:0000051	PATO:0000051	Morphology			A cell with an inconsistent or non-uniform shape.			
+METPO:0000226	Oval	PATO:0000051	PATO:0000051	Morphology			A cell with an egg-shaped outline.			
+METPO:0000227	Ovoid	PATO:0000051	PATO:0000051	Morphology			A cell with an egg-like shape, slightly elongated.			
+METPO:0000228	Pleomorphic	PATO:0000051	PATO:0000051	Morphology			A cell capable of assuming various shapes.			
+METPO:0000229	Ring	PATO:0000051	PATO:0000051	Morphology			A cell shaped like a circular band or loop.			
+METPO:0000230	Rod	PATO:0000051	PATO:0000051	Morphology			A straight, elongated cell.			
+METPO:0000231	Sphere	PATO:0000051	PATO:0000051	Morphology			A perfectly round cell.			
+METPO:0000232	Spindle	PATO:0000051	PATO:0000051	Morphology			A cell with a shape that tapers at both ends.			
+METPO:0000233	Spiral	PATO:0000051	PATO:0000051	Morphology			A cell with a tight, coiled shape.			
+METPO:0000234	Spirochete	PATO:0000051	PATO:0000051	Morphology			A cell with a long, thin, flexible spiral shape.			
+METPO:0000235	Spore	PATO:0000051	PATO:0000051	Morphology			A dormant, resistant form of a cell.			
+METPO:0000236	Square	PATO:0000051	PATO:0000051	Morphology			A cell with a cube-like shape.			
+METPO:0000237	Star	PATO:0000051	PATO:0000051	Morphology			A cell with multiple pointed projections, resembling a star.			
+METPO:0000238	Star - Dumbbell - Pleomorphic	PATO:0000051	PATO:0000051	Morphology			A cell that can assume star-shaped, dumbbell-shaped, or various other forms.			
+METPO:0000239	Tailed	PATO:0000051	PATO:0000051	Morphology			A cell with a main body and a tail-like extension.			
+METPO:0000240	Triangular	PATO:0000051	PATO:0000051	Morphology			A cell with a three-sided shape.			
+METPO:0000241	Vibrio	PATO:0000051	PATO:0000051	Morphology			A curved rod-shaped cell, resembling a comma.			
+METPO:0000242	Environmental Parameter	METPO:9999999	obsolete	Environmental Context			A measurable property of the external environment that influences microbial growth or behavior.			
+METPO:0000243	Growth Condition	METPO:9999999	obsolete	Environmental Context			A specific combination of environmental factors under which a microorganism can maintain its lifecycle.			
+METPO:0000244	Physiological Trait	METPO:9999999	obsolete	Biological Property			An inherent characteristic of an organism related to its biological functioning and metabolic processes.			
+METPO:0000245	Metabolic Classification	METPO:9999999	obsolete	Functional Classification			A categorization of an organism based on its specific patterns of energy acquisition and material transformation.			
+METPO:0000246	Cellular Characteristic	METPO:9999999	obsolete	Biological Property			A distinctive property of a cell that contributes to its structure, function, or behavior.			
+METPO:0000247	Taxonomic Feature	METPO:9999999	obsolete	Classification Property			A morphological, genetic, or physiological characteristic used for classifying organisms within a systematic hierarchy.			
+METPO:0000248	Microbial Adaptation	METPO:9999999	obsolete	Biological Process			A heritable change in structure, function, or behavior that increases a microorganism's fitness in a specific environment.			
+METPO:0000249	Growth Parameter	METPO:9999999	obsolete	Measurable Property			A quantifiable factor that affects or describes the rate or extent of microbial population increase.			
+METPO:0000250	Structural Feature	METPO:9999999	obsolete	Physical Property			A physical component or arrangement of components that contributes to an organism's form or architecture.			
+METPO:0000251	Temperature Adaptation	METPO:0001019	sensitivity toward temperature	Temperature			A physiological adjustment that enables an organism to survive and reproduce at a specific temperature range.			
+METPO:0000252	Salinity Adaptation	METPO:0001017	sensitivity toward NaCl	Salinity			A set of mechanisms that allows an organism to maintain homeostasis in environments with particular salt concentrations.			
+METPO:0000253	pH Adaptation	METPO:0001018	sensitivity toward pH	pH			A combination of cellular processes that permits survival and growth under specific hydrogen ion concentrations.			
+METPO:0000254	Oxygen Requirement	METPO:9999999	obsolete	Oxygen			The specific need for or tolerance of molecular oxygen that characterizes an organism's metabolic processes.			
+METPO:0000255	Carbon Source Utilization	GO:0008150	GO:0008150	Trophic type			The ability to assimilate and metabolize specific carbon-containing compounds for cellular growth and maintenance.			
+METPO:0000256	Energy Acquisition Mode	METPO:0001020	metabolic constraints	Trophic type			The mechanism by which an organism obtains energy for cellular activities and biosynthesis.			
+METPO:0000257	Electron Donor Type	METPO:0001020	metabolic constraints	Trophic type			The class of compounds or elements from which an organism extracts electrons for energy-generating reactions.			
+METPO:0000258	Motility Mechanism			Motility			The biochemical and mechanical processes that enable an organism to move through its environment.			
+METPO:0000259	Motility Structure	METPO:0001013	structure	Motility			A specialized cellular component that generates force or facilitates movement in microorganisms.			
+METPO:0000260	Bacterial Spore Type	METPO:0001014	spore type	Sporulation			A classification of resistant dormant structures produced by bacteria based on their formation and properties.			
+METPO:0000261	Fungal Spore Type	METPO:0001014	spore type	Sporulation			A distinct category of reproductive or survival structures produced by fungi, characterized by specific morphology and function.			
+METPO:0000262	Reproductive Structure	METPO:0001013	structure	Sporulation			A specialized cellular formation that functions in the propagation of genetic material to produce new individuals.			
+METPO:0000263	Dormancy Structure	METPO:0001013	structure	Sporulation			A specialized cellular state or formation that enables survival during adverse environmental conditions with reduced metabolic activity.			
+METPO:0000264	Pressure Adaptation Type	METPO:0001016	sensitivity toward pressure	Pressure			A set of physiological and molecular mechanisms that enable survival under specific hydrostatic pressure conditions.			
+METPO:0000265	Pressure Tolerance Range	METPO:0001016	sensitivity toward pressure	Pressure			The span of hydrostatic pressures within which an organism can maintain viability and cellular functions.			
+METPO:0000266	Genomic Feature	METPO:9999999	obsolete	Measurable Property			A distinctive characteristic of an organism's genetic material related to its sequence, structure, or organization.			
+METPO:0000267	Cell Dimension	METPO:9999999	obsolete	Measurable Property			A measurable spatial attribute of a cell that describes its size in one or more directions.			
+METPO:0000268	Optimal Growth Parameter	METPO:9999999	obsolete	Environmental Parameter			The specific environmental condition at which an organism achieves its maximum growth rate or metabolic efficiency.			
+METPO:0000269	Growth Range Parameter	METPO:9999999	obsolete	Environmental Parameter			The span of environmental conditions within which an organism can sustain growth and reproduction.			
+METPO:0000270	Growth Tolerance Metric	METPO:9999999	obsolete	Environmental Parameter			A quantitative measure of an organism's ability to withstand variations in a specific environmental factor.			
+METPO:0000271	Cell Shape	PATO:0000051	PATO:0000051	Morphology			The three-dimensional geometric form of a microbial cell as determined by its cell wall and cytoskeletal structures.			
+METPO:0000272	Cell Arrangement	PATO:0000051	PATO:0000051	Morphology			The spatial organization of multiple cells in relation to each other following cell division.			
+METPO:0000273	Colony Morphology	PATO:0000051	PATO:0000051	Morphology			The macroscopic appearance and structure of a population of microorganisms growing on a solid medium.			
+METPO:0000274	Physical Property	METPO:9999999	obsolete	Top Level			A measurable attribute of matter or energy that can be quantified and observed independently of living systems.			
+METPO:0000275	Environmental Context	METPO:9999999	obsolete	Top Level			A set of interrelated external conditions that influence the growth, behavior, or survival of an organism.			
+METPO:0000276	Biological Property	METPO:9999999	obsolete	Top Level			An inherent characteristic of a living organism that contributes to its structure, function, or behavior at any level of organization.			
+METPO:0000277	Functional Classification	METPO:9999999	obsolete	Top Level			A systematic categorization of organisms based on their metabolic activities, energy utilization, or biochemical processes.			
+METPO:0000278	Classification Property	METPO:9999999	obsolete	Top Level			A distinctive characteristic used to organize organisms into taxonomic groups according to evolutionary relationships or shared traits.			
+METPO:0000279	METPO Biological Process	METPO:9999999	obsolete	Top Level			A sequence of molecular or cellular events that transforms biological materials, energy, or information to achieve a specific physiological outcome.			
+METPO:0000280	Measurable Property	METPO:9999999	obsolete	Top Level			A quantifiable attribute that can be determined through observation or experimentation with a defined unit of measurement.			
+METPO:0001000	sensitivity to oxygen	METPO:0001001	sensitivity toward							
+METPO:0001001	sensitivity toward	PATO:0001995	PATO:0001995							
+METPO:0001002	METPO organismal quality	METPO:9999999	obsolete							
+METPO:0001003	physicial object quality	METPO:9999999	obsolete							
+METPO:0001004	quality									
+METPO:0001006	size	PATO:0000051	PATO:0000051							
+METPO:0001007	1-D extent	METPO:0001006	size							
+METPO:0001008	width	METPO:0001007	1-D extent							
+METPO:0001009	length	METPO:0001007	1-D extent							
+METPO:0001010	METPO prokaryotic metabolically differentiated cell	METPO:9999999	obsolete							
+METPO:0001012	heterotrophy	GO:0008150	GO:0008150							
+METPO:0001013	structure									
+METPO:0001014	spore type									
+METPO:0001016	sensitivity toward pressure	sensitivity toward	sensitivity toward							
+METPO:0001017	sensitivity toward NaCl	METPO:0001001	sensitivity toward							
+METPO:0001018	sensitivity toward pH	METPO:0001001	sensitivity toward							
+METPO:0001019	sensitivity toward temperature	METPO:0001001	sensitivity toward							
+METPO:0001020	metabolic constraints									
+METPO:0001021	cell by chemical produced									
+METPO:9999999	obsolete									

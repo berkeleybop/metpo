@@ -31,16 +31,14 @@ import_group:
     - OMO:0002000 # defined by construct
   products:
     - id: bfo
-#    - id: go
     - id: obi
     - id: omp
     - id: pato
     - id: so
-#    - id: micro
-#      mirror_from: https://github.com/berkeleybop/metpo/raw/refs/heads/main/assets/MicrO-merged-issue-22-manual-fix.owl.gz
-#      use_gzipped: TRUE
+    - id: micro
+      mirror_type: custom
     - id: mpo
-      mirror_from: https://github.com/berkeleybop/metpo/raw/refs/heads/main/assets/mpo_v0.74.en_only.owl
+      mirror_type: custom
 use_dosdps: FALSE
 use_mappings: FALSE
 use_edit_file_imports: FALSE

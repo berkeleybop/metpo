@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                16a50e401298feb777dc11b4382f4596c3f116882f52f12512857b648a3f2455
+CONFIG_HASH=                f3af6e35a3485f4f88c25f13414e562a770c40911b4e3f8bdbd1218faa1f8a0d
 
 
 # ----------------------------------------
@@ -159,7 +159,7 @@ all_main: $(MAIN_FILES)
 # ----------------------------------------
 
 
-IMPORTS =  bfo obi omp pato so mpo
+IMPORTS =  bfo obi omp pato so micro mpo
 
 IMPORT_ROOTS =  $(IMPORTDIR)/merged_import
 IMPORT_OWL_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl)
@@ -488,11 +488,18 @@ mirror-so: | $(TMPDIR)
 	$(ROBOT) convert -i $(TMPDIR)/so-download.owl -o $(TMPDIR)/$@.owl
 
 
+## ONTOLOGY: micro
+.PHONY: mirror-micro
+.PRECIOUS: $(MIRRORDIR)/micro.owl
+$(MIRRORDIR)/micro.owl: 
+	echo "ERROR: You have configured your default mirror type to be custom; this behavior needs to be overwritten in metpo.Makefile!" && false
+
+
 ## ONTOLOGY: mpo
 .PHONY: mirror-mpo
 .PRECIOUS: $(MIRRORDIR)/mpo.owl
-mirror-mpo: | $(TMPDIR)
-	$(ROBOT) convert -I https://github.com/berkeleybop/metpo/raw/refs/heads/main/assets/mpo_v0.74.en_only.owl -o $(TMPDIR)/$@.owl
+$(MIRRORDIR)/mpo.owl: 
+	echo "ERROR: You have configured your default mirror type to be custom; this behavior needs to be overwritten in metpo.Makefile!" && false
 
 ALL_MIRRORS = $(patsubst %, $(MIRRORDIR)/%.owl, $(IMPORTS))
 MERGE_MIRRORS = true
