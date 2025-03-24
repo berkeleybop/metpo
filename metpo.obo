@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: https://w3id.org/metpo/metpo/releases/2025-03-22/metpo.owl
+data-version: https://w3id.org/metpo/metpo/releases/2025-03-24/metpo.owl
 idspace: dce http://purl.org/dc/elements/1.1/ 
 idspace: dcterms http://purl.org/dc/terms/ 
 idspace: foaf http://xmlns.com/foaf/0.1/ 
@@ -11,7 +11,7 @@ ontology: https://w3id.org/metpo/metpo.owl
 property_value: dcterms:description "None" xsd:string
 property_value: dcterms:license https://creativecommons.org/licenses/unspecified
 property_value: dcterms:title "METPO" xsd:string
-property_value: owl:versionInfo "2025-03-22" xsd:string
+property_value: owl:versionInfo "2025-03-24" xsd:string
 
 [Term]
 id: BFO:0000001
@@ -7785,6 +7785,23 @@ name: anatomical entity
 is_a: BFO:0000040 ! material entity
 
 [Term]
+id: UBERON:0002050
+name: embryonic structure
+is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0005423 ! developing anatomical structure
+intersection_of: UBERON:0000061 ! anatomical structure
+intersection_of: UBERON:0005423 ! developing anatomical structure
+intersection_of: BFO:0000050 UBERON:0000922 ! part of embryo
+intersection_of: BFO:0000050 UBERON:0000922 ! part of embryo
+relationship: BFO:0000050 UBERON:0000922 ! part of embryo
+
+[Term]
+id: UBERON:0005423
+name: developing anatomical structure
+is_a: UBERON:0000465 ! material anatomical entity
+relationship: RO:0002215 GO:0032502 ! capable of developmental process
+
+[Term]
 id: UBERON:0009953
 name: post-embryonic organism
 synonym: "postnatal organism" EXACT []
@@ -10037,7 +10054,7 @@ is_a: metpo:9999999 ! obsolete
 [Term]
 id: metpo:0000279
 name: METPO Biological Process
-def: "A sequence of molecular or cellular events that transforms biological materials, energy, or information to achieve a specific physiological outcome." []
+def: "A sequence of molecular or cellular events that transforms biological materials, energy, or information corresponding to a specific physiological, cellular, or environmental outcome." []
 is_a: metpo:9999999 ! obsolete
 
 [Term]
@@ -10045,6 +10062,26 @@ id: metpo:0000280
 name: Measurable Property
 def: "A quantifiable attribute that can be determined through observation or experimentation with a defined unit of measurement." []
 is_a: metpo:9999999 ! obsolete
+
+[Term]
+id: metpo:0000281
+name: Gram-stain negative
+def: "Morphology that is characterized by the inability to retain crystal violet dye during the Gram staining procedure due to a thin peptidoglycan layer and an outer membrane composed of lipopolysaccharides, resulting in the cells appearing red or pink when counterstained with safranin." []
+synonym: "G-" EXACT []
+synonym: "Gram reaction negative" EXACT []
+synonym: "Gram(−)" EXACT []
+synonym: "gram-negative" EXACT []
+is_a: PATO:0000051 ! morphology
+
+[Term]
+id: metpo:0000282
+name: Gram-stain positive
+def: "Morphology that is characterized by the ability to retain crystal violet dye during the Gram staining procedure due to a thick peptidoglycan layer in the cell wall, resulting in the cells appearing purple after staining." []
+synonym: "G+" EXACT []
+synonym: "Gram reaction positive" EXACT []
+synonym: "Gram(+)" EXACT []
+synonym: "gram-positive" EXACT []
+is_a: PATO:0000051 ! morphology
 
 [Term]
 id: metpo:0001000
@@ -10142,14 +10179,12 @@ is_a: RO:0002131 ! overlaps
 id: BFO:0000054
 name: realized in
 domain: BFO:0000017 ! realizable entity
-range: BFO:0000015 ! process
 inverse_of: BFO:0000055 ! realizes
 
 [Typedef]
 id: BFO:0000055
 name: realizes
 domain: BFO:0000015 ! process
-range: BFO:0000017 ! realizable entity
 
 [Typedef]
 id: BFO:0000056
@@ -10274,7 +10309,6 @@ id: MICRO:0001468
 name: has prokaryotic physiological quality
 domain: MICRO:0001541 ! prokaryotic physiologically differentiated cell
 range: MICRO:0000484 ! prokaryotic physiological quality
-is_transitive: true
 is_a: RO:0000086 ! has quality
 
 [Typedef]
@@ -10302,7 +10336,6 @@ id: MICRO:0001522
 name: is prokaryotic metabolic quality of
 domain: MICRO:0001488 ! prokaryotic metabolic quality
 range: MICRO:0001444 ! prokaryotic metabolically differentiated cell
-is_transitive: true
 is_a: RO:0000080 ! quality of
 
 [Typedef]
