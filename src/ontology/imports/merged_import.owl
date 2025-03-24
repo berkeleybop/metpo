@@ -7,8 +7,8 @@ Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
 
 
 Ontology(<https://w3id.org/metpo/metpo/imports/merged_import.owl>
-<https://w3id.org/metpo/metpo/releases/2025-03-22/imports/merged_import.owl>
-Annotation(owl:versionInfo "2025-03-22")
+<https://w3id.org/metpo/metpo/releases/2025-03-24/imports/merged_import.owl>
+Annotation(owl:versionInfo "2025-03-24")
 
 Declaration(Class(<http://purl.jp/bio/10/mpo#MPO_00000>))
 Declaration(Class(<http://purl.jp/bio/10/mpo#MPO_01000>))
@@ -1041,6 +1041,8 @@ Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_0000468>))
 Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_0000477>))
 Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_0000922>))
 Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_0001062>))
+Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_0002050>))
+Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_0005423>))
 Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_0009953>))
 Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_0010000>))
 Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_0034923>))
@@ -1271,13 +1273,11 @@ TransitiveObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000051>)
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/BFO_0000054> "realized in"@en)
 InverseObjectProperties(<http://purl.obolibrary.org/obo/BFO_0000054> <http://purl.obolibrary.org/obo/BFO_0000055>)
 ObjectPropertyDomain(<http://purl.obolibrary.org/obo/BFO_0000054> <http://purl.obolibrary.org/obo/BFO_0000017>)
-ObjectPropertyRange(<http://purl.obolibrary.org/obo/BFO_0000054> <http://purl.obolibrary.org/obo/BFO_0000015>)
 
 # Object Property: <http://purl.obolibrary.org/obo/BFO_0000055> (realizes)
 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/BFO_0000055> "realizes"@en)
 ObjectPropertyDomain(<http://purl.obolibrary.org/obo/BFO_0000055> <http://purl.obolibrary.org/obo/BFO_0000015>)
-ObjectPropertyRange(<http://purl.obolibrary.org/obo/BFO_0000055> <http://purl.obolibrary.org/obo/BFO_0000017>)
 
 # Object Property: <http://purl.obolibrary.org/obo/BFO_0000056> (participates in)
 
@@ -1412,7 +1412,6 @@ ObjectPropertyRange(<http://purl.obolibrary.org/obo/MICRO_0001467> <http://purl.
 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MICRO_0001468> "has prokaryotic physiological quality")
 SubObjectPropertyOf(<http://purl.obolibrary.org/obo/MICRO_0001468> <http://purl.obolibrary.org/obo/RO_0000086>)
-TransitiveObjectProperty(<http://purl.obolibrary.org/obo/MICRO_0001468>)
 ObjectPropertyDomain(<http://purl.obolibrary.org/obo/MICRO_0001468> <http://purl.obolibrary.org/obo/MICRO_0001541>)
 ObjectPropertyRange(<http://purl.obolibrary.org/obo/MICRO_0001468> <http://purl.obolibrary.org/obo/MICRO_0000484>)
 
@@ -1440,7 +1439,6 @@ ObjectPropertyRange(<http://purl.obolibrary.org/obo/MICRO_0001521> <http://purl.
 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MICRO_0001522> "is prokaryotic metabolic quality of")
 SubObjectPropertyOf(<http://purl.obolibrary.org/obo/MICRO_0001522> <http://purl.obolibrary.org/obo/RO_0000080>)
-TransitiveObjectProperty(<http://purl.obolibrary.org/obo/MICRO_0001522>)
 ObjectPropertyDomain(<http://purl.obolibrary.org/obo/MICRO_0001522> <http://purl.obolibrary.org/obo/MICRO_0001488>)
 ObjectPropertyRange(<http://purl.obolibrary.org/obo/MICRO_0001522> <http://purl.obolibrary.org/obo/MICRO_0001444>)
 
@@ -1826,7 +1824,7 @@ SubObjectPropertyOf(<http://purl.obolibrary.org/obo/RO_0002297> <http://purl.obo
 SubObjectPropertyOf(<http://purl.obolibrary.org/obo/RO_0002297> <http://purl.obolibrary.org/obo/RO_0002295>)
 InverseObjectProperties(<http://purl.obolibrary.org/obo/RO_0002297> <http://purl.obolibrary.org/obo/RO_0002354>)
 
-# Object Property: <http://purl.obolibrary.org/obo/RO_0002314> (inheres in part of)
+# Object Property: <http://purl.obolibrary.org/obo/RO_0002314> (characteristic of part of)
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/RO_0002314> "q characteristic of part of w if and only if there exists some p such that q inheres in p and p part of w.")
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/RO_0002314> "characteristic of part of"@en)
@@ -2687,8 +2685,6 @@ SubClassOf(<http://purl.obolibrary.org/obo/CHEBI_24431> <http://purl.obolibrary.
 # Class: <http://purl.obolibrary.org/obo/CHEBI_24432> (biological role)
 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/CHEBI_24432> "biological role")
-SubClassOf(<http://purl.obolibrary.org/obo/CHEBI_24432> <http://purl.obolibrary.org/obo/BFO_0000017>)
-SubClassOf(<http://purl.obolibrary.org/obo/CHEBI_24432> <http://purl.obolibrary.org/obo/BFO_0000020>)
 SubClassOf(<http://purl.obolibrary.org/obo/CHEBI_24432> <http://purl.obolibrary.org/obo/CHEBI_50906>)
 
 # Class: <http://purl.obolibrary.org/obo/CHEBI_24433> (group)
@@ -2933,8 +2929,6 @@ SubClassOf(<http://purl.obolibrary.org/obo/CHEBI_32988> <http://purl.obolibrary.
 # Class: <http://purl.obolibrary.org/obo/CHEBI_33232> (application)
 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/CHEBI_33232> "application")
-SubClassOf(<http://purl.obolibrary.org/obo/CHEBI_33232> <http://purl.obolibrary.org/obo/BFO_0000017>)
-SubClassOf(<http://purl.obolibrary.org/obo/CHEBI_33232> <http://purl.obolibrary.org/obo/BFO_0000020>)
 SubClassOf(<http://purl.obolibrary.org/obo/CHEBI_33232> <http://purl.obolibrary.org/obo/CHEBI_50906>)
 
 # Class: <http://purl.obolibrary.org/obo/CHEBI_33233> (fundamental particle)
@@ -3664,7 +3658,6 @@ SubClassOf(<http://purl.obolibrary.org/obo/CHEBI_50860> ObjectSomeValuesFrom(<ht
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/CHEBI_50906> "A role is particular behaviour which a material entity may exhibit.")
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/CHEBI_50906> "role")
 SubClassOf(<http://purl.obolibrary.org/obo/CHEBI_50906> <http://purl.obolibrary.org/obo/BFO_0000017>)
-SubClassOf(<http://purl.obolibrary.org/obo/CHEBI_50906> <http://purl.obolibrary.org/obo/BFO_0000020>)
 
 # Class: <http://purl.obolibrary.org/obo/CHEBI_50910> (neurotoxin)
 
@@ -3677,8 +3670,6 @@ SubClassOf(<http://purl.obolibrary.org/obo/CHEBI_50910> <http://purl.obolibrary.
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/CHEBI_51086> "A role played by the molecular entity or part thereof within a chemical context.")
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/CHEBI_51086> "chemical role")
-SubClassOf(<http://purl.obolibrary.org/obo/CHEBI_51086> <http://purl.obolibrary.org/obo/BFO_0000017>)
-SubClassOf(<http://purl.obolibrary.org/obo/CHEBI_51086> <http://purl.obolibrary.org/obo/BFO_0000020>)
 SubClassOf(<http://purl.obolibrary.org/obo/CHEBI_51086> <http://purl.obolibrary.org/obo/CHEBI_50906>)
 
 # Class: <http://purl.obolibrary.org/obo/CHEBI_51143> (nitrogen molecular entity)
@@ -9893,6 +9884,23 @@ SubClassOf(<http://purl.obolibrary.org/obo/UBERON_0000922> ObjectSomeValuesFrom(
 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/UBERON_0001062> "anatomical entity")
 SubClassOf(<http://purl.obolibrary.org/obo/UBERON_0001062> <http://purl.obolibrary.org/obo/BFO_0000040>)
+
+# Class: <http://purl.obolibrary.org/obo/UBERON_0002050> (embryonic structure)
+
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/UBERON_0002050> "embryonic structure")
+EquivalentClasses(<http://purl.obolibrary.org/obo/UBERON_0002050> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/UBERON_0000061> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000922>)))
+EquivalentClasses(<http://purl.obolibrary.org/obo/UBERON_0002050> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/UBERON_0005423> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000922>)))
+SubClassOf(<http://purl.obolibrary.org/obo/UBERON_0002050> <http://purl.obolibrary.org/obo/UBERON_0000061>)
+SubClassOf(<http://purl.obolibrary.org/obo/UBERON_0002050> <http://purl.obolibrary.org/obo/UBERON_0000465>)
+SubClassOf(<http://purl.obolibrary.org/obo/UBERON_0002050> <http://purl.obolibrary.org/obo/UBERON_0005423>)
+SubClassOf(<http://purl.obolibrary.org/obo/UBERON_0002050> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000922>))
+
+# Class: <http://purl.obolibrary.org/obo/UBERON_0005423> (developing anatomical structure)
+
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/UBERON_0005423> "developing anatomical structure")
+SubClassOf(<http://purl.obolibrary.org/obo/UBERON_0005423> <http://purl.obolibrary.org/obo/BFO_0000004>)
+SubClassOf(<http://purl.obolibrary.org/obo/UBERON_0005423> <http://purl.obolibrary.org/obo/UBERON_0000465>)
+SubClassOf(<http://purl.obolibrary.org/obo/UBERON_0005423> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002215> <http://purl.obolibrary.org/obo/GO_0032502>))
 
 # Class: <http://purl.obolibrary.org/obo/UBERON_0009953> (post-embryonic organism)
 

@@ -19,26 +19,29 @@ clean-templates:
 $(MIRRORDIR)/mpo.owl: ../../assets/mpo_v0.74.en_only.owl
 	cp $^ $@
 
-$(MIRRORDIR)/micro.owl: ../../assets/MicrO-2025-03-20-merged.owl.gz
-	gzip -dc $^ > $@
-	robot remove -i $@ --axioms equivalent -o micro_temp.owl
+$(MIRRORDIR)/micro.owl: ../../assets/MicrO-for-metpo.owl.gz
 	robot remove \
-	  --input micro_temp.owl \
-	  --term GO:0003674 \
-	  --term CHEBI:50906 \
-	  --select self \
-	  --axioms subclass \
-	  --signature true \
-	  --trim false \
-	  --output $@
-	robot remove \
-	  --input $@ \
-	  --term GO:0003824 \
-	  --term BFO:0000017 \
-	  --select self \
-	  --axioms subclass \
-	  --signature true \
-	  --trim false \
-	  --output micro_temp.owl
-	mv micro_temp.owl $@
-	rm -rf micro_temp.owl
+			-i $< \
+			--axioms equivalent \
+			--output $@
+
+# \
+#		remove \
+#			--term MICRO:0001468 \
+#			--term MICRO:0001522 \
+#			--axioms TransitiveObjectProperty \
+#		remove \
+#			--term GO:0003674 \
+#			--term CHEBI:50906 \
+#			--select self \
+#			--axioms subclass \
+#			--signature true \
+#			--trim false \
+#		remove \
+#			--term GO:0003824 \
+#			--term BFO:0000017 \
+#			--select self \
+#			--axioms subclass \
+#			--signature true \
+#			--trim false \
+#			--output $@

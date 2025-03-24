@@ -7,8 +7,8 @@ Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
 
 
 Ontology(<https://w3id.org/metpo/metpo/components/metpo_sheet.owl>
-<https://w3id.org/metpo/metpo/releases/2025-03-22/components/metpo_sheet.owl>
-Annotation(owl:versionInfo "2025-03-22")
+<https://w3id.org/metpo/metpo/releases/2025-03-24/components/metpo_sheet.owl>
+Annotation(owl:versionInfo "2025-03-24")
 
 Declaration(Class(<http://purl.obolibrary.org/obo/GO_0008150>))
 Declaration(Class(<http://purl.obolibrary.org/obo/MICRO_0001444>))
@@ -294,6 +294,8 @@ Declaration(Class(<https://w3id.org/metpo/0000277>))
 Declaration(Class(<https://w3id.org/metpo/0000278>))
 Declaration(Class(<https://w3id.org/metpo/0000279>))
 Declaration(Class(<https://w3id.org/metpo/0000280>))
+Declaration(Class(<https://w3id.org/metpo/0000281>))
+Declaration(Class(<https://w3id.org/metpo/0000282>))
 Declaration(Class(<https://w3id.org/metpo/0001000>))
 Declaration(Class(<https://w3id.org/metpo/0001001>))
 Declaration(Class(<https://w3id.org/metpo/0001006>))
@@ -2548,7 +2550,7 @@ SubClassOf(<https://w3id.org/metpo/0000278> <https://w3id.org/metpo/9999999>)
 
 # Class: <https://w3id.org/metpo/0000279> (METPO Biological Process)
 
-AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/0000279> "A sequence of molecular or cellular events that transforms biological materials, energy, or information to achieve a specific physiological outcome.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/0000279> "A sequence of molecular or cellular events that transforms biological materials, energy, or information corresponding to a specific physiological, cellular, or environmental outcome.")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/0000279> "METPO Biological Process")
 SubClassOf(<https://w3id.org/metpo/0000279> <https://w3id.org/metpo/9999999>)
 
@@ -2557,6 +2559,26 @@ SubClassOf(<https://w3id.org/metpo/0000279> <https://w3id.org/metpo/9999999>)
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/0000280> "A quantifiable attribute that can be determined through observation or experimentation with a defined unit of measurement.")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/0000280> "Measurable Property")
 SubClassOf(<https://w3id.org/metpo/0000280> <https://w3id.org/metpo/9999999>)
+
+# Class: <https://w3id.org/metpo/0000281> (Gram-stain negative)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/0000281> "Morphology that is characterized by the inability to retain crystal violet dye during the Gram staining procedure due to a thin peptidoglycan layer and an outer membrane composed of lipopolysaccharides, resulting in the cells appearing red or pink when counterstained with safranin.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/0000281> "G-")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/0000281> "Gram reaction negative")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/0000281> "Gram(−)")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/0000281> "gram-negative")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/0000281> "Gram-stain negative")
+SubClassOf(<https://w3id.org/metpo/0000281> <http://purl.obolibrary.org/obo/PATO_0000051>)
+
+# Class: <https://w3id.org/metpo/0000282> (Gram-stain positive)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/0000282> "Morphology that is characterized by the ability to retain crystal violet dye during the Gram staining procedure due to a thick peptidoglycan layer in the cell wall, resulting in the cells appearing purple after staining.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/0000282> "G+")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/0000282> "Gram reaction positive")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/0000282> "Gram(+)")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/0000282> "gram-positive")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/0000282> "Gram-stain positive")
+SubClassOf(<https://w3id.org/metpo/0000282> <http://purl.obolibrary.org/obo/PATO_0000051>)
 
 # Class: <https://w3id.org/metpo/0001000> (sensitivity to oxygen)
 

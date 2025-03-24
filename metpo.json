@@ -13,9 +13,9 @@
         "val" : "METPO"
       }, {
         "pred" : "http://www.w3.org/2002/07/owl#versionInfo",
-        "val" : "2025-03-22"
+        "val" : "2025-03-24"
       } ],
-      "version" : "https://w3id.org/metpo/metpo/releases/2025-03-22/metpo.json"
+      "version" : "https://w3id.org/metpo/metpo/releases/2025-03-24/metpo.json"
     },
     "nodes" : [ {
       "id" : "http://purl.jp/bio/10/mpo#MPO_00000",
@@ -7499,6 +7499,14 @@
       "lbl" : "anatomical entity",
       "type" : "CLASS"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/UBERON_0002050",
+      "lbl" : "embryonic structure",
+      "type" : "CLASS"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/UBERON_0005423",
+      "lbl" : "developing anatomical structure",
+      "type" : "CLASS"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/UBERON_0009953",
       "lbl" : "post-embryonic organism",
       "type" : "CLASS",
@@ -11946,7 +11954,7 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A sequence of molecular or cellular events that transforms biological materials, energy, or information to achieve a specific physiological outcome."
+          "val" : "A sequence of molecular or cellular events that transforms biological materials, energy, or information corresponding to a specific physiological, cellular, or environmental outcome."
         }
       }
     }, {
@@ -11957,6 +11965,50 @@
         "definition" : {
           "val" : "A quantifiable attribute that can be determined through observation or experimentation with a defined unit of measurement."
         }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/0000281",
+      "lbl" : "Gram-stain negative",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "Morphology that is characterized by the inability to retain crystal violet dye during the Gram staining procedure due to a thin peptidoglycan layer and an outer membrane composed of lipopolysaccharides, resulting in the cells appearing red or pink when counterstained with safranin."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "G-"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Gram reaction negative"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Gram(−)"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "gram-negative"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/0000282",
+      "lbl" : "Gram-stain positive",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "Morphology that is characterized by the ability to retain crystal violet dye during the Gram staining procedure due to a thick peptidoglycan layer in the cell wall, resulting in the cells appearing purple after staining."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "G+"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Gram reaction positive"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Gram(+)"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "gram-positive"
+        } ]
       }
     }, {
       "id" : "https://w3id.org/metpo/0001000",
@@ -21514,6 +21566,26 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/BFO_0000040"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/UBERON_0002050",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/UBERON_0000061"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/UBERON_0002050",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/UBERON_0005423"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/UBERON_0002050",
+      "pred" : "http://purl.obolibrary.org/obo/BFO_0000050",
+      "obj" : "http://purl.obolibrary.org/obo/UBERON_0000922"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/UBERON_0005423",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/UBERON_0000465"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/UBERON_0005423",
+      "pred" : "http://purl.obolibrary.org/obo/RO_0002215",
+      "obj" : "http://purl.obolibrary.org/obo/GO_0032502"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/UBERON_0009953",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/UBERON_0000468"
@@ -22649,6 +22721,14 @@
       "sub" : "https://w3id.org/metpo/0000280",
       "pred" : "is_a",
       "obj" : "https://w3id.org/metpo/9999999"
+    }, {
+      "sub" : "https://w3id.org/metpo/0000281",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0000051"
+    }, {
+      "sub" : "https://w3id.org/metpo/0000282",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0000051"
     }, {
       "sub" : "https://w3id.org/metpo/0001000",
       "pred" : "is_a",
@@ -26121,6 +26201,20 @@
         "fillerId" : "http://purl.obolibrary.org/obo/UBERON_0000068"
       } ]
     }, {
+      "definedClassId" : "http://purl.obolibrary.org/obo/UBERON_0002050",
+      "genusIds" : [ "http://purl.obolibrary.org/obo/UBERON_0000061" ],
+      "restrictions" : [ {
+        "propertyId" : "http://purl.obolibrary.org/obo/BFO_0000050",
+        "fillerId" : "http://purl.obolibrary.org/obo/UBERON_0000922"
+      } ]
+    }, {
+      "definedClassId" : "http://purl.obolibrary.org/obo/UBERON_0002050",
+      "genusIds" : [ "http://purl.obolibrary.org/obo/UBERON_0005423" ],
+      "restrictions" : [ {
+        "propertyId" : "http://purl.obolibrary.org/obo/BFO_0000050",
+        "fillerId" : "http://purl.obolibrary.org/obo/UBERON_0000922"
+      } ]
+    }, {
       "definedClassId" : "http://purl.obolibrary.org/obo/UBERON_0009953",
       "genusIds" : [ "http://purl.obolibrary.org/obo/UBERON_0000468" ],
       "restrictions" : [ {
@@ -26278,12 +26372,10 @@
       } ]
     }, {
       "predicateId" : "http://purl.obolibrary.org/obo/BFO_0000054",
-      "domainClassIds" : [ "http://purl.obolibrary.org/obo/BFO_0000017" ],
-      "rangeClassIds" : [ "http://purl.obolibrary.org/obo/BFO_0000015" ]
+      "domainClassIds" : [ "http://purl.obolibrary.org/obo/BFO_0000017" ]
     }, {
       "predicateId" : "http://purl.obolibrary.org/obo/BFO_0000055",
-      "domainClassIds" : [ "http://purl.obolibrary.org/obo/BFO_0000015" ],
-      "rangeClassIds" : [ "http://purl.obolibrary.org/obo/BFO_0000017" ]
+      "domainClassIds" : [ "http://purl.obolibrary.org/obo/BFO_0000015" ]
     }, {
       "predicateId" : "http://purl.obolibrary.org/obo/BFO_0000062",
       "domainClassIds" : [ "http://purl.obolibrary.org/obo/BFO_0000003" ],
