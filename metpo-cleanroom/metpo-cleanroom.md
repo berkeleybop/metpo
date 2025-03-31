@@ -3,6 +3,9 @@ Clarify the purpose of the various input ontologies
     - restore METPO numerical ranges! As a datatype property?
 - text mining (with lots of synonyms)
 
+How is/could METPO be related to KG-Microbe or pother resources?
+- Putting microbe instances into a graph embedding for question answering
+
 Questions:
 
 - where are the links between N4L phenotypes and N4L taxa?
@@ -11,6 +14,15 @@ Questions:
 - go back to numerical CURIes
 - recreate ROBOT template in Google Sheet?
 - infer inter-class axioms?
+
+
+```sql
+http://doi.org/10.1601/FlagellaDistribution
+http://doi.org/10.1601/FlagellaFeature
+http://doi.org/10.1601/FlagellaObservation
+http://doi.org/10.1601/FlagellaOrdinal
+http://doi.org/10.1601/Flagellation
+```
 
 Notes
 

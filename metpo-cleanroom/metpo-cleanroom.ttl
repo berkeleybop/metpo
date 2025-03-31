@@ -5170,7 +5170,14 @@ mc:microaerophile rdf:type owl:Class ;
                   oio:hasExactSynonym "microaerophile" ;
                   oio:hasRelatedSynonym "microaerophiles" ,
                                         "microaerophilic" ;
+                  rdfs:comment "C. jejuni grows best under low oxygen conditions. For example, the CDC notes it “grows best in a low oxygen or microaerophilic environment, such as an atmosphere of 5% O₂, 10% CO₂, and 85% N₂.”​" ,
+                               "C. jejuni is described as “a microaerophilic, fastidious bacterium”" ,
+                               "H. pylori is likewise known to be microaerophilic – “it requires oxygen, but at lower concentration than in the atmosphere”​" ,
+                               "Helicobacter pylori, a stomach bacterium, thrives only when oxygen levels are limited. Medical sources consistently describe H. pylori as “a gram-negative, microaerophilic bacterium”" ,
+                               "In laboratory practice, H. pylori must be cultured under microaerobic conditions, which reflects its microaerophilic behavior. Research has noted that H. pylori is “highly susceptible to atmospheric O₂ tension” and is “generally cultured under microaerobic conditions (e.g. in a GasPak jar or CO₂ incubator) to achieve adequate growth”" ,
+                               "Microaerophiles are organisms that require oxygen for growth, but only at sub-atmospheric levels (typically about 2–10% O₂, much lower than the ~21% in normal air)​" ;
                   rdfs:label "microaerophile" ;
+                  rdfs:seeAlso <http://doi.org/10.1601/Microaerophilic> ;
                   skos:example "Campylobacter jejuni" ,
                                "Helicobacter pylori" .
 
@@ -5193,6 +5200,69 @@ mc:microaerophile rdf:type owl:Class ;
    owl:annotatedProperty oio:hasRelatedSynonym ;
    owl:annotatedTarget "microaerophilic" ;
    mc:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource mc:microaerophile ;
+   owl:annotatedProperty rdfs:comment ;
+   owl:annotatedTarget "C. jejuni grows best under low oxygen conditions. For example, the CDC notes it “grows best in a low oxygen or microaerophilic environment, such as an atmosphere of 5% O₂, 10% CO₂, and 85% N₂.”​" ;
+   rdfs:seeAlso <https://wwwnc.cdc.gov/eid/article/5/1/99-0104_article#:~:text=temperature%20of%20the%20chicken%20,to%20freezing%2C%20drying%2C%20acidic%20conditions>
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource mc:microaerophile ;
+   owl:annotatedProperty rdfs:comment ;
+   owl:annotatedTarget "C. jejuni is described as “a microaerophilic, fastidious bacterium”" ;
+   rdfs:seeAlso <https://pmc.ncbi.nlm.nih.gov/articles/PMC4518328/#:~:text=Campylobacter%20jejuni%20is%20one%20of,Particularly%2C%20this%20microaerophilic%20foodborne>
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource mc:microaerophile ;
+   owl:annotatedProperty rdfs:comment ;
+   owl:annotatedTarget "H. pylori is likewise known to be microaerophilic – “it requires oxygen, but at lower concentration than in the atmosphere”​" ;
+   rdfs:seeAlso <https://en.wikipedia.org/wiki/Helicobacter_pylori#:~:text=Helicobacter%20pylori%20is%20microaerophilic%20,29>
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource mc:microaerophile ;
+   owl:annotatedProperty rdfs:comment ;
+   owl:annotatedTarget "Helicobacter pylori, a stomach bacterium, thrives only when oxygen levels are limited. Medical sources consistently describe H. pylori as “a gram-negative, microaerophilic bacterium”" ;
+   rdfs:seeAlso "https://www.ncbi.nlm.nih.gov/books/NBK534233/#:~:text=H.%20pylori%20is%20a%20gram,activity%20describes%20the%20evaluation%20and"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource mc:microaerophile ;
+   owl:annotatedProperty rdfs:comment ;
+   owl:annotatedTarget "In laboratory practice, H. pylori must be cultured under microaerobic conditions, which reflects its microaerophilic behavior. Research has noted that H. pylori is “highly susceptible to atmospheric O₂ tension” and is “generally cultured under microaerobic conditions (e.g. in a GasPak jar or CO₂ incubator) to achieve adequate growth”" ;
+   rdfs:seeAlso <https://bmcmicrobiol.biomedcentral.com/articles/10.1186/1471-2180-11-96>
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource mc:microaerophile ;
+   owl:annotatedProperty rdfs:comment ;
+   owl:annotatedTarget "Microaerophiles are organisms that require oxygen for growth, but only at sub-atmospheric levels (typically about 2–10% O₂, much lower than the ~21% in normal air)​" ;
+   rdfs:seeAlso <https://bmcmicrobiol.biomedcentral.com/articles/10.1186/1471-2180-11-96>
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource mc:microaerophile ;
+   owl:annotatedProperty rdfs:seeAlso ;
+   owl:annotatedTarget <http://doi.org/10.1601/Microaerophilic> ;
+   rdfs:comment "microaerophile from Names for Life aka N4L"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource mc:microaerophile ;
+   owl:annotatedProperty skos:example ;
+   owl:annotatedTarget "Campylobacter jejuni" ;
+   rdfs:seeAlso <https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=197>
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource mc:microaerophile ;
+   owl:annotatedProperty skos:example ;
+   owl:annotatedTarget "Helicobacter pylori" ;
+   rdfs:seeAlso <https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=210>
  ] .
 
 
