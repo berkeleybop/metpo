@@ -1,0 +1,5811 @@
+@prefix ex: <http://example.org/sonnet#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#> .
+@base <http://www.w3.org/2002/07/owl#> .
+
+[ rdf:type owl:Ontology
+ ] .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://example.org/sonnet#linguistic_role
+ex:linguistic_role rdf:type owl:AnnotationProperty .
+
+
+###  http://www.geneontology.org/formats/oboInOwl#hasExactSynonym
+oboInOwl:hasExactSynonym rdf:type owl:AnnotationProperty .
+
+
+###  http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym
+oboInOwl:hasRelatedSynonym rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+ex:CRISPR oboInOwl:hasExactSynonym "CRISPR" ,
+                                   "Clustered Regularly Interspaced Short Palindromic Repeats" ;
+          oboInOwl:hasRelatedSynonym "CRISPRs" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:CRISPR ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "CRISPR" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:CRISPR ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "Clustered Regularly Interspaced Short Palindromic Repeats" ;
+   ex:linguistic_role "full_name"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:CRISPR ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "CRISPRs" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:S_layer oboInOwl:hasExactSynonym "S-layer" ;
+           oboInOwl:hasRelatedSynonym "S-layer-containing" ,
+                                      "S-layers" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:S_layer ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "S-layer" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:S_layer ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "S-layer-containing" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:S_layer ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "S-layers" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:acid_fast oboInOwl:hasExactSynonym "acid-fast bacterium" ;
+             oboInOwl:hasRelatedSynonym "acid-fast" ,
+                                        "acid-fast bacteria" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:acid_fast ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "acid-fast bacteria" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:acid_fast ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "acid-fast bacterium" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:acid_fast ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "acid-fast" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:acidophile oboInOwl:hasExactSynonym "acidophile" ;
+              oboInOwl:hasRelatedSynonym "acidophiles" ,
+                                         "acidophilic" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:acidophile ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "acidophile" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:acidophile ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "acidophiles" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:acidophile ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "acidophilic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:active_transport oboInOwl:hasExactSynonym "active transport" ;
+                    oboInOwl:hasRelatedSynonym "actively transport" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:active_transport ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "active transport" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:active_transport ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "actively transport" ;
+   ex:linguistic_role "verb"
+ ] .
+
+
+ex:adaptation oboInOwl:hasExactSynonym "adaptation" ;
+              oboInOwl:hasRelatedSynonym "adapt" ,
+                                         "adaptations" ,
+                                         "adaptive" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:adaptation ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "adaptation" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:adaptation ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "adapt" ;
+   ex:linguistic_role "verb"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:adaptation ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "adaptations" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:adaptation ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "adaptive" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:adhesin oboInOwl:hasExactSynonym "adhesin" ;
+           oboInOwl:hasRelatedSynonym "adhesins" ,
+                                      "adhesive" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:adhesin ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "adhesin" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:adhesin ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "adhesins" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:adhesin ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "adhesive" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:aerobe oboInOwl:hasExactSynonym "aerobe" ;
+          oboInOwl:hasRelatedSynonym "aerobes" ,
+                                     "aerobic" ,
+                                     "aerobically" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:aerobe ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "aerobe" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:aerobe ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "aerobes" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:aerobe ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "aerobic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:aerobe ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "aerobically" ;
+   ex:linguistic_role "adverb"
+ ] .
+
+
+ex:aerobic_respiration oboInOwl:hasExactSynonym "aerobic respiration" ;
+                       oboInOwl:hasRelatedSynonym "aerobically respiring" ,
+                                                  "respire aerobically" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:aerobic_respiration ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "aerobic respiration" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:aerobic_respiration ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "aerobically respiring" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:aerobic_respiration ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "respire aerobically" ;
+   ex:linguistic_role "verb"
+ ] .
+
+
+ex:aerotolerant oboInOwl:hasExactSynonym "aerotolerant organism" ;
+                oboInOwl:hasRelatedSynonym "aerotolerant" ,
+                                           "aerotolerant organisms" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:aerotolerant ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "aerotolerant organism" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:aerotolerant ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "aerotolerant" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:aerotolerant ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "aerotolerant organisms" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:aggregate oboInOwl:hasExactSynonym "aggregate" ;
+             oboInOwl:hasRelatedSynonym "aggregate" ,
+                                        "aggregates" ,
+                                        "aggregating" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:aggregate ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "aggregate" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:aggregate ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "aggregate" ;
+   ex:linguistic_role "verb"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:aggregate ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "aggregates" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:aggregate ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "aggregating" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:akinete oboInOwl:hasExactSynonym "akinete" ;
+           oboInOwl:hasRelatedSynonym "akinetes" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:akinete ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "akinete" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:akinete ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "akinetes" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:alkaliphile oboInOwl:hasExactSynonym "alkaliphile" ;
+               oboInOwl:hasRelatedSynonym "alkaliphiles" ,
+                                          "alkaliphilic" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:alkaliphile ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "alkaliphile" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:alkaliphile ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "alkaliphiles" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:alkaliphile ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "alkaliphilic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:ammonification oboInOwl:hasExactSynonym "ammonification" ;
+                  oboInOwl:hasRelatedSynonym "ammonify" ,
+                                             "ammonifying" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:ammonification ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "ammonification" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:ammonification ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "ammonify" ;
+   ex:linguistic_role "verb"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:ammonification ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "ammonifying" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:amylolysis oboInOwl:hasExactSynonym "amylolysis" ;
+              oboInOwl:hasRelatedSynonym "amylolytic" ,
+                                         "hydrolyze starch" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:amylolysis ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "amylolysis" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:amylolysis ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "amylolytic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:amylolysis ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "hydrolyze starch" ;
+   ex:linguistic_role "verb"
+ ] .
+
+
+ex:anaerobe oboInOwl:hasExactSynonym "anaerobe" ;
+            oboInOwl:hasRelatedSynonym "anaerobes" ,
+                                       "anaerobic" ,
+                                       "anaerobically" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:anaerobe ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "anaerobe" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:anaerobe ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "anaerobes" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:anaerobe ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "anaerobic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:anaerobe ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "anaerobically" ;
+   ex:linguistic_role "adverb"
+ ] .
+
+
+ex:anaerobic_respiration oboInOwl:hasExactSynonym "anaerobic respiration" ;
+                         oboInOwl:hasRelatedSynonym "anaerobically respiring" ,
+                                                    "respire anaerobically" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:anaerobic_respiration ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "anaerobic respiration" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:anaerobic_respiration ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "anaerobically respiring" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:anaerobic_respiration ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "respire anaerobically" ;
+   ex:linguistic_role "verb"
+ ] .
+
+
+ex:anoxygenic_photosynthesis oboInOwl:hasExactSynonym "anoxygenic photosynthesis" ;
+                             oboInOwl:hasRelatedSynonym "anoxygenic photosynthetic" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:anoxygenic_photosynthesis ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "anoxygenic photosynthesis" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:anoxygenic_photosynthesis ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "anoxygenic photosynthetic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:antibiotic_production oboInOwl:hasExactSynonym "antibiotic production" ;
+                         oboInOwl:hasRelatedSynonym "antibiotic-producing" ,
+                                                    "produce antibiotics" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:antibiotic_production ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "antibiotic production" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:antibiotic_production ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "antibiotic-producing" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:antibiotic_production ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "produce antibiotics" ;
+   ex:linguistic_role "verb"
+ ] .
+
+
+ex:antibiotic_resistance oboInOwl:hasExactSynonym "antibiotic resistance" ;
+                         oboInOwl:hasRelatedSynonym "antibiotic-resistant" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:antibiotic_resistance ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "antibiotic resistance" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:antibiotic_resistance ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "antibiotic-resistant" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:antimicrobial_resistance oboInOwl:hasExactSynonym "antimicrobial resistance" ;
+                            oboInOwl:hasRelatedSynonym "AMR" ,
+                                                       "antimicrobial-resistant" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:antimicrobial_resistance ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "antimicrobial resistance" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:antimicrobial_resistance ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "AMR" ;
+   ex:linguistic_role "abbreviation"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:antimicrobial_resistance ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "antimicrobial-resistant" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:appendage oboInOwl:hasExactSynonym "appendage" ;
+             oboInOwl:hasRelatedSynonym "appendages" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:appendage ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "appendage" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:appendage ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "appendages" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:arthrospore oboInOwl:hasExactSynonym "arthrospore" ;
+               oboInOwl:hasRelatedSynonym "arthrospore-producing" ,
+                                          "arthrospores" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:arthrospore ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "arthrospore" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:arthrospore ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "arthrospore-producing" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:arthrospore ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "arthrospores" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:ascospore oboInOwl:hasExactSynonym "ascospore" ;
+             oboInOwl:hasRelatedSynonym "ascospore-producing" ,
+                                        "ascospores" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:ascospore ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "ascospore" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:ascospore ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "ascospore-producing" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:ascospore ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "ascospores" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:autotroph oboInOwl:hasExactSynonym "autotroph" ;
+             oboInOwl:hasRelatedSynonym "autotrophic" ,
+                                        "autotrophically" ,
+                                        "autotrophs" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:autotroph ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "autotroph" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:autotroph ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "autotrophic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:autotroph ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "autotrophically" ;
+   ex:linguistic_role "adverb"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:autotroph ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "autotrophs" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:auxotroph oboInOwl:hasExactSynonym "auxotroph" ;
+             oboInOwl:hasRelatedSynonym "auxotrophic" ,
+                                        "auxotrophs" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:auxotroph ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "auxotroph" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:auxotroph ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "auxotrophic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:auxotroph ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "auxotrophs" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:axial_filament oboInOwl:hasExactSynonym "axial filament" ;
+                  oboInOwl:hasRelatedSynonym "axial filaments" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:axial_filament ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "axial filament" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:axial_filament ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "axial filaments" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:bacillus oboInOwl:hasExactSynonym "bacillus" ;
+            oboInOwl:hasRelatedSynonym "bacillar" ,
+                                       "bacilli" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:bacillus ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "bacillus" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:bacillus ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "bacillar" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:bacillus ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "bacilli" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:barophile oboInOwl:hasExactSynonym "barophile" ;
+             oboInOwl:hasRelatedSynonym "barophiles" ,
+                                        "barophilic" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:barophile ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "barophile" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:barophile ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "barophiles" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:barophile ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "barophilic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:barotolerant oboInOwl:hasExactSynonym "barotolerant organism" ;
+                oboInOwl:hasRelatedSynonym "barotolerant" ,
+                                           "barotolerant organisms" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:barotolerant ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "barotolerant organism" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:barotolerant ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "barotolerant" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:barotolerant ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "barotolerant organisms" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:basidiospore oboInOwl:hasExactSynonym "basidiospore" ;
+                oboInOwl:hasRelatedSynonym "basidiospore-producing" ,
+                                           "basidiospores" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:basidiospore ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "basidiospore" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:basidiospore ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "basidiospore-producing" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:basidiospore ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "basidiospores" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:binary_fission oboInOwl:hasExactSynonym "binary fission" ;
+                  oboInOwl:hasRelatedSynonym "divide by binary fission" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:binary_fission ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "binary fission" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:binary_fission ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "divide by binary fission" ;
+   ex:linguistic_role "verb"
+ ] .
+
+
+ex:biofilm oboInOwl:hasExactSynonym "biofilm" ;
+           oboInOwl:hasRelatedSynonym "biofilm-forming" ,
+                                      "biofilms" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:biofilm ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "biofilm" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:biofilm ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "biofilm-forming" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:biofilm ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "biofilms" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:biofilm_formation oboInOwl:hasExactSynonym "biofilm formation" ;
+                     oboInOwl:hasRelatedSynonym "biofilm-forming" ,
+                                                "form biofilm" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:biofilm_formation ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "biofilm-forming" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:biofilm_formation ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "form biofilm" ;
+   ex:linguistic_role "verb"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:biofilm_formation ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "biofilm formation" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+
+ex:biogeochemical_cycling oboInOwl:hasExactSynonym "biogeochemical cycling" ;
+                          oboInOwl:hasRelatedSynonym "biogeochemical cycles" ,
+                                                     "cycle biogeochemically" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:biogeochemical_cycling ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "biogeochemical cycling" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:biogeochemical_cycling ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "biogeochemical cycles" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:biogeochemical_cycling ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "cycle biogeochemically" ;
+   ex:linguistic_role "verb"
+ ] .
+
+
+ex:bioluminescence oboInOwl:hasExactSynonym "bioluminescence" ;
+                   oboInOwl:hasRelatedSynonym "bioluminesce" ,
+                                              "bioluminescent" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:bioluminescence ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "bioluminescence" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:bioluminescence ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "bioluminesce" ;
+   ex:linguistic_role "verb"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:bioluminescence ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "bioluminescent" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:budding oboInOwl:hasExactSynonym "budding" ;
+           oboInOwl:hasRelatedSynonym "bud" ,
+                                      "budding" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:budding ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "budding" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:budding ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "bud" ;
+   ex:linguistic_role "verb"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:budding ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "budding" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:capnophile oboInOwl:hasExactSynonym "capnophile" ;
+              oboInOwl:hasRelatedSynonym "capnophiles" ,
+                                         "capnophilic" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:capnophile ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "capnophile" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:capnophile ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "capnophiles" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:capnophile ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "capnophilic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:capsule oboInOwl:hasExactSynonym "capsule" ;
+           oboInOwl:hasRelatedSynonym "capsulated/encapsulated" ,
+                                      "capsules" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:capsule ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "capsule" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:capsule ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "capsulated/encapsulated" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:capsule ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "capsules" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:carbon_fixation oboInOwl:hasExactSynonym "carbon fixation" ;
+                   oboInOwl:hasRelatedSynonym "carbon-fixing" ,
+                                              "fix carbon" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:carbon_fixation ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "carbon fixation" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:carbon_fixation ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "carbon-fixing" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:carbon_fixation ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "fix carbon" ;
+   ex:linguistic_role "verb"
+ ] .
+
+
+ex:carbon_source oboInOwl:hasExactSynonym "carbon source" ;
+                 oboInOwl:hasRelatedSynonym "carbon sources" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:carbon_source ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "carbon source" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:carbon_source ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "carbon sources" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:carboxydotroph oboInOwl:hasExactSynonym "carboxydotroph" ;
+                  oboInOwl:hasRelatedSynonym "carboxydotrophic" ,
+                                             "carboxydotrophs" ,
+                                             "carboxydrophile" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:carboxydotroph ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "carboxydotroph" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:carboxydotroph ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "carboxydotrophic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:carboxydotroph ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "carboxydotrophs" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:carboxydotroph ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "carboxydrophile" ;
+   ex:linguistic_role "synonym"
+ ] .
+
+
+ex:cell_arrangement oboInOwl:hasExactSynonym "cell arrangement" ;
+                    oboInOwl:hasRelatedSynonym "cell arrangements" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:cell_arrangement ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "cell arrangement" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:cell_arrangement ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "cell arrangements" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:cell_length_category oboInOwl:hasExactSynonym "cell length category" ;
+                        oboInOwl:hasRelatedSynonym "cell length categories" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:cell_length_category ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "cell length category" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:cell_length_category ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "cell length categories" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:cell_shape oboInOwl:hasExactSynonym "cell shape" ;
+              oboInOwl:hasRelatedSynonym "cell shapes" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:cell_shape ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "cell shape" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:cell_shape ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "cell shapes" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:cell_size oboInOwl:hasExactSynonym "cell size" ;
+             oboInOwl:hasRelatedSynonym "cell sizes" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:cell_size ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "cell size" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:cell_size ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "cell sizes" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:cell_width_category oboInOwl:hasExactSynonym "cell width category" ;
+                       oboInOwl:hasRelatedSynonym "cell width categories" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:cell_width_category ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "cell width category" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:cell_width_category ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "cell width categories" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:cellulolysis oboInOwl:hasExactSynonym "cellulolysis" ;
+                oboInOwl:hasRelatedSynonym "cellulolytic" ,
+                                           "hydrolyze cellulose" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:cellulolysis ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "cellulolysis" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:cellulolysis ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "cellulolytic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:cellulolysis ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "hydrolyze cellulose" ;
+   ex:linguistic_role "verb"
+ ] .
+
+
+ex:chemoautotroph oboInOwl:hasExactSynonym "chemoautotroph" ;
+                  oboInOwl:hasRelatedSynonym "chemoautotrophic" ,
+                                             "chemoautotrophically" ,
+                                             "chemoautotrophs" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:chemoautotroph ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "chemoautotroph" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:chemoautotroph ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "chemoautotrophic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:chemoautotroph ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "chemoautotrophically" ;
+   ex:linguistic_role "adverb"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:chemoautotroph ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "chemoautotrophs" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:chemoheterotroph oboInOwl:hasExactSynonym "chemoheterotroph" ;
+                    oboInOwl:hasRelatedSynonym "chemoheterotrophic" ,
+                                               "chemoheterotrophically" ,
+                                               "chemoheterotrophs" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:chemoheterotroph ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "chemoheterotroph" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:chemoheterotroph ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "chemoheterotrophic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:chemoheterotroph ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "chemoheterotrophically" ;
+   ex:linguistic_role "adverb"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:chemoheterotroph ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "chemoheterotrophs" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:chemotaxis oboInOwl:hasExactSynonym "chemotaxis" ;
+              oboInOwl:hasRelatedSynonym "chemotactic" ,
+                                         "respond chemotactically" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:chemotaxis ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "chemotaxis" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:chemotaxis ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "chemotactic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:chemotaxis ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "respond chemotactically" ;
+   ex:linguistic_role "verb"
+ ] .
+
+
+ex:chlamydospore oboInOwl:hasExactSynonym "chlamydospore" ;
+                 oboInOwl:hasRelatedSynonym "chlamydospore-producing" ,
+                                            "chlamydospores" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:chlamydospore ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "chlamydospore" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:chlamydospore ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "chlamydospore-producing" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:chlamydospore ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "chlamydospores" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:class oboInOwl:hasExactSynonym "class" ;
+         oboInOwl:hasRelatedSynonym "classes" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:class ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "class" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:class ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "classes" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:coccus oboInOwl:hasExactSynonym "coccus" ;
+          oboInOwl:hasRelatedSynonym "coccal" ,
+                                     "cocci" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:coccus ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "coccus" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:coccus ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "coccal" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:coccus ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "cocci" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:cold_shock_protein oboInOwl:hasExactSynonym "cold shock protein" ;
+                      oboInOwl:hasRelatedSynonym "CSP" ,
+                                                 "cold shock proteins" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:cold_shock_protein ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "cold shock protein" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:cold_shock_protein ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "CSP" ;
+   ex:linguistic_role "abbreviation"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:cold_shock_protein ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "cold shock proteins" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:cold_shock_response oboInOwl:hasExactSynonym "cold shock response" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:cold_shock_response ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "cold shock response" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+
+ex:colonization oboInOwl:hasExactSynonym "colonization" ;
+                oboInOwl:hasRelatedSynonym "colonize" ,
+                                           "colonizing" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:colonization ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "colonization" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:colonization ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "colonize" ;
+   ex:linguistic_role "verb"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:colonization ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "colonizing" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:colony_elevation oboInOwl:hasExactSynonym "colony elevation" ;
+                    oboInOwl:hasRelatedSynonym "colony elevations" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:colony_elevation ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "colony elevation" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:colony_elevation ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "colony elevations" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:colony_margin oboInOwl:hasExactSynonym "colony margin" ;
+                 oboInOwl:hasRelatedSynonym "colony margins" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:colony_margin ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "colony margin" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:colony_margin ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "colony margins" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:colony_morphology oboInOwl:hasExactSynonym "colony morphology" ;
+                     oboInOwl:hasRelatedSynonym "colony morphologies" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:colony_morphology ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "colony morphology" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:colony_morphology ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "colony morphologies" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:colony_texture oboInOwl:hasExactSynonym "colony texture" ;
+                  oboInOwl:hasRelatedSynonym "colony textures" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:colony_texture ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "colony texture" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:colony_texture ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "colony textures" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:commensalism oboInOwl:hasExactSynonym "commensalism" ;
+                oboInOwl:hasRelatedSynonym "commensal" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:commensalism ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "commensalism" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:commensalism ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "commensal" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:compatible_solute oboInOwl:hasExactSynonym "compatible solute" ;
+                     oboInOwl:hasRelatedSynonym "compatible solutes" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:compatible_solute ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "compatible solute" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:compatible_solute ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "compatible solutes" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:competence oboInOwl:hasExactSynonym "competence" ;
+              oboInOwl:hasRelatedSynonym "competent" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:competence ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "competence" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:competence ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "competent" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:conidium oboInOwl:hasExactSynonym "conidium" ;
+            oboInOwl:hasRelatedSynonym "conidia" ,
+                                       "conidial" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:conidium ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "conidium" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:conidium ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "conidia" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:conidium ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "conidial" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:conjugation oboInOwl:hasExactSynonym "conjugation" ;
+               oboInOwl:hasRelatedSynonym "conjugate" ,
+                                          "conjugative" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:conjugation ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "conjugation" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:conjugation ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "conjugate" ;
+   ex:linguistic_role "verb"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:conjugation ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "conjugative" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:culturability oboInOwl:hasExactSynonym "culturability" ;
+                 oboInOwl:hasRelatedSynonym "culturable" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:culturability ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "culturability" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:culturability ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "culturable" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:cyst oboInOwl:hasExactSynonym "cyst" ;
+        oboInOwl:hasRelatedSynonym "cysts" ,
+                                   "encyst" ,
+                                   "encysted" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:cyst ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "cyst" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:cyst ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "cysts" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:cyst ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "encyst" ;
+   ex:linguistic_role "verb"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:cyst ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "encysted" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:death_phase oboInOwl:hasExactSynonym "death phase" ;
+               oboInOwl:hasRelatedSynonym "death phases" ,
+                                          "decline phase" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:death_phase ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "death phase" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:death_phase ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "death phases" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:death_phase ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "decline phase" ;
+   ex:linguistic_role "synonym"
+ ] .
+
+
+ex:denitrification oboInOwl:hasExactSynonym "denitrification" ;
+                   oboInOwl:hasRelatedSynonym "denitrify" ,
+                                              "denitrifying" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:denitrification ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "denitrification" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:denitrification ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "denitrify" ;
+   ex:linguistic_role "verb"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:denitrification ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "denitrifying" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:diazotroph oboInOwl:hasExactSynonym "diazotroph" ;
+              oboInOwl:hasRelatedSynonym "diazotrophic" ,
+                                         "diazotrophs" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:diazotroph ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "diazotroph" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:diazotroph ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "diazotrophic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:diazotroph ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "diazotrophs" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:differentiation oboInOwl:hasExactSynonym "differentiation" ;
+                   oboInOwl:hasRelatedSynonym "differentiate" ,
+                                              "differentiated" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:differentiation ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "differentiation" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:differentiation ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "differentiate" ;
+   ex:linguistic_role "verb"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:differentiation ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "differentiated" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:dimorphism oboInOwl:hasExactSynonym "dimorphism" ;
+              oboInOwl:hasRelatedSynonym "dimorphic" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:dimorphism ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "dimorphism" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:dimorphism ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "dimorphic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:disc_shaped_cell oboInOwl:hasExactSynonym "disc-shaped cell" ;
+                    oboInOwl:hasRelatedSynonym "disc-shaped" ,
+                                               "disc-shaped cells" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:disc_shaped_cell ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "disc-shaped cell" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:disc_shaped_cell ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "disc-shaped" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:disc_shaped_cell ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "disc-shaped cells" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:domain oboInOwl:hasExactSynonym "domain" ;
+          oboInOwl:hasRelatedSynonym "domains" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:domain ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "domain" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:domain ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "domains" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:dormancy oboInOwl:hasExactSynonym "dormancy" ;
+            oboInOwl:hasRelatedSynonym "dormant" ,
+                                       "enter dormancy" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:dormancy ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "dormancy" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:dormancy ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "dormant" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:dormancy ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "enter dormancy" ;
+   ex:linguistic_role "verb"
+ ] .
+
+
+ex:dumbbell_shaped_cell oboInOwl:hasExactSynonym "dumbbell-shaped cell" ;
+                        oboInOwl:hasRelatedSynonym "dumbbell-shaped" ,
+                                                   "dumbbell-shaped cells" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:dumbbell_shaped_cell ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "dumbbell-shaped cell" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:dumbbell_shaped_cell ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "dumbbell-shaped" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:dumbbell_shaped_cell ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "dumbbell-shaped cells" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:ecological_niche oboInOwl:hasExactSynonym "ecological niche" ;
+                    oboInOwl:hasRelatedSynonym "ecological niches" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:ecological_niche ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "ecological niche" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:ecological_niche ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "ecological niches" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:ectosymbiosis oboInOwl:hasExactSynonym "ectosymbiosis" ;
+                 oboInOwl:hasRelatedSynonym "ectosymbiotic" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:ectosymbiosis ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "ectosymbiosis" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:ectosymbiosis ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "ectosymbiotic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:electron_acceptor oboInOwl:hasExactSynonym "electron acceptor" ;
+                     oboInOwl:hasRelatedSynonym "electron acceptors" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:electron_acceptor ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "electron acceptor" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:electron_acceptor ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "electron acceptors" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:electron_donor oboInOwl:hasExactSynonym "electron donor" ;
+                  oboInOwl:hasRelatedSynonym "electron donors" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:electron_donor ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "electron donor" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:electron_donor ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "electron donors" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:endospore oboInOwl:hasExactSynonym "endospore" ;
+             oboInOwl:hasRelatedSynonym "endospore-forming" ,
+                                        "endospores" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:endospore ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "endospore" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:endospore ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "endospore-forming" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:endospore ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "endospores" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:endosymbiosis oboInOwl:hasExactSynonym "endosymbiosis" ;
+                 oboInOwl:hasRelatedSynonym "endosymbiotic" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:endosymbiosis ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "endosymbiosis" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:endosymbiosis ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "endosymbiotic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:enzyme_activity oboInOwl:hasExactSynonym "enzyme activity" ;
+                   oboInOwl:hasRelatedSynonym "enzyme activities" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:enzyme_activity ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "enzyme activity" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:enzyme_activity ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "enzyme activities" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:exospore oboInOwl:hasExactSynonym "exospore" ;
+            oboInOwl:hasRelatedSynonym "exospore-forming" ,
+                                       "exospores" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:exospore ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "exospore" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:exospore ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "exospore-forming" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:exospore ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "exospores" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:exponential_phase oboInOwl:hasExactSynonym "exponential phase" ;
+                     oboInOwl:hasRelatedSynonym "exponential phases" ,
+                                                "log phase" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:exponential_phase ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "exponential phase" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:exponential_phase ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "exponential phases" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:exponential_phase ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "log phase" ;
+   ex:linguistic_role "synonym"
+ ] .
+
+
+ex:extracellular oboInOwl:hasRelatedSynonym "extracellular" ,
+                                            "extracellularly" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:extracellular ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "extracellular" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:extracellular ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "extracellularly" ;
+   ex:linguistic_role "adverb"
+ ] .
+
+
+ex:extracellular_polysaccharide oboInOwl:hasExactSynonym "extracellular polysaccharide" ;
+                                oboInOwl:hasRelatedSynonym "EPS" ,
+                                                           "extracellular polysaccharides" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:extracellular_polysaccharide ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "extracellular polysaccharide" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:extracellular_polysaccharide ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "EPS" ;
+   ex:linguistic_role "abbreviation"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:extracellular_polysaccharide ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "extracellular polysaccharides" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:extreme_halophile oboInOwl:hasExactSynonym "extreme halophile" ;
+                     oboInOwl:hasRelatedSynonym "extreme halophiles" ,
+                                                "extremely halophilic" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:extreme_halophile ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "extreme halophile" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:extreme_halophile ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "extreme halophiles" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:extreme_halophile ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "extremely halophilic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:extremophile oboInOwl:hasExactSynonym "extremophile" ;
+                oboInOwl:hasRelatedSynonym "extremophiles" ,
+                                           "extremophilic" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:extremophile ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "extremophile" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:extremophile ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "extremophiles" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:extremophile ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "extremophilic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:facultative oboInOwl:hasRelatedSynonym "facultative" ,
+                                          "facultatively" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:facultative ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "facultative" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:facultative ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "facultatively" ;
+   ex:linguistic_role "adverb"
+ ] .
+
+
+ex:facultative_anaerobe oboInOwl:hasExactSynonym "facultative anaerobe" ;
+                        oboInOwl:hasRelatedSynonym "facultative anaerobes" ,
+                                                   "facultatively anaerobic" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:facultative_anaerobe ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "facultative anaerobe" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:facultative_anaerobe ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "facultative anaerobes" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:facultative_anaerobe ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "facultatively anaerobic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:family oboInOwl:hasExactSynonym "family" ;
+          oboInOwl:hasRelatedSynonym "families" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:family ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "family" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:family ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "families" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:fastidious oboInOwl:hasRelatedSynonym "fastidious" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:fastidious ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "fastidious" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:fermentation oboInOwl:hasExactSynonym "fermentation" ;
+                oboInOwl:hasRelatedSynonym "ferment" ,
+                                           "fermentative" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:fermentation ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "fermentation" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:fermentation ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "ferment" ;
+   ex:linguistic_role "verb"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:fermentation ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "fermentative" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:filamentous oboInOwl:hasExactSynonym "filament" ;
+               oboInOwl:hasRelatedSynonym "filamentous" ,
+                                          "filaments" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:filamentous ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "filament" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:filamentous ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "filamentous" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:filamentous ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "filaments" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:fimbriae oboInOwl:hasExactSynonym "fimbria" ;
+            oboInOwl:hasRelatedSynonym "fimbriae" ,
+                                       "fimbriated" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:fimbriae ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "fimbria" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:fimbriae ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "fimbriae" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:fimbriae ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "fimbriated" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:flagellum oboInOwl:hasExactSynonym "flagellum" ;
+             oboInOwl:hasRelatedSynonym "flagella" ,
+                                        "flagellated" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:flagellum ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "flagellum" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:flagellum ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "flagella" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:flagellum ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "flagellated" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:flask_shaped_cell oboInOwl:hasExactSynonym "flask-shaped cell" ;
+                     oboInOwl:hasRelatedSynonym "flask-shaped" ,
+                                                "flask-shaped cells" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:flask_shaped_cell ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "flask-shaped cell" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:flask_shaped_cell ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "flask-shaped" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:flask_shaped_cell ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "flask-shaped cells" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:gas_vesicle oboInOwl:hasExactSynonym "gas vesicle" ;
+               oboInOwl:hasRelatedSynonym "gas vesicles" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:gas_vesicle ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "gas vesicle" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:gas_vesicle ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "gas vesicles" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:gc_content oboInOwl:hasExactSynonym "GC content" ;
+              oboInOwl:hasRelatedSynonym "GC-rich/GC-poor" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:gc_content ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "GC content" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:gc_content ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "GC-rich/GC-poor" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:gc_content_high oboInOwl:hasExactSynonym "high GC content" ;
+                   oboInOwl:hasRelatedSynonym "high-GC" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:gc_content_high ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "high GC content" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:gc_content_high ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "high-GC" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:gc_content_low oboInOwl:hasExactSynonym "low GC content" ;
+                  oboInOwl:hasRelatedSynonym "low-GC" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:gc_content_low ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "low GC content" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:gc_content_low ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "low-GC" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:gc_content_mid1 oboInOwl:hasExactSynonym "lower-mid GC content" ;
+                   oboInOwl:hasRelatedSynonym "lower-mid-GC" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:gc_content_mid1 ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "lower-mid GC content" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:gc_content_mid1 ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "lower-mid-GC" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:gc_content_mid2 oboInOwl:hasExactSynonym "upper-mid GC content" ;
+                   oboInOwl:hasRelatedSynonym "upper-mid-GC" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:gc_content_mid2 ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "upper-mid GC content" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:gc_content_mid2 ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "upper-mid-GC" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:generation_time oboInOwl:hasExactSynonym "generation time" ;
+                   oboInOwl:hasRelatedSynonym "doubling time" ,
+                                              "generation times" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:generation_time ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "generation time" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:generation_time ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "doubling time" ;
+   ex:linguistic_role "synonym"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:generation_time ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "generation times" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:genome_size oboInOwl:hasExactSynonym "genome size" ;
+               oboInOwl:hasRelatedSynonym "genome sizes" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:genome_size ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "genome size" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:genome_size ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "genome sizes" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:genomic_island oboInOwl:hasExactSynonym "genomic island" ;
+                  oboInOwl:hasRelatedSynonym "GI" ,
+                                             "genomic islands" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:genomic_island ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "genomic island" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:genomic_island ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "GI" ;
+   ex:linguistic_role "abbreviation"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:genomic_island ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "genomic islands" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:genus oboInOwl:hasExactSynonym "genus" ;
+         oboInOwl:hasRelatedSynonym "genera" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:genus ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "genus" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:genus ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "genera" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:gliding_motility oboInOwl:hasExactSynonym "gliding motility" ;
+                    oboInOwl:hasRelatedSynonym "glide" ,
+                                               "gliding" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:gliding_motility ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "gliding motility" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:gliding_motility ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "glide" ;
+   ex:linguistic_role "verb"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:gliding_motility ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "gliding" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:global_regulator oboInOwl:hasExactSynonym "global regulator" ;
+                    oboInOwl:hasRelatedSynonym "global regulators" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:global_regulator ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "global regulator" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:global_regulator ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "global regulators" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:gram_negative oboInOwl:hasExactSynonym "Gram-negative bacterium" ;
+                 oboInOwl:hasRelatedSynonym "Gram-negative" ,
+                                            "Gram-negative bacteria" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:gram_negative ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "Gram-negative bacterium" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:gram_negative ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "Gram-negative" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:gram_negative ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "Gram-negative bacteria" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:gram_positive oboInOwl:hasExactSynonym "Gram-positive bacterium" ;
+                 oboInOwl:hasRelatedSynonym "Gram-positive" ,
+                                            "Gram-positive bacteria" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:gram_positive ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "Gram-positive bacterium" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:gram_positive ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "Gram-positive" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:gram_positive ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "Gram-positive bacteria" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:gram_stain oboInOwl:hasExactSynonym "Gram stain" ;
+              oboInOwl:hasRelatedSynonym "Gram stain" ,
+                                         "Gram stains" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:gram_stain ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "Gram stain" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:gram_stain ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "Gram stain" ;
+   ex:linguistic_role "verb"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:gram_stain ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "Gram stains" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:gram_stain_negative oboInOwl:hasExactSynonym "Gram-stain negative bacterium" ;
+                       oboInOwl:hasRelatedSynonym "G-" ,
+                                                  "Gram-stain negative" ,
+                                                  "Gram-stain negative bacteria" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:gram_stain_negative ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "Gram-stain negative bacterium" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:gram_stain_negative ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "G-" ;
+   ex:linguistic_role "abbreviation"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:gram_stain_negative ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "Gram-stain negative" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:gram_stain_negative ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "Gram-stain negative bacteria" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:gram_stain_positive oboInOwl:hasExactSynonym "Gram-stain positive bacterium" ;
+                       oboInOwl:hasRelatedSynonym "G+" ,
+                                                  "Gram-stain positive" ,
+                                                  "Gram-stain positive bacteria" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:gram_stain_positive ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "Gram-stain positive bacterium" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:gram_stain_positive ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "G+" ;
+   ex:linguistic_role "abbreviation"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:gram_stain_positive ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "Gram-stain positive" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:gram_stain_positive ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "Gram-stain positive bacteria" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:growth_rate oboInOwl:hasExactSynonym "growth rate" ;
+               oboInOwl:hasRelatedSynonym "growth rates" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:growth_rate ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "growth rate" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:growth_rate ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "growth rates" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:habitat oboInOwl:hasExactSynonym "habitat" ;
+           oboInOwl:hasRelatedSynonym "habitats" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:habitat ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "habitat" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:habitat ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "habitats" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:halophile oboInOwl:hasExactSynonym "halophile" ;
+             oboInOwl:hasRelatedSynonym "halophiles" ,
+                                        "halophilic" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:halophile ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "halophile" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:halophile ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "halophiles" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:halophile ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "halophilic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:halotolerant oboInOwl:hasExactSynonym "halotolerant organism" ;
+                oboInOwl:hasRelatedSynonym "halotolerant" ,
+                                           "halotolerant organisms" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:halotolerant ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "halotolerant organism" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:halotolerant ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "halotolerant" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:halotolerant ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "halotolerant organisms" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:heat_shock_protein oboInOwl:hasExactSynonym "heat shock protein" ;
+                      oboInOwl:hasRelatedSynonym "HSP" ,
+                                                 "heat shock proteins" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:heat_shock_protein ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "heat shock protein" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:heat_shock_protein ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "HSP" ;
+   ex:linguistic_role "abbreviation"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:heat_shock_protein ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "heat shock proteins" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:heat_shock_response oboInOwl:hasExactSynonym "heat shock response" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:heat_shock_response ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "heat shock response" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+
+ex:hemolysis oboInOwl:hasExactSynonym "hemolysis" ;
+             oboInOwl:hasRelatedSynonym "hemolytic" ,
+                                        "hemolyze" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:hemolysis ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "hemolysis" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:hemolysis ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "hemolytic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:hemolysis ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "hemolyze" ;
+   ex:linguistic_role "verb"
+ ] .
+
+
+ex:heterocyst oboInOwl:hasExactSynonym "heterocyst" ;
+              oboInOwl:hasRelatedSynonym "heterocystous" ,
+                                         "heterocysts" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:heterocyst ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "heterocyst" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:heterocyst ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "heterocystous" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:heterocyst ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "heterocysts" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:heterotroph oboInOwl:hasExactSynonym "heterotroph" ;
+               oboInOwl:hasRelatedSynonym "heterotrophic" ,
+                                          "heterotrophically" ,
+                                          "heterotrophs" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:heterotroph ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "heterotroph" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:heterotroph ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "heterotrophic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:heterotroph ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "heterotrophically" ;
+   ex:linguistic_role "adverb"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:heterotroph ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "heterotrophs" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:holdfast oboInOwl:hasExactSynonym "holdfast" ;
+            oboInOwl:hasRelatedSynonym "holdfasts" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:holdfast ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "holdfast" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:holdfast ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "holdfasts" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:horizontal_gene_transfer oboInOwl:hasExactSynonym "horizontal gene transfer" ;
+                            oboInOwl:hasRelatedSynonym "HGT" ,
+                                                       "lateral gene transfer (LGT)" ,
+                                                       "transfer horizontally" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:horizontal_gene_transfer ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "horizontal gene transfer" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:horizontal_gene_transfer ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "HGT" ;
+   ex:linguistic_role "abbreviation"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:horizontal_gene_transfer ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "lateral gene transfer (LGT)" ;
+   ex:linguistic_role "synonym"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:horizontal_gene_transfer ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "transfer horizontally" ;
+   ex:linguistic_role "verb"
+ ] .
+
+
+ex:hydrolase oboInOwl:hasExactSynonym "hydrolase" ;
+             oboInOwl:hasRelatedSynonym "hydrolases" ,
+                                        "hydrolytic" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:hydrolase ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "hydrolase" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:hydrolase ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "hydrolases" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:hydrolase ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "hydrolytic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:hyperthermophile oboInOwl:hasExactSynonym "hyperthermophile" ;
+                    oboInOwl:hasRelatedSynonym "hyperthermophiles" ,
+                                               "hyperthermophilic" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:hyperthermophile ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "hyperthermophile" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:hyperthermophile ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "hyperthermophiles" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:hyperthermophile ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "hyperthermophilic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:inclusion_body oboInOwl:hasExactSynonym "inclusion body" ;
+                  oboInOwl:hasRelatedSynonym "inclusion bodies" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:inclusion_body ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "inclusion body" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:inclusion_body ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "inclusion bodies" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:infection oboInOwl:hasExactSynonym "infection" ;
+             oboInOwl:hasRelatedSynonym "infect" ,
+                                        "infections" ,
+                                        "infectious" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:infection ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "infection" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:infection ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "infect" ;
+   ex:linguistic_role "verb"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:infection ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "infections" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:infection ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "infectious" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:intracellular oboInOwl:hasRelatedSynonym "intracellular" ,
+                                            "intracellularly" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:intracellular ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "intracellular" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:intracellular ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "intracellularly" ;
+   ex:linguistic_role "adverb"
+ ] .
+
+
+ex:invasion oboInOwl:hasExactSynonym "invasion" ;
+            oboInOwl:hasRelatedSynonym "invade" ,
+                                       "invasive" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:invasion ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "invasion" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:invasion ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "invade" ;
+   ex:linguistic_role "verb"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:invasion ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "invasive" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:lag_phase oboInOwl:hasExactSynonym "lag phase" ;
+             oboInOwl:hasRelatedSynonym "lag phases" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:lag_phase ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "lag phase" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:lag_phase ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "lag phases" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:life_cycle oboInOwl:hasExactSynonym "life cycle" ;
+              oboInOwl:hasRelatedSynonym "life cycles" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:life_cycle ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "life cycle" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:life_cycle ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "life cycles" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:lipolysis oboInOwl:hasExactSynonym "lipolysis" ;
+             oboInOwl:hasRelatedSynonym "hydrolyze lipids" ,
+                                        "lipolytic" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:lipolysis ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "lipolysis" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:lipolysis ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "hydrolyze lipids" ;
+   ex:linguistic_role "verb"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:lipolysis ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "lipolytic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:lipopolysaccharide oboInOwl:hasExactSynonym "lipopolysaccharide" ;
+                      oboInOwl:hasRelatedSynonym "LPS" ,
+                                                 "lipopolysaccharides" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:lipopolysaccharide ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "lipopolysaccharide" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:lipopolysaccharide ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "LPS" ;
+   ex:linguistic_role "abbreviation"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:lipopolysaccharide ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "lipopolysaccharides" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:lysogeny oboInOwl:hasExactSynonym "lysogeny" ;
+            oboInOwl:hasRelatedSynonym "lysogenic" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:lysogeny ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "lysogeny" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:lysogeny ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "lysogenic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:magnetotaxis oboInOwl:hasExactSynonym "magnetotaxis" ;
+                oboInOwl:hasRelatedSynonym "magnetotactic" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:magnetotaxis ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "magnetotaxis" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:magnetotaxis ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "magnetotactic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:mesophile oboInOwl:hasExactSynonym "mesophile" ;
+             oboInOwl:hasRelatedSynonym "mesophiles" ,
+                                        "mesophilic" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:mesophile ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "mesophile" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:mesophile ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "mesophiles" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:mesophile ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "mesophilic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:methanogenesis oboInOwl:hasExactSynonym "methanogenesis" ;
+                  oboInOwl:hasRelatedSynonym "methanogenic" ,
+                                             "produce methane" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:methanogenesis ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "methanogenesis" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:methanogenesis ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "methanogenic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:methanogenesis ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "produce methane" ;
+   ex:linguistic_role "verb"
+ ] .
+
+
+ex:methylation oboInOwl:hasExactSynonym "methylation" ;
+               oboInOwl:hasRelatedSynonym "methylate" ,
+                                          "methylated" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:methylation ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "methylation" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:methylation ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "methylate" ;
+   ex:linguistic_role "verb"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:methylation ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "methylated" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:microaerophile oboInOwl:hasExactSynonym "microaerophile" ;
+                  oboInOwl:hasRelatedSynonym "microaerophiles" ,
+                                             "microaerophilic" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:microaerophile ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "microaerophile" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:microaerophile ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "microaerophiles" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:microaerophile ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "microaerophilic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:mobile_genetic_element oboInOwl:hasExactSynonym "mobile genetic element" ;
+                          oboInOwl:hasRelatedSynonym "MGE" ,
+                                                     "mobile genetic elements" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:mobile_genetic_element ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "mobile genetic element" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:mobile_genetic_element ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "MGE" ;
+   ex:linguistic_role "abbreviation"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:mobile_genetic_element ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "mobile genetic elements" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:moderate_halophile oboInOwl:hasExactSynonym "moderate halophile" ;
+                      oboInOwl:hasRelatedSynonym "moderate halophiles" ,
+                                                 "moderately halophilic" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:moderate_halophile ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "moderate halophile" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:moderate_halophile ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "moderate halophiles" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:moderate_halophile ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "moderately halophilic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:mutualism oboInOwl:hasExactSynonym "mutualism" ;
+             oboInOwl:hasRelatedSynonym "mutualistic" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:mutualism ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "mutualism" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:mutualism ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "mutualistic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:mycolic_acid oboInOwl:hasExactSynonym "mycolic acid" ;
+                oboInOwl:hasRelatedSynonym "mycolic acid-containing" ,
+                                           "mycolic acids" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:mycolic_acid ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "mycolic acid" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:mycolic_acid ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "mycolic acid-containing" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:mycolic_acid ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "mycolic acids" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:mycorrhization oboInOwl:hasExactSynonym "mycorrhization" ;
+                  oboInOwl:hasRelatedSynonym "form mycorrhiza" ,
+                                             "mycorrhizal" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:mycorrhization ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "mycorrhization" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:mycorrhization ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "form mycorrhiza" ;
+   ex:linguistic_role "verb"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:mycorrhization ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "mycorrhizal" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:neutrophile oboInOwl:hasExactSynonym "neutrophile" ;
+               oboInOwl:hasRelatedSynonym "neutrophiles" ,
+                                          "neutrophilic" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:neutrophile ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "neutrophile" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:neutrophile ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "neutrophiles" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:neutrophile ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "neutrophilic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:nitrification oboInOwl:hasExactSynonym "nitrification" ;
+                 oboInOwl:hasRelatedSynonym "nitrify" ,
+                                            "nitrifying" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:nitrification ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "nitrification" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:nitrification ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "nitrify" ;
+   ex:linguistic_role "verb"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:nitrification ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "nitrifying" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:nitrogen_fixation oboInOwl:hasExactSynonym "nitrogen fixation" ;
+                     oboInOwl:hasRelatedSynonym "fix nitrogen" ,
+                                                "nitrogen-fixing" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:nitrogen_fixation ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "nitrogen fixation" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:nitrogen_fixation ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "fix nitrogen" ;
+   ex:linguistic_role "verb"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:nitrogen_fixation ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "nitrogen-fixing" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:nodulation oboInOwl:hasExactSynonym "nodulation" ;
+              oboInOwl:hasRelatedSynonym "nodulate" ,
+                                         "nodulating" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:nodulation ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "nodulation" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:nodulation ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "nodulate" ;
+   ex:linguistic_role "verb"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:nodulation ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "nodulating" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:nucleoid oboInOwl:hasExactSynonym "nucleoid" ;
+            oboInOwl:hasRelatedSynonym "nucleoid-associated" ,
+                                       "nucleoids" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:nucleoid ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "nucleoid" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:nucleoid ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "nucleoid-associated" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:nucleoid ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "nucleoids" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:obligate oboInOwl:hasRelatedSynonym "obligate" ,
+                                       "obligately" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:obligate ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "obligate" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:obligate ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "obligately" ;
+   ex:linguistic_role "adverb"
+ ] .
+
+
+ex:obligate_aerobe oboInOwl:hasExactSynonym "obligate aerobe" ;
+                   oboInOwl:hasRelatedSynonym "obligate aerobes" ,
+                                              "obligately aerobic" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:obligate_aerobe ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "obligate aerobe" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:obligate_aerobe ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "obligate aerobes" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:obligate_aerobe ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "obligately aerobic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:obligate_anaerobe oboInOwl:hasExactSynonym "obligate anaerobe" ;
+                     oboInOwl:hasRelatedSynonym "obligate anaerobes" ,
+                                                "obligately anaerobic" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:obligate_anaerobe ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "obligate anaerobe" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:obligate_anaerobe ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "obligate anaerobes" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:obligate_anaerobe ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "obligately anaerobic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:oospore oboInOwl:hasExactSynonym "oospore" ;
+           oboInOwl:hasRelatedSynonym "oospore-producing" ,
+                                      "oospores" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:oospore ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "oospore" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:oospore ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "oospore-producing" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:oospore ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "oospores" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:order oboInOwl:hasExactSynonym "order" ;
+         oboInOwl:hasRelatedSynonym "orders" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:order ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "order" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:order ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "orders" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:osmophile oboInOwl:hasExactSynonym "osmophile" ;
+             oboInOwl:hasRelatedSynonym "osmophiles" ,
+                                        "osmophilic" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:osmophile ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "osmophile" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:osmophile ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "osmophiles" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:osmophile ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "osmophilic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:osmoregulation oboInOwl:hasExactSynonym "osmoregulation" ;
+                  oboInOwl:hasRelatedSynonym "osmoregulate" ,
+                                             "osmoregulatory" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:osmoregulation ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "osmoregulation" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:osmoregulation ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "osmoregulate" ;
+   ex:linguistic_role "verb"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:osmoregulation ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "osmoregulatory" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:oxidative_stress_response oboInOwl:hasExactSynonym "oxidative stress response" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:oxidative_stress_response ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "oxidative stress response" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+
+ex:oxidoreductase oboInOwl:hasExactSynonym "oxidoreductase" ;
+                  oboInOwl:hasRelatedSynonym "oxidoreductases" ,
+                                             "oxidoreductive" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:oxidoreductase ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "oxidoreductase" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:oxidoreductase ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "oxidoreductases" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:oxidoreductase ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "oxidoreductive" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:oxygen_requirement oboInOwl:hasExactSynonym "oxygen requirement" ;
+                      oboInOwl:hasRelatedSynonym "oxygen requirements" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:oxygen_requirement ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "oxygen requirement" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:oxygen_requirement ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "oxygen requirements" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:oxygenic_photosynthesis oboInOwl:hasExactSynonym "oxygenic photosynthesis" ;
+                           oboInOwl:hasRelatedSynonym "oxygenic photosynthetic" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:oxygenic_photosynthesis ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "oxygenic photosynthesis" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:oxygenic_photosynthesis ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "oxygenic photosynthetic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:pH_optimum oboInOwl:hasExactSynonym "pH optimum" ;
+              oboInOwl:hasRelatedSynonym "pH optima" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:pH_optimum ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "pH optimum" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:pH_optimum ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "pH optima" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:pH_preference oboInOwl:hasExactSynonym "pH preference" ;
+                 oboInOwl:hasRelatedSynonym "pH preferences" ,
+                                            "pH-preferring" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:pH_preference ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "pH preference" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:pH_preference ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "pH preferences" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:pH_preference ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "pH-preferring" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:pH_range oboInOwl:hasExactSynonym "pH range" ;
+            oboInOwl:hasRelatedSynonym "pH ranges" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:pH_range ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "pH range" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:pH_range ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "pH ranges" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:pH_tolerance oboInOwl:hasExactSynonym "pH tolerance" ;
+                oboInOwl:hasRelatedSynonym "pH tolerances" ,
+                                           "pH-tolerant" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:pH_tolerance ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "pH tolerance" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:pH_tolerance ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "pH tolerances" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:pH_tolerance ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "pH-tolerant" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:pan_genome oboInOwl:hasExactSynonym "pan-genome" ;
+              oboInOwl:hasRelatedSynonym "pan-genomes" ,
+                                         "pan-genomic" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:pan_genome ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "pan-genome" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:pan_genome ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "pan-genomes" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:pan_genome ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "pan-genomic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:parasitism oboInOwl:hasExactSynonym "parasitism" ;
+              oboInOwl:hasRelatedSynonym "parasitic" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:parasitism ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "parasitism" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:parasitism ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "parasitic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:passive_transport oboInOwl:hasExactSynonym "passive transport" ;
+                     oboInOwl:hasRelatedSynonym "passively transport" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:passive_transport ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "passive transport" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:passive_transport ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "passively transport" ;
+   ex:linguistic_role "verb"
+ ] .
+
+
+ex:pathogenicity oboInOwl:hasExactSynonym "pathogenicity" ;
+                 oboInOwl:hasRelatedSynonym "pathogenic" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:pathogenicity ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "pathogenicity" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:pathogenicity ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "pathogenic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:pathogenicity_island oboInOwl:hasExactSynonym "pathogenicity island" ;
+                        oboInOwl:hasRelatedSynonym "PAI" ,
+                                                   "pathogenicity islands" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:pathogenicity_island ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "pathogenicity island" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:pathogenicity_island ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "PAI" ;
+   ex:linguistic_role "abbreviation"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:pathogenicity_island ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "pathogenicity islands" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:peptidoglycan oboInOwl:hasExactSynonym "peptidoglycan" ;
+                 oboInOwl:hasRelatedSynonym "peptidoglycan-containing" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:peptidoglycan ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "peptidoglycan" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:peptidoglycan ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "peptidoglycan-containing" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:ph_delta oboInOwl:hasExactSynonym "pH delta" ;
+            oboInOwl:hasRelatedSynonym "pH deltas" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:ph_delta ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "pH delta" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:ph_delta ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "pH deltas" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:photoautotroph oboInOwl:hasExactSynonym "photoautotroph" ;
+                  oboInOwl:hasRelatedSynonym "photoautotrophic" ,
+                                             "photoautotrophically" ,
+                                             "photoautotrophs" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:photoautotroph ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "photoautotroph" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:photoautotroph ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "photoautotrophic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:photoautotroph ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "photoautotrophically" ;
+   ex:linguistic_role "adverb"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:photoautotroph ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "photoautotrophs" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:photoheterotroph oboInOwl:hasExactSynonym "photoheterotroph" ;
+                    oboInOwl:hasRelatedSynonym "photoheterotrophic" ,
+                                               "photoheterotrophically" ,
+                                               "photoheterotrophs" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:photoheterotroph ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "photoheterotroph" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:photoheterotroph ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "photoheterotrophic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:photoheterotroph ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "photoheterotrophically" ;
+   ex:linguistic_role "adverb"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:photoheterotroph ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "photoheterotrophs" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:photosynthesis oboInOwl:hasExactSynonym "photosynthesis" ;
+                  oboInOwl:hasRelatedSynonym "photosynthesize" ,
+                                             "photosynthetic" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:photosynthesis ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "photosynthesis" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:photosynthesis ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "photosynthesize" ;
+   ex:linguistic_role "verb"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:photosynthesis ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "photosynthetic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:phototaxis oboInOwl:hasExactSynonym "phototaxis" ;
+              oboInOwl:hasRelatedSynonym "phototactic" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:phototaxis ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "phototaxis" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:phototaxis ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "phototactic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:phylum oboInOwl:hasExactSynonym "phylum" ;
+          oboInOwl:hasRelatedSynonym "phyla" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:phylum ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "phylum" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:phylum ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "phyla" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:piezophile oboInOwl:hasExactSynonym "piezophile" ;
+              oboInOwl:hasRelatedSynonym "piezophiles" ,
+                                         "piezophilic" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:piezophile ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "piezophile" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:piezophile ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "piezophiles" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:piezophile ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "piezophilic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:pigment oboInOwl:hasExactSynonym "pigment" ;
+           oboInOwl:hasRelatedSynonym "pigmented" ,
+                                      "pigments" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:pigment ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "pigment" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:pigment ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "pigmented" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:pigment ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "pigments" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:pigmentation oboInOwl:hasExactSynonym "pigmentation" ;
+                oboInOwl:hasRelatedSynonym "pigmented" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:pigmentation ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "pigmentation" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:pigmentation ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "pigmented" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:pilus oboInOwl:hasExactSynonym "pilus" ;
+         oboInOwl:hasRelatedSynonym "pili" ,
+                                    "piliated" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:pilus ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "pilus" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:pilus ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "pili" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:pilus ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "piliated" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:plant_growth_promotion oboInOwl:hasExactSynonym "plant growth promotion" ;
+                          oboInOwl:hasRelatedSynonym "PGP" ,
+                                                     "plant growth-promoting" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:plant_growth_promotion ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "plant growth promotion" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:plant_growth_promotion ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "PGP" ;
+   ex:linguistic_role "abbreviation"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:plant_growth_promotion ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "plant growth-promoting" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:plasmid oboInOwl:hasExactSynonym "plasmid" ;
+           oboInOwl:hasRelatedSynonym "plasmid-containing" ,
+                                      "plasmids" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:plasmid ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "plasmid" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:plasmid ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "plasmid-containing" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:plasmid ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "plasmids" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:pleomorphism oboInOwl:hasExactSynonym "pleomorphism" ;
+                oboInOwl:hasRelatedSynonym "pleomorphic" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:pleomorphism ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "pleomorphism" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:pleomorphism ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "pleomorphic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:prophage oboInOwl:hasExactSynonym "prophage" ;
+            oboInOwl:hasRelatedSynonym "prophage-containing" ,
+                                       "prophages" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:prophage ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "prophage" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:prophage ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "prophage-containing" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:prophage ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "prophages" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:prostheca oboInOwl:hasExactSynonym "prostheca" ;
+             oboInOwl:hasRelatedSynonym "prosthecae" ,
+                                        "prosthecate" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:prostheca ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "prostheca" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:prostheca ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "prosthecae" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:prostheca ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "prosthecate" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:proteolysis oboInOwl:hasExactSynonym "proteolysis" ;
+               oboInOwl:hasRelatedSynonym "hydrolyze proteins" ,
+                                          "proteolytic" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:proteolysis ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "proteolysis" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:proteolysis ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "hydrolyze proteins" ;
+   ex:linguistic_role "verb"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:proteolysis ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "proteolytic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:prototroph oboInOwl:hasExactSynonym "prototroph" ;
+              oboInOwl:hasRelatedSynonym "prototrophic" ,
+                                         "prototrophs" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:prototroph ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "prototroph" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:prototroph ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "prototrophic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:prototroph ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "prototrophs" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:psychrophile oboInOwl:hasExactSynonym "psychrophile" ;
+                oboInOwl:hasRelatedSynonym "psychrophiles" ,
+                                           "psychrophilic" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:psychrophile ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "psychrophile" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:psychrophile ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "psychrophiles" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:psychrophile ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "psychrophilic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:quorum_sensing oboInOwl:hasExactSynonym "quorum sensing" ;
+                  oboInOwl:hasRelatedSynonym "sense quorum" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:quorum_sensing ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "quorum sensing" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:quorum_sensing ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "sense quorum" ;
+   ex:linguistic_role "verb"
+ ] .
+
+
+ex:regulation oboInOwl:hasExactSynonym "regulation" ;
+              oboInOwl:hasRelatedSynonym "regulate" ,
+                                         "regulatory" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:regulation ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "regulation" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:regulation ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "regulate" ;
+   ex:linguistic_role "verb"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:regulation ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "regulatory" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:resistance_mechanism oboInOwl:hasExactSynonym "resistance mechanism" ;
+                        oboInOwl:hasRelatedSynonym "resistance mechanisms" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:resistance_mechanism ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "resistance mechanism" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:resistance_mechanism ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "resistance mechanisms" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:respiration oboInOwl:hasExactSynonym "respiration" ;
+               oboInOwl:hasRelatedSynonym "respiratory" ,
+                                          "respire" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:respiration ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "respiration" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:respiration ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "respiratory" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:respiration ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "respire" ;
+   ex:linguistic_role "verb"
+ ] .
+
+
+ex:restriction_modification oboInOwl:hasExactSynonym "restriction-modification system" ;
+                            oboInOwl:hasRelatedSynonym "R-M system" ,
+                                                       "restriction-modification systems" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:restriction_modification ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "restriction-modification system" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:restriction_modification ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "R-M system" ;
+   ex:linguistic_role "abbreviation"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:restriction_modification ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "restriction-modification systems" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:ribosome oboInOwl:hasExactSynonym "ribosome" ;
+            oboInOwl:hasRelatedSynonym "ribosomal" ,
+                                       "ribosomes" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:ribosome ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "ribosome" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:ribosome ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "ribosomal" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:ribosome ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "ribosomes" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:salinity_delta oboInOwl:hasExactSynonym "salinity delta" ;
+                  oboInOwl:hasRelatedSynonym "salinity deltas" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:salinity_delta ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "salinity delta" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:salinity_delta ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "salinity deltas" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:salinity_preference oboInOwl:hasExactSynonym "salinity preference" ;
+                       oboInOwl:hasRelatedSynonym "salinity preferences" ,
+                                                  "salinity-preferring" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:salinity_preference ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "salinity preference" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:salinity_preference ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "salinity preferences" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:salinity_preference ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "salinity-preferring" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:secondary_metabolite oboInOwl:hasExactSynonym "secondary metabolite" ;
+                        oboInOwl:hasRelatedSynonym "secondary metabolites" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:secondary_metabolite ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "secondary metabolite" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:secondary_metabolite ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "secondary metabolites" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:secretion oboInOwl:hasExactSynonym "secretion" ;
+             oboInOwl:hasRelatedSynonym "secrete" ,
+                                        "secretory" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:secretion ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "secretion" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:secretion ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "secrete" ;
+   ex:linguistic_role "verb"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:secretion ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "secretory" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:secretion_system oboInOwl:hasExactSynonym "secretion system" ;
+                    oboInOwl:hasRelatedSynonym "secretion systems" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:secretion_system ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "secretion system" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:secretion_system ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "secretion systems" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:sheathed oboInOwl:hasExactSynonym "sheath" ;
+            oboInOwl:hasRelatedSynonym "sheathed" ,
+                                       "sheaths" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:sheathed ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "sheath" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:sheathed ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "sheathed" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:sheathed ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "sheaths" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:siderophore oboInOwl:hasExactSynonym "siderophore" ;
+               oboInOwl:hasRelatedSynonym "siderophore-producing" ,
+                                          "siderophores" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:siderophore ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "siderophore" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:siderophore ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "siderophore-producing" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:siderophore ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "siderophores" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:sigma_factor oboInOwl:hasExactSynonym "sigma factor" ;
+                oboInOwl:hasRelatedSynonym "sigma factors" ,
+                                           "σ" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:sigma_factor ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "sigma factor" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:sigma_factor ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "sigma factors" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:sigma_factor ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "σ" ;
+   ex:linguistic_role "symbol"
+ ] .
+
+
+ex:slime_layer oboInOwl:hasExactSynonym "slime layer" ;
+               oboInOwl:hasRelatedSynonym "slime layers" ,
+                                          "slimy" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:slime_layer ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "slime layer" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:slime_layer ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "slime layers" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:slime_layer ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "slimy" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:species oboInOwl:hasExactSynonym "species" ;
+           oboInOwl:hasRelatedSynonym "species" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:species ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "species" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:species ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "species" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:spirillum oboInOwl:hasExactSynonym "spirillum" ;
+             oboInOwl:hasRelatedSynonym "spirilla" ,
+                                        "spirillar" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:spirillum ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "spirillum" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:spirillum ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "spirilla" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:spirillum ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "spirillar" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:spirochete oboInOwl:hasExactSynonym "spirochete" ;
+              oboInOwl:hasRelatedSynonym "spirochetal" ,
+                                         "spirochetes" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:spirochete ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "spirochete" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:spirochete ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "spirochetal" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:spirochete ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "spirochetes" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:sporangiospore oboInOwl:hasExactSynonym "sporangiospore" ;
+                  oboInOwl:hasRelatedSynonym "sporangiospore-producing" ,
+                                             "sporangiospores" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:sporangiospore ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "sporangiospore" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:sporangiospore ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "sporangiospore-producing" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:sporangiospore ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "sporangiospores" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:sporulation oboInOwl:hasExactSynonym "sporulation" ;
+               oboInOwl:hasRelatedSynonym "sporulate" ,
+                                          "sporulating" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:sporulation ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "sporulation" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:sporulation ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "sporulate" ;
+   ex:linguistic_role "verb"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:sporulation ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "sporulating" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:square_cell oboInOwl:hasExactSynonym "square cell" ;
+               oboInOwl:hasRelatedSynonym "square" ,
+                                          "square cells" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:square_cell ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "square cell" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:square_cell ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "square" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:square_cell ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "square cells" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:stalk oboInOwl:hasExactSynonym "stalk" ;
+         oboInOwl:hasRelatedSynonym "stalked" ,
+                                    "stalks" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:stalk ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "stalk" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:stalk ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "stalked" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:stalk ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "stalks" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:star_shaped_cell oboInOwl:hasExactSynonym "star-shaped cell" ;
+                    oboInOwl:hasRelatedSynonym "star-shaped" ,
+                                               "star-shaped cells" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:star_shaped_cell ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "star-shaped cell" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:star_shaped_cell ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "star-shaped" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:star_shaped_cell ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "star-shaped cells" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:stationary_phase oboInOwl:hasExactSynonym "stationary phase" ;
+                    oboInOwl:hasRelatedSynonym "stationary phases" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:stationary_phase ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "stationary phase" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:stationary_phase ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "stationary phases" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:strain oboInOwl:hasExactSynonym "strain" ;
+          oboInOwl:hasRelatedSynonym "strains" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:strain ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "strain" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:strain ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "strains" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:stress_response oboInOwl:hasExactSynonym "stress response" ;
+                   oboInOwl:hasRelatedSynonym "stress responses" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:stress_response ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "stress response" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:stress_response ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "stress responses" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:sulfate_reducer oboInOwl:hasExactSynonym "sulfate reducer" ;
+                   oboInOwl:hasRelatedSynonym "sulfate reducers" ,
+                                              "sulfate-reducing" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:sulfate_reducer ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "sulfate reducer" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:sulfate_reducer ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "sulfate reducers" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:sulfate_reducer ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "sulfate-reducing" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:swarming oboInOwl:hasExactSynonym "swarming" ;
+            oboInOwl:hasRelatedSynonym "swarm" ,
+                                       "swarming" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:swarming ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "swarming" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:swarming ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "swarm" ;
+   ex:linguistic_role "verb"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:swarming ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "swarming" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:symbiosis oboInOwl:hasExactSynonym "symbiosis" ;
+             oboInOwl:hasRelatedSynonym "symbioses" ,
+                                        "symbiotic" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:symbiosis ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "symbiosis" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:symbiosis ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "symbioses" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:symbiosis ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "symbiotic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:syntrophy oboInOwl:hasExactSynonym "syntrophy" ;
+             oboInOwl:hasRelatedSynonym "syntrophic" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:syntrophy ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "syntrophy" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:syntrophy ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "syntrophic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:teichoic_acid oboInOwl:hasExactSynonym "teichoic acid" ;
+                 oboInOwl:hasRelatedSynonym "teichoic acids" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:teichoic_acid ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "teichoic acid" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:teichoic_acid ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "teichoic acids" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:temperature_delta oboInOwl:hasExactSynonym "temperature delta" ;
+                     oboInOwl:hasRelatedSynonym "temperature deltas" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:temperature_delta ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "temperature delta" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:temperature_delta ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "temperature deltas" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:temperature_optimum oboInOwl:hasExactSynonym "temperature optimum" ;
+                       oboInOwl:hasRelatedSynonym "optimally-growing" ,
+                                                  "temperature optima" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:temperature_optimum ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "temperature optimum" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:temperature_optimum ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "optimally-growing" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:temperature_optimum ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "temperature optima" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:temperature_preference oboInOwl:hasExactSynonym "temperature preference" ;
+                          oboInOwl:hasRelatedSynonym "temperature preferences" ,
+                                                     "temperature-preferring" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:temperature_preference ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "temperature preference" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:temperature_preference ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "temperature preferences" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:temperature_preference ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "temperature-preferring" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:temperature_range oboInOwl:hasExactSynonym "temperature range" ;
+                     oboInOwl:hasRelatedSynonym "temperature ranges" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:temperature_range ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "temperature range" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:temperature_range ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "temperature ranges" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:thermal_tolerance oboInOwl:hasExactSynonym "thermal tolerance" ;
+                     oboInOwl:hasRelatedSynonym "thermal tolerances" ,
+                                                "thermally tolerant" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:thermal_tolerance ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "thermal tolerance" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:thermal_tolerance ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "thermal tolerances" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:thermal_tolerance ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "thermally tolerant" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:thermophile oboInOwl:hasExactSynonym "thermophile" ;
+               oboInOwl:hasRelatedSynonym "thermophiles" ,
+                                          "thermophilic" ,
+                                          "thermophilize" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:thermophile ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "thermophile" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:thermophile ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "thermophiles" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:thermophile ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "thermophilic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:thermophile ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "thermophilize" ;
+   ex:linguistic_role "verb"
+ ] .
+
+
+ex:toxin oboInOwl:hasExactSynonym "toxin" ;
+         oboInOwl:hasRelatedSynonym "toxic" ,
+                                    "toxins" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:toxin ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "toxin" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:toxin ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "toxic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:toxin ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "toxins" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:transduction oboInOwl:hasExactSynonym "transduction" ;
+                oboInOwl:hasRelatedSynonym "transduce" ,
+                                           "transductive" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:transduction ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "transduction" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:transduction ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "transduce" ;
+   ex:linguistic_role "verb"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:transduction ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "transductive" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:transferase oboInOwl:hasExactSynonym "transferase" ;
+               oboInOwl:hasRelatedSynonym "transferases" ,
+                                          "transferring" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:transferase ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "transferase" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:transferase ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "transferases" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:transferase ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "transferring" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:transformation oboInOwl:hasExactSynonym "transformation" ;
+                  oboInOwl:hasRelatedSynonym "transform" ,
+                                             "transformative" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:transformation ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "transformation" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:transformation ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "transform" ;
+   ex:linguistic_role "verb"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:transformation ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "transformative" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:transport_system oboInOwl:hasExactSynonym "transport system" ;
+                    oboInOwl:hasRelatedSynonym "transport systems" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:transport_system ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "transport system" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:transport_system ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "transport systems" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:transposon oboInOwl:hasExactSynonym "transposon" ;
+              oboInOwl:hasRelatedSynonym "transposons" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:transposon ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "transposon" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:transposon ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "transposons" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:triangular_cell oboInOwl:hasExactSynonym "triangular cell" ;
+                   oboInOwl:hasRelatedSynonym "triangular" ,
+                                              "triangular cells" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:triangular_cell ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "triangular cell" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:triangular_cell ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "triangular" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:triangular_cell ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "triangular cells" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:trichome oboInOwl:hasExactSynonym "trichome" ;
+            oboInOwl:hasRelatedSynonym "trichomes" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:trichome ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "trichome" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:trichome ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "trichomes" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:twitching_motility oboInOwl:hasExactSynonym "twitching motility" ;
+                      oboInOwl:hasRelatedSynonym "twitch" ,
+                                                 "twitching" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:twitching_motility ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "twitching motility" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:twitching_motility ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "twitch" ;
+   ex:linguistic_role "verb"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:twitching_motility ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "twitching" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:two_component_system oboInOwl:hasExactSynonym "two-component system" ;
+                        oboInOwl:hasRelatedSynonym "TCS" ,
+                                                   "two-component systems" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:two_component_system ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "two-component system" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:two_component_system ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "TCS" ;
+   ex:linguistic_role "abbreviation"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:two_component_system ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "two-component systems" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:viable_but_non_culturable oboInOwl:hasExactSynonym "viable but non-culturable state" ;
+                             oboInOwl:hasRelatedSynonym "VBNC" ,
+                                                        "non-culturable" ,
+                                                        "viable but non-culturable states" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:viable_but_non_culturable ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "viable but non-culturable state" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:viable_but_non_culturable ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "VBNC" ;
+   ex:linguistic_role "abbreviation"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:viable_but_non_culturable ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "non-culturable" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:viable_but_non_culturable ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "viable but non-culturable states" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:vibrio oboInOwl:hasExactSynonym "vibrio" ;
+          oboInOwl:hasRelatedSynonym "vibrioid" ,
+                                     "vibrios" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:vibrio ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "vibrio" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:vibrio ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "vibrioid" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:vibrio ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "vibrios" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:virulence oboInOwl:hasExactSynonym "virulence" ;
+             oboInOwl:hasRelatedSynonym "virulent" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:virulence ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "virulence" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:virulence ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "virulent" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:xylanolysis oboInOwl:hasExactSynonym "xylanolysis" ;
+               oboInOwl:hasRelatedSynonym "hydrolyze xylan" ,
+                                          "xylanolytic" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:xylanolysis ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "xylanolysis" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:xylanolysis ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "hydrolyze xylan" ;
+   ex:linguistic_role "verb"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:xylanolysis ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "xylanolytic" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+
+ex:zoospore oboInOwl:hasExactSynonym "zoospore" ;
+            oboInOwl:hasRelatedSynonym "zoospore-producing" ,
+                                       "zoospores" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:zoospore ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "zoospore" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:zoospore ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "zoospore-producing" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:zoospore ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "zoospores" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+ex:zygospore oboInOwl:hasExactSynonym "zygospore" ;
+             oboInOwl:hasRelatedSynonym "zygospore-producing" ,
+                                        "zygospores" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:zygospore ;
+   owl:annotatedProperty oboInOwl:hasExactSynonym ;
+   owl:annotatedTarget "zygospore" ;
+   ex:linguistic_role "noun_singular"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:zygospore ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "zygospore-producing" ;
+   ex:linguistic_role "adjective"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource ex:zygospore ;
+   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
+   owl:annotatedTarget "zygospores" ;
+   ex:linguistic_role "noun_plural"
+ ] .
+
+
+###  Generated by the OWL API (version 4.5.26) https://github.com/owlcs/owlapi
