@@ -3,13 +3,16 @@ Questions:
 - where are the links between N4L phenotypes and N4L taxa?
 - are there N4L/METPO classes that represent the same thing but are hard to lexmatch? "Flagellum feature" 
 - what proportion of lexmatch time is index building? esp for GO and OBA
+- go back to numerical CURIes
+- recreate ROBOT template in Google Sheet?
+- infer inter-class axioms?
 
 Notes
 
 - multiple asserted hierarchy
     - check biological veracity
     - use subsets when that would be purer or easier to define than class hierarchy
-- missing inter-class axioms
+
 
 Repeat lexmatch -> SSSOM TSV
 - 00 bacdive D3O file, esp distinguish questions from answers/values 320 KB. look for uncovered classes. roundtrip
