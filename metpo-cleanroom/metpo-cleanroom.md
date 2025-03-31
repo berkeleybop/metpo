@@ -1,3 +1,8 @@
+Clarify the purpose of the various input ontologies
+- reasoning/inference (including ove numerical ranges)
+    - restore METPO numerical ranges! As a datatype property?
+- text mining (with lots of synonyms)
+
 Questions:
 
 - where are the links between N4L phenotypes and N4L taxa?
