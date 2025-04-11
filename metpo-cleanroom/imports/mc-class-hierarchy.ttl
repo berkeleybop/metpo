@@ -1,0 +1,2101 @@
+@prefix ex: <http://example.org/sonnet#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.w3.org/2002/07/owl#> .
+
+[ rdf:type owl:Ontology
+ ] .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://example.org/sonnet#CRISPR
+ex:CRISPR rdf:type owl:Class ;
+          rdfs:subClassOf ex:adaptive_immunity ,
+                          ex:genetic_element ,
+                          ex:phage_defense ;
+          rdfs:label "CRISPR" .
+
+
+###  http://example.org/sonnet#S_layer
+ex:S_layer rdf:type owl:Class ;
+           rdfs:subClassOf ex:cell_envelope ,
+                           ex:cellular_component ;
+           rdfs:label "S-layer" .
+
+
+###  http://example.org/sonnet#acid_fast
+ex:acid_fast rdf:type owl:Class ;
+             rdfs:subClassOf ex:cell_wall_characteristic ,
+                             ex:diagnostic_feature ,
+                             ex:taxonomic_identifier ;
+             rdfs:label "acid-fast" .
+
+
+###  http://example.org/sonnet#acidophile
+ex:acidophile rdf:type owl:Class ;
+              rdfs:subClassOf ex:growth_conditions ,
+                              ex:physiological_trait ,
+                              ex:taxonomic_identifier ;
+              rdfs:label "acidophile" .
+
+
+###  http://example.org/sonnet#active_transport
+ex:active_transport rdf:type owl:Class ;
+                    rdfs:subClassOf ex:cellular_process ,
+                                    ex:physiological_process ;
+                    rdfs:label "active transport" .
+
+
+###  http://example.org/sonnet#adaptation
+ex:adaptation rdf:type owl:Class ;
+              rdfs:subClassOf ex:evolutionary_process ,
+                              ex:physiological_process ;
+              rdfs:label "adaptation" .
+
+
+###  http://example.org/sonnet#adaptive_immunity
+ex:adaptive_immunity rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#adaptive_trait
+ex:adaptive_trait rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#adhesin
+ex:adhesin rdf:type owl:Class ;
+           rdfs:subClassOf ex:cellular_component ,
+                           ex:virulence_factor ;
+           rdfs:label "adhesin" .
+
+
+###  http://example.org/sonnet#adhesion_structure
+ex:adhesion_structure rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#aerobe
+ex:aerobe rdf:type owl:Class ;
+          rdfs:subClassOf ex:growth_conditions ,
+                          ex:metabolic_trait ,
+                          ex:physiological_trait ;
+          rdfs:label "aerobe" .
+
+
+###  http://example.org/sonnet#aerobic_respiration
+ex:aerobic_respiration rdf:type owl:Class ;
+                       rdfs:subClassOf ex:energy_metabolism ,
+                                       ex:metabolic_trait ;
+                       rdfs:label "aerobic respiration" .
+
+
+###  http://example.org/sonnet#aerotolerant
+ex:aerotolerant rdf:type owl:Class ;
+                rdfs:subClassOf ex:growth_conditions ,
+                                ex:metabolic_trait ,
+                                ex:physiological_trait ,
+                                ex:stress_response ;
+                rdfs:label "aerotolerant" .
+
+
+###  http://example.org/sonnet#aggregate
+ex:aggregate rdf:type owl:Class ;
+             rdfs:subClassOf ex:community_structure ,
+                             ex:growth_pattern ;
+             rdfs:label "aggregate" .
+
+
+###  http://example.org/sonnet#akinete
+ex:akinete rdf:type owl:Class ;
+           rdfs:subClassOf ex:cellular_component ,
+                           ex:dormancy_structure ,
+                           ex:stress_response ;
+           rdfs:label "akinete" .
+
+
+###  http://example.org/sonnet#alkaliphile
+ex:alkaliphile rdf:type owl:Class ;
+               rdfs:subClassOf ex:growth_conditions ,
+                               ex:physiological_trait ,
+                               ex:taxonomic_identifier ;
+               rdfs:label "alkaliphile" .
+
+
+###  http://example.org/sonnet#ammonification
+ex:ammonification rdf:type owl:Class ;
+                  rdfs:subClassOf ex:metabolic_trait ,
+                                  ex:nutrient_utilization ;
+                  rdfs:label "ammonification" .
+
+
+###  http://example.org/sonnet#amylolysis
+ex:amylolysis rdf:type owl:Class ;
+              rdfs:subClassOf ex:metabolic_trait ,
+                              ex:nutrient_utilization ;
+              rdfs:label "amylolysis" .
+
+
+###  http://example.org/sonnet#anaerobe
+ex:anaerobe rdf:type owl:Class ;
+            rdfs:subClassOf ex:growth_conditions ,
+                            ex:metabolic_trait ,
+                            ex:physiological_trait ;
+            rdfs:label "anaerobe" .
+
+
+###  http://example.org/sonnet#anaerobic_respiration
+ex:anaerobic_respiration rdf:type owl:Class ;
+                         rdfs:subClassOf ex:energy_metabolism ,
+                                         ex:metabolic_trait ;
+                         rdfs:label "anaerobic respiration" .
+
+
+###  http://example.org/sonnet#anoxygenic_photosynthesis
+ex:anoxygenic_photosynthesis rdf:type owl:Class ;
+                             rdfs:subClassOf ex:autotrophic_process ,
+                                             ex:energy_metabolism ,
+                                             ex:metabolic_trait ;
+                             rdfs:label "anoxygenic photosynthesis" .
+
+
+###  http://example.org/sonnet#antibiotic_production
+ex:antibiotic_production rdf:type owl:Class ;
+                         rdfs:subClassOf ex:cellular_product ,
+                                         ex:ecological_trait ,
+                                         ex:metabolic_trait ;
+                         rdfs:label "antibiotic production" .
+
+
+###  http://example.org/sonnet#antibiotic_resistance
+ex:antibiotic_resistance rdf:type owl:Class ;
+                         rdfs:subClassOf ex:adaptive_trait ,
+                                         ex:clinical_relevance ,
+                                         ex:stress_response ;
+                         rdfs:label "antibiotic resistance" .
+
+
+###  http://example.org/sonnet#antimicrobial_resistance
+ex:antimicrobial_resistance rdf:type owl:Class ;
+                            rdfs:subClassOf ex:adaptive_trait ,
+                                            ex:clinical_relevance ,
+                                            ex:stress_response ;
+                            rdfs:label "antimicrobial resistance" .
+
+
+###  http://example.org/sonnet#appendage
+ex:appendage rdf:type owl:Class ;
+             rdfs:subClassOf ex:cellular_component ,
+                             ex:morphological_trait ;
+             rdfs:label "appendage" .
+
+
+###  http://example.org/sonnet#arthrospore
+ex:arthrospore rdf:type owl:Class ;
+               rdfs:subClassOf ex:dormancy_structure ,
+                               ex:fungal_spore_type ,
+                               ex:reproductive_structure ;
+               rdfs:label "arthrospore" .
+
+
+###  http://example.org/sonnet#ascospore
+ex:ascospore rdf:type owl:Class ;
+             rdfs:subClassOf ex:dormancy_structure ,
+                             ex:fungal_spore_type ,
+                             ex:reproductive_structure ;
+             rdfs:label "ascospore" .
+
+
+###  http://example.org/sonnet#autotroph
+ex:autotroph rdf:type owl:Class ;
+             rdfs:subClassOf ex:metabolic_trait ,
+                             ex:nutrient_utilization ,
+                             ex:trophic_type ;
+             rdfs:label "autotroph" .
+
+
+###  http://example.org/sonnet#autotrophic_process
+ex:autotrophic_process rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#auxotroph
+ex:auxotroph rdf:type owl:Class ;
+             rdfs:subClassOf ex:metabolic_trait ,
+                             ex:nutritional_requirement ;
+             rdfs:label "auxotroph" .
+
+
+###  http://example.org/sonnet#axial_filament
+ex:axial_filament rdf:type owl:Class ;
+                  rdfs:subClassOf ex:cellular_component ,
+                                  ex:motility_structure ;
+                  rdfs:label "axial filament" .
+
+
+###  http://example.org/sonnet#bacillus
+ex:bacillus rdf:type owl:Class ;
+            rdfs:subClassOf ex:cellular_characteristic ,
+                            ex:morphological_trait ,
+                            ex:taxonomic_identifier ;
+            rdfs:label "bacillus" .
+
+
+###  http://example.org/sonnet#barophile
+ex:barophile rdf:type owl:Class ;
+             rdfs:subClassOf ex:growth_conditions ,
+                             ex:physiological_trait ,
+                             ex:taxonomic_identifier ;
+             rdfs:label "barophile" .
+
+
+###  http://example.org/sonnet#barotolerant
+ex:barotolerant rdf:type owl:Class ;
+                rdfs:subClassOf ex:growth_conditions ,
+                                ex:physiological_trait ,
+                                ex:stress_response ;
+                rdfs:label "barotolerant" .
+
+
+###  http://example.org/sonnet#basidiospore
+ex:basidiospore rdf:type owl:Class ;
+                rdfs:subClassOf ex:dormancy_structure ,
+                                ex:fungal_spore_type ,
+                                ex:reproductive_structure ;
+                rdfs:label "basidiospore" .
+
+
+###  http://example.org/sonnet#binary_fission
+ex:binary_fission rdf:type owl:Class ;
+                  rdfs:subClassOf ex:cellular_process ,
+                                  ex:reproductive_mechanism ;
+                  rdfs:label "binary fission" .
+
+
+###  http://example.org/sonnet#biofilm
+ex:biofilm rdf:type owl:Class ;
+           rdfs:subClassOf ex:community_structure ,
+                           ex:physiological_state ;
+           rdfs:label "biofilm" .
+
+
+###  http://example.org/sonnet#biofilm_component
+ex:biofilm_component rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#biofilm_formation
+ex:biofilm_formation rdf:type owl:Class ;
+                     rdfs:subClassOf ex:cellular_process ,
+                                     ex:community_interaction ;
+                     rdfs:label "biofilm formation" .
+
+
+###  http://example.org/sonnet#biogeochemical_cycling
+ex:biogeochemical_cycling rdf:type owl:Class ;
+                          rdfs:subClassOf ex:ecological_trait ,
+                                          ex:environmental_interaction ;
+                          rdfs:label "biogeochemical cycling" .
+
+
+###  http://example.org/sonnet#bioluminescence
+ex:bioluminescence rdf:type owl:Class ;
+                   rdfs:subClassOf ex:cellular_process ,
+                                   ex:physiological_trait ;
+                   rdfs:label "bioluminescence" .
+
+
+###  http://example.org/sonnet#budding
+ex:budding rdf:type owl:Class ;
+           rdfs:subClassOf ex:cellular_process ,
+                           ex:reproductive_mechanism ;
+           rdfs:label "budding" .
+
+
+###  http://example.org/sonnet#buoyancy_structure
+ex:buoyancy_structure rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#capnophile
+ex:capnophile rdf:type owl:Class ;
+              rdfs:subClassOf ex:metabolic_trait ,
+                              ex:physiological_trait ;
+              rdfs:label "capnophile" .
+
+
+###  http://example.org/sonnet#capsule
+ex:capsule rdf:type owl:Class ;
+           rdfs:subClassOf ex:cellular_component ,
+                           ex:virulence_factor ;
+           rdfs:label "capsule" .
+
+
+###  http://example.org/sonnet#carbon_fixation
+ex:carbon_fixation rdf:type owl:Class ;
+                   rdfs:subClassOf ex:autotrophic_process ,
+                                   ex:metabolic_trait ;
+                   rdfs:label "carbon fixation" .
+
+
+###  http://example.org/sonnet#carbon_source
+ex:carbon_source rdf:type owl:Class ;
+                 rdfs:subClassOf ex:metabolic_trait ,
+                                 ex:nutrient_utilization ;
+                 rdfs:label "carbon source" .
+
+
+###  http://example.org/sonnet#carboxydotroph
+ex:carboxydotroph rdf:type owl:Class ;
+                  rdfs:subClassOf ex:metabolic_trait ,
+                                  ex:taxonomic_identifier ,
+                                  ex:trophic_type ;
+                  rdfs:label "carboxydotroph" .
+
+
+###  http://example.org/sonnet#cell_arrangement
+ex:cell_arrangement rdf:type owl:Class ;
+                    rdfs:subClassOf ex:cellular_characteristic ,
+                                    ex:growth_pattern ,
+                                    ex:morphological_trait ;
+                    rdfs:label "cell arrangement" .
+
+
+###  http://example.org/sonnet#cell_envelope
+ex:cell_envelope rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#cell_length_category
+ex:cell_length_category rdf:type owl:Class ;
+                        rdfs:subClassOf ex:cellular_characteristic ,
+                                        ex:morphological_trait ;
+                        rdfs:label "cell length category" .
+
+
+###  http://example.org/sonnet#cell_shape
+ex:cell_shape rdf:type owl:Class ;
+              rdfs:subClassOf ex:cellular_characteristic ,
+                              ex:morphological_trait ;
+              rdfs:label "cell shape" .
+
+
+###  http://example.org/sonnet#cell_size
+ex:cell_size rdf:type owl:Class ;
+             rdfs:subClassOf ex:cellular_characteristic ,
+                             ex:morphological_trait ;
+             rdfs:label "cell size" .
+
+
+###  http://example.org/sonnet#cell_wall_characteristic
+ex:cell_wall_characteristic rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#cell_wall_component
+ex:cell_wall_component rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#cell_width_category
+ex:cell_width_category rdf:type owl:Class ;
+                       rdfs:subClassOf ex:cellular_characteristic ,
+                                       ex:morphological_trait ;
+                       rdfs:label "cell width category" .
+
+
+###  http://example.org/sonnet#cellular_arrangement
+ex:cellular_arrangement rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#cellular_characteristic
+ex:cellular_characteristic rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#cellular_component
+ex:cellular_component rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#cellular_process
+ex:cellular_process rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#cellular_product
+ex:cellular_product rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#cellulolysis
+ex:cellulolysis rdf:type owl:Class ;
+                rdfs:subClassOf ex:metabolic_trait ,
+                                ex:nutrient_utilization ;
+                rdfs:label "cellulolysis" .
+
+
+###  http://example.org/sonnet#chemoautotroph
+ex:chemoautotroph rdf:type owl:Class ;
+                  rdfs:subClassOf ex:energy_metabolism ,
+                                  ex:metabolic_trait ,
+                                  ex:nutrient_utilization ,
+                                  ex:trophic_type ;
+                  rdfs:label "chemoautotroph" .
+
+
+###  http://example.org/sonnet#chemoheterotroph
+ex:chemoheterotroph rdf:type owl:Class ;
+                    rdfs:subClassOf ex:energy_metabolism ,
+                                    ex:metabolic_trait ,
+                                    ex:nutrient_utilization ,
+                                    ex:trophic_type ;
+                    rdfs:label "chemoheterotroph" .
+
+
+###  http://example.org/sonnet#chemotaxis
+ex:chemotaxis rdf:type owl:Class ;
+              rdfs:subClassOf ex:cellular_process ,
+                              ex:motility_mechanism ;
+              rdfs:label "chemotaxis" .
+
+
+###  http://example.org/sonnet#chlamydospore
+ex:chlamydospore rdf:type owl:Class ;
+                 rdfs:subClassOf ex:dormancy_structure ,
+                                 ex:fungal_spore_type ,
+                                 ex:reproductive_structure ;
+                 rdfs:label "chlamydospore" .
+
+
+###  http://example.org/sonnet#class
+ex:class rdf:type owl:Class ;
+         rdfs:subClassOf ex:taxonomic_rank ;
+         rdfs:label "class" .
+
+
+###  http://example.org/sonnet#clinical_relevance
+ex:clinical_relevance rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#coccus
+ex:coccus rdf:type owl:Class ;
+          rdfs:subClassOf ex:cellular_characteristic ,
+                          ex:morphological_trait ,
+                          ex:taxonomic_identifier ;
+          rdfs:label "coccus" .
+
+
+###  http://example.org/sonnet#cold_shock_protein
+ex:cold_shock_protein rdf:type owl:Class ;
+                      rdfs:subClassOf ex:cellular_component ,
+                                      ex:stress_response ;
+                      rdfs:label "cold shock protein" .
+
+
+###  http://example.org/sonnet#cold_shock_response
+ex:cold_shock_response rdf:type owl:Class ;
+                       rdfs:subClassOf ex:cellular_process ,
+                                       ex:physiological_process ,
+                                       ex:stress_response ;
+                       rdfs:label "cold shock response" .
+
+
+###  http://example.org/sonnet#colonization
+ex:colonization rdf:type owl:Class ;
+                rdfs:subClassOf ex:ecological_process ,
+                                ex:host_interaction ;
+                rdfs:label "colonization" .
+
+
+###  http://example.org/sonnet#colony_elevation
+ex:colony_elevation rdf:type owl:Class ;
+                    rdfs:subClassOf ex:diagnostic_feature ,
+                                    ex:macroscopic_trait ;
+                    rdfs:label "colony elevation" .
+
+
+###  http://example.org/sonnet#colony_margin
+ex:colony_margin rdf:type owl:Class ;
+                 rdfs:subClassOf ex:diagnostic_feature ,
+                                 ex:macroscopic_trait ;
+                 rdfs:label "colony margin" .
+
+
+###  http://example.org/sonnet#colony_morphology
+ex:colony_morphology rdf:type owl:Class ;
+                     rdfs:subClassOf ex:diagnostic_feature ,
+                                     ex:macroscopic_trait ;
+                     rdfs:label "colony morphology" .
+
+
+###  http://example.org/sonnet#colony_texture
+ex:colony_texture rdf:type owl:Class ;
+                  rdfs:subClassOf ex:diagnostic_feature ,
+                                  ex:macroscopic_trait ;
+                  rdfs:label "colony texture" .
+
+
+###  http://example.org/sonnet#commensalism
+ex:commensalism rdf:type owl:Class ;
+                rdfs:subClassOf ex:ecological_trait ,
+                                ex:host_interaction ;
+                rdfs:label "commensalism" .
+
+
+###  http://example.org/sonnet#community_behavior
+ex:community_behavior rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#community_interaction
+ex:community_interaction rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#community_structure
+ex:community_structure rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#compatible_solute
+ex:compatible_solute rdf:type owl:Class ;
+                     rdfs:subClassOf ex:cellular_component ,
+                                     ex:stress_response ;
+                     rdfs:label "compatible solute" .
+
+
+###  http://example.org/sonnet#competence
+ex:competence rdf:type owl:Class ;
+              rdfs:subClassOf ex:genetic_exchange ,
+                              ex:physiological_state ;
+              rdfs:label "competence" .
+
+
+###  http://example.org/sonnet#conidium
+ex:conidium rdf:type owl:Class ;
+            rdfs:subClassOf ex:dormancy_structure ,
+                            ex:fungal_spore_type ,
+                            ex:reproductive_structure ;
+            rdfs:label "conidium" .
+
+
+###  http://example.org/sonnet#conjugation
+ex:conjugation rdf:type owl:Class ;
+               rdfs:subClassOf ex:cellular_process ,
+                               ex:genetic_exchange ,
+                               ex:reproductive_mechanism ;
+               rdfs:label "conjugation" .
+
+
+###  http://example.org/sonnet#culturability
+ex:culturability rdf:type owl:Class ;
+                 rdfs:subClassOf ex:laboratory_characteristic ,
+                                 ex:physiological_trait ;
+                 rdfs:label "culturability" .
+
+
+###  http://example.org/sonnet#cyst
+ex:cyst rdf:type owl:Class ;
+        rdfs:subClassOf ex:cellular_component ,
+                        ex:dormancy_structure ,
+                        ex:stress_response ;
+        rdfs:label "cyst" .
+
+
+###  http://example.org/sonnet#death_phase
+ex:death_phase rdf:type owl:Class ;
+               rdfs:subClassOf ex:growth_characteristic ,
+                               ex:physiological_trait ;
+               rdfs:label "death phase" .
+
+
+###  http://example.org/sonnet#denitrification
+ex:denitrification rdf:type owl:Class ;
+                   rdfs:subClassOf ex:metabolic_trait ,
+                                   ex:nutrient_utilization ;
+                   rdfs:label "denitrification" .
+
+
+###  http://example.org/sonnet#developmental_process
+ex:developmental_process rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#diagnostic_feature
+ex:diagnostic_feature rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#diazotroph
+ex:diazotroph rdf:type owl:Class ;
+              rdfs:subClassOf ex:metabolic_trait ,
+                              ex:nutrient_utilization ,
+                              ex:taxonomic_identifier ;
+              rdfs:label "diazotroph" .
+
+
+###  http://example.org/sonnet#differentiation
+ex:differentiation rdf:type owl:Class ;
+                   rdfs:subClassOf ex:cellular_process ,
+                                   ex:developmental_process ;
+                   rdfs:label "differentiation" .
+
+
+###  http://example.org/sonnet#dimorphism
+ex:dimorphism rdf:type owl:Class ;
+              rdfs:subClassOf ex:developmental_process ,
+                              ex:morphological_trait ;
+              rdfs:label "dimorphism" .
+
+
+###  http://example.org/sonnet#disc_shaped_cell
+ex:disc_shaped_cell rdf:type owl:Class ;
+                    rdfs:subClassOf ex:cellular_characteristic ,
+                                    ex:morphological_trait ;
+                    rdfs:label "disc-shaped cell" .
+
+
+###  http://example.org/sonnet#domain
+ex:domain rdf:type owl:Class ;
+          rdfs:subClassOf ex:taxonomic_rank ;
+          rdfs:label "domain" .
+
+
+###  http://example.org/sonnet#dormancy
+ex:dormancy rdf:type owl:Class ;
+            rdfs:subClassOf ex:physiological_state ,
+                            ex:stress_response ;
+            rdfs:label "dormancy" .
+
+
+###  http://example.org/sonnet#dormancy_structure
+ex:dormancy_structure rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#dumbbell_shaped_cell
+ex:dumbbell_shaped_cell rdf:type owl:Class ;
+                        rdfs:subClassOf ex:cellular_characteristic ,
+                                        ex:morphological_trait ;
+                        rdfs:label "dumbbell-shaped cell" .
+
+
+###  http://example.org/sonnet#ecological_niche
+ex:ecological_niche rdf:type owl:Class ;
+                    rdfs:subClassOf ex:ecological_trait ,
+                                    ex:environmental_interaction ;
+                    rdfs:label "ecological niche" .
+
+
+###  http://example.org/sonnet#ecological_process
+ex:ecological_process rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#ecological_trait
+ex:ecological_trait rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#ectosymbiosis
+ex:ectosymbiosis rdf:type owl:Class ;
+                 rdfs:subClassOf ex:ecological_trait ,
+                                 ex:host_interaction ;
+                 rdfs:label "ectosymbiosis" .
+
+
+###  http://example.org/sonnet#electron_acceptor
+ex:electron_acceptor rdf:type owl:Class ;
+                     rdfs:subClassOf ex:energy_metabolism ,
+                                     ex:metabolic_trait ;
+                     rdfs:label "electron acceptor" .
+
+
+###  http://example.org/sonnet#electron_donor
+ex:electron_donor rdf:type owl:Class ;
+                  rdfs:subClassOf ex:energy_metabolism ,
+                                  ex:metabolic_trait ;
+                  rdfs:label "electron donor" .
+
+
+###  http://example.org/sonnet#endospore
+ex:endospore rdf:type owl:Class ;
+             rdfs:subClassOf ex:cellular_component ,
+                             ex:dormancy_structure ,
+                             ex:stress_response ;
+             rdfs:label "endospore" .
+
+
+###  http://example.org/sonnet#endosymbiosis
+ex:endosymbiosis rdf:type owl:Class ;
+                 rdfs:subClassOf ex:ecological_trait ,
+                                 ex:host_interaction ;
+                 rdfs:label "endosymbiosis" .
+
+
+###  http://example.org/sonnet#energy_metabolism
+ex:energy_metabolism rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#environmental_interaction
+ex:environmental_interaction rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#enzyme_activity
+ex:enzyme_activity rdf:type owl:Class ;
+                   rdfs:subClassOf ex:cellular_component ,
+                                   ex:metabolic_trait ;
+                   rdfs:label "enzyme activity" .
+
+
+###  http://example.org/sonnet#enzyme_class
+ex:enzyme_class rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#epigenetic_modification
+ex:epigenetic_modification rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#evolutionary_concept
+ex:evolutionary_concept rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#evolutionary_mechanism
+ex:evolutionary_mechanism rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#evolutionary_process
+ex:evolutionary_process rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#exospore
+ex:exospore rdf:type owl:Class ;
+            rdfs:subClassOf ex:cellular_component ,
+                            ex:dormancy_structure ,
+                            ex:reproductive_structure ;
+            rdfs:label "exospore" .
+
+
+###  http://example.org/sonnet#exponential_phase
+ex:exponential_phase rdf:type owl:Class ;
+                     rdfs:subClassOf ex:growth_characteristic ,
+                                     ex:physiological_trait ;
+                     rdfs:label "exponential phase" .
+
+
+###  http://example.org/sonnet#extracellular
+ex:extracellular rdf:type owl:Class ;
+                 rdfs:subClassOf ex:host_interaction ,
+                                 ex:localization ;
+                 rdfs:label "extracellular" .
+
+
+###  http://example.org/sonnet#extracellular_polysaccharide
+ex:extracellular_polysaccharide rdf:type owl:Class ;
+                                rdfs:subClassOf ex:biofilm_component ,
+                                                ex:cellular_product ;
+                                rdfs:label "extracellular polysaccharide" .
+
+
+###  http://example.org/sonnet#extreme_halophile
+ex:extreme_halophile rdf:type owl:Class ;
+                     rdfs:subClassOf ex:growth_conditions ,
+                                     ex:physiological_trait ,
+                                     ex:taxonomic_identifier ;
+                     rdfs:label "extreme halophile" .
+
+
+###  http://example.org/sonnet#extremophile
+ex:extremophile rdf:type owl:Class ;
+                rdfs:subClassOf ex:ecological_trait ,
+                                ex:physiological_trait ;
+                rdfs:label "extremophile" .
+
+
+###  http://example.org/sonnet#facultative
+ex:facultative rdf:type owl:Class ;
+               rdfs:subClassOf ex:physiological_trait ,
+                               ex:qualifier ;
+               rdfs:label "facultative" .
+
+
+###  http://example.org/sonnet#facultative_anaerobe
+ex:facultative_anaerobe rdf:type owl:Class ;
+                        rdfs:subClassOf ex:growth_conditions ,
+                                        ex:metabolic_trait ,
+                                        ex:physiological_trait ;
+                        rdfs:label "facultative anaerobe" .
+
+
+###  http://example.org/sonnet#family
+ex:family rdf:type owl:Class ;
+          rdfs:subClassOf ex:taxonomic_rank ;
+          rdfs:label "family" .
+
+
+###  http://example.org/sonnet#fastidious
+ex:fastidious rdf:type owl:Class ;
+              rdfs:subClassOf ex:growth_characteristic ,
+                              ex:physiological_trait ;
+              rdfs:label "fastidious" .
+
+
+###  http://example.org/sonnet#fermentation
+ex:fermentation rdf:type owl:Class ;
+                rdfs:subClassOf ex:energy_metabolism ,
+                                ex:metabolic_trait ;
+                rdfs:label "fermentation" .
+
+
+###  http://example.org/sonnet#filamentous
+ex:filamentous rdf:type owl:Class ;
+               rdfs:subClassOf ex:cellular_characteristic ,
+                               ex:growth_pattern ,
+                               ex:morphological_trait ;
+               rdfs:label "filamentous" .
+
+
+###  http://example.org/sonnet#fimbriae
+ex:fimbriae rdf:type owl:Class ;
+            rdfs:subClassOf ex:adhesion_structure ,
+                            ex:cellular_component ,
+                            ex:motility_structure ;
+            rdfs:label "fimbriae" .
+
+
+###  http://example.org/sonnet#flagellum
+ex:flagellum rdf:type owl:Class ;
+             rdfs:subClassOf ex:cellular_component ,
+                             ex:motility_structure ;
+             rdfs:label "flagellum" .
+
+
+###  http://example.org/sonnet#flask_shaped_cell
+ex:flask_shaped_cell rdf:type owl:Class ;
+                     rdfs:subClassOf ex:cellular_characteristic ,
+                                     ex:morphological_trait ;
+                     rdfs:label "flask-shaped cell" .
+
+
+###  http://example.org/sonnet#fungal_spore_type
+ex:fungal_spore_type rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#gas_vesicle
+ex:gas_vesicle rdf:type owl:Class ;
+               rdfs:subClassOf ex:buoyancy_structure ,
+                               ex:cellular_component ;
+               rdfs:label "gas vesicle" .
+
+
+###  http://example.org/sonnet#gc_content
+ex:gc_content rdf:type owl:Class ;
+              rdfs:subClassOf ex:genomic_trait ,
+                              ex:taxonomic_identifier ;
+              rdfs:label "GC content" .
+
+
+###  http://example.org/sonnet#gc_content_high
+ex:gc_content_high rdf:type owl:Class ;
+                   rdfs:subClassOf ex:genomic_trait ,
+                                   ex:taxonomic_identifier ;
+                   rdfs:label "high GC content" .
+
+
+###  http://example.org/sonnet#gc_content_low
+ex:gc_content_low rdf:type owl:Class ;
+                  rdfs:subClassOf ex:genomic_trait ,
+                                  ex:taxonomic_identifier ;
+                  rdfs:label "low GC content" .
+
+
+###  http://example.org/sonnet#gc_content_mid1
+ex:gc_content_mid1 rdf:type owl:Class ;
+                   rdfs:subClassOf ex:genomic_trait ,
+                                   ex:taxonomic_identifier ;
+                   rdfs:label "lower-mid GC content" .
+
+
+###  http://example.org/sonnet#gc_content_mid2
+ex:gc_content_mid2 rdf:type owl:Class ;
+                   rdfs:subClassOf ex:genomic_trait ,
+                                   ex:taxonomic_identifier ;
+                   rdfs:label "upper-mid GC content" .
+
+
+###  http://example.org/sonnet#generation_time
+ex:generation_time rdf:type owl:Class ;
+                   rdfs:subClassOf ex:growth_characteristic ,
+                                   ex:physiological_trait ;
+                   rdfs:label "generation time" .
+
+
+###  http://example.org/sonnet#genetic_element
+ex:genetic_element rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#genetic_exchange
+ex:genetic_exchange rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#genetic_process
+ex:genetic_process rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#genome_size
+ex:genome_size rdf:type owl:Class ;
+               rdfs:subClassOf ex:genomic_trait ;
+               rdfs:label "genome size" .
+
+
+###  http://example.org/sonnet#genomic_concept
+ex:genomic_concept rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#genomic_element
+ex:genomic_element rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#genomic_island
+ex:genomic_island rdf:type owl:Class ;
+                  rdfs:subClassOf ex:genomic_element ,
+                                  ex:mobile_genetic_element ;
+                  rdfs:label "genomic island" .
+
+
+###  http://example.org/sonnet#genomic_structure
+ex:genomic_structure rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#genomic_trait
+ex:genomic_trait rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#genus
+ex:genus rdf:type owl:Class ;
+         rdfs:subClassOf ex:taxonomic_rank ;
+         rdfs:label "genus" .
+
+
+###  http://example.org/sonnet#gliding_motility
+ex:gliding_motility rdf:type owl:Class ;
+                    rdfs:subClassOf ex:motility_mechanism ;
+                    rdfs:label "gliding motility" .
+
+
+###  http://example.org/sonnet#global_regulator
+ex:global_regulator rdf:type owl:Class ;
+                    rdfs:subClassOf ex:regulatory_mechanism ,
+                                    ex:transcription_factor ;
+                    rdfs:label "global regulator" .
+
+
+###  http://example.org/sonnet#gram_negative
+ex:gram_negative rdf:type owl:Class ;
+                 rdfs:subClassOf ex:cell_wall_characteristic ,
+                                 ex:diagnostic_feature ,
+                                 ex:taxonomic_identifier ;
+                 rdfs:label "Gram-negative" .
+
+
+###  http://example.org/sonnet#gram_positive
+ex:gram_positive rdf:type owl:Class ;
+                 rdfs:subClassOf ex:cell_wall_characteristic ,
+                                 ex:diagnostic_feature ,
+                                 ex:taxonomic_identifier ;
+                 rdfs:label "Gram-positive" .
+
+
+###  http://example.org/sonnet#gram_stain
+ex:gram_stain rdf:type owl:Class ;
+              rdfs:subClassOf ex:cell_wall_characteristic ,
+                              ex:diagnostic_feature ;
+              rdfs:label "Gram stain" .
+
+
+###  http://example.org/sonnet#gram_stain_negative
+ex:gram_stain_negative rdf:type owl:Class ;
+                       rdfs:subClassOf ex:cell_wall_characteristic ,
+                                       ex:diagnostic_feature ,
+                                       ex:taxonomic_identifier ;
+                       rdfs:label "Gram-stain negative" .
+
+
+###  http://example.org/sonnet#gram_stain_positive
+ex:gram_stain_positive rdf:type owl:Class ;
+                       rdfs:subClassOf ex:cell_wall_characteristic ,
+                                       ex:diagnostic_feature ,
+                                       ex:taxonomic_identifier ;
+                       rdfs:label "Gram-stain positive" .
+
+
+###  http://example.org/sonnet#growth_characteristic
+ex:growth_characteristic rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#growth_conditions
+ex:growth_conditions rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#growth_pattern
+ex:growth_pattern rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#growth_rate
+ex:growth_rate rdf:type owl:Class ;
+               rdfs:subClassOf ex:growth_characteristic ,
+                               ex:physiological_trait ;
+               rdfs:label "growth rate" .
+
+
+###  http://example.org/sonnet#growth_tolerance_metric
+ex:growth_tolerance_metric rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#habitat
+ex:habitat rdf:type owl:Class ;
+           rdfs:subClassOf ex:ecological_trait ,
+                           ex:environmental_interaction ;
+           rdfs:label "habitat" .
+
+
+###  http://example.org/sonnet#halophile
+ex:halophile rdf:type owl:Class ;
+             rdfs:subClassOf ex:growth_conditions ,
+                             ex:physiological_trait ,
+                             ex:taxonomic_identifier ;
+             rdfs:label "halophile" .
+
+
+###  http://example.org/sonnet#halotolerant
+ex:halotolerant rdf:type owl:Class ;
+                rdfs:subClassOf ex:growth_conditions ,
+                                ex:physiological_trait ,
+                                ex:stress_response ;
+                rdfs:label "halotolerant" .
+
+
+###  http://example.org/sonnet#heat_shock_protein
+ex:heat_shock_protein rdf:type owl:Class ;
+                      rdfs:subClassOf ex:cellular_component ,
+                                      ex:stress_response ;
+                      rdfs:label "heat shock protein" .
+
+
+###  http://example.org/sonnet#heat_shock_response
+ex:heat_shock_response rdf:type owl:Class ;
+                       rdfs:subClassOf ex:cellular_process ,
+                                       ex:physiological_process ,
+                                       ex:stress_response ;
+                       rdfs:label "heat shock response" .
+
+
+###  http://example.org/sonnet#hemolysis
+ex:hemolysis rdf:type owl:Class ;
+             rdfs:subClassOf ex:diagnostic_feature ,
+                             ex:virulence_trait ;
+             rdfs:label "hemolysis" .
+
+
+###  http://example.org/sonnet#heterocyst
+ex:heterocyst rdf:type owl:Class ;
+              rdfs:subClassOf ex:cellular_component ,
+                              ex:nitrogen_fixation ,
+                              ex:specialized_cell ;
+              rdfs:label "heterocyst" .
+
+
+###  http://example.org/sonnet#heterotroph
+ex:heterotroph rdf:type owl:Class ;
+               rdfs:subClassOf ex:metabolic_trait ,
+                               ex:nutrient_utilization ,
+                               ex:trophic_type ;
+               rdfs:label "heterotroph" .
+
+
+###  http://example.org/sonnet#holdfast
+ex:holdfast rdf:type owl:Class ;
+            rdfs:subClassOf ex:adhesion_structure ,
+                            ex:cellular_component ;
+            rdfs:label "holdfast" .
+
+
+###  http://example.org/sonnet#horizontal_gene_transfer
+ex:horizontal_gene_transfer rdf:type owl:Class ;
+                            rdfs:subClassOf ex:evolutionary_process ,
+                                            ex:genetic_process ;
+                            rdfs:label "horizontal gene transfer" .
+
+
+###  http://example.org/sonnet#host_interaction
+ex:host_interaction rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#hydrolase
+ex:hydrolase rdf:type owl:Class ;
+             rdfs:subClassOf ex:enzyme_class ,
+                             ex:metabolic_trait ;
+             rdfs:label "hydrolase" .
+
+
+###  http://example.org/sonnet#hyperthermophile
+ex:hyperthermophile rdf:type owl:Class ;
+                    rdfs:subClassOf ex:growth_conditions ,
+                                    ex:physiological_trait ,
+                                    ex:taxonomic_identifier ;
+                    rdfs:label "hyperthermophile" .
+
+
+###  http://example.org/sonnet#inclusion_body
+ex:inclusion_body rdf:type owl:Class ;
+                  rdfs:subClassOf ex:cellular_component ,
+                                  ex:storage_structure ;
+                  rdfs:label "inclusion body" .
+
+
+###  http://example.org/sonnet#infection
+ex:infection rdf:type owl:Class ;
+             rdfs:subClassOf ex:host_interaction ,
+                             ex:pathogenicity ;
+             rdfs:label "infection" .
+
+
+###  http://example.org/sonnet#intracellular
+ex:intracellular rdf:type owl:Class ;
+                 rdfs:subClassOf ex:host_interaction ,
+                                 ex:localization ;
+                 rdfs:label "intracellular" .
+
+
+###  http://example.org/sonnet#invasion
+ex:invasion rdf:type owl:Class ;
+            rdfs:subClassOf ex:host_interaction ,
+                            ex:virulence_trait ;
+            rdfs:label "invasion" .
+
+
+###  http://example.org/sonnet#iron_acquisition
+ex:iron_acquisition rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#laboratory_characteristic
+ex:laboratory_characteristic rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#lag_phase
+ex:lag_phase rdf:type owl:Class ;
+             rdfs:subClassOf ex:growth_characteristic ,
+                             ex:physiological_trait ;
+             rdfs:label "lag phase" .
+
+
+###  http://example.org/sonnet#life_cycle
+ex:life_cycle rdf:type owl:Class ;
+              rdfs:subClassOf ex:developmental_process ,
+                              ex:reproductive_mechanism ;
+              rdfs:label "life cycle" .
+
+
+###  http://example.org/sonnet#lipolysis
+ex:lipolysis rdf:type owl:Class ;
+             rdfs:subClassOf ex:metabolic_trait ,
+                             ex:nutrient_utilization ;
+             rdfs:label "lipolysis" .
+
+
+###  http://example.org/sonnet#lipopolysaccharide
+ex:lipopolysaccharide rdf:type owl:Class ;
+                      rdfs:subClassOf ex:cell_wall_component ,
+                                      ex:cellular_component ;
+                      rdfs:label "lipopolysaccharide" .
+
+
+###  http://example.org/sonnet#localization
+ex:localization rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#lysogeny
+ex:lysogeny rdf:type owl:Class ;
+            rdfs:subClassOf ex:genetic_element ,
+                            ex:phage_interaction ;
+            rdfs:label "lysogeny" .
+
+
+###  http://example.org/sonnet#macroscopic_trait
+ex:macroscopic_trait rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#magnetotaxis
+ex:magnetotaxis rdf:type owl:Class ;
+                rdfs:subClassOf ex:motility_mechanism ,
+                                ex:physiological_trait ,
+                                ex:taxonomic_identifier ;
+                rdfs:label "magnetotaxis" .
+
+
+###  http://example.org/sonnet#mesophile
+ex:mesophile rdf:type owl:Class ;
+             rdfs:subClassOf ex:growth_conditions ,
+                             ex:physiological_trait ;
+             rdfs:label "mesophile" .
+
+
+###  http://example.org/sonnet#metabolic_trait
+ex:metabolic_trait rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#methanogenesis
+ex:methanogenesis rdf:type owl:Class ;
+                  rdfs:subClassOf ex:energy_metabolism ,
+                                  ex:metabolic_trait ,
+                                  ex:taxonomic_identifier ;
+                  rdfs:label "methanogenesis" .
+
+
+###  http://example.org/sonnet#methylation
+ex:methylation rdf:type owl:Class ;
+               rdfs:subClassOf ex:epigenetic_modification ,
+                               ex:genetic_process ;
+               rdfs:label "methylation" .
+
+
+###  http://example.org/sonnet#microaerophile
+ex:microaerophile rdf:type owl:Class ;
+                  rdfs:subClassOf ex:growth_conditions ,
+                                  ex:metabolic_trait ,
+                                  ex:physiological_trait ;
+                  rdfs:label "microaerophile" .
+
+
+###  http://example.org/sonnet#mobile_genetic_element
+ex:mobile_genetic_element rdf:type owl:Class ;
+                          rdfs:subClassOf ex:evolutionary_mechanism ,
+                                          ex:genomic_element ;
+                          rdfs:label "mobile genetic element" .
+
+
+###  http://example.org/sonnet#moderate_halophile
+ex:moderate_halophile rdf:type owl:Class ;
+                      rdfs:subClassOf ex:growth_conditions ,
+                                      ex:physiological_trait ;
+                      rdfs:label "moderate halophile" .
+
+
+###  http://example.org/sonnet#morphological_trait
+ex:morphological_trait rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#motility_mechanism
+ex:motility_mechanism rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#motility_structure
+ex:motility_structure rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#mutualism
+ex:mutualism rdf:type owl:Class ;
+             rdfs:subClassOf ex:ecological_trait ,
+                             ex:host_interaction ;
+             rdfs:label "mutualism" .
+
+
+###  http://example.org/sonnet#mycolic_acid
+ex:mycolic_acid rdf:type owl:Class ;
+                rdfs:subClassOf ex:cell_wall_component ,
+                                ex:cellular_component ,
+                                ex:taxonomic_identifier ;
+                rdfs:label "mycolic acid" .
+
+
+###  http://example.org/sonnet#mycorrhization
+ex:mycorrhization rdf:type owl:Class ;
+                  rdfs:subClassOf ex:host_interaction ,
+                                  ex:symbiotic_process ;
+                  rdfs:label "mycorrhization" .
+
+
+###  http://example.org/sonnet#neutrophile
+ex:neutrophile rdf:type owl:Class ;
+               rdfs:subClassOf ex:growth_conditions ,
+                               ex:physiological_trait ;
+               rdfs:label "neutrophile" .
+
+
+###  http://example.org/sonnet#nitrification
+ex:nitrification rdf:type owl:Class ;
+                 rdfs:subClassOf ex:metabolic_trait ,
+                                 ex:nutrient_utilization ;
+                 rdfs:label "nitrification" .
+
+
+###  http://example.org/sonnet#nitrogen_fixation
+ex:nitrogen_fixation rdf:type owl:Class ;
+                     rdfs:subClassOf ex:metabolic_trait ,
+                                     ex:nutrient_utilization ;
+                     rdfs:label "nitrogen fixation" .
+
+
+###  http://example.org/sonnet#nodulation
+ex:nodulation rdf:type owl:Class ;
+              rdfs:subClassOf ex:host_interaction ,
+                              ex:symbiotic_process ;
+              rdfs:label "nodulation" .
+
+
+###  http://example.org/sonnet#nucleoid
+ex:nucleoid rdf:type owl:Class ;
+            rdfs:subClassOf ex:cellular_component ,
+                            ex:genomic_structure ;
+            rdfs:label "nucleoid" .
+
+
+###  http://example.org/sonnet#nutrient_utilization
+ex:nutrient_utilization rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#nutritional_requirement
+ex:nutritional_requirement rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#obligate
+ex:obligate rdf:type owl:Class ;
+            rdfs:subClassOf ex:physiological_trait ,
+                            ex:qualifier ;
+            rdfs:label "obligate" .
+
+
+###  http://example.org/sonnet#obligate_aerobe
+ex:obligate_aerobe rdf:type owl:Class ;
+                   rdfs:subClassOf ex:growth_conditions ,
+                                   ex:metabolic_trait ,
+                                   ex:physiological_trait ;
+                   rdfs:label "obligate aerobe" .
+
+
+###  http://example.org/sonnet#obligate_anaerobe
+ex:obligate_anaerobe rdf:type owl:Class ;
+                     rdfs:subClassOf ex:growth_conditions ,
+                                     ex:metabolic_trait ,
+                                     ex:physiological_trait ;
+                     rdfs:label "obligate anaerobe" .
+
+
+###  http://example.org/sonnet#oospore
+ex:oospore rdf:type owl:Class ;
+           rdfs:subClassOf ex:dormancy_structure ,
+                           ex:fungal_spore_type ,
+                           ex:reproductive_structure ;
+           rdfs:label "oospore" .
+
+
+###  http://example.org/sonnet#order
+ex:order rdf:type owl:Class ;
+         rdfs:subClassOf ex:taxonomic_rank ;
+         rdfs:label "order" .
+
+
+###  http://example.org/sonnet#osmophile
+ex:osmophile rdf:type owl:Class ;
+             rdfs:subClassOf ex:growth_conditions ,
+                             ex:physiological_trait ;
+             rdfs:label "osmophile" .
+
+
+###  http://example.org/sonnet#osmoregulation
+ex:osmoregulation rdf:type owl:Class ;
+                  rdfs:subClassOf ex:cellular_process ,
+                                  ex:physiological_process ,
+                                  ex:stress_response ;
+                  rdfs:label "osmoregulation" .
+
+
+###  http://example.org/sonnet#oxidative_stress_response
+ex:oxidative_stress_response rdf:type owl:Class ;
+                             rdfs:subClassOf ex:cellular_process ,
+                                             ex:physiological_process ,
+                                             ex:stress_response ;
+                             rdfs:label "oxidative stress response" .
+
+
+###  http://example.org/sonnet#oxidoreductase
+ex:oxidoreductase rdf:type owl:Class ;
+                  rdfs:subClassOf ex:enzyme_class ,
+                                  ex:metabolic_trait ;
+                  rdfs:label "oxidoreductase" .
+
+
+###  http://example.org/sonnet#oxygen_requirement
+ex:oxygen_requirement rdf:type owl:Class ;
+                      rdfs:subClassOf ex:growth_conditions ,
+                                      ex:metabolic_trait ,
+                                      ex:physiological_trait ;
+                      rdfs:label "oxygen requirement" .
+
+
+###  http://example.org/sonnet#oxygenic_photosynthesis
+ex:oxygenic_photosynthesis rdf:type owl:Class ;
+                           rdfs:subClassOf ex:autotrophic_process ,
+                                           ex:energy_metabolism ,
+                                           ex:metabolic_trait ;
+                           rdfs:label "oxygenic photosynthesis" .
+
+
+###  http://example.org/sonnet#pH_optimum
+ex:pH_optimum rdf:type owl:Class ;
+              rdfs:subClassOf ex:growth_conditions ,
+                              ex:physiological_trait ;
+              rdfs:label "pH optimum" .
+
+
+###  http://example.org/sonnet#pH_preference
+ex:pH_preference rdf:type owl:Class ;
+                 rdfs:subClassOf ex:growth_conditions ,
+                                 ex:physiological_trait ;
+                 rdfs:label "pH preference" .
+
+
+###  http://example.org/sonnet#pH_range
+ex:pH_range rdf:type owl:Class ;
+            rdfs:subClassOf ex:growth_conditions ,
+                            ex:physiological_trait ;
+            rdfs:label "pH range" .
+
+
+###  http://example.org/sonnet#pH_tolerance
+ex:pH_tolerance rdf:type owl:Class ;
+                rdfs:subClassOf ex:growth_conditions ,
+                                ex:physiological_trait ,
+                                ex:stress_response ;
+                rdfs:label "pH tolerance" .
+
+
+###  http://example.org/sonnet#pan_genome
+ex:pan_genome rdf:type owl:Class ;
+              rdfs:subClassOf ex:evolutionary_concept ,
+                              ex:genomic_concept ;
+              rdfs:label "pan-genome" .
+
+
+###  http://example.org/sonnet#parasitism
+ex:parasitism rdf:type owl:Class ;
+              rdfs:subClassOf ex:ecological_trait ,
+                              ex:host_interaction ;
+              rdfs:label "parasitism" .
+
+
+###  http://example.org/sonnet#passive_transport
+ex:passive_transport rdf:type owl:Class ;
+                     rdfs:subClassOf ex:cellular_process ,
+                                     ex:physiological_process ;
+                     rdfs:label "passive transport" .
+
+
+###  http://example.org/sonnet#pathogenicity
+ex:pathogenicity rdf:type owl:Class ;
+                 rdfs:subClassOf ex:host_interaction ,
+                                 ex:virulence_trait ;
+                 rdfs:label "pathogenicity" .
+
+
+###  http://example.org/sonnet#pathogenicity_island
+ex:pathogenicity_island rdf:type owl:Class ;
+                        rdfs:subClassOf ex:genomic_element ,
+                                        ex:mobile_genetic_element ,
+                                        ex:virulence_factor ;
+                        rdfs:label "pathogenicity island" .
+
+
+###  http://example.org/sonnet#peptidoglycan
+ex:peptidoglycan rdf:type owl:Class ;
+                 rdfs:subClassOf ex:cell_wall_component ,
+                                 ex:cellular_component ;
+                 rdfs:label "peptidoglycan" .
+
+
+###  http://example.org/sonnet#ph_delta
+ex:ph_delta rdf:type owl:Class ;
+            rdfs:subClassOf ex:growth_tolerance_metric ,
+                            ex:physiological_trait ;
+            rdfs:label "pH delta" .
+
+
+###  http://example.org/sonnet#phage_defense
+ex:phage_defense rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#phage_interaction
+ex:phage_interaction rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#photoautotroph
+ex:photoautotroph rdf:type owl:Class ;
+                  rdfs:subClassOf ex:energy_metabolism ,
+                                  ex:metabolic_trait ,
+                                  ex:nutrient_utilization ,
+                                  ex:trophic_type ;
+                  rdfs:label "photoautotroph" .
+
+
+###  http://example.org/sonnet#photoheterotroph
+ex:photoheterotroph rdf:type owl:Class ;
+                    rdfs:subClassOf ex:energy_metabolism ,
+                                    ex:metabolic_trait ,
+                                    ex:nutrient_utilization ,
+                                    ex:trophic_type ;
+                    rdfs:label "photoheterotroph" .
+
+
+###  http://example.org/sonnet#photosynthesis
+ex:photosynthesis rdf:type owl:Class ;
+                  rdfs:subClassOf ex:autotrophic_process ,
+                                  ex:energy_metabolism ,
+                                  ex:metabolic_trait ;
+                  rdfs:label "photosynthesis" .
+
+
+###  http://example.org/sonnet#phototaxis
+ex:phototaxis rdf:type owl:Class ;
+              rdfs:subClassOf ex:motility_mechanism ,
+                              ex:physiological_trait ;
+              rdfs:label "phototaxis" .
+
+
+###  http://example.org/sonnet#phylum
+ex:phylum rdf:type owl:Class ;
+          rdfs:subClassOf ex:taxonomic_rank ;
+          rdfs:label "phylum" .
+
+
+###  http://example.org/sonnet#physiological_process
+ex:physiological_process rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#physiological_state
+ex:physiological_state rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#physiological_trait
+ex:physiological_trait rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#piezophile
+ex:piezophile rdf:type owl:Class ;
+              rdfs:subClassOf ex:growth_conditions ,
+                              ex:physiological_trait ,
+                              ex:taxonomic_identifier ;
+              rdfs:label "piezophile" .
+
+
+###  http://example.org/sonnet#pigment
+ex:pigment rdf:type owl:Class ;
+           rdfs:subClassOf ex:cellular_product ,
+                           ex:diagnostic_feature ;
+           rdfs:label "pigment" .
+
+
+###  http://example.org/sonnet#pigmentation
+ex:pigmentation rdf:type owl:Class ;
+                rdfs:subClassOf ex:cellular_product ,
+                                ex:physiological_trait ;
+                rdfs:label "pigmentation" .
+
+
+###  http://example.org/sonnet#pilus
+ex:pilus rdf:type owl:Class ;
+         rdfs:subClassOf ex:cellular_component ,
+                         ex:motility_structure ,
+                         ex:reproductive_structure ;
+         rdfs:label "pilus" .
+
+
+###  http://example.org/sonnet#plant_growth_promotion
+ex:plant_growth_promotion rdf:type owl:Class ;
+                          rdfs:subClassOf ex:ecological_trait ,
+                                          ex:host_interaction ;
+                          rdfs:label "plant growth promotion" .
+
+
+###  http://example.org/sonnet#plasmid
+ex:plasmid rdf:type owl:Class ;
+           rdfs:subClassOf ex:cellular_component ,
+                           ex:genomic_element ;
+           rdfs:label "plasmid" .
+
+
+###  http://example.org/sonnet#pleomorphism
+ex:pleomorphism rdf:type owl:Class ;
+                rdfs:subClassOf ex:cellular_characteristic ,
+                                ex:morphological_trait ;
+                rdfs:label "pleomorphism" .
+
+
+###  http://example.org/sonnet#prophage
+ex:prophage rdf:type owl:Class ;
+            rdfs:subClassOf ex:genetic_element ,
+                            ex:phage_interaction ;
+            rdfs:label "prophage" .
+
+
+###  http://example.org/sonnet#prostheca
+ex:prostheca rdf:type owl:Class ;
+             rdfs:subClassOf ex:cellular_component ,
+                             ex:morphological_trait ,
+                             ex:taxonomic_identifier ;
+             rdfs:label "prostheca" .
+
+
+###  http://example.org/sonnet#protein_synthesis
+ex:protein_synthesis rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#proteolysis
+ex:proteolysis rdf:type owl:Class ;
+               rdfs:subClassOf ex:metabolic_trait ,
+                               ex:nutrient_utilization ;
+               rdfs:label "proteolysis" .
+
+
+###  http://example.org/sonnet#prototroph
+ex:prototroph rdf:type owl:Class ;
+              rdfs:subClassOf ex:metabolic_trait ,
+                              ex:nutritional_requirement ;
+              rdfs:label "prototroph" .
+
+
+###  http://example.org/sonnet#psychrophile
+ex:psychrophile rdf:type owl:Class ;
+                rdfs:subClassOf ex:growth_conditions ,
+                                ex:physiological_trait ,
+                                ex:taxonomic_identifier ;
+                rdfs:label "psychrophile" .
+
+
+###  http://example.org/sonnet#qualifier
+ex:qualifier rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#quorum_sensing
+ex:quorum_sensing rdf:type owl:Class ;
+                  rdfs:subClassOf ex:cellular_process ,
+                                  ex:community_interaction ,
+                                  ex:signaling ;
+                  rdfs:label "quorum sensing" .
+
+
+###  http://example.org/sonnet#regulation
+ex:regulation rdf:type owl:Class ;
+              rdfs:subClassOf ex:cellular_process ,
+                              ex:genetic_process ;
+              rdfs:label "regulation" .
+
+
+###  http://example.org/sonnet#regulatory_mechanism
+ex:regulatory_mechanism rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#reproductive_mechanism
+ex:reproductive_mechanism rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#reproductive_structure
+ex:reproductive_structure rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#resistance_mechanism
+ex:resistance_mechanism rdf:type owl:Class ;
+                        rdfs:subClassOf ex:adaptive_trait ,
+                                        ex:clinical_relevance ,
+                                        ex:stress_response ;
+                        rdfs:label "resistance mechanism" .
+
+
+###  http://example.org/sonnet#respiration
+ex:respiration rdf:type owl:Class ;
+               rdfs:subClassOf ex:energy_metabolism ,
+                               ex:metabolic_trait ;
+               rdfs:label "respiration" .
+
+
+###  http://example.org/sonnet#restriction_modification
+ex:restriction_modification rdf:type owl:Class ;
+                            rdfs:subClassOf ex:genetic_element ,
+                                            ex:phage_defense ;
+                            rdfs:label "restriction-modification system" .
+
+
+###  http://example.org/sonnet#ribosome
+ex:ribosome rdf:type owl:Class ;
+            rdfs:subClassOf ex:cellular_component ,
+                            ex:protein_synthesis ;
+            rdfs:label "ribosome" .
+
+
+###  http://example.org/sonnet#salinity_delta
+ex:salinity_delta rdf:type owl:Class ;
+                  rdfs:subClassOf ex:growth_tolerance_metric ,
+                                  ex:physiological_trait ;
+                  rdfs:label "salinity delta" .
+
+
+###  http://example.org/sonnet#salinity_preference
+ex:salinity_preference rdf:type owl:Class ;
+                       rdfs:subClassOf ex:growth_conditions ,
+                                       ex:physiological_trait ;
+                       rdfs:label "salinity preference" .
+
+
+###  http://example.org/sonnet#secondary_metabolite
+ex:secondary_metabolite rdf:type owl:Class ;
+                        rdfs:subClassOf ex:cellular_product ,
+                                        ex:metabolic_trait ;
+                        rdfs:label "secondary metabolite" .
+
+
+###  http://example.org/sonnet#secretion
+ex:secretion rdf:type owl:Class ;
+             rdfs:subClassOf ex:cellular_process ,
+                             ex:physiological_process ;
+             rdfs:label "secretion" .
+
+
+###  http://example.org/sonnet#secretion_system
+ex:secretion_system rdf:type owl:Class ;
+                    rdfs:subClassOf ex:cellular_component ,
+                                    ex:virulence_factor ;
+                    rdfs:label "secretion system" .
+
+
+###  http://example.org/sonnet#sheathed
+ex:sheathed rdf:type owl:Class ;
+            rdfs:subClassOf ex:cellular_component ,
+                            ex:morphological_trait ;
+            rdfs:label "sheathed" .
+
+
+###  http://example.org/sonnet#siderophore
+ex:siderophore rdf:type owl:Class ;
+               rdfs:subClassOf ex:cellular_product ,
+                               ex:iron_acquisition ,
+                               ex:metabolic_trait ;
+               rdfs:label "siderophore" .
+
+
+###  http://example.org/sonnet#sigma_factor
+ex:sigma_factor rdf:type owl:Class ;
+                rdfs:subClassOf ex:regulatory_mechanism ,
+                                ex:transcription_factor ;
+                rdfs:label "sigma factor" .
+
+
+###  http://example.org/sonnet#signaling
+ex:signaling rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#signaling_pathway
+ex:signaling_pathway rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#slime_layer
+ex:slime_layer rdf:type owl:Class ;
+               rdfs:subClassOf ex:biofilm_component ,
+                               ex:cellular_component ;
+               rdfs:label "slime layer" .
+
+
+###  http://example.org/sonnet#specialized_cell
+ex:specialized_cell rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#species
+ex:species rdf:type owl:Class ;
+           rdfs:subClassOf ex:taxonomic_rank ;
+           rdfs:label "species" .
+
+
+###  http://example.org/sonnet#spirillum
+ex:spirillum rdf:type owl:Class ;
+             rdfs:subClassOf ex:cellular_characteristic ,
+                             ex:morphological_trait ;
+             rdfs:label "spirillum" .
+
+
+###  http://example.org/sonnet#spirochete
+ex:spirochete rdf:type owl:Class ;
+              rdfs:subClassOf ex:cellular_characteristic ,
+                              ex:morphological_trait ,
+                              ex:taxonomic_identifier ;
+              rdfs:label "spirochete" .
+
+
+###  http://example.org/sonnet#sporangiospore
+ex:sporangiospore rdf:type owl:Class ;
+                  rdfs:subClassOf ex:dormancy_structure ,
+                                  ex:fungal_spore_type ,
+                                  ex:reproductive_structure ;
+                  rdfs:label "sporangiospore" .
+
+
+###  http://example.org/sonnet#sporulation
+ex:sporulation rdf:type owl:Class ;
+               rdfs:subClassOf ex:cellular_process ,
+                               ex:reproductive_mechanism ,
+                               ex:stress_response ;
+               rdfs:label "sporulation" .
+
+
+###  http://example.org/sonnet#square_cell
+ex:square_cell rdf:type owl:Class ;
+               rdfs:subClassOf ex:cellular_characteristic ,
+                               ex:morphological_trait ;
+               rdfs:label "square cell" .
+
+
+###  http://example.org/sonnet#stalk
+ex:stalk rdf:type owl:Class ;
+         rdfs:subClassOf ex:cellular_component ,
+                         ex:morphological_trait ,
+                         ex:taxonomic_identifier ;
+         rdfs:label "stalk" .
+
+
+###  http://example.org/sonnet#star_shaped_cell
+ex:star_shaped_cell rdf:type owl:Class ;
+                    rdfs:subClassOf ex:cellular_characteristic ,
+                                    ex:morphological_trait ;
+                    rdfs:label "star-shaped cell" .
+
+
+###  http://example.org/sonnet#stationary_phase
+ex:stationary_phase rdf:type owl:Class ;
+                    rdfs:subClassOf ex:growth_characteristic ,
+                                    ex:physiological_trait ;
+                    rdfs:label "stationary phase" .
+
+
+###  http://example.org/sonnet#storage_structure
+ex:storage_structure rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#strain
+ex:strain rdf:type owl:Class ;
+          rdfs:subClassOf ex:taxonomic_identifier ;
+          rdfs:label "strain" .
+
+
+###  http://example.org/sonnet#stress_response
+ex:stress_response rdf:type owl:Class ;
+                   rdfs:subClassOf ex:cellular_process ,
+                                   ex:physiological_process ;
+                   rdfs:label "stress response" .
+
+
+###  http://example.org/sonnet#sulfate_reducer
+ex:sulfate_reducer rdf:type owl:Class ;
+                   rdfs:subClassOf ex:metabolic_trait ,
+                                   ex:taxonomic_identifier ,
+                                   ex:trophic_type ;
+                   rdfs:label "sulfate reducer" .
+
+
+###  http://example.org/sonnet#swarming
+ex:swarming rdf:type owl:Class ;
+            rdfs:subClassOf ex:community_behavior ,
+                            ex:motility_mechanism ;
+            rdfs:label "swarming" .
+
+
+###  http://example.org/sonnet#symbiosis
+ex:symbiosis rdf:type owl:Class ;
+             rdfs:subClassOf ex:ecological_trait ,
+                             ex:host_interaction ;
+             rdfs:label "symbiosis" .
+
+
+###  http://example.org/sonnet#symbiotic_process
+ex:symbiotic_process rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#syntrophy
+ex:syntrophy rdf:type owl:Class ;
+             rdfs:subClassOf ex:community_interaction ,
+                             ex:ecological_trait ,
+                             ex:metabolic_trait ;
+             rdfs:label "syntrophy" .
+
+
+###  http://example.org/sonnet#taxonomic_identifier
+ex:taxonomic_identifier rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#taxonomic_rank
+ex:taxonomic_rank rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#teichoic_acid
+ex:teichoic_acid rdf:type owl:Class ;
+                 rdfs:subClassOf ex:cell_wall_component ,
+                                 ex:cellular_component ;
+                 rdfs:label "teichoic acid" .
+
+
+###  http://example.org/sonnet#temperature_delta
+ex:temperature_delta rdf:type owl:Class ;
+                     rdfs:subClassOf ex:growth_tolerance_metric ,
+                                     ex:physiological_trait ;
+                     rdfs:label "temperature delta" .
+
+
+###  http://example.org/sonnet#temperature_optimum
+ex:temperature_optimum rdf:type owl:Class ;
+                       rdfs:subClassOf ex:growth_conditions ,
+                                       ex:physiological_trait ;
+                       rdfs:label "temperature optimum" .
+
+
+###  http://example.org/sonnet#temperature_preference
+ex:temperature_preference rdf:type owl:Class ;
+                          rdfs:subClassOf ex:growth_conditions ,
+                                          ex:physiological_trait ;
+                          rdfs:label "temperature preference" .
+
+
+###  http://example.org/sonnet#temperature_range
+ex:temperature_range rdf:type owl:Class ;
+                     rdfs:subClassOf ex:growth_conditions ,
+                                     ex:physiological_trait ;
+                     rdfs:label "temperature range" .
+
+
+###  http://example.org/sonnet#thermal_tolerance
+ex:thermal_tolerance rdf:type owl:Class ;
+                     rdfs:subClassOf ex:growth_conditions ,
+                                     ex:physiological_trait ,
+                                     ex:stress_response ;
+                     rdfs:label "thermal tolerance" .
+
+
+###  http://example.org/sonnet#thermophile
+ex:thermophile rdf:type owl:Class ;
+               rdfs:subClassOf ex:growth_conditions ,
+                               ex:physiological_trait ,
+                               ex:taxonomic_identifier ;
+               rdfs:label "thermophile" .
+
+
+###  http://example.org/sonnet#toxin
+ex:toxin rdf:type owl:Class ;
+         rdfs:subClassOf ex:cellular_product ,
+                         ex:virulence_factor ;
+         rdfs:label "toxin" .
+
+
+###  http://example.org/sonnet#transcription_factor
+ex:transcription_factor rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#transduction
+ex:transduction rdf:type owl:Class ;
+                rdfs:subClassOf ex:cellular_process ,
+                                ex:genetic_exchange ;
+                rdfs:label "transduction" .
+
+
+###  http://example.org/sonnet#transferase
+ex:transferase rdf:type owl:Class ;
+               rdfs:subClassOf ex:enzyme_class ,
+                               ex:metabolic_trait ;
+               rdfs:label "transferase" .
+
+
+###  http://example.org/sonnet#transformation
+ex:transformation rdf:type owl:Class ;
+                  rdfs:subClassOf ex:cellular_process ,
+                                  ex:genetic_exchange ;
+                  rdfs:label "transformation" .
+
+
+###  http://example.org/sonnet#transport_system
+ex:transport_system rdf:type owl:Class ;
+                    rdfs:subClassOf ex:cellular_component ,
+                                    ex:physiological_process ;
+                    rdfs:label "transport system" .
+
+
+###  http://example.org/sonnet#transposon
+ex:transposon rdf:type owl:Class ;
+              rdfs:subClassOf ex:genomic_element ,
+                              ex:mobile_genetic_element ;
+              rdfs:label "transposon" .
+
+
+###  http://example.org/sonnet#triangular_cell
+ex:triangular_cell rdf:type owl:Class ;
+                   rdfs:subClassOf ex:cellular_characteristic ,
+                                   ex:morphological_trait ;
+                   rdfs:label "triangular cell" .
+
+
+###  http://example.org/sonnet#trichome
+ex:trichome rdf:type owl:Class ;
+            rdfs:subClassOf ex:cellular_arrangement ,
+                            ex:morphological_trait ;
+            rdfs:label "trichome" .
+
+
+###  http://example.org/sonnet#trophic_type
+ex:trophic_type rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#twitching_motility
+ex:twitching_motility rdf:type owl:Class ;
+                      rdfs:subClassOf ex:motility_mechanism ;
+                      rdfs:label "twitching motility" .
+
+
+###  http://example.org/sonnet#two_component_system
+ex:two_component_system rdf:type owl:Class ;
+                        rdfs:subClassOf ex:regulatory_mechanism ,
+                                        ex:signaling_pathway ;
+                        rdfs:label "two-component system" .
+
+
+###  http://example.org/sonnet#viable_but_non_culturable
+ex:viable_but_non_culturable rdf:type owl:Class ;
+                             rdfs:subClassOf ex:physiological_state ,
+                                             ex:stress_response ;
+                             rdfs:label "viable but non-culturable" .
+
+
+###  http://example.org/sonnet#vibrio
+ex:vibrio rdf:type owl:Class ;
+          rdfs:subClassOf ex:cellular_characteristic ,
+                          ex:morphological_trait ,
+                          ex:taxonomic_identifier ;
+          rdfs:label "vibrio" .
+
+
+###  http://example.org/sonnet#virulence
+ex:virulence rdf:type owl:Class ;
+             rdfs:subClassOf ex:host_interaction ,
+                             ex:virulence_trait ;
+             rdfs:label "virulence" .
+
+
+###  http://example.org/sonnet#virulence_factor
+ex:virulence_factor rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#virulence_trait
+ex:virulence_trait rdf:type owl:Class .
+
+
+###  http://example.org/sonnet#xylanolysis
+ex:xylanolysis rdf:type owl:Class ;
+               rdfs:subClassOf ex:metabolic_trait ,
+                               ex:nutrient_utilization ;
+               rdfs:label "xylanolysis" .
+
+
+###  http://example.org/sonnet#zoospore
+ex:zoospore rdf:type owl:Class ;
+            rdfs:subClassOf ex:dormancy_structure ,
+                            ex:fungal_spore_type ,
+                            ex:reproductive_structure ;
+            rdfs:label "zoospore" .
+
+
+###  http://example.org/sonnet#zygospore
+ex:zygospore rdf:type owl:Class ;
+             rdfs:subClassOf ex:dormancy_structure ,
+                             ex:fungal_spore_type ,
+                             ex:reproductive_structure ;
+             rdfs:label "zygospore" .
+
+
+###  Generated by the OWL API (version 4.5.26) https://github.com/owlcs/owlapi
