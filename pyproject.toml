@@ -1,0 +1,23 @@
+[project]
+name = "metpo"
+version = "0.1.0"
+description = "METPO Ontology, including melting and normalizastion of N4L data files"
+authors = [
+    {name = "Mark Andrew Miller",email = "mam@lbl.gov"}
+]
+readme = "README.md"
+requires-python = "^3.11"
+dependencies = [
+    "pandas (>=2.2.3,<3.0.0)",
+    "jupyter (>=1.1.1,<2.0.0)",
+    "openpyxl (>=3.1.5,<4.0.0)"
+]
+
+[tool.poetry]
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.29.5"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
