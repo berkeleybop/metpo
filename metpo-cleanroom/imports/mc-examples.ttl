@@ -1,0 +1,1190 @@
+@prefix ex: <http://example.org/sonnet#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@base <http://www.w3.org/2002/07/owl#> .
+
+[ rdf:type owl:Ontology
+ ] .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.w3.org/2004/02/skos/core#example
+skos:example rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+ex:CRISPR skos:example "CRISPR arrays" ,
+                       "CRISPR-Cas3 system" ,
+                       "CRISPR-Cas9 system" .
+
+
+ex:S_layer skos:example "S-layer glycoproteins" ,
+                        "paracrystalline S-layer" .
+
+
+ex:acid_fast skos:example "Mycobacterium tuberculosis" ,
+                          "Nocardia" .
+
+
+ex:acidophile skos:example "Acidithiobacillus ferrooxidans" ,
+                           "Ferroplasma acidarmanus" .
+
+
+ex:active_transport skos:example "ATP-driven transport" ,
+                                 "proton motive force-driven transport" .
+
+
+ex:adaptation skos:example "genetic adaptations (mutations, gene acquisitions)" ,
+                           "physiological adaptations (enzyme induction, stress responses)" .
+
+
+ex:adhesin skos:example "fimbriae" ,
+                        "pili" ,
+                        "surface proteins" .
+
+
+ex:aerobe skos:example "Bacillus subtilis" ,
+                       "Pseudomonas aeruginosa" .
+
+
+ex:aerobic_respiration skos:example "Complete oxidation to CO2 and H2O" ,
+                                    "High energy yield (up to 38 ATP per glucose)" .
+
+
+ex:aerotolerant skos:example "Some Lactobacillus species" ,
+                             "Streptococcus pyogenes" .
+
+
+ex:aggregate skos:example "flocs in wastewater treatment" ,
+                          "marine snow" ,
+                          "milk clotting by lactic acid bacteria" .
+
+
+ex:akinete skos:example "Anabaena akinetes" ,
+                        "Nostoc akinetes" .
+
+
+ex:alkaliphile skos:example "Bacillus alcalophilus" ,
+                            "Natronomonas pharaonis" .
+
+
+ex:ammonification skos:example "Many soil bacteria and fungi" .
+
+
+ex:amylolysis skos:example "alpha-amylases" ,
+                           "beta-amylases" ,
+                           "glucoamylases" .
+
+
+ex:anaerobe skos:example "Clostridium botulinum" ,
+                         "Methanobacterium formicicum" .
+
+
+ex:anaerobic_respiration skos:example "fumarate respiration" ,
+                                      "iron respiration" ,
+                                      "nitrate respiration" ,
+                                      "sulfate respiration" .
+
+
+ex:anoxygenic_photosynthesis skos:example "green sulfur bacteria (bacteriochlorophyll)" ,
+                                          "heliobacteria (bacteriochlorophyll)" ,
+                                          "purple bacteria (bacteriochlorophyll)" .
+
+
+ex:antibiotic_production skos:example "Bacillus antibiotics" ,
+                                      "Pseudomonas antibiotics" ,
+                                      "Streptomyces antibiotics" .
+
+
+ex:antibiotic_resistance skos:example "aminoglycoside resistance" ,
+                                      "beta-lactam resistance" ,
+                                      "fluoroquinolone resistance" ,
+                                      "macrolide resistance" ,
+                                      "tetracycline resistance" .
+
+
+ex:antimicrobial_resistance skos:example "antibiotic resistance" ,
+                                         "antifungal resistance" ,
+                                         "antiseptic resistance" .
+
+
+ex:appendage skos:example "fimbriae" ,
+                          "flagella" ,
+                          "pili" ,
+                          "prosthecae" ,
+                          "stalks" .
+
+
+ex:arthrospore skos:example "Coccidioides arthrospores" ,
+                            "Geotrichum arthrospores" .
+
+
+ex:ascospore skos:example "Neurospora crassa" ,
+                          "Saccharomyces cerevisiae" .
+
+
+ex:autotroph skos:example "cyanobacteria" ,
+                          "sulfur-oxidizing bacteria" .
+
+
+ex:auxotroph skos:example "amino acid auxotrophy" ,
+                          "nucleotide auxotrophy" ,
+                          "vitamin auxotrophy" .
+
+
+ex:axial_filament skos:example "endoflagella in Borrelia" ,
+                               "periplasmic flagella in Treponema" .
+
+
+ex:bacillus skos:example "Bacillus" ,
+                         "Escherichia" ,
+                         "Lactobacillus" .
+
+
+ex:barophile skos:example "Moritella yayanosii" ,
+                          "Shewanella benthica" .
+
+
+ex:barotolerant skos:example "Various marine bacteria that can survive in both shallow and deep waters" .
+
+
+ex:basidiospore skos:example "Agaricus bisporus" ,
+                             "Cryptococcus neoformans" .
+
+
+ex:binary_fission skos:example "Most bacteria reproduce by binary fission" .
+
+
+ex:biofilm skos:example "Pseudomonas aeruginosa biofilms" ,
+                        "dental plaque" ,
+                        "mixed-species biofilms" .
+
+
+ex:biofilm_formation skos:example "biofilm maturation" ,
+                                  "dispersion" ,
+                                  "initial attachment" ,
+                                  "matrix production" ,
+                                  "microcolony formation" .
+
+
+ex:biogeochemical_cycling skos:example "carbon cycle" ,
+                                       "nitrogen cycle" ,
+                                       "phosphorus cycle" ,
+                                       "sulfur cycle" .
+
+
+ex:bioluminescence skos:example "Photobacterium phosphoreum" ,
+                                "Vibrio fischeri" .
+
+
+ex:budding skos:example "Caulobacter crescentus" ,
+                        "Some Planctomycetes" .
+
+
+ex:capnophile skos:example "Campylobacter species" ,
+                           "Helicobacter pylori" ,
+                           "Neisseria species" .
+
+
+ex:capsule skos:example "K antigen in E. coli" ,
+                        "pneumococcal capsule" .
+
+
+ex:carbon_fixation skos:example "3-hydroxypropionate cycle" ,
+                                "Calvin cycle" ,
+                                "Wood-Ljungdahl pathway" ,
+                                "reverse TCA cycle" .
+
+
+ex:carbon_source skos:example "carbon dioxide" ,
+                              "glucose" ,
+                              "methane" .
+
+
+ex:carboxydotroph skos:example "Carboxydothermus hydrogenoformans" ,
+                               "Oligotropha carboxidovorans" .
+
+
+ex:cell_arrangement skos:example "diplococci (pairs)" ,
+                                 "palisades (side-by-side)" ,
+                                 "sarcinae (cuboidal packets of eight)" ,
+                                 "staphylococci (grape-like clusters)" ,
+                                 "streptococci (chains)" ,
+                                 "tetrads (groups of four)" .
+
+
+ex:cell_length_category skos:example "low length (1.3-2 μm)" ,
+                                     "mid length (2-3 μ" ,
+                                     "very low length (<1.3 μm)" .
+
+
+ex:cell_shape skos:example "bacilli (rod-shaped)" ,
+                           "cocci (spherical)" ,
+                           "pleomorphic (variable shapes)" ,
+                           "spirilla (spiral)" ,
+                           "vibrios (curved rods)" .
+
+
+ex:cell_size skos:example "diameter (for spherical cells)" ,
+                          "length (typically 0.5-5 μm for most bacteria)" ,
+                          "width (typically 0.2-2 μm for most bacteria)" .
+
+
+ex:cell_width_category skos:example "high width (>0.9 μm)" ,
+                                    "low width (0.5-0.65 μm)" ,
+                                    "mid width (0.65-0.9 μm)" ,
+                                    "very low width (<0.5 μm)" .
+
+
+ex:cellulolysis skos:example "beta-glucosidases" ,
+                             "cellobiohydrolases" ,
+                             "cellulases" .
+
+
+ex:chemoautotroph skos:example "Acidithiobacillus (sulfur oxidizer)" ,
+                               "Methanogenic archaea" ,
+                               "Nitrosomonas (ammonia oxidizer)" .
+
+
+ex:chemoheterotroph skos:example "E. coli, Bacillus, Pseudomonas" ,
+                                 "Most bacteria and fungi" .
+
+
+ex:chemotaxis skos:example "attraction to nutrients" ,
+                           "repulsion from toxins" .
+
+
+ex:chlamydospore skos:example "Candida albicans chlamydospores" ,
+                              "Fusarium chlamydospores" .
+
+
+ex:class skos:example "Actinobacteria (class)" ,
+                      "Bacilli" ,
+                      "Gammaproteobacteria" .
+
+
+ex:coccus skos:example "Micrococcus (tetrads)" ,
+                       "Staphylococcus (clusters)" ,
+                       "Streptococcus (chains)" .
+
+
+ex:cold_shock_protein skos:example "CspA family proteins" ,
+                                   "RNA helicases" ,
+                                   "fatty acid desaturases" .
+
+
+ex:cold_shock_response skos:example "membrane fluidity adjustments" ,
+                                    "production of cold shock proteins" .
+
+
+ex:colonization skos:example "environmental colonization" ,
+                             "gut colonization" ,
+                             "mucosal colonization" ,
+                             "skin colonization" .
+
+
+ex:colony_elevation skos:example "convex" ,
+                                 "flat" ,
+                                 "pulvinate (cushion-shaped)" ,
+                                 "raised" ,
+                                 "umbonate (raised center)" .
+
+
+ex:colony_margin skos:example "entire (smooth)" ,
+                              "filamentous (thread-like extensions)" ,
+                              "lobate (lobed)" ,
+                              "rhizoid (root-like)" ,
+                              "undulate (wavy)" .
+
+
+ex:colony_morphology skos:example "size, shape, color, texture, margin, elevation" .
+
+
+ex:colony_texture skos:example "dry" ,
+                               "mucoid (slimy)" ,
+                               "powdery" ,
+                               "rough" ,
+                               "smooth (glistening)" .
+
+
+ex:commensalism skos:example "normal skin flora" ,
+                             "some components of gut microbiota" .
+
+
+ex:compatible_solute skos:example "ectoine" ,
+                                  "glycine betaine" ,
+                                  "mannitol" ,
+                                  "proline" ,
+                                  "trehalose" .
+
+
+ex:competence skos:example "Induced competence in laboratory conditions" ,
+                           "Natural competence in Bacillus subtilis" .
+
+
+ex:conidium skos:example "Aspergillus conidia" ,
+                         "Penicillium conidia" .
+
+
+ex:conjugation skos:example "F plasmid transfer in E. coli" ,
+                            "R plasmid transfer" .
+
+
+ex:culturability skos:example "culturable (can be grown in laboratory media)" ,
+                              "unculturable (cannot be grown with current techniques)" ,
+                              "viable but non-culturable (VBNC) state" .
+
+
+ex:cyst skos:example "Azotobacter cysts" ,
+                     "Myxococcus cysts" .
+
+
+ex:death_phase skos:example "extreme nutrient depletion" ,
+                            "programmed cell death" ,
+                            "toxic waste accumulation" .
+
+
+ex:denitrification skos:example "Paracoccus denitrificans" ,
+                                "Pseudomonas denitrificans" .
+
+
+ex:diazotroph skos:example "Azotobacter" ,
+                           "Rhizobium" ,
+                           "Some cyanobacteria" .
+
+
+ex:differentiation skos:example "aerial mycelium formation in Streptomyces" ,
+                                "endospore formation in Bacillus" ,
+                                "heterocyst formation in cyanobacteria" .
+
+
+ex:dimorphism skos:example "prosthecate-budding cell cycle in Caulobacter" ,
+                           "rod-coccoid transitions" ,
+                           "yeast-hyphal dimorphism in Candida" .
+
+
+ex:disc_shaped_cell skos:example "Certain aquatic bacteria" ,
+                                 "Some cyanobacteria" .
+
+
+ex:domain skos:example "Archaea" ,
+                       "Bacteria" ,
+                       "Eukarya" .
+
+
+ex:dormancy skos:example "bacterial persistence" ,
+                         "viable but non-culturable state" .
+
+
+ex:dumbbell_shaped_cell skos:example "Dividing yeast cells" ,
+                                     "Some budding bacteria" .
+
+
+ex:ecological_niche skos:example "extreme environments" ,
+                                 "human microbiome" ,
+                                 "marine microbiota" ,
+                                 "soil microbiota" .
+
+
+ex:ectosymbiosis skos:example "dental microbiota" ,
+                              "epidermal bacteria on mammals" ,
+                              "gut microbiota" .
+
+
+ex:electron_acceptor skos:example "carbon dioxide" ,
+                                  "nitrate" ,
+                                  "oxygen" ,
+                                  "sulfate" .
+
+
+ex:electron_donor skos:example "hydrogen" ,
+                               "hydrogen sulfide" ,
+                               "organic compounds" ,
+                               "reduced iron" .
+
+
+ex:endospore skos:example "Bacillus endospores" ,
+                          "Clostridium endospores" .
+
+
+ex:endosymbiosis skos:example "Buchnera in aphids" ,
+                              "Rhizobium in plant root nodules" ,
+                              "Wolbachia in insect cells" .
+
+
+ex:enzyme_activity skos:example "hydrolases" ,
+                                "isomerases" ,
+                                "ligases" ,
+                                "lyases" ,
+                                "oxidoreductases" ,
+                                "transferases" .
+
+
+ex:exospore skos:example "Methylosinus spores" ,
+                         "Streptomyces spores" .
+
+
+ex:exponential_phase skos:example "balanced growth" ,
+                                  "constant doubling time" ,
+                                  "maximum growth rate" .
+
+
+ex:extracellular skos:example "environmental bacteria" ,
+                              "most bacterial pathogens" .
+
+
+ex:extracellular_polysaccharide skos:example "biofilm matrix components" ,
+                                             "capsular polysaccharides" ,
+                                             "slime polysaccharides" .
+
+
+ex:extreme_halophile skos:example "Halobacterium salinarum" ,
+                                  "Salinibacter ruber" .
+
+
+ex:extremophile skos:example "acidophiles (low pH)" ,
+                             "alkaliphiles (high pH)" ,
+                             "halophiles (high salt)" ,
+                             "psychrophiles (low temperature)" ,
+                             "thermophiles (high temperature)" .
+
+
+ex:facultative skos:example "facultative anaerobe" ,
+                            "facultative intracellular parasite" ,
+                            "facultative psychrophile" .
+
+
+ex:facultative_anaerobe skos:example "Escherichia coli" ,
+                                     "Saccharomyces cerevisiae" .
+
+
+ex:family skos:example "Bacillaceae" ,
+                       "Enterobacteriaceae" ,
+                       "Streptomycetaceae" .
+
+
+ex:fastidious skos:example "Bifidobacterium (requires specific carbohydrates)" ,
+                           "Haemophilus (requires X and V factors)" ,
+                           "Lactobacillus (requires specific amino acids)" .
+
+
+ex:fermentation skos:example "alcoholic fermentation" ,
+                             "lactic acid fermentation" ,
+                             "mixed acid fermentation" .
+
+
+ex:filamentous skos:example "Nocardia" ,
+                            "Some cyanobacteria" ,
+                            "Streptomyces" .
+
+
+ex:fimbriae skos:example "P fimbriae in uropathogenic E. coli" ,
+                         "Type 1 fimbriae in E. coli" .
+
+
+ex:flagellum skos:example "amphitrichous (flagella at both ends)" ,
+                          "lophotrichous (multiple flagella at one end)" ,
+                          "monotrichous (single polar flagellum)" ,
+                          "peritrichous (flagella all over the cell)" .
+
+
+ex:flask_shaped_cell skos:example "Certain budding bacteria" ,
+                                  "Some prosthecate bacteria" .
+
+
+ex:gas_vesicle skos:example "Cyanobacterial gas vesicles" ,
+                            "Halobacterial gas vesicles" .
+
+
+ex:gc_content skos:example "{'high GC content (>60%)': 'Streptomyces, Mycobacterium'}" ,
+                           "{'low GC content (<30%)': 'Clostridium, some Mycoplasma'}" .
+
+
+ex:gc_content_high skos:example "Mycobacterium species" ,
+                                "Streptomyces species" .
+
+
+ex:gc_content_low skos:example "Clostridium species" ,
+                               "Some Mycoplasma species" .
+
+
+ex:gc_content_mid1 skos:example "Escherichia coli" ,
+                                "Many Proteobacteria" .
+
+
+ex:gc_content_mid2 skos:example "Many Actinobacteria" ,
+                                "Some Pseudomonas species" .
+
+
+ex:generation_time skos:example "{'fast growth': '< 20 minutes (E. coli in optimal conditions)'}" ,
+                                "{'moderate growth': '1-3 hours (many soil bacteria)'}" ,
+                                "{'slow growth': '> 24 hours (Mycobacterium tuberculosis)'}" .
+
+
+ex:genome_size skos:example "{'large genomes (>6 Mbp)': 'Streptomyces coelicolor (8.7 Mbp)'}" ,
+                            "{'medium genomes (1.5-6 Mbp)': 'E. coli (4.6 Mbp)'}" ,
+                            "{'small genomes (<1.5 Mbp)': 'Mycoplasma genitalium (0.58 Mbp)'}" .
+
+
+ex:genomic_island skos:example "metabolic islands" ,
+                               "pathogenicity islands" ,
+                               "resistance islands" ,
+                               "symbiosis islands" .
+
+
+ex:genus skos:example "Bacillus" ,
+                      "Escherichia" ,
+                      "Streptomyces" .
+
+
+ex:gliding_motility skos:example "Flavobacterium" ,
+                                 "Mycoplasma" ,
+                                 "Myxococcus" .
+
+
+ex:global_regulator skos:example "CRP (catabolite repression)" ,
+                                 "Fur (ferric uptake regulator)" ,
+                                 "Lrp (leucine-responsive protein)" ,
+                                 "RpoS (sigma factor)" .
+
+
+ex:gram_negative skos:example "Escherichia" ,
+                              "Pseudomonas" ,
+                              "Salmonella" .
+
+
+ex:gram_positive skos:example "Bacillus" ,
+                              "Staphylococcus" ,
+                              "Streptococcus" .
+
+
+ex:gram_stain skos:example "Gram-negative" ,
+                           "Gram-positive" ,
+                           "Gram-variable" .
+
+
+ex:gram_stain_negative skos:example "Escherichia coli" ,
+                                    "Pseudomonas aeruginosa" ,
+                                    "Salmonella species" .
+
+
+ex:gram_stain_positive skos:example "Bacillus subtilis" ,
+                                    "Staphylococcus aureus" ,
+                                    "Streptococcus species" .
+
+
+ex:growth_rate skos:example "doubling time" ,
+                            "exponential growth rate" ,
+                            "generation time" ,
+                            "specific growth rate" .
+
+
+ex:habitat skos:example "aquatic" ,
+                        "extreme environments" ,
+                        "host-associated" ,
+                        "terrestrial" .
+
+
+ex:halophile skos:example "Dunaliella salina" ,
+                          "Halobacterium salinarum" .
+
+
+ex:halotolerant skos:example "Some Bacillus species" ,
+                             "Staphylococcus aureus" .
+
+
+ex:heat_shock_protein skos:example "Hsp70 family" ,
+                                   "Hsp90 family" ,
+                                   "chaperonins (GroEL/GroES)" .
+
+
+ex:heat_shock_response skos:example "chaperone activity upregulation" ,
+                                    "production of heat shock proteins" .
+
+
+ex:hemolysis skos:example "alpha-hemolysis (partial hemolysis, greenish)" ,
+                          "beta-hemolysis (complete hemolysis, clear)" ,
+                          "gamma-hemolysis (no hemolysis)" .
+
+
+ex:heterocyst skos:example "Anabaena heterocysts" ,
+                           "Nostoc heterocysts" .
+
+
+ex:heterotroph skos:example "Bacillus subtilis" ,
+                            "Escherichia coli" .
+
+
+ex:holdfast skos:example "Caulobacter holdfast" ,
+                         "Hyphomonas holdfast" .
+
+
+ex:horizontal_gene_transfer skos:example "conjugation" ,
+                                         "transduction" ,
+                                         "transformation" .
+
+
+ex:hydrolase skos:example "amylases (starch hydrolysis)" ,
+                          "lipases (lipid hydrolysis)" ,
+                          "nucleases (nucleic acid hydrolysis)" ,
+                          "proteases (protein hydrolysis)" .
+
+
+ex:hyperthermophile skos:example "Methanopyrus kandleri" ,
+                                 "Pyrolobus fumarii" .
+
+
+ex:inclusion_body skos:example "gas vesicles" ,
+                               "glycogen granules" ,
+                               "polyhydroxybutyrate (PHB) granules" ,
+                               "polyphosphate granules" ,
+                               "sulfur granules" .
+
+
+ex:infection skos:example "acute infections" ,
+                          "chronic infections" ,
+                          "localized infections" ,
+                          "systemic infections" .
+
+
+ex:intracellular skos:example "facultative intracellular bacteria (Listeria, Salmonella)" ,
+                              "obligate intracellular bacteria (Rickettsia, Chlamydia)" .
+
+
+ex:invasion skos:example "blood-brain barrier penetration" ,
+                         "intracellular pathogens" ,
+                         "tissue-invasive bacteria" .
+
+
+ex:lag_phase skos:example "adaptation to new nutrients" ,
+                          "repair of cellular damage" ,
+                          "synthesis of new enzymes" .
+
+
+ex:life_cycle skos:example "complex developmental cycles" ,
+                           "germination" ,
+                           "sporulation" ,
+                           "vegetative growth" .
+
+
+ex:lipolysis skos:example "lipases" ,
+                          "phospholipases" .
+
+
+ex:lipopolysaccharide skos:example "O-antigen" ,
+                                   "core oligosaccharide" ,
+                                   "lipid A (endotoxin)" .
+
+
+ex:lysogeny skos:example "lambda phage lysogeny" ,
+                         "prophage formation" .
+
+
+ex:magnetotaxis skos:example "Magnetococcus marinus" ,
+                             "Magnetospirillum magnetotacticum" .
+
+
+ex:mesophile skos:example "Bacillus subtilis" ,
+                          "Escherichia coli" .
+
+
+ex:methanogenesis skos:example "CO2 reduction with H2" ,
+                               "acetate fermentation to methane" ,
+                               "methanol reduction to methane" .
+
+
+ex:methylation skos:example "DNA methylation" ,
+                            "protein methylation" ,
+                            "restriction-modification systems" .
+
+
+ex:microaerophile skos:example "Campylobacter jejuni" ,
+                               "Helicobacter pylori" .
+
+
+ex:mobile_genetic_element skos:example "insertion sequences" ,
+                                       "integrons" ,
+                                       "plasmids" ,
+                                       "prophages" ,
+                                       "transposons" .
+
+
+ex:moderate_halophile skos:example "Halomonas elongata" ,
+                                   "Salinivibrio costicola" .
+
+
+ex:mutualism skos:example "gut microbiota providing vitamins to host" ,
+                          "nitrogen-fixing bacteria in root nodules" .
+
+
+ex:mycolic_acid skos:example "Corynebacterium diphtheriae" ,
+                             "Mycobacterium tuberculosis" .
+
+
+ex:mycorrhization skos:example "arbuscular mycorrhizae" ,
+                               "ectomycorrhizae" .
+
+
+ex:neutrophile skos:example "Bacillus subtilis" ,
+                            "Escherichia coli" .
+
+
+ex:nitrification skos:example "Nitrobacter (nitrite to nitrate)" ,
+                              "Nitrosomonas (ammonia to nitrite)" .
+
+
+ex:nitrogen_fixation skos:example "Azotobacter in soil" ,
+                                  "Rhizobium in legume root nodules" .
+
+
+ex:nodulation skos:example "Nod factor signaling" ,
+                           "Rhizobium-legume symbiosis" ,
+                           "root nodule formation" .
+
+
+ex:nucleoid skos:example "bacterial chromosome" ,
+                         "nucleoid-associated proteins" .
+
+
+ex:obligate skos:example "obligate aerobe" ,
+                         "obligate anaerobe" ,
+                         "obligate intracellular parasite" .
+
+
+ex:obligate_aerobe skos:example "Micrococcus luteus" ,
+                                "Pseudomonas aeruginosa" .
+
+
+ex:obligate_anaerobe skos:example "Clostridium tetani" ,
+                                  "Methanobacterium formicicum" .
+
+
+ex:oospore skos:example "Phytophthora oospores" ,
+                        "Pythium oospores" .
+
+
+ex:order skos:example "Actinomycetales" ,
+                      "Bacillales" ,
+                      "Enterobacterales" .
+
+
+ex:osmophile skos:example "Some yeasts and molds" ,
+                          "Zygosaccharomyces rouxii" .
+
+
+ex:osmoregulation skos:example "compatible solute accumulation" ,
+                               "ion transport" ,
+                               "water channel regulation" .
+
+
+ex:oxidative_stress_response skos:example "production of catalase" ,
+                                          "production of peroxidases" ,
+                                          "production of superoxide dismutase" .
+
+
+ex:oxidoreductase skos:example "dehydrogenases" ,
+                               "oxidases" ,
+                               "peroxidases" ,
+                               "reductases" .
+
+
+ex:oxygen_requirement skos:example "aerobic" ,
+                                   "anaerobic" ,
+                                   "microaerophilic" .
+
+
+ex:oxygenic_photosynthesis skos:example "cyanobacteria (chlorophyll a)" .
+
+
+ex:pH_optimum skos:example "pH 10.0 for Bacillus alcalophilus" ,
+                           "pH 3.0 for Acidithiobacillus ferrooxidans" ,
+                           "pH 7.0 for E. coli" .
+
+
+ex:pH_preference skos:example "acidophilic" ,
+                              "alkaliphilic" ,
+                              "neutrophilic" .
+
+
+ex:pH_range skos:example "pH 1-5 for acidophiles" ,
+                         "pH 6.5-7.5 for neutrophiles" ,
+                         "pH 8.5-11 for alkaliphiles" .
+
+
+ex:pH_tolerance skos:example "acid resistance" ,
+                             "alkaline resistance" .
+
+
+ex:pan_genome skos:example "accessory genome (genes present in some strains)" ,
+                           "core genome (genes present in all strains)" ,
+                           "strain-specific genes (unique to single strains)" .
+
+
+ex:parasitism skos:example "extracellular pathogens causing disease" ,
+                           "intracellular pathogens" .
+
+
+ex:passive_transport skos:example "diffusion" ,
+                                  "facilitated diffusion" ,
+                                  "osmosis" .
+
+
+ex:pathogenicity skos:example "evasion of host immune responses" ,
+                              "invasion of host tissues" ,
+                              "production of toxins" .
+
+
+ex:pathogenicity_island skos:example "LEE in pathogenic E. coli" ,
+                                     "SPI-1 in Salmonella" .
+
+
+ex:peptidoglycan skos:example "thick in Gram-positive bacteria" ,
+                              "thin in Gram-negative bacteria" .
+
+
+ex:ph_delta skos:example "{'narrow range (<1 pH unit)': 'specialist organisms'}" ,
+                         "{'wide range (>5 pH units)': 'generalist organisms'}" .
+
+
+ex:photoautotroph skos:example "Cyanobacteria" ,
+                               "Green sulfur bacteria" .
+
+
+ex:photoheterotroph skos:example "Purple non-sulfur bacteria" ,
+                                 "Some green bacteria" .
+
+
+ex:photosynthesis skos:example "anoxygenic photosynthesis (purple and green bacteria)" ,
+                               "oxygenic photosynthesis (cyanobacteria)" .
+
+
+ex:phototaxis skos:example "negative phototaxis (movement away from light)" ,
+                           "positive phototaxis (movement toward light)" .
+
+
+ex:phylum skos:example "Actinobacteria" ,
+                       "Bacteroidetes" ,
+                       "Firmicutes" ,
+                       "Proteobacteria" .
+
+
+ex:piezophile skos:example "Colwellia hadaliensis" ,
+                           "Psychromonas species" .
+
+
+ex:pigment skos:example "carotenoids (orange/yellow)" ,
+                        "melanins (brown/black)" ,
+                        "prodigiosin (red)" ,
+                        "pyocyanin (blue-green)" .
+
+
+ex:pigmentation skos:example "carotenoids (yellow to red)" ,
+                             "melanins (brown to black)" ,
+                             "prodigiosin (red)" ,
+                             "violacein (purple)" .
+
+
+ex:pilus skos:example "sex pili (conjugation)" ,
+                      "type IV pili (twitching motility)" .
+
+
+ex:plant_growth_promotion skos:example "biocontrol of pathogens" ,
+                                       "induced systemic resistance" ,
+                                       "phosphate solubilization" ,
+                                       "phytohormone production" .
+
+
+ex:plasmid skos:example "F plasmids (fertility/conjugation)" ,
+                        "R plasmids (antibiotic resistance)" ,
+                        "Ti plasmids (plant tumor induction)" .
+
+
+ex:pleomorphism skos:example "Corynebacterium (club-shaped and irregular)" ,
+                             "L-form transition" ,
+                             "Mycoplasma (lack cell wall)" ,
+                             "cell wall deficient forms" ,
+                             "filamentous growth under stress" .
+
+
+ex:prophage skos:example "cryptic prophages" ,
+                         "defective prophages" ,
+                         "inducible prophages" .
+
+
+ex:prostheca skos:example "Caulobacter crescentus stalk" ,
+                          "Hyphomicrobium appendages" ,
+                          "Hyphomonas neptunium stalk" .
+
+
+ex:proteolysis skos:example "extracellular proteases for nutrient acquisition" ,
+                            "intracellular proteases for protein turnover" .
+
+
+ex:prototroph skos:example "environmentally isolated strains" ,
+                           "wild-type strains of most bacteria" .
+
+
+ex:psychrophile skos:example "Polaromonas vacuolata" ,
+                             "Psychrobacter arcticus" .
+
+
+ex:quorum_sensing skos:example "AHL signaling in Gram-negative bacteria" ,
+                               "AI-2 interspecies signaling" ,
+                               "peptide signaling in Gram-positive bacteria" .
+
+
+ex:regulation skos:example "post-translational regulation" ,
+                           "transcriptional regulation" ,
+                           "translational regulation" .
+
+
+ex:resistance_mechanism skos:example "active efflux" ,
+                                     "bypass mechanisms" ,
+                                     "enzymatic inactivation" ,
+                                     "reduced permeability" ,
+                                     "target modification" .
+
+
+ex:respiration skos:example "aerobic respiration (oxygen as terminal electron acceptor)" ,
+                            "anaerobic respiration (other terminal electron acceptors)" .
+
+
+ex:restriction_modification skos:example "Type I R-M systems" ,
+                                         "Type II R-M systems" ,
+                                         "Type III R-M systems" .
+
+
+ex:ribosome skos:example "30S small subunit" ,
+                         "50S large subunit" ,
+                         "70S ribosome (prokaryotic)" .
+
+
+ex:salinity_delta skos:example "{'narrow range (<1% NaCl)': 'stenohaline organisms'}" ,
+                               "{'wide range (>8% NaCl)': 'euryhaline organisms'}" .
+
+
+ex:salinity_preference skos:example "halophilic" ,
+                                    "non-halophilic" .
+
+
+ex:secondary_metabolite skos:example "antibiotics" ,
+                                     "pigments" ,
+                                     "siderophores" ,
+                                     "toxins" .
+
+
+ex:secretion skos:example "enzyme secretion" ,
+                          "exopolysaccharide secretion" ,
+                          "protein secretion" ,
+                          "toxin secretion" .
+
+
+ex:secretion_system skos:example "Type I secretion system" ,
+                                 "Type II secretion system" ,
+                                 "Type III secretion system (injectisome)" ,
+                                 "Type IV secretion system" ,
+                                 "Type V secretion system" ,
+                                 "Type VI secretion system" .
+
+
+ex:sheathed skos:example "Leptothrix" ,
+                         "Some cyanobacteria" ,
+                         "Sphaerotilus" .
+
+
+ex:siderophore skos:example "desferrioxamine" ,
+                            "enterobactin" ,
+                            "pyoverdine" .
+
+
+ex:sigma_factor skos:example "σ32 (heat shock)" ,
+                             "σ38 (stationary phase)" ,
+                             "σ54 (nitrogen regulation)" ,
+                             "σ70 (housekeeping)" .
+
+
+ex:slime_layer skos:example "biofilm matrix" ,
+                            "mucoid colonies" .
+
+
+ex:species skos:example "Bacillus subtilis" ,
+                        "Escherichia coli" ,
+                        "Streptomyces coelicolor" .
+
+
+ex:spirillum skos:example "Campylobacter" ,
+                          "Spirillum volutans" .
+
+
+ex:spirochete skos:example "Borrelia" ,
+                           "Leptospira" ,
+                           "Treponema" .
+
+
+ex:sporangiospore skos:example "Mucor sporangiospores" ,
+                               "Rhizopus sporangiospores" .
+
+
+ex:sporulation skos:example "endospore formation in Bacillus" ,
+                            "exospore formation in Streptomyces" .
+
+
+ex:square_cell skos:example "Haloquadratum walsbyi" ,
+                            "Some archaeal species" .
+
+
+ex:stalk skos:example "Caulobacter crescentus stalk" .
+
+
+ex:star_shaped_cell skos:example "Certain soil bacteria" ,
+                                 "Some actinomycetes" .
+
+
+ex:stationary_phase skos:example "nutrient limitation" ,
+                                 "quorum sensing activation" ,
+                                 "waste product accumulation" .
+
+
+ex:strain skos:example "Bacillus subtilis 168" ,
+                       "Escherichia coli K-12" ,
+                       "Streptomyces coelicolor A3(2)" .
+
+
+ex:stress_response skos:example "cold shock response" ,
+                                "heat shock response" ,
+                                "osmotic stress response" ,
+                                "oxidative stress response" .
+
+
+ex:sulfate_reducer skos:example "Desulfobacter species" ,
+                                "Desulfovibrio species" .
+
+
+ex:swarming skos:example "Bacillus subtilis swarming" ,
+                         "Proteus mirabilis swarming" ,
+                         "Pseudomonas aeruginosa swarming" .
+
+
+ex:symbiosis skos:example "commensalism (one benefits, other unaffected)" ,
+                          "mutualism (both benefit)" ,
+                          "parasitism (one benefits, other harmed)" .
+
+
+ex:syntrophy skos:example "acidogenic-methanogenic partnerships" ,
+                          "interspecies hydrogen transfer" ,
+                          "methanogenic syntrophy" .
+
+
+ex:teichoic_acid skos:example "lipoteichoic acids (attached to membrane)" ,
+                              "wall teichoic acids (attached to peptidoglycan)" .
+
+
+ex:temperature_delta skos:example "{'narrow range (<10°C)': 'specialist organisms'}" ,
+                                  "{'wide range (>30°C)': 'generalist organisms'}" .
+
+
+ex:temperature_optimum skos:example "100°C for Pyrolobus fumarii" ,
+                                    "37°C for E. coli" ,
+                                    "70°C for Thermus aquaticus" .
+
+
+ex:temperature_preference skos:example "mesophilic" ,
+                                       "psychrophilic" ,
+                                       "thermophilic" .
+
+
+ex:temperature_range skos:example "0-15°C for psychrophiles" ,
+                                  "20-45°C for mesophiles" ,
+                                  "45-80°C for thermophiles" .
+
+
+ex:thermal_tolerance skos:example "cold shock response" ,
+                                  "heat shock response" .
+
+
+ex:thermophile skos:example "Pyrococcus furiosus" ,
+                            "Thermus aquaticus" .
+
+
+ex:toxin skos:example "endotoxins (part of cell structure)" ,
+                      "enterotoxins (affecting intestines)" ,
+                      "exotoxins (secreted)" ,
+                      "neurotoxins (affecting nervous system)" .
+
+
+ex:transduction skos:example "Generalized transduction (random bacterial DNA)" ,
+                             "Specialized transduction (specific bacterial DNA)" .
+
+
+ex:transferase skos:example "aminotransferases (transfer amino groups)" ,
+                            "kinases (transfer phosphate groups)" ,
+                            "methyltransferases (transfer methyl groups)" .
+
+
+ex:transformation skos:example "Artificial transformation in laboratory conditions" ,
+                               "Natural competence in Streptococcus pneumoniae" .
+
+
+ex:transport_system skos:example "ABC transporters" ,
+                                 "antiporters" ,
+                                 "group translocation" ,
+                                 "ion channels" ,
+                                 "symporters" .
+
+
+ex:transposon skos:example "Tn10 (tetracycline resistance)" ,
+                           "Tn5 (kanamycin resistance)" .
+
+
+ex:triangular_cell skos:example "Certain extremophiles" ,
+                                "Some archaeal species" .
+
+
+ex:trichome skos:example "Anabaena trichomes" ,
+                         "Oscillatoria trichomes" .
+
+
+ex:twitching_motility skos:example "Neisseria gonorrhoeae" ,
+                                   "Pseudomonas aeruginosa" .
+
+
+ex:two_component_system skos:example "EnvZ/OmpR (osmoregulation)" ,
+                                     "NtrB/NtrC (nitrogen regulation)" ,
+                                     "PhoR/PhoB (phosphate regulation)" .
+
+
+ex:viable_but_non_culturable skos:example "Escherichia coli under stress" ,
+                                          "Vibrio cholerae in aquatic environments" .
+
+
+ex:vibrio skos:example "Campylobacter jejuni" ,
+                       "Vibrio cholerae" .
+
+
+ex:virulence skos:example "avirulent (non-pathogenic)" ,
+                          "highly virulent" ,
+                          "moderately virulent" .
+
+
+ex:xylanolysis skos:example "beta-xylosidases" ,
+                            "xylanases" .
+
+
+ex:zoospore skos:example "Chytrid zoospores" ,
+                         "Oomycete zoospores" .
+
+
+ex:zygospore skos:example "Mucor zygospores" ,
+                          "Rhizopus zygospores" .
+
+
+###  Generated by the OWL API (version 4.5.26) https://github.com/owlcs/owlapi
