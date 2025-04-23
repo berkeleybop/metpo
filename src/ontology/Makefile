@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                f3af6e35a3485f4f88c25f13414e562a770c40911b4e3f8bdbd1218faa1f8a0d
+CONFIG_HASH=                b36e24392153d51eead1fd6d833e68e831bdb46877e7485056d82ca7b08c3bf5
 
 
 # ----------------------------------------
@@ -159,9 +159,9 @@ all_main: $(MAIN_FILES)
 # ----------------------------------------
 
 
-IMPORTS =  bfo obi omp pato so micro mpo
+IMPORTS = 
 
-IMPORT_ROOTS =  $(IMPORTDIR)/merged_import
+IMPORT_ROOTS = $(patsubst %, $(IMPORTDIR)/%_import, $(IMPORTS))
 IMPORT_OWL_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl)
 IMPORT_FILES = $(IMPORT_OWL_FILES)
 
@@ -340,7 +340,7 @@ ALLSEED = $(PRESEED) \
 $(IMPORTSEED): $(ALLSEED) | $(TMPDIR)
 	if [ $(IMP) = true ]; then cat $(ALLSEED) | sort | uniq > $@; fi
 
-ANNOTATION_PROPERTIES=rdfs:label IAO:0000115 oboInOwl:is_metadata_tag OMO:0002000 
+ANNOTATION_PROPERTIES=
 
 # ----------------------------------------
 # Import modules
@@ -354,26 +354,7 @@ $(IMPORTDIR)/%_terms_combined.txt: $(IMPORTSEED) $(IMPORTDIR)/%_terms.txt
 	if [ $(IMP) = true ]; then cat $^ | grep -v ^# | sort | uniq >  $@; fi
 
 
-ALL_TERMS_COMBINED = $(patsubst %, $(IMPORTDIR)/%_terms_combined.txt, $(IMPORTS))
-$(IMPORTDIR)/merged_terms_combined.txt: $(ALL_TERMS_COMBINED)
-	if [ $(IMP) = true ]; then cat $^ | grep -v ^# | sort | uniq >  $@; fi
 
-
-$(IMPORTDIR)/merged_import.owl: $(MIRRORDIR)/merged.owl $(IMPORTDIR)/merged_terms_combined.txt
-	if [ $(IMP) = true ]; then $(ROBOT) merge -i $< \
-		extract -T $(IMPORTDIR)/merged_terms_combined.txt --force true --copy-ontology-annotations true --individuals exclude --method BOT \
-		remove $(patsubst %, --term %, $(ANNOTATION_PROPERTIES)) -T $(IMPORTDIR)/merged_terms_combined.txt --select complement --select annotation-properties \
-		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/inject-synonymtype-declaration.ru --update ../sparql/postprocess-module.ru \
-		$(ANNOTATE_CONVERT_FILE); fi
-
-
-
-
-$(IMPORTDIR)/%_import.owl: $(MIRRORDIR)/merged.owl $(IMPORTDIR)/%_terms_combined.txt
-	if [ $(IMP) = true ]; then $(ROBOT) query -i $< --update ../sparql/preprocess-module.ru \
-		extract -T $(IMPORTDIR)/$*_terms_combined.txt --force true --copy-ontology-annotations true --individuals exclude --method BOT \
-		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/inject-synonymtype-declaration.ru --update ../sparql/postprocess-module.ru \
-		$(ANNOTATE_CONVERT_FILE); fi
 
 .PRECIOUS: $(IMPORTDIR)/%_import.owl
 
@@ -446,69 +427,6 @@ MIR=true # Global parameter to bypass mirror generation
 IMP_LARGE=true # Global parameter to bypass handling of large imports
 
 ifeq ($(strip $(MIR)),true)
-
-
-## ONTOLOGY: bfo
-.PHONY: mirror-bfo
-.PRECIOUS: $(MIRRORDIR)/bfo.owl
-mirror-bfo: | $(TMPDIR)
-	curl -L $(OBOBASE)/bfo.owl --create-dirs -o $(TMPDIR)/bfo-download.owl --retry 4 --max-time 200 && \
-	$(ROBOT) convert -i $(TMPDIR)/bfo-download.owl -o $(TMPDIR)/$@.owl
-
-
-## ONTOLOGY: obi
-.PHONY: mirror-obi
-.PRECIOUS: $(MIRRORDIR)/obi.owl
-mirror-obi: | $(TMPDIR)
-	curl -L $(OBOBASE)/obi.owl --create-dirs -o $(TMPDIR)/obi-download.owl --retry 4 --max-time 200 && \
-	$(ROBOT) convert -i $(TMPDIR)/obi-download.owl -o $(TMPDIR)/$@.owl
-
-
-## ONTOLOGY: omp
-.PHONY: mirror-omp
-.PRECIOUS: $(MIRRORDIR)/omp.owl
-mirror-omp: | $(TMPDIR)
-	curl -L $(OBOBASE)/omp.owl --create-dirs -o $(TMPDIR)/omp-download.owl --retry 4 --max-time 200 && \
-	$(ROBOT) convert -i $(TMPDIR)/omp-download.owl -o $(TMPDIR)/$@.owl
-
-
-## ONTOLOGY: pato
-.PHONY: mirror-pato
-.PRECIOUS: $(MIRRORDIR)/pato.owl
-mirror-pato: | $(TMPDIR)
-	curl -L $(OBOBASE)/pato.owl --create-dirs -o $(TMPDIR)/pato-download.owl --retry 4 --max-time 200 && \
-	$(ROBOT) convert -i $(TMPDIR)/pato-download.owl -o $(TMPDIR)/$@.owl
-
-
-## ONTOLOGY: so
-.PHONY: mirror-so
-.PRECIOUS: $(MIRRORDIR)/so.owl
-mirror-so: | $(TMPDIR)
-	curl -L $(OBOBASE)/so.owl --create-dirs -o $(TMPDIR)/so-download.owl --retry 4 --max-time 200 && \
-	$(ROBOT) convert -i $(TMPDIR)/so-download.owl -o $(TMPDIR)/$@.owl
-
-
-## ONTOLOGY: micro
-.PHONY: mirror-micro
-.PRECIOUS: $(MIRRORDIR)/micro.owl
-$(MIRRORDIR)/micro.owl: 
-	echo "ERROR: You have configured your default mirror type to be custom; this behavior needs to be overwritten in metpo.Makefile!" && false
-
-
-## ONTOLOGY: mpo
-.PHONY: mirror-mpo
-.PRECIOUS: $(MIRRORDIR)/mpo.owl
-$(MIRRORDIR)/mpo.owl: 
-	echo "ERROR: You have configured your default mirror type to be custom; this behavior needs to be overwritten in metpo.Makefile!" && false
-
-ALL_MIRRORS = $(patsubst %, $(MIRRORDIR)/%.owl, $(IMPORTS))
-MERGE_MIRRORS = true
-
-ifeq ($(strip $(MERGE_MIRRORS)),true)
-$(MIRRORDIR)/merged.owl: $(ALL_MIRRORS)
-	$(ROBOT) merge $(patsubst %, -i %, $^)  -o $@
-.PRECIOUS: $(MIRRORDIR)/merged.owl
-endif
 
 
 $(MIRRORDIR)/%.owl: mirror-% | $(MIRRORDIR)
