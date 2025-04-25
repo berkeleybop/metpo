@@ -1,33 +1,23 @@
 format-version: 1.2
-<<<<<<< Updated upstream
-data-version: https://w3id.org/metpo/metpo/releases/2025-03-24/metpo-full.owl
-=======
-data-version: https://w3id.org/metpo/metpo/releases/2025-04-23/metpo-full.owl
->>>>>>> Stashed changes
+data-version: https://w3id.org/metpo/metpo/releases/2025-04-25/metpo-full.owl
 idspace: dce http://purl.org/dc/elements/1.1/ 
 idspace: dcterms http://purl.org/dc/terms/ 
 idspace: metpo https://w3id.org/metpo/ 
-idspace: metpo-cleanroom http://example.org/metpo-cleanroom/ 
 idspace: oboInOwl http://www.geneontology.org/formats/oboInOwl# 
 idspace: skos http://www.w3.org/2004/02/skos/core# 
 ontology: https://w3id.org/metpo/metpo/metpo-full.owl
-property_value: dcterms:description "None" xsd:string
-property_value: dcterms:license https://creativecommons.org/licenses/unspecified
+property_value: dcterms:description "Microbial ecophysiological trait and phenotype ontology" xsd:string
 property_value: dcterms:title "METPO" xsd:string
-<<<<<<< Updated upstream
-property_value: owl:versionInfo "2025-03-24" xsd:string
-=======
-property_value: owl:versionInfo "2025-04-23" xsd:string
->>>>>>> Stashed changes
+property_value: owl:versionInfo "2025-04-25" xsd:string
 
 [Term]
 id: metpo:1000001
 name: acid-fast
 def: "Bacteria that resist decolorization with acid-alcohol due to waxy cell walls" []
-synonym: "acid-fast" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "acid-fast bacteria" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "acid-fast" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "acid-fast bacteria" RELATED [] {metpo:linguistic_role="noun_plural"}
 synonym: "acid-fast bacterium" EXACT []
-synonym: "acid-fast bacterium" RELATED [] {metpo-cleanroom:linguistic_role="noun_singular"}
+synonym: "acid-fast bacterium" RELATED [] {metpo:linguistic_role="noun_singular"}
 is_a: metpo:1000051 ! cell wall characteristic
 is_a: metpo:1000089 ! diagnostic feature
 property_value: skos:example "Mycobacterium tuberculosis" xsd:string
@@ -37,9 +27,9 @@ property_value: skos:example "Nocardia" xsd:string
 id: metpo:1000002
 name: acidophile
 def: "An organism that thrives in acidic environments, typically below pH 5" []
-synonym: "acidophiles" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-synonym: "acidophilic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-is_a: metpo:1000214 ! organism by relation to ph
+synonym: "acidophiles" RELATED [] {metpo:linguistic_role="noun_plural"}
+synonym: "acidophilic" RELATED [] {metpo:linguistic_role="adjective"}
+is_a: metpo:1000214 ! microbe characterized by relation to ph
 property_value: metpo:RangeMax "5" xsd:string
 property_value: metpo:RangeMin "0" xsd:string
 property_value: metpo:Unit "pH" xsd:string
@@ -64,8 +54,8 @@ id: metpo:1000004
 name: adaptation
 def: "The process by which an organism becomes better suited to its environment" []
 synonym: "adapt" RELATED []
-synonym: "adaptations" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-synonym: "adaptive" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "adaptations" RELATED [] {metpo:linguistic_role="noun_plural"}
+synonym: "adaptive" RELATED [] {metpo:linguistic_role="adjective"}
 synonym: "verb" RELATED []
 is_a: metpo:1000109 ! evolutionary process
 is_a: metpo:1000243 ! physiological process
@@ -82,8 +72,8 @@ is_a: metpo:1000059 ! characteristic
 id: metpo:1000006
 name: adhesin
 def: "Surface proteins that enable bacteria to adhere to host tissues" []
-synonym: "adhesins" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-synonym: "adhesive" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "adhesins" RELATED [] {metpo:linguistic_role="noun_plural"}
+synonym: "adhesive" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000055 ! cellular component
 is_a: metpo:1000323 ! virulence factor
 property_value: skos:example "fimbriae" xsd:string
@@ -101,12 +91,12 @@ is_a: metpo:1000294 ! structure
 id: metpo:1000008
 name: aerobe
 def: "An organism that requires oxygen for growth" []
-synonym: "aerobes" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-synonym: "aerobic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "aerobically" RELATED [] {metpo-cleanroom:linguistic_role="adverb"}
+synonym: "aerobes" RELATED [] {metpo:linguistic_role="noun_plural"}
+synonym: "aerobic" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "aerobically" RELATED [] {metpo:linguistic_role="adverb"}
 synonym: "Obligate aerobe" RELATED []
 synonym: "Strict aerobe" RELATED []
-is_a: metpo:1000213 ! organism by relation to oxygen
+is_a: metpo:1000213 ! microbe characterized by relation to oxygen
 property_value: metpo:RangeMax "100" xsd:string
 property_value: metpo:RangeMin "1" xsd:string
 property_value: metpo:Unit "% O2" xsd:string
@@ -117,7 +107,7 @@ property_value: skos:example "Pseudomonas aeruginosa" xsd:string
 id: metpo:1000009
 name: aerobic respiration
 def: "Respiration using oxygen as the terminal electron acceptor" []
-synonym: "aerobically respiring" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "aerobically respiring" RELATED [] {metpo:linguistic_role="adjective"}
 synonym: "respire aerobically" RELATED []
 synonym: "verb" RELATED []
 is_a: metpo:1000106 ! energy metabolism process
@@ -129,10 +119,10 @@ property_value: skos:relatedMatch GO:0009060
 id: metpo:1000010
 name: aerotolerant
 def: "An anaerobe that can survive in the presence of oxygen but does not use it for growth" []
-synonym: "aerotolerant" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "aerotolerant" RELATED [] {metpo:linguistic_role="adjective"}
 synonym: "aerotolerant organism" EXACT []
-synonym: "aerotolerant organism" RELATED [] {metpo-cleanroom:linguistic_role="noun_singular"}
-synonym: "aerotolerant organisms" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "aerotolerant organism" RELATED [] {metpo:linguistic_role="noun_singular"}
+synonym: "aerotolerant organisms" RELATED [] {metpo:linguistic_role="noun_plural"}
 synonym: "Oxygen-tolerant" EXACT []
 is_a: metpo:1000183 ! metabolic trait
 is_a: metpo:1000245 ! physiological trait
@@ -147,8 +137,8 @@ id: metpo:1000011
 name: aggregate
 def: "Cluster of microbial cells that are attached to each other but not to a surface" []
 synonym: "aggregate" RELATED []
-synonym: "aggregates" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-synonym: "aggregating" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "aggregates" RELATED [] {metpo:linguistic_role="noun_plural"}
+synonym: "aggregating" RELATED [] {metpo:linguistic_role="adjective"}
 synonym: "verb" RELATED []
 is_a: metpo:1000076 ! community structure
 property_value: skos:example "flocs in wastewater treatment" xsd:string
@@ -159,7 +149,7 @@ property_value: skos:example "milk clotting by lactic acid bacteria" xsd:string
 id: metpo:1000012
 name: akinete
 def: "A thick-walled, dormant cell formed by some cyanobacteria" []
-synonym: "akinetes" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "akinetes" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000055 ! cellular component
 is_a: metpo:1000096 ! dormancy structure
 is_a: metpo:1000512 ! bacterial spore
@@ -170,9 +160,9 @@ property_value: skos:example "Nostoc akinetes" xsd:string
 id: metpo:1000013
 name: alkaliphile
 def: "An organism that thrives in alkaline environments, typically above pH 8.5" []
-synonym: "alkaliphiles" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-synonym: "alkaliphilic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-is_a: metpo:1000214 ! organism by relation to ph
+synonym: "alkaliphiles" RELATED [] {metpo:linguistic_role="noun_plural"}
+synonym: "alkaliphilic" RELATED [] {metpo:linguistic_role="adjective"}
+is_a: metpo:1000214 ! microbe characterized by relation to ph
 property_value: metpo:RangeMax "14" xsd:string
 property_value: metpo:RangeMin "7" xsd:string
 property_value: metpo:Unit "pH" xsd:string
@@ -184,7 +174,7 @@ id: metpo:1000014
 name: ammonification
 def: "The process of converting organic nitrogen to ammonia" []
 synonym: "ammonify" RELATED []
-synonym: "ammonifying" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "ammonifying" RELATED [] {metpo:linguistic_role="adjective"}
 synonym: "verb" RELATED []
 is_a: metpo:1000204 ! nutrient utilization
 property_value: skos:example "Many soil bacteria and fungi" xsd:string
@@ -193,7 +183,7 @@ property_value: skos:example "Many soil bacteria and fungi" xsd:string
 id: metpo:1000015
 name: amylolysis
 def: "The breakdown of starch into sugars" []
-synonym: "amylolytic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "amylolytic" RELATED [] {metpo:linguistic_role="adjective"}
 synonym: "hydrolyze starch" RELATED []
 synonym: "verb" RELATED []
 is_a: metpo:1000204 ! nutrient utilization
@@ -205,12 +195,12 @@ property_value: skos:example "glucoamylases" xsd:string
 id: metpo:1000016
 name: anaerobe
 def: "An organism that grows in the absence of oxygen" []
-synonym: "anaerobes" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-synonym: "anaerobic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "anaerobically" RELATED [] {metpo-cleanroom:linguistic_role="adverb"}
+synonym: "anaerobes" RELATED [] {metpo:linguistic_role="noun_plural"}
+synonym: "anaerobic" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "anaerobically" RELATED [] {metpo:linguistic_role="adverb"}
 synonym: "Obligate anaerobe" RELATED []
 synonym: "Strict anaerobe" RELATED []
-is_a: metpo:1000213 ! organism by relation to oxygen
+is_a: metpo:1000213 ! microbe characterized by relation to oxygen
 property_value: metpo:RangeMax "0" xsd:string
 property_value: metpo:RangeMin "0" xsd:string
 property_value: metpo:Unit "% O2" xsd:string
@@ -221,7 +211,7 @@ property_value: skos:example "Methanobacterium formicicum" xsd:string
 id: metpo:1000017
 name: anaerobic respiration
 def: "Respiration using alternative terminal electron acceptors instead of oxygen" []
-synonym: "anaerobically respiring" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "anaerobically respiring" RELATED [] {metpo:linguistic_role="adjective"}
 synonym: "respire anaerobically" RELATED []
 synonym: "verb" RELATED []
 is_a: metpo:1000106 ! energy metabolism process
@@ -235,7 +225,7 @@ property_value: skos:relatedMatch GO:0009061
 id: metpo:1000018
 name: anoxygenic photosynthesis
 def: "Photosynthesis that does not produce oxygen" []
-synonym: "anoxygenic photosynthetic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "anoxygenic photosynthetic" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000240 ! photosynthesis
 property_value: skos:example "green sulfur bacteria (bacteriochlorophyll)" xsd:string
 property_value: skos:example "heliobacteria (bacteriochlorophyll)" xsd:string
@@ -245,7 +235,7 @@ property_value: skos:example "purple bacteria (bacteriochlorophyll)" xsd:string
 id: metpo:1000019
 name: antibiotic production
 def: "The synthesis of compounds that inhibit the growth of other microorganisms" []
-synonym: "antibiotic-producing" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "antibiotic-producing" RELATED [] {metpo:linguistic_role="adjective"}
 synonym: "produce antibiotics" RELATED []
 synonym: "verb" RELATED []
 is_a: metpo:1000253 ! process
@@ -257,7 +247,7 @@ property_value: skos:example "Streptomyces antibiotics" xsd:string
 id: metpo:1000020
 name: antibiotic resistance
 def: "The ability of bacteria to survive exposure to antibiotics" []
-synonym: "antibiotic-resistant" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "antibiotic-resistant" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000005 ! adaptive trait
 is_a: metpo:1000065 ! clinically relevant feature
 property_value: skos:example "aminoglycoside resistance" xsd:string
@@ -270,8 +260,8 @@ property_value: skos:example "tetracycline resistance" xsd:string
 id: metpo:1000021
 name: antimicrobial resistance
 def: "The ability of microorganisms to survive exposure to antimicrobial compounds" []
-synonym: "AMR" RELATED [] {metpo-cleanroom:linguistic_role="abbreviation"}
-synonym: "antimicrobial-resistant" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "AMR" RELATED [] {metpo:linguistic_role="abbreviation"}
+synonym: "antimicrobial-resistant" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000005 ! adaptive trait
 is_a: metpo:1000065 ! clinically relevant feature
 property_value: skos:example "antibiotic resistance" xsd:string
@@ -283,7 +273,7 @@ property_value: skos:relatedMatch GO:0046677
 id: metpo:1000022
 name: appendage
 def: "Protruding structures on bacterial cells" []
-synonym: "appendages" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "appendages" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000055 ! cellular component
 is_a: metpo:1000193 ! morphological trait
 property_value: skos:example "fimbriae" xsd:string
@@ -296,8 +286,8 @@ property_value: skos:example "stalks" xsd:string
 id: metpo:1000023
 name: arthrospore
 def: "A type of spore formed by the fragmentation of fungal hyphae" []
-synonym: "arthrospore-producing" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "arthrospores" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "arthrospore-producing" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "arthrospores" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000096 ! dormancy structure
 is_a: metpo:1000125 ! fungal spore
 is_a: metpo:1000265 ! reproductive structure
@@ -308,8 +298,8 @@ property_value: skos:example "Geotrichum arthrospores" xsd:string
 id: metpo:1000024
 name: ascospore
 def: "Sexual spores produced in an ascus, typically by ascomycete fungi" []
-synonym: "ascospore-producing" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "ascospores" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "ascospore-producing" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "ascospores" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000096 ! dormancy structure
 is_a: metpo:1000125 ! fungal spore
 is_a: metpo:1000265 ! reproductive structure
@@ -320,10 +310,10 @@ property_value: skos:example "Saccharomyces cerevisiae" xsd:string
 id: metpo:1000025
 name: autotroph
 def: "An organism that synthesizes organic compounds from inorganic carbon sources" []
-synonym: "autotrophic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "autotrophically" RELATED [] {metpo-cleanroom:linguistic_role="adverb"}
-synonym: "autotrophs" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-is_a: metpo:1000219 ! organism by trophic type
+synonym: "autotrophic" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "autotrophically" RELATED [] {metpo:linguistic_role="adverb"}
+synonym: "autotrophs" RELATED [] {metpo:linguistic_role="noun_plural"}
+is_a: metpo:1000219 ! microbe characterized by trophic type
 property_value: skos:example "cyanobacteria" xsd:string
 property_value: skos:example "sulfur-oxidizing bacteria" xsd:string
 
@@ -337,9 +327,9 @@ is_a: metpo:1000253 ! process
 id: metpo:1000027
 name: auxotroph
 def: "An organism unable to synthesize a particular organic compound required for growth" []
-synonym: "auxotrophic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "auxotrophs" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-is_a: metpo:1000211 ! organism by nutritional requirement
+synonym: "auxotrophic" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "auxotrophs" RELATED [] {metpo:linguistic_role="noun_plural"}
+is_a: metpo:1000211 ! microbe characterized by nutritional requirement
 property_value: skos:example "amino acid auxotrophy" xsd:string
 property_value: skos:example "nucleotide auxotrophy" xsd:string
 property_value: skos:example "vitamin auxotrophy" xsd:string
@@ -348,7 +338,7 @@ property_value: skos:example "vitamin auxotrophy" xsd:string
 id: metpo:1000028
 name: axial filament
 def: "Internal flagella-like structures in spirochetes" []
-synonym: "axial filaments" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "axial filaments" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000055 ! cellular component
 is_a: metpo:1000195 ! motility structure
 property_value: skos:example "endoflagella in Borrelia" xsd:string
@@ -358,9 +348,9 @@ property_value: skos:example "periplasmic flagella in Treponema" xsd:string
 id: metpo:1000029
 name: bacillus
 def: "A rod-shaped bacterial cell" []
-synonym: "bacillar" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "bacilli" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-is_a: metpo:1000218 ! organsism by shape
+synonym: "bacillar" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "bacilli" RELATED [] {metpo:linguistic_role="noun_plural"}
+is_a: metpo:1000218 ! microbe characterized by shape
 property_value: skos:example "Bacillus" xsd:string
 property_value: skos:example "Escherichia" xsd:string
 property_value: skos:example "Lactobacillus" xsd:string
@@ -369,9 +359,9 @@ property_value: skos:example "Lactobacillus" xsd:string
 id: metpo:1000030
 name: barophile
 def: "An organism that thrives under high pressure conditions" []
-synonym: "barophiles" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-synonym: "barophilic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-is_a: metpo:1000215 ! organism by relation to pressure
+synonym: "barophiles" RELATED [] {metpo:linguistic_role="noun_plural"}
+synonym: "barophilic" RELATED [] {metpo:linguistic_role="adjective"}
+is_a: metpo:1000215 ! microbe characterized by relation to pressure
 property_value: skos:example "Moritella yayanosii" xsd:string
 property_value: skos:example "Shewanella benthica" xsd:string
 
@@ -379,10 +369,10 @@ property_value: skos:example "Shewanella benthica" xsd:string
 id: metpo:1000031
 name: barotolerant
 def: "An organism that can survive under high pressure but does not require it for optimal growth" []
-synonym: "barotolerant" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "barotolerant" RELATED [] {metpo:linguistic_role="adjective"}
 synonym: "barotolerant organism" EXACT []
-synonym: "barotolerant organism" RELATED [] {metpo-cleanroom:linguistic_role="noun_singular"}
-synonym: "barotolerant organisms" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "barotolerant organism" RELATED [] {metpo:linguistic_role="noun_singular"}
+synonym: "barotolerant organisms" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000245 ! physiological trait
 property_value: metpo:RangeMax "1000" xsd:string
 property_value: metpo:RangeMin "1" xsd:string
@@ -393,8 +383,8 @@ property_value: skos:example "Various marine bacteria that can survive in both s
 id: metpo:1000032
 name: basidiospore
 def: "Sexual spores produced on a basidium, typically by basidiomycete fungi" []
-synonym: "basidiospore-producing" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "basidiospores" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "basidiospore-producing" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "basidiospores" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000096 ! dormancy structure
 is_a: metpo:1000125 ! fungal spore
 is_a: metpo:1000265 ! reproductive structure
@@ -415,8 +405,8 @@ property_value: skos:example "Most bacteria reproduce by binary fission" xsd:str
 id: metpo:1000034
 name: biofilm
 def: "A structured community of microorganisms enclosed in a self-produced matrix" []
-synonym: "biofilm-forming" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "biofilms" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "biofilm-forming" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "biofilms" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000076 ! community structure
 property_value: skos:example "dental plaque" xsd:string
 property_value: skos:example "mixed-species biofilms" xsd:string
@@ -433,7 +423,7 @@ is_a: metpo:1000079 ! component
 id: metpo:1000036
 name: biofilm formation
 def: "The process of creating structured microbial communities attached to surfaces" []
-synonym: "biofilm-forming" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "biofilm-forming" RELATED [] {metpo:linguistic_role="adjective"}
 synonym: "form biofilm" RELATED []
 synonym: "verb" RELATED []
 is_a: metpo:1000056 ! cellular process
@@ -449,7 +439,7 @@ property_value: skos:relatedMatch GO:0042710
 id: metpo:1000037
 name: biogeochemical cycling
 def: "The movement and transformation of elements through biological and geological processes" []
-synonym: "biogeochemical cycles" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "biogeochemical cycles" RELATED [] {metpo:linguistic_role="noun_plural"}
 synonym: "cycle biogeochemically" RELATED []
 synonym: "verb" RELATED []
 is_a: metpo:1000166 ! interaction with an environment
@@ -463,7 +453,7 @@ id: metpo:1000038
 name: bioluminescence
 def: "The production of light by living organisms" []
 synonym: "bioluminesce" RELATED []
-synonym: "bioluminescent" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "bioluminescent" RELATED [] {metpo:linguistic_role="adjective"}
 synonym: "verb" RELATED []
 is_a: metpo:1000056 ! cellular process
 is_a: metpo:1000245 ! physiological trait
@@ -476,7 +466,7 @@ id: metpo:1000039
 name: budding
 def: "Asexual reproduction where a new cell grows from the surface of the parent cell" []
 synonym: "bud" RELATED []
-synonym: "budding" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "budding" RELATED [] {metpo:linguistic_role="adjective"}
 synonym: "verb" RELATED []
 is_a: metpo:1000056 ! cellular process
 is_a: metpo:1000264 ! reproductive process
@@ -493,9 +483,9 @@ is_a: metpo:1000294 ! structure
 id: metpo:1000041
 name: capnophile
 def: "An organism that requires or grows better in the presence of elevated levels of carbon dioxide" []
-synonym: "capnophiles" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-synonym: "capnophilic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-is_a: metpo:1000210 ! organism by growth conditions
+synonym: "capnophiles" RELATED [] {metpo:linguistic_role="noun_plural"}
+synonym: "capnophilic" RELATED [] {metpo:linguistic_role="adjective"}
+is_a: metpo:1000210 ! microbe characterized by growth conditions
 property_value: skos:example "Campylobacter species" xsd:string
 property_value: skos:example "Helicobacter pylori" xsd:string
 property_value: skos:example "Neisseria species" xsd:string
@@ -504,8 +494,8 @@ property_value: skos:example "Neisseria species" xsd:string
 id: metpo:1000042
 name: capsule
 def: "A layer of polysaccharides or proteins surrounding the cell" []
-synonym: "capsulated/encapsulated" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "capsules" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "capsulated/encapsulated" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "capsules" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000055 ! cellular component
 is_a: metpo:1000323 ! virulence factor
 property_value: skos:example "K antigen in E. coli" xsd:string
@@ -515,7 +505,7 @@ property_value: skos:example "pneumococcal capsule" xsd:string
 id: metpo:1000043
 name: carbon fixation
 def: "The conversion of inorganic carbon (usually CO₂) into organic compounds" []
-synonym: "carbon-fixing" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "carbon-fixing" RELATED [] {metpo:linguistic_role="adjective"}
 synonym: "fix carbon" RELATED []
 synonym: "verb" RELATED []
 is_a: metpo:1000026 ! autotrophic process
@@ -529,7 +519,7 @@ property_value: skos:relatedMatch GO:0015977
 id: metpo:1000044
 name: carbon source
 def: "The source from which an organism obtains carbon for building cellular materials" []
-synonym: "carbon sources" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "carbon sources" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000182 ! metabolic partner
 property_value: skos:example "carbon dioxide" xsd:string
 property_value: skos:example "glucose" xsd:string
@@ -541,11 +531,11 @@ name: carboxydotroph
 def: "An organism that can use carbon monoxide as its sole source of energy and carbon" []
 synonym: "Carbohydrogenotroph" EXACT []
 synonym: "carboxydotroph" EXACT []
-synonym: "carboxydotrophic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "carboxydotrophs" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "carboxydotrophic" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "carboxydotrophs" RELATED [] {metpo:linguistic_role="noun_plural"}
 synonym: "Carboxydrophile" EXACT []
-synonym: "carboxydrophile" RELATED [] {metpo-cleanroom:linguistic_role="synonym"}
-is_a: metpo:1000219 ! organism by trophic type
+synonym: "carboxydrophile" RELATED [] {metpo:linguistic_role="synonym"}
+is_a: metpo:1000219 ! microbe characterized by trophic type
 property_value: skos:example "Carboxydothermus hydrogenoformans" xsd:string
 property_value: skos:example "Oligotropha carboxidovorans" xsd:string
 
@@ -553,7 +543,7 @@ property_value: skos:example "Oligotropha carboxidovorans" xsd:string
 id: metpo:1000046
 name: cell arrangement
 def: "The pattern in which bacterial cells are organized relative to each other" []
-synonym: "cell arrangements" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "cell arrangements" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000054 ! cellular characteristic
 is_a: metpo:1000148 ! growth pattern
 is_a: metpo:1000193 ! morphological trait
@@ -574,7 +564,7 @@ is_a: metpo:1000079 ! component
 id: metpo:1000048
 name: cell length category
 def: "A classification of microbial cells based on their longitudinal dimension ranges" []
-synonym: "cell length categories" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "cell length categories" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000050 ! cell size
 property_value: skos:example "low length (1.3-2 μm)" xsd:string
 property_value: skos:example "mid length (2-3 μ" xsd:string
@@ -584,7 +574,7 @@ property_value: skos:example "very low length (<1.3 μm)" xsd:string
 id: metpo:1000049
 name: cell shape
 def: "The physical form or appearance of a microbial cell" []
-synonym: "cell shapes" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "cell shapes" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000054 ! cellular characteristic
 is_a: metpo:1000193 ! morphological trait
 property_value: skos:example "bacilli (rod-shaped)" xsd:string
@@ -597,7 +587,7 @@ property_value: skos:example "vibrios (curved rods)" xsd:string
 id: metpo:1000050
 name: cell size
 def: "The physical dimensions of a microbial cell" []
-synonym: "cell sizes" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "cell sizes" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000054 ! cellular characteristic
 is_a: metpo:1000193 ! morphological trait
 property_value: skos:example "diameter (for spherical cells)" xsd:string
@@ -620,7 +610,7 @@ is_a: metpo:1000079 ! component
 id: metpo:1000053
 name: cell width category
 def: "A classification of microbial cells based on their lateral dimension ranges" []
-synonym: "cell width categories" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "cell width categories" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000050 ! cell size
 property_value: skos:example "high width (>0.9 μm)" xsd:string
 property_value: skos:example "low width (0.5-0.65 μm)" xsd:string
@@ -655,7 +645,7 @@ is_a: metpo:1000186 ! material entity
 id: metpo:1000058
 name: cellulolysis
 def: "The breakdown of cellulose into glucose" []
-synonym: "cellulolytic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "cellulolytic" RELATED [] {metpo:linguistic_role="adjective"}
 synonym: "hydrolyze cellulose" RELATED []
 synonym: "verb" RELATED []
 is_a: metpo:1000204 ! nutrient utilization
@@ -675,10 +665,10 @@ is_a: metpo:1000188 ! quality
 id: metpo:1000060
 name: chemoautotroph
 def: "An organism that obtains energy from inorganic chemical reactions and carbon from CO2" []
-synonym: "chemoautotrophic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "chemoautotrophically" RELATED [] {metpo-cleanroom:linguistic_role="adverb"}
-synonym: "chemoautotrophs" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-is_a: metpo:1000219 ! organism by trophic type
+synonym: "chemoautotrophic" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "chemoautotrophically" RELATED [] {metpo:linguistic_role="adverb"}
+synonym: "chemoautotrophs" RELATED [] {metpo:linguistic_role="noun_plural"}
+is_a: metpo:1000219 ! microbe characterized by trophic type
 property_value: skos:example "Acidithiobacillus (sulfur oxidizer)" xsd:string
 property_value: skos:example "Methanogenic archaea" xsd:string
 property_value: skos:example "Nitrosomonas (ammonia oxidizer)" xsd:string
@@ -687,10 +677,10 @@ property_value: skos:example "Nitrosomonas (ammonia oxidizer)" xsd:string
 id: metpo:1000061
 name: chemoheterotroph
 def: "An organism that obtains both energy and carbon from organic compounds" []
-synonym: "chemoheterotrophic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "chemoheterotrophically" RELATED [] {metpo-cleanroom:linguistic_role="adverb"}
-synonym: "chemoheterotrophs" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-is_a: metpo:1000219 ! organism by trophic type
+synonym: "chemoheterotrophic" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "chemoheterotrophically" RELATED [] {metpo:linguistic_role="adverb"}
+synonym: "chemoheterotrophs" RELATED [] {metpo:linguistic_role="noun_plural"}
+is_a: metpo:1000219 ! microbe characterized by trophic type
 property_value: skos:example "E. coli, Bacillus, Pseudomonas" xsd:string
 property_value: skos:example "Most bacteria and fungi" xsd:string
 
@@ -698,7 +688,7 @@ property_value: skos:example "Most bacteria and fungi" xsd:string
 id: metpo:1000062
 name: chemotaxis
 def: "Movement of an organism in response to chemical stimuli" []
-synonym: "chemotactic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "chemotactic" RELATED [] {metpo:linguistic_role="adjective"}
 synonym: "respond chemotactically" RELATED []
 synonym: "verb" RELATED []
 is_a: metpo:1000056 ! cellular process
@@ -711,8 +701,8 @@ property_value: skos:relatedMatch GO:0006935
 id: metpo:1000063
 name: chlamydospore
 def: "A thick-walled resting spore formed from a cell of a fungal hypha" []
-synonym: "chlamydospore-producing" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "chlamydospores" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "chlamydospore-producing" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "chlamydospores" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000096 ! dormancy structure
 is_a: metpo:1000125 ! fungal spore
 is_a: metpo:1000265 ! reproductive structure
@@ -723,7 +713,7 @@ property_value: skos:example "Fusarium chlamydospores" xsd:string
 id: metpo:1000064
 name: class
 def: "The taxonomic rank below phylum and above order" []
-synonym: "classes" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "classes" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000301 ! taxonomic rank
 property_value: skos:example "Actinobacteria (class)" xsd:string
 property_value: skos:example "Bacilli" xsd:string
@@ -738,9 +728,9 @@ def: "Significance of a microorganism, biological process, or trait in relation 
 id: metpo:1000066
 name: coccus
 def: "A spherical bacterial cell" []
-synonym: "coccal" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "cocci" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-is_a: metpo:1000218 ! organsism by shape
+synonym: "coccal" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "cocci" RELATED [] {metpo:linguistic_role="noun_plural"}
+is_a: metpo:1000218 ! microbe characterized by shape
 property_value: skos:example "Micrococcus (tetrads)" xsd:string
 property_value: skos:example "Staphylococcus (clusters)" xsd:string
 property_value: skos:example "Streptococcus (chains)" xsd:string
@@ -749,8 +739,8 @@ property_value: skos:example "Streptococcus (chains)" xsd:string
 id: metpo:1000067
 name: cold shock protein
 def: "Proteins produced in response to cold stress that maintain RNA translation and membrane fluidity" []
-synonym: "cold shock proteins" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-synonym: "CSP" RELATED [] {metpo-cleanroom:linguistic_role="abbreviation"}
+synonym: "cold shock proteins" RELATED [] {metpo:linguistic_role="noun_plural"}
+synonym: "CSP" RELATED [] {metpo:linguistic_role="abbreviation"}
 is_a: metpo:1000055 ! cellular component
 property_value: skos:example "CspA family proteins" xsd:string
 property_value: skos:example "fatty acid desaturases" xsd:string
@@ -771,7 +761,7 @@ id: metpo:1000069
 name: colonization
 def: "The establishment of a microbial population in a host or environment" []
 synonym: "colonize" RELATED []
-synonym: "colonizing" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "colonizing" RELATED [] {metpo:linguistic_role="adjective"}
 synonym: "verb" RELATED []
 is_a: metpo:1000099 ! ecological process
 is_a: metpo:1000167 ! interaction with host
@@ -784,7 +774,7 @@ property_value: skos:example "skin colonization" xsd:string
 id: metpo:1000070
 name: colony elevation
 def: "The height profile of a bacterial colony" []
-synonym: "colony elevations" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "colony elevations" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000089 ! diagnostic feature
 is_a: metpo:1000179 ! macroscopic trait
 property_value: skos:example "convex" xsd:string
@@ -797,7 +787,7 @@ property_value: skos:example "umbonate (raised center)" xsd:string
 id: metpo:1000071
 name: colony margin
 def: "The edge characteristics of a bacterial colony" []
-synonym: "colony margins" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "colony margins" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000089 ! diagnostic feature
 is_a: metpo:1000179 ! macroscopic trait
 property_value: skos:example "entire (smooth)" xsd:string
@@ -810,7 +800,7 @@ property_value: skos:example "undulate (wavy)" xsd:string
 id: metpo:1000072
 name: colony morphology
 def: "The appearance and characteristics of a bacterial colony grown on solid media" []
-synonym: "colony morphologies" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "colony morphologies" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000089 ! diagnostic feature
 is_a: metpo:1000179 ! macroscopic trait
 property_value: skos:example "size, shape, color, texture, margin, elevation" xsd:string
@@ -819,7 +809,7 @@ property_value: skos:example "size, shape, color, texture, margin, elevation" xs
 id: metpo:1000073
 name: colony texture
 def: "The surface characteristics of a bacterial colony" []
-synonym: "colony textures" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "colony textures" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000089 ! diagnostic feature
 is_a: metpo:1000179 ! macroscopic trait
 property_value: skos:example "dry" xsd:string
@@ -832,7 +822,7 @@ property_value: skos:example "smooth (glistening)" xsd:string
 id: metpo:1000074
 name: commensalism
 def: "A symbiotic relationship where one organism benefits and the other is unaffected" []
-synonym: "commensal" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "commensal" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000167 ! interaction with host
 property_value: skos:example "normal skin flora" xsd:string
 property_value: skos:example "some components of gut microbiota" xsd:string
@@ -853,7 +843,7 @@ is_a: metpo:1000294 ! structure
 id: metpo:1000077
 name: compatible solute
 def: "Organic compounds that help organisms maintain osmotic balance without interfering with cellular processes" []
-synonym: "compatible solutes" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "compatible solutes" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000186 ! material entity
 property_value: skos:example "ectoine" xsd:string
 property_value: skos:example "glycine betaine" xsd:string
@@ -865,7 +855,7 @@ property_value: skos:example "trehalose" xsd:string
 id: metpo:1000078
 name: competence
 def: "The ability of a cell to take up extracellular DNA" []
-synonym: "competent" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "competent" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000244 ! physiological state
 property_value: skos:example "Induced competence in laboratory conditions" xsd:string
 property_value: skos:example "Natural competence in Bacillus subtilis" xsd:string
@@ -881,8 +871,8 @@ is_a: metpo:1000186 ! material entity
 id: metpo:1000080
 name: conidium
 def: "Asexual spores produced by fungi, typically at the tips of specialized hyphae" []
-synonym: "conidia" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-synonym: "conidial" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "conidia" RELATED [] {metpo:linguistic_role="noun_plural"}
+synonym: "conidial" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000096 ! dormancy structure
 is_a: metpo:1000125 ! fungal spore
 is_a: metpo:1000265 ! reproductive structure
@@ -894,7 +884,7 @@ id: metpo:1000081
 name: conjugation
 def: "The transfer of genetic material between bacterial cells through direct contact" []
 synonym: "conjugate" RELATED []
-synonym: "conjugative" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "conjugative" RELATED [] {metpo:linguistic_role="adjective"}
 synonym: "verb" RELATED []
 is_a: metpo:1000056 ! cellular process
 is_a: metpo:1000134 ! genetic exchange
@@ -908,9 +898,9 @@ id: metpo:1000082
 name: CRISPR
 def: "Bacterial adaptive immune system providing resistance against foreign genetic elements" []
 synonym: "Clustered Regularly Interspaced Short Palindromic Repeats" EXACT []
-synonym: "Clustered Regularly Interspaced Short Palindromic Repeats" RELATED [] {metpo-cleanroom:linguistic_role="full_name"}
+synonym: "Clustered Regularly Interspaced Short Palindromic Repeats" RELATED [] {metpo:linguistic_role="full_name"}
 synonym: "CRISPR" EXACT []
-synonym: "CRISPRs" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "CRISPRs" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000133 ! genetic element
 is_a: metpo:1000237 ! phage defense
 property_value: skos:example "CRISPR arrays" xsd:string
@@ -922,7 +912,7 @@ property_value: skos:relatedMatch GO:0043571
 id: metpo:1000083
 name: culturability
 def: "The ability of a microorganism to be grown in laboratory conditions" []
-synonym: "culturable" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "culturable" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000171 ! laboratory characteristic
 is_a: metpo:1000245 ! physiological trait
 property_value: skos:example "culturable (can be grown in laboratory media)" xsd:string
@@ -933,9 +923,9 @@ property_value: skos:example "viable but non-culturable (VBNC) state" xsd:string
 id: metpo:1000084
 name: cyst
 def: "A thick-walled, dormant cell formed by some bacteria" []
-synonym: "cysts" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "cysts" RELATED [] {metpo:linguistic_role="noun_plural"}
 synonym: "encyst" RELATED []
-synonym: "encysted" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "encysted" RELATED [] {metpo:linguistic_role="adjective"}
 synonym: "verb" RELATED []
 is_a: metpo:1000055 ! cellular component
 is_a: metpo:1000096 ! dormancy structure
@@ -947,8 +937,8 @@ property_value: skos:example "Myxococcus cysts" xsd:string
 id: metpo:1000085
 name: death phase
 def: "Period where death rate exceeds growth rate, resulting in population decline" []
-synonym: "death phases" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-synonym: "decline phase" RELATED [] {metpo-cleanroom:linguistic_role="synonym"}
+synonym: "death phases" RELATED [] {metpo:linguistic_role="noun_plural"}
+synonym: "decline phase" RELATED [] {metpo:linguistic_role="synonym"}
 is_a: metpo:1000174 ! life cycle phase
 property_value: skos:example "extreme nutrient depletion" xsd:string
 property_value: skos:example "programmed cell death" xsd:string
@@ -959,7 +949,7 @@ id: metpo:1000086
 name: denitrification
 def: "The reduction of nitrate to nitrogen gas" []
 synonym: "denitrify" RELATED []
-synonym: "denitrifying" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "denitrifying" RELATED [] {metpo:linguistic_role="adjective"}
 synonym: "verb" RELATED []
 is_a: metpo:1000204 ! nutrient utilization
 property_value: skos:example "Paracoccus denitrificans" xsd:string
@@ -987,9 +977,9 @@ def: "Distinctive biological trait or property that enables the identification, 
 id: metpo:1000090
 name: diazotroph
 def: "An organism capable of nitrogen fixation" []
-synonym: "diazotrophic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "diazotrophs" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-is_a: metpo:1000210 ! organism by growth conditions
+synonym: "diazotrophic" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "diazotrophs" RELATED [] {metpo:linguistic_role="noun_plural"}
+is_a: metpo:1000210 ! microbe characterized by growth conditions
 property_value: skos:example "Azotobacter" xsd:string
 property_value: skos:example "Rhizobium" xsd:string
 property_value: skos:example "Some cyanobacteria" xsd:string
@@ -999,7 +989,7 @@ id: metpo:1000091
 name: differentiation
 def: "The process by which cells become specialized for specific functions" []
 synonym: "differentiate" RELATED []
-synonym: "differentiated" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "differentiated" RELATED [] {metpo:linguistic_role="adjective"}
 synonym: "verb" RELATED []
 is_a: metpo:1000056 ! cellular process
 is_a: metpo:1000087 ! developmental process
@@ -1011,7 +1001,7 @@ property_value: skos:example "heterocyst formation in cyanobacteria" xsd:string
 id: metpo:1000092
 name: dimorphism
 def: "The existence of two distinct morphological forms in the same organism" []
-synonym: "dimorphic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "dimorphic" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000193 ! morphological trait
 property_value: skos:example "prosthecate-budding cell cycle in Caulobacter" xsd:string
 property_value: skos:example "rod-coccoid transitions" xsd:string
@@ -1021,9 +1011,9 @@ property_value: skos:example "yeast-hyphal dimorphism in Candida" xsd:string
 id: metpo:1000093
 name: disc-shaped cell
 def: "A flat, circular-shaped cell" []
-synonym: "disc-shaped" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "disc-shaped cells" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-is_a: metpo:1000218 ! organsism by shape
+synonym: "disc-shaped" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "disc-shaped cells" RELATED [] {metpo:linguistic_role="noun_plural"}
+is_a: metpo:1000218 ! microbe characterized by shape
 property_value: skos:example "Certain aquatic bacteria" xsd:string
 property_value: skos:example "Some cyanobacteria" xsd:string
 
@@ -1031,7 +1021,7 @@ property_value: skos:example "Some cyanobacteria" xsd:string
 id: metpo:1000094
 name: domain
 def: "The highest taxonomic rank in biological classification" []
-synonym: "domains" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "domains" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000301 ! taxonomic rank
 property_value: skos:example "Archaea" xsd:string
 property_value: skos:example "Bacteria" xsd:string
@@ -1041,7 +1031,7 @@ property_value: skos:example "Eukarya" xsd:string
 id: metpo:1000095
 name: dormancy
 def: "A temporary period of minimal metabolic activity" []
-synonym: "dormant" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "dormant" RELATED [] {metpo:linguistic_role="adjective"}
 synonym: "enter dormancy" RELATED []
 synonym: "verb" RELATED []
 is_a: metpo:1000244 ! physiological state
@@ -1060,9 +1050,9 @@ is_a: metpo:1000294 ! structure
 id: metpo:1000097
 name: dumbbell-shaped cell
 def: "A cell shaped like two spheres connected by a narrow bridge" []
-synonym: "dumbbell-shaped" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "dumbbell-shaped cells" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-is_a: metpo:1000218 ! organsism by shape
+synonym: "dumbbell-shaped" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "dumbbell-shaped cells" RELATED [] {metpo:linguistic_role="noun_plural"}
+is_a: metpo:1000218 ! microbe characterized by shape
 property_value: skos:example "Dividing yeast cells" xsd:string
 property_value: skos:example "Some budding bacteria" xsd:string
 
@@ -1070,7 +1060,7 @@ property_value: skos:example "Some budding bacteria" xsd:string
 id: metpo:1000098
 name: ecological niche
 def: "The role and position a species has in its environment" []
-synonym: "ecological niches" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "ecological niches" RELATED [] {metpo:linguistic_role="noun_plural"}
 property_value: skos:example "extreme environments" xsd:string
 property_value: skos:example "human microbiome" xsd:string
 property_value: skos:example "marine microbiota" xsd:string
@@ -1092,7 +1082,7 @@ is_a: metpo:1000059 ! characteristic
 id: metpo:1000101
 name: ectosymbiosis
 def: "Symbiotic relationship where one organism lives on the external surface of another" []
-synonym: "ectosymbiotic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "ectosymbiotic" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000167 ! interaction with host
 property_value: skos:example "dental microbiota" xsd:string
 property_value: skos:example "epidermal bacteria on mammals" xsd:string
@@ -1102,7 +1092,7 @@ property_value: skos:example "gut microbiota" xsd:string
 id: metpo:1000102
 name: electron acceptor
 def: "A compound that receives electrons in energy-generating reactions" []
-synonym: "electron acceptors" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "electron acceptors" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000182 ! metabolic partner
 property_value: skos:example "carbon dioxide" xsd:string
 property_value: skos:example "nitrate" xsd:string
@@ -1113,7 +1103,7 @@ property_value: skos:example "sulfate" xsd:string
 id: metpo:1000103
 name: electron donor
 def: "A compound that provides electrons for energy-generating reactions" []
-synonym: "electron donors" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "electron donors" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000182 ! metabolic partner
 property_value: skos:example "hydrogen" xsd:string
 property_value: skos:example "hydrogen sulfide" xsd:string
@@ -1124,8 +1114,8 @@ property_value: skos:example "reduced iron" xsd:string
 id: metpo:1000104
 name: endospore
 def: "A highly resistant, dormant structure formed within certain bacteria" []
-synonym: "endospore-forming" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "endospores" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "endospore-forming" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "endospores" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000055 ! cellular component
 is_a: metpo:1000096 ! dormancy structure
 is_a: metpo:1000512 ! bacterial spore
@@ -1136,7 +1126,7 @@ property_value: skos:example "Clostridium endospores" xsd:string
 id: metpo:1000105
 name: endosymbiosis
 def: "Symbiotic relationship where one organism lives within the cells or body of another" []
-synonym: "endosymbiotic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "endosymbiotic" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000167 ! interaction with host
 property_value: skos:example "Buchnera in aphids" xsd:string
 property_value: skos:example "Rhizobium in plant root nodules" xsd:string
@@ -1152,7 +1142,7 @@ is_a: metpo:1000253 ! process
 id: metpo:1000107
 name: enzyme activity
 def: "The biological catalysis carried out by specific proteins" []
-synonym: "enzyme activities" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "enzyme activities" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000187 ! process
 property_value: skos:example "hydrolases" xsd:string
 property_value: skos:example "isomerases" xsd:string
@@ -1177,8 +1167,8 @@ is_a: metpo:1000253 ! process
 id: metpo:1000110
 name: exospore
 def: "A spore formed outside the mother cell" []
-synonym: "exospore-forming" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "exospores" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "exospore-forming" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "exospores" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000055 ! cellular component
 is_a: metpo:1000265 ! reproductive structure
 is_a: metpo:1000512 ! bacterial spore
@@ -1189,8 +1179,8 @@ property_value: skos:example "Streptomyces spores" xsd:string
 id: metpo:1000111
 name: exponential phase
 def: "Period of growth where cells divide at a constant rate" []
-synonym: "exponential phases" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-synonym: "log phase" RELATED [] {metpo-cleanroom:linguistic_role="synonym"}
+synonym: "exponential phases" RELATED [] {metpo:linguistic_role="noun_plural"}
+synonym: "log phase" RELATED [] {metpo:linguistic_role="synonym"}
 is_a: metpo:1000174 ! life cycle phase
 property_value: skos:example "balanced growth" xsd:string
 property_value: skos:example "constant doubling time" xsd:string
@@ -1200,8 +1190,8 @@ property_value: skos:example "maximum growth rate" xsd:string
 id: metpo:1000112
 name: extracellular
 def: "Existing or occurring outside of cells" []
-synonym: "extracellular" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "extracellularly" RELATED [] {metpo-cleanroom:linguistic_role="adverb"}
+synonym: "extracellular" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "extracellularly" RELATED [] {metpo:linguistic_role="adverb"}
 is_a: metpo:1000177 ! localization
 property_value: skos:example "environmental bacteria" xsd:string
 property_value: skos:example "most bacterial pathogens" xsd:string
@@ -1210,8 +1200,8 @@ property_value: skos:example "most bacterial pathogens" xsd:string
 id: metpo:1000113
 name: extracellular polysaccharide
 def: "Complex carbohydrates secreted by microorganisms" []
-synonym: "EPS" RELATED [] {metpo-cleanroom:linguistic_role="abbreviation"}
-synonym: "extracellular polysaccharides" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "EPS" RELATED [] {metpo:linguistic_role="abbreviation"}
+synonym: "extracellular polysaccharides" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000035 ! biofilm component
 is_a: metpo:1000057 ! cellular product
 property_value: skos:example "biofilm matrix components" xsd:string
@@ -1222,8 +1212,8 @@ property_value: skos:example "slime polysaccharides" xsd:string
 id: metpo:1000114
 name: extreme halophile
 def: "An organism that requires very high salt concentrations, typically above 15-20% NaCl" []
-synonym: "extreme halophiles" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-synonym: "extremely halophilic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "extreme halophiles" RELATED [] {metpo:linguistic_role="noun_plural"}
+synonym: "extremely halophilic" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000151 ! halophile
 is_a: metpo:1000245 ! physiological trait
 property_value: metpo:RangeMax "35" xsd:string
@@ -1236,8 +1226,8 @@ property_value: skos:example "Salinibacter ruber" xsd:string
 id: metpo:1000115
 name: extremophile
 def: "An organism that thrives in physically or geochemically extreme conditions" []
-synonym: "extremophiles" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-synonym: "extremophilic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "extremophiles" RELATED [] {metpo:linguistic_role="noun_plural"}
+synonym: "extremophilic" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000245 ! physiological trait
 property_value: skos:example "acidophiles (low pH)" xsd:string
 property_value: skos:example "alkaliphiles (high pH)" xsd:string
@@ -1249,8 +1239,8 @@ property_value: skos:example "thermophiles (high temperature)" xsd:string
 id: metpo:1000116
 name: facultative
 def: "Describing an optional capability or adaptation that is not essential" []
-synonym: "facultative" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "facultatively" RELATED [] {metpo-cleanroom:linguistic_role="adverb"}
+synonym: "facultative" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "facultatively" RELATED [] {metpo:linguistic_role="adverb"}
 is_a: metpo:1000245 ! physiological trait
 is_a: metpo:1000260 ! qualifier
 property_value: skos:example "facultative anaerobe" xsd:string
@@ -1261,9 +1251,9 @@ property_value: skos:example "facultative psychrophile" xsd:string
 id: metpo:1000117
 name: facultative anaerobe
 def: "An organism that can grow both in the presence and absence of oxygen" []
-synonym: "facultative anaerobes" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-synonym: "facultatively anaerobic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-is_a: metpo:1000213 ! organism by relation to oxygen
+synonym: "facultative anaerobes" RELATED [] {metpo:linguistic_role="noun_plural"}
+synonym: "facultatively anaerobic" RELATED [] {metpo:linguistic_role="adjective"}
+is_a: metpo:1000213 ! microbe characterized by relation to oxygen
 property_value: metpo:RangeMax "100" xsd:string
 property_value: metpo:RangeMin "0" xsd:string
 property_value: metpo:Unit "% O2" xsd:string
@@ -1274,7 +1264,7 @@ property_value: skos:example "Saccharomyces cerevisiae" xsd:string
 id: metpo:1000118
 name: family
 def: "The taxonomic rank below order and above genus" []
-synonym: "families" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "families" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000301 ! taxonomic rank
 property_value: skos:example "Bacillaceae" xsd:string
 property_value: skos:example "Enterobacteriaceae" xsd:string
@@ -1284,7 +1274,7 @@ property_value: skos:example "Streptomycetaceae" xsd:string
 id: metpo:1000119
 name: fastidious
 def: "Requiring specific or complex nutritional requirements for growth" []
-synonym: "fastidious" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "fastidious" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000146 ! growth characteristic
 is_a: metpo:1000245 ! physiological trait
 property_value: skos:example "Bifidobacterium (requires specific carbohydrates)" xsd:string
@@ -1296,7 +1286,7 @@ id: metpo:1000120
 name: fermentation
 def: "Energy-yielding process where organic compounds serve as both electron donors and acceptors" []
 synonym: "ferment" RELATED []
-synonym: "fermentative" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "fermentative" RELATED [] {metpo:linguistic_role="adjective"}
 synonym: "verb" RELATED []
 is_a: metpo:1000106 ! energy metabolism process
 property_value: skos:example "alcoholic fermentation" xsd:string
@@ -1309,9 +1299,9 @@ id: metpo:1000121
 name: filamentous
 def: "Growing in long, thread-like structures" []
 synonym: "filament" EXACT []
-synonym: "filament" RELATED [] {metpo-cleanroom:linguistic_role="noun_singular"}
-synonym: "filamentous" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "filaments" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "filament" RELATED [] {metpo:linguistic_role="noun_singular"}
+synonym: "filamentous" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "filaments" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000049 ! cell shape
 is_a: metpo:1000148 ! growth pattern
 property_value: skos:example "Nocardia" xsd:string
@@ -1323,9 +1313,9 @@ id: metpo:1000122
 name: fimbriae
 def: "Short, hair-like appendages on bacterial cells, often involved in adhesion" []
 synonym: "fimbria" EXACT []
-synonym: "fimbria" RELATED [] {metpo-cleanroom:linguistic_role="noun_singular"}
-synonym: "fimbriae" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-synonym: "fimbriated" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "fimbria" RELATED [] {metpo:linguistic_role="noun_singular"}
+synonym: "fimbriae" RELATED [] {metpo:linguistic_role="noun_plural"}
+synonym: "fimbriated" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000007 ! adhesion structure
 is_a: metpo:1000055 ! cellular component
 is_a: metpo:1000195 ! motility structure
@@ -1337,8 +1327,8 @@ property_value: skos:relatedMatch GO:0009289
 id: metpo:1000123
 name: flagellum
 def: "A whip-like appendage that enables cell movement" []
-synonym: "flagella" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-synonym: "flagellated" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "flagella" RELATED [] {metpo:linguistic_role="noun_plural"}
+synonym: "flagellated" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000055 ! cellular component
 is_a: metpo:1000195 ! motility structure
 property_value: skos:example "amphitrichous (flagella at both ends)" xsd:string
@@ -1351,9 +1341,9 @@ property_value: skos:relatedMatch GO:0009288
 id: metpo:1000124
 name: flask-shaped cell
 def: "A cell shaped like a laboratory flask, with a swollen base and narrower neck" []
-synonym: "flask-shaped" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "flask-shaped cells" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-is_a: metpo:1000218 ! organsism by shape
+synonym: "flask-shaped" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "flask-shaped cells" RELATED [] {metpo:linguistic_role="noun_plural"}
+is_a: metpo:1000218 ! microbe characterized by shape
 property_value: skos:example "Certain budding bacteria" xsd:string
 property_value: skos:example "Some prosthecate bacteria" xsd:string
 
@@ -1367,7 +1357,7 @@ is_a: metpo:1000294 ! structure
 id: metpo:1000126
 name: gas vesicle
 def: "Gas-filled structures that provide buoyancy in aquatic environments" []
-synonym: "gas vesicles" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "gas vesicles" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000040 ! buoyancy structure
 is_a: metpo:1000055 ! cellular component
 property_value: skos:example "Cyanobacterial gas vesicles" xsd:string
@@ -1378,7 +1368,7 @@ property_value: skos:relatedMatch GO:0031411
 id: metpo:1000127
 name: GC content
 def: "The percentage of guanine and cytosine nucleotides in DNA" []
-synonym: "GC-rich/GC-poor" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "GC-rich/GC-poor" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000139 ! genomic trait
 is_a: metpo:1000300 ! taxonomic identifier
 property_value: metpo:Unit "% GC" xsd:string
@@ -1389,7 +1379,7 @@ property_value: skos:example "{'low GC content (<30%)': 'Clostridium, some Mycop
 id: metpo:1000128
 name: high GC content
 def: "A genomic feature characterized by a guanine-cytosine content percentage above 66.3% in an organism's DNA" []
-synonym: "high-GC" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "high-GC" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000127 ! GC content
 property_value: skos:example "Mycobacterium species" xsd:string
 property_value: skos:example "Streptomyces species" xsd:string
@@ -1398,7 +1388,7 @@ property_value: skos:example "Streptomyces species" xsd:string
 id: metpo:1000129
 name: low GC content
 def: "A genomic feature characterized by a guanine-cytosine content percentage below 42.65% in an organism's DNA" []
-synonym: "low-GC" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "low-GC" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000127 ! GC content
 property_value: skos:example "Clostridium species" xsd:string
 property_value: skos:example "Some Mycoplasma species" xsd:string
@@ -1407,7 +1397,7 @@ property_value: skos:example "Some Mycoplasma species" xsd:string
 id: metpo:1000130
 name: lower-mid GC content
 def: "A genomic feature characterized by a guanine-cytosine content percentage between 42.65% and 57% in an organism's DNA" []
-synonym: "lower-mid-GC" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "lower-mid-GC" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000127 ! GC content
 property_value: skos:example "Escherichia coli" xsd:string
 property_value: skos:example "Many Proteobacteria" xsd:string
@@ -1416,7 +1406,7 @@ property_value: skos:example "Many Proteobacteria" xsd:string
 id: metpo:1000131
 name: upper-mid GC content
 def: "A genomic feature characterized by a guanine-cytosine content percentage between 57% and 66.3% in an organism's DNA" []
-synonym: "upper-mid-GC" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "upper-mid-GC" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000127 ! GC content
 property_value: skos:example "Many Actinobacteria" xsd:string
 property_value: skos:example "Some Pseudomonas species" xsd:string
@@ -1425,8 +1415,8 @@ property_value: skos:example "Some Pseudomonas species" xsd:string
 id: metpo:1000132
 name: generation time
 def: "The time required for a population to double in size" []
-synonym: "doubling time" RELATED [] {metpo-cleanroom:linguistic_role="synonym"}
-synonym: "generation times" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "doubling time" RELATED [] {metpo:linguistic_role="synonym"}
+synonym: "generation times" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000146 ! growth characteristic
 is_a: metpo:1000245 ! physiological trait
 property_value: skos:example "{'fast growth': '< 20 minutes (E. coli in optimal conditions)'}" xsd:string
@@ -1454,7 +1444,7 @@ is_a: metpo:1000253 ! process
 id: metpo:1000136
 name: genome size
 def: "The total amount of DNA in an organism's genome" []
-synonym: "genome sizes" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "genome sizes" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000139 ! genomic trait
 property_value: skos:example "{'large genomes (>6 Mbp)': 'Streptomyces coelicolor (8.7 Mbp)'}" xsd:string
 property_value: skos:example "{'medium genomes (1.5-6 Mbp)': 'E. coli (4.6 Mbp)'}" xsd:string
@@ -1469,8 +1459,8 @@ def: "Discrete region or component of an organism's genome that serves a specifi
 id: metpo:1000138
 name: genomic island
 def: "Large regions of horizontal gene transfer in bacterial genomes" []
-synonym: "genomic islands" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-synonym: "GI" RELATED [] {metpo-cleanroom:linguistic_role="abbreviation"}
+synonym: "genomic islands" RELATED [] {metpo:linguistic_role="noun_plural"}
+synonym: "GI" RELATED [] {metpo:linguistic_role="abbreviation"}
 is_a: metpo:1000191 ! mobile genetic element
 property_value: skos:example "metabolic islands" xsd:string
 property_value: skos:example "pathogenicity islands" xsd:string
@@ -1487,7 +1477,7 @@ is_a: metpo:1000059 ! characteristic
 id: metpo:1000140
 name: genus
 def: "The taxonomic rank below family and above species" []
-synonym: "genera" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "genera" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000301 ! taxonomic rank
 property_value: skos:example "Bacillus" xsd:string
 property_value: skos:example "Escherichia" xsd:string
@@ -1498,7 +1488,7 @@ id: metpo:1000141
 name: gliding motility
 def: "Movement across surfaces without the use of flagella" []
 synonym: "glide" RELATED []
-synonym: "gliding" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "gliding" RELATED [] {metpo:linguistic_role="adjective"}
 synonym: "verb" RELATED []
 is_a: metpo:1000194 ! motility process
 property_value: skos:example "Flavobacterium" xsd:string
@@ -1509,7 +1499,7 @@ property_value: skos:example "Myxococcus" xsd:string
 id: metpo:1000142
 name: global regulator
 def: "Regulatory protein that controls the expression of many genes across various pathways" []
-synonym: "global regulators" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "global regulators" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000263 ! regulatory mechanism
 is_a: metpo:1000310 ! transcription factor
 property_value: skos:example "CRP (catabolite repression)" xsd:string
@@ -1521,20 +1511,20 @@ property_value: skos:example "RpoS (sigma factor)" xsd:string
 id: metpo:1000143
 name: Gram-negative
 def: "Bacteria that do not retain crystal violet stain due to thin peptidoglycan layer and appear red/pink when counterstained with safranin" []
-synonym: "G-" RELATED [] {metpo-cleanroom:linguistic_role="abbreviation"}
+synonym: "G-" RELATED [] {metpo:linguistic_role="abbreviation"}
 synonym: "Gram reaction negative" EXACT []
 synonym: "Gram(−)" EXACT []
 synonym: "Gram-negative" RELATED []
 synonym: "gram-negative" EXACT []
 synonym: "Gram-negative bacteria" RELATED []
-synonym: "Gram-negative bacteria|Gram-stain negative bacteria" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "Gram-negative bacteria|Gram-stain negative bacteria" RELATED [] {metpo:linguistic_role="noun_plural"}
 synonym: "Gram-negative bacterium" EXACT []
-synonym: "Gram-negative bacterium" RELATED [] {metpo-cleanroom:linguistic_role="noun_singular"}
-synonym: "Gram-negative|Gram-stain negative" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "Gram-negative bacterium" RELATED [] {metpo:linguistic_role="noun_singular"}
+synonym: "Gram-negative|Gram-stain negative" RELATED [] {metpo:linguistic_role="adjective"}
 synonym: "Gram-stain negative" RELATED []
 synonym: "Gram-stain negative bacteria" RELATED []
 synonym: "Gram-stain negative bacterium" EXACT []
-synonym: "Gram-stain negative bacterium" RELATED [] {metpo-cleanroom:linguistic_role="noun_singular"}
+synonym: "Gram-stain negative bacterium" RELATED [] {metpo:linguistic_role="noun_singular"}
 is_a: metpo:1000145 ! Gram stain
 property_value: skos:example "Escherichia" xsd:string
 property_value: skos:example "Escherichia coli" xsd:string
@@ -1547,20 +1537,20 @@ property_value: skos:example "Salmonella species" xsd:string
 id: metpo:1000144
 name: Gram-positive
 def: "Bacteria that retain crystal violet stain due to thick peptidoglycan layer and appear purple after Gram staining" []
-synonym: "G+" RELATED [] {metpo-cleanroom:linguistic_role="abbreviation"}
+synonym: "G+" RELATED [] {metpo:linguistic_role="abbreviation"}
 synonym: "Gram reaction positive" EXACT []
 synonym: "Gram(+)" EXACT []
 synonym: "Gram-positive" RELATED []
 synonym: "gram-positive" EXACT []
 synonym: "Gram-positive bacteria" RELATED []
-synonym: "Gram-positive bacteria|Gram-stain positive bacteria" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "Gram-positive bacteria|Gram-stain positive bacteria" RELATED [] {metpo:linguistic_role="noun_plural"}
 synonym: "Gram-positive bacterium" EXACT []
-synonym: "Gram-positive bacterium" RELATED [] {metpo-cleanroom:linguistic_role="noun_singular"}
-synonym: "Gram-positive|Gram-stain positive" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "Gram-positive bacterium" RELATED [] {metpo:linguistic_role="noun_singular"}
+synonym: "Gram-positive|Gram-stain positive" RELATED [] {metpo:linguistic_role="adjective"}
 synonym: "Gram-stain positive" RELATED []
 synonym: "Gram-stain positive bacteria" RELATED []
 synonym: "Gram-stain positive bacterium" EXACT []
-synonym: "Gram-stain positive bacterium" RELATED [] {metpo-cleanroom:linguistic_role="noun_singular"}
+synonym: "Gram-stain positive bacterium" RELATED [] {metpo:linguistic_role="noun_singular"}
 is_a: metpo:1000145 ! Gram stain
 property_value: skos:example "Bacillus" xsd:string
 property_value: skos:example "Bacillus subtilis" xsd:string
@@ -1574,7 +1564,7 @@ id: metpo:1000145
 name: Gram stain
 def: "A differential staining technique that distinguishes bacteria based on cell wall composition" []
 synonym: "Gram stain" RELATED []
-synonym: "Gram stains" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "Gram stains" RELATED [] {metpo:linguistic_role="noun_plural"}
 synonym: "verb" RELATED []
 is_a: metpo:1000051 ! cell wall characteristic
 is_a: metpo:1000089 ! diagnostic feature
@@ -1603,7 +1593,7 @@ def: "Characteristic mode of cellular proliferation, colony formation, or popula
 id: metpo:1000149
 name: growth rate
 def: "The speed at which microbial population increases" []
-synonym: "growth rates" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "growth rates" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000146 ! growth characteristic
 is_a: metpo:1000245 ! physiological trait
 property_value: skos:example "doubling time" xsd:string
@@ -1615,7 +1605,7 @@ property_value: skos:example "specific growth rate" xsd:string
 id: metpo:1000150
 name: habitat
 def: "The natural environment in which an organism lives" []
-synonym: "habitats" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "habitats" RELATED [] {metpo:linguistic_role="noun_plural"}
 property_value: skos:example "aquatic" xsd:string
 property_value: skos:example "extreme environments" xsd:string
 property_value: skos:example "host-associated" xsd:string
@@ -1626,9 +1616,9 @@ property_value: skos:relatedMatch ENVO:01000739
 id: metpo:1000151
 name: halophile
 def: "An organism that thrives in high salinity environments" []
-synonym: "halophiles" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-synonym: "halophilic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-is_a: metpo:1000216 ! organism by relation to salt concentration
+synonym: "halophiles" RELATED [] {metpo:linguistic_role="noun_plural"}
+synonym: "halophilic" RELATED [] {metpo:linguistic_role="adjective"}
+is_a: metpo:1000216 ! microbe characterized by relation to salt concentration
 property_value: metpo:RangeMax "35" xsd:string
 property_value: metpo:RangeMin "0" xsd:string
 property_value: metpo:Unit "% NaCl" xsd:string
@@ -1640,10 +1630,10 @@ property_value: skos:relatedMatch ENVO:00002010
 id: metpo:1000152
 name: halotolerant
 def: "An organism that can grow in the presence of high salt concentrations but does not require them" []
-synonym: "halotolerant" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "halotolerant" RELATED [] {metpo:linguistic_role="adjective"}
 synonym: "halotolerant organism" EXACT []
-synonym: "halotolerant organism" RELATED [] {metpo-cleanroom:linguistic_role="noun_singular"}
-synonym: "halotolerant organisms" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "halotolerant organism" RELATED [] {metpo:linguistic_role="noun_singular"}
+synonym: "halotolerant organisms" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000245 ! physiological trait
 property_value: metpo:RangeMax "20" xsd:string
 property_value: metpo:RangeMin "0" xsd:string
@@ -1655,8 +1645,8 @@ property_value: skos:example "Staphylococcus aureus" xsd:string
 id: metpo:1000153
 name: heat shock protein
 def: "Proteins produced in response to heat stress that protect cellular proteins from denaturation" []
-synonym: "heat shock proteins" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-synonym: "HSP" RELATED [] {metpo-cleanroom:linguistic_role="abbreviation"}
+synonym: "heat shock proteins" RELATED [] {metpo:linguistic_role="noun_plural"}
+synonym: "HSP" RELATED [] {metpo:linguistic_role="abbreviation"}
 is_a: metpo:1000055 ! cellular component
 property_value: skos:example "chaperonins (GroEL/GroES)" xsd:string
 property_value: skos:example "Hsp70 family" xsd:string
@@ -1676,7 +1666,7 @@ property_value: skos:relatedMatch GO:0009408
 id: metpo:1000155
 name: hemolysis
 def: "The breakdown of red blood cells" []
-synonym: "hemolytic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "hemolytic" RELATED [] {metpo:linguistic_role="adjective"}
 synonym: "hemolyze" RELATED []
 synonym: "verb" RELATED []
 is_a: metpo:1000089 ! diagnostic feature
@@ -1689,8 +1679,8 @@ property_value: skos:example "gamma-hemolysis (no hemolysis)" xsd:string
 id: metpo:1000156
 name: heterocyst
 def: "Specialized cells in some cyanobacteria that fix nitrogen" []
-synonym: "heterocystous" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "heterocysts" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "heterocystous" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "heterocysts" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000055 ! cellular component
 is_a: metpo:1000281 ! specialized cell
 property_value: skos:example "Anabaena heterocysts" xsd:string
@@ -1700,10 +1690,10 @@ property_value: skos:example "Nostoc heterocysts" xsd:string
 id: metpo:1000157
 name: heterotroph
 def: "An organism that obtains carbon from organic compounds" []
-synonym: "heterotrophic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "heterotrophically" RELATED [] {metpo-cleanroom:linguistic_role="adverb"}
-synonym: "heterotrophs" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-is_a: metpo:1000219 ! organism by trophic type
+synonym: "heterotrophic" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "heterotrophically" RELATED [] {metpo:linguistic_role="adverb"}
+synonym: "heterotrophs" RELATED [] {metpo:linguistic_role="noun_plural"}
+is_a: metpo:1000219 ! microbe characterized by trophic type
 property_value: skos:example "Bacillus subtilis" xsd:string
 property_value: skos:example "Escherichia coli" xsd:string
 
@@ -1711,7 +1701,7 @@ property_value: skos:example "Escherichia coli" xsd:string
 id: metpo:1000158
 name: holdfast
 def: "Adhesive structure at the end of a stalk or on a cell body" []
-synonym: "holdfasts" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "holdfasts" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000007 ! adhesion structure
 is_a: metpo:1000055 ! cellular component
 property_value: skos:example "Caulobacter holdfast" xsd:string
@@ -1721,8 +1711,8 @@ property_value: skos:example "Hyphomonas holdfast" xsd:string
 id: metpo:1000159
 name: horizontal gene transfer
 def: "The movement of genetic material between organisms other than by vertical transmission" []
-synonym: "HGT" RELATED [] {metpo-cleanroom:linguistic_role="abbreviation"}
-synonym: "lateral gene transfer (LGT)" RELATED [] {metpo-cleanroom:linguistic_role="transfer horizontally", metpo-cleanroom:linguistic_role="synonym"}
+synonym: "HGT" RELATED [] {metpo:linguistic_role="abbreviation"}
+synonym: "lateral gene transfer (LGT)" RELATED [] {metpo:linguistic_role="synonym", metpo:linguistic_role="transfer horizontally"}
 synonym: "transfer horizontally" RELATED []
 synonym: "verb" RELATED []
 is_a: metpo:1000109 ! evolutionary process
@@ -1735,8 +1725,8 @@ property_value: skos:example "transformation" xsd:string
 id: metpo:1000160
 name: hydrolase
 def: "An enzyme that catalyzes the hydrolysis of a chemical bond" []
-synonym: "hydrolases" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-synonym: "hydrolytic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "hydrolases" RELATED [] {metpo:linguistic_role="noun_plural"}
+synonym: "hydrolytic" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000088 ! diagnostic enzyme
 is_a: metpo:1000183 ! metabolic trait
 property_value: skos:example "amylases (starch hydrolysis)" xsd:string
@@ -1749,9 +1739,9 @@ property_value: skos:relatedMatch GO:0016787
 id: metpo:1000161
 name: hyperthermophile
 def: "An organism that thrives at extremely high temperatures, typically above 80°C" []
-synonym: "hyperthermophiles" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-synonym: "hyperthermophilic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-is_a: metpo:1000217 ! organism by relation to temperature
+synonym: "hyperthermophiles" RELATED [] {metpo:linguistic_role="noun_plural"}
+synonym: "hyperthermophilic" RELATED [] {metpo:linguistic_role="adjective"}
+is_a: metpo:1000217 ! microbe characterized by relation to temperature
 property_value: metpo:RangeMax "115" xsd:string
 property_value: metpo:RangeMin "80" xsd:string
 property_value: metpo:Unit "C" xsd:string
@@ -1762,7 +1752,7 @@ property_value: skos:example "Pyrolobus fumarii" xsd:string
 id: metpo:1000162
 name: inclusion body
 def: "Intracellular structures for storing nutrients or other compounds" []
-synonym: "inclusion bodies" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "inclusion bodies" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000055 ! cellular component
 is_a: metpo:1000291 ! storage structure
 property_value: skos:example "gas vesicles" xsd:string
@@ -1777,8 +1767,8 @@ id: metpo:1000163
 name: infection
 def: "The invasion and multiplication of microorganisms in host tissues" []
 synonym: "infect" RELATED []
-synonym: "infections" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-synonym: "infectious" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "infections" RELATED [] {metpo:linguistic_role="noun_plural"}
+synonym: "infectious" RELATED [] {metpo:linguistic_role="adjective"}
 synonym: "verb" RELATED []
 is_a: metpo:1000167 ! interaction with host
 property_value: skos:example "acute infections" xsd:string
@@ -1821,8 +1811,8 @@ is_a: metpo:1000164 ! interaction
 id: metpo:1000169
 name: intracellular
 def: "Existing or occurring within a cell" []
-synonym: "intracellular" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "intracellularly" RELATED [] {metpo-cleanroom:linguistic_role="adverb"}
+synonym: "intracellular" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "intracellularly" RELATED [] {metpo:linguistic_role="adverb"}
 is_a: metpo:1000177 ! localization
 property_value: skos:example "facultative intracellular bacteria (Listeria, Salmonella)" xsd:string
 property_value: skos:example "obligate intracellular bacteria (Rickettsia, Chlamydia)" xsd:string
@@ -1832,7 +1822,7 @@ id: metpo:1000170
 name: invasion
 def: "Penetration of host cells or tissues" []
 synonym: "invade" RELATED []
-synonym: "invasive" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "invasive" RELATED [] {metpo:linguistic_role="adjective"}
 synonym: "verb" RELATED []
 is_a: metpo:1000167 ! interaction with host
 is_a: metpo:1000324 ! virulence process
@@ -1851,7 +1841,7 @@ is_a: metpo:1000059 ! characteristic
 id: metpo:1000172
 name: lag phase
 def: "Initial period of growth where cells adapt to new environment before dividing" []
-synonym: "lag phases" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "lag phases" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000174 ! life cycle phase
 property_value: skos:example "adaptation to new nutrients" xsd:string
 property_value: skos:example "repair of cellular damage" xsd:string
@@ -1861,7 +1851,7 @@ property_value: skos:example "synthesis of new enzymes" xsd:string
 id: metpo:1000173
 name: life cycle
 def: "The series of changes an organism undergoes during its existence" []
-synonym: "life cycles" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "life cycles" RELATED [] {metpo:linguistic_role="noun_plural"}
 property_value: skos:example "complex developmental cycles" xsd:string
 property_value: skos:example "germination" xsd:string
 property_value: skos:example "sporulation" xsd:string
@@ -1877,7 +1867,7 @@ id: metpo:1000175
 name: lipolysis
 def: "The breakdown of lipids into fatty acids and glycerol" []
 synonym: "hydrolyze lipids" RELATED []
-synonym: "lipolytic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "lipolytic" RELATED [] {metpo:linguistic_role="adjective"}
 synonym: "verb" RELATED []
 is_a: metpo:1000204 ! nutrient utilization
 property_value: skos:example "lipases" xsd:string
@@ -1888,8 +1878,8 @@ property_value: skos:relatedMatch GO:0016042
 id: metpo:1000176
 name: lipopolysaccharide
 def: "A major component of the outer membrane of Gram-negative bacteria" []
-synonym: "lipopolysaccharides" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-synonym: "LPS" RELATED [] {metpo-cleanroom:linguistic_role="abbreviation"}
+synonym: "lipopolysaccharides" RELATED [] {metpo:linguistic_role="noun_plural"}
+synonym: "LPS" RELATED [] {metpo:linguistic_role="abbreviation"}
 is_a: metpo:1000052 ! cell wall component
 is_a: metpo:1000055 ! cellular component
 property_value: skos:example "core oligosaccharide" xsd:string
@@ -1905,7 +1895,7 @@ def: "Process by which a molecule, structure, or organism is directed to or main
 id: metpo:1000178
 name: lysogeny
 def: "The integration of bacteriophage DNA into the bacterial chromosome" []
-synonym: "lysogenic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "lysogenic" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000165 ! interaction with a phage
 property_value: skos:example "lambda phage lysogeny" xsd:string
 property_value: skos:example "prophage formation" xsd:string
@@ -1920,7 +1910,7 @@ is_a: metpo:1000059 ! characteristic
 id: metpo:1000180
 name: magnetotaxis
 def: "Movement, orientation and navigation along magnetic field lines" []
-synonym: "magnetotactic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "magnetotactic" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000194 ! motility process
 is_a: metpo:1000245 ! physiological trait
 property_value: skos:example "Magnetococcus marinus" xsd:string
@@ -1930,9 +1920,9 @@ property_value: skos:example "Magnetospirillum magnetotacticum" xsd:string
 id: metpo:1000181
 name: mesophile
 def: "An organism that grows best at moderate temperatures, typically between 20°C and 45°C" []
-synonym: "mesophiles" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-synonym: "mesophilic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-is_a: metpo:1000217 ! organism by relation to temperature
+synonym: "mesophiles" RELATED [] {metpo:linguistic_role="noun_plural"}
+synonym: "mesophilic" RELATED [] {metpo:linguistic_role="adjective"}
+is_a: metpo:1000217 ! microbe characterized by relation to temperature
 property_value: metpo:RangeMax "45" xsd:string
 property_value: metpo:RangeMin "20" xsd:string
 property_value: metpo:Unit "C" xsd:string
@@ -1954,7 +1944,7 @@ is_a: metpo:1000059 ! characteristic
 id: metpo:1000184
 name: methanogenesis
 def: "The biological production of methane as a metabolic byproduct" []
-synonym: "methanogenic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "methanogenic" RELATED [] {metpo:linguistic_role="adjective"}
 synonym: "produce methane" RELATED []
 synonym: "verb" RELATED []
 is_a: metpo:1000187 ! process
@@ -1968,7 +1958,7 @@ id: metpo:1000185
 name: methylation
 def: "The addition of methyl groups to DNA or proteins" []
 synonym: "methylate" RELATED []
-synonym: "methylated" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "methylated" RELATED [] {metpo:linguistic_role="adjective"}
 synonym: "verb" RELATED []
 is_a: metpo:1000108 ! epigenetic modification
 is_a: metpo:1000135 ! genetic process
@@ -1997,9 +1987,9 @@ name: system
 id: metpo:1000190
 name: microaerophile
 def: "An organism that requires oxygen for growth but at concentrations lower than atmospheric levels" []
-synonym: "microaerophiles" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-synonym: "microaerophilic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-is_a: metpo:1000213 ! organism by relation to oxygen
+synonym: "microaerophiles" RELATED [] {metpo:linguistic_role="noun_plural"}
+synonym: "microaerophilic" RELATED [] {metpo:linguistic_role="adjective"}
+is_a: metpo:1000213 ! microbe characterized by relation to oxygen
 property_value: skos:example "Campylobacter jejuni" xsd:string
 property_value: skos:example "Helicobacter pylori" xsd:string
 
@@ -2007,8 +1997,8 @@ property_value: skos:example "Helicobacter pylori" xsd:string
 id: metpo:1000191
 name: mobile genetic element
 def: "DNA sequences that can move within or between genomes" []
-synonym: "MGE" RELATED [] {metpo-cleanroom:linguistic_role="abbreviation"}
-synonym: "mobile genetic elements" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "MGE" RELATED [] {metpo:linguistic_role="abbreviation"}
+synonym: "mobile genetic elements" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000137 ! genomic element
 property_value: skos:example "insertion sequences" xsd:string
 property_value: skos:example "integrons" xsd:string
@@ -2020,8 +2010,8 @@ property_value: skos:example "transposons" xsd:string
 id: metpo:1000192
 name: moderate halophile
 def: "An organism that grows optimally in 5-15% NaCl" []
-synonym: "moderate halophiles" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-synonym: "moderately halophilic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "moderate halophiles" RELATED [] {metpo:linguistic_role="noun_plural"}
+synonym: "moderately halophilic" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000151 ! halophile
 property_value: metpo:RangeMax "20" xsd:string
 property_value: metpo:RangeMin "5" xsd:string
@@ -2051,7 +2041,7 @@ is_a: metpo:1000294 ! structure
 id: metpo:1000196
 name: mutualism
 def: "A symbiotic relationship where both organisms benefit" []
-synonym: "mutualistic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "mutualistic" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000167 ! interaction with host
 property_value: skos:example "gut microbiota providing vitamins to host" xsd:string
 property_value: skos:example "nitrogen-fixing bacteria in root nodules" xsd:string
@@ -2060,8 +2050,8 @@ property_value: skos:example "nitrogen-fixing bacteria in root nodules" xsd:stri
 id: metpo:1000197
 name: mycolic acid
 def: "Long-chain fatty acids found in the cell walls of Mycobacteria and related genera" []
-synonym: "mycolic acid-containing" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "mycolic acids" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "mycolic acid-containing" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "mycolic acids" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000052 ! cell wall component
 is_a: metpo:1000055 ! cellular component
 property_value: skos:example "Corynebacterium diphtheriae" xsd:string
@@ -2072,7 +2062,7 @@ id: metpo:1000198
 name: mycorrhization
 def: "The formation of symbiotic associations between fungi and plant roots" []
 synonym: "form mycorrhiza" RELATED []
-synonym: "mycorrhizal" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "mycorrhizal" RELATED [] {metpo:linguistic_role="adjective"}
 synonym: "verb" RELATED []
 is_a: metpo:1000167 ! interaction with host
 is_a: metpo:1000298 ! symbiotic process
@@ -2083,9 +2073,9 @@ property_value: skos:example "ectomycorrhizae" xsd:string
 id: metpo:1000199
 name: neutrophile
 def: "An organism that grows best at neutral pH, typically between pH 6.5 and 7.5" []
-synonym: "neutrophiles" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-synonym: "neutrophilic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-is_a: metpo:1000214 ! organism by relation to ph
+synonym: "neutrophiles" RELATED [] {metpo:linguistic_role="noun_plural"}
+synonym: "neutrophilic" RELATED [] {metpo:linguistic_role="adjective"}
+is_a: metpo:1000214 ! microbe characterized by relation to ph
 property_value: metpo:RangeMax "8" xsd:string
 property_value: metpo:RangeMin "6" xsd:string
 property_value: metpo:Unit "pH" xsd:string
@@ -2097,7 +2087,7 @@ id: metpo:1000200
 name: nitrification
 def: "The biological oxidation of ammonia to nitrite and then to nitrate" []
 synonym: "nitrify" RELATED []
-synonym: "nitrifying" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "nitrifying" RELATED [] {metpo:linguistic_role="adjective"}
 synonym: "verb" RELATED []
 is_a: metpo:1000204 ! nutrient utilization
 property_value: skos:example "Nitrobacter (nitrite to nitrate)" xsd:string
@@ -2108,7 +2098,7 @@ id: metpo:1000201
 name: nitrogen fixation
 def: "The process of converting atmospheric nitrogen (N2) into ammonia" []
 synonym: "fix nitrogen" RELATED []
-synonym: "nitrogen-fixing" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "nitrogen-fixing" RELATED [] {metpo:linguistic_role="adjective"}
 synonym: "verb" RELATED []
 is_a: metpo:1000204 ! nutrient utilization
 property_value: skos:example "Azotobacter in soil" xsd:string
@@ -2120,7 +2110,7 @@ id: metpo:1000202
 name: nodulation
 def: "The process of forming root nodules in leguminous plants for nitrogen fixation" []
 synonym: "nodulate" RELATED []
-synonym: "nodulating" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "nodulating" RELATED [] {metpo:linguistic_role="adjective"}
 synonym: "verb" RELATED []
 is_a: metpo:1000167 ! interaction with host
 is_a: metpo:1000298 ! symbiotic process
@@ -2132,8 +2122,8 @@ property_value: skos:example "root nodule formation" xsd:string
 id: metpo:1000203
 name: nucleoid
 def: "The region in a prokaryotic cell that contains the genetic material" []
-synonym: "nucleoid-associated" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "nucleoids" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "nucleoid-associated" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "nucleoids" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000055 ! cellular component
 property_value: skos:example "bacterial chromosome" xsd:string
 property_value: skos:example "nucleoid-associated proteins" xsd:string
@@ -2148,8 +2138,8 @@ is_a: metpo:1000253 ! process
 id: metpo:1000205
 name: obligate
 def: "Describing a requirement that is essential and cannot be substituted" []
-synonym: "obligate" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "obligately" RELATED [] {metpo-cleanroom:linguistic_role="adverb"}
+synonym: "obligate" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "obligately" RELATED [] {metpo:linguistic_role="adverb"}
 is_a: metpo:1000245 ! physiological trait
 is_a: metpo:1000260 ! qualifier
 property_value: skos:example "obligate aerobe" xsd:string
@@ -2160,8 +2150,8 @@ property_value: skos:example "obligate intracellular parasite" xsd:string
 id: metpo:1000206
 name: obligate aerobe
 def: "An organism that absolutely requires oxygen for growth and cannot grow in its absence" []
-synonym: "obligate aerobes" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-synonym: "obligately aerobic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "obligate aerobes" RELATED [] {metpo:linguistic_role="noun_plural"}
+synonym: "obligately aerobic" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000008 ! aerobe
 property_value: skos:example "Micrococcus luteus" xsd:string
 property_value: skos:example "Pseudomonas aeruginosa" xsd:string
@@ -2170,8 +2160,8 @@ property_value: skos:example "Pseudomonas aeruginosa" xsd:string
 id: metpo:1000207
 name: obligate anaerobe
 def: "An organism that cannot tolerate oxygen and grows only in its complete absence" []
-synonym: "obligate anaerobes" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-synonym: "obligately anaerobic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "obligate anaerobes" RELATED [] {metpo:linguistic_role="noun_plural"}
+synonym: "obligately anaerobic" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000016 ! anaerobe
 property_value: skos:example "Clostridium tetani" xsd:string
 property_value: skos:example "Methanobacterium formicicum" xsd:string
@@ -2180,8 +2170,8 @@ property_value: skos:example "Methanobacterium formicicum" xsd:string
 id: metpo:1000208
 name: oospore
 def: "A thick-walled sexual spore produced by oomycetes" []
-synonym: "oospore-producing" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "oospores" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "oospore-producing" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "oospores" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000096 ! dormancy structure
 is_a: metpo:1000265 ! reproductive structure
 is_a: metpo:1000512 ! bacterial spore
@@ -2192,7 +2182,7 @@ property_value: skos:example "Pythium oospores" xsd:string
 id: metpo:1000209
 name: order
 def: "The taxonomic rank below class and above family" []
-synonym: "orders" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "orders" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000301 ! taxonomic rank
 property_value: skos:example "Actinomycetales" xsd:string
 property_value: skos:example "Bacillales" xsd:string
@@ -2200,70 +2190,70 @@ property_value: skos:example "Enterobacterales" xsd:string
 
 [Term]
 id: metpo:1000210
-name: organism by growth conditions
+name: microbe characterized by growth conditions
 def: "Classification of living beings based on the specific environmental parameters required for their optimal development and reproduction." []
-is_a: metpo:1000186 ! material entity
+is_a: metpo:1000525 ! microbe
 
 [Term]
 id: metpo:1000211
-name: organism by nutritional requirement
+name: microbe characterized by nutritional requirement
 def: "Classification of living beings based on their specific needs for essential nutrients, compounds, or growth factors." []
-is_a: metpo:1000219 ! organism by trophic type
+is_a: metpo:1000219 ! microbe characterized by trophic type
 
 [Term]
 id: metpo:1000212
-name: organism by product produced
-is_a: metpo:1000186 ! material entity
+name: microbe characterized by product produced
+is_a: metpo:1000525 ! microbe
 
 [Term]
 id: metpo:1000213
-name: organism by relation to oxygen
+name: microbe characterized by relation to oxygen
 def: "Classification of living beings based on their requirement for, tolerance of, or utilization of molecular oxygen in their metabolism." []
-is_a: metpo:1000210 ! organism by growth conditions
+is_a: metpo:1000210 ! microbe characterized by growth conditions
 
 [Term]
 id: metpo:1000214
-name: organism by relation to ph
+name: microbe characterized by relation to ph
 def: "Classification of living beings based on their optimal acidity or alkalinity range for growth, survival, or metabolic activity." []
-is_a: metpo:1000210 ! organism by growth conditions
+is_a: metpo:1000210 ! microbe characterized by growth conditions
 
 [Term]
 id: metpo:1000215
-name: organism by relation to pressure
+name: microbe characterized by relation to pressure
 def: "Classification of living beings based on their tolerance for and adaptation to specific hydrostatic or atmospheric pressure conditions." []
-is_a: metpo:1000210 ! organism by growth conditions
+is_a: metpo:1000210 ! microbe characterized by growth conditions
 
 [Term]
 id: metpo:1000216
-name: organism by relation to salt concentration
+name: microbe characterized by relation to salt concentration
 def: "Classification of living beings based on their tolerance for and adaptation to specific ranges of environmental salinity." []
-is_a: metpo:1000210 ! organism by growth conditions
+is_a: metpo:1000210 ! microbe characterized by growth conditions
 
 [Term]
 id: metpo:1000217
-name: organism by relation to temperature
+name: microbe characterized by relation to temperature
 def: "Classification of living beings based on their optimal thermal range for growth, survival, or metabolic activity." []
-is_a: metpo:1000210 ! organism by growth conditions
+is_a: metpo:1000210 ! microbe characterized by growth conditions
 
 [Term]
 id: metpo:1000218
-name: organsism by shape
+name: microbe characterized by shape
 def: "Classification of living beings based on their characteristic external morphology, cellular geometry, or structural configuration." []
-is_a: metpo:1000186 ! material entity
+is_a: metpo:1000525 ! microbe
 
 [Term]
 id: metpo:1000219
-name: organism by trophic type
+name: microbe characterized by trophic type
 def: "Classification of living beings based on their mode of nutrition and energy acquisition from the environment." []
-is_a: metpo:1000210 ! organism by growth conditions
+is_a: metpo:1000210 ! microbe characterized by growth conditions
 
 [Term]
 id: metpo:1000220
 name: osmophile
 def: "An organism that can grow in environments with high sugar concentrations" []
-synonym: "osmophiles" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-synonym: "osmophilic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-is_a: metpo:1000210 ! organism by growth conditions
+synonym: "osmophiles" RELATED [] {metpo:linguistic_role="noun_plural"}
+synonym: "osmophilic" RELATED [] {metpo:linguistic_role="adjective"}
+is_a: metpo:1000210 ! microbe characterized by growth conditions
 property_value: skos:example "Some yeasts and molds" xsd:string
 property_value: skos:example "Zygosaccharomyces rouxii" xsd:string
 
@@ -2272,7 +2262,7 @@ id: metpo:1000221
 name: osmoregulation
 def: "Regulation of solute concentration within cells in response to environmental osmolarity" []
 synonym: "osmoregulate" RELATED []
-synonym: "osmoregulatory" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "osmoregulatory" RELATED [] {metpo:linguistic_role="adjective"}
 synonym: "verb" RELATED []
 is_a: metpo:1000293 ! stress response
 property_value: skos:example "compatible solute accumulation" xsd:string
@@ -2294,8 +2284,8 @@ property_value: skos:relatedMatch GO:0006979
 id: metpo:1000223
 name: oxidoreductase
 def: "An enzyme that catalyzes the transfer of electrons from one molecule to another" []
-synonym: "oxidoreductases" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-synonym: "oxidoreductive" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "oxidoreductases" RELATED [] {metpo:linguistic_role="noun_plural"}
+synonym: "oxidoreductive" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000088 ! diagnostic enzyme
 is_a: metpo:1000183 ! metabolic trait
 property_value: skos:example "dehydrogenases" xsd:string
@@ -2308,7 +2298,7 @@ property_value: skos:relatedMatch GO:0016491
 id: metpo:1000224
 name: oxygen requirement
 def: "The relationship between an organism and molecular oxygen for growth" []
-synonym: "oxygen requirements" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "oxygen requirements" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000147 ! growth conditions constraints
 is_a: metpo:1000183 ! metabolic trait
 is_a: metpo:1000245 ! physiological trait
@@ -2321,7 +2311,7 @@ property_value: skos:relatedMatch ENVO:00002507
 id: metpo:1000225
 name: oxygenic photosynthesis
 def: "Photosynthesis that produces oxygen as a byproduct" []
-synonym: "oxygenic photosynthetic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "oxygenic photosynthetic" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000240 ! photosynthesis
 property_value: skos:example "cyanobacteria (chlorophyll a)" xsd:string
 
@@ -2329,8 +2319,8 @@ property_value: skos:example "cyanobacteria (chlorophyll a)" xsd:string
 id: metpo:1000226
 name: pan-genome
 def: "The entire gene set of all strains of a species, including core and accessory genes" []
-synonym: "pan-genomes" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-synonym: "pan-genomic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "pan-genomes" RELATED [] {metpo:linguistic_role="noun_plural"}
+synonym: "pan-genomic" RELATED [] {metpo:linguistic_role="adjective"}
 property_value: skos:example "accessory genome (genes present in some strains)" xsd:string
 property_value: skos:example "core genome (genes present in all strains)" xsd:string
 property_value: skos:example "strain-specific genes (unique to single strains)" xsd:string
@@ -2339,7 +2329,7 @@ property_value: skos:example "strain-specific genes (unique to single strains)" 
 id: metpo:1000227
 name: parasitism
 def: "A symbiotic relationship where one organism benefits at the expense of the other" []
-synonym: "parasitic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "parasitic" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000167 ! interaction with host
 property_value: skos:example "extracellular pathogens causing disease" xsd:string
 property_value: skos:example "intracellular pathogens" xsd:string
@@ -2361,7 +2351,7 @@ property_value: skos:relatedMatch GO:0022857
 id: metpo:1000229
 name: pathogenicity
 def: "The ability of an organism to cause disease" []
-synonym: "pathogenic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "pathogenic" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000059 ! characteristic
 property_value: skos:example "evasion of host immune responses" xsd:string
 property_value: skos:example "invasion of host tissues" xsd:string
@@ -2371,8 +2361,8 @@ property_value: skos:example "production of toxins" xsd:string
 id: metpo:1000230
 name: pathogenicity island
 def: "A genomic island containing genes associated with virulence" []
-synonym: "PAI" RELATED [] {metpo-cleanroom:linguistic_role="abbreviation"}
-synonym: "pathogenicity islands" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "PAI" RELATED [] {metpo:linguistic_role="abbreviation"}
+synonym: "pathogenicity islands" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000138 ! genomic island
 is_a: metpo:1000323 ! virulence factor
 property_value: skos:example "LEE in pathogenic E. coli" xsd:string
@@ -2382,7 +2372,7 @@ property_value: skos:example "SPI-1 in Salmonella" xsd:string
 id: metpo:1000231
 name: peptidoglycan
 def: "A polymer that forms the cell wall of most bacteria" []
-synonym: "peptidoglycan-containing" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "peptidoglycan-containing" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000052 ! cell wall component
 is_a: metpo:1000055 ! cellular component
 property_value: skos:example "thick in Gram-positive bacteria" xsd:string
@@ -2393,7 +2383,7 @@ property_value: skos:relatedMatch CHEBI:53704
 id: metpo:1000232
 name: pH delta
 def: "A measure of the breadth of hydrogen ion concentrations that a microorganism can tolerate, calculated as the difference between the maximum and minimum viable pH values" []
-synonym: "pH deltas" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "pH deltas" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000147 ! growth conditions constraints
 is_a: metpo:1000245 ! physiological trait
 property_value: skos:example "{'narrow range (<1 pH unit)': 'specialist organisms'}" xsd:string
@@ -2403,7 +2393,7 @@ property_value: skos:example "{'wide range (>5 pH units)': 'generalist organisms
 id: metpo:1000233
 name: pH optimum
 def: "The specific pH at which an organism exhibits maximum growth rate" []
-synonym: "pH optima" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "pH optima" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000147 ! growth conditions constraints
 is_a: metpo:1000245 ! physiological trait
 property_value: skos:example "pH 10.0 for Bacillus alcalophilus" xsd:string
@@ -2414,8 +2404,8 @@ property_value: skos:example "pH 7.0 for E. coli" xsd:string
 id: metpo:1000234
 name: pH preference
 def: "The pH range or specific pH at which an organism grows optimally" []
-synonym: "pH preferences" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-synonym: "pH-preferring" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "pH preferences" RELATED [] {metpo:linguistic_role="noun_plural"}
+synonym: "pH-preferring" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000147 ! growth conditions constraints
 is_a: metpo:1000245 ! physiological trait
 property_value: skos:example "acidophilic" xsd:string
@@ -2426,7 +2416,7 @@ property_value: skos:example "neutrophilic" xsd:string
 id: metpo:1000235
 name: pH range
 def: "The span of pH values within which an organism can grow" []
-synonym: "pH ranges" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "pH ranges" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000147 ! growth conditions constraints
 is_a: metpo:1000245 ! physiological trait
 property_value: skos:example "pH 1-5 for acidophiles" xsd:string
@@ -2437,8 +2427,8 @@ property_value: skos:example "pH 8.5-11 for alkaliphiles" xsd:string
 id: metpo:1000236
 name: pH tolerance
 def: "The ability of an organism to survive exposure to pH values outside its optimal growth range" []
-synonym: "pH tolerances" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-synonym: "pH-tolerant" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "pH tolerances" RELATED [] {metpo:linguistic_role="noun_plural"}
+synonym: "pH-tolerant" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000147 ! growth conditions constraints
 is_a: metpo:1000245 ! physiological trait
 property_value: skos:example "acid resistance" xsd:string
@@ -2453,10 +2443,10 @@ def: "Biological mechanism employed by bacteria and archaea to protect themselve
 id: metpo:1000238
 name: photoautotroph
 def: "An organism that obtains energy from light and carbon from CO2" []
-synonym: "photoautotrophic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "photoautotrophically" RELATED [] {metpo-cleanroom:linguistic_role="adverb"}
-synonym: "photoautotrophs" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-is_a: metpo:1000219 ! organism by trophic type
+synonym: "photoautotrophic" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "photoautotrophically" RELATED [] {metpo:linguistic_role="adverb"}
+synonym: "photoautotrophs" RELATED [] {metpo:linguistic_role="noun_plural"}
+is_a: metpo:1000219 ! microbe characterized by trophic type
 property_value: skos:example "Cyanobacteria" xsd:string
 property_value: skos:example "Green sulfur bacteria" xsd:string
 
@@ -2464,10 +2454,10 @@ property_value: skos:example "Green sulfur bacteria" xsd:string
 id: metpo:1000239
 name: photoheterotroph
 def: "An organism that obtains energy from light but carbon from organic compounds" []
-synonym: "photoheterotrophic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "photoheterotrophically" RELATED [] {metpo-cleanroom:linguistic_role="adverb"}
-synonym: "photoheterotrophs" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-is_a: metpo:1000219 ! organism by trophic type
+synonym: "photoheterotrophic" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "photoheterotrophically" RELATED [] {metpo:linguistic_role="adverb"}
+synonym: "photoheterotrophs" RELATED [] {metpo:linguistic_role="noun_plural"}
+is_a: metpo:1000219 ! microbe characterized by trophic type
 property_value: skos:example "Purple non-sulfur bacteria" xsd:string
 property_value: skos:example "Some green bacteria" xsd:string
 
@@ -2476,7 +2466,7 @@ id: metpo:1000240
 name: photosynthesis
 def: "The process of converting light energy into chemical energy" []
 synonym: "photosynthesize" RELATED []
-synonym: "photosynthetic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "photosynthetic" RELATED [] {metpo:linguistic_role="adjective"}
 synonym: "verb" RELATED []
 is_a: metpo:1000026 ! autotrophic process
 is_a: metpo:1000106 ! energy metabolism process
@@ -2488,7 +2478,7 @@ property_value: skos:relatedMatch GO:0015979
 id: metpo:1000241
 name: phototaxis
 def: "Movement in response to light stimulus" []
-synonym: "phototactic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "phototactic" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000194 ! motility process
 is_a: metpo:1000245 ! physiological trait
 property_value: skos:example "negative phototaxis (movement away from light)" xsd:string
@@ -2499,7 +2489,7 @@ property_value: skos:relatedMatch GO:0009638
 id: metpo:1000242
 name: phylum
 def: "The taxonomic rank below domain and above class" []
-synonym: "phyla" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "phyla" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000301 ! taxonomic rank
 property_value: skos:example "Actinobacteria" xsd:string
 property_value: skos:example "Bacteroidetes" xsd:string
@@ -2529,11 +2519,11 @@ name: piezophile
 def: "An organism that thrives under high pressure conditions (synonym of barophile)" []
 synonym: "Barophile" EXACT []
 synonym: "Barophilic" RELATED []
-synonym: "barophilic|piezophilic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "barophilic|piezophilic" RELATED [] {metpo:linguistic_role="adjective"}
 synonym: "piezophile" EXACT []
-synonym: "piezophiles" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "piezophiles" RELATED [] {metpo:linguistic_role="noun_plural"}
 synonym: "piezophilic" RELATED []
-is_a: metpo:1000215 ! organism by relation to pressure
+is_a: metpo:1000215 ! microbe characterized by relation to pressure
 property_value: metpo:RangeMax "1000" xsd:string
 property_value: metpo:RangeMin "10" xsd:string
 property_value: metpo:Unit "atm" xsd:string
@@ -2544,8 +2534,8 @@ property_value: skos:example "Psychromonas species" xsd:string
 id: metpo:1000247
 name: pigment
 def: "Colored compounds produced by microorganisms" []
-synonym: "pigmented" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "pigments" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "pigmented" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "pigments" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000057 ! cellular product
 is_a: metpo:1000089 ! diagnostic feature
 property_value: skos:example "carotenoids (orange/yellow)" xsd:string
@@ -2557,7 +2547,7 @@ property_value: skos:example "pyocyanin (blue-green)" xsd:string
 id: metpo:1000248
 name: pigmentation
 def: "The production of colored compounds by microorganisms" []
-synonym: "pigmented" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "pigmented" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000245 ! physiological trait
 property_value: skos:example "carotenoids (yellow to red)" xsd:string
 property_value: skos:example "melanins (brown to black)" xsd:string
@@ -2568,8 +2558,8 @@ property_value: skos:example "violacein (purple)" xsd:string
 id: metpo:1000249
 name: pilus
 def: "Hair-like appendages on bacterial cells, often involved in motility or DNA transfer" []
-synonym: "pili" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-synonym: "piliated" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "pili" RELATED [] {metpo:linguistic_role="noun_plural"}
+synonym: "piliated" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000055 ! cellular component
 is_a: metpo:1000195 ! motility structure
 is_a: metpo:1000265 ! reproductive structure
@@ -2581,8 +2571,8 @@ property_value: skos:relatedMatch GO:0009289
 id: metpo:1000250
 name: plant growth promotion
 def: "The ability of microorganisms to enhance plant growth" []
-synonym: "PGP" RELATED [] {metpo-cleanroom:linguistic_role="abbreviation"}
-synonym: "plant growth-promoting" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "PGP" RELATED [] {metpo:linguistic_role="abbreviation"}
+synonym: "plant growth-promoting" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000167 ! interaction with host
 property_value: skos:example "biocontrol of pathogens" xsd:string
 property_value: skos:example "induced systemic resistance" xsd:string
@@ -2593,8 +2583,8 @@ property_value: skos:example "phytohormone production" xsd:string
 id: metpo:1000251
 name: plasmid
 def: "A small, circular, extrachromosomal DNA molecule" []
-synonym: "plasmid-containing" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "plasmids" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "plasmid-containing" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "plasmids" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000055 ! cellular component
 is_a: metpo:1000137 ! genomic element
 property_value: skos:example "F plasmids (fertility/conjugation)" xsd:string
@@ -2606,7 +2596,7 @@ property_value: skos:relatedMatch GO:0005727
 id: metpo:1000252
 name: pleomorphism
 def: "The ability of bacteria to change shape or size in response to environmental conditions" []
-synonym: "pleomorphic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "pleomorphic" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000054 ! cellular characteristic
 is_a: metpo:1000193 ! morphological trait
 property_value: skos:example "cell wall deficient forms" xsd:string
@@ -2625,8 +2615,8 @@ is_a: metpo:1000187 ! process
 id: metpo:1000254
 name: prophage
 def: "Bacteriophage DNA integrated into a bacterial genome" []
-synonym: "prophage-containing" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "prophages" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "prophage-containing" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "prophages" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000133 ! genetic element
 property_value: skos:example "cryptic prophages" xsd:string
 property_value: skos:example "defective prophages" xsd:string
@@ -2636,8 +2626,8 @@ property_value: skos:example "inducible prophages" xsd:string
 id: metpo:1000255
 name: prostheca
 def: "Thin extensions of the cell and cell wall" []
-synonym: "prosthecae" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-synonym: "prosthecate" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "prosthecae" RELATED [] {metpo:linguistic_role="noun_plural"}
+synonym: "prosthecate" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000055 ! cellular component
 is_a: metpo:1000193 ! morphological trait
 property_value: skos:example "Caulobacter crescentus stalk" xsd:string
@@ -2655,7 +2645,7 @@ id: metpo:1000257
 name: proteolysis
 def: "The breakdown of proteins into smaller polypeptides or amino acids" []
 synonym: "hydrolyze proteins" RELATED []
-synonym: "proteolytic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "proteolytic" RELATED [] {metpo:linguistic_role="adjective"}
 synonym: "verb" RELATED []
 is_a: metpo:1000204 ! nutrient utilization
 property_value: skos:example "extracellular proteases for nutrient acquisition" xsd:string
@@ -2666,9 +2656,9 @@ property_value: skos:relatedMatch GO:0006508
 id: metpo:1000258
 name: prototroph
 def: "An organism able to synthesize all its organic compounds from inorganic carbon sources" []
-synonym: "prototrophic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "prototrophs" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-is_a: metpo:1000211 ! organism by nutritional requirement
+synonym: "prototrophic" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "prototrophs" RELATED [] {metpo:linguistic_role="noun_plural"}
+is_a: metpo:1000211 ! microbe characterized by nutritional requirement
 property_value: skos:example "environmentally isolated strains" xsd:string
 property_value: skos:example "wild-type strains of most bacteria" xsd:string
 
@@ -2676,9 +2666,9 @@ property_value: skos:example "wild-type strains of most bacteria" xsd:string
 id: metpo:1000259
 name: psychrophile
 def: "An organism that thrives at relatively low temperatures, typically below 15°C" []
-synonym: "psychrophiles" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-synonym: "psychrophilic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-is_a: metpo:1000217 ! organism by relation to temperature
+synonym: "psychrophiles" RELATED [] {metpo:linguistic_role="noun_plural"}
+synonym: "psychrophilic" RELATED [] {metpo:linguistic_role="adjective"}
+is_a: metpo:1000217 ! microbe characterized by relation to temperature
 property_value: metpo:RangeMax "20" xsd:string
 property_value: metpo:RangeMin "0" xsd:string
 property_value: metpo:Unit "C" xsd:string
@@ -2708,7 +2698,7 @@ id: metpo:1000262
 name: regulation
 def: "Control of gene expression or protein activity" []
 synonym: "regulate" RELATED []
-synonym: "regulatory" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "regulatory" RELATED [] {metpo:linguistic_role="adjective"}
 synonym: "verb" RELATED []
 is_a: metpo:1000056 ! cellular process
 is_a: metpo:1000135 ! genetic process
@@ -2738,7 +2728,7 @@ is_a: metpo:1000294 ! structure
 id: metpo:1000266
 name: resistance mechanism
 def: "The specific molecular or cellular processes that confer antimicrobial resistance" []
-synonym: "resistance mechanisms" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "resistance mechanisms" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000065 ! clinically relevant feature
 property_value: skos:example "active efflux" xsd:string
 property_value: skos:example "bypass mechanisms" xsd:string
@@ -2750,7 +2740,7 @@ property_value: skos:example "target modification" xsd:string
 id: metpo:1000267
 name: respiration
 def: "Energy-yielding process using an electron transport chain with external electron acceptors" []
-synonym: "respiratory" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "respiratory" RELATED [] {metpo:linguistic_role="adjective"}
 synonym: "respire" RELATED []
 synonym: "verb" RELATED []
 is_a: metpo:1000106 ! energy metabolism process
@@ -2761,8 +2751,8 @@ property_value: skos:example "anaerobic respiration (other terminal electron acc
 id: metpo:1000268
 name: restriction-modification system
 def: "System protecting bacteria from foreign DNA by cleaving unmethylated recognition sites" []
-synonym: "R-M system" RELATED [] {metpo-cleanroom:linguistic_role="abbreviation"}
-synonym: "restriction-modification systems" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "R-M system" RELATED [] {metpo:linguistic_role="abbreviation"}
+synonym: "restriction-modification systems" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000133 ! genetic element
 is_a: metpo:1000189 ! system
 is_a: metpo:1000237 ! phage defense
@@ -2774,8 +2764,8 @@ property_value: skos:example "Type III R-M systems" xsd:string
 id: metpo:1000269
 name: ribosome
 def: "The cellular structure where protein synthesis occurs" []
-synonym: "ribosomal" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "ribosomes" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "ribosomal" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "ribosomes" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000055 ! cellular component
 property_value: skos:example "30S small subunit" xsd:string
 property_value: skos:example "50S large subunit" xsd:string
@@ -2786,8 +2776,8 @@ property_value: skos:relatedMatch GO:0005840
 id: metpo:1000270
 name: S-layer
 def: "Crystalline surface layer protein or glycoprotein coating the outside of many bacteria" []
-synonym: "S-layer-containing" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "S-layers" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "S-layer-containing" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "S-layers" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000055 ! cellular component
 property_value: skos:example "paracrystalline S-layer" xsd:string
 property_value: skos:example "S-layer glycoproteins" xsd:string
@@ -2796,7 +2786,7 @@ property_value: skos:example "S-layer glycoproteins" xsd:string
 id: metpo:1000271
 name: salinity delta
 def: "A measure of the breadth of sodium chloride concentrations that a microorganism can tolerate, calculated as the difference between the maximum and minimum viable salinity values" []
-synonym: "salinity deltas" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "salinity deltas" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000147 ! growth conditions constraints
 is_a: metpo:1000245 ! physiological trait
 property_value: skos:example "{'narrow range (<1% NaCl)': 'stenohaline organisms'}" xsd:string
@@ -2806,8 +2796,8 @@ property_value: skos:example "{'wide range (>8% NaCl)': 'euryhaline organisms'}"
 id: metpo:1000272
 name: salinity preference
 def: "The salinity range or specific salinity at which an organism grows optimally" []
-synonym: "salinity preferences" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-synonym: "salinity-preferring" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "salinity preferences" RELATED [] {metpo:linguistic_role="noun_plural"}
+synonym: "salinity-preferring" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000147 ! growth conditions constraints
 is_a: metpo:1000245 ! physiological trait
 property_value: skos:example "halophilic" xsd:string
@@ -2817,7 +2807,7 @@ property_value: skos:example "non-halophilic" xsd:string
 id: metpo:1000273
 name: secondary metabolite
 def: "Compounds not directly involved in normal growth but often having ecological functions" []
-synonym: "secondary metabolites" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "secondary metabolites" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000057 ! cellular product
 property_value: skos:example "antibiotics" xsd:string
 property_value: skos:example "pigments" xsd:string
@@ -2829,7 +2819,7 @@ id: metpo:1000274
 name: secretion
 def: "The process of moving molecules from inside a cell to the external environment" []
 synonym: "secrete" RELATED []
-synonym: "secretory" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "secretory" RELATED [] {metpo:linguistic_role="adjective"}
 synonym: "verb" RELATED []
 is_a: metpo:1000056 ! cellular process
 is_a: metpo:1000243 ! physiological process
@@ -2843,7 +2833,7 @@ property_value: skos:relatedMatch GO:0046903
 id: metpo:1000275
 name: secretion system
 def: "Specialized molecular machinery for protein secretion across membranes" []
-synonym: "secretion systems" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "secretion systems" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000055 ! cellular component
 is_a: metpo:1000189 ! system
 is_a: metpo:1000323 ! virulence factor
@@ -2859,9 +2849,9 @@ id: metpo:1000276
 name: sheathed
 def: "Having an outer tube-like structure enclosing filaments of cells" []
 synonym: "sheath" EXACT []
-synonym: "sheath" RELATED [] {metpo-cleanroom:linguistic_role="noun_singular"}
-synonym: "sheathed" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "sheaths" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "sheath" RELATED [] {metpo:linguistic_role="noun_singular"}
+synonym: "sheathed" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "sheaths" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000193 ! morphological trait
 property_value: skos:example "Leptothrix" xsd:string
 property_value: skos:example "Some cyanobacteria" xsd:string
@@ -2871,8 +2861,8 @@ property_value: skos:example "Sphaerotilus" xsd:string
 id: metpo:1000277
 name: siderophore
 def: "Compounds that bind and transport iron into cells" []
-synonym: "siderophore-producing" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "siderophores" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "siderophore-producing" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "siderophores" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000057 ! cellular product
 property_value: skos:example "desferrioxamine" xsd:string
 property_value: skos:example "enterobactin" xsd:string
@@ -2882,8 +2872,8 @@ property_value: skos:example "pyoverdine" xsd:string
 id: metpo:1000278
 name: sigma factor
 def: "Protein subunit of RNA polymerase required for initiation of transcription" []
-synonym: "sigma factors" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-synonym: "σ" RELATED [] {metpo-cleanroom:linguistic_role="symbol"}
+synonym: "sigma factors" RELATED [] {metpo:linguistic_role="noun_plural"}
+synonym: "σ" RELATED [] {metpo:linguistic_role="symbol"}
 is_a: metpo:1000263 ! regulatory mechanism
 is_a: metpo:1000310 ! transcription factor
 property_value: skos:example "σ32 (heat shock)" xsd:string
@@ -2902,8 +2892,8 @@ is_a: metpo:1000253 ! process
 id: metpo:1000280
 name: slime layer
 def: "A loosely attached layer of extracellular polymeric substances" []
-synonym: "slime layers" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-synonym: "slimy" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "slime layers" RELATED [] {metpo:linguistic_role="noun_plural"}
+synonym: "slimy" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000035 ! biofilm component
 is_a: metpo:1000055 ! cellular component
 property_value: skos:example "biofilm matrix" xsd:string
@@ -2919,7 +2909,7 @@ is_a: metpo:1000186 ! material entity
 id: metpo:1000282
 name: species
 def: "The basic unit of biological classification" []
-synonym: "species" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "species" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000301 ! taxonomic rank
 property_value: skos:example "Bacillus subtilis" xsd:string
 property_value: skos:example "Escherichia coli" xsd:string
@@ -2929,9 +2919,9 @@ property_value: skos:example "Streptomyces coelicolor" xsd:string
 id: metpo:1000283
 name: spirillum
 def: "A spiral-shaped bacterial cell" []
-synonym: "spirilla" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-synonym: "spirillar" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-is_a: metpo:1000218 ! organsism by shape
+synonym: "spirilla" RELATED [] {metpo:linguistic_role="noun_plural"}
+synonym: "spirillar" RELATED [] {metpo:linguistic_role="adjective"}
+is_a: metpo:1000218 ! microbe characterized by shape
 property_value: skos:example "Campylobacter" xsd:string
 property_value: skos:example "Spirillum volutans" xsd:string
 
@@ -2939,9 +2929,9 @@ property_value: skos:example "Spirillum volutans" xsd:string
 id: metpo:1000284
 name: spirochete
 def: "A spiral-shaped bacterium with axial filaments" []
-synonym: "spirochetal" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "spirochetes" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-is_a: metpo:1000218 ! organsism by shape
+synonym: "spirochetal" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "spirochetes" RELATED [] {metpo:linguistic_role="noun_plural"}
+is_a: metpo:1000218 ! microbe characterized by shape
 property_value: skos:example "Borrelia" xsd:string
 property_value: skos:example "Leptospira" xsd:string
 property_value: skos:example "Treponema" xsd:string
@@ -2950,8 +2940,8 @@ property_value: skos:example "Treponema" xsd:string
 id: metpo:1000285
 name: sporangiospore
 def: "Asexual spores produced within a sporangium" []
-synonym: "sporangiospore-producing" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "sporangiospores" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "sporangiospore-producing" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "sporangiospores" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000096 ! dormancy structure
 is_a: metpo:1000125 ! fungal spore
 is_a: metpo:1000265 ! reproductive structure
@@ -2963,7 +2953,7 @@ id: metpo:1000286
 name: sporulation
 def: "The process of forming spores" []
 synonym: "sporulate" RELATED []
-synonym: "sporulating" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "sporulating" RELATED [] {metpo:linguistic_role="adjective"}
 synonym: "verb" RELATED []
 is_a: metpo:1000264 ! reproductive process
 is_a: metpo:1000293 ! stress response
@@ -2975,9 +2965,9 @@ property_value: skos:relatedMatch GO:0030435
 id: metpo:1000287
 name: square cell
 def: "A cell with four approximately equal sides and right angles" []
-synonym: "square" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "square cells" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-is_a: metpo:1000218 ! organsism by shape
+synonym: "square" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "square cells" RELATED [] {metpo:linguistic_role="noun_plural"}
+is_a: metpo:1000218 ! microbe characterized by shape
 property_value: skos:example "Haloquadratum walsbyi" xsd:string
 property_value: skos:example "Some archaeal species" xsd:string
 
@@ -2985,8 +2975,8 @@ property_value: skos:example "Some archaeal species" xsd:string
 id: metpo:1000288
 name: stalk
 def: "Non-reproductive appendage extending from a bacterial cell" []
-synonym: "stalked" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "stalks" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "stalked" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "stalks" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000055 ! cellular component
 is_a: metpo:1000193 ! morphological trait
 property_value: skos:example "Caulobacter crescentus stalk" xsd:string
@@ -2995,9 +2985,9 @@ property_value: skos:example "Caulobacter crescentus stalk" xsd:string
 id: metpo:1000289
 name: star-shaped cell
 def: "A cell with multiple pointed projections extending from a central body" []
-synonym: "star-shaped" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "star-shaped cells" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-is_a: metpo:1000218 ! organsism by shape
+synonym: "star-shaped" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "star-shaped cells" RELATED [] {metpo:linguistic_role="noun_plural"}
+is_a: metpo:1000218 ! microbe characterized by shape
 property_value: skos:example "Certain soil bacteria" xsd:string
 property_value: skos:example "Some actinomycetes" xsd:string
 
@@ -3005,7 +2995,7 @@ property_value: skos:example "Some actinomycetes" xsd:string
 id: metpo:1000290
 name: stationary phase
 def: "Period where growth rate equals death rate, resulting in constant population" []
-synonym: "stationary phases" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "stationary phases" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000174 ! life cycle phase
 property_value: skos:example "nutrient limitation" xsd:string
 property_value: skos:example "quorum sensing activation" xsd:string
@@ -3022,7 +3012,7 @@ is_a: metpo:1000294 ! structure
 id: metpo:1000292
 name: strain
 def: "A genetic variant or subtype of a microorganism" []
-synonym: "strains" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "strains" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000300 ! taxonomic identifier
 property_value: skos:example "Bacillus subtilis 168" xsd:string
 property_value: skos:example "Escherichia coli K-12" xsd:string
@@ -3032,7 +3022,7 @@ property_value: skos:example "Streptomyces coelicolor A3(2)" xsd:string
 id: metpo:1000293
 name: stress response
 def: "Cellular reactions to environmental challenges" []
-synonym: "stress responses" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "stress responses" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000056 ! cellular process
 is_a: metpo:1000243 ! physiological process
 property_value: skos:example "cold shock response" xsd:string
@@ -3051,9 +3041,9 @@ is_a: metpo:1000186 ! material entity
 id: metpo:1000295
 name: sulfate reducer
 def: "An organism that uses sulfate as an electron acceptor in anaerobic respiration" []
-synonym: "sulfate reducers" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-synonym: "sulfate-reducing" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-is_a: metpo:1000219 ! organism by trophic type
+synonym: "sulfate reducers" RELATED [] {metpo:linguistic_role="noun_plural"}
+synonym: "sulfate-reducing" RELATED [] {metpo:linguistic_role="adjective"}
+is_a: metpo:1000219 ! microbe characterized by trophic type
 property_value: skos:example "Desulfobacter species" xsd:string
 property_value: skos:example "Desulfovibrio species" xsd:string
 
@@ -3062,7 +3052,7 @@ id: metpo:1000296
 name: swarming
 def: "Coordinated movement of bacterial populations across surfaces" []
 synonym: "swarm" RELATED []
-synonym: "swarming" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "swarming" RELATED [] {metpo:linguistic_role="adjective"}
 synonym: "verb" RELATED []
 is_a: metpo:1000075 ! community behavior
 is_a: metpo:1000194 ! motility process
@@ -3074,8 +3064,8 @@ property_value: skos:example "Pseudomonas aeruginosa swarming" xsd:string
 id: metpo:1000297
 name: symbiosis
 def: "A close and long-term biological interaction between different biological organisms" []
-synonym: "symbioses" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-synonym: "symbiotic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "symbioses" RELATED [] {metpo:linguistic_role="noun_plural"}
+synonym: "symbiotic" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000167 ! interaction with host
 property_value: skos:example "commensalism (one benefits, other unaffected)" xsd:string
 property_value: skos:example "mutualism (both benefit)" xsd:string
@@ -3092,7 +3082,7 @@ is_a: metpo:1000253 ! process
 id: metpo:1000299
 name: syntrophy
 def: "Metabolic cooperation between different microbial species" []
-synonym: "syntrophic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "syntrophic" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000168 ! interaction within a community
 property_value: skos:example "acidogenic-methanogenic partnerships" xsd:string
 property_value: skos:example "interspecies hydrogen transfer" xsd:string
@@ -3112,7 +3102,7 @@ def: "Hierarchical level in the biological classification system that indicates 
 id: metpo:1000302
 name: teichoic acid
 def: "A polymer in the cell wall of Gram-positive bacteria" []
-synonym: "teichoic acids" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "teichoic acids" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000052 ! cell wall component
 is_a: metpo:1000055 ! cellular component
 property_value: skos:example "lipoteichoic acids (attached to membrane)" xsd:string
@@ -3122,7 +3112,7 @@ property_value: skos:example "wall teichoic acids (attached to peptidoglycan)" x
 id: metpo:1000303
 name: temperature delta
 def: "A measure of the breadth of thermal conditions that a microorganism can withstand, calculated as the difference between the maximum and minimum viable temperature values" []
-synonym: "temperature deltas" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "temperature deltas" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000147 ! growth conditions constraints
 is_a: metpo:1000245 ! physiological trait
 property_value: metpo:Unit "C" xsd:string
@@ -3133,8 +3123,8 @@ property_value: skos:example "{'wide range (>30°C)': 'generalist organisms'}" x
 id: metpo:1000304
 name: temperature optimum
 def: "The specific temperature at which an organism exhibits maximum growth rate" []
-synonym: "optimally-growing" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "temperature optima" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "optimally-growing" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "temperature optima" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000147 ! growth conditions constraints
 is_a: metpo:1000245 ! physiological trait
 property_value: skos:example "100°C for Pyrolobus fumarii" xsd:string
@@ -3145,8 +3135,8 @@ property_value: skos:example "70°C for Thermus aquaticus" xsd:string
 id: metpo:1000305
 name: temperature preference
 def: "The temperature range or specific temperature at which an organism grows optimally" []
-synonym: "temperature preferences" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-synonym: "temperature-preferring" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "temperature preferences" RELATED [] {metpo:linguistic_role="noun_plural"}
+synonym: "temperature-preferring" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000147 ! growth conditions constraints
 is_a: metpo:1000245 ! physiological trait
 property_value: skos:example "mesophilic" xsd:string
@@ -3157,7 +3147,7 @@ property_value: skos:example "thermophilic" xsd:string
 id: metpo:1000306
 name: temperature range
 def: "The span of temperatures within which an organism can grow" []
-synonym: "temperature ranges" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "temperature ranges" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000147 ! growth conditions constraints
 is_a: metpo:1000245 ! physiological trait
 property_value: skos:example "0-15°C for psychrophiles" xsd:string
@@ -3168,8 +3158,8 @@ property_value: skos:example "45-80°C for thermophiles" xsd:string
 id: metpo:1000307
 name: thermal tolerance
 def: "The ability of an organism to survive exposure to temperatures outside its optimal growth range" []
-synonym: "thermal tolerances" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-synonym: "thermally tolerant" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "thermal tolerances" RELATED [] {metpo:linguistic_role="noun_plural"}
+synonym: "thermally tolerant" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000147 ! growth conditions constraints
 is_a: metpo:1000245 ! physiological trait
 property_value: skos:example "cold shock response" xsd:string
@@ -3179,11 +3169,11 @@ property_value: skos:example "heat shock response" xsd:string
 id: metpo:1000308
 name: thermophile
 def: "An organism that thrives at relatively high temperatures, typically above 45°C" []
-synonym: "thermophiles" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-synonym: "thermophilic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "thermophiles" RELATED [] {metpo:linguistic_role="noun_plural"}
+synonym: "thermophilic" RELATED [] {metpo:linguistic_role="adjective"}
 synonym: "thermophilize" RELATED []
 synonym: "verb" RELATED []
-is_a: metpo:1000217 ! organism by relation to temperature
+is_a: metpo:1000217 ! microbe characterized by relation to temperature
 is_a: metpo:1000245 ! physiological trait
 property_value: metpo:RangeMax "80" xsd:string
 property_value: metpo:RangeMin "45" xsd:string
@@ -3195,8 +3185,8 @@ property_value: skos:example "Thermus aquaticus" xsd:string
 id: metpo:1000309
 name: toxin
 def: "A poisonous substance produced by an organism" []
-synonym: "toxic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "toxins" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "toxic" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "toxins" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000057 ! cellular product
 is_a: metpo:1000323 ! virulence factor
 property_value: skos:example "endotoxins (part of cell structure)" xsd:string
@@ -3215,7 +3205,7 @@ id: metpo:1000311
 name: transduction
 def: "The transfer of bacterial DNA from one bacterium to another via a bacteriophage" []
 synonym: "transduce" RELATED []
-synonym: "transductive" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "transductive" RELATED [] {metpo:linguistic_role="adjective"}
 synonym: "verb" RELATED []
 is_a: metpo:1000056 ! cellular process
 is_a: metpo:1000134 ! genetic exchange
@@ -3227,8 +3217,8 @@ property_value: skos:relatedMatch GO:0009293
 id: metpo:1000312
 name: transferase
 def: "An enzyme that catalyzes the transfer of a functional group from one molecule to another" []
-synonym: "transferases" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-synonym: "transferring" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "transferases" RELATED [] {metpo:linguistic_role="noun_plural"}
+synonym: "transferring" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000088 ! diagnostic enzyme
 is_a: metpo:1000183 ! metabolic trait
 property_value: skos:example "aminotransferases (transfer amino groups)" xsd:string
@@ -3241,7 +3231,7 @@ id: metpo:1000313
 name: transformation
 def: "The uptake and incorporation of exogenous DNA from the environment" []
 synonym: "transform" RELATED []
-synonym: "transformative" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "transformative" RELATED [] {metpo:linguistic_role="adjective"}
 synonym: "verb" RELATED []
 is_a: metpo:1000056 ! cellular process
 is_a: metpo:1000134 ! genetic exchange
@@ -3253,7 +3243,7 @@ property_value: skos:relatedMatch GO:0009294
 id: metpo:1000314
 name: transport system
 def: "Mechanisms for moving molecules across cellular membranes" []
-synonym: "transport systems" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "transport systems" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000055 ! cellular component
 is_a: metpo:1000189 ! system
 property_value: skos:example "ABC transporters" xsd:string
@@ -3267,7 +3257,7 @@ property_value: skos:relatedMatch GO:0055085
 id: metpo:1000315
 name: transposon
 def: "A DNA sequence that can change its position within a genome" []
-synonym: "transposons" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "transposons" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000191 ! mobile genetic element
 property_value: skos:example "Tn10 (tetracycline resistance)" xsd:string
 property_value: skos:example "Tn5 (kanamycin resistance)" xsd:string
@@ -3277,9 +3267,9 @@ property_value: skos:relatedMatch SO:0000182
 id: metpo:1000316
 name: triangular cell
 def: "A cell with a three-sided shape" []
-synonym: "triangular" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "triangular cells" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-is_a: metpo:1000218 ! organsism by shape
+synonym: "triangular" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "triangular cells" RELATED [] {metpo:linguistic_role="noun_plural"}
+is_a: metpo:1000218 ! microbe characterized by shape
 property_value: skos:example "Certain extremophiles" xsd:string
 property_value: skos:example "Some archaeal species" xsd:string
 
@@ -3287,7 +3277,7 @@ property_value: skos:example "Some archaeal species" xsd:string
 id: metpo:1000317
 name: trichome
 def: "A chain of cells in filamentous bacteria, especially cyanobacteria" []
-synonym: "trichomes" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "trichomes" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000193 ! morphological trait
 property_value: skos:example "Anabaena trichomes" xsd:string
 property_value: skos:example "Oscillatoria trichomes" xsd:string
@@ -3297,7 +3287,7 @@ id: metpo:1000318
 name: twitching motility
 def: "Movement mediated by extension and retraction of type IV pili" []
 synonym: "twitch" RELATED []
-synonym: "twitching" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "twitching" RELATED [] {metpo:linguistic_role="adjective"}
 synonym: "verb" RELATED []
 is_a: metpo:1000194 ! motility process
 property_value: skos:example "Neisseria gonorrhoeae" xsd:string
@@ -3307,8 +3297,8 @@ property_value: skos:example "Pseudomonas aeruginosa" xsd:string
 id: metpo:1000319
 name: two-component system
 def: "Signal transduction system consisting of a sensor histidine kinase and a response regulator" []
-synonym: "TCS" RELATED [] {metpo-cleanroom:linguistic_role="abbreviation"}
-synonym: "two-component systems" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "TCS" RELATED [] {metpo:linguistic_role="abbreviation"}
+synonym: "two-component systems" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000189 ! system
 is_a: metpo:1000263 ! regulatory mechanism
 property_value: skos:example "EnvZ/OmpR (osmoregulation)" xsd:string
@@ -3319,11 +3309,11 @@ property_value: skos:example "PhoR/PhoB (phosphate regulation)" xsd:string
 id: metpo:1000320
 name: viable but non-culturable
 def: "A state in which cells are alive but cannot be cultured on standard media" []
-synonym: "non-culturable" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "VBNC" RELATED [] {metpo-cleanroom:linguistic_role="abbreviation"}
+synonym: "non-culturable" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "VBNC" RELATED [] {metpo:linguistic_role="abbreviation"}
 synonym: "viable but non-culturable state" EXACT []
-synonym: "viable but non-culturable state" RELATED [] {metpo-cleanroom:linguistic_role="noun_singular"}
-synonym: "viable but non-culturable states" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "viable but non-culturable state" RELATED [] {metpo:linguistic_role="noun_singular"}
+synonym: "viable but non-culturable states" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000244 ! physiological state
 property_value: skos:example "Escherichia coli under stress" xsd:string
 property_value: skos:example "Vibrio cholerae in aquatic environments" xsd:string
@@ -3332,9 +3322,9 @@ property_value: skos:example "Vibrio cholerae in aquatic environments" xsd:strin
 id: metpo:1000321
 name: vibrio
 def: "A curved rod-shaped bacterial cell" []
-synonym: "vibrioid" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "vibrios" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
-is_a: metpo:1000218 ! organsism by shape
+synonym: "vibrioid" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "vibrios" RELATED [] {metpo:linguistic_role="noun_plural"}
+is_a: metpo:1000218 ! microbe characterized by shape
 property_value: skos:example "Campylobacter jejuni" xsd:string
 property_value: skos:example "Vibrio cholerae" xsd:string
 
@@ -3342,7 +3332,7 @@ property_value: skos:example "Vibrio cholerae" xsd:string
 id: metpo:1000322
 name: virulence
 def: "The degree or severity of pathogenicity" []
-synonym: "virulent" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "virulent" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000167 ! interaction with host
 property_value: skos:example "avirulent (non-pathogenic)" xsd:string
 property_value: skos:example "highly virulent" xsd:string
@@ -3365,7 +3355,7 @@ name: xylanolysis
 def: "The breakdown of xylan (hemicellulose) into xylose" []
 synonym: "hydrolyze xylan" RELATED []
 synonym: "verb" RELATED []
-synonym: "xylanolytic" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
+synonym: "xylanolytic" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000204 ! nutrient utilization
 property_value: skos:example "beta-xylosidases" xsd:string
 property_value: skos:example "xylanases" xsd:string
@@ -3374,8 +3364,8 @@ property_value: skos:example "xylanases" xsd:string
 id: metpo:1000326
 name: zoospore
 def: "Motile spores with flagella, typically produced by algae and some fungi" []
-synonym: "zoospore-producing" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "zoospores" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "zoospore-producing" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "zoospores" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000125 ! fungal spore
 is_a: metpo:1000265 ! reproductive structure
 property_value: skos:example "Chytrid zoospores" xsd:string
@@ -3385,8 +3375,8 @@ property_value: skos:example "Oomycete zoospores" xsd:string
 id: metpo:1000327
 name: zygospore
 def: "A thick-walled resting spore resulting from the fusion of two compatible hyphae" []
-synonym: "zygospore-producing" RELATED [] {metpo-cleanroom:linguistic_role="adjective"}
-synonym: "zygospores" RELATED [] {metpo-cleanroom:linguistic_role="noun_plural"}
+synonym: "zygospore-producing" RELATED [] {metpo:linguistic_role="adjective"}
+synonym: "zygospores" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000096 ! dormancy structure
 is_a: metpo:1000125 ! fungal spore
 is_a: metpo:1000265 ! reproductive structure
@@ -3404,14 +3394,14 @@ property_value: metpo:Unit "atm" xsd:string
 id: metpo:1000329
 name: temperature optimum
 def: "The specific temperature at which a microorganism exhibits maximum metabolic activity and growth rate within its viable range." []
-is_a: metpo:1000217 ! organism by relation to temperature
+is_a: metpo:1000217 ! microbe characterized by relation to temperature
 property_value: metpo:Unit "C" xsd:string
 
 [Term]
 id: metpo:1000330
 name: temperature range
 def: "The span of temperatures within which a microorganism can maintain metabolic functions and population viability." []
-is_a: metpo:1000217 ! organism by relation to temperature
+is_a: metpo:1000217 ! microbe characterized by relation to temperature
 property_value: metpo:Unit "C" xsd:string
 
 [Term]
@@ -3453,7 +3443,7 @@ property_value: metpo:Unit "% NaCl" xsd:string
 id: metpo:1000336
 name: psychrotolerant
 def: "A microorganism that can grow at temperatures near 0°C but has optimal growth at higher temperatures." []
-is_a: metpo:1000217 ! organism by relation to temperature
+is_a: metpo:1000217 ! microbe characterized by relation to temperature
 property_value: metpo:RangeMax "45" xsd:string
 property_value: metpo:RangeMin "0" xsd:string
 property_value: metpo:Unit "C" xsd:string
@@ -3462,7 +3452,7 @@ property_value: metpo:Unit "C" xsd:string
 id: metpo:1000337
 name: thermotolerant
 def: "A microorganism that can grow at temperatures near 50°C but has optimal growth at lower temperatures." []
-is_a: metpo:1000217 ! organism by relation to temperature
+is_a: metpo:1000217 ! microbe characterized by relation to temperature
 property_value: metpo:RangeMax "50" xsd:string
 property_value: metpo:RangeMin "0" xsd:string
 property_value: metpo:Unit "C" xsd:string
@@ -3471,7 +3461,7 @@ property_value: metpo:Unit "C" xsd:string
 id: metpo:1000338
 name: extreme thermophile
 def: "A microorganism that grows optimally at temperatures between 60°C and 80°C." []
-is_a: metpo:1000217 ! organism by relation to temperature
+is_a: metpo:1000217 ! microbe characterized by relation to temperature
 property_value: metpo:RangeMax "80" xsd:string
 property_value: metpo:RangeMin "60" xsd:string
 property_value: metpo:Unit "C" xsd:string
@@ -3480,7 +3470,7 @@ property_value: metpo:Unit "C" xsd:string
 id: metpo:1000339
 name: extreme hyperthermophile
 def: "A microorganism that grows optimally at temperatures above 90°C." []
-is_a: metpo:1000217 ! organism by relation to temperature
+is_a: metpo:1000217 ! microbe characterized by relation to temperature
 property_value: metpo:RangeMax "125" xsd:string
 property_value: metpo:RangeMin "90" xsd:string
 property_value: metpo:Unit "C" xsd:string
@@ -3491,7 +3481,7 @@ name: non-halophile
 def: "A microorganism that does not require salt for optimal growth and survival." []
 synonym: "Non-halophilic" EXACT []
 synonym: "Nonhalophile" EXACT []
-is_a: metpo:1000216 ! organism by relation to salt concentration
+is_a: metpo:1000216 ! microbe characterized by relation to salt concentration
 property_value: metpo:RangeMax "2" xsd:string
 property_value: metpo:RangeMin "0" xsd:string
 property_value: metpo:Unit "% NaCl" xsd:string
@@ -3501,7 +3491,7 @@ id: metpo:1000341
 name: slight halophile
 def: "A microorganism that grows optimally in environments with low salt concentrations, typically between 2-5% NaCl." []
 synonym: "Slightly halophilic" EXACT []
-is_a: metpo:1000216 ! organism by relation to salt concentration
+is_a: metpo:1000216 ! microbe characterized by relation to salt concentration
 property_value: metpo:RangeMax "5" xsd:string
 property_value: metpo:RangeMin "2" xsd:string
 property_value: metpo:Unit "% NaCl" xsd:string
@@ -3510,7 +3500,7 @@ property_value: metpo:Unit "% NaCl" xsd:string
 id: metpo:1000342
 name: haloalkaliphile
 def: "A microorganism that grows optimally in environments with both high salt concentrations (typically 2-5% NaCl, but can tolerate up to 25% NaCl) and high pH (typically 9-11, but can grow at pH values up to 12)." []
-is_a: metpo:1000216 ! organism by relation to salt concentration
+is_a: metpo:1000216 ! microbe characterized by relation to salt concentration
 property_value: metpo:RangeMax "20" xsd:string
 property_value: metpo:RangeMin "0" xsd:string
 property_value: metpo:Unit "% NaCl" xsd:string
@@ -3520,7 +3510,7 @@ id: metpo:1000343
 name: extreme acidophile
 def: "A microorganism that grows optimally at very low pH values, typically between pH 1 and 3." []
 synonym: "Extreme acidophilic" EXACT []
-is_a: metpo:1000214 ! organism by relation to ph
+is_a: metpo:1000214 ! microbe characterized by relation to ph
 property_value: metpo:RangeMax "3" xsd:string
 property_value: metpo:RangeMin "1" xsd:string
 property_value: metpo:Unit "pH" xsd:string
@@ -3530,7 +3520,7 @@ id: metpo:1000344
 name: acid tolerant
 def: "A microorganism that can grow in acidic conditions below pH 5 but does not require them for optimal growth." []
 synonym: "Alkaliphilic" EXACT []
-is_a: metpo:1000214 ! organism by relation to ph
+is_a: metpo:1000214 ! microbe characterized by relation to ph
 property_value: metpo:RangeMax "14" xsd:string
 property_value: metpo:RangeMin "0" xsd:string
 property_value: metpo:Unit "pH" xsd:string
@@ -3540,7 +3530,7 @@ id: metpo:1000345
 name: alkali tolerant
 def: "A microorganism that can grow in alkaline conditions above pH 9 but does not require them for optimal growth." []
 synonym: "Acid-tolerant" EXACT []
-is_a: metpo:1000214 ! organism by relation to ph
+is_a: metpo:1000214 ! microbe characterized by relation to ph
 property_value: metpo:RangeMax "14" xsd:string
 property_value: metpo:RangeMin "6" xsd:string
 property_value: metpo:Unit "pH" xsd:string
@@ -3550,7 +3540,7 @@ id: metpo:1000346
 name: extreme alkaliphile
 def: "A microorganism that grows optimally at very high pH values, typically above pH 10." []
 synonym: "Alkali-tolerant" EXACT []
-is_a: metpo:1000214 ! organism by relation to ph
+is_a: metpo:1000214 ! microbe characterized by relation to ph
 property_value: metpo:RangeMax "14" xsd:string
 property_value: metpo:RangeMin "9" xsd:string
 property_value: metpo:Unit "pH" xsd:string
@@ -3560,7 +3550,7 @@ id: metpo:1000347
 name: facultative acidophile
 def: "A microorganism that can grow in acidic conditions but does not require them for optimal growth." []
 synonym: "Extreme alkaliphilic" EXACT []
-is_a: metpo:1000214 ! organism by relation to ph
+is_a: metpo:1000214 ! microbe characterized by relation to ph
 property_value: metpo:RangeMax "14" xsd:string
 property_value: metpo:RangeMin "0" xsd:string
 property_value: metpo:Unit "pH" xsd:string
@@ -3569,7 +3559,7 @@ property_value: metpo:Unit "pH" xsd:string
 id: metpo:1000348
 name: obligative acidophile
 def: "A microorganism that requires acidic conditions for growth and survival." []
-is_a: metpo:1000214 ! organism by relation to ph
+is_a: metpo:1000214 ! microbe characterized by relation to ph
 property_value: metpo:RangeMax "5" xsd:string
 property_value: metpo:RangeMin "0" xsd:string
 property_value: metpo:Unit "pH" xsd:string
@@ -3579,7 +3569,7 @@ id: metpo:1000349
 name: facultative aerobe
 def: "A microorganism that primarily uses oxygen for respiration but can also grow without it using alternative metabolic pathways." []
 synonym: "Facultative anaerobe" EXACT []
-is_a: metpo:1000213 ! organism by relation to oxygen
+is_a: metpo:1000213 ! microbe characterized by relation to oxygen
 property_value: metpo:RangeMax "100" xsd:string
 property_value: metpo:RangeMin "0" xsd:string
 property_value: metpo:Unit "% O2" xsd:string
@@ -3589,7 +3579,7 @@ id: metpo:1000350
 name: microaerophile
 def: "A microorganism that requires oxygen for growth but at concentrations lower than those found in air (typically 2-10% oxygen)." []
 synonym: "Microaerobe" EXACT []
-is_a: metpo:1000213 ! organism by relation to oxygen
+is_a: metpo:1000213 ! microbe characterized by relation to oxygen
 property_value: metpo:RangeMax "10" xsd:string
 property_value: metpo:RangeMin "0.5" xsd:string
 property_value: metpo:Unit "% O2" xsd:string
@@ -3599,7 +3589,7 @@ id: metpo:1000351
 name: microaerotolerant
 def: "A microorganism that can tolerate low levels of oxygen but does not require such conditions for growth." []
 synonym: "Microoxic-tolerant" EXACT []
-is_a: metpo:1000213 ! organism by relation to oxygen
+is_a: metpo:1000213 ! microbe characterized by relation to oxygen
 property_value: metpo:RangeMax "10" xsd:string
 property_value: metpo:RangeMin "0" xsd:string
 property_value: metpo:Unit "% O2" xsd:string
@@ -3609,7 +3599,7 @@ id: metpo:1000352
 name: aerotolerant anaerobe
 def: "An anaerobic microorganism that does not use oxygen for metabolism but is not inhibited by its presence." []
 synonym: "Oxygen-tolerant anaerobe" EXACT []
-is_a: metpo:1000213 ! organism by relation to oxygen
+is_a: metpo:1000213 ! microbe characterized by relation to oxygen
 property_value: metpo:RangeMax "100" xsd:string
 property_value: metpo:RangeMin "0" xsd:string
 property_value: metpo:Unit "% O2" xsd:string
@@ -3620,7 +3610,7 @@ name: obligate aerobe
 def: "A microorganism that absolutely requires oxygen for growth and cannot grow under anaerobic conditions." []
 synonym: "Aerobe" EXACT []
 synonym: "Strict aerobe" EXACT []
-is_a: metpo:1000213 ! organism by relation to oxygen
+is_a: metpo:1000213 ! microbe characterized by relation to oxygen
 property_value: metpo:RangeMax "100" xsd:string
 property_value: metpo:RangeMin "1" xsd:string
 property_value: metpo:Unit "% O2" xsd:string
@@ -3631,7 +3621,7 @@ name: obligate anaerobe
 def: "A microorganism for which oxygen is toxic and inhibits growth, requiring strictly anaerobic conditions." []
 synonym: "Anaerobe" EXACT []
 synonym: "Strict anaerobe" EXACT []
-is_a: metpo:1000213 ! organism by relation to oxygen
+is_a: metpo:1000213 ! microbe characterized by relation to oxygen
 property_value: metpo:RangeMax "0" xsd:string
 property_value: metpo:RangeMin "0" xsd:string
 property_value: metpo:Unit "% O2" xsd:string
@@ -3641,119 +3631,119 @@ id: metpo:1000355
 name: oxygenic phototroph
 def: "An organism that uses light energy for photosynthesis, producing oxygen as a byproduct." []
 synonym: "Oxygenic phototrophic" EXACT []
-is_a: metpo:1000213 ! organism by relation to oxygen
+is_a: metpo:1000213 ! microbe characterized by relation to oxygen
 
 [Term]
 id: metpo:1000356
 name: anoxygenic phototroph
 def: "An organism that uses light energy for photosynthesis without producing oxygen." []
 synonym: "Anoxygenic phototrophic" EXACT []
-is_a: metpo:1000213 ! organism by relation to oxygen
+is_a: metpo:1000213 ! microbe characterized by relation to oxygen
 
 [Term]
 id: metpo:1000357
 name: chemoautotroph
 def: "An organism that uses energy from chemical reactions to fix carbon dioxide for growth." []
 synonym: "Chemoautotrophic" EXACT []
-is_a: metpo:1000219 ! organism by trophic type
+is_a: metpo:1000219 ! microbe characterized by trophic type
 
 [Term]
 id: metpo:1000358
 name: chemoheterotroph
 def: "An organism that obtains both energy and carbon from organic compounds." []
 synonym: "Chemoheterotrophic" EXACT []
-is_a: metpo:1000219 ! organism by trophic type
+is_a: metpo:1000219 ! microbe characterized by trophic type
 
 [Term]
 id: metpo:1000359
 name: lithotroph
 def: "An organism that obtains energy from the oxidation of inorganic compounds." []
 synonym: "Lithotrophic" EXACT []
-is_a: metpo:1000219 ! organism by trophic type
+is_a: metpo:1000219 ! microbe characterized by trophic type
 
 [Term]
 id: metpo:1000360
 name: organotroph
 def: "An organism that obtains energy from the oxidation of organic compounds." []
 synonym: "Organotrophic" EXACT []
-is_a: metpo:1000219 ! organism by trophic type
+is_a: metpo:1000219 ! microbe characterized by trophic type
 
 [Term]
 id: metpo:1000361
 name: phototroph
 def: "An organism that uses light as its primary energy source." []
 synonym: "Phototrophic" EXACT []
-is_a: metpo:1000219 ! organism by trophic type
+is_a: metpo:1000219 ! microbe characterized by trophic type
 
 [Term]
 id: metpo:1000362
 name: chemotroph
 def: "An organism that obtains energy from chemical reactions." []
 synonym: "Chemotrophic" EXACT []
-is_a: metpo:1000219 ! organism by trophic type
+is_a: metpo:1000219 ! microbe characterized by trophic type
 
 [Term]
 id: metpo:1000363
 name: oligotroph
 def: "An organism adapted to environments with low nutrient levels." []
 synonym: "Oligotrophic" EXACT []
-is_a: metpo:1000219 ! organism by trophic type
+is_a: metpo:1000219 ! microbe characterized by trophic type
 
 [Term]
 id: metpo:1000364
 name: copiotroph
 def: "An organism adapted to environments with high nutrient levels." []
 synonym: "Copiotrophic" EXACT []
-is_a: metpo:1000219 ! organism by trophic type
+is_a: metpo:1000219 ! microbe characterized by trophic type
 
 [Term]
 id: metpo:1000365
 name: lithoautotroph
 def: "An organism that uses inorganic compounds for both energy and carbon." []
 synonym: "Lithoautotrophic" EXACT []
-is_a: metpo:1000219 ! organism by trophic type
+is_a: metpo:1000219 ! microbe characterized by trophic type
 
 [Term]
 id: metpo:1000366
 name: mixotroph
 def: "An organism capable of both autotrophic and heterotrophic nutrition." []
 synonym: "Mixotrophic" EXACT []
-is_a: metpo:1000219 ! organism by trophic type
+is_a: metpo:1000219 ! microbe characterized by trophic type
 
 [Term]
 id: metpo:1000367
 name: lithoheterotroph
 def: "An organism that uses inorganic compounds for energy but organic compounds for carbon." []
 synonym: "Lithoheterotrophic" EXACT []
-is_a: metpo:1000219 ! organism by trophic type
+is_a: metpo:1000219 ! microbe characterized by trophic type
 
 [Term]
 id: metpo:1000368
 name: chemoorganoheterotroph
 def: "An organism that uses organic compounds for both energy and carbon." []
 synonym: "Chemoorganoheterotrophic" EXACT []
-is_a: metpo:1000219 ! organism by trophic type
+is_a: metpo:1000219 ! microbe characterized by trophic type
 
 [Term]
 id: metpo:1000369
 name: chemolithoautotroph
 def: "An organism that uses inorganic compounds for energy and CO2 for carbon." []
 synonym: "Chemolithoautotrophic" EXACT []
-is_a: metpo:1000219 ! organism by trophic type
+is_a: metpo:1000219 ! microbe characterized by trophic type
 
 [Term]
 id: metpo:1000370
 name: methylotroph
 def: "An organism that can use one-carbon compounds as a source of energy and carbon." []
 synonym: "Methylotrophic" EXACT []
-is_a: metpo:1000219 ! organism by trophic type
+is_a: metpo:1000219 ! microbe characterized by trophic type
 
 [Term]
 id: metpo:1000371
 name: methanotroph
 def: "An organism that uses methane as its sole source of carbon and energy." []
 synonym: "Methanotrophic" EXACT []
-is_a: metpo:1000219 ! organism by trophic type
+is_a: metpo:1000219 ! microbe characterized by trophic type
 
 [Term]
 id: metpo:1000372
@@ -3761,49 +3751,49 @@ name: hydrogenotroph
 def: "An organism that obtains energy from the oxidation of molecular hydrogen." []
 synonym: "Hydrogenophile" EXACT []
 synonym: "Hydrogenophilic" EXACT []
-is_a: metpo:1000219 ! organism by trophic type
+is_a: metpo:1000219 ! microbe characterized by trophic type
 
 [Term]
 id: metpo:1000373
 name: hydrogen oxidizer
 def: "An organism that oxidizes hydrogen for energy." []
 synonym: "Hydrogen-oxidizing" EXACT []
-is_a: metpo:1000219 ! organism by trophic type
+is_a: metpo:1000219 ! microbe characterized by trophic type
 
 [Term]
 id: metpo:1000374
 name: hydrogen producer
 def: "An organism that produces hydrogen as a byproduct of its metabolism." []
 synonym: "Hydrogen-producing" EXACT []
-is_a: metpo:1000212 ! organism by product produced
+is_a: metpo:1000212 ! microbe characterized by product produced
 
 [Term]
 id: metpo:1000375
 name: nitrogen fixer
 def: "An organism capable of converting atmospheric nitrogen into ammonia." []
 synonym: "Nitrogen-fixing" EXACT []
-is_a: metpo:1000219 ! organism by trophic type
+is_a: metpo:1000219 ! microbe characterized by trophic type
 
 [Term]
 id: metpo:1000376
 name: methanogen
 def: "An organism that produces methane as a byproduct of its metabolism." []
 synonym: "Methanogenic" EXACT []
-is_a: metpo:1000212 ! organism by product produced
+is_a: metpo:1000212 ! microbe characterized by product produced
 
 [Term]
 id: metpo:1000377
 name: sulfur oxidizer
 def: "An organism that oxidizes sulfur compounds for energy." []
 synonym: "Sulfur-oxidizing" EXACT []
-is_a: metpo:1000219 ! organism by trophic type
+is_a: metpo:1000219 ! microbe characterized by trophic type
 
 [Term]
 id: metpo:1000378
 name: denitrifier
 def: "An organism that reduces nitrate to nitrogen gas in anaerobic respiration." []
 synonym: "Denitrifying" EXACT []
-is_a: metpo:1000219 ! organism by trophic type
+is_a: metpo:1000219 ! microbe characterized by trophic type
 
 [Term]
 id: metpo:1000379
@@ -3965,7 +3955,7 @@ is_a: metpo:1000096 ! dormancy structure
 id: metpo:1000405
 name: piezotolerant
 def: "An organism that can tolerate high pressure but grows optimally at normal atmospheric pressure." []
-is_a: metpo:1000215 ! organism by relation to pressure
+is_a: metpo:1000215 ! microbe characterized by relation to pressure
 property_value: metpo:RangeMax "100" xsd:string
 property_value: metpo:RangeMin "1" xsd:string
 property_value: metpo:Unit "atm" xsd:string
@@ -3974,7 +3964,7 @@ property_value: metpo:Unit "atm" xsd:string
 id: metpo:1000406
 name: piezosensitive
 def: "An organism that is adversely affected by high pressure conditions." []
-is_a: metpo:1000215 ! organism by relation to pressure
+is_a: metpo:1000215 ! microbe characterized by relation to pressure
 property_value: metpo:RangeMax "10" xsd:string
 property_value: metpo:RangeMin "1" xsd:string
 property_value: metpo:Unit "atm" xsd:string
@@ -3984,7 +3974,7 @@ id: metpo:1000407
 name: obligate barophile
 def: "An organism that requires high pressure for growth and cannot grow at atmospheric pressure." []
 synonym: "Obligate piezophile" EXACT []
-is_a: metpo:1000215 ! organism by relation to pressure
+is_a: metpo:1000215 ! microbe characterized by relation to pressure
 property_value: metpo:RangeMax "1000" xsd:string
 property_value: metpo:RangeMin "10" xsd:string
 property_value: metpo:Unit "atm" xsd:string
@@ -3994,7 +3984,7 @@ id: metpo:1000408
 name: facultative barophile
 def: "An organism that grows optimally under high pressure but can also grow at atmospheric pressure." []
 synonym: "Facultative piezophile" EXACT []
-is_a: metpo:1000215 ! organism by relation to pressure
+is_a: metpo:1000215 ! microbe characterized by relation to pressure
 property_value: metpo:RangeMax "1000" xsd:string
 property_value: metpo:RangeMin "1" xsd:string
 property_value: metpo:Unit "atm" xsd:string
@@ -4004,7 +3994,7 @@ id: metpo:1000409
 name: hyperbarophile
 def: "An organism adapted to extremely high pressure environments." []
 synonym: "Hyperbarophilic" EXACT []
-is_a: metpo:1000215 ! organism by relation to pressure
+is_a: metpo:1000215 ! microbe characterized by relation to pressure
 property_value: metpo:RangeMax "1500" xsd:string
 property_value: metpo:RangeMin "100" xsd:string
 property_value: metpo:Unit "atm" xsd:string
@@ -4014,7 +4004,7 @@ id: metpo:1000410
 name: hypobarophile
 def: "An organism adapted to low pressure environments." []
 synonym: "Hypobarophilic" EXACT []
-is_a: metpo:1000215 ! organism by relation to pressure
+is_a: metpo:1000215 ! microbe characterized by relation to pressure
 property_value: metpo:RangeMax "1" xsd:string
 property_value: metpo:RangeMin "0.1" xsd:string
 property_value: metpo:Unit "atm" xsd:string
@@ -4023,7 +4013,7 @@ property_value: metpo:Unit "atm" xsd:string
 id: metpo:1000411
 name: atmospheric pressure-adapted
 def: "An organism adapted to grow at standard atmospheric pressure." []
-is_a: metpo:1000215 ! organism by relation to pressure
+is_a: metpo:1000215 ! microbe characterized by relation to pressure
 property_value: metpo:RangeMax "1" xsd:string
 property_value: metpo:RangeMin "1" xsd:string
 property_value: metpo:Unit "atm" xsd:string
@@ -4033,7 +4023,7 @@ id: metpo:1000412
 name: moderate piezophile
 def: "An organism that grows optimally at moderately high pressures." []
 synonym: "Moderate barophile" EXACT []
-is_a: metpo:1000215 ! organism by relation to pressure
+is_a: metpo:1000215 ! microbe characterized by relation to pressure
 property_value: metpo:RangeMax "100" xsd:string
 property_value: metpo:RangeMin "10" xsd:string
 property_value: metpo:Unit "atm" xsd:string
@@ -4043,7 +4033,7 @@ id: metpo:1000413
 name: extreme piezophile
 def: "An organism that grows optimally at very high pressures." []
 synonym: "Extreme barophile" EXACT []
-is_a: metpo:1000215 ! organism by relation to pressure
+is_a: metpo:1000215 ! microbe characterized by relation to pressure
 property_value: metpo:RangeMax "1500" xsd:string
 property_value: metpo:RangeMin "100" xsd:string
 property_value: metpo:Unit "atm" xsd:string
@@ -4053,7 +4043,7 @@ id: metpo:1000414
 name: stenopiezic
 def: "An organism that can only grow within a narrow range of pressures." []
 synonym: "Stenobaric" EXACT []
-is_a: metpo:1000215 ! organism by relation to pressure
+is_a: metpo:1000215 ! microbe characterized by relation to pressure
 property_value: metpo:RangeMax "100" xsd:string
 property_value: metpo:RangeMin "1" xsd:string
 property_value: metpo:Unit "atm" xsd:string
@@ -4063,7 +4053,7 @@ id: metpo:1000415
 name: eurypiezic
 def: "An organism that can grow across a wide range of pressures." []
 synonym: "Eurybaric" EXACT []
-is_a: metpo:1000215 ! organism by relation to pressure
+is_a: metpo:1000215 ! microbe characterized by relation to pressure
 property_value: metpo:RangeMax "1000" xsd:string
 property_value: metpo:RangeMin "1" xsd:string
 property_value: metpo:Unit "atm" xsd:string
@@ -4072,7 +4062,7 @@ property_value: metpo:Unit "atm" xsd:string
 id: metpo:1000416
 name: pressure-sensitive
 def: "An organism whose growth or metabolism is negatively affected by changes in pressure." []
-is_a: metpo:1000215 ! organism by relation to pressure
+is_a: metpo:1000215 ! microbe characterized by relation to pressure
 property_value: metpo:RangeMax "10" xsd:string
 property_value: metpo:RangeMin "1" xsd:string
 property_value: metpo:Unit "atm" xsd:string
@@ -4081,7 +4071,7 @@ property_value: metpo:Unit "atm" xsd:string
 id: metpo:1000417
 name: pressure-resistant
 def: "An organism that can withstand significant changes in pressure without adverse effects." []
-is_a: metpo:1000215 ! organism by relation to pressure
+is_a: metpo:1000215 ! microbe characterized by relation to pressure
 property_value: metpo:RangeMax "1000" xsd:string
 property_value: metpo:RangeMin "1" xsd:string
 property_value: metpo:Unit "atm" xsd:string
@@ -4090,7 +4080,7 @@ property_value: metpo:Unit "atm" xsd:string
 id: metpo:1000418
 name: pressure-adapted
 def: "An organism that has evolved to thrive under specific pressure conditions." []
-is_a: metpo:1000215 ! organism by relation to pressure
+is_a: metpo:1000215 ! microbe characterized by relation to pressure
 property_value: metpo:RangeMax "1000" xsd:string
 property_value: metpo:RangeMin "1" xsd:string
 property_value: metpo:Unit "atm" xsd:string
@@ -4100,7 +4090,7 @@ id: metpo:1000419
 name: piezo-acidophile
 def: "An organism that grows optimally under both high pressure and acidic conditions." []
 synonym: "Piezo-acidophilic" EXACT []
-is_a: metpo:1000215 ! organism by relation to pressure
+is_a: metpo:1000215 ! microbe characterized by relation to pressure
 property_value: metpo:RangeMax "1000" xsd:string
 property_value: metpo:RangeMin "10" xsd:string
 property_value: metpo:Unit "atm" xsd:string
@@ -4110,7 +4100,7 @@ id: metpo:1000420
 name: piezo-alkaliphile
 def: "An organism that grows optimally under both high pressure and alkaline conditions." []
 synonym: "Piezo-alkaliphilic" EXACT []
-is_a: metpo:1000215 ! organism by relation to pressure
+is_a: metpo:1000215 ! microbe characterized by relation to pressure
 property_value: metpo:RangeMax "1000" xsd:string
 property_value: metpo:RangeMin "10" xsd:string
 property_value: metpo:Unit "atm" xsd:string
@@ -4120,7 +4110,7 @@ id: metpo:1000421
 name: piezo-halophile
 def: "An organism that grows optimally under both high pressure and high salinity conditions." []
 synonym: "Piezo-halophilic" EXACT []
-is_a: metpo:1000215 ! organism by relation to pressure
+is_a: metpo:1000215 ! microbe characterized by relation to pressure
 property_value: metpo:RangeMax "1000" xsd:string
 property_value: metpo:RangeMin "10" xsd:string
 property_value: metpo:Unit "atm" xsd:string
@@ -4130,7 +4120,7 @@ id: metpo:1000422
 name: piezo-psychrophile
 def: "An organism that grows optimally under both high pressure and low temperature conditions." []
 synonym: "Piezo-psychrophilic" EXACT []
-is_a: metpo:1000215 ! organism by relation to pressure
+is_a: metpo:1000215 ! microbe characterized by relation to pressure
 property_value: metpo:RangeMax "1000" xsd:string
 property_value: metpo:RangeMin "10" xsd:string
 property_value: metpo:Unit "atm" xsd:string
@@ -4140,7 +4130,7 @@ id: metpo:1000423
 name: piezo-thermophile
 def: "An organism that grows optimally under both high pressure and high temperature conditions." []
 synonym: "Piezo-thermophilic" EXACT []
-is_a: metpo:1000215 ! organism by relation to pressure
+is_a: metpo:1000215 ! microbe characterized by relation to pressure
 property_value: metpo:RangeMax "1000" xsd:string
 property_value: metpo:RangeMin "10" xsd:string
 property_value: metpo:Unit "atm" xsd:string
@@ -4150,7 +4140,7 @@ id: metpo:1000424
 name: piezo-lithoautotrophe
 def: "An organism that uses inorganic compounds for energy and carbon under high pressure conditions." []
 synonym: "Piezo-lithoautotrophic" EXACT []
-is_a: metpo:1000215 ! organism by relation to pressure
+is_a: metpo:1000215 ! microbe characterized by relation to pressure
 property_value: metpo:RangeMax "1000" xsd:string
 property_value: metpo:RangeMin "10" xsd:string
 property_value: metpo:Unit "atm" xsd:string
@@ -4160,7 +4150,7 @@ id: metpo:1000425
 name: piezo-chemoheterotroph
 def: "An organism that uses organic compounds for energy and carbon under high pressure conditions." []
 synonym: "Piezo-chemoheterotrophic" EXACT []
-is_a: metpo:1000215 ! organism by relation to pressure
+is_a: metpo:1000215 ! microbe characterized by relation to pressure
 property_value: metpo:RangeMax "1000" xsd:string
 property_value: metpo:RangeMin "10" xsd:string
 property_value: metpo:Unit "atm" xsd:string
@@ -4170,7 +4160,7 @@ id: metpo:1000426
 name: piezo-oligotroph
 def: "An organism adapted to low-nutrient environments under high pressure conditions." []
 synonym: "Piezo-oligotrophic" EXACT []
-is_a: metpo:1000215 ! organism by relation to pressure
+is_a: metpo:1000215 ! microbe characterized by relation to pressure
 property_value: metpo:RangeMax "1000" xsd:string
 property_value: metpo:RangeMin "10" xsd:string
 property_value: metpo:Unit "atm" xsd:string
@@ -4179,7 +4169,7 @@ property_value: metpo:Unit "atm" xsd:string
 id: metpo:1000427
 name: piezo-endolithic
 def: "An organism that lives within rock or mineral substrates under high pressure conditions." []
-is_a: metpo:1000215 ! organism by relation to pressure
+is_a: metpo:1000215 ! microbe characterized by relation to pressure
 property_value: metpo:RangeMax "1000" xsd:string
 property_value: metpo:RangeMin "10" xsd:string
 property_value: metpo:Unit "atm" xsd:string
@@ -4188,7 +4178,7 @@ property_value: metpo:Unit "atm" xsd:string
 id: metpo:1000428
 name: piezo-tolerant
 def: "An organism that can tolerate a range of pressure conditions but does not necessarily require high pressure for optimal growth." []
-is_a: metpo:1000215 ! organism by relation to pressure
+is_a: metpo:1000215 ! microbe characterized by relation to pressure
 property_value: metpo:RangeMax "1000" xsd:string
 property_value: metpo:RangeMin "1" xsd:string
 property_value: metpo:Unit "atm" xsd:string
@@ -4835,79 +4825,79 @@ property_value: metpo:Unit "C" xsd:string
 id: metpo:1000488
 name: branched
 def: "A cell with multiple branches or extensions." []
-is_a: metpo:1000218 ! organsism by shape
+is_a: metpo:1000218 ! microbe characterized by shape
 
 [Term]
 id: metpo:1000489
 name: coccobacillus
 def: "A short rod-shaped cell, intermediate between bacillus and coccus." []
-is_a: metpo:1000218 ! organsism by shape
+is_a: metpo:1000218 ! microbe characterized by shape
 
 [Term]
 id: metpo:1000490
 name: crescent
 def: "A curved, crescent-shaped cell." []
-is_a: metpo:1000218 ! organsism by shape
+is_a: metpo:1000218 ! microbe characterized by shape
 
 [Term]
 id: metpo:1000491
 name: curved
 def: "A cell with a slight curve or bend." []
-is_a: metpo:1000218 ! organsism by shape
+is_a: metpo:1000218 ! microbe characterized by shape
 
 [Term]
 id: metpo:1000492
 name: curved spiral
 def: "A cell with a curved spiral shape." []
-is_a: metpo:1000218 ! organsism by shape
+is_a: metpo:1000218 ! microbe characterized by shape
 
 [Term]
 id: metpo:1000493
 name: diplococcus
 def: "Two spherical cells attached to each other." []
-is_a: metpo:1000218 ! organsism by shape
+is_a: metpo:1000218 ! microbe characterized by shape
 
 [Term]
 id: metpo:1000494
 name: ellipsoidal
 def: "A cell with an elongated oval shape." []
-is_a: metpo:1000218 ! organsism by shape
+is_a: metpo:1000218 ! microbe characterized by shape
 
 [Term]
 id: metpo:1000495
 name: filament
 def: "A long, thin, thread-like cell." []
-is_a: metpo:1000218 ! organsism by shape
+is_a: metpo:1000218 ! microbe characterized by shape
 
 [Term]
 id: metpo:1000496
 name: fusiform
 def: "A cell with a spindle-like shape, wider in the middle and tapering at both ends." []
-is_a: metpo:1000218 ! organsism by shape
+is_a: metpo:1000218 ! microbe characterized by shape
 
 [Term]
 id: metpo:1000497
 name: helical
 def: "A cell with a spiral shape, forming a three-dimensional helix." []
-is_a: metpo:1000218 ! organsism by shape
+is_a: metpo:1000218 ! microbe characterized by shape
 
 [Term]
 id: metpo:1000498
 name: irregular
 def: "A cell with an inconsistent or non-uniform shape." []
-is_a: metpo:1000218 ! organsism by shape
+is_a: metpo:1000218 ! microbe characterized by shape
 
 [Term]
 id: metpo:1000499
 name: oval
 def: "A cell with an egg-shaped outline." []
-is_a: metpo:1000218 ! organsism by shape
+is_a: metpo:1000218 ! microbe characterized by shape
 
 [Term]
 id: metpo:1000500
 name: ovoid
 def: "A cell with an egg-like shape, slightly elongated." []
-is_a: metpo:1000218 ! organsism by shape
+is_a: metpo:1000218 ! microbe characterized by shape
 
 [Term]
 id: metpo:1000501
@@ -4919,43 +4909,43 @@ is_a: metpo:1000193 ! morphological trait
 id: metpo:1000502
 name: ring
 def: "A cell shaped like a circular band or loop." []
-is_a: metpo:1000218 ! organsism by shape
+is_a: metpo:1000218 ! microbe characterized by shape
 
 [Term]
 id: metpo:1000503
 name: rod
 def: "A straight, elongated cell." []
-is_a: metpo:1000218 ! organsism by shape
+is_a: metpo:1000218 ! microbe characterized by shape
 
 [Term]
 id: metpo:1000504
 name: sphere
 def: "A perfectly round cell." []
-is_a: metpo:1000218 ! organsism by shape
+is_a: metpo:1000218 ! microbe characterized by shape
 
 [Term]
 id: metpo:1000505
 name: spindle
 def: "A cell with a shape that tapers at both ends." []
-is_a: metpo:1000218 ! organsism by shape
+is_a: metpo:1000218 ! microbe characterized by shape
 
 [Term]
 id: metpo:1000506
 name: spiral
 def: "A cell with a tight, coiled shape." []
-is_a: metpo:1000218 ! organsism by shape
+is_a: metpo:1000218 ! microbe characterized by shape
 
 [Term]
 id: metpo:1000507
 name: star - dumbbell - pleomorphic
 def: "A cell that can assume star-shaped, dumbbell-shaped, or various other forms." []
-is_a: metpo:1000218 ! organsism by shape
+is_a: metpo:1000218 ! microbe characterized by shape
 
 [Term]
 id: metpo:1000508
 name: tailed
 def: "A cell with a main body and a tail-like extension." []
-is_a: metpo:1000218 ! organsism by shape
+is_a: metpo:1000218 ! microbe characterized by shape
 
 [Term]
 id: metpo:1000509
@@ -5042,4 +5032,52 @@ is_a: metpo:1000516 ! sensitivity toward
 id: metpo:1000524
 name: sensitivity toward temperature
 is_a: metpo:1000516 ! sensitivity toward
+
+[Term]
+id: metpo:1000525
+name: microbe
+is_a: metpo:1000186 ! material entity
+
+[Term]
+id: metpo:1000526
+name: chemical entity
+is_a: metpo:1000186 ! material entity
+
+[Term]
+id: metpo:1000527
+name: antimicrobial susceptibility assay result
+
+[Term]
+id: metpo:1000528
+name: structured susceptibility detail
+
+[Typedef]
+id: metpo:2000000
+name: has susceptibility profile
+domain: metpo:1000525 ! microbe
+range: metpo:1000527 ! antimicrobial susceptibility assay result
+
+[Typedef]
+id: metpo:2000001
+name: has resistance profile
+domain: metpo:1000525 ! microbe
+range: metpo:1000527 ! antimicrobial susceptibility assay result
+
+[Typedef]
+id: metpo:2000002
+name: has structured assay detail
+domain: metpo:1000527 ! antimicrobial susceptibility assay result
+range: metpo:1000528 ! structured susceptibility detail
+
+[Typedef]
+id: metpo:2000003
+name: has antimicrobial substance
+domain: metpo:1000527 ! antimicrobial susceptibility assay result
+range: metpo:1000526 ! chemical entity
+
+[Typedef]
+id: metpo:2000004
+name: has organism identified
+domain: metpo:1000527 ! antimicrobial susceptibility assay result
+range: metpo:1000525 ! microbe
 
