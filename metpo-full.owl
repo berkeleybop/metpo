@@ -11,22 +11,12 @@
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:metpo="https://w3id.org/metpo/"
      xmlns:dcterms="http://purl.org/dc/terms/"
-     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
-     xmlns:metpo-cleanroom="http://example.org/metpo-cleanroom/">
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="https://w3id.org/metpo/metpo/metpo-full.owl">
-<<<<<<< Updated upstream
-        <owl:versionIRI rdf:resource="https://w3id.org/metpo/metpo/releases/2025-03-24/metpo-full.owl"/>
-        <dcterms:description>None</dcterms:description>
-        <dcterms:license rdf:resource="https://creativecommons.org/licenses/unspecified"/>
+        <owl:versionIRI rdf:resource="https://w3id.org/metpo/metpo/releases/2025-04-25/metpo-full.owl"/>
+        <dcterms:description>Microbial ecophysiological trait and phenotype ontology</dcterms:description>
         <dcterms:title>METPO</dcterms:title>
-        <owl:versionInfo>2025-03-24</owl:versionInfo>
-=======
-        <owl:versionIRI rdf:resource="https://w3id.org/metpo/metpo/releases/2025-04-23/metpo-full.owl"/>
-        <dcterms:description>None</dcterms:description>
-        <dcterms:license rdf:resource="https://creativecommons.org/licenses/unspecified"/>
-        <dcterms:title>METPO</dcterms:title>
-        <owl:versionInfo>2025-04-23</owl:versionInfo>
->>>>>>> Stashed changes
+        <owl:versionInfo>2025-04-25</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -39,12 +29,6 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
-
-
-    <!-- http://example.org/metpo-cleanroom/linguistic_role -->
-
-    <owl:AnnotationProperty rdf:about="http://example.org/metpo-cleanroom/linguistic_role"/>
     
 
 
@@ -126,6 +110,126 @@
     
 
 
+    <!-- https://w3id.org/metpo/linguistic_role -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/metpo/linguistic_role"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/METPO_2000000 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/METPO_2000000"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/METPO_2000001 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/METPO_2000001"/>
+    
+
+
+    <!-- https://w3id.org/metpo/2000000 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000000">
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1000527"/>
+        <rdfs:label>has susceptibility profile</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000001 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000001">
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1000527"/>
+        <rdfs:label>has resistance profile</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000002 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000002">
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000527"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1000528"/>
+        <rdfs:label>has structured assay detail</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000003 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000003">
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000527"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1000526"/>
+        <rdfs:label>has antimicrobial substance</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000004 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000004">
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000527"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:label>has organism identified</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/metpo/2000005 -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/metpo/2000005">
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000527"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>has original response string</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000006 -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/metpo/2000006">
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000527"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>has assay measurement value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000007 -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/metpo/2000007">
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000526"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>has normalized compound string</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -155,19 +259,19 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000001"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>acid-fast</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000001"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>acid-fast bacteria</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000001"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>acid-fast bacterium</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_singular</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_singular</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -191,13 +295,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000002"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>acidophiles</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000002"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>acidophilic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -236,13 +340,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000004"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>adaptations</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000004"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>adaptive</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -275,13 +379,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000006"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>adhesins</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000006"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>adhesive</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -317,19 +421,19 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000008"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>aerobes</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000008"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>aerobic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000008"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>aerobically</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adverb</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adverb</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -351,7 +455,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000009"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>aerobically respiring</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -378,19 +482,19 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000010"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>aerotolerant</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000010"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>aerotolerant organism</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_singular</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_singular</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000010"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>aerotolerant organisms</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -413,13 +517,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000011"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>aggregates</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000011"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>aggregating</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -440,7 +544,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000012"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>akinetes</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -463,13 +567,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000013"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>alkaliphiles</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000013"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>alkaliphilic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -489,7 +593,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000014"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>ammonifying</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -511,7 +615,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000015"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>amylolytic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -537,19 +641,19 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000016"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>anaerobes</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000016"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>anaerobic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000016"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>anaerobically</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adverb</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adverb</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -573,7 +677,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000017"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>anaerobically respiring</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -593,7 +697,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000018"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>anoxygenic photosynthetic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -615,7 +719,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000019"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>antibiotic-producing</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -638,7 +742,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000020"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>antibiotic-resistant</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -661,13 +765,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000021"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>AMR</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>abbreviation</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>abbreviation</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000021"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>antimicrobial-resistant</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -690,7 +794,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000022"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>appendages</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -712,13 +816,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000023"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>arthrospore-producing</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000023"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>arthrospores</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -740,13 +844,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000024"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>ascospore-producing</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000024"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>ascospores</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -767,19 +871,19 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000025"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>autotrophic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000025"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>autotrophically</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adverb</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adverb</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000025"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>autotrophs</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -810,13 +914,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000027"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>auxotrophic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000027"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>auxotrophs</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -836,7 +940,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000028"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>axial filaments</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -857,13 +961,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000029"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>bacillar</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000029"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>bacilli</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -883,13 +987,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000030"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>barophiles</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000030"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>barophilic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -913,19 +1017,19 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000031"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>barotolerant</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000031"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>barotolerant organism</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_singular</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_singular</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000031"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>barotolerant organisms</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -947,13 +1051,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000032"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>basidiospore-producing</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000032"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>basidiospores</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -989,13 +1093,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000034"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>biofilm-forming</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000034"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>biofilms</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -1031,7 +1135,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000036"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>biofilm-forming</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -1054,7 +1158,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000037"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>biogeochemical cycles</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -1077,7 +1181,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000038"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>bioluminescent</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -1099,7 +1203,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000039"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>budding</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -1130,13 +1234,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000041"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>capnophiles</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000041"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>capnophilic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -1157,13 +1261,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000042"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>capsulated/encapsulated</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000042"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>capsules</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -1187,7 +1291,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000043"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>carbon-fixing</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -1207,7 +1311,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000044"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>carbon sources</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -1231,19 +1335,19 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000045"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>carboxydotrophic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000045"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>carboxydotrophs</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000045"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>carboxydrophile</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>synonym</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>synonym</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -1268,7 +1372,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000046"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>cell arrangements</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -1298,7 +1402,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000048"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>cell length categories</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -1321,7 +1425,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000049"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>cell shapes</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -1342,7 +1446,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000050"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>cell sizes</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -1383,7 +1487,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000053"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>cell width categories</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -1445,7 +1549,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000058"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>cellulolytic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -1479,19 +1583,19 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000060"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>chemoautotrophic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000060"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>chemoautotrophically</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adverb</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adverb</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000060"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>chemoautotrophs</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -1512,19 +1616,19 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000061"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>chemoheterotrophic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000061"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>chemoheterotrophically</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adverb</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adverb</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000061"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>chemoheterotrophs</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -1547,7 +1651,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000062"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>chemotactic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -1569,13 +1673,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000063"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>chlamydospore-producing</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000063"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>chlamydospores</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -1595,7 +1699,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000064"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>classes</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -1625,13 +1729,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000066"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>coccal</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000066"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>cocci</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -1653,13 +1757,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000067"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>CSP</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>abbreviation</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>abbreviation</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000067"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>cold shock proteins</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -1696,7 +1800,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000069"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>colonizing</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -1719,7 +1823,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000070"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>colony elevations</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -1742,7 +1846,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000071"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>colony margins</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -1761,7 +1865,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000072"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>colony morphologies</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -1784,7 +1888,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000073"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>colony textures</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -1803,7 +1907,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000074"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>commensal</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -1845,7 +1949,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000077"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>compatible solutes</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -1865,7 +1969,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000078"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>competent</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -1897,13 +2001,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000080"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>conidia</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000080"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>conidial</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -1927,7 +2031,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000081"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>conjugative</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -1952,13 +2056,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000082"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>Clustered Regularly Interspaced Short Palindromic Repeats</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>full_name</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>full_name</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000082"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>CRISPRs</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -1979,7 +2083,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000083"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>culturable</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -2003,13 +2107,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000084"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>cysts</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000084"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>encysted</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -2030,13 +2134,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000085"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>death phases</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000085"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>decline phase</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>synonym</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>synonym</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -2058,7 +2162,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000086"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>denitrifying</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -2108,13 +2212,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000090"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>diazotrophic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000090"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>diazotrophs</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -2137,7 +2241,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000091"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>differentiated</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -2157,7 +2261,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000092"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>dimorphic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -2177,13 +2281,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000093"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>disc-shaped</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000093"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>disc-shaped cells</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -2203,7 +2307,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000094"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>domains</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -2226,7 +2330,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000095"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>dormant</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -2256,13 +2360,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000097"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>dumbbell-shaped</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000097"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>dumbbell-shaped cells</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -2282,7 +2386,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000098"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>ecological niches</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -2322,7 +2426,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000101"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>ectosymbiotic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -2343,7 +2447,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000102"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>electron acceptors</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -2364,7 +2468,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000103"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>electron donors</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -2386,13 +2490,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000104"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>endospore-forming</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000104"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>endospores</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -2412,7 +2516,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000105"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>endosymbiotic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -2446,7 +2550,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000107"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>enzyme activities</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -2487,13 +2591,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000110"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>exospore-forming</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000110"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>exospores</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -2514,13 +2618,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000111"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>exponential phases</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000111"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>log phase</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>synonym</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>synonym</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -2540,13 +2644,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000112"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>extracellular</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000112"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>extracellularly</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adverb</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adverb</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -2568,13 +2672,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000113"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>EPS</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>abbreviation</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>abbreviation</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000113"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>extracellular polysaccharides</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -2598,13 +2702,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000114"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>extreme halophiles</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000114"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>extremely halophilic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -2627,13 +2731,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000115"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>extremophiles</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000115"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>extremophilic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -2655,13 +2759,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000116"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>facultative</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000116"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>facultatively</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adverb</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adverb</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -2684,13 +2788,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000117"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>facultative anaerobes</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000117"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>facultatively anaerobic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -2710,7 +2814,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000118"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>families</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -2731,7 +2835,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000119"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>fastidious</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -2754,7 +2858,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000120"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>fermentative</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -2778,19 +2882,19 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000121"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>filament</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_singular</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_singular</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000121"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>filamentous</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000121"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>filaments</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -2815,19 +2919,19 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000122"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>fimbria</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_singular</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_singular</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000122"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>fimbriae</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000122"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>fimbriated</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -2851,13 +2955,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000123"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>flagella</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000123"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>flagellated</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -2877,13 +2981,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000124"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>flask-shaped</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000124"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>flask-shaped cells</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -2914,7 +3018,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000126"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>gas vesicles</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -2935,7 +3039,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000127"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>GC-rich/GC-poor</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -2954,7 +3058,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000128"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>high-GC</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -2973,7 +3077,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000129"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>low-GC</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -2992,7 +3096,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000130"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>lower-mid-GC</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -3011,7 +3115,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000131"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>upper-mid-GC</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -3033,13 +3137,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000132"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>doubling time</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>synonym</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>synonym</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000132"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>generation times</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -3088,7 +3192,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000136"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>genome sizes</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -3119,13 +3223,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000138"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>GI</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>abbreviation</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>abbreviation</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000138"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>genomic islands</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -3155,7 +3259,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000140"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>genera</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -3177,7 +3281,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000141"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>gliding</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -3199,7 +3303,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000142"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>global regulators</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -3235,31 +3339,31 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000143"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>G-</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>abbreviation</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>abbreviation</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000143"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>Gram-negative bacteria|Gram-stain negative bacteria</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000143"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>Gram-negative bacterium</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_singular</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_singular</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000143"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>Gram-negative|Gram-stain negative</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000143"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>Gram-stain negative bacterium</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_singular</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_singular</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -3295,31 +3399,31 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000144"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>G+</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>abbreviation</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>abbreviation</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000144"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>Gram-positive bacteria|Gram-stain positive bacteria</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000144"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>Gram-positive bacterium</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_singular</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_singular</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000144"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>Gram-positive|Gram-stain positive</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000144"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>Gram-stain positive bacterium</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_singular</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_singular</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -3343,7 +3447,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000145"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>Gram stains</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -3393,7 +3497,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000149"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>growth rates</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -3414,7 +3518,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000150"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>habitats</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -3438,13 +3542,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000151"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>halophiles</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000151"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>halophilic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -3469,19 +3573,19 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000152"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>halotolerant</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000152"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>halotolerant organism</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_singular</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_singular</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000152"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>halotolerant organisms</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -3503,13 +3607,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000153"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>HSP</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>abbreviation</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>abbreviation</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000153"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>heat shock proteins</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -3545,7 +3649,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000155"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>hemolytic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -3566,13 +3670,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000156"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>heterocystous</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000156"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>heterocysts</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -3593,19 +3697,19 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000157"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>heterotrophic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000157"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>heterotrophically</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adverb</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adverb</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000157"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>heterotrophs</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -3625,7 +3729,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000158"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>holdfasts</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -3649,14 +3753,14 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000159"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>HGT</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>abbreviation</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>abbreviation</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000159"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>lateral gene transfer (LGT)</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>synonym</metpo-cleanroom:linguistic_role>
-        <metpo-cleanroom:linguistic_role>transfer horizontally</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>synonym</metpo:linguistic_role>
+        <metpo:linguistic_role>transfer horizontally</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -3680,13 +3784,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000160"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>hydrolases</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000160"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>hydrolytic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -3709,13 +3813,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000161"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>hyperthermophiles</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000161"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>hyperthermophilic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -3739,7 +3843,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000162"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>inclusion bodies</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -3764,13 +3868,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000163"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>infections</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000163"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>infectious</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -3840,13 +3944,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000169"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>intracellular</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000169"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>intracellularly</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adverb</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adverb</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -3870,7 +3974,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000170"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>invasive</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -3900,7 +4004,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000172"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>lag phases</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -3920,7 +4024,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000173"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>life cycles</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -3951,7 +4055,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000175"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>lipolytic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -3973,13 +4077,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000176"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>LPS</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>abbreviation</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>abbreviation</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000176"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>lipopolysaccharides</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -4007,7 +4111,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000178"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>lysogenic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -4037,7 +4141,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000180"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>magnetotactic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -4060,13 +4164,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000181"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>mesophiles</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000181"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>mesophilic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -4108,7 +4212,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000184"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>methanogenic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -4132,7 +4236,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000185"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>methylated</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -4184,13 +4288,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000190"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>microaerophiles</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000190"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>microaerophilic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -4213,13 +4317,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000191"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>MGE</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>abbreviation</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>abbreviation</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000191"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>mobile genetic elements</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -4242,13 +4346,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000192"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>moderate halophiles</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000192"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>moderately halophilic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -4297,7 +4401,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000196"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>mutualistic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -4318,13 +4422,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000197"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>mycolic acid-containing</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000197"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>mycolic acids</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -4346,7 +4450,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000198"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>mycorrhizal</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -4369,13 +4473,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000199"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>neutrophiles</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000199"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>neutrophilic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -4396,7 +4500,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000200"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>nitrifying</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -4418,7 +4522,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000201"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>nitrogen-fixing</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -4441,7 +4545,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000202"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>nodulating</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -4461,13 +4565,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000203"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>nucleoid-associated</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000203"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>nucleoids</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -4499,13 +4603,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000205"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>obligate</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000205"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>obligately</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adverb</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adverb</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -4525,13 +4629,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000206"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>obligate aerobes</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000206"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>obligately aerobic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -4551,13 +4655,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000207"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>obligate anaerobes</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000207"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>obligately anaerobic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -4579,13 +4683,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000208"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>oospore-producing</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000208"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>oospores</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -4605,7 +4709,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000209"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>orders</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -4613,9 +4717,9 @@
     <!-- https://w3id.org/metpo/1000210 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000210">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000186"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000525"/>
         <obo:IAO_0000115>Classification of living beings based on the specific environmental parameters required for their optimal development and reproduction.</obo:IAO_0000115>
-        <rdfs:label>organism by growth conditions</rdfs:label>
+        <rdfs:label>microbe characterized by growth conditions</rdfs:label>
     </owl:Class>
     
 
@@ -4625,7 +4729,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000211">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000219"/>
         <obo:IAO_0000115>Classification of living beings based on their specific needs for essential nutrients, compounds, or growth factors.</obo:IAO_0000115>
-        <rdfs:label>organism by nutritional requirement</rdfs:label>
+        <rdfs:label>microbe characterized by nutritional requirement</rdfs:label>
     </owl:Class>
     
 
@@ -4633,8 +4737,8 @@
     <!-- https://w3id.org/metpo/1000212 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000212">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000186"/>
-        <rdfs:label>organism by product produced</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:label>microbe characterized by product produced</rdfs:label>
     </owl:Class>
     
 
@@ -4644,7 +4748,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000213">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000210"/>
         <obo:IAO_0000115>Classification of living beings based on their requirement for, tolerance of, or utilization of molecular oxygen in their metabolism.</obo:IAO_0000115>
-        <rdfs:label>organism by relation to oxygen</rdfs:label>
+        <rdfs:label>microbe characterized by relation to oxygen</rdfs:label>
     </owl:Class>
     
 
@@ -4654,7 +4758,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000214">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000210"/>
         <obo:IAO_0000115>Classification of living beings based on their optimal acidity or alkalinity range for growth, survival, or metabolic activity.</obo:IAO_0000115>
-        <rdfs:label>organism by relation to ph</rdfs:label>
+        <rdfs:label>microbe characterized by relation to ph</rdfs:label>
     </owl:Class>
     
 
@@ -4664,7 +4768,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000215">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000210"/>
         <obo:IAO_0000115>Classification of living beings based on their tolerance for and adaptation to specific hydrostatic or atmospheric pressure conditions.</obo:IAO_0000115>
-        <rdfs:label>organism by relation to pressure</rdfs:label>
+        <rdfs:label>microbe characterized by relation to pressure</rdfs:label>
     </owl:Class>
     
 
@@ -4674,7 +4778,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000216">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000210"/>
         <obo:IAO_0000115>Classification of living beings based on their tolerance for and adaptation to specific ranges of environmental salinity.</obo:IAO_0000115>
-        <rdfs:label>organism by relation to salt concentration</rdfs:label>
+        <rdfs:label>microbe characterized by relation to salt concentration</rdfs:label>
     </owl:Class>
     
 
@@ -4684,7 +4788,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000217">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000210"/>
         <obo:IAO_0000115>Classification of living beings based on their optimal thermal range for growth, survival, or metabolic activity.</obo:IAO_0000115>
-        <rdfs:label>organism by relation to temperature</rdfs:label>
+        <rdfs:label>microbe characterized by relation to temperature</rdfs:label>
     </owl:Class>
     
 
@@ -4692,9 +4796,9 @@
     <!-- https://w3id.org/metpo/1000218 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000218">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000186"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000525"/>
         <obo:IAO_0000115>Classification of living beings based on their characteristic external morphology, cellular geometry, or structural configuration.</obo:IAO_0000115>
-        <rdfs:label>organsism by shape</rdfs:label>
+        <rdfs:label>microbe characterized by shape</rdfs:label>
     </owl:Class>
     
 
@@ -4704,7 +4808,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000219">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000210"/>
         <obo:IAO_0000115>Classification of living beings based on their mode of nutrition and energy acquisition from the environment.</obo:IAO_0000115>
-        <rdfs:label>organism by trophic type</rdfs:label>
+        <rdfs:label>microbe characterized by trophic type</rdfs:label>
     </owl:Class>
     
 
@@ -4724,13 +4828,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000220"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>osmophiles</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000220"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>osmophilic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -4753,7 +4857,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000221"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>osmoregulatory</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -4791,13 +4895,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000223"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>oxidoreductases</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000223"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>oxidoreductive</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -4820,7 +4924,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000224"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>oxygen requirements</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -4838,7 +4942,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000225"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>oxygenic photosynthetic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -4858,13 +4962,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000226"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>pan-genomes</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000226"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>pan-genomic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -4883,7 +4987,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000227"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>parasitic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -4920,7 +5024,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000229"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>pathogenic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -4941,13 +5045,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000230"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>PAI</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>abbreviation</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>abbreviation</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000230"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>pathogenicity islands</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -4968,7 +5072,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000231"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>peptidoglycan-containing</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -4988,7 +5092,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000232"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>pH deltas</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -5009,7 +5113,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000233"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>pH optima</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -5031,13 +5135,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000234"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>pH preferences</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000234"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>pH-preferring</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -5058,7 +5162,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000235"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>pH ranges</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -5079,13 +5183,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000236"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>pH tolerances</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000236"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>pH-tolerant</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -5115,19 +5219,19 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000238"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>photoautotrophic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000238"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>photoautotrophically</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adverb</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adverb</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000238"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>photoautotrophs</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -5148,19 +5252,19 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000239"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>photoheterotrophic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000239"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>photoheterotrophically</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adverb</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adverb</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000239"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>photoheterotrophs</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -5183,7 +5287,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000240"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>photosynthetic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -5204,7 +5308,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000241"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>phototactic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -5225,7 +5329,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000242"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>phyla</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -5281,13 +5385,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000246"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>barophilic|piezophilic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000246"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>piezophiles</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -5310,13 +5414,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000247"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>pigmented</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000247"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>pigments</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -5337,7 +5441,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000248"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>pigmented</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -5360,13 +5464,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000249"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>pili</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000249"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>piliated</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -5388,13 +5492,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000250"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>PGP</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>abbreviation</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>abbreviation</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000250"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>plant growth-promoting</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -5417,13 +5521,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000251"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>plasmid-containing</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000251"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>plasmids</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -5446,7 +5550,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000252"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>pleomorphic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -5477,13 +5581,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000254"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>prophage-containing</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000254"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>prophages</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -5505,13 +5609,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000255"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>prosthecae</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000255"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>prosthecate</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -5543,7 +5647,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000257"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>proteolytic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -5563,13 +5667,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000258"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>prototrophic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000258"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>prototrophs</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -5592,13 +5696,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000259"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>psychrophiles</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000259"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>psychrophilic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -5648,7 +5752,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000262"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>regulatory</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -5699,7 +5803,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000266"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>resistance mechanisms</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -5720,7 +5824,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000267"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>respiratory</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -5743,13 +5847,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000268"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>R-M system</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>abbreviation</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>abbreviation</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000268"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>restriction-modification systems</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -5771,13 +5875,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000269"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>ribosomal</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000269"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>ribosomes</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -5797,13 +5901,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000270"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>S-layer-containing</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000270"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>S-layers</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -5823,7 +5927,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000271"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>salinity deltas</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -5844,13 +5948,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000272"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>salinity preferences</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000272"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>salinity-preferring</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -5871,7 +5975,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000273"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>secondary metabolites</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -5896,7 +6000,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000274"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>secretory</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -5921,7 +6025,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000275"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>secretion systems</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -5944,19 +6048,19 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000276"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>sheath</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_singular</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_singular</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000276"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>sheathed</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000276"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>sheaths</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -5977,13 +6081,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000277"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>siderophore-producing</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000277"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>siderophores</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -6007,13 +6111,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000278"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>sigma factors</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000278"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>σ</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>symbol</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>symbol</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -6044,13 +6148,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000280"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>slime layers</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000280"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>slimy</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -6080,7 +6184,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000282"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>species</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -6100,13 +6204,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000283"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>spirilla</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000283"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>spirillar</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -6127,13 +6231,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000284"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>spirochetal</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000284"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>spirochetes</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -6155,13 +6259,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000285"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>sporangiospore-producing</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000285"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>sporangiospores</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -6184,7 +6288,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000286"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>sporulating</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -6204,13 +6308,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000287"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>square</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000287"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>square cells</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -6230,13 +6334,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000288"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>stalked</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000288"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>stalks</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -6256,13 +6360,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000289"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>star-shaped</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000289"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>star-shaped cells</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -6283,7 +6387,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000290"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>stationary phases</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -6313,7 +6417,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000292"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>strains</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -6336,7 +6440,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000293"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>stress responses</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -6366,13 +6470,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000295"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>sulfate reducers</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000295"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>sulfate-reducing</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -6395,7 +6499,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000296"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>swarming</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -6417,13 +6521,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000297"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>symbioses</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000297"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>symbiotic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -6453,7 +6557,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000299"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>syntrophic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -6491,7 +6595,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000302"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>teichoic acids</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -6512,7 +6616,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000303"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>temperature deltas</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -6534,13 +6638,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000304"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>optimally-growing</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000304"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>temperature optima</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -6562,13 +6666,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000305"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>temperature preferences</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000305"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>temperature-preferring</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -6589,7 +6693,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000306"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>temperature ranges</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -6610,13 +6714,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000307"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>thermal tolerances</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000307"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>thermally tolerant</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -6642,13 +6746,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000308"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>thermophiles</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000308"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>thermophilic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -6671,13 +6775,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000309"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>toxic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000309"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>toxins</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -6710,7 +6814,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000311"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>transductive</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -6733,13 +6837,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000312"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>transferases</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000312"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>transferring</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -6762,7 +6866,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000313"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>transformative</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -6786,7 +6890,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000314"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>transport systems</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -6806,7 +6910,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000315"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>transposons</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -6826,13 +6930,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000316"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>triangular</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000316"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>triangular cells</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -6851,7 +6955,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000317"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>trichomes</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -6872,7 +6976,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000318"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>twitching</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -6894,13 +6998,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000319"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>TCS</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>abbreviation</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>abbreviation</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000319"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>two-component systems</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -6923,25 +7027,25 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000320"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>VBNC</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>abbreviation</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>abbreviation</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000320"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>non-culturable</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000320"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>viable but non-culturable state</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_singular</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_singular</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000320"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>viable but non-culturable states</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -6961,13 +7065,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000321"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>vibrioid</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000321"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>vibrios</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -6987,7 +7091,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000322"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>virulent</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -7027,7 +7131,7 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000325"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>xylanolytic</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -7048,13 +7152,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000326"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>zoospore-producing</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000326"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>zoospores</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -7076,13 +7180,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000327"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>zygospore-producing</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>adjective</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000327"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>zygospores</owl:annotatedTarget>
-        <metpo-cleanroom:linguistic_role>noun_plural</metpo-cleanroom:linguistic_role>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -9521,6 +9625,40 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000524">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000516"/>
         <rdfs:label>sensitivity toward temperature</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/1000525 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000525">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000186"/>
+        <rdfs:label>microbe</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/1000526 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000526">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000186"/>
+        <rdfs:label>chemical entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/1000527 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000527">
+        <rdfs:label>antimicrobial susceptibility assay result</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/1000528 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000528">
+        <rdfs:label>structured susceptibility detail</rdfs:label>
     </owl:Class>
 </rdf:RDF>
 

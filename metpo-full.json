@@ -4,24 +4,15 @@
     "meta" : {
       "basicPropertyValues" : [ {
         "pred" : "http://purl.org/dc/terms/description",
-        "val" : "None"
-      }, {
-        "pred" : "http://purl.org/dc/terms/license",
-        "val" : "https://creativecommons.org/licenses/unspecified"
+        "val" : "Microbial ecophysiological trait and phenotype ontology"
       }, {
         "pred" : "http://purl.org/dc/terms/title",
         "val" : "METPO"
       }, {
         "pred" : "http://www.w3.org/2002/07/owl#versionInfo",
-<<<<<<< Updated upstream
-        "val" : "2025-03-24"
+        "val" : "2025-04-25"
       } ],
-      "version" : "https://w3id.org/metpo/metpo/releases/2025-03-24/metpo-full.json"
-=======
-        "val" : "2025-04-23"
-      } ],
-      "version" : "https://w3id.org/metpo/metpo/releases/2025-04-23/metpo-full.json"
->>>>>>> Stashed changes
+      "version" : "https://w3id.org/metpo/metpo/releases/2025-04-25/metpo-full.json"
     },
     "nodes" : [ {
       "id" : "https://w3id.org/metpo/1000001",
@@ -4788,7 +4779,7 @@
       }
     }, {
       "id" : "https://w3id.org/metpo/1000210",
-      "lbl" : "organism by growth conditions",
+      "lbl" : "microbe characterized by growth conditions",
       "type" : "CLASS",
       "meta" : {
         "definition" : {
@@ -4797,7 +4788,7 @@
       }
     }, {
       "id" : "https://w3id.org/metpo/1000211",
-      "lbl" : "organism by nutritional requirement",
+      "lbl" : "microbe characterized by nutritional requirement",
       "type" : "CLASS",
       "meta" : {
         "definition" : {
@@ -4806,11 +4797,11 @@
       }
     }, {
       "id" : "https://w3id.org/metpo/1000212",
-      "lbl" : "organism by product produced",
+      "lbl" : "microbe characterized by product produced",
       "type" : "CLASS"
     }, {
       "id" : "https://w3id.org/metpo/1000213",
-      "lbl" : "organism by relation to oxygen",
+      "lbl" : "microbe characterized by relation to oxygen",
       "type" : "CLASS",
       "meta" : {
         "definition" : {
@@ -4819,7 +4810,7 @@
       }
     }, {
       "id" : "https://w3id.org/metpo/1000214",
-      "lbl" : "organism by relation to ph",
+      "lbl" : "microbe characterized by relation to ph",
       "type" : "CLASS",
       "meta" : {
         "definition" : {
@@ -4828,7 +4819,7 @@
       }
     }, {
       "id" : "https://w3id.org/metpo/1000215",
-      "lbl" : "organism by relation to pressure",
+      "lbl" : "microbe characterized by relation to pressure",
       "type" : "CLASS",
       "meta" : {
         "definition" : {
@@ -4837,7 +4828,7 @@
       }
     }, {
       "id" : "https://w3id.org/metpo/1000216",
-      "lbl" : "organism by relation to salt concentration",
+      "lbl" : "microbe characterized by relation to salt concentration",
       "type" : "CLASS",
       "meta" : {
         "definition" : {
@@ -4846,7 +4837,7 @@
       }
     }, {
       "id" : "https://w3id.org/metpo/1000217",
-      "lbl" : "organism by relation to temperature",
+      "lbl" : "microbe characterized by relation to temperature",
       "type" : "CLASS",
       "meta" : {
         "definition" : {
@@ -4855,7 +4846,7 @@
       }
     }, {
       "id" : "https://w3id.org/metpo/1000218",
-      "lbl" : "organsism by shape",
+      "lbl" : "microbe characterized by shape",
       "type" : "CLASS",
       "meta" : {
         "definition" : {
@@ -4864,7 +4855,7 @@
       }
     }, {
       "id" : "https://w3id.org/metpo/1000219",
-      "lbl" : "organism by trophic type",
+      "lbl" : "microbe characterized by trophic type",
       "type" : "CLASS",
       "meta" : {
         "definition" : {
@@ -10703,9 +10694,69 @@
       "lbl" : "sensitivity toward temperature",
       "type" : "CLASS"
     }, {
-      "id" : "http://example.org/metpo-cleanroom/linguistic_role",
+      "id" : "https://w3id.org/metpo/1000525",
+      "lbl" : "microbe",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/1000526",
+      "lbl" : "chemical entity",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/1000527",
+      "lbl" : "antimicrobial susceptibility assay result",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/1000528",
+      "lbl" : "structured susceptibility detail",
+      "type" : "CLASS"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/METPO_2000000",
       "type" : "PROPERTY",
-      "propertyType" : "ANNOTATION"
+      "propertyType" : "OBJECT"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/METPO_2000001",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT"
+    }, {
+      "id" : "https://w3id.org/metpo/2000000",
+      "lbl" : "has susceptibility profile",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT"
+    }, {
+      "id" : "https://w3id.org/metpo/2000001",
+      "lbl" : "has resistance profile",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT"
+    }, {
+      "id" : "https://w3id.org/metpo/2000002",
+      "lbl" : "has structured assay detail",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT"
+    }, {
+      "id" : "https://w3id.org/metpo/2000003",
+      "lbl" : "has antimicrobial substance",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT"
+    }, {
+      "id" : "https://w3id.org/metpo/2000004",
+      "lbl" : "has organism identified",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT"
+    }, {
+      "id" : "https://w3id.org/metpo/2000005",
+      "lbl" : "has original response string",
+      "type" : "PROPERTY",
+      "propertyType" : "DATA"
+    }, {
+      "id" : "https://w3id.org/metpo/2000006",
+      "lbl" : "has assay measurement value",
+      "type" : "PROPERTY",
+      "propertyType" : "DATA"
+    }, {
+      "id" : "https://w3id.org/metpo/2000007",
+      "lbl" : "has normalized compound string",
+      "type" : "PROPERTY",
+      "propertyType" : "DATA"
     }, {
       "id" : "http://purl.obolibrary.org/obo/IAO_0000115",
       "type" : "PROPERTY",
@@ -10755,6 +10806,10 @@
       "propertyType" : "ANNOTATION"
     }, {
       "id" : "https://w3id.org/metpo/Unit",
+      "type" : "PROPERTY",
+      "propertyType" : "ANNOTATION"
+    }, {
+      "id" : "https://w3id.org/metpo/linguistic_role",
       "type" : "PROPERTY",
       "propertyType" : "ANNOTATION"
     } ],
@@ -11849,7 +11904,7 @@
     }, {
       "sub" : "https://w3id.org/metpo/1000210",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000186"
+      "obj" : "https://w3id.org/metpo/1000525"
     }, {
       "sub" : "https://w3id.org/metpo/1000211",
       "pred" : "is_a",
@@ -11857,7 +11912,7 @@
     }, {
       "sub" : "https://w3id.org/metpo/1000212",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000186"
+      "obj" : "https://w3id.org/metpo/1000525"
     }, {
       "sub" : "https://w3id.org/metpo/1000213",
       "pred" : "is_a",
@@ -11881,7 +11936,7 @@
     }, {
       "sub" : "https://w3id.org/metpo/1000218",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000186"
+      "obj" : "https://w3id.org/metpo/1000525"
     }, {
       "sub" : "https://w3id.org/metpo/1000219",
       "pred" : "is_a",
@@ -13282,6 +13337,35 @@
       "sub" : "https://w3id.org/metpo/1000524",
       "pred" : "is_a",
       "obj" : "https://w3id.org/metpo/1000516"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000525",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000186"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000526",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000186"
+    } ],
+    "domainRangeAxioms" : [ {
+      "predicateId" : "https://w3id.org/metpo/2000000",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1000527" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000001",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1000527" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000002",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000527" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1000528" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000003",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000527" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000004",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000527" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1000525" ]
     } ]
   } ]
 }
