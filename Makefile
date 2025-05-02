@@ -4,4 +4,5 @@ local/salinity_parsed_llm.tsv: metpo/salinity_raw_text_input.csv local/.env
 		--input-csv $< \
 		--output-tsv $@ \
 		--env-file local/.env \
-		--batch-size 20
+		--batch-size 40 \
+		--max-rows 400
