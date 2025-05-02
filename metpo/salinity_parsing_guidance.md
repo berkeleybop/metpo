@@ -81,3 +81,55 @@ This document summarizes the comprehensive rules and expectations for parsing `r
 - chemical_entities
 - growth_pattern, categorical_description, taxon_constraints
 - unparsed_text (optional, no duplication)
+
+# Salinity Prompt Refinement Notes  
+*Compiled 2025‑05‑02*
+
+The list below captures **all feedback items not yet baked into the LLM
+extraction prompt**.  Use it as a checklist for the next prompt iteration.
+
+---
+
+## 1  Qualifier Handling
+* Normalize `wt/vol`, `vol/vol`, `v/w` → **`w/v`** in `concentration_qualifier`.
+* Tokens like `most`, `all`, `near`, `range` are **not** qualifiers of any kind.
+
+## 2  Chemical Entity Rules
+* Add **`broth`** to the allowed chemical list.
+* Output **`NaCl`** only if it appears in `raw_text`.
+* Never merge multiple salts in one row.  
+  *Example*: “1 % NaCl **or** 0.5–1 % artificial sea salts” → two rows.
+* Canonicalise `ASW` and `artificial sea water` to the same string.
+
+## 3  Field Classification Fixes
+| Phrase | Correct column |
+|--------|----------------|
+| `halophilic`, `slightly halophilic` | `categorical_description` |
+| `optimum` | _none_ (ignore) |
+| `most strains`, `some isolates`, etc. | `taxon_constraints` |
+
+## 4  Row‑Splitting Rules
+* Comma lists like `6 %, 0 %, 22 % (w/v)` → **one row per value**.
+* Phrases like “weakly at 1 %” → separate row for the “weakly” limit.
+* Mixed‑chemical statements → one row **per chemical**.
+
+## 5  Relational & Range Parsing
+* Parse relational lists:  
+  * `below 3 %, above 18 %`  
+  * `10 %<x<3 %`  
+  * `below 0.5 %`
+* Convert malformed unit strings, e.g. `19 g 1^-1` → `19 g/L`.
+
+## 6  Whitespace Pre‑clean
+* Replace thin spaces (U+2009, U+202F) with normal space **before** tokenising.
+
+## 7  Unit Policy
+* When no unit present, keep `concentration_unit = "unknown"`  
+  (do **not** assume `%`).
+
+## 8  Growth Response
+* `growth_response` may remain blank when directionality is ambiguous.
+
+---
+
+*End of notes.*
