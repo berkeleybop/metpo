@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities  xmlns="http://namesforlife.com/ns/interchange" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://namesforlife.com/ns/interchange assertionsdb.xsd" xmlns:identifier="http://namesforlife.com/ns/identifier">       
+    <!-- # C(3) microaerophilic does not grow in microaerobic condition.# -->
+    <entity doi="10.1601/ex.0000">
+        <assertion>
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/NoGrowth"/>
+                <condition class-uri="http://doi.org/10.1601/Microaerobic"/>
+            </observational-data>
+        </assertion> 
+        <assertion>
+            <phenotype class-uri="http://doi.org/10.1601/Microaerophilic"/>
+        </assertion>
+    </entity>
+</entities>

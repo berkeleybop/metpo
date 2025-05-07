@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<entities xmlns="http://namesforlife.com/ns/interchange" xmlns:identifier="http://namesforlife.com/ns/identifier" xmlns:xsi="http://www.w3.org/2001/XmlSchema-instance">    
+    
+    <entity doi="10.1601/ex.7221" source="rid.1108">
+        <assertion>
+            <observational-data>
+                <observation classUri="http://doi.org/10.1601/InhibitedGrowth" />
+                <condition>
+                    <substance>phenol</substance>
+                    <measurement>
+                        <units>% w/v</units>
+                        <value>0.1</value>
+                    </measurement>
+                </condition>
+            </observational-data>
+        </assertion>
+        <assertion>
+            <observational-data>
+                <observation classUri="http://doi.org/10.1601/InhibitedGrowth" />
+                <condition>
+                    <substance>sodium azide</substance>
+                    <measurement>
+                        <units>% w/v</units>
+                        <value>0.01</value>
+                    </measurement>
+                </condition>
+            </observational-data>
+        </assertion>
+        <assertion>
+            <observational-data>
+                <phenotype classUri="http://doi.org/10.1601/Resistant" />
+                <condition>
+                    <substance>rifampicin</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+    </entity>
+</entities>
+

@@ -1,0 +1,214 @@
+@prefix obo:   <http://purl.obolibrary.org/obo/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix interchange: <http://namesforlife.com/ns/interchange> .
+@prefix N4L:   <http://doi.org/10.1601/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix media: <http://dx.doi.org/10.1601/media#> .
+
+N4L:ex.11354N65595N65594Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.11354N65595N65594
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.11354N65594 .
+
+N4L:ex.11354N65603N65602
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.11354N65602 .
+
+N4L:ex.11354N65590  a  obo:CHEBI_6104 , rdfs:Resource .
+
+N4L:ex.11354N65574N65573
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.11354N65573 .
+
+N4L:ex.11354N65570N65569
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.11354N65569 .
+
+N4L:ex.11354N65591N65590
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.11354N65590 .
+
+N4L:ex.11354N65603N65602Observation
+        a                              N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf                 N4L:ex.11354N65603N65602 ;
+        N4L:hasAntimicrobialPhenotype  N4L:ex.11354N65603N65602Phenotype .
+
+N4L:ex.11354N65582  a  obo:CHEBI_27902 , rdfs:Resource .
+
+N4L:ex.11354Phenotype
+        a       N4L:Resistant , N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.11354N65579N65578
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.11354N65578 .
+
+N4L:ex.11354N65595N65594Observation
+        a                              N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf                 N4L:ex.11354N65595N65594 ;
+        N4L:hasAntimicrobialPhenotype  N4L:ex.11354N65595N65594Phenotype .
+
+N4L:ex.11354N65566N65565Observation
+        a                              N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf                 N4L:ex.11354N65566N65565 ;
+        N4L:hasAntimicrobialPhenotype  N4L:ex.11354N65566N65565Phenotype .
+
+N4L:ex.11354N65603N65602Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.11354N65583N65582Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.11354N65558N65557
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.11354N65557 .
+
+N4L:ex.11354N65591N65590Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.11354N65561  a  obo:CHEBI_50845 , rdfs:Resource .
+
+N4L:ex.11354N65553  a  obo:CHEBI_18208 , rdfs:Resource .
+
+N4L:ex.11354N65594  a  obo:CHEBI_3393 , rdfs:Resource .
+
+N4L:ex.11354  a                     rdfs:Resource , N4L:Strain ;
+        N4L:hasOrganismObservation  N4L:ex.11354N65603N65602Observation , N4L:ex.11354N65587N65586Observation , N4L:ex.11354N65583N65582Observation , N4L:ex.11354N65595N65594Observation , N4L:ex.11354N65591N65590Observation , N4L:ex.11354N65554N65553Observation , N4L:ex.11354N65570N65569Observation , N4L:ex.11354N65562N65561Observation , N4L:ex.11354N65599N65598Observation , N4L:ex.11354N65550N65549Observation , N4L:ex.11354N65558N65557Observation , N4L:ex.11354N65574N65573Observation , N4L:ex.11354N65566N65565Observation , N4L:ex.11354N65579N65578Observation ;
+        N4L:hasPhenotype            N4L:ex.11354Phenotype .
+
+N4L:ex.11354N65558N65557Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.11354N65587N65586Observation
+        a                              N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf                 N4L:ex.11354N65587N65586 ;
+        N4L:hasAntimicrobialPhenotype  N4L:ex.11354N65587N65586Phenotype .
+
+N4L:ex.11354N65566N65565Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.11354N65558N65557Observation
+        a                              N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf                 N4L:ex.11354N65558N65557 ;
+        N4L:hasAntimicrobialPhenotype  N4L:ex.11354N65558N65557Phenotype .
+
+N4L:ex.11354N65574N65573Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.11354N65573  a  obo:CHEBI_8310 , rdfs:Resource .
+
+N4L:ex.11354N65550N65549Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.11354N65586  a  obo:CHEBI_17833 , rdfs:Resource .
+
+N4L:    a            owl:Ontology ;
+        owl:imports  N4L: .
+
+N4L:ex.11354N65570N65569Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.11354N65554N65553
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.11354N65553 .
+
+N4L:ex.11354N65565  a  obo:CHEBI_48923 , rdfs:Resource .
+
+N4L:ex.11354N65550N65549
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.11354N65549 .
+
+N4L:ex.11354N65578  a  obo:CHEBI_17076 , rdfs:Resource .
+
+N4L:ex.11354N65587N65586
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.11354N65586 .
+
+N4L:ex.11354N65570N65569Observation
+        a                              N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf                 N4L:ex.11354N65570N65569 ;
+        N4L:hasAntimicrobialPhenotype  N4L:ex.11354N65570N65569Phenotype .
+
+N4L:ex.11354N65557  a  obo:CHEBI_17698 , rdfs:Resource .
+
+N4L:ex.11354N65566N65565
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.11354N65565 .
+
+N4L:ex.11354N65554N65553Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.11354N65598  a  obo:CHEBI_6472 , rdfs:Resource .
+
+N4L:ex.11354N65599N65598Observation
+        a                              N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf                 N4L:ex.11354N65599N65598 ;
+        N4L:hasAntimicrobialPhenotype  N4L:ex.11354N65599N65598Phenotype .
+
+N4L:ex.11354N65583N65582
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.11354N65582 .
+
+N4L:ex.11354N65562N65561Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.11354N65599N65598
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.11354N65598 .
+
+N4L:ex.11354N65591N65590Observation
+        a                              N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf                 N4L:ex.11354N65591N65590 ;
+        N4L:hasAntimicrobialPhenotype  N4L:ex.11354N65591N65590Phenotype .
+
+N4L:ex.11354N65562N65561Observation
+        a                              N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf                 N4L:ex.11354N65562N65561 ;
+        N4L:hasAntimicrobialPhenotype  N4L:ex.11354N65562N65561Phenotype .
+
+N4L:ex.11354N65574N65573Observation
+        a                              N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf                 N4L:ex.11354N65574N65573 ;
+        N4L:hasAntimicrobialPhenotype  N4L:ex.11354N65574N65573Phenotype .
+
+N4L:ex.11354N65599N65598Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.11354N65549  a  obo:CHEBI_28971 , rdfs:Resource .
+
+N4L:ex.11354N65602  a  obo:CHEBI_7507 , rdfs:Resource .
+
+N4L:ex.11354N65550N65549Observation
+        a                              N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf                 N4L:ex.11354N65550N65549 ;
+        N4L:hasAntimicrobialPhenotype  N4L:ex.11354N65550N65549Phenotype .
+
+N4L:ex.11354N65569  a  obo:CHEBI_16869 , rdfs:Resource .
+
+N4L:ex.11354N65579N65578Observation
+        a                              N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf                 N4L:ex.11354N65579N65578 ;
+        N4L:hasAntimicrobialPhenotype  N4L:ex.11354N65579N65578Phenotype .
+
+N4L:ex.11354N65583N65582Observation
+        a                              N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf                 N4L:ex.11354N65583N65582 ;
+        N4L:hasAntimicrobialPhenotype  N4L:ex.11354N65583N65582Phenotype .
+
+N4L:ex.11354N65579N65578Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.11354N65554N65553Observation
+        a                              N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf                 N4L:ex.11354N65554N65553 ;
+        N4L:hasAntimicrobialPhenotype  N4L:ex.11354N65554N65553Phenotype .
+
+N4L:ex.11354N65587N65586Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.11354N65562N65561
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.11354N65561 .

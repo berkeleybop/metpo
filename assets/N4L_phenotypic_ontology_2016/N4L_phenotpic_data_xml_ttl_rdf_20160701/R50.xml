@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities  xmlns="http://namesforlife.com/ns/interchange" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://namesforlife.com/ns/interchange assertions.xsd" xmlns:identifier="http://namesforlife.com/ns/identifier">       
+    <!-- # R(50) If an organism respires substance that is different than O2, then the organism has Anaerobic respiration phenotype.# -->
+    <entity doi="10.1601/ex.0000">
+        <assertion>
+        <observational-data>
+            <!-- Should be inferred: Strain has anaerobic respiration phenotype -->
+            <cellular-activity cellular-activity-class="http://doi.org/10.1601/Respiration"/>
+            <condition cellular-activity-condition-type="http://doi.org/10.1601/media#Substance" cellular-activity-condition-value="true"/>            
+        </observational-data>        
+        </assertion>
+    </entity>
+</entities>

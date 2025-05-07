@@ -1,0 +1,865 @@
+
+- - - - - - - - - - - - - - - - - -
+
+Phenotype ontology:
+
+R - denotes rule, and C-denotes constraint.
+
+- - - - - - - - - - - - - - -  - -
+
+Rules implementation content (phenotype ontology):
+ 
+ - Strict Anaerobe  (R3, R7, R34[R34a], R46, R48) . 
+ - Anaerobe (R12, R19, R51) .
+ - Aerotolerant anaerobe (R5, R6, R33, R49, R55) .
+ - Strict Aerobe (R1, R4, R31, R32, R42, R47) .
+ - Aerobe (R11, R41) .
+ - Anaerobe (R12, R19) . 
+ - Thermophile (R8, R18) .
+ - Mesophile (R14, R24) .
+ - Psychrotolerant (R9, R16, R54) .
+ - Thermotolerant (R10, R17) .
+ - Extreme Psychrophile (R13, R21) .
+ - Psychrophile (R15, R25) .
+ - Hyperthermophile (R20, R45) .
+ - Alkalophile (R22, R38) .
+ - Acidophile (R23, R37) .
+ - Neutrophile (R26, R39) .
+ - Facultative anaerobe (R27, R44) . 
+ - Microaerophilic (R28, R29, R30, R35, R36, R43) .
+ - Resistant (R(107), R(58) ) .
+ - Susceptible (R(62), R(60) ) .
+ - Anaerobic respiration (R(50), R(53), R(61) ) .
+  
+- - - - -  - - - - - - - - -  - - -
+
+Rules and Constraints attached to N4L:Strain class:
+
+# R(1) An organism that grows optimally in air condition and does not grow in anoxic and microaerobic conditions is strict aerobe.# - TESTED
+# R(2) An unknown object that does not grow in microaerobic conditions is anaerobe or aerobe. You may want to add additional obsevations in order to fix this incosistency?# - DELETED
+
+# R(3) If an organism does not grow in air and microaerobic conditions, then the organism is strict anaerobe.# - TESTED
+# R(4) If an organism does not grow in microaerobic and in anoxic condition then the organism is strict aerobe.# - TESTED 
+# R(5) If an organism grows in air, and optimally grows in anoxic conditions then the organism is aerotolerant anaerobe.# - TESTED (runs R(33) and R(55) - dependent rule) 
+# R(6) If an organism grows in microaerobic, and optimally grows in anoxic conditions then the organism is aerotolerant anaerobe.# TESTED (runs R(33)  - dependent rule) - TESTED .
+# R(7) If an organism grows optimally in anoxic conditions and does not grow in air conditions, then the organism is strict anaerobe. # - TESTED
+# R(8) If an organism grows optimally in high temperature conditions then the organism is Thermophile.# - TESTED
+# R(9) If an organism grows sub-optimally in low temperature conditions, and grows optimally in mid-range temperature conditions, then the organism is Psychrotolerant.# - TESTED
+
+# R(10) If an organism grows sub-optimally in moderate-high temperature conditions and optimally grows in mid-range temperature conditions, then the organism is Thermotolerant.# - TESTED
+# R(11) If an organism is Aerobe then the organism has no-growth in anoxic conditions.# - TESTED
+# R(12) If an organism is Anaerobe, then the organism has optimal growth in anoxic conditions.# - TESTED
+# R(13) If an organism is Extreme Psychrophile then grows optimally in extreme-low temperature conditions.# - TESTED
+# R(14) If an organism is Mesophile then grows optimally in mid-range temperature conditions.# - TESTED
+# R(15) If an organism is Psychrophile then grows optimally in low temperature conditions.# - TESTED
+# R(16) If an organism is Psychrotolerant then sub-optimally grows in low temperature conditions, and optimally grows in mid-range temperature conditions.# - TESTED
+# R(17) If an organism is Thermotolerant then sub-optimially grows in moderate-high temperature conditions and optimally grows in mid-range temperature conditions.#  -  TESTED
+# R(18) If an organism is Thermophile then the strain has optimal growth in high temperature conditions .# - TESTED
+# R(19) If an organism optimally grows in anoxic conditions, then the organism is anaerobe.# - TESTED
+# R(20) If an organism optimally grows in extreme-high temperature conditions, then the organism is Hyperthermophile.# - TESTED
+# R(21) If an organism optimally grows in extreme-low temperature conditions, then the organism is Extreme Psychrophile. # - TESTED
+# R(22) If an organism optimally grows in high PH conditions then the organism is Alkalophile.# - TESTED
+# R(23) If an organism optimally grows in low PH temperature conditions then the organism is Acidophile.# - TESTED
+# R(24) If an organism optimally grows in mid-range temperature conditions, then the organism is Mesophile.# - TESTED
+# R(25) If an organism optimally grows in low temperature conditions then the organism is Psychrophile.# - TESTED
+# R(26) If an organism optimally grows in neutral ph conditions, then the organism is Neutrophile. - TESTED
+# R(27) If an unknown organism is facultative anaerobe then the organism ferments, and respires-oxygen.# - TESTED - test again
+# R(28) If an unknown organism is microaerophilic the the organism grows in microaerobic condition and does not grow in anoxic and air conditions.# - TESTED
+# R(29) Organism that does not grow in anoxic and grows optimally in microaerobic condition is  microaerophilic.# - TESTED
+# R(30) Organism that does not grow in anoxic and in air conditions is  microaerophilic.# - TESTED
+# R(31) Organism that does not grow in anoxic condition and grows optimally in air condition is strict aerobe.# - TESTED
+# R(32) Organism that does not grow in microaerobic condition and grows optimally in air condition is strict aerobe.# - TESTED
+# R(33) Organism that grows in aerobic condition and optimally grows in anoxic conditions is aerotolerant anaerobe.#  - TESTED 
+# R(34) Organism that grows optimally in anoxic condition and does not grow in microaerobic condition is strict anaerobe.#  -TESTED
+# R(35) Organism that grows optimally in microaerobic and does not grow in air conditions is microaerophilic. #  - NOT TESTED
+# R(36) Organism that grows optimally in microaerobic condition and does not grow in anoxic and air conditions has microaerophilic phenotype.#  - TESTED (RUNS R35).
+# R(37) Organism that is Acidophile has optimal growth in low ph temperature.# - TESTED
+# R(38) Organism that is Alkalophile has optimal growth in high PH conditions.# - TESTED
+# R(39) Organism that is Neutrophile has optimal growth in low ph conditions.# - TESTED
+# R(40) an unknown object that does not grow in air conditions is anaerobe or aerobe. You may want to add additional obsevations in order to fix this incosistency?# - Extends implementation of R(2). - DELETED - test again
+# R(41) If an organism does not grow in anoxic condition then organism is aerobe.# - TESTED
+# R(42) an unknown object that grows optimally in air condition is strict aerobe .# - TESTED 
+# R(43) an unknown object that grows optimally in microaerobic condition is microaerophilic .# - TESTED
+# R(44) if an organism ferments a substance (that is NOT O2) and respires oxygen (O2) then its phenotype is facultative anaerobe.# - TESTED  -test again
+# R(45) if an organism is Hyperthermophile then optimally grows in extreme-high temperature conditions.# - TESTED 
+# R(46) if an organism is asserted as strict anaerobe, then the organism must grow optimally in anoxic condition and does not grow in air and microaerobic conditions.# - TESTED
+
+# R(47) if an organism is asseted as strict aerobe, then the organism must grow optimally in air condition and does not grow in anoxic and microaerobic conditions.# - TESTED
+
+# R(48) if an uknown object grows optimally in anoxic condition and does not grow in microaerobic and air conditions, then the object is strict anaerobe.# - TESTED (RUNS R3)
+
+# R(49) If an organism is aerotolerant anaerobe then it optimally grows in anoxic and grows in aerobic conditions.# - TESTED
+
+# R(50) If an organism respires substance that is different than O2, then the organism has Anaerobic respiration phenotype.# - TESTED (2015-12-15, file: C47.xml)
+
+# R(51) If an organism grows in anoxic conditions, then the organism is anaerobe.# - does not apply?.# - TESTED 
+
+# R(53) In an organism respires substance that is not Oxygen and grows in anoxic conditions, then the organism has Anaerobic respiration phenotype.# - TESTED (test again)
+
+# R(54) If an organism grows suboptimally in extreme-low temperature conditions and organism is Psychrotolerant, then the organism must sub-optimally grow in moderate-low temperature conditions.# - TESTED
+
+# R(55) If an organism grows in air conditions and organism has Aerotolerant anaerobe phenotype, then the organism grow in microaerobic conditions.# - TESTED (check how to update one tree and do not create new tree) .
+
+# R(58) if strain has unihibited growth under given chemical entity X [optionally given concentration, value  and unit] and that chemical entity X is member of antimicrobial group then given strain is resistant to given chemical entity and that chemical entity is antimicrobial agent as biological role.# - TESTED( 2016-01-25, under testing R(57)). 
+
+# R(59) Infers susceptible phenotype based on no-growth and given substance that is antimicrobial agent.# - DELETED
+
+# R(62) If a strain is susceptible to a chemical entity X and that chemical entity X [ optionally concentration value and unit are given ] is member of antimicrobial agent group, then for that strain there is inhibited growth observation under the chemical entity X [ optionally concentration value and unit are given ] and  the chemical entity X is antimicrobial agent as biological role .# - TESTED (2016-01-25, under testing R(109) )
+
+# R(61) If for an organism respiration of  O2 is FALSE, then the orgsnim has Anaerobic respiration phenotype. - add also rule : Respire some substance that is not O2 in Anoxic condition.# -  DELETED (See Rule R(53)) . - (test again)
+
+# R(62) If a strain is susceptible to a chemical entity X and that chemical entity X [ optionally concentration value and unit are given ] is antimicrobial agent (as biological role), then for that strain there is inhibited growth observation under the chemical entity X [ optionally concentration value and unit are given ]. Add the chemical entity X as a member of antimicrobial agent group.#  - TESTED (2015-01-18, file: /N4LRepository/R62.xml).
+
+# R(107) If a strain is resistant to a chemical entity X [ optionally concentration value and unit are given ] and that chemical entity X is member of antimicrobial agent group, then for that strain there is uninhibited growth observation under the chemical entity X [ optionally concentration value and unit are given ] and that chemical entity X is  antimicrobial agent as biological role.# - TESTED ( 2015-01-18, file: /N4LRespository/R107.xml).
+
+# R(113) Infers hasHighTemperatureCondition  property based on range side of hasCondition.# - TESTED (under rule R(8)) .
+
+# R(116) Infers susceptible phenotype based on given MIC for given substance that is member of antimicrobial agent group. The substance has biological role antimicrobial agent.# - TESTED(date: 2016-01-28, file:/N4LRepository/R116.xml)
+
+# R(234) If a strain grows in environmental condition "y" and "y" is member of carbon source group then the strain has utilization of "y" and "Y" has biological role named as carbon source. - TESTED (date: 2015-12-11, file: R234.xml).
+
+# R(235) If a strain does not grow in environmental condition "y" and "y" is member of carbon source group then the strain has no utilization of "y". - TESTED (date: 2015-12-11, file: R235.xml).
+
+# R(259) If a strain assimilates chemical entity Y and that chemical entity is member of carbon source group then the strain utilizes that chemical entity, and chemical entity is carbon source as biological role. 
+
+# R(260) If a strain does not assimilate chemical entity Y and that chemical entity is member of carbon source group then the strain does not utilize that chemical entity. 
+
+RULE based on SubPropertyOf relation: If a strain assimilates environmental condition "y" and "y" is carbon source then the strain utilizes "y" as a carbon source - TESTED (date: 2015-12-11, file: ex1816.xml). - DELETED
+RULE based on SubPropertyOf relation: If a strain assimilates environmental condition "y" and "y" is carbon source then the strain utilizes "y" as a carbon source - TESTED (date: 2015-12-11, file: ex11410.xml). - DELETED
+
+Rules and Constraints attached to N4L:AtomicObservation class:
+
+# R(63) Infers hasAerobicCondition property based on range side of hasCondition property.# - TESTED (under rule R(33)) .
+
+# R(64) Infers hasAirCondition property based on range side of hasCondition property.# - TESTED (under rule R(55)) .
+
+# R(65) Infers hasAnoxicCondition property based on range side of hasCondition property.# - TESTED (under rule R(51)) .
+
+# R(66) Infers hasExtremeHighTemperatureCondition property based on range side of hasCondition property.#  - TESTED (under rule R(20)) .
+
+# R(67) Infers hasExtremeLowTemperatureCondition property based on range side of hasCondition property.# - TESTED (under rule R(54)) .
+
+# R(68) Infers hasMicroaerobicCondition property based on range side of hasCondition property.# - TESTED (under rule R(36)) . 
+
+# R(69) Infers hasMidRangeTemperatureCondition  property based on range side of hasCondition.# - TESTED (under rule R(24)) . 
+
+# R(70) Infers hasModerateHighTemperatureCondition  property based on range side of hasCondition.# - TESTED (under rule R(10)) .
+
+# R(71) Infers hasModerateLowTemperatureCondition  property based on range side of hasCondition.#  - TESTED in "inferenceExplanation_assertions2" test case.
+
+# R(72) Infers hasOxygenCondition property based on range side of hasCondition.# - TESTED in "inferenceExplanation_assertions2" test case.
+
+# R(73) Infers hasVeryHighTemperatureCondition property based on range side of hasCondition.# - DELETED
+
+# R(114)  Infers hasLowTemperatureCondition property based on range side of hasCondition.# - TESTED (under rule R(25)) .
+
+
+
+Rules and Constraints attached to N4L:Growth class:
+
+# R(74) Infers Resistant phenotype based on growth observation.# - DELETED
+# R(75) Infers inhibited growth for asserted susceptible phenotype.# - DELETED
+# R(76) Infers uninhibited growth based on asserted resistant phenotype.# -DELETED
+
+Rules and Constraints attached to N4L:UninhibitedGrowth class:
+
+# C(1) Inhibited and Uninhibited growth should be disjoint.#
+
+# C(35) SubOptimalGrowth and Uninhibited growth should be disjoint.# - TESTED
+
+Rules attached to N4L:InhibitedGrowth class:
+
+# R(56) Infers susceptible phenotype based on inhibited growth observation under substance condition.# - DELETED (now rule R(110))
+
+Rules attached to N4L:NoGrowth class:
+
+Rules attached to N4L:CellularActivity class:  
+
+# R(77) Infers fermentation value based on cellular activity value.# - /rule deleted 11th Dec 2015/
+# R(78) Infers property N4L:hasFermentationOfSubstance based on range of property N4L:hasCellularActivityOfSubstance.# - TESTED (under rule R(44))   - TESTED (2015-12-15, file: C46.xml) .
+# R(79) Infers property N4L:hasRespirationOfSubstance based on range of property N4L:hasCellularActivityOfSubstance.#  - TESTED (under rule R(53))  - TESTED (2015-12-15, file: C47.xml).
+# R(80) Infers respiration value based on cellular activity value.# - TESTED (under rule R(44)) . - test again /rule deleted 11th Dec 2015/
+
+Constraints attached to N4L:Fermentation class:
+
+# C(2) : It is not possible to assert/infer fermentation of O2 (CHEBI_15379).# - NOT TESTED (Ask Kevin whether it is possible to assert such formula)
+
+Rules attached to N4L:Condition class:
+
+# R(81) infers "hasOxygenValue" datatype property based on "hasEnvironmentalConditionValue" datatype property.# - TESTED in "inferenceExplanation_assertions2.txt" example.
+# R(82) infers "hasPhEnvironmentalCondition" datatype property based on "hasEnvironmentalConditionValue" datatype property.# - TESTED in "inferenceExplanation_assertions2.txt" example.
+# R(83) infers "hasTemperatureValue" datatype property based on "hasEnvironmentalConditionValue" datatype property.# - TESTED in "inferenceExplanation_assertions2.txt" example.
+
+Rules attached to N4L:OxygenCondition class:
+
+# R(84) Infers Aerobic based on Oxygen value. # - TESTED in "inferenceExplanation_assertions2.txt" example.
+# R(85) Infers Air based on Oxygen value. #  - TESTED
+# R(86) Infers Anoxic based on Oxygen value. # - TESTED
+# R(87) Infers Microaerobic based on Oxygen value. # - TESTED
+
+Rules attached to N4L:PHCondition class:
+
+# R(88) pH condition is high if pH value is between (8, 14]. # - TESTED
+# R(89) pH condition is low if value is between (0, 6). # - TESTED
+# R(90) pH condition is neutral if pH value is between [6, 8]. # - TESTED
+
+Rules attached to N4L:TemperatureCondition class:
+
+# R(91) infer extreme - low temperature condition based on temperature value. # - TESTED
+# R(92) infer extreme-high temperature condition based on temperature value. # - TESTED in "inferenceExplanation_assertions2.txt" example.
+# R(93) infer mid-range temperature condition based on temperature value. # - TESTED in "inferenceExplanation_assertions2.txt" example.
+# R(94) infer moderate-high temperature condition based on temperature value. #  - TESTED in "inferenceExplanation_assertions2.txt" example. 
+# R(95) infer moderate-low temperature condition based on temperature value. #  - TESTED in "inferenceExplanation_assertions2.txt" example. 
+
+Rules and Constraints attached to N4L:Organism class:
+
+# C(3) microaerophilic does not grow in microaerobic condition.#  - TESTED
+# C(4) strict aerobe can not grow in anoxic conditions.# - TESTED 
+
+# C(5) For Facultative anaerobe fermentation should be true.#  - DELETED / May ferment different substances and do not ferment substances, but can not ferment and does not ferment the same substance. /
+
+# C(6) strict aerobe can not grow in microaerobic conditions.#  - TESTED
+# C(7) strict aerobe should not have no-growth observation in air condition.# - TESTED
+# C(8) strict anaerobe should not have no-growth observation in anoxic condition.# - TESTED
+# C(9) strict anaerobe should can not have growth observation in air condition.# - TESTED
+# C(10) strict anaerobe should not grow in microaerobic condition.#  - TESTED
+# C(11) For a strain that is facultetive anaerobe respiration of O2 should be true.# - TESTED - test again
+# C(12) aerotolerant anaerobe should not not-grow in anoxic condition.# - TESTED 
+# C(13) aerotolerant anaerobe should not not-grow in microaerobic condition.#  - TESTED
+# C(14) an organism can not have growth and no-growth observation in air condition.# - TESTED 
+# C(15) an organism can not have growth and no-growth observation in anoxic condition.# - TESTED
+# C(16) an organism can not have growth and no-growth observation in microaerobic condition.# - TESTED
+# C(17) microaerophilic can not grow in anoxic conditions.#  - TESTED
+# C(18) microaerophilic can not grow in anoxic or air conditions.# - TESTED 
+# C(19) one organism can not have microaerophilic and strict aerobe phenotype.# - DELETED
+
+# C(35) anaerobe and aerobe should be disjoint phenotypes.# - TESTED
+# C(36) Aerotolerant anaerobe can not have no-growth in air condition. # - TESTED 
+# C(37) Anaerobe can not have no-growth in anoxic condition. # - TESTED 
+
+Rules and Constraints attached to N4L:Strain class:
+
+# C(20) Aerobe and anaerobe should be disjoint.#  -TESTED
+
+# C(21) Thermotolerant and Psychrotolerant should be disjoint.# 
+
+# C(22) It is inconsistent If an organism, that is aerotolerant anaerobe, grows air oxygen conditions and does not grow in microaerobic oxygen conditions.# - TESTED
+
+# C(23) It is inconsistent If an organism, that is phychrotolerant, grows sub-optimally in extreme low  temperature conditions and does not grow suboptimally in moderate low temperature conditions ? - Not tested!!!.
+
+# C(24) Mesophile and Thermophile are disjoint.# -  TESTED
+
+# C(25) Psychrophile and Mesophile are disjoint.# - TESTED
+
+# C(26) Psychrophile and Thermophile are disjoint.# - TESTED
+
+# C(27) Strict aerobe and Microaerophilic are disjoint.# - TESTED
+
+# C(28) Strict anaerobe and Aerotolerant anaerobe are disjoint.# - TESTED
+
+# C(38) A strain can not have inhibited and uninhibited growth under that the same chemical entity and the same concentration value and unit.# - TESTED (01-01-2016, file:/N4LRepository/C38.xml).
+
+# C(40) Asserted MIC can not be higher than any concentration needed for inhibited growth.  - TESTED (2015-12-30, file: inferredAntimicrobials20150821.ttl).
+
+# C(41) Existing inhibited growht under one substance that has different values, but the same unit.  - DELETED
+
+# C(42) Strain has asserted MIC for one substance that has different values, but may have the same unit. -  TESTED (2016-01-18, file: inferredAntimicrobials20150821.ttl).
+
+# C(43) Strain is resistant and susceptible to the same substance as antimibrobial agent, but without data value and unit . - TESTED (2015-12-30, file: inferredAntimicrobials20150821.ttl).
+
+# C(44) Given strain can not have utilization of substance as carbon source and no-utilization of the same substance. - TESTED (date: 2015-12-14, file: C44.xml).
+
+# C(45) Given strain can not have utilization of substance and no-utilization of the same substance (independent of biological role). - TESTED (date: 2015-12-14, file: C45.xml).
+
+# C(46) Given strain can not have fermentation of substance and no-fermentation of the same substance. - TESTED (date: 2015-12-15, file: C46.xml).
+
+# C(47) Given strain can not have respiration of substance and no-respiration of the same substance.  -  TESTED (date: 2015-12-15, file: C47.xml).
+
+# C(48) Given strain can not have assimilation of substance and no-assimilation of the same substance. - TESTED (2015-12-15, file: C48.xml).
+
+# C(49) Given strain can not have acid production of substance and no-acid production of the same substance. - TESTED (2015-12-15, file: C49.xml).
+
+# C(50) Given strain can not have gas production of substance and no-gas production of the same substance. - TESTED (2015-12-15, file: C50.xml).
+# C(51) Given strain can not have utilization of substance as energy source biological role, and no-utilization of the same substance. - TESTED (2015-12-23, file: /N4LRepository/assertionsCarbonSources_20151217.ttl)
+
+# C(52) Given strain has utilization of a substance  and no-utilization of a substance group that has the substance as a member (independent of biological role). - TESTED (2016-01-25, file: /N4LRepository/carbon_utilization_20160123.ttl).
+
+# C(53) if a strain has uninhibited growth under given chemical entity X [optionally concentration value and unit are given] that is member of antimicrobial agent group, then that strain can not have growth inhibitor as given chemical entity X [optionally concentration value and unit are given]. - TESTED (01-01-2015, file:/N4LRepository/C53.xml).
+
+# C(54) The strain has asserted MIC for chemical entity that is not antimicrobial agent as biological role.# - TESTED (2016-01-19, file : inferredAntimicrobials20150821.ttl) . - DELETED
+
+# C(55) Asserted MIC can not be lower than any concentration needed for uninhibited growth.# -  TESTED (01-18-2016, file:/N4LRepository/C55.xml).
+
+# C(56) Chemical entity can not be member of an antimicrobial group and carbon source group.# -  TESTED (2016-01-18, file:/N4LRepository/C56.xml).
+
+# C(57) Strain is susceptible to a chemical entity, but that chemical entity is not member of an antimicrobial group.# - TESTED (2016-01-18, file:/N4LRepository/C57.xml).
+
+# C(58)  Strain is resistant to a chemical entity, but that chemical entity is not member of an antimicrobial group.# - TESTED (2016-01-18, file:/N4LRepository/C58.xml).
+
+# C(59) Given strain can not have NO utilization of substance as carbon source role. - TESTED (2016-01-23, file:/N4LRepository/C59.xml)
+
+# C(60) Given strain can not have utilization of substance that is not member of carbon source group. - TESTED (2016-01-23, file:/N4LRepository/C60.xml)
+
+# C(61) Given strain can not have utilization of substance  without asserting (inferring) carbon source substance as a biological role.. - TESTED (2016-01-25, file:/N4LRepository/C60.xml; file: /N4LRepository/carbon_utilization_20160123.ttl)
+
+# C(62) Given strain can not have utilization of substance and no-utilization of the same substance (independent of biological role).
+
+# C(63) A strain can not have inhibited and uninhibited growth under that the same mixture that is component (not media type). - TESTED (2016-01-27, file:/N4LRepository/C63.xml)
+
+# C(64) Strain is resistant and susceptible to the same antimicrobial mixture (not media type) . - TESTED (2016-01-27, file:/N4LRepository/C64.xml)
+
+# C(65) Strain is susceptible to a mixture (not including media), but that mixture contains a chemical entity is not member of an antimicrobial group . - TESTED (2016-01-27, file:/N4LRepository/C65.xml)
+
+# C(66) Strain is resistant to a mixture (not including media), but that mixture contains a chemical entity is not member of an antimicrobial group . - TESTED (2016-01-27, file:/N4LRepository/C65.xml)
+
+
+# R(60) If strain has inhibited growth under chemical entity X [optionally concentration, value and unit are given] and that chemical entity X is member of antimicrobial agent group, then the strain has susceptible phenotype and given chemical entity X is antimicrobial agent as biological role.#  
+
+# R(104) Infers MIC based on inhibited growth observation .# - DELETED
+
+# R(105)  if a strain has inhibited growth under given chemical entity X [optionally concentration value and unit are given] that is member of antimicrobial group, then that strain has growth inhibitor as given chemical entity X [optionally concentration value and unit are given] that is antimicrobial agent as biological role.# - TESTED (2016-01-18, In the scope of testing R(109))
+
+# R(106)  If strain has growth inhibitor as given chemical entity X [optionally concentration, value and unit are given] and that chemical entity X is member of antimicrobial group then strain is susceptible to that  chemical entity X and the chemical entity X is antimicrobial agent  as biological role.# (2016-01-19, file:/N4LRepository/R106.xml). - DELETED
+
+# R(108) Infers MIC based on uninhibited growth .# - DELETED
+
+# R(111)  Infer MIC for a strain if the strain has growth inhibitor # - DELETED (Under rule R(104)) .
+
+Rules and Constraints attached to N4L:OrganismObservation class:
+
+# C(29) A strain can not grow and does not grow in air condition.# - TESTED
+
+# C(30) A strain can not grow and does not grow in anoxic condition.# - TESTED
+
+# C(31) A strain can not grow and does not grow in microaerobic condition.# - TESTED
+
+# R(57)  if a strain has uninhibited growth under given chemical entity X [ optionally concentration value and unit are given ] that is member of antimicrobial group, then the strain has growth observation under that chemical entity X [ optionally concentration value and unit are given ] and that chemical entity X is antimicrobial agent as biological role.# - TESTED (2016-01-18, file: /N4LRepository/R57.xml)
+
+# R(96) Infers fermentation property based on cellular activity property which range side is instance of class Fermentation.# - TESTED (under rule R(44)) . - TESTED (2015-12-15, file: C46.xml)
+
+# R(97) Infers respiration property based on cellular activity property which range side is instance of class  Respiration.# - TESTED (under rule R(53)) . - TESTED (2015-12-15, file: C47.xml)
+
+# R(98) Infers subproperty relation of a asserted property relation  "composedOf" based on range "InhibitedGrowth".# - TESTED (Under rule R(60)) .
+
+# R(99) Infers subproperty relation of a asserted property relation  "composedOf" based on range "NoGrowth".# - TESTED (Under rule R(48)) .
+
+# R(100) Infers subproperty relation of a asserted property relation  "composedOf" based on range "UninhibitedGrowth".# - TESTED (Under rule R(57)) .
+
+# R(101) Infers subproperty relation of a asserted property relation "composedOf" based on range "Growth". For example (tx.578, n4l:composedOf, tx.578Growth) and (tx.578Growth, rdf:type, n4l:Growth) => ((tx.578, n4l:hasGrowth, tx.578Growth).# - TESTED (Under rule R(55)) .
+
+# R(102) Infers subproperty relation of a asserted property relation "composedOf" based on range "OptimalGrowth".#  - TESTED (Under rule R(33)) .
+
+# R(103) Infers subproperty relation of a asserted property relation "composedOf" based on range "SubOptimalGrowth".#  - TESTED (Under rule R(10)) .
+
+# R(104) creates media:media:isMemberOfCarbonSourceGroup between instance of CHEBI ID that is used in assertion and belongs to carbon source group . - DELETED.
+
+# R(109)  if a strain has suboptimal growth observation under given chemical entity X [ optionally concentration value and unit are given ] that is antimicrobial agent group, then the strain has inhibited growth observation under that chemical entity X [ optionally concentration value and unit are given ] and the chemical entity X is antimicrobial agent as biological role. # - TESTED (2016-01-18, file: /N4LRepository/R109.xml).
+
+# R(110) if a strain has no growth observation under given chemical entity X [ optionally concentration value and unit are given ] that is member of antimicrobial group, then the strain has inhibited growth observation under that chemical entity X [ optionally concentration value and unit are given ] and has antimicrobial agent as biological role.# - TESTED - (2015-01-18, file: N4LRepository/R110.xml).
+
+# R(115) Infers inhibited growth based on no-growth and given substance.# - DELETED
+
+# R(236) infers subproperty relation hasUtilization based on "hasCellularActivity" and range "Utilization".# - TESTED (date: 2015-12-14, file: C44.xml).
+
+# R(237) infers subproperty relation hasNoUtilization based on "hasCellularActivity" and range "NoUtilization".# - TESTED (date: 2015-12-14, file: C44.xml).
+
+# R(240) Infers no fermentation property based on cellular activity property which range side is class NoFermentation.# - TESTED (2015-12-15, file: C46.xml) . 
+
+# R(241) Infers no respiration property based on cellular activity property which range side is class NoRespiration.#  - TESTED (2015-12-15, file: C47.xml)
+
+# R(242) Infers assimilation property based on cellular activity property which range side is class Assimilation.# - TESTED (2015-12-15, file: C48.xml)
+
+# R(243) Infers no assimilation property based on cellular activity property which range side is class NoAssimilation.# - TESTED (2015-12-15, file: C48.xml)
+
+# R(244) Infers acid production property based on cellular activity property which range side is class AcidProduction.# - TESTED (2015-12-15, file: C49.xml)
+
+# R(245) Infers  no-acid production property based on cellular activity property which range side is class NoAcidProduction.# - TESTED (2015-12-15, file: C49.xml)
+
+# R(246) Infers SusceptiblePhenotype property based on AtomicObservationPhenotype property which range side is class Susceptible.# - NOT TESTED
+
+# R(247) Infers ResistantPhenotype property based on AtomicObservationPhenotype property which range side is class Resistant.# - NOT TESTED
+
+# R(248) Infers  gas production property based on cellular activity property which range side is class GasProduction.# - TESTED (2015-12-15, file: C50.xml)
+
+# R(249) Infers  no-gas production property based on cellular activity property which range side is class NoGasProduction.# - TESTED (2015-12-15, file: C50.xml)
+
+# R(250) Infers  anabolic reaction property based on cellular activity property which range side is class AnabolicReaction.# - NOT TESTED
+
+# R(251) Infers  catabolic reaction property based on cellular activity property which range side is class CatabolicReaction.# - NOT TESTED
+
+# R(252) Infers  variable fermentation property based on cellular activity property which range side is class VariableFermentation.# - NOT TESTED
+
+# R(253) Infers  weak utilization property based on cellular activity property which range side is class WeakUtilization.# - NOT TESTED
+
+# R(254) infers subproperty relation hasWeakFermentation based on "hasCellularActivity" and range "WeakFermentation" .# - NOT TESTED
+
+# R(255) infers subproperty relation hasWeakAcidProduction based on "hasCellularActivity" and range "WeakAcidProduction" .# - NOT TESTED
+
+# R(256) infers subproperty relation hasVariableUtilization based on "hasCellularActivity" and range "VariableUtilization" .# - NOT TESTED
+
+# R(257) infers subproperty relation hasAerobicAcidProduction based on "hasCellularActivity" and range "AerobicAcidProduction" .# - NOT TESTED
+
+# R(261) If a strain is resistant to a chemical mixture X and that mixture has an ingredient  X that is member of antimicrobial agent group, then for that strain there is uninhibited growth observation under the mixture X  and that mixture X is  antimicrobial agent as biological role.# - TESTED(2016-01-25, file:/N4LRepository/antimicrobial_mixture_20160125.xml) .
+
+# R(262) If a strain is susceptible to a chemical mixture X and that mixture has an ingredient  X that is member of antimicrobial agent group, then for that strain there is inhibited growth observation under the mixture X  and that mixture X is  antimicrobial agent as biological role.# - TESTED(2016-01-25, file:/N4LRepository/antimicrobial_mixture_20160125.xml).
+
+# R(263) Infers inhibited growth based on no-growth and given mixture that has at least one ingredinet that is member of  antimicrobial agent gorup. The mixture must be antimibrobial agent as biological role.# - TESTED (2016-01-26, file:/N4LRepository/antimicrobial_mixture_20160125.xml) .
+
+# R(264) if a strain has uninhibited growth under given mixture X . That mixture has at least one substance that is member of antimicrobial group, then the strain has growth observation under that mixture X and that mixture X is antimicrobial agent as biological role.#
+- TESTED (2016-01-26, file:/N4LRepository/antimicrobial_mixture_20160125.xml) .
+
+# R(265) if a strain has sub-optimal growth under given mixture X . That mixture has at least one substance that is member of antimicrobial group, then the strain has inhibited growth observation under that mixture X and that mixture X is antimicrobial agent as biological role.# - TESTED (2016-01-26, file:/N4LRepository/antimicrobial_mixture_20160125.xml) .
+
+# R(266) if a strain has inhibited growth under given mixture X  and that mixture has at least one substance that is member of antimicrobial group, then the strain has growth inhibitor as given mixture X. # -  TESTED (2016-01-26, file:/N4LRepository/antimicrobial_mixture_20160125.xml) .
+
+# R(267)  If strain has growth inhibitor as given mxture X and that mixture X has a substance that is member of antimicrobial group, then strain is susceptible to that mixture X and the mixture X is antimicrobial agent as biological role.# -  TESTED (2016-01-26, file:/N4LRepository/antimicrobial_mixture_20160125.xml) . - DELETED
+
+# R(268) If strain has inhibited growth under mixture X and that mixture  X has a substance that is member of antimicrobial agent group, then the strain has susceptible phenotype and given mixture X  and the mixture is antimicrobial agent as biological role.# -  TESTED (2016-01-26, file:/N4LRepository/antimicrobial_mixture_20160125.xml) . 
+
+# R(269) if strain has unihibited growth under given mixture X  and that mixture X has a substance that is member of antimicrobial group then given strain is resistant to given mixture and that mixture is antimicrobial agent as biological role.# -  TESTED (2016-01-26, file:/N4LRepository/antimicrobial_mixture_20160125.xml) . 
+
+Rules and Constraints attached to N4L:GrowthObservation class:
+
+#R(112) Infers hasPHCodition based on range side of hasCondition property.# - TESTED (Under rule R(89)) .
+
+Rules and Constraints attached to N4L:Aerobe class:
+
+# C(32) Aerobe and Anaerobe should be disjoint.# - TESTED
+
+Rules and Constraints attached to N4L:Anaerobe class:
+
+# C(33) Anaerobe and Aerobe should be disjoint.# - TESTED
+
+Rules and Constraints attached to N4L:Psychrotolerant class:
+
+# C(34) Psychrotolerant and Thermotolerant should be disjoint.#-  TESTED
+
+- - - - - - -  - - - -  - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - -
+
+Media ontology:
+
+
+
+# R(117) defines all instances of the class CHEBI_16899 to be carbon sources (using role name media:isCarbonSource).
+
+# R(118) defines all instances of the class CHEBI_17113 to be carbon sources (using role name media:isCarbonSource).
+
+# R(119) defines all instances of the class CHEBI_17754 to be carbon sources (using role name media:isCarbonSource).
+
+# R(120) defines all instances of the class CHEBI_17924 to be carbon sources (using role name media:isCarbonSource).
+
+# R(121) defines all instances of the class CHEBI_18333 to be carbon sources (using role name media:isCarbonSource).
+
+# R(122) defines all instances of the class CHEBI_18403 to be carbon sources (using role name media:isCarbonSource).
+
+# R(123) defines all instances of the class CHEBI_24848 to be carbon sources (using role name media:isCarbonSource).
+
+# R(124) defines all instances of the class CHEBI_17522 to be carbon sources (using role name media:isCarbonSource).
+
+
+
+# R(128) defines all instances of the class CHEBI_23639 to be carbon sources (using role name media:isCarbonSource).
+
+# R(130) defines all instances of the class CHEBI_42564 to be carbon sources (using role name media:isCarbonSource).
+# R(131) defines all instances of the class CHEBI_2181 to be carbon sources (using role name media:isCarbonSource).
+
+
+
+
+
+# R(137) defines all instances of the class CHEBI_27150 to be carbon sources (using role name media:isCarbonSource).
+# R(138) defines all instances of the class CHEBI_6731 to be carbon sources (using role name media:isCarbonSource).
+
+# R(141) defines all instances of the class CHEBI_28009 to be carbon sources (using role name media:isCarbonSource).
+
+# R(144) defines all instances of the class CHEBI_63154 to be carbon sources (using role name media:isCarbonSource).
+# R(145) defines all instances of the class CHEBI_33447 to be carbon sources (using role name media:isCarbonSource).
+# R(155) defines all instances of the class CHEBI_29042 to be carbon sources (using role name media:isCarbonSource).
+
+
+# R(169) defines all instances of the class CHEBI_33709 to be carbon sources (using role name media:isCarbonSource).
+
+# R(171) defines all instances of the class CHEBI_17364 to be carbon sources (using role name media:isCarbonSource).
+
+
+# R(176) defines all instances of the class CHEBI_15603 to be carbon sources (using role name media:isCarbonSource).
+
+# R(178) defines all instances of the class CHEBI_16015 to be carbon sources (using role name media:isCarbonSource).
+# R(179) defines all instances of the class CHEBI_16414 to be carbon sources (using role name media:isCarbonSource).
+
+
+# R(188) defines all instances of the class CHEBI_17115 to be carbon sources (using role name media:isCarbonSource).
+
+
+# R(198) defines all instances of the class CHEBI_33720 to be carbon sources (using role name media:isCarbonSource).
+# R(199) defines all instances of the class CHEBI_16002 to be carbon sources (using role name media:isCarbonSource).
+# R(200) defines all instances of the class CHEBI_30852 to be carbon sources (using role name media:isCarbonSource).
+# R(201) defines all instances of the class CHEBI_33198 to be carbon sources (using role name media:isCarbonSource).
+# R(202) defines all instances of the class CHEBI_4153 to be carbon sources (using role name media:isCarbonSource).
+
+# R(204) defines all instances of the class CHEBI_17596 to be carbon sources (using role name media:isCarbonSource).
+
+# R(206) defines all instances of the class CHEBI_13172 to be carbon sources (using role name media:isCarbonSource).
+
+
+
+# R(211) defines all instances of the class CHEBI_37724 to be carbon sources (using role name media:isCarbonSource).
+
+
+
+
+
+
+
+
+
+# R(219) defines all instances of the class CHEBI_6182 to be carbon sources (using role name media:isCarbonSource).
+
+# R(221) defines all instances of the class CHEBI_16551 to be carbon sources (using role name media:isCarbonSource).
+
+
+
+
+
+
+
+
+
+
+
+
+# R(233) defines all instances of the class CHEBI_47954 to be carbon sources (using role name media:isCarbonSource).
+
+==============
+
+Rules and Constraints attached to media:Component class:
+
+- - -  - - - - - - - -
+
+# R(1) Infers that each instance of Component is a SKOS collection of substances, concentration and measure.# - DELETED
+
+CONSTRUCT {
+    ?this a <http://www.w3.org/2004/02/skos/core#Collection> .
+}
+WHERE {
+    ?this a media:Component .
+}
+- - -  - - - - - - - -
+# R(2) Infers that SKOS collection of component has ingredients as its SKOS-members. # - DELETED
+
+CONSTRUCT {
+    ?this <http://www.w3.org/2004/02/skos/core#member> ?component .
+}
+WHERE {
+    ?this media:containsIngredient ?component1 .
+    BIND (?component1 AS ?component) .
+}
+- - -  - - - - - - - -
+
+# R(3) Infers that media:component has other components as its ingredinets.# - DELETED
+CONSTRUCT {
+    ?this media:hasComponent ?component .
+}
+WHERE {
+    ?this media:hasComponent ?component1 .
+    ?component1 media:containsIngredient ?ingredient .
+    ?ingredient media:includesComponent ?component2 .
+    BIND (?component2 AS ?component) .
+    FILTER (?component1 != ?component) .
+}
+
+Rules and Constraints attached to media:Concentration class:
+- - -  - - - - - - - -
+# R(4) Infers each media:Concentration as a SKOS Concepts.# - DELETED
+
+CONSTRUCT {
+    ?this a <http://www.w3.org/2004/02/skos/core#Concept> .
+}
+WHERE {
+    ?this a media:Concentration .
+}
+- - -  - - - - - - - -
+# R(5) Infers concentration measure for given concentration value.# - DELETED
+
+CONSTRUCT {
+    ?this media:hasConcentrationMeasure ?ingredient .
+}
+WHERE {
+    ?ingredient1 media:hasIngredientConcentrationValue ?this .
+    ?ingredient1 media:hasMeasure ?measure .
+    BIND (?measure AS ?ingredient) .
+}
+
+
+Rules and Constraints attached to media:Ingredient class:
+- - -  - - - - - - - -
+# R(6) Infers media:Ingredient as a SKOS-collection .#  -DELETED
+
+CONSTRUCT {
+    ?this a <http://www.w3.org/2004/02/skos/core#Collection> .
+}
+WHERE {
+    ?this a media:Ingredient .
+}
+- - -  - - - - - - - -
+# R(7) Infers concentration as a SKOS-member of ingredient.# - DELETED
+
+CONSTRUCT {
+    ?this <http://www.w3.org/2004/02/skos/core#member> ?concentration .
+}
+WHERE {
+    ?this media:hasConcentrationValue ?concentration1 .
+    BIND (?concentration1 AS ?concentration) .
+}
+- - -  - - - - - - - -
+# R(8) Infers measures as SKOS-memebrs of ingredients.# - DELETED
+
+CONSTRUCT {
+    ?this <http://www.w3.org/2004/02/skos/core#member> ?measure .
+}
+WHERE {
+    ?this media:hasMeasure ?measure1 .
+    BIND (?measure1 AS ?measure) .
+}
+- - -  - - - - - - - -
+# R(9) Infers substances as SKOS-member of ingredient.#  - DELETED
+
+CONSTRUCT {
+    ?this <http://www.w3.org/2004/02/skos/core#member> ?substance .
+}
+WHERE {
+    ?this media:hasSubstance ?substance1 .
+    BIND (?substance1 AS ?substance) .
+}
+
+
+Rules and Constraints attached to media:Measure class: 
+- - -  - - - - - - - -
+# R(10) infers measure as SKOS-concept.# - DELETED
+
+CONSTRUCT {
+    ?this a <http://www.w3.org/2004/02/skos/core#Concept> .
+}
+WHERE {
+    ?this a media:Measure .
+}
+
+- - -  - - - - - - - -
+
+Rules and Constraints attached to media:MediaType class: 
+
+# R(270) : containsIngredient o includesComponent = > hasComponent - NOT TESTED
+# R(271) containsIngredient o includesMediaType o containsIngredient = > constainsIngredient - NOT TESTED
+# R(272) containsIngredient o includesMediaType o hasComponent = > hasComponent - TESTED
+# R(273) hasComponent o containsIngredient = > containsIngredient - TESTED
+
+- - -  - - - - - - - -
+# C(1) irreflexivity of media:includesMediaType.#
+
+ASK WHERE {
+    ?this media:includesMediaType ?this .
+}
+
+ - - - -  - - - - - - 
+# R(11) Defines all components as members of media type collection.# - DELETED
+
+CONSTRUCT {
+    ?this <http://www.w3.org/2004/02/skos/core#member> ?m .
+}
+WHERE {
+    ?this media:hasComponent ?m1 .
+    BIND (?m1 AS ?m) .
+}
+ - - - -  - - - - - - 
+# R(12) Each instance of Media Type is a SKOs-collection.# - DELETED
+
+CONSTRUCT {
+    ?this a <http://www.w3.org/2004/02/skos/core#Collection> .
+}
+WHERE {
+    ?this a media:MediaType .
+}
+
+- - - -  - - - - - - 
+ 
+# R(13) Media types, included in other media types, are SKOS-memebrs of media type collection.# - DELETED
+CONSTRUCT {
+    ?this <http://www.w3.org/2004/02/skos/core#member> ?m .
+}
+WHERE {
+    ?this media:hasMediaAsComponent ?m1 .
+    BIND (?m1 AS ?m) .
+}
+ - - - -  - - - - - - 
+# R(14) RIA: hasComponent o containsIngredient o includesComponent => hasComponent .
+CONSTRUCT {
+    ?this media:hasComponent ?component .
+}
+WHERE {
+    ?this media:hasComponent ?component2 .
+    ?component2 media:containsIngredient ?ingredient .
+    ?ingredient media:includesComponent ?media .
+    BIND (?media AS ?component) .
+}
+ - - - -  - - - - - - 
+# R(15) RIA: hasComponent o containsIngredient o includesMedia => hasComponent .# - DELETED
+CONSTRUCT {
+    ?this media:hasComponent ?component .
+}
+WHERE {
+    ?this media:hasComponent ?component2 .
+    ?component2 media:containsIngredient ?ingredient .
+    ?ingredient media:includesMediaType ?media .
+    BIND (?media AS ?component) .
+}
+ - - - -  - - - - - - 
+# R(16) infers name of Media as its SKOS:prefLabel.#
+CONSTRUCT {
+    ?this <http://www.w3.org/2004/02/skos/core#prefLabel> ?name .
+}
+WHERE {
+    ?this media:hasName ?name1 .
+    ?this a media:MediaType .
+    BIND (?name1 AS ?name) .
+}
+- - -  - - - - - - - -
+# R(17) Infers hasMediaTypeName based on a hasName.# - DELETED
+CONSTRUCT {
+    ?this media:hasMediaTypeName ?name .
+}
+WHERE {
+    ?this media:hasName ?name1 .
+    ?this a media:MediaType .
+    BIND (?name1 AS ?name) .
+}
+- - -  - - - - - - - -
+# R(18) Infers hasSubstance based on hasComponen, containsIngredient, and hasSubstance.# - DELETED
+CONSTRUCT {
+    ?this media:hasSubstance ?substance .
+}
+WHERE {
+    ?this media:hasComponent ?component .
+    ?component media:containsIngredient ?ingredient .
+    ?ingredient media:hasSubstance ?substance1 .
+    BIND (?substance1 AS ?substance) .
+}
+
+Rules and Constraints attached to media:Substance class:
+
+# R(238) infers sub-property relation isEnergySource based on property media:hasBiologicalRole and range media:EnergySource.# - NOT TESTED
+# R(239) infers sub-property relation isCarbonSource based on property media:hasBiologicalRole and range media:CarbonSource.# - NOT TESTED
+
+
+# R(19) Infers prefLabel for name of substance.#  - DELETED
+# R(20) Infers substance as SKOS-concept.# - DELETED
+
+
+- - -  - - - - - - - -
+# R(21) Infers hasSubstanceConcentrationValue based on hasSubstance and hasConcentrationValue.# - DELETED
+CONSTRUCT {
+    ?this media:hasIngredientConcentrationValue ?concentration .
+}
+WHERE {
+    ?ingredient1 media:hasSubstance ?this .
+    ?ingredient1 media:hasConcentrationValue ?concentration1 .
+    BIND (?concentration1 AS ?concentration) .
+}
+- - -  - - - - - - - -
+# R(22) infers hasSubstanceName based on hasName.# - DELETED
+CONSTRUCT {
+    ?this media:hasSubstanceName ?name .
+}
+WHERE {
+    ?this media:hasName ?name1 .
+    ?this a media:Substance .
+    BIND (?name1 AS ?name) .
+}
+
+- - -  - - - - - - - -
+
+# R(242) Infers assimilation property based on cellular activity property which range side class Assimilation.# - DELETED
+CONSTRUCT {
+    ?org N4L:hasAssimilation ?fer .
+    ?fer a N4L:Assimilation .
+}
+WHERE {
+    ?org1 N4L:hasCellularActivity ?fer1 .
+    ?fer1 a N4L:Assimilation .
+    BIND (?org1 AS ?org) .
+    BIND (?fer1 AS ?fer) .
+    FILTER NOT EXISTS {
+        ?org1 N4L:hasAssimilation ?fer1 .
+    } .
+}
+
+- - -  - - - - - - - -
+ # R(243) Infers no assimilation property based on cellular activity property which range side is class NoAssimilation.# - DELETED
+CONSTRUCT {
+    ?org N4L:hasNoAssimilation ?fer .
+    ?fer a N4L:NoAssimilation .
+}
+WHERE {
+    ?org1 N4L:hasCellularActivity ?fer1 .
+    ?fer1 a N4L:NoAssimilation .
+    BIND (?org1 AS ?org) .
+    BIND (?fer1 AS ?fer) .
+    FILTER NOT EXISTS {
+        ?org1 N4L:hasNoAssimilation ?fer1 .
+    } .
+}
+
+- - -  - - - - - - - -
+
+# R(267)  If strain has growth inhibitor as given mxture X and that mixture X has a substance that is member of antimicrobial group, then strain is susceptible to that mixture X and the mixture X is antimicrobial agent as biological role.# - DELETED
+CONSTRUCT {
+    ?this N4L:hasOrganismObservation ?obs1 .
+    ?obs1 N4L:hasSusceptiblePhenotype ?p1 .
+    ?p1 a N4L:Susceptible .
+}
+WHERE {
+    ?this N4L:hasGrowthInhibitor ?compCond1 .
+    ?compCond1 a media:Component .
+    ?compCond1 media:containsIngredient ?ingredient .
+    ?ingredient media:hasSubstance ?sub .
+    ?sub a ?type .
+    ?type rdfs:subClassOf _:0 .
+    _:0 a owl:Restriction .
+    _:0 owl:onProperty media:isMemberOfAntimicrobialGroup .
+    _:0 owl:allValuesFrom ?group .
+    BIND (IRI(CONCAT(str(?compCond1), "_susceptiblePhenotype")) AS ?p1) .
+    BIND (IRI(CONCAT(str(?compCond1), "_observation")) AS ?obs1) .
+    FILTER NOT EXISTS {
+        ?this N4L:hasOrganismObservation ?obs11 .
+        ?obs11 N4L:hasSusceptiblePhenotype ?p11 .
+        ?p11 a N4L:Susceptible .
+    } .
+}
+
+- - -  - - - - - - - -
+
+
+# R(106)  If strain has growth inhibitor as given chemical entity X [optionally concentration, value and unit are given] and that chemical entity X is member of antimicrobial group then strain is susceptible to that  chemical entity X and the chemical entity X is antimicrobial agent  as biological role.# - DELETED
+CONSTRUCT {
+    ?this N4L:hasOrganismObservation ?obs1 .
+    ?obs1 N4L:hasSusceptiblePhenotype ?p1 .
+    ?p1 a N4L:Susceptible .
+}
+WHERE {
+    ?this N4L:hasGrowthInhibitor ?cond1 .
+    ?cond1 a ?type .
+    ?type rdfs:subClassOf _:0 .
+    _:0 a owl:Restriction .
+    _:0 owl:onProperty media:isMemberOfAntimicrobialGroup .
+    _:0 owl:allValuesFrom ?group .
+    BIND (IRI(CONCAT(str(?cond1), "_susceptiblePhenotype")) AS ?p1) .
+    BIND (IRI(CONCAT(str(?cond1), "_observation")) AS ?obs1) .
+    FILTER NOT EXISTS {
+        ?this N4L:hasOrganismObservation ?obs11 .
+        ?obs11 N4L:hasSusceptiblePhenotype ?p11 .
+        ?p11 a N4L:Susceptible .
+    } .
+}
+
+- - -  - - - - - - - -
+
+

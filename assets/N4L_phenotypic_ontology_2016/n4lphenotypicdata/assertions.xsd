@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    NamesforLife Relational Database to Ontology Interchange XML Schema
+
+    Copyright (c) 2005-2015 NamesforLife, LLC
+    All rights reserved.
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://namesforlife.com/ns/interchange" targetNamespace="http://namesforlife.com/ns/interchange" xmlns:identifier="http://namesforlife.com/ns/identifier" elementFormDefault="qualified">
+
+    <xs:import schemaLocation="identifier.xsd" namespace="http://namesforlife.com/ns/identifier" />      
+
+    <!-- The entity document element. -->
+    <xs:element name="entities" type="entitiesType" />
+
+    <xs:complexType name="conceptType">
+        
+      <!--<xs:attribute name="domain" type="xs:string" use="optional" />
+     <xs:attribute name="value" type="xs:string" use="optional" /> -->
+     <xs:attribute name="chemical-entity" type="xs:string" use="optional"/>
+     <xs:attribute name="ontology-class" type="xs:string" use="required" />
+     
+    </xs:complexType>
+
+    <xs:complexType name="conditionType">        
+        <xs:attribute name="condition-class" type="xs:string" use="optional" />  
+        <xs:attribute name="condition-type" type="xs:string" use="optional" /> 
+        <xs:attribute name="cellular-activity-condition-type" use="optional"/>
+        <xs:attribute name="condition-value" type="xs:string" use="optional" />
+        <xs:attribute name="cellular-activity-condition-value" use="optional"/>
+        <xs:attribute name="unit" type="xs:string" use="optional" />
+    </xs:complexType>
+    
+    <xs:complexType name="activityType">        
+        <xs:attribute name="cellular-activity-class" type="xs:string" use="required" />        
+    </xs:complexType>
+    
+
+    <xs:complexType name="methodType">        
+        <xs:attribute name="method-class" type="xs:string" use="required" />         
+        
+    </xs:complexType>
+    
+    <xs:complexType name="inclusionBodyType">        
+        <xs:attribute name="inclusion-body-class" type="xs:string" use="required" />         
+        
+    </xs:complexType>
+    
+    
+    <xs:complexType name="observationalDataType">
+        <xs:annotation>
+            <xs:documentation>A set of observations under a set of environment conditions.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            
+            <xs:choice minOccurs="1"  maxOccurs="1">
+            <xs:element name="observation" type="conceptType"/>            
+            <xs:element name="cellular-activity" type="activityType"/> 
+            
+            </xs:choice>
+            
+            <xs:element name="condition" type="conditionType"/> 
+        </xs:sequence>
+        
+    </xs:complexType>
+
+    <xs:complexType name="assertionType">
+        <xs:sequence>
+        <xs:choice minOccurs="1"  maxOccurs="1">            
+            <xs:element name="phenotype" type="conceptType" />            
+            <xs:element name="observational-data" type="observationalDataType" />  
+            <xs:element name="inclusion-body" type="inclusionBodyType"/>
+      </xs:choice>
+            <xs:element name="method" type="methodType" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="entityType">
+                    <xs:sequence>
+                        <xs:element name="assertion" type="assertionType" minOccurs="0" maxOccurs="unbounded" />
+                    </xs:sequence>
+        <xs:attribute name="doi" type="xs:string" use="required" />        
+    </xs:complexType>
+
+    <xs:complexType name="entitiesType">
+     <xs:sequence>
+         <xs:element name="entity" type="entityType" minOccurs="0" maxOccurs="unbounded"/>  
+     </xs:sequence>   
+    </xs:complexType>
+    
+</xs:schema>

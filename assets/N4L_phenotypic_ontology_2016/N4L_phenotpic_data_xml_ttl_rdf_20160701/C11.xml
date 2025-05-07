@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities  xmlns="http://namesforlife.com/ns/interchange" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://namesforlife.com/ns/interchange assertionsdb.xsd" xmlns:identifier="http://namesforlife.com/ns/identifier">       
+    <!-- # C(11) For a strain that is facultetive anaerobe respiration of O2 should be true.# -->
+    <entity doi="10.1601/ex.0000">
+            
+        <assertion>
+            <observational-data>
+                <cellular-activity class-uri="http://doi.org/10.1601/Respiration"/>
+                <condition substance-uri="http://purl.obolibrary.org/obo/CHEBI_15379" cellular-activity-flag="false"/>
+            </observational-data>
+        </assertion>
+        <assertion>
+            <phenotype class-uri="http://doi.org/10.1601/FacultativeAnaerobe"/>
+        </assertion>
+    </entity>
+</entities>

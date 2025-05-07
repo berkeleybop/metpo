@@ -1,0 +1,212 @@
+@prefix obo:   <http://purl.obolibrary.org/obo/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix interchange: <http://namesforlife.com/ns/interchange> .
+@prefix N4L:   <http://doi.org/10.1601/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix media: <http://dx.doi.org/10.1601/media#> .
+
+N4L:nm.25955rid.15357N65549N65551SubstanceCondition
+        a       <file:///eclipse-owlim/workspace/XML2Ontology/penicillin G> , rdf:Resource .
+
+N4L:nm.25955rid.15357N65592Observation
+        a               N4L:OrganismObservation , rdf:Resource ;
+        N4L:composedOf  N4L:nm.25955rid.15357N65592GrowthObservation ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:nm.25955rid.15357N65592Phenotype .
+
+N4L:nm.25955rid.15357N65624GrowthObservation
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:nm.25955rid.15357N65624N65626SubstanceCondition .
+
+N4L:nm.25955rid.15357N65616Observation
+        a               N4L:OrganismObservation , rdf:Resource ;
+        N4L:composedOf  N4L:nm.25955rid.15357N65616GrowthObservation ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:nm.25955rid.15357N65616Phenotype .
+
+N4L:nm.25955rid.15357N65592Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:nm.25955rid.15357N65608GrowthObservation
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:nm.25955rid.15357N65608N65610SubstanceCondition .
+
+N4L:nm.25955rid.15357N65640Observation
+        a               N4L:OrganismObservation , rdf:Resource ;
+        N4L:composedOf  N4L:nm.25955rid.15357N65640GrowthObservation ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:nm.25955rid.15357N65640Phenotype .
+
+N4L:nm.25955rid.15357N65632GrowthObservation
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:nm.25955rid.15357N65632N65634SubstanceCondition .
+
+N4L:nm.25955rid.15357N65576N65578SubstanceCondition
+        a       <file:///eclipse-owlim/workspace/XML2Ontology/ceftriaxon> , rdf:Resource .
+
+N4L:nm.25955rid.15357N65557Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:nm.25955rid.15357N65600Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:nm.25955rid.15357N65549Observation
+        a               N4L:OrganismObservation , rdf:Resource ;
+        N4L:composedOf  N4L:nm.25955rid.15357N65549GrowthObservation ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:nm.25955rid.15357N65549Phenotype .
+
+N4L:nm.25955rid.15357N65616GrowthObservation
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:nm.25955rid.15357N65616N65618SubstanceCondition .
+
+N4L:nm.25955rid.15357N65592N65594SubstanceCondition
+        a       <file:///eclipse-owlim/workspace/XML2Ontology/metronidazole> , rdf:Resource .
+
+N4L:nm.25955rid.15357N65640GrowthObservation
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:nm.25955rid.15357N65640N65645SubstanceCondition , N4L:nm.25955rid.15357N65640N65642SubstanceCondition .
+
+N4L:nm.25955rid.15357N65624Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:nm.25955rid.15357N65600N65602SubstanceCondition
+        a       <file:///eclipse-owlim/workspace/XML2Ontology/vancomycin> , rdf:Resource .
+
+N4L:nm.25955rid.15357N65557N65559SubstanceCondition
+        a       <file:///eclipse-owlim/workspace/XML2Ontology/amoxicillin> , rdf:Resource .
+
+N4L:nm.25955rid.15357N65616Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:nm.25955rid.15357N65624N65626SubstanceCondition
+        a       <file:///eclipse-owlim/workspace/XML2Ontology/gentamycin> , rdf:Resource .
+
+N4L:nm.25955rid.15357N65557GrowthObservation
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:nm.25955rid.15357N65557N65559SubstanceCondition .
+
+N4L:nm.25955rid.15357N65608Observation
+        a               N4L:OrganismObservation , rdf:Resource ;
+        N4L:composedOf  N4L:nm.25955rid.15357N65608GrowthObservation ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:nm.25955rid.15357N65608Phenotype .
+
+N4L:nm.25955rid.15357N65584Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:nm.25955rid.15357N65640N65642SubstanceCondition
+        a       <file:///eclipse-owlim/workspace/XML2Ontology/trimethoprim> , rdf:Resource .
+
+N4L:nm.25955rid.15357N65632Observation
+        a               N4L:OrganismObservation , rdf:Resource ;
+        N4L:composedOf  N4L:nm.25955rid.15357N65632GrowthObservation ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:nm.25955rid.15357N65632Phenotype .
+
+N4L:nm.25955rid.15357N65565GrowthObservation
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:nm.25955rid.15357N65565N65570SubstanceCondition , N4L:nm.25955rid.15357N65565N65567SubstanceCondition .
+
+N4L:nm.25955rid.15357N65576Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:    a            owl:Ontology ;
+        owl:imports  N4L: .
+
+N4L:nm.25955rid.15357N65549Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:nm.25955rid.15357N65549GrowthObservation
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:nm.25955rid.15357N65549N65551SubstanceCondition .
+
+N4L:nm.25955rid.15357N65565Observation
+        a               N4L:OrganismObservation , rdf:Resource ;
+        N4L:composedOf  N4L:nm.25955rid.15357N65565GrowthObservation ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:nm.25955rid.15357N65565Phenotype .
+
+N4L:nm.25955rid.15357N65608N65610SubstanceCondition
+        a       <file:///eclipse-owlim/workspace/XML2Ontology/rifampicin> , rdf:Resource .
+
+N4L:nm.25955rid.15357N65592GrowthObservation
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:nm.25955rid.15357N65592N65594SubstanceCondition .
+
+N4L:nm.25955rid.15357N65565N65570SubstanceCondition
+        a       <file:///eclipse-owlim/workspace/XML2Ontology/clavulanic acid> , rdf:Resource .
+
+N4L:nm.25955rid.15357N65640Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:nm.25955rid.15357N65600Observation
+        a               N4L:OrganismObservation , rdf:Resource ;
+        N4L:composedOf  N4L:nm.25955rid.15357N65600GrowthObservation ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:nm.25955rid.15357N65600Phenotype .
+
+N4L:nm.25955rid.15357N65584Observation
+        a               N4L:OrganismObservation , rdf:Resource ;
+        N4L:composedOf  N4L:nm.25955rid.15357N65584GrowthObservation ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:nm.25955rid.15357N65584Phenotype .
+
+N4L:nm.25955rid.15357N65576GrowthObservation
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:nm.25955rid.15357N65576N65578SubstanceCondition .
+
+N4L:nm.25955rid.15357N65608Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:nm.25955rid.15357N65584N65586SubstanceCondition
+        a       <file:///eclipse-owlim/workspace/XML2Ontology/imipenem> , rdf:Resource .
+
+N4L:nm.25955rid.15357N65584GrowthObservation
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:nm.25955rid.15357N65584N65586SubstanceCondition .
+
+N4L:nm.25955rid.15357N65624Observation
+        a               N4L:OrganismObservation , rdf:Resource ;
+        N4L:composedOf  N4L:nm.25955rid.15357N65624GrowthObservation ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:nm.25955rid.15357N65624Phenotype .
+
+N4L:nm.25955  a                     N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:nm.25955rid.15357N65600Observation , N4L:nm.25955rid.15357N65576Observation , N4L:nm.25955rid.15357N65632Observation , N4L:nm.25955rid.15357N65616Observation , N4L:nm.25955rid.15357N65608Observation , N4L:nm.25955rid.15357N65584Observation , N4L:nm.25955rid.15357N65565Observation , N4L:nm.25955rid.15357N65592Observation , N4L:nm.25955rid.15357N65557Observation , N4L:nm.25955rid.15357N65624Observation , N4L:nm.25955rid.15357N65640Observation , N4L:nm.25955rid.15357N65549Observation .
+
+N4L:nm.25955rid.15357N65616N65618SubstanceCondition
+        a       <file:///eclipse-owlim/workspace/XML2Ontology/erythromycin> , rdf:Resource .
+
+N4L:nm.25955rid.15357N65565Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:nm.25955rid.15357N65565N65567SubstanceCondition
+        a       <file:///eclipse-owlim/workspace/XML2Ontology/amoxicillin> , rdf:Resource .
+
+N4L:nm.25955rid.15357N65557Observation
+        a               N4L:OrganismObservation , rdf:Resource ;
+        N4L:composedOf  N4L:nm.25955rid.15357N65557GrowthObservation ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:nm.25955rid.15357N65557Phenotype .
+
+N4L:nm.25955rid.15357N65632N65634SubstanceCondition
+        a       <file:///eclipse-owlim/workspace/XML2Ontology/ciprofloxacin> , rdf:Resource .
+
+N4L:nm.25955rid.15357N65640N65645SubstanceCondition
+        a       <file:///eclipse-owlim/workspace/XML2Ontology/sulfamethoxazole> , rdf:Resource .
+
+N4L:nm.25955rid.15357N65632Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:nm.25955rid.15357N65576Observation
+        a               N4L:OrganismObservation , rdf:Resource ;
+        N4L:composedOf  N4L:nm.25955rid.15357N65576GrowthObservation ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:nm.25955rid.15357N65576Phenotype .
+
+N4L:nm.25955rid.15357N65600GrowthObservation
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:nm.25955rid.15357N65600N65602SubstanceCondition .
