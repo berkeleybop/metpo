@@ -2,7 +2,7 @@
 ![Build Status](https://github.com/berkeleybop/metpo/actions/workflows/qc.yml/badge.svg)
 # METPO
 
-Description: None
+Microbial ecophysiological trait and phenotype ontology
 
 More information can be found at http://obofoundry.org/ontology/metpo
 
