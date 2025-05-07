@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="constraint-violations">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="entity"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="entity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="constraint-source"/>
+        <xs:element ref="document-source"/>
+        <xs:element ref="constraint-explanation"/>
+      </xs:sequence>
+      <xs:attribute name="doi" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="constraint-source">
+    <xs:complexType>
+      <xs:attribute name="class-uri" use="required" type="xs:anyURI"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="constraint-explanation">
+    <xs:complexType mixed="true">
+      <xs:attribute name="id" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="document-source">
+    <xs:complexType>
+      <xs:attribute name="class-uri" use="required" type="xs:anyURI"/>
+    </xs:complexType>
+  </xs:element>
+  
+</xs:schema>

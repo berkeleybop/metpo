@@ -1,0 +1,4615 @@
+# baseURI: http://doi.org/10.1601/media/
+# imports: file:/C:/NamesforLife/workspace-tbc/phenotype-spin/com/namesforlife/ontology/phenotype/substance-groups_spin.ttl
+# imports: http://spinrdf.org/spl
+# prefix: media
+
+@prefix arg: <http://spinrdf.org/arg#> .
+@prefix compound: <http://rdf.ncbi.nlm.nih.gov/pubchem/compound/> .
+@prefix media: <http://doi.org/10.1601/media/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix p10.1601: <http://doi.org/10.1601/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix smf: <http://topbraid.org/sparqlmotionfunctions#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix spl: <http://spinrdf.org/spl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+media:
+  rdf:type owl:Ontology ;
+  rdfs:comment "Implements media types using spin framework"^^xsd:string ;
+  owl:imports <file:/C:/NamesforLife/workspace-tbc/phenotype-spin/com/namesforlife/ontology/phenotype/substance-groups_spin.ttl> ;
+  owl:imports <http://spinrdf.org/spl> ;
+  owl:versionInfo "1.0"^^xsd:string ;
+.
+media:AmikacinMezlocillin
+  rdf:type rdfs:Class ;
+  rdfs:label "Amikacin mezlocillin"^^xsd:string ;
+  rdfs:subClassOf media:AntimicrobialMixture ;
+.
+media:AmoxicillinClavulanate
+  rdf:type rdfs:Class ;
+  rdfs:label "Amoxicillin clavulanate"^^xsd:string ;
+  rdfs:subClassOf media:AntimicrobialMixture ;
+.
+media:AmpicillinSulbactam
+  rdf:type rdfs:Class ;
+  rdfs:label "ampicillin sulbactam"^^xsd:string ;
+  rdfs:subClassOf media:AntimicrobialMixture ;
+.
+media:AnaerobicExogenousElectronAcceptorGroup
+  rdf:type rdfs:Class ;
+  rdfs:label "Anaerobic electron acceptor group"^^xsd:string ;
+  rdfs:subClassOf media:ExogenousElectronAcceptorGroup ;
+.
+media:AntibacterialAgent
+  rdf:type rdfs:Class ;
+  rdfs:label "Antibacterial agent"^^xsd:string ;
+  rdfs:subClassOf media:AntimicrobialAgent ;
+.
+media:AntimicrobialAgent
+  rdf:type rdfs:Class ;
+  rdfs:label "Antimicrobial agent"^^xsd:string ;
+  rdfs:subClassOf media:BiologicalRole ;
+.
+media:AntimicrobialEntity
+  rdf:type rdfs:Class ;
+  rdfs:label "Antimicrobial entity"^^xsd:string ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+media:AntimicrobialGroup
+  rdf:type rdfs:Class ;
+  rdfs:label "Antimicrobial group"^^xsd:string ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+media:AntimicrobialMixture
+  rdf:type rdfs:Class ;
+  rdfs:label "Antimicrobial mixture"^^xsd:string ;
+  rdfs:subClassOf media:Component ;
+.
+media:BiologicalRole
+  rdf:type rdfs:Class ;
+  rdfs:label "Biological role"^^xsd:string ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+media:CarbonSource
+  rdf:type rdfs:Class ;
+  rdfs:label "Carbon source"^^xsd:string ;
+  rdfs:subClassOf media:BiologicalRole ;
+.
+media:ChemicalEntity
+  rdf:type rdfs:Class ;
+  rdfs:label "Chemical entity"^^xsd:string ;
+  rdfs:subClassOf media:Substance ;
+.
+media:CodonEncodedAminoAcid
+  rdf:type rdfs:Class ;
+  rdfs:label "Codon encoded amino acid"^^xsd:string ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+media:ComplexChemicalEntity
+  rdf:type rdfs:Class ;
+  rdfs:label "Complex chemical entity"^^xsd:string ;
+  rdfs:subClassOf media:Substance ;
+.
+media:ComplexSubstance
+  rdf:type rdfs:Class ;
+  rdfs:label "Complex substance"^^xsd:string ;
+  rdfs:subClassOf media:Substance ;
+.
+media:Component
+  rdf:type rdfs:Class ;
+  rdfs:label "Component"^^xsd:string ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+media:Concentration
+  rdf:type rdfs:Class ;
+  rdfs:label "Concentration"^^xsd:string ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+media:DisjointnessOfSubstanceGroupMembership
+  rdf:type spin:ConstructTemplate ;
+  spin:body [
+      rdf:type sp:Construct ;
+      sp:templates (
+          [
+            sp:object spin:ConstraintViolation ;
+            sp:predicate rdf:type ;
+            sp:subject _:b37980 ;
+          ]
+          [
+            sp:object [
+                sp:varName "type"^^xsd:string ;
+              ] ;
+            sp:predicate spin:violationRoot ;
+            sp:subject _:b37980 ;
+          ]
+          [
+            sp:object spin:_arg1 ;
+            sp:predicate spin:violationValue ;
+            sp:subject _:b37980 ;
+          ]
+          [
+            sp:object "" ;
+            sp:predicate spin:violationPath ;
+            sp:subject _:b37980 ;
+          ]
+          [
+            sp:object [
+                sp:varName "label"^^xsd:string ;
+              ] ;
+            sp:predicate rdfs:label ;
+            sp:subject _:b37980 ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "type"^^xsd:string ;
+              ] ;
+            sp:predicate rdf:type ;
+            sp:subject spin:_this ;
+          ]
+          [
+            sp:object [
+                sp:varName "?0"^^xsd:string ;
+              ] ;
+            sp:predicate rdfs:subClassOf ;
+            sp:subject [
+                sp:varName "type"^^xsd:string ;
+              ] ;
+          ]
+          [
+            sp:object owl:Restriction ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "?0"^^xsd:string ;
+              ] ;
+          ]
+          [
+            sp:object spin:_arg1 ;
+            sp:predicate owl:onProperty ;
+            sp:subject [
+                sp:varName "?0"^^xsd:string ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "group1"^^xsd:string ;
+              ] ;
+            sp:predicate owl:allValuesFrom ;
+            sp:subject [
+                sp:varName "?0"^^xsd:string ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "?1"^^xsd:string ;
+              ] ;
+            sp:predicate rdfs:subClassOf ;
+            sp:subject [
+                sp:varName "type"^^xsd:string ;
+              ] ;
+          ]
+          [
+            sp:object owl:Restriction ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "?1"^^xsd:string ;
+              ] ;
+          ]
+          [
+            sp:object spin:_arg2 ;
+            sp:predicate owl:onProperty ;
+            sp:subject [
+                sp:varName "?1"^^xsd:string ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "group2"^^xsd:string ;
+              ] ;
+            sp:predicate owl:allValuesFrom ;
+            sp:subject [
+                sp:varName "?1"^^xsd:string ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type sp:concat ;
+                sp:arg1 "21:" ;
+                sp:arg2 "Given substance " ;
+                sp:arg3 [
+                    rdf:type sp:str ;
+                    sp:arg1 [
+                        sp:varName "type"^^xsd:string ;
+                      ] ;
+                  ] ;
+                sp:arg4 " can not be member of  ( " ;
+                sp:arg5 [
+                    rdf:type sp:str ;
+                    sp:arg1 spin:_arg1 ;
+                  ] ;
+                sp:arg6 " and " ;
+                sp:arg7 [
+                    rdf:type sp:str ;
+                    sp:arg1 spin:_arg2 ;
+                  ] ;
+                sp:arg8 " ) groups." ;
+              ] ;
+            sp:variable [
+                sp:varName "label"^^xsd:string ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spin:thisUnbound "true"^^xsd:boolean ;
+      spl:predicate sp:arg1 ;
+      spl:valueType rdf:Property ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spin:thisUnbound "true"^^xsd:boolean ;
+      spl:predicate sp:arg2 ;
+      spl:valueType rdf:Property ;
+    ] ;
+  spin:labelTemplate "T21: Given substance can not be member of {?arg1} and {?arg2} substance gorups."^^xsd:string ;
+  rdfs:label "Disjointness of substance group membership"^^xsd:string ;
+  rdfs:subClassOf spin:ConstructTemplates ;
+.
+media:EnergySource
+  rdf:type rdfs:Class ;
+  rdfs:label "Energy source"^^xsd:string ;
+  rdfs:subClassOf media:BiologicalRole ;
+.
+media:ExogenousElectronAcceptor
+  rdf:type rdfs:Class ;
+  rdfs:label "Electron acceptor"^^xsd:string ;
+  rdfs:subClassOf media:BiologicalRole ;
+.
+media:ExogenousElectronAcceptorGroup
+  rdf:type rdfs:Class ;
+  rdfs:label "Exogenous electron acceptor group"^^xsd:string ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+media:FermentationSubstrate
+  rdf:type rdfs:Class ;
+  rdfs:label "Fermentation substrate"^^xsd:string ;
+  rdfs:subClassOf media:BiologicalRole ;
+.
+media:ImipenemFosfomycin
+  rdf:type rdfs:Class ;
+  rdfs:label "Imipenem fosfomycin"^^xsd:string ;
+  rdfs:subClassOf media:AntimicrobialMixture ;
+.
+media:Ingredient
+  rdf:type rdfs:Class ;
+  rdfs:label "Ingredient"^^xsd:string ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+media:InorganicCompound
+  rdf:type rdfs:Class ;
+  rdfs:label "Inorganic compound"^^xsd:string ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+media:J01A
+  rdf:type rdfs:Class ;
+  rdfs:label "TETRACYCLINES"^^xsd:string ;
+  rdfs:subClassOf media:AntimicrobialGroup ;
+.
+media:J01AA
+  rdf:type rdfs:Class ;
+  rdfs:label "J01AA"^^xsd:string ;
+  rdfs:subClassOf media:J01A ;
+.
+media:J01B
+  rdf:type rdfs:Class ;
+  rdfs:label "AMPHENICOLS"^^xsd:string ;
+  rdfs:subClassOf media:AntimicrobialGroup ;
+.
+media:J01BA
+  rdf:type rdfs:Class ;
+  rdfs:label "J01BA"^^xsd:string ;
+  rdfs:subClassOf media:J01B ;
+.
+media:J01C
+  rdf:type rdfs:Class ;
+  rdfs:label "BETA-LACTAM ANTIBACTERIALS, PENICILLINS"^^xsd:string ;
+  rdfs:subClassOf media:AntimicrobialGroup ;
+.
+media:J01CA
+  rdf:type rdfs:Class ;
+  rdfs:label "Penicillins with extended spectrum"^^xsd:string ;
+  rdfs:subClassOf media:J01C ;
+.
+media:J01CE
+  rdf:type rdfs:Class ;
+  rdfs:label "Beta-lactamase sensitive penicillins"^^xsd:string ;
+  rdfs:subClassOf media:J01C ;
+.
+media:J01CF
+  rdf:type rdfs:Class ;
+  rdfs:label "Beta-lactamase resistant penicillins"^^xsd:string ;
+  rdfs:subClassOf media:J01C ;
+.
+media:J01CG
+  rdf:type rdfs:Class ;
+  rdfs:label "Beta-lactamase inhibitors"^^xsd:string ;
+  rdfs:subClassOf media:J01C ;
+.
+media:J01CR
+  rdf:type rdfs:Class ;
+  rdfs:label "Combinations of penicillins, incl. beta-lactamase inhibitors."^^xsd:string ;
+  rdfs:subClassOf media:J01C ;
+.
+media:J01D
+  rdf:type rdfs:Class ;
+  rdfs:label "OTHER BETA-LACTAM ANTIBACTERIALS."^^xsd:string ;
+  rdfs:subClassOf media:AntimicrobialGroup ;
+.
+media:J01DB
+  rdf:type rdfs:Class ;
+  rdfs:label "First-generation cephalosporins."^^xsd:string ;
+  rdfs:subClassOf media:J01D ;
+.
+media:J01DC
+  rdf:type rdfs:Class ;
+  rdfs:label "Second-generation cephalosporins."^^xsd:string ;
+  rdfs:subClassOf media:J01D ;
+.
+media:J01DD
+  rdf:type rdfs:Class ;
+  rdfs:label "Third-generation cephalosporins."^^xsd:string ;
+  rdfs:subClassOf media:J01D ;
+.
+media:J01DE
+  rdf:type rdfs:Class ;
+  rdfs:label "Fourth-generation cephalosporins."^^xsd:string ;
+  rdfs:subClassOf media:J01D ;
+.
+media:J01DF
+  rdf:type rdfs:Class ;
+  rdfs:label "Monobactams."^^xsd:string ;
+  rdfs:subClassOf media:J01D ;
+.
+media:J01DH
+  rdf:type rdfs:Class ;
+  rdfs:label "Carbapenems."^^xsd:string ;
+  rdfs:subClassOf media:J01D ;
+.
+media:J01DI
+  rdf:type rdfs:Class ;
+  rdfs:label "Other cephalosporins and penems."^^xsd:string ;
+  rdfs:subClassOf media:J01D ;
+.
+media:J01E
+  rdf:type rdfs:Class ;
+  rdfs:label "SULFONAMIDES AND TRIMETHOPRIM."^^xsd:string ;
+  rdfs:subClassOf media:AntimicrobialGroup ;
+.
+media:J01EA
+  rdf:type rdfs:Class ;
+  rdfs:label "Trimethoprim and derivatives."^^xsd:string ;
+  rdfs:subClassOf media:J01E ;
+.
+media:J01EB
+  rdf:type rdfs:Class ;
+  rdfs:label "Short-acting sulfonamides."^^xsd:string ;
+  rdfs:subClassOf media:J01E ;
+.
+media:J01EC
+  rdf:type rdfs:Class ;
+  rdfs:label " Intermediate-acting sulfonamides."^^xsd:string ;
+  rdfs:subClassOf media:J01E ;
+.
+media:J01ED
+  rdf:type rdfs:Class ;
+  rdfs:label "Long-acting sulfonamides."^^xsd:string ;
+  rdfs:subClassOf media:J01E ;
+.
+media:J01EE
+  rdf:type rdfs:Class ;
+  rdfs:label "Combinations of sulfonamides and trimethoprim, incl. derivatives."^^xsd:string ;
+  rdfs:subClassOf media:J01E ;
+.
+media:J01F
+  rdf:type rdfs:Class ;
+  rdfs:label "MACROLIDES, LINCOSAMIDES AND STREPTOGRAMINS."^^xsd:string ;
+  rdfs:subClassOf media:AntimicrobialGroup ;
+.
+media:J01FA
+  rdf:type rdfs:Class ;
+  rdfs:label "Macrolides."^^xsd:string ;
+  rdfs:subClassOf media:J01F ;
+.
+media:J01FF
+  rdf:type rdfs:Class ;
+  rdfs:label "J01FF"^^xsd:string ;
+  rdfs:subClassOf media:J01F ;
+.
+media:J01FG
+  rdf:type rdfs:Class ;
+  rdfs:label "Streptogramins."^^xsd:string ;
+  rdfs:subClassOf media:J01F ;
+.
+media:J01G
+  rdf:type rdfs:Class ;
+  rdfs:label "AMINOGLYCOSIDE ANTIBACTERIALS."^^xsd:string ;
+  rdfs:subClassOf media:AntimicrobialGroup ;
+.
+media:J01GA
+  rdf:type rdfs:Class ;
+  rdfs:label " Streptomycins."^^xsd:string ;
+  rdfs:subClassOf media:J01G ;
+.
+media:J01GB
+  rdf:type rdfs:Class ;
+  rdfs:label "Other aminoglycosides."^^xsd:string ;
+  rdfs:subClassOf media:J01G ;
+.
+media:J01M
+  rdf:type rdfs:Class ;
+  rdfs:label "QUINOLONE ANTIBACTERIALS."^^xsd:string ;
+  rdfs:subClassOf media:AntimicrobialGroup ;
+.
+media:J01MA
+  rdf:type rdfs:Class ;
+  rdfs:label "Fluoroquinolones."^^xsd:string ;
+  rdfs:subClassOf media:J01M ;
+.
+media:J01MB
+  rdf:type rdfs:Class ;
+  rdfs:label "Other quinolones."^^xsd:string ;
+  rdfs:subClassOf media:J01M ;
+.
+media:J01R
+  rdf:type rdfs:Class ;
+  rdfs:label "COMBINATIONS OF ANTIBACTERIALS."^^xsd:string ;
+  rdfs:subClassOf media:AntimicrobialGroup ;
+.
+media:J01RA
+  rdf:type rdfs:Class ;
+  rdfs:label "Combinations of antibacterials."^^xsd:string ;
+  rdfs:subClassOf media:J01R ;
+.
+media:J01X
+  rdf:type rdfs:Class ;
+  rdfs:label "OTHER ANTIBACTERIALS."^^xsd:string ;
+  rdfs:subClassOf media:AntimicrobialGroup ;
+.
+media:J01XA
+  rdf:type rdfs:Class ;
+  rdfs:label "Glycopeptide antibacterials."^^xsd:string ;
+  rdfs:subClassOf media:J01X ;
+.
+media:J01XB
+  rdf:type rdfs:Class ;
+  rdfs:label "Polymyxins."^^xsd:string ;
+  rdfs:subClassOf media:J01X ;
+.
+media:J01XC
+  rdf:type rdfs:Class ;
+  rdfs:label "Steroid antibacterials."^^xsd:string ;
+  rdfs:subClassOf media:J01X ;
+.
+media:J01XD
+  rdf:type rdfs:Class ;
+  rdfs:label "Imidazole derivatives."^^xsd:string ;
+  rdfs:subClassOf media:J01X ;
+.
+media:J01XE
+  rdf:type rdfs:Class ;
+  rdfs:label "Nitrofuran derivatives."^^xsd:string ;
+  rdfs:subClassOf media:J01X ;
+.
+media:J01XX
+  rdf:type rdfs:Class ;
+  rdfs:label "Other antibacterials."^^xsd:string ;
+  rdfs:subClassOf media:J01X ;
+.
+media:KanamycinEsculin
+  rdf:type rdfs:Class ;
+  rdfs:label "Kanamycin esculin"^^xsd:string ;
+  rdfs:subClassOf media:AntimicrobialMixture ;
+.
+media:Measure
+  rdf:type rdfs:Class ;
+  rdfs:label "Measure"^^xsd:string ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+media:MediaType
+  rdf:type rdfs:Class ;
+  spin:rule [
+      rdf:type sp:Construct ;
+      sp:templates (
+          [
+            sp:object [
+                sp:varName "comp"^^xsd:string ;
+              ] ;
+            sp:predicate media:hasComponent ;
+            sp:subject spin:_this ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "ing"^^xsd:string ;
+              ] ;
+            sp:predicate media:containsIngredient ;
+            sp:subject spin:_this ;
+          ]
+          [
+            sp:object [
+                sp:varName "comp1"^^xsd:string ;
+              ] ;
+            sp:predicate media:includesComponent ;
+            sp:subject [
+                sp:varName "ing"^^xsd:string ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                sp:varName "comp1"^^xsd:string ;
+              ] ;
+            sp:variable [
+                sp:varName "comp"^^xsd:string ;
+              ] ;
+          ]
+        ) ;
+      spin:thisUnbound "true"^^xsd:boolean ;
+      rdfs:comment "R(270) : containsIngredient o includesComponent = > hasComponent"^^xsd:string ;
+    ] ;
+  spin:rule [
+      rdf:type sp:Construct ;
+      sp:templates (
+          [
+            sp:object [
+                sp:varName "comp"^^xsd:string ;
+              ] ;
+            sp:predicate media:hasComponent ;
+            sp:subject spin:_this ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "ing1"^^xsd:string ;
+              ] ;
+            sp:predicate media:containsIngredient ;
+            sp:subject spin:_this ;
+          ]
+          [
+            sp:object [
+                sp:varName "mt"^^xsd:string ;
+              ] ;
+            sp:predicate media:includesMediaType ;
+            sp:subject [
+                sp:varName "ing1"^^xsd:string ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "comp1"^^xsd:string ;
+              ] ;
+            sp:predicate media:hasComponent ;
+            sp:subject [
+                sp:varName "mt"^^xsd:string ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                sp:varName "comp1"^^xsd:string ;
+              ] ;
+            sp:variable [
+                sp:varName "comp"^^xsd:string ;
+              ] ;
+          ]
+        ) ;
+      spin:thisUnbound "true"^^xsd:boolean ;
+      rdfs:comment "R(272) containsIngredient o includesMediaType o hasComponent = > hasComponent"^^xsd:string ;
+    ] ;
+  spin:rule [
+      rdf:type sp:Construct ;
+      sp:templates (
+          [
+            sp:object [
+                sp:varName "ing"^^xsd:string ;
+              ] ;
+            sp:predicate media:containsIngredient ;
+            sp:subject spin:_this ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "comp"^^xsd:string ;
+              ] ;
+            sp:predicate media:hasComponent ;
+            sp:subject spin:_this ;
+          ]
+          [
+            sp:object [
+                sp:varName "ing1"^^xsd:string ;
+              ] ;
+            sp:predicate media:containsIngredient ;
+            sp:subject [
+                sp:varName "comp"^^xsd:string ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                sp:varName "ing1"^^xsd:string ;
+              ] ;
+            sp:variable [
+                sp:varName "ing"^^xsd:string ;
+              ] ;
+          ]
+        ) ;
+      spin:thisUnbound "true"^^xsd:boolean ;
+      rdfs:comment "R(273) hasComponent o containsIngredient = > containsIngredient"^^xsd:string ;
+    ] ;
+  spin:rule [
+      rdf:type sp:Construct ;
+      sp:templates (
+          [
+            sp:object [
+                sp:varName "ing"^^xsd:string ;
+              ] ;
+            sp:predicate media:containsIngredient ;
+            sp:subject spin:_this ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "ing1"^^xsd:string ;
+              ] ;
+            sp:predicate media:containsIngredient ;
+            sp:subject spin:_this ;
+          ]
+          [
+            sp:object [
+                sp:varName "m"^^xsd:string ;
+              ] ;
+            sp:predicate media:includesMediaType ;
+            sp:subject [
+                sp:varName "ing1"^^xsd:string ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "ing2"^^xsd:string ;
+              ] ;
+            sp:predicate media:containsIngredient ;
+            sp:subject [
+                sp:varName "m"^^xsd:string ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                sp:varName "ing2"^^xsd:string ;
+              ] ;
+            sp:variable [
+                sp:varName "ing"^^xsd:string ;
+              ] ;
+          ]
+        ) ;
+      spin:thisUnbound "true"^^xsd:boolean ;
+      rdfs:comment "R(271) containsIngredient o includesMediaType o containsIngredient = > constainsIngredient"^^xsd:string ;
+    ] ;
+  rdfs:label "Media type"^^xsd:string ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+media:NitrogenSource
+  rdf:type rdfs:Class ;
+  rdfs:label "Nitrogen source"^^xsd:string ;
+  rdfs:subClassOf media:BiologicalRole ;
+.
+media:Non-encodedProteinogenicAminoAcid
+  rdf:type rdfs:Class ;
+  rdfs:label "Non-encoded proteinogenic amino acid"^^xsd:string ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+media:OrganicCompound
+  rdf:type rdfs:Class ;
+  rdfs:label "Organic compound"^^xsd:string ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+media:OtherCarbonCompound
+  rdf:type rdfs:Class ;
+  rdfs:label "Other carbon compound"^^xsd:string ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+media:PhosphorusSource
+  rdf:type rdfs:Class ;
+  rdfs:label "Phosphorus source"^^xsd:string ;
+  rdfs:subClassOf media:BiologicalRole ;
+.
+media:PiperacillinTazobactam
+  rdf:type rdfs:Class ;
+  rdfs:label "Piperacillin tazobactam"^^xsd:string ;
+  rdfs:subClassOf media:AntimicrobialMixture ;
+.
+media:SXT
+  rdf:type rdfs:Class ;
+  rdfs:label "SXT"^^xsd:string ;
+  rdfs:subClassOf media:AntimicrobialMixture ;
+.
+media:Substance
+  rdf:type rdfs:Class ;
+  spin:constraint [
+      rdf:type media:DisjointnessOfSubstanceGroupMembership ;
+      sp:arg1 media:isMemberOfInorganicCompoundGroup ;
+      sp:arg2 media:isMemberOfOrganicCompoundGroup ;
+      spin:thisUnbound "true"^^xsd:boolean ;
+      rdfs:comment "# C(56a) Given strain can not be member of media:isMemberOfInorganicCompoundGroup and media:isMemberOfOrganicCompoundGroup substance gorups."^^xsd:string ;
+    ] ;
+  spin:constraint [
+      rdf:type sp:Construct ;
+      sp:templates (
+          [
+            sp:object spin:ConstraintViolation ;
+            sp:predicate rdf:type ;
+            sp:subject _:b36523 ;
+          ]
+          [
+            sp:object [
+                sp:varName "type"^^xsd:string ;
+              ] ;
+            sp:predicate spin:violationRoot ;
+            sp:subject _:b36523 ;
+          ]
+          [
+            sp:object [
+                sp:varName "type1"^^xsd:string ;
+              ] ;
+            sp:predicate spin:violationPath ;
+            sp:subject _:b36523 ;
+          ]
+          [
+            sp:object [
+                sp:varName "typ2"^^xsd:string ;
+              ] ;
+            sp:predicate spin:violationValue ;
+            sp:subject _:b36523 ;
+          ]
+          [
+            sp:object "184:Chemical Entity can not be member of organic and inorganic compound group." ;
+            sp:predicate rdfs:label ;
+            sp:subject _:b36523 ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "g1"^^xsd:string ;
+              ] ;
+            sp:predicate media:isMemberOfOrganicCompoundGroup ;
+            sp:subject spin:_this ;
+          ]
+          [
+            sp:object [
+                sp:varName "g2"^^xsd:string ;
+              ] ;
+            sp:predicate media:isMemberOfInorganicCompoundGroup ;
+            sp:subject spin:_this ;
+          ]
+          [
+            sp:object [
+                sp:varName "type"^^xsd:string ;
+              ] ;
+            sp:predicate rdf:type ;
+            sp:subject spin:_this ;
+          ]
+          [
+            sp:object [
+                sp:varName "type1"^^xsd:string ;
+              ] ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "g1"^^xsd:string ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "type2"^^xsd:string ;
+              ] ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "g2"^^xsd:string ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Filter ;
+            sp:expression [
+                rdf:type sp:or ;
+                sp:arg1 [
+                    rdf:type sp:regex ;
+                    sp:arg1 [
+                        rdf:type sp:str ;
+                        sp:arg1 [
+                            sp:varName "type"^^xsd:string ;
+                          ] ;
+                      ] ;
+                    sp:arg2 "http://purl.obolibrary.org/obo/CHEBI_" ;
+                  ] ;
+                sp:arg2 [
+                    rdf:type sp:regex ;
+                    sp:arg1 [
+                        rdf:type sp:str ;
+                        sp:arg1 [
+                            sp:varName "type"^^xsd:string ;
+                          ] ;
+                      ] ;
+                    sp:arg2 "http://rdf.ncbi.nlm.nih.gov/pubchem/compound/" ;
+                  ] ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Filter ;
+            sp:expression [
+                rdf:type sp:or ;
+                sp:arg1 [
+                    rdf:type sp:regex ;
+                    sp:arg1 [
+                        rdf:type sp:str ;
+                        sp:arg1 [
+                            sp:varName "type1"^^xsd:string ;
+                          ] ;
+                      ] ;
+                    sp:arg2 "http://purl.obolibrary.org/obo/CHEBI_" ;
+                  ] ;
+                sp:arg2 [
+                    rdf:type sp:regex ;
+                    sp:arg1 [
+                        rdf:type sp:str ;
+                        sp:arg1 [
+                            sp:varName "type1"^^xsd:string ;
+                          ] ;
+                      ] ;
+                    sp:arg2 "http://rdf.ncbi.nlm.nih.gov/pubchem/compound/" ;
+                  ] ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Filter ;
+            sp:expression [
+                rdf:type sp:or ;
+                sp:arg1 [
+                    rdf:type sp:regex ;
+                    sp:arg1 [
+                        rdf:type sp:str ;
+                        sp:arg1 [
+                            sp:varName "type2"^^xsd:string ;
+                          ] ;
+                      ] ;
+                    sp:arg2 "http://purl.obolibrary.org/obo/CHEBI_" ;
+                  ] ;
+                sp:arg2 [
+                    rdf:type sp:regex ;
+                    sp:arg1 [
+                        rdf:type sp:str ;
+                        sp:arg1 [
+                            sp:varName "type2"^^xsd:string ;
+                          ] ;
+                      ] ;
+                    sp:arg2 "http://rdf.ncbi.nlm.nih.gov/pubchem/compound/" ;
+                  ] ;
+              ] ;
+          ]
+        ) ;
+      spin:thisUnbound "true"^^xsd:boolean ;
+    ] ;
+  spin:rule [
+      rdf:type media:infersGroupMembership ;
+      arg:property media:isMemberOfAnaerobicExogenousElectronAcceptorGroup ;
+      spin:thisUnbound "true"^^xsd:boolean ;
+      rdfs:comment "# R(135) infers media:isMemberOfAnaerobicElectronAcceptorGroup based on group membership of a given chemical entity ."^^xsd:string ;
+    ] ;
+  spin:rule [
+      rdf:type media:infersGroupMembership ;
+      arg:property media:isMemberOfAntimicrobialGroup ;
+      spin:thisUnbound "true"^^xsd:boolean ;
+      rdfs:comment "# R(134) infers media:isMemberOfAntimicrobialGroup based on group membership of a given chemical entity ."^^xsd:string ;
+    ] ;
+  spin:rule [
+      rdf:type media:infersGroupMembership ;
+      arg:property media:isMemberOfEnergySourceGroup ;
+      spin:thisUnbound "true"^^xsd:boolean ;
+      rdfs:comment "# R(133) infers media:isMemberOfEnergySourceGroup based on group membership of a given chemical entity ."^^xsd:string ;
+    ] ;
+  spin:rule [
+      rdf:type media:infersGroupMembership ;
+      arg:property media:isMemberOfExogenousElectronAcceptorGroup ;
+      spin:thisUnbound "true"^^xsd:boolean ;
+      rdfs:comment "# R(136) infers media:isMemberOfExogenousElectronAcceptorGroup based on group membership of a given chemical entity ."^^xsd:string ;
+    ] ;
+  spin:rule [
+      rdf:type media:infersGroupMembership ;
+      arg:property media:isMemberOfInorganicCompoundGroup ;
+      spin:thisUnbound "true"^^xsd:boolean ;
+      rdfs:comment "# R(132) infers media:isMemberOfInorganicCompoundGroup based on group membership of a given chemical entity ."^^xsd:string ;
+    ] ;
+  spin:rule [
+      rdf:type media:infersGroupMembership ;
+      arg:property media:isMemberOfNitrogenSourceGroup ;
+      spin:thisUnbound "true"^^xsd:boolean ;
+      rdfs:comment "# R(131) infers media:isMemberOfNitrogenSourceGroup based on group membership of a given chemical entity ."^^xsd:string ;
+    ] ;
+  spin:rule [
+      rdf:type media:infersGroupMembership ;
+      arg:property media:isMemberOfOrganicCompoundGroup ;
+      spin:thisUnbound "true"^^xsd:boolean ;
+      rdfs:comment "# R(128) infers media:isMemberOfOrganicCompoundGroup based on group membership of a given chemical entity."^^xsd:string ;
+    ] ;
+  spin:rule [
+      rdf:type media:infersGroupMembership ;
+      arg:property media:isMemberOfPhosphorusGroup ;
+      rdfs:comment "# R(130) infers media:isMemberOfPhosphorusGroup based on group membership of a given chemical entity ."^^xsd:string ;
+    ] ;
+  spin:rule [
+      rdf:type media:infersGroupMembership ;
+      arg:property media:isMemberOfSulfurGroup ;
+      spin:thisUnbound "true"^^xsd:boolean ;
+      rdfs:comment "# R(129) infers media:isMemberOfSulfurGroup based on group membership of a given chemical entity ."^^xsd:string ;
+    ] ;
+  spin:rule [
+      rdf:type sp:Construct ;
+      sp:templates (
+          [
+            sp:object [
+                sp:varName "es"^^xsd:string ;
+              ] ;
+            sp:predicate media:isAntimicrobialAgent ;
+            sp:subject [
+                sp:varName "s"^^xsd:string ;
+              ] ;
+          ]
+          [
+            sp:object media:AntimicrobialAgent ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "es"^^xsd:string ;
+              ] ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "es1"^^xsd:string ;
+              ] ;
+            sp:predicate media:hasBiologicalRole ;
+            sp:subject [
+                sp:varName "s1"^^xsd:string ;
+              ] ;
+          ]
+          [
+            sp:object media:AntimicrobialAgent ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "es1"^^xsd:string ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                sp:varName "s1"^^xsd:string ;
+              ] ;
+            sp:variable [
+                sp:varName "s"^^xsd:string ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                sp:varName "es1"^^xsd:string ;
+              ] ;
+            sp:variable [
+                sp:varName "es"^^xsd:string ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Filter ;
+            sp:expression [
+                rdf:type sp:notExists ;
+                sp:elements (
+                    [
+                      sp:object [
+                          sp:varName "es1"^^xsd:string ;
+                        ] ;
+                      sp:predicate media:AntimicrobialAgent ;
+                      sp:subject [
+                          sp:varName "s1"^^xsd:string ;
+                        ] ;
+                    ]
+                  ) ;
+              ] ;
+          ]
+        ) ;
+      rdfs:comment "R(117) infers sub-property relation isAntimicrobialAgent based on property media:hasBiologicalRole and range media:AntimicrobialAgent.#"^^xsd:string ;
+    ] ;
+  spin:rule [
+      rdf:type sp:Construct ;
+      sp:templates (
+          [
+            sp:object [
+                sp:varName "es"^^xsd:string ;
+              ] ;
+            sp:predicate media:isCarbonSource ;
+            sp:subject [
+                sp:varName "s"^^xsd:string ;
+              ] ;
+          ]
+          [
+            sp:object media:CarbonSource ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "es"^^xsd:string ;
+              ] ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "es1"^^xsd:string ;
+              ] ;
+            sp:predicate media:hasBiologicalRole ;
+            sp:subject [
+                sp:varName "s1"^^xsd:string ;
+              ] ;
+          ]
+          [
+            sp:object media:CarbonSource ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "es1"^^xsd:string ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                sp:varName "s1"^^xsd:string ;
+              ] ;
+            sp:variable [
+                sp:varName "s"^^xsd:string ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                sp:varName "es1"^^xsd:string ;
+              ] ;
+            sp:variable [
+                sp:varName "es"^^xsd:string ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Filter ;
+            sp:expression [
+                rdf:type sp:notExists ;
+                sp:elements (
+                    [
+                      sp:object [
+                          sp:varName "es2"^^xsd:string ;
+                        ] ;
+                      sp:predicate media:isCarbonSource ;
+                      sp:subject [
+                          sp:varName "s1"^^xsd:string ;
+                        ] ;
+                    ]
+                  ) ;
+              ] ;
+          ]
+        ) ;
+      rdfs:comment "R(239) infers sub-property relation isCarbonSource based on property media:hasBiologicalRole and range media:CarbonSource.#"^^xsd:string ;
+    ] ;
+  spin:rule [
+      rdf:type sp:Construct ;
+      sp:templates (
+          [
+            sp:object [
+                sp:varName "es"^^xsd:string ;
+              ] ;
+            sp:predicate media:isEnergySource ;
+            sp:subject [
+                sp:varName "s"^^xsd:string ;
+              ] ;
+          ]
+          [
+            sp:object media:EnergySource ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "es"^^xsd:string ;
+              ] ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "es1"^^xsd:string ;
+              ] ;
+            sp:predicate media:hasBiologicalRole ;
+            sp:subject [
+                sp:varName "s1"^^xsd:string ;
+              ] ;
+          ]
+          [
+            sp:object media:EnergySource ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "es1"^^xsd:string ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                sp:varName "s1"^^xsd:string ;
+              ] ;
+            sp:variable [
+                sp:varName "s"^^xsd:string ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                sp:varName "es1"^^xsd:string ;
+              ] ;
+            sp:variable [
+                sp:varName "es"^^xsd:string ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Filter ;
+            sp:expression [
+                rdf:type sp:notExists ;
+                sp:elements (
+                    [
+                      sp:object [
+                          sp:varName "es1"^^xsd:string ;
+                        ] ;
+                      sp:predicate media:isEnergySource ;
+                      sp:subject [
+                          sp:varName "s1"^^xsd:string ;
+                        ] ;
+                    ]
+                  ) ;
+              ] ;
+          ]
+        ) ;
+      rdfs:comment "R(238) infers sub-property relation isEnergySource based on property media:hasBiologicalRole and range media:EnergySource.#"^^xsd:string ;
+    ] ;
+  spin:rule [
+      rdf:type sp:Construct ;
+      sp:templates (
+          [
+            sp:object [
+                sp:varName "es"^^xsd:string ;
+              ] ;
+            sp:predicate media:isNitrogenSource ;
+            sp:subject [
+                sp:varName "s"^^xsd:string ;
+              ] ;
+          ]
+          [
+            sp:object media:NitrogenSource ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "es"^^xsd:string ;
+              ] ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "es1"^^xsd:string ;
+              ] ;
+            sp:predicate media:hasBiologicalRole ;
+            sp:subject [
+                sp:varName "s1"^^xsd:string ;
+              ] ;
+          ]
+          [
+            sp:object media:NitrogenSource ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "es1"^^xsd:string ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                sp:varName "s1"^^xsd:string ;
+              ] ;
+            sp:variable [
+                sp:varName "s"^^xsd:string ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                sp:varName "es1"^^xsd:string ;
+              ] ;
+            sp:variable [
+                sp:varName "es"^^xsd:string ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Filter ;
+            sp:expression [
+                rdf:type sp:notExists ;
+                sp:elements (
+                    [
+                      sp:object [
+                          sp:varName "es1"^^xsd:string ;
+                        ] ;
+                      sp:predicate media:NitrogenSource ;
+                      sp:subject [
+                          sp:varName "s1"^^xsd:string ;
+                        ] ;
+                    ]
+                  ) ;
+              ] ;
+          ]
+        ) ;
+      rdfs:comment "R(118) infers sub-property relation media:isNitrogenSource based on property media:hasBiologicalRole and range media:NitrogenSource.#"^^xsd:string ;
+    ] ;
+  spin:rule [
+      rdf:type sp:Construct ;
+      sp:templates (
+          [
+            sp:object [
+                sp:varName "es"^^xsd:string ;
+              ] ;
+            sp:predicate media:isPhosphorusSource ;
+            sp:subject [
+                sp:varName "s"^^xsd:string ;
+              ] ;
+          ]
+          [
+            sp:object media:PhosphorusSource ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "es"^^xsd:string ;
+              ] ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "es1"^^xsd:string ;
+              ] ;
+            sp:predicate media:hasBiologicalRole ;
+            sp:subject [
+                sp:varName "s1"^^xsd:string ;
+              ] ;
+          ]
+          [
+            sp:object media:PhosphorusSource ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "es1"^^xsd:string ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                sp:varName "s1"^^xsd:string ;
+              ] ;
+            sp:variable [
+                sp:varName "s"^^xsd:string ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                sp:varName "es1"^^xsd:string ;
+              ] ;
+            sp:variable [
+                sp:varName "es"^^xsd:string ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Filter ;
+            sp:expression [
+                rdf:type sp:notExists ;
+                sp:elements (
+                    [
+                      sp:object [
+                          sp:varName "es1"^^xsd:string ;
+                        ] ;
+                      sp:predicate media:PhosphorusSource ;
+                      sp:subject [
+                          sp:varName "s1"^^xsd:string ;
+                        ] ;
+                    ]
+                  ) ;
+              ] ;
+          ]
+        ) ;
+      rdfs:comment "R(119) infers sub-property relation media:isPhosphorusSource based on property media:hasBiologicalRole and range media:PhosphorusSource.#"^^xsd:string ;
+    ] ;
+  spin:rule [
+      rdf:type sp:Construct ;
+      sp:templates (
+          [
+            sp:object [
+                sp:varName "es"^^xsd:string ;
+              ] ;
+            sp:predicate media:isSulfurSource ;
+            sp:subject [
+                sp:varName "s"^^xsd:string ;
+              ] ;
+          ]
+          [
+            sp:object media:SulfurSource ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "es"^^xsd:string ;
+              ] ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "es1"^^xsd:string ;
+              ] ;
+            sp:predicate media:hasBiologicalRole ;
+            sp:subject [
+                sp:varName "s1"^^xsd:string ;
+              ] ;
+          ]
+          [
+            sp:object media:SulfurSource ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "es1"^^xsd:string ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                sp:varName "s1"^^xsd:string ;
+              ] ;
+            sp:variable [
+                sp:varName "s"^^xsd:string ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                sp:varName "es1"^^xsd:string ;
+              ] ;
+            sp:variable [
+                sp:varName "es"^^xsd:string ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Filter ;
+            sp:expression [
+                rdf:type sp:notExists ;
+                sp:elements (
+                    [
+                      sp:object [
+                          sp:varName "es1"^^xsd:string ;
+                        ] ;
+                      sp:predicate media:SulfurSource ;
+                      sp:subject [
+                          sp:varName "s1"^^xsd:string ;
+                        ] ;
+                    ]
+                  ) ;
+              ] ;
+          ]
+        ) ;
+      rdfs:comment "R(120) infers sub-property relation media:isSulfurSource based on property media:hasBiologicalRole and range media:SulfurSource.#"^^xsd:string ;
+    ] ;
+  rdfs:label "Substance"^^xsd:string ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+media:SugarAlcohol
+  rdf:type rdfs:Class ;
+  rdfs:label "Sugar alcohol"^^xsd:string ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+media:SulfurSource
+  rdf:type rdfs:Class ;
+  rdfs:label "Sulfur source"^^xsd:string ;
+  rdfs:subClassOf media:BiologicalRole ;
+.
+media:TetracyclineClavulanate
+  rdf:type rdfs:Class ;
+  rdfs:label "Tetracycline clavulanate"^^xsd:string ;
+  rdfs:subClassOf media:AntimicrobialMixture ;
+.
+media:containsIngredient
+  rdf:type rdf:Property ;
+  rdf:type owl:TransitiveProperty ;
+  rdfs:domain media:Component ;
+  rdfs:label "contains ingredient"^^xsd:string ;
+  rdfs:range media:Ingredient ;
+.
+media:hasBiologicalRole
+  rdf:type rdf:Property ;
+  rdfs:range media:BiologicalRole ;
+.
+media:hasComponent
+  rdf:type rdf:Property ;
+  rdf:type owl:TransitiveProperty ;
+  rdfs:domain media:MediaType ;
+  rdfs:label "has component"^^xsd:string ;
+  rdfs:range media:Component ;
+.
+media:hasComponentName
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "has element name"^^xsd:string ;
+  rdfs:subPropertyOf media:hasName ;
+.
+media:hasConcentration
+  rdf:type rdf:Property ;
+  rdf:type owl:FunctionalProperty ;
+  rdfs:domain media:Ingredient ;
+  rdfs:label "has concentration"^^xsd:string ;
+  rdfs:range media:Concentration ;
+.
+media:hasIngredientConcentrationValue
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "has substance concentration value"^^xsd:string ;
+  rdfs:range xsd:float ;
+.
+media:hasIngredientName
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "has ingredient name"^^xsd:string ;
+  rdfs:subPropertyOf media:hasName ;
+.
+media:hasMeasure
+  rdf:type rdf:Property ;
+  rdf:type owl:FunctionalProperty ;
+  rdfs:domain media:Ingredient ;
+  rdfs:label "has measure"^^xsd:string ;
+  rdfs:range media:Measure ;
+.
+media:hasMediaTypeName
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "has media type name"^^xsd:string ;
+  rdfs:subPropertyOf media:hasName ;
+.
+media:hasName
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "has name"^^xsd:string ;
+.
+media:hasSubstance
+  rdf:type rdf:Property ;
+  rdfs:domain rdfs:Resource ;
+  rdfs:label "has substance"^^xsd:string ;
+  rdfs:range media:Substance ;
+.
+media:hasSubstanceName
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "has substance name"^^xsd:string ;
+  rdfs:subPropertyOf media:hasName ;
+.
+media:includesComponent
+  rdf:type rdf:Property ;
+  rdf:type owl:IrreflexiveProperty ;
+  rdfs:domain media:Ingredient ;
+  rdfs:label "includes component"^^xsd:string ;
+  rdfs:range media:Component ;
+.
+media:includesMediaType
+  rdf:type rdf:Property ;
+  rdfs:domain media:Ingredient ;
+  rdfs:label "includes media type"^^xsd:string ;
+  rdfs:range media:MediaType ;
+.
+media:infersGroupMembership
+  rdf:type spin:Template ;
+  spin:body [
+      rdf:type sp:Construct ;
+      sp:templates (
+          [
+            sp:object [
+                sp:varName "g"^^xsd:string ;
+              ] ;
+            sp:predicate [
+                sp:varName "property"^^xsd:string ;
+              ] ;
+            sp:subject spin:_this ;
+          ]
+          [
+            sp:object [
+                sp:varName "group"^^xsd:string ;
+              ] ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "g"^^xsd:string ;
+              ] ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "type"^^xsd:string ;
+              ] ;
+            sp:predicate rdf:type ;
+            sp:subject spin:_this ;
+          ]
+          [
+            rdf:type sp:TriplePath ;
+            sp:object [
+                sp:varName "?0"^^xsd:string ;
+              ] ;
+            sp:path [
+                rdf:type sp:ModPath ;
+                sp:modMax -2 ;
+                sp:modMin 1 ;
+                sp:subPath rdfs:subClassOf ;
+              ] ;
+            sp:subject [
+                sp:varName "type"^^xsd:string ;
+              ] ;
+          ]
+          [
+            sp:object owl:Restriction ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "?0"^^xsd:string ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "group1"^^xsd:string ;
+              ] ;
+            sp:predicate owl:allValuesFrom ;
+            sp:subject [
+                sp:varName "?0"^^xsd:string ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "property"^^xsd:string ;
+              ] ;
+            sp:predicate owl:onProperty ;
+            sp:subject [
+                sp:varName "?0"^^xsd:string ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                rdf:type sp:iri ;
+                sp:arg1 [
+                    rdf:type sp:concat ;
+                    sp:arg1 [
+                        rdf:type sp:str ;
+                        sp:arg1 [
+                            sp:varName "group"^^xsd:string ;
+                          ] ;
+                      ] ;
+                    sp:arg2 "_inferredGroup" ;
+                  ] ;
+              ] ;
+            sp:variable [
+                sp:varName "g"^^xsd:string ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Bind ;
+            sp:expression [
+                sp:varName "group1"^^xsd:string ;
+              ] ;
+            sp:variable [
+                sp:varName "group"^^xsd:string ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Filter ;
+            sp:expression [
+                rdf:type sp:or ;
+                sp:arg1 [
+                    rdf:type sp:regex ;
+                    sp:arg1 [
+                        rdf:type sp:str ;
+                        sp:arg1 [
+                            sp:varName "type"^^xsd:string ;
+                          ] ;
+                      ] ;
+                    sp:arg2 "http://purl.obolibrary.org/obo/CHEBI_" ;
+                  ] ;
+                sp:arg2 [
+                    rdf:type sp:regex ;
+                    sp:arg1 [
+                        rdf:type sp:str ;
+                        sp:arg1 [
+                            sp:varName "type"^^xsd:string ;
+                          ] ;
+                      ] ;
+                    sp:arg2 "http://rdf.ncbi.nlm.nih.gov/pubchem/compound/" ;
+                  ] ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Filter ;
+            sp:expression [
+                rdf:type sp:or ;
+                sp:arg1 [
+                    rdf:type sp:regex ;
+                    sp:arg1 [
+                        rdf:type sp:str ;
+                        sp:arg1 [
+                            sp:varName "group"^^xsd:string ;
+                          ] ;
+                      ] ;
+                    sp:arg2 "http://purl.obolibrary.org/obo/CHEBI_" ;
+                  ] ;
+                sp:arg2 [
+                    rdf:type sp:regex ;
+                    sp:arg1 [
+                        rdf:type sp:str ;
+                        sp:arg1 [
+                            sp:varName "group"^^xsd:string ;
+                          ] ;
+                      ] ;
+                    sp:arg2 "http://rdf.ncbi.nlm.nih.gov/pubchem/compound/" ;
+                  ] ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spin:thisUnbound "true"^^xsd:boolean ;
+      spl:predicate arg:property ;
+      spl:valueType rdf:Property ;
+    ] ;
+  spin:labelTemplate "T19: infers {?property} based on group membership of a given chemical entity {?this}."^^xsd:string ;
+  rdfs:label "infers group membership"^^xsd:string ;
+  rdfs:subClassOf spin:Templates ;
+.
+media:isAntimicrobialAgent
+  rdf:type rdf:Property ;
+  rdfs:domain [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          media:Substance
+          media:Component
+        ) ;
+    ] ;
+  rdfs:label "is antimicrobial agent"^^xsd:string ;
+  rdfs:range media:AntibacterialAgent ;
+  rdfs:subPropertyOf media:hasBiologicalRole ;
+.
+media:isCarbonSource
+  rdf:type rdf:Property ;
+  rdfs:domain media:Substance ;
+  rdfs:label "is carbon source"^^xsd:string ;
+  rdfs:range media:CarbonSource ;
+  rdfs:subPropertyOf media:hasBiologicalRole ;
+.
+media:isEnergySource
+  rdf:type rdf:Property ;
+  rdfs:domain media:Substance ;
+  rdfs:label "is energy source"^^xsd:string ;
+  rdfs:range media:EnergySource ;
+  rdfs:subPropertyOf media:hasBiologicalRole ;
+.
+media:isExogenousElectronAcceptor
+  rdf:type rdf:Property ;
+  rdfs:domain media:Substance ;
+  rdfs:label "is electron acceptor"^^xsd:string ;
+  rdfs:range media:ExogenousElectronAcceptor ;
+  rdfs:subPropertyOf media:hasBiologicalRole ;
+.
+media:isFermentationSubstrate
+  rdf:type rdf:Property ;
+  rdfs:domain media:Substance ;
+  rdfs:label "is fermentation substrate"^^xsd:string ;
+  rdfs:range media:FermentationSubstrate ;
+  rdfs:subPropertyOf media:hasBiologicalRole ;
+.
+media:isMemberOfAnaerobicExogenousElectronAcceptorGroup
+  rdf:type rdf:Property ;
+  rdfs:domain media:Substance ;
+  rdfs:label "is member of anaerobic electron acceptor group"^^xsd:string ;
+  rdfs:range media:AnaerobicExogenousElectronAcceptorGroup ;
+  rdfs:subPropertyOf media:isMemberOfExogenousElectronAcceptorGroup ;
+.
+media:isMemberOfAntimicrobialGroup
+  rdf:type rdf:Property ;
+  rdfs:domain media:Substance ;
+  rdfs:label "is member of antimicrobial group"^^xsd:string ;
+  rdfs:range [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          media:AntimicrobialGroup
+          media:Substance
+        ) ;
+    ] ;
+  rdfs:subPropertyOf media:isMemberOfGroup ;
+.
+media:isMemberOfEnergySourceGroup
+  rdf:type rdf:Property ;
+  rdfs:domain media:Substance ;
+  rdfs:label "is member of energy source group"^^xsd:string ;
+  rdfs:range rdfs:Resource ;
+  rdfs:subPropertyOf media:isMemberOfGroup ;
+.
+media:isMemberOfExogenousElectronAcceptorGroup
+  rdf:type rdf:Property ;
+  rdfs:domain media:Substance ;
+  rdfs:label "is member of exogenous electron acceptor group"^^xsd:string ;
+  rdfs:range media:ExogenousElectronAcceptorGroup ;
+  rdfs:subPropertyOf media:isMemberOfGroup ;
+.
+media:isMemberOfGroup
+  rdf:type rdf:Property ;
+  rdfs:domain media:Substance ;
+  rdfs:label "is member of group"^^xsd:string ;
+.
+media:isMemberOfInorganicCompoundGroup
+  rdf:type rdf:Property ;
+  rdfs:domain media:Substance ;
+  rdfs:label "is member of inorganic compound group"^^xsd:string ;
+  rdfs:range rdfs:Resource ;
+  rdfs:subPropertyOf media:isMemberOfGroup ;
+.
+media:isMemberOfNitrogenSourceGroup
+  rdf:type rdf:Property ;
+  rdfs:domain media:Substance ;
+  rdfs:range rdfs:Resource ;
+  rdfs:subPropertyOf media:isMemberOfGroup ;
+.
+media:isMemberOfOrganicCompoundGroup
+  rdf:type rdf:Property ;
+  rdfs:domain media:Substance ;
+  rdfs:label "is member of carbon source group"^^xsd:string ;
+  rdfs:range media:Substance ;
+  rdfs:subPropertyOf media:isMemberOfGroup ;
+.
+media:isMemberOfPhosphorusGroup
+  rdf:type rdf:Property ;
+  rdfs:domain media:Substance ;
+  rdfs:label "is member of phosphorus group"^^xsd:string ;
+  rdfs:range rdfs:Resource ;
+  rdfs:subPropertyOf media:isMemberOfGroup ;
+.
+media:isMemberOfSulfurGroup
+  rdf:type rdf:Property ;
+  rdfs:domain media:Substance ;
+  rdfs:label "is member of sulfur group"^^xsd:string ;
+  rdfs:range rdfs:Resource ;
+  rdfs:subPropertyOf media:isMemberOfGroup ;
+.
+media:isNitrogenSource
+  rdf:type rdf:Property ;
+  rdfs:domain media:Substance ;
+  rdfs:label "is Nitrogen Source"^^xsd:string ;
+  rdfs:range media:NitrogenSource ;
+  rdfs:subPropertyOf media:hasBiologicalRole ;
+.
+media:isPhosphorusSource
+  rdf:type rdf:Property ;
+  rdfs:domain media:Substance ;
+  rdfs:label "is phosphorus source"^^xsd:string ;
+  rdfs:range media:PhosphorusSource ;
+  rdfs:subPropertyOf media:hasBiologicalRole ;
+.
+media:isSulfurSource
+  rdf:type rdf:Property ;
+  rdfs:domain media:Substance ;
+  rdfs:label "is sulfur source"^^xsd:string ;
+  rdfs:range media:SulfurSource ;
+  rdfs:subPropertyOf media:hasBiologicalRole ;
+.
+<http://en.wikipedia.org/wiki/Yeast_extract>
+  media:hasName "Yeast extract"^^xsd:string ;
+.
+<http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=67271>
+  media:hasName "Peptone"^^xsd:string ;
+.
+<http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?sid=160693032&loc=es_rss>
+  media:hasName "Agar"^^xsd:string ;
+.
+obo:CHEBI_100147
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_100241
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_100246
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_10036
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+  owl:disjointWith obo:CHEBI_1148 ;
+.
+obo:CHEBI_101853
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_102130
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_102265
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_102484
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_102516
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_1148
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_116278
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_124991
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_12936
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_13172
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_132842
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_138856
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_14314
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_14321
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_149836
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_15075
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_15344
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_15354
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_15356
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_15361
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_15366
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_15379
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_15428
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_15443
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_15570
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_15595
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_15603
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_15611
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_15671
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_15672
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_15673
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_15708
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_157175
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_15725
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_15729
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_15740
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_15741
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_15746
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_15748
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_15767
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_15792
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_15824
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_15882
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_15936
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_15966
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_15971
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16000
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16002
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16015
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16024
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16055
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16094
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16135
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16150
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_161680
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_16176
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16183
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16189
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16193
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16235
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16236
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16296
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16301
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16335
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16349
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16383
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16397
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16398
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16414
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16443
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16449
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16452
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16454
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16467
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16482
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16523
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16526
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16534
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16551
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16552
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16567
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16600
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16610
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16632
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16633
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16634
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16643
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16659
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16704
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16765
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16789
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16810
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16811
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16813
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16828
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16830
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16838
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16842
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16857
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16865
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16869
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_16899
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16914
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16919
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16946
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16947
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16958
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16977
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16988
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16995
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_16998
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17029
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17053
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17057
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17061
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17066
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17076
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_17097
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17108
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17113
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17115
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17128
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17148
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17151
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17164
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17170
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17191
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17196
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17203
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17231
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17234
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17240
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17266
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17268
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17272
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17290
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17295
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17296
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17306
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17309
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17315
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17317
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17347
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17364
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17368
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17376
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17418
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17437
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17447
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17497
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17521
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17522
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17533
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17561
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17594
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17596
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17620
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17626
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17632
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17665
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17698
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_17716
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17748
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17754
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17774
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17784
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17790
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17814
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17822
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17833
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_17847
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17854
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17859
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17879
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17895
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17924
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17925
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17968
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17979
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_17992
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_18012
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom obo:CHEBI_33575 ;
+      owl:onProperty media:isMemberOfOrganicCompoundGroup ;
+    ] ;
+.
+obo:CHEBI_18019
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_18022
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_18024
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_18050
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_18059
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_18135
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_18139
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_18147
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_18167
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_18183
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_18186
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_18208
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_18211
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_18222
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_18237
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_18250
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_18257
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_18276
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_18287
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_18295
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_18300
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_18305
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_18333
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_18344
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_18391
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_18397
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_18401
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_18403
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_19984
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_20021
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_20067
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_204928
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_209807
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_21217
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_21349
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_21658
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_2181
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_21860
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_22210
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_22211
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_22529
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_22599
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_22651
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_22653
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_22660
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_23456
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_23639
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_23924
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_23953
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_24175
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_24265
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_24266
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_24297
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_24298
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_24400
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_24848
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_24898
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_24996
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_25017
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_25094
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_25097
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_2511
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_25158
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_25399
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_25482
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_25483
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_26078
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom media:Substance ;
+      owl:onProperty media:isMemberOfPhosphorusGroup ;
+    ] ;
+.
+obo:CHEBI_26092
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_26271
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_26307
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_2637
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_26490
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_26493
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_26546
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_2676
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_26849
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_26986
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_27082
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_27150
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_27248
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_27252
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_27266
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_27446
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_27477
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_27570
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_27594
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_27605
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_27613
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_27644
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_27701
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_27810
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_27856
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_27897
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_27902
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_27904
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_27922
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_28001
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_28009
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_28029
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_28037
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_28044
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_28053
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_28054
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_28066
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_28077
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_28098
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_28120
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_28179
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_28225
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_28260
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_28262
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_28300
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_28304
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_28328
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_28358
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_28479
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_28484
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_28665
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_28669
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_28683
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_28757
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_28800
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_28808
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_28817
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_28847
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_28860
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_28864
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_28915
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_28963
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_28971
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_29005
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_29007
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_29013
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_29016
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_29034
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_29042
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_29069
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_29073
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_29125
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_29309
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_2955
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_2956
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_2968
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_29687
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_29688
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_29749
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_29805
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_29806
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_29864
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_29985
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_29986
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_29990
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_29991
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_29995
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_30031
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_30065
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_30066
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_30089
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_3015
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_30531
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_3057
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_30623
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_30653
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_30719
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_30742
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_30744
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_30745
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_30746
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_30751
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_30754
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_30762
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_30763
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_30764
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_30768
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_30769
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_30772
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_30780
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_30794
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_30796
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_30797
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_30813
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_30816
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_30817
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_30818
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_30832
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_30838
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_30849
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_30852
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_3089
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_30915
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_30921
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_30924
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_30927
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_30928
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_31011
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_31240
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_31255
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_31379
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_31739
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_31810
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_31845
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_31846
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_31964
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_31973
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_320061
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_32019
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_32032
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_32071
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_32103
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_32139
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_32161
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_32162
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_32163
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_32166
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_32215
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_32267
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_32362
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_32398
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_32488
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_32528
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_32544
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_32805
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_32806
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_32816
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_32954
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_32992
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_33198
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_33403
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_33447
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_33508
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_33575
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_33709
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_33720
+  rdf:type rdfs:Class ;
+  rdfs:comment "It needs additional sources to make sure that it is correct."^^xsd:string ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_33838
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_33871
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_33885
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_3393
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_33942
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_33946
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_33947
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_33951
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_33984
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_3478
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_3479
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_3480
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_3485
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_3489
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_3491
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_3493
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_3495
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_3499
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_3502
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_3503
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_3504
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_3506
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_3507
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_3508
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_3510
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_3515
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_3534
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_3537
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_35381
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_3547
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_355510
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_35581
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_35621
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_35825
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_35899
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_36107
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_36218
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_36219
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_36233
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_36986
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_37054
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_3716
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_3732
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_3745
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_37657
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_37684
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_37724
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_37922
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_37943
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_37945
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_37951
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_38290
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_38472
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_404903
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_40538
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_40585
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_40886
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_4139
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_4153
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_4178
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_41865
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_4208
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_42111
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_422
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_42355
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_42564
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_42717
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_4304
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_4392
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_43943
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_43968
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_4511
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_45257
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_45296
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_45373
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_45571
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_45744
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_45924
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_4640
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_46645
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_46983
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_46994
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_46997
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_47014
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_47015
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_472657
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_474014
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_474053
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_47544
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_47693
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_478164
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_47954
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_48095
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_48131
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_4853
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_48844
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_48935
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_48942
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_48944
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_49410
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_49415
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_495055
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_49566
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_50048
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_50144
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_50199
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_50398
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_50562
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_506227
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_50694
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_50699
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_50845
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_5098
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_51208
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_51210
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_51352
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_51758
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_51770
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_51788
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_51817
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_51850
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_52015
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_52060
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_52071
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_52427
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_52429
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_5280
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_5291
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_5312
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_53258
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_53455
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_53727
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_5417
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_553473
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_5543
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_554446
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_55486
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_55490
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_55507
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_55548
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_5683
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_58454
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_58658
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_58974
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_59040
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_59063
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_59213
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_5931
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_59343
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_59589
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_59640
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_599928
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_600103
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_60027
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_6030
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_60312
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_6104
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_6182
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_61827
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_61993
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_62318
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_62345
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_62965
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_62983
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_63043
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_63150
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_63153
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_63154
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_63214
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_63334
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_6359
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_63598
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_63607
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_63611
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_63675
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_64103
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_6472
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_65327
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_65328
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_6650
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_67121
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_6731
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_6805
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_6824
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_6827
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_68428
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_6909
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_6919
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_70718
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_70744
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_71229
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_71415
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_71422
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_73712
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_73762
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_73771
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_73788
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_73804
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_73898
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_74120
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_7438
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_7447
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_7507
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_75144
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_75146
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_75176
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_75228
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_75250
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_75258
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_7528
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_76282
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_76283
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_7731
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_77780
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_77788
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_7809
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_7916
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_79285
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_8082
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_81278
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_8232
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_8255
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_82699
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_82721
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_82838
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_83813
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_85260
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_85264
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_85267
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_85274
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_85363
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_8909
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_8934
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_9169
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_9212
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_9215
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_9300
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_9321
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_9322
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_9328
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_9331
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_9332
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_9337
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_9391
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_9421
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_952
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:ChemicalEntity ;
+.
+obo:CHEBI_9587
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+obo:CHEBI_9763
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+compound:CID10250769
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+compound:CID124093
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+compound:CID187764
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+compound:CID202225
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+compound:CID213043
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+compound:CID2799
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+compound:CID287180
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+compound:CID3000579
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+compound:CID3755
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+compound:CID53522
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+compound:CID5479
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+compound:CID5487888
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+compound:CID6410758
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+compound:CID6436055
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+compound:CID65755
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+compound:CID65864
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+compound:CID6870646
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+compound:CID68760
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+compound:CID68933
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+compound:CID71141
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+compound:CID71260
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+compound:CID71729958
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+compound:CID71736
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+compound:CID71807
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+compound:CID72144
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+compound:CID73303
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+compound:CID73425380
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+compound:CID91562
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+compound:CID9571062
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf media:AntimicrobialEntity ;
+.
+<http://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:15377>
+  media:hasName "Distilled water"^^xsd:string ;
+.

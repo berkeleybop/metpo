@@ -1,0 +1,48 @@
+@prefix obo:   <http://purl.obolibrary.org/obo/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix interchange: <http://namesforlife.com/ns/interchange> .
+@prefix N4L:   <http://doi.org/10.1601/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix media: <http://dx.doi.org/10.1601/media#> .
+
+N4L:ex.8370rid.52_N65565_SubstanceCondition
+        a            rdfs:Resource , <file:///eclipse-owlim/workspace/XML2Ontology/fosfomycin> , rdf:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "300"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.8370rid.52_N65565_N65568_Unit .
+
+N4L:ex.8370rid.52_N65565_N65568_Unit
+        a       <file:///eclipse-owlim/workspace/XML2Ontology/?g> , rdf:Resource .
+
+N4L:ex.8370rid.52_N65549_Observation
+        a               N4L:OrganismObservation , rdf:Resource ;
+        N4L:composedOf  N4L:ex.8370rid.52_N65549_GrowthObservation .
+
+N4L:ex.8370rid.52_N65551_SubstanceCondition
+        a            rdfs:Resource , <file:///eclipse-owlim/workspace/XML2Ontology/penicillin> , rdf:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "2"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.8370rid.52_N65551_N65554_Unit .
+
+N4L:ex.8370rid.52_N65563_Observation
+        a               N4L:OrganismObservation , rdf:Resource ;
+        N4L:composedOf  N4L:ex.8370rid.52_N65563_GrowthObservation .
+
+N4L:ex.8370rid.52_N65551_N65554_Unit
+        a       <file:///eclipse-owlim/workspace/XML2Ontology/U/ml> , rdf:Resource .
+
+N4L:ex.8370rid.52_N65549_GrowthObservation
+        a                           N4L:GrowthObservation , N4L:InhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstaneceCondition  N4L:ex.8370rid.52_N65551_SubstanceCondition .
+
+N4L:ex.8370  a                      N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.8370rid.52_N65563_Observation , N4L:ex.8370rid.52_N65549_Observation .
+
+N4L:ex.8370rid.52_N65563_GrowthObservation
+        a                           N4L:GrowthObservation , N4L:InhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstaneceCondition  N4L:ex.8370rid.52_N65565_SubstanceCondition .
+
+N4L:    a            owl:Ontology ;
+        owl:imports  N4L: .

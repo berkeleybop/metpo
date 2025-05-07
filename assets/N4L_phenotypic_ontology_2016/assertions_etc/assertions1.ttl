@@ -1,0 +1,3521 @@
+@prefix obo:   <http://purl.obolibrary.org/obo/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix interchange: <http://namesforlife.com/ns/interchange> .
+@prefix N4L:   <http://doi.org/10.1601/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+N4L:tx.27N65709  a  obo:CHEBI_17698 , rdfs:Resource .
+
+N4L:ex.578  a                       N4L:Strain , rdfs:Resource ;
+        N4L:hasCellularActivity     N4L:ex.578N67145 ;
+        N4L:hasOrganismObservation  N4L:ex.578Observation .
+
+N4L:ex.13310N65949  a  obo:CHEBI_5312 , rdfs:Resource .
+
+N4L:ex.11354N65678Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.3719N65989  a  obo:CHEBI_6104 , rdfs:Resource .
+
+N4L:ex.11354N65699N65698
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.11354N65698Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.11354N65698 .
+
+N4L:ex.5001N67130  a                  N4L:Respiration , rdfs:Resource ;
+        N4L:hasCellularActivityOfSubstance
+                N4L:ex.5001N67130N67132 ;
+        N4L:hasCellularActivityValue  true .
+
+N4L:ex.166N66435N66437N66439
+        a            obo:CHEBI_28077 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "25.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.166N66439 .
+
+N4L:ex.8605Observation
+        a               N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf  N4L:ex.8605N67531 , N4L:ex.8605N66738N66737 , N4L:ex.8605N66742N66741 , N4L:ex.8605N66751N66750 , N4L:ex.8605N67507 , N4L:ex.8605N66717N66716 , N4L:ex.8605N66701N66700 , N4L:ex.8605N66725N66724 , N4L:ex.8605N66747N66746 , N4L:ex.8605N66705N66704 , N4L:ex.8605N67523 , N4L:ex.8605N66713N66712 , N4L:ex.8605N66729N66728 , N4L:ex.8605N66733N66732 , N4L:ex.8605N67515 , N4L:ex.8605N66709N66708 , N4L:ex.8605N66721N66720 .
+
+N4L:ex.9720N67622  a  N4L:TemperatureCondition , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "30.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.9720N67624 .
+
+N4L:ex.4950  a                      N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.4950Observation .
+
+N4L:ex.11167N65772N65774N65776
+        a            obo:CHEBI_28971 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "100.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.11167N65776 .
+
+N4L:ex.8770N66822  a  obo:CHEBI_6827 , rdfs:Resource .
+
+N4L:ex.3848Observation
+        a               N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf  N4L:ex.3848N65626 , N4L:ex.3848N65618 , N4L:ex.3848N65611 .
+
+N4L:ex.193N67084  a       N4L:OptimalGrowth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.193N67086 .
+
+N4L:ex.13323N66242N66244N66246
+        a            obo:CHEBI_9332 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "23.75"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.13323N66246 .
+
+N4L:ex.7801N66358Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.223N66612  a                N4L:UninhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.223N66612N66614 .
+
+N4L:ex.3803N67267  a  obo:UO_0000273 , rdfs:Resource .
+
+N4L:ex.578N67160  a       N4L:NoGrowth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.578N67162 .
+
+N4L:ex.8465  a                      N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.8465Observation .
+
+N4L:ex.13323N66242  a              N4L:UninhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.13323N66242N66244N66246 .
+
+N4L:ex.7639N67679  a  obo:UO_0000027 , rdfs:Resource .
+
+N4L:ex.9600N67577  a  obo:UO_0000027 , rdfs:Resource .
+
+N4L:ex.11354N65661Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.22658N66284N66286N66288
+        a            obo:CHEBI_7507 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "5.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.22658N66288 .
+
+N4L:ex.512N66649  a  obo:CHEBI_28669 , rdfs:Resource .
+
+N4L:ex.166N66447  a  obo:UO_0000274 , rdfs:Resource .
+
+N4L:ex.3857N65582  a      N4L:OptimalGrowth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.3857N65584 .
+
+N4L:ex.8465N66854  a  obo:UO_0000274 , rdfs:Resource .
+
+N4L:ex.9600N67591  a  N4L:TemperatureCondition , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "65.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.9600N67593 .
+
+N4L:ex.8681N66785N66784
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.8681N66784Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.8681N66784 .
+
+N4L:ex.11490N67453  a  obo:UO_0000027 , rdfs:Resource .
+
+N4L:ex.13323N66186  a  obo:UO_0000023 , rdfs:Resource .
+
+N4L:ex.615  a             N4L:Strain , rdfs:Resource ;
+        N4L:hasPhenotype  N4L:ex.615Phenotype .
+
+N4L:tx.27Phenotype  a  N4L:Resistant , rdfs:Resource .
+
+N4L:ex.1041N67657  a      N4L:OptimalGrowth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.1041N67659 .
+
+N4L:ex.3823  a                   N4L:Strain , rdfs:Resource ;
+        N4L:hasCellularActivity  N4L:ex.3823N66922 ;
+        N4L:hasPhenotype         N4L:ex.3823Phenotype .
+
+N4L:ex.13323N66122  a              N4L:InhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.13323N66122N66124N66126 .
+
+N4L:ex.11029N67723  a  obo:UO_0000027 , rdfs:Resource .
+
+N4L:ex.8605N66732  a  obo:CHEBI_37943 , rdfs:Resource .
+
+N4L:ex.9720Observation
+        a               N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf  N4L:ex.9720N67636 , N4L:ex.9720N67628 , N4L:ex.9720N67620 .
+
+N4L:ex.8605N66724Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.11029N67699  a  obo:UO_0000027 , rdfs:Resource .
+
+N4L:ex.8605N66700  a  obo:CHEBI_48923 , rdfs:Resource .
+
+N4L:ex.3857Phenotype  a  N4L:StrictAerobe , rdfs:Resource .
+
+N4L:ex.11354N65690  a  obo:CHEBI_6104 , rdfs:Resource .
+
+N4L:ex.10785N66894  a                 N4L:Respiration , rdfs:Resource ;
+        N4L:hasCellularActivityOfSubstance
+                N4L:ex.10785N66894N66896 ;
+        N4L:hasCellularActivityValue  false .
+
+N4L:ex.1769N67070  a      N4L:Growth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.1769N67072 .
+
+N4L:ex.9536N67496  a  N4L:TemperatureCondition , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "14.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.9536N67498 .
+
+N4L:ex.11354N65686Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.8465N66858N66860N66862
+        a            obo:CHEBI_27902 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "12.5"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.8465N66862 .
+
+N4L:ex.1551N65794  a  obo:UO_0000274 , rdfs:Resource .
+
+N4L:ex.8770N66835  a  obo:CHEBI_100147 , rdfs:Resource .
+
+N4L:ex.1769Observation
+        a               N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf  N4L:ex.1769N67076 , N4L:ex.1769N67070 .
+
+N4L:ex.8605N66750Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.8923N67365  a               N4L:Growth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.8923N67365N67367 .
+
+N4L:ex.8360Phenotype  a  N4L:StrictAnaerobe , rdfs:Resource .
+
+N4L:ex.11354N65650N65649
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.11354N65649Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.11354N65649 .
+
+N4L:ex.4950Observation
+        a               N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf  N4L:ex.4950N67685 .
+
+N4L:ex.2807N65918  a  obo:UO_0000023 , rdfs:Resource .
+
+N4L:ex.8657Observation
+        a       N4L:OrganismObservation , rdfs:Resource ;
+        N4L:hasInclusionBodyObservation
+                N4L:ex.8657N67736 .
+
+N4L:ex.8923N67333  a               N4L:Growth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.8923N67333N67335 .
+
+N4L:ex.3848N65628  a  N4L:Anoxic , rdfs:Resource .
+
+N4L:ex.13310N65974Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.8605N67517  a  N4L:TemperatureCondition , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "45.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.8605N67519 .
+
+N4L:ex.22658N66318  a  obo:UO_0000274 , rdfs:Resource .
+
+N4L:ex.8923N67301  a               N4L:NoGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.8923N67301N67303 .
+
+N4L:ex.8359Phenotype  a  N4L:StrictAnaerobe , rdfs:Resource .
+
+N4L:ex.383N66393N66395N66397
+        a            obo:CHEBI_6104 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "150.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.383N66397 .
+
+N4L:ex.6749Phenotype  a  N4L:Mesophile , rdfs:Resource .
+
+N4L:ex.8605N67531  a      N4L:OptimalGrowth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.8605N67533 .
+
+N4L:ex.8770N66807N66806
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.8770N66806Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.8770N66806 .
+
+N4L:tx.27N65710N65709
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:tx.27N65709Phenotype ;
+        N4L:hasSubstanceCondition  N4L:tx.27N65709 .
+
+N4L:ex.580N65557  a       N4L:Growth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.580N65559 .
+
+N4L:ex.8293N67197  a  obo:UO_0000196 , rdfs:Resource .
+
+N4L:ex.820N67052  a       N4L:OptimalGrowth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.820N67054 .
+
+N4L:ex.8681  a                      N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.8681Observation ;
+        N4L:hasPhenotype            N4L:ex.8681Phenotype .
+
+N4L:ex.11167N65776  a  obo:UO_0000274 , rdfs:Resource .
+
+N4L:ex.8621Phenotype  a  N4L:AnaerobicRespiration , rdfs:Resource .
+
+N4L:ex.454N66570N66572N66574
+        a            obo:CHEBI_17698 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "100.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.454N66574 .
+
+N4L:ex.8681N66793N66792
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.8681N66792Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.8681N66792 .
+
+N4L:ex.11094N66908  a  N4L:Anoxic , rdfs:Resource .
+
+N4L:ex.895  a                       N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.895Observation .
+
+N4L:ex.11167N65744  a  obo:UO_0000274 , rdfs:Resource .
+
+N4L:ex.8770N66818Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.1557N67062  a  N4L:PHCondition , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "7.45"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.1557N67064 .
+
+N4L:ex.11354N65657  a  obo:CHEBI_17698 , rdfs:Resource .
+
+N4L:ex.10756N65851  a  obo:CHEBI_17698 , rdfs:Resource .
+
+N4L:ex.6159N66507  a               N4L:UninhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.6159N66507N66509N66511 .
+
+N4L:ex.9672N67285  a  obo:UO_0000274 , rdfs:Resource .
+
+N4L:ex.6159N66553  a  obo:UO_0000023 , rdfs:Resource .
+
+N4L:ex.8465N66866N66868N66870
+        a            obo:CHEBI_17833 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "10.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.8465N66870 .
+
+N4L:ex.8465N66842N66844N66846
+        a            obo:CHEBI_28971 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "25.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.8465N66846 .
+
+N4L:tx.27N65717  a  obo:CHEBI_16869 , rdfs:Resource .
+
+N4L:ex.223N66632N66634
+        a       obo:CHEBI_6104 , rdfs:Resource .
+
+N4L:ex.842Observation
+        a               N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf  N4L:ex.842N67203 .
+
+N4L:ex.11354Phenotype
+        a       N4L:Resistant , N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.7801N66346N66345
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.7801N66345Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.7801N66345 .
+
+N4L:ex.383N66369  a                N4L:UninhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.383N66369N66371N66373 .
+
+N4L:ex.7801N66353Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.6159N66497  a               N4L:NoGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.6159N66497N66499N66501 .
+
+N4L:ex.6159N66518N66520N66522
+        a            obo:CHEBI_6104 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "30.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.6159N66522 .
+
+N4L:ex.9720N67630  a  N4L:TemperatureCondition , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "5.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.9720N67632 .
+
+N4L:ex.3825N67110  a      N4L:NoGrowth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.3825N67112 .
+
+N4L:ex.8770N66830  a  obo:CHEBI_27601 , rdfs:Resource .
+
+N4L:ex.578N67154  a       N4L:NoGrowth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.578N67156 .
+
+N4L:ex.15031Observation
+        a               rdfs:Resource , N4L:OrganismObservation ;
+        N4L:composedOf  N4L:ex.15031N66037N66036 , N4L:ex.15031N66017N66016 , N4L:ex.15031N66057N66056 , N4L:ex.15031N66045N66044 , N4L:ex.15031N66041N66040 , N4L:ex.15031N66066N66065 , N4L:ex.15031N66025N66024 , N4L:ex.15031N66013N66012 , N4L:ex.15031N66029N66028 , N4L:ex.15031N66049N66048 , N4L:ex.15031N66033N66032 , N4L:ex.15031N66021N66020 , N4L:ex.15031N66062N66061 , N4L:ex.15031N66053N66052 .
+
+N4L:ex.13323N66236  a  obo:UO_0000023 , rdfs:Resource .
+
+N4L:ex.223Phenotype  a  N4L:Resistant , rdfs:Resource .
+
+N4L:ex.512N66657Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.13323N66232N66234N66236
+        a            obo:CHEBI_9332 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "300.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.13323N66236 .
+
+N4L:ex.8770Observation
+        a               rdfs:Resource , N4L:OrganismObservation ;
+        N4L:composedOf  N4L:ex.8770N66811N66810 , N4L:ex.8770N66823N66822 , N4L:ex.8770N66807N66806 , N4L:ex.8770N66803N66802 , N4L:ex.8770N66819N66818 , N4L:ex.8770N66815N66814 , N4L:ex.8770N66827N66826 , N4L:ex.8770N66836N66835 , N4L:ex.8770N66831N66830 .
+
+N4L:ex.3857N65576  a  N4L:OxygenCondition , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "5.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.3857N65578 .
+
+N4L:ex.512N66689  a  obo:CHEBI_28971 , rdfs:Resource .
+
+N4L:ex.9600N67585  a  obo:UO_0000027 , rdfs:Resource .
+
+N4L:ex.3803N67243  a               N4L:NoGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.3803N67243N67245N67247 .
+
+N4L:ex.9672Observation
+        a               N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf  N4L:ex.9672N67289 , N4L:ex.9672N67281 , N4L:ex.9672N67273 .
+
+N4L:ex.223N66596  a                N4L:NoGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.223N66596N66598 .
+
+N4L:ex.512N66657  a  obo:CHEBI_6104 , rdfs:Resource .
+
+N4L:ex.166N66455  a  obo:UO_0000274 , rdfs:Resource .
+
+N4L:ex.8465N66862  a  obo:UO_0000274 , rdfs:Resource .
+
+N4L:ex.22658N66274N66276N66278
+        a            obo:CHEBI_6104 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "50.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.22658N66278 .
+
+N4L:ex.8770N66815N66814
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.8770N66814Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.8770N66814 .
+
+N4L:ex.11490N67461  a  obo:UO_0000027 , rdfs:Resource .
+
+N4L:ex.22658Observation
+        a               N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf  N4L:ex.22658N66284 , N4L:ex.22658N66304 , N4L:ex.22658N66324 , N4L:ex.22658N66274 , N4L:ex.22658N66314 , N4L:ex.22658N66264 , N4L:ex.22658N66294 , N4L:ex.22658N66334 .
+
+N4L:ex.8681Observation
+        a               N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf  N4L:ex.8681N66785N66784 , N4L:ex.8681N66773N66772 , N4L:ex.8681N66789N66788 , N4L:ex.8681N66769N66768 , N4L:ex.8681N66777N66776 , N4L:ex.8681N66797N66796 , N4L:ex.8681N66793N66792 , N4L:ex.8681N66757N66756 , N4L:ex.8681N66765N66764 , N4L:ex.8681N66781N66780 , N4L:ex.8681N66761N66760 .
+
+N4L:ex.3536N67104  a  N4L:HighPHCondition , rdfs:Resource .
+
+N4L:ex.13323N66116  a  obo:UO_0000023 , rdfs:Resource .
+
+N4L:ex.8681N66757N66756
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.8681N66756Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.8681N66756 .
+
+N4L:ex.13323N66162  a              N4L:InhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.13323N66162N66164N66166 .
+
+N4L:ex.15031N66061  a  obo:CHEBI_17076 , rdfs:Resource .
+
+N4L:ex.454N66566  a  obo:UO_0000274 , rdfs:Resource .
+
+N4L:ex.7801N66363N66362
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.7801N66362Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.7801N66362 .
+
+N4L:ex.578Observation
+        a               N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf  N4L:ex.578N67166 , N4L:ex.578N67160 , N4L:ex.578N67154 .
+
+N4L:ex.8681N66768Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.8605N66712Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.1041Phenotype  a  N4L:Mesophile , rdfs:Resource .
+
+N4L:ex.7801N66354N66353
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.7801N66353Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.7801N66353 .
+
+N4L:ex.10601Observation
+        a       N4L:OrganismObservation , rdfs:Resource ;
+        N4L:hasInclusionBodyObservation
+                N4L:ex.10601N67746 .
+
+N4L:ex.11354  a                     N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.11354Observation ;
+        N4L:hasPhenotype            N4L:ex.11354Phenotype .
+
+N4L:ex.7801Phenotype  a  N4L:Susceptible , N4L:Resistant , rdfs:Resource .
+
+N4L:ex.22658N66324N66326N66328
+        a            obo:CHEBI_5312 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "5.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.22658N66328 .
+
+N4L:ex.8923N67373  a               N4L:Growth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.8923N67373N67375 .
+
+N4L:ex.11354N65679N65678
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.11354N65678Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.11354N65678 .
+
+N4L:ex.8923N67341  a               N4L:Growth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.8923N67341N67343 .
+
+N4L:ex.6749  a            N4L:Strain , rdfs:Resource ;
+        N4L:hasPhenotype  N4L:ex.6749Phenotype .
+
+N4L:ex.600N67763  a  N4L:Magnetosome , rdfs:Resource .
+
+N4L:ex.8605N67525  a  N4L:TemperatureCondition , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "25.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.8605N67527 .
+
+N4L:ex.1551N65790N65792N65794
+        a            obo:CHEBI_48923 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "10.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.1551N65794 .
+
+N4L:ex.820N67046  a       N4L:NoGrowth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.820N67048 .
+
+N4L:ex.15031N66016Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.3155Phenotype  a  N4L:FacultativeAnaerobe , rdfs:Resource .
+
+N4L:ex.11013  a                     N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.11013Observation .
+
+N4L:ex.15031N66048Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.223N66622N66624
+        a       obo:CHEBI_17334 , rdfs:Resource .
+
+N4L:ex.11013N67425  a  obo:UO_0000274 , rdfs:Resource .
+
+N4L:ex.15031N66028  a  obo:CHEBI_7507 , rdfs:Resource .
+
+N4L:ex.61Phenotype  a  N4L:Hyperthermophile , rdfs:Resource .
+
+N4L:ex.8605N66737Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.11167N65784  a  obo:UO_0000274 , rdfs:Resource .
+
+N4L:ex.2807N65884  a               N4L:NoGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.2807N65884N65886N65888 .
+
+N4L:ex.7801N66362  a  obo:CHEBI_17698 , rdfs:Resource .
+
+N4L:ex.9536Phenotype  a  N4L:Psychrophile , rdfs:Resource .
+
+N4L:ex.166N66459N66461N66463
+        a            obo:CHEBI_6104 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "200.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.166N66463 .
+
+N4L:ex.8770N66823N66822
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.8770N66822Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.8770N66822 .
+
+N4L:ex.11167N65752  a  obo:UO_0000274 , rdfs:Resource .
+
+N4L:ex.8923Observation
+        a               N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf  N4L:ex.8923N67301 , N4L:ex.8923N67357 , N4L:ex.8923N67381 , N4L:ex.8923N67333 , N4L:ex.8923N67373 , N4L:ex.8923N67341 , N4L:ex.8923N67325 , N4L:ex.8923N67365 , N4L:ex.8923N67317 , N4L:ex.8923N67349 , N4L:ex.8923N67309 .
+
+N4L:ex.22658N66284  a              N4L:UninhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.22658N66284N66286N66288 .
+
+N4L:ex.166N66427N66429N66431
+        a            obo:CHEBI_17698 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "75.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.166N66431 .
+
+N4L:ex.8681N66765N66764
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.8681N66764Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.8681N66764 .
+
+N4L:ex.11354N65665  a  obo:CHEBI_48923 , rdfs:Resource .
+
+N4L:ex.8621N66968  a                  N4L:Respiration , rdfs:Resource ;
+        N4L:hasCellularActivityOfSubstance
+                N4L:ex.8621N66968N66970 ;
+        N4L:hasCellularActivityValue  true .
+
+N4L:tx.27N65725Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.9672N67293  a  obo:UO_0000274 , rdfs:Resource .
+
+N4L:ex.13323N66092N66094N66096
+        a            obo:CHEBI_6104 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "10.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.13323N66096 .
+
+N4L:ex.11167N65740N65742N65744
+        a            obo:CHEBI_27902 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "12.5"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.11167N65744 .
+
+N4L:ex.842N67203  a       N4L:OptimalGrowth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.842N67205 .
+
+N4L:ex.383N66401  a                N4L:UninhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.383N66401N66403N66405 .
+
+N4L:ex.2807N65894N65896N65898
+        a            obo:CHEBI_17833 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "10.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.2807N65898 .
+
+N4L:tx.27N65725  a  obo:CHEBI_28001 , rdfs:Resource .
+
+N4L:ex.15031N66049N66048
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.15031N66048Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.15031N66048 .
+
+N4L:ex.11354N65654N65653
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.11354N65653Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.11354N65653 .
+
+N4L:ex.9720N67624  a  obo:UO_0000027 , rdfs:Resource .
+
+N4L:ex.8605N66720Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.383N66377  a                N4L:UninhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.383N66377N66379N66381 .
+
+N4L:ex.3825Observation
+        a               N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf  N4L:ex.3825N67122 , N4L:ex.3825N67116 , N4L:ex.3825N67110 .
+
+N4L:ex.193N67086  a  N4L:PHCondition , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "6.75"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.193N67088 .
+
+N4L:ex.895N67213  a       N4L:OptimalGrowth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.895N67215 .
+
+N4L:ex.10993Observation
+        a               N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf  N4L:ex.10993N67607 .
+
+N4L:ex.11354N65682Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.9940  a                      rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.9940Observation .
+
+N4L:ex.578N67145N67147
+        a       <http://doi.org/10.1601/media#Substance> , rdfs:Resource .
+
+N4L:ex.10993N67611  a  obo:UO_0000027 , rdfs:Resource .
+
+N4L:ex.578N67162  a  N4L:Microaerobic , rdfs:Resource .
+
+N4L:ex.8681N66788  a  obo:CHEBI_8309 , rdfs:Resource .
+
+N4L:ex.11354N65687N65686
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.11354N65686Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.11354N65686 .
+
+N4L:ex.3803N67237  a  obo:UO_0000000 , rdfs:Resource .
+
+N4L:ex.13323N66212  a              N4L:UninhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.13323N66212N66214N66216 .
+
+N4L:ex.8681N66756  a  obo:CHEBI_3393 , rdfs:Resource .
+
+N4L:ex.3857N65584  a  N4L:OxygenCondition , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "8.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.3857N65586 .
+
+N4L:ex.11354N65649Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.8293Observation
+        a               N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf  N4L:ex.8293N67193 .
+
+N4L:ex.9600N67593  a  obo:UO_0000027 , rdfs:Resource .
+
+N4L:ex.1551N65798N65800N65802
+        a            obo:CHEBI_28971 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "50.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.1551N65802 .
+
+N4L:ex.13310N65970Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.3857  a                      N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.3857Observation ;
+        N4L:hasPhenotype            N4L:ex.3857Phenotype .
+
+N4L:ex.512N66677Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.11354N65702  a  obo:CHEBI_7507 , rdfs:Resource .
+
+N4L:ex.512N66665  a  obo:CHEBI_7507 , rdfs:Resource .
+
+N4L:ex.166N66467N66469N66471
+        a            obo:CHEBI_28971 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "200.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.166N66471 .
+
+N4L:ex.166N66463  a  obo:UO_0000274 , rdfs:Resource .
+
+N4L:ex.166N66443N66445N66447
+        a            obo:CHEBI_17076 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "200.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.166N66447 .
+
+N4L:ex.1041N67659  a  N4L:TemperatureCondition , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "35.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.1041N67661 .
+
+N4L:ex.8465N66870  a  obo:UO_0000274 , rdfs:Resource .
+
+N4L:ex.13323N66156  a  obo:UO_0000023 , rdfs:Resource .
+
+N4L:ex.3825  a                      N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.3825Observation .
+
+N4L:ex.1551N65806  a               N4L:InhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.1551N65806N65808N65810 .
+
+N4L:ex.11167N65780N65782N65784
+        a            obo:CHEBI_28077 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "100.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.11167N65784 .
+
+N4L:ex.11354N65678  a  obo:CHEBI_17076 , rdfs:Resource .
+
+N4L:ex.166N66431  a  obo:UO_0000274 , rdfs:Resource .
+
+N4L:ex.6159N66528  a               N4L:UninhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.6159N66528N66530N66532 .
+
+N4L:ex.10756N65859Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.8770N66831N66830
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.8770N66830Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.8770N66830 .
+
+N4L:ex.13500N65938N65937
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.13500N65937Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.13500N65937 .
+
+N4L:ex.15031N66066N66065
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.15031N66065Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.15031N66065 .
+
+N4L:ex.9940N67741  a  obo:CHEBI_16838 , rdfs:Resource .
+
+N4L:ex.454N66574  a  obo:UO_0000274 , rdfs:Resource .
+
+N4L:ex.1769N67072  a  N4L:Microaerobic , rdfs:Resource .
+
+N4L:ex.13310N65978  a  obo:CHEBI_8310 , rdfs:Resource .
+
+N4L:ex.8681N66773N66772
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.8681N66772Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.8681N66772 .
+
+N4L:ex.9536N67498  a  obo:UO_0000027 , rdfs:Resource .
+
+N4L:ex.6159N66542  a  obo:UO_0000000 , rdfs:Resource .
+
+N4L:ex.8770N66814Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.820  a                       N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.820Observation .
+
+N4L:ex.15031N66057N66056
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.15031N66056Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.15031N66056 .
+
+N4L:ex.11354N65662N65661
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.11354N65661Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.11354N65661 .
+
+N4L:ex.223N66627  a  obo:CHEBI_6104 , rdfs:Resource .
+
+N4L:ex.13323N66082  a              N4L:InhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.13323N66082N66084N66086 .
+
+N4L:ex.3803N67253N67255N67257
+        a            obo:CHEBI_27902 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "10.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.3803N67257 .
+
+N4L:ex.223N66612N66614
+        a       obo:CHEBI_28971 , rdfs:Resource .
+
+N4L:ex.9536N67480  a  N4L:TemperatureCondition , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "6.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.9536N67482 .
+
+N4L:ex.8923N67381  a               N4L:Growth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.8923N67381N67383 .
+
+N4L:ex.8621N66968N66970
+        a       obo:CHEBI_15379 , rdfs:Resource .
+
+N4L:ex.9600Observation
+        a               N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf  N4L:ex.9600N67589 , N4L:ex.9600N67581 , N4L:ex.9600N67573 , N4L:ex.9600N67565 .
+
+N4L:ex.22658N66314N66316N66318
+        a            obo:CHEBI_48923 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "5.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.22658N66318 .
+
+N4L:ex.1769  a                      N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.1769Observation .
+
+N4L:ex.8605N67519  a  obo:UO_0000027 , rdfs:Resource .
+
+N4L:ex.8681N66788Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.22658N66334  a              N4L:InhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.22658N66334N66336N66338 .
+
+N4L:ex.11354Observation
+        a               rdfs:Resource , N4L:OrganismObservation ;
+        N4L:composedOf  N4L:ex.11354N65703N65702 , N4L:ex.11354N65654N65653 , N4L:ex.11354N65662N65661 , N4L:ex.11354N65699N65698 , N4L:ex.11354N65687N65686 , N4L:ex.11354N65658N65657 , N4L:ex.11354N65695N65694 , N4L:ex.11354N65666N65665 , N4L:ex.11354N65683N65682 , N4L:ex.11354N65674N65673 , N4L:ex.11354N65650N65649 , N4L:ex.11354N65679N65678 , N4L:ex.11354N65691N65690 , N4L:ex.11354N65670N65669 .
+
+N4L:ex.3857N65565  a      N4L:Growth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.3857N65567 .
+
+N4L:ex.11354N65695N65694
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.11354N65694Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.11354N65694 .
+
+N4L:ex.8605N67533  a  N4L:TemperatureCondition , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "30.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.8605N67535 .
+
+N4L:ex.11029Observation
+        a               N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf  N4L:ex.11029N67719 , N4L:ex.11029N67711 , N4L:ex.11029N67703 , N4L:ex.11029N67695 .
+
+N4L:ex.512N66653Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.580N65559  a  N4L:Anoxic , rdfs:Resource .
+
+N4L:ex.820N67054  a  N4L:Anoxic , rdfs:Resource .
+
+N4L:ex.10756N65839  a  obo:CHEBI_28971 , rdfs:Resource .
+
+N4L:ex.2807N65878  a  obo:UO_0000023 , rdfs:Resource .
+
+N4L:ex.8605  a                      N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.8605Observation ;
+        N4L:hasPhenotype            N4L:ex.8605Phenotype .
+
+N4L:    a            owl:Ontology ;
+        owl:imports  N4L: .
+
+N4L:ex.15031N66036  a  obo:CHEBI_18208 , rdfs:Resource .
+
+N4L:ex.22658N66278  a  obo:UO_0000274 , rdfs:Resource .
+
+N4L:ex.1557N67064  a  obo:UO_0000196 , rdfs:Resource .
+
+N4L:ex.15031Phenotype
+        a       N4L:Resistant , N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.11013N67401  a              N4L:Growth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.11013N67401N67403N67405 .
+
+N4L:ex.15031N66036Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.13310N65945Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.11167N65760  a  obo:UO_0000274 , rdfs:Resource .
+
+N4L:ex.11354N65673  a  obo:CHEBI_8310 , rdfs:Resource .
+
+N4L:ex.8621N66976  a                  N4L:Respiration , rdfs:Resource ;
+        N4L:hasCellularActivityOfSubstance
+                N4L:ex.8621N66976N66978 ;
+        N4L:hasCellularActivityValue  true .
+
+N4L:ex.820Observation
+        a               N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf  N4L:ex.820N67052 , N4L:ex.820N67046 , N4L:ex.820N67040 .
+
+N4L:ex.9424Observation
+        a       N4L:OrganismObservation , rdfs:Resource ;
+        N4L:hasInclusionBodyObservation
+                N4L:ex.9424N67731 , N4L:ex.9424N67728 .
+
+N4L:ex.8770N66818  a  obo:CHEBI_17833 , rdfs:Resource .
+
+N4L:ex.3719N66002  a               N4L:Growth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.3719N66002N66004N66006 .
+
+N4L:ex.13323N66082N66084N66086
+        a            obo:CHEBI_2676 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "10.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.13323N66086 .
+
+N4L:ex.8681N66781N66780
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.8681N66780Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.8681N66780 .
+
+N4L:ex.11013N67391  a              N4L:Growth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.11013N67391N67393N67395 .
+
+N4L:ex.8621N66990  a  obo:UO_0000027 , rdfs:Resource .
+
+N4L:ex.7801  a                      N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.7801Observation ;
+        N4L:hasPhenotype            N4L:ex.7801Phenotype .
+
+N4L:ex.512Phenotype  a  N4L:Resistant , N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.9720N67632  a  obo:UO_0000027 , rdfs:Resource .
+
+N4L:ex.8657N67736  a  obo:CHEBI_16838 , rdfs:Resource .
+
+N4L:ex.13500  a                     N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.13500Observation ;
+        N4L:hasPhenotype            N4L:ex.13500Phenotype .
+
+N4L:ex.383N66385  a                N4L:UninhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.383N66385N66387N66389 .
+
+N4L:ex.3825N67112  a  N4L:Air , rdfs:Resource .
+
+N4L:ex.578N67156  a  N4L:Air , rdfs:Resource .
+
+N4L:ex.8681N66764Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.1551N65814N65816N65818
+        a            obo:CHEBI_6104 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "10.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.1551N65818 .
+
+N4L:ex.13323N66206  a  obo:UO_0000023 , rdfs:Resource .
+
+N4L:ex.11167Observation
+        a               N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf  N4L:ex.11167N65780 , N4L:ex.11167N65772 , N4L:ex.11167N65764 , N4L:ex.11167N65756 , N4L:ex.11167N65748 , N4L:ex.11167N65740 , N4L:ex.11167N65732 .
+
+N4L:ex.8681N66796Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.223N66622  a                N4L:UninhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.223N66622N66624 .
+
+N4L:ex.3857N65578  a  obo:UO_0000165 , rdfs:Resource .
+
+N4L:ex.6159N66481  a  obo:UO_0000023 , rdfs:Resource .
+
+N4L:ex.13323N66252  a              N4L:UninhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.13323N66252N66254N66256 .
+
+N4L:ex.8681N66796  a  obo:CHEBI_27902 , rdfs:Resource .
+
+N4L:ex.8923N67317N67319
+        a       obo:CHEBI_16869 , rdfs:Resource .
+
+N4L:tx.27  a                        N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:tx.27Observation ;
+        N4L:hasPhenotype            N4L:tx.27Phenotype .
+
+N4L:ex.11490N67449  a     N4L:Growth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.11490N67451 .
+
+N4L:ex.5003Phenotype  a  N4L:FacultativeAnaerobe , N4L:Aerobe , rdfs:Resource .
+
+N4L:ex.8770N66819N66818
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.8770N66818Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.8770N66818 .
+
+N4L:ex.8681N66764  a  obo:CHEBI_16869 , rdfs:Resource .
+
+N4L:ex.8465N66850N66852N66854
+        a            obo:CHEBI_32158 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "25.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.8465N66854 .
+
+N4L:ex.13323N66196  a  obo:UO_0000023 , rdfs:Resource .
+
+N4L:ex.3810N65641  a      N4L:Growth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.3810N65643 .
+
+N4L:ex.512N66673  a  obo:CHEBI_28077 , rdfs:Resource .
+
+N4L:ex.11029N67719  a     N4L:OptimalGrowth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.11029N67721 .
+
+N4L:ex.8605N66728  a  obo:CHEBI_100147 , rdfs:Resource .
+
+N4L:ex.166N66471  a  obo:UO_0000274 , rdfs:Resource .
+
+N4L:ex.9424N67728  a  obo:CHEBI_16838 , rdfs:Resource .
+
+N4L:ex.7639N67671  a  obo:UO_0000027 , rdfs:Resource .
+
+N4L:ex.15031N66012Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.3719N65994N65996N65998
+        a            obo:CHEBI_32158 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "50.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.3719N65998 .
+
+N4L:ex.1551N65814  a               N4L:InhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.1551N65814N65816N65818 .
+
+N4L:ex.11354N65669Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.11354N65686  a  obo:CHEBI_17833 , rdfs:Resource .
+
+N4L:ex.15031N66044Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.11490  a                     N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.11490Observation ;
+        N4L:hasPhenotype            N4L:ex.11490Phenotype .
+
+N4L:ex.13323N66132  a              N4L:InhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.13323N66132N66134N66136 .
+
+N4L:ex.223N66602N66604
+        a       obo:CHEBI_27902 , rdfs:Resource .
+
+N4L:ex.11167  a                     N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.11167Observation .
+
+N4L:ex.454N66582  a  obo:UO_0000274 , rdfs:Resource .
+
+N4L:ex.9364Phenotype  a  N4L:StrictAerobe , rdfs:Resource .
+
+N4L:ex.8770N66803N66802
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.8770N66802Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.8770N66802 .
+
+N4L:ex.10601N67746  a  N4L:Poly-beta-hydroxybutyrateGranule , rdfs:Resource .
+
+N4L:ex.10756N65847Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.13323N66076  a  obo:UO_0000023 , rdfs:Resource .
+
+N4L:ex.7801N66349Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.13310N65954  a  obo:CHEBI_17698 , rdfs:Resource .
+
+N4L:ex.9672N67289N67291N67293
+        a            obo:CHEBI_6104 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "50.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.9672N67293 .
+
+N4L:tx.27N65721Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.3007Phenotype  a  N4L:Neutrophile , N4L:FacultativeAnaerobe , rdfs:Resource .
+
+N4L:ex.3719N65994  a               N4L:Growth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.3719N65994N65996N65998 .
+
+N4L:ex.6159N66538N66540N66542
+        a            obo:CHEBI_8310 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "300.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.6159N66542 .
+
+N4L:ex.3719N65989Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.15031N66029N66028
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.15031N66028Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.15031N66028 .
+
+N4L:ex.8770N66836N66835
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.8770N66835Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.8770N66835 .
+
+N4L:ex.3803N67243N67245N67247
+        a            obo:CHEBI_48923 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "15.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.3803N67247 .
+
+N4L:ex.22658N66328  a  obo:UO_0000274 , rdfs:Resource .
+
+N4L:ex.8605N67527  a  obo:UO_0000027 , rdfs:Resource .
+
+N4L:ex.22658N66304N66306N66308
+        a            obo:CHEBI_7507 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "50.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.22658N66308 .
+
+N4L:ex.820N67048  a  N4L:Air , rdfs:Resource .
+
+N4L:ex.8923N67325N67327
+        a       obo:CHEBI_27902 , rdfs:Resource .
+
+N4L:ex.3848N65620  a  N4L:TemperatureCondition , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "42.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.3848N65622 .
+
+N4L:ex.8770N66827N66826
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.8770N66826Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.8770N66826 .
+
+N4L:ex.9633N67030N67032
+        a       obo:CHEBI_15379 , rdfs:Resource .
+
+N4L:ex.10756N65847  a  obo:CHEBI_28368 , rdfs:Resource .
+
+N4L:ex.6159N66549  a               N4L:UninhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.6159N66549N66551N66553 .
+
+N4L:ex.15031N66044  a  obo:CHEBI_6104 , rdfs:Resource .
+
+N4L:ex.15031N66013N66012
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.15031N66012Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.15031N66012 .
+
+N4L:ex.512N66673Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.13500N65931Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.2807  a                      N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.2807Observation .
+
+N4L:ex.15031N66012  a  obo:CHEBI_3393 , rdfs:Resource .
+
+N4L:ex.11354N65658N65657
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.11354N65657Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.11354N65657 .
+
+N4L:ex.842N67205  a  N4L:PHCondition , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "7.4"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.842N67207 .
+
+N4L:ex.8605N66741Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.13310N65950N65949
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.13310N65949Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.13310N65949 .
+
+N4L:ex.9672N67273N67275N67277
+        a            obo:CHEBI_28971 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "100.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.9672N67277 .
+
+N4L:ex.3007  a            N4L:Strain , rdfs:Resource ;
+        N4L:hasPhenotype  N4L:ex.3007Phenotype .
+
+N4L:ex.6159N66487N66489N66491
+        a            obo:CHEBI_3393 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "100.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.6159N66491 .
+
+N4L:ex.10756N65855Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.8770N66826  a  obo:CHEBI_28001 , rdfs:Resource .
+
+N4L:ex.8770N66811N66810
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.8770N66810Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.8770N66810 .
+
+N4L:ex.3719N65990N65989
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.3719N65989Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.3719N65989 .
+
+N4L:ex.193N67088  a  obo:UO_0000196 , rdfs:Resource .
+
+N4L:ex.8605N66708Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.895N67215  a  N4L:PHCondition , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "3.6"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.895N67217 .
+
+N4L:ex.9720N67640  a  obo:UO_0000027 , rdfs:Resource .
+
+N4L:ex.22658  a                     N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.22658Observation .
+
+N4L:ex.8770N66810Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.223N66638N66637
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.223N66637Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.223N66637 .
+
+N4L:ex.383N66393  a                N4L:UninhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.383N66393N66395N66397 .
+
+N4L:ex.13500Observation
+        a               N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf  N4L:ex.13500N65938N65937 , N4L:ex.13500N65932N65931 , N4L:ex.13500N65926N65925 .
+
+N4L:ex.13323N66246  a  obo:UO_0000023 , rdfs:Resource .
+
+N4L:tx.27N65718N65717
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:tx.27N65717Phenotype ;
+        N4L:hasSubstanceCondition  N4L:tx.27N65717 .
+
+N4L:ex.15031N66037N66036
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.15031N66036Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.15031N66036 .
+
+N4L:ex.9633  a                   N4L:Strain , rdfs:Resource ;
+        N4L:hasCellularActivity  N4L:ex.9633N67030 ;
+        N4L:hasPhenotype         N4L:ex.9633Phenotype .
+
+N4L:ex.3857N65586  a  obo:UO_0000165 , rdfs:Resource .
+
+N4L:ex.8465N66858  a               N4L:InhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.8465N66858N66860N66862 .
+
+N4L:ex.3719Observation
+        a               N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf  N4L:ex.3719N66002 , N4L:ex.3719N65994 , N4L:ex.3719N65990N65989 .
+
+N4L:ex.1551  a                      N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.1551Observation .
+
+N4L:ex.223  a                       N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.223Observation ;
+        N4L:hasPhenotype            N4L:ex.223Phenotype .
+
+N4L:ex.4950N67685  a      N4L:Growth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.4950N67687 .
+
+N4L:ex.11490N67457  a     N4L:OptimalGrowth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.11490N67459 .
+
+N4L:ex.9633Phenotype  a  N4L:FacultativeAnaerobe , rdfs:Resource .
+
+N4L:ex.3803N67253  a               N4L:NoGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.3803N67253N67255N67257 .
+
+N4L:ex.3810N65635  a      N4L:NoGrowth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.3810N65637 .
+
+N4L:ex.8681N66772  a  obo:CHEBI_18208 , rdfs:Resource .
+
+N4L:ex.21321Observation
+        a       N4L:OrganismObservation , rdfs:Resource ;
+        N4L:hasInclusionBodyObservation
+                N4L:ex.21321N67757 .
+
+N4L:ex.8923N67333N67335
+        a       obo:CHEBI_28971 , rdfs:Resource .
+
+N4L:ex.13310N65958Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.7800Observation
+        a               N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf  N4L:ex.7800N67185 , N4L:ex.7800N67179 .
+
+N4L:ex.7801Observation
+        a               N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf  N4L:ex.7801N66363N66362 , N4L:ex.7801N66359N66358 , N4L:ex.7801N66354N66353 , N4L:ex.7801N66350N66349 , N4L:ex.7801N66346N66345 .
+
+N4L:ex.7801N66345  a  obo:CHEBI_6104 , rdfs:Resource .
+
+N4L:ex.13323N66126  a  obo:UO_0000023 , rdfs:Resource .
+
+N4L:ex.512N66681  a  obo:CHEBI_17076 , rdfs:Resource .
+
+N4L:ex.7800N67181  a  N4L:Microaerobic , rdfs:Resource .
+
+N4L:ex.13323N66122N66124N66126
+        a            obo:CHEBI_17076 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "10.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.13323N66126 .
+
+N4L:ex.21324  a                     rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.21324Observation .
+
+N4L:ex.8770N66835Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.13323N66172  a              N4L:InhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.13323N66172N66174N66176 .
+
+N4L:ex.8770Phenotype  a  N4L:Resistant , N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.1551N65822  a               N4L:InhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.1551N65822N65824N65826 .
+
+N4L:ex.4066Phenotype  a  N4L:AerotolerantAnaerobe , N4L:StrictAnaerobe , rdfs:Resource .
+
+N4L:ex.223N66637Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.8605N66704  a  obo:CHEBI_27902 , rdfs:Resource .
+
+N4L:ex.11354N65694  a  obo:CHEBI_3393 , rdfs:Resource .
+
+N4L:ex.15031N66021N66020
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.15031N66020Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.15031N66020 .
+
+N4L:ex.8605N66750  a  obo:CHEBI_17833 , rdfs:Resource .
+
+N4L:ex.6159N66497N66499N66501
+        a            obo:CHEBI_17076 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "10.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.6159N66501 .
+
+N4L:ex.1551N65798  a               N4L:InhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.1551N65798N65800N65802 .
+
+N4L:ex.11354N65666N65665
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.11354N65665Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.11354N65665 .
+
+N4L:ex.10785Observation
+        a               N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf  N4L:ex.10785N66884 .
+
+N4L:ex.454N66578N66580N66582
+        a            obo:CHEBI_6104 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "100.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.454N66582 .
+
+N4L:ex.454N66590  a  obo:UO_0000274 , rdfs:Resource .
+
+N4L:ex.13500N65937  a  obo:CHEBI_37943 , rdfs:Resource .
+
+N4L:ex.7639Observation
+        a               N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf  N4L:ex.7639N67675 , N4L:ex.7639N67667 .
+
+N4L:ex.13310N65962  a  obo:CHEBI_2637 , rdfs:Resource .
+
+N4L:ex.9536N67482  a  obo:UO_0000027 , rdfs:Resource .
+
+N4L:ex.8923N67357N67359
+        a       obo:CHEBI_6104 , rdfs:Resource .
+
+N4L:ex.13500N65926N65925
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.13500N65925Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.13500N65925 .
+
+N4L:ex.166N66451N66453N66455
+        a            obo:CHEBI_18208 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "200.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.166N66455 .
+
+N4L:ex.9720Phenotype  a  N4L:Mesophile , rdfs:Resource .
+
+N4L:ex.3857Observation
+        a               N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf  N4L:ex.3857N65582 , N4L:ex.3857N65574 , N4L:ex.3857N65565 .
+
+N4L:ex.578N67145  a                   N4L:Fermentation , rdfs:Resource ;
+        N4L:hasCellularActivityOfSubstance
+                N4L:ex.578N67145N67147 ;
+        N4L:hasCellularActivityValue  true .
+
+N4L:ex.8681N66761N66760
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.8681N66760Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.8681N66760 .
+
+N4L:ex.6159N66528N66530N66532
+        a            obo:CHEBI_7507 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "30.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.6159N66532 .
+
+N4L:ex.10756N65860N65859
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.10756N65859Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.10756N65859 .
+
+N4L:tx.27N65726N65725
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:tx.27N65725Phenotype ;
+        N4L:hasSubstanceCondition  N4L:tx.27N65725 .
+
+N4L:ex.2807N65904  a               N4L:NoGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.2807N65904N65906N65908 .
+
+N4L:ex.383Observation
+        a               N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf  N4L:ex.383N66417 , N4L:ex.383N66409 , N4L:ex.383N66401 , N4L:ex.383N66393 , N4L:ex.383N66385 , N4L:ex.383N66377 , N4L:ex.383N66369 .
+
+N4L:ex.3857N65567  a  N4L:OxygenCondition , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "15.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.3857N65569 .
+
+N4L:ex.8605N67535  a  obo:UO_0000027 , rdfs:Resource .
+
+N4L:ex.3803N67233N67235N67237
+        a            obo:CHEBI_17334 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "2.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.3803N67237 .
+
+N4L:ex.15031N66045N66044
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.15031N66044Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.15031N66044 .
+
+N4L:ex.8681N66760Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.22658N66304  a              N4L:InhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.22658N66304N66306N66308 .
+
+N4L:ex.13323N66162N66164N66166
+        a            obo:CHEBI_17698 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "30.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.13323N66166 .
+
+N4L:ex.7801N66358  a  obo:CHEBI_27902 , rdfs:Resource .
+
+N4L:ex.8681N66792Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.13310N65966Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.11167N65748  a              N4L:UninhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.11167N65748N65750N65752 .
+
+N4L:ex.223N66642N66644
+        a       obo:CHEBI_9215 , rdfs:Resource .
+
+N4L:ex.10756N65855  a  obo:CHEBI_27902 , rdfs:Resource .
+
+N4L:ex.2807N65894  a               N4L:NoGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.2807N65894N65896N65898 .
+
+N4L:ex.8923N67341N67343
+        a       obo:CHEBI_18208 , rdfs:Resource .
+
+N4L:ex.8621  a                      N4L:Strain , rdfs:Resource ;
+        N4L:hasCellularActivity     N4L:ex.8621N66976 , N4L:ex.8621N66968 ;
+        N4L:hasOrganismObservation  N4L:ex.8621Observation ;
+        N4L:hasPhenotype            N4L:ex.8621Phenotype .
+
+N4L:ex.9672N67289  a               N4L:Growth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.9672N67289N67291N67293 .
+
+N4L:ex.61N67544  a        N4L:OptimalGrowth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.61N67546 .
+
+N4L:ex.11490Phenotype
+        a       N4L:Psychrotolerant , rdfs:Resource .
+
+N4L:ex.15031N66052  a  obo:CHEBI_28368 , rdfs:Resource .
+
+N4L:ex.223N66628N66627
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.223N66627Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.223N66627 .
+
+N4L:ex.11354N65683N65682
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.11354N65682Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.11354N65682 .
+
+N4L:ex.22658N66294  a              N4L:InhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.22658N66294N66296N66298 .
+
+N4L:ex.512N66690N66689
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.512N66689Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.512N66689 .
+
+N4L:ex.13500N65925Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.11013N67391N67393N67395
+        a            obo:CHEBI_28971 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "100.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.11013N67395 .
+
+N4L:ex.15031N66020  a  obo:CHEBI_17698 , rdfs:Resource .
+
+N4L:ex.9424N67731  a  N4L:Carboxysome , rdfs:Resource .
+
+N4L:ex.383N66377N66379N66381
+        a            obo:CHEBI_28971 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "150.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.383N66381 .
+
+N4L:ex.383  a                       N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.383Observation .
+
+N4L:ex.15031N66040Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.1551N65806N65808N65810
+        a            obo:CHEBI_14743 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "100.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.1551N65810 .
+
+N4L:ex.526  a             N4L:Strain , rdfs:Resource ;
+        N4L:hasPhenotype  N4L:ex.526Phenotype .
+
+N4L:ex.11354N65674N65673
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.11354N65673Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.11354N65673 .
+
+N4L:ex.13310N65979N65978
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.13310N65978Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.13310N65978 .
+
+N4L:ex.10993N67607  a     N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.10993N67609 .
+
+N4L:ex.6159N66477N66479N66481
+        a            obo:CHEBI_28971 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "10.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.6159N66481 .
+
+N4L:ex.8770N66802  a  obo:CHEBI_17334 , rdfs:Resource .
+
+N4L:ex.8923N67365N67367
+        a       obo:CHEBI_7507 , rdfs:Resource .
+
+N4L:ex.7801N66345Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.15031N66062N66061
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.15031N66061Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.15031N66061 .
+
+N4L:ex.22658N66334N66336N66338
+        a            obo:CHEBI_32158 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "5.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.22658N66338 .
+
+N4L:ex.9600N67589  a      N4L:OptimalGrowth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.9600N67591 .
+
+N4L:ex.526Phenotype  a  N4L:Thermophile , rdfs:Resource .
+
+N4L:ex.3803N67247  a  obo:UO_0000023 , rdfs:Resource .
+
+N4L:ex.13323N66222  a              N4L:UninhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.13323N66222N66224N66226 .
+
+N4L:ex.166N66459  a                N4L:UninhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.166N66459N66461N66463 .
+
+N4L:ex.8770N66830Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.8465N66866  a               N4L:InhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.8465N66866N66868N66870 .
+
+N4L:ex.4066N66943  a                  N4L:Fermentation , rdfs:Resource ;
+        N4L:hasCellularActivityOfSubstance
+                N4L:ex.4066N66943N66945 ;
+        N4L:hasCellularActivityValue  true .
+
+N4L:ex.512N66678N66677
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.512N66677Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.512N66677 .
+
+N4L:ex.11490N67465  a     N4L:OptimalGrowth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.11490N67467 .
+
+N4L:ex.166N66427  a                N4L:InhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.166N66427N66429N66431 .
+
+N4L:ex.512N66649Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.15031N66053N66052
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.15031N66052Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.15031N66052 .
+
+N4L:ex.3810N65643  a  N4L:Anoxic , rdfs:Resource .
+
+N4L:ex.15031N66065Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.8681N66780  a  obo:CHEBI_6104 , rdfs:Resource .
+
+N4L:ex.9364  a            N4L:Strain , rdfs:Resource ;
+        N4L:hasPhenotype  N4L:ex.9364Phenotype .
+
+N4L:ex.13323N66166  a  obo:UO_0000023 , rdfs:Resource .
+
+N4L:ex.15031N66065  a  obo:CHEBI_26894 , rdfs:Resource .
+
+N4L:ex.7801N66353  a  obo:CHEBI_5312 , rdfs:Resource .
+
+N4L:ex.3803  a                      N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.3803Observation .
+
+N4L:ex.6159N66538  a               N4L:UninhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.6159N66538N66540N66542 .
+
+N4L:ex.15031  a                     N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.15031Observation ;
+        N4L:hasPhenotype            N4L:ex.15031Phenotype .
+
+N4L:ex.1551N65822N65824N65826
+        a            obo:CHEBI_17698 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "50.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.1551N65826 .
+
+N4L:ex.1551N65830  a               N4L:InhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.1551N65830N65832N65834 .
+
+N4L:ex.13323N66112N66114N66116
+        a            obo:CHEBI_28864 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "10.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.13323N66116 .
+
+N4L:ex.600Observation
+        a       N4L:OrganismObservation , rdfs:Resource ;
+        N4L:hasInclusionBodyObservation
+                N4L:ex.600N67766 , N4L:ex.600N67763 .
+
+N4L:ex.11029N67703  a     N4L:Growth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.11029N67705 .
+
+N4L:ex.13323N66102  a              N4L:InhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.13323N66102N66104N66106 .
+
+N4L:ex.2807N65914N65916N65918
+        a            obo:CHEBI_209807 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "30.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.2807N65918 .
+
+N4L:ex.8605N66712  a  obo:CHEBI_3393 , rdfs:Resource .
+
+N4L:ex.11354N65691N65690
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.11354N65690Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.11354N65690 .
+
+N4L:ex.1041N67651  a  N4L:TemperatureCondition , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "30.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.1041N67653 .
+
+N4L:ex.11354N65673Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.223N66637  a  obo:CHEBI_9215 , rdfs:Resource .
+
+N4L:ex.13323N66092  a              N4L:InhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.13323N66092N66094N66096 .
+
+N4L:ex.13310N65970  a  obo:CHEBI_28001 , rdfs:Resource .
+
+N4L:ex.512Observation
+        a               N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf  N4L:ex.512N66670N66669 , N4L:ex.512N66690N66689 , N4L:ex.512N66658N66657 , N4L:ex.512N66650N66649 , N4L:ex.512N66674N66673 , N4L:ex.512N66682N66681 , N4L:ex.512N66666N66665 , N4L:ex.512N66686N66685 , N4L:ex.512N66662N66661 , N4L:ex.512N66654N66653 , N4L:ex.512N66678N66677 , N4L:ex.512N66694N66693 .
+
+N4L:ex.9536N67490  a  obo:UO_0000027 , rdfs:Resource .
+
+N4L:ex.8465Observation
+        a               N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf  N4L:ex.8465N66874 , N4L:ex.8465N66866 , N4L:ex.8465N66858 , N4L:ex.8465N66850 , N4L:ex.8465N66842 .
+
+N4L:ex.10756N65851Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.8605N66704Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.1551Observation
+        a               N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf  N4L:ex.1551N65830 , N4L:ex.1551N65822 , N4L:ex.1551N65814 , N4L:ex.1551N65806 , N4L:ex.1551N65798 , N4L:ex.1551N65790 .
+
+N4L:ex.8923N67373N67375
+        a       obo:CHEBI_8309 , rdfs:Resource .
+
+N4L:ex.223N66618N66617
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.223N66617Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.223N66617 .
+
+N4L:ex.3848N65622  a  obo:UO_0000027 , rdfs:Resource .
+
+N4L:ex.3803N67223N67225N67227
+        a            obo:CHEBI_124991 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "30.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.3803N67227 .
+
+N4L:ex.3848  a                      N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.3848Observation .
+
+N4L:ex.11354N65698Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.2807N65888  a  obo:UO_0000023 , rdfs:Resource .
+
+N4L:ex.8605N67511  a  obo:UO_0000027 , rdfs:Resource .
+
+N4L:ex.15031N66017N66016
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.15031N66016Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.15031N66016 .
+
+N4L:ex.512N66686N66685
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.512N66685Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.512N66685 .
+
+N4L:ex.9598  a            N4L:Strain , rdfs:Resource ;
+        N4L:hasPhenotype  N4L:ex.9598Phenotype .
+
+N4L:ex.13323N66152N66154N66156
+        a            obo:CHEBI_204928 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "30.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.13323N66156 .
+
+N4L:ex.11167N65756  a              N4L:UninhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.11167N65756N65758N65760 .
+
+N4L:ex.22658N66288  a  obo:UO_0000274 , rdfs:Resource .
+
+N4L:ex.383N66409N66411N66413
+        a            obo:CHEBI_17076 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "150.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.383N66413 .
+
+N4L:ex.11354N65669  a  obo:CHEBI_16869 , rdfs:Resource .
+
+N4L:ex.10756N65863  a  obo:CHEBI_6104 , rdfs:Resource .
+
+N4L:ex.11013N67411  a              N4L:Growth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.11013N67411N67413N67415 .
+
+N4L:ex.223N66607Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.580N65551  a       N4L:Growth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.580N65553 .
+
+N4L:ex.13310N65954Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.842N67207  a  obo:UO_0000196 , rdfs:Resource .
+
+N4L:ex.61N67552  a        N4L:OptimalGrowth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.61N67554 .
+
+N4L:ex.383N66405  a  obo:UO_0000274 , rdfs:Resource .
+
+N4L:ex.8621N66986  a      N4L:OptimalGrowth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.8621N66988 .
+
+N4L:ex.9720N67628  a      N4L:OptimalGrowth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.9720N67630 .
+
+N4L:ex.6159N66501  a  obo:UO_0000023 , rdfs:Resource .
+
+N4L:ex.895N67217  a  obo:UO_0000196 , rdfs:Resource .
+
+N4L:ex.13310N65983  a  obo:CHEBI_6104 , rdfs:Resource .
+
+N4L:ex.3825N67122  a      N4L:Growth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.3825N67124 .
+
+N4L:tx.27N65717Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.6159N66477  a               N4L:NoGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.6159N66477N66479N66481 .
+
+N4L:ex.580  a                       N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.580Observation .
+
+N4L:ex.578N67166  a       N4L:Growth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.578N67168 .
+
+N4L:ex.8770N66810  a  obo:CHEBI_7507 , rdfs:Resource .
+
+N4L:ex.13323N66216  a  obo:UO_0000023 , rdfs:Resource .
+
+N4L:ex.223N66632  a                N4L:UninhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.223N66632N66634 .
+
+N4L:ex.3803N67263N67265N67267
+        a            obo:CHEBI_46345 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "100.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.3803N67267 .
+
+N4L:ex.6159N66491  a  obo:UO_0000023 , rdfs:Resource .
+
+N4L:ex.4066N66937  a      N4L:Growth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.4066N66939 .
+
+N4L:ex.4950N67687  a  N4L:TemperatureCondition , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "10.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.4950N67689 .
+
+N4L:ex.11490N67459  a  N4L:TemperatureCondition , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "26.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.11490N67461 .
+
+N4L:ex.13323N66192N66194N66196
+        a            obo:CHEBI_8310 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "300.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.13323N66196 .
+
+N4L:ex.3810N65637  a  N4L:Air , rdfs:Resource .
+
+N4L:ex.512N66669  a  obo:CHEBI_17334 , rdfs:Resource .
+
+N4L:ex.8923N67381N67383
+        a       obo:CHEBI_17076 , rdfs:Resource .
+
+N4L:ex.223Observation
+        a               rdfs:Resource , N4L:OrganismObservation ;
+        N4L:composedOf  N4L:ex.223N66622 , N4L:ex.223N66596 , N4L:ex.223N66612 , N4L:ex.223N66602 , N4L:ex.223N66642 , N4L:ex.223N66608N66607 , N4L:ex.223N66632 , N4L:ex.223N66638N66637 , N4L:ex.223N66628N66627 , N4L:ex.223N66618N66617 .
+
+N4L:ex.166N66467  a                N4L:UninhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.166N66467N66469N66471 .
+
+N4L:ex.7639N67667  a      N4L:OptimalGrowth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.7639N67669 .
+
+N4L:ex.9600N67565  a      N4L:Growth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.9600N67567 .
+
+N4L:ex.8465N66874  a               N4L:InhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.8465N66874N66876N66878 .
+
+N4L:ex.3803N67223  a               N4L:NoGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.3803N67223N67225N67227 .
+
+N4L:ex.9672N67281N67283N67285
+        a            obo:CHEBI_17698 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "12.5"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.9672N67285 .
+
+N4L:ex.10756N65840N65839
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.10756N65839Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.10756N65839 .
+
+N4L:ex.10756  a                     N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.10756Observation ;
+        N4L:hasPhenotype            N4L:ex.10756Phenotype .
+
+N4L:ex.166N66435  a                N4L:InhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.166N66435N66437N66439 .
+
+N4L:ex.383N66417N66419N66421
+        a            obo:CHEBI_28077 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "150.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.383N66421 .
+
+N4L:ex.8465N66842  a               N4L:InhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.8465N66842N66844N66846 .
+
+N4L:ex.11490N67441  a     N4L:Growth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.11490N67443 .
+
+N4L:ex.15031N66025N66024
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.15031N66024Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.15031N66024 .
+
+N4L:ex.512N66694N66693
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.512N66693Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.512N66693 .
+
+N4L:ex.6159N66549N66551N66553
+        a            <http://purl.obolibrary.org/obo/CHEBI_27902 > , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "30.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.6159N66553 .
+
+N4L:ex.454N66578  a                N4L:UninhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.454N66578N66580N66582 .
+
+N4L:ex.8621N67002  a      N4L:Growth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.8621N67004 .
+
+N4L:ex.1769N67076  a      N4L:Growth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.1769N67078 .
+
+N4L:ex.13310N65962Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.13323N66142  a              N4L:InhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.13323N66142N66144N66146 .
+
+N4L:ex.512N66669Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.11029N67711  a     N4L:OptimalGrowth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.11029N67713 .
+
+N4L:ex.8605N66720  a  obo:CHEBI_100147 , rdfs:Resource .
+
+N4L:ex.13323N66102N66104N66106
+        a            obo:CHEBI_3393 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "10.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.13323N66106 .
+
+N4L:ex.2807N65904N65906N65908
+        a            obo:CHEBI_6104 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "30.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.2807N65908 .
+
+N4L:ex.7801N66350N66349
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.7801N66349Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.7801N66349 .
+
+N4L:ex.13500N65932N65931
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.13500N65931Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.13500N65931 .
+
+N4L:ex.223N66608N66607
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.223N66607Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.223N66607 .
+
+N4L:ex.13323N66086  a  obo:UO_0000023 , rdfs:Resource .
+
+N4L:ex.512N66670N66669
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.512N66669Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.512N66669 .
+
+N4L:ex.8605N66705N66704
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.8605N66704Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.8605N66704 .
+
+N4L:ex.11354N65703N65702
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.11354N65702Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.11354N65702 .
+
+N4L:ex.8605N66747N66746
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.8605N66746Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.8605N66746 .
+
+N4L:ex.8770N66806Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.13310N65959N65958
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.13310N65958Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.13310N65958 .
+
+N4L:ex.10785N66894N66896
+        a       obo:CHEBI_15379 , rdfs:Resource .
+
+N4L:ex.3857N65569  a  obo:UO_0000165 , rdfs:Resource .
+
+N4L:ex.22658N66338  a  obo:UO_0000274 , rdfs:Resource .
+
+N4L:ex.8605N66738N66737
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.8605N66737Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.8605N66737 .
+
+N4L:ex.3810Observation
+        a               N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf  N4L:ex.3810N65641 , N4L:ex.3810N65635 .
+
+N4L:ex.8923N67309N67311
+        a       obo:CHEBI_6472 , rdfs:Resource .
+
+N4L:ex.9598Phenotype  a  N4L:FacultativeAnaerobe , rdfs:Resource .
+
+N4L:ex.11013N67405  a  obo:UO_0000274 , rdfs:Resource .
+
+N4L:ex.61N67546  a   N4L:TemperatureCondition , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "95.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.61N67548 .
+
+N4L:ex.8605N66729N66728
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.8605N66728Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.8605N66728 .
+
+N4L:ex.820N67040  a       N4L:NoGrowth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.820N67042 .
+
+N4L:tx.27N65714N65713
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:tx.27N65713Phenotype ;
+        N4L:hasSubstanceCondition  N4L:tx.27N65713 .
+
+N4L:ex.11167N65764  a              N4L:InhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.11167N65764N65766N65768 .
+
+N4L:ex.512N66658N66657
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.512N66657Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.512N66657 .
+
+N4L:ex.13323N66142N66144N66146
+        a            obo:CHEBI_209807 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "30.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.13323N66146 .
+
+N4L:ex.15031N66033N66032
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.15031N66032Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.15031N66032 .
+
+N4L:ex.15031N66061Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.11167N65732  a              N4L:UninhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.11167N65732N65734N65736 .
+
+N4L:ex.22658N66264  a              N4L:UninhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.22658N66264N66266N66268 .
+
+N4L:ex.3719N66006  a  obo:UO_0000274 , rdfs:Resource .
+
+N4L:ex.383N66413  a  obo:UO_0000274 , rdfs:Resource .
+
+N4L:ex.21321  a                     rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.21321Observation .
+
+N4L:ex.9720N67636  a      N4L:NoGrowth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.9720N67638 .
+
+N4L:ex.11013N67395  a  obo:UO_0000274 , rdfs:Resource .
+
+N4L:ex.8621N66994  a      N4L:Growth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.8621N66996 .
+
+N4L:ex.8360  a            N4L:Strain , rdfs:Resource ;
+        N4L:hasPhenotype  N4L:ex.8360Phenotype .
+
+N4L:ex.9672N67273  a               N4L:NoGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.9672N67273N67275N67277 .
+
+N4L:ex.10993N67609  a  N4L:TemperatureCondition , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "30.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.10993N67611 .
+
+N4L:ex.383N66389  a  obo:UO_0000274 , rdfs:Resource .
+
+N4L:ex.3825N67116  a      N4L:Growth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.3825N67118 .
+
+N4L:ex.9633N67030  a                  N4L:Respiration , rdfs:Resource ;
+        N4L:hasCellularActivityOfSubstance
+                N4L:ex.9633N67030N67032 ;
+        N4L:hasCellularActivityValue  true .
+
+N4L:ex.15031N66028Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.223N66627Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.8621N66962  a      N4L:Growth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.8621N66964 .
+
+N4L:ex.13310N65945  a  obo:CHEBI_100241 , rdfs:Resource .
+
+N4L:ex.615Phenotype  a  N4L:Neutrophile , rdfs:Resource .
+
+N4L:ex.8605N66713N66712
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.8605N66712Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.8605N66712 .
+
+N4L:ex.13323N66256  a  obo:UO_0000023 , rdfs:Resource .
+
+N4L:ex.8770  a                      N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.8770Observation ;
+        N4L:hasPhenotype            N4L:ex.8770Phenotype .
+
+N4L:ex.8681N66768  a  obo:CHEBI_28971 , rdfs:Resource .
+
+N4L:ex.13310N65967N65966
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.13310N65966Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.13310N65966 .
+
+N4L:ex.9536Observation
+        a               N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf  N4L:ex.9536N67494 , N4L:ex.9536N67486 , N4L:ex.9536N67478 .
+
+N4L:ex.11490N67467  a  N4L:TemperatureCondition , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "30.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.11490N67469 .
+
+N4L:ex.3803N67263  a               N4L:Growth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.3803N67263N67265N67267 .
+
+N4L:ex.8681N66756Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:tx.27Observation  a  N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf  N4L:tx.27N65726N65725 , N4L:tx.27N65722N65721 , N4L:tx.27N65718N65717 , N4L:tx.27N65714N65713 , N4L:tx.27N65710N65709 .
+
+N4L:ex.454  a                       N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.454Observation .
+
+N4L:ex.3848N65611  a      N4L:Growth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.3848N65613 .
+
+N4L:ex.512N66677  a  obo:CHEBI_26580 , rdfs:Resource .
+
+N4L:ex.8621Observation
+        a               N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf  N4L:ex.8621N67002 , N4L:ex.8621N66994 , N4L:ex.8621N66986 , N4L:ex.8621N66962 , N4L:ex.8621N66956 .
+
+N4L:ex.8605N66700Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.13323N66182N66184N66186
+        a            obo:CHEBI_8310 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "300.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.13323N66186 .
+
+N4L:ex.7639N67675  a      N4L:OptimalGrowth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.7639N67677 .
+
+N4L:ex.9600N67573  a      N4L:Growth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.9600N67575 .
+
+N4L:ex.1551N65818  a  obo:UO_0000274 , rdfs:Resource .
+
+N4L:ex.8605N66732Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.3536Observation
+        a               N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf  N4L:ex.3536N67102 .
+
+N4L:ex.166N66443  a                N4L:UninhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.166N66443N66445N66447 .
+
+N4L:ex.8465N66850  a               N4L:InhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.8465N66850N66852N66854 .
+
+N4L:ex.8359  a            N4L:Strain , rdfs:Resource ;
+        N4L:hasPhenotype  N4L:ex.8359Phenotype .
+
+N4L:ex.13323N66136  a  obo:UO_0000023 , rdfs:Resource .
+
+N4L:ex.11013N67421N67423N67425
+        a            obo:CHEBI_6104 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "100.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.11013N67425 .
+
+N4L:ex.8605N66746  a  obo:CHEBI_59063 , rdfs:Resource .
+
+N4L:ex.9363Phenotype  a  N4L:StrictAerobe , rdfs:Resource .
+
+N4L:ex.13500Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.13323N66182  a              N4L:InhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.13323N66182N66184N66186 .
+
+N4L:ex.11354N65694Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.11029N67705  a  N4L:TemperatureCondition , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "20.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.11029N67707 .
+
+N4L:tx.27N65722N65721
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:tx.27N65721Phenotype ;
+        N4L:hasSubstanceCondition  N4L:tx.27N65721 .
+
+N4L:ex.454N66586  a                N4L:UninhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.454N66586N66588N66590 .
+
+N4L:ex.512N66666N66665
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.512N66665Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.512N66665 .
+
+N4L:ex.11013Observation
+        a               N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf  N4L:ex.11013N67421 , N4L:ex.11013N67411 , N4L:ex.11013N67401 , N4L:ex.11013N67391 .
+
+N4L:ex.1041N67653  a  obo:UO_0000027 , rdfs:Resource .
+
+N4L:ex.15031N66041N66040
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.15031N66040Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.15031N66040 .
+
+N4L:ex.6159N66507N66509N66511
+        a            obo:CHEBI_5312 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "10.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.6159N66511 .
+
+N4L:ex.13310  a                     N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.13310Observation ;
+        N4L:hasPhenotype            N4L:ex.13310Phenotype .
+
+N4L:ex.13310N65958  a  obo:CHEBI_28077 , rdfs:Resource .
+
+N4L:ex.9536N67478  a      N4L:Growth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.9536N67480 .
+
+N4L:ex.6159N66522  a  obo:UO_0000023 , rdfs:Resource .
+
+N4L:ex.1557Observation
+        a               N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf  N4L:ex.1557N67060 .
+
+N4L:ex.3719N65998  a  obo:UO_0000274 , rdfs:Resource .
+
+N4L:ex.11029N67695  a     N4L:Growth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.11029N67697 .
+
+N4L:ex.7800  a                      N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.7800Observation .
+
+N4L:ex.512N66689Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.1551N65790  a               N4L:UninhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.1551N65790N65792N65794 .
+
+N4L:ex.223N66607  a  obo:CHEBI_28971 , rdfs:Resource .
+
+N4L:ex.13310N65984N65983
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.13310N65983Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.13310N65983 .
+
+N4L:ex.10756N65839Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.8605N66721N66720
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.8605N66720Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.8605N66720 .
+
+N4L:ex.13310N65949Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.1551N65830N65832N65834
+        a            obo:CHEBI_27902 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "10.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.1551N65834 .
+
+N4L:ex.2807N65914  a               N4L:NoGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.2807N65914N65916N65918 .
+
+N4L:tx.27N65713Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.10756N65844N65843
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.10756N65843Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.10756N65843 .
+
+N4L:ex.11490Observation
+        a               N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf  N4L:ex.11490N67465 , N4L:ex.11490N67457 , N4L:ex.11490N67449 , N4L:ex.11490N67441 .
+
+N4L:ex.8770N66826Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.22658N66314  a              N4L:InhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.22658N66314N66316N66318 .
+
+N4L:ex.13310N65975N65974
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.13310N65974Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.13310N65974 .
+
+N4L:ex.15031N66048  a  obo:CHEBI_6472 , rdfs:Resource .
+
+N4L:ex.61N67554  a   N4L:TemperatureCondition , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "107.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.61N67556 .
+
+N4L:ex.15031N66016  a  obo:CHEBI_124991 , rdfs:Resource .
+
+N4L:ex.580N65553  a  N4L:Aerobic , rdfs:Resource .
+
+N4L:ex.9536  a                      N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.9536Observation ;
+        N4L:hasPhenotype            N4L:ex.9536Phenotype .
+
+N4L:ex.8293N67193  a      N4L:OptimalGrowth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.8293N67195 .
+
+N4L:ex.11094Phenotype
+        a       N4L:Anaerobe , rdfs:Resource .
+
+N4L:ex.11167N65772  a              N4L:InhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.11167N65772N65774N65776 .
+
+N4L:ex.8621N66988  a  N4L:TemperatureCondition , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "75.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.8621N66990 .
+
+N4L:ex.13323  a                     N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.13323Observation .
+
+N4L:ex.11167N65740  a              N4L:UninhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.11167N65740N65742N65744 .
+
+N4L:ex.13323N66132N66134N66136
+        a            obo:CHEBI_48923 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "15.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.13323N66136 .
+
+N4L:ex.8605N66741  a  obo:CHEBI_28971 , rdfs:Resource .
+
+N4L:ex.11354N65653  a  obo:CHEBI_18208 , rdfs:Resource .
+
+N4L:ex.512N66674N66673
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.512N66673Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.512N66673 .
+
+N4L:ex.383N66421  a  obo:UO_0000274 , rdfs:Resource .
+
+N4L:ex.8621N66956  a      N4L:OptimalGrowth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.8621N66958 .
+
+N4L:ex.895Observation
+        a               N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf  N4L:ex.895N67213 .
+
+N4L:ex.9672N67281  a               N4L:NoGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.9672N67281N67283N67285 .
+
+N4L:ex.10756N65868N65867
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.10756N65867Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.10756N65867 .
+
+N4L:ex.512N66665Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.383N66397  a  obo:UO_0000274 , rdfs:Resource .
+
+N4L:ex.3825N67124  a  N4L:Anoxic , rdfs:Resource .
+
+N4L:tx.27N65713  a  obo:CHEBI_6104 , rdfs:Resource .
+
+N4L:ex.578N67168  a  N4L:Anoxic , rdfs:Resource .
+
+N4L:ex.8923N67301N67303
+        a       obo:CHEBI_3393 , rdfs:Resource .
+
+N4L:ex.9600Phenotype  a  N4L:Thermophile , rdfs:Resource .
+
+N4L:ex.512N66650N66649
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.512N66649Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.512N66649 .
+
+N4L:ex.4066N66939  a  N4L:Microaerobic , rdfs:Resource .
+
+N4L:ex.4950N67689  a  obo:UO_0000027 , rdfs:Resource .
+
+N4L:ex.223N66602  a                N4L:InhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.223N66602N66604 .
+
+N4L:ex.3803N67257  a  obo:UO_0000023 , rdfs:Resource .
+
+N4L:ex.3823Phenotype  a  N4L:StrictAnaerobe , rdfs:Resource .
+
+N4L:ex.8923N67349N67351
+        a       obo:CHEBI_17833 , rdfs:Resource .
+
+N4L:ex.13323N66232  a              N4L:UninhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.13323N66232N66234N66236 .
+
+N4L:ex.8681N66776  a  obo:CHEBI_17833 , rdfs:Resource .
+
+N4L:ex.8770N66802Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.7639N67669  a  N4L:TemperatureCondition , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "24.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.7639N67671 .
+
+N4L:ex.9600N67567  a  N4L:TemperatureCondition , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "50.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.9600N67569 .
+
+N4L:ex.7801N66349  a  obo:CHEBI_28077 , rdfs:Resource .
+
+N4L:ex.10756N65852N65851
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.10756N65851Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.10756N65851 .
+
+N4L:ex.512N66685  a  obo:CHEBI_27902 , rdfs:Resource .
+
+N4L:ex.7800N67185  a      N4L:Growth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.7800N67187 .
+
+N4L:ex.454Observation
+        a               N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf  N4L:ex.454N66586 , N4L:ex.454N66578 , N4L:ex.454N66570 , N4L:ex.454N66562 .
+
+N4L:ex.13310N65983Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.9600N67581  a      N4L:OptimalGrowth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.9600N67583 .
+
+N4L:ex.11490N67443  a  N4L:TemperatureCondition , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "5.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.11490N67445 .
+
+N4L:ex.13323N66176  a  obo:UO_0000023 , rdfs:Resource .
+
+N4L:ex.1551N65826  a  obo:UO_0000274 , rdfs:Resource .
+
+N4L:ex.13323N66172N66174N66176
+        a            obo:CHEBI_6104 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "30.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.13323N66176 .
+
+N4L:ex.10756Observation
+        a               rdfs:Resource , N4L:OrganismObservation ;
+        N4L:composedOf  N4L:ex.10756N65868N65867 , N4L:ex.10756N65844N65843 , N4L:ex.10756N65856N65855 , N4L:ex.10756N65848N65847 , N4L:ex.10756N65864N65863 , N4L:ex.10756N65860N65859 , N4L:ex.10756N65852N65851 , N4L:ex.10756N65840N65839 .
+
+N4L:ex.512N66653  a  obo:CHEBI_17698 , rdfs:Resource .
+
+N4L:ex.11354N65698  a  obo:CHEBI_6472 , rdfs:Resource .
+
+N4L:ex.8605N66708  a  obo:CHEBI_6104 , rdfs:Resource .
+
+N4L:ex.166N66451  a                N4L:UninhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.166N66451N66453N66455 .
+
+N4L:ex.8621N67004  a  N4L:TemperatureCondition , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "77.5"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.8621N67006 .
+
+N4L:ex.1769N67078  a  N4L:Anoxic , rdfs:Resource .
+
+N4L:ex.21324N67751  a  N4L:SulfurGranule , rdfs:Resource .
+
+N4L:ex.10993  a                     N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.10993Observation ;
+        N4L:hasPhenotype            N4L:ex.10993Phenotype .
+
+N4L:ex.8681N66776Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.11013N67411N67413N67415
+        a            obo:CHEBI_28077 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "100.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.11013N67415 .
+
+N4L:ex.13323N66112  a              N4L:InhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.13323N66112N66114N66116 .
+
+N4L:ex.11029N67713  a  N4L:TemperatureCondition , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "10.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.11029N67715 .
+
+N4L:ex.1041N67661  a  obo:UO_0000027 , rdfs:Resource .
+
+N4L:ex.3536  a                      N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.3536Observation .
+
+N4L:ex.8605N66709N66708
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.8605N66708Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.8605N66708 .
+
+N4L:ex.5001N67130N67132
+        a       obo:CHEBI_15379 , rdfs:Resource .
+
+N4L:ex.454N66562  a                N4L:InhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.454N66562N66564N66566 .
+
+N4L:ex.10785N66884  a     N4L:Growth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.10785N66886 .
+
+N4L:ex.13310N65966  a  obo:CHEBI_28971 , rdfs:Resource .
+
+N4L:ex.9536N67486  a      N4L:Growth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.9536N67488 .
+
+N4L:ex.512N66682N66681
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.512N66681Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.512N66681 .
+
+N4L:ex.8923N67309  a               N4L:NoGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.8923N67309N67311 .
+
+N4L:ex.9720  a                      N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.9720Observation ;
+        N4L:hasPhenotype            N4L:ex.9720Phenotype .
+
+N4L:ex.10785Phenotype
+        a       N4L:StrictAnaerobe , rdfs:Resource .
+
+N4L:ex.383N66401N66403N66405
+        a            obo:CHEBI_28001 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "150.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.383N66405 .
+
+N4L:ex.8681N66789N66788
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.8681N66788Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.8681N66788 .
+
+N4L:ex.13323N66222N66224N66226
+        a            obo:CHEBI_7591 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "300.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.13323N66226 .
+
+N4L:ex.8293  a                      N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.8293Observation .
+
+N4L:ex.2807N65908  a  obo:UO_0000023 , rdfs:Resource .
+
+N4L:ex.15031N66024Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.3803Observation
+        a               N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf  N4L:ex.3803N67263 , N4L:ex.3803N67253 , N4L:ex.3803N67243 , N4L:ex.3803N67233 , N4L:ex.3803N67223 .
+
+N4L:ex.3848N65618  a      N4L:Growth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.3848N65620 .
+
+N4L:ex.7801N66362Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.15031N66056Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.22658N66308  a  obo:UO_0000274 , rdfs:Resource .
+
+N4L:ex.8605N67507  a      N4L:Growth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.8605N67509 .
+
+N4L:ex.8657  a                      rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.8657Observation .
+
+N4L:ex.22658N66264N66266N66268
+        a            obo:CHEBI_6104 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "5.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.22658N66268 .
+
+N4L:ex.1041Observation
+        a               N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf  N4L:ex.1041N67657 , N4L:ex.1041N67649 .
+
+N4L:ex.10756N65859  a  obo:CHEBI_17076 , rdfs:Resource .
+
+N4L:ex.2807N65898  a  obo:UO_0000023 , rdfs:Resource .
+
+N4L:ex.9600  a                      N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.9600Observation ;
+        N4L:hasPhenotype            N4L:ex.9600Phenotype .
+
+N4L:ex.580Observation
+        a               N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf  N4L:ex.580N65557 , N4L:ex.580N65551 .
+
+N4L:ex.10785  a                     N4L:Strain , rdfs:Resource ;
+        N4L:hasCellularActivity     N4L:ex.10785N66894 ;
+        N4L:hasOrganismObservation  N4L:ex.10785Observation ;
+        N4L:hasPhenotype            N4L:ex.10785Phenotype .
+
+N4L:ex.11167N65764N65766N65768
+        a            obo:CHEBI_17076 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "50.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.11167N65768 .
+
+N4L:ex.820N67042  a  N4L:Microaerobic , rdfs:Resource .
+
+N4L:ex.61N67548  a  obo:UO_0000027 , rdfs:Resource .
+
+N4L:ex.15031N66056  a  obo:CHEBI_8310 , rdfs:Resource .
+
+N4L:ex.22658N66298  a  obo:UO_0000274 , rdfs:Resource .
+
+N4L:ex.166  a                       N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.166Observation .
+
+N4L:ex.11013N67421  a              N4L:Growth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.11013N67421N67423N67425 .
+
+N4L:ex.15031N66024  a  obo:CHEBI_17833 , rdfs:Resource .
+
+N4L:ex.8681Phenotype  a  N4L:Resistant , N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.8681N66784Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.11167N65780  a              N4L:InhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.11167N65780N65782N65784 .
+
+N4L:ex.600  a                       rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.600Observation .
+
+N4L:ex.5001  a                   N4L:Strain , rdfs:Resource ;
+        N4L:hasCellularActivity  N4L:ex.5001N67130 .
+
+N4L:ex.9940Observation
+        a       N4L:OrganismObservation , rdfs:Resource ;
+        N4L:hasInclusionBodyObservation
+                N4L:ex.9940N67741 .
+
+N4L:ex.8621N66996  a  N4L:TemperatureCondition , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "55.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.8621N66998 .
+
+N4L:ex.9720N67638  a  N4L:TemperatureCondition , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "37.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.9720N67640 .
+
+N4L:ex.166Observation
+        a               N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf  N4L:ex.166N66467 , N4L:ex.166N66459 , N4L:ex.166N66451 , N4L:ex.166N66443 , N4L:ex.166N66435 , N4L:ex.166N66427 .
+
+N4L:ex.6159  a                      N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.6159Observation .
+
+N4L:ex.3825N67118  a  N4L:Microaerobic , rdfs:Resource .
+
+N4L:ex.11354N65661  a  obo:CHEBI_50845 , rdfs:Resource .
+
+N4L:ex.11354N65690Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.8621N66964  a  N4L:Anoxic , rdfs:Resource .
+
+N4L:ex.8605N66717N66716
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.8605N66716Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.8605N66716 .
+
+N4L:ex.6159N66511  a  obo:UO_0000023 , rdfs:Resource .
+
+N4L:ex.8770N66806  a  obo:CHEBI_17076 , rdfs:Resource .
+
+N4L:ex.13323Observation
+        a               N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf  N4L:ex.13323N66102 , N4L:ex.13323N66172 , N4L:ex.13323N66152 , N4L:ex.13323N66162 , N4L:ex.13323N66092 , N4L:ex.13323N66222 , N4L:ex.13323N66142 , N4L:ex.13323N66232 , N4L:ex.13323N66242 , N4L:ex.13323N66252 , N4L:ex.13323N66072 , N4L:ex.13323N66112 , N4L:ex.13323N66182 , N4L:ex.13323N66202 , N4L:ex.13323N66082 , N4L:ex.13323N66122 , N4L:ex.13323N66192 , N4L:ex.13323N66132 , N4L:ex.13323N66212 .
+
+N4L:ex.3719N66002N66004N66006
+        a            obo:CHEBI_6109 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "250.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.3719N66006 .
+
+N4L:tx.27N65721  a  obo:CHEBI_17076 , rdfs:Resource .
+
+N4L:ex.6159N66487  a               N4L:NoGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.6159N66487N66489N66491 .
+
+N4L:ex.9720N67620  a      N4L:OptimalGrowth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.9720N67622 .
+
+N4L:ex.8605Phenotype  a  N4L:Psychrophile , N4L:Resistant , N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.10601  a                     rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.10601Observation .
+
+N4L:ex.512  a                       N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.512Observation ;
+        N4L:hasPhenotype            N4L:ex.512Phenotype .
+
+N4L:ex.11354N65657Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.383N66373  a  obo:UO_0000274 , rdfs:Resource .
+
+N4L:ex.13310Observation
+        a               N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf  N4L:ex.13310N65950N65949 , N4L:ex.13310N65979N65978 , N4L:ex.13310N65971N65970 , N4L:ex.13310N65955N65954 , N4L:ex.13310N65984N65983 , N4L:ex.13310N65946N65945 , N4L:ex.13310N65959N65958 , N4L:ex.13310N65963N65962 , N4L:ex.13310N65975N65974 , N4L:ex.13310N65967N65966 .
+
+N4L:ex.9424  a                      rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.9424Observation .
+
+N4L:ex.61Observation  a  N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf  N4L:ex.61N67552 , N4L:ex.61N67544 .
+
+N4L:ex.15031N66032Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.8681N66797N66796
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.8681N66796Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.8681N66796 .
+
+N4L:ex.13323N66226  a  obo:UO_0000023 , rdfs:Resource .
+
+N4L:ex.21321N67757  a  N4L:Poly-beta-hydroxybutyrateGranule , rdfs:Resource .
+
+N4L:ex.223N66642  a                N4L:UninhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.223N66642N66644 .
+
+N4L:ex.512N66685Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.7801N66359N66358
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.7801N66358Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.7801N66358 .
+
+N4L:ex.11490N67469  a  obo:UO_0000027 , rdfs:Resource .
+
+N4L:ex.3848N65613  a  N4L:Microaerobic , rdfs:Resource .
+
+N4L:ex.223N66596N66598
+        a       obo:CHEBI_17698 , rdfs:Resource .
+
+N4L:ex.8681N66784  a  obo:CHEBI_7507 , rdfs:Resource .
+
+N4L:ex.7800N67179  a      N4L:Growth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.7800N67181 .
+
+N4L:ex.7639N67677  a  N4L:TemperatureCondition , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "28.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.7639N67679 .
+
+N4L:ex.9600N67575  a  N4L:TemperatureCondition , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "67.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.9600N67577 .
+
+N4L:ex.3803N67233  a               N4L:NoGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.3803N67233N67235N67237 .
+
+N4L:ex.8605N66701N66700
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.8605N66700Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.8605N66700 .
+
+N4L:ex.3823N66922  a                  N4L:Fermentation , rdfs:Resource ;
+        N4L:hasCellularActivityOfSubstance
+                N4L:ex.3823N66922N66924 ;
+        N4L:hasCellularActivityValue  true .
+
+N4L:ex.10756N65867Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.512N66693  a  obo:CHEBI_133770 , rdfs:Resource .
+
+N4L:ex.11029N67707  a  obo:UO_0000027 , rdfs:Resource .
+
+N4L:ex.11490N67451  a  N4L:TemperatureCondition , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "32.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.11490N67453 .
+
+N4L:ex.8770N66822Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.1551N65834  a  obo:UO_0000274 , rdfs:Resource .
+
+N4L:ex.13310Phenotype
+        a       N4L:Resistant , N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.13323N66106  a  obo:UO_0000023 , rdfs:Resource .
+
+N4L:ex.512N66661  a  obo:CHEBI_100147 , rdfs:Resource .
+
+N4L:ex.8605N66716  a  obo:CHEBI_17698 , rdfs:Resource .
+
+N4L:ex.13310N65955N65954
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.13310N65954Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.13310N65954 .
+
+N4L:ex.193  a                       N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.193Observation .
+
+N4L:ex.13323N66152  a              N4L:InhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.13323N66152N66154N66156 .
+
+N4L:ex.1551N65802  a  obo:UO_0000274 , rdfs:Resource .
+
+N4L:ex.2807N65884N65886N65888
+        a            obo:CHEBI_48923 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "15.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.2807N65888 .
+
+N4L:ex.11029N67721  a  N4L:TemperatureCondition , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "15.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.11029N67723 .
+
+N4L:ex.383N66385N66387N66389
+        a            obo:CHEBI_17334 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "150.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.383N66389 .
+
+N4L:ex.8605N66746Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.11013N67401N67403N67405
+        a            obo:CHEBI_27902 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "100.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.11013N67405 .
+
+N4L:ex.61  a                        N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.61Observation ;
+        N4L:hasPhenotype            N4L:ex.61Phenotype .
+
+N4L:ex.3719  a                      N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.3719Observation ;
+        N4L:hasPhenotype            N4L:ex.3719Phenotype .
+
+N4L:ex.13310N65946N65945
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.13310N65945Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.13310N65945 .
+
+N4L:ex.13323N66096  a  obo:UO_0000023 , rdfs:Resource .
+
+N4L:ex.454N66570  a                N4L:InhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.454N66570N66572N66574 .
+
+N4L:ex.11029N67697  a  N4L:TemperatureCondition , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "0.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.11029N67699 .
+
+N4L:ex.8923N67349  a               N4L:Growth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.8923N67349N67351 .
+
+N4L:ex.13310N65974  a  obo:CHEBI_27902 , rdfs:Resource .
+
+N4L:ex.9536N67494  a      N4L:OptimalGrowth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.9536N67496 .
+
+N4L:ex.8605N66725N66724
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.8605N66724Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.8605N66724 .
+
+N4L:ex.454N66586N66588N66590
+        a            obo:CHEBI_17076 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "100.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.454N66590 .
+
+N4L:ex.454N66562N66564N66566
+        a            obo:CHEBI_28971 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "100.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.454N66566 .
+
+N4L:ex.8923N67317  a               N4L:NoGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.8923N67317N67319 .
+
+N4L:ex.512N66654N66653
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.512N66653Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.512N66653 .
+
+N4L:ex.11354N65665Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.13500N65931  a  obo:CHEBI_28001 , rdfs:Resource .
+
+N4L:ex.512N66661Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.10756N65848N65847
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.10756N65847Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.10756N65847 .
+
+N4L:ex.223N66617Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.3848N65626  a      N4L:Growth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.3848N65628 .
+
+N4L:ex.512N66693Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.13323N66212N66214N66216
+        a            obo:CHEBI_100147 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "30.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.13323N66216 .
+
+N4L:ex.193Observation
+        a               N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf  N4L:ex.193N67084 .
+
+N4L:ex.9672  a                      N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.9672Observation .
+
+N4L:ex.8605N67515  a      N4L:Growth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.8605N67517 .
+
+N4L:ex.10756N65843Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.4066N66943N66945
+        a       obo:CHEBI_17234 , rdfs:Resource .
+
+N4L:ex.10756N65867  a  obo:CHEBI_338412 , rdfs:Resource .
+
+N4L:ex.11013N67415  a  obo:UO_0000274 , rdfs:Resource .
+
+N4L:ex.8605N66728Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.61N67556  a  obo:UO_0000027 , rdfs:Resource .
+
+N4L:ex.9363  a            N4L:Strain , rdfs:Resource ;
+        N4L:hasPhenotype  N4L:ex.9363Phenotype .
+
+N4L:ex.8293N67195  a  N4L:PHCondition , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "7.7"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.8293N67197 .
+
+N4L:ex.2807N65874  a               N4L:NoGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.2807N65874N65876N65878 .
+
+N4L:ex.383N66409  a                N4L:UninhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.383N66409N66411N66413 .
+
+N4L:ex.8605N66751N66750
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.8605N66750Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.8605N66750 .
+
+N4L:ex.11094N66906  a     N4L:Growth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.11094N66908 .
+
+N4L:ex.4066  a                      N4L:Strain , rdfs:Resource ;
+        N4L:hasCellularActivity     N4L:ex.4066N66943 ;
+        N4L:hasOrganismObservation  N4L:ex.4066Observation ;
+        N4L:hasPhenotype            N4L:ex.4066Phenotype .
+
+N4L:ex.15031N66032  a  obo:CHEBI_16869 , rdfs:Resource .
+
+N4L:ex.22658N66274  a              N4L:InhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.22658N66274N66276N66278 .
+
+N4L:ex.13310N65963N65962
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.13310N65962Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.13310N65962 .
+
+N4L:ex.1557N67060  a      N4L:OptimalGrowth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.1557N67062 .
+
+N4L:ex.8621N66958  a  N4L:Microaerobic , rdfs:Resource .
+
+N4L:ex.11354N65670N65669
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.11354N65669Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.11354N65669 .
+
+N4L:ex.8605N66742N66741
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.8605N66741Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.8605N66741 .
+
+N4L:ex.8681N66772Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.8621N66976N66978
+        a       <http://doi.org/10.1601/media#Substance> , rdfs:Resource .
+
+N4L:ex.13310N65978Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.8770N66814  a  obo:CHEBI_6104 , rdfs:Resource .
+
+N4L:ex.13323N66252N66254N66256
+        a            obo:CHEBI_45924 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "1.25"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.13323N66256 .
+
+N4L:ex.8465N66874N66876N66878
+        a            obo:CHEBI_6104 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "10.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.8465N66878 .
+
+N4L:ex.8605N66733N66732
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.8605N66732Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.8605N66732 .
+
+N4L:ex.1557  a                      N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.1557Observation .
+
+N4L:ex.512N66662N66661
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.512N66661Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.512N66661 .
+
+N4L:ex.383N66381  a  obo:UO_0000274 , rdfs:Resource .
+
+N4L:ex.600N67766  a  N4L:SulfurGranule , rdfs:Resource .
+
+N4L:ex.9600N67569  a  obo:UO_0000027 , rdfs:Resource .
+
+N4L:ex.8923  a                      N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.8923Observation .
+
+N4L:ex.3803N67227  a  obo:UO_0000023 , rdfs:Resource .
+
+N4L:ex.11094  a                     N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.11094Observation ;
+        N4L:hasPhenotype            N4L:ex.11094Phenotype .
+
+N4L:ex.13500N65937Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.10756N65856N65855
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.10756N65855Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.10756N65855 .
+
+N4L:ex.22658N66294N66296N66298
+        a            obo:CHEBI_28971 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "50.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.22658N66298 .
+
+N4L:ex.8465N66878  a  obo:UO_0000274 , rdfs:Resource .
+
+N4L:ex.8681N66769N66768
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.8681N66768Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.8681N66768 .
+
+N4L:tx.27N65709Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.13323N66202  a              N4L:InhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.13323N66202N66204N66206 .
+
+N4L:ex.15031N66020Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.166N66439  a  obo:UO_0000274 , rdfs:Resource .
+
+N4L:ex.11167N65748N65750N65752
+        a            obo:CHEBI_17833 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "10.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.11167N65752 .
+
+N4L:ex.3857N65574  a      N4L:OptimalGrowth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.3857N65576 .
+
+N4L:ex.8465N66846  a  obo:UO_0000274 , rdfs:Resource .
+
+N4L:ex.8681N66792  a  obo:CHEBI_17076 , rdfs:Resource .
+
+N4L:ex.7800N67187  a  N4L:Anoxic , rdfs:Resource .
+
+N4L:ex.15031N66052Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.9600N67583  a  N4L:TemperatureCondition , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "60.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.9600N67585 .
+
+N4L:ex.1041  a                      N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.1041Observation ;
+        N4L:hasPhenotype            N4L:ex.1041Phenotype .
+
+N4L:ex.11490N67445  a  obo:UO_0000027 , rdfs:Resource .
+
+N4L:ex.7639  a                      N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.7639Observation .
+
+N4L:ex.8681N66760  a  obo:CHEBI_6472 , rdfs:Resource .
+
+N4L:ex.11354N65702Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.8621N67006  a  obo:UO_0000027 , rdfs:Resource .
+
+N4L:ex.13323N66146  a  obo:UO_0000023 , rdfs:Resource .
+
+N4L:ex.1041N67649  a      N4L:OptimalGrowth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.1041N67651 .
+
+N4L:ex.13323N66192  a              N4L:InhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.13323N66192N66194N66196 .
+
+N4L:ex.3536N67102  a      N4L:OptimalGrowth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.3536N67104 .
+
+N4L:ex.11029N67715  a  obo:UO_0000027 , rdfs:Resource .
+
+N4L:ex.6159N66518  a               N4L:UninhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.6159N66518N66520N66522 .
+
+N4L:ex.8605N66724  a  obo:CHEBI_6827 , rdfs:Resource .
+
+N4L:ex.6159Observation
+        a               N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf  N4L:ex.6159N66518 , N4L:ex.6159N66487 , N4L:ex.6159N66549 , N4L:ex.6159N66477 , N4L:ex.6159N66528 , N4L:ex.6159N66497 , N4L:ex.6159N66538 , N4L:ex.6159N66507 .
+
+N4L:ex.1551N65810  a  obo:UO_0000274 , rdfs:Resource .
+
+N4L:ex.842  a                       N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.842Observation .
+
+N4L:ex.13323N66072N66074N66076
+        a            obo:CHEBI_28077 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "5.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.13323N66076 .
+
+N4L:ex.11354N65682  a  obo:CHEBI_27902 , rdfs:Resource .
+
+N4L:ex.10785N66886  a  N4L:Anoxic , rdfs:Resource .
+
+N4L:ex.2807N65874N65876N65878
+        a            obo:CHEBI_28971 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "10.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.2807N65878 .
+
+N4L:ex.13310N65971N65970
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.13310N65970Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.13310N65970 .
+
+N4L:ex.9536N67488  a  N4L:TemperatureCondition , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "20.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.9536N67490 .
+
+N4L:ex.6159N66532  a  obo:UO_0000023 , rdfs:Resource .
+
+N4L:ex.8681N66780Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.11094Observation
+        a               N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf  N4L:ex.11094N66906 .
+
+N4L:ex.8923N67357  a               N4L:Growth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.8923N67357N67359 .
+
+N4L:ex.13500N65925  a  obo:CHEBI_17698 , rdfs:Resource .
+
+N4L:ex.3823N66922N66924
+        a       obo:CHEBI_15361 , rdfs:Resource .
+
+N4L:ex.223N66617  a  obo:CHEBI_17334 , rdfs:Resource .
+
+N4L:ex.13323N66072  a              N4L:InhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.13323N66072N66074N66076 .
+
+N4L:ex.8923N67325  a               N4L:NoGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.8923N67325N67327 .
+
+N4L:ex.2807Observation
+        a               N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf  N4L:ex.2807N65914 , N4L:ex.2807N65904 , N4L:ex.2807N65894 , N4L:ex.2807N65884 , N4L:ex.2807N65874 .
+
+N4L:ex.11029  a                     N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.11029Observation .
+
+N4L:ex.8605N67509  a  N4L:TemperatureCondition , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "0.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.8605N67511 .
+
+N4L:ex.21324Observation
+        a       N4L:OrganismObservation , rdfs:Resource ;
+        N4L:hasInclusionBodyObservation
+                N4L:ex.21324N67751 .
+
+N4L:ex.11167N65756N65758N65760
+        a            obo:CHEBI_17698 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "20.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.11167N65760 .
+
+N4L:ex.11167N65732N65734N65736
+        a            obo:CHEBI_6104 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "50.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.11167N65736 .
+
+N4L:ex.3719Phenotype  a  N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.11354N65653Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.13323N66202N66204N66206
+        a            obo:CHEBI_17076 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "300.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.13323N66206 .
+
+N4L:ex.10756N65864N65863
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.10756N65863Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.10756N65863 .
+
+N4L:ex.22658N66324  a              N4L:InhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.22658N66324N66326N66328 .
+
+N4L:ex.8605N67523  a      N4L:OptimalGrowth , rdfs:Resource ;
+        N4L:hasCondition  N4L:ex.8605N67525 .
+
+N4L:ex.8681N66777N66776
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.8681N66776Phenotype ;
+        N4L:hasSubstanceCondition  N4L:ex.8681N66776 .
+
+N4L:ex.512N66681Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.11167N65768  a  obo:UO_0000274 , rdfs:Resource .
+
+N4L:ex.10756Phenotype
+        a       N4L:Resistant , N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.3155  a            N4L:Strain , rdfs:Resource ;
+        N4L:hasPhenotype  N4L:ex.3155Phenotype .
+
+N4L:ex.11167N65736  a  obo:UO_0000274 , rdfs:Resource .
+
+N4L:ex.8605N66737  a  obo:CHEBI_28001 , rdfs:Resource .
+
+N4L:ex.10993Phenotype
+        a       N4L:Mesophile , rdfs:Resource .
+
+N4L:ex.22658N66268  a  obo:UO_0000274 , rdfs:Resource .
+
+N4L:ex.10756N65843  a  obo:CHEBI_28669 , rdfs:Resource .
+
+N4L:ex.11354N65649  a  obo:CHEBI_28971 , rdfs:Resource .
+
+N4L:ex.383N66417  a                N4L:InhibitedGrowth , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.383N66417N66419N66421 .
+
+N4L:ex.383N66369N66371N66373
+        a            obo:CHEBI_17698 , rdfs:Resource ;
+        N4L:hasEnvironmentalConditionValue
+                "150.0"^^xsd:double ;
+        N4L:hasUnit  N4L:ex.383N66373 .
+
+N4L:ex.10756N65863Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.5003  a            N4L:Strain , rdfs:Resource ;
+        N4L:hasPhenotype  N4L:ex.5003Phenotype .
+
+N4L:ex.4066Observation
+        a               N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf  N4L:ex.4066N66937 .
+
+N4L:ex.8621N66998  a  obo:UO_0000027 , rdfs:Resource .
+
+N4L:ex.9672N67277  a  obo:UO_0000274 , rdfs:Resource .
+
+N4L:ex.3810  a                      N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.3810Observation .
+
+N4L:ex.8605N66716Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.15031N66040  a  obo:CHEBI_28971 , rdfs:Resource .

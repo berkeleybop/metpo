@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<entities xmlns="http://namesforlife.com/ns/interchange" xmlns:identifier="http://namesforlife.com/ns/identifier" xmlns:xsi="http://www.w3.org/2001/XmlSchema-instance">    
+    
+    <entity doi="10.1601/ex.8370" source="rid.52">
+        <assertion scope="all strains">
+            <observational-data>
+                <observation classUri="http://doi.org/10.1601/InhibitedGrowth"/>
+                <condition>
+                    <substance>penicillin</substance>
+                    <measurement>
+                        <units>U/ml</units>
+                        <value>2</value>
+                    </measurement>
+                </condition>
+            </observational-data>
+        </assertion>
+       <assertion scope="all strains" method="disc diffusion">
+            <observational-data>
+                <observation classUri="http://doi.org/10.1601/InhibitedGrowth"/>
+                <condition>
+                    <substance>fosfomycin</substance>
+                    <measurement>
+                        <units>µg</units>
+                        <value>300</value>
+                    </measurement>
+                </condition>
+            </observational-data>
+        </assertion>
+    <assertion scope="all strains" method="disc diffusion">
+            <observational-data>
+                <observation classUri="http://doi.org/10.1601/InhibitedGrowth"/>
+                <condition>
+                    <substance>rifampicin</substance>
+                    <measurement>
+                        <units>µg</units>
+                        <value>7.5</value>
+                    </measurement>
+                </condition>
+            </observational-data>
+        </assertion>
+    </entity> 
+</entities>
