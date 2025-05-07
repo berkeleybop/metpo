@@ -1,0 +1,30 @@
+@prefix obo:   <http://purl.obolibrary.org/obo/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix interchange: <http://namesforlife.com/ns/interchange> .
+@prefix N4L:   <http://doi.org/10.1601/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix media: <http://dx.doi.org/10.1601/media#> .
+
+N4L:ex.524  a                       N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.524rid.2261N65548Observation .
+
+N4L:ex.524rid.2261N65550SubstanceClassCondition
+        a       obo:CHEBI_35627 , rdf:Resource .
+
+N4L:ex.524rid.2261N65548Observation
+        a               N4L:OrganismObservation , rdf:Resource ;
+        N4L:composedOf  N4L:ex.524rid.2261N65548GrowthObservation ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:ex.524rid.2261N65548Phenotype .
+
+N4L:ex.524rid.2261N65548GrowthObservation
+        a                               N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasSubstanceGroupCondition  N4L:ex.524rid.2261N65550SubstanceClassCondition .
+
+N4L:    a            owl:Ontology ;
+        owl:imports  N4L: .
+
+N4L:ex.524rid.2261N65548Phenotype
+        a       N4L:Susceptible , rdfs:Resource .

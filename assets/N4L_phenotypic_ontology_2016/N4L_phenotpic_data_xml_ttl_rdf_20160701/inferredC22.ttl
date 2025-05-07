@@ -1,0 +1,48 @@
+@prefix obo:   <http://purl.obolibrary.org/obo/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix interchange: <http://namesforlife.com/ns/interchange> .
+@prefix N4L:   <http://doi.org/10.1601/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix media: <http://dx.doi.org/10.1601/media#> .
+
+N4L:ex.0000N65551  a  rdfs:Resource , N4L:Microaerobic .
+
+N4L:ex.0000N65557  a  rdfs:Resource , N4L:Air .
+
+N4L:ex.0000  a                      rdfs:Resource , N4L:Strain ;
+        N4L:hasOrganismObservation  N4L:ex.0000Observation ;
+        N4L:hasOrganismObservation  [ N4L:hasAerotolerantAnaerobePhenotype
+                                              [ a       N4L:AerotolerantAnaerobe ] ;
+                                      N4L:hasAnaerobePhenotype  [ a  N4L:Anaerobe ] ;
+                                      N4L:hasGrowth             [ N4L:hasAerobicCondition
+                                                        [ a       N4L:Aerobic ] ] ;
+                                      N4L:hasOptimalGrowth      [ N4L:hasAnoxicCondition
+                                                        [ a       N4L:Anoxic ] ]
+                                    ] ;
+        N4L:hasPhenotype            N4L:ex.0000Phenotype .
+
+N4L:ex.0000N65555  a         rdfs:Resource , N4L:Growth ;
+        N4L:hasAirCondition  N4L:ex.0000N65557 ;
+        N4L:hasCondition     N4L:ex.0000N65557 .
+
+N4L:    a            owl:Ontology ;
+        owl:imports  N4L: .
+
+N4L:ex.0000Observation
+        a                               rdfs:Resource , N4L:OrganismObservation ;
+        N4L:composedOf                  N4L:ex.0000N65549 , N4L:ex.0000N65555 ;
+        N4L:hasAerotolerantAnaerobePhenotype
+                [ a       N4L:AerotolerantAnaerobe ] ;
+        N4L:hasGrowth                   N4L:ex.0000N65555 ;
+        N4L:hasGrowth                   [ N4L:hasMicroaerobicCondition
+                          [ a       N4L:Microaerobic ] ] ;
+        N4L:hasNoGrowth                 N4L:ex.0000N65549 ;
+        N4L:hasStrictAnaerobePhenotype  [ a  N4L:StrictAnaerobe ] .
+
+N4L:ex.0000Phenotype  a  rdfs:Resource , N4L:AerotolerantAnaerobe .
+
+N4L:ex.0000N65549  a                  rdfs:Resource , N4L:NoGrowth ;
+        N4L:hasCondition              N4L:ex.0000N65551 ;
+        N4L:hasMicroaerobicCondition  N4L:ex.0000N65551 .

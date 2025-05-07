@@ -23,6 +23,10 @@ dependencies = [
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.29.5"
 
+[tool.poetry.scripts]
+extract-rank-triples = "metpo.extract_rank_triples:extract_taxon_ranks"
+parse-temperatures = "metpo.regex_parse_n4l_temperatures:main"
+
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
