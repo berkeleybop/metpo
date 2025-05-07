@@ -1,0 +1,3973 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<entities xmlns="http://namesforlife.com/ns/interchange" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://namesforlife.com/ns/interchange phenotype.xsd" xmlns:identifier="http://namesforlife.com/ns/identifier">       
+    
+    <!-- source="rid.2040" : this data is arrbitrary because in previous version of this test cases the source is not given. -->
+    
+    <entity doi="10.1601/ex.578">
+    
+        <!-- No inferred phenotype /problem: Growth in Anoxic/-->
+
+        <assertion source="rid.2040">
+                <observational-data>
+                    <observation class-uri="http://doi.org/10.1601/Growth"/>
+                    <condition class-uri="http://doi.org/10.1601/Anoxic"/>
+                </observational-data>
+        </assertion>
+    
+    </entity> 
+
+    <entity doi="10.1601/ex.580">
+        
+        <!-- No inferred phenotype /problem: Growth in Anoxic/-->     
+        
+        <assertion source="rid.2040">
+                <observational-data>
+                    <observation class-uri="http://doi.org/10.1601/Growth"/>
+                    <condition class-uri="http://doi.org/10.1601/Aerobic"/>            
+                </observational-data>
+        </assertion>            
+            
+        <assertion source="rid.2040">
+                <observational-data>
+                    <observation class-uri="http://doi.org/10.1601/Growth"/>
+                    <condition class-uri="http://doi.org/10.1601/Anoxic"/>           
+                </observational-data>
+        </assertion>
+        
+    </entity>
+    
+    <entity doi="10.1601/ex.3857">
+        
+            <assertion source="rid.2040">
+                <observational-data>
+                    <observation class-uri="http://doi.org/10.1601/Growth"/>
+                    <condition class-uri="http://doi.org/10.1601/OxygenCondition">
+                        <measurement>
+                            <unit class-uri="http://purl.obolibrary.org/obo/UO_0000165">UO_0000165</unit>
+                            <value>15.0</value>
+                        </measurement>
+                    </condition> 
+                    <!--
+                    <condition class-uri="Anoxic"> @class-uri is optional
+                        <measurement class-uri="Oxygen" value="15" units="percent"/> measurement is optional
+                    </condition>
+                    -->
+                </observational-data>
+            </assertion> 
+        
+            <assertion source="rid.2040">
+                <observational-data>
+                    <observation class-uri="http://doi.org/10.1601/OptimalGrowth"/>
+                    
+                    <condition class-uri="http://doi.org/10.1601/OxygenCondition">
+                    
+                        <measurement>
+                        
+                            <unit class-uri="http://purl.obolibrary.org/obo/UO_0000165">UO_0000165</unit>
+                            
+                            <value>5.0</value>
+                        
+                        </measurement>
+                    
+                    </condition>
+            
+                
+                </observational-data>
+            </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/OptimalGrowth"/>
+                <condition class-uri="http://doi.org/10.1601/OxygenCondition">
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000165">UO_0000165</unit>
+                        <value>8.0</value>
+                    </measurement>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+         <assertion source="rid.2040">
+             <observational-data>
+             <phenotype class-uri="http://doi.org/10.1601/StrictAerobe"/> 
+             </observational-data>
+         </assertion>
+    </entity>
+    
+    <entity doi="10.1601/ex.5003"> 
+            <assertion source="rid.2040">
+                <observational-data>
+                <phenotype class-uri="http://doi.org/10.1601/Aerobe"/> 
+                </observational-data>
+            </assertion> 
+    </entity>    
+    
+    <entity doi="10.1601/ex.8359"> 
+            <assertion source="rid.2040">
+                <observational-data>
+                <phenotype class-uri="http://doi.org/10.1601/StrictAnaerobe"/>
+                </observational-data>
+            </assertion> 
+    </entity>
+    
+    <entity doi="10.1601/ex.8360">    
+        
+            <assertion source="rid.2040">
+                <observational-data>
+                <phenotype class-uri="http://doi.org/10.1601/StrictAnaerobe"/>
+                </observational-data>
+            </assertion> 
+    </entity> 
+    
+    <entity doi="10.1601/ex.3848">
+            <!-- no inferred phenotype because of growth in anoxic condition--> 
+            <assertion source="rid.2040">
+                <observational-data>
+                    <observation class-uri="http://doi.org/10.1601/Growth"/>
+                    <condition class-uri="http://doi.org/10.1601/Microaerobic"/>
+                </observational-data>
+            </assertion>
+        
+            <assertion source="rid.2040">
+<!-- no inference mesophile phenotype because of growth observation and not optimal growth. question: is there a strain that grows in mid-range temperature conditions and has different phenotype than mesophile? -->
+                <observational-data>
+                    <observation class-uri="http://doi.org/10.1601/Growth"/>
+                    <condition class-uri="http://doi.org/10.1601/TemperatureCondition">
+                        <measurement>
+                            <unit class-uri="http://purl.obolibrary.org/obo/UO_0000027">UO_0000027</unit>
+                            <value>42.0</value>
+                        </measurement>
+                    </condition>
+                </observational-data>
+            </assertion>
+        
+            <assertion source="rid.2040">
+              <observational-data>
+                  <observation class-uri="http://doi.org/10.1601/Growth"/>
+                  <condition class-uri="http://doi.org/10.1601/Anoxic"/>  
+              </observational-data>
+            </assertion>
+    </entity>
+    
+    <entity doi="10.1601/ex.3810">
+<!-- No inferred phenotype /problem: Growth in Anoxic/-->
+            <assertion source="rid.2040">
+                <observational-data>
+                    <observation class-uri="http://doi.org/10.1601/NoGrowth"/>
+                    <condition class-uri="http://doi.org/10.1601/Air"/>
+            
+                </observational-data>
+            </assertion>
+        
+            <assertion source="rid.2040">
+                <observational-data>
+                    <observation class-uri="http://doi.org/10.1601/Growth"/>
+                    <condition class-uri="http://doi.org/10.1601/Anoxic"/>
+                </observational-data>
+            </assertion>
+    </entity>    
+    
+    <entity doi="10.1601/ex.11354">
+        
+        <!-- No inference growth observation because of missing concentration of chemical-entity -->
+        
+        <assertion source="rid.2040">
+            
+            <observational-data>
+                
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>
+             
+             <condition>
+                
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_28971">CHEBI_28971</substance>
+                    
+             </condition>
+            
+            </observational-data>
+            
+            
+        </assertion>     
+        
+        <assertion source="rid.2040">
+            
+            <observational-data>
+                
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>
+               
+                <condition>
+                
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_18208">CHEBI_18208</substance>
+               
+                </condition> 
+            
+            </observational-data>         
+        
+        </assertion>
+        
+        <assertion source="rid.2040">
+            
+            <observational-data>
+            
+                <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>  
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_17698">CHEBI_17698</substance>
+                </condition>
+            
+            </observational-data>
+            
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>  
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_50845">CHEBI_50845</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/> 
+            <condition>
+                <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_48923">CHEBI_48923</substance>
+            </condition>
+            </observational-data>
+            
+        </assertion>
+
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/> 
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_16869">CHEBI_16869</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            
+                <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>    
+            
+                <!-- Here chemical-entity is "polymixin B sufate" because there is no "polymixin B" id in chebi dictionary -->
+                
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_8310">CHEBI_8310</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_17076">CHEBI_17076</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>
+             <condition>
+                 <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_27902">CHEBI_27902</substance>
+             </condition>   
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Resistant"/>  
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_17833">CHEBI_17833</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Resistant"/>   
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_6104">CHEBI_6104</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Resistant"/> 
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_3393">CHEBI_3393</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Resistant"/>  
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_6472">CHEBI_6472</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Resistant"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_7507">CHEBI_7507</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+    </entity>
+    
+    <entity doi="10.1601/tx.27">
+        <!-- No inference growth observation because of missing concentration of chemical-entity -->
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Resistant"/>  
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_17698">CHEBI_17698</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Resistant"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_6104">CHEBI_6104</substance>
+                </condition>
+
+            </observational-data>
+           
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Resistant"/>  
+            <condition>
+                <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_16869">CHEBI_16869</substance>
+            </condition>
+            </observational-data>
+            
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Resistant"/> 
+            <condition>
+                <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_17076">CHEBI_17076</substance>
+            </condition>
+            </observational-data>
+            
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Resistant"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_2800">CHEBI_2800</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+    </entity>
+    
+    <entity doi="10.1601/ex.11167">
+        
+        <assertion source="rid.2040">
+            
+            <observational-data>
+                
+                <observation class-uri="http://doi.org/10.1601/UninhibitedGrowth"/>
+                
+                <condition>
+                    
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_6104">CHEBI_6104</substance>
+                
+                    <measurement>
+                    
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000274">UO_0000274</unit>
+                        
+                        <value>50.0</value>
+                    
+                    </measurement>
+                
+                </condition>
+                
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/UninhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_27902">CHEBI_27902</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000274">UO_0000274</unit>
+                        <value>12.5</value>
+                    </measurement>
+                </condition>              
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/UninhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_17833">CHEBI_17833</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000274">UO_0000274</unit>
+                        <value>10.0</value>
+                    </measurement>
+                </condition>               
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/UninhibitedGrowth"/>
+                
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_17698">CHEBI_17698</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000274">UO_0000274</unit>
+                        <value>20.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+        <observational-data>
+            <observation class-uri="http://doi.org/10.1601/InhibitedGrowth"/>
+            <condition>
+                <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_17076">CHEBI_17076</substance>
+                <measurement>
+                    <unit class-uri="http://purl.obolibrary.org/obo/UO_0000274">UO_0000274</unit>
+                    <value>50.0</value>
+                </measurement>
+            </condition>                
+        </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/InhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_28971">CHEBI_28971</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000274">UO_0000274</unit>
+                        <value>100.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/InhibitedGrowth"/>
+                
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_28077">CHEBI_28077</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000274">UO_0000274</unit>
+                        <value>100.0</value>
+                    </measurement>
+                </condition>               
+            </observational-data>
+        </assertion>
+    </entity>
+    
+    <entity doi="10.1601/ex.1551">
+            
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/UninhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_48923">CHEBI_48923</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000274">UO_0000274</unit>
+                        <value>10.0</value>
+                    </measurement>
+                </condition>               
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/InhibitedGrowth"/>
+                
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_28971">CHEBI_28971</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000274">UO_0000274</unit>
+                        <value>50.0</value>
+                    </measurement>
+                </condition>              
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/InhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_14743">CHEBI_14743</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000274">UO_0000274</unit>
+                    </measurement>
+                </condition>                
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/InhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_6104">CHEBI_6104</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000274">UO_0000274</unit>
+                        <value>10.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/InhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_17698">CHEBI_17698</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000274">UO_0000274</unit>
+                        <value>50.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/InhibitedGrowth"/>
+                <condition>
+                    
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_27902">CHEBI_27902</substance>
+                    
+                    <measurement>
+                        
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000274">UO_0000274</unit>
+                        
+                        <value>10.0</value>
+                        
+                    </measurement>
+                </condition>                
+            </observational-data>
+        </assertion>
+        
+    </entity>
+    
+    <entity doi="10.1601/ex.10756">
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_28971">CHEBI_28971</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_28669">CHEBI_28669</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_28368">CHEBI_28368</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+         
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_17698"></substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Resistant"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_27902">CHEBI_27902</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <phenotype class-uri="http://doi.org/10.1601/Resistant"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_17076">CHEBI_17076</substance>
+                </condition>
+            </observational-data>
+                                  
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Resistant"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_6104">CHEBI_6104</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Resistant"/> 
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_338412">CHEBI_338412</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+    </entity>
+    
+    <entity doi="10.1601/ex.2807">
+        
+        <assertion source="rid.2040">
+            
+            <observational-data>
+                
+                <observation class-uri="http://doi.org/10.1601/NoGrowth"/>
+                
+                <condition>
+                    
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_28971">CHEBI_28971</substance>
+                    
+                    <measurement>
+                    
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000023">UO_0000023</unit>
+                        
+                        <value>10.0</value>
+                    
+                    </measurement>
+                
+                </condition>  
+                
+            </observational-data>
+            
+            <method class-uri="http://doi.org/10.1601/AntibioticDisc"/>
+        
+        </assertion>
+        
+        <assertion source="rid.2040">
+            
+            <observational-data>
+                
+                <observation class-uri="http://doi.org/10.1601/NoGrowth"/>
+                
+                <condition>
+                    
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_48923">CHEBI_48923</substance>
+                    
+                    <measurement>
+                        
+                        <value>15.0</value>
+                    
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000023">UO_0000023</unit>
+                
+                    </measurement>
+            
+                </condition>                
+            
+            </observational-data>
+            
+            <method class-uri="http://doi.org/10.1601/AntibioticDisc"/>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                
+                <observation class-uri="http://doi.org/10.1601/NoGrowth"/>
+                
+                <condition>
+                    
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_17833">CHEBI_17833</substance>
+                    
+                    <measurement>
+                        
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000023">UO_0000023</unit>
+                    
+                        <value>10.0</value>
+                
+                    </measurement>
+            
+                </condition>  
+        
+            </observational-data>
+                       
+            <method  class-uri="http://doi.org/10.1601/AntibioticDisc"/>
+        
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/NoGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_6104">CHEBI_6104</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000023">UO_0000023</unit>
+                        <value>30.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>
+            
+            <method class-uri="http://doi.org/10.1601/AntibioticDisc"/>
+        
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/NoGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_209807">CHEBI_209807</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000023">UO_0000023</unit>
+                        <value>30.0</value>
+                    </measurement>
+                </condition>               
+            </observational-data>
+            
+            <method class-uri="http://doi.org/10.1601/AntibioticDisc"/>
+        
+        </assertion>
+        
+    </entity>
+    
+    <entity doi="10.1601/ex.13500">
+    
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Resistant"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_17698">CHEBI_17698</substance>
+                </condition>
+            </observational-data>
+            
+            <method class-uri="http://doi.org/10.1601/AntibioticDisc"/>
+        
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Resistant"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_28001">CHEBI_28001</substance>
+                </condition>
+            </observational-data>
+            
+            <method class-uri="http://doi.org/10.1601/AntibioticDisc"/>
+        
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Resistant"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_37943">CHEBI_37943</substance>
+                </condition>
+            </observational-data>
+            <method class-uri="http://doi.org/10.1601/AntibioticDisc"/>
+        </assertion>
+        
+        
+    </entity>
+
+    <entity doi="10.1601/ex.13310">
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_100241">CHEBI_100241</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>  
+            <!-- Here chemical-entity is "gentamicin sulfate" because there is not "gentamicin" id in chebi dictionary -->
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_5312">CHEBI_5312</substance>
+                </condition>
+
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>
+            <condition>
+                <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_17698">CHEBI_17698</substance>
+            </condition>
+            </observational-data>
+            
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_28077">CHEBI_28077</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_2637">CHEBI_2637</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_28971">CHEBI_28971</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_28001">CHEBI_28001</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_27902">CHEBI_27902</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Resistant"/>
+            <!-- Here chemical-entity is "Polymyxin B sulfate " because there is not "Polymyxin B" id in chebi dictionary -->
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_8310">CHEBI_8310</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Resistant"/>  
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_6104">CHEBI_6104</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+    </entity>
+    
+    <entity doi="10.1601/ex.3719">
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_6104">CHEBI_6104</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/Growth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_32158">CHEBI_32158</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000274">UO_0000274</unit>
+                        <value>50.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>            
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/Growth"/>
+                <condition>
+                    <!-- Here class-uri is "kanamycin A sulfate" because there is no "kanamycin A" in chebi dictionary  -->
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_6109">CHEBI_6109</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000274">UO_0000274</unit>
+                        <value>250.0</value>
+                    </measurement>
+                </condition>  
+                
+            </observational-data>            
+        </assertion>
+    </entity>
+
+    <entity doi="10.1601/ex.15031">
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/> 
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_3393">CHEBI_3393</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/> 
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_124991">CHEBI_124991</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/> 
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_17698">CHEBI_17698</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_17833">CHEBI_17833</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_7507">CHEBI_7507</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_16869">CHEBI_16869</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_18208">CHEBI_18208</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Resistant"/> 
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_28971">CHEBI_28971</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+         
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Resistant"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_6104">CHEBI_6104</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Resistant"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_6472">CHEBI_6472</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Resistant"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_28368">CHEBI_28368</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Resistant"/>   
+        <!-- Here chemical-entity is "polymixin B sufate" because there is no "polymixin B" id in chebi dictionary -->
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_8310">CHEBI_8310</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Resistant"/>
+            <condition>
+                <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_17076">CHEBI_17076</substance>
+            </condition>
+            </observational-data>
+            
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Resistant"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_26894">CHEBI_26894</substance>
+                </condition>
+            </observational-data>
+        </assertion>        
+    </entity>
+    
+    <entity doi="10.1601/ex.13323">
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/InhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_28077">CHEBI_28077</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000023">UO_0000023</unit>
+                        <value>5.0</value>
+                    </measurement>
+                </condition>                 
+            </observational-data>
+            
+            <method class-uri="http://doi.org/10.1601/AntibioticDisc"/>
+        
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/InhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_2676">CHEBI_2676</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000023">UO_0000023</unit>
+                        <value>10.0</value>
+                    </measurement>
+                </condition>             
+            </observational-data>
+            <method class-uri="http://doi.org/10.1601/AntibioticDisc"/>
+        </assertion>
+        
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/InhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_6104">CHEBI_6104</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000023">UO_0000023</unit>
+                        <value>10.0</value>
+                    </measurement>
+                </condition>              
+            </observational-data>
+            
+            <method class-uri="http://doi.org/10.1601/AntibioticDisc"/>
+        
+        </assertion>
+        
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/InhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_3393">CHEBI_3393</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000023">UO_0000023</unit>
+                        <value>10.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>
+            
+            <method class-uri="http://doi.org/10.1601/AntibioticDisc"/>
+        
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/InhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_28864">CHEBI_28864</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000023">UO_0000023</unit>
+                        <value>10.0</value>
+                    </measurement>
+                </condition>              
+            </observational-data>
+            <method class-uri="http://doi.org/10.1601/AntibioticDisc"/>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/InhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_17076">CHEBI_17076</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000023">UO_0000023</unit>
+                        <value>10.0</value>
+                    </measurement>
+                </condition>             
+            </observational-data>
+            
+            <method class-uri="http://doi.org/10.1601/AntibioticDisc"/>
+        
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/InhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_48923">CHEBI_48923</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000023">UO_0000023</unit>
+                        <value>15.0</value>
+                    </measurement>
+                </condition>              
+            </observational-data>
+            
+            <method class-uri="http://doi.org/10.1601/AntibioticDisc"/>
+        
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/InhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_209807">CHEBI_209807</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000023">UO_0000023</unit>
+                        <value>30.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>
+            
+            <method class-uri="http://doi.org/10.1601/AntibioticDisc"/>
+        
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/InhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_204928">CHEBI_204928</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000023">UO_0000023</unit>
+                        <value>30.0</value>
+                    </measurement>
+                </condition>               
+            </observational-data>
+            
+            <method class-uri="http://doi.org/10.1601/AntibioticDisc"/>
+        
+        </assertion>
+        
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/InhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_17698">CHEBI_17698</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000023">UO_0000023</unit>
+                        <value>30.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>
+            
+            <method class-uri="http://doi.org/10.1601/AntibioticDisc"/>
+        
+        </assertion>
+        
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/InhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_6104">CHEBI_6104</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000023">UO_0000023</unit>
+                        <value>30.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>
+            
+            <method class-uri="http://doi.org/10.1601/AntibioticDisc"/>
+        
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/InhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_8310">CHEBI_8310</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000023">UO_0000023</unit>
+                        <value>300.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>
+            
+            <method class-uri="http://doi.org/10.1601/AntibioticDisc"/>
+        
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/InhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_8310"></substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000023">UO_0000023</unit>
+                        <value>300.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>
+            
+            <method class-uri="http://doi.org/10.1601/AntibioticDisc"/>
+        
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/InhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_17076">CHEBI_17076</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000023">UO_0000023</unit>
+                        <value>300.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>
+            
+            <method class-uri="http://doi.org/10.1601/AntibioticDisc"/>
+        
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/UninhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_100147">CHEBI_100147</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000023">UO_0000023</unit>
+                        <value>30.0</value>
+                    </measurement>
+                </condition>               
+            </observational-data>
+            
+            <method class-uri="http://doi.org/10.1601/AntibioticDisc"/>
+        
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/UninhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_7591">CHEBI_7591</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000023">UO_0000023</unit>
+                        <value>300.0</value>
+                    </measurement>
+                </condition>               
+            </observational-data>
+            <method class-uri="http://doi.org/10.1601/AntibioticDisc"/>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/UninhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_9332">CHEBI_9332</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000023">UO_0000023</unit>
+                        <value>300.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>
+            
+            <method class-uri="http://doi.org/10.1601/AntibioticDisc"/>
+        
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/UninhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_9332">CHEBI_9332</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000023">UO_0000023</unit>
+                        <value>23.75</value>
+                    </measurement>
+                </condition>                
+            </observational-data>
+            <method class-uri="http://doi.org/10.1601/AntibioticDisc"/>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/UninhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_45924">CHEBI_45924</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000023">UO_0000023</unit>
+                        <value>1.25</value>
+                    </measurement>
+                </condition>                
+            </observational-data>
+            
+            <method class-uri="http://doi.org/10.1601/AntibioticDisc"/>
+        
+        </assertion>
+        
+    </entity>
+    
+    <entity doi="10.1601/ex.22658">
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/UninhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_6104">CHEBI_6104</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000274">UO_0000274</unit>
+                        <value>5.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>
+            
+            <method class-uri="http://doi.org/10.1601/AntibioticDisc"/>
+        
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/InhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_6104">CHEBI_6104</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000274">UO_0000274</unit>
+                        <value>50.0</value>
+                    </measurement>
+                </condition>              
+            </observational-data>
+            
+            <method class-uri="http://doi.org/10.1601/AntibioticDisc"/>
+        
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/UninhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_7507">CHEBI_7507</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000274">UO_0000274</unit>
+                        <value>5.0</value>
+                    </measurement>
+                </condition>              
+            </observational-data>
+            
+            <method class-uri="http://doi.org/10.1601/AntibioticDisc"/>
+        
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/InhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_28971">CHEBI_28971</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000274">UO_0000274</unit>
+                        <value>50.0</value>
+                    </measurement>
+                </condition>               
+            </observational-data>
+            
+            <method class-uri="http://doi.org/10.1601/AntibioticDisc"/>
+        
+        </assertion>
+        
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/InhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_7507">CHEBI_7507</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000274">UO_0000274</unit>
+                    </measurement>
+                </condition>               
+            </observational-data>
+            
+            <method class-uri="http://doi.org/10.1601/AntibioticDisc"/>
+        
+        </assertion>
+        
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/InhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_48923">CHEBI_48923</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000274">UO_0000274</unit>
+                        <value>5.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>
+            
+            <method class-uri="http://doi.org/10.1601/AntibioticDisc"/>
+        
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/InhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_5312">CHEBI_5312</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000274">UO_0000274</unit>
+                        <value>5.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>
+            
+            <method class-uri="http://doi.org/10.1601/AntibioticDisc"/>
+        
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/InhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_32158">CHEBI_32158</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000274">UO_0000274</unit>
+                        <value>5.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>
+            
+            <method class-uri="http://doi.org/10.1601/AntibioticDisc"/>
+        
+        </assertion>
+        
+    </entity>
+    
+    <entity doi="10.1601/ex.7801">
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Resistant"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_6104">CHEBI_6104</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Resistant"/>  
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_28077">CHEBI_28077</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>
+            <!-- Here chemical-entity is "gentamicin sulfate" because there is not "gentamicin" id in chebi dictionary -->
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_5312">CHEBI_5312</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_27902">CHEBI_27902</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/> 
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_17698">CHEBI_17698</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+    </entity>
+    
+    <entity doi="10.1601/ex.383">
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/UninhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_17698">CHEBI_17698</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000274">UO_0000274</unit>
+                        <value>150.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>            
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/UninhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_28971">CHEBI_28971</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000274">UO_0000274</unit>
+                        <value>150.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>            
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/UninhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_17334">CHEBI_17334</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000274">UO_0000274</unit>
+                        <value>150.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>            
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/UninhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_6104">CHEBI_6104</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000274">UO_0000274</unit>
+                        <value>150.0</value>
+                    </measurement>
+                </condition>             
+            </observational-data>            
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/UninhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_28001">CHEBI_28001</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000274">UO_0000274</unit>
+                        <value>150.0</value>
+                    </measurement>
+                </condition>               
+            </observational-data>            
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/UninhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_17076">CHEBI_17076</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000274">UO_0000274</unit>
+                        <value>150.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>            
+        </assertion>
+        
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/InhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_28077">CHEBI_28077</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000274">UO_0000274</unit>
+                        <value>150.0</value>
+                    </measurement>
+                </condition>               
+            </observational-data>            
+        </assertion>
+        
+    </entity>
+    
+    <entity doi="10.1601/ex.166">
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/InhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_17698">CHEBI_17698</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000274">UO_0000274</unit>
+                        <value>75.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>            
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/InhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_28077">CHEBI_28077</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000274">UO_0000274</unit>
+                        <value>25.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>            
+        </assertion>
+        
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/UninhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_17076">CHEBI_17076</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000274">UO_0000274</unit>
+                        <value>200.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>            
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/UninhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_18208">CHEBI_18208</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000274">UO_0000274</unit>
+                        <value>200.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>            
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/UninhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_6104">CHEBI_6104</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000274">UO_0000274</unit>
+                        <value>200.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>            
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/UninhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_28971">CHEBI_28971</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000274">UO_0000274</unit>
+                        <value>200.0</value>
+                    </measurement>
+                </condition>               
+            </observational-data>            
+        </assertion>
+        
+    </entity>
+    
+    <entity doi="10.1601/ex.6159">
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/NoGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_28971">CHEBI_28971</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000023">UO_0000023</unit>
+                        <value>10.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>
+            
+            <method class-uri="http://doi.org/10.1601/AntibioticDisc"/>
+        
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/NoGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_3393">CHEBI_3393</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000023">UO_0000023</unit>
+                        <value>100.0</value>
+                    </measurement>
+                </condition>               
+            </observational-data>
+            
+            <method class-uri="http://doi.org/10.1601/AntibioticDisc"/>
+        
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/NoGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_17076">CHEBI_17076</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000023">UO_0000023</unit>
+                        <value>10.0</value>
+                    </measurement>
+                </condition>               
+            </observational-data>
+            
+            <method class-uri="http://doi.org/10.1601/AntibioticDisc"/>
+
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/UninhibitedGrowth"/>
+                <condition>
+                    <!-- Here chemical-entity is "gentamicin sulfate" because there is not "gentamicin" id in chebi dictionary -->
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_5312">CHEBI_5312</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000023">UO_0000023</unit>
+                        <value>10.0</value>
+                    </measurement>
+                </condition> 
+                
+            </observational-data> 
+            <method class-uri="http://doi.org/10.1601/AntibioticDisc"/>            
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/UninhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_6104">CHEBI_6104</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000023">UO_0000023</unit>
+                        <value>30.0</value>
+                    </measurement>
+                </condition>
+            </observational-data>
+            
+            <method class-uri="http://doi.org/10.1601/AntibioticDisc"/>            
+        
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/UninhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_7507">CHEBI_7507</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000023">UO_0000023</unit>
+                        <value>30.0</value>
+                    </measurement>
+                </condition>
+            </observational-data> 
+            
+            <method class-uri="http://doi.org/10.1601/AntibioticDisc"/>            
+        
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/UninhibitedGrowth"/>
+                <condition>
+                    <!-- Here chemical-entity is "Polymyxin B sulfate " because there is not "Polymyxin B" id in chebi dictionary -->
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_8310">CHEBI_8310</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000000">UO_0000000</unit>
+                        <value>300.0</value>
+                    </measurement>
+                </condition>    
+                
+            </observational-data>
+            
+            <method class-uri="http://doi.org/10.1601/AntibioticDisc"/> 
+        
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/UninhibitedGrowth"/>
+                <condition>
+                    <!-- Here chemical-entity is "Polymyxin B sulfate " because there is not "Polymyxin B" id in chebi dictionary -->
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_27902">CHEBI_27902</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000023">UO_0000023</unit>
+                        <value>30.0</value>
+                    </measurement>
+                </condition>  
+                
+            </observational-data>
+            
+            <method class-uri="http://doi.org/10.1601/AntibioticDisc"/> 
+        
+        </assertion>
+        
+    </entity>
+    
+    <entity doi="10.1601/ex.454">
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/InhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_28971">CHEBI_28971</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000274">UO_0000274</unit>
+                        <value>100.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>            
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/InhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_17698">CHEBI_17698</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000274">UO_0000274</unit>
+                        <value>100.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>            
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/UninhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_6104">CHEBI_6104</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000274">UO_0000274</unit>
+                        <value>100.0</value>
+                    </measurement>
+                </condition> 
+            </observational-data> 
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/UninhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_17076">CHEBI_17076</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000274">UO_0000274</unit>
+                        <value>100.0</value>
+                    </measurement>
+                </condition> 
+            </observational-data> 
+        </assertion>
+        
+    </entity>
+    
+    <entity doi="10.1601/ex.223">
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/NoGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_17698">CHEBI_17698</substance>
+                </condition>            
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/InhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_27902">CHEBI_27902</substance>
+                </condition>                
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Resistant"/> 
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_28971">CHEBI_28971</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/UninhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_28971">CHEBI_28971</substance>
+                </condition>
+            </observational-data> 
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Resistant"/> 
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_17334">CHEBI_17334</substance>
+                </condition>
+            </observational-data>
+            
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/UninhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_17334">CHEBI_17334</substance>
+                </condition> 
+            </observational-data> 
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Resistant"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_6104">CHEBI_6104</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/UninhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_6104">CHEBI_6104</substance>
+                </condition> 
+            </observational-data> 
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Resistant"/>   
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_9215">CHEBI_9215</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/UninhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_9215">CHEBI_9215</substance>
+                </condition> 
+            </observational-data> 
+        </assertion>
+    </entity>
+    
+    <entity doi="10.1601/ex.512">
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>  
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_28669">CHEBI_28669</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>  
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_17698">CHEBI_17698</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_6104">CHEBI_6104</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_100147">CHEBI_100147</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_7507">CHEBI_7507</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+    
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_17334">CHEBI_17334</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_28077">CHEBI_28077</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_26580">CHEBI_26580</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_17076">CHEBI_17076</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_27902">CHEBI_27902</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Resistant"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_28971">CHEBI_28971</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Resistant"/>
+                <condition>
+                    <!-- We use "amoxicillin" instead of "amoxycillin" -->
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_133770">CHEBI_133770</substance>
+                </condition>
+            
+            </observational-data>
+        </assertion>
+        
+    </entity>
+    
+    <entity doi="10.1601/ex.8605">
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_48923">CHEBI_48923</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_27902">CHEBI_27902</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_6104">CHEBI_6104</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_3393">CHEBI_3393</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_17698">CHEBI_17698</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_100147">CHEBI_100147</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Resistant"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_6827">CHEBI_6827</substance>
+                </condition>
+            </observational-data>
+            
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Resistant"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_100147">CHEBI_100147</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            
+                <phenotype class-uri="http://doi.org/10.1601/Resistant"/>   
+            
+            <condition>
+                <!-- Instead of "colistin sulfate" we use "colistin" -->
+                <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_37943">CHEBI_37943</substance>
+            </condition>
+            </observational-data>
+            
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Resistant"/> 
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_28001">CHEBI_28001</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>
+            
+                <condition>
+                    <!-- sublactam ? -->
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_28971">CHEBI_28971</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_59063">CHEBI_59063</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_17833">CHEBI_17833</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+    </entity>
+    
+    <entity doi="10.1601/ex.8681">
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_3393">CHEBI_3393</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_6472">CHEBI_6472</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_16869">CHEBI_16869</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Resistant"/> 
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_28971">CHEBI_28971</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Resistant"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_18208">CHEBI_18208</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Resistant"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_17833">CHEBI_17833</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Resistant"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_6104">CHEBI_6104</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Resistant"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_7507">CHEBI_7507</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Resistant"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_8309">CHEBI_8309</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Resistant"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_17076">CHEBI_17076</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Resistant"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_27902">CHEBI_27902</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+    </entity>
+    
+    <entity doi="10.1601/ex.8770">
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_17334">CHEBI_17334</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_17076">CHEBI_17076</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_7507">CHEBI_7507</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_6104">CHEBI_6104</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_17833">CHEBI_17833</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_6827">CHEBI_6827</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Susceptible"/>
+            <condition>
+                <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_28001">CHEBI_28001</substance>
+            </condition>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            
+            <observational-data>
+                
+            
+                <phenotype class-uri="http://doi.org/10.1601/Resistant"/> 
+            
+                <condition>
+                    <!-- There is "pteridine (CHEBI_27601)" but there is not "pteridine 0/129" -->
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_27601">CHEBI_27601</substance>
+                </condition>
+            
+            </observational-data>
+        
+        </assertion>
+        
+        
+        <assertion source="rid.2040">
+            
+            <observational-data>
+        
+                <phenotype class-uri="http://doi.org/10.1601/Resistant"/>
+               
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_100147">CHEBI_100147</substance>
+                </condition>
+            
+            </observational-data>
+    
+        </assertion>
+    
+    </entity>
+    
+    
+    <entity doi="10.1601/ex.8465">
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/InhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_28971">CHEBI_28971</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000274">UO_0000274</unit>
+                        <value>25.0</value>
+                    </measurement>
+                </condition>               
+            </observational-data>            
+        </assertion>        
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/InhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_32158">CHEBI_32158</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000274">UO_0000274</unit>
+                        <value>25.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>            
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/InhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_27902">CHEBI_27902</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000274">UO_0000274</unit>
+                        <value>12.5</value>
+                    </measurement>
+                </condition>                
+            </observational-data>            
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/InhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_17833">CHEBI_17833</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000274">UO_0000274</unit>
+                        <value>10.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>            
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/InhibitedGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_6104">CHEBI_6104</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000274">UO_0000274</unit>
+                        <value>10.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>            
+        </assertion>
+    </entity>
+
+    <entity doi="10.1601/ex.10785">
+    
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/Growth"/>
+                <condition class-uri="http://doi.org/10.1601/Anoxic"/>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/StrictAnaerobe"/>  
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            
+            <observational-data>
+                
+                <!-- Should be inferred: Strain has anaerobic respiration phenotype -->
+                
+                <!-- 
+                    here, assertion is given in different way that than current assertion. cellular-activity-condition-value arrtibute is deleted.
+                    <cellular-activity cellular-activity-class-uri="http://purl.obolibrary.org/obo/CHEBI_15379" cellular-activity-condition-value="false"/> 
+                -->
+                
+                <cellular-activity class-uri="http://doi.org/10.1601/Respiration"/>
+                
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_15075">CHEBI_15075</substance>
+                </condition> 
+            
+            </observational-data>
+     
+        </assertion>
+        
+        
+    </entity>
+    
+    <entity doi="10.1601/ex.11094">
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Anaerobe"/>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/Growth"/>
+                <condition class-uri="http://doi.org/10.1601/Anoxic"/>
+            </observational-data>
+        </assertion>
+        
+    </entity>
+    
+    <entity doi="10.1601/ex.3155">
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/FacultativeAnaerobe"/>
+            </observational-data>
+        </assertion>
+        
+    </entity>
+    
+    <entity doi="10.1601/ex.3823">
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/StrictAnaerobe"/> 
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <cellular-activity class-uri="http://doi.org/10.1601/Fermentation"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_15361">CHEBI_15361</substance>
+                </condition>
+            </observational-data>
+        </assertion>
+        
+    </entity>
+    
+    <entity doi="10.1601/ex.4066">
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/StrictAnaerobe"/>  
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/AerotolerantAnaerobe"/>
+            </observational-data>
+        </assertion>
+    
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/Growth"/>
+                <condition class-uri="http://doi.org/10.1601/Microaerobic"/>                
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <!-- Check what is class-uri (O2 or other substance). Check implemented rules (50), (51), (52) & (53).-->
+                <cellular-activity class-uri="http://doi.org/10.1601/Fermentation"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_17234">CHEBI_17234</substance>
+                </condition> 
+                
+            </observational-data>
+        </assertion>
+        
+    </entity>
+
+    <entity doi="10.1601/ex.8621">
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/AnaerobicRespiration"/>
+            </observational-data>
+        </assertion>
+
+
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/OptimalGrowth"/>
+                <condition class-uri="http://doi.org/10.1601/Microaerobic"/>                
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">        
+        <observational-data>
+            <observation class-uri="http://doi.org/10.1601/Growth"/>
+            <condition class-uri="http://doi.org/10.1601/Anoxic"/>
+        </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <!-- Check what is class-uri (O2 or other substance). Check implemented rules (50), (51), (52) & (53).-->
+                <cellular-activity class-uri="http://doi.org/10.1601/Respiration"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_15379"></substance>
+                </condition>
+                
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <cellular-activity class-uri="http://doi.org/10.1601/Respiration"/>
+                <condition>
+                    <substance class-uri="http://doi.org/10.1601/media#Substance">Substance</substance>
+                </condition>
+                <!-- Check what is class-uri (O2 or other substance). Check implemented rules (50), (51), (52) & (53).-->
+                <!-- There is no substance that does respiration. -->
+                <!-- Inference: strain ex.8621 has respires phenotype ? Ask George on the name "repires/ferments phenotype". -->
+            </observational-data>
+        </assertion>
+    
+        <assertion source="rid.2040">
+            
+            <observational-data>
+                
+                <observation class-uri="http://doi.org/10.1601/OptimalGrowth"/>
+                
+                <condition class-uri="http://doi.org/10.1601/TemperatureCondition">
+                
+                    <measurement>
+                    
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000027">UO_0000027</unit>
+                        
+                        <value>75.0</value>
+                    
+                    </measurement>
+                
+                </condition>
+                                
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            
+            <observational-data>
+            
+                <observation class-uri="http://doi.org/10.1601/Growth"/>
+                
+                <condition class-uri="http://doi.org/10.1601/TemperatureCondition">
+                
+                    <measurement>
+                    
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000027">UO_0000027</unit>
+                        
+                        <value>55.0</value>
+                    
+                    </measurement>
+                
+                </condition>                
+            
+            </observational-data>
+        
+        </assertion>
+        
+        <assertion source="rid.2040">
+
+            <observational-data>
+
+                <observation class-uri="http://doi.org/10.1601/Growth"/>
+
+                <condition class-uri="http://doi.org/10.1601/TemperatureCondition">
+
+                    <measurement>
+
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000027">UO_0000027</unit>
+
+                        <value>77.5</value>
+
+                    </measurement>
+
+                </condition>
+                
+            </observational-data>
+
+        </assertion>
+
+    </entity>
+    
+    <entity doi="10.1601/ex.9363">
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/StrictAerobe"/>
+            </observational-data>
+        </assertion>
+    </entity>
+
+    <entity doi="10.1601/ex.9364">
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/StrictAerobe"/>
+            </observational-data>
+        </assertion>
+    </entity>
+
+    <entity doi="10.1601/ex.9598">
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/FacultativeAnaerobe"/>
+            </observational-data>
+        </assertion>
+   </entity>
+    
+    <entity doi="10.1601/ex.9633">
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/FacultativeAnaerobe"/>
+            </observational-data>
+        </assertion>
+    
+        <assertion source="rid.2040">
+        <observational-data>
+            <!-- Check what is class-uri (O2 or other substance). Check implemented rules (50), (51), (52) & (53).-->
+            <cellular-activity class-uri="http://doi.org/10.1601/Respiration"/>
+            <condition>
+                <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_15379">CHEBI_15379</substance>
+            </condition>
+            
+        </observational-data>
+        </assertion>
+    </entity>
+    
+    <entity doi="10.1601/ex.820">
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/NoGrowth"/>
+                <condition class-uri="http://doi.org/10.1601/Microaerobic"/>                
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/NoGrowth"/>
+                <condition class-uri="http://doi.org/10.1601/Air"/>                
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/OptimalGrowth"/>
+                <condition class-uri="http://doi.org/10.1601/Anoxic"/>                
+            </observational-data>
+        </assertion>
+    </entity>
+    
+    <entity doi="10.1601/ex.1557">
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/OptimalGrowth"/>
+                <condition class-uri="http://doi.org/10.1601/PHCondition">
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000196">UO_0000196</unit>
+                        <value>7.45</value>
+                    </measurement>
+                </condition>                
+            </observational-data>
+        </assertion>
+    </entity>
+    
+    <entity doi="10.1601/ex.1769">
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/Growth"/>
+                <condition class-uri="http://doi.org/10.1601/Microaerobic"/>                
+            </observational-data>
+        </assertion>
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/Growth"/>
+                <condition class-uri="http://doi.org/10.1601/Anoxic"/>                
+            </observational-data>
+        </assertion>
+    </entity>
+    
+    <entity doi="10.1601/ex.193">
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/OptimalGrowth"/>
+                <condition class-uri="http://doi.org/10.1601/PHCondition">
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000196">UO_0000196</unit>
+                        <value>6.75</value>
+                    </measurement>
+                </condition>                
+            </observational-data>
+    </assertion>
+    </entity>
+    <entity doi="10.1601/ex.3007">
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/FacultativeAnaerobe"/>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Neutrophile"/>
+            </observational-data>
+        </assertion>
+        
+    </entity>
+    
+    <entity doi="10.1601/ex.3536">
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/OptimalGrowth"/>
+                <condition class-uri="http://doi.org/10.1601/HighPHCondition"/>                
+            </observational-data>
+        </assertion>
+        
+    </entity>
+    
+    <entity doi="10.1601/ex.3825">
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/NoGrowth"/>
+                <condition class-uri="http://doi.org/10.1601/Air"/>                
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/Growth"/>
+                <condition class-uri="http://doi.org/10.1601/Microaerobic"/>                
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/Growth"/>
+                <condition class-uri="http://doi.org/10.1601/Anoxic"/>                
+            </observational-data>
+        </assertion>         
+    </entity>
+    
+    <entity doi="10.1601/ex.5001">
+        <assertion source="rid.2040">
+            <observational-data>
+                <!-- Check what is class-uri (O2 or other substance). Check implemented rules (50), (51), (52) & (53).-->
+                <cellular-activity class-uri="http://doi.org/10.1601/Respiration"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_15379">CHEBI_15379</substance>
+                </condition> 
+                
+            </observational-data>
+        </assertion>        
+    </entity>
+    
+    <entity doi="10.1601/ex.5003">
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/FacultativeAnaerobe"/>
+            </observational-data>
+        </assertion>
+    </entity>
+    
+    <entity doi="10.1601/ex.578">
+        <assertion source="rid.2040">
+        <observational-data>
+            <cellular-activity class-uri="http://doi.org/10.1601/Fermentation"/>
+            <condition>
+                <substance class-uri="http://doi.org/10.1601/media#Substance"></substance>
+            </condition>
+            <!-- Check what is class-uri (O2 or other substance). Check implemented rules (50), (51), (52) & (53).-->
+            <!-- There is not substance that does fermentation. -->
+        </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/NoGrowth"/>
+                <condition class-uri="http://doi.org/10.1601/Air"/>                
+            </observational-data>
+        </assertion>        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/NoGrowth"/>
+                <condition class-uri="http://doi.org/10.1601/Microaerobic"/>                
+            </observational-data>
+        </assertion>        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/Growth"/>
+                <condition class-uri="http://doi.org/10.1601/Anoxic"/>                
+            </observational-data>
+        </assertion>      
+    </entity>
+    
+    <entity doi="10.1601/ex.615">
+        
+    <assertion source="rid.2040">
+        <observational-data>
+        <phenotype class-uri="http://doi.org/10.1601/Neutrophile"/>
+        </observational-data>
+    </assertion>
+        
+    </entity>
+    
+    <entity doi="10.1601/ex.7800">
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/Growth"/>
+                <condition class-uri="http://doi.org/10.1601/Microaerobic"/>                
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/Growth"/>
+                <condition class-uri="http://doi.org/10.1601/Anoxic"/>                
+            </observational-data>
+        </assertion>
+        
+    </entity>
+    
+    <entity doi="10.1601/ex.8293">
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/OptimalGrowth"/>
+                <condition class-uri="http://doi.org/10.1601/PHCondition">
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000196">UO_0000196</unit>
+                        <value>7.7</value>
+                    </measurement>
+                </condition>                
+            </observational-data>
+        </assertion>
+    </entity>
+    
+    <entity doi="10.1601/ex.842">
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/OptimalGrowth"/>
+                <condition class-uri="http://doi.org/10.1601/PHCondition">
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000196">UO_0000196</unit>
+                        <value>7.4</value>
+                    </measurement>
+                </condition>                
+            </observational-data>
+        </assertion>
+    </entity>
+    
+    <entity doi="10.1601/ex.895">
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/OptimalGrowth"/>
+                <condition class-uri="http://doi.org/10.1601/PHCondition">
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000196">UO_0000196</unit>
+                        <value>3.6</value>
+                    </measurement>
+                </condition>               
+            </observational-data>
+        </assertion>
+    </entity>
+    
+    <entity doi="10.1601/ex.3803">
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/NoGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_124991">CHEBI_124991</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000023">UO_0000023</unit>
+                        <value>30.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>
+            
+            <method class-uri="http://doi.org/10.1601/Disc"/>
+
+        </assertion> 
+
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/NoGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_17334">CHEBI_17334</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000000">UO_0000000</unit>
+                        <value>2.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>
+            
+            <method class-uri="http://doi.org/10.1601/Disc"/>
+        
+        </assertion> 
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/NoGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_48923">CHEBI_48923</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000023">UO_0000023</unit>
+                        <value>15.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>      
+        
+            <method class-uri="http://doi.org/10.1601/Disc"/>
+        
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/NoGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_27902">CHEBI_27902</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000023">UO_0000023</unit>
+                        <value>10.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>      
+            
+            <method class-uri="http://doi.org/10.1601/Disc"/>
+        
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/Growth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_46345">CHEBI_46345</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000273">UO_0000273</unit> 
+                        <value>100.0</value>
+                    </measurement>
+                </condition>              
+            </observational-data>
+        </assertion>
+    </entity>
+    
+    <entity doi="10.1601/ex.9672">
+        
+        <assertion source="rid.2040">
+            
+            <observational-data>
+                
+                <observation class-uri="http://doi.org/10.1601/NoGrowth"/>
+                
+                <condition>
+                    
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_28971">CHEBI_28971</substance>
+                    
+                    <measurement>
+                        
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000274">UO_0000274</unit>
+                    
+                        <value>100.0</value>
+                
+                    </measurement>
+                
+                </condition>
+                
+            </observational-data> 
+            
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/NoGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_17698">CHEBI_17698</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000274">UO_0000274</unit>
+                        <value>12.5</value>
+                    </measurement>
+                </condition>                
+            </observational-data> 
+        </assertion>
+        
+        <assertion source="rid.2040">
+            
+            <observational-data>
+                
+                <observation class-uri="http://doi.org/10.1601/Growth"/>
+                
+                <condition>
+                    
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_6104">CHEBI_6104</substance>
+                    
+                    <measurement>
+                        
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000274">UO_0000274</unit>
+                    
+                        <value>50.0</value>
+                
+                    </measurement>
+                
+                </condition>
+                
+            </observational-data>  
+            
+        </assertion>
+
+    </entity>
+    
+    <entity doi="10.1601/ex.8923">
+        
+<!-- check inference over conditions that are not O2, temperature, pH. missing value and unit of given substances? -->
+<!-- question: resistanct/suscepatable phenotype based on only  CHEBI_ID (substance) without condition-value and unit-->        
+        <assertion source="rid.2040">
+        
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/NoGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_3393">CHEBI_3393</substance>
+                </condition>                
+            </observational-data>   
+            
+            <method class-uri="http://doi.org/10.1601/None"/>
+        
+        </assertion>
+        
+        <assertion source="rid.2040">
+        
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/NoGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_6472">CHEBI_6472</substance>
+                </condition>               
+            </observational-data>      
+            
+            <method class-uri="http://doi.org/10.1601/None"/>
+        
+        </assertion>
+        
+        <assertion source="rid.2040">
+        
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/NoGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_16869">CHEBI_16869</substance>
+                </condition>                
+            </observational-data>    
+            
+            <method class-uri="http://doi.org/10.1601/None"/>
+        
+        </assertion>
+        
+        <assertion source="rid.2040">
+        
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/NoGrowth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_27902">CHEBI_27902</substance>
+                </condition>                 
+            </observational-data>
+            
+            <method class-uri="http://doi.org/10.1601/None"/>
+        
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/Growth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_28971">CHEBI_28971</substance>
+                </condition>                
+            </observational-data>
+            
+            <method class-uri="http://doi.org/10.1601/None"/>
+        
+        </assertion>
+        
+        <assertion source="rid.2040">
+            
+            <observational-data>
+                
+                <observation class-uri="http://doi.org/10.1601/Growth"/>
+                
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_18208">CHEBI_18208</substance>
+                </condition>
+                
+            </observational-data>      
+            
+            <method class-uri="http://doi.org/10.1601/None"/>
+        
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/Growth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_17833">CHEBI_17833</substance>
+                </condition>                
+            </observational-data>
+            
+            <method class-uri="http://doi.org/10.1601/None"/>
+        </assertion>
+        
+         <assertion source="rid.2040">
+         
+             <observational-data>
+                <observation class-uri="http://doi.org/10.1601/Growth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_6104">CHEBI_6104</substance>
+                </condition>                
+            </observational-data> 
+             
+            <method class-uri="http://doi.org/10.1601/None"/>
+        
+         </assertion>
+        
+        <assertion source="rid.2040">
+
+            <observational-data>
+
+                <observation class-uri="http://doi.org/10.1601/Growth"/>
+
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_7507">CHEBI_7507</substance>
+                </condition>
+                
+            </observational-data>      
+
+            <method class-uri="http://doi.org/10.1601/None"/>
+
+        </assertion>
+
+        <assertion source="rid.2040">
+            
+            <observational-data>
+                
+                <observation class-uri="http://doi.org/10.1601/Growth"/>
+            
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_8309">CHEBI_8309</substance>
+                </condition>                 
+        
+            </observational-data>
+            
+            <method class-uri="http://doi.org/10.1601/None"/>
+        
+        </assertion>
+        
+        <assertion source="rid.2040">
+
+            <observational-data>
+
+                <observation class-uri="http://doi.org/10.1601/Growth"/>
+
+                <condition>
+
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_17076">CHEBI_17076</substance>
+
+                </condition>               
+            
+            </observational-data>      
+        
+            <method class-uri="http://doi.org/10.1601/None"/>
+    
+        </assertion>
+    
+    </entity>
+    
+    <entity doi="10.1601/ex.11013">
+        
+        <assertion source="rid.2040">
+        
+            <observational-data>
+                
+                <observation class-uri="http://doi.org/10.1601/Growth"/>
+            
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_28971">CHEBI_28971</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000274">UO_0000274</unit>
+                        <value>100.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>
+            
+            <method class-uri="http://doi.org/10.1601/Disc"/>
+        
+        </assertion>
+        
+        <assertion source="rid.2040">
+        
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/Growth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_27902">CHEBI_27902</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000274">UO_0000274</unit>
+                        <value>100.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>
+            
+            <method class-uri="http://doi.org/10.1601/Disc"/>
+        
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/Growth"/>
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_28077">CHEBI_28077</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000274">UO_0000274</unit>
+                        <value>100.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>
+            
+            <method class-uri="http://doi.org/10.1601/Disc"/>
+        
+        </assertion>
+        
+        <assertion source="rid.2040">
+
+            <observational-data>
+
+                <observation class-uri="http://doi.org/10.1601/Growth"/>
+
+                <condition>
+                    <substance class-uri="http://purl.obolibrary.org/obo/CHEBI_6104">CHEBI_6104</substance>
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000274">UO_0000274</unit>
+                        <value>100.0</value>
+                    </measurement>
+                </condition>
+                
+            </observational-data>      
+
+            <method class-uri="http://doi.org/10.1601/Disc"/>
+
+        </assertion>
+
+    </entity>
+    
+    <entity doi="10.1601/ex.526">
+        
+        <assertion source="rid.2040">
+            
+            <observational-data>            
+                
+                <phenotype class-uri="http://doi.org/10.1601/Thermophile"/> 
+            
+            </observational-data>
+            
+        </assertion>
+        
+    </entity>
+    
+    <entity doi="10.1601/ex.11490">
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Psychrotolerant"/>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+
+            <observational-data>
+
+                <observation class-uri="http://doi.org/10.1601/Growth"/>
+
+                <condition class-uri="http://doi.org/10.1601/TemperatureCondition">
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000027">UO_0000027</unit>
+                        <value>5.0</value>
+                    </measurement>
+                </condition>
+                
+            </observational-data>
+        
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/Growth"/>
+                <condition class-uri="http://doi.org/10.1601/TemperatureCondition">
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000027">UO_0000027</unit>
+                        <value>32.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/OptimalGrowth"/>
+                <condition class-uri="http://doi.org/10.1601/TemperatureCondition">
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000027">UO_0000027</unit>
+                        <value>26.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                
+                <observation class-uri="http://doi.org/10.1601/OptimalGrowth"/>
+                
+                <condition class-uri="http://doi.org/10.1601/TemperatureCondition">
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000027">UO_0000027</unit>
+                        <value>30.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>
+        </assertion>
+    </entity>
+    
+    <entity doi="10.1601/ex.9536">
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Psychrophile"/>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/Growth"/>
+                <condition class-uri="http://doi.org/10.1601/TemperatureCondition">
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000027">UO_0000027</unit>
+                        <value>6.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/Growth"/>
+                <condition class-uri="http://doi.org/10.1601/TemperatureCondition">
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000027">UO_0000027</unit>
+                        <value>20.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/OptimalGrowth"/>
+                <condition class-uri="http://doi.org/10.1601/TemperatureCondition">
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000027">UO_0000027</unit>
+                        <value>14.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>
+        </assertion>
+        
+    </entity>
+    
+    <entity doi="10.1601/ex.8605">
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Psychrophile"/>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/Growth"/>
+                <condition class-uri="http://doi.org/10.1601/TemperatureCondition">
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000027">UO_0000027</unit>
+                        <value>0.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/Growth"/>
+                <condition class-uri="http://doi.org/10.1601/TemperatureCondition">
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000027">UO_0000027</unit>
+                        <value>45.0</value>
+                    </measurement>
+                </condition>               
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                
+                <observation class-uri="http://doi.org/10.1601/OptimalGrowth"/>
+        
+                <condition class-uri="http://doi.org/10.1601/TemperatureCondition">
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000027">UO_0000027</unit>
+                        <value>25.0</value>
+                    </measurement>
+                </condition>               
+            </observational-data>
+        
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/OptimalGrowth"/>
+                <condition class-uri="http://doi.org/10.1601/TemperatureCondition">
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000027">UO_0000027</unit>
+                        <value>30.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>
+        </assertion>
+    </entity>
+    
+    <entity doi="10.1601/ex.61">
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Hyperthermophile"/>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/OptimalGrowth"/>
+                <condition class-uri="http://doi.org/10.1601/TemperatureCondition">
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000027">UO_0000027</unit>
+                        <value>95.0</value>
+                    </measurement>
+                </condition>               
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/OptimalGrowth"/>
+                <condition class-uri="http://doi.org/10.1601/TemperatureCondition">
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000027">UO_0000027</unit>
+                        <value>107.0</value>
+                    </measurement>
+                </condition>              
+            </observational-data>
+        </assertion>
+        
+    </entity>
+    
+    <entity doi="10.1601/ex.9600">
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Thermophile"/>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/Growth"/>
+                <condition class-uri="http://doi.org/10.1601/TemperatureCondition">
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000027">UO_0000027</unit>
+                        <value>50.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/Growth"/>
+                <condition class-uri="http://doi.org/10.1601/TemperatureCondition">
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000027">UO_0000027</unit>
+                        <value>67.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/OptimalGrowth"/>
+                <condition class-uri="http://doi.org/10.1601/TemperatureCondition">
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000027">UO_0000027</unit>
+                        <value>60.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/OptimalGrowth"/>
+                <condition class-uri="http://doi.org/10.1601/TemperatureCondition">
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000027">UO_0000027</unit>
+                        <value>65.0</value>
+                    </measurement>
+                </condition>               
+            </observational-data>
+        </assertion>
+    </entity>
+    
+    <entity doi="10.1601/ex.6749">
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Mesophile"/>
+            </observational-data>
+        </assertion>
+    </entity>
+    
+    <entity doi="10.1601/ex.10993">
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Mesophile"/>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/GrowthObservation"/>
+                <condition class-uri="http://doi.org/10.1601/TemperatureCondition">
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000027">UO_0000027</unit>
+                        <value>30.0</value>
+                    </measurement>
+                </condition>               
+            </observational-data>
+        </assertion>
+    </entity>
+    
+    <entity doi="10.1601/ex.9720">
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Mesophile"/>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/OptimalGrowth"/>
+                <condition class-uri="http://doi.org/10.1601/TemperatureCondition">
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000027">UO_0000027</unit>
+                        <value>30.0</value>
+                    </measurement>
+                </condition>               
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/OptimalGrowth"/>
+                <condition class-uri="http://doi.org/10.1601/TemperatureCondition">
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000027">UO_0000027</unit>
+                        <value>5.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/NoGrowth"/>
+                <condition class-uri="http://doi.org/10.1601/TemperatureCondition">
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000027">UO_0000027</unit>
+                        <value>37.0</value>
+                    </measurement>
+                </condition>               
+            </observational-data>
+        </assertion>
+    </entity>
+    
+    <entity doi="10.1601/ex.1041">
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <phenotype class-uri="http://doi.org/10.1601/Mesophile"/>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/OptimalGrowth"/>
+                <condition class-uri="http://doi.org/10.1601/TemperatureCondition">
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000027">UO_0000027</unit>
+                        <value>30.0</value>
+                    </measurement>
+                </condition>               
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/OptimalGrowth"/>
+                <condition class-uri="http://doi.org/10.1601/TemperatureCondition">
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000027">UO_0000027</unit>
+                        <value>35.0</value>
+                    </measurement>
+                </condition>               
+            </observational-data>
+        </assertion>
+    </entity>
+    
+    <entity doi="10.1601/ex.7639">
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/OptimalGrowth"/>
+                <condition class-uri="http://doi.org/10.1601/TemperatureCondition">
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000027">UO_0000027</unit>
+                        <value>24.0</value>
+                    </measurement>
+                </condition>                 
+            </observational-data>
+        </assertion>
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/OptimalGrowth"/>
+                <condition class-uri="http://doi.org/10.1601/TemperatureCondition">
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000027">UO_0000027</unit>
+                        <value>28.0</value>
+                    </measurement>
+                </condition>               
+            </observational-data>
+        </assertion>
+    </entity>
+    
+    <entity doi="10.1601/ex.4950">
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/Growth"/>
+                <condition class-uri="http://doi.org/10.1601/TemperatureCondition">
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000027">UO_0000027</unit>
+                        <value>10.0</value>
+                    </measurement>
+                </condition>               
+            </observational-data>
+        </assertion>
+    </entity>
+    
+    <entity doi="10.1601/ex.11029">
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/Growth"/>
+                <condition class-uri="http://doi.org/10.1601/TemperatureCondition">
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000027">UO_0000027</unit>
+                        <value>0.0</value>
+                    </measurement>
+                </condition>               
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/Growth"/>
+                <condition class-uri="http://doi.org/10.1601/TemperatureCondition">
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000027">UO_0000027</unit>
+                        <value>20.0</value>
+                    </measurement>
+                </condition>           
+            </observational-data>
+        </assertion>
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/OptimalGrowth"/>
+                <condition class-uri="http://doi.org/10.1601/TemperatureCondition">
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000027">UO_0000027</unit>
+                        <value>10.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>
+        </assertion>
+        <assertion source="rid.2040">
+            <observational-data>
+                <observation class-uri="http://doi.org/10.1601/OptimalGrowth"/>
+                <condition class-uri="http://doi.org/10.1601/TemperatureCondition">
+                    <measurement>
+                        <unit class-uri="http://purl.obolibrary.org/obo/UO_0000027">UO_0000027</unit>
+                        <value>15.0</value>
+                    </measurement>
+                </condition>                
+            </observational-data>
+        </assertion>
+    </entity>
+    
+    <entity doi="10.1601/ex.9424">
+        
+        <assertion source="rid.2040">
+            <observational-data>
+                <inclusion-body class-uri="http://purl.obolibrary.org/obo/CHEBI_16838"/>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <inclusion-body class-uri="http://doi.org/10.1601/Carboxysome"/>
+            </observational-data>
+        </assertion>
+    
+    </entity>
+    
+    <entity doi="10.1601/ex.8657">
+    
+        <assertion source="rid.2040">
+            <observational-data>
+            <inclusion-body class-uri="http://purl.obolibrary.org/obo/CHEBI_16838"/>
+            </observational-data>
+        </assertion>        
+    
+    </entity>
+    
+    <entity doi="10.1601/ex.9940">
+    
+        <assertion source="rid.2040">
+            <observational-data>
+            <inclusion-body class-uri="http://purl.obolibrary.org/obo/CHEBI_16838"/>
+            </observational-data>
+        </assertion>
+    
+    </entity>
+    <entity doi="10.1601/ex.10601">
+    
+        <assertion source="rid.2040">
+            <observational-data>
+            <inclusion-body class-uri="http://doi.org/10.1601/Poly-beta-hydroxybutyrateGranule"/>
+            </observational-data>
+        </assertion>
+    
+    </entity>
+    
+    <entity doi="10.1601/ex.21324">
+    
+        <assertion source="rid.2040">
+            <observational-data>
+            <inclusion-body class-uri="http://doi.org/10.1601/SulfurGranule"/>
+            <!-- is "Sulfur" part of media? Answer is YES -->
+            </observational-data>
+        </assertion>
+    
+    </entity>
+    
+    <entity doi="10.1601/ex.21321">
+    
+        <assertion source="rid.2040">
+            <observational-data>
+            <inclusion-body class-uri="http://doi.org/10.1601/Poly-beta-hydroxybutyrateGranule"/>
+            <!-- is "Poly-beta-hydroxybutyrateGranule" part of media? -->
+            </observational-data>
+        </assertion>
+    
+    </entity>
+    
+    <entity doi="10.1601/ex.600">
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <inclusion-body class-uri="http://doi.org/10.1601/Magnetosome"/>
+            </observational-data>
+        </assertion>
+        
+        <assertion source="rid.2040">
+            <observational-data>
+            <inclusion-body class-uri="http://doi.org/10.1601/SulfurGranule"/>
+            </observational-data>
+        </assertion>
+    
+    </entity>
+
+</entities>

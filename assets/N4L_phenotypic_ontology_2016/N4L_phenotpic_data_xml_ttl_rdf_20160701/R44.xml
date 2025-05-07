@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities  xmlns="http://namesforlife.com/ns/interchange" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://namesforlife.com/ns/interchange assertions.xsd" xmlns:identifier="http://namesforlife.com/ns/identifier">       
+    <!-- # R(44) if an organism ferments a substance (that is NOT O2) and respires oxygen (O2) then its phenotype is facultative anaerobe.# -->
+    <entity doi="10.1601/ex.0000">
+        
+        <assertion>
+            <observational-data>
+                <cellular-activity cellular-activity-class="http://doi.org/10.1601/Fermentation"/>
+                <condition cellular-activity-condition-type="http://doi.org/10.1601/media#Substance" cellular-activity-condition-value="true"/>
+                <!-- Check what is condition-class (O2 or other substance). Check implemented rules (50), (51), (52) & (53).-->
+                <!-- There is not substance that does fermentation. -->
+            </observational-data>
+        </assertion>
+        
+        <assertion>
+        <observational-data>
+            <!-- Should be inferred: Strain has anaerobic respiration phenotype -->
+            <cellular-activity cellular-activity-class="http://doi.org/10.1601/Respiration"/>
+            <condition cellular-activity-condition-type="http://purl.obolibrary.org/obo/CHEBI_15379" cellular-activity-condition-value="true"/>            
+        </observational-data>        
+        </assertion>
+        
+    </entity>
+</entities>

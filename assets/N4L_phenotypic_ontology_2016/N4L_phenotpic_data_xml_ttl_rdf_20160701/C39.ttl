@@ -1,0 +1,45 @@
+@prefix obo:   <http://purl.obolibrary.org/obo/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix interchange: <http://namesforlife.com/ns/interchange> .
+@prefix N4L:   <http://doi.org/10.1601/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix media: <http://dx.doi.org/10.1601/media#> .
+
+N4L:ex.0000N65552N65553Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:ex.0000N65552N65553
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.0000N65553 .
+
+N4L:ex.0000Phenotype  a  N4L:Susceptible , N4L:Resistant , rdfs:Resource .
+
+N4L:ex.0000N65549  a  obo:CHEBI_6104 , rdfs:Resource .
+
+N4L:ex.0000N65553  a  obo:CHEBI_6104 , rdfs:Resource .
+
+N4L:ex.0000N65552N65553Observation
+        a                              N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf                 N4L:ex.0000N65552N65553 ;
+        N4L:hasAntimicrobialPhenotype  N4L:ex.0000N65552N65553Phenotype .
+
+N4L:ex.0000N65548N65549
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:ex.0000N65549 .
+
+N4L:ex.0000  a                      N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.0000N65552N65553Observation , N4L:ex.0000N65548N65549Observation ;
+        N4L:hasPhenotype            N4L:ex.0000Phenotype .
+
+N4L:ex.0000N65548N65549Phenotype
+        a       N4L:Resistant , rdfs:Resource .
+
+N4L:ex.0000N65548N65549Observation
+        a                              N4L:OrganismObservation , rdfs:Resource ;
+        N4L:composedOf                 N4L:ex.0000N65548N65549 ;
+        N4L:hasAntimicrobialPhenotype  N4L:ex.0000N65548N65549Phenotype .
+
+N4L:    a            owl:Ontology ;
+        owl:imports  N4L: .

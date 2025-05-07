@@ -1,0 +1,65 @@
+@prefix obo:   <http://purl.obolibrary.org/obo/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix interchange: <http://namesforlife.com/ns/interchange> .
+@prefix N4L:   <http://doi.org/10.1601/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix media: <http://dx.doi.org/10.1601/media#> .
+
+N4L:nm.25944rid.15347_N65550_Observation
+        a               N4L:OrganismObservation , rdf:Resource ;
+        N4L:composedOf  N4L:nm.25944rid.15347_N65550_GrowthObservation ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:nm.25944rid.15347_N65550_Phenotype .
+
+N4L:nm.25944rid.15347_N65555_SubstanceCondition
+        a       obo:CHEBI_487869 , rdf:Resource .
+
+N4L:nm.25944rid.15347_N65571_SubstanceCondition
+        a       obo:CHEBI_6909 , rdf:Resource .
+
+N4L:nm.25944rid.15347_N65561_Observation
+        a               N4L:OrganismObservation , rdf:Resource ;
+        N4L:composedOf  N4L:nm.25944rid.15347_N65561_GrowthObservation ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:nm.25944rid.15347_N65561_Phenotype .
+
+N4L:nm.25944rid.15347_N65561_GrowthObservation
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:nm.25944rid.15347_N65563_SubstanceCondition .
+
+N4L:nm.25944rid.15347_N65569_Observation
+        a               N4L:OrganismObservation , rdf:Resource ;
+        N4L:composedOf  N4L:nm.25944rid.15347_N65569_GrowthObservation ;
+        N4L:hasAtomicObservationPhenotype
+                N4L:nm.25944rid.15347_N65569_Phenotype .
+
+N4L:nm.25944rid.15347_N65552_SubstanceCondition
+        a       obo:CHEBI_2676 , rdf:Resource .
+
+N4L:nm.25944rid.15347_N65569_GrowthObservation
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:nm.25944rid.15347_N65571_SubstanceCondition .
+
+N4L:nm.25944rid.15347_N65563_SubstanceCondition
+        a       obo:CHEBI_471744 , rdf:Resource .
+
+N4L:nm.25944  a                     N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:nm.25944rid.15347_N65569_Observation , N4L:nm.25944rid.15347_N65561_Observation , N4L:nm.25944rid.15347_N65550_Observation .
+
+N4L:nm.25944rid.15347_N65550_Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:nm.25944rid.15347_N65561_Phenotype
+        a       N4L:Susceptible , rdfs:Resource .
+
+N4L:    a            owl:Ontology ;
+        owl:imports  N4L: .
+
+N4L:nm.25944rid.15347_N65550_GrowthObservation
+        a                          N4L:GrowthObservation , rdfs:Resource ;
+        N4L:hasSubstanceCondition  N4L:nm.25944rid.15347_N65555_SubstanceCondition , N4L:nm.25944rid.15347_N65552_SubstanceCondition .
+
+N4L:nm.25944rid.15347_N65569_Phenotype
+        a       N4L:Susceptible , rdfs:Resource .

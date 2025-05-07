@@ -1,0 +1,26 @@
+@prefix obo:   <http://purl.obolibrary.org/obo/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix interchange: <http://namesforlife.com/ns/interchange> .
+@prefix N4L:   <http://doi.org/10.1601/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix media: <http://dx.doi.org/10.1601/media#> .
+
+N4L:ex.0000N65550  a                  N4L:Respiration , rdfs:Resource ;
+        N4L:hasCellularActivityOfSubstance
+                N4L:ex.0000N65550N65552 ;
+        N4L:hasCellularActivityValue  true .
+
+N4L:ex.0000Observation
+        a                        N4L:OrganismObservation , rdfs:Resource ;
+        N4L:hasCellularActivity  N4L:ex.0000N65550 .
+
+N4L:ex.0000  a                      N4L:Strain , rdfs:Resource ;
+        N4L:hasOrganismObservation  N4L:ex.0000Observation .
+
+N4L:    a            owl:Ontology ;
+        owl:imports  N4L: .
+
+N4L:ex.0000N65550N65552
+        a       <http://doi.org/10.1601/media#Substance> , rdfs:Resource .
