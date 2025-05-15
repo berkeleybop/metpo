@@ -1,0 +1,29 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX env: <http://example.org/env-parse#>
+SELECT distinct
+?subject
+?NCBITaxon
+?pg_raw_text
+?component_text
+?categorical_label
+?qualifier_label
+WHERE {
+    graph <http://example.com/n4l_temperatures_parsed> {
+        ?subject  <http://example.com/n4l/temperature>  ?pg .
+        ?pg       a                 env:ParseGroup ;
+        env:raw_text      ?pg_raw_text ;
+        env:parse_component ?parseComponent .
+        OPTIONAL {
+            ?parseComponent env:component_text    ?component_text.
+        }
+        ?parseComponent env:categorical_label ?categorical_label.
+        OPTIONAL {
+            ?parseComponent env:qualifier_label   ?qualifier_label.
+        }
+    }
+    optional {
+        ?subject owl:sameAs ?NCBITaxon
+        filter(strstarts(str(?NCBITaxon),"http://purl.obolibrary.org/obo/NCBITaxon_"))
+    }
+}
+ORDER BY ?subject ?predicate ?parseComponent
