@@ -49,9 +49,11 @@ local/n4l-temperature.csv: sparql/temperature_query.rq
 	     --data-binary @$<      \
 	     $(ENDPOINT) > $@
 
-# Parse temperature text from CSV into structured RDF
-local/n4l-temperature.ttl: local/n4l-temperature.csv
-	poetry run python metpo/regex_parse_n4l_temperatures_2.py $< > $@
+## Parse temperature text from CSV into structured RDF
+#local/n4l-temperature.ttl: local/n4l-temperature.csv
+#	poetry run python metpo/regex_parse_n4l_temperatures_2.py $< > $@
+
+# parse temperature with metpo/classify_temperature_values.ipynb
 
 # Flatten parsed temperature components into simplified triples
 local/flattened_n4l_temperature_components.tsv: local/n4l-temperature.ttl sparql/flatten_n4l_parsing_components.rq
