@@ -7,8 +7,8 @@ Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
 
 
 Ontology(<https://w3id.org/metpo/metpo/components/metpo_sheet.owl>
-<https://w3id.org/metpo/metpo/releases/2025-05-21/components/metpo_sheet.owl>
-Annotation(owl:versionInfo "2025-05-21")
+<https://w3id.org/metpo/metpo/releases/2025-04-25/components/metpo_sheet.owl>
+Annotation(owl:versionInfo "2025-04-25")
 
 Declaration(Class(<https://w3id.org/metpo/1000001>))
 Declaration(Class(<https://w3id.org/metpo/1000002>))
@@ -235,6 +235,7 @@ Declaration(Class(<https://w3id.org/metpo/1000222>))
 Declaration(Class(<https://w3id.org/metpo/1000223>))
 Declaration(Class(<https://w3id.org/metpo/1000224>))
 Declaration(Class(<https://w3id.org/metpo/1000225>))
+Declaration(Class(<https://w3id.org/metpo/1000226>))
 Declaration(Class(<https://w3id.org/metpo/1000227>))
 Declaration(Class(<https://w3id.org/metpo/1000228>))
 Declaration(Class(<https://w3id.org/metpo/1000229>))
@@ -261,6 +262,7 @@ Declaration(Class(<https://w3id.org/metpo/1000249>))
 Declaration(Class(<https://w3id.org/metpo/1000250>))
 Declaration(Class(<https://w3id.org/metpo/1000251>))
 Declaration(Class(<https://w3id.org/metpo/1000252>))
+Declaration(Class(<https://w3id.org/metpo/1000253>))
 Declaration(Class(<https://w3id.org/metpo/1000254>))
 Declaration(Class(<https://w3id.org/metpo/1000255>))
 Declaration(Class(<https://w3id.org/metpo/1000256>))
@@ -535,6 +537,7 @@ Declaration(Class(<https://w3id.org/metpo/1000524>))
 Declaration(Class(<https://w3id.org/metpo/1000525>))
 Declaration(Class(<https://w3id.org/metpo/1000526>))
 Declaration(Class(<https://w3id.org/metpo/1000527>))
+Declaration(Class(<https://w3id.org/metpo/1000528>))
 Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/IAO_0000115>))
 Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>))
 Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym>))
@@ -809,7 +812,7 @@ AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000019> "antibiotic prod
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#example> <https://w3id.org/metpo/1000019> "Bacillus antibiotics")
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#example> <https://w3id.org/metpo/1000019> "Pseudomonas antibiotics")
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#example> <https://w3id.org/metpo/1000019> "Streptomyces antibiotics")
-SubClassOf(<https://w3id.org/metpo/1000019> <https://w3id.org/metpo/1000187>)
+SubClassOf(<https://w3id.org/metpo/1000019> <https://w3id.org/metpo/1000253>)
 
 # Class: <https://w3id.org/metpo/1000020> (antibiotic resistance)
 
@@ -900,7 +903,7 @@ SubClassOf(<https://w3id.org/metpo/1000025> <https://w3id.org/metpo/1000219>)
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000026> "Metabolic pathway through which organisms synthesize organic compounds from inorganic substances using light or chemical energy.")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000026> "autotrophic process")
-SubClassOf(<https://w3id.org/metpo/1000026> <https://w3id.org/metpo/1000187>)
+SubClassOf(<https://w3id.org/metpo/1000026> <https://w3id.org/metpo/1000253>)
 
 # Class: <https://w3id.org/metpo/1000027> (auxotroph)
 
@@ -1243,7 +1246,7 @@ SubClassOf(<https://w3id.org/metpo/1000055> <https://w3id.org/metpo/1000079>)
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000056> "Coordinated series of molecular events occurring within or involving a cell that serves a specific biological function or outcome.")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000056> "cellular process")
-SubClassOf(<https://w3id.org/metpo/1000056> <https://w3id.org/metpo/1000187>)
+SubClassOf(<https://w3id.org/metpo/1000056> <https://w3id.org/metpo/1000253>)
 
 # Class: <https://w3id.org/metpo/1000057> (cellular product)
 
@@ -1464,7 +1467,7 @@ SubClassOf(<https://w3id.org/metpo/1000074> <https://w3id.org/metpo/1000167>)
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000075> "Coordinated action or response exhibited by a population of microorganisms that emerges from individual activities and interactions within the group.")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000075> "community behavior")
-SubClassOf(<https://w3id.org/metpo/1000075> <https://w3id.org/metpo/1000187>)
+SubClassOf(<https://w3id.org/metpo/1000075> <https://w3id.org/metpo/1000253>)
 
 # Class: <https://w3id.org/metpo/1000076> (community structure)
 
@@ -1605,7 +1608,7 @@ SubClassOf(<https://w3id.org/metpo/1000086> <https://w3id.org/metpo/1000204>)
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000087> "Biological mechanism through which an organism or cell undergoes progressive changes in structure, function, or complexity over time.")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000087> "developmental process")
-SubClassOf(<https://w3id.org/metpo/1000087> <https://w3id.org/metpo/1000187>)
+SubClassOf(<https://w3id.org/metpo/1000087> <https://w3id.org/metpo/1000253>)
 
 # Class: <https://w3id.org/metpo/1000088> (diagnostic enzyme)
 
@@ -1726,7 +1729,7 @@ AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#example> <https://w3id.
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000099> "Series of interactions or changes involving organisms and their environment that affects community structure, resource distribution, or ecosystem function.")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000099> "ecological process")
-SubClassOf(<https://w3id.org/metpo/1000099> <https://w3id.org/metpo/1000187>)
+SubClassOf(<https://w3id.org/metpo/1000099> <https://w3id.org/metpo/1000253>)
 
 # Class: <https://w3id.org/metpo/1000100> (ecological trait)
 
@@ -1798,7 +1801,7 @@ SubClassOf(<https://w3id.org/metpo/1000105> <https://w3id.org/metpo/1000167>)
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000106> "Series of biochemical reactions through which organisms acquire, transform, store, or utilize energy for cellular functions and maintenance.")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000106> "energy metabolism process")
-SubClassOf(<https://w3id.org/metpo/1000106> <https://w3id.org/metpo/1000187>)
+SubClassOf(<https://w3id.org/metpo/1000106> <https://w3id.org/metpo/1000253>)
 
 # Class: <https://w3id.org/metpo/1000107> (enzyme activity)
 
@@ -1824,7 +1827,7 @@ AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000108> "epigenetic modi
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000109> "Mechanism or phenomenon that contributes to genetic change over time, resulting in adaptation, speciation, or other alterations in the heritable characteristics of populations.")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000109> "evolutionary process")
-SubClassOf(<https://w3id.org/metpo/1000109> <https://w3id.org/metpo/1000187>)
+SubClassOf(<https://w3id.org/metpo/1000109> <https://w3id.org/metpo/1000253>)
 
 # Class: <https://w3id.org/metpo/1000110> (exospore)
 
@@ -2131,13 +2134,13 @@ AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000133> "genetic element
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000134> "Process through which genetic material is transferred between organisms or cells, leading to recombination, acquisition of new traits, or genetic diversity.")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000134> "genetic exchange")
-SubClassOf(<https://w3id.org/metpo/1000134> <https://w3id.org/metpo/1000187>)
+SubClassOf(<https://w3id.org/metpo/1000134> <https://w3id.org/metpo/1000253>)
 
 # Class: <https://w3id.org/metpo/1000135> (genetic process)
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000135> "Biological mechanism involving the replication, expression, modification, or transmission of genetic material within or between organisms.")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000135> "genetic process")
-SubClassOf(<https://w3id.org/metpo/1000135> <https://w3id.org/metpo/1000187>)
+SubClassOf(<https://w3id.org/metpo/1000135> <https://w3id.org/metpo/1000253>)
 
 # Class: <https://w3id.org/metpo/1000136> (genome size)
 
@@ -2516,7 +2519,7 @@ SubClassOf(<https://w3id.org/metpo/1000163> <https://w3id.org/metpo/1000167>)
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000164> "Relationship between biological entities involving physical contact, chemical exchange, or signal transmission that affects their behavior or properties.")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000164> "interaction")
-SubClassOf(<https://w3id.org/metpo/1000164> <https://w3id.org/metpo/1000187>)
+SubClassOf(<https://w3id.org/metpo/1000164> <https://w3id.org/metpo/1000253>)
 
 # Class: <https://w3id.org/metpo/1000165> (interaction with a phage)
 
@@ -2722,7 +2725,6 @@ AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000186> "material entity
 
 # Class: <https://w3id.org/metpo/1000187> (process)
 
-AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000187> "Systematic series of actions, changes, or functions that occur in organisms over time and lead to a specific outcome or state.")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000187> "process")
 
 # Class: <https://w3id.org/metpo/1000188> (quality)
@@ -2785,7 +2787,7 @@ SubClassOf(<https://w3id.org/metpo/1000193> <https://w3id.org/metpo/1000059>)
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000194> "Biological mechanism through which an organism achieves directed or random movement in its environment through structural adaptations or behavioral responses.")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000194> "motility process")
-SubClassOf(<https://w3id.org/metpo/1000194> <https://w3id.org/metpo/1000187>)
+SubClassOf(<https://w3id.org/metpo/1000194> <https://w3id.org/metpo/1000253>)
 
 # Class: <https://w3id.org/metpo/1000195> (motility structure)
 
@@ -2899,7 +2901,7 @@ SubClassOf(<https://w3id.org/metpo/1000203> <https://w3id.org/metpo/1000055>)
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000204> "Process by which an organism acquires, transforms, and incorporates external substances into its metabolism for growth, energy production, or other cellular functions.")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000204> "nutrient utilization")
-SubClassOf(<https://w3id.org/metpo/1000204> <https://w3id.org/metpo/1000187>)
+SubClassOf(<https://w3id.org/metpo/1000204> <https://w3id.org/metpo/1000253>)
 
 # Class: <https://w3id.org/metpo/1000205> (obligate)
 
@@ -3103,6 +3105,18 @@ AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#example> <https://w3id.
 SubClassOf(<https://w3id.org/metpo/1000225> <https://w3id.org/metpo/1000026>)
 SubClassOf(<https://w3id.org/metpo/1000225> <https://w3id.org/metpo/1000240>)
 
+# Class: <https://w3id.org/metpo/1000226> (pan-genome)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000226> "The entire gene set of all strains of a species, including core and accessory genes")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000226> "pan-genomes")
+AnnotationAssertion(Annotation(<https://w3id.org/metpo/linguistic_role> "noun_plural") <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000226> "pan-genomes")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000226> "pan-genomic")
+AnnotationAssertion(Annotation(<https://w3id.org/metpo/linguistic_role> "adjective") <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000226> "pan-genomic")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000226> "pan-genome")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#example> <https://w3id.org/metpo/1000226> "accessory genome (genes present in some strains)")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#example> <https://w3id.org/metpo/1000226> "core genome (genes present in all strains)")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#example> <https://w3id.org/metpo/1000226> "strain-specific genes (unique to single strains)")
+
 # Class: <https://w3id.org/metpo/1000227> (parasitism)
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000227> "A symbiotic relationship where one organism benefits at the expense of the other")
@@ -3299,7 +3313,7 @@ SubClassOf(<https://w3id.org/metpo/1000242> <https://w3id.org/metpo/1000301>)
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000243> "Coordinated series of biological activities that maintains homeostasis, responds to stimuli, or contributes to the integrated functioning of an organism.")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000243> "physiological process")
-SubClassOf(<https://w3id.org/metpo/1000243> <https://w3id.org/metpo/1000187>)
+SubClassOf(<https://w3id.org/metpo/1000243> <https://w3id.org/metpo/1000253>)
 
 # Class: <https://w3id.org/metpo/1000244> (physiological state)
 
@@ -3415,6 +3429,12 @@ AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#example> <https://w3id.
 SubClassOf(<https://w3id.org/metpo/1000252> <https://w3id.org/metpo/1000054>)
 SubClassOf(<https://w3id.org/metpo/1000252> <https://w3id.org/metpo/1000193>)
 
+# Class: <https://w3id.org/metpo/1000253> (process)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000253> "Systematic series of actions, changes, or functions that occur in organisms over time and lead to a specific outcome or state.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000253> "process")
+SubClassOf(<https://w3id.org/metpo/1000253> <https://w3id.org/metpo/1000187>)
+
 # Class: <https://w3id.org/metpo/1000254> (prophage)
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000254> "Bacteriophage DNA integrated into a bacterial genome")
@@ -3446,7 +3466,7 @@ SubClassOf(<https://w3id.org/metpo/1000255> <https://w3id.org/metpo/1000193>)
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000256> "Cellular process through which amino acids are assembled into polypeptide chains according to genetic instructions encoded in DNA and mediated by RNA.")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000256> "protein synthesis")
-SubClassOf(<https://w3id.org/metpo/1000256> <https://w3id.org/metpo/1000187>)
+SubClassOf(<https://w3id.org/metpo/1000256> <https://w3id.org/metpo/1000253>)
 
 # Class: <https://w3id.org/metpo/1000257> (proteolysis)
 
@@ -3530,7 +3550,7 @@ AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000263> "regulatory mech
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000264> "Biological mechanism through which organisms produce offspring, transfer genetic material, or increase their population.")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000264> "reproductive process")
-SubClassOf(<https://w3id.org/metpo/1000264> <https://w3id.org/metpo/1000187>)
+SubClassOf(<https://w3id.org/metpo/1000264> <https://w3id.org/metpo/1000253>)
 
 # Class: <https://w3id.org/metpo/1000265> (reproductive structure)
 
@@ -3720,7 +3740,7 @@ SubClassOf(<https://w3id.org/metpo/1000278> <https://w3id.org/metpo/1000310>)
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000279> "Process by which cells detect and respond to external or internal stimuli through cascades of molecular interactions that regulate cellular functions.")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000279> "signaling")
-SubClassOf(<https://w3id.org/metpo/1000279> <https://w3id.org/metpo/1000187>)
+SubClassOf(<https://w3id.org/metpo/1000279> <https://w3id.org/metpo/1000253>)
 
 # Class: <https://w3id.org/metpo/1000280> (slime layer)
 
@@ -3935,7 +3955,7 @@ SubClassOf(<https://w3id.org/metpo/1000297> <https://w3id.org/metpo/1000167>)
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000298> "Biological mechanism through which different species establish and maintain long-term ecological relationships that may be mutualistic, commensal, or parasitic.")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000298> "symbiotic process")
-SubClassOf(<https://w3id.org/metpo/1000298> <https://w3id.org/metpo/1000187>)
+SubClassOf(<https://w3id.org/metpo/1000298> <https://w3id.org/metpo/1000253>)
 
 # Class: <https://w3id.org/metpo/1000299> (syntrophy)
 
@@ -4238,7 +4258,7 @@ AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000323> "virulence facto
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000324> "Biological mechanism through which a pathogen causes disease by invading, damaging, or disrupting host tissues or functions.")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000324> "virulence process")
-SubClassOf(<https://w3id.org/metpo/1000324> <https://w3id.org/metpo/1000187>)
+SubClassOf(<https://w3id.org/metpo/1000324> <https://w3id.org/metpo/1000253>)
 
 # Class: <https://w3id.org/metpo/1000325> (xylanolysis)
 
@@ -4339,12 +4359,18 @@ SubClassOf(<https://w3id.org/metpo/1000335> <https://w3id.org/metpo/1000522>)
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000336> "A microorganism that can grow at temperatures near 0°C but has optimal growth at higher temperatures.")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000336> "psychrotolerant")
+AnnotationAssertion(<https://w3id.org/metpo/RangeMax> <https://w3id.org/metpo/1000336> "45")
+AnnotationAssertion(<https://w3id.org/metpo/RangeMin> <https://w3id.org/metpo/1000336> "0")
+AnnotationAssertion(<https://w3id.org/metpo/Unit> <https://w3id.org/metpo/1000336> "C")
 SubClassOf(<https://w3id.org/metpo/1000336> <https://w3id.org/metpo/1000217>)
 
 # Class: <https://w3id.org/metpo/1000337> (thermotolerant)
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000337> "A microorganism that can grow at temperatures near 50°C but has optimal growth at lower temperatures.")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000337> "thermotolerant")
+AnnotationAssertion(<https://w3id.org/metpo/RangeMax> <https://w3id.org/metpo/1000337> "50")
+AnnotationAssertion(<https://w3id.org/metpo/RangeMin> <https://w3id.org/metpo/1000337> "0")
+AnnotationAssertion(<https://w3id.org/metpo/Unit> <https://w3id.org/metpo/1000337> "C")
 SubClassOf(<https://w3id.org/metpo/1000337> <https://w3id.org/metpo/1000217>)
 
 # Class: <https://w3id.org/metpo/1000338> (extreme thermophile)
@@ -5933,13 +5959,13 @@ SubClassOf(<https://w3id.org/metpo/1000525> <https://w3id.org/metpo/1000186>)
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000526> "chemical entity")
 SubClassOf(<https://w3id.org/metpo/1000526> <https://w3id.org/metpo/1000186>)
 
-# Class: <https://w3id.org/metpo/1000527> (facultative psychrophile)
+# Class: <https://w3id.org/metpo/1000527> (antimicrobial susceptibility assay result)
 
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000527> "facultative psychrophile")
-AnnotationAssertion(<https://w3id.org/metpo/RangeMax> <https://w3id.org/metpo/1000527> "30")
-AnnotationAssertion(<https://w3id.org/metpo/RangeMin> <https://w3id.org/metpo/1000527> "0")
-AnnotationAssertion(<https://w3id.org/metpo/Unit> <https://w3id.org/metpo/1000527> "C")
-SubClassOf(<https://w3id.org/metpo/1000527> <https://w3id.org/metpo/1000217>)
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000527> "antimicrobial susceptibility assay result")
+
+# Class: <https://w3id.org/metpo/1000528> (structured susceptibility detail)
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000528> "structured susceptibility detail")
 
 
 )
