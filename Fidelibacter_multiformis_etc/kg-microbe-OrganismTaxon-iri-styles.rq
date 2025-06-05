@@ -1,0 +1,7 @@
+select * where {
+    ?s <https://w3id.org/biolink/vocab/category> <https://w3id.org/biolink/vocab/OrganismTaxon> .
+    filter(!strstarts(str(?s),"https://www.example.org/UNKNOWN/strain:bacdive_"))
+    filter(!strstarts(str(?s),"https://www.example.org/UNKNOWN/strain:"))
+    filter(!strstarts(str(?s),"http://purl.obolibrary.org/obo/NCBITaxon_"))
+    filter(!strstarts(str(?s),"https://www.example.org/UNKNOWN/nan"))
+}
