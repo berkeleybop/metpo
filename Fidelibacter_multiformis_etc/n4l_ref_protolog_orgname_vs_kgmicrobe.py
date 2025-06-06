@@ -251,8 +251,18 @@ GROUP BY ?ncbiTaxonIRI
             final_df = final_df.sort_values(['sort_year_val', 'sort_orgName'], ascending=[False, True])
             final_df = final_df.drop(columns=['sort_year_val', 'sort_orgName'], errors='ignore')
 
+        # Identify columns to group by (all except 'orgName')
+        group_cols = [col for col in final_df.columns if col != 'orgName']
+
+        # Group by all columns except 'orgName' and aggregate 'orgName' values
+        collapsed_df = (
+            final_df.groupby(group_cols, dropna=False)['orgName']
+            .apply(lambda x: '|'.join(sorted(str(v) for v in x.unique() if pd.notnull(v))))
+            .reset_index()
+        )
+
         # Save to CSV
-        final_df.to_csv(output_file, index=False)
+        collapsed_df.to_csv(output_file, index=False)
         click.echo(f"Results saved to {output_file}")
 
         # Print summary statistics
