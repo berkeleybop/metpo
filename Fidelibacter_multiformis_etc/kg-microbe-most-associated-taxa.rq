@@ -1,0 +1,28 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+select ?s (count(?p) as ?count)
+where {
+    ?a a <https://w3id.org/biolink/vocab/Association> ;
+    rdf:subject ?s ;
+    rdf:predicate ?p .
+    ?s <https://w3id.org/biolink/vocab/category> <https://w3id.org/biolink/vocab/OrganismTaxon> .
+    minus {
+        ?a rdf:predicate <https://w3id.org/biolink/vocab/subclass_of>
+    }
+    minus {
+        ?a rdf:predicate <https://w3id.org/biolink/vocab/location_of>
+    }
+}
+group by ?s
+order by desc(count(?p))
+limit 9
+
+# http://purl.obolibrary.org/obo/NCBITaxon_562 is Escherichia coli
+# we didn't impose any filter on tax rank
+# see local/noderanks.ttl
+#
+#select * where {
+#    <http://purl.obolibrary.org/obo/NCBITaxon_562> ?p ?o .
+#}
+# 89 statements in processed N4L graph including seeAlsos and taxonomy statements
+# rid 89 and 8994
