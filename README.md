@@ -35,3 +35,12 @@ This ontology repository was created using the [Ontology Development Kit (ODK)](
 
 ## Notes
 - https://github.com/berkeleybop/group-meetings/issues/155#issuecomment-2715444097
+
+----
+
+METPO is intended to drive mining knowldge out of papers form journals like IJSEM 
+and expressing the findings with classes and predicates from METPO or the Biolink model, 
+which would then become part of KG-Microbe.
+
+We strive to keep our class heirachies pure. Reuse of terms from OBO foundry ontologies
+and the use of logical axioms are hihg but secondary priorities. 
