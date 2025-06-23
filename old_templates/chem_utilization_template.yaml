@@ -1,0 +1,80 @@
+id: http://example.com/chem_utilization_template.yaml
+name: chem_utilization_template
+title: OntoGPT Chemical Utilization Template
+description: >-
+  An OntoGPT template to recognize terms from ontologies including chem_utilization.ttl (if available)
+  and extract qualified relationships between organisms and chemicals
+license: https://creativecommons.org/publicdomain/zero/1.0/
+prefixes:
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  chem_utilization: http://example.com/chem_utilization/
+  linkml: https://w3id.org/linkml/
+
+default_prefix: chem_utilization
+default_range: string
+
+imports:
+  - linkml:types
+  - core
+
+classes:
+  LiteratureExtraction:
+    tree_root: true
+    attributes:
+      chemical_compounds:
+        description: semicolon-separated list of chemical compounds mentioned in the text
+        multivalued: true
+        range: ChemicalCompound
+      organisms:
+        description: semicolon-separated list of organisms or bacterial taxa mentioned in the text
+        multivalued: true
+        range: Organism
+
+      organism_compound_relationships:
+        description: semicolon-separated list of organism to chemical compound relationships, e.g., "IA91T utilizes acetate"
+        multivalued: true
+        range: OrganismCompoundRelationship
+
+      source_text:
+        range: string
+        annotations:
+          prompt.skip: "true"
+
+  ChemicalCompound:
+    is_a: NamedEntity
+    annotations:
+      annotators: sqlite:obo:chebi, sqlite:obo:foodon
+
+  Organism:
+    is_a: NamedEntity
+    annotations:
+      annotators: sqlite:obo:ncbitaxon
+
+  CellularFeature:
+    is_a: NamedEntity
+    id_prefixes:
+      - http
+    annotations:
+      annotators: f_multiformis.ttl
+
+  OrganismCompoundRelationship:
+    is_a: CompoundExpression
+    attributes:
+      organism:
+        description: the organism or strain
+        range: Organism
+      compound:
+        description: the chemical compound
+        range: ChemicalCompound
+      relationship_type:
+        description: the type of relationship
+        range: string
+
+#enums:
+#  UtilizationTypeEnum:
+#    description: Types of relationships between organisms and chemical compounds
+#    values:
+#    utilizes:
+#      description: The organism utilizes the chemical compound in any way
+#    does_not_utilize:
+#      description: The organism does not utilize the chemical compound
