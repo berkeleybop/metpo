@@ -1,0 +1,121 @@
+id: http://example.com/chem_utilization_template.yaml
+name: chem_utilization_template
+title: OntoGPT Chemical Utilization Template
+description: >-
+  An OntoGPT template to recognize terms from ontologies including chem_utilization.ttl (if available)
+  and extract qualified relationships between organisms and chemicals
+license: https://creativecommons.org/publicdomain/zero/1.0/
+prefixes:
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  chem_utilization: http://example.com/chem_utilization/
+  linkml: https://w3id.org/linkml/
+
+default_prefix: chem_utilization
+default_range: string
+
+imports:
+  - linkml:types
+  - core
+
+classes:
+  LiteratureExtraction:
+    tree_root: true
+    attributes:
+      chemical_compounds:
+        description: semicolon-separated list of chemical compounds mentioned in the text
+        multivalued: true
+        range: ChemicalCompound
+      organisms:
+        description: semicolon-separated list of organisms or bacterial taxa mentioned in the text
+        multivalued: true
+        range: Organism
+
+      organism_compound_relationships:
+        description: >-
+          Extract ALL organism-compound relationships from the text, including:
+          fermentation (e.g., "organism ferments compound"), 
+          production (e.g., "organism produces compound"),
+          utilization (e.g., "organism utilizes compound"),
+          reduction (e.g., "organism reduces compound"),
+          oxidation (e.g., "organism oxidizes compound"),
+          metabolism (e.g., "organism metabolizes compound"),
+          growth on substrates (e.g., "organism grows on compound"),
+          negative relationships (e.g., "organism does not ferment compound"),
+          contains/composition (e.g., "organism contains compound").
+          Look for verbs like: ferments, produces, utilizes, reduces, oxidizes, metabolizes, grows on, contains, degrades, transforms, converts.
+          Also extract negative relationships using "does not" or "but not".
+        multivalued: true
+        range: OrganismCompoundRelationship
+
+      source_text:
+        range: string
+        annotations:
+          prompt.skip: "true"
+
+  ChemicalCompound:
+    is_a: NamedEntity
+    annotations:
+      annotators: sqlite:obo:chebi, sqlite:obo:foodon
+
+  Organism:
+    is_a: NamedEntity
+    annotations:
+      annotators: sqlite:obo:ncbitaxon
+
+  CellularFeature:
+    is_a: NamedEntity
+    id_prefixes:
+      - http
+    annotations:
+      annotators: f_multiformis.ttl
+
+  OrganismCompoundRelationship:
+    is_a: CompoundExpression
+    attributes:
+      organism:
+        description: the organism or strain (include strain names like OS1T, DSM numbers)
+        range: Organism
+      compound:
+        description: the chemical compound
+        range: ChemicalCompound
+      relationship_type:
+        description: >-
+          the type of relationship - use specific verbs from the text such as:
+          ferments, produces, utilizes, reduces, oxidizes, metabolizes, grows_on, contains, 
+          degrades, transforms, converts, does_not_ferment, does_not_utilize, etc.
+        range: RelationshipTypeEnum
+
+enums:
+  RelationshipTypeEnum:
+    description: Types of relationships between organisms and chemical compounds
+    permissible_values:
+      ferments:
+        description: The organism ferments the chemical compound
+      produces:
+        description: The organism produces the chemical compound
+      utilizes:
+        description: The organism utilizes the chemical compound
+      reduces:
+        description: The organism reduces the chemical compound
+      oxidizes:
+        description: The organism oxidizes the chemical compound  
+      metabolizes:
+        description: The organism metabolizes the chemical compound
+      grows_on:
+        description: The organism grows on the chemical compound as substrate
+      contains:
+        description: The organism contains the chemical compound
+      degrades:
+        description: The organism degrades the chemical compound
+      transforms:
+        description: The organism transforms the chemical compound
+      converts:
+        description: The organism converts the chemical compound
+      does_not_ferment:
+        description: The organism does not ferment the chemical compound
+      does_not_utilize:
+        description: The organism does not utilize the chemical compound
+      does_not_grow_on:
+        description: The organism does not grow on the chemical compound
+      reduces_to:
+        description: The organism reduces the compound to another product

@@ -1,0 +1,519 @@
+/home/mark/gitrepos/metpo/.venv/lib/python3.11/site-packages/eutils/__init__.py:4: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+---
+input_text: |-
+  1. Int J Syst Evol Microbiol. 2012 Apr;62(Pt 4):832-838. doi: 
+  10.1099/ijs.0.024349-0. Epub 2011 May 20.
+
+  Description of Anaerobaculum hydrogeniformans sp. nov., an anaerobe that 
+  produces hydrogen from glucose, and emended description of the genus 
+  Anaerobaculum.
+
+  Maune MW(1), Tanner RS(1).
+
+  Author information:
+  (1)Department of Botany and Microbiology, University of Oklahoma, Norman, OK 
+  73019, USA.
+
+  A novel anaerobic, moderately thermophilic, NaCl-requiring fermentative 
+  bacterium, strain OS1T, was isolated from oil production water collected from 
+  Alaska, USA. Cells were Gram-negative, non-motile, non-spore-forming rods 
+  (1.7-2.7×0.4-0.5 µm). The G+C content of the genomic DNA of strain OS1T was 46.6 
+  mol%. The optimum temperature, pH and NaCl concentration for growth of strain 
+  OS1T were 55 °C, pH 7 and 10 g l(-1), respectively. The bacterium fermented 
+  D-fructose, D-glucose, maltose, D-mannose, α-ketoglutarate, L-glutamate, 
+  malonate, pyruvate, L-tartrate, L-asparagine, Casamino acids, L-cysteine, 
+  L-histidine, L-leucine, L-phenylalanine, L-serine, L-threonine, L-valine, 
+  inositol, inulin, tryptone and yeast extract. When grown on D-glucose, 3.86 mol 
+  hydrogen and 1.4 mol acetate were produced per mol substrate. Thiosulfate, 
+  sulfur and L-cystine were reduced to sulfide, and crotonate was reduced to 
+  butyrate with glucose as the electron donor. 16S rRNA gene sequence analysis 
+  indicated that strain OS1T was related to Anaerobaculum thermoterrenum (99.7 % 
+  similarity to the type strain), a member of the phylum Synergistetes. DNA-DNA 
+  hybridization between strain OS1T and A. thermoterrenum DSM 13490T yielded 68 % 
+  relatedness. Unlike A. thermoterrenum, strain OS1T fermented malonate, maltose, 
+  tryptone, L-leucine and L-phenylalanine, but not citrate, fumarate, lactate, 
+  L-malate, glycerol, pectin or starch. The major cellular fatty acid of strain 
+  OS1T was iso-C15:0 (91 % of the total). Strain OS1T also contained iso-C13:0 
+  3-OH (3 %), which was absent from A. thermoterrenum, and iso-C13:0 (2 %), which 
+  was absent from Anaerobaculum mobile. On the basis of these results, strain OS1T 
+  represents a novel species of the genus Anaerobaculum, for which the name 
+  Anaerobaculum hydrogeniformans sp. nov. is proposed. The type strain is OS1T 
+  (=DSM 22491T=ATCC BAA-1850T). An emended description of the genus Anaerobaculum 
+  is also given.
+
+  DOI: 10.1099/ijs.0.024349-0
+  PMID: 21602364 [Indexed for MEDLINE]
+raw_completion_output: |-
+  chemical_compounds: hydrogen; glucose; NaCl; D-fructose; D-glucose; maltose; D-mannose; α-ketoglutarate; L-glutamate; malonate; pyruvate; L-tartrate; L-asparagine; Casamino acids; L-cysteine; L-histidine; L-leucine; L-phenylalanine; L-serine; L-threonine; L-valine; inositol; inulin; tryptone; yeast extract; acetate; thiosulfate; sulfur; L-cystine; sulfide; crotonate; butyrate; citrate; fumarate; lactate; L-malate; glycerol; pectin; starch; iso-C15:0; iso-C13:0 3-OH; iso-C13:0
+  organisms: Anaerobaculum hydrogeniformans; strain OS1T; Anaerobaculum thermoterrenum; Synergistetes; A. thermoterrenum DSM 13490T; Anaerobaculum mobile; Anaerobaculum
+  microbial_phenotypes: anaerobic; moderately thermophilic; NaCl-requiring; fermentative; Gram-negative; non-motile; non-spore-forming
+  organism_compound_relationships: Anaerobaculum hydrogeniformans produces hydrogen from glucose; strain OS1T requires NaCl; strain OS1T ferments D-fructose; strain OS1T ferments D-glucose; strain OS1T ferments maltose; strain OS1T ferments D-mannose; strain OS1T ferments α-ketoglutarate; strain OS1T ferments L-glutamate; strain OS1T ferments malonate; strain OS1T ferments pyruvate; strain OS1T ferments L-tartrate; strain OS1T ferments L-asparagine; strain OS1T ferments Casamino acids; strain OS1T ferments L-cysteine; strain OS1T ferments L-histidine; strain OS1T ferments L-leucine; strain OS1T ferments L-phenylalanine; strain OS1T ferments L-serine; strain OS1T ferments L-threonine; strain OS1T ferments L-valine; strain OS1T ferments inositol; strain OS1T ferments inulin; strain OS1T ferments tryptone; strain OS1T ferments yeast extract; strain OS1T produces acetate from D-glucose; strain OS1T reduces thiosulfate to sulfide; strain OS1T reduces sulfur to sulfide; strain OS1T reduces L-cystine to sulfide; strain OS1T reduces crotonate to butyrate with glucose as the electron donor; strain OS1T does not ferment citrate; strain OS1T does not ferment fumarate; strain OS1T does not ferment lactate; strain OS1T does not ferment L-malate; strain OS1T does not ferment glycerol; strain OS1T does not ferment pectin; strain OS1T does not ferment starch
+  organism_phenotype_relationships: Anaerobaculum hydrogeniformans is anaerobic; Anaerobaculum hydrogeniformans is moderately thermophilic; Anaerobaculum hydrogeniformans is NaCl-requiring; strain OS1T is fermentative; strain OS1T is Gram-negative; strain OS1T is non-motile; strain OS1T is non-spore-forming
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  organism: <the organism, species, or strain name>
+  phenotype: <the phenotypic characteristic>
+  relationship_type: <the type of phenotypic relationshipMust be one of: has_phenotype, lacks_phenotype, is_characterized_by>
+
+
+  Text:
+  strain OS1T is non-spore-forming
+
+  ===
+
+extracted_object:
+  chemical_compounds:
+    - CHEBI:49637
+    - CHEBI:17234
+    - CHEBI:26710
+    - CHEBI:15824
+    - CHEBI:17634
+    - CHEBI:17306
+    - CHEBI:16024
+    - AUTO:%CE%B1-ketoglutarate
+    - CHEBI:29988
+    - CHEBI:15792
+    - CHEBI:15361
+    - AUTO:L-tartrate
+    - CHEBI:17196
+    - AUTO:Casamino%20acids
+    - CHEBI:17561
+    - CHEBI:15971
+    - CHEBI:15603
+    - CHEBI:17295
+    - CHEBI:17115
+    - CHEBI:16857
+    - CHEBI:16414
+    - CHEBI:24848
+    - CHEBI:15443
+    - AUTO:tryptone
+    - FOODON:03315426
+    - CHEBI:30089
+    - CHEBI:26977
+    - CHEBI:26833
+    - CHEBI:16283
+    - CHEBI:26822
+    - CHEBI:35899
+    - CHEBI:17968
+    - CHEBI:133748
+    - CHEBI:29806
+    - CHEBI:24996
+    - CHEBI:15589
+    - CHEBI:17754
+    - CHEBI:17309
+    - CHEBI:28017
+    - CHEBI:39250
+    - AUTO:iso-C13%3A0%203-OH
+    - CHEBI:77359
+  organisms:
+    - NCBITaxon:649746
+    - AUTO:strain%20OS1T
+    - NCBITaxon:1120986
+    - NCBITaxon:508458
+    - AUTO:A.%20thermoterrenum%20DSM%2013490T
+    - NCBITaxon:97477
+    - NCBITaxon:49894
+  microbial_phenotypes:
+    - MICRO:0000495
+    - AUTO:moderately%20thermophilic
+    - AUTO:NaCl-requiring
+    - MICRO:0001490
+    - AUTO:Gram-negative
+    - OMP:0000133
+    - AUTO:non-spore-forming
+  organism_compound_relationships:
+    - organism: NCBITaxon:649746
+      compound: CHEBI:49637
+      relationship_type: produces
+    - organism: AUTO:strain%20OS1T
+      compound: CHEBI:26710
+      relationship_type: grows_on
+    - organism: AUTO:strain%20OS1T
+      compound: CHEBI:15824
+      relationship_type: ferments
+    - organism: AUTO:strain%20OS1T
+      compound: CHEBI:17634
+      relationship_type: ferments
+    - organism: AUTO:strain%20OS1T
+      compound: CHEBI:17306
+      relationship_type: ferments
+    - organism: AUTO:strain%20OS1T
+      compound: CHEBI:16024
+      relationship_type: ferments
+    - organism: AUTO:strain%20OS1T
+      compound: AUTO:%CE%B1-ketoglutarate
+      relationship_type: ferments
+    - organism: AUTO:strain%20OS1T
+      compound: CHEBI:29988
+      relationship_type: ferments
+    - organism: AUTO:strain%20OS1T
+      compound: CHEBI:15792
+      relationship_type: ferments
+    - organism: AUTO:strain%20OS1T
+      compound: CHEBI:15361
+      relationship_type: ferments
+    - organism: AUTO:strain%20OS1T
+      compound: AUTO:L-tartrate
+      relationship_type: ferments
+    - organism: AUTO:strain%20OS1T
+      compound: CHEBI:17196
+      relationship_type: ferments
+    - organism: AUTO:strain%20OS1T
+      compound: AUTO:Casamino%20acids
+      relationship_type: ferments
+    - organism: AUTO:strain%20OS1T
+      compound: CHEBI:17561
+      relationship_type: ferments
+    - organism: AUTO:strain%20OS1T
+      compound: CHEBI:15971
+      relationship_type: ferments
+    - organism: AUTO:strain%20OS1T
+      compound: CHEBI:15603
+      relationship_type: ferments
+    - organism: AUTO:strain%20OS1T
+      compound: CHEBI:17295
+      relationship_type: ferments
+    - organism: AUTO:strain%20OS1T
+      compound: CHEBI:17115
+      relationship_type: ferments
+    - organism: AUTO:strain%20OS1T
+      compound: CHEBI:16857
+      relationship_type: ferments
+    - organism: AUTO:strain%20OS1T
+      compound: CHEBI:16414
+      relationship_type: ferments
+    - organism: AUTO:strain%20OS1T
+      compound: CHEBI:24848
+      relationship_type: ferments
+    - organism: AUTO:strain%20OS1T
+      compound: CHEBI:15443
+      relationship_type: ferments
+    - organism: AUTO:strain%20OS1T
+      compound: AUTO:tryptone
+      relationship_type: ferments
+    - organism: AUTO:strain%20OS1T
+      compound: FOODON:03315426
+      relationship_type: ferments
+    - organism: AUTO:strain%20OS1T
+      compound: CHEBI:17634
+      relationship_type: produces
+    - organism: AUTO:strain%20OS1T
+      compound: CHEBI:26977
+      relationship_type: reduces_to
+    - organism: AUTO:strain%20OS1T
+      compound: CHEBI:26833
+      relationship_type: reduces_to
+    - organism: AUTO:strain%20OS1T
+      compound: CHEBI:16283
+      relationship_type: reduces_to
+    - organism: AUTO:OS1T
+      compound: CHEBI:17234
+      relationship_type: utilizes
+    - organism: AUTO:strain%20OS1T
+      compound: CHEBI:133748
+      relationship_type: does_not_ferment
+    - organism: AUTO:strain%20OS1T
+      compound: CHEBI:29806
+      relationship_type: does_not_ferment
+    - organism: AUTO:strain%20OS1T
+      compound: CHEBI:24996
+      relationship_type: does_not_ferment
+    - organism: AUTO:strain%20OS1T
+      compound: CHEBI:15589
+      relationship_type: does_not_ferment
+    - organism: AUTO:strain%20OS1T
+      compound: CHEBI:17754
+      relationship_type: does_not_ferment
+    - organism: AUTO:strain%20OS1T
+      compound: CHEBI:17309
+      relationship_type: does_not_ferment
+    - organism: AUTO:strain%20OS1T
+      compound: CHEBI:28017
+      relationship_type: does_not_ferment
+  organism_phenotype_relationships:
+    - organism: NCBITaxon:649746
+      phenotype: MICRO:0000495
+      relationship_type: has_phenotype
+    - organism: NCBITaxon:649746
+      phenotype: AUTO:moderately%20thermophilic
+      relationship_type: is_characterized_by
+    - organism: NCBITaxon:649746
+      phenotype: AUTO:NaCl-requiring
+      relationship_type: is_characterized_by
+    - organism: AUTO:strain%20OS1T
+      phenotype: MICRO:0001490
+      relationship_type: is_characterized_by
+    - organism: AUTO:strain%20OS1T
+      phenotype: AUTO:Gram-negative
+      relationship_type: is_characterized_by
+    - organism: AUTO:strain%20OS1T
+      phenotype: OMP:0000133
+      relationship_type: has_phenotype
+    - organism: AUTO:strain%20OS1T
+      phenotype: AUTO:non-spore-forming
+      relationship_type: has_phenotype
+named_entities:
+  - id: CHEBI:49637
+    label: hydrogen
+    original_spans:
+      - 135:142
+      - 189:196
+      - 1175:1182
+      - 2213:2220
+  - id: CHEBI:17234
+    label: glucose
+    original_spans:
+      - 203:209
+      - 884:890
+      - 1156:1162
+      - 1341:1347
+  - id: CHEBI:26710
+    label: NaCl
+    original_spans:
+      - 449:452
+      - 752:755
+  - id: CHEBI:15824
+    label: D-fructose
+    original_spans:
+      - 870:879
+  - id: CHEBI:17634
+    label: D-glucose
+    original_spans:
+      - 882:890
+      - 1154:1162
+  - id: CHEBI:17306
+    label: maltose
+    original_spans:
+      - 893:899
+      - 1716:1722
+  - id: CHEBI:16024
+    label: D-mannose
+    original_spans:
+      - 902:910
+  - id: AUTO:%CE%B1-ketoglutarate
+    label: α-ketoglutarate
+    original_spans:
+      - 913:927
+  - id: CHEBI:29988
+    label: L-glutamate
+    original_spans:
+      - 930:940
+  - id: CHEBI:15792
+    label: malonate
+    original_spans:
+      - 944:951
+      - 1706:1713
+  - id: CHEBI:15361
+    label: pyruvate
+    original_spans:
+      - 954:961
+  - id: AUTO:L-tartrate
+    label: L-tartrate
+    original_spans:
+      - 964:973
+  - id: CHEBI:17196
+    label: L-asparagine
+    original_spans:
+      - 976:987
+  - id: AUTO:Casamino%20acids
+    label: Casamino acids
+    original_spans:
+      - 990:1003
+  - id: CHEBI:17561
+    label: L-cysteine
+    original_spans:
+      - 1006:1015
+  - id: CHEBI:15971
+    label: L-histidine
+    original_spans:
+      - 1019:1029
+  - id: CHEBI:15603
+    label: L-leucine
+    original_spans:
+      - 1032:1040
+      - 1736:1744
+  - id: CHEBI:17295
+    label: L-phenylalanine
+    original_spans:
+      - 1043:1057
+      - 1750:1764
+  - id: CHEBI:17115
+    label: L-serine
+    original_spans:
+      - 1060:1067
+  - id: CHEBI:16857
+    label: L-threonine
+    original_spans:
+      - 1070:1080
+  - id: CHEBI:16414
+    label: L-valine
+    original_spans:
+      - 1083:1090
+  - id: CHEBI:24848
+    label: inositol
+    original_spans:
+      - 1094:1101
+  - id: CHEBI:15443
+    label: inulin
+    original_spans:
+      - 1104:1109
+  - id: AUTO:tryptone
+    label: tryptone
+    original_spans:
+      - 1112:1119
+      - 1726:1733
+  - id: FOODON:03315426
+    label: yeast extract
+    original_spans:
+      - 1125:1137
+  - id: CHEBI:30089
+    label: acetate
+    original_spans:
+      - 1196:1202
+  - id: CHEBI:26977
+    label: thiosulfate
+    original_spans:
+      - 1237:1247
+  - id: CHEBI:26833
+    label: sulfur
+    original_spans:
+      - 1251:1256
+  - id: CHEBI:16283
+    label: L-cystine
+    original_spans:
+      - 1262:1270
+  - id: CHEBI:26822
+    label: sulfide
+    original_spans:
+      - 1288:1294
+  - id: CHEBI:35899
+    label: crotonate
+    original_spans:
+      - 1301:1309
+  - id: CHEBI:17968
+    label: butyrate
+    original_spans:
+      - 1327:1334
+  - id: CHEBI:133748
+    label: citrate
+    original_spans:
+      - 1775:1781
+  - id: CHEBI:29806
+    label: fumarate
+    original_spans:
+      - 1784:1791
+  - id: CHEBI:24996
+    label: lactate
+    original_spans:
+      - 1794:1800
+  - id: CHEBI:15589
+    label: L-malate
+    original_spans:
+      - 1804:1811
+  - id: CHEBI:17754
+    label: glycerol
+    original_spans:
+      - 1814:1821
+  - id: CHEBI:17309
+    label: pectin
+    original_spans:
+      - 1824:1829
+  - id: CHEBI:28017
+    label: starch
+    original_spans:
+      - 1834:1839
+  - id: CHEBI:39250
+    label: iso-C15:0
+    original_spans:
+      - 1892:1900
+  - id: AUTO:iso-C13%3A0%203-OH
+    label: iso-C13:0 3-OH
+  - id: CHEBI:77359
+    label: iso-C13:0
+    original_spans:
+      - 1950:1958
+      - 2018:2026
+  - id: NCBITaxon:649746
+    label: Anaerobaculum hydrogeniformans
+    original_spans:
+      - 121:150
+      - 2199:2228
+  - id: AUTO:strain%20OS1T
+    label: strain OS1T
+    original_spans:
+      - 489:499
+      - 692:702
+      - 1420:1430
+      - 1586:1596
+      - 1684:1694
+      - 1923:1933
+      - 2111:2121
+  - id: NCBITaxon:1120986
+    label: Anaerobaculum thermoterrenum
+    original_spans:
+      - 1447:1474
+  - id: NCBITaxon:508458
+    label: Synergistetes
+    original_spans:
+      - 1540:1552
+  - id: AUTO:A.%20thermoterrenum%20DSM%2013490T
+    label: A. thermoterrenum DSM 13490T
+    original_spans:
+      - 1602:1629
+  - id: NCBITaxon:97477
+    label: Anaerobaculum mobile
+    original_spans:
+      - 2058:2077
+  - id: NCBITaxon:49894
+    label: Anaerobaculum
+    original_spans:
+      - 121:133
+      - 250:262
+      - 1447:1459
+      - 2058:2070
+      - 2164:2176
+      - 2199:2211
+      - 2343:2355
+  - id: MICRO:0000495
+    label: anaerobic
+    original_spans:
+      - 413:421
+  - id: AUTO:moderately%20thermophilic
+    label: moderately thermophilic
+    original_spans:
+      - 424:446
+  - id: AUTO:NaCl-requiring
+    label: NaCl-requiring
+    original_spans:
+      - 449:462
+  - id: MICRO:0001490
+    label: fermentative
+    original_spans:
+      - 464:475
+  - id: AUTO:Gram-negative
+    label: Gram-negative
+    original_spans:
+      - 581:593
+  - id: OMP:0000133
+    label: non-motile
+    original_spans:
+      - 596:605
+  - id: AUTO:non-spore-forming
+    label: non-spore-forming
+    original_spans:
+      - 608:624
+  - id: AUTO:OS1T
+    label: OS1T
+    original_spans:
+      - 496:499
+      - 699:702
+      - 793:796
+      - 1427:1430
+      - 1593:1596
+      - 1691:1694
+      - 1883:1886
+      - 1930:1933
+      - 2118:2121
+      - 2271:2274
