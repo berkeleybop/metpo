@@ -1,6 +1,0 @@
-select ?p (count(?s) as ?count)
-where {
-    ?s <https://w3id.org/biolink/vocab/category> <https://w3id.org/biolink/vocab/OrganismTaxon>  ;
-    ?p ?o .
-}
-group by ?p
