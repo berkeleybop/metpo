@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: https://w3id.org/metpo/metpo/releases/2025-04-25/metpo-full.owl
+data-version: https://w3id.org/metpo/metpo/releases/2025-06-25/metpo-full.owl
 idspace: dce http://purl.org/dc/elements/1.1/ 
 idspace: dcterms http://purl.org/dc/terms/ 
 idspace: metpo https://w3id.org/metpo/ 
@@ -8,20 +8,7 @@ idspace: skos http://www.w3.org/2004/02/skos/core#
 ontology: https://w3id.org/metpo/metpo/metpo-full.owl
 property_value: dcterms:description "Microbial ecophysiological trait and phenotype ontology" xsd:string
 property_value: dcterms:title "METPO" xsd:string
-property_value: owl:versionInfo "2025-04-25" xsd:string
-
-[Term]
-id: metpo:1000001
-name: acid-fast
-def: "Bacteria that resist decolorization with acid-alcohol due to waxy cell walls" []
-synonym: "acid-fast" RELATED [] {metpo:linguistic_role="adjective"}
-synonym: "acid-fast bacteria" RELATED [] {metpo:linguistic_role="noun_plural"}
-synonym: "acid-fast bacterium" EXACT []
-synonym: "acid-fast bacterium" RELATED [] {metpo:linguistic_role="noun_singular"}
-is_a: metpo:1000051 ! cell wall characteristic
-is_a: metpo:1000089 ! diagnostic feature
-property_value: skos:example "Mycobacterium tuberculosis" xsd:string
-property_value: skos:example "Nocardia" xsd:string
+property_value: owl:versionInfo "2025-06-25" xsd:string
 
 [Term]
 id: metpo:1000002
@@ -67,19 +54,6 @@ id: metpo:1000005
 name: adaptive trait
 def: "Heritable characteristic that increases an organism's fitness by enhancing its ability to survive, reproduce, or respond to environmental challenges." []
 is_a: metpo:1000059 ! characteristic
-
-[Term]
-id: metpo:1000006
-name: adhesin
-def: "Surface proteins that enable bacteria to adhere to host tissues" []
-synonym: "adhesins" RELATED [] {metpo:linguistic_role="noun_plural"}
-synonym: "adhesive" RELATED [] {metpo:linguistic_role="adjective"}
-is_a: metpo:1000055 ! cellular component
-is_a: metpo:1000323 ! virulence factor
-property_value: skos:example "fimbriae" xsd:string
-property_value: skos:example "pili" xsd:string
-property_value: skos:example "surface proteins" xsd:string
-property_value: skos:relatedMatch GO:0007155
 
 [Term]
 id: metpo:1000007
@@ -238,7 +212,7 @@ def: "The synthesis of compounds that inhibit the growth of other microorganisms
 synonym: "antibiotic-producing" RELATED [] {metpo:linguistic_role="adjective"}
 synonym: "produce antibiotics" RELATED []
 synonym: "verb" RELATED []
-is_a: metpo:1000253 ! process
+is_a: metpo:1000187 ! process
 property_value: skos:example "Bacillus antibiotics" xsd:string
 property_value: skos:example "Pseudomonas antibiotics" xsd:string
 property_value: skos:example "Streptomyces antibiotics" xsd:string
@@ -249,7 +223,6 @@ name: antibiotic resistance
 def: "The ability of bacteria to survive exposure to antibiotics" []
 synonym: "antibiotic-resistant" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000005 ! adaptive trait
-is_a: metpo:1000065 ! clinically relevant feature
 property_value: skos:example "aminoglycoside resistance" xsd:string
 property_value: skos:example "beta-lactam resistance" xsd:string
 property_value: skos:example "fluoroquinolone resistance" xsd:string
@@ -263,7 +236,6 @@ def: "The ability of microorganisms to survive exposure to antimicrobial compoun
 synonym: "AMR" RELATED [] {metpo:linguistic_role="abbreviation"}
 synonym: "antimicrobial-resistant" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000005 ! adaptive trait
-is_a: metpo:1000065 ! clinically relevant feature
 property_value: skos:example "antibiotic resistance" xsd:string
 property_value: skos:example "antifungal resistance" xsd:string
 property_value: skos:example "antiseptic resistance" xsd:string
@@ -321,7 +293,7 @@ property_value: skos:example "sulfur-oxidizing bacteria" xsd:string
 id: metpo:1000026
 name: autotrophic process
 def: "Metabolic pathway through which organisms synthesize organic compounds from inorganic substances using light or chemical energy." []
-is_a: metpo:1000253 ! process
+is_a: metpo:1000187 ! process
 
 [Term]
 id: metpo:1000027
@@ -491,17 +463,6 @@ property_value: skos:example "Helicobacter pylori" xsd:string
 property_value: skos:example "Neisseria species" xsd:string
 
 [Term]
-id: metpo:1000042
-name: capsule
-def: "A layer of polysaccharides or proteins surrounding the cell" []
-synonym: "capsulated/encapsulated" RELATED [] {metpo:linguistic_role="adjective"}
-synonym: "capsules" RELATED [] {metpo:linguistic_role="noun_plural"}
-is_a: metpo:1000055 ! cellular component
-is_a: metpo:1000323 ! virulence factor
-property_value: skos:example "K antigen in E. coli" xsd:string
-property_value: skos:example "pneumococcal capsule" xsd:string
-
-[Term]
 id: metpo:1000043
 name: carbon fixation
 def: "The conversion of inorganic carbon (usually CO₂) into organic compounds" []
@@ -545,7 +506,6 @@ name: cell arrangement
 def: "The pattern in which bacterial cells are organized relative to each other" []
 synonym: "cell arrangements" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000054 ! cellular characteristic
-is_a: metpo:1000148 ! growth pattern
 is_a: metpo:1000193 ! morphological trait
 property_value: skos:example "diplococci (pairs)" xsd:string
 property_value: skos:example "palisades (side-by-side)" xsd:string
@@ -633,7 +593,7 @@ is_a: metpo:1000079 ! component
 id: metpo:1000056
 name: cellular process
 def: "Coordinated series of molecular events occurring within or involving a cell that serves a specific biological function or outcome." []
-is_a: metpo:1000253 ! process
+is_a: metpo:1000187 ! process
 
 [Term]
 id: metpo:1000057
@@ -718,11 +678,6 @@ is_a: metpo:1000301 ! taxonomic rank
 property_value: skos:example "Actinobacteria (class)" xsd:string
 property_value: skos:example "Bacilli" xsd:string
 property_value: skos:example "Gammaproteobacteria" xsd:string
-
-[Term]
-id: metpo:1000065
-name: clinically relevant feature
-def: "Significance of a microorganism, biological process, or trait in relation to human or animal health, disease diagnosis, treatment, or prevention." []
 
 [Term]
 id: metpo:1000066
@@ -831,7 +786,7 @@ property_value: skos:example "some components of gut microbiota" xsd:string
 id: metpo:1000075
 name: community behavior
 def: "Coordinated action or response exhibited by a population of microorganisms that emerges from individual activities and interactions within the group." []
-is_a: metpo:1000253 ! process
+is_a: metpo:1000187 ! process
 
 [Term]
 id: metpo:1000076
@@ -850,16 +805,6 @@ property_value: skos:example "glycine betaine" xsd:string
 property_value: skos:example "mannitol" xsd:string
 property_value: skos:example "proline" xsd:string
 property_value: skos:example "trehalose" xsd:string
-
-[Term]
-id: metpo:1000078
-name: competence
-def: "The ability of a cell to take up extracellular DNA" []
-synonym: "competent" RELATED [] {metpo:linguistic_role="adjective"}
-is_a: metpo:1000244 ! physiological state
-property_value: skos:example "Induced competence in laboratory conditions" xsd:string
-property_value: skos:example "Natural competence in Bacillus subtilis" xsd:string
-property_value: skos:relatedMatch GO:0030420
 
 [Term]
 id: metpo:1000079
@@ -894,21 +839,6 @@ property_value: skos:example "R plasmid transfer" xsd:string
 property_value: skos:relatedMatch GO:0009291
 
 [Term]
-id: metpo:1000082
-name: CRISPR
-def: "Bacterial adaptive immune system providing resistance against foreign genetic elements" []
-synonym: "Clustered Regularly Interspaced Short Palindromic Repeats" EXACT []
-synonym: "Clustered Regularly Interspaced Short Palindromic Repeats" RELATED [] {metpo:linguistic_role="full_name"}
-synonym: "CRISPR" EXACT []
-synonym: "CRISPRs" RELATED [] {metpo:linguistic_role="noun_plural"}
-is_a: metpo:1000133 ! genetic element
-is_a: metpo:1000237 ! phage defense
-property_value: skos:example "CRISPR arrays" xsd:string
-property_value: skos:example "CRISPR-Cas3 system" xsd:string
-property_value: skos:example "CRISPR-Cas9 system" xsd:string
-property_value: skos:relatedMatch GO:0043571
-
-[Term]
 id: metpo:1000083
 name: culturability
 def: "The ability of a microorganism to be grown in laboratory conditions" []
@@ -934,17 +864,6 @@ property_value: skos:example "Azotobacter cysts" xsd:string
 property_value: skos:example "Myxococcus cysts" xsd:string
 
 [Term]
-id: metpo:1000085
-name: death phase
-def: "Period where death rate exceeds growth rate, resulting in population decline" []
-synonym: "death phases" RELATED [] {metpo:linguistic_role="noun_plural"}
-synonym: "decline phase" RELATED [] {metpo:linguistic_role="synonym"}
-is_a: metpo:1000174 ! life cycle phase
-property_value: skos:example "extreme nutrient depletion" xsd:string
-property_value: skos:example "programmed cell death" xsd:string
-property_value: skos:example "toxic waste accumulation" xsd:string
-
-[Term]
 id: metpo:1000086
 name: denitrification
 def: "The reduction of nitrate to nitrogen gas" []
@@ -960,7 +879,7 @@ property_value: skos:relatedMatch GO:0042128
 id: metpo:1000087
 name: developmental process
 def: "Biological mechanism through which an organism or cell undergoes progressive changes in structure, function, or complexity over time." []
-is_a: metpo:1000253 ! process
+is_a: metpo:1000187 ! process
 
 [Term]
 id: metpo:1000088
@@ -1028,19 +947,6 @@ property_value: skos:example "Bacteria" xsd:string
 property_value: skos:example "Eukarya" xsd:string
 
 [Term]
-id: metpo:1000095
-name: dormancy
-def: "A temporary period of minimal metabolic activity" []
-synonym: "dormant" RELATED [] {metpo:linguistic_role="adjective"}
-synonym: "enter dormancy" RELATED []
-synonym: "verb" RELATED []
-is_a: metpo:1000244 ! physiological state
-is_a: metpo:1000293 ! stress response
-property_value: skos:example "bacterial persistence" xsd:string
-property_value: skos:example "viable but non-culturable state" xsd:string
-property_value: skos:relatedMatch GO:0044838
-
-[Term]
 id: metpo:1000096
 name: dormancy structure
 def: "Specialized cellular form that enables an organism to survive unfavorable environmental conditions in a state of reduced metabolic activity." []
@@ -1057,20 +963,10 @@ property_value: skos:example "Dividing yeast cells" xsd:string
 property_value: skos:example "Some budding bacteria" xsd:string
 
 [Term]
-id: metpo:1000098
-name: ecological niche
-def: "The role and position a species has in its environment" []
-synonym: "ecological niches" RELATED [] {metpo:linguistic_role="noun_plural"}
-property_value: skos:example "extreme environments" xsd:string
-property_value: skos:example "human microbiome" xsd:string
-property_value: skos:example "marine microbiota" xsd:string
-property_value: skos:example "soil microbiota" xsd:string
-
-[Term]
 id: metpo:1000099
 name: ecological process
 def: "Series of interactions or changes involving organisms and their environment that affects community structure, resource distribution, or ecosystem function." []
-is_a: metpo:1000253 ! process
+is_a: metpo:1000187 ! process
 
 [Term]
 id: metpo:1000100
@@ -1136,7 +1032,7 @@ property_value: skos:example "Wolbachia in insect cells" xsd:string
 id: metpo:1000106
 name: energy metabolism process
 def: "Series of biochemical reactions through which organisms acquire, transform, store, or utilize energy for cellular functions and maintenance." []
-is_a: metpo:1000253 ! process
+is_a: metpo:1000187 ! process
 
 [Term]
 id: metpo:1000107
@@ -1153,15 +1049,10 @@ property_value: skos:example "transferases" xsd:string
 property_value: skos:relatedMatch GO:0003824
 
 [Term]
-id: metpo:1000108
-name: epigenetic modification
-def: "Heritable change in gene expression or cellular phenotype that occurs without alterations to the underlying DNA sequence." []
-
-[Term]
 id: metpo:1000109
 name: evolutionary process
 def: "Mechanism or phenomenon that contributes to genetic change over time, resulting in adaptation, speciation, or other alterations in the heritable characteristics of populations." []
-is_a: metpo:1000253 ! process
+is_a: metpo:1000187 ! process
 
 [Term]
 id: metpo:1000110
@@ -1174,27 +1065,6 @@ is_a: metpo:1000265 ! reproductive structure
 is_a: metpo:1000512 ! bacterial spore
 property_value: skos:example "Methylosinus spores" xsd:string
 property_value: skos:example "Streptomyces spores" xsd:string
-
-[Term]
-id: metpo:1000111
-name: exponential phase
-def: "Period of growth where cells divide at a constant rate" []
-synonym: "exponential phases" RELATED [] {metpo:linguistic_role="noun_plural"}
-synonym: "log phase" RELATED [] {metpo:linguistic_role="synonym"}
-is_a: metpo:1000174 ! life cycle phase
-property_value: skos:example "balanced growth" xsd:string
-property_value: skos:example "constant doubling time" xsd:string
-property_value: skos:example "maximum growth rate" xsd:string
-
-[Term]
-id: metpo:1000112
-name: extracellular
-def: "Existing or occurring outside of cells" []
-synonym: "extracellular" RELATED [] {metpo:linguistic_role="adjective"}
-synonym: "extracellularly" RELATED [] {metpo:linguistic_role="adverb"}
-is_a: metpo:1000177 ! localization
-property_value: skos:example "environmental bacteria" xsd:string
-property_value: skos:example "most bacterial pathogens" xsd:string
 
 [Term]
 id: metpo:1000113
@@ -1234,18 +1104,6 @@ property_value: skos:example "alkaliphiles (high pH)" xsd:string
 property_value: skos:example "halophiles (high salt)" xsd:string
 property_value: skos:example "psychrophiles (low temperature)" xsd:string
 property_value: skos:example "thermophiles (high temperature)" xsd:string
-
-[Term]
-id: metpo:1000116
-name: facultative
-def: "Describing an optional capability or adaptation that is not essential" []
-synonym: "facultative" RELATED [] {metpo:linguistic_role="adjective"}
-synonym: "facultatively" RELATED [] {metpo:linguistic_role="adverb"}
-is_a: metpo:1000245 ! physiological trait
-is_a: metpo:1000260 ! qualifier
-property_value: skos:example "facultative anaerobe" xsd:string
-property_value: skos:example "facultative intracellular parasite" xsd:string
-property_value: skos:example "facultative psychrophile" xsd:string
 
 [Term]
 id: metpo:1000117
@@ -1293,20 +1151,6 @@ property_value: skos:example "alcoholic fermentation" xsd:string
 property_value: skos:example "lactic acid fermentation" xsd:string
 property_value: skos:example "mixed acid fermentation" xsd:string
 property_value: skos:relatedMatch GO:0006113
-
-[Term]
-id: metpo:1000121
-name: filamentous
-def: "Growing in long, thread-like structures" []
-synonym: "filament" EXACT []
-synonym: "filament" RELATED [] {metpo:linguistic_role="noun_singular"}
-synonym: "filamentous" RELATED [] {metpo:linguistic_role="adjective"}
-synonym: "filaments" RELATED [] {metpo:linguistic_role="noun_plural"}
-is_a: metpo:1000049 ! cell shape
-is_a: metpo:1000148 ! growth pattern
-property_value: skos:example "Nocardia" xsd:string
-property_value: skos:example "Some cyanobacteria" xsd:string
-property_value: skos:example "Streptomyces" xsd:string
 
 [Term]
 id: metpo:1000122
@@ -1424,21 +1268,16 @@ property_value: skos:example "{'moderate growth': '1-3 hours (many soil bacteria
 property_value: skos:example "{'slow growth': '> 24 hours (Mycobacterium tuberculosis)'}" xsd:string
 
 [Term]
-id: metpo:1000133
-name: genetic element
-def: "Discrete unit of heritable information that can be maintained, replicated, and potentially transferred between organisms." []
-
-[Term]
 id: metpo:1000134
 name: genetic exchange
 def: "Process through which genetic material is transferred between organisms or cells, leading to recombination, acquisition of new traits, or genetic diversity." []
-is_a: metpo:1000253 ! process
+is_a: metpo:1000187 ! process
 
 [Term]
 id: metpo:1000135
 name: genetic process
 def: "Biological mechanism involving the replication, expression, modification, or transmission of genetic material within or between organisms." []
-is_a: metpo:1000253 ! process
+is_a: metpo:1000187 ! process
 
 [Term]
 id: metpo:1000136
@@ -1449,23 +1288,6 @@ is_a: metpo:1000139 ! genomic trait
 property_value: skos:example "{'large genomes (>6 Mbp)': 'Streptomyces coelicolor (8.7 Mbp)'}" xsd:string
 property_value: skos:example "{'medium genomes (1.5-6 Mbp)': 'E. coli (4.6 Mbp)'}" xsd:string
 property_value: skos:example "{'small genomes (<1.5 Mbp)': 'Mycoplasma genitalium (0.58 Mbp)'}" xsd:string
-
-[Term]
-id: metpo:1000137
-name: genomic element
-def: "Discrete region or component of an organism's genome that serves a specific function in genetic regulation, expression, or organization." []
-
-[Term]
-id: metpo:1000138
-name: genomic island
-def: "Large regions of horizontal gene transfer in bacterial genomes" []
-synonym: "genomic islands" RELATED [] {metpo:linguistic_role="noun_plural"}
-synonym: "GI" RELATED [] {metpo:linguistic_role="abbreviation"}
-is_a: metpo:1000191 ! mobile genetic element
-property_value: skos:example "metabolic islands" xsd:string
-property_value: skos:example "pathogenicity islands" xsd:string
-property_value: skos:example "resistance islands" xsd:string
-property_value: skos:example "symbiosis islands" xsd:string
 
 [Term]
 id: metpo:1000139
@@ -1494,18 +1316,6 @@ is_a: metpo:1000194 ! motility process
 property_value: skos:example "Flavobacterium" xsd:string
 property_value: skos:example "Mycoplasma" xsd:string
 property_value: skos:example "Myxococcus" xsd:string
-
-[Term]
-id: metpo:1000142
-name: global regulator
-def: "Regulatory protein that controls the expression of many genes across various pathways" []
-synonym: "global regulators" RELATED [] {metpo:linguistic_role="noun_plural"}
-is_a: metpo:1000263 ! regulatory mechanism
-is_a: metpo:1000310 ! transcription factor
-property_value: skos:example "CRP (catabolite repression)" xsd:string
-property_value: skos:example "Fur (ferric uptake regulator)" xsd:string
-property_value: skos:example "Lrp (leucine-responsive protein)" xsd:string
-property_value: skos:example "RpoS (sigma factor)" xsd:string
 
 [Term]
 id: metpo:1000143
@@ -1585,11 +1395,6 @@ name: growth conditions constraints
 def: "Environmental or physiological factors that limit or define the parameters under which an organism can survive, reproduce, or flourish." []
 
 [Term]
-id: metpo:1000148
-name: growth pattern
-def: "Characteristic mode of cellular proliferation, colony formation, or population increase exhibited by an organism under specific conditions." []
-
-[Term]
 id: metpo:1000149
 name: growth rate
 def: "The speed at which microbial population increases" []
@@ -1600,17 +1405,6 @@ property_value: skos:example "doubling time" xsd:string
 property_value: skos:example "exponential growth rate" xsd:string
 property_value: skos:example "generation time" xsd:string
 property_value: skos:example "specific growth rate" xsd:string
-
-[Term]
-id: metpo:1000150
-name: habitat
-def: "The natural environment in which an organism lives" []
-synonym: "habitats" RELATED [] {metpo:linguistic_role="noun_plural"}
-property_value: skos:example "aquatic" xsd:string
-property_value: skos:example "extreme environments" xsd:string
-property_value: skos:example "host-associated" xsd:string
-property_value: skos:example "terrestrial" xsd:string
-property_value: skos:relatedMatch ENVO:01000739
 
 [Term]
 id: metpo:1000151
@@ -1661,19 +1455,6 @@ is_a: metpo:1000293 ! stress response
 property_value: skos:example "chaperone activity upregulation" xsd:string
 property_value: skos:example "production of heat shock proteins" xsd:string
 property_value: skos:relatedMatch GO:0009408
-
-[Term]
-id: metpo:1000155
-name: hemolysis
-def: "The breakdown of red blood cells" []
-synonym: "hemolytic" RELATED [] {metpo:linguistic_role="adjective"}
-synonym: "hemolyze" RELATED []
-synonym: "verb" RELATED []
-is_a: metpo:1000089 ! diagnostic feature
-is_a: metpo:1000324 ! virulence process
-property_value: skos:example "alpha-hemolysis (partial hemolysis, greenish)" xsd:string
-property_value: skos:example "beta-hemolysis (complete hemolysis, clear)" xsd:string
-property_value: skos:example "gamma-hemolysis (no hemolysis)" xsd:string
 
 [Term]
 id: metpo:1000156
@@ -1781,7 +1562,7 @@ property_value: skos:relatedMatch GO:0051707
 id: metpo:1000164
 name: interaction
 def: "Relationship between biological entities involving physical contact, chemical exchange, or signal transmission that affects their behavior or properties." []
-is_a: metpo:1000253 ! process
+is_a: metpo:1000187 ! process
 
 [Term]
 id: metpo:1000165
@@ -1808,16 +1589,6 @@ def: "Relationship or exchange between different microbial species or population
 is_a: metpo:1000164 ! interaction
 
 [Term]
-id: metpo:1000169
-name: intracellular
-def: "Existing or occurring within a cell" []
-synonym: "intracellular" RELATED [] {metpo:linguistic_role="adjective"}
-synonym: "intracellularly" RELATED [] {metpo:linguistic_role="adverb"}
-is_a: metpo:1000177 ! localization
-property_value: skos:example "facultative intracellular bacteria (Listeria, Salmonella)" xsd:string
-property_value: skos:example "obligate intracellular bacteria (Rickettsia, Chlamydia)" xsd:string
-
-[Term]
 id: metpo:1000170
 name: invasion
 def: "Penetration of host cells or tissues" []
@@ -1836,31 +1607,6 @@ id: metpo:1000171
 name: laboratory characteristic
 def: "Property or behavior of an organism observed under controlled experimental conditions that aids in its identification, classification, or research application." []
 is_a: metpo:1000059 ! characteristic
-
-[Term]
-id: metpo:1000172
-name: lag phase
-def: "Initial period of growth where cells adapt to new environment before dividing" []
-synonym: "lag phases" RELATED [] {metpo:linguistic_role="noun_plural"}
-is_a: metpo:1000174 ! life cycle phase
-property_value: skos:example "adaptation to new nutrients" xsd:string
-property_value: skos:example "repair of cellular damage" xsd:string
-property_value: skos:example "synthesis of new enzymes" xsd:string
-
-[Term]
-id: metpo:1000173
-name: life cycle
-def: "The series of changes an organism undergoes during its existence" []
-synonym: "life cycles" RELATED [] {metpo:linguistic_role="noun_plural"}
-property_value: skos:example "complex developmental cycles" xsd:string
-property_value: skos:example "germination" xsd:string
-property_value: skos:example "sporulation" xsd:string
-property_value: skos:example "vegetative growth" xsd:string
-
-[Term]
-id: metpo:1000174
-name: life cycle phase
-def: "Distinct stage in the development or reproduction of an organism characterized by specific morphological, physiological, or behavioral attributes." []
 
 [Term]
 id: metpo:1000175
@@ -1885,11 +1631,6 @@ is_a: metpo:1000055 ! cellular component
 property_value: skos:example "core oligosaccharide" xsd:string
 property_value: skos:example "lipid A (endotoxin)" xsd:string
 property_value: skos:example "O-antigen" xsd:string
-
-[Term]
-id: metpo:1000177
-name: localization
-def: "Process by which a molecule, structure, or organism is directed to or maintained in a specific spatial position within a cell, tissue, or environment." []
 
 [Term]
 id: metpo:1000178
@@ -1960,7 +1701,6 @@ def: "The addition of methyl groups to DNA or proteins" []
 synonym: "methylate" RELATED []
 synonym: "methylated" RELATED [] {metpo:linguistic_role="adjective"}
 synonym: "verb" RELATED []
-is_a: metpo:1000108 ! epigenetic modification
 is_a: metpo:1000135 ! genetic process
 property_value: skos:example "DNA methylation" xsd:string
 property_value: skos:example "protein methylation" xsd:string
@@ -1974,14 +1714,11 @@ name: material entity
 [Term]
 id: metpo:1000187
 name: process
+def: "Systematic series of actions, changes, or functions that occur in organisms over time and lead to a specific outcome or state." []
 
 [Term]
 id: metpo:1000188
 name: quality
-
-[Term]
-id: metpo:1000189
-name: system
 
 [Term]
 id: metpo:1000190
@@ -1992,19 +1729,6 @@ synonym: "microaerophilic" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000213 ! microbe characterized by relation to oxygen
 property_value: skos:example "Campylobacter jejuni" xsd:string
 property_value: skos:example "Helicobacter pylori" xsd:string
-
-[Term]
-id: metpo:1000191
-name: mobile genetic element
-def: "DNA sequences that can move within or between genomes" []
-synonym: "MGE" RELATED [] {metpo:linguistic_role="abbreviation"}
-synonym: "mobile genetic elements" RELATED [] {metpo:linguistic_role="noun_plural"}
-is_a: metpo:1000137 ! genomic element
-property_value: skos:example "insertion sequences" xsd:string
-property_value: skos:example "integrons" xsd:string
-property_value: skos:example "plasmids" xsd:string
-property_value: skos:example "prophages" xsd:string
-property_value: skos:example "transposons" xsd:string
 
 [Term]
 id: metpo:1000192
@@ -2029,7 +1753,7 @@ is_a: metpo:1000059 ! characteristic
 id: metpo:1000194
 name: motility process
 def: "Biological mechanism through which an organism achieves directed or random movement in its environment through structural adaptations or behavioral responses." []
-is_a: metpo:1000253 ! process
+is_a: metpo:1000187 ! process
 
 [Term]
 id: metpo:1000195
@@ -2132,19 +1856,7 @@ property_value: skos:example "nucleoid-associated proteins" xsd:string
 id: metpo:1000204
 name: nutrient utilization
 def: "Process by which an organism acquires, transforms, and incorporates external substances into its metabolism for growth, energy production, or other cellular functions." []
-is_a: metpo:1000253 ! process
-
-[Term]
-id: metpo:1000205
-name: obligate
-def: "Describing a requirement that is essential and cannot be substituted" []
-synonym: "obligate" RELATED [] {metpo:linguistic_role="adjective"}
-synonym: "obligately" RELATED [] {metpo:linguistic_role="adverb"}
-is_a: metpo:1000245 ! physiological trait
-is_a: metpo:1000260 ! qualifier
-property_value: skos:example "obligate aerobe" xsd:string
-property_value: skos:example "obligate anaerobe" xsd:string
-property_value: skos:example "obligate intracellular parasite" xsd:string
+is_a: metpo:1000187 ! process
 
 [Term]
 id: metpo:1000206
@@ -2295,35 +2007,12 @@ property_value: skos:example "reductases" xsd:string
 property_value: skos:relatedMatch GO:0016491
 
 [Term]
-id: metpo:1000224
-name: oxygen requirement
-def: "The relationship between an organism and molecular oxygen for growth" []
-synonym: "oxygen requirements" RELATED [] {metpo:linguistic_role="noun_plural"}
-is_a: metpo:1000147 ! growth conditions constraints
-is_a: metpo:1000183 ! metabolic trait
-is_a: metpo:1000245 ! physiological trait
-property_value: skos:example "aerobic" xsd:string
-property_value: skos:example "anaerobic" xsd:string
-property_value: skos:example "microaerophilic" xsd:string
-property_value: skos:relatedMatch ENVO:00002507
-
-[Term]
 id: metpo:1000225
 name: oxygenic photosynthesis
 def: "Photosynthesis that produces oxygen as a byproduct" []
 synonym: "oxygenic photosynthetic" RELATED [] {metpo:linguistic_role="adjective"}
 is_a: metpo:1000240 ! photosynthesis
 property_value: skos:example "cyanobacteria (chlorophyll a)" xsd:string
-
-[Term]
-id: metpo:1000226
-name: pan-genome
-def: "The entire gene set of all strains of a species, including core and accessory genes" []
-synonym: "pan-genomes" RELATED [] {metpo:linguistic_role="noun_plural"}
-synonym: "pan-genomic" RELATED [] {metpo:linguistic_role="adjective"}
-property_value: skos:example "accessory genome (genes present in some strains)" xsd:string
-property_value: skos:example "core genome (genes present in all strains)" xsd:string
-property_value: skos:example "strain-specific genes (unique to single strains)" xsd:string
 
 [Term]
 id: metpo:1000227
@@ -2358,17 +2047,6 @@ property_value: skos:example "invasion of host tissues" xsd:string
 property_value: skos:example "production of toxins" xsd:string
 
 [Term]
-id: metpo:1000230
-name: pathogenicity island
-def: "A genomic island containing genes associated with virulence" []
-synonym: "PAI" RELATED [] {metpo:linguistic_role="abbreviation"}
-synonym: "pathogenicity islands" RELATED [] {metpo:linguistic_role="noun_plural"}
-is_a: metpo:1000138 ! genomic island
-is_a: metpo:1000323 ! virulence factor
-property_value: skos:example "LEE in pathogenic E. coli" xsd:string
-property_value: skos:example "SPI-1 in Salmonella" xsd:string
-
-[Term]
 id: metpo:1000231
 name: peptidoglycan
 def: "A polymer that forms the cell wall of most bacteria" []
@@ -2401,18 +2079,6 @@ property_value: skos:example "pH 3.0 for Acidithiobacillus ferrooxidans" xsd:str
 property_value: skos:example "pH 7.0 for E. coli" xsd:string
 
 [Term]
-id: metpo:1000234
-name: pH preference
-def: "The pH range or specific pH at which an organism grows optimally" []
-synonym: "pH preferences" RELATED [] {metpo:linguistic_role="noun_plural"}
-synonym: "pH-preferring" RELATED [] {metpo:linguistic_role="adjective"}
-is_a: metpo:1000147 ! growth conditions constraints
-is_a: metpo:1000245 ! physiological trait
-property_value: skos:example "acidophilic" xsd:string
-property_value: skos:example "alkaliphilic" xsd:string
-property_value: skos:example "neutrophilic" xsd:string
-
-[Term]
 id: metpo:1000235
 name: pH range
 def: "The span of pH values within which an organism can grow" []
@@ -2433,11 +2099,6 @@ is_a: metpo:1000147 ! growth conditions constraints
 is_a: metpo:1000245 ! physiological trait
 property_value: skos:example "acid resistance" xsd:string
 property_value: skos:example "alkaline resistance" xsd:string
-
-[Term]
-id: metpo:1000237
-name: phage defense
-def: "Biological mechanism employed by bacteria and archaea to protect themselves against viral infection and genetic invasion by bacteriophages." []
 
 [Term]
 id: metpo:1000238
@@ -2500,12 +2161,7 @@ property_value: skos:example "Proteobacteria" xsd:string
 id: metpo:1000243
 name: physiological process
 def: "Coordinated series of biological activities that maintains homeostasis, responds to stimuli, or contributes to the integrated functioning of an organism." []
-is_a: metpo:1000253 ! process
-
-[Term]
-id: metpo:1000244
-name: physiological state
-def: "Temporary condition of an organism characterized by specific patterns of metabolic activity, gene expression, or cellular function in response to internal or external factors." []
+is_a: metpo:1000187 ! process
 
 [Term]
 id: metpo:1000245
@@ -2586,7 +2242,6 @@ def: "A small, circular, extrachromosomal DNA molecule" []
 synonym: "plasmid-containing" RELATED [] {metpo:linguistic_role="adjective"}
 synonym: "plasmids" RELATED [] {metpo:linguistic_role="noun_plural"}
 is_a: metpo:1000055 ! cellular component
-is_a: metpo:1000137 ! genomic element
 property_value: skos:example "F plasmids (fertility/conjugation)" xsd:string
 property_value: skos:example "R plasmids (antibiotic resistance)" xsd:string
 property_value: skos:example "Ti plasmids (plant tumor induction)" xsd:string
@@ -2606,23 +2261,6 @@ property_value: skos:example "L-form transition" xsd:string
 property_value: skos:example "Mycoplasma (lack cell wall)" xsd:string
 
 [Term]
-id: metpo:1000253
-name: process
-def: "Systematic series of actions, changes, or functions that occur in organisms over time and lead to a specific outcome or state." []
-is_a: metpo:1000187 ! process
-
-[Term]
-id: metpo:1000254
-name: prophage
-def: "Bacteriophage DNA integrated into a bacterial genome" []
-synonym: "prophage-containing" RELATED [] {metpo:linguistic_role="adjective"}
-synonym: "prophages" RELATED [] {metpo:linguistic_role="noun_plural"}
-is_a: metpo:1000133 ! genetic element
-property_value: skos:example "cryptic prophages" xsd:string
-property_value: skos:example "defective prophages" xsd:string
-property_value: skos:example "inducible prophages" xsd:string
-
-[Term]
 id: metpo:1000255
 name: prostheca
 def: "Thin extensions of the cell and cell wall" []
@@ -2638,7 +2276,7 @@ property_value: skos:example "Hyphomonas neptunium stalk" xsd:string
 id: metpo:1000256
 name: protein synthesis
 def: "Cellular process through which amino acids are assembled into polypeptide chains according to genetic instructions encoded in DNA and mediated by RNA." []
-is_a: metpo:1000253 ! process
+is_a: metpo:1000187 ! process
 
 [Term]
 id: metpo:1000257
@@ -2676,11 +2314,6 @@ property_value: skos:example "Polaromonas vacuolata" xsd:string
 property_value: skos:example "Psychrobacter arcticus" xsd:string
 
 [Term]
-id: metpo:1000260
-name: qualifier
-def: "Term or concept that modifies, specifies, or contextualizes another entity, property, or relationship within an ontological framework." []
-
-[Term]
 id: metpo:1000261
 name: quorum sensing
 def: "Cell-to-cell communication mechanism that allows bacteria to detect population density" []
@@ -2708,33 +2341,16 @@ property_value: skos:example "translational regulation" xsd:string
 property_value: skos:relatedMatch GO:0065007
 
 [Term]
-id: metpo:1000263
-name: regulatory mechanism
-def: "Biological process that controls the rate, timing, or extent of other processes through modulation of molecular activities or cellular responses." []
-
-[Term]
 id: metpo:1000264
 name: reproductive process
 def: "Biological mechanism through which organisms produce offspring, transfer genetic material, or increase their population." []
-is_a: metpo:1000253 ! process
+is_a: metpo:1000187 ! process
 
 [Term]
 id: metpo:1000265
 name: reproductive structure
 def: "Specialized cellular component or assembly that functions in the production, development, or dispersal of offspring." []
 is_a: metpo:1000294 ! structure
-
-[Term]
-id: metpo:1000266
-name: resistance mechanism
-def: "The specific molecular or cellular processes that confer antimicrobial resistance" []
-synonym: "resistance mechanisms" RELATED [] {metpo:linguistic_role="noun_plural"}
-is_a: metpo:1000065 ! clinically relevant feature
-property_value: skos:example "active efflux" xsd:string
-property_value: skos:example "bypass mechanisms" xsd:string
-property_value: skos:example "enzymatic inactivation" xsd:string
-property_value: skos:example "reduced permeability" xsd:string
-property_value: skos:example "target modification" xsd:string
 
 [Term]
 id: metpo:1000267
@@ -2746,19 +2362,6 @@ synonym: "verb" RELATED []
 is_a: metpo:1000106 ! energy metabolism process
 property_value: skos:example "aerobic respiration (oxygen as terminal electron acceptor)" xsd:string
 property_value: skos:example "anaerobic respiration (other terminal electron acceptors)" xsd:string
-
-[Term]
-id: metpo:1000268
-name: restriction-modification system
-def: "System protecting bacteria from foreign DNA by cleaving unmethylated recognition sites" []
-synonym: "R-M system" RELATED [] {metpo:linguistic_role="abbreviation"}
-synonym: "restriction-modification systems" RELATED [] {metpo:linguistic_role="noun_plural"}
-is_a: metpo:1000133 ! genetic element
-is_a: metpo:1000189 ! system
-is_a: metpo:1000237 ! phage defense
-property_value: skos:example "Type I R-M systems" xsd:string
-property_value: skos:example "Type II R-M systems" xsd:string
-property_value: skos:example "Type III R-M systems" xsd:string
 
 [Term]
 id: metpo:1000269
@@ -2793,17 +2396,6 @@ property_value: skos:example "{'narrow range (<1% NaCl)': 'stenohaline organisms
 property_value: skos:example "{'wide range (>8% NaCl)': 'euryhaline organisms'}" xsd:string
 
 [Term]
-id: metpo:1000272
-name: salinity preference
-def: "The salinity range or specific salinity at which an organism grows optimally" []
-synonym: "salinity preferences" RELATED [] {metpo:linguistic_role="noun_plural"}
-synonym: "salinity-preferring" RELATED [] {metpo:linguistic_role="adjective"}
-is_a: metpo:1000147 ! growth conditions constraints
-is_a: metpo:1000245 ! physiological trait
-property_value: skos:example "halophilic" xsd:string
-property_value: skos:example "non-halophilic" xsd:string
-
-[Term]
 id: metpo:1000273
 name: secondary metabolite
 def: "Compounds not directly involved in normal growth but often having ecological functions" []
@@ -2830,21 +2422,6 @@ property_value: skos:example "toxin secretion" xsd:string
 property_value: skos:relatedMatch GO:0046903
 
 [Term]
-id: metpo:1000275
-name: secretion system
-def: "Specialized molecular machinery for protein secretion across membranes" []
-synonym: "secretion systems" RELATED [] {metpo:linguistic_role="noun_plural"}
-is_a: metpo:1000055 ! cellular component
-is_a: metpo:1000189 ! system
-is_a: metpo:1000323 ! virulence factor
-property_value: skos:example "Type I secretion system" xsd:string
-property_value: skos:example "Type II secretion system" xsd:string
-property_value: skos:example "Type III secretion system (injectisome)" xsd:string
-property_value: skos:example "Type IV secretion system" xsd:string
-property_value: skos:example "Type V secretion system" xsd:string
-property_value: skos:example "Type VI secretion system" xsd:string
-
-[Term]
 id: metpo:1000276
 name: sheathed
 def: "Having an outer tube-like structure enclosing filaments of cells" []
@@ -2869,24 +2446,10 @@ property_value: skos:example "enterobactin" xsd:string
 property_value: skos:example "pyoverdine" xsd:string
 
 [Term]
-id: metpo:1000278
-name: sigma factor
-def: "Protein subunit of RNA polymerase required for initiation of transcription" []
-synonym: "sigma factors" RELATED [] {metpo:linguistic_role="noun_plural"}
-synonym: "σ" RELATED [] {metpo:linguistic_role="symbol"}
-is_a: metpo:1000263 ! regulatory mechanism
-is_a: metpo:1000310 ! transcription factor
-property_value: skos:example "σ32 (heat shock)" xsd:string
-property_value: skos:example "σ38 (stationary phase)" xsd:string
-property_value: skos:example "σ54 (nitrogen regulation)" xsd:string
-property_value: skos:example "σ70 (housekeeping)" xsd:string
-property_value: skos:relatedMatch GO:0016987
-
-[Term]
 id: metpo:1000279
 name: signaling
 def: "Process by which cells detect and respond to external or internal stimuli through cascades of molecular interactions that regulate cellular functions." []
-is_a: metpo:1000253 ! process
+is_a: metpo:1000187 ! process
 
 [Term]
 id: metpo:1000280
@@ -2992,17 +2555,6 @@ property_value: skos:example "Certain soil bacteria" xsd:string
 property_value: skos:example "Some actinomycetes" xsd:string
 
 [Term]
-id: metpo:1000290
-name: stationary phase
-def: "Period where growth rate equals death rate, resulting in constant population" []
-synonym: "stationary phases" RELATED [] {metpo:linguistic_role="noun_plural"}
-is_a: metpo:1000174 ! life cycle phase
-property_value: skos:example "nutrient limitation" xsd:string
-property_value: skos:example "quorum sensing activation" xsd:string
-property_value: skos:example "waste product accumulation" xsd:string
-property_value: skos:relatedMatch GO:0070314
-
-[Term]
 id: metpo:1000291
 name: storage structure
 def: "Cellular component that serves to accumulate, maintain, and make available specific molecules, compounds, or energy reserves for metabolic use." []
@@ -3013,7 +2565,7 @@ id: metpo:1000292
 name: strain
 def: "A genetic variant or subtype of a microorganism" []
 synonym: "strains" RELATED [] {metpo:linguistic_role="noun_plural"}
-is_a: metpo:1000300 ! taxonomic identifier
+is_a: metpo:1000301 ! taxonomic rank
 property_value: skos:example "Bacillus subtilis 168" xsd:string
 property_value: skos:example "Escherichia coli K-12" xsd:string
 property_value: skos:example "Streptomyces coelicolor A3(2)" xsd:string
@@ -3076,7 +2628,7 @@ property_value: skos:relatedMatch GO:0044403
 id: metpo:1000298
 name: symbiotic process
 def: "Biological mechanism through which different species establish and maintain long-term ecological relationships that may be mutualistic, commensal, or parasitic." []
-is_a: metpo:1000253 ! process
+is_a: metpo:1000187 ! process
 
 [Term]
 id: metpo:1000299
@@ -3132,18 +2684,6 @@ property_value: skos:example "37°C for E. coli" xsd:string
 property_value: skos:example "70°C for Thermus aquaticus" xsd:string
 
 [Term]
-id: metpo:1000305
-name: temperature preference
-def: "The temperature range or specific temperature at which an organism grows optimally" []
-synonym: "temperature preferences" RELATED [] {metpo:linguistic_role="noun_plural"}
-synonym: "temperature-preferring" RELATED [] {metpo:linguistic_role="adjective"}
-is_a: metpo:1000147 ! growth conditions constraints
-is_a: metpo:1000245 ! physiological trait
-property_value: skos:example "mesophilic" xsd:string
-property_value: skos:example "psychrophilic" xsd:string
-property_value: skos:example "thermophilic" xsd:string
-
-[Term]
 id: metpo:1000306
 name: temperature range
 def: "The span of temperatures within which an organism can grow" []
@@ -3153,17 +2693,6 @@ is_a: metpo:1000245 ! physiological trait
 property_value: skos:example "0-15°C for psychrophiles" xsd:string
 property_value: skos:example "20-45°C for mesophiles" xsd:string
 property_value: skos:example "45-80°C for thermophiles" xsd:string
-
-[Term]
-id: metpo:1000307
-name: thermal tolerance
-def: "The ability of an organism to survive exposure to temperatures outside its optimal growth range" []
-synonym: "thermal tolerances" RELATED [] {metpo:linguistic_role="noun_plural"}
-synonym: "thermally tolerant" RELATED [] {metpo:linguistic_role="adjective"}
-is_a: metpo:1000147 ! growth conditions constraints
-is_a: metpo:1000245 ! physiological trait
-property_value: skos:example "cold shock response" xsd:string
-property_value: skos:example "heat shock response" xsd:string
 
 [Term]
 id: metpo:1000308
@@ -3180,25 +2709,6 @@ property_value: metpo:RangeMin "45" xsd:string
 property_value: metpo:Unit "C" xsd:string
 property_value: skos:example "Pyrococcus furiosus" xsd:string
 property_value: skos:example "Thermus aquaticus" xsd:string
-
-[Term]
-id: metpo:1000309
-name: toxin
-def: "A poisonous substance produced by an organism" []
-synonym: "toxic" RELATED [] {metpo:linguistic_role="adjective"}
-synonym: "toxins" RELATED [] {metpo:linguistic_role="noun_plural"}
-is_a: metpo:1000057 ! cellular product
-is_a: metpo:1000323 ! virulence factor
-property_value: skos:example "endotoxins (part of cell structure)" xsd:string
-property_value: skos:example "enterotoxins (affecting intestines)" xsd:string
-property_value: skos:example "exotoxins (secreted)" xsd:string
-property_value: skos:example "neurotoxins (affecting nervous system)" xsd:string
-
-[Term]
-id: metpo:1000310
-name: transcription factor
-def: "Protein that binds to specific DNA sequences to control the transcription of genetic information from DNA to RNA." []
-is_a: metpo:1000186 ! material entity
 
 [Term]
 id: metpo:1000311
@@ -3240,30 +2750,6 @@ property_value: skos:example "Natural competence in Streptococcus pneumoniae" xs
 property_value: skos:relatedMatch GO:0009294
 
 [Term]
-id: metpo:1000314
-name: transport system
-def: "Mechanisms for moving molecules across cellular membranes" []
-synonym: "transport systems" RELATED [] {metpo:linguistic_role="noun_plural"}
-is_a: metpo:1000055 ! cellular component
-is_a: metpo:1000189 ! system
-property_value: skos:example "ABC transporters" xsd:string
-property_value: skos:example "antiporters" xsd:string
-property_value: skos:example "group translocation" xsd:string
-property_value: skos:example "ion channels" xsd:string
-property_value: skos:example "symporters" xsd:string
-property_value: skos:relatedMatch GO:0055085
-
-[Term]
-id: metpo:1000315
-name: transposon
-def: "A DNA sequence that can change its position within a genome" []
-synonym: "transposons" RELATED [] {metpo:linguistic_role="noun_plural"}
-is_a: metpo:1000191 ! mobile genetic element
-property_value: skos:example "Tn10 (tetracycline resistance)" xsd:string
-property_value: skos:example "Tn5 (kanamycin resistance)" xsd:string
-property_value: skos:relatedMatch SO:0000182
-
-[Term]
 id: metpo:1000316
 name: triangular cell
 def: "A cell with a three-sided shape" []
@@ -3294,31 +2780,6 @@ property_value: skos:example "Neisseria gonorrhoeae" xsd:string
 property_value: skos:example "Pseudomonas aeruginosa" xsd:string
 
 [Term]
-id: metpo:1000319
-name: two-component system
-def: "Signal transduction system consisting of a sensor histidine kinase and a response regulator" []
-synonym: "TCS" RELATED [] {metpo:linguistic_role="abbreviation"}
-synonym: "two-component systems" RELATED [] {metpo:linguistic_role="noun_plural"}
-is_a: metpo:1000189 ! system
-is_a: metpo:1000263 ! regulatory mechanism
-property_value: skos:example "EnvZ/OmpR (osmoregulation)" xsd:string
-property_value: skos:example "NtrB/NtrC (nitrogen regulation)" xsd:string
-property_value: skos:example "PhoR/PhoB (phosphate regulation)" xsd:string
-
-[Term]
-id: metpo:1000320
-name: viable but non-culturable
-def: "A state in which cells are alive but cannot be cultured on standard media" []
-synonym: "non-culturable" RELATED [] {metpo:linguistic_role="adjective"}
-synonym: "VBNC" RELATED [] {metpo:linguistic_role="abbreviation"}
-synonym: "viable but non-culturable state" EXACT []
-synonym: "viable but non-culturable state" RELATED [] {metpo:linguistic_role="noun_singular"}
-synonym: "viable but non-culturable states" RELATED [] {metpo:linguistic_role="noun_plural"}
-is_a: metpo:1000244 ! physiological state
-property_value: skos:example "Escherichia coli under stress" xsd:string
-property_value: skos:example "Vibrio cholerae in aquatic environments" xsd:string
-
-[Term]
 id: metpo:1000321
 name: vibrio
 def: "A curved rod-shaped bacterial cell" []
@@ -3339,15 +2800,10 @@ property_value: skos:example "highly virulent" xsd:string
 property_value: skos:example "moderately virulent" xsd:string
 
 [Term]
-id: metpo:1000323
-name: virulence factor
-def: "Molecule, structure, or mechanism produced by a pathogen that enables it to establish infection, evade host defenses, or cause damage to host tissues." []
-
-[Term]
 id: metpo:1000324
 name: virulence process
 def: "Biological mechanism through which a pathogen causes disease by invading, damaging, or disrupting host tissues or functions." []
-is_a: metpo:1000253 ! process
+is_a: metpo:1000187 ! process
 
 [Term]
 id: metpo:1000325
@@ -3444,18 +2900,12 @@ id: metpo:1000336
 name: psychrotolerant
 def: "A microorganism that can grow at temperatures near 0°C but has optimal growth at higher temperatures." []
 is_a: metpo:1000217 ! microbe characterized by relation to temperature
-property_value: metpo:RangeMax "45" xsd:string
-property_value: metpo:RangeMin "0" xsd:string
-property_value: metpo:Unit "C" xsd:string
 
 [Term]
 id: metpo:1000337
 name: thermotolerant
 def: "A microorganism that can grow at temperatures near 50°C but has optimal growth at lower temperatures." []
 is_a: metpo:1000217 ! microbe characterized by relation to temperature
-property_value: metpo:RangeMax "50" xsd:string
-property_value: metpo:RangeMin "0" xsd:string
-property_value: metpo:Unit "C" xsd:string
 
 [Term]
 id: metpo:1000338
@@ -5044,40 +4494,266 @@ name: chemical entity
 is_a: metpo:1000186 ! material entity
 
 [Term]
-id: metpo:1000527
-name: antimicrobial susceptibility assay result
-
-[Term]
-id: metpo:1000528
-name: structured susceptibility detail
-
-[Typedef]
-id: metpo:2000000
-name: has susceptibility profile
-domain: metpo:1000525 ! microbe
-range: metpo:1000527 ! antimicrobial susceptibility assay result
+id: metpo:1000529
+name: facultative psychrophile
+is_a: metpo:1000217 ! microbe characterized by relation to temperature
+property_value: metpo:RangeMax "30" xsd:string
+property_value: metpo:RangeMin "0" xsd:string
+property_value: metpo:Unit "C" xsd:string
 
 [Typedef]
 id: metpo:2000001
-name: has resistance profile
+name: organism interacts with chemical
 domain: metpo:1000525 ! microbe
-range: metpo:1000527 ! antimicrobial susceptibility assay result
-
-[Typedef]
-id: metpo:2000002
-name: has structured assay detail
-domain: metpo:1000527 ! antimicrobial susceptibility assay result
-range: metpo:1000528 ! structured susceptibility detail
-
-[Typedef]
-id: metpo:2000003
-name: has antimicrobial substance
-domain: metpo:1000527 ! antimicrobial susceptibility assay result
 range: metpo:1000526 ! chemical entity
 
 [Typedef]
+id: metpo:2000002
+name: assimilates
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000003
+name: builds acid from
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
 id: metpo:2000004
-name: has organism identified
-domain: metpo:1000527 ! antimicrobial susceptibility assay result
-range: metpo:1000525 ! microbe
+name: builds base from
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000005
+name: builds gas from
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000006
+name: uses as carbon source
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000007
+name: degrades
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000008
+name: uses as electron acceptor
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000009
+name: uses as electron donor
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000010
+name: uses as energy source
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000011
+name: ferments
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000012
+name: uses for growth
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000013
+name: hydrolyzes
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000014
+name: uses as nitrogen source
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000015
+name: uses in other way
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000016
+name: oxidizes
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000017
+name: reduces
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000018
+name: requires for growth
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000019
+name: uses for respiration
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000020
+name: uses as sulfur source
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000021
+name: does not use for aerobic catabolization
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000022
+name: does not use for aerobic growth
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000023
+name: does not use for anaerobic catabolization
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000024
+name: does not use for anaerobic growth
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000025
+name: does not use for anaerobic growth in the dark
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000026
+name: does not use for anaerobic growth with light
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000027
+name: does not assimilate
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000028
+name: does not build acid from
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000029
+name: does not build base from
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000030
+name: does not build gas from
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000031
+name: does not use as carbon source
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000032
+name: uses for aerobic catabolization
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000033
+name: does not degrade
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000034
+name: does not use as electron acceptor
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000035
+name: does not use as electron donor
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000036
+name: does not use as energy source
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000037
+name: does not ferment
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000038
+name: does not use for growth
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000039
+name: does not hydrolyze
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000040
+name: does not use as nitrogen source
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000041
+name: does not use in other way
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000042
+name: does not oxidize
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000043
+name: uses for aerobic growth
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000044
+name: does not reduce
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000045
+name: is not required for growth
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000046
+name: does not use for respiration
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000047
+name: does not use as sulfur source
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000048
+name: uses for anaerobic catabolization
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000049
+name: uses for anaerobic growth
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000050
+name: uses for anaerobic growth in the dark
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000051
+name: uses for anaerobic growth with light
+is_a: metpo:2000001 ! organism interacts with chemical
 
