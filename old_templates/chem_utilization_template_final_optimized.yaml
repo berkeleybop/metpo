@@ -1,0 +1,217 @@
+id: http://example.com/chem_utilization_template.yaml
+name: chem_utilization_template
+title: OntoGPT Chemical Utilization Template (Final Optimized)
+description: >-
+  Optimized template for microbial characterization extraction focusing on 
+  ontologies that demonstrably add grounding value
+license: https://creativecommons.org/publicdomain/zero/1.0/
+prefixes:
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  chem_utilization: http://example.com/chem_utilization/
+  linkml: https://w3id.org/linkml/
+
+default_prefix: chem_utilization
+default_range: string
+
+imports:
+  - linkml:types
+  - core
+
+classes:
+  LiteratureExtraction:
+    tree_root: true
+    attributes:
+      chemical_compounds:
+        description: semicolon-separated list of chemical compounds mentioned in the text
+        multivalued: true
+        range: ChemicalCompound
+        
+      organisms:
+        description: semicolon-separated list of organisms or bacterial taxa mentioned in the text
+        multivalued: true
+        range: Organism
+        
+      biochemical_processes:
+        description: semicolon-separated list of biochemical processes and metabolic pathways mentioned in the text
+        multivalued: true
+        range: BiochemicalProcess
+        
+      microbial_phenotypes:
+        description: >-
+          semicolon-separated list of microbial phenotypic characteristics such as:
+          oxygen requirements (aerobic, anaerobic, facultative),
+          temperature preferences (thermophilic, mesophilic, psychrophilic),
+          salt requirements, metabolic types, Gram staining results,
+          motility, spore formation ability
+        multivalued: true
+        range: MicrobialPhenotype
+        
+      cell_morphology:
+        description: >-
+          semicolon-separated list of cellular morphological features such as:
+          cell shape (rods, cocci, spirals), cell size dimensions,
+          cellular components, cell wall characteristics
+        multivalued: true
+        range: CellMorphology
+        
+      # Keep these for extraction even if grounding is limited
+      environments:
+        description: environmental sources, habitats, or locations where organisms were isolated
+        multivalued: true
+        range: Environment
+        
+      growth_conditions:
+        description: optimal growth conditions including temperature, pH, salt concentrations
+        multivalued: true
+        range: GrowthCondition
+        
+      analytical_methods:
+        description: analytical or molecular techniques used for characterization
+        multivalued: true
+        range: AnalyticalMethod
+        
+      strain_information:
+        description: strain designations, culture collection numbers, type strain designations
+        multivalued: true
+        range: StrainInformation
+
+      organism_compound_relationships:
+        description: >-
+          Extract ALL organism-compound relationships from the text, including:
+          fermentation, production, utilization, reduction, oxidation, metabolism,
+          growth substrates, negative relationships, cellular composition. Mining these
+          relationships may require splitting up long lists and binding each element back to
+          and organism that is mentioned far away in the source text.
+        multivalued: true
+        range: OrganismCompoundRelationship
+
+      organism_phenotype_relationships:
+        description: >-
+          Extract relationships between organisms and their phenotypic characteristics
+        multivalued: true
+        range: OrganismPhenotypeRelationship
+
+      source_text:
+        range: string
+        annotations:
+          prompt.skip: "true"
+
+  # HIGH-VALUE GROUNDING ONTOLOGIES - Keep these
+  ChemicalCompound:
+    is_a: NamedEntity
+    annotations:
+      annotators: sqlite:obo:chebi, sqlite:obo:foodon
+
+  Organism:
+    is_a: NamedEntity
+    annotations:
+      annotators: sqlite:obo:ncbitaxon
+
+  BiochemicalProcess:
+    is_a: NamedEntity
+    annotations:
+      annotators: sqlite:obo:go
+
+  MicrobialPhenotype:
+    is_a: NamedEntity
+    annotations:
+      # Your custom phenotype databases - these work very well!
+      annotators: mco.db, MicrO-2025-03-20-merged.db, mpo_v0.74.en_only.db, n4l_merged.db, omp.db
+
+  CellMorphology:
+    is_a: NamedEntity
+    annotations:
+      # GO cellular component terms work for cell shapes
+      annotators: sqlite:obo:go
+
+  # LOW-VALUE GROUNDING - Keep for extraction but minimal ontology investment
+  Environment:
+    is_a: NamedEntity
+    # No annotators - these don't ground well anyway
+
+  GrowthCondition:
+    is_a: NamedEntity
+    # No annotators - these don't ground well anyway
+
+  AnalyticalMethod:
+    is_a: NamedEntity
+    # No annotators - these don't ground well anyway
+    
+  StrainInformation:
+    is_a: NamedEntity
+    # No annotators - these are mostly local identifiers
+
+  OrganismCompoundRelationship:
+    is_a: CompoundExpression
+    attributes:
+      organism:
+        description: the organism or strain
+        range: Organism
+      compound:
+        description: the chemical compound
+        range: ChemicalCompound
+      relationship_type:
+        description: the type of relationship
+        range: RelationshipTypeEnum
+
+  OrganismPhenotypeRelationship:
+    is_a: CompoundExpression
+    attributes:
+      organism:
+        description: the organism or strain
+        range: Organism
+      phenotype:
+        description: the phenotypic characteristic
+        range: MicrobialPhenotype
+      relationship_type:
+        description: the type of phenotypic relationship
+        range: PhenotypeRelationshipEnum
+
+enums:
+  RelationshipTypeEnum:
+    description: Types of relationships between organisms and chemical compounds
+    permissible_values:
+      ferments:
+        description: The organism ferments the chemical compound
+      produces:
+        description: The organism produces the chemical compound
+      utilizes:
+        description: The organism utilizes the chemical compound
+      reduces:
+        description: The organism reduces the chemical compound
+      oxidizes:
+        description: The organism oxidizes the chemical compound  
+      metabolizes:
+        description: The organism metabolizes the chemical compound
+      grows_on:
+        description: The organism grows on the chemical compound as substrate
+      contains:
+        description: The organism contains the chemical compound
+      degrades:
+        description: The organism degrades the chemical compound
+      transforms:
+        description: The organism transforms the chemical compound
+      converts:
+        description: The organism converts the chemical compound
+      does_not_ferment:
+        description: The organism does not ferment the chemical compound
+      does_not_utilize:
+        description: The organism does not utilize the chemical compound
+      does_not_grow_on:
+        description: The organism does not grow on the chemical compound
+      reduces_to:
+        description: The organism reduces the compound to another product
+      synthesizes:
+        description: The organism synthesizes the chemical compound
+      catalyzes:
+        description: The organism catalyzes a reaction involving the compound
+
+  PhenotypeRelationshipEnum:
+    description: Types of relationships between organisms and phenotypes
+    permissible_values:
+      has_phenotype:
+        description: The organism has or exhibits the phenotype
+      lacks_phenotype:
+        description: The organism lacks or does not exhibit the phenotype
+      is_characterized_by:
+        description: The organism is characterized by the phenotype

@@ -2982,59 +2982,11 @@ regex = ["regex"]
 
 [[package]]
 name = "linkml"
-version = "1.9.2"
-description = "Linked Open Data Modeling Language"
-optional = false
-python-versions = ">=3.9"
-groups = ["main"]
-markers = "python_version >= \"3.13\""
-files = [
-    {file = "linkml-1.9.2-py3-none-any.whl", hash = "sha256:4c9cf217948367df8a20cdf68e8f6da24ba23ab97a551f8ae32e9d4264e702cc"},
-    {file = "linkml-1.9.2.tar.gz", hash = "sha256:2f9141d2bc8a93bfe1d4b86a015ad0acbb94c2af099177f5687a50d3331d2b34"},
-]
-
-[package.dependencies]
-antlr4-python3-runtime = ">=4.9.0,<4.10"
-click = ">=7.0"
-graphviz = ">=0.10.1"
-hbreader = "*"
-isodate = ">=0.6.0"
-jinja2 = ">=3.1.0"
-jsonasobj2 = ">=1.0.3,<2.0.0"
-jsonschema = {version = ">=4.0.0", extras = ["format"]}
-linkml-runtime = ">=1.9.2,<2.0.0"
-openpyxl = "*"
-parse = "*"
-prefixcommons = ">=0.1.7"
-prefixmaps = ">=0.2.2"
-pydantic = ">=1.0.0,<3.0.0"
-pyjsg = ">=0.11.6"
-pyshex = ">=0.7.20"
-pyshexc = ">=0.8.3"
-python-dateutil = "*"
-pyyaml = "*"
-rdflib = ">=6.0.0"
-requests = ">=2.22"
-sphinx-click = ">=6.0.0"
-sqlalchemy = ">=1.4.31"
-watchdog = ">=0.9.0"
-
-[package.extras]
-black = ["black (>=24.0.0)"]
-numpydantic = ["numpydantic (>=1.6.1)"]
-pandera = ["pandera (>=0.19.0)"]
-polars-lts-cpu = ["polars-lts-cpu (>=1.0.0)"]
-shacl = ["pyshacl (>=0.25.0)"]
-tests = ["black (>=24.0.0)", "numpydantic (>=1.6.1)", "pyshacl (>=0.25.0)"]
-
-[[package]]
-name = "linkml"
 version = "1.9.3rc1"
 description = "Linked Open Data Modeling Language"
 optional = false
 python-versions = ">=3.9"
 groups = ["main"]
-markers = "python_version == \"3.11\" or python_version == \"3.12\""
 files = [
     {file = "linkml-1.9.3rc1-py3-none-any.whl", hash = "sha256:a0d9c05ea064c3a8d933ba0277164436ebf3514e572500e0dbfea2c3099b8981"},
     {file = "linkml-1.9.3rc1.tar.gz", hash = "sha256:338dfd55099536f058cd4ace9b557cb3876c18f58f8d01b4e23f5d20a6641fb1"},
@@ -6016,7 +5968,7 @@ description = "C version of reader, parser and emitter for ruamel.yaml derived f
 optional = false
 python-versions = ">=3.9"
 groups = ["main"]
-markers = "platform_python_implementation == \"CPython\" and (python_version == \"3.11\" or python_version == \"3.12\" or python_version == \"3.13\")"
+markers = "platform_python_implementation == \"CPython\" and python_version < \"3.14\""
 files = [
     {file = "ruamel.yaml.clib-0.2.12-cp310-cp310-macosx_13_0_arm64.whl", hash = "sha256:11f891336688faf5156a36293a9c362bdc7c88f03a8a027c2c1d8e0bcde998e5"},
     {file = "ruamel.yaml.clib-0.2.12-cp310-cp310-manylinux2014_aarch64.whl", hash = "sha256:a606ef75a60ecf3d924613892cc603b154178ee25abb3055db5062da811fd969"},
@@ -7582,4 +7534,4 @@ type = ["pytest-mypy"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.11"
-content-hash = "0bf56da8bff7eedcfb8b14b31f3cf4c17ef8dd4176e5f2bfac3c9f23f90ac2ef"
+content-hash = "868cffad0a9d0c78d7ab75754997e0d1cb963f609355a8c1647af86c95972b31"
