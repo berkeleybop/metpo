@@ -1,0 +1,416 @@
+id: http://w3id.org/metpo/literature_extraction
+name: metpo_literature_extraction
+title: METPO Literature Extraction Template
+description: >-
+  Comprehensive OntoGPT template for extracting microbial ecophysiological traits and phenotypes from literature, including organism-compound interactions, phenotypic characteristics, and environmental associations
+license: https://creativecommons.org/publicdomain/zero/1.0/
+prefixes:
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  linkml: https://w3id.org/linkml/
+  metpo_litex: http://w3id.org/metpo/literature_extraction/
+  ontogpt: http://w3id.org/ontogpt/
+default_prefix: metpo_litex
+default_range: string
+imports:
+  - linkml:types
+  - ontogpt:core
+classes:
+  MicrobialLiteratureExtraction:
+    tree_root: true
+    attributes:
+      organisms:
+        description: >-
+          semicolon-separated list of all microorganisms, bacterial species, strains, and taxonomic entities mentioned in the text
+        multivalued: true
+        range: Organism
+      chemical_compounds:
+        description: >-
+          semicolon-separated list of chemical compounds, substrates, products, metabolites, and biochemical substances mentioned in the text. INCLUDES carbohydrates, sugars, organic acids, alcohols, nitrate, nitrite, sulfate, phosphate, and other inorganic compounds that organisms can utilize, metabolize, or interact with. EXCLUDES enzymes, proteins, lipids, and fatty acids which should be extracted separately.
+        multivalued: true
+        range: ChemicalCompound
+      enzymes:
+        description: >-
+          semicolon-separated list of enzymes, proteins with catalytic activity, and enzymatic complexes mentioned in the text
+        multivalued: true
+        range: Enzyme
+      lipids_fatty_acids:
+        description: >-
+          semicolon-separated list of lipids, fatty acids, membrane components, and lipid-related molecules mentioned in the text. INCLUDES phospholipids, triglycerides, fatty acid chains (e.g., C16:0, C18:1), membrane lipids, cholesterol, sphingolipids, and other lipid-based cellular components.
+        multivalued: true
+        range: LipidFattyAcid
+      microbial_phenotypes:
+        description: >-
+          semicolon-separated list of microbial phenotypic characteristics including: oxygen requirements (aerobic, anaerobic), temperature preferences (thermophilic, mesophilic), pH preferences, salt tolerance, morphological traits, Gram staining results,  motility, spore formation, and other physiological properties. EXCLUDES chemical utilization patterns which should be captured as organism_compound_relationships.
+        multivalued: true
+        range: MicrobialPhenotype
+      environments:
+        description: >-
+          semicolon-separated list of environmental contexts, habitats, ecological niches, and growth conditions mentioned in the text
+        multivalued: true
+        range: Environment
+      organism_compound_relationships:
+        description: >-
+          semicolon-separated list of organism-compound interactions including utilization, production, metabolism, fermentation, oxidation, reduction, and resistance relationships found in the text. INCLUDES statements like "uses carbohydrates as carbon sources", "reduces nitrate to nitrite", "ferments glucose", "oxidizes sulfur compounds".
+        multivalued: true
+        range: OrganismCompoundRelationship
+      organism_phenotype_relationships:
+        description: >-
+          semicolon-separated list of organism-phenotype associations such as "organism is thermophilic", "strain exhibits motility", "bacterium is Gram-positive". EXCLUDES chemical utilization patterns like "uses carbohydrates" which should be  captured as organism_compound_relationships.
+        multivalued: true
+        range: OrganismPhenotypeRelationship
+      organism_environment_relationships:
+        description: >-
+          semicolon-separated list of organism-environment associations such as "organism inhabits marine sediments", "strain isolated from soil"
+        multivalued: true
+        range: OrganismEnvironmentRelationship
+      organism_enzyme_relationships:
+        description: >-
+          semicolon-separated list of organism-enzyme relationships such as "organism produces catalase", "strain expresses oxidase activity"
+        multivalued: true
+        range: OrganismEnzymeRelationship
+      organism_lipid_relationships:
+        description: >-
+          semicolon-separated list of organism-lipid relationships such as "organism contains phospholipids", "strain synthesizes fatty acids"
+        multivalued: true
+        range: OrganismLipidRelationship
+      source_text:
+        range: string
+        annotations:
+          prompt.skip: "true"
+  ChemicalCompound:
+    is_a: NamedEntity
+    description: >-
+      Chemical substances, metabolites, substrates, and products involved in microbial metabolism. EXCLUDES enzymes, proteins, lipids, and fatty acids which should be classified separately. Includes small molecules, organic acids, sugars, alcohols, gases, inorganic compounds, and other non-protein, non-lipid chemical entities.
+    annotations:
+      annotators: sqlite:obo:chebi, sqlite:obo:foodon
+  Enzyme:
+    is_a: NamedEntity
+    description: >-
+      Enzymes, proteins with catalytic activity, and protein complexes involved in biochemical reactions. Includes specific enzyme names, enzyme classes (e.g., oxidase, reductase, hydrolase), and protein complexes with enzymatic function.
+    annotations:
+      annotators: sqlite:obo:pr, sqlite:obo:ec
+  LipidFattyAcid:
+    is_a: NamedEntity
+    description: >-
+      Lipids, fatty acids, membrane components, and lipid-related molecules. Includes phospholipids (phosphatidylcholine, phosphatidylethanolamine), triglycerides, fatty acid chains (palmitic acid, oleic acid, C16:0, C18:1), membrane lipids, cholesterol, sphingolipids, sterols, and other lipid-based cellular components. Covers both specific lipid names and fatty acid notation.
+    annotations:
+      annotators: sqlite:obo:chebi, sqlite:obo:swisslipid
+  BiochemicalReaction:
+    is_a: NamedEntity
+    description: >-
+      Biochemical reactions, metabolic processes, and enzymatic transformations. Includes specific reaction names, metabolic pathways, and biochemical conversions that microorganisms perform.
+    annotations:
+      annotators: sqlite:obo:rhea
+  BiologicalProcess:
+    is_a: NamedEntity
+    description: >-
+      Biological processes, metabolic pathways, and cellular functions. Includes processes like respiration, fermentation, photosynthesis, and other complex biological activities performed by microorganisms.
+    annotations:
+      annotators: sqlite:obo:go
+  Organism:
+    is_a: NamedEntity
+    description: >-
+      Microorganisms, bacterial species, archaeal species, fungal species, strain designations, and taxonomic entities. Includes both cultured and uncultured microorganisms, type strains, environmental isolates, and taxonomic names at any level.
+    annotations:
+      annotators: sqlite:obo:ncbitaxon
+  MicrobialPhenotype:
+    is_a: NamedEntity
+    description: >-
+      Observable characteristics and traits of microorganisms including physiological, morphological, and metabolic properties. Examples include oxygen requirements, temperature preferences, pH tolerance, cell shape, motility, and growth characteristics.
+    annotations:
+      annotators: metpo.db
+  Environment:
+    is_a: NamedEntity
+    description: >-
+      Environmental contexts, habitats, ecological niches, and growth conditions. Includes natural environments (soil, marine, freshwater), artificial environments, laboratory conditions, and specific ecological contexts where microorganisms are found.
+    annotations:
+      annotators: sqlite:obo:envo
+  OrganismCompoundRelationship:
+    is_a: CompoundExpression
+    description: >-
+      Relationships between microorganisms and chemical compounds including metabolic interactions, utilization, production, and biochemical transformations
+    attributes:
+      organism:
+        description: the organism, species, or strain involved in the relationship
+        range: Organism
+      compound:
+        description: the chemical compound or substrate
+        range: ChemicalCompound
+      relationship_type:
+        description: the type of biochemical or metabolic relationship
+        range: ChemicalInteractionPropertyEnum
+  OrganismPhenotypeRelationship:
+    is_a: CompoundExpression
+    description: >-
+      Relationships between microorganisms and their observable characteristics, traits, and phenotypic properties
+    attributes:
+      organism:
+        description: the organism, species, or strain exhibiting the phenotype
+        range: Organism
+      phenotype:
+        description: the phenotypic characteristic or trait
+        range: MicrobialPhenotype
+      relationship_type:
+        description: the type of phenotypic relationship
+        range: PhenotypeRelationshipEnum
+  OrganismEnvironmentRelationship:
+    is_a: CompoundExpression
+    description: >-
+      Relationships between microorganisms and their environmental contexts, habitats, and ecological associations
+    attributes:
+      organism:
+        description: the organism, species, or strain associated with the environment
+        range: Organism
+      environment:
+        description: the environmental context or habitat
+        range: Environment
+      relationship_type:
+        description: the type of environmental association
+        range: EnvironmentRelationshipEnum
+  OrganismEnzymeRelationship:
+    is_a: CompoundExpression
+    description: >-
+      Relationships between microorganisms and enzymes including enzyme production, activity, presence, and enzymatic capabilities
+    attributes:
+      organism:
+        description: the organism, species, or strain associated with the enzyme
+        range: Organism
+      enzyme:
+        description: the enzyme or enzymatic activity
+        range: Enzyme
+      relationship_type:
+        description: the type of enzymatic relationship
+        range: EnzymeRelationshipEnum
+  OrganismLipidRelationship:
+    is_a: CompoundExpression
+    description: >-
+      Relationships between microorganisms and lipids or fatty acids including synthesis, composition, membrane content, and lipid-related properties
+    attributes:
+      organism:
+        description: the organism, species, or strain associated with the lipid
+        range: Organism
+      lipid:
+        description: the lipid, fatty acid, or lipid-related molecule
+        range: LipidFattyAcid
+      relationship_type:
+        description: the type of lipid-related relationship
+        range: LipidRelationshipEnum
+enums:
+  PhenotypeRelationshipEnum:
+    description: Types of relationships between organisms and phenotypes
+    permissible_values:
+      has_phenotype:
+        description: The organism has or exhibits the phenotype
+      lacks_phenotype:
+        description: The organism lacks or does not exhibit the phenotype
+      is_characterized_by:
+        description: The organism is characterized by the phenotype
+      exhibits:
+        description: The organism exhibits or displays the phenotype
+      does_not_exhibit:
+        description: The organism does not exhibit the phenotype
+  EnvironmentRelationshipEnum:
+    description: Types of relationships between organisms and environments
+    permissible_values:
+      inhabits:
+        description: The organism inhabits or lives in the environment
+      isolated_from:
+        description: The organism was isolated from the environment
+      found_in:
+        description: The organism is found in the environment
+      adapted_to:
+        description: The organism is adapted to the environment
+      grows_in:
+        description: The organism grows in the environment
+      thrives_in:
+        description: The organism thrives in the environment
+  EnzymeRelationshipEnum:
+    description: Types of relationships between organisms and enzymes
+    permissible_values:
+      produces:
+        description: The organism produces or synthesizes the enzyme
+      expresses:
+        description: The organism expresses the enzyme or enzymatic activity
+      contains:
+        description: The organism contains the enzyme
+      exhibits_activity:
+        description: The organism exhibits the enzymatic activity
+      lacks:
+        description: The organism lacks the enzyme or enzymatic activity
+      secretes:
+        description: The organism secretes the enzyme
+      induces:
+        description: The organism induces enzyme production
+      represses:
+        description: The organism represses enzyme production
+  LipidRelationshipEnum:
+    description: Types of relationships between organisms and lipids/fatty acids
+    permissible_values:
+      synthesizes:
+        description: The organism synthesizes the lipid or fatty acid
+      contains:
+        description: The organism contains the lipid or fatty acid
+      produces:
+        description: The organism produces the lipid or fatty acid
+      accumulates:
+        description: The organism accumulates the lipid or fatty acid
+      lacks:
+        description: The organism lacks the lipid or fatty acid
+      metabolizes:
+        description: The organism metabolizes the lipid or fatty acid
+      incorporates:
+        description: The organism incorporates the lipid into cellular structures
+      modifies:
+        description: The organism modifies the lipid or fatty acid structure
+  ChemicalInteractionPropertyEnum:
+    permissible_values:
+      builds_base_from:
+        description: builds base from
+        meaning: METPO:2000004
+      does_not_use_for_aerobic_growth:
+        description: does not use for aerobic growth
+        meaning: METPO:2000022
+      uses_as_carbon_source:
+        description: uses as carbon source
+        meaning: METPO:2000006
+      does_not_reduce:
+        description: does not reduce
+        meaning: METPO:2000044
+      does_not_use_for_anaerobic_catabolization:
+        description: does not use for anaerobic catabolization
+        meaning: METPO:2000023
+      degrades:
+        description: degrades
+        meaning: METPO:2000007
+      does_not_use_as_energy_source:
+        description: does not use as energy source
+        meaning: METPO:2000036
+      does_not_use_as_nitrogen_source:
+        description: does not use as nitrogen source
+        meaning: METPO:2000040
+      builds_gas_from:
+        description: builds gas from
+        meaning: METPO:2000005
+      uses_for_growth:
+        description: uses for growth
+        meaning: METPO:2000012
+      uses_in_other_way:
+        description: uses in other way
+        meaning: METPO:2000015
+      does_not_degrade:
+        description: does not degrade
+        meaning: METPO:2000033
+      reduces:
+        description: reduces
+        meaning: METPO:2000017
+      is_not_required_for_growth:
+        description: is not required for growth
+        meaning: METPO:2000045
+      does_not_use_in_other_way:
+        description: does not use in other way
+        meaning: METPO:2000041
+      uses_for_anaerobic_growth_with_light:
+        description: uses for anaerobic growth with light
+        meaning: METPO:2000051
+      does_not_use_for_anaerobic_growth:
+        description: does not use for anaerobic growth
+        meaning: METPO:2000024
+      uses_as_electron_acceptor:
+        description: uses as electron acceptor
+        meaning: METPO:2000008
+      does_not_use_for_respiration:
+        description: does not use for respiration
+        meaning: METPO:2000046
+      does_not_use_for_anaerobic_growth_in_the_dark:
+        description: does not use for anaerobic growth in the dark
+        meaning: METPO:2000025
+      uses_as_electron_donor:
+        description: uses as electron donor
+        meaning: METPO:2000009
+      does_not_use_for_growth:
+        description: does not use for growth
+        meaning: METPO:2000038
+      uses_for_aerobic_catabolization:
+        description: uses for aerobic catabolization
+        meaning: METPO:2000032
+      uses_as_nitrogen_source:
+        description: uses as nitrogen source
+        meaning: METPO:2000014
+      does_not_use_as_electron_donor:
+        description: does not use as electron donor
+        meaning: METPO:2000035
+      uses_for_respiration:
+        description: uses for respiration
+        meaning: METPO:2000019
+      does_not_use_as_sulfur_source:
+        description: does not use as sulfur source
+        meaning: METPO:2000047
+      ferments:
+        description: ferments
+        meaning: METPO:2000011
+      uses_for_anaerobic_growth_in_the_dark:
+        description: uses for anaerobic growth in the dark
+        meaning: METPO:2000050
+      does_not_build_acid_from:
+        description: does not build acid from
+        meaning: METPO:2000028
+      does_not_use_for_anaerobic_growth_with_light:
+        description: does not use for anaerobic growth with light
+        meaning: METPO:2000026
+      uses_as_sulfur_source:
+        description: uses as sulfur source
+        meaning: METPO:2000020
+      assimilates:
+        description: assimilates
+        meaning: METPO:2000002
+      uses_for_anaerobic_catabolization:
+        description: uses for anaerobic catabolization
+        meaning: METPO:2000048
+      does_not_assimilate:
+        description: does not assimilate
+        meaning: METPO:2000027
+      does_not_oxidize:
+        description: does not oxidize
+        meaning: METPO:2000042
+      builds_acid_from:
+        description: builds acid from
+        meaning: METPO:2000003
+      oxidizes:
+        description: oxidizes
+        meaning: METPO:2000016
+      does_not_build_base_from:
+        description: does not build base from
+        meaning: METPO:2000029
+      does_not_use_for_aerobic_catabolization:
+        description: does not use for aerobic catabolization
+        meaning: METPO:2000021
+      does_not_use_as_electron_acceptor:
+        description: does not use as electron acceptor
+        meaning: METPO:2000034
+      requires_for_growth:
+        description: requires for growth
+        meaning: METPO:2000018
+      does_not_hydrolyze:
+        description: does not hydrolyze
+        meaning: METPO:2000039
+      uses_as_energy_source:
+        description: uses as energy source
+        meaning: METPO:2000010
+      does_not_ferment:
+        description: does not ferment
+        meaning: METPO:2000037
+      does_not_use_as_carbon_source:
+        description: does not use as carbon source
+        meaning: METPO:2000031
+      does_not_build_gas_from:
+        description: does not build gas from
+        meaning: METPO:2000030
+      uses_for_anaerobic_growth:
+        description: uses for anaerobic growth
+        meaning: METPO:2000049
+      hydrolyzes:
+        description: hydrolyzes
+        meaning: METPO:2000013
+      uses_for_aerobic_growth:
+        description: uses for aerobic growth
+        meaning: METPO:2000043
