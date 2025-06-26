@@ -1,12 +1,13 @@
 [tool.poetry]
 name        = "metpo"
-version     = "2025-06-25"
+version     = "0.3.0"
 description = "The Microbial Ecophysiological Trait and Phenotype Ontology"
 authors     = ["Mark Andrew Miller <mam@lbl.gov>"]
 readme      = "README.md"
 
 [tool.poetry.dependencies]
 python        = "^3.11"
+click         = "^8.0"
 
 [tool.poetry.group.dev.dependencies]
 ipykernel     = "^6.29.5"
@@ -15,9 +16,11 @@ ontogpt       = ">=1.0"
 pandas        = ">=2.2.3,<3.0.0"
 rdflib        = ">=7.1.4,<8.0.0"
 semsql        = "^0.4.0"
+artl-mcp      = ">=0.16.0"
 
 [tool.poetry.scripts]
 extract-rank-triples = "metpo.extract_rank_triples:extract_taxon_ranks"
+convert-chem-props = "metpo.convert_chem_props:convert_chem_props"
 
 [build-system]
 requires      = ["poetry-core>=2.0.0,<3.0.0"]
