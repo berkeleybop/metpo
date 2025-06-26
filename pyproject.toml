@@ -7,6 +7,7 @@ readme      = "README.md"
 
 [tool.poetry.dependencies]
 python        = "^3.11"
+click         = "^8.0"
 
 [tool.poetry.group.dev.dependencies]
 ipykernel     = "^6.29.5"
@@ -19,6 +20,7 @@ artl-mcp      = ">=0.16.0"
 
 [tool.poetry.scripts]
 extract-rank-triples = "metpo.extract_rank_triples:extract_taxon_ranks"
+convert-chem-props = "metpo.convert_chem_props:convert_chem_props"
 
 [build-system]
 requires      = ["poetry-core>=2.0.0,<3.0.0"]
