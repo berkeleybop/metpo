@@ -1,18 +1,6 @@
 # requires robot and Mike Farah's GO yq as system dependencies
 
-
-# artl-cli --help
-# artl-cli get-abstract-from-pubmed-id --help
-
-#Sideroxyarcus emersonii gen. nov. sp. nov., a neutrophilic, microaerobic iron- and thiosulfate-oxidizing bacterium isolated from iron-rich wetland sediment
-#Shingo Kato 1, Takashi Itoh 1, Takao Iino 1, Moriya Ohkuma 1
-#Affiliations Expand
-#PMID: 35476601
-#DOI: 10.1099/ijsem.0.005347
-
-# or PMID:21602360
-
-.PHONY:  clean all
+.PHONY:  clean all validate-base-template
 
 clean:
 	rm -f *-abstract.txt
@@ -24,7 +12,7 @@ clean:
 	rm -rf metpo.db
 	rm -rf metpo.owl
 
-all: clean 35476601-abstract.txt chem_interaction_props_enum.yaml metpo.db validate-base-template ontogpt_template.yaml 35476601-output.yaml
+all: clean 35476601-abstract.txt chem_interaction_props_enum.yaml metpo.db validate-base-template ontogpt_template.yaml 21602360-output.yaml 35476601-output.yaml
 
 chem_interaction_props.tsv:
 	robot query \
@@ -58,10 +46,10 @@ ontogpt_template.yaml: ontogpt_template_base.yaml chem_interaction_props_enum.ya
 %-output.yaml: ontogpt_template.yaml %-abstract.txt
 	poetry run ontogpt extract -t ontogpt_template.yaml -i $*-abstract.txt > $@
 
-# Specific targets (kept for backward compatibility)
-35476601-abstract.txt:
-	# abstract body on one line
-	poetry run artl-cli get-abstract-from-pubmed-id --pmid "35476601" > $@
-
-35476601-output.yaml: ontogpt_template.yaml 35476601-abstract.txt
-	poetry run ontogpt extract -t ontogpt_template.yaml -i35476601-abstract.txt > $@
+## Specific targets (kept for backward compatibility)
+#35476601-abstract.txt:
+#	# abstract body on one line
+#	poetry run artl-cli get-abstract-from-pubmed-id --pmid "35476601" > $@
+#
+#35476601-output.yaml: ontogpt_template.yaml 35476601-abstract.txt
+#	poetry run ontogpt extract -t ontogpt_template.yaml -i35476601-abstract.txt > $@

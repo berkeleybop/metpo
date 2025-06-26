@@ -6,17 +6,17 @@ input_text: |
 
   PMID:35476601
 raw_completion_output: |-
-  organisms: Sideroxyarcus emersonii;MIZ01T;Gallionellaceae;Betaproteobacteria;'Sideroxydans lithotrophicus' ES-1  
-  chemical_compounds: iron;thiosulfate;ferrous iron  
+  organisms: Sideroxyarcus emersonii;strain MIZ01T;Gallionellaceae;Betaproteobacteria;'Sideroxydans lithotrophicus' ES-1  
+  chemical_compounds: iron;thiosulfate;ferrous iron;C16:1 ω7c/C16:1 ω6c;C16:0  
   enzymes:  
-  lipids_fatty_acids: C16 : 1 ω7c/C16 : 1 ω6c;C16 : 0  
-  microbial_phenotypes: neutrophilic;microaerobic;iron-oxidizing;motile;curved-rod shaped;Gram-stain-negative;chemolithoautotrophic  
-  environments: wetland;iron-rich wetland sediment  
-  organism_compound_relationships: strain MIZ01T oxidizes iron;strain MIZ01T oxidizes thiosulfate;strain MIZ01T uses thiosulfate as electron donor;strain MIZ01T uses ferrous iron as electron donor  
-  organism_phenotype_relationships: Sideroxyarcus emersonii is neutrophilic;Sideroxyarcus emersonii is microaerobic;Sideroxyarcus emersonii is iron-oxidizing;strain MIZ01T is motile;strain MIZ01T is curved-rod shaped;strain MIZ01T is Gram-stain-negative;strain MIZ01T is chemolithoautotrophic  
-  organism_environment_relationships: Sideroxyarcus emersonii isolated from iron-rich wetland sediment;organism inhabits wetland  
+  lipids_fatty_acids: C16:1 ω7c;C16:1 ω6c;C16:0  
+  microbial_phenotypes: neutrophilic;microaerobic;iron-oxidizing;thiosulfate-oxidizing;motile;curved-rod shaped;Gram-stain-negative  
+  environments: wetland;iron-rich wetland sediment;wetland in Ibaraki, Japan  
+  organism_compound_relationships: bacterium oxidizes iron and thiosulfate;strain uses thiosulfate as the sole electron donor;strain uses ferrous iron as the sole electron donor  
+  organism_phenotype_relationships: bacterium is neutrophilic;bacterium is microaerobic;strain is motile;strain is curved-rod shaped;strain is Gram-stain-negative  
+  organism_environment_relationships: bacterium isolated from iron-rich wetland sediment;strain isolated from a wetland in Ibaraki, Japan  
   organism_enzyme_relationships:  
-  organism_lipid_relationships: strain MIZ01T contains C16 : 1 ω7c/C16 : 1 ω6c;strain MIZ01T contains C16 : 0  
+  organism_lipid_relationships: strain contains C16:1 ω7c/C16:1 ω6c and C16:0 as major cellular fatty acids  
 prompt: |+
   Split the following piece of text into fields in the following format:
 
@@ -26,14 +26,14 @@ prompt: |+
 
 
   Text:
-  organism inhabits wetland
+  strain isolated from a wetland in Ibaraki, Japan
 
   ===
 
 extracted_object:
   organisms:
     - NCBITaxon:2764705
-    - AUTO:MIZ01T
+    - AUTO:strain%20MIZ01T
     - NCBITaxon:90627
     - NCBITaxon:28216
     - AUTO:%27Sideroxydans%20lithotrophicus%27%20ES-1
@@ -41,74 +41,68 @@ extracted_object:
     - CHEBI:18248
     - CHEBI:26977
     - AUTO:ferrous%20iron
+    - AUTO:C16%3A1%20%CF%897c/C16%3A1%20%CF%896c
+    - CHEBI:15756
   microbial_phenotypes:
     - <https://w3id.org/metpo/1000199>
     - AUTO:microaerobic
     - AUTO:iron-oxidizing
+    - AUTO:thiosulfate-oxidizing
     - <https://w3id.org/metpo/1000379>
     - AUTO:curved-rod%20shaped
     - AUTO:Gram-stain-negative
-    - <https://w3id.org/metpo/1000369>
   environments:
     - ENVO:00000035
     - AUTO:iron-rich%20wetland%20sediment
+    - AUTO:wetland%20in%20Ibaraki%2C%20Japan
   organism_compound_relationships:
-    - organism: AUTO:strain%20MIZ01T
-      compound: CHEBI:18248
-      relationship_type: oxidizes
-    - organism: AUTO:strain%20MIZ01T
+    - organism: NCBITaxon:1869227
       compound: CHEBI:26977
       relationship_type: oxidizes
-    - organism: AUTO:strain%20MIZ01T
+    - organism: NCBITaxon:strain
       compound: CHEBI:26977
       relationship_type: uses_as_electron_donor
-    - organism: AUTO:strain%20MIZ01T
+    - organism: NCBITaxon:strain
       compound: AUTO:ferrous%20iron
       relationship_type: uses_as_electron_donor
   organism_phenotype_relationships:
-    - organism: NCBITaxon:2764705
+    - organism: NCBITaxon:1869227
       phenotype: <https://w3id.org/metpo/1000199>
-      relationship_type: exhibits
-    - organism: NCBITaxon:2764705
+      relationship_type: is_characterized_by
+    - organism: NCBITaxon:1869227
       phenotype: AUTO:microaerobic
       relationship_type: is_characterized_by
-    - organism: NCBITaxon:2764705
-      phenotype: AUTO:iron-oxidizing
-      relationship_type: exhibits
-    - organism: AUTO:strain%20MIZ01T
+    - organism: NCBITaxon:strain
       phenotype: <https://w3id.org/metpo/1000379>
       relationship_type: exhibits
-    - organism: AUTO:strain%20MIZ01T
+    - organism: NCBITaxon:strain
       phenotype: AUTO:curved-rod%20shaped
-      relationship_type: is_characterized_by
-    - organism: AUTO:strain%20MIZ01T
+      relationship_type: exhibits
+    - organism: NCBITaxon:strain
       phenotype: AUTO:Gram-stain-negative
       relationship_type: is_characterized_by
-    - organism: AUTO:strain%20MIZ01T
-      phenotype: <https://w3id.org/metpo/1000369>
-      relationship_type: is_characterized_by
   organism_environment_relationships:
-    - organism: NCBITaxon:2764705
+    - organism: NCBITaxon:1869227
       environment: AUTO:iron-rich%20wetland%20sediment
       relationship_type: isolated_from
-    - organism: AUTO:organism
-      environment: ENVO:00000035
-      relationship_type: inhabits
+    - organism: NCBITaxon:strain
+      environment: AUTO:wetland%20in%20Ibaraki%2C%20Japan
+      relationship_type: isolated_from
 named_entities:
   - id: NCBITaxon:2764705
     label: Sideroxyarcus emersonii
     original_spans:
       - 0:22
       - 1256:1278
-  - id: AUTO:MIZ01T
-    label: MIZ01T
+  - id: AUTO:strain%20MIZ01T
+    label: strain MIZ01T
     original_spans:
-      - 206:211
-      - 328:333
-      - 664:669
-      - 861:866
-      - 1154:1159
-      - 1326:1331
+      - 199:211
+      - 321:333
+      - 657:669
+      - 854:866
+      - 1147:1159
+      - 1319:1331
   - id: NCBITaxon:90627
     label: Gallionellaceae
     original_spans:
@@ -138,6 +132,10 @@ named_entities:
     label: ferrous iron
     original_spans:
       - 585:596
+  - id: AUTO:C16%3A1%20%CF%897c/C16%3A1%20%CF%896c
+    label: C16:1 ω7c/C16:1 ω6c
+  - id: CHEBI:15756
+    label: C16:0
   - id: <https://w3id.org/metpo/1000199>
     label: neutrophilic
     original_spans:
@@ -152,6 +150,10 @@ named_entities:
     label: iron-oxidizing
     original_spans:
       - 173:186
+  - id: AUTO:thiosulfate-oxidizing
+    label: thiosulfate-oxidizing
+    original_spans:
+      - 83:103
   - id: <https://w3id.org/metpo/1000379>
     label: motile
     original_spans:
@@ -164,10 +166,6 @@ named_entities:
     label: Gram-stain-negative
     original_spans:
       - 368:386
-  - id: <https://w3id.org/metpo/1000369>
-    label: chemolithoautotrophic
-    original_spans:
-      - 525:545
   - id: ENVO:00000035
     label: wetland
     original_spans:
@@ -177,14 +175,23 @@ named_entities:
     label: iron-rich wetland sediment
     original_spans:
       - 129:154
-  - id: AUTO:strain%20MIZ01T
-    label: strain MIZ01T
+  - id: AUTO:wetland%20in%20Ibaraki%2C%20Japan
+    label: wetland in Ibaraki, Japan
     original_spans:
-      - 199:211
-      - 321:333
-      - 657:669
-      - 854:866
-      - 1147:1159
-      - 1319:1331
-  - id: AUTO:organism
-    label: organism
+      - 251:275
+  - id: NCBITaxon:1869227
+    label: bacterium
+    original_spans:
+      - 105:113
+      - 188:196
+      - 388:396
+  - id: NCBITaxon:strain
+    label: strain
+    original_spans:
+      - 199:204
+      - 321:326
+      - 657:662
+      - 854:859
+      - 1147:1152
+      - 1309:1314
+      - 1319:1324

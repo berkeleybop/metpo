@@ -73,11 +73,6 @@ classes:
           semicolon-separated list of organism-lipid relationships such as "organism contains phospholipids", "strain synthesizes fatty acids"
         multivalued: true
         range: OrganismLipidRelationship
-      taxonomic_relationships:
-        description: >-
-          semicolon-separated list of taxonomic hierarchy relationships such as "strain belongs to species", "species belongs to genus", including relationships where strains are assigned to higher taxonomic ranks. Check title for parent taxa if unclear.
-        multivalued: true
-        range: TaxonomicRelationship
       source_text:
         range: string
         annotations:
@@ -200,20 +195,6 @@ classes:
       relationship_type:
         description: the type of lipid-related relationship
         range: LipidRelationshipEnum
-  TaxonomicRelationship:
-    is_a: CompoundExpression
-    description: >-
-      Taxonomic hierarchy relationships between organisms including strain-to-species, species-to-genus assignments, and other taxonomic classifications
-    attributes:
-      child_taxon:
-        description: the lower-level taxonomic entity (strain, species, etc.)
-        range: Organism
-      parent_taxon:
-        description: the higher-level taxonomic entity (species, genus, family, etc.)
-        range: Organism
-      relationship_type:
-        description: the type of taxonomic relationship
-        range: TaxonomicRelationshipEnum
 enums:
   PhenotypeRelationshipEnum:
     description: Types of relationships between organisms and phenotypes
@@ -281,21 +262,6 @@ enums:
         description: The organism incorporates the lipid into cellular structures
       modifies:
         description: The organism modifies the lipid or fatty acid structure
-  TaxonomicRelationshipEnum:
-    description: Types of taxonomic hierarchy relationships
-    permissible_values:
-      belongs_to:
-        description: The child taxon belongs to the parent taxon
-      is_member_of:
-        description: The child taxon is a member of the parent taxon
-      classified_as:
-        description: The child taxon is classified as the parent taxon
-      assigned_to:
-        description: The child taxon is assigned to the parent taxon
-      placed_in:
-        description: The child taxon is placed in the parent taxon
-      represents:
-        description: The child taxon represents the parent taxon
   ChemicalInteractionPropertyEnum:
     permissible_values:
       builds_base_from:
