@@ -3,7 +3,7 @@
 # Number of random PMIDs to sample (can be overridden from command line)
 N_PMIDS ?= 10
 
-.PHONY:  clean all validate-base-template
+.PHONY:  clean all validate-base-template extract-all extract-random random-n4l-pmids.txt
 
 clean:
 	rm -f *-abstract.txt
