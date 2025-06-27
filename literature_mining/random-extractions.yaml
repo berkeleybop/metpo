@@ -1,0 +1,3225 @@
+---
+input_text: |
+  Novosphingobium naphthalenivorans sp. nov., a naphthalene-degrading bacterium isolated from polychlorinated-dioxin-contaminated environments.
+
+  Three strains of strictly aerobic, Gram-negative, naphthalene-degrading bacteria isolated from polychlorinated-dioxin-contaminated soil and sediment were characterized. These isolates grew well with naphthalene as the sole carbon and energy source, degrading it completely within 24 h of incubation. The isolates also degraded dibenzofuran co-metabolically in the presence of naphthalene with the concomitant production of yellow intermediate metabolite(s). A 16S rRNA gene sequence analysis revealed that the isolates affiliated to the genus Novosphingobium with Novosphingobium pentaromativorans and Novosphingobium subarcticum as their nearest phylogenetic neighbors (97.4-97.5% similarity). The isolates had a genomic DNA G+C ratio of 64.5-64.6 mol% and formed a genetically coherent group distinguishable from any established species of the genus Novosphingobium at a DNA-DNA hybridization level of less than 46%. The cellular fatty acids were characterized by the predominance of 18 : 1omega7c with significant proportions of 16 : 0, 16 : 1omega7c, 17 : 1omega6c and 2-OH 14 : 0. Sphingoglycolipids were present. The major respiratory quinone was ubiquinone-10. Spermidine was detected as the major polyamine. The distinct taxonomic position of the isolates within the Novosphingobium was also demonstrated by physiological and biochemical testing. Based on these phylogenetic and phenotypic data, we propose Novosphingobium naphthalenivorans sp. nov. to accommodate the novel isolates. The type strain is strain TUT562(T) (DSM 18518(T), JCM 13951(T), NBRC 102051(T)).
+
+  PMID:17878661
+raw_completion_output: |-
+  organisms: Novosphingobium naphthalenivorans;Novosphingobium pentaromativorans;Novosphingobium subarcticum;Novosphingobium  
+  chemical_compounds: naphthalene;dibenzofuran;intermediate metabolite(s);18:1omega7c;16:0;16:1omega7c;17:1omega6c;2-OH 14:0;ubiquinone-10;sphingoglycolipids;spermidine  
+  enzymes:   
+  lipids_fatty_acids: 18:1omega7c;16:0;16:1omega7c;17:1omega6c;2-OH 14:0;sphingoglycolipids  
+  microbial_phenotypes: strictly aerobic;Gram-negative  
+  environments: polychlorinated-dioxin-contaminated environments;polychlorinated-dioxin-contaminated soil;sediment  
+  organism_compound_relationships: Novosphingobium naphthalenivorans degrades naphthalene;Novosphingobium naphthalenivorans degrades dibenzofuran;Novosphingobium naphthalenivorans produces intermediate metabolite(s)  
+  organism_phenotype_relationships: Novosphingobium naphthalenivorans is strictly aerobic;Novosphingobium naphthalenivorans is Gram-negative  
+  organism_environment_relationships: Novosphingobium naphthalenivorans isolated from polychlorinated-dioxin-contaminated environments;Novosphingobium naphthalenivorans isolated from polychlorinated-dioxin-contaminated soil;Novosphingobium naphthalenivorans isolated from sediment  
+  organism_enzyme_relationships:   
+  organism_lipid_relationships: Novosphingobium naphthalenivorans contains 18:1omega7c;Novosphingobium naphthalenivorans contains 16:0;Novosphingobium naphthalenivorans contains 16:1omega7c;Novosphingobium naphthalenivorans contains 17:1omega6c;Novosphingobium naphthalenivorans contains 2-OH 14:0;Novosphingobium naphthalenivorans contains sphingoglycolipids  
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  organism: <the organism, species, or strain associated with the environment>
+  environment: <the environmental context or habitat>
+  relationship_type: <the type of environmental associationMust be one of: inhabits, isolated_from, found_in, adapted_to, grows_in, thrives_in>
+
+
+  Text:
+  Novosphingobium naphthalenivorans isolated from sediment
+
+  ===
+
+extracted_object:
+  organisms:
+    - NCBITaxon:273168
+    - NCBITaxon:205844
+    - NCBITaxon:158500
+    - NCBITaxon:165696
+  chemical_compounds:
+    - CHEBI:16482
+    - CHEBI:28145
+    - CHEBI:17115
+    - AUTO:18%3A1omega7c
+    - AUTO:16%3A0
+    - AUTO:16%3A1omega7c
+    - AUTO:17%3A1omega6c
+    - AUTO:2-OH%2014%3A0
+    - CHEBI:46245
+    - AUTO:sphingoglycolipids
+    - CHEBI:16610
+  microbial_phenotypes:
+    - AUTO:strictly%20aerobic
+    - <https://w3id.org/metpo/1000143>
+  environments:
+    - AUTO:polychlorinated-dioxin-contaminated%20environments
+    - AUTO:polychlorinated-dioxin-contaminated%20soil
+    - ENVO:00002007
+  organism_compound_relationships:
+    - organism: NCBITaxon:273168
+      compound: CHEBI:16482
+      relationship_type: degrades
+    - organism: NCBITaxon:273168
+      compound: CHEBI:28145
+      relationship_type: degrades
+  organism_phenotype_relationships:
+    - organism: NCBITaxon:273168
+      phenotype: AUTO:strictly%20aerobic
+      relationship_type: is_characterized_by
+    - organism: NCBITaxon:273168
+      phenotype: <https://w3id.org/metpo/1000143>
+      relationship_type: is_characterized_by
+  organism_environment_relationships:
+    - organism: NCBITaxon:273168
+      environment: AUTO:polychlorinated-dioxin-contaminated%20environments
+      relationship_type: isolated_from
+    - organism: NCBITaxon:273168
+      environment: AUTO:polychlorinated-dioxin-contaminated%20soil
+      relationship_type: isolated_from
+    - organism: NCBITaxon:273168
+      environment: ENVO:00002007
+      relationship_type: isolated_from
+named_entities:
+  - id: NCBITaxon:273168
+    label: Novosphingobium naphthalenivorans
+    original_spans:
+      - 0:32
+      - 1558:1590
+  - id: NCBITaxon:205844
+    label: Novosphingobium pentaromativorans
+    original_spans:
+      - 707:739
+  - id: NCBITaxon:158500
+    label: Novosphingobium subarcticum
+    original_spans:
+      - 745:771
+  - id: NCBITaxon:165696
+    label: Novosphingobium
+    original_spans:
+      - 0:14
+      - 686:700
+      - 707:721
+      - 745:759
+      - 995:1009
+      - 1418:1432
+      - 1558:1572
+  - id: CHEBI:16482
+    label: naphthalene
+    original_spans:
+      - 46:56
+      - 193:203
+      - 342:352
+      - 519:529
+  - id: CHEBI:28145
+    label: dibenzofuran
+    original_spans:
+      - 470:481
+  - id: CHEBI:17115
+    label: intermediate metabolite(s)
+    original_spans:
+      - 573:598
+  - id: AUTO:18%3A1omega7c
+    label: 18:1omega7c
+  - id: AUTO:16%3A0
+    label: 16:0
+  - id: AUTO:16%3A1omega7c
+    label: 16:1omega7c
+  - id: AUTO:17%3A1omega6c
+    label: 17:1omega6c
+  - id: AUTO:2-OH%2014%3A0
+    label: 2-OH 14:0
+  - id: CHEBI:46245
+    label: ubiquinone-10
+    original_spans:
+      - 1296:1308
+  - id: AUTO:sphingoglycolipids
+    label: sphingoglycolipids
+    original_spans:
+      - 1229:1246
+  - id: CHEBI:16610
+    label: spermidine
+    original_spans:
+      - 1311:1320
+  - id: AUTO:strictly%20aerobic
+    label: strictly aerobic
+    original_spans:
+      - 160:175
+  - id: <https://w3id.org/metpo/1000143>
+    label: Gram-negative
+    original_spans:
+      - 178:190
+  - id: AUTO:polychlorinated-dioxin-contaminated%20environments
+    label: polychlorinated-dioxin-contaminated environments
+    original_spans:
+      - 92:139
+  - id: AUTO:polychlorinated-dioxin-contaminated%20soil
+    label: polychlorinated-dioxin-contaminated soil
+    original_spans:
+      - 238:277
+  - id: ENVO:00002007
+    label: sediment
+    original_spans:
+      - 283:290
+---
+input_text: |
+  Taxonomic relationships of the [Pasteurella] haemolytica complex as evaluated by DNA-DNA hybridizations and 16S rRNA sequencing with proposal of Mannheimia haemolytica gen. nov., comb. nov., Mannheimia granulomatis comb. nov., Mannheimia glucosida sp. nov., Mannheimia ruminalis sp. nov. and Mannheimia varigena sp. nov.
+
+  The present paper presents the conclusions of a polyphasic investigation of the taxonomy of the trehalose-negative [Pasteurella] haemolytica complex. Clusters previously identified by ribotyping and multilocus enzyme electrophoresis (MEE) have been evaluated by 16S rRNA sequencing and DNA-DNA hybridizations. Results obtained by the different techniques were highly related and indicated that the [P.] haemolytica complex contains distinct genetic and phenotypic groups. At least seven species were outlined, five of which were named. We refrained in formal naming of more groups until additional strains are characterized. Five 16S rRNA clusters were identified corresponding to distinct lineages previously outlined by MEE. Within 16S rRNA cluster I two distinct genotypic groups have been outlined in addition to [P.] haemolytica sensu stricto (biogroup 1). Each of the clusters II, III, IV and V represent at least one new species. The investigations underline that [P.] haemolytica sensu stricto only contains strains that do not ferment L-arabinose even though they are referred to as 'biotype A' of [P.] haemolytica. The five 16S rRNA clusters identified had a common root relative to the other species within the family Pasteurellaceae, and the overall sequence similarity among these five clusters was higher than what is observed within the existing genera of the family. The allocation of the trehalose-negative [P.] haemolytica complex to a new genus seems to be indicated. Based on the polyphasic investigation performed a new genus Mannheimia is proposed for the trehalose-negative [P.] haemolytica complex. At the present stage two previously named species are transferred to this new genus and three new species are described. [P.] haemolytica is reclassified as Mannheimia haemolytica comb. nov., whereas Pasteurella granulomatis, Bisgaard taxon 20 and [P.] haemolytica biovar 3J are reclassified and combined in the species Mannheimia granulomatis comb. nov. Mannheimia glucosida sp. nov. corresponds to [P.] haemolytica biogroups 3A-3H and the beta-glucosidase and meso-inositol-positive strains of [P.] haemolytica biogroup 9. All typable strains within M. glucosida belong to serotype 11. Mannheimia ruminalis sp. nov. consists of strains previously classified as Bisgaard taxon 18 and [P.] haemolytica biogroup 8D. Finally, Mannheimia varigena sp. nov. includes [P.] haemolytica biogroup 6 as well as Bisgaard taxon 15 and Bisgaard taxon 36. The type strains are NCTC 9380T (M. haemolytica), ATCC 49244T (M. granulomatis), CCUG 38457T = P925T (M. glucosida), CCUG 38470T = HPA92T (M. ruminalis) and CCUG 38462T = 177T (M. varigena).
+
+  PMID:10028248
+raw_completion_output: |-
+  organisms: Pasteurella haemolytica;Mannheimia haemolytica;Mannheimia granulomatis;Mannheimia glucosida;Mannheimia ruminalis;Mannheimia varigena;Pasteurellaceae;Bisgaard taxon 20;Bisgaard taxon 18;Bisgaard taxon 15;Bisgaard taxon 36  
+  chemical_compounds: L-arabinose;trehalose;meso-inositol  
+  enzymes: beta-glucosidase  
+  lipids_fatty_acids:   
+  microbial_phenotypes: trehalose-negative;meso-inositol-positive  
+  environments:   
+  organism_compound_relationships: haemolytica does not ferment L-arabinose  
+  organism_phenotype_relationships: Pasteurella haemolytica complex is trehalose-negative;Mannheimia glucosida strains are meso-inositol-positive  
+  organism_environment_relationships:   
+  organism_enzyme_relationships: Mannheimia glucosida strains are beta-glucosidase positive  
+  organism_lipid_relationships:   
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  organism: <the organism, species, or strain exhibiting the phenotype>
+  phenotype: <the phenotypic characteristic or trait>
+  relationship_type: <the type of phenotypic relationshipMust be one of: has_phenotype, lacks_phenotype, is_characterized_by, exhibits, does_not_exhibit>
+
+
+  Text:
+  Mannheimia glucosida strains are meso-inositol-positive
+
+  ===
+
+extracted_object:
+  organisms:
+    - AUTO:Pasteurella%20haemolytica
+    - NCBITaxon:75985
+    - NCBITaxon:85402
+    - NCBITaxon:85401
+    - NCBITaxon:85403
+    - NCBITaxon:85404
+    - NCBITaxon:712
+    - NCBITaxon:47739
+    - NCBITaxon:47738
+    - NCBITaxon:47737
+    - AUTO:Bisgaard%20taxon%2036
+  chemical_compounds:
+    - CHEBI:30849
+    - CHEBI:27082
+    - CHEBI:17268
+  enzymes:
+    - EC:3.2.1.21
+  organism_phenotype_relationships:
+    - organism: AUTO:Pasteurella%20haemolytica%20complex
+      phenotype: AUTO:trehalose-negative
+      relationship_type: is_characterized_by
+    - organism: NCBITaxon:85401
+      phenotype: AUTO:meso-inositol-positive
+      relationship_type: exhibits
+named_entities:
+  - id: AUTO:Pasteurella%20haemolytica
+    label: Pasteurella haemolytica
+  - id: NCBITaxon:75985
+    label: Mannheimia haemolytica
+    original_spans:
+      - 145:166
+      - 2102:2123
+  - id: NCBITaxon:85402
+    label: Mannheimia granulomatis
+    original_spans:
+      - 191:213
+      - 2265:2287
+  - id: NCBITaxon:85401
+    label: Mannheimia glucosida
+    original_spans:
+      - 227:246
+      - 2300:2319
+  - id: NCBITaxon:85403
+    label: Mannheimia ruminalis
+    original_spans:
+      - 258:277
+      - 2533:2552
+  - id: NCBITaxon:85404
+    label: Mannheimia varigena
+    original_spans:
+      - 292:310
+      - 2669:2687
+  - id: NCBITaxon:712
+    label: Pasteurellaceae
+    original_spans:
+      - 1551:1565
+  - id: NCBITaxon:47739
+    label: Bisgaard taxon 20
+    original_spans:
+      - 2171:2187
+  - id: NCBITaxon:47738
+    label: Bisgaard taxon 18
+    original_spans:
+      - 2608:2624
+  - id: NCBITaxon:47737
+    label: Bisgaard taxon 15
+    original_spans:
+      - 2746:2762
+  - id: AUTO:Bisgaard%20taxon%2036
+    label: Bisgaard taxon 36
+    original_spans:
+      - 2768:2784
+  - id: CHEBI:30849
+    label: L-arabinose
+    original_spans:
+      - 1366:1376
+  - id: CHEBI:27082
+    label: trehalose
+    original_spans:
+      - 418:426
+      - 1727:1735
+      - 1900:1908
+  - id: CHEBI:17268
+    label: meso-inositol
+    original_spans:
+      - 2407:2419
+  - id: EC:3.2.1.21
+    label: beta-glucosidase
+    original_spans:
+      - 2386:2401
+  - id: AUTO:Pasteurella%20haemolytica%20complex
+    label: Pasteurella haemolytica complex
+  - id: AUTO:trehalose-negative
+    label: trehalose-negative
+    original_spans:
+      - 418:435
+      - 1727:1744
+      - 1900:1917
+  - id: AUTO:meso-inositol-positive
+    label: meso-inositol-positive
+    original_spans:
+      - 2407:2428
+---
+input_text: |
+  Description and functional testing of four species of the novel phototrophic genus Chioneia gen. nov., isolated from different East Antarctic environments.
+
+  Seven Gram-negative, aerobic, non-sporulating, motile strains were isolated from terrestrial (R-67880T, R-67883, R-36501 and R-36677T) and aquatic (R-39604, R-39161T and R-39594T) East Antarctic environments (i.e. soil and aquatic microbial mats), between 2007 and 2014. Analysis of near-complete 16S rRNA gene sequences revealed that the strains potentially form a novel genus in the family Sphingomonadaceae (Alphaproteobacteria). DNA-DNA reassociation and average nucleotide identity values indicated distinction from close neighbors in the family Sphingomonadaceae and showed that the seven isolates form four different species. The main central pathways present in the strains are the glycolysis, tricarboxylic acid cycle and pentose phosphate pathway. The strains can use only a limited number of carbon sources and mainly depend on ammonia and sulfate as a nitrogen and sulfur source, respectively. The novel strains showed the potential of aerobic anoxygenic phototrophy, based on the presence of bacteriochlorophyll a pigments, which was corroborated by the presence of genes for all building blocks for a type 2 photosynthetic reaction center in the annotated genomes. Based on the results of phenotypic, genomic, phylogenetic and chemotaxonomic analyses, the strains could be assigned four new species in the novel genus Chioneia gen. nov. in the family Sphingomonadaceae, for which the names C. frigida sp. nov. (R-67880T, R-67883 and R-36501), C. hiemis sp. nov. (R-36677T), C. brumae sp. nov. (R-39161T and R-39604) and C. algoris sp. nov. (R-39594T) are proposed.
+
+  PMID:34592543
+raw_completion_output: |-
+  organisms: Chioneia;Sphingomonadaceae;Alphaproteobacteria;C. frigida;C. hiemis;C. brumae;C. algoris  
+  chemical_compounds: ammonia;sulfate;bacteriochlorophyll a  
+  enzymes: none  
+  lipids_fatty_acids: none  
+  microbial_phenotypes: Gram-negative;aerobic;non-sporulating;motile  
+  environments: East Antarctic environments;soil;aquatic microbial mats;terrestrial environment;aquatic environment  
+  organism_compound_relationships: strains can use only a limited number of carbon sources;strains mainly depend on ammonia as a nitrogen source;strains mainly depend on sulfate as a sulfur source  
+  organism_phenotype_relationships: Seven strains are Gram-negative;strains are aerobic;strains are non-sporulating;strains are motile  
+  organism_environment_relationships: strains were isolated from terrestrial East Antarctic environments;strains were isolated from aquatic East Antarctic environments  
+  organism_enzyme_relationships: none  
+  organism_lipid_relationships: none  
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  organism: <the organism, species, or strain associated with the lipid>
+  lipid: <the lipid, fatty acid, or lipid-related molecule>
+  relationship_type: <the type of lipid-related relationshipMust be one of: synthesizes, contains, produces, accumulates, lacks, metabolizes, incorporates, modifies>
+
+
+  Text:
+  none
+
+  ===
+
+extracted_object:
+  organisms:
+    - NCBITaxon:2886831
+    - NCBITaxon:41297
+    - NCBITaxon:28211
+    - AUTO:C.%20frigida
+    - AUTO:C.%20hiemis
+    - AUTO:C.%20brumae
+    - AUTO:C.%20algoris
+  chemical_compounds:
+    - CHEBI:28938
+    - CHEBI:16189
+    - CHEBI:30033
+  enzymes:
+    - AUTO:none
+  lipids_fatty_acids:
+    - AUTO:none
+  microbial_phenotypes:
+    - <https://w3id.org/metpo/1000143>
+    - <https://w3id.org/metpo/1000008>
+    - AUTO:non-sporulating
+    - <https://w3id.org/metpo/1000379>
+  environments:
+    - AUTO:East%20Antarctic%20environments
+    - ENVO:00001998
+    - AUTO:aquatic%20microbial%20mats
+    - AUTO:terrestrial%20environment
+    - ENVO:01000317
+  organism_compound_relationships:
+    - organism: NCBITaxon:strain
+      compound: CHEBI:28938
+      relationship_type: uses_as_nitrogen_source
+    - organism: NCBITaxon:strain
+      compound: CHEBI:16189
+      relationship_type: uses_as_sulfur_source
+  organism_phenotype_relationships:
+    - organism: AUTO:Seven%20strains
+      phenotype: <https://w3id.org/metpo/1000143>
+      relationship_type: exhibits
+    - organism: NCBITaxon:strain
+      phenotype: <https://w3id.org/metpo/1000008>
+      relationship_type: exhibits
+    - organism: NCBITaxon:strain
+      phenotype: AUTO:non-sporulating
+      relationship_type: lacks_phenotype
+    - organism: NCBITaxon:strain
+      phenotype: <https://w3id.org/metpo/1000379>
+      relationship_type: exhibits
+  organism_environment_relationships:
+    - organism: NCBITaxon:strain
+      environment: AUTO:terrestrial%20East%20Antarctic%20environments
+      relationship_type: isolated_from
+    - organism: NCBITaxon:strain
+      environment: AUTO:aquatic%20East%20Antarctic%20environments
+      relationship_type: isolated_from
+  organism_lipid_relationships:
+    - organism: NCBITaxon:32644
+      lipid: AUTO:none
+named_entities:
+  - id: NCBITaxon:2886831
+    label: Chioneia
+    original_spans:
+      - 83:90
+      - 1489:1496
+  - id: NCBITaxon:41297
+    label: Sphingomonadaceae
+    original_spans:
+      - 549:565
+      - 708:724
+      - 1522:1538
+  - id: NCBITaxon:28211
+    label: Alphaproteobacteria
+    original_spans:
+      - 568:586
+  - id: AUTO:C.%20frigida
+    label: C. frigida
+    original_spans:
+      - 1561:1570
+  - id: AUTO:C.%20hiemis
+    label: C. hiemis
+    original_spans:
+      - 1614:1622
+  - id: AUTO:C.%20brumae
+    label: C. brumae
+    original_spans:
+      - 1645:1653
+  - id: AUTO:C.%20algoris
+    label: C. algoris
+    original_spans:
+      - 1691:1700
+  - id: CHEBI:28938
+    label: ammonia
+    original_spans:
+      - 996:1002
+  - id: CHEBI:16189
+    label: sulfate
+    original_spans:
+      - 1008:1014
+  - id: CHEBI:30033
+    label: bacteriochlorophyll a
+    original_spans:
+      - 1162:1182
+  - id: AUTO:none
+    label: none
+  - id: <https://w3id.org/metpo/1000008>
+    label: aerobic
+    original_spans:
+      - 178:184
+      - 1105:1111
+  - id: AUTO:non-sporulating
+    label: non-sporulating
+    original_spans:
+      - 187:201
+  - id: <https://w3id.org/metpo/1000379>
+    label: motile
+    original_spans:
+      - 204:209
+  - id: AUTO:East%20Antarctic%20environments
+    label: East Antarctic environments
+    original_spans:
+      - 127:153
+      - 337:363
+  - id: ENVO:00001998
+    label: soil
+    original_spans:
+      - 371:374
+  - id: AUTO:aquatic%20microbial%20mats
+    label: aquatic microbial mats
+    original_spans:
+      - 380:401
+  - id: AUTO:terrestrial%20environment
+    label: terrestrial environment
+  - id: ENVO:01000317
+    label: aquatic environment
+  - id: NCBITaxon:strain
+    label: strains
+    original_spans:
+      - 211:217
+      - 496:502
+      - 831:837
+      - 919:925
+      - 1073:1079
+      - 1427:1433
+  - id: AUTO:Seven%20strains
+    label: Seven strains
+  - id: AUTO:terrestrial%20East%20Antarctic%20environments
+    label: terrestrial East Antarctic environments
+  - id: AUTO:aquatic%20East%20Antarctic%20environments
+    label: aquatic East Antarctic environments
+  - id: NCBITaxon:32644
+    label: none
+---
+input_text: |
+  Naxibacter alkalitolerans gen. nov., sp. nov., a novel member of the family 'Oxalobacteraceae' isolated from China.
+
+  A taxonomic study was performed on strain YIM 31775(T), which was isolated from a soil sample collected from Yunnan Province, China. The isolate was chemo-organotrophic, aerobic and Gram-negative. Cells were short rods and motile, with one or more polar flagella. Growth temperature and pH ranged from 4 to 55 degrees C and 6.5 to 12.0, respectively; the optimum growth temperature and pH were 28-37 degrees C and 7.0-9.0, respectively. Q-8 was the predominant respiratory lipoquinone. The major fatty acids were C(16 : 1)omega7c (42.4 %) and C(16 : 0) (28.1 %). The DNA G + C content was 62.4 +/ -0.3 mol%. Phylogenetic analysis based on the 16S rRNA gene sequence indicated that strain YIM 31775(T) should be placed within the family 'Oxalobacteraceae', in which it formed a distinct lineage. Based on the high 16S rRNA gene sequence divergence and phenotypic characteristics, it is proposed that strain YIM 31775(T) should be classified as representing a novel member of the family 'Oxalobacteraceae', for which the name Naxibacter alkalitolerans gen. nov., sp. nov. is proposed. The type strain is YIM 31775(T) (= CCTCC AA 204003(T) = KCTC 12194(T)).
+
+  PMID:15879247
+raw_completion_output: |-
+  organisms: Naxibacter alkalitolerans;Oxalobacteraceae;strain YIM 31775(T)
+  chemical_compounds: Q-8
+  enzymes: 
+  lipids_fatty_acids: C(16:1)omega7c;C(16:0)
+  microbial_phenotypes: aerobic;chemo-organotrophic;Gram-negative;motile
+  environments: soil;Yunnan Province;China
+  organism_compound_relationships: 
+  organism_phenotype_relationships: strain YIM 31775(T) is aerobic;strain YIM 31775(T) is chemo-organotrophic;strain YIM 31775(T) is Gram-negative;strain YIM 31775(T) exhibits motility
+  organism_environment_relationships: Naxibacter alkalitolerans isolated from soil;strain YIM 31775(T) isolated from Yunnan Province, China
+  organism_enzyme_relationships: 
+  organism_lipid_relationships: strain YIM 31775(T) contains C(16:1)omega7c;strain YIM 31775(T) contains C(16:0);strain YIM 31775(T) contains Q-8
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  organism: <the organism, species, or strain associated with the environment>
+  environment: <the environmental context or habitat>
+  relationship_type: <the type of environmental associationMust be one of: inhabits, isolated_from, found_in, adapted_to, grows_in, thrives_in>
+
+
+  Text:
+  strain YIM 31775(T) isolated from Yunnan Province, China
+
+  ===
+
+extracted_object:
+  organisms:
+    - NCBITaxon:286638
+    - NCBITaxon:75682
+    - AUTO:strain%20YIM%2031775%28T%29
+  chemical_compounds:
+    - AUTO:Q-8
+  microbial_phenotypes:
+    - <https://w3id.org/metpo/1000008>
+    - AUTO:chemo-organotrophic
+    - <https://w3id.org/metpo/1000143>
+    - <https://w3id.org/metpo/1000379>
+  environments:
+    - ENVO:00001998
+    - AUTO:Yunnan%20Province
+    - AUTO:China
+  organism_environment_relationships:
+    - organism: NCBITaxon:286638
+      environment: ENVO:00001998
+      relationship_type: isolated_from
+    - organism: AUTO:strain%20YIM%2031775%28T%29
+      environment: AUTO:Yunnan%20Province%2C%20China
+      relationship_type: isolated_from
+named_entities:
+  - id: NCBITaxon:286638
+    label: Naxibacter alkalitolerans
+    original_spans:
+      - 0:24
+      - 1141:1165
+  - id: NCBITaxon:75682
+    label: Oxalobacteraceae
+    original_spans:
+      - 77:92
+      - 854:869
+      - 1103:1118
+  - id: AUTO:strain%20YIM%2031775%28T%29
+    label: strain YIM 31775(T)
+    original_spans:
+      - 152:170
+      - 798:816
+      - 1016:1034
+  - id: AUTO:Q-8
+    label: Q-8
+    original_spans:
+      - 554:556
+  - id: AUTO:chemo-organotrophic
+    label: chemo-organotrophic
+    original_spans:
+      - 266:284
+  - id: AUTO:Yunnan%20Province
+    label: Yunnan Province
+    original_spans:
+      - 226:240
+  - id: AUTO:China
+    label: China
+    original_spans:
+      - 109:113
+      - 243:247
+  - id: AUTO:Yunnan%20Province%2C%20China
+    label: Yunnan Province, China
+    original_spans:
+      - 226:247
+---
+input_text: |
+  Development of an Adhesion Assay and Characterization of an Adhesion-Deficient Mutant of Pseudomonas fluorescens.
+
+  A sand column adhesion assay was developed which distinguishes the adhesion abilities of a number of pseudomonads isolated from fine sandy loam. Pseudomonas fluorescens Pf0-1 which adhered at >90% of the total cells added was subjected to transposon Tn5 insertion mutagenesis. From 2,500 Pf0-1::Tn5 mutants examined in the sand column assay, two adhesion-deficient Pf0-1 mutants showing <50% attachment were isolated. Marker exchange analysis of one of these mutants, Pf0-5, confirmed that the decreased adhesion was linked to the Tn5 insertion in the chromosome. The growth rate of Pf0-5 in enriched media and sterile soil was similar to that of the wild type; in minimal medium, however, Pf0-5 grew faster. In a soil column assay, less Pf0-5 than wild-type bacteria were recovered, suggesting a decreased ability to persist in soil. A 34-kilodalton major outer membrane protein present in the wild type was missing in Pf0-5. Transmission electron microscopy of the cell surface revealed that the wild-type possessed polar flagella which were absent in the mutant.
+
+  PMID:16348082
+raw_completion_output: |-
+  organisms: Pseudomonas fluorescens;Pseudomonas fluorescens Pf0-1;Pf0-5  
+  chemical_compounds: sand;soil;minimal medium;enriched media  
+  enzymes: N/A  
+  lipids_fatty_acids: N/A  
+  microbial_phenotypes: N/A  
+  environments: fine sandy loam;soil;sand column  
+  organism_compound_relationships: N/A  
+  organism_phenotype_relationships: Pseudomonas fluorescens has polar flagella;Pf0-5 lacks polar flagella  
+  organism_environment_relationships: pseudomonads isolated from fine sandy loam;Pf0-5 has decreased ability to persist in soil  
+  organism_enzyme_relationships: N/A  
+  organism_lipid_relationships: wild-type contains 34-kilodalton major outer membrane protein;Pf0-5 lacks 34-kilodalton major outer membrane protein  
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  organism: <the organism, species, or strain associated with the lipid>
+  lipid: <the lipid, fatty acid, or lipid-related molecule>
+  relationship_type: <the type of lipid-related relationshipMust be one of: synthesizes, contains, produces, accumulates, lacks, metabolizes, incorporates, modifies>
+
+
+  Text:
+  Pf0-5 lacks 34-kilodalton major outer membrane protein
+
+  ===
+
+extracted_object:
+  organisms:
+    - NCBITaxon:294
+    - NCBITaxon:205922
+    - AUTO:Pf0-5
+  chemical_compounds:
+    - ENVO:01000017
+    - ENVO:00001998
+    - AUTO:minimal%20medium
+    - AUTO:enriched%20media
+  enzymes:
+    - AUTO:N/A
+  lipids_fatty_acids:
+    - AUTO:N/A
+  microbial_phenotypes:
+    - AUTO:N/A
+  environments:
+    - AUTO:fine%20sandy%20loam
+    - ENVO:00001998
+    - AUTO:sand%20column
+  organism_compound_relationships:
+    - organism: AUTO:N/A
+      compound: AUTO:N/A
+  organism_phenotype_relationships:
+    - organism: NCBITaxon:294
+      phenotype: AUTO:polar%20flagella
+      relationship_type: has_phenotype
+    - organism: AUTO:Pf0-5
+      phenotype: AUTO:polar%20flagella
+      relationship_type: lacks_phenotype
+  organism_environment_relationships:
+    - organism: AUTO:pseudomonads
+      environment: AUTO:fine%20sandy%20loam
+      relationship_type: isolated_from
+    - organism: AUTO:Pf0-5
+      environment: ENVO:00001998
+  organism_enzyme_relationships:
+    - organism: AUTO:N/A
+      enzyme: AUTO:N/A
+  organism_lipid_relationships:
+    - organism: AUTO:wild-type
+      lipid: AUTO:34-kilodalton%20major%20outer%20membrane%20protein
+      relationship_type: contains
+    - organism: AUTO:Pf0-5
+      lipid: AUTO:34-kilodalton%20major%20outer%20membrane%20protein
+      relationship_type: lacks
+named_entities:
+  - id: NCBITaxon:294
+    label: Pseudomonas fluorescens
+    original_spans:
+      - 89:111
+      - 260:282
+  - id: NCBITaxon:205922
+    label: Pseudomonas fluorescens Pf0-1
+    original_spans:
+      - 260:288
+  - id: AUTO:Pf0-5
+    label: Pf0-5
+    original_spans:
+      - 583:587
+      - 698:702
+      - 805:809
+      - 853:857
+      - 1035:1039
+  - id: ENVO:01000017
+    label: sand
+    original_spans:
+      - 117:120
+      - 248:251
+      - 438:441
+  - id: AUTO:minimal%20medium
+    label: minimal medium
+    original_spans:
+      - 780:793
+  - id: AUTO:enriched%20media
+    label: enriched media
+    original_spans:
+      - 707:720
+  - id: AUTO:N/A
+    label: N/A
+  - id: AUTO:fine%20sandy%20loam
+    label: fine sandy loam
+    original_spans:
+      - 243:257
+  - id: AUTO:sand%20column
+    label: sand column
+    original_spans:
+      - 117:127
+      - 438:448
+  - id: AUTO:polar%20flagella
+    label: polar flagella
+    original_spans:
+      - 1133:1146
+  - id: AUTO:pseudomonads
+    label: pseudomonads
+    original_spans:
+      - 216:227
+  - id: AUTO:wild-type
+    label: wild-type
+    original_spans:
+      - 864:872
+      - 1113:1121
+  - id: AUTO:34-kilodalton%20major%20outer%20membrane%20protein
+    label: 34-kilodalton major outer membrane protein
+    original_spans:
+      - 952:993
+---
+input_text: |
+  Aliibacillus thermotolerans gen. nov., sp. nov.: a thermophilic and heterotrophic ammonia-oxidizing bacterium from compost.
+
+  A novel moderately thermophilic and heterotrophic ammonia-oxidizing bacterium, designated strain BM62T, was isolated from compost in the thermophilic stage in Harbin, China. Phylogenetic analysis based on the 16S rRNA gene indicated that strain BM62T belongs to the family Bacillaceae within the class Bacilli and was most closely related to Alteribacillus iranensis X5BT (only 94.6% sequence similarity). Cells of strain BM62T were Gram-positive, rod-shaped, motile by periflagella, catalase-positive and oxidase-negative. Growth of strain BM62T was observed at salinities of 0-4% (optimum 2-3%), temperatures of 35-65 °C (optimum 50 °C) and pH values of 5-9 (optimum pH 7). The major cellular fatty acid was iso-C16:0, and the predominant ubiquinone was MK-7. The peptidoglycan type is A1γ, and meso-diaminopimelic acid was the diagnostic diamino acid. The major polar lipids were diphosphatidylglycerol, phospholipid and phosphatidylglycerol. The G + C content of its genomic DNA was 36.5 mol%. Data from this polyphasic taxonomy study suggested that strain BM62T should be classified as the type strain of the type species of a new genus within the family Bacillaceae for which the name Aliibacillus thermotolerans gen. nov., sp. nov. is proposed. The type strain of the species Aliibacillus thermotolerans sp. nov. is BM62T (= DSM 101851T = CGMCC 1.15790T). The respective DPD Taxon Number is GA00057.
+
+  PMID:29974158
+raw_completion_output: |-
+  **organisms**: Aliibacillus thermotolerans;Alteribacillus iranensis;Bacillaceae;Bacilli;BM62T
+
+  **chemical_compounds**: ammonia;MK-7;meso-diaminopimelic acid;salts;iso-C16:0;diphosphatidylglycerol;phospholipid;phosphatidylglycerol
+
+  **enzymes**: catalase;oxidase
+
+  **lipids_fatty_acids**: iso-C16:0;diphosphatidylglycerol;phospholipid;phosphatidylglycerol
+
+  **microbial_phenotypes**: thermophilic;heterotrophic;Gram-positive;rod-shaped;motile;oxidase-negative;catalase-positive
+
+  **environments**: compost;thermophilic stage;Harbin
+
+  **organism_compound_relationships**: ammonia-oxidizing
+
+  **organism_phenotype_relationships**: Aliibacillus thermotolerans is thermophilic;strain BM62T exhibits motility;strain BM62T is Gram-positive
+
+  **organism_environment_relationships**: Aliibacillus thermotolerans from compost
+
+  **organism_enzyme_relationships**: strain BM62T is catalase-positive;strain BM62T is oxidase-negative
+
+  **organism_lipid_relationships**: strain BM62T contains iso-C16:0;strain BM62T contains diphosphatidylglycerol;strain BM62T contains phospholipid;strain BM62T contains phosphatidylglycerol
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  organism: <the organism, species, or strain associated with the lipid>
+  lipid: <the lipid, fatty acid, or lipid-related molecule>
+  relationship_type: <the type of lipid-related relationshipMust be one of: synthesizes, contains, produces, accumulates, lacks, metabolizes, incorporates, modifies>
+
+
+  Text:
+  strain BM62T contains phosphatidylglycerol
+
+  ===
+
+extracted_object:
+  organisms:
+    - NCBITaxon:1834418
+    - NCBITaxon:930128
+    - NCBITaxon:186817
+    - NCBITaxon:91061
+    - AUTO:BM62T
+  chemical_compounds:
+    - CHEBI:28938
+    - CHEBI:44245
+    - AUTO:meso-diaminopimelic%20acid
+    - CHEBI:24866
+    - CHEBI:84890
+    - CHEBI:28494
+    - CHEBI:16247
+    - CHEBI:17517
+  enzymes:
+    - PR:000005061
+    - AUTO:oxidase
+  lipids_fatty_acids:
+    - CHEBI:84890
+    - CHEBI:28494
+    - CHEBI:16247
+    - CHEBI:17517
+  microbial_phenotypes:
+    - <https://w3id.org/metpo/1000308>
+    - <https://w3id.org/metpo/1000157>
+    - <https://w3id.org/metpo/1000144>
+    - AUTO:rod-shaped
+    - <https://w3id.org/metpo/1000379>
+    - AUTO:oxidase-negative
+    - AUTO:catalase-positive
+  environments:
+    - ENVO:00002170
+    - AUTO:thermophilic%20stage
+    - AUTO:Harbin
+  organism_compound_relationships:
+    - organism: NCBITaxon:915
+      compound: CHEBI:28938
+      relationship_type: oxidizes
+  organism_phenotype_relationships:
+    - organism: NCBITaxon:1834418
+      phenotype: <https://w3id.org/metpo/1000308>
+      relationship_type: is_characterized_by
+    - organism: AUTO:strain%20BM62T
+      phenotype: AUTO:motility
+      relationship_type: exhibits
+    - organism: AUTO:strain%20BM62T
+      phenotype: <https://w3id.org/metpo/1000144>
+      relationship_type: is_characterized_by
+  organism_environment_relationships:
+    - organism: NCBITaxon:1834418
+      environment: ENVO:00002170
+      relationship_type: isolated_from
+  organism_enzyme_relationships:
+    - organism: AUTO:strain%20BM62T
+      enzyme: PR:000005061
+      relationship_type: expresses
+    - organism: AUTO:strain%20BM62T
+      enzyme: AUTO:oxidase
+      relationship_type: lacks
+  organism_lipid_relationships:
+    - organism: AUTO:strain%20BM62T
+      lipid: CHEBI:84890
+      relationship_type: contains
+    - organism: AUTO:strain%20BM62T
+      lipid: CHEBI:28494
+      relationship_type: contains
+    - organism: AUTO:strain%20BM62T
+      lipid: CHEBI:16247
+      relationship_type: contains
+    - organism: AUTO:strain%20BM62T
+      lipid: CHEBI:17517
+      relationship_type: contains
+named_entities:
+  - id: NCBITaxon:1834418
+    label: Aliibacillus thermotolerans
+    original_spans:
+      - 0:26
+      - 1316:1342
+      - 1408:1434
+  - id: NCBITaxon:930128
+    label: Alteribacillus iranensis
+    original_spans:
+      - 467:490
+  - id: NCBITaxon:186817
+    label: Bacillaceae
+    original_spans:
+      - 398:408
+      - 1285:1295
+  - id: NCBITaxon:91061
+    label: Bacilli
+    original_spans:
+      - 427:433
+  - id: AUTO:BM62T
+    label: BM62T
+    original_spans:
+      - 222:226
+      - 370:374
+      - 547:551
+      - 666:670
+      - 1186:1190
+      - 1448:1452
+  - id: CHEBI:44245
+    label: MK-7
+    original_spans:
+      - 881:884
+  - id: AUTO:meso-diaminopimelic%20acid
+    label: meso-diaminopimelic acid
+    original_spans:
+      - 922:945
+  - id: CHEBI:24866
+    label: salts
+  - id: CHEBI:84890
+    label: iso-C16:0
+    original_spans:
+      - 835:843
+  - id: CHEBI:28494
+    label: diphosphatidylglycerol
+    original_spans:
+      - 1008:1029
+  - id: CHEBI:16247
+    label: phospholipid
+    original_spans:
+      - 1032:1043
+  - id: CHEBI:17517
+    label: phosphatidylglycerol
+    original_spans:
+      - 1010:1029
+      - 1049:1068
+  - id: PR:000005061
+    label: catalase
+    original_spans:
+      - 609:616
+  - id: AUTO:oxidase
+    label: oxidase
+    original_spans:
+      - 631:637
+  - id: <https://w3id.org/metpo/1000308>
+    label: thermophilic
+    original_spans:
+      - 51:62
+      - 144:155
+      - 262:273
+  - id: <https://w3id.org/metpo/1000157>
+    label: heterotrophic
+    original_spans:
+      - 68:80
+      - 161:173
+  - id: <https://w3id.org/metpo/1000144>
+    label: Gram-positive
+    original_spans:
+      - 558:570
+  - id: AUTO:rod-shaped
+    label: rod-shaped
+    original_spans:
+      - 573:582
+  - id: AUTO:oxidase-negative
+    label: oxidase-negative
+    original_spans:
+      - 631:646
+  - id: AUTO:catalase-positive
+    label: catalase-positive
+    original_spans:
+      - 609:625
+  - id: ENVO:00002170
+    label: compost
+    original_spans:
+      - 115:121
+      - 247:253
+  - id: AUTO:thermophilic%20stage
+    label: thermophilic stage
+    original_spans:
+      - 262:279
+  - id: AUTO:Harbin
+    label: Harbin
+    original_spans:
+      - 284:289
+  - id: NCBITaxon:915
+    label: Nitrosomonas europaea
+  - id: AUTO:strain%20BM62T
+    label: strain BM62T
+    original_spans:
+      - 215:226
+      - 363:374
+      - 540:551
+      - 659:670
+      - 1179:1190
+  - id: AUTO:motility
+    label: motility
+---
+input_text: |
+  Loktanella marina sp. nov., isolated from seawater.
+
+  A Gram-stain-negative, coccoid- or short-rod-shaped and non-motile bacterial strain, designated MDM-7T, was isolated from seawater of the Yellow Sea, South Korea, and was subjected to a polyphasic taxonomic study. Strain MDM-7T grew optimally at pH 7.0-8.0, at 30 °C and in the presence of 2-3 % (w/v) NaCl. The neighbour-joining phylogenetic tree based on 16S rRNA gene sequences showed that strain MDM-7T fell within the clade comprising species of the genus Loktanella, clustering with the type strains of Loktanella vestfoldensisand Loktanella agnita, with which it exhibited 96.1 and 95.6 % similarity, respectively. 16S rRNA gene sequence similarity values between strain MDM-7T and the type strains of other Loktanella species were 93.1-95.0 %. The DNA G+C content of strain MDM-7T was 62.6 mol%. Strain MDM-7T contained Q-10 as the predominant ubiquinone and summed feature 8 (C18 : 1ω7c and/ or C18 : 1ω6c) as the major fatty acid. The major polar lipids were diphosphatidylglycerol, phosphatidylcholine, phosphatidylglycerol and an unidentified aminolipid. Differential phenotypic properties, together with phylogenetic distinctiveness, demonstrated that strain MDM-7T is distinguishable from recognized Loktanella species. On the basis of the data presented, strain MDM-7T is considered to represent a novel species of the genus Loktanella, for which the name Loktanella marina sp. nov. is proposed. The type strain is MDM-7T (=KCTC 42722T=CECT 8899T).
+
+  PMID:27082449
+raw_completion_output: |-
+  organisms: Loktanella marina;Loktanella vestfoldensis;Loktanella agnita;Loktanella species  
+  chemical_compounds: NaCl;Q-10;C18:1ω7c;C18:1ω6c  
+  enzymes:   
+  lipids_fatty_acids: diphosphatidylglycerol;phosphatidylcholine;phosphatidylglycerol;unidentified aminolipid;C18:1ω7c;C18:1ω6c  
+  microbial_phenotypes: Gram-stain-negative;coccoid;short-rod-shaped;non-motile  
+  environments: seawater;Yellow Sea  
+  organism_compound_relationships: Strain MDM-7T grows optimally in the presence of 2-3% NaCl  
+  organism_phenotype_relationships: strain MDM-7T is Gram-stain-negative;strain MDM-7T is coccoid- or short-rod-shaped;strain MDM-7T is non-motile  
+  organism_environment_relationships: Strain MDM-7T isolated from seawater  
+  organism_enzyme_relationships:   
+  organism_lipid_relationships: Strain MDM-7T contains Q-10;Strain MDM-7T contains C18:1ω7c and/or C18:1ω6c;Strain MDM-7T contains diphosphatidylglycerol;Strain MDM-7T contains phosphatidylcholine;Strain MDM-7T contains phosphatidylglycerol;Strain MDM-7T contains an unidentified aminolipid  
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  organism: <the organism, species, or strain associated with the environment>
+  environment: <the environmental context or habitat>
+  relationship_type: <the type of environmental associationMust be one of: inhabits, isolated_from, found_in, adapted_to, grows_in, thrives_in>
+
+
+  Text:
+  Strain MDM-7T isolated from seawater
+
+  ===
+
+extracted_object:
+  organisms:
+    - NCBITaxon:1819565
+    - NCBITaxon:245188
+    - NCBITaxon:287097
+    - AUTO:Loktanella%20species
+  chemical_compounds:
+    - CHEBI:26710
+    - AUTO:Q-10
+    - AUTO:C18%3A1%CF%897c
+    - AUTO:C18%3A1%CF%896c
+  microbial_phenotypes:
+    - AUTO:Gram-stain-negative
+    - AUTO:coccoid
+    - AUTO:short-rod-shaped
+    - <https://w3id.org/metpo/1000380>
+  environments:
+    - ENVO:01001964
+    - AUTO:Yellow%20Sea
+  organism_compound_relationships:
+    - organism: AUTO:Strain%20MDM-7T
+      compound: CHEBI:26710
+      relationship_type: uses_for_growth
+  organism_phenotype_relationships:
+    - organism: AUTO:strain%20MDM-7T
+      phenotype: AUTO:Gram-stain-negative
+      relationship_type: is_characterized_by
+    - organism: AUTO:strain%20MDM-7T
+      phenotype: AUTO:coccoid-%20or%20short-rod-shaped
+      relationship_type: is_characterized_by
+    - organism: AUTO:strain%20MDM-7T
+      phenotype: <https://w3id.org/metpo/1000380>
+      relationship_type: exhibits
+  organism_environment_relationships:
+    - organism: AUTO:Strain%20MDM-7T
+      environment: ENVO:01001964
+      relationship_type: isolated_from
+named_entities:
+  - id: NCBITaxon:1819565
+    label: Loktanella marina
+    original_spans:
+      - 0:16
+      - 1424:1440
+  - id: NCBITaxon:245188
+    label: Loktanella vestfoldensis
+    original_spans:
+      - 562:585
+  - id: NCBITaxon:287097
+    label: Loktanella agnita
+    original_spans:
+      - 590:606
+  - id: AUTO:Loktanella%20species
+    label: Loktanella species
+    original_spans:
+      - 768:785
+      - 1267:1284
+  - id: CHEBI:26710
+    label: NaCl
+    original_spans:
+      - 355:358
+  - id: AUTO:Q-10
+    label: Q-10
+    original_spans:
+      - 881:884
+  - id: AUTO:C18%3A1%CF%897c
+    label: C18:1ω7c
+  - id: AUTO:C18%3A1%CF%896c
+    label: C18:1ω6c
+  - id: AUTO:Gram-stain-negative
+    label: Gram-stain-negative
+    original_spans:
+      - 55:73
+  - id: AUTO:coccoid
+    label: coccoid
+    original_spans:
+      - 76:82
+  - id: AUTO:short-rod-shaped
+    label: short-rod-shaped
+    original_spans:
+      - 88:103
+  - id: <https://w3id.org/metpo/1000380>
+    label: non-motile
+    original_spans:
+      - 109:118
+  - id: ENVO:01001964
+    label: seawater
+    original_spans:
+      - 42:49
+      - 175:182
+  - id: AUTO:Yellow%20Sea
+    label: Yellow Sea
+    original_spans:
+      - 191:200
+  - id: AUTO:Strain%20MDM-7T
+    label: Strain MDM-7T
+    original_spans:
+      - 267:279
+      - 446:458
+      - 724:736
+      - 828:840
+      - 857:869
+      - 1218:1230
+      - 1323:1335
+  - id: AUTO:strain%20MDM-7T
+    label: strain MDM-7T
+    original_spans:
+      - 267:279
+      - 446:458
+      - 724:736
+      - 828:840
+      - 857:869
+      - 1218:1230
+      - 1323:1335
+  - id: AUTO:coccoid-%20or%20short-rod-shaped
+    label: coccoid- or short-rod-shaped
+    original_spans:
+      - 76:103
+---
+input_text: |
+  Staphylococcus massiliensis sp. nov., isolated from a human brain abscess.
+
+  Gram-positive, catalase-positive, coagulase-negative, non-motile, non-fermentative and novobiocin-susceptible cocci were isolated from a human brain abscess sample (strain 5402776(T)). This novel strain was analysed by a polyphasic taxonomic approach. The respiratory quinones detected were MK-7 (93 %) and MK-6 (7 %) and the major fatty acids were C(15 : 0) iso (60.5 %), C(17 : 0) iso (8.96 %) C(15 : 0) anteiso (7.93 %) and C(19 : 0) iso (6.78 %). The peptidoglycan type was A3alpha l-Lys-Gly(2-3)-l-Ser-Gly. Based on cellular morphology and biochemical criteria, the new isolate was assigned to the genus Staphylococcus, although it did not correspond to any recognized species. The G+C content of the DNA was 36.6 mol%. Phylogenetic analysis based on 16S rRNA gene sequence comparisons showed that the new isolate was most closely related to Staphylococcus piscifermentans, Staphylococcus condimenti, Staphylococcus carnosus subsp. carnosus, S. carnosus subsp. utilis and Staphylococcus simulans (97.7 %, 97.6 %, 97.6 %, 97.6 % and 96.5 % sequence similarity, respectively). Comparison of tuf, hsp60, rpoB, dnaJ and sodA gene sequences was also performed. In phylogenetic analysis inferred from tuf, dnaJ and rpoB gene sequence comparisons, strain 5402776(T) clustered with Staphylococcus pettenkoferi (93.7 %, 82.5 % and 89 % sequence similarity, respectively) and on phylogenetic analysis inferred from sodA gene sequence comparisons, it clustered with Staphylococcus chromogenes (82.8 %). On the basis of phenotypic and genotypic data, this isolate represents a novel species for which the name Staphylococcus massiliensis sp. nov. is proposed (type strain 5402776(T)=CCUG 55927(T)=CSUR P23(T)).
+
+  PMID:19666814
+raw_completion_output: |-
+  organisms: Staphylococcus massiliensis;Staphylococcus piscifermentans;Staphylococcus condimenti;Staphylococcus carnosus subsp. carnosus;S. carnosus subsp. utilis;Staphylococcus simulans;Staphylococcus pettenkoferi;Staphylococcus chromogenes
+
+  chemical_compounds: novobiocin;MK-7;MK-6;C(15:0) iso;C(17:0) iso;C(15:0) anteiso;C(19:0) iso
+
+  enzymes: catalase
+
+  lipids_fatty_acids: C(15:0) iso;C(17:0) iso;C(15:0) anteiso;C(19:0) iso
+
+  microbial_phenotypes: Gram-positive;catalase-positive;coagulase-negative;non-motile;non-fermentative;novobiocin-susceptible
+
+  environments: human brain abscess
+
+  organism_compound_relationships: novobiocin-susceptible
+
+  organism_phenotype_relationships: Staphylococcus massiliensis is Gram-positive;Staphylococcus massiliensis is catalase-positive;Staphylococcus massiliensis is coagulase-negative;Staphylococcus massiliensis is non-motile;Staphylococcus massiliensis is non-fermentative
+
+  organism_environment_relationships: Staphylococcus massiliensis isolated from human brain abscess
+
+  organism_enzyme_relationships: Staphylococcus massiliensis produces catalase
+
+  organism_lipid_relationships: Staphylococcus massiliensis contains C(15:0) iso;Staphylococcus massiliensis contains C(17:0) iso;Staphylococcus massiliensis contains C(15:0) anteiso;Staphylococcus massiliensis contains C(19:0) iso
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  organism: <the organism, species, or strain associated with the lipid>
+  lipid: <the lipid, fatty acid, or lipid-related molecule>
+  relationship_type: <the type of lipid-related relationshipMust be one of: synthesizes, contains, produces, accumulates, lacks, metabolizes, incorporates, modifies>
+
+
+  Text:
+  Staphylococcus massiliensis contains C(19:0) iso
+
+  ===
+
+extracted_object:
+  organisms:
+    - NCBITaxon:555791
+    - NCBITaxon:70258
+    - NCBITaxon:70255
+    - AUTO:Staphylococcus%20carnosus%20subsp.%20carnosus
+    - AUTO:S.%20carnosus%20subsp.%20utilis
+    - NCBITaxon:1286
+    - NCBITaxon:170573
+    - NCBITaxon:46126
+  chemical_compounds:
+    - CHEBI:28368
+    - CHEBI:44245
+    - AUTO:MK-6
+    - AUTO:C%2815%3A0%29%20iso
+    - CHEBI:32365
+    - AUTO:C%2815%3A0%29%20anteiso
+    - AUTO:C%2819%3A0%29%20iso
+  enzymes:
+    - PR:000005061
+  lipids_fatty_acids:
+    - AUTO:C%2815%3A0%29%20iso
+    - CHEBI:32365
+    - AUTO:C%2815%3A0%29%20anteiso
+    - AUTO:C%2819%3A0%29%20iso
+  microbial_phenotypes:
+    - <https://w3id.org/metpo/1000144>
+    - AUTO:catalase-positive
+    - AUTO:coagulase-negative
+    - <https://w3id.org/metpo/1000380>
+    - AUTO:non-fermentative
+    - AUTO:novobiocin-susceptible
+  environments:
+    - AUTO:human%20brain%20abscess
+  organism_phenotype_relationships:
+    - organism: NCBITaxon:555791
+      phenotype: <https://w3id.org/metpo/1000144>
+      relationship_type: is_characterized_by
+    - organism: NCBITaxon:555791
+      phenotype: AUTO:catalase-positive
+      relationship_type: exhibits
+    - organism: NCBITaxon:555791
+      phenotype: AUTO:coagulase-negative
+      relationship_type: is_characterized_by
+    - organism: NCBITaxon:555791
+      phenotype: <https://w3id.org/metpo/1000380>
+      relationship_type: is_characterized_by
+    - organism: NCBITaxon:555791
+      phenotype: AUTO:non-fermentative
+      relationship_type: is_characterized_by
+  organism_environment_relationships:
+    - organism: NCBITaxon:555791
+      environment: AUTO:human%20brain%20abscess
+      relationship_type: isolated_from
+  organism_enzyme_relationships:
+    - organism: NCBITaxon:555791
+      enzyme: PR:000005061
+      relationship_type: produces
+  organism_lipid_relationships:
+    - organism: NCBITaxon:555791
+      lipid: AUTO:C%2815%3A0%29%20iso
+      relationship_type: contains
+    - organism: NCBITaxon:555791
+      lipid: CHEBI:32365
+      relationship_type: contains
+    - organism: NCBITaxon:555791
+      lipid: AUTO:C%2815%3A0%29%20anteiso
+      relationship_type: contains
+    - organism: NCBITaxon:555791
+      lipid: AUTO:C%2819%3A0%29%20iso
+      relationship_type: contains
+named_entities:
+  - id: NCBITaxon:555791
+    label: Staphylococcus massiliensis
+    original_spans:
+      - 0:26
+      - 1679:1705
+  - id: NCBITaxon:70258
+    label: Staphylococcus piscifermentans
+    original_spans:
+      - 923:952
+  - id: NCBITaxon:70255
+    label: Staphylococcus condimenti
+    original_spans:
+      - 955:979
+  - id: AUTO:Staphylococcus%20carnosus%20subsp.%20carnosus
+    label: Staphylococcus carnosus subsp. carnosus
+    original_spans:
+      - 982:1020
+  - id: AUTO:S.%20carnosus%20subsp.%20utilis
+    label: S. carnosus subsp. utilis
+    original_spans:
+      - 1023:1047
+  - id: NCBITaxon:1286
+    label: Staphylococcus simulans
+    original_spans:
+      - 1053:1075
+  - id: NCBITaxon:170573
+    label: Staphylococcus pettenkoferi
+    original_spans:
+      - 1355:1381
+  - id: NCBITaxon:46126
+    label: Staphylococcus chromogenes
+    original_spans:
+      - 1536:1561
+  - id: CHEBI:28368
+    label: novobiocin
+    original_spans:
+      - 163:172
+  - id: AUTO:MK-6
+    label: MK-6
+    original_spans:
+      - 383:386
+  - id: AUTO:C%2815%3A0%29%20iso
+    label: C(15:0) iso
+  - id: CHEBI:32365
+    label: C(17:0) iso
+  - id: AUTO:C%2815%3A0%29%20anteiso
+    label: C(15:0) anteiso
+  - id: AUTO:C%2819%3A0%29%20iso
+    label: C(19:0) iso
+  - id: AUTO:coagulase-negative
+    label: coagulase-negative
+    original_spans:
+      - 110:127
+  - id: AUTO:non-fermentative
+    label: non-fermentative
+    original_spans:
+      - 142:157
+  - id: AUTO:novobiocin-susceptible
+    label: novobiocin-susceptible
+    original_spans:
+      - 163:184
+  - id: AUTO:human%20brain%20abscess
+    label: human brain abscess
+    original_spans:
+      - 54:72
+      - 213:231
+---
+input_text: |
+  Sphingobacterium changzhouense sp. nov., a bacterium isolated from a rice field.
+
+  A Gram-stain-negative, yellow, non-spore-forming, rod-shaped bacterium, designated N7(T), was isolated from a soil sample collected from a rice field in Jiangsu, China, and was characterized using a polyphasic taxonomic approach. Strain N7(T) grew optimally at 25-30 °C, pH 6.0-8.0, and in the presence of 1 % NaCl (w/v). 16S rRNA gene sequence analysis indicated that strain N7(T) was a member of the genus Sphingobacterium and was closely related to Sphingobacterium multivorum IAM14316(T) (97.49 %) and Sphingobacterium canadense CR11(T) (97.11 %), sharing less than 97 % sequence similarities with other species of the genus Sphingobacterium. The predominant respiratory quinone of strain N7(T) was MK-7 and major fatty acids were summed features 3 (C16 : 1ω6c and/or C16 : 1ω7c), iso-C15 : 0, C16 : 0 and iso-C17 : 0 3-OH. The G+C content of the DNA was 40.9±0.5 mol%. The levels of DNA-DNA relatedness between strain N7(T) and the most closely related species S. multivorum IAM 14316(T) and S. canadense CR11(T) were 21 % and 15 %, respectively. Based on these results, strain N7(T) is proposed to represent a separate species within the genus Sphingobacterium. The name Sphingobacterium changzhouense sp. nov. is suggested and the type strain is N7(T) ( = CCTCC AB 2012100(T) = KACC 16854(T)).
+
+  PMID:23859944
+raw_completion_output: |-
+  organisms: Sphingobacterium changzhouense;Sphingobacterium multivorum;Sphingobacterium canadense;Sphingobacterium  
+  chemical_compounds: MK-7;C16 : 1ω6c;C16 : 1ω7c;iso-C15 : 0;C16 : 0;iso-C17 : 0 3-OH;NaCl  
+  enzymes:  
+  lipids_fatty_acids: summed features 3;C16 : 1ω6c;C16 : 1ω7c;iso-C15 : 0;C16 : 0;iso-C17 : 0 3-OH  
+  microbial_phenotypes: Gram-stain-negative;yellow;non-spore-forming;rod-shaped  
+  environments: soil;rice field  
+  organism_compound_relationships:  
+  organism_phenotype_relationships: Sphingobacterium changzhouense is Gram-stain-negative;Sphingobacterium changzhouense is yellow;Sphingobacterium changzhouense is non-spore-forming;Sphingobacterium changzhouense is rod-shaped  
+  organism_environment_relationships: Sphingobacterium changzhouense isolated from rice field;Sphingobacterium changzhouense isolated from soil  
+  organism_enzyme_relationships:  
+  organism_lipid_relationships: Sphingobacterium changzhouense contains summed features 3;Sphingobacterium changzhouense contains C16 : 1ω6c;Sphingobacterium changzhouense contains C16 : 1ω7c;Sphingobacterium changzhouense contains iso-C15 : 0;Sphingobacterium changzhouense contains C16 : 0;Sphingobacterium changzhouense contains iso-C17 : 0 3-OH  
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  organism: <the organism, species, or strain associated with the environment>
+  environment: <the environmental context or habitat>
+  relationship_type: <the type of environmental associationMust be one of: inhabits, isolated_from, found_in, adapted_to, grows_in, thrives_in>
+
+
+  Text:
+  Sphingobacterium changzhouense isolated from soil
+
+  ===
+
+extracted_object:
+  organisms:
+    - NCBITaxon:1324946
+    - NCBITaxon:28454
+    - NCBITaxon:412448
+    - NCBITaxon:28453
+  chemical_compounds:
+    - CHEBI:44245
+    - AUTO:C16%20%3A%201%CF%896c
+    - AUTO:C16%20%3A%201%CF%897c
+    - AUTO:iso-C15%20%3A%200
+    - AUTO:C16%20%3A%200
+    - AUTO:iso-C17%20%3A%200%203-OH
+    - CHEBI:26710
+  microbial_phenotypes:
+    - AUTO:Gram-stain-negative
+    - AUTO:yellow
+    - AUTO:non-spore-forming
+    - AUTO:rod-shaped
+  environments:
+    - ENVO:00001998
+    - ENVO:00000296
+  organism_environment_relationships:
+    - organism: NCBITaxon:1324946
+      environment: ENVO:00000296
+      relationship_type: isolated_from
+    - organism: NCBITaxon:1324946
+      environment: ENVO:00001998
+      relationship_type: isolated_from
+named_entities:
+  - id: NCBITaxon:1324946
+    label: Sphingobacterium changzhouense
+    original_spans:
+      - 0:29
+      - 1259:1288
+  - id: NCBITaxon:28454
+    label: Sphingobacterium multivorum
+    original_spans:
+      - 534:560
+  - id: NCBITaxon:412448
+    label: Sphingobacterium canadense
+    original_spans:
+      - 588:613
+  - id: NCBITaxon:28453
+    label: Sphingobacterium
+    original_spans:
+      - 0:15
+      - 490:505
+      - 534:549
+      - 588:603
+      - 711:726
+      - 1232:1247
+      - 1259:1274
+  - id: AUTO:C16%20%3A%201%CF%896c
+    label: 'C16 : 1ω6c'
+    original_spans:
+      - 836:845
+  - id: AUTO:C16%20%3A%201%CF%897c
+    label: 'C16 : 1ω7c'
+    original_spans:
+      - 854:863
+  - id: AUTO:iso-C15%20%3A%200
+    label: 'iso-C15 : 0'
+    original_spans:
+      - 867:877
+  - id: AUTO:C16%20%3A%200
+    label: 'C16 : 0'
+    original_spans:
+      - 880:886
+  - id: AUTO:iso-C17%20%3A%200%203-OH
+    label: 'iso-C17 : 0 3-OH'
+    original_spans:
+      - 892:907
+  - id: AUTO:yellow
+    label: yellow
+    original_spans:
+      - 105:110
+  - id: AUTO:non-spore-forming
+    label: non-spore-forming
+    original_spans:
+      - 113:129
+  - id: ENVO:00000296
+    label: rice field
+    original_spans:
+      - 69:78
+      - 221:230
+---
+input_text: |
+  Arthrobacter roseus sp. nov., a psychrophilic bacterium isolated from an antarctic cyanobacterial mat sample.
+
+  Strain CMS 90rT, a red-pigmented bacterium, was isolated from a cyanobacterial mat sample from a pond located in McMurdo, Antarctica. Based on its chemotaxonomic and phylogenetic properties, strain CMS 90r(T) was identified as a member of group I of Arthrobacter. It shared 16S rDNA similarity of 98% with Arthrobacter oxydans ATCC 14358T and Arthrobacter polychromogenes ATCC 15216T, while DNA-DNA similarities determined for these three organisms were less than 70%. It also differed from all 17 reported Arthrobacter species with A3alpha-variant peptidoglycan in that it possessed a unique peptidoglycan (Lys-Gly-Ala3) and contained galactose, glucose, ribose and rhamnose as cell-wall sugars. These data and the presence of diagnostic phenotypic traits support the description of CMS 90r(T) as a novel species of Arthrobacter, for which the name Arthrobacter roseus sp. nov. is proposed. The type strain is strain CMS 90r(T) (= MTCC 3712T = DSM 14508T).
+
+  PMID:12054218
+raw_completion_output: |-
+  organisms: Arthrobacter roseus;Arthrobacter;Arthrobacter oxydans;Arthrobacter polychromogenes  
+  chemical_compounds: galactose;glucose;ribose;rhamnose  
+  enzymes:   
+  lipids_fatty_acids:   
+  microbial_phenotypes: psychrophilic  
+  environments: antarctic cyanobacterial mat;cyanobacterial mat;pond;McMurdo;Antarctica  
+  organism_compound_relationships: Arthrobacter roseus contains galactose;Arthrobacter roseus contains glucose;Arthrobacter roseus contains ribose;Arthrobacter roseus contains rhamnose  
+  organism_phenotype_relationships: Arthrobacter roseus is psychrophilic  
+  organism_environment_relationships: Arthrobacter roseus isolated from antarctic cyanobacterial mat;Arthrobacter roseus isolated from a cyanobacterial mat from a pond in McMurdo;Arthrobacter roseus isolated from Antarctica  
+  organism_enzyme_relationships:   
+  organism_lipid_relationships:   
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  organism: <the organism, species, or strain associated with the environment>
+  environment: <the environmental context or habitat>
+  relationship_type: <the type of environmental associationMust be one of: inhabits, isolated_from, found_in, adapted_to, grows_in, thrives_in>
+
+
+  Text:
+  Arthrobacter roseus isolated from Antarctica
+
+  ===
+
+extracted_object:
+  organisms:
+    - NCBITaxon:136274
+    - NCBITaxon:1663
+    - NCBITaxon:1671
+    - NCBITaxon:1676
+  chemical_compounds:
+    - CHEBI:28260
+    - CHEBI:17234
+    - CHEBI:33942
+    - CHEBI:26546
+  environments:
+    - AUTO:antarctic%20cyanobacterial%20mat
+    - AUTO:cyanobacterial%20mat
+    - ENVO:00000033
+    - AUTO:McMurdo
+    - AUTO:Antarctica
+  organism_compound_relationships:
+    - organism: NCBITaxon:136274
+      compound: CHEBI:28260
+      relationship_type: uses_for_aerobic_growth
+    - organism: NCBITaxon:136274
+      compound: CHEBI:17234
+    - organism: NCBITaxon:136274
+      compound: CHEBI:33942
+    - organism: NCBITaxon:136274
+      compound: CHEBI:26546
+  organism_phenotype_relationships:
+    - organism: NCBITaxon:136274
+      phenotype: <https://w3id.org/metpo/1000259>
+      relationship_type: is_characterized_by
+  organism_environment_relationships:
+    - organism: NCBITaxon:136274
+      environment: AUTO:antarctic%20cyanobacterial%20mat
+      relationship_type: isolated_from
+    - organism: NCBITaxon:136274
+      environment: AUTO:cyanobacterial%20mat%20from%20a%20pond%20in%20McMurdo
+      relationship_type: isolated_from
+    - organism: NCBITaxon:136274
+      environment: AUTO:Antarctica
+      relationship_type: isolated_from
+named_entities:
+  - id: NCBITaxon:136274
+    label: Arthrobacter roseus
+    original_spans:
+      - 0:18
+      - 961:979
+  - id: NCBITaxon:1663
+    label: Arthrobacter
+    original_spans:
+      - 0:11
+      - 361:372
+      - 417:428
+      - 454:465
+      - 618:629
+      - 928:939
+      - 961:972
+  - id: NCBITaxon:1671
+    label: Arthrobacter oxydans
+    original_spans:
+      - 417:436
+  - id: NCBITaxon:1676
+    label: Arthrobacter polychromogenes
+    original_spans:
+      - 454:481
+  - id: CHEBI:28260
+    label: galactose
+    original_spans:
+      - 747:755
+  - id: CHEBI:17234
+    label: glucose
+    original_spans:
+      - 758:764
+  - id: CHEBI:33942
+    label: ribose
+    original_spans:
+      - 767:772
+  - id: CHEBI:26546
+    label: rhamnose
+    original_spans:
+      - 778:785
+  - id: AUTO:antarctic%20cyanobacterial%20mat
+    label: antarctic cyanobacterial mat
+    original_spans:
+      - 73:100
+  - id: AUTO:cyanobacterial%20mat
+    label: cyanobacterial mat
+    original_spans:
+      - 83:100
+      - 175:192
+  - id: ENVO:00000033
+    label: pond
+    original_spans:
+      - 208:211
+  - id: AUTO:McMurdo
+    label: McMurdo
+    original_spans:
+      - 224:230
+  - id: AUTO:Antarctica
+    label: Antarctica
+    original_spans:
+      - 233:242
+  - id: <https://w3id.org/metpo/1000259>
+    label: psychrophilic
+    original_spans:
+      - 32:44
+  - id: AUTO:cyanobacterial%20mat%20from%20a%20pond%20in%20McMurdo
+    label: cyanobacterial mat from a pond in McMurdo
+---
+input_text: |
+  Neoscardovia arbecensis gen. nov., sp. nov., isolated from porcine slurries.
+
+  Three Gram-positive, anaerobic, pleomorphic strains (PG10(T), PG18 and PG22), were selected among five strains isolated from pig slurries while searching for host specific bifidobacteria to track the source of fecal pollution in water. Analysis of the 16S rRNA gene sequence showed a maximum identity of 94% to various species of the family Bifidobacteriaceae. However, phylogenetic analyses of 16S rRNA and HSP60 gene sequences revealed a closer relationship of these strains to members of the recently described Aeriscardovia, Parascardovia and Scardovia genera, than to other Bifidobacterium species. The names Neoscardovia gen. nov. and Neoscardovia arbecensis sp. nov. are proposed for a new genus and for the first species belonging to this genus, respectively, and for which PG10(T) (CECT 8111(T), DSM 25737(T)) was designated as the type strain. This new species should be placed in the Bifidobacteriaceae family within the class Actinobacteria, with Aeriscardovia aeriphila being the closest relative. The prevailing cellular fatty acids were C(16:0) and C(18:1)ω9c, and the major polar lipids consisted of a variety of glycolipids, diphosphatidyl glycerol, two unidentified phospholipids, and phosphatidyl glycerol. The peptidoglycan structure was A1γmeso-Dpm-direct. The GenBank accession numbers for the 16S rRNA gene and HSP60 gene sequences of strains PG10(T), PG18 and PG22 are JF519691, JF519693, JQ767128 and JQ767130, JQ767131, JQ767133, respectively.
+
+  PMID:22824582
+raw_completion_output: |-
+  organisms: Neoscardovia arbecensis;Neoscardovia;Bifidobacteriaceae;Aeriscardovia;Parascardovia;Scardovia;Bifidobacterium;Aeriscardovia aeriphila;Actinobacteria;PG10(T);PG18;PG22  
+  chemical_compounds: C(16:0);C(18:1)ω9c;diphosphatidyl glycerol;phosphatidyl glycerol  
+  enzymes: HSP60  
+  lipids_fatty_acids: C(16:0);C(18:1)ω9c;glycolipids;diphosphatidyl glycerol;phosphatidyl glycerol;phospholipids  
+  microbial_phenotypes: Gram-positive;anaerobic;pleomorphic  
+  environments: porcine slurries;pig slurries;water  
+  organism_compound_relationships: organism contains C(16:0);organism contains C(18:1)ω9c  
+  organism_phenotype_relationships: strain is Gram-positive;strain is anaerobic;strain is pleomorphic  
+  organism_environment_relationships: organism isolated from porcine slurries;strain isolated from pig slurries  
+  organism_enzyme_relationships: strains have HSP60 gene  
+  organism_lipid_relationships: organism contains glycolipids;organism contains diphosphatidyl glycerol;organism contains phosphatidyl glycerol;organism contains phospholipids  
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  organism: <the organism, species, or strain associated with the lipid>
+  lipid: <the lipid, fatty acid, or lipid-related molecule>
+  relationship_type: <the type of lipid-related relationshipMust be one of: synthesizes, contains, produces, accumulates, lacks, metabolizes, incorporates, modifies>
+
+
+  Text:
+  organism contains phospholipids
+
+  ===
+
+extracted_object:
+  organisms:
+    - NCBITaxon:1004583
+    - NCBITaxon:1730861
+    - NCBITaxon:31953
+    - NCBITaxon:240233
+    - NCBITaxon:196082
+    - NCBITaxon:196081
+    - NCBITaxon:1678
+    - NCBITaxon:218139
+    - NCBITaxon:1883427
+    - AUTO:PG10%28T%29
+    - AUTO:PG18
+    - AUTO:PG22
+  chemical_compounds:
+    - CHEBI:15356
+    - AUTO:C%2818%3A1%29%CF%899c
+    - AUTO:diphosphatidyl%20glycerol
+    - AUTO:phosphatidyl%20glycerol
+  enzymes:
+    - PR:000008824
+  lipids_fatty_acids:
+    - CHEBI:15356
+    - AUTO:C%2818%3A1%29%CF%899c
+    - CHEBI:33563
+    - AUTO:diphosphatidyl%20glycerol
+    - AUTO:phosphatidyl%20glycerol
+    - CHEBI:16247
+  microbial_phenotypes:
+    - <https://w3id.org/metpo/1000144>
+    - <https://w3id.org/metpo/1000016>
+    - <https://w3id.org/metpo/1000501>
+  environments:
+    - AUTO:porcine%20slurries
+    - AUTO:pig%20slurries
+    - CHEBI:15377
+  organism_compound_relationships:
+    - organism: AUTO:organism
+      compound: AUTO:C%2818%3A1%29%CF%899c
+  organism_phenotype_relationships:
+    - organism: NCBITaxon:strain
+      phenotype: <https://w3id.org/metpo/1000144>
+      relationship_type: is_characterized_by
+    - organism: NCBITaxon:strain
+      phenotype: <https://w3id.org/metpo/1000016>
+      relationship_type: is_characterized_by
+    - organism: NCBITaxon:strain
+      phenotype: <https://w3id.org/metpo/1000501>
+      relationship_type: is_characterized_by
+  organism_environment_relationships:
+    - organism: AUTO:porcine
+      environment: ENVO:03600017
+      relationship_type: isolated_from
+    - organism: NCBITaxon:strain
+      environment: AUTO:pig%20slurries
+      relationship_type: isolated_from
+  organism_enzyme_relationships:
+    - organism: NCBITaxon:strain
+      enzyme: PR:000008824
+      relationship_type: contains
+  organism_lipid_relationships:
+    - organism: AUTO:organism
+      lipid: CHEBI:33563
+      relationship_type: contains
+    - organism: AUTO:organism
+      lipid: AUTO:diphosphatidyl%20glycerol
+      relationship_type: contains
+    - organism: AUTO:organism
+      lipid: AUTO:phosphatidyl%20glycerol
+      relationship_type: contains
+    - organism: AUTO:organism
+      lipid: CHEBI:16247
+      relationship_type: contains
+named_entities:
+  - id: NCBITaxon:1004583
+    label: Neoscardovia arbecensis
+    original_spans:
+      - 0:22
+      - 719:741
+  - id: NCBITaxon:1730861
+    label: Neoscardovia
+    original_spans:
+      - 0:11
+      - 692:703
+      - 719:730
+  - id: NCBITaxon:31953
+    label: Bifidobacteriaceae
+    original_spans:
+      - 419:436
+      - 973:990
+  - id: NCBITaxon:240233
+    label: Aeriscardovia
+    original_spans:
+      - 592:604
+      - 1037:1049
+  - id: NCBITaxon:196082
+    label: Parascardovia
+    original_spans:
+      - 607:619
+  - id: NCBITaxon:196081
+    label: Scardovia
+    original_spans:
+      - 3:11
+      - 596:604
+      - 611:619
+      - 625:633
+      - 695:703
+      - 722:730
+      - 1041:1049
+  - id: NCBITaxon:1678
+    label: Bifidobacterium
+    original_spans:
+      - 657:671
+  - id: NCBITaxon:218139
+    label: Aeriscardovia aeriphila
+    original_spans:
+      - 1037:1059
+  - id: NCBITaxon:1883427
+    label: Actinobacteria
+    original_spans:
+      - 1016:1029
+  - id: AUTO:PG10%28T%29
+    label: PG10(T)
+    original_spans:
+      - 131:137
+      - 860:866
+      - 1444:1450
+  - id: AUTO:PG18
+    label: PG18
+    original_spans:
+      - 140:143
+      - 1453:1456
+  - id: AUTO:PG22
+    label: PG22
+    original_spans:
+      - 149:152
+      - 1462:1465
+  - id: CHEBI:15356
+    label: C(16:0)
+    original_spans:
+      - 1130:1136
+  - id: AUTO:C%2818%3A1%29%CF%899c
+    label: C(18:1)ω9c
+    original_spans:
+      - 1142:1151
+  - id: AUTO:diphosphatidyl%20glycerol
+    label: diphosphatidyl glycerol
+    original_spans:
+      - 1220:1242
+  - id: AUTO:phosphatidyl%20glycerol
+    label: phosphatidyl glycerol
+    original_spans:
+      - 1222:1242
+      - 1281:1301
+  - id: PR:000008824
+    label: HSP60
+    original_spans:
+      - 486:490
+      - 1412:1416
+  - id: CHEBI:33563
+    label: glycolipids
+    original_spans:
+      - 1207:1217
+  - id: <https://w3id.org/metpo/1000016>
+    label: anaerobic
+    original_spans:
+      - 99:107
+  - id: <https://w3id.org/metpo/1000501>
+    label: pleomorphic
+    original_spans:
+      - 110:120
+  - id: AUTO:porcine%20slurries
+    label: porcine slurries
+    original_spans:
+      - 59:74
+  - id: AUTO:pig%20slurries
+    label: pig slurries
+    original_spans:
+      - 203:214
+  - id: CHEBI:15377
+    label: water
+    original_spans:
+      - 307:311
+  - id: AUTO:organism
+    label: organism
+  - id: AUTO:porcine
+    label: porcine
+    original_spans:
+      - 59:65
+  - id: ENVO:03600017
+    label: slurries
+    original_spans:
+      - 67:74
+      - 207:214
+---
+input_text: |
+  Agilicoccus flavus gen. nov., sp. nov., a novel member of the family Dermatophilaceae isolated from the Pearl River.
+
+  A novel actinobacterium, designated strain SYSU M44304T, was isolated from freshwater samples in the Pearl River Estuary. The isolate was Gram-stain-positive, aerobic, coccus-shaped, oxidase-positive and motile. The cell wall contained meso-diaminopimelic acid as its diagnostic diamino acid. The predominant menaquinone was MK-8. The major polar lipids were diphosphatidylglycerol, phosphatidylglycerol, phosphatidylinositol, phosphatidylethanolamine and seven unidentified phospholipids. The major fatty acids were C16 : 0 and C16 : 1. The G+C content based on genomic DNA was 73.2 mol %. The nearest phylogenetic neighbours to the novel strain were Mobilicoccus pelagius NBRC 104925T and Mobilicoccus caccae YIM 101593T. On the basis of chemotaxonomic and physiological characteristics and phylogenetic analysis, strain SYSU M44304T should be considered to represent a novel species of a new genus in the family Dermatophilaceae, for which we propose the name Agilicoccus flavus gen. nov., sp. nov. The type strain of Agilicoccus flavus is SYSU M44304T (=NBRC 114808T=CGMCC 1.18608T).
+
+  PMID:34617879
+raw_completion_output: |-
+  organisms: Agilicoccus flavus;SYSU M44304T;Dermatophilaceae;Mobilicoccus pelagius;Mobilicoccus caccae  
+  chemical_compounds: meso-diaminopimelic acid;MK-8  
+  enzymes: oxidase  
+  lipids_fatty_acids: diphosphatidylglycerol;phosphatidylglycerol;phosphatidylinositol;phosphatidylethanolamine;C16:0;C16:1  
+  microbial_phenotypes: Gram-stain-positive;aerobic;coccus-shaped;motile  
+  environments: Pearl River;freshwater;Pearl River Estuary  
+  organism_compound_relationships: none  
+  organism_phenotype_relationships: SYSU M44304T is Gram-stain-positive;SYSU M44304T is aerobic;SYSU M44304T is coccus-shaped;SYSU M44304T is motile  
+  organism_environment_relationships: SYSU M44304T isolated from Pearl River Estuary;SYSU M44304T isolated from freshwater  
+  organism_enzyme_relationships: SYSU M44304T is oxidase-positive  
+  organism_lipid_relationships: SYSU M44304T contains diphosphatidylglycerol;SYSU M44304T contains phosphatidylglycerol;SYSU M44304T contains phosphatidylinositol;SYSU M44304T contains phosphatidylethanolamine;SYSU M44304T contains C16:0;SYSU M44304T contains C16:1  
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  organism: <the organism, species, or strain associated with the lipid>
+  lipid: <the lipid, fatty acid, or lipid-related molecule>
+  relationship_type: <the type of lipid-related relationshipMust be one of: synthesizes, contains, produces, accumulates, lacks, metabolizes, incorporates, modifies>
+
+
+  Text:
+  SYSU M44304T contains C16:1
+
+  ===
+
+extracted_object:
+  organisms:
+    - NCBITaxon:2775968
+    - AUTO:SYSU%20M44304T
+    - NCBITaxon:85018
+    - NCBITaxon:746032
+    - NCBITaxon:1859295
+  chemical_compounds:
+    - AUTO:meso-diaminopimelic%20acid
+    - CHEBI:205208
+  enzymes:
+    - AUTO:oxidase
+  lipids_fatty_acids:
+    - CHEBI:28494
+    - CHEBI:17517
+    - CHEBI:28874
+    - CHEBI:16038
+    - CHEBI:15756
+    - CHEBI:24548
+  microbial_phenotypes:
+    - AUTO:Gram-stain-positive
+    - <https://w3id.org/metpo/1000008>
+    - AUTO:coccus-shaped
+    - <https://w3id.org/metpo/1000379>
+  environments:
+    - AUTO:Pearl%20River
+    - ENVO:00002011
+    - AUTO:Pearl%20River%20Estuary
+  organism_phenotype_relationships:
+    - organism: AUTO:SYSU%20M44304T
+      phenotype: AUTO:Gram-stain-positive
+      relationship_type: is_characterized_by
+    - organism: AUTO:SYSU%20M44304T
+      phenotype: <https://w3id.org/metpo/1000008>
+      relationship_type: exhibits
+    - organism: AUTO:SYSU%20M44304T
+      phenotype: AUTO:coccus-shaped
+      relationship_type: is_characterized_by
+    - organism: AUTO:SYSU%20M44304T
+      phenotype: <https://w3id.org/metpo/1000379>
+      relationship_type: exhibits
+  organism_environment_relationships:
+    - organism: AUTO:SYSU%20M44304T
+      environment: AUTO:Pearl%20River%20Estuary
+      relationship_type: isolated_from
+    - organism: AUTO:SYSU%20M44304T
+      environment: ENVO:00002011
+      relationship_type: isolated_from
+  organism_enzyme_relationships:
+    - organism: AUTO:SYSU%20M44304T
+      enzyme: AUTO:oxidase
+      relationship_type: exhibits_activity
+  organism_lipid_relationships:
+    - organism: AUTO:SYSU%20M44304T
+      lipid: CHEBI:28494
+      relationship_type: contains
+    - organism: AUTO:SYSU%20M44304T
+      lipid: CHEBI:17517
+      relationship_type: contains
+    - organism: AUTO:SYSU%20M44304T
+      lipid: CHEBI:28874
+      relationship_type: contains
+    - organism: AUTO:SYSU%20M44304T
+      lipid: CHEBI:16038
+      relationship_type: contains
+    - organism: AUTO:SYSU%20M44304T
+      lipid: CHEBI:15756
+      relationship_type: contains
+    - organism: AUTO:SYSU%20M44304T
+      lipid: CHEBI:24548
+      relationship_type: contains
+named_entities:
+  - id: NCBITaxon:2775968
+    label: Agilicoccus flavus
+    original_spans:
+      - 0:17
+      - 1081:1098
+      - 1139:1156
+  - id: AUTO:SYSU%20M44304T
+    label: SYSU M44304T
+    original_spans:
+      - 161:172
+      - 941:952
+      - 1161:1172
+  - id: NCBITaxon:85018
+    label: Dermatophilaceae
+    original_spans:
+      - 69:84
+      - 1033:1048
+  - id: NCBITaxon:746032
+    label: Mobilicoccus pelagius
+    original_spans:
+      - 770:790
+  - id: NCBITaxon:1859295
+    label: Mobilicoccus caccae
+    original_spans:
+      - 809:827
+  - id: CHEBI:205208
+    label: MK-8
+    original_spans:
+      - 443:446
+  - id: CHEBI:28874
+    label: phosphatidylinositol
+    original_spans:
+      - 523:542
+  - id: CHEBI:16038
+    label: phosphatidylethanolamine
+    original_spans:
+      - 545:568
+  - id: CHEBI:15756
+    label: C16:0
+  - id: CHEBI:24548
+    label: C16:1
+  - id: AUTO:Gram-stain-positive
+    label: Gram-stain-positive
+    original_spans:
+      - 256:274
+  - id: AUTO:coccus-shaped
+    label: coccus-shaped
+    original_spans:
+      - 286:298
+  - id: AUTO:Pearl%20River
+    label: Pearl River
+    original_spans:
+      - 104:114
+      - 219:229
+  - id: ENVO:00002011
+    label: freshwater
+    original_spans:
+      - 193:202
+  - id: AUTO:Pearl%20River%20Estuary
+    label: Pearl River Estuary
+    original_spans:
+      - 219:237
+---
+input_text: |
+  Psychrobium conchae gen. nov., sp. nov., a psychrophilic marine bacterium isolated from the Iheya North hydrothermal field.
+
+  A novel psychrophilic, marine, bacterial strain designated BJ-1(T) was isolated from the Iheya North hydrothermal field in the Okinawa Trough off Japan. Cells were Gram-negative, rod-shaped, non-spore-forming, aerobic chemo-organotrophs and motile by means of a single polar flagellum. Growth occurred at temperatures below 16 °C, with the optimum between 9 and 12 °C. Phylogenetic analysis based on the 16S rRNA gene sequence indicated that the closest relatives of strain BJ-1(T) were Shewanella denitrificans OS-217(T) (93.5% similarity), Shewanella profunda DSM 15900(T) (92.9%), Shewanella gaetbuli TF-27(T) (92.9%), Paraferrimonas sedimenticola Mok-106(T) (92.1%) and Ferrimonas kyonanensis Asr22-7(T) (91.7%). The major respiratory quinone was Q-8. The predominant fatty acids were C(16:1)ω7c and C(16:0). The G+C content of the novel strain was 40.5 mol%. Based on phylogenetic, phenotypic and chemotaxonomic evidence, it is proposed that strain BJ-1(T) represents a novel species in a new genus, for which the name Psychrobium conchae gen. nov., sp. nov. is proposed. The type strain of Psychrobium conchae is BJ-1(T) ( =JCM 30103(T) =DSM 28701(T)).
+
+  PMID:25096326
+raw_completion_output: |-
+  organisms: Psychrobium conchae;Shewanella denitrificans;Shewanella profunda;Shewanella gaetbuli;Paraferrimonas sedimenticola;Ferrimonas kyonanensis  
+  chemical_compounds: Q-8  
+  enzymes:   
+  lipids_fatty_acids: C(16:1)ω7c;C(16:0)  
+  microbial_phenotypes: psychrophilic;Gram-negative;rod-shaped;non-spore-forming;aerobic;motile  
+  environments: marine;Iheya North hydrothermal field;Okinawa Trough  
+  organism_compound_relationships:   
+  organism_phenotype_relationships: Psychrobium conchae is psychrophilic;strain BJ-1(T) is Gram-negative;strain BJ-1(T) is rod-shaped;strain BJ-1(T) is non-spore-forming;strain BJ-1(T) is aerobic;strain BJ-1(T) is motile  
+  organism_environment_relationships: Psychrobium conchae isolated from Iheya North hydrothermal field;Psychrobium conchae inhabits marine  
+  organism_enzyme_relationships:   
+  organism_lipid_relationships: 
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  organism: <the organism, species, or strain associated with the environment>
+  environment: <the environmental context or habitat>
+  relationship_type: <the type of environmental associationMust be one of: inhabits, isolated_from, found_in, adapted_to, grows_in, thrives_in>
+
+
+  Text:
+  Psychrobium conchae inhabits marine
+
+  ===
+
+extracted_object:
+  organisms:
+    - NCBITaxon:1491831
+    - NCBITaxon:192073
+    - NCBITaxon:254793
+    - NCBITaxon:220752
+    - NCBITaxon:375674
+    - NCBITaxon:364763
+  chemical_compounds:
+    - AUTO:Q-8
+  microbial_phenotypes:
+    - <https://w3id.org/metpo/1000259>
+    - <https://w3id.org/metpo/1000143>
+    - AUTO:rod-shaped
+    - AUTO:non-spore-forming
+    - <https://w3id.org/metpo/1000008>
+    - <https://w3id.org/metpo/1000379>
+  environments:
+    - AUTO:marine
+    - AUTO:Iheya%20North%20hydrothermal%20field
+    - AUTO:Okinawa%20Trough
+  organism_environment_relationships:
+    - organism: NCBITaxon:1491831
+      environment: AUTO:Iheya%20North%20hydrothermal%20field
+      relationship_type: isolated_from
+    - organism: NCBITaxon:1491831
+      environment: AUTO:marine
+      relationship_type: inhabits
+named_entities:
+  - id: NCBITaxon:1491831
+    label: Psychrobium conchae
+    original_spans:
+      - 0:18
+      - 1149:1167
+      - 1221:1239
+  - id: NCBITaxon:192073
+    label: Shewanella denitrificans
+    original_spans:
+      - 612:635
+  - id: NCBITaxon:254793
+    label: Shewanella profunda
+    original_spans:
+      - 667:685
+  - id: NCBITaxon:220752
+    label: Shewanella gaetbuli
+    original_spans:
+      - 709:727
+  - id: NCBITaxon:375674
+    label: Paraferrimonas sedimenticola
+    original_spans:
+      - 747:774
+  - id: NCBITaxon:364763
+    label: Ferrimonas kyonanensis
+    original_spans:
+      - 799:820
+  - id: AUTO:marine
+    label: marine
+    original_spans:
+      - 57:62
+      - 148:153
+  - id: AUTO:Iheya%20North%20hydrothermal%20field
+    label: Iheya North hydrothermal field
+    original_spans:
+      - 92:121
+      - 214:243
+  - id: AUTO:Okinawa%20Trough
+    label: Okinawa Trough
+    original_spans:
+      - 252:265
+---
+input_text: |
+  Sphingomonas jatrophae sp. nov. and Sphingomonas carotinifaciens sp. nov., two yellow-pigmented endophytes isolated from stem tissues of Jatropha curcas L.
+
+  Two yellow-pigmented isolates, S5-249T and L9-754T, originating from surface-sterilized plant tissues of Jatropha curcas L. (Jatropha) cultivars were characterized using a polyphasic taxonomic approach. Strains S5-249T and L9-754T had 16S rRNA genes sharing 94.2 % sequence similarity with each other and 91.6-97.2 % sequence similarity with those of other species in the genus Sphingomonas, suggesting that they represent two potentially novel species. The 16S rRNA gene sequences of strains S5-249T and L9-754T shared the highest similarity to that of Sphingomonas sanguinis NBRC 13937T (96.1 and 97.2 %, respectively). The genomic DNA G+C contents of strains S5-249T and L9-754T were 66.9 and 68.5 mol%, respectively. The respiratory quinone was determined to be Q-10, and the major polyamine was homospermidine. Strains S5-249T and L9-754T contained summed feature 7 (comprising C18 : 1ω7c, C18 : 1ω9t and/or C18 : 1ω12t), C16 : 1, C14 : 0 2-OH and summed feature 4 (C16 : 1ω7t, iso-C15 : 0 2-OH and C16 : 1ω7c) as the major cellular fatty acids. The predominant polar lipids were phosphatidylglycerol, diphosphatidylglycerol, phosphatidylethanolamine and sphingoglycolipid. The average nucleotide identity (ANI) values between S. sanguinis NBRC 13937T and the two type strains (S5-249T and L9-754T) were 72.31 and 77.73 %, respectively. Digital DNA-DNA hybridization (dDDH) studies between the novel strains (S5-249T and L9-754T) and other species of the genus Sphingomonas were well below the thresholds used to discriminate between bacterial species. The results of dDDH and physiological tests allowed genotypic and phenotypic differentiation of the strains from each other as well as from the species of the genus Sphingomonas with validly published names. These data strongly support the classification of the strains as representatives of novel species, for which we propose the names Sphingomonas jatrophae sp. nov. (type strain S5-249T=DSM 27345T=KACC 17593T) and Sphingomonas carotinifaciens sp. nov. (type strain L9-754T=DSM 27347T=KACC 17595T).
+
+  PMID:29087271
+raw_completion_output: |-
+  organisms: Sphingomonas jatrophae; Sphingomonas carotinifaciens; Sphingomonas sanguinis; Sphingomonas spp.; S5-249T; L9-754T; Jatropha curcas L.
+  chemical_compounds: Q-10; homospermidine; C18:1ω7c; C18:1ω9t; C18:1ω12t; C16:1; C14:0 2-OH; C16:1ω7t; iso-C15:0 2-OH; C16:1ω7c
+  enzymes: 
+  lipids_fatty_acids: phosphatidylglycerol; diphosphatidylglycerol; phosphatidylethanolamine; sphingoglycolipid; C18:1ω7c; C18:1ω9t; C18:1ω12t; C16:1; C14:0 2-OH; C16:1ω7t; iso-C15:0 2-OH; C16:1ω7c
+  microbial_phenotypes: yellow-pigmented
+  environments: stem tissues of Jatropha curcas L.; surface-sterilized plant tissues
+  organism_compound_relationships: 
+  organism_phenotype_relationships: Sphingomonas jatrophae is yellow-pigmented; Sphingomonas carotinifaciens is yellow-pigmented
+  organism_environment_relationships: Sphingomonas jatrophae inhabits stem tissues of Jatropha curcas L.; Sphingomonas carotinifaciens inhabits stem tissues of Jatropha curcas L.
+  organism_enzyme_relationships: 
+  organism_lipid_relationships: S5-249T contains phosphatidylglycerol, diphosphatidylglycerol, phosphatidylethanolamine, sphingoglycolipid, summed feature 7 and summed feature 4; L9-754T contains phosphatidylglycerol, diphosphatidylglycerol, phosphatidylethanolamine, sphingoglycolipid, summed feature 7 and summed feature 4
+prompt: |+
+  From the text below, extract the following entities in the following format:
+
+  organism: <the organism, species, or strain associated with the environment>
+  environment: <the environmental context or habitat>
+  relationship_type: <the type of environmental associationMust be one of: inhabits, isolated_from, found_in, adapted_to, grows_in, thrives_in>
+
+
+  Text:
+  Sphingomonas carotinifaciens inhabits stem tissues of Jatropha curcas L.
+
+  ===
+
+extracted_object:
+  organisms:
+    - NCBITaxon:1166337
+    - NCBITaxon:1166323
+    - NCBITaxon:33051
+    - AUTO:Sphingomonas%20spp.
+    - AUTO:S5-249T
+    - AUTO:L9-754T
+    - AUTO:Jatropha%20curcas%20L.
+  chemical_compounds:
+    - AUTO:Q-10
+    - CHEBI:16554
+    - AUTO:C18%3A1%CF%897c
+    - AUTO:C18%3A1%CF%899t
+    - AUTO:C18%3A1%CF%8912t
+    - CHEBI:24548
+    - AUTO:C14%3A0%202-OH
+    - AUTO:C16%3A1%CF%897t
+    - AUTO:iso-C15%3A0%202-OH
+    - AUTO:C16%3A1%CF%897c
+  microbial_phenotypes:
+    - AUTO:yellow-pigmented
+  environments:
+    - AUTO:stem%20tissues%20of%20Jatropha%20curcas%20L.
+    - AUTO:surface-sterilized%20plant%20tissues
+  organism_environment_relationships:
+    - organism: NCBITaxon:1166337
+      environment: AUTO:stem%20tissues%20of%20Jatropha%20curcas%20L.
+      relationship_type: inhabits
+    - organism: NCBITaxon:1166323
+      environment: AUTO:stem%20tissues%20of%20Jatropha%20curcas%20L.
+      relationship_type: inhabits
+named_entities:
+  - id: NCBITaxon:1166337
+    label: Sphingomonas jatrophae
+    original_spans:
+      - 0:21
+      - 2053:2074
+  - id: NCBITaxon:1166323
+    label: Sphingomonas carotinifaciens
+    original_spans:
+      - 36:63
+      - 2134:2161
+  - id: NCBITaxon:33051
+    label: Sphingomonas sanguinis
+    original_spans:
+      - 711:732
+  - id: AUTO:Sphingomonas%20spp.
+    label: Sphingomonas spp.
+  - id: AUTO:S5-249T
+    label: S5-249T
+    original_spans:
+      - 188:194
+      - 368:374
+      - 650:656
+      - 819:825
+      - 981:987
+      - 1440:1446
+      - 1571:1577
+      - 2098:2104
+  - id: AUTO:L9-754T
+    label: L9-754T
+    original_spans:
+      - 200:206
+      - 380:386
+      - 662:668
+      - 831:837
+      - 993:999
+      - 1452:1458
+      - 1583:1589
+      - 2185:2191
+  - id: AUTO:Jatropha%20curcas%20L.
+    label: Jatropha curcas L.
+    original_spans:
+      - 137:154
+      - 262:279
+  - id: CHEBI:16554
+    label: homospermidine
+    original_spans:
+      - 957:970
+  - id: AUTO:C18%3A1%CF%899t
+    label: C18:1ω9t
+  - id: AUTO:C18%3A1%CF%8912t
+    label: C18:1ω12t
+  - id: AUTO:C14%3A0%202-OH
+    label: C14:0 2-OH
+  - id: AUTO:C16%3A1%CF%897t
+    label: C16:1ω7t
+  - id: AUTO:iso-C15%3A0%202-OH
+    label: iso-C15:0 2-OH
+  - id: AUTO:C16%3A1%CF%897c
+    label: C16:1ω7c
+  - id: AUTO:yellow-pigmented
+    label: yellow-pigmented
+    original_spans:
+      - 79:94
+      - 161:176
+  - id: AUTO:stem%20tissues%20of%20Jatropha%20curcas%20L.
+    label: stem tissues of Jatropha curcas L.
+    original_spans:
+      - 121:154
+  - id: AUTO:surface-sterilized%20plant%20tissues
+    label: surface-sterilized plant tissues
+    original_spans:
+      - 226:257
+---
+input_text: |
+  Hyunsoonleella ulvae sp. nov., isolated from algae in China.
+
+  A novel Gram-stain-negative, aerobic, non-motile, rod-shaped and yellow-pigmented bacterial strain, designated HU1-3T, was isolated from Ulva in China. Phylogenetic analysis based on 16S rRNA gene sequences revealed that strain HU1-3T represented a member of the genus Hyunsoonleella within the family Flavobacteriaceae, phylum Bacteroidota, and showed the highest 16S rRNA gene sequence similarity to Hyunsoonleella flava T58T (97.6 %). Strain HU1-3T grew at 15-35 °C (optimum, 25-30 °C), pH 6.0-8.0 (optimum, pH 7.0) and in the presence of 2-6 % (w/v) NaCl (optimum, 2-4 %). The draft genome of strain HU1-3T comprised 4.1 Mbp with a G+C content of 33.9mol%. Compared with the reference strain Hyunsoonleella jejuensis CNU004T, the average nucleotide identity value of strain HU1-3T was 77.9 %. The major fatty acids (>10 % of the total) were iso-C15 : 0, iso G-C15 : 1 and iso-C17 : 0 3-OH. MK-6 was the major respiratory quinone. The major polar lipids were phosphatidylethanolamine, two unidentified aminolipids, and three unknown polar lipids. Many genes that encode glycoside hydrolases (e.g. glucosidase, xylosidase, mannosidase, galactosidase, etc.) were annotated in the genome of strain HU1-3T, which indicated that it might have the ability to degrade various kinds of polysaccharides. Given the phylogenetic, chemotaxonomic, biochemical and genomic data, strain HU1-3T is considered to represent a novel species of the genus Hyunsoonleella, for which the name Hyunsoonleella ulvae sp. nov. is proposed. The type strain is HU1-3T (=KCTC 82511T=MCCC 1K05798T).
+
+  PMID:35511237
+raw_completion_output: |-
+  **organisms:** Hyunsoonleella ulvae; Hyunsoonleella flava; Hyunsoonleella jejuensis; Ulva; strain HU1-3T
+
+  **chemical_compounds:** NaCl; polysaccharides
+
+  **enzymes:** glycoside hydrolases; glucosidase; xylosidase; mannosidase; galactosidase
+
+  **lipids_fatty_acids:** iso-C15:0; iso G-C15:1; iso-C17:0 3-OH; MK-6; phosphatidylethanolamine
+
+  **microbial_phenotypes:** Gram-stain-negative; aerobic; non-motile; rod-shaped; yellow-pigmented
+
+  **environments:** algae; China
+
+  **organism_compound_relationships:** strain HU1-3T might have the ability to degrade various kinds of polysaccharides
+
+  **organism_phenotype_relationships:** Hyunsoonleella ulvae is Gram-stain-negative; Hyunsoonleella ulvae is aerobic; Hyunsoonleella ulvae is non-motile; Hyunsoonleella ulvae is rod-shaped; Hyunsoonleella ulvae is yellow-pigmented
+
+  **organism_environment_relationships:** Hyunsoonleella ulvae isolated from algae; strain HU1-3T isolated from Ulva in China
+
+  **organism_enzyme_relationships:** strain HU1-3T genome encodes glycoside hydrolases
+
+  **organism_lipid_relationships:** strain HU1-3T contains iso-C15:0; strain HU1-3T contains iso G-C15:1; strain HU1-3T contains iso-C17:0 3-OH; strain HU1-3T contains MK-6; strain HU1-3T contains phosphatidylethanolamine
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  organism: <the organism, species, or strain associated with the lipid>
+  lipid: <the lipid, fatty acid, or lipid-related molecule>
+  relationship_type: <the type of lipid-related relationshipMust be one of: synthesizes, contains, produces, accumulates, lacks, metabolizes, incorporates, modifies>
+
+
+  Text:
+  strain HU1-3T contains phosphatidylethanolamine
+
+  ===
+
+extracted_object:
+  organisms:
+    - NCBITaxon:2799948
+    - NCBITaxon:2527939
+    - NCBITaxon:419940
+    - NCBITaxon:3118
+    - AUTO:strain%20HU1-3T
+  chemical_compounds:
+    - CHEBI:26710
+    - CHEBI:18154
+  enzymes:
+    - AUTO:glycoside%20hydrolases
+    - AUTO:glucosidase
+    - AUTO:xylosidase
+    - AUTO:mannosidase
+    - AUTO:galactosidase
+  lipids_fatty_acids:
+    - CHEBI:39250
+    - AUTO:iso%20G-C15%3A1
+    - AUTO:iso-C17%3A0%203-OH
+    - AUTO:MK-6
+    - CHEBI:16038
+  microbial_phenotypes:
+    - AUTO:Gram-stain-negative
+    - <https://w3id.org/metpo/1000008>
+    - <https://w3id.org/metpo/1000380>
+    - AUTO:rod-shaped
+    - AUTO:yellow-pigmented
+  environments:
+    - NCBITaxon:2836
+    - AUTO:China
+  organism_compound_relationships:
+    - organism: AUTO:strain%20HU1-3T
+      compound: CHEBI:18154
+      relationship_type: degrades
+  organism_phenotype_relationships:
+    - organism: NCBITaxon:2799948
+      phenotype: AUTO:Gram-stain-negative
+      relationship_type: is_characterized_by
+    - organism: NCBITaxon:2799948
+      phenotype: <https://w3id.org/metpo/1000008>
+      relationship_type: exhibits
+    - organism: NCBITaxon:2799948
+      phenotype: AUTO:motility
+      relationship_type: lacks_phenotype
+    - organism: NCBITaxon:2799948
+      phenotype: AUTO:rod-shaped
+      relationship_type: is_characterized_by
+    - organism: NCBITaxon:2799948
+      phenotype: AUTO:yellow-pigmented
+      relationship_type: exhibits
+  organism_environment_relationships:
+    - organism: NCBITaxon:2799948
+      environment: NCBITaxon:2836
+      relationship_type: isolated_from
+    - organism: AUTO:strain%20HU1-3T
+      environment: AUTO:Ulva%20in%20China
+      relationship_type: isolated_from
+  organism_enzyme_relationships:
+    - organism: AUTO:strain%20HU1-3T
+      enzyme: AUTO:glycoside%20hydrolases
+  organism_lipid_relationships:
+    - organism: AUTO:strain%20HU1-3T
+      lipid: CHEBI:39250
+      relationship_type: contains
+    - organism: AUTO:strain%20HU1-3T
+      lipid: AUTO:iso%20G-C15%3A1
+      relationship_type: contains
+    - organism: AUTO:strain%20HU1-3T
+      lipid: AUTO:iso-C17%3A0%203-OH
+      relationship_type: contains
+    - organism: AUTO:strain%20HU1-3T
+      lipid: AUTO:MK-6
+      relationship_type: contains
+    - organism: AUTO:strain%20HU1-3T
+      lipid: CHEBI:16038
+      relationship_type: contains
+named_entities:
+  - id: NCBITaxon:2799948
+    label: Hyunsoonleella ulvae
+    original_spans:
+      - 0:19
+      - 1535:1554
+  - id: NCBITaxon:2527939
+    label: Hyunsoonleella flava
+    original_spans:
+      - 464:483
+  - id: NCBITaxon:419940
+    label: Hyunsoonleella jejuensis
+    original_spans:
+      - 758:781
+  - id: NCBITaxon:3118
+    label: Ulva
+    original_spans:
+      - 15:18
+      - 199:202
+      - 1550:1553
+  - id: AUTO:strain%20HU1-3T
+    label: strain HU1-3T
+    original_spans:
+      - 283:295
+      - 500:512
+      - 659:671
+      - 833:845
+      - 1253:1265
+      - 1430:1442
+  - id: CHEBI:18154
+    label: polysaccharides
+    original_spans:
+      - 1343:1357
+  - id: AUTO:glycoside%20hydrolases
+    label: glycoside hydrolases
+    original_spans:
+      - 1135:1154
+  - id: AUTO:glucosidase
+    label: glucosidase
+    original_spans:
+      - 1162:1172
+  - id: AUTO:xylosidase
+    label: xylosidase
+    original_spans:
+      - 1175:1184
+  - id: AUTO:mannosidase
+    label: mannosidase
+    original_spans:
+      - 1187:1197
+  - id: AUTO:galactosidase
+    label: galactosidase
+    original_spans:
+      - 1200:1212
+  - id: CHEBI:39250
+    label: iso-C15:0
+  - id: AUTO:iso%20G-C15%3A1
+    label: iso G-C15:1
+  - id: AUTO:iso-C17%3A0%203-OH
+    label: iso-C17:0 3-OH
+  - id: NCBITaxon:2836
+    label: algae
+    original_spans:
+      - 45:49
+  - id: AUTO:Ulva%20in%20China
+    label: Ulva in China
+    original_spans:
+      - 199:211
+---
+input_text: |
+  Bacillus paralicheniformis sp. nov., isolated from fermented soybean paste.
+
+  An isolate of a Gram-stain-positive, facultatively anaerobic, motile, rod-shaped, endospore-forming bacterium was recovered from soybean-based fermented paste. Phylogenetic analysis of the 16S rRNA gene indicated that the strain was most closely related to Bacillus sonorensis KCTC-13918T (99.5 % similarity) and Bacillus licheniformis DSM 13T (99.4 %). In phenotypic characterization, the novel strain was found to grow at 15–60 °C and to tolerate up to 10 % (w/v) NaCl. Furthermore, the strain grew in media with pH 6–11 (optimal growth at pH 7.0–8.0). The predominant cellular fatty acids were anteiso-C15 : 0 (37.7 %) and iso-C15 : 0 (31.5 %). The predominant isoprenoid quinone was menaquinone 7 (MK-7). The cell-wall peptidoglycan contained meso-diaminopimelic acid. A draft genome sequence of the strain was completed and used for phylogenetic analysis. Phylogenomic analysis of all published genomes of species in the B. licheniformis group revealed that strains belonging to B. licheniformis clustered into two distinct groups, with group 1 consisting of B. licheniformis DSM 13T and 11 other strains and group 2 consisting of KJ-16T and four other strains. The DNA G+C content of strain KJ-16T was 45.9 % (determined from the genome sequence). Strain KJ-16T and another strain from group 2 were subsequently characterized using a polyphasic taxonomic approach and compared with strains from group 1 and another closely related species of the genus Bacillus. Based upon the consensus of phylogenetic and phenotypic analyses, we conclude that this strain represents a novel species within the genus Bacillus, for which the name Bacillus paralicheniformis sp. nov. is proposed, with type strain KJ-16T ( = KACC 18426T = NRRL B-65293T).
+
+  PMID:26296568
+raw_completion_output: |-
+  organisms: Bacillus paralicheniformis;Bacillus sonorensis;Bacillus licheniformis  
+  chemical_compounds: NaCl;menaquinone 7;meso-diaminopimelic acid  
+  enzymes:   
+  lipids_fatty_acids: anteiso-C15:0;iso-C15:0  
+  microbial_phenotypes: Gram-positive;facultatively anaerobic;motile;rod-shaped;endospore-forming  
+  environments: fermented soybean paste  
+  organism_compound_relationships:   
+  organism_phenotype_relationships: Bacillus paralicheniformis is Gram-positive;Bacillus paralicheniformis is facultatively anaerobic;Bacillus paralicheniformis is motile;Bacillus paralicheniformis is rod-shaped;Bacillus paralicheniformis is endospore-forming  
+  organism_environment_relationships: Bacillus paralicheniformis isolated from fermented soybean paste  
+  organism_enzyme_relationships:   
+  organism_lipid_relationships: Bacillus paralicheniformis contains anteiso-C15:0;Bacillus paralicheniformis contains iso-C15:0
+prompt: |+
+  From the text below, extract the following entities in the following format:
+
+  organism: <the organism, species, or strain associated with the environment>
+  environment: <the environmental context or habitat>
+  relationship_type: <the type of environmental associationMust be one of: inhabits, isolated_from, found_in, adapted_to, grows_in, thrives_in>
+
+
+  Text:
+  Bacillus paralicheniformis isolated from fermented soybean paste
+
+  ===
+
+extracted_object:
+  organisms:
+    - NCBITaxon:1648923
+    - NCBITaxon:119858
+    - NCBITaxon:1402
+  chemical_compounds:
+    - CHEBI:26710
+    - CHEBI:44245
+    - AUTO:meso-diaminopimelic%20acid
+  microbial_phenotypes:
+    - <https://w3id.org/metpo/1000144>
+    - <https://w3id.org/metpo/1000117>
+    - <https://w3id.org/metpo/1000379>
+    - AUTO:rod-shaped
+    - <https://w3id.org/metpo/1000104>
+  environments:
+    - AUTO:fermented%20soybean%20paste
+  organism_environment_relationships:
+    - organism: NCBITaxon:1648923
+      environment: AUTO:fermented%20soybean%20paste
+      relationship_type: isolated_from
+named_entities:
+  - id: NCBITaxon:1648923
+    label: Bacillus paralicheniformis
+    original_spans:
+      - 0:25
+      - 1713:1738
+  - id: NCBITaxon:119858
+    label: Bacillus sonorensis
+    original_spans:
+      - 334:352
+  - id: NCBITaxon:1402
+    label: Bacillus licheniformis
+    original_spans:
+      - 390:411
+  - id: <https://w3id.org/metpo/1000117>
+    label: facultatively anaerobic
+    original_spans:
+      - 114:136
+  - id: <https://w3id.org/metpo/1000104>
+    label: endospore-forming
+    original_spans:
+      - 159:175
+  - id: AUTO:fermented%20soybean%20paste
+    label: fermented soybean paste
+    original_spans:
+      - 51:73
+---
+input_text: |
+  Chryseobacterium schmidteae sp. nov. a novel bacterial species isolated from planarian Schmidtea mediterranea.
+
+  Marseille-P9602T is a Chryseobacterium-like strain that we isolated from planarian Schmidtea mediterranea and characterized by taxono-genomic approach. We found that Marseille-P9602T strain exhibits a 16S rRNA gene sequence similarity of 98.76% with Chryseobacterium scophthalmum LMG 13028T strain, the closest phylogenetic neighbor. Marseille-P9602T strain was observed to be a yellowish-pigmented, Gram-negative, rod-shaped bacterium, growing in aerobic conditions and belonging to the Flavobacteriaceae family. The major fatty acids detected are 13-methyl-tetradecanoic acid (57%), 15-methylhexadecenoic acid (18%) and 12-methyl-tetradecanoic acid (8%). Marseille-P9602 strain size was found from genome assembly to be of 4,271,905 bp, with a 35.5% G + C content. The highest values obtained for Ortho-ANI and dDDH were 91.67% and 44.60%, respectively. Thus, hereby we unravel that Marseille-P9602 strain is sufficiently different from other closed related species and can be classified as a novel bacterial species, for which we propose the name of Chryseobacterium schmidteae sp. nov. Type strain is Marseille-P9602T (= CSUR P9602T = CECT 30295T).
+
+  PMID:34040129
+raw_completion_output: |-
+  organisms: Chryseobacterium schmidteae;Schmidtea mediterranea;Chryseobacterium sp.;Chryseobacterium scophthalmum;Flavobacteriaceae  
+  chemical_compounds: 13-methyl-tetradecanoic acid;15-methylhexadecenoic acid;12-methyl-tetradecanoic acid  
+  enzymes:   
+  lipids_fatty_acids: 13-methyl-tetradecanoic acid;15-methylhexadecenoic acid;12-methyl-tetradecanoic acid  
+  microbial_phenotypes: Gram-negative;rod-shaped;aerobic  
+  environments: planarian;Schmidtea mediterranea  
+  organism_compound_relationships:   
+  organism_phenotype_relationships: Marseille-P9602T strain exhibits a yellowish-pigmented phenotype;Marseille-P9602T strain is a Gram-negative bacterium;Marseille-P9602T strain is rod-shaped;Marseille-P9602T strain is aerobic  
+  organism_environment_relationships: Chryseobacterium schmidteae sp. nov. isolated from planarian Schmidtea mediterranea;Marseille-P9602T strain isolated from planarian Schmidtea mediterranea  
+  organism_enzyme_relationships:   
+  organism_lipid_relationships: Marseille-P9602T strain contains 13-methyl-tetradecanoic acid;Marseille-P9602T strain contains 15-methylhexadecenoic acid;Marseille-P9602T strain contains 12-methyl-tetradecanoic acid  
+prompt: |+
+  From the text below, extract the following entities in the following format:
+
+  organism: <the organism, species, or strain associated with the environment>
+  environment: <the environmental context or habitat>
+  relationship_type: <the type of environmental associationMust be one of: inhabits, isolated_from, found_in, adapted_to, grows_in, thrives_in>
+
+
+  Text:
+  Marseille-P9602T strain isolated from planarian Schmidtea mediterranea
+
+  ===
+
+extracted_object:
+  organisms:
+    - NCBITaxon:2730404
+    - NCBITaxon:79327
+    - NCBITaxon:1871047
+    - NCBITaxon:59733
+    - NCBITaxon:49546
+  chemical_compounds:
+    - AUTO:13-methyl-tetradecanoic%20acid
+    - AUTO:15-methylhexadecenoic%20acid
+    - CHEBI:39251
+  microbial_phenotypes:
+    - <https://w3id.org/metpo/1000143>
+    - AUTO:rod-shaped
+    - <https://w3id.org/metpo/1000008>
+  environments:
+    - AUTO:planarian
+    - AUTO:Schmidtea%20mediterranea
+  organism_environment_relationships:
+    - organism: AUTO:Chryseobacterium%20schmidteae%20sp.%20nov.
+      environment: AUTO:planarian%20Schmidtea%20mediterranea
+      relationship_type: isolated_from
+    - organism: AUTO:Marseille-P9602T
+      environment: AUTO:planarian%20Schmidtea%20mediterranea
+      relationship_type: isolated_from
+named_entities:
+  - id: NCBITaxon:2730404
+    label: Chryseobacterium schmidteae
+    original_spans:
+      - 0:26
+      - 1165:1191
+  - id: NCBITaxon:79327
+    label: Schmidtea mediterranea
+    original_spans:
+      - 87:108
+      - 195:216
+  - id: NCBITaxon:1871047
+    label: Chryseobacterium sp.
+  - id: NCBITaxon:59733
+    label: Chryseobacterium scophthalmum
+    original_spans:
+      - 362:390
+  - id: NCBITaxon:49546
+    label: Flavobacteriaceae
+    original_spans:
+      - 600:616
+  - id: AUTO:13-methyl-tetradecanoic%20acid
+    label: 13-methyl-tetradecanoic acid
+    original_spans:
+      - 661:688
+  - id: AUTO:15-methylhexadecenoic%20acid
+    label: 15-methylhexadecenoic acid
+    original_spans:
+      - 697:722
+  - id: CHEBI:39251
+    label: 12-methyl-tetradecanoic acid
+    original_spans:
+      - 734:761
+  - id: AUTO:planarian
+    label: planarian
+    original_spans:
+      - 77:85
+      - 185:193
+  - id: AUTO:Schmidtea%20mediterranea
+    label: Schmidtea mediterranea
+    original_spans:
+      - 87:108
+      - 195:216
+  - id: AUTO:Chryseobacterium%20schmidteae%20sp.%20nov.
+    label: Chryseobacterium schmidteae sp. nov.
+    original_spans:
+      - 0:35
+      - 1165:1200
+  - id: AUTO:planarian%20Schmidtea%20mediterranea
+    label: planarian Schmidtea mediterranea
+    original_spans:
+      - 77:108
+      - 185:216
+  - id: AUTO:Marseille-P9602T
+    label: Marseille-P9602T
+    original_spans:
+      - 112:127
+      - 278:293
+      - 446:461
+      - 1217:1232
+---
+input_text: |
+  A phylogenomic and comparative genomic framework for resolving the polyphyly of the genus Bacillus: Proposal for six new genera of Bacillus species, Peribacillus gen. nov., Cytobacillus gen. nov., Mesobacillus gen. nov., Neobacillus gen. nov., Metabacillus gen. nov. and Alkalihalobacillus gen. nov.
+
+  The genus Bacillus, harbouring 293 species/subspecies, constitutes a phylogenetically incoherent group. In the absence of reliable means for grouping known Bacillus species into distinct clades, restricting the placement of new species into this genus has proven difficult. To clarify the evolutionary relationships among Bacillus species, 352 available genome sequences from the family Bacillaceae were used to perform comprehensive phylogenomic and comparative genomic analyses. Four phylogenetic trees were reconstructed based on multiple datasets of proteins including 1172 core Bacillaceae proteins, 87 proteins conserved within the phylum Firmicutes, GyrA-GyrB-RpoB-RpoC proteins, and UvrD-PolA proteins. All trees exhibited nearly identical branching of Bacillus species and consistently displayed six novel monophyletic clades encompassing 5-23 Bacillus species (denoted as the Simplex, Firmus, Jeotgali, Niacini, Fastidiosus and Alcalophilus clades), interspersed with other Bacillaceae species. Species from these clades also generally grouped together in 16S rRNA gene trees. In parallel, our comparative genomic analyses of Bacillus species led to the identification of 36 molecular markers comprising conserved signature indels in protein sequences that are specifically shared by the species from these six observed clades, thus reliably demarcating these clades based on multiple molecular synapomorphies. Based on the strong evidence from multiple lines of investigations supporting the existence of these six distinct 'Bacillus' clades, we propose the transfer of species from these clades into six novel Bacillaceae genera viz. Peribacillus gen. nov., Cytobacillus gen. nov., Mesobacillus gen. nov., Neobacillus gen. nov., Metabacillus gen. nov. and Alkalihalobacillus gen. nov. These results represent an important step towards clarifying the phylogeny/taxonomy of the genus Bacillus.
+
+  PMID:31617837
+raw_completion_output: |-
+  organisms: Bacillus;Peribacillus;Cytobacillus;Mesobacillus;Neobacillus;Metabacillus;Alkalihalobacillus;Bacillaceae;Firmicutes  
+  chemical_compounds:   
+  enzymes:   
+  lipids_fatty_acids:   
+  microbial_phenotypes:   
+  environments:   
+  organism_compound_relationships:   
+  organism_phenotype_relationships:   
+  organism_environment_relationships:   
+  organism_enzyme_relationships:   
+  organism_lipid_relationships:   
+prompt: |+
+  From the text below, extract the following entities in the following format:
+
+  organisms: <semicolon-separated list of all microorganisms, bacterial species, strains, and taxonomic entities mentioned in the text>
+  chemical_compounds: <semicolon-separated list of chemical compounds, substrates, products, metabolites, and biochemical substances mentioned in the text. INCLUDES carbohydrates, sugars, organic acids, alcohols, nitrate, nitrite, sulfate, phosphate, and other inorganic compounds that organisms can utilize, metabolize, or interact with. EXCLUDES enzymes, proteins, lipids, and fatty acids which should be extracted separately.>
+  enzymes: <semicolon-separated list of enzymes, proteins with catalytic activity, and enzymatic complexes mentioned in the text>
+  lipids_fatty_acids: <semicolon-separated list of lipids, fatty acids, membrane components, and lipid-related molecules mentioned in the text. INCLUDES phospholipids, triglycerides, fatty acid chains (e.g., C16:0, C18:1), membrane lipids, cholesterol, sphingolipids, and other lipid-based cellular components.>
+  microbial_phenotypes: <semicolon-separated list of microbial phenotypic characteristics including: oxygen requirements (aerobic, anaerobic), temperature preferences (thermophilic, mesophilic), pH preferences, salt tolerance, morphological traits, Gram staining results,  motility, spore formation, and other physiological properties. EXCLUDES chemical utilization patterns which should be captured as organism_compound_relationships.>
+  environments: <semicolon-separated list of environmental contexts, habitats, ecological niches, and growth conditions mentioned in the text>
+  organism_compound_relationships: <semicolon-separated list of organism-compound interactions including utilization, production, metabolism, fermentation, oxidation, reduction, and resistance relationships found in the text. INCLUDES statements like "uses carbohydrates as carbon sources", "reduces nitrate to nitrite", "ferments glucose", "oxidizes sulfur compounds".>
+  organism_phenotype_relationships: <semicolon-separated list of organism-phenotype associations such as "organism is thermophilic", "strain exhibits motility", "bacterium is Gram-positive". EXCLUDES chemical utilization patterns like "uses carbohydrates" which should be  captured as organism_compound_relationships.>
+  organism_environment_relationships: <semicolon-separated list of organism-environment associations such as "organism inhabits marine sediments", "strain isolated from soil">
+  organism_enzyme_relationships: <semicolon-separated list of organism-enzyme relationships such as "organism produces catalase", "strain expresses oxidase activity">
+  organism_lipid_relationships: <semicolon-separated list of organism-lipid relationships such as "organism contains phospholipids", "strain synthesizes fatty acids">
+
+
+  Text:
+  A phylogenomic and comparative genomic framework for resolving the polyphyly of the genus Bacillus: Proposal for six new genera of Bacillus species, Peribacillus gen. nov., Cytobacillus gen. nov., Mesobacillus gen. nov., Neobacillus gen. nov., Metabacillus gen. nov. and Alkalihalobacillus gen. nov.
+
+  The genus Bacillus, harbouring 293 species/subspecies, constitutes a phylogenetically incoherent group. In the absence of reliable means for grouping known Bacillus species into distinct clades, restricting the placement of new species into this genus has proven difficult. To clarify the evolutionary relationships among Bacillus species, 352 available genome sequences from the family Bacillaceae were used to perform comprehensive phylogenomic and comparative genomic analyses. Four phylogenetic trees were reconstructed based on multiple datasets of proteins including 1172 core Bacillaceae proteins, 87 proteins conserved within the phylum Firmicutes, GyrA-GyrB-RpoB-RpoC proteins, and UvrD-PolA proteins. All trees exhibited nearly identical branching of Bacillus species and consistently displayed six novel monophyletic clades encompassing 5-23 Bacillus species (denoted as the Simplex, Firmus, Jeotgali, Niacini, Fastidiosus and Alcalophilus clades), interspersed with other Bacillaceae species. Species from these clades also generally grouped together in 16S rRNA gene trees. In parallel, our comparative genomic analyses of Bacillus species led to the identification of 36 molecular markers comprising conserved signature indels in protein sequences that are specifically shared by the species from these six observed clades, thus reliably demarcating these clades based on multiple molecular synapomorphies. Based on the strong evidence from multiple lines of investigations supporting the existence of these six distinct 'Bacillus' clades, we propose the transfer of species from these clades into six novel Bacillaceae genera viz. Peribacillus gen. nov., Cytobacillus gen. nov., Mesobacillus gen. nov., Neobacillus gen. nov., Metabacillus gen. nov. and Alkalihalobacillus gen. nov. These results represent an important step towards clarifying the phylogeny/taxonomy of the genus Bacillus.
+
+  PMID:31617837
+
+
+  ===
+
+extracted_object:
+  organisms:
+    - NCBITaxon:1386
+    - NCBITaxon:2675229
+    - NCBITaxon:2675230
+    - NCBITaxon:2675231
+    - NCBITaxon:2675232
+    - NCBITaxon:2675233
+    - NCBITaxon:2675234
+    - NCBITaxon:186817
+    - NCBITaxon:1239
+named_entities:
+  - id: NCBITaxon:1386
+    label: Bacillus
+    original_spans:
+      - 90:97
+      - 131:138
+      - 153:160
+      - 177:184
+      - 201:208
+      - 224:231
+      - 248:255
+      - 281:288
+      - 311:318
+      - 457:464
+      - 623:630
+      - 1062:1069
+      - 1154:1161
+      - 1437:1444
+      - 1837:1844
+      - 1951:1958
+      - 1975:1982
+      - 1999:2006
+      - 2022:2029
+      - 2046:2053
+      - 2079:2086
+      - 2195:2202
+  - id: NCBITaxon:2675229
+    label: Peribacillus
+    original_spans:
+      - 149:160
+      - 1947:1958
+  - id: NCBITaxon:2675230
+    label: Cytobacillus
+    original_spans:
+      - 173:184
+      - 1971:1982
+  - id: NCBITaxon:2675231
+    label: Mesobacillus
+    original_spans:
+      - 197:208
+      - 1995:2006
+  - id: NCBITaxon:2675232
+    label: Neobacillus
+    original_spans:
+      - 221:231
+      - 2019:2029
+  - id: NCBITaxon:2675233
+    label: Metabacillus
+    original_spans:
+      - 244:255
+      - 2042:2053
+  - id: NCBITaxon:2675234
+    label: Alkalihalobacillus
+    original_spans:
+      - 271:288
+      - 2069:2086
+  - id: NCBITaxon:1239
+    label: Firmicutes
+    original_spans:
+      - 946:955
+---
+input_text: |
+  Erysipelothrix larvae sp. nov., isolated from the larval gut of the rhinoceros beetle, Trypoxylus dichotomus (Coleoptera: Scarabaeidae).
+
+  A novel, Gram-stain positive, facultative anaerobic, non-motile and straight to curve rod shaped bacterium, strain LV19(T) was isolated from the larval gut of the rhinoceros beetle, Trypoxylus dichotomus, which was collected from Yeong-dong, Chuncheongbuk-do, South Korea. The colonies of the new isolate were convex, circular, cream white in color and 1-2 mm in diameter after 3 days incubation on Tryptic Soy Agar at 37 °C. Based on the 16S rRNA gene sequence similarity, the new isolate was most closely related to Erysipelothrix inopinata MF-EP02(T), E. rhusiopathiae ATCC 19414 (T) and E. tonsillarum T-305(T) (94.8, 93.8 and 93.7 % similarity, respectively). Strain LV19(T) grew optimally at 37 °C, at pH 8.0 and in the presence of 0.5 % (w/v) NaCl. Oxidase activity and catalase activity were negative. The major cellular fatty acids (>10 %) were C18:2 cis-9,12 (28.9 %), C18:1 cis-9 (22.3 %), C16:0 (22.2 %) and C18:0 (18.5 %). The cell-wall hydrolysates contained ribose as a major sugar. Major polar lipids were phosphatidylglycerol and three unidentified glycolipids. No quinone was detected. The G+C content of the genomic DNA was 36.3 mol%. The levels of DNA-DNA relatedness between strain LV19(T) and all the reference strains were less than 20 %. On the basis of polyphasic evidence from this study, the isolate is considered to represent a novel species of the genus Erysipelothrix, for which the name Erysipelothrix larvae sp. nov. is proposed; the type strain is LV19(T) (=KCTC 33523(T) = DSM 28480(T)).
+
+  PMID:25534074
+raw_completion_output: |-
+  Certainly! Here's the extracted information from the text provided:
+
+  - **organisms**: Erysipelothrix larvae sp. nov.; Erysipelothrix inopinata MF-EP02(T); E. rhusiopathiae ATCC 19414 (T); E. tonsillarum T-305(T); Trypoxylus dichotomus
+  - **chemical_compounds**: NaCl; ribose
+  - **enzymes**: oxidase; catalase
+  - **lipids_fatty_acids**: C18:2 cis-9,12; C18:1 cis-9; C16:0; C18:0; phosphatidylglycerol
+  - **microbial_phenotypes**: Gram-stain positive; facultative anaerobic; non-motile; straight to curve rod shaped
+  - **environments**: larval gut of the rhinoceros beetle; Yeong-dong, Chuncheongbuk-do, South Korea; Tryptic Soy Agar
+  - **organism_compound_relationships**: None explicitly mentioned in the text.
+  - **organism_phenotype_relationships**: strain LV19(T) is Gram-stain positive; strain LV19(T) is facultative anaerobic; strain LV19(T) is non-motile; strain LV19(T) is straight to curve rod shaped
+  - **organism_environment_relationships**: Erysipelothrix larvae sp. nov. isolated from the larval gut of Trypoxylus dichotomus
+  - **organism_enzyme_relationships**: strain LV19(T) does not produce oxidase; strain LV19(T) does not produce catalase
+  - **organism_lipid_relationships**: strain LV19(T) contains C18:2 cis-9,12; strain LV19(T) contains C18:1 cis-9; strain LV19(T) contains C16:0; strain LV19(T) contains C18:0; strain LV19(T) contains phosphatidylglycerol
+prompt: |+
+  From the text below, extract the following entities in the following format:
+
+  organisms: <semicolon-separated list of all microorganisms, bacterial species, strains, and taxonomic entities mentioned in the text>
+  chemical_compounds: <semicolon-separated list of chemical compounds, substrates, products, metabolites, and biochemical substances mentioned in the text. INCLUDES carbohydrates, sugars, organic acids, alcohols, nitrate, nitrite, sulfate, phosphate, and other inorganic compounds that organisms can utilize, metabolize, or interact with. EXCLUDES enzymes, proteins, lipids, and fatty acids which should be extracted separately.>
+  enzymes: <semicolon-separated list of enzymes, proteins with catalytic activity, and enzymatic complexes mentioned in the text>
+  lipids_fatty_acids: <semicolon-separated list of lipids, fatty acids, membrane components, and lipid-related molecules mentioned in the text. INCLUDES phospholipids, triglycerides, fatty acid chains (e.g., C16:0, C18:1), membrane lipids, cholesterol, sphingolipids, and other lipid-based cellular components.>
+  microbial_phenotypes: <semicolon-separated list of microbial phenotypic characteristics including: oxygen requirements (aerobic, anaerobic), temperature preferences (thermophilic, mesophilic), pH preferences, salt tolerance, morphological traits, Gram staining results,  motility, spore formation, and other physiological properties. EXCLUDES chemical utilization patterns which should be captured as organism_compound_relationships.>
+  environments: <semicolon-separated list of environmental contexts, habitats, ecological niches, and growth conditions mentioned in the text>
+  organism_compound_relationships: <semicolon-separated list of organism-compound interactions including utilization, production, metabolism, fermentation, oxidation, reduction, and resistance relationships found in the text. INCLUDES statements like "uses carbohydrates as carbon sources", "reduces nitrate to nitrite", "ferments glucose", "oxidizes sulfur compounds".>
+  organism_phenotype_relationships: <semicolon-separated list of organism-phenotype associations such as "organism is thermophilic", "strain exhibits motility", "bacterium is Gram-positive". EXCLUDES chemical utilization patterns like "uses carbohydrates" which should be  captured as organism_compound_relationships.>
+  organism_environment_relationships: <semicolon-separated list of organism-environment associations such as "organism inhabits marine sediments", "strain isolated from soil">
+  organism_enzyme_relationships: <semicolon-separated list of organism-enzyme relationships such as "organism produces catalase", "strain expresses oxidase activity">
+  organism_lipid_relationships: <semicolon-separated list of organism-lipid relationships such as "organism contains phospholipids", "strain synthesizes fatty acids">
+
+
+  Text:
+  Erysipelothrix larvae sp. nov., isolated from the larval gut of the rhinoceros beetle, Trypoxylus dichotomus (Coleoptera: Scarabaeidae).
+
+  A novel, Gram-stain positive, facultative anaerobic, non-motile and straight to curve rod shaped bacterium, strain LV19(T) was isolated from the larval gut of the rhinoceros beetle, Trypoxylus dichotomus, which was collected from Yeong-dong, Chuncheongbuk-do, South Korea. The colonies of the new isolate were convex, circular, cream white in color and 1-2 mm in diameter after 3 days incubation on Tryptic Soy Agar at 37 °C. Based on the 16S rRNA gene sequence similarity, the new isolate was most closely related to Erysipelothrix inopinata MF-EP02(T), E. rhusiopathiae ATCC 19414 (T) and E. tonsillarum T-305(T) (94.8, 93.8 and 93.7 % similarity, respectively). Strain LV19(T) grew optimally at 37 °C, at pH 8.0 and in the presence of 0.5 % (w/v) NaCl. Oxidase activity and catalase activity were negative. The major cellular fatty acids (>10 %) were C18:2 cis-9,12 (28.9 %), C18:1 cis-9 (22.3 %), C16:0 (22.2 %) and C18:0 (18.5 %). The cell-wall hydrolysates contained ribose as a major sugar. Major polar lipids were phosphatidylglycerol and three unidentified glycolipids. No quinone was detected. The G+C content of the genomic DNA was 36.3 mol%. The levels of DNA-DNA relatedness between strain LV19(T) and all the reference strains were less than 20 %. On the basis of polyphasic evidence from this study, the isolate is considered to represent a novel species of the genus Erysipelothrix, for which the name Erysipelothrix larvae sp. nov. is proposed; the type strain is LV19(T) (=KCTC 33523(T) = DSM 28480(T)).
+
+  PMID:25534074
+
+
+  ===
+
+extracted_object: {}
+---
+input_text: |
+  Amnibacterium endophyticum sp. nov., an endophytic actinobacterium isolated from Aegiceras corniculatum.
+
+  A Gram-stain-positive, aerobic, non-motile, non-spore-forming and short-rod-shaped actinobacterium, designated strain 1T4Z-3T, was isolated from a piece of surface-sterilized branch of Aegiceras corniculatum collected from the Cotai Ecological Zones in Macao, China. Comparative 16S rRNA gene sequence analysis showed that strain 1T4Z-3T was clearly affiliated to the genus Amnibacterium and exhibited 97.9 % gene sequence similarity to Amnibacterium kyonggiense JCM 16463T, 97.3 % gene sequence similarity to Amnibacterium soli JCM 19015T and less than 96.4 % gene sequence similarities to other genera of the family Microbacteriaceae. Strain 1T4Z-3T had L-2,4-diaminobutyric acid as the diagnostic cell-wall diamino acid. The major fatty acids (>10 % of total fatty acids) were iso-C16 : 0 (46.6 %) and anteiso-C15 : 0 (27.3 %). The predominant menaquinones of strain 1T4Z-3T were MK-11 (81.4 %) and MK-12 (14.1 %). The polar lipids comprised diphosphatidylglycerol, phosphatidylglycerol, six unidentified glycolipids, four unidentified phospholipids and two unidentified lipids. The DNA G+C content of strain 1T4Z-3T was 71.4 mol%. Based on the phylogenetic, phenotypic and chemotaxonomic features, strain 1T4Z-3T is considered to represent a novel species of the genus Amnibacterium, for which the name Amnibacterium endophyticum sp. nov. is proposed. The type strain of Amnibacterium endophyticum is 1T4Z-3T (=KCTC 39983T=CGMCC 1.16066T).
+
+  PMID:29498617
+raw_completion_output: |-
+  organisms: Amnibacterium endophyticum;Amnibacterium kyonggiense;Amnibacterium soli;Microbacteriaceae;Amnibacterium  
+  chemical_compounds: L-2,4-diaminobutyric acid  
+  enzymes:   
+  lipids_fatty_acids: iso-C16:0;anteiso-C15:0;menaquinones MK-11;menaquinones MK-12;diphosphatidylglycerol;phosphatidylglycerol  
+  microbial_phenotypes: Gram-stain-positive;aerobic;non-motile;non-spore-forming;short-rod-shaped  
+  environments: endophytic;Cotai Ecological Zones  
+  organism_compound_relationships: strain 1T4Z-3T had L-2,4-diaminobutyric acid as the diagnostic cell-wall diamino acid  
+  organism_phenotype_relationships: Amnibacterium endophyticum is Gram-stain-positive;Amnibacterium endophyticum is aerobic;Amnibacterium endophyticum is non-motile;Amnibacterium endophyticum is non-spore-forming;Amnibacterium endophyticum is short-rod-shaped  
+  organism_environment_relationships: Amnibacterium endophyticum is endophytic;strain 1T4Z-3T isolated from Cotai Ecological Zones  
+  organism_enzyme_relationships:   
+  organism_lipid_relationships: strain 1T4Z-3T contains iso-C16:0;strain 1T4Z-3T contains anteiso-C15:0;strain 1T4Z-3T contains menaquinones MK-11;strain 1T4Z-3T contains menaquinones MK-12;strain 1T4Z-3T contains diphosphatidylglycerol;strain 1T4Z-3T contains phosphatidylglycerol  
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  organism: <the organism, species, or strain associated with the environment>
+  environment: <the environmental context or habitat>
+  relationship_type: <the type of environmental associationMust be one of: inhabits, isolated_from, found_in, adapted_to, grows_in, thrives_in>
+
+
+  Text:
+  strain 1T4Z-3T isolated from Cotai Ecological Zones
+
+  ===
+
+extracted_object:
+  organisms:
+    - NCBITaxon:2109337
+    - NCBITaxon:595671
+    - NCBITaxon:1282736
+    - NCBITaxon:85023
+    - NCBITaxon:1029631
+  chemical_compounds:
+    - CHEBI:48950
+  microbial_phenotypes:
+    - AUTO:Gram-stain-positive
+    - <https://w3id.org/metpo/1000008>
+    - <https://w3id.org/metpo/1000380>
+    - AUTO:non-spore-forming
+    - AUTO:short-rod-shaped
+  environments:
+    - AUTO:endophytic
+    - AUTO:Cotai%20Ecological%20Zones
+  organism_compound_relationships:
+    - organism: AUTO:strain%201T4Z-3T
+      compound: CHEBI:48950
+      relationship_type: uses_in_other_way
+  organism_phenotype_relationships:
+    - organism: NCBITaxon:2109337
+      phenotype: AUTO:Gram-stain-positive
+      relationship_type: is_characterized_by
+    - organism: NCBITaxon:2109337
+      phenotype: <https://w3id.org/metpo/1000008>
+      relationship_type: is_characterized_by
+    - organism: NCBITaxon:2109337
+      phenotype: <https://w3id.org/metpo/1000380>
+      relationship_type: is_characterized_by
+    - organism: NCBITaxon:2109337
+      phenotype: AUTO:non-spore-forming
+      relationship_type: is_characterized_by
+    - organism: NCBITaxon:2109337
+      phenotype: AUTO:short-rod-shaped
+      relationship_type: is_characterized_by
+  organism_environment_relationships:
+    - organism: NCBITaxon:2109337
+      environment: AUTO:endophytic
+      relationship_type: adapted_to
+    - organism: AUTO:strain%201T4Z-3T
+      environment: AUTO:Cotai%20Ecological%20Zones
+      relationship_type: isolated_from
+named_entities:
+  - id: NCBITaxon:2109337
+    label: Amnibacterium endophyticum
+    original_spans:
+      - 0:25
+      - 1413:1438
+      - 1481:1506
+  - id: NCBITaxon:595671
+    label: Amnibacterium kyonggiense
+    original_spans:
+      - 543:567
+  - id: NCBITaxon:1282736
+    label: Amnibacterium soli
+    original_spans:
+      - 616:633
+  - id: NCBITaxon:85023
+    label: Microbacteriaceae
+    original_spans:
+      - 724:740
+  - id: NCBITaxon:1029631
+    label: Amnibacterium
+    original_spans:
+      - 0:12
+      - 480:492
+      - 543:555
+      - 616:628
+      - 1379:1391
+      - 1413:1425
+      - 1481:1493
+  - id: CHEBI:48950
+    label: L-2,4-diaminobutyric acid
+    original_spans:
+      - 762:786
+  - id: AUTO:endophytic
+    label: endophytic
+    original_spans:
+      - 14:23
+      - 40:49
+      - 1427:1436
+      - 1495:1504
+  - id: AUTO:Cotai%20Ecological%20Zones
+    label: Cotai Ecological Zones
+    original_spans:
+      - 333:354
+  - id: AUTO:strain%201T4Z-3T
+    label: strain 1T4Z-3T
+    original_spans:
+      - 217:230
+      - 429:442
+      - 743:756
+      - 969:982
+      - 1211:1224
+      - 1308:1321
+---
+input_text: |
+  Non-contiguous finished genome sequence of Anoxybacillus flavithermus subsp. yunnanensis type strain (E13(T)), a strictly thermophilic and organic solvent-tolerant bacterium.
+
+  Anoxybacillus flavithermus subsp. yunnanensis is the only strictly thermophilic bacterium that is able to tolerate a broad range of toxic solvents at its optimal temperature of 55-60°C. The type strain E13(T) was isolated from water-sediment slurries collected from a hot spring. This study presents the draft genome sequence of A. flavithermus subsp. yunnanensis E13(T) and its annotation. The 2,838,393bp long genome (67 contigs) contains 3,035 protein-coding genes and 85 RNA genes, including 10 rRNA genes, and no plasmids. The genome information has been used to compare with the genomes from A. flavithermus subsp. flavithermus strains.
+
+  PMID:25197458
+raw_completion_output: |-
+  organisms: Anoxybacillus flavithermus subsp. yunnanensis;Anoxybacillus flavithermus subsp. flavithermus  
+  chemical_compounds: organic solvents;water  
+  enzymes: rRNA  
+  lipids_fatty_acids:  
+  microbial_phenotypes: thermophilic  
+  environments: water-sediment slurries;hot spring  
+  organism_compound_relationships: Anoxybacillus flavithermus subsp. yunnanensis tolerates organic solvents  
+  organism_phenotype_relationships: Anoxybacillus flavithermus subsp. yunnanensis is thermophilic  
+  organism_environment_relationships: Anoxybacillus flavithermus subsp. yunnanensis isolated from water-sediment slurries;Anoxybacillus flavithermus subsp. yunnanensis isolated from hot spring  
+  organism_enzyme_relationships:  
+  organism_lipid_relationships:  
+prompt: |+
+  From the text below, extract the following entities in the following format:
+
+  organism: <the organism, species, or strain associated with the environment>
+  environment: <the environmental context or habitat>
+  relationship_type: <the type of environmental associationMust be one of: inhabits, isolated_from, found_in, adapted_to, grows_in, thrives_in>
+
+
+  Text:
+  Anoxybacillus flavithermus subsp. yunnanensis isolated from hot spring
+
+  ===
+
+extracted_object:
+  organisms:
+    - NCBITaxon:759846
+    - NCBITaxon:1185649
+  chemical_compounds:
+    - AUTO:organic%20solvents
+    - CHEBI:15377
+  enzymes:
+    - AUTO:rRNA
+  environments:
+    - AUTO:water-sediment%20slurries
+    - ENVO:00000051
+  organism_compound_relationships:
+    - organism: NCBITaxon:759846
+      compound: AUTO:organic%20solvents
+      relationship_type: uses_in_other_way
+  organism_phenotype_relationships:
+    - organism: NCBITaxon:759846
+      phenotype: <https://w3id.org/metpo/1000308>
+      relationship_type: is_characterized_by
+  organism_environment_relationships:
+    - organism: NCBITaxon:759846
+      environment: AUTO:water-sediment%20slurries
+      relationship_type: isolated_from
+    - organism: NCBITaxon:759846
+      environment: ENVO:00000051
+      relationship_type: isolated_from
+named_entities:
+  - id: NCBITaxon:759846
+    label: Anoxybacillus flavithermus subsp. yunnanensis
+    original_spans:
+      - 43:87
+      - 176:220
+  - id: NCBITaxon:1185649
+    label: Anoxybacillus flavithermus subsp. flavithermus
+  - id: AUTO:organic%20solvents
+    label: organic solvents
+  - id: AUTO:rRNA
+    label: rRNA
+    original_spans:
+      - 675:678
+  - id: AUTO:water-sediment%20slurries
+    label: water-sediment slurries
+    original_spans:
+      - 403:425
+  - id: ENVO:00000051
+    label: hot spring
+    original_spans:
+      - 444:453
+---
+input_text: |
+  Corrigendum: Streptococcus pharyngis sp. nov., a novel streptococcal species isolated from the respiratory tract of wild rabbits.
+
+  No abstract available
+
+  PMID:35333150
+raw_completion_output: |-
+  organisms: Streptococcus pharyngis;streptococcal species
+  chemical_compounds: 
+  enzymes: 
+  lipids_fatty_acids: 
+  microbial_phenotypes: 
+  environments: respiratory tract
+  organism_compound_relationships: 
+  organism_phenotype_relationships: 
+  organism_environment_relationships: Streptococcus pharyngis isolated from respiratory tract;streptococcal species isolated from respiratory tract
+  organism_enzyme_relationships: 
+  organism_lipid_relationships: 
+prompt: |+
+  From the text below, extract the following entities in the following format:
+
+  organisms: <semicolon-separated list of all microorganisms, bacterial species, strains, and taxonomic entities mentioned in the text>
+  chemical_compounds: <semicolon-separated list of chemical compounds, substrates, products, metabolites, and biochemical substances mentioned in the text. INCLUDES carbohydrates, sugars, organic acids, alcohols, nitrate, nitrite, sulfate, phosphate, and other inorganic compounds that organisms can utilize, metabolize, or interact with. EXCLUDES enzymes, proteins, lipids, and fatty acids which should be extracted separately.>
+  enzymes: <semicolon-separated list of enzymes, proteins with catalytic activity, and enzymatic complexes mentioned in the text>
+  lipids_fatty_acids: <semicolon-separated list of lipids, fatty acids, membrane components, and lipid-related molecules mentioned in the text. INCLUDES phospholipids, triglycerides, fatty acid chains (e.g., C16:0, C18:1), membrane lipids, cholesterol, sphingolipids, and other lipid-based cellular components.>
+  microbial_phenotypes: <semicolon-separated list of microbial phenotypic characteristics including: oxygen requirements (aerobic, anaerobic), temperature preferences (thermophilic, mesophilic), pH preferences, salt tolerance, morphological traits, Gram staining results,  motility, spore formation, and other physiological properties. EXCLUDES chemical utilization patterns which should be captured as organism_compound_relationships.>
+  environments: <semicolon-separated list of environmental contexts, habitats, ecological niches, and growth conditions mentioned in the text>
+  organism_compound_relationships: <semicolon-separated list of organism-compound interactions including utilization, production, metabolism, fermentation, oxidation, reduction, and resistance relationships found in the text. INCLUDES statements like "uses carbohydrates as carbon sources", "reduces nitrate to nitrite", "ferments glucose", "oxidizes sulfur compounds".>
+  organism_phenotype_relationships: <semicolon-separated list of organism-phenotype associations such as "organism is thermophilic", "strain exhibits motility", "bacterium is Gram-positive". EXCLUDES chemical utilization patterns like "uses carbohydrates" which should be  captured as organism_compound_relationships.>
+  organism_environment_relationships: <semicolon-separated list of organism-environment associations such as "organism inhabits marine sediments", "strain isolated from soil">
+  organism_enzyme_relationships: <semicolon-separated list of organism-enzyme relationships such as "organism produces catalase", "strain expresses oxidase activity">
+  organism_lipid_relationships: <semicolon-separated list of organism-lipid relationships such as "organism contains phospholipids", "strain synthesizes fatty acids">
+
+
+  Text:
+  Corrigendum: Streptococcus pharyngis sp. nov., a novel streptococcal species isolated from the respiratory tract of wild rabbits.
+
+  No abstract available
+
+  PMID:35333150
+
+
+  ===
+
+extracted_object:
+  organisms:
+    - NCBITaxon:1562651
+    - AUTO:streptococcal%20species
+named_entities:
+  - id: NCBITaxon:1562651
+    label: Streptococcus pharyngis
+    original_spans:
+      - 13:35
+  - id: AUTO:streptococcal%20species
+    label: streptococcal species
+    original_spans:
+      - 55:75
+---
+input_text: |
+  CULTURAL STUDIES ON MOUTH SPIROCHAETAE (TREPONEMA MICRODENTIUM AND MACRODENTIUM).
+
+  I have described the successful cultivation of two distinct species of Treponema from the oral cavity of man. The species differ from one another morphologically and in respect to their cultural properties. As the two species have now been clearly separated and cultivated for the first time, I propose for them the names Treponema microdentium and macrodentium, respectively. Division along the longitudinal axis has been demonstrated for both Treponema macrodentium and microdentium. When the micro- and macrodentium are cultivated under imperfect anaerobic conditions, they undergo involution, but still continue to vegetate to some extent. Finally, a spiral organism has been cultivated and described that may be merely an involuted form of the macrodentium, or it may be a new species altogether.
+
+  PMID:19867507
+raw_completion_output: |-
+  organisms: Treponema;Treponema microdentium;Treponema macrodentium  
+  chemical_compounds:  
+  enzymes:  
+  lipids_fatty_acids:  
+  microbial_phenotypes: anaerobic  
+  environments: oral cavity  
+  organism_compound_relationships:   
+  organism_phenotype_relationships: Treponema microdentium is anaerobic;Treponema macrodentium is anaerobic  
+  organism_environment_relationships: Treponema microdentium inhabits oral cavity;Treponema macrodentium inhabits oral cavity  
+  organism_enzyme_relationships:  
+  organism_lipid_relationships:  
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  organism: <the organism, species, or strain associated with the environment>
+  environment: <the environmental context or habitat>
+  relationship_type: <the type of environmental associationMust be one of: inhabits, isolated_from, found_in, adapted_to, grows_in, thrives_in>
+
+
+  Text:
+  Treponema macrodentium inhabits oral cavity
+
+  ===
+
+extracted_object:
+  organisms:
+    - NCBITaxon:157
+    - NCBITaxon:158
+    - AUTO:Treponema%20macrodentium
+  environments:
+    - AUTO:oral%20cavity
+  organism_environment_relationships:
+    - organism: NCBITaxon:158
+      environment: AUTO:oral%20cavity
+      relationship_type: inhabits
+    - organism: AUTO:Treponema%20macrodentium
+      environment: AUTO:oral%20cavity
+      relationship_type: inhabits
+named_entities:
+  - id: NCBITaxon:157
+    label: Treponema
+    original_spans:
+      - 40:48
+      - 154:162
+      - 405:413
+      - 528:536
+  - id: NCBITaxon:158
+    label: Treponema microdentium
+    original_spans:
+      - 40:61
+      - 405:426
+  - id: AUTO:Treponema%20macrodentium
+    label: Treponema macrodentium
+    original_spans:
+      - 528:549
+  - id: AUTO:oral%20cavity
+    label: oral cavity
+    original_spans:
+      - 173:183
+---
+input_text: |
+  Phylogeny of human intestinal spirochaetes inferred from 16S rDNA sequence comparisons.
+
+  The sequence of 1383 nucleotides of the DNA encoding 16S rDNA was determined for strains of human intestinal spirochaetes, comprising an unnamed isolate and "Brachyspira aalborgi" NCTC 11492. A phylogenetic tree was inferred from aligned sequence comparisons between the intestinal spirochaetes, representatives of the Spirochaetales and Escherichia coli. The type strain of Brachyspira aalborgi, though related to the Serpulina spp. at approx. 96.5% sequence similarity was distinct and separated from the unnamed human intestinal isolate, HIS Oman, N26. The latter formed a separated and novel lineage that bisected the Spirochaetales.
+
+  PMID:8200510
+raw_completion_output: |-
+  organisms: Brachyspira aalborgi;Serpulina spp.;Escherichia coli;Human intestinal spirochaetes;Spirochaetales
+  chemical_compounds: none
+  enzymes: none
+  lipids_fatty_acids: none
+  microbial_phenotypes: none
+  environments: human intestine
+  organism_compound_relationships: none
+  organism_phenotype_relationships: none
+  organism_environment_relationships: Human intestinal spirochaetes inhabit human intestine;Brachyspira aalborgi inhabits human intestine
+  organism_enzyme_relationships: none
+  organism_lipid_relationships: none
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  organism: <the organism, species, or strain associated with the lipid>
+  lipid: <the lipid, fatty acid, or lipid-related molecule>
+  relationship_type: <the type of lipid-related relationshipMust be one of: synthesizes, contains, produces, accumulates, lacks, metabolizes, incorporates, modifies>
+
+
+  Text:
+  none
+
+  ===
+
+extracted_object:
+  organisms:
+    - NCBITaxon:29522
+    - AUTO:Serpulina%20spp.
+    - NCBITaxon:562
+    - AUTO:Human%20intestinal%20spirochaetes
+    - NCBITaxon:136
+  chemical_compounds:
+    - AUTO:none
+  enzymes:
+    - AUTO:none
+  lipids_fatty_acids:
+    - AUTO:none
+  microbial_phenotypes:
+    - AUTO:none
+  environments:
+    - AUTO:human%20intestine
+  organism_phenotype_relationships:
+    - organism: NCBITaxon:32644
+      phenotype: AUTO:none
+  organism_environment_relationships:
+    - organism: AUTO:Human%20intestinal%20spirochaetes
+      environment: AUTO:human%20intestine
+      relationship_type: inhabits
+    - organism: NCBITaxon:29522
+      environment: AUTO:human%20intestine
+      relationship_type: inhabits
+  organism_lipid_relationships:
+    - organism: NCBITaxon:32644
+      lipid: AUTO:none
+named_entities:
+  - id: NCBITaxon:29522
+    label: Brachyspira aalborgi
+    original_spans:
+      - 247:266
+      - 464:483
+  - id: AUTO:Serpulina%20spp.
+    label: Serpulina spp.
+    original_spans:
+      - 508:521
+  - id: NCBITaxon:562
+    label: Escherichia coli
+    original_spans:
+      - 427:442
+  - id: AUTO:Human%20intestinal%20spirochaetes
+    label: Human intestinal spirochaetes
+    original_spans:
+      - 13:41
+      - 181:209
+  - id: NCBITaxon:136
+    label: Spirochaetales
+    original_spans:
+      - 408:421
+      - 711:724
+  - id: AUTO:human%20intestine
+    label: human intestine
+---
+input_text: |
+  Non-contiguous finished genome sequence and description of Anaerococcus vaginalis.
+
+  We report the properties of a draft genome sequence of the bacterium Anaerococcus vaginalis strain PH9, a species within the Anaerococcus genus. This strain, whose genome is described here, was isolated from the fecal flora of a 26-year-old woman suffering from morbid obesity. A. vaginalis is an obligate anaerobic coccus. Here we describe the features of this organism, together with the complete genome sequence and annotation. The 2,048,125-bp long (one chromosome but no plasmid) and contains 2,095 protein-coding and 38 RNA genes, including three rRNA genes.
+
+  PMID:23407456
+raw_completion_output: |-
+  organisms: Anaerococcus vaginalis;Anaerococcus vaginalis strain PH9;Anaerococcus genus  
+  chemical_compounds: None  
+  enzymes: None  
+  lipids_fatty_acids: None  
+  microbial_phenotypes: obligate anaerobic; coccus  
+  environments: fecal flora  
+  organism_compound_relationships: None  
+  organism_phenotype_relationships: Anaerococcus vaginalis is obligate anaerobic; Anaerococcus vaginalis is coccus  
+  organism_environment_relationships: Anaerococcus vaginalis strain PH9 isolated from fecal flora  
+  organism_enzyme_relationships: None  
+  organism_lipid_relationships: None  
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  organism: <the organism, species, or strain associated with the lipid>
+  lipid: <the lipid, fatty acid, or lipid-related molecule>
+  relationship_type: <the type of lipid-related relationshipMust be one of: synthesizes, contains, produces, accumulates, lacks, metabolizes, incorporates, modifies>
+
+
+  Text:
+  None
+
+  ===
+
+extracted_object:
+  organisms:
+    - NCBITaxon:33037
+    - AUTO:Anaerococcus%20vaginalis%20strain%20PH9
+    - AUTO:Anaerococcus%20genus
+  chemical_compounds:
+    - AUTO:None
+  enzymes:
+    - AUTO:None
+  lipids_fatty_acids:
+    - AUTO:None
+  microbial_phenotypes:
+    - AUTO:obligate%20anaerobic
+    - <https://w3id.org/metpo/1000066>
+  environments:
+    - AUTO:fecal%20flora
+  organism_phenotype_relationships:
+    - organism: NCBITaxon:33037
+      phenotype: AUTO:obligate%20anaerobic
+      relationship_type: is_characterized_by
+    - organism: NCBITaxon:33037
+      phenotype: <https://w3id.org/metpo/1000066>
+      relationship_type: is_characterized_by
+  organism_environment_relationships:
+    - organism: AUTO:Anaerococcus%20vaginalis%20strain%20PH9
+      environment: AUTO:fecal%20flora
+      relationship_type: isolated_from
+  organism_enzyme_relationships:
+    - organism: NCBITaxon:32644
+      enzyme: AUTO:None
+named_entities:
+  - id: NCBITaxon:33037
+    label: Anaerococcus vaginalis
+    original_spans:
+      - 59:80
+      - 153:174
+  - id: AUTO:Anaerococcus%20vaginalis%20strain%20PH9
+    label: Anaerococcus vaginalis strain PH9
+    original_spans:
+      - 153:185
+  - id: AUTO:Anaerococcus%20genus
+    label: Anaerococcus genus
+    original_spans:
+      - 209:226
+  - id: AUTO:None
+    label: None
+  - id: AUTO:obligate%20anaerobic
+    label: obligate anaerobic
+    original_spans:
+      - 381:398
+  - id: <https://w3id.org/metpo/1000066>
+    label: coccus
+    original_spans:
+      - 65:70
+      - 159:164
+      - 215:220
+      - 400:405
+  - id: AUTO:fecal%20flora
+    label: fecal flora
+    original_spans:
+      - 296:306
