@@ -1,0 +1,585 @@
+name: d3o_documentation_schema
+description: D3O schema inferred from OWL inferred from documentation at Bacdive SPARQL endpoint
+id: https://example.com/d3o_documentation_schema
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  d3o: https://example.com/d3o_documentation_schema/
+default_prefix: d3o
+slots:
+  describesStrain:
+    slot_uri: d3o:describesStrain
+    range: Strain
+    multivalued: true
+  hasReference:
+    slot_uri: d3o:hasReference
+    range: Reference
+    multivalued: true
+  fromSequenceDB:
+    slot_uri: d3o:fromSequenceDB
+    multivalued: true
+  growthObserved:
+    slot_uri: d3o:growthObserved
+    multivalued: true
+  hasAbility:
+    slot_uri: d3o:hasAbility
+    multivalued: true
+  hasActivity:
+    slot_uri: d3o:hasActivity
+    multivalued: true
+  hasAssemblyLevel:
+    slot_uri: d3o:hasAssemblyLevel
+    multivalued: true
+  hasBacDiveID:
+    slot_uri: d3o:hasBacDiveID
+    multivalued: true
+  hasBibliographicInformation:
+    slot_uri: d3o:hasBibliographicInformation
+    multivalued: true
+  hasBiosafetyLevel:
+    slot_uri: d3o:hasBiosafetyLevel
+    multivalued: true
+  hasCatalogueID:
+    slot_uri: d3o:hasCatalogueID
+    multivalued: true
+  hasCatalogueInformation:
+    slot_uri: d3o:hasCatalogueInformation
+    multivalued: true
+  hasCatalogueInstitution:
+    slot_uri: d3o:hasCatalogueInstitution
+    multivalued: true
+  hasClass:
+    slot_uri: d3o:hasClass
+    multivalued: true
+  hasColonyColor:
+    slot_uri: d3o:hasColonyColor
+    multivalued: true
+  hasColonyMorphologyInformation:
+    slot_uri: d3o:hasColonyMorphologyInformation
+    multivalued: true
+  hasColonyShape:
+    slot_uri: d3o:hasColonyShape
+    multivalued: true
+  hasCountry:
+    slot_uri: d3o:hasCountry
+    multivalued: true
+  hasDesignation:
+    slot_uri: d3o:hasDesignation
+    multivalued: true
+  hasDocumentType:
+    slot_uri: d3o:hasDocumentType
+    multivalued: true
+  hasDomain:
+    slot_uri: d3o:hasDomain
+    multivalued: true
+  hasECNumber:
+    slot_uri: d3o:hasECNumber
+    multivalued: true
+  hasEnzyme:
+    slot_uri: d3o:hasEnzyme
+    multivalued: true
+  hasFamily:
+    slot_uri: d3o:hasFamily
+    multivalued: true
+  hasGCContentRangeEnd:
+    slot_uri: d3o:hasGCContentRangeEnd
+    multivalued: true
+  hasGCContentRangeStart:
+    slot_uri: d3o:hasGCContentRangeStart
+    multivalued: true
+  hasGCInformation:
+    slot_uri: d3o:hasGCInformation
+    multivalued: true
+  hasGCMethod:
+    slot_uri: d3o:hasGCMethod
+    multivalued: true
+  hasGenus:
+    slot_uri: d3o:hasGenus
+    multivalued: true
+  hasGramStain:
+    slot_uri: d3o:hasGramStain
+    multivalued: true
+  hasGrowthInformation:
+    slot_uri: d3o:hasGrowthInformation
+    multivalued: true
+  hasHemolysisAbility:
+    slot_uri: d3o:hasHemolysisAbility
+    multivalued: true
+  hasHemolysisInformation:
+    slot_uri: d3o:hasHemolysisInformation
+    multivalued: true
+  hasIncubationInformation:
+    slot_uri: d3o:hasIncubationInformation
+    multivalued: true
+  hasIncubationPeriod:
+    slot_uri: d3o:hasIncubationPeriod
+    multivalued: true
+  hasIncubationPeriodRangeEnd:
+    slot_uri: d3o:hasIncubationPeriodRangeEnd
+    multivalued: true
+  hasIncubationPeriodRangeStart:
+    slot_uri: d3o:hasIncubationPeriodRangeStart
+    multivalued: true
+  hasLength:
+    slot_uri: d3o:hasLength
+    multivalued: true
+  hasLengthRangeEnd:
+    slot_uri: d3o:hasLengthRangeEnd
+    multivalued: true
+  hasLengthRangeStart:
+    slot_uri: d3o:hasLengthRangeStart
+    multivalued: true
+  hasLengthUnit:
+    slot_uri: d3o:hasLengthUnit
+    multivalued: true
+  hasLink:
+    slot_uri: d3o:hasLink
+    multivalued: true
+  hasLocation:
+    slot_uri: d3o:hasLocation
+    multivalued: true
+  hasMediaDiveID:
+    slot_uri: d3o:hasMediaDiveID
+    multivalued: true
+  hasMediaLink:
+    slot_uri: d3o:hasMediaLink
+    multivalued: true
+  hasMediumComposition:
+    slot_uri: d3o:hasMediumComposition
+    multivalued: true
+  hasMediumGrowth:
+    slot_uri: d3o:hasMediumGrowth
+    multivalued: true
+  hasOrder:
+    slot_uri: d3o:hasOrder
+    multivalued: true
+  hasOxygenTolerance:
+    slot_uri: d3o:hasOxygenTolerance
+    multivalued: true
+  hasPHRangeEnd:
+    slot_uri: d3o:hasPHRangeEnd
+    multivalued: true
+  hasPHRangeStart:
+    slot_uri: d3o:hasPHRangeStart
+    multivalued: true
+  hasPHRangeType:
+    slot_uri: d3o:hasPHRangeType
+    multivalued: true
+  hasPhenotypeInformation:
+    slot_uri: d3o:hasPhenotypeInformation
+    multivalued: true
+  hasPhylum:
+    slot_uri: d3o:hasPhylum
+    multivalued: true
+  hasPigmentInformation:
+    slot_uri: d3o:hasPigmentInformation
+    multivalued: true
+  hasPigmentName:
+    slot_uri: d3o:hasPigmentName
+    multivalued: true
+  hasPigmentProduction:
+    slot_uri: d3o:hasPigmentProduction
+    multivalued: true
+  hasSaltConcentration:
+    slot_uri: d3o:hasSaltConcentration
+    multivalued: true
+  hasSaltConcentrationRangeEnd:
+    slot_uri: d3o:hasSaltConcentrationRangeEnd
+    multivalued: true
+  hasSaltConcentrationRangeStart:
+    slot_uri: d3o:hasSaltConcentrationRangeStart
+    multivalued: true
+  hasSaltConcentrationUnit:
+    slot_uri: d3o:hasSaltConcentrationUnit
+    multivalued: true
+  hasSaltInformation:
+    slot_uri: d3o:hasSaltInformation
+    multivalued: true
+  hasSaltType:
+    slot_uri: d3o:hasSaltType
+    multivalued: true
+  hasScientificName:
+    slot_uri: d3o:hasScientificName
+    multivalued: true
+  hasSequenceAccession:
+    slot_uri: d3o:hasSequenceAccession
+    multivalued: true
+  hasSequenceInformation:
+    slot_uri: d3o:hasSequenceInformation
+    multivalued: true
+  hasSequenceLength:
+    slot_uri: d3o:hasSequenceLength
+    multivalued: true
+  hasSpecies:
+    slot_uri: d3o:hasSpecies
+    multivalued: true
+  hasSpeciesEpithet:
+    slot_uri: d3o:hasSpeciesEpithet
+    multivalued: true
+  hasSporeType:
+    slot_uri: d3o:hasSporeType
+    multivalued: true
+  hasStrainNames:
+    slot_uri: d3o:hasStrainNames
+    multivalued: true
+  hasStrainNumber:
+    slot_uri: d3o:hasStrainNumber
+    multivalued: true
+  hasTaxID:
+    slot_uri: d3o:hasTaxID
+    multivalued: true
+  hasTaxonomicRank:
+    slot_uri: d3o:hasTaxonomicRank
+    multivalued: true
+  hasTemperatureRange:
+    slot_uri: d3o:hasTemperatureRange
+    multivalued: true
+  hasTemperatureRangeEnd:
+    slot_uri: d3o:hasTemperatureRangeEnd
+    multivalued: true
+  hasTemperatureRangeStart:
+    slot_uri: d3o:hasTemperatureRangeStart
+    multivalued: true
+  hasTestAbility:
+    slot_uri: d3o:hasTestAbility
+    multivalued: true
+  hasTestType:
+    slot_uri: d3o:hasTestType
+    multivalued: true
+  hasWidth:
+    slot_uri: d3o:hasWidth
+    multivalued: true
+  hasWidthRangeEnd:
+    slot_uri: d3o:hasWidthRangeEnd
+    multivalued: true
+  hasWidthRangeStart:
+    slot_uri: d3o:hasWidthRangeStart
+    multivalued: true
+  hasWidthUnit:
+    slot_uri: d3o:hasWidthUnit
+    multivalued: true
+  isAnimalPathogen:
+    slot_uri: d3o:isAnimalPathogen
+    multivalued: true
+  isHumanPathogen:
+    slot_uri: d3o:isHumanPathogen
+    multivalued: true
+  isMotile:
+    slot_uri: d3o:isMotile
+    multivalued: true
+  isPathogen:
+    slot_uri: d3o:isPathogen
+    multivalued: true
+  isPlantPathogen:
+    slot_uri: d3o:isPlantPathogen
+    multivalued: true
+  isTypeStrain:
+    slot_uri: d3o:isTypeStrain
+    multivalued: true
+  matchesTaxIDLevel:
+    slot_uri: d3o:matchesTaxIDLevel
+    multivalued: true
+  providedBy:
+    slot_uri: d3o:providedBy
+    multivalued: true
+classes:
+  Bacteria:
+    is_a: Prokaryotes
+    class_uri: d3o:Bacteria
+  BiologicalMaterial:
+    class_uri: d3o:BiologicalMaterial
+  CellMorphology:
+    is_a: MicrobialPhenotype
+    class_uri: d3o:CellMorphology
+  CellMotility:
+    is_a: MicrobialPhenotype
+    slots:
+    - isMotile
+    class_uri: d3o:CellMotility
+  CellPigmentation:
+    is_a: CellMorphology
+    slots:
+    - hasPigmentInformation
+    - hasPigmentName
+    - hasPigmentProduction
+    class_uri: d3o:CellPigmentation
+  CellShape:
+    is_a: CellMorphology
+    class_uri: d3o:CellShape
+  CellSize:
+    is_a: CellMorphology
+    slots:
+    - hasLength
+    - hasLengthRangeEnd
+    - hasLengthRangeStart
+    - hasLengthUnit
+    - hasWidth
+    - hasWidthRangeEnd
+    - hasWidthRangeStart
+    - hasWidthUnit
+    class_uri: d3o:CellSize
+  ColonyMorphology:
+    is_a: MicrobialPhenotype
+    slots:
+    - hasColonyColor
+    - hasColonyMorphologyInformation
+    - hasColonyShape
+    - hasHemolysisAbility
+    - hasHemolysisInformation
+    - hasIncubationInformation
+    - hasIncubationPeriod
+    - hasIncubationPeriodRangeEnd
+    - hasIncubationPeriodRangeStart
+    - hasMediumComposition
+    class_uri: d3o:ColonyMorphology
+  ConceptualEntity:
+    comments:
+    - Abstract conceptual entity
+    class_uri: d3o:ConceptualEntity
+  CultureCollectionNumber:
+    is_a: StrainNumber
+    slots:
+    - hasLink
+    class_uri: d3o:CultureCollectionNumber
+  CultureCondition:
+    is_a: ConceptualEntity
+    slots:
+    - describesStrain
+    - hasGrowthInformation
+    - hasTestType
+    class_uri: d3o:CultureCondition
+  CultureMedium:
+    is_a: CultureCondition
+    slots:
+    - hasMediaDiveID
+    - hasMediaLink
+    - hasMediumGrowth
+    - providedBy
+    class_uri: d3o:CultureMedium
+  CulturePH:
+    is_a: CultureCondition
+    slots:
+    - hasPHRangeEnd
+    - hasPHRangeStart
+    - hasPHRangeType
+    - hasTestAbility
+    - hasTestType
+    class_uri: d3o:CulturePH
+  CultureTemperature:
+    is_a: CultureCondition
+    slots:
+    - growthObserved
+    - hasTemperatureRange
+    - hasTemperatureRangeEnd
+    - hasTemperatureRangeStart
+    class_uri: d3o:CultureTemperature
+  DNASequence:
+    is_a: NucleotideSequence
+    class_uri: d3o:DNASequence
+  EnrichmentProcedure:
+    is_a: IsolationProcedure
+    class_uri: d3o:EnrichmentProcedure
+  Enzyme:
+    comments:
+    - An enzyme produced by a strain
+    slots:
+    - describesStrain
+    - hasActivity
+    - hasECNumber
+    - hasEnzyme
+    class_uri: d3o:Enzyme
+  GCContent:
+    is_a: MolecularProperty
+    slots:
+    - describesStrain
+    - hasGCContentRangeEnd
+    - hasGCContentRangeStart
+    - hasGCInformation
+    - hasGCMethod
+    class_uri: d3o:GCContent
+  GeneProduct:
+    comments:
+    - A product of gene expression
+    slots:
+    - describesStrain
+    - hasActivity
+    - hasECNumber
+    - hasEnzyme
+    class_uri: d3o:GeneProduct
+  GenomeSequence:
+    is_a: DNASequence
+    slots:
+    - hasAssemblyLevel
+    class_uri: d3o:GenomeSequence
+  GramStain:
+    is_a: CellMorphology
+    slots:
+    - hasGramStain
+    class_uri: d3o:GramStain
+  Identifier:
+    comments:
+    - An identifier for a strain or other entity
+    slots:
+    - describesStrain
+    class_uri: d3o:Identifier
+  IsolationInformation:
+    is_a: Origin
+    class_uri: d3o:IsolationInformation
+  IsolationProcedure:
+    is_a: IsolationInformation
+    class_uri: d3o:IsolationProcedure
+  IsolationSource:
+    is_a: IsolationInformation
+    class_uri: d3o:IsolationSource
+  LocationOfOrigin:
+    is_a: Origin
+    slots:
+    - hasCountry
+    - hasLocation
+    class_uri: d3o:LocationOfOrigin
+  MetabolicPhenotype:
+    is_a: Phenotype
+    class_uri: d3o:MetabolicPhenotype
+  MicrobialPhenotype:
+    is_a: Phenotype
+    slots:
+    - hasPhenotypeInformation
+    class_uri: d3o:MicrobialPhenotype
+  Microorganism:
+    is_a: BiologicalMaterial
+    class_uri: d3o:Microorganism
+  MolecularProperty:
+    is_a: PropertyOrAttribute
+    class_uri: d3o:MolecularProperty
+  NucleotideSequence:
+    slots:
+    - describesStrain
+    - fromSequenceDB
+    - hasSequenceAccession
+    - hasSequenceInformation
+    - hasTaxID
+    class_uri: d3o:NucleotideSequence
+  NutritionType:
+    is_a: MetabolicPhenotype
+    class_uri: d3o:NutritionType
+  OrganismGroup:
+    is_a: ConceptualEntity
+    class_uri: d3o:OrganismGroup
+  OrganismIdentifier:
+    is_a: Identifier
+    class_uri: d3o:OrganismIdentifier
+  Origin:
+    comments:
+    - Origin information for a strain
+    slots:
+    - describesStrain
+    class_uri: d3o:Origin
+  OxygenTolerance:
+    is_a: MetabolicPhenotype
+    slots:
+    - hasOxygenTolerance
+    class_uri: d3o:OxygenTolerance
+  Pathogenicity:
+    is_a: ConceptualEntity
+    slots:
+    - describesStrain
+    - isAnimalPathogen
+    - isHumanPathogen
+    - isPathogen
+    - isPlantPathogen
+    class_uri: d3o:Pathogenicity
+  Phenotype:
+    comments:
+    - Observable characteristics of a strain
+    slots:
+    - describesStrain
+    - hasGrowthInformation
+    class_uri: d3o:Phenotype
+  Prokaryotes:
+    is_a: Microorganism
+    class_uri: d3o:Prokaryotes
+  PropertyOrAttribute:
+    class_uri: d3o:PropertyOrAttribute
+  Protein:
+    comments:
+    - A protein molecule
+    slots:
+    - describesStrain
+    - hasActivity
+    - hasECNumber
+    - hasEnzyme
+    class_uri: d3o:Protein
+  RNASequence:
+    is_a: NucleotideSequence
+    class_uri: d3o:RNASequence
+  Reference:
+    comments:
+    - Bibliographic reference
+    slots:
+    - hasBibliographicInformation
+    - hasCatalogueID
+    - hasCatalogueInformation
+    - hasCatalogueInstitution
+    - hasDocumentType
+    class_uri: d3o:Reference
+  RiskAssessment:
+    slots:
+    - describesStrain
+    - hasBiosafetyLevel
+    class_uri: d3o:RiskAssessment
+  SaltTolerance:
+    is_a: MetabolicPhenotype
+    slots:
+    - hasSaltConcentration
+    - hasSaltConcentrationRangeEnd
+    - hasSaltConcentrationRangeStart
+    - hasSaltConcentrationUnit
+    - hasSaltInformation
+    - hasSaltType
+    - hasTestAbility
+    - hasTestType
+    class_uri: d3o:SaltTolerance
+  SporeFormation:
+    is_a: MicrobialPhenotype
+    slots:
+    - hasAbility
+    - hasSporeType
+    class_uri: d3o:SporeFormation
+  Strain:
+    comments:
+    - A microbial strain
+    slots:
+    - hasBacDiveID
+    - hasClass
+    - hasDesignation
+    - hasDomain
+    - hasFamily
+    - hasGenus
+    - hasOrder
+    - hasPhylum
+    - hasScientificName
+    - hasSpecies
+    - hasSpeciesEpithet
+    - hasStrainNames
+    - hasStrainNumber
+    - hasTaxID
+    - hasTaxonomicRank
+    - isTypeStrain
+    - matchesTaxIDLevel
+    class_uri: d3o:Strain
+  StrainDesignation:
+    is_a: OrganismIdentifier
+    class_uri: d3o:StrainDesignation
+  StrainNumber:
+    is_a: OrganismIdentifier
+    class_uri: d3o:StrainNumber
+  rRNASequence:
+    is_a: RNASequence
+    slots:
+    - hasSequenceLength
+    class_uri: d3o:rRNASequence
+  16SSequence:
+    is_a: rRNASequence
+    class_uri: https://purl.dsmz.de/schema/16SSequence
+
