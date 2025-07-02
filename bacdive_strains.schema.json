@@ -1,0 +1,6161 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "General": {
+        "type": "object",
+        "properties": {
+          "@ref": {
+            "type": "integer"
+          },
+          "BacDive-ID": {
+            "type": "integer"
+          },
+          "DSM-Number": {
+            "type": "integer"
+          },
+          "keywords": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "description": {
+            "type": "string"
+          },
+          "NCBI tax id": {
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "NCBI tax id": {
+                      "type": "integer"
+                    },
+                    "Matching level": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "Matching level",
+                    "NCBI tax id"
+                  ]
+                }
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "NCBI tax id": {
+                    "type": "integer"
+                  },
+                  "Matching level": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "Matching level",
+                  "NCBI tax id"
+                ]
+              }
+            ]
+          },
+          "strain history": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "@ref": {
+                    "type": "integer"
+                  },
+                  "history": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "@ref",
+                  "history"
+                ]
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "@ref": {
+                      "type": "integer"
+                    },
+                    "history": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "@ref",
+                    "history"
+                  ]
+                }
+              }
+            ]
+          },
+          "doi": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "@ref",
+          "BacDive-ID",
+          "description",
+          "doi"
+        ]
+      },
+      "Name and taxonomic classification": {
+        "type": "object",
+        "properties": {
+          "LPSN": {
+            "type": "object",
+            "properties": {
+              "@ref": {
+                "type": "integer"
+              },
+              "description": {
+                "type": "string"
+              },
+              "keyword": {
+                "type": "string"
+              },
+              "domain": {
+                "type": "string"
+              },
+              "phylum": {
+                "type": "string"
+              },
+              "class": {
+                "type": "string"
+              },
+              "order": {
+                "type": "string"
+              },
+              "family": {
+                "type": "string"
+              },
+              "genus": {
+                "type": "string"
+              },
+              "species": {
+                "type": "string"
+              },
+              "full scientific name": {
+                "type": "string"
+              },
+              "synonyms": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "@ref": {
+                        "type": "integer"
+                      },
+                      "synonym": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "@ref",
+                      "synonym"
+                    ]
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "@ref": {
+                          "type": "integer"
+                        },
+                        "synonym": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "@ref",
+                        "synonym"
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            "required": [
+              "@ref",
+              "full scientific name",
+              "genus",
+              "species"
+            ]
+          },
+          "@ref": {
+            "type": "integer"
+          },
+          "domain": {
+            "type": "string"
+          },
+          "phylum": {
+            "type": "string"
+          },
+          "class": {
+            "type": "string"
+          },
+          "order": {
+            "type": "string"
+          },
+          "family": {
+            "type": "string"
+          },
+          "genus": {
+            "type": "string"
+          },
+          "species": {
+            "type": "string"
+          },
+          "full scientific name": {
+            "type": "string"
+          },
+          "strain designation": {
+            "type": "string"
+          },
+          "type strain": {
+            "type": "string"
+          },
+          "variant": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "@ref",
+          "class",
+          "family",
+          "genus",
+          "order",
+          "phylum",
+          "species",
+          "type strain"
+        ]
+      },
+      "Morphology": {
+        "type": "object",
+        "properties": {
+          "cell morphology": {
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "@ref": {
+                      "type": "integer"
+                    },
+                    "gram stain": {
+                      "type": "string"
+                    },
+                    "cell length": {
+                      "type": "string"
+                    },
+                    "cell shape": {
+                      "type": "string"
+                    },
+                    "motility": {
+                      "type": "string"
+                    },
+                    "cell width": {
+                      "type": "string"
+                    },
+                    "flagellum arrangement": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "@ref"
+                  ]
+                }
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "@ref": {
+                    "type": "integer"
+                  },
+                  "gram stain": {
+                    "type": "string"
+                  },
+                  "cell shape": {
+                    "type": "string"
+                  },
+                  "motility": {
+                    "type": "string"
+                  },
+                  "cell length": {
+                    "type": "string"
+                  },
+                  "cell width": {
+                    "type": "string"
+                  },
+                  "flagellum arrangement": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "@ref"
+                ]
+              }
+            ]
+          },
+          "colony morphology": {
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "@ref": {
+                      "type": "integer"
+                    },
+                    "type of hemolysis": {
+                      "type": "string"
+                    },
+                    "colony size": {
+                      "type": "string"
+                    },
+                    "colony color": {
+                      "type": "string"
+                    },
+                    "colony shape": {
+                      "type": "string"
+                    },
+                    "incubation period": {
+                      "type": "string"
+                    },
+                    "medium used": {
+                      "type": "string"
+                    },
+                    "hemolysis ability": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "@ref"
+                  ]
+                }
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "@ref": {
+                    "type": "integer"
+                  },
+                  "incubation period": {
+                    "type": "string"
+                  },
+                  "colony size": {
+                    "type": "string"
+                  },
+                  "colony color": {
+                    "type": "string"
+                  },
+                  "colony shape": {
+                    "type": "string"
+                  },
+                  "medium used": {
+                    "type": "string"
+                  },
+                  "hemolysis ability": {
+                    "type": "string"
+                  },
+                  "type of hemolysis": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "@ref"
+                ]
+              }
+            ]
+          },
+          "multimedia": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "@ref": {
+                    "type": "integer"
+                  },
+                  "multimedia content": {
+                    "type": "string"
+                  },
+                  "caption": {
+                    "type": "string"
+                  },
+                  "intellectual property rights": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "@ref",
+                  "intellectual property rights",
+                  "multimedia content"
+                ]
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "@ref": {
+                      "type": "integer"
+                    },
+                    "multimedia content": {
+                      "type": "string"
+                    },
+                    "caption": {
+                      "type": "string"
+                    },
+                    "intellectual property rights": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "@ref",
+                    "intellectual property rights",
+                    "multimedia content"
+                  ]
+                }
+              }
+            ]
+          },
+          "pigmentation": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "@ref": {
+                    "type": "integer"
+                  },
+                  "production": {
+                    "type": "string"
+                  },
+                  "color": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "@ref"
+                ]
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "@ref": {
+                      "type": "integer"
+                    },
+                    "production": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "color": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "@ref",
+                    "production"
+                  ]
+                }
+              }
+            ]
+          },
+          "multicellular morphology": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "@ref": {
+                    "type": "integer"
+                  },
+                  "forms multicellular complex": {
+                    "type": "string"
+                  },
+                  "complex name": {
+                    "type": "string"
+                  },
+                  "further description": {
+                    "type": "string"
+                  },
+                  "medium name": {
+                    "type": "string"
+                  },
+                  "complex color": {
+                    "type": "string"
+                  },
+                  "complex size": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "@ref",
+                  "forms multicellular complex"
+                ]
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "@ref": {
+                      "type": "integer"
+                    },
+                    "forms multicellular complex": {
+                      "type": "string"
+                    },
+                    "medium name": {
+                      "type": "string"
+                    },
+                    "complex name": {
+                      "type": "string"
+                    },
+                    "complex color": {
+                      "type": "string"
+                    },
+                    "further description": {
+                      "type": "string"
+                    },
+                    "complex size": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "@ref"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "Culture and growth conditions": {
+        "type": "object",
+        "properties": {
+          "culture medium": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "@ref": {
+                    "type": "integer"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "growth": {
+                    "type": "string"
+                  },
+                  "link": {
+                    "type": "string"
+                  },
+                  "composition": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "@ref",
+                  "growth"
+                ]
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "@ref": {
+                      "type": "integer"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "growth": {
+                      "type": "string"
+                    },
+                    "link": {
+                      "type": "string"
+                    },
+                    "composition": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "@ref"
+                  ]
+                }
+              }
+            ]
+          },
+          "culture temp": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "@ref": {
+                    "type": "integer"
+                  },
+                  "growth": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string"
+                  },
+                  "temperature": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "@ref"
+                ]
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "@ref": {
+                      "type": "integer"
+                    },
+                    "growth": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    },
+                    "temperature": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "@ref"
+                  ]
+                }
+              }
+            ]
+          },
+          "culture pH": {
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "@ref": {
+                      "type": "integer"
+                    },
+                    "ability": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    },
+                    "pH": {
+                      "type": "string"
+                    },
+                    "PH range": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "@ref",
+                    "ability",
+                    "pH",
+                    "type"
+                  ]
+                }
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "@ref": {
+                    "type": "integer"
+                  },
+                  "ability": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string"
+                  },
+                  "pH": {
+                    "type": "string"
+                  },
+                  "PH range": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "@ref",
+                  "ability",
+                  "pH",
+                  "type"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "Physiology and metabolism": {
+        "type": "object",
+        "properties": {
+          "oxygen tolerance": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "@ref": {
+                    "type": "integer"
+                  },
+                  "oxygen tolerance": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "@ref"
+                ]
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "@ref": {
+                      "type": "integer"
+                    },
+                    "oxygen tolerance": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "@ref"
+                  ]
+                }
+              }
+            ]
+          },
+          "spore formation": {
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "@ref": {
+                      "type": "integer"
+                    },
+                    "spore formation": {
+                      "type": "string"
+                    },
+                    "spore description": {
+                      "type": "string"
+                    },
+                    "type of spore": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "@ref",
+                    "spore formation"
+                  ]
+                }
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "@ref": {
+                    "type": "integer"
+                  },
+                  "spore formation": {
+                    "type": "string"
+                  },
+                  "type of spore": {
+                    "type": "string"
+                  },
+                  "spore description": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "@ref",
+                  "spore formation"
+                ]
+              }
+            ]
+          },
+          "metabolite utilization": {
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "@ref": {
+                      "type": "integer"
+                    },
+                    "Chebi-ID": {
+                      "type": "integer"
+                    },
+                    "metabolite": {
+                      "type": "string"
+                    },
+                    "utilization activity": {
+                      "type": "string"
+                    },
+                    "kind of utilization tested": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "@ref",
+                    "metabolite"
+                  ]
+                }
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "@ref": {
+                    "type": "integer"
+                  },
+                  "Chebi-ID": {
+                    "type": "integer"
+                  },
+                  "metabolite": {
+                    "type": "string"
+                  },
+                  "utilization activity": {
+                    "type": "string"
+                  },
+                  "kind of utilization tested": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "@ref",
+                  "kind of utilization tested",
+                  "metabolite",
+                  "utilization activity"
+                ]
+              }
+            ]
+          },
+          "metabolite production": {
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "@ref": {
+                      "type": "integer"
+                    },
+                    "Chebi-ID": {
+                      "type": "integer"
+                    },
+                    "metabolite": {
+                      "type": "string"
+                    },
+                    "production": {
+                      "type": "string"
+                    },
+                    "excretion": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "@ref",
+                    "metabolite"
+                  ]
+                }
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "@ref": {
+                    "type": "integer"
+                  },
+                  "Chebi-ID": {
+                    "type": "integer"
+                  },
+                  "metabolite": {
+                    "type": "string"
+                  },
+                  "production": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "@ref",
+                  "metabolite",
+                  "production"
+                ]
+              }
+            ]
+          },
+          "metabolite tests": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "@ref": {
+                    "type": "integer"
+                  },
+                  "Chebi-ID": {
+                    "type": "integer"
+                  },
+                  "metabolite": {
+                    "type": "string"
+                  },
+                  "indole test": {
+                    "type": "string"
+                  },
+                  "voges-proskauer-test": {
+                    "type": "string"
+                  },
+                  "methylred-test": {
+                    "type": "string"
+                  },
+                  "citrate test": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "@ref",
+                  "Chebi-ID",
+                  "metabolite"
+                ]
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "@ref": {
+                      "type": "integer"
+                    },
+                    "Chebi-ID": {
+                      "type": "integer"
+                    },
+                    "metabolite": {
+                      "type": "string"
+                    },
+                    "voges-proskauer-test": {
+                      "type": "string"
+                    },
+                    "methylred-test": {
+                      "type": "string"
+                    },
+                    "indole test": {
+                      "type": "string"
+                    },
+                    "citrate test": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "@ref",
+                    "Chebi-ID",
+                    "metabolite"
+                  ]
+                }
+              }
+            ]
+          },
+          "enzymes": {
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "@ref": {
+                      "type": "integer"
+                    },
+                    "value": {
+                      "type": "string"
+                    },
+                    "activity": {
+                      "type": "string"
+                    },
+                    "ec": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "@ref",
+                    "value"
+                  ]
+                }
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "@ref": {
+                    "type": "integer"
+                  },
+                  "value": {
+                    "type": "string"
+                  },
+                  "activity": {
+                    "type": "string"
+                  },
+                  "ec": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "@ref",
+                  "value"
+                ]
+              }
+            ]
+          },
+          "API zym": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "@ref": {
+                    "type": "integer"
+                  },
+                  "Control": {
+                    "type": "string"
+                  },
+                  "Alkaline phosphatase": {
+                    "type": "string"
+                  },
+                  "Esterase": {
+                    "type": "string"
+                  },
+                  "Esterase Lipase": {
+                    "type": "string"
+                  },
+                  "Lipase": {
+                    "type": "string"
+                  },
+                  "Leucine arylamidase": {
+                    "type": "string"
+                  },
+                  "Valine arylamidase": {
+                    "type": "string"
+                  },
+                  "Cystine arylamidase": {
+                    "type": "string"
+                  },
+                  "Trypsin": {
+                    "type": "string"
+                  },
+                  "alpha- Chymotrypsin": {
+                    "type": "string"
+                  },
+                  "Acid phosphatase": {
+                    "type": "string"
+                  },
+                  "Naphthol-AS-BI-phosphohydrolase": {
+                    "type": "string"
+                  },
+                  "alpha- Galactosidase": {
+                    "type": "string"
+                  },
+                  "beta- Galactosidase": {
+                    "type": "string"
+                  },
+                  "beta- Glucuronidase": {
+                    "type": "string"
+                  },
+                  "alpha- Glucosidase": {
+                    "type": "string"
+                  },
+                  "beta- Glucosidase": {
+                    "type": "string"
+                  },
+                  "N-acetyl-beta- glucosaminidase": {
+                    "type": "string"
+                  },
+                  "alpha- Mannosidase": {
+                    "type": "string"
+                  },
+                  "alpha- Fucosidase": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "@ref"
+                ]
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "@ref": {
+                      "type": "integer"
+                    },
+                    "Control": {
+                      "type": "string"
+                    },
+                    "Alkaline phosphatase": {
+                      "type": "string"
+                    },
+                    "Esterase": {
+                      "type": "string"
+                    },
+                    "Esterase Lipase": {
+                      "type": "string"
+                    },
+                    "Lipase": {
+                      "type": "string"
+                    },
+                    "Leucine arylamidase": {
+                      "type": "string"
+                    },
+                    "Valine arylamidase": {
+                      "type": "string"
+                    },
+                    "Cystine arylamidase": {
+                      "type": "string"
+                    },
+                    "Trypsin": {
+                      "type": "string"
+                    },
+                    "alpha- Chymotrypsin": {
+                      "type": "string"
+                    },
+                    "Acid phosphatase": {
+                      "type": "string"
+                    },
+                    "Naphthol-AS-BI-phosphohydrolase": {
+                      "type": "string"
+                    },
+                    "alpha- Galactosidase": {
+                      "type": "string"
+                    },
+                    "beta- Galactosidase": {
+                      "type": "string"
+                    },
+                    "beta- Glucuronidase": {
+                      "type": "string"
+                    },
+                    "alpha- Glucosidase": {
+                      "type": "string"
+                    },
+                    "beta- Glucosidase": {
+                      "type": "string"
+                    },
+                    "N-acetyl-beta- glucosaminidase": {
+                      "type": "string"
+                    },
+                    "alpha- Mannosidase": {
+                      "type": "string"
+                    },
+                    "alpha- Fucosidase": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "@ref",
+                    "Cystine arylamidase",
+                    "Lipase",
+                    "Trypsin",
+                    "alpha- Chymotrypsin"
+                  ]
+                }
+              }
+            ]
+          },
+          "API rID32A": {
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "@ref": {
+                      "type": "integer"
+                    },
+                    "URE": {
+                      "type": "string"
+                    },
+                    "ADH Arg": {
+                      "type": "string"
+                    },
+                    "alpha GAL": {
+                      "type": "string"
+                    },
+                    "beta GAL": {
+                      "type": "string"
+                    },
+                    "beta GP": {
+                      "type": "string"
+                    },
+                    "alpha GLU": {
+                      "type": "string"
+                    },
+                    "beta GLU": {
+                      "type": "string"
+                    },
+                    "alpha ARA": {
+                      "type": "string"
+                    },
+                    "beta GUR": {
+                      "type": "string"
+                    },
+                    "beta NAG": {
+                      "type": "string"
+                    },
+                    "MNE": {
+                      "type": "string"
+                    },
+                    "RAF": {
+                      "type": "string"
+                    },
+                    "GDC": {
+                      "type": "string"
+                    },
+                    "alpha FUC": {
+                      "type": "string"
+                    },
+                    "NIT": {
+                      "type": "string"
+                    },
+                    "IND": {
+                      "type": "string"
+                    },
+                    "PAL": {
+                      "type": "string"
+                    },
+                    "ArgA": {
+                      "type": "string"
+                    },
+                    "ProA": {
+                      "type": "string"
+                    },
+                    "LGA": {
+                      "type": "string"
+                    },
+                    "PheA": {
+                      "type": "string"
+                    },
+                    "LeuA": {
+                      "type": "string"
+                    },
+                    "PyrA": {
+                      "type": "string"
+                    },
+                    "TyrA": {
+                      "type": "string"
+                    },
+                    "AlaA": {
+                      "type": "string"
+                    },
+                    "GlyA": {
+                      "type": "string"
+                    },
+                    "HisA": {
+                      "type": "string"
+                    },
+                    "GGA": {
+                      "type": "string"
+                    },
+                    "SerA": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "@ref",
+                    "MNE",
+                    "alpha ARA",
+                    "alpha GLU",
+                    "beta GAL",
+                    "beta GLU",
+                    "beta GP"
+                  ]
+                }
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "@ref": {
+                    "type": "integer"
+                  },
+                  "URE": {
+                    "type": "string"
+                  },
+                  "ADH Arg": {
+                    "type": "string"
+                  },
+                  "alpha GAL": {
+                    "type": "string"
+                  },
+                  "beta GAL": {
+                    "type": "string"
+                  },
+                  "beta GP": {
+                    "type": "string"
+                  },
+                  "alpha GLU": {
+                    "type": "string"
+                  },
+                  "beta GLU": {
+                    "type": "string"
+                  },
+                  "alpha ARA": {
+                    "type": "string"
+                  },
+                  "beta GUR": {
+                    "type": "string"
+                  },
+                  "beta NAG": {
+                    "type": "string"
+                  },
+                  "MNE": {
+                    "type": "string"
+                  },
+                  "RAF": {
+                    "type": "string"
+                  },
+                  "GDC": {
+                    "type": "string"
+                  },
+                  "alpha FUC": {
+                    "type": "string"
+                  },
+                  "NIT": {
+                    "type": "string"
+                  },
+                  "IND": {
+                    "type": "string"
+                  },
+                  "PAL": {
+                    "type": "string"
+                  },
+                  "ArgA": {
+                    "type": "string"
+                  },
+                  "ProA": {
+                    "type": "string"
+                  },
+                  "LGA": {
+                    "type": "string"
+                  },
+                  "PheA": {
+                    "type": "string"
+                  },
+                  "LeuA": {
+                    "type": "string"
+                  },
+                  "PyrA": {
+                    "type": "string"
+                  },
+                  "TyrA": {
+                    "type": "string"
+                  },
+                  "AlaA": {
+                    "type": "string"
+                  },
+                  "GlyA": {
+                    "type": "string"
+                  },
+                  "HisA": {
+                    "type": "string"
+                  },
+                  "GGA": {
+                    "type": "string"
+                  },
+                  "SerA": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "@ref",
+                  "ADH Arg",
+                  "AlaA",
+                  "ArgA",
+                  "LGA",
+                  "LeuA",
+                  "MNE",
+                  "PAL",
+                  "PheA",
+                  "ProA",
+                  "TyrA",
+                  "alpha ARA",
+                  "beta GAL",
+                  "beta GLU",
+                  "beta GUR"
+                ]
+              }
+            ]
+          },
+          "murein": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "@ref": {
+                    "type": "integer"
+                  },
+                  "murein short key": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "@ref"
+                ]
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "@ref": {
+                      "type": "integer"
+                    },
+                    "murein short key": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "@ref",
+                    "type"
+                  ]
+                }
+              }
+            ]
+          },
+          "antibiotic resistance": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "@ref": {
+                    "type": "integer"
+                  },
+                  "ChEBI": {
+                    "type": "integer"
+                  },
+                  "metabolite": {
+                    "type": "string"
+                  },
+                  "is antibiotic": {
+                    "type": "string"
+                  },
+                  "is sensitive": {
+                    "type": "string"
+                  },
+                  "is resistant": {
+                    "type": "string"
+                  },
+                  "sensitivity conc.": {
+                    "type": "string"
+                  },
+                  "resistance conc.": {
+                    "type": "string"
+                  },
+                  "is intermediate": {
+                    "type": "string"
+                  },
+                  "intermediate conc.": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "@ref",
+                  "is antibiotic",
+                  "metabolite"
+                ]
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "@ref": {
+                      "type": "integer"
+                    },
+                    "ChEBI": {
+                      "type": "integer"
+                    },
+                    "metabolite": {
+                      "type": "string"
+                    },
+                    "is antibiotic": {
+                      "type": "string"
+                    },
+                    "is resistant": {
+                      "type": "string"
+                    },
+                    "is sensitive": {
+                      "type": "string"
+                    },
+                    "resistance conc.": {
+                      "type": "string"
+                    },
+                    "sensitivity conc.": {
+                      "type": "string"
+                    },
+                    "is intermediate": {
+                      "type": "string"
+                    },
+                    "intermediate conc.": {
+                      "type": "string"
+                    },
+                    "group ID": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "@ref",
+                    "is antibiotic",
+                    "metabolite"
+                  ]
+                }
+              }
+            ]
+          },
+          "compound production": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "@ref": {
+                    "type": "integer"
+                  },
+                  "compound": {
+                    "type": "string"
+                  },
+                  "excreted": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "@ref"
+                ]
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "@ref": {
+                      "type": "integer"
+                    },
+                    "compound": {
+                      "type": "string"
+                    },
+                    "excreted": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "@ref"
+                  ]
+                }
+              }
+            ]
+          },
+          "halophily": {
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "@ref": {
+                      "type": "integer"
+                    },
+                    "salt": {
+                      "type": "string"
+                    },
+                    "growth": {
+                      "type": "string"
+                    },
+                    "tested relation": {
+                      "type": "string"
+                    },
+                    "concentration": {
+                      "type": "string"
+                    },
+                    "halophily level": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "@ref"
+                  ]
+                }
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "@ref": {
+                    "type": "integer"
+                  },
+                  "salt": {
+                    "type": "string"
+                  },
+                  "growth": {
+                    "type": "string"
+                  },
+                  "tested relation": {
+                    "type": "string"
+                  },
+                  "concentration": {
+                    "type": "string"
+                  },
+                  "halophily level": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "@ref"
+                ]
+              }
+            ]
+          },
+          "observation": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "@ref": {
+                    "type": "integer"
+                  },
+                  "observation": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "@ref",
+                  "observation"
+                ]
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "@ref": {
+                      "type": "integer"
+                    },
+                    "observation": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "@ref",
+                    "observation"
+                  ]
+                }
+              }
+            ]
+          },
+          "API 50CHac": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "@ref": {
+                    "type": "integer"
+                  },
+                  "GLY": {
+                    "type": "string"
+                  },
+                  "ERY": {
+                    "type": "string"
+                  },
+                  "DARA": {
+                    "type": "string"
+                  },
+                  "LARA": {
+                    "type": "string"
+                  },
+                  "RIB": {
+                    "type": "string"
+                  },
+                  "DXYL": {
+                    "type": "string"
+                  },
+                  "LXYL": {
+                    "type": "string"
+                  },
+                  "ADO": {
+                    "type": "string"
+                  },
+                  "MDX": {
+                    "type": "string"
+                  },
+                  "GAL": {
+                    "type": "string"
+                  },
+                  "GLU": {
+                    "type": "string"
+                  },
+                  "FRU": {
+                    "type": "string"
+                  },
+                  "MNE": {
+                    "type": "string"
+                  },
+                  "SBE": {
+                    "type": "string"
+                  },
+                  "RHA": {
+                    "type": "string"
+                  },
+                  "DUL": {
+                    "type": "string"
+                  },
+                  "INO": {
+                    "type": "string"
+                  },
+                  "MAN": {
+                    "type": "string"
+                  },
+                  "SOR": {
+                    "type": "string"
+                  },
+                  "MDM": {
+                    "type": "string"
+                  },
+                  "MDG": {
+                    "type": "string"
+                  },
+                  "NAG": {
+                    "type": "string"
+                  },
+                  "AMY": {
+                    "type": "string"
+                  },
+                  "ARB": {
+                    "type": "string"
+                  },
+                  "ESC": {
+                    "type": "string"
+                  },
+                  "SAL": {
+                    "type": "string"
+                  },
+                  "CEL": {
+                    "type": "string"
+                  },
+                  "MAL": {
+                    "type": "string"
+                  },
+                  "LAC": {
+                    "type": "string"
+                  },
+                  "MEL": {
+                    "type": "string"
+                  },
+                  "SAC": {
+                    "type": "string"
+                  },
+                  "TRE": {
+                    "type": "string"
+                  },
+                  "INU": {
+                    "type": "string"
+                  },
+                  "MLZ": {
+                    "type": "string"
+                  },
+                  "RAF": {
+                    "type": "string"
+                  },
+                  "AMD": {
+                    "type": "string"
+                  },
+                  "GLYG": {
+                    "type": "string"
+                  },
+                  "XLT": {
+                    "type": "string"
+                  },
+                  "GEN": {
+                    "type": "string"
+                  },
+                  "TUR": {
+                    "type": "string"
+                  },
+                  "LYX": {
+                    "type": "string"
+                  },
+                  "TAG": {
+                    "type": "string"
+                  },
+                  "DFUC": {
+                    "type": "string"
+                  },
+                  "LFUC": {
+                    "type": "string"
+                  },
+                  "DARL": {
+                    "type": "string"
+                  },
+                  "LARL": {
+                    "type": "string"
+                  },
+                  "GNT": {
+                    "type": "string"
+                  },
+                  "2KG": {
+                    "type": "string"
+                  },
+                  "5KG": {
+                    "type": "string"
+                  },
+                  "Q": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "2KG",
+                  "@ref",
+                  "ADO",
+                  "AMD",
+                  "AMY",
+                  "ARB",
+                  "CEL",
+                  "DARA",
+                  "DARL",
+                  "DFUC",
+                  "DUL",
+                  "DXYL",
+                  "ERY",
+                  "ESC",
+                  "FRU",
+                  "GAL",
+                  "GLU",
+                  "GLY",
+                  "GLYG",
+                  "GNT",
+                  "INO",
+                  "INU",
+                  "LAC",
+                  "LARA",
+                  "LARL",
+                  "LFUC",
+                  "LXYL",
+                  "LYX",
+                  "MAL",
+                  "MAN",
+                  "MDG",
+                  "MDM",
+                  "MDX",
+                  "MEL",
+                  "MLZ",
+                  "MNE",
+                  "NAG",
+                  "RAF",
+                  "RHA",
+                  "SAL",
+                  "SBE",
+                  "SOR",
+                  "TAG",
+                  "TRE",
+                  "TUR",
+                  "XLT"
+                ]
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "@ref": {
+                      "type": "integer"
+                    },
+                    "Q": {
+                      "type": "string"
+                    },
+                    "GLY": {
+                      "type": "string"
+                    },
+                    "ERY": {
+                      "type": "string"
+                    },
+                    "DARA": {
+                      "type": "string"
+                    },
+                    "LARA": {
+                      "type": "string"
+                    },
+                    "RIB": {
+                      "type": "string"
+                    },
+                    "DXYL": {
+                      "type": "string"
+                    },
+                    "LXYL": {
+                      "type": "string"
+                    },
+                    "ADO": {
+                      "type": "string"
+                    },
+                    "MDX": {
+                      "type": "string"
+                    },
+                    "GAL": {
+                      "type": "string"
+                    },
+                    "GLU": {
+                      "type": "string"
+                    },
+                    "FRU": {
+                      "type": "string"
+                    },
+                    "MNE": {
+                      "type": "string"
+                    },
+                    "SBE": {
+                      "type": "string"
+                    },
+                    "RHA": {
+                      "type": "string"
+                    },
+                    "DUL": {
+                      "type": "string"
+                    },
+                    "INO": {
+                      "type": "string"
+                    },
+                    "MAN": {
+                      "type": "string"
+                    },
+                    "SOR": {
+                      "type": "string"
+                    },
+                    "MDM": {
+                      "type": "string"
+                    },
+                    "MDG": {
+                      "type": "string"
+                    },
+                    "NAG": {
+                      "type": "string"
+                    },
+                    "AMY": {
+                      "type": "string"
+                    },
+                    "ARB": {
+                      "type": "string"
+                    },
+                    "ESC": {
+                      "type": "string"
+                    },
+                    "SAL": {
+                      "type": "string"
+                    },
+                    "CEL": {
+                      "type": "string"
+                    },
+                    "MAL": {
+                      "type": "string"
+                    },
+                    "LAC": {
+                      "type": "string"
+                    },
+                    "MEL": {
+                      "type": "string"
+                    },
+                    "SAC": {
+                      "type": "string"
+                    },
+                    "TRE": {
+                      "type": "string"
+                    },
+                    "INU": {
+                      "type": "string"
+                    },
+                    "MLZ": {
+                      "type": "string"
+                    },
+                    "RAF": {
+                      "type": "string"
+                    },
+                    "AMD": {
+                      "type": "string"
+                    },
+                    "GLYG": {
+                      "type": "string"
+                    },
+                    "XLT": {
+                      "type": "string"
+                    },
+                    "GEN": {
+                      "type": "string"
+                    },
+                    "TUR": {
+                      "type": "string"
+                    },
+                    "LYX": {
+                      "type": "string"
+                    },
+                    "TAG": {
+                      "type": "string"
+                    },
+                    "DFUC": {
+                      "type": "string"
+                    },
+                    "LFUC": {
+                      "type": "string"
+                    },
+                    "DARL": {
+                      "type": "string"
+                    },
+                    "LARL": {
+                      "type": "string"
+                    },
+                    "GNT": {
+                      "type": "string"
+                    },
+                    "2KG": {
+                      "type": "string"
+                    },
+                    "5KG": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "@ref",
+                    "ADO",
+                    "AMD",
+                    "CEL",
+                    "DARA",
+                    "DARL",
+                    "DFUC",
+                    "DUL",
+                    "DXYL",
+                    "ERY",
+                    "ESC",
+                    "GAL",
+                    "GEN",
+                    "GLU",
+                    "GLY",
+                    "GLYG",
+                    "INO",
+                    "INU",
+                    "LAC",
+                    "LARA",
+                    "LARL",
+                    "LFUC",
+                    "LXYL",
+                    "LYX",
+                    "MAL",
+                    "MAN",
+                    "MDG",
+                    "MDM",
+                    "MDX",
+                    "MEL",
+                    "MLZ",
+                    "MNE",
+                    "NAG",
+                    "RAF",
+                    "RHA",
+                    "RIB",
+                    "SAC",
+                    "SAL",
+                    "SBE",
+                    "SOR",
+                    "TAG",
+                    "TRE",
+                    "TUR",
+                    "XLT"
+                  ]
+                }
+              }
+            ]
+          },
+          "nutrition type": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "@ref": {
+                    "type": "integer"
+                  },
+                  "type": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "@ref",
+                  "type"
+                ]
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "@ref": {
+                      "type": "integer"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "@ref",
+                    "type"
+                  ]
+                }
+              }
+            ]
+          },
+          "API biotype100": {
+            "type": "object",
+            "properties": {
+              "@ref": {
+                "type": "integer"
+              },
+              "GLU": {
+                "type": "string"
+              },
+              "FRU": {
+                "type": "string"
+              },
+              "GAL": {
+                "type": "string"
+              },
+              "TRE": {
+                "type": "string"
+              },
+              "MNE": {
+                "type": "string"
+              },
+              "SBE": {
+                "type": "string"
+              },
+              "MEL": {
+                "type": "string"
+              },
+              "SAC": {
+                "type": "string"
+              },
+              "RAF": {
+                "type": "string"
+              },
+              "MTE": {
+                "type": "string"
+              },
+              "MAL": {
+                "type": "string"
+              },
+              "LAC": {
+                "type": "string"
+              },
+              "LTE": {
+                "type": "string"
+              },
+              "MbGa": {
+                "type": "string"
+              },
+              "MaGa": {
+                "type": "string"
+              },
+              "CEL": {
+                "type": "string"
+              },
+              "GEN": {
+                "type": "string"
+              },
+              "MbGu": {
+                "type": "string"
+              },
+              "ESC": {
+                "type": "string"
+              },
+              "RIB": {
+                "type": "string"
+              },
+              "ARA": {
+                "type": "string"
+              },
+              "XYL": {
+                "type": "string"
+              },
+              "PLE": {
+                "type": "string"
+              },
+              "RHA": {
+                "type": "string"
+              },
+              "FUC": {
+                "type": "string"
+              },
+              "MLZ": {
+                "type": "string"
+              },
+              "DARL": {
+                "type": "string"
+              },
+              "LARL": {
+                "type": "string"
+              },
+              "XLT": {
+                "type": "string"
+              },
+              "DUL": {
+                "type": "string"
+              },
+              "TAG": {
+                "type": "string"
+              },
+              "GLY": {
+                "type": "string"
+              },
+              "INO": {
+                "type": "string"
+              },
+              "MAN": {
+                "type": "string"
+              },
+              "MTL": {
+                "type": "string"
+              },
+              "TUR": {
+                "type": "string"
+              },
+              "SOR": {
+                "type": "string"
+              },
+              "ADO": {
+                "type": "string"
+              },
+              "HBG": {
+                "type": "string"
+              },
+              "LYX": {
+                "type": "string"
+              },
+              "ERY": {
+                "type": "string"
+              },
+              "MDG": {
+                "type": "string"
+              },
+              "3MDG": {
+                "type": "string"
+              },
+              "SAT": {
+                "type": "string"
+              },
+              "MUC": {
+                "type": "string"
+              },
+              "LTAT": {
+                "type": "string"
+              },
+              "DTAT": {
+                "type": "string"
+              },
+              "MTAT": {
+                "type": "string"
+              },
+              "DMLT": {
+                "type": "string"
+              },
+              "LMLT": {
+                "type": "string"
+              },
+              "CATE": {
+                "type": "string"
+              },
+              "TATE": {
+                "type": "string"
+              },
+              "TTE": {
+                "type": "string"
+              },
+              "CIT": {
+                "type": "string"
+              },
+              "GRT": {
+                "type": "string"
+              },
+              "GAT": {
+                "type": "string"
+              },
+              "2KG": {
+                "type": "string"
+              },
+              "5KG": {
+                "type": "string"
+              },
+              "TRY": {
+                "type": "string"
+              },
+              "NAG": {
+                "type": "string"
+              },
+              "GNT": {
+                "type": "string"
+              },
+              "PAC": {
+                "type": "string"
+              },
+              "PAT": {
+                "type": "string"
+              },
+              "pOBE": {
+                "type": "string"
+              },
+              "QAT": {
+                "type": "string"
+              },
+              "GTE": {
+                "type": "string"
+              },
+              "mOBE": {
+                "type": "string"
+              },
+              "BAT": {
+                "type": "string"
+              },
+              "PPAT": {
+                "type": "string"
+              },
+              "CMT": {
+                "type": "string"
+              },
+              "TGE": {
+                "type": "string"
+              },
+              "BET": {
+                "type": "string"
+              },
+              "PCE": {
+                "type": "string"
+              },
+              "ABT": {
+                "type": "string"
+              },
+              "HIN": {
+                "type": "string"
+              },
+              "LAT": {
+                "type": "string"
+              },
+              "CAP": {
+                "type": "string"
+              },
+              "CYT": {
+                "type": "string"
+              },
+              "HIS": {
+                "type": "string"
+              },
+              "SUC": {
+                "type": "string"
+              },
+              "FUM": {
+                "type": "string"
+              },
+              "GRE": {
+                "type": "string"
+              },
+              "GYT": {
+                "type": "string"
+              },
+              "AVT": {
+                "type": "string"
+              },
+              "ETN": {
+                "type": "string"
+              },
+              "TTN": {
+                "type": "string"
+              },
+              "GLN": {
+                "type": "string"
+              },
+              "ITA": {
+                "type": "string"
+              },
+              "3OBU": {
+                "type": "string"
+              },
+              "APT": {
+                "type": "string"
+              },
+              "GTT": {
+                "type": "string"
+              },
+              "PRO": {
+                "type": "string"
+              },
+              "DALA": {
+                "type": "string"
+              },
+              "LALA": {
+                "type": "string"
+              },
+              "SER": {
+                "type": "string"
+              },
+              "MNT": {
+                "type": "string"
+              },
+              "PROP": {
+                "type": "string"
+              },
+              "TYR": {
+                "type": "string"
+              },
+              "2KT": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "2KG",
+              "3MDG",
+              "5KG",
+              "@ref",
+              "CATE",
+              "CEL",
+              "CIT",
+              "DMLT",
+              "DTAT",
+              "ERY",
+              "ESC",
+              "GAL",
+              "GAT",
+              "GEN",
+              "GNT",
+              "GRT",
+              "HBG",
+              "INO",
+              "LMLT",
+              "LTAT",
+              "LTE",
+              "MAN",
+              "MDG",
+              "MEL",
+              "MLZ",
+              "MTAT",
+              "MTE",
+              "MTL",
+              "MUC",
+              "MaGa",
+              "MbGa",
+              "MbGu",
+              "NAG",
+              "PAC",
+              "PAT",
+              "PLE",
+              "RHA",
+              "RIB",
+              "SAC",
+              "SAT",
+              "SOR",
+              "TATE",
+              "TRE",
+              "TRY",
+              "TTE",
+              "pOBE"
+            ]
+          },
+          "API 20NE": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "@ref": {
+                    "type": "integer"
+                  },
+                  "NO3": {
+                    "type": "string"
+                  },
+                  "TRP": {
+                    "type": "string"
+                  },
+                  "GLU_ Ferm": {
+                    "type": "string"
+                  },
+                  "ADH Arg": {
+                    "type": "string"
+                  },
+                  "URE": {
+                    "type": "string"
+                  },
+                  "ESC": {
+                    "type": "string"
+                  },
+                  "GEL": {
+                    "type": "string"
+                  },
+                  "PNPG": {
+                    "type": "string"
+                  },
+                  "GLU_ Assim": {
+                    "type": "string"
+                  },
+                  "ARA": {
+                    "type": "string"
+                  },
+                  "MNE": {
+                    "type": "string"
+                  },
+                  "MAN": {
+                    "type": "string"
+                  },
+                  "NAG": {
+                    "type": "string"
+                  },
+                  "MAL": {
+                    "type": "string"
+                  },
+                  "GNT": {
+                    "type": "string"
+                  },
+                  "CAP": {
+                    "type": "string"
+                  },
+                  "ADI": {
+                    "type": "string"
+                  },
+                  "MLT": {
+                    "type": "string"
+                  },
+                  "CIT": {
+                    "type": "string"
+                  },
+                  "PAC": {
+                    "type": "string"
+                  },
+                  "OX": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "@ref",
+                  "ADH Arg",
+                  "ADI",
+                  "ARA",
+                  "CAP",
+                  "CIT",
+                  "ESC",
+                  "GEL",
+                  "GLU_ Ferm",
+                  "GNT",
+                  "MAL",
+                  "MAN",
+                  "MLT",
+                  "MNE",
+                  "NAG",
+                  "PAC",
+                  "URE"
+                ]
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "@ref": {
+                      "type": "integer"
+                    },
+                    "NO3": {
+                      "type": "string"
+                    },
+                    "TRP": {
+                      "type": "string"
+                    },
+                    "GLU_ Ferm": {
+                      "type": "string"
+                    },
+                    "ADH Arg": {
+                      "type": "string"
+                    },
+                    "URE": {
+                      "type": "string"
+                    },
+                    "ESC": {
+                      "type": "string"
+                    },
+                    "GEL": {
+                      "type": "string"
+                    },
+                    "PNPG": {
+                      "type": "string"
+                    },
+                    "GLU_ Assim": {
+                      "type": "string"
+                    },
+                    "ARA": {
+                      "type": "string"
+                    },
+                    "MNE": {
+                      "type": "string"
+                    },
+                    "MAN": {
+                      "type": "string"
+                    },
+                    "NAG": {
+                      "type": "string"
+                    },
+                    "MAL": {
+                      "type": "string"
+                    },
+                    "GNT": {
+                      "type": "string"
+                    },
+                    "CAP": {
+                      "type": "string"
+                    },
+                    "ADI": {
+                      "type": "string"
+                    },
+                    "MLT": {
+                      "type": "string"
+                    },
+                    "CIT": {
+                      "type": "string"
+                    },
+                    "PAC": {
+                      "type": "string"
+                    },
+                    "OX": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "@ref",
+                    "ADI",
+                    "ARA",
+                    "CAP",
+                    "CIT",
+                    "ESC",
+                    "GEL",
+                    "GLU_ Assim",
+                    "GLU_ Ferm",
+                    "GNT",
+                    "MLT",
+                    "MNE",
+                    "PAC"
+                  ]
+                }
+              }
+            ]
+          },
+          "tolerance": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "@ref": {
+                    "type": "integer"
+                  },
+                  "compound": {
+                    "type": "string"
+                  },
+                  "percentage": {
+                    "type": "string"
+                  },
+                  "concentration": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "@ref",
+                  "compound"
+                ]
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "@ref": {
+                      "type": "integer"
+                    },
+                    "compound": {
+                      "type": "string"
+                    },
+                    "percentage": {
+                      "type": "string"
+                    },
+                    "concentration": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "@ref",
+                    "compound"
+                  ]
+                }
+              }
+            ]
+          },
+          "fatty acid profile": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "fatty acids": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "@ref": {
+                          "type": "integer"
+                        },
+                        "fatty acid": {
+                          "type": "string"
+                        },
+                        "percentage": {
+                          "type": "number"
+                        },
+                        "ECL": {
+                          "type": "number"
+                        },
+                        "SD": {
+                          "type": "number"
+                        }
+                      },
+                      "required": [
+                        "@ref",
+                        "fatty acid"
+                      ]
+                    }
+                  },
+                  "type of FA analysis": {
+                    "type": "string"
+                  },
+                  "method/protocol": {
+                    "type": "string"
+                  },
+                  "incubation medium": {
+                    "type": "string"
+                  },
+                  "agar/liquid": {
+                    "type": "string"
+                  },
+                  "incubation temperature": {
+                    "type": "string"
+                  },
+                  "incubation time": {
+                    "type": "string"
+                  },
+                  "software version": {
+                    "type": "string"
+                  },
+                  "system": {
+                    "type": "string"
+                  },
+                  "cutoff value": {
+                    "type": "null"
+                  },
+                  "library/peak naming table": {
+                    "type": "string"
+                  },
+                  "incubation pH": {
+                    "type": "string"
+                  },
+                  "instrument": {
+                    "type": "string"
+                  },
+                  "incubation_oxygen": {
+                    "type": "string"
+                  },
+                  "treatment": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "fatty acids"
+                ]
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "fatty acids": {
+                      "anyOf": [
+                        {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "@ref": {
+                                "type": "integer"
+                              },
+                              "fatty acid": {
+                                "type": "string"
+                              },
+                              "percentage": {
+                                "type": "number"
+                              },
+                              "ECL": {
+                                "type": "number"
+                              },
+                              "SD": {
+                                "type": "number"
+                              }
+                            },
+                            "required": [
+                              "@ref",
+                              "fatty acid",
+                              "percentage"
+                            ]
+                          }
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "@ref": {
+                              "type": "integer"
+                            },
+                            "fatty acid": {
+                              "type": "string"
+                            },
+                            "percentage": {
+                              "type": "number"
+                            },
+                            "ECL": {
+                              "type": "number"
+                            }
+                          },
+                          "required": [
+                            "@ref",
+                            "ECL",
+                            "fatty acid",
+                            "percentage"
+                          ]
+                        }
+                      ]
+                    },
+                    "type of FA analysis": {
+                      "type": "string"
+                    },
+                    "method/protocol": {
+                      "type": "string"
+                    },
+                    "incubation medium": {
+                      "type": "string"
+                    },
+                    "agar/liquid": {
+                      "type": "string"
+                    },
+                    "treatment": {
+                      "type": "string"
+                    },
+                    "system": {
+                      "type": "string"
+                    },
+                    "incubation temperature": {
+                      "type": "string"
+                    },
+                    "incubation time": {
+                      "type": "string"
+                    },
+                    "software version": {
+                      "type": "string"
+                    },
+                    "library/peak naming table": {
+                      "type": "string"
+                    },
+                    "cutoff value": {
+                      "type": "null"
+                    },
+                    "incubation_oxygen": {
+                      "type": "string"
+                    },
+                    "instrument": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "fatty acids",
+                    "type of FA analysis"
+                  ]
+                }
+              }
+            ]
+          },
+          "API 20E": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "@ref": {
+                    "type": "integer"
+                  },
+                  "ONPG": {
+                    "type": "string"
+                  },
+                  "ADH Arg": {
+                    "type": "string"
+                  },
+                  "LDC Lys": {
+                    "type": "string"
+                  },
+                  "ODC": {
+                    "type": "string"
+                  },
+                  "CIT": {
+                    "type": "string"
+                  },
+                  "H2S": {
+                    "type": "string"
+                  },
+                  "URE": {
+                    "type": "string"
+                  },
+                  "TDA Trp": {
+                    "type": "string"
+                  },
+                  "IND": {
+                    "type": "string"
+                  },
+                  "VP": {
+                    "type": "string"
+                  },
+                  "GEL": {
+                    "type": "string"
+                  },
+                  "GLU": {
+                    "type": "string"
+                  },
+                  "INO": {
+                    "type": "string"
+                  },
+                  "Sor": {
+                    "type": "string"
+                  },
+                  "RHA": {
+                    "type": "string"
+                  },
+                  "SAC": {
+                    "type": "string"
+                  },
+                  "MEL": {
+                    "type": "string"
+                  },
+                  "NO2": {
+                    "type": "string"
+                  },
+                  "N2": {
+                    "type": "string"
+                  },
+                  "MAN": {
+                    "type": "string"
+                  },
+                  "AMY": {
+                    "type": "string"
+                  },
+                  "ARA": {
+                    "type": "string"
+                  },
+                  "OX": {
+                    "type": "string"
+                  },
+                  "MAC": {
+                    "type": "string"
+                  },
+                  "MOB": {
+                    "type": "string"
+                  },
+                  "OF-O": {
+                    "type": "string"
+                  },
+                  "OF-F": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "@ref"
+                ]
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "@ref": {
+                      "type": "integer"
+                    },
+                    "ONPG": {
+                      "type": "string"
+                    },
+                    "ADH Arg": {
+                      "type": "string"
+                    },
+                    "LDC Lys": {
+                      "type": "string"
+                    },
+                    "ODC": {
+                      "type": "string"
+                    },
+                    "CIT": {
+                      "type": "string"
+                    },
+                    "H2S": {
+                      "type": "string"
+                    },
+                    "URE": {
+                      "type": "string"
+                    },
+                    "TDA Trp": {
+                      "type": "string"
+                    },
+                    "IND": {
+                      "type": "string"
+                    },
+                    "VP": {
+                      "type": "string"
+                    },
+                    "GEL": {
+                      "type": "string"
+                    },
+                    "GLU": {
+                      "type": "string"
+                    },
+                    "MAN": {
+                      "type": "string"
+                    },
+                    "INO": {
+                      "type": "string"
+                    },
+                    "Sor": {
+                      "type": "string"
+                    },
+                    "RHA": {
+                      "type": "string"
+                    },
+                    "SAC": {
+                      "type": "string"
+                    },
+                    "MEL": {
+                      "type": "string"
+                    },
+                    "AMY": {
+                      "type": "string"
+                    },
+                    "ARA": {
+                      "type": "string"
+                    },
+                    "OX": {
+                      "type": "string"
+                    },
+                    "NO2": {
+                      "type": "string"
+                    },
+                    "N2": {
+                      "type": "string"
+                    },
+                    "MAC": {
+                      "type": "string"
+                    },
+                    "OF-O": {
+                      "type": "string"
+                    },
+                    "OF-F": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "@ref",
+                    "ONPG"
+                  ]
+                }
+              }
+            ]
+          },
+          "API rID32STR": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "@ref": {
+                    "type": "integer"
+                  },
+                  "ADH Arg": {
+                    "type": "string"
+                  },
+                  "beta GLU": {
+                    "type": "string"
+                  },
+                  "beta GAR": {
+                    "type": "string"
+                  },
+                  "beta GUR": {
+                    "type": "string"
+                  },
+                  "alpha GAL": {
+                    "type": "string"
+                  },
+                  "PAL": {
+                    "type": "string"
+                  },
+                  "RIB": {
+                    "type": "string"
+                  },
+                  "MAN": {
+                    "type": "string"
+                  },
+                  "SOR": {
+                    "type": "string"
+                  },
+                  "LAC": {
+                    "type": "string"
+                  },
+                  "TRE": {
+                    "type": "string"
+                  },
+                  "RAF": {
+                    "type": "string"
+                  },
+                  "SAC": {
+                    "type": "string"
+                  },
+                  "LARA": {
+                    "type": "string"
+                  },
+                  "DARL": {
+                    "type": "string"
+                  },
+                  "CDEX": {
+                    "type": "string"
+                  },
+                  "VP": {
+                    "type": "string"
+                  },
+                  "APPA": {
+                    "type": "string"
+                  },
+                  "beta GAL": {
+                    "type": "string"
+                  },
+                  "PyrA": {
+                    "type": "string"
+                  },
+                  "beta NAG": {
+                    "type": "string"
+                  },
+                  "GTA": {
+                    "type": "string"
+                  },
+                  "HIP": {
+                    "type": "string"
+                  },
+                  "GLYG": {
+                    "type": "string"
+                  },
+                  "PUL": {
+                    "type": "string"
+                  },
+                  "MAL": {
+                    "type": "string"
+                  },
+                  "MEL": {
+                    "type": "string"
+                  },
+                  "MLZ": {
+                    "type": "string"
+                  },
+                  "Mbeta DG": {
+                    "type": "string"
+                  },
+                  "TAG": {
+                    "type": "string"
+                  },
+                  "beta MAN": {
+                    "type": "string"
+                  },
+                  "URE": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "@ref",
+                  "ADH Arg",
+                  "DARL",
+                  "GTA",
+                  "HIP",
+                  "LAC",
+                  "LARA",
+                  "MAL",
+                  "MAN",
+                  "MEL",
+                  "Mbeta DG",
+                  "PAL",
+                  "PyrA",
+                  "RIB",
+                  "SAC",
+                  "SOR",
+                  "TAG",
+                  "TRE",
+                  "alpha GAL",
+                  "beta GAR",
+                  "beta GLU",
+                  "beta GUR",
+                  "beta MAN",
+                  "beta NAG"
+                ]
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "@ref": {
+                      "type": "integer"
+                    },
+                    "ADH Arg": {
+                      "type": "string"
+                    },
+                    "beta GLU": {
+                      "type": "string"
+                    },
+                    "beta GAR": {
+                      "type": "string"
+                    },
+                    "beta GUR": {
+                      "type": "string"
+                    },
+                    "alpha GAL": {
+                      "type": "string"
+                    },
+                    "PAL": {
+                      "type": "string"
+                    },
+                    "RIB": {
+                      "type": "string"
+                    },
+                    "MAN": {
+                      "type": "string"
+                    },
+                    "SOR": {
+                      "type": "string"
+                    },
+                    "LAC": {
+                      "type": "string"
+                    },
+                    "TRE": {
+                      "type": "string"
+                    },
+                    "RAF": {
+                      "type": "string"
+                    },
+                    "SAC": {
+                      "type": "string"
+                    },
+                    "LARA": {
+                      "type": "string"
+                    },
+                    "DARL": {
+                      "type": "string"
+                    },
+                    "CDEX": {
+                      "type": "string"
+                    },
+                    "VP": {
+                      "type": "string"
+                    },
+                    "APPA": {
+                      "type": "string"
+                    },
+                    "beta GAL": {
+                      "type": "string"
+                    },
+                    "PyrA": {
+                      "type": "string"
+                    },
+                    "beta NAG": {
+                      "type": "string"
+                    },
+                    "GTA": {
+                      "type": "string"
+                    },
+                    "HIP": {
+                      "type": "string"
+                    },
+                    "GLYG": {
+                      "type": "string"
+                    },
+                    "PUL": {
+                      "type": "string"
+                    },
+                    "MAL": {
+                      "type": "string"
+                    },
+                    "MEL": {
+                      "type": "string"
+                    },
+                    "MLZ": {
+                      "type": "string"
+                    },
+                    "Mbeta DG": {
+                      "type": "string"
+                    },
+                    "TAG": {
+                      "type": "string"
+                    },
+                    "beta MAN": {
+                      "type": "string"
+                    },
+                    "URE": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "@ref",
+                    "ADH Arg",
+                    "DARL",
+                    "LAC",
+                    "LARA",
+                    "MAN",
+                    "PAL",
+                    "RAF",
+                    "SAC",
+                    "SOR",
+                    "TRE",
+                    "alpha GAL",
+                    "beta GAR",
+                    "beta GLU",
+                    "beta GUR"
+                  ]
+                }
+              }
+            ]
+          },
+          "API coryne": {
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "@ref": {
+                      "type": "integer"
+                    },
+                    "NIT": {
+                      "type": "string"
+                    },
+                    "PYZ": {
+                      "type": "string"
+                    },
+                    "PYRA": {
+                      "type": "string"
+                    },
+                    "PAL": {
+                      "type": "string"
+                    },
+                    "beta GUR": {
+                      "type": "string"
+                    },
+                    "beta GAL": {
+                      "type": "string"
+                    },
+                    "alpha GLU": {
+                      "type": "string"
+                    },
+                    "beta NAG": {
+                      "type": "string"
+                    },
+                    "ESC": {
+                      "type": "string"
+                    },
+                    "URE": {
+                      "type": "string"
+                    },
+                    "GEL": {
+                      "type": "string"
+                    },
+                    "Control": {
+                      "type": "string"
+                    },
+                    "GLU": {
+                      "type": "string"
+                    },
+                    "RIB": {
+                      "type": "string"
+                    },
+                    "XYL": {
+                      "type": "string"
+                    },
+                    "MAN": {
+                      "type": "string"
+                    },
+                    "MAL": {
+                      "type": "string"
+                    },
+                    "LAC": {
+                      "type": "string"
+                    },
+                    "SAC": {
+                      "type": "string"
+                    },
+                    "GLYG": {
+                      "type": "string"
+                    },
+                    "CAT": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "@ref",
+                    "ESC",
+                    "GEL"
+                  ]
+                }
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "@ref": {
+                    "type": "integer"
+                  },
+                  "NIT": {
+                    "type": "string"
+                  },
+                  "PYZ": {
+                    "type": "string"
+                  },
+                  "PYRA": {
+                    "type": "string"
+                  },
+                  "PAL": {
+                    "type": "string"
+                  },
+                  "beta GUR": {
+                    "type": "string"
+                  },
+                  "beta GAL": {
+                    "type": "string"
+                  },
+                  "alpha GLU": {
+                    "type": "string"
+                  },
+                  "beta NAG": {
+                    "type": "string"
+                  },
+                  "ESC": {
+                    "type": "string"
+                  },
+                  "URE": {
+                    "type": "string"
+                  },
+                  "GEL": {
+                    "type": "string"
+                  },
+                  "Control": {
+                    "type": "string"
+                  },
+                  "GLU": {
+                    "type": "string"
+                  },
+                  "RIB": {
+                    "type": "string"
+                  },
+                  "XYL": {
+                    "type": "string"
+                  },
+                  "MAN": {
+                    "type": "string"
+                  },
+                  "MAL": {
+                    "type": "string"
+                  },
+                  "LAC": {
+                    "type": "string"
+                  },
+                  "SAC": {
+                    "type": "string"
+                  },
+                  "GLYG": {
+                    "type": "string"
+                  },
+                  "CAT": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "@ref",
+                  "ESC",
+                  "GEL",
+                  "URE"
+                ]
+              }
+            ]
+          },
+          "API NH": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "@ref": {
+                    "type": "integer"
+                  },
+                  "PEN": {
+                    "type": "string"
+                  },
+                  "GLU": {
+                    "type": "string"
+                  },
+                  "FRU": {
+                    "type": "string"
+                  },
+                  "MAL": {
+                    "type": "string"
+                  },
+                  "SAC": {
+                    "type": "string"
+                  },
+                  "ODC": {
+                    "type": "string"
+                  },
+                  "URE": {
+                    "type": "string"
+                  },
+                  "LIP": {
+                    "type": "string"
+                  },
+                  "PAL": {
+                    "type": "string"
+                  },
+                  "beta GAL": {
+                    "type": "string"
+                  },
+                  "ProA": {
+                    "type": "string"
+                  },
+                  "GGT": {
+                    "type": "string"
+                  },
+                  "IND": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "@ref",
+                  "FRU",
+                  "GLU",
+                  "LIP",
+                  "MAL",
+                  "ODC",
+                  "PAL",
+                  "SAC",
+                  "URE",
+                  "beta GAL"
+                ]
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "@ref": {
+                      "type": "integer"
+                    },
+                    "PEN": {
+                      "type": "string"
+                    },
+                    "GLU": {
+                      "type": "string"
+                    },
+                    "FRU": {
+                      "type": "string"
+                    },
+                    "MAL": {
+                      "type": "string"
+                    },
+                    "SAC": {
+                      "type": "string"
+                    },
+                    "ODC": {
+                      "type": "string"
+                    },
+                    "URE": {
+                      "type": "string"
+                    },
+                    "LIP": {
+                      "type": "string"
+                    },
+                    "PAL": {
+                      "type": "string"
+                    },
+                    "beta GAL": {
+                      "type": "string"
+                    },
+                    "ProA": {
+                      "type": "string"
+                    },
+                    "GGT": {
+                      "type": "string"
+                    },
+                    "IND": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "@ref",
+                    "FRU",
+                    "GLU",
+                    "LIP",
+                    "MAL",
+                    "ODC",
+                    "PAL",
+                    "SAC",
+                    "URE"
+                  ]
+                }
+              }
+            ]
+          },
+          "API ID32STA": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "@ref": {
+                    "type": "integer"
+                  },
+                  "URE": {
+                    "type": "string"
+                  },
+                  "ADH Arg": {
+                    "type": "string"
+                  },
+                  "ODC": {
+                    "type": "string"
+                  },
+                  "ESC": {
+                    "type": "string"
+                  },
+                  "GLU": {
+                    "type": "string"
+                  },
+                  "FRU": {
+                    "type": "string"
+                  },
+                  "MNE": {
+                    "type": "string"
+                  },
+                  "MAL": {
+                    "type": "string"
+                  },
+                  "LAC": {
+                    "type": "string"
+                  },
+                  "TRE": {
+                    "type": "string"
+                  },
+                  "MAN": {
+                    "type": "string"
+                  },
+                  "RAF": {
+                    "type": "string"
+                  },
+                  "RIB": {
+                    "type": "string"
+                  },
+                  "CEL": {
+                    "type": "string"
+                  },
+                  "NIT": {
+                    "type": "string"
+                  },
+                  "VP": {
+                    "type": "string"
+                  },
+                  "beta GAL": {
+                    "type": "string"
+                  },
+                  "ArgA": {
+                    "type": "string"
+                  },
+                  "PAL": {
+                    "type": "string"
+                  },
+                  "PyrA": {
+                    "type": "string"
+                  },
+                  "NOVO": {
+                    "type": "string"
+                  },
+                  "SAC": {
+                    "type": "string"
+                  },
+                  "NAG": {
+                    "type": "string"
+                  },
+                  "TUR": {
+                    "type": "string"
+                  },
+                  "ARA": {
+                    "type": "string"
+                  },
+                  "beta GUR": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "@ref",
+                  "ADH Arg",
+                  "ARA",
+                  "ArgA",
+                  "CEL",
+                  "ESC",
+                  "FRU",
+                  "GLU",
+                  "LAC",
+                  "MAL",
+                  "MAN",
+                  "MNE",
+                  "NAG",
+                  "NIT",
+                  "NOVO",
+                  "RAF",
+                  "RIB",
+                  "SAC",
+                  "TRE",
+                  "TUR",
+                  "URE",
+                  "beta GUR"
+                ]
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "@ref": {
+                      "type": "integer"
+                    },
+                    "URE": {
+                      "type": "string"
+                    },
+                    "ADH Arg": {
+                      "type": "string"
+                    },
+                    "ODC": {
+                      "type": "string"
+                    },
+                    "ESC": {
+                      "type": "string"
+                    },
+                    "GLU": {
+                      "type": "string"
+                    },
+                    "FRU": {
+                      "type": "string"
+                    },
+                    "MNE": {
+                      "type": "string"
+                    },
+                    "MAL": {
+                      "type": "string"
+                    },
+                    "LAC": {
+                      "type": "string"
+                    },
+                    "TRE": {
+                      "type": "string"
+                    },
+                    "MAN": {
+                      "type": "string"
+                    },
+                    "RAF": {
+                      "type": "string"
+                    },
+                    "RIB": {
+                      "type": "string"
+                    },
+                    "CEL": {
+                      "type": "string"
+                    },
+                    "NIT": {
+                      "type": "string"
+                    },
+                    "VP": {
+                      "type": "string"
+                    },
+                    "beta GAL": {
+                      "type": "string"
+                    },
+                    "ArgA": {
+                      "type": "string"
+                    },
+                    "PAL": {
+                      "type": "string"
+                    },
+                    "PyrA": {
+                      "type": "string"
+                    },
+                    "NOVO": {
+                      "type": "string"
+                    },
+                    "SAC": {
+                      "type": "string"
+                    },
+                    "NAG": {
+                      "type": "string"
+                    },
+                    "TUR": {
+                      "type": "string"
+                    },
+                    "ARA": {
+                      "type": "string"
+                    },
+                    "beta GUR": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "@ref",
+                    "ADH Arg",
+                    "ARA",
+                    "ArgA",
+                    "ESC",
+                    "FRU",
+                    "GLU",
+                    "MAL",
+                    "MAN",
+                    "MNE",
+                    "NAG",
+                    "NOVO",
+                    "PAL",
+                    "PyrA",
+                    "RAF",
+                    "SAC",
+                    "TRE",
+                    "TUR",
+                    "URE",
+                    "beta GAL"
+                  ]
+                }
+              }
+            ]
+          },
+          "API ID32E": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "@ref": {
+                    "type": "integer"
+                  },
+                  "ODC": {
+                    "type": "string"
+                  },
+                  "ADH Arg": {
+                    "type": "string"
+                  },
+                  "LDC Lys": {
+                    "type": "string"
+                  },
+                  "URE": {
+                    "type": "string"
+                  },
+                  "LARL": {
+                    "type": "string"
+                  },
+                  "GAT": {
+                    "type": "string"
+                  },
+                  "5KG": {
+                    "type": "string"
+                  },
+                  "LIP": {
+                    "type": "string"
+                  },
+                  "RP": {
+                    "type": "string"
+                  },
+                  "beta GLU": {
+                    "type": "string"
+                  },
+                  "MAN": {
+                    "type": "string"
+                  },
+                  "MAL": {
+                    "type": "string"
+                  },
+                  "ADO": {
+                    "type": "string"
+                  },
+                  "PLE": {
+                    "type": "string"
+                  },
+                  "beta GUR": {
+                    "type": "string"
+                  },
+                  "MNT": {
+                    "type": "string"
+                  },
+                  "IND": {
+                    "type": "string"
+                  },
+                  "beta NAG": {
+                    "type": "string"
+                  },
+                  "beta GAL": {
+                    "type": "string"
+                  },
+                  "GLU": {
+                    "type": "string"
+                  },
+                  "SAC": {
+                    "type": "string"
+                  },
+                  "LARA": {
+                    "type": "string"
+                  },
+                  "DARL": {
+                    "type": "string"
+                  },
+                  "alpha GLU": {
+                    "type": "string"
+                  },
+                  "alpha GAL": {
+                    "type": "string"
+                  },
+                  "TRE": {
+                    "type": "string"
+                  },
+                  "RHA": {
+                    "type": "string"
+                  },
+                  "INO": {
+                    "type": "string"
+                  },
+                  "CEL": {
+                    "type": "string"
+                  },
+                  "SOR": {
+                    "type": "string"
+                  },
+                  "alphaMAL": {
+                    "type": "string"
+                  },
+                  "AspA": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "5KG",
+                  "@ref",
+                  "ADH Arg",
+                  "ADO",
+                  "CEL",
+                  "DARL",
+                  "GAT",
+                  "GLU",
+                  "INO",
+                  "LARA",
+                  "LARL",
+                  "LDC Lys",
+                  "ODC",
+                  "PLE",
+                  "RHA",
+                  "RP",
+                  "SAC",
+                  "SOR",
+                  "TRE",
+                  "URE",
+                  "alpha GAL",
+                  "alphaMAL",
+                  "beta GAL",
+                  "beta GLU",
+                  "beta GUR"
+                ]
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "@ref": {
+                      "type": "integer"
+                    },
+                    "ODC": {
+                      "type": "string"
+                    },
+                    "ADH Arg": {
+                      "type": "string"
+                    },
+                    "LDC Lys": {
+                      "type": "string"
+                    },
+                    "URE": {
+                      "type": "string"
+                    },
+                    "LARL": {
+                      "type": "string"
+                    },
+                    "GAT": {
+                      "type": "string"
+                    },
+                    "5KG": {
+                      "type": "string"
+                    },
+                    "LIP": {
+                      "type": "string"
+                    },
+                    "RP": {
+                      "type": "string"
+                    },
+                    "beta GLU": {
+                      "type": "string"
+                    },
+                    "MAN": {
+                      "type": "string"
+                    },
+                    "MAL": {
+                      "type": "string"
+                    },
+                    "ADO": {
+                      "type": "string"
+                    },
+                    "PLE": {
+                      "type": "string"
+                    },
+                    "beta GUR": {
+                      "type": "string"
+                    },
+                    "MNT": {
+                      "type": "string"
+                    },
+                    "IND": {
+                      "type": "string"
+                    },
+                    "beta NAG": {
+                      "type": "string"
+                    },
+                    "beta GAL": {
+                      "type": "string"
+                    },
+                    "GLU": {
+                      "type": "string"
+                    },
+                    "SAC": {
+                      "type": "string"
+                    },
+                    "LARA": {
+                      "type": "string"
+                    },
+                    "DARL": {
+                      "type": "string"
+                    },
+                    "alpha GLU": {
+                      "type": "string"
+                    },
+                    "alpha GAL": {
+                      "type": "string"
+                    },
+                    "TRE": {
+                      "type": "string"
+                    },
+                    "RHA": {
+                      "type": "string"
+                    },
+                    "INO": {
+                      "type": "string"
+                    },
+                    "CEL": {
+                      "type": "string"
+                    },
+                    "SOR": {
+                      "type": "string"
+                    },
+                    "alphaMAL": {
+                      "type": "string"
+                    },
+                    "AspA": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "5KG",
+                    "@ref",
+                    "ADH Arg",
+                    "ADO",
+                    "CEL",
+                    "DARL",
+                    "GAT",
+                    "GLU",
+                    "IND",
+                    "INO",
+                    "LARA",
+                    "LARL",
+                    "LDC Lys",
+                    "LIP",
+                    "MAL",
+                    "MAN",
+                    "MNT",
+                    "ODC",
+                    "PLE",
+                    "RHA",
+                    "RP",
+                    "SAC",
+                    "SOR",
+                    "TRE",
+                    "URE",
+                    "alpha GAL",
+                    "alpha GLU",
+                    "alphaMAL",
+                    "beta GAL",
+                    "beta GLU",
+                    "beta GUR",
+                    "beta NAG"
+                  ]
+                }
+              }
+            ]
+          },
+          "antibiogram": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "@ref": {
+                    "type": "integer"
+                  },
+                  "medium": {
+                    "type": "string"
+                  },
+                  "Penicillin G": {
+                    "type": "string"
+                  },
+                  "oxacillin": {
+                    "type": "string"
+                  },
+                  "ampicillin": {
+                    "type": "string"
+                  },
+                  "ticarcillin": {
+                    "type": "string"
+                  },
+                  "mezlocillin": {
+                    "type": "string"
+                  },
+                  "cefalotin": {
+                    "type": "string"
+                  },
+                  "cefazolin": {
+                    "type": "string"
+                  },
+                  "cefotaxime": {
+                    "type": "string"
+                  },
+                  "aztreonam": {
+                    "type": "string"
+                  },
+                  "imipenem": {
+                    "type": "string"
+                  },
+                  "tetracycline": {
+                    "type": "string"
+                  },
+                  "chloramphenicol": {
+                    "type": "string"
+                  },
+                  "gentamycin": {
+                    "type": "string"
+                  },
+                  "amikacin": {
+                    "type": "string"
+                  },
+                  "vancomycin": {
+                    "type": "string"
+                  },
+                  "erythromycin": {
+                    "type": "string"
+                  },
+                  "lincomycin": {
+                    "type": "string"
+                  },
+                  "ofloxacin": {
+                    "type": "string"
+                  },
+                  "norfloxacin": {
+                    "type": "string"
+                  },
+                  "colistin": {
+                    "type": "string"
+                  },
+                  "pipemidic acid": {
+                    "type": "string"
+                  },
+                  "nitrofurantoin": {
+                    "type": "string"
+                  },
+                  "bacitracin": {
+                    "type": "string"
+                  },
+                  "polymyxin b": {
+                    "type": "string"
+                  },
+                  "kanamycin": {
+                    "type": "string"
+                  },
+                  "neomycin": {
+                    "type": "string"
+                  },
+                  "doxycycline": {
+                    "type": "string"
+                  },
+                  "ceftriaxone": {
+                    "type": "string"
+                  },
+                  "clindamycin": {
+                    "type": "string"
+                  },
+                  "fosfomycin": {
+                    "type": "string"
+                  },
+                  "moxifloxacin": {
+                    "type": "string"
+                  },
+                  "linezolid": {
+                    "type": "string"
+                  },
+                  "nystatin": {
+                    "type": "string"
+                  },
+                  "quinupristin/dalfopristin": {
+                    "type": "string"
+                  },
+                  "teicoplanin": {
+                    "type": "string"
+                  },
+                  "piperacillin/tazobactam": {
+                    "type": "string"
+                  },
+                  "incubation temperature": {
+                    "type": "integer"
+                  },
+                  "incubation time": {
+                    "type": "integer"
+                  },
+                  "oxygen condition": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "@ref",
+                  "Penicillin G",
+                  "amikacin",
+                  "ampicillin",
+                  "aztreonam",
+                  "bacitracin",
+                  "cefalotin",
+                  "cefazolin",
+                  "cefotaxime",
+                  "ceftriaxone",
+                  "chloramphenicol",
+                  "clindamycin",
+                  "colistin",
+                  "doxycycline",
+                  "erythromycin",
+                  "fosfomycin",
+                  "gentamycin",
+                  "imipenem",
+                  "kanamycin",
+                  "lincomycin",
+                  "linezolid",
+                  "medium",
+                  "mezlocillin",
+                  "moxifloxacin",
+                  "neomycin",
+                  "nitrofurantoin",
+                  "norfloxacin",
+                  "nystatin",
+                  "ofloxacin",
+                  "oxacillin",
+                  "pipemidic acid",
+                  "piperacillin/tazobactam",
+                  "polymyxin b",
+                  "quinupristin/dalfopristin",
+                  "teicoplanin",
+                  "tetracycline",
+                  "ticarcillin",
+                  "vancomycin"
+                ]
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "@ref": {
+                      "type": "integer"
+                    },
+                    "medium": {
+                      "type": "string"
+                    },
+                    "incubation temperature": {
+                      "type": "integer"
+                    },
+                    "oxygen condition": {
+                      "type": "string"
+                    },
+                    "Penicillin G": {
+                      "type": "string"
+                    },
+                    "oxacillin": {
+                      "type": "string"
+                    },
+                    "ampicillin": {
+                      "type": "string"
+                    },
+                    "ticarcillin": {
+                      "type": "string"
+                    },
+                    "mezlocillin": {
+                      "type": "string"
+                    },
+                    "cefalotin": {
+                      "type": "string"
+                    },
+                    "cefazolin": {
+                      "type": "string"
+                    },
+                    "cefotaxime": {
+                      "type": "string"
+                    },
+                    "aztreonam": {
+                      "type": "string"
+                    },
+                    "imipenem": {
+                      "type": "string"
+                    },
+                    "tetracycline": {
+                      "type": "string"
+                    },
+                    "chloramphenicol": {
+                      "type": "string"
+                    },
+                    "gentamycin": {
+                      "type": "string"
+                    },
+                    "amikacin": {
+                      "type": "string"
+                    },
+                    "vancomycin": {
+                      "type": "string"
+                    },
+                    "erythromycin": {
+                      "type": "string"
+                    },
+                    "lincomycin": {
+                      "type": "string"
+                    },
+                    "ofloxacin": {
+                      "type": "string"
+                    },
+                    "norfloxacin": {
+                      "type": "string"
+                    },
+                    "colistin": {
+                      "type": "string"
+                    },
+                    "pipemidic acid": {
+                      "type": "string"
+                    },
+                    "nitrofurantoin": {
+                      "type": "string"
+                    },
+                    "bacitracin": {
+                      "type": "string"
+                    },
+                    "polymyxin b": {
+                      "type": "string"
+                    },
+                    "kanamycin": {
+                      "type": "string"
+                    },
+                    "neomycin": {
+                      "type": "string"
+                    },
+                    "doxycycline": {
+                      "type": "string"
+                    },
+                    "ceftriaxone": {
+                      "type": "string"
+                    },
+                    "clindamycin": {
+                      "type": "string"
+                    },
+                    "fosfomycin": {
+                      "type": "string"
+                    },
+                    "moxifloxacin": {
+                      "type": "string"
+                    },
+                    "linezolid": {
+                      "type": "string"
+                    },
+                    "nystatin": {
+                      "type": "string"
+                    },
+                    "quinupristin/dalfopristin": {
+                      "type": "string"
+                    },
+                    "teicoplanin": {
+                      "type": "string"
+                    },
+                    "piperacillin/tazobactam": {
+                      "type": "string"
+                    },
+                    "incubation time": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "@ref",
+                    "Penicillin G",
+                    "amikacin",
+                    "ampicillin",
+                    "aztreonam",
+                    "bacitracin",
+                    "cefalotin",
+                    "cefazolin",
+                    "cefotaxime",
+                    "ceftriaxone",
+                    "chloramphenicol",
+                    "clindamycin",
+                    "colistin",
+                    "doxycycline",
+                    "erythromycin",
+                    "fosfomycin",
+                    "gentamycin",
+                    "imipenem",
+                    "kanamycin",
+                    "lincomycin",
+                    "linezolid",
+                    "medium",
+                    "mezlocillin",
+                    "moxifloxacin",
+                    "neomycin",
+                    "nitrofurantoin",
+                    "norfloxacin",
+                    "nystatin",
+                    "ofloxacin",
+                    "oxacillin",
+                    "pipemidic acid",
+                    "piperacillin/tazobactam",
+                    "polymyxin b",
+                    "quinupristin/dalfopristin",
+                    "teicoplanin",
+                    "tetracycline",
+                    "ticarcillin",
+                    "vancomycin"
+                  ]
+                }
+              }
+            ]
+          },
+          "API STA": {
+            "type": "object",
+            "properties": {
+              "@ref": {
+                "type": "integer"
+              },
+              "GLU": {
+                "type": "string"
+              },
+              "FRU": {
+                "type": "string"
+              },
+              "MNE": {
+                "type": "string"
+              },
+              "MAL": {
+                "type": "string"
+              },
+              "LAC": {
+                "type": "string"
+              },
+              "TRE": {
+                "type": "string"
+              },
+              "MAN": {
+                "type": "string"
+              },
+              "XLT": {
+                "type": "string"
+              },
+              "MEL": {
+                "type": "string"
+              },
+              "NIT": {
+                "type": "string"
+              },
+              "PAL": {
+                "type": "string"
+              },
+              "VP": {
+                "type": "string"
+              },
+              "RAF": {
+                "type": "string"
+              },
+              "XYL": {
+                "type": "string"
+              },
+              "SAC": {
+                "type": "string"
+              },
+              "MDG": {
+                "type": "string"
+              },
+              "NAG": {
+                "type": "string"
+              },
+              "ADH": {
+                "type": "string"
+              },
+              "URE": {
+                "type": "string"
+              },
+              "LSTR": {
+                "type": "string"
+              },
+              "Control": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "@ref",
+              "ADH",
+              "FRU",
+              "GLU",
+              "LAC",
+              "MAL",
+              "MAN",
+              "MDG",
+              "MEL",
+              "MNE",
+              "NAG",
+              "NIT",
+              "PAL",
+              "RAF",
+              "SAC",
+              "TRE",
+              "URE",
+              "VP",
+              "XLT",
+              "XYL"
+            ]
+          },
+          "API CAM": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "@ref": {
+                    "type": "integer"
+                  },
+                  "URE": {
+                    "type": "string"
+                  },
+                  "NIT": {
+                    "type": "string"
+                  },
+                  "EST": {
+                    "type": "string"
+                  },
+                  "HIP": {
+                    "type": "string"
+                  },
+                  "GGT": {
+                    "type": "string"
+                  },
+                  "TTC": {
+                    "type": "string"
+                  },
+                  "PYRA": {
+                    "type": "string"
+                  },
+                  "ArgA": {
+                    "type": "string"
+                  },
+                  "AspA": {
+                    "type": "string"
+                  },
+                  "PAL": {
+                    "type": "string"
+                  },
+                  "H2S": {
+                    "type": "string"
+                  },
+                  "GLU": {
+                    "type": "string"
+                  },
+                  "SUT": {
+                    "type": "string"
+                  },
+                  "NAL": {
+                    "type": "string"
+                  },
+                  "CFZ": {
+                    "type": "string"
+                  },
+                  "ACE": {
+                    "type": "string"
+                  },
+                  "PROP": {
+                    "type": "string"
+                  },
+                  "MLT": {
+                    "type": "string"
+                  },
+                  "CIT": {
+                    "type": "string"
+                  },
+                  "ERO": {
+                    "type": "string"
+                  },
+                  "CAT": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "@ref",
+                  "GGT",
+                  "PAL",
+                  "PYRA",
+                  "TTC"
+                ]
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "@ref": {
+                      "type": "integer"
+                    },
+                    "URE": {
+                      "type": "string"
+                    },
+                    "NIT": {
+                      "type": "string"
+                    },
+                    "EST": {
+                      "type": "string"
+                    },
+                    "HIP": {
+                      "type": "string"
+                    },
+                    "GGT": {
+                      "type": "string"
+                    },
+                    "TTC": {
+                      "type": "string"
+                    },
+                    "PYRA": {
+                      "type": "string"
+                    },
+                    "ArgA": {
+                      "type": "string"
+                    },
+                    "AspA": {
+                      "type": "string"
+                    },
+                    "PAL": {
+                      "type": "string"
+                    },
+                    "H2S": {
+                      "type": "string"
+                    },
+                    "GLU": {
+                      "type": "string"
+                    },
+                    "SUT": {
+                      "type": "string"
+                    },
+                    "NAL": {
+                      "type": "string"
+                    },
+                    "CFZ": {
+                      "type": "string"
+                    },
+                    "ACE": {
+                      "type": "string"
+                    },
+                    "PROP": {
+                      "type": "string"
+                    },
+                    "MLT": {
+                      "type": "string"
+                    },
+                    "CIT": {
+                      "type": "string"
+                    },
+                    "ERO": {
+                      "type": "string"
+                    },
+                    "CAT": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "@ref",
+                    "ArgA",
+                    "AspA",
+                    "GGT",
+                    "NIT",
+                    "PAL",
+                    "PYRA",
+                    "URE"
+                  ]
+                }
+              }
+            ]
+          },
+          "API LIST": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "@ref": {
+                    "type": "integer"
+                  },
+                  "DIM": {
+                    "type": "string"
+                  },
+                  "ESC": {
+                    "type": "string"
+                  },
+                  "alpha MAN": {
+                    "type": "string"
+                  },
+                  "DARL": {
+                    "type": "string"
+                  },
+                  "XYL": {
+                    "type": "string"
+                  },
+                  "RHA": {
+                    "type": "string"
+                  },
+                  "MDG": {
+                    "type": "string"
+                  },
+                  "RIB": {
+                    "type": "string"
+                  },
+                  "G1P": {
+                    "type": "string"
+                  },
+                  "TAG": {
+                    "type": "string"
+                  },
+                  "beta HEM": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "@ref",
+                  "DARL",
+                  "ESC",
+                  "G1P",
+                  "MDG",
+                  "RHA",
+                  "RIB",
+                  "XYL",
+                  "alpha MAN"
+                ]
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "@ref": {
+                      "type": "integer"
+                    },
+                    "DIM": {
+                      "type": "string"
+                    },
+                    "ESC": {
+                      "type": "string"
+                    },
+                    "alpha MAN": {
+                      "type": "string"
+                    },
+                    "DARL": {
+                      "type": "string"
+                    },
+                    "XYL": {
+                      "type": "string"
+                    },
+                    "RHA": {
+                      "type": "string"
+                    },
+                    "MDG": {
+                      "type": "string"
+                    },
+                    "RIB": {
+                      "type": "string"
+                    },
+                    "G1P": {
+                      "type": "string"
+                    },
+                    "TAG": {
+                      "type": "string"
+                    },
+                    "beta HEM": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "@ref",
+                    "DARL",
+                    "ESC",
+                    "G1P",
+                    "MDG",
+                    "RHA",
+                    "RIB",
+                    "TAG",
+                    "XYL",
+                    "alpha MAN"
+                  ]
+                }
+              }
+            ]
+          },
+          "API 20A": {
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "@ref": {
+                      "type": "integer"
+                    },
+                    "IND": {
+                      "type": "string"
+                    },
+                    "URE": {
+                      "type": "string"
+                    },
+                    "GLU": {
+                      "type": "string"
+                    },
+                    "MAN": {
+                      "type": "string"
+                    },
+                    "LAC": {
+                      "type": "string"
+                    },
+                    "SAC": {
+                      "type": "string"
+                    },
+                    "MAL": {
+                      "type": "string"
+                    },
+                    "SAL": {
+                      "type": "string"
+                    },
+                    "XYL": {
+                      "type": "string"
+                    },
+                    "ARA": {
+                      "type": "string"
+                    },
+                    "GEL": {
+                      "type": "string"
+                    },
+                    "ESC": {
+                      "type": "string"
+                    },
+                    "GLY": {
+                      "type": "string"
+                    },
+                    "CEL": {
+                      "type": "string"
+                    },
+                    "MNE": {
+                      "type": "string"
+                    },
+                    "MLZ": {
+                      "type": "string"
+                    },
+                    "RAF": {
+                      "type": "string"
+                    },
+                    "SOR": {
+                      "type": "string"
+                    },
+                    "RHA": {
+                      "type": "string"
+                    },
+                    "TRE": {
+                      "type": "string"
+                    },
+                    "CAT": {
+                      "type": "string"
+                    },
+                    "SPOR": {
+                      "type": "string"
+                    },
+                    "GRAM": {
+                      "type": "string"
+                    },
+                    "COCC": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "@ref",
+                    "ARA",
+                    "CEL",
+                    "GEL",
+                    "GLU",
+                    "GLY",
+                    "LAC",
+                    "MAL",
+                    "MAN",
+                    "MLZ",
+                    "MNE",
+                    "RAF",
+                    "RHA",
+                    "SAC",
+                    "SAL",
+                    "SOR",
+                    "TRE",
+                    "URE",
+                    "XYL"
+                  ]
+                }
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "@ref": {
+                    "type": "integer"
+                  },
+                  "IND": {
+                    "type": "string"
+                  },
+                  "URE": {
+                    "type": "string"
+                  },
+                  "GLU": {
+                    "type": "string"
+                  },
+                  "MAN": {
+                    "type": "string"
+                  },
+                  "LAC": {
+                    "type": "string"
+                  },
+                  "SAC": {
+                    "type": "string"
+                  },
+                  "MAL": {
+                    "type": "string"
+                  },
+                  "SAL": {
+                    "type": "string"
+                  },
+                  "XYL": {
+                    "type": "string"
+                  },
+                  "ARA": {
+                    "type": "string"
+                  },
+                  "GEL": {
+                    "type": "string"
+                  },
+                  "ESC": {
+                    "type": "string"
+                  },
+                  "GLY": {
+                    "type": "string"
+                  },
+                  "CEL": {
+                    "type": "string"
+                  },
+                  "MNE": {
+                    "type": "string"
+                  },
+                  "MLZ": {
+                    "type": "string"
+                  },
+                  "RAF": {
+                    "type": "string"
+                  },
+                  "SOR": {
+                    "type": "string"
+                  },
+                  "RHA": {
+                    "type": "string"
+                  },
+                  "TRE": {
+                    "type": "string"
+                  },
+                  "CAT": {
+                    "type": "string"
+                  },
+                  "SPOR": {
+                    "type": "string"
+                  },
+                  "GRAM": {
+                    "type": "string"
+                  },
+                  "COCC": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "@ref",
+                  "ARA",
+                  "CEL",
+                  "GEL",
+                  "GLU",
+                  "GLY",
+                  "LAC",
+                  "MAL",
+                  "MAN",
+                  "MLZ",
+                  "MNE",
+                  "RAF",
+                  "RHA",
+                  "SAC",
+                  "SAL",
+                  "SOR",
+                  "TRE",
+                  "URE",
+                  "XYL"
+                ]
+              }
+            ]
+          },
+          "API 20STR": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "@ref": {
+                    "type": "integer"
+                  },
+                  "VP": {
+                    "type": "string"
+                  },
+                  "HIP": {
+                    "type": "string"
+                  },
+                  "ESC": {
+                    "type": "string"
+                  },
+                  "PYRA": {
+                    "type": "string"
+                  },
+                  "alpha GAL": {
+                    "type": "string"
+                  },
+                  "beta GUR": {
+                    "type": "string"
+                  },
+                  "beta GAL": {
+                    "type": "string"
+                  },
+                  "PAL": {
+                    "type": "string"
+                  },
+                  "LAP": {
+                    "type": "string"
+                  },
+                  "ADH": {
+                    "type": "string"
+                  },
+                  "RIB": {
+                    "type": "string"
+                  },
+                  "ARA": {
+                    "type": "string"
+                  },
+                  "MAN": {
+                    "type": "string"
+                  },
+                  "SOR": {
+                    "type": "string"
+                  },
+                  "LAC": {
+                    "type": "string"
+                  },
+                  "TRE": {
+                    "type": "string"
+                  },
+                  "INU": {
+                    "type": "string"
+                  },
+                  "RAF": {
+                    "type": "string"
+                  },
+                  "AMD": {
+                    "type": "string"
+                  },
+                  "GLYG": {
+                    "type": "string"
+                  },
+                  "beta HEM": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "@ref",
+                  "ADH",
+                  "AMD",
+                  "ARA",
+                  "ESC",
+                  "GLYG",
+                  "HIP",
+                  "INU",
+                  "LAC",
+                  "LAP",
+                  "MAN",
+                  "PAL",
+                  "PYRA",
+                  "RAF",
+                  "RIB",
+                  "SOR",
+                  "TRE",
+                  "VP",
+                  "alpha GAL",
+                  "beta GAL",
+                  "beta GUR"
+                ]
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "@ref": {
+                      "type": "integer"
+                    },
+                    "VP": {
+                      "type": "string"
+                    },
+                    "HIP": {
+                      "type": "string"
+                    },
+                    "ESC": {
+                      "type": "string"
+                    },
+                    "PYRA": {
+                      "type": "string"
+                    },
+                    "alpha GAL": {
+                      "type": "string"
+                    },
+                    "beta GUR": {
+                      "type": "string"
+                    },
+                    "beta GAL": {
+                      "type": "string"
+                    },
+                    "PAL": {
+                      "type": "string"
+                    },
+                    "LAP": {
+                      "type": "string"
+                    },
+                    "ADH": {
+                      "type": "string"
+                    },
+                    "RIB": {
+                      "type": "string"
+                    },
+                    "ARA": {
+                      "type": "string"
+                    },
+                    "MAN": {
+                      "type": "string"
+                    },
+                    "SOR": {
+                      "type": "string"
+                    },
+                    "LAC": {
+                      "type": "string"
+                    },
+                    "TRE": {
+                      "type": "string"
+                    },
+                    "INU": {
+                      "type": "string"
+                    },
+                    "RAF": {
+                      "type": "string"
+                    },
+                    "AMD": {
+                      "type": "string"
+                    },
+                    "GLYG": {
+                      "type": "string"
+                    },
+                    "beta HEM": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "@ref",
+                    "ADH",
+                    "AMD",
+                    "ARA",
+                    "ESC",
+                    "GLYG",
+                    "HIP",
+                    "INU",
+                    "LAC",
+                    "LAP",
+                    "MAN",
+                    "PAL",
+                    "PYRA",
+                    "RAF",
+                    "RIB",
+                    "SOR",
+                    "TRE",
+                    "VP",
+                    "alpha GAL",
+                    "beta GAL",
+                    "beta GUR"
+                  ]
+                }
+              }
+            ]
+          },
+          "API 50CHas": {
+            "type": "object",
+            "properties": {
+              "@ref": {
+                "type": "integer"
+              },
+              "Q": {
+                "type": "string"
+              },
+              "GLY": {
+                "type": "string"
+              },
+              "ERY": {
+                "type": "string"
+              },
+              "DARA": {
+                "type": "string"
+              },
+              "LARA": {
+                "type": "string"
+              },
+              "RIB": {
+                "type": "string"
+              },
+              "DXYL": {
+                "type": "string"
+              },
+              "LXYL": {
+                "type": "string"
+              },
+              "ADO": {
+                "type": "string"
+              },
+              "MDX": {
+                "type": "string"
+              },
+              "GAL": {
+                "type": "string"
+              },
+              "GLU": {
+                "type": "string"
+              },
+              "FRU": {
+                "type": "string"
+              },
+              "MNE": {
+                "type": "string"
+              },
+              "SBE": {
+                "type": "string"
+              },
+              "RHA": {
+                "type": "string"
+              },
+              "DUL": {
+                "type": "string"
+              },
+              "INO": {
+                "type": "string"
+              },
+              "MAN": {
+                "type": "string"
+              },
+              "SOR": {
+                "type": "string"
+              },
+              "MDM": {
+                "type": "string"
+              },
+              "MDG": {
+                "type": "string"
+              },
+              "NAG": {
+                "type": "string"
+              },
+              "AMY": {
+                "type": "string"
+              },
+              "ARB": {
+                "type": "string"
+              },
+              "ESC": {
+                "type": "string"
+              },
+              "SAL": {
+                "type": "string"
+              },
+              "CEL": {
+                "type": "string"
+              },
+              "MAL": {
+                "type": "string"
+              },
+              "LAC": {
+                "type": "string"
+              },
+              "MEL": {
+                "type": "string"
+              },
+              "SAC": {
+                "type": "string"
+              },
+              "TRE": {
+                "type": "string"
+              },
+              "INU": {
+                "type": "string"
+              },
+              "MLZ": {
+                "type": "string"
+              },
+              "RAF": {
+                "type": "string"
+              },
+              "AMD": {
+                "type": "string"
+              },
+              "GLYG": {
+                "type": "string"
+              },
+              "XLT": {
+                "type": "string"
+              },
+              "GEN": {
+                "type": "string"
+              },
+              "TUR": {
+                "type": "string"
+              },
+              "LYX": {
+                "type": "string"
+              },
+              "TAG": {
+                "type": "string"
+              },
+              "DFUC": {
+                "type": "string"
+              },
+              "LFUC": {
+                "type": "string"
+              },
+              "DARL": {
+                "type": "string"
+              },
+              "LARL": {
+                "type": "string"
+              },
+              "GNT": {
+                "type": "string"
+              },
+              "2KG": {
+                "type": "string"
+              },
+              "5KG": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "@ref",
+              "ADO",
+              "AMD",
+              "AMY",
+              "ARB",
+              "CEL",
+              "DARA",
+              "DARL",
+              "DFUC",
+              "DUL",
+              "DXYL",
+              "ERY",
+              "ESC",
+              "FRU",
+              "GAL",
+              "GEN",
+              "GLU",
+              "GLY",
+              "GLYG",
+              "INO",
+              "INU",
+              "LAC",
+              "LARA",
+              "LARL",
+              "LFUC",
+              "LXYL",
+              "LYX",
+              "MAL",
+              "MAN",
+              "MDG",
+              "MDM",
+              "MDX",
+              "MEL",
+              "MLZ",
+              "MNE",
+              "NAG",
+              "Q",
+              "RAF",
+              "RHA",
+              "RIB",
+              "SAC",
+              "SAL",
+              "SBE",
+              "SOR",
+              "TAG",
+              "TRE",
+              "TUR",
+              "XLT"
+            ]
+          }
+        }
+      },
+      "Isolation, sampling and environmental information": {
+        "type": "object",
+        "properties": {
+          "isolation": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "@ref": {
+                    "type": "integer"
+                  },
+                  "sample type": {
+                    "type": "string"
+                  },
+                  "country": {
+                    "type": "string"
+                  },
+                  "origin.country": {
+                    "type": "string"
+                  },
+                  "continent": {
+                    "type": "string"
+                  },
+                  "geographic location": {
+                    "type": "string"
+                  },
+                  "host species": {
+                    "type": "string"
+                  },
+                  "latitude": {
+                    "type": "number"
+                  },
+                  "longitude": {
+                    "type": "number"
+                  },
+                  "isolation date": {
+                    "type": "string"
+                  },
+                  "sampling date": {
+                    "type": "string"
+                  },
+                  "enrichment culture": {
+                    "type": "string"
+                  },
+                  "enrichment culture composition": {
+                    "type": "string"
+                  },
+                  "enrichment culture duration": {
+                    "type": "string"
+                  },
+                  "enrichment culture temperature": {
+                    "type": "string"
+                  },
+                  "isolation procedure": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "@ref"
+                ]
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "@ref": {
+                      "type": "integer"
+                    },
+                    "sample type": {
+                      "type": "string"
+                    },
+                    "geographic location": {
+                      "type": "string"
+                    },
+                    "country": {
+                      "type": "string"
+                    },
+                    "origin.country": {
+                      "type": "string"
+                    },
+                    "continent": {
+                      "type": "string"
+                    },
+                    "enrichment culture": {
+                      "type": "string"
+                    },
+                    "enrichment culture duration": {
+                      "type": "string"
+                    },
+                    "enrichment culture temperature": {
+                      "type": "string"
+                    },
+                    "sampling date": {
+                      "type": "string"
+                    },
+                    "isolation date": {
+                      "type": "string"
+                    },
+                    "host species": {
+                      "type": "string"
+                    },
+                    "latitude": {
+                      "type": "number"
+                    },
+                    "longitude": {
+                      "type": "number"
+                    },
+                    "isolation procedure": {
+                      "type": "string"
+                    },
+                    "enrichment culture composition": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "@ref"
+                  ]
+                }
+              }
+            ]
+          },
+          "isolation source categories": {
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "Cat1": {
+                      "type": "string"
+                    },
+                    "Cat2": {
+                      "type": "string"
+                    },
+                    "Cat3": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "Cat1"
+                  ]
+                }
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "Cat1": {
+                    "type": "string"
+                  },
+                  "Cat2": {
+                    "type": "string"
+                  },
+                  "Cat3": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "Cat1"
+                ]
+              }
+            ]
+          },
+          "taxonmaps": {
+            "type": "object",
+            "properties": {
+              "@ref": {
+                "type": "integer"
+              },
+              "File name": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string"
+              },
+              "Last taxonomy": {
+                "type": "string"
+              },
+              "16S sequence": {
+                "type": "string"
+              },
+              "Sequence Identity": {
+                "type": "null"
+              },
+              "Total samples": {
+                "type": "integer"
+              },
+              "soil counts": {
+                "type": "integer"
+              },
+              "aquatic counts": {
+                "type": "integer"
+              },
+              "animal counts": {
+                "type": "integer"
+              },
+              "plant counts": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "16S sequence",
+              "@ref",
+              "File name",
+              "Last taxonomy",
+              "Sequence Identity",
+              "Total samples",
+              "url"
+            ]
+          }
+        }
+      },
+      "Safety information": {
+        "type": "object",
+        "properties": {
+          "risk assessment": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "@ref": {
+                    "type": "integer"
+                  },
+                  "biosafety level": {
+                    "type": "string"
+                  },
+                  "biosafety level comment": {
+                    "type": "string"
+                  },
+                  "pathogenicity animal": {
+                    "type": "string"
+                  },
+                  "pathogenicity human": {
+                    "type": "string"
+                  },
+                  "pathogenicity plant": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "@ref"
+                ]
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "@ref": {
+                      "type": "integer"
+                    },
+                    "biosafety level": {
+                      "type": "string"
+                    },
+                    "biosafety level comment": {
+                      "type": "string"
+                    },
+                    "pathogenicity human": {
+                      "type": "string"
+                    },
+                    "pathogenicity animal": {
+                      "type": "string"
+                    },
+                    "pathogenicity plant": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "@ref"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "Sequence information": {
+        "type": "object",
+        "properties": {
+          "16S sequences": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "@ref": {
+                    "type": "integer"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "accession": {
+                    "type": "string"
+                  },
+                  "length": {
+                    "type": "integer"
+                  },
+                  "database": {
+                    "type": "string"
+                  },
+                  "NCBI tax ID": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "@ref",
+                  "accession",
+                  "database"
+                ]
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "@ref": {
+                      "type": "integer"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "accession": {
+                      "type": "string"
+                    },
+                    "length": {
+                      "type": "integer"
+                    },
+                    "database": {
+                      "type": "string"
+                    },
+                    "NCBI tax ID": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "@ref",
+                    "accession",
+                    "database"
+                  ]
+                }
+              }
+            ]
+          },
+          "Genome sequences": {
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "@ref": {
+                      "type": "integer"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "accession": {
+                      "type": "string"
+                    },
+                    "assembly level": {
+                      "type": "string"
+                    },
+                    "database": {
+                      "type": "string"
+                    },
+                    "NCBI tax ID": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "@ref",
+                    "accession",
+                    "database",
+                    "description"
+                  ]
+                }
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "@ref": {
+                    "type": "integer"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "accession": {
+                    "type": "string"
+                  },
+                  "assembly level": {
+                    "type": "string"
+                  },
+                  "database": {
+                    "type": "string"
+                  },
+                  "NCBI tax ID": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "@ref",
+                  "NCBI tax ID",
+                  "accession",
+                  "database",
+                  "description"
+                ]
+              }
+            ]
+          },
+          "GC content": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "@ref": {
+                    "type": "integer"
+                  },
+                  "GC-content": {
+                    "type": "string"
+                  },
+                  "method": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "@ref",
+                  "GC-content"
+                ]
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "@ref": {
+                      "type": "integer"
+                    },
+                    "GC-content": {
+                      "type": "string"
+                    },
+                    "method": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "@ref",
+                    "GC-content"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "Genome-based predictions": {
+        "type": "object"
+      },
+      "External links": {
+        "type": "object",
+        "properties": {
+          "@ref": {
+            "type": "integer"
+          },
+          "culture collection no.": {
+            "type": "string"
+          },
+          "straininfo link": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "@ref": {
+                    "type": "integer"
+                  },
+                  "straininfo": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "@ref",
+                  "straininfo"
+                ]
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "@ref": {
+                      "type": "integer"
+                    },
+                    "straininfo": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "@ref",
+                    "straininfo"
+                  ]
+                }
+              }
+            ]
+          },
+          "literature": {
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "topic": {
+                      "type": "string"
+                    },
+                    "Pubmed-ID": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "authors": {
+                      "type": "string"
+                    },
+                    "journal": {
+                      "type": "string"
+                    },
+                    "DOI": {
+                      "type": "string"
+                    },
+                    "year": {
+                      "type": "integer"
+                    },
+                    "mesh": {
+                      "type": "string"
+                    },
+                    "topic2": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "Pubmed-ID",
+                    "journal",
+                    "title"
+                  ]
+                }
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "topic": {
+                    "type": "string"
+                  },
+                  "Pubmed-ID": {
+                    "type": "string"
+                  },
+                  "title": {
+                    "type": "string"
+                  },
+                  "authors": {
+                    "type": "string"
+                  },
+                  "journal": {
+                    "type": "string"
+                  },
+                  "DOI": {
+                    "type": "string"
+                  },
+                  "year": {
+                    "type": "integer"
+                  },
+                  "mesh": {
+                    "type": "string"
+                  },
+                  "topic2": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "Pubmed-ID",
+                  "journal",
+                  "title",
+                  "year"
+                ]
+              }
+            ]
+          },
+          "phages": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "@ref": {
+                    "type": "integer"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "strain number": {
+                    "type": "string"
+                  },
+                  "link": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "@ref",
+                  "link",
+                  "name",
+                  "strain number"
+                ]
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "@ref": {
+                      "type": "integer"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "strain number": {
+                      "type": "string"
+                    },
+                    "link": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "@ref",
+                    "link",
+                    "name",
+                    "strain number"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "required": [
+          "@ref"
+        ]
+      },
+      "Reference": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "@id": {
+              "type": "integer"
+            },
+            "authors": {
+              "type": "string"
+            },
+            "catalogue": {
+              "type": "string"
+            },
+            "doi/url": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "journal": {
+              "type": "string"
+            },
+            "pubmed": {
+              "type": "integer"
+            },
+            "ID_cross_reference": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "@id"
+          ]
+        }
+      }
+    },
+    "required": [
+      "Culture and growth conditions",
+      "External links",
+      "General",
+      "Genome-based predictions",
+      "Isolation, sampling and environmental information",
+      "Morphology",
+      "Name and taxonomic classification",
+      "Physiology and metabolism",
+      "Reference",
+      "Safety information",
+      "Sequence information"
+    ]
+  }
+}
