@@ -14,3 +14,9 @@ local/taxdmp/nodes.dmp: local/taxdmp
 # Extract taxonomy rank triples from NCBI nodes.dmp file to a TTL file
 local/noderanks.ttl: local/taxdmp/nodes.dmp
 	poetry run extract-rank-triples --input-file $< --output-file $@
+
+bacdive_phenotype_mappings.tsv: sparql/bacdive_phenotype_mappings.rq
+	robot query \
+		--query $< $@ \
+		--input src/ontology/metpo.owl \
+		--output $@

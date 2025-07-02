@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: https://w3id.org/metpo/metpo/releases/2025-06-25/metpo-full.owl
+data-version: https://w3id.org/metpo/metpo/releases/2025-07-02/metpo-full.owl
 idspace: dce http://purl.org/dc/elements/1.1/ 
 idspace: dcterms http://purl.org/dc/terms/ 
 idspace: metpo https://w3id.org/metpo/ 
@@ -8,7 +8,7 @@ idspace: skos http://www.w3.org/2004/02/skos/core#
 ontology: https://w3id.org/metpo/metpo/metpo-full.owl
 property_value: dcterms:description "Microbial ecophysiological trait and phenotype ontology" xsd:string
 property_value: dcterms:title "METPO" xsd:string
-property_value: owl:versionInfo "2025-06-25" xsd:string
+property_value: owl:versionInfo "2025-07-02" xsd:string
 
 [Term]
 id: metpo:1000002
@@ -4501,6 +4501,65 @@ property_value: metpo:RangeMax "30" xsd:string
 property_value: metpo:RangeMin "0" xsd:string
 property_value: metpo:Unit "C" xsd:string
 
+[Term]
+id: metpo:1000601
+name: oxygen preference
+is_a: metpo:1000059 ! characteristic
+
+[Term]
+id: metpo:1000602
+name: aerobic
+synonym: "aerobe" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
+is_a: metpo:1000601 ! oxygen preference
+
+[Term]
+id: metpo:1000603
+name: anaerobic
+synonym: "anaerobe" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
+is_a: metpo:1000601 ! oxygen preference
+
+[Term]
+id: metpo:1000604
+name: microaerophilic
+synonym: "microaerophile" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
+is_a: metpo:1000601 ! oxygen preference
+
+[Term]
+id: metpo:1000605
+name: facultatively anaerobic
+synonym: "facultative anaerobe" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
+is_a: metpo:1000601 ! oxygen preference
+
+[Term]
+id: metpo:1000606
+name: obligately aerobic
+synonym: "obligate aerobe" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
+is_a: metpo:1000601 ! oxygen preference
+
+[Term]
+id: metpo:1000607
+name: obligately anaerobic
+synonym: "obligate anaerobe" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
+is_a: metpo:1000601 ! oxygen preference
+
+[Term]
+id: metpo:1000608
+name: facultatively aerobic
+synonym: "facultative aerobe" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
+is_a: metpo:1000601 ! oxygen preference
+
+[Term]
+id: metpo:1000609
+name: aerotolerant
+synonym: "aerotolerant" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
+is_a: metpo:1000601 ! oxygen preference
+
+[Term]
+id: metpo:1000610
+name: microaerotolerant
+synonym: "microaerotolerant" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
+is_a: metpo:1000601 ! oxygen preference
+
 [Typedef]
 id: metpo:2000001
 name: organism interacts with chemical
@@ -4510,250 +4569,300 @@ range: metpo:1000526 ! chemical entity
 [Typedef]
 id: metpo:2000002
 name: assimilates
+synonym: "assimilation" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
 id: metpo:2000003
 name: builds acid from
+synonym: "builds acid from" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
 id: metpo:2000004
 name: builds base from
+synonym: "builds base from" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
 id: metpo:2000005
 name: builds gas from
+synonym: "builds gas from" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
 id: metpo:2000006
 name: uses as carbon source
+synonym: "carbon source" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
 id: metpo:2000007
 name: degrades
+synonym: "degradation" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
 id: metpo:2000008
 name: uses as electron acceptor
+synonym: "electron acceptor" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
 id: metpo:2000009
 name: uses as electron donor
+synonym: "electron donor" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
 id: metpo:2000010
 name: uses as energy source
+synonym: "energy source" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
 id: metpo:2000011
 name: ferments
+synonym: "fermentation" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
 id: metpo:2000012
 name: uses for growth
+synonym: "growth" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
 id: metpo:2000013
 name: hydrolyzes
+synonym: "hydrolysis" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
 id: metpo:2000014
 name: uses as nitrogen source
+synonym: "nitrogen source" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
 id: metpo:2000015
 name: uses in other way
+synonym: "other" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
 id: metpo:2000016
 name: oxidizes
+synonym: "oxidation" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
 id: metpo:2000017
 name: reduces
+synonym: "reduction" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
 id: metpo:2000018
 name: requires for growth
+synonym: "required for growth" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
 id: metpo:2000019
 name: uses for respiration
+synonym: "respiration" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
 id: metpo:2000020
 name: uses as sulfur source
+synonym: "sulfur source" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
 id: metpo:2000021
 name: does not use for aerobic catabolization
+synonym: "aerobic catabolization" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
 id: metpo:2000022
 name: does not use for aerobic growth
+synonym: "aerobic growth" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
 id: metpo:2000023
 name: does not use for anaerobic catabolization
+synonym: "anaerobic catabolization" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
 id: metpo:2000024
 name: does not use for anaerobic growth
+synonym: "anaerobic growth" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
 id: metpo:2000025
 name: does not use for anaerobic growth in the dark
+synonym: "anaerobic growth in the dark" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
 id: metpo:2000026
 name: does not use for anaerobic growth with light
+synonym: "anaerobic growth with light" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
 id: metpo:2000027
 name: does not assimilate
+synonym: "assimilation" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
 id: metpo:2000028
 name: does not build acid from
+synonym: "builds acid from" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
 id: metpo:2000029
 name: does not build base from
+synonym: "builds base from" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
 id: metpo:2000030
 name: does not build gas from
+synonym: "builds gas from" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
 id: metpo:2000031
 name: does not use as carbon source
+synonym: "carbon source" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
 id: metpo:2000032
 name: uses for aerobic catabolization
+synonym: "aerobic catabolization" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
 id: metpo:2000033
 name: does not degrade
+synonym: "degradation" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
 id: metpo:2000034
 name: does not use as electron acceptor
+synonym: "electron acceptor" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
 id: metpo:2000035
 name: does not use as electron donor
+synonym: "electron donor" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
 id: metpo:2000036
 name: does not use as energy source
+synonym: "energy source" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
 id: metpo:2000037
 name: does not ferment
+synonym: "fermentation" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
 id: metpo:2000038
 name: does not use for growth
+synonym: "growth" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
 id: metpo:2000039
 name: does not hydrolyze
+synonym: "hydrolysis" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
 id: metpo:2000040
 name: does not use as nitrogen source
+synonym: "nitrogen source" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
 id: metpo:2000041
 name: does not use in other way
+synonym: "other" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
 id: metpo:2000042
 name: does not oxidize
+synonym: "oxidation" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
 id: metpo:2000043
 name: uses for aerobic growth
+synonym: "aerobic growth" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
 id: metpo:2000044
 name: does not reduce
+synonym: "reduction" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
 id: metpo:2000045
 name: is not required for growth
+synonym: "required for growth" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
 id: metpo:2000046
 name: does not use for respiration
+synonym: "respiration" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
 id: metpo:2000047
 name: does not use as sulfur source
+synonym: "sulfur source" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
 id: metpo:2000048
 name: uses for anaerobic catabolization
+synonym: "anaerobic catabolization" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
 id: metpo:2000049
 name: uses for anaerobic growth
+synonym: "anaerobic growth" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
 id: metpo:2000050
 name: uses for anaerobic growth in the dark
+synonym: "anaerobic growth in the dark" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
 id: metpo:2000051
 name: uses for anaerobic growth with light
+synonym: "anaerobic growth with light" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
