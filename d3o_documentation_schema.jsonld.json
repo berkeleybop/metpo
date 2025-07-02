@@ -1,0 +1,2723 @@
+{
+  "name": "d3o_documentation_schema",
+  "description": "D3O schema inferred from OWL inferred from documentation at Bacdive SPARQL endpoint",
+  "id": "https://example.com/d3o_documentation_schema",
+  "imports": [
+    "linkml:types"
+  ],
+  "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "prefixes": [
+    {
+      "prefix_prefix": "linkml",
+      "prefix_reference": "https://w3id.org/linkml/"
+    },
+    {
+      "prefix_prefix": "d3o",
+      "prefix_reference": "https://example.com/d3o_documentation_schema/"
+    }
+  ],
+  "default_prefix": "d3o",
+  "default_range": "string",
+  "types": [
+    {
+      "name": "string",
+      "definition_uri": "https://w3id.org/linkml/String",
+      "description": "A character string",
+      "notes": [
+        "In RDF serializations, a slot with range of string is treated as a literal or type xsd:string.   If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"string\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "exact_mappings": [
+        "schema:Text"
+      ],
+      "base": "str",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "integer",
+      "definition_uri": "https://w3id.org/linkml/Integer",
+      "description": "An integer",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"integer\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "exact_mappings": [
+        "schema:Integer"
+      ],
+      "base": "int",
+      "uri": "http://www.w3.org/2001/XMLSchema#integer",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "boolean",
+      "definition_uri": "https://w3id.org/linkml/Boolean",
+      "description": "A binary (true or false) value",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"boolean\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "exact_mappings": [
+        "schema:Boolean"
+      ],
+      "base": "Bool",
+      "uri": "http://www.w3.org/2001/XMLSchema#boolean",
+      "repr": "bool",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "float",
+      "definition_uri": "https://w3id.org/linkml/Float",
+      "description": "A real number that conforms to the xsd:float specification",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"float\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "exact_mappings": [
+        "schema:Float"
+      ],
+      "base": "float",
+      "uri": "http://www.w3.org/2001/XMLSchema#float",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "double",
+      "definition_uri": "https://w3id.org/linkml/Double",
+      "description": "A real number that conforms to the xsd:double specification",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"double\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "close_mappings": [
+        "schema:Float"
+      ],
+      "base": "float",
+      "uri": "http://www.w3.org/2001/XMLSchema#double",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "decimal",
+      "definition_uri": "https://w3id.org/linkml/Decimal",
+      "description": "A real number with arbitrary precision that conforms to the xsd:decimal specification",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"decimal\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "broad_mappings": [
+        "schema:Number"
+      ],
+      "base": "Decimal",
+      "uri": "http://www.w3.org/2001/XMLSchema#decimal",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "time",
+      "definition_uri": "https://w3id.org/linkml/Time",
+      "description": "A time object represents a (local) time of day, independent of any particular day",
+      "notes": [
+        "URI is dateTime because OWL reasoners do not work with straight date or time",
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"time\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "exact_mappings": [
+        "schema:Time"
+      ],
+      "base": "XSDTime",
+      "uri": "http://www.w3.org/2001/XMLSchema#time",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "date",
+      "definition_uri": "https://w3id.org/linkml/Date",
+      "description": "a date (year, month and day) in an idealized calendar",
+      "notes": [
+        "URI is dateTime because OWL reasoners don't work with straight date or time",
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"date\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "exact_mappings": [
+        "schema:Date"
+      ],
+      "base": "XSDDate",
+      "uri": "http://www.w3.org/2001/XMLSchema#date",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "datetime",
+      "definition_uri": "https://w3id.org/linkml/Datetime",
+      "description": "The combination of a date and time",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"datetime\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "exact_mappings": [
+        "schema:DateTime"
+      ],
+      "base": "XSDDateTime",
+      "uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "date_or_datetime",
+      "definition_uri": "https://w3id.org/linkml/DateOrDatetime",
+      "description": "Either a date or a datetime",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"date_or_datetime\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "str",
+      "uri": "https://w3id.org/linkml/DateOrDatetime",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "uriorcurie",
+      "definition_uri": "https://w3id.org/linkml/Uriorcurie",
+      "description": "a URI or a CURIE",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"uriorcurie\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "URIorCURIE",
+      "uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "curie",
+      "definition_uri": "https://w3id.org/linkml/Curie",
+      "conforms_to": "https://www.w3.org/TR/curie/",
+      "description": "a compact URI",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"curie\"."
+      ],
+      "comments": [
+        "in RDF serializations this MUST be expanded to a URI",
+        "in non-RDF serializations MAY be serialized as the compact representation"
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "Curie",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "uri",
+      "definition_uri": "https://w3id.org/linkml/Uri",
+      "conforms_to": "https://www.ietf.org/rfc/rfc3987.txt",
+      "description": "a complete URI",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"uri\"."
+      ],
+      "comments": [
+        "in RDF serializations a slot with range of uri is treated as a literal or type xsd:anyURI unless it is an identifier or a reference to an identifier, in which case it is translated directly to a node"
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "close_mappings": [
+        "schema:URL"
+      ],
+      "base": "URI",
+      "uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "ncname",
+      "definition_uri": "https://w3id.org/linkml/Ncname",
+      "description": "Prefix part of CURIE",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"ncname\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "NCName",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "objectidentifier",
+      "definition_uri": "https://w3id.org/linkml/Objectidentifier",
+      "description": "A URI or CURIE that represents an object in the model.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"objectidentifier\"."
+      ],
+      "comments": [
+        "Used for inheritance and type checking"
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "ElementIdentifier",
+      "uri": "http://www.w3.org/ns/shex#iri",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "nodeidentifier",
+      "definition_uri": "https://w3id.org/linkml/Nodeidentifier",
+      "description": "A URI, CURIE or BNODE that represents a node in a model.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"nodeidentifier\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "NodeIdentifier",
+      "uri": "http://www.w3.org/ns/shex#nonLiteral",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "jsonpointer",
+      "definition_uri": "https://w3id.org/linkml/Jsonpointer",
+      "conforms_to": "https://datatracker.ietf.org/doc/html/rfc6901",
+      "description": "A string encoding a JSON Pointer. The value of the string MUST conform to JSON Point syntax and SHOULD dereference to a valid object within the current instance document when encoded in tree form.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"jsonpointer\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "str",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "jsonpath",
+      "definition_uri": "https://w3id.org/linkml/Jsonpath",
+      "conforms_to": "https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html",
+      "description": "A string encoding a JSON Path. The value of the string MUST conform to JSON Point syntax and SHOULD dereference to zero or more valid objects within the current instance document when encoded in tree form.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"jsonpath\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "str",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "sparqlpath",
+      "definition_uri": "https://w3id.org/linkml/Sparqlpath",
+      "conforms_to": "https://www.w3.org/TR/sparql11-query/#propertypaths",
+      "description": "A string encoding a SPARQL Property Path. The value of the string MUST conform to SPARQL syntax and SHOULD dereference to zero or more valid objects within the current instance document when encoded as RDF.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"sparqlpath\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "str",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    }
+  ],
+  "slots": [
+    {
+      "name": "describesStrain",
+      "definition_uri": "https://example.com/d3o_documentation_schema/describesStrain",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/describesStrain"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/describesStrain",
+      "owner": "RiskAssessment",
+      "domain_of": [
+        "CultureCondition",
+        "Enzyme",
+        "GCContent",
+        "GeneProduct",
+        "Identifier",
+        "NucleotideSequence",
+        "Origin",
+        "Pathogenicity",
+        "Phenotype",
+        "Protein",
+        "RiskAssessment"
+      ],
+      "range": "Strain",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasReference",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasReference",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasReference"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasReference",
+      "range": "Reference",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "fromSequenceDB",
+      "definition_uri": "https://example.com/d3o_documentation_schema/fromSequenceDB",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/fromSequenceDB"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/fromSequenceDB",
+      "owner": "NucleotideSequence",
+      "domain_of": [
+        "NucleotideSequence"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "growthObserved",
+      "definition_uri": "https://example.com/d3o_documentation_schema/growthObserved",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/growthObserved"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/growthObserved",
+      "owner": "CultureTemperature",
+      "domain_of": [
+        "CultureTemperature"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasAbility",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasAbility",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasAbility"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasAbility",
+      "owner": "SporeFormation",
+      "domain_of": [
+        "SporeFormation"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasActivity",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasActivity",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasActivity"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasActivity",
+      "owner": "Protein",
+      "domain_of": [
+        "Enzyme",
+        "GeneProduct",
+        "Protein"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasAssemblyLevel",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasAssemblyLevel",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasAssemblyLevel"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasAssemblyLevel",
+      "owner": "GenomeSequence",
+      "domain_of": [
+        "GenomeSequence"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasBacDiveID",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasBacDiveID",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasBacDiveID"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasBacDiveID",
+      "owner": "Strain",
+      "domain_of": [
+        "Strain"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasBibliographicInformation",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasBibliographicInformation",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasBibliographicInformation"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasBibliographicInformation",
+      "owner": "Reference",
+      "domain_of": [
+        "Reference"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasBiosafetyLevel",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasBiosafetyLevel",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasBiosafetyLevel"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasBiosafetyLevel",
+      "owner": "RiskAssessment",
+      "domain_of": [
+        "RiskAssessment"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasCatalogueID",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasCatalogueID",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasCatalogueID"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasCatalogueID",
+      "owner": "Reference",
+      "domain_of": [
+        "Reference"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasCatalogueInformation",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasCatalogueInformation",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasCatalogueInformation"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasCatalogueInformation",
+      "owner": "Reference",
+      "domain_of": [
+        "Reference"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasCatalogueInstitution",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasCatalogueInstitution",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasCatalogueInstitution"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasCatalogueInstitution",
+      "owner": "Reference",
+      "domain_of": [
+        "Reference"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasClass",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasClass",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasClass"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasClass",
+      "owner": "Strain",
+      "domain_of": [
+        "Strain"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasColonyColor",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasColonyColor",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasColonyColor"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasColonyColor",
+      "owner": "ColonyMorphology",
+      "domain_of": [
+        "ColonyMorphology"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasColonyMorphologyInformation",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasColonyMorphologyInformation",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasColonyMorphologyInformation"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasColonyMorphologyInformation",
+      "owner": "ColonyMorphology",
+      "domain_of": [
+        "ColonyMorphology"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasColonyShape",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasColonyShape",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasColonyShape"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasColonyShape",
+      "owner": "ColonyMorphology",
+      "domain_of": [
+        "ColonyMorphology"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasCountry",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasCountry",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasCountry"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasCountry",
+      "owner": "LocationOfOrigin",
+      "domain_of": [
+        "LocationOfOrigin"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasDesignation",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasDesignation",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasDesignation"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasDesignation",
+      "owner": "Strain",
+      "domain_of": [
+        "Strain"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasDocumentType",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasDocumentType",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasDocumentType"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasDocumentType",
+      "owner": "Reference",
+      "domain_of": [
+        "Reference"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasDomain",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasDomain",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasDomain"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasDomain",
+      "owner": "Strain",
+      "domain_of": [
+        "Strain"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasECNumber",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasECNumber",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasECNumber"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasECNumber",
+      "owner": "Protein",
+      "domain_of": [
+        "Enzyme",
+        "GeneProduct",
+        "Protein"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasEnzyme",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasEnzyme",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasEnzyme"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasEnzyme",
+      "owner": "Protein",
+      "domain_of": [
+        "Enzyme",
+        "GeneProduct",
+        "Protein"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasFamily",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasFamily",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasFamily"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasFamily",
+      "owner": "Strain",
+      "domain_of": [
+        "Strain"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasGCContentRangeEnd",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasGCContentRangeEnd",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasGCContentRangeEnd"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasGCContentRangeEnd",
+      "owner": "GCContent",
+      "domain_of": [
+        "GCContent"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasGCContentRangeStart",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasGCContentRangeStart",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasGCContentRangeStart"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasGCContentRangeStart",
+      "owner": "GCContent",
+      "domain_of": [
+        "GCContent"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasGCInformation",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasGCInformation",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasGCInformation"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasGCInformation",
+      "owner": "GCContent",
+      "domain_of": [
+        "GCContent"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasGCMethod",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasGCMethod",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasGCMethod"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasGCMethod",
+      "owner": "GCContent",
+      "domain_of": [
+        "GCContent"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasGenus",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasGenus",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasGenus"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasGenus",
+      "owner": "Strain",
+      "domain_of": [
+        "Strain"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasGramStain",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasGramStain",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasGramStain"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasGramStain",
+      "owner": "GramStain",
+      "domain_of": [
+        "GramStain"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasGrowthInformation",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasGrowthInformation",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasGrowthInformation"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasGrowthInformation",
+      "owner": "Phenotype",
+      "domain_of": [
+        "CultureCondition",
+        "Phenotype"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasHemolysisAbility",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasHemolysisAbility",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasHemolysisAbility"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasHemolysisAbility",
+      "owner": "ColonyMorphology",
+      "domain_of": [
+        "ColonyMorphology"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasHemolysisInformation",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasHemolysisInformation",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasHemolysisInformation"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasHemolysisInformation",
+      "owner": "ColonyMorphology",
+      "domain_of": [
+        "ColonyMorphology"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasIncubationInformation",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasIncubationInformation",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasIncubationInformation"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasIncubationInformation",
+      "owner": "ColonyMorphology",
+      "domain_of": [
+        "ColonyMorphology"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasIncubationPeriod",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasIncubationPeriod",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasIncubationPeriod"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasIncubationPeriod",
+      "owner": "ColonyMorphology",
+      "domain_of": [
+        "ColonyMorphology"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasIncubationPeriodRangeEnd",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasIncubationPeriodRangeEnd",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasIncubationPeriodRangeEnd"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasIncubationPeriodRangeEnd",
+      "owner": "ColonyMorphology",
+      "domain_of": [
+        "ColonyMorphology"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasIncubationPeriodRangeStart",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasIncubationPeriodRangeStart",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasIncubationPeriodRangeStart"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasIncubationPeriodRangeStart",
+      "owner": "ColonyMorphology",
+      "domain_of": [
+        "ColonyMorphology"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasLength",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasLength",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasLength"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasLength",
+      "owner": "CellSize",
+      "domain_of": [
+        "CellSize"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasLengthRangeEnd",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasLengthRangeEnd",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasLengthRangeEnd"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasLengthRangeEnd",
+      "owner": "CellSize",
+      "domain_of": [
+        "CellSize"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasLengthRangeStart",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasLengthRangeStart",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasLengthRangeStart"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasLengthRangeStart",
+      "owner": "CellSize",
+      "domain_of": [
+        "CellSize"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasLengthUnit",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasLengthUnit",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasLengthUnit"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasLengthUnit",
+      "owner": "CellSize",
+      "domain_of": [
+        "CellSize"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasLink",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasLink",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasLink"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasLink",
+      "owner": "CultureCollectionNumber",
+      "domain_of": [
+        "CultureCollectionNumber"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasLocation",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasLocation",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasLocation"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasLocation",
+      "owner": "LocationOfOrigin",
+      "domain_of": [
+        "LocationOfOrigin"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasMediaDiveID",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasMediaDiveID",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasMediaDiveID"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasMediaDiveID",
+      "owner": "CultureMedium",
+      "domain_of": [
+        "CultureMedium"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasMediaLink",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasMediaLink",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasMediaLink"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasMediaLink",
+      "owner": "CultureMedium",
+      "domain_of": [
+        "CultureMedium"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasMediumComposition",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasMediumComposition",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasMediumComposition"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasMediumComposition",
+      "owner": "ColonyMorphology",
+      "domain_of": [
+        "ColonyMorphology"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasMediumGrowth",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasMediumGrowth",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasMediumGrowth"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasMediumGrowth",
+      "owner": "CultureMedium",
+      "domain_of": [
+        "CultureMedium"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasOrder",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasOrder",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasOrder"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasOrder",
+      "owner": "Strain",
+      "domain_of": [
+        "Strain"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasOxygenTolerance",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasOxygenTolerance",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasOxygenTolerance"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasOxygenTolerance",
+      "owner": "OxygenTolerance",
+      "domain_of": [
+        "OxygenTolerance"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasPHRangeEnd",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasPHRangeEnd",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasPHRangeEnd"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasPHRangeEnd",
+      "owner": "CulturePH",
+      "domain_of": [
+        "CulturePH"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasPHRangeStart",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasPHRangeStart",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasPHRangeStart"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasPHRangeStart",
+      "owner": "CulturePH",
+      "domain_of": [
+        "CulturePH"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasPHRangeType",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasPHRangeType",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasPHRangeType"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasPHRangeType",
+      "owner": "CulturePH",
+      "domain_of": [
+        "CulturePH"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasPhenotypeInformation",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasPhenotypeInformation",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasPhenotypeInformation"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasPhenotypeInformation",
+      "owner": "MicrobialPhenotype",
+      "domain_of": [
+        "MicrobialPhenotype"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasPhylum",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasPhylum",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasPhylum"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasPhylum",
+      "owner": "Strain",
+      "domain_of": [
+        "Strain"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasPigmentInformation",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasPigmentInformation",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasPigmentInformation"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasPigmentInformation",
+      "owner": "CellPigmentation",
+      "domain_of": [
+        "CellPigmentation"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasPigmentName",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasPigmentName",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasPigmentName"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasPigmentName",
+      "owner": "CellPigmentation",
+      "domain_of": [
+        "CellPigmentation"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasPigmentProduction",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasPigmentProduction",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasPigmentProduction"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasPigmentProduction",
+      "owner": "CellPigmentation",
+      "domain_of": [
+        "CellPigmentation"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasSaltConcentration",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasSaltConcentration",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasSaltConcentration"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasSaltConcentration",
+      "owner": "SaltTolerance",
+      "domain_of": [
+        "SaltTolerance"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasSaltConcentrationRangeEnd",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasSaltConcentrationRangeEnd",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasSaltConcentrationRangeEnd"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasSaltConcentrationRangeEnd",
+      "owner": "SaltTolerance",
+      "domain_of": [
+        "SaltTolerance"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasSaltConcentrationRangeStart",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasSaltConcentrationRangeStart",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasSaltConcentrationRangeStart"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasSaltConcentrationRangeStart",
+      "owner": "SaltTolerance",
+      "domain_of": [
+        "SaltTolerance"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasSaltConcentrationUnit",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasSaltConcentrationUnit",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasSaltConcentrationUnit"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasSaltConcentrationUnit",
+      "owner": "SaltTolerance",
+      "domain_of": [
+        "SaltTolerance"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasSaltInformation",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasSaltInformation",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasSaltInformation"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasSaltInformation",
+      "owner": "SaltTolerance",
+      "domain_of": [
+        "SaltTolerance"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasSaltType",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasSaltType",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasSaltType"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasSaltType",
+      "owner": "SaltTolerance",
+      "domain_of": [
+        "SaltTolerance"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasScientificName",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasScientificName",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasScientificName"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasScientificName",
+      "owner": "Strain",
+      "domain_of": [
+        "Strain"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasSequenceAccession",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasSequenceAccession",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasSequenceAccession"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasSequenceAccession",
+      "owner": "NucleotideSequence",
+      "domain_of": [
+        "NucleotideSequence"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasSequenceInformation",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasSequenceInformation",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasSequenceInformation"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasSequenceInformation",
+      "owner": "NucleotideSequence",
+      "domain_of": [
+        "NucleotideSequence"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasSequenceLength",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasSequenceLength",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasSequenceLength"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasSequenceLength",
+      "owner": "RRNASequence",
+      "domain_of": [
+        "RRNASequence"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasSpecies",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasSpecies",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasSpecies"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasSpecies",
+      "owner": "Strain",
+      "domain_of": [
+        "Strain"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasSpeciesEpithet",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasSpeciesEpithet",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasSpeciesEpithet"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasSpeciesEpithet",
+      "owner": "Strain",
+      "domain_of": [
+        "Strain"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasSporeType",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasSporeType",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasSporeType"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasSporeType",
+      "owner": "SporeFormation",
+      "domain_of": [
+        "SporeFormation"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasStrainNames",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasStrainNames",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasStrainNames"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasStrainNames",
+      "owner": "Strain",
+      "domain_of": [
+        "Strain"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasStrainNumber",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasStrainNumber",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasStrainNumber"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasStrainNumber",
+      "owner": "Strain",
+      "domain_of": [
+        "Strain"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasTaxID",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasTaxID",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasTaxID"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasTaxID",
+      "owner": "Strain",
+      "domain_of": [
+        "NucleotideSequence",
+        "Strain"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasTaxonomicRank",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasTaxonomicRank",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasTaxonomicRank"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasTaxonomicRank",
+      "owner": "Strain",
+      "domain_of": [
+        "Strain"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasTemperatureRange",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasTemperatureRange",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasTemperatureRange"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasTemperatureRange",
+      "owner": "CultureTemperature",
+      "domain_of": [
+        "CultureTemperature"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasTemperatureRangeEnd",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasTemperatureRangeEnd",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasTemperatureRangeEnd"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasTemperatureRangeEnd",
+      "owner": "CultureTemperature",
+      "domain_of": [
+        "CultureTemperature"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasTemperatureRangeStart",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasTemperatureRangeStart",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasTemperatureRangeStart"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasTemperatureRangeStart",
+      "owner": "CultureTemperature",
+      "domain_of": [
+        "CultureTemperature"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasTestAbility",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasTestAbility",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasTestAbility"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasTestAbility",
+      "owner": "SaltTolerance",
+      "domain_of": [
+        "CulturePH",
+        "SaltTolerance"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasTestType",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasTestType",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasTestType"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasTestType",
+      "owner": "SaltTolerance",
+      "domain_of": [
+        "CultureCondition",
+        "CulturePH",
+        "SaltTolerance"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasWidth",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasWidth",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasWidth"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasWidth",
+      "owner": "CellSize",
+      "domain_of": [
+        "CellSize"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasWidthRangeEnd",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasWidthRangeEnd",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasWidthRangeEnd"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasWidthRangeEnd",
+      "owner": "CellSize",
+      "domain_of": [
+        "CellSize"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasWidthRangeStart",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasWidthRangeStart",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasWidthRangeStart"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasWidthRangeStart",
+      "owner": "CellSize",
+      "domain_of": [
+        "CellSize"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasWidthUnit",
+      "definition_uri": "https://example.com/d3o_documentation_schema/hasWidthUnit",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/hasWidthUnit"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/hasWidthUnit",
+      "owner": "CellSize",
+      "domain_of": [
+        "CellSize"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "isAnimalPathogen",
+      "definition_uri": "https://example.com/d3o_documentation_schema/isAnimalPathogen",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/isAnimalPathogen"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/isAnimalPathogen",
+      "owner": "Pathogenicity",
+      "domain_of": [
+        "Pathogenicity"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "isHumanPathogen",
+      "definition_uri": "https://example.com/d3o_documentation_schema/isHumanPathogen",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/isHumanPathogen"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/isHumanPathogen",
+      "owner": "Pathogenicity",
+      "domain_of": [
+        "Pathogenicity"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "isMotile",
+      "definition_uri": "https://example.com/d3o_documentation_schema/isMotile",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/isMotile"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/isMotile",
+      "owner": "CellMotility",
+      "domain_of": [
+        "CellMotility"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "isPathogen",
+      "definition_uri": "https://example.com/d3o_documentation_schema/isPathogen",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/isPathogen"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/isPathogen",
+      "owner": "Pathogenicity",
+      "domain_of": [
+        "Pathogenicity"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "isPlantPathogen",
+      "definition_uri": "https://example.com/d3o_documentation_schema/isPlantPathogen",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/isPlantPathogen"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/isPlantPathogen",
+      "owner": "Pathogenicity",
+      "domain_of": [
+        "Pathogenicity"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "isTypeStrain",
+      "definition_uri": "https://example.com/d3o_documentation_schema/isTypeStrain",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/isTypeStrain"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/isTypeStrain",
+      "owner": "Strain",
+      "domain_of": [
+        "Strain"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "matchesTaxIDLevel",
+      "definition_uri": "https://example.com/d3o_documentation_schema/matchesTaxIDLevel",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/matchesTaxIDLevel"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/matchesTaxIDLevel",
+      "owner": "Strain",
+      "domain_of": [
+        "Strain"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "providedBy",
+      "definition_uri": "https://example.com/d3o_documentation_schema/providedBy",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://example.com/d3o_documentation_schema/providedBy"
+      ],
+      "slot_uri": "https://example.com/d3o_documentation_schema/providedBy",
+      "owner": "CultureMedium",
+      "domain_of": [
+        "CultureMedium"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    }
+  ],
+  "classes": [
+    {
+      "name": "Bacteria",
+      "definition_uri": "https://example.com/d3o_documentation_schema/Bacteria",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "d3o:Bacteria"
+      ],
+      "is_a": "Prokaryotes",
+      "slot_usage": {},
+      "class_uri": "https://example.com/d3o_documentation_schema/Bacteria",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "BiologicalMaterial",
+      "definition_uri": "https://example.com/d3o_documentation_schema/BiologicalMaterial",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "d3o:BiologicalMaterial"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://example.com/d3o_documentation_schema/BiologicalMaterial",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "CellMorphology",
+      "definition_uri": "https://example.com/d3o_documentation_schema/CellMorphology",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "d3o:CellMorphology"
+      ],
+      "is_a": "MicrobialPhenotype",
+      "slots": [
+        "describesStrain",
+        "hasGrowthInformation",
+        "hasPhenotypeInformation"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://example.com/d3o_documentation_schema/CellMorphology",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "CellMotility",
+      "definition_uri": "https://example.com/d3o_documentation_schema/CellMotility",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "d3o:CellMotility"
+      ],
+      "is_a": "MicrobialPhenotype",
+      "slots": [
+        "describesStrain",
+        "hasGrowthInformation",
+        "hasPhenotypeInformation",
+        "isMotile"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://example.com/d3o_documentation_schema/CellMotility",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "CellPigmentation",
+      "definition_uri": "https://example.com/d3o_documentation_schema/CellPigmentation",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "d3o:CellPigmentation"
+      ],
+      "is_a": "CellMorphology",
+      "slots": [
+        "describesStrain",
+        "hasGrowthInformation",
+        "hasPhenotypeInformation",
+        "hasPigmentInformation",
+        "hasPigmentName",
+        "hasPigmentProduction"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://example.com/d3o_documentation_schema/CellPigmentation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "CellShape",
+      "definition_uri": "https://example.com/d3o_documentation_schema/CellShape",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "d3o:CellShape"
+      ],
+      "is_a": "CellMorphology",
+      "slots": [
+        "describesStrain",
+        "hasGrowthInformation",
+        "hasPhenotypeInformation"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://example.com/d3o_documentation_schema/CellShape",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "CellSize",
+      "definition_uri": "https://example.com/d3o_documentation_schema/CellSize",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "d3o:CellSize"
+      ],
+      "is_a": "CellMorphology",
+      "slots": [
+        "describesStrain",
+        "hasGrowthInformation",
+        "hasPhenotypeInformation",
+        "hasLength",
+        "hasLengthRangeEnd",
+        "hasLengthRangeStart",
+        "hasLengthUnit",
+        "hasWidth",
+        "hasWidthRangeEnd",
+        "hasWidthRangeStart",
+        "hasWidthUnit"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://example.com/d3o_documentation_schema/CellSize",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ColonyMorphology",
+      "definition_uri": "https://example.com/d3o_documentation_schema/ColonyMorphology",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "d3o:ColonyMorphology"
+      ],
+      "is_a": "MicrobialPhenotype",
+      "slots": [
+        "describesStrain",
+        "hasGrowthInformation",
+        "hasPhenotypeInformation",
+        "hasColonyColor",
+        "hasColonyMorphologyInformation",
+        "hasColonyShape",
+        "hasHemolysisAbility",
+        "hasHemolysisInformation",
+        "hasIncubationInformation",
+        "hasIncubationPeriod",
+        "hasIncubationPeriodRangeEnd",
+        "hasIncubationPeriodRangeStart",
+        "hasMediumComposition"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://example.com/d3o_documentation_schema/ColonyMorphology",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ConceptualEntity",
+      "definition_uri": "https://example.com/d3o_documentation_schema/ConceptualEntity",
+      "comments": [
+        "Abstract conceptual entity"
+      ],
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "d3o:ConceptualEntity"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://example.com/d3o_documentation_schema/ConceptualEntity",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "CultureCollectionNumber",
+      "definition_uri": "https://example.com/d3o_documentation_schema/CultureCollectionNumber",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "d3o:CultureCollectionNumber"
+      ],
+      "is_a": "StrainNumber",
+      "slots": [
+        "describesStrain",
+        "hasLink"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://example.com/d3o_documentation_schema/CultureCollectionNumber",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "CultureCondition",
+      "definition_uri": "https://example.com/d3o_documentation_schema/CultureCondition",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "d3o:CultureCondition"
+      ],
+      "is_a": "ConceptualEntity",
+      "slots": [
+        "describesStrain",
+        "hasGrowthInformation",
+        "hasTestType"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://example.com/d3o_documentation_schema/CultureCondition",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "CultureMedium",
+      "definition_uri": "https://example.com/d3o_documentation_schema/CultureMedium",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "d3o:CultureMedium"
+      ],
+      "is_a": "CultureCondition",
+      "slots": [
+        "describesStrain",
+        "hasGrowthInformation",
+        "hasTestType",
+        "hasMediaDiveID",
+        "hasMediaLink",
+        "hasMediumGrowth",
+        "providedBy"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://example.com/d3o_documentation_schema/CultureMedium",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "CulturePH",
+      "definition_uri": "https://example.com/d3o_documentation_schema/CulturePH",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "d3o:CulturePH"
+      ],
+      "is_a": "CultureCondition",
+      "slots": [
+        "describesStrain",
+        "hasGrowthInformation",
+        "hasPHRangeEnd",
+        "hasPHRangeStart",
+        "hasPHRangeType",
+        "hasTestAbility",
+        "hasTestType"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://example.com/d3o_documentation_schema/CulturePH",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "CultureTemperature",
+      "definition_uri": "https://example.com/d3o_documentation_schema/CultureTemperature",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "d3o:CultureTemperature"
+      ],
+      "is_a": "CultureCondition",
+      "slots": [
+        "describesStrain",
+        "hasGrowthInformation",
+        "hasTestType",
+        "growthObserved",
+        "hasTemperatureRange",
+        "hasTemperatureRangeEnd",
+        "hasTemperatureRangeStart"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://example.com/d3o_documentation_schema/CultureTemperature",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "DNASequence",
+      "definition_uri": "https://example.com/d3o_documentation_schema/DNASequence",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "d3o:DNASequence"
+      ],
+      "is_a": "NucleotideSequence",
+      "slots": [
+        "describesStrain",
+        "fromSequenceDB",
+        "hasSequenceAccession",
+        "hasSequenceInformation",
+        "hasTaxID"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://example.com/d3o_documentation_schema/DNASequence",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "EnrichmentProcedure",
+      "definition_uri": "https://example.com/d3o_documentation_schema/EnrichmentProcedure",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "d3o:EnrichmentProcedure"
+      ],
+      "is_a": "IsolationProcedure",
+      "slots": [
+        "describesStrain"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://example.com/d3o_documentation_schema/EnrichmentProcedure",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Enzyme",
+      "definition_uri": "https://example.com/d3o_documentation_schema/Enzyme",
+      "comments": [
+        "An enzyme produced by a strain"
+      ],
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "d3o:Enzyme"
+      ],
+      "slots": [
+        "describesStrain",
+        "hasActivity",
+        "hasECNumber",
+        "hasEnzyme"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://example.com/d3o_documentation_schema/Enzyme",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "GCContent",
+      "definition_uri": "https://example.com/d3o_documentation_schema/GCContent",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "d3o:GCContent"
+      ],
+      "is_a": "MolecularProperty",
+      "slots": [
+        "describesStrain",
+        "hasGCContentRangeEnd",
+        "hasGCContentRangeStart",
+        "hasGCInformation",
+        "hasGCMethod"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://example.com/d3o_documentation_schema/GCContent",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "GeneProduct",
+      "definition_uri": "https://example.com/d3o_documentation_schema/GeneProduct",
+      "comments": [
+        "A product of gene expression"
+      ],
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "d3o:GeneProduct"
+      ],
+      "slots": [
+        "describesStrain",
+        "hasActivity",
+        "hasECNumber",
+        "hasEnzyme"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://example.com/d3o_documentation_schema/GeneProduct",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "GenomeSequence",
+      "definition_uri": "https://example.com/d3o_documentation_schema/GenomeSequence",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "d3o:GenomeSequence"
+      ],
+      "is_a": "DNASequence",
+      "slots": [
+        "describesStrain",
+        "fromSequenceDB",
+        "hasSequenceAccession",
+        "hasSequenceInformation",
+        "hasTaxID",
+        "hasAssemblyLevel"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://example.com/d3o_documentation_schema/GenomeSequence",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "GramStain",
+      "definition_uri": "https://example.com/d3o_documentation_schema/GramStain",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "d3o:GramStain"
+      ],
+      "is_a": "CellMorphology",
+      "slots": [
+        "describesStrain",
+        "hasGrowthInformation",
+        "hasPhenotypeInformation",
+        "hasGramStain"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://example.com/d3o_documentation_schema/GramStain",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Identifier",
+      "definition_uri": "https://example.com/d3o_documentation_schema/Identifier",
+      "comments": [
+        "An identifier for a strain or other entity"
+      ],
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "d3o:Identifier"
+      ],
+      "slots": [
+        "describesStrain"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://example.com/d3o_documentation_schema/Identifier",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "IsolationInformation",
+      "definition_uri": "https://example.com/d3o_documentation_schema/IsolationInformation",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "d3o:IsolationInformation"
+      ],
+      "is_a": "Origin",
+      "slots": [
+        "describesStrain"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://example.com/d3o_documentation_schema/IsolationInformation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "IsolationProcedure",
+      "definition_uri": "https://example.com/d3o_documentation_schema/IsolationProcedure",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "d3o:IsolationProcedure"
+      ],
+      "is_a": "IsolationInformation",
+      "slots": [
+        "describesStrain"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://example.com/d3o_documentation_schema/IsolationProcedure",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "IsolationSource",
+      "definition_uri": "https://example.com/d3o_documentation_schema/IsolationSource",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "d3o:IsolationSource"
+      ],
+      "is_a": "IsolationInformation",
+      "slots": [
+        "describesStrain"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://example.com/d3o_documentation_schema/IsolationSource",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "LocationOfOrigin",
+      "definition_uri": "https://example.com/d3o_documentation_schema/LocationOfOrigin",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "d3o:LocationOfOrigin"
+      ],
+      "is_a": "Origin",
+      "slots": [
+        "describesStrain",
+        "hasCountry",
+        "hasLocation"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://example.com/d3o_documentation_schema/LocationOfOrigin",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "MetabolicPhenotype",
+      "definition_uri": "https://example.com/d3o_documentation_schema/MetabolicPhenotype",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "d3o:MetabolicPhenotype"
+      ],
+      "is_a": "Phenotype",
+      "slots": [
+        "describesStrain",
+        "hasGrowthInformation"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://example.com/d3o_documentation_schema/MetabolicPhenotype",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "MicrobialPhenotype",
+      "definition_uri": "https://example.com/d3o_documentation_schema/MicrobialPhenotype",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "d3o:MicrobialPhenotype"
+      ],
+      "is_a": "Phenotype",
+      "slots": [
+        "describesStrain",
+        "hasGrowthInformation",
+        "hasPhenotypeInformation"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://example.com/d3o_documentation_schema/MicrobialPhenotype",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Microorganism",
+      "definition_uri": "https://example.com/d3o_documentation_schema/Microorganism",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "d3o:Microorganism"
+      ],
+      "is_a": "BiologicalMaterial",
+      "slot_usage": {},
+      "class_uri": "https://example.com/d3o_documentation_schema/Microorganism",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "MolecularProperty",
+      "definition_uri": "https://example.com/d3o_documentation_schema/MolecularProperty",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "d3o:MolecularProperty"
+      ],
+      "is_a": "PropertyOrAttribute",
+      "slot_usage": {},
+      "class_uri": "https://example.com/d3o_documentation_schema/MolecularProperty",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "NucleotideSequence",
+      "definition_uri": "https://example.com/d3o_documentation_schema/NucleotideSequence",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "d3o:NucleotideSequence"
+      ],
+      "slots": [
+        "describesStrain",
+        "fromSequenceDB",
+        "hasSequenceAccession",
+        "hasSequenceInformation",
+        "hasTaxID"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://example.com/d3o_documentation_schema/NucleotideSequence",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "NutritionType",
+      "definition_uri": "https://example.com/d3o_documentation_schema/NutritionType",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "d3o:NutritionType"
+      ],
+      "is_a": "MetabolicPhenotype",
+      "slots": [
+        "describesStrain",
+        "hasGrowthInformation"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://example.com/d3o_documentation_schema/NutritionType",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "OrganismGroup",
+      "definition_uri": "https://example.com/d3o_documentation_schema/OrganismGroup",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "d3o:OrganismGroup"
+      ],
+      "is_a": "ConceptualEntity",
+      "slot_usage": {},
+      "class_uri": "https://example.com/d3o_documentation_schema/OrganismGroup",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "OrganismIdentifier",
+      "definition_uri": "https://example.com/d3o_documentation_schema/OrganismIdentifier",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "d3o:OrganismIdentifier"
+      ],
+      "is_a": "Identifier",
+      "slots": [
+        "describesStrain"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://example.com/d3o_documentation_schema/OrganismIdentifier",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Origin",
+      "definition_uri": "https://example.com/d3o_documentation_schema/Origin",
+      "comments": [
+        "Origin information for a strain"
+      ],
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "d3o:Origin"
+      ],
+      "slots": [
+        "describesStrain"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://example.com/d3o_documentation_schema/Origin",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "OxygenTolerance",
+      "definition_uri": "https://example.com/d3o_documentation_schema/OxygenTolerance",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "d3o:OxygenTolerance"
+      ],
+      "is_a": "MetabolicPhenotype",
+      "slots": [
+        "describesStrain",
+        "hasGrowthInformation",
+        "hasOxygenTolerance"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://example.com/d3o_documentation_schema/OxygenTolerance",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Pathogenicity",
+      "definition_uri": "https://example.com/d3o_documentation_schema/Pathogenicity",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "d3o:Pathogenicity"
+      ],
+      "is_a": "ConceptualEntity",
+      "slots": [
+        "describesStrain",
+        "isAnimalPathogen",
+        "isHumanPathogen",
+        "isPathogen",
+        "isPlantPathogen"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://example.com/d3o_documentation_schema/Pathogenicity",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Phenotype",
+      "definition_uri": "https://example.com/d3o_documentation_schema/Phenotype",
+      "comments": [
+        "Observable characteristics of a strain"
+      ],
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "d3o:Phenotype"
+      ],
+      "slots": [
+        "describesStrain",
+        "hasGrowthInformation"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://example.com/d3o_documentation_schema/Phenotype",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Prokaryotes",
+      "definition_uri": "https://example.com/d3o_documentation_schema/Prokaryotes",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "d3o:Prokaryotes"
+      ],
+      "is_a": "Microorganism",
+      "slot_usage": {},
+      "class_uri": "https://example.com/d3o_documentation_schema/Prokaryotes",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "PropertyOrAttribute",
+      "definition_uri": "https://example.com/d3o_documentation_schema/PropertyOrAttribute",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "d3o:PropertyOrAttribute"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://example.com/d3o_documentation_schema/PropertyOrAttribute",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Protein",
+      "definition_uri": "https://example.com/d3o_documentation_schema/Protein",
+      "comments": [
+        "A protein molecule"
+      ],
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "d3o:Protein"
+      ],
+      "slots": [
+        "describesStrain",
+        "hasActivity",
+        "hasECNumber",
+        "hasEnzyme"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://example.com/d3o_documentation_schema/Protein",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "RNASequence",
+      "definition_uri": "https://example.com/d3o_documentation_schema/RNASequence",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "d3o:RNASequence"
+      ],
+      "is_a": "NucleotideSequence",
+      "slots": [
+        "describesStrain",
+        "fromSequenceDB",
+        "hasSequenceAccession",
+        "hasSequenceInformation",
+        "hasTaxID"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://example.com/d3o_documentation_schema/RNASequence",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Reference",
+      "definition_uri": "https://example.com/d3o_documentation_schema/Reference",
+      "comments": [
+        "Bibliographic reference"
+      ],
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "d3o:Reference"
+      ],
+      "slots": [
+        "hasBibliographicInformation",
+        "hasCatalogueID",
+        "hasCatalogueInformation",
+        "hasCatalogueInstitution",
+        "hasDocumentType"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://example.com/d3o_documentation_schema/Reference",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "RiskAssessment",
+      "definition_uri": "https://example.com/d3o_documentation_schema/RiskAssessment",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "d3o:RiskAssessment"
+      ],
+      "slots": [
+        "describesStrain",
+        "hasBiosafetyLevel"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://example.com/d3o_documentation_schema/RiskAssessment",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "SaltTolerance",
+      "definition_uri": "https://example.com/d3o_documentation_schema/SaltTolerance",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "d3o:SaltTolerance"
+      ],
+      "is_a": "MetabolicPhenotype",
+      "slots": [
+        "describesStrain",
+        "hasGrowthInformation",
+        "hasSaltConcentration",
+        "hasSaltConcentrationRangeEnd",
+        "hasSaltConcentrationRangeStart",
+        "hasSaltConcentrationUnit",
+        "hasSaltInformation",
+        "hasSaltType",
+        "hasTestAbility",
+        "hasTestType"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://example.com/d3o_documentation_schema/SaltTolerance",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "SporeFormation",
+      "definition_uri": "https://example.com/d3o_documentation_schema/SporeFormation",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "d3o:SporeFormation"
+      ],
+      "is_a": "MicrobialPhenotype",
+      "slots": [
+        "describesStrain",
+        "hasGrowthInformation",
+        "hasPhenotypeInformation",
+        "hasAbility",
+        "hasSporeType"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://example.com/d3o_documentation_schema/SporeFormation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Strain",
+      "definition_uri": "https://example.com/d3o_documentation_schema/Strain",
+      "comments": [
+        "A microbial strain"
+      ],
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "d3o:Strain"
+      ],
+      "slots": [
+        "hasBacDiveID",
+        "hasClass",
+        "hasDesignation",
+        "hasDomain",
+        "hasFamily",
+        "hasGenus",
+        "hasOrder",
+        "hasPhylum",
+        "hasScientificName",
+        "hasSpecies",
+        "hasSpeciesEpithet",
+        "hasStrainNames",
+        "hasStrainNumber",
+        "hasTaxID",
+        "hasTaxonomicRank",
+        "isTypeStrain",
+        "matchesTaxIDLevel"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://example.com/d3o_documentation_schema/Strain",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "StrainDesignation",
+      "definition_uri": "https://example.com/d3o_documentation_schema/StrainDesignation",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "d3o:StrainDesignation"
+      ],
+      "is_a": "OrganismIdentifier",
+      "slots": [
+        "describesStrain"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://example.com/d3o_documentation_schema/StrainDesignation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "StrainNumber",
+      "definition_uri": "https://example.com/d3o_documentation_schema/StrainNumber",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "d3o:StrainNumber"
+      ],
+      "is_a": "OrganismIdentifier",
+      "slots": [
+        "describesStrain"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://example.com/d3o_documentation_schema/StrainNumber",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "RRNASequence",
+      "definition_uri": "https://example.com/d3o_documentation_schema/RRNASequence",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "d3o:rRNASequence"
+      ],
+      "is_a": "RNASequence",
+      "slots": [
+        "describesStrain",
+        "fromSequenceDB",
+        "hasSequenceAccession",
+        "hasSequenceInformation",
+        "hasTaxID",
+        "hasSequenceLength"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://example.com/d3o_documentation_schema/rRNASequence",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "16SSequence",
+      "definition_uri": "https://example.com/d3o_documentation_schema/16SSequence",
+      "from_schema": "https://example.com/d3o_documentation_schema",
+      "mappings": [
+        "https://purl.dsmz.de/schema/16SSequence"
+      ],
+      "is_a": "RRNASequence",
+      "slots": [
+        "describesStrain",
+        "fromSequenceDB",
+        "hasSequenceAccession",
+        "hasSequenceInformation",
+        "hasTaxID",
+        "hasSequenceLength"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://purl.dsmz.de/schema/16SSequence",
+      "@type": "ClassDefinition"
+    }
+  ],
+  "metamodel_version": "1.7.0",
+  "source_file": "d3o_documentation_schema.yaml",
+  "source_file_date": "2025-07-01T22:45:52",
+  "source_file_size": 14190,
+  "generation_date": "2025-07-01T22:54:53",
+  "@type": "SchemaDefinition",
+  "@context": [
+    "https://w3id.org/linkml/types.context.jsonld",
+    {
+      "@base": "https://example.com/d3o_documentation_schema/"
+    }
+  ]
+}
+
