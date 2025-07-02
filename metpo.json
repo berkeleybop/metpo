@@ -10,9 +10,9 @@
         "val" : "METPO"
       }, {
         "pred" : "http://www.w3.org/2002/07/owl#versionInfo",
-        "val" : "2025-06-25"
+        "val" : "2025-07-02"
       } ],
-      "version" : "https://w3id.org/metpo/metpo/releases/2025-06-25/metpo.json"
+      "version" : "https://w3id.org/metpo/metpo/releases/2025-07-02/metpo.json"
     },
     "nodes" : [ {
       "id" : "https://w3id.org/metpo/1000002",
@@ -9517,6 +9517,100 @@
         } ]
       }
     }, {
+      "id" : "https://w3id.org/metpo/1000601",
+      "lbl" : "oxygen preference",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/1000602",
+      "lbl" : "aerobic",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "aerobe"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000603",
+      "lbl" : "anaerobic",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "anaerobe"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000604",
+      "lbl" : "microaerophilic",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "microaerophile"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000605",
+      "lbl" : "facultatively anaerobic",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "facultative anaerobe"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000606",
+      "lbl" : "obligately aerobic",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "obligate aerobe"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000607",
+      "lbl" : "obligately anaerobic",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "obligate anaerobe"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000608",
+      "lbl" : "facultatively aerobic",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "facultative aerobe"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000609",
+      "lbl" : "aerotolerant",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "aerotolerant"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000610",
+      "lbl" : "microaerotolerant",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "microaerotolerant"
+        } ]
+      }
+    }, {
       "id" : "https://w3id.org/metpo/2000001",
       "lbl" : "organism interacts with chemical",
       "type" : "PROPERTY",
@@ -9525,254 +9619,558 @@
       "id" : "https://w3id.org/metpo/2000002",
       "lbl" : "assimilates",
       "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "assimilation"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/2000003",
       "lbl" : "builds acid from",
       "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "builds acid from"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/2000004",
       "lbl" : "builds base from",
       "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "builds base from"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/2000005",
       "lbl" : "builds gas from",
       "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "builds gas from"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/2000006",
       "lbl" : "uses as carbon source",
       "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "carbon source"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/2000007",
       "lbl" : "degrades",
       "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "degradation"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/2000008",
       "lbl" : "uses as electron acceptor",
       "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "electron acceptor"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/2000009",
       "lbl" : "uses as electron donor",
       "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "electron donor"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/2000010",
       "lbl" : "uses as energy source",
       "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "energy source"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/2000011",
       "lbl" : "ferments",
       "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "fermentation"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/2000012",
       "lbl" : "uses for growth",
       "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "growth"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/2000013",
       "lbl" : "hydrolyzes",
       "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "hydrolysis"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/2000014",
       "lbl" : "uses as nitrogen source",
       "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "nitrogen source"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/2000015",
       "lbl" : "uses in other way",
       "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "other"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/2000016",
       "lbl" : "oxidizes",
       "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "oxidation"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/2000017",
       "lbl" : "reduces",
       "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "reduction"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/2000018",
       "lbl" : "requires for growth",
       "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "required for growth"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/2000019",
       "lbl" : "uses for respiration",
       "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "respiration"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/2000020",
       "lbl" : "uses as sulfur source",
       "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "sulfur source"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/2000021",
       "lbl" : "does not use for aerobic catabolization",
       "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "aerobic catabolization"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/2000022",
       "lbl" : "does not use for aerobic growth",
       "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "aerobic growth"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/2000023",
       "lbl" : "does not use for anaerobic catabolization",
       "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "anaerobic catabolization"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/2000024",
       "lbl" : "does not use for anaerobic growth",
       "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "anaerobic growth"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/2000025",
       "lbl" : "does not use for anaerobic growth in the dark",
       "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "anaerobic growth in the dark"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/2000026",
       "lbl" : "does not use for anaerobic growth with light",
       "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "anaerobic growth with light"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/2000027",
       "lbl" : "does not assimilate",
       "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "assimilation"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/2000028",
       "lbl" : "does not build acid from",
       "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "builds acid from"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/2000029",
       "lbl" : "does not build base from",
       "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "builds base from"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/2000030",
       "lbl" : "does not build gas from",
       "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "builds gas from"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/2000031",
       "lbl" : "does not use as carbon source",
       "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "carbon source"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/2000032",
       "lbl" : "uses for aerobic catabolization",
       "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "aerobic catabolization"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/2000033",
       "lbl" : "does not degrade",
       "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "degradation"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/2000034",
       "lbl" : "does not use as electron acceptor",
       "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "electron acceptor"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/2000035",
       "lbl" : "does not use as electron donor",
       "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "electron donor"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/2000036",
       "lbl" : "does not use as energy source",
       "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "energy source"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/2000037",
       "lbl" : "does not ferment",
       "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "fermentation"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/2000038",
       "lbl" : "does not use for growth",
       "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "growth"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/2000039",
       "lbl" : "does not hydrolyze",
       "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "hydrolysis"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/2000040",
       "lbl" : "does not use as nitrogen source",
       "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "nitrogen source"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/2000041",
       "lbl" : "does not use in other way",
       "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "other"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/2000042",
       "lbl" : "does not oxidize",
       "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "oxidation"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/2000043",
       "lbl" : "uses for aerobic growth",
       "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "aerobic growth"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/2000044",
       "lbl" : "does not reduce",
       "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "reduction"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/2000045",
       "lbl" : "is not required for growth",
       "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "required for growth"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/2000046",
       "lbl" : "does not use for respiration",
       "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "respiration"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/2000047",
       "lbl" : "does not use as sulfur source",
       "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "sulfur source"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/2000048",
       "lbl" : "uses for anaerobic catabolization",
       "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "anaerobic catabolization"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/2000049",
       "lbl" : "uses for anaerobic growth",
       "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "anaerobic growth"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/2000050",
       "lbl" : "uses for anaerobic growth in the dark",
       "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "anaerobic growth in the dark"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/2000051",
       "lbl" : "uses for anaerobic growth with light",
       "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "anaerobic growth with light"
+        } ]
+      }
     }, {
       "id" : "http://purl.obolibrary.org/obo/IAO_0000115",
+      "type" : "PROPERTY",
+      "propertyType" : "ANNOTATION"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/IAO_0000119",
       "type" : "PROPERTY",
       "propertyType" : "ANNOTATION"
     }, {
@@ -12095,6 +12493,46 @@
       "sub" : "https://w3id.org/metpo/1000529",
       "pred" : "is_a",
       "obj" : "https://w3id.org/metpo/1000217"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000601",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000059"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000602",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000601"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000603",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000601"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000604",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000601"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000605",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000601"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000606",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000601"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000607",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000601"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000608",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000601"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000609",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000601"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000610",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000601"
     }, {
       "sub" : "https://w3id.org/metpo/2000002",
       "pred" : "subPropertyOf",

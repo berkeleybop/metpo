@@ -13,10 +13,10 @@
      xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="https://w3id.org/metpo/metpo/metpo-full.owl">
-        <owl:versionIRI rdf:resource="https://w3id.org/metpo/metpo/releases/2025-06-25/metpo-full.owl"/>
+        <owl:versionIRI rdf:resource="https://w3id.org/metpo/metpo/releases/2025-07-02/metpo-full.owl"/>
         <dcterms:description>Microbial ecophysiological trait and phenotype ontology</dcterms:description>
         <dcterms:title>METPO</dcterms:title>
-        <owl:versionInfo>2025-06-25</owl:versionInfo>
+        <owl:versionInfo>2025-07-02</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -35,6 +35,12 @@
     <!-- http://purl.obolibrary.org/obo/IAO_0000115 -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000115"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000119 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000119"/>
     
 
 
@@ -141,8 +147,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000002">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>assimilation</oboInOwl:hasRelatedSynonym>
         <rdfs:label>assimilates</rdfs:label>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000002"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>assimilation</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -150,8 +163,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000003">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>builds acid from</oboInOwl:hasRelatedSynonym>
         <rdfs:label>builds acid from</rdfs:label>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000003"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>builds acid from</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -159,8 +179,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000004">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>builds base from</oboInOwl:hasRelatedSynonym>
         <rdfs:label>builds base from</rdfs:label>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000004"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>builds base from</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -168,8 +195,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000005">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>builds gas from</oboInOwl:hasRelatedSynonym>
         <rdfs:label>builds gas from</rdfs:label>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000005"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>builds gas from</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -177,8 +211,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000006">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>carbon source</oboInOwl:hasRelatedSynonym>
         <rdfs:label>uses as carbon source</rdfs:label>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000006"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>carbon source</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -186,8 +227,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000007">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>degradation</oboInOwl:hasRelatedSynonym>
         <rdfs:label>degrades</rdfs:label>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000007"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>degradation</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -195,8 +243,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000008">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>electron acceptor</oboInOwl:hasRelatedSynonym>
         <rdfs:label>uses as electron acceptor</rdfs:label>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000008"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>electron acceptor</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -204,8 +259,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000009">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>electron donor</oboInOwl:hasRelatedSynonym>
         <rdfs:label>uses as electron donor</rdfs:label>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000009"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>electron donor</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -213,8 +275,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000010">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>energy source</oboInOwl:hasRelatedSynonym>
         <rdfs:label>uses as energy source</rdfs:label>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000010"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>energy source</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -222,8 +291,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000011">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>fermentation</oboInOwl:hasRelatedSynonym>
         <rdfs:label>ferments</rdfs:label>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000011"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>fermentation</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -231,8 +307,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000012">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>growth</oboInOwl:hasRelatedSynonym>
         <rdfs:label>uses for growth</rdfs:label>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000012"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>growth</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -240,8 +323,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000013">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>hydrolysis</oboInOwl:hasRelatedSynonym>
         <rdfs:label>hydrolyzes</rdfs:label>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000013"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>hydrolysis</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -249,8 +339,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000014">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>nitrogen source</oboInOwl:hasRelatedSynonym>
         <rdfs:label>uses as nitrogen source</rdfs:label>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000014"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>nitrogen source</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -258,8 +355,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000015">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>other</oboInOwl:hasRelatedSynonym>
         <rdfs:label>uses in other way</rdfs:label>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000015"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>other</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -267,8 +371,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000016">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>oxidation</oboInOwl:hasRelatedSynonym>
         <rdfs:label>oxidizes</rdfs:label>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000016"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>oxidation</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -276,8 +387,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000017">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>reduction</oboInOwl:hasRelatedSynonym>
         <rdfs:label>reduces</rdfs:label>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000017"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>reduction</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -285,8 +403,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000018">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>required for growth</oboInOwl:hasRelatedSynonym>
         <rdfs:label>requires for growth</rdfs:label>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000018"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>required for growth</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -294,8 +419,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000019">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>respiration</oboInOwl:hasRelatedSynonym>
         <rdfs:label>uses for respiration</rdfs:label>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000019"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>respiration</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -303,8 +435,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000020">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>sulfur source</oboInOwl:hasRelatedSynonym>
         <rdfs:label>uses as sulfur source</rdfs:label>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000020"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>sulfur source</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -312,8 +451,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000021">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>aerobic catabolization</oboInOwl:hasRelatedSynonym>
         <rdfs:label>does not use for aerobic catabolization</rdfs:label>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000021"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>aerobic catabolization</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -321,8 +467,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000022">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>aerobic growth</oboInOwl:hasRelatedSynonym>
         <rdfs:label>does not use for aerobic growth</rdfs:label>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000022"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>aerobic growth</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -330,8 +483,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000023">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>anaerobic catabolization</oboInOwl:hasRelatedSynonym>
         <rdfs:label>does not use for anaerobic catabolization</rdfs:label>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000023"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>anaerobic catabolization</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -339,8 +499,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000024">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>anaerobic growth</oboInOwl:hasRelatedSynonym>
         <rdfs:label>does not use for anaerobic growth</rdfs:label>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000024"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>anaerobic growth</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -348,8 +515,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000025">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>anaerobic growth in the dark</oboInOwl:hasRelatedSynonym>
         <rdfs:label>does not use for anaerobic growth in the dark</rdfs:label>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000025"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>anaerobic growth in the dark</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -357,8 +531,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000026">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>anaerobic growth with light</oboInOwl:hasRelatedSynonym>
         <rdfs:label>does not use for anaerobic growth with light</rdfs:label>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000026"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>anaerobic growth with light</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -366,8 +547,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000027">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>assimilation</oboInOwl:hasRelatedSynonym>
         <rdfs:label>does not assimilate</rdfs:label>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000027"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>assimilation</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -375,8 +563,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000028">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>builds acid from</oboInOwl:hasRelatedSynonym>
         <rdfs:label>does not build acid from</rdfs:label>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000028"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>builds acid from</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -384,8 +579,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000029">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>builds base from</oboInOwl:hasRelatedSynonym>
         <rdfs:label>does not build base from</rdfs:label>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000029"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>builds base from</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -393,8 +595,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000030">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>builds gas from</oboInOwl:hasRelatedSynonym>
         <rdfs:label>does not build gas from</rdfs:label>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000030"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>builds gas from</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -402,8 +611,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000031">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>carbon source</oboInOwl:hasRelatedSynonym>
         <rdfs:label>does not use as carbon source</rdfs:label>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000031"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>carbon source</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -411,8 +627,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000032">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>aerobic catabolization</oboInOwl:hasRelatedSynonym>
         <rdfs:label>uses for aerobic catabolization</rdfs:label>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000032"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>aerobic catabolization</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -420,8 +643,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000033">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>degradation</oboInOwl:hasRelatedSynonym>
         <rdfs:label>does not degrade</rdfs:label>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000033"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>degradation</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -429,8 +659,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000034">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>electron acceptor</oboInOwl:hasRelatedSynonym>
         <rdfs:label>does not use as electron acceptor</rdfs:label>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000034"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>electron acceptor</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -438,8 +675,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000035">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>electron donor</oboInOwl:hasRelatedSynonym>
         <rdfs:label>does not use as electron donor</rdfs:label>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000035"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>electron donor</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -447,8 +691,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000036">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>energy source</oboInOwl:hasRelatedSynonym>
         <rdfs:label>does not use as energy source</rdfs:label>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000036"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>energy source</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -456,8 +707,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000037">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>fermentation</oboInOwl:hasRelatedSynonym>
         <rdfs:label>does not ferment</rdfs:label>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000037"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>fermentation</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -465,8 +723,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000038">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>growth</oboInOwl:hasRelatedSynonym>
         <rdfs:label>does not use for growth</rdfs:label>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000038"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>growth</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -474,8 +739,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000039">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>hydrolysis</oboInOwl:hasRelatedSynonym>
         <rdfs:label>does not hydrolyze</rdfs:label>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000039"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>hydrolysis</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -483,8 +755,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000040">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>nitrogen source</oboInOwl:hasRelatedSynonym>
         <rdfs:label>does not use as nitrogen source</rdfs:label>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000040"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>nitrogen source</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -492,8 +771,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000041">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>other</oboInOwl:hasRelatedSynonym>
         <rdfs:label>does not use in other way</rdfs:label>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000041"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>other</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -501,8 +787,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000042">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>oxidation</oboInOwl:hasRelatedSynonym>
         <rdfs:label>does not oxidize</rdfs:label>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000042"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>oxidation</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -510,8 +803,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000043">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>aerobic growth</oboInOwl:hasRelatedSynonym>
         <rdfs:label>uses for aerobic growth</rdfs:label>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000043"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>aerobic growth</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -519,8 +819,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000044">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>reduction</oboInOwl:hasRelatedSynonym>
         <rdfs:label>does not reduce</rdfs:label>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000044"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>reduction</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -528,8 +835,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000045">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>required for growth</oboInOwl:hasRelatedSynonym>
         <rdfs:label>is not required for growth</rdfs:label>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000045"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>required for growth</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -537,8 +851,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000046">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>respiration</oboInOwl:hasRelatedSynonym>
         <rdfs:label>does not use for respiration</rdfs:label>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000046"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>respiration</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -546,8 +867,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000047">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>sulfur source</oboInOwl:hasRelatedSynonym>
         <rdfs:label>does not use as sulfur source</rdfs:label>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000047"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>sulfur source</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -555,8 +883,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000048">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>anaerobic catabolization</oboInOwl:hasRelatedSynonym>
         <rdfs:label>uses for anaerobic catabolization</rdfs:label>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000048"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>anaerobic catabolization</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -564,8 +899,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000049">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>anaerobic growth</oboInOwl:hasRelatedSynonym>
         <rdfs:label>uses for anaerobic growth</rdfs:label>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000049"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>anaerobic growth</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -573,8 +915,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000050">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>anaerobic growth in the dark</oboInOwl:hasRelatedSynonym>
         <rdfs:label>uses for anaerobic growth in the dark</rdfs:label>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000050"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>anaerobic growth in the dark</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -582,8 +931,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000051">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>anaerobic growth with light</oboInOwl:hasRelatedSynonym>
         <rdfs:label>uses for anaerobic growth with light</rdfs:label>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000051"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>anaerobic growth with light</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -774,6 +1130,12 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000010"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>aerotolerant</owl:annotatedTarget>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000010"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>aerotolerant organism</owl:annotatedTarget>
         <metpo:linguistic_role>noun_singular</metpo:linguistic_role>
     </owl:Axiom>
@@ -782,12 +1144,6 @@
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>aerotolerant organisms</owl:annotatedTarget>
         <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000010"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>aerotolerant</owl:annotatedTarget>
-        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -2456,14 +2812,14 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000093"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>disc-shaped cells</owl:annotatedTarget>
-        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
+        <owl:annotatedTarget>disc-shaped</owl:annotatedTarget>
+        <metpo:linguistic_role>adjective</metpo:linguistic_role>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000093"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>disc-shaped</owl:annotatedTarget>
-        <metpo:linguistic_role>adjective</metpo:linguistic_role>
+        <owl:annotatedTarget>disc-shaped cells</owl:annotatedTarget>
+        <metpo:linguistic_role>noun_plural</metpo:linguistic_role>
     </owl:Axiom>
     
 
@@ -8839,6 +9195,159 @@
         <metpo:RangeMin>0</metpo:RangeMin>
         <metpo:Unit>C</metpo:Unit>
     </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/1000601 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000601">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
+        <rdfs:label>oxygen preference</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/1000602 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000602">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000601"/>
+        <oboInOwl:hasRelatedSynonym>aerobe</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>aerobic</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000602"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>aerobe</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000603 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000603">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000601"/>
+        <oboInOwl:hasRelatedSynonym>anaerobe</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>anaerobic</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000603"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>anaerobe</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000604 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000604">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000601"/>
+        <oboInOwl:hasRelatedSynonym>microaerophile</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>microaerophilic</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000604"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>microaerophile</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000605 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000605">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000601"/>
+        <oboInOwl:hasRelatedSynonym>facultative anaerobe</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>facultatively anaerobic</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000605"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>facultative anaerobe</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000606 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000606">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000601"/>
+        <oboInOwl:hasRelatedSynonym>obligate aerobe</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>obligately aerobic</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000606"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>obligate aerobe</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000607 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000607">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000601"/>
+        <oboInOwl:hasRelatedSynonym>obligate anaerobe</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>obligately anaerobic</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000607"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>obligate anaerobe</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000608 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000608">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000601"/>
+        <oboInOwl:hasRelatedSynonym>facultative aerobe</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>facultatively aerobic</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000608"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>facultative aerobe</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000609 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000609">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000601"/>
+        <oboInOwl:hasRelatedSynonym>aerotolerant</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>aerotolerant</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000609"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>aerotolerant</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000610 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000610">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000601"/>
+        <oboInOwl:hasRelatedSynonym>microaerotolerant</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>microaerotolerant</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000610"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>microaerotolerant</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
 </rdf:RDF>
 
 
