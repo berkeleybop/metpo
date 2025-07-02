@@ -1,0 +1,621 @@
+@prefix d3o: <https://purl.dsmz.de/schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+# Ontology Declaration
+<https://purl.dsmz.de/schema/> a owl:Ontology ;
+    rdfs:label "D3O - DSMZ Digital Diversity Ontology" ;
+    rdfs:comment "Ontology for describing microbial strains and their properties" .
+
+# Class Hierarchy
+
+# Top-level classes
+d3o:Strain a owl:Class ;
+    rdfs:label "Strain" ;
+    rdfs:comment "A microbial strain" .
+
+d3o:Enzyme a owl:Class ;
+    rdfs:label "Enzyme" ;
+    rdfs:comment "An enzyme produced by a strain" .
+
+d3o:GeneProduct a owl:Class ;
+    rdfs:label "Gene Product" ;
+    rdfs:comment "A product of gene expression" .
+
+d3o:Protein a owl:Class ;
+    rdfs:label "Protein" ;
+    rdfs:comment "A protein molecule" .
+
+d3o:Identifier a owl:Class ;
+    rdfs:label "Identifier" ;
+    rdfs:comment "An identifier for a strain or other entity" .
+
+d3o:OrganismIdentifier a owl:Class ;
+    rdfs:subClassOf d3o:Identifier ;
+    rdfs:label "Organism Identifier" .
+
+d3o:StrainDesignation a owl:Class ;
+    rdfs:subClassOf d3o:OrganismIdentifier ;
+    rdfs:label "Strain Designation" .
+
+d3o:StrainNumber a owl:Class ;
+    rdfs:subClassOf d3o:OrganismIdentifier ;
+    rdfs:label "Strain Number" .
+
+d3o:CultureCollectionNumber a owl:Class ;
+    rdfs:subClassOf d3o:StrainNumber ;
+    rdfs:label "Culture Collection Number" .
+
+d3o:Phenotype a owl:Class ;
+    rdfs:label "Phenotype" ;
+    rdfs:comment "Observable characteristics of a strain" .
+
+d3o:MicrobialPhenotype a owl:Class ;
+    rdfs:subClassOf d3o:Phenotype ;
+    rdfs:label "Microbial Phenotype" .
+
+d3o:CellMorphology a owl:Class ;
+    rdfs:subClassOf d3o:MicrobialPhenotype ;
+    rdfs:label "Cell Morphology" .
+
+d3o:ColonyMorphology a owl:Class ;
+    rdfs:subClassOf d3o:MicrobialPhenotype ;
+    rdfs:label "Colony Morphology" .
+
+d3o:GramStain a owl:Class ;
+    rdfs:subClassOf d3o:CellMorphology ;
+    rdfs:label "Gram Stain" .
+
+d3o:CellShape a owl:Class ;
+    rdfs:subClassOf d3o:CellMorphology ;
+    rdfs:label "Cell Shape" .
+
+d3o:CellSize a owl:Class ;
+    rdfs:subClassOf d3o:CellMorphology ;
+    rdfs:label "Cell Size" .
+
+d3o:CellMotility a owl:Class ;
+    rdfs:subClassOf d3o:MicrobialPhenotype ;
+    rdfs:label "Cell Motility" .
+
+d3o:CellPigmentation a owl:Class ;
+    rdfs:subClassOf d3o:CellMorphology ;
+    rdfs:label "Cell Pigmentation" .
+
+d3o:MetabolicPhenotype a owl:Class ;
+    rdfs:subClassOf d3o:Phenotype ;
+    rdfs:label "Metabolic Phenotype" .
+
+d3o:OxygenTolerance a owl:Class ;
+    rdfs:subClassOf d3o:MetabolicPhenotype ;
+    rdfs:label "Oxygen Tolerance" .
+
+d3o:SaltTolerance a owl:Class ;
+    rdfs:subClassOf d3o:MetabolicPhenotype ;
+    rdfs:label "Salt Tolerance" .
+
+d3o:NutritionType a owl:Class ;
+    rdfs:subClassOf d3o:MetabolicPhenotype ;
+    rdfs:label "Nutrition Type" .
+
+d3o:SporeFormation a owl:Class ;
+    rdfs:subClassOf d3o:MicrobialPhenotype ;
+    rdfs:label "Spore Formation" .
+
+d3o:ConceptualEntity a owl:Class ;
+    rdfs:label "Conceptual Entity" ;
+    rdfs:comment "Abstract conceptual entity" .
+
+d3o:CultureCondition a owl:Class ;
+    rdfs:subClassOf d3o:ConceptualEntity ;
+    rdfs:label "Culture Condition" .
+
+d3o:CultureTemperature a owl:Class ;
+    rdfs:subClassOf d3o:CultureCondition ;
+    rdfs:label "Culture Temperature" .
+
+d3o:CultureMedium a owl:Class ;
+    rdfs:subClassOf d3o:CultureCondition ;
+    rdfs:label "Culture Medium" .
+
+d3o:CulturePH a owl:Class ;
+    rdfs:subClassOf d3o:CultureCondition ;
+    rdfs:label "Culture pH" .
+
+d3o:Origin a owl:Class ;
+    rdfs:label "Origin" ;
+    rdfs:comment "Origin information for a strain" .
+
+d3o:LocationOfOrigin a owl:Class ;
+    rdfs:subClassOf d3o:Origin ;
+    rdfs:label "Location of Origin" .
+
+d3o:IsolationInformation a owl:Class ;
+    rdfs:subClassOf d3o:Origin ;
+    rdfs:label "Isolation Information" .
+
+d3o:IsolationSource a owl:Class ;
+    rdfs:subClassOf d3o:IsolationInformation ;
+    rdfs:label "Isolation Source" .
+
+d3o:IsolationProcedure a owl:Class ;
+    rdfs:subClassOf d3o:IsolationInformation ;
+    rdfs:label "Isolation Procedure" .
+
+d3o:EnrichmentProcedure a owl:Class ;
+    rdfs:subClassOf d3o:IsolationProcedure ;
+    rdfs:label "Enrichment Procedure" .
+
+d3o:NucleotideSequence a owl:Class ;
+    rdfs:label "Nucleotide Sequence" .
+
+d3o:DNASequence a owl:Class ;
+    rdfs:subClassOf d3o:NucleotideSequence ;
+    rdfs:label "DNA Sequence" .
+
+d3o:GenomeSequence a owl:Class ;
+    rdfs:subClassOf d3o:DNASequence ;
+    rdfs:label "Genome Sequence" .
+
+d3o:RNASequence a owl:Class ;
+    rdfs:subClassOf d3o:NucleotideSequence ;
+    rdfs:label "RNA Sequence" .
+
+d3o:rRNASequence a owl:Class ;
+    rdfs:subClassOf d3o:RNASequence ;
+    rdfs:label "rRNA Sequence" .
+
+d3o:16SSequence a owl:Class ;
+    rdfs:subClassOf d3o:rRNASequence ;
+    rdfs:label "16S Sequence" .
+
+d3o:Pathogenicity a owl:Class ;
+    rdfs:subClassOf d3o:ConceptualEntity ;
+    rdfs:label "Pathogenicity" .
+
+d3o:Reference a owl:Class ;
+    rdfs:label "Reference" ;
+    rdfs:comment "Bibliographic reference" .
+
+d3o:PropertyOrAttribute a owl:Class ;
+    rdfs:label "Property or Attribute" .
+
+d3o:MolecularProperty a owl:Class ;
+    rdfs:subClassOf d3o:PropertyOrAttribute ;
+    rdfs:label "Molecular Property" .
+
+d3o:GCContent a owl:Class ;
+    rdfs:subClassOf d3o:MolecularProperty ;
+    rdfs:label "GC Content" .
+
+d3o:RiskAssessment a owl:Class ;
+    rdfs:label "Risk Assessment" .
+
+d3o:BiologicalMaterial a owl:Class ;
+    rdfs:label "Biological Material" .
+
+d3o:OrganismGroup a owl:Class ;
+    rdfs:subClassOf d3o:ConceptualEntity ;
+    rdfs:label "Organism Group" .
+
+d3o:Microorganism a owl:Class ;
+    rdfs:subClassOf d3o:BiologicalMaterial ;
+    rdfs:label "Microorganism" .
+
+d3o:Prokaryotes a owl:Class ;
+    rdfs:subClassOf d3o:Microorganism ;
+    rdfs:label "Prokaryotes" .
+
+d3o:Bacteria a owl:Class ;
+    rdfs:subClassOf d3o:Prokaryotes ;
+    rdfs:label "Bacteria" .
+
+# Object Properties
+
+d3o:describesStrain a owl:ObjectProperty ;
+    rdfs:domain [ a owl:Class ;
+        owl:unionOf ( d3o:Enzyme d3o:GeneProduct d3o:Protein d3o:Identifier 
+                      d3o:Phenotype d3o:CultureCondition d3o:Origin 
+                      d3o:NucleotideSequence d3o:Pathogenicity d3o:GCContent 
+                      d3o:RiskAssessment ) ] ;
+    rdfs:range d3o:Strain ;
+    rdfs:label "describes strain" .
+
+d3o:hasReference a owl:ObjectProperty ;
+    rdfs:range d3o:Reference ;
+    rdfs:label "has reference" .
+
+# Data Properties
+
+# Strain properties
+d3o:hasSpecies a owl:DatatypeProperty ;
+    rdfs:domain d3o:Strain ;
+    rdfs:range xsd:string .
+
+d3o:hasTaxonomicRank a owl:DatatypeProperty ;
+    rdfs:domain d3o:Strain ;
+    rdfs:range xsd:string .
+
+d3o:hasOrder a owl:DatatypeProperty ;
+    rdfs:domain d3o:Strain ;
+    rdfs:range xsd:string .
+
+d3o:hasGenus a owl:DatatypeProperty ;
+    rdfs:domain d3o:Strain ;
+    rdfs:range xsd:string .
+
+d3o:hasStrainNames a owl:DatatypeProperty ;
+    rdfs:domain d3o:Strain ;
+    rdfs:range [ a rdfs:Datatype ;
+        owl:unionOf ( xsd:int xsd:string ) ] .
+
+d3o:isTypeStrain a owl:DatatypeProperty ;
+    rdfs:domain d3o:Strain ;
+    rdfs:range xsd:boolean .
+
+d3o:hasClass a owl:DatatypeProperty ;
+    rdfs:domain d3o:Strain ;
+    rdfs:range xsd:string .
+
+d3o:hasPhylum a owl:DatatypeProperty ;
+    rdfs:domain d3o:Strain ;
+    rdfs:range xsd:string .
+
+d3o:hasFamily a owl:DatatypeProperty ;
+    rdfs:domain d3o:Strain ;
+    rdfs:range xsd:string .
+
+d3o:hasBacDiveID a owl:DatatypeProperty ;
+    rdfs:domain d3o:Strain ;
+    rdfs:range xsd:int .
+
+d3o:hasSpeciesEpithet a owl:DatatypeProperty ;
+    rdfs:domain d3o:Strain ;
+    rdfs:range xsd:string .
+
+d3o:hasDomain a owl:DatatypeProperty ;
+    rdfs:domain d3o:Strain ;
+    rdfs:range xsd:string .
+
+d3o:hasTaxID a owl:DatatypeProperty ;
+    rdfs:domain [ a owl:Class ;
+        owl:unionOf ( d3o:Strain d3o:NucleotideSequence ) ] ;
+    rdfs:range [ a rdfs:Datatype ;
+        owl:unionOf ( xsd:int xsd:string xsd:integer ) ] .
+
+d3o:matchesTaxIDLevel a owl:DatatypeProperty ;
+    rdfs:domain d3o:Strain ;
+    rdfs:range xsd:string .
+
+d3o:hasDesignation a owl:DatatypeProperty ;
+    rdfs:domain d3o:Strain ;
+    rdfs:range xsd:string .
+
+d3o:hasStrainNumber a owl:DatatypeProperty ;
+    rdfs:domain d3o:Strain ;
+    rdfs:range xsd:string .
+
+d3o:hasScientificName a owl:DatatypeProperty ;
+    rdfs:domain d3o:Strain ;
+    rdfs:range xsd:string .
+
+# Enzyme/Protein properties
+d3o:hasActivity a owl:DatatypeProperty ;
+    rdfs:domain [ a owl:Class ;
+        owl:unionOf ( d3o:Enzyme d3o:GeneProduct d3o:Protein ) ] ;
+    rdfs:range xsd:string .
+
+d3o:hasECNumber a owl:DatatypeProperty ;
+    rdfs:domain [ a owl:Class ;
+        owl:unionOf ( d3o:Enzyme d3o:GeneProduct d3o:Protein ) ] ;
+    rdfs:range xsd:string .
+
+d3o:hasEnzyme a owl:DatatypeProperty ;
+    rdfs:domain [ a owl:Class ;
+        owl:unionOf ( d3o:Enzyme d3o:GeneProduct d3o:Protein ) ] ;
+    rdfs:range xsd:string .
+
+# Identifier properties
+d3o:hasLink a owl:DatatypeProperty ;
+    rdfs:domain d3o:CultureCollectionNumber ;
+    rdfs:range xsd:string .
+
+# Phenotype properties
+d3o:hasGramStain a owl:DatatypeProperty ;
+    rdfs:domain d3o:GramStain ;
+    rdfs:range rdfs:Literal .
+
+d3o:hasPhenotypeInformation a owl:DatatypeProperty ;
+    rdfs:domain d3o:MicrobialPhenotype ;
+    rdfs:range [ a rdfs:Datatype ;
+        owl:unionOf ( rdfs:Literal xsd:string xsd:float xsd:boolean ) ] .
+
+d3o:isMotile a owl:DatatypeProperty ;
+    rdfs:domain d3o:CellMotility ;
+    rdfs:range xsd:boolean .
+
+d3o:hasOxygenTolerance a owl:DatatypeProperty ;
+    rdfs:domain d3o:OxygenTolerance ;
+    rdfs:range xsd:string .
+
+d3o:hasGrowthInformation a owl:DatatypeProperty ;
+    rdfs:domain [ a owl:Class ;
+        owl:unionOf ( d3o:Phenotype d3o:CultureCondition ) ] ;
+    rdfs:range [ a rdfs:Datatype ;
+        owl:unionOf ( xsd:string xsd:float xsd:boolean ) ] .
+
+# Cell Size properties
+d3o:hasLength a owl:DatatypeProperty ;
+    rdfs:domain d3o:CellSize ;
+    rdfs:range xsd:string .
+
+d3o:hasLengthRangeStart a owl:DatatypeProperty ;
+    rdfs:domain d3o:CellSize ;
+    rdfs:range xsd:float .
+
+d3o:hasLengthRangeEnd a owl:DatatypeProperty ;
+    rdfs:domain d3o:CellSize ;
+    rdfs:range xsd:float .
+
+d3o:hasLengthUnit a owl:DatatypeProperty ;
+    rdfs:domain d3o:CellSize ;
+    rdfs:range xsd:string .
+
+d3o:hasWidth a owl:DatatypeProperty ;
+    rdfs:domain d3o:CellSize ;
+    rdfs:range xsd:string .
+
+d3o:hasWidthRangeStart a owl:DatatypeProperty ;
+    rdfs:domain d3o:CellSize ;
+    rdfs:range xsd:float .
+
+d3o:hasWidthRangeEnd a owl:DatatypeProperty ;
+    rdfs:domain d3o:CellSize ;
+    rdfs:range xsd:float .
+
+d3o:hasWidthUnit a owl:DatatypeProperty ;
+    rdfs:domain d3o:CellSize ;
+    rdfs:range xsd:string .
+
+# Temperature properties
+d3o:hasTemperatureRangeStart a owl:DatatypeProperty ;
+    rdfs:domain d3o:CultureTemperature ;
+    rdfs:range xsd:float .
+
+d3o:hasTemperatureRangeEnd a owl:DatatypeProperty ;
+    rdfs:domain d3o:CultureTemperature ;
+    rdfs:range xsd:float .
+
+d3o:hasTemperatureRange a owl:DatatypeProperty ;
+    rdfs:domain d3o:CultureTemperature ;
+    rdfs:range xsd:string .
+
+d3o:growthObserved a owl:DatatypeProperty ;
+    rdfs:domain d3o:CultureTemperature ;
+    rdfs:range xsd:string .
+
+# Salt tolerance properties
+d3o:hasSaltInformation a owl:DatatypeProperty ;
+    rdfs:domain d3o:SaltTolerance ;
+    rdfs:range [ a rdfs:Datatype ;
+        owl:unionOf ( xsd:string xsd:float rdf:langString ) ] .
+
+d3o:hasSaltType a owl:DatatypeProperty ;
+    rdfs:domain d3o:SaltTolerance ;
+    rdfs:range xsd:string .
+
+d3o:hasSaltConcentration a owl:DatatypeProperty ;
+    rdfs:domain d3o:SaltTolerance ;
+    rdfs:range xsd:string .
+
+d3o:hasSaltConcentrationRangeStart a owl:DatatypeProperty ;
+    rdfs:domain d3o:SaltTolerance ;
+    rdfs:range xsd:float .
+
+d3o:hasSaltConcentrationRangeEnd a owl:DatatypeProperty ;
+    rdfs:domain d3o:SaltTolerance ;
+    rdfs:range xsd:float .
+
+d3o:hasSaltConcentrationUnit a owl:DatatypeProperty ;
+    rdfs:domain d3o:SaltTolerance ;
+    rdfs:range rdf:langString .
+
+d3o:hasTestType a owl:DatatypeProperty ;
+    rdfs:domain [ a owl:Class ;
+        owl:unionOf ( d3o:SaltTolerance d3o:CultureCondition d3o:CulturePH ) ] ;
+    rdfs:range xsd:string .
+
+d3o:hasTestAbility a owl:DatatypeProperty ;
+    rdfs:domain [ a owl:Class ;
+        owl:unionOf ( d3o:SaltTolerance d3o:CulturePH ) ] ;
+    rdfs:range xsd:string .
+
+# Colony morphology properties
+d3o:hasIncubationInformation a owl:DatatypeProperty ;
+    rdfs:domain d3o:ColonyMorphology ;
+    rdfs:range [ a rdfs:Datatype ;
+        owl:unionOf ( xsd:float xsd:string ) ] .
+
+d3o:hasIncubationPeriod a owl:DatatypeProperty ;
+    rdfs:domain d3o:ColonyMorphology ;
+    rdfs:range xsd:string .
+
+d3o:hasIncubationPeriodRangeStart a owl:DatatypeProperty ;
+    rdfs:domain d3o:ColonyMorphology ;
+    rdfs:range xsd:float .
+
+d3o:hasIncubationPeriodRangeEnd a owl:DatatypeProperty ;
+    rdfs:domain d3o:ColonyMorphology ;
+    rdfs:range xsd:float .
+
+d3o:hasColonyMorphologyInformation a owl:DatatypeProperty ;
+    rdfs:domain d3o:ColonyMorphology ;
+    rdfs:range xsd:string .
+
+d3o:hasColonyColor a owl:DatatypeProperty ;
+    rdfs:domain d3o:ColonyMorphology ;
+    rdfs:range xsd:string .
+
+d3o:hasColonyShape a owl:DatatypeProperty ;
+    rdfs:domain d3o:ColonyMorphology ;
+    rdfs:range xsd:string .
+
+d3o:hasMediumComposition a owl:DatatypeProperty ;
+    rdfs:domain d3o:ColonyMorphology ;
+    rdfs:range xsd:string .
+
+d3o:hasHemolysisAbility a owl:DatatypeProperty ;
+    rdfs:domain d3o:ColonyMorphology ;
+    rdfs:range xsd:boolean .
+
+d3o:hasHemolysisInformation a owl:DatatypeProperty ;
+    rdfs:domain d3o:ColonyMorphology ;
+    rdfs:range xsd:boolean .
+
+# Pigmentation properties
+d3o:hasPigmentProduction a owl:DatatypeProperty ;
+    rdfs:domain d3o:CellPigmentation ;
+    rdfs:range xsd:boolean .
+
+d3o:hasPigmentInformation a owl:DatatypeProperty ;
+    rdfs:domain d3o:CellPigmentation ;
+    rdfs:range [ a rdfs:Datatype ;
+        owl:unionOf ( xsd:boolean xsd:string ) ] .
+
+d3o:hasPigmentName a owl:DatatypeProperty ;
+    rdfs:domain d3o:CellPigmentation ;
+    rdfs:range xsd:string .
+
+# Origin properties
+d3o:hasLocation a owl:DatatypeProperty ;
+    rdfs:domain d3o:LocationOfOrigin ;
+    rdfs:range xsd:string .
+
+d3o:hasCountry a owl:DatatypeProperty ;
+    rdfs:domain d3o:LocationOfOrigin ;
+    rdfs:range xsd:string .
+
+# Sequence properties
+d3o:hasSequenceAccession a owl:DatatypeProperty ;
+    rdfs:domain d3o:NucleotideSequence ;
+    rdfs:range xsd:string .
+
+d3o:hasSequenceInformation a owl:DatatypeProperty ;
+    rdfs:domain d3o:NucleotideSequence ;
+    rdfs:range [ a rdfs:Datatype ;
+        owl:unionOf ( xsd:string xsd:integer ) ] .
+
+d3o:fromSequenceDB a owl:DatatypeProperty ;
+    rdfs:domain d3o:NucleotideSequence ;
+    rdfs:range xsd:string .
+
+d3o:hasAssemblyLevel a owl:DatatypeProperty ;
+    rdfs:domain d3o:GenomeSequence ;
+    rdfs:range xsd:string .
+
+d3o:hasSequenceLength a owl:DatatypeProperty ;
+    rdfs:domain d3o:rRNASequence ;
+    rdfs:range xsd:integer .
+
+# Pathogenicity properties
+d3o:isPlantPathogen a owl:DatatypeProperty ;
+    rdfs:domain d3o:Pathogenicity ;
+    rdfs:range xsd:string .
+
+d3o:isHumanPathogen a owl:DatatypeProperty ;
+    rdfs:domain d3o:Pathogenicity ;
+    rdfs:range xsd:string .
+
+d3o:isAnimalPathogen a owl:DatatypeProperty ;
+    rdfs:domain d3o:Pathogenicity ;
+    rdfs:range xsd:string .
+
+d3o:isPathogen a owl:DatatypeProperty ;
+    rdfs:domain d3o:Pathogenicity ;
+    rdfs:range xsd:string .
+
+# Culture medium properties
+d3o:hasMediaLink a owl:DatatypeProperty ;
+    rdfs:domain d3o:CultureMedium ;
+    rdfs:range xsd:anyURI .
+
+d3o:providedBy a owl:DatatypeProperty ;
+    rdfs:domain d3o:CultureMedium ;
+    rdfs:range xsd:string .
+
+d3o:hasMediumGrowth a owl:DatatypeProperty ;
+    rdfs:domain d3o:CultureMedium ;
+    rdfs:range xsd:boolean .
+
+d3o:hasMediaDiveID a owl:DatatypeProperty ;
+    rdfs:domain d3o:CultureMedium ;
+    rdfs:range xsd:string .
+
+# Spore formation properties
+d3o:hasAbility a owl:DatatypeProperty ;
+    rdfs:domain d3o:SporeFormation ;
+    rdfs:range xsd:boolean .
+
+d3o:hasSporeType a owl:DatatypeProperty ;
+    rdfs:domain d3o:SporeFormation ;
+    rdfs:range xsd:string .
+
+# Reference properties
+d3o:hasBibliographicInformation a owl:DatatypeProperty ;
+    rdfs:domain d3o:Reference ;
+    rdfs:range xsd:string .
+
+d3o:hasDocumentType a owl:DatatypeProperty ;
+    rdfs:domain d3o:Reference ;
+    rdfs:range xsd:string .
+
+d3o:hasCatalogueInformation a owl:DatatypeProperty ;
+    rdfs:domain d3o:Reference ;
+    rdfs:range xsd:string .
+
+d3o:hasCatalogueInstitution a owl:DatatypeProperty ;
+    rdfs:domain d3o:Reference ;
+    rdfs:range xsd:string .
+
+d3o:hasCatalogueID a owl:DatatypeProperty ;
+    rdfs:domain d3o:Reference ;
+    rdfs:range xsd:string .
+
+# pH properties
+d3o:hasPHRangeStart a owl:DatatypeProperty ;
+    rdfs:domain d3o:CulturePH ;
+    rdfs:range xsd:float .
+
+d3o:hasPHRangeEnd a owl:DatatypeProperty ;
+    rdfs:domain d3o:CulturePH ;
+    rdfs:range xsd:float .
+
+d3o:hasPHRangeType a owl:DatatypeProperty ;
+    rdfs:domain d3o:CulturePH ;
+    rdfs:range xsd:string .
+
+# GC Content properties
+d3o:hasGCContentRangeStart a owl:DatatypeProperty ;
+    rdfs:domain d3o:GCContent ;
+    rdfs:range xsd:float .
+
+d3o:hasGCContentRangeEnd a owl:DatatypeProperty ;
+    rdfs:domain d3o:GCContent ;
+    rdfs:range xsd:float .
+
+d3o:hasGCInformation a owl:DatatypeProperty ;
+    rdfs:domain d3o:GCContent ;
+    rdfs:range [ a rdfs:Datatype ;
+        owl:unionOf ( xsd:float xsd:string ) ] .
+
+d3o:hasGCMethod a owl:DatatypeProperty ;
+    rdfs:domain d3o:GCContent ;
+    rdfs:range xsd:string .
+
+# Risk Assessment properties
+d3o:hasBiosafetyLevel a owl:DatatypeProperty ;
+    rdfs:domain d3o:RiskAssessment ;
+    rdfs:range xsd:string .
