@@ -15,8 +15,7 @@ local/taxdmp/nodes.dmp: local/taxdmp
 local/noderanks.ttl: local/taxdmp/nodes.dmp
 	poetry run extract-rank-triples --input-file $< --output-file $@
 
-bacdive_phenotype_mappings.tsv: sparql/bacdive_phenotype_mappings.rq
+generated/bacdive_oxygen_phenotype_mappings.tsv: sparql/bacdive_oxygen_phenotype_mappings.rq src/ontology/metpo.owl
 	robot query \
-		--query $< $@ \
-		--input src/ontology/metpo.owl \
-		--output $@
+		--query $(word 1,$^) $@ \
+		--input $(word 2,$^)
