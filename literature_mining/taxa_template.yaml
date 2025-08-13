@@ -1,0 +1,108 @@
+id: http://w3id.org/metpo/taxa_extraction
+name: taxa_extraction
+title: METPO Taxa Extraction Template
+description: >-
+  A simple OntoGPT template for extracting bacterial taxa from literature
+  and grounding them in NCBI taxonomy ontology. Designed for IJSEM articles
+  that focus on taxonomic description and characterization.
+license: https://creativecommons.org/publicdomain/zero/1.0/
+prefixes:
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  linkml: https://w3id.org/linkml/
+  metpo_taxa: http://w3id.org/metpo/taxa_extraction/
+  ontogpt: http://w3id.org/ontogpt/
+default_prefix: metpo_taxa
+default_range: string
+imports:
+  - linkml:types
+  - ontogpt:core
+classes:
+  TaxonomicLiteratureExtraction:
+    tree_root: true
+    attributes:
+      pmid:
+        description: >-
+          PubMed ID of the article (e.g., 23996836)
+        range: string
+      primary_taxa:
+        description: >-
+          semicolon-separated list of the main bacterial or archaeal taxa described 
+          in this article, including new species, genera, or higher taxonomic groups 
+          that are the primary focus of the study
+        multivalued: true
+        range: Taxon
+      related_taxa:
+        description: >-
+          semicolon-separated list of other bacterial, archaeal, or reference taxa 
+          mentioned in the article for comparison, phylogenetic analysis, or context
+        multivalued: true
+        range: Taxon
+      isolation_sources:
+        description: >-
+          semicolon-separated list of environments, habitats, or sources from which 
+          the organisms were isolated (e.g., soil, seawater, human gut, plant roots)
+        multivalued: true
+        range: Environment
+      taxonomic_rank:
+        description: >-
+          the primary taxonomic level being described in this article 
+          (e.g., species, genus, family)
+        range: TaxonomicRank
+      article_type:
+        description: >-
+          the type of taxonomic study described in this article
+        range: ArticleType
+      source_text:
+        range: string
+        annotations:
+          prompt.skip: "true"
+
+  Taxon:
+    is_a: NamedEntity
+    description: >-
+      Bacterial, archaeal, or other microbial taxa including species, genera, 
+      families, and higher taxonomic groups. Includes both novel taxa being 
+      described and reference taxa used for comparison.
+    annotations:
+      annotators: sqlite:obo:ncbitaxon
+
+  Environment:
+    is_a: NamedEntity
+    description: >-
+      Environmental contexts, habitats, ecological niches, and isolation sources 
+      where microorganisms are found or from which they were isolated.
+    annotations:
+      annotators: sqlite:obo:envo
+
+enums:
+  TaxonomicRank:
+    description: Primary taxonomic level being described
+    permissible_values:
+      species:
+        description: Species-level description (most common in IJSEM)
+      genus:
+        description: Genus-level description or revision
+      family:
+        description: Family-level analysis
+      order:
+        description: Order-level or higher taxonomy
+      strain:
+        description: Strain-level characterization
+      multiple:
+        description: Multiple taxonomic levels described
+
+  ArticleType:
+    description: Type of taxonomic study
+    permissible_values:
+      novel_species:
+        description: Description of new species
+      novel_genus:
+        description: Description of new genus
+      taxonomic_revision:
+        description: Revision or reclassification of existing taxa
+      phylogenetic_analysis:
+        description: Phylogenetic or evolutionary study
+      comparative_taxonomy:
+        description: Comparative analysis of multiple taxa
+      emended_description:
+        description: Emended or updated taxonomic description
