@@ -3,7 +3,14 @@
 # Number of random PMIDs to sample (can be overridden from command line)
 N_PMIDS ?= 10
 
-.PHONY:  clean all validate-base-template extract-all extract-random random-n4l-pmids.txt
+# PMID file to use for extraction (can be overridden from command line)
+PMID_FILE ?= random-n4l-pmids.txt
+
+# Source for pipeline (can be overridden from command line)
+SOURCE ?= ijsem
+N_ABSTRACTS ?= 5
+
+.PHONY: clean all validate-base-template clean-abstracts clean-pmids full-pipeline quick-test
 
 clean:
 	rm -f *-abstract.txt
@@ -18,22 +25,25 @@ clean:
 
 all: clean abstracts/35476601-abstract.txt chem_interaction_props_enum.yaml metpo.db validate-base-template ontogpt_template.yaml 21602360-output.yaml 35476601-output.yaml
 
-chem_interaction_props.tsv:
+# Chemical properties extraction
+chem_interaction_props.tsv: ../metpo.owl
 	robot query \
 		--query chem_interaction_props.rq $@ \
-		--input ../metpo.owl
+		--input $<
 
 chem_interaction_props_enum.yaml: chem_interaction_props.tsv
 	poetry run convert-chem-props -i $< -o $@
 
-metpo.db:
+# Database creation
+metpo.db: ../metpo.owl
 	# for very latest version
 	# OAK should also be able to get this automatically, but it might be an older version
-	cp ../metpo.owl .
+	cp $< metpo.owl
 	poetry run semsql make $@
 	rm -rf metpo.owl
 	rm -rf metpo-relation-graph.tsv.gz
 
+# Template validation and creation
 validate-base-template: ontogpt_template_base.yaml
 	poetry run linkml validate --schema $<
 
@@ -42,31 +52,67 @@ ontogpt_template.yaml: ontogpt_template_base.yaml chem_interaction_props_enum.ya
 	yq '.classes.OrganismCompoundRelationship.attributes.relationship_type.range = "ChemicalInteractionPropertyEnum"' $@.tmp > $@
 	rm -f $@.tmp
 
-# Pattern rules for arbitrary PMIDs
+# Individual abstract fetching (pattern rule)
 abstracts/%-abstract.txt:
-	# abstract body on one line
 	mkdir -p abstracts
 	poetry run artl-cli get-abstract-from-pubmed-id --pmid "$*" > $@
 
-%-output.yaml: ontogpt_template.yaml abstracts/%-abstract.txt
+# Individual extraction (pattern rule)  
+%-output.yaml: ontogpt_template.yaml abstracts/%-abstract.txt metpo.db
 	poetry run ontogpt extract -t ontogpt_template.yaml -i abstracts/$*-abstract.txt > $@
 
-# Extract from all abstracts in directory
-extract-all: ontogpt_template.yaml
-	poetry run ontogpt extract -t ontogpt_template.yaml -i abstracts -o all-extractions.yaml
+# PMID file generation
+random-n4l-pmids.txt: n4l/reference_id_mapping.csv
+	cut -f3 -d, $< | sort | uniq | grep '^[0-9]*$$' | shuf -n $(N_PMIDS) > $@
 
-# Download abstracts for random PMIDs and extract
-# Usage: make extract-random (uses default 10 PMIDs) or make extract-random N_PMIDS=25 (uses 25 PMIDs)
-extract-random: ontogpt_template.yaml
-	rm -f random-n4l-pmids.txt
+random-bacdive-pmids.txt:
+	mongosh --quiet bacdive --eval "db.strains_api.aggregate([{\$$unwind: '\$$External links.literature'}, {\$$match: {'External links.literature.Pubmed-ID': {\$$exists: true, \$$ne: null, \$$ne: ''}}}, {\$$group: {_id: '\$$External links.literature.Pubmed-ID'}}, {\$$sample: {size: $(N_PMIDS)}}]).forEach(function(doc) { print(doc._id); })" > $@
+
+random-ijsem-pmids.txt:
+	mongosh --quiet europepmc --eval "db.ijsem_articles.aggregate([{\$$match: {pmid: {\$$exists: true, \$$ne: null, \$$ne: ''}}}, {\$$sample: {size: $(N_PMIDS)}}]).forEach(function(doc) { print(doc.pmid); })" > $@
+
+# Abstract directory creation based on PMID file
+abstracts/.built: $(PMID_FILE)
 	rm -rf abstracts
-	$(MAKE) random-n4l-pmids.txt
+	mkdir -p abstracts
+	head -n $(N_ABSTRACTS) $< | while read pmid; do \
+		echo "Fetching abstract for PMID: $$pmid"; \
+		poetry run artl-cli get-abstract-from-pubmed-id --pmid "$$pmid" > "abstracts/$$pmid-abstract.txt"; \
+	done
+	touch $@
+
+# Extraction from all abstracts in directory
+all-extractions.yaml: ontogpt_template.yaml metpo.db abstracts/.built
+	poetry run ontogpt extract -t ontogpt_template.yaml -i abstracts -o $@
+
+# Legacy targets for backwards compatibility
+extract-all: all-extractions.yaml
+
+fetch-abstracts: abstracts/.built
+
+extract-random: random-extractions.yaml
+
+random-extractions.yaml: ontogpt_template.yaml metpo.db $(PMID_FILE)
+	rm -rf abstracts
 	mkdir -p abstracts
 	while read pmid; do \
 		echo "Fetching abstract for PMID: $$pmid"; \
 		poetry run artl-cli get-abstract-from-pubmed-id --pmid "$$pmid" > "abstracts/$$pmid-abstract.txt"; \
-	done < random-n4l-pmids.txt
-	poetry run ontogpt extract -t ontogpt_template.yaml -i abstracts -o random-extractions.yaml
+	done < $(PMID_FILE)
+	poetry run ontogpt extract -t ontogpt_template.yaml -i abstracts -o $@
 
-random-n4l-pmids.txt: n4l/reference_id_mapping.csv
-	cut -f3 -d, $< | sort | uniq |  grep '^[0-9]*$$' |  shuf -n $(N_PMIDS) > $@
+# Cleanup targets
+clean-abstracts:
+	rm -rf abstracts
+
+clean-pmids:
+	rm -f random-*-pmids.txt
+
+# Pipeline targets
+full-pipeline: PMID_FILE = random-$(SOURCE)-pmids.txt
+full-pipeline: all-extractions.yaml
+
+quick-test: PMID_FILE = random-$(SOURCE)-pmids.txt
+quick-test: N_PMIDS = 5  
+quick-test: N_ABSTRACTS = 3
+quick-test: all-extractions.yaml
