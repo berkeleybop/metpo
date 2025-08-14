@@ -1,22 +1,22 @@
-id: http://w3id.org/metpo/growth_conditions_extraction
-name: growth_conditions_extraction
-title: METPO Growth Conditions and Media Extraction Template
+id: http://w3id.org/metpo/chemical_utilization_extraction
+name: chemical_utilization_extraction
+title: METPO Chemical Utilization Extraction Template
 description: >-
-  A focused OntoGPT template for extracting bacterial growth conditions,  culture media, and chemical utilization from literature. Designed to  capture media composition and environmental parameters for predicting  suitable bacterial growth conditions.
+  A focused OntoGPT template for extracting organism-chemical utilization relationships from bacterial literature. Uses a two-step approach: first identifies chemicals mentioned in text, then extracts specific utilization relationships with METPO interaction predicates.
 license: https://creativecommons.org/publicdomain/zero/1.0/
 prefixes:
   rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
   linkml: https://w3id.org/linkml/
-  metpo_growth: http://w3id.org/metpo/growth_conditions_extraction/
+  metpo_chem: http://w3id.org/metpo/chemical_utilization_extraction/
   ontogpt: http://w3id.org/ontogpt/
   METPO: http://purl.obolibrary.org/obo/METPO_
-default_prefix: metpo_growth
+default_prefix: metpo_chem
 default_range: string
 imports:
   - linkml:types
   - ontogpt:core
 classes:
-  GrowthConditionsLiteratureExtraction:
+  ChemicalUtilizationLiteratureExtraction:
     tree_root: true
     attributes:
       pmid:
@@ -25,62 +25,41 @@ classes:
         range: string
       study_taxa:
         description: >-
-          semicolon-separated list of the main bacterial or archaeal taxa  being studied for growth conditions
+          semicolon-separated list of the main bacterial or archaeal taxa being studied for chemical utilization
         multivalued: true
         range: Taxon
-      culture_media:
+      strains:
         description: >-
-          semicolon-separated list of culture media used, including both  named media (e.g., TSB, LB, minimal medium) and media compositions  when provided
+          semicolon-separated list of specific strain designations mentioned in the text
         multivalued: true
-        range: CultureMedium
+        range: Strain
         annotations:
           prompt: >-
-            A semicolon-separated list of culture media names and compositions. Include standard media names (TSB, LB, minimal medium) and any  specific compositions mentioned (e.g., "glucose minimal medium",  "Marine Broth 2216", "defined medium with glucose and NH4Cl").
-      temperature_conditions:
+            Extract specific strain designations mentioned in the text. Include strain numbers, culture collection numbers, type strain designations, and isolate names. Examples: "15-1T", "ATCC 25922", "MG1655", "K-12", "strain ABC123", "isolate XYZ-1". Do not include general species names.
+      chemicals_mentioned:
         description: >-
-          semicolon-separated list of temperature conditions in normalized format
+          List of chemical compounds mentioned in the text that could be involved in metabolic processes, growth, or biochemical reactions
         multivalued: true
-        range: string
+        range: ChemicalCompound
         annotations:
           prompt: >-
-            A semicolon-separated list of temperature conditions. Normalize  temperatures to °C format. Examples: "37°C", "25-30°C", "optimal 28°C",  "range 15-45°C", "thermophilic", "mesophilic". Convert Fahrenheit  to Celsius if needed. Preserve ranges, optima, and classifications.
-      ph_conditions:
-        description: >-
-          semicolon-separated list of pH conditions in normalized format
-        multivalued: true
-        range: string
-        annotations:
-          prompt: >-
-            A semicolon-separated list of pH conditions. Normalize to "pH X.X"  format with one decimal place. Examples: "pH 7.0", "pH 6.5-8.0",  "optimal pH 7.2", "range pH 5.0-9.0", "alkaliphilic", "acidophilic".  Preserve ranges, optima, and classifications.
-      oxygen_requirements:
-        description: >-
-          semicolon-separated list of oxygen requirements in normalized format
-        multivalued: true
-        range: string
-        annotations:
-          prompt: >-
-            A semicolon-separated list of oxygen requirements. Use standard terms:  "aerobic", "anaerobic", "facultative anaerobic", "microaerophilic",  "obligately aerobic", "obligately anaerobic". Include specific O2  concentrations if mentioned (e.g., "requires 2-5% O2").
-      salt_tolerance:
-        description: >-
-          semicolon-separated list of salt tolerance in normalized format
-        multivalued: true
-        range: string
-        annotations:
-          prompt: >-
-            A semicolon-separated list of salt tolerance conditions. Normalize  salt concentrations to "X% NaCl" format. Examples: "0% NaCl",  "3.5% NaCl", "0-5% NaCl", "optimal 1% NaCl", "range 2-15% NaCl",  "halophilic", "extremely halophilic". Convert other units to  percentages if possible.
+            Identify all chemical compounds mentioned in the text that are relevant to bacterial metabolism, growth, or biochemical activities. Include: carbon sources (glucose, acetate), nitrogen sources (ammonia, nitrate), vitamins (B12, biotin), metabolic intermediates, enzyme substrates, electron acceptors/donors, and any other chemicals involved in bacterial physiology. If no relevant chemicals are mentioned,  leave this field completely empty. DO NOT include entries like "None  explicitly mentioned" or similar phrases.
       chemical_utilizations:
         description: >-
-          semicolon-separated list of organism-chemical utilization  relationships including carbon sources, nitrogen sources,  electron acceptors/donors, and metabolic substrates
+          List of specific organism-chemical utilization relationships with their interaction types from METPO ontology
         multivalued: true
         range: ChemicalUtilization
-      growth_requirements:
-        description: >-
-          semicolon-separated list of special growth requirements in  normalized format
-        multivalued: true
-        range: string
         annotations:
           prompt: >-
-            A semicolon-separated list of special growth requirements. Normalize  concentrations where possible. Examples: "requires vitamin B12",  "needs 0.1% yeast extract", "CO2 atmosphere", "anaerobic conditions",  "requires hemin", "needs 5% CO2". Include specific concentrations  when mentioned.
+            For each chemical compound found in chemicals_mentioned field above, extract structured relationships linking specific organisms to those chemical compounds. Generate tuples specifying the organism, the chemical, and the interaction type. Look for explicit statements like "X ferments glucose", "Y requires vitamin B12", "Z hydrolyzes starch", "degrades  cellulose", "oxidizes sulfur", "reduces nitrate", etc. Convert ALL  relevant chemical utilization patterns mentioned above into  organism-chemical relationships. If no chemical utilization relationships  are found, leave this field completely empty. DO NOT include entries like  "None explicitly mentioned" or similar phrases.
+      strain_relationships:
+        description: >-
+          semicolon-separated list of strain-species relationships found in the text
+        multivalued: true
+        range: StrainRelationship
+        annotations:
+          prompt: >-
+            A semicolon-separated list of strain-species relationships, where each  relationship connects a strain to its parent taxon. Each relationship should  have a strain name, relationship type, and parent species/genus. For example: "MG1655 strain_of Escherichia coli; K-12 strain_of Escherichia coli;  ATCC 25922 type_strain_of Klebsiella pneumoniae". If no strain relationships are found, leave this field empty.
       source_text:
         range: string
         annotations:
@@ -88,36 +67,67 @@ classes:
   Taxon:
     is_a: NamedEntity
     description: >-
-      Bacterial, archaeal, or other microbial taxa being studied for  growth conditions.
+      Bacterial, archaeal, or other microbial taxa utilizing chemicals.
     annotations:
       annotators: sqlite:obo:ncbitaxon
-  CultureMedium:
+  Strain:
     is_a: NamedEntity
     description: >-
-      Culture media names, types, and compositions used for bacterial growth.  Includes complex media (TSB, LB), defined media, minimal media, and  specific media compositions.
+      Specific bacterial or archaeal strain designations including culture collection numbers, type strains, and isolate identifiers.
   ChemicalUtilization:
     is_a: CompoundExpression
     description: >-
-      Relationships between organisms and chemical compounds including  metabolic utilization, carbon sources, electron acceptors/donors
+      Specific relationships between strains and chemical compounds including metabolic utilization, enzymatic activities, and growth requirements
     attributes:
-      taxon:
-        description: the organism utilizing the chemical
-        range: Taxon
-      chemical:
-        description: the chemical compound being utilized
+      subject:
+        description: the strain that utilizes the chemical compound
+        range: Strain
+      predicate:
+        description: the type of chemical utilization relationship from METPO ontology
+        range: ChemicalInteractionPropertyEnum
+        annotations:
+          prompt: >-
+            Select the most specific interaction type that matches the text. Common examples: "ferments" (for fermentation), "uses_as_carbon_source" (for growth on compound), "hydrolyzes" (for enzymatic breakdown), "oxidizes" (for oxidation reactions), "reduces" (for reduction), "requires_for_growth" (for essential nutrients), "degrades" (for compound breakdown), "assimilates" (for uptake/incorporation).
+      object:
+        description: the specific chemical compound being utilized
         range: ChemicalCompound
       utilization_type:
-        description: the type of chemical utilization relationship
-        # This will be dynamically set to ChemicalInteractionPropertyEnum
-
         range: ChemicalInteractionPropertyEnum
   ChemicalCompound:
     is_a: NamedEntity
     description: >-
-      Chemical compounds involved in bacterial growth and metabolism including  carbon sources, nitrogen sources, electron acceptors/donors, vitamins,  and other metabolic substrates.
+      Chemical compounds involved in bacterial metabolism including carbon sources, nitrogen sources, electron acceptors/donors, vitamins, enzyme substrates, and other metabolic compounds.
     annotations:
       annotators: sqlite:obo:chebi
+  StrainRelationship:
+    is_a: CompoundExpression
+    description: >-
+      Specific relationships between strain designations and their parent taxonomic groups
+    attributes:
+      subject:
+        description: the specific strain designation or identifier
+        range: Strain
+      predicate:
+        description: the type of strain-taxon relationship (strain_of, type_strain_of, isolate_of, etc.)
+        range: StrainRelationshipType
+      object:
+        description: the parent species or genus this strain belongs to
+        range: Taxon
 enums:
+  StrainRelationshipType:
+    description: Type of relationship between strain and parent taxon
+    permissible_values:
+      strain_of:
+        description: Regular strain of a species
+      type_strain_of:
+        description: Type strain of a species
+      reference_strain_of:
+        description: Reference strain of a species
+      isolate_of:
+        description: Clinical or environmental isolate of a species
+      variant_of:
+        description: Variant or mutant strain of a species
+        # ChemicalInteractionPropertyEnum will be dynamically injected here
   ChemicalInteractionPropertyEnum:
     permissible_values:
       builds_base_from:
@@ -270,4 +280,3 @@ enums:
       uses_for_aerobic_growth:
         description: uses for aerobic growth
         meaning: METPO:2000043
-# ChemicalInteractionPropertyEnum will be dynamically injected here
