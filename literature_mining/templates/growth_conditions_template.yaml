@@ -1,0 +1,273 @@
+id: http://w3id.org/metpo/growth_conditions_extraction
+name: growth_conditions_extraction
+title: METPO Growth Conditions and Media Extraction Template
+description: >-
+  A focused OntoGPT template for extracting bacterial growth conditions,  culture media, and chemical utilization from literature. Designed to  capture media composition and environmental parameters for predicting  suitable bacterial growth conditions.
+license: https://creativecommons.org/publicdomain/zero/1.0/
+prefixes:
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  linkml: https://w3id.org/linkml/
+  metpo_growth: http://w3id.org/metpo/growth_conditions_extraction/
+  ontogpt: http://w3id.org/ontogpt/
+  METPO: http://purl.obolibrary.org/obo/METPO_
+default_prefix: metpo_growth
+default_range: string
+imports:
+  - linkml:types
+  - ontogpt:core
+classes:
+  GrowthConditionsLiteratureExtraction:
+    tree_root: true
+    attributes:
+      pmid:
+        description: >-
+          PubMed ID of the article (e.g., 23996836)
+        range: string
+      study_taxa:
+        description: >-
+          semicolon-separated list of the main bacterial or archaeal taxa  being studied for growth conditions
+        multivalued: true
+        range: Taxon
+      culture_media:
+        description: >-
+          semicolon-separated list of culture media used, including both  named media (e.g., TSB, LB, minimal medium) and media compositions  when provided
+        multivalued: true
+        range: CultureMedium
+        annotations:
+          prompt: >-
+            A semicolon-separated list of culture media names and compositions. Include standard media names (TSB, LB, minimal medium) and any  specific compositions mentioned (e.g., "glucose minimal medium",  "Marine Broth 2216", "defined medium with glucose and NH4Cl").
+      temperature_conditions:
+        description: >-
+          semicolon-separated list of temperature conditions in normalized format
+        multivalued: true
+        range: string
+        annotations:
+          prompt: >-
+            A semicolon-separated list of temperature conditions. Normalize  temperatures to °C format. Examples: "37°C", "25-30°C", "optimal 28°C",  "range 15-45°C", "thermophilic", "mesophilic". Convert Fahrenheit  to Celsius if needed. Preserve ranges, optima, and classifications.
+      ph_conditions:
+        description: >-
+          semicolon-separated list of pH conditions in normalized format
+        multivalued: true
+        range: string
+        annotations:
+          prompt: >-
+            A semicolon-separated list of pH conditions. Normalize to "pH X.X"  format with one decimal place. Examples: "pH 7.0", "pH 6.5-8.0",  "optimal pH 7.2", "range pH 5.0-9.0", "alkaliphilic", "acidophilic".  Preserve ranges, optima, and classifications.
+      oxygen_requirements:
+        description: >-
+          semicolon-separated list of oxygen requirements in normalized format
+        multivalued: true
+        range: string
+        annotations:
+          prompt: >-
+            A semicolon-separated list of oxygen requirements. Use standard terms:  "aerobic", "anaerobic", "facultative anaerobic", "microaerophilic",  "obligately aerobic", "obligately anaerobic". Include specific O2  concentrations if mentioned (e.g., "requires 2-5% O2").
+      salt_tolerance:
+        description: >-
+          semicolon-separated list of salt tolerance in normalized format
+        multivalued: true
+        range: string
+        annotations:
+          prompt: >-
+            A semicolon-separated list of salt tolerance conditions. Normalize  salt concentrations to "X% NaCl" format. Examples: "0% NaCl",  "3.5% NaCl", "0-5% NaCl", "optimal 1% NaCl", "range 2-15% NaCl",  "halophilic", "extremely halophilic". Convert other units to  percentages if possible.
+      chemical_utilizations:
+        description: >-
+          semicolon-separated list of organism-chemical utilization  relationships including carbon sources, nitrogen sources,  electron acceptors/donors, and metabolic substrates
+        multivalued: true
+        range: ChemicalUtilization
+      growth_requirements:
+        description: >-
+          semicolon-separated list of special growth requirements in  normalized format
+        multivalued: true
+        range: string
+        annotations:
+          prompt: >-
+            A semicolon-separated list of special growth requirements. Normalize  concentrations where possible. Examples: "requires vitamin B12",  "needs 0.1% yeast extract", "CO2 atmosphere", "anaerobic conditions",  "requires hemin", "needs 5% CO2". Include specific concentrations  when mentioned.
+      source_text:
+        range: string
+        annotations:
+          prompt.skip: "true"
+  Taxon:
+    is_a: NamedEntity
+    description: >-
+      Bacterial, archaeal, or other microbial taxa being studied for  growth conditions.
+    annotations:
+      annotators: sqlite:obo:ncbitaxon
+  CultureMedium:
+    is_a: NamedEntity
+    description: >-
+      Culture media names, types, and compositions used for bacterial growth.  Includes complex media (TSB, LB), defined media, minimal media, and  specific media compositions.
+  ChemicalUtilization:
+    is_a: CompoundExpression
+    description: >-
+      Relationships between organisms and chemical compounds including  metabolic utilization, carbon sources, electron acceptors/donors
+    attributes:
+      taxon:
+        description: the organism utilizing the chemical
+        range: Taxon
+      chemical:
+        description: the chemical compound being utilized
+        range: ChemicalCompound
+      utilization_type:
+        description: the type of chemical utilization relationship
+        # This will be dynamically set to ChemicalInteractionPropertyEnum
+
+        range: ChemicalInteractionPropertyEnum
+  ChemicalCompound:
+    is_a: NamedEntity
+    description: >-
+      Chemical compounds involved in bacterial growth and metabolism including  carbon sources, nitrogen sources, electron acceptors/donors, vitamins,  and other metabolic substrates.
+    annotations:
+      annotators: sqlite:obo:chebi
+enums:
+  ChemicalInteractionPropertyEnum:
+    permissible_values:
+      builds_base_from:
+        description: builds base from
+        meaning: METPO:2000004
+      does_not_use_for_aerobic_growth:
+        description: does not use for aerobic growth
+        meaning: METPO:2000022
+      uses_as_carbon_source:
+        description: uses as carbon source
+        meaning: METPO:2000006
+      does_not_reduce:
+        description: does not reduce
+        meaning: METPO:2000044
+      does_not_use_for_anaerobic_catabolization:
+        description: does not use for anaerobic catabolization
+        meaning: METPO:2000023
+      degrades:
+        description: degrades
+        meaning: METPO:2000007
+      does_not_use_as_energy_source:
+        description: does not use as energy source
+        meaning: METPO:2000036
+      does_not_use_as_nitrogen_source:
+        description: does not use as nitrogen source
+        meaning: METPO:2000040
+      builds_gas_from:
+        description: builds gas from
+        meaning: METPO:2000005
+      uses_for_growth:
+        description: uses for growth
+        meaning: METPO:2000012
+      uses_in_other_way:
+        description: uses in other way
+        meaning: METPO:2000015
+      does_not_degrade:
+        description: does not degrade
+        meaning: METPO:2000033
+      reduces:
+        description: reduces
+        meaning: METPO:2000017
+      is_not_required_for_growth:
+        description: is not required for growth
+        meaning: METPO:2000045
+      does_not_use_in_other_way:
+        description: does not use in other way
+        meaning: METPO:2000041
+      uses_for_anaerobic_growth_with_light:
+        description: uses for anaerobic growth with light
+        meaning: METPO:2000051
+      does_not_use_for_anaerobic_growth:
+        description: does not use for anaerobic growth
+        meaning: METPO:2000024
+      uses_as_electron_acceptor:
+        description: uses as electron acceptor
+        meaning: METPO:2000008
+      does_not_use_for_respiration:
+        description: does not use for respiration
+        meaning: METPO:2000046
+      does_not_use_for_anaerobic_growth_in_the_dark:
+        description: does not use for anaerobic growth in the dark
+        meaning: METPO:2000025
+      uses_as_electron_donor:
+        description: uses as electron donor
+        meaning: METPO:2000009
+      does_not_use_for_growth:
+        description: does not use for growth
+        meaning: METPO:2000038
+      uses_for_aerobic_catabolization:
+        description: uses for aerobic catabolization
+        meaning: METPO:2000032
+      uses_as_nitrogen_source:
+        description: uses as nitrogen source
+        meaning: METPO:2000014
+      does_not_use_as_electron_donor:
+        description: does not use as electron donor
+        meaning: METPO:2000035
+      uses_for_respiration:
+        description: uses for respiration
+        meaning: METPO:2000019
+      does_not_use_as_sulfur_source:
+        description: does not use as sulfur source
+        meaning: METPO:2000047
+      ferments:
+        description: ferments
+        meaning: METPO:2000011
+      uses_for_anaerobic_growth_in_the_dark:
+        description: uses for anaerobic growth in the dark
+        meaning: METPO:2000050
+      does_not_build_acid_from:
+        description: does not build acid from
+        meaning: METPO:2000028
+      does_not_use_for_anaerobic_growth_with_light:
+        description: does not use for anaerobic growth with light
+        meaning: METPO:2000026
+      uses_as_sulfur_source:
+        description: uses as sulfur source
+        meaning: METPO:2000020
+      assimilates:
+        description: assimilates
+        meaning: METPO:2000002
+      uses_for_anaerobic_catabolization:
+        description: uses for anaerobic catabolization
+        meaning: METPO:2000048
+      does_not_assimilate:
+        description: does not assimilate
+        meaning: METPO:2000027
+      does_not_oxidize:
+        description: does not oxidize
+        meaning: METPO:2000042
+      builds_acid_from:
+        description: builds acid from
+        meaning: METPO:2000003
+      oxidizes:
+        description: oxidizes
+        meaning: METPO:2000016
+      does_not_build_base_from:
+        description: does not build base from
+        meaning: METPO:2000029
+      does_not_use_for_aerobic_catabolization:
+        description: does not use for aerobic catabolization
+        meaning: METPO:2000021
+      does_not_use_as_electron_acceptor:
+        description: does not use as electron acceptor
+        meaning: METPO:2000034
+      requires_for_growth:
+        description: requires for growth
+        meaning: METPO:2000018
+      does_not_hydrolyze:
+        description: does not hydrolyze
+        meaning: METPO:2000039
+      uses_as_energy_source:
+        description: uses as energy source
+        meaning: METPO:2000010
+      does_not_ferment:
+        description: does not ferment
+        meaning: METPO:2000037
+      does_not_use_as_carbon_source:
+        description: does not use as carbon source
+        meaning: METPO:2000031
+      does_not_build_gas_from:
+        description: does not build gas from
+        meaning: METPO:2000030
+      uses_for_anaerobic_growth:
+        description: uses for anaerobic growth
+        meaning: METPO:2000049
+      hydrolyzes:
+        description: hydrolyzes
+        meaning: METPO:2000013
+      uses_for_aerobic_growth:
+        description: uses for aerobic growth
+        meaning: METPO:2000043
+# ChemicalInteractionPropertyEnum will be dynamically injected here
