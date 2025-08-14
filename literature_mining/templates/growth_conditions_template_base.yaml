@@ -1,0 +1,159 @@
+id: http://w3id.org/metpo/growth_conditions_extraction
+name: growth_conditions_extraction
+title: METPO Growth Conditions and Media Extraction Template
+description: >-
+  A focused OntoGPT template for extracting bacterial growth conditions, 
+  culture media, and chemical utilization from literature. Designed to 
+  capture media composition and environmental parameters for predicting 
+  suitable bacterial growth conditions.
+license: https://creativecommons.org/publicdomain/zero/1.0/
+prefixes:
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  linkml: https://w3id.org/linkml/
+  metpo_growth: http://w3id.org/metpo/growth_conditions_extraction/
+  ontogpt: http://w3id.org/ontogpt/
+  METPO: http://purl.obolibrary.org/obo/METPO_
+default_prefix: metpo_growth
+default_range: string
+imports:
+  - linkml:types
+  - ontogpt:core
+classes:
+  GrowthConditionsLiteratureExtraction:
+    tree_root: true
+    attributes:
+      pmid:
+        description: >-
+          PubMed ID of the article (e.g., 23996836)
+        range: string
+      study_taxa:
+        description: >-
+          semicolon-separated list of the main bacterial or archaeal taxa 
+          being studied for growth conditions
+        multivalued: true
+        range: Taxon
+      culture_media:
+        description: >-
+          semicolon-separated list of culture media used, including both 
+          named media (e.g., TSB, LB, minimal medium) and media compositions 
+          when provided
+        multivalued: true
+        range: CultureMedium
+        annotations:
+          prompt: >-
+            A semicolon-separated list of culture media names and compositions.
+            Include standard media names (TSB, LB, minimal medium) and any 
+            specific compositions mentioned (e.g., "glucose minimal medium", 
+            "Marine Broth 2216", "defined medium with glucose and NH4Cl").
+      temperature_conditions:
+        description: >-
+          semicolon-separated list of temperature conditions in normalized format
+        multivalued: true
+        range: string
+        annotations:
+          prompt: >-
+            A semicolon-separated list of temperature conditions. Normalize 
+            temperatures to °C format. Examples: "37°C", "25-30°C", "optimal 28°C", 
+            "range 15-45°C", "thermophilic", "mesophilic". Convert Fahrenheit 
+            to Celsius if needed. Preserve ranges, optima, and classifications.
+      ph_conditions:
+        description: >-
+          semicolon-separated list of pH conditions in normalized format
+        multivalued: true
+        range: string
+        annotations:
+          prompt: >-
+            A semicolon-separated list of pH conditions. Normalize to "pH X.X" 
+            format with one decimal place. Examples: "pH 7.0", "pH 6.5-8.0", 
+            "optimal pH 7.2", "range pH 5.0-9.0", "alkaliphilic", "acidophilic". 
+            Preserve ranges, optima, and classifications.
+      oxygen_requirements:
+        description: >-
+          semicolon-separated list of oxygen requirements in normalized format
+        multivalued: true
+        range: string
+        annotations:
+          prompt: >-
+            A semicolon-separated list of oxygen requirements. Use standard terms: 
+            "aerobic", "anaerobic", "facultative anaerobic", "microaerophilic", 
+            "obligately aerobic", "obligately anaerobic". Include specific O2 
+            concentrations if mentioned (e.g., "requires 2-5% O2").
+      salt_tolerance:
+        description: >-
+          semicolon-separated list of salt tolerance in normalized format
+        multivalued: true
+        range: string
+        annotations:
+          prompt: >-
+            A semicolon-separated list of salt tolerance conditions. Normalize 
+            salt concentrations to "X% NaCl" format. Examples: "0% NaCl", 
+            "3.5% NaCl", "0-5% NaCl", "optimal 1% NaCl", "range 2-15% NaCl", 
+            "halophilic", "extremely halophilic". Convert other units to 
+            percentages if possible.
+      chemical_utilizations:
+        description: >-
+          semicolon-separated list of organism-chemical utilization 
+          relationships including carbon sources, nitrogen sources, 
+          electron acceptors/donors, and metabolic substrates
+        multivalued: true
+        range: ChemicalUtilization
+      growth_requirements:
+        description: >-
+          semicolon-separated list of special growth requirements in 
+          normalized format
+        multivalued: true
+        range: string
+        annotations:
+          prompt: >-
+            A semicolon-separated list of special growth requirements. Normalize 
+            concentrations where possible. Examples: "requires vitamin B12", 
+            "needs 0.1% yeast extract", "CO2 atmosphere", "anaerobic conditions", 
+            "requires hemin", "needs 5% CO2". Include specific concentrations 
+            when mentioned.
+      source_text:
+        range: string
+        annotations:
+          prompt.skip: "true"
+
+  Taxon:
+    is_a: NamedEntity
+    description: >-
+      Bacterial, archaeal, or other microbial taxa being studied for 
+      growth conditions.
+    annotations:
+      annotators: sqlite:obo:ncbitaxon
+
+  CultureMedium:
+    is_a: NamedEntity
+    description: >-
+      Culture media names, types, and compositions used for bacterial growth. 
+      Includes complex media (TSB, LB), defined media, minimal media, and 
+      specific media compositions.
+
+  ChemicalUtilization:
+    is_a: CompoundExpression
+    description: >-
+      Relationships between organisms and chemical compounds including 
+      metabolic utilization, carbon sources, electron acceptors/donors
+    attributes:
+      taxon:
+        description: the organism utilizing the chemical
+        range: Taxon
+      chemical:
+        description: the chemical compound being utilized
+        range: ChemicalCompound
+      utilization_type:
+        description: the type of chemical utilization relationship
+        # This will be dynamically set to ChemicalInteractionPropertyEnum
+
+  ChemicalCompound:
+    is_a: NamedEntity
+    description: >-
+      Chemical compounds involved in bacterial growth and metabolism including 
+      carbon sources, nitrogen sources, electron acceptors/donors, vitamins, 
+      and other metabolic substrates.
+    annotations:
+      annotators: sqlite:obo:chebi
+
+enums:
+  # ChemicalInteractionPropertyEnum will be dynamically injected here
