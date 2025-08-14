@@ -6,17 +6,18 @@ N_PMIDS ?= 10
 N_ABSTRACTS ?= 5
 SOURCE ?= ijsem
 TEMPLATE ?= growth_conditions
+INPUT_DIR ?= abstracts
 
 # Derived variables  
 PMID_FILE := inputs/random-$(SOURCE)-pmids.txt
-TEMPLATE_FILE := templates/$(TEMPLATE)_template.yaml
+TEMPLATE_FILE := templates/$(TEMPLATE)_populated.yaml
 
 # Directory structure
-DIRS := inputs intermediates outputs templates abstracts cache logs
+DIRS := inputs intermediates outputs templates abstracts cache logs test-abstracts
 INTERMEDIATE_DIRS := intermediates/tsv intermediates/yaml intermediates/db
 
-.PHONY: all clean clean-cache clean-intermediates clean-outputs clean-templates help setup
-.PHONY: validate-templates build-templates extract-all quick-test full-pipeline
+.PHONY: all clean clean-cache clean-intermediates clean-outputs clean-templates clean-test help setup
+.PHONY: validate-templates build-templates extract-all quick-test full-pipeline setup-test-abstracts
 
 # Default target
 all: help
@@ -29,26 +30,28 @@ help:
 	@echo "  validate-templates       - Validate all template schemas"
 	@echo "  build-templates         - Build all templates with METPO predicates"
 	@echo "  extract-all             - Extract from abstracts using specified template"
-	@echo "  quick-test              - Quick test with 3 abstracts"
+	@echo "  quick-test              - Safe test with 3 abstracts (preserves existing)"
 	@echo "  full-pipeline           - Complete pipeline with specified source"
 	@echo ""
 	@echo "Parameters:"
 	@echo "  SOURCE=$(SOURCE)        - PMID source: n4l, bacdive, ijsem"
-	@echo "  TEMPLATE=$(TEMPLATE)    - Template: ontogpt, growth_conditions, taxa, phylogeny"
+	@echo "  TEMPLATE=$(TEMPLATE)    - Template: growth_conditions, chemical_utilization, taxa, morphology, biochemical"
 	@echo "  N_PMIDS=$(N_PMIDS)      - Number of PMIDs to sample"
 	@echo "  N_ABSTRACTS=$(N_ABSTRACTS) - Number of abstracts to process"
 	@echo ""
 	@echo "Cleanup:"
-	@echo "  clean                   - Remove all generated files except abstracts/outputs"
-	@echo "  clean-cache             - Remove cache files only"
+	@echo "  clean                   - Remove generated files (preserves abstracts/outputs/cache)"
+	@echo "  clean-cache             - Remove temporary cache files only (preserves ontogpt cache)"
+	@echo "  clean-cache-all         - Remove ALL cache files (including expensive ontogpt cache)"
 	@echo "  clean-intermediates     - Remove intermediate files only"
 	@echo "  clean-outputs          - Remove output files only" 
 	@echo "  clean-templates        - Remove generated templates only"
+	@echo "  clean-test             - Remove test outputs only (preserves caches)"
 	@echo ""
 	@echo "Examples:"
 	@echo "  make extract-all SOURCE=ijsem TEMPLATE=growth_conditions N_ABSTRACTS=10"
 	@echo "  make quick-test TEMPLATE=taxa"
-	@echo "  make full-pipeline SOURCE=bacdive TEMPLATE=ontogpt"
+	@echo "  make full-pipeline SOURCE=bacdive TEMPLATE=taxa"
 
 # Directory setup
 setup: $(DIRS) $(INTERMEDIATE_DIRS)
@@ -77,28 +80,37 @@ intermediates/db/metpo.db: ../metpo.owl | intermediates/db
 # TEMPLATE BUILDING
 # =============================================================================
 
-# Template validation
-validate-templates: templates/ontogpt_template_base.yaml templates/growth_conditions_template_base.yaml templates/taxa_template.yaml templates/phylogeny_template.yaml | setup
+# Template validation  
+validate-templates: templates/growth_conditions_template_base.yaml templates/chemical_utilization_template_base.yaml templates/taxa_template_base.yaml templates/morphology_template_base.yaml templates/biochemical_template_base.yaml | setup
 	@echo "Validating template schemas..."
-	poetry run linkml validate --schema templates/ontogpt_template_base.yaml
 	poetry run linkml validate --schema templates/growth_conditions_template_base.yaml
-	poetry run linkml validate --schema templates/taxa_template.yaml
-	poetry run linkml validate --schema templates/phylogeny_template.yaml
+	poetry run linkml validate --schema templates/chemical_utilization_template_base.yaml
+	poetry run linkml validate --schema templates/taxa_template_base.yaml
+	poetry run linkml validate --schema templates/morphology_template_base.yaml
+	poetry run linkml validate --schema templates/biochemical_template_base.yaml
 	@echo "All templates validated successfully"
 
-# Dynamic template building (templates with METPO predicates)
-templates/ontogpt_template.yaml: templates/ontogpt_template_base.yaml intermediates/yaml/chem_interaction_props_enum.yaml
-	yq eval-all 'select(fileIndex == 0) as $$base | select(fileIndex == 1).enums.ChemicalInteractionPropertyEnum as $$enum | $$base.enums.ChemicalInteractionPropertyEnum = $$enum | $$base' $^ > $@.tmp
-	yq '.classes.OrganismCompoundRelationship.attributes.relationship_type.range = "ChemicalInteractionPropertyEnum"' $@.tmp > $@
-	rm -f $@.tmp
+# Dynamic template building (only chemical_utilization needs METPO predicates)
+templates/growth_conditions_populated.yaml: templates/growth_conditions_template_base.yaml | templates
+	cp $< $@
 
-templates/growth_conditions_template.yaml: templates/growth_conditions_template_base.yaml intermediates/yaml/chem_interaction_props_enum.yaml
+templates/chemical_utilization_populated.yaml: templates/chemical_utilization_template_base.yaml intermediates/yaml/chem_interaction_props_enum.yaml
 	yq eval-all 'select(fileIndex == 0) as $$base | select(fileIndex == 1).enums.ChemicalInteractionPropertyEnum as $$enum | $$base.enums.ChemicalInteractionPropertyEnum = $$enum | $$base' $^ > $@.tmp
 	yq '.classes.ChemicalUtilization.attributes.utilization_type.range = "ChemicalInteractionPropertyEnum"' $@.tmp > $@
 	rm -f $@.tmp
 
-# Meta target to build all dynamic templates
-build-templates: templates/ontogpt_template.yaml templates/growth_conditions_template.yaml
+# Static templates (simple copy from base to populated)
+templates/taxa_populated.yaml: templates/taxa_template_base.yaml | templates
+	cp $< $@
+
+templates/morphology_populated.yaml: templates/morphology_template_base.yaml | templates
+	cp $< $@
+
+templates/biochemical_populated.yaml: templates/biochemical_template_base.yaml | templates
+	cp $< $@
+
+# Meta target to build all populated templates  
+build-templates: templates/growth_conditions_populated.yaml templates/chemical_utilization_populated.yaml templates/taxa_populated.yaml templates/morphology_populated.yaml templates/biochemical_populated.yaml
 
 # =============================================================================
 # PMID GENERATION
@@ -141,7 +153,7 @@ outputs/$(SOURCE)-$(TEMPLATE)-extractions.yaml: $(TEMPLATE_FILE) intermediates/d
 	@echo "Extracting using template: $(TEMPLATE_FILE)"
 	@echo "Processing abstracts from: $(SOURCE)"
 	poetry run ontogpt -v \
-		--cache-db cache/$(SOURCE)-$(TEMPLATE)-cache.db \
+		--cache-db cache/ontogpt-cache.db \
 		extract \
 		--show-prompt \
 		-p 0.1 \
@@ -153,9 +165,37 @@ outputs/$(SOURCE)-$(TEMPLATE)-extractions.yaml: $(TEMPLATE_FILE) intermediates/d
 # Convenience targets
 extract-all: outputs/$(SOURCE)-$(TEMPLATE)-extractions.yaml
 
-quick-test: N_PMIDS = 5
-quick-test: N_ABSTRACTS = 3  
-quick-test: extract-all
+quick-test: N_PMIDS = 15
+quick-test: N_ABSTRACTS = 10
+quick-test: setup-test-abstracts
+	@echo "Running quick test with $(N_ABSTRACTS) abstracts..."
+	poetry run ontogpt -v \
+		--cache-db cache/ontogpt-cache.db \
+		extract \
+		--show-prompt \
+		-p 0.1 \
+		-t $(TEMPLATE_FILE) \
+		-i test-abstracts \
+		-o outputs/test-$(TEMPLATE)-extractions.yaml \
+		2>&1 | tee logs/test-$(TEMPLATE)-extraction.log
+
+# Setup test abstracts directory
+setup-test-abstracts: $(PMID_FILE) | test-abstracts
+	@echo "Setting up test abstracts directory..."
+	@if [ $$(ls test-abstracts/*.txt 2>/dev/null | wc -l) -ge $(N_ABSTRACTS) ]; then \
+		echo "Test abstracts already available: $$(ls test-abstracts/*.txt | wc -l) files"; \
+	elif [ $$(ls abstracts/*.txt 2>/dev/null | wc -l) -ge $(N_ABSTRACTS) ]; then \
+		echo "Copying $(N_ABSTRACTS) abstracts from production abstracts/"; \
+		ls abstracts/*.txt | head -n $(N_ABSTRACTS) | while read file; do \
+			cp "$$file" test-abstracts/; \
+		done; \
+	else \
+		echo "Fetching $(N_ABSTRACTS) fresh abstracts for testing..."; \
+		head -n $(N_ABSTRACTS) $(PMID_FILE) | while read pmid; do \
+			echo "Fetching abstract for PMID: $$pmid"; \
+			poetry run artl-cli get-abstract-from-pubmed-id --pmid "$$pmid" > "test-abstracts/$$pmid-abstract.txt" 2>/dev/null || echo "Failed to fetch PMID $$pmid"; \
+		done; \
+	fi
 
 full-pipeline: $(PMID_FILE) extract-all
 
@@ -164,32 +204,115 @@ full-pipeline: $(PMID_FILE) extract-all
 # =============================================================================
 
 clean-cache:
+	@echo "Selectively cleaning cache files..."
+	@echo "Preserving unified ontogpt cache (expensive to rebuild)"
+	@echo "Removing temporary and stale cache files only"
+	rm -f cache/*.tmp cache/*.lock cache/*-temp-*
+	@echo "Cache cleaned (preserved ontogpt-cache.db)"
+
+clean-cache-all:
 	rm -rf cache/*
-	@echo "Cache cleaned"
+	@echo "All cache files removed (including expensive ontogpt cache)"
 
 clean-intermediates:
 	rm -rf intermediates/*
 	@echo "Intermediate files cleaned"
+
+clean-tsv:
+	rm -f intermediates/tsv/*.tsv
+	@echo "TSV intermediate files cleaned"
+
+clean-yaml:
+	rm -f intermediates/yaml/*.yaml
+	@echo "YAML intermediate files cleaned"
+
+clean-db:
+	rm -f intermediates/db/*.db
+	@echo "Database intermediate files cleaned"
 
 clean-outputs:
 	rm -rf outputs/*
 	@echo "Output files cleaned"
 
 clean-templates:
-	rm -f templates/*_template.yaml
+	rm -f templates/*_populated.yaml
 	@echo "Generated templates cleaned"
 
-# Aggressive cleanup - preserves only expensive abstracts and final outputs
+clean-test:
+	rm -rf test-abstracts/*.txt
+	rm -f outputs/test-*-extractions.yaml
+	rm -f logs/test-*-extraction.log
+	@echo "Test files cleaned (cache preserved for efficiency)"
+
+# Aggressive cleanup - preserves only expensive abstracts, final outputs, and template caches
 clean: clean-cache clean-intermediates clean-templates
 	rm -f inputs/random-*-pmids.txt
 	rm -f abstracts/.built
 	rm -f logs/*
-	@echo "Cleanup complete - preserved abstracts/ and outputs/"
+	@echo "Cleanup complete - preserved abstracts/, outputs/, and template caches"
 
 # Nuclear cleanup - removes everything
 clean-all: clean clean-outputs
 	rm -rf abstracts/* logs/*
 	@echo "Complete cleanup - all files removed"
+
+# =============================================================================
+# TIMESTAMPED EXTRACTION AND ASSESSMENT
+# =============================================================================
+
+# Variables for timestamped extraction
+TIMESTAMP := $(shell date +"%Y%m%d_%H%M%S")
+TIMESTAMPED_OUTPUT := outputs/$(TEMPLATE)_$(TIMESTAMP).yaml
+TIMESTAMPED_LOG := logs/$(TEMPLATE)_$(TIMESTAMP).log
+
+# Run timestamped extraction with assessment
+timestamped-extraction: $(TEMPLATE_FILE) entity_relationship_assessment.py
+	@echo "Running timestamped extraction: $(TEMPLATE) at $(TIMESTAMP)"
+	@echo "Input directory: $(INPUT_DIR)"
+	@echo "Template file: $(TEMPLATE_FILE)"
+	@mkdir -p outputs logs
+	poetry run ontogpt -v \
+		--cache-db cache/ontogpt-cache.db \
+		extract \
+		--show-prompt \
+		-p 0.1 \
+		-t $(TEMPLATE_FILE) \
+		-i $(INPUT_DIR) \
+		-o $(TIMESTAMPED_OUTPUT) \
+		2>&1 | tee $(TIMESTAMPED_LOG)
+	@echo "Running assessment on $(TIMESTAMPED_OUTPUT)"
+	poetry run python entity_relationship_assessment.py $(TIMESTAMPED_OUTPUT)
+
+# Run all templates with timestamped extraction
+run-all-templates:
+	$(MAKE) timestamped-extraction TEMPLATE=biochemical INPUT_DIR=test-biochemical-rich
+	$(MAKE) timestamped-extraction TEMPLATE=growth_conditions INPUT_DIR=test-growth-rich  
+	$(MAKE) timestamped-extraction TEMPLATE=chemical_utilization INPUT_DIR=test-chemical-rich
+	$(MAKE) timestamped-extraction TEMPLATE=morphology INPUT_DIR=test-morphology-rich
+	$(MAKE) timestamped-extraction TEMPLATE=taxa INPUT_DIR=test-taxa-rich
+
+# Compare before/after template improvements
+compare-extractions:
+	@echo "Available extraction outputs:"
+	@ls -la outputs/*_2*.yaml | tail -10
+	@echo ""
+	@echo "Run assessment on specific files:"
+	@echo "  poetry run python entity_relationship_assessment.py outputs/<filename>"
+
+# Run assessment on a specific output file
+assess-output:
+	@if [ -z "$(FILE)" ]; then \
+		echo "Usage: make assess-output FILE=outputs/filename.yaml"; \
+		echo "Available files:"; \
+		ls -1 outputs/*.yaml | head -10; \
+	else \
+		echo "Assessing $(FILE)..."; \
+		poetry run python entity_relationship_assessment.py $(FILE); \
+	fi
+
+# Quick timestamped extraction with default settings
+quick-timestamped:
+	$(MAKE) timestamped-extraction TEMPLATE=$(TEMPLATE) INPUT_DIR=$(INPUT_DIR)
 
 # =============================================================================
 # VALIDATION AND TESTING
