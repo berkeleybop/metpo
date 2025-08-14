@@ -1,0 +1,318 @@
+/Users/MAM/Documents/gitrepos/metpo/.venv/lib/python3.11/site-packages/eutils/__init__.py:4: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+INFO:root:Logger root set to level 20
+INFO:root:Input file directory: abstracts
+INFO:root:Parsed 3 files.
+INFO:linkml_runtime.utils.schemaview:Importing linkml:types as /Users/MAM/Documents/gitrepos/metpo/.venv/lib/python3.11/site-packages/linkml_runtime/linkml_model/model/schema/types from source /Users/MAM/Documents/gitrepos/metpo/.venv/lib/python3.11/site-packages/ontogpt/templates/core.yaml; base_dir=None
+INFO:ontogpt.io.template_loader:Loading custom schema from templates/growth_conditions_template.yaml
+INFO:linkml_runtime.utils.schemaview:Importing ontogpt:core as http://w3id.org/ontogpt/core from source /Users/MAM/Documents/gitrepos/metpo/.venv/lib/python3.11/site-packages/ontogpt/templates/growth_conditions_template.yaml; base_dir=None
+INFO:linkml_runtime.utils.schemaview:Importing linkml:types as /Users/MAM/Documents/gitrepos/metpo/.venv/lib/python3.11/site-packages/linkml_runtime/linkml_model/model/schema/types from source /Users/MAM/Documents/gitrepos/metpo/.venv/lib/python3.11/site-packages/ontogpt/templates/growth_conditions_template.yaml; base_dir=None
+INFO:linkml_runtime.utils.schemaview:Importing ontogpt:core as http://w3id.org/ontogpt/core from source /Users/MAM/Documents/gitrepos/metpo/.venv/lib/python3.11/site-packages/ontogpt/templates/growth_conditions_template.yaml; base_dir=None
+INFO:linkml_runtime.utils.schemaview:Importing linkml:types as /Users/MAM/Documents/gitrepos/metpo/.venv/lib/python3.11/site-packages/linkml_runtime/linkml_model/model/schema/types from source /Users/MAM/Documents/gitrepos/metpo/.venv/lib/python3.11/site-packages/ontogpt/templates/growth_conditions_template.yaml; base_dir=None
+INFO:ontogpt.io.template_loader:Getting class for template templates/growth_conditions_template.yaml
+INFO:root:Using template GrowthConditionsLiteratureExtraction
+INFO:root:Using mappers (currently hardcoded)
+INFO:root:API KEY path = /Users/MAM/Library/Application Support/ontology-access-kit/openai-apikey.txt
+INFO:root:Now extracting from file 1 of 3
+INFO:ontogpt.clients.llm_client:Complete: engine=gpt-4o, prompt[4582]=From the text below, extract the following entities in the following format:
+
+pmid: <PubMed ID of th...
+INFO:ontogpt.clients.llm_client: SENDING PROMPT:
+From the text below, extract the following entities in the following format:
+
+pmid: <PubMed ID of the article (e.g., 23996836)>
+study_taxa: <semicolon-separated list of the main bacterial or archaeal taxa  being studied for growth conditions>
+culture_media: <A semicolon-separated list of culture media names and compositions. Include standard media names (TSB, LB, minimal medium) and any  specific compositions mentioned (e.g., "glucose minimal medium",  "Marine Broth 2216", "defined medium with glucose and NH4Cl").>
+temperature_conditions: <A semicolon-separated list of temperature conditions. Normalize  temperatures to °C format. Examples: "37°C", "25-30°C", "optimal 28°C",  "range 15-45°C", "thermophilic", "mesophilic". Convert Fahrenheit  to Celsius if needed. Preserve ranges, optima, and classifications.>
+ph_conditions: <A semicolon-separated list of pH conditions. Normalize to "pH X.X"  format with one decimal place. Examples: "pH 7.0", "pH 6.5-8.0",  "optimal pH 7.2", "range pH 5.0-9.0", "alkaliphilic", "acidophilic".  Preserve ranges, optima, and classifications.>
+oxygen_requirements: <A semicolon-separated list of oxygen requirements. Use standard terms:  "aerobic", "anaerobic", "facultative anaerobic", "microaerophilic",  "obligately aerobic", "obligately anaerobic". Include specific O2  concentrations if mentioned (e.g., "requires 2-5% O2").>
+salt_tolerance: <A semicolon-separated list of salt tolerance conditions. Normalize  salt concentrations to "X% NaCl" format. Examples: "0% NaCl",  "3.5% NaCl", "0-5% NaCl", "optimal 1% NaCl", "range 2-15% NaCl",  "halophilic", "extremely halophilic". Convert other units to  percentages if possible.>
+chemical_utilizations: <semicolon-separated list of organism-chemical utilization  relationships including carbon sources, nitrogen sources,  electron acceptors/donors, and metabolic substrates>
+growth_requirements: <A semicolon-separated list of special growth requirements. Normalize  concentrations where possible. Examples: "requires vitamin B12",  "needs 0.1% yeast extract", "CO2 atmosphere", "anaerobic conditions",  "requires hemin", "needs 5% CO2". Include specific concentrations  when mentioned.>
+
+
+Text:
+{'content': 'Flavobacterium tagetis sp. nov., a novel urea-hydrolysing bacterium isolated from the roots of Tagetes patula.\n\nA Gram-stain-negative, rod-shaped, motile by gliding, non-sporulating and strictly aerobic bacterium, designated strain GN10T, was isolated from the roots of Tagetes patula, collected from the garden of Dongguk University, Goyang, Republic of Korea. The cells could grow at 10-42 °C and at pH 5.5-9.0. Strain GN10T was sensitive to NaCl and tolerated up to 4 % NaCl (w/v). Comparative analysis of 16S rRNA gene sequences revealed the highest similarities to Flavobacterium tistrianum GB 56.1T (98.9 %), Flavobacterium sharifuzzamanii A7.6T (98.6 %), Flavobacterium zhairuonense A5.7T (98.3 %) and Flavobacterium anhuiense D3T (98 %). Phylogenetic analysis showed that strain GN10T clustered within the genus Flavobacterium and formed a monophyletic cluster with its close relative members. The average nucleotide identity and digital DNA-DNA hybridization values between strain GN10T and related species belonging to the genus Flavobacterium were well below the standard threshold for prokaryotic species delineation. The DNA G+C content of strain GN10T was 33.6 mol%. The predominant cellular fatty acids (>10 %) were identified as iso-C15 : 0, C16 : 0 and summed feature 3 (C16 : 1 ω6c and/or C16 : 1 ω7c). Strain GN10T contained menaquinone 6 as the major respiratory quinone. The major polar lipids were phosphatidylethanolamine, three unidentified aminoglycolipids, two unidentified glycolipids, one unidentified phosphoglycolipid and five unidentified lipids. Urease is a nickel-containing enzyme found in archaea, bacteria, plants and unicellular eukaryotes. It serves as a virulence factor and is responsible for pathogenesis in humans and animals. Here, we describe a novel urease-hydrolysing bacterium, strain GN10T. The urease activity of this strain may serve as an indicator of pathogenic potential and drug resistance, which may facilitate the development of many diseases. The results of physiological and biochemical tests allowed the genotypic and phenotypic differentiation of strain GN10T from its closely related members and considered to represent novel species in the genus Flavobacterium, for which the name Flavobacterium tagetis (GN10T=KCTC 82695T=NBRC 114841T) is proposed.\n\nPMID:34542390', 'saved_to': None, 'windowed': False}
+
+
+===
+
+
+[92m08:30:24 - LiteLLM:INFO[0m: utils.py:3120 - 
+LiteLLM completion() model= gpt-4o; provider = openai
+INFO:LiteLLM:
+LiteLLM completion() model= gpt-4o; provider = openai
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[92m08:30:26 - LiteLLM:INFO[0m: utils.py:1216 - Wrapper: Completed Call, calling success_handler
+INFO:LiteLLM:Wrapper: Completed Call, calling success_handler
+[92m08:30:26 - LiteLLM:INFO[0m: cost_calculator.py:660 - selected model name for cost calculation: openai/gpt-4o-2024-08-06
+INFO:LiteLLM:selected model name for cost calculation: openai/gpt-4o-2024-08-06
+[92m08:30:26 - LiteLLM:INFO[0m: cost_calculator.py:660 - selected model name for cost calculation: openai/gpt-4o-2024-08-06
+INFO:LiteLLM:selected model name for cost calculation: openai/gpt-4o-2024-08-06
+[92m08:30:26 - LiteLLM:INFO[0m: cost_calculator.py:660 - selected model name for cost calculation: openai/gpt-4o-2024-08-06
+INFO:LiteLLM:selected model name for cost calculation: openai/gpt-4o-2024-08-06
+INFO:root:RAW TEXT: pmid: 34542390  
+study_taxa: Flavobacterium tagetis  
+culture_media: Not specified  
+temperature_conditions: 10-42°C  
+ph_conditions: pH 5.5-9.0  
+oxygen_requirements: strictly aerobic  
+salt_tolerance: up to 4% NaCl  
+chemical_utilizations: urea-hydrolysing  
+growth_requirements: Not specified  
+INFO:root:PARSING LINE: pmid: 34542390
+INFO:root:PARSING LINE: study_taxa: Flavobacterium tagetis
+INFO:root:PARSING LINE: culture_media: Not specified
+INFO:root:PARSING LINE: temperature_conditions: 10-42°C
+INFO:root:PARSING LINE: ph_conditions: pH 5.5-9.0
+INFO:root:PARSING LINE: oxygen_requirements: strictly aerobic
+INFO:root:PARSING LINE: salt_tolerance: up to 4% NaCl
+INFO:root:PARSING LINE: chemical_utilizations: urea-hydrolysing
+INFO:ontogpt.clients.llm_client:Complete: engine=gpt-4o, prompt[1552]=Split the following piece of text into fields in the following format:
+
+taxon: <the organism utilizi...
+[92m08:30:26 - LiteLLM:INFO[0m: utils.py:3120 - 
+LiteLLM completion() model= gpt-4o; provider = openai
+INFO:LiteLLM:
+LiteLLM completion() model= gpt-4o; provider = openai
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[92m08:30:28 - LiteLLM:INFO[0m: utils.py:1216 - Wrapper: Completed Call, calling success_handler
+INFO:LiteLLM:Wrapper: Completed Call, calling success_handler
+[92m08:30:28 - LiteLLM:INFO[0m: cost_calculator.py:660 - selected model name for cost calculation: openai/gpt-4o-2024-08-06
+INFO:LiteLLM:selected model name for cost calculation: openai/gpt-4o-2024-08-06
+INFO:root:PARSING LINE: taxon: <not specified>
+INFO:root:PARSING LINE: chemical: urea
+INFO:root:PARSING LINE: utilization_type: hydrolyzes
+INFO:root:PARSING LINE: growth_requirements: Not specified
+INFO:ontogpt.engines.knowledge_engine:GROUNDING Flavobacterium tagetis using Taxon
+INFO:ontogpt.engines.knowledge_engine:Singularized Flavobacterium tagetis to flavobacterium tageti
+INFO:ontogpt.engines.knowledge_engine:GROUNDING flavobacterium tageti using Taxon
+INFO:ontogpt.engines.knowledge_engine:Loading annotator sqlite:obo:ncbitaxon
+INFO:root:Locator: obo:ncbitaxon
+INFO:root:Ensuring gunzipped for https://s3.amazonaws.com/bbop-sqlite/ncbitaxon.db.gz
+[92m08:30:28 - LiteLLM:INFO[0m: cost_calculator.py:660 - selected model name for cost calculation: openai/gpt-4o-2024-08-06
+INFO:root:Locator, post-processed: sqlite:////Users/MAM/.data/oaklib/ncbitaxon.db
+INFO:LiteLLM:selected model name for cost calculation: openai/gpt-4o-2024-08-06
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Grounding Flavobacterium tagetis to NCBITaxon:2801336; next step is to normalize
+INFO:ontogpt.engines.knowledge_engine:Normalized Flavobacterium tagetis with NCBITaxon:2801336 to NCBITaxon:2801336
+INFO:ontogpt.engines.knowledge_engine:GROUNDING Not specified using CultureMedium
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize Not specified to CultureMedium
+INFO:ontogpt.engines.knowledge_engine:GROUNDING <not specified> using Taxon
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize <not specified> to Taxon
+INFO:ontogpt.engines.knowledge_engine:GROUNDING urea using ChemicalCompound
+INFO:ontogpt.engines.knowledge_engine:Loading annotator sqlite:obo:chebi
+INFO:root:Locator: obo:chebi
+INFO:root:Ensuring gunzipped for https://s3.amazonaws.com/bbop-sqlite/chebi.db.gz
+INFO:root:Locator, post-processed: sqlite:////Users/MAM/.data/oaklib/chebi.db
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Grounding urea to CHEBI:16199; next step is to normalize
+INFO:ontogpt.engines.knowledge_engine:Normalized urea with CHEBI:16199 to CHEBI:16199
+INFO:root:Looking for hydrolyzes in ChemicalInteractionPropertyEnum
+INFO:root:{'taxon': 'AUTO:%3Cnot%20specified%3E', 'chemical': 'CHEBI:16199', 'utilization_type': 'hydrolyzes'}
+INFO:root:{'pmid': '34542390', 'study_taxa': ['NCBITaxon:2801336'], 'culture_media': ['AUTO:Not%20specified'], 'temperature_conditions': ['10-42°C'], 'ph_conditions': ['pH 5.5-9.0'], 'oxygen_requirements': ['strictly aerobic'], 'salt_tolerance': ['up to 4% NaCl'], 'chemical_utilizations': [ChemicalUtilization(taxon='AUTO:%3Cnot%20specified%3E', chemical='CHEBI:16199', utilization_type='hydrolyzes')], 'growth_requirements': ['Not specified']}
+INFO:root:Output format: yaml
+INFO:root:Now extracting from file 2 of 3
+INFO:ontogpt.clients.llm_client:Complete: engine=gpt-4o, prompt[4145]=From the text below, extract the following entities in the following format:
+
+pmid: <PubMed ID of th...
+INFO:ontogpt.clients.llm_client: SENDING PROMPT:
+From the text below, extract the following entities in the following format:
+
+pmid: <PubMed ID of the article (e.g., 23996836)>
+study_taxa: <semicolon-separated list of the main bacterial or archaeal taxa  being studied for growth conditions>
+culture_media: <A semicolon-separated list of culture media names and compositions. Include standard media names (TSB, LB, minimal medium) and any  specific compositions mentioned (e.g., "glucose minimal medium",  "Marine Broth 2216", "defined medium with glucose and NH4Cl").>
+temperature_conditions: <A semicolon-separated list of temperature conditions. Normalize  temperatures to °C format. Examples: "37°C", "25-30°C", "optimal 28°C",  "range 15-45°C", "thermophilic", "mesophilic". Convert Fahrenheit  to Celsius if needed. Preserve ranges, optima, and classifications.>
+ph_conditions: <A semicolon-separated list of pH conditions. Normalize to "pH X.X"  format with one decimal place. Examples: "pH 7.0", "pH 6.5-8.0",  "optimal pH 7.2", "range pH 5.0-9.0", "alkaliphilic", "acidophilic".  Preserve ranges, optima, and classifications.>
+oxygen_requirements: <A semicolon-separated list of oxygen requirements. Use standard terms:  "aerobic", "anaerobic", "facultative anaerobic", "microaerophilic",  "obligately aerobic", "obligately anaerobic". Include specific O2  concentrations if mentioned (e.g., "requires 2-5% O2").>
+salt_tolerance: <A semicolon-separated list of salt tolerance conditions. Normalize  salt concentrations to "X% NaCl" format. Examples: "0% NaCl",  "3.5% NaCl", "0-5% NaCl", "optimal 1% NaCl", "range 2-15% NaCl",  "halophilic", "extremely halophilic". Convert other units to  percentages if possible.>
+chemical_utilizations: <semicolon-separated list of organism-chemical utilization  relationships including carbon sources, nitrogen sources,  electron acceptors/donors, and metabolic substrates>
+growth_requirements: <A semicolon-separated list of special growth requirements. Normalize  concentrations where possible. Examples: "requires vitamin B12",  "needs 0.1% yeast extract", "CO2 atmosphere", "anaerobic conditions",  "requires hemin", "needs 5% CO2". Include specific concentrations  when mentioned.>
+
+
+Text:
+{'content': 'Sphingomonas kyungheensis sp. nov., a bacterium with ginsenoside-converting activity isolated from soil of a ginseng field.\n\nA bacterial strain THG-B283(T), which has β-glucosidase activity, was isolated from soil of a ginseng field. Cells were Gram-reaction-negative, oxidase- and catalase-positive, aerobic, motile with one polar flagellum and rod-shaped. The strain was subjected to a polyphasic taxonomic study. Strain THG-B283(T) grew optimally at around pH 7.0, at 25-28 °C and in the absence of NaCl on R2A agar. 16S rRNA gene sequence analysis revealed that strain THG-B283(T) belongs to the family Sphingomonadaceae and is closely related to Sphingomonas melonis DAPP-PG 224(T) (98.2 %), S. aquatilis JSS7(T) (98.1 %), S. insulae DS-28(T) (97.6 %), S. mali IFO 15500(T) (97.1 %) and S. pruni IFO 15498(T) (97.0 %). Strain THG-B283(T) contained Q-10 as the predominant ubiquinone. The major fatty acids included summed feature 3 (comprising C16 : 1ω7c and/or C16 : 1ω6c), C18 : 1ω7c, C14 : 0 2-OH and C16 : 0. The DNA G+C content was 72.2 mol%. The major component in the polyamine pattern was sym-homospermidine. The major polar lipids were phosphatidylglycerol, phosphatidylethanolamine, phosphatidyldimethylethanolamine, phosphatidylcholine, sphingoglycolipid, diphosphatidylglycerol, an unidentified glycolipid, unidentified aminolipids, an unidentified phospholipid and unidentified lipids. Genomic and chemotaxonomic data supported the affiliation of strain THG-B283(T) to the genus Sphingomonas. DNA-DNA relatedness between strain THG-B283(T) and its closest phylogenetic neighbours was below 23 %. On the basis of phenotypic, phylogenetic and genetic data, strain THG-B283(T) represents a novel species of genus Sphingomonas, for which the name Sphingomonas kyungheensis sp. nov. is proposed. The type strain is THG-B283(T) ( = KACC 16224(T) = LMG 26582(T)).\n\nPMID:23687058', 'saved_to': None, 'windowed': False}
+
+
+===
+
+
+[92m08:30:45 - LiteLLM:INFO[0m: utils.py:3120 - 
+LiteLLM completion() model= gpt-4o; provider = openai
+INFO:LiteLLM:
+LiteLLM completion() model= gpt-4o; provider = openai
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[92m08:30:48 - LiteLLM:INFO[0m: utils.py:1216 - Wrapper: Completed Call, calling success_handler
+INFO:LiteLLM:Wrapper: Completed Call, calling success_handler
+[92m08:30:48 - LiteLLM:INFO[0m: cost_calculator.py:660 - selected model name for cost calculation: openai/gpt-4o-2024-08-06
+INFO:LiteLLM:selected model name for cost calculation: openai/gpt-4o-2024-08-06
+INFO:root:RAW TEXT: pmid: 23687058  
+study_taxa: Sphingomonas kyungheensis  
+culture_media: R2A agar  
+temperature_conditions: 25-28°C  
+ph_conditions: pH 7.0  
+oxygen_requirements: aerobic  
+salt_tolerance: 0% NaCl  
+chemical_utilizations: ginsenoside; β-glucosidase activity  
+growth_requirements: None mentioned
+INFO:root:PARSING LINE: pmid: 23687058
+INFO:root:PARSING LINE: study_taxa: Sphingomonas kyungheensis
+INFO:root:PARSING LINE: culture_media: R2A agar
+INFO:root:PARSING LINE: temperature_conditions: 25-28°C
+INFO:root:PARSING LINE: ph_conditions: pH 7.0
+INFO:root:PARSING LINE: oxygen_requirements: aerobic
+INFO:root:PARSING LINE: salt_tolerance: 0% NaCl
+INFO:root:PARSING LINE: chemical_utilizations: ginsenoside; β-glucosidase activity
+INFO:ontogpt.clients.llm_client:Complete: engine=gpt-4o, prompt[1547]=Split the following piece of text into fields in the following format:
+
+taxon: <the organism utilizi...
+[92m08:30:48 - LiteLLM:INFO[0m: cost_calculator.py:660 - selected model name for cost calculation: openai/gpt-4o-2024-08-06
+INFO:LiteLLM:selected model name for cost calculation: openai/gpt-4o-2024-08-06
+[92m08:30:48 - LiteLLM:INFO[0m: cost_calculator.py:660 - selected model name for cost calculation: openai/gpt-4o-2024-08-06
+INFO:LiteLLM:selected model name for cost calculation: openai/gpt-4o-2024-08-06
+[92m08:30:48 - LiteLLM:INFO[0m: utils.py:3120 - 
+LiteLLM completion() model= gpt-4o; provider = openai
+INFO:LiteLLM:
+LiteLLM completion() model= gpt-4o; provider = openai
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[92m08:30:49 - LiteLLM:INFO[0m: utils.py:1216 - Wrapper: Completed Call, calling success_handler
+INFO:LiteLLM:Wrapper: Completed Call, calling success_handler
+[92m08:30:49 - LiteLLM:INFO[0m: cost_calculator.py:660 - selected model name for cost calculation: openai/gpt-4o-2024-08-06
+INFO:LiteLLM:selected model name for cost calculation: openai/gpt-4o-2024-08-06
+INFO:root:PARSING LINE: taxon: <unknown>
+INFO:root:PARSING LINE: chemical: ginsenoside
+INFO:root:PARSING LINE: utilization_type: <unknown>
+INFO:ontogpt.clients.llm_client:Complete: engine=gpt-4o, prompt[1558]=Split the following piece of text into fields in the following format:
+
+taxon: <the organism utilizi...
+[92m08:30:49 - LiteLLM:INFO[0m: cost_calculator.py:660 - selected model name for cost calculation: openai/gpt-4o-2024-08-06
+INFO:LiteLLM:selected model name for cost calculation: openai/gpt-4o-2024-08-06
+[92m08:30:49 - LiteLLM:INFO[0m: cost_calculator.py:660 - selected model name for cost calculation: openai/gpt-4o-2024-08-06
+INFO:LiteLLM:selected model name for cost calculation: openai/gpt-4o-2024-08-06
+[92m08:30:49 - LiteLLM:INFO[0m: utils.py:3120 - 
+LiteLLM completion() model= gpt-4o; provider = openai
+INFO:LiteLLM:
+LiteLLM completion() model= gpt-4o; provider = openai
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[92m08:30:53 - LiteLLM:INFO[0m: utils.py:1216 - Wrapper: Completed Call, calling success_handler
+INFO:LiteLLM:Wrapper: Completed Call, calling success_handler
+[92m08:30:53 - LiteLLM:INFO[0m: cost_calculator.py:660 - selected model name for cost calculation: openai/gpt-4o-2024-08-06
+INFO:LiteLLM:selected model name for cost calculation: openai/gpt-4o-2024-08-06
+ERROR:root:Line 'The provided text β-glucosidase activity does not explicitly mention an organism (taxon) or a specific chemical compound being utilized. Additionally, it does not clearly define the type of chemical utilization relationship. To properly fill out the fields, more context or information about the organism and the specific utilization type is needed. If you have additional context or details, please provide them so I can assist you further.' does not contain a colon; ignoring
+INFO:root:PARSING LINE: growth_requirements: None mentioned
+INFO:ontogpt.engines.knowledge_engine:GROUNDING Sphingomonas kyungheensis using Taxon
+INFO:ontogpt.engines.knowledge_engine:Singularized Sphingomonas kyungheensis to sphingomonas kyungheensi
+INFO:ontogpt.engines.knowledge_engine:GROUNDING sphingomonas kyungheensi using Taxon
+INFO:root:No token exclusion list provided. Proceeding ...
+[92m08:30:53 - LiteLLM:INFO[0m: cost_calculator.py:660 - selected model name for cost calculation: openai/gpt-4o-2024-08-06
+INFO:LiteLLM:selected model name for cost calculation: openai/gpt-4o-2024-08-06
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Grounding Sphingomonas kyungheensis to NCBITaxon:1069987; next step is to normalize
+INFO:ontogpt.engines.knowledge_engine:Normalized Sphingomonas kyungheensis with NCBITaxon:1069987 to NCBITaxon:1069987
+INFO:ontogpt.engines.knowledge_engine:GROUNDING R2A agar using CultureMedium
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize R2A agar to CultureMedium
+INFO:ontogpt.engines.knowledge_engine:GROUNDING <unknown> using Taxon
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize <unknown> to Taxon
+INFO:ontogpt.engines.knowledge_engine:GROUNDING ginsenoside using ChemicalCompound
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Grounding ginsenoside to CHEBI:74978; next step is to normalize
+INFO:ontogpt.engines.knowledge_engine:Normalized ginsenoside with CHEBI:74978 to CHEBI:74978
+INFO:root:Looking for <unknown> in ChemicalInteractionPropertyEnum
+INFO:root:Cannot find enum value for <unknown> in ChemicalInteractionPropertyEnum
+INFO:root:{'taxon': 'AUTO:%3Cunknown%3E', 'chemical': 'CHEBI:74978', 'utilization_type': None}
+INFO:root:{'pmid': '23687058', 'study_taxa': ['NCBITaxon:1069987'], 'culture_media': ['AUTO:R2A%20agar'], 'temperature_conditions': ['25-28°C'], 'ph_conditions': ['pH 7.0'], 'oxygen_requirements': ['aerobic'], 'salt_tolerance': ['0% NaCl'], 'chemical_utilizations': [ChemicalUtilization(taxon='AUTO:%3Cunknown%3E', chemical='CHEBI:74978', utilization_type=None)], 'growth_requirements': ['None mentioned']}
+INFO:root:Output format: yaml
+INFO:root:Now extracting from file 3 of 3
+INFO:ontogpt.clients.llm_client:Complete: engine=gpt-4o, prompt[3356]=From the text below, extract the following entities in the following format:
+
+pmid: <PubMed ID of th...
+INFO:ontogpt.clients.llm_client: SENDING PROMPT:
+From the text below, extract the following entities in the following format:
+
+pmid: <PubMed ID of the article (e.g., 23996836)>
+study_taxa: <semicolon-separated list of the main bacterial or archaeal taxa  being studied for growth conditions>
+culture_media: <A semicolon-separated list of culture media names and compositions. Include standard media names (TSB, LB, minimal medium) and any  specific compositions mentioned (e.g., "glucose minimal medium",  "Marine Broth 2216", "defined medium with glucose and NH4Cl").>
+temperature_conditions: <A semicolon-separated list of temperature conditions. Normalize  temperatures to °C format. Examples: "37°C", "25-30°C", "optimal 28°C",  "range 15-45°C", "thermophilic", "mesophilic". Convert Fahrenheit  to Celsius if needed. Preserve ranges, optima, and classifications.>
+ph_conditions: <A semicolon-separated list of pH conditions. Normalize to "pH X.X"  format with one decimal place. Examples: "pH 7.0", "pH 6.5-8.0",  "optimal pH 7.2", "range pH 5.0-9.0", "alkaliphilic", "acidophilic".  Preserve ranges, optima, and classifications.>
+oxygen_requirements: <A semicolon-separated list of oxygen requirements. Use standard terms:  "aerobic", "anaerobic", "facultative anaerobic", "microaerophilic",  "obligately aerobic", "obligately anaerobic". Include specific O2  concentrations if mentioned (e.g., "requires 2-5% O2").>
+salt_tolerance: <A semicolon-separated list of salt tolerance conditions. Normalize  salt concentrations to "X% NaCl" format. Examples: "0% NaCl",  "3.5% NaCl", "0-5% NaCl", "optimal 1% NaCl", "range 2-15% NaCl",  "halophilic", "extremely halophilic". Convert other units to  percentages if possible.>
+chemical_utilizations: <semicolon-separated list of organism-chemical utilization  relationships including carbon sources, nitrogen sources,  electron acceptors/donors, and metabolic substrates>
+growth_requirements: <A semicolon-separated list of special growth requirements. Normalize  concentrations where possible. Examples: "requires vitamin B12",  "needs 0.1% yeast extract", "CO2 atmosphere", "anaerobic conditions",  "requires hemin", "needs 5% CO2". Include specific concentrations  when mentioned.>
+
+
+Text:
+{'content': "Epilithonimonas lactis sp. nov., isolated from raw cow's milk.\n\nA Gram-staining-negative, rod-shaped, oxidase-positive, aerobic, non-motile and yellow-pigmented bacterial strain containing flexirubin type pigments, designated H1(T), was isolated from raw cow's milk in Israel. 16S rRNA gene sequence analysis indicated that the isolate should be placed in the genus Epilithonimonas (family Flavobacteriaceae, phylum Bacteroidetes). The level of 16S rRNA gene sequence similarity between strain H1(T) and the type strain of Epilithonimonas tenax was 97.6 %. Strain H1(T) grew at 5-33 degrees C and with 0-2.0 % NaCl. The dominant cellular fatty acids of strain H1(T) were iso-C(15 : 0), iso-C(17 : 0) 3-OH and summed feature 3 (comprising iso-C(15 : 0) 2-OH and/or C(16 : 1) omega7c), and the DNA G+C content was 38.0 mol%. On the basis of phenotypic properties and phylogenetic distinctiveness, the milk isolate is classified as a new species in the genus Epilithonimonas , for which the name Epilithonimonas lactis sp. nov. (type strain H1(T) =LMG 24401(T) =DSM 19921(T)) is proposed.\n\nPMID:19656919", 'saved_to': None, 'windowed': False}
+
+
+===
+
+
+[92m08:31:06 - LiteLLM:INFO[0m: utils.py:3120 - 
+LiteLLM completion() model= gpt-4o; provider = openai
+INFO:LiteLLM:
+LiteLLM completion() model= gpt-4o; provider = openai
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[92m08:31:08 - LiteLLM:INFO[0m: utils.py:1216 - Wrapper: Completed Call, calling success_handler
+INFO:LiteLLM:Wrapper: Completed Call, calling success_handler
+[92m08:31:08 - LiteLLM:INFO[0m: cost_calculator.py:660 - selected model name for cost calculation: openai/gpt-4o-2024-08-06
+INFO:LiteLLM:selected model name for cost calculation: openai/gpt-4o-2024-08-06
+INFO:root:RAW TEXT: pmid: 19656919  
+study_taxa: Epilithonimonas lactis  
+culture_media: Not specified  
+temperature_conditions: 5-33°C  
+ph_conditions: Not specified  
+oxygen_requirements: aerobic  
+salt_tolerance: 0-2.0% NaCl  
+chemical_utilizations: Not specified  
+growth_requirements: Not specified  
+INFO:root:PARSING LINE: pmid: 19656919
+INFO:root:PARSING LINE: study_taxa: Epilithonimonas lactis
+INFO:root:PARSING LINE: culture_media: Not specified
+INFO:root:PARSING LINE: temperature_conditions: 5-33°C
+INFO:root:PARSING LINE: ph_conditions: Not specified
+INFO:root:PARSING LINE: oxygen_requirements: aerobic
+INFO:root:PARSING LINE: salt_tolerance: 0-2.0% NaCl
+[92m08:31:08 - LiteLLM:INFO[0m: cost_calculator.py:660 - selected model name for cost calculation: openai/gpt-4o-2024-08-06
+INFO:root:PARSING LINE: chemical_utilizations: Not specified
+INFO:ontogpt.clients.llm_client:Complete: engine=gpt-4o, prompt[1549]=Split the following piece of text into fields in the following format:
+
+taxon: <the organism utilizi...
+INFO:LiteLLM:selected model name for cost calculation: openai/gpt-4o-2024-08-06
+[92m08:31:08 - LiteLLM:INFO[0m: cost_calculator.py:660 - selected model name for cost calculation: openai/gpt-4o-2024-08-06
+INFO:root:PARSING LINE: taxon: Not specified
+INFO:root:PARSING LINE: chemical: Not specified
+INFO:LiteLLM:selected model name for cost calculation: openai/gpt-4o-2024-08-06
+[92m08:31:08 - LiteLLM:INFO[0m: cost_calculator.py:660 - selected model name for cost calculation: openai/gpt-4o-2024-08-06
+INFO:root:PARSING LINE: utilization_type: Not specified
+INFO:LiteLLM:selected model name for cost calculation: openai/gpt-4o-2024-08-06
+INFO:root:PARSING LINE: growth_requirements: Not specified
+INFO:ontogpt.engines.knowledge_engine:GROUNDING Epilithonimonas lactis using Taxon
+INFO:ontogpt.engines.knowledge_engine:Singularized Epilithonimonas lactis to epilithonimonas lacti
+INFO:ontogpt.engines.knowledge_engine:GROUNDING epilithonimonas lacti using Taxon
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Grounding Epilithonimonas lactis to NCBITaxon:421072; next step is to normalize
+INFO:ontogpt.engines.knowledge_engine:Normalized Epilithonimonas lactis with NCBITaxon:421072 to NCBITaxon:421072
+INFO:ontogpt.engines.knowledge_engine:GROUNDING Not specified using CultureMedium
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize Not specified to CultureMedium
+INFO:ontogpt.engines.knowledge_engine:GROUNDING Not specified using Taxon
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Grounding Not specified to NCBITaxon:32644; next step is to normalize
+INFO:ontogpt.engines.knowledge_engine:Normalized Not specified with NCBITaxon:32644 to NCBITaxon:32644
+INFO:ontogpt.engines.knowledge_engine:GROUNDING Not specified using ChemicalCompound
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize Not specified to ChemicalCompound
+INFO:root:Looking for Not specified in ChemicalInteractionPropertyEnum
+INFO:root:Cannot find enum value for Not specified in ChemicalInteractionPropertyEnum
+INFO:root:{'taxon': 'NCBITaxon:32644', 'chemical': 'AUTO:Not%20specified', 'utilization_type': None}
+INFO:root:{'pmid': '19656919', 'study_taxa': ['NCBITaxon:421072'], 'culture_media': ['AUTO:Not%20specified'], 'temperature_conditions': ['5-33°C'], 'ph_conditions': ['Not specified'], 'oxygen_requirements': ['aerobic'], 'salt_tolerance': ['0-2.0% NaCl'], 'chemical_utilizations': [ChemicalUtilization(taxon='NCBITaxon:32644', chemical='AUTO:Not%20specified', utilization_type=None)], 'growth_requirements': ['Not specified']}
+INFO:root:Output format: yaml

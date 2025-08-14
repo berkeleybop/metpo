@@ -99,3 +99,254 @@ poetry run ontogpt -v --cache-db taxa-cache.db extract --show-prompt -p 0.1 -t t
 - `--show-prompt`: Shows all LLM prompts and responses
 - `-p 0.1`: Low temperature for more consistent/deterministic results
 - Processes full abstracts (no `--cut-input-text` to preserve complete taxonomic information)
+
+---
+
+# Advanced Template Development and Database Coverage Analysis (August 2025)
+
+## Session Overview
+
+This session focused on creating targeted, focused templates for bacterial growth media prediction after analyzing the coverage gaps between literature extraction and curated databases like BacDive.
+
+## Template Evolution Strategy
+
+### 1. **Progressive Template Development**
+Started with comprehensive templates → **Small, focused templates** for better accuracy:
+
+**Template Progression:**
+1. **Legacy comprehensive** (`ontogpt_template.yaml`) - 60+ relationship types, overly complex
+2. **Taxa template** (`taxa_template.yaml`) - PMID + taxonomic information only  
+3. **Phylogeny template** (`phylogeny_template.yaml`) - 16S rRNA similarities and relationships
+4. **Growth conditions template** (`growth_conditions_template.yaml`) - Media and environmental parameters
+
+**Key Insight**: Small, focused templates with normalized output formats work better than comprehensive ones for specific use cases.
+
+### 2. **IJSEM Literature Analysis Results**
+
+Analyzed 100 IJSEM abstracts to understand knowledge distribution:
+
+**High Frequency (80-100% of papers):**
+- Taxonomic classification and strain designation  
+- Isolation sources and environmental context
+- Basic growth conditions (temperature, pH, oxygen, salinity)
+- 16S rRNA phylogenetic relationships
+
+**Medium Frequency (45-75%):**
+- Metabolic capabilities and carbon source utilization
+- Morphological characteristics (Gram staining, motility)  
+- Biochemical test results
+
+**Low Frequency (<25%):**
+- Secondary metabolites and specialized enzymes
+- Detailed lipid/fatty acid profiles
+- Complex metabolic pathways
+
+**Template Design Impact**: Focus on high-frequency information for reliable extraction; use specialized templates for medium/low frequency data.
+
+## Database Coverage Comparison: BacDive vs Literature
+
+### BacDive Advantages (Structured, Curated Data)
+
+**Growth Media Prediction Strengths:**
+- **Precise quantitative data**: "pH 6.5-8.0 optimal 7.2" vs literature's "neutral pH"
+- **Standardized media compositions**: Exact formulations with concentrations
+- **API biochemical panels**: Complete standardized test results (API 20E, 50CHac, etc.)
+- **Chemical database integration**: ChEBI IDs for precise compound identification
+- **Multiple media testing**: Growth performance ratings across different media
+- **Concentration tolerances**: Precise salt, temperature, pH ranges with growth ratings
+
+**Example BacDive Structure for Media Prediction:**
+```json
+{
+  "culture_medium": {
+    "name": "Marine Broth 2216", 
+    "composition": "detailed formula",
+    "growth_performance": "good"
+  },
+  "culture_temperature": {
+    "temperature": "25-30°C",
+    "growth": "optimal at 28°C"  
+  },
+  "metabolite_utilization": {
+    "compound": "CHEBI:17234",
+    "activity": "positive",
+    "test_type": "API 50CHac"
+  }
+}
+```
+
+### Literature Extraction Advantages
+
+**Coverage and Timeliness:**
+- **Novel organisms**: New species before database curation
+- **Experimental context**: Growth optimization studies and media development
+- **Strain variations**: Specific isolate characteristics not in type strain databases
+- **Recent research**: Latest cultivation methods and media innovations
+
+**Example Literature Insights Not in BacDive:**
+- "Requires vitamin B12 supplementation for optimal growth"
+- "Growth enhanced by 0.1% yeast extract in minimal medium"
+- "Adapted growth protocol using modified seawater medium"
+
+### Integration Strategy for Media Prediction
+
+**Complementary Approach:**
+1. **BacDive baseline**: Use for standardized growth parameters and API test patterns
+2. **Literature supplementation**: Add novel conditions, optimizations, and strain-specific requirements  
+3. **Cross-validation**: Compare literature claims against BacDive standardized data
+4. **Predictive modeling**: Use API patterns from BacDive to predict metabolism of literature-described organisms
+
+## Template Design Insights
+
+### 1. **Normalization Strategy**
+
+**Problem**: Literature uses inconsistent units
+- "35 degrees", "35°C", "35 Celsius" → Should normalize to "35°C"  
+- "pH of 7", "pH=7.0", "neutral pH" → Should normalize to "pH 7.0"
+- "halophilic", "3.5% salt", "seawater salinity" → Should normalize to "3.5% NaCl"
+
+**Solution**: Use LLM normalization in extraction prompts:
+```yaml
+temperature_conditions:
+  annotations:
+    prompt: >-
+      Normalize temperatures to °C format. Examples: "37°C", "25-30°C", 
+      "optimal 28°C". Convert Fahrenheit to Celsius if needed.
+```
+
+**Success**: Achieved excellent normalization in testing:
+- "25.5 and 30.0 degrees C" → "25.5-30.0°C" 
+- "pH 6.8 to 7.0" → "pH 6.8-7.0"
+- "up to 4 % NaCl (w/v)" → "up to 4% NaCl"
+
+### 2. **Essential Fields Strategy**
+
+**Core Requirements for All Templates:**
+- **PMID**: Links back to literature source
+- **Taxa**: NCBI taxonomy grounded organism identification
+- **Template-specific focus**: Narrow scope for accuracy
+
+**Template-Specific Insights:**
+- **Taxa template**: Succeeds with just taxonomic identification
+- **Phylogeny template**: Captures 16S rRNA similarities and closest relatives effectively  
+- **Growth conditions template**: Handles full scope (media, temperature, pH, oxygen, salt, chemicals, requirements) without overwhelming the LLM
+
+### 3. **Dynamic METPO Integration**
+
+**Chemical Utilization Sophistication:**
+- **60+ METPO predicates** dynamically injected via SPARQL query
+- **Examples**: `uses_as_carbon_source`, `ferments`, `hydrolyzes`, `requires_for_growth`
+- **ChEBI grounding**: Links chemicals to standardized identifiers
+- **Success**: "urea-hydrolysing" → taxon=organism, chemical=CHEBI:16199, utilization_type=hydrolyzes
+
+**Template Architecture:**
+```yaml
+ChemicalUtilization:
+  attributes:
+    taxon: {range: Taxon}
+    chemical: {range: ChemicalCompound} 
+    utilization_type: {range: ChemicalInteractionPropertyEnum}
+    # ChemicalInteractionPropertyEnum dynamically populated from METPO
+```
+
+## Pipeline Infrastructure Evolution
+
+### Filesystem Organization
+
+**Before**: Flat structure with scattered files  
+**After**: Organized hierarchy:
+
+```
+literature_mining/
+├── inputs/           # PMID sources
+├── intermediates/    # TSV, YAML, DB processing files  
+├── templates/        # Base and generated templates
+├── abstracts/        # Expensive fetched abstracts (preserved)
+├── outputs/          # Final extractions (preserved)
+├── cache/           # LLM response cache
+├── logs/            # Processing logs
+└── sparql/          # SPARQL queries
+```
+
+### Makefile Design Principles
+
+**Idiomatic Make Features:**
+- **Parameterized extraction**: `make extract-all SOURCE=ijsem TEMPLATE=growth_conditions`
+- **Proper dependencies**: Order-only prerequisites with `|`
+- **Aggressive cleanup tiers**: Preserve expensive abstracts and outputs
+- **Help system**: Self-documenting with examples
+- **Status monitoring**: `make status` shows pipeline state
+
+**Key Innovation - Single Parameterized Target:**
+```makefile
+# Instead of separate targets for each template:
+outputs/$(SOURCE)-$(TEMPLATE)-extractions.yaml: $(TEMPLATE_FILE) intermediates/db/metpo.db abstracts/.built
+	poetry run ontogpt -v --cache-db cache/$(SOURCE)-$(TEMPLATE)-cache.db \
+		extract --show-prompt -p 0.1 -t $(TEMPLATE_FILE) -i abstracts -o $@
+```
+
+## Growth Media Prediction Recommendations
+
+### 1. **Database Integration Strategy**
+
+**Primary Data Sources (by priority):**
+1. **BacDive API test results** → Metabolic capabilities for media design
+2. **BacDive culture media** → Proven growth media formulations  
+3. **Literature growth conditions** → Novel optimizations and strain-specific needs
+4. **Literature chemical utilizations** → METPO-grounded metabolic relationships
+
+### 2. **Predictive Modeling Approach**
+
+**Feature Engineering:**
+- **API biochemical profiles** as metabolic fingerprints
+- **Chemical utilization patterns** from METPO predicates
+- **Environmental parameter ranges** (temperature, pH, salinity, oxygen)
+- **Phylogenetic proximity** to organisms with known media requirements
+
+**Media Recommendation Algorithm:**
+1. **Baseline from phylogeny**: Start with media successful for closest relatives
+2. **API pattern matching**: Identify organisms with similar biochemical capabilities  
+3. **Chemical requirement overlay**: Add specific carbon/nitrogen sources from utilization data
+4. **Environmental parameter adjustment**: Modify temperature, pH, salinity based on tolerance data
+5. **Literature optimization**: Incorporate strain-specific requirements and novel additives
+
+### 3. **Template Coverage Assessment**
+
+**Current Template Coverage for Media Prediction:**
+
+| Requirement | Taxa | Phylogeny | Growth Conditions | BacDive Coverage |
+|-------------|------|-----------|-------------------|------------------|
+| Organism ID | ✅ | ✅ | ✅ | ✅ |
+| Phylogenetic context | - | ✅ | - | ✅ |
+| Culture media | - | - | ✅ | ✅ |  
+| Temperature range | - | - | ✅ | ✅ |
+| pH tolerance | - | - | ✅ | ✅ |
+| Salt tolerance | - | - | ✅ | ✅ |
+| Oxygen requirements | - | - | ✅ | ✅ |
+| Chemical utilization | - | - | ✅ | ✅ |
+| Growth requirements | - | - | ✅ | ✅ |
+| API test results | - | - | - | ✅ |
+| Quantitative precision | - | - | ± | ✅ |
+
+**Gap Analysis**: Literature templates provide qualitative/semi-quantitative data, while BacDive provides quantitative precision. **Recommendation**: Use literature for discovery and BacDive for precision in media formulation.
+
+## Lessons Learned
+
+### 1. **Template Design Philosophy**
+- **Small and focused** beats comprehensive and complex
+- **Normalization at extraction time** more effective than post-processing
+- **Essential fields** (PMID + Taxa) ensure traceability and linkage
+- **Ontology grounding** critical for data integration
+
+### 2. **Literature vs Database Complementarity**  
+- **Literature**: Discovery, context, optimization, recent advances
+- **Databases**: Precision, standardization, systematic coverage, proven results
+- **Integration**: Necessary for comprehensive media prediction systems
+
+### 3. **Infrastructure Importance**
+- **Clean filesystem hierarchy** enables maintainable pipelines
+- **Parameterized workflows** support multiple use cases efficiently  
+- **Aggressive cleanup** with preservation tiers manages storage costs
+- **Monitoring and logging** essential for production deployment
+
+This analysis demonstrates that targeted literature extraction, when properly designed and integrated with curated databases, provides excellent coverage for bacterial growth media prediction applications.

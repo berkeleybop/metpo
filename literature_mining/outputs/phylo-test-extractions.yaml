@@ -1,0 +1,182 @@
+---
+input_text: |
+  {'content': 'Clostridium algidixylanolyticum sp. nov., a psychrotolerant, xylan-degrading, spore-forming bacterium.\n\nA psychrotolerant Clostridium species was isolated from vacuum-packed, temperature-abused raw lamb. Colonies of this micro-organism on sheep-blood agar were circular with an entire margin, grey-white, translucent and beta-haemolytic. Cells were single, tapered, motile rods. Elliptical subterminal spores were produced in the late stationary growth phase. Spores did not cause swelling of the maternal cells. The micro-organism was obligately anaerobic. In peptone yeast extract glucose starch (PYGS) broth at pH 7.0, the micro-organism grew optimally between 25.5 and 30.0 degrees C. The temperature range for growth was 2.5-32.2 degrees C. At 26 degrees C, the micro-organism grew optimally at pH 6.8 to 7.0. The pH range for anaerobic growth was 4.7-9.1. The micro-organism was saccharoclastic, hydrolysed starch and degraded xylan. The fermentation products formed in PYGS broth were acetate, formate, lactate, ethanol, butyrate, butanol, hydrogen and carbon dioxide. The G + C content of the DNA was 38.4 mol%. Phylogenetic analyses indicated that the strain belongs to cluster XIVa of the genus Clostridium (sensu Collins et al. 1994). The new strain differed from phylogenetically related clostridia in terms of cellular fatty acid composition, soluble protein profiles and phenotypic properties. On the basis of phenotypic and genotypic characterization data, the strain was assigned to a new species, namely Clostridium algidixylanolyticum. The type strain is strain SPL73T (= DSM 12273T).\n\nPMID:10758868', 'saved_to': None, 'windowed': False}
+raw_completion_output: |-
+  pmid: 10758868  
+  study_taxa: Clostridium algidixylanolyticum  
+  phylogenetic_relationships: cluster XIVa of the genus Clostridium  
+  phylogenetic_methods: phylogenetic analyses  
+  gene_sequences_analyzed: Not explicitly mentioned in the text
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  query_taxon: <the organism being analyzed>
+  related_taxon: <the closest relative or reference organism>
+  similarity_percentage: <sequence similarity percentage (e.g., 97.7%, 96.6%)>
+  relationship_type: <type of phylogenetic relationshipMust be one of: closest_relative, high_similarity, moderate_similarity, clusters_with, sister_group, distant_relative>
+
+
+  Text:
+  cluster XIVa of the genus Clostridium
+
+  ===
+
+extracted_object:
+  pmid: '10758868'
+  study_taxa:
+    - NCBITaxon:94868
+  phylogenetic_relationships:
+    - query_taxon: NCBITaxon:1485
+      related_taxon: NCBITaxon:32644
+      similarity_percentage: Not specified
+      relationship_type: clusters_with
+  phylogenetic_methods:
+    - AUTO:phylogenetic%20analyses
+  gene_sequences_analyzed:
+    - AUTO:Not%20explicitly%20mentioned%20in%20the%20text
+named_entities:
+  - id: NCBITaxon:94868
+    label: Clostridium algidixylanolyticum
+    original_spans:
+      - 13:43
+      - 1536:1566
+  - id: NCBITaxon:1485
+    label: Clostridium (cluster XIVa)
+  - id: NCBITaxon:32644
+    label: Not specified
+  - id: AUTO:phylogenetic%20analyses
+    label: phylogenetic analyses
+    original_spans:
+      - 1135:1155
+  - id: AUTO:Not%20explicitly%20mentioned%20in%20the%20text
+    label: Not explicitly mentioned in the text
+---
+input_text: |
+  {'content': 'Nocardia paucivorans sp. nov.\n\nChemotaxonomic and 16S rDNA sequence analyses of an isolate from the sputa and bronchial secretions of a patient with chronic lung disease clearly demonstrated that it belongs to the genus Nocardia. DNA-DNA hybridization data, as well as the biochemical characteristics of the isolate, indicate that it belongs to a new species that differs from previously described members of the genus Nocardia. The name Nocardia paucivorans sp. nov. is proposed for this isolate and is represented by strain IMMIB D-1632T (= DSM 44386T).\n\nPMID:10758891', 'saved_to': None, 'windowed': False}
+raw_completion_output: |-
+  pmid: 10758891  
+  study_taxa: Nocardia  
+  phylogenetic_relationships: genus Nocardia; new species; differs from previously described members of the genus Nocardia  
+  phylogenetic_methods: 16S rDNA sequence analysis; DNA-DNA hybridization  
+  gene_sequences_analyzed: 16S rDNA  
+prompt: |+
+  From the text below, extract the following entities in the following format:
+
+  query_taxon: <the organism being analyzed>
+  related_taxon: <the closest relative or reference organism>
+  similarity_percentage: <sequence similarity percentage (e.g., 97.7%, 96.6%)>
+  relationship_type: <type of phylogenetic relationshipMust be one of: closest_relative, high_similarity, moderate_similarity, clusters_with, sister_group, distant_relative>
+
+
+  Text:
+  differs from previously described members of the genus Nocardia
+
+  ===
+
+extracted_object:
+  pmid: '10758891'
+  study_taxa:
+    - NCBITaxon:1817
+  phylogenetic_relationships:
+    - query_taxon: NCBITaxon:1817
+      related_taxon: AUTO:%3Cnot%20provided%3E
+      similarity_percentage: <not provided>
+    - query_taxon: AUTO:new%20species
+      related_taxon: AUTO:N/A
+      similarity_percentage: N/A
+  phylogenetic_methods:
+    - AUTO:16S%20rDNA%20sequence%20analysis
+    - AUTO:DNA-DNA%20hybridization
+  gene_sequences_analyzed:
+    - AUTO:16S%20rDNA
+named_entities:
+  - id: NCBITaxon:1817
+    label: Nocardia
+    original_spans:
+      - 13:20
+      - 235:242
+      - 434:441
+      - 453:460
+  - id: AUTO:%3Cnot%20provided%3E
+    label: <not provided>
+  - id: AUTO:new%20species
+    label: new species
+    original_spans:
+      - 362:372
+  - id: AUTO:N/A
+    label: N/A
+  - id: AUTO:16S%20rDNA%20sequence%20analysis
+    label: 16S rDNA sequence analysis
+  - id: AUTO:DNA-DNA%20hybridization
+    label: DNA-DNA hybridization
+    original_spans:
+      - 245:265
+  - id: AUTO:16S%20rDNA
+    label: 16S rDNA
+    original_spans:
+      - 65:72
+---
+input_text: |
+  {'content': 'Photobacterium histaminum Okuzumi et al. 1994 is a later subjective synonym of Photobacterium damselae subsp. damselae (Love et al. 1981) Smith et al. 1991.\n\nThe type strain of Photobacterium histaminum, JCM 8968T (= ATCC 51805T), and that of Photobacterium damselae subsp. damselae, ATCC 33539T, exhibit 100% identity in their 16S rRNA sequence, more than 80% DNA-DNA homology and only one phenotypic difference. Also, like P. histaminum, P. damselae subsp. damselae was shown to excrete a large amount of histamine when cells were grown on medium containing excessive histidine under acidic conditions. Therefore, the name P. histaminum should be considered to be a later subjective synonym of P. damselae subsp. damselae.\n\nPMID:10843080', 'saved_to': None, 'windowed': False}
+raw_completion_output: |-
+  pmid: 10843080  
+  study_taxa: Photobacterium histaminum;Photobacterium damselae subsp. damselae  
+  phylogenetic_relationships: 100% identity in 16S rRNA sequence;more than 80% DNA-DNA homology  
+  phylogenetic_methods: 16S rRNA gene sequencing;DNA-DNA homology  
+  gene_sequences_analyzed: 16S rRNA
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  query_taxon: <the organism being analyzed>
+  related_taxon: <the closest relative or reference organism>
+  similarity_percentage: <sequence similarity percentage (e.g., 97.7%, 96.6%)>
+  relationship_type: <type of phylogenetic relationshipMust be one of: closest_relative, high_similarity, moderate_similarity, clusters_with, sister_group, distant_relative>
+
+
+  Text:
+  more than 80% DNA-DNA homology
+
+  ===
+
+extracted_object:
+  pmid: '10843080'
+  study_taxa:
+    - NCBITaxon:38293
+    - NCBITaxon:85581
+  phylogenetic_relationships:
+    - query_taxon: AUTO:%3Cnot%20specified%3E
+      related_taxon: AUTO:%3Cnot%20specified%3E
+      similarity_percentage: 100%
+      relationship_type: high_similarity
+    - query_taxon: AUTO:%3Cnot%20specified%3E
+      related_taxon: AUTO:%3Cnot%20specified%3E
+      similarity_percentage: 80%
+      relationship_type: high_similarity
+  phylogenetic_methods:
+    - AUTO:16S%20rRNA%20gene%20sequencing
+    - AUTO:DNA-DNA%20homology
+  gene_sequences_analyzed:
+    - AUTO:16S%20rRNA
+named_entities:
+  - id: NCBITaxon:38293
+    label: Photobacterium histaminum
+    original_spans:
+      - 13:37
+      - 192:216
+  - id: NCBITaxon:85581
+    label: Photobacterium damselae subsp. damselae
+    original_spans:
+      - 92:130
+      - 258:296
+  - id: AUTO:%3Cnot%20specified%3E
+    label: <not specified>
+  - id: AUTO:16S%20rRNA%20gene%20sequencing
+    label: 16S rRNA gene sequencing
+  - id: AUTO:DNA-DNA%20homology
+    label: DNA-DNA homology
+    original_spans:
+      - 376:391
+  - id: AUTO:16S%20rRNA
+    label: 16S rRNA
+    original_spans:
+      - 343:350
