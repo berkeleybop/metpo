@@ -11,10 +11,12 @@ This script analyzes extraction outputs to determine:
 """
 
 import yaml
-import sys
+import click
+import json
 from collections import defaultdict, Counter
 import re
 from pathlib import Path
+from datetime import datetime
 
 def parse_semicolon_list(text):
     """Parse semicolon-separated list, handling empty values"""
@@ -108,6 +110,13 @@ def extract_entities_from_relationship_fields(extracted, relationship_fields):
                             elif hasattr(attr_value, 'label'):
                                 # Handle entity objects with labels
                                 relationship_entities.add(attr_value.label)
+                    elif isinstance(item, dict):
+                        # Handle dictionary-based CompoundExpressions
+                        for attr_name, attr_value in item.items():
+                            if attr_value and isinstance(attr_value, str):
+                                # Skip predicate enums but include subject and object
+                                if attr_name not in ['predicate', 'relationship_type', 'utilization_type', 'condition_type', 'morphology_type']:
+                                    relationship_entities.add(attr_value)
     
     return relationship_entities
 
@@ -146,7 +155,8 @@ def assess_extraction(extraction_data, template_schema=None):
         if isinstance(field_data, list) and field_data:
             # Check first item to see if it has multiple attributes (CompoundExpression pattern)
             first_item = field_data[0]
-            if hasattr(first_item, '__dict__') and len(vars(first_item)) > 1:
+            if (hasattr(first_item, '__dict__') and len(vars(first_item)) > 1) or \
+               (isinstance(first_item, dict) and ('subject' in first_item or 'predicate' in first_item or 'object' in first_item)):
                 relationship_fields.append(field_name)
             else:
                 entity_fields.append(field_name)
@@ -216,14 +226,26 @@ def assess_extraction(extraction_data, template_schema=None):
                                 structured_relationships.append(rel_str)
                                 relationship_entities.add(subject)
                                 relationship_entities.add(obj)
+                    elif isinstance(item, dict):
+                        # Handle dictionary-based CompoundExpressions
+                        if 'subject' in item and 'predicate' in item and 'object' in item:
+                            subject = str(item.get('subject', ''))
+                            predicate = str(item.get('predicate', ''))
+                            obj = str(item.get('object', ''))
+                            
+                            if subject and predicate and obj:
+                                rel_str = f"{subject} {predicate} {obj}"
+                                structured_relationships.append(rel_str)
+                                relationship_entities.add(subject)
+                                relationship_entities.add(obj)
                         
                         # Handle legacy patterns for backward compatibility
-                        elif 'relationship_type' in attrs or 'utilization_type' in attrs:
+                        elif 'relationship_type' in item or 'utilization_type' in item:
                             # Build relationship string from available attributes
                             parts = []
                             predicate_field = None
                             
-                            for attr_name, attr_value in attrs.items():
+                            for attr_name, attr_value in item.items():
                                 if attr_name in ['relationship_type', 'utilization_type', 'predicate']:
                                     predicate_field = str(attr_value)
                                 elif attr_value and attr_name not in ['condition_type', 'morphology_type']:
@@ -236,7 +258,7 @@ def assess_extraction(extraction_data, template_schema=None):
                         
                         else:
                             # Handle other CompoundExpression patterns
-                            attr_values = [str(v) for v in attrs.values() if v and str(v)]
+                            attr_values = [str(v) for v in item.values() if v and str(v)]
                             if len(attr_values) >= 2:
                                 rel_str = " ".join(attr_values)
                                 structured_relationships.append(rel_str)
@@ -305,112 +327,251 @@ def assess_extraction(extraction_data, template_schema=None):
         'missing_entities': list(primary_entities - relationship_entities)
     }
 
-def main():
-    if len(sys.argv) not in [2, 3]:
-        print("Usage: poetry run python entity_relationship_assessment.py <extraction_yaml_file> [template_file]")
-        print("  extraction_yaml_file: OntoGPT extraction output")
-        print("  template_file: Optional template schema for compliance checking")
-        sys.exit(1)
+@click.command()
+@click.argument('extraction_path', type=click.Path(exists=True, path_type=Path))
+@click.option('--template', '-t', type=click.Path(exists=True, path_type=Path),
+              help='Template schema file for compliance checking')
+@click.option('--output', '-o', type=click.Path(path_type=Path),
+              help='Output file for assessment results (default: entity_assessment_TIMESTAMP.json)')
+@click.option('--format', 'output_format', type=click.Choice(['json', 'text']), default='text',
+              help='Output format: json or text (default: text)')
+@click.option('--verbose', '-v', is_flag=True, help='Verbose output')
+def main(extraction_path, template, output, output_format, verbose):
+    """Assess entity-to-relationship conversion in OntoGPT extractions.
     
-    yaml_file = sys.argv[1]
-    template_file = sys.argv[2] if len(sys.argv) == 3 else None
+    EXTRACTION_PATH can be a single extraction file or directory containing extraction files.
+    """
     
-    # Try to infer template from extraction filename if not provided
-    if not template_file:
-        extraction_path = Path(yaml_file)
-        extraction_name = extraction_path.stem
+    if extraction_path.is_file():
+        extraction_files = [extraction_path]
+    elif extraction_path.is_dir():
+        extraction_files = list(extraction_path.glob("*.yaml"))
+        if not extraction_files:
+            click.echo(f"No YAML files found in {extraction_path}", err=True)
+            raise click.Abort()
+    else:
+        click.echo(f"Error: {extraction_path} is not a valid file or directory", err=True)
+        raise click.Abort()
+    
+    if not extraction_files:
+        click.echo(f"No extraction files found in {extraction_path}", err=True)
+        raise click.Abort()
+    
+    template_file = str(template) if template else None
+    
+    # Try to infer template from extraction filename if not provided (use first file for inference)
+    if not template_file and extraction_files:
+        first_extraction = extraction_files[0]
+        extraction_name = first_extraction.stem
         
         # Look for template based on extraction filename
-        templates_dir = extraction_path.parent / 'templates'
+        templates_dir = first_extraction.parent / 'templates'
         if templates_dir.exists():
             for template_name in ['biochemical', 'growth_conditions', 'chemical_utilization', 'morphology', 'taxa']:
                 if template_name in extraction_name:
                     potential_template = templates_dir / f"{template_name}_populated.yaml"
                     if potential_template.exists():
                         template_file = str(potential_template)
-                        print(f"Auto-detected template: {template_file}")
+                        click.echo(f"Auto-detected template: {template_file}")
                         break
+    
+    # Set default output file if not provided
+    if not output:
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        suffix = 'json' if output_format == 'json' else 'txt'
+        output = Path(f"entity_assessment_{timestamp}.{suffix}")
     
     # Load template schema if available
     template_schema = load_template_schema(template_file) if template_file else None
     
-    with open(yaml_file, 'r') as f:
-        content = f.read()
+    # Prepare assessment data
+    assessment_data = {
+        'timestamp': datetime.now().isoformat(),
+        'extraction_files': [str(f) for f in extraction_files],
+        'template_file': template_file,
+        'file_assessments': [],
+        'summary': {}
+    }
+    
+    # Process all extraction files
+    all_file_extractions = []
+    for extraction_file in sorted(extraction_files):
+        click.echo(f"\n📄 Processing: {extraction_file.name}")
         
-    # Split by document separator and parse each
-    documents = content.split('---\n')
-    extractions = []
-    for doc in documents:
-        if doc.strip():
-            try:
-                parsed = yaml.safe_load(doc)
-                if parsed:
-                    extractions.append(parsed)
-            except yaml.YAMLError:
-                continue
+        with open(extraction_file, 'r') as f:
+            content = f.read()
+            
+        # Split by document separator and parse each
+        documents = content.split('---\n')
+        extractions = []
+        for doc in documents:
+            if doc.strip():
+                try:
+                    parsed = yaml.safe_load(doc)
+                    if parsed:
+                        extractions.append(parsed)
+                except yaml.YAMLError:
+                    continue
         
-    print("Entity-to-Relationship Conversion Assessment")
-    print("=" * 50)
+        file_assessment = {
+            'file_name': extraction_file.name,
+            'file_path': str(extraction_file),
+            'extraction_count': len(extractions),
+            'extractions': []
+        }
+        
+        all_file_extractions.extend(extractions)
+        assessment_data['file_assessments'].append(file_assessment)
+    
+    click.echo("Entity-to-Relationship Conversion Assessment")
+    click.echo("=" * 50)
+    click.echo(f"Processing {len(extraction_files)} file(s)")
     
     total_entities = 0
     total_relationships = 0
     total_coverage = 0
     total_extractions = 0
+    all_assessments = []
     
-    for extraction in extractions:
-        if not extraction:
-            continue
+    # Process each file's extractions
+    for file_idx, file_assessment in enumerate(assessment_data['file_assessments']):
+        extraction_file = extraction_files[file_idx]
+        
+        # Get extractions for this file
+        with open(extraction_file, 'r') as f:
+            content = f.read()
+        documents = content.split('---\n')
+        extractions = []
+        for doc in documents:
+            if doc.strip():
+                try:
+                    parsed = yaml.safe_load(doc)
+                    if parsed:
+                        extractions.append(parsed)
+                except yaml.YAMLError:
+                    continue
+        
+        # Process each extraction in this file
+        file_total_entities = 0
+        file_total_relationships = 0
+        file_total_coverage = 0
+        file_extractions = 0
+        
+        for extraction in extractions:
+            if not extraction:
+                continue
+                
+            assessment = assess_extraction(extraction, template_schema)
+            total_extractions += 1
+            file_extractions += 1
+            all_assessments.append(assessment)
             
-        assessment = assess_extraction(extraction, template_schema)
-        total_extractions += 1
-        
-        print(f"\nPMID: {assessment['pmid']}")
-        print(f"  Entities extracted: {assessment['total_entities']}")
-        print(f"  Entities in relationships: {assessment['entities_in_relationships']}")
-        print(f"  Coverage: {assessment['coverage_percent']:.1f}%")
-        print(f"  Total relationships: {assessment['total_relationships']}")
-        print(f"  Unique relationships: {assessment['unique_relationships']}")
-        print(f"  Redundant relationships: {assessment['redundancy_count']}")
-        print(f"  Contradictory relationships: {assessment['contradiction_count']}")
-        
-        # Show missing entities (key improvement)
-        if assessment['missing_entities']:
-            print(f"  ❌ Missing from relationships: {', '.join(assessment['missing_entities'][:5])}{'...' if len(assessment['missing_entities']) > 5 else ''}")
-        
-        if assessment['total_entities'] > 0:
-            print(f"  Entities: {', '.join(assessment['all_entities'][:5])}{'...' if len(assessment['all_entities']) > 5 else ''}")
-        
-        if assessment['relationships']:
-            print(f"  Relationships: {', '.join(assessment['relationships'][:3])}{'...' if len(assessment['relationships']) > 3 else ''}")
-        
-        # Template compliance reporting
-        if template_schema and assessment['template_compliance']:
-            print(f"  📋 Template compliance:")
-            for entity_class, compliance in assessment['template_compliance'].items():
-                expected_rels = compliance['expected_relationships']
-                print(f"    {entity_class} → {', '.join(expected_rels)}")
-        
-        if assessment['redundant_relationships']:
-            print(f"  🔄 Redundant: {', '.join(assessment['redundant_relationships'][:3])}")
+            # Store for JSON output
+            file_assessment['extractions'].append(assessment)
             
-        if assessment['contradictory_relationships']:
-            print(f"  ⚠️  Contradictions: {'; '.join([f'{pair[0]} vs {pair[1]}' for pair in assessment['contradictory_relationships'][:2]])}")
+            if verbose or len(extraction_files) == 1:  # Show details for single files or verbose mode
+                click.echo(f"\nPMID: {assessment['pmid']} (from {extraction_file.name})")
+                click.echo(f"  Entities extracted: {assessment['total_entities']}")
+                click.echo(f"  Entities in relationships: {assessment['entities_in_relationships']}")
+                click.echo(f"  Coverage: {assessment['coverage_percent']:.1f}%")
+                click.echo(f"  Total relationships: {assessment['total_relationships']}")
+                click.echo(f"  Unique relationships: {assessment['unique_relationships']}")
+                
+                # Show missing entities (key improvement)
+                if assessment['missing_entities']:
+                    click.echo(f"  ❌ Missing from relationships: {', '.join(assessment['missing_entities'][:5])}{'...' if len(assessment['missing_entities']) > 5 else ''}")
             
-        total_entities += assessment['total_entities']
-        total_relationships += assessment['total_relationships']
-        total_coverage += assessment['coverage_percent']
+            file_total_entities += assessment['total_entities']
+            file_total_relationships += assessment['total_relationships'] 
+            file_total_coverage += assessment['coverage_percent']
+            
+            total_entities += assessment['total_entities']
+            total_relationships += assessment['total_relationships']
+            total_coverage += assessment['coverage_percent']
+        
+        # File summary for multiple files
+        if len(extraction_files) > 1:
+            avg_coverage = file_total_coverage / file_extractions if file_extractions > 0 else 0
+            click.echo(f"\n📄 {extraction_file.name}: {file_extractions} extractions, avg coverage: {avg_coverage:.1f}%")
     
+    # Generate summary
     if total_extractions > 0:
-        print(f"\nSUMMARY:")
-        print(f"  Total extractions: {total_extractions}")
-        print(f"  Average entities per extraction: {total_entities/total_extractions:.1f}")
-        print(f"  Average relationships per extraction: {total_relationships/total_extractions:.1f}")
-        print(f"  Average coverage: {total_coverage/total_extractions:.1f}%")
+        avg_entities = total_entities / total_extractions
+        avg_relationships = total_relationships / total_extractions
+        avg_coverage = total_coverage / total_extractions
+        
+        summary_text = [
+            f"Total extractions: {total_extractions}",
+            f"Average entities per extraction: {avg_entities:.1f}",
+            f"Average relationships per extraction: {avg_relationships:.1f}",
+            f"Average coverage: {avg_coverage:.1f}%"
+        ]
+        
+        click.echo(f"\nSUMMARY:")
+        for line in summary_text:
+            click.echo(f"  {line}")
+        
+        # Store summary for JSON
+        assessment_data['summary'] = {
+            'total_files': len(extraction_files),
+            'total_extractions': total_extractions,
+            'average_entities': avg_entities,
+            'average_relationships': avg_relationships,
+            'average_coverage': avg_coverage
+        }
         
         if total_entities == 0:
-            print(f"\n❌ NO ENTITIES EXTRACTED - These abstracts lack biochemical data!")
-            print(f"   The template is working but the test abstracts are inappropriate.")
-            print(f"   Need abstracts with enzyme tests, fatty acid data, or API results.")
+            warning_msg = [
+                "❌ NO ENTITIES EXTRACTED - These abstracts lack biochemical data!",
+                "   The template is working but the test abstracts are inappropriate.",
+                "   Need abstracts with enzyme tests, fatty acid data, or API results."
+            ]
+            for msg in warning_msg:
+                click.echo(msg)
+            assessment_data['summary']['warning'] = warning_msg
+    
+    # Save output
+    try:
+        with open(output, 'w') as f:
+            if output_format == 'json':
+                json.dump(assessment_data, f, indent=2, default=str)
+            else:
+                # Save text output (simplified version for logs)
+                f.write(f"Entity-to-Relationship Assessment - {assessment_data['timestamp']}\n")
+                f.write("=" * 50 + "\n\n")
+                f.write(f"Source files: {len(assessment_data['extraction_files'])} file(s)\n")
+                for file_path in assessment_data['extraction_files']:
+                    f.write(f"  - {file_path}\n")
+                if assessment_data['template_file']:
+                    f.write(f"Template: {assessment_data['template_file']}\n")
+                f.write("\n")
+                
+                # Write file-by-file breakdown
+                for file_assessment in assessment_data['file_assessments']:
+                    f.write(f"File: {file_assessment['file_name']}\n")
+                    f.write(f"  Extractions: {file_assessment['extraction_count']}\n")
+                    for assessment in file_assessment['extractions']:
+                        f.write(f"  PMID: {assessment['pmid']}\n")
+                        f.write(f"    Entities: {assessment['total_entities']} | ")
+                        f.write(f"In relationships: {assessment['entities_in_relationships']} | ")
+                        f.write(f"Coverage: {assessment['coverage_percent']:.1f}%\n")
+                        if assessment['missing_entities'] and len(assessment['missing_entities']) > 0:
+                            f.write(f"    Missing: {', '.join(assessment['missing_entities'][:3])}{'...' if len(assessment['missing_entities']) > 3 else ''}\n")
+                    f.write("\n")
+                
+                if 'summary' in assessment_data:
+                    f.write("Overall Summary:\n")
+                    f.write(f"  Total files: {assessment_data['summary']['total_files']}\n")
+                    f.write(f"  Total extractions: {assessment_data['summary']['total_extractions']}\n")
+                    f.write(f"  Average entities: {assessment_data['summary']['average_entities']:.1f}\n")
+                    f.write(f"  Average relationships: {assessment_data['summary']['average_relationships']:.1f}\n")
+                    f.write(f"  Average coverage: {assessment_data['summary']['average_coverage']:.1f}%\n")
+        
+        click.echo(f"\n💾 Assessment saved to: {output}")
+        
+    except Exception as e:
+        click.echo(f"❌ Error saving output to {output}: {e}", err=True)
+        raise click.Abort()
 
 if __name__ == "__main__":
     main()
