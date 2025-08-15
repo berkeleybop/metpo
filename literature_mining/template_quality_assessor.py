@@ -10,9 +10,11 @@ This script analyzes OntoGPT template schemas to determine:
 """
 
 import yaml
-import sys
+import click
+import json
 from pathlib import Path
 from collections import defaultdict
+from datetime import datetime
 
 def load_template(template_path):
     """Load and parse a LinkML template YAML file."""
@@ -155,85 +157,125 @@ def assess_template_quality(analysis):
         'strengths': strengths
     }
 
-def main():
-    if len(sys.argv) < 2:
-        print("Usage: python template_quality_assessor.py <template_file_or_directory>")
-        print("Examples:")
-        print("  python template_quality_assessor.py templates/biochemical_populated.yaml")
-        print("  python template_quality_assessor.py templates/")
-        sys.exit(1)
+@click.command()
+@click.argument('template_path', type=click.Path(exists=True, path_type=Path))
+@click.option('--output', '-o', type=click.Path(path_type=Path), 
+              help='Output file for assessment results (default: assessment_results_TIMESTAMP.json)')
+@click.option('--format', 'output_format', type=click.Choice(['json', 'text']), default='text',
+              help='Output format: json or text (default: text)')
+@click.option('--verbose', '-v', is_flag=True, help='Verbose output')
+def main(template_path, output, output_format, verbose):
+    """Assess template quality for OntoGPT templates.
     
-    path = Path(sys.argv[1])
+    TEMPLATE_PATH can be a single template file or directory containing templates.
+    """
     
-    if path.is_file():
-        template_files = [path]
-    elif path.is_dir():
-        template_files = list(path.glob("*_populated.yaml"))
+    if template_path.is_file():
+        template_files = [template_path]
+    elif template_path.is_dir():
+        template_files = list(template_path.glob("*_populated.yaml"))
         if not template_files:
-            template_files = list(path.glob("*_template_base.yaml"))
+            template_files = list(template_path.glob("*_template_base.yaml"))
     else:
-        print(f"Error: {path} is not a valid file or directory")
-        sys.exit(1)
+        click.echo(f"Error: {template_path} is not a valid file or directory", err=True)
+        raise click.Abort()
     
-    print("Template Quality Assessment")
-    print("=" * 50)
+    if not template_files:
+        click.echo(f"No template files found in {template_path}", err=True)
+        raise click.Abort()
+    
+    # Set default output file if not provided
+    if not output:
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        suffix = 'json' if output_format == 'json' else 'txt'
+        output = Path(f"template_assessment_{timestamp}.{suffix}")
+    
+    click.echo("Template Quality Assessment")
+    click.echo("=" * 50)
     
     all_analyses = []
+    assessment_data = {
+        'timestamp': datetime.now().isoformat(),
+        'templates': [],
+        'summary': {}
+    }
     
     for template_file in sorted(template_files):
-        print(f"\n📋 Template: {template_file.name}")
-        print("-" * 40)
+        click.echo(f"\n📋 Template: {template_file.name}")
+        click.echo("-" * 40)
         
         try:
             template_data = load_template(template_file)
             analysis = analyze_template_structure(template_data, template_file.stem)
             
             if 'error' in analysis:
-                print(f"❌ Error: {analysis['error']}")
+                click.echo(f"❌ Error: {analysis['error']}", err=True)
                 continue
             
             quality = assess_template_quality(analysis)
             all_analyses.append((template_file.name, analysis, quality))
             
+            # Store data for JSON output
+            template_result = {
+                'template_name': template_file.name,
+                'analysis': analysis,
+                'quality': quality
+            }
+            assessment_data['templates'].append(template_result)
+            
             # Display results
-            print(f"Root class: {analysis['root_class']}")
-            print(f"Entities: {analysis['total_entities']} | Relationships: {analysis['total_relationships']}")
-            print(f"Coverage: {analysis['coverage_percent']:.1f}% | Relationship density: {analysis['relationship_density']:.1f}%")
-            print(f"Quality score: {quality['overall_score']}/100")
+            click.echo(f"Root class: {analysis['root_class']}")
+            click.echo(f"Entities: {analysis['total_entities']} | Relationships: {analysis['total_relationships']}")
+            click.echo(f"Coverage: {analysis['coverage_percent']:.1f}% | Relationship density: {analysis['relationship_density']:.1f}%")
+            click.echo(f"Quality score: {quality['overall_score']}/100")
             
             # Show field breakdown
-            print(f"\nField types:")
-            for field_type, count in analysis['field_counts'].items():
-                print(f"  {field_type}: {count}")
+            if verbose:
+                click.echo(f"\nField types:")
+                for field_type, count in analysis['field_counts'].items():
+                    click.echo(f"  {field_type}: {count}")
             
             # Show issues
             if quality['issues']:
-                print(f"\n⚠️  Issues:")
+                click.echo(f"\n⚠️  Issues:")
                 for issue in quality['issues']:
-                    print(f"  {issue}")
+                    click.echo(f"  {issue}")
             
             # Show strengths
             if quality['strengths']:
-                print(f"\n✅ Strengths:")
+                click.echo(f"\n✅ Strengths:")
                 for strength in quality['strengths']:
-                    print(f"  {strength}")
+                    click.echo(f"  {strength}")
                     
         except Exception as e:
-            print(f"❌ Error analyzing {template_file.name}: {e}")
+            click.echo(f"❌ Error analyzing {template_file.name}: {e}", err=True)
     
     # Summary across all templates
     if len(all_analyses) > 1:
-        print(f"\n{'='*50}")
-        print("SUMMARY ACROSS TEMPLATES")
-        print("=" * 50)
+        click.echo(f"\n{'='*50}")
+        click.echo("SUMMARY ACROSS TEMPLATES")
+        click.echo("=" * 50)
         
         avg_coverage = sum(a[1]['coverage_percent'] for a in all_analyses) / len(all_analyses)
         avg_density = sum(a[1]['relationship_density'] for a in all_analyses) / len(all_analyses)
         avg_score = sum(a[2]['overall_score'] for a in all_analyses) / len(all_analyses)
         
-        print(f"Average coverage: {avg_coverage:.1f}%")
-        print(f"Average relationship density: {avg_density:.1f}%")
-        print(f"Average quality score: {avg_score:.1f}/100")
+        summary_text = [
+            f"Average coverage: {avg_coverage:.1f}%",
+            f"Average relationship density: {avg_density:.1f}%",
+            f"Average quality score: {avg_score:.1f}/100"
+        ]
+        
+        for line in summary_text:
+            click.echo(line)
+        
+        # Store summary for JSON
+        assessment_data['summary'] = {
+            'total_templates': len(all_analyses),
+            'average_coverage': avg_coverage,
+            'average_density': avg_density,
+            'average_score': avg_score
+        }
         
         # Common issues
         all_issues = []
@@ -241,7 +283,7 @@ def main():
             all_issues.extend(quality['issues'])
         
         if all_issues:
-            print(f"\nMost common issues:")
+            click.echo(f"\nMost common issues:")
             issue_counts = defaultdict(int)
             for issue in all_issues:
                 # Group similar issues
@@ -252,8 +294,46 @@ def main():
                 elif "string fields" in issue.lower():
                     issue_counts["Too many string fields"] += 1
             
+            common_issues = []
             for issue, count in sorted(issue_counts.items(), key=lambda x: x[1], reverse=True):
-                print(f"  {issue}: {count}/{len(all_analyses)} templates")
+                issue_text = f"  {issue}: {count}/{len(all_analyses)} templates"
+                click.echo(issue_text)
+                common_issues.append({'issue': issue, 'count': count, 'total': len(all_analyses)})
+            
+            assessment_data['summary']['common_issues'] = common_issues
+    
+    # Save output
+    try:
+        with open(output, 'w') as f:
+            if output_format == 'json':
+                json.dump(assessment_data, f, indent=2, default=str)
+            else:
+                # Save text output (simplified version for logs)
+                f.write(f"Template Quality Assessment - {assessment_data['timestamp']}\n")
+                f.write("=" * 50 + "\n\n")
+                
+                for template_data in assessment_data['templates']:
+                    analysis = template_data['analysis']
+                    quality = template_data['quality']
+                    f.write(f"Template: {template_data['template_name']}\n")
+                    f.write(f"Coverage: {analysis['coverage_percent']:.1f}% | ")
+                    f.write(f"Density: {analysis['relationship_density']:.1f}% | ")
+                    f.write(f"Score: {quality['overall_score']}/100\n")
+                    if quality['issues']:
+                        f.write(f"Issues: {'; '.join(quality['issues'][:2])}\n")
+                    f.write("\n")
+                
+                if 'summary' in assessment_data:
+                    f.write(f"Summary:\n")
+                    f.write(f"Average coverage: {assessment_data['summary']['average_coverage']:.1f}%\n")
+                    f.write(f"Average density: {assessment_data['summary']['average_density']:.1f}%\n")
+                    f.write(f"Average score: {assessment_data['summary']['average_score']:.1f}/100\n")
+        
+        click.echo(f"\n💾 Assessment saved to: {output}")
+        
+    except Exception as e:
+        click.echo(f"❌ Error saving output to {output}: {e}", err=True)
+        raise click.Abort()
 
 if __name__ == "__main__":
     main()

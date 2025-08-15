@@ -45,7 +45,7 @@ classes:
         range: EnzymeActivity
         annotations:
           prompt: >-
-            Identify enzyme activities mentioned in the text. Include standard enzymatic tests like "catalase-positive", "oxidase-negative", "urease-positive", "gelatinase", "lipase", "amylase", "protease", "β-galactosidase", "alkaline phosphatase". Also include activities like "hydrolyzes starch", "reduces nitrate", "produces indole". Use the format "enzyme-positive" or "enzyme-negative" when test results are given. If no enzyme activities are mentioned, leave this field empty.
+            Identify enzyme activity names mentioned in the text. Extract enzyme activity terms like "catalase activity", "oxidase activity", "urease activity", "gelatinase activity", "lipase activity", "amylase activity", "protease activity", "β-galactosidase activity", "alkaline phosphatase activity". For enzymatic activities like "hydrolyzes starch", extract "starch hydrolysis". For "reduces nitrate", extract "nitrate reductase activity". For "produces indole", extract "indole production". Use "activity" suffix for enzymes when mentioned. Extract the enzyme activity name without positive/negative qualifiers. If no enzyme activities are mentioned, leave this field empty.
       api_test_results:
         description: >-
           semicolon-separated list of API test results and commercial test kit results
@@ -61,7 +61,7 @@ classes:
         range: MetabolicTest
         annotations:
           prompt: >-
-            Identify metabolic and diagnostic test results mentioned in the text. Include tests like "indole production", "methyl red", "Voges-Proskauer", "citrate utilization", "hydrogen sulfide production", "nitrate reduction", "DNase", "coagulase", "hemolysis". If no metabolic tests are mentioned, leave this field empty.
+            Identify metabolic and diagnostic test names mentioned in the text. Extract clean test names like "indole production", "methyl red test", "Voges-Proskauer test", "citrate utilization", "hydrogen sulfide production", "nitrate reduction", "DNase test", "coagulase test", "hemolysis test". Extract the test name without positive/negative results. If no metabolic tests are mentioned, leave this field empty.
       fatty_acid_composition:
         description: >-
           semicolon-separated list of fatty acid composition and FAME analysis results
@@ -72,48 +72,49 @@ classes:
             Identify fatty acid composition mentioned in the text. Include specific fatty acids like "iso-C15:0", "anteiso-C17:0", "C16:1ω7c", "C18:1ω9c" and their percentages when provided. Also include terms like "branched-chain fatty acids", "straight-chain fatty acids", "unsaturated fatty acids", "FAME analysis". If no fatty acid information is mentioned, leave this field empty.
       enzyme_relationships:
         description: >-
-          semicolon-separated list of specific strain-enzyme relationships found in the text
+          structured list of specific strain-enzyme relationships found in the text
         multivalued: true
         range: EnzymeRelationship
         annotations:
           prompt: >-
-            For each enzyme activity found in enzyme_activities, api_test_results, and metabolic_tests fields above, extract structured relationships linking specific strains to those enzyme activities. Generate tuples like "strain 15-1T demonstrates_activity catalase", "ATCC 25922 negative_for oxidase", "isolate XYZ-1 produces gelatinase", "strain ABC123 positive_for β-galactosidase". Convert ALL enzyme activities and biochemical tests mentioned above into strain-enzyme relationships. Focus on enzymatic activities and biochemical test results.
+            For each enzyme activity found in enzyme_activities, api_test_results, and metabolic_tests fields above, extract structured relationships linking specific strains to those enzyme activities. Generate tuples like "AZM34c11T positive_for catalase", "ATCC 25922 negative_for oxidase", "strain 15-1T demonstrates_activity urease". Use relationship types: positive_for, negative_for, demonstrates_activity, produces. Extract the positive/negative result information here even though the entity lists contain clean names.
+            If no enzyme relationships are found, leave this field empty.
       fatty_acid_relationships:
         description: >-
-          semicolon-separated list of specific strain-fatty acid relationships found in the text
+          structured list of specific strain-fatty acid relationships found in the text
         multivalued: true
         range: FattyAcidRelationship
         annotations:
           prompt: >-
-            For each fatty acid found in fatty_acid_composition field above, extract structured relationships linking specific strains to those fatty acids. Generate tuples like "strain M-201T contains iso-C16:0", "strain 15-1T major_fatty_acid anteiso-C15:0", "ATCC 25922 predominant_fatty_acid C16:0". Convert ALL fatty acid composition data mentioned above into strain-fatty acid relationships.
+            For each fatty acid found in fatty_acid_composition field above, extract structured relationships linking specific strains to those fatty acids. Generate tuples like "AZM34c11T major_fatty_acid iso-C16:0", "NBRC 106114T contains anteiso-C15:0", "strain ABC123 predominant_fatty_acid C16:1ω7c". Use relationship types: contains, major_fatty_acid, minor_fatty_acid, predominant_fatty_acid.
+            If no fatty acid relationships are found, leave this field empty.
       metabolic_test_relationships:
         description: >-
-          semicolon-separated list of specific strain-metabolic test relationships found in the text
+          structured list of specific strain-metabolic test relationships found in the text
         multivalued: true
         range: MetabolicTestRelationship
         annotations:
           prompt: >-
-            For each metabolic test found in metabolic_tests field above, extract structured relationships linking specific strains to those test results. Generate tuples like "strain ABC123 positive_for indole production", "ATCC 14887 negative_for methyl red", "isolate XYZ-1 demonstrates_activity citrate utilization". Convert ALL metabolic test data mentioned above into strain-test relationships.
+            For each metabolic test found in metabolic_tests field above, extract structured relationships linking specific strains to those test results. Generate tuples like "ABC123 positive_for indole production", "ATCC 14887 negative_for methyl red", "strain XYZ demonstrates_activity citrate utilization". Use relationship types: positive_for, negative_for, demonstrates_activity.
+            If no metabolic test relationships are found, leave this field empty.
       api_test_relationships:
         description: >-
-          semicolon-separated list of specific strain-API test relationships found in the text
+          structured list of specific strain-API test relationships found in the text
         multivalued: true
         range: APITestRelationship
         annotations:
           prompt: >-
-            For each API test found in api_test_results field above, extract structured relationships linking specific strains to those test results. Generate tuples like "strain 123T positive_for API 20E profile", "ATCC 25922 demonstrates_activity Biolog carbon utilization", "isolate ABC negative_for API 50CH glucose". Convert ALL API test data mentioned above into strain-test relationships.
+            For each API test found in api_test_results field above, extract structured relationships linking specific strains to those test results. Generate tuples like "123T positive_for API 20E profile", "ATCC 25922 demonstrates_activity Biolog carbon utilization", "strain ABC negative_for API 50CH glucose". Use relationship types: positive_for, negative_for, demonstrates_activity.
+            If no API test relationships are found, leave this field empty.
       strain_relationships:
         description: >-
-          semicolon-separated list of strain-species relationships found in the text
+          structured list of strain-species relationships found in the text
         multivalued: true
         range: StrainRelationship
         annotations:
           prompt: >-
-            A semicolon-separated list of strain-species relationships, where each 
-            relationship connects a strain to its parent taxon. Each relationship should 
-            have a strain name, relationship type, and parent species/genus.
-            For example: "MG1655 strain_of Escherichia coli; K-12 strain_of Escherichia coli; 
-            ATCC 25922 type_strain_of Klebsiella pneumoniae". If no strain relationships are found, leave this field empty.
+            Extract strain-species relationships linking strains to their parent taxa. Generate tuples like "MG1655 strain_of Escherichia coli", "ATCC 25922 type_strain_of Klebsiella pneumoniae", "isolate XYZ-1 isolate_of Bacillus subtilis". Use relationship types: strain_of, type_strain_of, isolate_of, reference_strain_of, variant_of.
+            If no strain relationships are found, leave this field empty.
       source_text:
         range: string
         annotations:

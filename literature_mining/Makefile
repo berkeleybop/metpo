@@ -13,7 +13,7 @@ PMID_FILE := inputs/random-$(SOURCE)-pmids.txt
 TEMPLATE_FILE := templates/$(TEMPLATE)_populated.yaml
 
 # Directory structure
-DIRS := inputs intermediates outputs templates abstracts cache logs test-abstracts
+DIRS := inputs intermediates outputs templates abstracts cache logs test-abstracts assessments
 INTERMEDIATE_DIRS := intermediates/tsv intermediates/yaml intermediates/db
 
 .PHONY: all clean clean-cache clean-intermediates clean-outputs clean-templates clean-test help setup
@@ -29,9 +29,13 @@ help:
 	@echo "  setup                    - Create directory structure"
 	@echo "  validate-templates       - Validate all template schemas"
 	@echo "  build-templates         - Build all templates with METPO predicates"
+	@echo "  assess-templates         - Assess quality of all templates with file output"
+	@echo "  assess-all-outputs       - Assess all extraction outputs with file output"
 	@echo "  extract-all             - Extract from abstracts using specified template"
 	@echo "  quick-test              - Safe test with 3 abstracts (preserves existing)"
 	@echo "  full-pipeline           - Complete pipeline with specified source"
+	@echo "  timestamped-extraction   - Extract with timestamped files and assessments"
+	@echo "  debug-extraction         - Run extraction with maximum debug verbosity"
 	@echo ""
 	@echo "Parameters:"
 	@echo "  SOURCE=$(SOURCE)        - PMID source: n4l, bacdive, ijsem"
@@ -46,6 +50,7 @@ help:
 	@echo "  clean-intermediates     - Remove intermediate files only"
 	@echo "  clean-outputs          - Remove output files only" 
 	@echo "  clean-templates        - Remove generated templates only"
+	@echo "  clean-assessments      - Remove assessment files only"
 	@echo "  clean-test             - Remove test outputs only (preserves caches)"
 	@echo ""
 	@echo "Examples:"
@@ -153,7 +158,7 @@ outputs/$(SOURCE)-$(TEMPLATE)-extractions.yaml: $(TEMPLATE_FILE) intermediates/d
 	@echo "Extracting using template: $(TEMPLATE_FILE)"
 	@echo "Processing abstracts from: $(SOURCE)"
 	poetry run ontogpt -v \
-		--cache-db cache/ontogpt-cache.db \
+		--cache-db $(PWD)/cache/ontogpt-cache.db \
 		extract \
 		--show-prompt \
 		-p 0.1 \
@@ -170,7 +175,7 @@ quick-test: N_ABSTRACTS = 10
 quick-test: setup-test-abstracts
 	@echo "Running quick test with $(N_ABSTRACTS) abstracts..."
 	poetry run ontogpt -v \
-		--cache-db cache/ontogpt-cache.db \
+		--cache-db $(PWD)/cache/ontogpt-cache.db \
 		extract \
 		--show-prompt \
 		-p 0.1 \
@@ -244,6 +249,10 @@ clean-test:
 	rm -f logs/test-*-extraction.log
 	@echo "Test files cleaned (cache preserved for efficiency)"
 
+clean-assessments:
+	rm -rf assessments/*
+	@echo "Assessment files cleaned"
+
 # Aggressive cleanup - preserves only expensive abstracts, final outputs, and template caches
 clean: clean-cache clean-intermediates clean-templates
 	rm -f inputs/random-*-pmids.txt
@@ -266,13 +275,13 @@ TIMESTAMPED_OUTPUT := outputs/$(TEMPLATE)_$(TIMESTAMP).yaml
 TIMESTAMPED_LOG := logs/$(TEMPLATE)_$(TIMESTAMP).log
 
 # Run timestamped extraction with assessment
-timestamped-extraction: $(TEMPLATE_FILE) entity_relationship_assessment.py
+timestamped-extraction: $(TEMPLATE_FILE) entity_relationship_assessment.py template_quality_assessor.py
 	@echo "Running timestamped extraction: $(TEMPLATE) at $(TIMESTAMP)"
 	@echo "Input directory: $(INPUT_DIR)"
 	@echo "Template file: $(TEMPLATE_FILE)"
-	@mkdir -p outputs logs
+	@mkdir -p outputs logs assessments
 	poetry run ontogpt -v \
-		--cache-db cache/ontogpt-cache.db \
+		--cache-db $(PWD)/cache/ontogpt-cache.db \
 		extract \
 		--show-prompt \
 		-p 0.1 \
@@ -280,8 +289,15 @@ timestamped-extraction: $(TEMPLATE_FILE) entity_relationship_assessment.py
 		-i $(INPUT_DIR) \
 		-o $(TIMESTAMPED_OUTPUT) \
 		2>&1 | tee $(TIMESTAMPED_LOG)
-	@echo "Running assessment on $(TIMESTAMPED_OUTPUT)"
-	poetry run python entity_relationship_assessment.py $(TIMESTAMPED_OUTPUT)
+	@echo "Running entity-relationship assessment on $(TIMESTAMPED_OUTPUT)"
+	poetry run python entity_relationship_assessment.py $(TIMESTAMPED_OUTPUT) \
+		--template $(TEMPLATE_FILE) \
+		--output assessments/entity_assessment_$(TEMPLATE)_$(TIMESTAMP).txt \
+		--format text
+	@echo "Running template quality assessment on $(TEMPLATE_FILE)"
+	poetry run python template_quality_assessor.py $(TEMPLATE_FILE) \
+		--output assessments/template_assessment_$(TEMPLATE)_$(TIMESTAMP).txt \
+		--format text
 
 # Run all templates with timestamped extraction
 run-all-templates:
@@ -302,17 +318,67 @@ compare-extractions:
 # Run assessment on a specific output file
 assess-output:
 	@if [ -z "$(FILE)" ]; then \
-		echo "Usage: make assess-output FILE=outputs/filename.yaml"; \
+		echo "Usage: make assess-output FILE=outputs/filename.yaml [TEMPLATE_FILE=templates/template.yaml]"; \
 		echo "Available files:"; \
 		ls -1 outputs/*.yaml | head -10; \
 	else \
 		echo "Assessing $(FILE)..."; \
-		poetry run python entity_relationship_assessment.py $(FILE); \
+		mkdir -p assessments; \
+		if [ -n "$(TEMPLATE_FILE)" ]; then \
+			poetry run python entity_relationship_assessment.py $(FILE) \
+				--template $(TEMPLATE_FILE) \
+				--output assessments/entity_assessment_$$(basename $(FILE) .yaml)_$$(date +%Y%m%d_%H%M%S).txt \
+				--format text; \
+		else \
+			poetry run python entity_relationship_assessment.py $(FILE) \
+				--output assessments/entity_assessment_$$(basename $(FILE) .yaml)_$$(date +%Y%m%d_%H%M%S).txt \
+				--format text; \
+		fi \
 	fi
 
 # Quick timestamped extraction with default settings
 quick-timestamped:
 	$(MAKE) timestamped-extraction TEMPLATE=$(TEMPLATE) INPUT_DIR=$(INPUT_DIR)
+
+# Debug extraction with maximum verbosity
+debug-extraction:
+	@echo "Running debug extraction with maximum verbosity..."
+	@echo "Template: $(TEMPLATE_FILE)"
+	@echo "Input: $(INPUT_DIR)"
+	@mkdir -p outputs logs cache
+	LITELLM_LOG=DEBUG poetry run ontogpt -vv \
+		--cache-db $(PWD)/cache/debug-cache \
+		extract \
+		--show-prompt \
+		-p 0.1 \
+		-t $(TEMPLATE_FILE) \
+		-i $(INPUT_DIR) \
+		-o outputs/debug-$(TEMPLATE)-$(shell date +%Y%m%d_%H%M%S).yaml \
+		2>&1 | tee logs/debug-$(TEMPLATE)-$(shell date +%Y%m%d_%H%M%S).log
+
+# Assess all templates
+assess-templates: build-templates template_quality_assessor.py
+	@echo "Assessing all template quality..."
+	@mkdir -p assessments
+	poetry run python template_quality_assessor.py templates/ \
+		--output assessments/all_templates_assessment_$(shell date +%Y%m%d_%H%M%S).txt \
+		--format text \
+		--verbose
+
+# Assess all extraction outputs
+assess-all-outputs: entity_relationship_assessment.py
+	@echo "Assessing all extraction outputs..."
+	@mkdir -p assessments
+	@if [ $$(ls outputs/*.yaml 2>/dev/null | wc -l) -eq 0 ]; then \
+		echo "No YAML files found in outputs/ directory"; \
+		echo "Available files:"; \
+		ls -la outputs/ || echo "No outputs directory"; \
+	else \
+		poetry run python entity_relationship_assessment.py outputs/ \
+			--output assessments/all_outputs_assessment_$(shell date +%Y%m%d_%H%M%S).txt \
+			--format text \
+			--verbose; \
+	fi
 
 # =============================================================================
 # VALIDATION AND TESTING
@@ -339,3 +405,20 @@ status:
 	@echo "- Templates built: $(shell ls templates/*_template.yaml 2>/dev/null | wc -l)"
 	@echo "- Outputs generated: $(shell ls outputs/*.yaml 2>/dev/null | wc -l)"
 	@echo "- Cache size: $(shell du -sh cache 2>/dev/null | cut -f1 || echo '0')"
+# Unified Assessment
+unified-assessment:
+	@echo "Running unified pipeline assessment..."
+	@mkdir -p assessments
+	poetry run python unified_assessment.py outputs/ --verbose --include-specialization --output assessments/unified_assessment_$(shell date +%Y%m%d_%H%M%S).json
+
+# Domain-specific grounding analysis
+domain-grounding-analysis:
+	@echo "Running domain-specific grounding analysis..."
+	@mkdir -p assessments
+	poetry run python domain_grounding_analysis.py outputs/ --verbose --output assessments/domain_grounding_$(shell date +%Y%m%d_%H%M%S).json
+
+# Template specialization analysis
+template-specialization-analysis:
+	@echo "Running template specialization analysis..."
+	@mkdir -p assessments
+	poetry run python template_specialization_analyzer.py outputs/ --verbose --output assessments/template_specialization_$(shell date +%Y%m%d_%H%M%S).json
