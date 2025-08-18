@@ -69,7 +69,7 @@ classes:
     description: >-
       Bacterial, archaeal, or other microbial taxa utilizing chemicals.
     annotations:
-      annotators: sqlite:obo:ncbitaxon
+      annotators: sqlite:obo:ncbitaxon, sqlite:obo:gtdb
   Strain:
     is_a: NamedEntity
     description: >-
@@ -98,7 +98,7 @@ classes:
     description: >-
       Chemical compounds involved in bacterial metabolism including carbon sources, nitrogen sources, electron acceptors/donors, vitamins, enzyme substrates, and other metabolic compounds.
     annotations:
-      annotators: sqlite:obo:chebi
+      annotators: sqlite:obo:chebi, sqlite:obo:drugbank, sqlite:obo:rhea
   StrainRelationship:
     is_a: CompoundExpression
     description: >-

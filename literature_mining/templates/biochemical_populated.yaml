@@ -124,7 +124,7 @@ classes:
     description: >-
       Bacterial, archaeal, or other microbial taxa being studied for biochemical characteristics.
     annotations:
-      annotators: sqlite:obo:ncbitaxon
+      annotators: sqlite:obo:ncbitaxon, sqlite:obo:gtdb
 
   Strain:
     is_a: NamedEntity
@@ -136,7 +136,7 @@ classes:
     description: >-
       Enzyme activities and enzymatic test results.
     annotations:
-      annotators: sqlite:obo:go
+      annotators: sqlite:obo:go, sqlite:obo:rhea
 
   APITestResult:
     is_a: NamedEntity
@@ -153,7 +153,7 @@ classes:
     description: >-
       Fatty acids and fatty acid composition data from FAME analysis.
     annotations:
-      annotators: sqlite:obo:chebi
+      annotators: sqlite:obo:chebi, sqlite:obo:drugbank
 
   EnzymeRelationship:
     is_a: CompoundExpression
