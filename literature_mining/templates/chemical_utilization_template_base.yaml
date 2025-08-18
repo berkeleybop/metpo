@@ -39,7 +39,7 @@ classes:
         range: Strain
         annotations:
           prompt: >-
-            Extract specific strain designations mentioned in the text. Include strain numbers, culture collection numbers, type strain designations, and isolate names. Examples: "15-1T", "ATCC 25922", "MG1655", "K-12", "strain ABC123", "isolate XYZ-1". Do not include general species names.
+            Extract specific strain designations, preferably with genus and species context from the title/text. When possible, use format "Genus species strain ID" for better grounding. Examples: "Escherichia coli MG1655", "Bacillus subtilis 168", "Pseudomonas aeruginosa PAO1", or just "ATCC 25922", "15-1T" if species context unclear. Include strain numbers, culture collection numbers, type strain designations, and isolate names.
       chemicals_mentioned:
         description: >-
           List of chemical compounds mentioned in the text that could be
@@ -95,7 +95,7 @@ classes:
     description: >-
       Bacterial, archaeal, or other microbial taxa utilizing chemicals.
     annotations:
-      annotators: sqlite:obo:ncbitaxon, sqlite:obo:gtdb
+      annotators: sqlite:obo:ncbitaxon
 
   Strain:
     is_a: NamedEntity
@@ -105,8 +105,8 @@ classes:
   ChemicalUtilization:
     is_a: CompoundExpression
     description: >-
-      Specific relationships between strains and chemical compounds including
-      metabolic utilization, enzymatic activities, and growth requirements
+      Specific relationships between strains and chemical compounds focusing
+      on utilization, degradation, and metabolic interactions
     attributes:
       subject:
         description: the strain that utilizes the chemical compound
@@ -116,12 +116,9 @@ classes:
         range: ChemicalInteractionPropertyEnum
         annotations:
           prompt: >-
-            Select the most specific interaction type that matches the text.
-            Common examples: "ferments" (for fermentation), "uses_as_carbon_source"
-            (for growth on compound), "hydrolyzes" (for enzymatic breakdown),
-            "oxidizes" (for oxidation reactions), "reduces" (for reduction),
-            "requires_for_growth" (for essential nutrients), "degrades" (for
-            compound breakdown), "assimilates" (for uptake/incorporation).
+            Select the specific interaction type from the METPO ontology that best
+            matches the relationship described in the text. Focus on utilization,
+            degradation, or metabolic transformation of chemical compounds.
       object:
         description: the specific chemical compound being utilized
         range: ChemicalCompound
@@ -132,7 +129,7 @@ classes:
       sources, nitrogen sources, electron acceptors/donors, vitamins,
       enzyme substrates, and other metabolic compounds.
     annotations:
-      annotators: sqlite:obo:chebi, sqlite:obo:drugbank, sqlite:obo:rhea
+      annotators: sqlite:obo:chebi
 
   StrainRelationship:
     is_a: CompoundExpression

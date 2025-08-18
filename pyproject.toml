@@ -1,27 +1,34 @@
-[tool.poetry]
-name        = "metpo"
-version     = "0.3.0"
+[project]
+name = "metpo"
+version = "0.3.0"
 description = "The Microbial Ecophysiological Trait and Phenotype Ontology"
-authors     = ["Mark Andrew Miller <mam@lbl.gov>"]
-readme      = "README.md"
+authors = [
+    {name = "Mark Andrew Miller", email = "mam@lbl.gov"}
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "click>=8.0",
+]
 
-[tool.poetry.dependencies]
-python        = "^3.11"
-click         = "^8.0"
+[project.optional-dependencies]
+dev = [
+    "ontogpt==1.0.16",
+    "pandas>=2.3.1",
+    "rdflib>=7.1.4",
+    "semsql>=0.4.0",
+    "artl-mcp>=0.33.0",
+    "litellm==1.75.8",
+    "openai>=1.95,<1.100",
+]
 
-[tool.poetry.group.dev.dependencies]
-ipykernel     = "^6.29.5"
-jupyter       = ">=1.1.1,<2.0.0"
-ontogpt       = ">=1.0.16"
-pandas        = ">=2.2.3,<3.0.0"
-rdflib        = ">=7.1.4,<8.0.0"
-semsql        = "^0.4.0"
-artl-mcp      = ">=0.33.0"
-
-[tool.poetry.scripts]
+[project.scripts]
 extract-rank-triples = "metpo.extract_rank_triples:extract_taxon_ranks"
 convert-chem-props = "metpo.convert_chem_props:convert_chem_props"
 
+[tool.hatch.build.targets.wheel]
+packages = ["metpo"]
+
 [build-system]
-requires      = ["poetry-core>=2.0.0,<3.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"

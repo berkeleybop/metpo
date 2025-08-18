@@ -10,9 +10,9 @@
         "val" : "METPO"
       }, {
         "pred" : "http://www.w3.org/2002/07/owl#versionInfo",
-        "val" : "2025-07-02"
+        "val" : "2025-08-18"
       } ],
-      "version" : "https://w3id.org/metpo/metpo/releases/2025-07-02/metpo.json"
+      "version" : "https://w3id.org/metpo/metpo/releases/2025-08-18/metpo.json"
     },
     "nodes" : [ {
       "id" : "https://w3id.org/metpo/1000002",
@@ -10166,6 +10166,16 @@
         } ]
       }
     }, {
+      "id" : "https://w3id.org/metpo/2000101",
+      "lbl" : "has quality",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT"
+    }, {
+      "id" : "https://w3id.org/metpo/2000102",
+      "lbl" : "has phenotype",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/IAO_0000115",
       "type" : "PROPERTY",
       "propertyType" : "ANNOTATION"
@@ -12733,11 +12743,19 @@
       "sub" : "https://w3id.org/metpo/2000051",
       "pred" : "subPropertyOf",
       "obj" : "https://w3id.org/metpo/2000001"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000102",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000101"
     } ],
     "domainRangeAxioms" : [ {
       "predicateId" : "https://w3id.org/metpo/2000001",
       "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
       "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000101",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1000188" ]
     } ]
   } ]
 }

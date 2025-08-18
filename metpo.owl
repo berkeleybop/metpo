@@ -13,10 +13,10 @@
      xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="https://w3id.org/metpo/metpo.owl">
-        <owl:versionIRI rdf:resource="https://w3id.org/metpo/metpo/releases/2025-07-02/metpo.owl"/>
+        <owl:versionIRI rdf:resource="https://w3id.org/metpo/metpo/releases/2025-08-18/metpo.owl"/>
         <dcterms:description>Microbial ecophysiological trait and phenotype ontology</dcterms:description>
         <dcterms:title>METPO</dcterms:title>
-        <owl:versionInfo>2025-07-02</owl:versionInfo>
+        <owl:versionInfo>2025-08-18</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -940,6 +940,25 @@
         <owl:annotatedTarget>anaerobic growth with light</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
     </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/2000101 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000101">
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1000188"/>
+        <rdfs:label>has quality</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000102 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000102">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000101"/>
+        <rdfs:label>has phenotype</rdfs:label>
+    </owl:ObjectProperty>
     
 
 
