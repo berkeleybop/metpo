@@ -1,0 +1,1327 @@
+---
+input_text: |
+  {'content': 'Meiothermus hypogaeus sp. nov., a moderately thermophilic bacterium isolated from a hot spring.\n\nA novel moderately thermophilic, red-pigmented bacterium, designated strain AZM34c11(T), was isolated from the bottom of a 1000 m-deep drilled well located in a Japanese hot spring. Cells were Gram-negative and grew optimally at 50 °C, at pH 7.6 and with 0-0.3% (w/v) NaCl. Analysis of the 16S rRNA gene sequence revealed that the isolate belonged to the genus Meiothermus. Levels of 16S rRNA gene sequence similarity between strain AZM34c11(T) and the type strains of recognized Meiothermus species were 88.2-94.8%. Strain AZM34c11(T) was distinguished from recognized Meiothermus species by its cellular fatty acid profile: iso-C(16:0) was one of the predominant components and hydroxy fatty acids were present only in trace amounts. The strain could also be differentiated based on its growth substrate preferences and characteristic enzyme reactions. On the basis of these results, strain AZM34c11(T) is considered to represent a novel species of the genus Meiothermus, for which the name Meiothermus hypogaeus sp. nov. is proposed. The type strain is AZM34c11(T) (=NBRC 106114(T) =DSM 23238(T)).\n\nPMID:21335495', 'saved_to': None, 'windowed': False}
+raw_completion_output: |-
+  pmid: 21335495  
+  study_taxa: Meiothermus  
+  strains: AZM34c11(T); NBRC 106114(T); DSM 23238(T)  
+  cell_shape: Not explicitly mentioned  
+  cell_arrangements: Not explicitly mentioned  
+  gram_staining: Gram-negative  
+  motility: Not explicitly mentioned  
+  spore_formation: Not explicitly mentioned  
+  cell_wall_characteristics: Not explicitly mentioned  
+  cellular_inclusions: Not explicitly mentioned  
+  cell_shape_relationships: None  
+  cell_arrangement_relationships: None  
+  gram_staining_relationships: AZM34c11(T) stains_as Gram-negative; NBRC 106114(T) stains_as Gram-negative; DSM 23238(T) stains_as Gram-negative  
+  motility_relationships: None  
+  spore_formation_relationships: None  
+  cell_wall_relationships: None  
+  cellular_inclusion_relationships: None  
+  strain_relationships: AZM34c11(T) strain_of Meiothermus hypogaeus; NBRC 106114(T) type_strain_of Meiothermus hypogaeus; DSM 23238(T) type_strain_of Meiothermus hypogaeus
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  subject: <the specific strain designation or identifier>
+  predicate: <the type of strain-taxon relationship (strain_of, type_strain_of, isolate_of, etc.)Must be one of: strain_of, type_strain_of, reference_strain_of, isolate_of, variant_of>
+  object: <the parent species or genus this strain belongs to>
+
+
+  Text:
+  DSM 23238(T) type_strain_of Meiothermus hypogaeus
+
+  ===
+
+extracted_object:
+  pmid: '21335495'
+  study_taxa:
+    - NCBITaxon:65551
+  strains:
+    - AUTO:AZM34c11%28T%29
+    - AUTO:NBRC%20106114%28T%29
+    - AUTO:DSM%2023238%28T%29
+  cell_shape:
+    - AUTO:Not%20explicitly%20mentioned
+  cell_arrangements:
+    - AUTO:Not%20explicitly%20mentioned
+  gram_staining:
+    - <https://w3id.org/metpo/1000143>
+  motility:
+    - AUTO:Not%20explicitly%20mentioned
+  spore_formation:
+    - AUTO:Not%20explicitly%20mentioned
+  cell_wall_characteristics:
+    - AUTO:Not%20explicitly%20mentioned
+  cellular_inclusions:
+    - AUTO:Not%20explicitly%20mentioned
+  cell_shape_relationships:
+    - subject: AUTO:None
+      object: AUTO:None
+  cell_arrangement_relationships:
+    - subject: AUTO:None
+      object: AUTO:None
+  gram_staining_relationships:
+    - subject: AUTO:AZM34c11%28T%29
+      predicate: has_gram_staining
+      object: <https://w3id.org/metpo/1000143>
+    - subject: AUTO:NBRC%20106114%28T%29
+      predicate: has_gram_staining
+      object: <https://w3id.org/metpo/1000143>
+    - subject: AUTO:DSM%2023238%28T%29
+      predicate: has_gram_staining
+      object: <https://w3id.org/metpo/1000143>
+  strain_relationships:
+    - subject: AUTO:AZM34c11%28T%29
+      predicate: strain_of
+      object: NCBITaxon:884155
+    - subject: AUTO:NBRC%20106114%28T%29
+      predicate: type_strain_of
+      object: NCBITaxon:884155
+    - subject: AUTO:DSM%2023238%28T%29
+      predicate: type_strain_of
+      object: NCBITaxon:884155
+named_entities:
+  - id: NCBITaxon:65551
+    label: Meiothermus
+    original_spans:
+      - 13:23
+      - 473:483
+      - 592:602
+      - 682:692
+      - 1073:1083
+      - 1105:1115
+  - id: AUTO:AZM34c11%28T%29
+    label: AZM34c11(T)
+    original_spans:
+      - 188:198
+      - 545:555
+      - 636:646
+      - 1005:1015
+      - 1168:1178
+  - id: AUTO:NBRC%20106114%28T%29
+    label: NBRC 106114(T)
+    original_spans:
+      - 1182:1195
+  - id: AUTO:DSM%2023238%28T%29
+    label: DSM 23238(T)
+    original_spans:
+      - 1198:1209
+  - id: AUTO:Not%20explicitly%20mentioned
+    label: Not explicitly mentioned
+  - id: <https://w3id.org/metpo/1000143>
+    label: Gram-negative
+    original_spans:
+      - 305:317
+  - id: AUTO:None
+    label: None
+    original_spans:
+      - 1244:1247
+  - id: NCBITaxon:884155
+    label: Meiothermus hypogaeus
+    original_spans:
+      - 13:33
+      - 1105:1125
+---
+input_text: |
+  {'content': 'Thiomicrospira halophila sp. nov., a moderately halophilic, obligately chemolithoautotrophic, sulfur-oxidizing bacterium from hypersaline lakes.\n\nEnrichments at 2 M NaCl and pH 7.5-8, with thiosulfate or sulfide as electron donor, inoculated with sediments from hypersaline chloride-sulfate lakes of the Kulunda Steppe (Altai, Russia) resulted in the domination of two different groups of moderately halophilic, chemolithoautotrophic, sulfur-oxidizing bacteria. Under fully aerobic conditions with thiosulfate, bacteria belonging to the genus Halothiobacillus dominated while, under microaerophilic conditions, a highly motile, short vibrio-shaped phenotype outcompeted the halothiobacilli. Three genetically and phenotypically highly similar vibrio-shaped isolates were obtained in pure culture and one of them, strain HL 5(T), was identified as a member of the Thiomicrospira crunogena cluster by 16S rRNA gene sequencing. The new isolates were able to grow with thiosulfate as electron donor within a broad salinity range from 0.5 to 3.5 M NaCl with an optimum at 1.5 M and within a pH range from 6.5 to 8.5 with an optimum at pH 7.5-7.8. Comparative analysis of ribulose-1,5-bisphosphate carboxylase/oxygenase (RuBisCO) gene sequences demonstrated that strain HL 5(T) possessed two genes, cbbL-1 and cbbL-2, of the form I RuBisCO and a cbbM gene of the form II RuBisCO, similar to the other members of the Thiomicrospira crunogena cluster. On the basis of phenotypic and genetic comparison, the new halophilic isolates are proposed to be placed into a novel species, Thiomicrospira halophila sp. nov. (type strain HL 5(T)=DSM 15072(T)=UNIQEM U 221(T)).\n\nPMID:17012565', 'saved_to': None, 'windowed': False}
+raw_completion_output: |-
+  ```plaintext
+  pmid: 17012565
+  study_taxa: Thiomicrospira;Halothiobacillus
+  strains: HL 5T;DSM 15072T;UNIQEM U 221T
+  cell_shape: vibrio
+  cell_arrangements: single
+  gram_staining: 
+  motility: motile
+  spore_formation: 
+  cell_wall_characteristics: 
+  cellular_inclusions: 
+  cell_shape_relationships: strain HL 5T has_cell_shape vibrio; DSM 15072T has_cell_shape vibrio; UNIQEM U 221T has_cell_shape vibrio
+  cell_arrangement_relationships: strain HL 5T forms_arrangement single; DSM 15072T forms_arrangement single; UNIQEM U 221T forms_arrangement single
+  gram_staining_relationships: 
+  motility_relationships: strain HL 5T demonstrates_motility motile; DSM 15072T demonstrates_motility motile; UNIQEM U 221T demonstrates_motility motile
+  spore_formation_relationships: 
+  cell_wall_relationships: 
+  cellular_inclusion_relationships: 
+  strain_relationships: HL 5T type_strain_of Thiomicrospira halophila; DSM 15072T type_strain_of Thiomicrospira halophila; UNIQEM U 221T type_strain_of Thiomicrospira halophila
+  ```
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  subject: <the strain with this cell arrangement>
+  predicate: <the type of cell arrangement relationshipMust be one of: has_cell_shape, has_arrangement, has_gram_staining, has_motility, has_spore_formation, has_cell_wall_feature, has_inclusion>
+  object: <the specific cell arrangement pattern>
+
+
+  Text:
+  UNIQEM U 221T forms_arrangement single
+
+  ===
+
+extracted_object:
+  pmid: '17012565'
+  study_taxa:
+    - NCBITaxon:933
+    - NCBITaxon:109262
+  strains:
+    - AUTO:HL%205T
+    - AUTO:DSM%2015072T
+    - AUTO:UNIQEM%20U%20221T
+  cell_shape:
+    - <https://w3id.org/metpo/1000321>
+  cell_arrangements:
+    - AUTO:single
+  cell_arrangement_relationships:
+    - subject: AUTO:strain%20HL%205T
+      predicate: has_arrangement
+      object: AUTO:single
+    - subject: AUTO:DSM%2015072T
+      predicate: has_arrangement
+      object: AUTO:single
+    - subject: AUTO:UNIQEM%20U%20221T
+      predicate: has_arrangement
+      object: AUTO:single
+named_entities:
+  - id: NCBITaxon:933
+    label: Thiomicrospira
+    original_spans:
+      - 13:26
+      - 878:891
+      - 1425:1438
+      - 1586:1599
+  - id: NCBITaxon:109262
+    label: Halothiobacillus
+    original_spans:
+      - 558:573
+  - id: AUTO:HL%205T
+    label: HL 5T
+  - id: AUTO:DSM%2015072T
+    label: DSM 15072T
+  - id: AUTO:UNIQEM%20U%20221T
+    label: UNIQEM U 221T
+  - id: <https://w3id.org/metpo/1000321>
+    label: vibrio
+    original_spans:
+      - 649:654
+      - 758:763
+  - id: AUTO:single
+    label: single
+  - id: AUTO:strain%20HL%205T
+    label: strain HL 5T
+---
+input_text: |
+  {'content': 'Bacillus terrae sp. nov. isolated from Cistus ladanifer rhizosphere soil.\n\nA bacterial strain designated RA9T was isolated from a root of Cistus ladanifer in Spain. Phylogenetic analyses based on 16S rRNA gene sequences placed the isolate into the genus Bacillus with its closest relatives being Bacillus fortis R-6514T and Bacillus fordii R-7190T with 98.2 % similarity in both cases. DNA-DNA hybridization studies showed mean relatedness values of 29 and 30 %, respectively, between strain RA9T and the type strains of B. fortis and B. fordii. Cells of the isolate were Gram-stain-positive, motile, sporulating rods. Catalase and oxidase were positive. Gelatin, starch and casein were not hydrolysed. Menaquinone MK-7 was the only menaquinone detected and iso-C15 : 0 and anteiso-C15 : 0 were the major fatty acids. The polar lipid profile consisted of diphosphatidylglycerol, phosphatidylglycerol, phosphatidylethanolamine, one unidentified aminophospholipid, one unidentified phospholipid, one unidentifed glycolipid and one unidentified lipid. meso-Diaminopimelic acid was detected in the peptidoglycan. The DNA G+C content was 43.1 mol%. Phylogenetic, chemotaxonomic and phenotypic analyses showed that strain RA9T should be considered as representing a novel species of the genus Bacillus, for which the name Bacillus terrae sp. nov. is proposed. The type strain is RA9T (=LMG 29736T=CECT 9170T).\n\nPMID:27983469', 'saved_to': None, 'windowed': False}
+raw_completion_output: |-
+  pmid: 27983469  
+  study_taxa: Bacillus  
+  strains: RA9T; LMG 29736T; CECT 9170T; R-6514T; R-7190T  
+  cell_shape: rod  
+  cell_arrangements: single  
+  gram_staining: Gram-positive  
+  motility: motile  
+  spore_formation: sporulating  
+  cell_wall_characteristics: peptidoglycan  
+  cellular_inclusions: None  
+  cell_shape_relationships: RA9T has_cell_shape rod; LMG 29736T has_cell_shape rod; CECT 9170T has_cell_shape rod  
+  cell_arrangement_relationships: RA9T forms_arrangement single; LMG 29736T forms_arrangement single; CECT 9170T forms_arrangement single  
+  gram_staining_relationships: RA9T stains_as Gram-positive; LMG 29736T stains_as Gram-positive; CECT 9170T stains_as Gram-positive  
+  motility_relationships: RA9T demonstrates_motility motile; LMG 29736T demonstrates_motility motile; CECT 9170T demonstrates_motility motile  
+  spore_formation_relationships: RA9T exhibits_sporulation sporulating; LMG 29736T exhibits_sporulation sporulating; CECT 9170T exhibits_sporulation sporulating  
+  cell_wall_relationships: RA9T contains_cell_wall_component peptidoglycan; LMG 29736T contains_cell_wall_component peptidoglycan; CECT 9170T contains_cell_wall_component peptidoglycan  
+  cellular_inclusion_relationships: None  
+  strain_relationships: RA9T strain_of Bacillus terrae; LMG 29736T type_strain_of Bacillus terrae; CECT 9170T type_strain_of Bacillus terrae; R-6514T strain_of Bacillus fortis; R-7190T strain_of Bacillus fordii  
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  subject: <the specific strain designation or identifier>
+  predicate: <the type of strain-taxon relationship (strain_of, type_strain_of, isolate_of, etc.)Must be one of: strain_of, type_strain_of, reference_strain_of, isolate_of, variant_of>
+  object: <the parent species or genus this strain belongs to>
+
+
+  Text:
+  R-7190T strain_of Bacillus fordii
+
+  ===
+
+extracted_object:
+  pmid: '27983469'
+  study_taxa:
+    - NCBITaxon:1386
+  strains:
+    - AUTO:RA9T
+    - AUTO:LMG%2029736T
+    - AUTO:CECT%209170T
+    - AUTO:R-6514T
+    - AUTO:R-7190T
+  cell_shape:
+    - <https://w3id.org/metpo/1000503>
+  cell_arrangements:
+    - AUTO:single
+  gram_staining:
+    - <https://w3id.org/metpo/1000144>
+  motility:
+    - <https://w3id.org/metpo/1000379>
+  spore_formation:
+    - <https://w3id.org/metpo/1000286>
+  cell_wall_characteristics:
+    - <https://w3id.org/metpo/1000231>
+  cellular_inclusions:
+    - AUTO:None
+  cell_shape_relationships:
+    - subject: AUTO:RA9T
+      predicate: has_cell_shape
+      object: <https://w3id.org/metpo/1000503>
+    - subject: AUTO:LMG%2029736T
+      predicate: has_cell_shape
+      object: <https://w3id.org/metpo/1000503>
+    - subject: AUTO:CECT%209170T
+      predicate: has_cell_shape
+      object: <https://w3id.org/metpo/1000503>
+  cell_arrangement_relationships:
+    - subject: AUTO:RA9T
+      predicate: has_arrangement
+      object: AUTO:single
+    - subject: AUTO:LMG%2029736T
+      predicate: has_arrangement
+      object: AUTO:single
+    - subject: AUTO:CECT%209170T
+      predicate: has_arrangement
+      object: AUTO:single
+  gram_staining_relationships:
+    - subject: AUTO:RA9T
+      predicate: has_gram_staining
+      object: <https://w3id.org/metpo/1000144>
+    - subject: AUTO:LMG%2029736T
+      predicate: has_gram_staining
+      object: <https://w3id.org/metpo/1000144>
+    - subject: AUTO:CECT%209170T
+      predicate: has_gram_staining
+      object: <https://w3id.org/metpo/1000144>
+  motility_relationships:
+    - subject: AUTO:RA9T
+      predicate: has_motility
+      object: <https://w3id.org/metpo/1000379>
+    - subject: AUTO:LMG%2029736T
+      predicate: has_motility
+      object: <https://w3id.org/metpo/1000379>
+    - subject: AUTO:CECT%209170T
+      predicate: has_motility
+      object: <https://w3id.org/metpo/1000379>
+  spore_formation_relationships:
+    - subject: AUTO:RA9T
+      predicate: has_spore_formation
+      object: <https://w3id.org/metpo/1000286>
+    - subject: AUTO:LMG%2029736T
+      predicate: has_spore_formation
+      object: <https://w3id.org/metpo/1000286>
+    - subject: AUTO:CECT%209170T
+      predicate: has_spore_formation
+      object: <https://w3id.org/metpo/1000286>
+  cell_wall_relationships:
+    - subject: AUTO:RA9T
+      predicate: has_cell_wall_feature
+      object: <https://w3id.org/metpo/1000231>
+    - subject: AUTO:LMG%2029736T
+      predicate: has_cell_wall_feature
+      object: <https://w3id.org/metpo/1000231>
+    - subject: AUTO:CECT%209170T
+      predicate: has_cell_wall_feature
+      object: <https://w3id.org/metpo/1000231>
+  strain_relationships:
+    - subject: AUTO:RA9T
+      predicate: strain_of
+      object: NCBITaxon:1914933
+    - subject: AUTO:LMG%2029736T
+      predicate: type_strain_of
+      object: NCBITaxon:1914933
+    - subject: AUTO:CECT%209170T
+      predicate: type_strain_of
+      object: NCBITaxon:1914933
+    - subject: AUTO:R-6514T
+      predicate: strain_of
+      object: NCBITaxon:254758
+    - subject: AUTO:R-7190T
+      predicate: strain_of
+      object: NCBITaxon:254759
+named_entities:
+  - id: NCBITaxon:1386
+    label: Bacillus
+    original_spans:
+      - 13:20
+      - 269:276
+      - 311:318
+      - 339:346
+      - 1302:1309
+      - 1331:1338
+  - id: AUTO:RA9T
+    label: RA9T
+    original_spans:
+      - 120:123
+      - 507:510
+      - 1231:1234
+      - 1388:1391
+  - id: AUTO:LMG%2029736T
+    label: LMG 29736T
+    original_spans:
+      - 1395:1404
+  - id: AUTO:CECT%209170T
+    label: CECT 9170T
+    original_spans:
+      - 1406:1415
+  - id: AUTO:R-6514T
+    label: R-6514T
+    original_spans:
+      - 327:333
+  - id: AUTO:R-7190T
+    label: R-7190T
+    original_spans:
+      - 355:361
+  - id: <https://w3id.org/metpo/1000503>
+    label: rod
+    original_spans:
+      - 628:630
+  - id: <https://w3id.org/metpo/1000144>
+    label: Gram-positive
+  - id: <https://w3id.org/metpo/1000379>
+    label: motile
+    original_spans:
+      - 608:613
+  - id: <https://w3id.org/metpo/1000286>
+    label: sporulating
+    original_spans:
+      - 616:626
+  - id: <https://w3id.org/metpo/1000231>
+    label: peptidoglycan
+    original_spans:
+      - 1109:1121
+  - id: NCBITaxon:1914933
+    label: Bacillus terrae
+    original_spans:
+      - 13:27
+      - 1331:1345
+  - id: NCBITaxon:254758
+    label: Bacillus fortis
+    original_spans:
+      - 311:325
+  - id: NCBITaxon:254759
+    label: Bacillus fordii
+    original_spans:
+      - 339:353
+---
+input_text: |
+  {'content': 'Pseudooceanicola onchidii sp. nov., isolated from a marine invertebrate from the South China Sea.\n\nA novel bacterial strain, XY-99T, was isolated from the epidermis of a marine invertebrate of the genus Onchidium from seawater of the South China Sea. The cells of the strain were aerobic, Gram-stain-negative, non-motile, and oval-shaped (0.8-1.0 µm wide and 1.0-1.5 µm long) without a flagellum. The strain grew at temperatures of 15-37 °C (optimum, 35-37 °C), at pH 5.5-9.5 (optimum 7.5), and at NaCl concentrations of 0-12.0 % (w/v) (optimum 1.5-3.0 %). The major fatty acids (>10 %) were summed feature 8 (comprising C18 : 1ω7c and/or C18 : 1ω6c), C16 : 0 and 11-methyl C18 : 1ω7c. The predominant polar lipid was diphosphatidylglycerol. The respiratory quinone was Q-10. The closet phylogenetic neighbours were Pseudooceanicola flagellatus DY470T and Pseudooceanicola nitratireducens JLT1210T, showing 97.5 and 97.3 % of 16 s rRNA gene sequence similarity. The genome size of XY-99T was 3 673 499 bp, with 64.5 % DNA G+C content. The average nucleotide identity and digital DNA-DNA hybridization values between XY-99T and Pseudooceanicola flagellatus DY470T were 72.8 and 14.0 %, respectively, while they were 79.3 and 22.3 % between XY-99T and Pseudooceanicola nitratireducens JLT1210T. Characterization based on phylogenetic, phenotypic, chemotaxonomic and genomic evidence demonstrated that XY-99T represents a novel species of the genus Pseudooceanicola, for which the name Pseudooceanicola onchidii sp. nov. is proposed. The type strain is XY-99T (=KCTC 72211T=MCCC 1K03607T).\n\nPMID:31778352', 'saved_to': None, 'windowed': False}
+raw_completion_output: |-
+  pmid: 31778352  
+  study_taxa: Pseudooceanicola  
+  strains: XY-99T; KCTC 72211T; MCCC 1K03607T  
+  cell_shape: oval-shaped 0.8-1.0 µm wide and 1.0-1.5 µm long  
+  cell_arrangements: single  
+  gram_staining: Gram-negative  
+  motility: non-motile  
+  spore_formation: non-spore-forming  
+  cell_wall_characteristics: not explicitly mentioned  
+  cellular_inclusions: not explicitly mentioned  
+
+  cell_shape_relationships: XY-99T has_cell_shape oval-shaped 0.8-1.0 µm wide and 1.0-1.5 µm long  
+  cell_arrangement_relationships: XY-99T forms_arrangement single  
+  gram_staining_relationships: XY-99T stains_as Gram-negative  
+  motility_relationships: XY-99T shows_motility non-motile  
+  spore_formation_relationships: XY-99T shows_sporulation non-spore-forming  
+  cell_wall_relationships:  
+  cellular_inclusion_relationships:  
+  strain_relationships: XY-99T strain_of Pseudooceanicola onchidii; KCTC 72211T type_strain_of Pseudooceanicola onchidii; MCCC 1K03607T type_strain_of Pseudooceanicola onchidii
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  subject: <the strain with this spore formation characteristic>
+  predicate: <the type of spore formation relationshipMust be one of: has_cell_shape, has_arrangement, has_gram_staining, has_motility, has_spore_formation, has_cell_wall_feature, has_inclusion>
+  object: <the specific spore formation characteristic>
+
+
+  Text:
+  XY-99T shows_sporulation non-spore-forming
+
+  ===
+
+extracted_object:
+  pmid: '31778352'
+  study_taxa:
+    - NCBITaxon:1679449
+  strains:
+    - AUTO:XY-99T
+    - AUTO:KCTC%2072211T
+    - AUTO:MCCC%201K03607T
+  cell_shape:
+    - AUTO:oval-shaped%200.8-1.0%20%C2%B5m%20wide%20and%201.0-1.5%20%C2%B5m%20long
+  cell_arrangements:
+    - AUTO:single
+  gram_staining:
+    - <https://w3id.org/metpo/1000143>
+  motility:
+    - <https://w3id.org/metpo/1000380>
+  spore_formation:
+    - AUTO:non-spore-forming
+  cell_wall_characteristics:
+    - AUTO:not%20explicitly%20mentioned
+  cellular_inclusions:
+    - AUTO:not%20explicitly%20mentioned
+  cell_shape_relationships:
+    - subject: AUTO:XY-99T
+      predicate: has_cell_shape
+      object: AUTO:oval-shaped
+  cell_arrangement_relationships:
+    - subject: AUTO:XY-99T
+      predicate: has_arrangement
+      object: AUTO:single
+  gram_staining_relationships:
+    - subject: AUTO:XY-99T
+      predicate: has_gram_staining
+      object: <https://w3id.org/metpo/1000143>
+  motility_relationships:
+    - subject: AUTO:XY-99T
+      predicate: has_motility
+      object: <https://w3id.org/metpo/1000380>
+  spore_formation_relationships:
+    - subject: AUTO:XY-99T
+      predicate: has_spore_formation
+      object: AUTO:non-spore-forming
+named_entities:
+  - id: NCBITaxon:1679449
+    label: Pseudooceanicola
+    original_spans:
+      - 13:28
+      - 831:846
+      - 871:886
+      - 1142:1157
+      - 1265:1280
+      - 1461:1476
+      - 1498:1513
+  - id: AUTO:XY-99T
+    label: XY-99T
+    original_spans:
+      - 140:145
+      - 996:1001
+      - 1131:1136
+      - 1254:1259
+      - 1414:1419
+      - 1565:1570
+  - id: AUTO:KCTC%2072211T
+    label: KCTC 72211T
+    original_spans:
+      - 1574:1584
+  - id: AUTO:MCCC%201K03607T
+    label: MCCC 1K03607T
+    original_spans:
+      - 1586:1598
+  - id: 
+      AUTO:oval-shaped%200.8-1.0%20%C2%B5m%20wide%20and%201.0-1.5%20%C2%B5m%20long
+    label: oval-shaped 0.8-1.0 µm wide and 1.0-1.5 µm long
+  - id: <https://w3id.org/metpo/1000380>
+    label: non-motile
+    original_spans:
+      - 325:334
+  - id: AUTO:non-spore-forming
+    label: non-spore-forming
+  - id: AUTO:not%20explicitly%20mentioned
+    label: not explicitly mentioned
+  - id: AUTO:oval-shaped
+    label: oval-shaped
+    original_spans:
+      - 341:351
+---
+input_text: |
+  {'content': 'Pandoraea terrae sp. nov., isolated from forest soil, and emended description of the genus Pandoraea Coenye et al. 2000.\n\nA Gram-staining-negative, facultatively aerobic, white-colony-forming bacterium, designated strain SE-S21T, was isolated from forest soil of Jeju Island in Korea. Cells were motile rods with a single polar flagellum, showing catalase- and oxidase-positive reactions. Growth was observed at 10-40 °C (optimum, 30 °C), pH 4.0-10.0 (optimum, pH 7.0-7.5) and with 0-4.0 % (w/v) NaCl (optimum, 0-2 %). Only ubiquinone-8 was detected as the isoprenoid quinone, and C16 : 0, C17 : 0 cyclo, C19 : 1ω8c cyclo and summed feature 2 (comprising C12 : 0 aldehyde and/or unknown) were found to be the major fatty acids. Phosphatidylethanolamine, diphosphatidylglycerol, phosphatidylglycerol, an unknown aminophospholipid, an unknown aminolipid and an unknown lipid were detected as the major polar lipids. Putrescine and 2-hydroxyputrescine were the predominant polyamines. The DNA G+C content was 61.0 mol%. Phylogenetic analyses based on 16S rRNA and DNA gyrase B gene sequences revealed that strain SE-S21T formed a phyletic lineage within the genus Pandoraea. Strain SE-S21T was most closely related to Pandoraea faecigallinarum KOxT and Pandoraea pnomenusa CCUG 38742T with 98.8 % and 98.7 % 16S rRNA gene sequence similarities, respectively. However, the DNA-DNA relatedness values between strain SE-S21T and the type strains of P. faecigallinarum and P. pnomenusa were 26.6±5.7 % and 20.5±3.7 %, respectively. On the basis of phenotypic, chemotaxonomic and molecular features, strain SE-S21T clearly represents a novel species of the genus Pandoraea, for which the name Pandoraea terrae sp. nov. is proposed. The type strain is SE-S21T (=KACC 18127T=JCM 30137T). An emended description of the genus Pandoraea is also proposed.\n\nPMID:27267599', 'saved_to': None, 'windowed': False}
+raw_completion_output: |-
+  ```plaintext
+  pmid: 27267599
+  study_taxa: Pandoraea
+  strains: SE-S21T; KACC 18127T; JCM 30137T; KOxT; CCUG 38742T
+  cell_shape: rod
+  cell_arrangements: single
+  gram_staining: Gram-negative
+  motility: motile; single polar flagellum
+  spore_formation: non-spore-forming
+  cell_wall_characteristics: thin cell wall; outer membrane
+  cellular_inclusions: None
+  cell_shape_relationships: SE-S21T has_cell_shape rod; KACC 18127T has_cell_shape rod; JCM 30137T has_cell_shape rod; KOxT has_cell_shape rod; CCUG 38742T has_cell_shape rod
+  cell_arrangement_relationships: SE-S21T forms_arrangement single; KACC 18127T forms_arrangement single; JCM 30137T forms_arrangement single; KOxT forms_arrangement single; CCUG 38742T forms_arrangement single
+  gram_staining_relationships: SE-S21T stains_as Gram-negative; KACC 18127T stains_as Gram-negative; JCM 30137T stains_as Gram-negative; KOxT stains_as Gram-negative; CCUG 38742T stains_as Gram-negative
+  motility_relationships: SE-S21T demonstrates_motility motile; SE-S21T demonstrates_motility single polar flagellum; KACC 18127T demonstrates_motility motile; KACC 18127T demonstrates_motility single polar flagellum; JCM 30137T demonstrates_motility motile; JCM 30137T demonstrates_motility single polar flagellum; KOxT demonstrates_motility motile; KOxT demonstrates_motility single polar flagellum; CCUG 38742T demonstrates_motility motile; CCUG 38742T demonstrates_motility single polar flagellum
+  spore_formation_relationships: SE-S21T shows_sporulation non-spore-forming; KACC 18127T shows_sporulation non-spore-forming; JCM 30137T shows_sporulation non-spore-forming; KOxT shows_sporulation non-spore-forming; CCUG 38742T shows_sporulation non-spore-forming
+  cell_wall_relationships: SE-S21T contains_cell_wall_component thin cell wall; SE-S21T contains_cell_wall_component outer membrane; KACC 18127T contains_cell_wall_component thin cell wall; KACC 18127T contains_cell_wall_component outer membrane; JCM 30137T contains_cell_wall_component thin cell wall; JCM 30137T contains_cell_wall_component outer membrane; KOxT contains_cell_wall_component thin cell wall; KOxT contains_cell_wall_component outer membrane; CCUG 38742T contains_cell_wall_component thin cell wall; CCUG 38742T contains_cell_wall_component outer membrane
+  cellular_inclusion_relationships: None
+  strain_relationships: SE-S21T strain_of Pandoraea terrae; KACC 18127T type_strain_of Pandoraea terrae; JCM 30137T type_strain_of Pandoraea terrae; KOxT strain_of Pandoraea faecigallinarum; CCUG 38742T type_strain_of Pandoraea pnomenusa
+  ```
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  subject: <the specific strain designation or identifier>
+  predicate: <the type of strain-taxon relationship (strain_of, type_strain_of, isolate_of, etc.)Must be one of: strain_of, type_strain_of, reference_strain_of, isolate_of, variant_of>
+  object: <the parent species or genus this strain belongs to>
+
+
+  Text:
+  CCUG 38742T type_strain_of Pandoraea pnomenusa
+
+  ===
+
+extracted_object:
+  pmid: '27267599'
+  study_taxa:
+    - NCBITaxon:93217
+  strains:
+    - AUTO:SE-S21T
+    - AUTO:KACC%2018127T
+    - AUTO:JCM%2030137T
+    - AUTO:KOxT
+    - AUTO:CCUG%2038742T
+  cell_shape:
+    - <https://w3id.org/metpo/1000503>
+  cell_arrangements:
+    - AUTO:single
+  gram_staining:
+    - <https://w3id.org/metpo/1000143>
+  motility:
+    - <https://w3id.org/metpo/1000379>
+    - AUTO:single%20polar%20flagellum
+  spore_formation:
+    - AUTO:non-spore-forming
+  cell_wall_characteristics:
+    - AUTO:thin%20cell%20wall
+    - AUTO:outer%20membrane
+  cellular_inclusions:
+    - AUTO:None
+  cell_shape_relationships:
+    - subject: AUTO:SE-S21T
+      predicate: has_cell_shape
+      object: <https://w3id.org/metpo/1000503>
+    - subject: AUTO:KACC%2018127T
+      predicate: has_cell_shape
+      object: <https://w3id.org/metpo/1000503>
+    - subject: AUTO:JCM%2030137T
+      predicate: has_cell_shape
+      object: <https://w3id.org/metpo/1000503>
+    - subject: AUTO:KOxT
+      predicate: has_cell_shape
+      object: <https://w3id.org/metpo/1000503>
+    - subject: AUTO:CCUG%2038742T
+      predicate: has_cell_shape
+      object: <https://w3id.org/metpo/1000503>
+  cell_arrangement_relationships:
+    - subject: AUTO:SE-S21T
+      predicate: has_arrangement
+      object: AUTO:single
+    - subject: AUTO:KACC%2018127T
+      predicate: has_arrangement
+      object: AUTO:single
+    - subject: AUTO:JCM%2030137T
+      predicate: has_arrangement
+      object: AUTO:single
+    - subject: AUTO:KOxT
+      predicate: has_arrangement
+      object: AUTO:single
+    - subject: AUTO:CCUG%2038742T
+      predicate: has_arrangement
+      object: AUTO:single
+  gram_staining_relationships:
+    - subject: AUTO:SE-S21T
+      predicate: has_gram_staining
+      object: <https://w3id.org/metpo/1000143>
+    - subject: AUTO:KACC%2018127T
+      predicate: has_gram_staining
+      object: <https://w3id.org/metpo/1000143>
+    - subject: AUTO:JCM%2030137T
+      predicate: has_gram_staining
+      object: <https://w3id.org/metpo/1000143>
+    - subject: AUTO:KOxT
+      predicate: has_gram_staining
+      object: <https://w3id.org/metpo/1000143>
+    - subject: AUTO:CCUG%2038742T
+      predicate: has_gram_staining
+      object: <https://w3id.org/metpo/1000143>
+  motility_relationships:
+    - subject: AUTO:SE-S21T
+      predicate: has_motility
+      object: <https://w3id.org/metpo/1000379>
+    - subject: AUTO:SE-S21T
+      predicate: has_motility
+      object: AUTO:single%20polar%20flagellum
+    - subject: AUTO:KACC%2018127T
+      predicate: has_motility
+      object: <https://w3id.org/metpo/1000379>
+    - subject: AUTO:KACC%2018127T
+      predicate: has_motility
+      object: AUTO:single%20polar%20flagellum
+    - subject: AUTO:JCM%2030137T
+      predicate: has_motility
+      object: <https://w3id.org/metpo/1000379>
+    - subject: AUTO:JCM%2030137T
+      predicate: has_motility
+      object: AUTO:single%20polar%20flagellum
+    - subject: AUTO:KOxT
+      predicate: has_motility
+      object: <https://w3id.org/metpo/1000379>
+    - subject: AUTO:KOxT
+      predicate: has_motility
+      object: AUTO:single%20polar%20flagellum
+    - subject: AUTO:CCUG%2038742T
+      predicate: has_motility
+      object: <https://w3id.org/metpo/1000379>
+    - subject: AUTO:CCUG%2038742T
+      predicate: has_motility
+      object: AUTO:single%20polar%20flagellum
+  spore_formation_relationships:
+    - subject: AUTO:SE-S21T
+      predicate: has_spore_formation
+      object: AUTO:non-spore-forming
+    - subject: AUTO:KACC%2018127T
+      predicate: has_spore_formation
+      object: AUTO:non-spore-forming
+    - subject: AUTO:JCM%2030137T
+      predicate: has_spore_formation
+      object: AUTO:non-spore-forming
+    - subject: AUTO:KOxT
+      predicate: has_spore_formation
+      object: AUTO:non-spore-forming
+    - subject: AUTO:CCUG%2038742T
+      predicate: has_spore_formation
+      object: AUTO:non-spore-forming
+  cell_wall_relationships:
+    - subject: AUTO:SE-S21T
+      predicate: has_cell_wall_feature
+      object: AUTO:thin%20cell%20wall
+    - subject: AUTO:SE-S21T
+      predicate: has_cell_wall_feature
+      object: AUTO:outer%20membrane
+    - subject: AUTO:KACC%2018127T
+      predicate: has_cell_wall_feature
+      object: AUTO:thin%20cell%20wall
+    - subject: AUTO:KACC%2018127T
+      predicate: has_cell_wall_feature
+      object: AUTO:outer%20membrane
+    - subject: AUTO:JCM%2030137T
+      predicate: has_cell_wall_feature
+      object: AUTO:thin%20cell%20wall
+    - subject: AUTO:JCM%2030137T
+      predicate: has_cell_wall_feature
+      object: AUTO:outer%20membrane
+    - subject: AUTO:KOxT
+      predicate: has_cell_wall_feature
+      object: AUTO:thin%20cell%20wall
+    - subject: AUTO:KOxT
+      predicate: has_cell_wall_feature
+      object: AUTO:outer%20membrane
+    - subject: AUTO:CCUG%2038742T
+      predicate: has_cell_wall_feature
+      object: AUTO:thin%20cell%20wall
+    - subject: AUTO:CCUG%2038742T
+      predicate: has_cell_wall_feature
+      object: AUTO:outer%20membrane
+  strain_relationships:
+    - subject: AUTO:SE-S21T
+      predicate: strain_of
+      object: NCBITaxon:1537710
+    - subject: AUTO:KACC%2018127T
+      predicate: type_strain_of
+      object: NCBITaxon:1537710
+    - subject: AUTO:JCM%2030137T
+      predicate: type_strain_of
+      object: NCBITaxon:1537710
+    - subject: AUTO:KOxT
+      predicate: strain_of
+      object: NCBITaxon:656179
+    - subject: AUTO:CCUG%2038742T
+      predicate: type_strain_of
+      object: NCBITaxon:93220
+named_entities:
+  - id: NCBITaxon:93217
+    label: Pandoraea
+    original_spans:
+      - 13:21
+      - 104:112
+      - 1176:1184
+      - 1230:1238
+      - 1265:1273
+      - 1670:1678
+      - 1700:1708
+      - 1829:1837
+  - id: AUTO:SE-S21T
+    label: SE-S21T
+    original_spans:
+      - 236:242
+      - 1125:1131
+      - 1194:1200
+      - 1426:1432
+      - 1614:1620
+      - 1758:1764
+  - id: AUTO:KACC%2018127T
+    label: KACC 18127T
+    original_spans:
+      - 1768:1778
+  - id: AUTO:JCM%2030137T
+    label: JCM 30137T
+    original_spans:
+      - 1780:1789
+  - id: AUTO:KOxT
+    label: KOxT
+    original_spans:
+      - 1256:1259
+  - id: AUTO:CCUG%2038742T
+    label: CCUG 38742T
+    original_spans:
+      - 1285:1295
+  - id: AUTO:single%20polar%20flagellum
+    label: single polar flagellum
+    original_spans:
+      - 330:351
+  - id: AUTO:thin%20cell%20wall
+    label: thin cell wall
+  - id: AUTO:outer%20membrane
+    label: outer membrane
+  - id: NCBITaxon:1537710
+    label: Pandoraea terrae
+    original_spans:
+      - 13:28
+      - 1700:1715
+  - id: NCBITaxon:656179
+    label: Pandoraea faecigallinarum
+    original_spans:
+      - 1230:1254
+  - id: NCBITaxon:93220
+    label: Pandoraea pnomenusa
+    original_spans:
+      - 1265:1283
+---
+input_text: |
+  {'content': 'Actinophytocola xanthii sp. nov., an actinomycete isolated from rhizosphere soil of the plant Xanthium sibiricum.\n\nA novel actinomycete strain, 11-183T, was isolated from the rhizosphere soil of Xanthium sibiricum, which was collected in Tangshan, Hebei, China. A phylogenetic analysis based on 16S rRNA gene sequences showed that strain 11-183T formed a clade within the genus Actinophytocola, with a maximum similarity of 98.44 % to Actinophytocola xinjiangensis QAIII60T, followed by 97.76 % similarity to Actinophytocola sediminis YIM M13705T. The average nucleotide identity and digital DNA-DNA hybridization values differed by 79.24 and 23.4 %, respectively, between strain 11-183T and Actinophytocolaxinjiangensis QAIII60T. Strain 11-183T grew well on N-Z-amine agar, and it produced a scant, white aerial mycelium. The isolate formed pale yellow to brown-black colonies and a dense, non-fragmented, branched substrate mycelium, and produced aerial hyphae on which nodular spore chains formed. Growth was observed at salinities ranging from 0 to 2 %, at pH values ranging from pH 6.5 to 8.0 and at temperatures ranging from 15 to 37 °C. The cell-wall amino acids included meso-diaminopimelic acid. Whole cell hydrolysates contained galactose and glucose. The principal fatty acids were iso-C16 : 0, iso-C16 : 1 H and C17 : 1ω6c. Diphosphatidylglycerol, phosphatidylmonomethylethanolamine and phosphatidylethanolamine were the diagnostic phospholipids. The isoprenoid quinones included MK-9(H4) and MK-10(H4). The G+C content of the genomic DNA was 71.7 mol%. Based on the genotypic and phenotypic data, we conclude that strain 11-183T belongs to a novel species of the genus Actinophytocola. The name proposed for the novel species is Actinophytocola xanthii sp. nov., with the type strain 11-183T (=KCTC 39690T= MCCC 1K02062T).\n\nPMID:28073395', 'saved_to': None, 'windowed': False}
+raw_completion_output: |-
+  ```plaintext
+  pmid: 28073395
+  study_taxa: Actinophytocola
+  strains: 11-183T; QAIII60T; YIM M13705T; KCTC 39690T; MCCC 1K02062T
+  cell_shape: branched
+  cell_arrangements: chains
+  gram_staining: 
+  motility: 
+  spore_formation: spore-forming
+  cell_wall_characteristics: 
+  cellular_inclusions: 
+  cell_shape_relationships: strain 11-183T has_cell_shape branched
+  cell_arrangement_relationships: strain 11-183T forms_arrangement chains
+  gram_staining_relationships: 
+  motility_relationships: 
+  spore_formation_relationships: strain 11-183T exhibits_sporulation spore-forming
+  cell_wall_relationships: 
+  cellular_inclusion_relationships: 
+  strain_relationships: 11-183T type_strain_of Actinophytocola xanthii; QAIII60T type_strain_of Actinophytocola xinjiangensis; YIM M13705T type_strain_of Actinophytocola sediminis; KCTC 39690T type_strain_of Actinophytocola xanthii; MCCC 1K02062T type_strain_of Actinophytocola xanthii
+  ```
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  subject: <the strain with this cell arrangement>
+  predicate: <the type of cell arrangement relationshipMust be one of: has_cell_shape, has_arrangement, has_gram_staining, has_motility, has_spore_formation, has_cell_wall_feature, has_inclusion>
+  object: <the specific cell arrangement pattern>
+
+
+  Text:
+  strain 11-183T forms_arrangement chains
+
+  ===
+
+extracted_object:
+  pmid: '28073395'
+  study_taxa:
+    - NCBITaxon:695999
+  strains:
+    - AUTO:11-183T
+    - AUTO:QAIII60T
+    - AUTO:YIM%20M13705T
+    - AUTO:KCTC%2039690T
+    - AUTO:MCCC%201K02062T
+  cell_shape:
+    - <https://w3id.org/metpo/1000488>
+  cell_arrangements:
+    - AUTO:chains
+  cell_arrangement_relationships:
+    - subject: AUTO:strain%2011-183T
+      predicate: has_arrangement
+      object: AUTO:chains
+named_entities:
+  - id: NCBITaxon:695999
+    label: Actinophytocola
+    original_spans:
+      - 13:27
+      - 393:407
+      - 450:464
+      - 524:538
+      - 707:721
+      - 1697:1711
+      - 1757:1771
+  - id: AUTO:11-183T
+    label: 11-183T
+    original_spans:
+      - 159:165
+      - 353:359
+      - 695:701
+      - 753:759
+      - 1649:1655
+      - 1812:1818
+  - id: AUTO:QAIII60T
+    label: QAIII60T
+    original_spans:
+      - 480:487
+      - 736:743
+  - id: AUTO:YIM%20M13705T
+    label: YIM M13705T
+    original_spans:
+      - 550:560
+  - id: AUTO:KCTC%2039690T
+    label: KCTC 39690T
+    original_spans:
+      - 1822:1832
+  - id: AUTO:MCCC%201K02062T
+    label: MCCC 1K02062T
+    original_spans:
+      - 1835:1847
+  - id: <https://w3id.org/metpo/1000488>
+    label: branched
+    original_spans:
+      - 922:929
+  - id: AUTO:chains
+    label: chains
+    original_spans:
+      - 1001:1006
+  - id: AUTO:strain%2011-183T
+    label: strain 11-183T
+    original_spans:
+      - 346:359
+      - 688:701
+      - 746:759
+      - 1642:1655
+      - 1805:1818
+---
+input_text: |
+  {'content': 'Bavariicoccus seileri gen. nov., sp. nov., isolated from the surface and smear water of German red smear soft cheese.\n\nThe phylogenetic position and physiological characters of six hitherto-unknown lactic acid bacterial isolates, which form part of the surface microbiota of German red smear soft cheese, are reported. The coccoid cells are aerotolerant, Gram-positive, catalase-negative and non-motile. The cell-wall peptidoglycan contains alanine, glutamic acid, lysine and aspartic acid and is of the A4alpha type (l-Lys-d-Asp). The sequences of the 16S rRNA, groEL and rpoB genes of the six isolates are identical and reveal that these isolates represent an independent lineage within the radiation of the family Enterococcaceae in the phylum Firmicutes. Their closest phylogenetic neighbour is the lactic acid bacterium Atopobacter phocae M1590/94/2(T), with which they share 94.9 % 16S rRNA gene sequence similarity; representatives of other genera such as Granulicatella, Carnobacterium and Trichococcus are more distantly related. DNA-DNA hybridization studies reveal that the six isolates are members of a single species, and this is confirmed by similarities in biochemical characteristics. The six isolates were assigned four different groups by Fourier-transform infrared and randomly amplified polymorphic DNA typing. Therefore, it is formally proposed that these isolates should be classified in a single novel species of a novel genus and be named Bavariicoccus seileri gen. nov., sp. nov. The type strain of Bavariicoccus seileri is WCC 4188(T) (=DSM 19936(T) =CCUG 55508(T)).\n\nPMID:19622668', 'saved_to': None, 'windowed': False}
+raw_completion_output: |-
+  pmid: 19622668  
+  study_taxa: Bavariicoccus  
+  strains: WCC 4188T; DSM 19936T; CCUG 55508T  
+  cell_shape: coccus  
+  cell_arrangements: single  
+  gram_staining: Gram-positive  
+  motility: non-motile  
+  spore_formation: non-spore-forming  
+  cell_wall_characteristics: peptidoglycan  
+  cellular_inclusions:  
+  cell_shape_relationships: WCC 4188T has_cell_shape coccus; DSM 19936T has_cell_shape coccus; CCUG 55508T has_cell_shape coccus  
+  cell_arrangement_relationships: WCC 4188T forms_arrangement single; DSM 19936T forms_arrangement single; CCUG 55508T forms_arrangement single  
+  gram_staining_relationships: WCC 4188T stains_as Gram-positive; DSM 19936T stains_as Gram-positive; CCUG 55508T stains_as Gram-positive  
+  motility_relationships: WCC 4188T shows_motility non-motile; DSM 19936T shows_motility non-motile; CCUG 55508T shows_motility non-motile  
+  spore_formation_relationships: WCC 4188T shows_sporulation non-spore-forming; DSM 19936T shows_sporulation non-spore-forming; CCUG 55508T shows_sporulation non-spore-forming  
+  cell_wall_relationships: WCC 4188T contains_cell_wall_component peptidoglycan; DSM 19936T contains_cell_wall_component peptidoglycan; CCUG 55508T contains_cell_wall_component peptidoglycan  
+  cellular_inclusion_relationships:  
+  strain_relationships: WCC 4188T type_strain_of Bavariicoccus seileri; DSM 19936T type_strain_of Bavariicoccus seileri; CCUG 55508T type_strain_of Bavariicoccus seileri  
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  subject: <the strain with this cell wall characteristic>
+  predicate: <the type of cell wall relationshipMust be one of: has_cell_shape, has_arrangement, has_gram_staining, has_motility, has_spore_formation, has_cell_wall_feature, has_inclusion>
+  object: <the specific cell wall characteristic>
+
+
+  Text:
+  CCUG 55508T contains_cell_wall_component peptidoglycan
+
+  ===
+
+extracted_object:
+  pmid: '19622668'
+  study_taxa:
+    - NCBITaxon:697279
+  strains:
+    - AUTO:WCC%204188T
+    - AUTO:DSM%2019936T
+    - AUTO:CCUG%2055508T
+  cell_shape:
+    - <https://w3id.org/metpo/1000066>
+  cell_arrangements:
+    - AUTO:single
+  gram_staining:
+    - <https://w3id.org/metpo/1000144>
+  motility:
+    - <https://w3id.org/metpo/1000380>
+  spore_formation:
+    - AUTO:non-spore-forming
+  cell_wall_characteristics:
+    - <https://w3id.org/metpo/1000231>
+  cell_arrangement_relationships:
+    - subject: AUTO:WCC%204188T
+      predicate: has_arrangement
+      object: AUTO:single
+    - subject: AUTO:DSM%2019936T
+      predicate: has_arrangement
+      object: AUTO:single
+    - subject: AUTO:CCUG%2055508T
+      predicate: has_arrangement
+      object: AUTO:single
+  gram_staining_relationships:
+    - subject: AUTO:WCC%204188T
+      predicate: has_gram_staining
+      object: <https://w3id.org/metpo/1000144>
+    - subject: AUTO:DSM%2019936T
+      predicate: has_gram_staining
+      object: <https://w3id.org/metpo/1000144>
+    - subject: AUTO:CCUG%2055508T
+      predicate: has_gram_staining
+      object: <https://w3id.org/metpo/1000144>
+  motility_relationships:
+    - subject: AUTO:WCC%204188T
+      predicate: has_motility
+      object: <https://w3id.org/metpo/1000380>
+    - subject: AUTO:DSM%2019936T
+      predicate: has_motility
+      object: <https://w3id.org/metpo/1000380>
+    - subject: AUTO:CCUG%2055508T
+      predicate: has_motility
+      object: <https://w3id.org/metpo/1000380>
+  spore_formation_relationships:
+    - subject: AUTO:WCC%204188T
+      predicate: has_spore_formation
+      object: AUTO:non-spore-forming
+    - subject: AUTO:DSM%2019936T
+      predicate: has_spore_formation
+      object: AUTO:non-spore-forming
+    - subject: AUTO:CCUG%2055508T
+      predicate: has_spore_formation
+      object: AUTO:non-spore-forming
+  cell_wall_relationships:
+    - subject: AUTO:WCC%204188T
+      predicate: has_cell_wall_feature
+      object: <https://w3id.org/metpo/1000231>
+    - subject: AUTO:DSM%2019936T
+      predicate: has_cell_wall_feature
+      object: <https://w3id.org/metpo/1000231>
+    - subject: AUTO:CCUG%2055508T
+      predicate: has_cell_wall_feature
+      object: <https://w3id.org/metpo/1000231>
+named_entities:
+  - id: NCBITaxon:697279
+    label: Bavariicoccus
+    original_spans:
+      - 13:25
+      - 1478:1490
+      - 1539:1551
+  - id: AUTO:WCC%204188T
+    label: WCC 4188T
+  - id: AUTO:DSM%2019936T
+    label: DSM 19936T
+  - id: AUTO:CCUG%2055508T
+    label: CCUG 55508T
+  - id: <https://w3id.org/metpo/1000066>
+    label: coccus
+    original_spans:
+      - 20:25
+      - 1019:1024
+      - 1485:1490
+      - 1546:1551
+---
+input_text: |
+  {'content': 'Agarilytica rhodophyticola gen. nov., sp. nov., isolated from Gracilaria blodgettii.\n\nA novel Gram-stain-negative, rod-shaped, non-spore-forming, aerobic, agarolytic bacterium, designated 017T, was isolated from Gracilaria blodgettii collected at the coast of Lingshui county, Hainan province, China. Optimal growth occurred at 28-33 °C (range 15-40 °C), with 3 % (w/v) NaCl (range 2-4 %) and at pH 8.0 (range pH 6.5-8.5). Cells of strain 017T were motile and formed yellow colonies on marine agar 2216. Phylogenetic analysis based on 16S rRNA gene sequences revealed that strain 017T shared the highest similarity with Teredinibacter turnerae T7902T (94.4 %). The predominant polar lipids of the novel isolate consisted of phosphatidylglycerol, phosphatidylethanolamine, aminophospholipid and some other unknown lipids. Major cellular fatty acids (>10 %) were C16 : 0, C18 : 1ω7c and summed feature 3 (C16 : 1ω7c/iso-C15 : 0 2-OH), and the sole respiratory lipoquinone was Q-8. The DNA G+C content of strain 017T was 40.2 mol%. Comparative analysis of 16S rRNA gene sequences and phenotypic characterization indicated that strain 017T represents a novel species in a new genus of the family Cellvibrionaceae, order Cellvibrionales, for which the name Agarilytica rhodophyticola gen. nov., sp. nov. is proposed. The type strain of Agarilytica rhodophyticola is 017T (=KCTC 42584T=MCCC 1H00123T).\n\nPMID:28879838', 'saved_to': None, 'windowed': False}
+raw_completion_output: |-
+  ```plaintext
+  pmid: 28879838
+  study_taxa: Agarilytica rhodophyticola
+  strains: 017T; KCTC 42584T; MCCC 1H00123T
+  cell_shape: rod
+  cell_arrangements: single
+  gram_staining: Gram-negative
+  motility: motile
+  spore_formation: non-spore-forming
+  cell_wall_characteristics: 
+  cellular_inclusions: 
+  cell_shape_relationships: strain 017T has_cell_shape rod; KCTC 42584T has_cell_shape rod; MCCC 1H00123T has_cell_shape rod
+  cell_arrangement_relationships: strain 017T forms_arrangement single; KCTC 42584T forms_arrangement single; MCCC 1H00123T forms_arrangement single
+  gram_staining_relationships: strain 017T stains_as Gram-negative; KCTC 42584T stains_as Gram-negative; MCCC 1H00123T stains_as Gram-negative
+  motility_relationships: strain 017T demonstrates_motility motile; KCTC 42584T demonstrates_motility motile; MCCC 1H00123T demonstrates_motility motile
+  spore_formation_relationships: strain 017T shows_sporulation non-spore-forming; KCTC 42584T shows_sporulation non-spore-forming; MCCC 1H00123T shows_sporulation non-spore-forming
+  cell_wall_relationships: 
+  cellular_inclusion_relationships: 
+  strain_relationships: 017T strain_of Agarilytica rhodophyticola; KCTC 42584T type_strain_of Agarilytica rhodophyticola; MCCC 1H00123T type_strain_of Agarilytica rhodophyticola
+  ```
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  subject: <the strain with this spore formation characteristic>
+  predicate: <the type of spore formation relationshipMust be one of: has_cell_shape, has_arrangement, has_gram_staining, has_motility, has_spore_formation, has_cell_wall_feature, has_inclusion>
+  object: <the specific spore formation characteristic>
+
+
+  Text:
+  MCCC 1H00123T shows_sporulation non-spore-forming
+
+  ===
+
+extracted_object:
+  pmid: '28879838'
+  study_taxa:
+    - NCBITaxon:1737490
+  strains:
+    - AUTO:017T
+    - AUTO:KCTC%2042584T
+    - AUTO:MCCC%201H00123T
+  cell_shape:
+    - <https://w3id.org/metpo/1000503>
+  cell_arrangements:
+    - AUTO:single
+  gram_staining:
+    - <https://w3id.org/metpo/1000143>
+  motility:
+    - <https://w3id.org/metpo/1000379>
+  spore_formation:
+    - AUTO:non-spore-forming
+  cell_arrangement_relationships:
+    - subject: AUTO:strain%20017T
+      predicate: has_arrangement
+      object: AUTO:single
+    - subject: AUTO:KCTC%2042584T
+      predicate: has_arrangement
+      object: AUTO:single
+    - subject: AUTO:MCCC%201H00123T
+      predicate: has_arrangement
+      object: AUTO:single
+  gram_staining_relationships:
+    - subject: AUTO:strain%20017T
+      predicate: has_gram_staining
+      object: <https://w3id.org/metpo/1000143>
+    - subject: AUTO:KCTC%2042584T
+      predicate: has_gram_staining
+      object: <https://w3id.org/metpo/1000143>
+    - subject: AUTO:MCCC%201H00123T
+      predicate: has_gram_staining
+      object: <https://w3id.org/metpo/1000143>
+  motility_relationships:
+    - subject: AUTO:strain%20017T
+      predicate: has_motility
+      object: <https://w3id.org/metpo/1000379>
+    - subject: AUTO:KCTC%2042584T
+      predicate: has_motility
+      object: <https://w3id.org/metpo/1000379>
+    - subject: AUTO:MCCC%201H00123T
+      predicate: has_motility
+      object: <https://w3id.org/metpo/1000379>
+  spore_formation_relationships:
+    - subject: AUTO:strain%20017T
+      predicate: has_spore_formation
+      object: AUTO:non-spore-forming
+    - subject: AUTO:KCTC%2042584T
+      predicate: has_spore_formation
+      object: AUTO:non-spore-forming
+    - subject: AUTO:MCCC%201H00123T
+      predicate: has_spore_formation
+      object: AUTO:non-spore-forming
+named_entities:
+  - id: NCBITaxon:1737490
+    label: Agarilytica rhodophyticola
+    original_spans:
+      - 13:38
+      - 1267:1292
+      - 1346:1371
+  - id: AUTO:017T
+    label: 017T
+    original_spans:
+      - 203:206
+      - 454:457
+      - 595:598
+      - 1024:1027
+      - 1146:1149
+      - 1376:1379
+  - id: AUTO:KCTC%2042584T
+    label: KCTC 42584T
+    original_spans:
+      - 1383:1393
+  - id: AUTO:MCCC%201H00123T
+    label: MCCC 1H00123T
+    original_spans:
+      - 1395:1407
+  - id: AUTO:strain%20017T
+    label: strain 017T
+    original_spans:
+      - 447:457
+      - 588:598
+      - 1017:1027
+      - 1139:1149
+---
+input_text: |
+  {'content': 'Myceligenerans cantabricum sp. nov., a barotolerant actinobacterium isolated from a deep cold-water coral.\n\nAn actinobacterium strain (M-201(T)) was isolated from a deep-sea scleractinian coral (Fam. Caryophillidae) collected at 1500 m depth in the Avilés Canyon in the Cantabrian Sea, Asturias, Spain. Strain M-201(T) grew at pH 6.0-9.0 (optimum pH 7.0), between 4 and 37 °C (optimum 28 °C) and at salinities of 0.5-10.5% (w/v) NaCl (optimum 0.5-3.0%). The peptidoglycan contained the amino acids Lys, Ala, Thr, Glu and one unknown amino acid component, and belonged to type A4α, and the cell-wall sugars are glucose, mannose and galactose. The polar lipids were diphosphatidylglycerol, phosphatidylglycerol, phosphatidylinositol, an unknown phosphoglycolipid and seven unknown glycolipids. The predominant menaquinones were MK-9(H4) and MK-9(H6). Major cellular fatty acids were anteiso-C(15 : 0), iso-C(15 : 0) and anteiso-C(17 : 0). The genomic DNA G+C content was 72.4 mol%. The chemotaxonomic properties supported the affiliation of strain M-201(T) to the genus Myceligenerans . Phylogenetic analysis based on 16S rRNA gene sequences revealed that the organism was most closely related to Myceligenerans crystallogenes CD12E2-27(T) (98.2% 16S rRNA gene sequence similarity). However, it had a relatively low DNA-DNA relatedness value with the above strain (48%). The isolate showed antibiotic activity against Escherichia coli , Micrococcus luteus ATCC 14452 and Saccharomyces cerevisiae var. carlsbergensis. To the best of our knowledge, this is the first report of antibiotic production in the genus Myceligenerans . The differences in phenotypic, metabolic, ecological and phylogenetic characteristics justify the proposal of a novel species of the genus Myceligenerans , Myceligenerans cantabricum sp. nov., with M-201(T) ( = CECT 8512(T) = DSM 28392(T)) as the type strain.\n\nPMID:25667397', 'saved_to': None, 'windowed': False}
+raw_completion_output: |-
+  ```plaintext
+  pmid: 25667397
+  study_taxa: Myceligenerans
+  strains: M-201T; CECT 8512T; DSM 28392T; CD12E2-27T; ATCC 14452
+  cell_shape: Not explicitly mentioned
+  cell_arrangements: Not explicitly mentioned
+  gram_staining: Not explicitly mentioned
+  motility: Not explicitly mentioned
+  spore_formation: Not explicitly mentioned
+  cell_wall_characteristics: peptidoglycan
+  cellular_inclusions: Not explicitly mentioned
+  cell_shape_relationships: 
+  cell_arrangement_relationships: 
+  gram_staining_relationships: 
+  motility_relationships: 
+  spore_formation_relationships: 
+  cell_wall_relationships: strain M-201T contains_cell_wall_component peptidoglycan
+  cellular_inclusion_relationships: 
+  strain_relationships: M-201T type_strain_of Myceligenerans cantabricum; CECT 8512T type_strain_of Myceligenerans cantabricum; DSM 28392T type_strain_of Myceligenerans cantabricum; CD12E2-27T type_strain_of Myceligenerans crystallogenes; ATCC 14452 strain_of Micrococcus luteus
+  ```
+prompt: |+
+  From the text below, extract the following entities in the following format:
+
+  pmid: <PubMed ID of the article (e.g., 23996836)>
+  study_taxa: <semicolon-separated list of the main bacterial or archaeal taxa being studied for morphology>
+  strains: <Extract specific strain designations mentioned in the text. Include strain numbers, culture collection numbers, type strain designations, and isolate names. Examples: "15-1T", "ATCC 25922", "MG1655", "K-12", "strain ABC123", "isolate XYZ-1". Do not include general species names.>
+  cell_shape: <Identify cell shapes mentioned in the text. Use standard terms: "rod", "coccus",  "spirillum", "vibrio", "filamentous", "branched", "irregular", "pleomorphic".  Include measurements when provided (e.g., "rod 0.5 x 2.0 μm").>
+  cell_arrangements: <Identify cell arrangements mentioned in the text. Use standard terms: "single",  "pairs", "chains", "clusters", "tetrads", "packets", "irregular masses",  "palisades", "V-shapes", "angular arrangements".>
+  gram_staining: <Identify Gram staining results. Use standard terms: "Gram-positive",  "Gram-negative", "Gram-variable", "Gram-indeterminate". Include any  additional staining properties mentioned.>
+  motility: <Identify motility characteristics. Use terms: "motile", "non-motile",  "flagellar motility", "gliding motility", "twitching motility", "polar flagella",  "peritrichous flagella", "single flagellum", "multiple flagella".>
+  spore_formation: <Identify spore formation characteristics. Use terms: "spore-forming",  "non-spore-forming", "endospores", "terminal spores", "subterminal spores",  "central spores", "sporangium", "conidia", "arthrospores".>
+  cell_wall_characteristics: <Identify cell wall characteristics. Include: "thick cell wall", "thin cell wall",  "multilayered", "peptidoglycan", "teichoic acids", "mycolic acids",  "lipopolysaccharide", "outer membrane", "periplasmic space".>
+  cellular_inclusions: <Identify cellular inclusions and internal structures. Include: "poly-β-hydroxybutyrate",  "polyphosphate granules", "sulfur granules", "gas vesicles", "magnetosomes",  "carboxysomes", "storage granules", "lipid droplets".>
+  cell_shape_relationships: <For each cell shape found in cell_shape field above, extract structured relationships linking specific strains to those shapes. Generate tuples like "strain 15-1T has_cell_shape rod", "ATCC 25922 exhibits_shape coccus", "isolate XYZ-1 demonstrates_morphology filamentous". Convert ALL cell shapes mentioned above into strain-shape relationships.>
+  cell_arrangement_relationships: <For each cell arrangement found in cell_arrangements field above, extract structured relationships linking specific strains to those arrangements. Generate tuples like "strain 15-1T forms_arrangement chains", "ATCC 25922 exhibits_arrangement pairs", "isolate XYZ-1 shows_arrangement clusters". Convert ALL cell arrangements mentioned above into strain-arrangement relationships.>
+  gram_staining_relationships: <For each Gram staining result found in gram_staining field above, extract structured relationships linking specific strains to those results. Generate tuples like "strain 15-1T stains_as Gram-positive", "ATCC 25922 demonstrates_staining Gram-negative", "isolate XYZ-1 exhibits_gram_reaction Gram-variable". Convert ALL Gram staining results mentioned above into strain-staining relationships.>
+  motility_relationships: <For each motility characteristic found in motility field above, extract structured relationships linking specific strains to those characteristics. Generate tuples like "strain 15-1T demonstrates_motility flagellar motility", "ATCC 25922 exhibits_movement gliding motility", "isolate XYZ-1 shows_motility non-motile". Convert ALL motility characteristics mentioned above into strain-motility relationships.>
+  spore_formation_relationships: <For each spore formation characteristic found in spore_formation field above, extract structured relationships linking specific strains to those characteristics. Generate tuples like "strain 15-1T exhibits_sporulation endospores", "ATCC 25922 demonstrates_spore_formation terminal spores", "isolate XYZ-1 shows_sporulation non-spore-forming". Convert ALL spore formation characteristics mentioned above into strain-sporulation relationships.>
+  cell_wall_relationships: <For each cell wall characteristic found in cell_wall_characteristics field above, extract structured relationships linking specific strains to those characteristics. Generate tuples like "strain 15-1T contains_cell_wall_component peptidoglycan", "ATCC 25922 exhibits_wall_structure thick cell wall", "isolate XYZ-1 demonstrates_wall_feature outer membrane". Convert ALL cell wall characteristics mentioned above into strain-cell wall relationships.>
+  cellular_inclusion_relationships: <For each cellular inclusion found in cellular_inclusions field above, extract structured relationships linking specific strains to those inclusions. Generate tuples like "strain 15-1T contains_inclusion poly-β-hydroxybutyrate", "ATCC 25922 exhibits_inclusion gas vesicles", "isolate XYZ-1 demonstrates_structure storage granules". Convert ALL cellular inclusions mentioned above into strain-inclusion relationships.>
+  strain_relationships: <A semicolon-separated list of strain-species relationships, where each  relationship connects a strain to its parent taxon. Each relationship should  have a strain name, relationship type, and parent species/genus. For example: "MG1655 strain_of Escherichia coli; K-12 strain_of Escherichia coli;  ATCC 25922 type_strain_of Klebsiella pneumoniae". If no strain relationships are found, leave this field empty.>
+
+
+  Text:
+  {'content': 'Myceligenerans cantabricum sp. nov., a barotolerant actinobacterium isolated from a deep cold-water coral.\n\nAn actinobacterium strain (M-201(T)) was isolated from a deep-sea scleractinian coral (Fam. Caryophillidae) collected at 1500 m depth in the Avilés Canyon in the Cantabrian Sea, Asturias, Spain. Strain M-201(T) grew at pH 6.0-9.0 (optimum pH 7.0), between 4 and 37 °C (optimum 28 °C) and at salinities of 0.5-10.5% (w/v) NaCl (optimum 0.5-3.0%). The peptidoglycan contained the amino acids Lys, Ala, Thr, Glu and one unknown amino acid component, and belonged to type A4α, and the cell-wall sugars are glucose, mannose and galactose. The polar lipids were diphosphatidylglycerol, phosphatidylglycerol, phosphatidylinositol, an unknown phosphoglycolipid and seven unknown glycolipids. The predominant menaquinones were MK-9(H4) and MK-9(H6). Major cellular fatty acids were anteiso-C(15 : 0), iso-C(15 : 0) and anteiso-C(17 : 0). The genomic DNA G+C content was 72.4 mol%. The chemotaxonomic properties supported the affiliation of strain M-201(T) to the genus Myceligenerans . Phylogenetic analysis based on 16S rRNA gene sequences revealed that the organism was most closely related to Myceligenerans crystallogenes CD12E2-27(T) (98.2% 16S rRNA gene sequence similarity). However, it had a relatively low DNA-DNA relatedness value with the above strain (48%). The isolate showed antibiotic activity against Escherichia coli , Micrococcus luteus ATCC 14452 and Saccharomyces cerevisiae var. carlsbergensis. To the best of our knowledge, this is the first report of antibiotic production in the genus Myceligenerans . The differences in phenotypic, metabolic, ecological and phylogenetic characteristics justify the proposal of a novel species of the genus Myceligenerans , Myceligenerans cantabricum sp. nov., with M-201(T) ( = CECT 8512(T) = DSM 28392(T)) as the type strain.\n\nPMID:25667397', 'saved_to': None, 'windowed': False}
+
+
+  ===
+
+extracted_object:
+  pmid: '25667397'
+  study_taxa:
+    - NCBITaxon:253183
+  strains:
+    - AUTO:M-201T
+    - AUTO:CECT%208512T
+    - AUTO:DSM%2028392T
+    - AUTO:CD12E2-27T
+    - AUTO:ATCC%2014452
+  cell_shape:
+    - AUTO:Not%20explicitly%20mentioned
+  cell_arrangements:
+    - AUTO:Not%20explicitly%20mentioned
+  gram_staining:
+    - AUTO:Not%20explicitly%20mentioned
+  motility:
+    - AUTO:Not%20explicitly%20mentioned
+  spore_formation:
+    - AUTO:Not%20explicitly%20mentioned
+  cell_wall_characteristics:
+    - <https://w3id.org/metpo/1000231>
+  cellular_inclusions:
+    - AUTO:Not%20explicitly%20mentioned
+named_entities:
+  - id: NCBITaxon:253183
+    label: Myceligenerans
+    original_spans:
+      - 13:26
+      - 1083:1096
+      - 1210:1223
+      - 1623:1636
+      - 1779:1792
+      - 1796:1809
+  - id: AUTO:M-201T
+    label: M-201T
+  - id: AUTO:CECT%208512T
+    label: CECT 8512T
+  - id: AUTO:DSM%2028392T
+    label: DSM 28392T
+  - id: AUTO:CD12E2-27T
+    label: CD12E2-27T
+  - id: AUTO:ATCC%2014452
+    label: ATCC 14452
+    original_spans:
+      - 1469:1478
+---
+input_text: |
+  {'content': 'Cryptococcus surugaensis sp. nov., a novel yeast species from sediment collected on the deep-sea floor of Suruga Bay.\n\nA novel species of the genus Cryptococcus was isolated from sediment collected on the deep-sea floor of Suruga Bay, Japan. Nucleotide sequences of 18S rDNA, internal transcribed spacers, 5.8S rDNA and the D1/D2 region of 26S rDNA of strain SY-260(T) suggested affinities to a phylogenetic lineage that includes Cryptococcus luteolus. Comparisons of the rDNA sequences of each region clarified that strain SY-260(T) is related distantly to Bullera coprosmaensis and Bullera oryzae, but is distinct at the species level. As ballistoconidia and sexual reproduction were not observed in strain SY-260(T), this strain is described as Cryptococcus surugaensis sp. nov. (type strain, SY-260(T)=JCM 11903(T)=CBS 9426(T)).\n\nPMID:14657152', 'saved_to': None, 'windowed': False}
+raw_completion_output: |-
+  ```
+  pmid: 14657152
+  study_taxa: Cryptococcus
+  strains: SY-260T; JCM 11903T; CBS 9426T
+  cell_shape: 
+  cell_arrangements: 
+  gram_staining: 
+  motility: 
+  spore_formation: 
+  cell_wall_characteristics: 
+  cellular_inclusions: 
+  cell_shape_relationships: 
+  cell_arrangement_relationships: 
+  gram_staining_relationships: 
+  motility_relationships: 
+  spore_formation_relationships: 
+  cell_wall_relationships: 
+  cellular_inclusion_relationships: 
+  strain_relationships: SY-260T type_strain_of Cryptococcus surugaensis; JCM 11903T type_strain_of Cryptococcus surugaensis; CBS 9426T type_strain_of Cryptococcus surugaensis
+  ```
+prompt: |+
+  From the text below, extract the following entities in the following format:
+
+  pmid: <PubMed ID of the article (e.g., 23996836)>
+  study_taxa: <semicolon-separated list of the main bacterial or archaeal taxa being studied for morphology>
+  strains: <Extract specific strain designations mentioned in the text. Include strain numbers, culture collection numbers, type strain designations, and isolate names. Examples: "15-1T", "ATCC 25922", "MG1655", "K-12", "strain ABC123", "isolate XYZ-1". Do not include general species names.>
+  cell_shape: <Identify cell shapes mentioned in the text. Use standard terms: "rod", "coccus",  "spirillum", "vibrio", "filamentous", "branched", "irregular", "pleomorphic".  Include measurements when provided (e.g., "rod 0.5 x 2.0 μm").>
+  cell_arrangements: <Identify cell arrangements mentioned in the text. Use standard terms: "single",  "pairs", "chains", "clusters", "tetrads", "packets", "irregular masses",  "palisades", "V-shapes", "angular arrangements".>
+  gram_staining: <Identify Gram staining results. Use standard terms: "Gram-positive",  "Gram-negative", "Gram-variable", "Gram-indeterminate". Include any  additional staining properties mentioned.>
+  motility: <Identify motility characteristics. Use terms: "motile", "non-motile",  "flagellar motility", "gliding motility", "twitching motility", "polar flagella",  "peritrichous flagella", "single flagellum", "multiple flagella".>
+  spore_formation: <Identify spore formation characteristics. Use terms: "spore-forming",  "non-spore-forming", "endospores", "terminal spores", "subterminal spores",  "central spores", "sporangium", "conidia", "arthrospores".>
+  cell_wall_characteristics: <Identify cell wall characteristics. Include: "thick cell wall", "thin cell wall",  "multilayered", "peptidoglycan", "teichoic acids", "mycolic acids",  "lipopolysaccharide", "outer membrane", "periplasmic space".>
+  cellular_inclusions: <Identify cellular inclusions and internal structures. Include: "poly-β-hydroxybutyrate",  "polyphosphate granules", "sulfur granules", "gas vesicles", "magnetosomes",  "carboxysomes", "storage granules", "lipid droplets".>
+  cell_shape_relationships: <For each cell shape found in cell_shape field above, extract structured relationships linking specific strains to those shapes. Generate tuples like "strain 15-1T has_cell_shape rod", "ATCC 25922 exhibits_shape coccus", "isolate XYZ-1 demonstrates_morphology filamentous". Convert ALL cell shapes mentioned above into strain-shape relationships.>
+  cell_arrangement_relationships: <For each cell arrangement found in cell_arrangements field above, extract structured relationships linking specific strains to those arrangements. Generate tuples like "strain 15-1T forms_arrangement chains", "ATCC 25922 exhibits_arrangement pairs", "isolate XYZ-1 shows_arrangement clusters". Convert ALL cell arrangements mentioned above into strain-arrangement relationships.>
+  gram_staining_relationships: <For each Gram staining result found in gram_staining field above, extract structured relationships linking specific strains to those results. Generate tuples like "strain 15-1T stains_as Gram-positive", "ATCC 25922 demonstrates_staining Gram-negative", "isolate XYZ-1 exhibits_gram_reaction Gram-variable". Convert ALL Gram staining results mentioned above into strain-staining relationships.>
+  motility_relationships: <For each motility characteristic found in motility field above, extract structured relationships linking specific strains to those characteristics. Generate tuples like "strain 15-1T demonstrates_motility flagellar motility", "ATCC 25922 exhibits_movement gliding motility", "isolate XYZ-1 shows_motility non-motile". Convert ALL motility characteristics mentioned above into strain-motility relationships.>
+  spore_formation_relationships: <For each spore formation characteristic found in spore_formation field above, extract structured relationships linking specific strains to those characteristics. Generate tuples like "strain 15-1T exhibits_sporulation endospores", "ATCC 25922 demonstrates_spore_formation terminal spores", "isolate XYZ-1 shows_sporulation non-spore-forming". Convert ALL spore formation characteristics mentioned above into strain-sporulation relationships.>
+  cell_wall_relationships: <For each cell wall characteristic found in cell_wall_characteristics field above, extract structured relationships linking specific strains to those characteristics. Generate tuples like "strain 15-1T contains_cell_wall_component peptidoglycan", "ATCC 25922 exhibits_wall_structure thick cell wall", "isolate XYZ-1 demonstrates_wall_feature outer membrane". Convert ALL cell wall characteristics mentioned above into strain-cell wall relationships.>
+  cellular_inclusion_relationships: <For each cellular inclusion found in cellular_inclusions field above, extract structured relationships linking specific strains to those inclusions. Generate tuples like "strain 15-1T contains_inclusion poly-β-hydroxybutyrate", "ATCC 25922 exhibits_inclusion gas vesicles", "isolate XYZ-1 demonstrates_structure storage granules". Convert ALL cellular inclusions mentioned above into strain-inclusion relationships.>
+  strain_relationships: <A semicolon-separated list of strain-species relationships, where each  relationship connects a strain to its parent taxon. Each relationship should  have a strain name, relationship type, and parent species/genus. For example: "MG1655 strain_of Escherichia coli; K-12 strain_of Escherichia coli;  ATCC 25922 type_strain_of Klebsiella pneumoniae". If no strain relationships are found, leave this field empty.>
+
+
+  Text:
+  {'content': 'Cryptococcus surugaensis sp. nov., a novel yeast species from sediment collected on the deep-sea floor of Suruga Bay.\n\nA novel species of the genus Cryptococcus was isolated from sediment collected on the deep-sea floor of Suruga Bay, Japan. Nucleotide sequences of 18S rDNA, internal transcribed spacers, 5.8S rDNA and the D1/D2 region of 26S rDNA of strain SY-260(T) suggested affinities to a phylogenetic lineage that includes Cryptococcus luteolus. Comparisons of the rDNA sequences of each region clarified that strain SY-260(T) is related distantly to Bullera coprosmaensis and Bullera oryzae, but is distinct at the species level. As ballistoconidia and sexual reproduction were not observed in strain SY-260(T), this strain is described as Cryptococcus surugaensis sp. nov. (type strain, SY-260(T)=JCM 11903(T)=CBS 9426(T)).\n\nPMID:14657152', 'saved_to': None, 'windowed': False}
+
+
+  ===
+
+extracted_object:
+  pmid: '14657152'
+  study_taxa:
+    - NCBITaxon:5206
+  strains:
+    - AUTO:SY-260T
+    - AUTO:JCM%2011903T
+    - AUTO:CBS%209426T
+named_entities:
+  - id: NCBITaxon:5206
+    label: Cryptococcus
+    original_spans:
+      - 13:24
+      - 163:174
+      - 445:456
+      - 763:774
+  - id: AUTO:SY-260T
+    label: SY-260T
+  - id: AUTO:JCM%2011903T
+    label: JCM 11903T
+  - id: AUTO:CBS%209426T
+    label: CBS 9426T
