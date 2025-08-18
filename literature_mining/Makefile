@@ -18,6 +18,7 @@ INTERMEDIATE_DIRS := intermediates/tsv intermediates/yaml intermediates/db
 
 .PHONY: all clean clean-cache clean-intermediates clean-outputs clean-templates clean-test help setup
 .PHONY: validate-templates build-templates extract-all quick-test full-pipeline setup-test-abstracts
+.PHONY: install install-dev env-setup fresh-assessment-run
 
 # Default target
 all: help
@@ -29,6 +30,9 @@ help:
 	@echo "  setup                    - Create directory structure"
 	@echo "  validate-templates       - Validate all template schemas"
 	@echo "  build-templates         - Build all templates with METPO predicates"
+	@echo "  assess-templates         - Assess quality of template schemas (no extractions needed)"
+	@echo "  unified-assessment       - Comprehensive pipeline assessment with extractions"
+	@echo "  domain-grounding-analysis - Domain-specific grounding quality analysis"
 	@echo "  extract-all             - Extract from abstracts using specified template"
 	@echo "  quick-test              - Safe test with 3 abstracts (preserves existing)"
 	@echo "  full-pipeline           - Complete pipeline with specified source"
@@ -68,12 +72,12 @@ intermediates/tsv/chem_interaction_props.tsv: ../metpo.owl | intermediates/tsv
 	robot query --query sparql/chem_interaction_props.rq $@ --input $<
 
 intermediates/yaml/chem_interaction_props_enum.yaml: intermediates/tsv/chem_interaction_props.tsv | intermediates/yaml
-	poetry run convert-chem-props -i $< -o $@
+	uv run convert-chem-props -i $< -o $@
 
 # Database generation
 intermediates/db/metpo.db: ../metpo.owl | intermediates/db
 	cp $< intermediates/db/metpo.owl
-	cd intermediates/db && poetry run semsql make metpo.db
+	cd intermediates/db && uv run semsql make metpo.db
 	rm -f intermediates/db/metpo.owl intermediates/db/metpo-relation-graph.tsv.gz
 
 # =============================================================================
@@ -83,11 +87,11 @@ intermediates/db/metpo.db: ../metpo.owl | intermediates/db
 # Template validation  
 validate-templates: templates/growth_conditions_template_base.yaml templates/chemical_utilization_template_base.yaml templates/taxa_template_base.yaml templates/morphology_template_base.yaml templates/biochemical_template_base.yaml | setup
 	@echo "Validating template schemas..."
-	poetry run linkml validate --schema templates/growth_conditions_template_base.yaml
-	poetry run linkml validate --schema templates/chemical_utilization_template_base.yaml
-	poetry run linkml validate --schema templates/taxa_template_base.yaml
-	poetry run linkml validate --schema templates/morphology_template_base.yaml
-	poetry run linkml validate --schema templates/biochemical_template_base.yaml
+	uv run linkml validate --schema templates/growth_conditions_template_base.yaml
+	uv run linkml validate --schema templates/chemical_utilization_template_base.yaml
+	uv run linkml validate --schema templates/taxa_template_base.yaml
+	uv run linkml validate --schema templates/morphology_template_base.yaml
+	uv run linkml validate --schema templates/biochemical_template_base.yaml
 	@echo "All templates validated successfully"
 
 # Dynamic template building (only chemical_utilization needs METPO predicates)
@@ -136,13 +140,13 @@ abstracts/.built: $(PMID_FILE) | abstracts
 	rm -f abstracts/*.txt
 	head -n $(N_ABSTRACTS) $< | while read pmid; do \
 		echo "Fetching abstract for PMID: $$pmid"; \
-		poetry run artl-cli get-abstract-from-pubmed-id --pmid "$$pmid" > "abstracts/$$pmid-abstract.txt" 2>/dev/null || echo "Failed to fetch PMID $$pmid"; \
+		uv run artl-cli get-abstract-from-pubmed-id --pmid "$$pmid" > "abstracts/$$pmid-abstract.txt" 2>/dev/null || echo "Failed to fetch PMID $$pmid"; \
 	done
 	touch $@
 
 # Pattern rule for individual abstracts
 abstracts/%-abstract.txt: | abstracts
-	poetry run artl-cli get-abstract-from-pubmed-id --pmid "$*" > $@ 2>/dev/null || (echo "Failed to fetch PMID $*" && rm -f $@)
+	uv run artl-cli get-abstract-from-pubmed-id --pmid "$*" > $@ 2>/dev/null || (echo "Failed to fetch PMID $*" && rm -f $@)
 
 # =============================================================================
 # EXTRACTION
@@ -152,8 +156,8 @@ abstracts/%-abstract.txt: | abstracts
 outputs/$(SOURCE)-$(TEMPLATE)-extractions.yaml: $(TEMPLATE_FILE) intermediates/db/metpo.db abstracts/.built | outputs
 	@echo "Extracting using template: $(TEMPLATE_FILE)"
 	@echo "Processing abstracts from: $(SOURCE)"
-	poetry run ontogpt -v \
-		--cache-db cache/ontogpt-cache.db \
+	uv run ontogpt -v \
+		--cache-db $(PWD)/cache/ontogpt-cache.db \
 		extract \
 		--show-prompt \
 		-p 0.1 \
@@ -169,8 +173,8 @@ quick-test: N_PMIDS = 15
 quick-test: N_ABSTRACTS = 10
 quick-test: setup-test-abstracts
 	@echo "Running quick test with $(N_ABSTRACTS) abstracts..."
-	poetry run ontogpt -v \
-		--cache-db cache/ontogpt-cache.db \
+	uv run ontogpt -v \
+		--cache-db $(PWD)/cache/ontogpt-cache.db \
 		extract \
 		--show-prompt \
 		-p 0.1 \
@@ -193,7 +197,7 @@ setup-test-abstracts: $(PMID_FILE) | test-abstracts
 		echo "Fetching $(N_ABSTRACTS) fresh abstracts for testing..."; \
 		head -n $(N_ABSTRACTS) $(PMID_FILE) | while read pmid; do \
 			echo "Fetching abstract for PMID: $$pmid"; \
-			poetry run artl-cli get-abstract-from-pubmed-id --pmid "$$pmid" > "test-abstracts/$$pmid-abstract.txt" 2>/dev/null || echo "Failed to fetch PMID $$pmid"; \
+			uv run artl-cli get-abstract-from-pubmed-id --pmid "$$pmid" > "test-abstracts/$$pmid-abstract.txt" 2>/dev/null || echo "Failed to fetch PMID $$pmid"; \
 		done; \
 	fi
 
@@ -266,13 +270,13 @@ TIMESTAMPED_OUTPUT := outputs/$(TEMPLATE)_$(TIMESTAMP).yaml
 TIMESTAMPED_LOG := logs/$(TEMPLATE)_$(TIMESTAMP).log
 
 # Run timestamped extraction with assessment
-timestamped-extraction: $(TEMPLATE_FILE) entity_relationship_assessment.py
+timestamped-extraction: $(TEMPLATE_FILE) template_quality_assessor.py unified_assessment.py
 	@echo "Running timestamped extraction: $(TEMPLATE) at $(TIMESTAMP)"
 	@echo "Input directory: $(INPUT_DIR)"
 	@echo "Template file: $(TEMPLATE_FILE)"
-	@mkdir -p outputs logs
-	poetry run ontogpt -v \
-		--cache-db cache/ontogpt-cache.db \
+	@mkdir -p outputs logs assessments
+	uv run ontogpt -v \
+		--cache-db $(PWD)/cache/ontogpt-cache.db \
 		extract \
 		--show-prompt \
 		-p 0.1 \
@@ -280,8 +284,14 @@ timestamped-extraction: $(TEMPLATE_FILE) entity_relationship_assessment.py
 		-i $(INPUT_DIR) \
 		-o $(TIMESTAMPED_OUTPUT) \
 		2>&1 | tee $(TIMESTAMPED_LOG)
-	@echo "Running assessment on $(TIMESTAMPED_OUTPUT)"
-	poetry run python entity_relationship_assessment.py $(TIMESTAMPED_OUTPUT)
+	@echo "Running unified assessment on $(TIMESTAMPED_OUTPUT)"
+	uv run python unified_assessment.py $(TIMESTAMPED_OUTPUT) \
+		--output assessments/unified_assessment_$(TEMPLATE)_$(TIMESTAMP).json \
+		--format json --verbose
+	@echo "Running template quality assessment on $(TEMPLATE_FILE)"
+	uv run python template_quality_assessor.py $(TEMPLATE_FILE) \
+		--output assessments/template_assessment_$(TEMPLATE)_$(TIMESTAMP).txt \
+		--format text
 
 # Run all templates with timestamped extraction
 run-all-templates:
@@ -291,13 +301,28 @@ run-all-templates:
 	$(MAKE) timestamped-extraction TEMPLATE=morphology INPUT_DIR=test-morphology-rich
 	$(MAKE) timestamped-extraction TEMPLATE=taxa INPUT_DIR=test-taxa-rich
 
+# Complete fresh run: cleanup, rebuild, and assess all templates
+fresh-assessment-run:
+	@echo "🧹 Cleaning intermediates and generated templates..."
+	$(MAKE) clean-intermediates clean-templates
+	@echo "🔨 Rebuilding intermediates and populated templates..."
+	$(MAKE) intermediates/db/metpo.db intermediates/yaml/chem_interaction_props_enum.yaml
+	$(MAKE) build-templates
+	@echo "🚀 Running timestamped extractions with assessments..."
+	$(MAKE) timestamped-extraction TEMPLATE=biochemical INPUT_DIR=test-biochemical-rich
+	$(MAKE) timestamped-extraction TEMPLATE=growth_conditions INPUT_DIR=test-growth-rich  
+	$(MAKE) timestamped-extraction TEMPLATE=chemical_utilization INPUT_DIR=test-chemical-rich
+	$(MAKE) timestamped-extraction TEMPLATE=morphology INPUT_DIR=test-morphology-rich
+	$(MAKE) timestamped-extraction TEMPLATE=taxa INPUT_DIR=test-taxa-rich
+	@echo "✅ Fresh assessment run complete - check outputs/ and assessments/ directories"
+
 # Compare before/after template improvements
 compare-extractions:
 	@echo "Available extraction outputs:"
 	@ls -la outputs/*_2*.yaml | tail -10
 	@echo ""
 	@echo "Run assessment on specific files:"
-	@echo "  poetry run python entity_relationship_assessment.py outputs/<filename>"
+	@echo "  uv run python unified_assessment.py outputs/<filename>"
 
 # Run assessment on a specific output file
 assess-output:
@@ -307,12 +332,54 @@ assess-output:
 		ls -1 outputs/*.yaml | head -10; \
 	else \
 		echo "Assessing $(FILE)..."; \
-		poetry run python entity_relationship_assessment.py $(FILE); \
+		mkdir -p assessments; \
+		uv run python unified_assessment.py $(FILE) \
+			--output assessments/unified_assessment_$$(basename $(FILE) .yaml)_$$(date +%Y%m%d_%H%M%S).json \
+			--format json --verbose; \
 	fi
 
 # Quick timestamped extraction with default settings
 quick-timestamped:
 	$(MAKE) timestamped-extraction TEMPLATE=$(TEMPLATE) INPUT_DIR=$(INPUT_DIR)
+
+# Debug extraction with maximum verbosity
+debug-extraction:
+	@echo "Running debug extraction with maximum verbosity..."
+	@echo "Template: $(TEMPLATE_FILE)"
+	@echo "Input: $(INPUT_DIR)"
+	@mkdir -p outputs logs cache
+	LITELLM_LOG=DEBUG uv run ontogpt -vv \
+		--cache-db $(PWD)/cache/debug-cache \
+		extract \
+		--show-prompt \
+		-p 0.1 \
+		-t $(TEMPLATE_FILE) \
+		-i $(INPUT_DIR) \
+		-o outputs/debug-$(TEMPLATE)-$(shell date +%Y%m%d_%H%M%S).yaml \
+		2>&1 | tee logs/debug-$(TEMPLATE)-$(shell date +%Y%m%d_%H%M%S).log
+
+# Assess all templates
+assess-templates: build-templates template_quality_assessor.py
+	@echo "Assessing all template quality..."
+	@mkdir -p assessments
+	uv run python template_quality_assessor.py templates/ \
+		--output assessments/all_templates_assessment_$(shell date +%Y%m%d_%H%M%S).txt \
+		--format text \
+		--verbose
+
+# Assess all extraction outputs  
+assess-all-outputs: unified_assessment.py
+	@echo "Assessing all extraction outputs..."
+	@mkdir -p assessments
+	@if [ $$(ls outputs/*.yaml 2>/dev/null | wc -l) -eq 0 ]; then \
+		echo "No YAML files found in outputs/ directory"; \
+		echo "Available files:"; \
+		ls -la outputs/ || echo "No outputs directory"; \
+	else \
+		uv run python unified_assessment.py outputs/ \
+			--output assessments/all_outputs_assessment_$(shell date +%Y%m%d_%H%M%S).json \
+			--format json --verbose --include-specialization; \
+	fi
 
 # =============================================================================
 # VALIDATION AND TESTING
@@ -336,6 +403,18 @@ status:
 	@echo "Pipeline Status:"
 	@echo "- PMIDs available: $(shell test -f $(PMID_FILE) && wc -l < $(PMID_FILE) || echo 'None')"
 	@echo "- Abstracts cached: $(shell ls abstracts/*.txt 2>/dev/null | wc -l)"
-	@echo "- Templates built: $(shell ls templates/*_template.yaml 2>/dev/null | wc -l)"
+	@echo "- Templates built: $(shell ls templates/*_populated.yaml 2>/dev/null | wc -l)"
 	@echo "- Outputs generated: $(shell ls outputs/*.yaml 2>/dev/null | wc -l)"
 	@echo "- Cache size: $(shell du -sh cache 2>/dev/null | cut -f1 || echo '0')"
+
+# Unified Assessment
+unified-assessment:
+	@echo "Running unified pipeline assessment..."
+	@mkdir -p assessments
+	uv run python unified_assessment.py outputs/ --verbose --include-specialization --output assessments/unified_assessment_$(shell date +%Y%m%d_%H%M%S).json
+
+# Domain-specific grounding analysis
+domain-grounding-analysis:
+	@echo "Running domain-specific grounding analysis..."
+	@mkdir -p assessments
+	uv run python domain_grounding_analysis.py outputs/ --verbose --output assessments/domain_grounding_$(shell date +%Y%m%d_%H%M%S).json

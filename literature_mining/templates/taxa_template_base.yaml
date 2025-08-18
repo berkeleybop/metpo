@@ -92,7 +92,7 @@ classes:
       families, and higher taxonomic groups. Includes both novel taxa being 
       described and reference taxa used for comparison.
     annotations:
-      annotators: sqlite:obo:ncbitaxon
+      annotators: sqlite:obo:ncbitaxon, sqlite:obo:gtdb
 
   Strain:
     is_a: NamedEntity
@@ -105,7 +105,7 @@ classes:
       Environmental contexts, habitats, ecological niches, and isolation sources 
       where microorganisms are found or from which they were isolated.
     annotations:
-      annotators: sqlite:obo:envo
+      annotators: sqlite:obo:envo, sqlite:obo:ecosim
 
   StrainRelationship:
     is_a: CompoundExpression

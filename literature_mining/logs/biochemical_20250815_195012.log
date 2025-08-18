@@ -1,0 +1,1348 @@
+/Users/MAM/Documents/gitrepos/metpo/.venv/lib/python3.11/site-packages/eutils/__init__.py:4: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+INFO:root:Logger root set to level 20
+INFO:root:Input file directory: test-biochemical-rich
+INFO:root:Parsed 9 files.
+INFO:linkml_runtime.utils.schemaview:Importing linkml:types as /Users/MAM/Documents/gitrepos/metpo/.venv/lib/python3.11/site-packages/linkml_runtime/linkml_model/model/schema/types from source /Users/MAM/Documents/gitrepos/metpo/.venv/lib/python3.11/site-packages/ontogpt/templates/core.yaml; base_dir=None
+INFO:ontogpt.io.template_loader:Loading custom schema from templates/biochemical_populated.yaml
+INFO:linkml_runtime.utils.schemaview:Importing ontogpt:core as http://w3id.org/ontogpt/core from source /Users/MAM/Documents/gitrepos/metpo/.venv/lib/python3.11/site-packages/ontogpt/templates/biochemical_populated.yaml; base_dir=None
+INFO:linkml_runtime.utils.schemaview:Importing linkml:types as /Users/MAM/Documents/gitrepos/metpo/.venv/lib/python3.11/site-packages/linkml_runtime/linkml_model/model/schema/types from source /Users/MAM/Documents/gitrepos/metpo/.venv/lib/python3.11/site-packages/ontogpt/templates/biochemical_populated.yaml; base_dir=None
+INFO:linkml_runtime.utils.schemaview:Importing ontogpt:core as http://w3id.org/ontogpt/core from source /Users/MAM/Documents/gitrepos/metpo/.venv/lib/python3.11/site-packages/ontogpt/templates/biochemical_populated.yaml; base_dir=None
+INFO:linkml_runtime.utils.schemaview:Importing linkml:types as /Users/MAM/Documents/gitrepos/metpo/.venv/lib/python3.11/site-packages/linkml_runtime/linkml_model/model/schema/types from source /Users/MAM/Documents/gitrepos/metpo/.venv/lib/python3.11/site-packages/ontogpt/templates/biochemical_populated.yaml; base_dir=None
+INFO:ontogpt.io.template_loader:Getting class for template templates/biochemical_populated.yaml
+INFO:root:Using template BiochemicalLiteratureExtraction
+INFO:root:Using mappers (currently hardcoded)
+INFO:root:API KEY path = /Users/MAM/Library/Application Support/ontology-access-kit/openai-apikey.txt
+INFO:root:Now extracting from file 1 of 9
+INFO:ontogpt.clients.llm_client:Complete: engine=gpt-4o, prompt[6145]=From the text below, extract the following entities in the following format:
+
+pmid: <PubMed ID of th...
+INFO:ontogpt.clients.llm_client: SENDING PROMPT:
+From the text below, extract the following entities in the following format:
+
+pmid: <PubMed ID of the article (e.g., 23996836)>
+study_taxa: <semicolon-separated list of the main bacterial or archaeal taxa being studied for biochemical characteristics>
+strains: <Extract specific strain designations mentioned in the text. Include strain numbers, culture collection numbers, type strain designations, and isolate names. Examples: "15-1T", "ATCC 25922", "MG1655", "K-12", "strain ABC123", "isolate XYZ-1". Do not include general species names.>
+enzyme_activities: <Identify enzyme activity names mentioned in the text. Extract enzyme activity terms like "catalase activity", "oxidase activity", "urease activity", "gelatinase activity", "lipase activity", "amylase activity", "protease activity", "β-galactosidase activity", "alkaline phosphatase activity". For enzymatic activities like "hydrolyzes starch", extract "starch hydrolysis". For "reduces nitrate", extract "nitrate reductase activity". For "produces indole", extract "indole production". Use "activity" suffix for enzymes when mentioned. Extract the enzyme activity name without positive/negative qualifiers. If no enzyme activities are mentioned, leave this field empty.>
+api_test_results: <Identify API test results or commercial biochemical test kit results mentioned in the text. Include results from API 20E, API 20NE, API 50CH, Biolog, Vitek, or similar systems. Examples: "API 20E profile", "API 50CH positive for glucose", "Biolog carbon utilization". If no API or commercial test results are mentioned, leave this field empty.>
+metabolic_tests: <Identify metabolic and diagnostic test names mentioned in the text. Extract clean test names like "indole production", "methyl red test", "Voges-Proskauer test", "citrate utilization", "hydrogen sulfide production", "nitrate reduction", "DNase test", "coagulase test", "hemolysis test". Extract the test name without positive/negative results. If no metabolic tests are mentioned, leave this field empty.>
+fatty_acid_composition: <Identify fatty acid composition mentioned in the text. Include specific fatty acids like "iso-C15:0", "anteiso-C17:0", "C16:1ω7c", "C18:1ω9c" and their percentages when provided. Also include terms like "branched-chain fatty acids", "straight-chain fatty acids", "unsaturated fatty acids", "FAME analysis". If no fatty acid information is mentioned, leave this field empty.>
+enzyme_relationships: <For each enzyme activity found in enzyme_activities, api_test_results, and metabolic_tests fields above, extract structured relationships linking specific strains to those enzyme activities. Generate tuples like "AZM34c11T positive_for catalase", "ATCC 25922 negative_for oxidase", "strain 15-1T demonstrates_activity urease". Use relationship types: positive_for, negative_for, demonstrates_activity, produces. Extract the positive/negative result information here even though the entity lists contain clean names. If no enzyme relationships are found, leave this field empty.>
+fatty_acid_relationships: <For each fatty acid found in fatty_acid_composition field above, extract structured relationships linking specific strains to those fatty acids. Generate tuples like "AZM34c11T major_fatty_acid iso-C16:0", "NBRC 106114T contains anteiso-C15:0", "strain ABC123 predominant_fatty_acid C16:1ω7c". Use relationship types: contains, major_fatty_acid, minor_fatty_acid, predominant_fatty_acid. If no fatty acid relationships are found, leave this field empty.>
+metabolic_test_relationships: <For each metabolic test found in metabolic_tests field above, extract structured relationships linking specific strains to those test results. Generate tuples like "ABC123 positive_for indole production", "ATCC 14887 negative_for methyl red", "strain XYZ demonstrates_activity citrate utilization". Use relationship types: positive_for, negative_for, demonstrates_activity. If no metabolic test relationships are found, leave this field empty.>
+api_test_relationships: <For each API test found in api_test_results field above, extract structured relationships linking specific strains to those test results. Generate tuples like "123T positive_for API 20E profile", "ATCC 25922 demonstrates_activity Biolog carbon utilization", "strain ABC negative_for API 50CH glucose". Use relationship types: positive_for, negative_for, demonstrates_activity. If no API test relationships are found, leave this field empty.>
+strain_relationships: <Extract strain-species relationships linking strains to their parent taxa. Generate tuples like "MG1655 strain_of Escherichia coli", "ATCC 25922 type_strain_of Klebsiella pneumoniae", "isolate XYZ-1 isolate_of Bacillus subtilis". Use relationship types: strain_of, type_strain_of, isolate_of, reference_strain_of, variant_of. If no strain relationships are found, leave this field empty.>
+
+
+Text:
+{'content': 'Meiothermus hypogaeus sp. nov., a moderately thermophilic bacterium isolated from a hot spring.\n\nA novel moderately thermophilic, red-pigmented bacterium, designated strain AZM34c11(T), was isolated from the bottom of a 1000 m-deep drilled well located in a Japanese hot spring. Cells were Gram-negative and grew optimally at 50 °C, at pH 7.6 and with 0-0.3% (w/v) NaCl. Analysis of the 16S rRNA gene sequence revealed that the isolate belonged to the genus Meiothermus. Levels of 16S rRNA gene sequence similarity between strain AZM34c11(T) and the type strains of recognized Meiothermus species were 88.2-94.8%. Strain AZM34c11(T) was distinguished from recognized Meiothermus species by its cellular fatty acid profile: iso-C(16:0) was one of the predominant components and hydroxy fatty acids were present only in trace amounts. The strain could also be differentiated based on its growth substrate preferences and characteristic enzyme reactions. On the basis of these results, strain AZM34c11(T) is considered to represent a novel species of the genus Meiothermus, for which the name Meiothermus hypogaeus sp. nov. is proposed. The type strain is AZM34c11(T) (=NBRC 106114(T) =DSM 23238(T)).\n\nPMID:21335495', 'saved_to': None, 'windowed': False}
+
+
+===
+
+
+INFO:root:RAW TEXT: pmid: 21335495  
+study_taxa: Meiothermus  
+strains: AZM34c11T; NBRC 106114T; DSM 23238T  
+enzyme_activities:   
+api_test_results:   
+metabolic_tests:   
+fatty_acid_composition: iso-C16:0  
+enzyme_relationships:   
+fatty_acid_relationships: AZM34c11T predominant_fatty_acid iso-C16:0  
+metabolic_test_relationships:   
+api_test_relationships:   
+strain_relationships: AZM34c11T type_strain_of Meiothermus hypogaeus; NBRC 106114T type_strain_of Meiothermus hypogaeus; DSM 23238T type_strain_of Meiothermus hypogaeus  
+INFO:root:PARSING LINE: pmid: 21335495
+INFO:root:PARSING LINE: study_taxa: Meiothermus
+INFO:root:PARSING LINE: strains: AZM34c11T; NBRC 106114T; DSM 23238T
+INFO:root:This line looks empty, assuming continuation: enzyme_activities:
+INFO:root:This line looks empty, assuming continuation: api_test_results:
+INFO:root:Finishing previous continued line: enzyme_activities:
+INFO:root:PARSING LINE: enzyme_activities:
+INFO:root:This line looks empty, assuming continuation: metabolic_tests:
+INFO:root:Finishing previous continued line: api_test_results:
+INFO:root:PARSING LINE: api_test_results:
+INFO:root:PARSING LINE: metabolic_tests:
+INFO:root:This line looks empty, assuming continuation: enzyme_relationships:
+INFO:root:PARSING LINE: enzyme_relationships:
+INFO:root:This line looks empty, assuming continuation: metabolic_test_relationships:
+INFO:root:This line looks empty, assuming continuation: api_test_relationships:
+INFO:root:Finishing previous continued line: metabolic_test_relationships:
+INFO:root:PARSING LINE: metabolic_test_relationships:
+INFO:root:PARSING LINE: api_test_relationships:
+INFO:ontogpt.engines.knowledge_engine:GROUNDING Meiothermus using Taxon
+INFO:ontogpt.engines.knowledge_engine:Singularized Meiothermus to meiothermu
+INFO:ontogpt.engines.knowledge_engine:GROUNDING meiothermu using Taxon
+INFO:ontogpt.engines.knowledge_engine:Loading annotator sqlite:obo:ncbitaxon
+INFO:root:Locator: obo:ncbitaxon
+INFO:root:Ensuring gunzipped for https://s3.amazonaws.com/bbop-sqlite/ncbitaxon.db.gz
+INFO:root:Locator, post-processed: sqlite:////Users/MAM/.data/oaklib/ncbitaxon.db
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Loading annotator sqlite:obo:gtdb
+INFO:root:Locator: obo:gtdb
+INFO:root:Ensuring gunzipped for https://s3.amazonaws.com/bbop-sqlite/gtdb.db.gz
+INFO:root:Locator, post-processed: sqlite:////Users/MAM/.data/oaklib/gtdb.db
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Grounding Meiothermus to NCBITaxon:65551; next step is to normalize
+INFO:ontogpt.engines.knowledge_engine:Normalized Meiothermus with NCBITaxon:65551 to NCBITaxon:65551
+INFO:ontogpt.engines.knowledge_engine:GROUNDING AZM34c11T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize AZM34c11T to Strain
+INFO:ontogpt.engines.knowledge_engine:GROUNDING NBRC 106114T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize NBRC 106114T to Strain
+INFO:ontogpt.engines.knowledge_engine:GROUNDING DSM 23238T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize DSM 23238T to Strain
+INFO:root:{'pmid': '21335495', 'study_taxa': ['NCBITaxon:65551'], 'strains': ['AUTO:AZM34c11T', 'AUTO:NBRC%20106114T', 'AUTO:DSM%2023238T']}
+INFO:root:Output format: yaml
+INFO:root:Now extracting from file 2 of 9
+INFO:ontogpt.clients.llm_client:Complete: engine=gpt-4o, prompt[6362]=From the text below, extract the following entities in the following format:
+
+pmid: <PubMed ID of th...
+INFO:ontogpt.clients.llm_client: SENDING PROMPT:
+From the text below, extract the following entities in the following format:
+
+pmid: <PubMed ID of the article (e.g., 23996836)>
+study_taxa: <semicolon-separated list of the main bacterial or archaeal taxa being studied for biochemical characteristics>
+strains: <Extract specific strain designations mentioned in the text. Include strain numbers, culture collection numbers, type strain designations, and isolate names. Examples: "15-1T", "ATCC 25922", "MG1655", "K-12", "strain ABC123", "isolate XYZ-1". Do not include general species names.>
+enzyme_activities: <Identify enzyme activity names mentioned in the text. Extract enzyme activity terms like "catalase activity", "oxidase activity", "urease activity", "gelatinase activity", "lipase activity", "amylase activity", "protease activity", "β-galactosidase activity", "alkaline phosphatase activity". For enzymatic activities like "hydrolyzes starch", extract "starch hydrolysis". For "reduces nitrate", extract "nitrate reductase activity". For "produces indole", extract "indole production". Use "activity" suffix for enzymes when mentioned. Extract the enzyme activity name without positive/negative qualifiers. If no enzyme activities are mentioned, leave this field empty.>
+api_test_results: <Identify API test results or commercial biochemical test kit results mentioned in the text. Include results from API 20E, API 20NE, API 50CH, Biolog, Vitek, or similar systems. Examples: "API 20E profile", "API 50CH positive for glucose", "Biolog carbon utilization". If no API or commercial test results are mentioned, leave this field empty.>
+metabolic_tests: <Identify metabolic and diagnostic test names mentioned in the text. Extract clean test names like "indole production", "methyl red test", "Voges-Proskauer test", "citrate utilization", "hydrogen sulfide production", "nitrate reduction", "DNase test", "coagulase test", "hemolysis test". Extract the test name without positive/negative results. If no metabolic tests are mentioned, leave this field empty.>
+fatty_acid_composition: <Identify fatty acid composition mentioned in the text. Include specific fatty acids like "iso-C15:0", "anteiso-C17:0", "C16:1ω7c", "C18:1ω9c" and their percentages when provided. Also include terms like "branched-chain fatty acids", "straight-chain fatty acids", "unsaturated fatty acids", "FAME analysis". If no fatty acid information is mentioned, leave this field empty.>
+enzyme_relationships: <For each enzyme activity found in enzyme_activities, api_test_results, and metabolic_tests fields above, extract structured relationships linking specific strains to those enzyme activities. Generate tuples like "AZM34c11T positive_for catalase", "ATCC 25922 negative_for oxidase", "strain 15-1T demonstrates_activity urease". Use relationship types: positive_for, negative_for, demonstrates_activity, produces. Extract the positive/negative result information here even though the entity lists contain clean names. If no enzyme relationships are found, leave this field empty.>
+fatty_acid_relationships: <For each fatty acid found in fatty_acid_composition field above, extract structured relationships linking specific strains to those fatty acids. Generate tuples like "AZM34c11T major_fatty_acid iso-C16:0", "NBRC 106114T contains anteiso-C15:0", "strain ABC123 predominant_fatty_acid C16:1ω7c". Use relationship types: contains, major_fatty_acid, minor_fatty_acid, predominant_fatty_acid. If no fatty acid relationships are found, leave this field empty.>
+metabolic_test_relationships: <For each metabolic test found in metabolic_tests field above, extract structured relationships linking specific strains to those test results. Generate tuples like "ABC123 positive_for indole production", "ATCC 14887 negative_for methyl red", "strain XYZ demonstrates_activity citrate utilization". Use relationship types: positive_for, negative_for, demonstrates_activity. If no metabolic test relationships are found, leave this field empty.>
+api_test_relationships: <For each API test found in api_test_results field above, extract structured relationships linking specific strains to those test results. Generate tuples like "123T positive_for API 20E profile", "ATCC 25922 demonstrates_activity Biolog carbon utilization", "strain ABC negative_for API 50CH glucose". Use relationship types: positive_for, negative_for, demonstrates_activity. If no API test relationships are found, leave this field empty.>
+strain_relationships: <Extract strain-species relationships linking strains to their parent taxa. Generate tuples like "MG1655 strain_of Escherichia coli", "ATCC 25922 type_strain_of Klebsiella pneumoniae", "isolate XYZ-1 isolate_of Bacillus subtilis". Use relationship types: strain_of, type_strain_of, isolate_of, reference_strain_of, variant_of. If no strain relationships are found, leave this field empty.>
+
+
+Text:
+{'content': 'Bacillus vietnamensis sp. nov., a moderately halotolerant, aerobic, endospore-forming bacterium isolated from Vietnamese fish sauce.\n\nFive strains of Gram-positive, endospore-forming, moderately halotolerant bacteria were studied taxonomically. Four were isolated from Vietnamese fish sauce and one from the Gulf of Mexico. Phylogenetic analysis based on 16S rRNA gene sequences showed that these strains clustered within the radiation of the genus Bacillus but separately from recognized Bacillus species. DNA G+C composition of the isolates ranged from 43 to 44 mol%. Strains 15-1(T) and NRRL B-14850 showed high levels of DNA-DNA relatedness (82-100 %) to each other and to the other strains isolated here; they displayed low levels of DNA-DNA relatedness (<29 %) to the type strains of selected recognized Bacillus species. They grew in 15 % NaCl and optimally in 1 % NaCl, which is characteristic of moderately halotolerant bacteria. The isolates grew at pH 6.5 to 10.0 but not at pH 6.0. Their cell walls contained meso-diaminopimelic acid. The major isoprenoid quinone was MK-7 and the principal cellular fatty acids were anteiso-C(15 : 0), iso-C(15 : 0) and anteiso-C(17 : 0). Based on these results, the strains tested were regarded as members of a novel Bacillus species for which the name Bacillus vietnamensis sp. nov. is proposed. The type strain is 15-1(T) (=JCM 11124(T)=NRIC 0531(T)=NRRL 23890(T)).\n\nPMID:15545444', 'saved_to': None, 'windowed': False}
+
+
+===
+
+
+INFO:root:RAW TEXT: pmid: 15545444  
+study_taxa: Bacillus  
+strains: 15-1T; NRRL B-14850; JCM 11124T; NRIC 0531T; NRRL 23890T  
+enzyme_activities:  
+api_test_results:  
+metabolic_tests:  
+fatty_acid_composition: anteiso-C15:0; iso-C15:0; anteiso-C17:0  
+enzyme_relationships:  
+fatty_acid_relationships: 15-1T major_fatty_acid anteiso-C15:0; 15-1T major_fatty_acid iso-C15:0; 15-1T major_fatty_acid anteiso-C17:0  
+metabolic_test_relationships:  
+api_test_relationships:  
+strain_relationships: 15-1T type_strain_of Bacillus vietnamensis; NRRL B-14850 strain_of Bacillus vietnamensis; JCM 11124T type_strain_of Bacillus vietnamensis; NRIC 0531T type_strain_of Bacillus vietnamensis; NRRL 23890T type_strain_of Bacillus vietnamensis  
+INFO:root:PARSING LINE: pmid: 15545444
+INFO:root:PARSING LINE: study_taxa: Bacillus
+INFO:root:PARSING LINE: strains: 15-1T; NRRL B-14850; JCM 11124T; NRIC 0531T; NRRL 23890T
+INFO:root:This line looks empty, assuming continuation: enzyme_activities:
+INFO:root:This line looks empty, assuming continuation: api_test_results:
+INFO:root:Finishing previous continued line: enzyme_activities:
+INFO:root:PARSING LINE: enzyme_activities:
+INFO:root:This line looks empty, assuming continuation: metabolic_tests:
+INFO:root:Finishing previous continued line: api_test_results:
+INFO:root:PARSING LINE: api_test_results:
+INFO:root:PARSING LINE: metabolic_tests:
+INFO:root:This line looks empty, assuming continuation: enzyme_relationships:
+INFO:root:PARSING LINE: enzyme_relationships:
+INFO:root:This line looks empty, assuming continuation: metabolic_test_relationships:
+INFO:root:This line looks empty, assuming continuation: api_test_relationships:
+INFO:root:Finishing previous continued line: metabolic_test_relationships:
+INFO:root:PARSING LINE: metabolic_test_relationships:
+INFO:root:PARSING LINE: api_test_relationships:
+INFO:ontogpt.engines.knowledge_engine:GROUNDING Bacillus using Taxon
+INFO:ontogpt.engines.knowledge_engine:Singularized Bacillus to bacillu
+INFO:ontogpt.engines.knowledge_engine:GROUNDING bacillu using Taxon
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Grounding Bacillus to NCBITaxon:1386; next step is to normalize
+INFO:ontogpt.engines.knowledge_engine:Normalized Bacillus with NCBITaxon:1386 to NCBITaxon:1386
+INFO:ontogpt.engines.knowledge_engine:GROUNDING 15-1T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize 15-1T to Strain
+INFO:ontogpt.engines.knowledge_engine:GROUNDING NRRL B-14850 using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize NRRL B-14850 to Strain
+INFO:ontogpt.engines.knowledge_engine:GROUNDING JCM 11124T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize JCM 11124T to Strain
+INFO:ontogpt.engines.knowledge_engine:GROUNDING NRIC 0531T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize NRIC 0531T to Strain
+INFO:ontogpt.engines.knowledge_engine:GROUNDING NRRL 23890T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize NRRL 23890T to Strain
+INFO:root:{'pmid': '15545444', 'study_taxa': ['NCBITaxon:1386'], 'strains': ['AUTO:15-1T', 'AUTO:NRRL%20B-14850', 'AUTO:JCM%2011124T', 'AUTO:NRIC%200531T', 'AUTO:NRRL%2023890T']}
+INFO:root:Output format: yaml
+INFO:root:Now extracting from file 3 of 9
+INFO:ontogpt.clients.llm_client:Complete: engine=gpt-4o, prompt[6351]=From the text below, extract the following entities in the following format:
+
+pmid: <PubMed ID of th...
+INFO:ontogpt.clients.llm_client: SENDING PROMPT:
+From the text below, extract the following entities in the following format:
+
+pmid: <PubMed ID of the article (e.g., 23996836)>
+study_taxa: <semicolon-separated list of the main bacterial or archaeal taxa being studied for biochemical characteristics>
+strains: <Extract specific strain designations mentioned in the text. Include strain numbers, culture collection numbers, type strain designations, and isolate names. Examples: "15-1T", "ATCC 25922", "MG1655", "K-12", "strain ABC123", "isolate XYZ-1". Do not include general species names.>
+enzyme_activities: <Identify enzyme activity names mentioned in the text. Extract enzyme activity terms like "catalase activity", "oxidase activity", "urease activity", "gelatinase activity", "lipase activity", "amylase activity", "protease activity", "β-galactosidase activity", "alkaline phosphatase activity". For enzymatic activities like "hydrolyzes starch", extract "starch hydrolysis". For "reduces nitrate", extract "nitrate reductase activity". For "produces indole", extract "indole production". Use "activity" suffix for enzymes when mentioned. Extract the enzyme activity name without positive/negative qualifiers. If no enzyme activities are mentioned, leave this field empty.>
+api_test_results: <Identify API test results or commercial biochemical test kit results mentioned in the text. Include results from API 20E, API 20NE, API 50CH, Biolog, Vitek, or similar systems. Examples: "API 20E profile", "API 50CH positive for glucose", "Biolog carbon utilization". If no API or commercial test results are mentioned, leave this field empty.>
+metabolic_tests: <Identify metabolic and diagnostic test names mentioned in the text. Extract clean test names like "indole production", "methyl red test", "Voges-Proskauer test", "citrate utilization", "hydrogen sulfide production", "nitrate reduction", "DNase test", "coagulase test", "hemolysis test". Extract the test name without positive/negative results. If no metabolic tests are mentioned, leave this field empty.>
+fatty_acid_composition: <Identify fatty acid composition mentioned in the text. Include specific fatty acids like "iso-C15:0", "anteiso-C17:0", "C16:1ω7c", "C18:1ω9c" and their percentages when provided. Also include terms like "branched-chain fatty acids", "straight-chain fatty acids", "unsaturated fatty acids", "FAME analysis". If no fatty acid information is mentioned, leave this field empty.>
+enzyme_relationships: <For each enzyme activity found in enzyme_activities, api_test_results, and metabolic_tests fields above, extract structured relationships linking specific strains to those enzyme activities. Generate tuples like "AZM34c11T positive_for catalase", "ATCC 25922 negative_for oxidase", "strain 15-1T demonstrates_activity urease". Use relationship types: positive_for, negative_for, demonstrates_activity, produces. Extract the positive/negative result information here even though the entity lists contain clean names. If no enzyme relationships are found, leave this field empty.>
+fatty_acid_relationships: <For each fatty acid found in fatty_acid_composition field above, extract structured relationships linking specific strains to those fatty acids. Generate tuples like "AZM34c11T major_fatty_acid iso-C16:0", "NBRC 106114T contains anteiso-C15:0", "strain ABC123 predominant_fatty_acid C16:1ω7c". Use relationship types: contains, major_fatty_acid, minor_fatty_acid, predominant_fatty_acid. If no fatty acid relationships are found, leave this field empty.>
+metabolic_test_relationships: <For each metabolic test found in metabolic_tests field above, extract structured relationships linking specific strains to those test results. Generate tuples like "ABC123 positive_for indole production", "ATCC 14887 negative_for methyl red", "strain XYZ demonstrates_activity citrate utilization". Use relationship types: positive_for, negative_for, demonstrates_activity. If no metabolic test relationships are found, leave this field empty.>
+api_test_relationships: <For each API test found in api_test_results field above, extract structured relationships linking specific strains to those test results. Generate tuples like "123T positive_for API 20E profile", "ATCC 25922 demonstrates_activity Biolog carbon utilization", "strain ABC negative_for API 50CH glucose". Use relationship types: positive_for, negative_for, demonstrates_activity. If no API test relationships are found, leave this field empty.>
+strain_relationships: <Extract strain-species relationships linking strains to their parent taxa. Generate tuples like "MG1655 strain_of Escherichia coli", "ATCC 25922 type_strain_of Klebsiella pneumoniae", "isolate XYZ-1 isolate_of Bacillus subtilis". Use relationship types: strain_of, type_strain_of, isolate_of, reference_strain_of, variant_of. If no strain relationships are found, leave this field empty.>
+
+
+Text:
+{'content': 'Bacillus terrae sp. nov. isolated from Cistus ladanifer rhizosphere soil.\n\nA bacterial strain designated RA9T was isolated from a root of Cistus ladanifer in Spain. Phylogenetic analyses based on 16S rRNA gene sequences placed the isolate into the genus Bacillus with its closest relatives being Bacillus fortis R-6514T and Bacillus fordii R-7190T with 98.2 % similarity in both cases. DNA-DNA hybridization studies showed mean relatedness values of 29 and 30 %, respectively, between strain RA9T and the type strains of B. fortis and B. fordii. Cells of the isolate were Gram-stain-positive, motile, sporulating rods. Catalase and oxidase were positive. Gelatin, starch and casein were not hydrolysed. Menaquinone MK-7 was the only menaquinone detected and iso-C15 : 0 and anteiso-C15 : 0 were the major fatty acids. The polar lipid profile consisted of diphosphatidylglycerol, phosphatidylglycerol, phosphatidylethanolamine, one unidentified aminophospholipid, one unidentified phospholipid, one unidentifed glycolipid and one unidentified lipid. meso-Diaminopimelic acid was detected in the peptidoglycan. The DNA G+C content was 43.1 mol%. Phylogenetic, chemotaxonomic and phenotypic analyses showed that strain RA9T should be considered as representing a novel species of the genus Bacillus, for which the name Bacillus terrae sp. nov. is proposed. The type strain is RA9T (=LMG 29736T=CECT 9170T).\n\nPMID:27983469', 'saved_to': None, 'windowed': False}
+
+
+===
+
+
+INFO:root:RAW TEXT: ```plaintext
+pmid: 27983469
+study_taxa: Bacillus
+strains: RA9T; R-6514T; R-7190T; LMG 29736T; CECT 9170T
+enzyme_activities: catalase activity; oxidase activity
+api_test_results: 
+metabolic_tests: gelatin hydrolysis; starch hydrolysis; casein hydrolysis
+fatty_acid_composition: iso-C15:0; anteiso-C15:0
+enzyme_relationships: RA9T positive_for catalase activity; RA9T positive_for oxidase activity
+fatty_acid_relationships: RA9T major_fatty_acid iso-C15:0; RA9T major_fatty_acid anteiso-C15:0
+metabolic_test_relationships: RA9T negative_for gelatin hydrolysis; RA9T negative_for starch hydrolysis; RA9T negative_for casein hydrolysis
+api_test_relationships: 
+strain_relationships: RA9T type_strain_of Bacillus terrae; R-6514T type_strain_of Bacillus fortis; R-7190T type_strain_of Bacillus fordii
+```
+INFO:root:PARSING LINE: pmid: 27983469
+INFO:root:PARSING LINE: study_taxa: Bacillus
+INFO:root:PARSING LINE: strains: RA9T; R-6514T; R-7190T; LMG 29736T; CECT 9170T
+INFO:root:PARSING LINE: enzyme_activities: catalase activity; oxidase activity
+INFO:root:This line looks empty, assuming continuation: api_test_results:
+INFO:root:PARSING LINE: api_test_results:
+INFO:root:PARSING LINE: fatty_acid_composition: iso-C15:0; anteiso-C15:0
+INFO:root:PARSING LINE: enzyme_relationships: RA9T positive_for catalase activity; RA9T positive_for oxidase activity
+INFO:ontogpt.clients.llm_client:Complete: engine=gpt-4o, prompt[724]=Split the following piece of text into fields in the following format:
+
+subject: <the strain being t...
+INFO:root:PARSING LINE: subject: RA9T
+INFO:root:PARSING LINE: predicate: positive_for
+INFO:root:PARSING LINE: object: catalase activity
+INFO:ontogpt.clients.llm_client:Complete: engine=gpt-4o, prompt[723]=Split the following piece of text into fields in the following format:
+
+subject: <the strain being t...
+INFO:root:PARSING LINE: subject: RA9T
+INFO:root:PARSING LINE: predicate: positive_for
+INFO:root:PARSING LINE: object: oxidase activity
+INFO:root:PARSING LINE: fatty_acid_relationships: RA9T major_fatty_acid iso-C15:0; RA9T major_fatty_acid anteiso-C15:0
+INFO:ontogpt.clients.llm_client:Complete: engine=gpt-4o, prompt[664]=Split the following piece of text into fields in the following format:
+
+subject: <the strain with th...
+INFO:root:PARSING LINE: subject: RA9T
+INFO:root:PARSING LINE: predicate: major_fatty_acid
+INFO:root:PARSING LINE: object: iso-C15:0
+INFO:ontogpt.clients.llm_client:Complete: engine=gpt-4o, prompt[668]=Split the following piece of text into fields in the following format:
+
+subject: <the strain with th...
+INFO:root:PARSING LINE: subject: RA9T
+INFO:root:PARSING LINE: predicate: major_fatty_acid
+INFO:root:PARSING LINE: object: anteiso-C15:0
+INFO:root:PARSING LINE: metabolic_test_relationships: RA9T negative_for gelatin hydrolysis; RA9T negative_for starch hydrolysis; RA9T negative_for casein hydrolysis
+INFO:ontogpt.clients.llm_client:Complete: engine=gpt-4o, prompt[504]=Split the following piece of text into fields in the following format:
+
+subject: <the strain being t...
+INFO:root:PARSING LINE: subject: RA9T
+INFO:root:PARSING LINE: predicate: negative_for
+INFO:root:PARSING LINE: object: gelatin hydrolysis
+INFO:ontogpt.clients.llm_client:Complete: engine=gpt-4o, prompt[503]=Split the following piece of text into fields in the following format:
+
+subject: <the strain being t...
+INFO:root:PARSING LINE: subject: RA9T
+INFO:root:PARSING LINE: predicate: negative_for
+INFO:root:PARSING LINE: object: starch hydrolysis
+INFO:ontogpt.clients.llm_client:Complete: engine=gpt-4o, prompt[503]=Split the following piece of text into fields in the following format:
+
+subject: <the strain being t...
+INFO:root:PARSING LINE: subject: RA9T
+INFO:root:PARSING LINE: predicate: negative_for
+INFO:root:PARSING LINE: object: casein hydrolysis
+INFO:root:This line looks empty, assuming continuation: api_test_relationships:
+INFO:root:PARSING LINE: api_test_relationships:
+INFO:ontogpt.engines.knowledge_engine:GROUNDING Bacillus using Taxon
+INFO:ontogpt.engines.knowledge_engine:Singularized Bacillus to bacillu
+INFO:ontogpt.engines.knowledge_engine:GROUNDING bacillu using Taxon
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Grounding Bacillus to NCBITaxon:1386; next step is to normalize
+INFO:ontogpt.engines.knowledge_engine:Normalized Bacillus with NCBITaxon:1386 to NCBITaxon:1386
+INFO:ontogpt.engines.knowledge_engine:GROUNDING RA9T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize RA9T to Strain
+INFO:ontogpt.engines.knowledge_engine:GROUNDING R-6514T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize R-6514T to Strain
+INFO:ontogpt.engines.knowledge_engine:GROUNDING R-7190T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize R-7190T to Strain
+INFO:ontogpt.engines.knowledge_engine:GROUNDING LMG 29736T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize LMG 29736T to Strain
+INFO:ontogpt.engines.knowledge_engine:GROUNDING CECT 9170T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize CECT 9170T to Strain
+INFO:ontogpt.engines.knowledge_engine:GROUNDING catalase activity using EnzymeActivity
+INFO:ontogpt.engines.knowledge_engine:Loading annotator sqlite:obo:go
+INFO:root:Locator: obo:go
+INFO:root:Ensuring gunzipped for https://s3.amazonaws.com/bbop-sqlite/go.db.gz
+INFO:root:Locator, post-processed: sqlite:////Users/MAM/.data/oaklib/go.db
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Grounding catalase activity to GO:0004096; next step is to normalize
+INFO:ontogpt.engines.knowledge_engine:Normalized catalase activity with GO:0004096 to GO:0004096
+INFO:ontogpt.engines.knowledge_engine:GROUNDING oxidase activity using EnzymeActivity
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Loading annotator sqlite:obo:rhea
+INFO:root:Locator: obo:rhea
+INFO:root:Ensuring gunzipped for https://s3.amazonaws.com/bbop-sqlite/rhea.db.gz
+INFO:root:Locator, post-processed: sqlite:////Users/MAM/.data/oaklib/rhea.db
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize oxidase activity to EnzymeActivity
+INFO:ontogpt.engines.knowledge_engine:GROUNDING iso-C15:0 using FattyAcid
+INFO:ontogpt.engines.knowledge_engine:Loading annotator sqlite:obo:chebi
+INFO:root:Locator: obo:chebi
+INFO:root:Ensuring gunzipped for https://s3.amazonaws.com/bbop-sqlite/chebi.db.gz
+INFO:root:Locator, post-processed: sqlite:////Users/MAM/.data/oaklib/chebi.db
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Grounding iso-C15:0 to CHEBI:39250; next step is to normalize
+INFO:ontogpt.engines.knowledge_engine:Normalized iso-C15:0 with CHEBI:39250 to CHEBI:39250
+INFO:ontogpt.engines.knowledge_engine:GROUNDING anteiso-C15:0 using FattyAcid
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Grounding anteiso-C15:0 to CHEBI:39251; next step is to normalize
+INFO:ontogpt.engines.knowledge_engine:Normalized anteiso-C15:0 with CHEBI:39251 to CHEBI:39251
+INFO:ontogpt.engines.knowledge_engine:GROUNDING RA9T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize RA9T to Strain
+INFO:root:Looking for positive_for in BiochemicalTestResult
+INFO:ontogpt.engines.knowledge_engine:GROUNDING catalase activity using EnzymeActivity
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Grounding catalase activity to GO:0004096; next step is to normalize
+INFO:ontogpt.engines.knowledge_engine:Normalized catalase activity with GO:0004096 to GO:0004096
+INFO:root:{'subject': 'AUTO:RA9T', 'predicate': 'positive_for', 'object': 'GO:0004096'}
+INFO:ontogpt.engines.knowledge_engine:GROUNDING RA9T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize RA9T to Strain
+INFO:root:Looking for positive_for in BiochemicalTestResult
+INFO:ontogpt.engines.knowledge_engine:GROUNDING oxidase activity using EnzymeActivity
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize oxidase activity to EnzymeActivity
+INFO:root:{'subject': 'AUTO:RA9T', 'predicate': 'positive_for', 'object': 'AUTO:oxidase%20activity'}
+INFO:ontogpt.engines.knowledge_engine:GROUNDING RA9T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize RA9T to Strain
+INFO:root:Looking for major_fatty_acid in BiochemicalTestResult
+INFO:ontogpt.engines.knowledge_engine:GROUNDING iso-C15:0 using FattyAcid
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Grounding iso-C15:0 to CHEBI:39250; next step is to normalize
+INFO:ontogpt.engines.knowledge_engine:Normalized iso-C15:0 with CHEBI:39250 to CHEBI:39250
+INFO:root:{'subject': 'AUTO:RA9T', 'predicate': 'major_fatty_acid', 'object': 'CHEBI:39250'}
+INFO:ontogpt.engines.knowledge_engine:GROUNDING RA9T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize RA9T to Strain
+INFO:root:Looking for major_fatty_acid in BiochemicalTestResult
+INFO:ontogpt.engines.knowledge_engine:GROUNDING anteiso-C15:0 using FattyAcid
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Grounding anteiso-C15:0 to CHEBI:39251; next step is to normalize
+INFO:ontogpt.engines.knowledge_engine:Normalized anteiso-C15:0 with CHEBI:39251 to CHEBI:39251
+INFO:root:{'subject': 'AUTO:RA9T', 'predicate': 'major_fatty_acid', 'object': 'CHEBI:39251'}
+INFO:ontogpt.engines.knowledge_engine:GROUNDING RA9T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize RA9T to Strain
+INFO:root:Looking for negative_for in BiochemicalTestResult
+INFO:ontogpt.engines.knowledge_engine:GROUNDING gelatin hydrolysis using MetabolicTest
+INFO:ontogpt.engines.knowledge_engine:Singularized gelatin hydrolysis to gelatin hydrolysi
+INFO:ontogpt.engines.knowledge_engine:GROUNDING gelatin hydrolysi using MetabolicTest
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize gelatin hydrolysis to MetabolicTest
+INFO:root:{'subject': 'AUTO:RA9T', 'predicate': 'negative_for', 'object': 'AUTO:gelatin%20hydrolysis'}
+INFO:ontogpt.engines.knowledge_engine:GROUNDING RA9T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize RA9T to Strain
+INFO:root:Looking for negative_for in BiochemicalTestResult
+INFO:ontogpt.engines.knowledge_engine:GROUNDING starch hydrolysis using MetabolicTest
+INFO:ontogpt.engines.knowledge_engine:Singularized starch hydrolysis to starch hydrolysi
+INFO:ontogpt.engines.knowledge_engine:GROUNDING starch hydrolysi using MetabolicTest
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize starch hydrolysis to MetabolicTest
+INFO:root:{'subject': 'AUTO:RA9T', 'predicate': 'negative_for', 'object': 'AUTO:starch%20hydrolysis'}
+INFO:ontogpt.engines.knowledge_engine:GROUNDING RA9T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize RA9T to Strain
+INFO:root:Looking for negative_for in BiochemicalTestResult
+INFO:ontogpt.engines.knowledge_engine:GROUNDING casein hydrolysis using MetabolicTest
+INFO:ontogpt.engines.knowledge_engine:Singularized casein hydrolysis to casein hydrolysi
+INFO:ontogpt.engines.knowledge_engine:GROUNDING casein hydrolysi using MetabolicTest
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize casein hydrolysis to MetabolicTest
+INFO:root:{'subject': 'AUTO:RA9T', 'predicate': 'negative_for', 'object': 'AUTO:casein%20hydrolysis'}
+INFO:root:{'pmid': '27983469', 'study_taxa': ['NCBITaxon:1386'], 'strains': ['AUTO:RA9T', 'AUTO:R-6514T', 'AUTO:R-7190T', 'AUTO:LMG%2029736T', 'AUTO:CECT%209170T'], 'enzyme_activities': ['GO:0004096', 'AUTO:oxidase%20activity'], 'fatty_acid_composition': ['CHEBI:39250', 'CHEBI:39251'], 'enzyme_relationships': [EnzymeRelationship(subject='AUTO:RA9T', predicate='positive_for', object='GO:0004096'), EnzymeRelationship(subject='AUTO:RA9T', predicate='positive_for', object='AUTO:oxidase%20activity')], 'fatty_acid_relationships': [FattyAcidRelationship(subject='AUTO:RA9T', predicate='major_fatty_acid', object='CHEBI:39250'), FattyAcidRelationship(subject='AUTO:RA9T', predicate='major_fatty_acid', object='CHEBI:39251')], 'metabolic_test_relationships': [MetabolicTestRelationship(subject='AUTO:RA9T', predicate='negative_for', object='AUTO:gelatin%20hydrolysis'), MetabolicTestRelationship(subject='AUTO:RA9T', predicate='negative_for', object='AUTO:starch%20hydrolysis'), MetabolicTestRelationship(subject='AUTO:RA9T', predicate='negative_for', object='AUTO:casein%20hydrolysis')]}
+INFO:root:Output format: yaml
+INFO:root:Now extracting from file 4 of 9
+INFO:ontogpt.clients.llm_client:Complete: engine=gpt-4o, prompt[6789]=From the text below, extract the following entities in the following format:
+
+pmid: <PubMed ID of th...
+INFO:ontogpt.clients.llm_client: SENDING PROMPT:
+From the text below, extract the following entities in the following format:
+
+pmid: <PubMed ID of the article (e.g., 23996836)>
+study_taxa: <semicolon-separated list of the main bacterial or archaeal taxa being studied for biochemical characteristics>
+strains: <Extract specific strain designations mentioned in the text. Include strain numbers, culture collection numbers, type strain designations, and isolate names. Examples: "15-1T", "ATCC 25922", "MG1655", "K-12", "strain ABC123", "isolate XYZ-1". Do not include general species names.>
+enzyme_activities: <Identify enzyme activity names mentioned in the text. Extract enzyme activity terms like "catalase activity", "oxidase activity", "urease activity", "gelatinase activity", "lipase activity", "amylase activity", "protease activity", "β-galactosidase activity", "alkaline phosphatase activity". For enzymatic activities like "hydrolyzes starch", extract "starch hydrolysis". For "reduces nitrate", extract "nitrate reductase activity". For "produces indole", extract "indole production". Use "activity" suffix for enzymes when mentioned. Extract the enzyme activity name without positive/negative qualifiers. If no enzyme activities are mentioned, leave this field empty.>
+api_test_results: <Identify API test results or commercial biochemical test kit results mentioned in the text. Include results from API 20E, API 20NE, API 50CH, Biolog, Vitek, or similar systems. Examples: "API 20E profile", "API 50CH positive for glucose", "Biolog carbon utilization". If no API or commercial test results are mentioned, leave this field empty.>
+metabolic_tests: <Identify metabolic and diagnostic test names mentioned in the text. Extract clean test names like "indole production", "methyl red test", "Voges-Proskauer test", "citrate utilization", "hydrogen sulfide production", "nitrate reduction", "DNase test", "coagulase test", "hemolysis test". Extract the test name without positive/negative results. If no metabolic tests are mentioned, leave this field empty.>
+fatty_acid_composition: <Identify fatty acid composition mentioned in the text. Include specific fatty acids like "iso-C15:0", "anteiso-C17:0", "C16:1ω7c", "C18:1ω9c" and their percentages when provided. Also include terms like "branched-chain fatty acids", "straight-chain fatty acids", "unsaturated fatty acids", "FAME analysis". If no fatty acid information is mentioned, leave this field empty.>
+enzyme_relationships: <For each enzyme activity found in enzyme_activities, api_test_results, and metabolic_tests fields above, extract structured relationships linking specific strains to those enzyme activities. Generate tuples like "AZM34c11T positive_for catalase", "ATCC 25922 negative_for oxidase", "strain 15-1T demonstrates_activity urease". Use relationship types: positive_for, negative_for, demonstrates_activity, produces. Extract the positive/negative result information here even though the entity lists contain clean names. If no enzyme relationships are found, leave this field empty.>
+fatty_acid_relationships: <For each fatty acid found in fatty_acid_composition field above, extract structured relationships linking specific strains to those fatty acids. Generate tuples like "AZM34c11T major_fatty_acid iso-C16:0", "NBRC 106114T contains anteiso-C15:0", "strain ABC123 predominant_fatty_acid C16:1ω7c". Use relationship types: contains, major_fatty_acid, minor_fatty_acid, predominant_fatty_acid. If no fatty acid relationships are found, leave this field empty.>
+metabolic_test_relationships: <For each metabolic test found in metabolic_tests field above, extract structured relationships linking specific strains to those test results. Generate tuples like "ABC123 positive_for indole production", "ATCC 14887 negative_for methyl red", "strain XYZ demonstrates_activity citrate utilization". Use relationship types: positive_for, negative_for, demonstrates_activity. If no metabolic test relationships are found, leave this field empty.>
+api_test_relationships: <For each API test found in api_test_results field above, extract structured relationships linking specific strains to those test results. Generate tuples like "123T positive_for API 20E profile", "ATCC 25922 demonstrates_activity Biolog carbon utilization", "strain ABC negative_for API 50CH glucose". Use relationship types: positive_for, negative_for, demonstrates_activity. If no API test relationships are found, leave this field empty.>
+strain_relationships: <Extract strain-species relationships linking strains to their parent taxa. Generate tuples like "MG1655 strain_of Escherichia coli", "ATCC 25922 type_strain_of Klebsiella pneumoniae", "isolate XYZ-1 isolate_of Bacillus subtilis". Use relationship types: strain_of, type_strain_of, isolate_of, reference_strain_of, variant_of. If no strain relationships are found, leave this field empty.>
+
+
+Text:
+{'content': 'Pandoraea terrae sp. nov., isolated from forest soil, and emended description of the genus Pandoraea Coenye et al. 2000.\n\nA Gram-staining-negative, facultatively aerobic, white-colony-forming bacterium, designated strain SE-S21T, was isolated from forest soil of Jeju Island in Korea. Cells were motile rods with a single polar flagellum, showing catalase- and oxidase-positive reactions. Growth was observed at 10-40 °C (optimum, 30 °C), pH 4.0-10.0 (optimum, pH 7.0-7.5) and with 0-4.0 % (w/v) NaCl (optimum, 0-2 %). Only ubiquinone-8 was detected as the isoprenoid quinone, and C16 : 0, C17 : 0 cyclo, C19 : 1ω8c cyclo and summed feature 2 (comprising C12 : 0 aldehyde and/or unknown) were found to be the major fatty acids. Phosphatidylethanolamine, diphosphatidylglycerol, phosphatidylglycerol, an unknown aminophospholipid, an unknown aminolipid and an unknown lipid were detected as the major polar lipids. Putrescine and 2-hydroxyputrescine were the predominant polyamines. The DNA G+C content was 61.0 mol%. Phylogenetic analyses based on 16S rRNA and DNA gyrase B gene sequences revealed that strain SE-S21T formed a phyletic lineage within the genus Pandoraea. Strain SE-S21T was most closely related to Pandoraea faecigallinarum KOxT and Pandoraea pnomenusa CCUG 38742T with 98.8 % and 98.7 % 16S rRNA gene sequence similarities, respectively. However, the DNA-DNA relatedness values between strain SE-S21T and the type strains of P. faecigallinarum and P. pnomenusa were 26.6±5.7 % and 20.5±3.7 %, respectively. On the basis of phenotypic, chemotaxonomic and molecular features, strain SE-S21T clearly represents a novel species of the genus Pandoraea, for which the name Pandoraea terrae sp. nov. is proposed. The type strain is SE-S21T (=KACC 18127T=JCM 30137T). An emended description of the genus Pandoraea is also proposed.\n\nPMID:27267599', 'saved_to': None, 'windowed': False}
+
+
+===
+
+
+INFO:root:RAW TEXT: pmid: 27267599  
+study_taxa: Pandoraea  
+strains: SE-S21T; KACC 18127T; JCM 30137T; KOxT; CCUG 38742T  
+enzyme_activities: catalase activity; oxidase activity  
+api_test_results:   
+metabolic_tests:   
+fatty_acid_composition: C16:0; C17:0 cyclo; C19:1ω8c cyclo; summed feature 2 (comprising C12:0 aldehyde and/or unknown)  
+enzyme_relationships: SE-S21T positive_for catalase activity; SE-S21T positive_for oxidase activity  
+fatty_acid_relationships: SE-S21T major_fatty_acid C16:0; SE-S21T major_fatty_acid C17:0 cyclo; SE-S21T major_fatty_acid C19:1ω8c cyclo; SE-S21T major_fatty_acid summed feature 2 (comprising C12:0 aldehyde and/or unknown)  
+metabolic_test_relationships:   
+api_test_relationships:   
+strain_relationships: SE-S21T type_strain_of Pandoraea terrae; KACC 18127T type_strain_of Pandoraea terrae; JCM 30137T type_strain_of Pandoraea terrae; KOxT type_strain_of Pandoraea faecigallinarum; CCUG 38742T type_strain_of Pandoraea pnomenusa  
+INFO:root:PARSING LINE: pmid: 27267599
+INFO:root:PARSING LINE: study_taxa: Pandoraea
+INFO:root:PARSING LINE: strains: SE-S21T; KACC 18127T; JCM 30137T; KOxT; CCUG 38742T
+INFO:root:PARSING LINE: enzyme_activities: catalase activity; oxidase activity
+INFO:root:This line looks empty, assuming continuation: api_test_results:
+INFO:root:This line looks empty, assuming continuation: metabolic_tests:
+INFO:root:Finishing previous continued line: api_test_results:
+INFO:root:PARSING LINE: api_test_results:
+INFO:root:PARSING LINE: metabolic_tests:
+INFO:root:PARSING LINE: enzyme_relationships: SE-S21T positive_for catalase activity; SE-S21T positive_for oxidase activity
+INFO:ontogpt.clients.llm_client:Complete: engine=gpt-4o, prompt[727]=Split the following piece of text into fields in the following format:
+
+subject: <the strain being t...
+INFO:root:PARSING LINE: subject: SE-S21T
+INFO:root:PARSING LINE: predicate: positive_for
+INFO:root:PARSING LINE: object: catalase activity
+INFO:ontogpt.clients.llm_client:Complete: engine=gpt-4o, prompt[726]=Split the following piece of text into fields in the following format:
+
+subject: <the strain being t...
+INFO:root:PARSING LINE: subject: SE-S21T
+INFO:root:PARSING LINE: predicate: positive_for
+INFO:root:PARSING LINE: object: oxidase activity
+INFO:root:PARSING LINE: fatty_acid_relationships: SE-S21T major_fatty_acid C16:0; SE-S21T major_fatty_acid C17:0 cyclo; SE-S21T major_fatty_acid C19:1ω8c cyclo; SE-S21T major_fatty_acid summed feature 2 (comprising C12:0 aldehyde and/or unknown)
+INFO:ontogpt.clients.llm_client:Complete: engine=gpt-4o, prompt[663]=Split the following piece of text into fields in the following format:
+
+subject: <the strain with th...
+INFO:root:PARSING LINE: subject: SE-S21T
+INFO:root:PARSING LINE: predicate: major_fatty_acid
+INFO:root:PARSING LINE: object: C16:0
+INFO:ontogpt.clients.llm_client:Complete: engine=gpt-4o, prompt[669]=Split the following piece of text into fields in the following format:
+
+subject: <the strain with th...
+INFO:root:PARSING LINE: subject: SE-S21T
+INFO:root:PARSING LINE: predicate: major_fatty_acid
+INFO:root:PARSING LINE: object: C17:0 cyclo
+INFO:ontogpt.clients.llm_client:Complete: engine=gpt-4o, prompt[672]=Split the following piece of text into fields in the following format:
+
+subject: <the strain with th...
+INFO:root:PARSING LINE: subject: SE-S21T
+INFO:root:PARSING LINE: predicate: major_fatty_acid
+INFO:root:PARSING LINE: object: C19:1ω8c cyclo
+INFO:ontogpt.clients.llm_client:Complete: engine=gpt-4o, prompt[723]=From the text below, extract the following entities in the following format:
+
+subject: <the strain w...
+INFO:root:PARSING LINE: subject: SE-S21T
+INFO:root:PARSING LINE: predicate: major_fatty_acid
+INFO:root:PARSING LINE: object: summed feature 2 (comprising C12:0 aldehyde and/or unknown)
+INFO:root:This line looks empty, assuming continuation: metabolic_test_relationships:
+INFO:root:This line looks empty, assuming continuation: api_test_relationships:
+INFO:root:Finishing previous continued line: metabolic_test_relationships:
+INFO:root:PARSING LINE: metabolic_test_relationships:
+INFO:root:PARSING LINE: api_test_relationships:
+INFO:ontogpt.engines.knowledge_engine:GROUNDING Pandoraea using Taxon
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Grounding Pandoraea to NCBITaxon:93217; next step is to normalize
+INFO:ontogpt.engines.knowledge_engine:Normalized Pandoraea with NCBITaxon:93217 to NCBITaxon:93217
+INFO:ontogpt.engines.knowledge_engine:GROUNDING SE-S21T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize SE-S21T to Strain
+INFO:ontogpt.engines.knowledge_engine:GROUNDING KACC 18127T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize KACC 18127T to Strain
+INFO:ontogpt.engines.knowledge_engine:GROUNDING JCM 30137T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize JCM 30137T to Strain
+INFO:ontogpt.engines.knowledge_engine:GROUNDING KOxT using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize KOxT to Strain
+INFO:ontogpt.engines.knowledge_engine:GROUNDING CCUG 38742T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize CCUG 38742T to Strain
+INFO:ontogpt.engines.knowledge_engine:GROUNDING catalase activity using EnzymeActivity
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Grounding catalase activity to GO:0004096; next step is to normalize
+INFO:ontogpt.engines.knowledge_engine:Normalized catalase activity with GO:0004096 to GO:0004096
+INFO:ontogpt.engines.knowledge_engine:GROUNDING oxidase activity using EnzymeActivity
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize oxidase activity to EnzymeActivity
+INFO:ontogpt.engines.knowledge_engine:GROUNDING SE-S21T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize SE-S21T to Strain
+INFO:root:Looking for positive_for in BiochemicalTestResult
+INFO:ontogpt.engines.knowledge_engine:GROUNDING catalase activity using EnzymeActivity
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Grounding catalase activity to GO:0004096; next step is to normalize
+INFO:ontogpt.engines.knowledge_engine:Normalized catalase activity with GO:0004096 to GO:0004096
+INFO:root:{'subject': 'AUTO:SE-S21T', 'predicate': 'positive_for', 'object': 'GO:0004096'}
+INFO:ontogpt.engines.knowledge_engine:GROUNDING SE-S21T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize SE-S21T to Strain
+INFO:root:Looking for positive_for in BiochemicalTestResult
+INFO:ontogpt.engines.knowledge_engine:GROUNDING oxidase activity using EnzymeActivity
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize oxidase activity to EnzymeActivity
+INFO:root:{'subject': 'AUTO:SE-S21T', 'predicate': 'positive_for', 'object': 'AUTO:oxidase%20activity'}
+INFO:ontogpt.engines.knowledge_engine:GROUNDING SE-S21T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize SE-S21T to Strain
+INFO:root:Looking for major_fatty_acid in BiochemicalTestResult
+INFO:ontogpt.engines.knowledge_engine:GROUNDING C16:0 using FattyAcid
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Grounding C16:0 to CHEBI:15756; next step is to normalize
+INFO:ontogpt.engines.knowledge_engine:Normalized C16:0 with CHEBI:15756 to CHEBI:15756
+INFO:root:{'subject': 'AUTO:SE-S21T', 'predicate': 'major_fatty_acid', 'object': 'CHEBI:15756'}
+INFO:ontogpt.engines.knowledge_engine:GROUNDING SE-S21T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize SE-S21T to Strain
+INFO:root:Looking for major_fatty_acid in BiochemicalTestResult
+INFO:ontogpt.engines.knowledge_engine:GROUNDING C17:0 cyclo using FattyAcid
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Loading annotator sqlite:obo:drugbank
+INFO:root:Locator: obo:drugbank
+INFO:root:Ensuring gunzipped for https://s3.amazonaws.com/bbop-sqlite/drugbank.db.gz
+INFO:root:Locator, post-processed: sqlite:////Users/MAM/.data/oaklib/drugbank.db
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize C17:0 cyclo to FattyAcid
+INFO:root:{'subject': 'AUTO:SE-S21T', 'predicate': 'major_fatty_acid', 'object': 'AUTO:C17%3A0%20cyclo'}
+INFO:ontogpt.engines.knowledge_engine:GROUNDING SE-S21T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize SE-S21T to Strain
+INFO:root:Looking for major_fatty_acid in BiochemicalTestResult
+INFO:ontogpt.engines.knowledge_engine:GROUNDING C19:1ω8c cyclo using FattyAcid
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize C19:1ω8c cyclo to FattyAcid
+INFO:root:{'subject': 'AUTO:SE-S21T', 'predicate': 'major_fatty_acid', 'object': 'AUTO:C19%3A1%CF%898c%20cyclo'}
+INFO:ontogpt.engines.knowledge_engine:GROUNDING SE-S21T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize SE-S21T to Strain
+INFO:root:Looking for major_fatty_acid in BiochemicalTestResult
+INFO:ontogpt.engines.knowledge_engine:GROUNDING summed feature 2 (comprising C12:0 aldehyde and/or unknown) using FattyAcid
+INFO:ontogpt.engines.knowledge_engine:summed feature 2 (comprising c12:0 aldehyde and/or unknown) =>paren=> ['comprising c12:0 aldehyde and/or unknown']
+INFO:ontogpt.engines.knowledge_engine:GROUNDING comprising c12:0 aldehyde and/or unknown using FattyAcid
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:GROUNDING summed feature 2 using FattyAcid
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize summed feature 2 (comprising C12:0 aldehyde and/or unknown) to FattyAcid
+INFO:root:{'subject': 'AUTO:SE-S21T', 'predicate': 'major_fatty_acid', 'object': 'AUTO:summed%20feature%202%20%28comprising%20C12%3A0%20aldehyde%20and/or%20unknown%29'}
+INFO:root:{'pmid': '27267599', 'study_taxa': ['NCBITaxon:93217'], 'strains': ['AUTO:SE-S21T', 'AUTO:KACC%2018127T', 'AUTO:JCM%2030137T', 'AUTO:KOxT', 'AUTO:CCUG%2038742T'], 'enzyme_activities': ['GO:0004096', 'AUTO:oxidase%20activity'], 'enzyme_relationships': [EnzymeRelationship(subject='AUTO:SE-S21T', predicate='positive_for', object='GO:0004096'), EnzymeRelationship(subject='AUTO:SE-S21T', predicate='positive_for', object='AUTO:oxidase%20activity')], 'fatty_acid_relationships': [FattyAcidRelationship(subject='AUTO:SE-S21T', predicate='major_fatty_acid', object='CHEBI:15756'), FattyAcidRelationship(subject='AUTO:SE-S21T', predicate='major_fatty_acid', object='AUTO:C17%3A0%20cyclo'), FattyAcidRelationship(subject='AUTO:SE-S21T', predicate='major_fatty_acid', object='AUTO:C19%3A1%CF%898c%20cyclo'), FattyAcidRelationship(subject='AUTO:SE-S21T', predicate='major_fatty_acid', object='AUTO:summed%20feature%202%20%28comprising%20C12%3A0%20aldehyde%20and/or%20unknown%29')]}
+INFO:root:Output format: yaml
+INFO:root:Now extracting from file 5 of 9
+INFO:ontogpt.clients.llm_client:Complete: engine=gpt-4o, prompt[6920]=From the text below, extract the following entities in the following format:
+
+pmid: <PubMed ID of th...
+INFO:ontogpt.clients.llm_client: SENDING PROMPT:
+From the text below, extract the following entities in the following format:
+
+pmid: <PubMed ID of the article (e.g., 23996836)>
+study_taxa: <semicolon-separated list of the main bacterial or archaeal taxa being studied for biochemical characteristics>
+strains: <Extract specific strain designations mentioned in the text. Include strain numbers, culture collection numbers, type strain designations, and isolate names. Examples: "15-1T", "ATCC 25922", "MG1655", "K-12", "strain ABC123", "isolate XYZ-1". Do not include general species names.>
+enzyme_activities: <Identify enzyme activity names mentioned in the text. Extract enzyme activity terms like "catalase activity", "oxidase activity", "urease activity", "gelatinase activity", "lipase activity", "amylase activity", "protease activity", "β-galactosidase activity", "alkaline phosphatase activity". For enzymatic activities like "hydrolyzes starch", extract "starch hydrolysis". For "reduces nitrate", extract "nitrate reductase activity". For "produces indole", extract "indole production". Use "activity" suffix for enzymes when mentioned. Extract the enzyme activity name without positive/negative qualifiers. If no enzyme activities are mentioned, leave this field empty.>
+api_test_results: <Identify API test results or commercial biochemical test kit results mentioned in the text. Include results from API 20E, API 20NE, API 50CH, Biolog, Vitek, or similar systems. Examples: "API 20E profile", "API 50CH positive for glucose", "Biolog carbon utilization". If no API or commercial test results are mentioned, leave this field empty.>
+metabolic_tests: <Identify metabolic and diagnostic test names mentioned in the text. Extract clean test names like "indole production", "methyl red test", "Voges-Proskauer test", "citrate utilization", "hydrogen sulfide production", "nitrate reduction", "DNase test", "coagulase test", "hemolysis test". Extract the test name without positive/negative results. If no metabolic tests are mentioned, leave this field empty.>
+fatty_acid_composition: <Identify fatty acid composition mentioned in the text. Include specific fatty acids like "iso-C15:0", "anteiso-C17:0", "C16:1ω7c", "C18:1ω9c" and their percentages when provided. Also include terms like "branched-chain fatty acids", "straight-chain fatty acids", "unsaturated fatty acids", "FAME analysis". If no fatty acid information is mentioned, leave this field empty.>
+enzyme_relationships: <For each enzyme activity found in enzyme_activities, api_test_results, and metabolic_tests fields above, extract structured relationships linking specific strains to those enzyme activities. Generate tuples like "AZM34c11T positive_for catalase", "ATCC 25922 negative_for oxidase", "strain 15-1T demonstrates_activity urease". Use relationship types: positive_for, negative_for, demonstrates_activity, produces. Extract the positive/negative result information here even though the entity lists contain clean names. If no enzyme relationships are found, leave this field empty.>
+fatty_acid_relationships: <For each fatty acid found in fatty_acid_composition field above, extract structured relationships linking specific strains to those fatty acids. Generate tuples like "AZM34c11T major_fatty_acid iso-C16:0", "NBRC 106114T contains anteiso-C15:0", "strain ABC123 predominant_fatty_acid C16:1ω7c". Use relationship types: contains, major_fatty_acid, minor_fatty_acid, predominant_fatty_acid. If no fatty acid relationships are found, leave this field empty.>
+metabolic_test_relationships: <For each metabolic test found in metabolic_tests field above, extract structured relationships linking specific strains to those test results. Generate tuples like "ABC123 positive_for indole production", "ATCC 14887 negative_for methyl red", "strain XYZ demonstrates_activity citrate utilization". Use relationship types: positive_for, negative_for, demonstrates_activity. If no metabolic test relationships are found, leave this field empty.>
+api_test_relationships: <For each API test found in api_test_results field above, extract structured relationships linking specific strains to those test results. Generate tuples like "123T positive_for API 20E profile", "ATCC 25922 demonstrates_activity Biolog carbon utilization", "strain ABC negative_for API 50CH glucose". Use relationship types: positive_for, negative_for, demonstrates_activity. If no API test relationships are found, leave this field empty.>
+strain_relationships: <Extract strain-species relationships linking strains to their parent taxa. Generate tuples like "MG1655 strain_of Escherichia coli", "ATCC 25922 type_strain_of Klebsiella pneumoniae", "isolate XYZ-1 isolate_of Bacillus subtilis". Use relationship types: strain_of, type_strain_of, isolate_of, reference_strain_of, variant_of. If no strain relationships are found, leave this field empty.>
+
+
+Text:
+{'content': 'Paenibacillus panaciterrae sp. nov., isolated from ginseng-cultivated soil.\n\nA novel bacterium, designated DCY95T, was isolated from ginseng-cultivated soil in Quang Nam province, Vietnam. On the basis of 16S rRNA and gyrB gene sequence analysis, this isolate was assigned to the genus Paenibacillus and found to be closely related to Paenibacillus sacheonensis SY01T (97.1 % 16S rRNA gene sequence similarity) and Paenibacillus taihuensis THMBG22T (96.4 %). The partial gyrB gene of DCY95T possessed 69.6-83.9 % sequence identity to those of other members of the genus Paenibacillus. Strain DCY95T was Gram-reaction-negative, catalase-negative, oxidase-positive, strictly aerobic, rod-shaped and motile by means of peritrichous flagella. Ellipsoidal free spores or subterminal endospores were produced in sporangia. MK-7 was the diagnostic menaquinone. The cell-wall peptidoglycan contained meso-diamonopimelic acid as the diamino acid. Whole-cell sugars comprised ribose, mannose and glucose. The major cellular fatty acids were anteiso-C15 : 0, iso-C16 : 0 and C16 : 0. The major polar lipids were phosphatidylethanolamine, phosphatidylglycerol, three unidentified aminophospholipids, and two unidentified phospholipids. The genomic DNA G+C content was 60.7 ± 0.9 mol%. Phenotypic and chemotaxonomic results placed strain DCY95T within the genus Paenibacillus. However, DNA-DNA relatedness values between strain DCY95T and P. sacheonensis KACC 14895T or P. taihuensis NBRC 108766T were lower than 36 %. The low DNA relatedness data in combination with phylogenetic and (GTG)5-PCR analyses, as well as biochemical tests, indicated that strain DCY95T could not be assigned to any recognized species. In conclusion, the results in this study support the classification of strain DCY95T as a representative of a novel species within the genus Paenibacillus, for which the name Paenibacillus panaciterrae is proposed. The type strain is DCY95T ( = KCTC 33581T = DSM 29477T).\n\nPMID:26294902', 'saved_to': None, 'windowed': False}
+
+
+===
+
+
+INFO:root:RAW TEXT: pmid: 26294902  
+study_taxa: Paenibacillus  
+strains: DCY95T; KCTC 33581T; DSM 29477T; SY01T; THMBG22T; KACC 14895T; NBRC 108766T  
+enzyme_activities: catalase activity; oxidase activity  
+api_test_results:   
+metabolic_tests:   
+fatty_acid_composition: anteiso-C15:0; iso-C16:0; C16:0  
+enzyme_relationships: DCY95T negative_for catalase; DCY95T positive_for oxidase  
+fatty_acid_relationships: DCY95T major_fatty_acid anteiso-C15:0; DCY95T major_fatty_acid iso-C16:0; DCY95T major_fatty_acid C16:0  
+metabolic_test_relationships:   
+api_test_relationships:   
+strain_relationships: DCY95T type_strain_of Paenibacillus panaciterrae; SY01T strain_of Paenibacillus sacheonensis; THMBG22T strain_of Paenibacillus taihuensis; KACC 14895T strain_of Paenibacillus sacheonensis; NBRC 108766T strain_of Paenibacillus taihuensis  
+INFO:root:PARSING LINE: pmid: 26294902
+INFO:root:PARSING LINE: study_taxa: Paenibacillus
+INFO:root:PARSING LINE: strains: DCY95T; KCTC 33581T; DSM 29477T; SY01T; THMBG22T; KACC 14895T; NBRC 108766T
+INFO:root:PARSING LINE: enzyme_activities: catalase activity; oxidase activity
+INFO:root:This line looks empty, assuming continuation: api_test_results:
+INFO:root:This line looks empty, assuming continuation: metabolic_tests:
+INFO:root:Finishing previous continued line: api_test_results:
+INFO:root:PARSING LINE: api_test_results:
+INFO:root:PARSING LINE: metabolic_tests:
+INFO:root:PARSING LINE: enzyme_relationships: DCY95T negative_for catalase; DCY95T positive_for oxidase
+INFO:ontogpt.clients.llm_client:Complete: engine=gpt-4o, prompt[717]=Split the following piece of text into fields in the following format:
+
+subject: <the strain being t...
+INFO:root:PARSING LINE: subject: DCY95T
+INFO:root:PARSING LINE: predicate: negative_for
+INFO:root:PARSING LINE: object: catalase
+INFO:ontogpt.clients.llm_client:Complete: engine=gpt-4o, prompt[716]=Split the following piece of text into fields in the following format:
+
+subject: <the strain being t...
+INFO:root:PARSING LINE: subject: DCY95T
+INFO:root:PARSING LINE: predicate: positive_for
+INFO:root:PARSING LINE: object: oxidase
+INFO:root:PARSING LINE: fatty_acid_relationships: DCY95T major_fatty_acid anteiso-C15:0; DCY95T major_fatty_acid iso-C16:0; DCY95T major_fatty_acid C16:0
+INFO:ontogpt.clients.llm_client:Complete: engine=gpt-4o, prompt[670]=Split the following piece of text into fields in the following format:
+
+subject: <the strain with th...
+INFO:root:PARSING LINE: subject: DCY95T
+INFO:root:PARSING LINE: predicate: major_fatty_acid
+INFO:root:PARSING LINE: object: anteiso-C15:0
+INFO:ontogpt.clients.llm_client:Complete: engine=gpt-4o, prompt[666]=Split the following piece of text into fields in the following format:
+
+subject: <the strain with th...
+INFO:root:PARSING LINE: subject: DCY95T
+INFO:root:PARSING LINE: predicate: major_fatty_acid
+INFO:root:PARSING LINE: object: iso-C16:0
+INFO:ontogpt.clients.llm_client:Complete: engine=gpt-4o, prompt[662]=Split the following piece of text into fields in the following format:
+
+subject: <the strain with th...
+INFO:root:PARSING LINE: subject: DCY95T
+INFO:root:PARSING LINE: predicate: major_fatty_acid
+INFO:root:PARSING LINE: object: C16:0
+INFO:root:This line looks empty, assuming continuation: metabolic_test_relationships:
+INFO:root:This line looks empty, assuming continuation: api_test_relationships:
+INFO:root:Finishing previous continued line: metabolic_test_relationships:
+INFO:root:PARSING LINE: metabolic_test_relationships:
+INFO:root:PARSING LINE: api_test_relationships:
+INFO:ontogpt.engines.knowledge_engine:GROUNDING Paenibacillus using Taxon
+INFO:ontogpt.engines.knowledge_engine:Singularized Paenibacillus to paenibacillu
+INFO:ontogpt.engines.knowledge_engine:GROUNDING paenibacillu using Taxon
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Grounding Paenibacillus to NCBITaxon:44249; next step is to normalize
+INFO:ontogpt.engines.knowledge_engine:Normalized Paenibacillus with NCBITaxon:44249 to NCBITaxon:44249
+INFO:ontogpt.engines.knowledge_engine:GROUNDING DCY95T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize DCY95T to Strain
+INFO:ontogpt.engines.knowledge_engine:GROUNDING KCTC 33581T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize KCTC 33581T to Strain
+INFO:ontogpt.engines.knowledge_engine:GROUNDING DSM 29477T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize DSM 29477T to Strain
+INFO:ontogpt.engines.knowledge_engine:GROUNDING SY01T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize SY01T to Strain
+INFO:ontogpt.engines.knowledge_engine:GROUNDING THMBG22T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize THMBG22T to Strain
+INFO:ontogpt.engines.knowledge_engine:GROUNDING KACC 14895T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize KACC 14895T to Strain
+INFO:ontogpt.engines.knowledge_engine:GROUNDING NBRC 108766T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize NBRC 108766T to Strain
+INFO:ontogpt.engines.knowledge_engine:GROUNDING catalase activity using EnzymeActivity
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Grounding catalase activity to GO:0004096; next step is to normalize
+INFO:ontogpt.engines.knowledge_engine:Normalized catalase activity with GO:0004096 to GO:0004096
+INFO:ontogpt.engines.knowledge_engine:GROUNDING oxidase activity using EnzymeActivity
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize oxidase activity to EnzymeActivity
+INFO:ontogpt.engines.knowledge_engine:GROUNDING DCY95T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize DCY95T to Strain
+INFO:root:Looking for negative_for in BiochemicalTestResult
+INFO:ontogpt.engines.knowledge_engine:GROUNDING catalase using EnzymeActivity
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize catalase to EnzymeActivity
+INFO:root:{'subject': 'AUTO:DCY95T', 'predicate': 'negative_for', 'object': 'AUTO:catalase'}
+INFO:ontogpt.engines.knowledge_engine:GROUNDING DCY95T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize DCY95T to Strain
+INFO:root:Looking for positive_for in BiochemicalTestResult
+INFO:ontogpt.engines.knowledge_engine:GROUNDING oxidase using EnzymeActivity
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize oxidase to EnzymeActivity
+INFO:root:{'subject': 'AUTO:DCY95T', 'predicate': 'positive_for', 'object': 'AUTO:oxidase'}
+INFO:ontogpt.engines.knowledge_engine:GROUNDING DCY95T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize DCY95T to Strain
+INFO:root:Looking for major_fatty_acid in BiochemicalTestResult
+INFO:ontogpt.engines.knowledge_engine:GROUNDING anteiso-C15:0 using FattyAcid
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Grounding anteiso-C15:0 to CHEBI:39251; next step is to normalize
+INFO:ontogpt.engines.knowledge_engine:Normalized anteiso-C15:0 with CHEBI:39251 to CHEBI:39251
+INFO:root:{'subject': 'AUTO:DCY95T', 'predicate': 'major_fatty_acid', 'object': 'CHEBI:39251'}
+INFO:ontogpt.engines.knowledge_engine:GROUNDING DCY95T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize DCY95T to Strain
+INFO:root:Looking for major_fatty_acid in BiochemicalTestResult
+INFO:ontogpt.engines.knowledge_engine:GROUNDING iso-C16:0 using FattyAcid
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Grounding iso-C16:0 to CHEBI:84890; next step is to normalize
+INFO:ontogpt.engines.knowledge_engine:Normalized iso-C16:0 with CHEBI:84890 to CHEBI:84890
+INFO:root:{'subject': 'AUTO:DCY95T', 'predicate': 'major_fatty_acid', 'object': 'CHEBI:84890'}
+INFO:ontogpt.engines.knowledge_engine:GROUNDING DCY95T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize DCY95T to Strain
+INFO:root:Looking for major_fatty_acid in BiochemicalTestResult
+INFO:ontogpt.engines.knowledge_engine:GROUNDING C16:0 using FattyAcid
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Grounding C16:0 to CHEBI:15756; next step is to normalize
+INFO:ontogpt.engines.knowledge_engine:Normalized C16:0 with CHEBI:15756 to CHEBI:15756
+INFO:root:{'subject': 'AUTO:DCY95T', 'predicate': 'major_fatty_acid', 'object': 'CHEBI:15756'}
+INFO:root:{'pmid': '26294902', 'study_taxa': ['NCBITaxon:44249'], 'strains': ['AUTO:DCY95T', 'AUTO:KCTC%2033581T', 'AUTO:DSM%2029477T', 'AUTO:SY01T', 'AUTO:THMBG22T', 'AUTO:KACC%2014895T', 'AUTO:NBRC%20108766T'], 'enzyme_activities': ['GO:0004096', 'AUTO:oxidase%20activity'], 'enzyme_relationships': [EnzymeRelationship(subject='AUTO:DCY95T', predicate='negative_for', object='AUTO:catalase'), EnzymeRelationship(subject='AUTO:DCY95T', predicate='positive_for', object='AUTO:oxidase')], 'fatty_acid_relationships': [FattyAcidRelationship(subject='AUTO:DCY95T', predicate='major_fatty_acid', object='CHEBI:39251'), FattyAcidRelationship(subject='AUTO:DCY95T', predicate='major_fatty_acid', object='CHEBI:84890'), FattyAcidRelationship(subject='AUTO:DCY95T', predicate='major_fatty_acid', object='CHEBI:15756')]}
+INFO:root:Output format: yaml
+INFO:root:Now extracting from file 6 of 9
+INFO:ontogpt.clients.llm_client:Complete: engine=gpt-4o, prompt[6343]=From the text below, extract the following entities in the following format:
+
+pmid: <PubMed ID of th...
+INFO:ontogpt.clients.llm_client: SENDING PROMPT:
+From the text below, extract the following entities in the following format:
+
+pmid: <PubMed ID of the article (e.g., 23996836)>
+study_taxa: <semicolon-separated list of the main bacterial or archaeal taxa being studied for biochemical characteristics>
+strains: <Extract specific strain designations mentioned in the text. Include strain numbers, culture collection numbers, type strain designations, and isolate names. Examples: "15-1T", "ATCC 25922", "MG1655", "K-12", "strain ABC123", "isolate XYZ-1". Do not include general species names.>
+enzyme_activities: <Identify enzyme activity names mentioned in the text. Extract enzyme activity terms like "catalase activity", "oxidase activity", "urease activity", "gelatinase activity", "lipase activity", "amylase activity", "protease activity", "β-galactosidase activity", "alkaline phosphatase activity". For enzymatic activities like "hydrolyzes starch", extract "starch hydrolysis". For "reduces nitrate", extract "nitrate reductase activity". For "produces indole", extract "indole production". Use "activity" suffix for enzymes when mentioned. Extract the enzyme activity name without positive/negative qualifiers. If no enzyme activities are mentioned, leave this field empty.>
+api_test_results: <Identify API test results or commercial biochemical test kit results mentioned in the text. Include results from API 20E, API 20NE, API 50CH, Biolog, Vitek, or similar systems. Examples: "API 20E profile", "API 50CH positive for glucose", "Biolog carbon utilization". If no API or commercial test results are mentioned, leave this field empty.>
+metabolic_tests: <Identify metabolic and diagnostic test names mentioned in the text. Extract clean test names like "indole production", "methyl red test", "Voges-Proskauer test", "citrate utilization", "hydrogen sulfide production", "nitrate reduction", "DNase test", "coagulase test", "hemolysis test". Extract the test name without positive/negative results. If no metabolic tests are mentioned, leave this field empty.>
+fatty_acid_composition: <Identify fatty acid composition mentioned in the text. Include specific fatty acids like "iso-C15:0", "anteiso-C17:0", "C16:1ω7c", "C18:1ω9c" and their percentages when provided. Also include terms like "branched-chain fatty acids", "straight-chain fatty acids", "unsaturated fatty acids", "FAME analysis". If no fatty acid information is mentioned, leave this field empty.>
+enzyme_relationships: <For each enzyme activity found in enzyme_activities, api_test_results, and metabolic_tests fields above, extract structured relationships linking specific strains to those enzyme activities. Generate tuples like "AZM34c11T positive_for catalase", "ATCC 25922 negative_for oxidase", "strain 15-1T demonstrates_activity urease". Use relationship types: positive_for, negative_for, demonstrates_activity, produces. Extract the positive/negative result information here even though the entity lists contain clean names. If no enzyme relationships are found, leave this field empty.>
+fatty_acid_relationships: <For each fatty acid found in fatty_acid_composition field above, extract structured relationships linking specific strains to those fatty acids. Generate tuples like "AZM34c11T major_fatty_acid iso-C16:0", "NBRC 106114T contains anteiso-C15:0", "strain ABC123 predominant_fatty_acid C16:1ω7c". Use relationship types: contains, major_fatty_acid, minor_fatty_acid, predominant_fatty_acid. If no fatty acid relationships are found, leave this field empty.>
+metabolic_test_relationships: <For each metabolic test found in metabolic_tests field above, extract structured relationships linking specific strains to those test results. Generate tuples like "ABC123 positive_for indole production", "ATCC 14887 negative_for methyl red", "strain XYZ demonstrates_activity citrate utilization". Use relationship types: positive_for, negative_for, demonstrates_activity. If no metabolic test relationships are found, leave this field empty.>
+api_test_relationships: <For each API test found in api_test_results field above, extract structured relationships linking specific strains to those test results. Generate tuples like "123T positive_for API 20E profile", "ATCC 25922 demonstrates_activity Biolog carbon utilization", "strain ABC negative_for API 50CH glucose". Use relationship types: positive_for, negative_for, demonstrates_activity. If no API test relationships are found, leave this field empty.>
+strain_relationships: <Extract strain-species relationships linking strains to their parent taxa. Generate tuples like "MG1655 strain_of Escherichia coli", "ATCC 25922 type_strain_of Klebsiella pneumoniae", "isolate XYZ-1 isolate_of Bacillus subtilis". Use relationship types: strain_of, type_strain_of, isolate_of, reference_strain_of, variant_of. If no strain relationships are found, leave this field empty.>
+
+
+Text:
+{'content': 'Agarilytica rhodophyticola gen. nov., sp. nov., isolated from Gracilaria blodgettii.\n\nA novel Gram-stain-negative, rod-shaped, non-spore-forming, aerobic, agarolytic bacterium, designated 017T, was isolated from Gracilaria blodgettii collected at the coast of Lingshui county, Hainan province, China. Optimal growth occurred at 28-33 °C (range 15-40 °C), with 3 % (w/v) NaCl (range 2-4 %) and at pH 8.0 (range pH 6.5-8.5). Cells of strain 017T were motile and formed yellow colonies on marine agar 2216. Phylogenetic analysis based on 16S rRNA gene sequences revealed that strain 017T shared the highest similarity with Teredinibacter turnerae T7902T (94.4 %). The predominant polar lipids of the novel isolate consisted of phosphatidylglycerol, phosphatidylethanolamine, aminophospholipid and some other unknown lipids. Major cellular fatty acids (>10 %) were C16 : 0, C18 : 1ω7c and summed feature 3 (C16 : 1ω7c/iso-C15 : 0 2-OH), and the sole respiratory lipoquinone was Q-8. The DNA G+C content of strain 017T was 40.2 mol%. Comparative analysis of 16S rRNA gene sequences and phenotypic characterization indicated that strain 017T represents a novel species in a new genus of the family Cellvibrionaceae, order Cellvibrionales, for which the name Agarilytica rhodophyticola gen. nov., sp. nov. is proposed. The type strain of Agarilytica rhodophyticola is 017T (=KCTC 42584T=MCCC 1H00123T).\n\nPMID:28879838', 'saved_to': None, 'windowed': False}
+
+
+===
+
+
+INFO:root:RAW TEXT: pmid: 28879838  
+study_taxa: Agarilytica rhodophyticola  
+strains: 017T; KCTC 42584T; MCCC 1H00123T  
+enzyme_activities:   
+api_test_results:   
+metabolic_tests:   
+fatty_acid_composition: C16:0; C18:1ω7c; C16:1ω7c; iso-C15:0 2-OH  
+enzyme_relationships:   
+fatty_acid_relationships: 017T major_fatty_acid C16:0; 017T major_fatty_acid C18:1ω7c; 017T major_fatty_acid C16:1ω7c; 017T major_fatty_acid iso-C15:0 2-OH  
+metabolic_test_relationships:   
+api_test_relationships:   
+strain_relationships: 017T type_strain_of Agarilytica rhodophyticola; KCTC 42584T type_strain_of Agarilytica rhodophyticola; MCCC 1H00123T type_strain_of Agarilytica rhodophyticola  
+INFO:root:PARSING LINE: pmid: 28879838
+INFO:root:PARSING LINE: study_taxa: Agarilytica rhodophyticola
+INFO:root:PARSING LINE: strains: 017T; KCTC 42584T; MCCC 1H00123T
+INFO:root:This line looks empty, assuming continuation: enzyme_activities:
+INFO:root:This line looks empty, assuming continuation: api_test_results:
+INFO:root:Finishing previous continued line: enzyme_activities:
+INFO:root:PARSING LINE: enzyme_activities:
+INFO:root:This line looks empty, assuming continuation: metabolic_tests:
+INFO:root:Finishing previous continued line: api_test_results:
+INFO:root:PARSING LINE: api_test_results:
+INFO:root:PARSING LINE: metabolic_tests:
+INFO:root:This line looks empty, assuming continuation: enzyme_relationships:
+INFO:root:PARSING LINE: enzyme_relationships:
+INFO:root:This line looks empty, assuming continuation: metabolic_test_relationships:
+INFO:root:This line looks empty, assuming continuation: api_test_relationships:
+INFO:root:Finishing previous continued line: metabolic_test_relationships:
+INFO:root:PARSING LINE: metabolic_test_relationships:
+INFO:root:PARSING LINE: api_test_relationships:
+INFO:ontogpt.engines.knowledge_engine:GROUNDING Agarilytica rhodophyticola using Taxon
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Grounding Agarilytica rhodophyticola to NCBITaxon:1737490; next step is to normalize
+INFO:ontogpt.engines.knowledge_engine:Normalized Agarilytica rhodophyticola with NCBITaxon:1737490 to NCBITaxon:1737490
+INFO:ontogpt.engines.knowledge_engine:GROUNDING 017T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize 017T to Strain
+INFO:ontogpt.engines.knowledge_engine:GROUNDING KCTC 42584T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize KCTC 42584T to Strain
+INFO:ontogpt.engines.knowledge_engine:GROUNDING MCCC 1H00123T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize MCCC 1H00123T to Strain
+INFO:root:{'pmid': '28879838', 'study_taxa': ['NCBITaxon:1737490'], 'strains': ['AUTO:017T', 'AUTO:KCTC%2042584T', 'AUTO:MCCC%201H00123T']}
+INFO:root:Output format: yaml
+INFO:root:Now extracting from file 7 of 9
+INFO:ontogpt.clients.llm_client:Complete: engine=gpt-4o, prompt[6832]=From the text below, extract the following entities in the following format:
+
+pmid: <PubMed ID of th...
+INFO:ontogpt.clients.llm_client: SENDING PROMPT:
+From the text below, extract the following entities in the following format:
+
+pmid: <PubMed ID of the article (e.g., 23996836)>
+study_taxa: <semicolon-separated list of the main bacterial or archaeal taxa being studied for biochemical characteristics>
+strains: <Extract specific strain designations mentioned in the text. Include strain numbers, culture collection numbers, type strain designations, and isolate names. Examples: "15-1T", "ATCC 25922", "MG1655", "K-12", "strain ABC123", "isolate XYZ-1". Do not include general species names.>
+enzyme_activities: <Identify enzyme activity names mentioned in the text. Extract enzyme activity terms like "catalase activity", "oxidase activity", "urease activity", "gelatinase activity", "lipase activity", "amylase activity", "protease activity", "β-galactosidase activity", "alkaline phosphatase activity". For enzymatic activities like "hydrolyzes starch", extract "starch hydrolysis". For "reduces nitrate", extract "nitrate reductase activity". For "produces indole", extract "indole production". Use "activity" suffix for enzymes when mentioned. Extract the enzyme activity name without positive/negative qualifiers. If no enzyme activities are mentioned, leave this field empty.>
+api_test_results: <Identify API test results or commercial biochemical test kit results mentioned in the text. Include results from API 20E, API 20NE, API 50CH, Biolog, Vitek, or similar systems. Examples: "API 20E profile", "API 50CH positive for glucose", "Biolog carbon utilization". If no API or commercial test results are mentioned, leave this field empty.>
+metabolic_tests: <Identify metabolic and diagnostic test names mentioned in the text. Extract clean test names like "indole production", "methyl red test", "Voges-Proskauer test", "citrate utilization", "hydrogen sulfide production", "nitrate reduction", "DNase test", "coagulase test", "hemolysis test". Extract the test name without positive/negative results. If no metabolic tests are mentioned, leave this field empty.>
+fatty_acid_composition: <Identify fatty acid composition mentioned in the text. Include specific fatty acids like "iso-C15:0", "anteiso-C17:0", "C16:1ω7c", "C18:1ω9c" and their percentages when provided. Also include terms like "branched-chain fatty acids", "straight-chain fatty acids", "unsaturated fatty acids", "FAME analysis". If no fatty acid information is mentioned, leave this field empty.>
+enzyme_relationships: <For each enzyme activity found in enzyme_activities, api_test_results, and metabolic_tests fields above, extract structured relationships linking specific strains to those enzyme activities. Generate tuples like "AZM34c11T positive_for catalase", "ATCC 25922 negative_for oxidase", "strain 15-1T demonstrates_activity urease". Use relationship types: positive_for, negative_for, demonstrates_activity, produces. Extract the positive/negative result information here even though the entity lists contain clean names. If no enzyme relationships are found, leave this field empty.>
+fatty_acid_relationships: <For each fatty acid found in fatty_acid_composition field above, extract structured relationships linking specific strains to those fatty acids. Generate tuples like "AZM34c11T major_fatty_acid iso-C16:0", "NBRC 106114T contains anteiso-C15:0", "strain ABC123 predominant_fatty_acid C16:1ω7c". Use relationship types: contains, major_fatty_acid, minor_fatty_acid, predominant_fatty_acid. If no fatty acid relationships are found, leave this field empty.>
+metabolic_test_relationships: <For each metabolic test found in metabolic_tests field above, extract structured relationships linking specific strains to those test results. Generate tuples like "ABC123 positive_for indole production", "ATCC 14887 negative_for methyl red", "strain XYZ demonstrates_activity citrate utilization". Use relationship types: positive_for, negative_for, demonstrates_activity. If no metabolic test relationships are found, leave this field empty.>
+api_test_relationships: <For each API test found in api_test_results field above, extract structured relationships linking specific strains to those test results. Generate tuples like "123T positive_for API 20E profile", "ATCC 25922 demonstrates_activity Biolog carbon utilization", "strain ABC negative_for API 50CH glucose". Use relationship types: positive_for, negative_for, demonstrates_activity. If no API test relationships are found, leave this field empty.>
+strain_relationships: <Extract strain-species relationships linking strains to their parent taxa. Generate tuples like "MG1655 strain_of Escherichia coli", "ATCC 25922 type_strain_of Klebsiella pneumoniae", "isolate XYZ-1 isolate_of Bacillus subtilis". Use relationship types: strain_of, type_strain_of, isolate_of, reference_strain_of, variant_of. If no strain relationships are found, leave this field empty.>
+
+
+Text:
+{'content': 'Myceligenerans cantabricum sp. nov., a barotolerant actinobacterium isolated from a deep cold-water coral.\n\nAn actinobacterium strain (M-201(T)) was isolated from a deep-sea scleractinian coral (Fam. Caryophillidae) collected at 1500 m depth in the Avilés Canyon in the Cantabrian Sea, Asturias, Spain. Strain M-201(T) grew at pH 6.0-9.0 (optimum pH 7.0), between 4 and 37 °C (optimum 28 °C) and at salinities of 0.5-10.5% (w/v) NaCl (optimum 0.5-3.0%). The peptidoglycan contained the amino acids Lys, Ala, Thr, Glu and one unknown amino acid component, and belonged to type A4α, and the cell-wall sugars are glucose, mannose and galactose. The polar lipids were diphosphatidylglycerol, phosphatidylglycerol, phosphatidylinositol, an unknown phosphoglycolipid and seven unknown glycolipids. The predominant menaquinones were MK-9(H4) and MK-9(H6). Major cellular fatty acids were anteiso-C(15 : 0), iso-C(15 : 0) and anteiso-C(17 : 0). The genomic DNA G+C content was 72.4 mol%. The chemotaxonomic properties supported the affiliation of strain M-201(T) to the genus Myceligenerans . Phylogenetic analysis based on 16S rRNA gene sequences revealed that the organism was most closely related to Myceligenerans crystallogenes CD12E2-27(T) (98.2% 16S rRNA gene sequence similarity). However, it had a relatively low DNA-DNA relatedness value with the above strain (48%). The isolate showed antibiotic activity against Escherichia coli , Micrococcus luteus ATCC 14452 and Saccharomyces cerevisiae var. carlsbergensis. To the best of our knowledge, this is the first report of antibiotic production in the genus Myceligenerans . The differences in phenotypic, metabolic, ecological and phylogenetic characteristics justify the proposal of a novel species of the genus Myceligenerans , Myceligenerans cantabricum sp. nov., with M-201(T) ( = CECT 8512(T) = DSM 28392(T)) as the type strain.\n\nPMID:25667397', 'saved_to': None, 'windowed': False}
+
+
+===
+
+
+INFO:root:RAW TEXT: pmid: 25667397  
+study_taxa: Myceligenerans  
+strains: M-201T; CECT 8512T; DSM 28392T; CD12E2-27T; ATCC 14452  
+enzyme_activities:  
+api_test_results:  
+metabolic_tests:  
+fatty_acid_composition: anteiso-C15:0; iso-C15:0; anteiso-C17:0  
+enzyme_relationships:  
+fatty_acid_relationships: M-201T major_fatty_acid anteiso-C15:0; M-201T major_fatty_acid iso-C15:0; M-201T major_fatty_acid anteiso-C17:0  
+metabolic_test_relationships:  
+api_test_relationships:  
+strain_relationships: M-201T type_strain_of Myceligenerans cantabricum; CECT 8512T type_strain_of Myceligenerans cantabricum; DSM 28392T type_strain_of Myceligenerans cantabricum; CD12E2-27T strain_of Myceligenerans crystallogenes; ATCC 14452 strain_of Micrococcus luteus  
+INFO:root:PARSING LINE: pmid: 25667397
+INFO:root:PARSING LINE: study_taxa: Myceligenerans
+INFO:root:PARSING LINE: strains: M-201T; CECT 8512T; DSM 28392T; CD12E2-27T; ATCC 14452
+INFO:root:This line looks empty, assuming continuation: enzyme_activities:
+INFO:root:This line looks empty, assuming continuation: api_test_results:
+INFO:root:Finishing previous continued line: enzyme_activities:
+INFO:root:PARSING LINE: enzyme_activities:
+INFO:root:This line looks empty, assuming continuation: metabolic_tests:
+INFO:root:Finishing previous continued line: api_test_results:
+INFO:root:PARSING LINE: api_test_results:
+INFO:root:PARSING LINE: metabolic_tests:
+INFO:root:This line looks empty, assuming continuation: enzyme_relationships:
+INFO:root:PARSING LINE: enzyme_relationships:
+INFO:root:This line looks empty, assuming continuation: metabolic_test_relationships:
+INFO:root:This line looks empty, assuming continuation: api_test_relationships:
+INFO:root:Finishing previous continued line: metabolic_test_relationships:
+INFO:root:PARSING LINE: metabolic_test_relationships:
+INFO:root:PARSING LINE: api_test_relationships:
+INFO:ontogpt.engines.knowledge_engine:GROUNDING Myceligenerans using Taxon
+INFO:ontogpt.engines.knowledge_engine:Singularized Myceligenerans to myceligeneran
+INFO:ontogpt.engines.knowledge_engine:GROUNDING myceligeneran using Taxon
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Grounding Myceligenerans to NCBITaxon:253183; next step is to normalize
+INFO:ontogpt.engines.knowledge_engine:Normalized Myceligenerans with NCBITaxon:253183 to NCBITaxon:253183
+INFO:ontogpt.engines.knowledge_engine:GROUNDING M-201T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize M-201T to Strain
+INFO:ontogpt.engines.knowledge_engine:GROUNDING CECT 8512T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize CECT 8512T to Strain
+INFO:ontogpt.engines.knowledge_engine:GROUNDING DSM 28392T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize DSM 28392T to Strain
+INFO:ontogpt.engines.knowledge_engine:GROUNDING CD12E2-27T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize CD12E2-27T to Strain
+INFO:ontogpt.engines.knowledge_engine:GROUNDING ATCC 14452 using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize ATCC 14452 to Strain
+INFO:root:{'pmid': '25667397', 'study_taxa': ['NCBITaxon:253183'], 'strains': ['AUTO:M-201T', 'AUTO:CECT%208512T', 'AUTO:DSM%2028392T', 'AUTO:CD12E2-27T', 'AUTO:ATCC%2014452']}
+INFO:root:Output format: yaml
+INFO:root:Now extracting from file 8 of 9
+INFO:ontogpt.clients.llm_client:Complete: engine=gpt-4o, prompt[6541]=From the text below, extract the following entities in the following format:
+
+pmid: <PubMed ID of th...
+INFO:ontogpt.clients.llm_client: SENDING PROMPT:
+From the text below, extract the following entities in the following format:
+
+pmid: <PubMed ID of the article (e.g., 23996836)>
+study_taxa: <semicolon-separated list of the main bacterial or archaeal taxa being studied for biochemical characteristics>
+strains: <Extract specific strain designations mentioned in the text. Include strain numbers, culture collection numbers, type strain designations, and isolate names. Examples: "15-1T", "ATCC 25922", "MG1655", "K-12", "strain ABC123", "isolate XYZ-1". Do not include general species names.>
+enzyme_activities: <Identify enzyme activity names mentioned in the text. Extract enzyme activity terms like "catalase activity", "oxidase activity", "urease activity", "gelatinase activity", "lipase activity", "amylase activity", "protease activity", "β-galactosidase activity", "alkaline phosphatase activity". For enzymatic activities like "hydrolyzes starch", extract "starch hydrolysis". For "reduces nitrate", extract "nitrate reductase activity". For "produces indole", extract "indole production". Use "activity" suffix for enzymes when mentioned. Extract the enzyme activity name without positive/negative qualifiers. If no enzyme activities are mentioned, leave this field empty.>
+api_test_results: <Identify API test results or commercial biochemical test kit results mentioned in the text. Include results from API 20E, API 20NE, API 50CH, Biolog, Vitek, or similar systems. Examples: "API 20E profile", "API 50CH positive for glucose", "Biolog carbon utilization". If no API or commercial test results are mentioned, leave this field empty.>
+metabolic_tests: <Identify metabolic and diagnostic test names mentioned in the text. Extract clean test names like "indole production", "methyl red test", "Voges-Proskauer test", "citrate utilization", "hydrogen sulfide production", "nitrate reduction", "DNase test", "coagulase test", "hemolysis test". Extract the test name without positive/negative results. If no metabolic tests are mentioned, leave this field empty.>
+fatty_acid_composition: <Identify fatty acid composition mentioned in the text. Include specific fatty acids like "iso-C15:0", "anteiso-C17:0", "C16:1ω7c", "C18:1ω9c" and their percentages when provided. Also include terms like "branched-chain fatty acids", "straight-chain fatty acids", "unsaturated fatty acids", "FAME analysis". If no fatty acid information is mentioned, leave this field empty.>
+enzyme_relationships: <For each enzyme activity found in enzyme_activities, api_test_results, and metabolic_tests fields above, extract structured relationships linking specific strains to those enzyme activities. Generate tuples like "AZM34c11T positive_for catalase", "ATCC 25922 negative_for oxidase", "strain 15-1T demonstrates_activity urease". Use relationship types: positive_for, negative_for, demonstrates_activity, produces. Extract the positive/negative result information here even though the entity lists contain clean names. If no enzyme relationships are found, leave this field empty.>
+fatty_acid_relationships: <For each fatty acid found in fatty_acid_composition field above, extract structured relationships linking specific strains to those fatty acids. Generate tuples like "AZM34c11T major_fatty_acid iso-C16:0", "NBRC 106114T contains anteiso-C15:0", "strain ABC123 predominant_fatty_acid C16:1ω7c". Use relationship types: contains, major_fatty_acid, minor_fatty_acid, predominant_fatty_acid. If no fatty acid relationships are found, leave this field empty.>
+metabolic_test_relationships: <For each metabolic test found in metabolic_tests field above, extract structured relationships linking specific strains to those test results. Generate tuples like "ABC123 positive_for indole production", "ATCC 14887 negative_for methyl red", "strain XYZ demonstrates_activity citrate utilization". Use relationship types: positive_for, negative_for, demonstrates_activity. If no metabolic test relationships are found, leave this field empty.>
+api_test_relationships: <For each API test found in api_test_results field above, extract structured relationships linking specific strains to those test results. Generate tuples like "123T positive_for API 20E profile", "ATCC 25922 demonstrates_activity Biolog carbon utilization", "strain ABC negative_for API 50CH glucose". Use relationship types: positive_for, negative_for, demonstrates_activity. If no API test relationships are found, leave this field empty.>
+strain_relationships: <Extract strain-species relationships linking strains to their parent taxa. Generate tuples like "MG1655 strain_of Escherichia coli", "ATCC 25922 type_strain_of Klebsiella pneumoniae", "isolate XYZ-1 isolate_of Bacillus subtilis". Use relationship types: strain_of, type_strain_of, isolate_of, reference_strain_of, variant_of. If no strain relationships are found, leave this field empty.>
+
+
+Text:
+{'content': 'Chitinophaga oryzae sp. nov., an epiphytic bacterium isolated from rice root surfaces.\n\nTwo Gram-stain-negative, non-motile, rod-shaped bacterial strains were isolated from the surfaces of rice roots. They were designated as strains 1303T and 1310. Their colonies were circular, entire, opaque, convex and yellow. They were chitinase- and catalase-positive, reduced nitrate and grew at 16-37 °C (optimum, 30 °C), pH 5.0-10.0 (optimum, pH 7.0) and 0-2.0% NaCl (optimum, 1.0 %). Based on the 16S rRNA gene sequence analysis, they were classified as members of the genus Chitinophaga. Results of phylogenetic and phylogenomic analyses indicated that they formed a cluster with Chitinophaga eiseniae YC6729T, Chitinophaga qingshengii JN246T, Chitinophaga varians 10-7 W-9003T and Chitinophaga fulva G-6-1-13T. When the genomic sequences of strains 1303T and 1310 were compared with their close relatives, the average nucleotide identity and digital DNA-DNA hybridization values were below the cut-off levels. Phosphatidylethanolamine was the major polar lipid. MK-7 was the major respiratory quinone. iso-C15 : 0, C16 : 1 ω5c, iso-C17 : 0 3-OH and summed feature 3 (C16 : 1 ω7c/C16 : 1 ω6c) were the predominant fatty acids. Differential characteristics between both strains and their close relatives were also observed. Based on the distinctions in genotypic, phenotypic and chemotypic features, strains 1303T and 1310 represent members of a novel species of the genus Chitinophaga, for which the name Chitinophaga oryzae sp. nov. is proposed. The type strain is 1303T (=KACC 22075T=TBRC 12926T).\n\nPMID:34319223', 'saved_to': None, 'windowed': False}
+
+
+===
+
+
+INFO:root:RAW TEXT: pmid: 34319223  
+study_taxa: Chitinophaga  
+strains: 1303T; 1310; KACC 22075T; TBRC 12926T  
+enzyme_activities: chitinase activity; catalase activity; nitrate reductase activity  
+api_test_results:   
+metabolic_tests: nitrate reduction  
+fatty_acid_composition: iso-C15:0; C16:1ω5c; iso-C17:0 3-OH; C16:1ω7c; C16:1ω6c  
+enzyme_relationships: 1303T positive_for chitinase; 1303T positive_for catalase; 1303T demonstrates_activity nitrate reductase  
+fatty_acid_relationships: 1303T predominant_fatty_acid iso-C15:0; 1303T predominant_fatty_acid C16:1ω5c; 1303T predominant_fatty_acid iso-C17:0 3-OH; 1303T predominant_fatty_acid C16:1ω7c; 1303T predominant_fatty_acid C16:1ω6c  
+metabolic_test_relationships: 1303T demonstrates_activity nitrate reduction  
+api_test_relationships:   
+strain_relationships: 1303T type_strain_of Chitinophaga oryzae; 1310 strain_of Chitinophaga oryzae  
+INFO:root:PARSING LINE: pmid: 34319223
+INFO:root:PARSING LINE: study_taxa: Chitinophaga
+INFO:root:PARSING LINE: strains: 1303T; 1310; KACC 22075T; TBRC 12926T
+INFO:root:PARSING LINE: enzyme_activities: chitinase activity; catalase activity; nitrate reductase activity
+INFO:root:This line looks empty, assuming continuation: api_test_results:
+INFO:root:PARSING LINE: api_test_results:
+INFO:root:PARSING LINE: fatty_acid_composition: iso-C15:0; C16:1ω5c; iso-C17:0 3-OH; C16:1ω7c; C16:1ω6c
+INFO:root:PARSING LINE: enzyme_relationships: 1303T positive_for chitinase; 1303T positive_for catalase; 1303T demonstrates_activity nitrate reductase
+INFO:ontogpt.clients.llm_client:Complete: engine=gpt-4o, prompt[717]=Split the following piece of text into fields in the following format:
+
+subject: <the strain being t...
+INFO:root:PARSING LINE: subject: 1303T
+INFO:root:PARSING LINE: predicate: positive_for
+INFO:root:PARSING LINE: object: chitinase
+INFO:ontogpt.clients.llm_client:Complete: engine=gpt-4o, prompt[716]=Split the following piece of text into fields in the following format:
+
+subject: <the strain being t...
+INFO:root:PARSING LINE: subject: 1303T
+INFO:root:PARSING LINE: predicate: positive_for
+INFO:root:PARSING LINE: object: catalase
+INFO:ontogpt.clients.llm_client:Complete: engine=gpt-4o, prompt[734]=Split the following piece of text into fields in the following format:
+
+subject: <the strain being t...
+INFO:root:PARSING LINE: subject: 1303T
+INFO:root:PARSING LINE: predicate: demonstrates_activity
+INFO:root:PARSING LINE: object: nitrate reductase
+INFO:root:PARSING LINE: fatty_acid_relationships: 1303T predominant_fatty_acid iso-C15:0; 1303T predominant_fatty_acid C16:1ω5c; 1303T predominant_fatty_acid iso-C17:0 3-OH; 1303T predominant_fatty_acid C16:1ω7c; 1303T predominant_fatty_acid C16:1ω6c
+INFO:ontogpt.clients.llm_client:Complete: engine=gpt-4o, prompt[671]=Split the following piece of text into fields in the following format:
+
+subject: <the strain with th...
+INFO:root:PARSING LINE: subject: 1303T
+INFO:root:PARSING LINE: predicate: predominant_fatty_acid
+INFO:root:PARSING LINE: object: iso-C15:0
+INFO:ontogpt.clients.llm_client:Complete: engine=gpt-4o, prompt[670]=Split the following piece of text into fields in the following format:
+
+subject: <the strain with th...
+INFO:root:PARSING LINE: subject: 1303T
+INFO:root:PARSING LINE: predicate: predominant_fatty_acid
+INFO:root:PARSING LINE: object: C16:1ω5c
+INFO:ontogpt.clients.llm_client:Complete: engine=gpt-4o, prompt[676]=Split the following piece of text into fields in the following format:
+
+subject: <the strain with th...
+INFO:root:PARSING LINE: subject: 1303T
+INFO:root:PARSING LINE: predicate: predominant_fatty_acid
+INFO:root:PARSING LINE: object: iso-C17:0 3-OH
+INFO:ontogpt.clients.llm_client:Complete: engine=gpt-4o, prompt[670]=Split the following piece of text into fields in the following format:
+
+subject: <the strain with th...
+INFO:root:PARSING LINE: subject: 1303T
+INFO:root:PARSING LINE: predicate: predominant_fatty_acid
+INFO:root:PARSING LINE: object: C16:1ω7c
+INFO:ontogpt.clients.llm_client:Complete: engine=gpt-4o, prompt[670]=Split the following piece of text into fields in the following format:
+
+subject: <the strain with th...
+INFO:root:PARSING LINE: subject: 1303T
+INFO:root:PARSING LINE: predicate: predominant_fatty_acid
+INFO:root:PARSING LINE: object: C16:1ω6c
+INFO:root:PARSING LINE: metabolic_test_relationships: 1303T demonstrates_activity nitrate reduction
+INFO:ontogpt.clients.llm_client:Complete: engine=gpt-4o, prompt[513]=Split the following piece of text into fields in the following format:
+
+subject: <the strain being t...
+INFO:root:PARSING LINE: subject: 1303T
+INFO:root:PARSING LINE: predicate: demonstrates_activity
+INFO:root:PARSING LINE: object: nitrate reduction
+INFO:root:This line looks empty, assuming continuation: api_test_relationships:
+INFO:root:PARSING LINE: api_test_relationships:
+INFO:ontogpt.engines.knowledge_engine:GROUNDING Chitinophaga using Taxon
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Grounding Chitinophaga to NCBITaxon:79328; next step is to normalize
+INFO:ontogpt.engines.knowledge_engine:Normalized Chitinophaga with NCBITaxon:79328 to NCBITaxon:79328
+INFO:ontogpt.engines.knowledge_engine:GROUNDING 1303T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize 1303T to Strain
+INFO:ontogpt.engines.knowledge_engine:GROUNDING 1310 using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize 1310 to Strain
+INFO:ontogpt.engines.knowledge_engine:GROUNDING KACC 22075T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize KACC 22075T to Strain
+INFO:ontogpt.engines.knowledge_engine:GROUNDING TBRC 12926T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize TBRC 12926T to Strain
+INFO:ontogpt.engines.knowledge_engine:GROUNDING chitinase activity using EnzymeActivity
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Grounding chitinase activity to GO:0004568; next step is to normalize
+INFO:ontogpt.engines.knowledge_engine:Normalized chitinase activity with GO:0004568 to GO:0004568
+INFO:ontogpt.engines.knowledge_engine:GROUNDING catalase activity using EnzymeActivity
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Grounding catalase activity to GO:0004096; next step is to normalize
+INFO:ontogpt.engines.knowledge_engine:Normalized catalase activity with GO:0004096 to GO:0004096
+INFO:ontogpt.engines.knowledge_engine:GROUNDING nitrate reductase activity using EnzymeActivity
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Grounding nitrate reductase activity to GO:0008940; next step is to normalize
+INFO:ontogpt.engines.knowledge_engine:Normalized nitrate reductase activity with GO:0008940 to GO:0008940
+INFO:ontogpt.engines.knowledge_engine:GROUNDING iso-C15:0 using FattyAcid
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Grounding iso-C15:0 to CHEBI:39250; next step is to normalize
+INFO:ontogpt.engines.knowledge_engine:Normalized iso-C15:0 with CHEBI:39250 to CHEBI:39250
+INFO:ontogpt.engines.knowledge_engine:GROUNDING C16:1ω5c using FattyAcid
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize C16:1ω5c to FattyAcid
+INFO:ontogpt.engines.knowledge_engine:GROUNDING iso-C17:0 3-OH using FattyAcid
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize iso-C17:0 3-OH to FattyAcid
+INFO:ontogpt.engines.knowledge_engine:GROUNDING C16:1ω7c using FattyAcid
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize C16:1ω7c to FattyAcid
+INFO:ontogpt.engines.knowledge_engine:GROUNDING C16:1ω6c using FattyAcid
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize C16:1ω6c to FattyAcid
+INFO:ontogpt.engines.knowledge_engine:GROUNDING 1303T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize 1303T to Strain
+INFO:root:Looking for positive_for in BiochemicalTestResult
+INFO:ontogpt.engines.knowledge_engine:GROUNDING chitinase using EnzymeActivity
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Grounding chitinase to GO:0008843; next step is to normalize
+INFO:ontogpt.engines.knowledge_engine:Normalized chitinase with GO:0008843 to GO:0008843
+INFO:root:{'subject': 'AUTO:1303T', 'predicate': 'positive_for', 'object': 'GO:0008843'}
+INFO:ontogpt.engines.knowledge_engine:GROUNDING 1303T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize 1303T to Strain
+INFO:root:Looking for positive_for in BiochemicalTestResult
+INFO:ontogpt.engines.knowledge_engine:GROUNDING catalase using EnzymeActivity
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize catalase to EnzymeActivity
+INFO:root:{'subject': 'AUTO:1303T', 'predicate': 'positive_for', 'object': 'AUTO:catalase'}
+INFO:ontogpt.engines.knowledge_engine:GROUNDING 1303T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize 1303T to Strain
+INFO:root:Looking for demonstrates_activity in BiochemicalTestResult
+INFO:ontogpt.engines.knowledge_engine:GROUNDING nitrate reductase using EnzymeActivity
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize nitrate reductase to EnzymeActivity
+INFO:root:{'subject': 'AUTO:1303T', 'predicate': 'demonstrates_activity', 'object': 'AUTO:nitrate%20reductase'}
+INFO:ontogpt.engines.knowledge_engine:GROUNDING 1303T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize 1303T to Strain
+INFO:root:Looking for predominant_fatty_acid in BiochemicalTestResult
+INFO:ontogpt.engines.knowledge_engine:GROUNDING iso-C15:0 using FattyAcid
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Grounding iso-C15:0 to CHEBI:39250; next step is to normalize
+INFO:ontogpt.engines.knowledge_engine:Normalized iso-C15:0 with CHEBI:39250 to CHEBI:39250
+INFO:root:{'subject': 'AUTO:1303T', 'predicate': 'predominant_fatty_acid', 'object': 'CHEBI:39250'}
+INFO:ontogpt.engines.knowledge_engine:GROUNDING 1303T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize 1303T to Strain
+INFO:root:Looking for predominant_fatty_acid in BiochemicalTestResult
+INFO:ontogpt.engines.knowledge_engine:GROUNDING C16:1ω5c using FattyAcid
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize C16:1ω5c to FattyAcid
+INFO:root:{'subject': 'AUTO:1303T', 'predicate': 'predominant_fatty_acid', 'object': 'AUTO:C16%3A1%CF%895c'}
+INFO:ontogpt.engines.knowledge_engine:GROUNDING 1303T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize 1303T to Strain
+INFO:root:Looking for predominant_fatty_acid in BiochemicalTestResult
+INFO:ontogpt.engines.knowledge_engine:GROUNDING iso-C17:0 3-OH using FattyAcid
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize iso-C17:0 3-OH to FattyAcid
+INFO:root:{'subject': 'AUTO:1303T', 'predicate': 'predominant_fatty_acid', 'object': 'AUTO:iso-C17%3A0%203-OH'}
+INFO:ontogpt.engines.knowledge_engine:GROUNDING 1303T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize 1303T to Strain
+INFO:root:Looking for predominant_fatty_acid in BiochemicalTestResult
+INFO:ontogpt.engines.knowledge_engine:GROUNDING C16:1ω7c using FattyAcid
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize C16:1ω7c to FattyAcid
+INFO:root:{'subject': 'AUTO:1303T', 'predicate': 'predominant_fatty_acid', 'object': 'AUTO:C16%3A1%CF%897c'}
+INFO:ontogpt.engines.knowledge_engine:GROUNDING 1303T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize 1303T to Strain
+INFO:root:Looking for predominant_fatty_acid in BiochemicalTestResult
+INFO:ontogpt.engines.knowledge_engine:GROUNDING C16:1ω6c using FattyAcid
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize C16:1ω6c to FattyAcid
+INFO:root:{'subject': 'AUTO:1303T', 'predicate': 'predominant_fatty_acid', 'object': 'AUTO:C16%3A1%CF%896c'}
+INFO:ontogpt.engines.knowledge_engine:GROUNDING 1303T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize 1303T to Strain
+INFO:root:Looking for demonstrates_activity in BiochemicalTestResult
+INFO:ontogpt.engines.knowledge_engine:GROUNDING nitrate reduction using MetabolicTest
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize nitrate reduction to MetabolicTest
+INFO:root:{'subject': 'AUTO:1303T', 'predicate': 'demonstrates_activity', 'object': 'AUTO:nitrate%20reduction'}
+INFO:root:{'pmid': '34319223', 'study_taxa': ['NCBITaxon:79328'], 'strains': ['AUTO:1303T', 'AUTO:1310', 'AUTO:KACC%2022075T', 'AUTO:TBRC%2012926T'], 'enzyme_activities': ['GO:0004568', 'GO:0004096', 'GO:0008940'], 'fatty_acid_composition': ['CHEBI:39250', 'AUTO:C16%3A1%CF%895c', 'AUTO:iso-C17%3A0%203-OH', 'AUTO:C16%3A1%CF%897c', 'AUTO:C16%3A1%CF%896c'], 'enzyme_relationships': [EnzymeRelationship(subject='AUTO:1303T', predicate='positive_for', object='GO:0008843'), EnzymeRelationship(subject='AUTO:1303T', predicate='positive_for', object='AUTO:catalase'), EnzymeRelationship(subject='AUTO:1303T', predicate='demonstrates_activity', object='AUTO:nitrate%20reductase')], 'fatty_acid_relationships': [FattyAcidRelationship(subject='AUTO:1303T', predicate='predominant_fatty_acid', object='CHEBI:39250'), FattyAcidRelationship(subject='AUTO:1303T', predicate='predominant_fatty_acid', object='AUTO:C16%3A1%CF%895c'), FattyAcidRelationship(subject='AUTO:1303T', predicate='predominant_fatty_acid', object='AUTO:iso-C17%3A0%203-OH'), FattyAcidRelationship(subject='AUTO:1303T', predicate='predominant_fatty_acid', object='AUTO:C16%3A1%CF%897c'), FattyAcidRelationship(subject='AUTO:1303T', predicate='predominant_fatty_acid', object='AUTO:C16%3A1%CF%896c')], 'metabolic_test_relationships': [MetabolicTestRelationship(subject='AUTO:1303T', predicate='demonstrates_activity', object='AUTO:nitrate%20reduction')]}
+INFO:root:Output format: yaml
+INFO:root:Now extracting from file 9 of 9
+INFO:ontogpt.clients.llm_client:Complete: engine=gpt-4o, prompt[6587]=From the text below, extract the following entities in the following format:
+
+pmid: <PubMed ID of th...
+INFO:ontogpt.clients.llm_client: SENDING PROMPT:
+From the text below, extract the following entities in the following format:
+
+pmid: <PubMed ID of the article (e.g., 23996836)>
+study_taxa: <semicolon-separated list of the main bacterial or archaeal taxa being studied for biochemical characteristics>
+strains: <Extract specific strain designations mentioned in the text. Include strain numbers, culture collection numbers, type strain designations, and isolate names. Examples: "15-1T", "ATCC 25922", "MG1655", "K-12", "strain ABC123", "isolate XYZ-1". Do not include general species names.>
+enzyme_activities: <Identify enzyme activity names mentioned in the text. Extract enzyme activity terms like "catalase activity", "oxidase activity", "urease activity", "gelatinase activity", "lipase activity", "amylase activity", "protease activity", "β-galactosidase activity", "alkaline phosphatase activity". For enzymatic activities like "hydrolyzes starch", extract "starch hydrolysis". For "reduces nitrate", extract "nitrate reductase activity". For "produces indole", extract "indole production". Use "activity" suffix for enzymes when mentioned. Extract the enzyme activity name without positive/negative qualifiers. If no enzyme activities are mentioned, leave this field empty.>
+api_test_results: <Identify API test results or commercial biochemical test kit results mentioned in the text. Include results from API 20E, API 20NE, API 50CH, Biolog, Vitek, or similar systems. Examples: "API 20E profile", "API 50CH positive for glucose", "Biolog carbon utilization". If no API or commercial test results are mentioned, leave this field empty.>
+metabolic_tests: <Identify metabolic and diagnostic test names mentioned in the text. Extract clean test names like "indole production", "methyl red test", "Voges-Proskauer test", "citrate utilization", "hydrogen sulfide production", "nitrate reduction", "DNase test", "coagulase test", "hemolysis test". Extract the test name without positive/negative results. If no metabolic tests are mentioned, leave this field empty.>
+fatty_acid_composition: <Identify fatty acid composition mentioned in the text. Include specific fatty acids like "iso-C15:0", "anteiso-C17:0", "C16:1ω7c", "C18:1ω9c" and their percentages when provided. Also include terms like "branched-chain fatty acids", "straight-chain fatty acids", "unsaturated fatty acids", "FAME analysis". If no fatty acid information is mentioned, leave this field empty.>
+enzyme_relationships: <For each enzyme activity found in enzyme_activities, api_test_results, and metabolic_tests fields above, extract structured relationships linking specific strains to those enzyme activities. Generate tuples like "AZM34c11T positive_for catalase", "ATCC 25922 negative_for oxidase", "strain 15-1T demonstrates_activity urease". Use relationship types: positive_for, negative_for, demonstrates_activity, produces. Extract the positive/negative result information here even though the entity lists contain clean names. If no enzyme relationships are found, leave this field empty.>
+fatty_acid_relationships: <For each fatty acid found in fatty_acid_composition field above, extract structured relationships linking specific strains to those fatty acids. Generate tuples like "AZM34c11T major_fatty_acid iso-C16:0", "NBRC 106114T contains anteiso-C15:0", "strain ABC123 predominant_fatty_acid C16:1ω7c". Use relationship types: contains, major_fatty_acid, minor_fatty_acid, predominant_fatty_acid. If no fatty acid relationships are found, leave this field empty.>
+metabolic_test_relationships: <For each metabolic test found in metabolic_tests field above, extract structured relationships linking specific strains to those test results. Generate tuples like "ABC123 positive_for indole production", "ATCC 14887 negative_for methyl red", "strain XYZ demonstrates_activity citrate utilization". Use relationship types: positive_for, negative_for, demonstrates_activity. If no metabolic test relationships are found, leave this field empty.>
+api_test_relationships: <For each API test found in api_test_results field above, extract structured relationships linking specific strains to those test results. Generate tuples like "123T positive_for API 20E profile", "ATCC 25922 demonstrates_activity Biolog carbon utilization", "strain ABC negative_for API 50CH glucose". Use relationship types: positive_for, negative_for, demonstrates_activity. If no API test relationships are found, leave this field empty.>
+strain_relationships: <Extract strain-species relationships linking strains to their parent taxa. Generate tuples like "MG1655 strain_of Escherichia coli", "ATCC 25922 type_strain_of Klebsiella pneumoniae", "isolate XYZ-1 isolate_of Bacillus subtilis". Use relationship types: strain_of, type_strain_of, isolate_of, reference_strain_of, variant_of. If no strain relationships are found, leave this field empty.>
+
+
+Text:
+{'content': 'Halomonas dongshanensis sp. nov., isolated from the seawater of Dongshan Island.\n\nA taxonomic study was carried out on strain yzlin-01T, isolated from Dongshan Island seawater. The bacterium was Gram-stain-negative, catalase-positive, oxidase-negative, rod-shaped, and motile by polar flagella. Growth was observed at temperatures of 10-40 °C, at salinities of 0.5-18 %, and at pH of 6-10. Phylogenetic analysis based on 16S rRNA gene sequences indicated that strain yzlin-01T belonged to the genus Halomonas, with the highest sequence similarity to Halomonas malpeensis YU-PRIM-29T (96.7 %), followed by Halomonas johnsoniae T68687T (96.4 %) and Halomonas gomseomensis M12T (96.4 %), and other species of the genus Halomonas (93.4-96.3 %). The ANI and digital DNA-DNA hybridization estimate values between strain yzlin-01T and the closest type strain Halomonas malpeensis YU-PRIM-29T were 77.44 and 21.6 %, respectively. The principal fatty acids were summed feature 8 (consisting of C18 : 1 ω7c and/or C18 : 1 ω6c; 55.7 %), C16 : 0 (20.6 %), C12 : 0 3-OH (6.8 %), summed feature 3 (consisting of C16 : 1 ω7c and/or C16 : 1 ω6c; 5.1 %). The G+C content of the chromosomal DNA was 60.0 mol %. The respiratory quinone was identified as Q-9 (100 %). Phosphatidylethanolamine, phosphatidylglycerol, diphosphatidylglycerol, aminophospholipid, and three unidentified phospholipids were present. Combined genotypic and phenotypic data suggest that strain yzlin-01T represents a novel species within the genus Halomonas, for which the name Halomonas dongshanensis sp. nov. is proposed, with the type strain yzlin-01T (=GDMCC 1.3202T=KCTC 92467T).\n\nPMID:37170873', 'saved_to': None, 'windowed': False}
+
+
+===
+
+
+INFO:root:RAW TEXT: pmid: 37170873  
+study_taxa: Halomonas  
+strains: yzlin-01T; GDMCC 1.3202T; KCTC 92467T; YU-PRIM-29T; T68687T; M12T  
+enzyme_activities: catalase activity; oxidase activity  
+api_test_results:   
+metabolic_tests:   
+fatty_acid_composition: C18:1ω7c; C18:1ω6c; C16:0; C12:0 3-OH; C16:1ω7c; C16:1ω6c  
+enzyme_relationships: yzlin-01T positive_for catalase; yzlin-01T negative_for oxidase  
+fatty_acid_relationships: yzlin-01T major_fatty_acid C18:1ω7c; yzlin-01T major_fatty_acid C18:1ω6c; yzlin-01T major_fatty_acid C16:0; yzlin-01T contains C12:0 3-OH; yzlin-01T contains C16:1ω7c; yzlin-01T contains C16:1ω6c  
+metabolic_test_relationships:   
+api_test_relationships:   
+strain_relationships: yzlin-01T type_strain_of Halomonas dongshanensis; YU-PRIM-29T type_strain_of Halomonas malpeensis; T68687T type_strain_of Halomonas johnsoniae; M12T type_strain_of Halomonas gomseomensis  
+INFO:root:PARSING LINE: pmid: 37170873
+INFO:root:PARSING LINE: study_taxa: Halomonas
+INFO:root:PARSING LINE: strains: yzlin-01T; GDMCC 1.3202T; KCTC 92467T; YU-PRIM-29T; T68687T; M12T
+INFO:root:PARSING LINE: enzyme_activities: catalase activity; oxidase activity
+INFO:root:This line looks empty, assuming continuation: api_test_results:
+INFO:root:This line looks empty, assuming continuation: metabolic_tests:
+INFO:root:Finishing previous continued line: api_test_results:
+INFO:root:PARSING LINE: api_test_results:
+INFO:root:PARSING LINE: metabolic_tests:
+INFO:root:PARSING LINE: enzyme_relationships: yzlin-01T positive_for catalase; yzlin-01T negative_for oxidase
+INFO:ontogpt.clients.llm_client:Complete: engine=gpt-4o, prompt[720]=Split the following piece of text into fields in the following format:
+
+subject: <the strain being t...
+INFO:root:PARSING LINE: subject: yzlin-01T
+INFO:root:PARSING LINE: predicate: positive_for
+INFO:root:PARSING LINE: object: catalase
+INFO:ontogpt.clients.llm_client:Complete: engine=gpt-4o, prompt[719]=Split the following piece of text into fields in the following format:
+
+subject: <the strain being t...
+INFO:root:PARSING LINE: subject: yzlin-01T
+INFO:root:PARSING LINE: predicate: negative_for
+INFO:root:PARSING LINE: object: oxidase
+INFO:root:PARSING LINE: fatty_acid_relationships: yzlin-01T major_fatty_acid C18:1ω7c; yzlin-01T major_fatty_acid C18:1ω6c; yzlin-01T major_fatty_acid C16:0; yzlin-01T contains C12:0 3-OH; yzlin-01T contains C16:1ω7c; yzlin-01T contains C16:1ω6c
+INFO:ontogpt.clients.llm_client:Complete: engine=gpt-4o, prompt[668]=Split the following piece of text into fields in the following format:
+
+subject: <the strain with th...
+INFO:root:PARSING LINE: subject: yzlin-01T
+INFO:root:PARSING LINE: predicate: major_fatty_acid
+INFO:root:PARSING LINE: object: C18:1ω7c
+INFO:ontogpt.clients.llm_client:Complete: engine=gpt-4o, prompt[668]=Split the following piece of text into fields in the following format:
+
+subject: <the strain with th...
+INFO:root:PARSING LINE: subject: yzlin-01T
+INFO:root:PARSING LINE: predicate: major_fatty_acid
+INFO:root:PARSING LINE: object: C18:1ω6c
+INFO:ontogpt.clients.llm_client:Complete: engine=gpt-4o, prompt[665]=Split the following piece of text into fields in the following format:
+
+subject: <the strain with th...
+INFO:root:PARSING LINE: subject: yzlin-01T
+INFO:root:PARSING LINE: predicate: major_fatty_acid
+INFO:root:PARSING LINE: object: C16:0
+INFO:ontogpt.clients.llm_client:Complete: engine=gpt-4o, prompt[662]=Split the following piece of text into fields in the following format:
+
+subject: <the strain with th...
+INFO:root:PARSING LINE: subject: yzlin-01T
+INFO:root:PARSING LINE: predicate: contains
+INFO:root:PARSING LINE: object: C12:0 3-OH
+INFO:ontogpt.clients.llm_client:Complete: engine=gpt-4o, prompt[660]=Split the following piece of text into fields in the following format:
+
+subject: <the strain with th...
+INFO:root:PARSING LINE: subject: yzlin-01T
+INFO:root:PARSING LINE: predicate: contains
+INFO:root:PARSING LINE: object: C16:1ω7c
+INFO:ontogpt.clients.llm_client:Complete: engine=gpt-4o, prompt[660]=Split the following piece of text into fields in the following format:
+
+subject: <the strain with th...
+INFO:root:PARSING LINE: subject: yzlin-01T
+INFO:root:PARSING LINE: predicate: contains
+INFO:root:PARSING LINE: object: C16:1ω6c
+INFO:root:This line looks empty, assuming continuation: metabolic_test_relationships:
+INFO:root:This line looks empty, assuming continuation: api_test_relationships:
+INFO:root:Finishing previous continued line: metabolic_test_relationships:
+INFO:root:PARSING LINE: metabolic_test_relationships:
+INFO:root:PARSING LINE: api_test_relationships:
+INFO:ontogpt.engines.knowledge_engine:GROUNDING Halomonas using Taxon
+INFO:ontogpt.engines.knowledge_engine:Singularized Halomonas to halomona
+INFO:ontogpt.engines.knowledge_engine:GROUNDING halomona using Taxon
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Grounding Halomonas to NCBITaxon:2745; next step is to normalize
+INFO:ontogpt.engines.knowledge_engine:Normalized Halomonas with NCBITaxon:2745 to NCBITaxon:2745
+INFO:ontogpt.engines.knowledge_engine:GROUNDING yzlin-01T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize yzlin-01T to Strain
+INFO:ontogpt.engines.knowledge_engine:GROUNDING GDMCC 1.3202T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize GDMCC 1.3202T to Strain
+INFO:ontogpt.engines.knowledge_engine:GROUNDING KCTC 92467T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize KCTC 92467T to Strain
+INFO:ontogpt.engines.knowledge_engine:GROUNDING YU-PRIM-29T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize YU-PRIM-29T to Strain
+INFO:ontogpt.engines.knowledge_engine:GROUNDING T68687T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize T68687T to Strain
+INFO:ontogpt.engines.knowledge_engine:GROUNDING M12T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize M12T to Strain
+INFO:ontogpt.engines.knowledge_engine:GROUNDING catalase activity using EnzymeActivity
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Grounding catalase activity to GO:0004096; next step is to normalize
+INFO:ontogpt.engines.knowledge_engine:Normalized catalase activity with GO:0004096 to GO:0004096
+INFO:ontogpt.engines.knowledge_engine:GROUNDING oxidase activity using EnzymeActivity
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize oxidase activity to EnzymeActivity
+INFO:ontogpt.engines.knowledge_engine:GROUNDING yzlin-01T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize yzlin-01T to Strain
+INFO:root:Looking for positive_for in BiochemicalTestResult
+INFO:ontogpt.engines.knowledge_engine:GROUNDING catalase using EnzymeActivity
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize catalase to EnzymeActivity
+INFO:root:{'subject': 'AUTO:yzlin-01T', 'predicate': 'positive_for', 'object': 'AUTO:catalase'}
+INFO:ontogpt.engines.knowledge_engine:GROUNDING yzlin-01T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize yzlin-01T to Strain
+INFO:root:Looking for negative_for in BiochemicalTestResult
+INFO:ontogpt.engines.knowledge_engine:GROUNDING oxidase using EnzymeActivity
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize oxidase to EnzymeActivity
+INFO:root:{'subject': 'AUTO:yzlin-01T', 'predicate': 'negative_for', 'object': 'AUTO:oxidase'}
+INFO:ontogpt.engines.knowledge_engine:GROUNDING yzlin-01T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize yzlin-01T to Strain
+INFO:root:Looking for major_fatty_acid in BiochemicalTestResult
+INFO:ontogpt.engines.knowledge_engine:GROUNDING C18:1ω7c using FattyAcid
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize C18:1ω7c to FattyAcid
+INFO:root:{'subject': 'AUTO:yzlin-01T', 'predicate': 'major_fatty_acid', 'object': 'AUTO:C18%3A1%CF%897c'}
+INFO:ontogpt.engines.knowledge_engine:GROUNDING yzlin-01T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize yzlin-01T to Strain
+INFO:root:Looking for major_fatty_acid in BiochemicalTestResult
+INFO:ontogpt.engines.knowledge_engine:GROUNDING C18:1ω6c using FattyAcid
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize C18:1ω6c to FattyAcid
+INFO:root:{'subject': 'AUTO:yzlin-01T', 'predicate': 'major_fatty_acid', 'object': 'AUTO:C18%3A1%CF%896c'}
+INFO:ontogpt.engines.knowledge_engine:GROUNDING yzlin-01T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize yzlin-01T to Strain
+INFO:root:Looking for major_fatty_acid in BiochemicalTestResult
+INFO:ontogpt.engines.knowledge_engine:GROUNDING C16:0 using FattyAcid
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Grounding C16:0 to CHEBI:15756; next step is to normalize
+INFO:ontogpt.engines.knowledge_engine:Normalized C16:0 with CHEBI:15756 to CHEBI:15756
+INFO:root:{'subject': 'AUTO:yzlin-01T', 'predicate': 'major_fatty_acid', 'object': 'CHEBI:15756'}
+INFO:ontogpt.engines.knowledge_engine:GROUNDING yzlin-01T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize yzlin-01T to Strain
+INFO:root:Looking for contains in BiochemicalTestResult
+INFO:ontogpt.engines.knowledge_engine:GROUNDING C12:0 3-OH using FattyAcid
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize C12:0 3-OH to FattyAcid
+INFO:root:{'subject': 'AUTO:yzlin-01T', 'predicate': 'contains', 'object': 'AUTO:C12%3A0%203-OH'}
+INFO:ontogpt.engines.knowledge_engine:GROUNDING yzlin-01T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize yzlin-01T to Strain
+INFO:root:Looking for contains in BiochemicalTestResult
+INFO:ontogpt.engines.knowledge_engine:GROUNDING C16:1ω7c using FattyAcid
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize C16:1ω7c to FattyAcid
+INFO:root:{'subject': 'AUTO:yzlin-01T', 'predicate': 'contains', 'object': 'AUTO:C16%3A1%CF%897c'}
+INFO:ontogpt.engines.knowledge_engine:GROUNDING yzlin-01T using Strain
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize yzlin-01T to Strain
+INFO:root:Looking for contains in BiochemicalTestResult
+INFO:ontogpt.engines.knowledge_engine:GROUNDING C16:1ω6c using FattyAcid
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:root:No token exclusion list provided. Proceeding ...
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Skipping <class 'oaklib.implementations.sqldb.sql_implementation.SqlImplementation'> as it does not support partial matches
+INFO:ontogpt.engines.knowledge_engine:Could not ground and normalize C16:1ω6c to FattyAcid
+INFO:root:{'subject': 'AUTO:yzlin-01T', 'predicate': 'contains', 'object': 'AUTO:C16%3A1%CF%896c'}
+INFO:root:{'pmid': '37170873', 'study_taxa': ['NCBITaxon:2745'], 'strains': ['AUTO:yzlin-01T', 'AUTO:GDMCC%201.3202T', 'AUTO:KCTC%2092467T', 'AUTO:YU-PRIM-29T', 'AUTO:T68687T', 'AUTO:M12T'], 'enzyme_activities': ['GO:0004096', 'AUTO:oxidase%20activity'], 'enzyme_relationships': [EnzymeRelationship(subject='AUTO:yzlin-01T', predicate='positive_for', object='AUTO:catalase'), EnzymeRelationship(subject='AUTO:yzlin-01T', predicate='negative_for', object='AUTO:oxidase')], 'fatty_acid_relationships': [FattyAcidRelationship(subject='AUTO:yzlin-01T', predicate='major_fatty_acid', object='AUTO:C18%3A1%CF%897c'), FattyAcidRelationship(subject='AUTO:yzlin-01T', predicate='major_fatty_acid', object='AUTO:C18%3A1%CF%896c'), FattyAcidRelationship(subject='AUTO:yzlin-01T', predicate='major_fatty_acid', object='CHEBI:15756'), FattyAcidRelationship(subject='AUTO:yzlin-01T', predicate='contains', object='AUTO:C12%3A0%203-OH'), FattyAcidRelationship(subject='AUTO:yzlin-01T', predicate='contains', object='AUTO:C16%3A1%CF%897c'), FattyAcidRelationship(subject='AUTO:yzlin-01T', predicate='contains', object='AUTO:C16%3A1%CF%896c')]}
+INFO:root:Output format: yaml

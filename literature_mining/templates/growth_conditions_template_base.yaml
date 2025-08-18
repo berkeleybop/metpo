@@ -57,29 +57,31 @@ classes:
         description: >-
           semicolon-separated list of temperature conditions in normalized format
         multivalued: true
-        range: string
+        range: TemperatureCondition
         annotations:
           prompt: >-
             A semicolon-separated list of temperature conditions. Normalize 
             temperatures to °C format. Examples: "37°C", "25-30°C", "optimal 28°C", 
             "range 15-45°C", "thermophilic", "mesophilic". Convert Fahrenheit 
             to Celsius if needed. Preserve ranges, optima, and classifications.
+            If no temperature conditions are mentioned, leave this field empty.
       ph_conditions:
         description: >-
           semicolon-separated list of pH conditions in normalized format
         multivalued: true
-        range: string
+        range: PHCondition
         annotations:
           prompt: >-
             A semicolon-separated list of pH conditions. Normalize to "pH X.X" 
             format with one decimal place. Examples: "pH 7.0", "pH 6.5-8.0", 
             "optimal pH 7.2", "range pH 5.0-9.0", "alkaliphilic", "acidophilic". 
             Preserve ranges, optima, and classifications.
+            If no pH conditions are mentioned, leave this field empty.
       oxygen_requirements:
         description: >-
           semicolon-separated list of oxygen requirements in normalized format
         multivalued: true
-        range: string
+        range: OxygenRequirement
         annotations:
           prompt: >-
             A semicolon-separated list of oxygen requirements. Use standard terms: 
@@ -90,7 +92,7 @@ classes:
         description: >-
           semicolon-separated list of salt tolerance in normalized format
         multivalued: true
-        range: string
+        range: SaltTolerance
         annotations:
           prompt: >-
             A semicolon-separated list of salt tolerance conditions. Normalize 
@@ -98,12 +100,13 @@ classes:
             "3.5% NaCl", "0-5% NaCl", "optimal 1% NaCl", "range 2-15% NaCl", 
             "halophilic", "extremely halophilic". Convert other units to 
             percentages if possible.
+            If no salt tolerance conditions are mentioned, leave this field empty.
       atmospheric_requirements:
         description: >-
           semicolon-separated list of special atmospheric requirements in 
           normalized format
         multivalued: true
-        range: string
+        range: AtmosphericRequirement
         annotations:
           prompt: >-
             A semicolon-separated list of atmospheric requirements. Focus on 
@@ -154,7 +157,7 @@ classes:
       Bacterial, archaeal, or other microbial taxa being studied for 
       growth conditions.
     annotations:
-      annotators: sqlite:obo:ncbitaxon
+      annotators: sqlite:obo:ncbitaxon, sqlite:obo:gtdb
 
   Strain:
     is_a: NamedEntity
@@ -168,20 +171,65 @@ classes:
       Includes complex media (TSB, LB), defined media, minimal media, and 
       specific media compositions.
 
+  OxygenRequirement:
+    is_a: NamedEntity
+    description: >-
+      Oxygen requirements and atmospheric oxygen conditions for bacterial growth.
+      Includes aerobic, anaerobic, microaerophilic, and facultative conditions.
+    annotations:
+      annotators: sqlite:obo:envo, sqlite:intermediates/db/metpo.db
+
+  AtmosphericRequirement:
+    is_a: NamedEntity
+    description: >-
+      Atmospheric and gaseous requirements for bacterial growth including
+      specific gas concentrations and atmospheric conditions.
+    annotations:
+      annotators: sqlite:obo:envo, sqlite:obo:chebi, sqlite:intermediates/db/metpo.db
+
+  TemperatureCondition:
+    is_a: NamedEntity
+    description: >-
+      Temperature conditions and ranges for bacterial growth including
+      specific temperatures, ranges, and thermal classifications.
+    annotations:
+      annotators: sqlite:obo:envo, sqlite:intermediates/db/metpo.db
+
+  PHCondition:
+    is_a: NamedEntity
+    description: >-
+      pH conditions and ranges for bacterial growth including specific
+      pH values, ranges, and acidity classifications.
+    annotations:
+      annotators: sqlite:obo:envo, sqlite:intermediates/db/metpo.db
+
+  SaltTolerance:
+    is_a: NamedEntity
+    description: >-
+      Salt tolerance conditions for bacterial growth including salt
+      concentrations, ranges, and halophilic classifications.
+    annotations:
+      annotators: sqlite:obo:envo, sqlite:obo:chebi, sqlite:intermediates/db/metpo.db
+
   GrowthConditionRelationship:
     is_a: CompoundExpression
     description: >-
-      Specific relationships between strains and their growth conditions
+      Specific relationships between organisms and their growth conditions
     attributes:
       subject:
-        description: the strain with this growth condition
-        range: Strain
+        description: the organism with this growth condition
+        range: Taxon
       predicate:
         description: the type of growth condition relationship
         range: GrowthConditionType
       object:
-        description: the specific growth condition value
-        range: string
+        description: the specific growth condition (temperature, pH, oxygen, salt, or atmospheric requirement)
+        any_of:
+          - range: TemperatureCondition
+          - range: PHCondition
+          - range: OxygenRequirement
+          - range: SaltTolerance
+          - range: AtmosphericRequirement
 
   StrainRelationship:
     is_a: CompoundExpression
@@ -212,6 +260,7 @@ classes:
       object:
         description: the specific culture medium
         range: CultureMedium
+
 
 enums:
   GrowthConditionType:
@@ -257,4 +306,5 @@ enums:
         description: The strain uses this medium
       optimal_growth_on:
         description: The strain shows optimal growth on this medium
+
 
