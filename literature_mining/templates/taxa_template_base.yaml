@@ -44,7 +44,7 @@ classes:
         range: Strain
         annotations:
           prompt: >-
-            Extract specific strain designations mentioned in the text. Include strain numbers, culture collection numbers, type strain designations, and isolate names. Examples: "15-1T", "ATCC 25922", "MG1655", "K-12", "strain ABC123", "isolate XYZ-1". Do not include general species names.
+            Extract specific strain designations, preferably with genus and species context from the title/text. When possible, use format "Genus species strain ID" for better grounding. Examples: "Escherichia coli MG1655", "Bacillus subtilis 168", "Pseudomonas aeruginosa PAO1", or just "ATCC 25922", "15-1T" if species context unclear. Include strain numbers, culture collection numbers, type strain designations, and isolate names.
       isolation_sources:
         description: >-
           semicolon-separated list of environments, habitats, or sources from which 
@@ -92,7 +92,7 @@ classes:
       families, and higher taxonomic groups. Includes both novel taxa being 
       described and reference taxa used for comparison.
     annotations:
-      annotators: sqlite:obo:ncbitaxon, sqlite:obo:gtdb
+      annotators: sqlite:obo:ncbitaxon
 
   Strain:
     is_a: NamedEntity

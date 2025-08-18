@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: https://w3id.org/metpo/metpo/releases/2025-07-02/metpo-full.owl
+data-version: https://w3id.org/metpo/metpo/releases/2025-08-18/metpo-full.owl
 idspace: dce http://purl.org/dc/elements/1.1/ 
 idspace: dcterms http://purl.org/dc/terms/ 
 idspace: metpo https://w3id.org/metpo/ 
@@ -8,7 +8,7 @@ idspace: skos http://www.w3.org/2004/02/skos/core#
 ontology: https://w3id.org/metpo/metpo/metpo-full.owl
 property_value: dcterms:description "Microbial ecophysiological trait and phenotype ontology" xsd:string
 property_value: dcterms:title "METPO" xsd:string
-property_value: owl:versionInfo "2025-07-02" xsd:string
+property_value: owl:versionInfo "2025-08-18" xsd:string
 
 [Term]
 id: metpo:1000002
@@ -4865,4 +4865,15 @@ id: metpo:2000051
 name: uses for anaerobic growth with light
 synonym: "anaerobic growth with light" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000101
+name: has quality
+domain: metpo:1000525 ! microbe
+range: metpo:1000188 ! quality
+
+[Typedef]
+id: metpo:2000102
+name: has phenotype
+is_a: metpo:2000101 ! has quality
 

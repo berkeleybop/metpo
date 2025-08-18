@@ -7,8 +7,8 @@ Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
 
 
 Ontology(<https://w3id.org/metpo/metpo/components/metpo_sheet.owl>
-<https://w3id.org/metpo/metpo/releases/2025-07-02/components/metpo_sheet.owl>
-Annotation(owl:versionInfo "2025-07-02")
+<https://w3id.org/metpo/metpo/releases/2025-08-18/components/metpo_sheet.owl>
+Annotation(owl:versionInfo "2025-08-18")
 
 Declaration(Class(<https://w3id.org/metpo/1000002>))
 Declaration(Class(<https://w3id.org/metpo/1000003>))
@@ -544,6 +544,8 @@ Declaration(ObjectProperty(<https://w3id.org/metpo/2000048>))
 Declaration(ObjectProperty(<https://w3id.org/metpo/2000049>))
 Declaration(ObjectProperty(<https://w3id.org/metpo/2000050>))
 Declaration(ObjectProperty(<https://w3id.org/metpo/2000051>))
+Declaration(ObjectProperty(<https://w3id.org/metpo/2000101>))
+Declaration(ObjectProperty(<https://w3id.org/metpo/2000102>))
 Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/IAO_0000115>))
 Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/IAO_0000119>))
 Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>))
@@ -865,6 +867,17 @@ SubObjectPropertyOf(<https://w3id.org/metpo/2000050> <https://w3id.org/metpo/200
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000051> "anaerobic growth with light")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000051> "uses for anaerobic growth with light")
 SubObjectPropertyOf(<https://w3id.org/metpo/2000051> <https://w3id.org/metpo/2000001>)
+
+# Object Property: <https://w3id.org/metpo/2000101> (has quality)
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000101> "has quality")
+ObjectPropertyDomain(<https://w3id.org/metpo/2000101> <https://w3id.org/metpo/1000525>)
+ObjectPropertyRange(<https://w3id.org/metpo/2000101> <https://w3id.org/metpo/1000188>)
+
+# Object Property: <https://w3id.org/metpo/2000102> (has phenotype)
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000102> "has phenotype")
+SubObjectPropertyOf(<https://w3id.org/metpo/2000102> <https://w3id.org/metpo/2000101>)
 
 
 

@@ -290,33 +290,72 @@ class MetpoAssessor:
             if not docs:
                 return self._empty_extraction_result(extraction_path)
             
-            # Find document with extracted_object
-            extraction = docs[0]
+            # Find ALL documents with extracted_object
+            extractions = []
             for doc in docs:
                 if isinstance(doc, dict) and 'extracted_object' in doc:
-                    extraction = doc
-                    break
+                    extractions.append(doc)
+            
+            if not extractions:
+                return self._empty_extraction_result(extraction_path)
         
         result = {
             'extraction_path': str(extraction_path),
             'template_name': self._extract_template_name(extraction_path),
             'analysis_timestamp': datetime.now().isoformat(),
+            'abstracts_processed': len(extractions),
             'success_metrics': {},
             'performance': {},
             'issues': [],
             'strengths': []
         }
         
-        # Core success metrics
-        ce_count = self._count_compound_expressions(extraction.get('extracted_object', {}))
-        result['success_metrics']['compound_expressions'] = ce_count
-        result['success_metrics']['primary_success'] = ce_count > 0
+        # Aggregate metrics across all extractions
+        total_ce_count = 0
+        successful_extractions = 0
+        all_entities = []
+        all_extracted_objects = []
         
-        # Performance analysis
+        for extraction in extractions:
+            extracted_obj = extraction.get('extracted_object', {})
+            ce_count = self._count_compound_expressions(extracted_obj)
+            total_ce_count += ce_count
+            if ce_count > 0:
+                successful_extractions += 1
+            
+            # Collect all named entities for grounding analysis
+            named_entities = extraction.get('named_entities', [])
+            all_entities.extend(named_entities)
+            
+            # Collect extracted objects for CompoundExpression analysis
+            all_extracted_objects.append(extracted_obj)
+        
+        # Core success metrics
+        result['success_metrics']['compound_expressions'] = total_ce_count
+        result['success_metrics']['successful_extractions'] = successful_extractions
+        result['success_metrics']['primary_success'] = successful_extractions > 0
+        
+        # Aggregate CompoundExpression analysis across all extractions
+        ce_analysis = {'total_compound_expressions': 0, 'grounded_subjects': 0, 'grounded_predicates': 0, 'metpo_predicates': 0}
+        for extracted_obj in all_extracted_objects:
+            obj_analysis = self._analyze_compound_expression_grounding(extracted_obj)
+            ce_analysis['total_compound_expressions'] += obj_analysis['total_compound_expressions']
+            ce_analysis['grounded_subjects'] += obj_analysis['grounded_subjects']
+            ce_analysis['grounded_predicates'] += obj_analysis['grounded_predicates']
+            ce_analysis['metpo_predicates'] += obj_analysis['metpo_predicates']
+        
+        # Calculate final rates
+        total_ces = ce_analysis['total_compound_expressions']
+        ce_analysis['subject_grounding_rate'] = round((ce_analysis['grounded_subjects'] / max(total_ces, 1)) * 100, 1)
+        ce_analysis['predicate_grounding_rate'] = round((ce_analysis['grounded_predicates'] / max(total_ces, 1)) * 100, 1)
+        ce_analysis['metpo_predicate_usage'] = round((ce_analysis['metpo_predicates'] / max(total_ces, 1)) * 100, 1)
+
+        # Performance analysis using aggregated data
         result['performance'] = {
-            'raw_output': self._analyze_raw_output(extraction.get('raw_completion_output', '')),
-            'grounding': self._analyze_grounding(extraction.get('named_entities', [])),
-            'coverage': self._analyze_coverage(extraction)
+            'raw_output': self._analyze_raw_output(extractions[0].get('raw_completion_output', '') if extractions else ''),
+            'grounding': self._analyze_grounding(all_entities),
+            'compound_expression_grounding': ce_analysis,
+            'coverage': self._analyze_coverage(extractions[0] if extractions else {})
         }
         
         # Generate insights
@@ -398,25 +437,82 @@ class MetpoAssessor:
         }
     
     def _analyze_grounding(self, named_entities: List[Dict]) -> Dict[str, Any]:
-        """Analyze entity grounding quality."""
+        """Analyze entity grounding quality with enhanced metrics."""
         total = len(named_entities)
         auto = sum(1 for e in named_entities if e.get('id', '').startswith('AUTO:'))
         grounded = total - auto
         
-        ontologies = set()
+        # Ontology usage analysis
+        ontologies = {}
+        entity_duplicates = {}
+        
         for entity in named_entities:
             entity_id = entity.get('id', '')
+            entity_label = entity.get('label', '')
+            
+            # Track ontology usage
             if ':' in entity_id and not entity_id.startswith('AUTO:'):
                 ontology = entity_id.split(':')[0]
-                ontologies.add(ontology)
+                ontologies[ontology] = ontologies.get(ontology, 0) + 1
+            
+            # Track entity duplication
+            if entity_id:
+                entity_duplicates[entity_id] = entity_duplicates.get(entity_id, 0) + 1
+        
+        # Find most duplicated entities (excluding expected NCBI taxonomy)
+        duplicated_entities = {k: v for k, v in entity_duplicates.items() 
+                             if v > 1 and not k.startswith('NCBITaxon:')}
+        
+        # Calculate auto vs grounded ratio
+        auto_vs_grounded_ratio = auto / max(grounded, 1) if grounded > 0 else float('inf')
         
         return {
             'total': total,
             'grounded': grounded,
             'auto': auto,
             'rate': (grounded / max(total, 1)) * 100,
-            'ontologies': sorted(ontologies),
-            'diversity': len(ontologies)
+            'auto_vs_grounded_ratio': round(auto_vs_grounded_ratio, 2),
+            'ontologies_used': ontologies,
+            'ontology_diversity': len(ontologies),
+            'duplicated_entities': duplicated_entities,
+            'excessive_duplication': len(duplicated_entities) > 5
+        }
+    
+    def _analyze_compound_expression_grounding(self, extracted_obj: Dict) -> Dict[str, Any]:
+        """Analyze grounding quality specifically for CompoundExpression objects."""
+        total_ces = 0
+        grounded_subjects = 0
+        grounded_predicates = 0
+        metpo_predicates = 0
+        
+        # Check all fields that might contain CompoundExpressions
+        for field_name, field_value in extracted_obj.items():
+            if isinstance(field_value, list):
+                for item in field_value:
+                    if isinstance(item, dict) and all(k in item for k in ['subject', 'predicate', 'object']):
+                        total_ces += 1
+                        
+                        # Check subject grounding
+                        subject = item.get('subject', '')
+                        if isinstance(subject, str) and ':' in subject and not subject.startswith('AUTO:'):
+                            grounded_subjects += 1
+                        
+                        # Check predicate grounding
+                        predicate = item.get('predicate', '')
+                        if isinstance(predicate, str):
+                            if ':' in predicate and not predicate.startswith('AUTO:'):
+                                grounded_predicates += 1
+                            if 'METPO:' in str(predicate) or predicate in ['uses_as_carbon_source', 'degrades', 'ferments']:
+                                metpo_predicates += 1
+        
+        return {
+            'total_compound_expressions': total_ces,
+            'grounded_subjects': grounded_subjects,
+            'grounded_predicates': grounded_predicates,
+            'metpo_predicates': metpo_predicates,
+            'subject_grounding_rate': round((grounded_subjects / max(total_ces, 1)) * 100, 1),
+            'predicate_grounding_rate': round((grounded_predicates / max(total_ces, 1)) * 100, 1),
+            'metpo_predicate_usage': round((metpo_predicates / max(total_ces, 1)) * 100, 1)
         }
     
     def _analyze_coverage(self, extraction: Dict) -> Dict[str, Any]:
@@ -573,63 +669,50 @@ def analyze_extractions(extractions_dir, output, pattern):
         click.echo("\\n" + report)
 
 def generate_template_report(results: List[Dict], cross_analysis: Dict) -> str:
-    """Generate template analysis report."""
-    lines = [
-        "# Template Design Analysis Report",
-        f"**Generated**: {datetime.now().strftime('%Y-%m-%d %H:%M')}",
-        "",
-        "## Summary",
-        f"- **Templates analyzed**: {len(results)}",
-        ""
-    ]
+    """Generate template analysis report in YAML format."""
+    report = {
+        'generated': datetime.now().strftime('%Y-%m-%d %H:%M'),
+        'summary': {
+            'templates_analyzed': len(results)
+        },
+        'templates': {}
+    }
     
     # Individual template results
     for result in results:
         name = result['template_name']
         compliance = result['compliance']
         
-        lines.extend([
-            f"### {name}",
-            "",
-            "**Compliance Metrics:**",
-            f"- CompoundExpression compliance: {compliance['compound_expressions']['compliance_rate']:.1f}%",
-            f"- Semicolon requests: {compliance['semicolon_requests']['rate']:.1f}%",
-            f"- Multivalued fields: {compliance['multivalued_fields']['rate']:.1f}%",
-            f"- Well-annotated entities: {compliance['annotator_quality']['rate']:.1f}%",
-            ""
-        ])
-        
-        if result['issues']:
-            lines.append("**Issues:**")
-            for issue in result['issues']:
-                lines.append(f"- {issue}")
-            lines.append("")
-        
-        if result['recommendations']:
-            lines.append("**Recommendations:**")
-            for rec in result['recommendations']:
-                lines.append(f"- {rec}")
-            lines.append("")
+        report['templates'][name] = {
+            'compliance_metrics': {
+                'compound_expression_compliance': round(compliance['compound_expressions']['compliance_rate'], 1),
+                'semicolon_requests': round(compliance['semicolon_requests']['rate'], 1),
+                'multivalued_fields': round(compliance['multivalued_fields']['rate'], 1),
+                'well_annotated_entities': round(compliance['annotator_quality']['rate'], 1)
+            },
+            'issues': result['issues'],
+            'recommendations': result['recommendations']
+        }
     
-    return "\\n".join(lines)
+    return yaml.dump(report, default_flow_style=False, sort_keys=False)
 
 def generate_extraction_report(results: List[Dict]) -> str:
-    """Generate extraction performance report."""
+    """Generate extraction performance report in YAML format."""
     total = len(results)
     successful = sum(1 for r in results if r['success_metrics']['primary_success'])
     total_ces = sum(r['success_metrics']['compound_expressions'] for r in results)
     
-    lines = [
-        "# Extraction Performance Report",
-        f"**Generated**: {datetime.now().strftime('%Y-%m-%d %H:%M')}",
-        "",
-        "## Summary",
-        f"- **Extractions analyzed**: {total}",
-        f"- **Successful extractions**: {successful} ({successful/max(total,1)*100:.1f}%)",
-        f"- **Total CompoundExpressions**: {total_ces}",
-        f"- **Average CEs per extraction**: {total_ces/max(total,1):.1f}",
-        ""
-    ]
+    report = {
+        'generated': datetime.now().strftime('%Y-%m-%d %H:%M'),
+        'summary': {
+            'extractions_analyzed': total,
+            'successful_extractions': successful,
+            'success_rate': round(successful/max(total,1)*100, 1),
+            'total_compound_expressions': total_ces,
+            'average_ces_per_extraction': round(total_ces/max(total,1), 1)
+        },
+        'templates': {}
+    }
     
     # Group by template
     by_template = defaultdict(list)
@@ -637,26 +720,49 @@ def generate_extraction_report(results: List[Dict]) -> str:
         template_name = result['template_name']
         by_template[template_name].append(result)
     
-    lines.append("## Per-Template Performance")
-    lines.append("")
-    
     for template_name, template_results in by_template.items():
         successful_count = sum(1 for r in template_results if r['success_metrics']['primary_success'])
         total_count = len(template_results)
         ces = sum(r['success_metrics']['compound_expressions'] for r in template_results)
+        abstracts_processed = sum(r.get('abstracts_processed', 1) for r in template_results)
+        
+        # Aggregate grounding metrics
         avg_grounding = sum(r['performance']['grounding']['rate'] for r in template_results) / len(template_results)
+        avg_auto_vs_grounded = sum(r['performance']['grounding']['auto_vs_grounded_ratio'] for r in template_results) / len(template_results)
         
-        status = "✅" if successful_count == total_count else "⚠️" if successful_count > 0 else "❌"
+        # Aggregate CompoundExpression metrics
+        avg_subject_grounding = sum(r['performance']['compound_expression_grounding']['subject_grounding_rate'] for r in template_results) / len(template_results)
+        avg_predicate_grounding = sum(r['performance']['compound_expression_grounding']['predicate_grounding_rate'] for r in template_results) / len(template_results)
+        avg_metpo_usage = sum(r['performance']['compound_expression_grounding']['metpo_predicate_usage'] for r in template_results) / len(template_results)
         
-        lines.extend([
-            f"### {template_name} {status}",
-            f"- **Success rate**: {successful_count}/{total_count} ({successful_count/total_count*100:.1f}%)",
-            f"- **CompoundExpressions**: {ces} (avg: {ces/total_count:.1f})",
-            f"- **Grounding rate**: {avg_grounding:.1f}%",
-            ""
-        ])
+        # Aggregate ontology usage
+        all_ontologies = {}
+        all_duplicates = {}
+        for r in template_results:
+            grounding = r['performance']['grounding']
+            for ont, count in grounding.get('ontologies_used', {}).items():
+                all_ontologies[ont] = all_ontologies.get(ont, 0) + count
+            for ent, count in grounding.get('duplicated_entities', {}).items():
+                all_duplicates[ent] = all_duplicates.get(ent, 0) + count
+        
+        report['templates'][template_name] = {
+            'abstracts_processed': abstracts_processed,
+            'success_rate': f"{successful_count}/{total_count}",
+            'success_percentage': round(successful_count/total_count*100, 1),
+            'compound_expressions': ces,
+            'average_ces': round(ces/total_count, 1),
+            'grounding_metrics': {
+                'overall_grounding_rate': round(avg_grounding, 1),
+                'auto_vs_grounded_ratio': round(avg_auto_vs_grounded, 2),
+                'subject_grounding_rate': round(avg_subject_grounding, 1),
+                'predicate_grounding_rate': round(avg_predicate_grounding, 1),
+                'metpo_predicate_usage': round(avg_metpo_usage, 1)
+            },
+            'ontology_usage': all_ontologies,
+            'problematic_duplicates': {k: v for k, v in all_duplicates.items() if v > 2}
+        }
     
-    return "\\n".join(lines)
+    return yaml.dump(report, default_flow_style=False, sort_keys=False)
 
 if __name__ == '__main__':
     cli()

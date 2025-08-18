@@ -37,7 +37,7 @@ classes:
         range: Strain
         annotations:
           prompt: >-
-            Extract specific strain designations mentioned in the text. Include strain numbers, culture collection numbers, type strain designations, and isolate names. Examples: "15-1T", "ATCC 25922", "MG1655", "K-12", "strain ABC123", "isolate XYZ-1". Do not include general species names.
+            Extract specific strain designations, preferably with genus and species context from the title/text. When possible, use format "Genus species strain ID" for better grounding. Examples: "Escherichia coli MG1655", "Bacillus subtilis 168", "Pseudomonas aeruginosa PAO1", or just "ATCC 25922", "15-1T" if species context unclear. Include strain numbers, culture collection numbers, type strain designations, and isolate names.
       enzyme_activities:
         description: >-
           semicolon-separated list of enzyme activities and enzymatic tests
@@ -62,46 +62,14 @@ classes:
         annotations:
           prompt: >-
             Identify metabolic and diagnostic test results mentioned in the text. Include tests like "indole production", "methyl red", "Voges-Proskauer", "citrate utilization", "hydrogen sulfide production", "nitrate reduction", "DNase", "coagulase", "hemolysis". If no metabolic tests are mentioned, leave this field empty.
-      fatty_acid_composition:
+      biochemical_relationships:
         description: >-
-          semicolon-separated list of fatty acid composition and FAME analysis results
+          semicolon-separated list of specific strain-biochemical relationships found in the text
         multivalued: true
-        range: FattyAcid
+        range: BiochemicalRelationship
         annotations:
           prompt: >-
-            Identify fatty acid composition mentioned in the text. Include specific fatty acids like "iso-C15:0", "anteiso-C17:0", "C16:1ω7c", "C18:1ω9c" and their percentages when provided. Also include terms like "branched-chain fatty acids", "straight-chain fatty acids", "unsaturated fatty acids", "FAME analysis". If no fatty acid information is mentioned, leave this field empty.
-      enzyme_relationships:
-        description: >-
-          semicolon-separated list of specific strain-enzyme relationships found in the text
-        multivalued: true
-        range: EnzymeRelationship
-        annotations:
-          prompt: >-
-            For each enzyme activity found in enzyme_activities, api_test_results, and metabolic_tests fields above, extract structured relationships linking specific strains to those enzyme activities. Generate tuples like "strain 15-1T demonstrates_activity catalase", "ATCC 25922 negative_for oxidase", "isolate XYZ-1 produces gelatinase", "strain ABC123 positive_for β-galactosidase". Convert ALL enzyme activities and biochemical tests mentioned above into strain-enzyme relationships. Focus on enzymatic activities and biochemical test results.
-      fatty_acid_relationships:
-        description: >-
-          semicolon-separated list of specific strain-fatty acid relationships found in the text
-        multivalued: true
-        range: FattyAcidRelationship
-        annotations:
-          prompt: >-
-            For each fatty acid found in fatty_acid_composition field above, extract structured relationships linking specific strains to those fatty acids. Generate tuples like "strain M-201T contains iso-C16:0", "strain 15-1T major_fatty_acid anteiso-C15:0", "ATCC 25922 predominant_fatty_acid C16:0". Convert ALL fatty acid composition data mentioned above into strain-fatty acid relationships.
-      metabolic_test_relationships:
-        description: >-
-          semicolon-separated list of specific strain-metabolic test relationships found in the text
-        multivalued: true
-        range: MetabolicTestRelationship
-        annotations:
-          prompt: >-
-            For each metabolic test found in metabolic_tests field above, extract structured relationships linking specific strains to those test results. Generate tuples like "strain ABC123 positive_for indole production", "ATCC 14887 negative_for methyl red", "isolate XYZ-1 demonstrates_activity citrate utilization". Convert ALL metabolic test data mentioned above into strain-test relationships.
-      api_test_relationships:
-        description: >-
-          semicolon-separated list of specific strain-API test relationships found in the text
-        multivalued: true
-        range: APITestRelationship
-        annotations:
-          prompt: >-
-            For each API test found in api_test_results field above, extract structured relationships linking specific strains to those test results. Generate tuples like "strain 123T positive_for API 20E profile", "ATCC 25922 demonstrates_activity Biolog carbon utilization", "isolate ABC negative_for API 50CH glucose". Convert ALL API test data mentioned above into strain-test relationships.
+            For each enzyme activity, API test result, and metabolic test found in the fields above, extract structured relationships linking specific strains to those biochemical characteristics. Generate tuples like "strain 15-1T positive_for catalase", "ATCC 25922 negative_for oxidase", "isolate XYZ-1 demonstrates_activity gelatinase", "strain ABC123 positive_for β-galactosidase", "strain 123T positive_for API 20E", "ATCC 14887 negative_for methyl red". Convert ALL biochemical tests and enzyme activities mentioned above into strain-biochemical relationships.
       strain_relationships:
         description: >-
           semicolon-separated list of strain-species relationships found in the text
@@ -124,7 +92,7 @@ classes:
     description: >-
       Bacterial, archaeal, or other microbial taxa being studied for biochemical characteristics.
     annotations:
-      annotators: sqlite:obo:ncbitaxon, sqlite:obo:gtdb
+      annotators: sqlite:obo:ncbitaxon
 
   Strain:
     is_a: NamedEntity
@@ -148,78 +116,31 @@ classes:
     description: >-
       Metabolic and diagnostic test results used for bacterial identification.
 
-  FattyAcid:
+  BiochemicalCharacteristic:
     is_a: NamedEntity
     description: >-
-      Fatty acids and fatty acid composition data from FAME analysis.
+      Any biochemical characteristic including enzyme activities, metabolic tests, API test results.
     annotations:
-      annotators: sqlite:obo:chebi, sqlite:obo:drugbank
+      annotators: sqlite:obo:go, sqlite:obo:rhea
 
-  EnzymeRelationship:
+  BiochemicalRelationship:
     is_a: CompoundExpression
     description: >-
-      Specific relationships between strains and enzyme activities including enzymatic test results and biochemical activities
+      Specific relationships between strains and biochemical characteristics including enzyme activities, metabolic tests, and API test results
     attributes:
       subject:
-        description: the strain being tested for enzyme activity
+        description: the strain being tested for biochemical characteristics
         range: Strain
       predicate:
-        description: the type of enzyme relationship (positive_for, negative_for, demonstrates_activity, etc.)
+        description: the type of biochemical relationship (positive_for, negative_for, demonstrates_activity, etc.)
         range: BiochemicalTestResult
         annotations:
           prompt: >-
-            Select the relationship type that matches the text. Use "positive_for" for positive test results, "negative_for" for negative results, "demonstrates_activity" for general enzyme activities, "produces" for enzyme production, "AccuProbe_positive_for" for AccuProbe test results.
+            Select the relationship type that matches the text. Use "positive_for" for positive test results, "negative_for" for negative results, "demonstrates_activity" for general activities, "produces" for production of compounds.
       object:
-        description: the specific enzyme or enzymatic test being evaluated
-        range: EnzymeActivity
+        description: the specific biochemical characteristic, enzyme, or test being evaluated
+        range: BiochemicalCharacteristic
 
-  FattyAcidRelationship:
-    is_a: CompoundExpression
-    description: >-
-      Specific relationships between strains and fatty acid composition
-    attributes:
-      subject:
-        description: the strain with this fatty acid composition
-        range: Strain
-      predicate:
-        description: the type of fatty acid relationship (contains, major_fatty_acid, minor_fatty_acid, etc.)
-        range: BiochemicalTestResult
-        annotations:
-          prompt: >-
-            Select the relationship type that matches the text. Use "contains" for general fatty acid presence, "major_fatty_acid" for predominant fatty acids, "minor_fatty_acid" for trace amounts, "predominant_fatty_acid" for most abundant fatty acids.
-      object:
-        description: the specific fatty acid compound
-        range: FattyAcid
-
-  MetabolicTestRelationship:
-    is_a: CompoundExpression
-    description: >-
-      Specific relationships between strains and metabolic test results
-    attributes:
-      subject:
-        description: the strain being tested
-        range: Strain
-      predicate:
-        description: the type of metabolic test relationship (positive_for, negative_for, demonstrates_activity)
-        range: BiochemicalTestResult
-      object:
-        description: the specific metabolic test performed
-        range: MetabolicTest
-
-  APITestRelationship:
-    is_a: CompoundExpression
-    description: >-
-      Specific relationships between strains and API test results
-    attributes:
-      subject:
-        description: the strain being tested
-        range: Strain
-      predicate:
-        description: the type of API test relationship (positive_for, negative_for, demonstrates_activity)
-        range: BiochemicalTestResult
-      object:
-        description: the specific API test performed
-        range: APITestResult
 
   StrainRelationship:
     is_a: CompoundExpression

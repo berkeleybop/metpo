@@ -78,7 +78,7 @@ abstracts-$(SOURCE): inputs/random-$(SOURCE)-pmids.txt | abstracts
 intermediates: intermediates/db/metpo.db intermediates/yaml/chem_interaction_props_enum.yaml
 
 # METPO database
-intermediates/db/metpo.db: ../metpo.owl | intermediates
+intermediates/db/metpo.db: ../metpo.owl
 	@echo "🗄️ Building METPO database..."
 	mkdir -p intermediates/db
 	cp $< intermediates/db/metpo.owl
@@ -86,7 +86,7 @@ intermediates/db/metpo.db: ../metpo.owl | intermediates
 	rm -f intermediates/db/metpo.owl intermediates/db/metpo-relation-graph.tsv.gz
 
 # Chemical utilization predicates (ONLY for chemical_utilization template)
-intermediates/tsv/chem_interaction_props.tsv: ../metpo.owl | intermediates
+intermediates/tsv/chem_interaction_props.tsv: ../metpo.owl
 	mkdir -p intermediates/tsv
 	robot query --query sparql/chem_interaction_props.rq $@ --input $<
 
@@ -117,7 +117,7 @@ templates/biochemical_populated.yaml: templates/biochemical_template_base.yaml
 templates/chemical_utilization_populated.yaml: templates/chemical_utilization_template_base.yaml intermediates/yaml/chem_interaction_props_enum.yaml
 	@echo "💉 Injecting METPO chemical predicates into chemical_utilization template..."
 	yq eval-all 'select(fileIndex == 0) as $$base | select(fileIndex == 1).enums.ChemicalInteractionPropertyEnum as $$enum | $$base.enums.ChemicalInteractionPropertyEnum = $$enum | $$base' $^ > $@.tmp
-	yq '.classes.ChemicalUtilization.attributes.utilization_type.range = "ChemicalInteractionPropertyEnum"' $@.tmp > $@
+	yq '.classes.ChemicalUtilization.attributes.predicate.range = "ChemicalInteractionPropertyEnum"' $@.tmp > $@
 	rm -f $@.tmp
 
 # =============================================================================
@@ -161,7 +161,7 @@ outputs/$(TEMPLATE)_$(TIMESTAMP).yaml: templates/$(TEMPLATE)_populated.yaml inte
 	else \
 		echo "Using general abstracts: $$input_dir"; \
 	fi; \
-	uv run ontogpt -v \
+	uv run ontogpt -vv \
 		--cache-db cache/ontogpt-cache.db \
 		extract \
 		--show-prompt \
@@ -179,11 +179,11 @@ assess: assess-templates assess-extractions
 
 assess-templates: metpo_assessor.py | assessments
 	@echo "📊 Assessing template designs..."
-	uv run python metpo_assessor.py analyze-templates templates/ --pattern "*_base.yaml" --output assessments/template_analysis_$(TIMESTAMP).md
+	uv run python metpo_assessor.py analyze-templates templates/ --pattern "*_base.yaml" --output assessments/template_analysis_$(TIMESTAMP).yaml
 
 assess-extractions: metpo_assessor.py | assessments 
 	@echo "📈 Assessing extraction performance..."
-	uv run python metpo_assessor.py analyze-extractions outputs/ --output assessments/extraction_analysis_$(TIMESTAMP).md
+	uv run python metpo_assessor.py analyze-extractions outputs/ --output assessments/extraction_analysis_$(TIMESTAMP).yaml
 
 # =============================================================================
 # 9. CLEANUP TARGETS
@@ -227,6 +227,27 @@ extract-all-templates:
 	$(MAKE) extract TEMPLATE=taxa
 	$(MAKE) extract TEMPLATE=morphology
 	$(MAKE) extract TEMPLATE=biochemical
+
+# Run each template on its curated rich abstracts and assess results
+extract-rich: clean intermediates
+	$(MAKE) extract-template-rich TEMPLATE=chemical_utilization RICH_DIR=test-chemical-rich
+	$(MAKE) extract-template-rich TEMPLATE=biochemical RICH_DIR=test-biochemical-rich
+	$(MAKE) extract-template-rich TEMPLATE=growth_conditions RICH_DIR=test-growth-rich
+	$(MAKE) extract-template-rich TEMPLATE=morphology RICH_DIR=test-morphology-rich
+	$(MAKE) extract-template-rich TEMPLATE=taxa RICH_DIR=test-taxa-rich
+	$(MAKE) assess-extractions
+
+extract-template-rich: templates/$(TEMPLATE)_populated.yaml
+	@echo "🚀 Running $(TEMPLATE) on $(RICH_DIR) abstracts at $(TIMESTAMP)"
+	uv run ontogpt -vv \
+		--cache-db cache/ontogpt-cache.db \
+		extract \
+		--show-prompt \
+		-p 0.1 \
+		-t templates/$(TEMPLATE)_populated.yaml \
+		-i $(RICH_DIR) \
+		-o outputs/$(TEMPLATE)_rich_$(TIMESTAMP).yaml \
+		2>&1 | tee logs/$(TEMPLATE)_rich_$(TIMESTAMP).log
 
 # Complete pipeline: setup → build → extract → assess
 full-pipeline:
