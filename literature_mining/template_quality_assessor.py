@@ -84,9 +84,17 @@ def analyze_template_structure(template_data, template_name):
     for rel_name, rel_class in compound_expressions.items():
         attributes = rel_class.get('attributes', {})
         for attr_name, attr_def in attributes.items():
+            # Check direct range
             attr_range = attr_def.get('range')
             if attr_range in named_entities:
                 entities_in_relationships.add(attr_range)
+            
+            # Check any_of construct
+            any_of = attr_def.get('any_of', [])
+            for any_of_item in any_of:
+                any_of_range = any_of_item.get('range')
+                if any_of_range in named_entities:
+                    entities_in_relationships.add(any_of_range)
     
     # Calculate coverage
     all_entities = set(named_entities.keys())
