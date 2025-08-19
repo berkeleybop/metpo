@@ -955,13 +955,20 @@ class MetpoAssessor:
         return results
     
     def _extract_content_text(self, input_text: Any) -> str:
-        """Extract content from input_text (handles JSON format)."""
+        """Extract content from input_text (handles JSON, YAML, or raw text)."""
         if isinstance(input_text, str):
             # Try to parse as JSON first
             try:
-                data = json.loads(input_text.replace("'", '"'))
+                data = json.loads(input_text)
                 return data.get('content', input_text)
-            except:
+            except json.JSONDecodeError:
+                # Try YAML parsing as fallback
+                try:
+                    data = yaml.safe_load(input_text)
+                    if isinstance(data, dict) and 'content' in data:
+                        return data['content']
+                except yaml.YAMLError:
+                    pass
                 return input_text
         elif isinstance(input_text, dict):
             return input_text.get('content', str(input_text))
