@@ -1858,6 +1858,7 @@ version = "0.3.0"
 source = { editable = "." }
 dependencies = [
     { name = "click" },
+    { name = "pyyaml" },
 ]
 
 [package.optional-dependencies]
@@ -1877,8 +1878,9 @@ requires-dist = [
     { name = "click", specifier = ">=8.0" },
     { name = "litellm", marker = "extra == 'dev'", specifier = "==1.75.8" },
     { name = "ontogpt", marker = "extra == 'dev'", specifier = "==1.0.16" },
-    { name = "openai", marker = "extra == 'dev'", specifier = ">=1.95,<1.100.0" },
+    { name = "openai", marker = "extra == 'dev'", specifier = ">=1.95,<1.100" },
     { name = "pandas", marker = "extra == 'dev'", specifier = ">=2.3.1" },
+    { name = "pyyaml", specifier = ">=6.0.2" },
     { name = "rdflib", marker = "extra == 'dev'", specifier = ">=7.1.4" },
     { name = "semsql", marker = "extra == 'dev'", specifier = ">=0.4.0" },
 ]

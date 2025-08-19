@@ -44,7 +44,7 @@ classes:
         range: Strain
         annotations:
           prompt: >-
-            Extract specific strain designations, preferably with genus and species context from the title/text. When possible, use format "Genus species strain ID" for better grounding. Examples: "Escherichia coli MG1655", "Bacillus subtilis 168", "Pseudomonas aeruginosa PAO1", or just "ATCC 25922", "15-1T" if species context unclear. Include strain numbers, culture collection numbers, type strain designations, and isolate names.
+            Extract ONLY the strain designation part (e.g., "DA-C8", "MG1655", "ATCC 25922") WITHOUT genus/species prefixes. Focus on strain numbers, culture collection codes, and isolate identifiers. Automatically remove terminal "T" or "(T)" suffixes as these indicate type strain status (e.g., "DA-C8T" becomes "DA-C8", "K13T" becomes "K13"). Include strain numbers, culture collection numbers, and isolate names, but NOT the full taxonomic context.
       isolation_sources:
         description: >-
           semicolon-separated list of environments, habitats, or sources from which 
