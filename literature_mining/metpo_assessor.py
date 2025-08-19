@@ -337,25 +337,34 @@ class MetpoAssessor:
         
         # Aggregate CompoundExpression analysis across all extractions
         ce_analysis = {'total_compound_expressions': 0, 'grounded_subjects': 0, 'grounded_predicates': 0, 'metpo_predicates': 0}
+        all_predicate_validations = []
         for extracted_obj in all_extracted_objects:
             obj_analysis = self._analyze_compound_expression_grounding(extracted_obj)
             ce_analysis['total_compound_expressions'] += obj_analysis['total_compound_expressions']
             ce_analysis['grounded_subjects'] += obj_analysis['grounded_subjects']
             ce_analysis['grounded_predicates'] += obj_analysis['grounded_predicates']
             ce_analysis['metpo_predicates'] += obj_analysis['metpo_predicates']
+            all_predicate_validations.extend(obj_analysis.get('predicate_validation_details', []))
         
         # Calculate final rates
         total_ces = ce_analysis['total_compound_expressions']
         ce_analysis['subject_grounding_rate'] = round((ce_analysis['grounded_subjects'] / max(total_ces, 1)) * 100, 1)
         ce_analysis['predicate_grounding_rate'] = round((ce_analysis['grounded_predicates'] / max(total_ces, 1)) * 100, 1)
         ce_analysis['metpo_predicate_usage'] = round((ce_analysis['metpo_predicates'] / max(total_ces, 1)) * 100, 1)
+        
+        # Analyze predicate validation results
+        predicate_analysis = self._analyze_predicate_validation(all_predicate_validations)
+        ce_analysis['predicate_validation'] = predicate_analysis
 
         # Performance analysis using aggregated data
         result['performance'] = {
             'raw_output': self._analyze_raw_output(extractions[0].get('raw_completion_output', '') if extractions else ''),
             'grounding': self._analyze_grounding(all_entities),
             'compound_expression_grounding': ce_analysis,
-            'coverage': self._analyze_coverage(extractions[0] if extractions else {})
+            'coverage': self._analyze_coverage(extractions[0] if extractions else {}),
+            'span_distances': self._assess_span_distances(extractions),
+            'verbatim_traceability': self._assess_verbatim_traceability(extractions),
+            'strain_taxon_consistency': self._assess_strain_taxon_consistency(extractions)
         }
         
         # Generate insights
@@ -484,6 +493,7 @@ class MetpoAssessor:
         grounded_subjects = 0
         grounded_predicates = 0
         metpo_predicates = 0
+        predicate_validation_details = []
         
         # Check all fields that might contain CompoundExpressions
         for field_name, field_value in extracted_obj.items():
@@ -497,22 +507,168 @@ class MetpoAssessor:
                         if isinstance(subject, str) and ':' in subject and not subject.startswith('AUTO:'):
                             grounded_subjects += 1
                         
-                        # Check predicate grounding
+                        # Check predicate grounding and validation
                         predicate = item.get('predicate', '')
                         if isinstance(predicate, str):
                             if ':' in predicate and not predicate.startswith('AUTO:'):
                                 grounded_predicates += 1
                             if 'METPO:' in str(predicate) or predicate in ['uses_as_carbon_source', 'degrades', 'ferments']:
                                 metpo_predicates += 1
+                            
+                            # Validate predicate against expected enumeration
+                            validation_result = self._validate_predicate(field_name, predicate)
+                            predicate_validation_details.append({
+                                'field': field_name,
+                                'predicate': predicate,
+                                'subject': subject,
+                                'object': item.get('object', ''),
+                                'expected_enum': validation_result['expected_enum'],
+                                'is_valid': validation_result['is_valid'],
+                                'reason': validation_result.get('reason', '')
+                            })
         
         return {
             'total_compound_expressions': total_ces,
             'grounded_subjects': grounded_subjects,
             'grounded_predicates': grounded_predicates,
             'metpo_predicates': metpo_predicates,
+            'predicate_validation_details': predicate_validation_details,
             'subject_grounding_rate': round((grounded_subjects / max(total_ces, 1)) * 100, 1),
             'predicate_grounding_rate': round((grounded_predicates / max(total_ces, 1)) * 100, 1),
             'metpo_predicate_usage': round((metpo_predicates / max(total_ces, 1)) * 100, 1)
+        }
+    
+    def _validate_predicate(self, field_name: str, predicate: str) -> Dict[str, Any]:
+        """Validate predicate against expected enumeration for the field."""
+        # Load template enumerations if not already cached
+        if not hasattr(self, '_template_enums'):
+            self._template_enums = self._load_template_enumerations()
+        
+        # Determine expected enumeration based on field name and context
+        expected_enum = self._get_expected_enumeration(field_name)
+        
+        if not expected_enum:
+            return {
+                'expected_enum': 'unknown',
+                'is_valid': True,  # Can't validate if we don't know the expected enum
+                'reason': 'No enumeration mapping found for this field'
+            }
+        
+        # Check if predicate is in the expected enumeration
+        enum_values = self._template_enums.get(expected_enum, {}).get('permissible_values', {})
+        is_valid = predicate in enum_values
+        
+        return {
+            'expected_enum': expected_enum,
+            'is_valid': is_valid,
+            'reason': f'Valid METPO predicate' if is_valid else f'Not found in {expected_enum}',
+            'available_values': list(enum_values.keys()) if not is_valid else None
+        }
+    
+    def _load_template_enumerations(self) -> Dict[str, Any]:
+        """Load enumeration definitions from template files."""
+        enums = {}
+        
+        # Try to load from common template files
+        template_paths = [
+            'templates/chemical_utilization_populated.yaml',
+            'templates/chemical_utilization_template_base.yaml',
+            'templates/growth_conditions_populated.yaml',
+            'templates/morphology_populated.yaml',
+            'templates/taxa_populated.yaml',
+            'templates/biochemical_populated.yaml'
+        ]
+        
+        for template_path in template_paths:
+            try:
+                if Path(template_path).exists():
+                    with open(template_path, 'r') as f:
+                        template_data = yaml.safe_load(f)
+                        if 'enums' in template_data:
+                            enums.update(template_data['enums'])
+            except Exception as e:
+                print(f"Warning: Could not load template {template_path}: {e}")
+        
+        return enums
+    
+    def _get_expected_enumeration(self, field_name: str) -> str:
+        """Map field names to their expected enumeration types."""
+        # Field name to enumeration mapping
+        field_enum_mapping = {
+            'chemical_utilizations': 'ChemicalInteractionPropertyEnum',
+            'strain_relationships': 'StrainRelationshipType',
+            'growth_condition_relationships': 'GrowthConditionType',
+            'environment_relationships': 'EnvironmentRelationshipType',
+            'cell_shape_relationships': 'MorphologyType',
+            'cell_arrangement_relationships': 'MorphologyType',
+            'gram_staining_relationships': 'MorphologyType',
+            'motility_relationships': 'MorphologyType',
+            'spore_formation_relationships': 'MorphologyType',
+            'cell_wall_relationships': 'MorphologyType',
+            'cellular_inclusion_relationships': 'MorphologyType',
+            'enzyme_relationships': 'BiochemicalInteractionType',
+            'api_result_relationships': 'BiochemicalInteractionType',
+            'fatty_acid_relationships': 'BiochemicalInteractionType'
+        }
+        
+        return field_enum_mapping.get(field_name, None)
+    
+    def _analyze_predicate_validation(self, validation_details: List[Dict]) -> Dict[str, Any]:
+        """Analyze predicate validation results across all compound expressions."""
+        if not validation_details:
+            return {
+                'total_predicates': 0,
+                'valid_predicates': 0,
+                'compliance_rate': 0.0,
+                'enumeration_usage': {},
+                'invalid_predicates': [],
+                'summary': 'No predicate validation data available'
+            }
+        
+        total_predicates = len(validation_details)
+        valid_predicates = sum(1 for v in validation_details if v.get('is_valid', False))
+        compliance_rate = round((valid_predicates / total_predicates) * 100, 1)
+        
+        # Analyze enumeration usage
+        enumeration_usage = {}
+        invalid_predicates = []
+        
+        for validation in validation_details:
+            enum_name = validation.get('expected_enum', 'unknown')
+            if enum_name not in enumeration_usage:
+                enumeration_usage[enum_name] = {
+                    'total': 0,
+                    'valid': 0,
+                    'invalid_predicates': []
+                }
+            
+            enumeration_usage[enum_name]['total'] += 1
+            
+            if validation.get('is_valid', False):
+                enumeration_usage[enum_name]['valid'] += 1
+            else:
+                predicate_info = {
+                    'predicate': validation.get('predicate', ''),
+                    'field': validation.get('field', ''),
+                    'expected_enum': enum_name,
+                    'reason': validation.get('reason', ''),
+                    'subject': validation.get('subject', ''),
+                    'object': validation.get('object', '')
+                }
+                enumeration_usage[enum_name]['invalid_predicates'].append(predicate_info)
+                invalid_predicates.append(predicate_info)
+        
+        # Calculate compliance rates per enumeration
+        for enum_name, data in enumeration_usage.items():
+            data['compliance_rate'] = round((data['valid'] / max(data['total'], 1)) * 100, 1)
+        
+        return {
+            'total_predicates': total_predicates,
+            'valid_predicates': valid_predicates,
+            'compliance_rate': compliance_rate,
+            'enumeration_usage': enumeration_usage,
+            'invalid_predicates': invalid_predicates,
+            'summary': f'{compliance_rate}% predicate compliance ({valid_predicates}/{total_predicates} valid)'
         }
     
     def _analyze_coverage(self, extraction: Dict) -> Dict[str, Any]:
@@ -524,6 +680,346 @@ class MetpoAssessor:
             'entities_with_spans': entities_with_spans,
             'total_entities': len(named_entities),
             'span_rate': (entities_with_spans / max(len(named_entities), 1)) * 100
+        }
+    
+    def _assess_span_distances(self, extractions: List[Dict]) -> Dict[str, Any]:
+        """Assess span distances in compound expressions for semantic coherence."""
+        results = {
+            'total_compound_expressions': 0,
+            'expressions_with_spans': 0,
+            'distance_distribution': {
+                'close': 0,      # <100 chars
+                'medium': 0,     # 100-500 chars  
+                'far': 0,        # >500 chars
+                'cross_section': 0  # spans in different parts
+            },
+            'detailed_analysis': []
+        }
+        
+        for extraction in extractions:
+            if not isinstance(extraction, dict) or 'extracted_object' not in extraction:
+                continue
+                
+            extracted_obj = extraction['extracted_object']
+            named_entities = extraction.get('named_entities', [])
+            
+            # Build span lookup
+            entity_spans = {}
+            for entity in named_entities:
+                entity_id = entity.get('id', '')
+                spans = entity.get('original_spans', [])
+                if spans:
+                    entity_spans[entity_id] = spans
+            
+            # Analyze compound expressions
+            for field_name, field_value in extracted_obj.items():
+                if isinstance(field_value, list):
+                    for item in field_value:
+                        if isinstance(item, dict) and all(k in item for k in ['subject', 'predicate', 'object']):
+                            results['total_compound_expressions'] += 1
+                            
+                            subject_id = item.get('subject', '')
+                            object_id = item.get('object', '')
+                            predicate = item.get('predicate', '')
+                            
+                            subject_spans = entity_spans.get(subject_id, [])
+                            object_spans = entity_spans.get(object_id, [])
+                            
+                            if subject_spans and object_spans:
+                                results['expressions_with_spans'] += 1
+                                
+                                # Calculate minimum distance between any subject/object spans
+                                min_distance = float('inf')
+                                closest_pair = None
+                                
+                                for subj_span in subject_spans:
+                                    for obj_span in object_spans:
+                                        # Parse span format (handle both "243:247" strings and integers)
+                                        if isinstance(subj_span, str) and ':' in subj_span:
+                                            subj_start, subj_end = map(int, subj_span.split(':'))
+                                        elif isinstance(subj_span, int):
+                                            subj_start = subj_end = subj_span
+                                        else:
+                                            continue
+                                            
+                                        if isinstance(obj_span, str) and ':' in obj_span:
+                                            obj_start, obj_end = map(int, obj_span.split(':'))
+                                        elif isinstance(obj_span, int):
+                                            obj_start = obj_end = obj_span
+                                        else:
+                                            continue
+                                        
+                                        # Calculate distance (gap between spans)
+                                        if subj_end <= obj_start:
+                                            distance = obj_start - subj_end
+                                        elif obj_end <= subj_start:
+                                            distance = subj_start - obj_end
+                                        else:
+                                            distance = 0  # Overlapping
+                                        
+                                        if distance < min_distance:
+                                            min_distance = distance
+                                            closest_pair = (subj_span, obj_span)
+                                
+                                # Categorize distance
+                                if min_distance < 100:
+                                    category = 'close'
+                                elif min_distance < 500:
+                                    category = 'medium'
+                                else:
+                                    category = 'far'
+                                
+                                # Check for cross-section (title vs body)
+                                def get_span_start(span):
+                                    if isinstance(span, str) and ':' in span:
+                                        return int(span.split(':')[0])
+                                    elif isinstance(span, int):
+                                        return span
+                                    return 0
+                                
+                                is_cross_section = any(get_span_start(span) < 100 for span in subject_spans) and \
+                                                 any(get_span_start(span) > 500 for span in object_spans)
+                                if is_cross_section:
+                                    category = 'cross_section'
+                                
+                                results['distance_distribution'][category] += 1
+                                
+                                results['detailed_analysis'].append({
+                                    'field': field_name,
+                                    'subject': subject_id,
+                                    'predicate': predicate,
+                                    'object': object_id,
+                                    'min_distance': min_distance,
+                                    'category': category,
+                                    'subject_spans': subject_spans,
+                                    'object_spans': object_spans,
+                                    'closest_pair': closest_pair
+                                })
+        
+        # Calculate percentages
+        total_with_spans = results['expressions_with_spans']
+        if total_with_spans > 0:
+            categories = list(results['distance_distribution'].keys())
+            for category in categories:
+                count = results['distance_distribution'][category]
+                results['distance_distribution'][f'{category}_percentage'] = round(count / total_with_spans * 100, 1)
+        
+        return results
+    
+    def _assess_verbatim_traceability(self, extractions: List[Dict]) -> Dict[str, Any]:
+        """Assess verbatim traceability through extraction pipeline."""
+        results = {
+            'documents_analyzed': 0,
+            'traceability_issues': [],
+            'entity_traceability': [],
+            'content_extraction_success': 0
+        }
+        
+        for doc_idx, extraction in enumerate(extractions):
+            if not isinstance(extraction, dict):
+                continue
+                
+            results['documents_analyzed'] += 1
+            
+            # Extract input content (handle JSON format)
+            input_text = extraction.get('input_text', '')
+            content_text = self._extract_content_text(input_text)
+            
+            if not content_text:
+                results['traceability_issues'].append({
+                    'doc_index': doc_idx,
+                    'issue': 'Could not extract content from input_text',
+                    'input_text_type': type(input_text).__name__
+                })
+                continue
+            
+            results['content_extraction_success'] += 1
+            
+            # Check entity span verification with enhanced diagnostics
+            named_entities = extraction.get('named_entities', [])
+            
+            for entity in named_entities:
+                entity_id = entity.get('id', '')
+                entity_label = entity.get('label', '')
+                spans = entity.get('original_spans', [])
+                
+                # Verify entity appears in content at specified spans
+                span_matches = self._verify_spans(content_text, entity_label, spans)
+                
+                results['entity_traceability'].append({
+                    'doc_index': doc_idx,
+                    'entity_id': entity_id,
+                    'entity_label': entity_label,
+                    'spans_verified': span_matches['all_match'],
+                    'spans_total': len(spans),
+                    'spans_matched': span_matches['matched_count'],
+                    'prefix_matches': span_matches['prefix_matches'],
+                    'off_by_one_errors': span_matches['off_by_one_errors'],
+                    'span_coverage_rate': span_matches['span_coverage_rate'],
+                    'prefix_match_rate': span_matches['prefix_match_rate']
+                })
+        
+        # Aggregate span quality metrics
+        all_entities = results['entity_traceability']
+        if all_entities:
+            total_entities = len(all_entities)
+            entities_with_spans = sum(1 for e in all_entities if e['spans_total'] > 0)
+            exact_match_entities = sum(1 for e in all_entities if e['spans_verified'])
+            prefix_match_entities = sum(1 for e in all_entities if e['prefix_matches'] > 0)
+            off_by_one_entities = sum(1 for e in all_entities if e['off_by_one_errors'] > 0)
+            
+            results['span_quality_summary'] = {
+                'entities_with_spans': entities_with_spans,
+                'span_coverage_rate': round(entities_with_spans / max(total_entities, 1) * 100, 1),
+                'exact_match_rate': round(exact_match_entities / max(total_entities, 1) * 100, 1),
+                'prefix_match_rate': round(prefix_match_entities / max(total_entities, 1) * 100, 1),
+                'off_by_one_rate': round(off_by_one_entities / max(total_entities, 1) * 100, 1),
+                'span_diagnostic': 'Systematic off-by-one truncation' if off_by_one_entities > total_entities * 0.8 else 'Mixed patterns'
+            }
+        
+        return results
+    
+    def _assess_strain_taxon_consistency(self, extractions: List[Dict]) -> Dict[str, Any]:
+        """Assess consistency between strain subjects and taxon relationships."""
+        results = {
+            'documents_analyzed': 0,
+            'consistency_checks': [],
+            'violations': [],
+            'strain_usage_patterns': defaultdict(list)
+        }
+        
+        for doc_idx, extraction in enumerate(extractions):
+            if not isinstance(extraction, dict) or 'extracted_object' not in extraction:
+                continue
+                
+            results['documents_analyzed'] += 1
+            extracted_obj = extraction['extracted_object']
+            
+            # Extract strain subjects from all compound expressions
+            strain_subjects = set()
+            for field_name, field_value in extracted_obj.items():
+                if isinstance(field_value, list):
+                    for item in field_value:
+                        if isinstance(item, dict) and 'subject' in item:
+                            subject = item.get('subject', '')
+                            if subject.startswith('AUTO:'):
+                                # Extract strain identifier (clean up encoding)
+                                strain_id = subject.replace('AUTO:', '').replace('%20', ' ').replace('%2034211', ' 34211')
+                                strain_subjects.add(strain_id)
+                                results['strain_usage_patterns'][strain_id].append(f"{field_name}_{doc_idx}")
+            
+            # Extract strain subjects from strain relationships  
+            strain_rels = extracted_obj.get('strain_relationships', [])
+            strain_rel_subjects = set()
+            strain_to_taxon = {}
+            
+            for rel in strain_rels:
+                if isinstance(rel, dict):
+                    subject = rel.get('subject', '')
+                    object_taxon = rel.get('object', '')
+                    
+                    if subject.startswith('AUTO:'):
+                        strain_id = subject.replace('AUTO:', '').replace('%20', ' ')
+                        strain_rel_subjects.add(strain_id)
+                        strain_to_taxon[strain_id] = object_taxon
+                        results['strain_usage_patterns'][strain_id].append(f"strain_relationship_{doc_idx}")
+            
+            # Check consistency
+            check_result = {
+                'doc_index': doc_idx,
+                'compound_expression_strains': list(strain_subjects),
+                'relationship_strains': list(strain_rel_subjects),
+                'consistent_strains': list(strain_subjects & strain_rel_subjects),
+                'orphan_ce_strains': list(strain_subjects - strain_rel_subjects),
+                'orphan_rel_strains': list(strain_rel_subjects - strain_subjects),
+                'strain_taxon_mappings': strain_to_taxon
+            }
+            
+            results['consistency_checks'].append(check_result)
+            
+            # Flag violations
+            if check_result['orphan_ce_strains']:
+                results['violations'].append({
+                    'doc_index': doc_idx,
+                    'type': 'compound_expression_strain_without_relationship',
+                    'strains': check_result['orphan_ce_strains']
+                })
+            
+            if check_result['orphan_rel_strains']:
+                results['violations'].append({
+                    'doc_index': doc_idx,
+                    'type': 'relationship_strain_without_usage',
+                    'strains': check_result['orphan_rel_strains']
+                })
+        
+        return results
+    
+    def _extract_content_text(self, input_text: Any) -> str:
+        """Extract content from input_text (handles JSON, YAML, or raw text)."""
+        if isinstance(input_text, str):
+            # Try to parse as JSON first
+            try:
+                data = json.loads(input_text)
+                return data.get('content', input_text)
+            except json.JSONDecodeError:
+                # Try YAML parsing as fallback
+                try:
+                    data = yaml.safe_load(input_text)
+                    if isinstance(data, dict) and 'content' in data:
+                        return data['content']
+                except yaml.YAMLError:
+                    pass
+                return input_text
+        elif isinstance(input_text, dict):
+            return input_text.get('content', str(input_text))
+        else:
+            return str(input_text)
+    
+    def _verify_spans(self, content: str, entity_label: str, spans: List) -> Dict[str, Any]:
+        """Verify entity appears at specified span coordinates with diagnostic details."""
+        exact_matches = 0
+        prefix_matches = 0
+        valid_spans = 0
+        off_by_one = 0
+        off_by_two = 0
+        
+        for span in spans:
+            try:
+                # Handle both string "start:end" and integer formats
+                if isinstance(span, str) and ':' in span:
+                    start, end = map(int, span.split(':'))
+                elif isinstance(span, int):
+                    start = end = span
+                else:
+                    continue
+                    
+                if start < len(content) and end <= len(content):
+                    valid_spans += 1
+                    span_text = content[start:end]
+                    
+                    if span_text == entity_label:
+                        exact_matches += 1
+                    elif entity_label.startswith(span_text) and span_text:
+                        prefix_matches += 1
+                        char_diff = len(entity_label) - len(span_text)
+                        if char_diff == 1:
+                            off_by_one += 1
+                        elif char_diff == 2:
+                            off_by_two += 1
+                            
+            except (ValueError, TypeError):
+                continue
+        
+        return {
+            'all_match': exact_matches == len(spans) and len(spans) > 0,
+            'matched_count': exact_matches,
+            'total_spans': len(spans),
+            'valid_spans': valid_spans,
+            'prefix_matches': prefix_matches,
+            'off_by_one_errors': off_by_one,
+            'off_by_two_errors': off_by_two,
+            'span_coverage_rate': round(valid_spans / max(len(spans), 1) * 100, 1),
+            'prefix_match_rate': round(prefix_matches / max(valid_spans, 1) * 100, 1)
         }
     
     def _generate_extraction_insights(self, result: Dict):
@@ -550,6 +1046,69 @@ class MetpoAssessor:
             result['issues'].append(f"Low grounding rate: {grounding_rate:.1f}%")
         elif grounding_rate > 80:
             result['strengths'].append(f"Excellent grounding rate: {grounding_rate:.1f}%")
+        
+        # Predicate validation insights
+        predicate_validation = performance.get('compound_expression_grounding', {}).get('predicate_validation', {})
+        if predicate_validation:
+            compliance_rate = predicate_validation.get('compliance_rate', 0)
+            if compliance_rate < 80:
+                result['issues'].append(f"Low predicate compliance: {compliance_rate:.1f}%")
+                invalid_count = len(predicate_validation.get('invalid_predicates', []))
+                if invalid_count > 0:
+                    result['issues'].append(f"Found {invalid_count} invalid predicates")
+            elif compliance_rate > 95:
+                result['strengths'].append(f"Excellent predicate compliance: {compliance_rate:.1f}%")
+        
+        # Span distance insights
+        span_distances = performance.get('span_distances', {})
+        if span_distances.get('expressions_with_spans', 0) > 0:
+            dist = span_distances.get('distance_distribution', {})
+            far_percentage = dist.get('far_percentage', 0)
+            close_percentage = dist.get('close_percentage', 0)
+            
+            if far_percentage > 20:
+                result['issues'].append(f"Many far-apart relationships: {far_percentage:.1f}% (may indicate weak semantic links)")
+            elif close_percentage > 40:
+                result['strengths'].append(f"Good semantic proximity: {close_percentage:.1f}% close relationships")
+        
+        # Verbatim traceability insights
+        traceability = performance.get('verbatim_traceability', {})
+        if traceability.get('documents_analyzed', 0) > 0:
+            entities = traceability.get('entity_traceability', [])
+            if entities:
+                verified_entities = sum(1 for e in entities if e.get('spans_verified', False))
+                verification_rate = (verified_entities / len(entities)) * 100
+                
+                if verification_rate < 20:
+                    result['issues'].append(f"Low span verification: {verification_rate:.1f}% (potential preprocessing issues)")
+                elif verification_rate > 70:
+                    result['strengths'].append(f"Excellent span accuracy: {verification_rate:.1f}%")
+        
+        # Strain-taxon consistency insights
+        consistency = performance.get('strain_taxon_consistency', {})
+        violations = consistency.get('violations', [])
+        if violations:
+            violation_count = len(violations)
+            docs_analyzed = consistency.get('documents_analyzed', 1)
+            violation_rate = (violation_count / docs_analyzed)
+            
+            if violation_rate > 1:
+                result['issues'].append(f"Strain-taxon inconsistencies: {violation_count} violations across {docs_analyzed} documents")
+            
+            # Categorize violation types
+            violation_types = {}
+            for v in violations:
+                vtype = v.get('type', 'unknown')
+                violation_types[vtype] = violation_types.get(vtype, 0) + 1
+            
+            for vtype, count in violation_types.items():
+                if count > 2:
+                    result['issues'].append(f"Repeated {vtype}: {count} cases")
+        else:
+            docs_with_strains = sum(1 for check in consistency.get('consistency_checks', []) 
+                                  if check.get('compound_expression_strains') or check.get('relationship_strains'))
+            if docs_with_strains > 0:
+                result['strengths'].append("Perfect strain-taxon consistency across all documents")
 
     # ===== UTILITY METHODS =====
     
@@ -745,7 +1304,50 @@ def generate_extraction_report(results: List[Dict]) -> str:
             for ent, count in grounding.get('duplicated_entities', {}).items():
                 all_duplicates[ent] = all_duplicates.get(ent, 0) + count
         
-        report['templates'][template_name] = {
+        # Aggregate advanced metrics
+        advanced_metrics = {}
+        if template_results and 'performance' in template_results[0]:
+            perf = template_results[0]['performance']
+            
+            # Span distances (from latest result)
+            if 'span_distances' in perf:
+                span_data = perf['span_distances']
+                advanced_metrics['span_distances'] = {
+                    'total_compound_expressions': span_data.get('total_compound_expressions', 0),
+                    'expressions_with_spans': span_data.get('expressions_with_spans', 0),
+                    'distance_distribution': span_data.get('distance_distribution', {})
+                }
+            
+            # Verbatim traceability (from latest result) with enhanced diagnostics
+            if 'verbatim_traceability' in perf:
+                trace_data = perf['verbatim_traceability']
+                span_summary = trace_data.get('span_quality_summary', {})
+                advanced_metrics['verbatim_traceability'] = {
+                    'documents_analyzed': trace_data.get('documents_analyzed', 0),
+                    'content_extraction_success': trace_data.get('content_extraction_success', 0),
+                    'span_coverage_rate': span_summary.get('span_coverage_rate', 0),
+                    'exact_match_rate': span_summary.get('exact_match_rate', 0),
+                    'prefix_match_rate': span_summary.get('prefix_match_rate', 0),
+                    'off_by_one_rate': span_summary.get('off_by_one_rate', 0),
+                    'span_diagnostic': span_summary.get('span_diagnostic', 'No diagnostic available')
+                }
+            
+            # Strain-taxon consistency (from latest result)
+            if 'strain_taxon_consistency' in perf:
+                consistency_data = perf['strain_taxon_consistency']
+                violations = consistency_data.get('violations', [])
+                advanced_metrics['strain_taxon_consistency'] = {
+                    'documents_analyzed': consistency_data.get('documents_analyzed', 0),
+                    'total_violations': len(violations),
+                    'violation_types': {}
+                }
+                # Count violation types
+                for violation in violations:
+                    vtype = violation.get('type', 'unknown')
+                    advanced_metrics['strain_taxon_consistency']['violation_types'][vtype] = \
+                        advanced_metrics['strain_taxon_consistency']['violation_types'].get(vtype, 0) + 1
+        
+        template_report = {
             'abstracts_processed': abstracts_processed,
             'success_rate': f"{successful_count}/{total_count}",
             'success_percentage': round(successful_count/total_count*100, 1),
@@ -761,6 +1363,12 @@ def generate_extraction_report(results: List[Dict]) -> str:
             'ontology_usage': all_ontologies,
             'problematic_duplicates': {k: v for k, v in all_duplicates.items() if v > 2}
         }
+        
+        # Add advanced metrics if available
+        if advanced_metrics:
+            template_report['advanced_metrics'] = advanced_metrics
+            
+        report['templates'][template_name] = template_report
     
     return yaml.dump(report, default_flow_style=False, sort_keys=False)
 

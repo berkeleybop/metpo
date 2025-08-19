@@ -18,6 +18,8 @@ imports:
 classes:
   ChemicalUtilizationLiteratureExtraction:
     tree_root: true
+    description: >-
+      Extract chemical utilization relationships with consistent strain identification. CRITICAL: Use identical strain identifiers across strains, chemical_utilizations,  and strain_relationships fields. Extract clean strain designators (e.g., "DA-C8",  "MG1655") consistently throughout all fields.
     attributes:
       pmid:
         description: >-
@@ -35,7 +37,7 @@ classes:
         range: Strain
         annotations:
           prompt: >-
-            Extract specific strain designations, preferably with genus and species context from the title/text. When possible, use format "Genus species strain ID" for better grounding. Examples: "Escherichia coli MG1655", "Bacillus subtilis 168", "Pseudomonas aeruginosa PAO1", or just "ATCC 25922", "15-1T" if species context unclear. Include strain numbers, culture collection numbers, type strain designations, and isolate names.
+            Extract ONLY the strain designation part (e.g., "DA-C8", "MG1655", "ATCC 25922") WITHOUT genus/species prefixes. Focus on strain numbers, culture collection codes, and isolate identifiers. Automatically remove terminal "T" or "(T)" suffixes as these indicate type strain status (e.g., "DA-C8T" becomes "DA-C8", "K13T" becomes "K13"). Include strain numbers, culture collection numbers, and isolate names, but NOT the full taxonomic context.
       chemicals_mentioned:
         description: >-
           List of chemical compounds mentioned in the text that could be involved in metabolic processes, growth, or biochemical reactions
@@ -51,7 +53,7 @@ classes:
         range: ChemicalUtilization
         annotations:
           prompt: >-
-            For each chemical compound found in chemicals_mentioned field above, extract structured relationships linking specific organisms to those chemical compounds. Generate tuples specifying the organism, the chemical, and the interaction type. Look for explicit statements like "X ferments glucose", "Y requires vitamin B12", "Z hydrolyzes starch", "degrades  cellulose", "oxidizes sulfur", "reduces nitrate", etc. Convert ALL  relevant chemical utilization patterns mentioned above into  organism-chemical relationships. If no chemical utilization relationships  are found, leave this field completely empty. DO NOT include entries like  "None explicitly mentioned" or similar phrases.
+            For each chemical compound found in chemicals_mentioned field above, extract structured relationships linking specific STRAIN IDENTIFIERS to those chemical compounds. CRITICAL: Use EXACTLY THE SAME strain identifiers as listed in the strains field above - copy them verbatim, character-for-character (clean identifiers like "DA-C8", "MG1655", "ATCC 25922" WITHOUT genus/species prefixes). Generate tuples specifying the strain identifier, the chemical, and the interaction type. Look for explicit statements like "strain X ferments glucose", "isolate Y requires vitamin B12",  "DA-C8 hydrolyzes starch", etc. The subject must be a strain identifier that appears in  the strains field, NOT a full species name. Convert ALL relevant chemical utilization  patterns into strain-chemical relationships. If no chemical utilization relationships  are found, leave this field completely empty.
       strain_relationships:
         description: >-
           semicolon-separated list of strain-species relationships found in the text
@@ -59,7 +61,7 @@ classes:
         range: StrainRelationship
         annotations:
           prompt: >-
-            A semicolon-separated list of strain-species relationships, where each  relationship connects a strain to its parent taxon. Each relationship should  have a strain name, relationship type, and parent species/genus. For example: "MG1655 strain_of Escherichia coli; K-12 strain_of Escherichia coli;  ATCC 25922 type_strain_of Klebsiella pneumoniae". If no strain relationships are found, leave this field empty.
+            A semicolon-separated list of strain-species relationships, where each  relationship connects a strain identifier to its parent taxon. CRITICAL: Use EXACTLY  THE SAME strain identifiers as listed in the strains field above - copy them verbatim,  character-for-character. Do not modify, abbreviate, or expand the strain identifiers.  Each relationship should have the strain identifier, relationship type, and parent species/genus. For example: "DA-C8 type_strain_of Insulambacter thermoxylanivorax; MG1655 strain_of Escherichia coli;  ATCC 25922 type_strain_of Klebsiella pneumoniae". The strain identifiers MUST be identical  to those used in the strains and chemical_utilizations fields. If no strain relationships are found, leave this field empty.
       source_text:
         range: string
         annotations:
@@ -69,13 +71,11 @@ classes:
     description: >-
       Bacterial, archaeal, or other microbial taxa utilizing chemicals.
     annotations:
-      annotators: sqlite:obo:ncbitaxon, sqlite:obo:gtdb, sqlite:obo:ontobiotope
+      annotators: sqlite:obo:ncbitaxon
   Strain:
     is_a: NamedEntity
     description: >-
       Specific bacterial or archaeal strain designations including culture collection numbers, type strains, and isolate identifiers.
-    annotations:
-      annotators: sqlite:obo:ncbitaxon, sqlite:obo:gtdb, sqlite:obo:uniprot
   ChemicalUtilization:
     is_a: CompoundExpression
     description: >-
@@ -98,7 +98,7 @@ classes:
     description: >-
       Chemical compounds involved in bacterial metabolism including carbon sources, nitrogen sources, electron acceptors/donors, vitamins, enzyme substrates, and other metabolic compounds.
     annotations:
-      annotators: sqlite:obo:chebi, sqlite:obo:rhea, sqlite:obo:chemont, sqlite:obo:swisslipid
+      annotators: sqlite:obo:chebi
   StrainRelationship:
     is_a: CompoundExpression
     description: >-
