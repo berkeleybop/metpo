@@ -11,6 +11,7 @@ Analyzes verbose OntoGPT logs to identify:
 
 import re
 import sys
+import json
 from pathlib import Path
 from collections import Counter, defaultdict
 from typing import Dict, List, Any
@@ -217,7 +218,6 @@ def analyze_log(log_file, output):
         print(f"  💡 {rec}")
     
     if output:
-        import json
         with open(output, 'w') as f:
             json.dump(analysis, f, indent=2)
         print(f"\nDetailed analysis saved to: {output}")

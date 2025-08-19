@@ -69,7 +69,7 @@ def run_extraction(api_key):
         "-i", "test-chemical-rich/",
         "-m", "openai/gpt-5",
         "--model-provider", "openai",
-        "--api-base", "https://api.cborg.lbl.gov",
+        "--api-base", os.environ.get("CBORG_API_BASE", "https://api.cborg.lbl.gov"),
         "-o", output_file
     ]
     
