@@ -7,8 +7,8 @@ Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
 
 
 Ontology(<https://w3id.org/metpo/metpo/components/metpo_sheet.owl>
-<https://w3id.org/metpo/metpo/releases/2025-08-18/components/metpo_sheet.owl>
-Annotation(owl:versionInfo "2025-08-18")
+<https://w3id.org/metpo/metpo/releases/2025-08-26/components/metpo_sheet.owl>
+Annotation(owl:versionInfo "2025-08-26")
 
 Declaration(Class(<https://w3id.org/metpo/1000002>))
 Declaration(Class(<https://w3id.org/metpo/1000003>))
@@ -493,61 +493,7 @@ Declaration(Class(<https://w3id.org/metpo/1000607>))
 Declaration(Class(<https://w3id.org/metpo/1000608>))
 Declaration(Class(<https://w3id.org/metpo/1000609>))
 Declaration(Class(<https://w3id.org/metpo/1000610>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000001>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000002>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000003>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000004>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000005>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000006>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000007>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000008>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000009>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000010>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000011>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000012>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000013>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000014>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000015>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000016>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000017>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000018>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000019>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000020>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000021>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000022>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000023>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000024>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000025>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000026>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000027>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000028>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000029>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000030>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000031>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000032>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000033>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000034>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000035>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000036>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000037>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000038>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000039>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000040>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000041>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000042>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000043>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000044>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000045>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000046>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000047>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000048>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000049>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000050>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000051>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000101>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000102>))
 Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/IAO_0000115>))
-Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/IAO_0000119>))
 Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>))
 Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym>))
 Declaration(AnnotationProperty(<http://www.w3.org/2004/02/skos/core#example>))
@@ -557,328 +503,6 @@ Declaration(AnnotationProperty(<https://w3id.org/metpo/RangeMax>))
 Declaration(AnnotationProperty(<https://w3id.org/metpo/RangeMin>))
 Declaration(AnnotationProperty(<https://w3id.org/metpo/Unit>))
 Declaration(AnnotationProperty(<https://w3id.org/metpo/linguistic_role>))
-
-############################
-#   Object Properties
-############################
-
-# Object Property: <https://w3id.org/metpo/2000001> (organism interacts with chemical)
-
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000001> "organism interacts with chemical")
-ObjectPropertyDomain(<https://w3id.org/metpo/2000001> <https://w3id.org/metpo/1000525>)
-ObjectPropertyRange(<https://w3id.org/metpo/2000001> <https://w3id.org/metpo/1000526>)
-
-# Object Property: <https://w3id.org/metpo/2000002> (assimilates)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000002> "assimilation")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000002> "assimilates")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000002> <https://w3id.org/metpo/2000001>)
-
-# Object Property: <https://w3id.org/metpo/2000003> (builds acid from)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000003> "builds acid from")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000003> "builds acid from")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000003> <https://w3id.org/metpo/2000001>)
-
-# Object Property: <https://w3id.org/metpo/2000004> (builds base from)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000004> "builds base from")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000004> "builds base from")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000004> <https://w3id.org/metpo/2000001>)
-
-# Object Property: <https://w3id.org/metpo/2000005> (builds gas from)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000005> "builds gas from")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000005> "builds gas from")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000005> <https://w3id.org/metpo/2000001>)
-
-# Object Property: <https://w3id.org/metpo/2000006> (uses as carbon source)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000006> "carbon source")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000006> "uses as carbon source")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000006> <https://w3id.org/metpo/2000001>)
-
-# Object Property: <https://w3id.org/metpo/2000007> (degrades)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000007> "degradation")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000007> "degrades")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000007> <https://w3id.org/metpo/2000001>)
-
-# Object Property: <https://w3id.org/metpo/2000008> (uses as electron acceptor)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000008> "electron acceptor")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000008> "uses as electron acceptor")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000008> <https://w3id.org/metpo/2000001>)
-
-# Object Property: <https://w3id.org/metpo/2000009> (uses as electron donor)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000009> "electron donor")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000009> "uses as electron donor")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000009> <https://w3id.org/metpo/2000001>)
-
-# Object Property: <https://w3id.org/metpo/2000010> (uses as energy source)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000010> "energy source")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000010> "uses as energy source")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000010> <https://w3id.org/metpo/2000001>)
-
-# Object Property: <https://w3id.org/metpo/2000011> (ferments)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000011> "fermentation")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000011> "ferments")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000011> <https://w3id.org/metpo/2000001>)
-
-# Object Property: <https://w3id.org/metpo/2000012> (uses for growth)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000012> "growth")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000012> "uses for growth")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000012> <https://w3id.org/metpo/2000001>)
-
-# Object Property: <https://w3id.org/metpo/2000013> (hydrolyzes)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000013> "hydrolysis")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000013> "hydrolyzes")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000013> <https://w3id.org/metpo/2000001>)
-
-# Object Property: <https://w3id.org/metpo/2000014> (uses as nitrogen source)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000014> "nitrogen source")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000014> "uses as nitrogen source")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000014> <https://w3id.org/metpo/2000001>)
-
-# Object Property: <https://w3id.org/metpo/2000015> (uses in other way)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000015> "other")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000015> "uses in other way")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000015> <https://w3id.org/metpo/2000001>)
-
-# Object Property: <https://w3id.org/metpo/2000016> (oxidizes)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000016> "oxidation")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000016> "oxidizes")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000016> <https://w3id.org/metpo/2000001>)
-
-# Object Property: <https://w3id.org/metpo/2000017> (reduces)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000017> "reduction")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000017> "reduces")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000017> <https://w3id.org/metpo/2000001>)
-
-# Object Property: <https://w3id.org/metpo/2000018> (requires for growth)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000018> "required for growth")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000018> "requires for growth")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000018> <https://w3id.org/metpo/2000001>)
-
-# Object Property: <https://w3id.org/metpo/2000019> (uses for respiration)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000019> "respiration")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000019> "uses for respiration")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000019> <https://w3id.org/metpo/2000001>)
-
-# Object Property: <https://w3id.org/metpo/2000020> (uses as sulfur source)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000020> "sulfur source")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000020> "uses as sulfur source")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000020> <https://w3id.org/metpo/2000001>)
-
-# Object Property: <https://w3id.org/metpo/2000021> (does not use for aerobic catabolization)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000021> "aerobic catabolization")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000021> "does not use for aerobic catabolization")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000021> <https://w3id.org/metpo/2000001>)
-
-# Object Property: <https://w3id.org/metpo/2000022> (does not use for aerobic growth)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000022> "aerobic growth")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000022> "does not use for aerobic growth")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000022> <https://w3id.org/metpo/2000001>)
-
-# Object Property: <https://w3id.org/metpo/2000023> (does not use for anaerobic catabolization)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000023> "anaerobic catabolization")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000023> "does not use for anaerobic catabolization")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000023> <https://w3id.org/metpo/2000001>)
-
-# Object Property: <https://w3id.org/metpo/2000024> (does not use for anaerobic growth)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000024> "anaerobic growth")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000024> "does not use for anaerobic growth")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000024> <https://w3id.org/metpo/2000001>)
-
-# Object Property: <https://w3id.org/metpo/2000025> (does not use for anaerobic growth in the dark)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000025> "anaerobic growth in the dark")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000025> "does not use for anaerobic growth in the dark")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000025> <https://w3id.org/metpo/2000001>)
-
-# Object Property: <https://w3id.org/metpo/2000026> (does not use for anaerobic growth with light)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000026> "anaerobic growth with light")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000026> "does not use for anaerobic growth with light")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000026> <https://w3id.org/metpo/2000001>)
-
-# Object Property: <https://w3id.org/metpo/2000027> (does not assimilate)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000027> "assimilation")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000027> "does not assimilate")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000027> <https://w3id.org/metpo/2000001>)
-
-# Object Property: <https://w3id.org/metpo/2000028> (does not build acid from)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000028> "builds acid from")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000028> "does not build acid from")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000028> <https://w3id.org/metpo/2000001>)
-
-# Object Property: <https://w3id.org/metpo/2000029> (does not build base from)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000029> "builds base from")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000029> "does not build base from")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000029> <https://w3id.org/metpo/2000001>)
-
-# Object Property: <https://w3id.org/metpo/2000030> (does not build gas from)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000030> "builds gas from")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000030> "does not build gas from")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000030> <https://w3id.org/metpo/2000001>)
-
-# Object Property: <https://w3id.org/metpo/2000031> (does not use as carbon source)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000031> "carbon source")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000031> "does not use as carbon source")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000031> <https://w3id.org/metpo/2000001>)
-
-# Object Property: <https://w3id.org/metpo/2000032> (uses for aerobic catabolization)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000032> "aerobic catabolization")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000032> "uses for aerobic catabolization")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000032> <https://w3id.org/metpo/2000001>)
-
-# Object Property: <https://w3id.org/metpo/2000033> (does not degrade)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000033> "degradation")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000033> "does not degrade")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000033> <https://w3id.org/metpo/2000001>)
-
-# Object Property: <https://w3id.org/metpo/2000034> (does not use as electron acceptor)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000034> "electron acceptor")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000034> "does not use as electron acceptor")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000034> <https://w3id.org/metpo/2000001>)
-
-# Object Property: <https://w3id.org/metpo/2000035> (does not use as electron donor)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000035> "electron donor")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000035> "does not use as electron donor")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000035> <https://w3id.org/metpo/2000001>)
-
-# Object Property: <https://w3id.org/metpo/2000036> (does not use as energy source)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000036> "energy source")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000036> "does not use as energy source")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000036> <https://w3id.org/metpo/2000001>)
-
-# Object Property: <https://w3id.org/metpo/2000037> (does not ferment)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000037> "fermentation")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000037> "does not ferment")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000037> <https://w3id.org/metpo/2000001>)
-
-# Object Property: <https://w3id.org/metpo/2000038> (does not use for growth)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000038> "growth")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000038> "does not use for growth")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000038> <https://w3id.org/metpo/2000001>)
-
-# Object Property: <https://w3id.org/metpo/2000039> (does not hydrolyze)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000039> "hydrolysis")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000039> "does not hydrolyze")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000039> <https://w3id.org/metpo/2000001>)
-
-# Object Property: <https://w3id.org/metpo/2000040> (does not use as nitrogen source)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000040> "nitrogen source")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000040> "does not use as nitrogen source")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000040> <https://w3id.org/metpo/2000001>)
-
-# Object Property: <https://w3id.org/metpo/2000041> (does not use in other way)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000041> "other")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000041> "does not use in other way")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000041> <https://w3id.org/metpo/2000001>)
-
-# Object Property: <https://w3id.org/metpo/2000042> (does not oxidize)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000042> "oxidation")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000042> "does not oxidize")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000042> <https://w3id.org/metpo/2000001>)
-
-# Object Property: <https://w3id.org/metpo/2000043> (uses for aerobic growth)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000043> "aerobic growth")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000043> "uses for aerobic growth")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000043> <https://w3id.org/metpo/2000001>)
-
-# Object Property: <https://w3id.org/metpo/2000044> (does not reduce)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000044> "reduction")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000044> "does not reduce")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000044> <https://w3id.org/metpo/2000001>)
-
-# Object Property: <https://w3id.org/metpo/2000045> (is not required for growth)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000045> "required for growth")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000045> "is not required for growth")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000045> <https://w3id.org/metpo/2000001>)
-
-# Object Property: <https://w3id.org/metpo/2000046> (does not use for respiration)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000046> "respiration")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000046> "does not use for respiration")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000046> <https://w3id.org/metpo/2000001>)
-
-# Object Property: <https://w3id.org/metpo/2000047> (does not use as sulfur source)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000047> "sulfur source")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000047> "does not use as sulfur source")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000047> <https://w3id.org/metpo/2000001>)
-
-# Object Property: <https://w3id.org/metpo/2000048> (uses for anaerobic catabolization)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000048> "anaerobic catabolization")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000048> "uses for anaerobic catabolization")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000048> <https://w3id.org/metpo/2000001>)
-
-# Object Property: <https://w3id.org/metpo/2000049> (uses for anaerobic growth)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000049> "anaerobic growth")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000049> "uses for anaerobic growth")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000049> <https://w3id.org/metpo/2000001>)
-
-# Object Property: <https://w3id.org/metpo/2000050> (uses for anaerobic growth in the dark)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000050> "anaerobic growth in the dark")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000050> "uses for anaerobic growth in the dark")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000050> <https://w3id.org/metpo/2000001>)
-
-# Object Property: <https://w3id.org/metpo/2000051> (uses for anaerobic growth with light)
-
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000051> "anaerobic growth with light")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000051> "uses for anaerobic growth with light")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000051> <https://w3id.org/metpo/2000001>)
-
-# Object Property: <https://w3id.org/metpo/2000101> (has quality)
-
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000101> "has quality")
-ObjectPropertyDomain(<https://w3id.org/metpo/2000101> <https://w3id.org/metpo/1000525>)
-ObjectPropertyRange(<https://w3id.org/metpo/2000101> <https://w3id.org/metpo/1000188>)
-
-# Object Property: <https://w3id.org/metpo/2000102> (has phenotype)
-
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000102> "has phenotype")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000102> <https://w3id.org/metpo/2000101>)
-
 
 
 ############################
@@ -5689,55 +5313,46 @@ SubClassOf(<https://w3id.org/metpo/1000601> <https://w3id.org/metpo/1000059>)
 
 # Class: <https://w3id.org/metpo/1000602> (aerobic)
 
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000602> "aerobe")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000602> "aerobic")
 SubClassOf(<https://w3id.org/metpo/1000602> <https://w3id.org/metpo/1000601>)
 
 # Class: <https://w3id.org/metpo/1000603> (anaerobic)
 
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000603> "anaerobe")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000603> "anaerobic")
 SubClassOf(<https://w3id.org/metpo/1000603> <https://w3id.org/metpo/1000601>)
 
 # Class: <https://w3id.org/metpo/1000604> (microaerophilic)
 
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000604> "microaerophile")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000604> "microaerophilic")
 SubClassOf(<https://w3id.org/metpo/1000604> <https://w3id.org/metpo/1000601>)
 
 # Class: <https://w3id.org/metpo/1000605> (facultatively anaerobic)
 
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000605> "facultative anaerobe")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000605> "facultatively anaerobic")
 SubClassOf(<https://w3id.org/metpo/1000605> <https://w3id.org/metpo/1000601>)
 
 # Class: <https://w3id.org/metpo/1000606> (obligately aerobic)
 
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000606> "obligate aerobe")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000606> "obligately aerobic")
 SubClassOf(<https://w3id.org/metpo/1000606> <https://w3id.org/metpo/1000601>)
 
 # Class: <https://w3id.org/metpo/1000607> (obligately anaerobic)
 
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000607> "obligate anaerobe")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000607> "obligately anaerobic")
 SubClassOf(<https://w3id.org/metpo/1000607> <https://w3id.org/metpo/1000601>)
 
 # Class: <https://w3id.org/metpo/1000608> (facultatively aerobic)
 
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000608> "facultative aerobe")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000608> "facultatively aerobic")
 SubClassOf(<https://w3id.org/metpo/1000608> <https://w3id.org/metpo/1000601>)
 
 # Class: <https://w3id.org/metpo/1000609> (aerotolerant)
 
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000609> "aerotolerant")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000609> "aerotolerant")
 SubClassOf(<https://w3id.org/metpo/1000609> <https://w3id.org/metpo/1000601>)
 
 # Class: <https://w3id.org/metpo/1000610> (microaerotolerant)
 
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000610> "microaerotolerant")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000610> "microaerotolerant")
 SubClassOf(<https://w3id.org/metpo/1000610> <https://w3id.org/metpo/1000601>)
 
