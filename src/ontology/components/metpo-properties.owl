@@ -7,8 +7,8 @@ Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
 
 
 Ontology(<https://w3id.org/metpo/metpo/components/metpo-properties.owl>
-<https://w3id.org/metpo/metpo/releases/2025-09-17/components/metpo-properties.owl>
-Annotation(owl:versionInfo "2025-09-17")
+<https://w3id.org/metpo/metpo/releases/2025-09-22/components/metpo-properties.owl>
+Annotation(owl:versionInfo "2025-09-22")
 
 Declaration(Class(<https://w3id.org/metpo/1000059>))
 Declaration(Class(<https://w3id.org/metpo/1000188>))
@@ -416,12 +416,14 @@ SubObjectPropertyOf(<https://w3id.org/metpo/2000051> <https://w3id.org/metpo/200
 
 # Object Property: <https://w3id.org/metpo/2000052> (has temperature observation)
 
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000052> "Relates a microbe to a temperature observation.")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000052> "has temperature observation")
 ObjectPropertyDomain(<https://w3id.org/metpo/2000052> <https://w3id.org/metpo/1000525>)
 ObjectPropertyRange(<https://w3id.org/metpo/2000052> <https://w3id.org/metpo/1001000>)
 
 # Object Property: <https://w3id.org/metpo/2000053> (has optimum temperature observation)
 
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000053> "Relates a microbe to an optimum temperature observation.")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000053> "has optimum temperature observation")
 SubObjectPropertyOf(<https://w3id.org/metpo/2000053> <https://w3id.org/metpo/2000052>)
 ObjectPropertyDomain(<https://w3id.org/metpo/2000053> <https://w3id.org/metpo/1000525>)
@@ -429,7 +431,7 @@ ObjectPropertyRange(<https://w3id.org/metpo/2000053> <https://w3id.org/metpo/100
 
 # Object Property: <https://w3id.org/metpo/2000054> (has growth temperature observation)
 
-AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000054> "Relates a microbe to a temperature observation.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000054> "Relates a microbe to a growth temperature observation.")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000054> "has growth temperature observation")
 SubObjectPropertyOf(<https://w3id.org/metpo/2000054> <https://w3id.org/metpo/2000052>)
 ObjectPropertyDomain(<https://w3id.org/metpo/2000054> <https://w3id.org/metpo/1000525>)
@@ -437,7 +439,7 @@ ObjectPropertyRange(<https://w3id.org/metpo/2000054> <https://w3id.org/metpo/100
 
 # Object Property: <https://w3id.org/metpo/2000055> (has range temperature observation)
 
-AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000055> "Relates a microbe to an optimum temperature observation.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000055> "Relates a microbe to a growth temperature range observation.")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000055> "has range temperature observation")
 SubObjectPropertyOf(<https://w3id.org/metpo/2000055> <https://w3id.org/metpo/2000052>)
 ObjectPropertyDomain(<https://w3id.org/metpo/2000055> <https://w3id.org/metpo/1000525>)
@@ -445,7 +447,7 @@ ObjectPropertyRange(<https://w3id.org/metpo/2000055> <https://w3id.org/metpo/100
 
 # Object Property: <https://w3id.org/metpo/2000056> (has temperature delta observation)
 
-AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000056> "Relates a microbe to a growth temperature observation.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000056> "Relates a microbe to a temperature tolerance breadth (delta) observation.")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000056> "has temperature delta observation")
 SubObjectPropertyOf(<https://w3id.org/metpo/2000056> <https://w3id.org/metpo/2000052>)
 ObjectPropertyDomain(<https://w3id.org/metpo/2000056> <https://w3id.org/metpo/1000525>)
@@ -453,7 +455,7 @@ ObjectPropertyRange(<https://w3id.org/metpo/2000056> <https://w3id.org/metpo/100
 
 # Object Property: <https://w3id.org/metpo/2000057> (has culture temperature observation)
 
-AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000057> "Relates a microbe to a growth temperature range observation.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000057> "Relates a microbe to a culture temperature observation (e.g., from BacDive).")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000057> "has culture temperature observation")
 SubObjectPropertyOf(<https://w3id.org/metpo/2000057> <https://w3id.org/metpo/2000052>)
 ObjectPropertyDomain(<https://w3id.org/metpo/2000057> <https://w3id.org/metpo/1000525>)
@@ -461,14 +463,12 @@ ObjectPropertyRange(<https://w3id.org/metpo/2000057> <https://w3id.org/metpo/100
 
 # Object Property: <https://w3id.org/metpo/2000101> (has quality)
 
-AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000101> "Free-text comments associated with this observation.")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000101> "has quality")
 ObjectPropertyDomain(<https://w3id.org/metpo/2000101> <https://w3id.org/metpo/1000525>)
 ObjectPropertyRange(<https://w3id.org/metpo/2000101> <https://w3id.org/metpo/1000188>)
 
 # Object Property: <https://w3id.org/metpo/2000102> (has phenotype)
 
-AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000102> "True if this observation indicates no growth at the reported temperature (negative result).")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000102> "has phenotype")
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/metpo/2000102> <https://biolink.github.io/biolink-model/has_phenotype>)
 SubObjectPropertyOf(<https://w3id.org/metpo/2000102> <https://w3id.org/metpo/2000101>)
@@ -489,7 +489,7 @@ ObjectPropertyRange(<https://w3id.org/metpo/2000103> <https://w3id.org/metpo/100
 
 # Data Property: <https://w3id.org/metpo/2000058> (has spot value)
 
-AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000058> "Relates a microbe to a temperature tolerance breadth (delta) observation.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000058> "A reported temperature value (°C) for this observation.")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000058> "has spot value")
 SubDataPropertyOf(<https://w3id.org/metpo/2000058> <https://w3id.org/metpo/2000063>)
 DataPropertyDomain(<https://w3id.org/metpo/2000058> <https://w3id.org/metpo/1001000>)
@@ -497,7 +497,7 @@ DataPropertyRange(<https://w3id.org/metpo/2000058> xsd:decimal)
 
 # Data Property: <https://w3id.org/metpo/2000059> (has minimum value)
 
-AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000059> "Relates a microbe to a culture temperature observation (e.g., from BacDive).")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000059> "The minimum temperature (°C) associated with this observation.")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000059> "has minimum value")
 SubDataPropertyOf(<https://w3id.org/metpo/2000059> <https://w3id.org/metpo/2000063>)
 DataPropertyDomain(<https://w3id.org/metpo/2000059> <https://w3id.org/metpo/1001000>)
@@ -505,7 +505,7 @@ DataPropertyRange(<https://w3id.org/metpo/2000059> xsd:decimal)
 
 # Data Property: <https://w3id.org/metpo/2000060> (has maximum value)
 
-AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000060> "A reported temperature value (°C) for this observation.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000060> "The maximum temperature (°C) associated with this observation.")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000060> "has maximum value")
 SubDataPropertyOf(<https://w3id.org/metpo/2000060> <https://w3id.org/metpo/2000063>)
 DataPropertyDomain(<https://w3id.org/metpo/2000060> <https://w3id.org/metpo/1001000>)
@@ -513,7 +513,7 @@ DataPropertyRange(<https://w3id.org/metpo/2000060> xsd:decimal)
 
 # Data Property: <https://w3id.org/metpo/2000061> (has value comments)
 
-AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000061> "The minimum temperature (°C) associated with this observation.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000061> "Free-text comments associated with this observation.")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000061> "has value comments")
 SubDataPropertyOf(<https://w3id.org/metpo/2000061> <https://w3id.org/metpo/2000063>)
 DataPropertyDomain(<https://w3id.org/metpo/2000061> <https://w3id.org/metpo/1001000>)
@@ -521,7 +521,7 @@ DataPropertyRange(<https://w3id.org/metpo/2000061> xsd:string)
 
 # Data Property: <https://w3id.org/metpo/2000062> (is negative data)
 
-AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000062> "The maximum temperature (°C) associated with this observation.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000062> "True if this observation indicates no growth at the reported temperature (negative result).")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000062> "is negative data")
 SubDataPropertyOf(<https://w3id.org/metpo/2000062> <https://w3id.org/metpo/2000063>)
 DataPropertyDomain(<https://w3id.org/metpo/2000062> <https://w3id.org/metpo/1001000>)
