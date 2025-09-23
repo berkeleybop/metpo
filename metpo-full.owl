@@ -12,10 +12,10 @@
      xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="https://w3id.org/metpo/metpo/metpo-full.owl">
-        <owl:versionIRI rdf:resource="https://w3id.org/metpo/metpo/releases/2025-09-22/metpo-full.owl"/>
+        <owl:versionIRI rdf:resource="https://w3id.org/metpo/metpo/releases/2025-09-23/metpo-full.owl"/>
         <dcterms:description>Microbial ecophysiological trait and phenotype ontology</dcterms:description>
         <dcterms:title>METPO</dcterms:title>
-        <owl:versionInfo>2025-09-22</owl:versionInfo>
+        <owl:versionInfo>2025-09-23</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -1102,17 +1102,24 @@
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000059">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000188"/>
+        <obo:IAO_0000115>A (combination of) quality(ies) of an organism determined by the interaction of its genetic make-up and environment that differentiates specific instances of a species from other instances of the same species.</obo:IAO_0000115>
         <rdfs:label>phenotype</rdfs:label>
         <skos:closeMatch rdf:resource="https://biolink.github.io/biolink-model/PhenotypicQuality"/>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000059"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A (combination of) quality(ies) of an organism determined by the interaction of its genetic make-up and environment that differentiates specific instances of a species from other instances of the same species.</owl:annotatedTarget>
+        <obo:IAO_0000119>OGMS:0000023</obo:IAO_0000119>
+    </owl:Axiom>
     
 
 
     <!-- https://w3id.org/metpo/1000060 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000060">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000188"/>
-        <rdfs:label>metabolic trait</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000630"/>
+        <rdfs:label>metabolism</rdfs:label>
     </owl:Class>
     
 
@@ -1120,6 +1127,7 @@
     <!-- https://w3id.org/metpo/1000186 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000186">
+        <obo:IAO_0000115>An object or portion of a substance or mixture of substances that consists of matter</obo:IAO_0000115>
         <rdfs:label>material entity</rdfs:label>
     </owl:Class>
     
@@ -1128,8 +1136,15 @@
     <!-- https://w3id.org/metpo/1000188 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000188">
+        <obo:IAO_0000115>A dependent entity that inheres in a bearer by virtue of how the bearer is related to other entities</obo:IAO_0000115>
         <rdfs:label>quality</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000188"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A dependent entity that inheres in a bearer by virtue of how the bearer is related to other entities</owl:annotatedTarget>
+        <obo:IAO_0000119>PATO:0000001</obo:IAO_0000119>
+    </owl:Axiom>
     
 
 
@@ -1137,9 +1152,17 @@
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000525">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000186"/>
+        <obo:IAO_0000115>An organism or virus or viron that is too small to be viewed by the unaided eye.</obo:IAO_0000115>
+        <rdfs:comment>METPO is primarily concerned with unicellular, prokaryotic life forms, i.e. bacteria and archea, including the cases of giant bacteria like Thiomargarita</rdfs:comment>
         <rdfs:label>microbe</rdfs:label>
         <skos:closeMatch rdf:resource="https://biolink.github.io/biolink-model/OrganismTaxon"/>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000525"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>An organism or virus or viron that is too small to be viewed by the unaided eye.</owl:annotatedTarget>
+        <obo:IAO_0000119>OHMI:0000460</obo:IAO_0000119>
+    </owl:Axiom>
     
 
 
@@ -1147,9 +1170,16 @@
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000526">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000186"/>
+        <obo:IAO_0000115>A physical entity of interest in chemistry including molecular entities, parts thereof, and chemical substances.</obo:IAO_0000115>
         <rdfs:label>chemical entity</rdfs:label>
         <skos:closeMatch rdf:resource="https://biolink.github.io/biolink-model/ChemicalEntity"/>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000526"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A physical entity of interest in chemistry including molecular entities, parts thereof, and chemical substances.</owl:annotatedTarget>
+        <obo:IAO_0000119>CHEBI:24431</obo:IAO_0000119>
+    </owl:Axiom>
     
 
 
@@ -1692,13 +1722,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000624"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>non-halophilic</owl:annotatedTarget>
-        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+        <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000624"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>non-halophilic</owl:annotatedTarget>
-        <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
     </owl:Axiom>
     
 
@@ -1795,14 +1825,27 @@
         <owl:annotatedTarget>Physiology and metabolism.halophily.halophily level</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
     </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000629"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>range_salinity</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
+    </owl:Axiom>
     
 
 
     <!-- https://w3id.org/metpo/1000630 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000630">
+        <obo:IAO_0000115>The execution of a genetically-encoded biological module or program. It consists of all the steps required to achieve the specific biological objective of the module. A biological process is accomplished by a particular set of molecular functions carried out by specific gene products (or macromolecular complexes), often in a highly regulated manner and in a particular temporal sequence.</obo:IAO_0000115>
         <rdfs:label>biological process</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000630"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>The execution of a genetically-encoded biological module or program. It consists of all the steps required to achieve the specific biological objective of the module. A biological process is accomplished by a particular set of molecular functions carried out by specific gene products (or macromolecular complexes), often in a highly regulated manner and in a particular temporal sequence.</owl:annotatedTarget>
+        <obo:IAO_0000119>GO:0008150</obo:IAO_0000119>
+    </owl:Axiom>
     
 
 
@@ -1810,8 +1853,10 @@
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000631">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
+        <obo:IAO_0000115>The quality of how an organism obtains its carbon and energy.</obo:IAO_0000115>
         <oboInOwl:hasRelatedSynonym>General.keywords</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Physiology and metabolism.nutrition type.type</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>nutritional type</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>pathways</oboInOwl:hasRelatedSynonym>
         <rdfs:label>trophic type</rdfs:label>
     </owl:Class>
@@ -2006,7 +2051,7 @@
     <!-- https://w3id.org/metpo/1000642 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000642">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000631"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000731"/>
         <oboInOwl:hasRelatedSynonym>copiotroph</oboInOwl:hasRelatedSynonym>
         <rdfs:label>copiotrophic</rdfs:label>
     </owl:Class>
@@ -2015,22 +2060,6 @@
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>copiotroph</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
-    </owl:Axiom>
-    
-
-
-    <!-- https://w3id.org/metpo/1000643 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000643">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000666"/>
-        <oboInOwl:hasRelatedSynonym>denitrification</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>denitrifying</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000643"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>denitrification</owl:annotatedTarget>
-        <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
     </owl:Axiom>
     
 
@@ -2060,29 +2089,6 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000644"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>heterotrophic</owl:annotatedTarget>
-        <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
-    </owl:Axiom>
-    
-
-
-    <!-- https://w3id.org/metpo/1000645 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000645">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000666"/>
-        <oboInOwl:hasRelatedSynonym>hydrogen_oxidation</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>hydrogen_oxidation_dark</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>hydrogen-oxidizing</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000645"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>hydrogen_oxidation</owl:annotatedTarget>
-        <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000645"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>hydrogen_oxidation_dark</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
     </owl:Axiom>
     
@@ -2200,33 +2206,10 @@
     
 
 
-    <!-- https://w3id.org/metpo/1000653 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000653">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000666"/>
-        <oboInOwl:hasRelatedSynonym>diazotroph</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>nitrogen_fixation</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>nitrogen-fixing</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000653"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>diazotroph</owl:annotatedTarget>
-        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000653"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>nitrogen_fixation</owl:annotatedTarget>
-        <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
-    </owl:Axiom>
-    
-
-
     <!-- https://w3id.org/metpo/1000654 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000654">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000631"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000731"/>
         <oboInOwl:hasRelatedSynonym>oligotroph</oboInOwl:hasRelatedSynonym>
         <rdfs:label>oligotrophic</rdfs:label>
     </owl:Class>
@@ -2380,38 +2363,6 @@
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>phototroph</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
-    </owl:Axiom>
-    
-
-
-    <!-- https://w3id.org/metpo/1000661 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000661">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000666"/>
-        <oboInOwl:hasRelatedSynonym>sulfate_reduction</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>sulfate-reducing</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000661"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>sulfate_reduction</owl:annotatedTarget>
-        <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
-    </owl:Axiom>
-    
-
-
-    <!-- https://w3id.org/metpo/1000662 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000662">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000666"/>
-        <oboInOwl:hasRelatedSynonym>sulfur_oxidation</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>sulfur-oxidizing</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000662"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>sulfur_oxidation</owl:annotatedTarget>
-        <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
     </owl:Axiom>
     
 
@@ -3362,13 +3313,22 @@
     
 
 
+    <!-- https://w3id.org/metpo/1000731 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000731">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000631"/>
+        <rdfs:label>nutrient adaptation</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/metpo/1000800 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000800">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
-        <obo:IAO_0000115>A respiratory type is a phenotype which is the organism&apos;s observable and characteristic method of performing cellular respiration, distinguished primarily by the specific terminal electron acceptor its metabolic pathways utilize for the purpose of producing cellular energy.</obo:IAO_0000115>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000060"/>
+        <obo:IAO_0000115>An organism&apos;s observable and characteristic method of performing cellular respiration, distinguished primarily by the specific terminal electron acceptor its metabolic pathways utilize for the purpose of producing cellular energy.</obo:IAO_0000115>
         <oboInOwl:hasRelatedSynonym>pathways</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>respiratory type</rdfs:label>
+        <rdfs:label>respiration</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000800"/>
@@ -3404,8 +3364,8 @@
     <!-- https://w3id.org/metpo/1000803 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000803">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
-        <rdfs:label>Oxidative phosophorylation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000060"/>
+        <rdfs:label>Oxidative phosphorylation</rdfs:label>
     </owl:Class>
     
 
@@ -3413,7 +3373,7 @@
     <!-- https://w3id.org/metpo/1000804 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000804">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000060"/>
         <rdfs:label>Substrate-level phosphorylation</rdfs:label>
     </owl:Class>
     
@@ -3422,7 +3382,7 @@
     <!-- https://w3id.org/metpo/1000805 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000805">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000060"/>
         <rdfs:label>Electron transfer</rdfs:label>
     </owl:Class>
     
@@ -3431,7 +3391,7 @@
     <!-- https://w3id.org/metpo/1000806 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000806">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000060"/>
         <rdfs:label>Disproportionation</rdfs:label>
     </owl:Class>
     
@@ -3440,7 +3400,7 @@
     <!-- https://w3id.org/metpo/1000807 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000807">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000801"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000800"/>
         <rdfs:label>Nitrogen compound respiration</rdfs:label>
     </owl:Class>
     
@@ -3449,7 +3409,7 @@
     <!-- https://w3id.org/metpo/1000808 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000808">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000806"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000807"/>
         <oboInOwl:hasRelatedSynonym>Nitrate respiration</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>nitrate_reduction</oboInOwl:hasRelatedSynonym>
         <rdfs:label>Nitrate reduction</rdfs:label>
@@ -3495,7 +3455,7 @@
     <!-- https://w3id.org/metpo/1000811 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000811">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000806"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000807"/>
         <oboInOwl:hasRelatedSynonym>nitrite_reduction</oboInOwl:hasRelatedSynonym>
         <rdfs:label>Nitrite reduction</rdfs:label>
     </owl:Class>
@@ -3511,7 +3471,7 @@
     <!-- https://w3id.org/metpo/1000812 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000812">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000806"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000800"/>
         <oboInOwl:hasRelatedSynonym>Anammox</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Anoxic NH₄⁺ oxidation</oboInOwl:hasRelatedSynonym>
         <rdfs:label>Anaerobic ammonium oxidation</rdfs:label>
@@ -3522,7 +3482,7 @@
     <!-- https://w3id.org/metpo/1000813 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000813">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000806"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000807"/>
         <oboInOwl:hasRelatedSynonym>NO reduction</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Nitric oxide respiration</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>nitric_oxide_reduction</oboInOwl:hasRelatedSynonym>
@@ -3540,7 +3500,7 @@
     <!-- https://w3id.org/metpo/1000814 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000814">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000806"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000807"/>
         <oboInOwl:hasRelatedSynonym>Nitrous oxide respiration</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>N₂O reduction</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>nitrous_oxide_reduction</oboInOwl:hasRelatedSynonym>
@@ -3558,7 +3518,7 @@
     <!-- https://w3id.org/metpo/1000815 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000815">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000801"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000800"/>
         <rdfs:label>Sulfur and sulfoxide compound respiration</rdfs:label>
     </owl:Class>
     
@@ -3567,7 +3527,7 @@
     <!-- https://w3id.org/metpo/1000816 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000816">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000814"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000815"/>
         <oboInOwl:hasRelatedSynonym>Dissimilatory sulfate reduction</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>SRM metabolism</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Sulfate respiration</oboInOwl:hasRelatedSynonym>
@@ -3587,7 +3547,7 @@
     <!-- https://w3id.org/metpo/1000817 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000817">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000814"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000815"/>
         <oboInOwl:hasRelatedSynonym>Dissimilatory sulfur reduction</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Elemental sulfur reduction</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Sulfur respiration</oboInOwl:hasRelatedSynonym>
@@ -3606,7 +3566,7 @@
     <!-- https://w3id.org/metpo/1000818 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000818">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000814"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000815"/>
         <oboInOwl:hasRelatedSynonym>Dissimilatory sulfite reduction</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>sulfite_reduction</oboInOwl:hasRelatedSynonym>
         <rdfs:label>Sulfite reduction</rdfs:label>
@@ -3623,7 +3583,7 @@
     <!-- https://w3id.org/metpo/1000819 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000819">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000814"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000815"/>
         <oboInOwl:hasRelatedSynonym>Dissimilatory thiosulfate reduction</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>thiosulfate_reduction</oboInOwl:hasRelatedSynonym>
         <rdfs:label>Thiosulfate reduction</rdfs:label>
@@ -3640,7 +3600,7 @@
     <!-- https://w3id.org/metpo/1000820 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000820">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000814"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000815"/>
         <rdfs:label>Sulfoxide respiration</rdfs:label>
     </owl:Class>
     
@@ -3649,7 +3609,7 @@
     <!-- https://w3id.org/metpo/1000821 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000821">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000819"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000820"/>
         <oboInOwl:hasRelatedSynonym>DMSO reduction</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>DMSO respiration</oboInOwl:hasRelatedSynonym>
         <rdfs:label>Dimethyl sulfoxide respiration</rdfs:label>
@@ -3660,7 +3620,7 @@
     <!-- https://w3id.org/metpo/1000822 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000822">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000819"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000820"/>
         <rdfs:label>Methionine sulfoxide respiration</rdfs:label>
     </owl:Class>
     
@@ -3669,7 +3629,7 @@
     <!-- https://w3id.org/metpo/1000823 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000823">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000814"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000815"/>
         <oboInOwl:hasRelatedSynonym>H₂S oxidation</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Sulfide oxidizing</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>sulfide_oxidation</oboInOwl:hasRelatedSynonym>
@@ -3687,7 +3647,7 @@
     <!-- https://w3id.org/metpo/1000824 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000824">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000814"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000815"/>
         <oboInOwl:hasRelatedSynonym>S₂O₃²⁻ oxidation</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Thiosulfate oxidizing</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>thiosulfate_oxidation</oboInOwl:hasRelatedSynonym>
@@ -3705,7 +3665,7 @@
     <!-- https://w3id.org/metpo/1000825 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000825">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000814"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000815"/>
         <oboInOwl:hasRelatedSynonym>SO₃²⁻ oxidation</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Sulfite oxidizing</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>sulfite_oxidation</oboInOwl:hasRelatedSynonym>
@@ -3723,7 +3683,7 @@
     <!-- https://w3id.org/metpo/1000826 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000826">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000814"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000815"/>
         <oboInOwl:hasRelatedSynonym>S₄O₆²⁻ reduction</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Tetrathionate respiration</oboInOwl:hasRelatedSynonym>
         <rdfs:label>Tetrathionate reduction</rdfs:label>
@@ -3734,7 +3694,7 @@
     <!-- https://w3id.org/metpo/1000827 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000827">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000814"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000815"/>
         <oboInOwl:hasRelatedSynonym>Polysulfide respiration</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Sₓ²⁻ reduction</oboInOwl:hasRelatedSynonym>
         <rdfs:label>Polysulfide reduction</rdfs:label>
@@ -3745,7 +3705,7 @@
     <!-- https://w3id.org/metpo/1000828 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000828">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000801"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000800"/>
         <oboInOwl:hasRelatedSynonym>Dissimilatory metal reduction</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Metal respiration</oboInOwl:hasRelatedSynonym>
         <rdfs:label>Metal and metalloid respiration</rdfs:label>
@@ -3756,7 +3716,7 @@
     <!-- https://w3id.org/metpo/1000829 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000829">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000827"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000828"/>
         <oboInOwl:hasRelatedSynonym>Dissimilatory Fe(III) reduction</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Dissimilatory iron reduction</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Ferric iron reduction</oboInOwl:hasRelatedSynonym>
@@ -3776,7 +3736,7 @@
     <!-- https://w3id.org/metpo/1000830 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000830">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000827"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000828"/>
         <oboInOwl:hasRelatedSynonym>Fe(II) oxidation</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Ferrous iron oxidation</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>iron_oxidation</oboInOwl:hasRelatedSynonym>
@@ -3794,7 +3754,7 @@
     <!-- https://w3id.org/metpo/1000831 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000831">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000829"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000828"/>
         <oboInOwl:hasRelatedSynonym>NDFO</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Nitrate-dependent iron oxidation</oboInOwl:hasRelatedSynonym>
         <rdfs:label>Nitrate-dependent Fe(II) oxidation</rdfs:label>
@@ -3805,7 +3765,7 @@
     <!-- https://w3id.org/metpo/1000832 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000832">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000827"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000828"/>
         <oboInOwl:hasRelatedSynonym>Dissimilatory manganese reduction</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Manganese respiration</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Manganese(IV) reduction</oboInOwl:hasRelatedSynonym>
@@ -3825,7 +3785,7 @@
     <!-- https://w3id.org/metpo/1000833 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000833">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000827"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000828"/>
         <oboInOwl:hasRelatedSynonym>Manganese(II) oxidation</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Mn(II) oxidation</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>manganese_oxidation</oboInOwl:hasRelatedSynonym>
@@ -3843,7 +3803,7 @@
     <!-- https://w3id.org/metpo/1000834 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000834">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000827"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000828"/>
         <oboInOwl:hasRelatedSynonym>Dissimilatory uranium reduction</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>U(VI) reduction</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Uranium respiration</oboInOwl:hasRelatedSynonym>
@@ -3863,7 +3823,7 @@
     <!-- https://w3id.org/metpo/1000835 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000835">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000827"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000828"/>
         <oboInOwl:hasRelatedSynonym>Dissimilatory vanadium reduction</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>V(V) reduction</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Vanadate reduction</oboInOwl:hasRelatedSynonym>
@@ -3876,7 +3836,7 @@
     <!-- https://w3id.org/metpo/1000836 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000836">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000827"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000828"/>
         <oboInOwl:hasRelatedSynonym>Chromate reduction</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Chromium respiration</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Cr(VI) reduction</oboInOwl:hasRelatedSynonym>
@@ -3889,7 +3849,7 @@
     <!-- https://w3id.org/metpo/1000837 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000837">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000827"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000828"/>
         <oboInOwl:hasRelatedSynonym>Dissimilatory technetium reduction</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Pertechnetate reduction</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Tc(VII) reduction</oboInOwl:hasRelatedSynonym>
@@ -3902,7 +3862,7 @@
     <!-- https://w3id.org/metpo/1000838 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000838">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000827"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000828"/>
         <oboInOwl:hasRelatedSynonym>Co(III) reduction</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Cobalt respiration</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Cobalt(III) reduction</oboInOwl:hasRelatedSynonym>
@@ -3922,7 +3882,7 @@
     <!-- https://w3id.org/metpo/1000839 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000839">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000827"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000828"/>
         <oboInOwl:hasRelatedSynonym>Arsenate respiration</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>As(V) reduction</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Dissimilatory arsenate reduction</oboInOwl:hasRelatedSynonym>
@@ -3941,7 +3901,7 @@
     <!-- https://w3id.org/metpo/1000840 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000840">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000827"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000828"/>
         <oboInOwl:hasRelatedSynonym>Arsenite oxidizing</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>As(III) oxidation</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>arsenite_oxidation</oboInOwl:hasRelatedSynonym>
@@ -3959,7 +3919,7 @@
     <!-- https://w3id.org/metpo/1000841 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000841">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000827"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000828"/>
         <oboInOwl:hasRelatedSynonym>Dissimilatory selenate reduction</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Se(VI) reduction</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Selenate respiration</oboInOwl:hasRelatedSynonym>
@@ -3978,7 +3938,7 @@
     <!-- https://w3id.org/metpo/1000842 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000842">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000827"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000828"/>
         <oboInOwl:hasRelatedSynonym>Se(IV) reduction</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Selenite respiration</oboInOwl:hasRelatedSynonym>
         <rdfs:label>Selenite reduction</rdfs:label>
@@ -3989,7 +3949,7 @@
     <!-- https://w3id.org/metpo/1000843 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000843">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000801"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000800"/>
         <rdfs:label>Carbon and organic compound respiration</rdfs:label>
     </owl:Class>
     
@@ -3998,7 +3958,7 @@
     <!-- https://w3id.org/metpo/1000844 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000844">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000842"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000060"/>
         <oboInOwl:hasRelatedSynonym>Biological methanation</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Biomethanation</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Carbonate respiration</oboInOwl:hasRelatedSynonym>
@@ -4017,7 +3977,7 @@
     <!-- https://w3id.org/metpo/1000845 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000845">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000842"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000060"/>
         <oboInOwl:hasRelatedSynonym>Acetate fermentation</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>acetogenesis</oboInOwl:hasRelatedSynonym>
         <rdfs:label>Acetogenesis</rdfs:label>
@@ -4034,7 +3994,7 @@
     <!-- https://w3id.org/metpo/1000846 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000846">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000844"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000060"/>
         <oboInOwl:hasRelatedSynonym>Reductive acetyl-CoA pathway</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Wood-Ljungdahl pathway</oboInOwl:hasRelatedSynonym>
         <rdfs:label>Homoacetogenesis</rdfs:label>
@@ -4045,7 +4005,7 @@
     <!-- https://w3id.org/metpo/1000847 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000847">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000842"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000843"/>
         <oboInOwl:hasRelatedSynonym>Fumarate reduction</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>fumarate_reduction</oboInOwl:hasRelatedSynonym>
         <rdfs:label>Fumarate respiration</rdfs:label>
@@ -4062,7 +4022,7 @@
     <!-- https://w3id.org/metpo/1000848 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000848">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000842"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000843"/>
         <oboInOwl:hasRelatedSynonym>TMAO reduction</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>TMAO respiration</oboInOwl:hasRelatedSynonym>
         <rdfs:label>Trimethylamine N-oxide respiration</rdfs:label>
@@ -4073,7 +4033,7 @@
     <!-- https://w3id.org/metpo/1000849 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000849">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000842"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000843"/>
         <oboInOwl:hasRelatedSynonym>Extracellular respiration</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Humic substance reduction</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Humus reduction</oboInOwl:hasRelatedSynonym>
@@ -4085,7 +4045,7 @@
     <!-- https://w3id.org/metpo/1000850 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000850">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000801"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000800"/>
         <rdfs:label>Halogenated compound respiration</rdfs:label>
     </owl:Class>
     
@@ -4094,7 +4054,7 @@
     <!-- https://w3id.org/metpo/1000851 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000851">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000849"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000850"/>
         <oboInOwl:hasRelatedSynonym>Dehalorespiration</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Reductive dehalogenation</oboInOwl:hasRelatedSynonym>
         <rdfs:label>Organohalide respiration</rdfs:label>
@@ -4102,19 +4062,10 @@
     
 
 
-    <!-- https://w3id.org/metpo/1000852 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000852">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000849"/>
-        <rdfs:label>(Per)chlorate respiration</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- https://w3id.org/metpo/1000853 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000853">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000851"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000850"/>
         <oboInOwl:hasRelatedSynonym>ClO₄⁻ reduction</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Perchlorate reduction</oboInOwl:hasRelatedSynonym>
         <rdfs:label>Perchlorate respiration</rdfs:label>
@@ -4125,7 +4076,7 @@
     <!-- https://w3id.org/metpo/1000854 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000854">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000851"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000850"/>
         <oboInOwl:hasRelatedSynonym>Chlorate reduction</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>ClO₃⁻ reduction</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>chlorate_reduction</oboInOwl:hasRelatedSynonym>
@@ -4143,7 +4094,7 @@
     <!-- https://w3id.org/metpo/1000855 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000855">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000849"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000850"/>
         <oboInOwl:hasRelatedSynonym>BrO₃⁻ reduction</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Bromate respiration</oboInOwl:hasRelatedSynonym>
         <rdfs:label>Bromate reduction</rdfs:label>
@@ -4154,7 +4105,7 @@
     <!-- https://w3id.org/metpo/1000856 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000856">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000849"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000850"/>
         <oboInOwl:hasRelatedSynonym>IO₃⁻ reduction</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Iodate respiration</oboInOwl:hasRelatedSynonym>
         <rdfs:label>Iodate reduction</rdfs:label>
@@ -4165,7 +4116,7 @@
     <!-- https://w3id.org/metpo/1000857 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000857">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000866"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000807"/>
         <oboInOwl:hasRelatedSynonym>Nitrite-driven AOM</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>n-DAMO</oboInOwl:hasRelatedSynonym>
         <rdfs:label>Nitrite-dependent methane oxidation</rdfs:label>
@@ -4176,7 +4127,7 @@
     <!-- https://w3id.org/metpo/1000858 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000858">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000866"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000800"/>
         <oboInOwl:hasRelatedSynonym>N-DAMO</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Nitrate-driven AOM</oboInOwl:hasRelatedSynonym>
         <rdfs:label>Nitrate-dependent methane oxidation</rdfs:label>
@@ -4187,10 +4138,11 @@
     <!-- https://w3id.org/metpo/1000859 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000859">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000800"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000060"/>
         <oboInOwl:hasRelatedSynonym>H₂ oxidation</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Knallgas metabolism</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>hydrogen_oxidation</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>hydrogen_oxidation_dark</oboInOwl:hasRelatedSynonym>
         <rdfs:label>Hydrogen oxidation</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -4199,13 +4151,19 @@
         <owl:annotatedTarget>hydrogen_oxidation</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
     </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000859"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>hydrogen_oxidation_dark</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
+    </owl:Axiom>
     
 
 
     <!-- https://w3id.org/metpo/1000860 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000860">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000800"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000815"/>
         <oboInOwl:hasRelatedSynonym>Sox system</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>sulfur_oxidation</oboInOwl:hasRelatedSynonym>
         <rdfs:label>Sulfur oxidation</rdfs:label>
@@ -4222,7 +4180,7 @@
     <!-- https://w3id.org/metpo/1000861 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000861">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000800"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000807"/>
         <oboInOwl:hasRelatedSynonym>Ammonia oxidation</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Nitrite oxidation</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>nitrification</oboInOwl:hasRelatedSynonym>
@@ -4247,7 +4205,7 @@
     <!-- https://w3id.org/metpo/1000862 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000862">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000860"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1002035"/>
         <oboInOwl:hasRelatedSynonym>Comammox</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Complete nitrification</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Single-step nitrification</oboInOwl:hasRelatedSynonym>
@@ -4259,7 +4217,7 @@
     <!-- https://w3id.org/metpo/1000863 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000863">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000800"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000060"/>
         <oboInOwl:hasRelatedSynonym>CO oxidation</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>carbon_monoxide_oxidation</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>carbonmonoxide_oxidation</oboInOwl:hasRelatedSynonym>
@@ -4283,7 +4241,7 @@
     <!-- https://w3id.org/metpo/1000864 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000864">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000843"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000844"/>
         <oboInOwl:hasRelatedSynonym>CO₂ reduction pathway</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>H₂/CO₂ methanogenesis</oboInOwl:hasRelatedSynonym>
         <rdfs:label>Hydrogenotrophic methanogenesis</rdfs:label>
@@ -4294,7 +4252,7 @@
     <!-- https://w3id.org/metpo/1000865 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000865">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000843"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000844"/>
         <oboInOwl:hasRelatedSynonym>Acetate cleavage pathway</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Acetate methanogenesis</oboInOwl:hasRelatedSynonym>
         <rdfs:label>Acetoclastic methanogenesis</rdfs:label>
@@ -4305,7 +4263,7 @@
     <!-- https://w3id.org/metpo/1000866 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000866">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000843"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000844"/>
         <oboInOwl:hasRelatedSynonym>Methyl compound methanogenesis</oboInOwl:hasRelatedSynonym>
         <rdfs:label>Methylotrophic methanogenesis</rdfs:label>
     </owl:Class>
@@ -4315,7 +4273,7 @@
     <!-- https://w3id.org/metpo/1000867 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000867">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000842"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000800"/>
         <oboInOwl:hasRelatedSynonym>AOM</oboInOwl:hasRelatedSynonym>
         <rdfs:label>Anaerobic methane oxidation</rdfs:label>
     </owl:Class>
@@ -4325,7 +4283,7 @@
     <!-- https://w3id.org/metpo/1000868 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000868">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000827"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000828"/>
         <rdfs:label>Lanthanide reduction</rdfs:label>
     </owl:Class>
     
@@ -4334,18 +4292,74 @@
     <!-- https://w3id.org/metpo/1000869 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000869">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000827"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000828"/>
         <rdfs:label>Lanthanide oxidation</rdfs:label>
     </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/1000870 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000870">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
+        <oboInOwl:hasRelatedSynonym>General.keywords</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Physiology and metabolism.spore formation.spore formation</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>sporulation</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>sporulation</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000870"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>sporulation</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000871 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000871">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000870"/>
+        <oboInOwl:hasRelatedSynonym>yes</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>spore forming</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000871"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>yes</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000872 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000872">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000870"/>
+        <oboInOwl:hasRelatedSynonym>no</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>non-spore forming</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000872"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>no</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
+    </owl:Axiom>
     
 
 
     <!-- https://w3id.org/metpo/1001000 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1001000">
-        <obo:IAO_0000115>An observation record about a microbe’s growth with respect to temperature, potentially including point, minimum, and maximum values, comments, and negativity (no growth).</obo:IAO_0000115>
+        <obo:IAO_0000115>A recording of the output of a measurement such as produced by a device.</obo:IAO_0000115>
         <rdfs:label>observation</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1001000"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A recording of the output of a measurement such as produced by a device.</owl:annotatedTarget>
+        <obo:IAO_0000119>IAO:0000109</obo:IAO_0000119>
+    </owl:Axiom>
     
 
 
@@ -4402,7 +4416,7 @@
     <!-- https://w3id.org/metpo/1002000 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1002000">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000060"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000800"/>
         <rdfs:label>Sulfate-dependent methane oxidation</rdfs:label>
     </owl:Class>
     
@@ -4411,7 +4425,7 @@
     <!-- https://w3id.org/metpo/1002001 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1002001">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000060"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000828"/>
         <rdfs:label>Fe(III)-dependent methane oxidation</rdfs:label>
     </owl:Class>
     
@@ -4420,7 +4434,7 @@
     <!-- https://w3id.org/metpo/1002002 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1002002">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000060"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000828"/>
         <rdfs:label>Mn(IV)-dependent methane oxidation</rdfs:label>
     </owl:Class>
     
@@ -4438,7 +4452,7 @@
     <!-- https://w3id.org/metpo/1002005 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1002005">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000060"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000800"/>
         <rdfs:label>Fermentation</rdfs:label>
     </owl:Class>
     
@@ -4456,7 +4470,7 @@
     <!-- https://w3id.org/metpo/1002007 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1002007">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000060"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000815"/>
         <rdfs:label>Sulfur disproportionation</rdfs:label>
     </owl:Class>
     
@@ -4465,251 +4479,31 @@
     <!-- https://w3id.org/metpo/1002008 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1002008">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000060"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000807"/>
+        <oboInOwl:hasRelatedSynonym>diazotroph</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>nitrogen_fixation</oboInOwl:hasRelatedSynonym>
         <rdfs:label>Nitrogen fixation</rdfs:label>
     </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1002009 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1002009">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000060"/>
-        <rdfs:label>Nitrate-reducing</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1002010 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1002010">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000060"/>
-        <rdfs:label>Anaerobic ammonium-oxidizing</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1002011 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1002011">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000060"/>
-        <rdfs:label>Nitrous oxide-reducing</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1002012 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1002012">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000060"/>
-        <rdfs:label>Sulfate-reducing</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1002013 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1002013">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000060"/>
-        <rdfs:label>Sulfur-reducing</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1002014 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1002014">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000060"/>
-        <rdfs:label>Sulfite-reducing</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1002015 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1002015">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000060"/>
-        <rdfs:label>Thiosulfate-reducing</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1002016 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1002016">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000060"/>
-        <rdfs:label>Sulfur-disproportionating</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1002017 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1002017">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000060"/>
-        <rdfs:label>Sulfide-oxidizing</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1002018 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1002018">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000060"/>
-        <rdfs:label>Thiosulfate-oxidizing</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1002019 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1002019">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000060"/>
-        <rdfs:label>Sulfite-oxidizing</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1002020 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1002020">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000060"/>
-        <rdfs:label>Iron-reducing</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1002021 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1002021">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000060"/>
-        <rdfs:label>Iron-oxidizing</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1002022 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1002022">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000060"/>
-        <rdfs:label>Nitrate-dependent Fe(II)-oxidizing</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1002023 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1002023">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000060"/>
-        <rdfs:label>Manganese-reducing</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1002024 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1002024">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000060"/>
-        <rdfs:label>Manganese-oxidizing</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1002025 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1002025">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000060"/>
-        <rdfs:label>Uranium-reducing</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1002026 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1002026">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000060"/>
-        <rdfs:label>Arsenate-reducing</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1002027 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1002027">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000060"/>
-        <rdfs:label>Selenate-reducing</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1002028 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1002028">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000060"/>
-        <rdfs:label>Selenite-reducing</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1002029 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1002029">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000060"/>
-        <rdfs:label>Perchlorate-reducing</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1002030 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1002030">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000060"/>
-        <rdfs:label>Chlorate-reducing</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1002031 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1002031">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000060"/>
-        <rdfs:label>Bromate-reducing</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1002032 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1002032">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000060"/>
-        <rdfs:label>Iodate-reducing</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1002033 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1002033">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000060"/>
-        <rdfs:label>Hydrogen-oxidizing</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1002034 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1002034">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000060"/>
-        <rdfs:label>Sulfur-oxidizing</rdfs:label>
-    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1002008"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>diazotroph</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1002008"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>nitrogen_fixation</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
+    </owl:Axiom>
     
 
 
     <!-- https://w3id.org/metpo/1002035 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1002035">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000060"/>
-        <rdfs:label>Ammonia-oxidizing</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000807"/>
+        <rdfs:label>Ammonia oxidation</rdfs:label>
     </owl:Class>
     
 
@@ -4717,17 +4511,8 @@
     <!-- https://w3id.org/metpo/1002036 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1002036">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000060"/>
-        <rdfs:label>Nitrite-oxidizing</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1002037 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1002037">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000060"/>
-        <rdfs:label>Complete ammonia-oxidizing</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000807"/>
+        <rdfs:label>Nitrite oxidation</rdfs:label>
     </owl:Class>
     
 
@@ -4736,25 +4521,7 @@
 
     <owl:Class rdf:about="https://w3id.org/metpo/1002038">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000060"/>
-        <rdfs:label>Methane-oxidizing</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1002039 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1002039">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000060"/>
-        <rdfs:label>Carbon monoxide-oxidizing</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1002040 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1002040">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000060"/>
-        <rdfs:label>Nitrogen-fixing</rdfs:label>
+        <rdfs:label>Methane oxidation</rdfs:label>
     </owl:Class>
 </rdf:RDF>
 
