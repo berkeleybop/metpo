@@ -10,15 +10,18 @@
         "val" : "METPO"
       }, {
         "pred" : "http://www.w3.org/2002/07/owl#versionInfo",
-        "val" : "2025-09-22"
+        "val" : "2025-09-23"
       } ],
-      "version" : "https://w3id.org/metpo/metpo/releases/2025-09-22/metpo.json"
+      "version" : "https://w3id.org/metpo/metpo/releases/2025-09-23/metpo.json"
     },
     "nodes" : [ {
       "id" : "https://w3id.org/metpo/1000059",
       "lbl" : "phenotype",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A (combination of) quality(ies) of an organism determined by the interaction of its genetic make-up and environment that differentiates specific instances of a species from other instances of the same species."
+        },
         "basicPropertyValues" : [ {
           "pred" : "http://www.w3.org/2004/02/skos/core#closeMatch",
           "val" : "https://biolink.github.io/biolink-model/PhenotypicQuality"
@@ -26,21 +29,35 @@
       }
     }, {
       "id" : "https://w3id.org/metpo/1000060",
-      "lbl" : "metabolic trait",
+      "lbl" : "metabolism",
       "type" : "CLASS"
     }, {
       "id" : "https://w3id.org/metpo/1000186",
       "lbl" : "material entity",
-      "type" : "CLASS"
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An object or portion of a substance or mixture of substances that consists of matter"
+        }
+      }
     }, {
       "id" : "https://w3id.org/metpo/1000188",
       "lbl" : "quality",
-      "type" : "CLASS"
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A dependent entity that inheres in a bearer by virtue of how the bearer is related to other entities"
+        }
+      }
     }, {
       "id" : "https://w3id.org/metpo/1000525",
       "lbl" : "microbe",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "An organism or virus or viron that is too small to be viewed by the unaided eye."
+        },
+        "comments" : [ "METPO is primarily concerned with unicellular, prokaryotic life forms, i.e. bacteria and archea, including the cases of giant bacteria like Thiomargarita" ],
         "basicPropertyValues" : [ {
           "pred" : "http://www.w3.org/2004/02/skos/core#closeMatch",
           "val" : "https://biolink.github.io/biolink-model/OrganismTaxon"
@@ -51,6 +68,9 @@
       "lbl" : "chemical entity",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A physical entity of interest in chemistry including molecular entities, parts thereof, and chemical substances."
+        },
         "basicPropertyValues" : [ {
           "pred" : "http://www.w3.org/2004/02/skos/core#closeMatch",
           "val" : "https://biolink.github.io/biolink-model/ChemicalEntity"
@@ -478,18 +498,29 @@
     }, {
       "id" : "https://w3id.org/metpo/1000630",
       "lbl" : "biological process",
-      "type" : "CLASS"
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "The execution of a genetically-encoded biological module or program. It consists of all the steps required to achieve the specific biological objective of the module. A biological process is accomplished by a particular set of molecular functions carried out by specific gene products (or macromolecular complexes), often in a highly regulated manner and in a particular temporal sequence."
+        }
+      }
     }, {
       "id" : "https://w3id.org/metpo/1000631",
       "lbl" : "trophic type",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "The quality of how an organism obtains its carbon and energy."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "General.keywords"
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "Physiology and metabolism.nutrition type.type"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "nutritional type"
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "pathways"
@@ -606,16 +637,6 @@
         } ]
       }
     }, {
-      "id" : "https://w3id.org/metpo/1000643",
-      "lbl" : "denitrifying",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "denitrification"
-        } ]
-      }
-    }, {
       "id" : "https://w3id.org/metpo/1000644",
       "lbl" : "heterotrophic",
       "type" : "CLASS",
@@ -629,19 +650,6 @@
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "heterotrophic"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000645",
-      "lbl" : "hydrogen-oxidizing",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "hydrogen_oxidation"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "hydrogen_oxidation_dark"
         } ]
       }
     }, {
@@ -709,19 +717,6 @@
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "mixotroph"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000653",
-      "lbl" : "nitrogen-fixing",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "diazotroph"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "nitrogen_fixation"
         } ]
       }
     }, {
@@ -813,26 +808,6 @@
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "phototroph"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000661",
-      "lbl" : "sulfate-reducing",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "sulfate_reduction"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000662",
-      "lbl" : "sulfur-oxidizing",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "sulfur_oxidation"
         } ]
       }
     }, {
@@ -1398,12 +1373,16 @@
         } ]
       }
     }, {
+      "id" : "https://w3id.org/metpo/1000731",
+      "lbl" : "nutrient adaptation",
+      "type" : "CLASS"
+    }, {
       "id" : "https://w3id.org/metpo/1000800",
-      "lbl" : "respiratory type",
+      "lbl" : "respiration",
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A respiratory type is a phenotype which is the organism's observable and characteristic method of performing cellular respiration, distinguished primarily by the specific terminal electron acceptor its metabolic pathways utilize for the purpose of producing cellular energy."
+          "val" : "An organism's observable and characteristic method of performing cellular respiration, distinguished primarily by the specific terminal electron acceptor its metabolic pathways utilize for the purpose of producing cellular energy."
         },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
@@ -1438,7 +1417,7 @@
       }
     }, {
       "id" : "https://w3id.org/metpo/1000803",
-      "lbl" : "Oxidative phosophorylation",
+      "lbl" : "Oxidative phosphorylation",
       "type" : "CLASS"
     }, {
       "id" : "https://w3id.org/metpo/1000804",
@@ -2098,10 +2077,6 @@
         } ]
       }
     }, {
-      "id" : "https://w3id.org/metpo/1000852",
-      "lbl" : "(Per)chlorate respiration",
-      "type" : "CLASS"
-    }, {
       "id" : "https://w3id.org/metpo/1000853",
       "lbl" : "Perchlorate respiration",
       "type" : "CLASS",
@@ -2196,6 +2171,9 @@
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "hydrogen_oxidation"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "hydrogen_oxidation_dark"
         } ]
       }
     }, {
@@ -2317,12 +2295,48 @@
       "lbl" : "Lanthanide oxidation",
       "type" : "CLASS"
     }, {
+      "id" : "https://w3id.org/metpo/1000870",
+      "lbl" : "sporulation",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "General.keywords"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "Physiology and metabolism.spore formation.spore formation"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "sporulation"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000871",
+      "lbl" : "spore forming",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "yes"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000872",
+      "lbl" : "non-spore forming",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "no"
+        } ]
+      }
+    }, {
       "id" : "https://w3id.org/metpo/1001000",
       "lbl" : "observation",
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "An observation record about a microbe’s growth with respect to temperature, potentially including point, minimum, and maximum values, comments, and negativity (no growth)."
+          "val" : "A recording of the output of a measurement such as produced by a device."
         }
       }
     }, {
@@ -2401,134 +2415,27 @@
     }, {
       "id" : "https://w3id.org/metpo/1002008",
       "lbl" : "Nitrogen fixation",
-      "type" : "CLASS"
-    }, {
-      "id" : "https://w3id.org/metpo/1002009",
-      "lbl" : "Nitrate-reducing",
-      "type" : "CLASS"
-    }, {
-      "id" : "https://w3id.org/metpo/1002010",
-      "lbl" : "Anaerobic ammonium-oxidizing",
-      "type" : "CLASS"
-    }, {
-      "id" : "https://w3id.org/metpo/1002011",
-      "lbl" : "Nitrous oxide-reducing",
-      "type" : "CLASS"
-    }, {
-      "id" : "https://w3id.org/metpo/1002012",
-      "lbl" : "Sulfate-reducing",
-      "type" : "CLASS"
-    }, {
-      "id" : "https://w3id.org/metpo/1002013",
-      "lbl" : "Sulfur-reducing",
-      "type" : "CLASS"
-    }, {
-      "id" : "https://w3id.org/metpo/1002014",
-      "lbl" : "Sulfite-reducing",
-      "type" : "CLASS"
-    }, {
-      "id" : "https://w3id.org/metpo/1002015",
-      "lbl" : "Thiosulfate-reducing",
-      "type" : "CLASS"
-    }, {
-      "id" : "https://w3id.org/metpo/1002016",
-      "lbl" : "Sulfur-disproportionating",
-      "type" : "CLASS"
-    }, {
-      "id" : "https://w3id.org/metpo/1002017",
-      "lbl" : "Sulfide-oxidizing",
-      "type" : "CLASS"
-    }, {
-      "id" : "https://w3id.org/metpo/1002018",
-      "lbl" : "Thiosulfate-oxidizing",
-      "type" : "CLASS"
-    }, {
-      "id" : "https://w3id.org/metpo/1002019",
-      "lbl" : "Sulfite-oxidizing",
-      "type" : "CLASS"
-    }, {
-      "id" : "https://w3id.org/metpo/1002020",
-      "lbl" : "Iron-reducing",
-      "type" : "CLASS"
-    }, {
-      "id" : "https://w3id.org/metpo/1002021",
-      "lbl" : "Iron-oxidizing",
-      "type" : "CLASS"
-    }, {
-      "id" : "https://w3id.org/metpo/1002022",
-      "lbl" : "Nitrate-dependent Fe(II)-oxidizing",
-      "type" : "CLASS"
-    }, {
-      "id" : "https://w3id.org/metpo/1002023",
-      "lbl" : "Manganese-reducing",
-      "type" : "CLASS"
-    }, {
-      "id" : "https://w3id.org/metpo/1002024",
-      "lbl" : "Manganese-oxidizing",
-      "type" : "CLASS"
-    }, {
-      "id" : "https://w3id.org/metpo/1002025",
-      "lbl" : "Uranium-reducing",
-      "type" : "CLASS"
-    }, {
-      "id" : "https://w3id.org/metpo/1002026",
-      "lbl" : "Arsenate-reducing",
-      "type" : "CLASS"
-    }, {
-      "id" : "https://w3id.org/metpo/1002027",
-      "lbl" : "Selenate-reducing",
-      "type" : "CLASS"
-    }, {
-      "id" : "https://w3id.org/metpo/1002028",
-      "lbl" : "Selenite-reducing",
-      "type" : "CLASS"
-    }, {
-      "id" : "https://w3id.org/metpo/1002029",
-      "lbl" : "Perchlorate-reducing",
-      "type" : "CLASS"
-    }, {
-      "id" : "https://w3id.org/metpo/1002030",
-      "lbl" : "Chlorate-reducing",
-      "type" : "CLASS"
-    }, {
-      "id" : "https://w3id.org/metpo/1002031",
-      "lbl" : "Bromate-reducing",
-      "type" : "CLASS"
-    }, {
-      "id" : "https://w3id.org/metpo/1002032",
-      "lbl" : "Iodate-reducing",
-      "type" : "CLASS"
-    }, {
-      "id" : "https://w3id.org/metpo/1002033",
-      "lbl" : "Hydrogen-oxidizing",
-      "type" : "CLASS"
-    }, {
-      "id" : "https://w3id.org/metpo/1002034",
-      "lbl" : "Sulfur-oxidizing",
-      "type" : "CLASS"
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "diazotroph"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "nitrogen_fixation"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/1002035",
-      "lbl" : "Ammonia-oxidizing",
+      "lbl" : "Ammonia oxidation",
       "type" : "CLASS"
     }, {
       "id" : "https://w3id.org/metpo/1002036",
-      "lbl" : "Nitrite-oxidizing",
-      "type" : "CLASS"
-    }, {
-      "id" : "https://w3id.org/metpo/1002037",
-      "lbl" : "Complete ammonia-oxidizing",
+      "lbl" : "Nitrite oxidation",
       "type" : "CLASS"
     }, {
       "id" : "https://w3id.org/metpo/1002038",
-      "lbl" : "Methane-oxidizing",
-      "type" : "CLASS"
-    }, {
-      "id" : "https://w3id.org/metpo/1002039",
-      "lbl" : "Carbon monoxide-oxidizing",
-      "type" : "CLASS"
-    }, {
-      "id" : "https://w3id.org/metpo/1002040",
-      "lbl" : "Nitrogen-fixing",
+      "lbl" : "Methane oxidation",
       "type" : "CLASS"
     }, {
       "id" : "https://w3id.org/metpo/2000001",
@@ -3268,7 +3175,7 @@
     }, {
       "sub" : "https://w3id.org/metpo/1000060",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000188"
+      "obj" : "https://w3id.org/metpo/1000630"
     }, {
       "sub" : "https://w3id.org/metpo/1000525",
       "pred" : "is_a",
@@ -3440,19 +3347,11 @@
     }, {
       "sub" : "https://w3id.org/metpo/1000642",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000631"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000643",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000666"
+      "obj" : "https://w3id.org/metpo/1000731"
     }, {
       "sub" : "https://w3id.org/metpo/1000644",
       "pred" : "is_a",
       "obj" : "https://w3id.org/metpo/1000631"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000645",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000666"
     }, {
       "sub" : "https://w3id.org/metpo/1000646",
       "pred" : "is_a",
@@ -3482,13 +3381,9 @@
       "pred" : "is_a",
       "obj" : "https://w3id.org/metpo/1000631"
     }, {
-      "sub" : "https://w3id.org/metpo/1000653",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000666"
-    }, {
       "sub" : "https://w3id.org/metpo/1000654",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000631"
+      "obj" : "https://w3id.org/metpo/1000731"
     }, {
       "sub" : "https://w3id.org/metpo/1000655",
       "pred" : "is_a",
@@ -3513,14 +3408,6 @@
       "sub" : "https://w3id.org/metpo/1000660",
       "pred" : "is_a",
       "obj" : "https://w3id.org/metpo/1000631"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000661",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000666"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000662",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000666"
     }, {
       "sub" : "https://w3id.org/metpo/1000663",
       "pred" : "is_a",
@@ -3706,9 +3593,13 @@
       "pred" : "is_a",
       "obj" : "https://w3id.org/metpo/1000613"
     }, {
+      "sub" : "https://w3id.org/metpo/1000731",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000631"
+    }, {
       "sub" : "https://w3id.org/metpo/1000800",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000059"
+      "obj" : "https://w3id.org/metpo/1000060"
     }, {
       "sub" : "https://w3id.org/metpo/1000801",
       "pred" : "is_a",
@@ -3720,27 +3611,27 @@
     }, {
       "sub" : "https://w3id.org/metpo/1000803",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000059"
+      "obj" : "https://w3id.org/metpo/1000060"
     }, {
       "sub" : "https://w3id.org/metpo/1000804",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000059"
+      "obj" : "https://w3id.org/metpo/1000060"
     }, {
       "sub" : "https://w3id.org/metpo/1000805",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000059"
+      "obj" : "https://w3id.org/metpo/1000060"
     }, {
       "sub" : "https://w3id.org/metpo/1000806",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000059"
+      "obj" : "https://w3id.org/metpo/1000060"
     }, {
       "sub" : "https://w3id.org/metpo/1000807",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000801"
+      "obj" : "https://w3id.org/metpo/1000800"
     }, {
       "sub" : "https://w3id.org/metpo/1000808",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000806"
+      "obj" : "https://w3id.org/metpo/1000807"
     }, {
       "sub" : "https://w3id.org/metpo/1000809",
       "pred" : "is_a",
@@ -3752,239 +3643,247 @@
     }, {
       "sub" : "https://w3id.org/metpo/1000811",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000806"
+      "obj" : "https://w3id.org/metpo/1000807"
     }, {
       "sub" : "https://w3id.org/metpo/1000812",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000806"
+      "obj" : "https://w3id.org/metpo/1000800"
     }, {
       "sub" : "https://w3id.org/metpo/1000813",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000806"
+      "obj" : "https://w3id.org/metpo/1000807"
     }, {
       "sub" : "https://w3id.org/metpo/1000814",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000806"
+      "obj" : "https://w3id.org/metpo/1000807"
     }, {
       "sub" : "https://w3id.org/metpo/1000815",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000801"
+      "obj" : "https://w3id.org/metpo/1000800"
     }, {
       "sub" : "https://w3id.org/metpo/1000816",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000814"
+      "obj" : "https://w3id.org/metpo/1000815"
     }, {
       "sub" : "https://w3id.org/metpo/1000817",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000814"
+      "obj" : "https://w3id.org/metpo/1000815"
     }, {
       "sub" : "https://w3id.org/metpo/1000818",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000814"
+      "obj" : "https://w3id.org/metpo/1000815"
     }, {
       "sub" : "https://w3id.org/metpo/1000819",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000814"
+      "obj" : "https://w3id.org/metpo/1000815"
     }, {
       "sub" : "https://w3id.org/metpo/1000820",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000814"
+      "obj" : "https://w3id.org/metpo/1000815"
     }, {
       "sub" : "https://w3id.org/metpo/1000821",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000819"
+      "obj" : "https://w3id.org/metpo/1000820"
     }, {
       "sub" : "https://w3id.org/metpo/1000822",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000819"
+      "obj" : "https://w3id.org/metpo/1000820"
     }, {
       "sub" : "https://w3id.org/metpo/1000823",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000814"
+      "obj" : "https://w3id.org/metpo/1000815"
     }, {
       "sub" : "https://w3id.org/metpo/1000824",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000814"
+      "obj" : "https://w3id.org/metpo/1000815"
     }, {
       "sub" : "https://w3id.org/metpo/1000825",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000814"
+      "obj" : "https://w3id.org/metpo/1000815"
     }, {
       "sub" : "https://w3id.org/metpo/1000826",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000814"
+      "obj" : "https://w3id.org/metpo/1000815"
     }, {
       "sub" : "https://w3id.org/metpo/1000827",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000814"
+      "obj" : "https://w3id.org/metpo/1000815"
     }, {
       "sub" : "https://w3id.org/metpo/1000828",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000801"
+      "obj" : "https://w3id.org/metpo/1000800"
     }, {
       "sub" : "https://w3id.org/metpo/1000829",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000827"
+      "obj" : "https://w3id.org/metpo/1000828"
     }, {
       "sub" : "https://w3id.org/metpo/1000830",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000827"
+      "obj" : "https://w3id.org/metpo/1000828"
     }, {
       "sub" : "https://w3id.org/metpo/1000831",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000829"
+      "obj" : "https://w3id.org/metpo/1000828"
     }, {
       "sub" : "https://w3id.org/metpo/1000832",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000827"
+      "obj" : "https://w3id.org/metpo/1000828"
     }, {
       "sub" : "https://w3id.org/metpo/1000833",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000827"
+      "obj" : "https://w3id.org/metpo/1000828"
     }, {
       "sub" : "https://w3id.org/metpo/1000834",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000827"
+      "obj" : "https://w3id.org/metpo/1000828"
     }, {
       "sub" : "https://w3id.org/metpo/1000835",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000827"
+      "obj" : "https://w3id.org/metpo/1000828"
     }, {
       "sub" : "https://w3id.org/metpo/1000836",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000827"
+      "obj" : "https://w3id.org/metpo/1000828"
     }, {
       "sub" : "https://w3id.org/metpo/1000837",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000827"
+      "obj" : "https://w3id.org/metpo/1000828"
     }, {
       "sub" : "https://w3id.org/metpo/1000838",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000827"
+      "obj" : "https://w3id.org/metpo/1000828"
     }, {
       "sub" : "https://w3id.org/metpo/1000839",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000827"
+      "obj" : "https://w3id.org/metpo/1000828"
     }, {
       "sub" : "https://w3id.org/metpo/1000840",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000827"
+      "obj" : "https://w3id.org/metpo/1000828"
     }, {
       "sub" : "https://w3id.org/metpo/1000841",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000827"
+      "obj" : "https://w3id.org/metpo/1000828"
     }, {
       "sub" : "https://w3id.org/metpo/1000842",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000827"
+      "obj" : "https://w3id.org/metpo/1000828"
     }, {
       "sub" : "https://w3id.org/metpo/1000843",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000801"
+      "obj" : "https://w3id.org/metpo/1000800"
     }, {
       "sub" : "https://w3id.org/metpo/1000844",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000842"
+      "obj" : "https://w3id.org/metpo/1000060"
     }, {
       "sub" : "https://w3id.org/metpo/1000845",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000842"
+      "obj" : "https://w3id.org/metpo/1000060"
     }, {
       "sub" : "https://w3id.org/metpo/1000846",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000844"
+      "obj" : "https://w3id.org/metpo/1000060"
     }, {
       "sub" : "https://w3id.org/metpo/1000847",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000842"
+      "obj" : "https://w3id.org/metpo/1000843"
     }, {
       "sub" : "https://w3id.org/metpo/1000848",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000842"
+      "obj" : "https://w3id.org/metpo/1000843"
     }, {
       "sub" : "https://w3id.org/metpo/1000849",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000842"
+      "obj" : "https://w3id.org/metpo/1000843"
     }, {
       "sub" : "https://w3id.org/metpo/1000850",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000801"
+      "obj" : "https://w3id.org/metpo/1000800"
     }, {
       "sub" : "https://w3id.org/metpo/1000851",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000849"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000852",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000849"
+      "obj" : "https://w3id.org/metpo/1000850"
     }, {
       "sub" : "https://w3id.org/metpo/1000853",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000851"
+      "obj" : "https://w3id.org/metpo/1000850"
     }, {
       "sub" : "https://w3id.org/metpo/1000854",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000851"
+      "obj" : "https://w3id.org/metpo/1000850"
     }, {
       "sub" : "https://w3id.org/metpo/1000855",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000849"
+      "obj" : "https://w3id.org/metpo/1000850"
     }, {
       "sub" : "https://w3id.org/metpo/1000856",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000849"
+      "obj" : "https://w3id.org/metpo/1000850"
     }, {
       "sub" : "https://w3id.org/metpo/1000857",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000866"
+      "obj" : "https://w3id.org/metpo/1000807"
     }, {
       "sub" : "https://w3id.org/metpo/1000858",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000866"
+      "obj" : "https://w3id.org/metpo/1000800"
     }, {
       "sub" : "https://w3id.org/metpo/1000859",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000800"
+      "obj" : "https://w3id.org/metpo/1000060"
     }, {
       "sub" : "https://w3id.org/metpo/1000860",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000800"
+      "obj" : "https://w3id.org/metpo/1000815"
     }, {
       "sub" : "https://w3id.org/metpo/1000861",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000800"
+      "obj" : "https://w3id.org/metpo/1000807"
     }, {
       "sub" : "https://w3id.org/metpo/1000862",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000860"
+      "obj" : "https://w3id.org/metpo/1002035"
     }, {
       "sub" : "https://w3id.org/metpo/1000863",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000800"
+      "obj" : "https://w3id.org/metpo/1000060"
     }, {
       "sub" : "https://w3id.org/metpo/1000864",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000843"
+      "obj" : "https://w3id.org/metpo/1000844"
     }, {
       "sub" : "https://w3id.org/metpo/1000865",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000843"
+      "obj" : "https://w3id.org/metpo/1000844"
     }, {
       "sub" : "https://w3id.org/metpo/1000866",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000843"
+      "obj" : "https://w3id.org/metpo/1000844"
     }, {
       "sub" : "https://w3id.org/metpo/1000867",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000842"
+      "obj" : "https://w3id.org/metpo/1000800"
     }, {
       "sub" : "https://w3id.org/metpo/1000868",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000827"
+      "obj" : "https://w3id.org/metpo/1000828"
     }, {
       "sub" : "https://w3id.org/metpo/1000869",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000827"
+      "obj" : "https://w3id.org/metpo/1000828"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000870",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000059"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000871",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000870"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000872",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000870"
     }, {
       "sub" : "https://w3id.org/metpo/1001001",
       "pred" : "is_a",
@@ -4008,15 +3907,15 @@
     }, {
       "sub" : "https://w3id.org/metpo/1002000",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000060"
+      "obj" : "https://w3id.org/metpo/1000800"
     }, {
       "sub" : "https://w3id.org/metpo/1002001",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000060"
+      "obj" : "https://w3id.org/metpo/1000828"
     }, {
       "sub" : "https://w3id.org/metpo/1002002",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000060"
+      "obj" : "https://w3id.org/metpo/1000828"
     }, {
       "sub" : "https://w3id.org/metpo/1002003",
       "pred" : "is_a",
@@ -4024,7 +3923,7 @@
     }, {
       "sub" : "https://w3id.org/metpo/1002005",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000060"
+      "obj" : "https://w3id.org/metpo/1000800"
     }, {
       "sub" : "https://w3id.org/metpo/1002006",
       "pred" : "is_a",
@@ -4032,137 +3931,21 @@
     }, {
       "sub" : "https://w3id.org/metpo/1002007",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000060"
+      "obj" : "https://w3id.org/metpo/1000815"
     }, {
       "sub" : "https://w3id.org/metpo/1002008",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000060"
-    }, {
-      "sub" : "https://w3id.org/metpo/1002009",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000060"
-    }, {
-      "sub" : "https://w3id.org/metpo/1002010",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000060"
-    }, {
-      "sub" : "https://w3id.org/metpo/1002011",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000060"
-    }, {
-      "sub" : "https://w3id.org/metpo/1002012",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000060"
-    }, {
-      "sub" : "https://w3id.org/metpo/1002013",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000060"
-    }, {
-      "sub" : "https://w3id.org/metpo/1002014",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000060"
-    }, {
-      "sub" : "https://w3id.org/metpo/1002015",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000060"
-    }, {
-      "sub" : "https://w3id.org/metpo/1002016",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000060"
-    }, {
-      "sub" : "https://w3id.org/metpo/1002017",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000060"
-    }, {
-      "sub" : "https://w3id.org/metpo/1002018",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000060"
-    }, {
-      "sub" : "https://w3id.org/metpo/1002019",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000060"
-    }, {
-      "sub" : "https://w3id.org/metpo/1002020",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000060"
-    }, {
-      "sub" : "https://w3id.org/metpo/1002021",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000060"
-    }, {
-      "sub" : "https://w3id.org/metpo/1002022",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000060"
-    }, {
-      "sub" : "https://w3id.org/metpo/1002023",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000060"
-    }, {
-      "sub" : "https://w3id.org/metpo/1002024",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000060"
-    }, {
-      "sub" : "https://w3id.org/metpo/1002025",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000060"
-    }, {
-      "sub" : "https://w3id.org/metpo/1002026",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000060"
-    }, {
-      "sub" : "https://w3id.org/metpo/1002027",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000060"
-    }, {
-      "sub" : "https://w3id.org/metpo/1002028",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000060"
-    }, {
-      "sub" : "https://w3id.org/metpo/1002029",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000060"
-    }, {
-      "sub" : "https://w3id.org/metpo/1002030",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000060"
-    }, {
-      "sub" : "https://w3id.org/metpo/1002031",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000060"
-    }, {
-      "sub" : "https://w3id.org/metpo/1002032",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000060"
-    }, {
-      "sub" : "https://w3id.org/metpo/1002033",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000060"
-    }, {
-      "sub" : "https://w3id.org/metpo/1002034",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000060"
+      "obj" : "https://w3id.org/metpo/1000807"
     }, {
       "sub" : "https://w3id.org/metpo/1002035",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000060"
+      "obj" : "https://w3id.org/metpo/1000807"
     }, {
       "sub" : "https://w3id.org/metpo/1002036",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000060"
-    }, {
-      "sub" : "https://w3id.org/metpo/1002037",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000060"
+      "obj" : "https://w3id.org/metpo/1000807"
     }, {
       "sub" : "https://w3id.org/metpo/1002038",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000060"
-    }, {
-      "sub" : "https://w3id.org/metpo/1002039",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000060"
-    }, {
-      "sub" : "https://w3id.org/metpo/1002040",
       "pred" : "is_a",
       "obj" : "https://w3id.org/metpo/1000060"
     }, {

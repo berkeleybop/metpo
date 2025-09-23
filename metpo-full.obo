@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: https://w3id.org/metpo/metpo/releases/2025-09-22/metpo-full.owl
+data-version: https://w3id.org/metpo/metpo/releases/2025-09-23/metpo-full.owl
 idspace: dce http://purl.org/dc/elements/1.1/ 
 idspace: dcterms http://purl.org/dc/terms/ 
 idspace: oboInOwl http://www.geneontology.org/formats/oboInOwl# 
@@ -7,36 +7,42 @@ idspace: skos http://www.w3.org/2004/02/skos/core#
 ontology: https://w3id.org/metpo/metpo/metpo-full.owl
 property_value: dcterms:description "Microbial ecophysiological trait and phenotype ontology" xsd:string
 property_value: dcterms:title "METPO" xsd:string
-property_value: owl:versionInfo "2025-09-22" xsd:string
+property_value: owl:versionInfo "2025-09-23" xsd:string
 
 [Term]
 id: https://w3id.org/metpo/1000059
 name: phenotype
+def: "A (combination of) quality(ies) of an organism determined by the interaction of its genetic make-up and environment that differentiates specific instances of a species from other instances of the same species." [] {IAO:0000119="OGMS:0000023"}
 is_a: https://w3id.org/metpo/1000188 ! quality
 property_value: skos:closeMatch https://biolink.github.io/biolink-model/PhenotypicQuality
 
 [Term]
 id: https://w3id.org/metpo/1000060
-name: metabolic trait
-is_a: https://w3id.org/metpo/1000188 ! quality
+name: metabolism
+is_a: https://w3id.org/metpo/1000630 ! biological process
 
 [Term]
 id: https://w3id.org/metpo/1000186
 name: material entity
+def: "An object or portion of a substance or mixture of substances that consists of matter" []
 
 [Term]
 id: https://w3id.org/metpo/1000188
 name: quality
+def: "A dependent entity that inheres in a bearer by virtue of how the bearer is related to other entities" [] {IAO:0000119="PATO:0000001"}
 
 [Term]
 id: https://w3id.org/metpo/1000525
 name: microbe
+def: "An organism or virus or viron that is too small to be viewed by the unaided eye." [] {IAO:0000119="OHMI:0000460"}
+comment: METPO is primarily concerned with unicellular, prokaryotic life forms, i.e. bacteria and archea, including the cases of giant bacteria like Thiomargarita
 is_a: https://w3id.org/metpo/1000186 ! material entity
 property_value: skos:closeMatch https://biolink.github.io/biolink-model/OrganismTaxon
 
 [Term]
 id: https://w3id.org/metpo/1000526
 name: chemical entity
+def: "A physical entity of interest in chemistry including molecular entities, parts thereof, and chemical substances." [] {IAO:0000119="CHEBI:24431"}
 is_a: https://w3id.org/metpo/1000186 ! material entity
 property_value: skos:closeMatch https://biolink.github.io/biolink-model/ChemicalEntity
 
@@ -254,17 +260,20 @@ id: https://w3id.org/metpo/1000629
 name: halophily preference
 synonym: "General.keywords" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 synonym: "Physiology and metabolism.halophily.halophily level" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-synonym: "range_salinity" RELATED []
+synonym: "range_salinity" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 is_a: https://w3id.org/metpo/1000059 ! phenotype
 
 [Term]
 id: https://w3id.org/metpo/1000630
 name: biological process
+def: "The execution of a genetically-encoded biological module or program. It consists of all the steps required to achieve the specific biological objective of the module. A biological process is accomplished by a particular set of molecular functions carried out by specific gene products (or macromolecular complexes), often in a highly regulated manner and in a particular temporal sequence." [] {IAO:0000119="GO:0008150"}
 
 [Term]
 id: https://w3id.org/metpo/1000631
 name: trophic type
+def: "The quality of how an organism obtains its carbon and energy." []
 synonym: "General.keywords" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
+synonym: "nutritional type" RELATED []
 synonym: "pathways" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 synonym: "Physiology and metabolism.nutrition type.type" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: https://w3id.org/metpo/1000059 ! phenotype
@@ -334,13 +343,7 @@ is_a: https://w3id.org/metpo/1000631 ! trophic type
 id: https://w3id.org/metpo/1000642
 name: copiotrophic
 synonym: "copiotroph" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000631 ! trophic type
-
-[Term]
-id: https://w3id.org/metpo/1000643
-name: denitrifying
-synonym: "denitrification" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000666 ! cell shape
+is_a: https://w3id.org/metpo/1000731 ! nutrient adaptation
 
 [Term]
 id: https://w3id.org/metpo/1000644
@@ -349,13 +352,6 @@ synonym: "aerobic_heterotrophy" RELATED [] {IAO:0000119="https://github.com/jmad
 synonym: "heterotroph" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 synonym: "heterotrophic" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 is_a: https://w3id.org/metpo/1000631 ! trophic type
-
-[Term]
-id: https://w3id.org/metpo/1000645
-name: hydrogen-oxidizing
-synonym: "hydrogen_oxidation" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-synonym: "hydrogen_oxidation_dark" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000666 ! cell shape
 
 [Term]
 id: https://w3id.org/metpo/1000646
@@ -400,17 +396,10 @@ synonym: "mixotroph" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: https://w3id.org/metpo/1000631 ! trophic type
 
 [Term]
-id: https://w3id.org/metpo/1000653
-name: nitrogen-fixing
-synonym: "diazotroph" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-synonym: "nitrogen_fixation" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000666 ! cell shape
-
-[Term]
 id: https://w3id.org/metpo/1000654
 name: oligotrophic
 synonym: "oligotroph" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000631 ! trophic type
+is_a: https://w3id.org/metpo/1000731 ! nutrient adaptation
 
 [Term]
 id: https://w3id.org/metpo/1000655
@@ -454,18 +443,6 @@ name: phototrophic
 synonym: "aerobic_anoxygenic_phototrophy" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 synonym: "phototroph" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: https://w3id.org/metpo/1000631 ! trophic type
-
-[Term]
-id: https://w3id.org/metpo/1000661
-name: sulfate-reducing
-synonym: "sulfate_reduction" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000666 ! cell shape
-
-[Term]
-id: https://w3id.org/metpo/1000662
-name: sulfur-oxidizing
-synonym: "sulfur_oxidation" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000666 ! cell shape
 
 [Term]
 id: https://w3id.org/metpo/1000663
@@ -778,57 +755,62 @@ synonym: "extremely hyperthermophilic" RELATED []
 is_a: https://w3id.org/metpo/1000613 ! temperature preference
 
 [Term]
+id: https://w3id.org/metpo/1000731
+name: nutrient adaptation
+is_a: https://w3id.org/metpo/1000631 ! trophic type
+
+[Term]
 id: https://w3id.org/metpo/1000800
-name: respiratory type
-def: "A respiratory type is a phenotype which is the organism's observable and characteristic method of performing cellular respiration, distinguished primarily by the specific terminal electron acceptor its metabolic pathways utilize for the purpose of producing cellular energy." []
+name: respiration
+def: "An organism's observable and characteristic method of performing cellular respiration, distinguished primarily by the specific terminal electron acceptor its metabolic pathways utilize for the purpose of producing cellular energy." []
 synonym: "pathways" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000059 ! phenotype
+is_a: https://w3id.org/metpo/1000060 ! metabolism
 
 [Term]
 id: https://w3id.org/metpo/1000801
 name: Aerobic respiration
 synonym: "Oxic respiration" RELATED []
 synonym: "Oxygen respiration" RELATED []
-is_a: https://w3id.org/metpo/1000800 ! respiratory type
+is_a: https://w3id.org/metpo/1000800 ! respiration
 
 [Term]
 id: https://w3id.org/metpo/1000802
 name: Anaerobic respiration
 synonym: "Anoxic respiration" RELATED []
 synonym: "Dissimilatory respiration (non-O₂)" RELATED []
-is_a: https://w3id.org/metpo/1000800 ! respiratory type
+is_a: https://w3id.org/metpo/1000800 ! respiration
 
 [Term]
 id: https://w3id.org/metpo/1000803
-name: Oxidative phosophorylation
-is_a: https://w3id.org/metpo/1000059 ! phenotype
+name: Oxidative phosphorylation
+is_a: https://w3id.org/metpo/1000060 ! metabolism
 
 [Term]
 id: https://w3id.org/metpo/1000804
 name: Substrate-level phosphorylation
-is_a: https://w3id.org/metpo/1000059 ! phenotype
+is_a: https://w3id.org/metpo/1000060 ! metabolism
 
 [Term]
 id: https://w3id.org/metpo/1000805
 name: Electron transfer
-is_a: https://w3id.org/metpo/1000059 ! phenotype
+is_a: https://w3id.org/metpo/1000060 ! metabolism
 
 [Term]
 id: https://w3id.org/metpo/1000806
 name: Disproportionation
-is_a: https://w3id.org/metpo/1000059 ! phenotype
+is_a: https://w3id.org/metpo/1000060 ! metabolism
 
 [Term]
 id: https://w3id.org/metpo/1000807
 name: Nitrogen compound respiration
-is_a: https://w3id.org/metpo/1000801 ! Aerobic respiration
+is_a: https://w3id.org/metpo/1000800 ! respiration
 
 [Term]
 id: https://w3id.org/metpo/1000808
 name: Nitrate reduction
 synonym: "Nitrate respiration" RELATED []
 synonym: "nitrate_reduction" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000806 ! Disproportionation
+is_a: https://w3id.org/metpo/1000807 ! Nitrogen compound respiration
 
 [Term]
 id: https://w3id.org/metpo/1000809
@@ -849,14 +831,14 @@ is_a: https://w3id.org/metpo/1000807 ! Nitrogen compound respiration
 id: https://w3id.org/metpo/1000811
 name: Nitrite reduction
 synonym: "nitrite_reduction" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000806 ! Disproportionation
+is_a: https://w3id.org/metpo/1000807 ! Nitrogen compound respiration
 
 [Term]
 id: https://w3id.org/metpo/1000812
 name: Anaerobic ammonium oxidation
 synonym: "Anammox" RELATED []
 synonym: "Anoxic NH₄⁺ oxidation" RELATED []
-is_a: https://w3id.org/metpo/1000806 ! Disproportionation
+is_a: https://w3id.org/metpo/1000800 ! respiration
 
 [Term]
 id: https://w3id.org/metpo/1000813
@@ -864,7 +846,7 @@ name: Nitric oxide reduction
 synonym: "Nitric oxide respiration" RELATED []
 synonym: "nitric_oxide_reduction" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 synonym: "NO reduction" RELATED []
-is_a: https://w3id.org/metpo/1000806 ! Disproportionation
+is_a: https://w3id.org/metpo/1000807 ! Nitrogen compound respiration
 
 [Term]
 id: https://w3id.org/metpo/1000814
@@ -872,12 +854,12 @@ name: Nitrous oxide reduction
 synonym: "Nitrous oxide respiration" RELATED []
 synonym: "nitrous_oxide_reduction" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 synonym: "N₂O reduction" RELATED []
-is_a: https://w3id.org/metpo/1000806 ! Disproportionation
+is_a: https://w3id.org/metpo/1000807 ! Nitrogen compound respiration
 
 [Term]
 id: https://w3id.org/metpo/1000815
 name: Sulfur and sulfoxide compound respiration
-is_a: https://w3id.org/metpo/1000801 ! Aerobic respiration
+is_a: https://w3id.org/metpo/1000800 ! respiration
 
 [Term]
 id: https://w3id.org/metpo/1000816
@@ -887,7 +869,7 @@ synonym: "SRM metabolism" RELATED []
 synonym: "Sulfate respiration" RELATED []
 synonym: "sulfate_reduction" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 synonym: "Sulfidogenesis" RELATED []
-is_a: https://w3id.org/metpo/1000814 ! Nitrous oxide reduction
+is_a: https://w3id.org/metpo/1000815 ! Sulfur and sulfoxide compound respiration
 
 [Term]
 id: https://w3id.org/metpo/1000817
@@ -896,38 +878,38 @@ synonym: "Dissimilatory sulfur reduction" RELATED []
 synonym: "Elemental sulfur reduction" RELATED []
 synonym: "Sulfur respiration" RELATED []
 synonym: "sulfur_reduction" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000814 ! Nitrous oxide reduction
+is_a: https://w3id.org/metpo/1000815 ! Sulfur and sulfoxide compound respiration
 
 [Term]
 id: https://w3id.org/metpo/1000818
 name: Sulfite reduction
 synonym: "Dissimilatory sulfite reduction" RELATED []
 synonym: "sulfite_reduction" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000814 ! Nitrous oxide reduction
+is_a: https://w3id.org/metpo/1000815 ! Sulfur and sulfoxide compound respiration
 
 [Term]
 id: https://w3id.org/metpo/1000819
 name: Thiosulfate reduction
 synonym: "Dissimilatory thiosulfate reduction" RELATED []
 synonym: "thiosulfate_reduction" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000814 ! Nitrous oxide reduction
+is_a: https://w3id.org/metpo/1000815 ! Sulfur and sulfoxide compound respiration
 
 [Term]
 id: https://w3id.org/metpo/1000820
 name: Sulfoxide respiration
-is_a: https://w3id.org/metpo/1000814 ! Nitrous oxide reduction
+is_a: https://w3id.org/metpo/1000815 ! Sulfur and sulfoxide compound respiration
 
 [Term]
 id: https://w3id.org/metpo/1000821
 name: Dimethyl sulfoxide respiration
 synonym: "DMSO reduction" RELATED []
 synonym: "DMSO respiration" RELATED []
-is_a: https://w3id.org/metpo/1000819 ! Thiosulfate reduction
+is_a: https://w3id.org/metpo/1000820 ! Sulfoxide respiration
 
 [Term]
 id: https://w3id.org/metpo/1000822
 name: Methionine sulfoxide respiration
-is_a: https://w3id.org/metpo/1000819 ! Thiosulfate reduction
+is_a: https://w3id.org/metpo/1000820 ! Sulfoxide respiration
 
 [Term]
 id: https://w3id.org/metpo/1000823
@@ -935,7 +917,7 @@ name: Sulfide oxidation
 synonym: "H₂S oxidation" RELATED []
 synonym: "Sulfide oxidizing" RELATED []
 synonym: "sulfide_oxidation" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000814 ! Nitrous oxide reduction
+is_a: https://w3id.org/metpo/1000815 ! Sulfur and sulfoxide compound respiration
 
 [Term]
 id: https://w3id.org/metpo/1000824
@@ -943,7 +925,7 @@ name: Thiosulfate oxidation
 synonym: "S₂O₃²⁻ oxidation" RELATED []
 synonym: "Thiosulfate oxidizing" RELATED []
 synonym: "thiosulfate_oxidation" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000814 ! Nitrous oxide reduction
+is_a: https://w3id.org/metpo/1000815 ! Sulfur and sulfoxide compound respiration
 
 [Term]
 id: https://w3id.org/metpo/1000825
@@ -951,28 +933,28 @@ name: Sulfite oxidation
 synonym: "SO₃²⁻ oxidation" RELATED []
 synonym: "Sulfite oxidizing" RELATED []
 synonym: "sulfite_oxidation" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000814 ! Nitrous oxide reduction
+is_a: https://w3id.org/metpo/1000815 ! Sulfur and sulfoxide compound respiration
 
 [Term]
 id: https://w3id.org/metpo/1000826
 name: Tetrathionate reduction
 synonym: "S₄O₆²⁻ reduction" RELATED []
 synonym: "Tetrathionate respiration" RELATED []
-is_a: https://w3id.org/metpo/1000814 ! Nitrous oxide reduction
+is_a: https://w3id.org/metpo/1000815 ! Sulfur and sulfoxide compound respiration
 
 [Term]
 id: https://w3id.org/metpo/1000827
 name: Polysulfide reduction
 synonym: "Polysulfide respiration" RELATED []
 synonym: "Sₓ²⁻ reduction" RELATED []
-is_a: https://w3id.org/metpo/1000814 ! Nitrous oxide reduction
+is_a: https://w3id.org/metpo/1000815 ! Sulfur and sulfoxide compound respiration
 
 [Term]
 id: https://w3id.org/metpo/1000828
 name: Metal and metalloid respiration
 synonym: "Dissimilatory metal reduction" RELATED []
 synonym: "Metal respiration" RELATED []
-is_a: https://w3id.org/metpo/1000801 ! Aerobic respiration
+is_a: https://w3id.org/metpo/1000800 ! respiration
 
 [Term]
 id: https://w3id.org/metpo/1000829
@@ -982,7 +964,7 @@ synonym: "Dissimilatory iron reduction" RELATED []
 synonym: "Ferric iron reduction" RELATED []
 synonym: "Iron respiration" RELATED []
 synonym: "iron_reduction" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000827 ! Polysulfide reduction
+is_a: https://w3id.org/metpo/1000828 ! Metal and metalloid respiration
 
 [Term]
 id: https://w3id.org/metpo/1000830
@@ -990,14 +972,14 @@ name: Iron oxidation
 synonym: "Fe(II) oxidation" RELATED []
 synonym: "Ferrous iron oxidation" RELATED []
 synonym: "iron_oxidation" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000827 ! Polysulfide reduction
+is_a: https://w3id.org/metpo/1000828 ! Metal and metalloid respiration
 
 [Term]
 id: https://w3id.org/metpo/1000831
 name: Nitrate-dependent Fe(II) oxidation
 synonym: "NDFO" RELATED []
 synonym: "Nitrate-dependent iron oxidation" RELATED []
-is_a: https://w3id.org/metpo/1000829 ! Iron reduction
+is_a: https://w3id.org/metpo/1000828 ! Metal and metalloid respiration
 
 [Term]
 id: https://w3id.org/metpo/1000832
@@ -1007,7 +989,7 @@ synonym: "Manganese respiration" RELATED []
 synonym: "Manganese(IV) reduction" RELATED []
 synonym: "manganese_reduction" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 synonym: "Mn(IV) reduction" RELATED []
-is_a: https://w3id.org/metpo/1000827 ! Polysulfide reduction
+is_a: https://w3id.org/metpo/1000828 ! Metal and metalloid respiration
 
 [Term]
 id: https://w3id.org/metpo/1000833
@@ -1015,7 +997,7 @@ name: Manganese oxidation
 synonym: "Manganese(II) oxidation" RELATED []
 synonym: "manganese_oxidation" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 synonym: "Mn(II) oxidation" RELATED []
-is_a: https://w3id.org/metpo/1000827 ! Polysulfide reduction
+is_a: https://w3id.org/metpo/1000828 ! Metal and metalloid respiration
 
 [Term]
 id: https://w3id.org/metpo/1000834
@@ -1025,7 +1007,7 @@ synonym: "U(VI) reduction" RELATED []
 synonym: "Uranium respiration" RELATED []
 synonym: "Uranyl reduction" RELATED []
 synonym: "uranyl_reduction" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000827 ! Polysulfide reduction
+is_a: https://w3id.org/metpo/1000828 ! Metal and metalloid respiration
 
 [Term]
 id: https://w3id.org/metpo/1000835
@@ -1034,7 +1016,7 @@ synonym: "Dissimilatory vanadium reduction" RELATED []
 synonym: "V(V) reduction" RELATED []
 synonym: "Vanadate reduction" RELATED []
 synonym: "Vanadium respiration" RELATED []
-is_a: https://w3id.org/metpo/1000827 ! Polysulfide reduction
+is_a: https://w3id.org/metpo/1000828 ! Metal and metalloid respiration
 
 [Term]
 id: https://w3id.org/metpo/1000836
@@ -1043,7 +1025,7 @@ synonym: "Chromate reduction" RELATED []
 synonym: "Chromium respiration" RELATED []
 synonym: "Cr(VI) reduction" RELATED []
 synonym: "Dissimilatory chromium reduction" RELATED []
-is_a: https://w3id.org/metpo/1000827 ! Polysulfide reduction
+is_a: https://w3id.org/metpo/1000828 ! Metal and metalloid respiration
 
 [Term]
 id: https://w3id.org/metpo/1000837
@@ -1052,7 +1034,7 @@ synonym: "Dissimilatory technetium reduction" RELATED []
 synonym: "Pertechnetate reduction" RELATED []
 synonym: "Tc(VII) reduction" RELATED []
 synonym: "Technetium respiration" RELATED []
-is_a: https://w3id.org/metpo/1000827 ! Polysulfide reduction
+is_a: https://w3id.org/metpo/1000828 ! Metal and metalloid respiration
 
 [Term]
 id: https://w3id.org/metpo/1000838
@@ -1062,7 +1044,7 @@ synonym: "Cobalt respiration" RELATED []
 synonym: "Cobalt(III) reduction" RELATED []
 synonym: "cobalt_reduction" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 synonym: "Dissimilatory cobalt reduction" RELATED []
-is_a: https://w3id.org/metpo/1000827 ! Polysulfide reduction
+is_a: https://w3id.org/metpo/1000828 ! Metal and metalloid respiration
 
 [Term]
 id: https://w3id.org/metpo/1000839
@@ -1071,7 +1053,7 @@ synonym: "Arsenate respiration" RELATED []
 synonym: "arsenate_reduction" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 synonym: "As(V) reduction" RELATED []
 synonym: "Dissimilatory arsenate reduction" RELATED []
-is_a: https://w3id.org/metpo/1000827 ! Polysulfide reduction
+is_a: https://w3id.org/metpo/1000828 ! Metal and metalloid respiration
 
 [Term]
 id: https://w3id.org/metpo/1000840
@@ -1079,7 +1061,7 @@ name: Arsenite oxidation
 synonym: "Arsenite oxidizing" RELATED []
 synonym: "arsenite_oxidation" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 synonym: "As(III) oxidation" RELATED []
-is_a: https://w3id.org/metpo/1000827 ! Polysulfide reduction
+is_a: https://w3id.org/metpo/1000828 ! Metal and metalloid respiration
 
 [Term]
 id: https://w3id.org/metpo/1000841
@@ -1088,19 +1070,19 @@ synonym: "Dissimilatory selenate reduction" RELATED []
 synonym: "Se(VI) reduction" RELATED []
 synonym: "Selenate respiration" RELATED []
 synonym: "selenate_reduction" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000827 ! Polysulfide reduction
+is_a: https://w3id.org/metpo/1000828 ! Metal and metalloid respiration
 
 [Term]
 id: https://w3id.org/metpo/1000842
 name: Selenite reduction
 synonym: "Se(IV) reduction" RELATED []
 synonym: "Selenite respiration" RELATED []
-is_a: https://w3id.org/metpo/1000827 ! Polysulfide reduction
+is_a: https://w3id.org/metpo/1000828 ! Metal and metalloid respiration
 
 [Term]
 id: https://w3id.org/metpo/1000843
 name: Carbon and organic compound respiration
-is_a: https://w3id.org/metpo/1000801 ! Aerobic respiration
+is_a: https://w3id.org/metpo/1000800 ! respiration
 
 [Term]
 id: https://w3id.org/metpo/1000844
@@ -1109,35 +1091,35 @@ synonym: "Biological methanation" RELATED []
 synonym: "Biomethanation" RELATED []
 synonym: "Carbonate respiration" RELATED []
 synonym: "methanogenesis" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000842 ! Selenite reduction
+is_a: https://w3id.org/metpo/1000060 ! metabolism
 
 [Term]
 id: https://w3id.org/metpo/1000845
 name: Acetogenesis
 synonym: "Acetate fermentation" RELATED []
 synonym: "acetogenesis" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000842 ! Selenite reduction
+is_a: https://w3id.org/metpo/1000060 ! metabolism
 
 [Term]
 id: https://w3id.org/metpo/1000846
 name: Homoacetogenesis
 synonym: "Reductive acetyl-CoA pathway" RELATED []
 synonym: "Wood-Ljungdahl pathway" RELATED []
-is_a: https://w3id.org/metpo/1000844 ! Methanogenesis
+is_a: https://w3id.org/metpo/1000060 ! metabolism
 
 [Term]
 id: https://w3id.org/metpo/1000847
 name: Fumarate respiration
 synonym: "Fumarate reduction" RELATED []
 synonym: "fumarate_reduction" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000842 ! Selenite reduction
+is_a: https://w3id.org/metpo/1000843 ! Carbon and organic compound respiration
 
 [Term]
 id: https://w3id.org/metpo/1000848
 name: Trimethylamine N-oxide respiration
 synonym: "TMAO reduction" RELATED []
 synonym: "TMAO respiration" RELATED []
-is_a: https://w3id.org/metpo/1000842 ! Selenite reduction
+is_a: https://w3id.org/metpo/1000843 ! Carbon and organic compound respiration
 
 [Term]
 id: https://w3id.org/metpo/1000849
@@ -1145,31 +1127,26 @@ name: Humus respiration
 synonym: "Extracellular respiration" RELATED []
 synonym: "Humic substance reduction" RELATED []
 synonym: "Humus reduction" RELATED []
-is_a: https://w3id.org/metpo/1000842 ! Selenite reduction
+is_a: https://w3id.org/metpo/1000843 ! Carbon and organic compound respiration
 
 [Term]
 id: https://w3id.org/metpo/1000850
 name: Halogenated compound respiration
-is_a: https://w3id.org/metpo/1000801 ! Aerobic respiration
+is_a: https://w3id.org/metpo/1000800 ! respiration
 
 [Term]
 id: https://w3id.org/metpo/1000851
 name: Organohalide respiration
 synonym: "Dehalorespiration" RELATED []
 synonym: "Reductive dehalogenation" RELATED []
-is_a: https://w3id.org/metpo/1000849 ! Humus respiration
-
-[Term]
-id: https://w3id.org/metpo/1000852
-name: (Per)chlorate respiration
-is_a: https://w3id.org/metpo/1000849 ! Humus respiration
+is_a: https://w3id.org/metpo/1000850 ! Halogenated compound respiration
 
 [Term]
 id: https://w3id.org/metpo/1000853
 name: Perchlorate respiration
 synonym: "ClO₄⁻ reduction" RELATED []
 synonym: "Perchlorate reduction" RELATED []
-is_a: https://w3id.org/metpo/1000851 ! Organohalide respiration
+is_a: https://w3id.org/metpo/1000850 ! Halogenated compound respiration
 
 [Term]
 id: https://w3id.org/metpo/1000854
@@ -1177,50 +1154,51 @@ name: Chlorate respiration
 synonym: "Chlorate reduction" RELATED []
 synonym: "chlorate_reduction" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 synonym: "ClO₃⁻ reduction" RELATED []
-is_a: https://w3id.org/metpo/1000851 ! Organohalide respiration
+is_a: https://w3id.org/metpo/1000850 ! Halogenated compound respiration
 
 [Term]
 id: https://w3id.org/metpo/1000855
 name: Bromate reduction
 synonym: "Bromate respiration" RELATED []
 synonym: "BrO₃⁻ reduction" RELATED []
-is_a: https://w3id.org/metpo/1000849 ! Humus respiration
+is_a: https://w3id.org/metpo/1000850 ! Halogenated compound respiration
 
 [Term]
 id: https://w3id.org/metpo/1000856
 name: Iodate reduction
 synonym: "Iodate respiration" RELATED []
 synonym: "IO₃⁻ reduction" RELATED []
-is_a: https://w3id.org/metpo/1000849 ! Humus respiration
+is_a: https://w3id.org/metpo/1000850 ! Halogenated compound respiration
 
 [Term]
 id: https://w3id.org/metpo/1000857
 name: Nitrite-dependent methane oxidation
 synonym: "n-DAMO" RELATED []
 synonym: "Nitrite-driven AOM" RELATED []
-is_a: https://w3id.org/metpo/1000866 ! Methylotrophic methanogenesis
+is_a: https://w3id.org/metpo/1000807 ! Nitrogen compound respiration
 
 [Term]
 id: https://w3id.org/metpo/1000858
 name: Nitrate-dependent methane oxidation
 synonym: "N-DAMO" RELATED []
 synonym: "Nitrate-driven AOM" RELATED []
-is_a: https://w3id.org/metpo/1000866 ! Methylotrophic methanogenesis
+is_a: https://w3id.org/metpo/1000800 ! respiration
 
 [Term]
 id: https://w3id.org/metpo/1000859
 name: Hydrogen oxidation
 synonym: "hydrogen_oxidation" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
+synonym: "hydrogen_oxidation_dark" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 synonym: "H₂ oxidation" RELATED []
 synonym: "Knallgas metabolism" RELATED []
-is_a: https://w3id.org/metpo/1000800 ! respiratory type
+is_a: https://w3id.org/metpo/1000060 ! metabolism
 
 [Term]
 id: https://w3id.org/metpo/1000860
 name: Sulfur oxidation
 synonym: "Sox system" RELATED []
 synonym: "sulfur_oxidation" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000800 ! respiratory type
+is_a: https://w3id.org/metpo/1000815 ! Sulfur and sulfoxide compound respiration
 
 [Term]
 id: https://w3id.org/metpo/1000861
@@ -1229,7 +1207,7 @@ synonym: "Ammonia oxidation" RELATED []
 synonym: "nitrification" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 synonym: "Nitrite oxidation" RELATED []
 synonym: "nitrite_oxidation" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000800 ! respiratory type
+is_a: https://w3id.org/metpo/1000807 ! Nitrogen compound respiration
 
 [Term]
 id: https://w3id.org/metpo/1000862
@@ -1237,7 +1215,7 @@ name: Complete ammonia oxidation
 synonym: "Comammox" RELATED []
 synonym: "Complete nitrification" RELATED []
 synonym: "Single-step nitrification" RELATED []
-is_a: https://w3id.org/metpo/1000860 ! Sulfur oxidation
+is_a: https://w3id.org/metpo/1002035 ! Ammonia oxidation
 
 [Term]
 id: https://w3id.org/metpo/1000863
@@ -1245,48 +1223,68 @@ name: Carbon monoxide oxidation
 synonym: "carbon_monoxide_oxidation" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 synonym: "carbonmonoxide_oxidation" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 synonym: "CO oxidation" RELATED []
-is_a: https://w3id.org/metpo/1000800 ! respiratory type
+is_a: https://w3id.org/metpo/1000060 ! metabolism
 
 [Term]
 id: https://w3id.org/metpo/1000864
 name: Hydrogenotrophic methanogenesis
 synonym: "CO₂ reduction pathway" RELATED []
 synonym: "H₂/CO₂ methanogenesis" RELATED []
-is_a: https://w3id.org/metpo/1000843 ! Carbon and organic compound respiration
+is_a: https://w3id.org/metpo/1000844 ! Methanogenesis
 
 [Term]
 id: https://w3id.org/metpo/1000865
 name: Acetoclastic methanogenesis
 synonym: "Acetate cleavage pathway" RELATED []
 synonym: "Acetate methanogenesis" RELATED []
-is_a: https://w3id.org/metpo/1000843 ! Carbon and organic compound respiration
+is_a: https://w3id.org/metpo/1000844 ! Methanogenesis
 
 [Term]
 id: https://w3id.org/metpo/1000866
 name: Methylotrophic methanogenesis
 synonym: "Methyl compound methanogenesis" RELATED []
-is_a: https://w3id.org/metpo/1000843 ! Carbon and organic compound respiration
+is_a: https://w3id.org/metpo/1000844 ! Methanogenesis
 
 [Term]
 id: https://w3id.org/metpo/1000867
 name: Anaerobic methane oxidation
 synonym: "AOM" RELATED []
-is_a: https://w3id.org/metpo/1000842 ! Selenite reduction
+is_a: https://w3id.org/metpo/1000800 ! respiration
 
 [Term]
 id: https://w3id.org/metpo/1000868
 name: Lanthanide reduction
-is_a: https://w3id.org/metpo/1000827 ! Polysulfide reduction
+is_a: https://w3id.org/metpo/1000828 ! Metal and metalloid respiration
 
 [Term]
 id: https://w3id.org/metpo/1000869
 name: Lanthanide oxidation
-is_a: https://w3id.org/metpo/1000827 ! Polysulfide reduction
+is_a: https://w3id.org/metpo/1000828 ! Metal and metalloid respiration
+
+[Term]
+id: https://w3id.org/metpo/1000870
+name: sporulation
+synonym: "General.keywords" RELATED []
+synonym: "Physiology and metabolism.spore formation.spore formation" RELATED []
+synonym: "sporulation" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
+is_a: https://w3id.org/metpo/1000059 ! phenotype
+
+[Term]
+id: https://w3id.org/metpo/1000871
+name: spore forming
+synonym: "yes" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
+is_a: https://w3id.org/metpo/1000870 ! sporulation
+
+[Term]
+id: https://w3id.org/metpo/1000872
+name: non-spore forming
+synonym: "no" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
+is_a: https://w3id.org/metpo/1000870 ! sporulation
 
 [Term]
 id: https://w3id.org/metpo/1001000
 name: observation
-def: "An observation record about a microbe’s growth with respect to temperature, potentially including point, minimum, and maximum values, comments, and negativity (no growth)." []
+def: "A recording of the output of a measurement such as produced by a device." [] {IAO:0000119="IAO:0000109"}
 
 [Term]
 id: https://w3id.org/metpo/1001001
@@ -1321,202 +1319,59 @@ is_a: https://w3id.org/metpo/1001000 ! observation
 [Term]
 id: https://w3id.org/metpo/1002000
 name: Sulfate-dependent methane oxidation
-is_a: https://w3id.org/metpo/1000060 ! metabolic trait
+is_a: https://w3id.org/metpo/1000800 ! respiration
 
 [Term]
 id: https://w3id.org/metpo/1002001
 name: Fe(III)-dependent methane oxidation
-is_a: https://w3id.org/metpo/1000060 ! metabolic trait
+is_a: https://w3id.org/metpo/1000828 ! Metal and metalloid respiration
 
 [Term]
 id: https://w3id.org/metpo/1002002
 name: Mn(IV)-dependent methane oxidation
-is_a: https://w3id.org/metpo/1000060 ! metabolic trait
+is_a: https://w3id.org/metpo/1000828 ! Metal and metalloid respiration
 
 [Term]
 id: https://w3id.org/metpo/1002003
 name: Cable bacteria metabolism
-is_a: https://w3id.org/metpo/1000060 ! metabolic trait
+is_a: https://w3id.org/metpo/1000060 ! metabolism
 
 [Term]
 id: https://w3id.org/metpo/1002005
 name: Fermentation
-is_a: https://w3id.org/metpo/1000060 ! metabolic trait
+is_a: https://w3id.org/metpo/1000800 ! respiration
 
 [Term]
 id: https://w3id.org/metpo/1002006
 name: Syntrophy
-is_a: https://w3id.org/metpo/1000060 ! metabolic trait
+is_a: https://w3id.org/metpo/1000060 ! metabolism
 
 [Term]
 id: https://w3id.org/metpo/1002007
 name: Sulfur disproportionation
-is_a: https://w3id.org/metpo/1000060 ! metabolic trait
+is_a: https://w3id.org/metpo/1000815 ! Sulfur and sulfoxide compound respiration
 
 [Term]
 id: https://w3id.org/metpo/1002008
 name: Nitrogen fixation
-is_a: https://w3id.org/metpo/1000060 ! metabolic trait
-
-[Term]
-id: https://w3id.org/metpo/1002009
-name: Nitrate-reducing
-is_a: https://w3id.org/metpo/1000060 ! metabolic trait
-
-[Term]
-id: https://w3id.org/metpo/1002010
-name: Anaerobic ammonium-oxidizing
-is_a: https://w3id.org/metpo/1000060 ! metabolic trait
-
-[Term]
-id: https://w3id.org/metpo/1002011
-name: Nitrous oxide-reducing
-is_a: https://w3id.org/metpo/1000060 ! metabolic trait
-
-[Term]
-id: https://w3id.org/metpo/1002012
-name: Sulfate-reducing
-is_a: https://w3id.org/metpo/1000060 ! metabolic trait
-
-[Term]
-id: https://w3id.org/metpo/1002013
-name: Sulfur-reducing
-is_a: https://w3id.org/metpo/1000060 ! metabolic trait
-
-[Term]
-id: https://w3id.org/metpo/1002014
-name: Sulfite-reducing
-is_a: https://w3id.org/metpo/1000060 ! metabolic trait
-
-[Term]
-id: https://w3id.org/metpo/1002015
-name: Thiosulfate-reducing
-is_a: https://w3id.org/metpo/1000060 ! metabolic trait
-
-[Term]
-id: https://w3id.org/metpo/1002016
-name: Sulfur-disproportionating
-is_a: https://w3id.org/metpo/1000060 ! metabolic trait
-
-[Term]
-id: https://w3id.org/metpo/1002017
-name: Sulfide-oxidizing
-is_a: https://w3id.org/metpo/1000060 ! metabolic trait
-
-[Term]
-id: https://w3id.org/metpo/1002018
-name: Thiosulfate-oxidizing
-is_a: https://w3id.org/metpo/1000060 ! metabolic trait
-
-[Term]
-id: https://w3id.org/metpo/1002019
-name: Sulfite-oxidizing
-is_a: https://w3id.org/metpo/1000060 ! metabolic trait
-
-[Term]
-id: https://w3id.org/metpo/1002020
-name: Iron-reducing
-is_a: https://w3id.org/metpo/1000060 ! metabolic trait
-
-[Term]
-id: https://w3id.org/metpo/1002021
-name: Iron-oxidizing
-is_a: https://w3id.org/metpo/1000060 ! metabolic trait
-
-[Term]
-id: https://w3id.org/metpo/1002022
-name: Nitrate-dependent Fe(II)-oxidizing
-is_a: https://w3id.org/metpo/1000060 ! metabolic trait
-
-[Term]
-id: https://w3id.org/metpo/1002023
-name: Manganese-reducing
-is_a: https://w3id.org/metpo/1000060 ! metabolic trait
-
-[Term]
-id: https://w3id.org/metpo/1002024
-name: Manganese-oxidizing
-is_a: https://w3id.org/metpo/1000060 ! metabolic trait
-
-[Term]
-id: https://w3id.org/metpo/1002025
-name: Uranium-reducing
-is_a: https://w3id.org/metpo/1000060 ! metabolic trait
-
-[Term]
-id: https://w3id.org/metpo/1002026
-name: Arsenate-reducing
-is_a: https://w3id.org/metpo/1000060 ! metabolic trait
-
-[Term]
-id: https://w3id.org/metpo/1002027
-name: Selenate-reducing
-is_a: https://w3id.org/metpo/1000060 ! metabolic trait
-
-[Term]
-id: https://w3id.org/metpo/1002028
-name: Selenite-reducing
-is_a: https://w3id.org/metpo/1000060 ! metabolic trait
-
-[Term]
-id: https://w3id.org/metpo/1002029
-name: Perchlorate-reducing
-is_a: https://w3id.org/metpo/1000060 ! metabolic trait
-
-[Term]
-id: https://w3id.org/metpo/1002030
-name: Chlorate-reducing
-is_a: https://w3id.org/metpo/1000060 ! metabolic trait
-
-[Term]
-id: https://w3id.org/metpo/1002031
-name: Bromate-reducing
-is_a: https://w3id.org/metpo/1000060 ! metabolic trait
-
-[Term]
-id: https://w3id.org/metpo/1002032
-name: Iodate-reducing
-is_a: https://w3id.org/metpo/1000060 ! metabolic trait
-
-[Term]
-id: https://w3id.org/metpo/1002033
-name: Hydrogen-oxidizing
-is_a: https://w3id.org/metpo/1000060 ! metabolic trait
-
-[Term]
-id: https://w3id.org/metpo/1002034
-name: Sulfur-oxidizing
-is_a: https://w3id.org/metpo/1000060 ! metabolic trait
+synonym: "diazotroph" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
+synonym: "nitrogen_fixation" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
+is_a: https://w3id.org/metpo/1000807 ! Nitrogen compound respiration
 
 [Term]
 id: https://w3id.org/metpo/1002035
-name: Ammonia-oxidizing
-is_a: https://w3id.org/metpo/1000060 ! metabolic trait
+name: Ammonia oxidation
+is_a: https://w3id.org/metpo/1000807 ! Nitrogen compound respiration
 
 [Term]
 id: https://w3id.org/metpo/1002036
-name: Nitrite-oxidizing
-is_a: https://w3id.org/metpo/1000060 ! metabolic trait
-
-[Term]
-id: https://w3id.org/metpo/1002037
-name: Complete ammonia-oxidizing
-is_a: https://w3id.org/metpo/1000060 ! metabolic trait
+name: Nitrite oxidation
+is_a: https://w3id.org/metpo/1000807 ! Nitrogen compound respiration
 
 [Term]
 id: https://w3id.org/metpo/1002038
-name: Methane-oxidizing
-is_a: https://w3id.org/metpo/1000060 ! metabolic trait
-
-[Term]
-id: https://w3id.org/metpo/1002039
-name: Carbon monoxide-oxidizing
-is_a: https://w3id.org/metpo/1000060 ! metabolic trait
-
-[Term]
-id: https://w3id.org/metpo/1002040
-name: Nitrogen-fixing
-is_a: https://w3id.org/metpo/1000060 ! metabolic trait
+name: Methane oxidation
+is_a: https://w3id.org/metpo/1000060 ! metabolism
 
 [Typedef]
 id: https://w3id.org/metpo/2000001
