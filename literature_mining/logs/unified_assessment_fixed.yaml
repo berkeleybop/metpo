@@ -1,0 +1,46 @@
+generated: 2025-08-19 11:06
+summary:
+  extractions_analyzed: 1
+  successful_extractions: 1
+  success_rate: 100.0
+  total_compound_expressions: 137
+  average_ces_per_extraction: 137.0
+templates:
+  chemical_utilization_cborg_gpt5:
+    abstracts_processed: 9
+    success_rate: 1/1
+    success_percentage: 100.0
+    compound_expressions: 137
+    average_ces: 137.0
+    grounding_metrics:
+      overall_grounding_rate: 54.7
+      auto_vs_grounded_ratio: 0.83
+      subject_grounding_rate: 0.0
+      predicate_grounding_rate: 0.0
+      metpo_predicate_usage: 14.6
+    ontology_usage:
+      NCBITaxon: 23
+      CHEBI: 47
+    problematic_duplicates: {}
+    advanced_metrics:
+      span_distances:
+        total_compound_expressions: 137
+        expressions_with_spans: 115
+        distance_distribution:
+          close: 75
+          medium: 28
+          far: 12
+          cross_section: 0
+          close_percentage: 65.2
+          medium_percentage: 24.3
+          far_percentage: 10.4
+          cross_section_percentage: 0.0
+      verbatim_traceability:
+        documents_analyzed: 9
+        content_extraction_success: 9
+        entity_span_verification_rate: 0.0
+      strain_taxon_consistency:
+        documents_analyzed: 9
+        total_violations: 1
+        violation_types:
+          compound_expression_strain_without_relationship: 1

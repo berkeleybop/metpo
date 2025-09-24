@@ -1,0 +1,154 @@
+---
+input_text: |
+  {'content': 'Insulambacter thermoxylanivorax sp. nov., a thermophilic xylanolytic bacterium isolated from compost.\n\nWe isolated and analysed a Gram-negative, facultatively thermophilic, xylan-degrading bacterium that we designated as strain DA-C8T. The strain was isolated from compost from Ishigaki Island, Japan, by enrichment culturing using beech wood xylan as the sole carbon source. The strain showed high xylan degradation ability under anaerobic growth conditions. The isolate grew at 37-60 °C (optimum, 55 °C) and pH 4.0-11.0 (optimum, pH 9.0). As well as xylan, strain DA-C8T could use polysaccharides such as arabinoxylan and galactan as carbon sources. Comparison of 16S rRNA gene sequences indicated that strain DA-C8T was most closely related to Paenibacillus cisolokensis LC2-13AT (93.9 %) and Paenibacillus chitinolyticus HSCC596 (93.5 %). In phylogenetic analysis, strain DA-C8T belonged to the same lineage as Xylanibacillus composti K13T (92.5 %), but there was less statistical support for branching (70 %). Digital DNA-DNA hybridization, average nucleotide identity values and average amino acid sequence identity between strain DA-C8T and P. cisolokensis LC2-13AT were 21.8, 68.3 and 58.2 %, respectively. Those between strain DA-C8T and X. composti K13 were 23.7, 67.7 and 57.6 %, respectively. The whole-genome DNA G+C content of strain DA-C8T was 52.3 mol%. The major cellular fatty acids were C16 : 0 (42.9 %), anteiso-C15 : 0 (20.0 %) and anteiso-C17 : 0 (16.7 %), the major quinone was menaquinone 7, and the major polar lipids were unidentified glycolipids. On the basis of phenotypic, chemotaxonomic and phylogenetic evidence, a novel genus is proposed-Insulambacter gen. nov.-for the novel species Insulambacter thermoxylanivorax sp. nov. The type strain is DA-C8T (=JCM 34211T=DSM 111723T).\n\nPMID:36943336', 'saved_to': None, 'windowed': False}
+raw_completion_output: |-
+  pmid: 36943336
+  study_taxa: Insulambacter thermoxylanivorax
+  strains: DA-C8; JCM 34211; DSM 111723; LC2-13A; HSCC596; K13
+  chemicals_mentioned: xylan; beech wood xylan; arabinoxylan; galactan; menaquinone 7
+  chemical_utilizations: DA-C8 utilizes beech wood xylan as sole carbon source; DA-C8 degrades xylan; DA-C8 utilizes xylan as carbon source; DA-C8 utilizes arabinoxylan as carbon source; DA-C8 utilizes galactan as carbon source
+  strain_relationships: DA-C8 type_strain_of Insulambacter thermoxylanivorax; JCM 34211 type_strain_of Insulambacter thermoxylanivorax; DSM 111723 type_strain_of Insulambacter thermoxylanivorax; LC2-13A type_strain_of Paenibacillus cisolokensis; HSCC596 strain_of Paenibacillus chitinolyticus; K13 type_strain_of Xylanibacillus composti
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  subject: <the specific strain designation or identifier>
+  predicate: <the type of strain-taxon relationship (strain_of, type_strain_of, isolate_of, etc.)Must be one of: strain_of, type_strain_of, reference_strain_of, isolate_of, variant_of>
+  object: <the parent species or genus this strain belongs to>
+
+
+  Text:
+  K13 type_strain_of Xylanibacillus composti
+
+  ===
+
+extracted_object:
+  pmid: '36943336'
+  study_taxa:
+    - NCBITaxon:2749268
+  strains:
+    - AUTO:DA-C8
+    - AUTO:JCM%2034211
+    - AUTO:DSM%20111723
+    - AUTO:LC2-13A
+    - AUTO:HSCC596
+    - AUTO:K13
+  chemicals_mentioned:
+    - CHEBI:37166
+    - AUTO:beech%20wood%20xylan
+    - CHEBI:28427
+    - CHEBI:37165
+    - CHEBI:44245
+  chemical_utilizations:
+    - subject: AUTO:DA-C8
+      predicate: uses_as_carbon_source
+      object: AUTO:beech%20wood%20xylan
+    - subject: AUTO:DA-C8
+      predicate: degrades
+      object: CHEBI:37166
+    - subject: AUTO:DA-C8
+      predicate: uses_as_carbon_source
+      object: CHEBI:37166
+    - subject: AUTO:DA-C8
+      predicate: uses_as_carbon_source
+      object: CHEBI:28427
+    - subject: AUTO:DA-C8
+      predicate: uses_as_carbon_source
+      object: CHEBI:37165
+  strain_relationships:
+    - subject: AUTO:DA-C8
+      predicate: type_strain_of
+      object: NCBITaxon:2749268
+    - subject: AUTO:JCM%2034211
+      predicate: type_strain_of
+      object: NCBITaxon:2749268
+    - subject: AUTO:DSM%20111723
+      predicate: type_strain_of
+      object: NCBITaxon:2749268
+    - subject: AUTO:LC2-13A
+      predicate: type_strain_of
+      object: NCBITaxon:1658519
+    - subject: AUTO:HSCC596
+      predicate: strain_of
+      object: NCBITaxon:79263
+    - subject: AUTO:K13
+      predicate: type_strain_of
+      object: NCBITaxon:1572762
+named_entities:
+  - id: NCBITaxon:2749268
+    label: Insulambacter thermoxylanivorax
+    original_spans:
+      - 13:43
+      - 1731:1761
+  - id: AUTO:DA-C8
+    label: DA-C8
+    original_spans:
+      - 243:247
+      - 581:585
+      - 727:731
+      - 891:895
+      - 1152:1156
+      - 1251:1255
+      - 1363:1367
+      - 1791:1795
+  - id: AUTO:JCM%2034211
+    label: JCM 34211
+    original_spans:
+      - 1800:1808
+  - id: AUTO:DSM%20111723
+    label: DSM 111723
+    original_spans:
+      - 1811:1820
+  - id: AUTO:LC2-13A
+    label: LC2-13A
+    original_spans:
+      - 789:795
+      - 1179:1185
+  - id: AUTO:HSCC596
+    label: HSCC596
+    original_spans:
+      - 840:846
+  - id: AUTO:K13
+    label: K13
+    original_spans:
+      - 954:956
+      - 1274:1276
+  - id: CHEBI:37166
+    label: xylan
+    original_spans:
+      - 33:37
+      - 70:74
+      - 188:192
+      - 358:362
+      - 414:418
+      - 567:571
+      - 629:633
+      - 930:934
+      - 1751:1755
+  - id: AUTO:beech%20wood%20xylan
+    label: beech wood xylan
+    original_spans:
+      - 347:362
+  - id: CHEBI:28427
+    label: arabinoxylan
+    original_spans:
+      - 622:633
+  - id: CHEBI:37165
+    label: galactan
+    original_spans:
+      - 639:646
+  - id: CHEBI:44245
+    label: menaquinone 7
+    original_spans:
+      - 1516:1528
+  - id: NCBITaxon:1658519
+    label: Paenibacillus cisolokensis
+    original_spans:
+      - 762:787
+  - id: NCBITaxon:79263
+    label: Paenibacillus chitinolyticus
+    original_spans:
+      - 811:838
+  - id: NCBITaxon:1572762
+    label: Xylanibacillus composti
+    original_spans:
+      - 930:952

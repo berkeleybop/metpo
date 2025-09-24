@@ -1,0 +1,556 @@
+---
+input_text: |
+  {'content': 'Ethanoligenens harbinense gen. nov., sp. nov., isolated from molasses wastewater.\n\nTwo strictly anaerobic bacterial strains (YUAN-3T and X-29) were isolated from anaerobic activated sludge of molasses wastewater in a continuous stirred-tank reactor. The strains were Gram-positive, non-spore-forming, mesophilic and motile. Cells were regular rods (0.4-0.8 x 1.5-8.0 microm) and occurred singly, in pairs and sometimes in chains of up to eight. Autoaggregative and autofluorescent growth of strain YUAN-3T and non-aggregative growth of strain X-29 were observed at 20-44 degrees C and pH 3.5-9.0. Both strains hydrolysed gelatin and aesculin and fermented several kinds of mono-, di- and oligosaccharides. Fermentation end products formed from glucose were acetate, ethanol, hydrogen and carbon dioxide. The predominant cellular fatty acids were the branched-chain fatty acids iso-C(16 : 0) (44.18 %) and iso-C(12 : 0) (26.67 %). The DNA G+C contents of strains YUAN-3T and X-29 were 47.8 and 49.0 mol%, respectively. Phylogenetic analysis based on 16S rRNA gene sequences revealed that the isolates represent a novel phyletic sublineage within the Clostridium cellulosi rRNA cluster, with <92 % 16S rRNA gene sequence similarity to currently known species. On the basis of polyphasic evidence from this study, it is proposed that the unknown bacterium should be classified in a new genus as a novel species, Ethanoligenens harbinense gen. nov., sp. nov. The type strain of Ethanoligenens harbinense is YUAN-3T (=JCM 12961T = CGMCC 1.5033T).\n\nPMID:16585689', 'saved_to': None, 'windowed': False}
+raw_completion_output: |-
+  pmid: 16585689
+  study_taxa: Ethanoligenens harbinense
+  strains: YUAN-3; X-29; JCM 12961; CGMCC 1.5033
+  chemicals_mentioned: gelatin; aesculin; glucose; acetate; ethanol; hydrogen; carbon dioxide
+  chemical_utilizations: (YUAN-3, gelatin, hydrolyzes); (X-29, gelatin, hydrolyzes); (YUAN-3, aesculin, hydrolyzes); (X-29, aesculin, hydrolyzes); (YUAN-3, glucose, ferments); (X-29, glucose, ferments); (YUAN-3, acetate, produces_from_glucose); (X-29, acetate, produces_from_glucose); (YUAN-3, ethanol, produces_from_glucose); (X-29, ethanol, produces_from_glucose); (YUAN-3, hydrogen, produces_from_glucose); (X-29, hydrogen, produces_from_glucose); (YUAN-3, carbon dioxide, produces_from_glucose); (X-29, carbon dioxide, produces_from_glucose)
+  strain_relationships: YUAN-3 type_strain_of Ethanoligenens harbinense; X-29 strain_of Ethanoligenens harbinense; JCM 12961 type_strain_of Ethanoligenens harbinense; CGMCC 1.5033 type_strain_of Ethanoligenens harbinense
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  subject: <the specific strain designation or identifier>
+  predicate: <the type of strain-taxon relationship (strain_of, type_strain_of, isolate_of, etc.)Must be one of: strain_of, type_strain_of, reference_strain_of, isolate_of, variant_of>
+  object: <the parent species or genus this strain belongs to>
+
+
+  Text:
+  CGMCC 1.5033 type_strain_of Ethanoligenens harbinense
+
+  ===
+
+extracted_object:
+  pmid: '16585689'
+  study_taxa:
+    - NCBITaxon:253239
+  strains:
+    - AUTO:YUAN-3
+    - AUTO:X-29
+    - AUTO:JCM%2012961
+    - AUTO:CGMCC%201.5033
+  chemicals_mentioned:
+    - CHEBI:5291
+    - CHEBI:4853
+    - CHEBI:17234
+    - CHEBI:30089
+    - CHEBI:16236
+    - CHEBI:49637
+    - CHEBI:16526
+  chemical_utilizations:
+    - subject: AUTO:YUAN-3
+      predicate: hydrolyzes
+      object: CHEBI:5291
+    - subject: AUTO:X-29
+      predicate: hydrolyzes
+      object: CHEBI:5291
+    - subject: AUTO:YUAN-3
+      predicate: hydrolyzes
+      object: CHEBI:4853
+    - subject: AUTO:X-29
+      predicate: hydrolyzes
+      object: CHEBI:4853
+    - subject: AUTO:YUAN-3
+      predicate: ferments
+      object: CHEBI:17234
+    - subject: AUTO:X-29
+      predicate: ferments
+      object: CHEBI:17234
+    - subject: AUTO:YUAN-3
+      predicate: builds_acid_from
+      object: CHEBI:17234
+    - subject: AUTO:X-29
+      predicate: builds_acid_from
+      object: CHEBI:17234
+    - subject: AUTO:YUAN-3
+      predicate: ferments
+      object: CHEBI:17234
+    - subject: AUTO:X-29
+      predicate: ferments
+      object: CHEBI:17234
+    - subject: AUTO:YUAN-3
+      predicate: builds_gas_from
+      object: CHEBI:17234
+    - subject: AUTO:X-29
+      predicate: builds_gas_from
+      object: CHEBI:17234
+    - subject: AUTO:YUAN-3
+      predicate: builds_gas_from
+      object: CHEBI:17234
+    - subject: AUTO:X-29
+      predicate: builds_gas_from
+      object: CHEBI:17234
+  strain_relationships:
+    - subject: AUTO:YUAN-3
+      predicate: type_strain_of
+      object: NCBITaxon:253239
+    - subject: AUTO:X-29
+      predicate: strain_of
+      object: NCBITaxon:253239
+    - subject: AUTO:JCM%2012961
+      predicate: type_strain_of
+      object: NCBITaxon:253239
+    - subject: AUTO:CGMCC%201.5033
+      predicate: type_strain_of
+      object: NCBITaxon:253239
+named_entities:
+  - id: NCBITaxon:253239
+    label: Ethanoligenens harbinense
+    original_spans:
+      - 13:37
+      - 1424:1448
+      - 1489:1513
+  - id: AUTO:YUAN-3
+    label: YUAN-3
+    original_spans:
+      - 140:145
+      - 513:518
+      - 977:982
+      - 1518:1523
+  - id: AUTO:X-29
+    label: X-29
+    original_spans:
+      - 152:155
+      - 558:561
+      - 989:992
+  - id: AUTO:JCM%2012961
+    label: JCM 12961
+    original_spans:
+      - 1528:1536
+  - id: AUTO:CGMCC%201.5033
+    label: CGMCC 1.5033
+    original_spans:
+      - 1541:1552
+  - id: CHEBI:5291
+    label: gelatin
+    original_spans:
+      - 636:642
+  - id: CHEBI:4853
+    label: aesculin
+    original_spans:
+      - 648:655
+  - id: CHEBI:17234
+    label: glucose
+    original_spans:
+      - 759:765
+  - id: CHEBI:30089
+    label: acetate
+    original_spans:
+      - 772:778
+  - id: CHEBI:16236
+    label: ethanol
+    original_spans:
+      - 13:19
+      - 781:787
+      - 1424:1430
+      - 1489:1495
+  - id: CHEBI:49637
+    label: hydrogen
+    original_spans:
+      - 790:797
+  - id: CHEBI:16526
+    label: carbon dioxide
+    original_spans:
+      - 803:816
+---
+input_text: |
+  {'content': 'Geobacter hydrogenophilus, Geobacter chapellei and Geobacter grbiciae, three new, strictly anaerobic, dissimilatory Fe(III)-reducers.\n\nRecent studies on the diversity and ubiquity of Fe(III)-reducing organisms in different environments led to the isolation and identification of four new dissimilatory Fe(III)-reducers (strains H-2T, 172T, TACP-2T and TACP-5). All four isolates are non-motile, Gram-negative, freshwater, mesophilic, strict anaerobes with morphology identical to that of Geobacter metallireducens strain GS-15T. Analysis of the 16S rRNA sequences indicated that the new isolates belong to the genus Geobacter, in the delta-Proteobacteria. Significant differences in phenotypic characteristics, DNA-DNA homology and G+C content indicated that the four isolates represent three new species of the genus. The names Geobacter hydrogenophilus sp. nov. (strain H-2T), Geobacter chapellei sp. nov. (strain 172T) and Geobacter grbiciae sp. nov. (strains TACP-2T and TACP-5) are proposed. Geobacter hydrogenophilus and Geobacter chapellei were isolated from a petroleum-contaminated aquifer and a pristine, deep, subsurface aquifer, respectively. Geobacter grbiciae was isolated from aquatic sediments. All of the isolates can obtain energy for growth by coupling the oxidation of acetate to the reduction of Fe(III). The four isolates also coupled Fe(III) reduction to the oxidation of other simple, volatile fatty acids. In addition, Geobacter hydrogenophilus and Geobacter grbiciae were able to oxidize aromatic compounds such as benzoate, whilst Geobacter grbiciae was also able to use the monoaromatic hydrocarbon toluene.\n\nPMID:11321104', 'saved_to': None, 'windowed': False}
+raw_completion_output: |-
+  pmid: 11321104
+  study_taxa: Geobacter hydrogenophilus; Geobacter chapellei; Geobacter grbiciae
+  strains: H-2; 172; TACP-2; TACP-5; GS-15
+  chemicals_mentioned: Fe(III); acetate; benzoate; toluene
+  chemical_utilizations: (H-2, acetate, oxidizes); (H-2, Fe(III), reduces); (172, acetate, oxidizes); (172, Fe(III), reduces); (TACP-2, acetate, oxidizes); (TACP-2, Fe(III), reduces); (TACP-5, acetate, oxidizes); (TACP-5, Fe(III), reduces); (H-2, benzoate, oxidizes); (TACP-2, benzoate, oxidizes); (TACP-5, benzoate, oxidizes); (TACP-2, toluene, utilizes); (TACP-5, toluene, utilizes)
+  strain_relationships: H-2 type_strain_of Geobacter hydrogenophilus; 172 type_strain_of Geobacter chapellei; TACP-2 type_strain_of Geobacter grbiciae; TACP-5 strain_of Geobacter grbiciae; GS-15 type_strain_of Geobacter metallireducens
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  subject: <the specific strain designation or identifier>
+  predicate: <the type of strain-taxon relationship (strain_of, type_strain_of, isolate_of, etc.)Must be one of: strain_of, type_strain_of, reference_strain_of, isolate_of, variant_of>
+  object: <the parent species or genus this strain belongs to>
+
+
+  Text:
+  GS-15 type_strain_of Geobacter metallireducens
+
+  ===
+
+extracted_object:
+  pmid: '11321104'
+  study_taxa:
+    - NCBITaxon:40983
+    - NCBITaxon:44671
+    - NCBITaxon:155042
+  strains:
+    - AUTO:H-2
+    - AUTO:172
+    - AUTO:TACP-2
+    - AUTO:TACP-5
+    - AUTO:GS-15
+  chemicals_mentioned:
+    - CHEBI:18248
+    - CHEBI:30089
+    - CHEBI:16150
+    - CHEBI:17578
+  chemical_utilizations:
+    - subject: AUTO:H-2
+      predicate: oxidizes
+      object: CHEBI:30089
+    - subject: AUTO:H-2
+      predicate: reduces
+      object: CHEBI:18248
+    - subject: AUTO:172
+      predicate: oxidizes
+      object: CHEBI:30089
+    - subject: AUTO:172
+      predicate: reduces
+      object: CHEBI:18248
+    - subject: AUTO:TACP-2
+      predicate: oxidizes
+      object: CHEBI:30089
+    - subject: AUTO:TACP-2
+      predicate: reduces
+      object: CHEBI:18248
+    - subject: AUTO:TACP-5
+      predicate: oxidizes
+      object: CHEBI:30089
+    - subject: AUTO:TACP-5
+      predicate: reduces
+      object: CHEBI:18248
+    - subject: AUTO:H-2
+      predicate: oxidizes
+      object: CHEBI:16150
+    - subject: AUTO:TACP-2
+      predicate: oxidizes
+      object: CHEBI:16150
+    - subject: AUTO:TACP-5
+      predicate: oxidizes
+      object: CHEBI:16150
+    - subject: AUTO:TACP-2
+      predicate: uses_in_other_way
+      object: CHEBI:17578
+    - subject: AUTO:TACP-5
+      predicate: uses_in_other_way
+      object: CHEBI:17578
+  strain_relationships:
+    - subject: AUTO:H-2
+      predicate: type_strain_of
+      object: NCBITaxon:40983
+    - subject: AUTO:172
+      predicate: type_strain_of
+      object: NCBITaxon:44671
+    - subject: AUTO:TACP-2
+      predicate: type_strain_of
+      object: NCBITaxon:155042
+    - subject: AUTO:TACP-5
+      predicate: strain_of
+      object: NCBITaxon:155042
+    - subject: AUTO:GS-15
+      predicate: type_strain_of
+      object: NCBITaxon:28232
+named_entities:
+  - id: NCBITaxon:40983
+    label: Geobacter hydrogenophilus
+    original_spans:
+      - 13:37
+      - 844:868
+      - 1012:1036
+      - 1459:1483
+  - id: NCBITaxon:44671
+    label: Geobacter chapellei
+    original_spans:
+      - 40:58
+      - 894:912
+      - 1042:1060
+  - id: NCBITaxon:155042
+    label: Geobacter grbiciae
+    original_spans:
+      - 64:81
+      - 941:958
+      - 1170:1187
+      - 1489:1506
+      - 1573:1590
+  - id: AUTO:H-2
+    label: H-2
+    original_spans:
+      - 343:345
+      - 887:889
+  - id: AUTO:172
+    label: '172'
+    original_spans:
+      - 349:351
+      - 931:933
+  - id: AUTO:TACP-2
+    label: TACP-2
+    original_spans:
+      - 355:360
+      - 978:983
+  - id: AUTO:TACP-5
+    label: TACP-5
+    original_spans:
+      - 367:372
+      - 990:995
+  - id: AUTO:GS-15
+    label: GS-15
+    original_spans:
+      - 536:540
+  - id: CHEBI:18248
+    label: Fe(III)
+    original_spans:
+      - 129:135
+      - 198:204
+      - 317:323
+      - 1332:1338
+      - 1372:1378
+  - id: CHEBI:16150
+    label: benzoate
+    original_spans:
+      - 1556:1563
+  - id: CHEBI:17578
+    label: toluene
+    original_spans:
+      - 1642:1648
+  - id: NCBITaxon:28232
+    label: Geobacter metallireducens
+    original_spans:
+      - 503:527
+---
+input_text: |
+  {'content': 'Spirochaeta dissipatitropha sp. nov., an alkaliphilic, obligately anaerobic bacterium, and emended description of the genus Spirochaeta Ehrenberg 1835.\n\nA novel obligately anaerobic, mesophilic, alkaliphilic spirochaete, strain ASpC2(T), was isolated from an anaerobic sediment of alkaline, hypersaline Owens Lake in California, USA. The Gram-negative cells are motile, helical in shape and 0.23 x 8.0-18.0 mum. Growth occurs within the following ranges: 13-41 degrees C, with optimal growth at 35 degrees C; 1-3 % (w/v) NaCl, with optimal growth at 2 % (w/v) NaCl; and pH 7.8-10.5, with optimal growth at pH 10.0. The novel isolate is strictly alkaliphilic and requires high concentrations of carbonate ions in the medium. It utilizes some sugars, some organic acids, some amino acids, Casamino acids, yeast extract and peptone. The main end products of glucose fermentation are CO(2) and acetate. Strain ASpC2(T) is resistant to kanamycin and rifampicin, but sensitive to ampicillin, chloramphenicol, gentamicin and tetracycline. The DNA G+C content of the new isolate is 43.8 mol%, its genome size is 6 x 10(8) Da and the melting temperature of its genomic DNA is 71 degrees C. DNA-DNA hybridization experiments demonstrated 46 % similarity with the phylogenetically most closely related species, Spirochaeta asiatica Z-7591(T). On the basis of physiological and molecular properties, the new isolate belongs taxonomically to a novel species within the genus Spirochaeta, for which the name Spirochaeta dissipatitropha sp. nov. is proposed (type strain, ASpC2(T)=ATCC BAA-1083(T)=JCM 12856(T)). S. dissipatitropha ASpC2(T) is the second strain in the genus (after Spirochaeta smaragdinae SEBR 4228(T)) that is able to use proteolysis products as the sole energy source, and additional tests have shown that other halo-alkaliphilic spirochaetes (Spirochaeta americana, Spirochaeta alkalica and Spirochaeta africana) are also able to grow on yeast extract alone; therefore, an emended description for the genus Spirochaeta is given.\n\nPMID:19578151', 'saved_to': None, 'windowed': False}
+raw_completion_output: |-
+  pmid: 19578151
+  study_taxa: Spirochaeta dissipatitropha; Spirochaeta smaragdinae; Spirochaeta americana; Spirochaeta alkalica; Spirochaeta africana
+  strains: ASpC2; ATCC BAA-1083; JCM 12856; Z-7591; SEBR 4228
+  chemicals_mentioned: NaCl; carbonate ions; sugars; organic acids; amino acids; Casamino acids; yeast extract; peptone; glucose; CO2; acetate; kanamycin; rifampicin; ampicillin; chloramphenicol; gentamicin; tetracycline; proteolysis products
+  chemical_utilizations: ASpC2 utilizes sugars; ASpC2 utilizes organic acids; ASpC2 utilizes amino acids; ASpC2 utilizes Casamino acids; ASpC2 utilizes yeast extract; ASpC2 utilizes peptone; ASpC2 ferments glucose; ASpC2 produces CO2 from glucose; ASpC2 produces acetate from glucose; ASpC2 requires carbonate ions; ASpC2 grows_with NaCl; ASpC2 resistant_to kanamycin; ASpC2 resistant_to rifampicin; ASpC2 sensitive_to ampicillin; ASpC2 sensitive_to chloramphenicol; ASpC2 sensitive_to gentamicin; ASpC2 sensitive_to tetracycline; SEBR 4228 utilizes proteolysis products
+  strain_relationships: ASpC2 type_strain_of Spirochaeta dissipatitropha; ATCC BAA-1083 type_strain_of Spirochaeta dissipatitropha; JCM 12856 type_strain_of Spirochaeta dissipatitropha; Z-7591 type_strain_of Spirochaeta asiatica; SEBR 4228 type_strain_of Spirochaeta smaragdinae
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  subject: <the specific strain designation or identifier>
+  predicate: <the type of strain-taxon relationship (strain_of, type_strain_of, isolate_of, etc.)Must be one of: strain_of, type_strain_of, reference_strain_of, isolate_of, variant_of>
+  object: <the parent species or genus this strain belongs to>
+
+
+  Text:
+  SEBR 4228 type_strain_of Spirochaeta smaragdinae
+
+  ===
+
+extracted_object:
+  pmid: '19578151'
+  study_taxa:
+    - NCBITaxon:324679
+    - NCBITaxon:55206
+    - NCBITaxon:159291
+    - NCBITaxon:46356
+    - NCBITaxon:46355
+  strains:
+    - AUTO:ASpC2
+    - AUTO:ATCC%20BAA-1083
+    - AUTO:JCM%2012856
+    - AUTO:Z-7591
+    - AUTO:SEBR%204228
+  chemicals_mentioned:
+    - CHEBI:26710
+    - CHEBI:41609
+    - AUTO:sugars
+    - CHEBI:64709
+    - CHEBI:33709
+    - AUTO:Casamino%20acids
+    - AUTO:yeast%20extract
+    - AUTO:peptone
+    - CHEBI:17234
+    - CHEBI:16526
+    - CHEBI:30089
+    - CHEBI:6104
+    - CHEBI:28077
+    - CHEBI:28971
+    - CHEBI:17698
+    - CHEBI:17833
+    - CHEBI:27902
+    - AUTO:proteolysis%20products
+  chemical_utilizations:
+    - subject: AUTO:ASpC2
+      predicate: uses_as_carbon_source
+      object: AUTO:sugars
+    - subject: AUTO:ASpC2
+      predicate: uses_as_carbon_source
+      object: CHEBI:64709
+    - subject: AUTO:ASpC2
+      predicate: uses_in_other_way
+      object: CHEBI:33709
+    - subject: AUTO:ASpC2
+      predicate: uses_for_growth
+      object: AUTO:Casamino%20acids
+    - subject: AUTO:ASpC2
+      predicate: uses_for_growth
+      object: AUTO:yeast%20extract
+    - subject: AUTO:ASpC2
+      predicate: uses_for_growth
+      object: AUTO:peptone
+    - subject: AUTO:ASpC2
+      predicate: ferments
+      object: CHEBI:17234
+    - subject: AUTO:ASpC2
+      predicate: builds_gas_from
+      object: CHEBI:17234
+    - subject: AUTO:ASpC2
+      predicate: builds_acid_from
+      object: CHEBI:17234
+    - subject: AUTO:ASpC2
+      predicate: requires_for_growth
+      object: CHEBI:41609
+    - subject: AUTO:ASpC2
+      predicate: requires_for_growth
+      object: CHEBI:26710
+    - subject: AUTO:ASpC2
+      predicate: does_not_use_for_growth
+      object: CHEBI:6104
+    - subject: AUTO:ASpC2
+      predicate: does_not_use_in_other_way
+      object: CHEBI:28077
+    - subject: AUTO:ASpC2
+      predicate: does_not_use_for_growth
+      object: CHEBI:28971
+    - subject: AUTO:ASpC2
+      predicate: does_not_use_in_other_way
+      object: CHEBI:17698
+    - subject: AUTO:ASpC2
+      predicate: does_not_use_in_other_way
+      object: CHEBI:17833
+    - subject: AUTO:ASpC2
+      predicate: does_not_use_in_other_way
+      object: CHEBI:27902
+    - subject: AUTO:SEBR%204228
+      predicate: uses_in_other_way
+      object: AUTO:proteolysis%20products
+  strain_relationships:
+    - subject: AUTO:ASpC2
+      predicate: type_strain_of
+      object: NCBITaxon:324679
+    - subject: AUTO:ATCC%20BAA-1083
+      predicate: type_strain_of
+      object: NCBITaxon:324679
+    - subject: AUTO:JCM%2012856
+      predicate: type_strain_of
+      object: NCBITaxon:324679
+    - subject: AUTO:Z-7591
+      predicate: type_strain_of
+      object: NCBITaxon:46357
+    - subject: AUTO:SEBR%204228
+      predicate: type_strain_of
+      object: NCBITaxon:55206
+named_entities:
+  - id: NCBITaxon:324679
+    label: Spirochaeta dissipatitropha
+    original_spans:
+      - 13:39
+      - 1509:1535
+  - id: NCBITaxon:55206
+    label: Spirochaeta smaragdinae
+    original_spans:
+      - 1682:1704
+  - id: NCBITaxon:159291
+    label: Spirochaeta americana
+    original_spans:
+      - 1863:1883
+  - id: NCBITaxon:46356
+    label: Spirochaeta alkalica
+    original_spans:
+      - 1886:1905
+  - id: NCBITaxon:46355
+    label: Spirochaeta africana
+    original_spans:
+      - 1911:1930
+  - id: AUTO:ASpC2
+    label: ASpC2
+    original_spans:
+      - 243:247
+      - 921:925
+      - 1572:1576
+      - 1632:1636
+  - id: AUTO:ATCC%20BAA-1083
+    label: ATCC BAA-1083
+    original_spans:
+      - 1581:1593
+  - id: AUTO:JCM%2012856
+    label: JCM 12856
+    original_spans:
+      - 1598:1606
+  - id: AUTO:Z-7591
+    label: Z-7591
+    original_spans:
+      - 1336:1341
+  - id: AUTO:SEBR%204228
+    label: SEBR 4228
+    original_spans:
+      - 1706:1714
+  - id: CHEBI:26710
+    label: NaCl
+    original_spans:
+      - 536:539
+      - 575:578
+  - id: CHEBI:41609
+    label: carbonate ions
+    original_spans:
+      - 709:722
+  - id: AUTO:sugars
+    label: sugars
+    original_spans:
+      - 756:761
+  - id: CHEBI:64709
+    label: organic acids
+    original_spans:
+      - 769:781
+  - id: CHEBI:33709
+    label: amino acids
+    original_spans:
+      - 789:799
+      - 805:815
+  - id: AUTO:Casamino%20acids
+    label: Casamino acids
+    original_spans:
+      - 802:815
+  - id: AUTO:yeast%20extract
+    label: yeast extract
+    original_spans:
+      - 818:830
+      - 1958:1970
+  - id: AUTO:peptone
+    label: peptone
+    original_spans:
+      - 836:842
+  - id: CHEBI:6104
+    label: kanamycin
+    original_spans:
+      - 946:954
+  - id: CHEBI:28077
+    label: rifampicin
+    original_spans:
+      - 960:969
+  - id: CHEBI:28971
+    label: ampicillin
+    original_spans:
+      - 989:998
+  - id: CHEBI:17698
+    label: chloramphenicol
+    original_spans:
+      - 1001:1015
+  - id: CHEBI:17833
+    label: gentamicin
+    original_spans:
+      - 1018:1027
+  - id: CHEBI:27902
+    label: tetracycline
+    original_spans:
+      - 1033:1044
+  - id: AUTO:proteolysis%20products
+    label: proteolysis products
+    original_spans:
+      - 1740:1759
+  - id: NCBITaxon:46357
+    label: Spirochaeta asiatica
+    original_spans:
+      - 1315:1334

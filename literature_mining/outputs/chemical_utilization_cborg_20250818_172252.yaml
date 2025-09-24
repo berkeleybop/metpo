@@ -1,0 +1,1208 @@
+---
+input_text: |
+  {'content': 'Insulambacter thermoxylanivorax sp. nov., a thermophilic xylanolytic bacterium isolated from compost.\n\nWe isolated and analysed a Gram-negative, facultatively thermophilic, xylan-degrading bacterium that we designated as strain DA-C8T. The strain was isolated from compost from Ishigaki Island, Japan, by enrichment culturing using beech wood xylan as the sole carbon source. The strain showed high xylan degradation ability under anaerobic growth conditions. The isolate grew at 37-60 °C (optimum, 55 °C) and pH 4.0-11.0 (optimum, pH 9.0). As well as xylan, strain DA-C8T could use polysaccharides such as arabinoxylan and galactan as carbon sources. Comparison of 16S rRNA gene sequences indicated that strain DA-C8T was most closely related to Paenibacillus cisolokensis LC2-13AT (93.9 %) and Paenibacillus chitinolyticus HSCC596 (93.5 %). In phylogenetic analysis, strain DA-C8T belonged to the same lineage as Xylanibacillus composti K13T (92.5 %), but there was less statistical support for branching (70 %). Digital DNA-DNA hybridization, average nucleotide identity values and average amino acid sequence identity between strain DA-C8T and P. cisolokensis LC2-13AT were 21.8, 68.3 and 58.2 %, respectively. Those between strain DA-C8T and X. composti K13 were 23.7, 67.7 and 57.6 %, respectively. The whole-genome DNA G+C content of strain DA-C8T was 52.3 mol%. The major cellular fatty acids were C16 : 0 (42.9 %), anteiso-C15 : 0 (20.0 %) and anteiso-C17 : 0 (16.7 %), the major quinone was menaquinone 7, and the major polar lipids were unidentified glycolipids. On the basis of phenotypic, chemotaxonomic and phylogenetic evidence, a novel genus is proposed-Insulambacter gen. nov.-for the novel species Insulambacter thermoxylanivorax sp. nov. The type strain is DA-C8T (=JCM 34211T=DSM 111723T).\n\nPMID:36943336', 'saved_to': None, 'windowed': False}
+raw_completion_output: |-
+  pmid: 36943336  
+  study_taxa: Insulambacter thermoxylanivorax; Paenibacillus cisolokensis; Paenibacillus chitinolyticus; Xylanibacillus composti  
+  strains: Insulambacter thermoxylanivorax DA‑C8T (JCM 34211T=DSM 111723T); Paenibacillus cisolokensis LC2‑13AT; Paenibacillus chitinolyticus HSCC596; Xylanibacillus composti K13T  
+  chemicals_mentioned: xylan; beech wood xylan; arabinoxylan; galactan  
+  chemical_utilizations:  
+  - Insulambacter thermoxylanivorax DA‑C8T – xylan – degrades  
+  - Insulambacter thermoxylanivorax DA‑C8T – arabinoxylan – degrades  
+  - Insulambacter thermoxylanivorax DA‑C8T – galactan – degrades  
+  strain_relationships: DA‑C8T strain_of Insulambacter thermoxylanivorax; LC2‑13AT strain_of Paenibacillus cisolokensis; HSCC596 strain_of Paenibacillus chitinolyticus; K13T strain_of Xylanibacillus composti
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  subject: <the specific strain designation or identifier>
+  predicate: <the type of strain-taxon relationship (strain_of, type_strain_of, isolate_of, etc.)Must be one of: strain_of, type_strain_of, reference_strain_of, isolate_of, variant_of>
+  object: <the parent species or genus this strain belongs to>
+
+
+  Text:
+  K13T strain_of Xylanibacillus composti
+
+  ===
+
+extracted_object:
+  pmid: '36943336'
+  study_taxa:
+    - NCBITaxon:2749268
+    - NCBITaxon:1658519
+    - NCBITaxon:79263
+    - NCBITaxon:1572762
+  strains:
+    - AUTO:Insulambacter%20thermoxylanivorax%20DA%E2%80%91C8T%20%28JCM%2034211T%3DDSM%20111723T%29
+    - AUTO:Paenibacillus%20cisolokensis%20LC2%E2%80%9113AT
+    - AUTO:Paenibacillus%20chitinolyticus%20HSCC596
+    - AUTO:Xylanibacillus%20composti%20K13T
+  chemicals_mentioned:
+    - CHEBI:37166
+    - AUTO:beech%20wood%20xylan
+    - CHEBI:28427
+    - CHEBI:37165
+  chemical_utilizations:
+    - subject: AUTO:Insulambacter%20thermoxylanivorax%20DA%E2%80%91C8T
+      predicate: degrades
+      object: CHEBI:37166
+  strain_relationships:
+    - subject: AUTO:DA%E2%80%91C8T
+      predicate: strain_of
+      object: NCBITaxon:2749268
+    - subject: AUTO:LC2%E2%80%9113AT
+      predicate: strain_of
+      object: NCBITaxon:1658519
+    - subject: AUTO:HSCC596
+      predicate: strain_of
+      object: NCBITaxon:79263
+    - subject: AUTO:K13T
+      predicate: strain_of
+      object: NCBITaxon:1572762
+named_entities:
+  - id: NCBITaxon:2749268
+    label: Insulambacter thermoxylanivorax
+    original_spans:
+      - 13:43
+      - 1731:1761
+  - id: NCBITaxon:1658519
+    label: Paenibacillus cisolokensis
+    original_spans:
+      - 762:787
+  - id: NCBITaxon:79263
+    label: Paenibacillus chitinolyticus
+    original_spans:
+      - 811:838
+  - id: NCBITaxon:1572762
+    label: Xylanibacillus composti
+    original_spans:
+      - 930:952
+  - id: 
+      AUTO:Insulambacter%20thermoxylanivorax%20DA%E2%80%91C8T%20%28JCM%2034211T%3DDSM%20111723T%29
+    label: Insulambacter thermoxylanivorax DA‑C8T (JCM 34211T=DSM 111723T)
+  - id: AUTO:Paenibacillus%20cisolokensis%20LC2%E2%80%9113AT
+    label: Paenibacillus cisolokensis LC2‑13AT
+  - id: AUTO:Paenibacillus%20chitinolyticus%20HSCC596
+    label: Paenibacillus chitinolyticus HSCC596
+    original_spans:
+      - 811:846
+  - id: AUTO:Xylanibacillus%20composti%20K13T
+    label: Xylanibacillus composti K13T
+    original_spans:
+      - 930:957
+  - id: CHEBI:37166
+    label: xylan
+    original_spans:
+      - 33:37
+      - 70:74
+      - 188:192
+      - 358:362
+      - 414:418
+      - 567:571
+      - 629:633
+      - 930:934
+      - 1751:1755
+  - id: AUTO:beech%20wood%20xylan
+    label: beech wood xylan
+    original_spans:
+      - 347:362
+  - id: CHEBI:28427
+    label: arabinoxylan
+    original_spans:
+      - 622:633
+  - id: CHEBI:37165
+    label: galactan
+    original_spans:
+      - 639:646
+  - id: AUTO:Insulambacter%20thermoxylanivorax%20DA%E2%80%91C8T
+    label: Insulambacter thermoxylanivorax DA‑C8T
+  - id: AUTO:DA%E2%80%91C8T
+    label: DA‑C8T
+  - id: AUTO:LC2%E2%80%9113AT
+    label: LC2‑13AT
+  - id: AUTO:HSCC596
+    label: HSCC596
+    original_spans:
+      - 840:846
+  - id: AUTO:K13T
+    label: K13T
+    original_spans:
+      - 954:957
+---
+input_text: |
+  {'content': 'Methylovirgula ligni gen. nov., sp. nov., an obligately acidophilic, facultatively methylotrophic bacterium with a highly divergent mxaF gene.\n\nTwo strains of Gram-negative, aerobic, non-pigmented, non-motile, rod-shaped bacteria were isolated from beechwood blocks during decay by the white-rot fungus Hypholoma fasciculare and were designated strains BW863(T) and BW872. They are capable of methylotrophic growth and assimilate carbon via the ribulose-bisphosphate pathway. In addition to methanol, the novel isolates utilized ethanol, pyruvate and malate. Strains BW863(T) and BW872 are obligately acidophilic, mesophilic organisms capable of growth at pH 3.1-6.5 (with an optimum at pH 4.5-5.0) and at 4-30 degrees C. Phospholipid fatty acid profiles of these bacteria contain unusually large amounts (about 90 %) of C(18 : 1)omega7c, thereby resembling the profiles of Methylobacterium strains. The predominant quinone is Q-10. The DNA G+C content of the novel isolates is 61.8-62.8 mol%. On the basis of 16S rRNA gene sequence similarity, strains BW863(T) and BW872 are most closely related to the acidophilic methanotroph Methylocapsa acidiphila B2(T) (96.5-97 %). Comparative sequence analysis of mxaF, the gene encoding the large subunit of methanol dehydrogenase, placed the MxaF sequences of the two novel strains in a cluster that is distinct from all previously described MxaF sequences of cultivated methylotrophs. The identity between the MxaF sequences of the acidophilic isolates and those from known alpha-, beta- and gammaproteobacterial methylotrophs was respectively 69-75, 61-63 and 64-67 %. The data therefore suggest that strains BW863(T) and BW872 represent a novel genus and species of methylotrophic bacteria, for which the name Methylovirgula ligni gen. nov., sp. nov. is proposed. Strain BW863(T) (=DSM 19998(T) =NCIMB 14408(T)) is the type strain of Methylovirgula ligni.\n\nPMID:19622650', 'saved_to': None, 'windowed': False}
+raw_completion_output: |-
+  pmid: 19622650  
+  study_taxa: Methylovirgula ligni; Methylocapsa acidiphila; Methylobacterium  
+  strains: Methylovirgula ligni BW863(T); Methylovirgula ligni BW872; Methylovirgula ligni DSM 19998(T); Methylovirgula ligni NCIMB 14408(T); Methylocapsa acidiphila B2(T)  
+  chemicals_mentioned: methanol; ethanol; pyruvate; malate  
+  chemical_utilizations: Methylovirgula ligni - methanol - utilization; Methylovirgula ligni - ethanol - utilization; Methylovirgula ligni - pyruvate - utilization; Methylovirgula ligni - malate - utilization  
+  strain_relationships: BW863(T) strain_of Methylovirgula ligni; BW872 strain_of Methylovirgula ligni; DSM 19998(T) strain_of Methylovirgula ligni; NCIMB 14408(T) strain_of Methylovirgula ligni; B2(T) strain_of Methylocapsa acidiphila
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  subject: <the specific strain designation or identifier>
+  predicate: <the type of strain-taxon relationship (strain_of, type_strain_of, isolate_of, etc.)Must be one of: strain_of, type_strain_of, reference_strain_of, isolate_of, variant_of>
+  object: <the parent species or genus this strain belongs to>
+
+
+  Text:
+  B2(T) strain_of Methylocapsa acidiphila
+
+  ===
+
+extracted_object:
+  pmid: '19622650'
+  study_taxa:
+    - NCBITaxon:569860
+    - NCBITaxon:133552
+    - NCBITaxon:407
+  strains:
+    - AUTO:Methylovirgula%20ligni%20BW863%28T%29
+    - AUTO:Methylovirgula%20ligni%20BW872
+    - AUTO:Methylovirgula%20ligni%20DSM%2019998%28T%29
+    - AUTO:Methylovirgula%20ligni%20NCIMB%2014408%28T%29
+    - NCBITaxon:395964
+  chemicals_mentioned:
+    - CHEBI:17790
+    - CHEBI:16236
+    - CHEBI:15361
+    - CHEBI:25115
+  chemical_utilizations:
+    - subject: NCBITaxon:569860
+      predicate: uses_as_carbon_source
+      object: CHEBI:17790
+    - subject: NCBITaxon:569860
+      predicate: uses_as_carbon_source
+      object: CHEBI:16236
+    - subject: NCBITaxon:569860
+      predicate: uses_as_carbon_source
+      object: CHEBI:15361
+    - subject: NCBITaxon:569860
+      predicate: uses_as_carbon_source
+      object: CHEBI:25115
+  strain_relationships:
+    - subject: AUTO:BW863%28T%29
+      predicate: strain_of
+      object: NCBITaxon:569860
+    - subject: AUTO:BW872
+      predicate: strain_of
+      object: NCBITaxon:569860
+    - subject: AUTO:DSM%2019998%28T%29
+      predicate: strain_of
+      object: NCBITaxon:569860
+    - subject: AUTO:NCIMB%2014408%28T%29
+      predicate: strain_of
+      object: NCBITaxon:569860
+    - subject: AUTO:B2%28T%29
+      predicate: strain_of
+      object: NCBITaxon:133552
+named_entities:
+  - id: NCBITaxon:569860
+    label: Methylovirgula ligni
+    original_spans:
+      - 13:32
+      - 1771:1790
+      - 1895:1914
+  - id: NCBITaxon:133552
+    label: Methylocapsa acidiphila
+    original_spans:
+      - 1144:1166
+  - id: NCBITaxon:407
+    label: Methylobacterium
+    original_spans:
+      - 889:904
+  - id: AUTO:Methylovirgula%20ligni%20BW863%28T%29
+    label: Methylovirgula ligni BW863(T)
+  - id: AUTO:Methylovirgula%20ligni%20BW872
+    label: Methylovirgula ligni BW872
+  - id: AUTO:Methylovirgula%20ligni%20DSM%2019998%28T%29
+    label: Methylovirgula ligni DSM 19998(T)
+  - id: AUTO:Methylovirgula%20ligni%20NCIMB%2014408%28T%29
+    label: Methylovirgula ligni NCIMB 14408(T)
+  - id: NCBITaxon:395964
+    label: Methylocapsa acidiphila B2(T)
+    original_spans:
+      - 1144:1172
+  - id: CHEBI:17790
+    label: methanol
+    original_spans:
+      - 506:513
+      - 1265:1272
+  - id: CHEBI:16236
+    label: ethanol
+    original_spans:
+      - 507:513
+      - 544:550
+      - 1266:1272
+  - id: CHEBI:15361
+    label: pyruvate
+    original_spans:
+      - 553:560
+  - id: CHEBI:25115
+    label: malate
+    original_spans:
+      - 566:571
+  - id: AUTO:BW863%28T%29
+    label: BW863(T)
+    original_spans:
+      - 368:375
+      - 582:589
+      - 1068:1075
+      - 1669:1676
+      - 1832:1839
+  - id: AUTO:BW872
+    label: BW872
+    original_spans:
+      - 381:385
+      - 595:599
+      - 1081:1085
+      - 1682:1686
+  - id: AUTO:DSM%2019998%28T%29
+    label: DSM 19998(T)
+    original_spans:
+      - 1843:1854
+  - id: AUTO:NCIMB%2014408%28T%29
+    label: NCIMB 14408(T)
+    original_spans:
+      - 1857:1870
+  - id: AUTO:B2%28T%29
+    label: B2(T)
+    original_spans:
+      - 1168:1172
+---
+input_text: |
+  {'content': 'Sporosalibacterium faouarense gen. nov., sp. nov., a moderately halophilic bacterium isolated from oil-contaminated soil.\n\nA novel strictly anaerobic, moderately halophilic and mesophilic bacterium, designated strain SOL3f37(T), was isolated from a hydrocarbon-polluted soil surrounding a deep petroleum environment located in south Tunisia. Cells of strain SOL3f37(T) stained Gram-positive and were motile, straight and spore-forming. Strain SOL3f37(T) had a typical Gram-positive-type cell-wall structure, unlike the thick, multilayered cell wall of its closest relative Clostridiisalibacter paucivorans. The major fatty acids were iso-C(15 : 0) (41 %), iso-C(14 : 0) 3-OH and/or iso-C(15 : 0) dimethyl acetal (21.6 %), iso-C(13 : 0) (4.4 %), anteiso-C(15 : 0) (3.9 %) and iso-C(15 : 1) (2.8 %). Strain SOL3f37(T) grew between 20 and 48 °C (optimum 40 °C) and at pH 6.2-8.1 (optimum pH 6.9). Strain SOL3f37(T) required at least 0.5 NaCl l(-1) and grew in the presence of NaCl concentrations up to 150 g l(-1) (optimum 40 g l(-1)). Yeast extract (2 g l(-1)) was required for degradation of pyruvate, fumarate, fructose, glucose and mannitol. Also, strain SOL3f37(T) grew heterotrophically on yeast extract, peptone and bio-Trypticase, but was unable to grow on Casamino acids. Sulfate, thiosulfate, sulfite, elemental sulfur, fumarate, nitrate and nitrite were not reduced. The DNA G+C content was 30.7 mol%. Phylogenetic analysis based on 16S rRNA gene sequences revealed that strain SOL3f37(T) was a member of the family Clostridiaceae in the order Clostridiales; strain SOL3f37(T) was related to members of various genera of the family Clostridiaceae. It exhibited highest 16S rRNA gene sequence similarity (93.4 %) with Clostridiisalibacter paucivorans 37HS60(T), 91.8 % with Thermohalobacter berrensis CTT3(T) and 91.7 % with Caloranaerobacter azorensis MV1087(T). On the basis of genotypic, phenotypic and phylogenetic data, it is suggested that strain SOL3f37(T) represents a novel species in a new genus. The name Sporosalibacterium faouarense gen. nov., sp. nov. is proposed, with SOL3f37(T) (=DSM 21485(T) =JCM 15487(T)) as the type strain of Sporosalibacterium faouarense.\n\nPMID:20173012', 'saved_to': None, 'windowed': False}
+raw_completion_output: |-
+  pmid: 20173012  
+  study_taxa: Sporosalibacterium faouarense  
+  strains: Sporosalibacterium faouarense SOL3f37(T); Sporosalibacterium faouarense DSM 21485(T); Sporosalibacterium faouarense JCM 15487(T); Clostridiisalibacter paucivorans 37HS60(T); Thermohalobacter berrensis CTT3(T); Caloranaerobacter azorensis MV1087(T)  
+  chemicals_mentioned: NaCl; yeast extract; peptone; bio‑Trypticase; Casamino acids; pyruvate; fumarate; fructose; glucose; mannitol; sulfate; thiosulfate; sulfite; elemental sulfur; nitrate; nitrite  
+  chemical_utilizations: Sporosalibacterium faouarense SOL3f37(T) degrade pyruvate; Sporosalibacterium faouarense SOL3f37(T) degrade fumarate; Sporosalibacterium faouarense SOL3f37(T) degrade fructose; Sporosalibacterium faouarense SOL3f37(T) degrade glucose; Sporosalibacterium faouarense SOL3f37(T) degrade mannitol; Sporosalibacterium faouarense SOL3f37(T) grow on yeast extract; Sporosalibacterium faouarense SOL3f37(T) grow on peptone; Sporosalibacterium faouarense SOL3f37(T) grow on bio‑Trypticase; Sporosalibacterium faouarense SOL3f37(T) not reduce sulfate; Sporosalibacterium faouarense SOL3f37(T) not reduce thiosulfate; Sporosalibacterium faouarense SOL3f37(T) not reduce sulfite; Sporosalibacterium faouarense SOL3f37(T) not reduce elemental sulfur; Sporosalibacterium faouarense SOL3f37(T) not reduce nitrate; Sporosalibacterium faouarense SOL3f37(T) not reduce nitrite  
+  strain_relationships: SOL3f37(T) strain_of Sporosalibacterium faouarense; DSM 21485(T) strain_of Sporosalibacterium faouarense; JCM 15487(T) strain_of Sporosalibacterium faouarense; 37HS60(T) strain_of Clostridiisalibacter paucivorans; CTT3(T) strain_of Thermohalobacter berrensis; MV1087(T) strain_of Caloranaerobacter azorensis
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  subject: <the specific strain designation or identifier>
+  predicate: <the type of strain-taxon relationship (strain_of, type_strain_of, isolate_of, etc.)Must be one of: strain_of, type_strain_of, reference_strain_of, isolate_of, variant_of>
+  object: <the parent species or genus this strain belongs to>
+
+
+  Text:
+  MV1087(T) strain_of Caloranaerobacter azorensis
+
+  ===
+
+extracted_object:
+  pmid: '20173012'
+  study_taxa:
+    - NCBITaxon:516123
+  strains:
+    - AUTO:Sporosalibacterium%20faouarense%20SOL3f37%28T%29
+    - AUTO:Sporosalibacterium%20faouarense%20DSM%2021485%28T%29
+    - AUTO:Sporosalibacterium%20faouarense%20JCM%2015487%28T%29
+    - AUTO:Clostridiisalibacter%20paucivorans%2037HS60%28T%29
+    - AUTO:Thermohalobacter%20berrensis%20CTT3%28T%29
+    - AUTO:Caloranaerobacter%20azorensis%20MV1087%28T%29
+  chemicals_mentioned:
+    - CHEBI:26710
+    - AUTO:yeast%20extract
+    - AUTO:peptone
+    - AUTO:bio%E2%80%91Trypticase
+    - AUTO:Casamino%20acids
+    - CHEBI:15361
+    - CHEBI:29806
+    - CHEBI:28757
+    - CHEBI:17234
+    - CHEBI:29864
+    - CHEBI:16189
+    - CHEBI:26977
+    - CHEBI:17359
+    - CHEBI:33403
+    - CHEBI:17632
+    - CHEBI:16301
+  chemical_utilizations:
+    - subject: AUTO:Sporosalibacterium%20faouarense%20SOL3f37%28T%29
+      predicate: degrades
+      object: CHEBI:15361
+    - subject: AUTO:Sporosalibacterium%20faouarense%20SOL3f37%28T%29
+      predicate: degrades
+      object: CHEBI:29806
+    - subject: AUTO:Sporosalibacterium%20faouarense%20SOL3f37%28T%29
+      predicate: degrades
+      object: CHEBI:28757
+    - subject: AUTO:Sporosalibacterium%20faouarense%20SOL3f37%28T%29
+      predicate: degrades
+      object: CHEBI:17234
+    - subject: AUTO:Sporosalibacterium%C2%A0faouarense%C2%A0SOL3f37%28T%29
+      predicate: degrades
+      object: CHEBI:29864
+    - subject: AUTO:Sporosalibacterium%20faouarense%20SOL3f37%28T%29
+      predicate: uses_for_growth
+      object: AUTO:yeast%20extract
+    - subject: AUTO:Sporosalibacterium%20faouarense%20SOL3f37%28T%29
+      predicate: uses_for_growth
+      object: AUTO:peptone
+    - subject: AUTO:Sporosalibacterium%20faouarense%20SOL3f37%28T%29
+      predicate: uses_for_growth
+      object: AUTO:bio%E2%80%91Trypticase
+    - subject: AUTO:Sporosalibacterium%20faouarense%20SOL3f37%28T%29
+      predicate: does_not_reduce
+      object: CHEBI:16189
+    - subject: AUTO:Sporosalibacterium%20faouarense%20SOL3f37%28T%29
+      predicate: does_not_reduce
+      object: CHEBI:26977
+    - subject: AUTO:Sporosalibacterium%20faouarense%20SOL3f37%28T%29
+      predicate: does_not_reduce
+      object: CHEBI:17359
+    - subject: AUTO:Sporosalibacterium%20faouarense%20SOL3f37%28T%29
+      predicate: does_not_reduce
+      object: CHEBI:33403
+    - subject: AUTO:Sporosalibacterium%20faouarense%20SOL3f37%28T%29
+      predicate: does_not_reduce
+      object: CHEBI:17632
+    - subject: AUTO:Sporosalibacterium%20faouarense%20SOL3f37%28T%29
+      predicate: does_not_reduce
+      object: CHEBI:16301
+  strain_relationships:
+    - subject: AUTO:SOL3f37%28T%29
+      predicate: strain_of
+      object: NCBITaxon:516123
+    - subject: AUTO:DSM%2021485%28T%29
+      predicate: strain_of
+      object: NCBITaxon:516123
+    - subject: AUTO:JCM%2015487%28T%29
+      predicate: strain_of
+      object: NCBITaxon:516123
+    - subject: AUTO:37HS60%28T%29
+      predicate: strain_of
+      object: NCBITaxon:408753
+    - subject: AUTO:CTT3%28T%29
+      predicate: strain_of
+      object: NCBITaxon:99594
+    - subject: AUTO:MV1087%28T%29
+      predicate: strain_of
+      object: NCBITaxon:116090
+named_entities:
+  - id: NCBITaxon:516123
+    label: Sporosalibacterium faouarense
+    original_spans:
+      - 13:41
+      - 2038:2066
+      - 2169:2197
+  - id: AUTO:Sporosalibacterium%20faouarense%20SOL3f37%28T%29
+    label: Sporosalibacterium faouarense SOL3f37(T)
+  - id: AUTO:Sporosalibacterium%20faouarense%20DSM%2021485%28T%29
+    label: Sporosalibacterium faouarense DSM 21485(T)
+  - id: AUTO:Sporosalibacterium%20faouarense%20JCM%2015487%28T%29
+    label: Sporosalibacterium faouarense JCM 15487(T)
+  - id: AUTO:Clostridiisalibacter%20paucivorans%2037HS60%28T%29
+    label: Clostridiisalibacter paucivorans 37HS60(T)
+    original_spans:
+      - 1740:1781
+  - id: AUTO:Thermohalobacter%20berrensis%20CTT3%28T%29
+    label: Thermohalobacter berrensis CTT3(T)
+    original_spans:
+      - 1796:1829
+  - id: AUTO:Caloranaerobacter%20azorensis%20MV1087%28T%29
+    label: Caloranaerobacter azorensis MV1087(T)
+    original_spans:
+      - 1847:1883
+  - id: CHEBI:26710
+    label: NaCl
+    original_spans:
+      - 949:952
+      - 988:991
+  - id: AUTO:yeast%20extract
+    label: yeast extract
+    original_spans:
+      - 1048:1060
+      - 1208:1220
+  - id: AUTO:peptone
+    label: peptone
+    original_spans:
+      - 1223:1229
+  - id: AUTO:bio%E2%80%91Trypticase
+    label: bio‑Trypticase
+  - id: AUTO:Casamino%20acids
+    label: Casamino acids
+    original_spans:
+      - 1277:1290
+  - id: CHEBI:29806
+    label: fumarate
+    original_spans:
+      - 1116:1123
+      - 1342:1349
+  - id: CHEBI:28757
+    label: fructose
+    original_spans:
+      - 1126:1133
+  - id: CHEBI:17234
+    label: glucose
+    original_spans:
+      - 1136:1142
+  - id: CHEBI:29864
+    label: mannitol
+    original_spans:
+      - 1148:1155
+  - id: CHEBI:16189
+    label: sulfate
+    original_spans:
+      - 1293:1299
+      - 1306:1312
+  - id: CHEBI:26977
+    label: thiosulfate
+    original_spans:
+      - 1302:1312
+  - id: CHEBI:17359
+    label: sulfite
+    original_spans:
+      - 1315:1321
+  - id: CHEBI:33403
+    label: elemental sulfur
+    original_spans:
+      - 1324:1339
+  - id: CHEBI:17632
+    label: nitrate
+    original_spans:
+      - 1352:1358
+  - id: CHEBI:16301
+    label: nitrite
+    original_spans:
+      - 1364:1370
+  - id: AUTO:Sporosalibacterium%C2%A0faouarense%C2%A0SOL3f37%28T%29
+    label: Sporosalibacterium faouarense SOL3f37(T)
+  - id: AUTO:SOL3f37%28T%29
+    label: SOL3f37(T)
+    original_spans:
+      - 232:241
+      - 373:382
+      - 458:467
+      - 820:829
+      - 916:925
+      - 1171:1180
+      - 1501:1510
+      - 1589:1598
+      - 1975:1984
+      - 2106:2115
+  - id: AUTO:DSM%2021485%28T%29
+    label: DSM 21485(T)
+    original_spans:
+      - 2119:2130
+  - id: AUTO:JCM%2015487%28T%29
+    label: JCM 15487(T)
+    original_spans:
+      - 2133:2144
+  - id: AUTO:37HS60%28T%29
+    label: 37HS60(T)
+    original_spans:
+      - 1773:1781
+  - id: NCBITaxon:408753
+    label: Clostridiisalibacter paucivorans
+    original_spans:
+      - 588:619
+      - 1740:1771
+  - id: AUTO:CTT3%28T%29
+    label: CTT3(T)
+    original_spans:
+      - 1823:1829
+  - id: NCBITaxon:99594
+    label: Thermohalobacter berrensis
+    original_spans:
+      - 1796:1821
+  - id: AUTO:MV1087%28T%29
+    label: MV1087(T)
+    original_spans:
+      - 1875:1883
+  - id: NCBITaxon:116090
+    label: Caloranaerobacter azorensis
+    original_spans:
+      - 1847:1873
+---
+input_text: |
+  {'content': 'Ethanoligenens harbinense gen. nov., sp. nov., isolated from molasses wastewater.\n\nTwo strictly anaerobic bacterial strains (YUAN-3T and X-29) were isolated from anaerobic activated sludge of molasses wastewater in a continuous stirred-tank reactor. The strains were Gram-positive, non-spore-forming, mesophilic and motile. Cells were regular rods (0.4-0.8 x 1.5-8.0 microm) and occurred singly, in pairs and sometimes in chains of up to eight. Autoaggregative and autofluorescent growth of strain YUAN-3T and non-aggregative growth of strain X-29 were observed at 20-44 degrees C and pH 3.5-9.0. Both strains hydrolysed gelatin and aesculin and fermented several kinds of mono-, di- and oligosaccharides. Fermentation end products formed from glucose were acetate, ethanol, hydrogen and carbon dioxide. The predominant cellular fatty acids were the branched-chain fatty acids iso-C(16 : 0) (44.18 %) and iso-C(12 : 0) (26.67 %). The DNA G+C contents of strains YUAN-3T and X-29 were 47.8 and 49.0 mol%, respectively. Phylogenetic analysis based on 16S rRNA gene sequences revealed that the isolates represent a novel phyletic sublineage within the Clostridium cellulosi rRNA cluster, with <92 % 16S rRNA gene sequence similarity to currently known species. On the basis of polyphasic evidence from this study, it is proposed that the unknown bacterium should be classified in a new genus as a novel species, Ethanoligenens harbinense gen. nov., sp. nov. The type strain of Ethanoligenens harbinense is YUAN-3T (=JCM 12961T = CGMCC 1.5033T).\n\nPMID:16585689', 'saved_to': None, 'windowed': False}
+raw_completion_output: |-
+  pmid: 16585689  
+  study_taxa: Ethanoligenens harbinense  
+  strains: Ethanoligenens harbinense YUAN-3T, Ethanoligenens harbinense X-29  
+  chemicals_mentioned: gelatin; aesculin; mono-, di-, oligosaccharides; glucose; acetate; ethanol; hydrogen; CO₂  
+  chemical_utilizations: Ethanoligenens harbinense YUAN-3T hydrolyses gelatin; Ethanoligenens harbinense X-29 hydrolyses gelatin; Ethanoligenens harbinense YUAN-3T hydrolyses aesculin; Ethanoligenens harbinense X-29 hydrolyses aesculin; Ethanoligenens harbinense YUAN-3T ferments mono-, di-, oligosaccharides; Ethanoligenens harbinense X-29 ferments mono-, di-, oligosaccharides; Ethanoligenens harbinense YUAN-3T ferments glucose; Ethanoligenens harbinense X-29 ferments glucose  
+  strain_relationships: YUAN-3T strain_of Ethanoligenens harbinense; X-29 strain_of Ethanoligenens harbinense; YUAN-3T type_strain_of Ethanoligenens harbinense
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  subject: <the specific strain designation or identifier>
+  predicate: <the type of strain-taxon relationship (strain_of, type_strain_of, isolate_of, etc.)Must be one of: strain_of, type_strain_of, reference_strain_of, isolate_of, variant_of>
+  object: <the parent species or genus this strain belongs to>
+
+
+  Text:
+  YUAN-3T type_strain_of Ethanoligenens harbinense
+
+  ===
+
+extracted_object:
+  pmid: '16585689'
+  study_taxa:
+    - NCBITaxon:253239
+  strains:
+    - AUTO:Ethanoligenens%20harbinense%20YUAN-3T%2C%20Ethanoligenens%20harbinense%20X-29
+  chemicals_mentioned:
+    - CHEBI:5291
+    - CHEBI:4853
+    - AUTO:mono-%2C%20di-%2C%20oligosaccharides
+    - CHEBI:17234
+    - CHEBI:30089
+    - CHEBI:16236
+    - CHEBI:49637
+    - AUTO:CO%E2%82%82
+  chemical_utilizations:
+    - subject: AUTO:Ethanoligenens%20harbinense%20YUAN-3T
+      predicate: degrades
+      object: CHEBI:5291
+    - subject: AUTO:Ethanoligenens%20harbinense%20X-29
+      predicate: hydrolyzes
+      object: CHEBI:5291
+    - subject: AUTO:Ethanoligenens%20harbinense%20YUAN-3T
+      predicate: hydrolyzes
+      object: CHEBI:4853
+    - subject: AUTO:Ethanoligenens%20harbinense%20X-29
+      predicate: hydrolyzes
+      object: CHEBI:4853
+    - subject: AUTO:Ethanoligenens%20harbinense%20YUAN-3T
+      predicate: ferments
+      object: AUTO:mono-%2C%20di-%2C%20oligosaccharides
+    - subject: AUTO:Ethanoligenens%20harbinense%20X-29
+      predicate: ferments
+      object: AUTO:mono-%2C%20di-%2C%20oligosaccharides
+    - subject: AUTO:Ethanoligenens%20harbinense%20YUAN-3T
+      predicate: ferments
+      object: CHEBI:17234
+    - subject: AUTO:Ethanoligenens%20harbinense%20X-29
+      predicate: ferments
+      object: CHEBI:17234
+  strain_relationships:
+    - subject: AUTO:YUAN-3T
+      predicate: strain_of
+      object: NCBITaxon:253239
+    - subject: AUTO:X-29
+      predicate: strain_of
+      object: NCBITaxon:253239
+    - subject: AUTO:YUAN-3T
+      predicate: type_strain_of
+      object: NCBITaxon:253239
+named_entities:
+  - id: NCBITaxon:253239
+    label: Ethanoligenens harbinense
+    original_spans:
+      - 13:37
+      - 1424:1448
+      - 1489:1513
+  - id: 
+      AUTO:Ethanoligenens%20harbinense%20YUAN-3T%2C%20Ethanoligenens%20harbinense%20X-29
+    label: Ethanoligenens harbinense YUAN-3T, Ethanoligenens harbinense X-29
+  - id: CHEBI:5291
+    label: gelatin
+    original_spans:
+      - 636:642
+  - id: CHEBI:4853
+    label: aesculin
+    original_spans:
+      - 648:655
+  - id: AUTO:mono-%2C%20di-%2C%20oligosaccharides
+    label: mono-, di-, oligosaccharides
+  - id: CHEBI:30089
+    label: acetate
+    original_spans:
+      - 772:778
+  - id: CHEBI:49637
+    label: hydrogen
+    original_spans:
+      - 790:797
+  - id: AUTO:CO%E2%82%82
+    label: CO₂
+  - id: AUTO:Ethanoligenens%20harbinense%20YUAN-3T
+    label: Ethanoligenens harbinense YUAN-3T
+  - id: AUTO:Ethanoligenens%20harbinense%20X-29
+    label: Ethanoligenens harbinense X-29
+  - id: AUTO:YUAN-3T
+    label: YUAN-3T
+    original_spans:
+      - 140:146
+      - 513:519
+      - 977:983
+      - 1518:1524
+  - id: AUTO:X-29
+    label: X-29
+    original_spans:
+      - 152:155
+      - 558:561
+      - 989:992
+---
+input_text: |
+  {'content': 'Parapedobacter pyrenivorans sp. nov., isolated from a pyrene-degrading microbial enrichment, and emended description of the genus Parapedobacter.\n\nA novel pyrene-degrading, Gram-negative bacterium, designated strain P-4(T), was isolated from a polycyclic aromatic hydrocarbon-degrading enrichment of polluted soils from a coking chemical plant. Cells of strain P-4(T) were non-motile rods. Strain P-4(T) grew at 15-45 °C (optimum, 37 °C), pH 6.0-10.0 (optimum, pH 8.5) and 0-4 % (w/v) NaCl. Analysis of the 16S rRNA gene sequence showed that strain P-4(T) was related phylogenetically to members of the genus Parapedobacter, with sequence similarity of 93.7-95.1 %. The cellular fatty acids of strain P-4(T) were iso-C15 : 0, summed feature 3 (C16 : 1ω7c and/or C16 : 1ω6c), iso-C17 : 0 3-OH, summed feature 9 (iso-C17 : 1ω9c and/or 10-methyl C16 : 0), anteiso-C15 : 0, iso-C15 : 0 3-OH, C16 : 0, iso-C15 : 1 G, C16 : 0 3-OH and C17 : 0 2-OH. Cells contained menaquinone 7 as the major quinone. The polyamine of strain P-4(T) was homospermidine, and the main polar lipids were phosphatidylethanolamine and a sphingolipid. The G+C content of the DNA was 45.4 mol%. Strain P-4(T) showed a range of phenotypic characteristics that differentiated it from previously recognized Parapedobacter species, particularly its ability to use pyrene as a sole carbon source for growth and its alkaline optimal pH for growth (pH 8.5). On the basis of these results, it is concluded that strain P-4(T) represents a novel species of the genus Parapedobacter, for which the name Parapedobacter pyrenivorans (type strain P-4(T) = NBRC 109113(T) = CGMCC 1.12195(T)) is proposed. An emended description of the genus Parapedobacter is also provided.\n\nPMID:23710053', 'saved_to': None, 'windowed': False}
+raw_completion_output: |-
+  pmid: 23710053  
+  study_taxa: Parapedobacter pyrenivorans  
+  strains: Parapedobacter pyrenivorans strain P-4(T); NBRC 109113(T); CGMCC 1.12195(T)  
+  chemicals_mentioned: pyrene; NaCl  
+  chemical_utilizations: Parapedobacter pyrenivorans strain P-4(T) - uses pyrene as sole carbon source  
+  strain_relationships: P-4(T) strain_of Parapedobacter pyrenivorans; NBRC 109113(T) type_strain_of Parapedobacter pyrenivorans; CGMCC 1.12195(T) type_strain_of Parapedobacter pyrenivorans
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  subject: <the specific strain designation or identifier>
+  predicate: <the type of strain-taxon relationship (strain_of, type_strain_of, isolate_of, etc.)Must be one of: strain_of, type_strain_of, reference_strain_of, isolate_of, variant_of>
+  object: <the parent species or genus this strain belongs to>
+
+
+  Text:
+  CGMCC 1.12195(T) type_strain_of Parapedobacter pyrenivorans
+
+  ===
+
+extracted_object:
+  pmid: '23710053'
+  study_taxa:
+    - NCBITaxon:1305674
+  strains:
+    - AUTO:Parapedobacter%20pyrenivorans%20strain%20P-4%28T%29
+    - AUTO:NBRC%20109113%28T%29
+    - AUTO:CGMCC%201.12195%28T%29
+  chemicals_mentioned:
+    - CHEBI:39106
+    - CHEBI:26710
+  chemical_utilizations:
+    - subject: AUTO:Parapedobacter%20pyrenivorans%20strain%20P-4%28T%29
+      predicate: uses_as_carbon_source
+      object: CHEBI:39106
+  strain_relationships:
+    - subject: AUTO:P-4%28T%29
+      predicate: strain_of
+      object: NCBITaxon:1305674
+    - subject: AUTO:NBRC%20109113%28T%29
+      predicate: type_strain_of
+      object: NCBITaxon:1305674
+    - subject: AUTO:CGMCC%201.12195%28T%29
+      predicate: type_strain_of
+      object: NCBITaxon:1305674
+named_entities:
+  - id: NCBITaxon:1305674
+    label: Parapedobacter pyrenivorans
+    original_spans:
+      - 13:39
+      - 1576:1602
+  - id: AUTO:Parapedobacter%20pyrenivorans%20strain%20P-4%28T%29
+    label: Parapedobacter pyrenivorans strain P-4(T)
+  - id: AUTO:NBRC%20109113%28T%29
+    label: NBRC 109113(T)
+    original_spans:
+      - 1626:1639
+  - id: AUTO:CGMCC%201.12195%28T%29
+    label: CGMCC 1.12195(T)
+    original_spans:
+      - 1643:1658
+  - id: CHEBI:39106
+    label: pyrene
+    original_spans:
+      - 67:72
+      - 170:175
+      - 1344:1349
+  - id: AUTO:P-4%28T%29
+    label: P-4(T)
+    original_spans:
+      - 231:236
+      - 376:381
+      - 412:417
+      - 564:569
+      - 716:721
+      - 1034:1039
+      - 1186:1191
+      - 1494:1499
+      - 1617:1622
+---
+input_text: |
+  {'content': 'Alteromonas fortis sp. nov., a non-flagellated bacterium specialized in the degradation of iota-carrageenan, and emended description of the genus Alteromonas.\n\nStrain 1T, isolated in the 1970s from the thallus of the carrageenophytic red algae, Eucheuma spinosum, collected in Hawaii, USA, was characterized using a polyphasic method. Cells were Gram-stain-negative, strictly aerobic, non-flagellated, ovoid or rod-shaped and grew optimally at 20-25 °C, at pH 6-9 and with 2-4 % NaCl. Strain 1T used the seaweed polysaccharides ι-carrageenan, laminarin and alginic acid as sole carbon sources. The major fatty acids were C16 : 0, C18 : 1 ω7c and summed feature 3 (C16 : 1 ω7c and/or iso-C15 : 0 2OH) with significant amounts (>6 %) of C16 : 0 N alcohol and 10 methyl C17 : 0. The respiratory quinone was Q-8 and major polar lipids were phosphatidylethanolamine, phosphatidylglycerol and an unknown aminolipid. Phylogenetic analyses showed that the bacterium is affiliated to the genus Alteromonas (family Alteromonadaceae, class Gammaproteobacteria). Strain 1T exhibited 16S rRNA gene sequence similarity values of 98.8 and 99.2 % to the type strains of Alteromonas mediterranea and Alteromonas australica respectively, and of 95.2-98.6 % to other species of the genus Alteromonas. The DNA G+C content of strain 1T was determined to be 43.9 mol%. Digital DNA-DNA hybridization predictions by the ANI and GGDC methods between strain 1T and other members of the genus Alteromonas showed values below 83 % and 30 %, respectively. The phenotypic, phylogenetic and genomic analyses show that strain 1T is distinct from species of the genus Alteromonas with validly published names and that it represents a novel species of the genus Alteromonas, for which the name Alteromonasfortis sp. nov. is proposed. The type strain is 1T (=ATCC 43554T=RCC 5933T=CIP 111645T=DSM 106819T).\n\nPMID:31199221', 'saved_to': None, 'windowed': False}
+raw_completion_output: |-
+  pmid: 31199221  
+  study_taxa: Alteromonas  
+  strains: Alteromonas fortis 1T; Alteromonas fortis ATCC 43554T; Alteromonas fortis RCC 5933T; Alteromonas fortis CIP 111645T; Alteromonas fortis DSM 106819T  
+  chemicals_mentioned: iota-carrageenan; laminarin; alginic acid; NaCl  
+  chemical_utilizations: (Alteromonas fortis,iota-carrageenan,utilization); (Alteromonas fortis,laminarin,utilization); (Alteromonas fortis,alginic acid,utilization)  
+  strain_relationships: 1T strain_of Alteromonas fortis; Alteromonas fortis ATCC 43554T type_strain_of Alteromonas fortis; Alteromonas fortis RCC 5933T type_strain_of Alteromonas fortis; Alteromonas fortis CIP 111645T type_strain_of Alteromonas fortis; Alteromonas fortis DSM 106819T type_strain_of Alteromonas fortis
+prompt: |+
+  From the text below, extract the following entities in the following format:
+
+  subject: <the specific strain designation or identifier>
+  predicate: <the type of strain-taxon relationship (strain_of, type_strain_of, isolate_of, etc.)Must be one of: strain_of, type_strain_of, reference_strain_of, isolate_of, variant_of>
+  object: <the parent species or genus this strain belongs to>
+
+
+  Text:
+  Alteromonas fortis DSM 106819T type_strain_of Alteromonas fortis
+
+  ===
+
+extracted_object:
+  pmid: '31199221'
+  study_taxa:
+    - NCBITaxon:226
+  strains:
+    - AUTO:Alteromonas%20fortis%201T
+    - AUTO:Alteromonas%20fortis%20ATCC%2043554T
+    - AUTO:Alteromonas%20fortis%20RCC%205933T
+    - AUTO:Alteromonas%20fortis%20CIP%20111645T
+    - AUTO:Alteromonas%20fortis%20DSM%20106819T
+  chemicals_mentioned:
+    - CHEBI:37168
+    - CHEBI:6364
+    - CHEBI:17548
+    - CHEBI:26710
+  chemical_utilizations:
+    - subject: AUTO:Alteromonas%20fortis
+      predicate: uses_as_carbon_source
+      object: CHEBI:37168
+    - subject: AUTO:Alteromonas%20fortis
+      predicate: uses_as_carbon_source
+      object: CHEBI:6364
+    - subject: AUTO:Alteromonas%20fortis
+      predicate: uses_as_carbon_source
+      object: CHEBI:17548
+  strain_relationships:
+    - subject: AUTO:1T
+      predicate: strain_of
+      object: AUTO:Alteromonas%20fortis
+    - subject: AUTO:Alteromonas%20fortis%20ATCC%C2%A043554T
+      predicate: type_strain_of
+      object: AUTO:Alteromonas%20fortis
+    - subject: AUTO:RCC%205933T
+      predicate: type_strain_of
+      object: AUTO:Alteromonas%20fortis
+    - subject: AUTO:CIP%20111645T
+      predicate: type_strain_of
+      object: AUTO:Alteromonas%20fortis
+    - subject: AUTO:Alteromonas%20fortis%20DSM%20106819T
+      predicate: type_strain_of
+      object: AUTO:Alteromonas%20fortis
+named_entities:
+  - id: NCBITaxon:226
+    label: Alteromonas
+    original_spans:
+      - 13:23
+      - 159:169
+      - 1000:1010
+      - 1169:1179
+      - 1198:1208
+      - 1284:1294
+      - 1481:1491
+      - 1650:1660
+      - 1743:1753
+      - 1775:1785
+  - id: AUTO:Alteromonas%20fortis%201T
+    label: Alteromonas fortis 1T
+  - id: AUTO:Alteromonas%20fortis%20ATCC%2043554T
+    label: Alteromonas fortis ATCC 43554T
+  - id: AUTO:Alteromonas%20fortis%20RCC%205933T
+    label: Alteromonas fortis RCC 5933T
+  - id: AUTO:Alteromonas%20fortis%20CIP%20111645T
+    label: Alteromonas fortis CIP 111645T
+  - id: AUTO:Alteromonas%20fortis%20DSM%20106819T
+    label: Alteromonas fortis DSM 106819T
+  - id: CHEBI:37168
+    label: iota-carrageenan
+    original_spans:
+      - 104:119
+  - id: CHEBI:6364
+    label: laminarin
+    original_spans:
+      - 558:566
+  - id: CHEBI:17548
+    label: alginic acid
+    original_spans:
+      - 572:583
+  - id: AUTO:Alteromonas%20fortis
+    label: Alteromonas fortis
+    original_spans:
+      - 13:30
+  - id: AUTO:1T
+    label: 1T
+    original_spans:
+      - 182:183
+      - 507:508
+      - 1073:1074
+      - 1327:1328
+      - 1447:1448
+      - 1609:1610
+      - 1834:1835
+  - id: AUTO:Alteromonas%20fortis%20ATCC%C2%A043554T
+    label: Alteromonas fortis ATCC 43554T
+  - id: AUTO:RCC%205933T
+    label: RCC 5933T
+    original_spans:
+      - 1851:1859
+  - id: AUTO:CIP%20111645T
+    label: CIP 111645T
+    original_spans:
+      - 1861:1871
+---
+input_text: |
+  {'content': 'Geobacter hydrogenophilus, Geobacter chapellei and Geobacter grbiciae, three new, strictly anaerobic, dissimilatory Fe(III)-reducers.\n\nRecent studies on the diversity and ubiquity of Fe(III)-reducing organisms in different environments led to the isolation and identification of four new dissimilatory Fe(III)-reducers (strains H-2T, 172T, TACP-2T and TACP-5). All four isolates are non-motile, Gram-negative, freshwater, mesophilic, strict anaerobes with morphology identical to that of Geobacter metallireducens strain GS-15T. Analysis of the 16S rRNA sequences indicated that the new isolates belong to the genus Geobacter, in the delta-Proteobacteria. Significant differences in phenotypic characteristics, DNA-DNA homology and G+C content indicated that the four isolates represent three new species of the genus. The names Geobacter hydrogenophilus sp. nov. (strain H-2T), Geobacter chapellei sp. nov. (strain 172T) and Geobacter grbiciae sp. nov. (strains TACP-2T and TACP-5) are proposed. Geobacter hydrogenophilus and Geobacter chapellei were isolated from a petroleum-contaminated aquifer and a pristine, deep, subsurface aquifer, respectively. Geobacter grbiciae was isolated from aquatic sediments. All of the isolates can obtain energy for growth by coupling the oxidation of acetate to the reduction of Fe(III). The four isolates also coupled Fe(III) reduction to the oxidation of other simple, volatile fatty acids. In addition, Geobacter hydrogenophilus and Geobacter grbiciae were able to oxidize aromatic compounds such as benzoate, whilst Geobacter grbiciae was also able to use the monoaromatic hydrocarbon toluene.\n\nPMID:11321104', 'saved_to': None, 'windowed': False}
+raw_completion_output: |-
+  pmid: 11321104  
+  study_taxa: Geobacter hydrogenophilus; Geobacter chapellei; Geobacter grbiciae  
+  strains: Geobacter hydrogenophilus strain H-2T; Geobacter chapellei strain 172T; Geobacter grbiciae strain TACP-2T; Geobacter grbiciae strain TACP-5; Geobacter metallireducens strain GS-15T  
+  chemicals_mentioned: acetate; Fe(III); volatile fatty acids; benzoate; toluene  
+  chemical_utilizations: Geobacter hydrogenophilus acetate oxidizes; Geobacter hydrogenophilus Fe(III) reduces; Geobacter chapellei acetate oxidizes; Geobacter chapellei Fe(III) reduces; Geobacter grbiciae acetate oxidizes; Geobacter grbiciae Fe(III) reduces; Geobacter grbiciae benzoate oxidizes; Geobacter hydrogenophilus benzoate oxidizes; Geobacter grbiciae toluene oxidizes  
+  strain_relationships: H-2T strain_of Geobacter hydrogenophilus; 172T strain_of Geobacter chapellei; TACP-2T strain_of Geobacter grbiciae; TACP-5 strain_of Geobacter grbiciae; GS-15T strain_of Geobacter metallireducens
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  subject: <the specific strain designation or identifier>
+  predicate: <the type of strain-taxon relationship (strain_of, type_strain_of, isolate_of, etc.)Must be one of: strain_of, type_strain_of, reference_strain_of, isolate_of, variant_of>
+  object: <the parent species or genus this strain belongs to>
+
+
+  Text:
+  GS-15T strain_of Geobacter metallireducens
+
+  ===
+
+extracted_object:
+  pmid: '11321104'
+  study_taxa:
+    - NCBITaxon:40983
+    - NCBITaxon:44671
+    - NCBITaxon:155042
+  strains:
+    - AUTO:Geobacter%20hydrogenophilus%20strain%20H-2T
+    - AUTO:Geobacter%20chapellei%20strain%20172T
+    - AUTO:Geobacter%20grbiciae%20strain%20TACP-2T
+    - AUTO:Geobacter%20grbiciae%20strain%20TACP-5
+    - AUTO:Geobacter%20metallireducens%20strain%20GS-15T
+  chemicals_mentioned:
+    - CHEBI:30089
+    - CHEBI:18248
+    - AUTO:volatile%20fatty%20acids
+    - CHEBI:16150
+    - CHEBI:17578
+  chemical_utilizations:
+    - subject: NCBITaxon:40983
+      predicate: uses_as_electron_donor
+      object: CHEBI:30089
+    - subject: NCBITaxon:40983
+      predicate: reduces
+      object: CHEBI:18248
+    - subject: NCBITaxon:44671
+      predicate: oxidizes
+      object: CHEBI:30089
+    - subject: NCBITaxon:44671
+      predicate: reduces
+      object: CHEBI:18248
+    - subject: NCBITaxon:155042
+      predicate: uses_as_electron_donor
+      object: CHEBI:30089
+    - subject: NCBITaxon:155042
+      predicate: reduces
+      object: CHEBI:18248
+    - subject: NCBITaxon:155042
+      predicate: oxidizes
+      object: CHEBI:16150
+    - subject: NCBITaxon:40983
+      predicate: oxidizes
+      object: CHEBI:16150
+    - subject: NCBITaxon:155042
+      predicate: oxidizes
+      object: CHEBI:17578
+  strain_relationships:
+    - subject: AUTO:H-2T
+      predicate: strain_of
+      object: NCBITaxon:40983
+    - subject: AUTO:172T
+      predicate: strain_of
+      object: NCBITaxon:44671
+    - subject: AUTO:TACP-2T
+      predicate: strain_of
+      object: NCBITaxon:155042
+    - subject: AUTO:TACP-5
+      predicate: strain_of
+      object: NCBITaxon:155042
+    - subject: AUTO:GS-15T
+      predicate: strain_of
+      object: NCBITaxon:28232
+named_entities:
+  - id: NCBITaxon:40983
+    label: Geobacter hydrogenophilus
+    original_spans:
+      - 13:37
+      - 844:868
+      - 1012:1036
+      - 1459:1483
+  - id: NCBITaxon:44671
+    label: Geobacter chapellei
+    original_spans:
+      - 40:58
+      - 894:912
+      - 1042:1060
+  - id: NCBITaxon:155042
+    label: Geobacter grbiciae
+    original_spans:
+      - 64:81
+      - 941:958
+      - 1170:1187
+      - 1489:1506
+      - 1573:1590
+  - id: AUTO:Geobacter%20hydrogenophilus%20strain%20H-2T
+    label: Geobacter hydrogenophilus strain H-2T
+  - id: AUTO:Geobacter%20chapellei%20strain%20172T
+    label: Geobacter chapellei strain 172T
+  - id: AUTO:Geobacter%20grbiciae%20strain%20TACP-2T
+    label: Geobacter grbiciae strain TACP-2T
+  - id: AUTO:Geobacter%20grbiciae%20strain%20TACP-5
+    label: Geobacter grbiciae strain TACP-5
+  - id: AUTO:Geobacter%20metallireducens%20strain%20GS-15T
+    label: Geobacter metallireducens strain GS-15T
+    original_spans:
+      - 503:541
+  - id: CHEBI:18248
+    label: Fe(III)
+    original_spans:
+      - 129:135
+      - 198:204
+      - 317:323
+      - 1332:1338
+      - 1372:1378
+  - id: AUTO:volatile%20fatty%20acids
+    label: volatile fatty acids
+    original_spans:
+      - 1424:1443
+  - id: CHEBI:16150
+    label: benzoate
+    original_spans:
+      - 1556:1563
+  - id: CHEBI:17578
+    label: toluene
+    original_spans:
+      - 1642:1648
+  - id: AUTO:H-2T
+    label: H-2T
+    original_spans:
+      - 343:346
+      - 887:890
+  - id: AUTO:172T
+    label: 172T
+    original_spans:
+      - 349:352
+      - 931:934
+  - id: AUTO:TACP-2T
+    label: TACP-2T
+    original_spans:
+      - 355:361
+      - 978:984
+  - id: AUTO:TACP-5
+    label: TACP-5
+    original_spans:
+      - 367:372
+      - 990:995
+  - id: AUTO:GS-15T
+    label: GS-15T
+    original_spans:
+      - 536:541
+  - id: NCBITaxon:28232
+    label: Geobacter metallireducens
+    original_spans:
+      - 503:527
+---
+input_text: |
+  {'content': 'Spirochaeta dissipatitropha sp. nov., an alkaliphilic, obligately anaerobic bacterium, and emended description of the genus Spirochaeta Ehrenberg 1835.\n\nA novel obligately anaerobic, mesophilic, alkaliphilic spirochaete, strain ASpC2(T), was isolated from an anaerobic sediment of alkaline, hypersaline Owens Lake in California, USA. The Gram-negative cells are motile, helical in shape and 0.23 x 8.0-18.0 mum. Growth occurs within the following ranges: 13-41 degrees C, with optimal growth at 35 degrees C; 1-3 % (w/v) NaCl, with optimal growth at 2 % (w/v) NaCl; and pH 7.8-10.5, with optimal growth at pH 10.0. The novel isolate is strictly alkaliphilic and requires high concentrations of carbonate ions in the medium. It utilizes some sugars, some organic acids, some amino acids, Casamino acids, yeast extract and peptone. The main end products of glucose fermentation are CO(2) and acetate. Strain ASpC2(T) is resistant to kanamycin and rifampicin, but sensitive to ampicillin, chloramphenicol, gentamicin and tetracycline. The DNA G+C content of the new isolate is 43.8 mol%, its genome size is 6 x 10(8) Da and the melting temperature of its genomic DNA is 71 degrees C. DNA-DNA hybridization experiments demonstrated 46 % similarity with the phylogenetically most closely related species, Spirochaeta asiatica Z-7591(T). On the basis of physiological and molecular properties, the new isolate belongs taxonomically to a novel species within the genus Spirochaeta, for which the name Spirochaeta dissipatitropha sp. nov. is proposed (type strain, ASpC2(T)=ATCC BAA-1083(T)=JCM 12856(T)). S. dissipatitropha ASpC2(T) is the second strain in the genus (after Spirochaeta smaragdinae SEBR 4228(T)) that is able to use proteolysis products as the sole energy source, and additional tests have shown that other halo-alkaliphilic spirochaetes (Spirochaeta americana, Spirochaeta alkalica and Spirochaeta africana) are also able to grow on yeast extract alone; therefore, an emended description for the genus Spirochaeta is given.\n\nPMID:19578151', 'saved_to': None, 'windowed': False}
+raw_completion_output: |-
+  pmid: 19578151  
+  study_taxa: Spirochaeta dissipatitropha; Spirochaeta asiatica; Spirochaeta americana; Spirochaeta alkalica; Spirochaeta africana; Spirochaeta smaragdinae  
+  strains: Spirochaeta dissipatitropha strain ASpC2(T); Spirochaeta dissipatitropha ATCC BAA-1083(T); Spirochaeta dissipatitropha JCM 12856(T); Spirochaeta asiatica Z-7591(T); Spirochaeta smaragdinae SEBR 4228(T)  
+  chemicals_mentioned: glucose; sugars; organic acids; amino acids; Casamino acids; yeast extract; peptone; CO2; acetate; carbonate ions; NaCl; proteolysis products  
+  chemical_utilizations: Spirochaeta dissipatitropha, glucose, ferments; Spirochaeta dissipatitropha, carbonate ions, requires; Spirochaeta dissipatitropha, NaCl, requires; Spirochaeta dissipatitropha, proteolysis products, uses as sole energy source; Spirochaeta dissipatitropha, sugars, utilizes; Spirochaeta dissipatitropha, organic acids, utilizes; Spirochaeta dissipatitropha, amino acids, utilizes; Spirochaeta dissipatitropha, Casamino acids, utilizes; Spirochaeta dissipatitropha, yeast extract, utilizes; Spirochaeta dissipatitropha, peptone, utilizes; Spirochaeta smaragdinae, proteolysis products, uses as sole energy source; Spirochaeta americana, yeast extract, grows on; Spirochaeta alkalica, yeast extract, grows on; Spirochaeta africana, yeast extract, grows on  
+  strain_relationships: ASpC2(T) strain_of Spirochaeta dissipatitropha; ATCC BAA-1083(T) strain_of Spirochaeta dissipatitropha; JCM 12856(T) strain_of Spirochaeta dissipatitropha; Z-7591(T) strain_of Spirochaeta asiatica; SEBR 4228(T) strain_of Spirochaeta smaragdinae
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  subject: <the specific strain designation or identifier>
+  predicate: <the type of strain-taxon relationship (strain_of, type_strain_of, isolate_of, etc.)Must be one of: strain_of, type_strain_of, reference_strain_of, isolate_of, variant_of>
+  object: <the parent species or genus this strain belongs to>
+
+
+  Text:
+  SEBR 4228(T) strain_of Spirochaeta smaragdinae
+
+  ===
+
+extracted_object:
+  pmid: '19578151'
+  study_taxa:
+    - NCBITaxon:324679
+    - NCBITaxon:46357
+    - NCBITaxon:159291
+    - NCBITaxon:46356
+    - NCBITaxon:46355
+    - NCBITaxon:55206
+  strains:
+    - AUTO:Spirochaeta%20dissipatitropha%20strain%20ASpC2%28T%29
+    - AUTO:Spirochaeta%20dissipatitropha%20ATCC%20BAA-1083%28T%29
+    - AUTO:Spirochaeta%20dissipatitropha%20JCM%2012856%28T%29
+    - AUTO:Spirochaeta%20asiatica%20Z-7591%28T%29
+    - AUTO:Spirochaeta%20smaragdinae%20SEBR%204228%28T%29
+  chemicals_mentioned:
+    - CHEBI:17234
+    - AUTO:sugars
+    - CHEBI:64709
+    - CHEBI:33709
+    - AUTO:Casamino%20acids
+    - AUTO:yeast%20extract
+    - AUTO:peptone
+    - CHEBI:16526
+    - CHEBI:30089
+    - CHEBI:41609
+    - CHEBI:26710
+    - AUTO:proteolysis%20products
+  chemical_utilizations:
+    - subject: NCBITaxon:324679
+      predicate: ferments
+      object: CHEBI:17234
+    - subject: NCBITaxon:324679
+      predicate: requires_for_growth
+      object: CHEBI:41609
+    - subject: NCBITaxon:324679
+      predicate: requires_for_growth
+      object: CHEBI:26710
+    - subject: NCBITaxon:324679
+      predicate: uses_as_energy_source
+      object: AUTO:proteolysis%20products
+    - subject: NCBITaxon:324679
+      predicate: uses_as_carbon_source
+      object: AUTO:sugars
+    - subject: NCBITaxon:324679
+      predicate: uses_as_carbon_source
+      object: CHEBI:64709
+    - subject: NCBITaxon:324679
+      predicate: uses_as_nitrogen_source
+      object: CHEBI:33709
+    - subject: NCBITaxon:324679
+      predicate: uses_for_growth
+      object: AUTO:Casamino%20acids
+    - subject: NCBITaxon:324679
+      predicate: uses_for_growth
+      object: AUTO:yeast%20extract
+    - subject: NCBITaxon:324679
+      predicate: uses_as_nitrogen_source
+      object: AUTO:peptone
+    - subject: NCBITaxon:55206
+      predicate: uses_as_energy_source
+      object: AUTO:proteolysis%20products
+    - subject: NCBITaxon:159291
+      predicate: uses_for_growth
+      object: AUTO:yeast%20extract
+    - subject: NCBITaxon:46356
+      predicate: uses_for_growth
+      object: AUTO:yeast%20extract
+    - subject: NCBITaxon:46355
+      predicate: uses_for_growth
+      object: AUTO:yeast%20extract
+  strain_relationships:
+    - subject: AUTO:ASpC2%28T%29
+      predicate: strain_of
+      object: NCBITaxon:324679
+    - subject: AUTO:ATCC%20BAA-1083%28T%29
+      predicate: strain_of
+      object: NCBITaxon:324679
+    - subject: AUTO:JCM%E2%80%AF12856%28T%29
+      predicate: strain_of
+      object: AUTO:Spirochaeta%E2%80%AFdissipatotropha
+    - subject: AUTO:Z-7591%28T%29
+      predicate: strain_of
+      object: NCBITaxon:46357
+    - subject: AUTO:SEBR%204228%28T%29
+      predicate: strain_of
+      object: NCBITaxon:55206
+named_entities:
+  - id: NCBITaxon:324679
+    label: Spirochaeta dissipatitropha
+    original_spans:
+      - 13:39
+      - 1509:1535
+  - id: NCBITaxon:46357
+    label: Spirochaeta asiatica
+    original_spans:
+      - 1315:1334
+  - id: NCBITaxon:159291
+    label: Spirochaeta americana
+    original_spans:
+      - 1863:1883
+  - id: NCBITaxon:46356
+    label: Spirochaeta alkalica
+    original_spans:
+      - 1886:1905
+  - id: NCBITaxon:46355
+    label: Spirochaeta africana
+    original_spans:
+      - 1911:1930
+  - id: NCBITaxon:55206
+    label: Spirochaeta smaragdinae
+    original_spans:
+      - 1682:1704
+  - id: AUTO:Spirochaeta%20dissipatitropha%20strain%20ASpC2%28T%29
+    label: Spirochaeta dissipatitropha strain ASpC2(T)
+  - id: AUTO:Spirochaeta%20dissipatitropha%20ATCC%20BAA-1083%28T%29
+    label: Spirochaeta dissipatitropha ATCC BAA-1083(T)
+  - id: AUTO:Spirochaeta%20dissipatitropha%20JCM%2012856%28T%29
+    label: Spirochaeta dissipatitropha JCM 12856(T)
+  - id: AUTO:Spirochaeta%20asiatica%20Z-7591%28T%29
+    label: Spirochaeta asiatica Z-7591(T)
+    original_spans:
+      - 1315:1344
+  - id: AUTO:Spirochaeta%20smaragdinae%20SEBR%204228%28T%29
+    label: Spirochaeta smaragdinae SEBR 4228(T)
+    original_spans:
+      - 1682:1717
+  - id: AUTO:sugars
+    label: sugars
+    original_spans:
+      - 756:761
+  - id: CHEBI:64709
+    label: organic acids
+    original_spans:
+      - 769:781
+  - id: CHEBI:33709
+    label: amino acids
+    original_spans:
+      - 789:799
+      - 805:815
+  - id: CHEBI:16526
+    label: CO2
+  - id: CHEBI:41609
+    label: carbonate ions
+    original_spans:
+      - 709:722
+  - id: AUTO:proteolysis%20products
+    label: proteolysis products
+    original_spans:
+      - 1740:1759
+  - id: AUTO:ASpC2%28T%29
+    label: ASpC2(T)
+    original_spans:
+      - 243:250
+      - 921:928
+      - 1572:1579
+      - 1632:1639
+  - id: AUTO:ATCC%20BAA-1083%28T%29
+    label: ATCC BAA-1083(T)
+    original_spans:
+      - 1581:1596
+  - id: AUTO:JCM%E2%80%AF12856%28T%29
+    label: JCM 12856(T)
+  - id: AUTO:Spirochaeta%E2%80%AFdissipatotropha
+    label: Spirochaeta dissipatotropha
+  - id: AUTO:Z-7591%28T%29
+    label: Z-7591(T)
+    original_spans:
+      - 1336:1344
+  - id: AUTO:SEBR%204228%28T%29
+    label: SEBR 4228(T)
+    original_spans:
+      - 1706:1717
