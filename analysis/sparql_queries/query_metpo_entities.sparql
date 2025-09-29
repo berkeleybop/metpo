@@ -1,0 +1,17 @@
+PREFIX metpo: <https://w3id.org/metpo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+
+SELECT ?entity ?type ?label ?synonym_type ?synonym
+WHERE {
+  ?entity a ?type .
+  FILTER(STRSTARTS(STR(?entity), "https://w3id.org/metpo/"))
+  OPTIONAL { ?entity rdfs:label ?label }
+  OPTIONAL {
+    ?entity ?synonym_prop ?synonym .
+    FILTER(?synonym_prop IN (oboInOwl:hasExactSynonym, oboInOwl:hasRelatedSynonym))
+    BIND(IF(?synonym_prop = oboInOwl:hasExactSynonym, "exact", "related") AS ?synonym_type)
+  }
+}
+ORDER BY ?entity
