@@ -22,6 +22,10 @@ clean-data:
 	rm -rf local/taxdmp/
 	rm -f local/noderanks.ttl
 	rm -f generated/bacdive_oxygen_phenotype_mappings.tsv
+	rm -rf data/bioportal_owl/
+	rm -rf data/entity_extracts/
+	rm -rf data/reports/
+	rm -rf downloads/sheets/
 	@echo "All generated data files cleaned"
 
 # see https://ftp.ncbi.nlm.nih.gov/pub/taxonomy/taxdump_readme.txt regarding nodes.dmp
@@ -105,3 +109,108 @@ downloads/sheets:
 clean-sheets:
 	rm -rf downloads/sheets/
 	@echo "Downloaded sheets cleaned"
+
+# =====================================================
+# BiPortal METPO Releases Download Targets
+# =====================================================
+
+# BiPortal API URLs for METPO submissions
+BIOPORTAL_API_KEY = 8b5b7825-538d-40e0-9e9e-5ab9274a9aeb
+BIOPORTAL_SUBMISSION_BASE = https://data.bioontology.org/ontologies/METPO/submissions
+
+# METPO submissions on BiPortal (submissions 2-10 have OWL files, submission 1 doesn't)
+# Format: submission_id:version_date
+METPO_SUBMISSIONS = \
+	2:2025-03-13 \
+	3:2025-03-19 \
+	4:2025-03-22 \
+	5:2025-03-24 \
+	6:2025-04-25 \
+	7:2025-06-25 \
+	8:2025-08-18 \
+	9:2025-09-22 \
+	10:2025-09-23
+
+.PHONY: download-all-bioportal-submissions clean-bioportal-submissions list-bioportal-submissions
+
+# Download all METPO submissions from BiPortal
+download-all-bioportal-submissions: $(foreach sub,$(METPO_SUBMISSIONS),data/bioportal_owl/metpo_submission_$(word 1,$(subst :, ,$(sub))).owl)
+	@echo "All BiPortal METPO submissions downloaded to data/bioportal_owl/"
+
+# Individual submission download targets
+data/bioportal_owl/metpo_submission_%.owl: | data/bioportal_owl
+	@echo "Downloading METPO submission $*..."
+	@curl -L -s "$(BIOPORTAL_SUBMISSION_BASE)/$*/download?apikey=$(BIOPORTAL_API_KEY)" -o $@
+	@if [ -s $@ ]; then \
+		echo "✓ Successfully downloaded submission $*"; \
+		grep -m1 "versionInfo" $@ || echo "No version info found"; \
+	else \
+		echo "✗ Failed to download submission $*"; \
+		rm -f $@; \
+	fi
+
+# Ensure data/bioportal_owl directory exists
+data/bioportal_owl:
+	mkdir -p $@
+
+# Clean downloaded BiPortal submissions
+clean-bioportal-submissions:
+	rm -rf data/bioportal_owl/
+	@echo "Downloaded BiPortal submissions cleaned"
+
+# List available submissions
+list-bioportal-submissions:
+	@echo "Available METPO submissions on BiPortal:"
+	@for sub in $(METPO_SUBMISSIONS); do \
+		id=$$(echo $$sub | cut -d: -f1); \
+		version=$$(echo $$sub | cut -d: -f2); \
+		echo "  - Submission $$id: $$version"; \
+	done
+	@echo ""
+	@echo "To download all: make download-all-bioportal-submissions"
+	@echo "To download specific submission: make data/bioportal_owl/metpo_submission_5.owl"
+
+# =====================================================
+# METPO Entity Extraction Targets
+# =====================================================
+
+.PHONY: extract-all-metpo-entities clean-entity-extracts
+
+# Extract METPO entities from all submissions
+extract-all-metpo-entities: $(foreach sub,$(METPO_SUBMISSIONS),data/entity_extracts/metpo_submission_$(word 1,$(subst :, ,$(sub)))_all_entities.tsv)
+	@echo "All METPO entities extracted to data/entity_extracts/"
+
+# Individual entity extraction targets
+data/entity_extracts/metpo_submission_%_all_entities.tsv: data/bioportal_owl/metpo_submission_%.owl | data/entity_extracts
+	@echo "Extracting entities from METPO submission $*..."
+	robot query -i $< -s analysis/sparql_queries/query_metpo_entities.sparql $@
+
+# Ensure data/entity_extracts directory exists
+data/entity_extracts:
+	mkdir -p $@
+
+# Clean extracted entity files
+clean-entity-extracts:
+	rm -rf data/entity_extracts/
+	@echo "Extracted entity files cleaned"
+
+# Ensure downloads/bioportal directory exists
+downloads/bioportal:
+	mkdir -p $@
+
+# Clean downloaded BiPortal files
+clean-bioportal:
+	rm -rf downloads/bioportal/
+	@echo "Downloaded BiPortal releases cleaned"
+
+# List known releases (for manual verification)
+list-bioportal-releases:
+	@echo "Known METPO releases on BiPortal:"
+	@for release in $(METPO_RELEASES); do \
+		echo "  - metpo-$$release.owl"; \
+	done
+	@echo ""
+	@echo "To download all: make download-all-bioportal"
+	@echo "To download specific release: make downloads/bioportal/metpo-2025-09-23.owl"
+	@echo ""
+	@echo "Note: Set BIOPORTAL_API_KEY environment variable for authenticated downloads"
