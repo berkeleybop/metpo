@@ -1,0 +1,19 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX metpo: <https://w3id.org/metpo/>
+
+SELECT ?id ?label
+WHERE {
+  VALUES ?parent {
+    metpo:1000631  # trophic type
+    metpo:1000800  # respiratory type  
+    metpo:1000060  # metabolic trait
+  }
+  
+  ?id rdfs:subClassOf+ ?parent .
+  ?id rdfs:label ?label .
+  
+  # Exclude the parent classes themselves
+  FILTER(?id != ?parent)
+}
+ORDER BY ?id
