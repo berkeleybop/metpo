@@ -12,10 +12,14 @@
      xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="https://w3id.org/metpo/metpo.owl">
-        <owl:versionIRI rdf:resource="https://w3id.org/metpo/metpo/releases/2025-09-23/metpo.owl"/>
+        <owl:versionIRI rdf:resource="https://w3id.org/metpo/metpo/releases/2025-10-03/metpo.owl"/>
+        <dcterms:creator>METPO Development Team</dcterms:creator>
         <dcterms:description>Microbial ecophysiological trait and phenotype ontology</dcterms:description>
+        <dcterms:issued>2024-01-01</dcterms:issued>
+        <dcterms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+        <dcterms:modified>2025-09-29</dcterms:modified>
         <dcterms:title>METPO</dcterms:title>
-        <owl:versionInfo>2025-09-23</owl:versionInfo>
+        <owl:versionInfo>2025-10-03</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -47,11 +51,23 @@
     
 
 
+    <!-- http://purl.org/dc/terms/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
     <!-- http://purl.org/dc/terms/description -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description">
         <rdfs:label>description</rdfs:label>
     </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/issued -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/issued"/>
     
 
 
@@ -63,11 +79,23 @@
     
 
 
+    <!-- http://purl.org/dc/terms/modified -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/modified"/>
+    
+
+
     <!-- http://purl.org/dc/terms/title -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title">
         <rdfs:label>title</rdfs:label>
     </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasExactSynonym -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
     
 
 
@@ -1008,6 +1036,581 @@
     
 
 
+    <!-- https://w3id.org/metpo/2000200 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000200">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1000526"/>
+        <oboInOwl:hasRelatedSynonym>dismutates</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>disproportionates</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000201 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000201">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1000526"/>
+        <rdfs:label>lyses</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000202 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000202">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1000526"/>
+        <oboInOwl:hasRelatedSynonym>produces</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>synthesizes</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000203 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000203">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1000526"/>
+        <rdfs:label>fixes</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000204 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000204">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1000526"/>
+        <rdfs:label>catabolizes</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000205 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000205">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1000526"/>
+        <rdfs:label>mineralizes</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000206 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000206">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1000526"/>
+        <rdfs:label>conjugates</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000207 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000207">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1000526"/>
+        <rdfs:label>transports</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000208 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000208">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000207"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1000526"/>
+        <rdfs:label>imports</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000209 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000209">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000207"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1000526"/>
+        <rdfs:label>exports</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000210 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000210">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1000526"/>
+        <rdfs:label>accumulates</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000211 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000211">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000210"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1000526"/>
+        <rdfs:label>sequesters</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000212 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000212">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000210"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1000526"/>
+        <rdfs:label>compartmentalizes</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000213 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000213">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1000526"/>
+        <rdfs:label>binds</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000214 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000214">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1000526"/>
+        <rdfs:label>chelates</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000215 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000215">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1000526"/>
+        <rdfs:label>precipitates</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000216 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000216">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1000526"/>
+        <rdfs:label>solubilizes</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000217 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000217">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1000526"/>
+        <rdfs:label>volatilizes</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000218 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000218">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1000526"/>
+        <rdfs:label>crystallizes</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000219 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000219">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1000526"/>
+        <rdfs:label>adsorbs</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000220 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000220">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1000526"/>
+        <rdfs:label>does not disproportionate</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000221 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000221">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1000526"/>
+        <rdfs:label>does not lyse</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000222 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000222">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1000526"/>
+        <rdfs:label>does not produce</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000223 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000223">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1000526"/>
+        <rdfs:label>does not fix</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000224 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000224">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1000526"/>
+        <rdfs:label>does not catabolize</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000225 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000225">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1000526"/>
+        <rdfs:label>does not mineralize</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000226 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000226">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1000526"/>
+        <rdfs:label>does not conjugate</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000227 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000227">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1000526"/>
+        <rdfs:label>does not transport</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000228 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000228">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000227"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1000526"/>
+        <rdfs:label>does not import</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000229 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000229">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000227"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1000526"/>
+        <rdfs:label>does not export</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000230 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000230">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1000526"/>
+        <rdfs:label>does not accumulate</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000231 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000231">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000230"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1000526"/>
+        <rdfs:label>does not sequester</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000232 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000232">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000230"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1000526"/>
+        <rdfs:label>does not compartmentalize</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000233 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000233">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1000526"/>
+        <rdfs:label>does not bind</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000234 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000234">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1000526"/>
+        <rdfs:label>does not chelate</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000235 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000235">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1000526"/>
+        <rdfs:label>does not precipitate</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000236 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000236">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1000526"/>
+        <rdfs:label>does not solubilize</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000237 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000237">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1000526"/>
+        <rdfs:label>does not volatilize</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000238 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000238">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1000526"/>
+        <rdfs:label>does not crystallize</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000239 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000239">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1001000"/>
+        <obo:IAO_0000115>Relates a microbe to a pH observation.</obo:IAO_0000115>
+        <rdfs:label>has pH observation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000501 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000501">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000239"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1001013"/>
+        <obo:IAO_0000115>Relates a microbe to an optimum pH observation.</obo:IAO_0000115>
+        <rdfs:label>has optimum pH observation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000502 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000502">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000239"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1001012"/>
+        <obo:IAO_0000115>Relates a microbe to a growth pH observation.</obo:IAO_0000115>
+        <rdfs:label>has growth pH observation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000503 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000503">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000239"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1001015"/>
+        <obo:IAO_0000115>Relates a microbe to a growth pH range observation.</obo:IAO_0000115>
+        <rdfs:label>has range pH observation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000504 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000504">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000239"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1001014"/>
+        <obo:IAO_0000115>Relates a microbe to a pH tolerance breadth (delta) observation.</obo:IAO_0000115>
+        <rdfs:label>has pH delta observation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000505 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000505">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000239"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1001011"/>
+        <obo:IAO_0000115>Relates a microbe to a culture pH observation (e.g., from BacDive).</obo:IAO_0000115>
+        <rdfs:label>has culture pH observation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000506 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000506">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000506"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1001000"/>
+        <obo:IAO_0000115>Relates a microbe to a NaCl observation.</obo:IAO_0000115>
+        <rdfs:label>has NaCl observation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000507 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000507">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000506"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1001010"/>
+        <obo:IAO_0000115>Relates a microbe to an optimum NaCl observation.</obo:IAO_0000115>
+        <rdfs:label>has optimum NaCl observation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000508 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000508">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000506"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1001007"/>
+        <obo:IAO_0000115>Relates a microbe to a growth NaCl observation.</obo:IAO_0000115>
+        <rdfs:label>has growth NaCl observation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000509 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000509">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000506"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1001009"/>
+        <obo:IAO_0000115>Relates a microbe to a growth NaCl range observation.</obo:IAO_0000115>
+        <rdfs:label>has range NaCl observation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000510 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000510">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000506"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1001008"/>
+        <obo:IAO_0000115>Relates a microbe to a NaCl tolerance breadth (delta) observation.</obo:IAO_0000115>
+        <rdfs:label>has NaCl delta observation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000511 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000511">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000506"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1001006"/>
+        <obo:IAO_0000115>Relates a microbe to a culture NaCl observation (e.g., from BacDive).</obo:IAO_0000115>
+        <rdfs:label>has culture NaCl observation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -1124,6 +1727,16 @@
     
 
 
+    <!-- https://w3id.org/metpo/1000127 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000127">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000188"/>
+        <obo:IAO_0000115>The percentage of guanine and cytosine nucleotides in DNA</obo:IAO_0000115>
+        <rdfs:label>GC content</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/metpo/1000186 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000186">
@@ -1145,6 +1758,1089 @@
         <owl:annotatedTarget>A dependent entity that inheres in a bearer by virtue of how the bearer is related to other entities</owl:annotatedTarget>
         <obo:IAO_0000119>PATO:0000001</obo:IAO_0000119>
     </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000232 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000232">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
+        <obo:IAO_0000115>A measure of the breadth of hydrogen ion concentrations that a microorganism can tolerate, calculated as the difference between the maximum and minimum viable pH values</obo:IAO_0000115>
+        <rdfs:label>pH delta</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/1000233 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000233">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
+        <obo:IAO_0000115>The specific pH at which an organism exhibits maximum growth rate</obo:IAO_0000115>
+        <rdfs:label>pH optimum (growth range)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/1000235 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000235">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
+        <obo:IAO_0000115>The span of pH values within which an organism can grow</obo:IAO_0000115>
+        <rdfs:label>pH range (growth tolerance)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/1000236 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000236">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
+        <obo:IAO_0000115>The ability of an organism to survive exposure to pH values outside its optimal growth range</obo:IAO_0000115>
+        <rdfs:label>pH tolerance</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/1000303 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000303">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
+        <obo:IAO_0000115>A measure of the breadth of thermal conditions that a microorganism can withstand, calculated as the difference between the maximum and minimum viable temperature values</obo:IAO_0000115>
+        <rdfs:label>temperature delta</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/1000304 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000304">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
+        <obo:IAO_0000115>The specific temperature at which an organism exhibits maximum growth rate</obo:IAO_0000115>
+        <rdfs:label>temperature optimum (growth range)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/1000306 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000306">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
+        <obo:IAO_0000115>The span of temperatures within which an organism can grow</obo:IAO_0000115>
+        <rdfs:label>temperature range (growth tolerance)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/1000329 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000329">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000630"/>
+        <obo:IAO_0000115>The specific temperature at which a microorganism exhibits maximum metabolic activity and growth rate within its viable range.</obo:IAO_0000115>
+        <rdfs:label>temperature optimum (metabolic activity)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/1000330 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000330">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000630"/>
+        <obo:IAO_0000115>The span of temperatures within which a microorganism can maintain metabolic functions and population viability.</obo:IAO_0000115>
+        <rdfs:label>temperature range (metabolic viability)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/1000331 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000331">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
+        <obo:IAO_0000115>The specific hydrogen ion concentration at which a microorganism achieves its maximum growth rate and metabolic efficiency.</obo:IAO_0000115>
+        <rdfs:label>pH optimum (metabolic efficiency)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/1000332 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000332">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
+        <obo:IAO_0000115>The span of hydrogen ion concentrations within which a microorganism can maintain cellular homeostasis and sustain growth.</obo:IAO_0000115>
+        <rdfs:label>pH range (cellular homeostasis)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/1000333 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000333">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
+        <obo:IAO_0000115>The specific concentration of sodium chloride at which a microorganism exhibits maximum growth rate and metabolic efficiency.</obo:IAO_0000115>
+        <rdfs:label>NaCl optimum</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/1000334 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000334">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
+        <obo:IAO_0000115>The span of sodium chloride concentrations within which a microorganism can maintain osmotic balance and cellular functions.</obo:IAO_0000115>
+        <rdfs:label>NaCl range</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/1000335 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000335">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
+        <obo:IAO_0000115>A measure of the breadth of sodium chloride concentrations that a microorganism can tolerate, calculated as the difference between the maximum and minimum viable salinity values.</obo:IAO_0000115>
+        <rdfs:label>NaCl delta</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/1000429 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000429">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000127"/>
+        <obo:IAO_0000115>A genomic feature characterized by a guanine-cytosine content percentage below 42.65% in an organism&apos;s DNA. Values with maximum value of 42.65 % GC.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>GC_&lt;42.65</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>GC low</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000429"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>GC_&lt;42.65</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000430 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000430">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000127"/>
+        <obo:IAO_0000115>A genomic feature characterized by a guanine-cytosine content percentage between 42.65% and 57% in an organism&apos;s DNA. Values ranging from 42.65 to 57 % GC.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>GC_42.65_57.0</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>GC mid1</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000430"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>GC_42.65_57.0</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000431 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000431">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000127"/>
+        <obo:IAO_0000115>A genomic feature characterized by a guanine-cytosine content percentage between 57% and 66.3% in an organism&apos;s DNA. Values ranging from 57 to 66.3 % GC.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>GC_57.0_66.3</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>GC mid2</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000431"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>GC_57.0_66.3</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000432 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000432">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000127"/>
+        <obo:IAO_0000115>A genomic feature characterized by a guanine-cytosine content percentage above 66.3% in an organism&apos;s DNA. Values with minimum value of 66.3 % GC.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>GC_&gt;66.3</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>GC high</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000432"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>GC_&gt;66.3</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000441 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000441">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000304"/>
+        <obo:IAO_0000115>A temperature optimum manifested as maximum microbial growth at temperatures below 10°C, typical of psychrophilic organisms. Values with maximum value of 10 C.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Psychrophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>TO_&lt;10</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>temperature optimum very low</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000441"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>TO_&lt;10</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000442 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000442">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000304"/>
+        <obo:IAO_0000115>A temperature optimum manifested as maximum microbial growth at temperatures between 10°C and 22°C, common in psychrophilic or psychrotolerant organisms. Values ranging from 10 to 22 C.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Psychrophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Psychrotolerant</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>TO_10_to_22</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>temperature optimum low</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000442"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>TO_10_to_22</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000443 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000443">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000304"/>
+        <obo:IAO_0000115>A temperature optimum manifested as maximum microbial growth at temperatures between 22°C and 27°C, characteristic of mesophilic organisms. Values ranging from 22 to 27 C.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Mesophilie</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>TO_22_to_27</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>temperature optimum mid1</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000443"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>TO_22_to_27</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000444 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000444">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000304"/>
+        <obo:IAO_0000115>A temperature optimum manifested as maximum microbial growth at temperatures between 27°C and 30°C, characteristic of mesophilic organisms. Values ranging from 27 to 30 C.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Mesophilie</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>TO_27_to_30</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>temperature optimum mid2</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000444"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>TO_27_to_30</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000445 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000445">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000304"/>
+        <obo:IAO_0000115>A temperature optimum manifested as maximum microbial growth at temperatures between 30°C and 34°C, characteristic of mesophilic organisms. Values ranging from 30 to 34 C.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Mesophilie</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>TO_30_to_34</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>temperature optimum mid3</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000445"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>TO_30_to_34</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000446 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000446">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000304"/>
+        <obo:IAO_0000115>A temperature optimum manifested as maximum microbial growth at temperatures between 34°C and 40°C, characteristic of mesophilic organisms. Values ranging from 34 to 40 C.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Mesophilie</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>TO_34_to_40</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>temperature optimum mid4</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000446"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>TO_34_to_40</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000447 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000447">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000304"/>
+        <obo:IAO_0000115>A temperature optimum manifested as maximum microbial growth at temperatures above 40°C, typical of thermophilic organisms. Values with minimum value of 40 C.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Thermophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>TO_&gt;40</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>temperature optimum high</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000447"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>TO_&gt;40</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000448 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000448">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000306"/>
+        <obo:IAO_0000115>A temperature range allowing microbial growth at temperatures below 10°C, characteristic of psychrophilic organisms. Values with maximum value of 10 C.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Psychrophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>TR_&lt;10</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>temperature range very low</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000448"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>TR_&lt;10</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000449 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000449">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000306"/>
+        <obo:IAO_0000115>A temperature range allowing microbial growth at temperatures between 10°C and 22°C, characteristic of psychrophilic or psychrotolerant organisms. Values ranging from 10 to 22 C.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Psychrophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Psychrotolerant</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>TR_10_to_22</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>temperature range low</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000449"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>TR_10_to_22</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000450 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000450">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000306"/>
+        <obo:IAO_0000115>A temperature range allowing microbial growth at temperatures between 22°C and 27°C, characteristic of mesophilic organisms. Values ranging from 22 to 27 C.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Mesophilie</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>TR_22_to_27</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>temperature range mid1</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000450"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>TR_22_to_27</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000451 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000451">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000306"/>
+        <obo:IAO_0000115>A temperature range allowing microbial growth at temperatures between 27°C and 30°C, characteristic of mesophilic organisms. Values ranging from 27 to 30 C.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Mesophilie</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>TR_27_to_30</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>temperature range mid2</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000451"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>TR_27_to_30</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000452 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000452">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000306"/>
+        <obo:IAO_0000115>A temperature range allowing microbial growth at temperatures between 30°C and 34°C, characteristic of mesophilic organisms. Values ranging from 30 to 34 C.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Mesophilie</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>TR_30_to_34</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>temperature range mid3</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000452"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>TR_30_to_34</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000453 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000453">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000306"/>
+        <obo:IAO_0000115>A temperature range allowing microbial growth at temperatures between 34°C and 40°C, characteristic of mesophilic organisms. Values ranging from 34 to 40 C.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Mesophilie</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>TR_34_to_40</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>temperature range mid4</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000453"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>TR_34_to_40</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000454 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000454">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000306"/>
+        <obo:IAO_0000115>A temperature range allowing microbial growth at temperatures above 40°C, characteristic of thermophilic organisms. Values with minimum value of 40 C.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Thermophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>TR_&gt;40</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>temperature range high</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000454"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>TR_&gt;40</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000455 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000455">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000331"/>
+        <obo:IAO_0000115>A pH optimum manifested as maximum microbial growth at hydrogen ion concentrations between pH 0 and 6, characteristic of acidophilic organisms. Values ranging from 0 to 6 pH.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Acid Tolerant</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Acidophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Extreme Acidophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Facultative acidophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Obligative acidophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>pHO_0_to_6</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>pH optimum low</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000455"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>pHO_0_to_6</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000456 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000456">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000331"/>
+        <obo:IAO_0000115>A pH optimum manifested as maximum microbial growth at hydrogen ion concentrations between pH 6 and 7, characteristic of neutrophilic or alkali-tolerant organisms. Values ranging from 6 to 7 pH.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Alkali Tolerant</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Neutrophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>pHO_6_to_7</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>pH optimum mid1</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000456"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>pHO_6_to_7</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000457 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000457">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000331"/>
+        <obo:IAO_0000115>A pH optimum manifested as maximum microbial growth at hydrogen ion concentrations between pH 7 and 8, characteristic of neutrophilic, alkaliphilic, or alkali-tolerant organisms. Values ranging from 7 to 8 pH.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Alkali Tolerant</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Alkaliphile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Neutrophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>pHO_7_to_8</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>pH optimum mid2</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000457"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>pHO_7_to_8</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000458 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000458">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000331"/>
+        <obo:IAO_0000115>A pH optimum manifested as maximum microbial growth at hydrogen ion concentrations between pH 8 and 14, characteristic of alkaliphilic or extremely alkaliphilic organisms. Values ranging from 8 to 14 pH.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Alkali Tolerant</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Alkaliphile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Extreme Alkaliphile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>pHO_8_to_14</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>pH optimum high</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000458"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>pHO_8_to_14</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000459 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000459">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000332"/>
+        <obo:IAO_0000115>A pH range allowing microbial growth at hydrogen ion concentrations between pH 0 and 4, characteristic of extremely acidophilic organisms. Values ranging from 0 to 4 pH.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Acid Tolerant</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Acidophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Extreme Acidophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Facultative acidophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Obligative acidophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>pHR_0_to_4</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>pH range very low</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000459"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>pHR_0_to_4</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000460 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000460">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000332"/>
+        <obo:IAO_0000115>A pH range allowing microbial growth at hydrogen ion concentrations between pH 4 and 6, characteristic of acidophilic organisms. Values ranging from 4 to 6 pH.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Acid Tolerant</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Acidophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Facultative acidophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Obligative acidophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>pHR_4_to_6</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>pH range low</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000460"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>pHR_4_to_6</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000461 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000461">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000332"/>
+        <obo:IAO_0000115>A pH range allowing microbial growth at hydrogen ion concentrations between pH 6 and 7, characteristic of neutrophilic organisms. Values ranging from 6 to 7 pH.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Alkali Tolerant</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Facultative acidophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Neutrophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>pHR_6_to_7</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>pH range mid1</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000461"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>pHR_6_to_7</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000462 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000462">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000332"/>
+        <obo:IAO_0000115>A pH range allowing microbial growth at hydrogen ion concentrations between pH 7 and 8, characteristic of neutrophilic or alkaliphilic organisms. Values ranging from 7 to 8 pH.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Alkali Tolerant</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Alkaliphile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Facultative acidophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Neutrophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>pHR_7_to_8</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>pH range mid2</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000462"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>pHR_7_to_8</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000463 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000463">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000332"/>
+        <obo:IAO_0000115>A pH range allowing microbial growth at hydrogen ion concentrations between pH 8 and 10, characteristic of alkaliphilic organisms. Values ranging from 8 to 10 pH.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Alkali Tolerant</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Alkaliphile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Extreme Alkaliphile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Facultative acidophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>pHR_8_to_10</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>pH range mid3</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000463"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>pHR_8_to_10</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000464 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000464">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000332"/>
+        <obo:IAO_0000115>A pH range allowing microbial growth at hydrogen ion concentrations between pH 10 and 14, characteristic of extremely alkaliphilic organisms. Values ranging from 10 to 14 pH.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Alkali Tolerant</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Alkaliphile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Extreme Alkaliphile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>10_to_14</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>pH range high</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000464"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>10_to_14</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000465 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000465">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000333"/>
+        <obo:IAO_0000115>A salinity optimum manifested as maximum microbial growth at sodium chloride concentrations below 1%, characteristic of non-halophilic or halotolerant organisms. Values with maximum value of 1 % NaCl.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Halotolerant</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Non-halophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>NaR_&lt;1</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>NaCl optimum low</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000465"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>NaR_&lt;1</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000466 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000466">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000333"/>
+        <obo:IAO_0000115>A salinity optimum manifested as maximum microbial growth at sodium chloride concentrations between 1% and 3%, characteristic of slight halophiles or halotolerant organisms. Values ranging from 1 to 3 % NaCl.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Halotolerant</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Slight halophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>NaR_1_to_3</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>NaCl optimum mid1</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000466"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>NaR_1_to_3</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000467 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000467">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000333"/>
+        <obo:IAO_0000115>A salinity optimum manifested as maximum microbial growth at sodium chloride concentrations between 3% and 8%, characteristic of moderate halophiles or halotolerant organisms. Values ranging from 3 to 8 % NaCl.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Halotolerant</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Moderate halophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>NaR_3_to_8</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>NaCl optimum mid2</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000467"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>NaR_3_to_8</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000468 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000468">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000333"/>
+        <obo:IAO_0000115>A salinity optimum manifested as maximum microbial growth at sodium chloride concentrations above 8%, characteristic of extreme halophiles. Values with minimum value of 8 % NaCl.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Extreme halophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>NaR_&gt;8</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>NaCl optimum high</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000468"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>NaR_&gt;8</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000469 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000469">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000334"/>
+        <obo:IAO_0000115>A salinity range allowing microbial growth at sodium chloride concentrations below 1%, characteristic of non-halophilic organisms. Values with maximum value of 1 % NaCl.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Halotolerant</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Non-halophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>NaO_&lt;1</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>NaCl range low</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000469"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>NaO_&lt;1</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000470 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000470">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000334"/>
+        <obo:IAO_0000115>A salinity range allowing microbial growth at sodium chloride concentrations between 1% and 3%, characteristic of slight halophiles. Values ranging from 1 to 3 % NaCl.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Halotolerant</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Slight halophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>NaO_1_to_3</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>NaCl range mid1</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000470"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>NaO_1_to_3</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000471 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000471">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000334"/>
+        <obo:IAO_0000115>A salinity range allowing microbial growth at sodium chloride concentrations between 3% and 8%, characteristic of moderate halophiles. Values ranging from 3 to 8 % NaCl.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Halotolerant</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Moderate halophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>NaO_3_to_8</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>NaCl range mid2</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000471"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>NaO_3_to_8</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000472 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000472">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000334"/>
+        <obo:IAO_0000115>A salinity range allowing microbial growth at sodium chloride concentrations above 8%, characteristic of extreme halophiles. Values with minimum value of 8 % NaCl.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Extreme halophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>NaO_&gt;8</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>NaCl range high</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000472"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>NaO_&gt;8</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000473 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000473">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000232"/>
+        <obo:IAO_0000115>A growth tolerance metric measuring the span of pH conditions that support an organism&apos;s growth, with a narrow range less than 1 pH unit. Values with maximum value of 1 pH.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>pHd_&lt;1</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>pH delta very low</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000473"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>pHd_&lt;1</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000474 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000474">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000232"/>
+        <obo:IAO_0000115>A growth tolerance metric measuring the span of pH conditions that support an organism&apos;s growth, with a range between 1 and 2 pH units. Values ranging from 1 to 2 pH.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>pHd_1_2</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>pH delta low</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000474"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>pHd_1_2</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000475 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000475">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000232"/>
+        <obo:IAO_0000115>A growth tolerance metric measuring the span of pH conditions that support an organism&apos;s growth, with a range between 2 and 3 pH units. Values ranging from 2 to 3 pH.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>pHd_2_3</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>pH delta mid1</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000475"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>pHd_2_3</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000476 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000476">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000232"/>
+        <obo:IAO_0000115>A growth tolerance metric measuring the span of pH conditions that support an organism&apos;s growth, with a range between 3 and 4 pH units. Values ranging from 3 to 4 pH.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>pHd_3_4</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>pH delta mid2</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000476"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>pHd_3_4</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000477 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000477">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000232"/>
+        <obo:IAO_0000115>A growth tolerance metric measuring the span of pH conditions that support an organism&apos;s growth, with a range between 4 and 5 pH units. Values ranging from 4 to 5 pH.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>pHd_4_5</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>pH delta mid3</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000477"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>pHd_4_5</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000478 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000478">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000232"/>
+        <obo:IAO_0000115>A growth tolerance metric measuring the span of pH conditions that support an organism&apos;s growth, with a wide range between 5 and 9 pH units. Values ranging from 5 to 9 pH.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>pHd_5_9</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>pH delta high</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000478"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>pHd_5_9</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000479 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000479">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000335"/>
+        <obo:IAO_0000115>A growth tolerance metric measuring the span of sodium chloride concentrations that support an organism&apos;s growth, with a narrow range less than 1%. Values with maximum value of 1 C.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>Nad_&lt;1</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>NaCl delta low</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000479"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>Nad_&lt;1</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000480 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000480">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000335"/>
+        <obo:IAO_0000115>A growth tolerance metric measuring the span of sodium chloride concentrations that support an organism&apos;s growth, with a range between 1% and 3%. Values ranging from 1 to 3 C.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>Nad_1_3</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>NaCl delta mid1</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000480"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>Nad_1_3</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000481 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000481">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000335"/>
+        <obo:IAO_0000115>A growth tolerance metric measuring the span of sodium chloride concentrations that support an organism&apos;s growth, with a range between 3% and 8%. Values ranging from 3 to 8 C.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>Nad_3_8</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>NaCl delta mid2</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000481"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>Nad_3_8</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000482 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000482">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000335"/>
+        <obo:IAO_0000115>A growth tolerance metric measuring the span of sodium chloride concentrations that support an organism&apos;s growth, with a wide range greater than 8%. Values with maximum value of 8 C.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>Nad_&gt;8</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>NaCl delta high</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000482"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>Nad_&gt;8</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000483 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000483">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000303"/>
+        <obo:IAO_0000115>A growth tolerance metric measuring the span of temperatures that support an organism&apos;s growth, with a narrow range between 1°C and 5°C. Values ranging from 1 to 5 C.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>Td_1_5</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>temperature delta very low</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000483"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>Td_1_5</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000484 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000484">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000303"/>
+        <obo:IAO_0000115>A growth tolerance metric measuring the span of temperatures that support an organism&apos;s growth, with a range between 5°C and 10°C. Values ranging from 5 to 10 C.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>Td_5_10</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>temperature delta low</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000484"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>Td_5_10</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000485 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000485">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000303"/>
+        <obo:IAO_0000115>A growth tolerance metric measuring the span of temperatures that support an organism&apos;s growth, with a range between 10°C and 20°C. Values ranging from 10 to 20 C.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>Td_10_20</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>temperature delta mid1</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000485"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>Td_10_20</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000486 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000486">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000303"/>
+        <obo:IAO_0000115>A growth tolerance metric measuring the span of temperatures that support an organism&apos;s growth, with a range between 20°C and 30°C. Values ranging from 20 to 30 C.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>Td_20_30</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>temperature delta mid2</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000486"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>Td_20_30</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000487 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000487">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000303"/>
+        <obo:IAO_0000115>A growth tolerance metric measuring the span of temperatures that support an organism&apos;s growth, with a wide range greater than 30°C. Values with minimum value of 30 C.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>Td_&gt;30</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>temperature delta high</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000487"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>Td_&gt;30</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000511 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000511">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
+        <obo:IAO_0000115>A combination of cellular processes that permits survival and growth under specific hydrogen ion concentrations.</obo:IAO_0000115>
+        <rdfs:label>pH adaptation</rdfs:label>
+    </owl:Class>
     
 
 
@@ -1722,13 +3418,13 @@
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000624"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>non-halophilic</owl:annotatedTarget>
-        <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000624"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>non-halophilic</owl:annotatedTarget>
-        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+        <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
     </owl:Axiom>
     
 
@@ -3397,564 +5093,6 @@
     
 
 
-    <!-- https://w3id.org/metpo/1000807 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000807">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000800"/>
-        <rdfs:label>Nitrogen compound respiration</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1000808 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000808">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000807"/>
-        <oboInOwl:hasRelatedSynonym>Nitrate respiration</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>nitrate_reduction</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>Nitrate reduction</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000808"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>nitrate_reduction</owl:annotatedTarget>
-        <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
-    </owl:Axiom>
-    
-
-
-    <!-- https://w3id.org/metpo/1000809 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000809">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000807"/>
-        <oboInOwl:hasRelatedSynonym>Dissimilatory nitrate reduction to N₂</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Nitrate reduction to N₂</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>denitrification</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>Denitrification</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000809"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>denitrification</owl:annotatedTarget>
-        <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
-    </owl:Axiom>
-    
-
-
-    <!-- https://w3id.org/metpo/1000810 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000810">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000807"/>
-        <oboInOwl:hasRelatedSynonym>DNRA</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Nitrate ammonification</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>Dissimilatory nitrate reduction to ammonium</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1000811 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000811">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000807"/>
-        <oboInOwl:hasRelatedSynonym>nitrite_reduction</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>Nitrite reduction</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000811"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>nitrite_reduction</owl:annotatedTarget>
-        <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
-    </owl:Axiom>
-    
-
-
-    <!-- https://w3id.org/metpo/1000812 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000812">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000800"/>
-        <oboInOwl:hasRelatedSynonym>Anammox</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Anoxic NH₄⁺ oxidation</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>Anaerobic ammonium oxidation</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1000813 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000813">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000807"/>
-        <oboInOwl:hasRelatedSynonym>NO reduction</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Nitric oxide respiration</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>nitric_oxide_reduction</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>Nitric oxide reduction</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000813"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>nitric_oxide_reduction</owl:annotatedTarget>
-        <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
-    </owl:Axiom>
-    
-
-
-    <!-- https://w3id.org/metpo/1000814 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000814">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000807"/>
-        <oboInOwl:hasRelatedSynonym>Nitrous oxide respiration</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>N₂O reduction</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>nitrous_oxide_reduction</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>Nitrous oxide reduction</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000814"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>nitrous_oxide_reduction</owl:annotatedTarget>
-        <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
-    </owl:Axiom>
-    
-
-
-    <!-- https://w3id.org/metpo/1000815 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000815">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000800"/>
-        <rdfs:label>Sulfur and sulfoxide compound respiration</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1000816 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000816">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000815"/>
-        <oboInOwl:hasRelatedSynonym>Dissimilatory sulfate reduction</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>SRM metabolism</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Sulfate respiration</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Sulfidogenesis</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>sulfate_reduction</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>Sulfate reduction</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000816"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>sulfate_reduction</owl:annotatedTarget>
-        <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
-    </owl:Axiom>
-    
-
-
-    <!-- https://w3id.org/metpo/1000817 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000817">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000815"/>
-        <oboInOwl:hasRelatedSynonym>Dissimilatory sulfur reduction</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Elemental sulfur reduction</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Sulfur respiration</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>sulfur_reduction</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>Sulfur reduction</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000817"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>sulfur_reduction</owl:annotatedTarget>
-        <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
-    </owl:Axiom>
-    
-
-
-    <!-- https://w3id.org/metpo/1000818 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000818">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000815"/>
-        <oboInOwl:hasRelatedSynonym>Dissimilatory sulfite reduction</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>sulfite_reduction</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>Sulfite reduction</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000818"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>sulfite_reduction</owl:annotatedTarget>
-        <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
-    </owl:Axiom>
-    
-
-
-    <!-- https://w3id.org/metpo/1000819 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000819">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000815"/>
-        <oboInOwl:hasRelatedSynonym>Dissimilatory thiosulfate reduction</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>thiosulfate_reduction</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>Thiosulfate reduction</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000819"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>thiosulfate_reduction</owl:annotatedTarget>
-        <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
-    </owl:Axiom>
-    
-
-
-    <!-- https://w3id.org/metpo/1000820 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000820">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000815"/>
-        <rdfs:label>Sulfoxide respiration</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1000821 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000821">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000820"/>
-        <oboInOwl:hasRelatedSynonym>DMSO reduction</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>DMSO respiration</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>Dimethyl sulfoxide respiration</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1000822 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000822">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000820"/>
-        <rdfs:label>Methionine sulfoxide respiration</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1000823 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000823">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000815"/>
-        <oboInOwl:hasRelatedSynonym>H₂S oxidation</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Sulfide oxidizing</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>sulfide_oxidation</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>Sulfide oxidation</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000823"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>sulfide_oxidation</owl:annotatedTarget>
-        <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
-    </owl:Axiom>
-    
-
-
-    <!-- https://w3id.org/metpo/1000824 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000824">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000815"/>
-        <oboInOwl:hasRelatedSynonym>S₂O₃²⁻ oxidation</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Thiosulfate oxidizing</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>thiosulfate_oxidation</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>Thiosulfate oxidation</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000824"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>thiosulfate_oxidation</owl:annotatedTarget>
-        <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
-    </owl:Axiom>
-    
-
-
-    <!-- https://w3id.org/metpo/1000825 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000825">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000815"/>
-        <oboInOwl:hasRelatedSynonym>SO₃²⁻ oxidation</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Sulfite oxidizing</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>sulfite_oxidation</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>Sulfite oxidation</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000825"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>sulfite_oxidation</owl:annotatedTarget>
-        <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
-    </owl:Axiom>
-    
-
-
-    <!-- https://w3id.org/metpo/1000826 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000826">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000815"/>
-        <oboInOwl:hasRelatedSynonym>S₄O₆²⁻ reduction</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Tetrathionate respiration</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>Tetrathionate reduction</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1000827 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000827">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000815"/>
-        <oboInOwl:hasRelatedSynonym>Polysulfide respiration</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Sₓ²⁻ reduction</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>Polysulfide reduction</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1000828 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000828">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000800"/>
-        <oboInOwl:hasRelatedSynonym>Dissimilatory metal reduction</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Metal respiration</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>Metal and metalloid respiration</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1000829 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000829">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000828"/>
-        <oboInOwl:hasRelatedSynonym>Dissimilatory Fe(III) reduction</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Dissimilatory iron reduction</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Ferric iron reduction</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Iron respiration</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>iron_reduction</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>Iron reduction</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000829"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>iron_reduction</owl:annotatedTarget>
-        <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
-    </owl:Axiom>
-    
-
-
-    <!-- https://w3id.org/metpo/1000830 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000830">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000828"/>
-        <oboInOwl:hasRelatedSynonym>Fe(II) oxidation</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Ferrous iron oxidation</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>iron_oxidation</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>Iron oxidation</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000830"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>iron_oxidation</owl:annotatedTarget>
-        <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
-    </owl:Axiom>
-    
-
-
-    <!-- https://w3id.org/metpo/1000831 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000831">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000828"/>
-        <oboInOwl:hasRelatedSynonym>NDFO</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Nitrate-dependent iron oxidation</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>Nitrate-dependent Fe(II) oxidation</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1000832 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000832">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000828"/>
-        <oboInOwl:hasRelatedSynonym>Dissimilatory manganese reduction</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Manganese respiration</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Manganese(IV) reduction</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Mn(IV) reduction</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>manganese_reduction</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>Manganese reduction</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000832"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>manganese_reduction</owl:annotatedTarget>
-        <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
-    </owl:Axiom>
-    
-
-
-    <!-- https://w3id.org/metpo/1000833 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000833">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000828"/>
-        <oboInOwl:hasRelatedSynonym>Manganese(II) oxidation</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Mn(II) oxidation</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>manganese_oxidation</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>Manganese oxidation</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000833"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>manganese_oxidation</owl:annotatedTarget>
-        <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
-    </owl:Axiom>
-    
-
-
-    <!-- https://w3id.org/metpo/1000834 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000834">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000828"/>
-        <oboInOwl:hasRelatedSynonym>Dissimilatory uranium reduction</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>U(VI) reduction</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Uranium respiration</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Uranyl reduction</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>uranyl_reduction</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>Uranium reduction</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000834"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>uranyl_reduction</owl:annotatedTarget>
-        <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
-    </owl:Axiom>
-    
-
-
-    <!-- https://w3id.org/metpo/1000835 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000835">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000828"/>
-        <oboInOwl:hasRelatedSynonym>Dissimilatory vanadium reduction</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>V(V) reduction</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Vanadate reduction</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Vanadium respiration</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>Vanadium reduction</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1000836 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000836">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000828"/>
-        <oboInOwl:hasRelatedSynonym>Chromate reduction</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Chromium respiration</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Cr(VI) reduction</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Dissimilatory chromium reduction</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>Chromium reduction</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1000837 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000837">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000828"/>
-        <oboInOwl:hasRelatedSynonym>Dissimilatory technetium reduction</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Pertechnetate reduction</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Tc(VII) reduction</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Technetium respiration</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>Technetium reduction</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1000838 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000838">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000828"/>
-        <oboInOwl:hasRelatedSynonym>Co(III) reduction</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Cobalt respiration</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Cobalt(III) reduction</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Dissimilatory cobalt reduction</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>cobalt_reduction</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>Cobalt reduction</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000838"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>cobalt_reduction</owl:annotatedTarget>
-        <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
-    </owl:Axiom>
-    
-
-
-    <!-- https://w3id.org/metpo/1000839 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000839">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000828"/>
-        <oboInOwl:hasRelatedSynonym>Arsenate respiration</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>As(V) reduction</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Dissimilatory arsenate reduction</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>arsenate_reduction</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>Arsenate reduction</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000839"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>arsenate_reduction</owl:annotatedTarget>
-        <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
-    </owl:Axiom>
-    
-
-
-    <!-- https://w3id.org/metpo/1000840 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000840">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000828"/>
-        <oboInOwl:hasRelatedSynonym>Arsenite oxidizing</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>As(III) oxidation</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>arsenite_oxidation</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>Arsenite oxidation</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000840"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>arsenite_oxidation</owl:annotatedTarget>
-        <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
-    </owl:Axiom>
-    
-
-
-    <!-- https://w3id.org/metpo/1000841 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000841">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000828"/>
-        <oboInOwl:hasRelatedSynonym>Dissimilatory selenate reduction</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Se(VI) reduction</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Selenate respiration</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>selenate_reduction</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>Selenate reduction</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000841"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>selenate_reduction</owl:annotatedTarget>
-        <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
-    </owl:Axiom>
-    
-
-
-    <!-- https://w3id.org/metpo/1000842 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000842">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000828"/>
-        <oboInOwl:hasRelatedSynonym>Se(IV) reduction</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Selenite respiration</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>Selenite reduction</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1000843 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000843">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000800"/>
-        <rdfs:label>Carbon and organic compound respiration</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- https://w3id.org/metpo/1000844 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000844">
@@ -3998,302 +5136,6 @@
         <oboInOwl:hasRelatedSynonym>Reductive acetyl-CoA pathway</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Wood-Ljungdahl pathway</oboInOwl:hasRelatedSynonym>
         <rdfs:label>Homoacetogenesis</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1000847 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000847">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000843"/>
-        <oboInOwl:hasRelatedSynonym>Fumarate reduction</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>fumarate_reduction</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>Fumarate respiration</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000847"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>fumarate_reduction</owl:annotatedTarget>
-        <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
-    </owl:Axiom>
-    
-
-
-    <!-- https://w3id.org/metpo/1000848 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000848">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000843"/>
-        <oboInOwl:hasRelatedSynonym>TMAO reduction</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>TMAO respiration</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>Trimethylamine N-oxide respiration</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1000849 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000849">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000843"/>
-        <oboInOwl:hasRelatedSynonym>Extracellular respiration</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Humic substance reduction</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Humus reduction</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>Humus respiration</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1000850 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000850">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000800"/>
-        <rdfs:label>Halogenated compound respiration</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1000851 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000851">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000850"/>
-        <oboInOwl:hasRelatedSynonym>Dehalorespiration</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Reductive dehalogenation</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>Organohalide respiration</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1000853 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000853">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000850"/>
-        <oboInOwl:hasRelatedSynonym>ClO₄⁻ reduction</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Perchlorate reduction</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>Perchlorate respiration</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1000854 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000854">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000850"/>
-        <oboInOwl:hasRelatedSynonym>Chlorate reduction</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>ClO₃⁻ reduction</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>chlorate_reduction</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>Chlorate respiration</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000854"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>chlorate_reduction</owl:annotatedTarget>
-        <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
-    </owl:Axiom>
-    
-
-
-    <!-- https://w3id.org/metpo/1000855 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000855">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000850"/>
-        <oboInOwl:hasRelatedSynonym>BrO₃⁻ reduction</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Bromate respiration</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>Bromate reduction</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1000856 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000856">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000850"/>
-        <oboInOwl:hasRelatedSynonym>IO₃⁻ reduction</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Iodate respiration</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>Iodate reduction</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1000857 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000857">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000807"/>
-        <oboInOwl:hasRelatedSynonym>Nitrite-driven AOM</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>n-DAMO</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>Nitrite-dependent methane oxidation</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1000858 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000858">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000800"/>
-        <oboInOwl:hasRelatedSynonym>N-DAMO</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Nitrate-driven AOM</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>Nitrate-dependent methane oxidation</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1000859 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000859">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000060"/>
-        <oboInOwl:hasRelatedSynonym>H₂ oxidation</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Knallgas metabolism</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>hydrogen_oxidation</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>hydrogen_oxidation_dark</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>Hydrogen oxidation</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000859"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>hydrogen_oxidation</owl:annotatedTarget>
-        <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000859"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>hydrogen_oxidation_dark</owl:annotatedTarget>
-        <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
-    </owl:Axiom>
-    
-
-
-    <!-- https://w3id.org/metpo/1000860 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000860">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000815"/>
-        <oboInOwl:hasRelatedSynonym>Sox system</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>sulfur_oxidation</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>Sulfur oxidation</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000860"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>sulfur_oxidation</owl:annotatedTarget>
-        <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
-    </owl:Axiom>
-    
-
-
-    <!-- https://w3id.org/metpo/1000861 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000861">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000807"/>
-        <oboInOwl:hasRelatedSynonym>Ammonia oxidation</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Nitrite oxidation</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>nitrification</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>nitrite_oxidation</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>Nitrification</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000861"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>nitrification</owl:annotatedTarget>
-        <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000861"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>nitrite_oxidation</owl:annotatedTarget>
-        <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
-    </owl:Axiom>
-    
-
-
-    <!-- https://w3id.org/metpo/1000862 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000862">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1002035"/>
-        <oboInOwl:hasRelatedSynonym>Comammox</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Complete nitrification</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Single-step nitrification</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>Complete ammonia oxidation</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1000863 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000863">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000060"/>
-        <oboInOwl:hasRelatedSynonym>CO oxidation</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>carbon_monoxide_oxidation</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>carbonmonoxide_oxidation</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>Carbon monoxide oxidation</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000863"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>carbon_monoxide_oxidation</owl:annotatedTarget>
-        <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000863"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>carbonmonoxide_oxidation</owl:annotatedTarget>
-        <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
-    </owl:Axiom>
-    
-
-
-    <!-- https://w3id.org/metpo/1000864 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000864">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000844"/>
-        <oboInOwl:hasRelatedSynonym>CO₂ reduction pathway</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>H₂/CO₂ methanogenesis</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>Hydrogenotrophic methanogenesis</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1000865 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000865">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000844"/>
-        <oboInOwl:hasRelatedSynonym>Acetate cleavage pathway</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Acetate methanogenesis</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>Acetoclastic methanogenesis</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1000866 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000866">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000844"/>
-        <oboInOwl:hasRelatedSynonym>Methyl compound methanogenesis</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>Methylotrophic methanogenesis</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1000867 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000867">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000800"/>
-        <oboInOwl:hasRelatedSynonym>AOM</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>Anaerobic methane oxidation</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1000868 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000868">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000828"/>
-        <rdfs:label>Lanthanide reduction</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/metpo/1000869 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1000869">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000828"/>
-        <rdfs:label>Lanthanide oxidation</rdfs:label>
     </owl:Class>
     
 
@@ -4413,29 +5255,137 @@
     
 
 
-    <!-- https://w3id.org/metpo/1002000 -->
+    <!-- https://w3id.org/metpo/1001006 -->
 
-    <owl:Class rdf:about="https://w3id.org/metpo/1002000">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000800"/>
-        <rdfs:label>Sulfate-dependent methane oxidation</rdfs:label>
+    <owl:Class rdf:about="https://w3id.org/metpo/1001006">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1001000"/>
+        <rdfs:label>culture NaCl observation</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- https://w3id.org/metpo/1002001 -->
+    <!-- https://w3id.org/metpo/1001007 -->
 
-    <owl:Class rdf:about="https://w3id.org/metpo/1002001">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000828"/>
-        <rdfs:label>Fe(III)-dependent methane oxidation</rdfs:label>
+    <owl:Class rdf:about="https://w3id.org/metpo/1001007">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1001000"/>
+        <rdfs:label>growth NaCl observation</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- https://w3id.org/metpo/1002002 -->
+    <!-- https://w3id.org/metpo/1001008 -->
 
-    <owl:Class rdf:about="https://w3id.org/metpo/1002002">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000828"/>
-        <rdfs:label>Mn(IV)-dependent methane oxidation</rdfs:label>
+    <owl:Class rdf:about="https://w3id.org/metpo/1001008">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1001000"/>
+        <rdfs:label>NaCl delta observation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/1001009 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1001009">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1001000"/>
+        <rdfs:label>NaCl range observation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/1001010 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1001010">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1001000"/>
+        <rdfs:label>optimum NaCl observation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/1001011 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1001011">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1001000"/>
+        <rdfs:label>culture pH observation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/1001012 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1001012">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1001000"/>
+        <rdfs:label>growth pH observation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/1001013 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1001013">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1001000"/>
+        <rdfs:label>optimum pH observation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/1001014 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1001014">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1001000"/>
+        <rdfs:label>pH delta observation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/1001015 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1001015">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1001000"/>
+        <rdfs:label>pH range observation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/1001101 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1001101">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000188"/>
+        <rdfs:label>biosafety level</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/1001102 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1001102">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1001101"/>
+        <rdfs:label>biosafety level 1</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/1001103 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1001103">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1001101"/>
+        <rdfs:label>biosafety level 2</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/1001104 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1001104">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1001101"/>
+        <rdfs:label>biosafety level 3</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/1001105 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1001105">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1001101"/>
+        <rdfs:label>biosafety level 4</rdfs:label>
     </owl:Class>
     
 
@@ -4453,8 +5403,15 @@
 
     <owl:Class rdf:about="https://w3id.org/metpo/1002005">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000800"/>
+        <oboInOwl:hasRelatedSynonym>fermentation</oboInOwl:hasRelatedSynonym>
         <rdfs:label>Fermentation</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1002005"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>fermentation</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
+    </owl:Axiom>
     
 
 
@@ -4467,61 +5424,113 @@
     
 
 
-    <!-- https://w3id.org/metpo/1002007 -->
+    <!-- https://w3id.org/metpo/1003000 -->
 
-    <owl:Class rdf:about="https://w3id.org/metpo/1002007">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000815"/>
-        <rdfs:label>Sulfur disproportionation</rdfs:label>
+    <owl:Class rdf:about="https://w3id.org/metpo/1003000">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
+        <rdfs:label>pH growth preference</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- https://w3id.org/metpo/1002008 -->
+    <!-- https://w3id.org/metpo/1003001 -->
 
-    <owl:Class rdf:about="https://w3id.org/metpo/1002008">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000807"/>
-        <oboInOwl:hasRelatedSynonym>diazotroph</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>nitrogen_fixation</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>Nitrogen fixation</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1002008"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>diazotroph</owl:annotatedTarget>
-        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1002008"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>nitrogen_fixation</owl:annotatedTarget>
-        <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
-    </owl:Axiom>
-    
-
-
-    <!-- https://w3id.org/metpo/1002035 -->
-
-    <owl:Class rdf:about="https://w3id.org/metpo/1002035">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000807"/>
-        <rdfs:label>Ammonia oxidation</rdfs:label>
+    <owl:Class rdf:about="https://w3id.org/metpo/1003001">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1003000"/>
+        <oboInOwl:hasExactSynonym>neutralophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>neutralophilic</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>neutrophile</oboInOwl:hasExactSynonym>
+        <rdfs:label>neutrophilic</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- https://w3id.org/metpo/1002036 -->
+    <!-- https://w3id.org/metpo/1003002 -->
 
-    <owl:Class rdf:about="https://w3id.org/metpo/1002036">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000807"/>
-        <rdfs:label>Nitrite oxidation</rdfs:label>
+    <owl:Class rdf:about="https://w3id.org/metpo/1003002">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1003000"/>
+        <oboInOwl:hasExactSynonym>alkaliphile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>alkaliphilic</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>alkalophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>alkalophilic</oboInOwl:hasExactSynonym>
+        <rdfs:label>alkaphilic</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- https://w3id.org/metpo/1002038 -->
+    <!-- https://w3id.org/metpo/1003003 -->
 
-    <owl:Class rdf:about="https://w3id.org/metpo/1002038">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000060"/>
-        <rdfs:label>Methane oxidation</rdfs:label>
+    <owl:Class rdf:about="https://w3id.org/metpo/1003003">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1003000"/>
+        <oboInOwl:hasExactSynonym>acidophil</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>acidophile</oboInOwl:hasExactSynonym>
+        <rdfs:label>acidophilic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/1003004 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1003004">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1003000"/>
+        <oboInOwl:hasExactSynonym>obligate alkaliphile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>obligate alkaphilic</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>obligately alkaliphilic</oboInOwl:hasExactSynonym>
+        <rdfs:label>obligately alkaphilic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/1003005 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1003005">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1003000"/>
+        <oboInOwl:hasExactSynonym>facultative alkaliphile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>facultative alkaphilic</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>facultatively alkaliphilic</oboInOwl:hasExactSynonym>
+        <rdfs:label>facultatively alkaphilic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/1003006 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1003006">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1003000"/>
+        <oboInOwl:hasExactSynonym>obligate acidophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>obligately acidophilic</oboInOwl:hasExactSynonym>
+        <rdfs:label>obligately acidophilic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/1003007 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1003007">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1003000"/>
+        <oboInOwl:hasExactSynonym>facultative acidophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>facultatively acidophilic</oboInOwl:hasExactSynonym>
+        <rdfs:label>facultatively acidophilic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/1003008 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1003008">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1003000"/>
+        <oboInOwl:hasExactSynonym>aciduric</oboInOwl:hasExactSynonym>
+        <rdfs:label>acidotolerant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/1003009 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1003009">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1003000"/>
+        <oboInOwl:hasExactSynonym>alkalitolerant</oboInOwl:hasExactSynonym>
+        <rdfs:label>alkalotolerant</rdfs:label>
     </owl:Class>
 </rdf:RDF>
 

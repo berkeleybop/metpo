@@ -3,16 +3,28 @@
     "id" : "https://w3id.org/metpo/metpo/metpo-full.json",
     "meta" : {
       "basicPropertyValues" : [ {
+        "pred" : "http://purl.org/dc/terms/creator",
+        "val" : "METPO Development Team"
+      }, {
         "pred" : "http://purl.org/dc/terms/description",
         "val" : "Microbial ecophysiological trait and phenotype ontology"
+      }, {
+        "pred" : "http://purl.org/dc/terms/issued",
+        "val" : "2024-01-01"
+      }, {
+        "pred" : "http://purl.org/dc/terms/license",
+        "val" : "https://creativecommons.org/licenses/by/4.0/"
+      }, {
+        "pred" : "http://purl.org/dc/terms/modified",
+        "val" : "2025-09-29"
       }, {
         "pred" : "http://purl.org/dc/terms/title",
         "val" : "METPO"
       }, {
         "pred" : "http://www.w3.org/2002/07/owl#versionInfo",
-        "val" : "2025-09-23"
+        "val" : "2025-10-03"
       } ],
-      "version" : "https://w3id.org/metpo/metpo/releases/2025-09-23/metpo-full.json"
+      "version" : "https://w3id.org/metpo/metpo/releases/2025-10-03/metpo-full.json"
     },
     "nodes" : [ {
       "id" : "https://w3id.org/metpo/1000059",
@@ -32,6 +44,15 @@
       "lbl" : "metabolism",
       "type" : "CLASS"
     }, {
+      "id" : "https://w3id.org/metpo/1000127",
+      "lbl" : "GC content",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "The percentage of guanine and cytosine nucleotides in DNA"
+        }
+      }
+    }, {
       "id" : "https://w3id.org/metpo/1000186",
       "lbl" : "material entity",
       "type" : "CLASS",
@@ -47,6 +68,1002 @@
       "meta" : {
         "definition" : {
           "val" : "A dependent entity that inheres in a bearer by virtue of how the bearer is related to other entities"
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000232",
+      "lbl" : "pH delta",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A measure of the breadth of hydrogen ion concentrations that a microorganism can tolerate, calculated as the difference between the maximum and minimum viable pH values"
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000233",
+      "lbl" : "pH optimum (growth range)",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "The specific pH at which an organism exhibits maximum growth rate"
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000235",
+      "lbl" : "pH range (growth tolerance)",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "The span of pH values within which an organism can grow"
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000236",
+      "lbl" : "pH tolerance",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "The ability of an organism to survive exposure to pH values outside its optimal growth range"
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000303",
+      "lbl" : "temperature delta",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A measure of the breadth of thermal conditions that a microorganism can withstand, calculated as the difference between the maximum and minimum viable temperature values"
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000304",
+      "lbl" : "temperature optimum (growth range)",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "The specific temperature at which an organism exhibits maximum growth rate"
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000306",
+      "lbl" : "temperature range (growth tolerance)",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "The span of temperatures within which an organism can grow"
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000329",
+      "lbl" : "temperature optimum (metabolic activity)",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "The specific temperature at which a microorganism exhibits maximum metabolic activity and growth rate within its viable range."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000330",
+      "lbl" : "temperature range (metabolic viability)",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "The span of temperatures within which a microorganism can maintain metabolic functions and population viability."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000331",
+      "lbl" : "pH optimum (metabolic efficiency)",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "The specific hydrogen ion concentration at which a microorganism achieves its maximum growth rate and metabolic efficiency."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000332",
+      "lbl" : "pH range (cellular homeostasis)",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "The span of hydrogen ion concentrations within which a microorganism can maintain cellular homeostasis and sustain growth."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000333",
+      "lbl" : "NaCl optimum",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "The specific concentration of sodium chloride at which a microorganism exhibits maximum growth rate and metabolic efficiency."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000334",
+      "lbl" : "NaCl range",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "The span of sodium chloride concentrations within which a microorganism can maintain osmotic balance and cellular functions."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000335",
+      "lbl" : "NaCl delta",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A measure of the breadth of sodium chloride concentrations that a microorganism can tolerate, calculated as the difference between the maximum and minimum viable salinity values."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000429",
+      "lbl" : "GC low",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A genomic feature characterized by a guanine-cytosine content percentage below 42.65% in an organism's DNA. Values with maximum value of 42.65 % GC."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "GC_<42.65"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000430",
+      "lbl" : "GC mid1",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A genomic feature characterized by a guanine-cytosine content percentage between 42.65% and 57% in an organism's DNA. Values ranging from 42.65 to 57 % GC."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "GC_42.65_57.0"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000431",
+      "lbl" : "GC mid2",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A genomic feature characterized by a guanine-cytosine content percentage between 57% and 66.3% in an organism's DNA. Values ranging from 57 to 66.3 % GC."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "GC_57.0_66.3"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000432",
+      "lbl" : "GC high",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A genomic feature characterized by a guanine-cytosine content percentage above 66.3% in an organism's DNA. Values with minimum value of 66.3 % GC."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "GC_>66.3"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000441",
+      "lbl" : "temperature optimum very low",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A temperature optimum manifested as maximum microbial growth at temperatures below 10°C, typical of psychrophilic organisms. Values with maximum value of 10 C."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Psychrophile"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "TO_<10"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000442",
+      "lbl" : "temperature optimum low",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A temperature optimum manifested as maximum microbial growth at temperatures between 10°C and 22°C, common in psychrophilic or psychrotolerant organisms. Values ranging from 10 to 22 C."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Psychrophile"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Psychrotolerant"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "TO_10_to_22"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000443",
+      "lbl" : "temperature optimum mid1",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A temperature optimum manifested as maximum microbial growth at temperatures between 22°C and 27°C, characteristic of mesophilic organisms. Values ranging from 22 to 27 C."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Mesophilie"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "TO_22_to_27"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000444",
+      "lbl" : "temperature optimum mid2",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A temperature optimum manifested as maximum microbial growth at temperatures between 27°C and 30°C, characteristic of mesophilic organisms. Values ranging from 27 to 30 C."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Mesophilie"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "TO_27_to_30"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000445",
+      "lbl" : "temperature optimum mid3",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A temperature optimum manifested as maximum microbial growth at temperatures between 30°C and 34°C, characteristic of mesophilic organisms. Values ranging from 30 to 34 C."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Mesophilie"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "TO_30_to_34"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000446",
+      "lbl" : "temperature optimum mid4",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A temperature optimum manifested as maximum microbial growth at temperatures between 34°C and 40°C, characteristic of mesophilic organisms. Values ranging from 34 to 40 C."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Mesophilie"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "TO_34_to_40"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000447",
+      "lbl" : "temperature optimum high",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A temperature optimum manifested as maximum microbial growth at temperatures above 40°C, typical of thermophilic organisms. Values with minimum value of 40 C."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Thermophile"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "TO_>40"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000448",
+      "lbl" : "temperature range very low",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A temperature range allowing microbial growth at temperatures below 10°C, characteristic of psychrophilic organisms. Values with maximum value of 10 C."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Psychrophile"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "TR_<10"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000449",
+      "lbl" : "temperature range low",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A temperature range allowing microbial growth at temperatures between 10°C and 22°C, characteristic of psychrophilic or psychrotolerant organisms. Values ranging from 10 to 22 C."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Psychrophile"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Psychrotolerant"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "TR_10_to_22"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000450",
+      "lbl" : "temperature range mid1",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A temperature range allowing microbial growth at temperatures between 22°C and 27°C, characteristic of mesophilic organisms. Values ranging from 22 to 27 C."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Mesophilie"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "TR_22_to_27"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000451",
+      "lbl" : "temperature range mid2",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A temperature range allowing microbial growth at temperatures between 27°C and 30°C, characteristic of mesophilic organisms. Values ranging from 27 to 30 C."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Mesophilie"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "TR_27_to_30"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000452",
+      "lbl" : "temperature range mid3",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A temperature range allowing microbial growth at temperatures between 30°C and 34°C, characteristic of mesophilic organisms. Values ranging from 30 to 34 C."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Mesophilie"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "TR_30_to_34"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000453",
+      "lbl" : "temperature range mid4",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A temperature range allowing microbial growth at temperatures between 34°C and 40°C, characteristic of mesophilic organisms. Values ranging from 34 to 40 C."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Mesophilie"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "TR_34_to_40"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000454",
+      "lbl" : "temperature range high",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A temperature range allowing microbial growth at temperatures above 40°C, characteristic of thermophilic organisms. Values with minimum value of 40 C."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Thermophile"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "TR_>40"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000455",
+      "lbl" : "pH optimum low",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A pH optimum manifested as maximum microbial growth at hydrogen ion concentrations between pH 0 and 6, characteristic of acidophilic organisms. Values ranging from 0 to 6 pH."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Acid Tolerant"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Acidophile"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Extreme Acidophile"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Facultative acidophile"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Obligative acidophile"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "pHO_0_to_6"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000456",
+      "lbl" : "pH optimum mid1",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A pH optimum manifested as maximum microbial growth at hydrogen ion concentrations between pH 6 and 7, characteristic of neutrophilic or alkali-tolerant organisms. Values ranging from 6 to 7 pH."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Alkali Tolerant"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Neutrophile"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "pHO_6_to_7"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000457",
+      "lbl" : "pH optimum mid2",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A pH optimum manifested as maximum microbial growth at hydrogen ion concentrations between pH 7 and 8, characteristic of neutrophilic, alkaliphilic, or alkali-tolerant organisms. Values ranging from 7 to 8 pH."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Alkali Tolerant"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Alkaliphile"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Neutrophile"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "pHO_7_to_8"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000458",
+      "lbl" : "pH optimum high",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A pH optimum manifested as maximum microbial growth at hydrogen ion concentrations between pH 8 and 14, characteristic of alkaliphilic or extremely alkaliphilic organisms. Values ranging from 8 to 14 pH."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Alkali Tolerant"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Alkaliphile"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Extreme Alkaliphile"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "pHO_8_to_14"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000459",
+      "lbl" : "pH range very low",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A pH range allowing microbial growth at hydrogen ion concentrations between pH 0 and 4, characteristic of extremely acidophilic organisms. Values ranging from 0 to 4 pH."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Acid Tolerant"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Acidophile"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Extreme Acidophile"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Facultative acidophile"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Obligative acidophile"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "pHR_0_to_4"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000460",
+      "lbl" : "pH range low",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A pH range allowing microbial growth at hydrogen ion concentrations between pH 4 and 6, characteristic of acidophilic organisms. Values ranging from 4 to 6 pH."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Acid Tolerant"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Acidophile"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Facultative acidophile"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Obligative acidophile"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "pHR_4_to_6"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000461",
+      "lbl" : "pH range mid1",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A pH range allowing microbial growth at hydrogen ion concentrations between pH 6 and 7, characteristic of neutrophilic organisms. Values ranging from 6 to 7 pH."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Alkali Tolerant"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Facultative acidophile"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Neutrophile"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "pHR_6_to_7"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000462",
+      "lbl" : "pH range mid2",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A pH range allowing microbial growth at hydrogen ion concentrations between pH 7 and 8, characteristic of neutrophilic or alkaliphilic organisms. Values ranging from 7 to 8 pH."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Alkali Tolerant"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Alkaliphile"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Facultative acidophile"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Neutrophile"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "pHR_7_to_8"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000463",
+      "lbl" : "pH range mid3",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A pH range allowing microbial growth at hydrogen ion concentrations between pH 8 and 10, characteristic of alkaliphilic organisms. Values ranging from 8 to 10 pH."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Alkali Tolerant"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Alkaliphile"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Extreme Alkaliphile"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Facultative acidophile"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "pHR_8_to_10"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000464",
+      "lbl" : "pH range high",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A pH range allowing microbial growth at hydrogen ion concentrations between pH 10 and 14, characteristic of extremely alkaliphilic organisms. Values ranging from 10 to 14 pH."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Alkali Tolerant"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Alkaliphile"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Extreme Alkaliphile"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "10_to_14"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000465",
+      "lbl" : "NaCl optimum low",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A salinity optimum manifested as maximum microbial growth at sodium chloride concentrations below 1%, characteristic of non-halophilic or halotolerant organisms. Values with maximum value of 1 % NaCl."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Halotolerant"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Non-halophile"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "NaR_<1"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000466",
+      "lbl" : "NaCl optimum mid1",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A salinity optimum manifested as maximum microbial growth at sodium chloride concentrations between 1% and 3%, characteristic of slight halophiles or halotolerant organisms. Values ranging from 1 to 3 % NaCl."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Halotolerant"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Slight halophile"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "NaR_1_to_3"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000467",
+      "lbl" : "NaCl optimum mid2",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A salinity optimum manifested as maximum microbial growth at sodium chloride concentrations between 3% and 8%, characteristic of moderate halophiles or halotolerant organisms. Values ranging from 3 to 8 % NaCl."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Halotolerant"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Moderate halophile"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "NaR_3_to_8"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000468",
+      "lbl" : "NaCl optimum high",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A salinity optimum manifested as maximum microbial growth at sodium chloride concentrations above 8%, characteristic of extreme halophiles. Values with minimum value of 8 % NaCl."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Extreme halophile"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "NaR_>8"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000469",
+      "lbl" : "NaCl range low",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A salinity range allowing microbial growth at sodium chloride concentrations below 1%, characteristic of non-halophilic organisms. Values with maximum value of 1 % NaCl."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Halotolerant"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Non-halophile"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "NaO_<1"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000470",
+      "lbl" : "NaCl range mid1",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A salinity range allowing microbial growth at sodium chloride concentrations between 1% and 3%, characteristic of slight halophiles. Values ranging from 1 to 3 % NaCl."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Halotolerant"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Slight halophile"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "NaO_1_to_3"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000471",
+      "lbl" : "NaCl range mid2",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A salinity range allowing microbial growth at sodium chloride concentrations between 3% and 8%, characteristic of moderate halophiles. Values ranging from 3 to 8 % NaCl."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Halotolerant"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "Moderate halophile"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "NaO_3_to_8"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000472",
+      "lbl" : "NaCl range high",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A salinity range allowing microbial growth at sodium chloride concentrations above 8%, characteristic of extreme halophiles. Values with minimum value of 8 % NaCl."
+        },
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "Extreme halophile"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "NaO_>8"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000473",
+      "lbl" : "pH delta very low",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A growth tolerance metric measuring the span of pH conditions that support an organism's growth, with a narrow range less than 1 pH unit. Values with maximum value of 1 pH."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "pHd_<1"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000474",
+      "lbl" : "pH delta low",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A growth tolerance metric measuring the span of pH conditions that support an organism's growth, with a range between 1 and 2 pH units. Values ranging from 1 to 2 pH."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "pHd_1_2"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000475",
+      "lbl" : "pH delta mid1",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A growth tolerance metric measuring the span of pH conditions that support an organism's growth, with a range between 2 and 3 pH units. Values ranging from 2 to 3 pH."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "pHd_2_3"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000476",
+      "lbl" : "pH delta mid2",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A growth tolerance metric measuring the span of pH conditions that support an organism's growth, with a range between 3 and 4 pH units. Values ranging from 3 to 4 pH."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "pHd_3_4"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000477",
+      "lbl" : "pH delta mid3",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A growth tolerance metric measuring the span of pH conditions that support an organism's growth, with a range between 4 and 5 pH units. Values ranging from 4 to 5 pH."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "pHd_4_5"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000478",
+      "lbl" : "pH delta high",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A growth tolerance metric measuring the span of pH conditions that support an organism's growth, with a wide range between 5 and 9 pH units. Values ranging from 5 to 9 pH."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "pHd_5_9"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000479",
+      "lbl" : "NaCl delta low",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A growth tolerance metric measuring the span of sodium chloride concentrations that support an organism's growth, with a narrow range less than 1%. Values with maximum value of 1 C."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "Nad_<1"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000480",
+      "lbl" : "NaCl delta mid1",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A growth tolerance metric measuring the span of sodium chloride concentrations that support an organism's growth, with a range between 1% and 3%. Values ranging from 1 to 3 C."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "Nad_1_3"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000481",
+      "lbl" : "NaCl delta mid2",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A growth tolerance metric measuring the span of sodium chloride concentrations that support an organism's growth, with a range between 3% and 8%. Values ranging from 3 to 8 C."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "Nad_3_8"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000482",
+      "lbl" : "NaCl delta high",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A growth tolerance metric measuring the span of sodium chloride concentrations that support an organism's growth, with a wide range greater than 8%. Values with maximum value of 8 C."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "Nad_>8"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000483",
+      "lbl" : "temperature delta very low",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A growth tolerance metric measuring the span of temperatures that support an organism's growth, with a narrow range between 1°C and 5°C. Values ranging from 1 to 5 C."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "Td_1_5"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000484",
+      "lbl" : "temperature delta low",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A growth tolerance metric measuring the span of temperatures that support an organism's growth, with a range between 5°C and 10°C. Values ranging from 5 to 10 C."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "Td_5_10"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000485",
+      "lbl" : "temperature delta mid1",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A growth tolerance metric measuring the span of temperatures that support an organism's growth, with a range between 10°C and 20°C. Values ranging from 10 to 20 C."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "Td_10_20"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000486",
+      "lbl" : "temperature delta mid2",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A growth tolerance metric measuring the span of temperatures that support an organism's growth, with a range between 20°C and 30°C. Values ranging from 20 to 30 C."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "Td_20_30"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000487",
+      "lbl" : "temperature delta high",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A growth tolerance metric measuring the span of temperatures that support an organism's growth, with a wide range greater than 30°C. Values with minimum value of 30 C."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "Td_>30"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000511",
+      "lbl" : "pH adaptation",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A combination of cellular processes that permits survival and growth under specific hydrogen ion concentrations."
         }
       }
     }, {
@@ -1432,547 +2449,6 @@
       "lbl" : "Disproportionation",
       "type" : "CLASS"
     }, {
-      "id" : "https://w3id.org/metpo/1000807",
-      "lbl" : "Nitrogen compound respiration",
-      "type" : "CLASS"
-    }, {
-      "id" : "https://w3id.org/metpo/1000808",
-      "lbl" : "Nitrate reduction",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Nitrate respiration"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "nitrate_reduction"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000809",
-      "lbl" : "Denitrification",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Dissimilatory nitrate reduction to N₂"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Nitrate reduction to N₂"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "denitrification"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000810",
-      "lbl" : "Dissimilatory nitrate reduction to ammonium",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "DNRA"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Nitrate ammonification"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000811",
-      "lbl" : "Nitrite reduction",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "nitrite_reduction"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000812",
-      "lbl" : "Anaerobic ammonium oxidation",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Anammox"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Anoxic NH₄⁺ oxidation"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000813",
-      "lbl" : "Nitric oxide reduction",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "NO reduction"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Nitric oxide respiration"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "nitric_oxide_reduction"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000814",
-      "lbl" : "Nitrous oxide reduction",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Nitrous oxide respiration"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "N₂O reduction"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "nitrous_oxide_reduction"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000815",
-      "lbl" : "Sulfur and sulfoxide compound respiration",
-      "type" : "CLASS"
-    }, {
-      "id" : "https://w3id.org/metpo/1000816",
-      "lbl" : "Sulfate reduction",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Dissimilatory sulfate reduction"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "SRM metabolism"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Sulfate respiration"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Sulfidogenesis"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "sulfate_reduction"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000817",
-      "lbl" : "Sulfur reduction",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Dissimilatory sulfur reduction"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Elemental sulfur reduction"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Sulfur respiration"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "sulfur_reduction"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000818",
-      "lbl" : "Sulfite reduction",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Dissimilatory sulfite reduction"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "sulfite_reduction"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000819",
-      "lbl" : "Thiosulfate reduction",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Dissimilatory thiosulfate reduction"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "thiosulfate_reduction"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000820",
-      "lbl" : "Sulfoxide respiration",
-      "type" : "CLASS"
-    }, {
-      "id" : "https://w3id.org/metpo/1000821",
-      "lbl" : "Dimethyl sulfoxide respiration",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "DMSO reduction"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "DMSO respiration"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000822",
-      "lbl" : "Methionine sulfoxide respiration",
-      "type" : "CLASS"
-    }, {
-      "id" : "https://w3id.org/metpo/1000823",
-      "lbl" : "Sulfide oxidation",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "H₂S oxidation"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Sulfide oxidizing"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "sulfide_oxidation"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000824",
-      "lbl" : "Thiosulfate oxidation",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "S₂O₃²⁻ oxidation"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Thiosulfate oxidizing"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "thiosulfate_oxidation"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000825",
-      "lbl" : "Sulfite oxidation",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "SO₃²⁻ oxidation"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Sulfite oxidizing"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "sulfite_oxidation"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000826",
-      "lbl" : "Tetrathionate reduction",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "S₄O₆²⁻ reduction"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Tetrathionate respiration"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000827",
-      "lbl" : "Polysulfide reduction",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Polysulfide respiration"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Sₓ²⁻ reduction"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000828",
-      "lbl" : "Metal and metalloid respiration",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Dissimilatory metal reduction"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Metal respiration"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000829",
-      "lbl" : "Iron reduction",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Dissimilatory Fe(III) reduction"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Dissimilatory iron reduction"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Ferric iron reduction"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Iron respiration"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "iron_reduction"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000830",
-      "lbl" : "Iron oxidation",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Fe(II) oxidation"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Ferrous iron oxidation"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "iron_oxidation"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000831",
-      "lbl" : "Nitrate-dependent Fe(II) oxidation",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "NDFO"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Nitrate-dependent iron oxidation"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000832",
-      "lbl" : "Manganese reduction",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Dissimilatory manganese reduction"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Manganese respiration"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Manganese(IV) reduction"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Mn(IV) reduction"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "manganese_reduction"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000833",
-      "lbl" : "Manganese oxidation",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Manganese(II) oxidation"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Mn(II) oxidation"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "manganese_oxidation"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000834",
-      "lbl" : "Uranium reduction",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Dissimilatory uranium reduction"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "U(VI) reduction"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Uranium respiration"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Uranyl reduction"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "uranyl_reduction"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000835",
-      "lbl" : "Vanadium reduction",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Dissimilatory vanadium reduction"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "V(V) reduction"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Vanadate reduction"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Vanadium respiration"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000836",
-      "lbl" : "Chromium reduction",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Chromate reduction"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Chromium respiration"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Cr(VI) reduction"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Dissimilatory chromium reduction"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000837",
-      "lbl" : "Technetium reduction",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Dissimilatory technetium reduction"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Pertechnetate reduction"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Tc(VII) reduction"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Technetium respiration"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000838",
-      "lbl" : "Cobalt reduction",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Co(III) reduction"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Cobalt respiration"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Cobalt(III) reduction"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Dissimilatory cobalt reduction"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "cobalt_reduction"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000839",
-      "lbl" : "Arsenate reduction",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Arsenate respiration"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "As(V) reduction"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Dissimilatory arsenate reduction"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "arsenate_reduction"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000840",
-      "lbl" : "Arsenite oxidation",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Arsenite oxidizing"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "As(III) oxidation"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "arsenite_oxidation"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000841",
-      "lbl" : "Selenate reduction",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Dissimilatory selenate reduction"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Se(VI) reduction"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Selenate respiration"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "selenate_reduction"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000842",
-      "lbl" : "Selenite reduction",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Se(IV) reduction"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Selenite respiration"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000843",
-      "lbl" : "Carbon and organic compound respiration",
-      "type" : "CLASS"
-    }, {
       "id" : "https://w3id.org/metpo/1000844",
       "lbl" : "Methanogenesis",
       "type" : "CLASS",
@@ -2017,283 +2493,6 @@
           "val" : "Wood-Ljungdahl pathway"
         } ]
       }
-    }, {
-      "id" : "https://w3id.org/metpo/1000847",
-      "lbl" : "Fumarate respiration",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Fumarate reduction"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "fumarate_reduction"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000848",
-      "lbl" : "Trimethylamine N-oxide respiration",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "TMAO reduction"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "TMAO respiration"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000849",
-      "lbl" : "Humus respiration",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Extracellular respiration"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Humic substance reduction"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Humus reduction"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000850",
-      "lbl" : "Halogenated compound respiration",
-      "type" : "CLASS"
-    }, {
-      "id" : "https://w3id.org/metpo/1000851",
-      "lbl" : "Organohalide respiration",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Dehalorespiration"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Reductive dehalogenation"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000853",
-      "lbl" : "Perchlorate respiration",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "ClO₄⁻ reduction"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Perchlorate reduction"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000854",
-      "lbl" : "Chlorate respiration",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Chlorate reduction"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "ClO₃⁻ reduction"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "chlorate_reduction"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000855",
-      "lbl" : "Bromate reduction",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "BrO₃⁻ reduction"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Bromate respiration"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000856",
-      "lbl" : "Iodate reduction",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "IO₃⁻ reduction"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Iodate respiration"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000857",
-      "lbl" : "Nitrite-dependent methane oxidation",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Nitrite-driven AOM"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "n-DAMO"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000858",
-      "lbl" : "Nitrate-dependent methane oxidation",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "N-DAMO"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Nitrate-driven AOM"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000859",
-      "lbl" : "Hydrogen oxidation",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "H₂ oxidation"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Knallgas metabolism"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "hydrogen_oxidation"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "hydrogen_oxidation_dark"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000860",
-      "lbl" : "Sulfur oxidation",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Sox system"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "sulfur_oxidation"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000861",
-      "lbl" : "Nitrification",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Ammonia oxidation"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Nitrite oxidation"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "nitrification"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "nitrite_oxidation"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000862",
-      "lbl" : "Complete ammonia oxidation",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Comammox"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Complete nitrification"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Single-step nitrification"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000863",
-      "lbl" : "Carbon monoxide oxidation",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "CO oxidation"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "carbon_monoxide_oxidation"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "carbonmonoxide_oxidation"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000864",
-      "lbl" : "Hydrogenotrophic methanogenesis",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "CO₂ reduction pathway"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "H₂/CO₂ methanogenesis"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000865",
-      "lbl" : "Acetoclastic methanogenesis",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Acetate cleavage pathway"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Acetate methanogenesis"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000866",
-      "lbl" : "Methylotrophic methanogenesis",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Methyl compound methanogenesis"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000867",
-      "lbl" : "Anaerobic methane oxidation",
-      "type" : "CLASS",
-      "meta" : {
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "AOM"
-        } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000868",
-      "lbl" : "Lanthanide reduction",
-      "type" : "CLASS"
-    }, {
-      "id" : "https://w3id.org/metpo/1000869",
-      "lbl" : "Lanthanide oxidation",
-      "type" : "CLASS"
     }, {
       "id" : "https://w3id.org/metpo/1000870",
       "lbl" : "sporulation",
@@ -2385,16 +2584,64 @@
         }
       }
     }, {
-      "id" : "https://w3id.org/metpo/1002000",
-      "lbl" : "Sulfate-dependent methane oxidation",
+      "id" : "https://w3id.org/metpo/1001006",
+      "lbl" : "culture NaCl observation",
       "type" : "CLASS"
     }, {
-      "id" : "https://w3id.org/metpo/1002001",
-      "lbl" : "Fe(III)-dependent methane oxidation",
+      "id" : "https://w3id.org/metpo/1001007",
+      "lbl" : "growth NaCl observation",
       "type" : "CLASS"
     }, {
-      "id" : "https://w3id.org/metpo/1002002",
-      "lbl" : "Mn(IV)-dependent methane oxidation",
+      "id" : "https://w3id.org/metpo/1001008",
+      "lbl" : "NaCl delta observation",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/1001009",
+      "lbl" : "NaCl range observation",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/1001010",
+      "lbl" : "optimum NaCl observation",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/1001011",
+      "lbl" : "culture pH observation",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/1001012",
+      "lbl" : "growth pH observation",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/1001013",
+      "lbl" : "optimum pH observation",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/1001014",
+      "lbl" : "pH delta observation",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/1001015",
+      "lbl" : "pH range observation",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/1001101",
+      "lbl" : "biosafety level",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/1001102",
+      "lbl" : "biosafety level 1",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/1001103",
+      "lbl" : "biosafety level 2",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/1001104",
+      "lbl" : "biosafety level 3",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/1001105",
+      "lbl" : "biosafety level 4",
       "type" : "CLASS"
     }, {
       "id" : "https://w3id.org/metpo/1002003",
@@ -2403,40 +2650,147 @@
     }, {
       "id" : "https://w3id.org/metpo/1002005",
       "lbl" : "Fermentation",
-      "type" : "CLASS"
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "fermentation"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/1002006",
       "lbl" : "Syntrophy",
       "type" : "CLASS"
     }, {
-      "id" : "https://w3id.org/metpo/1002007",
-      "lbl" : "Sulfur disproportionation",
+      "id" : "https://w3id.org/metpo/1003000",
+      "lbl" : "pH growth preference",
       "type" : "CLASS"
     }, {
-      "id" : "https://w3id.org/metpo/1002008",
-      "lbl" : "Nitrogen fixation",
+      "id" : "https://w3id.org/metpo/1003001",
+      "lbl" : "neutrophilic",
       "type" : "CLASS",
       "meta" : {
         "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "diazotroph"
+          "pred" : "hasExactSynonym",
+          "val" : "neutralophile"
         }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "nitrogen_fixation"
+          "pred" : "hasExactSynonym",
+          "val" : "neutralophilic"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "neutrophile"
         } ]
       }
     }, {
-      "id" : "https://w3id.org/metpo/1002035",
-      "lbl" : "Ammonia oxidation",
-      "type" : "CLASS"
+      "id" : "https://w3id.org/metpo/1003002",
+      "lbl" : "alkaphilic",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "alkaliphile"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "alkaliphilic"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "alkalophile"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "alkalophilic"
+        } ]
+      }
     }, {
-      "id" : "https://w3id.org/metpo/1002036",
-      "lbl" : "Nitrite oxidation",
-      "type" : "CLASS"
+      "id" : "https://w3id.org/metpo/1003003",
+      "lbl" : "acidophilic",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "acidophil"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "acidophile"
+        } ]
+      }
     }, {
-      "id" : "https://w3id.org/metpo/1002038",
-      "lbl" : "Methane oxidation",
-      "type" : "CLASS"
+      "id" : "https://w3id.org/metpo/1003004",
+      "lbl" : "obligately alkaphilic",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "obligate alkaliphile"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "obligate alkaphilic"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "obligately alkaliphilic"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1003005",
+      "lbl" : "facultatively alkaphilic",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "facultative alkaliphile"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "facultative alkaphilic"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "facultatively alkaliphilic"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1003006",
+      "lbl" : "obligately acidophilic",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "obligate acidophile"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "obligately acidophilic"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1003007",
+      "lbl" : "facultatively acidophilic",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "facultative acidophile"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "facultatively acidophilic"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1003008",
+      "lbl" : "acidotolerant",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "aciduric"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1003009",
+      "lbl" : "alkalotolerant",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "alkalitolerant"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/2000001",
       "lbl" : "organism interacts with chemical",
@@ -3080,6 +3434,333 @@
         } ]
       }
     }, {
+      "id" : "https://w3id.org/metpo/2000200",
+      "lbl" : "disproportionates",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "dismutates"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000201",
+      "lbl" : "lyses",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT"
+    }, {
+      "id" : "https://w3id.org/metpo/2000202",
+      "lbl" : "synthesizes",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "produces"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000203",
+      "lbl" : "fixes",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT"
+    }, {
+      "id" : "https://w3id.org/metpo/2000204",
+      "lbl" : "catabolizes",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT"
+    }, {
+      "id" : "https://w3id.org/metpo/2000205",
+      "lbl" : "mineralizes",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT"
+    }, {
+      "id" : "https://w3id.org/metpo/2000206",
+      "lbl" : "conjugates",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT"
+    }, {
+      "id" : "https://w3id.org/metpo/2000207",
+      "lbl" : "transports",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT"
+    }, {
+      "id" : "https://w3id.org/metpo/2000208",
+      "lbl" : "imports",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT"
+    }, {
+      "id" : "https://w3id.org/metpo/2000209",
+      "lbl" : "exports",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT"
+    }, {
+      "id" : "https://w3id.org/metpo/2000210",
+      "lbl" : "accumulates",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT"
+    }, {
+      "id" : "https://w3id.org/metpo/2000211",
+      "lbl" : "sequesters",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT"
+    }, {
+      "id" : "https://w3id.org/metpo/2000212",
+      "lbl" : "compartmentalizes",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT"
+    }, {
+      "id" : "https://w3id.org/metpo/2000213",
+      "lbl" : "binds",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT"
+    }, {
+      "id" : "https://w3id.org/metpo/2000214",
+      "lbl" : "chelates",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT"
+    }, {
+      "id" : "https://w3id.org/metpo/2000215",
+      "lbl" : "precipitates",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT"
+    }, {
+      "id" : "https://w3id.org/metpo/2000216",
+      "lbl" : "solubilizes",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT"
+    }, {
+      "id" : "https://w3id.org/metpo/2000217",
+      "lbl" : "volatilizes",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT"
+    }, {
+      "id" : "https://w3id.org/metpo/2000218",
+      "lbl" : "crystallizes",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT"
+    }, {
+      "id" : "https://w3id.org/metpo/2000219",
+      "lbl" : "adsorbs",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT"
+    }, {
+      "id" : "https://w3id.org/metpo/2000220",
+      "lbl" : "does not disproportionate",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT"
+    }, {
+      "id" : "https://w3id.org/metpo/2000221",
+      "lbl" : "does not lyse",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT"
+    }, {
+      "id" : "https://w3id.org/metpo/2000222",
+      "lbl" : "does not produce",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT"
+    }, {
+      "id" : "https://w3id.org/metpo/2000223",
+      "lbl" : "does not fix",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT"
+    }, {
+      "id" : "https://w3id.org/metpo/2000224",
+      "lbl" : "does not catabolize",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT"
+    }, {
+      "id" : "https://w3id.org/metpo/2000225",
+      "lbl" : "does not mineralize",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT"
+    }, {
+      "id" : "https://w3id.org/metpo/2000226",
+      "lbl" : "does not conjugate",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT"
+    }, {
+      "id" : "https://w3id.org/metpo/2000227",
+      "lbl" : "does not transport",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT"
+    }, {
+      "id" : "https://w3id.org/metpo/2000228",
+      "lbl" : "does not import",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT"
+    }, {
+      "id" : "https://w3id.org/metpo/2000229",
+      "lbl" : "does not export",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT"
+    }, {
+      "id" : "https://w3id.org/metpo/2000230",
+      "lbl" : "does not accumulate",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT"
+    }, {
+      "id" : "https://w3id.org/metpo/2000231",
+      "lbl" : "does not sequester",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT"
+    }, {
+      "id" : "https://w3id.org/metpo/2000232",
+      "lbl" : "does not compartmentalize",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT"
+    }, {
+      "id" : "https://w3id.org/metpo/2000233",
+      "lbl" : "does not bind",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT"
+    }, {
+      "id" : "https://w3id.org/metpo/2000234",
+      "lbl" : "does not chelate",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT"
+    }, {
+      "id" : "https://w3id.org/metpo/2000235",
+      "lbl" : "does not precipitate",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT"
+    }, {
+      "id" : "https://w3id.org/metpo/2000236",
+      "lbl" : "does not solubilize",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT"
+    }, {
+      "id" : "https://w3id.org/metpo/2000237",
+      "lbl" : "does not volatilize",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT"
+    }, {
+      "id" : "https://w3id.org/metpo/2000238",
+      "lbl" : "does not crystallize",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT"
+    }, {
+      "id" : "https://w3id.org/metpo/2000239",
+      "lbl" : "has pH observation",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "definition" : {
+          "val" : "Relates a microbe to a pH observation."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000501",
+      "lbl" : "has optimum pH observation",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "definition" : {
+          "val" : "Relates a microbe to an optimum pH observation."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000502",
+      "lbl" : "has growth pH observation",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "definition" : {
+          "val" : "Relates a microbe to a growth pH observation."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000503",
+      "lbl" : "has range pH observation",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "definition" : {
+          "val" : "Relates a microbe to a growth pH range observation."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000504",
+      "lbl" : "has pH delta observation",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "definition" : {
+          "val" : "Relates a microbe to a pH tolerance breadth (delta) observation."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000505",
+      "lbl" : "has culture pH observation",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "definition" : {
+          "val" : "Relates a microbe to a culture pH observation (e.g., from BacDive)."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000506",
+      "lbl" : "has NaCl observation",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "definition" : {
+          "val" : "Relates a microbe to a NaCl observation."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000507",
+      "lbl" : "has optimum NaCl observation",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "definition" : {
+          "val" : "Relates a microbe to an optimum NaCl observation."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000508",
+      "lbl" : "has growth NaCl observation",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "definition" : {
+          "val" : "Relates a microbe to a growth NaCl observation."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000509",
+      "lbl" : "has range NaCl observation",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "definition" : {
+          "val" : "Relates a microbe to a growth NaCl range observation."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000510",
+      "lbl" : "has NaCl delta observation",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "definition" : {
+          "val" : "Relates a microbe to a NaCl tolerance breadth (delta) observation."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000511",
+      "lbl" : "has culture NaCl observation",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "definition" : {
+          "val" : "Relates a microbe to a culture NaCl observation (e.g., from BacDive)."
+        }
+      }
+    }, {
       "id" : "https://w3id.org/metpo/2000058",
       "lbl" : "has spot value",
       "type" : "PROPERTY",
@@ -3145,8 +3826,16 @@
       "type" : "PROPERTY",
       "propertyType" : "ANNOTATION"
     }, {
+      "id" : "http://purl.org/dc/terms/creator",
+      "type" : "PROPERTY",
+      "propertyType" : "ANNOTATION"
+    }, {
       "id" : "http://purl.org/dc/terms/description",
       "lbl" : "description",
+      "type" : "PROPERTY",
+      "propertyType" : "ANNOTATION"
+    }, {
+      "id" : "http://purl.org/dc/terms/issued",
       "type" : "PROPERTY",
       "propertyType" : "ANNOTATION"
     }, {
@@ -3155,8 +3844,16 @@
       "type" : "PROPERTY",
       "propertyType" : "ANNOTATION"
     }, {
+      "id" : "http://purl.org/dc/terms/modified",
+      "type" : "PROPERTY",
+      "propertyType" : "ANNOTATION"
+    }, {
       "id" : "http://purl.org/dc/terms/title",
       "lbl" : "title",
+      "type" : "PROPERTY",
+      "propertyType" : "ANNOTATION"
+    }, {
+      "id" : "http://www.geneontology.org/formats/oboInOwl#hasExactSynonym",
       "type" : "PROPERTY",
       "propertyType" : "ANNOTATION"
     }, {
@@ -3176,6 +3873,274 @@
       "sub" : "https://w3id.org/metpo/1000060",
       "pred" : "is_a",
       "obj" : "https://w3id.org/metpo/1000630"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000127",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000188"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000232",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000059"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000233",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000059"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000235",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000059"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000236",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000059"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000303",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000059"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000304",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000059"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000306",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000059"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000329",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000630"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000330",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000630"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000331",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000059"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000332",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000059"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000333",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000059"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000334",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000059"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000335",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000059"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000429",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000127"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000430",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000127"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000431",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000127"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000432",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000127"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000441",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000304"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000442",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000304"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000443",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000304"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000444",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000304"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000445",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000304"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000446",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000304"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000447",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000304"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000448",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000306"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000449",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000306"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000450",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000306"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000451",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000306"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000452",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000306"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000453",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000306"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000454",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000306"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000455",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000331"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000456",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000331"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000457",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000331"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000458",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000331"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000459",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000332"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000460",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000332"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000461",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000332"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000462",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000332"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000463",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000332"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000464",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000332"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000465",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000333"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000466",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000333"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000467",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000333"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000468",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000333"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000469",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000334"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000470",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000334"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000471",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000334"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000472",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000334"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000473",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000232"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000474",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000232"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000475",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000232"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000476",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000232"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000477",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000232"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000478",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000232"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000479",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000335"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000480",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000335"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000481",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000335"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000482",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000335"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000483",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000303"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000484",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000303"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000485",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000303"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000486",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000303"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000487",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000303"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000511",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000059"
     }, {
       "sub" : "https://w3id.org/metpo/1000525",
       "pred" : "is_a",
@@ -3625,154 +4590,6 @@
       "pred" : "is_a",
       "obj" : "https://w3id.org/metpo/1000060"
     }, {
-      "sub" : "https://w3id.org/metpo/1000807",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000800"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000808",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000807"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000809",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000807"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000810",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000807"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000811",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000807"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000812",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000800"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000813",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000807"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000814",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000807"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000815",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000800"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000816",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000815"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000817",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000815"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000818",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000815"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000819",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000815"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000820",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000815"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000821",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000820"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000822",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000820"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000823",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000815"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000824",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000815"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000825",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000815"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000826",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000815"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000827",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000815"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000828",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000800"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000829",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000828"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000830",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000828"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000831",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000828"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000832",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000828"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000833",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000828"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000834",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000828"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000835",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000828"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000836",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000828"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000837",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000828"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000838",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000828"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000839",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000828"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000840",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000828"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000841",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000828"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000842",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000828"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000843",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000800"
-    }, {
       "sub" : "https://w3id.org/metpo/1000844",
       "pred" : "is_a",
       "obj" : "https://w3id.org/metpo/1000060"
@@ -3784,94 +4601,6 @@
       "sub" : "https://w3id.org/metpo/1000846",
       "pred" : "is_a",
       "obj" : "https://w3id.org/metpo/1000060"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000847",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000843"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000848",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000843"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000849",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000843"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000850",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000800"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000851",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000850"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000853",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000850"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000854",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000850"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000855",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000850"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000856",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000850"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000857",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000807"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000858",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000800"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000859",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000060"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000860",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000815"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000861",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000807"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000862",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1002035"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000863",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000060"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000864",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000844"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000865",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000844"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000866",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000844"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000867",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000800"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000868",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000828"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000869",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000828"
     }, {
       "sub" : "https://w3id.org/metpo/1000870",
       "pred" : "is_a",
@@ -3905,17 +4634,65 @@
       "pred" : "is_a",
       "obj" : "https://w3id.org/metpo/1001000"
     }, {
-      "sub" : "https://w3id.org/metpo/1002000",
+      "sub" : "https://w3id.org/metpo/1001006",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000800"
+      "obj" : "https://w3id.org/metpo/1001000"
     }, {
-      "sub" : "https://w3id.org/metpo/1002001",
+      "sub" : "https://w3id.org/metpo/1001007",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000828"
+      "obj" : "https://w3id.org/metpo/1001000"
     }, {
-      "sub" : "https://w3id.org/metpo/1002002",
+      "sub" : "https://w3id.org/metpo/1001008",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000828"
+      "obj" : "https://w3id.org/metpo/1001000"
+    }, {
+      "sub" : "https://w3id.org/metpo/1001009",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1001000"
+    }, {
+      "sub" : "https://w3id.org/metpo/1001010",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1001000"
+    }, {
+      "sub" : "https://w3id.org/metpo/1001011",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1001000"
+    }, {
+      "sub" : "https://w3id.org/metpo/1001012",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1001000"
+    }, {
+      "sub" : "https://w3id.org/metpo/1001013",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1001000"
+    }, {
+      "sub" : "https://w3id.org/metpo/1001014",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1001000"
+    }, {
+      "sub" : "https://w3id.org/metpo/1001015",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1001000"
+    }, {
+      "sub" : "https://w3id.org/metpo/1001101",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000188"
+    }, {
+      "sub" : "https://w3id.org/metpo/1001102",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1001101"
+    }, {
+      "sub" : "https://w3id.org/metpo/1001103",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1001101"
+    }, {
+      "sub" : "https://w3id.org/metpo/1001104",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1001101"
+    }, {
+      "sub" : "https://w3id.org/metpo/1001105",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1001101"
     }, {
       "sub" : "https://w3id.org/metpo/1002003",
       "pred" : "is_a",
@@ -3929,25 +4706,45 @@
       "pred" : "is_a",
       "obj" : "https://w3id.org/metpo/1000060"
     }, {
-      "sub" : "https://w3id.org/metpo/1002007",
+      "sub" : "https://w3id.org/metpo/1003000",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000815"
+      "obj" : "https://w3id.org/metpo/1000059"
     }, {
-      "sub" : "https://w3id.org/metpo/1002008",
+      "sub" : "https://w3id.org/metpo/1003001",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000807"
+      "obj" : "https://w3id.org/metpo/1003000"
     }, {
-      "sub" : "https://w3id.org/metpo/1002035",
+      "sub" : "https://w3id.org/metpo/1003002",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000807"
+      "obj" : "https://w3id.org/metpo/1003000"
     }, {
-      "sub" : "https://w3id.org/metpo/1002036",
+      "sub" : "https://w3id.org/metpo/1003003",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000807"
+      "obj" : "https://w3id.org/metpo/1003000"
     }, {
-      "sub" : "https://w3id.org/metpo/1002038",
+      "sub" : "https://w3id.org/metpo/1003004",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000060"
+      "obj" : "https://w3id.org/metpo/1003000"
+    }, {
+      "sub" : "https://w3id.org/metpo/1003005",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1003000"
+    }, {
+      "sub" : "https://w3id.org/metpo/1003006",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1003000"
+    }, {
+      "sub" : "https://w3id.org/metpo/1003007",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1003000"
+    }, {
+      "sub" : "https://w3id.org/metpo/1003008",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1003000"
+    }, {
+      "sub" : "https://w3id.org/metpo/1003009",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1003000"
     }, {
       "sub" : "https://w3id.org/metpo/2000002",
       "pred" : "subPropertyOf",
@@ -4172,6 +4969,210 @@
       "sub" : "https://w3id.org/metpo/2000102",
       "pred" : "subPropertyOf",
       "obj" : "https://w3id.org/metpo/2000101"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000200",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000001"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000201",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000001"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000202",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000001"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000203",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000001"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000204",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000001"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000205",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000001"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000206",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000001"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000207",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000001"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000208",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000207"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000209",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000207"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000210",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000001"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000211",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000210"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000212",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000210"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000213",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000001"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000214",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000001"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000215",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000001"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000216",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000001"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000217",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000001"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000218",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000001"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000219",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000001"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000220",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000001"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000221",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000001"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000222",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000001"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000223",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000001"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000224",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000001"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000225",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000001"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000226",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000001"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000227",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000001"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000228",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000227"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000229",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000227"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000230",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000001"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000231",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000230"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000232",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000230"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000233",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000001"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000234",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000001"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000235",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000001"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000236",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000001"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000237",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000001"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000238",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000001"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000239",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000001"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000501",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000239"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000502",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000239"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000503",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000239"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000504",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000239"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000505",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000239"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000506",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000506"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000507",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000506"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000508",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000506"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000509",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000506"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000510",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000506"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000511",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000506"
     } ],
     "domainRangeAxioms" : [ {
       "predicateId" : "https://w3id.org/metpo/2000001",
@@ -4213,6 +5214,210 @@
       "predicateId" : "https://w3id.org/metpo/2000103",
       "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
       "rangeClassIds" : [ "https://w3id.org/metpo/1000630" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000200",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000201",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000202",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000203",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000204",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000205",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000206",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000207",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000208",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000209",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000210",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000211",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000212",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000213",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000214",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000215",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000216",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000217",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000218",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000219",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000220",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000221",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000222",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000223",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000224",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000225",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000226",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000227",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000228",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000229",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000230",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000231",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000232",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000233",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000234",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000235",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000236",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000237",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000238",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000239",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1001000" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000501",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1001013" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000502",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1001012" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000503",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1001015" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000504",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1001014" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000505",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1001011" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000506",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1001000" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000507",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1001010" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000508",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1001007" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000509",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1001009" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000510",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1001008" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000511",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1001006" ]
     } ]
   } ]
 }
