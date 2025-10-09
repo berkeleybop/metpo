@@ -48,6 +48,21 @@ generated/bacdive_oxygen_phenotype_mappings.tsv: sparql/bacdive_oxygen_phenotype
 		--query $(word 1,$^) $@ \
 		--input $(word 2,$^)
 
+reports/synonym-sources.tsv: src/ontology/metpo.owl src/sparql/synonym-sources.sparql
+	mkdir -p $(dir $@)
+	robot query \
+		--input $< \
+		--query $(word 2,$^) $@
+
+.PHONY: reconcile-madin
+reconcile-madin: reports/madin-metpo-reconciliation.yaml
+
+reports/madin-metpo-reconciliation.yaml: reports/synonym-sources.tsv
+	uv run python src/scripts/reconcile_madin_coverage.py \
+		--mode integrated \
+		--format yaml \
+		--output $@
+
 # =====================================================
 # Google Sheets Download Targets
 # =====================================================

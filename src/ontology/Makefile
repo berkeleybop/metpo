@@ -682,4 +682,9 @@ Tricks:
 endef
 export data
 
+reports/synonym-sources.tsv: $(ONT).owl $(SPARQLDIR)/synonym-sources.sparql
+	$(ROBOT) query \
+		--input $< \
+		--query $(SPARQLDIR)/synonym-sources.sparql $@
+
 include metpo.Makefile
