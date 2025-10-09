@@ -1,0 +1,468 @@
+madin_metpo_reconciliation:
+  summary:
+    total_fields: 35
+    fields_with_name_mapping: 8
+    fields_with_full_value_coverage: 7
+    total_metpo_madin_synonyms: 70
+    verified_synonyms: 62
+    false_synonym_claims: 0
+  fields:
+  - field: carbon_substrates
+    field_mapped: false
+    unique_values: 3977
+  - field: cell_shape
+    field_mapped: true
+    field_metpo_id: METPO:1000666
+    field_metpo_label: cell shape
+    field_entity_type: owl:Class
+    total_values: 19
+    covered_values_count: 19
+    missing_values_count: 0
+    value_coverage_percentage: 100.0
+    covered_values:
+    - value: bacillus
+      metpo_id: METPO:1000667
+      label: bacillus shaped
+      entity_type: owl:Class
+    - value: branced
+      metpo_id: METPO:1000687
+      label: branched shaped
+      entity_type: owl:Class
+    - value: coccobacillus
+      metpo_id: METPO:1000688
+      label: coccobacillus shaped
+      entity_type: owl:Class
+    - value: coccus
+      metpo_id: METPO:1000668
+      label: coccus shaped
+      entity_type: owl:Class
+    - value: 'disc '
+      metpo_id: METPO:1000689
+      label: disc shaped
+      entity_type: owl:Class
+    - value: filament
+      metpo_id: METPO:1000674
+      label: filament shaped
+      entity_type: owl:Class
+    - value: flask
+      metpo_id: METPO:1000675
+      label: flask shaped
+      entity_type: owl:Class
+    - value: fusiform
+      metpo_id: METPO:1000690
+      label: fusiform shaped
+      entity_type: owl:Class
+    - value: irregular
+      metpo_id: METPO:1000691
+      label: irregular shaped
+      entity_type: owl:Class
+    - value: pleomorphic
+      metpo_id: METPO:1000679
+      label: pleomorphic shaped
+      entity_type: owl:Class
+    - value: ring
+      metpo_id: METPO:1000680
+      label: ring shaped
+      entity_type: owl:Class
+    - value: spindle
+      metpo_id: METPO:1000692
+      label: spindle shaped
+      entity_type: owl:Class
+    - value: spiral
+      metpo_id: METPO:1000684
+      label: spiral shaped
+      entity_type: owl:Class
+    - value: spirochete
+      metpo_id: METPO:1000693
+      label: spirochete shaped
+      entity_type: owl:Class
+    - value: square
+      metpo_id: METPO:1000694
+      label: square shaped
+      entity_type: owl:Class
+    - value: star
+      metpo_id: METPO:1000685
+      label: star shaped
+      entity_type: owl:Class
+    - value: tailed
+      metpo_id: METPO:1000695
+      label: tailed shaped
+      entity_type: owl:Class
+    - value: triangular
+      metpo_id: METPO:1000696
+      label: triangular shaped
+      entity_type: owl:Class
+    - value: vibrio
+      metpo_id: METPO:1000686
+      label: vibrio shaped
+      entity_type: owl:Class
+    missing_values: []
+    values_truncated: false
+  - field: class
+    field_mapped: false
+    unique_values: 94
+  - field: coding_genes
+    field_mapped: false
+    unique_values: 5888
+  - field: d1_lo
+    field_mapped: false
+    unique_values: 150
+  - field: d1_up
+    field_mapped: false
+    unique_values: 71
+  - field: d2_lo
+    field_mapped: false
+    unique_values: 245
+  - field: d2_up
+    field_mapped: false
+    unique_values: 120
+  - field: data_source
+    field_mapped: false
+    unique_values: 26
+  - field: doubling_h
+    field_mapped: false
+    unique_values: 650
+  - field: family
+    field_mapped: false
+    unique_values: 480
+  - field: gc_content
+    field_mapped: false
+    unique_values: 9752
+  - field: genome_size
+    field_mapped: false
+    unique_values: 87039
+  - field: genus
+    field_mapped: false
+    unique_values: 2884
+  - field: gram_stain
+    field_mapped: true
+    field_metpo_id: METPO:1000697
+    field_metpo_label: gram stain
+    field_entity_type: owl:Class
+    total_values: 2
+    covered_values_count: 2
+    missing_values_count: 0
+    value_coverage_percentage: 100.0
+    covered_values:
+    - value: negative
+      metpo_id: METPO:1000699
+      label: gram negative
+      entity_type: owl:Class
+    - value: positive
+      metpo_id: METPO:1000698
+      label: gram positive
+      entity_type: owl:Class
+    missing_values: []
+    values_truncated: false
+  - field: growth_tmp
+    field_mapped: false
+    unique_values: 340
+  - field: isolation_source
+    field_mapped: false
+    unique_values: 74
+  - field: metabolism
+    field_mapped: true
+    field_metpo_id: METPO:1000601
+    field_metpo_label: oxygen preference
+    field_entity_type: owl:Class
+    total_values: 7
+    covered_values_count: 7
+    missing_values_count: 0
+    value_coverage_percentage: 100.0
+    covered_values:
+    - value: aerobic
+      metpo_id: METPO:1000602
+      label: aerobic
+      entity_type: owl:Class
+    - value: anaerobic
+      metpo_id: METPO:1000603
+      label: anaerobic
+      entity_type: owl:Class
+    - value: facultative
+      metpo_id: METPO:1000605
+      label: facultatively anaerobic
+      entity_type: owl:Class
+    - value: microaerophilic
+      metpo_id: METPO:1000604
+      label: microaerophilic
+      entity_type: owl:Class
+    - value: obligate aerobic
+      metpo_id: METPO:1000606
+      label: obligately aerobic
+      entity_type: owl:Class
+    - value: obligate anaerobic
+      metpo_id: METPO:1000607
+      label: obligately anaerobic
+      entity_type: owl:Class
+    - value: strictly anaerobic
+      metpo_id: METPO:1000611
+      label: strictly anaerobic
+      entity_type: owl:Class
+    missing_values: []
+    values_truncated: false
+  - field: motility
+    field_mapped: true
+    field_metpo_id: METPO:1000701
+    field_metpo_label: motility
+    field_entity_type: owl:Class
+    total_values: 5
+    covered_values_count: 5
+    missing_values_count: 0
+    value_coverage_percentage: 100.0
+    covered_values:
+    - value: axial filament
+      metpo_id: METPO:1000705
+      label: axially filamented
+      entity_type: owl:Class
+    - value: flagella
+      metpo_id: METPO:1000704
+      label: flagellated
+      entity_type: owl:Class
+    - value: gliding
+      metpo_id: METPO:1000706
+      label: gliding
+      entity_type: owl:Class
+    - value: 'no'
+      metpo_id: METPO:1000703
+      label: non motile
+      entity_type: owl:Class
+    - value: 'yes'
+      metpo_id: METPO:1000702
+      label: motile
+      entity_type: owl:Class
+    missing_values: []
+    values_truncated: false
+  - field: optimum_ph
+    field_mapped: false
+    unique_values: 130
+  - field: optimum_tmp
+    field_mapped: false
+    unique_values: 187
+  - field: order
+    field_mapped: false
+    unique_values: 211
+  - field: org_name
+    field_mapped: false
+    unique_values: 116703
+  - field: pathways
+    field_mapped: true
+    field_metpo_id: METPO:1000631
+    field_metpo_label: trophic type
+    field_entity_type: owl:Class
+    total_values: 103
+    covered_values_count: 15
+    missing_values_count: 88
+    value_coverage_percentage: 14.6
+    covered_values:
+    - value: acetogenesis
+      metpo_id: METPO:1000845
+      label: Acetogenesis
+      entity_type: owl:Class
+    - value: aerobic_anoxygenic_phototrophy
+      metpo_id: METPO:1000660
+      label: phototrophic
+      entity_type: owl:Class
+    - value: aerobic_chemo_heterotrophy
+      metpo_id: METPO:1000636
+      label: chemoheterotrophic
+      entity_type: owl:Class
+    - value: aerobic_heterotrophy
+      metpo_id: METPO:1000644
+      label: heterotrophic
+      entity_type: owl:Class
+    - value: anoxygenic_photoautotrophy
+      metpo_id: METPO:1000656
+      label: photoautotrophic
+      entity_type: owl:Class
+    - value: anoxygenic_photoautotrophy_hydrogen_oxidation
+      metpo_id: METPO:1000656
+      label: photoautotrophic
+      entity_type: owl:Class
+    - value: anoxygenic_photoautotrophy_iron_oxidation
+      metpo_id: METPO:1000656
+      label: photoautotrophic
+      entity_type: owl:Class
+    - value: anoxygenic_photoautotrophy_sulfur_oxidation
+      metpo_id: METPO:1000656
+      label: photoautotrophic
+      entity_type: owl:Class
+    - value: autotrophy
+      metpo_id: METPO:1000632
+      label: autotrophic
+      entity_type: owl:Class
+    - value: fermentation
+      metpo_id: METPO:1002005
+      label: Fermentation
+      entity_type: owl:Class
+    - value: heterotrophic
+      metpo_id: METPO:1000644
+      label: heterotrophic
+      entity_type: owl:Class
+    - value: methanogenesis
+      metpo_id: METPO:1000844
+      label: Methanogenesis
+      entity_type: owl:Class
+    - value: methylotrophy
+      metpo_id: METPO:1000651
+      label: methylotrophic
+      entity_type: owl:Class
+    - value: photoautotrophy
+      metpo_id: METPO:1000656
+      label: photoautotrophic
+      entity_type: owl:Class
+    - value: photoheterotrophy
+      metpo_id: METPO:1000657
+      label: photoheterotrophic
+      entity_type: owl:Class
+    missing_values:
+    - DMSP_degradation
+    - Denitrification
+    - EDTA_degradation
+    - MTBE_degradation
+    - PAH_degradation
+    - PCB_degradation
+    - RDX_degradation
+    - Selenate_reduction
+    - aliphatic_non_methane_hydrocarbon_degradation
+    - aminoacid_degradation
+    - annamox
+    - aromatic_compound_degradation
+    - aromatic_hydrocarbon_degradation
+    - arsenate_reduction
+    - arsenite_oxidation
+    - carbon_monoxide_oxidation
+    - carbonmonoxide_oxidation
+    - carbonmonoxide_reduction
+    - carbonylsulfide_oxidation
+    - carbonylsulfide_reduction
+    values_truncated: true
+  - field: phylum
+    field_mapped: false
+    unique_values: 74
+  - field: rRNA16S_genes
+    field_mapped: false
+    unique_values: 17
+  - field: range_salinity
+    field_mapped: true
+    field_metpo_id: METPO:1000629
+    field_metpo_label: halophily preference
+    field_entity_type: owl:Class
+    total_values: 7
+    covered_values_count: 7
+    missing_values_count: 0
+    value_coverage_percentage: 100.0
+    covered_values:
+    - value: euryhaline
+      metpo_id: METPO:1000627
+      label: euryhaline
+      entity_type: owl:Class
+    - value: extreme-halophilic
+      metpo_id: METPO:1000628
+      label: extremely halophilic
+      entity_type: owl:Class
+    - value: halophilic
+      metpo_id: METPO:1000620
+      label: halophilic
+      entity_type: owl:Class
+    - value: halotolerant
+      metpo_id: METPO:1000622
+      label: halotolerant
+      entity_type: owl:Class
+    - value: moderate-halophilic
+      metpo_id: METPO:1000623
+      label: moderately halophilic
+      entity_type: owl:Class
+    - value: non-halophilic
+      metpo_id: METPO:1000624
+      label: non halophilic
+      entity_type: owl:Class
+    - value: stenohaline
+      metpo_id: METPO:1000626
+      label: stenohaline
+      entity_type: owl:Class
+    missing_values: []
+    values_truncated: false
+  - field: range_tmp
+    field_mapped: true
+    field_metpo_id: METPO:1000613
+    field_metpo_label: temperature preference
+    field_entity_type: owl:Class
+    total_values: 7
+    covered_values_count: 7
+    missing_values_count: 0
+    value_coverage_percentage: 100.0
+    covered_values:
+    - value: extreme thermophilic
+      metpo_id: METPO:1000617
+      label: hyperthermophilic
+      entity_type: owl:Class
+    - value: facultative psychrophilic
+      metpo_id: METPO:1000720
+      label: facultative psychrophilic
+      entity_type: owl:Class
+    - value: mesophilic
+      metpo_id: METPO:1000615
+      label: mesophilic
+      entity_type: owl:Class
+    - value: psychrophilic
+      metpo_id: METPO:1000614
+      label: psychrophilic
+      entity_type: owl:Class
+    - value: psychrotolerant
+      metpo_id: METPO:1000618
+      label: psychrotolerant
+      entity_type: owl:Class
+    - value: thermophilic
+      metpo_id: METPO:1000616
+      label: thermophilic
+      entity_type: owl:Class
+    - value: thermotolerant
+      metpo_id: METPO:1000619
+      label: thermotolerant
+      entity_type: owl:Class
+    missing_values: []
+    values_truncated: false
+  - field: ref_id
+    field_mapped: false
+    unique_values: 20276
+  - field: species
+    field_mapped: false
+    unique_values: 21500
+  - field: species_tax_id
+    field_mapped: false
+    unique_values: 21500
+  - field: sporulation
+    field_mapped: true
+    field_metpo_id: METPO:1000870
+    field_metpo_label: sporulation
+    field_entity_type: owl:Class
+    total_values: 2
+    covered_values_count: 2
+    missing_values_count: 0
+    value_coverage_percentage: 100.0
+    covered_values:
+    - value: 'no'
+      metpo_id: METPO:1000703
+      label: non motile
+      entity_type: owl:Class
+    - value: 'yes'
+      metpo_id: METPO:1000702
+      label: motile
+      entity_type: owl:Class
+    missing_values: []
+    values_truncated: false
+  - field: superkingdom
+    field_mapped: false
+    unique_values: 2
+  - field: tRNA_genes
+    field_mapped: false
+    unique_values: 150
+  - field: tax_id
+    field_mapped: false
+    unique_values: 49155
+  high_value_unmapped_fields:
+  - field: rRNA16S_genes
+    unique_values: 17
+  - field: superkingdom
+    unique_values: 2
+  false_synonym_claims: []
