@@ -27,6 +27,7 @@ dev = [
 [project.scripts]
 extract-rank-triples = "metpo.extract_rank_triples:extract_taxon_ranks"
 convert-chem-props = "metpo.convert_chem_props:convert_chem_props"
+import-bactotraits = "metpo.import_bactotraits:import_bactotraits"
 
 [tool.hatch.build.targets.wheel]
 packages = ["metpo"]

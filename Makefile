@@ -63,6 +63,19 @@ reports/madin-metpo-reconciliation.yaml: reports/synonym-sources.tsv
 		--format yaml \
 		--output $@
 
+.PHONY: import-bactotraits
+import-bactotraits:
+	uv run import-bactotraits
+
+.PHONY: reconcile-bactotraits
+reconcile-bactotraits: reports/bactotraits-metpo-reconciliation.yaml
+
+reports/bactotraits-metpo-reconciliation.yaml: reports/synonym-sources.tsv
+	uv run python src/scripts/reconcile_bactotraits_coverage.py \
+		--mode field_names \
+		--format yaml \
+		--output $@
+
 # =====================================================
 # Google Sheets Download Targets
 # =====================================================
