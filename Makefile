@@ -54,27 +54,115 @@ reports/synonym-sources.tsv: src/ontology/metpo.owl src/sparql/synonym-sources.s
 		--input $< \
 		--query $(word 2,$^) $@
 
-.PHONY: reconcile-madin
-reconcile-madin: reports/madin-metpo-reconciliation.yaml
 
 reports/madin-metpo-reconciliation.yaml: reports/synonym-sources.tsv
-	uv run python src/scripts/reconcile_madin_coverage.py \
+	uv run reconcile-madin-coverage \
 		--mode integrated \
 		--format yaml \
+		--tsv $< \
 		--output $@
+
+.PHONY: import-madin
+import-madin: local/madin/madin_etal.csv
+	mongoimport --db madin --collection madin --type csv --file $< --headerline --drop
+
+.PHONY: clean-madin-db
+clean-madin-db:
+	mongosh madin --eval 'db.madin.drop()'
+
+.PHONY: clean-bactotraits-db
+clean-bactotraits-db:
+	mongosh bactotraits --eval 'db.bactotraits.drop(); db.field_mappings.drop(); db.files.drop()'
+
+.PHONY: clean-reports
+clean-reports:
+	rm -f reports/synonym-sources.tsv
+	rm -f reports/bactotraits-metpo-set-diff.yaml
+	rm -f reports/bactotraits-metpo-reconciliation.yaml
+	rm -f reports/madin-metpo-reconciliation.yaml
+	@echo "All analysis reports cleaned"
+
+.PHONY: clean-all
+clean-all: clean-env clean-data clean-bactotraits-db clean-madin-db clean-reports
+	@echo "Complete cleanup finished"
+
+.PHONY: import-all
+import-all: import-bactotraits import-madin import-bactotraits-metadata import-madin-metadata
+	@echo "All datasets and metadata imported successfully"
+
+.PHONY: all-reports
+all-reports: reports/synonym-sources.tsv reports/bactotraits-metpo-set-diff.yaml reports/bactotraits-metpo-reconciliation.yaml reports/madin-metpo-reconciliation.yaml
+	@echo "All analysis reports generated successfully"
+
+.PHONY: test-workflow
+test-workflow: clean-all import-all all-reports
+	@echo ""
+	@echo "=========================================="
+	@echo "Workflow Reproducibility Test Complete"
+	@echo "=========================================="
+	@echo ""
+	@echo "MongoDB Collections:"
+	@mongosh bactotraits --quiet --eval 'print("  bactotraits.bactotraits:", db.bactotraits.countDocuments({}), "documents")'
+	@mongosh bactotraits --quiet --eval 'print("  bactotraits.field_mappings:", db.field_mappings.countDocuments({}), "documents")'
+	@mongosh bactotraits --quiet --eval 'print("  bactotraits.files:", db.files.countDocuments({}), "documents")'
+	@mongosh madin --quiet --eval 'print("  madin.madin:", db.madin.countDocuments({}), "documents")'
+	@mongosh madin --quiet --eval 'print("  madin.files:", db.files.countDocuments({}), "documents")'
+	@echo ""
+	@echo "Generated Reports:"
+	@ls -lh reports/*.yaml reports/*.tsv 2>/dev/null || echo "  No reports found"
+	@echo ""
 
 .PHONY: import-bactotraits
 import-bactotraits:
 	uv run import-bactotraits
 
-.PHONY: reconcile-bactotraits
-reconcile-bactotraits: reports/bactotraits-metpo-reconciliation.yaml
+.PHONY: import-bactotraits-metadata
+import-bactotraits-metadata: metadata/bactotraits_field_mappings.json metadata/bactotraits_files.json
+	jq '.mappings' metadata/bactotraits_field_mappings.json | \
+		mongoimport --db bactotraits --collection field_mappings \
+		--jsonArray --drop
+	mongoimport --db bactotraits --collection files \
+		--file metadata/bactotraits_files.json \
+		--jsonArray --drop
+	@echo "BactoTraits metadata collections imported"
 
-reports/bactotraits-metpo-reconciliation.yaml: reports/synonym-sources.tsv
-	uv run python src/scripts/reconcile_bactotraits_coverage.py \
-		--mode field_names \
+.PHONY: import-madin-metadata
+import-madin-metadata: metadata/madin_files.json
+	mongoimport --db madin --collection files \
+		--file metadata/madin_files.json \
+		--jsonArray --drop
+	@echo "Madin metadata collections imported"
+
+reports/bactotraits-metpo-set-diff.yaml: metpo/scripts/bactotraits_metpo_set_difference.py reports/synonym-sources.tsv local/bactotraits/BactoTraits.tsv
+	uv run bactotraits-metpo-set-difference \
+		--bactotraits-file $(word 3, $^) \
+		--synonyms-file $(word 2, $^) \
 		--format yaml \
 		--output $@
+
+reports/bactotraits-metpo-reconciliation.yaml: metpo/scripts/reconcile_bactotraits_coverage.py reports/synonym-sources.tsv
+	uv run reconcile-bactotraits-coverage \
+		--mode field_names \
+		--tsv $(word 2, $^) \
+		--format yaml \
+		--output $@
+
+# BactoTraits field mappings - generates JSON and loads to MongoDB
+metadata/bactotraits_field_mappings.json: local/bactotraits/BactoTraits_databaseV2_Jun2022.csv local/bactotraits/BactoTraits.tsv
+	uv run create-bactotraits-field-mappings \
+		--provider-file local/bactotraits/BactoTraits_databaseV2_Jun2022.csv \
+		--kg-microbe-file local/bactotraits/BactoTraits.tsv \
+		--output-json $@ \
+		--db-name bactotraits \
+		--collection-name field_mappings
+
+.PHONY: create-bactotraits-file-versions
+create-bactotraits-file-versions:
+	uv run create-bactotraits-file-versions
+
+.PHONY: create-bactotraits-files
+create-bactotraits-files:
+	uv run create-bactotraits-files
 
 # =====================================================
 # Google Sheets Download Targets

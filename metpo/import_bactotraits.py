@@ -50,7 +50,7 @@ def sanitize_field_name(field_name):
 @click.option(
     "--input-file", "-i",
     type=click.Path(exists=True, path_type=Path),
-    default=Path("/Users/MAM/Documents/gitrepos/kg-microbe/kg_microbe/transform_utils/bactotraits/tmp/BactoTraits.tsv"),
+    default=Path("local/bactotraits/BactoTraits.tsv"),
     help="Path to kg-microbe BactoTraits.tsv file"
 )
 @click.option(

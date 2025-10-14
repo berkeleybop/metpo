@@ -20,6 +20,14 @@ METPO:1001012	growth pH observation	owl:Class	stub for using label in domain and
 METPO:1001013	optimum pH observation	owl:Class	stub for using label in domain and range							
 METPO:1001014	pH delta observation	owl:Class	stub for using label in domain and range							
 METPO:1001015	pH range observation	owl:Class	stub for using label in domain and range							
+METPO:1001016	optimum oxygen observation	owl:Class	stub for using label in domain and range							
+METPO:1001017	growth oxygen observation	owl:Class	stub for using label in domain and range							
+METPO:1001018	oxygen range observation	owl:Class	stub for using label in domain and range							
+METPO:1001019	oxygen delta observation	owl:Class	stub for using label in domain and range							
+METPO:1001020	oxygen observation	owl:Class	stub for using label in domain and range							
+METPO:1001021	temperature observation	owl:Class	stub for using label in domain and range							
+METPO:1001022	NaCl observation	owl:Class	stub for using label in domain and range							
+METPO:1001023	pH observation	owl:Class	stub for using label in domain and range							
 METPO:2000001	organism interacts with chemical	owl:ObjectProperty		microbe	chemical entity					
 METPO:2000002	assimilates	owl:ObjectProperty				organism interacts with chemical			oboInOwl:hasRelatedSynonym 'assimilation'	https://bacdive.dsmz.de/
 METPO:2000003	builds acid from	owl:ObjectProperty				organism interacts with chemical			oboInOwl:hasRelatedSynonym 'builds acid from'	https://bacdive.dsmz.de/
@@ -71,7 +79,7 @@ METPO:2000048	uses for anaerobic catabolization	owl:ObjectProperty				organism i
 METPO:2000049	uses for anaerobic growth	owl:ObjectProperty				organism interacts with chemical			oboInOwl:hasRelatedSynonym 'anaerobic growth'	https://bacdive.dsmz.de/
 METPO:2000050	uses for anaerobic growth in the dark	owl:ObjectProperty				organism interacts with chemical			oboInOwl:hasRelatedSynonym 'anaerobic growth in the dark'	https://bacdive.dsmz.de/
 METPO:2000051	uses for anaerobic growth with light	owl:ObjectProperty				organism interacts with chemical			oboInOwl:hasRelatedSynonym 'anaerobic growth with light'	https://bacdive.dsmz.de/
-METPO:2000052	has temperature observation	owl:ObjectProperty		microbe	observation			Relates a microbe to a temperature observation.		
+METPO:2000052	has temperature observation	owl:ObjectProperty		microbe	temperature observation	has observation		Relates a microbe to a temperature observation.		
 METPO:2000053	has optimum temperature observation	owl:ObjectProperty		microbe	optimum temperature observation	has temperature observation		Relates a microbe to an optimum temperature observation.		
 METPO:2000054	has growth temperature observation	owl:ObjectProperty		microbe	growth temperature observation	has temperature observation		Relates a microbe to a growth temperature observation.		
 METPO:2000055	has range temperature observation	owl:ObjectProperty		microbe	temperature range observation	has temperature observation		Relates a microbe to a growth temperature range observation.		
@@ -84,9 +92,8 @@ METPO:2000062	is negative data	owl:DataProperty		observation	xsd:boolean	observa
 METPO:2000063	observation data property	owl:DataProperty								
 METPO:2000101	has quality	owl:ObjectProperty		microbe	quality					
 METPO:2000102	has phenotype	owl:ObjectProperty		microbe	phenotype	has quality	https://biolink.github.io/biolink-model/has_phenotype			
-METPO:2000103	capable of	owl:ObjectProperty		microbe	biological process		https://biolink.github.io/biolink-model/capable_of
-METPO:2000104	has observation	owl:ObjectProperty		microbe	observation
-METPO:2000200	disproportionates	owl:ObjectProperty	lost anabolizes synonym			organism interacts with chemical			oboInOwl:hasRelatedSynonym 'dismutates'
+METPO:2000103	capable of	owl:ObjectProperty		microbe	biological process		https://biolink.github.io/biolink-model/capable_of			
+METPO:2000200	disproportionates	owl:ObjectProperty	lost anabolizes synonym			organism interacts with chemical			oboInOwl:hasRelatedSynonym 'dismutates'	
 METPO:2000201	lyses	owl:ObjectProperty				organism interacts with chemical				
 METPO:2000202	synthesizes	owl:ObjectProperty				organism interacts with chemical			oboInOwl:hasRelatedSynonym 'produces'|oboInOwl:hasRelatedSynonym 'anabolizes'	
 METPO:2000203	fixes	owl:ObjectProperty				organism interacts with chemical				
@@ -125,13 +132,19 @@ METPO:2000235	does not precipitate	owl:ObjectProperty				organism interacts with
 METPO:2000236	does not solubilize	owl:ObjectProperty				organism interacts with chemical				
 METPO:2000237	does not volatilize	owl:ObjectProperty				organism interacts with chemical				
 METPO:2000238	does not crystallize	owl:ObjectProperty				organism interacts with chemical				
-METPO:2000239	has pH observation	owl:ObjectProperty		microbe	observation	METPO:2000104		Relates a microbe to a pH observation.
-METPO:2000501	has optimum pH observation	owl:ObjectProperty		microbe	optimum pH observation	METPO:2000239		Relates a microbe to an optimum pH observation.
-METPO:2000502	has growth pH observation	owl:ObjectProperty		microbe	growth pH observation	METPO:2000239		Relates a microbe to a growth pH observation.
-METPO:2000503	has range pH observation	owl:ObjectProperty		microbe	pH range observation	METPO:2000239		Relates a microbe to a growth pH range observation.
-METPO:2000504	has pH delta observation	owl:ObjectProperty		microbe	pH delta observation	METPO:2000239		Relates a microbe to a pH tolerance breadth (delta) observation.
-METPO:2000506	has NaCl observation	owl:ObjectProperty		microbe	observation	METPO:2000104		Relates a microbe to a NaCl observation.
-METPO:2000507	has optimum NaCl observation	owl:ObjectProperty		microbe	optimum NaCl observation	METPO:2000506		Relates a microbe to an optimum NaCl observation.
-METPO:2000508	has growth NaCl observation	owl:ObjectProperty		microbe	growth NaCl observation	METPO:2000506		Relates a microbe to a growth NaCl observation.
-METPO:2000509	has range NaCl observation	owl:ObjectProperty		microbe	NaCl range observation	METPO:2000506		Relates a microbe to a growth NaCl range observation.
-METPO:2000510	has NaCl delta observation	owl:ObjectProperty		microbe	NaCl delta observation	METPO:2000506		Relates a microbe to a NaCl tolerance breadth (delta) observation.
+METPO:2000239	has pH observation	owl:ObjectProperty		microbe	pH observation	has observation		Relates a microbe to a pH observation.		
+METPO:2000501	has optimum pH observation	owl:ObjectProperty		microbe	optimum pH observation	has pH observation		Relates a microbe to an optimum pH observation.		
+METPO:2000502	has growth pH observation	owl:ObjectProperty		microbe	growth pH observation	has pH observation		Relates a microbe to a growth pH observation.		
+METPO:2000503	has range pH observation	owl:ObjectProperty		microbe	pH range observation	has pH observation		Relates a microbe to a growth pH range observation.		
+METPO:2000504	has pH delta observation	owl:ObjectProperty		microbe	pH delta observation	has pH observation		Relates a microbe to a pH tolerance breadth (delta) observation.		
+METPO:2000506	has NaCl observation	owl:ObjectProperty		microbe	NaCl observation	has observation		Relates a microbe to a NaCl observation.		
+METPO:2000507	has optimum NaCl observation	owl:ObjectProperty		microbe	optimum NaCl observation	has NaCl observation		Relates a microbe to an optimum NaCl observation.		
+METPO:2000508	has growth NaCl observation	owl:ObjectProperty		microbe	growth NaCl observation	has NaCl observation		Relates a microbe to a growth NaCl observation.		
+METPO:2000509	has range NaCl observation	owl:ObjectProperty		microbe	NaCl range observation	has NaCl observation		Relates a microbe to a growth NaCl range observation.		
+METPO:2000510	has NaCl delta observation	owl:ObjectProperty		microbe	NaCl delta observation	has NaCl observation		Relates a microbe to a NaCl tolerance breadth (delta) observation.		
+METPO:2000511	has observation	owl:ObjectProperty		microbe	observation					
+METPO:2000512	has oxygen observation	owl:ObjectProperty		microbe	oxygen observation	has observation		Relates a microbe to an oxygen observation.		
+METPO:2000513	has optimum oxygen observation	owl:ObjectProperty		microbe	optimum oxygen observation	has oxygen observation		Relates a microbe to an optimum oxygen observation.		
+METPO:2000514	has growth oxygen observation	owl:ObjectProperty		microbe	growth oxygen observation	has oxygen observation		Relates a microbe to a growth oxygen observation.		
+METPO:2000515	has range oxygen observation	owl:ObjectProperty		microbe	oxygen range observation	has oxygen observation		Relates a microbe to a growth oxygen range observation.		
+METPO:2000516	has oxygen delta observation	owl:ObjectProperty		microbe	oxygen delta observation	has oxygen observation		Relates a microbe to a oxygen tolerance breadth (delta) observation.		

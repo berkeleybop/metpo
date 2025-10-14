@@ -7,8 +7,8 @@ Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
 
 
 Ontology(<https://w3id.org/metpo/metpo/components/metpo-properties.owl>
-<https://w3id.org/metpo/metpo/releases/2025-10-07/components/metpo-properties.owl>
-Annotation(owl:versionInfo "2025-10-07")
+<https://w3id.org/metpo/metpo/releases/2025-10-14/components/metpo-properties.owl>
+Annotation(owl:versionInfo "2025-10-14")
 
 Declaration(Class(<https://w3id.org/metpo/1000059>))
 Declaration(Class(<https://w3id.org/metpo/1000188>))
@@ -28,6 +28,14 @@ Declaration(Class(<https://w3id.org/metpo/1001012>))
 Declaration(Class(<https://w3id.org/metpo/1001013>))
 Declaration(Class(<https://w3id.org/metpo/1001014>))
 Declaration(Class(<https://w3id.org/metpo/1001015>))
+Declaration(Class(<https://w3id.org/metpo/1001016>))
+Declaration(Class(<https://w3id.org/metpo/1001017>))
+Declaration(Class(<https://w3id.org/metpo/1001018>))
+Declaration(Class(<https://w3id.org/metpo/1001019>))
+Declaration(Class(<https://w3id.org/metpo/1001020>))
+Declaration(Class(<https://w3id.org/metpo/1001021>))
+Declaration(Class(<https://w3id.org/metpo/1001022>))
+Declaration(Class(<https://w3id.org/metpo/1001023>))
 Declaration(ObjectProperty(<https://w3id.org/metpo/2000001>))
 Declaration(ObjectProperty(<https://w3id.org/metpo/2000002>))
 Declaration(ObjectProperty(<https://w3id.org/metpo/2000003>))
@@ -87,7 +95,6 @@ Declaration(ObjectProperty(<https://w3id.org/metpo/2000056>))
 Declaration(ObjectProperty(<https://w3id.org/metpo/2000101>))
 Declaration(ObjectProperty(<https://w3id.org/metpo/2000102>))
 Declaration(ObjectProperty(<https://w3id.org/metpo/2000103>))
-Declaration(ObjectProperty(<https://w3id.org/metpo/2000104>))
 Declaration(ObjectProperty(<https://w3id.org/metpo/2000200>))
 Declaration(ObjectProperty(<https://w3id.org/metpo/2000201>))
 Declaration(ObjectProperty(<https://w3id.org/metpo/2000202>))
@@ -137,6 +144,12 @@ Declaration(ObjectProperty(<https://w3id.org/metpo/2000507>))
 Declaration(ObjectProperty(<https://w3id.org/metpo/2000508>))
 Declaration(ObjectProperty(<https://w3id.org/metpo/2000509>))
 Declaration(ObjectProperty(<https://w3id.org/metpo/2000510>))
+Declaration(ObjectProperty(<https://w3id.org/metpo/2000511>))
+Declaration(ObjectProperty(<https://w3id.org/metpo/2000512>))
+Declaration(ObjectProperty(<https://w3id.org/metpo/2000513>))
+Declaration(ObjectProperty(<https://w3id.org/metpo/2000514>))
+Declaration(ObjectProperty(<https://w3id.org/metpo/2000515>))
+Declaration(ObjectProperty(<https://w3id.org/metpo/2000516>))
 Declaration(DataProperty(<https://w3id.org/metpo/2000058>))
 Declaration(DataProperty(<https://w3id.org/metpo/2000059>))
 Declaration(DataProperty(<https://w3id.org/metpo/2000060>))
@@ -474,8 +487,9 @@ SubObjectPropertyOf(<https://w3id.org/metpo/2000051> <https://w3id.org/metpo/200
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000052> "Relates a microbe to a temperature observation.")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000052> "has temperature observation")
+SubObjectPropertyOf(<https://w3id.org/metpo/2000052> <https://w3id.org/metpo/2000511>)
 ObjectPropertyDomain(<https://w3id.org/metpo/2000052> <https://w3id.org/metpo/1000525>)
-ObjectPropertyRange(<https://w3id.org/metpo/2000052> <https://w3id.org/metpo/1001000>)
+ObjectPropertyRange(<https://w3id.org/metpo/2000052> <https://w3id.org/metpo/1001021>)
 
 # Object Property: <https://w3id.org/metpo/2000053> (has optimum temperature observation)
 
@@ -529,12 +543,6 @@ AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000103> "capable of")
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/metpo/2000103> <https://biolink.github.io/biolink-model/capable_of>)
 ObjectPropertyDomain(<https://w3id.org/metpo/2000103> <https://w3id.org/metpo/1000525>)
 ObjectPropertyRange(<https://w3id.org/metpo/2000103> <https://w3id.org/metpo/1000630>)
-
-# Object Property: <https://w3id.org/metpo/2000104> (has observation)
-
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000104> "has observation")
-ObjectPropertyDomain(<https://w3id.org/metpo/2000104> <https://w3id.org/metpo/1000525>)
-ObjectPropertyRange(<https://w3id.org/metpo/2000104> <https://w3id.org/metpo/1001000>)
 
 # Object Property: <https://w3id.org/metpo/2000200> (disproportionates)
 
@@ -754,9 +762,9 @@ SubObjectPropertyOf(<https://w3id.org/metpo/2000238> <https://w3id.org/metpo/200
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000239> "Relates a microbe to a pH observation.")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000239> "has pH observation")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000239> <https://w3id.org/metpo/2000104>)
+SubObjectPropertyOf(<https://w3id.org/metpo/2000239> <https://w3id.org/metpo/2000511>)
 ObjectPropertyDomain(<https://w3id.org/metpo/2000239> <https://w3id.org/metpo/1000525>)
-ObjectPropertyRange(<https://w3id.org/metpo/2000239> <https://w3id.org/metpo/1001000>)
+ObjectPropertyRange(<https://w3id.org/metpo/2000239> <https://w3id.org/metpo/1001023>)
 
 # Object Property: <https://w3id.org/metpo/2000501> (has optimum pH observation)
 
@@ -794,9 +802,9 @@ ObjectPropertyRange(<https://w3id.org/metpo/2000504> <https://w3id.org/metpo/100
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000506> "Relates a microbe to a NaCl observation.")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000506> "has NaCl observation")
-SubObjectPropertyOf(<https://w3id.org/metpo/2000506> <https://w3id.org/metpo/2000104>)
+SubObjectPropertyOf(<https://w3id.org/metpo/2000506> <https://w3id.org/metpo/2000511>)
 ObjectPropertyDomain(<https://w3id.org/metpo/2000506> <https://w3id.org/metpo/1000525>)
-ObjectPropertyRange(<https://w3id.org/metpo/2000506> <https://w3id.org/metpo/1001000>)
+ObjectPropertyRange(<https://w3id.org/metpo/2000506> <https://w3id.org/metpo/1001022>)
 
 # Object Property: <https://w3id.org/metpo/2000507> (has optimum NaCl observation)
 
@@ -829,6 +837,52 @@ AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000510> "has NaCl delta 
 SubObjectPropertyOf(<https://w3id.org/metpo/2000510> <https://w3id.org/metpo/2000506>)
 ObjectPropertyDomain(<https://w3id.org/metpo/2000510> <https://w3id.org/metpo/1000525>)
 ObjectPropertyRange(<https://w3id.org/metpo/2000510> <https://w3id.org/metpo/1001008>)
+
+# Object Property: <https://w3id.org/metpo/2000511> (has observation)
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000511> "has observation")
+ObjectPropertyDomain(<https://w3id.org/metpo/2000511> <https://w3id.org/metpo/1000525>)
+ObjectPropertyRange(<https://w3id.org/metpo/2000511> <https://w3id.org/metpo/1001000>)
+
+# Object Property: <https://w3id.org/metpo/2000512> (has oxygen observation)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000512> "Relates a microbe to an oxygen observation.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000512> "has oxygen observation")
+SubObjectPropertyOf(<https://w3id.org/metpo/2000512> <https://w3id.org/metpo/2000511>)
+ObjectPropertyDomain(<https://w3id.org/metpo/2000512> <https://w3id.org/metpo/1000525>)
+ObjectPropertyRange(<https://w3id.org/metpo/2000512> <https://w3id.org/metpo/1001020>)
+
+# Object Property: <https://w3id.org/metpo/2000513> (has optimum oxygen observation)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000513> "Relates a microbe to an optimum oxygen observation.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000513> "has optimum oxygen observation")
+SubObjectPropertyOf(<https://w3id.org/metpo/2000513> <https://w3id.org/metpo/2000512>)
+ObjectPropertyDomain(<https://w3id.org/metpo/2000513> <https://w3id.org/metpo/1000525>)
+ObjectPropertyRange(<https://w3id.org/metpo/2000513> <https://w3id.org/metpo/1001016>)
+
+# Object Property: <https://w3id.org/metpo/2000514> (has growth oxygen observation)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000514> "Relates a microbe to a growth oxygen observation.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000514> "has growth oxygen observation")
+SubObjectPropertyOf(<https://w3id.org/metpo/2000514> <https://w3id.org/metpo/2000512>)
+ObjectPropertyDomain(<https://w3id.org/metpo/2000514> <https://w3id.org/metpo/1000525>)
+ObjectPropertyRange(<https://w3id.org/metpo/2000514> <https://w3id.org/metpo/1001017>)
+
+# Object Property: <https://w3id.org/metpo/2000515> (has range oxygen observation)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000515> "Relates a microbe to a growth oxygen range observation.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000515> "has range oxygen observation")
+SubObjectPropertyOf(<https://w3id.org/metpo/2000515> <https://w3id.org/metpo/2000512>)
+ObjectPropertyDomain(<https://w3id.org/metpo/2000515> <https://w3id.org/metpo/1000525>)
+ObjectPropertyRange(<https://w3id.org/metpo/2000515> <https://w3id.org/metpo/1001018>)
+
+# Object Property: <https://w3id.org/metpo/2000516> (has oxygen delta observation)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000516> "Relates a microbe to a oxygen tolerance breadth (delta) observation.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000516> "has oxygen delta observation")
+SubObjectPropertyOf(<https://w3id.org/metpo/2000516> <https://w3id.org/metpo/2000512>)
+ObjectPropertyDomain(<https://w3id.org/metpo/2000516> <https://w3id.org/metpo/1000525>)
+ObjectPropertyRange(<https://w3id.org/metpo/2000516> <https://w3id.org/metpo/1001019>)
 
 
 ############################
@@ -956,6 +1010,38 @@ AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1001014> "pH delta observ
 # Class: <https://w3id.org/metpo/1001015> (pH range observation)
 
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1001015> "pH range observation")
+
+# Class: <https://w3id.org/metpo/1001016> (optimum oxygen observation)
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1001016> "optimum oxygen observation")
+
+# Class: <https://w3id.org/metpo/1001017> (growth oxygen observation)
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1001017> "growth oxygen observation")
+
+# Class: <https://w3id.org/metpo/1001018> (oxygen range observation)
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1001018> "oxygen range observation")
+
+# Class: <https://w3id.org/metpo/1001019> (oxygen delta observation)
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1001019> "oxygen delta observation")
+
+# Class: <https://w3id.org/metpo/1001020> (oxygen observation)
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1001020> "oxygen observation")
+
+# Class: <https://w3id.org/metpo/1001021> (temperature observation)
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1001021> "temperature observation")
+
+# Class: <https://w3id.org/metpo/1001022> (NaCl observation)
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1001022> "NaCl observation")
+
+# Class: <https://w3id.org/metpo/1001023> (pH observation)
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1001023> "pH observation")
 
 
 )
