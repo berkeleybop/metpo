@@ -28,6 +28,12 @@ dev = [
 extract-rank-triples = "metpo.extract_rank_triples:extract_taxon_ranks"
 convert-chem-props = "metpo.convert_chem_props:convert_chem_props"
 import-bactotraits = "metpo.import_bactotraits:import_bactotraits"
+reconcile-bactotraits-coverage = "metpo.scripts.reconcile_bactotraits_coverage:main"
+reconcile-madin-coverage = "metpo.scripts.reconcile_madin_coverage:main"
+bactotraits-metpo-set-difference = "metpo.scripts.bactotraits_metpo_set_difference:main"
+create-bactotraits-field-mappings = "metpo.scripts.create_bactotraits_header_mapping:main"
+create-bactotraits-file-versions = "metpo.scripts.create_bactotraits_file_versions:main"
+create-bactotraits-files = "metpo.scripts.create_bactotraits_files:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["metpo"]

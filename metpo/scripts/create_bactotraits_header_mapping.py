@@ -8,21 +8,17 @@ This script creates a MongoDB collection that maps field names across three vers
 3. Current MongoDB field names (aggressively sanitized)
 
 Usage:
-    uv run python src/scripts/create_bactotraits_header_mapping.py
+    uv run create-bactotraits-field-mappings
 
 Output:
     - MongoDB collection: bactotraits.field_mappings
-    - JSON file: reports/bactotraits_field_mappings.json
+    - JSON file: metadata/bactotraits_field_mappings.json
 """
 
+import click
 import json
 from pathlib import Path
 from pymongo import MongoClient
-
-# File paths
-PROVIDER_FILE = Path("/Users/MAM/Documents/gitrepos/metpo/downloads/BactoTraits_databaseV2_Jun2022.csv")
-KG_MICROBE_FILE = Path("/Users/MAM/Documents/gitrepos/kg-microbe/kg_microbe/transform_utils/bactotraits/tmp/BactoTraits.tsv")
-OUTPUT_JSON = Path("/Users/MAM/Documents/gitrepos/metpo/reports/bactotraits_field_mappings.json")
 
 
 def sanitize_field_name(field_name):
@@ -103,9 +99,9 @@ def forward_fill_units(units_row, category_row):
     return filled
 
 
-def read_provider_headers():
+def read_provider_headers(provider_file):
     """Read the 3-row header structure from provider's CSV."""
-    with open(PROVIDER_FILE, 'r', encoding='ISO-8859-1') as f:
+    with open(provider_file, 'r', encoding='ISO-8859-1') as f:
         # Read first 3 lines
         row1 = f.readline().strip().split(';')  # Category row
         row2 = f.readline().strip().split(';')  # Units row
@@ -123,45 +119,45 @@ def read_provider_headers():
     return category_filled, units_filled, fields
 
 
-def read_kg_microbe_header():
+def read_kg_microbe_header(kg_microbe_file):
     """Read the single-row header from kg-microbe TSV."""
-    if not KG_MICROBE_FILE.exists():
-        print(f"Warning: kg-microbe file not found at {KG_MICROBE_FILE}")
+    if not kg_microbe_file.exists():
+        print(f"Warning: kg-microbe file not found at {kg_microbe_file}")
         return None
 
-    with open(KG_MICROBE_FILE, 'r', encoding='utf-8') as f:
+    with open(kg_microbe_file, 'r', encoding='utf-8') as f:
         header = f.readline().strip().split('\t')
 
     return header
 
 
-def get_mongodb_fields_from_kg_microbe():
+def get_mongodb_fields_from_kg_microbe(kg_microbe_file):
     """
     Generate MongoDB field names by sanitizing kg-microbe header.
     This ensures they match what the import script will create.
     """
-    if not KG_MICROBE_FILE.exists():
-        print(f"Warning: kg-microbe file not found at {KG_MICROBE_FILE}")
+    if not kg_microbe_file.exists():
+        print(f"Warning: kg-microbe file not found at {kg_microbe_file}")
         return None
 
-    with open(KG_MICROBE_FILE, 'r', encoding='utf-8') as f:
+    with open(kg_microbe_file, 'r', encoding='utf-8') as f:
         header = f.readline().strip().split('\t')
 
     # Apply same sanitization as import script
     return [sanitize_field_name(field) for field in header]
 
 
-def create_field_mappings():
+def create_field_mappings(provider_file, kg_microbe_file):
     """Create comprehensive field mappings across all versions."""
 
     print("Reading provider headers (3 rows with forward-fill)...")
-    category_row, units_row, fields_row = read_provider_headers()
+    category_row, units_row, fields_row = read_provider_headers(provider_file)
 
     print("Reading kg-microbe header...")
-    kg_microbe_header = read_kg_microbe_header()
+    kg_microbe_header = read_kg_microbe_header(kg_microbe_file)
 
     print("Generating sanitized MongoDB field names...")
-    mongodb_fields = get_mongodb_fields_from_kg_microbe()
+    mongodb_fields = get_mongodb_fields_from_kg_microbe(kg_microbe_file)
 
     print(f"\nFound {len(fields_row)} provider fields")
     print(f"Found {len(kg_microbe_header) if kg_microbe_header else 0} kg-microbe fields")
@@ -255,28 +251,62 @@ def create_field_mappings():
     return mappings
 
 
-def main():
-    """Main execution function."""
+@click.command()
+@click.option(
+    '--provider-file',
+    type=click.Path(exists=True, path_type=Path),
+    default=Path('local/bactotraits/BactoTraits_databaseV2_Jun2022.csv'),
+    help='Path to provider CSV file'
+)
+@click.option(
+    '--kg-microbe-file',
+    type=click.Path(exists=True, path_type=Path),
+    default=Path('local/bactotraits/BactoTraits.tsv'),
+    help='Path to kg-microbe TSV file'
+)
+@click.option(
+    '--output-json',
+    type=click.Path(path_type=Path),
+    default=Path('metadata/bactotraits_field_mappings.json'),
+    help='Path for output JSON file'
+)
+@click.option(
+    '--db-name',
+    default='bactotraits',
+    help='MongoDB database name'
+)
+@click.option(
+    '--collection-name',
+    default='field_mappings',
+    help='MongoDB collection name'
+)
+@click.option(
+    '--mongo-uri',
+    default='mongodb://localhost:27017/',
+    help='MongoDB connection URI'
+)
+def main(provider_file, kg_microbe_file, output_json, db_name, collection_name, mongo_uri):
+    """Create BactoTraits field mappings collection and JSON export."""
     print("=" * 80)
     print("BactoTraits Header Mapping Generator")
     print("=" * 80)
     print()
 
     # Create mappings
-    mappings = create_field_mappings()
+    mappings = create_field_mappings(provider_file, kg_microbe_file)
 
     # Save to JSON
-    print(f"\nSaving mappings to {OUTPUT_JSON}...")
-    OUTPUT_JSON.parent.mkdir(parents=True, exist_ok=True)
+    print(f"\nSaving mappings to {output_json}...")
+    output_json.parent.mkdir(parents=True, exist_ok=True)
 
-    with open(OUTPUT_JSON, 'w', encoding='utf-8') as f:
+    with open(output_json, 'w', encoding='utf-8') as f:
         json.dump({
             'metadata': {
                 'total_fields': len(mappings),
                 'description': 'Mapping of BactoTraits field names across provider, kg-microbe, and MongoDB versions',
-                'provider_file': 'BactoTraits_databaseV2_Jun2022.csv',
-                'kg_microbe_file': 'BactoTraits.tsv',
-                'mongodb_collection': 'bactotraits.bactotraits'
+                'provider_file': provider_file.name,
+                'kg_microbe_file': kg_microbe_file.name,
+                'mongodb_collection': f'{db_name}.{collection_name}'
             },
             'mappings': mappings
         }, f, indent=2, ensure_ascii=False)
@@ -285,18 +315,18 @@ def main():
 
     # Load into MongoDB
     print("\nLoading mappings into MongoDB...")
-    client = MongoClient('mongodb://localhost:27017/')
-    db = client['bactotraits']
-    collection = db['field_mappings']
+    client = MongoClient(mongo_uri)
+    db = client[db_name]
+    collection = db[collection_name]
 
     # Drop existing collection
     collection.drop()
-    print("✓ Dropped existing field_mappings collection")
+    print(f"✓ Dropped existing {db_name}.{collection_name} collection")
 
     # Insert mappings
     if mappings:
         collection.insert_many(mappings)
-        print(f"✓ Inserted {len(mappings)} documents into bactotraits.field_mappings")
+        print(f"✓ Inserted {len(mappings)} documents into {db_name}.{collection_name}")
 
     # Create useful indexes
     collection.create_index('mongodb')
@@ -342,9 +372,9 @@ def main():
     print("Done!")
     print("=" * 80)
     print(f"\nQuery the collection with:")
-    print(f"  mongosh bactotraits --eval 'db.field_mappings.find().pretty()'")
+    print(f"  mongosh {db_name} --eval 'db.{collection_name}.find().pretty()'")
     print(f"\nOr view the JSON file:")
-    print(f"  cat {OUTPUT_JSON}")
+    print(f"  cat {output_json}")
     print()
 
 
