@@ -1,0 +1,14 @@
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  oio:  <http://www.geneontology.org/formats/oboInOwl#>
+PREFIX  oxpref: <https://w3id.org/metpo/1000601>
+PREFIX  IAO:  <http://purl.obolibrary.org/obo/IAO_>
+
+SELECT  ?bacdive_label ?metpo_curie ?metpo_label
+WHERE
+  { ?p  rdfs:subClassOf  oxpref:
+    BIND(replace(str(?p), "https://w3id.org/metpo/", "metpo:") AS ?metpo_curie)
+    OPTIONAL
+      { ?p  rdfs:label  ?metpo_label }
+    OPTIONAL
+      { ?p  oio:hasRelatedSynonym  ?bacdive_label }
+  }

@@ -1,0 +1,197 @@
+id: http://w3id.org/metpo/biochemical_extraction
+name: biochemical_extraction
+title: METPO Biochemical and Enzymatic Activity Extraction Template
+description: >-
+  A focused OntoGPT template for extracting biochemical characteristics and enzymatic 
+  activities from bacterial literature, including enzyme activities, API test results, 
+  diagnostic reactions, fatty acid composition, and metabolic capabilities with 
+  structured relationships.
+license: https://creativecommons.org/publicdomain/zero/1.0/
+prefixes:
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  linkml: https://w3id.org/linkml/
+  metpo_biochem: http://w3id.org/metpo/biochemical_extraction/
+  ontogpt: http://w3id.org/ontogpt/
+default_prefix: metpo_biochem
+default_range: string
+imports:
+  - linkml:types
+  - ontogpt:core
+classes:
+  BiochemicalLiteratureExtraction:
+    tree_root: true
+    attributes:
+      pmid:
+        description: >-
+          PubMed ID of the article (e.g., 23996836)
+        range: string
+      study_taxa:
+        description: >-
+          semicolon-separated list of the main bacterial or archaeal taxa being studied for biochemical characteristics
+        multivalued: true
+        range: Taxon
+      strains:
+        description: >-
+          semicolon-separated list of specific strain designations mentioned in the text
+        multivalued: true
+        range: Strain
+        annotations:
+          prompt: >-
+            Extract ONLY the strain designation part (e.g., "DA-C8", "MG1655", "ATCC 25922") WITHOUT genus/species prefixes. Focus on strain numbers, culture collection codes, and isolate identifiers. Automatically remove terminal "T" or "(T)" suffixes as these indicate type strain status (e.g., "DA-C8T" becomes "DA-C8", "K13T" becomes "K13"). Include strain numbers, culture collection numbers, and isolate names, but NOT the full taxonomic context.
+      enzyme_activities:
+        description: >-
+          semicolon-separated list of enzyme activities and enzymatic tests
+        multivalued: true
+        range: EnzymeActivity
+        annotations:
+          prompt: >-
+            Identify enzyme activities mentioned in the text. Include standard enzymatic tests like "catalase-positive", "oxidase-negative", "urease-positive", "gelatinase", "lipase", "amylase", "protease", "β-galactosidase", "alkaline phosphatase". Also include activities like "hydrolyzes starch", "reduces nitrate", "produces indole". Use the format "enzyme-positive" or "enzyme-negative" when test results are given. If no enzyme activities are mentioned, leave this field empty.
+      api_test_results:
+        description: >-
+          semicolon-separated list of API test results and commercial test kit results
+        multivalued: true
+        range: APITestResult
+        annotations:
+          prompt: >-
+            Identify API test results or commercial biochemical test kit results mentioned in the text. Include results from API 20E, API 20NE, API 50CH, Biolog, Vitek, or similar systems. Examples: "API 20E profile", "API 50CH positive for glucose", "Biolog carbon utilization". If no API or commercial test results are mentioned, leave this field empty.
+      metabolic_tests:
+        description: >-
+          semicolon-separated list of metabolic and diagnostic tests
+        multivalued: true
+        range: MetabolicTest
+        annotations:
+          prompt: >-
+            Identify metabolic and diagnostic test results mentioned in the text. Include tests like "indole production", "methyl red", "Voges-Proskauer", "citrate utilization", "hydrogen sulfide production", "nitrate reduction", "DNase", "coagulase", "hemolysis". If no metabolic tests are mentioned, leave this field empty.
+      biochemical_relationships:
+        description: >-
+          semicolon-separated list of specific strain-biochemical relationships found in the text
+        multivalued: true
+        range: BiochemicalRelationship
+        annotations:
+          prompt: >-
+            For each enzyme activity, API test result, and metabolic test found in the fields above, extract structured relationships linking specific strains to those biochemical characteristics. Generate tuples like "strain 15-1T positive_for catalase", "ATCC 25922 negative_for oxidase", "isolate XYZ-1 demonstrates_activity gelatinase", "strain ABC123 positive_for β-galactosidase", "strain 123T positive_for API 20E", "ATCC 14887 negative_for methyl red". Convert ALL biochemical tests and enzyme activities mentioned above into strain-biochemical relationships.
+      strain_relationships:
+        description: >-
+          semicolon-separated list of strain-species relationships found in the text
+        multivalued: true
+        range: StrainRelationship
+        annotations:
+          prompt: >-
+            A semicolon-separated list of strain-species relationships, where each 
+            relationship connects a strain to its parent taxon. Each relationship should 
+            have a strain name, relationship type, and parent species/genus.
+            For example: "MG1655 strain_of Escherichia coli; K-12 strain_of Escherichia coli; 
+            ATCC 25922 type_strain_of Klebsiella pneumoniae". If no strain relationships are found, leave this field empty.
+      source_text:
+        range: string
+        annotations:
+          prompt.skip: "true"
+
+  Taxon:
+    is_a: NamedEntity
+    description: >-
+      Bacterial, archaeal, or other microbial taxa being studied for biochemical characteristics.
+    annotations:
+      annotators: sqlite:obo:ncbitaxon
+
+  Strain:
+    is_a: NamedEntity
+    description: >-
+      Specific bacterial or archaeal strain designations including culture collection numbers, type strains, and isolate identifiers.
+
+  EnzymeActivity:
+    is_a: NamedEntity
+    description: >-
+      Enzyme activities and enzymatic test results.
+    annotations:
+      annotators: sqlite:obo:go, sqlite:obo:rhea
+
+  APITestResult:
+    is_a: NamedEntity
+    description: >-
+      Results from API test strips or commercial biochemical identification systems.
+
+  MetabolicTest:
+    is_a: NamedEntity
+    description: >-
+      Metabolic and diagnostic test results used for bacterial identification.
+
+  BiochemicalCharacteristic:
+    is_a: NamedEntity
+    description: >-
+      Any biochemical characteristic including enzyme activities, metabolic tests, API test results.
+    annotations:
+      annotators: sqlite:obo:go, sqlite:obo:rhea
+
+  BiochemicalRelationship:
+    is_a: CompoundExpression
+    description: >-
+      Specific relationships between strains and biochemical characteristics including enzyme activities, metabolic tests, and API test results
+    attributes:
+      subject:
+        description: the strain being tested for biochemical characteristics
+        range: Strain
+      predicate:
+        description: the type of biochemical relationship (positive_for, negative_for, demonstrates_activity, etc.)
+        range: BiochemicalTestResult
+        annotations:
+          prompt: >-
+            Select the relationship type that matches the text. Use "positive_for" for positive test results, "negative_for" for negative results, "demonstrates_activity" for general activities, "produces" for production of compounds.
+      object:
+        description: the specific biochemical characteristic, enzyme, or test being evaluated
+        range: BiochemicalCharacteristic
+
+
+  StrainRelationship:
+    is_a: CompoundExpression
+    description: >-
+      Specific relationships between strain designations and their parent taxonomic groups
+    attributes:
+      subject:
+        description: the specific strain designation or identifier
+        range: Strain
+      predicate:
+        description: the type of strain-taxon relationship (strain_of, type_strain_of, isolate_of, etc.)
+        range: StrainRelationshipType
+      object:
+        description: the parent species or genus this strain belongs to
+        range: Taxon
+
+enums:
+  BiochemicalTestResult:
+    description: Types of biochemical test results and relationships
+    permissible_values:
+      positive_for:
+        description: The organism tests positive for the specified enzyme or biochemical test
+      negative_for:
+        description: The organism tests negative for the specified enzyme or biochemical test
+      demonstrates_activity:
+        description: The organism demonstrates the specified enzymatic activity
+      produces:
+        description: The organism produces the specified enzyme or compound
+      contains:
+        description: The organism contains the specified component or compound
+      major_fatty_acid:
+        description: The specified fatty acid is a major component
+      minor_fatty_acid:
+        description: The specified fatty acid is a minor component
+      predominant_fatty_acid:
+        description: The specified fatty acid is the most abundant
+      AccuProbe_positive_for:
+        description: The organism tests positive in AccuProbe assay for the specified complex
+      AccuProbe_negative_for:
+        description: The organism tests negative in AccuProbe assay for the specified complex
+
+  StrainRelationshipType:
+    description: Type of relationship between strain and parent taxon
+    permissible_values:
+      strain_of:
+        description: Regular strain of a species
+      type_strain_of:
+        description: Type strain of a species
+      reference_strain_of:
+        description: Reference strain of a species
+      isolate_of:
+        description: Clinical or environmental isolate of a species
+      variant_of:
+        description: Variant or mutant strain of a species

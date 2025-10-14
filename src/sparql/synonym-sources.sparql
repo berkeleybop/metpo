@@ -1,0 +1,68 @@
+PREFIX owl:   <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+PREFIX IAO:   <http://purl.obolibrary.org/obo/IAO_>
+PREFIX skos:  <http://www.w3.org/2004/02/skos/core#>
+PREFIX schema: <https://schema.org/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX dc:    <http://purl.org/dc/elements/1.1/>
+PREFIX prov:  <http://www.w3.org/ns/prov#>
+
+SELECT DISTINCT ?entity ?entityType ?synonymPred ?synValue (LANG(?synValue) AS ?lang)
+                ?synType ?xref ?src ?prov
+WHERE {
+  VALUES ?synonymPred {
+    rdfs:label
+    oboInOwl:hasExactSynonym
+    oboInOwl:hasRelatedSynonym
+    oboInOwl:hasNarrowSynonym
+    oboInOwl:hasBroadSynonym
+    IAO:0000118               # IAO alternative term/label
+    skos:prefLabel
+    skos:altLabel
+    skos:hiddenLabel
+    schema:alternateName
+    dcterms:alternative
+  }
+
+  {
+    ?entity a owl:Class ;
+            ?synonymPred ?synValue .
+    BIND("class" AS ?entityType)
+  }
+  UNION
+  {
+    ?entity a owl:ObjectProperty ;
+            ?synonymPred ?synValue .
+    BIND("property" AS ?entityType)
+  }
+  UNION
+  {
+    ?entity a owl:DatatypeProperty ;
+            ?synonymPred ?synValue .
+    BIND("property" AS ?entityType)
+  }
+  UNION
+  {
+    ?entity a owl:AnnotationProperty ;
+            ?synonymPred ?synValue .
+    BIND("property" AS ?entityType)
+  }
+
+  # Axiom annotations that qualify/attribute the synonym
+  OPTIONAL {
+    ?axiom a owl:Axiom ;
+           owl:annotatedSource ?entity ;
+           owl:annotatedProperty ?synonymPred ;
+           owl:annotatedTarget ?synValue .
+
+    OPTIONAL { ?axiom oboInOwl:hasSynonymType ?synType }   # e.g., abbreviation
+    OPTIONAL { ?axiom oboInOwl:hasDbXref ?xref }           # synonym provenance/citation
+    OPTIONAL { ?axiom oboInOwl:source ?src }               # occasional
+    OPTIONAL { ?axiom dcterms:source ?src }                # occasional
+    OPTIONAL { ?axiom dc:source ?src }                     # occasional
+    OPTIONAL { ?axiom prov:wasDerivedFrom ?prov }          # occasional
+    OPTIONAL { ?axiom IAO:0000119 ?src }                   # rare for synonyms; common for definitions
+  }
+}
+ORDER BY ?entityType ?synonymPred ?entity ?synValue

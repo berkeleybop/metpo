@@ -43,4 +43,60 @@ and expressing the findings with classes and predicates from METPO or the Biolin
 which would then become part of KG-Microbe.
 
 We strive to keep our class heirachies pure. Reuse of terms from OBO foundry ontologies
-and the use of logical axioms are hihg but secondary priorities. 
+and the use of logical axioms are hihg but secondary priorities.
+
+## Repository Structure
+
+This repository contains two main components:
+
+### Ontology Development (`src/ontology/`)
+The core METPO ontology is built using the Ontology Development Kit (ODK). The root Python code and Makefiles are **not involved** in ontology releases.
+
+#### Building the Ontology
+
+To rebuild the ontology from source (requires Docker):
+
+```bash
+cd src/ontology
+make squeaky-clean          # Clean all generated files
+./run.sh make all          # Full build with Docker wrapper
+```
+
+The build process:
+- Fetches the latest CSV data from Google Sheets
+- Generates robot template output
+- Builds all ontology format files (OWL, OBO, JSON)
+
+#### Creating a Release
+
+To prepare a new release:
+
+```bash
+cd src/ontology
+./run.sh prepare_release   # Copies files to project root
+```
+
+**Manual steps after prepare_release:**
+- Review generated files in project root
+- Git add, commit, and push changes
+- Create GitHub release
+- Monitor third-party systems (Bioportal, etc.)
+
+#### Third-Party System Monitoring
+
+After releases, monitor integration with:
+- OBO Foundry
+- Bioportal 
+- Other ontology repositories
+
+*Documentation needed: Detailed monitoring procedures and third-party system integration.*
+
+### Literature Mining Pipeline (`literature_mining/`)
+The literature mining component uses OntoGPT to extract knowledge from research papers (especially IJSEM) and annotates the extracted data using METPO ontology files. This pipeline is **separate from ontology maintenance** and its outputs are intended for integration into KG-Microbe.
+
+The literature mining workflow uses:
+- METPO ontology files as knowledge annotators
+- OntoGPT for information extraction from abstracts
+- Custom templates for structured data extraction
+
+Final destination: KG-Microbe knowledge graph 

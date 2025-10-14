@@ -9,11 +9,15 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:dcterms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="https://w3id.org/metpo/metpo/metpo-base.owl">
-        <owl:versionIRI rdf:resource="https://w3id.org/metpo/metpo/releases/2025-04-25/metpo-base.owl"/>
+        <owl:versionIRI rdf:resource="https://w3id.org/metpo/metpo/releases/2025-10-03/metpo-base.owl"/>
         <dce:type rdf:resource="http://purl.obolibrary.org/obo/IAO_8000001"/>
+        <dcterms:creator>METPO Development Team</dcterms:creator>
         <dcterms:description>Microbial ecophysiological trait and phenotype ontology</dcterms:description>
+        <dcterms:issued>2024-01-01</dcterms:issued>
+        <dcterms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+        <dcterms:modified>2025-09-29</dcterms:modified>
         <dcterms:title>METPO</dcterms:title>
-        <owl:versionInfo>2025-04-25</owl:versionInfo>
+        <owl:versionInfo>2025-10-03</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -35,9 +39,33 @@
     
 
 
+    <!-- http://purl.org/dc/terms/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
     <!-- http://purl.org/dc/terms/description -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/issued -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/issued"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/modified -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/modified"/>
     
 
 

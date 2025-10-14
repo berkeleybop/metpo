@@ -1,0 +1,18 @@
+﻿Field,Description,List/Value,Purpose in OLS
+creator,The list of creators of the ontology,List,It is displayed in OLS as part of the summary overview of your ontology.
+is_foundary,"Set to true if this is an OBO ontology, otherwise false",Value,"This sets a bunch of default configuration options, like the synonym and definition properties. "
+preferredPrefix,A short identifier that can be used to refer to your ontology in the OLS frontend.,Value,
+title,The title of your ontology,Value,This will be overidden if the ontology contains a dc:title ontology annotation
+uri,This is the canonical ontology URI for identifying the ontology,Value,
+description,A description of your ontology,Value,This will be overidden if the ontology contains a dc:description ontology annotation
+homepage,The home page for your ontology where users can read more about your ontology,Value,In OLS a link is provided to the home page of your ontology.
+mailing_list,Email address where to users can email questions regarding your ontology,Value,
+label_property,The list of URIs of properties that are used in your ontology to provide labels of terms.  If multiple language tags are provided OLS always default to index the english language tags.,List,This is used to index details regarding the terms of your ontology so that users can search for it using keywords
+definition_property,The list of URIs of properties that are used in your ontology to provide definitions of terms. ,List,This is used to index details regarding the terms of your ontology so that users can search for it using keywords
+synonym_property,The list of URIs of properties that are used in your ontology to define that a term is a synonym for another term. ,List,This is used to index related terms and make them searchable
+hierarchical_property,The list of URIs of properties that can be used to contructuct hierarchical tree views of the ontology. By default OLS will render a tree with subclass-of/is-a relationships. This configuration is typically used to indicidate other properties (such as part-of or develops-from) are also considered hierarchical and should be rendered in the tree view. ,List,
+hidden_property,List of properties to that are ignored when rendering the ontology.,List,
+base_uri,The base URI that OLS can use to distinguish terms/properties/individuals that belong to your ontology from those that belong to other ontologies. ,Value,This is used for display and indexing purposes.
+reasoner,The reasoner your ontology requires to be classified. The options are OWL2 or EL or NONE. If you do not know this we can help you when we have a look at your ontology.,Value,"OWL2 we will use Hermit, EL we will use ELK."
+oboSlims,"Use true to indicate that your ontology make use of OBO slims/subsets annotations, otherwise false",,
+ontology_purl,"The stable URL for accessing the ontology. Can be on a network (http, https, ftp) or a local file (file://)",Value,This is where OLS gets the ontology from and checks for changes
