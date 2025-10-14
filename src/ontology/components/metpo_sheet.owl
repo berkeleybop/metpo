@@ -7,8 +7,8 @@ Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
 
 
 Ontology(<https://w3id.org/metpo/metpo/components/metpo_sheet.owl>
-<https://w3id.org/metpo/metpo/releases/2025-10-07/components/metpo_sheet.owl>
-Annotation(owl:versionInfo "2025-10-07")
+<https://w3id.org/metpo/metpo/releases/2025-10-14/components/metpo_sheet.owl>
+Annotation(owl:versionInfo "2025-10-14")
 
 Declaration(Class(<https://w3id.org/metpo/1000059>))
 Declaration(Class(<https://w3id.org/metpo/1000060>))
@@ -213,6 +213,14 @@ Declaration(Class(<https://w3id.org/metpo/1001012>))
 Declaration(Class(<https://w3id.org/metpo/1001013>))
 Declaration(Class(<https://w3id.org/metpo/1001014>))
 Declaration(Class(<https://w3id.org/metpo/1001015>))
+Declaration(Class(<https://w3id.org/metpo/1001016>))
+Declaration(Class(<https://w3id.org/metpo/1001017>))
+Declaration(Class(<https://w3id.org/metpo/1001018>))
+Declaration(Class(<https://w3id.org/metpo/1001019>))
+Declaration(Class(<https://w3id.org/metpo/1001020>))
+Declaration(Class(<https://w3id.org/metpo/1001021>))
+Declaration(Class(<https://w3id.org/metpo/1001022>))
+Declaration(Class(<https://w3id.org/metpo/1001023>))
 Declaration(Class(<https://w3id.org/metpo/1001101>))
 Declaration(Class(<https://w3id.org/metpo/1001102>))
 Declaration(Class(<https://w3id.org/metpo/1001103>))
@@ -357,14 +365,14 @@ SubClassOf(<https://w3id.org/metpo/1000335> <https://w3id.org/metpo/1000059>)
 # Class: <https://w3id.org/metpo/1000429> (GC low)
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000429> "A genomic feature characterized by a guanine-cytosine content percentage below 42.65% in an organism's DNA. Values with maximum value of 42.65 % GC.")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000429> "GC_<42.65")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000429> " GC_42.65_57.0")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000429> "GC low")
 SubClassOf(<https://w3id.org/metpo/1000429> <https://w3id.org/metpo/1000127>)
 
 # Class: <https://w3id.org/metpo/1000430> (GC mid1)
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000430> "A genomic feature characterized by a guanine-cytosine content percentage between 42.65% and 57% in an organism's DNA. Values ranging from 42.65 to 57 % GC.")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000430> "GC_42.65_57.0")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000430> "GC_>66.3")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000430> "GC mid1")
 SubClassOf(<https://w3id.org/metpo/1000430> <https://w3id.org/metpo/1000127>)
 
@@ -378,7 +386,7 @@ SubClassOf(<https://w3id.org/metpo/1000431> <https://w3id.org/metpo/1000127>)
 # Class: <https://w3id.org/metpo/1000432> (GC high)
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000432> "A genomic feature characterized by a guanine-cytosine content percentage above 66.3% in an organism's DNA. Values with minimum value of 66.3 % GC.")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000432> "GC_>66.3")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000432> "GC_<=42.65")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000432> "GC high")
 SubClassOf(<https://w3id.org/metpo/1000432> <https://w3id.org/metpo/1000127>)
 
@@ -386,7 +394,7 @@ SubClassOf(<https://w3id.org/metpo/1000432> <https://w3id.org/metpo/1000127>)
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000441> "A temperature optimum manifested as maximum microbial growth at temperatures below 10°C, typical of psychrophilic organisms. Values with maximum value of 10 C.")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1000441> "Psychrophile")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000441> "TO_<10")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000441> "TO_<=10")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000441> "temperature optimum very low")
 SubClassOf(<https://w3id.org/metpo/1000441> <https://w3id.org/metpo/1000304>)
 
@@ -443,7 +451,7 @@ SubClassOf(<https://w3id.org/metpo/1000447> <https://w3id.org/metpo/1000304>)
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000448> "A temperature range allowing microbial growth at temperatures below 10°C, characteristic of psychrophilic organisms. Values with maximum value of 10 C.")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1000448> "Psychrophile")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000448> "TR_<10")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000448> "TR_<=10")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000448> "temperature range very low")
 SubClassOf(<https://w3id.org/metpo/1000448> <https://w3id.org/metpo/1000306>)
 
@@ -607,7 +615,7 @@ SubClassOf(<https://w3id.org/metpo/1000464> <https://w3id.org/metpo/1000332>)
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000465> "A salinity optimum manifested as maximum microbial growth at sodium chloride concentrations below 1%, characteristic of non-halophilic or halotolerant organisms. Values with maximum value of 1 % NaCl.")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1000465> "Halotolerant")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1000465> "Non-halophile")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000465> "NaR_<1")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000465> "NaO_<=1")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000465> "NaCl optimum low")
 SubClassOf(<https://w3id.org/metpo/1000465> <https://w3id.org/metpo/1000333>)
 
@@ -616,7 +624,7 @@ SubClassOf(<https://w3id.org/metpo/1000465> <https://w3id.org/metpo/1000333>)
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000466> "A salinity optimum manifested as maximum microbial growth at sodium chloride concentrations between 1% and 3%, characteristic of slight halophiles or halotolerant organisms. Values ranging from 1 to 3 % NaCl.")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1000466> "Halotolerant")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1000466> "Slight halophile")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000466> "NaR_1_to_3")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000466> "NaO_1_to_3")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000466> "NaCl optimum mid1")
 SubClassOf(<https://w3id.org/metpo/1000466> <https://w3id.org/metpo/1000333>)
 
@@ -625,7 +633,7 @@ SubClassOf(<https://w3id.org/metpo/1000466> <https://w3id.org/metpo/1000333>)
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000467> "A salinity optimum manifested as maximum microbial growth at sodium chloride concentrations between 3% and 8%, characteristic of moderate halophiles or halotolerant organisms. Values ranging from 3 to 8 % NaCl.")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1000467> "Halotolerant")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1000467> "Moderate halophile")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000467> "NaR_3_to_8")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000467> "NaO_3_to_8")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000467> "NaCl optimum mid2")
 SubClassOf(<https://w3id.org/metpo/1000467> <https://w3id.org/metpo/1000333>)
 
@@ -633,7 +641,7 @@ SubClassOf(<https://w3id.org/metpo/1000467> <https://w3id.org/metpo/1000333>)
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000468> "A salinity optimum manifested as maximum microbial growth at sodium chloride concentrations above 8%, characteristic of extreme halophiles. Values with minimum value of 8 % NaCl.")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1000468> "Extreme halophile")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000468> "NaR_>8")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000468> "NaO_>8")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000468> "NaCl optimum high")
 SubClassOf(<https://w3id.org/metpo/1000468> <https://w3id.org/metpo/1000333>)
 
@@ -642,7 +650,7 @@ SubClassOf(<https://w3id.org/metpo/1000468> <https://w3id.org/metpo/1000333>)
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000469> "A salinity range allowing microbial growth at sodium chloride concentrations below 1%, characteristic of non-halophilic organisms. Values with maximum value of 1 % NaCl.")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1000469> "Halotolerant")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1000469> "Non-halophile")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000469> "NaO_<1")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000469> "NaR_<=1")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000469> "NaCl range low")
 SubClassOf(<https://w3id.org/metpo/1000469> <https://w3id.org/metpo/1000334>)
 
@@ -651,7 +659,7 @@ SubClassOf(<https://w3id.org/metpo/1000469> <https://w3id.org/metpo/1000334>)
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000470> "A salinity range allowing microbial growth at sodium chloride concentrations between 1% and 3%, characteristic of slight halophiles. Values ranging from 1 to 3 % NaCl.")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1000470> "Halotolerant")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1000470> "Slight halophile")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000470> "NaO_1_to_3")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000470> "NaR_1_to_3")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000470> "NaCl range mid1")
 SubClassOf(<https://w3id.org/metpo/1000470> <https://w3id.org/metpo/1000334>)
 
@@ -660,7 +668,7 @@ SubClassOf(<https://w3id.org/metpo/1000470> <https://w3id.org/metpo/1000334>)
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000471> "A salinity range allowing microbial growth at sodium chloride concentrations between 3% and 8%, characteristic of moderate halophiles. Values ranging from 3 to 8 % NaCl.")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1000471> "Halotolerant")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1000471> "Moderate halophile")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000471> "NaO_3_to_8")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000471> "NaR_3_to_8")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000471> "NaCl range mid2")
 SubClassOf(<https://w3id.org/metpo/1000471> <https://w3id.org/metpo/1000334>)
 
@@ -668,14 +676,14 @@ SubClassOf(<https://w3id.org/metpo/1000471> <https://w3id.org/metpo/1000334>)
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000472> "A salinity range allowing microbial growth at sodium chloride concentrations above 8%, characteristic of extreme halophiles. Values with minimum value of 8 % NaCl.")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1000472> "Extreme halophile")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000472> "NaO_>8")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000472> "NaR_>8")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000472> "NaCl range high")
 SubClassOf(<https://w3id.org/metpo/1000472> <https://w3id.org/metpo/1000334>)
 
 # Class: <https://w3id.org/metpo/1000473> (pH delta very low)
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000473> "A growth tolerance metric measuring the span of pH conditions that support an organism's growth, with a narrow range less than 1 pH unit. Values with maximum value of 1 pH.")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000473> "pHd_<1")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000473> "pHd_<=1")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000473> "pH delta very low")
 SubClassOf(<https://w3id.org/metpo/1000473> <https://w3id.org/metpo/1000232>)
 
@@ -717,7 +725,7 @@ SubClassOf(<https://w3id.org/metpo/1000478> <https://w3id.org/metpo/1000232>)
 # Class: <https://w3id.org/metpo/1000479> (NaCl delta low)
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000479> "A growth tolerance metric measuring the span of sodium chloride concentrations that support an organism's growth, with a narrow range less than 1%. Values with maximum value of 1 C.")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000479> "Nad_<1")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000479> "Nad_<=1")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000479> "NaCl delta low")
 SubClassOf(<https://w3id.org/metpo/1000479> <https://w3id.org/metpo/1000335>)
 
@@ -1032,6 +1040,7 @@ SubClassOf(<https://w3id.org/metpo/1000631> <https://w3id.org/metpo/1000059>)
 
 # Class: <https://w3id.org/metpo/1000632> (autotrophic)
 
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000632> "TT_autotroph")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000632> "autotroph")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://github.com/jmadin/bacteria_archaea_traits>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000632> "autotrophy")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000632> "autotrophic")
@@ -1087,6 +1096,7 @@ SubClassOf(<https://w3id.org/metpo/1000640> <https://w3id.org/metpo/1000631>)
 
 # Class: <https://w3id.org/metpo/1000641> (chemotrophic)
 
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000641> "TT_chemotroph")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000641> "chemotroph")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000641> "chemotrophic")
 SubClassOf(<https://w3id.org/metpo/1000641> <https://w3id.org/metpo/1000631>)
@@ -1099,6 +1109,7 @@ SubClassOf(<https://w3id.org/metpo/1000642> <https://w3id.org/metpo/1000731>)
 
 # Class: <https://w3id.org/metpo/1000644> (heterotrophic)
 
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000644> "TT_heterotroph")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://github.com/jmadin/bacteria_archaea_traits>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000644> "aerobic_heterotrophy")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000644> "heterotroph")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://github.com/jmadin/bacteria_archaea_traits>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000644> "heterotrophic")
@@ -1124,6 +1135,7 @@ SubClassOf(<https://w3id.org/metpo/1000648> <https://w3id.org/metpo/1000631>)
 
 # Class: <https://w3id.org/metpo/1000649> (lithotrophic)
 
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000649> "TT_lithotroph")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000649> "lithotroph")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000649> "lithotrophic")
 SubClassOf(<https://w3id.org/metpo/1000649> <https://w3id.org/metpo/1000631>)
@@ -1136,6 +1148,7 @@ SubClassOf(<https://w3id.org/metpo/1000650> <https://w3id.org/metpo/1000631>)
 
 # Class: <https://w3id.org/metpo/1000651> (methylotrophic)
 
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000651> "TT_methylotroph")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000651> "methylotroph")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://github.com/jmadin/bacteria_archaea_traits>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000651> "methylotrophy")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000651> "methylotrophic")
@@ -1149,12 +1162,14 @@ SubClassOf(<https://w3id.org/metpo/1000652> <https://w3id.org/metpo/1000631>)
 
 # Class: <https://w3id.org/metpo/1000654> (oligotrophic)
 
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000654> "TT_oligotroph")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000654> "oligotroph")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000654> "oligotrophic")
 SubClassOf(<https://w3id.org/metpo/1000654> <https://w3id.org/metpo/1000731>)
 
 # Class: <https://w3id.org/metpo/1000655> (organotrophic)
 
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000655> "TT_organotroph")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000655> "organotroph")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000655> "organotrophic")
 SubClassOf(<https://w3id.org/metpo/1000655> <https://w3id.org/metpo/1000631>)
@@ -1191,6 +1206,7 @@ SubClassOf(<https://w3id.org/metpo/1000659> <https://w3id.org/metpo/1000631>)
 
 # Class: <https://w3id.org/metpo/1000660> (phototrophic)
 
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000660> "TT_phototroph")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://github.com/jmadin/bacteria_archaea_traits>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000660> "aerobic_anoxygenic_phototrophy")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000660> "phototroph")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000660> "phototrophic")
@@ -1243,8 +1259,8 @@ SubClassOf(<https://w3id.org/metpo/1000669> <https://w3id.org/metpo/1000666>)
 
 # Class: <https://w3id.org/metpo/1000670> (curved shaped)
 
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000670> " S_curved_spiral")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000670> "curved-shaped")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000670> "s_curved_spiral")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000670> "curved shaped")
 SubClassOf(<https://w3id.org/metpo/1000670> <https://w3id.org/metpo/1000666>)
 
@@ -1256,8 +1272,8 @@ SubClassOf(<https://w3id.org/metpo/1000671> <https://w3id.org/metpo/1000666>)
 
 # Class: <https://w3id.org/metpo/1000672> (dumbbell shaped)
 
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000672> "S_star_dumbbell_pleomorphic")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000672> "dumbbell-shaped")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000672> "s_star_dumbbell_pleomorphic")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000672> "dumbbell shaped")
 SubClassOf(<https://w3id.org/metpo/1000672> <https://w3id.org/metpo/1000666>)
 
@@ -1269,9 +1285,9 @@ SubClassOf(<https://w3id.org/metpo/1000673> <https://w3id.org/metpo/1000666>)
 
 # Class: <https://w3id.org/metpo/1000674> (filament shaped)
 
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000674> " S_filament")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://github.com/jmadin/bacteria_archaea_traits>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000674> "filament")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000674> "filament-shaped")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000674> "s_filament")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000674> "filament shaped")
 SubClassOf(<https://w3id.org/metpo/1000674> <https://w3id.org/metpo/1000666>)
 
@@ -1290,8 +1306,8 @@ SubClassOf(<https://w3id.org/metpo/1000676> <https://w3id.org/metpo/1000666>)
 
 # Class: <https://w3id.org/metpo/1000677> (ovoid shaped)
 
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000677> " S_ovoid")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000677> "ovoid-shaped")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000677> "s_ovoid")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000677> "ovoid shaped")
 SubClassOf(<https://w3id.org/metpo/1000677> <https://w3id.org/metpo/1000666>)
 
@@ -1303,9 +1319,9 @@ SubClassOf(<https://w3id.org/metpo/1000678> <https://w3id.org/metpo/1000666>)
 
 # Class: <https://w3id.org/metpo/1000679> (pleomorphic shaped)
 
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000679> "S_star_dumbbell_pleomorphic")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://github.com/jmadin/bacteria_archaea_traits>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000679> "pleomorphic")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000679> "pleomorphic-shaped")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000679> "s_star_dumbbell_pleomorphic")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000679> "pleomorphic shaped")
 SubClassOf(<https://w3id.org/metpo/1000679> <https://w3id.org/metpo/1000666>)
 
@@ -1318,8 +1334,8 @@ SubClassOf(<https://w3id.org/metpo/1000680> <https://w3id.org/metpo/1000666>)
 
 # Class: <https://w3id.org/metpo/1000681> (rod shaped)
 
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000681> " S_rod")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000681> "rod-shaped")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000681> "s_rod")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000681> "rod shaped")
 SubClassOf(<https://w3id.org/metpo/1000681> <https://w3id.org/metpo/1000666>)
 
@@ -1331,14 +1347,14 @@ SubClassOf(<https://w3id.org/metpo/1000682> <https://w3id.org/metpo/1000666>)
 
 # Class: <https://w3id.org/metpo/1000683> (sphere shaped)
 
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000683> "s_sphere")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000683> " S_sphere")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000683> "sphere-shaped")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000683> "sphere shaped")
 SubClassOf(<https://w3id.org/metpo/1000683> <https://w3id.org/metpo/1000666>)
 
 # Class: <https://w3id.org/metpo/1000684> (spiral shaped)
 
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000684> "s_curved_spiral")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000684> " S_curved_spiral")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://github.com/jmadin/bacteria_archaea_traits>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000684> "spiral")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000684> "spiral-shaped")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000684> "spiral shaped")
@@ -1346,7 +1362,7 @@ SubClassOf(<https://w3id.org/metpo/1000684> <https://w3id.org/metpo/1000666>)
 
 # Class: <https://w3id.org/metpo/1000685> (star shaped)
 
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000685> "s_star_dumbbell_pleomorphic")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000685> "S_star_dumbbell_pleomorphic")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://github.com/jmadin/bacteria_archaea_traits>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000685> "star")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000685> "star-shaped")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000685> "star shaped")
@@ -1469,7 +1485,7 @@ SubClassOf(<https://w3id.org/metpo/1000702> <https://w3id.org/metpo/1000701>)
 
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000703> "no")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://github.com/jmadin/bacteria_archaea_traits>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000703> "no")
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000703> "non- motile")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000703> "non-motile")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000703> "non motile")
 SubClassOf(<https://w3id.org/metpo/1000703> <https://w3id.org/metpo/1000701>)
 
@@ -1577,22 +1593,22 @@ SubClassOf(<https://w3id.org/metpo/1000846> <https://w3id.org/metpo/1000060>)
 
 # Class: <https://w3id.org/metpo/1000870> (sporulation)
 
-AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000870> "General.keywords")
-AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000870> "Physiology and metabolism.spore formation.spore formation")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000870> "General.keywords")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000870> "Physiology and metabolism.spore formation.spore formation")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://github.com/jmadin/bacteria_archaea_traits>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000870> "sporulation")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000870> "sporulation")
 SubClassOf(<https://w3id.org/metpo/1000870> <https://w3id.org/metpo/1000059>)
 
 # Class: <https://w3id.org/metpo/1000871> (spore forming)
 
-AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000871> "yes")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000871> "yes")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://github.com/jmadin/bacteria_archaea_traits>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000871> "yes")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000871> "spore forming")
 SubClassOf(<https://w3id.org/metpo/1000871> <https://w3id.org/metpo/1000870>)
 
 # Class: <https://w3id.org/metpo/1000872> (non-spore forming)
 
-AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000872> "no")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000872> "no")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://github.com/jmadin/bacteria_archaea_traits>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000872> "no")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000872> "non-spore forming")
 SubClassOf(<https://w3id.org/metpo/1000872> <https://w3id.org/metpo/1000870>)
@@ -1665,6 +1681,46 @@ SubClassOf(<https://w3id.org/metpo/1001014> <https://w3id.org/metpo/1001000>)
 
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1001015> "pH range observation")
 SubClassOf(<https://w3id.org/metpo/1001015> <https://w3id.org/metpo/1001000>)
+
+# Class: <https://w3id.org/metpo/1001016> (optimum oxygen observation)
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1001016> "optimum oxygen observation")
+SubClassOf(<https://w3id.org/metpo/1001016> <https://w3id.org/metpo/1001000>)
+
+# Class: <https://w3id.org/metpo/1001017> (growth oxygen observation)
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1001017> "growth oxygen observation")
+SubClassOf(<https://w3id.org/metpo/1001017> <https://w3id.org/metpo/1001000>)
+
+# Class: <https://w3id.org/metpo/1001018> (oxygen range observation)
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1001018> "oxygen range observation")
+SubClassOf(<https://w3id.org/metpo/1001018> <https://w3id.org/metpo/1001000>)
+
+# Class: <https://w3id.org/metpo/1001019> (oxygen delta observation)
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1001019> "oxygen delta observation")
+SubClassOf(<https://w3id.org/metpo/1001019> <https://w3id.org/metpo/1001000>)
+
+# Class: <https://w3id.org/metpo/1001020> (oxygen observation)
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1001020> "oxygen observation")
+SubClassOf(<https://w3id.org/metpo/1001020> <https://w3id.org/metpo/1001000>)
+
+# Class: <https://w3id.org/metpo/1001021> (temperature observation)
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1001021> "temperature observation")
+SubClassOf(<https://w3id.org/metpo/1001021> <https://w3id.org/metpo/1001000>)
+
+# Class: <https://w3id.org/metpo/1001022> (NaCl observation)
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1001022> "NaCl observation")
+SubClassOf(<https://w3id.org/metpo/1001022> <https://w3id.org/metpo/1001000>)
+
+# Class: <https://w3id.org/metpo/1001023> (pH observation)
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1001023> "pH observation")
+SubClassOf(<https://w3id.org/metpo/1001023> <https://w3id.org/metpo/1001000>)
 
 # Class: <https://w3id.org/metpo/1001101> (biosafety level)
 
