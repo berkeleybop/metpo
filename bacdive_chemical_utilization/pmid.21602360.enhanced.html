@@ -1,0 +1,94 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>NER Coverage Visualization</title>
+        <meta charset="utf-8">
+        <style>
+            body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+            .container { max-width: 1200px; margin: 0 auto; }
+            .text-content { 
+                background: #f9f9f9; 
+                padding: 20px; 
+                border-radius: 5px; 
+                margin: 20px 0;
+                white-space: pre-wrap;
+                font-family: 'Courier New', monospace;
+            }
+            .metrics { 
+                background: #fff; 
+                padding: 20px; 
+                border: 1px solid #ddd; 
+                border-radius: 5px; 
+                margin: 20px 0; 
+            }
+            table { border-collapse: collapse; width: 100%; }
+            td { padding: 8px; border-bottom: 1px solid #eee; }
+            .entity { cursor: help; }
+            h1, h2, h3 { color: #333; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Named Entity Recognition Coverage Analysis</h1>
+            
+            
+    <div class="metrics">
+        <h3>Coverage Metrics</h3>
+        <table>
+            <tr><td>Text Length:</td><td>2113 characters</td></tr>
+            <tr><td>Covered Characters:</td><td>460</td></tr>
+            <tr><td>Coverage Percentage:</td><td>21.77%</td></tr>
+            <tr><td>Total Entities:</td><td>41</td></tr>
+            <tr><td>Total Spans:</td><td>59</td></tr>
+            <tr><td>Entity Density:</td><td>19.4 per 1000 chars</td></tr>
+        </table>
+        
+        <h4>Entity Type Distribution</h4>
+        <table>
+    <tr><td><span style="background-color: #DDA0DD; padding: 2px 8px; border-radius: 2px;">auto</span></td><td>4</td></tr><tr><td><span style="background-color: #FF6B6B; padding: 2px 8px; border-radius: 2px;">chemical</span></td><td>8</td></tr><tr><td><span style="background-color: #4ECDC4; padding: 2px 8px; border-radius: 2px;">enzyme</span></td><td>6</td></tr><tr><td><span style="background-color: #45B7D1; padding: 2px 8px; border-radius: 2px;">lipid</span></td><td>3</td></tr><tr><td><span style="background-color: #96CEB4; padding: 2px 8px; border-radius: 2px;">organism</span></td><td>7</td></tr><tr><td><span style="background-color: #54A0FF; padding: 2px 8px; border-radius: 2px;">phenotype</span></td><td>1</td></tr><tr><td><span style="background-color: #FECA57; padding: 2px 8px; border-radius: 2px;">species</span></td><td>4</td></tr><tr><td><span style="background-color: #FF9FF3; padding: 2px 8px; border-radius: 2px;">strain</span></td><td>4</td></tr><tr><td><span style="background-color: #E74C3C; padding: 2px 8px; border-radius: 2px;">type_strain</span></td><td>4</td></tr></table></div>
+            
+            <h2>Highlighted Text</h2>
+            <div class="text-content">
+1. Int J Syst Evol Microbiol. 2012 Apr;62(Pt 4):844-848. doi: 
+10.1099/ijs.0.030973-0. Epub 2011 May 20.
+
+<span class="entity organism" style="background-color: #96CEB4; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="organism: Tropicibacter multivorans (NCBITaxon:928856)">Tropicibacter multivorans</span><span class="entity organism" style="background-color: #96CEB4; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="organism: Tropicibacter (NCBITaxon:599653)">Tropicibacter</span> sp. nov., an <span class="entity phenotype" style="background-color: #54A0FF; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="phenotype: aerobic (MICRO:0000494)">aerobic</span> <span class="entity auto" style="background-color: #DDA0DD; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="auto: alphaproteobacterium (AUTO:alphaproteobacterium)">alphaproteobacterium</span> isolated 
+from surface seawater.
+
+Lucena T(1), Pujalte MJ(1), Ruvira MA(1), Garay E(1), Macián MC(1), Arahal 
+DR(1).
+
+Author information:
+(1)Departamento de Microbiología y Ecología, Colección Española de Cultivos Tipo 
+(CECT), Universidad de Valencia, Valencia, Spain.
+
+<span class="entity species" style="background-color: #FECA57; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="species: strain MD5T (AUTO:strain%20MD5T)">Strain MD5T</span><span class="entity strain" style="background-color: #FF9FF3; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="strain: MD5 (AUTO:MD5)">MD5</span><span class="entity type_strain" style="background-color: #E74C3C; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="type_strain: MD5T (AUTO:MD5T)">MD5T</span>, an <span class="entity phenotype" style="background-color: #54A0FF; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="phenotype: aerobic (MICRO:0000494)">aerobic</span> marine <span class="entity auto" style="background-color: #DDA0DD; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="auto: alphaproteobacterium (AUTO:alphaproteobacterium)">alphaproteobacterium</span>, was isolated from 
+Mediterranean seawater at Malvarrosa beach, Valencia, Spain. The strain was 
+characterized in a polyphasic study and was placed phylogenetically within the 
+<span class="entity species" style="background-color: #FECA57; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="species: Roseobacter clade (AUTO:Roseobacter%20clade)">Roseobacter clade</span> in the family <span class="entity organism" style="background-color: #96CEB4; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="organism: Rhodobacteraceae (NCBITaxon:31989)">Rhodobacteraceae</span>. Phylogenetic analysis based on 
+16S rRNA gene sequences showed that <span class="entity species" style="background-color: #FECA57; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="species: strain MD5T (AUTO:strain%20MD5T)">strain MD5T</span><span class="entity strain" style="background-color: #FF9FF3; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="strain: MD5 (AUTO:MD5)">MD5</span><span class="entity type_strain" style="background-color: #E74C3C; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="type_strain: MD5T (AUTO:MD5T)">MD5T</span> is related to <span class="entity organism" style="background-color: #96CEB4; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="organism: Tropicibacter (NCBITaxon:599653)">Tropicibacter</span> 
+naphthalenivorans <span class="entity strain" style="background-color: #FF9FF3; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="strain: C02 (AUTO:C02)">C02</span><span class="entity type_strain" style="background-color: #E74C3C; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="type_strain: C02T (AUTO:C02T)">C02T</span>, <span class="entity organism" style="background-color: #96CEB4; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="organism: Phaeobacter inhibens (NCBITaxon:221822)">Phaeobacter inhibens</span> <span class="entity strain" style="background-color: #FF9FF3; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="strain: T5 (AUTO:T5)">T5</span><span class="entity type_strain" style="background-color: #E74C3C; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="type_strain: T5T (AUTO:T5T)">T5T</span>, P. gallaeciensis <span class="entity strain" style="background-color: #FF9FF3; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="strain: BS107 (AUTO:BS107)">BS107</span><span class="entity type_strain" style="background-color: #E74C3C; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="type_strain: BS107T (AUTO:BS107T)">BS107T</span> and P. 
+daeponensis <span class="entity auto" style="background-color: #DDA0DD; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="auto: TF-218 (AUTO:TF-218)">TF-218</span><span class="entity auto" style="background-color: #DDA0DD; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="auto: TF-218T (AUTO:TF-218T)">TF-218T</span>, with 96.9, 96.2, 96.1 and 96.1 % sequence similarity, 
+respectively. Phylogenetic analyses also showed that <span class="entity species" style="background-color: #FECA57; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="species: strain MD5T (AUTO:strain%20MD5T)">strain MD5T</span><span class="entity strain" style="background-color: #FF9FF3; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="strain: MD5 (AUTO:MD5)">MD5</span><span class="entity type_strain" style="background-color: #E74C3C; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="type_strain: MD5T (AUTO:MD5T)">MD5T</span> forms a stable 
+clade only with T. naphthalenivorans <span class="entity strain" style="background-color: #FF9FF3; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="strain: C02 (AUTO:C02)">C02</span><span class="entity type_strain" style="background-color: #E74C3C; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="type_strain: C02T (AUTO:C02T)">C02T</span>. <span class="entity species" style="background-color: #FECA57; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="species: strain MD5T (AUTO:strain%20MD5T)">Strain MD5T</span><span class="entity strain" style="background-color: #FF9FF3; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="strain: MD5 (AUTO:MD5)">MD5</span><span class="entity type_strain" style="background-color: #E74C3C; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="type_strain: MD5T (AUTO:MD5T)">MD5T</span> requires <span class="entity chemical" style="background-color: #FF6B6B; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="chemical: Na+ (CHEBI:29101)">Na+</span> plus a 
+divalent cation (either <span class="entity chemical" style="background-color: #FF6B6B; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="chemical: Mg2+ (CHEBI:18420)">Mg2+</span> or <span class="entity chemical" style="background-color: #FF6B6B; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="chemical: Ca2+ (CHEBI:29108)">Ca2+</span>) to grow, does not reduce <span class="entity chemical" style="background-color: #FF6B6B; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="chemical: nitrate (CHEBI:17632)">nitrate</span> to 
+<span class="entity chemical" style="background-color: #FF6B6B; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="chemical: nitrite (CHEBI:16301)">nitrite</span> and uses a large number of <span class="entity chemical" style="background-color: #FF6B6B; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="chemical: carbohydrates (CHEBI:16646)">carbohydrates</span> as sole carbon sources. It is 
+positive for <span class="entity enzyme" style="background-color: #4ECDC4; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="enzyme: β-galactosidase (AUTO:%CE%B2-galactosidase)">β-galactosidase</span> and <span class="entity enzyme" style="background-color: #4ECDC4; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="enzyme: urease (AUTO:urease)">urease</span> activities and <span class="entity chemical" style="background-color: #FF6B6B; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="chemical: aesculin (CHEBI:4853)">aesculin</span><span class="entity auto" style="background-color: #DDA0DD; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="auto: aesculin (AUTO:aesculin)">aesculin</span> hydrolysis. 
+Enzyme activities displayed in the API ZYM strip were <span class="entity enzyme" style="background-color: #4ECDC4; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="enzyme: alkaline phosphatase (AUTO:alkaline%20phosphatase)">alkaline phosphatase</span>, 
+<span class="entity enzyme" style="background-color: #4ECDC4; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="enzyme: leucine arylamidase (AUTO:leucine%20arylamidase)">leucine arylamidase</span>, <span class="entity enzyme" style="background-color: #4ECDC4; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="enzyme: acid phosphatase (AUTO:acid%20phosphatase)">acid phosphatase</span> and <span class="entity enzyme" style="background-color: #4ECDC4; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="enzyme: α-glucosidase (AUTO:%CE%B1-glucosidase)">α-glucosidase</span>. Major cellular fatty 
+acids were summed feature 8 (<span class="entity lipid" style="background-color: #45B7D1; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="lipid: C18:1ω7c (AUTO:C18%3A1%CF%897c)">C18:1ω7c</span><span class="entity lipid" style="background-color: #45B7D1; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="lipid: C18:1ω7c and/or C18:1ω6c (AUTO:C18%3A1%CF%897c%20and/or%20C18%3A1%CF%896c)">C18:1ω7c and/or C18:1ω6c</span><span class="entity lipid" style="background-color: #45B7D1; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="lipid: C18:1ω6c (AUTO:C18%3A1%CF%896c)">C18:1ω6c</span>; 70.9 %) and <span class="entity chemical" style="background-color: #FF6B6B; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="chemical: C16:0 (CHEBI:15756)">C16:0</span> 
+(8.2 %). The results of physiological and biochemical tests allowed clear 
+phenotypic differentiation of this isolate from the only described species of 
+the genus <span class="entity organism" style="background-color: #96CEB4; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="organism: Tropicibacter (NCBITaxon:599653)">Tropicibacter</span>. It is evident from the genotypic and phenotypic data 
+obtained that the strain should be classified in a novel species in the genus 
+<span class="entity organism" style="background-color: #96CEB4; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="organism: Tropicibacter (NCBITaxon:599653)">Tropicibacter</span>. The name <span class="entity organism" style="background-color: #96CEB4; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="organism: Tropicibacter multivorans (NCBITaxon:928856)">Tropicibacter multivorans</span><span class="entity organism" style="background-color: #96CEB4; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="organism: Tropicibacter (NCBITaxon:599653)">Tropicibacter</span> sp. nov. is proposed, with the 
+type <span class="entity species" style="background-color: #FECA57; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="species: strain MD5T (AUTO:strain%20MD5T)">strain MD5T</span><span class="entity strain" style="background-color: #FF9FF3; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="strain: MD5 (AUTO:MD5)">MD5</span><span class="entity type_strain" style="background-color: #E74C3C; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="type_strain: MD5T (AUTO:MD5T)">MD5T</span> (=<span class="entity species" style="background-color: #FECA57; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="species: CECT 7557T (AUTO:CECT%207557T)">CECT 7557T</span>=<span class="entity species" style="background-color: #FECA57; padding: 1px 2px; margin: 1px; border-radius: 2px;" title="species: KCTC 23350T (AUTO:KCTC%2023350T)">KCTC 23350T</span>).
+
+DOI: 10.1099/ijs.0.030973-0
+PMID: 21602360 [Indexed for MEDLINE]
+            </div>
+        </div>
+    </body>
+    </html>
+    
