@@ -1,0 +1,10 @@
+select
+?chem_interaction_prop ?label
+where
+{
+  ?chem_interaction_prop <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/metpo/2000001> .
+  optional {
+    ?chem_interaction_prop <http://www.w3.org/2000/01/rdf-schema#label> ?label .
+  }
+}
+
