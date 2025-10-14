@@ -19,14 +19,39 @@ classes:
     attributes:
       chemical_compounds:
         description: >-
-          semicolon-separated list of all chemical compounds, substrates,  products, metabolites, and nutrients mentioned in the text
+          semicolon-separated list of all chemical compounds, substrates,  products, metabolites, and nutrients mentioned in the text (excluding enzymes and lipids)
         multivalued: true
         range: ChemicalCompound
+      enzymes:
+        description: >-
+          semicolon-separated list of all enzymes mentioned in the text, particularly those involved in biochemical tests
+        multivalued: true
+        range: Enzyme
+      lipids:
+        description: >-
+          semicolon-separated list of all lipids, fatty acids, and membrane components mentioned in the text
+        multivalued: true
+        range: Lipid
       organisms:
         description: >-
-          semicolon-separated list of all organisms, bacterial species, taxa,  and strain designations mentioned in the text
+          semicolon-separated list of all organisms and general taxonomic terms mentioned in the text
         multivalued: true
         range: Organism
+      species:
+        description: >-
+          semicolon-separated list of all bacterial species, binomial names, or taxonomic designations mentioned in the text (e.g., Escherichia coli, E. coli, Tropicibacter multivorans)
+        multivalued: true
+        range: Species
+      strains:
+        description: >-
+          semicolon-separated list of all strain designations, isolate names, or culture collection numbers mentioned in the text (e.g., K12, MD5, ATCC 25922). Exclude (T) suffix - that indicates type strain status
+        multivalued: true
+        range: Strain
+      type_strains:
+        description: >-
+          semicolon-separated list of all type strain designations mentioned in the text, typically with (T) suffix or explicitly called "type strain" (e.g., MD5T, DSM 1234T, ATCC 25922T)
+        multivalued: true
+        range: TypeStrain
       microbial_phenotypes:
         description: >-
           semicolon-separated list of microbial phenotypic characteristics such as: oxygen requirements (aerobic, anaerobic), temperature preferences (thermophilic, mesophilic), salt requirements, metabolic types (fermentative), Gram staining results, motility (motile, non-motile), spore formation ability
@@ -42,6 +67,26 @@ classes:
           semicolon-separated list of organism-phenotype relationships found in the text. Extract relationships like "organism is anaerobic", "strain is thermophilic",  "bacterium is Gram-negative", "organism is non-motile"
         multivalued: true
         range: OrganismPhenotypeRelationship
+      organism_enzyme_relationships:
+        description: >-
+          semicolon-separated list of organism-enzyme test relationships found in the text. Extract relationships where organisms test positive or negative for specific enzymes
+        multivalued: true
+        range: OrganismEnzymeRelationship
+      organism_lipid_relationships:
+        description: >-
+          semicolon-separated list of organism-lipid relationships found in the text. Extract relationships where organisms produce, utilize, or have specific lipid compositions
+        multivalued: true
+        range: OrganismLipidRelationship
+      strain_species_relationships:
+        description: >-
+          semicolon-separated list of strain-species relationships found in the text. Extract relationships that connect strain designations to their parent species, including those inferred from context or title
+        multivalued: true
+        range: StrainToSpeciesRelationship
+      type_strain_relationships:
+        description: >-
+          semicolon-separated list of type strain relationships found in the text. Extract when a strain with (T) suffix or explicitly described as "type strain" is designated for a species
+        multivalued: true
+        range: TypeStrainRelationship
       source_text:
         range: string
         annotations:
@@ -50,20 +95,52 @@ classes:
     is_a: NamedEntity
     annotations:
       annotators: sqlite:obo:chebi, sqlite:obo:foodon
+  Enzyme:
+    is_a: NamedEntity
+  Lipid:
+    is_a: NamedEntity
+    annotations:
+      annotators: sqlite:obo:chebi, sqlite:obo:swisslipid
   Organism:
     is_a: NamedEntity
     annotations:
       annotators: sqlite:obo:ncbitaxon
+  Species:
+    is_a: NamedEntity
+    annotations:
+      annotators: sqlite:obo:ncbitaxon
+    description: A bacterial species, binomial name, or taxonomic designation (e.g., Escherichia coli, E. coli)
+  Strain:
+    is_a: NamedEntity
+    description: A strain designation, isolate name, or culture collection number with more specificity than a species (e.g., K12, MD5, ATCC 25922). Note that (T) suffix indicates type strain status, not part of the strain name itself
+  TypeStrain:
+    is_a: Strain
+    description: A strain designated as the nomenclatural type for a species, typically indicated by (T) suffix (e.g., MD5T, DSM 1234T)
   MicrobialPhenotype:
     is_a: NamedEntity
     annotations:
       # Your proven phenotype databases that work well
       annotators: mco.db, MicrO-2025-03-20-merged.db, mpo_v0.74.en_only.db, n4l_merged.db, omp.db
+  StrainToSpeciesRelationship:
+    is_a: CompoundExpression
+    attributes:
+      strain:
+        description: the strain designation, isolate name, or culture collection number
+        range: Strain
+      species:
+        description: the bacterial species or binomial name that the strain belongs to
+        range: Species
+      relationship_type:
+        description: the type of strain-species relationship
+        range: StrainSpeciesRelationshipEnum
+      inferred_from_context:
+        description: whether the relationship was inferred from title or context rather than explicitly stated
+        range: boolean
   OrganismCompoundRelationship:
     is_a: CompoundExpression
     attributes:
       organism:
-        description: the organism, species, or strain name
+        description: the organism, species, strain name, or taxonomic designation
         range: Organism
       compound:
         description: the chemical compound or substrate
@@ -75,7 +152,7 @@ classes:
     is_a: CompoundExpression
     attributes:
       organism:
-        description: the organism, species, or strain name
+        description: the organism, species, strain name, or taxonomic designation
         range: Organism
       phenotype:
         description: the phenotypic characteristic
@@ -83,6 +160,42 @@ classes:
       relationship_type:
         description: the type of phenotypic relationship
         range: PhenotypeRelationshipEnum
+  OrganismEnzymeRelationship:
+    is_a: CompoundExpression
+    attributes:
+      organism:
+        description: the organism, species, strain name, or taxonomic designation
+        range: Organism
+      enzyme:
+        description: the enzyme being tested
+        range: Enzyme
+      relationship_type:
+        description: the type of enzyme test relationship
+        range: EnzymeTestRelationshipEnum
+  OrganismLipidRelationship:
+    is_a: CompoundExpression
+    attributes:
+      organism:
+        description: the organism, species, strain name, or taxonomic designation
+        range: Organism
+      lipid:
+        description: the lipid or fatty acid component
+        range: Lipid
+      relationship_type:
+        description: the type of lipid relationship
+        range: LipidRelationshipEnum
+  TypeStrainRelationship:
+    is_a: CompoundExpression
+    attributes:
+      type_strain:
+        description: the strain designated as the nomenclatural type, often with (T) suffix
+        range: TypeStrain
+      species:
+        description: the species for which this strain serves as the type
+        range: Species
+      relationship_type:
+        description: the type of type strain relationship
+        range: TypeStrainRelationshipEnum
 enums:
   RelationshipTypeEnum:
     description: Types of relationships between organisms and chemicals
@@ -198,3 +311,45 @@ enums:
         description: The organism lacks or does not exhibit the phenotype
       is_characterized_by:
         description: The organism is characterized by the phenotype
+  EnzymeTestRelationshipEnum:
+    description: Types of enzyme test relationships between organisms and enzymes
+    permissible_values:
+      positive_for_enzyme:
+        description: The organism tests positive for the enzyme activity
+      negative_for_enzyme:
+        description: The organism tests negative for the enzyme activity
+      has_enzyme_activity:
+        description: The organism displays or has the enzyme activity
+      lacks_enzyme_activity:
+        description: The organism lacks or does not display the enzyme activity
+  LipidRelationshipEnum:
+    description: Types of lipid relationships between organisms and lipids
+    permissible_values:
+      produces_lipid:
+        description: The organism produces or synthesizes the lipid
+      contains_lipid:
+        description: The organism contains or has the lipid in its composition
+      utilizes_lipid:
+        description: The organism utilizes or metabolizes the lipid
+      lacks_lipid:
+        description: The organism lacks or does not contain the lipid
+      has_major_lipid_component:
+        description: The lipid is a major cellular component of the organism
+  StrainSpeciesRelationshipEnum:
+    description: Types of relationships between strains and species
+    permissible_values:
+      is_strain_of:
+        description: The strain is a strain of the species
+      belongs_to_species:
+        description: The strain belongs to the species
+      is_isolate_of:
+        description: The strain is an isolate of the species
+  TypeStrainRelationshipEnum:
+    description: Types of type strain relationships
+    permissible_values:
+      is_type_strain_for:
+        description: The strain is the nomenclatural type strain for the species
+      serves_as_type_for:
+        description: The strain serves as the type strain for the species
+      designated_type_strain_of:
+        description: The strain is designated as the type strain of the species
