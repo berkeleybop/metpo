@@ -27,7 +27,7 @@ classes:
           products, metabolites, and nutrients mentioned in the text
         multivalued: true
         range: ChemicalCompound
-        
+
       organisms:
         description: >-
           semicolon-separated list of all organisms, bacterial species, taxa, 
@@ -43,6 +43,20 @@ classes:
           motility (motile, non-motile), spore formation ability
         multivalued: true
         range: MicrobialPhenotype
+
+      enzymes:
+        description: >-
+          semicolon-separated list of enzymes mentioned in the text, including
+          enzyme names, EC numbers, and any relevant functional annotations
+        multivalued: true
+        range: string
+
+      lipids:
+        description: >-
+          semicolon-separated list of lipids, fatty acids, and lipid-related compounds
+          mentioned in the text, including specific lipid types and their roles
+        multivalued: true
+        range: string
 
       organism_compound_relationships:
         description: >-
@@ -67,6 +81,10 @@ classes:
 
   ChemicalCompound:
     is_a: NamedEntity
+    description: >-
+      A chemical compound, substrate, product, metabolite, or nutrient mentioned in the text.
+      This includes small molecules, metabolites, and nutrients relevant to microbial metabolism.
+      Do no include enzymes or lipids here.
     annotations:
       annotators: sqlite:obo:chebi, sqlite:obo:foodon
 

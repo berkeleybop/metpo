@@ -38,21 +38,30 @@ input_text: |-
   DOI: 10.1099/ijs.0.030973-0
   PMID: 21602360 [Indexed for MEDLINE]
 raw_completion_output: |-
-  chemical_compounds: Na+;Mg2+;Ca2+;nitrate;nitrite;carbohydrates;β-galactosidase;urease;aesculin;alkaline phosphatase;leucine arylamidase;acid phosphatase;α-glucosidase;C18:1ω7c;C18:1ω6c;C16:0
-  organisms: Tropicibacter multivorans;Tropicibacter naphthalenivorans;Phaeobacter inhibens;Phaeobacter gallaeciensis;Phaeobacter daeponensis;MD5T;C02T;T5T;BS107T;TF-218T;Alphaproteobacterium;Roseobacter clade;Rhodobacteraceae
-  microbial_phenotypes: aerobic;marine
-  organism_compound_relationships: Tropicibacter multivorans requires Na+;Tropicibacter multivorans requires Mg2+ or Ca2+;Tropicibacter multivorans does not reduce nitrate to nitrite;Tropicibacter multivorans uses carbohydrates as sole carbon sources;Tropicibacter multivorans is positive for β-galactosidase;Tropicibacter multivorans is positive for urease;Tropicibacter multivorans is positive for aesculin hydrolysis
-  organism_phenotype_relationships: Tropicibacter multivorans is aerobic;Strain MD5T is aerobic;Strain MD5T is marine;alphaproteobacterium is aerobic;alphaproteobacterium is marine
+  chemical_compounds: Na+;Mg2+;Ca2+;nitrate;nitrite;carbohydrates;β-galactosidase;urease;aesculin;C18:1ω7c;C18:1ω6c;C16:0
+  enzymes: β-galactosidase;urease;alkaline phosphatase;leucine arylamidase;acid phosphatase;α-glucosidase
+  lipids: C18:1ω7c;C18:1ω6c;C16:0
+  organisms: alphaproteobacterium;Roseobacter clade;Rhodobacteraceae
+  species: Tropicibacter multivorans;Tropicibacter naphthalenivorans;Phaeobacter inhibens;Phaeobacter gallaeciensis;Phaeobacter daeponensis
+  strains: MD5;C02;T5;BS107;TF-218
+  type_strains: MD5T;C02T;T5T;BS107T;TF-218T;CECT 7557T;KCTC 23350T
+  microbial_phenotypes: aerobic
+  organism_compound_relationships: strain MD5T requires Na+;strain MD5T requires a divalent cation (either Mg2+ or Ca2+) to grow;strain MD5T does not reduce nitrate to nitrite;strain MD5T uses a large number of carbohydrates as sole carbon sources
+  organism_phenotype_relationships: Tropicibacter multivorans is aerobic;strain MD5T is aerobic
+  organism_enzyme_relationships: strain MD5T is positive for β-galactosidase;strain MD5T is positive for urease activities;strain MD5T is positive for aesculin hydrolysis
+  organism_lipid_relationships: Major cellular fatty acids of strain MD5T are C18:1ω7c and/or C18:1ω6c;Major cellular fatty acids of strain MD5T are C16:0
+  strain_species_relationships: MD5T is related to Tropicibacter;C02T is related to Tropicibacter;T5T is related to Phaeobacter inhibens;BS107T is related to Phaeobacter gallaeciensis;TF-218T is related to Phaeobacter daeponensis
+  type_strain_relationships: MD5T is the type strain of Tropicibacter multivorans
 prompt: |+
   Split the following piece of text into fields in the following format:
 
-  organism: <the organism, species, or strain name>
-  phenotype: <the phenotypic characteristic>
-  relationship_type: <the type of phenotypic relationshipMust be one of: has_phenotype, lacks_phenotype, is_characterized_by>
+  type_strain: <the strain designated as the nomenclatural type, often with (T) suffix>
+  species: <the species for which this strain serves as the type>
+  relationship_type: <the type of type strain relationshipMust be one of: is_type_strain_for, serves_as_type_for, designated_type_strain_of>
 
 
   Text:
-  alphaproteobacterium is marine
+  MD5T is the type strain of Tropicibacter multivorans
 
   ===
 
@@ -67,68 +76,107 @@ extracted_object:
     - AUTO:%CE%B2-galactosidase
     - AUTO:urease
     - CHEBI:4853
+    - AUTO:C18%3A1%CF%897c
+    - AUTO:C18%3A1%CF%896c
+    - CHEBI:15756
+  enzymes:
+    - AUTO:%CE%B2-galactosidase
+    - AUTO:urease
     - AUTO:alkaline%20phosphatase
     - AUTO:leucine%20arylamidase
     - AUTO:acid%20phosphatase
     - AUTO:%CE%B1-glucosidase
+  lipids:
     - AUTO:C18%3A1%CF%897c
     - AUTO:C18%3A1%CF%896c
     - CHEBI:15756
   organisms:
+    - AUTO:alphaproteobacterium
+    - AUTO:Roseobacter%20clade
+    - NCBITaxon:31989
+  species:
     - NCBITaxon:928856
     - NCBITaxon:441103
     - NCBITaxon:221822
     - NCBITaxon:60890
     - NCBITaxon:405746
+  strains:
+    - AUTO:MD5
+    - AUTO:C02
+    - AUTO:T5
+    - AUTO:BS107
+    - AUTO:TF-218
+  type_strains:
     - AUTO:MD5T
     - AUTO:C02T
     - AUTO:T5T
     - AUTO:BS107T
     - AUTO:TF-218T
-    - AUTO:Alphaproteobacterium
-    - AUTO:Roseobacter%20clade
-    - NCBITaxon:31989
+    - AUTO:CECT%207557T
+    - AUTO:KCTC%2023350T
   microbial_phenotypes:
     - MICRO:0000494
-    - AUTO:marine
   organism_compound_relationships:
-    - organism: NCBITaxon:928856
+    - organism: AUTO:strain%20MD5T
       compound: CHEBI:29101
       relationship_type: requires_for_growth
-    - organism: NCBITaxon:928856
-      compound: AUTO:Mg2%2B%20or%20Ca2%2B
+    - organism: AUTO:strain%20MD5T
+      compound: CHEBI:29108
       relationship_type: requires_for_growth
-    - organism: NCBITaxon:928856
+    - organism: AUTO:strain%20MD5T
       compound: CHEBI:17632
       relationship_type: does_not_reduce
-    - organism: NCBITaxon:928856
+    - organism: AUTO:strain%20MD5T
       compound: CHEBI:16646
       relationship_type: uses_as_carbon_source
-    - organism: NCBITaxon:928856
-      compound: AUTO:%CE%B2-galactosidase
-      relationship_type: uses_for_growth
-    - organism: NCBITaxon:928856
-      compound: AUTO:urease
-      relationship_type: hydrolyzes
-    - organism: NCBITaxon:928856
-      compound: CHEBI:4853
-      relationship_type: hydrolyzes
   organism_phenotype_relationships:
     - organism: NCBITaxon:928856
       phenotype: MICRO:0000494
       relationship_type: is_characterized_by
-    - organism: AUTO:Strain%20MD5T
-      phenotype: MICRO:0000494
-      relationship_type: has_phenotype
-    - organism: AUTO:Strain%20MD5T
-      phenotype: AUTO:marine
-      relationship_type: is_characterized_by
-    - organism: AUTO:alphaproteobacterium
+    - organism: AUTO:strain%20MD5T
       phenotype: MICRO:0000494
       relationship_type: is_characterized_by
-    - organism: AUTO:alphaproteobacterium
-      phenotype: AUTO:marine
-      relationship_type: is_characterized_by
+  organism_enzyme_relationships:
+    - organism: AUTO:strain%20MD5T
+      enzyme: AUTO:%CE%B2-galactosidase
+      relationship_type: positive_for_enzyme
+    - organism: AUTO:strain%20MD5T
+      enzyme: AUTO:urease
+      relationship_type: positive_for_enzyme
+    - organism: AUTO:strain%20MD5T
+      enzyme: AUTO:aesculin
+      relationship_type: positive_for_enzyme
+  organism_lipid_relationships:
+    - organism: AUTO:strain%20MD5T
+      lipid: AUTO:C18%3A1%CF%897c%20and/or%20C18%3A1%CF%896c
+      relationship_type: has_major_lipid_component
+    - organism: AUTO:strain%20MD5T
+      lipid: CHEBI:15756
+      relationship_type: has_major_lipid_component
+  strain_species_relationships:
+    - strain: AUTO:MD5T
+      species: NCBITaxon:599653
+      relationship_type: is_strain_of
+      inferred_from_context: true
+    - strain: AUTO:C02T
+      species: NCBITaxon:599653
+      relationship_type: belongs_to_species
+      inferred_from_context: true
+    - strain: AUTO:T5T
+      species: NCBITaxon:221822
+      relationship_type: belongs_to_species
+    - strain: AUTO:BS107T
+      species: NCBITaxon:60890
+      relationship_type: is_strain_of
+      inferred_from_context: true
+    - strain: AUTO:TF-218T
+      species: NCBITaxon:405746
+      relationship_type: belongs_to_species
+      inferred_from_context: true
+  type_strain_relationships:
+    - type_strain: AUTO:MD5T
+      species: NCBITaxon:928856
+      relationship_type: is_type_strain_for
 named_entities:
   - id: CHEBI:29101
     label: Na+
@@ -166,6 +214,18 @@ named_entities:
     label: aesculin
     original_spans:
       - 1358:1365
+  - id: AUTO:C18%3A1%CF%897c
+    label: C18:1ω7c
+    original_spans:
+      - 1565:1572
+  - id: AUTO:C18%3A1%CF%896c
+    label: C18:1ω6c
+    original_spans:
+      - 1581:1588
+  - id: CHEBI:15756
+    label: C16:0
+    original_spans:
+      - 1603:1607
   - id: AUTO:alkaline%20phosphatase
     label: alkaline phosphatase
     original_spans:
@@ -182,18 +242,19 @@ named_entities:
     label: α-glucosidase
     original_spans:
       - 1499:1511
-  - id: AUTO:C18%3A1%CF%897c
-    label: C18:1ω7c
+  - id: AUTO:alphaproteobacterium
+    label: alphaproteobacterium
     original_spans:
-      - 1565:1572
-  - id: AUTO:C18%3A1%CF%896c
-    label: C18:1ω6c
+      - 153:172
+      - 476:495
+  - id: AUTO:Roseobacter%20clade
+    label: Roseobacter clade
     original_spans:
-      - 1581:1588
-  - id: CHEBI:15756
-    label: C16:0
+      - 674:690
+  - id: NCBITaxon:31989
+    label: Rhodobacteraceae
     original_spans:
-      - 1603:1607
+      - 706:721
   - id: NCBITaxon:928856
     label: Tropicibacter multivorans
     original_spans:
@@ -209,6 +270,31 @@ named_entities:
     label: Phaeobacter gallaeciensis
   - id: NCBITaxon:405746
     label: Phaeobacter daeponensis
+  - id: AUTO:MD5
+    label: MD5
+    original_spans:
+      - 452:454
+      - 799:801
+      - 1051:1053
+      - 1122:1124
+      - 2016:2018
+  - id: AUTO:C02
+    label: C02
+    original_spans:
+      - 851:853
+      - 1109:1111
+  - id: AUTO:T5
+    label: T5
+    original_spans:
+      - 878:879
+  - id: AUTO:BS107
+    label: BS107
+    original_spans:
+      - 900:904
+  - id: AUTO:TF-218
+    label: TF-218
+    original_spans:
+      - 927:932
   - id: AUTO:MD5T
     label: MD5T
     original_spans:
@@ -234,42 +320,40 @@ named_entities:
     label: TF-218T
     original_spans:
       - 927:933
-  - id: AUTO:Alphaproteobacterium
-    label: Alphaproteobacterium
+  - id: AUTO:CECT%207557T
+    label: CECT 7557T
     original_spans:
-      - 153:172
-      - 476:495
-  - id: AUTO:Roseobacter%20clade
-    label: Roseobacter clade
+      - 2023:2032
+  - id: AUTO:KCTC%2023350T
+    label: KCTC 23350T
     original_spans:
-      - 674:690
-  - id: NCBITaxon:31989
-    label: Rhodobacteraceae
-    original_spans:
-      - 706:721
+      - 2034:2044
   - id: MICRO:0000494
     label: aerobic
     original_spans:
       - 145:151
       - 461:467
-  - id: AUTO:marine
-    label: marine
-    original_spans:
-      - 469:474
-  - id: AUTO:Mg2%2B%20or%20Ca2%2B
-    label: Mg2+ or Ca2+
-    original_spans:
-      - 1172:1183
-  - id: AUTO:Strain%20MD5T
-    label: Strain MD5T
+  - id: AUTO:strain%20MD5T
+    label: strain MD5T
     original_spans:
       - 445:455
       - 792:802
       - 1044:1054
       - 1115:1125
       - 2009:2019
-  - id: AUTO:alphaproteobacterium
-    label: alphaproteobacterium
+  - id: AUTO:aesculin
+    label: aesculin
     original_spans:
-      - 153:172
-      - 476:495
+      - 1358:1365
+  - id: AUTO:C18%3A1%CF%897c%20and/or%20C18%3A1%CF%896c
+    label: C18:1ω7c and/or C18:1ω6c
+    original_spans:
+      - 1565:1588
+  - id: NCBITaxon:599653
+    label: Tropicibacter
+    original_spans:
+      - 106:118
+      - 818:830
+      - 1774:1786
+      - 1922:1934
+      - 1946:1958
