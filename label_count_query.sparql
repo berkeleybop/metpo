@@ -1,0 +1,10 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?class (COUNT(?label) AS ?labelCount)
+WHERE {
+  ?class a owl:Class .
+  ?class rdfs:label ?label .
+}
+GROUP BY ?class
+ORDER BY DESC(?labelCount)

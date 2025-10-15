@@ -1,0 +1,100 @@
+{
+  "timestamp": "20250818_194853",
+  "model": "openai/gpt-5",
+  "provider": "cborg",
+  "template": "chemical_utilization",
+  "input_dir": "test-chemical-rich/",
+  "initial_usage": {
+    "key": "d8f1552f4d30ffab434b0bb4cca3974d9edf3fb854cfcf9b596da051b5210f86",
+    "info": {
+      "key_name": "sk-...boHA",
+      "key_alias": "MAM@lbl.gov",
+      "soft_budget_cooldown": false,
+      "spend": 0.76106925,
+      "expires": null,
+      "models": [
+        "all-team-models"
+      ],
+      "aliases": {},
+      "config": {},
+      "user_id": "MAM@lbl.gov",
+      "team_id": "f7fd42c6-7292-411c-b6cf-6e9d1dc70704",
+      "permissions": {},
+      "max_parallel_requests": null,
+      "metadata": {},
+      "blocked": null,
+      "tpm_limit": null,
+      "rpm_limit": null,
+      "max_budget": 50.0,
+      "budget_duration": "30d",
+      "budget_reset_at": "2025-09-01T00:00:00+00:00",
+      "allowed_cache_controls": [],
+      "allowed_routes": [],
+      "model_spend": {},
+      "model_max_budget": {},
+      "budget_id": null,
+      "organization_id": null,
+      "object_permission_id": null,
+      "created_at": "2024-10-31T17:02:42.426000+00:00",
+      "created_by": null,
+      "updated_at": "2025-08-18T22:56:40.141000+00:00",
+      "updated_by": null,
+      "litellm_budget_table": null,
+      "litellm_organization_table": null,
+      "object_permission": null
+    }
+  },
+  "final_usage": {
+    "key": "d8f1552f4d30ffab434b0bb4cca3974d9edf3fb854cfcf9b596da051b5210f86",
+    "info": {
+      "key_name": "sk-...boHA",
+      "key_alias": "MAM@lbl.gov",
+      "soft_budget_cooldown": false,
+      "spend": 1.466260500000001,
+      "expires": null,
+      "models": [
+        "all-team-models"
+      ],
+      "aliases": {},
+      "config": {},
+      "user_id": "MAM@lbl.gov",
+      "team_id": "f7fd42c6-7292-411c-b6cf-6e9d1dc70704",
+      "permissions": {},
+      "max_parallel_requests": null,
+      "metadata": {},
+      "blocked": null,
+      "tpm_limit": null,
+      "rpm_limit": null,
+      "max_budget": 50.0,
+      "budget_duration": "30d",
+      "budget_reset_at": "2025-09-01T00:00:00+00:00",
+      "allowed_cache_controls": [],
+      "allowed_routes": [],
+      "model_spend": {},
+      "model_max_budget": {},
+      "budget_id": null,
+      "organization_id": null,
+      "object_permission_id": null,
+      "created_at": "2024-10-31T17:02:42.426000+00:00",
+      "created_by": null,
+      "updated_at": "2025-08-18T23:48:27.183000+00:00",
+      "updated_by": null,
+      "litellm_budget_table": null,
+      "litellm_organization_table": null,
+      "object_permission": null
+    }
+  },
+  "extraction": {
+    "success": true,
+    "output_file": "outputs/chemical_utilization_cborg_gpt5_20250818_192312.yaml",
+    "execution_time": 1541.3331620693207,
+    "start_time": "2025-08-18T19:23:12.240868",
+    "end_time": "2025-08-18T19:48:53.574126",
+    "command": "uv run ontogpt -vv extract -t templates/chemical_utilization_populated.yaml -i test-chemical-rich/ -m openai/gpt-5 --model-provider openai --api-base https://api.cborg.lbl.gov -o outputs/chemical_utilization_cborg_gpt5_20250818_192312.yaml"
+  },
+  "assessment": {
+    "success": false,
+    "error": "Command '['python', 'metpo_assessor.py', 'assess', 'outputs/chemical_utilization_cborg_gpt5_20250818_192312.yaml']' returned non-zero exit status 1.",
+    "stderr": "Traceback (most recent call last):\n  File \"/Users/MAM/Documents/gitrepos/metpo/literature_mining/metpo_assessor.py\", line 15, in <module>\n    import yaml\nModuleNotFoundError: No module named 'yaml'\n"
+  }
+}
