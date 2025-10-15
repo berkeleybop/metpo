@@ -1,8 +1,10 @@
 format-version: 1.2
-data-version: https://w3id.org/metpo/metpo/releases/2025-10-03/metpo-full.owl
+data-version: https://w3id.org/metpo/metpo/releases/2025-10-15/metpo-full.owl
 idspace: dce http://purl.org/dc/elements/1.1/ 
 idspace: dcterms http://purl.org/dc/terms/ 
+idspace: metpo https://w3id.org/metpo/ 
 idspace: oboInOwl http://www.geneontology.org/formats/oboInOwl# 
+idspace: qudt http://qudt.org/schema/qudt/ 
 idspace: skos http://www.w3.org/2004/02/skos/core# 
 ontology: https://w3id.org/metpo/metpo/metpo-full.owl
 property_value: dcterms:creator "METPO Development Team" xsd:string
@@ -11,264 +13,287 @@ property_value: dcterms:issued "2024-01-01" xsd:string
 property_value: dcterms:license https://creativecommons.org/licenses/by/4.0/
 property_value: dcterms:modified "2025-09-29" xsd:string
 property_value: dcterms:title "METPO" xsd:string
-property_value: owl:versionInfo "2025-10-03" xsd:string
+property_value: owl:versionInfo "2025-10-15" xsd:string
 
 [Term]
-id: https://w3id.org/metpo/1000059
+id: metpo:1000059
 name: phenotype
 def: "A (combination of) quality(ies) of an organism determined by the interaction of its genetic make-up and environment that differentiates specific instances of a species from other instances of the same species." [] {IAO:0000119="OGMS:0000023"}
-is_a: https://w3id.org/metpo/1000188 ! quality
+is_a: metpo:1000188 ! quality
 property_value: skos:closeMatch https://biolink.github.io/biolink-model/PhenotypicQuality
 
 [Term]
-id: https://w3id.org/metpo/1000060
+id: metpo:1000060
 name: metabolism
-is_a: https://w3id.org/metpo/1000630 ! biological process
+is_a: metpo:1000630 ! biological process
 
 [Term]
-id: https://w3id.org/metpo/1000127
+id: metpo:1000127
 name: GC content
 def: "The percentage of guanine and cytosine nucleotides in DNA" []
-is_a: https://w3id.org/metpo/1000188 ! quality
+is_a: metpo:1000188 ! quality
 
 [Term]
-id: https://w3id.org/metpo/1000186
+id: metpo:1000186
 name: material entity
 def: "An object or portion of a substance or mixture of substances that consists of matter" []
 
 [Term]
-id: https://w3id.org/metpo/1000188
+id: metpo:1000188
 name: quality
 def: "A dependent entity that inheres in a bearer by virtue of how the bearer is related to other entities" [] {IAO:0000119="PATO:0000001"}
 
 [Term]
-id: https://w3id.org/metpo/1000232
+id: metpo:1000232
 name: pH delta
 def: "A measure of the breadth of hydrogen ion concentrations that a microorganism can tolerate, calculated as the difference between the maximum and minimum viable pH values" []
-is_a: https://w3id.org/metpo/1000059 ! phenotype
+is_a: metpo:1000531 ! pH phenotype with numerical limits
+is_a: metpo:1000534 ! delta phenotype with numerical limits
 
 [Term]
-id: https://w3id.org/metpo/1000233
-name: pH optimum (growth range)
-def: "The specific pH at which an organism exhibits maximum growth rate" []
-is_a: https://w3id.org/metpo/1000059 ! phenotype
-
-[Term]
-id: https://w3id.org/metpo/1000235
-name: pH range (growth tolerance)
-def: "The span of pH values within which an organism can grow" []
-is_a: https://w3id.org/metpo/1000059 ! phenotype
-
-[Term]
-id: https://w3id.org/metpo/1000236
-name: pH tolerance
-def: "The ability of an organism to survive exposure to pH values outside its optimal growth range" []
-is_a: https://w3id.org/metpo/1000059 ! phenotype
-
-[Term]
-id: https://w3id.org/metpo/1000303
+id: metpo:1000303
 name: temperature delta
 def: "A measure of the breadth of thermal conditions that a microorganism can withstand, calculated as the difference between the maximum and minimum viable temperature values" []
-is_a: https://w3id.org/metpo/1000059 ! phenotype
+is_a: metpo:1000533 ! temperature phenotype with numerical limits
+is_a: metpo:1000534 ! delta phenotype with numerical limits
 
 [Term]
-id: https://w3id.org/metpo/1000304
-name: temperature optimum (growth range)
+id: metpo:1000304
+name: temperature optimum
 def: "The specific temperature at which an organism exhibits maximum growth rate" []
-is_a: https://w3id.org/metpo/1000059 ! phenotype
+is_a: metpo:1000533 ! temperature phenotype with numerical limits
+is_a: metpo:1000536 ! optimum phenotype with numerical limits
 
 [Term]
-id: https://w3id.org/metpo/1000306
-name: temperature range (growth tolerance)
+id: metpo:1000306
+name: temperature range
 def: "The span of temperatures within which an organism can grow" []
-is_a: https://w3id.org/metpo/1000059 ! phenotype
+is_a: metpo:1000533 ! temperature phenotype with numerical limits
+is_a: metpo:1000535 ! growth range phenotype with numerical limits
 
 [Term]
-id: https://w3id.org/metpo/1000329
-name: temperature optimum (metabolic activity)
-def: "The specific temperature at which a microorganism exhibits maximum metabolic activity and growth rate within its viable range." []
-is_a: https://w3id.org/metpo/1000630 ! biological process
-
-[Term]
-id: https://w3id.org/metpo/1000330
-name: temperature range (metabolic viability)
-def: "The span of temperatures within which a microorganism can maintain metabolic functions and population viability." []
-is_a: https://w3id.org/metpo/1000630 ! biological process
-
-[Term]
-id: https://w3id.org/metpo/1000331
-name: pH optimum (metabolic efficiency)
+id: metpo:1000331
+name: pH optimum
 def: "The specific hydrogen ion concentration at which a microorganism achieves its maximum growth rate and metabolic efficiency." []
-is_a: https://w3id.org/metpo/1000059 ! phenotype
+is_a: metpo:1000531 ! pH phenotype with numerical limits
+is_a: metpo:1000536 ! optimum phenotype with numerical limits
 
 [Term]
-id: https://w3id.org/metpo/1000332
-name: pH range (cellular homeostasis)
+id: metpo:1000332
+name: pH range
 def: "The span of hydrogen ion concentrations within which a microorganism can maintain cellular homeostasis and sustain growth." []
-is_a: https://w3id.org/metpo/1000059 ! phenotype
+is_a: metpo:1000531 ! pH phenotype with numerical limits
+is_a: metpo:1000535 ! growth range phenotype with numerical limits
 
 [Term]
-id: https://w3id.org/metpo/1000333
+id: metpo:1000333
 name: NaCl optimum
 def: "The specific concentration of sodium chloride at which a microorganism exhibits maximum growth rate and metabolic efficiency." []
-is_a: https://w3id.org/metpo/1000059 ! phenotype
+is_a: metpo:1000532 ! salinity phenotype with numerical limits
+is_a: metpo:1000536 ! optimum phenotype with numerical limits
 
 [Term]
-id: https://w3id.org/metpo/1000334
+id: metpo:1000334
 name: NaCl range
 def: "The span of sodium chloride concentrations within which a microorganism can maintain osmotic balance and cellular functions." []
-is_a: https://w3id.org/metpo/1000059 ! phenotype
+is_a: metpo:1000532 ! salinity phenotype with numerical limits
+is_a: metpo:1000535 ! growth range phenotype with numerical limits
 
 [Term]
-id: https://w3id.org/metpo/1000335
+id: metpo:1000335
 name: NaCl delta
 def: "A measure of the breadth of sodium chloride concentrations that a microorganism can tolerate, calculated as the difference between the maximum and minimum viable salinity values." []
-is_a: https://w3id.org/metpo/1000059 ! phenotype
+is_a: metpo:1000532 ! salinity phenotype with numerical limits
+is_a: metpo:1000534 ! delta phenotype with numerical limits
 
 [Term]
-id: https://w3id.org/metpo/1000429
+id: metpo:1000429
 name: GC low
 def: "A genomic feature characterized by a guanine-cytosine content percentage below 42.65% in an organism's DNA. Values with maximum value of 42.65 % GC." []
-synonym: "GC_<42.65" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000127 ! GC content
+synonym: " GC_42.65_57.0" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
+is_a: metpo:1000127 ! GC content
+property_value: metpo:range_max "42.65" xsd:string
 
 [Term]
-id: https://w3id.org/metpo/1000430
+id: metpo:1000430
 name: GC mid1
 def: "A genomic feature characterized by a guanine-cytosine content percentage between 42.65% and 57% in an organism's DNA. Values ranging from 42.65 to 57 % GC." []
-synonym: "GC_42.65_57.0" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000127 ! GC content
+synonym: "GC_>66.3" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
+is_a: metpo:1000127 ! GC content
+property_value: metpo:range_max "57" xsd:string
+property_value: metpo:range_min "42.65" xsd:string
 
 [Term]
-id: https://w3id.org/metpo/1000431
+id: metpo:1000431
 name: GC mid2
 def: "A genomic feature characterized by a guanine-cytosine content percentage between 57% and 66.3% in an organism's DNA. Values ranging from 57 to 66.3 % GC." []
 synonym: "GC_57.0_66.3" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000127 ! GC content
+is_a: metpo:1000127 ! GC content
+property_value: metpo:range_max "66.3" xsd:string
+property_value: metpo:range_min "57" xsd:string
 
 [Term]
-id: https://w3id.org/metpo/1000432
+id: metpo:1000432
 name: GC high
 def: "A genomic feature characterized by a guanine-cytosine content percentage above 66.3% in an organism's DNA. Values with minimum value of 66.3 % GC." []
-synonym: "GC_>66.3" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000127 ! GC content
+synonym: "GC_<=42.65" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
+is_a: metpo:1000127 ! GC content
+property_value: metpo:range_min "66.3" xsd:string
 
 [Term]
-id: https://w3id.org/metpo/1000441
+id: metpo:1000441
 name: temperature optimum very low
 def: "A temperature optimum manifested as maximum microbial growth at temperatures below 10°C, typical of psychrophilic organisms. Values with maximum value of 10 C." []
 synonym: "Psychrophile" EXACT []
-synonym: "TO_<10" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000304 ! temperature optimum (growth range)
+synonym: "TO_<=10" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
+is_a: metpo:1000304 ! temperature optimum
+property_value: metpo:range_max "10" xsd:string
+property_value: qudt:ucumCode "Cel" xsd:string
 
 [Term]
-id: https://w3id.org/metpo/1000442
+id: metpo:1000442
 name: temperature optimum low
 def: "A temperature optimum manifested as maximum microbial growth at temperatures between 10°C and 22°C, common in psychrophilic or psychrotolerant organisms. Values ranging from 10 to 22 C." []
 synonym: "Psychrophile" EXACT []
 synonym: "Psychrotolerant" EXACT []
 synonym: "TO_10_to_22" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000304 ! temperature optimum (growth range)
+is_a: metpo:1000304 ! temperature optimum
+property_value: metpo:range_max "22" xsd:string
+property_value: metpo:range_min "10" xsd:string
+property_value: qudt:ucumCode "Cel" xsd:string
 
 [Term]
-id: https://w3id.org/metpo/1000443
+id: metpo:1000443
 name: temperature optimum mid1
 def: "A temperature optimum manifested as maximum microbial growth at temperatures between 22°C and 27°C, characteristic of mesophilic organisms. Values ranging from 22 to 27 C." []
 synonym: "Mesophilie" EXACT []
 synonym: "TO_22_to_27" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000304 ! temperature optimum (growth range)
+is_a: metpo:1000304 ! temperature optimum
+property_value: metpo:range_max "27" xsd:string
+property_value: metpo:range_min "22" xsd:string
+property_value: qudt:ucumCode "Cel" xsd:string
 
 [Term]
-id: https://w3id.org/metpo/1000444
+id: metpo:1000444
 name: temperature optimum mid2
 def: "A temperature optimum manifested as maximum microbial growth at temperatures between 27°C and 30°C, characteristic of mesophilic organisms. Values ranging from 27 to 30 C." []
 synonym: "Mesophilie" EXACT []
 synonym: "TO_27_to_30" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000304 ! temperature optimum (growth range)
+is_a: metpo:1000304 ! temperature optimum
+property_value: metpo:range_max "30" xsd:string
+property_value: metpo:range_min "27" xsd:string
+property_value: qudt:ucumCode "Cel" xsd:string
 
 [Term]
-id: https://w3id.org/metpo/1000445
+id: metpo:1000445
 name: temperature optimum mid3
 def: "A temperature optimum manifested as maximum microbial growth at temperatures between 30°C and 34°C, characteristic of mesophilic organisms. Values ranging from 30 to 34 C." []
 synonym: "Mesophilie" EXACT []
 synonym: "TO_30_to_34" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000304 ! temperature optimum (growth range)
+is_a: metpo:1000304 ! temperature optimum
+property_value: metpo:range_max "34" xsd:string
+property_value: metpo:range_min "30" xsd:string
+property_value: qudt:ucumCode "Cel" xsd:string
 
 [Term]
-id: https://w3id.org/metpo/1000446
+id: metpo:1000446
 name: temperature optimum mid4
 def: "A temperature optimum manifested as maximum microbial growth at temperatures between 34°C and 40°C, characteristic of mesophilic organisms. Values ranging from 34 to 40 C." []
 synonym: "Mesophilie" EXACT []
 synonym: "TO_34_to_40" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000304 ! temperature optimum (growth range)
+is_a: metpo:1000304 ! temperature optimum
+property_value: metpo:range_max "40" xsd:string
+property_value: metpo:range_min "34" xsd:string
+property_value: qudt:ucumCode "Cel" xsd:string
 
 [Term]
-id: https://w3id.org/metpo/1000447
+id: metpo:1000447
 name: temperature optimum high
 def: "A temperature optimum manifested as maximum microbial growth at temperatures above 40°C, typical of thermophilic organisms. Values with minimum value of 40 C." []
 synonym: "Thermophile" EXACT []
 synonym: "TO_>40" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000304 ! temperature optimum (growth range)
+is_a: metpo:1000304 ! temperature optimum
+property_value: metpo:range_min "40" xsd:string
+property_value: qudt:ucumCode "Cel" xsd:string
 
 [Term]
-id: https://w3id.org/metpo/1000448
+id: metpo:1000448
 name: temperature range very low
 def: "A temperature range allowing microbial growth at temperatures below 10°C, characteristic of psychrophilic organisms. Values with maximum value of 10 C." []
 synonym: "Psychrophile" EXACT []
-synonym: "TR_<10" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000306 ! temperature range (growth tolerance)
+synonym: "TR_<=10" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
+is_a: metpo:1000306 ! temperature range
+property_value: metpo:range_max "10" xsd:string
+property_value: qudt:ucumCode "Cel" xsd:string
 
 [Term]
-id: https://w3id.org/metpo/1000449
+id: metpo:1000449
 name: temperature range low
 def: "A temperature range allowing microbial growth at temperatures between 10°C and 22°C, characteristic of psychrophilic or psychrotolerant organisms. Values ranging from 10 to 22 C." []
 synonym: "Psychrophile" EXACT []
 synonym: "Psychrotolerant" EXACT []
 synonym: "TR_10_to_22" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000306 ! temperature range (growth tolerance)
+is_a: metpo:1000306 ! temperature range
+property_value: metpo:range_max "22" xsd:string
+property_value: metpo:range_min "10" xsd:string
+property_value: qudt:ucumCode "Cel" xsd:string
 
 [Term]
-id: https://w3id.org/metpo/1000450
+id: metpo:1000450
 name: temperature range mid1
 def: "A temperature range allowing microbial growth at temperatures between 22°C and 27°C, characteristic of mesophilic organisms. Values ranging from 22 to 27 C." []
 synonym: "Mesophilie" EXACT []
 synonym: "TR_22_to_27" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000306 ! temperature range (growth tolerance)
+is_a: metpo:1000306 ! temperature range
+property_value: metpo:range_max "27" xsd:string
+property_value: metpo:range_min "22" xsd:string
+property_value: qudt:ucumCode "Cel" xsd:string
 
 [Term]
-id: https://w3id.org/metpo/1000451
+id: metpo:1000451
 name: temperature range mid2
 def: "A temperature range allowing microbial growth at temperatures between 27°C and 30°C, characteristic of mesophilic organisms. Values ranging from 27 to 30 C." []
 synonym: "Mesophilie" EXACT []
 synonym: "TR_27_to_30" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000306 ! temperature range (growth tolerance)
+is_a: metpo:1000306 ! temperature range
+property_value: metpo:range_max "30" xsd:string
+property_value: metpo:range_min "27" xsd:string
+property_value: qudt:ucumCode "Cel" xsd:string
 
 [Term]
-id: https://w3id.org/metpo/1000452
+id: metpo:1000452
 name: temperature range mid3
 def: "A temperature range allowing microbial growth at temperatures between 30°C and 34°C, characteristic of mesophilic organisms. Values ranging from 30 to 34 C." []
 synonym: "Mesophilie" EXACT []
 synonym: "TR_30_to_34" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000306 ! temperature range (growth tolerance)
+is_a: metpo:1000306 ! temperature range
+property_value: metpo:range_max "34" xsd:string
+property_value: metpo:range_min "30" xsd:string
+property_value: qudt:ucumCode "Cel" xsd:string
 
 [Term]
-id: https://w3id.org/metpo/1000453
+id: metpo:1000453
 name: temperature range mid4
 def: "A temperature range allowing microbial growth at temperatures between 34°C and 40°C, characteristic of mesophilic organisms. Values ranging from 34 to 40 C." []
 synonym: "Mesophilie" EXACT []
 synonym: "TR_34_to_40" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000306 ! temperature range (growth tolerance)
+is_a: metpo:1000306 ! temperature range
+property_value: metpo:range_max "40" xsd:string
+property_value: metpo:range_min "34" xsd:string
+property_value: qudt:ucumCode "Cel" xsd:string
 
 [Term]
-id: https://w3id.org/metpo/1000454
+id: metpo:1000454
 name: temperature range high
 def: "A temperature range allowing microbial growth at temperatures above 40°C, characteristic of thermophilic organisms. Values with minimum value of 40 C." []
 synonym: "Thermophile" EXACT []
 synonym: "TR_>40" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000306 ! temperature range (growth tolerance)
+is_a: metpo:1000306 ! temperature range
+property_value: metpo:range_min "40" xsd:string
+property_value: qudt:ucumCode "Cel" xsd:string
 
 [Term]
-id: https://w3id.org/metpo/1000455
+id: metpo:1000455
 name: pH optimum low
 def: "A pH optimum manifested as maximum microbial growth at hydrogen ion concentrations between pH 0 and 6, characteristic of acidophilic organisms. Values ranging from 0 to 6 pH." []
 synonym: "Acid Tolerant" EXACT []
@@ -277,39 +302,47 @@ synonym: "Extreme Acidophile" EXACT []
 synonym: "Facultative acidophile" EXACT []
 synonym: "Obligative acidophile" EXACT []
 synonym: "pHO_0_to_6" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000331 ! pH optimum (metabolic efficiency)
+is_a: metpo:1000331 ! pH optimum
+property_value: metpo:range_max "6" xsd:string
+property_value: metpo:range_min "0" xsd:string
 
 [Term]
-id: https://w3id.org/metpo/1000456
+id: metpo:1000456
 name: pH optimum mid1
 def: "A pH optimum manifested as maximum microbial growth at hydrogen ion concentrations between pH 6 and 7, characteristic of neutrophilic or alkali-tolerant organisms. Values ranging from 6 to 7 pH." []
 synonym: "Alkali Tolerant" EXACT []
 synonym: "Neutrophile" EXACT []
 synonym: "pHO_6_to_7" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000331 ! pH optimum (metabolic efficiency)
+is_a: metpo:1000331 ! pH optimum
+property_value: metpo:range_max "7" xsd:string
+property_value: metpo:range_min "6" xsd:string
 
 [Term]
-id: https://w3id.org/metpo/1000457
+id: metpo:1000457
 name: pH optimum mid2
 def: "A pH optimum manifested as maximum microbial growth at hydrogen ion concentrations between pH 7 and 8, characteristic of neutrophilic, alkaliphilic, or alkali-tolerant organisms. Values ranging from 7 to 8 pH." []
 synonym: "Alkali Tolerant" EXACT []
 synonym: "Alkaliphile" EXACT []
 synonym: "Neutrophile" EXACT []
 synonym: "pHO_7_to_8" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000331 ! pH optimum (metabolic efficiency)
+is_a: metpo:1000331 ! pH optimum
+property_value: metpo:range_max "8" xsd:string
+property_value: metpo:range_min "7" xsd:string
 
 [Term]
-id: https://w3id.org/metpo/1000458
+id: metpo:1000458
 name: pH optimum high
 def: "A pH optimum manifested as maximum microbial growth at hydrogen ion concentrations between pH 8 and 14, characteristic of alkaliphilic or extremely alkaliphilic organisms. Values ranging from 8 to 14 pH." []
 synonym: "Alkali Tolerant" EXACT []
 synonym: "Alkaliphile" EXACT []
 synonym: "Extreme Alkaliphile" EXACT []
 synonym: "pHO_8_to_14" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000331 ! pH optimum (metabolic efficiency)
+is_a: metpo:1000331 ! pH optimum
+property_value: metpo:range_max "14" xsd:string
+property_value: metpo:range_min "8" xsd:string
 
 [Term]
-id: https://w3id.org/metpo/1000459
+id: metpo:1000459
 name: pH range very low
 def: "A pH range allowing microbial growth at hydrogen ion concentrations between pH 0 and 4, characteristic of extremely acidophilic organisms. Values ranging from 0 to 4 pH." []
 synonym: "Acid Tolerant" EXACT []
@@ -318,10 +351,12 @@ synonym: "Extreme Acidophile" EXACT []
 synonym: "Facultative acidophile" EXACT []
 synonym: "Obligative acidophile" EXACT []
 synonym: "pHR_0_to_4" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000332 ! pH range (cellular homeostasis)
+is_a: metpo:1000332 ! pH range
+property_value: metpo:range_max "4" xsd:string
+property_value: metpo:range_min "0" xsd:string
 
 [Term]
-id: https://w3id.org/metpo/1000460
+id: metpo:1000460
 name: pH range low
 def: "A pH range allowing microbial growth at hydrogen ion concentrations between pH 4 and 6, characteristic of acidophilic organisms. Values ranging from 4 to 6 pH." []
 synonym: "Acid Tolerant" EXACT []
@@ -329,20 +364,24 @@ synonym: "Acidophile" EXACT []
 synonym: "Facultative acidophile" EXACT []
 synonym: "Obligative acidophile" EXACT []
 synonym: "pHR_4_to_6" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000332 ! pH range (cellular homeostasis)
+is_a: metpo:1000332 ! pH range
+property_value: metpo:range_max "6" xsd:string
+property_value: metpo:range_min "4" xsd:string
 
 [Term]
-id: https://w3id.org/metpo/1000461
+id: metpo:1000461
 name: pH range mid1
 def: "A pH range allowing microbial growth at hydrogen ion concentrations between pH 6 and 7, characteristic of neutrophilic organisms. Values ranging from 6 to 7 pH." []
 synonym: "Alkali Tolerant" EXACT []
 synonym: "Facultative acidophile" EXACT []
 synonym: "Neutrophile" EXACT []
 synonym: "pHR_6_to_7" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000332 ! pH range (cellular homeostasis)
+is_a: metpo:1000332 ! pH range
+property_value: metpo:range_max "7" xsd:string
+property_value: metpo:range_min "6" xsd:string
 
 [Term]
-id: https://w3id.org/metpo/1000462
+id: metpo:1000462
 name: pH range mid2
 def: "A pH range allowing microbial growth at hydrogen ion concentrations between pH 7 and 8, characteristic of neutrophilic or alkaliphilic organisms. Values ranging from 7 to 8 pH." []
 synonym: "Alkali Tolerant" EXACT []
@@ -350,10 +389,12 @@ synonym: "Alkaliphile" EXACT []
 synonym: "Facultative acidophile" EXACT []
 synonym: "Neutrophile" EXACT []
 synonym: "pHR_7_to_8" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000332 ! pH range (cellular homeostasis)
+is_a: metpo:1000332 ! pH range
+property_value: metpo:range_max "8" xsd:string
+property_value: metpo:range_min "7" xsd:string
 
 [Term]
-id: https://w3id.org/metpo/1000463
+id: metpo:1000463
 name: pH range mid3
 def: "A pH range allowing microbial growth at hydrogen ion concentrations between pH 8 and 10, characteristic of alkaliphilic organisms. Values ranging from 8 to 10 pH." []
 synonym: "Alkali Tolerant" EXACT []
@@ -361,577 +402,667 @@ synonym: "Alkaliphile" EXACT []
 synonym: "Extreme Alkaliphile" EXACT []
 synonym: "Facultative acidophile" EXACT []
 synonym: "pHR_8_to_10" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000332 ! pH range (cellular homeostasis)
+is_a: metpo:1000332 ! pH range
+property_value: metpo:range_max "10" xsd:string
+property_value: metpo:range_min "8" xsd:string
 
 [Term]
-id: https://w3id.org/metpo/1000464
+id: metpo:1000464
 name: pH range high
 def: "A pH range allowing microbial growth at hydrogen ion concentrations between pH 10 and 14, characteristic of extremely alkaliphilic organisms. Values ranging from 10 to 14 pH." []
 synonym: "10_to_14" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
 synonym: "Alkali Tolerant" EXACT []
 synonym: "Alkaliphile" EXACT []
 synonym: "Extreme Alkaliphile" EXACT []
-is_a: https://w3id.org/metpo/1000332 ! pH range (cellular homeostasis)
+is_a: metpo:1000332 ! pH range
+property_value: metpo:range_max "14" xsd:string
+property_value: metpo:range_min "10" xsd:string
 
 [Term]
-id: https://w3id.org/metpo/1000465
+id: metpo:1000465
 name: NaCl optimum low
 def: "A salinity optimum manifested as maximum microbial growth at sodium chloride concentrations below 1%, characteristic of non-halophilic or halotolerant organisms. Values with maximum value of 1 % NaCl." []
 synonym: "Halotolerant" EXACT []
-synonym: "NaR_<1" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
+synonym: "NaO_<=1" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
 synonym: "Non-halophile" EXACT []
-is_a: https://w3id.org/metpo/1000333 ! NaCl optimum
+is_a: metpo:1000333 ! NaCl optimum
+property_value: metpo:range_max "1" xsd:string
+property_value: qudt:ucumCode "%" xsd:string
 
 [Term]
-id: https://w3id.org/metpo/1000466
+id: metpo:1000466
 name: NaCl optimum mid1
 def: "A salinity optimum manifested as maximum microbial growth at sodium chloride concentrations between 1% and 3%, characteristic of slight halophiles or halotolerant organisms. Values ranging from 1 to 3 % NaCl." []
 synonym: "Halotolerant" EXACT []
-synonym: "NaR_1_to_3" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
+synonym: "NaO_1_to_3" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
 synonym: "Slight halophile" EXACT []
-is_a: https://w3id.org/metpo/1000333 ! NaCl optimum
+is_a: metpo:1000333 ! NaCl optimum
+property_value: metpo:range_max "3" xsd:string
+property_value: metpo:range_min "1" xsd:string
+property_value: qudt:ucumCode "%" xsd:string
 
 [Term]
-id: https://w3id.org/metpo/1000467
+id: metpo:1000467
 name: NaCl optimum mid2
 def: "A salinity optimum manifested as maximum microbial growth at sodium chloride concentrations between 3% and 8%, characteristic of moderate halophiles or halotolerant organisms. Values ranging from 3 to 8 % NaCl." []
 synonym: "Halotolerant" EXACT []
 synonym: "Moderate halophile" EXACT []
-synonym: "NaR_3_to_8" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000333 ! NaCl optimum
+synonym: "NaO_3_to_8" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
+is_a: metpo:1000333 ! NaCl optimum
+property_value: metpo:range_max "8" xsd:string
+property_value: metpo:range_min "3" xsd:string
+property_value: qudt:ucumCode "%" xsd:string
 
 [Term]
-id: https://w3id.org/metpo/1000468
+id: metpo:1000468
 name: NaCl optimum high
 def: "A salinity optimum manifested as maximum microbial growth at sodium chloride concentrations above 8%, characteristic of extreme halophiles. Values with minimum value of 8 % NaCl." []
 synonym: "Extreme halophile" EXACT []
-synonym: "NaR_>8" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000333 ! NaCl optimum
+synonym: "NaO_>8" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
+is_a: metpo:1000333 ! NaCl optimum
+property_value: metpo:range_min "8" xsd:string
+property_value: qudt:ucumCode "%" xsd:string
 
 [Term]
-id: https://w3id.org/metpo/1000469
+id: metpo:1000469
 name: NaCl range low
 def: "A salinity range allowing microbial growth at sodium chloride concentrations below 1%, characteristic of non-halophilic organisms. Values with maximum value of 1 % NaCl." []
 synonym: "Halotolerant" EXACT []
-synonym: "NaO_<1" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
+synonym: "NaR_<=1" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
 synonym: "Non-halophile" EXACT []
-is_a: https://w3id.org/metpo/1000334 ! NaCl range
+is_a: metpo:1000334 ! NaCl range
+property_value: metpo:range_max "1" xsd:string
+property_value: qudt:ucumCode "%" xsd:string
 
 [Term]
-id: https://w3id.org/metpo/1000470
+id: metpo:1000470
 name: NaCl range mid1
 def: "A salinity range allowing microbial growth at sodium chloride concentrations between 1% and 3%, characteristic of slight halophiles. Values ranging from 1 to 3 % NaCl." []
 synonym: "Halotolerant" EXACT []
-synonym: "NaO_1_to_3" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
+synonym: "NaR_1_to_3" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
 synonym: "Slight halophile" EXACT []
-is_a: https://w3id.org/metpo/1000334 ! NaCl range
+is_a: metpo:1000334 ! NaCl range
+property_value: metpo:range_max "3" xsd:string
+property_value: metpo:range_min "1" xsd:string
+property_value: qudt:ucumCode "%" xsd:string
 
 [Term]
-id: https://w3id.org/metpo/1000471
+id: metpo:1000471
 name: NaCl range mid2
 def: "A salinity range allowing microbial growth at sodium chloride concentrations between 3% and 8%, characteristic of moderate halophiles. Values ranging from 3 to 8 % NaCl." []
 synonym: "Halotolerant" EXACT []
 synonym: "Moderate halophile" EXACT []
-synonym: "NaO_3_to_8" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000334 ! NaCl range
+synonym: "NaR_3_to_8" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
+is_a: metpo:1000334 ! NaCl range
+property_value: metpo:range_max "8" xsd:string
+property_value: metpo:range_min "3" xsd:string
+property_value: qudt:ucumCode "%" xsd:string
 
 [Term]
-id: https://w3id.org/metpo/1000472
+id: metpo:1000472
 name: NaCl range high
 def: "A salinity range allowing microbial growth at sodium chloride concentrations above 8%, characteristic of extreme halophiles. Values with minimum value of 8 % NaCl." []
 synonym: "Extreme halophile" EXACT []
-synonym: "NaO_>8" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000334 ! NaCl range
+synonym: "NaR_>8" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
+is_a: metpo:1000334 ! NaCl range
+property_value: metpo:range_min "8" xsd:string
+property_value: qudt:ucumCode "%" xsd:string
 
 [Term]
-id: https://w3id.org/metpo/1000473
+id: metpo:1000473
 name: pH delta very low
 def: "A growth tolerance metric measuring the span of pH conditions that support an organism's growth, with a narrow range less than 1 pH unit. Values with maximum value of 1 pH." []
-synonym: "pHd_<1" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000232 ! pH delta
+synonym: "pHd_<=1" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
+is_a: metpo:1000232 ! pH delta
+property_value: metpo:range_max "1" xsd:string
 
 [Term]
-id: https://w3id.org/metpo/1000474
+id: metpo:1000474
 name: pH delta low
 def: "A growth tolerance metric measuring the span of pH conditions that support an organism's growth, with a range between 1 and 2 pH units. Values ranging from 1 to 2 pH." []
 synonym: "pHd_1_2" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000232 ! pH delta
+is_a: metpo:1000232 ! pH delta
+property_value: metpo:range_max "2" xsd:string
+property_value: metpo:range_min "1" xsd:string
 
 [Term]
-id: https://w3id.org/metpo/1000475
+id: metpo:1000475
 name: pH delta mid1
 def: "A growth tolerance metric measuring the span of pH conditions that support an organism's growth, with a range between 2 and 3 pH units. Values ranging from 2 to 3 pH." []
 synonym: "pHd_2_3" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000232 ! pH delta
+is_a: metpo:1000232 ! pH delta
+property_value: metpo:range_max "3" xsd:string
+property_value: metpo:range_min "2" xsd:string
 
 [Term]
-id: https://w3id.org/metpo/1000476
+id: metpo:1000476
 name: pH delta mid2
 def: "A growth tolerance metric measuring the span of pH conditions that support an organism's growth, with a range between 3 and 4 pH units. Values ranging from 3 to 4 pH." []
 synonym: "pHd_3_4" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000232 ! pH delta
+is_a: metpo:1000232 ! pH delta
+property_value: metpo:range_max "4" xsd:string
+property_value: metpo:range_min "3" xsd:string
 
 [Term]
-id: https://w3id.org/metpo/1000477
+id: metpo:1000477
 name: pH delta mid3
 def: "A growth tolerance metric measuring the span of pH conditions that support an organism's growth, with a range between 4 and 5 pH units. Values ranging from 4 to 5 pH." []
 synonym: "pHd_4_5" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000232 ! pH delta
+is_a: metpo:1000232 ! pH delta
+property_value: metpo:range_max "5" xsd:string
+property_value: metpo:range_min "4" xsd:string
 
 [Term]
-id: https://w3id.org/metpo/1000478
+id: metpo:1000478
 name: pH delta high
 def: "A growth tolerance metric measuring the span of pH conditions that support an organism's growth, with a wide range between 5 and 9 pH units. Values ranging from 5 to 9 pH." []
 synonym: "pHd_5_9" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000232 ! pH delta
+is_a: metpo:1000232 ! pH delta
+property_value: metpo:range_max "9" xsd:string
+property_value: metpo:range_min "5" xsd:string
 
 [Term]
-id: https://w3id.org/metpo/1000479
+id: metpo:1000479
 name: NaCl delta low
 def: "A growth tolerance metric measuring the span of sodium chloride concentrations that support an organism's growth, with a narrow range less than 1%. Values with maximum value of 1 C." []
-synonym: "Nad_<1" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000335 ! NaCl delta
+synonym: "Nad_<=1" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
+is_a: metpo:1000335 ! NaCl delta
+property_value: metpo:range_max "1" xsd:string
+property_value: qudt:ucumCode "%" xsd:string
 
 [Term]
-id: https://w3id.org/metpo/1000480
+id: metpo:1000480
 name: NaCl delta mid1
 def: "A growth tolerance metric measuring the span of sodium chloride concentrations that support an organism's growth, with a range between 1% and 3%. Values ranging from 1 to 3 C." []
 synonym: "Nad_1_3" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000335 ! NaCl delta
+is_a: metpo:1000335 ! NaCl delta
+property_value: metpo:range_max "3" xsd:string
+property_value: metpo:range_min "1" xsd:string
+property_value: qudt:ucumCode "%" xsd:string
 
 [Term]
-id: https://w3id.org/metpo/1000481
+id: metpo:1000481
 name: NaCl delta mid2
 def: "A growth tolerance metric measuring the span of sodium chloride concentrations that support an organism's growth, with a range between 3% and 8%. Values ranging from 3 to 8 C." []
 synonym: "Nad_3_8" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000335 ! NaCl delta
+is_a: metpo:1000335 ! NaCl delta
+property_value: metpo:range_max "8" xsd:string
+property_value: metpo:range_min "3" xsd:string
+property_value: qudt:ucumCode "%" xsd:string
 
 [Term]
-id: https://w3id.org/metpo/1000482
+id: metpo:1000482
 name: NaCl delta high
 def: "A growth tolerance metric measuring the span of sodium chloride concentrations that support an organism's growth, with a wide range greater than 8%. Values with maximum value of 8 C." []
 synonym: "Nad_>8" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000335 ! NaCl delta
+is_a: metpo:1000335 ! NaCl delta
+property_value: metpo:range_max "8" xsd:string
+property_value: qudt:ucumCode "%" xsd:string
 
 [Term]
-id: https://w3id.org/metpo/1000483
+id: metpo:1000483
 name: temperature delta very low
 def: "A growth tolerance metric measuring the span of temperatures that support an organism's growth, with a narrow range between 1°C and 5°C. Values ranging from 1 to 5 C." []
 synonym: "Td_1_5" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000303 ! temperature delta
+is_a: metpo:1000303 ! temperature delta
+property_value: metpo:range_max "5" xsd:string
+property_value: metpo:range_min "1" xsd:string
+property_value: qudt:ucumCode "Cel" xsd:string
 
 [Term]
-id: https://w3id.org/metpo/1000484
+id: metpo:1000484
 name: temperature delta low
 def: "A growth tolerance metric measuring the span of temperatures that support an organism's growth, with a range between 5°C and 10°C. Values ranging from 5 to 10 C." []
 synonym: "Td_5_10" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000303 ! temperature delta
+is_a: metpo:1000303 ! temperature delta
+property_value: metpo:range_max "10" xsd:string
+property_value: metpo:range_min "5" xsd:string
+property_value: qudt:ucumCode "Cel" xsd:string
 
 [Term]
-id: https://w3id.org/metpo/1000485
+id: metpo:1000485
 name: temperature delta mid1
 def: "A growth tolerance metric measuring the span of temperatures that support an organism's growth, with a range between 10°C and 20°C. Values ranging from 10 to 20 C." []
 synonym: "Td_10_20" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000303 ! temperature delta
+is_a: metpo:1000303 ! temperature delta
+property_value: metpo:range_max "20" xsd:string
+property_value: metpo:range_min "10" xsd:string
+property_value: qudt:ucumCode "Cel" xsd:string
 
 [Term]
-id: https://w3id.org/metpo/1000486
+id: metpo:1000486
 name: temperature delta mid2
 def: "A growth tolerance metric measuring the span of temperatures that support an organism's growth, with a range between 20°C and 30°C. Values ranging from 20 to 30 C." []
 synonym: "Td_20_30" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000303 ! temperature delta
+is_a: metpo:1000303 ! temperature delta
+property_value: metpo:range_max "30" xsd:string
+property_value: metpo:range_min "20" xsd:string
+property_value: qudt:ucumCode "Cel" xsd:string
 
 [Term]
-id: https://w3id.org/metpo/1000487
+id: metpo:1000487
 name: temperature delta high
 def: "A growth tolerance metric measuring the span of temperatures that support an organism's growth, with a wide range greater than 30°C. Values with minimum value of 30 C." []
 synonym: "Td_>30" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000303 ! temperature delta
+is_a: metpo:1000303 ! temperature delta
+property_value: metpo:range_min "30" xsd:string
+property_value: qudt:ucumCode "Cel" xsd:string
 
 [Term]
-id: https://w3id.org/metpo/1000511
-name: pH adaptation
-def: "A combination of cellular processes that permits survival and growth under specific hydrogen ion concentrations." []
-is_a: https://w3id.org/metpo/1000059 ! phenotype
-
-[Term]
-id: https://w3id.org/metpo/1000525
+id: metpo:1000525
 name: microbe
 def: "An organism or virus or viron that is too small to be viewed by the unaided eye." [] {IAO:0000119="OHMI:0000460"}
 comment: METPO is primarily concerned with unicellular, prokaryotic life forms, i.e. bacteria and archea, including the cases of giant bacteria like Thiomargarita
-is_a: https://w3id.org/metpo/1000186 ! material entity
+is_a: metpo:1000186 ! material entity
 property_value: skos:closeMatch https://biolink.github.io/biolink-model/OrganismTaxon
 
 [Term]
-id: https://w3id.org/metpo/1000526
+id: metpo:1000526
 name: chemical entity
 def: "A physical entity of interest in chemistry including molecular entities, parts thereof, and chemical substances." [] {IAO:0000119="CHEBI:24431"}
-is_a: https://w3id.org/metpo/1000186 ! material entity
+is_a: metpo:1000186 ! material entity
 property_value: skos:closeMatch https://biolink.github.io/biolink-model/ChemicalEntity
 
 [Term]
-id: https://w3id.org/metpo/1000601
+id: metpo:1000531
+name: pH phenotype with numerical limits
+is_a: metpo:1000059 ! phenotype
+
+[Term]
+id: metpo:1000532
+name: salinity phenotype with numerical limits
+is_a: metpo:1000059 ! phenotype
+
+[Term]
+id: metpo:1000533
+name: temperature phenotype with numerical limits
+is_a: metpo:1000059 ! phenotype
+
+[Term]
+id: metpo:1000534
+name: delta phenotype with numerical limits
+is_a: metpo:1000059 ! phenotype
+
+[Term]
+id: metpo:1000535
+name: growth range phenotype with numerical limits
+is_a: metpo:1000059 ! phenotype
+
+[Term]
+id: metpo:1000536
+name: optimum phenotype with numerical limits
+is_a: metpo:1000059 ! phenotype
+
+[Term]
+id: metpo:1000601
 name: oxygen preference
 synonym: "General.keywords" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 synonym: "metabolism" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 synonym: "Physiology and metabolism.oxygen tolerance.oxygen tolerance" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000059 ! phenotype
+is_a: metpo:1000059 ! phenotype
 
 [Term]
-id: https://w3id.org/metpo/1000602
+id: metpo:1000602
 name: aerobic
 def: "A microbial oxygen preference phenotype in which growth occurs in the presence of molecular oxygen (O₂), typically using O₂ as the terminal electron acceptor." []
 synonym: "aerobe" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 synonym: "aerobic" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 synonym: "Ox_aerobic" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000601 ! oxygen preference
+is_a: metpo:1000601 ! oxygen preference
 
 [Term]
-id: https://w3id.org/metpo/1000603
+id: metpo:1000603
 name: anaerobic
 def: "A microbial oxygen preference phenotype in which growth occurs in the absence of molecular oxygen (O₂)." []
 synonym: "anaerobe" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 synonym: "anaerobic" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 synonym: "Ox_anaerobic" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000601 ! oxygen preference
+is_a: metpo:1000601 ! oxygen preference
 
 [Term]
-id: https://w3id.org/metpo/1000604
+id: metpo:1000604
 name: microaerophilic
 def: "A microbial oxygen preference phenotype that requires molecular oxygen (O₂) at concentrations lower than atmospheric." []
 synonym: "microaerophile" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 synonym: "microaerophilic" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 synonym: "Ox_microerophile" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000601 ! oxygen preference
+is_a: metpo:1000601 ! oxygen preference
 
 [Term]
-id: https://w3id.org/metpo/1000605
+id: metpo:1000605
 name: facultatively anaerobic
 def: "A microbial oxygen preference phenotype in which growth can occur with or without molecular oxygen (O₂)." []
 synonym: "facultative" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 synonym: "facultative anaerobe" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000601 ! oxygen preference
+is_a: metpo:1000601 ! oxygen preference
 
 [Term]
-id: https://w3id.org/metpo/1000606
+id: metpo:1000606
 name: obligately aerobic
 def: "A microbial oxygen preference phenotype that requires molecular oxygen (O₂) for growth." []
 synonym: "obligate aerobe" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 synonym: "obligate aerobic" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000601 ! oxygen preference
+is_a: metpo:1000601 ! oxygen preference
 
 [Term]
-id: https://w3id.org/metpo/1000607
+id: metpo:1000607
 name: obligately anaerobic
 def: "A microbial oxygen preference phenotype in which molecular oxygen (O₂) inhibits or prevents growth." []
 synonym: "obligate anaerobe" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 synonym: "obligate anaerobic" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000601 ! oxygen preference
+is_a: metpo:1000601 ! oxygen preference
 
 [Term]
-id: https://w3id.org/metpo/1000608
+id: metpo:1000608
 name: facultatively aerobic
 def: "A microbial oxygen preference phenotype in which growth can occur without oxygen but is capable of aerobic growth." []
 synonym: "facultative" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 synonym: "facultative aerobe" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000601 ! oxygen preference
+is_a: metpo:1000601 ! oxygen preference
 
 [Term]
-id: https://w3id.org/metpo/1000609
+id: metpo:1000609
 name: aerotolerant
 def: "A microbial oxygen preference phenotype that does not use O₂ for growth but tolerates its presence." []
 synonym: "aerotolerant" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000601 ! oxygen preference
+is_a: metpo:1000601 ! oxygen preference
 
 [Term]
-id: https://w3id.org/metpo/1000610
+id: metpo:1000610
 name: microaerotolerant
 def: "A microbial oxygen preference phenotype that tolerates low levels of molecular oxygen (O₂) without requiring it." []
 synonym: "microaerotolerant" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000601 ! oxygen preference
+is_a: metpo:1000601 ! oxygen preference
 
 [Term]
-id: https://w3id.org/metpo/1000611
+id: metpo:1000611
 name: strictly anaerobic
 def: "A microbial oxygen preference phenotype reported as “strictly anaerobic” in Madin; modeled distinctly and placed under obligately anaerobic." []
 synonym: "strictly anaerobic" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000607 ! obligately anaerobic
+is_a: metpo:1000607 ! obligately anaerobic
 
 [Term]
-id: https://w3id.org/metpo/1000612
+id: metpo:1000612
 name: facultative oxygen preference
 def: "A microbial oxygen preference phenotype reported generically as “facultative” (no direction specified); kept as its own class to avoid collapsing specific subclasses." []
 synonym: "Ox_facultative_aerobe_anaerobe" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000601 ! oxygen preference
+is_a: metpo:1000601 ! oxygen preference
 
 [Term]
-id: https://w3id.org/metpo/1000613
+id: metpo:1000613
 name: temperature preference
 def: "A microbial phenotype describing characteristic growth with respect to environmental temperature (e.g., preference classes such as psychrophilic, mesophilic, thermophilic, hyperthermophilic)." []
 synonym: "General.keywords" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 synonym: "Physiology and metabolism.culture temp.temperature" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 synonym: "range_tmp" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000059 ! phenotype
+is_a: metpo:1000059 ! phenotype
 
 [Term]
-id: https://w3id.org/metpo/1000614
+id: metpo:1000614
 name: psychrophilic
 def: "A temperature preference phenotype in which growth is favored at low temperatures, typically near or below ~15 °C." []
 synonym: "psychrophilic" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 synonym: "psychrophilic" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000613 ! temperature preference
+is_a: metpo:1000613 ! temperature preference
 
 [Term]
-id: https://w3id.org/metpo/1000615
+id: metpo:1000615
 name: mesophilic
 def: "A temperature preference phenotype in which growth is favored at intermediate temperatures, typically ~20–45 °C." []
 synonym: "mesophilic" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 synonym: "mesophilic" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000613 ! temperature preference
+is_a: metpo:1000613 ! temperature preference
 
 [Term]
-id: https://w3id.org/metpo/1000616
+id: metpo:1000616
 name: thermophilic
 def: "A temperature preference phenotype in which growth is favored at elevated temperatures, typically ≥45 °C." []
 synonym: "thermophilic" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 synonym: "thermophilic" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000613 ! temperature preference
+is_a: metpo:1000613 ! temperature preference
 
 [Term]
-id: https://w3id.org/metpo/1000617
+id: metpo:1000617
 name: hyperthermophilic
 def: "A temperature preference phenotype in which growth is favored at very high temperatures, typically ≥80 °C." []
 synonym: "extreme thermophilic" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 synonym: "hyperthermophilic" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000613 ! temperature preference
+is_a: metpo:1000613 ! temperature preference
 
 [Term]
-id: https://w3id.org/metpo/1000618
+id: metpo:1000618
 name: psychrotolerant
 def: "A temperature tolerance phenotype in which growth can occur at low temperatures without an obligate low-temperature preference." []
 synonym: "psychrotolerant" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000613 ! temperature preference
+is_a: metpo:1000613 ! temperature preference
 
 [Term]
-id: https://w3id.org/metpo/1000619
+id: metpo:1000619
 name: thermotolerant
 def: "A temperature tolerance phenotype in which growth can occur at elevated temperatures without an obligate high-temperature preference." []
 synonym: "thermotolerant" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000613 ! temperature preference
+is_a: metpo:1000613 ! temperature preference
 
 [Term]
-id: https://w3id.org/metpo/1000620
+id: metpo:1000620
 name: halophilic
 synonym: "halophilic" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 synonym: "halophilic" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000629 ! halophily preference
+is_a: metpo:1000629 ! halophily preference
 
 [Term]
-id: https://w3id.org/metpo/1000621
+id: metpo:1000621
 name: haloalkaliphilic
 synonym: "haloalkaliphilic" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000629 ! halophily preference
+is_a: metpo:1000629 ! halophily preference
 
 [Term]
-id: https://w3id.org/metpo/1000622
+id: metpo:1000622
 name: halotolerant
 synonym: "halotolerant" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 synonym: "halotolerant" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000629 ! halophily preference
+is_a: metpo:1000629 ! halophily preference
 
 [Term]
-id: https://w3id.org/metpo/1000623
+id: metpo:1000623
 name: moderately halophilic
 synonym: "moderate-halophilic" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 synonym: "moderately halophilic" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000629 ! halophily preference
+is_a: metpo:1000629 ! halophily preference
 
 [Term]
-id: https://w3id.org/metpo/1000624
+id: metpo:1000624
 name: non halophilic
 synonym: "non-halophilic" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 synonym: "non-halophilic" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000629 ! halophily preference
+is_a: metpo:1000629 ! halophily preference
 
 [Term]
-id: https://w3id.org/metpo/1000625
+id: metpo:1000625
 name: slightly halophilic
 synonym: "slightly halophilic" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000629 ! halophily preference
+is_a: metpo:1000629 ! halophily preference
 
 [Term]
-id: https://w3id.org/metpo/1000626
+id: metpo:1000626
 name: stenohaline
 synonym: "stenohaline" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000629 ! halophily preference
+is_a: metpo:1000629 ! halophily preference
 
 [Term]
-id: https://w3id.org/metpo/1000627
+id: metpo:1000627
 name: euryhaline
 synonym: "euryhaline" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000629 ! halophily preference
+is_a: metpo:1000629 ! halophily preference
 
 [Term]
-id: https://w3id.org/metpo/1000628
+id: metpo:1000628
 name: extremely halophilic
 synonym: "extreme-halophilic" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 synonym: "extremely halophilic" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000629 ! halophily preference
+is_a: metpo:1000629 ! halophily preference
 
 [Term]
-id: https://w3id.org/metpo/1000629
+id: metpo:1000629
 name: halophily preference
 synonym: "General.keywords" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 synonym: "Physiology and metabolism.halophily.halophily level" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 synonym: "range_salinity" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000059 ! phenotype
+is_a: metpo:1000059 ! phenotype
 
 [Term]
-id: https://w3id.org/metpo/1000630
+id: metpo:1000630
 name: biological process
 def: "The execution of a genetically-encoded biological module or program. It consists of all the steps required to achieve the specific biological objective of the module. A biological process is accomplished by a particular set of molecular functions carried out by specific gene products (or macromolecular complexes), often in a highly regulated manner and in a particular temporal sequence." [] {IAO:0000119="GO:0008150"}
 
 [Term]
-id: https://w3id.org/metpo/1000631
+id: metpo:1000631
 name: trophic type
 def: "The quality of how an organism obtains its carbon and energy." []
 synonym: "General.keywords" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 synonym: "nutritional type" RELATED []
 synonym: "pathways" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 synonym: "Physiology and metabolism.nutrition type.type" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000059 ! phenotype
+is_a: metpo:1000059 ! phenotype
 
 [Term]
-id: https://w3id.org/metpo/1000632
+id: metpo:1000632
 name: autotrophic
 synonym: "autotroph" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 synonym: "autotrophy" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000631 ! trophic type
+synonym: "TT_autotroph" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
+is_a: metpo:1000631 ! trophic type
 
 [Term]
-id: https://w3id.org/metpo/1000633
+id: metpo:1000633
 name: carboxydotrophic
-is_a: https://w3id.org/metpo/1000631 ! trophic type
+is_a: metpo:1000631 ! trophic type
 
 [Term]
-id: https://w3id.org/metpo/1000634
+id: metpo:1000634
 name: chemoautolithotrophic
 synonym: "chemoautolithotroph" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000631 ! trophic type
+is_a: metpo:1000631 ! trophic type
 
 [Term]
-id: https://w3id.org/metpo/1000635
+id: metpo:1000635
 name: chemoautotrophic
 synonym: "chemoautotroph" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000631 ! trophic type
+is_a: metpo:1000631 ! trophic type
 
 [Term]
-id: https://w3id.org/metpo/1000636
+id: metpo:1000636
 name: chemoheterotrophic
 synonym: "aerobic_chemo_heterotrophy" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 synonym: "chemoheterotroph" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000631 ! trophic type
+is_a: metpo:1000631 ! trophic type
 
 [Term]
-id: https://w3id.org/metpo/1000637
+id: metpo:1000637
 name: chemolithoautotrophic
 synonym: "chemolithoautotroph" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000631 ! trophic type
+is_a: metpo:1000631 ! trophic type
 
 [Term]
-id: https://w3id.org/metpo/1000638
+id: metpo:1000638
 name: chemolithoheterotrophic
 synonym: "chemolithoheterotroph" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000631 ! trophic type
+is_a: metpo:1000631 ! trophic type
 
 [Term]
-id: https://w3id.org/metpo/1000639
+id: metpo:1000639
 name: chemolithotrophic
 synonym: "chemolithotroph" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000631 ! trophic type
+is_a: metpo:1000631 ! trophic type
 
 [Term]
-id: https://w3id.org/metpo/1000640
+id: metpo:1000640
 name: chemoorganoheterotrophic
 synonym: "chemoorganoheterotroph" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000631 ! trophic type
+is_a: metpo:1000631 ! trophic type
 
 [Term]
-id: https://w3id.org/metpo/1000641
+id: metpo:1000641
 name: chemotrophic
 synonym: "chemotroph" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000631 ! trophic type
+synonym: "TT_chemotroph" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
+is_a: metpo:1000631 ! trophic type
 
 [Term]
-id: https://w3id.org/metpo/1000642
+id: metpo:1000642
 name: copiotrophic
 synonym: "copiotroph" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000731 ! nutrient adaptation
+is_a: metpo:1000731 ! nutrient adaptation
 
 [Term]
-id: https://w3id.org/metpo/1000644
+id: metpo:1000644
 name: heterotrophic
 synonym: "aerobic_heterotrophy" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 synonym: "heterotroph" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 synonym: "heterotrophic" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000631 ! trophic type
+synonym: "TT_heterotroph" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
+is_a: metpo:1000631 ! trophic type
 
 [Term]
-id: https://w3id.org/metpo/1000646
+id: metpo:1000646
 name: hydrogenotrophic
-is_a: https://w3id.org/metpo/1000631 ! trophic type
+is_a: metpo:1000631 ! trophic type
 
 [Term]
-id: https://w3id.org/metpo/1000647
+id: metpo:1000647
 name: lithoautotrophic
 synonym: "lithoautotroph" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000631 ! trophic type
+is_a: metpo:1000631 ! trophic type
 
 [Term]
-id: https://w3id.org/metpo/1000648
+id: metpo:1000648
 name: lithoheterotrophic
 synonym: "lithoheterotroph" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000631 ! trophic type
+is_a: metpo:1000631 ! trophic type
 
 [Term]
-id: https://w3id.org/metpo/1000649
+id: metpo:1000649
 name: lithotrophic
 synonym: "lithotroph" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000631 ! trophic type
+synonym: "TT_lithotroph" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
+is_a: metpo:1000631 ! trophic type
 
 [Term]
-id: https://w3id.org/metpo/1000650
+id: metpo:1000650
 name: methanotrophic
 synonym: "methanotroph" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000631 ! trophic type
+is_a: metpo:1000631 ! trophic type
 
 [Term]
-id: https://w3id.org/metpo/1000651
+id: metpo:1000651
 name: methylotrophic
 synonym: "methylotroph" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 synonym: "methylotrophy" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000631 ! trophic type
+synonym: "TT_methylotroph" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
+is_a: metpo:1000631 ! trophic type
 
 [Term]
-id: https://w3id.org/metpo/1000652
+id: metpo:1000652
 name: mixotrophic
 synonym: "mixotroph" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000631 ! trophic type
+is_a: metpo:1000631 ! trophic type
 
 [Term]
-id: https://w3id.org/metpo/1000654
+id: metpo:1000654
 name: oligotrophic
 synonym: "oligotroph" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000731 ! nutrient adaptation
+synonym: "TT_oligotroph" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
+is_a: metpo:1000731 ! nutrient adaptation
 
 [Term]
-id: https://w3id.org/metpo/1000655
+id: metpo:1000655
 name: organotrophic
 synonym: "organotroph" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000631 ! trophic type
+synonym: "TT_organotroph" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
+is_a: metpo:1000631 ! trophic type
 
 [Term]
-id: https://w3id.org/metpo/1000656
+id: metpo:1000656
 name: photoautotrophic
 synonym: "anoxygenic_photoautotrophy" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 synonym: "anoxygenic_photoautotrophy_hydrogen_oxidation" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
@@ -939,1372 +1070,1527 @@ synonym: "anoxygenic_photoautotrophy_iron_oxidation" RELATED [] {IAO:0000119="ht
 synonym: "anoxygenic_photoautotrophy_sulfur_oxidation" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 synonym: "photoautotroph" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 synonym: "photoautotrophy" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000631 ! trophic type
+is_a: metpo:1000631 ! trophic type
 
 [Term]
-id: https://w3id.org/metpo/1000657
+id: metpo:1000657
 name: photoheterotrophic
 synonym: "photoheterotroph" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 synonym: "photoheterotrophy" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000631 ! trophic type
+is_a: metpo:1000631 ! trophic type
 
 [Term]
-id: https://w3id.org/metpo/1000658
+id: metpo:1000658
 name: photolithotrophic
 synonym: "photolithotroph" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000631 ! trophic type
+is_a: metpo:1000631 ! trophic type
 
 [Term]
-id: https://w3id.org/metpo/1000659
+id: metpo:1000659
 name: photoorganoheterotrophic
 synonym: "photoorganoheterotroph" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000631 ! trophic type
+is_a: metpo:1000631 ! trophic type
 
 [Term]
-id: https://w3id.org/metpo/1000660
+id: metpo:1000660
 name: phototrophic
 synonym: "aerobic_anoxygenic_phototrophy" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 synonym: "phototroph" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000631 ! trophic type
+synonym: "TT_phototroph" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
+is_a: metpo:1000631 ! trophic type
 
 [Term]
-id: https://w3id.org/metpo/1000663
+id: metpo:1000663
 name: chemoorganotrophic
 synonym: "chemoorganotroph" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000631 ! trophic type
+is_a: metpo:1000631 ! trophic type
 
 [Term]
-id: https://w3id.org/metpo/1000664
+id: metpo:1000664
 name: organoheterotrophic
 synonym: "organoheterotroph" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000631 ! trophic type
+is_a: metpo:1000631 ! trophic type
 
 [Term]
-id: https://w3id.org/metpo/1000665
+id: metpo:1000665
 name: photolithoautotrophic
 synonym: "photolithoautotroph" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000631 ! trophic type
+is_a: metpo:1000631 ! trophic type
 
 [Term]
-id: https://w3id.org/metpo/1000666
+id: metpo:1000666
 name: cell shape
 synonym: "cell_shape" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 synonym: "General.keywords" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 synonym: "Morphology.cell morphology.cell shape" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000059 ! phenotype
+is_a: metpo:1000059 ! phenotype
 
 [Term]
-id: https://w3id.org/metpo/1000667
+id: metpo:1000667
 name: bacillus shaped
 synonym: "bacillus" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000666 ! cell shape
+is_a: metpo:1000666 ! cell shape
 
 [Term]
-id: https://w3id.org/metpo/1000668
+id: metpo:1000668
 name: coccus shaped
 synonym: "coccus" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 synonym: "coccus-shaped" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000666 ! cell shape
+is_a: metpo:1000666 ! cell shape
 
 [Term]
-id: https://w3id.org/metpo/1000669
+id: metpo:1000669
 name: crescent shaped
 synonym: "crescent-shaped" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000666 ! cell shape
+is_a: metpo:1000666 ! cell shape
 
 [Term]
-id: https://w3id.org/metpo/1000670
+id: metpo:1000670
 name: curved shaped
+synonym: " S_curved_spiral" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
 synonym: "curved-shaped" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-synonym: "s_curved_spiral" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000666 ! cell shape
+is_a: metpo:1000666 ! cell shape
 
 [Term]
-id: https://w3id.org/metpo/1000671
+id: metpo:1000671
 name: diplococcus shaped
 synonym: "diplococcus-shaped" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000666 ! cell shape
+is_a: metpo:1000666 ! cell shape
 
 [Term]
-id: https://w3id.org/metpo/1000672
+id: metpo:1000672
 name: dumbbell shaped
 synonym: "dumbbell-shaped" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-synonym: "s_star_dumbbell_pleomorphic" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000666 ! cell shape
+synonym: "S_star_dumbbell_pleomorphic" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
+is_a: metpo:1000666 ! cell shape
 
 [Term]
-id: https://w3id.org/metpo/1000673
+id: metpo:1000673
 name: ellipsoidal
 synonym: "ellipsoidal" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000666 ! cell shape
+is_a: metpo:1000666 ! cell shape
 
 [Term]
-id: https://w3id.org/metpo/1000674
+id: metpo:1000674
 name: filament shaped
+synonym: " S_filament" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
 synonym: "filament" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 synonym: "filament-shaped" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-synonym: "s_filament" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000666 ! cell shape
+is_a: metpo:1000666 ! cell shape
 
 [Term]
-id: https://w3id.org/metpo/1000675
+id: metpo:1000675
 name: flask shaped
 synonym: "flask" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 synonym: "flask-shaped" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000666 ! cell shape
+is_a: metpo:1000666 ! cell shape
 
 [Term]
-id: https://w3id.org/metpo/1000676
+id: metpo:1000676
 name: helical shaped
 synonym: "helical-shaped" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000666 ! cell shape
+is_a: metpo:1000666 ! cell shape
 
 [Term]
-id: https://w3id.org/metpo/1000677
+id: metpo:1000677
 name: ovoid shaped
+synonym: " S_ovoid" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
 synonym: "ovoid-shaped" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-synonym: "s_ovoid" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000666 ! cell shape
+is_a: metpo:1000666 ! cell shape
 
 [Term]
-id: https://w3id.org/metpo/1000678
+id: metpo:1000678
 name: oval shaped
 synonym: "oval-shaped" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000666 ! cell shape
+is_a: metpo:1000666 ! cell shape
 
 [Term]
-id: https://w3id.org/metpo/1000679
+id: metpo:1000679
 name: pleomorphic shaped
 synonym: "pleomorphic" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 synonym: "pleomorphic-shaped" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-synonym: "s_star_dumbbell_pleomorphic" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000666 ! cell shape
+synonym: "S_star_dumbbell_pleomorphic" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
+is_a: metpo:1000666 ! cell shape
 
 [Term]
-id: https://w3id.org/metpo/1000680
+id: metpo:1000680
 name: ring shaped
 synonym: "ring" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 synonym: "ring-shaped" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000666 ! cell shape
+is_a: metpo:1000666 ! cell shape
 
 [Term]
-id: https://w3id.org/metpo/1000681
+id: metpo:1000681
 name: rod shaped
+synonym: " S_rod" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
 synonym: "rod-shaped" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-synonym: "s_rod" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000666 ! cell shape
+is_a: metpo:1000666 ! cell shape
 
 [Term]
-id: https://w3id.org/metpo/1000682
+id: metpo:1000682
 name: spore shaped
 synonym: "spore-shaped" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000666 ! cell shape
+is_a: metpo:1000666 ! cell shape
 
 [Term]
-id: https://w3id.org/metpo/1000683
+id: metpo:1000683
 name: sphere shaped
-synonym: "s_sphere" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
+synonym: " S_sphere" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
 synonym: "sphere-shaped" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000666 ! cell shape
+is_a: metpo:1000666 ! cell shape
 
 [Term]
-id: https://w3id.org/metpo/1000684
+id: metpo:1000684
 name: spiral shaped
-synonym: "s_curved_spiral" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
+synonym: " S_curved_spiral" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
 synonym: "spiral" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 synonym: "spiral-shaped" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000666 ! cell shape
+is_a: metpo:1000666 ! cell shape
 
 [Term]
-id: https://w3id.org/metpo/1000685
+id: metpo:1000685
 name: star shaped
-synonym: "s_star_dumbbell_pleomorphic" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
+synonym: "S_star_dumbbell_pleomorphic" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
 synonym: "star" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 synonym: "star-shaped" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000666 ! cell shape
+is_a: metpo:1000666 ! cell shape
 
 [Term]
-id: https://w3id.org/metpo/1000686
+id: metpo:1000686
 name: vibrio shaped
 synonym: "vibrio" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 synonym: "vibrio-shaped" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000666 ! cell shape
+is_a: metpo:1000666 ! cell shape
 
 [Term]
-id: https://w3id.org/metpo/1000687
+id: metpo:1000687
 name: branched shaped
 synonym: "branced" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000666 ! cell shape
+is_a: metpo:1000666 ! cell shape
 
 [Term]
-id: https://w3id.org/metpo/1000688
+id: metpo:1000688
 name: coccobacillus shaped
 synonym: "coccobacillus" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000666 ! cell shape
+is_a: metpo:1000666 ! cell shape
 
 [Term]
-id: https://w3id.org/metpo/1000689
+id: metpo:1000689
 name: disc shaped
 synonym: "disc" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000666 ! cell shape
+is_a: metpo:1000666 ! cell shape
 
 [Term]
-id: https://w3id.org/metpo/1000690
+id: metpo:1000690
 name: fusiform shaped
 synonym: "fusiform" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000666 ! cell shape
+is_a: metpo:1000666 ! cell shape
 
 [Term]
-id: https://w3id.org/metpo/1000691
+id: metpo:1000691
 name: irregular shaped
 synonym: "irregular" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000666 ! cell shape
+is_a: metpo:1000666 ! cell shape
 
 [Term]
-id: https://w3id.org/metpo/1000692
+id: metpo:1000692
 name: spindle shaped
 synonym: "spindle" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000666 ! cell shape
+is_a: metpo:1000666 ! cell shape
 
 [Term]
-id: https://w3id.org/metpo/1000693
+id: metpo:1000693
 name: spirochete shaped
 synonym: "spirochete" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000666 ! cell shape
+is_a: metpo:1000666 ! cell shape
 
 [Term]
-id: https://w3id.org/metpo/1000694
+id: metpo:1000694
 name: square shaped
 synonym: "square" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000666 ! cell shape
+is_a: metpo:1000666 ! cell shape
 
 [Term]
-id: https://w3id.org/metpo/1000695
+id: metpo:1000695
 name: tailed shaped
 synonym: "tailed" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000666 ! cell shape
+is_a: metpo:1000666 ! cell shape
 
 [Term]
-id: https://w3id.org/metpo/1000696
+id: metpo:1000696
 name: triangular shaped
 synonym: "triangular" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000666 ! cell shape
+is_a: metpo:1000666 ! cell shape
 
 [Term]
-id: https://w3id.org/metpo/1000697
+id: metpo:1000697
 name: gram stain
 synonym: "General.keywords" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 synonym: "gram_stain" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 synonym: "Morphology.cell morphology.gram stain" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000059 ! phenotype
+is_a: metpo:1000059 ! phenotype
 
 [Term]
-id: https://w3id.org/metpo/1000698
+id: metpo:1000698
 name: gram positive
 synonym: "G_positive" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
 synonym: "positive" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 synonym: "positive" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000697 ! gram stain
+is_a: metpo:1000697 ! gram stain
 
 [Term]
-id: https://w3id.org/metpo/1000699
+id: metpo:1000699
 name: gram negative
 synonym: "G_negative" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
 synonym: "negative" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 synonym: "negative" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000697 ! gram stain
+is_a: metpo:1000697 ! gram stain
 
 [Term]
-id: https://w3id.org/metpo/1000700
+id: metpo:1000700
 name: gram variable
 synonym: "variable" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000697 ! gram stain
+is_a: metpo:1000697 ! gram stain
 
 [Term]
-id: https://w3id.org/metpo/1000701
+id: metpo:1000701
 name: motility
 synonym: "General.keywords" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 synonym: "Morphology.cell morphology.motility" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 synonym: "motility" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000059 ! phenotype
+is_a: metpo:1000059 ! phenotype
 
 [Term]
-id: https://w3id.org/metpo/1000702
+id: metpo:1000702
 name: motile
 synonym: "motile" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
 synonym: "yes" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 synonym: "yes" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/1000701 ! motility
+is_a: metpo:1000701 ! motility
 
 [Term]
-id: https://w3id.org/metpo/1000703
+id: metpo:1000703
 name: non motile
 synonym: "no" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 synonym: "no" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-synonym: "non- motile" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
-is_a: https://w3id.org/metpo/1000701 ! motility
+synonym: "non-motile" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
+is_a: metpo:1000701 ! motility
 
 [Term]
-id: https://w3id.org/metpo/1000704
+id: metpo:1000704
 name: flagellated
 synonym: "flagella" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000702 ! motile
+is_a: metpo:1000702 ! motile
 
 [Term]
-id: https://w3id.org/metpo/1000705
+id: metpo:1000705
 name: axially filamented
 synonym: "axial filament" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000702 ! motile
+is_a: metpo:1000702 ! motile
 
 [Term]
-id: https://w3id.org/metpo/1000706
+id: metpo:1000706
 name: gliding
 synonym: "gliding" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000702 ! motile
+is_a: metpo:1000702 ! motile
 
 [Term]
-id: https://w3id.org/metpo/1000720
+id: metpo:1000720
 name: facultative psychrophilic
 synonym: "facultative psychrophile" RELATED []
 synonym: "facultative psychrophilic" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000613 ! temperature preference
+is_a: metpo:1000613 ! temperature preference
 
 [Term]
-id: https://w3id.org/metpo/1000721
+id: metpo:1000721
 name: extreme hyperthermophilic
 def: "A microorganism that grows optimally at temperatures above 90°C." []
 synonym: "extreme hyperthermophile" RELATED []
 synonym: "extremely hyperthermophilic" RELATED []
-is_a: https://w3id.org/metpo/1000613 ! temperature preference
+is_a: metpo:1000613 ! temperature preference
 
 [Term]
-id: https://w3id.org/metpo/1000731
+id: metpo:1000731
 name: nutrient adaptation
-is_a: https://w3id.org/metpo/1000631 ! trophic type
+is_a: metpo:1000631 ! trophic type
 
 [Term]
-id: https://w3id.org/metpo/1000800
+id: metpo:1000800
 name: respiration
 def: "An organism's observable and characteristic method of performing cellular respiration, distinguished primarily by the specific terminal electron acceptor its metabolic pathways utilize for the purpose of producing cellular energy." []
 synonym: "pathways" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000060 ! metabolism
+is_a: metpo:1000060 ! metabolism
 
 [Term]
-id: https://w3id.org/metpo/1000801
+id: metpo:1000801
 name: Aerobic respiration
 synonym: "Oxic respiration" RELATED []
 synonym: "Oxygen respiration" RELATED []
-is_a: https://w3id.org/metpo/1000800 ! respiration
+is_a: metpo:1000800 ! respiration
 
 [Term]
-id: https://w3id.org/metpo/1000802
+id: metpo:1000802
 name: Anaerobic respiration
 synonym: "Anoxic respiration" RELATED []
 synonym: "Dissimilatory respiration (non-O₂)" RELATED []
-is_a: https://w3id.org/metpo/1000800 ! respiration
+is_a: metpo:1000800 ! respiration
 
 [Term]
-id: https://w3id.org/metpo/1000803
+id: metpo:1000803
 name: Oxidative phosphorylation
-is_a: https://w3id.org/metpo/1000060 ! metabolism
+is_a: metpo:1000060 ! metabolism
 
 [Term]
-id: https://w3id.org/metpo/1000804
+id: metpo:1000804
 name: Substrate-level phosphorylation
-is_a: https://w3id.org/metpo/1000060 ! metabolism
+is_a: metpo:1000060 ! metabolism
 
 [Term]
-id: https://w3id.org/metpo/1000805
+id: metpo:1000805
 name: Electron transfer
-is_a: https://w3id.org/metpo/1000060 ! metabolism
+is_a: metpo:1000060 ! metabolism
 
 [Term]
-id: https://w3id.org/metpo/1000806
+id: metpo:1000806
 name: Disproportionation
-is_a: https://w3id.org/metpo/1000060 ! metabolism
+is_a: metpo:1000060 ! metabolism
 
 [Term]
-id: https://w3id.org/metpo/1000844
+id: metpo:1000844
 name: Methanogenesis
 synonym: "Biological methanation" RELATED []
 synonym: "Biomethanation" RELATED []
 synonym: "Carbonate respiration" RELATED []
 synonym: "methanogenesis" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000060 ! metabolism
+is_a: metpo:1000060 ! metabolism
 
 [Term]
-id: https://w3id.org/metpo/1000845
+id: metpo:1000845
 name: Acetogenesis
 synonym: "Acetate fermentation" RELATED []
 synonym: "acetogenesis" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000060 ! metabolism
+is_a: metpo:1000060 ! metabolism
 
 [Term]
-id: https://w3id.org/metpo/1000846
+id: metpo:1000846
 name: Homoacetogenesis
 synonym: "Reductive acetyl-CoA pathway" RELATED []
 synonym: "Wood-Ljungdahl pathway" RELATED []
-is_a: https://w3id.org/metpo/1000060 ! metabolism
+is_a: metpo:1000060 ! metabolism
 
 [Term]
-id: https://w3id.org/metpo/1000870
+id: metpo:1000870
 name: sporulation
-synonym: "General.keywords" RELATED []
-synonym: "Physiology and metabolism.spore formation.spore formation" RELATED []
+synonym: "General.keywords" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
+synonym: "Physiology and metabolism.spore formation.spore formation" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 synonym: "sporulation" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000059 ! phenotype
+is_a: metpo:1000059 ! phenotype
 
 [Term]
-id: https://w3id.org/metpo/1000871
+id: metpo:1000871
 name: spore forming
+synonym: "spore" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
 synonym: "yes" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000870 ! sporulation
+synonym: "yes" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
+is_a: metpo:1000870 ! sporulation
 
 [Term]
-id: https://w3id.org/metpo/1000872
+id: metpo:1000872
 name: non-spore forming
+synonym: "no" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 synonym: "no" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000870 ! sporulation
+synonym: "no_spore" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
+is_a: metpo:1000870 ! sporulation
 
 [Term]
-id: https://w3id.org/metpo/1001000
+id: metpo:1000881
+name: cell length
+def: "A quality of a cell relating to its measurement from end to end." []
+is_a: metpo:1000059 ! phenotype
+
+[Term]
+id: metpo:1000882
+name: cell width
+def: "A quality of a cell relating to its measurement from side to side." []
+is_a: metpo:1000059 ! phenotype
+
+[Term]
+id: metpo:1000883
+name: cell length very small
+def: "A cell length quality of being less than or equal to 1.3 micrometers." []
+synonym: "L_<=1.3" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
+is_a: metpo:1000881 ! cell length
+property_value: metpo:range_max "1.3" xsd:string
+property_value: qudt:ucumCode "um" xsd:string
+
+[Term]
+id: metpo:1000884
+name: cell length small
+def: "A cell length quality of being between 1.3 and 2 micrometers." []
+synonym: " L_1.3_2" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
+is_a: metpo:1000881 ! cell length
+property_value: metpo:range_max "2" xsd:string
+property_value: metpo:range_min "1.3" xsd:string
+property_value: qudt:ucumCode "um" xsd:string
+
+[Term]
+id: metpo:1000885
+name: cell length medium
+def: "A cell length quality of being between 2 and 3 micrometers." []
+synonym: "L_2_3" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
+is_a: metpo:1000881 ! cell length
+property_value: metpo:range_max "3" xsd:string
+property_value: metpo:range_min "2" xsd:string
+property_value: qudt:ucumCode "um" xsd:string
+
+[Term]
+id: metpo:1000886
+name: cell length large
+def: "A cell length quality of being greater than 3 micrometers." []
+synonym: "L_>3" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
+is_a: metpo:1000881 ! cell length
+property_value: metpo:range_min "3" xsd:string
+property_value: qudt:ucumCode "um" xsd:string
+
+[Term]
+id: metpo:1000887
+name: cell width very small
+def: "A cell width quality of being less than or equal to 0.5 micrometers." []
+synonym: "W_<=0.5" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
+is_a: metpo:1000882 ! cell width
+property_value: metpo:range_max "0.5" xsd:string
+property_value: qudt:ucumCode "um" xsd:string
+
+[Term]
+id: metpo:1000888
+name: cell width small
+def: "A cell width quality of being between 0.5 and 0.65 micrometers." []
+synonym: " W_0.5_0.65" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
+is_a: metpo:1000882 ! cell width
+property_value: metpo:range_max "0.65" xsd:string
+property_value: metpo:range_min "0.5" xsd:string
+property_value: qudt:ucumCode "um" xsd:string
+
+[Term]
+id: metpo:1000889
+name: cell width medium
+def: "A cell width quality of being between 0.65 and 0.9 micrometers." []
+synonym: "W_0.65_0.9" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
+is_a: metpo:1000882 ! cell width
+property_value: metpo:range_max "0.9" xsd:string
+property_value: metpo:range_min "0.65" xsd:string
+property_value: qudt:ucumCode "um" xsd:string
+
+[Term]
+id: metpo:1000890
+name: cell width large
+def: "A cell width quality of being greater than 0.9 micrometers." []
+synonym: "W_>0.9" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
+is_a: metpo:1000882 ! cell width
+property_value: metpo:range_min "0.9" xsd:string
+property_value: qudt:ucumCode "um" xsd:string
+
+[Term]
+id: metpo:1001000
 name: observation
 def: "A recording of the output of a measurement such as produced by a device." [] {IAO:0000119="IAO:0000109"}
 
 [Term]
-id: https://w3id.org/metpo/1001001
+id: metpo:1001001
 name: optimum temperature observation
 def: "An observation specializing temperature observation for optimum temperature data." []
-is_a: https://w3id.org/metpo/1001000 ! observation
+is_a: metpo:1001000 ! observation
 
 [Term]
-id: https://w3id.org/metpo/1001002
+id: metpo:1001002
 name: growth temperature observation
 def: "An observation specializing temperature observation for general growth temperature data." []
-is_a: https://w3id.org/metpo/1001000 ! observation
+is_a: metpo:1001000 ! observation
 
 [Term]
-id: https://w3id.org/metpo/1001003
+id: metpo:1001003
 name: temperature range observation
 def: "An observation specializing temperature observation for growth temperature range data." []
-is_a: https://w3id.org/metpo/1001000 ! observation
+is_a: metpo:1001000 ! observation
 
 [Term]
-id: https://w3id.org/metpo/1001004
+id: metpo:1001004
 name: temperature delta observation
 def: "An observation specializing temperature observation for tolerance breadth (delta) data." []
-is_a: https://w3id.org/metpo/1001000 ! observation
+is_a: metpo:1001000 ! observation
 
 [Term]
-id: https://w3id.org/metpo/1001005
-name: culture temperature observation
-def: "An observation specializing temperature observation for culture temperature data (e.g., reported culture conditions)." []
-is_a: https://w3id.org/metpo/1001000 ! observation
-
-[Term]
-id: https://w3id.org/metpo/1001006
-name: culture NaCl observation
-is_a: https://w3id.org/metpo/1001000 ! observation
-
-[Term]
-id: https://w3id.org/metpo/1001007
+id: metpo:1001007
 name: growth NaCl observation
-is_a: https://w3id.org/metpo/1001000 ! observation
+is_a: metpo:1001000 ! observation
 
 [Term]
-id: https://w3id.org/metpo/1001008
+id: metpo:1001008
 name: NaCl delta observation
-is_a: https://w3id.org/metpo/1001000 ! observation
+is_a: metpo:1001000 ! observation
 
 [Term]
-id: https://w3id.org/metpo/1001009
+id: metpo:1001009
 name: NaCl range observation
-is_a: https://w3id.org/metpo/1001000 ! observation
+is_a: metpo:1001000 ! observation
 
 [Term]
-id: https://w3id.org/metpo/1001010
+id: metpo:1001010
 name: optimum NaCl observation
-is_a: https://w3id.org/metpo/1001000 ! observation
+is_a: metpo:1001000 ! observation
 
 [Term]
-id: https://w3id.org/metpo/1001011
-name: culture pH observation
-is_a: https://w3id.org/metpo/1001000 ! observation
-
-[Term]
-id: https://w3id.org/metpo/1001012
+id: metpo:1001012
 name: growth pH observation
-is_a: https://w3id.org/metpo/1001000 ! observation
+is_a: metpo:1001000 ! observation
 
 [Term]
-id: https://w3id.org/metpo/1001013
+id: metpo:1001013
 name: optimum pH observation
-is_a: https://w3id.org/metpo/1001000 ! observation
+is_a: metpo:1001000 ! observation
 
 [Term]
-id: https://w3id.org/metpo/1001014
+id: metpo:1001014
 name: pH delta observation
-is_a: https://w3id.org/metpo/1001000 ! observation
+is_a: metpo:1001000 ! observation
 
 [Term]
-id: https://w3id.org/metpo/1001015
+id: metpo:1001015
 name: pH range observation
-is_a: https://w3id.org/metpo/1001000 ! observation
+is_a: metpo:1001000 ! observation
 
 [Term]
-id: https://w3id.org/metpo/1001101
+id: metpo:1001016
+name: optimum oxygen observation
+is_a: metpo:1001000 ! observation
+
+[Term]
+id: metpo:1001017
+name: growth oxygen observation
+is_a: metpo:1001000 ! observation
+
+[Term]
+id: metpo:1001018
+name: oxygen range observation
+is_a: metpo:1001000 ! observation
+
+[Term]
+id: metpo:1001019
+name: oxygen delta observation
+is_a: metpo:1001000 ! observation
+
+[Term]
+id: metpo:1001020
+name: oxygen observation
+is_a: metpo:1001000 ! observation
+
+[Term]
+id: metpo:1001021
+name: temperature observation
+is_a: metpo:1001000 ! observation
+
+[Term]
+id: metpo:1001022
+name: NaCl observation
+is_a: metpo:1001000 ! observation
+
+[Term]
+id: metpo:1001023
+name: pH observation
+is_a: metpo:1001000 ! observation
+
+[Term]
+id: metpo:1001101
 name: biosafety level
-is_a: https://w3id.org/metpo/1000188 ! quality
+is_a: metpo:1000188 ! quality
 
 [Term]
-id: https://w3id.org/metpo/1001102
+id: metpo:1001102
 name: biosafety level 1
-is_a: https://w3id.org/metpo/1001101 ! biosafety level
+is_a: metpo:1001101 ! biosafety level
 
 [Term]
-id: https://w3id.org/metpo/1001103
+id: metpo:1001103
 name: biosafety level 2
-is_a: https://w3id.org/metpo/1001101 ! biosafety level
+is_a: metpo:1001101 ! biosafety level
 
 [Term]
-id: https://w3id.org/metpo/1001104
+id: metpo:1001104
 name: biosafety level 3
-is_a: https://w3id.org/metpo/1001101 ! biosafety level
+is_a: metpo:1001101 ! biosafety level
 
 [Term]
-id: https://w3id.org/metpo/1001105
+id: metpo:1001105
 name: biosafety level 4
-is_a: https://w3id.org/metpo/1001101 ! biosafety level
+is_a: metpo:1001101 ! biosafety level
 
 [Term]
-id: https://w3id.org/metpo/1002003
+id: metpo:1002003
 name: Cable bacteria metabolism
-is_a: https://w3id.org/metpo/1000060 ! metabolism
+is_a: metpo:1000060 ! metabolism
 
 [Term]
-id: https://w3id.org/metpo/1002005
+id: metpo:1002005
 name: Fermentation
 synonym: "fermentation" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: https://w3id.org/metpo/1000800 ! respiration
+is_a: metpo:1000800 ! respiration
 
 [Term]
-id: https://w3id.org/metpo/1002006
+id: metpo:1002006
 name: Syntrophy
-is_a: https://w3id.org/metpo/1000060 ! metabolism
+is_a: metpo:1000060 ! metabolism
 
 [Term]
-id: https://w3id.org/metpo/1003000
+id: metpo:1003000
 name: pH growth preference
-is_a: https://w3id.org/metpo/1000059 ! phenotype
+is_a: metpo:1000059 ! phenotype
 
 [Term]
-id: https://w3id.org/metpo/1003001
+id: metpo:1003001
 name: neutrophilic
 synonym: "neutralophile" EXACT []
 synonym: "neutralophilic" EXACT []
 synonym: "neutrophile" EXACT []
-is_a: https://w3id.org/metpo/1003000 ! pH growth preference
+is_a: metpo:1003000 ! pH growth preference
 
 [Term]
-id: https://w3id.org/metpo/1003002
+id: metpo:1003002
 name: alkaphilic
 synonym: "alkaliphile" EXACT []
 synonym: "alkaliphilic" EXACT []
 synonym: "alkalophile" EXACT []
 synonym: "alkalophilic" EXACT []
-is_a: https://w3id.org/metpo/1003000 ! pH growth preference
+is_a: metpo:1003000 ! pH growth preference
 
 [Term]
-id: https://w3id.org/metpo/1003003
+id: metpo:1003003
 name: acidophilic
 synonym: "acidophil" EXACT []
 synonym: "acidophile" EXACT []
-is_a: https://w3id.org/metpo/1003000 ! pH growth preference
+is_a: metpo:1003000 ! pH growth preference
 
 [Term]
-id: https://w3id.org/metpo/1003004
+id: metpo:1003004
 name: obligately alkaphilic
 synonym: "obligate alkaliphile" EXACT []
 synonym: "obligate alkaphilic" EXACT []
 synonym: "obligately alkaliphilic" EXACT []
-is_a: https://w3id.org/metpo/1003000 ! pH growth preference
+is_a: metpo:1003000 ! pH growth preference
 
 [Term]
-id: https://w3id.org/metpo/1003005
+id: metpo:1003005
 name: facultatively alkaphilic
 synonym: "facultative alkaliphile" EXACT []
 synonym: "facultative alkaphilic" EXACT []
 synonym: "facultatively alkaliphilic" EXACT []
-is_a: https://w3id.org/metpo/1003000 ! pH growth preference
+is_a: metpo:1003000 ! pH growth preference
 
 [Term]
-id: https://w3id.org/metpo/1003006
+id: metpo:1003006
 name: obligately acidophilic
 synonym: "obligate acidophile" EXACT []
 synonym: "obligately acidophilic" EXACT []
-is_a: https://w3id.org/metpo/1003000 ! pH growth preference
+is_a: metpo:1003000 ! pH growth preference
 
 [Term]
-id: https://w3id.org/metpo/1003007
+id: metpo:1003007
 name: facultatively acidophilic
 synonym: "facultative acidophile" EXACT []
 synonym: "facultatively acidophilic" EXACT []
-is_a: https://w3id.org/metpo/1003000 ! pH growth preference
+is_a: metpo:1003000 ! pH growth preference
 
 [Term]
-id: https://w3id.org/metpo/1003008
+id: metpo:1003008
 name: acidotolerant
 synonym: "aciduric" EXACT []
-is_a: https://w3id.org/metpo/1003000 ! pH growth preference
+is_a: metpo:1003000 ! pH growth preference
 
 [Term]
-id: https://w3id.org/metpo/1003009
+id: metpo:1003009
 name: alkalotolerant
 synonym: "alkalitolerant" EXACT []
-is_a: https://w3id.org/metpo/1003000 ! pH growth preference
+is_a: metpo:1003000 ! pH growth preference
+
+[Term]
+id: metpo:1003021
+name: pigmentation
+def: "A phenotype characterized by the color of pigments produced by a microorganism." []
+is_a: metpo:1000059 ! phenotype
+
+[Term]
+id: metpo:1003022
+name: black pigmented
+def: "A phenotype characterized by the production of black-colored pigments." []
+synonym: "Pigment_black" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
+is_a: metpo:1003021 ! pigmentation
+
+[Term]
+id: metpo:1003023
+name: brown pigmented
+def: "A phenotype characterized by the production of brown-colored pigments." []
+synonym: "Pigment_brown" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
+is_a: metpo:1003021 ! pigmentation
+
+[Term]
+id: metpo:1003024
+name: cream pigmented
+def: "A phenotype characterized by the production of cream-colored pigments." []
+synonym: "Pigment_cream" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
+is_a: metpo:1003021 ! pigmentation
+
+[Term]
+id: metpo:1003025
+name: green pigmented
+def: "A phenotype characterized by the production of green-colored pigments." []
+synonym: "Pigment_green" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
+is_a: metpo:1003021 ! pigmentation
+
+[Term]
+id: metpo:1003026
+name: orange pigmented
+def: "A phenotype characterized by the production of orange-colored pigments." []
+synonym: "Pigment_orange" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
+is_a: metpo:1003021 ! pigmentation
+
+[Term]
+id: metpo:1003027
+name: pink pigmented
+def: "A phenotype characterized by the production of pink-colored pigments." []
+synonym: "Pigment_pink" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
+is_a: metpo:1003021 ! pigmentation
+
+[Term]
+id: metpo:1003028
+name: red pigmented
+def: "A phenotype characterized by the production of red-colored pigments." []
+synonym: "Pigment_red" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
+is_a: metpo:1003021 ! pigmentation
+
+[Term]
+id: metpo:1003029
+name: white pigmented
+def: "A phenotype characterized by the production of white-colored pigments." []
+synonym: "Pigment_white" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
+is_a: metpo:1003021 ! pigmentation
+
+[Term]
+id: metpo:1003030
+name: yellow pigmented
+def: "A phenotype characterized by the production of yellow-colored pigments." []
+synonym: "Pigment_yellow" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
+is_a: metpo:1003021 ! pigmentation
+
+[Term]
+id: metpo:1003031
+name: carotenoid pigmentation
+def: "A phenotype characterized by the production of carotenoid pigments." []
+synonym: "Pigment_carotenoid" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
+is_a: metpo:1003021 ! pigmentation
 
 [Typedef]
-id: https://w3id.org/metpo/2000001
+id: metpo:2000001
 name: organism interacts with chemical
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1000526 ! chemical entity
+domain: metpo:1000525 ! microbe
+range: metpo:1000526 ! chemical entity
 
 [Typedef]
-id: https://w3id.org/metpo/2000002
+id: metpo:2000002
 name: assimilates
 synonym: "assimilation" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000003
+id: metpo:2000003
 name: builds acid from
 synonym: "builds acid from" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000004
+id: metpo:2000004
 name: builds base from
 synonym: "builds base from" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000005
+id: metpo:2000005
 name: builds gas from
 synonym: "builds gas from" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000006
+id: metpo:2000006
 name: uses as carbon source
 synonym: "carbon source" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000007
+id: metpo:2000007
 name: degrades
 synonym: "degradation" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000008
+id: metpo:2000008
 name: uses as electron acceptor
 synonym: "electron acceptor" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000009
+id: metpo:2000009
 name: uses as electron donor
 synonym: "electron donor" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000010
+id: metpo:2000010
 name: uses as energy source
 synonym: "energy source" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000011
+id: metpo:2000011
 name: ferments
 synonym: "fermentation" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000012
+id: metpo:2000012
 name: uses for growth
 synonym: "growth" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000013
+id: metpo:2000013
 name: hydrolyzes
 synonym: "hydrolysis" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000014
+id: metpo:2000014
 name: uses as nitrogen source
 synonym: "nitrogen source" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000015
+id: metpo:2000015
 name: uses in other way
 synonym: "other" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000016
+id: metpo:2000016
 name: oxidizes
 synonym: "oxidation" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000017
+id: metpo:2000017
 name: reduces
 synonym: "reduction" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000018
+id: metpo:2000018
 name: requires for growth
 synonym: "required for growth" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000019
+id: metpo:2000019
 name: uses for respiration
 synonym: "respiration" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000020
+id: metpo:2000020
 name: uses as sulfur source
 synonym: "sulfur source" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000021
+id: metpo:2000021
 name: does not use for aerobic catabolization
 synonym: "aerobic catabolization" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000022
+id: metpo:2000022
 name: does not use for aerobic growth
 synonym: "aerobic growth" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000023
+id: metpo:2000023
 name: does not use for anaerobic catabolization
 synonym: "anaerobic catabolization" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000024
+id: metpo:2000024
 name: does not use for anaerobic growth
 synonym: "anaerobic growth" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000025
+id: metpo:2000025
 name: does not use for anaerobic growth in the dark
 synonym: "anaerobic growth in the dark" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000026
+id: metpo:2000026
 name: does not use for anaerobic growth with light
 synonym: "anaerobic growth with light" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000027
+id: metpo:2000027
 name: does not assimilate
 synonym: "assimilation" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000028
+id: metpo:2000028
 name: does not build acid from
 synonym: "builds acid from" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000029
+id: metpo:2000029
 name: does not build base from
 synonym: "builds base from" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000030
+id: metpo:2000030
 name: does not build gas from
 synonym: "builds gas from" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000031
+id: metpo:2000031
 name: does not use as carbon source
 synonym: "carbon source" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000032
+id: metpo:2000032
 name: uses for aerobic catabolization
 synonym: "aerobic catabolization" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000033
+id: metpo:2000033
 name: does not degrade
 synonym: "degradation" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000034
+id: metpo:2000034
 name: does not use as electron acceptor
 synonym: "electron acceptor" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000035
+id: metpo:2000035
 name: does not use as electron donor
 synonym: "electron donor" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000036
+id: metpo:2000036
 name: does not use as energy source
 synonym: "energy source" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000037
+id: metpo:2000037
 name: does not ferment
 synonym: "fermentation" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000038
+id: metpo:2000038
 name: does not use for growth
 synonym: "growth" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000039
+id: metpo:2000039
 name: does not hydrolyze
 synonym: "hydrolysis" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000040
+id: metpo:2000040
 name: does not use as nitrogen source
 synonym: "nitrogen source" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000041
+id: metpo:2000041
 name: does not use in other way
 synonym: "other" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000042
+id: metpo:2000042
 name: does not oxidize
 synonym: "oxidation" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000043
+id: metpo:2000043
 name: uses for aerobic growth
 synonym: "aerobic growth" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000044
+id: metpo:2000044
 name: does not reduce
 synonym: "reduction" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000045
+id: metpo:2000045
 name: is not required for growth
 synonym: "required for growth" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000046
+id: metpo:2000046
 name: does not use for respiration
 synonym: "respiration" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000047
+id: metpo:2000047
 name: does not use as sulfur source
 synonym: "sulfur source" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000048
+id: metpo:2000048
 name: uses for anaerobic catabolization
 synonym: "anaerobic catabolization" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000049
+id: metpo:2000049
 name: uses for anaerobic growth
 synonym: "anaerobic growth" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000050
+id: metpo:2000050
 name: uses for anaerobic growth in the dark
 synonym: "anaerobic growth in the dark" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000051
+id: metpo:2000051
 name: uses for anaerobic growth with light
 synonym: "anaerobic growth with light" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000052
+id: metpo:2000052
 name: has temperature observation
 def: "Relates a microbe to a temperature observation." []
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1001000 ! observation
+domain: metpo:1000525 ! microbe
+range: metpo:1001021 ! temperature observation
+is_a: metpo:2000511 ! has observation
 
 [Typedef]
-id: https://w3id.org/metpo/2000053
+id: metpo:2000053
 name: has optimum temperature observation
 def: "Relates a microbe to an optimum temperature observation." []
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1001001 ! optimum temperature observation
-is_a: https://w3id.org/metpo/2000052 ! has temperature observation
+domain: metpo:1000525 ! microbe
+range: metpo:1001001 ! optimum temperature observation
+is_a: metpo:2000052 ! has temperature observation
 
 [Typedef]
-id: https://w3id.org/metpo/2000054
+id: metpo:2000054
 name: has growth temperature observation
 def: "Relates a microbe to a growth temperature observation." []
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1001002 ! growth temperature observation
-is_a: https://w3id.org/metpo/2000052 ! has temperature observation
+domain: metpo:1000525 ! microbe
+range: metpo:1001002 ! growth temperature observation
+is_a: metpo:2000052 ! has temperature observation
 
 [Typedef]
-id: https://w3id.org/metpo/2000055
+id: metpo:2000055
 name: has range temperature observation
 def: "Relates a microbe to a growth temperature range observation." []
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1001003 ! temperature range observation
-is_a: https://w3id.org/metpo/2000052 ! has temperature observation
+domain: metpo:1000525 ! microbe
+range: metpo:1001003 ! temperature range observation
+is_a: metpo:2000052 ! has temperature observation
 
 [Typedef]
-id: https://w3id.org/metpo/2000056
+id: metpo:2000056
 name: has temperature delta observation
 def: "Relates a microbe to a temperature tolerance breadth (delta) observation." []
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1001004 ! temperature delta observation
-is_a: https://w3id.org/metpo/2000052 ! has temperature observation
+domain: metpo:1000525 ! microbe
+range: metpo:1001004 ! temperature delta observation
+is_a: metpo:2000052 ! has temperature observation
 
 [Typedef]
-id: https://w3id.org/metpo/2000057
-name: has culture temperature observation
-def: "Relates a microbe to a culture temperature observation (e.g., from BacDive)." []
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1001005 ! culture temperature observation
-is_a: https://w3id.org/metpo/2000052 ! has temperature observation
-
-[Typedef]
-id: https://w3id.org/metpo/2000101
+id: metpo:2000101
 name: has quality
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1000188 ! quality
+domain: metpo:1000525 ! microbe
+range: metpo:1000188 ! quality
 
 [Typedef]
-id: https://w3id.org/metpo/2000102
+id: metpo:2000102
 name: has phenotype
 property_value: skos:closeMatch has:phenotype
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1000059 ! phenotype
-is_a: https://w3id.org/metpo/2000101 ! has quality
+domain: metpo:1000525 ! microbe
+range: metpo:1000059 ! phenotype
+is_a: metpo:2000101 ! has quality
 
 [Typedef]
-id: https://w3id.org/metpo/2000103
+id: metpo:2000103
 name: capable of
 property_value: skos:closeMatch capable:of
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1000630 ! biological process
+domain: metpo:1000525 ! microbe
+range: metpo:1000630 ! biological process
 
 [Typedef]
-id: https://w3id.org/metpo/2000200
+id: metpo:2000200
 name: disproportionates
 synonym: "dismutates" RELATED []
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1000526 ! chemical entity
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000201
+id: metpo:2000201
 name: lyses
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1000526 ! chemical entity
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000202
+id: metpo:2000202
 name: synthesizes
+synonym: "anabolizes" RELATED []
 synonym: "produces" RELATED []
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1000526 ! chemical entity
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000203
+id: metpo:2000203
 name: fixes
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1000526 ! chemical entity
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000204
+id: metpo:2000204
 name: catabolizes
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1000526 ! chemical entity
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000205
+id: metpo:2000205
 name: mineralizes
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1000526 ! chemical entity
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000206
+id: metpo:2000206
 name: conjugates
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1000526 ! chemical entity
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000207
+id: metpo:2000207
 name: transports
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1000526 ! chemical entity
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000208
+id: metpo:2000208
 name: imports
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1000526 ! chemical entity
-is_a: https://w3id.org/metpo/2000207 ! transports
+domain: metpo:1000525 ! microbe
+range: metpo:1000526 ! chemical entity
+is_a: metpo:2000207 ! transports
 
 [Typedef]
-id: https://w3id.org/metpo/2000209
+id: metpo:2000209
 name: exports
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1000526 ! chemical entity
-is_a: https://w3id.org/metpo/2000207 ! transports
+domain: metpo:1000525 ! microbe
+range: metpo:1000526 ! chemical entity
+is_a: metpo:2000207 ! transports
 
 [Typedef]
-id: https://w3id.org/metpo/2000210
+id: metpo:2000210
 name: accumulates
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1000526 ! chemical entity
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000211
+id: metpo:2000211
 name: sequesters
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1000526 ! chemical entity
-is_a: https://w3id.org/metpo/2000210 ! accumulates
+domain: metpo:1000525 ! microbe
+range: metpo:1000526 ! chemical entity
+is_a: metpo:2000210 ! accumulates
 
 [Typedef]
-id: https://w3id.org/metpo/2000212
+id: metpo:2000212
 name: compartmentalizes
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1000526 ! chemical entity
-is_a: https://w3id.org/metpo/2000210 ! accumulates
+domain: metpo:1000525 ! microbe
+range: metpo:1000526 ! chemical entity
+is_a: metpo:2000210 ! accumulates
 
 [Typedef]
-id: https://w3id.org/metpo/2000213
+id: metpo:2000213
 name: binds
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1000526 ! chemical entity
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000214
+id: metpo:2000214
 name: chelates
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1000526 ! chemical entity
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000215
+id: metpo:2000215
 name: precipitates
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1000526 ! chemical entity
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000216
+id: metpo:2000216
 name: solubilizes
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1000526 ! chemical entity
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000217
+id: metpo:2000217
 name: volatilizes
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1000526 ! chemical entity
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000218
+id: metpo:2000218
 name: crystallizes
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1000526 ! chemical entity
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000219
+id: metpo:2000219
 name: adsorbs
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1000526 ! chemical entity
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000220
+id: metpo:2000220
 name: does not disproportionate
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1000526 ! chemical entity
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000221
+id: metpo:2000221
 name: does not lyse
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1000526 ! chemical entity
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000222
+id: metpo:2000222
 name: does not produce
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1000526 ! chemical entity
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000223
+id: metpo:2000223
 name: does not fix
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1000526 ! chemical entity
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000224
+id: metpo:2000224
 name: does not catabolize
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1000526 ! chemical entity
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000225
+id: metpo:2000225
 name: does not mineralize
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1000526 ! chemical entity
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000226
+id: metpo:2000226
 name: does not conjugate
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1000526 ! chemical entity
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000227
+id: metpo:2000227
 name: does not transport
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1000526 ! chemical entity
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000228
+id: metpo:2000228
 name: does not import
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1000526 ! chemical entity
-is_a: https://w3id.org/metpo/2000227 ! does not transport
+domain: metpo:1000525 ! microbe
+range: metpo:1000526 ! chemical entity
+is_a: metpo:2000227 ! does not transport
 
 [Typedef]
-id: https://w3id.org/metpo/2000229
+id: metpo:2000229
 name: does not export
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1000526 ! chemical entity
-is_a: https://w3id.org/metpo/2000227 ! does not transport
+domain: metpo:1000525 ! microbe
+range: metpo:1000526 ! chemical entity
+is_a: metpo:2000227 ! does not transport
 
 [Typedef]
-id: https://w3id.org/metpo/2000230
+id: metpo:2000230
 name: does not accumulate
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1000526 ! chemical entity
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000231
+id: metpo:2000231
 name: does not sequester
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1000526 ! chemical entity
-is_a: https://w3id.org/metpo/2000230 ! does not accumulate
+domain: metpo:1000525 ! microbe
+range: metpo:1000526 ! chemical entity
+is_a: metpo:2000230 ! does not accumulate
 
 [Typedef]
-id: https://w3id.org/metpo/2000232
+id: metpo:2000232
 name: does not compartmentalize
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1000526 ! chemical entity
-is_a: https://w3id.org/metpo/2000230 ! does not accumulate
+domain: metpo:1000525 ! microbe
+range: metpo:1000526 ! chemical entity
+is_a: metpo:2000230 ! does not accumulate
 
 [Typedef]
-id: https://w3id.org/metpo/2000233
+id: metpo:2000233
 name: does not bind
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1000526 ! chemical entity
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000234
+id: metpo:2000234
 name: does not chelate
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1000526 ! chemical entity
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000235
+id: metpo:2000235
 name: does not precipitate
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1000526 ! chemical entity
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000236
+id: metpo:2000236
 name: does not solubilize
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1000526 ! chemical entity
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000237
+id: metpo:2000237
 name: does not volatilize
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1000526 ! chemical entity
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000238
+id: metpo:2000238
 name: does not crystallize
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1000526 ! chemical entity
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
-id: https://w3id.org/metpo/2000239
+id: metpo:2000239
 name: has pH observation
 def: "Relates a microbe to a pH observation." []
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1001000 ! observation
-is_a: https://w3id.org/metpo/2000001 ! organism interacts with chemical
+domain: metpo:1000525 ! microbe
+range: metpo:1001023 ! pH observation
+is_a: metpo:2000511 ! has observation
 
 [Typedef]
-id: https://w3id.org/metpo/2000501
+id: metpo:2000501
 name: has optimum pH observation
 def: "Relates a microbe to an optimum pH observation." []
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1001013 ! optimum pH observation
-is_a: https://w3id.org/metpo/2000239 ! has pH observation
+domain: metpo:1000525 ! microbe
+range: metpo:1001013 ! optimum pH observation
+is_a: metpo:2000239 ! has pH observation
 
 [Typedef]
-id: https://w3id.org/metpo/2000502
+id: metpo:2000502
 name: has growth pH observation
 def: "Relates a microbe to a growth pH observation." []
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1001012 ! growth pH observation
-is_a: https://w3id.org/metpo/2000239 ! has pH observation
+domain: metpo:1000525 ! microbe
+range: metpo:1001012 ! growth pH observation
+is_a: metpo:2000239 ! has pH observation
 
 [Typedef]
-id: https://w3id.org/metpo/2000503
+id: metpo:2000503
 name: has range pH observation
 def: "Relates a microbe to a growth pH range observation." []
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1001015 ! pH range observation
-is_a: https://w3id.org/metpo/2000239 ! has pH observation
+domain: metpo:1000525 ! microbe
+range: metpo:1001015 ! pH range observation
+is_a: metpo:2000239 ! has pH observation
 
 [Typedef]
-id: https://w3id.org/metpo/2000504
+id: metpo:2000504
 name: has pH delta observation
 def: "Relates a microbe to a pH tolerance breadth (delta) observation." []
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1001014 ! pH delta observation
-is_a: https://w3id.org/metpo/2000239 ! has pH observation
+domain: metpo:1000525 ! microbe
+range: metpo:1001014 ! pH delta observation
+is_a: metpo:2000239 ! has pH observation
 
 [Typedef]
-id: https://w3id.org/metpo/2000505
-name: has culture pH observation
-def: "Relates a microbe to a culture pH observation (e.g., from BacDive)." []
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1001011 ! culture pH observation
-is_a: https://w3id.org/metpo/2000239 ! has pH observation
-
-[Typedef]
-id: https://w3id.org/metpo/2000506
+id: metpo:2000506
 name: has NaCl observation
 def: "Relates a microbe to a NaCl observation." []
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1001000 ! observation
-is_a: https://w3id.org/metpo/2000506 ! has NaCl observation
+domain: metpo:1000525 ! microbe
+range: metpo:1001022 ! NaCl observation
+is_a: metpo:2000511 ! has observation
 
 [Typedef]
-id: https://w3id.org/metpo/2000507
+id: metpo:2000507
 name: has optimum NaCl observation
 def: "Relates a microbe to an optimum NaCl observation." []
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1001010 ! optimum NaCl observation
-is_a: https://w3id.org/metpo/2000506 ! has NaCl observation
+domain: metpo:1000525 ! microbe
+range: metpo:1001010 ! optimum NaCl observation
+is_a: metpo:2000506 ! has NaCl observation
 
 [Typedef]
-id: https://w3id.org/metpo/2000508
+id: metpo:2000508
 name: has growth NaCl observation
 def: "Relates a microbe to a growth NaCl observation." []
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1001007 ! growth NaCl observation
-is_a: https://w3id.org/metpo/2000506 ! has NaCl observation
+domain: metpo:1000525 ! microbe
+range: metpo:1001007 ! growth NaCl observation
+is_a: metpo:2000506 ! has NaCl observation
 
 [Typedef]
-id: https://w3id.org/metpo/2000509
+id: metpo:2000509
 name: has range NaCl observation
 def: "Relates a microbe to a growth NaCl range observation." []
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1001009 ! NaCl range observation
-is_a: https://w3id.org/metpo/2000506 ! has NaCl observation
+domain: metpo:1000525 ! microbe
+range: metpo:1001009 ! NaCl range observation
+is_a: metpo:2000506 ! has NaCl observation
 
 [Typedef]
-id: https://w3id.org/metpo/2000510
+id: metpo:2000510
 name: has NaCl delta observation
 def: "Relates a microbe to a NaCl tolerance breadth (delta) observation." []
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1001008 ! NaCl delta observation
-is_a: https://w3id.org/metpo/2000506 ! has NaCl observation
+domain: metpo:1000525 ! microbe
+range: metpo:1001008 ! NaCl delta observation
+is_a: metpo:2000506 ! has NaCl observation
 
 [Typedef]
-id: https://w3id.org/metpo/2000511
-name: has culture NaCl observation
-def: "Relates a microbe to a culture NaCl observation (e.g., from BacDive)." []
-domain: https://w3id.org/metpo/1000525 ! microbe
-range: https://w3id.org/metpo/1001006 ! culture NaCl observation
-is_a: https://w3id.org/metpo/2000506 ! has NaCl observation
+id: metpo:2000511
+name: has observation
+domain: metpo:1000525 ! microbe
+range: metpo:1001000 ! observation
+
+[Typedef]
+id: metpo:2000512
+name: has oxygen observation
+def: "Relates a microbe to an oxygen observation." []
+domain: metpo:1000525 ! microbe
+range: metpo:1001020 ! oxygen observation
+is_a: metpo:2000511 ! has observation
+
+[Typedef]
+id: metpo:2000513
+name: has optimum oxygen observation
+def: "Relates a microbe to an optimum oxygen observation." []
+domain: metpo:1000525 ! microbe
+range: metpo:1001016 ! optimum oxygen observation
+is_a: metpo:2000512 ! has oxygen observation
+
+[Typedef]
+id: metpo:2000514
+name: has growth oxygen observation
+def: "Relates a microbe to a growth oxygen observation." []
+domain: metpo:1000525 ! microbe
+range: metpo:1001017 ! growth oxygen observation
+is_a: metpo:2000512 ! has oxygen observation
+
+[Typedef]
+id: metpo:2000515
+name: has range oxygen observation
+def: "Relates a microbe to a growth oxygen range observation." []
+domain: metpo:1000525 ! microbe
+range: metpo:1001018 ! oxygen range observation
+is_a: metpo:2000512 ! has oxygen observation
+
+[Typedef]
+id: metpo:2000516
+name: has oxygen delta observation
+def: "Relates a microbe to a oxygen tolerance breadth (delta) observation." []
+domain: metpo:1000525 ! microbe
+range: metpo:1001019 ! oxygen delta observation
+is_a: metpo:2000512 ! has oxygen observation
 

@@ -22,9 +22,9 @@
         "val" : "METPO"
       }, {
         "pred" : "http://www.w3.org/2002/07/owl#versionInfo",
-        "val" : "2025-10-03"
+        "val" : "2025-10-15"
       } ],
-      "version" : "https://w3id.org/metpo/metpo/releases/2025-10-03/metpo.json"
+      "version" : "https://w3id.org/metpo/metpo/releases/2025-10-15/metpo.json"
     },
     "nodes" : [ {
       "id" : "https://w3id.org/metpo/1000059",
@@ -80,33 +80,6 @@
         }
       }
     }, {
-      "id" : "https://w3id.org/metpo/1000233",
-      "lbl" : "pH optimum (growth range)",
-      "type" : "CLASS",
-      "meta" : {
-        "definition" : {
-          "val" : "The specific pH at which an organism exhibits maximum growth rate"
-        }
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000235",
-      "lbl" : "pH range (growth tolerance)",
-      "type" : "CLASS",
-      "meta" : {
-        "definition" : {
-          "val" : "The span of pH values within which an organism can grow"
-        }
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000236",
-      "lbl" : "pH tolerance",
-      "type" : "CLASS",
-      "meta" : {
-        "definition" : {
-          "val" : "The ability of an organism to survive exposure to pH values outside its optimal growth range"
-        }
-      }
-    }, {
       "id" : "https://w3id.org/metpo/1000303",
       "lbl" : "temperature delta",
       "type" : "CLASS",
@@ -117,7 +90,7 @@
       }
     }, {
       "id" : "https://w3id.org/metpo/1000304",
-      "lbl" : "temperature optimum (growth range)",
+      "lbl" : "temperature optimum",
       "type" : "CLASS",
       "meta" : {
         "definition" : {
@@ -126,7 +99,7 @@
       }
     }, {
       "id" : "https://w3id.org/metpo/1000306",
-      "lbl" : "temperature range (growth tolerance)",
+      "lbl" : "temperature range",
       "type" : "CLASS",
       "meta" : {
         "definition" : {
@@ -134,26 +107,8 @@
         }
       }
     }, {
-      "id" : "https://w3id.org/metpo/1000329",
-      "lbl" : "temperature optimum (metabolic activity)",
-      "type" : "CLASS",
-      "meta" : {
-        "definition" : {
-          "val" : "The specific temperature at which a microorganism exhibits maximum metabolic activity and growth rate within its viable range."
-        }
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000330",
-      "lbl" : "temperature range (metabolic viability)",
-      "type" : "CLASS",
-      "meta" : {
-        "definition" : {
-          "val" : "The span of temperatures within which a microorganism can maintain metabolic functions and population viability."
-        }
-      }
-    }, {
       "id" : "https://w3id.org/metpo/1000331",
-      "lbl" : "pH optimum (metabolic efficiency)",
+      "lbl" : "pH optimum",
       "type" : "CLASS",
       "meta" : {
         "definition" : {
@@ -162,7 +117,7 @@
       }
     }, {
       "id" : "https://w3id.org/metpo/1000332",
-      "lbl" : "pH range (cellular homeostasis)",
+      "lbl" : "pH range",
       "type" : "CLASS",
       "meta" : {
         "definition" : {
@@ -206,7 +161,11 @@
         },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
-          "val" : "GC_<42.65"
+          "val" : " GC_42.65_57.0"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/range_max",
+          "val" : "42.65"
         } ]
       }
     }, {
@@ -219,7 +178,14 @@
         },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
-          "val" : "GC_42.65_57.0"
+          "val" : "GC_>66.3"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/range_max",
+          "val" : "57"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_min",
+          "val" : "42.65"
         } ]
       }
     }, {
@@ -233,6 +199,13 @@
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "GC_57.0_66.3"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/range_max",
+          "val" : "66.3"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_min",
+          "val" : "57"
         } ]
       }
     }, {
@@ -245,7 +218,11 @@
         },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
-          "val" : "GC_>66.3"
+          "val" : "GC_<=42.65"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/range_min",
+          "val" : "66.3"
         } ]
       }
     }, {
@@ -261,7 +238,14 @@
           "val" : "Psychrophile"
         }, {
           "pred" : "hasRelatedSynonym",
-          "val" : "TO_<10"
+          "val" : "TO_<=10"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://qudt.org/schema/qudt/ucumCode",
+          "val" : "Cel"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_max",
+          "val" : "10"
         } ]
       }
     }, {
@@ -281,6 +265,16 @@
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "TO_10_to_22"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://qudt.org/schema/qudt/ucumCode",
+          "val" : "Cel"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_max",
+          "val" : "22"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_min",
+          "val" : "10"
         } ]
       }
     }, {
@@ -297,6 +291,16 @@
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "TO_22_to_27"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://qudt.org/schema/qudt/ucumCode",
+          "val" : "Cel"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_max",
+          "val" : "27"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_min",
+          "val" : "22"
         } ]
       }
     }, {
@@ -313,6 +317,16 @@
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "TO_27_to_30"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://qudt.org/schema/qudt/ucumCode",
+          "val" : "Cel"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_max",
+          "val" : "30"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_min",
+          "val" : "27"
         } ]
       }
     }, {
@@ -329,6 +343,16 @@
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "TO_30_to_34"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://qudt.org/schema/qudt/ucumCode",
+          "val" : "Cel"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_max",
+          "val" : "34"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_min",
+          "val" : "30"
         } ]
       }
     }, {
@@ -345,6 +369,16 @@
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "TO_34_to_40"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://qudt.org/schema/qudt/ucumCode",
+          "val" : "Cel"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_max",
+          "val" : "40"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_min",
+          "val" : "34"
         } ]
       }
     }, {
@@ -361,6 +395,13 @@
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "TO_>40"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://qudt.org/schema/qudt/ucumCode",
+          "val" : "Cel"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_min",
+          "val" : "40"
         } ]
       }
     }, {
@@ -376,7 +417,14 @@
           "val" : "Psychrophile"
         }, {
           "pred" : "hasRelatedSynonym",
-          "val" : "TR_<10"
+          "val" : "TR_<=10"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://qudt.org/schema/qudt/ucumCode",
+          "val" : "Cel"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_max",
+          "val" : "10"
         } ]
       }
     }, {
@@ -396,6 +444,16 @@
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "TR_10_to_22"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://qudt.org/schema/qudt/ucumCode",
+          "val" : "Cel"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_max",
+          "val" : "22"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_min",
+          "val" : "10"
         } ]
       }
     }, {
@@ -412,6 +470,16 @@
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "TR_22_to_27"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://qudt.org/schema/qudt/ucumCode",
+          "val" : "Cel"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_max",
+          "val" : "27"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_min",
+          "val" : "22"
         } ]
       }
     }, {
@@ -428,6 +496,16 @@
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "TR_27_to_30"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://qudt.org/schema/qudt/ucumCode",
+          "val" : "Cel"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_max",
+          "val" : "30"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_min",
+          "val" : "27"
         } ]
       }
     }, {
@@ -444,6 +522,16 @@
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "TR_30_to_34"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://qudt.org/schema/qudt/ucumCode",
+          "val" : "Cel"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_max",
+          "val" : "34"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_min",
+          "val" : "30"
         } ]
       }
     }, {
@@ -460,6 +548,16 @@
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "TR_34_to_40"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://qudt.org/schema/qudt/ucumCode",
+          "val" : "Cel"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_max",
+          "val" : "40"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_min",
+          "val" : "34"
         } ]
       }
     }, {
@@ -476,6 +574,13 @@
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "TR_>40"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://qudt.org/schema/qudt/ucumCode",
+          "val" : "Cel"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_min",
+          "val" : "40"
         } ]
       }
     }, {
@@ -504,6 +609,13 @@
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "pHO_0_to_6"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/range_max",
+          "val" : "6"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_min",
+          "val" : "0"
         } ]
       }
     }, {
@@ -523,6 +635,13 @@
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "pHO_6_to_7"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/range_max",
+          "val" : "7"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_min",
+          "val" : "6"
         } ]
       }
     }, {
@@ -545,6 +664,13 @@
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "pHO_7_to_8"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/range_max",
+          "val" : "8"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_min",
+          "val" : "7"
         } ]
       }
     }, {
@@ -567,6 +693,13 @@
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "pHO_8_to_14"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/range_max",
+          "val" : "14"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_min",
+          "val" : "8"
         } ]
       }
     }, {
@@ -595,6 +728,13 @@
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "pHR_0_to_4"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/range_max",
+          "val" : "4"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_min",
+          "val" : "0"
         } ]
       }
     }, {
@@ -620,6 +760,13 @@
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "pHR_4_to_6"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/range_max",
+          "val" : "6"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_min",
+          "val" : "4"
         } ]
       }
     }, {
@@ -642,6 +789,13 @@
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "pHR_6_to_7"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/range_max",
+          "val" : "7"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_min",
+          "val" : "6"
         } ]
       }
     }, {
@@ -667,6 +821,13 @@
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "pHR_7_to_8"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/range_max",
+          "val" : "8"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_min",
+          "val" : "7"
         } ]
       }
     }, {
@@ -692,6 +853,13 @@
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "pHR_8_to_10"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/range_max",
+          "val" : "10"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_min",
+          "val" : "8"
         } ]
       }
     }, {
@@ -714,6 +882,13 @@
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "10_to_14"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/range_max",
+          "val" : "14"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_min",
+          "val" : "10"
         } ]
       }
     }, {
@@ -732,7 +907,14 @@
           "val" : "Non-halophile"
         }, {
           "pred" : "hasRelatedSynonym",
-          "val" : "NaR_<1"
+          "val" : "NaO_<=1"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://qudt.org/schema/qudt/ucumCode",
+          "val" : "%"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_max",
+          "val" : "1"
         } ]
       }
     }, {
@@ -751,7 +933,17 @@
           "val" : "Slight halophile"
         }, {
           "pred" : "hasRelatedSynonym",
-          "val" : "NaR_1_to_3"
+          "val" : "NaO_1_to_3"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://qudt.org/schema/qudt/ucumCode",
+          "val" : "%"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_max",
+          "val" : "3"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_min",
+          "val" : "1"
         } ]
       }
     }, {
@@ -770,7 +962,17 @@
           "val" : "Moderate halophile"
         }, {
           "pred" : "hasRelatedSynonym",
-          "val" : "NaR_3_to_8"
+          "val" : "NaO_3_to_8"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://qudt.org/schema/qudt/ucumCode",
+          "val" : "%"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_max",
+          "val" : "8"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_min",
+          "val" : "3"
         } ]
       }
     }, {
@@ -786,7 +988,14 @@
           "val" : "Extreme halophile"
         }, {
           "pred" : "hasRelatedSynonym",
-          "val" : "NaR_>8"
+          "val" : "NaO_>8"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://qudt.org/schema/qudt/ucumCode",
+          "val" : "%"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_min",
+          "val" : "8"
         } ]
       }
     }, {
@@ -805,7 +1014,14 @@
           "val" : "Non-halophile"
         }, {
           "pred" : "hasRelatedSynonym",
-          "val" : "NaO_<1"
+          "val" : "NaR_<=1"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://qudt.org/schema/qudt/ucumCode",
+          "val" : "%"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_max",
+          "val" : "1"
         } ]
       }
     }, {
@@ -824,7 +1040,17 @@
           "val" : "Slight halophile"
         }, {
           "pred" : "hasRelatedSynonym",
-          "val" : "NaO_1_to_3"
+          "val" : "NaR_1_to_3"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://qudt.org/schema/qudt/ucumCode",
+          "val" : "%"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_max",
+          "val" : "3"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_min",
+          "val" : "1"
         } ]
       }
     }, {
@@ -843,7 +1069,17 @@
           "val" : "Moderate halophile"
         }, {
           "pred" : "hasRelatedSynonym",
-          "val" : "NaO_3_to_8"
+          "val" : "NaR_3_to_8"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://qudt.org/schema/qudt/ucumCode",
+          "val" : "%"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_max",
+          "val" : "8"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_min",
+          "val" : "3"
         } ]
       }
     }, {
@@ -859,7 +1095,14 @@
           "val" : "Extreme halophile"
         }, {
           "pred" : "hasRelatedSynonym",
-          "val" : "NaO_>8"
+          "val" : "NaR_>8"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://qudt.org/schema/qudt/ucumCode",
+          "val" : "%"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_min",
+          "val" : "8"
         } ]
       }
     }, {
@@ -872,7 +1115,11 @@
         },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
-          "val" : "pHd_<1"
+          "val" : "pHd_<=1"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/range_max",
+          "val" : "1"
         } ]
       }
     }, {
@@ -886,6 +1133,13 @@
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "pHd_1_2"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/range_max",
+          "val" : "2"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_min",
+          "val" : "1"
         } ]
       }
     }, {
@@ -899,6 +1153,13 @@
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "pHd_2_3"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/range_max",
+          "val" : "3"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_min",
+          "val" : "2"
         } ]
       }
     }, {
@@ -912,6 +1173,13 @@
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "pHd_3_4"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/range_max",
+          "val" : "4"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_min",
+          "val" : "3"
         } ]
       }
     }, {
@@ -925,6 +1193,13 @@
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "pHd_4_5"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/range_max",
+          "val" : "5"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_min",
+          "val" : "4"
         } ]
       }
     }, {
@@ -938,6 +1213,13 @@
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "pHd_5_9"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "https://w3id.org/metpo/range_max",
+          "val" : "9"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_min",
+          "val" : "5"
         } ]
       }
     }, {
@@ -950,7 +1232,14 @@
         },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
-          "val" : "Nad_<1"
+          "val" : "Nad_<=1"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://qudt.org/schema/qudt/ucumCode",
+          "val" : "%"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_max",
+          "val" : "1"
         } ]
       }
     }, {
@@ -964,6 +1253,16 @@
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "Nad_1_3"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://qudt.org/schema/qudt/ucumCode",
+          "val" : "%"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_max",
+          "val" : "3"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_min",
+          "val" : "1"
         } ]
       }
     }, {
@@ -977,6 +1276,16 @@
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "Nad_3_8"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://qudt.org/schema/qudt/ucumCode",
+          "val" : "%"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_max",
+          "val" : "8"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_min",
+          "val" : "3"
         } ]
       }
     }, {
@@ -990,6 +1299,13 @@
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "Nad_>8"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://qudt.org/schema/qudt/ucumCode",
+          "val" : "%"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_max",
+          "val" : "8"
         } ]
       }
     }, {
@@ -1003,6 +1319,16 @@
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "Td_1_5"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://qudt.org/schema/qudt/ucumCode",
+          "val" : "Cel"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_max",
+          "val" : "5"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_min",
+          "val" : "1"
         } ]
       }
     }, {
@@ -1016,6 +1342,16 @@
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "Td_5_10"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://qudt.org/schema/qudt/ucumCode",
+          "val" : "Cel"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_max",
+          "val" : "10"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_min",
+          "val" : "5"
         } ]
       }
     }, {
@@ -1029,6 +1365,16 @@
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "Td_10_20"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://qudt.org/schema/qudt/ucumCode",
+          "val" : "Cel"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_max",
+          "val" : "20"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_min",
+          "val" : "10"
         } ]
       }
     }, {
@@ -1042,6 +1388,16 @@
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "Td_20_30"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://qudt.org/schema/qudt/ucumCode",
+          "val" : "Cel"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_max",
+          "val" : "30"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_min",
+          "val" : "20"
         } ]
       }
     }, {
@@ -1055,16 +1411,14 @@
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "Td_>30"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://qudt.org/schema/qudt/ucumCode",
+          "val" : "Cel"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_min",
+          "val" : "30"
         } ]
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1000511",
-      "lbl" : "pH adaptation",
-      "type" : "CLASS",
-      "meta" : {
-        "definition" : {
-          "val" : "A combination of cellular processes that permits survival and growth under specific hydrogen ion concentrations."
-        }
       }
     }, {
       "id" : "https://w3id.org/metpo/1000525",
@@ -1093,6 +1447,30 @@
           "val" : "https://biolink.github.io/biolink-model/ChemicalEntity"
         } ]
       }
+    }, {
+      "id" : "https://w3id.org/metpo/1000531",
+      "lbl" : "pH phenotype with numerical limits",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/1000532",
+      "lbl" : "salinity phenotype with numerical limits",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/1000533",
+      "lbl" : "temperature phenotype with numerical limits",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/1000534",
+      "lbl" : "delta phenotype with numerical limits",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/1000535",
+      "lbl" : "growth range phenotype with numerical limits",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/1000536",
+      "lbl" : "optimum phenotype with numerical limits",
+      "type" : "CLASS"
     }, {
       "id" : "https://w3id.org/metpo/1000601",
       "lbl" : "oxygen preference",
@@ -1550,6 +1928,9 @@
       "meta" : {
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
+          "val" : "TT_autotroph"
+        }, {
+          "pred" : "hasRelatedSynonym",
           "val" : "autotroph"
         }, {
           "pred" : "hasRelatedSynonym",
@@ -1640,6 +2021,9 @@
       "meta" : {
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
+          "val" : "TT_chemotroph"
+        }, {
+          "pred" : "hasRelatedSynonym",
           "val" : "chemotroph"
         } ]
       }
@@ -1659,6 +2043,9 @@
       "type" : "CLASS",
       "meta" : {
         "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "TT_heterotroph"
+        }, {
           "pred" : "hasRelatedSynonym",
           "val" : "aerobic_heterotrophy"
         }, {
@@ -1700,6 +2087,9 @@
       "meta" : {
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
+          "val" : "TT_lithotroph"
+        }, {
+          "pred" : "hasRelatedSynonym",
           "val" : "lithotroph"
         } ]
       }
@@ -1719,6 +2109,9 @@
       "type" : "CLASS",
       "meta" : {
         "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "TT_methylotroph"
+        }, {
           "pred" : "hasRelatedSynonym",
           "val" : "methylotroph"
         }, {
@@ -1743,6 +2136,9 @@
       "meta" : {
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
+          "val" : "TT_oligotroph"
+        }, {
+          "pred" : "hasRelatedSynonym",
           "val" : "oligotroph"
         } ]
       }
@@ -1752,6 +2148,9 @@
       "type" : "CLASS",
       "meta" : {
         "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "TT_organotroph"
+        }, {
           "pred" : "hasRelatedSynonym",
           "val" : "organotroph"
         } ]
@@ -1820,6 +2219,9 @@
       "type" : "CLASS",
       "meta" : {
         "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "TT_phototroph"
+        }, {
           "pred" : "hasRelatedSynonym",
           "val" : "aerobic_anoxygenic_phototrophy"
         }, {
@@ -1913,10 +2315,10 @@
       "meta" : {
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
-          "val" : "curved-shaped"
+          "val" : " S_curved_spiral"
         }, {
           "pred" : "hasRelatedSynonym",
-          "val" : "s_curved_spiral"
+          "val" : "curved-shaped"
         } ]
       }
     }, {
@@ -1936,10 +2338,10 @@
       "meta" : {
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
-          "val" : "dumbbell-shaped"
+          "val" : "S_star_dumbbell_pleomorphic"
         }, {
           "pred" : "hasRelatedSynonym",
-          "val" : "s_star_dumbbell_pleomorphic"
+          "val" : "dumbbell-shaped"
         } ]
       }
     }, {
@@ -1959,13 +2361,13 @@
       "meta" : {
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
+          "val" : " S_filament"
+        }, {
+          "pred" : "hasRelatedSynonym",
           "val" : "filament"
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "filament-shaped"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "s_filament"
         } ]
       }
     }, {
@@ -1998,10 +2400,10 @@
       "meta" : {
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
-          "val" : "ovoid-shaped"
+          "val" : " S_ovoid"
         }, {
           "pred" : "hasRelatedSynonym",
-          "val" : "s_ovoid"
+          "val" : "ovoid-shaped"
         } ]
       }
     }, {
@@ -2021,13 +2423,13 @@
       "meta" : {
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
+          "val" : "S_star_dumbbell_pleomorphic"
+        }, {
+          "pred" : "hasRelatedSynonym",
           "val" : "pleomorphic"
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "pleomorphic-shaped"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "s_star_dumbbell_pleomorphic"
         } ]
       }
     }, {
@@ -2050,10 +2452,10 @@
       "meta" : {
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
-          "val" : "rod-shaped"
+          "val" : " S_rod"
         }, {
           "pred" : "hasRelatedSynonym",
-          "val" : "s_rod"
+          "val" : "rod-shaped"
         } ]
       }
     }, {
@@ -2073,7 +2475,7 @@
       "meta" : {
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
-          "val" : "s_sphere"
+          "val" : " S_sphere"
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "sphere-shaped"
@@ -2086,7 +2488,7 @@
       "meta" : {
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
-          "val" : "s_curved_spiral"
+          "val" : " S_curved_spiral"
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "spiral"
@@ -2102,7 +2504,7 @@
       "meta" : {
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
-          "val" : "s_star_dumbbell_pleomorphic"
+          "val" : "S_star_dumbbell_pleomorphic"
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "star"
@@ -2327,7 +2729,7 @@
           "val" : "no"
         }, {
           "pred" : "hasRelatedSynonym",
-          "val" : "non- motile"
+          "val" : "non-motile"
         } ]
       }
     }, {
@@ -2516,6 +2918,12 @@
       "meta" : {
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
+          "val" : "spore"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "yes"
+        }, {
+          "pred" : "hasRelatedSynonym",
           "val" : "yes"
         } ]
       }
@@ -2527,6 +2935,202 @@
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "no"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "no"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "no_spore"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000881",
+      "lbl" : "cell length",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A quality of a cell relating to its measurement from end to end."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000882",
+      "lbl" : "cell width",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A quality of a cell relating to its measurement from side to side."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000883",
+      "lbl" : "cell length very small",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A cell length quality of being less than or equal to 1.3 micrometers."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "L_<=1.3"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://qudt.org/schema/qudt/ucumCode",
+          "val" : "um"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_max",
+          "val" : "1.3"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000884",
+      "lbl" : "cell length small",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A cell length quality of being between 1.3 and 2 micrometers."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : " L_1.3_2"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://qudt.org/schema/qudt/ucumCode",
+          "val" : "um"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_max",
+          "val" : "2"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_min",
+          "val" : "1.3"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000885",
+      "lbl" : "cell length medium",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A cell length quality of being between 2 and 3 micrometers."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "L_2_3"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://qudt.org/schema/qudt/ucumCode",
+          "val" : "um"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_max",
+          "val" : "3"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_min",
+          "val" : "2"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000886",
+      "lbl" : "cell length large",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A cell length quality of being greater than 3 micrometers."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "L_>3"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://qudt.org/schema/qudt/ucumCode",
+          "val" : "um"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_min",
+          "val" : "3"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000887",
+      "lbl" : "cell width very small",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A cell width quality of being less than or equal to 0.5 micrometers."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "W_<=0.5"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://qudt.org/schema/qudt/ucumCode",
+          "val" : "um"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_max",
+          "val" : "0.5"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000888",
+      "lbl" : "cell width small",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A cell width quality of being between 0.5 and 0.65 micrometers."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : " W_0.5_0.65"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://qudt.org/schema/qudt/ucumCode",
+          "val" : "um"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_max",
+          "val" : "0.65"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_min",
+          "val" : "0.5"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000889",
+      "lbl" : "cell width medium",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A cell width quality of being between 0.65 and 0.9 micrometers."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "W_0.65_0.9"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://qudt.org/schema/qudt/ucumCode",
+          "val" : "um"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_max",
+          "val" : "0.9"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_min",
+          "val" : "0.65"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1000890",
+      "lbl" : "cell width large",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A cell width quality of being greater than 0.9 micrometers."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "W_>0.9"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://qudt.org/schema/qudt/ucumCode",
+          "val" : "um"
+        }, {
+          "pred" : "https://w3id.org/metpo/range_min",
+          "val" : "0.9"
         } ]
       }
     }, {
@@ -2575,19 +3179,6 @@
         }
       }
     }, {
-      "id" : "https://w3id.org/metpo/1001005",
-      "lbl" : "culture temperature observation",
-      "type" : "CLASS",
-      "meta" : {
-        "definition" : {
-          "val" : "An observation specializing temperature observation for culture temperature data (e.g., reported culture conditions)."
-        }
-      }
-    }, {
-      "id" : "https://w3id.org/metpo/1001006",
-      "lbl" : "culture NaCl observation",
-      "type" : "CLASS"
-    }, {
       "id" : "https://w3id.org/metpo/1001007",
       "lbl" : "growth NaCl observation",
       "type" : "CLASS"
@@ -2604,10 +3195,6 @@
       "lbl" : "optimum NaCl observation",
       "type" : "CLASS"
     }, {
-      "id" : "https://w3id.org/metpo/1001011",
-      "lbl" : "culture pH observation",
-      "type" : "CLASS"
-    }, {
       "id" : "https://w3id.org/metpo/1001012",
       "lbl" : "growth pH observation",
       "type" : "CLASS"
@@ -2622,6 +3209,38 @@
     }, {
       "id" : "https://w3id.org/metpo/1001015",
       "lbl" : "pH range observation",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/1001016",
+      "lbl" : "optimum oxygen observation",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/1001017",
+      "lbl" : "growth oxygen observation",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/1001018",
+      "lbl" : "oxygen range observation",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/1001019",
+      "lbl" : "oxygen delta observation",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/1001020",
+      "lbl" : "oxygen observation",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/1001021",
+      "lbl" : "temperature observation",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/1001022",
+      "lbl" : "NaCl observation",
+      "type" : "CLASS"
+    }, {
+      "id" : "https://w3id.org/metpo/1001023",
+      "lbl" : "pH observation",
       "type" : "CLASS"
     }, {
       "id" : "https://w3id.org/metpo/1001101",
@@ -2789,6 +3408,145 @@
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "alkalitolerant"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1003021",
+      "lbl" : "pigmentation",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A phenotype characterized by the color of pigments produced by a microorganism."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1003022",
+      "lbl" : "black pigmented",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A phenotype characterized by the production of black-colored pigments."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "Pigment_black"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1003023",
+      "lbl" : "brown pigmented",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A phenotype characterized by the production of brown-colored pigments."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "Pigment_brown"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1003024",
+      "lbl" : "cream pigmented",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A phenotype characterized by the production of cream-colored pigments."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "Pigment_cream"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1003025",
+      "lbl" : "green pigmented",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A phenotype characterized by the production of green-colored pigments."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "Pigment_green"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1003026",
+      "lbl" : "orange pigmented",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A phenotype characterized by the production of orange-colored pigments."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "Pigment_orange"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1003027",
+      "lbl" : "pink pigmented",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A phenotype characterized by the production of pink-colored pigments."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "Pigment_pink"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1003028",
+      "lbl" : "red pigmented",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A phenotype characterized by the production of red-colored pigments."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "Pigment_red"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1003029",
+      "lbl" : "white pigmented",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A phenotype characterized by the production of white-colored pigments."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "Pigment_white"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1003030",
+      "lbl" : "yellow pigmented",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A phenotype characterized by the production of yellow-colored pigments."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "Pigment_yellow"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1003031",
+      "lbl" : "carotenoid pigmentation",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A phenotype characterized by the production of carotenoid pigments."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "Pigment_carotenoid"
         } ]
       }
     }, {
@@ -3397,16 +4155,6 @@
         }
       }
     }, {
-      "id" : "https://w3id.org/metpo/2000057",
-      "lbl" : "has culture temperature observation",
-      "type" : "PROPERTY",
-      "propertyType" : "OBJECT",
-      "meta" : {
-        "definition" : {
-          "val" : "Relates a microbe to a culture temperature observation (e.g., from BacDive)."
-        }
-      }
-    }, {
       "id" : "https://w3id.org/metpo/2000101",
       "lbl" : "has quality",
       "type" : "PROPERTY",
@@ -3456,6 +4204,9 @@
       "propertyType" : "OBJECT",
       "meta" : {
         "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "anabolizes"
+        }, {
           "pred" : "hasRelatedSynonym",
           "val" : "produces"
         } ]
@@ -3691,16 +4442,6 @@
         }
       }
     }, {
-      "id" : "https://w3id.org/metpo/2000505",
-      "lbl" : "has culture pH observation",
-      "type" : "PROPERTY",
-      "propertyType" : "OBJECT",
-      "meta" : {
-        "definition" : {
-          "val" : "Relates a microbe to a culture pH observation (e.g., from BacDive)."
-        }
-      }
-    }, {
       "id" : "https://w3id.org/metpo/2000506",
       "lbl" : "has NaCl observation",
       "type" : "PROPERTY",
@@ -3752,17 +4493,62 @@
       }
     }, {
       "id" : "https://w3id.org/metpo/2000511",
-      "lbl" : "has culture NaCl observation",
+      "lbl" : "has observation",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT"
+    }, {
+      "id" : "https://w3id.org/metpo/2000512",
+      "lbl" : "has oxygen observation",
       "type" : "PROPERTY",
       "propertyType" : "OBJECT",
       "meta" : {
         "definition" : {
-          "val" : "Relates a microbe to a culture NaCl observation (e.g., from BacDive)."
+          "val" : "Relates a microbe to an oxygen observation."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000513",
+      "lbl" : "has optimum oxygen observation",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "definition" : {
+          "val" : "Relates a microbe to an optimum oxygen observation."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000514",
+      "lbl" : "has growth oxygen observation",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "definition" : {
+          "val" : "Relates a microbe to a growth oxygen observation."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000515",
+      "lbl" : "has range oxygen observation",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "definition" : {
+          "val" : "Relates a microbe to a growth oxygen range observation."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000516",
+      "lbl" : "has oxygen delta observation",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "definition" : {
+          "val" : "Relates a microbe to a oxygen tolerance breadth (delta) observation."
         }
       }
     }, {
       "id" : "https://w3id.org/metpo/2000058",
-      "lbl" : "has spot value",
+      "lbl" : "has observed spot value",
       "type" : "PROPERTY",
       "propertyType" : "DATA",
       "meta" : {
@@ -3772,7 +4558,7 @@
       }
     }, {
       "id" : "https://w3id.org/metpo/2000059",
-      "lbl" : "has minimum value",
+      "lbl" : "has minimum observed value",
       "type" : "PROPERTY",
       "propertyType" : "DATA",
       "meta" : {
@@ -3782,7 +4568,7 @@
       }
     }, {
       "id" : "https://w3id.org/metpo/2000060",
-      "lbl" : "has maximum value",
+      "lbl" : "has maximum observed value",
       "type" : "PROPERTY",
       "propertyType" : "DATA",
       "meta" : {
@@ -3815,6 +4601,16 @@
       "lbl" : "observation data property",
       "type" : "PROPERTY",
       "propertyType" : "DATA"
+    }, {
+      "id" : "https://w3id.org/metpo/2000071",
+      "lbl" : "has value",
+      "type" : "PROPERTY",
+      "propertyType" : "DATA",
+      "meta" : {
+        "definition" : {
+          "val" : "Relates any instance to a numerical value"
+        }
+      }
     }, {
       "id" : "http://purl.obolibrary.org/obo/IAO_0000115",
       "lbl" : "definition",
@@ -3853,6 +4649,14 @@
       "type" : "PROPERTY",
       "propertyType" : "ANNOTATION"
     }, {
+      "id" : "http://qudt.org/schema/qudt/ucumCode",
+      "lbl" : "UCUM code",
+      "type" : "PROPERTY",
+      "propertyType" : "ANNOTATION",
+      "meta" : {
+        "comments" : [ "A UCUM code that identifies a unit of measure." ]
+      }
+    }, {
       "id" : "http://www.geneontology.org/formats/oboInOwl#hasExactSynonym",
       "type" : "PROPERTY",
       "propertyType" : "ANNOTATION"
@@ -3862,6 +4666,14 @@
       "propertyType" : "ANNOTATION"
     }, {
       "id" : "http://www.w3.org/2004/02/skos/core#closeMatch",
+      "type" : "PROPERTY",
+      "propertyType" : "ANNOTATION"
+    }, {
+      "id" : "https://w3id.org/metpo/range_max",
+      "type" : "PROPERTY",
+      "propertyType" : "ANNOTATION"
+    }, {
+      "id" : "https://w3id.org/metpo/range_min",
       "type" : "PROPERTY",
       "propertyType" : "ANNOTATION"
     } ],
@@ -3880,59 +4692,75 @@
     }, {
       "sub" : "https://w3id.org/metpo/1000232",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000059"
+      "obj" : "https://w3id.org/metpo/1000531"
     }, {
-      "sub" : "https://w3id.org/metpo/1000233",
+      "sub" : "https://w3id.org/metpo/1000232",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000059"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000235",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000059"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000236",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000059"
+      "obj" : "https://w3id.org/metpo/1000534"
     }, {
       "sub" : "https://w3id.org/metpo/1000303",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000059"
+      "obj" : "https://w3id.org/metpo/1000533"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000303",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000534"
     }, {
       "sub" : "https://w3id.org/metpo/1000304",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000059"
+      "obj" : "https://w3id.org/metpo/1000533"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000304",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000536"
     }, {
       "sub" : "https://w3id.org/metpo/1000306",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000059"
+      "obj" : "https://w3id.org/metpo/1000533"
     }, {
-      "sub" : "https://w3id.org/metpo/1000329",
+      "sub" : "https://w3id.org/metpo/1000306",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000630"
-    }, {
-      "sub" : "https://w3id.org/metpo/1000330",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000630"
+      "obj" : "https://w3id.org/metpo/1000535"
     }, {
       "sub" : "https://w3id.org/metpo/1000331",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000059"
+      "obj" : "https://w3id.org/metpo/1000531"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000331",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000536"
     }, {
       "sub" : "https://w3id.org/metpo/1000332",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000059"
+      "obj" : "https://w3id.org/metpo/1000531"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000332",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000535"
     }, {
       "sub" : "https://w3id.org/metpo/1000333",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000059"
+      "obj" : "https://w3id.org/metpo/1000532"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000333",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000536"
     }, {
       "sub" : "https://w3id.org/metpo/1000334",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000059"
+      "obj" : "https://w3id.org/metpo/1000532"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000334",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000535"
     }, {
       "sub" : "https://w3id.org/metpo/1000335",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000059"
+      "obj" : "https://w3id.org/metpo/1000532"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000335",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000534"
     }, {
       "sub" : "https://w3id.org/metpo/1000429",
       "pred" : "is_a",
@@ -4138,10 +4966,6 @@
       "pred" : "is_a",
       "obj" : "https://w3id.org/metpo/1000303"
     }, {
-      "sub" : "https://w3id.org/metpo/1000511",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000059"
-    }, {
       "sub" : "https://w3id.org/metpo/1000525",
       "pred" : "is_a",
       "obj" : "https://w3id.org/metpo/1000186"
@@ -4149,6 +4973,30 @@
       "sub" : "https://w3id.org/metpo/1000526",
       "pred" : "is_a",
       "obj" : "https://w3id.org/metpo/1000186"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000531",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000059"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000532",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000059"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000533",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000059"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000534",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000059"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000535",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000059"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000536",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000059"
     }, {
       "sub" : "https://w3id.org/metpo/1000601",
       "pred" : "is_a",
@@ -4614,6 +5462,46 @@
       "pred" : "is_a",
       "obj" : "https://w3id.org/metpo/1000870"
     }, {
+      "sub" : "https://w3id.org/metpo/1000881",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000059"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000882",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000059"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000883",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000881"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000884",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000881"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000885",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000881"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000886",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000881"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000887",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000882"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000888",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000882"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000889",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000882"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000890",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000882"
+    }, {
       "sub" : "https://w3id.org/metpo/1001001",
       "pred" : "is_a",
       "obj" : "https://w3id.org/metpo/1001000"
@@ -4627,14 +5515,6 @@
       "obj" : "https://w3id.org/metpo/1001000"
     }, {
       "sub" : "https://w3id.org/metpo/1001004",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1001000"
-    }, {
-      "sub" : "https://w3id.org/metpo/1001005",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1001000"
-    }, {
-      "sub" : "https://w3id.org/metpo/1001006",
       "pred" : "is_a",
       "obj" : "https://w3id.org/metpo/1001000"
     }, {
@@ -4654,10 +5534,6 @@
       "pred" : "is_a",
       "obj" : "https://w3id.org/metpo/1001000"
     }, {
-      "sub" : "https://w3id.org/metpo/1001011",
-      "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1001000"
-    }, {
       "sub" : "https://w3id.org/metpo/1001012",
       "pred" : "is_a",
       "obj" : "https://w3id.org/metpo/1001000"
@@ -4671,6 +5547,38 @@
       "obj" : "https://w3id.org/metpo/1001000"
     }, {
       "sub" : "https://w3id.org/metpo/1001015",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1001000"
+    }, {
+      "sub" : "https://w3id.org/metpo/1001016",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1001000"
+    }, {
+      "sub" : "https://w3id.org/metpo/1001017",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1001000"
+    }, {
+      "sub" : "https://w3id.org/metpo/1001018",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1001000"
+    }, {
+      "sub" : "https://w3id.org/metpo/1001019",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1001000"
+    }, {
+      "sub" : "https://w3id.org/metpo/1001020",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1001000"
+    }, {
+      "sub" : "https://w3id.org/metpo/1001021",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1001000"
+    }, {
+      "sub" : "https://w3id.org/metpo/1001022",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1001000"
+    }, {
+      "sub" : "https://w3id.org/metpo/1001023",
       "pred" : "is_a",
       "obj" : "https://w3id.org/metpo/1001000"
     }, {
@@ -4745,6 +5653,50 @@
       "sub" : "https://w3id.org/metpo/1003009",
       "pred" : "is_a",
       "obj" : "https://w3id.org/metpo/1003000"
+    }, {
+      "sub" : "https://w3id.org/metpo/1003021",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000059"
+    }, {
+      "sub" : "https://w3id.org/metpo/1003022",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1003021"
+    }, {
+      "sub" : "https://w3id.org/metpo/1003023",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1003021"
+    }, {
+      "sub" : "https://w3id.org/metpo/1003024",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1003021"
+    }, {
+      "sub" : "https://w3id.org/metpo/1003025",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1003021"
+    }, {
+      "sub" : "https://w3id.org/metpo/1003026",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1003021"
+    }, {
+      "sub" : "https://w3id.org/metpo/1003027",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1003021"
+    }, {
+      "sub" : "https://w3id.org/metpo/1003028",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1003021"
+    }, {
+      "sub" : "https://w3id.org/metpo/1003029",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1003021"
+    }, {
+      "sub" : "https://w3id.org/metpo/1003030",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1003021"
+    }, {
+      "sub" : "https://w3id.org/metpo/1003031",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1003021"
     }, {
       "sub" : "https://w3id.org/metpo/2000002",
       "pred" : "subPropertyOf",
@@ -4946,6 +5898,10 @@
       "pred" : "subPropertyOf",
       "obj" : "https://w3id.org/metpo/2000001"
     }, {
+      "sub" : "https://w3id.org/metpo/2000052",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000511"
+    }, {
       "sub" : "https://w3id.org/metpo/2000053",
       "pred" : "subPropertyOf",
       "obj" : "https://w3id.org/metpo/2000052"
@@ -4959,10 +5915,6 @@
       "obj" : "https://w3id.org/metpo/2000052"
     }, {
       "sub" : "https://w3id.org/metpo/2000056",
-      "pred" : "subPropertyOf",
-      "obj" : "https://w3id.org/metpo/2000052"
-    }, {
-      "sub" : "https://w3id.org/metpo/2000057",
       "pred" : "subPropertyOf",
       "obj" : "https://w3id.org/metpo/2000052"
     }, {
@@ -5128,7 +6080,7 @@
     }, {
       "sub" : "https://w3id.org/metpo/2000239",
       "pred" : "subPropertyOf",
-      "obj" : "https://w3id.org/metpo/2000001"
+      "obj" : "https://w3id.org/metpo/2000511"
     }, {
       "sub" : "https://w3id.org/metpo/2000501",
       "pred" : "subPropertyOf",
@@ -5146,13 +6098,9 @@
       "pred" : "subPropertyOf",
       "obj" : "https://w3id.org/metpo/2000239"
     }, {
-      "sub" : "https://w3id.org/metpo/2000505",
-      "pred" : "subPropertyOf",
-      "obj" : "https://w3id.org/metpo/2000239"
-    }, {
       "sub" : "https://w3id.org/metpo/2000506",
       "pred" : "subPropertyOf",
-      "obj" : "https://w3id.org/metpo/2000506"
+      "obj" : "https://w3id.org/metpo/2000511"
     }, {
       "sub" : "https://w3id.org/metpo/2000507",
       "pred" : "subPropertyOf",
@@ -5170,9 +6118,25 @@
       "pred" : "subPropertyOf",
       "obj" : "https://w3id.org/metpo/2000506"
     }, {
-      "sub" : "https://w3id.org/metpo/2000511",
+      "sub" : "https://w3id.org/metpo/2000512",
       "pred" : "subPropertyOf",
-      "obj" : "https://w3id.org/metpo/2000506"
+      "obj" : "https://w3id.org/metpo/2000511"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000513",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000512"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000514",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000512"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000515",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000512"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000516",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000512"
     } ],
     "domainRangeAxioms" : [ {
       "predicateId" : "https://w3id.org/metpo/2000001",
@@ -5181,7 +6145,7 @@
     }, {
       "predicateId" : "https://w3id.org/metpo/2000052",
       "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
-      "rangeClassIds" : [ "https://w3id.org/metpo/1001000" ]
+      "rangeClassIds" : [ "https://w3id.org/metpo/1001021" ]
     }, {
       "predicateId" : "https://w3id.org/metpo/2000053",
       "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
@@ -5199,10 +6163,6 @@
       "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
       "rangeClassIds" : [ "https://w3id.org/metpo/1001004" ]
     }, {
-      "predicateId" : "https://w3id.org/metpo/2000057",
-      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
-      "rangeClassIds" : [ "https://w3id.org/metpo/1001005" ]
-    }, {
       "predicateId" : "https://w3id.org/metpo/2000101",
       "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
       "rangeClassIds" : [ "https://w3id.org/metpo/1000188" ]
@@ -5215,47 +6175,11 @@
       "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
       "rangeClassIds" : [ "https://w3id.org/metpo/1000630" ]
     }, {
-      "predicateId" : "https://w3id.org/metpo/2000200",
-      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
-      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
-    }, {
-      "predicateId" : "https://w3id.org/metpo/2000201",
-      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
-      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
-    }, {
-      "predicateId" : "https://w3id.org/metpo/2000202",
-      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
-      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
-    }, {
-      "predicateId" : "https://w3id.org/metpo/2000203",
-      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
-      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
-    }, {
-      "predicateId" : "https://w3id.org/metpo/2000204",
-      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
-      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
-    }, {
-      "predicateId" : "https://w3id.org/metpo/2000205",
-      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
-      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
-    }, {
-      "predicateId" : "https://w3id.org/metpo/2000206",
-      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
-      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
-    }, {
-      "predicateId" : "https://w3id.org/metpo/2000207",
-      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
-      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
-    }, {
       "predicateId" : "https://w3id.org/metpo/2000208",
       "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
       "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
     }, {
       "predicateId" : "https://w3id.org/metpo/2000209",
-      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
-      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
-    }, {
-      "predicateId" : "https://w3id.org/metpo/2000210",
       "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
       "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
     }, {
@@ -5267,75 +6191,11 @@
       "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
       "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
     }, {
-      "predicateId" : "https://w3id.org/metpo/2000213",
-      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
-      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
-    }, {
-      "predicateId" : "https://w3id.org/metpo/2000214",
-      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
-      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
-    }, {
-      "predicateId" : "https://w3id.org/metpo/2000215",
-      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
-      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
-    }, {
-      "predicateId" : "https://w3id.org/metpo/2000216",
-      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
-      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
-    }, {
-      "predicateId" : "https://w3id.org/metpo/2000217",
-      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
-      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
-    }, {
-      "predicateId" : "https://w3id.org/metpo/2000218",
-      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
-      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
-    }, {
-      "predicateId" : "https://w3id.org/metpo/2000219",
-      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
-      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
-    }, {
-      "predicateId" : "https://w3id.org/metpo/2000220",
-      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
-      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
-    }, {
-      "predicateId" : "https://w3id.org/metpo/2000221",
-      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
-      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
-    }, {
-      "predicateId" : "https://w3id.org/metpo/2000222",
-      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
-      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
-    }, {
-      "predicateId" : "https://w3id.org/metpo/2000223",
-      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
-      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
-    }, {
-      "predicateId" : "https://w3id.org/metpo/2000224",
-      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
-      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
-    }, {
-      "predicateId" : "https://w3id.org/metpo/2000225",
-      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
-      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
-    }, {
-      "predicateId" : "https://w3id.org/metpo/2000226",
-      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
-      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
-    }, {
-      "predicateId" : "https://w3id.org/metpo/2000227",
-      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
-      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
-    }, {
       "predicateId" : "https://w3id.org/metpo/2000228",
       "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
       "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
     }, {
       "predicateId" : "https://w3id.org/metpo/2000229",
-      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
-      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
-    }, {
-      "predicateId" : "https://w3id.org/metpo/2000230",
       "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
       "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
     }, {
@@ -5347,33 +6207,9 @@
       "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
       "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
     }, {
-      "predicateId" : "https://w3id.org/metpo/2000233",
-      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
-      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
-    }, {
-      "predicateId" : "https://w3id.org/metpo/2000234",
-      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
-      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
-    }, {
-      "predicateId" : "https://w3id.org/metpo/2000235",
-      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
-      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
-    }, {
-      "predicateId" : "https://w3id.org/metpo/2000236",
-      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
-      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
-    }, {
-      "predicateId" : "https://w3id.org/metpo/2000237",
-      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
-      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
-    }, {
-      "predicateId" : "https://w3id.org/metpo/2000238",
-      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
-      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
-    }, {
       "predicateId" : "https://w3id.org/metpo/2000239",
       "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
-      "rangeClassIds" : [ "https://w3id.org/metpo/1001000" ]
+      "rangeClassIds" : [ "https://w3id.org/metpo/1001023" ]
     }, {
       "predicateId" : "https://w3id.org/metpo/2000501",
       "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
@@ -5391,13 +6227,9 @@
       "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
       "rangeClassIds" : [ "https://w3id.org/metpo/1001014" ]
     }, {
-      "predicateId" : "https://w3id.org/metpo/2000505",
-      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
-      "rangeClassIds" : [ "https://w3id.org/metpo/1001011" ]
-    }, {
       "predicateId" : "https://w3id.org/metpo/2000506",
       "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
-      "rangeClassIds" : [ "https://w3id.org/metpo/1001000" ]
+      "rangeClassIds" : [ "https://w3id.org/metpo/1001022" ]
     }, {
       "predicateId" : "https://w3id.org/metpo/2000507",
       "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
@@ -5417,7 +6249,27 @@
     }, {
       "predicateId" : "https://w3id.org/metpo/2000511",
       "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
-      "rangeClassIds" : [ "https://w3id.org/metpo/1001006" ]
+      "rangeClassIds" : [ "https://w3id.org/metpo/1001000" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000512",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1001020" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000513",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1001016" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000514",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1001017" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000515",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1001018" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000516",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1001019" ]
     } ]
   } ]
 }
