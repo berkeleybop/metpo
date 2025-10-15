@@ -2,13 +2,12 @@ field_name_reconciliation:
   summary:
     total_fields: 105
     total_trait_fields: 94
-    covered: 59
-    missing: 46
-    missing_traits: 36
-    coverage_percentage: 56.2
-    traits_coverage_percentage: 62.8
+    covered: 85
+    missing_traits: 9
+    traits_coverage_percentage: 90.4
   covered_fields:
   - field: 10_to_14
+    original_kgmicrobe_name: null
     matched_as: null
     metpo_id: METPO:1000464
     label: pH range high
@@ -31,7 +30,8 @@ field_name_reconciliation:
     - value: '0.5'
       count: 20
   - field: GC_42_65_57_0
-    matched_as: GC_42.65.57.0
+    original_kgmicrobe_name: ' GC_42.65_57.0'
+    matched_as: null
     metpo_id: METPO:1000429
     label: GC low
     entity_type: owl:Class
@@ -45,7 +45,8 @@ field_name_reconciliation:
     - value: '1'
       count: 2620
   - field: GC_57_0_66_3
-    matched_as: GC_57.0_66.3
+    original_kgmicrobe_name: GC_57.0_66.3
+    matched_as: null
     metpo_id: METPO:1000431
     label: GC mid2
     entity_type: owl:Class
@@ -58,7 +59,38 @@ field_name_reconciliation:
       count: 7954
     - value: '1'
       count: 2320
+  - field: GC_gt_66_3
+    original_kgmicrobe_name: GC_>66.3
+    matched_as: GC_>66_3
+    metpo_id: METPO:1000430
+    label: GC mid1
+    entity_type: owl:Class
+    unique_values: 1
+    matched_from_source: null
+    value_distribution:
+    - value: ''
+      count: 9181
+    - value: '0'
+      count: 7831
+    - value: '1'
+      count: 2443
+  - field: GC_lte_42_65
+    original_kgmicrobe_name: GC_<=42.65
+    matched_as: null
+    metpo_id: METPO:1000432
+    label: GC high
+    entity_type: owl:Class
+    unique_values: 1
+    matched_from_source: null
+    value_distribution:
+    - value: ''
+      count: 9181
+    - value: '0'
+      count: 7383
+    - value: '1'
+      count: 2891
   - field: G_negative
+    original_kgmicrobe_name: null
     matched_as: null
     metpo_id: METPO:1000699
     label: gram negative
@@ -75,6 +107,7 @@ field_name_reconciliation:
     - value: '0.5'
       count: 84
   - field: G_positive
+    original_kgmicrobe_name: null
     matched_as: null
     metpo_id: METPO:1000698
     label: gram positive
@@ -91,6 +124,7 @@ field_name_reconciliation:
     - value: '0.5'
       count: 84
   - field: NaO_1_to_3
+    original_kgmicrobe_name: null
     matched_as: null
     metpo_id: METPO:1000466
     label: NaCl optimum mid1
@@ -105,6 +139,7 @@ field_name_reconciliation:
     - value: '1'
       count: 1213
   - field: NaO_3_to_8
+    original_kgmicrobe_name: null
     matched_as: null
     metpo_id: METPO:1000467
     label: NaCl optimum mid2
@@ -118,7 +153,38 @@ field_name_reconciliation:
       count: 2345
     - value: '1'
       count: 673
+  - field: NaO_gt_8
+    original_kgmicrobe_name: NaO_>8
+    matched_as: null
+    metpo_id: METPO:1000468
+    label: NaCl optimum high
+    entity_type: owl:Class
+    unique_values: 1
+    matched_from_source: null
+    value_distribution:
+    - value: ''
+      count: 16437
+    - value: '0'
+      count: 2852
+    - value: '1'
+      count: 166
+  - field: NaO_lte_1
+    original_kgmicrobe_name: NaO_<=1
+    matched_as: null
+    metpo_id: METPO:1000465
+    label: NaCl optimum low
+    entity_type: owl:Class
+    unique_values: 1
+    matched_from_source: null
+    value_distribution:
+    - value: ''
+      count: 16437
+    - value: '0'
+      count: 2065
+    - value: '1'
+      count: 953
   - field: NaR_1_to_3
+    original_kgmicrobe_name: null
     matched_as: null
     metpo_id: METPO:1000470
     label: NaCl range mid1
@@ -141,6 +207,7 @@ field_name_reconciliation:
     - value: '1'
       count: 11
   - field: NaR_3_to_8
+    original_kgmicrobe_name: null
     matched_as: null
     metpo_id: METPO:1000471
     label: NaCl range mid2
@@ -160,7 +227,54 @@ field_name_reconciliation:
       count: 202
     - value: '0.5'
       count: 189
+  - field: NaR_gt_8
+    original_kgmicrobe_name: NaR_>8
+    matched_as: null
+    metpo_id: METPO:1000472
+    label: NaCl range high
+    entity_type: owl:Class
+    unique_values: 5
+    matched_from_source: null
+    value_distribution:
+    - value: ''
+      count: 15021
+    - value: '0'
+      count: 3373
+    - value: '0.25'
+      count: 666
+    - value: '0.4'
+      count: 202
+    - value: '0.5'
+      count: 117
+    - value: '0.333333333333333'
+      count: 75
+    - value: '1'
+      count: 1
+  - field: NaR_lte_1
+    original_kgmicrobe_name: NaR_<=1
+    matched_as: null
+    metpo_id: METPO:1000469
+    label: NaCl range low
+    entity_type: owl:Class
+    unique_values: 5
+    matched_from_source: null
+    value_distribution:
+    - value: ''
+      count: 15021
+    - value: '0.333333333333333'
+      count: 1584
+    - value: '0.5'
+      count: 1048
+    - value: '0.25'
+      count: 666
+    - value: '1'
+      count: 541
+    - value: '0'
+      count: 393
+    - value: '0.2'
+      count: 202
   - field: Nad_1_3
+    original_kgmicrobe_name: null
     matched_as: Nad_1.3
     metpo_id: METPO:1000480
     label: NaCl delta mid1
@@ -175,6 +289,7 @@ field_name_reconciliation:
     - value: '1'
       count: 1173
   - field: Nad_3_8
+    original_kgmicrobe_name: null
     matched_as: null
     metpo_id: METPO:1000481
     label: NaCl delta mid2
@@ -188,7 +303,38 @@ field_name_reconciliation:
       count: 2773
     - value: '1'
       count: 1658
+  - field: Nad_gt_8
+    original_kgmicrobe_name: Nad_>8
+    matched_as: null
+    metpo_id: METPO:1000482
+    label: NaCl delta high
+    entity_type: owl:Class
+    unique_values: 1
+    matched_from_source: null
+    value_distribution:
+    - value: ''
+      count: 15024
+    - value: '0'
+      count: 3421
+    - value: '1'
+      count: 1010
+  - field: Nad_lte_1
+    original_kgmicrobe_name: Nad_<=1
+    matched_as: null
+    metpo_id: METPO:1000479
+    label: NaCl delta low
+    entity_type: owl:Class
+    unique_values: 1
+    matched_from_source: null
+    value_distribution:
+    - value: ''
+      count: 15024
+    - value: '0'
+      count: 3841
+    - value: '1'
+      count: 590
   - field: Ox_aerobic
+    original_kgmicrobe_name: null
     matched_as: null
     metpo_id: METPO:1000602
     label: aerobic
@@ -203,6 +349,7 @@ field_name_reconciliation:
     - value: ''
       count: 4157
   - field: Ox_anaerobic
+    original_kgmicrobe_name: null
     matched_as: null
     metpo_id: METPO:1000603
     label: anaerobic
@@ -217,6 +364,7 @@ field_name_reconciliation:
     - value: '1'
       count: 3525
   - field: Ox_facultative_aerobe_anaerobe
+    original_kgmicrobe_name: null
     matched_as: null
     metpo_id: METPO:1000612
     label: facultative oxygen preference
@@ -231,6 +379,7 @@ field_name_reconciliation:
     - value: '1'
       count: 600
   - field: Ox_microerophile
+    original_kgmicrobe_name: null
     matched_as: null
     metpo_id: METPO:1000604
     label: microaerophilic
@@ -244,7 +393,186 @@ field_name_reconciliation:
       count: 4157
     - value: '1'
       count: 3586
+  - field: Pigment_black
+    original_kgmicrobe_name: null
+    matched_as: null
+    metpo_id: METPO:1003022
+    label: black pigmented
+    entity_type: owl:Class
+    unique_values: 3
+    matched_from_source: null
+    value_distribution:
+    - value: ''
+      count: 19354
+    - value: '0'
+      count: 93
+    - value: '0.5'
+      count: 4
+    - value: '1'
+      count: 2
+    - value: '0.333'
+      count: 2
+  - field: Pigment_brown
+    original_kgmicrobe_name: null
+    matched_as: null
+    metpo_id: METPO:1003023
+    label: brown pigmented
+    entity_type: owl:Class
+    unique_values: 2
+    matched_from_source: null
+    value_distribution:
+    - value: ''
+      count: 19354
+    - value: '0'
+      count: 82
+    - value: '0.5'
+      count: 10
+    - value: '1'
+      count: 9
+  - field: Pigment_carotenoid
+    original_kgmicrobe_name: null
+    matched_as: null
+    metpo_id: METPO:1003031
+    label: carotenoid pigmentation
+    entity_type: owl:Class
+    unique_values: 1
+    matched_from_source: null
+    value_distribution:
+    - value: ''
+      count: 19354
+    - value: '0'
+      count: 97
+    - value: '1'
+      count: 4
+  - field: Pigment_cream
+    original_kgmicrobe_name: null
+    matched_as: null
+    metpo_id: METPO:1003024
+    label: cream pigmented
+    entity_type: owl:Class
+    unique_values: 2
+    matched_from_source: null
+    value_distribution:
+    - value: ''
+      count: 19354
+    - value: '0'
+      count: 90
+    - value: '1'
+      count: 6
+    - value: '0.5'
+      count: 5
+  - field: Pigment_green
+    original_kgmicrobe_name: null
+    matched_as: null
+    metpo_id: METPO:1003025
+    label: green pigmented
+    entity_type: owl:Class
+    unique_values: 3
+    matched_from_source: null
+    value_distribution:
+    - value: ''
+      count: 19354
+    - value: '0'
+      count: 98
+    - value: '1'
+      count: 1
+    - value: '0.334'
+      count: 1
+    - value: '0.5'
+      count: 1
+  - field: Pigment_orange
+    original_kgmicrobe_name: null
+    matched_as: null
+    metpo_id: METPO:1003026
+    label: orange pigmented
+    entity_type: owl:Class
+    unique_values: 2
+    matched_from_source: null
+    value_distribution:
+    - value: ''
+      count: 19354
+    - value: '0'
+      count: 83
+    - value: '1'
+      count: 10
+    - value: '0.5'
+      count: 8
+  - field: Pigment_pink
+    original_kgmicrobe_name: null
+    matched_as: null
+    metpo_id: METPO:1003027
+    label: pink pigmented
+    entity_type: owl:Class
+    unique_values: 3
+    matched_from_source: null
+    value_distribution:
+    - value: ''
+      count: 19354
+    - value: '0'
+      count: 88
+    - value: '0.5'
+      count: 7
+    - value: '1'
+      count: 5
+    - value: '0.333'
+      count: 1
+  - field: Pigment_red
+    original_kgmicrobe_name: null
+    matched_as: null
+    metpo_id: METPO:1003028
+    label: red pigmented
+    entity_type: owl:Class
+    unique_values: 2
+    matched_from_source: null
+    value_distribution:
+    - value: ''
+      count: 19354
+    - value: '0'
+      count: 91
+    - value: '0.5'
+      count: 6
+    - value: '1'
+      count: 4
+  - field: Pigment_white
+    original_kgmicrobe_name: null
+    matched_as: null
+    metpo_id: METPO:1003029
+    label: white pigmented
+    entity_type: owl:Class
+    unique_values: 3
+    matched_from_source: null
+    value_distribution:
+    - value: ''
+      count: 19354
+    - value: '0'
+      count: 89
+    - value: '0.5'
+      count: 9
+    - value: '1'
+      count: 2
+    - value: '0.334'
+      count: 1
+  - field: Pigment_yellow
+    original_kgmicrobe_name: null
+    matched_as: null
+    metpo_id: METPO:1003030
+    label: yellow pigmented
+    entity_type: owl:Class
+    unique_values: 3
+    matched_from_source: null
+    value_distribution:
+    - value: ''
+      count: 19354
+    - value: '0'
+      count: 62
+    - value: '1'
+      count: 24
+    - value: '0.5'
+      count: 14
+    - value: '0.333'
+      count: 1
   - field: S_curved_spiral
+    original_kgmicrobe_name: ' S_curved_spiral'
     matched_as: null
     metpo_id: METPO:1000670
     label: curved shaped
@@ -259,6 +587,7 @@ field_name_reconciliation:
     - value: '1'
       count: 92
   - field: S_filament
+    original_kgmicrobe_name: ' S_filament'
     matched_as: null
     metpo_id: METPO:1000674
     label: filament shaped
@@ -273,6 +602,7 @@ field_name_reconciliation:
     - value: '1'
       count: 30
   - field: S_ovoid
+    original_kgmicrobe_name: ' S_ovoid'
     matched_as: null
     metpo_id: METPO:1000677
     label: ovoid shaped
@@ -287,6 +617,7 @@ field_name_reconciliation:
     - value: '1'
       count: 253
   - field: S_rod
+    original_kgmicrobe_name: ' S_rod'
     matched_as: null
     metpo_id: METPO:1000681
     label: rod shaped
@@ -301,6 +632,7 @@ field_name_reconciliation:
     - value: '0'
       count: 896
   - field: S_sphere
+    original_kgmicrobe_name: ' S_sphere'
     matched_as: null
     metpo_id: METPO:1000683
     label: sphere shaped
@@ -315,6 +647,7 @@ field_name_reconciliation:
     - value: '1'
       count: 495
   - field: S_star_dumbbell_pleomorphic
+    original_kgmicrobe_name: null
     matched_as: null
     metpo_id: METPO:1000672
     label: dumbbell shaped
@@ -329,6 +662,7 @@ field_name_reconciliation:
     - value: '1'
       count: 26
   - field: TO_10_to_22
+    original_kgmicrobe_name: null
     matched_as: null
     metpo_id: METPO:1000442
     label: temperature optimum low
@@ -343,6 +677,7 @@ field_name_reconciliation:
     - value: '1'
       count: 302
   - field: TO_22_to_27
+    original_kgmicrobe_name: null
     matched_as: null
     metpo_id: METPO:1000443
     label: temperature optimum mid1
@@ -357,6 +692,7 @@ field_name_reconciliation:
     - value: '1'
       count: 745
   - field: TO_27_to_30
+    original_kgmicrobe_name: null
     matched_as: null
     metpo_id: METPO:1000444
     label: temperature optimum mid2
@@ -371,6 +707,7 @@ field_name_reconciliation:
     - value: '0'
       count: 2889
   - field: TO_30_to_34
+    original_kgmicrobe_name: null
     matched_as: null
     metpo_id: METPO:1000445
     label: temperature optimum mid3
@@ -385,6 +722,7 @@ field_name_reconciliation:
     - value: '1'
       count: 584
   - field: TO_34_to_40
+    original_kgmicrobe_name: null
     matched_as: null
     metpo_id: METPO:1000446
     label: temperature optimum mid4
@@ -398,7 +736,38 @@ field_name_reconciliation:
       count: 4932
     - value: '1'
       count: 890
+  - field: TO_gt_40
+    original_kgmicrobe_name: TO_>40
+    matched_as: null
+    metpo_id: METPO:1000447
+    label: temperature optimum high
+    entity_type: owl:Class
+    unique_values: 1
+    matched_from_source: null
+    value_distribution:
+    - value: ''
+      count: 13633
+    - value: '0'
+      count: 5485
+    - value: '1'
+      count: 337
+  - field: TO_lte_10
+    original_kgmicrobe_name: TO_<=10
+    matched_as: null
+    metpo_id: METPO:1000441
+    label: temperature optimum very low
+    entity_type: owl:Class
+    unique_values: 1
+    matched_from_source: null
+    value_distribution:
+    - value: ''
+      count: 13633
+    - value: '0'
+      count: 5791
+    - value: '1'
+      count: 31
   - field: TR_10_to_22
+    original_kgmicrobe_name: null
     matched_as: null
     metpo_id: METPO:1000449
     label: temperature range low
@@ -425,6 +794,7 @@ field_name_reconciliation:
     - value: '1'
       count: 17
   - field: TR_22_to_27
+    original_kgmicrobe_name: null
     matched_as: null
     metpo_id: METPO:1000450
     label: temperature range mid1
@@ -451,6 +821,7 @@ field_name_reconciliation:
     - value: '1'
       count: 6
   - field: TR_27_to_30
+    original_kgmicrobe_name: null
     matched_as: null
     metpo_id: METPO:1000451
     label: temperature range mid2
@@ -477,6 +848,7 @@ field_name_reconciliation:
     - value: '1'
       count: 28
   - field: TR_30_to_34
+    original_kgmicrobe_name: null
     matched_as: null
     metpo_id: METPO:1000452
     label: temperature range mid3
@@ -501,6 +873,7 @@ field_name_reconciliation:
     - value: '0.5'
       count: 31
   - field: TR_34_to_40
+    original_kgmicrobe_name: null
     matched_as: null
     metpo_id: METPO:1000453
     label: temperature range mid4
@@ -526,7 +899,62 @@ field_name_reconciliation:
       count: 172
     - value: '1'
       count: 28
+  - field: TR_gt_40
+    original_kgmicrobe_name: TR_>40
+    matched_as: null
+    metpo_id: METPO:1000454
+    label: temperature range high
+    entity_type: owl:Class
+    unique_values: 7
+    matched_from_source: null
+    value_distribution:
+    - value: ''
+      count: 13555
+    - value: '0'
+      count: 4201
+    - value: '0.1666667'
+      count: 565
+    - value: '0.1428571'
+      count: 508
+    - value: '0.2'
+      count: 174
+    - value: '0.25'
+      count: 158
+    - value: '0.5'
+      count: 149
+    - value: '1'
+      count: 136
+    - value: '0.3333333'
+      count: 9
+  - field: TR_lte_10
+    original_kgmicrobe_name: TR_<=10
+    matched_as: null
+    metpo_id: METPO:1000448
+    label: temperature range very low
+    entity_type: owl:Class
+    unique_values: 7
+    matched_from_source: null
+    value_distribution:
+    - value: ''
+      count: 13555
+    - value: '0'
+      count: 3692
+    - value: '0.1666667'
+      count: 1114
+    - value: '0.1428571'
+      count: 508
+    - value: '0.25'
+      count: 303
+    - value: '0.2'
+      count: 157
+    - value: '0.3333333'
+      count: 83
+    - value: '0.5'
+      count: 40
+    - value: '1'
+      count: 3
   - field: TT_autotroph
+    original_kgmicrobe_name: null
     matched_as: null
     metpo_id: METPO:1000632
     label: autotrophic
@@ -547,6 +975,7 @@ field_name_reconciliation:
     - value: '0.5'
       count: 2
   - field: TT_chemotroph
+    original_kgmicrobe_name: null
     matched_as: null
     metpo_id: METPO:1000641
     label: chemotrophic
@@ -569,6 +998,7 @@ field_name_reconciliation:
     - value: '1'
       count: 1
   - field: TT_heterotroph
+    original_kgmicrobe_name: null
     matched_as: null
     metpo_id: METPO:1000644
     label: heterotrophic
@@ -591,6 +1021,7 @@ field_name_reconciliation:
     - value: '0.2'
       count: 2
   - field: TT_lithotroph
+    original_kgmicrobe_name: null
     matched_as: null
     metpo_id: METPO:1000649
     label: lithotrophic
@@ -613,6 +1044,7 @@ field_name_reconciliation:
     - value: '1'
       count: 1
   - field: TT_methylotroph
+    original_kgmicrobe_name: null
     matched_as: null
     metpo_id: METPO:1000651
     label: methylotrophic
@@ -627,6 +1059,7 @@ field_name_reconciliation:
     - value: '1'
       count: 1
   - field: TT_oligotroph
+    original_kgmicrobe_name: null
     matched_as: null
     metpo_id: METPO:1000654
     label: oligotrophic
@@ -641,6 +1074,7 @@ field_name_reconciliation:
     - value: '1'
       count: 1
   - field: TT_organotroph
+    original_kgmicrobe_name: null
     matched_as: null
     metpo_id: METPO:1000655
     label: organotrophic
@@ -663,6 +1097,7 @@ field_name_reconciliation:
     - value: '0.2'
       count: 1
   - field: TT_phototroph
+    original_kgmicrobe_name: null
     matched_as: null
     metpo_id: METPO:1000660
     label: phototrophic
@@ -685,7 +1120,8 @@ field_name_reconciliation:
     - value: '0.5'
       count: 1
   - field: Td_10_20
-    matched_as: Td_10.20
+    original_kgmicrobe_name: null
+    matched_as: null
     metpo_id: METPO:1000485
     label: temperature delta mid1
     entity_type: owl:Class
@@ -699,6 +1135,7 @@ field_name_reconciliation:
     - value: '1'
       count: 1280
   - field: Td_1_5
+    original_kgmicrobe_name: null
     matched_as: Td_1.5
     metpo_id: METPO:1000483
     label: temperature delta very low
@@ -713,7 +1150,8 @@ field_name_reconciliation:
     - value: '1'
       count: 387
   - field: Td_20_30
-    matched_as: Td_20.30
+    original_kgmicrobe_name: null
+    matched_as: null
     metpo_id: METPO:1000486
     label: temperature delta mid2
     entity_type: owl:Class
@@ -727,6 +1165,7 @@ field_name_reconciliation:
     - value: '1'
       count: 2152
   - field: Td_5_10
+    original_kgmicrobe_name: null
     matched_as: Td_5.10
     metpo_id: METPO:1000484
     label: temperature delta low
@@ -740,7 +1179,23 @@ field_name_reconciliation:
       count: 5009
     - value: '1'
       count: 891
+  - field: Td_gt_30
+    original_kgmicrobe_name: Td_>30
+    matched_as: null
+    metpo_id: METPO:1000487
+    label: temperature delta high
+    entity_type: owl:Class
+    unique_values: 1
+    matched_from_source: null
+    value_distribution:
+    - value: ''
+      count: 13555
+    - value: '0'
+      count: 4710
+    - value: '1'
+      count: 1190
   - field: motile
+    original_kgmicrobe_name: null
     matched_as: null
     metpo_id: METPO:1000702
     label: motile
@@ -754,10 +1209,26 @@ field_name_reconciliation:
       count: 2820
     - value: '1'
       count: 579
+  - field: no_spore
+    original_kgmicrobe_name: null
+    matched_as: null
+    metpo_id: METPO:1000872
+    label: non-spore forming
+    entity_type: owl:Class
+    unique_values: 1
+    matched_from_source: null
+    value_distribution:
+    - value: ''
+      count: 15425
+    - value: '1'
+      count: 2700
+    - value: '0'
+      count: 1330
   - field: non_motile
-    matched_as: motile
-    metpo_id: METPO:1000702
-    label: motile
+    original_kgmicrobe_name: non-motile
+    matched_as: null
+    metpo_id: METPO:1000703
+    label: non motile
     entity_type: owl:Class
     unique_values: 1
     matched_from_source: null
@@ -769,6 +1240,7 @@ field_name_reconciliation:
     - value: '0'
       count: 2339
   - field: pHO_0_to_6
+    original_kgmicrobe_name: null
     matched_as: null
     metpo_id: METPO:1000455
     label: pH optimum low
@@ -783,6 +1255,7 @@ field_name_reconciliation:
     - value: '1'
       count: 294
   - field: pHO_6_to_7
+    original_kgmicrobe_name: null
     matched_as: null
     metpo_id: METPO:1000456
     label: pH optimum mid1
@@ -797,6 +1270,7 @@ field_name_reconciliation:
     - value: '1'
       count: 1928
   - field: pHO_7_to_8
+    original_kgmicrobe_name: null
     matched_as: null
     metpo_id: METPO:1000457
     label: pH optimum mid2
@@ -811,6 +1285,7 @@ field_name_reconciliation:
     - value: '1'
       count: 1706
   - field: pHO_8_to_14
+    original_kgmicrobe_name: null
     matched_as: null
     metpo_id: METPO:1000458
     label: pH optimum high
@@ -825,6 +1300,7 @@ field_name_reconciliation:
     - value: '1'
       count: 367
   - field: pHR_0_to_4
+    original_kgmicrobe_name: null
     matched_as: null
     metpo_id: METPO:1000459
     label: pH range very low
@@ -849,6 +1325,7 @@ field_name_reconciliation:
     - value: '1'
       count: 3
   - field: pHR_4_to_6
+    original_kgmicrobe_name: null
     matched_as: null
     metpo_id: METPO:1000460
     label: pH range low
@@ -873,6 +1350,7 @@ field_name_reconciliation:
     - value: '1'
       count: 15
   - field: pHR_6_to_7
+    original_kgmicrobe_name: null
     matched_as: null
     metpo_id: METPO:1000461
     label: pH range mid1
@@ -897,6 +1375,7 @@ field_name_reconciliation:
     - value: '1'
       count: 8
   - field: pHR_7_to_8
+    original_kgmicrobe_name: null
     matched_as: null
     metpo_id: METPO:1000462
     label: pH range mid2
@@ -921,6 +1400,7 @@ field_name_reconciliation:
     - value: '1'
       count: 8
   - field: pHR_8_to_10
+    original_kgmicrobe_name: null
     matched_as: null
     metpo_id: METPO:1000463
     label: pH range mid3
@@ -945,7 +1425,8 @@ field_name_reconciliation:
     - value: '1'
       count: 3
   - field: pHd_1_2
-    matched_as: null
+    original_kgmicrobe_name: null
+    matched_as: pHd_1.2
     metpo_id: METPO:1000474
     label: pH delta low
     entity_type: owl:Class
@@ -959,7 +1440,8 @@ field_name_reconciliation:
     - value: '1'
       count: 781
   - field: pHd_2_3
-    matched_as: pHd_2.3
+    original_kgmicrobe_name: null
+    matched_as: null
     metpo_id: METPO:1000475
     label: pH delta mid1
     entity_type: owl:Class
@@ -973,6 +1455,7 @@ field_name_reconciliation:
     - value: '1'
       count: 1196
   - field: pHd_3_4
+    original_kgmicrobe_name: null
     matched_as: null
     metpo_id: METPO:1000476
     label: pH delta mid2
@@ -987,6 +1470,7 @@ field_name_reconciliation:
     - value: '1'
       count: 1113
   - field: pHd_4_5
+    original_kgmicrobe_name: null
     matched_as: pHd_4.5
     metpo_id: METPO:1000477
     label: pH delta mid3
@@ -1001,7 +1485,8 @@ field_name_reconciliation:
     - value: '1'
       count: 619
   - field: pHd_5_9
-    matched_as: pHd_5.9
+    original_kgmicrobe_name: null
+    matched_as: null
     metpo_id: METPO:1000478
     label: pH delta high
     entity_type: owl:Class
@@ -1014,213 +1499,39 @@ field_name_reconciliation:
       count: 3933
     - value: '1'
       count: 326
+  - field: pHd_lte_1
+    original_kgmicrobe_name: pHd_<=1
+    matched_as: null
+    metpo_id: METPO:1000473
+    label: pH delta very low
+    entity_type: owl:Class
+    unique_values: 1
+    matched_from_source: null
+    value_distribution:
+    - value: ''
+      count: 15196
+    - value: '0'
+      count: 4035
+    - value: '1'
+      count: 224
+  - field: spore
+    original_kgmicrobe_name: null
+    matched_as: null
+    metpo_id: METPO:1000871
+    label: spore forming
+    entity_type: owl:Class
+    unique_values: 1
+    matched_from_source: null
+    value_distribution:
+    - value: ''
+      count: 15425
+    - value: '0'
+      count: 2700
+    - value: '1'
+      count: 1330
   missing_trait_fields:
-  - field: culture_collection_codes
-    unique_values: 19439
-  - field: TR_gt_40
-    unique_values: 7
-    value_distribution:
-    - value: ''
-      count: 13555
-    - value: '0'
-      count: 4201
-    - value: '0.1666667'
-      count: 565
-    - value: '0.1428571'
-      count: 508
-    - value: '0.2'
-      count: 174
-    - value: '0.25'
-      count: 158
-    - value: '0.5'
-      count: 149
-    - value: '1'
-      count: 136
-    - value: '0.3333333'
-      count: 9
-  - field: TR_lte_10
-    unique_values: 7
-    value_distribution:
-    - value: ''
-      count: 13555
-    - value: '0'
-      count: 3692
-    - value: '0.1666667'
-      count: 1114
-    - value: '0.1428571'
-      count: 508
-    - value: '0.25'
-      count: 303
-    - value: '0.2'
-      count: 157
-    - value: '0.3333333'
-      count: 83
-    - value: '0.5'
-      count: 40
-    - value: '1'
-      count: 3
-  - field: NaR_gt_8
-    unique_values: 5
-    value_distribution:
-    - value: ''
-      count: 15021
-    - value: '0'
-      count: 3373
-    - value: '0.25'
-      count: 666
-    - value: '0.4'
-      count: 202
-    - value: '0.5'
-      count: 117
-    - value: '0.333333333333333'
-      count: 75
-    - value: '1'
-      count: 1
-  - field: NaR_lte_1
-    unique_values: 5
-    value_distribution:
-    - value: ''
-      count: 15021
-    - value: '0.333333333333333'
-      count: 1584
-    - value: '0.5'
-      count: 1048
-    - value: '0.25'
-      count: 666
-    - value: '1'
-      count: 541
-    - value: '0'
-      count: 393
-    - value: '0.2'
-      count: 202
-  - field: Pigment_black
-    unique_values: 3
-    value_distribution:
-    - value: ''
-      count: 19354
-    - value: '0'
-      count: 93
-    - value: '0.5'
-      count: 4
-    - value: '0.333'
-      count: 2
-    - value: '1'
-      count: 2
-  - field: Pigment_green
-    unique_values: 3
-    value_distribution:
-    - value: ''
-      count: 19354
-    - value: '0'
-      count: 98
-    - value: '1'
-      count: 1
-    - value: '0.334'
-      count: 1
-    - value: '0.5'
-      count: 1
-  - field: Pigment_pink
-    unique_values: 3
-    value_distribution:
-    - value: ''
-      count: 19354
-    - value: '0'
-      count: 88
-    - value: '0.5'
-      count: 7
-    - value: '1'
-      count: 5
-    - value: '0.333'
-      count: 1
-  - field: Pigment_white
-    unique_values: 3
-    value_distribution:
-    - value: ''
-      count: 19354
-    - value: '0'
-      count: 89
-    - value: '0.5'
-      count: 9
-    - value: '1'
-      count: 2
-    - value: '0.334'
-      count: 1
-  - field: Pigment_yellow
-    unique_values: 3
-    value_distribution:
-    - value: ''
-      count: 19354
-    - value: '0'
-      count: 62
-    - value: '1'
-      count: 24
-    - value: '0.5'
-      count: 14
-    - value: '0.333'
-      count: 1
-  - field: Pigment_brown
-    unique_values: 2
-    value_distribution:
-    - value: ''
-      count: 19354
-    - value: '0'
-      count: 82
-    - value: '0.5'
-      count: 10
-    - value: '1'
-      count: 9
-  - field: Pigment_cream
-    unique_values: 2
-    value_distribution:
-    - value: ''
-      count: 19354
-    - value: '0'
-      count: 90
-    - value: '1'
-      count: 6
-    - value: '0.5'
-      count: 5
-  - field: Pigment_orange
-    unique_values: 2
-    value_distribution:
-    - value: ''
-      count: 19354
-    - value: '0'
-      count: 83
-    - value: '1'
-      count: 10
-    - value: '0.5'
-      count: 8
-  - field: Pigment_red
-    unique_values: 2
-    value_distribution:
-    - value: ''
-      count: 19354
-    - value: '0'
-      count: 91
-    - value: '0.5'
-      count: 6
-    - value: '1'
-      count: 4
-  - field: GC_gt_66_3
-    unique_values: 1
-    value_distribution:
-    - value: ''
-      count: 9181
-    - value: '0'
-      count: 7831
-    - value: '1'
-      count: 2443
-  - field: GC_lte_42_65
-    unique_values: 1
-    value_distribution:
-    - value: ''
-      count: 9181
-    - value: '0'
-      count: 7383
-    - value: '1'
-      count: 2891
   - field: L_1_3_2
+    original_kgmicrobe_name: ' L_1.3_2'
     unique_values: 1
     value_distribution:
     - value: ''
@@ -1230,6 +1541,7 @@ field_name_reconciliation:
     - value: '1'
       count: 1317
   - field: L_2_3
+    original_kgmicrobe_name: null
     unique_values: 1
     value_distribution:
     - value: ''
@@ -1239,6 +1551,7 @@ field_name_reconciliation:
     - value: '1'
       count: 1017
   - field: L_gt_3
+    original_kgmicrobe_name: L_>3
     unique_values: 1
     value_distribution:
     - value: ''
@@ -1248,6 +1561,7 @@ field_name_reconciliation:
     - value: '1'
       count: 989
   - field: L_lte_1_3
+    original_kgmicrobe_name: L_<=1.3
     unique_values: 1
     value_distribution:
     - value: ''
@@ -1256,70 +1570,8 @@ field_name_reconciliation:
       count: 3323
     - value: '1'
       count: 1140
-  - field: NaO_gt_8
-    unique_values: 1
-    value_distribution:
-    - value: ''
-      count: 16437
-    - value: '0'
-      count: 2852
-    - value: '1'
-      count: 166
-  - field: NaO_lte_1
-    unique_values: 1
-    value_distribution:
-    - value: ''
-      count: 16437
-    - value: '0'
-      count: 2065
-    - value: '1'
-      count: 953
-  - field: Nad_gt_8
-    unique_values: 1
-    value_distribution:
-    - value: ''
-      count: 15024
-    - value: '0'
-      count: 3421
-    - value: '1'
-      count: 1010
-  - field: Nad_lte_1
-    unique_values: 1
-    value_distribution:
-    - value: ''
-      count: 15024
-    - value: '0'
-      count: 3841
-    - value: '1'
-      count: 590
-  - field: Pigment_carotenoid
-    unique_values: 1
-    value_distribution:
-    - value: ''
-      count: 19354
-    - value: '0'
-      count: 97
-    - value: '1'
-      count: 4
-  - field: TO_gt_40
-    unique_values: 1
-    value_distribution:
-    - value: ''
-      count: 13633
-    - value: '0'
-      count: 5485
-    - value: '1'
-      count: 337
-  - field: TO_lte_10
-    unique_values: 1
-    value_distribution:
-    - value: ''
-      count: 13633
-    - value: '0'
-      count: 5791
-    - value: '1'
-      count: 31
   - field: TT_copiotroph_diazotroph
+    original_kgmicrobe_name: null
     unique_values: 1
     value_distribution:
     - value: ''
@@ -1328,16 +1580,8 @@ field_name_reconciliation:
       count: 337
     - value: '1'
       count: 2
-  - field: Td_gt_30
-    unique_values: 1
-    value_distribution:
-    - value: ''
-      count: 13555
-    - value: '0'
-      count: 4710
-    - value: '1'
-      count: 1190
   - field: W_0_5_0_65
+    original_kgmicrobe_name: ' W_0.5_0.65'
     unique_values: 1
     value_distribution:
     - value: ''
@@ -1347,6 +1591,7 @@ field_name_reconciliation:
     - value: '1'
       count: 870
   - field: W_0_65_0_9
+    original_kgmicrobe_name: W_0.65_0.9
     unique_values: 1
     value_distribution:
     - value: ''
@@ -1356,6 +1601,7 @@ field_name_reconciliation:
     - value: '1'
       count: 1132
   - field: W_gt_0_9
+    original_kgmicrobe_name: W_>0.9
     unique_values: 1
     value_distribution:
     - value: ''
@@ -1365,6 +1611,7 @@ field_name_reconciliation:
     - value: '1'
       count: 826
   - field: W_lte_0_5
+    original_kgmicrobe_name: W_<=0.5
     unique_values: 1
     value_distribution:
     - value: ''
@@ -1373,81 +1620,42 @@ field_name_reconciliation:
       count: 2828
     - value: '1'
       count: 1633
-  - field: no_spore
-    unique_values: 1
-    value_distribution:
-    - value: ''
-      count: 15425
-    - value: '1'
-      count: 2700
-    - value: '0'
-      count: 1330
-  - field: pHd_lte_1
-    unique_values: 1
-    value_distribution:
-    - value: ''
-      count: 15196
-    - value: '0'
-      count: 4035
-    - value: '1'
-      count: 224
-  - field: spore
-    unique_values: 1
-    value_distribution:
-    - value: ''
-      count: 15425
-    - value: '0'
-      count: 2700
-    - value: '1'
-      count: 1330
-  missing_taxonomic_id_fields:
-  - field: Bacdive_ID
-    unique_values: 19455
+  missing_identifier_fields:
   - field: Full_name
+    original_kgmicrobe_name: null
     unique_values: 11355
   - field: ncbitaxon_id
+    original_kgmicrobe_name: null
     unique_values: 9933
+  permanently_excluded_fields:
+  - field: Bacdive_ID
+    original_kgmicrobe_name: null
+    unique_values: 19455
+  - field: culture_collection_codes
+    original_kgmicrobe_name: culture collection codes
+    unique_values: 19439
   - field: Species
+    original_kgmicrobe_name: null
     unique_values: 6525
   - field: Genus
+    original_kgmicrobe_name: null
     unique_values: 2394
   - field: Family
+    original_kgmicrobe_name: null
     unique_values: 708
   - field: Order
+    original_kgmicrobe_name: null
     unique_values: 471
   - field: Class
+    original_kgmicrobe_name: null
     unique_values: 363
   - field: Phylum
+    original_kgmicrobe_name: null
     unique_values: 323
   - field: Kingdom
+    original_kgmicrobe_name: null
     unique_values: 1
     value_distribution:
     - value: Bacteria
       count: 19455
-  high_value_missing_fields:
-  - field: TR_gt_40
-    unique_values: 7
-  - field: TR_lte_10
-    unique_values: 7
-  - field: NaR_gt_8
-    unique_values: 5
-  - field: NaR_lte_1
-    unique_values: 5
-  - field: Pigment_black
-    unique_values: 3
-  - field: Pigment_green
-    unique_values: 3
-  - field: Pigment_pink
-    unique_values: 3
-  - field: Pigment_white
-    unique_values: 3
-  - field: Pigment_yellow
-    unique_values: 3
-  - field: Pigment_brown
-    unique_values: 2
-  - field: Pigment_cream
-    unique_values: 2
-  - field: Pigment_orange
-    unique_values: 2
-  - field: Pigment_red
-    unique_values: 2
+  high_value_missing_fields: []
