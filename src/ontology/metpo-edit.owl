@@ -23,6 +23,7 @@ Declaration(AnnotationProperty(dcterms:issued))
 Declaration(AnnotationProperty(dcterms:license))
 Declaration(AnnotationProperty(dcterms:modified))
 Declaration(AnnotationProperty(dcterms:title))
+Declaration(AnnotationProperty(<http://qudt.org/schema/qudt/ucumCode>))
 
 
 ############################
@@ -55,6 +56,12 @@ AnnotationAssertion(rdfs:label dcterms:title "title")
 ############################
 #   Classes
 ############################
+
+
+# Annotation Property: <http://qudt.org/schema/qudt/ucumCode> (UCUM code)
+
+ AnnotationAssertion(rdfs:label <http://qudt.org/schema/qudt/ucumCode> "UCUM code")
+ AnnotationAssertion(rdfs:comment <http://qudt.org/schema/qudt/ucumCode> "A UCUM code that identifies a unit of measure.")
 
 
 )

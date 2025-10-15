@@ -1,10 +1,10 @@
 summary:
   kg_microbe_total_fields: 105
-  metpo_bactotraits_synonyms: 85
-  exact_matches: 85
-  bactotraits_not_in_metpo: 20
+  metpo_bactotraits_synonyms: 93
+  exact_matches: 93
+  bactotraits_not_in_metpo: 12
   bactotraits_with_close_matches: 0
-  bactotraits_truly_missing: 20
+  bactotraits_truly_missing: 12
   metpo_not_in_bactotraits: 0
   metpo_with_close_matches: 0
   metpo_truly_orphaned: 0
@@ -17,24 +17,16 @@ bactotraits_fields_not_in_metpo:
     period_underscore_differences: []
     multiple_issues: []
   truly_missing:
-  - ' L_1.3_2'
-  - ' W_0.5_0.65'
   - Bacdive_ID
   - Class
   - Family
   - Full_name
   - Genus
   - Kingdom
-  - L_2_3
-  - L_<=1.3
-  - L_>3
   - Order
   - Phylum
   - Species
   - TT_copiotroph_diazotroph
-  - W_0.65_0.9
-  - W_<=0.5
-  - W_>0.9
   - culture collection codes
   - ncbitaxon_id
 metpo_synonyms_not_in_bactotraits:
@@ -48,17 +40,22 @@ metpo_synonyms_not_in_bactotraits:
   truly_orphaned: []
 exact_matches:
 - ' GC_42.65_57.0'
+- ' L_1.3_2'
 - ' S_curved_spiral'
 - ' S_filament'
 - ' S_ovoid'
 - ' S_rod'
 - ' S_sphere'
+- ' W_0.5_0.65'
 - 10_to_14
 - GC_57.0_66.3
 - GC_<=42.65
 - GC_>66.3
 - G_negative
 - G_positive
+- L_2_3
+- L_<=1.3
+- L_>3
 - NaO_1_to_3
 - NaO_3_to_8
 - NaO_<=1
@@ -113,6 +110,9 @@ exact_matches:
 - Td_20_30
 - Td_5_10
 - Td_>30
+- W_0.65_0.9
+- W_<=0.5
+- W_>0.9
 - motile
 - no_spore
 - non-motile
