@@ -46,12 +46,16 @@ clean-templates:
 #			--axioms equivalent \
 #			--output $@
 
-components/metpo_sheet.owl: ../templates/metpo-properties.tsv ../templates/metpo_sheet.tsv
+../templates/stubs.tsv: ../templates/metpo_sheet.tsv ../templates/metpo-properties.tsv ../../metpo/scripts/create_stubs.py
+	python ../../metpo/scripts/create_stubs.py $@ ../templates/metpo_sheet.tsv ../templates/metpo-properties.tsv
+
+components/metpo_sheet.owl: ../templates/stubs.tsv ../templates/metpo-properties.tsv ../templates/metpo_sheet.tsv
 	$(ROBOT) template \
 		--add-prefix 'METPO: https://w3id.org/metpo/' \
 		--add-prefix 'qudt: http://qudt.org/schema/qudt/' \
-		--template ../templates/metpo-properties.tsv \
+		--template ../templates/stubs.tsv \
 		--template ../templates/metpo_sheet.tsv \
+		--template ../templates/metpo-properties.tsv \
 		annotate --ontology-iri $(ONTBASE)/$@ \
 		annotate -V $(ONTBASE)/releases/$(TODAY)/$@ \
 		--annotation owl:versionInfo $(TODAY) \
