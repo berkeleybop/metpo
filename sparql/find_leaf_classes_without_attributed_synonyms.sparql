@@ -1,0 +1,33 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+
+SELECT ?class ?label
+WHERE {
+  ?class a owl:Class .
+  ?class rdfs:label ?label .
+
+  # Filter for leaf classes (no subclasses other than itself)
+  FILTER NOT EXISTS {
+    ?subclass rdfs:subClassOf ?class .
+    FILTER (?subclass != ?class)
+  }
+
+  # Filter for classes that do not have any synonym property with an IAO:0000119 source
+  FILTER NOT EXISTS {
+    ?axiom owl:annotatedSource ?class ;
+           owl:annotatedProperty ?syn_prop ;
+           obo:IAO_0000119 ?source .
+    VALUES ?syn_prop {
+      oboInOwl:hasExactSynonym
+      oboInOwl:hasRelatedSynonym
+      oboInOwl:hasBroadSynonym
+      oboInOwl:hasNarrowSynonym
+    }
+  }
+
+  # Exclude built-in and blank nodes
+  FILTER (isIRI(?class) && STRSTARTS(str(?class), "https://w3id.org/metpo/"))
+}
+ORDER BY ?label

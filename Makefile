@@ -48,6 +48,10 @@ generated/bacdive_oxygen_phenotype_mappings.tsv: sparql/bacdive_oxygen_phenotype
 		--query $(word 1,$^) $@ \
 		--input $(word 2,$^)
 
+reports/leaf_classes_without_attributed_synonyms.tsv: src/ontology/metpo.owl sparql/find_leaf_classes_without_attributed_synonyms.sparql
+	mkdir -p $(dir $@)
+	robot query --input $(word 1,$^) --query $(word 2,$^) $@
+
 reports/synonym-sources.tsv: src/ontology/metpo.owl src/sparql/synonym-sources.sparql
 	mkdir -p $(dir $@)
 	robot query \
@@ -80,6 +84,7 @@ clean-reports:
 	rm -f reports/bactotraits-metpo-set-diff.yaml
 	rm -f reports/bactotraits-metpo-reconciliation.yaml
 	rm -f reports/madin-metpo-reconciliation.yaml
+	rm -f reports/leaf_classes_without_attributed_synonyms.tsv
 	@echo "All analysis reports cleaned"
 
 .PHONY: clean-all
