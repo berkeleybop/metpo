@@ -1,10 +1,10 @@
 summary:
   kg_microbe_total_fields: 105
-  metpo_bactotraits_synonyms: 73
-  exact_matches: 73
-  bactotraits_not_in_metpo: 32
+  metpo_bactotraits_synonyms: 85
+  exact_matches: 85
+  bactotraits_not_in_metpo: 20
   bactotraits_with_close_matches: 0
-  bactotraits_truly_missing: 32
+  bactotraits_truly_missing: 20
   metpo_not_in_bactotraits: 0
   metpo_with_close_matches: 0
   metpo_truly_orphaned: 0
@@ -30,16 +30,6 @@ bactotraits_fields_not_in_metpo:
   - L_>3
   - Order
   - Phylum
-  - Pigment_black
-  - Pigment_brown
-  - Pigment_carotenoid
-  - Pigment_cream
-  - Pigment_green
-  - Pigment_orange
-  - Pigment_pink
-  - Pigment_red
-  - Pigment_white
-  - Pigment_yellow
   - Species
   - TT_copiotroph_diazotroph
   - W_0.65_0.9
@@ -47,8 +37,6 @@ bactotraits_fields_not_in_metpo:
   - W_>0.9
   - culture collection codes
   - ncbitaxon_id
-  - no_spore
-  - spore
 metpo_synonyms_not_in_bactotraits:
   close_matches_by_issue:
     case_differences: []
@@ -87,6 +75,16 @@ exact_matches:
 - Ox_anaerobic
 - Ox_facultative_aerobe_anaerobe
 - Ox_microerophile
+- Pigment_black
+- Pigment_brown
+- Pigment_carotenoid
+- Pigment_cream
+- Pigment_green
+- Pigment_orange
+- Pigment_pink
+- Pigment_red
+- Pigment_white
+- Pigment_yellow
 - S_star_dumbbell_pleomorphic
 - TO_10_to_22
 - TO_22_to_27
@@ -116,6 +114,7 @@ exact_matches:
 - Td_5_10
 - Td_>30
 - motile
+- no_spore
 - non-motile
 - pHO_0_to_6
 - pHO_6_to_7
@@ -132,3 +131,4 @@ exact_matches:
 - pHd_4_5
 - pHd_5_9
 - pHd_<=1
+- spore

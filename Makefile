@@ -172,13 +172,14 @@ create-bactotraits-files:
 SPREADSHEET_ID = 1_Lr-9_5QHi8QLvRyTZFSciUhzGKD4DbUObyTpJ16_RU
 BASE_URL = https://docs.google.com/spreadsheets/d/$(SPREADSHEET_ID)/export
 
-# All sheet gids discovered via Google Apps Script (9 total sheets)
+# All sheet gids discovered via Google Apps Script (10 total sheets)
 GID_MINIMAL_CLASSES = 355012485
 GID_PROPERTIES = 2094089867
 GID_BACTOTRAITS = 1192666692
 GID_MORE_SYNONYMS = 907926993
-GID_MORE_CLASSES = 1427185859
-GID_METABOLIC_AND_RESPIRATORY = 499077032
+GID_MORE_CLASSES___INCONSISTENT = 1427185859
+GID_METABOLIC_AND_RESPIRATORY_ROBOT = 2135183176
+GID_METABOLIC_AND_RESPIRATORY_LLM = 499077032
 GID_TROPHIC_MAPPING_BACDIVE__TBDELETED = 44169923
 GID_ATTIC_CLASSES = 1347388120
 GID_ATTIC_PROPERTIES = 565614186
@@ -186,8 +187,8 @@ GID_ATTIC_PROPERTIES = 565614186
 .PHONY: download-all-sheets clean-sheets
 
 # Download all discovered sheets to downloads/sheets/
-download-all-sheets: downloads/sheets/minimal_classes.tsv downloads/sheets/properties.tsv downloads/sheets/bactotraits.tsv downloads/sheets/more_synonyms.tsv downloads/sheets/more_classes.tsv downloads/sheets/metabolic_and_respiratory.tsv downloads/sheets/trophic_mapping_bacdive__tbdeleted.tsv downloads/sheets/attic_classes.tsv downloads/sheets/attic_properties.tsv
-	@echo "All 9 sheets downloaded to downloads/sheets/"
+download-all-sheets: downloads/sheets/minimal_classes.tsv downloads/sheets/properties.tsv downloads/sheets/bactotraits.tsv downloads/sheets/more_synonyms.tsv downloads/sheets/more_classes___inconsistent.tsv downloads/sheets/metabolic_and_respiratory_robot.tsv downloads/sheets/metabolic_and_respiratory_llm.tsv downloads/sheets/trophic_mapping_bacdive__tbdeleted.tsv downloads/sheets/attic_classes.tsv downloads/sheets/attic_properties.tsv
+	@echo "All 10 sheets downloaded to downloads/sheets/"
 
 # Individual sheet download targets
 downloads/sheets/minimal_classes.tsv: | downloads/sheets
@@ -202,11 +203,14 @@ downloads/sheets/bactotraits.tsv: | downloads/sheets
 downloads/sheets/more_synonyms.tsv: | downloads/sheets
 	curl -L -s '$(BASE_URL)?exportFormat=tsv&gid=$(GID_MORE_SYNONYMS)' > $@
 
-downloads/sheets/more_classes.tsv: | downloads/sheets
-	curl -L -s '$(BASE_URL)?exportFormat=tsv&gid=$(GID_MORE_CLASSES)' > $@
+downloads/sheets/more_classes___inconsistent.tsv: | downloads/sheets
+	curl -L -s '$(BASE_URL)?exportFormat=tsv&gid=$(GID_MORE_CLASSES___INCONSISTENT)' > $@
 
-downloads/sheets/metabolic_and_respiratory.tsv: | downloads/sheets
-	curl -L -s '$(BASE_URL)?exportFormat=tsv&gid=$(GID_METABOLIC_AND_RESPIRATORY)' > $@
+downloads/sheets/metabolic_and_respiratory_robot.tsv: | downloads/sheets
+	curl -L -s '$(BASE_URL)?exportFormat=tsv&gid=$(GID_METABOLIC_AND_RESPIRATORY_ROBOT)' > $@
+
+downloads/sheets/metabolic_and_respiratory_llm.tsv: | downloads/sheets
+	curl -L -s '$(BASE_URL)?exportFormat=tsv&gid=$(GID_METABOLIC_AND_RESPIRATORY_LLM)' > $@
 
 downloads/sheets/trophic_mapping_bacdive__tbdeleted.tsv: | downloads/sheets
 	curl -L -s '$(BASE_URL)?exportFormat=tsv&gid=$(GID_TROPHIC_MAPPING_BACDIVE__TBDELETED)' > $@
