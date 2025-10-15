@@ -53,7 +53,7 @@ OBODATE ?=                  $(shell date +'%d:%m:%Y %H:%M')
 VERSION=                    $(TODAY)
 ANNOTATE_ONTOLOGY_VERSION = annotate -V $(ONTBASE)/releases/$(VERSION)/$@ --annotation owl:versionInfo $(VERSION)
 ANNOTATE_CONVERT_FILE =     annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) convert -f ofn --output $@.tmp.owl && mv $@.tmp.owl $@
-OTHER_SRC =                 $(COMPONENTSDIR)/metpo_sheet.owl $(COMPONENTSDIR)/metpo-synonyms.owl $(COMPONENTSDIR)/metpo-properties.owl 
+OTHER_SRC =                 $(COMPONENTSDIR)/metpo_sheet.owl $(COMPONENTSDIR)/metpo-properties.owl 
 ONTOLOGYTERMS =             $(TMPDIR)/ontologyterms.txt
 EDIT_PREPROCESSED =         $(TMPDIR)/$(ONT)-preprocess.owl
 
@@ -419,12 +419,12 @@ $(COMPONENTSDIR)/metpo_sheet.owl: $(TEMPLATEDIR)/metpo_sheet.tsv
 
 .PRECIOUS: $(COMPONENTSDIR)/metpo_sheet.owl
 
-$(COMPONENTSDIR)/metpo-synonyms.owl: $(TEMPLATEDIR)/metpo-synonyms.tsv
-	if [ $(COMP) = true ] ; then $(ROBOT) template --add-prefix 'METPO: https://w3id.org/metpo/' \
-		$(patsubst %, --template %, $^) \
-		$(ANNOTATE_CONVERT_FILE); fi
+#$(COMPONENTSDIR)/metpo-synonyms.owl: $(TEMPLATEDIR)/metpo-synonyms.tsv
+#	if [ $(COMP) = true ] ; then $(ROBOT) template --add-prefix 'METPO: https://w3id.org/metpo/' \
+#		$(patsubst %, --template %, $^) \
+#		$(ANNOTATE_CONVERT_FILE); fi
 
-.PRECIOUS: $(COMPONENTSDIR)/metpo-synonyms.owl
+#.PRECIOUS: $(COMPONENTSDIR)/metpo-synonyms.owl
 
 $(COMPONENTSDIR)/metpo-properties.owl: $(TEMPLATEDIR)/metpo-properties.tsv
 	if [ $(COMP) = true ] ; then $(ROBOT) template --add-prefix 'METPO: https://w3id.org/metpo/' \

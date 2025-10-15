@@ -84,12 +84,13 @@ METPO:2000053	has optimum temperature observation	owl:ObjectProperty		microbe	op
 METPO:2000054	has growth temperature observation	owl:ObjectProperty		microbe	growth temperature observation	has temperature observation		Relates a microbe to a growth temperature observation.		
 METPO:2000055	has range temperature observation	owl:ObjectProperty		microbe	temperature range observation	has temperature observation		Relates a microbe to a growth temperature range observation.		
 METPO:2000056	has temperature delta observation	owl:ObjectProperty		microbe	temperature delta observation	has temperature observation		Relates a microbe to a temperature tolerance breadth (delta) observation.		
-METPO:2000058	has spot value	owl:DataProperty		observation	xsd:decimal	observation data property		A reported temperature value (°C) for this observation.		
-METPO:2000059	has minimum value	owl:DataProperty		observation	xsd:decimal	observation data property		The minimum temperature (°C) associated with this observation.		
-METPO:2000060	has maximum value	owl:DataProperty		observation	xsd:decimal	observation data property		The maximum temperature (°C) associated with this observation.		
+METPO:2000058	has observed spot value	owl:DataProperty		observation	xsd:decimal	observation data property		A reported temperature value (°C) for this observation.		
+METPO:2000059	has minimum observed value	owl:DataProperty		observation	xsd:decimal	observation data property		The minimum temperature (°C) associated with this observation.		
+METPO:2000060	has maximum observed value	owl:DataProperty		observation	xsd:decimal	observation data property		The maximum temperature (°C) associated with this observation.		
 METPO:2000061	has value comments	owl:DataProperty		observation	xsd:string	observation data property		Free-text comments associated with this observation.		
 METPO:2000062	is negative data	owl:DataProperty		observation	xsd:boolean	observation data property		True if this observation indicates no growth at the reported temperature (negative result).		
 METPO:2000063	observation data property	owl:DataProperty								
+METPO:2000071	has value	owl:DataProperty			xsd:decimal			Relates any instance to a numerical value		
 METPO:2000101	has quality	owl:ObjectProperty		microbe	quality					
 METPO:2000102	has phenotype	owl:ObjectProperty		microbe	phenotype	has quality	https://biolink.github.io/biolink-model/has_phenotype			
 METPO:2000103	capable of	owl:ObjectProperty		microbe	biological process		https://biolink.github.io/biolink-model/capable_of			

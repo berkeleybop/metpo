@@ -156,6 +156,7 @@ Declaration(DataProperty(<https://w3id.org/metpo/2000060>))
 Declaration(DataProperty(<https://w3id.org/metpo/2000061>))
 Declaration(DataProperty(<https://w3id.org/metpo/2000062>))
 Declaration(DataProperty(<https://w3id.org/metpo/2000063>))
+Declaration(DataProperty(<https://w3id.org/metpo/2000071>))
 Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/IAO_0000115>))
 Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/IAO_0000119>))
 Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym>))
@@ -889,26 +890,26 @@ ObjectPropertyRange(<https://w3id.org/metpo/2000516> <https://w3id.org/metpo/100
 #   Data Properties
 ############################
 
-# Data Property: <https://w3id.org/metpo/2000058> (has spot value)
+# Data Property: <https://w3id.org/metpo/2000058> (has observed spot value)
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000058> "A reported temperature value (°C) for this observation.")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000058> "has spot value")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000058> "has observed spot value")
 SubDataPropertyOf(<https://w3id.org/metpo/2000058> <https://w3id.org/metpo/2000063>)
 DataPropertyDomain(<https://w3id.org/metpo/2000058> <https://w3id.org/metpo/1001000>)
 DataPropertyRange(<https://w3id.org/metpo/2000058> xsd:decimal)
 
-# Data Property: <https://w3id.org/metpo/2000059> (has minimum value)
+# Data Property: <https://w3id.org/metpo/2000059> (has minimum observed value)
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000059> "The minimum temperature (°C) associated with this observation.")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000059> "has minimum value")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000059> "has minimum observed value")
 SubDataPropertyOf(<https://w3id.org/metpo/2000059> <https://w3id.org/metpo/2000063>)
 DataPropertyDomain(<https://w3id.org/metpo/2000059> <https://w3id.org/metpo/1001000>)
 DataPropertyRange(<https://w3id.org/metpo/2000059> xsd:decimal)
 
-# Data Property: <https://w3id.org/metpo/2000060> (has maximum value)
+# Data Property: <https://w3id.org/metpo/2000060> (has maximum observed value)
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000060> "The maximum temperature (°C) associated with this observation.")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000060> "has maximum value")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000060> "has maximum observed value")
 SubDataPropertyOf(<https://w3id.org/metpo/2000060> <https://w3id.org/metpo/2000063>)
 DataPropertyDomain(<https://w3id.org/metpo/2000060> <https://w3id.org/metpo/1001000>)
 DataPropertyRange(<https://w3id.org/metpo/2000060> xsd:decimal)
@@ -932,6 +933,12 @@ DataPropertyRange(<https://w3id.org/metpo/2000062> xsd:boolean)
 # Data Property: <https://w3id.org/metpo/2000063> (observation data property)
 
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000063> "observation data property")
+
+# Data Property: <https://w3id.org/metpo/2000071> (has value)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000071> "Relates any instance to a numerical value")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000071> "has value")
+DataPropertyRange(<https://w3id.org/metpo/2000071> xsd:decimal)
 
 
 
