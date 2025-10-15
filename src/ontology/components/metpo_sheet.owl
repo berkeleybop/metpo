@@ -16,14 +16,9 @@ Declaration(Class(<https://w3id.org/metpo/1000127>))
 Declaration(Class(<https://w3id.org/metpo/1000186>))
 Declaration(Class(<https://w3id.org/metpo/1000188>))
 Declaration(Class(<https://w3id.org/metpo/1000232>))
-Declaration(Class(<https://w3id.org/metpo/1000233>))
-Declaration(Class(<https://w3id.org/metpo/1000235>))
-Declaration(Class(<https://w3id.org/metpo/1000236>))
 Declaration(Class(<https://w3id.org/metpo/1000303>))
 Declaration(Class(<https://w3id.org/metpo/1000304>))
 Declaration(Class(<https://w3id.org/metpo/1000306>))
-Declaration(Class(<https://w3id.org/metpo/1000329>))
-Declaration(Class(<https://w3id.org/metpo/1000330>))
 Declaration(Class(<https://w3id.org/metpo/1000331>))
 Declaration(Class(<https://w3id.org/metpo/1000332>))
 Declaration(Class(<https://w3id.org/metpo/1000333>))
@@ -80,9 +75,14 @@ Declaration(Class(<https://w3id.org/metpo/1000484>))
 Declaration(Class(<https://w3id.org/metpo/1000485>))
 Declaration(Class(<https://w3id.org/metpo/1000486>))
 Declaration(Class(<https://w3id.org/metpo/1000487>))
-Declaration(Class(<https://w3id.org/metpo/1000511>))
 Declaration(Class(<https://w3id.org/metpo/1000525>))
 Declaration(Class(<https://w3id.org/metpo/1000526>))
+Declaration(Class(<https://w3id.org/metpo/1000531>))
+Declaration(Class(<https://w3id.org/metpo/1000532>))
+Declaration(Class(<https://w3id.org/metpo/1000533>))
+Declaration(Class(<https://w3id.org/metpo/1000534>))
+Declaration(Class(<https://w3id.org/metpo/1000535>))
+Declaration(Class(<https://w3id.org/metpo/1000536>))
 Declaration(Class(<https://w3id.org/metpo/1000601>))
 Declaration(Class(<https://w3id.org/metpo/1000602>))
 Declaration(Class(<https://w3id.org/metpo/1000603>))
@@ -1206,85 +1206,64 @@ AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000188> "quality")
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000232> "A measure of the breadth of hydrogen ion concentrations that a microorganism can tolerate, calculated as the difference between the maximum and minimum viable pH values")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000232> "pH delta")
-SubClassOf(<https://w3id.org/metpo/1000232> <https://w3id.org/metpo/1000059>)
-
-# Class: <https://w3id.org/metpo/1000233> (pH optimum (growth range))
-
-AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000233> "The specific pH at which an organism exhibits maximum growth rate")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000233> "pH optimum (growth range)")
-SubClassOf(<https://w3id.org/metpo/1000233> <https://w3id.org/metpo/1000059>)
-
-# Class: <https://w3id.org/metpo/1000235> (pH range (growth tolerance))
-
-AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000235> "The span of pH values within which an organism can grow")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000235> "pH range (growth tolerance)")
-SubClassOf(<https://w3id.org/metpo/1000235> <https://w3id.org/metpo/1000059>)
-
-# Class: <https://w3id.org/metpo/1000236> (pH tolerance)
-
-AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000236> "The ability of an organism to survive exposure to pH values outside its optimal growth range")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000236> "pH tolerance")
-SubClassOf(<https://w3id.org/metpo/1000236> <https://w3id.org/metpo/1000059>)
+SubClassOf(<https://w3id.org/metpo/1000232> <https://w3id.org/metpo/1000531>)
+SubClassOf(<https://w3id.org/metpo/1000232> <https://w3id.org/metpo/1000534>)
 
 # Class: <https://w3id.org/metpo/1000303> (temperature delta)
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000303> "A measure of the breadth of thermal conditions that a microorganism can withstand, calculated as the difference between the maximum and minimum viable temperature values")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000303> "temperature delta")
-SubClassOf(<https://w3id.org/metpo/1000303> <https://w3id.org/metpo/1000059>)
+SubClassOf(<https://w3id.org/metpo/1000303> <https://w3id.org/metpo/1000533>)
+SubClassOf(<https://w3id.org/metpo/1000303> <https://w3id.org/metpo/1000534>)
 
-# Class: <https://w3id.org/metpo/1000304> (temperature optimum (growth range))
+# Class: <https://w3id.org/metpo/1000304> (temperature optimum)
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000304> "The specific temperature at which an organism exhibits maximum growth rate")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000304> "temperature optimum (growth range)")
-SubClassOf(<https://w3id.org/metpo/1000304> <https://w3id.org/metpo/1000059>)
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000304> "temperature optimum")
+SubClassOf(<https://w3id.org/metpo/1000304> <https://w3id.org/metpo/1000533>)
+SubClassOf(<https://w3id.org/metpo/1000304> <https://w3id.org/metpo/1000536>)
 
-# Class: <https://w3id.org/metpo/1000306> (temperature range (growth tolerance))
+# Class: <https://w3id.org/metpo/1000306> (temperature range)
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000306> "The span of temperatures within which an organism can grow")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000306> "temperature range (growth tolerance)")
-SubClassOf(<https://w3id.org/metpo/1000306> <https://w3id.org/metpo/1000059>)
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000306> "temperature range")
+SubClassOf(<https://w3id.org/metpo/1000306> <https://w3id.org/metpo/1000533>)
+SubClassOf(<https://w3id.org/metpo/1000306> <https://w3id.org/metpo/1000535>)
 
-# Class: <https://w3id.org/metpo/1000329> (temperature optimum (metabolic activity))
-
-AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000329> "The specific temperature at which a microorganism exhibits maximum metabolic activity and growth rate within its viable range.")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000329> "temperature optimum (metabolic activity)")
-SubClassOf(<https://w3id.org/metpo/1000329> <https://w3id.org/metpo/1000630>)
-
-# Class: <https://w3id.org/metpo/1000330> (temperature range (metabolic viability))
-
-AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000330> "The span of temperatures within which a microorganism can maintain metabolic functions and population viability.")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000330> "temperature range (metabolic viability)")
-SubClassOf(<https://w3id.org/metpo/1000330> <https://w3id.org/metpo/1000630>)
-
-# Class: <https://w3id.org/metpo/1000331> (pH optimum (metabolic efficiency))
+# Class: <https://w3id.org/metpo/1000331> (pH optimum)
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000331> "The specific hydrogen ion concentration at which a microorganism achieves its maximum growth rate and metabolic efficiency.")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000331> "pH optimum (metabolic efficiency)")
-SubClassOf(<https://w3id.org/metpo/1000331> <https://w3id.org/metpo/1000059>)
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000331> "pH optimum")
+SubClassOf(<https://w3id.org/metpo/1000331> <https://w3id.org/metpo/1000531>)
+SubClassOf(<https://w3id.org/metpo/1000331> <https://w3id.org/metpo/1000536>)
 
-# Class: <https://w3id.org/metpo/1000332> (pH range (cellular homeostasis))
+# Class: <https://w3id.org/metpo/1000332> (pH range)
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000332> "The span of hydrogen ion concentrations within which a microorganism can maintain cellular homeostasis and sustain growth.")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000332> "pH range (cellular homeostasis)")
-SubClassOf(<https://w3id.org/metpo/1000332> <https://w3id.org/metpo/1000059>)
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000332> "pH range")
+SubClassOf(<https://w3id.org/metpo/1000332> <https://w3id.org/metpo/1000531>)
+SubClassOf(<https://w3id.org/metpo/1000332> <https://w3id.org/metpo/1000535>)
 
 # Class: <https://w3id.org/metpo/1000333> (NaCl optimum)
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000333> "The specific concentration of sodium chloride at which a microorganism exhibits maximum growth rate and metabolic efficiency.")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000333> "NaCl optimum")
-SubClassOf(<https://w3id.org/metpo/1000333> <https://w3id.org/metpo/1000059>)
+SubClassOf(<https://w3id.org/metpo/1000333> <https://w3id.org/metpo/1000532>)
+SubClassOf(<https://w3id.org/metpo/1000333> <https://w3id.org/metpo/1000536>)
 
 # Class: <https://w3id.org/metpo/1000334> (NaCl range)
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000334> "The span of sodium chloride concentrations within which a microorganism can maintain osmotic balance and cellular functions.")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000334> "NaCl range")
-SubClassOf(<https://w3id.org/metpo/1000334> <https://w3id.org/metpo/1000059>)
+SubClassOf(<https://w3id.org/metpo/1000334> <https://w3id.org/metpo/1000532>)
+SubClassOf(<https://w3id.org/metpo/1000334> <https://w3id.org/metpo/1000535>)
 
 # Class: <https://w3id.org/metpo/1000335> (NaCl delta)
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000335> "A measure of the breadth of sodium chloride concentrations that a microorganism can tolerate, calculated as the difference between the maximum and minimum viable salinity values.")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000335> "NaCl delta")
-SubClassOf(<https://w3id.org/metpo/1000335> <https://w3id.org/metpo/1000059>)
+SubClassOf(<https://w3id.org/metpo/1000335> <https://w3id.org/metpo/1000532>)
+SubClassOf(<https://w3id.org/metpo/1000335> <https://w3id.org/metpo/1000534>)
 
 # Class: <https://w3id.org/metpo/1000429> (GC low)
 
@@ -1879,12 +1858,6 @@ AnnotationAssertion(<https://w3id.org/metpo/range_min> <https://w3id.org/metpo/1
 EquivalentClasses(<https://w3id.org/metpo/1000487> ObjectIntersectionOf(<https://w3id.org/metpo/1000303> DataSomeValuesFrom(<https://w3id.org/metpo/2000071> DatatypeRestriction(xsd:decimal xsd:minInclusive "30"^^xsd:decimal))))
 SubClassOf(<https://w3id.org/metpo/1000487> <https://w3id.org/metpo/1000303>)
 
-# Class: <https://w3id.org/metpo/1000511> (pH adaptation)
-
-AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000511> "A combination of cellular processes that permits survival and growth under specific hydrogen ion concentrations.")
-AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000511> "pH adaptation")
-SubClassOf(<https://w3id.org/metpo/1000511> <https://w3id.org/metpo/1000059>)
-
 # Class: <https://w3id.org/metpo/1000525> (microbe)
 
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> "OHMI:0000460") <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000525> "An organism or virus or viron that is too small to be viewed by the unaided eye.")
@@ -1899,6 +1872,36 @@ AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> "CHE
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000526> "chemical entity")
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/metpo/1000526> <https://biolink.github.io/biolink-model/ChemicalEntity>)
 SubClassOf(<https://w3id.org/metpo/1000526> <https://w3id.org/metpo/1000186>)
+
+# Class: <https://w3id.org/metpo/1000531> (pH phenotype with numerical limits)
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000531> "pH phenotype with numerical limits")
+SubClassOf(<https://w3id.org/metpo/1000531> <https://w3id.org/metpo/1000059>)
+
+# Class: <https://w3id.org/metpo/1000532> (salinity phenotype with numerical limits)
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000532> "salinity phenotype with numerical limits")
+SubClassOf(<https://w3id.org/metpo/1000532> <https://w3id.org/metpo/1000059>)
+
+# Class: <https://w3id.org/metpo/1000533> (temperature phenotype with numerical limits)
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000533> "temperature phenotype with numerical limits")
+SubClassOf(<https://w3id.org/metpo/1000533> <https://w3id.org/metpo/1000059>)
+
+# Class: <https://w3id.org/metpo/1000534> (delta phenotype with numerical limits)
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000534> "delta phenotype with numerical limits")
+SubClassOf(<https://w3id.org/metpo/1000534> <https://w3id.org/metpo/1000059>)
+
+# Class: <https://w3id.org/metpo/1000535> (growth range phenotype with numerical limits)
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000535> "growth range phenotype with numerical limits")
+SubClassOf(<https://w3id.org/metpo/1000535> <https://w3id.org/metpo/1000059>)
+
+# Class: <https://w3id.org/metpo/1000536> (optimum phenotype with numerical limits)
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000536> "optimum phenotype with numerical limits")
+SubClassOf(<https://w3id.org/metpo/1000536> <https://w3id.org/metpo/1000059>)
 
 # Class: <https://w3id.org/metpo/1000601> (oxygen preference)
 
