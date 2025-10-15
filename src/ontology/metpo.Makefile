@@ -10,7 +10,7 @@
 # gid=2094089867 = properties sheet
 
 SRC_URL_MAIN = 'https://docs.google.com/spreadsheets/d/1_Lr-9_5QHi8QLvRyTZFSciUhzGKD4DbUObyTpJ16_RU/export?exportFormat=tsv&gid=355012485'
-SRC_URL_SYNONYMS = 'https://docs.google.com/spreadsheets/d/1_Lr-9_5QHi8QLvRyTZFSciUhzGKD4DbUObyTpJ16_RU/export?exportFormat=tsv&gid=907926993'
+# SRC_URL_SYNONYMS = 'https://docs.google.com/spreadsheets/d/1_Lr-9_5QHi8QLvRyTZFSciUhzGKD4DbUObyTpJ16_RU/export?exportFormat=tsv&gid=907926993'
 SRC_URL_PROPERTIES = 'https://docs.google.com/spreadsheets/d/1_Lr-9_5QHi8QLvRyTZFSciUhzGKD4DbUObyTpJ16_RU/export?exportFormat=tsv&gid=2094089867'
 
 # Disabled comprehensive classes sheet:
@@ -21,8 +21,8 @@ SRC_URL_PROPERTIES = 'https://docs.google.com/spreadsheets/d/1_Lr-9_5QHi8QLvRyTZ
 ../templates/metpo_sheet.tsv:
 	curl -L -s $(SRC_URL_MAIN) > $@
 
-../templates/metpo-synonyms.tsv:
-	curl -L -s $(SRC_URL_SYNONYMS) > $@
+#../templates/metpo-synonyms.tsv:
+#	curl -L -s $(SRC_URL_SYNONYMS) > $@
 
 ../templates/metpo-properties.tsv:
 	curl -L -s $(SRC_URL_PROPERTIES) > $@
@@ -31,10 +31,10 @@ squeaky-clean: clean clean-templates
 
 clean-templates:
 	rm -rf ../templates/metpo_sheet.tsv
-	rm -rf ../templates/metpo-synonyms.tsv
+	#rm -rf ../templates/metpo-synonyms.tsv
 	rm -rf ../templates/metpo-properties.tsv
 	rm -rf components/metpo_sheet.owl
-	rm -rf components/metpo-synonyms.owl
+	#rm -rf components/metpo-synonyms.owl
 	rm -rf components/metpo-properties.owl
 
 #$(MIRRORDIR)/mpo.owl: ../../assets/mpo_v0.74.en_only.owl
@@ -45,3 +45,14 @@ clean-templates:
 #			-i $< \
 #			--axioms equivalent \
 #			--output $@
+
+components/metpo_sheet.owl: ../templates/metpo-properties.tsv ../templates/metpo_sheet.tsv
+	$(ROBOT) template \
+		--add-prefix 'METPO: https://w3id.org/metpo/' \
+		--add-prefix 'qudt: http://qudt.org/schema/qudt/' \
+		--template ../templates/metpo-properties.tsv \
+		--template ../templates/metpo_sheet.tsv \
+		annotate --ontology-iri $(ONTBASE)/$@ \
+		annotate -V $(ONTBASE)/releases/$(TODAY)/$@ \
+		--annotation owl:versionInfo $(TODAY) \
+		convert -f ofn --output $@.tmp.owl && mv $@.tmp.owl $@
