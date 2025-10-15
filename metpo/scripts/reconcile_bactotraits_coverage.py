@@ -259,78 +259,84 @@ def reconcile_all_field_names(tsv_path: str, output_format: str = "text", output
     :param tsv_path: Path to synonym-sources.tsv report
     :param output_format: Output format ('text' or 'yaml')
     """
-    # Taxonomic and identifier fields that should be excluded from trait reconciliation
-    TAXONOMIC_ID_FIELDS = {
-        'Bacdive_ID', 'culture collection codes', 'Full_name', 'ncbitaxon_id',
-        'Species', 'Genus', 'Family', 'Order', 'Class', 'Phylum', 'Kingdom'
+    # Define field categories for reporting
+    PERMANENTLY_EXCLUDED_FIELDS = {
+        'Kingdom', 'Phylum', 'Class', 'Order', 'Family', 'Genus', 'Species',
+        'culture_collection_codes', 'Bacdive_ID'
+    }
+    IDENTIFIER_FIELDS = {'Full_name', 'ncbitaxon_id'}
+
+    # 1. Load data and mappings
+    client = MongoClient()
+    db = client["bactotraits"]
+    
+    # Create a map from sanitized mongo names to original kg-microbe names
+    mappings_collection = db["field_mappings"]
+    mongo_to_kgmicrobe_map = {
+        doc['mongodb']: doc['kg_microbe'] 
+        for doc in mappings_collection.find({}) 
+        if 'mongodb' in doc and doc['mongodb'] and 'kg_microbe' in doc and doc['kg_microbe']
     }
 
-    bactotraits_fields = get_all_bactotraits_fields()
+    # Get all sanitized field names from the main data collection
+    sanitized_fields = get_all_bactotraits_fields()
+    
+    # Load METPO synonyms
     bactotraits_synonyms = load_bactotraits_synonyms(tsv_path)
     all_metpo_synonyms = load_all_metpo_synonyms(tsv_path)
 
-    # Get value counts for each field
-    client = MongoClient()
-    db = client["bactotraits"]
-    collection = db["bactotraits"]
-
+    # 2. Get value counts for each field using sanitized names
+    data_collection = db["bactotraits"]
     field_value_counts = {}
     field_value_distributions = {}
-    for field in bactotraits_fields:
-        # Count non-NA, non-empty, non-0 values for the summary stats
-        values = collection.distinct(field)
+    for field in sanitized_fields:
+        values = data_collection.distinct(field)
         non_na_count = sum(1 for v in values if v and v != "NA" and v != "" and v != 0 and v != "0")
         field_value_counts[field] = non_na_count
 
-        # Only get value distribution for fields with reasonable cardinality (1-20 unique non-empty values)
-        # This excludes taxonomic/ID fields with thousands of unique values
         if 1 <= non_na_count <= 20:
             pipeline = [
                 {"$group": {"_id": f"${field}", "count": {"$sum": 1}}},
                 {"$sort": {"count": -1}}
             ]
-            distribution = list(collection.aggregate(pipeline))
-
-            # Store distribution with ALL values (including empty, NA, 0) converted to strings
+            distribution = list(data_collection.aggregate(pipeline))
             field_value_distributions[field] = [
                 {"value": str(d["_id"]) if d["_id"] is not None else "null", "count": d["count"]}
                 for d in distribution
             ]
 
+    # 3. Reconcile fields
     covered_entries = []
     missing_entries = []
 
-    for field_path in sorted(bactotraits_fields):
-        # Strip leading whitespace from field name
-        field_path_clean = field_path.strip()
+    for sanitized_field in sorted(sanitized_fields):
+        original_field = mongo_to_kgmicrobe_map.get(sanitized_field)
 
-        # Generate variants for field name matching
+        # If there's no original name in the map, we can't match it.
+        if not original_field:
+            continue
+
+        # Use the ORIGINAL field name for all matching logic
+        field_path_clean = original_field.strip()
+        
         field_variants = normalize_punctuation_variants(field_path_clean)
-        # Also try space-separated variant
         field_name_spaced = normalize_whitespace(field_path_clean.replace('_', ' '))
         field_variants.extend(normalize_punctuation_variants(field_name_spaced))
 
-        # For one-hot encoded fields, also check the VALUE part after splitting on underscore
-        # E.g., "TT_heterotroph" -> check "heterotroph", "Pigment_yellow" -> check "yellow"
         if '_' in field_path_clean:
-            parts = field_path_clean.split('_', 1)  # Split on first underscore only
+            parts = field_path_clean.split('_', 1)
             if len(parts) == 2:
-                prefix = parts[0]
-                value_part = parts[1]
+                prefix, value_part = parts
                 field_variants.extend(normalize_punctuation_variants(value_part))
-                # Also try with spaces instead of underscores in multi-word values
                 value_part_spaced = value_part.replace('_', ' ')
                 field_variants.extend(normalize_punctuation_variants(value_part_spaced))
-
-                # For shape fields (S_ prefix), also try with "-shaped" and " shaped" suffixes
-                # E.g., "S_rod" -> check "rod", "rod-shaped", "rod shaped"
                 if prefix == 'S':
-                    field_variants.append(value_part + '-shaped')
-                    field_variants.append(value_part + ' shaped')
-                    field_variants.append(value_part_spaced + '-shaped')
-                    field_variants.append(value_part_spaced + ' shaped')
-
-        value_count = field_value_counts[field_path]
+                    field_variants.extend([
+                        value_part + '-shaped', value_part + ' shaped',
+                        value_part_spaced + '-shaped', value_part_spaced + ' shaped'
+                    ])
+        
+        value_count = field_value_counts.get(sanitized_field, 0)
 
         matched = False
         matched_info = None
@@ -338,24 +344,19 @@ def reconcile_all_field_names(tsv_path: str, output_format: str = "text", output
         matched_source = None
 
         # First check BactoTraits-attributed synonyms
-        for variant in field_variants:
+        for variant in set(field_variants): # Use set to avoid redundant checks
             if variant in bactotraits_synonyms:
-                matched = True
-                matched_info = bactotraits_synonyms[variant]
-                matched_variant = variant
-                matched_source = "bactotraits"
+                matched, matched_info, matched_variant, matched_source = True, bactotraits_synonyms[variant], variant, "bactotraits"
                 break
-
-        # If not found in BactoTraits synonyms, check ALL METPO synonyms
+        
+        # If not found, check all METPO synonyms
         if not matched:
-            for variant in field_variants:
+            for variant in set(field_variants):
                 if variant in all_metpo_synonyms:
-                    matched = True
-                    matched_info = all_metpo_synonyms[variant]
-                    matched_variant = variant
-                    matched_source = matched_info.get('source', 'unknown')
+                    matched, matched_info, matched_variant, matched_source = True, all_metpo_synonyms[variant], variant, all_metpo_synonyms[variant].get('source', 'unknown')
                     break
 
+        # 4. Build report entries
         if matched:
             metpo_curie = get_entity_curie(matched_info['entity'])
             label = matched_info.get('label', '')
@@ -363,7 +364,8 @@ def reconcile_all_field_names(tsv_path: str, output_format: str = "text", output
             entity_type = ENTITY_TYPE_MAP.get(entity_type_raw, entity_type_raw)
 
             entry = {
-                'field': field_path,
+                'field': sanitized_field,
+                'original_kgmicrobe_name': original_field if original_field != sanitized_field else None,
                 'matched_as': matched_variant if matched_variant != field_path_clean else None,
                 'metpo_id': metpo_curie,
                 'label': label,
@@ -371,56 +373,50 @@ def reconcile_all_field_names(tsv_path: str, output_format: str = "text", output
                 'unique_values': value_count,
                 'matched_from_source': matched_source if matched_source != "bactotraits" else None
             }
-            # Add value distribution if available
-            if field_path in field_value_distributions:
-                entry['value_distribution'] = field_value_distributions[field_path]
+            if sanitized_field in field_value_distributions:
+                entry['value_distribution'] = field_value_distributions[sanitized_field]
             covered_entries.append(entry)
         else:
             entry = {
-                'field': field_path,
+                'field': sanitized_field,
+                'original_kgmicrobe_name': original_field if original_field != sanitized_field else None,
                 'unique_values': value_count
             }
-            # Add value distribution if available
-            if field_path in field_value_distributions:
-                entry['value_distribution'] = field_value_distributions[field_path]
+            if sanitized_field in field_value_distributions:
+                entry['value_distribution'] = field_value_distributions[sanitized_field]
             missing_entries.append(entry)
 
-    # Sort missing entries by value count (descending) to highlight high-value missing fields
+    # 5. Categorize and generate final report
     missing_entries.sort(key=lambda x: x['unique_values'], reverse=True)
+    
+    missing_permanently_excluded = [e for e in missing_entries if e['field'] in PERMANENTLY_EXCLUDED_FIELDS]
+    missing_identifiers = [e for e in missing_entries if e['field'] in IDENTIFIER_FIELDS]
+    missing_traits = [e for e in missing_entries if e['field'] not in PERMANENTLY_EXCLUDED_FIELDS and e['field'] not in IDENTIFIER_FIELDS]
 
-    # Separate taxonomic/ID fields from trait fields
-    missing_taxonomic = [e for e in missing_entries if e['field'] in TAXONOMIC_ID_FIELDS]
-    missing_traits = [e for e in missing_entries if e['field'] not in TAXONOMIC_ID_FIELDS]
-
-    total = len(bactotraits_fields)
-    total_traits = total - len(TAXONOMIC_ID_FIELDS)
+    total_fields = len(sanitized_fields)
+    total_traits = total_fields - len(PERMANENTLY_EXCLUDED_FIELDS) - len(IDENTIFIER_FIELDS)
     covered_count = len(covered_entries)
-    missing_count = len(missing_entries)
     missing_traits_count = len(missing_traits)
-    coverage_pct = 100 * covered_count / total if total > 0 else 0
     traits_coverage_pct = 100 * covered_count / total_traits if total_traits > 0 else 0
 
     if output_format == "yaml":
-        # High-value = fields with small controlled vocabularies (2-20 values) that could be ontology classes
         high_value_missing = [
             {'field': e['field'], 'unique_values': e['unique_values']}
-            for e in missing_entries if 2 <= e['unique_values'] <= 20
+            for e in missing_traits if 2 <= e['unique_values'] <= 20
         ]
-
         result = {
             'field_name_reconciliation': {
                 'summary': {
-                    'total_fields': total,
+                    'total_fields': total_fields,
                     'total_trait_fields': total_traits,
                     'covered': covered_count,
-                    'missing': missing_count,
                     'missing_traits': missing_traits_count,
-                    'coverage_percentage': round(coverage_pct, 1),
                     'traits_coverage_percentage': round(traits_coverage_pct, 1)
                 },
                 'covered_fields': covered_entries,
                 'missing_trait_fields': missing_traits,
-                'missing_taxonomic_id_fields': missing_taxonomic,
+                'missing_identifier_fields': missing_identifiers,
+                'permanently_excluded_fields': missing_permanently_excluded,
                 'high_value_missing_fields': high_value_missing
             }
         }
@@ -433,41 +429,13 @@ def reconcile_all_field_names(tsv_path: str, output_format: str = "text", output
         else:
             print(output_content)
     else:
+        # Text output for console
         print(f"\n{'='*80}")
-        print(f"Checking ALL BactoTraits field names against METPO synonyms")
+        print(f"BactoTraits Field Name Reconciliation")
         print(f"{'='*80}\n")
-        print(f"Total BactoTraits fields: {total}")
-        print(f"Trait fields (excluding taxonomic/ID): {total_traits}\n")
-        print(f"COVERED ({covered_count}/{total_traits} trait fields = {traits_coverage_pct:.1f}%):")
-        print("-" * 80)
-        for entry in covered_entries:
-            matched_note = f" [matched as '{entry['matched_as']}']" if entry['matched_as'] else ""
-            if entry['label']:
-                print(f"  ✓ '{entry['field']}' → {entry['metpo_id']} ({entry['label']}){matched_note} [{entry['unique_values']} unique values]")
-            else:
-                print(f"  ✓ '{entry['field']}' → {entry['metpo_id']}{matched_note} [{entry['unique_values']} unique values]")
-
-        if missing_traits:
-            print(f"\nMISSING TRAIT FIELDS ({missing_traits_count}/{total_traits} = {100*missing_traits_count/total_traits:.1f}%):")
-            print("-" * 80)
-            for entry in missing_traits:
-                print(f"  ✗ '{entry['field']}' [{entry['unique_values']} unique values]")
-
-            # High-value = small controlled vocabularies (2-20 values) that could be ontology classes
-            high_value_missing = [e for e in missing_traits if 2 <= e['unique_values'] <= 20]
-            if high_value_missing:
-                print(f"\nHIGH-VALUE MISSING FIELDS ({len(high_value_missing)} fields with 2-20 unique values - good ontology class candidates):")
-                print("-" * 80)
-                for entry in high_value_missing:
-                    print(f"  ⚠ '{entry['field']}' [{entry['unique_values']} unique values]")
-
-        if missing_taxonomic:
-            print(f"\nMISSING TAXONOMIC/ID FIELDS ({len(missing_taxonomic)} fields - excluded from coverage %):")
-            print("-" * 80)
-            for entry in missing_taxonomic:
-                print(f"  ℹ '{entry['field']}' [{entry['unique_values']} unique values]")
-
-        print(f"\n{'='*80}\n")
+        print(f"Total Fields: {total_fields}")
+        print(f"Trait Fields (for coverage calculation): {total_traits}\n")
+        print(f"COVERED ({len(covered_entries)}/{total_traits} = {traits_coverage_pct:.1f}%):")
 
 
 def reconcile_coverage(field_path: str, tsv_path: str, output_format: str = "text", output_file: str = None) -> None:

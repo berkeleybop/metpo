@@ -7,8 +7,8 @@ Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
 
 
 Ontology(<https://w3id.org/metpo/metpo/components/metpo_sheet.owl>
-<https://w3id.org/metpo/metpo/releases/2025-10-14/components/metpo_sheet.owl>
-Annotation(owl:versionInfo "2025-10-14")
+<https://w3id.org/metpo/metpo/releases/2025-10-15/components/metpo_sheet.owl>
+Annotation(owl:versionInfo "2025-10-15")
 
 Declaration(Class(<https://w3id.org/metpo/1000059>))
 Declaration(Class(<https://w3id.org/metpo/1000060>))
@@ -239,6 +239,17 @@ Declaration(Class(<https://w3id.org/metpo/1003006>))
 Declaration(Class(<https://w3id.org/metpo/1003007>))
 Declaration(Class(<https://w3id.org/metpo/1003008>))
 Declaration(Class(<https://w3id.org/metpo/1003009>))
+Declaration(Class(<https://w3id.org/metpo/1003021>))
+Declaration(Class(<https://w3id.org/metpo/1003022>))
+Declaration(Class(<https://w3id.org/metpo/1003023>))
+Declaration(Class(<https://w3id.org/metpo/1003024>))
+Declaration(Class(<https://w3id.org/metpo/1003025>))
+Declaration(Class(<https://w3id.org/metpo/1003026>))
+Declaration(Class(<https://w3id.org/metpo/1003027>))
+Declaration(Class(<https://w3id.org/metpo/1003028>))
+Declaration(Class(<https://w3id.org/metpo/1003029>))
+Declaration(Class(<https://w3id.org/metpo/1003030>))
+Declaration(Class(<https://w3id.org/metpo/1003031>))
 Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/IAO_0000115>))
 Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/IAO_0000119>))
 Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>))
@@ -1601,6 +1612,7 @@ SubClassOf(<https://w3id.org/metpo/1000870> <https://w3id.org/metpo/1000059>)
 
 # Class: <https://w3id.org/metpo/1000871> (spore forming)
 
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000871> "spore")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000871> "yes")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://github.com/jmadin/bacteria_archaea_traits>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000871> "yes")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000871> "spore forming")
@@ -1610,6 +1622,7 @@ SubClassOf(<https://w3id.org/metpo/1000871> <https://w3id.org/metpo/1000870>)
 
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000872> "no")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://github.com/jmadin/bacteria_archaea_traits>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000872> "no")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000872> "no_spore")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000872> "non-spore forming")
 SubClassOf(<https://w3id.org/metpo/1000872> <https://w3id.org/metpo/1000870>)
 
@@ -1833,6 +1846,82 @@ SubClassOf(<https://w3id.org/metpo/1003008> <https://w3id.org/metpo/1003000>)
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1003009> "alkalitolerant")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1003009> "alkalotolerant")
 SubClassOf(<https://w3id.org/metpo/1003009> <https://w3id.org/metpo/1003000>)
+
+# Class: <https://w3id.org/metpo/1003021> (pigmentation)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1003021> "A phenotype characterized by the color of pigments produced by a microorganism.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1003021> "pigmentation")
+SubClassOf(<https://w3id.org/metpo/1003021> <https://w3id.org/metpo/1000059>)
+
+# Class: <https://w3id.org/metpo/1003022> (black pigmented)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1003022> "A phenotype characterized by the production of black-colored pigments.")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1003022> "Pigment_black")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1003022> "black pigmented")
+SubClassOf(<https://w3id.org/metpo/1003022> <https://w3id.org/metpo/1003021>)
+
+# Class: <https://w3id.org/metpo/1003023> (brown pigmented)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1003023> "A phenotype characterized by the production of brown-colored pigments.")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1003023> "Pigment_brown")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1003023> "brown pigmented")
+SubClassOf(<https://w3id.org/metpo/1003023> <https://w3id.org/metpo/1003021>)
+
+# Class: <https://w3id.org/metpo/1003024> (cream pigmented)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1003024> "A phenotype characterized by the production of cream-colored pigments.")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1003024> "Pigment_cream")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1003024> "cream pigmented")
+SubClassOf(<https://w3id.org/metpo/1003024> <https://w3id.org/metpo/1003021>)
+
+# Class: <https://w3id.org/metpo/1003025> (green pigmented)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1003025> "A phenotype characterized by the production of green-colored pigments.")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1003025> "Pigment_green")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1003025> "green pigmented")
+SubClassOf(<https://w3id.org/metpo/1003025> <https://w3id.org/metpo/1003021>)
+
+# Class: <https://w3id.org/metpo/1003026> (orange pigmented)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1003026> "A phenotype characterized by the production of orange-colored pigments.")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1003026> "Pigment_orange")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1003026> "orange pigmented")
+SubClassOf(<https://w3id.org/metpo/1003026> <https://w3id.org/metpo/1003021>)
+
+# Class: <https://w3id.org/metpo/1003027> (pink pigmented)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1003027> "A phenotype characterized by the production of pink-colored pigments.")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1003027> "Pigment_pink")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1003027> "pink pigmented")
+SubClassOf(<https://w3id.org/metpo/1003027> <https://w3id.org/metpo/1003021>)
+
+# Class: <https://w3id.org/metpo/1003028> (red pigmented)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1003028> "A phenotype characterized by the production of red-colored pigments.")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1003028> "Pigment_red")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1003028> "red pigmented")
+SubClassOf(<https://w3id.org/metpo/1003028> <https://w3id.org/metpo/1003021>)
+
+# Class: <https://w3id.org/metpo/1003029> (white pigmented)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1003029> "A phenotype characterized by the production of white-colored pigments.")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1003029> "Pigment_white")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1003029> "white pigmented")
+SubClassOf(<https://w3id.org/metpo/1003029> <https://w3id.org/metpo/1003021>)
+
+# Class: <https://w3id.org/metpo/1003030> (yellow pigmented)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1003030> "A phenotype characterized by the production of yellow-colored pigments.")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1003030> "Pigment_yellow")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1003030> "yellow pigmented")
+SubClassOf(<https://w3id.org/metpo/1003030> <https://w3id.org/metpo/1003021>)
+
+# Class: <https://w3id.org/metpo/1003031> (carotenoid pigmentation)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1003031> "A phenotype characterized by the production of carotenoid pigments.")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1003031> "Pigment_carotenoid")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1003031> "carotenoid pigmentation")
+SubClassOf(<https://w3id.org/metpo/1003031> <https://w3id.org/metpo/1003021>)
 
 
 )
