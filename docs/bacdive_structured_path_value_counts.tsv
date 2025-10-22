@@ -1,0 +1,17 @@
+structured_path	unique_values	notes
+Culture and growth conditions.culture temp	1268	Temperature values in degrees Celsius; types: growth, optimum, minimum, maximum, other
+Morphology.cell morphology.cell shape	19	Base terms: rod-shaped, coccus-shaped, oval-shaped, etc. (127 unique combinations due to arrays with multiple observations)
+Morphology.cell morphology.gram stain	3	Base terms: negative, positive, variable (26 unique combinations due to parent array with multiple observations)
+Morphology.cell morphology.motility	2	Base terms: yes, no (17 unique combinations due to parent array with multiple observations)
+Morphology.colony morphology	N/A	Complex structure with fields: type of hemolysis, colony size, colony color, colony shape, incubation period, medium used
+Morphology.pigmentation.color	63	Diverse color descriptions including specific RAL codes, absorption spectra, pigment types
+Name and taxonomic classification.domain	2	Values: Bacteria, Archaea
+Physiology and metabolism.antibiotic resistance	206	Unique antibiotics tested (metabolite field); 6,560 strains; structure is object or array with fields: metabolite, is resistant (yes/no), is sensitive (yes/no), ChEBI ID
+Physiology and metabolism.compound production.compound	2568	Highly diverse compound names
+Physiology and metabolism.halophily.halophily level	7	Base terms: halophilic, halotolerant, moderately halophilic, non-halophilic, slightly halophilic, extremely halophilic, haloalkaliphilic (19 unique combinations due to parent array with multiple observations)
+Physiology and metabolism.metabolite production	505	Metabolite names with ChEBI IDs
+Physiology and metabolism.nutrition type.type	22	Base trophic types (e.g., autotroph, chemolithotroph) - 41 unique combinations include comma-separated strings like "heterotroph,chemoorganotroph"
+Physiology and metabolism.oxygen tolerance.oxygen tolerance	9	Base terms: aerobe, anaerobe, microaerophile, facultative aerobe/anaerobe, obligate aerobe/anaerobe, aerotolerant, microaerotolerant (206 unique combinations due to arrays with multiple observations)
+Physiology and metabolism.spore formation.spore formation	2	Base terms: yes, no (9 unique combinations due to parent array with multiple observations)
+Sequence information.16S sequences.accession	27045	INSDC accession numbers for 16S rRNA sequences
+Sequence information.Genome sequences[].accession	50587	INSDC accession numbers for genome assemblies (multiple per strain)
