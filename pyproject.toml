@@ -23,6 +23,13 @@ dev = [
     "litellm==1.75.8",
     "openai>=1.95,<1.100",
 ]
+notebooks = [
+    "jupyter>=1.0.0",
+    "notebook>=7.0.0",
+    "python-dotenv>=1.1.1",
+    "python-levenshtein>=0.27.1",
+    "requests>=2.31.0",
+]
 
 [project.scripts]
 extract-rank-triples = "metpo.extract_rank_triples:extract_taxon_ranks"
