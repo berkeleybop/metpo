@@ -2385,6 +2385,7 @@ dev = [
     { name = "ontogpt" },
     { name = "openai" },
     { name = "pandas" },
+    { name = "rdflib" },
     { name = "semsql" },
 ]
 notebooks = [
@@ -2414,6 +2415,7 @@ requires-dist = [
     { name = "python-dotenv", marker = "extra == 'notebooks'", specifier = "==1.2.1" },
     { name = "python-levenshtein", marker = "extra == 'notebooks'", specifier = "==0.27.1" },
     { name = "pyyaml", specifier = "==6.0.3" },
+    { name = "rdflib", marker = "extra == 'dev'", specifier = ">=7.1.4" },
     { name = "requests", marker = "extra == 'notebooks'", specifier = "==2.32.5" },
     { name = "semsql", marker = "extra == 'dev'", specifier = "==0.4.0" },
     { name = "tqdm", marker = "extra == 'notebooks'", specifier = "==4.67.1" },
