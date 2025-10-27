@@ -280,6 +280,8 @@ elif temp > 80: "hyperthermophilic"
 | **thermophilic** | 45-80°C | 96% (96/100) | 4% |
 | **hyperthermophilic** | >80°C | 99% (99/100) | 1% |
 
+> **Note:** The temperature ranges used for classification (mesophilic: 15-45°C, psychrophilic: <20°C, thermophilic: 45-80°C, hyperthermophilic: >80°C) are based on standard conventions in microbiology. These ranges are commonly used in literature such as [Madigan et al., *Brock Biology of Microorganisms*](https://www.pearson.com/en-us/subject-catalog/p/brock-biology-of-microorganisms/P200000003763/9780134261928) and [Bergey's Manual of Systematic Bacteriology](https://www.springer.com/series/5991). The empirical validation (96-100% match rate) confirms these ranges are appropriate for this dataset.
+
 **Match criteria:** Strain has optimum temperature OR any growth temperature within expected range
 
 **Mismatch examples:**

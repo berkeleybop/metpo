@@ -1,7 +1,9 @@
 # BacDive Keywords WITHOUT Structured Path Equivalents
 
-**Date:** 2025-10-22
+**Date:** 2025-10-22  
 **Source:** Analysis of bacdive.strains_api MongoDB collection
+
+> **Important Correction:** This document originally stated that temperature keywords (mesophilic, thermophilic, psychrophilic, hyperthermophilic) have no structured path equivalents. This is **incorrect**. A structured path `Culture and growth conditions.culture temp` exists with data for 49,507 strains (49.8%). See `CRITICAL_FINDING_culture_temp_ph.md` for details. The sections below have been updated to reflect this correction.
 
 Based on my analysis, here are ALL keywords where "Specific Path Available?" is "No" or "N/A":
 
@@ -175,7 +177,7 @@ Based on my analysis, here are ALL keywords where "Specific Path Available?" is 
 - ✅ Antibiotic resistance/sensitivity (structured data preferred)
 
 ### NO - Keywords are the ONLY or BETTER source for:
-- ❌ **Temperature preference** (mesophilic, thermophilic, psychrophilic, hyperthermophilic) - **NO structured path exists**
+- ~~❌ **Temperature preference** (mesophilic, thermophilic, psychrophilic, hyperthermophilic) - **NO structured path exists**~~ **CORRECTION: Structured path DOES exist** - see `CRITICAL_FINDING_culture_temp_ph.md`
 - ❌ **Pathogen type** (human/animal/plant) - biosafety level is different information
 - ❌ **Production categories** (antibiotic/toxin/metabolite production) - keyword is broader than specific compounds
 - ❌ **Generic pigmentation** - structured path has specific colors but keyword is a general flag
@@ -247,4 +249,6 @@ I verified by:
 - ✅ Reviewing kg-microbe extraction code
 - ✅ Correlating keywords with structured data counts
 
-The main finding: **Temperature preference keywords (mesophilic, thermophilic, etc.) truly have NO structured alternative** - this was a critical discovery that validates the kg-microbe implementation.
+~~The main finding: **Temperature preference keywords (mesophilic, thermophilic, etc.) truly have NO structured alternative** - this was a critical discovery that validates the kg-microbe implementation.~~
+
+**CORRECTION:** Further analysis revealed that temperature data DOES exist in a structured path (`Culture and growth conditions.culture temp`) with data for 49,507 strains. See `CRITICAL_FINDING_culture_temp_ph.md` for complete details.

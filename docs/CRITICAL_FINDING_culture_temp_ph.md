@@ -1,7 +1,10 @@
 # 🚨 CRITICAL FINDING: Culture Temperature and pH Data Not Being Extracted
 
-**Date:** 2025-10-22
+**Date:** 2025-10-22  
 **Discovery:** Schema analysis revealed structured paths for temperature and pH that kg-microbe is NOT extracting
+
+> **Documentation Note:**  
+> Earlier documents (`bacdive_keywords_analysis.md` and `keywords_without_structured_paths.md`) incorrectly stated that temperature keywords had no structured path equivalents. This document provides the corrected information. Those documents have been updated with cross-references to this correction.
 
 ## The Discovery
 

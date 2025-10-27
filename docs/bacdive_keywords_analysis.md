@@ -1,8 +1,10 @@
 # BacDive General.keywords Analysis
 
-**Date:** 2025-10-22
-**Database:** Local MongoDB (port 27017), bacdive.strains_api collection
+**Date:** 2025-10-22  
+**Database:** Local MongoDB (port 27017), bacdive.strains_api collection  
 **Total strain documents:** 99,393
+
+> **Important Correction:** This document originally stated that temperature keywords (mesophilic, thermophilic, psychrophilic, hyperthermophilic) have no structured path equivalents. This is **incorrect**. A structured path `Culture and growth conditions.culture temp` exists with data for 49,507 strains (49.8%). See `CRITICAL_FINDING_culture_temp_ph.md` for details.
 
 ## Executive Summary
 
@@ -21,7 +23,7 @@ All 88 unique General.keywords values with occurrence counts:
 | Keyword | Count | In METPO? | Specific Path Available? |
 |---------|-------|-----------|-------------------------|
 | Bacteria | 97,270 | No | N/A (taxonomy) |
-| mesophilic | 42,236 | Yes | No (keywords only) |
+| mesophilic | 42,236 | Yes | ~~No (keywords only)~~ **See correction below** |
 | 16S sequence | 27,058 | No | N/A (data type) |
 | genome sequence | 17,617 | No | N/A (data type) |
 | Gram-negative | 12,842 | No* | Yes (Morphology.cell morphology.gram stain) |
@@ -37,8 +39,8 @@ All 88 unique General.keywords values with occurrence counts:
 | obligate aerobe | 2,327 | Yes | Yes (Physiology.oxygen tolerance) |
 | coccus-shaped | 1,729 | Yes | Yes (Morphology.cell morphology.cell shape) |
 | human pathogen | 1,607 | No | N/A (isolation/ecology) |
-| thermophilic | 1,530 | Yes | No (keywords only) |
-| psychrophilic | 1,190 | Yes | No (keywords only) |
+| thermophilic | 1,530 | Yes | ~~No (keywords only)~~ **See correction below** |
+| psychrophilic | 1,190 | Yes | ~~No (keywords only)~~ **See correction below** |
 | Archaea | 1,125 | No | N/A (taxonomy) |
 | animal pathogen | 700 | No | N/A (isolation/ecology) |
 | antibiotic compound production | 508 | No | N/A (metabolism) |
@@ -46,7 +48,7 @@ All 88 unique General.keywords values with occurrence counts:
 | plant pathogen | 376 | No | N/A (isolation/ecology) |
 | ovoid-shaped | 362 | Yes | Yes (Morphology.cell morphology.cell shape) |
 | chemoorganotroph | 193 | Yes | Yes (Physiology.nutrition type) |
-| hyperthermophilic | 179 | Yes | No (keywords only) |
+| hyperthermophilic | 179 | Yes | ~~No (keywords only)~~ **See correction below** |
 | pigmented | 166 | No | Possible (various pigment fields) |
 | antibiotic resistance | 157 | No | N/A (phenotype) |
 | obligate anaerobe | 152 | Yes | Yes (Physiology.oxygen tolerance) |
