@@ -1,0 +1,21 @@
+mysql -uroot -p..n4lontology.. --database=tematres
+
+# SELECT substring_index(phen__s2val.val, 'tema=', -1) AS term_id,phen__o2val.val AS term,phen__id2val.val AS property,phen__triple.o_type AS o_type,phen__triple.o_lang_dt AS o_lang_dt FROM phen__triple,phen__s2val,phen__o2val,phen__id2val WHERE phen__triple.s=phen__s2val.id AND phen__triple.p=phen__id2val.id AND phen__triple.o=phen__o2val.id;
+mysql -uroot -p..n4lontology.. --database=tematres -B -e "SELECT substring_index(phen__s2val.val, 'tema=', -1) AS term_id,phen__o2val.val AS term,phen__id2val.val AS property,phen__triple.o_type AS o_type,phen__triple.o_lang_dt AS o_lang_dt FROM phen__triple,phen__s2val,phen__o2val,phen__id2val WHERE phen__triple.s=phen__s2val.id AND phen__triple.p=phen__id2val.id AND phen__triple.o=phen__o2val.id" > triples.tsv
+
+# SELECT * FROM phen_indice;
+mysql -uroot -p..n4lontology.. --database=tematres -B -e "SELECT * FROM phen_indice" > index.tsv
+
+# SELECT id_tema AS term_id,tipo_nota AS value_type,lang_nota AS lang,nota AS note,cuando AS modified,uid AS user FROM phen_notas;
+mysql -uroot -p..n4lontology.. --database=tematres -B -e "SELECT id_tema AS term_id,tipo_nota AS value_type,lang_nota AS lang,nota AS note,cuando AS modified,uid AS user FROM phen_notas" > notes.tsv
+
+# SELECT phen_tema.tema_id AS term_id,phen_tema.tema AS term,phen_tema.uid AS created_by_user,phen_tema.cuando AS created_timestamp,phen_tema.uid_final AS modified_by_user,phen_tema.cuando_final AS modified_timestamp,phen_values.value AS term_state,phen_tema.cuando_estado AS state_timestamp,phen_tema.isMetaterm AS group_term FROM phen_tema,phen_values WHERE phen_tema.estado_id=phen_values.value_id AND phen_values.value_type='t_estado';
+mysql -uroot -p..n4lontology.. --database=tematres -B -e "SELECT phen_tema.tema_id AS term_id,phen_tema.tema AS term,phen_tema.uid AS created_by_user,phen_tema.cuando AS created_timestamp,phen_tema.uid_final AS modified_by_user,phen_tema.cuando_final AS modified_timestamp,phen_values.value AS term_state,phen_tema.cuando_estado AS state_timestamp,phen_tema.isMetaterm AS group_term FROM phen_tema,phen_values WHERE phen_tema.estado_id=phen_values.value_id AND phen_values.value_type='t_estado'" > terms.tsv
+
+# SELECT phen_uri.tema_id,phen_values.value,phen_uri.uri,phen_uri.uid AS modified_by,phen_uri.cuando AS modified_on FROM phen_uri,phen_values WHERE phen_uri.uri_type_id=phen_values.value_id;
+mysql -uroot -p..n4lontology.. --database=tematres -B -e "SELECT phen_uri.tema_id,phen_values.value,phen_uri.uri,phen_uri.uid AS modified_by,phen_uri.cuando AS modified_on FROM phen_uri,phen_values WHERE phen_uri.uri_type_id=phen_values.value_id" > related_resources.tsv
+
+# SELECT id,mail,orga AS organization,NOMBRES AS first_name,APELLIDO AS last_name FROM phen_usuario;
+mysql -uroot -p..n4lontology.. --database=tematres -B -e "SELECT id,mail,orga AS organization,NOMBRES AS first_name,APELLIDO AS last_name FROM phen_usuario" > users.tsv
+
+# SELECT value_code, `value`, value_type from phen_values
