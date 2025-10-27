@@ -1,0 +1,89 @@
+keyword	count	in_metpo	has_structured_path	structured_path	path_coverage	notes
+Bacteria	97270	No	Yes	Name and taxonomic classification.domain	99393	Taxonomy - domain field
+mesophilic	42236	Yes	Yes	Culture and growth conditions.culture temp	49507	Temperature preference category
+16S sequence	27058	No	Yes	Sequence information.16S sequences.accession	27045	Availability flag - accession in structured path
+genome sequence	17617	No	Yes	Sequence information.Genome sequences[].accession	17606	Availability flag - accession in structured path (array)
+Gram-negative	12842	No	Yes	Morphology.cell morphology.gram stain	15630	Path has "negative" not "Gram-negative"
+rod-shaped	11543	Yes	Yes	Morphology.cell morphology.cell shape	15182	Direct match
+aerobe	9353	Yes	Yes	Physiology and metabolism.oxygen tolerance.oxygen tolerance	23254	Direct match
+Gram-positive	6690	No	Yes	Morphology.cell morphology.gram stain	15630	Path has "positive" not "Gram-positive"
+motile	5457	No	Yes	Morphology.cell morphology.motility	14060	Path has "yes" not "motile"
+anaerobe	4773	Yes	Yes	Physiology and metabolism.oxygen tolerance.oxygen tolerance	23254	Direct match
+microaerophile	3986	Yes	Yes	Physiology and metabolism.oxygen tolerance.oxygen tolerance	23254	Direct match
+facultative anaerobe	3493	Yes	Yes	Physiology and metabolism.oxygen tolerance.oxygen tolerance	23254	Direct match
+spore-forming	3359	No	Yes	Physiology and metabolism.spore formation.spore formation	5443	Path has "yes" not "spore-forming"
+colony-forming	2582	No	Yes	Morphology.colony morphology	10573	Keyword is subset - path has detailed colony data (size, color, shape, hemolysis)
+obligate aerobe	2327	Yes	Yes	Physiology and metabolism.oxygen tolerance.oxygen tolerance	23254	Direct match
+coccus-shaped	1729	Yes	Yes	Morphology.cell morphology.cell shape	15182	Direct match
+human pathogen	1607	No	No			Biosafety level is different information
+thermophilic	1530	Yes	Yes	Culture and growth conditions.culture temp	49507	Temperature preference category
+psychrophilic	1190	Yes	Yes	Culture and growth conditions.culture temp	49507	Temperature preference category
+Archaea	1125	No	Yes	Name and taxonomic classification.domain	99393	Taxonomy - domain field
+animal pathogen	700	No	No			Biosafety level is different information
+antibiotic compound production	508	No	Partial	Physiology and metabolism.compound production.compound	2508	Keyword is category, path has specific compounds
+oval-shaped	478	Yes	Yes	Morphology.cell morphology.cell shape	15182	Direct match
+plant pathogen	376	No	No			Biosafety level is different information
+ovoid-shaped	362	Yes	Yes	Morphology.cell morphology.cell shape	15182	Direct match
+chemoorganotroph	193	Yes	Yes	Physiology and metabolism.nutrition type.type	490	Direct match
+hyperthermophilic	179	Yes	Yes	Culture and growth conditions.culture temp	49507	Temperature preference category
+pigmented	166	No	Partial	Morphology.pigmentation.color	4534	Keyword is generic flag, path has specific colors
+antibiotic resistance	157	No	Yes	Physiology and metabolism.antibiotic resistance	6560	Structured path has much more data
+obligate anaerobe	152	Yes	Yes	Physiology and metabolism.oxygen tolerance.oxygen tolerance	23254	Direct match
+Gram-variable	101	No	Yes	Morphology.cell morphology.gram stain	15630	Path has "variable" not "Gram-variable"
+facultative aerobe	92	Yes	Yes	Physiology and metabolism.oxygen tolerance.oxygen tolerance	23254	Direct match
+filament-shaped	90	Yes	Yes	Morphology.cell morphology.cell shape	15182	Direct match
+chemoheterotroph	71	Yes	Yes	Physiology and metabolism.nutrition type.type	490	Direct match
+heterotroph	68	Yes	Yes	Physiology and metabolism.nutrition type.type	490	Direct match
+spiral-shaped	62	Yes	Yes	Morphology.cell morphology.cell shape	15182	Direct match
+moderately halophilic	56	Yes	Yes	Physiology and metabolism.halophily.halophily level	364	Direct match
+pleomorphic-shaped	55	Yes	Yes	Morphology.cell morphology.cell shape	15182	Direct match
+toxin production	53	No	Partial	Physiology and metabolism.compound production.compound	2508	Path has "toxin" (33 strains) but keyword may be broader
+flask-shaped	49	Yes	Yes	Morphology.cell morphology.cell shape	15182	Direct match
+other	49	No	No			Uninformative catch-all
+chemoorganoheterotroph	47	Yes	Yes	Physiology and metabolism.nutrition type.type	490	Direct match
+chemolithoautotroph	40	Yes	Yes	Physiology and metabolism.nutrition type.type	490	Direct match
+halophilic	37	Yes	Yes	Physiology and metabolism.halophily.halophily level	364	Direct match
+lactate production	34	No	Yes	Physiology and metabolism.metabolite production	34	Perfect match - metabolite="lactate" with ChEBI ID
+vibrio-shaped	31	Yes	Yes	Morphology.cell morphology.cell shape	15182	Direct match
+alcohol production	30	No	Partial	Physiology and metabolism.compound production.compound	2508	Path has "ethanol" (19 strains) but keyword may be broader
+amino acid production	28	No	Partial	Physiology and metabolism.compound production.compound	2508	Path has "L glutamic acid" (21 strains) but keyword may be broader
+polysaccharide production	26	No	Partial	Physiology and metabolism.metabolite production	7	Path has "cellulose" (7 strains) - keyword is broad category, path has specific types
+halotolerant	25	Yes	Yes	Physiology and metabolism.halophily.halophily level	364	Direct match
+sphere-shaped	16	Yes	Yes	Morphology.cell morphology.cell shape	15182	Direct match
+non-halophilic	16	Yes	Yes	Physiology and metabolism.halophily.halophily level	364	Direct match
+slightly halophilic	14	Yes	Yes	Physiology and metabolism.halophily.halophily level	364	Direct match
+aerotolerant	13	Yes	Yes	Physiology and metabolism.oxygen tolerance.oxygen tolerance	23254	Direct match
+helical-shaped	12	Yes	Yes	Morphology.cell morphology.cell shape	15182	Direct match
+curved-shaped	9	Yes	Yes	Morphology.cell morphology.cell shape	15182	Direct match
+extremely halophilic	9	Yes	Yes	Physiology and metabolism.halophily.halophily level	364	Direct match
+chemoautolithotroph	8	Yes	Yes	Physiology and metabolism.nutrition type.type	490	Direct match
+organoheterotroph	8	Yes	Yes	Physiology and metabolism.nutrition type.type	490	Direct match
+autotroph	8	Yes	Yes	Physiology and metabolism.nutrition type.type	490	Direct match
+organotroph	7	Yes	Yes	Physiology and metabolism.nutrition type.type	490	Direct match
+methylotroph	6	Yes	Yes	Physiology and metabolism.nutrition type.type	490	Direct match
+chemolithotroph	6	Yes	Yes	Physiology and metabolism.nutrition type.type	490	Direct match
+phototroph	5	Yes	Yes	Physiology and metabolism.nutrition type.type	490	Direct match
+photoheterotroph	5	Yes	Yes	Physiology and metabolism.nutrition type.type	490	Direct match
+methane production	5	No	Yes	Physiology and metabolism.metabolite production	11	Path has better coverage - metabolite="methane" with ChEBI ID
+chemolithoheterotroph	3	Yes	Yes	Physiology and metabolism.nutrition type.type	490	Direct match
+ellipsoidal	3	Yes	Yes	Morphology.cell morphology.cell shape	15182	Direct match
+microaerotolerant	3	Yes	Yes	Physiology and metabolism.oxygen tolerance.oxygen tolerance	23254	Direct match
+spore-shaped	3	Yes	Yes	Morphology.cell morphology.cell shape	15182	Direct match
+methanotroph	2	Yes	Yes	Physiology and metabolism.nutrition type.type	490	Direct match
+star-shaped	2	Yes	Yes	Morphology.cell morphology.cell shape	15182	Direct match
+dumbbell-shaped	2	Yes	Yes	Morphology.cell morphology.cell shape	15182	Direct match
+lithotroph	2	Yes	Yes	Physiology and metabolism.nutrition type.type	490	Direct match
+haloalkaliphilic	2	Yes	Yes	Physiology and metabolism.halophily.halophily level	364	Direct match
+diazotroph	2	No	No			Nitrogen fixation capability
+lithoheterotroph	2	Yes	Yes	Physiology and metabolism.nutrition type.type	490	Direct match
+crescent-shaped	1	Yes	Yes	Morphology.cell morphology.cell shape	15182	Direct match
+photoorganoheterotroph	1	Yes	Yes	Physiology and metabolism.nutrition type.type	490	Direct match
+diplococcus-shaped	1	Yes	Yes	Morphology.cell morphology.cell shape	15182	Direct match
+chemotroph	1	Yes	Yes	Physiology and metabolism.nutrition type.type	490	Direct match
+chemoautotroph	1	Yes	Yes	Physiology and metabolism.nutrition type.type	490	Direct match
+lithoautotroph	1	Yes	Yes	Physiology and metabolism.nutrition type.type	490	Direct match
+mixotroph	1	Yes	Yes	Physiology and metabolism.nutrition type.type	490	Direct match
+organotroph|photoautotroph	1	No	Yes	Physiology and metabolism.nutrition type.type	490	Malformed keyword with pipe character
+photolithotroph	1	Yes	Yes	Physiology and metabolism.nutrition type.type	490	Direct match
+oligotroph	1	Yes	Yes	Physiology and metabolism.nutrition type.type	490	Direct match
+ring-shaped	1	Yes	Yes	Morphology.cell morphology.cell shape	15182	Direct match
