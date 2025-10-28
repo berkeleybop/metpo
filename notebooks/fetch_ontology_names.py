@@ -1,3 +1,9 @@
+#!/usr/bin/env python3
+"""Fetch ontology names from OLS4 API and merge with size data."""
+
+import requests
+import csv
+import time
 import click
 
 
@@ -8,10 +14,6 @@ import click
 def main(sizes_csv, output_csv, api_delay):
     """Fetch ontology metadata from OLS4 API and merge with size data."""
     
-    """Fetch ontology names from OLS4 API and merge with size data."""
-    import requests
-    import csv
-    import time
     # Load our ontology sizes
     sizes = {}
     with open(sizes_csv, 'r') as f:
