@@ -93,17 +93,39 @@ python categorize_ontologies.py \
 ### 2. Data Migration
 
 #### migrate_to_chromadb_resilient.py
-Migrates embeddings from SQLite databases to ChromaDB.
+Migrates embeddings from SQLite databases to ChromaDB with optional ontology filtering.
 
 ```bash
+# Migrate everything
 python migrate_to_chromadb_resilient.py \
   --db-path ./embeddings.db \
   --chroma-path ./embeddings_chroma \
-  --collection-name ols_embeddings \
   --batch-size 1000
+
+# Migrate only specific ontologies (recommended for METPO alignment)
+python migrate_to_chromadb_resilient.py \
+  --db-path ./embeddings.db \
+  --include aro --include biolink --include eco --include envo \
+  --include flopo --include mco --include oba --include ohmi \
+  --include omp --include pato --include pco --include phipo --include upheno \
+  --chroma-path ./metpo_relevant_chroma \
+  --batch-size 1000
+
+# Exclude large ontologies
+python migrate_to_chromadb_resilient.py \
+  --db-path ./embeddings.db \
+  --exclude ncbitaxon --exclude slm --exclude dron \
+  --chroma-path ./filtered_chroma
 ```
 
-**Use case**: Convert OLS ontology embeddings from SQLite to ChromaDB for vector search.
+**Options**:
+- `--include <ontology>` - Include only specific ontologies (can use multiple times)
+- `--exclude <ontology>` - Exclude specific ontologies (can use multiple times)
+- `--batch-size` - Number of embeddings per batch (default: 1000)
+- `--limit` - Limit migration to first N embeddings (for testing)
+- `--no-resume` - Start from beginning instead of resuming
+
+**Use case**: Convert OLS ontology embeddings from SQLite to ChromaDB for vector search, optionally filtering to relevant ontologies.
 
 ### 3. Semantic Matching
 
