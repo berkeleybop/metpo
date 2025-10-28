@@ -38,9 +38,15 @@ def migrate_embeddings_resilient(
     chroma_path: str,
     batch_size: int = 1000,
     limit: int | None = None,
-    resume: bool = True
+    resume: bool = True,
+    include_ontos: tuple[str, ...] = (),
+    exclude_ontos: tuple[str, ...] = ()
 ):
-    """Migrate embeddings with error recovery."""
+    """Migrate embeddings with error recovery and optional ontology filtering."""
+    
+    # Validate mutually exclusive options
+    if include_ontos and exclude_ontos:
+        raise click.UsageError("Cannot use both --include and --exclude. Choose one approach.")
 
     print(f"Connecting to SQLite database: {db_path}")
 
@@ -62,14 +68,30 @@ def migrate_embeddings_resilient(
     # Open connection with isolation level for better error handling
     conn = sqlite3.connect(db_path, isolation_level=None, timeout=30.0)
     cursor = conn.cursor()
+    
+    # Build WHERE clause for ontology filtering
+    where_clause = ""
+    filter_params = []
+    
+    if include_ontos:
+        placeholders = ','.join('?' * len(include_ontos))
+        where_clause = f"WHERE ontologyId IN ({placeholders})"
+        filter_params = list(include_ontos)
+        print(f"Filtering to include ontologies: {', '.join(include_ontos)}")
+    elif exclude_ontos:
+        placeholders = ','.join('?' * len(exclude_ontos))
+        where_clause = f"WHERE ontologyId NOT IN ({placeholders})"
+        filter_params = list(exclude_ontos)
+        print(f"Filtering to exclude ontologies: {', '.join(exclude_ontos)}")
 
     # Count total
     try:
+        count_query = f"SELECT COUNT(*) FROM embeddings {where_clause}"
         if limit:
-            total = min(cursor.execute("SELECT COUNT(*) FROM embeddings").fetchone()[0], limit)
+            total = min(cursor.execute(count_query, filter_params).fetchone()[0], limit)
         else:
-            total = cursor.execute("SELECT COUNT(*) FROM embeddings").fetchone()[0]
-        print(f"Total embeddings in database: {total:,}")
+            total = cursor.execute(count_query, filter_params).fetchone()[0]
+        print(f"Total embeddings to migrate: {total:,}")
     except sqlite3.DatabaseError as e:
         print(f"Warning: Could not count total rows: {e}")
         total = limit if limit else 9570045  # Known total from earlier
@@ -79,8 +101,8 @@ def migrate_embeddings_resilient(
     if offset > 0:
         print(f"Resuming from offset {offset:,}")
 
-    # Query with offset and limit
-    query = "SELECT ontologyId, entityType, iri, document, embeddings FROM embeddings"
+    # Query with filtering, offset and limit
+    query = f"SELECT ontologyId, entityType, iri, document, embeddings FROM embeddings {where_clause}"
     if offset > 0:
         query += f" LIMIT -1 OFFSET {offset}"
     elif limit:
@@ -99,7 +121,7 @@ def migrate_embeddings_resilient(
 
     with tqdm(total=total, initial=offset, desc="Migrating embeddings") as pbar:
         try:
-            cursor.execute(query)
+            cursor.execute(query, filter_params)
 
             while True:
                 try:
@@ -177,8 +199,8 @@ def migrate_embeddings_resilient(
 
                         # Skip corrupted section - jump ahead by batch_size
                         processed += batch_size
-                        query_resume = f"SELECT ontologyId, entityType, iri, document, embeddings FROM embeddings LIMIT -1 OFFSET {processed}"
-                        cursor.execute(query_resume)
+                        query_resume = f"SELECT ontologyId, entityType, iri, document, embeddings FROM embeddings {where_clause} LIMIT -1 OFFSET {processed}"
+                        cursor.execute(query_resume, filter_params)
                         pbar.update(batch_size)
                         print(f"Reconnected and skipped to offset {processed:,}")
                     except Exception as e2:
@@ -231,14 +253,43 @@ def migrate_embeddings_resilient(
     is_flag=True,
     help="Start from beginning instead of resuming"
 )
-def main(db_path: str, chroma_path: str, batch_size: int, limit: int | None, no_resume: bool):
-    """Resilient migration from SQLite to ChromaDB with error recovery and resume capability."""
+@click.option(
+    '--include',
+    'include_ontos',
+    multiple=True,
+    help="Include only these ontologies (can specify multiple times)"
+)
+@click.option(
+    '--exclude',
+    'exclude_ontos',
+    multiple=True,
+    help="Exclude these ontologies (can specify multiple times)"
+)
+def main(db_path: str, chroma_path: str, batch_size: int, limit: int | None, no_resume: bool,
+         include_ontos: tuple[str, ...], exclude_ontos: tuple[str, ...]):
+    """
+    Resilient migration from SQLite to ChromaDB with error recovery and ontology filtering.
+    
+    Examples:
+        # Migrate everything
+        python migrate_to_chromadb_resilient.py --db-path embeddings.db
+        
+        # Migrate only specific ontologies
+        python migrate_to_chromadb_resilient.py --db-path embeddings.db \\
+            --include oba --include pato --include omp
+        
+        # Migrate everything except large ontologies
+        python migrate_to_chromadb_resilient.py --db-path embeddings.db \\
+            --exclude ncbitaxon --exclude slm
+    """
     migrate_embeddings_resilient(
         db_path=db_path,
         chroma_path=chroma_path,
         batch_size=batch_size,
         limit=limit,
-        resume=not no_resume
+        resume=not no_resume,
+        include_ontos=include_ontos,
+        exclude_ontos=exclude_ontos
     )
 
 
