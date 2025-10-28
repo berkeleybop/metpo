@@ -59,4 +59,13 @@ src/patterns/all_pattern_terms.txt
 literature_mining/abstracts/
 
 literature_mining/random-*-pmids.txt
-**/__pycache__/
+**/__pycache__/ontologies/
+
+# Ontologies directory - ignore large OWL files but keep analysis results
+ontologies/*.owl
+ontologies/*.obo
+ontologies/*.ttl
+ontologies/robot_test_results/
+ontologies/validation_results/*.owl
+ontologies/validation_results/*.obo
+ontologies/validation_results/*.ttl
