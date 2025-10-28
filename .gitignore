@@ -7,7 +7,9 @@
 downloads/
 large/
 local/
-metpo/__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
 
 .DS_Store
 semantic.cache
@@ -59,7 +61,6 @@ src/patterns/all_pattern_terms.txt
 literature_mining/abstracts/
 
 literature_mining/random-*-pmids.txt
-**/__pycache__/
 
 # Large reference files
 assets/chebi.lex
@@ -74,3 +75,11 @@ notebooks/oba_chroma/
 assets/N4L_phenotypic_ontology_2016/N4L_phenotypic_ontology/20160406_docs/
 assets/N4L_phenotypic_ontology_2016/N4L_phenotypic_ontology/20160406_docs/doc/
 
+# Ontologies directory - ignore large OWL files but keep analysis results
+ontologies/*.owl
+ontologies/*.obo
+ontologies/*.ttl
+ontologies/robot_test_results/
+ontologies/validation_results/*.owl
+ontologies/validation_results/*.obo
+ontologies/validation_results/*.ttl
