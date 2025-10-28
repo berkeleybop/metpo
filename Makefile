@@ -48,6 +48,10 @@ generated/bacdive_oxygen_phenotype_mappings.tsv: sparql/bacdive_oxygen_phenotype
 		--query $(word 1,$^) $@ \
 		--input $(word 2,$^)
 
+reports/leaf_classes_without_attributed_synonyms.tsv: src/ontology/metpo.owl sparql/find_leaf_classes_without_attributed_synonyms.sparql
+	mkdir -p $(dir $@)
+	robot query --input $(word 1,$^) --query $(word 2,$^) $@
+
 reports/synonym-sources.tsv: src/ontology/metpo.owl src/sparql/synonym-sources.sparql
 	mkdir -p $(dir $@)
 	robot query \
@@ -80,6 +84,7 @@ clean-reports:
 	rm -f reports/bactotraits-metpo-set-diff.yaml
 	rm -f reports/bactotraits-metpo-reconciliation.yaml
 	rm -f reports/madin-metpo-reconciliation.yaml
+	rm -f reports/leaf_classes_without_attributed_synonyms.tsv
 	@echo "All analysis reports cleaned"
 
 .PHONY: clean-all
@@ -334,3 +339,119 @@ list-bioportal-releases:
 	@echo "To download specific release: make downloads/bioportal/metpo-2025-09-23.owl"
 	@echo ""
 	@echo "Note: Set BIOPORTAL_API_KEY environment variable for authenticated downloads"
+
+# ==============================================================================
+# Ontology Alignment Pipeline - Granular Targets
+# ==============================================================================
+
+.PHONY: alignment-fetch-ontology-names alignment-categorize-ontologies \
+        alignment-query-metpo-terms alignment-analyze-matches \
+        alignment-analyze-coherence alignment-identify-candidates \
+        alignment-run-all clean-alignment-results clean-alignment-all help-alignment
+
+# Individual pipeline steps
+alignment-fetch-ontology-names: notebooks/ontology_catalog.csv
+
+notebooks/ontology_catalog.csv: notebooks/ontology_sizes.csv
+	@echo "Fetching ontology metadata from OLS4 API..."
+	cd notebooks && python fetch_ontology_names.py \
+		--sizes-csv ontology_sizes.csv \
+		--output-csv ontology_catalog.csv
+
+alignment-categorize-ontologies: notebooks/ontologies_very_appealing.csv
+
+notebooks/ontologies_very_appealing.csv: notebooks/ontology_catalog.csv
+	@echo "Categorizing ontologies by relevance..."
+	cd notebooks && python categorize_ontologies.py \
+		--input-csv ontology_catalog.csv \
+		--output-prefix ontologies
+
+alignment-query-metpo-terms: notebooks/metpo_relevant_matches.csv
+
+notebooks/metpo_relevant_matches.csv: notebooks/metpo_relevant_chroma
+	@echo "Querying METPO terms against ChromaDB..."
+	@if [ -z "$$OPENAI_API_KEY" ]; then \
+		echo "ERROR: OPENAI_API_KEY environment variable not set"; \
+		exit 1; \
+	fi
+	cd notebooks && python query_metpo_terms.py \
+		--metpo-tsv ../src/templates/metpo_sheet.tsv \
+		--chroma-path ./metpo_relevant_chroma \
+		--collection-name metpo_relevant_embeddings \
+		--output metpo_relevant_matches.csv \
+		--top-n 5
+
+alignment-analyze-matches: notebooks/metpo_relevant_matches.csv
+	@echo "Analyzing match quality..."
+	cd notebooks && python analyze_matches.py \
+		--input-csv metpo_relevant_matches.csv \
+		--good-match-threshold 0.9
+
+alignment-analyze-coherence: notebooks/full_coherence_results.csv
+
+notebooks/full_coherence_results.csv: notebooks/metpo_relevant_matches.csv
+	@echo "Computing structural coherence (this may take a while)..."
+	cd notebooks && python analyze_sibling_coherence.py \
+		--matches-csv metpo_relevant_matches.csv \
+		--metpo-tsv ../src/templates/metpo_sheet.tsv \
+		--output full_coherence_results.csv \
+		--max-terms 50
+
+alignment-identify-candidates: notebooks/alignment_candidates.csv
+
+notebooks/alignment_candidates.csv: notebooks/full_coherence_results.csv
+	@echo "Identifying alignment candidates..."
+	cd notebooks && python analyze_coherence_results.py \
+		--results-csv full_coherence_results.csv \
+		--matches-csv metpo_relevant_matches.csv
+
+# Run complete pipeline
+alignment-run-all: alignment-identify-candidates
+	@echo ""
+	@echo "========================================="
+	@echo "Alignment pipeline complete!"
+	@echo "========================================="
+	@echo "Output files:"
+	@echo "  - notebooks/metpo_relevant_matches.csv"
+	@echo "  - notebooks/full_coherence_results.csv"
+	@echo "  - notebooks/alignment_candidates.csv"
+
+# Clean alignment results
+clean-alignment-results:
+	@echo "Cleaning alignment pipeline results..."
+	rm -f notebooks/metpo_*_matches.csv
+	rm -f notebooks/*_coherence_results.csv
+	rm -f notebooks/alignment_candidates.csv
+	@echo "Alignment results cleaned (ontology catalog preserved)"
+
+# Clean everything including ontology catalog
+clean-alignment-all: clean-alignment-results
+	@echo "Cleaning all alignment files including ontology catalog..."
+	rm -f notebooks/ontology_catalog.csv
+	rm -f notebooks/ontologies_*.csv
+	@echo "All alignment files cleaned"
+
+# Help target
+help-alignment:
+	@echo "METPO Ontology Alignment Pipeline Targets:"
+	@echo ""
+	@echo "  Preparation:"
+	@echo "    make alignment-fetch-ontology-names  - Fetch ontology metadata from OLS4"
+	@echo "    make alignment-categorize-ontologies - Categorize by relevance"
+	@echo ""
+	@echo "  Analysis:"
+	@echo "    make alignment-query-metpo-terms     - Query METPO against ChromaDB"
+	@echo "    make alignment-analyze-matches       - Analyze match quality"
+	@echo "    make alignment-analyze-coherence     - Compute structural coherence"
+	@echo "    make alignment-identify-candidates   - Find high-quality candidates"
+	@echo ""
+	@echo "  Complete workflow:"
+	@echo "    make alignment-run-all               - Run entire pipeline"
+	@echo ""
+	@echo "  Cleanup:"
+	@echo "    make clean-alignment-results         - Clean results only"
+	@echo "    make clean-alignment-all             - Clean all including catalog"
+	@echo ""
+	@echo "  Prerequisites:"
+	@echo "    - Set OPENAI_API_KEY environment variable"
+	@echo "    - Ensure ChromaDB collection exists at notebooks/metpo_relevant_chroma"
