@@ -67,11 +67,14 @@ classes:
         range: StrainRelationship
         annotations:
           prompt: >-
-            A semicolon-separated list of strain-species relationships, where each 
-            relationship connects a strain to its parent taxon. Each relationship should 
-            have a strain name, relationship type, and parent species/genus.
-            For example: "MG1655 strain_of Escherichia coli; K-12 strain_of Escherichia coli; 
-            ATCC 25922 type_strain_of Klebsiella pneumoniae". If no strain relationships are found, leave this field empty.
+            Extract ALL strain-taxon relationships explicitly mentioned or clearly implied in the text.
+            For each strain found in the 'strains' field, determine its parent taxon.
+            Format: "strain_id relationship_type parent_taxon"
+            Examples: "SolV strain_of Methylacidiphilum fumariolicum",
+            "ATCC 25922 type_strain_of Klebsiella pneumoniae".
+            If a strain is mentioned but its parent taxon is not clear from context,
+            still extract it using the most likely parent from primary_taxa.
+            If no strain relationships can be determined, write 'none'.
       environment_relationships:
         description: >-
           semicolon-separated list of specific taxon-environment relationships found in the text
@@ -79,7 +82,12 @@ classes:
         range: EnvironmentRelationship
         annotations:
           prompt: >-
-            For each environment found in isolation_sources field above, extract structured relationships linking specific taxa to those environments. Generate tuples like "Bacillus vietnamensis isolated_from soil", "strain 15-1T found_in seawater", "Pseudomonas species obtained_from plant roots". Convert ALL isolation sources mentioned above into taxon-environment relationships.
+            Extract specific taxon-environment relationships ONLY when explicitly stated in the text.
+            Link the specific taxon mentioned to its isolation source/environment.
+            Format: "taxon_name relationship_type environment"
+            Examples: "Candidatus Methylomirabilis oxyfera isolated_from freshwater",
+            "Methylomicrobium alcaliphilum found_in saline environments".
+            Do NOT create relationships if no environment is mentioned. If no relationships can be determined, write 'none'.
       source_text:
         range: string
         annotations:
@@ -151,6 +159,12 @@ enums:
         description: Clinical or environmental isolate of a species
       variant_of:
         description: Variant or mutant strain of a species
+      derived_from:
+        description: Strain derived from another strain (e.g., mutants, subcultures)
+      identical_to:
+        description: Strain is identical or equivalent to another designation
+      deposited_as:
+        description: Strain deposited in culture collection under this designation
 
   EnvironmentRelationshipType:
     description: Type of relationship between taxon and environment
@@ -197,3 +211,11 @@ enums:
         description: Comparative analysis of multiple taxa
       emended_description:
         description: Emended or updated taxonomic description
+      genome_sequence:
+        description: Complete or draft genome sequence publication
+      review:
+        description: Review article or perspective on taxonomy/microbiology
+      biochemical_characterization:
+        description: Biochemical or physiological characterization study
+      ecological_study:
+        description: Ecological distribution or environmental survey
