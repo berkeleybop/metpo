@@ -63,6 +63,9 @@ echo ""
 echo "Running extraction..."
 START_TIME=$(date +%s)
 
+# Suppress LiteLLM cost estimation errors (we use CBORG API for actual costs)
+export LITELLM_LOG=ERROR
+
 uv run ontogpt -vv \
     --cache-db cache/ontogpt-cache.db \
     extract \
@@ -70,7 +73,7 @@ uv run ontogpt -vv \
     -m "$MODEL" \
     --model-provider openai \
     --api-base "https://api.cborg.lbl.gov" \
-    --system-message "You are a precise data extraction system. Output ONLY the requested fields in the exact format specified. Do not add explanations, preambles, notes, or any other text. If a field has no value, leave it empty after the colon." \
+    --system-message "You are a precise data extraction system. Output ONLY the requested fields in the exact format specified. Do not add explanations, preambles, notes, or any other text. If a field has no value, write 'none' after the colon. Never leave a field completely empty." \
     -t "$TEMPLATE_FILE" \
     -i "$INPUT_DIR" \
     -o "$OUTPUT_FILE" \
