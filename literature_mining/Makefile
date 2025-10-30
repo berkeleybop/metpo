@@ -60,14 +60,17 @@ inputs/random-ijsem-pmids.txt: | inputs
 # 2. ABSTRACT FETCHING
 # =============================================================================
 
+PMID_LIST ?= inputs/random-$(SOURCE)-pmids.txt
+ABSTRACT_DIR ?= abstracts
+
 abstracts: abstracts-$(SOURCE)
 
-abstracts-$(SOURCE): inputs/random-$(SOURCE)-pmids.txt | abstracts
-	@echo "📄 Fetching $(N_ABSTRACTS) abstracts from $(SOURCE)..."
+abstracts-$(SOURCE): $(PMID_LIST) | $(ABSTRACT_DIR)
+	@echo "📄 Fetching $(N_ABSTRACTS) abstracts from $(PMID_LIST) into $(ABSTRACT_DIR)..."
 	head -n $(N_ABSTRACTS) $< | while read pmid; do \
-		if [ ! -f "abstracts/$$pmid-abstract.txt" ]; then \
+		if [ ! -f "$(ABSTRACT_DIR)/$$pmid-abstract.txt" ]; then \
 			echo "Fetching PMID $$pmid"; \
-			uv run artl-cli get-abstract-from-pubmed-id --pmid "$$pmid" > "abstracts/$$pmid-abstract.txt" 2>/dev/null || rm -f "abstracts/$$pmid-abstract.txt"; \
+			uv run artl-cli get-abstract-from-pubmed-id --pmid "$$pmid" > "$(ABSTRACT_DIR)/$$pmid-abstract.txt" 2>/dev/null || rm -f "$(ABSTRACT_DIR)/$$pmid-abstract.txt"; \
 		fi; \
 	done
 
