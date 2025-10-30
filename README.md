@@ -24,6 +24,32 @@ Editors of this ontology should use the edit version, [src/ontology/metpo-edit.o
 
 Please use this GitHub repository's [Issue tracker](https://github.com/berkeleybop/metpo/issues) to request new terms/classes or report errors or specific concerns related to the ontology.
 
+## Installation
+
+### Requirements
+
+- **Python**: 3.11 or higher
+- **Package Manager**: [uv](https://github.com/astral-sh/uv) (recommended) or pip
+
+### Install with uv (Recommended)
+
+```bash
+# Install metpo with development tools
+uv pip install metpo[dev]
+
+# Install with notebook support
+uv pip install metpo[notebooks]
+
+# Install with all extras
+uv pip install metpo[dev,notebooks]
+```
+
+### Install with pip
+
+```bash
+pip install metpo[dev,notebooks]
+```
+
 ## Acknowledgements
 
 This ontology repository was created using the [Ontology Development Kit (ODK)](https://github.com/INCATools/ontology-development-kit).
