@@ -199,7 +199,7 @@ classes:
       Oxygen requirements and atmospheric oxygen conditions for bacterial growth.
       Includes aerobic, anaerobic, microaerophilic, and facultative conditions.
     annotations:
-      annotators: sqlite:obo:envo, sqlite:intermediates/db/metpo.db
+      annotators: sqlite:../src/ontology/metpo.owl
 
   AtmosphericRequirement:
     is_a: NamedEntity
@@ -207,7 +207,7 @@ classes:
       Atmospheric and gaseous requirements for bacterial growth including
       specific gas concentrations and atmospheric conditions.
     annotations:
-      annotators: sqlite:obo:envo, sqlite:obo:chebi, sqlite:intermediates/db/metpo.db
+      annotators: sqlite:../src/ontology/metpo.owl, sqlite:obo:chebi
 
   TemperatureCondition:
     is_a: NamedEntity
@@ -215,7 +215,7 @@ classes:
       Temperature conditions and ranges for bacterial growth including
       specific temperatures, ranges, and thermal classifications.
     annotations:
-      annotators: sqlite:obo:envo, sqlite:intermediates/db/metpo.db
+      annotators: sqlite:../src/ontology/metpo.owl
 
   PHCondition:
     is_a: NamedEntity
@@ -223,7 +223,7 @@ classes:
       pH conditions and ranges for bacterial growth including specific
       pH values, ranges, and acidity classifications.
     annotations:
-      annotators: sqlite:obo:envo, sqlite:intermediates/db/metpo.db
+      annotators: sqlite:../src/ontology/metpo.owl
 
   SaltTolerance:
     is_a: NamedEntity
@@ -231,7 +231,7 @@ classes:
       Salt tolerance conditions for bacterial growth including salt
       concentrations, ranges, and halophilic classifications.
     annotations:
-      annotators: sqlite:obo:envo, sqlite:obo:chebi, sqlite:intermediates/db/metpo.db
+      annotators: sqlite:../src/ontology/metpo.owl, sqlite:obo:chebi
 
   GrowthConditionRelationship:
     is_a: CompoundExpression

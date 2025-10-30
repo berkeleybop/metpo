@@ -151,6 +151,23 @@ else
     TOTAL_RELATIONSHIPS=0
     echo "  WARNING: Output file not found!"
 fi
+
+# Calculate extraction density metrics
+# Clean entity/relationship counts (remove any newlines or whitespace)
+TOTAL_ENTITIES_CLEAN=$(echo "$TOTAL_ENTITIES" | tr -d '\n' | awk '{print $NF}')
+TOTAL_RELATIONSHIPS_CLEAN=$(echo "$TOTAL_RELATIONSHIPS" | tr -d '\n' | awk '{print $NF}')
+
+if [ $TOTAL_INPUT_CHARS -gt 0 ] && [ ! -z "$TOTAL_ENTITIES_CLEAN" ] && [ ! -z "$TOTAL_RELATIONSHIPS_CLEAN" ]; then
+    ENTITIES_PER_1K_INPUT=$(python3 -c "print(f'{($TOTAL_ENTITIES_CLEAN / $TOTAL_INPUT_CHARS) * 1000:.2f}')")
+    RELATIONSHIPS_PER_1K_INPUT=$(python3 -c "print(f'{($TOTAL_RELATIONSHIPS_CLEAN / $TOTAL_INPUT_CHARS) * 1000:.2f}')")
+else
+    ENTITIES_PER_1K_INPUT=0
+    RELATIONSHIPS_PER_1K_INPUT=0
+fi
+
+echo "  Extraction density:"
+echo "    - ${ENTITIES_PER_1K_INPUT} entities/1K input chars"
+echo "    - ${RELATIONSHIPS_PER_1K_INPUT} relationships/1K input chars"
 echo ""
 
 # 6. Log to TSV
@@ -158,11 +175,11 @@ echo "Logging results to $LOG_FILE..."
 
 # Create header if file doesn't exist
 if [ ! -f "$LOG_FILE" ]; then
-    echo -e "timestamp\ttemplate\tmodel\tkey_owner\tmax_budget\tbudget_remaining\tnum_abstracts\ttotal_abstract_chars\tavg_abstract_chars\ttotal_words\tavg_words\ttotal_input_chars\tnum_api_calls\ttotal_cost\tcost_per_abstract\tcost_per_1k_abstract_chars\tcost_per_1k_input_chars\ttotal_time_sec\ttime_per_abstract\ttime_per_1k_input_chars\tentities\trelationships\toutput_file\tlog_file" > "$LOG_FILE"
+    echo -e "timestamp\ttemplate\tmodel\tkey_owner\tmax_budget\tbudget_remaining\tnum_abstracts\ttotal_abstract_chars\tavg_abstract_chars\ttotal_words\tavg_words\ttotal_input_chars\tnum_api_calls\ttotal_cost\tcost_per_abstract\tcost_per_1k_abstract_chars\tcost_per_1k_input_chars\ttotal_time_sec\ttime_per_abstract\ttime_per_1k_input_chars\tentities\trelationships\tentities_per_1k_input\trelationships_per_1k_input\toutput_file\tlog_file" > "$LOG_FILE"
 fi
 
 # Append results
-echo -e "${TIMESTAMP}\t${TEMPLATE}\t${MODEL}\t${KEY_OWNER}\t${MAX_BUDGET}\t${BUDGET_REMAINING}\t${NUM_ABSTRACTS}\t${TOTAL_CHARS}\t${AVG_CHARS}\t${TOTAL_WORDS}\t${AVG_WORDS}\t${TOTAL_INPUT_CHARS}\t${NUM_API_CALLS}\t${COST}\t${COST_PER_ABSTRACT}\t${COST_PER_1K_ABSTRACT_CHARS}\t${COST_PER_1K_INPUT_CHARS}\t${DURATION}\t${TIME_PER_ABSTRACT}\t${TIME_PER_1K_INPUT_CHARS}\t${TOTAL_ENTITIES}\t${TOTAL_RELATIONSHIPS}\t${OUTPUT_FILE}\t${EXTRACTION_LOG}" >> "$LOG_FILE"
+echo -e "${TIMESTAMP}\t${TEMPLATE}\t${MODEL}\t${KEY_OWNER}\t${MAX_BUDGET}\t${BUDGET_REMAINING}\t${NUM_ABSTRACTS}\t${TOTAL_CHARS}\t${AVG_CHARS}\t${TOTAL_WORDS}\t${AVG_WORDS}\t${TOTAL_INPUT_CHARS}\t${NUM_API_CALLS}\t${COST}\t${COST_PER_ABSTRACT}\t${COST_PER_1K_ABSTRACT_CHARS}\t${COST_PER_1K_INPUT_CHARS}\t${DURATION}\t${TIME_PER_ABSTRACT}\t${TIME_PER_1K_INPUT_CHARS}\t${TOTAL_ENTITIES_CLEAN}\t${TOTAL_RELATIONSHIPS_CLEAN}\t${ENTITIES_PER_1K_INPUT}\t${RELATIONSHIPS_PER_1K_INPUT}\t${OUTPUT_FILE}\t${EXTRACTION_LOG}" >> "$LOG_FILE"
 
 echo "✅ Benchmark complete!"
 echo ""
@@ -175,8 +192,9 @@ echo "    - \$${COST_PER_1K_INPUT_CHARS}/1K input chars (template + abstract)"
 echo "  Time: ${DURATION}s"
 echo "    - ${TIME_PER_ABSTRACT}s/abstract"
 echo "    - ${TIME_PER_1K_INPUT_CHARS}s/1K input chars"
-echo "  Entities: $TOTAL_ENTITIES"
-echo "  Relationships: $TOTAL_RELATIONSHIPS"
+echo "  Extraction: ${TOTAL_ENTITIES_CLEAN} entities, ${TOTAL_RELATIONSHIPS_CLEAN} relationships"
+echo "    - ${ENTITIES_PER_1K_INPUT} entities/1K input chars"
+echo "    - ${RELATIONSHIPS_PER_1K_INPUT} relationships/1K input chars"
 echo ""
 echo "Results logged to: $LOG_FILE"
 echo "Output: $OUTPUT_FILE"
