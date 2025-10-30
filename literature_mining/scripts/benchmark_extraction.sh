@@ -92,16 +92,30 @@ SPEND_AFTER=$(curl -s -X GET https://api.cborg.lbl.gov/user/info \
     jq -r '.user_info.spend // 0')
 echo "  Spend after: \$$SPEND_AFTER"
 
-# Calculate cost
+# Calculate actual input size from log file (template + abstracts across all API calls)
+if [ -f "$EXTRACTION_LOG" ]; then
+    TOTAL_INPUT_CHARS=$(grep "prompt\[" "$EXTRACTION_LOG" | grep -o 'prompt\[[0-9]*\]' | sed 's/prompt\[\([0-9]*\)\]/\1/' | awk '{sum+=$1} END {print sum}')
+    NUM_API_CALLS=$(grep -c "prompt\[" "$EXTRACTION_LOG" || echo "0")
+else
+    TOTAL_INPUT_CHARS=$TOTAL_CHARS
+    NUM_API_CALLS=$NUM_ABSTRACTS
+fi
+
+# Calculate cost metrics
 COST=$(python3 -c "print(f'{$SPEND_AFTER - $SPEND_BEFORE:.6f}')")
 COST_PER_ABSTRACT=$(python3 -c "print(f'{($SPEND_AFTER - $SPEND_BEFORE) / $NUM_ABSTRACTS:.6f}')")
-COST_PER_1K_CHARS=$(python3 -c "print(f'{(($SPEND_AFTER - $SPEND_BEFORE) / $TOTAL_CHARS) * 1000:.6f}')")
+COST_PER_1K_ABSTRACT_CHARS=$(python3 -c "print(f'{(($SPEND_AFTER - $SPEND_BEFORE) / $TOTAL_CHARS) * 1000:.6f}')")
+COST_PER_1K_INPUT_CHARS=$(python3 -c "print(f'{(($SPEND_AFTER - $SPEND_BEFORE) / $TOTAL_INPUT_CHARS) * 1000:.6f}')")
 TIME_PER_ABSTRACT=$(python3 -c "print(f'{$DURATION / $NUM_ABSTRACTS:.1f}')")
+TIME_PER_1K_INPUT_CHARS=$(python3 -c "print(f'{($DURATION / $TOTAL_INPUT_CHARS) * 1000:.1f}')")
 
 echo "  Cost: \$$COST"
 echo "  Cost/abstract: \$$COST_PER_ABSTRACT"
-echo "  Cost/1K chars: \$$COST_PER_1K_CHARS"
+echo "  Cost/1K abstract chars: \$$COST_PER_1K_ABSTRACT_CHARS"
+echo "  Cost/1K input chars: \$$COST_PER_1K_INPUT_CHARS"
 echo "  Time/abstract: ${TIME_PER_ABSTRACT}s"
+echo "  Time/1K input chars: ${TIME_PER_1K_INPUT_CHARS}s"
+echo "  Total input chars: $TOTAL_INPUT_CHARS (across $NUM_API_CALLS API calls)"
 echo ""
 
 # 5. Count extracted entities and relationships
@@ -144,17 +158,23 @@ echo "Logging results to $LOG_FILE..."
 
 # Create header if file doesn't exist
 if [ ! -f "$LOG_FILE" ]; then
-    echo -e "timestamp\ttemplate\tmodel\tkey_owner\tmax_budget\tbudget_remaining\tnum_abstracts\ttotal_chars\tavg_chars\ttotal_words\tavg_words\ttotal_cost\tcost_per_abstract\tcost_per_1k_chars\ttotal_time_sec\ttime_per_abstract\tentities\trelationships\toutput_file\tlog_file" > "$LOG_FILE"
+    echo -e "timestamp\ttemplate\tmodel\tkey_owner\tmax_budget\tbudget_remaining\tnum_abstracts\ttotal_abstract_chars\tavg_abstract_chars\ttotal_words\tavg_words\ttotal_input_chars\tnum_api_calls\ttotal_cost\tcost_per_abstract\tcost_per_1k_abstract_chars\tcost_per_1k_input_chars\ttotal_time_sec\ttime_per_abstract\ttime_per_1k_input_chars\tentities\trelationships\toutput_file\tlog_file" > "$LOG_FILE"
 fi
 
 # Append results
-echo -e "${TIMESTAMP}\t${TEMPLATE}\t${MODEL}\t${KEY_OWNER}\t${MAX_BUDGET}\t${BUDGET_REMAINING}\t${NUM_ABSTRACTS}\t${TOTAL_CHARS}\t${AVG_CHARS}\t${TOTAL_WORDS}\t${AVG_WORDS}\t${COST}\t${COST_PER_ABSTRACT}\t${COST_PER_1K_CHARS}\t${DURATION}\t${TIME_PER_ABSTRACT}\t${TOTAL_ENTITIES}\t${TOTAL_RELATIONSHIPS}\t${OUTPUT_FILE}\t${EXTRACTION_LOG}" >> "$LOG_FILE"
+echo -e "${TIMESTAMP}\t${TEMPLATE}\t${MODEL}\t${KEY_OWNER}\t${MAX_BUDGET}\t${BUDGET_REMAINING}\t${NUM_ABSTRACTS}\t${TOTAL_CHARS}\t${AVG_CHARS}\t${TOTAL_WORDS}\t${AVG_WORDS}\t${TOTAL_INPUT_CHARS}\t${NUM_API_CALLS}\t${COST}\t${COST_PER_ABSTRACT}\t${COST_PER_1K_ABSTRACT_CHARS}\t${COST_PER_1K_INPUT_CHARS}\t${DURATION}\t${TIME_PER_ABSTRACT}\t${TIME_PER_1K_INPUT_CHARS}\t${TOTAL_ENTITIES}\t${TOTAL_RELATIONSHIPS}\t${OUTPUT_FILE}\t${EXTRACTION_LOG}" >> "$LOG_FILE"
 
 echo "✅ Benchmark complete!"
 echo ""
 echo "Summary:"
-echo "  Cost: \$$COST (\$${COST_PER_ABSTRACT}/abstract, \$${COST_PER_1K_CHARS}/1K chars)"
-echo "  Time: ${DURATION}s (${TIME_PER_ABSTRACT}s/abstract)"
+echo "  Abstracts: $NUM_ABSTRACTS (${TOTAL_CHARS} chars, ${TOTAL_INPUT_CHARS} input chars across ${NUM_API_CALLS} API calls)"
+echo "  Cost: \$$COST"
+echo "    - \$${COST_PER_ABSTRACT}/abstract"
+echo "    - \$${COST_PER_1K_ABSTRACT_CHARS}/1K abstract chars"
+echo "    - \$${COST_PER_1K_INPUT_CHARS}/1K input chars (template + abstract)"
+echo "  Time: ${DURATION}s"
+echo "    - ${TIME_PER_ABSTRACT}s/abstract"
+echo "    - ${TIME_PER_1K_INPUT_CHARS}s/1K input chars"
 echo "  Entities: $TOTAL_ENTITIES"
 echo "  Relationships: $TOTAL_RELATIONSHIPS"
 echo ""
