@@ -258,7 +258,7 @@ benchmark: | outputs logs
 	echo "  Cost: \$$$$COST"; \
 	echo ""; \
 	echo "Parsing log for input size..."; \
-	TOTAL_INPUT_CHARS=$$(grep -o 'prompt\[[0-9]*\]' $(BENCH_EXTRACT_LOG) 2>/dev/null | sed 's/prompt\[\([0-9]*\)\]/\1/' | awk '{sum+=$$1} END {if (sum) print sum; else print 1}'); \
+	TOTAL_INPUT_CHARS=$$(grep -o 'prompt\[[0-9]*\]' $(BENCH_EXTRACT_LOG) 2>/dev/null | sed 's/prompt\[\([0-9]*\)\]/\1/' | awk '{sum+=$$1} END {if (sum) print sum; else print 0}'); \
 	NUM_API_CALLS=$$(grep -c 'prompt\[' $(BENCH_EXTRACT_LOG) 2>/dev/null || echo "0"); \
 	echo "  Total input chars: $$TOTAL_INPUT_CHARS (across $$NUM_API_CALLS API calls)"; \
 	echo ""; \
@@ -276,7 +276,7 @@ benchmark: | outputs logs
 	fi; \
 	echo ""; \
 	echo "Calculating metrics..."; \
-	METRICS=$$(./scripts/calculate_metrics.py \
+	METRICS=$$(uv run python scripts/calculate_metrics.py \
 		--cost $$COST \
 		--abstracts $$NUM_ABSTRACTS \
 		--abstract-chars $$TOTAL_CHARS \
