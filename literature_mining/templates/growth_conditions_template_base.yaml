@@ -95,12 +95,19 @@ classes:
         range: SaltTolerance
         annotations:
           prompt: >-
-            A semicolon-separated list of salt tolerance conditions. Normalize 
-            salt concentrations to "X% NaCl" format. Examples: "0% NaCl", 
-            "3.5% NaCl", "0-5% NaCl", "optimal 1% NaCl", "range 2-15% NaCl", 
-            "halophilic", "extremely halophilic". Convert other units to 
+            A semicolon-separated list of salt tolerance conditions. Normalize
+            salt concentrations to "X% NaCl" format. Examples: "0% NaCl",
+            "3.5% NaCl", "0-5% NaCl", "optimal 1% NaCl", "range 2-15% NaCl",
+            "halophilic", "extremely halophilic". Convert other units to
             percentages if possible.
             If no salt tolerance conditions are mentioned, leave this field empty.
+      article_type:
+        description: >-
+          the type of study described in this article
+        range: ArticleType
+        annotations:
+          prompt: >-
+            The type of study or article. Choose the most appropriate category based on the content.
       atmospheric_requirements:
         description: >-
           semicolon-separated list of special atmospheric requirements in 
@@ -122,12 +129,14 @@ classes:
         range: StrainRelationship
         annotations:
           prompt: >-
-            A semicolon-separated list of strain-species relationships, where each 
-            relationship connects a strain to its parent taxon. Each relationship should 
-            have a strain name, relationship type, and parent species/genus.
-            For example: "MG1655 strain_of Escherichia coli; K-12 strain_of Escherichia coli; 
-            ATCC 25922 type_strain_of Klebsiella pneumoniae". 
-            If no strain relationships are found, leave this field empty.
+            Extract ALL strain-taxon relationships explicitly mentioned or clearly implied in the text.
+            For each strain found in the 'strains' field, determine its parent taxon.
+            Format: "strain_id relationship_type parent_taxon"
+            Examples: "SolV strain_of Methylacidiphilum fumariolicum",
+            "ATCC 25922 type_strain_of Klebsiella pneumoniae".
+            If a strain is mentioned but its parent taxon is not clear from context,
+            still extract it using the most likely parent from study_taxa.
+            If no strain relationships can be determined, write 'none'.
       growth_condition_relationships:
         description: >-
           semicolon-separated list of specific organism-condition relationships found in the text,
@@ -136,8 +145,14 @@ classes:
         range: GrowthConditionRelationship
         annotations:
           prompt: >-
-            For each growth condition found in temperature_conditions, ph_conditions, oxygen_requirements, salt_tolerance, and atmospheric_requirements fields above, extract structured relationships linking specific organisms to those growth parameters. Generate tuples like "Bacillus vietnamensis optimal_growth_temperature 28°C", "Geobacter species requires_oxygen_level strictly anaerobic", "Streptomyces strain grows_at_pH 6.5-8.0", "Methanogen requires_atmosphere 5% CO2". Convert ALL growth conditions mentioned above into organism-condition relationships. Focus on physical parameters only.
-            If no specific growth condition relationships are found, leave this field empty.
+            Extract specific organism-growth condition relationships ONLY when explicitly stated in the text.
+            Link the specific organism to its growth parameters.
+            Format: "organism_name relationship_type condition_value"
+            Examples: "Bacillus vietnamensis optimal_growth_temperature 28°C",
+            "Geobacter species requires_oxygen_level strictly anaerobic",
+            "Streptomyces strain grows_at_pH 6.5-8.0".
+            Do NOT create relationships if no specific conditions are mentioned for that organism.
+            If no relationships can be determined, write 'none'.
       culture_medium_relationships:
         description: >-
           semicolon-separated list of specific strain-medium relationships found in the text
@@ -145,7 +160,14 @@ classes:
         range: CultureMediumRelationship
         annotations:
           prompt: >-
-            For each culture medium found in culture_media field above, extract structured relationships linking specific strains to those media. Generate tuples like "strain 15-1T grows_on TSB", "ATCC 25922 requires Marine Broth 2216", "isolate XYZ-1 uses_medium glucose minimal medium". Convert ALL culture media mentioned above into strain-medium relationships.
+            Extract specific strain-culture medium relationships ONLY when explicitly stated in the text.
+            Link the specific strain to the culture medium used.
+            Format: "strain_id relationship_type medium_name"
+            Examples: "strain 15-1T grows_on TSB",
+            "ATCC 25922 requires Marine Broth 2216",
+            "isolate XYZ-1 uses_medium glucose minimal medium".
+            Do NOT create relationships if no specific medium is mentioned for that strain.
+            If no relationships can be determined, write 'none'.
       source_text:
         range: string
         annotations:
@@ -294,6 +316,12 @@ enums:
         description: Clinical or environmental isolate of a species
       variant_of:
         description: Variant or mutant strain of a species
+      derived_from:
+        description: Strain derived from another strain (e.g., mutants, subcultures)
+      identical_to:
+        description: Strain is identical or equivalent to another designation
+      deposited_as:
+        description: Strain deposited in culture collection under this designation
 
   CultureMediumRelationshipType:
     description: Type of relationship between strain and culture medium
@@ -307,4 +335,31 @@ enums:
       optimal_growth_on:
         description: The strain shows optimal growth on this medium
 
+  ArticleType:
+    description: Type of study or article
+    permissible_values:
+      novel_species:
+        description: Description of new species
+      novel_genus:
+        description: Description of new genus
+      taxonomic_revision:
+        description: Revision or reclassification of existing taxa
+      phylogenetic_analysis:
+        description: Phylogenetic or evolutionary study
+      comparative_taxonomy:
+        description: Comparative analysis of multiple taxa
+      emended_description:
+        description: Emended or updated taxonomic description
+      genome_sequence:
+        description: Complete or draft genome sequence publication
+      review:
+        description: Review article or perspective on taxonomy/microbiology
+      biochemical_characterization:
+        description: Biochemical or physiological characterization study
+      ecological_study:
+        description: Ecological distribution or environmental survey
+      growth_study:
+        description: Study focused on growth conditions and culture optimization
+      physiology_study:
+        description: Physiological characterization or metabolic study
 
