@@ -6,6 +6,8 @@ N_PMIDS ?= 10
 N_ABSTRACTS ?= 5
 SOURCE ?= ijsem
 TEMPLATE ?= growth_conditions
+MODEL ?= lbl/cborg-chat
+INPUT_DIR ?= abstracts/test-taxa-minimal
 
 # Core directories
 DIRS := inputs intermediates templates abstracts outputs logs assessments cache
@@ -23,11 +25,12 @@ help:
 	@echo "  templates      - Update templates with chemical predicates"
 	@echo "  validate       - Validate templates as LinkML schemas"
 	@echo "  extract        - Run timestamped extraction and assessment"
+	@echo "  benchmark-extract - Run extraction with performance/cost tracking"
 	@echo "  assess         - Assess templates and extractions"
 	@echo "  clean          - Cleanup with different levels"
 	@echo "  clean-workspace - Remove working files (preserve outputs/abstracts)"
 	@echo ""
-	@echo "Parameters: SOURCE=$(SOURCE) TEMPLATE=$(TEMPLATE) N_PMIDS=$(N_PMIDS) N_ABSTRACTS=$(N_ABSTRACTS)"
+	@echo "Parameters: SOURCE=$(SOURCE) TEMPLATE=$(TEMPLATE) MODEL=$(MODEL) INPUT_DIR=$(INPUT_DIR) N_PMIDS=$(N_PMIDS) N_ABSTRACTS=$(N_ABSTRACTS)"
 	@echo ""
 	@echo "Sources: n4l, bacdive, ijsem | Templates: growth_conditions, chemical_utilization, taxa, morphology, biochemical"
 
@@ -174,6 +177,14 @@ outputs/$(TEMPLATE)_$(TIMESTAMP).yaml: templates/$(TEMPLATE)_populated.yaml inte
 		-o $@ \
 		2>&1 | tee logs/$(TEMPLATE)_$(TIMESTAMP).log
 
+# Benchmarked extraction with performance metrics
+benchmark-extract: scripts/benchmark_extraction.sh | outputs logs
+	@echo "🔬 Running benchmarked extraction with performance tracking..."
+	@if [ ! -x scripts/benchmark_extraction.sh ]; then \
+		chmod +x scripts/benchmark_extraction.sh; \
+	fi
+	./scripts/benchmark_extraction.sh $(TEMPLATE) $(MODEL) $(INPUT_DIR)
+
 # =============================================================================
 # 8. ASSESSMENT
 # =============================================================================
@@ -206,6 +217,10 @@ clean-templates:
 clean-outputs:
 	rm -f outputs/*.yaml
 	@echo "Output files cleaned"
+
+clean-output-logs:
+	rm -f outputs/*.yaml logs/*.log
+	@echo "Output and log files cleaned"
 
 clean-cache:
 	rm -rf cache/*
