@@ -1,21 +1,51 @@
 enums:
   ChemicalInteractionPropertyEnum:
     permissible_values:
+      catabolizes:
+        description: catabolizes
+        meaning: METPO:2000204
       builds_base_from:
         description: builds base from
         meaning: METPO:2000004
+      does_not_conjugate:
+        description: does not conjugate
+        meaning: METPO:2000226
+      does_not_catabolize:
+        description: does not catabolize
+        meaning: METPO:2000224
       does_not_use_for_aerobic_growth:
         description: does not use for aerobic growth
         meaning: METPO:2000022
+      mineralizes:
+        description: mineralizes
+        meaning: METPO:2000205
       uses_as_carbon_source:
         description: uses as carbon source
         meaning: METPO:2000006
+      crystallizes:
+        description: crystallizes
+        meaning: METPO:2000218
+      fixes:
+        description: fixes
+        meaning: METPO:2000203
+      accumulates:
+        description: accumulates
+        meaning: METPO:2000210
+      binds:
+        description: binds
+        meaning: METPO:2000213
       does_not_reduce:
         description: does not reduce
         meaning: METPO:2000044
+      does_not_mineralize:
+        description: does not mineralize
+        meaning: METPO:2000225
       does_not_use_for_anaerobic_catabolization:
         description: does not use for anaerobic catabolization
         meaning: METPO:2000023
+      precipitates:
+        description: precipitates
+        meaning: METPO:2000215
       degrades:
         description: degrades
         meaning: METPO:2000007
@@ -28,12 +58,21 @@ enums:
       builds_gas_from:
         description: builds gas from
         meaning: METPO:2000005
+      does_not_transport:
+        description: does not transport
+        meaning: METPO:2000227
       uses_for_growth:
         description: uses for growth
         meaning: METPO:2000012
       uses_in_other_way:
         description: uses in other way
         meaning: METPO:2000015
+      does_not_volatilize:
+        description: does not volatilize
+        meaning: METPO:2000237
+      does_not_precipitate:
+        description: does not precipitate
+        meaning: METPO:2000235
       does_not_degrade:
         description: does not degrade
         meaning: METPO:2000033
@@ -43,6 +82,9 @@ enums:
       is_not_required_for_growth:
         description: is not required for growth
         meaning: METPO:2000045
+      conjugates:
+        description: conjugates
+        meaning: METPO:2000206
       does_not_use_in_other_way:
         description: does not use in other way
         meaning: METPO:2000041
@@ -55,12 +97,27 @@ enums:
       uses_as_electron_acceptor:
         description: uses as electron acceptor
         meaning: METPO:2000008
+      does_not_disproportionate:
+        description: does not disproportionate
+        meaning: METPO:2000220
+      transports:
+        description: transports
+        meaning: METPO:2000207
+      volatilizes:
+        description: volatilizes
+        meaning: METPO:2000217
       does_not_use_for_respiration:
         description: does not use for respiration
         meaning: METPO:2000046
+      does_not_lyse:
+        description: does not lyse
+        meaning: METPO:2000221
       does_not_use_for_anaerobic_growth_in_the_dark:
         description: does not use for anaerobic growth in the dark
         meaning: METPO:2000025
+      does_not_chelate:
+        description: does not chelate
+        meaning: METPO:2000234
       uses_as_electron_donor:
         description: uses as electron donor
         meaning: METPO:2000009
@@ -85,27 +142,45 @@ enums:
       ferments:
         description: ferments
         meaning: METPO:2000011
+      disproportionates:
+        description: disproportionates
+        meaning: METPO:2000200
       uses_for_anaerobic_growth_in_the_dark:
         description: uses for anaerobic growth in the dark
         meaning: METPO:2000050
       does_not_build_acid_from:
         description: does not build acid from
         meaning: METPO:2000028
+      does_not_produce:
+        description: does not produce
+        meaning: METPO:2000222
       does_not_use_for_anaerobic_growth_with_light:
         description: does not use for anaerobic growth with light
         meaning: METPO:2000026
       uses_as_sulfur_source:
         description: uses as sulfur source
         meaning: METPO:2000020
+      lyses:
+        description: lyses
+        meaning: METPO:2000201
       assimilates:
         description: assimilates
         meaning: METPO:2000002
+      chelates:
+        description: chelates
+        meaning: METPO:2000214
       uses_for_anaerobic_catabolization:
         description: uses for anaerobic catabolization
         meaning: METPO:2000048
+      solubilizes:
+        description: solubilizes
+        meaning: METPO:2000216
       does_not_assimilate:
         description: does not assimilate
         meaning: METPO:2000027
+      adsorbs:
+        description: adsorbs
+        meaning: METPO:2000219
       does_not_oxidize:
         description: does not oxidize
         meaning: METPO:2000042
@@ -115,18 +190,33 @@ enums:
       oxidizes:
         description: oxidizes
         meaning: METPO:2000016
+      does_not_crystallize:
+        description: does not crystallize
+        meaning: METPO:2000238
       does_not_build_base_from:
         description: does not build base from
         meaning: METPO:2000029
+      does_not_fix:
+        description: does not fix
+        meaning: METPO:2000223
+      does_not_solubilize:
+        description: does not solubilize
+        meaning: METPO:2000236
       does_not_use_for_aerobic_catabolization:
         description: does not use for aerobic catabolization
         meaning: METPO:2000021
+      does_not_accumulate:
+        description: does not accumulate
+        meaning: METPO:2000230
       does_not_use_as_electron_acceptor:
         description: does not use as electron acceptor
         meaning: METPO:2000034
       requires_for_growth:
         description: requires for growth
         meaning: METPO:2000018
+      does_not_bind:
+        description: does not bind
+        meaning: METPO:2000233
       does_not_hydrolyze:
         description: does not hydrolyze
         meaning: METPO:2000039
@@ -151,3 +241,6 @@ enums:
       uses_for_aerobic_growth:
         description: uses for aerobic growth
         meaning: METPO:2000043
+      synthesizes:
+        description: synthesizes
+        meaning: METPO:2000202

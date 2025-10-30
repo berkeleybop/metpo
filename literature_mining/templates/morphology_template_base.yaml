@@ -44,9 +44,10 @@ classes:
         range: CellShape
         annotations:
           prompt: >-
-            Identify cell shapes mentioned in the text. Use standard terms: "rod", "coccus", 
-            "spirillum", "vibrio", "filamentous", "branched", "irregular", "pleomorphic". 
-            Include measurements when provided (e.g., "rod 0.5 x 2.0 μm").
+            Identify cell shapes mentioned in the text. Use standard terms: "rod", "coccus",
+            "spirillum", "vibrio", "filamentous", "branched", "irregular", "pleomorphic".
+            Include measurements when provided (e.g., "rod 0.5 x 2.0 μm"). If no cell shapes
+            are mentioned, leave this field empty. DO NOT write "none".
       cell_arrangements:
         description: >-
           semicolon-separated list of cell arrangements in normalized format
@@ -54,9 +55,10 @@ classes:
         range: CellArrangement
         annotations:
           prompt: >-
-            Identify cell arrangements mentioned in the text. Use standard terms: "single", 
-            "pairs", "chains", "clusters", "tetrads", "packets", "irregular masses", 
-            "palisades", "V-shapes", "angular arrangements".
+            Identify cell arrangements mentioned in the text. Use standard terms: "single",
+            "pairs", "chains", "clusters", "tetrads", "packets", "irregular masses",
+            "palisades", "V-shapes", "angular arrangements". If no cell arrangements
+            are mentioned, leave this field empty. DO NOT write "none".
       gram_staining:
         description: >-
           semicolon-separated list of Gram staining results
@@ -64,9 +66,10 @@ classes:
         range: GramStaining
         annotations:
           prompt: >-
-            Identify Gram staining results. Use standard terms: "Gram-positive", 
-            "Gram-negative", "Gram-variable", "Gram-indeterminate". Include any 
-            additional staining properties mentioned.
+            Identify Gram staining results. Use standard terms: "Gram-positive",
+            "Gram-negative", "Gram-variable", "Gram-indeterminate". Include any
+            additional staining properties mentioned. If no Gram staining information
+            is mentioned, leave this field empty. DO NOT write "none".
       motility:
         description: >-
           semicolon-separated list of motility characteristics
@@ -74,9 +77,10 @@ classes:
         range: Motility
         annotations:
           prompt: >-
-            Identify motility characteristics. Use terms: "motile", "non-motile", 
-            "flagellar motility", "gliding motility", "twitching motility", "polar flagella", 
-            "peritrichous flagella", "single flagellum", "multiple flagella".
+            Identify motility characteristics. Use terms: "motile", "non-motile",
+            "flagellar motility", "gliding motility", "twitching motility", "polar flagella",
+            "peritrichous flagella", "single flagellum", "multiple flagella". If no motility
+            information is mentioned, leave this field empty. DO NOT write "none".
       spore_formation:
         description: >-
           semicolon-separated list of spore formation characteristics
@@ -84,9 +88,10 @@ classes:
         range: SporeFormation
         annotations:
           prompt: >-
-            Identify spore formation characteristics. Use terms: "spore-forming", 
-            "non-spore-forming", "endospores", "terminal spores", "subterminal spores", 
-            "central spores", "sporangium", "conidia", "arthrospores".
+            Identify spore formation characteristics. Use terms: "spore-forming",
+            "non-spore-forming", "endospores", "terminal spores", "subterminal spores",
+            "central spores", "sporangium", "conidia", "arthrospores". If no spore
+            formation information is mentioned, leave this field empty. DO NOT write "none".
       cell_wall_characteristics:
         description: >-
           semicolon-separated list of cell wall characteristics
@@ -94,9 +99,10 @@ classes:
         range: CellWallCharacteristic
         annotations:
           prompt: >-
-            Identify cell wall characteristics. Include: "thick cell wall", "thin cell wall", 
-            "multilayered", "peptidoglycan", "teichoic acids", "mycolic acids", 
-            "lipopolysaccharide", "outer membrane", "periplasmic space".
+            Identify cell wall characteristics. Include: "thick cell wall", "thin cell wall",
+            "multilayered", "peptidoglycan", "teichoic acids", "mycolic acids",
+            "lipopolysaccharide", "outer membrane", "periplasmic space". If no cell wall
+            characteristics are mentioned, leave this field empty. DO NOT write "none".
       cellular_inclusions:
         description: >-
           semicolon-separated list of cellular inclusions and internal structures
@@ -104,9 +110,10 @@ classes:
         range: CellularInclusion
         annotations:
           prompt: >-
-            Identify cellular inclusions and internal structures. Include: "poly-β-hydroxybutyrate", 
-            "polyphosphate granules", "sulfur granules", "gas vesicles", "magnetosomes", 
-            "carboxysomes", "storage granules", "lipid droplets".
+            Identify cellular inclusions and internal structures. Include: "poly-β-hydroxybutyrate",
+            "polyphosphate granules", "sulfur granules", "gas vesicles", "magnetosomes",
+            "carboxysomes", "storage granules", "lipid droplets". If no cellular inclusions
+            are mentioned, leave this field empty. DO NOT write "none".
       cell_shape_relationships:
         description: >-
           semicolon-separated list of specific strain-cell shape relationships
@@ -163,6 +170,17 @@ classes:
         annotations:
           prompt: >-
             For each cellular inclusion found in cellular_inclusions field above, extract structured relationships linking specific strains to those inclusions. Generate tuples like "strain 15-1T contains_inclusion poly-β-hydroxybutyrate", "ATCC 25922 exhibits_inclusion gas vesicles", "isolate XYZ-1 demonstrates_structure storage granules". Convert ALL cellular inclusions mentioned above into strain-inclusion relationships.
+      pigmentation:
+        description: >-
+          semicolon-separated list of pigmentation and colony color characteristics
+        multivalued: true
+        range: Pigmentation
+        annotations:
+          prompt: >-
+            Identify pigmentation and colony colors. Use terms: "yellow", "orange", "red",
+            "pink", "white", "cream", "brown", "black", "green", "non-pigmented",
+            "carotenoid pigmentation", "diffusible pigment". If no pigmentation is mentioned,
+            leave this field empty.
       strain_relationships:
         description: >-
           semicolon-separated list of strain-species relationships found in the text
@@ -170,11 +188,19 @@ classes:
         range: StrainRelationship
         annotations:
           prompt: >-
-            A semicolon-separated list of strain-species relationships, where each 
-            relationship connects a strain to its parent taxon. Each relationship should 
+            A semicolon-separated list of strain-species relationships, where each
+            relationship connects a strain to its parent taxon. Each relationship should
             have a strain name, relationship type, and parent species/genus.
-            For example: "MG1655 strain_of Escherichia coli; K-12 strain_of Escherichia coli; 
-            ATCC 25922 type_strain_of Klebsiella pneumoniae". If no strain relationships are found, leave this field empty.
+            For example: "MG1655 strain_of Escherichia coli; K-12 strain_of Escherichia coli;
+            ATCC 25922 type_strain_of Klebsiella pneumoniae". If no strain relationships are found,
+            leave this field empty. DO NOT write "none".
+      article_type:
+        description: >-
+          the type of study described in this article
+        range: ArticleType
+        annotations:
+          prompt: >-
+            The type of study or article. Choose the most appropriate category based on the content.
       source_text:
         range: string
         annotations:
@@ -238,6 +264,13 @@ classes:
     is_a: NamedEntity
     description: >-
       Cell wall characteristics and components including peptidoglycan, teichoic acids, lipopolysaccharide, and structural features.
+    annotations:
+      annotators: sqlite:obo:metpo
+
+  Pigmentation:
+    is_a: NamedEntity
+    description: >-
+      Colony pigmentation and color characteristics including yellow, orange, red, carotenoid pigmentation, and other color properties.
     annotations:
       annotators: sqlite:obo:metpo
 
@@ -393,3 +426,37 @@ enums:
         description: Clinical or environmental isolate of a species
       variant_of:
         description: Variant or mutant strain of a species
+      derived_from:
+        description: Strain derived from another strain (e.g., mutants, subcultures)
+      identical_to:
+        description: Strain is identical or equivalent to another designation
+      deposited_as:
+        description: Strain deposited in culture collection under this designation
+
+  ArticleType:
+    description: Type of study or article
+    permissible_values:
+      novel_species:
+        description: Description of new species
+      novel_genus:
+        description: Description of new genus
+      taxonomic_revision:
+        description: Revision or reclassification of existing taxa
+      phylogenetic_analysis:
+        description: Phylogenetic or evolutionary study
+      comparative_taxonomy:
+        description: Comparative analysis of multiple taxa
+      emended_description:
+        description: Emended or updated taxonomic description
+      genome_sequence:
+        description: Complete or draft genome sequence publication
+      review:
+        description: Review article or perspective
+      biochemical_characterization:
+        description: Biochemical or physiological characterization study
+      ecological_study:
+        description: Ecological distribution or environmental survey
+      morphological_characterization:
+        description: Study focused on cellular morphology and microscopy
+      physiology_study:
+        description: Physiological characterization or growth studies
