@@ -6,7 +6,7 @@ N_PMIDS ?= 10
 N_ABSTRACTS ?= 5
 SOURCE ?= ijsem
 TEMPLATE ?= growth_conditions
-MODEL ?= lbl/cborg-chat
+MODEL ?= gpt-4o
 INPUT_DIR ?= abstracts/test-taxa-minimal
 
 # Core directories
@@ -85,15 +85,15 @@ abstracts-$(SOURCE): $(PMID_LIST) | $(ABSTRACT_DIR)
 intermediates: intermediates/db/metpo.db intermediates/yaml/chem_interaction_props_enum.yaml
 
 # METPO database
-intermediates/db/metpo.db: ../metpo.owl
-	@echo "🗄️ Building METPO database..."
+intermediates/db/metpo.db: ../src/ontology/metpo.owl
+	@echo "🗄️ Building METPO database from src/ontology..."
 	mkdir -p intermediates/db
 	cp $< intermediates/db/metpo.owl
 	cd intermediates/db && uv run semsql make metpo.db
 	rm -f intermediates/db/metpo.owl intermediates/db/metpo-relation-graph.tsv.gz
 
 # Chemical utilization predicates (ONLY for chemical_utilization template)
-intermediates/tsv/chem_interaction_props.tsv: ../metpo.owl
+intermediates/tsv/chem_interaction_props.tsv: ../src/ontology/metpo.owl
 	mkdir -p intermediates/tsv
 	robot query --query sparql/chem_interaction_props.rq $@ --input $<
 
@@ -221,11 +221,14 @@ benchmark: | outputs logs
 	echo ""; \
 	echo "Querying CBORG account info (before)..."; \
 	USER_INFO=$$(curl -s https://api.cborg.lbl.gov/user/info -H "Authorization: Bearer $$OPENAI_API_KEY"); \
-	KEY_OWNER=$$(echo "$$USER_INFO" | jq -r '.user_info.user_email // "unknown"'); \
+	KEY_INFO=$$(curl -s https://api.cborg.lbl.gov/key/info -H "Authorization: Bearer $$OPENAI_API_KEY"); \
+	KEY_OWNER=$$(echo "$$USER_INFO" | jq -r '.user_id // "unknown"'); \
+	KEY_NAME=$$(echo "$$KEY_INFO" | jq -r '.info.key_name // "unknown"'); \
 	MAX_BUDGET=$$(echo "$$USER_INFO" | jq -r '.user_info.max_budget // 0'); \
 	SPEND_BEFORE=$$(echo "$$USER_INFO" | jq -r '.user_info.spend // 0'); \
 	BUDGET_REMAINING=$$(echo "$$MAX_BUDGET - $$SPEND_BEFORE" | bc); \
 	echo "  Key owner: $$KEY_OWNER"; \
+	echo "  Key name: $$KEY_NAME"; \
 	echo "  Max budget: \$$$$MAX_BUDGET"; \
 	echo "  Spend before: \$$$$SPEND_BEFORE"; \
 	echo "  Budget remaining: \$$$$BUDGET_REMAINING"; \
@@ -233,10 +236,12 @@ benchmark: | outputs logs
 	echo "Running extraction..."; \
 	START_TIME=$$(date +%s); \
 	LITELLM_LOG=ERROR uv run ontogpt -vv extract \
-		-t templates/$(TEMPLATE)_template_base.yaml \
+		-t templates/$(TEMPLATE)_populated.yaml \
 		-i $(INPUT_DIR) \
 		-o $(BENCH_OUTPUT) \
 		-m $(MODEL) \
+		--model-provider openai \
+		--api-base "https://api.cborg.lbl.gov" \
 		--set-slot-value source_text= \
 		--system-message $(SYSTEM_MSG) \
 		> $(BENCH_EXTRACT_LOG) 2>&1 || true; \
@@ -259,8 +264,9 @@ benchmark: | outputs logs
 	echo ""; \
 	echo "Analyzing extraction results..."; \
 	if [ -f "$(BENCH_OUTPUT)" ]; then \
-		ENTITIES=$$(grep -c "NamedEntity" $(BENCH_OUTPUT) 2>/dev/null || echo "0"); \
-		RELATIONSHIPS=$$(grep -c "CompoundExpression" $(BENCH_OUTPUT) 2>/dev/null || echo "0"); \
+		COUNTS=$$(uv run python scripts/count_extraction_results.py --json $(BENCH_OUTPUT)); \
+		ENTITIES=$$(echo "$$COUNTS" | jq -r '.entities'); \
+		RELATIONSHIPS=$$(echo "$$COUNTS" | jq -r '.relationships'); \
 		echo "  Entities: $$ENTITIES"; \
 		echo "  Relationships: $$RELATIONSHIPS"; \
 	else \
@@ -288,9 +294,15 @@ benchmark: | outputs logs
 	echo ""; \
 	echo "Logging results to $(BENCH_LOG_FILE)..."; \
 	if [ ! -f "$(BENCH_LOG_FILE)" ]; then \
-		echo -e "timestamp\ttemplate\tmodel\tkey_owner\tmax_budget\tbudget_remaining\tnum_abstracts\ttotal_abstract_chars\tavg_abstract_chars\ttotal_words\tavg_words\ttotal_input_chars\tnum_api_calls\ttotal_cost\tcost_per_abstract\tcost_per_1k_abstract_chars\tcost_per_1k_input_chars\ttotal_time_sec\ttime_per_abstract\ttime_per_1k_input_chars\tentities\trelationships\tentities_per_1k_input\trelationships_per_1k_input\toutput_file\tlog_file" > $(BENCH_LOG_FILE); \
+		printf "timestamp\ttemplate\tmodel\tkey_owner\tkey_name\tmax_budget\tbudget_remaining\tnum_abstracts\ttotal_abstract_chars\tavg_abstract_chars\ttotal_words\tavg_words\ttotal_input_chars\tnum_api_calls\ttotal_cost\tcost_per_abstract\tcost_per_1k_abstract_chars\tcost_per_1k_input_chars\ttotal_time_sec\ttime_per_abstract\ttime_per_1k_input_chars\tentities\trelationships\tentities_per_1k_input\trelationships_per_1k_input\toutput_file\tlog_file\n" > $(BENCH_LOG_FILE); \
 	fi; \
-	echo -e "$(BENCH_TIMESTAMP)\t$(TEMPLATE)\t$(MODEL)\t$$KEY_OWNER\t$$MAX_BUDGET\t$$BUDGET_REMAINING\t$$NUM_ABSTRACTS\t$$TOTAL_CHARS\t$$AVG_CHARS\t$$TOTAL_WORDS\t$$AVG_WORDS\t$$TOTAL_INPUT_CHARS\t$$NUM_API_CALLS\t$$COST\t$$COST_PER_ABSTRACT\t$$COST_PER_1K_ABSTRACT\t$$COST_PER_1K_INPUT\t$$DURATION\t$$TIME_PER_ABSTRACT\t$$TIME_PER_1K_INPUT\t$$ENTITIES\t$$RELATIONSHIPS\t$$ENTITIES_PER_1K\t$$RELATIONSHIPS_PER_1K\t$(BENCH_OUTPUT)\t$(BENCH_EXTRACT_LOG)" >> $(BENCH_LOG_FILE); \
+	printf "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n" \
+		"$(BENCH_TIMESTAMP)" "$(TEMPLATE)" "$(MODEL)" "$$KEY_OWNER" "$$KEY_NAME" "$$MAX_BUDGET" "$$BUDGET_REMAINING" \
+		"$$NUM_ABSTRACTS" "$$TOTAL_CHARS" "$$AVG_CHARS" "$$TOTAL_WORDS" "$$AVG_WORDS" "$$TOTAL_INPUT_CHARS" \
+		"$$NUM_API_CALLS" "$$COST" "$$COST_PER_ABSTRACT" "$$COST_PER_1K_ABSTRACT" "$$COST_PER_1K_INPUT" \
+		"$$DURATION" "$$TIME_PER_ABSTRACT" "$$TIME_PER_1K_INPUT" "$$ENTITIES" "$$RELATIONSHIPS" \
+		"$$ENTITIES_PER_1K" "$$RELATIONSHIPS_PER_1K" "$(BENCH_OUTPUT)" "$(BENCH_EXTRACT_LOG)" \
+		>> $(BENCH_LOG_FILE); \
 	echo ""; \
 	echo "✅ Benchmark complete!"; \
 	echo ""; \
