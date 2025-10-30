@@ -25,7 +25,8 @@ help:
 	@echo "  templates      - Update templates with chemical predicates"
 	@echo "  validate       - Validate templates as LinkML schemas"
 	@echo "  extract        - Run timestamped extraction and assessment"
-	@echo "  benchmark-extract - Run extraction with performance/cost tracking"
+	@echo "  benchmark      - Unix-style benchmark (Make + Python calculator)"
+	@echo "  benchmark-extract - Run extraction with performance/cost tracking (old bash)"
 	@echo "  assess         - Assess templates and extractions"
 	@echo "  clean          - Cleanup with different levels"
 	@echo "  clean-workspace - Remove working files (preserve outputs/abstracts)"
@@ -177,13 +178,138 @@ outputs/$(TEMPLATE)_$(TIMESTAMP).yaml: templates/$(TEMPLATE)_populated.yaml inte
 		-o $@ \
 		2>&1 | tee logs/$(TEMPLATE)_$(TIMESTAMP).log
 
-# Benchmarked extraction with performance metrics
+# Benchmarked extraction with performance metrics (old bash version)
 benchmark-extract: scripts/benchmark_extraction.sh | outputs logs
 	@echo "🔬 Running benchmarked extraction with performance tracking..."
 	@if [ ! -x scripts/benchmark_extraction.sh ]; then \
 		chmod +x scripts/benchmark_extraction.sh; \
 	fi
 	./scripts/benchmark_extraction.sh $(TEMPLATE) $(MODEL) $(INPUT_DIR)
+
+# Unix-philosophy benchmark: shell tools + pure Python calculator
+BENCH_LOG_FILE ?= extraction_benchmarks.tsv
+BENCH_TIMESTAMP := $(shell date +"%Y%m%d_%H%M%S")
+BENCH_OUTPUT := outputs/$(TEMPLATE)_$(shell echo $(MODEL) | tr '/' '_')_$(BENCH_TIMESTAMP).yaml
+BENCH_EXTRACT_LOG := logs/$(TEMPLATE)_$(shell echo $(MODEL) | tr '/' '_')_$(BENCH_TIMESTAMP).log
+SYSTEM_MSG := "You are a precise data extraction system. Output ONLY the requested fields in the exact format specified. Do not add explanations, preambles, notes, or any other text. If a field has no value, write 'none' after the colon. Never leave a field completely empty."
+
+benchmark: | outputs logs
+	@echo "=========================================="
+	@echo "OntoGPT Extraction Benchmark"
+	@echo "=========================================="
+	@echo "Template: $(TEMPLATE)"
+	@echo "Model: $(MODEL)"
+	@echo "Input: $(INPUT_DIR)"
+	@echo "Timestamp: $(BENCH_TIMESTAMP)"
+	@echo ""
+	@# Validate
+	@if [ ! -f "templates/$(TEMPLATE)_template_base.yaml" ]; then echo "ERROR: Template not found"; exit 1; fi
+	@if [ ! -d "$(INPUT_DIR)" ]; then echo "ERROR: Input dir not found"; exit 1; fi
+	@if [ -z "$$OPENAI_API_KEY" ]; then echo "ERROR: OPENAI_API_KEY not set"; exit 1; fi
+	@# Collect stats
+	@echo "Collecting input statistics..."
+	@NUM_ABSTRACTS=$$(ls -1 $(INPUT_DIR)/*.txt 2>/dev/null | wc -l | tr -d ' '); \
+	TOTAL_CHARS=$$(cat $(INPUT_DIR)/*.txt 2>/dev/null | wc -c | tr -d ' '); \
+	TOTAL_WORDS=$$(cat $(INPUT_DIR)/*.txt 2>/dev/null | wc -w | tr -d ' '); \
+	AVG_CHARS=$$(($$TOTAL_CHARS / $$NUM_ABSTRACTS)); \
+	AVG_WORDS=$$(($$TOTAL_WORDS / $$NUM_ABSTRACTS)); \
+	echo "  Abstracts: $$NUM_ABSTRACTS"; \
+	echo "  Total chars: $$TOTAL_CHARS"; \
+	echo "  Avg chars/abstract: $$AVG_CHARS"; \
+	echo "  Total words: $$TOTAL_WORDS"; \
+	echo "  Avg words/abstract: $$AVG_WORDS"; \
+	echo ""; \
+	echo "Querying CBORG account info (before)..."; \
+	USER_INFO=$$(curl -s https://api.cborg.lbl.gov/user/info -H "Authorization: Bearer $$OPENAI_API_KEY"); \
+	KEY_OWNER=$$(echo "$$USER_INFO" | jq -r '.user_info.user_email // "unknown"'); \
+	MAX_BUDGET=$$(echo "$$USER_INFO" | jq -r '.user_info.max_budget // 0'); \
+	SPEND_BEFORE=$$(echo "$$USER_INFO" | jq -r '.user_info.spend // 0'); \
+	BUDGET_REMAINING=$$(echo "$$MAX_BUDGET - $$SPEND_BEFORE" | bc); \
+	echo "  Key owner: $$KEY_OWNER"; \
+	echo "  Max budget: \$$$$MAX_BUDGET"; \
+	echo "  Spend before: \$$$$SPEND_BEFORE"; \
+	echo "  Budget remaining: \$$$$BUDGET_REMAINING"; \
+	echo ""; \
+	echo "Running extraction..."; \
+	START_TIME=$$(date +%s); \
+	LITELLM_LOG=ERROR uv run ontogpt -vv extract \
+		-t templates/$(TEMPLATE)_template_base.yaml \
+		-i $(INPUT_DIR) \
+		-o $(BENCH_OUTPUT) \
+		-m $(MODEL) \
+		--set-slot-value source_text= \
+		--system-message $(SYSTEM_MSG) \
+		> $(BENCH_EXTRACT_LOG) 2>&1 || true; \
+	END_TIME=$$(date +%s); \
+	DURATION=$$(($$END_TIME - $$START_TIME)); \
+	echo ""; \
+	echo "Extraction completed in $${DURATION}s"; \
+	echo ""; \
+	echo "Querying CBORG spend (after)..."; \
+	USER_INFO_AFTER=$$(curl -s https://api.cborg.lbl.gov/user/info -H "Authorization: Bearer $$OPENAI_API_KEY"); \
+	SPEND_AFTER=$$(echo "$$USER_INFO_AFTER" | jq -r '.user_info.spend // 0'); \
+	COST=$$(echo "$$SPEND_AFTER - $$SPEND_BEFORE" | bc); \
+	echo "  Spend after: \$$$$SPEND_AFTER"; \
+	echo "  Cost: \$$$$COST"; \
+	echo ""; \
+	echo "Parsing log for input size..."; \
+	TOTAL_INPUT_CHARS=$$(grep -o 'prompt\[[0-9]*\]' $(BENCH_EXTRACT_LOG) 2>/dev/null | sed 's/prompt\[\([0-9]*\)\]/\1/' | awk '{sum+=$$1} END {if (sum) print sum; else print 1}'); \
+	NUM_API_CALLS=$$(grep -c 'prompt\[' $(BENCH_EXTRACT_LOG) 2>/dev/null || echo "0"); \
+	echo "  Total input chars: $$TOTAL_INPUT_CHARS (across $$NUM_API_CALLS API calls)"; \
+	echo ""; \
+	echo "Analyzing extraction results..."; \
+	if [ -f "$(BENCH_OUTPUT)" ]; then \
+		ENTITIES=$$(grep -c "NamedEntity" $(BENCH_OUTPUT) 2>/dev/null || echo "0"); \
+		RELATIONSHIPS=$$(grep -c "CompoundExpression" $(BENCH_OUTPUT) 2>/dev/null || echo "0"); \
+		echo "  Entities: $$ENTITIES"; \
+		echo "  Relationships: $$RELATIONSHIPS"; \
+	else \
+		echo "  WARNING: Output file not found!"; \
+		ENTITIES=0; \
+		RELATIONSHIPS=0; \
+	fi; \
+	echo ""; \
+	echo "Calculating metrics..."; \
+	METRICS=$$(./scripts/calculate_metrics.py \
+		--cost $$COST \
+		--abstracts $$NUM_ABSTRACTS \
+		--abstract-chars $$TOTAL_CHARS \
+		--input-chars $$TOTAL_INPUT_CHARS \
+		--duration $$DURATION \
+		--entities $$ENTITIES \
+		--relationships $$RELATIONSHIPS); \
+	COST_PER_ABSTRACT=$$(echo "$$METRICS" | jq -r '.cost_per_abstract'); \
+	COST_PER_1K_ABSTRACT=$$(echo "$$METRICS" | jq -r '.cost_per_1k_abstract_chars'); \
+	COST_PER_1K_INPUT=$$(echo "$$METRICS" | jq -r '.cost_per_1k_input_chars'); \
+	TIME_PER_ABSTRACT=$$(echo "$$METRICS" | jq -r '.time_per_abstract'); \
+	TIME_PER_1K_INPUT=$$(echo "$$METRICS" | jq -r '.time_per_1k_input_chars'); \
+	ENTITIES_PER_1K=$$(echo "$$METRICS" | jq -r '.entities_per_1k_input'); \
+	RELATIONSHIPS_PER_1K=$$(echo "$$METRICS" | jq -r '.relationships_per_1k_input'); \
+	echo ""; \
+	echo "Logging results to $(BENCH_LOG_FILE)..."; \
+	if [ ! -f "$(BENCH_LOG_FILE)" ]; then \
+		echo -e "timestamp\ttemplate\tmodel\tkey_owner\tmax_budget\tbudget_remaining\tnum_abstracts\ttotal_abstract_chars\tavg_abstract_chars\ttotal_words\tavg_words\ttotal_input_chars\tnum_api_calls\ttotal_cost\tcost_per_abstract\tcost_per_1k_abstract_chars\tcost_per_1k_input_chars\ttotal_time_sec\ttime_per_abstract\ttime_per_1k_input_chars\tentities\trelationships\tentities_per_1k_input\trelationships_per_1k_input\toutput_file\tlog_file" > $(BENCH_LOG_FILE); \
+	fi; \
+	echo -e "$(BENCH_TIMESTAMP)\t$(TEMPLATE)\t$(MODEL)\t$$KEY_OWNER\t$$MAX_BUDGET\t$$BUDGET_REMAINING\t$$NUM_ABSTRACTS\t$$TOTAL_CHARS\t$$AVG_CHARS\t$$TOTAL_WORDS\t$$AVG_WORDS\t$$TOTAL_INPUT_CHARS\t$$NUM_API_CALLS\t$$COST\t$$COST_PER_ABSTRACT\t$$COST_PER_1K_ABSTRACT\t$$COST_PER_1K_INPUT\t$$DURATION\t$$TIME_PER_ABSTRACT\t$$TIME_PER_1K_INPUT\t$$ENTITIES\t$$RELATIONSHIPS\t$$ENTITIES_PER_1K\t$$RELATIONSHIPS_PER_1K\t$(BENCH_OUTPUT)\t$(BENCH_EXTRACT_LOG)" >> $(BENCH_LOG_FILE); \
+	echo ""; \
+	echo "✅ Benchmark complete!"; \
+	echo ""; \
+	echo "Summary:"; \
+	echo "  Abstracts: $$NUM_ABSTRACTS ($$TOTAL_CHARS chars, $$TOTAL_INPUT_CHARS input chars across $$NUM_API_CALLS API calls)"; \
+	echo "  Cost: \$$$$COST"; \
+	echo "    - \$$$$COST_PER_ABSTRACT/abstract"; \
+	echo "    - \$$$$COST_PER_1K_ABSTRACT/1K abstract chars"; \
+	echo "    - \$$$$COST_PER_1K_INPUT/1K input chars (template + abstract)"; \
+	echo "  Time: $${DURATION}s"; \
+	echo "    - $${TIME_PER_ABSTRACT}s/abstract"; \
+	echo "    - $${TIME_PER_1K_INPUT}s/1K input chars"; \
+	echo "  Extraction: $$ENTITIES entities, $$RELATIONSHIPS relationships"; \
+	echo "    - $${ENTITIES_PER_1K} entities/1K input chars"; \
+	echo "    - $${RELATIONSHIPS_PER_1K} relationships/1K input chars"; \
+	echo ""; \
+	echo "Results logged to: $(BENCH_LOG_FILE)"; \
+	echo "Output: $(BENCH_OUTPUT)"; \
+	echo "Log: $(BENCH_EXTRACT_LOG)"
 
 # =============================================================================
 # 8. ASSESSMENT
