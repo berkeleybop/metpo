@@ -178,14 +178,6 @@ outputs/$(TEMPLATE)_$(TIMESTAMP).yaml: templates/$(TEMPLATE)_populated.yaml inte
 		-o $@ \
 		2>&1 | tee logs/$(TEMPLATE)_$(TIMESTAMP).log
 
-# Benchmarked extraction with performance metrics (old bash version)
-benchmark-extract: scripts/benchmark_extraction.sh | outputs logs
-	@echo "🔬 Running benchmarked extraction with performance tracking..."
-	@if [ ! -x scripts/benchmark_extraction.sh ]; then \
-		chmod +x scripts/benchmark_extraction.sh; \
-	fi
-	./scripts/benchmark_extraction.sh $(TEMPLATE) $(MODEL) $(INPUT_DIR)
-
 # Unix-philosophy benchmark: shell tools + pure Python calculator
 BENCH_LOG_FILE ?= extraction_benchmarks.tsv
 BENCH_TIMESTAMP := $(shell date +"%Y%m%d_%H%M%S")
