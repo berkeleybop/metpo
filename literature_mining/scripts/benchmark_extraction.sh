@@ -7,7 +7,7 @@ set -e
 TEMPLATE=${1:-taxa}
 MODEL=${2:-lbl/cborg-chat}
 INPUT_DIR=${3:-abstracts/test-taxa-minimal}
-LOG_FILE=${4:-literature_mining/extraction_benchmarks.tsv}
+LOG_FILE=${4:-extraction_benchmarks.tsv}
 
 TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
 TEMPLATE_FILE="templates/${TEMPLATE}_template_base.yaml"
