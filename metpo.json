@@ -22,9 +22,9 @@
         "val" : "METPO"
       }, {
         "pred" : "http://www.w3.org/2002/07/owl#versionInfo",
-        "val" : "2025-10-15"
+        "val" : "2025-10-31"
       } ],
-      "version" : "https://w3id.org/metpo/metpo/releases/2025-10-15/metpo.json"
+      "version" : "https://w3id.org/metpo/metpo/releases/2025-10-31/metpo.json"
     },
     "nodes" : [ {
       "id" : "https://w3id.org/metpo/1000059",
@@ -3245,23 +3245,66 @@
     }, {
       "id" : "https://w3id.org/metpo/1001101",
       "lbl" : "biosafety level",
-      "type" : "CLASS"
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "Safety information.risk assessment.biosafety level"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/1001102",
       "lbl" : "biosafety level 1",
-      "type" : "CLASS"
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "1"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/1001103",
       "lbl" : "biosafety level 2",
-      "type" : "CLASS"
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "2"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/1001104",
       "lbl" : "biosafety level 3",
-      "type" : "CLASS"
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "3"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "3**"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/1001105",
       "lbl" : "biosafety level 4",
-      "type" : "CLASS"
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "4"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1001106",
+      "lbl" : "biosafety level 5",
+      "type" : "CLASS",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "5"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/1002003",
       "lbl" : "Cable bacteria metabolism",
@@ -3547,6 +3590,54 @@
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "Pigment_carotenoid"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1004000",
+      "lbl" : "pathogenic to host",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A pathogenicity phenotype where a microbe is a pathogen of of some host organism."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1004002",
+      "lbl" : "animal pathogen",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A pathogenicity phenotype where a microbe is a pathogen of animals (Metazoa)."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "animal pathogen"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1004003",
+      "lbl" : "plant pathogen",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A pathogenicity phenotype where a microbe is a pathogen of plants (Viridiplantae)."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "plant pathogen"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1004004",
+      "lbl" : "human pathogen",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A pathogenicity phenotype where a microbe is a pathogen of humans (Homo sapiens)."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "human pathogen"
         } ]
       }
     }, {
@@ -5602,6 +5693,10 @@
       "pred" : "is_a",
       "obj" : "https://w3id.org/metpo/1001101"
     }, {
+      "sub" : "https://w3id.org/metpo/1001106",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1001101"
+    }, {
       "sub" : "https://w3id.org/metpo/1002003",
       "pred" : "is_a",
       "obj" : "https://w3id.org/metpo/1000060"
@@ -5697,6 +5792,22 @@
       "sub" : "https://w3id.org/metpo/1003031",
       "pred" : "is_a",
       "obj" : "https://w3id.org/metpo/1003021"
+    }, {
+      "sub" : "https://w3id.org/metpo/1004000",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000059"
+    }, {
+      "sub" : "https://w3id.org/metpo/1004002",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1004000"
+    }, {
+      "sub" : "https://w3id.org/metpo/1004003",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1004000"
+    }, {
+      "sub" : "https://w3id.org/metpo/1004004",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1004000"
     }, {
       "sub" : "https://w3id.org/metpo/2000002",
       "pred" : "subPropertyOf",
