@@ -1,6 +1,9 @@
 WGET=wget
 UNZIP=unzip
 
+-include .env
+export
+
 .PHONY: install clean-env clean-data
 
 # Environment setup target
@@ -47,6 +50,23 @@ generated/bacdive_oxygen_phenotype_mappings.tsv: sparql/bacdive_oxygen_phenotype
 	robot query \
 		--query $(word 1,$^) $@ \
 		--input $(word 2,$^)
+
+# Extract terms from non-OLS ontologies for embedding generation
+# Pattern: notebooks/non-ols-terms/<ontology-id>_terms.tsv
+# Usage: make notebooks/non-ols-terms/D3O.tsv
+# Make calls robot directly with catalog to handle broken imports
+# Python validates output
+notebooks/non-ols-terms/%.tsv: non-ols/%.owl sparql/extract_for_embeddings.rq
+	@mkdir -p $(dir $@)
+	@echo "Querying $* with ROBOT..."
+	-@robot query --input $< --catalog catalog-v001.xml --query $(word 2,$^) $@ 2>&1 | tee -a .robot_query.log
+	-@uv run validate-tsv $* --tsv $@
+
+notebooks/non-ols-terms/%.tsv: non-ols/%.ttl sparql/extract_for_embeddings.rq
+	@mkdir -p $(dir $@)
+	@echo "Querying $* with ROBOT..."
+	-@robot query --input $< --catalog catalog-v001.xml --query $(word 2,$^) $@ 2>&1 | tee -a .robot_query.log
+	-@uv run validate-tsv $* --tsv $@
 
 reports/leaf_classes_without_attributed_synonyms.tsv: src/ontology/metpo.owl sparql/find_leaf_classes_without_attributed_synonyms.sparql
 	mkdir -p $(dir $@)
@@ -240,7 +260,6 @@ clean-sheets:
 # =====================================================
 
 # BiPortal API URLs for METPO submissions
-BIOPORTAL_API_KEY = 8b5b7825-538d-40e0-9e9e-5ab9274a9aeb
 BIOPORTAL_SUBMISSION_BASE = https://data.bioontology.org/ontologies/METPO/submissions
 
 # METPO submissions on BiPortal (submissions 2-10 have OWL files, submission 1 doesn't)
@@ -265,7 +284,7 @@ download-all-bioportal-submissions: $(foreach sub,$(METPO_SUBMISSIONS),data/biop
 # Individual submission download targets
 data/bioportal_owl/metpo_submission_%.owl: | data/bioportal_owl
 	@echo "Downloading METPO submission $*..."
-	@curl -L -s "$(BIOPORTAL_SUBMISSION_BASE)/$*/download?apikey=$(BIOPORTAL_API_KEY)" -o $@
+	@curl -L -s "$(BIOPORTAL_SUBMISSION_BASE)/$*/download?apikey=$$BIOPORTAL_API_KEY" -o $@
 	@if [ -s $@ ]; then \
 		echo "✓ Successfully downloaded submission $*"; \
 		grep -m1 "versionInfo" $@ || echo "No version info found"; \
@@ -279,6 +298,57 @@ data/bioportal_owl:
 	mkdir -p $@
 
 # Clean downloaded BiPortal submissions
+
+# =====================================================
+# Non-OLS BioPortal Ontology Download Targets
+# =====================================================
+
+
+
+# List of non-OLS ontologies to process from BioPortal
+# MPO: MPO/RIKEN Microbial Phenotype Ontology
+# OMP: Ontology of Microbial Phenotypes
+# BIPON: Bacterial interlocked Process Ontology
+# D3O: D3O/DSMZ Digital Diversity Ontology
+# FMPM: Food Matrix for Predictive Microbiology
+# GMO: Growth Medium Ontology
+# HMADO: Human Microbiome and Disease Ontology
+# ID-AMR: Infectious Diseases and Antimicrobial Resistance
+# MCCV: Microbial Culture Collection Vocabulary
+# MEO: Metagenome and Environment Ontology
+# miso: Microbial Conditions Ontology
+# OFSMR: Open Predictive Microbiology Ontology
+# TYPON: Microbial Typing Ontology
+NON_OLS_BIOPORTAL_ONTOLOGIES = MPO OMP BIPON D3O FMPM GMO HMADO ID-AMR MCCV MEO miso OFSMR TYPON
+
+.PHONY: download-non-ols-bioportal-ontologies clean-non-ols-bioportal-ontologies
+
+download-non-ols-bioportal-ontologies: $(foreach ont,$(NON_OLS_BIOPORTAL_ONTOLOGIES),non-ols/$(ont).owl)
+	@echo ""
+	@echo "=========================================="
+	@echo "Download phase complete"
+	@echo "=========================================="
+	@echo "Run 'make scan-manifest' to update tracking"
+	@echo "Run 'make view-logs' to see any failures"
+
+
+# Download ontology from BioPortal
+# Python script handles all error checking, logging, and validation
+# Exit code 0 = success, 1 = failure
+non-ols/%.owl: | non-ols
+	-@uv run download-ontology $* --output $@
+
+non-ols/%.ttl: | non-ols
+	-@uv run download-ontology $* --output $@
+
+non-ols:
+	mkdir -p $@
+
+clean-non-ols-bioportal-ontologies:
+	@echo "Cleaning downloaded non-OLS BioPortal ontologies..."
+	rm -f $(foreach ont,$(NON_OLS_BIOPORTAL_ONTOLOGIES),non-ols/$(ont).owl)
+	@echo "Cleaned non-OLS BioPortal ontologies"
+
 clean-bioportal-submissions:
 	rm -rf data/bioportal_owl/
 	@echo "Downloaded BiPortal submissions cleaned"
@@ -425,6 +495,56 @@ clean-alignment-results:
 	@echo "Alignment results cleaned (ontology catalog preserved)"
 
 # Clean everything including ontology catalog
+
+# =====================================================
+# Non-OLS Embedding Targets
+# =====================================================
+
+NON_OLS_TSV_FILES = $(foreach ont,$(NON_OLS_BIOPORTAL_ONTOLOGIES),notebooks/non-ols-terms/$(ont).tsv)
+
+.PHONY: embed-non-ols-terms clean-non-ols-terms scan-manifest view-manifest view-logs
+
+.PHONY: generate-non-ols-tsvs
+generate-non-ols-tsvs: $(NON_OLS_TSV_FILES)
+	@echo ""
+	@echo "=========================================="
+	@echo "Query phase complete"
+	@echo "=========================================="
+	@echo "Run 'make scan-manifest' to update tracking"
+	@echo "Run 'make view-logs' to see any failures"
+
+# Manifest and logging targets
+scan-manifest:
+	@echo "Scanning directories and updating manifest..."
+	uv run scan-manifest --verbose
+
+view-manifest:
+	@if [ -f .ontology_manifest.json ]; then \
+		cat .ontology_manifest.json | python -m json.tool; \
+	else \
+		echo "No manifest found. Run 'make scan-manifest' first."; \
+	fi
+
+view-logs:
+	@echo "=== Recent Fetch Failures ==="
+	@if [ -f .ontology_fetch.log ]; then tail -20 .ontology_fetch.log; else echo "No fetch failures logged"; fi
+	@echo ""
+	@echo "=== Recent Query Failures ==="
+	@if [ -f .robot_query.log ]; then grep -E "QUERY_FAILED|QUERY_EMPTY" .robot_query.log | tail -20 || echo "No query failures logged"; else echo "No query log found"; fi
+
+embed-non-ols-terms:
+	@echo "Embedding non-OLS terms into ChromaDB..."
+	uv run python notebooks/embed_ontology_to_chromadb.py \
+		$(foreach tsv,$(wildcard notebooks/non-ols-terms/*.tsv),--tsv-file $(tsv)) \
+		--chroma-path ./embeddings_chroma \
+		--collection-name non_ols_embeddings
+	@echo "Non-OLS terms embedded successfully."
+
+clean-non-ols-terms:
+	@echo "Cleaning generated non-OLS TSV files..."
+	rm -f $(NON_OLS_TSV_FILES)
+	@echo "Cleaned non-OLS TSV files"
+
 clean-alignment-all: clean-alignment-results
 	@echo "Cleaning all alignment files including ontology catalog..."
 	rm -f notebooks/ontology_catalog.csv
