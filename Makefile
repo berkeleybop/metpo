@@ -346,8 +346,22 @@ non-ols:
 
 clean-non-ols-bioportal-ontologies:
 	@echo "Cleaning downloaded non-OLS BioPortal ontologies..."
+	@echo "Keeping manually added files: n4l_merged.owl, MISO.owl (if present)"
 	rm -f $(foreach ont,$(NON_OLS_BIOPORTAL_ONTOLOGIES),non-ols/$(ont).owl)
 	@echo "Cleaned non-OLS BioPortal ontologies"
+
+clean-non-ols-pipeline:
+	@echo "Cleaning pipeline-generated files (keeping manual downloads)..."
+	@echo "Removing BioPortal downloads..."
+	rm -f $(foreach ont,$(NON_OLS_BIOPORTAL_ONTOLOGIES),non-ols/$(ont).owl)
+	@echo "Removing ROBOT query outputs..."
+	rm -f notebooks/non-ols-terms/*.tsv
+	@echo "Removing logs and manifest..."
+	rm -f .ontology_manifest.json .ontology_fetch.log .robot_query.log
+	@echo ""
+	@echo "✓ Cleaned pipeline files"
+	@echo "✓ Kept manual files: non-ols/n4l_merged.owl"
+	@if [ -f non-ols/MISO.owl ]; then echo "✓ Kept manual files: non-ols/MISO.owl"; fi
 
 clean-bioportal-submissions:
 	rm -rf data/bioportal_owl/
