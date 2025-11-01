@@ -44,9 +44,9 @@ classes:
         range: CellShape
         annotations:
           prompt: >-
-            Identify cell shapes mentioned in the text. Use standard terms: "rod", "coccus", 
-            "spirillum", "vibrio", "filamentous", "branched", "irregular", "pleomorphic". 
-            Include measurements when provided (e.g., "rod 0.5 x 2.0 μm").
+            Extract all cell shapes mentioned in the text exactly as described in the literature.
+            Include measurements when provided (e.g., "rod-shaped, 0.5 x 2.0 μm").
+            If no cell shapes are mentioned, leave this field empty. DO NOT write "none".
       cell_arrangements:
         description: >-
           semicolon-separated list of cell arrangements in normalized format
@@ -54,9 +54,9 @@ classes:
         range: CellArrangement
         annotations:
           prompt: >-
-            Identify cell arrangements mentioned in the text. Use standard terms: "single", 
-            "pairs", "chains", "clusters", "tetrads", "packets", "irregular masses", 
-            "palisades", "V-shapes", "angular arrangements".
+            Extract all cell arrangement patterns mentioned in the text (e.g., single cells, pairs,
+            chains, clusters, tetrads, packets, irregular masses, palisades, V-shapes, angular arrangements).
+            If no cell arrangements are mentioned, leave this field empty. DO NOT write "none".
       gram_staining:
         description: >-
           semicolon-separated list of Gram staining results
@@ -64,9 +64,9 @@ classes:
         range: GramStaining
         annotations:
           prompt: >-
-            Identify Gram staining results. Use standard terms: "Gram-positive", 
-            "Gram-negative", "Gram-variable", "Gram-indeterminate". Include any 
-            additional staining properties mentioned.
+            Extract Gram staining results mentioned in the text (e.g., Gram-positive, Gram-negative,
+            Gram-variable, Gram-indeterminate). Include any additional staining properties mentioned.
+            If no Gram staining information is mentioned, leave this field empty. DO NOT write "none".
       motility:
         description: >-
           semicolon-separated list of motility characteristics
@@ -74,9 +74,10 @@ classes:
         range: Motility
         annotations:
           prompt: >-
-            Identify motility characteristics. Use terms: "motile", "non-motile", 
-            "flagellar motility", "gliding motility", "twitching motility", "polar flagella", 
-            "peritrichous flagella", "single flagellum", "multiple flagella".
+            Extract all motility characteristics mentioned in the text, including motility presence
+            (motile/non-motile), motility types (flagellar, gliding, twitching, swarming), and flagella
+            arrangements (polar, peritrichous, monotrichous, lophotrichous, amphitrichous).
+            If no motility information is mentioned, leave this field empty. DO NOT write "none".
       spore_formation:
         description: >-
           semicolon-separated list of spore formation characteristics
@@ -84,9 +85,10 @@ classes:
         range: SporeFormation
         annotations:
           prompt: >-
-            Identify spore formation characteristics. Use terms: "spore-forming", 
-            "non-spore-forming", "endospores", "terminal spores", "subterminal spores", 
-            "central spores", "sporangium", "conidia", "arthrospores".
+            Extract all spore formation characteristics mentioned in the text, including spore presence
+            (spore-forming/non-spore-forming), spore types (endospores, conidia, arthrospores), and spore
+            positions (terminal, subterminal, central, lateral). Include sporangium or other structures.
+            If no spore formation information is mentioned, leave this field empty. DO NOT write "none".
       cell_wall_characteristics:
         description: >-
           semicolon-separated list of cell wall characteristics
@@ -94,9 +96,10 @@ classes:
         range: CellWallCharacteristic
         annotations:
           prompt: >-
-            Identify cell wall characteristics. Include: "thick cell wall", "thin cell wall", 
-            "multilayered", "peptidoglycan", "teichoic acids", "mycolic acids", 
-            "lipopolysaccharide", "outer membrane", "periplasmic space".
+            Extract all cell wall characteristics mentioned in the text, including structural features
+            (thick/thin, multilayered), chemical components (peptidoglycan, teichoic acids, mycolic acids,
+            lipopolysaccharide), and anatomical features (outer membrane, periplasmic space, S-layer, capsule).
+            If no cell wall characteristics are mentioned, leave this field empty. DO NOT write "none".
       cellular_inclusions:
         description: >-
           semicolon-separated list of cellular inclusions and internal structures
@@ -104,9 +107,10 @@ classes:
         range: CellularInclusion
         annotations:
           prompt: >-
-            Identify cellular inclusions and internal structures. Include: "poly-β-hydroxybutyrate", 
-            "polyphosphate granules", "sulfur granules", "gas vesicles", "magnetosomes", 
-            "carboxysomes", "storage granules", "lipid droplets".
+            Extract all cellular inclusions and internal structures mentioned in the text, including
+            storage granules (PHB, PHA, polyphosphate, glycogen, sulfur, lipid droplets), specialized
+            structures (gas vesicles, magnetosomes, carboxysomes), and other intracellular bodies.
+            If no cellular inclusions are mentioned, leave this field empty. DO NOT write "none".
       cell_shape_relationships:
         description: >-
           semicolon-separated list of specific strain-cell shape relationships
@@ -114,7 +118,9 @@ classes:
         range: CellShapeRelationship
         annotations:
           prompt: >-
-            For each cell shape found in cell_shape field above, extract structured relationships linking specific strains to those shapes. Generate tuples like "strain 15-1T has_cell_shape rod", "ATCC 25922 exhibits_shape coccus", "isolate XYZ-1 demonstrates_morphology filamentous". Convert ALL cell shapes mentioned above into strain-shape relationships.
+            For each cell shape extracted above, create strain-to-shape relationships.
+            Link specific strains to their cell shapes (e.g., "DA-C8 has_cell_shape rod-shaped").
+            Convert ALL cell shapes mentioned above into structured relationships.
       cell_arrangement_relationships:
         description: >-
           semicolon-separated list of specific strain-cell arrangement relationships
@@ -122,7 +128,9 @@ classes:
         range: CellArrangementRelationship
         annotations:
           prompt: >-
-            For each cell arrangement found in cell_arrangements field above, extract structured relationships linking specific strains to those arrangements. Generate tuples like "strain 15-1T forms_arrangement chains", "ATCC 25922 exhibits_arrangement pairs", "isolate XYZ-1 shows_arrangement clusters". Convert ALL cell arrangements mentioned above into strain-arrangement relationships.
+            For each cell arrangement extracted above, create strain-to-arrangement relationships.
+            Link specific strains to their arrangements (e.g., "DA-C8 has_arrangement chains").
+            Convert ALL cell arrangements mentioned above into structured relationships.
       gram_staining_relationships:
         description: >-
           semicolon-separated list of specific strain-Gram staining relationships
@@ -130,7 +138,9 @@ classes:
         range: GramStainingRelationship
         annotations:
           prompt: >-
-            For each Gram staining result found in gram_staining field above, extract structured relationships linking specific strains to those results. Generate tuples like "strain 15-1T stains_as Gram-positive", "ATCC 25922 demonstrates_staining Gram-negative", "isolate XYZ-1 exhibits_gram_reaction Gram-variable". Convert ALL Gram staining results mentioned above into strain-staining relationships.
+            For each Gram staining result extracted above, create strain-to-staining relationships.
+            Link specific strains to their staining results (e.g., "DA-C8 has_gram_staining Gram-positive").
+            Convert ALL Gram staining results mentioned above into structured relationships.
       motility_relationships:
         description: >-
           semicolon-separated list of specific strain-motility relationships
@@ -138,7 +148,9 @@ classes:
         range: MotilityRelationship
         annotations:
           prompt: >-
-            For each motility characteristic found in motility field above, extract structured relationships linking specific strains to those characteristics. Generate tuples like "strain 15-1T demonstrates_motility flagellar motility", "ATCC 25922 exhibits_movement gliding motility", "isolate XYZ-1 shows_motility non-motile". Convert ALL motility characteristics mentioned above into strain-motility relationships.
+            For each motility characteristic extracted above, create strain-to-motility relationships.
+            Link specific strains to their motility characteristics (e.g., "DA-C8 has_motility motile").
+            Convert ALL motility characteristics mentioned above into structured relationships.
       spore_formation_relationships:
         description: >-
           semicolon-separated list of specific strain-spore formation relationships
@@ -146,7 +158,9 @@ classes:
         range: SporeFormationRelationship
         annotations:
           prompt: >-
-            For each spore formation characteristic found in spore_formation field above, extract structured relationships linking specific strains to those characteristics. Generate tuples like "strain 15-1T exhibits_sporulation endospores", "ATCC 25922 demonstrates_spore_formation terminal spores", "isolate XYZ-1 shows_sporulation non-spore-forming". Convert ALL spore formation characteristics mentioned above into strain-sporulation relationships.
+            For each spore formation characteristic extracted above, create strain-to-spore relationships.
+            Link specific strains to their spore characteristics (e.g., "DA-C8 has_spore_formation terminal spores").
+            Convert ALL spore formation characteristics mentioned above into structured relationships.
       cell_wall_relationships:
         description: >-
           semicolon-separated list of specific strain-cell wall relationships
@@ -154,7 +168,9 @@ classes:
         range: CellWallRelationship
         annotations:
           prompt: >-
-            For each cell wall characteristic found in cell_wall_characteristics field above, extract structured relationships linking specific strains to those characteristics. Generate tuples like "strain 15-1T contains_cell_wall_component peptidoglycan", "ATCC 25922 exhibits_wall_structure thick cell wall", "isolate XYZ-1 demonstrates_wall_feature outer membrane". Convert ALL cell wall characteristics mentioned above into strain-cell wall relationships.
+            For each cell wall characteristic extracted above, create strain-to-cell-wall relationships.
+            Link specific strains to their cell wall features (e.g., "DA-C8 has_cell_wall_feature peptidoglycan").
+            Convert ALL cell wall characteristics mentioned above into structured relationships.
       cellular_inclusion_relationships:
         description: >-
           semicolon-separated list of specific strain-cellular inclusion relationships
@@ -162,7 +178,20 @@ classes:
         range: CellularInclusionRelationship
         annotations:
           prompt: >-
-            For each cellular inclusion found in cellular_inclusions field above, extract structured relationships linking specific strains to those inclusions. Generate tuples like "strain 15-1T contains_inclusion poly-β-hydroxybutyrate", "ATCC 25922 exhibits_inclusion gas vesicles", "isolate XYZ-1 demonstrates_structure storage granules". Convert ALL cellular inclusions mentioned above into strain-inclusion relationships.
+            For each cellular inclusion extracted above, create strain-to-inclusion relationships.
+            Link specific strains to their cellular inclusions (e.g., "DA-C8 has_inclusion PHB granules").
+            Convert ALL cellular inclusions mentioned above into structured relationships.
+      pigmentation:
+        description: >-
+          semicolon-separated list of pigmentation and colony color characteristics
+        multivalued: true
+        range: Pigmentation
+        annotations:
+          prompt: >-
+            Extract all pigmentation and colony color characteristics mentioned in the text, including
+            colors (yellow, orange, red, pink, white, cream, brown, black, green), pigment types
+            (carotenoid, melanin, flexirubin), and properties (diffusible, non-diffusible, fluorescent).
+            If no pigmentation is mentioned, leave this field empty. DO NOT write "none".
       strain_relationships:
         description: >-
           semicolon-separated list of strain-species relationships found in the text
@@ -170,11 +199,19 @@ classes:
         range: StrainRelationship
         annotations:
           prompt: >-
-            A semicolon-separated list of strain-species relationships, where each 
-            relationship connects a strain to its parent taxon. Each relationship should 
+            A semicolon-separated list of strain-species relationships, where each
+            relationship connects a strain to its parent taxon. Each relationship should
             have a strain name, relationship type, and parent species/genus.
-            For example: "MG1655 strain_of Escherichia coli; K-12 strain_of Escherichia coli; 
-            ATCC 25922 type_strain_of Klebsiella pneumoniae". If no strain relationships are found, leave this field empty.
+            For example: "MG1655 strain_of Escherichia coli; K-12 strain_of Escherichia coli;
+            ATCC 25922 type_strain_of Klebsiella pneumoniae". If no strain relationships are found,
+            leave this field empty. DO NOT write "none".
+      article_type:
+        description: >-
+          the type of study described in this article
+        range: ArticleType
+        annotations:
+          prompt: >-
+            The type of study or article. Choose the most appropriate category based on the content.
       source_text:
         range: string
         annotations:
@@ -238,6 +275,13 @@ classes:
     is_a: NamedEntity
     description: >-
       Cell wall characteristics and components including peptidoglycan, teichoic acids, lipopolysaccharide, and structural features.
+    annotations:
+      annotators: sqlite:obo:metpo
+
+  Pigmentation:
+    is_a: NamedEntity
+    description: >-
+      Colony pigmentation and color characteristics including yellow, orange, red, carotenoid pigmentation, and other color properties.
     annotations:
       annotators: sqlite:obo:metpo
 
@@ -393,3 +437,37 @@ enums:
         description: Clinical or environmental isolate of a species
       variant_of:
         description: Variant or mutant strain of a species
+      derived_from:
+        description: Strain derived from another strain (e.g., mutants, subcultures)
+      identical_to:
+        description: Strain is identical or equivalent to another designation
+      deposited_as:
+        description: Strain deposited in culture collection under this designation
+
+  ArticleType:
+    description: Type of study or article
+    permissible_values:
+      novel_species:
+        description: Description of new species
+      novel_genus:
+        description: Description of new genus
+      taxonomic_revision:
+        description: Revision or reclassification of existing taxa
+      phylogenetic_analysis:
+        description: Phylogenetic or evolutionary study
+      comparative_taxonomy:
+        description: Comparative analysis of multiple taxa
+      emended_description:
+        description: Emended or updated taxonomic description
+      genome_sequence:
+        description: Complete or draft genome sequence publication
+      review:
+        description: Review article or perspective
+      biochemical_characterization:
+        description: Biochemical or physiological characterization study
+      ecological_study:
+        description: Ecological distribution or environmental survey
+      morphological_characterization:
+        description: Study focused on cellular morphology and microscopy
+      physiology_study:
+        description: Physiological characterization or growth studies

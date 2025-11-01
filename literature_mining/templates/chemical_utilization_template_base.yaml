@@ -87,14 +87,24 @@ classes:
         range: StrainRelationship
         annotations:
           prompt: >-
-            A semicolon-separated list of strain-species relationships, where each 
-            relationship connects a strain identifier to its parent taxon. CRITICAL: Use EXACTLY 
-            THE SAME strain identifiers as listed in the strains field above - copy them verbatim, 
-            character-for-character. Do not modify, abbreviate, or expand the strain identifiers. 
+            A semicolon-separated list of strain-species relationships, where each
+            relationship connects a strain identifier to its parent taxon. CRITICAL: Use EXACTLY
+            THE SAME strain identifiers as listed in the strains field above - copy them verbatim,
+            character-for-character. Do not modify, abbreviate, or expand the strain identifiers.
             Each relationship should have the strain identifier, relationship type, and parent species/genus.
-            For example: "DA-C8 type_strain_of Insulambacter thermoxylanivorax; MG1655 strain_of Escherichia coli; 
-            ATCC 25922 type_strain_of Klebsiella pneumoniae". The strain identifiers MUST be identical 
-            to those used in the strains and chemical_utilizations fields. If no strain relationships are found, leave this field empty.
+            For example: "DA-C8 type_strain_of Insulambacter thermoxylanivorax; MG1655 strain_of Escherichia coli;
+            ATCC 25922 type_strain_of Klebsiella pneumoniae". The strain identifiers MUST be identical
+            to those used in the strains and chemical_utilizations fields. If no strain relationships are found,
+            leave this field empty. DO NOT write "none".
+      article_type:
+        description: >-
+          the type of study described in this article
+        range: ArticleType
+        annotations:
+          prompt: >-
+            The type of study or article. Choose the most appropriate category based on the content,
+            with emphasis on metabolic_study for articles focusing on chemical utilization, degradation,
+            or metabolic pathways.
       source_text:
         range: string
         annotations:
@@ -169,4 +179,39 @@ enums:
         description: Clinical or environmental isolate of a species
       variant_of:
         description: Variant or mutant strain of a species
+      derived_from:
+        description: Strain derived from another strain (e.g., mutants, subcultures)
+      identical_to:
+        description: Strain is identical or equivalent to another designation
+      deposited_as:
+        description: Strain deposited in culture collection under this designation
+
+  ArticleType:
+    description: Type of study or article
+    permissible_values:
+      novel_species:
+        description: Description of new species
+      novel_genus:
+        description: Description of new genus
+      taxonomic_revision:
+        description: Revision or reclassification of existing taxa
+      phylogenetic_analysis:
+        description: Phylogenetic or evolutionary study
+      comparative_taxonomy:
+        description: Comparative analysis of multiple taxa
+      emended_description:
+        description: Emended or updated taxonomic description
+      genome_sequence:
+        description: Complete or draft genome sequence publication
+      review:
+        description: Review article or perspective
+      biochemical_characterization:
+        description: Biochemical or physiological characterization study
+      ecological_study:
+        description: Ecological distribution or environmental survey
+      metabolic_study:
+        description: Study focused on metabolism, chemical utilization, or degradation pathways
+      physiology_study:
+        description: Physiological characterization or growth studies
+
 # ChemicalInteractionPropertyEnum will be dynamically injected here
