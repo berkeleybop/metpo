@@ -12,13 +12,21 @@ import click
 
 @click.command()
 @click.option('--results-csv', default='full_coherence_results.csv', help='Coherence results CSV')
-@click.option('--matches-csv', default='../metpo_relevant_matches.csv', help='Original matches CSV')
+@click.option('--matches-csv', default='../metpo_relevant_mappings.sssom.tsv', help='SSSOM TSV mappings file')
 def main(results_csv: str, matches_csv: str):
     """Analyze coherence results to find strong alignments."""
 
     print("Loading data...")
     coherence_df = pd.read_csv(results_csv)
-    matches_df = pd.read_csv(matches_csv)
+
+    # Load SSSOM TSV mappings
+    matches_df = pd.read_csv(matches_csv, sep='\t', comment='#')
+    # Map SSSOM columns to expected column names
+    matches_df['distance'] = 1.0 - matches_df['similarity_score']
+    matches_df['metpo_id'] = matches_df['subject_id']
+    matches_df['metpo_label'] = matches_df['subject_label']
+    matches_df['match_document'] = matches_df['object_label']
+    matches_df['match_ontology'] = matches_df['object_source']
 
     # Filter for meaningful cases
     # - Has siblings (at least 3 for meaningful structure)

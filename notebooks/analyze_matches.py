@@ -5,8 +5,8 @@ import click
 @click.option(
     '--input-csv',
     type=click.Path(exists=True, dir_okay=False, path_type=str),
-    default='../metpo_relevant_matches.csv',
-    help="Path to the input CSV file containing METPO term matches."
+    default='../metpo_relevant_mappings.sssom.tsv',
+    help="Path to the SSSOM TSV file containing METPO term mappings."
 )
 @click.option(
     '--good-match-threshold',
@@ -16,19 +16,28 @@ import click
 )
 def main(input_csv: str, good_match_threshold: float):
     """
-    Analyzes METPO term match quality from a CSV file.
+    Analyzes METPO term match quality from an SSSOM TSV file.
     """
-    print(f"Loading matches from: {input_csv}")
+    print(f"Loading mappings from: {input_csv}")
     try:
-        df = pd.read_csv(input_csv)
+        # Read SSSOM TSV (skip metadata lines starting with #)
+        df = pd.read_csv(input_csv, sep='\t', comment='#')
     except FileNotFoundError:
-        print(f"Error: Input CSV file not found at {input_csv}")
+        print(f"Error: Input file not found at {input_csv}")
         return
     except Exception as e:
-        print(f"Error loading CSV: {e}")
+        print(f"Error loading SSSOM TSV: {e}")
         return
 
-    print(f"Loaded {len(df)} match records.")
+    # Map SSSOM columns to expected column names
+    # Calculate distance from similarity_score: distance = 1.0 - similarity_score
+    df['distance'] = 1.0 - df['similarity_score']
+    df['metpo_id'] = df['subject_id']
+    df['metpo_label'] = df['subject_label']
+    df['match_document'] = df['object_label']
+    df['match_ontology'] = df['object_source']
+
+    print(f"Loaded {len(df)} mapping records.")
     print(f"Using good match threshold: {good_match_threshold}")
 
     # --- Ontology Coverage Score ---
