@@ -450,36 +450,37 @@ notebooks/ontologies_very_appealing.csv: notebooks/ontology_catalog.csv
 		--input-csv ontology_catalog.csv \
 		--output-prefix ontologies
 
-alignment-query-metpo-terms: notebooks/metpo_relevant_matches.csv
+alignment-query-metpo-terms: notebooks/metpo_relevant_mappings.sssom.tsv
 
-notebooks/metpo_relevant_matches.csv: notebooks/metpo_relevant_chroma
-	@echo "Querying METPO terms against ChromaDB..."
+notebooks/metpo_relevant_mappings.sssom.tsv: notebooks/metpo_relevant_chroma
+	@echo "Generating SSSOM mappings from METPO terms via ChromaDB..."
 	@if [ -z "$$OPENAI_API_KEY" ]; then \
 		echo "ERROR: OPENAI_API_KEY environment variable not set"; \
 		exit 1; \
 	fi
-	cd notebooks && python query_metpo_terms.py \
+	cd notebooks && python chromadb_semantic_mapper.py \
 		--metpo-tsv ../src/templates/metpo_sheet.tsv \
 		--chroma-path ./metpo_relevant_chroma \
 		--collection-name metpo_relevant_embeddings \
-		--output metpo_relevant_matches.csv \
-		--top-n 5
+		--output metpo_relevant_mappings.sssom.tsv \
+		--top-n 10 \
+		--label-only \
+		--distance-cutoff 0.35
 
-alignment-analyze-matches: notebooks/metpo_relevant_matches.csv
+alignment-analyze-matches: notebooks/metpo_relevant_mappings.sssom.tsv
 	@echo "Analyzing match quality..."
 	cd notebooks && python analyze_matches.py \
-		--input-csv metpo_relevant_matches.csv \
+		--input-csv metpo_relevant_mappings.sssom.tsv \
 		--good-match-threshold 0.9
 
 alignment-analyze-coherence: notebooks/full_coherence_results.csv
 
-notebooks/full_coherence_results.csv: notebooks/metpo_relevant_matches.csv
+notebooks/full_coherence_results.csv: notebooks/metpo_relevant_mappings.sssom.tsv
 	@echo "Computing structural coherence (this may take a while)..."
 	cd notebooks && python analyze_sibling_coherence.py \
-		--matches-csv metpo_relevant_matches.csv \
-		--metpo-tsv ../src/templates/metpo_sheet.tsv \
-		--output full_coherence_results.csv \
-		--max-terms 50
+		--input-csv metpo_relevant_mappings.sssom.tsv \
+		--metpo-owl ../src/ontology/metpo.owl \
+		--output-csv full_coherence_results.csv
 
 alignment-identify-candidates: notebooks/alignment_candidates.csv
 
@@ -487,7 +488,7 @@ notebooks/alignment_candidates.csv: notebooks/full_coherence_results.csv
 	@echo "Identifying alignment candidates..."
 	cd notebooks && python analyze_coherence_results.py \
 		--results-csv full_coherence_results.csv \
-		--matches-csv metpo_relevant_matches.csv
+		--matches-csv metpo_relevant_mappings.sssom.tsv
 
 # Run complete pipeline
 alignment-run-all: alignment-identify-candidates
@@ -496,7 +497,7 @@ alignment-run-all: alignment-identify-candidates
 	@echo "Alignment pipeline complete!"
 	@echo "========================================="
 	@echo "Output files:"
-	@echo "  - notebooks/metpo_relevant_matches.csv"
+	@echo "  - notebooks/metpo_relevant_mappings.sssom.tsv"
 	@echo "  - notebooks/full_coherence_results.csv"
 	@echo "  - notebooks/alignment_candidates.csv"
 

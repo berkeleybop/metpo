@@ -1,0 +1,861 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <http://purl.jp/bio/10/mccv#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ellipsis-xbl: <file:///TopBraid/SWP/SWA/jquery.www/css/ellipsis-xbl.xml#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://purl.jp/bio/10/mccv>
+    dc:contributor "Hiroshi Masuya"@en, "Hiroshi Mori"@en, "Shinobu Okamoto"@en ;
+    dc:creator "Shuichi Kawashima"@en ;
+    dc:language "English and Japanese"@en ;
+    dc:title "MCCV: Microbial Culture Collection Vocabulary"@en ;
+    a owl:Ontology ;
+    rdfs:comment "Version 0.97: Added property MCCV_00073 culture condition"@en, "Version 0.99: Add the MCCV_000009 (Culture Collection)"@en ;
+    owl:imports <http://purl.org/dc/elements/1.1/> ;
+    owl:versionInfo "Version 0.99 beta"@en ;
+    skos:definition "Structured controlled vocabulary for describing meta information of microbial calture collection maintained in biological research centers"@en .
+
+:MCCV_000001
+    a owl:Class ;
+    rdfs:label "Culture"@en, "培養株"@ja ;
+    rdfs:seeAlso <https://en.wikipedia.org/wiki/Microbiological_culture> ;
+    rdfs:subClassOf owl:Thing, [
+        a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty :MCCV_000055
+    ] ;
+    skos:closeMatch <http://www.straininfo.net/ns/mcl/2.0/Culture> ;
+    skos:definition "A cultivation of a microbal strain"@en ;
+    skos:prefLabel "Culture"@en .
+
+:MCCV_000002
+    a owl:Class ;
+    rdfs:comment "微生物の特定の株。個々の実験室で培養されている微生物株の上位概念としての株"@ja ;
+    rdfs:label "Strain"@en ;
+    rdfs:subClassOf :MCCV_000003 ;
+    skos:definition "Strain"@en ;
+    skos:prefLabel "Strain"@en .
+
+:MCCV_000003
+    a owl:Class ;
+    rdfs:label "Species"@en ;
+    skos:prefLabel "Species"@en .
+
+:MCCV_000005
+    a owl:Class ;
+    rdfs:label "Culture condition"@en, "培養条件"@ja ;
+    skos:definition "A culture condition of a microbial strain"@en ;
+    skos:prefLabel "Culture condition"@en .
+
+:MCCV_000006
+    a owl:Class ;
+    rdfs:label "Sample"@en ;
+    skos:prefLabel "Sample"@en .
+
+:MCCV_000007
+    a owl:Class ;
+    rdfs:label "Habitat"@en ;
+    skos:prefLabel "Habitat"@en .
+
+:MCCV_000008
+    a owl:Class ;
+    rdfs:label "Location"@en ;
+    skos:prefLabel "Location"@en .
+
+:MCCV_000009
+    a owl:Class ;
+    rdfs:label "Culture Collection"@en ;
+    rdfs:subClassOf owl:Thing ;
+    skos:definition "Culture cullection"@en ;
+    skos:prefLabel "Culture Collection"@en .
+
+:MCCV_000010
+    a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:comment "This property is designed to serve as an equivalent to the term 'Strain Number' in the Global Catalogue of Microorganisms Minimum Data Sets Description"@en ;
+    rdfs:domain :MCCV_000001 ;
+    rdfs:label "culture collection number"@en, "菌株番号"@ja ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf dcterms:identifier ;
+    skos:closeMatch <http://www.straininfo.net/ns/mcl/2.0/strainNumber> ;
+    skos:definition "An identifier of a culture maintained in each BRC"@en ;
+    skos:prefLabel "culture collection number"@en .
+
+:MCCV_000011
+    a owl:DatatypeProperty ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:intersectionOf (:MCCV_000001
+            :MCCV_000002
+        )
+    ] ;
+    rdfs:label "species name"@en, "生物種名"@ja ;
+    rdfs:range xsd:string ;
+    skos:definition "species name"@en ;
+    skos:prefLabel "species name"@en .
+
+:MCCV_000012
+    a owl:DatatypeProperty ;
+    rdfs:comment "This property is designed to serve as an equivalent to the term 'Name' in the Global Catalogue of Microorganisms Minimum Data Sets Description"@en ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (:MCCV_000001
+            :MCCV_000002
+        )
+    ] ;
+    rdfs:label "qualified species name"@en, "生物種名（著者含）"@ja ;
+    rdfs:range xsd:string ;
+    skos:closeMatch <http://www.straininfo.net/ns/mcl/2.0/qualifiedSpeciesName> ;
+    skos:definition "qualified species name"@en ;
+    skos:prefLabel "qualified species name"@en .
+
+:MCCV_000013
+    a owl:ObjectProperty ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (:MCCV_000001
+            :MCCV_000002
+        )
+    ] ;
+    rdfs:label "growth temperature"@en, "生育温度"@ja ;
+    rdfs:range rdfs:Resource ;
+    skos:closeMatch <http://www.straininfo.net/ns/mcl/2.0/growthTemperature> ;
+    skos:definition "Growth temperature"@en ;
+    skos:prefLabel "growth temperature"@en .
+
+:MCCV_000014
+    a owl:ObjectProperty ;
+    rdfs:comment "This property is designed to serve as an equivalent to the term 'Optimum Temperature for Growth' in the Global Catalogue of Microorganisms Minimum Data Sets Description"@en ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (:MCCV_000001
+            :MCCV_000002
+        )
+    ] ;
+    rdfs:label "optimum growth temperature"@en, "至適生育温度"@ja ;
+    rdfs:range rdfs:Resource ;
+    rdfs:subPropertyOf :MCCV_000013 ;
+    skos:closeMatch <http://www.straininfo.net/ns/mcl/2.0/optimalGrowthTemperature> ;
+    skos:definition "Optimal growth temperature"@en ;
+    skos:prefLabel "optimal growth temperature"@en .
+
+:MCCV_000015
+    a owl:ObjectProperty ;
+    rdfs:comment "This property is designed to serve as an equivalent to the term 'Minimum Temperature for Growth' in the Global Catalogue of Microorganisms Minimum Data Sets Description"@en ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (:MCCV_000001
+            :MCCV_000002
+        )
+    ] ;
+    rdfs:label "minimum growth temperature"@en, "最低生育温度"@ja ;
+    rdfs:range rdfs:Resource ;
+    rdfs:subPropertyOf :MCCV_000013 ;
+    skos:closeMatch <http://www.straininfo.net/ns/mcl/2.0/minimalGrowthTemperature> ;
+    skos:definition "Minimum growth temperature"@en ;
+    skos:prefLabel "minimum growth temperature"@en .
+
+:MCCV_000016
+    a owl:ObjectProperty ;
+    rdfs:comment "This property is designed to serve as an equivalent to the term 'Maximum Temperature for Growth' in the Global Catalogue of Microorganisms Minimum Data Sets Description"@en ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (:MCCV_000001
+            :MCCV_000002
+        )
+    ] ;
+    rdfs:label "maximum growth temperature"@en, "最高生育温度"@ja ;
+    rdfs:range rdfs:Resource ;
+    rdfs:subPropertyOf :MCCV_000013 ;
+    skos:closeMatch <http://www.straininfo.net/ns/mcl/2.0/maximalGrowthTemperature> ;
+    skos:definition "Maximum growth temperature"@en ;
+    skos:prefLabel "maximum growth temperature"@en .
+
+:MCCV_000017
+    a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (:MCCV_000001
+            :MCCV_000002
+        )
+    ] ;
+    rdfs:label "is type strain"@en, "基準株"@ja ;
+    rdfs:range xsd:boolean ;
+    skos:prefLabel "is type strain"@en .
+
+:MCCV_000018
+    a owl:ObjectProperty ;
+    rdfs:comment "This property is designed to serve as an equivalent to the term 'Medium' in the Global Catalogue of Microorganisms Minimum Data Sets Description"@en ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (:MCCV_000001
+            :MCCV_000002
+        )
+    ] ;
+    rdfs:label "growth medium"@en, "培養培地"@ja ;
+    rdfs:range <http://purl.jp/bio/01/gmo#Medium> ;
+    skos:closeMatch <http://www.straininfo.net/ns/mcl/2.0/recommendMedium> ;
+    skos:definition "growth medium"@en ;
+    skos:prefLabel "growth medium"@en .
+
+:MCCV_000019
+    a owl:ObjectProperty ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (:MCCV_000001
+            :MCCV_000002
+        )
+    ] ;
+    rdfs:label "rehydration fluid"@en, "復元液"@ja ;
+    rdfs:range <http://purl.jp/bio/01/gmo/> ;
+    skos:definition "rehydration fluid"@en ;
+    skos:prefLabel "rehydration fluid"@en .
+
+:MCCV_000020
+    a owl:ObjectProperty ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (:MCCV_000001
+            :MCCV_000002
+        )
+    ] ;
+    rdfs:label "is related to taxonomy"@en, "関連付けられるタクソノミー"@ja ;
+    skos:definition "is related to taxonomy"@en ;
+    skos:prefLabel "is related to taxonomy"@en .
+
+:MCCV_000021
+    a owl:ObjectProperty ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (:MCCV_000001
+            :MCCV_000002
+        )
+    ] ;
+    rdfs:label "is related to taxonomy by DB link"@en, "他データベースのリンク情報により関連付けられるタクソノミー"@ja ;
+    rdfs:subPropertyOf :MCCV_000020 ;
+    skos:definition "is related to taxonomy by DB link"@en ;
+    skos:prefLabel "is related to taxonomy by DB link"@en .
+
+:MCCV_000022
+    a owl:ObjectProperty ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (:MCCV_000001
+            :MCCV_000002
+        )
+    ] ;
+    rdfs:label "is related to taxonomy by sequence"@en, "配列検索により関連付けられるタクソノミー"@ja ;
+    rdfs:subPropertyOf :MCCV_000020 ;
+    skos:definition "is related to taxonomy by sequence"@en ;
+    skos:prefLabel "is related to taxonomy by sequence"@en .
+
+:MCCV_000023
+    a owl:ObjectProperty ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (:MCCV_000001
+            :MCCV_000002
+        )
+    ] ;
+    rdfs:label "is related to taxonomy by strain name"@en, "生物種名の類似性で関連付けられるタクソノミー"@ja ;
+    rdfs:subPropertyOf :MCCV_000020 ;
+    skos:definition "is related to taxonomy by strain name"@en ;
+    skos:prefLabel "is related to taxonomy by strain name"@en .
+
+:MCCV_000024
+    a owl:ObjectProperty ;
+    rdfs:domain :MCCV_000001 ;
+    rdfs:label "other culture collection Information"@en, "他機関での菌株情報"@ja ;
+    skos:definition "other culture collection Information"@en ;
+    skos:prefLabel "other culture collection Information"@en .
+
+:MCCV_000025
+    a owl:ObjectProperty ;
+    rdfs:label "other culture collection URI"@en, "他機関での菌株URI"@ja ;
+    rdfs:range :MCCV_000001 ;
+    rdfs:subPropertyOf :MCCV_000024 ;
+    skos:closeMatch <http://www.straininfo.net/ns/mcl/2.0/cultureURI> ;
+    skos:definition "other culture collection URI"@en ;
+    skos:prefLabel "other culture collection URI"@en .
+
+:MCCV_000026
+    a owl:DatatypeProperty ;
+    rdfs:comment "This property is designed to serve as an equivalent to the term 'Other Collection Numbers' in the Global Catalogue of Microorganisms Minimum Data Sets Description"@en ;
+    rdfs:label "other culture collection number"@en, "他機関での菌株番号"@ja ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf :MCCV_000024 ;
+    skos:closeMatch <http://www.straininfo.net/ns/mcl/2.0/otherStrainNumbers> ;
+    skos:definition "other culture collection number"@en ;
+    skos:prefLabel "other culture collection number"@en .
+
+:MCCV_000027
+    a owl:DatatypeProperty, owl:ObjectProperty ;
+    rdfs:comment "This property is designed to serve as an equivalent to the term 'History of Deposit' in the Global Catalogue of Microorganisms Minimum Data Sets Description"@en ;
+    rdfs:domain :MCCV_000001 ;
+    rdfs:label "history"@en, "来歴"@ja ;
+    rdfs:range xsd:string ;
+    skos:closeMatch <http://www.straininfo.net/ns/mcl/2.0/history> ;
+    skos:definition "history"@en ;
+    skos:prefLabel "history"@en .
+
+:MCCV_000028
+    a owl:ObjectProperty ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (:MCCV_000001
+            :MCCV_000002
+            <http://purl.jp/bio/10/mpo#MPO_00001>
+        )
+    ] ;
+    rdfs:label "isolated from"@en ;
+    rdfs:range [
+        a owl:Class ;
+        owl:unionOf (:MCCV_000006
+            :MCCV_000008
+        )
+    ] ;
+    skos:definition "Habitat information of a strain"@en ;
+    skos:prefLabel "isolated from"@en .
+
+:MCCV_000030
+    a owl:ObjectProperty ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (:MCCV_000001
+            :MCCV_000002
+        )
+    ] ;
+    rdfs:label "isolation source description"@en ;
+    rdfs:range rdfs:Resource ;
+    skos:definition "isolation source description"@en ;
+    skos:prefLabel "isolation source description"@en .
+
+:MCCV_000031
+    a owl:ObjectProperty ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (:MCCV_000001
+            :MCCV_000002
+        )
+    ] ;
+    rdfs:label "isolation source country"@en ;
+    rdfs:range rdfs:Resource ;
+    rdfs:subPropertyOf :MCCV_000030 ;
+    skos:definition "isolation source country"@en ;
+    skos:prefLabel "isolation source country"@en .
+
+:MCCV_000032
+    a owl:ObjectProperty ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (:MCCV_000001
+            :MCCV_000002
+        )
+    ] ;
+    rdfs:label "isolation source place"@en ;
+    rdfs:range rdfs:Resource ;
+    rdfs:subPropertyOf :MCCV_000030 ;
+    skos:definition "isolation source place"@en ;
+    skos:prefLabel "isolation source place"@en .
+
+:MCCV_000033
+    a owl:DatatypeProperty ;
+    rdfs:comment "This property is designed to serve as an equivalent to the term 'Application' in the Global Catalogue of Microorganisms Minimum Data Sets Description"@en ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (:MCCV_000001
+            :MCCV_000002
+        )
+    ] ;
+    rdfs:label "application"@en ;
+    rdfs:range xsd:string ;
+    skos:prefLabel "Application"@en .
+
+:MCCV_000034
+    a owl:DatatypeProperty ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (:MCCV_000001
+            :MCCV_000002
+        )
+    ] ;
+    rdfs:label "biosafty level"@en ;
+    rdfs:range xsd:string ;
+    skos:definition "Biosafty level"@en ;
+    skos:prefLabel "biosafty level"@en .
+
+:MCCV_000035
+    a owl:DatatypeProperty ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (:MCCV_000001
+            :MCCV_000002
+        )
+    ] ;
+    rdfs:label "animal quarantine number"@en, "動物検疫番号"@ja ;
+    rdfs:range xsd:string ;
+    skos:definition "Animal quarantine number"@en ;
+    skos:prefLabel "Animal quarantine number"@en .
+
+:MCCV_000036
+    a owl:DatatypeProperty ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (:MCCV_000001
+            :MCCV_000002
+        )
+    ] ;
+    rdfs:label "plant quarantine mumber"@en, "植物検疫番号"@ja ;
+    rdfs:range xsd:string ;
+    skos:definition "Plant quarantine mumber"@en ;
+    skos:prefLabel "plant quarantine mumber"@en .
+
+:MCCV_000037
+    a owl:DatatypeProperty ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (:MCCV_000001
+            :MCCV_000002
+        )
+    ] ;
+    rdfs:label "herbarium number"@en, "植物標本番号"@ja ;
+    rdfs:range xsd:string ;
+    skos:definition "Herbarium number"@en ;
+    skos:prefLabel "herbarium number"@en .
+
+:MCCV_000038
+    a owl:FunctionalProperty, owl:ObjectProperty ;
+    rdfs:comment "This property is designed to serve as an equivalent to the term 'Organism Type' in the Global Catalogue of Microorganisms Minimum Data Sets Description"@en ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (:MCCV_000001
+            :MCCV_000002
+        )
+    ] ;
+    rdfs:label "organism category by BRC"@en ;
+    rdfs:range :MCCV_000039 ;
+    skos:definition "organism category by BRC"@en ;
+    skos:prefLabel "organism category by BRC"@en .
+
+:MCCV_000039
+    a owl:Class ;
+    rdfs:comment "NBRCとJCMで使われている生物カテゴリー分類"@ja, "The organism category used in NBRC and JCM"@en ;
+    rdfs:label "OrganismCategoryByBRCInJapan"@en, "生物カテゴリー分類"@en ;
+    skos:definition "The organism category used in NBRC and JCM"@en .
+
+:MCCV_000040
+    a owl:Class ;
+    rdfs:comment "An organism category used in NBRC and JCM"@en ;
+    rdfs:label "Bacteria "@en ;
+    rdfs:subClassOf :MCCV_000039 ;
+    skos:definition "Bacteria as an organism category used in NBRC and JCM"@en ;
+    skos:prefLabel "Bacteria "@en .
+
+:MCCV_000041
+    a owl:Class ;
+    rdfs:comment "An organism category used in NBRC and JCM"@en ;
+    rdfs:label "Archaea "@en ;
+    rdfs:subClassOf :MCCV_000039 ;
+    skos:definition "Archaea as an organism category used in NBRC and JCM"@en ;
+    skos:prefLabel "Archaea "@en .
+
+:MCCV_000042
+    a owl:Class ;
+    rdfs:comment "An organism category used in NBRC and JCM"@en ;
+    rdfs:label "Fungi "@en ;
+    rdfs:subClassOf :MCCV_000039 ;
+    skos:definition "Fungi as an organism category used in NBRC and JCM"@en ;
+    skos:prefLabel "Fungi "@en .
+
+:MCCV_000043
+    a owl:Class ;
+    rdfs:comment "An organism category used in NBRC and JCM"@en ;
+    rdfs:label "Yeasts "@en ;
+    rdfs:subClassOf :MCCV_000039 ;
+    skos:definition "Yeasts as an organism category used in NBRC and JCM"@en ;
+    skos:prefLabel "Yeasts "@en .
+
+:MCCV_000044
+    a owl:Class ;
+    rdfs:comment "An organism category used in NBRC and JCM"@en ;
+    rdfs:label "Algae "@en ;
+    rdfs:subClassOf :MCCV_000039 ;
+    skos:definition "Algae as an organism category used in NBRC and JCM"@en ;
+    skos:prefLabel "Algae "@en .
+
+:MCCV_000045
+    a owl:Class ;
+    rdfs:comment "An organism category used in NBRC and JCM"@en ;
+    rdfs:label "Phages "@en ;
+    rdfs:subClassOf :MCCV_000039 ;
+    skos:definition "Phages as an organism category used in NBRC and JCM"@en ;
+    skos:prefLabel "Phages "@en .
+
+:MCCV_000046
+    a owl:ObjectProperty ;
+    rdfs:comment "ture for approved species name, false for unapproved species name"@en ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (:MCCV_000001
+            :MCCV_000002
+        )
+    ] ;
+    rdfs:label "is approved"@en ;
+    rdfs:range xsd:boolean ;
+    skos:definition "culture for approved species name, false for unapproved species name"@en ;
+    skos:prefLabel "is approved"@en .
+
+:MCCV_000047
+    a owl:DatatypeProperty ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (:MCCV_000001
+            :MCCV_000002
+        )
+    ] ;
+    rdfs:label "reference number"@en, "文献番号"@ja ;
+    rdfs:range xsd:string ;
+    skos:definition "reference number"@en ;
+    skos:prefLabel "reference number"@en .
+
+:MCCV_000048
+    a owl:DatatypeProperty ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (:MCCV_000001
+            :MCCV_000002
+        )
+    ] ;
+    rdfs:label "DNA/RNA sequence for strain identification"@en ;
+    rdfs:range xsd:string ;
+    skos:definition "DNA/RNA sequence for strain identification"@en ;
+    skos:prefLabel "DNA/RNA sequence for strain identification"@en .
+
+:MCCV_000049
+    a owl:ObjectProperty ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (:MCCV_000001
+            :MCCV_000002
+        )
+    ] ;
+    rdfs:label "growth pH"@en, "生育pH"@ja ;
+    rdfs:range rdfs:Resource ;
+    skos:closeMatch <http://www.straininfo.net/ns/mcl/2.0/growthPH> ;
+    skos:definition "Growth pH on culture medium"@en ;
+    skos:prefLabel "growth pH"@en .
+
+:MCCV_000050
+    a owl:ObjectProperty ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (:MCCV_000001
+            :MCCV_000002
+        )
+    ] ;
+    rdfs:label "optimal growth pH"@en, "至適生育pH"@ja ;
+    rdfs:range rdfs:Resource ;
+    rdfs:subPropertyOf :MCCV_000049 ;
+    skos:closeMatch <http://www.straininfo.net/ns/mcl/2.0/optimalGrowthPH> ;
+    skos:definition "Optimal growth pH on culture medium"@en ;
+    skos:prefLabel "optimal growth pH"@en .
+
+:MCCV_000051
+    a owl:ObjectProperty ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (:MCCV_000001
+            :MCCV_000002
+        )
+    ] ;
+    rdfs:label "maximum growth pH"@en, "最大生育pH"@ja ;
+    rdfs:range rdfs:Resource ;
+    rdfs:subPropertyOf :MCCV_000049 ;
+    skos:closeMatch <http://www.straininfo.net/ns/mcl/2.0/maximumGrowthPH> ;
+    skos:definition "Maximum growth pH on culture medium"@en ;
+    skos:prefLabel "maximum growth pH"@en .
+
+:MCCV_000052
+    a owl:ObjectProperty ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (:MCCV_000001
+            :MCCV_000002
+        )
+    ] ;
+    rdfs:label "minimum growth pH"@en, "最小生育pH"@ja ;
+    rdfs:range rdfs:Resource ;
+    rdfs:subPropertyOf :MCCV_000049 ;
+    skos:closeMatch <http://www.straininfo.net/ns/mcl/2.0/minimumGrowthPH> ;
+    skos:definition "Minimum growth pH on growth medium"@en ;
+    skos:prefLabel "minimum growth pH"@en .
+
+:MCCV_000053
+    a owl:Class ;
+    rdfs:label "Attribution"@en .
+
+:MCCV_000054
+    a owl:ObjectProperty ;
+    rdfs:label "attribution"@en .
+
+:MCCV_000055
+    a owl:DatatypeProperty ;
+    rdfs:domain :MCCV_000001 ;
+    rdfs:label "Date of isolation"@en ;
+    skos:definition "Date of isolation"@en ;
+    skos:prefLabel "Date of isolation"@en .
+
+:MCCV_000056
+    a owl:ObjectProperty ;
+    rdfs:label "NCBI Taxonomyデータベースのリンク情報により関連付けられるタクソノミー"@ja, "is related to taxonomy by NCBI taxonomy database"@en ;
+    rdfs:range [
+        a owl:Class ;
+        owl:unionOf (:MCCV_000001
+            :MCCV_000002
+        )
+    ] ;
+    rdfs:subPropertyOf :MCCV_000021 ;
+    skos:prefLabel "is related to taxonomy by NCBI taxonomy database"@en .
+
+:MCCV_000057
+    a owl:ObjectProperty ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (:MCCV_000001
+            :MCCV_000002
+        )
+    ] ;
+    rdfs:label "StrainInfoデータベースのリンク情報により関連付けられるタクソノミー"@ja, "is related to taxonomy by StrainInfo database"@en ;
+    rdfs:subPropertyOf :MCCV_000021 ;
+    skos:prefLabel "is related to taxonomy by StrainInfo database"@en .
+
+:MCCV_000058
+    a owl:ObjectProperty ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (:MCCV_000001
+            :MCCV_000002
+        )
+    ] ;
+    rdfs:label "isolation source host"@en ;
+    rdfs:range rdfs:Resource ;
+    rdfs:subPropertyOf :MCCV_000030 ;
+    skos:definition "isolation source host"@en ;
+    skos:prefLabel "isolation source host"@en .
+
+:MCCV_000059
+    a owl:ObjectProperty ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (:MCCV_000001
+            :MCCV_000002
+        )
+    ] ;
+    rdfs:label "isolation source anatomy"@en ;
+    rdfs:range rdfs:Resource ;
+    rdfs:subPropertyOf :MCCV_000030 ;
+    skos:definition "isolation source anatomy"@en ;
+    skos:prefLabel "isolation source anatomy"@en .
+
+:MCCV_000060
+    a owl:ObjectProperty ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (:MCCV_000001
+            :MCCV_000002
+        )
+    ] ;
+    rdfs:label "isolation source environment"@en ;
+    rdfs:range rdfs:Resource ;
+    rdfs:subPropertyOf :MCCV_000030 ;
+    skos:definition "isolation source environment"@en ;
+    skos:prefLabel "isolation source environment"@en .
+
+:MCCV_000061
+    a owl:ObjectProperty ;
+    rdfs:comment "Description about the health condition of the host from which the strain was isolated"@en ;
+    rdfs:domain rdfs:Resource ;
+    rdfs:label "hostCondition"@en ;
+    rdfs:range rdfs:Resource ;
+    skos:definition "host condition"@en ;
+    skos:prefLabel "host condition"@en .
+
+:MCCV_000062
+    a owl:DatatypeProperty ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (:MCCV_000001
+            :MCCV_000002
+        )
+    ] ;
+    rdfs:label "Date of isolation"@en ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf dc:date ;
+    skos:definition "Date of isolation"@en ;
+    skos:prefLabel "Date of isolation"@en .
+
+:MCCV_000063
+    a owl:DatatypeProperty ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (:MCCV_000001
+            :MCCV_000002
+        )
+    ] ;
+    rdfs:label "Date of collection"@en ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf dc:date ;
+    skos:definition "Date of collection"@en ;
+    skos:prefLabel "Date of collection"@en .
+
+:MCCV_000064
+    a owl:ObjectProperty ;
+    rdfs:comment "This property is designed to serve as an equivalent to the term 'Status' in the Global Catalogue of Microorganisms Minimum Data Sets Description"@en ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (:MCCV_000001
+            :MCCV_000002
+        )
+    ] ;
+    rdfs:label "Status"@en ;
+    rdfs:range <http://rs.gbif.org/terms/1.0/typeStatus#type> ;
+    skos:definition "Nomenclatural status of the strain"@en ;
+    skos:prefLabel "Status"@en .
+
+:MCCV_000065
+    a owl:ObjectProperty ;
+    rdfs:comment "A taxonomy ID of a species to which the culture belongs."@en ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (:MCCV_000002
+            :MCCV_000001
+        )
+    ] ;
+    rdfs:label "is a species"@en ;
+    owl:inverseOf :MCCV_000066 ;
+    skos:definition "is a species"@en ;
+    skos:prefLabel "is a species"@en .
+
+:MCCV_000066
+    a owl:ObjectProperty ;
+    rdfs:comment "The taxonomy ID of a species is supposed to be a domain of this property."@en ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (:MCCV_000002
+            :MCCV_000001
+        )
+    ] ;
+    rdfs:label "has a strain"@en ;
+    owl:inverseOf :MCCV_000065 ;
+    skos:definition "has a strain"@en ;
+    skos:prefLabel "has a strain"@en .
+
+:MCCV_000067
+    a owl:ObjectProperty ;
+    rdfs:domain :MCCV_000002 ;
+    rdfs:label "has culture"@en ;
+    rdfs:range :MCCV_000001 ;
+    skos:prefLabel "has culture"@en .
+
+:MCCV_000068
+    a owl:ObjectProperty ;
+    rdfs:domain :MCCV_000001 ;
+    rdfs:label "is a strain"@en ;
+    rdfs:range :MCCV_000002 ;
+    skos:prefLabel "is a strain"@en .
+
+:MCCV_000069
+    a owl:ObjectProperty ;
+    rdfs:label "lower limit of optimum growth temperature"@en ;
+    rdfs:range rdfs:Resource ;
+    rdfs:subPropertyOf :MCCV_000014 ;
+    skos:prefLabel "lower limit of optimum growth temperature"@en .
+
+:MCCV_000070
+    a owl:ObjectProperty ;
+    rdfs:label "upper limit of optimum growth temperature"@en ;
+    rdfs:range rdfs:Resource ;
+    rdfs:subPropertyOf :MCCV_000014 ;
+    skos:prefLabel "upper limit of optimum growth temperature"@en .
+
+:MCCV_000071
+    a rdf:Property ;
+    rdfs:domain :MCCV_000007 ;
+    rdfs:label "environmental feature"@en ;
+    rdfs:range <http://purl.jp/bio/11/meo/MEO_0000817> ;
+    skos:definition "environmental features of a microbial habitat"@en ;
+    skos:prefLabel "environmental feature"@en .
+
+:MCCV_000072
+    a owl:ObjectProperty ;
+    rdfs:comment "This property is designed to serve as an equivalent to the term 'Isolated From' in the Global Catalogue of Microorganisms Minimum Data Sets Description"@en ;
+    rdfs:domain :MCCV_000006 ;
+    rdfs:label "sampled from"@en ;
+    rdfs:range :MCCV_000007 ;
+    skos:prefLabel "sampled from"@en .
+
+:MCCV_000073
+    a owl:ObjectProperty ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (:MCCV_000001
+            :MCCV_000002
+        )
+    ] ;
+    rdfs:label "culture condition"@en ;
+    rdfs:range :MCCV_000005 ;
+    skos:definition "a relation between a culture and a culture colletction"@en ;
+    skos:prefLabel "culture condition"@en .
+
+:MCCV_000074
+    a rdf:Property ;
+    rdfs:label "organism"@en ;
+    skos:prefLabel "organism"@en .
+
+:MCCV_000075
+    a owl:ObjectProperty ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (:MCCV_000006
+            :MCCV_000008
+        )
+    ] ;
+    rdfs:label "isolated organism"@en ;
+    rdfs:range [
+        a owl:Class ;
+        owl:unionOf (:MCCV_000001
+            :MCCV_000002
+            <http://purl.jp/bio/10/mpo#MPO_00001>
+        )
+    ] ;
+    owl:inverseOf :MCCV_000028 ;
+    skos:prefLabel "isolated organism"@en .
+
+:MCCV_000076
+    a rdf:Property ;
+    rdfs:domain :MCCV_000001 ;
+    rdfs:label "culture collection"@en ;
+    rdfs:range :MCCV_000009 ;
+    skos:prefLabel "culture collection"@en .
+
+<http://www.wfcc.info/ccinfo/collection/by_id/567>
+    dcterms:title "Japan Collection of Microorganisms"@en ;
+    a :MCCV_000009 ;
+    rdfs:label "JCM" ;
+    skos:prefLabel "JCM" .
+
+<http://www.wfcc.info/ccinfo/collection/by_id/591>
+    dcterms:title "Microbial Culture Collection at National Institute for Environmental Studies"@en ;
+    a :MCCV_000009 ;
+    rdfs:label "NIES" ;
+    skos:prefLabel "NIES" .
+
+<http://www.wfcc.info/ccinfo/collection/by_id/825>
+    dcterms:title "NBRC Culture Collection"@en ;
+    a :MCCV_000009 ;
+    rdfs:label "NBRC" ;
+    skos:prefLabel "NBRC" .
+

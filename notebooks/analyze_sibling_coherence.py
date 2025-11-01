@@ -223,8 +223,8 @@ class OaklibHierarchy:
 @click.option(
     '--input-csv',
     type=click.Path(exists=True, dir_okay=False, path_type=str),
-    default='../metpo_relevant_matches.csv',
-    help="Path to the input CSV file containing METPO term matches."
+    default='../metpo_relevant_mappings.sssom.tsv',
+    help="Path to the SSSOM TSV file containing METPO term mappings."
 )
 @click.option(
     '--metpo-owl',
@@ -247,19 +247,28 @@ class OaklibHierarchy:
 )
 def main(input_csv: str, metpo_owl: str, good_match_threshold: float, debug: bool, output_csv: str):
     """
-    Analyzes sibling coherence for METPO term matches.
+    Analyzes sibling coherence for METPO term mappings from SSSOM TSV.
     """
-    print(f"Loading matches from: {input_csv}")
+    print(f"Loading mappings from: {input_csv}")
     try:
-        df = pd.read_csv(input_csv)
+        # Read SSSOM TSV (skip metadata lines starting with #)
+        df = pd.read_csv(input_csv, sep='\t', comment='#')
     except FileNotFoundError:
-        print(f"Error: Input CSV file not found at {input_csv}")
+        print(f"Error: Input file not found at {input_csv}")
         return
     except Exception as e:
-        print(f"Error loading CSV: {e}")
+        print(f"Error loading SSSOM TSV: {e}")
         return
 
-    print(f"Loaded {len(df)} match records.")
+    # Map SSSOM columns to expected column names
+    df['distance'] = 1.0 - df['similarity_score']
+    df['metpo_id'] = df['subject_id']
+    df['metpo_label'] = df['subject_label']
+    df['match_document'] = df['object_label']
+    df['match_ontology'] = df['object_source']
+    df['match_iri'] = df['object_id']
+
+    print(f"Loaded {len(df)} mapping records.")
     print(f"Using good match threshold: {good_match_threshold}")
 
     # Initialize METPO hierarchy parser

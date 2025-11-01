@@ -66,10 +66,14 @@ literature_mining/random-*-pmids.txt
 assets/chebi.lex
 assets/*.zip
 
-# ChromaDB directories
+# ChromaDB directories (vector databases can be multi-GB)
 notebooks/*.db
 notebooks/metpo_relevant_chroma/
 notebooks/oba_chroma/
+notebooks/chroma*/
+notebooks/*_chroma/
+chroma_*/
+embeddings_chroma/
 
 # Ontology pipeline tracking files
 .ontology_manifest.json
