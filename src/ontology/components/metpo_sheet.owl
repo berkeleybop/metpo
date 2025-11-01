@@ -7,8 +7,8 @@ Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
 
 
 Ontology(<https://w3id.org/metpo/metpo/components/metpo_sheet.owl>
-<https://w3id.org/metpo/metpo/releases/2025-10-15/components/metpo_sheet.owl>
-Annotation(owl:versionInfo "2025-10-15")
+<https://w3id.org/metpo/metpo/releases/2025-10-31/components/metpo_sheet.owl>
+Annotation(owl:versionInfo "2025-10-31")
 
 Declaration(Class(<https://w3id.org/metpo/1000059>))
 Declaration(Class(<https://w3id.org/metpo/1000060>))
@@ -236,6 +236,7 @@ Declaration(Class(<https://w3id.org/metpo/1001102>))
 Declaration(Class(<https://w3id.org/metpo/1001103>))
 Declaration(Class(<https://w3id.org/metpo/1001104>))
 Declaration(Class(<https://w3id.org/metpo/1001105>))
+Declaration(Class(<https://w3id.org/metpo/1001106>))
 Declaration(Class(<https://w3id.org/metpo/1002003>))
 Declaration(Class(<https://w3id.org/metpo/1002005>))
 Declaration(Class(<https://w3id.org/metpo/1002006>))
@@ -260,6 +261,10 @@ Declaration(Class(<https://w3id.org/metpo/1003028>))
 Declaration(Class(<https://w3id.org/metpo/1003029>))
 Declaration(Class(<https://w3id.org/metpo/1003030>))
 Declaration(Class(<https://w3id.org/metpo/1003031>))
+Declaration(Class(<https://w3id.org/metpo/1004000>))
+Declaration(Class(<https://w3id.org/metpo/1004002>))
+Declaration(Class(<https://w3id.org/metpo/1004003>))
+Declaration(Class(<https://w3id.org/metpo/1004004>))
 Declaration(ObjectProperty(<https://w3id.org/metpo/2000001>))
 Declaration(ObjectProperty(<https://w3id.org/metpo/2000002>))
 Declaration(ObjectProperty(<https://w3id.org/metpo/2000003>))
@@ -2919,28 +2924,40 @@ SubClassOf(<https://w3id.org/metpo/1001023> <https://w3id.org/metpo/1001000>)
 
 # Class: <https://w3id.org/metpo/1001101> (biosafety level)
 
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1001101> "Safety information.risk assessment.biosafety level")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1001101> "biosafety level")
 SubClassOf(<https://w3id.org/metpo/1001101> <https://w3id.org/metpo/1000188>)
 
 # Class: <https://w3id.org/metpo/1001102> (biosafety level 1)
 
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1001102> "1")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1001102> "biosafety level 1")
 SubClassOf(<https://w3id.org/metpo/1001102> <https://w3id.org/metpo/1001101>)
 
 # Class: <https://w3id.org/metpo/1001103> (biosafety level 2)
 
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1001103> "2")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1001103> "biosafety level 2")
 SubClassOf(<https://w3id.org/metpo/1001103> <https://w3id.org/metpo/1001101>)
 
 # Class: <https://w3id.org/metpo/1001104> (biosafety level 3)
 
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1001104> "3")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1001104> "3**")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1001104> "biosafety level 3")
 SubClassOf(<https://w3id.org/metpo/1001104> <https://w3id.org/metpo/1001101>)
 
 # Class: <https://w3id.org/metpo/1001105> (biosafety level 4)
 
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1001105> "4")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1001105> "biosafety level 4")
 SubClassOf(<https://w3id.org/metpo/1001105> <https://w3id.org/metpo/1001101>)
+
+# Class: <https://w3id.org/metpo/1001106> (biosafety level 5)
+
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1001106> "5")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1001106> "biosafety level 5")
+SubClassOf(<https://w3id.org/metpo/1001106> <https://w3id.org/metpo/1001101>)
 
 # Class: <https://w3id.org/metpo/1002003> (Cable bacteria metabolism)
 
@@ -3104,6 +3121,33 @@ AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.o
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1003031> "Pigment_carotenoid")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1003031> "carotenoid pigmentation")
 SubClassOf(<https://w3id.org/metpo/1003031> <https://w3id.org/metpo/1003021>)
+
+# Class: <https://w3id.org/metpo/1004000> (pathogenic to host)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1004000> "A pathogenicity phenotype where a microbe is a pathogen of of some host organism.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1004000> "pathogenic to host")
+SubClassOf(<https://w3id.org/metpo/1004000> <https://w3id.org/metpo/1000059>)
+
+# Class: <https://w3id.org/metpo/1004002> (animal pathogen)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1004002> "A pathogenicity phenotype where a microbe is a pathogen of animals (Metazoa).")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1004002> "animal pathogen")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1004002> "animal pathogen")
+SubClassOf(<https://w3id.org/metpo/1004002> <https://w3id.org/metpo/1004000>)
+
+# Class: <https://w3id.org/metpo/1004003> (plant pathogen)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1004003> "A pathogenicity phenotype where a microbe is a pathogen of plants (Viridiplantae).")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1004003> "plant pathogen")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1004003> "plant pathogen")
+SubClassOf(<https://w3id.org/metpo/1004003> <https://w3id.org/metpo/1004000>)
+
+# Class: <https://w3id.org/metpo/1004004> (human pathogen)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1004004> "A pathogenicity phenotype where a microbe is a pathogen of humans (Homo sapiens).")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1004004> "human pathogen")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1004004> "human pathogen")
+SubClassOf(<https://w3id.org/metpo/1004004> <https://w3id.org/metpo/1004000>)
 
 
 )

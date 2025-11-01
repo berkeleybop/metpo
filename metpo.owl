@@ -14,14 +14,14 @@
      xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="https://w3id.org/metpo/metpo.owl">
-        <owl:versionIRI rdf:resource="https://w3id.org/metpo/metpo/releases/2025-10-15/metpo.owl"/>
+        <owl:versionIRI rdf:resource="https://w3id.org/metpo/metpo/releases/2025-10-31/metpo.owl"/>
         <dcterms:creator>METPO Development Team</dcterms:creator>
         <dcterms:description>Microbial ecophysiological trait and phenotype ontology</dcterms:description>
         <dcterms:issued>2024-01-01</dcterms:issued>
         <dcterms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
         <dcterms:modified>2025-09-29</dcterms:modified>
         <dcterms:title>METPO</dcterms:title>
-        <owl:versionInfo>2025-10-15</owl:versionInfo>
+        <owl:versionInfo>2025-10-31</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -7095,8 +7095,15 @@
 
     <owl:Class rdf:about="https://w3id.org/metpo/1001101">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000188"/>
+        <oboInOwl:hasRelatedSynonym>Safety information.risk assessment.biosafety level</oboInOwl:hasRelatedSynonym>
         <rdfs:label>biosafety level</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1001101"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>Safety information.risk assessment.biosafety level</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -7104,8 +7111,15 @@
 
     <owl:Class rdf:about="https://w3id.org/metpo/1001102">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1001101"/>
+        <oboInOwl:hasRelatedSynonym>1</oboInOwl:hasRelatedSynonym>
         <rdfs:label>biosafety level 1</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1001102"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>1</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -7113,8 +7127,15 @@
 
     <owl:Class rdf:about="https://w3id.org/metpo/1001103">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1001101"/>
+        <oboInOwl:hasRelatedSynonym>2</oboInOwl:hasRelatedSynonym>
         <rdfs:label>biosafety level 2</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1001103"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>2</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -7122,8 +7143,22 @@
 
     <owl:Class rdf:about="https://w3id.org/metpo/1001104">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1001101"/>
+        <oboInOwl:hasRelatedSynonym>3</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>3**</oboInOwl:hasRelatedSynonym>
         <rdfs:label>biosafety level 3</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1001104"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>3</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1001104"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>3**</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -7131,8 +7166,31 @@
 
     <owl:Class rdf:about="https://w3id.org/metpo/1001105">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1001101"/>
+        <oboInOwl:hasRelatedSynonym>4</oboInOwl:hasRelatedSynonym>
         <rdfs:label>biosafety level 4</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1001105"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>4</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1001106 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1001106">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1001101"/>
+        <oboInOwl:hasRelatedSynonym>5</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>biosafety level 5</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1001106"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>5</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -7457,6 +7515,67 @@
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>Pigment_carotenoid</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1004000 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1004000">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
+        <obo:IAO_0000115>A pathogenicity phenotype where a microbe is a pathogen of of some host organism.</obo:IAO_0000115>
+        <rdfs:label>pathogenic to host</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/1004002 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1004002">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1004000"/>
+        <obo:IAO_0000115>A pathogenicity phenotype where a microbe is a pathogen of animals (Metazoa).</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>animal pathogen</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>animal pathogen</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1004002"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>animal pathogen</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1004003 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1004003">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1004000"/>
+        <obo:IAO_0000115>A pathogenicity phenotype where a microbe is a pathogen of plants (Viridiplantae).</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>plant pathogen</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>plant pathogen</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1004003"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>plant pathogen</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1004004 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1004004">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1004000"/>
+        <obo:IAO_0000115>A pathogenicity phenotype where a microbe is a pathogen of humans (Homo sapiens).</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>human pathogen</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>human pathogen</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1004004"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>human pathogen</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
     </owl:Axiom>
 </rdf:RDF>
 
