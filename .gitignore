@@ -60,6 +60,12 @@ src/patterns/all_pattern_terms.txt
 
 literature_mining/random-*-pmids.txt
 
+# Large log files from literature mining
+literature_mining/logs/*.log
+
+# Abstracts directory
+literature_mining/abstracts/
+
 # Large reference files
 assets/chebi.lex
 assets/*.zip
@@ -72,6 +78,10 @@ notebooks/chroma*/
 notebooks/*_chroma/
 chroma_*/
 embeddings_chroma/
+
+# Qdrant directories (to be phased out in favor of ChromaDB)
+notebooks/*qdrant*/
+qdrant_*/
 
 # Ontology pipeline tracking files
 .ontology_manifest.json

@@ -1,0 +1,237 @@
+id: http://w3id.org/metpo/biochemical_extraction_hybrid
+name: biochemical_extraction_hybrid
+title: METPO Biochemical Extraction Template (Hybrid Optimized)
+description: >-
+  Optimized OntoGPT template for extracting metabolic biochemistry from bacterial
+  literature. Applies hybrid optimization pattern (single consolidated field + inline
+  examples + "Extract ALL") to maximize recall of enzyme activities, pathways, cofactors,
+  and biochemical reactions.
+license: https://creativecommons.org/publicdomain/zero/1.0/
+prefixes:
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  linkml: https://w3id.org/linkml/
+  metpo_biochem: http://w3id.org/metpo/biochemical_extraction_hybrid/
+  ontogpt: http://w3id.org/ontogpt/
+  METPO: http://purl.obolibrary.org/obo/METPO_
+default_prefix: metpo_biochem
+default_range: string
+imports:
+  - linkml:types
+  - ontogpt:core
+classes:
+  BiochemicalLiteratureExtraction:
+    tree_root: true
+    attributes:
+      pmid:
+        description: >-
+          PubMed ID of the article (e.g., 23996836)
+        range: string
+      study_taxa:
+        description: >-
+          semicolon-separated list of the main bacterial or archaeal taxa being studied
+        multivalued: true
+        range: Taxon
+      strains:
+        description: >-
+          semicolon-separated list of specific strain designations mentioned in the text
+        multivalued: true
+        range: Strain
+        annotations:
+          prompt: >-
+            Extract strain designations WITHOUT genus/species prefixes. Remove terminal "T" or "(T)" suffixes.
+            For example: 22A; AM1; MG1655; UTEX 2973
+          exclude: 22A, AM1, MG1655, UTEX 2973
+      biochemical_relationships:
+        description: >-
+          List of specific strain-biochemical relationships including enzymes, pathways, cofactors, and reactions
+        multivalued: true
+        range: BiochemicalRelationship
+        annotations:
+          prompt: >-
+            Extract ALL strain-biochemical relationships mentioned in the text. Be COMPREHENSIVE - do not omit relationships. Use EXACTLY the same strain identifiers from the strains field above.
+
+            Include ALL biochemical relationship types:
+            ENZYMES: 22A has_enzyme methanol dehydrogenase; AM1 expresses XoxF; MG1655 has_activity catalase
+            PATHWAYS: 22A uses_pathway H4MPT pathway; AM1 employs serine cycle; MG1655 uses_pathway glycolysis
+            COFACTORS: 22A requires_cofactor vitamin B12; AM1 uses_cofactor lanthanides; UTEX 2973 requires pyrroloquinoline quinone
+            REACTIONS: 22A oxidizes methanol to formaldehyde; AM1 converts formaldehyde to formate; MG1655 reduces nitrate to nitrite
+            GENE_EXPRESSION: 22A expresses mxaF; AM1 upregulates xoxF; MG1655 induces lac operon
+            METABOLIC_CAPABILITIES: 22A methylotrophic; AM1 facultative methylotroph; MG1655 facultative anaerobe
+
+            Extract BOTH what strains CAN do AND what they CANNOT do. Be thorough and capture all biochemical characteristics, enzymes, pathways, cofactors, and reactions described in the text.
+          exclude: 22A, AM1, MG1655, UTEX 2973, methanol dehydrogenase, XoxF, catalase, H4MPT pathway, serine cycle, glycolysis, vitamin B12, lanthanides, pyrroloquinoline quinone, methanol, formaldehyde, formate, nitrate, nitrite, mxaF, xoxF, lac operon, methylotrophic, facultative methylotroph, facultative anaerobe
+      strain_relationships:
+        description: >-
+          semicolon-separated list of strain-species relationships found in the text
+        multivalued: true
+        range: StrainRelationship
+        annotations:
+          prompt: >-
+            Connect strain identifiers to parent taxa. Use EXACTLY the same strain identifiers from the strains field.
+            For example: 22A type_strain_of Methylobacterium aquaticum; AM1 strain_of Methylorubrum extorquens
+          exclude: 22A, AM1, Methylobacterium aquaticum, Methylorubrum extorquens
+      article_type:
+        description: >-
+          the type of study described in this article
+        range: ArticleType
+        annotations:
+          prompt: >-
+            Choose the most appropriate category. Prefer metabolic_study for articles focusing on enzymes, pathways, or biochemical reactions.
+      source_text:
+        range: string
+        annotations:
+          prompt.skip: "true"
+
+  Taxon:
+    is_a: NamedEntity
+    description: >-
+      Bacterial, archaeal, or other microbial taxa being studied.
+    annotations:
+      annotators: sqlite:obo:ncbitaxon
+
+  Strain:
+    is_a: NamedEntity
+    description: >-
+      Specific bacterial or archaeal strain designations including culture collection numbers, type strains, and isolate identifiers.
+
+  BiochemicalEntity:
+    is_a: NamedEntity
+    description: >-
+      Biochemical entities including enzymes, pathways, cofactors, reactions, genes, and metabolic capabilities.
+    annotations:
+      annotators: sqlite:obo:go, sqlite:obo:rhea, sqlite:obo:chebi
+
+  BiochemicalRelationship:
+    is_a: CompoundExpression
+    description: >-
+      Specific relationships between strains and biochemical entities
+    attributes:
+      subject:
+        description: the strain with this biochemical characteristic
+        range: Strain
+      predicate:
+        description: the type of biochemical relationship
+        range: BiochemicalRelationType
+      object:
+        description: the specific biochemical entity (enzyme, pathway, cofactor, reaction, gene)
+        range: BiochemicalEntity
+
+  StrainRelationship:
+    is_a: CompoundExpression
+    description: >-
+      Specific relationships between strain designations and their parent taxonomic groups
+    attributes:
+      subject:
+        description: the specific strain designation or identifier
+        range: Strain
+      predicate:
+        description: the type of strain-taxon relationship
+        range: StrainRelationshipType
+      object:
+        description: the parent species or genus this strain belongs to
+        range: Taxon
+
+enums:
+  BiochemicalRelationType:
+    description: Types of biochemical relationships
+    permissible_values:
+      has_enzyme:
+        description: The strain possesses this enzyme
+      lacks_enzyme:
+        description: The strain does not possess this enzyme
+      expresses:
+        description: The strain expresses this gene or protein
+      does_not_express:
+        description: The strain does not express this gene or protein
+      has_activity:
+        description: The strain demonstrates this enzymatic activity
+      lacks_activity:
+        description: The strain does not demonstrate this enzymatic activity
+      uses_pathway:
+        description: The strain uses this metabolic pathway
+      does_not_use_pathway:
+        description: The strain does not use this metabolic pathway
+      requires_cofactor:
+        description: The strain requires this cofactor
+      does_not_require_cofactor:
+        description: The strain does not require this cofactor
+      uses_cofactor:
+        description: The strain uses this cofactor
+      oxidizes:
+        description: The strain oxidizes this compound
+      reduces:
+        description: The strain reduces this compound
+      converts:
+        description: The strain converts this compound to another
+      synthesizes:
+        description: The strain synthesizes this compound
+      degrades:
+        description: The strain degrades this compound
+      catalyzes:
+        description: The strain catalyzes this reaction
+      upregulates:
+        description: The strain upregulates this gene or pathway
+      downregulates:
+        description: The strain downregulates this gene or pathway
+      induces:
+        description: The strain induces this gene or pathway
+      represses:
+        description: The strain represses this gene or pathway
+      methylotrophic:
+        description: The strain is methylotrophic
+      facultative_methylotroph:
+        description: The strain is a facultative methylotroph
+      obligate_methylotroph:
+        description: The strain is an obligate methylotroph
+      facultative_anaerobe:
+        description: The strain is a facultative anaerobe
+      obligate_aerobe:
+        description: The strain is an obligate aerobe
+      obligate_anaerobe:
+        description: The strain is an obligate anaerobe
+      chemolithoautotroph:
+        description: The strain is a chemolithoautotroph
+      photoautotroph:
+        description: The strain is a photoautotroph
+      heterotroph:
+        description: The strain is a heterotroph
+
+  StrainRelationshipType:
+    description: Type of relationship between strain and parent taxon
+    permissible_values:
+      strain_of:
+        description: Regular strain of a species
+      type_strain_of:
+        description: Type strain of a species
+      reference_strain_of:
+        description: Reference strain of a species
+      isolate_of:
+        description: Clinical or environmental isolate of a species
+      variant_of:
+        description: Variant or mutant strain of a species
+      derived_from:
+        description: Strain derived from another strain
+      identical_to:
+        description: Strain is identical or equivalent to another designation
+
+  ArticleType:
+    description: Type of study or article
+    permissible_values:
+      metabolic_study:
+        description: Study of metabolism, pathways, or enzymes
+      enzyme_characterization:
+        description: Characterization of specific enzymes
+      pathway_analysis:
+        description: Analysis of metabolic pathways
+      gene_expression:
+        description: Study of gene expression or regulation
+      comparative_biochemistry:
+        description: Comparative biochemical analysis
+      novel_species:
+        description: Description of new species
+      genome_sequence:
+        description: Genome sequence publication
+      review:
+        description: Review article
+      ecological_study:
+        description: Ecological distribution or environmental survey

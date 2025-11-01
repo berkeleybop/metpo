@@ -1,0 +1,365 @@
+id: http://w3id.org/metpo/growth_conditions_extraction
+name: growth_conditions_extraction
+title: METPO Growth Conditions and Media Extraction Template
+description: >-
+  A focused OntoGPT template for extracting bacterial growth conditions
+  and culture media from literature. Designed to capture physical and
+  environmental parameters (temperature, pH, oxygen, salinity) and media
+  compositions for predicting suitable bacterial growth conditions.
+license: https://creativecommons.org/publicdomain/zero/1.0/
+prefixes:
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  linkml: https://w3id.org/linkml/
+  metpo_growth: http://w3id.org/metpo/growth_conditions_extraction/
+  ontogpt: http://w3id.org/ontogpt/
+  METPO: http://purl.obolibrary.org/obo/METPO_
+default_prefix: metpo_growth
+default_range: string
+imports:
+  - linkml:types
+  - ontogpt:core
+classes:
+  GrowthConditionsLiteratureExtraction:
+    tree_root: true
+    attributes:
+      pmid:
+        description: >-
+          PubMed ID of the article (e.g., 23996836)
+        range: string
+      study_taxa:
+        description: >-
+          semicolon-separated list of the main bacterial or archaeal taxa 
+          being studied for growth conditions
+        multivalued: true
+        range: Taxon
+      strains:
+        description: >-
+          semicolon-separated list of specific strain designations mentioned in the text
+        multivalued: true
+        range: Strain
+        annotations:
+          prompt: >-
+            Extract ONLY the strain designation part (e.g., "DA-C8", "MG1655", "ATCC 25922") WITHOUT genus/species prefixes. Focus on strain numbers, culture collection codes, and isolate identifiers. Automatically remove terminal "T" or "(T)" suffixes as these indicate type strain status (e.g., "DA-C8T" becomes "DA-C8", "K13T" becomes "K13"). Include strain numbers, culture collection numbers, and isolate names, but NOT the full taxonomic context.
+      culture_media:
+        description: >-
+          semicolon-separated list of culture media used, including both 
+          named media (e.g., TSB, LB, minimal medium) and media compositions 
+          when provided
+        multivalued: true
+        range: CultureMedium
+        annotations:
+          prompt: >-
+            A semicolon-separated list of culture media names and compositions.
+            Include standard media names (TSB, LB, minimal medium) and any 
+            specific compositions mentioned (e.g., "glucose minimal medium", 
+            "Marine Broth 2216", "defined medium with glucose and NH4Cl").
+      temperature_conditions:
+        description: >-
+          semicolon-separated list of temperature conditions in normalized format
+        multivalued: true
+        range: TemperatureCondition
+        annotations:
+          prompt: >-
+            A semicolon-separated list of temperature conditions. Normalize 
+            temperatures to °C format. Examples: "37°C", "25-30°C", "optimal 28°C", 
+            "range 15-45°C", "thermophilic", "mesophilic". Convert Fahrenheit 
+            to Celsius if needed. Preserve ranges, optima, and classifications.
+            If no temperature conditions are mentioned, leave this field empty.
+      ph_conditions:
+        description: >-
+          semicolon-separated list of pH conditions in normalized format
+        multivalued: true
+        range: PHCondition
+        annotations:
+          prompt: >-
+            A semicolon-separated list of pH conditions. Normalize to "pH X.X" 
+            format with one decimal place. Examples: "pH 7.0", "pH 6.5-8.0", 
+            "optimal pH 7.2", "range pH 5.0-9.0", "alkaliphilic", "acidophilic". 
+            Preserve ranges, optima, and classifications.
+            If no pH conditions are mentioned, leave this field empty.
+      oxygen_requirements:
+        description: >-
+          semicolon-separated list of oxygen requirements in normalized format
+        multivalued: true
+        range: OxygenRequirement
+        annotations:
+          prompt: >-
+            A semicolon-separated list of oxygen requirements. Use standard terms: 
+            "aerobic", "anaerobic", "facultative anaerobic", "microaerophilic", 
+            "obligately aerobic", "obligately anaerobic". Include specific O2 
+            concentrations if mentioned (e.g., "requires 2-5% O2").
+      salt_tolerance:
+        description: >-
+          semicolon-separated list of salt tolerance in normalized format
+        multivalued: true
+        range: SaltTolerance
+        annotations:
+          prompt: >-
+            A semicolon-separated list of salt tolerance conditions. Normalize
+            salt concentrations to "X% NaCl" format. Examples: "0% NaCl",
+            "3.5% NaCl", "0-5% NaCl", "optimal 1% NaCl", "range 2-15% NaCl",
+            "halophilic", "extremely halophilic". Convert other units to
+            percentages if possible.
+            If no salt tolerance conditions are mentioned, leave this field empty.
+      article_type:
+        description: >-
+          the type of study described in this article
+        range: ArticleType
+        annotations:
+          prompt: >-
+            The type of study or article. Choose the most appropriate category based on the content.
+      atmospheric_requirements:
+        description: >-
+          semicolon-separated list of special atmospheric requirements in 
+          normalized format
+        multivalued: true
+        range: AtmosphericRequirement
+        annotations:
+          prompt: >-
+            A semicolon-separated list of atmospheric requirements. Focus on 
+            gases and atmospheric conditions only. Examples: "CO2 atmosphere", 
+            "anaerobic conditions", "needs 5% CO2", "requires N2 atmosphere", 
+            "microaerophilic conditions". Do NOT include vitamins, nutrients, 
+            or chemical compounds - those belong in chemical_utilization template.
+      strain_relationships:
+        description: >-
+          semicolon-separated list of strain-species relationships found in the text,
+          capturing specific strain designations and their parent taxa
+        multivalued: true
+        range: StrainRelationship
+        annotations:
+          prompt: >-
+            Extract ALL strain-taxon relationships explicitly mentioned or clearly implied in the text.
+            For each strain found in the 'strains' field, determine its parent taxon.
+            Format: "strain_id relationship_type parent_taxon"
+            Examples: "SolV strain_of Methylacidiphilum fumariolicum",
+            "ATCC 25922 type_strain_of Klebsiella pneumoniae".
+            If a strain is mentioned but its parent taxon is not clear from context,
+            still extract it using the most likely parent from study_taxa.
+            If no strain relationships can be determined, write 'none'.
+      growth_condition_relationships:
+        description: >-
+          semicolon-separated list of specific organism-condition relationships found in the text,
+          capturing precise growth parameter values for individual taxa
+        multivalued: true
+        range: GrowthConditionRelationship
+        annotations:
+          prompt: >-
+            Extract specific organism-growth condition relationships ONLY when explicitly stated in the text.
+            Link the specific organism to its growth parameters.
+            Format: "organism_name relationship_type condition_value"
+            Examples: "Bacillus vietnamensis optimal_growth_temperature 28°C",
+            "Geobacter species requires_oxygen_level strictly anaerobic",
+            "Streptomyces strain grows_at_pH 6.5-8.0".
+            Do NOT create relationships if no specific conditions are mentioned for that organism.
+            If no relationships can be determined, write 'none'.
+      culture_medium_relationships:
+        description: >-
+          semicolon-separated list of specific strain-medium relationships found in the text
+        multivalued: true
+        range: CultureMediumRelationship
+        annotations:
+          prompt: >-
+            Extract specific strain-culture medium relationships ONLY when explicitly stated in the text.
+            Link the specific strain to the culture medium used.
+            Format: "strain_id relationship_type medium_name"
+            Examples: "strain 15-1T grows_on TSB",
+            "ATCC 25922 requires Marine Broth 2216",
+            "isolate XYZ-1 uses_medium glucose minimal medium".
+            Do NOT create relationships if no specific medium is mentioned for that strain.
+            If no relationships can be determined, write 'none'.
+      source_text:
+        range: string
+        annotations:
+          prompt.skip: "true"
+
+  Taxon:
+    is_a: NamedEntity
+    description: >-
+      Bacterial, archaeal, or other microbial taxa being studied for 
+      growth conditions.
+    annotations:
+      annotators: sqlite:obo:ncbitaxon
+
+  Strain:
+    is_a: NamedEntity
+    description: >-
+      Specific bacterial or archaeal strain designations including culture collection numbers, type strains, and isolate identifiers.
+
+  CultureMedium:
+    is_a: NamedEntity
+    description: >-
+      Culture media names, types, and compositions used for bacterial growth. 
+      Includes complex media (TSB, LB), defined media, minimal media, and 
+      specific media compositions.
+
+  OxygenRequirement:
+    is_a: NamedEntity
+    description: >-
+      Oxygen requirements and atmospheric oxygen conditions for bacterial growth.
+      Includes aerobic, anaerobic, microaerophilic, and facultative conditions.
+    annotations:
+      annotators: sqlite:../src/ontology/metpo.owl
+
+  AtmosphericRequirement:
+    is_a: NamedEntity
+    description: >-
+      Atmospheric and gaseous requirements for bacterial growth including
+      specific gas concentrations and atmospheric conditions.
+    annotations:
+      annotators: sqlite:../src/ontology/metpo.owl, sqlite:obo:chebi
+
+  TemperatureCondition:
+    is_a: NamedEntity
+    description: >-
+      Temperature conditions and ranges for bacterial growth including
+      specific temperatures, ranges, and thermal classifications.
+    annotations:
+      annotators: sqlite:../src/ontology/metpo.owl
+
+  PHCondition:
+    is_a: NamedEntity
+    description: >-
+      pH conditions and ranges for bacterial growth including specific
+      pH values, ranges, and acidity classifications.
+    annotations:
+      annotators: sqlite:../src/ontology/metpo.owl
+
+  SaltTolerance:
+    is_a: NamedEntity
+    description: >-
+      Salt tolerance conditions for bacterial growth including salt
+      concentrations, ranges, and halophilic classifications.
+    annotations:
+      annotators: sqlite:../src/ontology/metpo.owl, sqlite:obo:chebi
+
+  GrowthConditionRelationship:
+    is_a: CompoundExpression
+    description: >-
+      Specific relationships between organisms and their growth conditions
+    attributes:
+      subject:
+        description: the organism with this growth condition
+        range: Taxon
+      predicate:
+        description: the type of growth condition relationship
+        range: GrowthConditionType
+      object:
+        description: the specific growth condition (temperature, pH, oxygen, salt, or atmospheric requirement)
+        any_of:
+          - range: TemperatureCondition
+          - range: PHCondition
+          - range: OxygenRequirement
+          - range: SaltTolerance
+          - range: AtmosphericRequirement
+
+  StrainRelationship:
+    is_a: CompoundExpression
+    description: >-
+      Specific relationships between strain designations and their parent taxonomic groups
+    attributes:
+      subject:
+        description: the specific strain designation or identifier
+        range: Strain
+      predicate:
+        description: the type of strain-taxon relationship (strain_of, type_strain_of, isolate_of, etc.)
+        range: StrainRelationshipType
+      object:
+        description: the parent species or genus this strain belongs to
+        range: Taxon
+
+  CultureMediumRelationship:
+    is_a: CompoundExpression
+    description: >-
+      Specific relationships between strains and culture media
+    attributes:
+      subject:
+        description: the strain grown on this medium
+        range: Strain
+      predicate:
+        description: the type of medium relationship (grows_on, requires, uses_medium, etc.)
+        range: CultureMediumRelationshipType
+      object:
+        description: the specific culture medium
+        range: CultureMedium
+
+
+enums:
+  GrowthConditionType:
+    description: Types of growth conditions
+    permissible_values:
+      optimal_growth_temperature:
+        description: The organism's optimal growth temperature
+      temperature_range:
+        description: The organism's temperature growth range
+      optimal_pH:
+        description: The organism's optimal pH for growth
+      pH_range:
+        description: The organism's pH growth range
+      requires_oxygen_level:
+        description: The organism's oxygen requirement
+      grows_at_salinity:
+        description: The organism's salinity tolerance
+      requires_atmosphere:
+        description: The organism's atmospheric requirements
+
+  StrainRelationshipType:
+    description: Type of relationship between strain and parent taxon
+    permissible_values:
+      strain_of:
+        description: Regular strain of a species
+      type_strain_of:
+        description: Type strain of a species
+      reference_strain_of:
+        description: Reference strain of a species
+      isolate_of:
+        description: Clinical or environmental isolate of a species
+      variant_of:
+        description: Variant or mutant strain of a species
+      derived_from:
+        description: Strain derived from another strain (e.g., mutants, subcultures)
+      identical_to:
+        description: Strain is identical or equivalent to another designation
+      deposited_as:
+        description: Strain deposited in culture collection under this designation
+
+  CultureMediumRelationshipType:
+    description: Type of relationship between strain and culture medium
+    permissible_values:
+      grows_on:
+        description: The strain grows on this medium
+      requires:
+        description: The strain requires this medium for growth
+      uses_medium:
+        description: The strain uses this medium
+      optimal_growth_on:
+        description: The strain shows optimal growth on this medium
+
+  ArticleType:
+    description: Type of study or article
+    permissible_values:
+      novel_species:
+        description: Description of new species
+      novel_genus:
+        description: Description of new genus
+      taxonomic_revision:
+        description: Revision or reclassification of existing taxa
+      phylogenetic_analysis:
+        description: Phylogenetic or evolutionary study
+      comparative_taxonomy:
+        description: Comparative analysis of multiple taxa
+      emended_description:
+        description: Emended or updated taxonomic description
+      genome_sequence:
+        description: Complete or draft genome sequence publication
+      review:
+        description: Review article or perspective on taxonomy/microbiology
+      biochemical_characterization:
+        description: Biochemical or physiological characterization study
+      ecological_study:
+        description: Ecological distribution or environmental survey
+      growth_study:
+        description: Study focused on growth conditions and culture optimization
+      physiology_study:
+        description: Physiological characterization or metabolic study
+

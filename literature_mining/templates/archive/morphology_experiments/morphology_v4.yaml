@@ -1,0 +1,467 @@
+id: http://w3id.org/metpo/morphology_extraction_v4
+name: morphology_extraction_v4
+title: METPO Cell Morphology Extraction Template V4 (Conditional Relationships)
+description: >-
+  OntoGPT template for extracting cellular morphology using conditional prompts
+  for relationship fields ("IF features found THEN extract relationships").
+  Attempts to prevent hallucination while maintaining relationship extraction.
+license: https://creativecommons.org/publicdomain/zero/1.0/
+prefixes:
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  linkml: https://w3id.org/linkml/
+  metpo_morphology: http://w3id.org/metpo/morphology_extraction/
+  ontogpt: http://w3id.org/ontogpt/
+default_prefix: metpo_morphology
+default_range: string
+imports:
+  - linkml:types
+  - ontogpt:core
+classes:
+  MorphologyLiteratureExtraction:
+    tree_root: true
+    attributes:
+      pmid:
+        description: >-
+          PubMed ID of the article (e.g., 23996836)
+        range: string
+      study_taxa:
+        description: >-
+          semicolon-separated list of the main bacterial or archaeal taxa being studied for morphology
+        multivalued: true
+        range: Taxon
+      strains:
+        description: >-
+          semicolon-separated list of specific strain designations mentioned in the text
+        multivalued: true
+        range: Strain
+        annotations:
+          prompt: >-
+            Extract ONLY the strain designation part (e.g., "DA-C8", "MG1655", "ATCC 25922") WITHOUT genus/species prefixes. Focus on strain numbers, culture collection codes, and isolate identifiers. Automatically remove terminal "T" or "(T)" suffixes as these indicate type strain status (e.g., "DA-C8T" becomes "DA-C8", "K13T" becomes "K13"). Include strain numbers, culture collection numbers, and isolate names, but NOT the full taxonomic context.
+      cell_shape:
+        description: >-
+          semicolon-separated list of cell shapes in normalized format
+        multivalued: true
+        range: CellShape
+        annotations:
+          prompt: >-
+            Extract ALL cell shapes mentioned in the text. Be COMPREHENSIVE - include all descriptions.
+            For example: rod-shaped; coccus; spiral; curved; filamentous; rod-shaped 0.5 x 2.0 μm
+          exclude: rod-shaped, coccus, spiral, curved, filamentous, 0.5 x 2.0 μm
+      cell_arrangements:
+        description: >-
+          semicolon-separated list of cell arrangements in normalized format
+        multivalued: true
+        range: CellArrangement
+        annotations:
+          prompt: >-
+            Extract ALL cell arrangements mentioned in the text. Be COMPREHENSIVE.
+            For example: single cells; pairs; chains; clusters; tetrads; irregular masses; palisades
+          exclude: single cells, pairs, chains, clusters, tetrads, irregular masses, palisades
+      gram_staining:
+        description: >-
+          semicolon-separated list of Gram staining results
+        multivalued: true
+        range: GramStaining
+        annotations:
+          prompt: >-
+            Extract ALL Gram staining results mentioned in the text. Be COMPREHENSIVE.
+            For example: Gram-positive; Gram-negative; Gram-variable; Gram-indeterminate
+          exclude: Gram-positive, Gram-negative, Gram-variable, Gram-indeterminate
+      motility:
+        description: >-
+          semicolon-separated list of motility characteristics
+        multivalued: true
+        range: Motility
+        annotations:
+          prompt: >-
+            Extract ALL motility information mentioned in the text. Be COMPREHENSIVE.
+            For example: motile; non-motile; flagellar motility; gliding; peritrichous flagella; polar flagellum
+          exclude: motile, non-motile, flagellar motility, gliding, peritrichous flagella, polar flagellum
+      spore_formation:
+        description: >-
+          semicolon-separated list of spore formation characteristics
+        multivalued: true
+        range: SporeFormation
+        annotations:
+          prompt: >-
+            Extract ALL spore formation characteristics mentioned in the text. Be COMPREHENSIVE.
+            For example: spore-forming; non-spore-forming; endospores; terminal spores; subterminal spores; central spores
+          exclude: spore-forming, non-spore-forming, endospores, terminal spores, subterminal spores, central spores
+      cell_wall_characteristics:
+        description: >-
+          semicolon-separated list of cell wall characteristics
+        multivalued: true
+        range: CellWallCharacteristic
+        annotations:
+          prompt: >-
+            Extract ALL cell wall characteristics mentioned in the text. Be COMPREHENSIVE.
+            For example: peptidoglycan; teichoic acids; lipopolysaccharide; outer membrane; S-layer; capsule
+          exclude: peptidoglycan, teichoic acids, lipopolysaccharide, outer membrane, S-layer, capsule
+      cellular_inclusions:
+        description: >-
+          semicolon-separated list of cellular inclusions and internal structures
+        multivalued: true
+        range: CellularInclusion
+        annotations:
+          prompt: >-
+            Extract ALL cellular inclusions and internal structures mentioned in the text. Be COMPREHENSIVE.
+            For example: PHB granules; polyphosphate granules; glycogen; gas vesicles; magnetosomes; carboxysomes
+          exclude: PHB granules, polyphosphate granules, glycogen, gas vesicles, magnetosomes, carboxysomes
+      cell_shape_relationships:
+        description: >-
+          semicolon-separated list of specific strain-cell shape relationships
+        multivalued: true
+        range: CellShapeRelationship
+        annotations:
+          prompt: >-
+            ONLY IF cell shapes were extracted in the cell_shape field above, create strain-to-shape relationships for each one.
+            Link specific strains to their cell shapes. Format: "strain_id has_cell_shape shape_value"
+            For example: Strain22A has_cell_shape rod-shaped; E_coli has_cell_shape rod
+            If NO cell shapes were found above, leave this field empty.
+          exclude: Strain22A, E_coli, rod-shaped, rod
+      cell_arrangement_relationships:
+        description: >-
+          semicolon-separated list of specific strain-cell arrangement relationships
+        multivalued: true
+        range: CellArrangementRelationship
+        annotations:
+          prompt: >-
+            ONLY IF cell arrangements were extracted above, create strain-to-arrangement relationships.
+            If NO cell arrangements were found, leave this field empty.
+          exclude: Strain22A, E_coli, Streptococcus, chains, single_cells, pairs
+      gram_staining_relationships:
+        description: >-
+          semicolon-separated list of specific strain-Gram staining relationships
+        multivalued: true
+        range: GramStainingRelationship
+        annotations:
+          prompt: >-
+            ONLY IF Gram staining results were extracted above, create strain-to-staining relationships.
+            If NO Gram staining was found, leave this field empty.
+          exclude: Bacillus, E_coli, Gardnerella, Gram-positive, Gram-negative, Gram-variable
+      motility_relationships:
+        description: >-
+          semicolon-separated list of specific strain-motility relationships
+        multivalued: true
+        range: MotilityRelationship
+        annotations:
+          prompt: >-
+            ONLY IF motility characteristics were extracted above, create strain-to-motility relationships.
+            If NO motility information was found, leave this field empty.
+          exclude: E_coli, Klebsiella, Pseudomonas, motile, non-motile, flagellar_motility
+      spore_formation_relationships:
+        description: >-
+          semicolon-separated list of specific strain-spore formation relationships
+        multivalued: true
+        range: SporeFormationRelationship
+        annotations:
+          prompt: >-
+            ONLY IF spore formation characteristics were extracted above, create strain-to-spore relationships.
+            If NO spore information was found, leave this field empty.
+          exclude: Bacillus, Clostridium, E_coli, spore-forming, terminal_spores, non-spore-forming
+      cell_wall_relationships:
+        description: >-
+          semicolon-separated list of specific strain-cell wall relationships
+        multivalued: true
+        range: CellWallRelationship
+        annotations:
+          prompt: >-
+            ONLY IF cell wall characteristics were extracted above, create strain-to-cell-wall relationships.
+            If NO cell wall features were found, leave this field empty.
+          exclude: E_coli, Mycobacterium, Staphylococcus, peptidoglycan, mycolic_acids, teichoic_acids
+      cellular_inclusion_relationships:
+        description: >-
+          semicolon-separated list of specific strain-cellular inclusion relationships
+        multivalued: true
+        range: CellularInclusionRelationship
+        annotations:
+          prompt: >-
+            ONLY IF cellular inclusions were extracted above, create strain-to-inclusion relationships.
+            If NO inclusions were found, leave this field empty.
+          exclude: Ralstonia, Halobacterium, Cyanobacteria, PHB_granules, gas_vesicles, carboxysomes
+      pigmentation:
+        description: >-
+          semicolon-separated list of pigmentation and colony color characteristics
+        multivalued: true
+        range: Pigmentation
+        annotations:
+          prompt: >-
+            Extract ALL pigmentation and colony color characteristics mentioned in the text. Be COMPREHENSIVE.
+            For example: yellow; orange; carotenoid pigmentation; white colonies; fluorescent; non-diffusible pigment
+          exclude: yellow, orange, carotenoid pigmentation, white colonies, fluorescent, non-diffusible pigment
+      strain_relationships:
+        description: >-
+          semicolon-separated list of strain-species relationships found in the text
+        multivalued: true
+        range: StrainRelationship
+        annotations:
+          prompt: >-
+            Extract ALL strain-taxon relationships mentioned in the text. Be COMPREHENSIVE.
+            For example: MG1655 strain_of Escherichia_coli; K-12 strain_of Escherichia_coli; ATCC_25922 type_strain_of Klebsiella_pneumoniae
+          exclude: MG1655, K-12, ATCC_25922, Escherichia_coli, Klebsiella_pneumoniae
+      article_type:
+        description: >-
+          the type of study described in this article
+        range: ArticleType
+        annotations:
+          prompt: >-
+            The type of study or article. Choose the most appropriate category based on the content.
+      source_text:
+        range: string
+        annotations:
+          prompt.skip: "true"
+
+  Taxon:
+    is_a: NamedEntity
+    description: >-
+      Bacterial, archaeal, or other microbial taxa being studied for morphology.
+    annotations:
+      annotators: sqlite:obo:ncbitaxon
+
+  Strain:
+    is_a: NamedEntity
+    description: >-
+      Specific bacterial or archaeal strain designations including culture collection numbers, type strains, and isolate identifiers.
+
+  CellShape:
+    is_a: NamedEntity
+    description: >-
+      Cell morphological shapes and forms including rod, coccus, spirillum, vibrio, filamentous, and other cellular geometries.
+    annotations:
+      annotators: sqlite:obo:metpo
+
+  CellArrangement:
+    is_a: NamedEntity
+    description: >-
+      Patterns of cellular organization and grouping including single cells, pairs, chains, clusters, tetrads, and other arrangements.
+    annotations:
+      annotators: sqlite:obo:metpo
+
+  GramStaining:
+    is_a: NamedEntity
+    description: >-
+      Gram staining results and cell wall characteristics including Gram-positive, Gram-negative, and related staining properties.
+    annotations:
+      annotators: sqlite:obo:metpo
+
+  Motility:
+    is_a: NamedEntity
+    description: >-
+      Cellular motility characteristics including flagellar motility, gliding motility, twitching motility, and related movement mechanisms.
+    annotations:
+      annotators: sqlite:obo:metpo
+
+  SporeFormation:
+    is_a: NamedEntity
+    description: >-
+      Spore formation characteristics including endospore formation, spore positioning, and sporulation mechanisms.
+    annotations:
+      annotators: sqlite:obo:metpo
+
+  CellularInclusion:
+    is_a: NamedEntity
+    description: >-
+      Cellular inclusions and internal structures including storage granules, gas vesicles, and other intracellular components.
+    annotations:
+      annotators: sqlite:obo:metpo
+
+  CellWallCharacteristic:
+    is_a: NamedEntity
+    description: >-
+      Cell wall characteristics and components including peptidoglycan, teichoic acids, lipopolysaccharide, and structural features.
+    annotations:
+      annotators: sqlite:obo:metpo
+
+  Pigmentation:
+    is_a: NamedEntity
+    description: >-
+      Colony pigmentation and color characteristics including yellow, orange, red, carotenoid pigmentation, and other color properties.
+    annotations:
+      annotators: sqlite:obo:metpo
+
+  CellShapeRelationship:
+    is_a: CompoundExpression
+    description: >-
+      Specific relationships between strains and their cell shapes
+    attributes:
+      subject:
+        description: the strain with this cell shape
+        range: Strain
+      predicate:
+        description: the type of cell shape relationship
+        range: MorphologyType
+      object:
+        description: the specific cell shape
+        range: CellShape
+
+  CellArrangementRelationship:
+    is_a: CompoundExpression
+    description: >-
+      Specific relationships between strains and their cell arrangements
+    attributes:
+      subject:
+        description: the strain with this cell arrangement
+        range: Strain
+      predicate:
+        description: the type of cell arrangement relationship
+        range: MorphologyType
+      object:
+        description: the specific cell arrangement pattern
+        range: CellArrangement
+
+  GramStainingRelationship:
+    is_a: CompoundExpression
+    description: >-
+      Specific relationships between strains and their Gram staining results
+    attributes:
+      subject:
+        description: the strain with this staining result
+        range: Strain
+      predicate:
+        description: the type of staining relationship
+        range: MorphologyType
+      object:
+        description: the specific Gram staining result
+        range: GramStaining
+
+  MotilityRelationship:
+    is_a: CompoundExpression
+    description: >-
+      Specific relationships between strains and their motility characteristics
+    attributes:
+      subject:
+        description: the strain with this motility characteristic
+        range: Strain
+      predicate:
+        description: the type of motility relationship
+        range: MorphologyType
+      object:
+        description: the specific motility characteristic
+        range: Motility
+
+  SporeFormationRelationship:
+    is_a: CompoundExpression
+    description: >-
+      Specific relationships between strains and their spore formation characteristics
+    attributes:
+      subject:
+        description: the strain with this spore formation characteristic
+        range: Strain
+      predicate:
+        description: the type of spore formation relationship
+        range: MorphologyType
+      object:
+        description: the specific spore formation characteristic
+        range: SporeFormation
+
+  CellWallRelationship:
+    is_a: CompoundExpression
+    description: >-
+      Specific relationships between strains and their cell wall characteristics
+    attributes:
+      subject:
+        description: the strain with this cell wall characteristic
+        range: Strain
+      predicate:
+        description: the type of cell wall relationship
+        range: MorphologyType
+      object:
+        description: the specific cell wall characteristic
+        range: CellWallCharacteristic
+
+  CellularInclusionRelationship:
+    is_a: CompoundExpression
+    description: >-
+      Specific relationships between strains and their cellular inclusions
+    attributes:
+      subject:
+        description: the strain with this cellular inclusion
+        range: Strain
+      predicate:
+        description: the type of cellular inclusion relationship
+        range: MorphologyType
+      object:
+        description: the specific cellular inclusion
+        range: CellularInclusion
+
+  StrainRelationship:
+    is_a: CompoundExpression
+    description: >-
+      Specific relationships between strain designations and their parent taxonomic groups
+    attributes:
+      subject:
+        description: the specific strain designation or identifier
+        range: Strain
+      predicate:
+        description: the type of strain-taxon relationship (strain_of, type_strain_of, isolate_of, etc.)
+        range: StrainRelationshipType
+      object:
+        description: the parent species or genus this strain belongs to
+        range: Taxon
+
+enums:
+  MorphologyType:
+    description: Types of morphological characteristics
+    permissible_values:
+      has_cell_shape:
+        description: The organism has the specified cell shape
+      has_arrangement:
+        description: The organism has the specified cell arrangement
+      has_gram_staining:
+        description: The organism has the specified Gram staining result
+      has_motility:
+        description: The organism has the specified motility characteristic
+      has_spore_formation:
+        description: The organism has the specified spore formation characteristic
+      has_cell_wall_feature:
+        description: The organism has the specified cell wall characteristic
+      has_inclusion:
+        description: The organism has the specified cellular inclusion
+
+  StrainRelationshipType:
+    description: Type of relationship between strain and parent taxon
+    permissible_values:
+      strain_of:
+        description: Regular strain of a species
+      type_strain_of:
+        description: Type strain of a species
+      reference_strain_of:
+        description: Reference strain of a species
+      isolate_of:
+        description: Clinical or environmental isolate of a species
+      variant_of:
+        description: Variant or mutant strain of a species
+      derived_from:
+        description: Strain derived from another strain (e.g., mutants, subcultures)
+      identical_to:
+        description: Strain is identical or equivalent to another designation
+      deposited_as:
+        description: Strain deposited in culture collection under this designation
+
+  ArticleType:
+    description: Type of study or article
+    permissible_values:
+      novel_species:
+        description: Description of new species
+      novel_genus:
+        description: Description of new genus
+      taxonomic_revision:
+        description: Revision or reclassification of existing taxa
+      phylogenetic_analysis:
+        description: Phylogenetic or evolutionary study
+      comparative_taxonomy:
+        description: Comparative analysis of multiple taxa
+      emended_description:
+        description: Emended or updated taxonomic description
+      genome_sequence:
+        description: Complete or draft genome sequence publication
+      review:
+        description: Review article or perspective
+      biochemical_characterization:
+        description: Biochemical or physiological characterization study
+      ecological_study:
+        description: Ecological distribution or environmental survey
+      morphological_characterization:
+        description: Study focused on cellular morphology and microscopy
+      physiology_study:
+        description: Physiological characterization or growth studies
