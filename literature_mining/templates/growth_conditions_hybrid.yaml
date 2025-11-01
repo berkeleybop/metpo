@@ -1,0 +1,289 @@
+id: http://w3id.org/metpo/growth_conditions_extraction_hybrid
+name: growth_conditions_extraction_hybrid
+title: METPO Growth Conditions Extraction Template (Hybrid Optimized)
+description: >-
+  Optimized OntoGPT template for extracting bacterial growth conditions
+  from literature. Applies inline examples + comprehensiveness optimizations
+  from chemical_utilization_hybrid template. Single consolidated field
+  architecture for maximum extraction efficiency.
+license: https://creativecommons.org/publicdomain/zero/1.0/
+prefixes:
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  linkml: https://w3id.org/linkml/
+  metpo_growth: http://w3id.org/metpo/growth_conditions_extraction/
+  ontogpt: http://w3id.org/ontogpt/
+  METPO: http://purl.obolibrary.org/obo/METPO_
+default_prefix: metpo_growth
+default_range: string
+imports:
+  - linkml:types
+  - ontogpt:core
+classes:
+  GrowthConditionsLiteratureExtraction:
+    tree_root: true
+    attributes:
+      pmid:
+        description: >-
+          PubMed ID of the article (e.g., 23996836)
+        range: string
+      study_taxa:
+        description: >-
+          semicolon-separated list of the main bacterial or archaeal taxa
+          being studied for growth conditions
+        multivalued: true
+        range: Taxon
+      strains:
+        description: >-
+          semicolon-separated list of specific strain designations mentioned in the text
+        multivalued: true
+        range: Strain
+        annotations:
+          prompt: >-
+            Extract strain designations WITHOUT genus/species prefixes. Remove terminal "T" or "(T)" suffixes.
+            For example: 22A; AM1; MG1655; K13
+          exclude: 22A, AM1, MG1655, K13
+      growth_conditions:
+        description: >-
+          List of specific strain/taxon-growth condition relationships with condition types
+        multivalued: true
+        range: GrowthCondition
+        annotations:
+          prompt: >-
+            Extract ALL strain-growth condition relationships mentioned in the text. Be COMPREHENSIVE - do not omit any growth parameters. Use EXACTLY the same strain identifiers from the strains field above.
+
+            For example: Strain22A optimal_growth_temperature 28°C; MG1655 temperature_range 15-45°C; BacillusK thermophilic; StrainDA optimal_pH 7.0; Geobacter pH_range 6.5-8.0; E_coli facultative_anaerobic; Clostridium obligately_anaerobic; Halomonas grows_at_salinity 3.5% NaCl; Strain22A grows_on R2A; MG1655 requires_medium LB; NitrogenFixer requires_atmosphere N2
+
+            Extract BOTH optimal conditions AND ranges AND special requirements.
+            Be thorough and capture all growth parameters described in the text.
+          exclude: Strain22A, MG1655, BacillusK, StrainXYZ, StrainDA, Geobacter, Streptomyces, Lactobacillus, E_coli, Clostridium, Bacillus, Campylobacter, Halomonas, Vibrio, MarineBacter, Salinibacter, IsolateXYZ, NitrogenFixer, Phototroph, Methanogen, K13, 28°C, 15-45°C, 7.0, 6.5-8.0, 3.5% NaCl, 0-5% NaCl, R2A, LB, minimal_medium_with_glucose, TSB, N2, 5%, thermophilic, mesophilic, alkaliphilic, acidophilic, facultative_anaerobic, obligately_anaerobic, aerobic, microaerophilic, halophilic, extremely_halophilic, anaerobic_conditions
+      strain_relationships:
+        description: >-
+          semicolon-separated list of strain-species relationships found in the text,
+          capturing specific strain designations and their parent taxa
+        multivalued: true
+        range: StrainRelationship
+        annotations:
+          prompt: >-
+            Connect strain identifiers to parent taxa. Use EXACTLY the same strain identifiers from the strains field.
+            For example: 22A strain_of Methylobacterium_aquaticum; MG1655 strain_of Escherichia_coli
+          exclude: 22A, MG1655, Methylobacterium_aquaticum, Escherichia_coli
+      article_type:
+        description: >-
+          the type of study described in this article
+        range: ArticleType
+        annotations:
+          prompt: >-
+            Choose the most appropriate category. Prefer growth_study for articles focusing on culture optimization or physiology_study for metabolic/physiological characterization.
+      source_text:
+        range: string
+        annotations:
+          prompt.skip: "true"
+
+  Taxon:
+    is_a: NamedEntity
+    description: >-
+      Bacterial, archaeal, or other microbial taxa being studied for
+      growth conditions.
+    annotations:
+      annotators: sqlite:obo:ncbitaxon
+
+  Strain:
+    is_a: NamedEntity
+    description: >-
+      Specific bacterial or archaeal strain designations including culture collection numbers, type strains, and isolate identifiers.
+
+  GrowthCondition:
+    is_a: CompoundExpression
+    description: >-
+      A specific organism-growth condition relationship including the organism,
+      the type of condition, and the condition value
+    attributes:
+      subject:
+        description: the organism (strain or taxon) with this growth condition
+        any_of:
+          - range: Strain
+          - range: Taxon
+      predicate:
+        description: the type of growth condition relationship
+        range: GrowthConditionType
+      object:
+        description: the specific growth condition value (temperature, pH, oxygen, salt, medium, or atmospheric requirement)
+        any_of:
+          - range: TemperatureCondition
+          - range: PHCondition
+          - range: OxygenRequirement
+          - range: SaltTolerance
+          - range: CultureMedium
+          - range: AtmosphericRequirement
+
+  CultureMedium:
+    is_a: NamedEntity
+    description: >-
+      Culture media names, types, and compositions used for bacterial growth.
+      Includes complex media (TSB, LB), defined media, minimal media, and
+      specific media compositions.
+
+  OxygenRequirement:
+    is_a: NamedEntity
+    description: >-
+      Oxygen requirements and atmospheric oxygen conditions for bacterial growth.
+      Includes aerobic, anaerobic, microaerophilic, and facultative conditions.
+    annotations:
+      annotators: sqlite:../src/ontology/metpo.owl
+
+  AtmosphericRequirement:
+    is_a: NamedEntity
+    description: >-
+      Atmospheric and gaseous requirements for bacterial growth including
+      specific gas concentrations and atmospheric conditions.
+    annotations:
+      annotators: sqlite:../src/ontology/metpo.owl, sqlite:obo:chebi
+
+  TemperatureCondition:
+    is_a: NamedEntity
+    description: >-
+      Temperature conditions and ranges for bacterial growth including
+      specific temperatures, ranges, and thermal classifications.
+    annotations:
+      annotators: sqlite:../src/ontology/metpo.owl
+
+  PHCondition:
+    is_a: NamedEntity
+    description: >-
+      pH conditions and ranges for bacterial growth including specific
+      pH values, ranges, and acidity classifications.
+    annotations:
+      annotators: sqlite:../src/ontology/metpo.owl
+
+  SaltTolerance:
+    is_a: NamedEntity
+    description: >-
+      Salt tolerance conditions for bacterial growth including salt
+      concentrations, ranges, and halophilic classifications.
+    annotations:
+      annotators: sqlite:../src/ontology/metpo.owl, sqlite:obo:chebi
+
+  StrainRelationship:
+    is_a: CompoundExpression
+    description: >-
+      Specific relationships between strain designations and their parent taxonomic groups
+    attributes:
+      subject:
+        description: the specific strain designation or identifier
+        range: Strain
+      predicate:
+        description: the type of strain-taxon relationship (strain_of, type_strain_of, isolate_of, etc.)
+        range: StrainRelationshipType
+      object:
+        description: the parent species or genus this strain belongs to
+        range: Taxon
+
+
+enums:
+  GrowthConditionType:
+    description: Types of growth conditions
+    permissible_values:
+      optimal_growth_temperature:
+        description: The organism's optimal growth temperature
+      temperature_range:
+        description: The organism's temperature growth range
+      optimal_pH:
+        description: The organism's optimal pH for growth
+      pH_range:
+        description: The organism's pH growth range
+      requires_oxygen_level:
+        description: The organism's oxygen requirement
+      grows_at_salinity:
+        description: The organism's salinity tolerance
+      requires_atmosphere:
+        description: The organism's atmospheric requirements
+      grows_on:
+        description: The strain grows on this medium
+      requires_medium:
+        description: The strain requires this medium for growth
+      uses_medium:
+        description: The strain uses this medium
+      optimal_growth_on:
+        description: The strain shows optimal growth on this medium
+      grows_at_pH:
+        description: The organism grows at this pH
+      facultative_anaerobic:
+        description: The organism is facultatively anaerobic
+      obligately_anaerobic:
+        description: The organism is obligately anaerobic
+      aerobic:
+        description: The organism is aerobic
+      obligately_aerobic:
+        description: The organism is obligately aerobic
+      microaerophilic:
+        description: The organism is microaerophilic
+      salt_range:
+        description: The organism's salt tolerance range
+      halophilic:
+        description: The organism is halophilic
+      extremely_halophilic:
+        description: The organism is extremely halophilic
+      thermophilic:
+        description: The organism is thermophilic
+      mesophilic:
+        description: The organism is mesophilic
+      psychrophilic:
+        description: The organism is psychrophilic
+      alkaliphilic:
+        description: The organism is alkaliphilic
+      acidophilic:
+        description: The organism is acidophilic
+      neutrophilic:
+        description: The organism is neutrophilic
+      needs_CO2:
+        description: The organism needs CO2
+      anaerobic_conditions:
+        description: The organism requires anaerobic conditions
+
+  StrainRelationshipType:
+    description: Type of relationship between strain and parent taxon
+    permissible_values:
+      strain_of:
+        description: Regular strain of a species
+      type_strain_of:
+        description: Type strain of a species
+      reference_strain_of:
+        description: Reference strain of a species
+      isolate_of:
+        description: Clinical or environmental isolate of a species
+      variant_of:
+        description: Variant or mutant strain of a species
+      derived_from:
+        description: Strain derived from another strain (e.g., mutants, subcultures)
+      identical_to:
+        description: Strain is identical or equivalent to another designation
+      deposited_as:
+        description: Strain deposited in culture collection under this designation
+
+  ArticleType:
+    description: Type of study or article
+    permissible_values:
+      novel_species:
+        description: Description of new species
+      novel_genus:
+        description: Description of new genus
+      taxonomic_revision:
+        description: Revision or reclassification of existing taxa
+      phylogenetic_analysis:
+        description: Phylogenetic or evolutionary study
+      comparative_taxonomy:
+        description: Comparative analysis of multiple taxa
+      emended_description:
+        description: Emended or updated taxonomic description
+      genome_sequence:
+        description: Complete or draft genome sequence publication
+      review:
+        description: Review article or perspective on taxonomy/microbiology
+      biochemical_characterization:
+        description: Biochemical or physiological characterization study
+      ecological_study:
+        description: Ecological distribution or environmental survey
+      growth_study:
+        description: Study focused on growth conditions and culture optimization
+      physiology_study:
+        description: Physiological characterization or metabolic study
