@@ -11,6 +11,7 @@ dependencies = [
     "click==8.3.0",
     "pymongo==4.15.3",
     "pyyaml==6.0.3",
+    "requests>=2.32.0",
 ]
 
 [project.optional-dependencies]
@@ -30,7 +31,11 @@ notebooks = [
     "python-dotenv>=1.2.1",
     "python-levenshtein>=0.27.1",
     "requests>=2.32.5",
+    "numpy>=2.0.2",
+    "pandas>=2.3.3",
+    "chromadb>=1.2.2",
     "tqdm>=4.67.1",
+    "openai>=2.6.1",
 ]
 
 [project.scripts]
@@ -43,6 +48,10 @@ bactotraits-metpo-set-difference = "metpo.scripts.bactotraits_metpo_set_differen
 create-bactotraits-field-mappings = "metpo.scripts.create_bactotraits_header_mapping:main"
 create-bactotraits-file-versions = "metpo.scripts.create_bactotraits_file_versions:main"
 create-bactotraits-files = "metpo.scripts.create_bactotraits_files:main"
+update-manifest = "metpo.scripts.update_manifest:main"
+scan-manifest = "metpo.scripts.scan_manifest:main"
+download-ontology = "metpo.scripts.download_ontology:main"
+query-ontology = "metpo.scripts.query_ontology:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["metpo"]

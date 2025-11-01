@@ -1,0 +1,201 @@
+
+================================================================================
+Auditing: ./chroma_ols_27 / ols_embeddings
+================================================================================
+
+Total embeddings: 768,323
+Scanning all embeddings...
+
+--- Vector Dimensions ---
+✓ All vectors same dimension: 1536
+
+--- Ontology Distribution (768,323 embeddings) ---
+Ontology             Count        % of Total  
+----------------------------------------------------------------------
+chebi                221,776       28.86%
+upheno               192,001       24.99%
+go                   84,737        11.03%
+oba                  73,148         9.52%
+foodon               40,123         5.22%
+flopo                35,359         4.60%
+micro                17,645         2.30%
+cl                   17,521         2.28%
+fypo                 17,232         2.24%
+ecto                 12,404         1.61%
+pato                 9,061          1.18%
+aro                  8,551          1.11%
+envo                 7,365          0.96%
+ecocore              6,086          0.79%
+eupath               5,406          0.70%
+phipo                4,327          0.56%
+mco                  3,491          0.45%
+eco                  3,449          0.45%
+omp                  2,440          0.32%
+ddpheno              1,397          0.18%
+ohmi                 1,244          0.16%
+cmpo                 1,134          0.15%
+biolink              974            0.13%
+apo                  646            0.08%
+pco                  435            0.06%
+geo                  196            0.03%
+exo                  175            0.02%
+
+Total unique ontologies: 27
+
+================================================================================
+Auditing: ../embeddings_chroma / non_ols_embeddings
+================================================================================
+
+Total embeddings: 10,173
+Scanning all embeddings...
+
+--- Vector Dimensions ---
+✓ All vectors same dimension: 1536
+
+--- Ontology Distribution (10,173 embeddings) ---
+Ontology             Count        % of Total  
+----------------------------------------------------------------------
+meo                  2,499         24.57%
+omp                  2,309         22.70%
+bipon                1,746         17.16%
+gmo                  1,557         15.31%
+n4l_merged           454            4.46%
+miso                 387            3.80%
+mpo                  320            3.15%
+d3o                  283            2.78%
+id-amr               271            2.66%
+ofsmr                157            1.54%
+fmpm                 155            1.52%
+typon                19             0.19%
+mccv                 16             0.16%
+
+Total unique ontologies: 13
+
+Ontologies with < 100 embeddings:
+  mccv                    16 ( 0.16%)
+  typon                   19 ( 0.19%)
+
+================================================================================
+Auditing: ./chroma_combined / combined_embeddings
+================================================================================
+
+Total embeddings: 778,496
+Scanning all embeddings...
+
+--- Vector Dimensions ---
+✓ All vectors same dimension: 1536
+
+--- Ontology Distribution (778,496 embeddings) ---
+Ontology             Count        % of Total  
+----------------------------------------------------------------------
+chebi                221,776       28.49%
+upheno               192,001       24.66%
+go                   84,737        10.88%
+oba                  73,148         9.40%
+foodon               40,123         5.15%
+flopo                35,359         4.54%
+micro                17,645         2.27%
+cl                   17,521         2.25%
+fypo                 17,232         2.21%
+ecto                 12,404         1.59%
+pato                 9,061          1.16%
+aro                  8,551          1.10%
+envo                 7,365          0.95%
+ecocore              6,086          0.78%
+eupath               5,406          0.69%
+omp                  4,749          0.61%
+phipo                4,327          0.56%
+mco                  3,491          0.45%
+eco                  3,449          0.44%
+meo                  2,499          0.32%
+bipon                1,746          0.22%
+gmo                  1,557          0.20%
+ddpheno              1,397          0.18%
+ohmi                 1,244          0.16%
+cmpo                 1,134          0.15%
+biolink              974            0.13%
+apo                  646            0.08%
+n4l_merged           454            0.06%
+pco                  435            0.06%
+miso                 387            0.05%
+mpo                  320            0.04%
+d3o                  283            0.04%
+id-amr               271            0.03%
+geo                  196            0.03%
+exo                  175            0.02%
+ofsmr                157            0.02%
+fmpm                 155            0.02%
+typon                19             0.00%
+mccv                 16             0.00%
+
+Total unique ontologies: 39
+
+Ontologies with < 100 embeddings:
+  mccv                    16 ( 0.00%)
+  typon                   19 ( 0.00%)
+
+
+================================================================================
+CROSS-DATABASE COMPARISON
+================================================================================
+
+Total Counts:
+  OLS:          768,323
+  Non-OLS:       10,173
+  Combined:     778,496
+  Expected:     778,496
+  ✓ Combined count matches OLS + Non-OLS
+
+Vector Dimensions:
+  ✓ All databases use same dimension: 1536
+
+Ontology Coverage:
+  OLS ontologies: 27
+  Non-OLS ontologies: 13
+  Combined ontologies: 39
+  Expected: 39
+  ✓ All ontologies present in combined
+
+OLS-only ontologies (26):
+  - apo                  646
+  - aro                  8,551
+  - biolink              974
+  - chebi                221,776
+  - cl                   17,521
+  - cmpo                 1,134
+  - ddpheno              1,397
+  - eco                  3,449
+  - ecocore              6,086
+  - ecto                 12,404
+  - envo                 7,365
+  - eupath               5,406
+  - exo                  175
+  - flopo                35,359
+  - foodon               40,123
+  - fypo                 17,232
+  - geo                  196
+  - go                   84,737
+  - mco                  3,491
+  - micro                17,645
+  - oba                  73,148
+  - ohmi                 1,244
+  - pato                 9,061
+  - pco                  435
+  - phipo                4,327
+  - upheno               192,001
+
+Non-OLS-only ontologies (12):
+  - bipon                1,746
+  - d3o                  283
+  - fmpm                 155
+  - gmo                  1,557
+  - id-amr               271
+  - mccv                 16
+  - meo                  2,499
+  - miso                 387
+  - mpo                  320
+  - n4l_merged           454
+  - ofsmr                157
+  - typon                19
+
+================================================================================

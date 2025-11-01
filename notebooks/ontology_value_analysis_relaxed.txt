@@ -1,0 +1,126 @@
+Loading mappings from: metpo_mappings_combined_relaxed.sssom.tsv
+
+Loaded 3008 mappings
+Unique ontology files (object_source): 33
+Unique term sources (from IRI): 94
+
+====================================================================================================
+NATIVE vs IMPORTED TERMS BY ONTOLOGY FILE
+====================================================================================================
+
+Ontology        Total    Native   Imported   Native %   METPO Terms  Provides
+----------------------------------------------------------------------------------------------------
+micro           974      910      64         93.4       158          MICRO(910), PATO(22), unknown(14)
+upheno          427      12       415        2.8        110          PATO(101), GO(98), FYPO(50)
+flopo           290      253      37         87.2       58           FLOPO(253), PATO(31), BFO(2)
+oba             225      16       209        7.1        87           GO(131), PATO(30), CL(20)
+n4l_merged      157      0        157        0.0        72           TemperatureCondition(9), FacultativeAnaerobe(7), Thermotolerant(7)
+omp             128      117      11         91.4       43           OMP(117), GO(5), PATO(4)
+go              79       12       67         15.2       35           CHEBI(47), GO(12), NCBITAXON(8)
+ecocore         51       40       11         78.4       37           ECOCORE(40), GO(5), BFO(2)
+meo             40       0        40         0.0        24           unknown(40)
+foodon          37       10       27         27.0       25           UO(13), FOODON(10), CHEBI(4)
+mco             37       20       17         54.1       29           MCO(20), unknown(8), MICRO(3)
+d3o             35       0        35         0.0        28           unknown(35)
+envo            34       3        31         8.8        21           GO(17), CHEBI(7), PATO(5)
+pato            34       31       3          91.2       27           PATO(31), CHEBI(1), CL(1)
+fypo            17       2        15         11.8       12           GO(7), BFO(3), CHEBI(2)
+cl              17       10       7          58.8       16           CL(10), PATO(5), GO(2)
+ohmi            13       3        10         23.1       8            NCBITAXON(7), OHMI(3), BFO(2)
+eupath          12       0        12         0.0        9            NCBITAXON(6), BFO(3), CHEBI(1)
+biolink         12       12       0          100.0      6            biolink(12)
+chebi           10       10       0          100.0      8            CHEBI(10)
+miso            10       0        10         0.0        10           unknown(10)
+phipo           9        3        6          33.3       8            PHIPO(3), CHEBI(2), GO(2)
+eco             9        0        9          0.0        8            GO(7), BFO(2)
+apo             8        8        0          100.0      7            APO(8)
+ecto            8        0        8          0.0        7            BFO(3), CHEBI(2), GO(1)
+pco             7        2        5          28.6       6            BFO(2), PCO(2), GO(1)
+cmpo            6        0        6          0.0        6            PATO(4), GO(1), unknown(1)
+gmo             5        0        5          0.0        5            unknown(5)
+bipon           3        0        3          0.0        2            unknown(2), CHEBI(1)
+geo             2        0        2          0.0        2            BFO(2)
+exo             2        2        0          100.0      2            EXO(2)
+id-amr          2        0        2          0.0        1            unknown(2)
+aro             1        0        1          0.0        1            NCIT(1)
+
+====================================================================================================
+TERM SOURCE REDUNDANCY: Which term sources appear in multiple ontology files?
+====================================================================================================
+
+Term Source     Available in N files      Ontology Files
+----------------------------------------------------------------------------------------------------
+GO              19                        cl, cmpo, eco, ecocore, ecto, envo, eupath, flopo, foodon, fypo, go, mco, micro, oba, omp, pato, pco, phipo, upheno
+CHEBI           16                        bipon, chebi, ecto, envo, eupath, flopo, foodon, fypo, go, mco, micro, oba, omp, pato, phipo, upheno
+BFO             16                        eco, ecocore, ecto, envo, eupath, flopo, fypo, geo, go, mco, micro, oba, ohmi, pco, phipo, upheno
+PATO            13                        cl, cmpo, ecocore, envo, flopo, foodon, fypo, go, micro, oba, omp, pato, upheno
+unknown         11                        bipon, cmpo, d3o, gmo, go, id-amr, mco, meo, micro, miso, oba
+RO              10                        ecocore, ecto, flopo, foodon, fypo, go, micro, oba, pco, phipo
+CL              7                         cl, ecocore, flopo, go, oba, pato, upheno
+NCBITAXON       6                         eupath, foodon, go, micro, oba, ohmi
+UPHENO          2                         ohmi, upheno
+OBA             3                         go, oba, upheno
+ECOCORE         3                         ecocore, foodon, pco
+FYPO            2                         fypo, upheno
+biolink         1                         biolink
+PHIPO           2                         phipo, upheno
+APO             2                         apo, upheno
+MICRO           2                         mco, micro
+FOODON          2                         ecto, foodon
+ENVO            2                         envo, micro
+HP              2                         oba, upheno
+UBERON          2                         oba, upheno
+
+====================================================================================================
+ONTOLOGIES PROVIDING ONLY IMPORTED TERMS
+====================================================================================================
+These might be redundant if their terms are available from native sources.
+
+Ontology        Total Matches   Provides (all imported)
+--------------------------------------------------------------------------------
+n4l_merged      157             TemperatureCondition(9), FacultativeAnaerobe(7), Thermotolerant(7), MidRangeTemperatureCondition(6), OxygenCondition(6), Hyperthermophile(6), Microaerobic(6), Anaerobe(5), Thermophile(5), media(5), ExtremeLowTemperatureCondition(5), OxygenPhenotype(5), LowTemperatureCondition(4), ExtremeHighTemperatureCondition(4), Aerobic(4), Alkalophile(4), GrowthObservation(4), StrictAnaerobe(4), AerotolerantAnaerobe(4), Aerobe(3), AnaerobicRespiration(3), Motile(3), StrictAerobe(3), ModerateHighTemperatureCondition(2), Acidophile(2), NonMotile(2), Psychrotolerant(2), MotilityObservation(2), HighlyMotile(2), Respiration(2), ExtremePsychrophile(2), Microaerophilic(2), TemperaturePhenotype(2), HighTemperatureCondition(2), Psychrophile(2), HighPHCondition(1), MetabolismPhenotype(1), Metabolism(1), Phenotype(1), PHPhenotype(1), Microorganism(1), VeryHighTemperatureCondition(1), infersOxygenPhenotypeBasedOnAerobicAndOneOtherCondition(1), Mesophile(1), Vibrio(1), CellShapeModifier(1), FormOfMotility(1), MotilityModifier(1), NoRespiration(1), Gliding(1), infersGrowthObservationInAerobicCondition(1), DirectObservation(1), Fermentation(1), WeakFermentation(1), NoFermentation(1), Neutrophile(1)
+meo             40              unknown(40)
+d3o             35              unknown(35)
+eupath          12              NCBITAXON(6), BFO(3), CHEBI(1), GO(1), CMO(1)
+  └─ CHEBI: 10 matches available natively from chebi
+  └─ GO: 12 matches available natively from go
+miso            10              unknown(10)
+eco             9               GO(7), BFO(2)
+  └─ GO: 12 matches available natively from go
+ecto            8               BFO(3), CHEBI(2), GO(1), RO(1), FOODON(1)
+  └─ CHEBI: 10 matches available natively from chebi
+  └─ GO: 12 matches available natively from go
+  └─ FOODON: 10 matches available natively from foodon
+cmpo            6               PATO(4), GO(1), unknown(1)
+  └─ PATO: 31 matches available natively from pato
+  └─ GO: 12 matches available natively from go
+gmo             5               unknown(5)
+bipon           3               unknown(2), CHEBI(1)
+  └─ CHEBI: 10 matches available natively from chebi
+geo             2               BFO(2)
+id-amr          2               unknown(2)
+aro             1               NCIT(1)
+
+====================================================================================================
+UNIQUE NATIVE CONTRIBUTIONS
+====================================================================================================
+Terms that ONLY appear from their native ontology (not imported elsewhere).
+
+Term Source     Ontology File   Matches    METPO Terms
+------------------------------------------------------------
+FLOPO           flopo           253        43
+OMP             omp             117        38
+MCO             mco             20         16
+OHMI            ohmi            3          2
+EXO             exo             2          2
+PCO             pco             2          1
+
+====================================================================================================
+REMOVAL CANDIDATES: Ontologies that might be redundant
+====================================================================================================
+Criteria: Only imported terms AND all terms available from native sources.
+
+No clear removal candidates found.
+All ontologies either provide native terms or unique imported terms.
+
+====================================================================================================

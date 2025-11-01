@@ -1,0 +1,74 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+PREFIX IAO: <http://purl.obolibrary.org/obo/IAO_>
+PREFIX obo: <http://purl.obolibrary.org/obo#>
+PREFIX spin: <http://spinrdf.org/spin#>
+
+SELECT
+  ?class
+  (GROUP_CONCAT(DISTINCT ?label; separator=" | ") AS ?labels)
+  (GROUP_CONCAT(DISTINCT ?synonym; separator=" | ") AS ?synonyms)
+  (GROUP_CONCAT(DISTINCT ?definition; separator=" | ") AS ?definitions)
+WHERE {
+  # Get all OWL classes or SKOS concepts
+  { ?class rdf:type owl:Class . }
+  UNION
+  { ?class rdf:type skos:Concept . }
+
+  # Exclude OWL/RDF built-in classes
+  FILTER (!STRSTARTS(str(?class), "http://www.w3.org/"))
+
+  # Get labels from multiple properties
+  # Covers: rdfs:label (all ontologies), skos:prefLabel (GMO),
+  #         dc:title (D3O), spin:labelTemplate (N4L), owl:label (OFSMR)
+  OPTIONAL {
+    ?class ?labelProp ?label .
+    FILTER(?labelProp IN (
+      rdfs:label,
+      skos:prefLabel,
+      dc:title,
+      dcterms:title,
+      spin:labelTemplate,
+      owl:label
+    ))
+  }
+
+  # Get synonyms from multiple properties
+  # Covers: oboInOwl:* (OMP, BIPON), skos:altLabel (GMO),
+  #         owl:altLabel (FMPM), obo#Synonym (BIPON)
+  OPTIONAL {
+    ?class ?synonymProp ?synonym .
+    FILTER(?synonymProp IN (
+      oboInOwl:hasExactSynonym,
+      oboInOwl:hasBroadSynonym,
+      oboInOwl:hasNarrowSynonym,
+      oboInOwl:hasRelatedSynonym,
+      skos:altLabel,
+      owl:altLabel,
+      obo:Synonym
+    ))
+  }
+
+  # Get definitions from multiple properties
+  # Covers: IAO:0000115 (OMP), skos:definition (GMO),
+  #         rdfs:comment (D3O, all), obo#Definition (BIPON)
+  OPTIONAL {
+    ?class ?defProp ?definition .
+    FILTER(?defProp IN (
+      IAO:0000115,
+      skos:definition,
+      rdfs:comment,
+      dc:description,
+      dcterms:description,
+      obo:Definition
+    ))
+  }
+}
+GROUP BY ?class
+HAVING (BOUND(?labels))  # Only include classes with at least a label
+ORDER BY ?class
