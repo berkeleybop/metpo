@@ -31,7 +31,7 @@
 
 **CMM Definition:** Critical Minerals and Materials - U.S. Department of Energy (DOE) program
 
-### Principal Investigators
+## Principal Investigators
 
 **PI: Ning Sun (LBNL)**
 - Staff Scientist, Biological Systems and Engineering Division
@@ -69,7 +69,9 @@
 
 **Total Budget:** $850,000 for 12 months (FY26)
 
-### How KG-Microbe Fits Into CMM
+**See [docs/icbo_cmm_details.md](docs/icbo_cmm_details.md) for complete team structure, budgets, and task details.**
+
+## How KG-Microbe Fits Into CMM
 
 **Task 1.1: Construct KG-CMREE and Establish AI/ML Framework**
 
@@ -110,48 +112,6 @@ Microbial phenotypes are critical for REE recovery:
 1. Annotate microbial traits in KG-CMREE
 2. Enable AI models to predict which microbes can thrive in REE recovery conditions
 3. Link genomic features to phenotypic capabilities for strain engineering
-
-### CMM Project Structure
-
-**Task 1: Technical Tool Development**
-
-**Task 1.1: KG-CMREE and AI/ML Framework (Marcin Joachimiak)**
-- Extends KG-Microbe with REE-specific data
-- Agentic AI with autonomous experiment orchestration
-- Graph Transformers for strain ranking
-- **METPO role:** Provides phenotype annotations for microbial traits
-
-**Task 1.2: Spectroscopic Assay Development (Rebecca Abergel)**
-- ICP-OES: Quantify REEs in digested cells
-- Time-Resolved Luminescence (TRL): HTP REE detection
-- 3,4,3-LI(1,2-HOPO) chelator for lanthanide fluorescence
-- **METPO role:** Minimal (analytical chemistry focus)
-
-**Task 1.3: HTP Strain Screening Pipeline (Ning Sun/Rita Kuo)**
-- 6,000 samples/day automation capacity
-- Automated E. coli transformation, colony picking, NGS validation
-- Data processing pipelines for plate readers, HPLC, spectrometers
-- **METPO role:** Annotates screened strains with phenotypes
-
-**Task 2: AI/ML-Guided Microbial Engineering**
-
-**Task 2.1: Bacterial Strain Engineering (Cici Martinez-Gomez)**
-- Engineer strains to hyperaccumulate REEs (Nd, Pr, Dy)
-- Discover novel lanthanophore biosynthetic clusters
-- Transcriptomic profiling + genomic analysis
-- **METPO role:** Annotates metabolic and metal tolerance phenotypes
-
-**Task 2.2: Fungal/Bacterial Chassis Expansion (Yasuo Yoshikuni)**
-- CRAGE technology for extremophile domestication
-- Acidithiobacillus (bioleaching), Methylobacterium (biosorption)
-- Engineer acid/salt/temperature tolerance
-- **METPO role:** Defines tolerance phenotypes (pH, temp, salinity ranges)
-
-### DOE BER Decision Letter (Key Quote)
-
-> "BER is most interested in supporting LBNL objectives that seek to build a high-throughput strain screening and validation pipeline for ML guided bioengineering of REE accumulation, as these aims are more directly relevant to the request in the call to advance biodesign and synthetic biology for the extraction and recovery of CMM from natural and complex environments."
-
-**Translation:** DOE prioritizes the AI/ML + HTP pipeline work (Marcin's Task 1.1 + Ning's Task 1.3) as the most innovative aspects of the proposal.
 
 ---
 
@@ -270,118 +230,7 @@ Thank you."
 
 **Slope**: ~14 errors per year of abandonment
 
-**ICBO Impact**: "Error rates increase linearly with time since last maintenance (R² correlation analysis), demonstrating that ontology abandonment leads to technical debt and quality degradation."
-
-### 3. "Core" vs. "Peripheral" Designation Doesn't Predict Quality
-
-**The Contradiction**:
-| Ontology | Expert Tier | Search Rank | ROBOT Errors | Conclusion |
-|----------|-------------|-------------|--------------|------------|
-| MCO | TIER1_CORE | #359 (5 matches) | 65 | **Fails on ALL metrics** |
-| MicrO | TIER1_CORE | #11 (356 matches) | 103 | Good coverage, poor quality |
-| MPO | TIER1_CORE | #27 (108 matches) | 155 | **Highest error count** |
-| FLOPO | Not listed | #7 (779 matches) | 68 | Plant ontology outperforms! |
-| PATO | TIER1_FOUNDATION | #1 (930 matches) | 16 | **Only foundation that delivers** |
-
-**ICBO Impact**: "Expert curation assessments based on ontology descriptions fail to predict actual utility. Three ontologies designated as 'TIER1_CORE' for microbial phenotypes (MCO, MicrO, MPO) exhibit 65-155 validation errors and poor-to-absent term coverage."
-
-### 4. Cross-Domain Spillover Exceeds Domain-Specific Coverage
-
-**The Surprise**:
-- FLOPO (plant phenotypes): 779 matches, 68 errors
-- OBA (general biological attributes): 134 matches, 85 errors (but 54K warnings!)
-- vs. MCO (microbial conditions, TIER1_CORE): 5 matches, 65 errors
-
-**ICBO Impact**: "General phenotype ontologies and even cross-domain ontologies (plant phenotypes) provide better microbial trait coverage than supposedly specialized microbial ontologies, suggesting fundamental gaps in domain-specific semantic engineering."
-
-### 5. Warning Explosion in Aggregated Ontologies
-
-**The Scale Problem**:
-- OBA: 54,362 warnings (aggregated biological attributes)
-- FLOPO: 24,201 warnings (plant phenotypes)
-- MicrO: 4,446 warnings (prokaryotic phenotypes)
-- MCO: 2,701 warnings (microbial conditions)
-
-vs. METPO: 318 warnings (only whitespace in synonyms)
-
-**ICBO Impact**: "Large aggregated ontologies exhibit warning counts 70-170× higher than focused ontologies like METPO, suggesting that ontology merging without systematic quality control creates technical debt."
-
-## NEW ARGUMENTS FOR THE ABSTRACT
-
-### Argument 1: Empirical Validation Trumps Expert Opinion
-
-**Old approach**: "We believe MCO/MicrO/MPO are relevant based on descriptions"
-**New approach**: "Systematic validation reveals descriptions don't predict utility"
-
-**Evidence**:
-- 3/3 "TIER1_CORE" microbial ontologies fail empirically (coverage OR quality)
-- FLOPO (unlisted plant ontology) outranks MCO by 352 positions
-
-### Argument 2: The Maintenance Death Spiral
-
-**Quantifiable pattern**:
-```
-Years Unmaintained → Error Count
-0 (METPO)          → 0 errors
-1 (OMP)            → 34 errors
-6 (MCO)            → 65 errors
-7 (MicrO)          → 103 errors
-11 (MPO)           → 155 errors
-```
-
-**ICBO Impact**: Ontology maintenance isn't optional—it's essential for technical viability.
-
-### Argument 3: METPO Fills a Quality Gap, Not Just a Semantic Gap
-
-**Original claim**: "No ontology covers all microbial trait categories"
-**Enhanced claim**: "No MAINTAINED, HIGH-QUALITY ontology covers microbial traits"
-
-**Evidence**:
-- Coverage: 154 ontologies needed for 90% metabolism coverage
-- Quality: Best performers have 65-155 errors
-- Both: METPO achieves 0 errors + comprehensive coverage in one resource
-
-### Argument 4: LLM-Assisted Development Produces Higher Quality
-
-**The Comparison**:
-- Traditional curation (MPO 2014): 155 errors
-- Recent manual curation (OMP 2024): 34 errors
-- LLM-assisted curation (METPO 2025): 0 errors
-
-**ICBO Impact**: "METPO demonstrates that LLM-assisted ontology development, when properly supervised, can achieve higher quality standards than traditional manual curation, suggesting a scalable path for ontology creation."
-
-### Argument 5: The "Comprehensive vs. Correct" Trade-off Is False
-
-**Old assumption**: Large coverage → more errors (acceptable trade-off)
-**New evidence**:
-
-| Ontology | Classes | Errors | Errors/100 Classes |
-|----------|---------|--------|-------------------|
-| METPO | 250 | 0 | 0.0 |
-| OMP | 2,309 | 34 | 1.5 |
-| MCO | 3,383 | 65 | 1.9 |
-| MicrO | 19,246 | 103 | 0.5 |
-
-**Insight**: MicrO has LOWEST error rate per class (0.5) but still 103 total errors. Size doesn't force errors—neglect does.
-
-## RECOMMENDED ABSTRACT STRUCTURE
-
-### Opening (400 chars)
-Microbial trait data are fragmented across databases (BacDive, BactoTraits) lacking semantic integration. We systematically evaluated existing solutions by searching 250 METPO terms against 1,506 ontologies and validating candidates with ROBOT quality checks. Results reveal that expert-identified "core" microbial ontologies fail empirically: MCO (rank #359, 65 errors), MicrO (103 errors), MPO (155 errors, unmaintained since 2014).
-
-### Evidence of Need (450 chars)
-Coverage analysis shows extreme fragmentation: metabolism requires 154 ontologies for 90% coverage, with best single ontology (GO) achieving only 67%. Maintenance crisis compounds the problem—error rates correlate with abandonment time (14 errors/year unmaintained). Surprisingly, medical ontologies (SNOMED, NCIT) and cross-domain resources (plant phenotype ontology FLOPO) outperform microbial-specific ontologies, revealing fundamental gaps in domain coverage and quality.
-
-### METPO Solution (450 chars)
-METPO (250 classes) addresses both coverage and quality gaps through LLM-assisted development paired with expert validation. ROBOT validation demonstrates zero critical errors versus 65-155 in existing microbial ontologies. Architecture supports categorical statements ("mesophilic") and quantitative traits ("20-30°C optimum"). Strategic alignment imports well-covered domains (temperature, oxygen: 90-100% single-ontology coverage) while focusing curation on fragmented areas (metabolism, processes).
-
-### Applications & Status (350 chars)
-METPO powers KG-Microbe knowledge graph integrating BacDive, BactoTraits, and Madin datasets for DOE Critical Minerals applications. Enables literature text mining for microbial traits. Undergraduate-accessible LLM workflows democratize ontology contribution. Available via BioPortal and GitHub with mappings to 46 external resources. Active maintenance commitment contrasts with 6-11 year abandonment of alternatives.
-
-### Discussion (350 chars)
-This work demonstrates three principles: (1) empirical validation (systematic search + ROBOT checks) outperforms expert assessment for ontology selection, (2) maintenance debt accumulates predictably and degrades technical quality, (3) LLM-assisted development achieves higher quality than traditional curation when properly supervised. We argue pragmatic, application-driven development with demonstrated quality justifies METPO's existence despite overlap with unmaintained alternatives.
-
-**Total: ~2000 characters**
+**See [docs/icbo_validation_evidence.md](docs/icbo_validation_evidence.md) for complete validation findings, arguments, and statistical claims.**
 
 ---
 
@@ -488,59 +337,6 @@ All files in `notebooks/`:
 # Write definitions from literature or domain expertise
 ```
 
-## Background Context for ICBO
-
-### Why METPO Exists
-
-**Gaps in Existing Ontologies (quantified):**
-- MicrO: 103 ROBOT errors, unmaintained since 2018
-- Mean structural coherence with METPO: **8.2%**
-- Best coherence (MCO): 48.7%, but poor match quality (0.87 avg distance)
-- Conclusion: Cannot import existing ontology structures
-
-**Semantic Mapping Methodology:**
-- **External ontologies:** embeddings of labels + synonyms + descriptions
-- **METPO:** embeddings of **labels only**
-- **Purpose:** Dual use - overlap analysis AND definition/description proposals
-- **Results:** 1,282 good matches (distance <0.60) across 24 ontologies
-
-**Ontology Selection (ROI Analysis):**
-- Optimized corpus from 778k → 453k embeddings (41% reduction)
-- ROI improvement: +67% (1.69 → 2.82 good matches per 1000 embeddings)
-- Removed CHEBI (221k embeddings, only 2 matches, ROI 0.009 - worst performer!)
-- Kept n4l_merged (454 embeddings, 76 matches, ROI 167.40 - best performer!)
-
-### KG-Microbe Applications
-
-1. **Predicting Optimal Growth Media**
-   - ML models: >70% precision on benchmark datasets
-   - Both explainable rule-based and black-box approaches
-   - Publication: ISMB/ECCB 2025 talk
-   - Publication: CSBJ 2025 (Máša, Kliegr, Joachimiak)
-
-2. **Microbial Trait Prediction**
-   - Graph embeddings infer traits (cell shape, metabolic strategy)
-   - Works for uncultivated microbes
-
-3. **Hypothesis Generation**
-   - Multi-hop queries discover trait associations
-   - Vector algebra enables finding potential microbial interactions
-
-4. **AI-Guided Strain Discovery** (CMM Task 1.1)
-   - Graph Transformers rank candidate taxa for REE accumulation
-   - Agentic AI orchestrates DBTL cycles
-   - Literature mining agent extracts knowledge from lanthanome publications
-
-5. **Bioengineering Optimization** (CMM Task 2)
-   - Predicts CRAGE integration efficiency in extremophiles
-   - Links genomic features to REE selectivity phenotypes
-   - Guides lanthanophore biosynthetic cluster discovery
-
-6. **High-Throughput Experiment Design** (CMM Task 1.3)
-   - AI-designed experiments for 6,000 samples/day pipeline
-   - Automated analysis of REE accumulation screening data
-   - Failure analysis improves future experiment design
-
 ---
 
 # 5. Key Resources & References
@@ -626,6 +422,8 @@ All files in `notebooks/`:
 
 **Interpretation**: While terms themselves are good semantic matches, their children and neighbors in METPO are organized very differently from counterparts in other ontologies. This data-driven finding justifies METPO's existence.
 
+**See [docs/icbo_analysis_notes.md](docs/icbo_analysis_notes.md) for complete technical analysis.**
+
 ## Statistical Claims
 
 1. **"METPO achieves zero validation errors while existing microbial ontologies average 84.5 errors (n=5, range: 34-155)"**
@@ -638,60 +436,6 @@ All files in `notebooks/`:
 
 5. **"Aggregated ontologies exhibit 170× more warnings than focused ontologies"**
 
-## Data Visualizations
-
-### Figure 1: Error Rate vs. Years Unmaintained
-```
-       |
- 160   |                    ● MPO (2014)
-       |
- 120   |              ● MicrO (2018)
-       |
-  80   |        ● MCO (2019)
-       |
-  40   |   ● OMP (2024)
-       | ● METPO (2025)
-   0   |________________
-       0  2  4  6  8  10  12 Years
-```
-
-### Figure 2: Coverage vs. Quality Matrix
-```
-High Quality (Low Errors)
-    ↑
-    |  METPO ●
-    |  PATO ●
-    |           OMP ●
-    |                    MicrO ●
-    |                         MCO ●  MPO ●
-    |________________________________→
-         Low Coverage        High Coverage
-```
-
-### Figure 3: Expert Assessment vs. Empirical Performance
-```
-Expert says "TIER1_CORE" → Actual performance:
-MCO:    ████░░░░░░  (5 matches, 65 errors)
-MicrO:  ██████░░░░  (356 matches, 103 errors)
-MPO:    ████░░░░░░  (108 matches, 155 errors)
-
-Expert says nothing → Actual performance:
-FLOPO:  ████████░░  (779 matches, 68 errors)
-```
-
-## BOTTOM LINE FOR ICBO
-
-### The Old Story:
-"We need METPO because existing ontologies don't cover all microbial traits"
-
-### The New Story (With Validation Data):
-"We need METPO because:
-1. **Coverage**: 154 ontologies needed, no single source
-2. **Quality**: Best alternatives have 34-155 errors vs. METPO's 0
-3. **Maintenance**: 3/5 major ontologies unmaintained 6-11 years
-4. **Empirical validation**: Expert assessments fail to predict utility
-5. **Proven approach**: LLM-assisted development achieves higher quality"
-
 ---
 
 ## Scripts Available
@@ -701,6 +445,20 @@ FLOPO:  ████████░░  (779 matches, 68 errors)
   - Proposes definitions and definition sources
   - Generates cross-references
   - Re-run anytime: `cd notebooks && uv run python extract_definitions_from_mappings.py`
+
+---
+
+## Appendices
+
+For detailed information, see:
+
+- **[docs/icbo_validation_evidence.md](docs/icbo_validation_evidence.md)** - Complete ROBOT validation findings, arguments for abstract, statistical claims, and data visualizations
+
+- **[docs/icbo_cmm_details.md](docs/icbo_cmm_details.md)** - Detailed CMM project structure, team budgets, task descriptions, and institutional arrangements
+
+- **[docs/icbo_open_questions.md](docs/icbo_open_questions.md)** - Unresolved questions for Mark and Marcin, technical issues to investigate
+
+- **[docs/icbo_analysis_notes.md](docs/icbo_analysis_notes.md)** - Sibling coherence analysis, script comparisons, GitHub repository analysis, ROI methodology
 
 ---
 
@@ -721,8 +479,9 @@ FLOPO:  ████████░░  (779 matches, 68 errors)
 - How to frame low coherence scores in the talk?
 - Can we show concrete examples of raw trait data → METPO term mapping?
 
+**See [docs/icbo_open_questions.md](docs/icbo_open_questions.md) for complete list of unresolved questions.**
+
 ---
 
 **Last Updated:** 2025-11-06
 **Document Status:** Comprehensive consolidation of all ICBO preparation materials
-
