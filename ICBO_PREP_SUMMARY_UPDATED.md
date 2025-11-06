@@ -175,19 +175,37 @@ All files in `notebooks/`:
 ## Recommended Workflow Before ICBO
 
 ### Step 1: Add Definition Sources (1-2 hours)
-Review `definition_sources_needed.tsv` and add IAO:0000119 annotations citing the best match ontology for each term with existing definition.
+```bash
+# Review definition_sources_needed.tsv
+# For each term with existing definition, add IAO:0000119 annotation
+# citing the best match ontology
+```
 
 ### Step 2: Add High-Confidence Definitions (30 minutes)
-Review `high_confidence_definitions.tsv`, validate the 9 proposed definitions, add to `metpo_sheet.tsv`.
+```bash
+# Review high_confidence_definitions.tsv
+# Validate the 9 proposed definitions
+# Add to metpo_sheet.tsv
+```
 
 ### Step 3: Review Medium-Confidence Queue (2-4 hours)
-Review ~59 medium confidence proposals, accept/reject/modify proposed definitions, add to `metpo_sheet.tsv`.
+```bash
+# Review ~59 medium confidence proposals
+# Accept/reject/modify proposed definitions
+# Add to metpo_sheet.tsv
+```
 
 ### Step 4: Integrate Cross-References (1 hour)
-Use `metpo_cross_references.tsv` to add skos:closeMatch annotations to METPO OWL file.
+```bash
+# Use metpo_cross_references.tsv to add skos:closeMatch annotations
+# to METPO OWL file
+```
 
 ### Step 5: Manual Definitions for Critical Terms (variable time)
-Identify which of the 41 "no match" terms are critical for CMM/ICBO presentation, write definitions from literature or domain expertise.
+```bash
+# Identify which of the 41 "no match" terms are critical for CMM/ICBO presentation
+# Write definitions from literature or domain expertise
+```
 
 ---
 
