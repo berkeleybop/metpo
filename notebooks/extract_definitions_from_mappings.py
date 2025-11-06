@@ -15,8 +15,7 @@ Usage:
 import pandas as pd
 import re
 from pathlib import Path
-from collections import defaultdict
-from typing import Dict, List, Tuple, Optional
+from typing import Tuple, Optional
 
 # Configuration
 SSSOM_FILE = "metpo_mappings_combined_relaxed.sssom.tsv"
