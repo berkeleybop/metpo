@@ -6,6 +6,8 @@ import os
 from oaklib import get_adapter
 from oaklib.datamodels.vocabulary import IS_A, PART_OF
 import re
+from dotenv import load_dotenv, find_dotenv
+from tqdm import tqdm
 
 
 class ExternalOntologyHelper:
@@ -17,96 +19,126 @@ class ExternalOntologyHelper:
         'https://w3id.org/biolink/vocab/': 'biolink:',
     }
 
+    # Manual mapping from ontology prefix to local DB file
+    LOCAL_DB_MAP = {
+        'mco': 'mco.db',
+        'micro': 'MicrO-2025-03-20-merged.db',
+        'mpo': 'mpo_v0.74.en_only.db',
+        'n4l_merged': 'n4l_merged.db',
+        'omp': 'omp.db',
+        'fao': 'fao.db'
+    }
+
     def __init__(self, debug: bool = False):
         self.debug = debug
         self.adapter_cache = {}
 
     def _iri_to_curie(self, iri: str) -> str:
         """Convert IRI to CURIE format expected by OAKLib."""
-        # Try each pattern
         for iri_prefix, curie_prefix in self.IRI_TO_CURIE_PATTERNS.items():
             if iri.startswith(iri_prefix):
-                # Remove IRI prefix and convert _ to :
                 remainder = iri[len(iri_prefix):]
-                # For OBO ontologies: GO_0008152 -> GO:0008152, WBPhenotype_0001084 -> WBPhenotype:0001084
                 remainder = re.sub(r'([A-Za-z]+)_(\d+)', r'\1:\2', remainder)
                 curie = curie_prefix + remainder
                 if self.debug:
                     print(f"    Converted IRI to CURIE: {iri} -> {curie}")
                 return curie
-        # If no pattern matches, return as-is
         return iri
 
     def _curie_to_iri(self, curie: str) -> str:
         """Convert CURIE back to IRI format for comparison."""
-        # Handle OBO CURIEs: GO:0008152 -> http://purl.obolibrary.org/obo/GO_0008152
-        # Also handles mixed-case: WBPhenotype:0001084 -> http://purl.obolibrary.org/obo/WBPhenotype_0001084
         if re.match(r'[A-Za-z]+:\d+', curie):
             prefix, local_id = curie.split(':', 1)
             return f"http://purl.obolibrary.org/obo/{prefix}_{local_id}"
-        # Handle biolink CURIEs
         if curie.startswith('biolink:'):
-            remainder = curie[8:]  # Remove 'biolink:'
+            remainder = curie[8:]
             return f"https://w3id.org/biolink/vocab/{remainder}"
-        # If no pattern matches, return as-is
         return curie
 
-    def _extract_ontology_prefix(self, iri: str) -> str:
-        """Extract ontology prefix from IRI."""
-        # Match patterns like GO_0008152, PATO_0000001, WBPhenotype_0001084, FBcv_0000703, etc.
-        # Also handles fragment identifiers like pato#cell_quality, omp#cell_quality
+    def _extract_ontology_prefix_from_iri(self, iri: str) -> str:
+        """Extract ontology prefix from IRI as a fallback."""
         match = re.search(r'/([A-Za-z]+)[_#]', iri)
         if match:
             prefix = match.group(1)
             if self.debug:
-                print(f"    Extracted prefix: {prefix} from {iri}")
+                print(f"    Extracted prefix from IRI: {prefix} from {iri}")
             return prefix
-        # Match biolink patterns
         if 'biolink' in iri:
             return 'biolink'
         return None
 
-    def _get_adapter(self, iri: str):
-        """Get an OAKLib adapter for the external ontology.
-
-        Tries multiple strategies in order:
-        1. sqlite:obo: - semantic SQL (best performance, cached locally)
-        2. ubergraph: - SPARQL endpoint (many ontologies, requires network)
-        3. ols: - OLS4 API (web-based, widely available)
-        """
-        ontology_prefix = self._extract_ontology_prefix(iri)
+    def _get_adapter(self, ontology_prefix: str, iri_for_fallback: str):
+        """Get an OAKLib adapter for the external ontology."""
+        if not ontology_prefix:
+            ontology_prefix = self._extract_ontology_prefix_from_iri(iri_for_fallback)
 
         if not ontology_prefix:
             return None
 
         if ontology_prefix not in self.adapter_cache:
             adapter = None
-            strategies = [
-                ('sqlite:obo:', 'semantic SQL'),
-                ('ubergraph:', 'Ubergraph SPARQL'),
-                ('ols:', 'OLS4 API')
-            ]
+            prefix_lower = ontology_prefix.lower()
 
-            for strategy_prefix, strategy_name in strategies:
+            # Strategy 1: Local SQLite DBs
+            local_db_file = self.LOCAL_DB_MAP.get(prefix_lower)
+            if local_db_file and os.path.exists(local_db_file):
                 try:
                     if self.debug:
-                        print(f"    Trying {strategy_name} for {ontology_prefix}...")
-                    adapter = get_adapter(f"{strategy_prefix}{ontology_prefix.lower()}")
+                        print(f"    Trying Local SQLite DB for {ontology_prefix}...")
+                    adapter = get_adapter(f"sqlite:{local_db_file}")
                     if self.debug:
-                        print(f"    ✓ Connected via {strategy_name}")
-                    break
+                        print(f"    ✓ Connected via Local SQLite DB: {local_db_file}")
                 except Exception as e:
                     if self.debug:
-                        print(f"    ✗ {strategy_name} failed: {type(e).__name__}")
-                    continue
+                        print(f"    ✗ Local SQLite DB failed: {type(e).__name__}")
+            
+            # Strategy 2: Local OWL files
+            if not adapter:
+                # Check for case-sensitive match first, then uppercase
+                for owl_filename in [f"{ontology_prefix}.owl", f"{ontology_prefix.upper()}.owl"]:
+                    local_owl_path = f"../non-ols/{owl_filename}"
+                    if os.path.exists(local_owl_path):
+                        try:
+                            if self.debug:
+                                print(f"    Trying Local OWL for {ontology_prefix}...")
+                            adapter = get_adapter(f"pronto:{local_owl_path}")
+                            if self.debug:
+                                print(f"    ✓ Connected via Local OWL: {local_owl_path}")
+                            break # Stop if found
+                        except Exception as e:
+                            if self.debug:
+                                print(f"    ✗ Local OWL failed: {type(e).__name__}")
+
+            # Strategy 3 & onwards: Web-based strategies
+            if not adapter:
+                web_strategies = [
+                    ('bioportal', 'BioPortal API'), # Use original case for BioPortal
+                    ('ubergraph', 'Ubergraph SPARQL'),
+                    ('ols', 'OLS4 API')
+                ]
+
+                for strategy, name in web_strategies:
+                    try:
+                        # Use original case for bioportal, lowercase for others
+                        prefix_to_use = ontology_prefix if strategy == 'bioportal' else prefix_lower
+                        if self.debug:
+                            print(f"    Trying {name} for {prefix_to_use}...")
+                        adapter = get_adapter(f"{strategy}:{prefix_to_use}")
+                        if self.debug:
+                            print(f"    ✓ Connected via {name}")
+                        break # Found a working strategy
+                    except Exception as e:
+                        if self.debug:
+                            print(f"    ✗ {name} failed: {type(e).__name__}")
+                        continue
 
             self.adapter_cache[ontology_prefix] = adapter
 
         return self.adapter_cache.get(ontology_prefix)
 
-    def get_siblings(self, iri: str) -> Set[str]:
+    def get_siblings(self, iri: str, ontology_prefix: str = None) -> Set[str]:
         """Get siblings of a term from its external ontology."""
-        adapter = self._get_adapter(iri)
+        adapter = self._get_adapter(ontology_prefix, iri_for_fallback=iri)
 
         if not adapter:
             if self.debug:
@@ -114,40 +146,30 @@ class ExternalOntologyHelper:
             return set()
 
         try:
-            # Convert IRI to CURIE for querying
             curie = self._iri_to_curie(iri)
-
-            # First check if the term exists
             try:
                 label = adapter.label(curie)
                 if self.debug:
                     print(f"    Term found: '{label}'")
             except:
                 if self.debug:
-                    print(f"    Warning: Term not found or label unavailable")
+                    print(f"    Warning: Term not found or label unavailable for {curie}")
 
-            # Get parents using hierarchical_parents
             parents = list(adapter.hierarchical_parents(curie, isa_only=True))
             if self.debug:
                 print(f"    Parents: {len(parents)}")
 
-            # Get siblings through parents
             siblings = set()
             for parent in parents:
-                # Get direct children using incoming_relationships
-                # This returns (predicate, subject) tuples where subject -> parent
                 incoming = list(adapter.incoming_relationships(parent))
-                # Filter for subClassOf relationships to get direct children
                 children = [subj for pred, subj in incoming if 'subClassOf' in pred]
                 if self.debug:
                     print(f"      Parent has {len(children)} children")
                 siblings.update(children)
 
-            # Remove self
             siblings.discard(curie)
             siblings.discard(iri)
 
-            # Convert all siblings back to IRI format for comparison with CSV data
             siblings_iris = {self._curie_to_iri(s) for s in siblings}
 
             if self.debug:
@@ -249,6 +271,10 @@ def main(input_csv: str, metpo_owl: str, good_match_threshold: float, debug: boo
     """
     Analyzes sibling coherence for METPO term mappings from SSSOM TSV.
     """
+    # Load environment variables from .env file, searching from the current working directory upwards
+    # This allows the script to find the .env file in the parent metpo directory
+    load_dotenv(find_dotenv(usecwd=True))
+
     print(f"Loading mappings from: {input_csv}")
     try:
         # Read SSSOM TSV (skip metadata lines starting with #)
@@ -260,6 +286,9 @@ def main(input_csv: str, metpo_owl: str, good_match_threshold: float, debug: boo
         print(f"Error loading SSSOM TSV: {e}")
         return
 
+    # Drop rows with missing similarity_score to prevent NaN distances
+    df.dropna(subset=['similarity_score'], inplace=True)
+
     # Map SSSOM columns to expected column names
     df['distance'] = 1.0 - df['similarity_score']
     df['metpo_id'] = df['subject_id']
@@ -267,6 +296,9 @@ def main(input_csv: str, metpo_owl: str, good_match_threshold: float, debug: boo
     df['match_document'] = df['object_label']
     df['match_ontology'] = df['object_source']
     df['match_iri'] = df['object_id']
+
+    # Drop rows with missing subject_id to prevent key errors
+    df.dropna(subset=['metpo_id'], inplace=True)
 
     print(f"Loaded {len(df)} mapping records.")
     print(f"Using good match threshold: {good_match_threshold}")
@@ -285,7 +317,7 @@ def main(input_csv: str, metpo_owl: str, good_match_threshold: float, debug: boo
     metpo_match_lookup = df.groupby('metpo_id')['match_iri'].apply(set).to_dict()
 
     coherence_scores = []
-    for index, row in best_matches_df.iterrows():
+    for index, row in tqdm(best_matches_df.iterrows(), total=len(best_matches_df), desc="Analyzing Sibling Coherence"):
         metpo_id = row['metpo_id']
         metpo_label = row['metpo_label']
         match_iri = row['match_iri']
@@ -306,7 +338,7 @@ def main(input_csv: str, metpo_owl: str, good_match_threshold: float, debug: boo
         if debug:
             print(f"  Fetching siblings from external ontology ({match_ontology})...")
 
-        external_siblings = external_helper.get_siblings(match_iri)
+        external_siblings = external_helper.get_siblings(match_iri, ontology_prefix=match_ontology)
 
         if debug:
             print(f"  External siblings: {len(external_siblings)}")
