@@ -1,0 +1,157 @@
+=== GITIGNORED FILES ANALYSIS - MacBook ===
+Date: Thu Nov  6 10:37:46 EST 2025
+Machine: MAM-M74.local
+
+=== TOTAL COUNT (excluding .venv) ===
+Total gitignored files:    10760
+
+=== COUNT BY TOP-LEVEL DIRECTORY ===
+10543 large
+  64 ontologies
+  55 literature_mining
+  32 local
+  23 src
+  14 downloads
+  11 .idea
+   8 metpo
+   3 .litellm_cache
+   2 data
+   1 docs
+   1 chebi_lexical_index.db
+   1 analysis
+   1 .env
+   1 .DS_Store
+
+=== DIRECTORY SIZES ===
+ontologies/validation_results: 1.3G
+ontologies/robot_test_results: 1.1G
+local: 930M
+large: 779M
+literature_mining/logs: 308M
+downloads: 76M
+literature_mining/abstracts: 784K
+
+=== FILES IN local/ ===
+Total files:       33
+Largest files:
+258M local/taxdmp/names.dmp
+194M local/taxdmp/nodes.dmp
+178M local/noderanks.ttl
+127M local/mongodb_dumps/madin/madin.bson
+44M local/madin/madin_etal.csv
+38M local/mongodb_dumps/bactotraits/bactotraits.bson
+38M local/madin/condensed_traits.csv
+19M local/taxdmp/citations.dmp
+8.6M local/bactotraits/BactoTraits_databaseV2_Jun2022.csv
+6.2M local/taxdmp/delnodes.dmp
+6.1M local/bactotraits/BactoTraits.tsv
+5.8M local/madin/condensed_species.csv
+4.6M local/taxdmp/images.dmp
+1.7M local/taxdmp/merged.dmp
+268K local/madin/Bacteria_archaea_traits_dataset.csv
+21K local/mongodb_dumps/bactotraits/field_mappings.bson
+18K local/madin/madin.madin_decomposed_2025-09-29-19-18-EDT.csv
+16K local/taxdmp/gc.prt
+10K local/.DS_Store
+7.1K local/madin/madin_files_analysis.md
+
+=== FILES IN large/ ===
+Total files:    10543
+Subdirectories:
+large
+large/owl
+large/owl/robot_test_results
+large/N4L_phenotypic_ontology_2016
+large/N4L_phenotypic_ontology_2016/N4L_Taxonomy_20220802
+large/N4L_phenotypic_ontology_2016/n4lphenotypicdata
+large/N4L_phenotypic_ontology_2016/assertions_etc
+large/N4L_phenotypic_ontology_2016/N4L_phenotpic_data_xml_ttl_rdf_20160701
+large/N4L_phenotypic_ontology_2016/extracted_protologs_2013
+large/semsql
+
+=== N4L PHENOTYPIC ONTOLOGY ===
+N4L directory exists
+Total N4L files:    10470
+Size: 574M
+
+=== SAMPLE GITIGNORED FILES (first 50) ===
+.DS_Store
+.env
+.idea/.gitignore
+.idea/copilot.data.migration.agent.xml
+.idea/copilot.data.migration.ask.xml
+.idea/copilot.data.migration.edit.xml
+.idea/inspectionProfiles/Project_Default.xml
+.idea/inspectionProfiles/profiles_settings.xml
+.idea/metpo.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/workspace.xml
+.litellm_cache/cache.db
+.litellm_cache/cache.db-shm
+.litellm_cache/cache.db-wal
+analysis/.DS_Store
+chebi_lexical_index.db
+data/.DS_Store
+data/entity_extracts/.DS_Store
+docs/.DS_Store
+downloads/.DS_Store
+downloads/BactoTraits_databaseV2_Jun2022.csv
+downloads/sheets/attic_classes.tsv
+downloads/sheets/attic_properties.tsv
+downloads/sheets/bactotraits.tsv
+downloads/sheets/metabolic_and_respiratory_llm.tsv
+downloads/sheets/metabolic_and_respiratory_robot.tsv
+downloads/sheets/minimal_classes.tsv
+downloads/sheets/minimal_classes_enhanced.tsv
+downloads/sheets/more_classes___inconsistent.tsv
+downloads/sheets/more_synonyms.tsv
+downloads/sheets/properties.tsv
+downloads/sheets/trophic_mapping_bacdive__tbdeleted.tsv
+downloads/taxdmp.zip
+large/.DS_Store
+large/CLAUDE.md
+large/METPO_LLM_Workflow_Summary.md
+large/N4L_Data_Transformation_Workflow.md
+large/N4L_phenotypic_ontology_2016/GSC-N4L-2015_poster.pdf
+large/N4L_phenotypic_ontology_2016/N4L_ID_to_NCBI_mappings.xlsx
+large/N4L_phenotypic_ontology_2016/N4L_Taxonomy_20220802.tsv
+large/N4L_phenotypic_ontology_2016/N4L_Taxonomy_20220802.xlsx
+large/N4L_phenotypic_ontology_2016/N4L_Taxonomy_20220802/N4L_Taxonomy_20220802.tsv
+large/N4L_phenotypic_ontology_2016/N4L_Taxonomy_20220802/N4L_Taxonomy_20220802_pruned.tsv
+large/N4L_phenotypic_ontology_2016/N4L_Taxonomy_20220802_pruned.tsv
+large/N4L_phenotypic_ontology_2016/N4L_Taxonomy_20220802_pruned.xlsx
+large/N4L_phenotypic_ontology_2016/N4L_Taxonomy_Table_Description_20200827.docx
+large/N4L_phenotypic_ontology_2016/N4L_phenotpic_data_xml_ttl_rdf_20160701/C10.rdf
+large/N4L_phenotypic_ontology_2016/N4L_phenotpic_data_xml_ttl_rdf_20160701/C10.ttl
+
+=== DOWNLOADS/SHEETS DIRECTORY ===
+Files in downloads/sheets:
+17K downloads/sheets/attic_classes.tsv
+713B downloads/sheets/attic_properties.tsv
+21K downloads/sheets/bactotraits.tsv
+32K downloads/sheets/metabolic_and_respiratory_llm.tsv
+12K downloads/sheets/metabolic_and_respiratory_robot.tsv
+58K downloads/sheets/minimal_classes_enhanced.tsv
+47K downloads/sheets/minimal_classes.tsv
+131K downloads/sheets/more_classes___inconsistent.tsv
+79B downloads/sheets/more_synonyms.tsv
+19K downloads/sheets/properties.tsv
+2.0K downloads/sheets/trophic_mapping_bacdive__tbdeleted.tsv
+
+=== LITERATURE MINING LOGS ===
+Log file count:       47
+Largest logs:
+70M literature_mining/logs/fullpaper_prototype_v3_20251031_163102.log
+55M literature_mining/logs/cmm_fullcorpus_gpt4o_t00_20251031_193935.log
+50M literature_mining/logs/fullpaper_hybrid_gpt4o_t03.log
+16M literature_mining/logs/chemical_utilization_hybrid_fullcorpus_gpt4o_t00_20251031_221515.log
+14M literature_mining/logs/growth_conditions_hybrid_gpt4o_t00_20251031_213345.log
+12M literature_mining/logs/growth_conditions_hybrid_fullcorpus_gpt4o_t00_20251031_215409.log
+10M literature_mining/logs/biochemical_hybrid_fullcorpus_gpt4o_t00_20251031_232234.log
+9.7M literature_mining/logs/morphology_gpt-4o_20251030_180642.log
+9.3M literature_mining/logs/morphology_fullcorpus_gpt4o_t00_20251031.log
+8.0M literature_mining/logs/biochemical_base_fullcorpus_gpt4o_t00_20251031_231715.log
+
+=== ANALYSIS COMPLETE ===
