@@ -1,0 +1,758 @@
+---
+input_text: |
+  {'content': 'Classification of metal-resistant bacteria from industrial biotopes as Ralstonia campinensis sp. nov., Ralstonia metallidurans sp. nov. and Ralstonia basilensis Steinle et al. 1998 emend.\n\nThirty-one heavy-metal-resistant bacteria isolated from industrial biotopes were subjected to polyphasic characterization, including 16S rDNA sequence analysis, DNA-DNA hybridizations, biochemical tests, whole-cell protein and fatty-acid analyses. All strains were shown to belong to the Ralstonia branch of the beta-Proteobacteria. Whole-cell protein profiles and DNA-DNA hybridizations revealed two clearly distinct groups, showing low similarity to known Ralstonia species. These two groups, of 8 and 17 isolates, were assigned to two new species, for which the names Ralstonia campinensis sp. nov. and Ralstonia metallidurans sp. nov. are proposed. The type strains are WS2T (= LMG 19282T = CCUG 44526T) and CH34T (= LMG 1195T = DSM 2839T), respectively. Six isolates were allocated to Ralstonia basilensis, which presently contains only the type strain; an emendation of the latter species description is therefore proposed.\n\nPMID:11594608', 'saved_to': None, 'windowed': False}
+raw_completion_output: |-
+  pmid: 11594608  
+  study_taxa: Ralstonia campinensis;Ralstonia metallidurans;Ralstonia basilensis  
+  strains: WS2;LMG 19282;CCUG 44526;CH34;LMG 1195;DSM 2839  
+  culture_media:   
+  temperature_conditions:   
+  ph_conditions:   
+  oxygen_requirements:   
+  salt_tolerance:   
+  article_type: novel_species  
+  atmospheric_requirements:   
+  strain_relationships: WS2 type_strain_of Ralstonia campinensis;CH34 type_strain_of Ralstonia metallidurans  
+  growth_condition_relationships: none  
+  culture_medium_relationships: none  
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  subject: <the strain grown on this medium>
+  predicate: <the type of medium relationship (grows_on, requires, uses_medium, etc.)Must be one of: grows_on, requires, uses_medium, optimal_growth_on>
+  object: <the specific culture medium>
+
+
+  Text:
+  none
+
+  ===
+
+extracted_object:
+  pmid: '11594608'
+  study_taxa:
+    - NCBITaxon:151783
+    - NCBITaxon:119219
+    - NCBITaxon:68895
+  strains:
+    - AUTO:WS2
+    - AUTO:LMG%2019282
+    - AUTO:CCUG%2044526
+    - AUTO:CH34
+    - AUTO:LMG%201195
+    - AUTO:DSM%202839
+named_entities:
+  - id: NCBITaxon:151783
+    label: Ralstonia campinensis
+    original_spans:
+      - 84:104
+      - 775:795
+  - id: NCBITaxon:119219
+    label: Ralstonia metallidurans
+    original_spans:
+      - 116:138
+      - 810:832
+  - id: NCBITaxon:68895
+    label: Ralstonia basilensis
+    original_spans:
+      - 153:172
+      - 994:1013
+  - id: AUTO:WS2
+    label: WS2
+    original_spans:
+      - 878:880
+  - id: AUTO:LMG%2019282
+    label: LMG 19282
+    original_spans:
+      - 886:894
+  - id: AUTO:CCUG%2044526
+    label: CCUG 44526
+    original_spans:
+      - 899:908
+  - id: AUTO:CH34
+    label: CH34
+    original_spans:
+      - 916:919
+  - id: AUTO:LMG%201195
+    label: LMG 1195
+    original_spans:
+      - 925:932
+  - id: AUTO:DSM%202839
+    label: DSM 2839
+    original_spans:
+      - 937:944
+---
+input_text: |
+  {'content': 'Meiothermus hypogaeus sp. nov., a moderately thermophilic bacterium isolated from a hot spring.\n\nA novel moderately thermophilic, red-pigmented bacterium, designated strain AZM34c11(T), was isolated from the bottom of a 1000 m-deep drilled well located in a Japanese hot spring. Cells were Gram-negative and grew optimally at 50 °C, at pH 7.6 and with 0-0.3% (w/v) NaCl. Analysis of the 16S rRNA gene sequence revealed that the isolate belonged to the genus Meiothermus. Levels of 16S rRNA gene sequence similarity between strain AZM34c11(T) and the type strains of recognized Meiothermus species were 88.2-94.8%. Strain AZM34c11(T) was distinguished from recognized Meiothermus species by its cellular fatty acid profile: iso-C(16:0) was one of the predominant components and hydroxy fatty acids were present only in trace amounts. The strain could also be differentiated based on its growth substrate preferences and characteristic enzyme reactions. On the basis of these results, strain AZM34c11(T) is considered to represent a novel species of the genus Meiothermus, for which the name Meiothermus hypogaeus sp. nov. is proposed. The type strain is AZM34c11(T) (=NBRC 106114(T) =DSM 23238(T)).\n\nPMID:21335495', 'saved_to': None, 'windowed': False}
+raw_completion_output: |-
+  pmid: 21335495  
+  study_taxa: Meiothermus  
+  strains: AZM34c11; NBRC 106114; DSM 23238  
+  culture_media: none  
+  temperature_conditions: optimal 50°C  
+  ph_conditions: pH 7.6  
+  oxygen_requirements: none  
+  salt_tolerance: 0-0.3% NaCl  
+  article_type: novel_species  
+  atmospheric_requirements: none  
+  strain_relationships: AZM34c11 type_strain_of Meiothermus hypogaeus  
+  growth_condition_relationships: none  
+  culture_medium_relationships: none  
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  subject: <the strain grown on this medium>
+  predicate: <the type of medium relationship (grows_on, requires, uses_medium, etc.)Must be one of: grows_on, requires, uses_medium, optimal_growth_on>
+  object: <the specific culture medium>
+
+
+  Text:
+  none
+
+  ===
+
+extracted_object:
+  pmid: '21335495'
+  study_taxa:
+    - NCBITaxon:65551
+  strains:
+    - AUTO:AZM34c11
+    - AUTO:NBRC%20106114
+    - AUTO:DSM%2023238
+  culture_media:
+    - AUTO:none
+  temperature_conditions:
+    - AUTO:optimal%2050%C2%B0C
+  ph_conditions:
+    - AUTO:pH%207.6
+  oxygen_requirements:
+    - AUTO:none
+  salt_tolerance:
+    - AUTO:0-0.3%25%20NaCl
+  article_type: novel_species
+  atmospheric_requirements:
+    - AUTO:none
+  strain_relationships:
+    - subject: AUTO:AZM34c11
+      predicate: type_strain_of
+      object: NCBITaxon:884155
+named_entities:
+  - id: NCBITaxon:65551
+    label: Meiothermus
+    original_spans:
+      - 13:23
+      - 473:483
+      - 592:602
+      - 682:692
+      - 1073:1083
+      - 1105:1115
+  - id: AUTO:AZM34c11
+    label: AZM34c11
+    original_spans:
+      - 188:195
+      - 545:552
+      - 636:643
+      - 1005:1012
+      - 1168:1175
+  - id: AUTO:NBRC%20106114
+    label: NBRC 106114
+    original_spans:
+      - 1182:1192
+  - id: AUTO:DSM%2023238
+    label: DSM 23238
+    original_spans:
+      - 1198:1206
+  - id: AUTO:none
+    label: none
+    original_spans:
+      - 1244:1247
+  - id: AUTO:optimal%2050%C2%B0C
+    label: optimal 50°C
+  - id: AUTO:pH%207.6
+    label: pH 7.6
+    original_spans:
+      - 351:356
+  - id: AUTO:0-0.3%25%20NaCl
+    label: 0-0.3% NaCl
+  - id: NCBITaxon:884155
+    label: Meiothermus hypogaeus
+    original_spans:
+      - 13:33
+      - 1105:1125
+---
+input_text: |
+  {'content': 'Thiomicrospira halophila sp. nov., a moderately halophilic, obligately chemolithoautotrophic, sulfur-oxidizing bacterium from hypersaline lakes.\n\nEnrichments at 2 M NaCl and pH 7.5-8, with thiosulfate or sulfide as electron donor, inoculated with sediments from hypersaline chloride-sulfate lakes of the Kulunda Steppe (Altai, Russia) resulted in the domination of two different groups of moderately halophilic, chemolithoautotrophic, sulfur-oxidizing bacteria. Under fully aerobic conditions with thiosulfate, bacteria belonging to the genus Halothiobacillus dominated while, under microaerophilic conditions, a highly motile, short vibrio-shaped phenotype outcompeted the halothiobacilli. Three genetically and phenotypically highly similar vibrio-shaped isolates were obtained in pure culture and one of them, strain HL 5(T), was identified as a member of the Thiomicrospira crunogena cluster by 16S rRNA gene sequencing. The new isolates were able to grow with thiosulfate as electron donor within a broad salinity range from 0.5 to 3.5 M NaCl with an optimum at 1.5 M and within a pH range from 6.5 to 8.5 with an optimum at pH 7.5-7.8. Comparative analysis of ribulose-1,5-bisphosphate carboxylase/oxygenase (RuBisCO) gene sequences demonstrated that strain HL 5(T) possessed two genes, cbbL-1 and cbbL-2, of the form I RuBisCO and a cbbM gene of the form II RuBisCO, similar to the other members of the Thiomicrospira crunogena cluster. On the basis of phenotypic and genetic comparison, the new halophilic isolates are proposed to be placed into a novel species, Thiomicrospira halophila sp. nov. (type strain HL 5(T)=DSM 15072(T)=UNIQEM U 221(T)).\n\nPMID:17012565', 'saved_to': None, 'windowed': False}
+raw_completion_output: |-
+  pmid: 17012565  
+  study_taxa: Thiomicrospira;Halothiobacillus  
+  strains: HL 5;DSM 15072;UNIQEM U 221  
+  culture_media: none  
+  temperature_conditions: none  
+  ph_conditions: pH 7.5-8;range pH 6.5-8.5;optimal pH 7.5-7.8  
+  oxygen_requirements: aerobic;microaerophilic  
+  salt_tolerance: 2 M NaCl;0.5-3.5 M NaCl;optimal 1.5 M NaCl  
+  article_type: novel_species  
+  atmospheric_requirements: none  
+  strain_relationships: HL 5 type_strain_of Thiomicrospira halophila  
+  growth_condition_relationships: none  
+  culture_medium_relationships: none  
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  subject: <the strain grown on this medium>
+  predicate: <the type of medium relationship (grows_on, requires, uses_medium, etc.)Must be one of: grows_on, requires, uses_medium, optimal_growth_on>
+  object: <the specific culture medium>
+
+
+  Text:
+  none
+
+  ===
+
+extracted_object:
+  pmid: '17012565'
+  study_taxa:
+    - NCBITaxon:933
+    - NCBITaxon:109262
+  strains:
+    - AUTO:HL%205
+    - AUTO:DSM%2015072
+    - AUTO:UNIQEM%20U%20221
+  culture_media:
+    - AUTO:none
+  temperature_conditions:
+    - AUTO:none
+  ph_conditions:
+    - AUTO:pH%207.5-8
+    - AUTO:range%20pH%206.5-8.5
+    - AUTO:optimal%20pH%207.5-7.8
+  oxygen_requirements:
+    - <https://w3id.org/metpo/1000602>
+    - <https://w3id.org/metpo/1000604>
+  salt_tolerance:
+    - AUTO:2%20M%20NaCl
+    - AUTO:0.5-3.5%20M%20NaCl
+    - AUTO:optimal%201.5%20M%20NaCl
+  article_type: novel_species
+  atmospheric_requirements:
+    - AUTO:none
+  strain_relationships:
+    - subject: AUTO:HL%205
+      predicate: type_strain_of
+      object: NCBITaxon:373391
+named_entities:
+  - id: NCBITaxon:933
+    label: Thiomicrospira
+    original_spans:
+      - 13:26
+      - 878:891
+      - 1425:1438
+      - 1586:1599
+  - id: NCBITaxon:109262
+    label: Halothiobacillus
+    original_spans:
+      - 558:573
+  - id: AUTO:HL%205
+    label: HL 5
+    original_spans:
+      - 835:838
+      - 1279:1282
+      - 1633:1636
+  - id: AUTO:DSM%2015072
+    label: DSM 15072
+    original_spans:
+      - 1641:1649
+  - id: AUTO:UNIQEM%20U%20221
+    label: UNIQEM U 221
+    original_spans:
+      - 1654:1665
+  - id: AUTO:pH%207.5-8
+    label: pH 7.5-8
+    original_spans:
+      - 189:196
+  - id: AUTO:range%20pH%206.5-8.5
+    label: range pH 6.5-8.5
+  - id: AUTO:optimal%20pH%207.5-7.8
+    label: optimal pH 7.5-7.8
+  - id: <https://w3id.org/metpo/1000602>
+    label: aerobic
+    original_spans:
+      - 489:495
+  - id: <https://w3id.org/metpo/1000604>
+    label: microaerophilic
+    original_spans:
+      - 598:612
+  - id: AUTO:2%20M%20NaCl
+    label: 2 M NaCl
+    original_spans:
+      - 176:183
+  - id: AUTO:0.5-3.5%20M%20NaCl
+    label: 0.5-3.5 M NaCl
+  - id: AUTO:optimal%201.5%20M%20NaCl
+    label: optimal 1.5 M NaCl
+  - id: NCBITaxon:373391
+    label: Thiomicrospira halophila
+    original_spans:
+      - 13:36
+      - 1586:1609
+---
+input_text: |
+  {'content': 'Pseudooceanicola onchidii sp. nov., isolated from a marine invertebrate from the South China Sea.\n\nA novel bacterial strain, XY-99T, was isolated from the epidermis of a marine invertebrate of the genus Onchidium from seawater of the South China Sea. The cells of the strain were aerobic, Gram-stain-negative, non-motile, and oval-shaped (0.8-1.0 µm wide and 1.0-1.5 µm long) without a flagellum. The strain grew at temperatures of 15-37 °C (optimum, 35-37 °C), at pH 5.5-9.5 (optimum 7.5), and at NaCl concentrations of 0-12.0 % (w/v) (optimum 1.5-3.0 %). The major fatty acids (>10 %) were summed feature 8 (comprising C18 : 1ω7c and/or C18 : 1ω6c), C16 : 0 and 11-methyl C18 : 1ω7c. The predominant polar lipid was diphosphatidylglycerol. The respiratory quinone was Q-10. The closet phylogenetic neighbours were Pseudooceanicola flagellatus DY470T and Pseudooceanicola nitratireducens JLT1210T, showing 97.5 and 97.3 % of 16 s rRNA gene sequence similarity. The genome size of XY-99T was 3 673 499 bp, with 64.5 % DNA G+C content. The average nucleotide identity and digital DNA-DNA hybridization values between XY-99T and Pseudooceanicola flagellatus DY470T were 72.8 and 14.0 %, respectively, while they were 79.3 and 22.3 % between XY-99T and Pseudooceanicola nitratireducens JLT1210T. Characterization based on phylogenetic, phenotypic, chemotaxonomic and genomic evidence demonstrated that XY-99T represents a novel species of the genus Pseudooceanicola, for which the name Pseudooceanicola onchidii sp. nov. is proposed. The type strain is XY-99T (=KCTC 72211T=MCCC 1K03607T).\n\nPMID:31778352', 'saved_to': None, 'windowed': False}
+raw_completion_output: |-
+  pmid: 31778352  
+  study_taxa: Pseudooceanicola  
+  strains: XY-99; KCTC 72211; MCCC 1K03607  
+  culture_media: none  
+  temperature_conditions: 15-37°C; optimal 35-37°C  
+  ph_conditions: pH 5.5-9.5; optimal pH 7.5  
+  oxygen_requirements: aerobic  
+  salt_tolerance: 0-12.0% NaCl; optimal 1.5-3.0% NaCl  
+  article_type: novel_species  
+  atmospheric_requirements: none  
+  strain_relationships: XY-99 type_strain_of Pseudooceanicola onchidii; KCTC 72211 type_strain_of Pseudooceanicola onchidii; MCCC 1K03607 type_strain_of Pseudooceanicola onchidii  
+  growth_condition_relationships: none  
+  culture_medium_relationships: none  
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  subject: <the strain grown on this medium>
+  predicate: <the type of medium relationship (grows_on, requires, uses_medium, etc.)Must be one of: grows_on, requires, uses_medium, optimal_growth_on>
+  object: <the specific culture medium>
+
+
+  Text:
+  none
+
+  ===
+
+extracted_object:
+  pmid: '31778352'
+  study_taxa:
+    - NCBITaxon:1679449
+  strains:
+    - AUTO:XY-99
+    - AUTO:KCTC%2072211
+    - AUTO:MCCC%201K03607
+  culture_media:
+    - AUTO:none
+  temperature_conditions:
+    - AUTO:15-37%C2%B0C
+    - AUTO:optimal%2035-37%C2%B0C
+  ph_conditions:
+    - AUTO:pH%205.5-9.5
+    - AUTO:optimal%20pH%207.5
+  oxygen_requirements:
+    - <https://w3id.org/metpo/1000602>
+  salt_tolerance:
+    - AUTO:0-12.0%25%20NaCl
+    - AUTO:optimal%201.5-3.0%25%20NaCl
+  article_type: novel_species
+  atmospheric_requirements:
+    - AUTO:none
+  strain_relationships:
+    - subject: AUTO:XY-99
+      predicate: type_strain_of
+      object: NCBITaxon:2562279
+    - subject: AUTO:KCTC%2072211
+      predicate: type_strain_of
+      object: NCBITaxon:2562279
+    - subject: AUTO:MCCC%201K03607
+      predicate: type_strain_of
+      object: NCBITaxon:2562279
+named_entities:
+  - id: NCBITaxon:1679449
+    label: Pseudooceanicola
+    original_spans:
+      - 13:28
+      - 831:846
+      - 871:886
+      - 1142:1157
+      - 1265:1280
+      - 1461:1476
+      - 1498:1513
+  - id: AUTO:XY-99
+    label: XY-99
+    original_spans:
+      - 140:144
+      - 996:1000
+      - 1131:1135
+      - 1254:1258
+      - 1414:1418
+      - 1565:1569
+  - id: AUTO:KCTC%2072211
+    label: KCTC 72211
+    original_spans:
+      - 1574:1583
+  - id: AUTO:MCCC%201K03607
+    label: MCCC 1K03607
+    original_spans:
+      - 1586:1597
+  - id: AUTO:15-37%C2%B0C
+    label: 15-37°C
+  - id: AUTO:optimal%2035-37%C2%B0C
+    label: optimal 35-37°C
+  - id: AUTO:pH%205.5-9.5
+    label: pH 5.5-9.5
+    original_spans:
+      - 480:489
+  - id: AUTO:optimal%20pH%207.5
+    label: optimal pH 7.5
+  - id: AUTO:0-12.0%25%20NaCl
+    label: 0-12.0% NaCl
+  - id: AUTO:optimal%201.5-3.0%25%20NaCl
+    label: optimal 1.5-3.0% NaCl
+  - id: NCBITaxon:2562279
+    label: Pseudooceanicola onchidii
+    original_spans:
+      - 13:37
+      - 1498:1522
+---
+input_text: |
+  {'content': 'Actinophytocola xanthii sp. nov., an actinomycete isolated from rhizosphere soil of the plant Xanthium sibiricum.\n\nA novel actinomycete strain, 11-183T, was isolated from the rhizosphere soil of Xanthium sibiricum, which was collected in Tangshan, Hebei, China. A phylogenetic analysis based on 16S rRNA gene sequences showed that strain 11-183T formed a clade within the genus Actinophytocola, with a maximum similarity of 98.44 % to Actinophytocola xinjiangensis QAIII60T, followed by 97.76 % similarity to Actinophytocola sediminis YIM M13705T. The average nucleotide identity and digital DNA-DNA hybridization values differed by 79.24 and 23.4 %, respectively, between strain 11-183T and Actinophytocolaxinjiangensis QAIII60T. Strain 11-183T grew well on N-Z-amine agar, and it produced a scant, white aerial mycelium. The isolate formed pale yellow to brown-black colonies and a dense, non-fragmented, branched substrate mycelium, and produced aerial hyphae on which nodular spore chains formed. Growth was observed at salinities ranging from 0 to 2 %, at pH values ranging from pH 6.5 to 8.0 and at temperatures ranging from 15 to 37 °C. The cell-wall amino acids included meso-diaminopimelic acid. Whole cell hydrolysates contained galactose and glucose. The principal fatty acids were iso-C16 : 0, iso-C16 : 1 H and C17 : 1ω6c. Diphosphatidylglycerol, phosphatidylmonomethylethanolamine and phosphatidylethanolamine were the diagnostic phospholipids. The isoprenoid quinones included MK-9(H4) and MK-10(H4). The G+C content of the genomic DNA was 71.7 mol%. Based on the genotypic and phenotypic data, we conclude that strain 11-183T belongs to a novel species of the genus Actinophytocola. The name proposed for the novel species is Actinophytocola xanthii sp. nov., with the type strain 11-183T (=KCTC 39690T= MCCC 1K02062T).\n\nPMID:28073395', 'saved_to': None, 'windowed': False}
+raw_completion_output: |-
+  pmid: 28073395  
+  study_taxa: Actinophytocola  
+  strains: 11-183; KCTC 39690; MCCC 1K02062  
+  culture_media: N-Z-amine agar  
+  temperature_conditions: 15-37°C  
+  ph_conditions: pH 6.5-8.0  
+  oxygen_requirements:   
+  salt_tolerance: 0-2% NaCl  
+  article_type: novel_species  
+  atmospheric_requirements:   
+  strain_relationships: 11-183 type_strain_of Actinophytocola xanthii  
+  growth_condition_relationships: none  
+  culture_medium_relationships: 11-183 grows_on N-Z-amine agar  
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  subject: <the strain grown on this medium>
+  predicate: <the type of medium relationship (grows_on, requires, uses_medium, etc.)Must be one of: grows_on, requires, uses_medium, optimal_growth_on>
+  object: <the specific culture medium>
+
+
+  Text:
+  11-183 grows_on N-Z-amine agar
+
+  ===
+
+extracted_object:
+  pmid: '28073395'
+  study_taxa:
+    - NCBITaxon:695999
+  strains:
+    - AUTO:11-183
+    - AUTO:KCTC%2039690
+    - AUTO:MCCC%201K02062
+  culture_media:
+    - AUTO:N-Z-amine%20agar
+  temperature_conditions:
+    - AUTO:15-37%C2%B0C
+  ph_conditions:
+    - AUTO:pH%206.5-8.0
+  article_type: novel_species
+  culture_medium_relationships:
+    - subject: AUTO:11-183
+      predicate: grows_on
+      object: AUTO:N-Z-amine%20agar
+named_entities:
+  - id: NCBITaxon:695999
+    label: Actinophytocola
+    original_spans:
+      - 13:27
+      - 393:407
+      - 450:464
+      - 524:538
+      - 707:721
+      - 1697:1711
+      - 1757:1771
+  - id: AUTO:11-183
+    label: 11-183
+    original_spans:
+      - 159:164
+      - 353:358
+      - 695:700
+      - 753:758
+      - 1649:1654
+      - 1812:1817
+  - id: AUTO:KCTC%2039690
+    label: KCTC 39690
+    original_spans:
+      - 1822:1831
+  - id: AUTO:MCCC%201K02062
+    label: MCCC 1K02062
+    original_spans:
+      - 1835:1846
+  - id: AUTO:N-Z-amine%20agar
+    label: N-Z-amine agar
+    original_spans:
+      - 774:787
+  - id: AUTO:pH%206.5-8.0
+    label: pH 6.5-8.0
+---
+input_text: |
+  {'content': 'Bavariicoccus seileri gen. nov., sp. nov., isolated from the surface and smear water of German red smear soft cheese.\n\nThe phylogenetic position and physiological characters of six hitherto-unknown lactic acid bacterial isolates, which form part of the surface microbiota of German red smear soft cheese, are reported. The coccoid cells are aerotolerant, Gram-positive, catalase-negative and non-motile. The cell-wall peptidoglycan contains alanine, glutamic acid, lysine and aspartic acid and is of the A4alpha type (l-Lys-d-Asp). The sequences of the 16S rRNA, groEL and rpoB genes of the six isolates are identical and reveal that these isolates represent an independent lineage within the radiation of the family Enterococcaceae in the phylum Firmicutes. Their closest phylogenetic neighbour is the lactic acid bacterium Atopobacter phocae M1590/94/2(T), with which they share 94.9 % 16S rRNA gene sequence similarity; representatives of other genera such as Granulicatella, Carnobacterium and Trichococcus are more distantly related. DNA-DNA hybridization studies reveal that the six isolates are members of a single species, and this is confirmed by similarities in biochemical characteristics. The six isolates were assigned four different groups by Fourier-transform infrared and randomly amplified polymorphic DNA typing. Therefore, it is formally proposed that these isolates should be classified in a single novel species of a novel genus and be named Bavariicoccus seileri gen. nov., sp. nov. The type strain of Bavariicoccus seileri is WCC 4188(T) (=DSM 19936(T) =CCUG 55508(T)).\n\nPMID:19622668', 'saved_to': None, 'windowed': False}
+raw_completion_output: |-
+  pmid: 19622668  
+  study_taxa: Bavariicoccus seileri  
+  strains: WCC 4188; DSM 19936; CCUG 55508  
+  culture_media:   
+  temperature_conditions:   
+  ph_conditions:   
+  oxygen_requirements: aerotolerant  
+  salt_tolerance:   
+  article_type: novel_species  
+  atmospheric_requirements:   
+  strain_relationships: WCC 4188 type_strain_of Bavariicoccus seileri; DSM 19936 type_strain_of Bavariicoccus seileri; CCUG 55508 type_strain_of Bavariicoccus seileri  
+  growth_condition_relationships: none  
+  culture_medium_relationships: none  
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  subject: <the strain grown on this medium>
+  predicate: <the type of medium relationship (grows_on, requires, uses_medium, etc.)Must be one of: grows_on, requires, uses_medium, optimal_growth_on>
+  object: <the specific culture medium>
+
+
+  Text:
+  none
+
+  ===
+
+extracted_object:
+  pmid: '19622668'
+  study_taxa:
+    - NCBITaxon:549685
+  strains:
+    - AUTO:WCC%204188
+    - AUTO:DSM%2019936
+    - AUTO:CCUG%2055508
+named_entities:
+  - id: NCBITaxon:549685
+    label: Bavariicoccus seileri
+    original_spans:
+      - 13:33
+      - 1478:1498
+      - 1539:1559
+  - id: AUTO:WCC%204188
+    label: WCC 4188
+    original_spans:
+      - 1564:1571
+  - id: AUTO:DSM%2019936
+    label: DSM 19936
+    original_spans:
+      - 1578:1586
+  - id: AUTO:CCUG%2055508
+    label: CCUG 55508
+    original_spans:
+      - 1592:1601
+---
+input_text: |
+  {'content': 'Agarilytica rhodophyticola gen. nov., sp. nov., isolated from Gracilaria blodgettii.\n\nA novel Gram-stain-negative, rod-shaped, non-spore-forming, aerobic, agarolytic bacterium, designated 017T, was isolated from Gracilaria blodgettii collected at the coast of Lingshui county, Hainan province, China. Optimal growth occurred at 28-33 °C (range 15-40 °C), with 3 % (w/v) NaCl (range 2-4 %) and at pH 8.0 (range pH 6.5-8.5). Cells of strain 017T were motile and formed yellow colonies on marine agar 2216. Phylogenetic analysis based on 16S rRNA gene sequences revealed that strain 017T shared the highest similarity with Teredinibacter turnerae T7902T (94.4 %). The predominant polar lipids of the novel isolate consisted of phosphatidylglycerol, phosphatidylethanolamine, aminophospholipid and some other unknown lipids. Major cellular fatty acids (>10 %) were C16 : 0, C18 : 1ω7c and summed feature 3 (C16 : 1ω7c/iso-C15 : 0 2-OH), and the sole respiratory lipoquinone was Q-8. The DNA G+C content of strain 017T was 40.2 mol%. Comparative analysis of 16S rRNA gene sequences and phenotypic characterization indicated that strain 017T represents a novel species in a new genus of the family Cellvibrionaceae, order Cellvibrionales, for which the name Agarilytica rhodophyticola gen. nov., sp. nov. is proposed. The type strain of Agarilytica rhodophyticola is 017T (=KCTC 42584T=MCCC 1H00123T).\n\nPMID:28879838', 'saved_to': None, 'windowed': False}
+raw_completion_output: |-
+  pmid: 28879838  
+  study_taxa: Agarilytica rhodophyticola  
+  strains: 017; KCTC 42584; MCCC 1H00123  
+  culture_media: marine agar 2216  
+  temperature_conditions: optimal 28-33°C; range 15-40°C  
+  ph_conditions: optimal pH 8.0; range pH 6.5-8.5  
+  oxygen_requirements: aerobic  
+  salt_tolerance: optimal 3% NaCl; range 2-4% NaCl  
+  article_type: novel_species  
+  atmospheric_requirements: none  
+  strain_relationships: 017 type_strain_of Agarilytica rhodophyticola; KCTC 42584 type_strain_of Agarilytica rhodophyticola; MCCC 1H00123 type_strain_of Agarilytica rhodophyticola  
+  growth_condition_relationships: none  
+  culture_medium_relationships: none  
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  subject: <the strain grown on this medium>
+  predicate: <the type of medium relationship (grows_on, requires, uses_medium, etc.)Must be one of: grows_on, requires, uses_medium, optimal_growth_on>
+  object: <the specific culture medium>
+
+
+  Text:
+  none
+
+  ===
+
+extracted_object:
+  pmid: '28879838'
+  study_taxa:
+    - NCBITaxon:1737490
+  strains:
+    - AUTO:017
+    - AUTO:KCTC%2042584
+    - AUTO:MCCC%201H00123
+  culture_media:
+    - AUTO:marine%20agar%202216
+  temperature_conditions:
+    - AUTO:optimal%2028-33%C2%B0C
+    - AUTO:range%2015-40%C2%B0C
+  ph_conditions:
+    - AUTO:optimal%20pH%208.0
+    - AUTO:range%20pH%206.5-8.5
+  oxygen_requirements:
+    - <https://w3id.org/metpo/1000602>
+  salt_tolerance:
+    - AUTO:optimal%203%25%20NaCl
+    - AUTO:range%202-4%25%20NaCl
+  article_type: novel_species
+  atmospheric_requirements:
+    - AUTO:none
+  strain_relationships:
+    - subject: AUTO:017
+      predicate: type_strain_of
+      object: NCBITaxon:1737490
+    - subject: AUTO:KCTC%2042584
+      predicate: type_strain_of
+      object: NCBITaxon:1737490
+    - subject: AUTO:MCCC%201H00123
+      predicate: type_strain_of
+      object: NCBITaxon:1737490
+named_entities:
+  - id: NCBITaxon:1737490
+    label: Agarilytica rhodophyticola
+    original_spans:
+      - 13:38
+      - 1267:1292
+      - 1346:1371
+  - id: AUTO:017
+    label: '017'
+    original_spans:
+      - 203:205
+      - 454:456
+      - 595:597
+      - 1024:1026
+      - 1146:1148
+      - 1376:1378
+  - id: AUTO:KCTC%2042584
+    label: KCTC 42584
+    original_spans:
+      - 1383:1392
+  - id: AUTO:MCCC%201H00123
+    label: MCCC 1H00123
+    original_spans:
+      - 1395:1406
+  - id: AUTO:marine%20agar%202216
+    label: marine agar 2216
+    original_spans:
+      - 501:516
+  - id: AUTO:optimal%2028-33%C2%B0C
+    label: optimal 28-33°C
+  - id: AUTO:range%2015-40%C2%B0C
+    label: range 15-40°C
+  - id: AUTO:optimal%20pH%208.0
+    label: optimal pH 8.0
+  - id: AUTO:optimal%203%25%20NaCl
+    label: optimal 3% NaCl
+  - id: AUTO:range%202-4%25%20NaCl
+    label: range 2-4% NaCl
+---
+input_text: |
+  {'content': 'Myceligenerans cantabricum sp. nov., a barotolerant actinobacterium isolated from a deep cold-water coral.\n\nAn actinobacterium strain (M-201(T)) was isolated from a deep-sea scleractinian coral (Fam. Caryophillidae) collected at 1500 m depth in the Avilés Canyon in the Cantabrian Sea, Asturias, Spain. Strain M-201(T) grew at pH 6.0-9.0 (optimum pH 7.0), between 4 and 37 °C (optimum 28 °C) and at salinities of 0.5-10.5% (w/v) NaCl (optimum 0.5-3.0%). The peptidoglycan contained the amino acids Lys, Ala, Thr, Glu and one unknown amino acid component, and belonged to type A4α, and the cell-wall sugars are glucose, mannose and galactose. The polar lipids were diphosphatidylglycerol, phosphatidylglycerol, phosphatidylinositol, an unknown phosphoglycolipid and seven unknown glycolipids. The predominant menaquinones were MK-9(H4) and MK-9(H6). Major cellular fatty acids were anteiso-C(15 : 0), iso-C(15 : 0) and anteiso-C(17 : 0). The genomic DNA G+C content was 72.4 mol%. The chemotaxonomic properties supported the affiliation of strain M-201(T) to the genus Myceligenerans . Phylogenetic analysis based on 16S rRNA gene sequences revealed that the organism was most closely related to Myceligenerans crystallogenes CD12E2-27(T) (98.2% 16S rRNA gene sequence similarity). However, it had a relatively low DNA-DNA relatedness value with the above strain (48%). The isolate showed antibiotic activity against Escherichia coli , Micrococcus luteus ATCC 14452 and Saccharomyces cerevisiae var. carlsbergensis. To the best of our knowledge, this is the first report of antibiotic production in the genus Myceligenerans . The differences in phenotypic, metabolic, ecological and phylogenetic characteristics justify the proposal of a novel species of the genus Myceligenerans , Myceligenerans cantabricum sp. nov., with M-201(T) ( = CECT 8512(T) = DSM 28392(T)) as the type strain.\n\nPMID:25667397', 'saved_to': None, 'windowed': False}
+raw_completion_output: |-
+  pmid: 25667397  
+  study_taxa: Myceligenerans  
+  strains: M-201; CECT 8512; DSM 28392  
+  culture_media: none  
+  temperature_conditions: 4-37°C; optimal 28°C  
+  ph_conditions: pH 6.0-9.0; optimal pH 7.0  
+  oxygen_requirements: none  
+  salt_tolerance: 0.5-10.5% NaCl; optimal 0.5-3.0% NaCl  
+  article_type: novel_species  
+  atmospheric_requirements: none  
+  strain_relationships: M-201 type_strain_of Myceligenerans cantabricum; CECT 8512 type_strain_of Myceligenerans cantabricum; DSM 28392 type_strain_of Myceligenerans cantabricum  
+  growth_condition_relationships: none  
+  culture_medium_relationships: none  
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  subject: <the strain grown on this medium>
+  predicate: <the type of medium relationship (grows_on, requires, uses_medium, etc.)Must be one of: grows_on, requires, uses_medium, optimal_growth_on>
+  object: <the specific culture medium>
+
+
+  Text:
+  none
+
+  ===
+
+extracted_object:
+  pmid: '25667397'
+  study_taxa:
+    - NCBITaxon:253183
+  strains:
+    - AUTO:M-201
+    - AUTO:CECT%208512
+    - AUTO:DSM%2028392
+  culture_media:
+    - AUTO:none
+  temperature_conditions:
+    - AUTO:4-37%C2%B0C
+    - AUTO:optimal%2028%C2%B0C
+  ph_conditions:
+    - AUTO:pH%206.0-9.0
+    - AUTO:optimal%20pH%207.0
+  oxygen_requirements:
+    - AUTO:none
+  salt_tolerance:
+    - AUTO:0.5-10.5%25%20NaCl
+    - AUTO:optimal%200.5-3.0%25%20NaCl
+  article_type: novel_species
+  atmospheric_requirements:
+    - AUTO:none
+  strain_relationships:
+    - subject: AUTO:M-201
+      predicate: type_strain_of
+      object: NCBITaxon:1479025
+    - subject: AUTO:CECT%208512
+      predicate: type_strain_of
+      object: NCBITaxon:1479025
+    - subject: AUTO:DSM%2028392
+      predicate: type_strain_of
+      object: NCBITaxon:1479025
+named_entities:
+  - id: NCBITaxon:253183
+    label: Myceligenerans
+    original_spans:
+      - 13:26
+      - 1083:1096
+      - 1210:1223
+      - 1623:1636
+      - 1779:1792
+      - 1796:1809
+  - id: AUTO:M-201
+    label: M-201
+    original_spans:
+      - 150:154
+      - 325:329
+      - 1061:1065
+      - 1838:1842
+  - id: AUTO:CECT%208512
+    label: CECT 8512
+    original_spans:
+      - 1851:1859
+  - id: AUTO:DSM%2028392
+    label: DSM 28392
+    original_spans:
+      - 1866:1874
+  - id: AUTO:4-37%C2%B0C
+    label: 4-37°C
+  - id: AUTO:optimal%2028%C2%B0C
+    label: optimal 28°C
+  - id: AUTO:pH%206.0-9.0
+    label: pH 6.0-9.0
+    original_spans:
+      - 342:351
+  - id: AUTO:optimal%20pH%207.0
+    label: optimal pH 7.0
+  - id: AUTO:0.5-10.5%25%20NaCl
+    label: 0.5-10.5% NaCl
+  - id: AUTO:optimal%200.5-3.0%25%20NaCl
+    label: optimal 0.5-3.0% NaCl
+  - id: NCBITaxon:1479025
+    label: Myceligenerans cantabricum
+    original_spans:
+      - 13:38
+      - 1796:1821

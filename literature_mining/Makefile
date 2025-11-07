@@ -1,3 +1,6 @@
+-include ../.env
+export
+
 # METPO Literature Mining Pipeline - Simplified Makefile
 # Core targets focused on essential workflow steps
 
@@ -161,13 +164,15 @@ extract: outputs/$(TEMPLATE)_$(TIMESTAMP).yaml
 
 outputs/$(TEMPLATE)_$(TIMESTAMP).yaml: templates/$(TEMPLATE)_populated.yaml intermediates/db/metpo.db | outputs logs
 	@echo "🚀 Running timestamped extraction: $(TEMPLATE) at $(TIMESTAMP)"
-	@input_dir="abstracts"; \
+	@input_dir="$(INPUT_DIR)"; \
 	if [ -d "abstracts/$(TEMPLATE)-rich" ] && [ $$(ls "abstracts/$(TEMPLATE)-rich"/*.txt 2>/dev/null | wc -l) -gt 0 ]; then \
 		input_dir="abstracts/$(TEMPLATE)-rich"; \
 		echo "Using curated abstracts: $$input_dir"; \
 	else \
 		echo "Using general abstracts: $$input_dir"; \
 	fi; \
+	source ../.env; \
+	echo "OPENAI_API_KEY from .env: $$OPENAI_API_KEY"; \
 	uv run ontogpt -vv \
 		--cache-db cache/ontogpt-cache.db \
 		extract \
