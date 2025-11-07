@@ -1,0 +1,115 @@
+---
+input_text: |-
+  Halomonas dongshanensis sp. nov., isolated from the seawater of Dongshan Island.
+
+  A taxonomic study was carried out on strain yzlin-01T, isolated from Dongshan Island seawater. The bacterium was Gram-stain-negative, catalase-positive, oxidase-negative, rod-shaped, and motile by polar flagella. Growth was observed at temperatures of 10-40 °C, at salinities of 0.5-18 %, and at pH of 6-10. Phylogenetic analysis based on 16S rRNA gene sequences indicated that strain yzlin-01T belonged to the genus Halomonas, with the highest sequence similarity to Halomonas malpeensis YU-PRIM-29T (96.7 %), followed by Halomonas johnsoniae T68687T (96.4 %) and Halomonas gomseomensis M12T (96.4 %), and other species of the genus Halomonas (93.4-96.3 %). The ANI and digital DNA-DNA hybridization estimate values between strain yzlin-01T and the closest type strain Halomonas malpeensis YU-PRIM-29T were 77.44 and 21.6 %, respectively. The principal fatty acids were summed feature 8 (consisting of C18 : 1 ω7c and/or C18 : 1 ω6c; 55.7 %), C16 : 0 (20.6 %), C12 : 0 3-OH (6.8 %), summed feature 3 (consisting of C16 : 1 ω7c and/or C16 : 1 ω6c; 5.1 %). The G+C content of the chromosomal DNA was 60.0 mol %. The respiratory quinone was identified as Q-9 (100 %). Phosphatidylethanolamine, phosphatidylglycerol, diphosphatidylglycerol, aminophospholipid, and three unidentified phospholipids were present. Combined genotypic and phenotypic data suggest that strain yzlin-01T represents a novel species within the genus Halomonas, for which the name Halomonas dongshanensis sp. nov. is proposed, with the type strain yzlin-01T (=GDMCC 1.3202T=KCTC 92467T).
+
+  PMID:37170873
+raw_completion_output: |-
+  pmid: 37170873  
+  study_taxa: Halomonas  
+  strains: yzlin-01; GDMCC 1.3202; KCTC 92467  
+  chemicals_mentioned: C18:1 ω7c; C18:1 ω6c; C16:0; C12:0 3-OH; C16:1 ω7c; C16:1 ω6c; Q-9; phosphatidylethanolamine; phosphatidylglycerol; diphosphatidylglycerol  
+  chemical_utilizations:   
+  strain_relationships: yzlin-01 type_strain_of Halomonas dongshanensis  
+  article_type: novel_species  
+prompt: |+
+  From the text below, extract the following entities in the following format:
+
+  pmid: <PubMed ID of the article (e.g., 23996836)>
+  study_taxa: <semicolon-separated list of the main bacterial or archaeal taxa being studied for chemical utilization>
+  strains: <Extract ONLY the strain designation part (e.g., "DA-C8", "MG1655", "ATCC 25922") WITHOUT genus/species prefixes. Focus on strain numbers, culture collection codes, and isolate identifiers. Automatically remove terminal "T" or "(T)" suffixes as these indicate type strain status (e.g., "DA-C8T" becomes "DA-C8", "K13T" becomes "K13"). Include strain numbers, culture collection numbers, and isolate names, but NOT the full taxonomic context.>
+  chemicals_mentioned: <Identify all chemical compounds mentioned in the text that are relevant to bacterial metabolism, growth, or biochemical activities. Include: carbon sources (glucose, acetate), nitrogen sources (ammonia, nitrate), vitamins (B12, biotin), metabolic intermediates, enzyme substrates, electron acceptors/donors, and any other chemicals involved in bacterial physiology. If no relevant chemicals are mentioned,  leave this field completely empty. DO NOT include entries like "None  explicitly mentioned" or similar phrases.>
+  chemical_utilizations: <A semicolon-separated list of strain-chemical relationships. Use EXACTLY THE SAME strain identifiers from the strains field.
+  Extract ALL relationships mentioned in the text. Be comprehensive - include both what strains CAN do and what they CANNOT do. Use specific predicates (uses_as_carbon_source, degrades, oxidizes) rather than generic ones when the text specifies the interaction type.>
+  strain_relationships: <A semicolon-separated list of strain-species relationships, where each relationship connects a strain identifier to its parent taxon. CRITICAL: Use EXACTLY THE SAME strain identifiers as listed in the strains field above - copy them verbatim, character-for-character. Do not modify, abbreviate, or expand the strain identifiers. Each relationship should have the strain identifier, relationship type, and parent species/genus. For example: "DA-C8 type_strain_of Insulambacter thermoxylanivorax; MG1655 strain_of Escherichia coli; ATCC 25922 type_strain_of Klebsiella pneumoniae". The strain identifiers MUST be identical to those used in the strains and chemical_utilizations fields. If no strain relationships are found, leave this field empty. DO NOT write "none".>
+  article_type: <The type of study or article. Choose the most appropriate category based on the content, with emphasis on metabolic_study for articles focusing on chemical utilization, degradation, or metabolic pathways.Must be one of: novel_species, novel_genus, taxonomic_revision, phylogenetic_analysis, comparative_taxonomy, emended_description, genome_sequence, review, biochemical_characterization, ecological_study, metabolic_study, physiology_study>
+
+
+  Text:
+  Halomonas dongshanensis sp. nov., isolated from the seawater of Dongshan Island.
+
+  A taxonomic study was carried out on strain yzlin-01T, isolated from Dongshan Island seawater. The bacterium was Gram-stain-negative, catalase-positive, oxidase-negative, rod-shaped, and motile by polar flagella. Growth was observed at temperatures of 10-40 °C, at salinities of 0.5-18 %, and at pH of 6-10. Phylogenetic analysis based on 16S rRNA gene sequences indicated that strain yzlin-01T belonged to the genus Halomonas, with the highest sequence similarity to Halomonas malpeensis YU-PRIM-29T (96.7 %), followed by Halomonas johnsoniae T68687T (96.4 %) and Halomonas gomseomensis M12T (96.4 %), and other species of the genus Halomonas (93.4-96.3 %). The ANI and digital DNA-DNA hybridization estimate values between strain yzlin-01T and the closest type strain Halomonas malpeensis YU-PRIM-29T were 77.44 and 21.6 %, respectively. The principal fatty acids were summed feature 8 (consisting of C18 : 1 ω7c and/or C18 : 1 ω6c; 55.7 %), C16 : 0 (20.6 %), C12 : 0 3-OH (6.8 %), summed feature 3 (consisting of C16 : 1 ω7c and/or C16 : 1 ω6c; 5.1 %). The G+C content of the chromosomal DNA was 60.0 mol %. The respiratory quinone was identified as Q-9 (100 %). Phosphatidylethanolamine, phosphatidylglycerol, diphosphatidylglycerol, aminophospholipid, and three unidentified phospholipids were present. Combined genotypic and phenotypic data suggest that strain yzlin-01T represents a novel species within the genus Halomonas, for which the name Halomonas dongshanensis sp. nov. is proposed, with the type strain yzlin-01T (=GDMCC 1.3202T=KCTC 92467T).
+
+  PMID:37170873
+
+  ===
+
+extracted_object:
+  pmid: '37170873'
+  study_taxa:
+    - NCBITaxon:2745
+  strains:
+    - AUTO:yzlin-01
+    - AUTO:GDMCC%201.3202
+    - AUTO:KCTC%2092467
+  chemicals_mentioned:
+    - AUTO:C18%3A1%20%CF%897c
+    - AUTO:C18%3A1%20%CF%896c
+    - CHEBI:15756
+    - AUTO:C12%3A0%203-OH
+    - AUTO:C16%3A1%20%CF%897c
+    - AUTO:C16%3A1%20%CF%896c
+    - AUTO:Q-9
+    - CHEBI:16038
+    - CHEBI:17517
+    - CHEBI:28494
+  article_type: novel_species
+named_entities:
+  - id: NCBITaxon:2745
+    label: Halomonas
+    original_spans:
+      - 0:8
+      - 499:507
+      - 550:558
+      - 605:613
+      - 647:655
+      - 716:724
+      - 852:860
+      - 1503:1511
+      - 1533:1541
+  - id: AUTO:yzlin-01
+    label: yzlin-01
+    original_spans:
+      - 126:133
+      - 467:474
+      - 814:821
+      - 1449:1456
+      - 1600:1607
+  - id: AUTO:GDMCC%201.3202
+    label: GDMCC 1.3202
+    original_spans:
+      - 1612:1623
+  - id: AUTO:KCTC%2092467
+    label: KCTC 92467
+    original_spans:
+      - 1626:1635
+  - id: AUTO:C18%3A1%20%CF%897c
+    label: C18:1 ω7c
+  - id: AUTO:C18%3A1%20%CF%896c
+    label: C18:1 ω6c
+  - id: CHEBI:15756
+    label: C16:0
+  - id: AUTO:C12%3A0%203-OH
+    label: C12:0 3-OH
+  - id: AUTO:C16%3A1%20%CF%897c
+    label: C16:1 ω7c
+  - id: AUTO:C16%3A1%20%CF%896c
+    label: C16:1 ω6c
+  - id: AUTO:Q-9
+    label: Q-9
+    original_spans:
+      - 1235:1237
+  - id: CHEBI:16038
+    label: phosphatidylethanolamine
+    original_spans:
+      - 1248:1271
+  - id: CHEBI:17517
+    label: phosphatidylglycerol
+    original_spans:
+      - 1274:1293
+      - 1298:1317
+  - id: CHEBI:28494
+    label: diphosphatidylglycerol
+    original_spans:
+      - 1296:1317

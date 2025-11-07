@@ -1,0 +1,73 @@
+---
+input_text: |
+  Title: Draft genome sequence of the volcano-inhabiting thermoacidophilic methanotroph Methylacidiphilum fumariolicum strain SolV.
+
+  Authors: Khadem AF, Wieczorek AS, Pol A, Vuilleumier S, Harhangi HR, Dunfield PF, Kalyuzhnaya MG, Murrell JC, Francoijs KJ, Stunnenberg HG, Stein LY, DiSpirito AA, Semrau JD, Lajus A, Médigue C, Klotz MG, Jetten MS, Op den Camp HJ.
+
+  Journal:  (2012)
+
+  DOI: 10.1128/jb.00501-12
+  PMID: 22740660
+  PMCID: PMC3393509
+
+  Abstract:
+  The draft genome of Methylacidiphilum fumariolicum SolV, a thermoacidophilic methanotroph of the phylum Verrucomicrobia, is presented. Annotation revealed pathways for one-carbon, nitrogen, and hydrogen catabolism and respiration together with central metabolic pathways. The genome encodes three orthologues of particulate methane monooxygenases. Sequencing of this genome will help in the understanding of methane cycling in volcanic environments.
+raw_completion_output: |-
+  pmid: 22740660  
+  study_taxa: Methylacidiphilum  
+  strains: SolV  
+  chemicals_mentioned: methane  
+  chemical_utilizations: SolV uses_as_carbon_source methane  
+  strain_relationships: SolV strain_of Methylacidiphilum fumariolicum  
+  article_type: genome_sequence  
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  subject: <the specific strain designation or identifier>
+  predicate: <the type of strain-taxon relationship (strain_of, type_strain_of, isolate_of, etc.)Must be one of: strain_of, type_strain_of, reference_strain_of, isolate_of, variant_of, derived_from, identical_to, deposited_as>
+  object: <the parent species or genus this strain belongs to>
+
+
+  Text:
+  SolV strain_of Methylacidiphilum fumariolicum
+
+  ===
+
+extracted_object:
+  pmid: '22740660'
+  study_taxa:
+    - NCBITaxon:511745
+  strains:
+    - AUTO:SolV
+  chemicals_mentioned:
+    - CHEBI:16183
+  chemical_utilizations:
+    - subject: AUTO:SolV
+      predicate: uses_as_carbon_source
+      object: CHEBI:16183
+  strain_relationships:
+    - subject: AUTO:SolV
+      predicate: strain_of
+      object: AUTO:Methylacidiphilum%20fumariolicum
+  article_type: genome_sequence
+named_entities:
+  - id: NCBITaxon:511745
+    label: Methylacidiphilum
+    original_spans:
+      - 86:102
+      - 471:487
+  - id: AUTO:SolV
+    label: SolV
+    original_spans:
+      - 124:127
+      - 502:505
+  - id: CHEBI:16183
+    label: methane
+    original_spans:
+      - 775:781
+      - 859:865
+  - id: AUTO:Methylacidiphilum%20fumariolicum
+    label: Methylacidiphilum fumariolicum
+    original_spans:
+      - 86:115
+      - 471:500

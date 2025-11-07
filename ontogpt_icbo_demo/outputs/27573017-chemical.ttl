@@ -1,0 +1,32 @@
+@base <http://example.org/NOPREFIX/> .
+@prefix AUTO: <http://example.org/AUTO/> .
+@prefix CHEBI: <http://purl.obolibrary.org/obo/CHEBI_> .
+@prefix METPO: <http://purl.obolibrary.org/obo/METPO_> .
+@prefix NCBITaxon: <http://purl.obolibrary.org/obo/NCBITaxon_> .
+@prefix metpo_chem: <http://w3id.org/metpo/chemical_utilization_extraction/> .
+
+[] a metpo_chem:ChemicalUtilizationLiteratureExtraction ;
+    metpo_chem:article_type "metabolic_study" ;
+    metpo_chem:chemical_utilizations [ a metpo_chem:ChemicalUtilization ;
+            metpo_chem:object AUTO:methanol%20without%20lanthanum ;
+            metpo_chem:predicate METPO:2000038 ;
+            metpo_chem:subject AUTO:MDH-3 ],
+        [ a metpo_chem:ChemicalUtilization ;
+            metpo_chem:object CHEBI:17790 ;
+            metpo_chem:predicate METPO:2000006 ;
+            metpo_chem:subject AUTO:MDH-3 ] ;
+    metpo_chem:chemicals_mentioned CHEBI:15343,
+        CHEBI:16236,
+        CHEBI:16842,
+        CHEBI:17790,
+        CHEBI:18315,
+        CHEBI:22984,
+        CHEBI:33336 ;
+    metpo_chem:pmid "27573017" ;
+    metpo_chem:strain_relationships [ a metpo_chem:StrainRelationship ;
+            metpo_chem:object NCBITaxon:408 ;
+            metpo_chem:predicate "strain_of" ;
+            metpo_chem:subject AUTO:MDH-3 ] ;
+    metpo_chem:strains AUTO:MDH-3 ;
+    metpo_chem:study_taxa NCBITaxon:408 .
+

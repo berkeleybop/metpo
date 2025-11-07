@@ -1,0 +1,72 @@
+@base <http://example.org/NOPREFIX/> .
+@prefix AUTO: <http://example.org/AUTO/> .
+@prefix NCBITaxon: <http://purl.obolibrary.org/obo/NCBITaxon_> .
+@prefix metpo_icbo: <http://w3id.org/metpo/strain_phenotype_icbo/> .
+
+[] a metpo_icbo:StrainPhenotypeLiteratureExtraction ;
+    metpo_icbo:pmid "19622668" ;
+    metpo_icbo:strain_to_phenotype [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object <https://w3id.org/metpo/1000010> ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:DSM%2019936 ],
+        [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object AUTO:coccoid ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:DSM%2019936 ],
+        [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object <https://w3id.org/metpo/1000010> ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:WCC%204188 ],
+        [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object AUTO:coccoid ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:WCC%204188 ],
+        [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object <https://w3id.org/metpo/1000380> ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:DSM%2019936 ],
+        [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object AUTO:coccoid ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:CCUG%2055508 ],
+        [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object <https://w3id.org/metpo/1000010> ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:CCUG%2055508 ],
+        [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object <https://w3id.org/metpo/1000144> ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:CCUG%2055508 ],
+        [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object <https://w3id.org/metpo/1000380> ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:WCC%204188 ],
+        [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object <https://w3id.org/metpo/1000144> ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:WCC%204188 ],
+        [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object <https://w3id.org/metpo/1000144> ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:DSM%2019936 ],
+        [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object <https://w3id.org/metpo/1000380> ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:CCUG%2055508 ] ;
+    metpo_icbo:strain_to_taxon [ a metpo_icbo:StrainToTaxonRelationship ;
+            metpo_icbo:object NCBITaxon:549685 ;
+            metpo_icbo:predicate "strain_of" ;
+            metpo_icbo:subject AUTO:DSM%2019936 ],
+        [ a metpo_icbo:StrainToTaxonRelationship ;
+            metpo_icbo:object NCBITaxon:549685 ;
+            metpo_icbo:predicate "strain_of" ;
+            metpo_icbo:subject AUTO:CCUG%2055508 ],
+        [ a metpo_icbo:StrainToTaxonRelationship ;
+            metpo_icbo:object NCBITaxon:549685 ;
+            metpo_icbo:predicate "strain_of" ;
+            metpo_icbo:subject AUTO:WCC%204188 ] ;
+    metpo_icbo:strains AUTO:CCUG%2055508,
+        AUTO:DSM%2019936,
+        AUTO:WCC%204188 ;
+    metpo_icbo:study_taxa NCBITaxon:549685 .
+

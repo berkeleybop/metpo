@@ -1,0 +1,41 @@
+@base <http://example.org/NOPREFIX/> .
+@prefix AUTO: <http://example.org/AUTO/> .
+@prefix CHEBI: <http://purl.obolibrary.org/obo/CHEBI_> .
+@prefix METPO: <http://purl.obolibrary.org/obo/METPO_> .
+@prefix NCBITaxon: <http://purl.obolibrary.org/obo/NCBITaxon_> .
+@prefix metpo_chem: <http://w3id.org/metpo/chemical_utilization_extraction/> .
+
+[] a metpo_chem:ChemicalUtilizationLiteratureExtraction ;
+    metpo_chem:article_type "novel_species" ;
+    metpo_chem:chemical_utilizations [ a metpo_chem:ChemicalUtilization ;
+            metpo_chem:object CHEBI:5291 ;
+            metpo_chem:predicate METPO:2000039 ;
+            metpo_chem:subject AUTO:RA9 ],
+        [ a metpo_chem:ChemicalUtilization ;
+            metpo_chem:object CHEBI:28017 ;
+            metpo_chem:predicate METPO:2000039 ;
+            metpo_chem:subject AUTO:RA9 ],
+        [ a metpo_chem:ChemicalUtilization ;
+            metpo_chem:object AUTO:casein ;
+            metpo_chem:predicate METPO:2000039 ;
+            metpo_chem:subject AUTO:RA9 ] ;
+    metpo_chem:chemicals_mentioned AUTO:casein,
+        AUTO:menaquinone%20MK-7,
+        AUTO:meso-Diaminopimelic%20acid,
+        CHEBI:16038,
+        CHEBI:17517,
+        CHEBI:28017,
+        CHEBI:28494,
+        CHEBI:39250,
+        CHEBI:39251,
+        CHEBI:5291 ;
+    metpo_chem:pmid "27983469" ;
+    metpo_chem:strain_relationships [ a metpo_chem:StrainRelationship ;
+            metpo_chem:object NCBITaxon:1914933 ;
+            metpo_chem:predicate "type_strain_of" ;
+            metpo_chem:subject AUTO:RA9 ] ;
+    metpo_chem:strains AUTO:CECT%209170,
+        AUTO:LMG%2029736,
+        AUTO:RA9 ;
+    metpo_chem:study_taxa NCBITaxon:1386 .
+

@@ -1,0 +1,129 @@
+---
+input_text: |-
+  Bacillus terrae sp. nov. isolated from Cistus ladanifer rhizosphere soil.
+
+  A bacterial strain designated RA9T was isolated from a root of Cistus ladanifer in Spain. Phylogenetic analyses based on 16S rRNA gene sequences placed the isolate into the genus Bacillus with its closest relatives being Bacillus fortis R-6514T and Bacillus fordii R-7190T with 98.2 % similarity in both cases. DNA-DNA hybridization studies showed mean relatedness values of 29 and 30 %, respectively, between strain RA9T and the type strains of B. fortis and B. fordii. Cells of the isolate were Gram-stain-positive, motile, sporulating rods. Catalase and oxidase were positive. Gelatin, starch and casein were not hydrolysed. Menaquinone MK-7 was the only menaquinone detected and iso-C15 : 0 and anteiso-C15 : 0 were the major fatty acids. The polar lipid profile consisted of diphosphatidylglycerol, phosphatidylglycerol, phosphatidylethanolamine, one unidentified aminophospholipid, one unidentified phospholipid, one unidentifed glycolipid and one unidentified lipid. meso-Diaminopimelic acid was detected in the peptidoglycan. The DNA G+C content was 43.1 mol%. Phylogenetic, chemotaxonomic and phenotypic analyses showed that strain RA9T should be considered as representing a novel species of the genus Bacillus, for which the name Bacillus terrae sp. nov. is proposed. The type strain is RA9T (=LMG 29736T=CECT 9170T).
+
+  PMID:27983469
+raw_completion_output: |-
+  pmid: 27983469  
+  study_taxa: Bacillus  
+  strains: RA9; LMG 29736; CECT 9170  
+  chemicals_mentioned: gelatin; starch; casein; menaquinone MK-7; iso-C15:0; anteiso-C15:0; diphosphatidylglycerol; phosphatidylglycerol; phosphatidylethanolamine; meso-Diaminopimelic acid  
+  chemical_utilizations: RA9 does_not_hydrolyze_gelatin; RA9 does_not_hydrolyze_starch; RA9 does_not_hydrolyze_casein  
+  strain_relationships: RA9 type_strain_of Bacillus terrae  
+  article_type: novel_species  
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  subject: <the specific strain designation or identifier>
+  predicate: <the type of strain-taxon relationship (strain_of, type_strain_of, isolate_of, etc.)Must be one of: strain_of, type_strain_of, reference_strain_of, isolate_of, variant_of, derived_from, identical_to, deposited_as>
+  object: <the parent species or genus this strain belongs to>
+
+
+  Text:
+  RA9 type_strain_of Bacillus terrae
+
+  ===
+
+extracted_object:
+  pmid: '27983469'
+  study_taxa:
+    - NCBITaxon:1386
+  strains:
+    - AUTO:RA9
+    - AUTO:LMG%2029736
+    - AUTO:CECT%209170
+  chemicals_mentioned:
+    - CHEBI:5291
+    - CHEBI:28017
+    - AUTO:casein
+    - AUTO:menaquinone%20MK-7
+    - CHEBI:39250
+    - CHEBI:39251
+    - CHEBI:28494
+    - CHEBI:17517
+    - CHEBI:16038
+    - AUTO:meso-Diaminopimelic%20acid
+  chemical_utilizations:
+    - subject: AUTO:RA9
+      predicate: does_not_hydrolyze
+      object: CHEBI:5291
+    - subject: AUTO:RA9
+      predicate: does_not_hydrolyze
+      object: CHEBI:28017
+    - subject: AUTO:RA9
+      predicate: does_not_hydrolyze
+      object: AUTO:casein
+  strain_relationships:
+    - subject: AUTO:RA9
+      predicate: type_strain_of
+      object: NCBITaxon:1914933
+  article_type: novel_species
+named_entities:
+  - id: NCBITaxon:1386
+    label: Bacillus
+    original_spans:
+      - 0:7
+      - 254:261
+      - 296:303
+      - 324:331
+      - 1287:1294
+      - 1316:1323
+  - id: AUTO:RA9
+    label: RA9
+    original_spans:
+      - 105:107
+      - 492:494
+      - 1216:1218
+      - 1373:1375
+  - id: AUTO:LMG%2029736
+    label: LMG 29736
+    original_spans:
+      - 1380:1388
+  - id: AUTO:CECT%209170
+    label: CECT 9170
+    original_spans:
+      - 1391:1399
+  - id: CHEBI:5291
+    label: gelatin
+    original_spans:
+      - 655:661
+  - id: CHEBI:28017
+    label: starch
+    original_spans:
+      - 664:669
+  - id: AUTO:casein
+    label: casein
+    original_spans:
+      - 675:680
+  - id: AUTO:menaquinone%20MK-7
+    label: menaquinone MK-7
+    original_spans:
+      - 703:718
+  - id: CHEBI:39250
+    label: iso-C15:0
+  - id: CHEBI:39251
+    label: anteiso-C15:0
+  - id: CHEBI:28494
+    label: diphosphatidylglycerol
+    original_spans:
+      - 855:876
+  - id: CHEBI:17517
+    label: phosphatidylglycerol
+    original_spans:
+      - 857:876
+      - 879:898
+  - id: CHEBI:16038
+    label: phosphatidylethanolamine
+    original_spans:
+      - 901:924
+  - id: AUTO:meso-Diaminopimelic%20acid
+    label: meso-Diaminopimelic acid
+    original_spans:
+      - 1049:1072
+  - id: NCBITaxon:1914933
+    label: Bacillus terrae
+    original_spans:
+      - 0:14
+      - 1316:1330

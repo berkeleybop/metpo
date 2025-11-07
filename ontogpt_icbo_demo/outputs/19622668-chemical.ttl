@@ -1,0 +1,22 @@
+@base <http://example.org/NOPREFIX/> .
+@prefix AUTO: <http://example.org/AUTO/> .
+@prefix CHEBI: <http://purl.obolibrary.org/obo/CHEBI_> .
+@prefix NCBITaxon: <http://purl.obolibrary.org/obo/NCBITaxon_> .
+@prefix metpo_chem: <http://w3id.org/metpo/chemical_utilization_extraction/> .
+
+[] a metpo_chem:ChemicalUtilizationLiteratureExtraction ;
+    metpo_chem:article_type "novel_species" ;
+    metpo_chem:chemicals_mentioned CHEBI:16449,
+        CHEBI:18237,
+        CHEBI:22660,
+        CHEBI:25094 ;
+    metpo_chem:pmid "19622668" ;
+    metpo_chem:strains AUTO:CCUG%2055508,
+        AUTO:DSM%2019936,
+        AUTO:WCC%204188 ;
+    metpo_chem:study_taxa NCBITaxon:117563,
+        NCBITaxon:136491,
+        NCBITaxon:2747,
+        NCBITaxon:697279,
+        NCBITaxon:82802 .
+

@@ -1,0 +1,17 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+
+SELECT DISTINCT ?class ?label ?parent_label
+WHERE {
+  ?class a owl:Class .
+  ?class rdfs:label ?label .
+  OPTIONAL {
+    ?class rdfs:subClassOf ?parent .
+    ?parent rdfs:label ?parent_label .
+    FILTER(?parent != owl:Thing)
+  }
+  FILTER(STRSTARTS(STR(?class), "http://purl.obolibrary.org/obo/METPO_"))
+}
+ORDER BY ?label
+LIMIT 100

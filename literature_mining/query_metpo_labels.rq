@@ -1,0 +1,16 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+
+SELECT ?class ?label WHERE {
+  VALUES ?class {
+    <https://w3id.org/metpo/1000602>
+    <https://w3id.org/metpo/1000603>
+    <https://w3id.org/metpo/1000605>
+    <https://w3id.org/metpo/1000615>
+    <https://w3id.org/metpo/1000620>
+    <https://w3id.org/metpo/1000681>
+    <https://w3id.org/metpo/1000702>
+    <https://w3id.org/metpo/1000703>
+  }
+  ?class rdfs:label ?label .
+}

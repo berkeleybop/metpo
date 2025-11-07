@@ -1,0 +1,241 @@
+/* @theme lbnl */
+
+@import 'default';
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap');
+
+/* LBNL Brand Colors */
+:root {
+  --lbnl-blue: #003262;      /* Berkeley Blue */
+  --lbnl-gold: #FDB515;      /* California Gold */
+  --lbnl-navy: #2E5090;      /* Navy (used in current slides) */
+  --lbnl-founders: #3B7EA1;  /* Founders Rock */
+  --lbnl-gray: #555555;      /* Text gray */
+  --lbnl-lightgray: #f5f5f5; /* Background gray */
+}
+
+/* Base section styling */
+section {
+  background-color: #ffffff;
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+  font-size: 24px;
+  color: var(--lbnl-gray);
+  padding: 60px 80px;
+}
+
+/* Headers */
+h1 {
+  font-size: 48px;
+  color: var(--lbnl-blue);
+  font-weight: 700;
+  border-bottom: 4px solid var(--lbnl-gold);
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 36px;
+  color: var(--lbnl-navy);
+  font-weight: 600;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 28px;
+  color: var(--lbnl-founders);
+  font-weight: 600;
+}
+
+/* Title slide styling */
+section.lead {
+  background: linear-gradient(135deg, var(--lbnl-blue) 0%, var(--lbnl-navy) 100%);
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+section.lead h1 {
+  color: var(--lbnl-gold);
+  border-bottom: none;
+  font-size: 56px;
+  margin-bottom: 20px;
+}
+
+section.lead p {
+  color: white;
+  font-size: 28px;
+  margin: 10px 0;
+}
+
+section.lead strong {
+  color: var(--lbnl-gold);
+  font-weight: 600;
+}
+
+/* Code blocks */
+code {
+  font-size: 18px;
+  background-color: var(--lbnl-lightgray);
+  color: var(--lbnl-blue);
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+pre {
+  font-size: 16px;
+  background-color: var(--lbnl-lightgray);
+  padding: 20px;
+  border-radius: 5px;
+  border-left: 4px solid var(--lbnl-gold);
+}
+
+pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+/* Tables */
+table {
+  font-size: 20px;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 20px 0;
+}
+
+th {
+  background-color: var(--lbnl-blue);
+  color: white;
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+}
+
+td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+  background-color: var(--lbnl-lightgray);
+}
+
+/* Lists */
+ul, ol {
+  margin: 15px 0;
+  padding-left: 30px;
+}
+
+li {
+  margin: 8px 0;
+}
+
+/* Strong/Bold text */
+strong {
+  color: var(--lbnl-blue);
+  font-weight: 600;
+}
+
+/* Links */
+a {
+  color: var(--lbnl-founders);
+  text-decoration: none;
+  border-bottom: 1px solid var(--lbnl-founders);
+}
+
+a:hover {
+  color: var(--lbnl-gold);
+  border-bottom-color: var(--lbnl-gold);
+}
+
+/* Header and Footer */
+header {
+  color: var(--lbnl-navy);
+  font-size: 12px;
+  font-weight: 600;
+  text-align: right;
+}
+
+footer {
+  color: var(--lbnl-blue);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* Page number styling */
+section::after {
+  color: var(--lbnl-navy);
+  font-weight: 600;
+}
+
+/* Custom grid layouts */
+.columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  margin: 20px 0;
+}
+
+.columns3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 20px 0;
+}
+
+/* Custom slide classes */
+section.data-slide {
+  background: linear-gradient(to bottom, #ffffff 0%, var(--lbnl-lightgray) 100%);
+}
+
+section.emphasis {
+  background: var(--lbnl-gold);
+  color: var(--lbnl-blue);
+}
+
+section.emphasis h1,
+section.emphasis h2 {
+  color: var(--lbnl-blue);
+  border-bottom-color: var(--lbnl-blue);
+}
+
+/* Blockquote styling */
+blockquote {
+  border-left: 4px solid var(--lbnl-gold);
+  padding-left: 20px;
+  margin: 20px 0;
+  font-style: italic;
+  color: var(--lbnl-navy);
+  background-color: var(--lbnl-lightgray);
+  padding: 15px 20px;
+}
+
+/* Image styling */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Special emphasis boxes */
+.highlight-box {
+  background-color: var(--lbnl-lightgray);
+  border-left: 6px solid var(--lbnl-gold);
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 4px;
+}
+
+/* Checkmark and cross styling for lists */
+ul li::marker {
+  color: var(--lbnl-founders);
+}
+
+/* Section dividers */
+hr {
+  border: none;
+  border-top: 2px solid var(--lbnl-gold);
+  margin: 30px 0;
+}

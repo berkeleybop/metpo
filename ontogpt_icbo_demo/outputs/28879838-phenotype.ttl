@@ -1,0 +1,80 @@
+@base <http://example.org/NOPREFIX/> .
+@prefix AUTO: <http://example.org/AUTO/> .
+@prefix NCBITaxon: <http://purl.obolibrary.org/obo/NCBITaxon_> .
+@prefix metpo_icbo: <http://w3id.org/metpo/strain_phenotype_icbo/> .
+
+[] a metpo_icbo:StrainPhenotypeLiteratureExtraction ;
+    metpo_icbo:pmid "28879838" ;
+    metpo_icbo:strain_to_medium [ a metpo_icbo:StrainToMediumRelationship ;
+            metpo_icbo:object AUTO:marine_agar_2216 ;
+            metpo_icbo:predicate "grows_on_medium" ;
+            metpo_icbo:subject AUTO:017 ] ;
+    metpo_icbo:strain_to_phenotype [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object AUTO:yellow%20colonies ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:017 ],
+        [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object <https://w3id.org/metpo/1000008> ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:017 ],
+        [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object AUTO:pH_range_6.5-8.5 ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:017 ],
+        [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object AUTO:agarolytic ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:017 ],
+        [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object AUTO:growth_range_15-40%C2%B0C ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:017 ],
+        [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object AUTO:Gram-stain-negative ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:017 ],
+        [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object <https://w3id.org/metpo/1000379> ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:017 ],
+        [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object AUTO:non-spore-forming ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:017 ],
+        [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object AUTO:optimal_pH_8.0 ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:017 ],
+        [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object AUTO:NaCl_range_2-4%25 ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:017 ],
+        [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object AUTO:rod-shaped ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:017 ],
+        [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object AUTO:optimal_growth_28-33%C2%B0C ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:017 ],
+        [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object AUTO:optimal_NaCl_3%25 ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:017 ] ;
+    metpo_icbo:strain_to_taxon [ a metpo_icbo:StrainToTaxonRelationship ;
+            metpo_icbo:object NCBITaxon:1737490 ;
+            metpo_icbo:predicate "strain_of" ;
+            metpo_icbo:subject AUTO:KCTC%2042584 ],
+        [ a metpo_icbo:StrainToTaxonRelationship ;
+            metpo_icbo:object NCBITaxon:1737490 ;
+            metpo_icbo:predicate "strain_of" ;
+            metpo_icbo:subject AUTO:MCCC%201H00123 ],
+        [ a metpo_icbo:StrainToTaxonRelationship ;
+            metpo_icbo:object NCBITaxon:1737490 ;
+            metpo_icbo:predicate "strain_of" ;
+            metpo_icbo:subject AUTO:017 ] ;
+    metpo_icbo:strains AUTO:017,
+        AUTO:KCTC%2042584,
+        AUTO:MCCC%201H00123 ;
+    metpo_icbo:study_taxa NCBITaxon:1737490 .
+

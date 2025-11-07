@@ -1,0 +1,40 @@
+@base <http://example.org/NOPREFIX/> .
+@prefix AUTO: <http://example.org/AUTO/> .
+@prefix NCBITaxon: <http://purl.obolibrary.org/obo/NCBITaxon_> .
+@prefix metpo_icbo: <http://w3id.org/metpo/strain_phenotype_icbo/> .
+
+[] a metpo_icbo:StrainPhenotypeLiteratureExtraction ;
+    metpo_icbo:pmid "27983469" ;
+    metpo_icbo:strain_to_phenotype [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object <https://w3id.org/metpo/1000379> ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:RA9 ],
+        [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object AUTO:Gram-stain-positive ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:RA9 ],
+        [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object <https://w3id.org/metpo/1000286> ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:RA9 ],
+        [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object AUTO:rod-shaped ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:RA9 ] ;
+    metpo_icbo:strain_to_taxon [ a metpo_icbo:StrainToTaxonRelationship ;
+            metpo_icbo:object NCBITaxon:1914933 ;
+            metpo_icbo:predicate "strain_of" ;
+            metpo_icbo:subject AUTO:RA9 ],
+        [ a metpo_icbo:StrainToTaxonRelationship ;
+            metpo_icbo:object NCBITaxon:1914933 ;
+            metpo_icbo:predicate "strain_of" ;
+            metpo_icbo:subject AUTO:LMG%2029736 ],
+        [ a metpo_icbo:StrainToTaxonRelationship ;
+            metpo_icbo:object NCBITaxon:1914933 ;
+            metpo_icbo:predicate "strain_of" ;
+            metpo_icbo:subject AUTO:CECT%209170 ] ;
+    metpo_icbo:strains AUTO:CECT%209170,
+        AUTO:LMG%2029736,
+        AUTO:RA9 ;
+    metpo_icbo:study_taxa NCBITaxon:1386 .
+

@@ -1,0 +1,59 @@
+@base <http://example.org/NOPREFIX/> .
+@prefix AUTO: <http://example.org/AUTO/> .
+@prefix CHEBI: <http://purl.obolibrary.org/obo/CHEBI_> .
+@prefix METPO: <http://purl.obolibrary.org/obo/METPO_> .
+@prefix NCBITaxon: <http://purl.obolibrary.org/obo/NCBITaxon_> .
+@prefix metpo_chem: <http://w3id.org/metpo/chemical_utilization_extraction/> .
+
+[] a metpo_chem:ChemicalUtilizationLiteratureExtraction ;
+    metpo_chem:article_type "novel_species" ;
+    metpo_chem:chemical_utilizations [ a metpo_chem:ChemicalUtilization ;
+            metpo_chem:object CHEBI:15361 ;
+            metpo_chem:predicate METPO:2000006 ;
+            metpo_chem:subject AUTO:BW863 ],
+        [ a metpo_chem:ChemicalUtilization ;
+            metpo_chem:object CHEBI:17790 ;
+            metpo_chem:predicate METPO:2000006 ;
+            metpo_chem:subject AUTO:BW872 ],
+        [ a metpo_chem:ChemicalUtilization ;
+            metpo_chem:object CHEBI:16236 ;
+            metpo_chem:predicate METPO:2000006 ;
+            metpo_chem:subject AUTO:BW863 ],
+        [ a metpo_chem:ChemicalUtilization ;
+            metpo_chem:object CHEBI:15361 ;
+            metpo_chem:predicate METPO:2000006 ;
+            metpo_chem:subject AUTO:BW872 ],
+        [ a metpo_chem:ChemicalUtilization ;
+            metpo_chem:object CHEBI:17790 ;
+            metpo_chem:predicate METPO:2000006 ;
+            metpo_chem:subject AUTO:BW863 ],
+        [ a metpo_chem:ChemicalUtilization ;
+            metpo_chem:object CHEBI:16236 ;
+            metpo_chem:predicate METPO:2000006 ;
+            metpo_chem:subject AUTO:BW872 ],
+        [ a metpo_chem:ChemicalUtilization ;
+            metpo_chem:object CHEBI:25115 ;
+            metpo_chem:predicate METPO:2000006 ;
+            metpo_chem:subject AUTO:BW863 ],
+        [ a metpo_chem:ChemicalUtilization ;
+            metpo_chem:object CHEBI:25115 ;
+            metpo_chem:predicate METPO:2000006 ;
+            metpo_chem:subject AUTO:BW872 ] ;
+    metpo_chem:chemicals_mentioned CHEBI:15361,
+        CHEBI:16236,
+        CHEBI:17790,
+        CHEBI:25115 ;
+    metpo_chem:pmid "19622650" ;
+    metpo_chem:strain_relationships [ a metpo_chem:StrainRelationship ;
+            metpo_chem:object NCBITaxon:569860 ;
+            metpo_chem:predicate "type_strain_of" ;
+            metpo_chem:subject AUTO:BW863 ],
+        [ a metpo_chem:StrainRelationship ;
+            metpo_chem:object NCBITaxon:569860 ;
+            metpo_chem:predicate "strain_of" ;
+            metpo_chem:subject AUTO:BW872 ] ;
+    metpo_chem:strains AUTO:BW863,
+        AUTO:BW872 ;
+    metpo_chem:study_taxa NCBITaxon:1156568,
+        NCBITaxon:184923 .
+

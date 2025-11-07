@@ -1,0 +1,22 @@
+@base <http://example.org/NOPREFIX/> .
+@prefix AUTO: <http://example.org/AUTO/> .
+@prefix CHEBI: <http://purl.obolibrary.org/obo/CHEBI_> .
+@prefix METPO: <http://purl.obolibrary.org/obo/METPO_> .
+@prefix NCBITaxon: <http://purl.obolibrary.org/obo/NCBITaxon_> .
+@prefix metpo_chem: <http://w3id.org/metpo/chemical_utilization_extraction/> .
+
+[] a metpo_chem:ChemicalUtilizationLiteratureExtraction ;
+    metpo_chem:article_type "genome_sequence" ;
+    metpo_chem:chemical_utilizations [ a metpo_chem:ChemicalUtilization ;
+            metpo_chem:object CHEBI:16183 ;
+            metpo_chem:predicate METPO:2000006 ;
+            metpo_chem:subject AUTO:SolV ] ;
+    metpo_chem:chemicals_mentioned CHEBI:16183 ;
+    metpo_chem:pmid "22740660" ;
+    metpo_chem:strain_relationships [ a metpo_chem:StrainRelationship ;
+            metpo_chem:object AUTO:Methylacidiphilum%20fumariolicum ;
+            metpo_chem:predicate "strain_of" ;
+            metpo_chem:subject AUTO:SolV ] ;
+    metpo_chem:strains AUTO:SolV ;
+    metpo_chem:study_taxa NCBITaxon:511745 .
+
