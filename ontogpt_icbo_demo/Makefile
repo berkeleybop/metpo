@@ -160,7 +160,7 @@ slides:
 		echo "Error: icbo_metpo_slides.md not found"; \
 		exit 1; \
 	fi
-	npx @marp-team/marp-cli $(SLIDES_DIR)/icbo_metpo_slides.md --theme-set themes/lbnl.css -o $(SLIDES_DIR)/icbo_metpo_slides.pdf
+	npx @marp-team/marp-cli $(SLIDES_DIR)/icbo_metpo_slides.md --theme-set themes/lbnl.css --allow-local-files -o $(SLIDES_DIR)/icbo_metpo_slides.pdf
 	@echo "Slides generated: icbo_metpo_slides.pdf"
 	@echo ""
 	@echo "To also generate PPTX: make slides-pptx"

@@ -1,0 +1,179 @@
+@prefix metpo: <https://w3id.org/metpo/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+# ============================================================================
+# KEY METPO PROPERTIES - Domains and Ranges
+# ============================================================================
+# Extracted from METPO 2025-11-07
+#
+# This file shows the most important object properties in METPO and their
+# domains (what they apply to) and ranges (what they point to).
+# ============================================================================
+
+# ----------------------------------------------------------------------------
+# PHENOTYPE ASSERTION
+# ----------------------------------------------------------------------------
+
+metpo:2000102 a owl:ObjectProperty ;
+    rdfs:label "has phenotype" ;
+    rdfs:domain metpo:1000525 ;  # microbe
+    rdfs:range metpo:1000059 ;   # phenotype
+    rdfs:comment """
+        Used to assert that a microbial organism exhibits a particular phenotype.
+        Example: Escherichia coli has_phenotype aerobic
+    """ .
+
+# ----------------------------------------------------------------------------
+# BIOLOGICAL PROCESS CAPABILITY
+# ----------------------------------------------------------------------------
+
+metpo:2000103 a owl:ObjectProperty ;
+    rdfs:label "capable of" ;
+    rdfs:domain metpo:1000525 ;  # microbe
+    rdfs:range metpo:1000630 ;   # biological process
+    rdfs:comment """
+        Used to assert that a microbial organism can perform a biological process.
+        Example: Bacillus subtilis capable_of sporulation
+    """ .
+
+# ----------------------------------------------------------------------------
+# CHEMICAL INTERACTIONS (Root Property)
+# ----------------------------------------------------------------------------
+
+metpo:2000001 a owl:ObjectProperty ;
+    rdfs:label "organism interacts with chemical" ;
+    rdfs:domain metpo:1000525 ;  # microbe
+    rdfs:range metpo:1000526 ;   # chemical entity
+    rdfs:comment """
+        Root property for all chemical utilization relationships.
+        Has many specific subproperties (see below).
+    """ .
+
+# ----------------------------------------------------------------------------
+# CHEMICAL INTERACTION SUBPROPERTIES
+# ----------------------------------------------------------------------------
+
+metpo:2000002 a owl:ObjectProperty ;
+    rdfs:label "assimilates" ;
+    rdfs:subPropertyOf metpo:2000001 ;
+    rdfs:comment "Organism incorporates the chemical into biomass" .
+
+metpo:2000006 a owl:ObjectProperty ;
+    rdfs:label "uses as carbon source" ;
+    rdfs:subPropertyOf metpo:2000001 ;
+    rdfs:comment "Chemical provides carbon for organism growth" .
+
+metpo:2000007 a owl:ObjectProperty ;
+    rdfs:label "degrades" ;
+    rdfs:subPropertyOf metpo:2000001 ;
+    rdfs:comment "Organism breaks down the chemical" .
+
+metpo:2000008 a owl:ObjectProperty ;
+    rdfs:label "uses as electron acceptor" ;
+    rdfs:subPropertyOf metpo:2000001 ;
+    rdfs:comment "Chemical accepts electrons in respiration" .
+
+metpo:2000009 a owl:ObjectProperty ;
+    rdfs:label "uses as electron donor" ;
+    rdfs:subPropertyOf metpo:2000001 ;
+    rdfs:comment "Chemical donates electrons in respiration" .
+
+metpo:2000010 a owl:ObjectProperty ;
+    rdfs:label "uses as energy source" ;
+    rdfs:subPropertyOf metpo:2000001 ;
+    rdfs:comment "Chemical provides energy for organism" .
+
+metpo:2000011 a owl:ObjectProperty ;
+    rdfs:label "ferments" ;
+    rdfs:subPropertyOf metpo:2000001 ;
+    rdfs:comment "Organism ferments the chemical" .
+
+metpo:2000012 a owl:ObjectProperty ;
+    rdfs:label "uses for growth" ;
+    rdfs:subPropertyOf metpo:2000001 ;
+    rdfs:comment "Chemical supports organism growth" .
+
+metpo:2000013 a owl:ObjectProperty ;
+    rdfs:label "hydrolyzes" ;
+    rdfs:subPropertyOf metpo:2000001 ;
+    rdfs:comment "Organism hydrolyzes the chemical" .
+
+metpo:2000014 a owl:ObjectProperty ;
+    rdfs:label "uses as nitrogen source" ;
+    rdfs:subPropertyOf metpo:2000001 ;
+    rdfs:comment "Chemical provides nitrogen for organism" .
+
+metpo:2000016 a owl:ObjectProperty ;
+    rdfs:label "oxidizes" ;
+    rdfs:subPropertyOf metpo:2000001 ;
+    rdfs:comment "Organism oxidizes the chemical" .
+
+metpo:2000017 a owl:ObjectProperty ;
+    rdfs:label "reduces" ;
+    rdfs:subPropertyOf metpo:2000001 ;
+    rdfs:comment "Organism reduces the chemical" .
+
+metpo:2000018 a owl:ObjectProperty ;
+    rdfs:label "requires for growth" ;
+    rdfs:subPropertyOf metpo:2000001 ;
+    rdfs:comment "Chemical is required for organism growth" .
+
+metpo:2000019 a owl:ObjectProperty ;
+    rdfs:label "uses for respiration" ;
+    rdfs:subPropertyOf metpo:2000001 ;
+    rdfs:comment "Chemical is used in respiration" .
+
+metpo:2000020 a owl:ObjectProperty ;
+    rdfs:label "uses as sulfur source" ;
+    rdfs:subPropertyOf metpo:2000001 ;
+    rdfs:comment "Chemical provides sulfur for organism" .
+
+# ----------------------------------------------------------------------------
+# DOMAIN AND RANGE CLASSES
+# ----------------------------------------------------------------------------
+
+metpo:1000525 a owl:Class ;
+    rdfs:label "microbe" ;
+    rdfs:comment "The organism class - domain of has_phenotype and chemical interaction properties" .
+
+metpo:1000526 a owl:Class ;
+    rdfs:label "chemical entity" ;
+    rdfs:comment "The chemical class - range of chemical interaction properties" .
+
+metpo:1000059 a owl:Class ;
+    rdfs:label "phenotype" ;
+    rdfs:subClassOf metpo:1000188 ;  # quality
+    rdfs:comment "The phenotype class - range of has_phenotype property" .
+
+metpo:1000630 a owl:Class ;
+    rdfs:label "biological process" ;
+    rdfs:comment "The process class - range of capable_of property" .
+
+metpo:1000188 a owl:Class ;
+    rdfs:label "quality" ;
+    rdfs:comment "Root class for all qualities/phenotypes" .
+
+# ============================================================================
+# SUMMARY
+# ============================================================================
+#
+# KEY PATTERNS:
+#
+# 1. Phenotype assertions:
+#    microbe --has_phenotype--> phenotype
+#    Example: E. coli --has_phenotype--> aerobic
+#
+# 2. Process capabilities:
+#    microbe --capable_of--> biological_process
+#    Example: B. subtilis --capable_of--> sporulation
+#
+# 3. Chemical interactions:
+#    microbe --[specific_property]--> chemical_entity
+#    Example: E. coli --ferments--> glucose
+#    Example: P. aeruginosa --degrades--> toluene
+#
+# All chemical interaction properties inherit from "organism interacts with chemical"
+# providing a uniform semantic framework for diverse chemical utilization patterns.
+#
+# ============================================================================

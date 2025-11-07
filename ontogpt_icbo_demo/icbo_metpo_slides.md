@@ -20,7 +20,7 @@ ICBO 2025 • Tuesday, November 11
 
 ## The Data Integration Challenge
 
-Microbial trait data is exploding, but it's semantically inconsistent:
+Microbial trait data is abundant, but it's semantically inconsistent:
 
 <div class="columns3">
 <div>
@@ -90,7 +90,7 @@ We evaluated existing ontologies for microbial trait coverage:
 - **Focused:** 255 classes covering BacDive, BactoTraits, and Madin datasets
 - **Lightweight:** Purpose-built for KG-Microbe knowledge graph
 - **Modern:** ODK, ROBOT, OAK tooling
-- **Maintained:** Active development for DOE CMM project ($850K FY26)
+- **Maintained:** Active development for DOE CMM project
 
 **Core principle:** Build ontologies that serve real applications, driven by actual data integration needs.
 
@@ -106,14 +106,14 @@ We evaluated existing ontologies for microbial trait coverage:
 METPO synonyms handle messy data:
 
 ```turtle
-METPO:1000615 a owl:Class ;
-  rdfs:label "mesophilic" ;
-  oboInOwl:hasExactSynonym
-    "mesophile" ;
-  oboInOwl:hasExactSynonym
-    "temperature: mesophilic" ;
-  oboInOwl:hasExactSynonym
-    "temp_class: mesophile" .
+METPO:1000644 a owl:Class ;
+  rdfs:label "heterotrophic" ;
+  oboInOwl:hasRelatedSynonym
+    "TT_heterotroph" ;        # BactoTraits
+  oboInOwl:hasRelatedSynonym
+    "aerobic_heterotrophy" ;  # Madin
+  oboInOwl:hasRelatedSynonym
+    "heterotroph" .           # Common variant
 ```
 
 Enables semantic normalization across all three data sources.
@@ -123,15 +123,14 @@ Enables semantic normalization across all three data sources.
 
 **2. LLM-Assisted Curation**
 
-- Semantic search pipeline:
-  - OLS + BioPortal + Names4Life embeddings
-  - ~3,000 METPO mappings to external ontologies
-  - SSSOM format (skos:exactMatch, closeMatch, relatedMatch, broadMatch)
+**Semantic search pipeline:**
+- OLS + BioPortal + Names4Life embeddings
+- ~3,000 SSSOM mappings (exactMatch, closeMatch, etc.)
 
-- Modern development practices:
-  - ODK build system for consistency
-  - ROBOT validation in CI/CD
-  - Spreadsheet-based curation for accessibility
+**Modern development:**
+- ODK build system + ROBOT validation
+- Spreadsheet-based curation
+- CI/CD automation
 
 **ICBO 2025 Theme:** AI-enabled ontology development
 
@@ -152,8 +151,6 @@ Enables semantic normalization across all three data sources.
 | **Combined** | 1.86M edges | 253,805 | 13.6% | **152 unique** |
 
 **Source:** Direct analysis of KG-Microbe transformed data (TSV files)
-
-*All statistics traceable to primary sources in `/kg-microbe/data/transformed/`*
 
 ---
 
@@ -193,7 +190,7 @@ NCBITaxon:300   biolink:has_phenotype  METPO:1000615
 
 All variations normalized to single METPO CURIE.
 
-**Now queryable with SPARQL/Cypher:**
+**Now queryable with SPARQL:**
 ```sparql
 SELECT ?taxon WHERE {
   ?taxon biolink:has_phenotype METPO:1000615
@@ -207,15 +204,14 @@ SELECT ?taxon WHERE {
 
 ## KG-Microbe: METPO as Semantic Backbone
 
-![width:800px](figures/kg_microbe_metpo_usage.png)
+![width:700px](figures/kg_microbe_metpo_usage.png)
 
 **Production knowledge graph for growth media prediction:**
+
 - **253,805 METPO edges** across 1.86M total edges
 - **152 unique METPO terms** normalize traits from three heterogeneous datasets
 - **Biolink model compliance** enables standard graph queries
 - **Application:** CMM project - predicting organisms for REE biorecovery
-
-*Figure: METPO usage distribution across KG-Microbe datasets*
 
 ---
 
@@ -237,6 +233,61 @@ NCBITaxon:200  biolink:has_phenotype  METPO:1000614  RO:0002200  bacdive:23451
 ```
 
 **This is production data** - METPO CURIEs in use, enabling ML predictions.
+
+---
+
+## METPO's Object Property Model
+
+<div class="columns">
+<div>
+
+**1. Phenotype Assertions**
+
+```turtle
+metpo:2000102 a owl:ObjectProperty ;
+  rdfs:label "has phenotype" ;
+  rdfs:domain metpo:1000525 ;  # microbe
+  rdfs:range metpo:1000059 .   # phenotype
+
+# Usage example:
+NCBITaxon:562 metpo:2000102 metpo:1000602 .
+# E. coli has_phenotype aerobic
+```
+
+**2. Process Capabilities**
+
+```turtle
+metpo:2000103 a owl:ObjectProperty ;
+  rdfs:label "capable of" ;
+  rdfs:domain metpo:1000525 ;  # microbe
+  rdfs:range metpo:1000630 .   # process
+
+# B. subtilis capable_of sporulation
+```
+
+</div>
+<div>
+
+**3. Chemical Interactions (20+ subproperties)**
+
+```turtle
+metpo:2000001 a owl:ObjectProperty ;
+  rdfs:label "organism interacts with chemical" ;
+  rdfs:domain metpo:1000525 ;  # microbe
+  rdfs:range metpo:1000526 .   # chemical
+
+# Subproperties include:
+# ferments, uses_as_carbon_source, degrades,
+# uses_as_electron_acceptor, oxidizes, reduces
+# ... 14 more
+
+# Example:
+NCBITaxon:562 metpo:2000011 CHEBI:17234 .
+# E. coli ferments glucose
+```
+
+</div>
+</div>
 
 ---
 
@@ -266,18 +317,18 @@ bacteria were isolated...
 AUTO:BW863
   has_phenotype METPO:1000143 . # ✅ Gram-negative
 AUTO:BW863
-  has_phenotype METPO:1000008 . # ✅ aerobic
+  has_phenotype METPO:1000602 . # ✅ aerobic
 AUTO:BW863
   has_phenotype AUTO:rod-shaped . # ❌ gap!
 AUTO:BW863
   has_phenotype METPO:1000181 . # ✅ mesophilic
 ```
 
-**Results across 10 PubMed abstracts:**
-- 32.5% phenotype grounding to METPO (25/77 terms)
-- 100% chemical grounding to ChEBI (47/47 terms)
-- 100% taxonomic grounding to NCBITaxon (22/22 terms)
-- 52 AUTO terms indicate coverage gaps for future curation
+**Results (10 PubMed abstracts):**
+- Phenotype: 32.5% to METPO (25/77)
+- Chemical: 100% to ChEBI (47/47)
+- Taxonomy: 100% to NCBITaxon (22/22)
+- 52 AUTO terms → coverage gaps
 
 </div>
 </div>
@@ -298,8 +349,6 @@ AUTO:BW863
 
 **This is METPO's living development model.**
 
-<!-- TODO: Generate this Mermaid diagram -->
-
 ---
 
 ## OntoGPT Grounding: Data-Driven Expansion
@@ -318,32 +367,44 @@ AUTO:BW863
 
 ---
 
-## METPO Hierarchy Example
+## METPO's Phenotype Hierarchies
 
-![width:700px](figures/metpo_temperature_hierarchy.png)
+![width:800px](figures/metpo_viz/temperature_preference_examples.png)
 
-**Organized for our use case:**
-- Temperature preferences (psychrophilic → mesophilic → thermophilic)
-- Oxygen requirements (aerobic, anaerobic, microaerophilic)
-- Metabolic capabilities (heterotrophic, autotrophic, mixotrophic)
-- Chemical interaction properties (65+ predicates for organism-chemical relationships)
+**Temperature preference phenotypes:**
+- **Psychrophilic** (≤15°C) - grows at low temperatures
+- **Mesophilic** (20-45°C) - grows at intermediate temperatures
+- **Thermophilic** (≥45°C) - grows at elevated temperatures
+- **Hyperthermophilic** (≥80°C) - grows at very high temperatures
 
-<!-- TODO: Generate with runoak viz -->
+---
+
+## Morphological and Process Phenotypes
+
+![width:550px](figures/metpo_viz/cell_shape_examples.png)
+
+**Cell morphology phenotypes:**
+- Coccus shaped (spherical), Rod shaped (bacillus), Spiral shaped
+
+![width:550px](figures/metpo_viz/respiration_examples.png)
+
+**Biological processes:** Respiration (aerobic, anaerobic), fermentation, sporulation
 
 ---
 
 ## Interoperability: METPO is a Good Citizen
 
-**SSSOM Mappings to external ontologies:**
+**SSSOM Mappings via embedding searches on METPO labels:**
 
-Two mapping strategies evaluated:
+Generated ~3,000 mappings using semantic search (OLS + BioPortal + Names4Life):
+- **Relaxed strategy:** 3,008 mappings (mostly broadMatch/relatedMatch)
+- **Optimized strategy:** 2,883 mappings (only 73 exactMatch)
 
-| Strategy | Total Mappings | Match Types |
-|----------|----------------|-------------|
-| **Combined Relaxed** | 2,659 broadMatch<br/>171 relatedMatch<br/>113 closeMatch<br/>65 exactMatch | Mixed precision |
-| **Optimized** | 2,590 relatedMatch<br/>220 closeMatch<br/>73 exactMatch | Higher precision |
+**Method:** Embedding-based semantic search using `text-embedding-3-small`
 
-**Integration approach:** Pragmatic mappings enable interoperability while maintaining METPO's focused design
+**Reality check:** Mean structural coherence = 8.2%
+- Semantic matches exist, but hierarchical organization differs significantly
+- Justifies purpose-built ontology over importing external structures
 
 **Availability:**
 - BioPortal: https://bioportal.bioontology.org/ontologies/METPO
@@ -354,18 +415,18 @@ Two mapping strategies evaluated:
 
 ## Sustainability & Governance
 
+**METPO supports CultureBot (LBNL LDRD):**
+- **Goal:** ML models to predict growth conditions for unculturable microbes
+- **KG-Microbe's role:** Training data (253K+ phenotype assertions)
+- **METPO's role:** Semantic normalization enabling predictions
+
 **How we ensure METPO won't be abandoned:**
+1. **Active funding:** DOE CMM project + CultureBot LDRD
+2. **Production dependency:** ML pipeline requires standardized phenotypes
+3. **Modern tooling:** ODK, ROBOT, OAK
+4. **Accessible curation:** Spreadsheet-based, LLM-assisted
 
-1. **Active funding:** DOE CMM project ($850K FY26) - REE biorecovery research
-2. **Real application:** KG-Microbe depends on METPO for production predictions
-3. **Modern tooling:** ODK, ROBOT, OAK prevent bitrot
-4. **Accessible contribution:** ROBOT-compatible spreadsheets, not complex OWL
-5. **LLM-assisted workflows:** Scalable curation, undergraduate-accessible
-
-**Governance:**
-- PI: Marcin Joachimiak (LBNL)
-- Driven by application needs (pragmatic, not theoretical)
-- Community contributions via GitHub
+**Governance:** PI Marcin Joachimiak (LBNL), application-driven, GitHub contributions
 
 **ICBO 2025 Theme:** Long-term sustainability
 
@@ -373,19 +434,15 @@ Two mapping strategies evaluated:
 
 ## Conclusion
 
-**METPO demonstrates an application-driven approach to ontology development:**
+**METPO demonstrates an application-driven approach:**
 
-✅ **Production validation:** 253,805 edges across 1.86M-edge knowledge graph
-✅ **Sustainability by design:** Active funding, real application dependencies, modern tooling
-✅ **Transparent metrics:** All claims traceable to primary data sources
-✅ **Pragmatic interoperability:** ~3,000 mappings to external ontologies via SSSOM
-✅ **AI-assisted workflows:** LLM-powered curation and semantic search pipelines
+✅ **Production validation:** 253,805 edges in 1.86M-edge knowledge graph
+✅ **Sustainability:** Active funding, real dependencies, modern tooling
+✅ **Transparency:** All claims traceable to primary sources
+✅ **Interoperability:** ~3,000 SSSOM mappings (but low structural coherence: 8.2%)
+✅ **AI-assisted:** LLM-powered curation workflows
 
-**Key insight:** Purpose-built ontologies can effectively serve specialized domains when:
-- Driven by concrete application needs (KG-Microbe)
-- Supported by active maintenance (CMM project funding)
-- Built with modern practices (ODK, ROBOT, spreadsheet curation)
-- Validated against real data (BacDive, BactoTraits, Madin datasets)
+**Key insight:** Purpose-built ontologies work when driven by real needs—even when existing ontologies have poor structural alignment
 
 ---
 
@@ -393,19 +450,14 @@ Two mapping strategies evaluated:
 
 # Thank You
 
-**METPO Resources:**
-- GitHub: https://github.com/berkeleybop/metpo
-- BioPortal: https://bioportal.bioontology.org/ontologies/METPO
+**Resources:**
+GitHub: github.com/berkeleybop/metpo • BioPortal: bioportal.bioontology.org/ontologies/METPO
+KG-Microbe: github.com/Knowledge-Graph-Hub/kg-microbe
 
-**KG-Microbe:**
-- GitHub: https://github.com/Knowledge-Graph-Hub/kg-microbe
-
-**Contact:**
-- Mark Miller, LBNL
-- PI: Marcin Joachimiak
+**Contact:** Mark Miller, LBNL • PI: Marcin Joachimiak
 
 **Acknowledgments:**
-DOE CMM Program • LBNL Biosciences Division • OntoGPT/OAK teams
+CultureBot LDRD • DOE CMM Program • LBNL Biosciences • OntoGPT/OAK teams
 
 Questions?
 
@@ -436,18 +488,14 @@ Questions?
 ## Technical Details: METPO Development
 
 **Source of truth:** ROBOT-compatible spreadsheets (Google Sheets)
-**Build system:** Ontology Development Kit (ODK)
-**Validation:** ROBOT (0 errors, 318 minor whitespace warnings)
-**Semantic search:** Custom pipeline
-- OLS + BioPortal + Names4Life embeddings in SQLite
-- openai_text-embedding-3-small model
-- Generates SSSOM mappings
 
-**Statistics:**
-- 255 total terms
-- 118 with definitions (46.3%)
-- 158 mapped to 24 external ontologies (62%)
-- ~250 classes in hierarchy
+**Build system:** Ontology Development Kit (ODK)
+
+**Validation:** ROBOT (0 errors, 318 minor whitespace warnings)
+
+**Semantic search:** OLS + BioPortal + Names4Life embeddings, generates SSSOM mappings
+
+**Statistics:** 255 terms, 118 with definitions (46.3%), 158 mapped to 24 external ontologies
 
 ---
 
@@ -472,26 +520,18 @@ Questions?
 
 ## Comprehensive Ontology Survey: What We Evaluated
 
-**Systematic testing documented in PRIMARY SOURCES:**
+**Systematic embedding-based testing:**
 
-**ChromaDB testing (verified via SQL queries):**
-- **39 ontologies embedded** with 778,496 total embeddings
-- Top tested: CHEBI (221K), upheno (192K), GO (84K), OBA (73K), foodon (40K)
-- **24 ontologies retained:** 20 OLS + 4 BioPortal-only
-- **15 removed:** Including CHEBI (worst ROI despite size)
+- **39 ontologies tested** (778K total embeddings)
+- **Top tested:** CHEBI (221K), upheno (192K), GO (84K), OBA (73K)
+- **24 retained** (20 OLS + 4 BioPortal-only)
+- **15 removed** (including CHEBI - worst ROI)
 
-**Final retained set (from ChromaDB SQL queries):**
-- **20 from OLS:** upheno, go, oba, flopo, micro, pato, envo, ecocore, eupath, phipo, mco, eco, omp, ohmi, cmpo, biolink, apo, pco, geo, exo
-- **4 from BioPortal (verified via API):**
-  - d3o (DSMZ Digital Diversity Ontology)
-  - meo (Metagenome and Microbes Environmental Ontology)
-  - miso (Microbial Isolation Source Ontology)
-  - n4l_merged (Names4Life - NOT in any registry)
+**Final retained:** upheno, go, oba, flopo, micro, pato, envo, ecocore, eupath, phipo, mco, eco, omp, ohmi, cmpo, biolink, apo, pco, geo, exo + d3o, meo, miso, n4l_merged
 
-**SSSOM mappings generated:** 3,019 total mappings (from TSV parsing)
+**Result:** 3,019 SSSOM mappings
 
-**Sources:** ChromaDB SQLite databases, SSSOM TSV file, OLS/BioPortal APIs
-**See:** PRIMARY_SOURCE_ONTOLOGY_ANALYSIS.md for complete verification
+**See:** PRIMARY_SOURCE_ONTOLOGY_ANALYSIS.md
 
 ---
 
@@ -499,21 +539,11 @@ Questions?
 
 **Q: Based on high-quality matches, how many ontologies would we need to import?**
 
-**Analysis of SSSOM mappings (PRIMARY SOURCE: .sssom.tsv file):**
+**Excellent matches (similarity ≥ 0.75):**
+- 182 matches across 21 ontologies
+- Top 8 provide 91% coverage: micro (91), upheno (19), mpo (16), n4l_merged (14), oba (10), envo (4), biolink (4), flopo (3)
 
-**Excellent matches (similarity ≥ 0.75, distance < 0.25):**
-- 182 total excellent matches across 21 ontologies
-- **Top 8 ontologies provide 91% coverage:**
-  1. micro (91 matches)
-  2. upheno (19)
-  3. mpo (16)
-  4. n4l_merged (14)
-  5. oba (10)
-  6. envo (4)
-  7. biolink (4)
-  8. flopo (3)
-
-**Parsimonious import requirement: ~8 ontologies for 90% coverage**
+**Answer: ~8 ontologies for 90% coverage**
 
 **Why METPO uses mappings instead:**
 - **8 ontology imports:** Complex integration, licensing, hierarchy conflicts, maintenance burden
@@ -530,26 +560,18 @@ Questions?
 
 ## Semantic-SQL Ontology Registry
 
-**INCATools semantic-sql project maintains a comprehensive ontology registry:**
+**INCATools semantic-sql provides standardized SQL views for 113+ ontologies**
 
-**Registry location:**
-```
-/home/mark/gitrepos/semantic-sql/src/semsql/builder/registry/ontologies.yaml
-```
+**Registry:** `semantic-sql/src/semsql/builder/registry/ontologies.yaml`
 
-**Purpose:** Provides standardized SQL views for 113 OBO and biomedical ontologies
-- Includes URLs, build commands, prefix mappings for each ontology
-- Used to generate SQLite databases for efficient querying
-- Examples: GO, CHEBI, ENVO, PATO, MONDO, HP, and many more
+**METPO integration:**
+- Available as `metpo.db`
+- Queryable via SQL
+- Part of broader OBO ecosystem
 
-**METPO in semantic-sql:**
-- METPO available as `metpo.db` in semantic-sql directory
-- Queryable via standard SQL interfaces
-- Most ontologies we use are specialized/domain-specific
-
-**Ontology availability (verified via API queries):**
-- **In OLS:** micro, upheno, oba, flopo, envo, biolink, go, pato, etc.
-- **BioPortal-only (verified):** d3o, meo, miso (DSMZ ontologies)
-- **Not in registries:** n4l_merged (Names4Life specialized resource)
+**Ontology availability:**
+- **In OLS:** micro, upheno, oba, flopo, envo, biolink, go, pato
+- **BioPortal-only:** d3o, meo, miso (DSMZ)
+- **Not in registries:** n4l_merged (Names4Life)
 
 **More info:** https://github.com/INCATools/semantic-sql

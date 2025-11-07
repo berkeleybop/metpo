@@ -57,7 +57,8 @@ def extract_template_info(yaml_path: Path) -> Dict:
                         'title': first_doc.get('title', 'unknown'),
                         'description': first_doc.get('description', 'unknown')
                     }
-            except:
+            except yaml.YAMLError:
+                # Could not parse YAML header, fall through to filename extraction
                 pass
 
             # Fallback: extract from filename
@@ -181,7 +182,8 @@ def extract_annotators_from_template(template_path: Path) -> List[str]:
                     if 'annotators' in class_def['annotations']:
                         annotators.append(class_def['annotations']['annotators'])
 
-    except Exception as e:
+    except Exception:
+        # Template file not found or malformed, return empty list
         pass
 
     return list(set(annotators))

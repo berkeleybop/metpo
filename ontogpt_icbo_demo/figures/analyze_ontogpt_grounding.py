@@ -6,7 +6,6 @@ Parses outputs/*.yaml directly - 100% traceable.
 """
 
 import yaml
-import sys
 from pathlib import Path
 from collections import defaultdict
 

@@ -6,7 +6,13 @@ Excludes experimental/superseded runs to show realistic, representative results.
 
 import sys
 from pathlib import Path
-from analyze_metpo_grounding import *
+from typing import Dict, List
+from collections import Counter
+from analyze_metpo_grounding import (
+    extract_entities_from_yaml,
+    find_auto_terms_with_context,
+    find_metpo_successes_with_context
+)
 
 # Define production-quality file patterns
 PRODUCTION_PATTERNS = {

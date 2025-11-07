@@ -9,12 +9,10 @@ For ICBO 2025 - provides evidence of METPO's strengths and gaps.
 """
 
 import csv
-import json
 import re
 from pathlib import Path
 from collections import defaultdict, Counter
-from typing import Dict, List, Tuple
-import sys
+from typing import Dict, List
 
 def load_metpo_database_synonyms(template_path: Path) -> Dict[str, List[str]]:
     """

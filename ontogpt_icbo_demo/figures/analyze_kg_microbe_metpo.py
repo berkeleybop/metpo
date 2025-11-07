@@ -8,7 +8,6 @@ Primary sources:
 - /home/mark/gitrepos/kg-microbe/data/transformed/bacdive/edges.tsv
 """
 import csv
-import sys
 from pathlib import Path
 from collections import Counter, defaultdict
 import matplotlib.pyplot as plt
@@ -58,11 +57,31 @@ def analyze_dataset(dataset_name):
         'source_file': str(edges_file)
     }
 
+def load_metpo_labels():
+    """Load METPO ID to label mapping"""
+    labels_file = Path("/tmp/metpo_labels.csv")
+    if not labels_file.exists():
+        print("WARNING: METPO labels file not found, using IDs")
+        return {}
+
+    labels = {}
+    with open(labels_file, 'r') as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            metpo_id = row['id']
+            label = row['label']
+            labels[f"METPO:{metpo_id}"] = label
+    return labels
+
 def main():
     print("=" * 80)
     print("KG-Microbe METPO Usage Analysis - 100% TRACEABLE TO PRIMARY SOURCES")
     print("=" * 80)
     print(f"\nSource directory: {KG_MICROBE_ROOT}")
+
+    # Load METPO labels
+    metpo_labels = load_metpo_labels()
+    print(f"Loaded {len(metpo_labels)} METPO labels")
 
     all_results = []
     all_metpo_terms = set()
@@ -122,7 +141,7 @@ def main():
 
     # Generate visualization
     try:
-        fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 6))
+        _, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 6))
 
         # Plot 1: METPO usage by dataset
         datasets = [r['dataset'] for r in all_results]
@@ -138,14 +157,14 @@ def main():
         for i, v in enumerate(metpo_edges):
             ax1.text(i, v + max(metpo_edges)*0.02, f'{v:,}', ha='center', va='bottom', fontsize=10)
 
-        # Plot 2: Top 15 METPO terms
+        # Plot 2: Top 15 METPO terms (with labels)
         top_terms = combined_metpo.most_common(15)
-        terms = [t[0].replace('METPO:', '') for t in top_terms]
+        terms = [metpo_labels.get(t[0], t[0].replace('METPO:', '')) for t in top_terms]
         counts = [t[1] for t in top_terms]
 
         ax2.barh(range(len(terms)), counts, color='#6A4C93')
         ax2.set_yticks(range(len(terms)))
-        ax2.set_yticklabels(terms, fontsize=9)
+        ax2.set_yticklabels(terms, fontsize=10)
         ax2.set_xlabel('Frequency', fontsize=12)
         ax2.set_title('Top 15 Most Frequent METPO Terms', fontsize=14, fontweight='bold')
         ax2.invert_yaxis()

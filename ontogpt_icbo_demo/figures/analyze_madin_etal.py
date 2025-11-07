@@ -7,7 +7,6 @@ Primary sources:
 - /home/mark/gitrepos/kg-microbe/data/transformed/madin_etal/nodes.tsv
 """
 import csv
-import sys
 from pathlib import Path
 from collections import Counter, defaultdict
 

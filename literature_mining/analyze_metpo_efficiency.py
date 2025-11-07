@@ -7,7 +7,6 @@ Analyze METPO grounding efficiency:
 """
 
 import yaml
-import re
 from pathlib import Path
 from collections import defaultdict
 

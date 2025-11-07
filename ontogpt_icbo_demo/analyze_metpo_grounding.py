@@ -58,7 +58,6 @@ def main():
     print("\nChemical Utilization Extractions (METPO predicate usage):")
     for yaml_file in sorted(outputs_dir.glob('*-chemical.yaml')):
         predicates, total_utils = count_metpo_predicates(yaml_file)
-        metpo_preds = sum(1 for p in predicates if not p.startswith('AUTO'))
         print(f"  {yaml_file.name}:")
         print(f"    Total utilizations: {total_utils}")
         print(f"    METPO predicates used: {len(predicates)}")

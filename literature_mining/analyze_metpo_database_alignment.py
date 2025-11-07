@@ -7,8 +7,6 @@ This complements the grounding analysis by showing METPO's strong alignment
 with semi-structured data sources vs. lower grounding rates for free text.
 """
 
-import json
-import re
 from pathlib import Path
 from collections import defaultdict, Counter
 from typing import Dict, List

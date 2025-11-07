@@ -38,7 +38,7 @@ def analyze_yaml_file(yaml_path):
             docs = list(yaml.safe_load_all(f))
         except yaml.YAMLError as e:
             print(f"ERROR parsing YAML: {e}")
-            return
+            return None
 
     print(f"Number of documents in file: {len(docs)}")
 
