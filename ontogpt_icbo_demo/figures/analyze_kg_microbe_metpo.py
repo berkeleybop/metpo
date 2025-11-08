@@ -139,39 +139,25 @@ def main():
     for term, count in combined_metpo.most_common(30):
         print(f"{term}: {count:,}")
 
-    # Generate visualization
+    # Generate visualization - only Top 15 METPO terms
     try:
-        _, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 6))
+        fig, ax = plt.subplots(figsize=(10, 8))
 
-        # Plot 1: METPO usage by dataset
-        datasets = [r['dataset'] for r in all_results]
-        metpo_edges = [r['metpo_edges'] for r in all_results]
-
-        ax1.bar(datasets, metpo_edges, color=['#2E86AB', '#A23B72', '#F18F01'])
-        ax1.set_xlabel('Dataset', fontsize=12)
-        ax1.set_ylabel('Number of METPO Edges', fontsize=12)
-        ax1.set_title('METPO Usage Across KG-Microbe Datasets', fontsize=14, fontweight='bold')
-        ax1.tick_params(axis='x', rotation=45)
-
-        # Add value labels on bars
-        for i, v in enumerate(metpo_edges):
-            ax1.text(i, v + max(metpo_edges)*0.02, f'{v:,}', ha='center', va='bottom', fontsize=10)
-
-        # Plot 2: Top 15 METPO terms (with labels)
+        # Top 15 METPO terms (with labels)
         top_terms = combined_metpo.most_common(15)
         terms = [metpo_labels.get(t[0], t[0].replace('METPO:', '')) for t in top_terms]
         counts = [t[1] for t in top_terms]
 
-        ax2.barh(range(len(terms)), counts, color='#6A4C93')
-        ax2.set_yticks(range(len(terms)))
-        ax2.set_yticklabels(terms, fontsize=10)
-        ax2.set_xlabel('Frequency', fontsize=12)
-        ax2.set_title('Top 15 Most Frequent METPO Terms', fontsize=14, fontweight='bold')
-        ax2.invert_yaxis()
+        ax.barh(range(len(terms)), counts, color='#6A4C93')
+        ax.set_yticks(range(len(terms)))
+        ax.set_yticklabels(terms, fontsize=12)
+        ax.set_xlabel('Frequency', fontsize=14)
+        ax.set_title('Top 15 Most Frequent METPO Terms', fontsize=16, fontweight='bold')
+        ax.invert_yaxis()
 
         # Add value labels on bars
         for i, v in enumerate(counts):
-            ax2.text(v + max(counts)*0.01, i, f'{v:,}', va='center', fontsize=9)
+            ax.text(v + max(counts)*0.01, i, f'{v:,}', va='center', fontsize=10)
 
         plt.tight_layout()
 
