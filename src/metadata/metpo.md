@@ -10,11 +10,11 @@ build:
   system: git
   path: "."
 contact:
-  email: 
-  label: 
-  github: 
-description: METPO is an ontology...
-domain: stuff
+  email: mam@lbl.gov
+  label: Mark Andrew Miller
+  github: turbomam
+description: Microbial ecophysiological trait and phenotype ontology
+domain: microbiology
 homepage: https://github.com/berkeleybop/metpo
 products:
   - id: metpo.owl
@@ -33,8 +33,8 @@ dependencies:
 
 tracker: https://github.com/berkeleybop/metpo/issues
 license:
-  url: http://creativecommons.org/licenses/by/3.0/
-  label: CC-BY
+  url: https://creativecommons.org/licenses/by/4.0/
+  label: CC-BY-4.0
 activity_status: active
 ---
 

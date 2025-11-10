@@ -7,39 +7,61 @@ authors = [
 ]
 readme = "README.md"
 requires-python = ">=3.11"
-dependencies = [
-    "artl-mcp>=0.34.0",
-    "click==8.3.0",
-    "dotenv>=0.9.9",
-    "matplotlib>=3.10.7",
-    "numpy>=2.0.2",
-    "oaklib>=0.6.23",
-    "ontogpt>=1.0.18",
-    "pandas>=2.3.3",
-    "pymongo==4.15.3",
-    "pyyaml==6.0.3",
-    "requests>=2.32.0",
+keywords = ["ontology", "microbiology", "phenotypes", "traits", "obo"]
+license = {text = "CC-BY-4.0"}
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
 ]
+
+dependencies = [
+    "click>=8.3.0",
+    "python-dotenv>=1.2.1",
+    "pyyaml>=6.0.3",
+    "requests>=2.32.5",
+]
+
+[project.urls]
+Homepage = "https://github.com/berkeleybop/metpo"
+Repository = "https://github.com/berkeleybop/metpo"
+Issues = "https://github.com/berkeleybop/metpo/issues"
+Documentation = "https://github.com/berkeleybop/metpo/blob/main/README.md"
 
 [project.optional-dependencies]
 dev = [
-    "ontogpt>=1.0.18",
+    "oaklib>=0.6.23",
     "pandas>=2.3.3",
+    "pymongo>=4.15.3",
     "rdflib>=7.1.4",
     "semsql>=0.4.0",
+    "tqdm>=4.67.1",
     "litellm>=1.79.0",
     "openai>=2.6.1",
-    "oaklib>=0.6.23",
+]
+literature = [
     "artl-mcp>=0.34.0",
+    "linkml>=1.8.5",
+    "oaklib>=0.6.23",
+    "ontogpt>=1.0.18",
+    "pandas>=2.3.3",
+    "litellm>=1.79.0",
+    "openai>=2.6.1",
+    "semsql>=0.4.0",
+]
+databases = [
+    "pandas>=2.3.3",
+    "pymongo>=4.15.3",
 ]
 notebooks = [
     "jupyter>=1.1.1",
     "notebook>=7.4.7",
-    "python-dotenv>=1.2.1",
-    "python-levenshtein>=0.27.1",
-    "requests>=2.32.5",
+    "matplotlib>=3.10.7",
     "numpy>=2.0.2",
-    "pandas>=2.3.3",
+    "python-levenshtein>=0.27.1",
     "chromadb>=1.2.2",
     "tqdm>=4.67.1",
     "openai>=2.6.1",

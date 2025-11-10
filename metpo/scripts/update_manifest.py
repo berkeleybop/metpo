@@ -3,7 +3,7 @@
 Update .ontology_manifest.json with fetch/query status.
 
 Usage:
-    update-manifest --ontology D3O --status success --file non-ols/D3O.owl
+    update-manifest --ontology D3O --status success --file external/ontologies/bioportal/D3O.owl
     update-manifest --ontology D3O --robot-status failed --tsv notebooks/non-ols-terms/D3O.tsv
 """
 

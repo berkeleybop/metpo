@@ -10,8 +10,7 @@ for better modularity. See that directory's README for BioPortal submissions and
 ```
 data/
 ├── bactotraits/            # BactoTraits migration data and scripts
-├── generated/              # Generated data from SPARQL queries
-└── reports/                # Analysis reports
+└── generated/              # Generated data from SPARQL queries
 ```
 
 ## File Descriptions
@@ -27,10 +26,6 @@ BactoTraits data migration materials:
 Generated data from SPARQL queries:
 - `bacdive_oxygen_phenotype_mappings.tsv` - BacDive oxygen phenotype mappings
 
-### reports/
-Analysis reports for the METPO project.
-- **METPO_Stability_Analysis_Comprehensive_Report.md**: Comprehensive analysis of METPO entity stability, IRI evolution, and BactoTraits integration
-
 ## Makefile Targets
 
 ```bash
@@ -40,6 +35,7 @@ make clean-data
 
 ## Related Directories
 
+- **`reports/`**: Analysis reports (BactoTraits/Madin reconciliation, METPO stability analysis)
 - **`metadata/historical_usage_analysis/`**: Historical METPO ID tracking via BioPortal submissions and Google Sheets
 - **`assets/`**: Static reference data (N4L phenotypic ontology)
 - **`downloads/`, `large/`, `local/`**: Gitignored working directories

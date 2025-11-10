@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-Scan non-ols/ directory and update manifest with current state.
+Scan external/ontologies/ directories and update manifest with current state.
 
 Usage:
     scan-manifest
@@ -50,7 +50,7 @@ def main(verbose: bool):
     """Scan directories and update manifest with current state."""
     manifest = load_manifest()
 
-    click.echo("Scanning non-ols/ directory...")
+    click.echo("Scanning external/ontologies/ directories...")
 
     # Scan OWL and TTL files
     files_found = 0

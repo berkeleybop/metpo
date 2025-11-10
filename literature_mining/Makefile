@@ -13,7 +13,7 @@ INPUT_DIR ?= abstracts/test-taxa-minimal
 DIRS := inputs intermediates templates abstracts outputs logs assessments cache
 TIMESTAMP := $(shell date +"%Y%m%d_%H%M%S")
 
-.PHONY: help setup pmids abstracts intermediates templates validate-templates extract assess clean
+.PHONY: help setup pmids abstracts intermediates templates validate-templates extract assess clean icbo-setup icbo-phenotypes icbo-chemicals icbo-analyze icbo-convert-turtle icbo-clean icbo-clean-all
 
 help:
 	@echo "METPO Literature Mining Pipeline"
@@ -31,7 +31,17 @@ help:
 	@echo "  clean          - Cleanup with different levels"
 	@echo "  clean-workspace - Remove working files (preserve outputs/abstracts)"
 	@echo ""
+	@echo "ICBO Example Extractions:"
+	@echo "  icbo-phenotypes    - Extract phenotypes from ICBO example abstracts"
+	@echo "  icbo-chemicals     - Extract chemical utilization from ICBO examples"
+	@echo "  icbo-analyze       - Analyze METPO grounding quality in ICBO outputs"
+	@echo "  icbo-convert-turtle - Convert ICBO outputs to Turtle RDF format"
+	@echo "  icbo-clean         - Clean ICBO outputs (keep logs)"
+	@echo "  icbo-clean-all     - Clean ICBO outputs and logs"
+	@echo ""
 	@echo "Parameters: SOURCE=$(SOURCE) TEMPLATE=$(TEMPLATE) MODEL=$(MODEL) INPUT_DIR=$(INPUT_DIR) N_PMIDS=$(N_PMIDS) N_ABSTRACTS=$(N_ABSTRACTS)"
+	@echo ""
+	@echo "ICBO Parameters: ICBO_MODEL=$(ICBO_MODEL) ICBO_TEMPERATURE=$(ICBO_TEMPERATURE)"
 	@echo ""
 	@echo "Sources: n4l, bacdive, ijsem | Templates: growth_conditions, chemical_utilization, taxa, morphology, biochemical"
 
@@ -420,3 +430,120 @@ debug-extract: templates/$(TEMPLATE)_populated.yaml
 		-i abstracts \
 		-o outputs/debug_$(TEMPLATE)_$(TIMESTAMP).yaml \
 		2>&1 | tee logs/debug_$(TEMPLATE)_$(TIMESTAMP).log
+
+# =============================================================================
+# ICBO DEMO TARGETS
+# =============================================================================
+
+# OntoGPT configuration for ICBO demo
+ONTOGPT := uv run ontogpt
+ICBO_MODEL ?= gpt-4o
+ICBO_TEMPERATURE ?= 0.0
+
+# ICBO directories
+ICBO_INPUTS_DIR := abstracts/icbo_examples
+ICBO_OUTPUTS_DIR := outputs/icbo_examples
+ICBO_LOGS_DIR := outputs/icbo_examples/logs
+ICBO_TEMPLATES_DIR := templates
+
+# Input abstracts - all abstracts run through both templates
+ICBO_INPUTS := $(wildcard $(ICBO_INPUTS_DIR)/*-abstract.txt)
+
+# ICBO-specific templates
+ICBO_PHENOTYPE_TEMPLATE := $(ICBO_TEMPLATES_DIR)/strain_phenotype_icbo.yaml
+ICBO_CHEMICAL_TEMPLATE := $(ICBO_TEMPLATES_DIR)/chemical_utilization_icbo.yaml
+
+# Output files - all abstracts through both templates
+ICBO_PHENOTYPE_OUTPUTS := $(patsubst $(ICBO_INPUTS_DIR)/%-abstract.txt,$(ICBO_OUTPUTS_DIR)/%-phenotype.yaml,$(ICBO_INPUTS))
+ICBO_CHEMICAL_OUTPUTS := $(patsubst $(ICBO_INPUTS_DIR)/%-abstract.txt,$(ICBO_OUTPUTS_DIR)/%-chemical.yaml,$(ICBO_INPUTS))
+
+.PHONY: icbo-setup icbo-phenotypes icbo-chemicals icbo-analyze icbo-convert-turtle icbo-clean icbo-clean-all
+
+# Setup ICBO directories
+icbo-setup:
+	@mkdir -p $(ICBO_LOGS_DIR)
+
+# Extract phenotypes from all ICBO example abstracts
+icbo-phenotypes: icbo-setup $(ICBO_PHENOTYPE_OUTPUTS)
+
+# Extract chemical utilizations from ICBO examples
+icbo-chemicals: icbo-setup $(ICBO_CHEMICAL_OUTPUTS)
+
+# Pattern rule for phenotype extraction
+$(ICBO_OUTPUTS_DIR)/%-phenotype.yaml: $(ICBO_INPUTS_DIR)/%-abstract.txt $(ICBO_PHENOTYPE_TEMPLATE)
+	@echo "Extracting phenotypes from $< ..."
+	@echo "Log will be saved to $(ICBO_LOGS_DIR)/$(notdir $@).log"
+	$(ONTOGPT) extract \
+		--template $(ICBO_PHENOTYPE_TEMPLATE) \
+		--inputfile $< \
+		--model $(ICBO_MODEL) \
+		--temperature $(ICBO_TEMPERATURE) \
+		--output $@ 2>&1 | tee $(ICBO_LOGS_DIR)/$(notdir $@).log
+	@echo "Saved to $@"
+
+# Pattern rule for chemical utilization extraction
+$(ICBO_OUTPUTS_DIR)/%-chemical.yaml: $(ICBO_INPUTS_DIR)/%-abstract.txt $(ICBO_CHEMICAL_TEMPLATE)
+	@echo "Extracting chemical utilization from $< ..."
+	@echo "Log will be saved to $(ICBO_LOGS_DIR)/$(notdir $@).log"
+	$(ONTOGPT) extract \
+		--template $(ICBO_CHEMICAL_TEMPLATE) \
+		--inputfile $< \
+		--model $(ICBO_MODEL) \
+		--temperature $(ICBO_TEMPERATURE) \
+		--output $@ 2>&1 | tee $(ICBO_LOGS_DIR)/$(notdir $@).log
+	@echo "Saved to $@"
+
+# Analyze METPO grounding in ICBO outputs
+icbo-analyze:
+	@echo "=== METPO Grounding Analysis (ICBO Examples) ==="
+	@echo ""
+	@echo "Phenotype Extractions:"
+	@for f in $(ICBO_OUTPUTS_DIR)/*-phenotype.yaml; do \
+		if [ -f "$$f" ]; then \
+			echo "$$f:"; \
+			metpo_count=$$(grep -c "w3id.org/metpo/" "$$f" 2>/dev/null || echo 0); \
+			auto_count=$$(grep -c "AUTO:" "$$f" 2>/dev/null || echo 0); \
+			echo "  METPO URIs: $$metpo_count"; \
+			echo "  AUTO terms: $$auto_count"; \
+		fi \
+	done
+	@echo ""
+	@echo "Chemical Utilization Extractions:"
+	@for f in $(ICBO_OUTPUTS_DIR)/*-chemical.yaml; do \
+		if [ -f "$$f" ]; then \
+			echo "$$f:"; \
+			metpo_count=$$(grep -c "w3id.org/metpo/" "$$f" 2>/dev/null || echo 0); \
+			chebi_count=$$(grep -c "CHEBI:" "$$f" 2>/dev/null || echo 0); \
+			echo "  METPO property uses: $$metpo_count"; \
+			echo "  ChEBI groundings: $$chebi_count"; \
+		fi \
+	done
+
+# Convert all ICBO YAML outputs to Turtle RDF format
+icbo-convert-turtle: icbo-phenotypes icbo-chemicals
+	@echo "=== Converting ICBO outputs to Turtle format ==="
+	@for f in $(ICBO_OUTPUTS_DIR)/*-phenotype.yaml; do \
+		if [ -f "$$f" ]; then \
+			echo "Converting $$f to Turtle..."; \
+			$(ONTOGPT) convert -t $(ICBO_PHENOTYPE_TEMPLATE) -O turtle "$$f" -o "$${f%.yaml}.ttl" 2>&1 | tee $(ICBO_LOGS_DIR)/$$(basename "$$f" .yaml)-turtle.log; \
+		fi \
+	done
+	@for f in $(ICBO_OUTPUTS_DIR)/*-chemical.yaml; do \
+		if [ -f "$$f" ]; then \
+			echo "Converting $$f to Turtle..."; \
+			$(ONTOGPT) convert -t $(ICBO_CHEMICAL_TEMPLATE) -O turtle "$$f" -o "$${f%.yaml}.ttl" 2>&1 | tee $(ICBO_LOGS_DIR)/$$(basename "$$f" .yaml)-turtle.log; \
+		fi \
+	done
+	@echo "Turtle conversion complete"
+
+# Clean ICBO outputs (keep logs)
+icbo-clean:
+	@echo "Removing ICBO output files..."
+	rm -f $(ICBO_OUTPUTS_DIR)/*.yaml $(ICBO_OUTPUTS_DIR)/*.ttl
+	@echo "Clean complete"
+
+# Clean ICBO outputs and logs
+icbo-clean-all: icbo-clean
+	@echo "Removing ICBO log files..."
+	rm -rf $(ICBO_LOGS_DIR)
+	@echo "Clean all complete"

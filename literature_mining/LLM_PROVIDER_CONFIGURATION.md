@@ -219,7 +219,31 @@ runoak set-apikey -e openai-key <your-openai-key>
 
 Keys stored this way are encrypted and managed by the Ontology Access Kit.
 
-#### 2. Environment Variables
+#### 2. Environment Variables (.env file)
+
+**METPO uses a single .env file in the repository root** for all API keys:
+
+```bash
+# Copy the template
+cp .env.template .env
+
+# Edit .env and add your keys
+# All scripts in the repository automatically load this file
+```
+
+The `.env` file should contain:
+```bash
+OPENAI_API_KEY=your-openai-key-here
+ANTHROPIC_API_KEY=your-anthropic-key-here
+CBORG_API_KEY=your-cborg-key-here
+BIOPORTAL_API_KEY=your-bioportal-key-here
+```
+
+**Note:** The `.env` file is gitignored and never committed to version control.
+
+#### 3. Shell Environment Variables
+
+Alternatively, use shell exports for temporary sessions:
 
 ```bash
 # In your shell profile (.bashrc, .zshrc, etc.)
@@ -230,7 +254,7 @@ export ANTHROPIC_API_KEY="your-anthropic-key-here"
 export CBORG_API_KEY="your-key" && ontogpt extract ...
 ```
 
-#### 3. Team Sharing Best Practices
+#### 4. Team Sharing Best Practices
 
 **✅ DO use:**
 - **Shared password manager** (1Password, Bitwarden, LastPass)

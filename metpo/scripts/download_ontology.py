@@ -3,7 +3,7 @@
 Download ontology from BioPortal with robust error handling.
 
 Usage:
-    download-ontology D3O --output non-ols/D3O.owl
+    download-ontology D3O --output external/ontologies/bioportal/D3O.owl
 
 Exit codes:
     0: Success (file downloaded and valid)

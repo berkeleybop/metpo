@@ -239,7 +239,7 @@ def main(tsv_file: tuple[str], chroma_path: str, collection_name: str,
     Workflow:
         # 1. Run ROBOT query to extract terms
         robot query \\
-            --input ../non-ols/D3O.owl \\
+            --input ../external/ontologies/bioportal/D3O.owl \\
             --query ../sparql/extract_for_embeddings.rq \\
             d3o_terms.tsv
 

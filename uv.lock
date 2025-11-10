@@ -1103,17 +1103,6 @@ wheels = [
 ]
 
 [[package]]
-name = "dotenv"
-version = "0.9.9"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "python-dotenv" },
-]
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/b2/b7/545d2c10c1fc15e48653c91efde329a790f2eecfbbf2bd16003b5db2bab0/dotenv-0.9.9-py2.py3-none-any.whl", hash = "sha256:29cf74a087b31dafdb5a446b6d7e11cbce8ed2741540e2339c69fbef92c94ce9", size = 1892 },
-]
-
-[[package]]
 name = "dpath"
 version = "2.2.0"
 source = { registry = "https://pypi.org/simple" }
@@ -3283,78 +3272,83 @@ name = "metpo"
 version = "0.3.0"
 source = { editable = "." }
 dependencies = [
-    { name = "artl-mcp" },
     { name = "click" },
-    { name = "dotenv" },
-    { name = "matplotlib" },
-    { name = "numpy", version = "2.0.2", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.13'" },
-    { name = "numpy", version = "2.3.4", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.13'" },
-    { name = "oaklib" },
-    { name = "ontogpt" },
-    { name = "pandas" },
-    { name = "pymongo" },
+    { name = "python-dotenv" },
     { name = "pyyaml" },
     { name = "requests" },
 ]
 
 [package.optional-dependencies]
+databases = [
+    { name = "pandas" },
+    { name = "pymongo" },
+]
 dev = [
+    { name = "litellm" },
+    { name = "oaklib" },
+    { name = "openai" },
+    { name = "pandas" },
+    { name = "pymongo" },
+    { name = "rdflib" },
+    { name = "semsql" },
+    { name = "tqdm" },
+]
+literature = [
     { name = "artl-mcp" },
+    { name = "linkml" },
     { name = "litellm" },
     { name = "oaklib" },
     { name = "ontogpt" },
     { name = "openai" },
     { name = "pandas" },
-    { name = "rdflib" },
     { name = "semsql" },
 ]
 notebooks = [
     { name = "chromadb" },
     { name = "jupyter" },
+    { name = "matplotlib" },
     { name = "notebook" },
     { name = "numpy", version = "2.0.2", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.13'" },
     { name = "numpy", version = "2.3.4", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.13'" },
     { name = "openai" },
-    { name = "pandas" },
-    { name = "python-dotenv" },
     { name = "python-levenshtein" },
-    { name = "requests" },
     { name = "tqdm" },
 ]
 
 [package.metadata]
 requires-dist = [
-    { name = "artl-mcp", specifier = ">=0.34.0" },
-    { name = "artl-mcp", marker = "extra == 'dev'", specifier = ">=0.34.0" },
+    { name = "artl-mcp", marker = "extra == 'literature'", specifier = ">=0.34.0" },
     { name = "chromadb", marker = "extra == 'notebooks'", specifier = ">=1.2.2" },
     { name = "click", specifier = "==8.3.0" },
-    { name = "dotenv", specifier = ">=0.9.9" },
     { name = "jupyter", marker = "extra == 'notebooks'", specifier = ">=1.1.1" },
+    { name = "linkml", marker = "extra == 'literature'", specifier = ">=1.8.5" },
     { name = "litellm", marker = "extra == 'dev'", specifier = ">=1.79.0" },
-    { name = "matplotlib", specifier = ">=3.10.7" },
+    { name = "litellm", marker = "extra == 'literature'", specifier = ">=1.79.0" },
+    { name = "matplotlib", marker = "extra == 'notebooks'", specifier = ">=3.10.7" },
     { name = "notebook", marker = "extra == 'notebooks'", specifier = ">=7.4.7" },
-    { name = "numpy", specifier = ">=2.0.2" },
     { name = "numpy", marker = "extra == 'notebooks'", specifier = ">=2.0.2" },
-    { name = "oaklib", specifier = ">=0.6.23" },
     { name = "oaklib", marker = "extra == 'dev'", specifier = ">=0.6.23" },
-    { name = "ontogpt", specifier = ">=1.0.18" },
-    { name = "ontogpt", marker = "extra == 'dev'", specifier = ">=1.0.18" },
+    { name = "oaklib", marker = "extra == 'literature'", specifier = ">=0.6.23" },
+    { name = "ontogpt", marker = "extra == 'literature'", specifier = ">=1.0.18" },
     { name = "openai", marker = "extra == 'dev'", specifier = ">=2.6.1" },
+    { name = "openai", marker = "extra == 'literature'", specifier = ">=2.6.1" },
     { name = "openai", marker = "extra == 'notebooks'", specifier = ">=2.6.1" },
-    { name = "pandas", specifier = ">=2.3.3" },
+    { name = "pandas", marker = "extra == 'databases'", specifier = ">=2.3.3" },
     { name = "pandas", marker = "extra == 'dev'", specifier = ">=2.3.3" },
-    { name = "pandas", marker = "extra == 'notebooks'", specifier = ">=2.3.3" },
-    { name = "pymongo", specifier = "==4.15.3" },
-    { name = "python-dotenv", marker = "extra == 'notebooks'", specifier = ">=1.2.1" },
+    { name = "pandas", marker = "extra == 'literature'", specifier = ">=2.3.3" },
+    { name = "pymongo", marker = "extra == 'databases'", specifier = "==4.15.3" },
+    { name = "pymongo", marker = "extra == 'dev'", specifier = "==4.15.3" },
+    { name = "python-dotenv", specifier = ">=1.2.1" },
     { name = "python-levenshtein", marker = "extra == 'notebooks'", specifier = ">=0.27.1" },
     { name = "pyyaml", specifier = "==6.0.3" },
     { name = "rdflib", marker = "extra == 'dev'", specifier = ">=7.1.4" },
-    { name = "requests", specifier = ">=2.32.0" },
-    { name = "requests", marker = "extra == 'notebooks'", specifier = ">=2.32.5" },
+    { name = "requests", specifier = ">=2.32.5" },
     { name = "semsql", marker = "extra == 'dev'", specifier = ">=0.4.0" },
+    { name = "semsql", marker = "extra == 'literature'", specifier = ">=0.4.0" },
+    { name = "tqdm", marker = "extra == 'dev'", specifier = ">=4.67.1" },
     { name = "tqdm", marker = "extra == 'notebooks'", specifier = ">=4.67.1" },
 ]
-provides-extras = ["dev", "notebooks"]
+provides-extras = ["dev", "literature", "databases", "notebooks"]
 
 [[package]]
 name = "mistune"

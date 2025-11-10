@@ -4,11 +4,64 @@ UNZIP=unzip
 -include .env
 export
 
-.PHONY: install clean-env clean-data
+# ==============================================================================
+# Environment Setup Targets
+# ==============================================================================
 
-# Environment setup target
+.PHONY: install install-dev install-literature install-databases install-notebooks install-all check-env clean-env clean-data metpo-report
+
+# Base installation (core dependencies only: click, python-dotenv, pyyaml, requests)
 install:
+	uv sync
+
+# Development environment (adds: oaklib, pandas, pymongo, rdflib, semsql, tqdm, litellm, openai)
+install-dev:
+	uv sync --extra dev
+
+# Literature mining environment (adds: artl-mcp, oaklib, ontogpt, pandas, litellm, openai, semsql)
+install-literature:
+	uv sync --extra literature
+
+# Database workflows (adds: pandas, pymongo for BactoTraits/Madin imports)
+install-databases:
+	uv sync --extra databases
+
+# Notebooks environment (adds: jupyter, notebook, matplotlib, numpy, chromadb, etc.)
+install-notebooks:
+	uv sync --extra notebooks
+
+# Install all optional dependencies
+install-all:
 	uv sync --all-extras
+
+# Check environment status
+check-env:
+	@echo "=== METPO Environment Status ==="
+	@echo ""
+	@echo "Python:"
+	@which python3 || echo "  ✗ python3 not found"
+	@python3 --version 2>/dev/null || true
+	@echo ""
+	@echo "UV:"
+	@which uv || echo "  ✗ uv not found (install: curl -LsSf https://astral.sh/uv/install.sh | sh)"
+	@uv --version 2>/dev/null || true
+	@echo ""
+	@echo "Virtual Environment:"
+	@test -d .venv && echo "  ✓ .venv exists" || echo "  ✗ .venv not found (run: make install)"
+	@test -f .venv/bin/python && .venv/bin/python --version || true
+	@echo ""
+	@echo "MongoDB:"
+	@which mongosh || echo "  ✗ mongosh not found"
+	@mongosh --version 2>/dev/null || true
+	@echo ""
+	@echo "ROBOT:"
+	@which robot || echo "  ✗ robot not found"
+	@robot --version 2>/dev/null || true
+	@echo ""
+	@echo "Environment Variables:"
+	@test -f .env && echo "  ✓ .env file exists" || echo "  ✗ .env file not found"
+	@test -n "$$BIOPORTAL_API_KEY" && echo "  ✓ BIOPORTAL_API_KEY set" || echo "  ✗ BIOPORTAL_API_KEY not set"
+	@test -n "$$OPENAI_API_KEY" && echo "  ✓ OPENAI_API_KEY set" || echo "  ✗ OPENAI_API_KEY not set (required for literature mining)"
 
 # Aggressively remove all UV and Poetry environment files
 clean-env:
@@ -25,11 +78,37 @@ clean-data:
 	rm -rf local/taxdmp/
 	rm -f local/noderanks.ttl
 	rm -f data/generated/bacdive_oxygen_phenotype_mappings.tsv
-	rm -rf metadata/historical_usage_analysis/bioportal_owl/
+	rm -rf external/metpo_historical/
 	rm -rf metadata/historical_usage_analysis/entity_extracts/
-	rm -rf data/reports/
 	rm -rf downloads/sheets/
 	@echo "All generated data files cleaned"
+
+# ==============================================================================
+# METPO Quality Control Report
+# ==============================================================================
+
+# Generate ROBOT quality control report from the main release file
+# Usage: make metpo-report.tsv
+# Note: This file is gitignored and can be regenerated anytime
+metpo-report.tsv: metpo.owl
+	@echo "Generating ROBOT quality control report..."
+	robot report -i $< \
+		-l true \
+		--fail-on None \
+		--base-iri https://w3id.org/metpo/METPO_ \
+		--base-iri https://w3id.org/metpo/metpo \
+		--print 5 \
+		-o $@
+	@echo "Report generated: $@"
+	@echo ""
+	@wc -l $@ | awk '{print "Total issues:", $$1-1}'
+	@grep "^ERROR" $@ | wc -l | awk '{print "Errors:", $$1}'
+	@grep "^WARN" $@ | wc -l | awk '{print "Warnings:", $$1}'
+	@grep "^INFO" $@ | wc -l | awk '{print "Info:", $$1}'
+
+# ==============================================================================
+# Taxonomy Data
+# ==============================================================================
 
 # see https://ftp.ncbi.nlm.nih.gov/pub/taxonomy/taxdump_readme.txt regarding nodes.dmp
 
@@ -51,18 +130,25 @@ data/generated/bacdive_oxygen_phenotype_mappings.tsv: sparql/bacdive_oxygen_phen
 		--query $(word 1,$^) $@ \
 		--input $(word 2,$^)
 
-# Extract terms from non-OLS ontologies for embedding generation
+# Extract terms from external ontologies for embedding generation
 # Pattern: notebooks/non-ols-terms/<ontology-id>_terms.tsv
 # Usage: make notebooks/non-ols-terms/D3O.tsv
 # Make calls robot directly with catalog to handle broken imports
 # Python validates output
-notebooks/non-ols-terms/%.tsv: non-ols/%.owl sparql/extract_for_embeddings.rq
+notebooks/non-ols-terms/%.tsv: external/ontologies/bioportal/%.owl sparql/extract_for_embeddings.rq
 	@mkdir -p $(dir $@)
 	@echo "Querying $* with ROBOT..."
 	-@robot query --input $< --catalog catalog-v001.xml --query $(word 2,$^) $@ 2>&1 | tee -a .robot_query.log
 	-@uv run validate-tsv $* --tsv $@
 
-notebooks/non-ols-terms/%.tsv: non-ols/%.ttl sparql/extract_for_embeddings.rq
+notebooks/non-ols-terms/%.tsv: external/ontologies/bioportal/%.ttl sparql/extract_for_embeddings.rq
+	@mkdir -p $(dir $@)
+	@echo "Querying $* with ROBOT..."
+	-@robot query --input $< --catalog catalog-v001.xml --query $(word 2,$^) $@ 2>&1 | tee -a .robot_query.log
+	-@uv run validate-tsv $* --tsv $@
+
+# Manual ontologies (like n4l_merged.owl)
+notebooks/non-ols-terms/%.tsv: external/ontologies/manual/%.owl sparql/extract_for_embeddings.rq
 	@mkdir -p $(dir $@)
 	@echo "Querying $* with ROBOT..."
 	-@robot query --input $< --catalog catalog-v001.xml --query $(word 2,$^) $@ 2>&1 | tee -a .robot_query.log
@@ -278,11 +364,11 @@ METPO_SUBMISSIONS = \
 .PHONY: download-all-bioportal-submissions clean-bioportal-submissions list-bioportal-submissions
 
 # Download all METPO submissions from BiPortal
-download-all-bioportal-submissions: $(foreach sub,$(METPO_SUBMISSIONS),metadata/historical_usage_analysis/bioportal_owl/metpo_submission_$(word 1,$(subst :, ,$(sub))).owl)
-	@echo "All BiPortal METPO submissions downloaded to metadata/historical_usage_analysis/bioportal_owl/"
+download-all-bioportal-submissions: $(foreach sub,$(METPO_SUBMISSIONS),external/metpo_historical/metpo_submission_$(word 1,$(subst :, ,$(sub))).owl)
+	@echo "All BiPortal METPO submissions downloaded to external/metpo_historical/"
 
 # Individual submission download targets
-metadata/historical_usage_analysis/bioportal_owl/metpo_submission_%.owl: | metadata/historical_usage_analysis/bioportal_owl
+external/metpo_historical/metpo_submission_%.owl: | external/metpo_historical
 	@echo "Downloading METPO submission $*..."
 	@curl -L -s "$(BIOPORTAL_SUBMISSION_BASE)/$*/download?apikey=$$BIOPORTAL_API_KEY" -o $@
 	@if [ -s $@ ]; then \
@@ -293,8 +379,8 @@ metadata/historical_usage_analysis/bioportal_owl/metpo_submission_%.owl: | metad
 		rm -f $@; \
 	fi
 
-# Ensure bioportal_owl directory exists
-metadata/historical_usage_analysis/bioportal_owl:
+# Ensure metpo_historical directory exists
+external/metpo_historical:
 	mkdir -p $@
 
 # Clean downloaded BiPortal submissions
@@ -305,7 +391,7 @@ metadata/historical_usage_analysis/bioportal_owl:
 
 
 
-# List of non-OLS ontologies to process from BioPortal
+# List of external ontologies to process from BioPortal
 # MPO: MPO/RIKEN Microbial Phenotype Ontology
 # OMP: Ontology of Microbial Phenotypes
 # BIPON: Bacterial interlocked Process Ontology
@@ -321,9 +407,9 @@ metadata/historical_usage_analysis/bioportal_owl:
 # TYPON: Microbial Typing Ontology
 NON_OLS_BIOPORTAL_ONTOLOGIES = MPO OMP BIPON D3O FMPM GMO HMADO ID-AMR MCCV MEO miso OFSMR TYPON
 
-.PHONY: download-non-ols-bioportal-ontologies clean-non-ols-bioportal-ontologies
+.PHONY: download-external-bioportal-ontologies clean-external-bioportal-ontologies
 
-download-non-ols-bioportal-ontologies: $(foreach ont,$(NON_OLS_BIOPORTAL_ONTOLOGIES),non-ols/$(ont).owl)
+download-external-bioportal-ontologies: $(foreach ont,$(NON_OLS_BIOPORTAL_ONTOLOGIES),external/ontologies/bioportal/$(ont).owl)
 	@echo ""
 	@echo "=========================================="
 	@echo "Download phase complete"
@@ -335,36 +421,35 @@ download-non-ols-bioportal-ontologies: $(foreach ont,$(NON_OLS_BIOPORTAL_ONTOLOG
 # Download ontology from BioPortal
 # Python script handles all error checking, logging, and validation
 # Exit code 0 = success, 1 = failure
-non-ols/%.owl: | non-ols
+external/ontologies/bioportal/%.owl: | external/ontologies/bioportal
 	-@uv run download-ontology $* --output $@
 
-non-ols/%.ttl: | non-ols
+external/ontologies/bioportal/%.ttl: | external/ontologies/bioportal
 	-@uv run download-ontology $* --output $@
 
-non-ols:
+external/ontologies/bioportal:
 	mkdir -p $@
 
-clean-non-ols-bioportal-ontologies:
-	@echo "Cleaning downloaded non-OLS BioPortal ontologies..."
-	@echo "Keeping manually added files: n4l_merged.owl, MISO.owl (if present)"
-	rm -f $(foreach ont,$(NON_OLS_BIOPORTAL_ONTOLOGIES),non-ols/$(ont).owl)
-	@echo "Cleaned non-OLS BioPortal ontologies"
+clean-external-bioportal-ontologies:
+	@echo "Cleaning downloaded external BioPortal ontologies..."
+	@echo "Keeping manually added files in external/ontologies/manual/"
+	rm -f $(foreach ont,$(NON_OLS_BIOPORTAL_ONTOLOGIES),external/ontologies/bioportal/$(ont).owl)
+	@echo "Cleaned external BioPortal ontologies"
 
-clean-non-ols-pipeline:
+clean-external-pipeline:
 	@echo "Cleaning pipeline-generated files (keeping manual downloads)..."
 	@echo "Removing BioPortal downloads..."
-	rm -f $(foreach ont,$(NON_OLS_BIOPORTAL_ONTOLOGIES),non-ols/$(ont).owl)
+	rm -f $(foreach ont,$(NON_OLS_BIOPORTAL_ONTOLOGIES),external/ontologies/bioportal/$(ont).owl)
 	@echo "Removing ROBOT query outputs..."
 	rm -f notebooks/non-ols-terms/*.tsv
 	@echo "Removing logs and manifest..."
 	rm -f .ontology_manifest.json .ontology_fetch.log .robot_query.log
 	@echo ""
 	@echo "✓ Cleaned pipeline files"
-	@echo "✓ Kept manual files: non-ols/n4l_merged.owl"
-	@if [ -f non-ols/MISO.owl ]; then echo "✓ Kept manual files: non-ols/MISO.owl"; fi
+	@echo "✓ Kept manual files: external/ontologies/manual/n4l_merged.owl"
 
 clean-bioportal-submissions:
-	rm -rf metadata/historical_usage_analysis/bioportal_owl/
+	rm -rf external/metpo_historical/
 	@echo "Downloaded BiPortal submissions cleaned"
 
 # List available submissions
@@ -377,7 +462,7 @@ list-bioportal-submissions:
 	done
 	@echo ""
 	@echo "To download all: make download-all-bioportal-submissions"
-	@echo "To download specific submission: make metadata/historical_usage_analysis/bioportal_owl/metpo_submission_5.owl"
+	@echo "To download specific submission: make external/metpo_historical/metpo_submission_5.owl"
 
 # =====================================================
 # METPO Entity Extraction Targets
@@ -390,7 +475,7 @@ extract-all-metpo-entities: $(foreach sub,$(METPO_SUBMISSIONS),metadata/historic
 	@echo "All METPO entities extracted to metadata/historical_usage_analysis/entity_extracts/"
 
 # Individual entity extraction targets
-metadata/historical_usage_analysis/entity_extracts/metpo_submission_%_all_entities.tsv: metadata/historical_usage_analysis/bioportal_owl/metpo_submission_%.owl | metadata/historical_usage_analysis/entity_extracts
+metadata/historical_usage_analysis/entity_extracts/metpo_submission_%_all_entities.tsv: external/metpo_historical/metpo_submission_%.owl | metadata/historical_usage_analysis/entity_extracts
 	@echo "Extracting entities from METPO submission $*..."
 	robot query -i $< -s sparql/query_metpo_entities.sparql $@
 
@@ -590,3 +675,20 @@ help-alignment:
 	@echo "  Prerequisites:"
 	@echo "    - Set OPENAI_API_KEY environment variable"
 	@echo "    - Ensure ChromaDB collection exists at notebooks/metpo_relevant_chroma"
+
+# ==============================================================================
+# Sub-Makefile Integration
+# ==============================================================================
+# Literature mining (including ICBO examples) has its own Makefile.
+# Run from root using: make -C literature_mining <target>
+#
+# Examples:
+#   make -C literature_mining help
+#   make -C literature_mining pmids SOURCE=ijsem
+#   make -C literature_mining extract TEMPLATE=growth_conditions
+#   make -C literature_mining icbo-phenotypes
+#   make -C literature_mining icbo-chemicals
+#   make -C literature_mining icbo-analyze
+#
+# See literature_mining/Makefile for full documentation.
+# ==============================================================================

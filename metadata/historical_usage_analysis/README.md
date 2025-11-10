@@ -16,14 +16,15 @@ Track METPO entity stability and ID reuse patterns over time to:
 metadata/historical_usage_analysis/
 ├── scripts/
 │   └── download_bioportal_submissions.sh  # Download historical submissions
-├── bioportal_owl/                          # Downloaded OWL files (generated)
-│   ├── metpo_submission_2.owl
-│   ├── metpo_submission_3.owl
-│   └── ...
 └── entity_extracts/                        # Extracted entities (generated)
     ├── metpo_submission_2_all_entities.tsv
     ├── metpo_submission_3_all_entities.tsv
     └── ...
+
+external/metpo_historical/                  # Downloaded OWL files (generated)
+├── metpo_submission_2.owl
+├── metpo_submission_3.owl
+└── ...
 ```
 
 ## Complete Workflow
@@ -36,7 +37,7 @@ metadata/historical_usage_analysis/
 make download-all-bioportal-submissions
 
 # Download specific submission
-make metadata/historical_usage_analysis/bioportal_owl/metpo_submission_5.owl
+make external/metpo_historical/metpo_submission_5.owl
 
 # List available submissions
 make list-bioportal-submissions
@@ -49,7 +50,7 @@ export BIOPORTAL_API_KEY="your-key-here"
 ./metadata/historical_usage_analysis/scripts/download_bioportal_submissions.sh
 ```
 
-**Output:** OWL files in `bioportal_owl/` (submissions 2-10, ~4.3 MB total)
+**Output:** OWL files in `external/metpo_historical/` (submissions 2-10, ~4.3 MB total)
 
 ### 2. Extract METPO Entities
 
@@ -63,7 +64,7 @@ make extract-all-metpo-entities
 ```bash
 # Extract from a specific submission
 robot query \
-  --input metadata/historical_usage_analysis/bioportal_owl/metpo_submission_5.owl \
+  --input external/metpo_historical/metpo_submission_5.owl \
   --query sparql/query_metpo_entities.sparql \
   metadata/historical_usage_analysis/entity_extracts/metpo_submission_5_all_entities.tsv
 ```

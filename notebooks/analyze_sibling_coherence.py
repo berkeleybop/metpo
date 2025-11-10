@@ -96,7 +96,7 @@ class ExternalOntologyHelper:
             if not adapter:
                 # Check for case-sensitive match first, then uppercase
                 for owl_filename in [f"{ontology_prefix}.owl", f"{ontology_prefix.upper()}.owl"]:
-                    local_owl_path = f"../non-ols/{owl_filename}"
+                    local_owl_path = f"../external/ontologies/bioportal/{owl_filename}"
                     if os.path.exists(local_owl_path):
                         try:
                             if self.debug:
