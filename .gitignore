@@ -70,6 +70,10 @@ literature_mining/abstracts/
 assets/chebi.lex
 assets/*.zip
 
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
 # ChromaDB directories (vector databases can be multi-GB)
 notebooks/*.db
 notebooks/metpo_relevant_chroma/
@@ -97,4 +101,4 @@ assets/N4L_phenotypic_ontology_2016/N4L_phenotypic_ontology/20160406_docs/doc/
 # Only ignore derived databases
 external/databases/*.db
 .~lock.*#
-notebooks/chroma_ols20_nonols4/
+data/chromadb/chroma_ols20_nonols4/

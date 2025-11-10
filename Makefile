@@ -244,14 +244,14 @@ import-madin-metadata: metadata/madin_files.json
 		--jsonArray --drop
 	@echo "Madin metadata collections imported"
 
-reports/bactotraits-metpo-set-diff.yaml: metpo/scripts/bactotraits_metpo_set_difference.py reports/synonym-sources.tsv local/bactotraits/BactoTraits.tsv
+reports/bactotraits-metpo-set-diff.yaml: metpo/bactotraits/bactotraits_metpo_set_difference.py reports/synonym-sources.tsv local/bactotraits/BactoTraits.tsv
 	uv run bactotraits-metpo-set-difference \
 		--bactotraits-file $(word 3, $^) \
 		--synonyms-file $(word 2, $^) \
 		--format yaml \
 		--output $@
 
-reports/bactotraits-metpo-reconciliation.yaml: metpo/scripts/reconcile_bactotraits_coverage.py reports/synonym-sources.tsv
+reports/bactotraits-metpo-reconciliation.yaml: metpo/bactotraits/reconcile_bactotraits_coverage.py reports/synonym-sources.tsv
 	uv run reconcile-bactotraits-coverage \
 		--mode field_names \
 		--tsv $(word 2, $^) \
@@ -523,7 +523,7 @@ alignment-fetch-ontology-names: notebooks/ontology_catalog.csv
 
 notebooks/ontology_catalog.csv: data/ontology_assessments/ontology_sizes.csv
 	@echo "Fetching ontology metadata from OLS4 API..."
-	python scripts/pipeline/fetch_ontology_names.py \
+	python metpo/pipeline/fetch_ontology_names.py \
 		--sizes-csv data/ontology_assessments/ontology_sizes.csv \
 		--output-csv notebooks/ontology_catalog.csv
 
@@ -531,7 +531,7 @@ alignment-categorize-ontologies: notebooks/ontologies_very_appealing.csv
 
 notebooks/ontologies_very_appealing.csv: notebooks/ontology_catalog.csv
 	@echo "Categorizing ontologies by relevance..."
-	python scripts/pipeline/categorize_ontologies.py \
+	python metpo/pipeline/categorize_ontologies.py \
 		--input-csv notebooks/ontology_catalog.csv \
 		--output-prefix notebooks/ontologies
 
@@ -543,7 +543,7 @@ notebooks/metpo_relevant_mappings.sssom.tsv: notebooks/metpo_relevant_chroma
 		echo "ERROR: OPENAI_API_KEY environment variable not set"; \
 		exit 1; \
 	fi
-	python scripts/pipeline/chromadb_semantic_mapper.py \
+	python metpo/pipeline/chromadb_semantic_mapper.py \
 		--metpo-tsv src/templates/metpo_sheet.tsv \
 		--chroma-path notebooks/metpo_relevant_chroma \
 		--collection-name metpo_relevant_embeddings \
@@ -554,7 +554,7 @@ notebooks/metpo_relevant_mappings.sssom.tsv: notebooks/metpo_relevant_chroma
 
 alignment-analyze-matches: notebooks/metpo_relevant_mappings.sssom.tsv
 	@echo "Analyzing match quality..."
-	python scripts/pipeline/analyze_matches.py \
+	python metpo/pipeline/analyze_matches.py \
 		--input-csv notebooks/metpo_relevant_mappings.sssom.tsv \
 		--good-match-threshold 0.9
 
@@ -562,7 +562,7 @@ alignment-analyze-coherence: notebooks/full_coherence_results.csv
 
 notebooks/full_coherence_results.csv: notebooks/metpo_relevant_mappings.sssom.tsv
 	@echo "Computing structural coherence (this may take a while)..."
-	python scripts/pipeline/analyze_sibling_coherence.py \
+	python metpo/pipeline/analyze_sibling_coherence.py \
 		--input-csv notebooks/metpo_relevant_mappings.sssom.tsv \
 		--metpo-owl src/ontology/metpo.owl \
 		--output-csv notebooks/full_coherence_results.csv
@@ -571,7 +571,7 @@ alignment-identify-candidates: notebooks/alignment_candidates.csv
 
 notebooks/alignment_candidates.csv: notebooks/full_coherence_results.csv
 	@echo "Identifying alignment candidates..."
-	python scripts/pipeline/analyze_coherence_results.py \
+	python metpo/pipeline/analyze_coherence_results.py \
 		--results-csv notebooks/full_coherence_results.csv \
 		--matches-csv notebooks/metpo_relevant_mappings.sssom.tsv
 
@@ -634,7 +634,7 @@ view-logs:
 
 embed-non-ols-terms:
 	@echo "Embedding non-OLS terms into ChromaDB..."
-	uv run python scripts/pipeline/embed_ontology_to_chromadb.py \
+	uv run python metpo/pipeline/embed_ontology_to_chromadb.py \
 		$(foreach tsv,$(wildcard data/pipeline/non-ols-terms/*.tsv),--tsv-file $(tsv)) \
 		--chroma-path ./embeddings_chroma \
 		--collection-name non_ols_embeddings

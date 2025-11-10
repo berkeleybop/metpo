@@ -68,19 +68,19 @@ notebooks = [
 ]
 
 [project.scripts]
-extract-rank-triples = "metpo.extract_rank_triples:extract_taxon_ranks"
-convert-chem-props = "metpo.convert_chem_props:convert_chem_props"
-import-bactotraits = "metpo.import_bactotraits:import_bactotraits"
-reconcile-bactotraits-coverage = "metpo.scripts.reconcile_bactotraits_coverage:main"
-reconcile-madin-coverage = "metpo.scripts.reconcile_madin_coverage:main"
-bactotraits-metpo-set-difference = "metpo.scripts.bactotraits_metpo_set_difference:main"
-create-bactotraits-field-mappings = "metpo.scripts.create_bactotraits_header_mapping:main"
-create-bactotraits-file-versions = "metpo.scripts.create_bactotraits_file_versions:main"
-create-bactotraits-files = "metpo.scripts.create_bactotraits_files:main"
-update-manifest = "metpo.scripts.update_manifest:main"
-scan-manifest = "metpo.scripts.scan_manifest:main"
-download-ontology = "metpo.scripts.download_ontology:main"
-query-ontology = "metpo.scripts.query_ontology:main"
+extract-rank-triples = "metpo.tools.extract_rank_triples:extract_taxon_ranks"
+convert-chem-props = "metpo.tools.convert_chem_props:convert_chem_props"
+import-bactotraits = "metpo.tools.import_bactotraits:import_bactotraits"
+reconcile-bactotraits-coverage = "metpo.bactotraits.reconcile_bactotraits_coverage:main"
+reconcile-madin-coverage = "metpo.bactotraits.reconcile_madin_coverage:main"
+bactotraits-metpo-set-difference = "metpo.bactotraits.bactotraits_metpo_set_difference:main"
+create-bactotraits-field-mappings = "metpo.bactotraits.create_bactotraits_header_mapping:main"
+create-bactotraits-file-versions = "metpo.bactotraits.create_bactotraits_file_versions:main"
+create-bactotraits-files = "metpo.bactotraits.create_bactotraits_files:main"
+update-manifest = "metpo.bactotraits.update_manifest:main"
+scan-manifest = "metpo.bactotraits.scan_manifest:main"
+download-ontology = "metpo.bactotraits.download_ontology:main"
+query-ontology = "metpo.bactotraits.query_ontology:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["metpo"]
