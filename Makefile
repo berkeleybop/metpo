@@ -392,7 +392,7 @@ extract-all-metpo-entities: $(foreach sub,$(METPO_SUBMISSIONS),data/entity_extra
 # Individual entity extraction targets
 data/entity_extracts/metpo_submission_%_all_entities.tsv: data/bioportal_owl/metpo_submission_%.owl | data/entity_extracts
 	@echo "Extracting entities from METPO submission $*..."
-	robot query -i $< -s analysis/sparql_queries/query_metpo_entities.sparql $@
+	robot query -i $< -s sparql/query_metpo_entities.sparql $@
 
 # Ensure data/entity_extracts directory exists
 data/entity_extracts:
