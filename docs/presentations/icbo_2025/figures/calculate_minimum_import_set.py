@@ -10,7 +10,7 @@ import csv
 from pathlib import Path
 from collections import Counter, defaultdict
 
-SSSOM_FILE = Path("/home/mark/gitrepos/metpo/notebooks/metpo_mappings_combined_relaxed.sssom.tsv")
+SSSOM_FILE = Path("/home/mark/gitrepos/metpo/data/mappings/metpo_mappings_combined_relaxed.sssom.tsv")
 
 def analyze_by_quality_threshold(sssom_path):
     """Analyze which ontologies provide high-quality matches at different thresholds"""

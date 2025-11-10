@@ -154,7 +154,7 @@ print("="*80)
 
 if coverage_results:
     df_cov = pd.DataFrame(coverage_results)
-    df_cov.to_csv('metpo_branch_coverage_summary.tsv', sep='\t', index=False)
+    df_cov.to_csv('../../data/ontology_assessments/coverage/metpo_branch_coverage_summary.tsv', sep='\t', index=False)
 
     # Group by ontology
     ont_branches = defaultdict(list)
@@ -172,7 +172,7 @@ if coverage_results:
         for b in sorted(branches_list, key=lambda x: x['pct'], reverse=True):
             print(f"  • {b['branch']}: {b['cov']}/{b['tot']} leaves ({b['pct']:.1f}%)")
 
-    print(f"\n✓ Saved detailed results to metpo_branch_coverage_summary.tsv")
+    print(f"\n✓ Saved detailed results to ../../data/ontology_assessments/coverage/metpo_branch_coverage_summary.tsv")
 else:
     print("\nNo ontology provides ≥50% coverage for any major branch")
     print("\nShowing best partial coverage for largest branch:")

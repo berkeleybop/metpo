@@ -11,8 +11,8 @@ import click
 
 
 @click.command()
-@click.option('--results-csv', default='full_coherence_results.csv', help='Coherence results CSV')
-@click.option('--matches-csv', default='../metpo_relevant_mappings.sssom.tsv', help='SSSOM TSV mappings file')
+@click.option('--results-csv', default='../data/coherence/sibling_coherence_analysis_output.csv', help='Coherence results CSV')
+@click.option('--matches-csv', default='../data/mappings/metpo_mappings_combined_relaxed.sssom.tsv', help='SSSOM TSV mappings file')
 def main(results_csv: str, matches_csv: str):
     """Analyze coherence results to find strong alignments."""
 

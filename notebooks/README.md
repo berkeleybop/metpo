@@ -1,10 +1,10 @@
 # notebooks/
 
-## Purpose
+This directory contains **only** Makefile automation scripts and Jupyter notebooks for exploration. All data files have been moved to `data/` directories organized by purpose.
 
-This directory serves two distinct purposes:
+## Contents
 
-### 1. Makefile Automation Scripts (Production)
+### Makefile Automation Scripts (7 files)
 
 Core scripts called by Makefile targets for METPO's ontology alignment workflow:
 
@@ -20,39 +20,40 @@ Core scripts called by Makefile targets for METPO's ontology alignment workflow:
 
 **Do not move these scripts** - they are tightly coupled to Makefile targets.
 
-### 2. Exploration Notebooks (Documentation)
+### Jupyter Notebooks (4 files)
 
-Educational/exploratory Jupyter notebooks:
+Educational/exploratory notebooks for understanding the METPO workflow:
 
 - `ols_search_example.ipynb` - OLS4 and BioPortal API examples
 - `explore_embeddings.ipynb` - SQLite embedding similarity search demo
 - `query_chromadb.ipynb` - ChromaDB fast similarity search demo
+- `assess_ontology_by_api_search.ipynb` - Frequency-based ontology assessment (complementary to semantic embeddings)
 
-### 3. Data Files
+### Pipeline Intermediates (1 directory)
 
-**Input Data** (external sources):
-- Ontology metadata caches: `*_ontology_metadata.tsv`, `*_ontologies_complete.tsv/jsonl`
-- METPO term lists: `metpo_all_labels.tsv`, `metpo_sample_labels.tsv`
-- Ontology catalog: `ontology_sizes.csv`, `relevant_ontologies_for_metpo.tsv`
+- `non-ols-terms/` - Extracted terms from non-OLS ontologies for embedding generation (13 TSV files)
+  - These are working files that need to stay accessible to the scripts that generated them
 
-**Output Data** (analysis results):
-- SSSOM mappings: `metpo_mappings_combined_relaxed.sssom.tsv`, `metpo_mappings_optimized.sssom.tsv`
-- Coverage analysis: `metpo_branch_coverage_summary.tsv`, `metpo_coverage_landscape.tsv`
-- Definition extraction: `definition_proposals.tsv`, `definition_sources_needed.tsv`, `high_confidence_definitions.tsv`
-- Cross-references: `metpo_cross_references.tsv`
-- Coherence results: `sibling_coherence_analysis_output.csv`
+## Data Organization
 
-**Pipeline Intermediates**:
-- `non-ols-terms/*.tsv` - Extracted terms from non-OLS ontologies for embedding
+All data files have been moved to organized directories in `data/`:
 
-### 4. Archived Materials
+### Input Data
+- `data/metpo_terms/` - METPO term lists (metpo_all_labels.tsv, metpo_sample_labels.tsv)
+- `data/ontology_assessments/cache/` - Cached ontology metadata from OLS4/BioPortal APIs
+- `data/ontology_assessments/` - Ontology assessment files (ontology_sizes.csv, relevant_ontologies_for_metpo.tsv)
 
-- `archive/phase1/` - Superseded Phase 1 API-based discovery approach (see archive/phase1/README.md)
+### Output Data
+- `data/mappings/` - SSSOM mapping files (metpo_mappings_*.sssom.tsv)
+- `data/ontology_assessments/coverage/` - Coverage analysis results
+- `data/definitions/` - Definition extraction outputs
+- `data/coherence/` - Coherence analysis results
 
 ## Related Directories
 
 - `scripts/analysis/` - Standalone analysis tools (not in Makefile workflow)
 - `scripts/database/` - Database management utilities (ChromaDB operations)
+- `data/` - All data files organized by purpose
 
 ## Workflow
 
@@ -69,6 +70,9 @@ make alignment-identify-candidates
 
 ## Design Philosophy
 
-Per `CLAUDE.md`: "notebooks/ should have minimal .py files"
+This directory follows the principle: **"notebooks/ should contain only automation scripts and exploration notebooks, not data files"**
 
-This directory maintains only scripts essential to Makefile automation, with standalone tools moved to `scripts/`. Jupyter notebooks are kept for exploration and education, not production workflows.
+- ✅ 7 Makefile automation scripts (must stay here)
+- ✅ 4 Jupyter notebooks for exploration
+- ✅ 1 directory of pipeline intermediates (non-ols-terms/)
+- ❌ No data files (all moved to data/ directories)

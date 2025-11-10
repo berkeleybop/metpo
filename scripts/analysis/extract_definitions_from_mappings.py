@@ -18,9 +18,9 @@ from pathlib import Path
 from typing import Tuple, Optional
 
 # Configuration
-SSSOM_FILE = "metpo_mappings_combined_relaxed.sssom.tsv"
-METPO_SHEET = "../src/templates/metpo_sheet.tsv"
-OUTPUT_DIR = Path(".")
+SSSOM_FILE = "../../data/mappings/metpo_mappings_combined_relaxed.sssom.tsv"
+METPO_SHEET = "../../src/templates/metpo_sheet.tsv"
+OUTPUT_DIR = Path("../../data/definitions")
 
 # Thresholds
 HIGH_CONFIDENCE_DISTANCE = 0.35  # Distance < 0.35 for automatic proposals

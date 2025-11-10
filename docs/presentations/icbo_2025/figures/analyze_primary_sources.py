@@ -19,8 +19,8 @@ CHROMA_OLS_20 = Path("/home/mark/gitrepos/metpo/notebooks/chroma_ols_20/chroma.s
 CHROMA_NONOLS_4 = Path("/home/mark/gitrepos/metpo/notebooks/chroma_nonols_4/chroma.sqlite3")
 
 # PRIMARY SOURCE 2: SSSOM mappings
-SSSOM_RELAXED = Path("/home/mark/gitrepos/metpo/notebooks/metpo_mappings_combined_relaxed.sssom.tsv")
-SSSOM_OPTIMIZED = Path("/home/mark/gitrepos/metpo/notebooks/metpo_mappings_optimized.sssom.tsv")
+SSSOM_RELAXED = Path("/home/mark/gitrepos/metpo/data/mappings/metpo_mappings_combined_relaxed.sssom.tsv")
+SSSOM_OPTIMIZED = Path("/home/mark/gitrepos/metpo/data/mappings/metpo_mappings_optimized.sssom.tsv")
 
 def query_chromadb(db_path, description):
     """Query a ChromaDB SQLite database for ontology statistics"""

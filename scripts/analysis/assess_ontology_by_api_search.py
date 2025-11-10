@@ -25,7 +25,7 @@ from collections import Counter
 import sys
 
 # Configuration
-SAMPLE_FILE = "metpo_all_labels.tsv"
+SAMPLE_FILE = "../../data/metpo_terms/metpo_all_labels.tsv"
 OUTPUT_DIR = Path(".")
 OLS_ROWS = 75
 BIOPORTAL_PAGESIZE = 75

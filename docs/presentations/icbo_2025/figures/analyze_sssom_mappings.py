@@ -2,7 +2,7 @@
 """
 Analyze METPO SSSOM mappings from PRIMARY SOURCE files.
 
-Parses /home/mark/gitrepos/metpo/notebooks/metpo_mappings_*.sssom.tsv directly.
+Parses /home/mark/gitrepos/metpo/data/mappings/metpo_mappings_*.sssom.tsv directly.
 100% traceable.
 """
 
@@ -39,7 +39,7 @@ def analyze_sssom(sssom_file):
 
 def main():
     metpo_root = Path('/home/mark/gitrepos/metpo')
-    sssom_dir = metpo_root / 'notebooks'
+    sssom_dir = metpo_root / 'data' / 'mappings'
 
     print("=== METPO SSSOM Mappings Analysis (PRIMARY SOURCE) ===\n")
 

@@ -166,7 +166,7 @@ for branch in branches:
 # Create DataFrame and save
 landscape_df = pd.DataFrame(landscape)
 landscape_df = landscape_df.sort_values('onts_for_90pct', ascending=False)
-landscape_df.to_csv('metpo_coverage_landscape.tsv', sep='\t', index=False)
+landscape_df.to_csv('../../data/ontology_assessments/coverage/metpo_coverage_landscape.tsv', sep='\t', index=False)
 
 # Display summary
 print("\n" + "="*80)
@@ -206,5 +206,5 @@ worst = landscape_df.nlargest(5, 'onts_for_90pct')
 for _, row in worst.iterrows():
     print(f"  {row['branch']:<35} {row['onts_for_90pct']:>3} ontologies")
 
-print(f"\n✓ Saved to metpo_coverage_landscape.tsv")
+print(f"\n✓ Saved to ../../data/ontology_assessments/coverage/metpo_coverage_landscape.tsv")
 print("="*80)

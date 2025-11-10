@@ -264,7 +264,7 @@ class OaklibHierarchy:
 @click.option(
     '--output-csv',
     type=click.Path(dir_okay=False, path_type=str),
-    default='sibling_coherence_results.csv',
+    default='../data/coherence/sibling_coherence_analysis_output.csv',
     help="Path to save coherence results CSV."
 )
 def main(input_csv: str, metpo_owl: str, good_match_threshold: float, debug: bool, output_csv: str):

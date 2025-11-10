@@ -232,7 +232,7 @@ def query_chromadb_for_term(
 @click.option(
     '--output',
     type=click.Path(path_type=str),
-    default='./metpo_mappings.sssom.tsv',
+    default='../data/mappings/metpo_mappings.sssom.tsv',
     help="Output SSSOM TSV file path"
 )
 @click.option(

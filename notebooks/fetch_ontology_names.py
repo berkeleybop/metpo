@@ -8,7 +8,7 @@ import click
 
 
 @click.command()
-@click.option('--sizes-csv', default='ontology_sizes.csv', help='Input CSV with ontology sizes')
+@click.option('--sizes-csv', default='../data/ontology_assessments/ontology_sizes.csv', help='Input CSV with ontology sizes')
 @click.option('--output-csv', default='ontology_catalog.csv', help='Output merged catalog CSV')
 @click.option('--api-delay', default=0.5, type=float, help='Delay between API requests (seconds)')
 def main(sizes_csv, output_csv, api_delay):
