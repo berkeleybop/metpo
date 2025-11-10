@@ -6,6 +6,18 @@ These scripts are **not** part of the main Makefile workflow (unlike notebooks/ 
 
 ## Scripts
 
+### Ontology Assessment
+
+**assess_ontology_by_api_search.py**
+- **Purpose**: Frequency-based ontology assessment using OLS4/BioPortal API queries
+- **Method**: Label matching with Levenshtein distance similarity scoring
+- **Output**: Ontology rankings by match count (see `data/ontology_assessments/`)
+- **Status**: Complementary method to semantic embeddings
+- **Notebook**: `notebooks/assess_ontology_by_api_search.ipynb` for interactive use
+- **Usage**: `python scripts/analysis/assess_ontology_by_api_search.py`
+- **When to use**: Initial ontology discovery, validating semantic results, label-based assessment
+- **Results**: October 2024 rankings available in `data/ontology_assessments/phase1_ontology_rankings.tsv`
+
 ### Coverage & Quality Analysis
 
 **analyze_branch_coverage_final.py**
