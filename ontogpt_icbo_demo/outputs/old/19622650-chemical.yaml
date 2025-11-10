@@ -1,0 +1,105 @@
+---
+input_text: |
+  {'content': 'Methylovirgula ligni gen. nov., sp. nov., an obligately acidophilic, facultatively methylotrophic bacterium with a highly divergent mxaF gene.\n\nTwo strains of Gram-negative, aerobic, non-pigmented, non-motile, rod-shaped bacteria were isolated from beechwood blocks during decay by the white-rot fungus Hypholoma fasciculare and were designated strains BW863(T) and BW872. They are capable of methylotrophic growth and assimilate carbon via the ribulose-bisphosphate pathway. In addition to methanol, the novel isolates utilized ethanol, pyruvate and malate. Strains BW863(T) and BW872 are obligately acidophilic, mesophilic organisms capable of growth at pH 3.1-6.5 (with an optimum at pH 4.5-5.0) and at 4-30 degrees C. Phospholipid fatty acid profiles of these bacteria contain unusually large amounts (about 90 %) of C(18 : 1)omega7c, thereby resembling the profiles of Methylobacterium strains. The predominant quinone is Q-10. The DNA G+C content of the novel isolates is 61.8-62.8 mol%. On the basis of 16S rRNA gene sequence similarity, strains BW863(T) and BW872 are most closely related to the acidophilic methanotroph Methylocapsa acidiphila B2(T) (96.5-97 %). Comparative sequence analysis of mxaF, the gene encoding the large subunit of methanol dehydrogenase, placed the MxaF sequences of the two novel strains in a cluster that is distinct from all previously described MxaF sequences of cultivated methylotrophs. The identity between the MxaF sequences of the acidophilic isolates and those from known alpha-, beta- and gammaproteobacterial methylotrophs was respectively 69-75, 61-63 and 64-67 %. The data therefore suggest that strains BW863(T) and BW872 represent a novel genus and species of methylotrophic bacteria, for which the name Methylovirgula ligni gen. nov., sp. nov. is proposed. Strain BW863(T) (=DSM 19998(T) =NCIMB 14408(T)) is the type strain of Methylovirgula ligni.\n\nPMID:19622650', 'saved_to': None, 'windowed': False}
+raw_completion_output: |-
+  pmid: 19622650  
+  study_taxa: Methylovirgula ligni  
+  strains: BW863; BW872  
+  chemicals_mentioned: methanol; ethanol; pyruvate; malate  
+  chemical_utilizations: BW863 uses_for_growth methanol; BW872 uses_for_growth methanol; BW863 uses_for_growth ethanol; BW872 uses_for_growth ethanol; BW863 uses_for_growth pyruvate; BW872 uses_for_growth pyruvate; BW863 uses_for_growth malate; BW872 uses_for_growth malate  
+  strain_relationships: BW863 type_strain_of Methylovirgula ligni; BW872 strain_of Methylovirgula ligni  
+  article_type: novel_species
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  subject: <the specific strain designation or identifier>
+  predicate: <the type of strain-taxon relationship (strain_of, type_strain_of, isolate_of, etc.)Must be one of: strain_of, type_strain_of, reference_strain_of, isolate_of, variant_of, derived_from, identical_to, deposited_as>
+  object: <the parent species or genus this strain belongs to>
+
+
+  Text:
+  BW872 strain_of Methylovirgula ligni
+
+  ===
+
+extracted_object:
+  pmid: '19622650'
+  study_taxa:
+    - NCBITaxon:569860
+  strains:
+    - AUTO:BW863
+    - AUTO:BW872
+  chemicals_mentioned:
+    - 'LIKELY HALLUCINATION: methanol'
+    - CHEBI:16236
+    - CHEBI:15361
+    - CHEBI:25115
+  chemical_utilizations:
+    - subject: AUTO:BW863
+      predicate: uses_for_growth
+      object: 'LIKELY HALLUCINATION: methanol'
+    - subject: AUTO:BW872
+      predicate: uses_for_growth
+      object: 'LIKELY HALLUCINATION: methanol'
+    - subject: AUTO:BW863
+      predicate: uses_for_growth
+      object: CHEBI:16236
+    - subject: AUTO:BW872
+      predicate: uses_for_growth
+      object: CHEBI:16236
+    - subject: AUTO:BW863
+      predicate: uses_for_growth
+      object: CHEBI:15361
+    - subject: AUTO:BW872
+      predicate: uses_for_growth
+      object: CHEBI:15361
+    - subject: AUTO:BW863
+      predicate: uses_for_growth
+      object: CHEBI:25115
+    - subject: AUTO:BW872
+      predicate: uses_for_growth
+      object: CHEBI:25115
+  strain_relationships:
+    - subject: AUTO:BW863
+      predicate: type_strain_of
+      object: NCBITaxon:569860
+    - subject: AUTO:BW872
+      predicate: strain_of
+      object: NCBITaxon:569860
+  article_type: novel_species
+named_entities:
+  - id: NCBITaxon:569860
+    label: Methylovirgula ligni
+    original_spans:
+      - 13:32
+      - 1771:1790
+      - 1895:1914
+  - id: AUTO:BW863
+    label: BW863
+    original_spans:
+      - 368:372
+      - 582:586
+      - 1068:1072
+      - 1669:1673
+      - 1832:1836
+  - id: AUTO:BW872
+    label: BW872
+    original_spans:
+      - 381:385
+      - 595:599
+      - 1081:1085
+      - 1682:1686
+  - id: CHEBI:16236
+    label: ethanol
+    original_spans:
+      - 507:513
+      - 544:550
+      - 1266:1272
+  - id: CHEBI:15361
+    label: pyruvate
+    original_spans:
+      - 553:560
+  - id: CHEBI:25115
+    label: malate
+    original_spans:
+      - 566:571

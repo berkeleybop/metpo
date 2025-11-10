@@ -1,0 +1,32 @@
+@base <http://example.org/NOPREFIX/> .
+@prefix AUTO: <http://example.org/AUTO/> .
+@prefix CHEBI: <http://purl.obolibrary.org/obo/CHEBI_> .
+@prefix METPO: <http://purl.obolibrary.org/obo/METPO_> .
+@prefix NCBITaxon: <http://purl.obolibrary.org/obo/NCBITaxon_> .
+@prefix metpo_chem: <http://w3id.org/metpo/chemical_utilization_extraction/> .
+
+[] a metpo_chem:ChemicalUtilizationLiteratureExtraction ;
+    metpo_chem:article_type "metabolic_study" ;
+    metpo_chem:chemical_utilizations [ a metpo_chem:ChemicalUtilization ;
+            metpo_chem:object CHEBI:16830 ;
+            metpo_chem:predicate METPO:2000006 ;
+            metpo_chem:subject AUTO:AM1 ],
+        [ a metpo_chem:ChemicalUtilization ;
+            metpo_chem:object CHEBI:15767 ;
+            metpo_chem:predicate METPO:2000006 ;
+            metpo_chem:subject AUTO:DM4 ] ;
+    metpo_chem:chemicals_mentioned CHEBI:15767,
+        CHEBI:16830 ;
+    metpo_chem:pmid "19440302" ;
+    metpo_chem:strain_relationships [ a metpo_chem:StrainRelationship ;
+            metpo_chem:object NCBITaxon:407 ;
+            metpo_chem:predicate "strain_of" ;
+            metpo_chem:subject AUTO:DM4 ],
+        [ a metpo_chem:StrainRelationship ;
+            metpo_chem:object NCBITaxon:408 ;
+            metpo_chem:predicate "strain_of" ;
+            metpo_chem:subject AUTO:AM1 ] ;
+    metpo_chem:strains AUTO:AM1,
+        AUTO:DM4 ;
+    metpo_chem:study_taxa NCBITaxon:407 .
+

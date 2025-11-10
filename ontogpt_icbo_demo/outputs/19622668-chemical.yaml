@@ -1,0 +1,106 @@
+---
+input_text: |-
+  Bavariicoccus seileri gen. nov., sp. nov., isolated from the surface and smear water of German red smear soft cheese.
+
+  The phylogenetic position and physiological characters of six hitherto-unknown lactic acid bacterial isolates, which form part of the surface microbiota of German red smear soft cheese, are reported. The coccoid cells are aerotolerant, Gram-positive, catalase-negative and non-motile. The cell-wall peptidoglycan contains alanine, glutamic acid, lysine and aspartic acid and is of the A4alpha type (l-Lys-d-Asp). The sequences of the 16S rRNA, groEL and rpoB genes of the six isolates are identical and reveal that these isolates represent an independent lineage within the radiation of the family Enterococcaceae in the phylum Firmicutes. Their closest phylogenetic neighbour is the lactic acid bacterium Atopobacter phocae M1590/94/2(T), with which they share 94.9 % 16S rRNA gene sequence similarity; representatives of other genera such as Granulicatella, Carnobacterium and Trichococcus are more distantly related. DNA-DNA hybridization studies reveal that the six isolates are members of a single species, and this is confirmed by similarities in biochemical characteristics. The six isolates were assigned four different groups by Fourier-transform infrared and randomly amplified polymorphic DNA typing. Therefore, it is formally proposed that these isolates should be classified in a single novel species of a novel genus and be named Bavariicoccus seileri gen. nov., sp. nov. The type strain of Bavariicoccus seileri is WCC 4188(T) (=DSM 19936(T) =CCUG 55508(T)).
+
+  PMID:19622668
+raw_completion_output: |-
+  pmid: 19622668  
+  study_taxa: Bavariicoccus; Atopobacter; Granulicatella; Carnobacterium; Trichococcus  
+  strains: WCC 4188; DSM 19936; CCUG 55508  
+  chemicals_mentioned: alanine; glutamic acid; lysine; aspartic acid  
+  chemical_utilizations:   
+  strain_relationships: WCC 4188 type_strain_of Bavariicoccus seileri; DSM 19936 type_strain_of Bavariicoccus seileri; CCUG 55508 type_strain_of Bavariicoccus seileri  
+  article_type: novel_species  
+prompt: |+
+  From the text below, extract the following entities in the following format:
+
+  pmid: <PubMed ID of the article (e.g., 23996836)>
+  study_taxa: <semicolon-separated list of the main bacterial or archaeal taxa being studied for chemical utilization>
+  strains: <Extract ONLY the strain designation part (e.g., "DA-C8", "MG1655", "ATCC 25922") WITHOUT genus/species prefixes. Focus on strain numbers, culture collection codes, and isolate identifiers. Automatically remove terminal "T" or "(T)" suffixes as these indicate type strain status (e.g., "DA-C8T" becomes "DA-C8", "K13T" becomes "K13"). Include strain numbers, culture collection numbers, and isolate names, but NOT the full taxonomic context.>
+  chemicals_mentioned: <Identify all chemical compounds mentioned in the text that are relevant to bacterial metabolism, growth, or biochemical activities. Include: carbon sources (glucose, acetate), nitrogen sources (ammonia, nitrate), vitamins (B12, biotin), metabolic intermediates, enzyme substrates, electron acceptors/donors, and any other chemicals involved in bacterial physiology. If no relevant chemicals are mentioned,  leave this field completely empty. DO NOT include entries like "None  explicitly mentioned" or similar phrases.>
+  chemical_utilizations: <A semicolon-separated list of strain-chemical relationships. Use EXACTLY THE SAME strain identifiers from the strains field.
+  Extract ALL relationships mentioned in the text. Be comprehensive - include both what strains CAN do and what they CANNOT do. Use specific predicates (uses_as_carbon_source, degrades, oxidizes) rather than generic ones when the text specifies the interaction type.>
+  strain_relationships: <A semicolon-separated list of strain-species relationships, where each relationship connects a strain identifier to its parent taxon. CRITICAL: Use EXACTLY THE SAME strain identifiers as listed in the strains field above - copy them verbatim, character-for-character. Do not modify, abbreviate, or expand the strain identifiers. Each relationship should have the strain identifier, relationship type, and parent species/genus. For example: "DA-C8 type_strain_of Insulambacter thermoxylanivorax; MG1655 strain_of Escherichia coli; ATCC 25922 type_strain_of Klebsiella pneumoniae". The strain identifiers MUST be identical to those used in the strains and chemical_utilizations fields. If no strain relationships are found, leave this field empty. DO NOT write "none".>
+  article_type: <The type of study or article. Choose the most appropriate category based on the content, with emphasis on metabolic_study for articles focusing on chemical utilization, degradation, or metabolic pathways.Must be one of: novel_species, novel_genus, taxonomic_revision, phylogenetic_analysis, comparative_taxonomy, emended_description, genome_sequence, review, biochemical_characterization, ecological_study, metabolic_study, physiology_study>
+
+
+  Text:
+  Bavariicoccus seileri gen. nov., sp. nov., isolated from the surface and smear water of German red smear soft cheese.
+
+  The phylogenetic position and physiological characters of six hitherto-unknown lactic acid bacterial isolates, which form part of the surface microbiota of German red smear soft cheese, are reported. The coccoid cells are aerotolerant, Gram-positive, catalase-negative and non-motile. The cell-wall peptidoglycan contains alanine, glutamic acid, lysine and aspartic acid and is of the A4alpha type (l-Lys-d-Asp). The sequences of the 16S rRNA, groEL and rpoB genes of the six isolates are identical and reveal that these isolates represent an independent lineage within the radiation of the family Enterococcaceae in the phylum Firmicutes. Their closest phylogenetic neighbour is the lactic acid bacterium Atopobacter phocae M1590/94/2(T), with which they share 94.9 % 16S rRNA gene sequence similarity; representatives of other genera such as Granulicatella, Carnobacterium and Trichococcus are more distantly related. DNA-DNA hybridization studies reveal that the six isolates are members of a single species, and this is confirmed by similarities in biochemical characteristics. The six isolates were assigned four different groups by Fourier-transform infrared and randomly amplified polymorphic DNA typing. Therefore, it is formally proposed that these isolates should be classified in a single novel species of a novel genus and be named Bavariicoccus seileri gen. nov., sp. nov. The type strain of Bavariicoccus seileri is WCC 4188(T) (=DSM 19936(T) =CCUG 55508(T)).
+
+  PMID:19622668
+
+  ===
+
+extracted_object:
+  pmid: '19622668'
+  study_taxa:
+    - NCBITaxon:697279
+    - NCBITaxon:136491
+    - NCBITaxon:117563
+    - NCBITaxon:2747
+    - NCBITaxon:82802
+  strains:
+    - AUTO:WCC%204188
+    - AUTO:DSM%2019936
+    - AUTO:CCUG%2055508
+  chemicals_mentioned:
+    - CHEBI:16449
+    - CHEBI:18237
+    - CHEBI:25094
+    - CHEBI:22660
+  article_type: novel_species
+named_entities:
+  - id: NCBITaxon:697279
+    label: Bavariicoccus
+    original_spans:
+      - 0:12
+      - 1463:1475
+      - 1524:1536
+  - id: NCBITaxon:136491
+    label: Atopobacter
+    original_spans:
+      - 825:835
+  - id: NCBITaxon:117563
+    label: Granulicatella
+    original_spans:
+      - 963:976
+  - id: NCBITaxon:2747
+    label: Carnobacterium
+    original_spans:
+      - 979:992
+  - id: NCBITaxon:82802
+    label: Trichococcus
+    original_spans:
+      - 998:1009
+  - id: AUTO:WCC%204188
+    label: WCC 4188
+    original_spans:
+      - 1549:1556
+  - id: AUTO:DSM%2019936
+    label: DSM 19936
+    original_spans:
+      - 1563:1571
+  - id: AUTO:CCUG%2055508
+    label: CCUG 55508
+    original_spans:
+      - 1577:1586
+  - id: CHEBI:16449
+    label: alanine
+    original_spans:
+      - 441:447
+  - id: CHEBI:18237
+    label: glutamic acid
+    original_spans:
+      - 450:462
+  - id: CHEBI:25094
+    label: lysine
+    original_spans:
+      - 465:470
+  - id: CHEBI:22660
+    label: aspartic acid
+    original_spans:
+      - 476:488

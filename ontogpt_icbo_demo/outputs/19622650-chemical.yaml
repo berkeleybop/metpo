@@ -1,0 +1,125 @@
+---
+input_text: |-
+  Methylovirgula ligni gen. nov., sp. nov., an obligately acidophilic, facultatively methylotrophic bacterium with a highly divergent mxaF gene.
+
+  Two strains of Gram-negative, aerobic, non-pigmented, non-motile, rod-shaped bacteria were isolated from beechwood blocks during decay by the white-rot fungus Hypholoma fasciculare and were designated strains BW863(T) and BW872. They are capable of methylotrophic growth and assimilate carbon via the ribulose-bisphosphate pathway. In addition to methanol, the novel isolates utilized ethanol, pyruvate and malate. Strains BW863(T) and BW872 are obligately acidophilic, mesophilic organisms capable of growth at pH 3.1-6.5 (with an optimum at pH 4.5-5.0) and at 4-30 degrees C. Phospholipid fatty acid profiles of these bacteria contain unusually large amounts (about 90 %) of C(18 : 1)omega7c, thereby resembling the profiles of Methylobacterium strains. The predominant quinone is Q-10. The DNA G+C content of the novel isolates is 61.8-62.8 mol%. On the basis of 16S rRNA gene sequence similarity, strains BW863(T) and BW872 are most closely related to the acidophilic methanotroph Methylocapsa acidiphila B2(T) (96.5-97 %). Comparative sequence analysis of mxaF, the gene encoding the large subunit of methanol dehydrogenase, placed the MxaF sequences of the two novel strains in a cluster that is distinct from all previously described MxaF sequences of cultivated methylotrophs. The identity between the MxaF sequences of the acidophilic isolates and those from known alpha-, beta- and gammaproteobacterial methylotrophs was respectively 69-75, 61-63 and 64-67 %. The data therefore suggest that strains BW863(T) and BW872 represent a novel genus and species of methylotrophic bacteria, for which the name Methylovirgula ligni gen. nov., sp. nov. is proposed. Strain BW863(T) (=DSM 19998(T) =NCIMB 14408(T)) is the type strain of Methylovirgula ligni.
+
+  PMID:19622650
+raw_completion_output: |-
+  pmid: 19622650  
+  study_taxa: Methylovirgula; Methylocapsa  
+  strains: BW863; BW872  
+  chemicals_mentioned: methanol; ethanol; pyruvate; malate  
+  chemical_utilizations: BW863 uses_as_carbon_source methanol; BW863 uses_as_carbon_source ethanol; BW863 uses_as_carbon_source pyruvate; BW863 uses_as_carbon_source malate; BW872 uses_as_carbon_source methanol; BW872 uses_as_carbon_source ethanol; BW872 uses_as_carbon_source pyruvate; BW872 uses_as_carbon_source malate  
+  strain_relationships: BW863 type_strain_of Methylovirgula ligni; BW872 strain_of Methylovirgula ligni  
+  article_type: novel_species  
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  subject: <the specific strain designation or identifier>
+  predicate: <the type of strain-taxon relationship (strain_of, type_strain_of, isolate_of, etc.)Must be one of: strain_of, type_strain_of, reference_strain_of, isolate_of, variant_of, derived_from, identical_to, deposited_as>
+  object: <the parent species or genus this strain belongs to>
+
+
+  Text:
+  BW872 strain_of Methylovirgula ligni
+
+  ===
+
+extracted_object:
+  pmid: '19622650'
+  study_taxa:
+    - NCBITaxon:1156568
+    - NCBITaxon:184923
+  strains:
+    - AUTO:BW863
+    - AUTO:BW872
+  chemicals_mentioned:
+    - CHEBI:17790
+    - CHEBI:16236
+    - CHEBI:15361
+    - CHEBI:25115
+  chemical_utilizations:
+    - subject: AUTO:BW863
+      predicate: uses_as_carbon_source
+      object: CHEBI:17790
+    - subject: AUTO:BW863
+      predicate: uses_as_carbon_source
+      object: CHEBI:16236
+    - subject: AUTO:BW863
+      predicate: uses_as_carbon_source
+      object: CHEBI:15361
+    - subject: AUTO:BW863
+      predicate: uses_as_carbon_source
+      object: CHEBI:25115
+    - subject: AUTO:BW872
+      predicate: uses_as_carbon_source
+      object: CHEBI:17790
+    - subject: AUTO:BW872
+      predicate: uses_as_carbon_source
+      object: CHEBI:16236
+    - subject: AUTO:BW872
+      predicate: uses_as_carbon_source
+      object: CHEBI:15361
+    - subject: AUTO:BW872
+      predicate: uses_as_carbon_source
+      object: CHEBI:25115
+  strain_relationships:
+    - subject: AUTO:BW863
+      predicate: type_strain_of
+      object: NCBITaxon:569860
+    - subject: AUTO:BW872
+      predicate: strain_of
+      object: NCBITaxon:569860
+  article_type: novel_species
+named_entities:
+  - id: NCBITaxon:1156568
+    label: Methylovirgula
+    original_spans:
+      - 0:13
+      - 1756:1769
+      - 1880:1893
+  - id: NCBITaxon:184923
+    label: Methylocapsa
+    original_spans:
+      - 1129:1140
+  - id: AUTO:BW863
+    label: BW863
+    original_spans:
+      - 353:357
+      - 567:571
+      - 1053:1057
+      - 1654:1658
+      - 1817:1821
+  - id: AUTO:BW872
+    label: BW872
+    original_spans:
+      - 366:370
+      - 580:584
+      - 1066:1070
+      - 1667:1671
+  - id: CHEBI:17790
+    label: methanol
+    original_spans:
+      - 491:498
+      - 1250:1257
+  - id: CHEBI:16236
+    label: ethanol
+    original_spans:
+      - 492:498
+      - 529:535
+      - 1251:1257
+  - id: CHEBI:15361
+    label: pyruvate
+    original_spans:
+      - 538:545
+  - id: CHEBI:25115
+    label: malate
+    original_spans:
+      - 551:556
+  - id: NCBITaxon:569860
+    label: Methylovirgula ligni
+    original_spans:
+      - 0:19
+      - 1756:1775
+      - 1880:1899

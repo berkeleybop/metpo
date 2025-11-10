@@ -1,0 +1,100 @@
+@base <http://example.org/NOPREFIX/> .
+@prefix AUTO: <http://example.org/AUTO/> .
+@prefix NCBITaxon: <http://purl.obolibrary.org/obo/NCBITaxon_> .
+@prefix metpo_icbo: <http://w3id.org/metpo/strain_phenotype_icbo/> .
+
+[] a metpo_icbo:StrainPhenotypeLiteratureExtraction ;
+    metpo_icbo:pmid "19622650" ;
+    metpo_icbo:strain_to_medium [ a metpo_icbo:StrainToMediumRelationship ;
+            metpo_icbo:object AUTO:not_specified ;
+            metpo_icbo:predicate "grows_on_medium" ;
+            metpo_icbo:subject AUTO:DSM%2019998 ],
+        [ a metpo_icbo:StrainToMediumRelationship ;
+            metpo_icbo:object AUTO:not_specified ;
+            metpo_icbo:predicate "grows_on_medium" ;
+            metpo_icbo:subject AUTO:NCIMB%2014408 ],
+        [ a metpo_icbo:StrainToMediumRelationship ;
+            metpo_icbo:object AUTO:not_specified ;
+            metpo_icbo:predicate "grows_on_medium" ;
+            metpo_icbo:subject AUTO:BW872 ],
+        [ a metpo_icbo:StrainToMediumRelationship ;
+            metpo_icbo:object <http://example.org/AUTO/%3Cnot_specified%3E> ;
+            metpo_icbo:subject <http://example.org/AUTO/%3CBW863%3E> ] ;
+    metpo_icbo:strain_to_phenotype [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object AUTO:obligately_acidophilic ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:BW863 ],
+        [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object <https://w3id.org/metpo/1000181> ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:BW872 ],
+        [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object <https://w3id.org/metpo/1000008> ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:BW863 ],
+        [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object <https://w3id.org/metpo/1000143> ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:BW872 ],
+        [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object <https://w3id.org/metpo/1000181> ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:BW863 ],
+        [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object AUTO:rod-shaped ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:BW872 ],
+        [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object AUTO:obligately_acidophilic ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:BW872 ],
+        [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object AUTO:rod-shaped ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:BW863 ],
+        [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object <https://w3id.org/metpo/1000380> ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:BW863 ],
+        [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object <https://w3id.org/metpo/1000143> ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:BW863 ],
+        [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object AUTO:non-pigmented ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:BW863 ],
+        [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object AUTO:non-pigmented ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:BW872 ],
+        [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object <https://w3id.org/metpo/1000008> ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:BW872 ],
+        [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object <https://w3id.org/metpo/1000380> ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:BW872 ] ;
+    metpo_icbo:strain_to_taxon [ a metpo_icbo:StrainToTaxonRelationship ;
+            metpo_icbo:object NCBITaxon:569860 ;
+            metpo_icbo:predicate "strain_of" ;
+            metpo_icbo:subject AUTO:DSM%2019998 ],
+        [ a metpo_icbo:StrainToTaxonRelationship ;
+            metpo_icbo:object NCBITaxon:569860 ;
+            metpo_icbo:predicate "strain_of" ;
+            metpo_icbo:subject AUTO:BW872 ],
+        [ a metpo_icbo:StrainToTaxonRelationship ;
+            metpo_icbo:object NCBITaxon:569860 ;
+            metpo_icbo:predicate "strain_of" ;
+            metpo_icbo:subject AUTO:BW863 ],
+        [ a metpo_icbo:StrainToTaxonRelationship ;
+            metpo_icbo:object NCBITaxon:569860 ;
+            metpo_icbo:predicate "strain_of" ;
+            metpo_icbo:subject AUTO:NCIMB%2014408 ] ;
+    metpo_icbo:strains AUTO:BW863,
+        AUTO:BW872,
+        AUTO:DSM%2019998,
+        AUTO:NCIMB%2014408 ;
+    metpo_icbo:study_taxa NCBITaxon:569860 .
+

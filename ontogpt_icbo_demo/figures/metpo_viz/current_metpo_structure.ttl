@@ -1,0 +1,80 @@
+# METPO Current Production Structure (2025-10-31)
+# Sample showing hierarchical organization
+
+@prefix metpo: <https://w3id.org/metpo/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+# ===== ROOT CLASSES =====
+
+metpo:1000186 a owl:Class ;
+    rdfs:label "material entity" ;
+    obo:IAO_0000115 "A physical entity" .
+
+metpo:1000188 a owl:Class ;
+    rdfs:label "quality" ;
+    obo:IAO_0000115 "A characteristic or attribute of an entity" .
+
+metpo:1000630 a owl:Class ;
+    rdfs:label "biological process" ;
+    obo:IAO_0000115 "A process carried out by a biological entity" .
+
+metpo:1001000 a owl:Class ;
+    rdfs:label "observation" ;
+    obo:IAO_0000115 "A measurement or observation" .
+
+# ===== QUALITY (PHENOTYPE) HIERARCHY =====
+
+# Oxygen-related phenotypes (current IDs)
+metpo:1000602 a owl:Class ;
+    rdfs:label "aerobic" ;
+    obo:IAO_0000115 "Requiring oxygen for growth" ;
+    rdfs:subClassOf metpo:1000188 .
+
+# Motility phenotypes (current IDs)  
+metpo:1000702 a owl:Class ;
+    rdfs:label "motile" ;
+    obo:IAO_0000115 "Capable of self-propelled movement" ;
+    rdfs:subClassOf metpo:1000188 .
+
+# Cell shape phenotypes (current IDs)
+metpo:1000666 a owl:Class ;
+    rdfs:label "cell shape" ;
+    obo:IAO_0000115 "The morphological form of a cell" ;
+    rdfs:subClassOf metpo:1000188 .
+
+# Temperature phenotypes (current IDs)
+metpo:1000800 a owl:Class ;
+    rdfs:label "temperature phenotype" ;
+    obo:IAO_0000115 "A phenotype related to temperature adaptation" ;
+    rdfs:subClassOf metpo:1000188 .
+
+# ===== NOTE ON ID CHANGES =====
+
+# METPO underwent restructuring between June 2025 and October 2025:
+#
+# DEPRECATED IDs (June 2025):
+#   1000008 "aerobe" 
+#   1000379 "motile"
+#   1000380 "non-motile"
+#   1000143 "Gram-negative"
+#   1000144 "Gram-positive"
+#
+# CURRENT IDs (October 2025):
+#   1000602 "aerobic"
+#   1000702 "motile"
+#   [Gram terms restructured/removed]
+#
+# This is normal ontology evolution: refining structure and terminology
+# based on usage patterns and community feedback.
+
+# ===== PROPERTIES =====
+
+# METPO classes use rdfs:subClassOf for hierarchy.
+# Instance-level relationships (e.g., strain → phenotype) use RO properties:
+#
+# Example (not in METPO itself, used by applications):
+# :strain_XYZ RO:0000086 metpo:1000702 .  # has quality: motile
+#
+# See KG-Microbe for actual property usage in production data.

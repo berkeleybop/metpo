@@ -1,0 +1,48 @@
+@base <http://example.org/NOPREFIX/> .
+@prefix AUTO: <http://example.org/AUTO/> .
+@prefix NCBITaxon: <http://purl.obolibrary.org/obo/NCBITaxon_> .
+@prefix metpo_icbo: <http://w3id.org/metpo/strain_phenotype_icbo/> .
+
+[] a metpo_icbo:StrainPhenotypeLiteratureExtraction ;
+    metpo_icbo:pmid "37170873" ;
+    metpo_icbo:strain_to_phenotype [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object AUTO:catalase-positive ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:yzlin-01 ],
+        [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object <https://w3id.org/metpo/1000379> ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:yzlin-01 ],
+        [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object AUTO:grows_at_pH_6-10 ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:yzlin-01 ],
+        [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object AUTO:rod-shaped ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:yzlin-01 ],
+        [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object AUTO:Gram-stain-negative ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:yzlin-01 ],
+        [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object AUTO:grows_at_10-40_%C2%B0C ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:yzlin-01 ],
+        [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object AUTO:grows_at_salinities_0.5-18%25 ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:yzlin-01 ],
+        [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object AUTO:oxidase-negative ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:yzlin-01 ] ;
+    metpo_icbo:strain_to_taxon [ a metpo_icbo:StrainToTaxonRelationship ;
+            metpo_icbo:object NCBITaxon:2890835 ;
+            metpo_icbo:predicate "strain_of" ;
+            metpo_icbo:subject AUTO:yzlin-01 ] ;
+    metpo_icbo:strains AUTO:GDMCC%201.3202,
+        AUTO:KCTC%2092467,
+        AUTO:yzlin-01 ;
+    metpo_icbo:study_taxa NCBITaxon:2745 .
+

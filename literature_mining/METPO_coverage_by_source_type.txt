@@ -1,0 +1,1448 @@
+================================================================================
+METPO COVERAGE BY DATA SOURCE TYPE
+================================================================================
+
+## 1. Structured Database Coverage (BacDive, BactoTraits, Madin)
+
+### BACDIVE
+   METPO classes aligned: 90
+   Database terms mapped: 90
+   Coverage: N/A%
+
+   Example mappings:
+      METPO:1000601 (oxygen preference) ← Physiology and metabolism.oxygen tolerance.oxygen tolerance
+      METPO:1000601 (oxygen preference) ← General.keywords
+      METPO:1000602 (aerobic) ← aerobe
+      METPO:1000603 (anaerobic) ← anaerobe
+      METPO:1000604 (microaerophilic) ← microaerophile
+      ... and 94 more
+
+### BACTOTRAITS
+   METPO classes aligned: 96
+   Database terms mapped: 93
+   Coverage: N/A%
+
+   Example mappings:
+      METPO:1000429 (GC low) ← GC_42.65_57.0
+      METPO:1000430 (GC mid1) ← GC_>66.3
+      METPO:1000431 (GC mid2) ← GC_57.0_66.3
+      METPO:1000432 (GC high) ← GC_<=42.65
+      METPO:1000441 (temperature optimum very low) ← TO_<=10
+      ... and 91 more
+
+### MADIN
+   METPO classes aligned: 69
+   Database terms mapped: 70
+   Coverage: N/A%
+
+   Example mappings:
+      METPO:1000601 (oxygen preference) ← metabolism
+      METPO:1000602 (aerobic) ← aerobic
+      METPO:1000603 (anaerobic) ← anaerobic
+      METPO:1000604 (microaerophilic) ← microaerophilic
+      METPO:1000605 (facultatively anaerobic) ← facultative
+      ... and 69 more
+
+## 3. Full Research Papers (Unstructured Text)
+   Grounding rate: 0.0%
+   METPO terms: 0
+   AUTO terms: 1974
+   Total extractions: 144
+
+================================================================================
+COMPARATIVE SUMMARY
+================================================================================
+
+Structured DB vocabulary alignment: 90-69 METPO classes
+  → BacDive: 90 classes with attributed synonyms
+  → BactoTraits: 96 classes with attributed synonyms
+  → Madin: 69 classes with attributed synonyms
+
+Full papers grounding: 0.0%
+  → Unstructured text + varied terminology = more AUTO: terms
+
+KEY FINDING:
+METPO shows strong alignment with structured/semi-structured sources
+(database synonyms, standardized abstracts) but lower grounding on
+free-text mining. AUTO: terms from unstructured text reveal gaps.
+
+
+================================================================================
+RAW DATA
+================================================================================
+
+{
+  "structured_db": {
+    "bacdive": {
+      "metpo_classes": 90,
+      "db_terms_mapped": 90,
+      "mappings": [
+        [
+          "METPO:1000601",
+          "oxygen preference",
+          "Physiology and metabolism.oxygen tolerance.oxygen tolerance"
+        ],
+        [
+          "METPO:1000601",
+          "oxygen preference",
+          "General.keywords"
+        ],
+        [
+          "METPO:1000602",
+          "aerobic",
+          "aerobe"
+        ],
+        [
+          "METPO:1000603",
+          "anaerobic",
+          "anaerobe"
+        ],
+        [
+          "METPO:1000604",
+          "microaerophilic",
+          "microaerophile"
+        ],
+        [
+          "METPO:1000605",
+          "facultatively anaerobic",
+          "facultative anaerobe"
+        ],
+        [
+          "METPO:1000606",
+          "obligately aerobic",
+          "obligate aerobe"
+        ],
+        [
+          "METPO:1000607",
+          "obligately anaerobic",
+          "obligate anaerobe"
+        ],
+        [
+          "METPO:1000608",
+          "facultatively aerobic",
+          "facultative aerobe"
+        ],
+        [
+          "METPO:1000609",
+          "aerotolerant",
+          "aerotolerant"
+        ],
+        [
+          "METPO:1000610",
+          "microaerotolerant",
+          "microaerotolerant"
+        ],
+        [
+          "METPO:1000613",
+          "temperature preference",
+          "Physiology and metabolism.culture temp.temperature"
+        ],
+        [
+          "METPO:1000613",
+          "temperature preference",
+          "General.keywords"
+        ],
+        [
+          "METPO:1000614",
+          "psychrophilic",
+          "psychrophilic"
+        ],
+        [
+          "METPO:1000615",
+          "mesophilic",
+          "mesophilic"
+        ],
+        [
+          "METPO:1000616",
+          "thermophilic",
+          "thermophilic"
+        ],
+        [
+          "METPO:1000617",
+          "hyperthermophilic",
+          "hyperthermophilic"
+        ],
+        [
+          "METPO:1000620",
+          "halophilic",
+          "halophilic"
+        ],
+        [
+          "METPO:1000621",
+          "haloalkaliphilic",
+          "haloalkaliphilic"
+        ],
+        [
+          "METPO:1000622",
+          "halotolerant",
+          "halotolerant"
+        ],
+        [
+          "METPO:1000623",
+          "moderately halophilic",
+          "moderately halophilic"
+        ],
+        [
+          "METPO:1000624",
+          "non halophilic",
+          "non-halophilic"
+        ],
+        [
+          "METPO:1000625",
+          "slightly halophilic",
+          "slightly halophilic"
+        ],
+        [
+          "METPO:1000628",
+          "extremely halophilic",
+          "extremely halophilic"
+        ],
+        [
+          "METPO:1000629",
+          "halophily preference",
+          "Physiology and metabolism.halophily.halophily level"
+        ],
+        [
+          "METPO:1000629",
+          "halophily preference",
+          "General.keywords"
+        ],
+        [
+          "METPO:1000631",
+          "trophic type",
+          "Physiology and metabolism.nutrition type.type"
+        ],
+        [
+          "METPO:1000631",
+          "trophic type",
+          "General.keywords"
+        ],
+        [
+          "METPO:1000632",
+          "autotrophic",
+          "autotroph"
+        ],
+        [
+          "METPO:1000634",
+          "chemoautolithotrophic",
+          "chemoautolithotroph"
+        ],
+        [
+          "METPO:1000635",
+          "chemoautotrophic",
+          "chemoautotroph"
+        ],
+        [
+          "METPO:1000636",
+          "chemoheterotrophic",
+          "chemoheterotroph"
+        ],
+        [
+          "METPO:1000637",
+          "chemolithoautotrophic",
+          "chemolithoautotroph"
+        ],
+        [
+          "METPO:1000638",
+          "chemolithoheterotrophic",
+          "chemolithoheterotroph"
+        ],
+        [
+          "METPO:1000639",
+          "chemolithotrophic",
+          "chemolithotroph"
+        ],
+        [
+          "METPO:1000640",
+          "chemoorganoheterotrophic",
+          "chemoorganoheterotroph"
+        ],
+        [
+          "METPO:1000641",
+          "chemotrophic",
+          "chemotroph"
+        ],
+        [
+          "METPO:1000642",
+          "copiotrophic",
+          "copiotroph"
+        ],
+        [
+          "METPO:1000644",
+          "heterotrophic",
+          "heterotroph"
+        ],
+        [
+          "METPO:1000647",
+          "lithoautotrophic",
+          "lithoautotroph"
+        ],
+        [
+          "METPO:1000648",
+          "lithoheterotrophic",
+          "lithoheterotroph"
+        ],
+        [
+          "METPO:1000649",
+          "lithotrophic",
+          "lithotroph"
+        ],
+        [
+          "METPO:1000650",
+          "methanotrophic",
+          "methanotroph"
+        ],
+        [
+          "METPO:1000651",
+          "methylotrophic",
+          "methylotroph"
+        ],
+        [
+          "METPO:1000652",
+          "mixotrophic",
+          "mixotroph"
+        ],
+        [
+          "METPO:1000654",
+          "oligotrophic",
+          "oligotroph"
+        ],
+        [
+          "METPO:1000655",
+          "organotrophic",
+          "organotroph"
+        ],
+        [
+          "METPO:1000656",
+          "photoautotrophic",
+          "photoautotroph"
+        ],
+        [
+          "METPO:1000657",
+          "photoheterotrophic",
+          "photoheterotroph"
+        ],
+        [
+          "METPO:1000658",
+          "photolithotrophic",
+          "photolithotroph"
+        ],
+        [
+          "METPO:1000659",
+          "photoorganoheterotrophic",
+          "photoorganoheterotroph"
+        ],
+        [
+          "METPO:1000660",
+          "phototrophic",
+          "phototroph"
+        ],
+        [
+          "METPO:1000663",
+          "chemoorganotrophic",
+          "chemoorganotroph"
+        ],
+        [
+          "METPO:1000664",
+          "organoheterotrophic",
+          "organoheterotroph"
+        ],
+        [
+          "METPO:1000665",
+          "photolithoautotrophic",
+          "photolithoautotroph"
+        ],
+        [
+          "METPO:1000666",
+          "cell shape",
+          "Morphology.cell morphology.cell shape"
+        ],
+        [
+          "METPO:1000666",
+          "cell shape",
+          "General.keywords"
+        ],
+        [
+          "METPO:1000668",
+          "coccus shaped",
+          "coccus-shaped"
+        ],
+        [
+          "METPO:1000669",
+          "crescent shaped",
+          "crescent-shaped"
+        ],
+        [
+          "METPO:1000670",
+          "curved shaped",
+          "curved-shaped"
+        ],
+        [
+          "METPO:1000671",
+          "diplococcus shaped",
+          "diplococcus-shaped"
+        ],
+        [
+          "METPO:1000672",
+          "dumbbell shaped",
+          "dumbbell-shaped"
+        ],
+        [
+          "METPO:1000673",
+          "ellipsoidal",
+          "ellipsoidal"
+        ],
+        [
+          "METPO:1000674",
+          "filament shaped",
+          "filament-shaped"
+        ],
+        [
+          "METPO:1000675",
+          "flask shaped",
+          "flask-shaped"
+        ],
+        [
+          "METPO:1000676",
+          "helical shaped",
+          "helical-shaped"
+        ],
+        [
+          "METPO:1000677",
+          "ovoid shaped",
+          "ovoid-shaped"
+        ],
+        [
+          "METPO:1000678",
+          "oval shaped",
+          "oval-shaped"
+        ],
+        [
+          "METPO:1000679",
+          "pleomorphic shaped",
+          "pleomorphic-shaped"
+        ],
+        [
+          "METPO:1000680",
+          "ring shaped",
+          "ring-shaped"
+        ],
+        [
+          "METPO:1000681",
+          "rod shaped",
+          "rod-shaped"
+        ],
+        [
+          "METPO:1000682",
+          "spore shaped",
+          "spore-shaped"
+        ],
+        [
+          "METPO:1000683",
+          "sphere shaped",
+          "sphere-shaped"
+        ],
+        [
+          "METPO:1000684",
+          "spiral shaped",
+          "spiral-shaped"
+        ],
+        [
+          "METPO:1000685",
+          "star shaped",
+          "star-shaped"
+        ],
+        [
+          "METPO:1000686",
+          "vibrio shaped",
+          "vibrio-shaped"
+        ],
+        [
+          "METPO:1000697",
+          "gram stain",
+          "Morphology.cell morphology.gram stain"
+        ],
+        [
+          "METPO:1000697",
+          "gram stain",
+          "General.keywords"
+        ],
+        [
+          "METPO:1000698",
+          "gram positive",
+          "positive"
+        ],
+        [
+          "METPO:1000699",
+          "gram negative",
+          "negative"
+        ],
+        [
+          "METPO:1000700",
+          "gram variable",
+          "variable"
+        ],
+        [
+          "METPO:1000701",
+          "motility",
+          "Morphology.cell morphology.motility"
+        ],
+        [
+          "METPO:1000701",
+          "motility",
+          "General.keywords"
+        ],
+        [
+          "METPO:1000702",
+          "motile",
+          "yes"
+        ],
+        [
+          "METPO:1000703",
+          "non motile",
+          "no"
+        ],
+        [
+          "METPO:1000870",
+          "sporulation",
+          "Physiology and metabolism.spore formation.spore formation"
+        ],
+        [
+          "METPO:1000870",
+          "sporulation",
+          "General.keywords"
+        ],
+        [
+          "METPO:1000871",
+          "spore forming",
+          "yes"
+        ],
+        [
+          "METPO:1000872",
+          "non-spore forming",
+          "no"
+        ],
+        [
+          "METPO:1001101",
+          "biosafety level",
+          "Safety information.risk assessment.biosafety level"
+        ],
+        [
+          "METPO:1001102",
+          "biosafety level 1",
+          "1"
+        ],
+        [
+          "METPO:1001103",
+          "biosafety level 2",
+          "2"
+        ],
+        [
+          "METPO:1001104",
+          "biosafety level 3",
+          "3"
+        ],
+        [
+          "METPO:1001104",
+          "biosafety level 3",
+          "3**"
+        ],
+        [
+          "METPO:1001105",
+          "biosafety level 4",
+          "4"
+        ],
+        [
+          "METPO:1001106",
+          "biosafety level 5",
+          "5"
+        ],
+        [
+          "METPO:1004002",
+          "animal pathogen",
+          "animal pathogen"
+        ],
+        [
+          "METPO:1004003",
+          "plant pathogen",
+          "plant pathogen"
+        ],
+        [
+          "METPO:1004004",
+          "human pathogen",
+          "human pathogen"
+        ]
+      ]
+    },
+    "bactotraits": {
+      "metpo_classes": 96,
+      "db_terms_mapped": 93,
+      "mappings": [
+        [
+          "METPO:1000429",
+          "GC low",
+          "GC_42.65_57.0"
+        ],
+        [
+          "METPO:1000430",
+          "GC mid1",
+          "GC_>66.3"
+        ],
+        [
+          "METPO:1000431",
+          "GC mid2",
+          "GC_57.0_66.3"
+        ],
+        [
+          "METPO:1000432",
+          "GC high",
+          "GC_<=42.65"
+        ],
+        [
+          "METPO:1000441",
+          "temperature optimum very low",
+          "TO_<=10"
+        ],
+        [
+          "METPO:1000442",
+          "temperature optimum low",
+          "TO_10_to_22"
+        ],
+        [
+          "METPO:1000443",
+          "temperature optimum mid1",
+          "TO_22_to_27"
+        ],
+        [
+          "METPO:1000444",
+          "temperature optimum mid2",
+          "TO_27_to_30"
+        ],
+        [
+          "METPO:1000445",
+          "temperature optimum mid3",
+          "TO_30_to_34"
+        ],
+        [
+          "METPO:1000446",
+          "temperature optimum mid4",
+          "TO_34_to_40"
+        ],
+        [
+          "METPO:1000447",
+          "temperature optimum high",
+          "TO_>40"
+        ],
+        [
+          "METPO:1000448",
+          "temperature range very low",
+          "TR_<=10"
+        ],
+        [
+          "METPO:1000449",
+          "temperature range low",
+          "TR_10_to_22"
+        ],
+        [
+          "METPO:1000450",
+          "temperature range mid1",
+          "TR_22_to_27"
+        ],
+        [
+          "METPO:1000451",
+          "temperature range mid2",
+          "TR_27_to_30"
+        ],
+        [
+          "METPO:1000452",
+          "temperature range mid3",
+          "TR_30_to_34"
+        ],
+        [
+          "METPO:1000453",
+          "temperature range mid4",
+          "TR_34_to_40"
+        ],
+        [
+          "METPO:1000454",
+          "temperature range high",
+          "TR_>40"
+        ],
+        [
+          "METPO:1000455",
+          "pH optimum low",
+          "pHO_0_to_6"
+        ],
+        [
+          "METPO:1000456",
+          "pH optimum mid1",
+          "pHO_6_to_7"
+        ],
+        [
+          "METPO:1000457",
+          "pH optimum mid2",
+          "pHO_7_to_8"
+        ],
+        [
+          "METPO:1000458",
+          "pH optimum high",
+          "pHO_8_to_14"
+        ],
+        [
+          "METPO:1000459",
+          "pH range very low",
+          "pHR_0_to_4"
+        ],
+        [
+          "METPO:1000460",
+          "pH range low",
+          "pHR_4_to_6"
+        ],
+        [
+          "METPO:1000461",
+          "pH range mid1",
+          "pHR_6_to_7"
+        ],
+        [
+          "METPO:1000462",
+          "pH range mid2",
+          "pHR_7_to_8"
+        ],
+        [
+          "METPO:1000463",
+          "pH range mid3",
+          "pHR_8_to_10"
+        ],
+        [
+          "METPO:1000464",
+          "pH range high",
+          "10_to_14"
+        ],
+        [
+          "METPO:1000465",
+          "NaCl optimum low",
+          "NaO_<=1"
+        ],
+        [
+          "METPO:1000466",
+          "NaCl optimum mid1",
+          "NaO_1_to_3"
+        ],
+        [
+          "METPO:1000467",
+          "NaCl optimum mid2",
+          "NaO_3_to_8"
+        ],
+        [
+          "METPO:1000468",
+          "NaCl optimum high",
+          "NaO_>8"
+        ],
+        [
+          "METPO:1000469",
+          "NaCl range low",
+          "NaR_<=1"
+        ],
+        [
+          "METPO:1000470",
+          "NaCl range mid1",
+          "NaR_1_to_3"
+        ],
+        [
+          "METPO:1000471",
+          "NaCl range mid2",
+          "NaR_3_to_8"
+        ],
+        [
+          "METPO:1000472",
+          "NaCl range high",
+          "NaR_>8"
+        ],
+        [
+          "METPO:1000473",
+          "pH delta very low",
+          "pHd_<=1"
+        ],
+        [
+          "METPO:1000474",
+          "pH delta low",
+          "pHd_1_2"
+        ],
+        [
+          "METPO:1000475",
+          "pH delta mid1",
+          "pHd_2_3"
+        ],
+        [
+          "METPO:1000476",
+          "pH delta mid2",
+          "pHd_3_4"
+        ],
+        [
+          "METPO:1000477",
+          "pH delta mid3",
+          "pHd_4_5"
+        ],
+        [
+          "METPO:1000478",
+          "pH delta high",
+          "pHd_5_9"
+        ],
+        [
+          "METPO:1000479",
+          "NaCl delta low",
+          "Nad_<=1"
+        ],
+        [
+          "METPO:1000480",
+          "NaCl delta mid1",
+          "Nad_1_3"
+        ],
+        [
+          "METPO:1000481",
+          "NaCl delta mid2",
+          "Nad_3_8"
+        ],
+        [
+          "METPO:1000482",
+          "NaCl delta high",
+          "Nad_>8"
+        ],
+        [
+          "METPO:1000483",
+          "temperature delta very low",
+          "Td_1_5"
+        ],
+        [
+          "METPO:1000484",
+          "temperature delta low",
+          "Td_5_10"
+        ],
+        [
+          "METPO:1000485",
+          "temperature delta mid1",
+          "Td_10_20"
+        ],
+        [
+          "METPO:1000486",
+          "temperature delta mid2",
+          "Td_20_30"
+        ],
+        [
+          "METPO:1000487",
+          "temperature delta high",
+          "Td_>30"
+        ],
+        [
+          "METPO:1000602",
+          "aerobic",
+          "Ox_aerobic"
+        ],
+        [
+          "METPO:1000603",
+          "anaerobic",
+          "Ox_anaerobic"
+        ],
+        [
+          "METPO:1000604",
+          "microaerophilic",
+          "Ox_microerophile"
+        ],
+        [
+          "METPO:1000612",
+          "facultative oxygen preference",
+          "Ox_facultative_aerobe_anaerobe"
+        ],
+        [
+          "METPO:1000632",
+          "autotrophic",
+          "TT_autotroph"
+        ],
+        [
+          "METPO:1000641",
+          "chemotrophic",
+          "TT_chemotroph"
+        ],
+        [
+          "METPO:1000644",
+          "heterotrophic",
+          "TT_heterotroph"
+        ],
+        [
+          "METPO:1000649",
+          "lithotrophic",
+          "TT_lithotroph"
+        ],
+        [
+          "METPO:1000651",
+          "methylotrophic",
+          "TT_methylotroph"
+        ],
+        [
+          "METPO:1000654",
+          "oligotrophic",
+          "TT_oligotroph"
+        ],
+        [
+          "METPO:1000655",
+          "organotrophic",
+          "TT_organotroph"
+        ],
+        [
+          "METPO:1000660",
+          "phototrophic",
+          "TT_phototroph"
+        ],
+        [
+          "METPO:1000670",
+          "curved shaped",
+          "S_curved_spiral"
+        ],
+        [
+          "METPO:1000672",
+          "dumbbell shaped",
+          "S_star_dumbbell_pleomorphic"
+        ],
+        [
+          "METPO:1000674",
+          "filament shaped",
+          "S_filament"
+        ],
+        [
+          "METPO:1000677",
+          "ovoid shaped",
+          "S_ovoid"
+        ],
+        [
+          "METPO:1000679",
+          "pleomorphic shaped",
+          "S_star_dumbbell_pleomorphic"
+        ],
+        [
+          "METPO:1000681",
+          "rod shaped",
+          "S_rod"
+        ],
+        [
+          "METPO:1000683",
+          "sphere shaped",
+          "S_sphere"
+        ],
+        [
+          "METPO:1000684",
+          "spiral shaped",
+          "S_curved_spiral"
+        ],
+        [
+          "METPO:1000685",
+          "star shaped",
+          "S_star_dumbbell_pleomorphic"
+        ],
+        [
+          "METPO:1000698",
+          "gram positive",
+          "G_positive"
+        ],
+        [
+          "METPO:1000699",
+          "gram negative",
+          "G_negative"
+        ],
+        [
+          "METPO:1000702",
+          "motile",
+          "motile"
+        ],
+        [
+          "METPO:1000703",
+          "non motile",
+          "non-motile"
+        ],
+        [
+          "METPO:1000871",
+          "spore forming",
+          "spore"
+        ],
+        [
+          "METPO:1000872",
+          "non-spore forming",
+          "no_spore"
+        ],
+        [
+          "METPO:1000883",
+          "cell length very small",
+          "L_<=1.3"
+        ],
+        [
+          "METPO:1000884",
+          "cell length small",
+          "L_1.3_2"
+        ],
+        [
+          "METPO:1000885",
+          "cell length medium",
+          "L_2_3"
+        ],
+        [
+          "METPO:1000886",
+          "cell length large",
+          "L_>3"
+        ],
+        [
+          "METPO:1000887",
+          "cell width very small",
+          "W_<=0.5"
+        ],
+        [
+          "METPO:1000888",
+          "cell width small",
+          "W_0.5_0.65"
+        ],
+        [
+          "METPO:1000889",
+          "cell width medium",
+          "W_0.65_0.9"
+        ],
+        [
+          "METPO:1000890",
+          "cell width large",
+          "W_>0.9"
+        ],
+        [
+          "METPO:1003022",
+          "black pigmented",
+          "Pigment_black"
+        ],
+        [
+          "METPO:1003023",
+          "brown pigmented",
+          "Pigment_brown"
+        ],
+        [
+          "METPO:1003024",
+          "cream pigmented",
+          "Pigment_cream"
+        ],
+        [
+          "METPO:1003025",
+          "green pigmented",
+          "Pigment_green"
+        ],
+        [
+          "METPO:1003026",
+          "orange pigmented",
+          "Pigment_orange"
+        ],
+        [
+          "METPO:1003027",
+          "pink pigmented",
+          "Pigment_pink"
+        ],
+        [
+          "METPO:1003028",
+          "red pigmented",
+          "Pigment_red"
+        ],
+        [
+          "METPO:1003029",
+          "white pigmented",
+          "Pigment_white"
+        ],
+        [
+          "METPO:1003030",
+          "yellow pigmented",
+          "Pigment_yellow"
+        ],
+        [
+          "METPO:1003031",
+          "carotenoid pigmentation",
+          "Pigment_carotenoid"
+        ]
+      ]
+    },
+    "madin": {
+      "metpo_classes": 69,
+      "db_terms_mapped": 70,
+      "mappings": [
+        [
+          "METPO:1000601",
+          "oxygen preference",
+          "metabolism"
+        ],
+        [
+          "METPO:1000602",
+          "aerobic",
+          "aerobic"
+        ],
+        [
+          "METPO:1000603",
+          "anaerobic",
+          "anaerobic"
+        ],
+        [
+          "METPO:1000604",
+          "microaerophilic",
+          "microaerophilic"
+        ],
+        [
+          "METPO:1000605",
+          "facultatively anaerobic",
+          "facultative"
+        ],
+        [
+          "METPO:1000606",
+          "obligately aerobic",
+          "obligate aerobic"
+        ],
+        [
+          "METPO:1000607",
+          "obligately anaerobic",
+          "obligate anaerobic"
+        ],
+        [
+          "METPO:1000608",
+          "facultatively aerobic",
+          "facultative"
+        ],
+        [
+          "METPO:1000611",
+          "strictly anaerobic",
+          "strictly anaerobic"
+        ],
+        [
+          "METPO:1000613",
+          "temperature preference",
+          "range_tmp"
+        ],
+        [
+          "METPO:1000614",
+          "psychrophilic",
+          "psychrophilic"
+        ],
+        [
+          "METPO:1000615",
+          "mesophilic",
+          "mesophilic"
+        ],
+        [
+          "METPO:1000616",
+          "thermophilic",
+          "thermophilic"
+        ],
+        [
+          "METPO:1000617",
+          "hyperthermophilic",
+          "extreme thermophilic"
+        ],
+        [
+          "METPO:1000618",
+          "psychrotolerant",
+          "psychrotolerant"
+        ],
+        [
+          "METPO:1000619",
+          "thermotolerant",
+          "thermotolerant"
+        ],
+        [
+          "METPO:1000620",
+          "halophilic",
+          "halophilic"
+        ],
+        [
+          "METPO:1000622",
+          "halotolerant",
+          "halotolerant"
+        ],
+        [
+          "METPO:1000623",
+          "moderately halophilic",
+          "moderate-halophilic"
+        ],
+        [
+          "METPO:1000624",
+          "non halophilic",
+          "non-halophilic"
+        ],
+        [
+          "METPO:1000626",
+          "stenohaline",
+          "stenohaline"
+        ],
+        [
+          "METPO:1000627",
+          "euryhaline",
+          "euryhaline"
+        ],
+        [
+          "METPO:1000628",
+          "extremely halophilic",
+          "extreme-halophilic"
+        ],
+        [
+          "METPO:1000629",
+          "halophily preference",
+          "range_salinity"
+        ],
+        [
+          "METPO:1000631",
+          "trophic type",
+          "pathways"
+        ],
+        [
+          "METPO:1000632",
+          "autotrophic",
+          "autotrophy"
+        ],
+        [
+          "METPO:1000636",
+          "chemoheterotrophic",
+          "aerobic_chemo_heterotrophy"
+        ],
+        [
+          "METPO:1000644",
+          "heterotrophic",
+          "heterotrophic"
+        ],
+        [
+          "METPO:1000644",
+          "heterotrophic",
+          "aerobic_heterotrophy"
+        ],
+        [
+          "METPO:1000651",
+          "methylotrophic",
+          "methylotrophy"
+        ],
+        [
+          "METPO:1000656",
+          "photoautotrophic",
+          "photoautotrophy"
+        ],
+        [
+          "METPO:1000656",
+          "photoautotrophic",
+          "anoxygenic_photoautotrophy_hydrogen_oxidation"
+        ],
+        [
+          "METPO:1000656",
+          "photoautotrophic",
+          "anoxygenic_photoautotrophy_sulfur_oxidation"
+        ],
+        [
+          "METPO:1000656",
+          "photoautotrophic",
+          "anoxygenic_photoautotrophy"
+        ],
+        [
+          "METPO:1000656",
+          "photoautotrophic",
+          "anoxygenic_photoautotrophy_iron_oxidation"
+        ],
+        [
+          "METPO:1000657",
+          "photoheterotrophic",
+          "photoheterotrophy"
+        ],
+        [
+          "METPO:1000660",
+          "phototrophic",
+          "aerobic_anoxygenic_phototrophy"
+        ],
+        [
+          "METPO:1000666",
+          "cell shape",
+          "cell_shape"
+        ],
+        [
+          "METPO:1000667",
+          "bacillus shaped",
+          "bacillus"
+        ],
+        [
+          "METPO:1000668",
+          "coccus shaped",
+          "coccus"
+        ],
+        [
+          "METPO:1000674",
+          "filament shaped",
+          "filament"
+        ],
+        [
+          "METPO:1000675",
+          "flask shaped",
+          "flask"
+        ],
+        [
+          "METPO:1000679",
+          "pleomorphic shaped",
+          "pleomorphic"
+        ],
+        [
+          "METPO:1000680",
+          "ring shaped",
+          "ring"
+        ],
+        [
+          "METPO:1000684",
+          "spiral shaped",
+          "spiral"
+        ],
+        [
+          "METPO:1000685",
+          "star shaped",
+          "star"
+        ],
+        [
+          "METPO:1000686",
+          "vibrio shaped",
+          "vibrio"
+        ],
+        [
+          "METPO:1000687",
+          "branched shaped",
+          "branced"
+        ],
+        [
+          "METPO:1000688",
+          "coccobacillus shaped",
+          "coccobacillus"
+        ],
+        [
+          "METPO:1000689",
+          "disc shaped",
+          "disc"
+        ],
+        [
+          "METPO:1000690",
+          "fusiform shaped",
+          "fusiform"
+        ],
+        [
+          "METPO:1000691",
+          "irregular shaped",
+          "irregular"
+        ],
+        [
+          "METPO:1000692",
+          "spindle shaped",
+          "spindle"
+        ],
+        [
+          "METPO:1000693",
+          "spirochete shaped",
+          "spirochete"
+        ],
+        [
+          "METPO:1000694",
+          "square shaped",
+          "square"
+        ],
+        [
+          "METPO:1000695",
+          "tailed shaped",
+          "tailed"
+        ],
+        [
+          "METPO:1000696",
+          "triangular shaped",
+          "triangular"
+        ],
+        [
+          "METPO:1000697",
+          "gram stain",
+          "gram_stain"
+        ],
+        [
+          "METPO:1000698",
+          "gram positive",
+          "positive"
+        ],
+        [
+          "METPO:1000699",
+          "gram negative",
+          "negative"
+        ],
+        [
+          "METPO:1000701",
+          "motility",
+          "motility"
+        ],
+        [
+          "METPO:1000702",
+          "motile",
+          "yes"
+        ],
+        [
+          "METPO:1000703",
+          "non motile",
+          "no"
+        ],
+        [
+          "METPO:1000704",
+          "flagellated",
+          "flagella"
+        ],
+        [
+          "METPO:1000705",
+          "axially filamented",
+          "axial filament"
+        ],
+        [
+          "METPO:1000706",
+          "gliding",
+          "gliding"
+        ],
+        [
+          "METPO:1000720",
+          "facultative psychrophilic",
+          "facultative psychrophilic"
+        ],
+        [
+          "METPO:1000800",
+          "respiration",
+          "pathways"
+        ],
+        [
+          "METPO:1000844",
+          "Methanogenesis",
+          "methanogenesis"
+        ],
+        [
+          "METPO:1000845",
+          "Acetogenesis",
+          "acetogenesis"
+        ],
+        [
+          "METPO:1000870",
+          "sporulation",
+          "sporulation"
+        ],
+        [
+          "METPO:1000871",
+          "spore forming",
+          "yes"
+        ],
+        [
+          "METPO:1000872",
+          "non-spore forming",
+          "no"
+        ],
+        [
+          "METPO:1002005",
+          "Fermentation",
+          "fermentation"
+        ]
+      ]
+    }
+  },
+  "full_papers": {
+    "metpo_count": 0,
+    "auto_count": 1974,
+    "chebi_count": 7062,
+    "ncbitaxon_count": 253,
+    "total_extractions": 144,
+    "grounding_rate": 0.0
+  }
+}

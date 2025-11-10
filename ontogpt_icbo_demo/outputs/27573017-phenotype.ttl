@@ -1,0 +1,35 @@
+@base <http://example.org/NOPREFIX/> .
+@prefix AUTO: <http://example.org/AUTO/> .
+@prefix NCBITaxon: <http://purl.obolibrary.org/obo/NCBITaxon_> .
+@prefix metpo_icbo: <http://w3id.org/metpo/strain_phenotype_icbo/> .
+
+[] a metpo_icbo:StrainPhenotypeLiteratureExtraction ;
+    metpo_icbo:pmid "27573017" ;
+    metpo_icbo:strain_to_medium [ a metpo_icbo:StrainToMediumRelationship ;
+            metpo_icbo:object AUTO:minimal_medium_with_added_lanthanum ;
+            metpo_icbo:predicate "grows_on_medium" ;
+            metpo_icbo:subject AUTO:MDH-3 ] ;
+    metpo_icbo:strain_to_phenotype [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object <https://w3id.org/metpo/1000370> ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:MDH-3 ],
+        [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object <https://w3id.org/metpo/1000370> ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:AM1 ],
+        [ a metpo_icbo:StrainToPhenotypeRelationship ;
+            metpo_icbo:object AUTO:grows_poorly_with_methanol_with_exogenous_lanthanides ;
+            metpo_icbo:predicate "has_phenotype" ;
+            metpo_icbo:subject AUTO:MDH-3 ] ;
+    metpo_icbo:strain_to_taxon [ a metpo_icbo:StrainToTaxonRelationship ;
+            metpo_icbo:object NCBITaxon:408 ;
+            metpo_icbo:predicate "strain_of" ;
+            metpo_icbo:subject AUTO:AM1 ],
+        [ a metpo_icbo:StrainToTaxonRelationship ;
+            metpo_icbo:object NCBITaxon:408 ;
+            metpo_icbo:predicate "strain_of" ;
+            metpo_icbo:subject AUTO:MDH-3 ] ;
+    metpo_icbo:strains AUTO:AM1,
+        AUTO:MDH-3 ;
+    metpo_icbo:study_taxa NCBITaxon:408 .
+

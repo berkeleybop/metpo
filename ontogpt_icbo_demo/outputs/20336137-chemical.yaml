@@ -1,0 +1,59 @@
+---
+input_text: |
+  Title: Nitrite-driven anaerobic methane oxidation by oxygenic bacteria.
+
+  Authors: Ettwig KF, Butler MK, Le Paslier D, Pelletier E, Mangenot S, Kuypers MM, Schreiber F, Dutilh BE, Zedelius J, de Beer D, Gloerich J, Wessels HJ, van Alen T, Luesken F, Wu ML, van de Pas-Schoonen KT, Op den Camp HJ, Janssen-Megens EM, Francoijs KJ, Stunnenberg H, Weissenbach J, Jetten MS, Strous M.
+
+  Journal:  (2010)
+
+  DOI: 10.1038/nature08883
+  PMID: 20336137
+
+  Abstract:
+  Only three biological pathways are known to produce oxygen: photosynthesis, chlorate respiration and the detoxification of reactive oxygen species. Here we present evidence for a fourth pathway, possibly of considerable geochemical and evolutionary importance. The pathway was discovered after metagenomic sequencing of an enrichment culture that couples anaerobic oxidation of methane with the reduction of nitrite to dinitrogen. The complete genome of the dominant bacterium, named 'Candidatus Methylomirabilis oxyfera', was assembled. This apparently anaerobic, denitrifying bacterium encoded, transcribed and expressed the well-established aerobic pathway for methane oxidation, whereas it lacked known genes for dinitrogen production. Subsequent isotopic labelling indicated that 'M. oxyfera' bypassed the denitrification intermediate nitrous oxide by the conversion of two nitric oxide molecules to dinitrogen and oxygen, which was used to oxidize methane. These results extend our understanding of hydrocarbon degradation under anoxic conditions and explain the biochemical mechanism of a poorly understood freshwater methane sink. Because nitrogen oxides were already present on early Earth, our finding opens up the possibility that oxygen was available to microbial metabolism before the evolution of oxygenic photosynthesis.
+raw_completion_output: |-
+  pmid: 20336137  
+  study_taxa: Candidatus Methylomirabilis oxyfera  
+  strains:  
+  chemicals_mentioned: methane; nitrite; dinitrogen; nitric oxide  
+  chemical_utilizations:  
+  strain_relationships:  
+  article_type: metabolic_study  
+prompt: |+
+  From the text below, extract the following entities in the following format:
+
+  pmid: <PubMed ID of the article (e.g., 23996836)>
+  study_taxa: <semicolon-separated list of the main bacterial or archaeal taxa being studied for chemical utilization>
+  strains: <Extract ONLY the strain designation part (e.g., "DA-C8", "MG1655", "ATCC 25922") WITHOUT genus/species prefixes. Focus on strain numbers, culture collection codes, and isolate identifiers. Automatically remove terminal "T" or "(T)" suffixes as these indicate type strain status (e.g., "DA-C8T" becomes "DA-C8", "K13T" becomes "K13"). Include strain numbers, culture collection numbers, and isolate names, but NOT the full taxonomic context.>
+  chemicals_mentioned: <Identify all chemical compounds mentioned in the text that are relevant to bacterial metabolism, growth, or biochemical activities. Include: carbon sources (glucose, acetate), nitrogen sources (ammonia, nitrate), vitamins (B12, biotin), metabolic intermediates, enzyme substrates, electron acceptors/donors, and any other chemicals involved in bacterial physiology. If no relevant chemicals are mentioned,  leave this field completely empty. DO NOT include entries like "None  explicitly mentioned" or similar phrases.>
+  chemical_utilizations: <A semicolon-separated list of strain-chemical relationships. Use EXACTLY THE SAME strain identifiers from the strains field.
+  Extract ALL relationships mentioned in the text. Be comprehensive - include both what strains CAN do and what they CANNOT do. Use specific predicates (uses_as_carbon_source, degrades, oxidizes) rather than generic ones when the text specifies the interaction type.>
+  strain_relationships: <A semicolon-separated list of strain-species relationships, where each relationship connects a strain identifier to its parent taxon. CRITICAL: Use EXACTLY THE SAME strain identifiers as listed in the strains field above - copy them verbatim, character-for-character. Do not modify, abbreviate, or expand the strain identifiers. Each relationship should have the strain identifier, relationship type, and parent species/genus. For example: "DA-C8 type_strain_of Insulambacter thermoxylanivorax; MG1655 strain_of Escherichia coli; ATCC 25922 type_strain_of Klebsiella pneumoniae". The strain identifiers MUST be identical to those used in the strains and chemical_utilizations fields. If no strain relationships are found, leave this field empty. DO NOT write "none".>
+  article_type: <The type of study or article. Choose the most appropriate category based on the content, with emphasis on metabolic_study for articles focusing on chemical utilization, degradation, or metabolic pathways.Must be one of: novel_species, novel_genus, taxonomic_revision, phylogenetic_analysis, comparative_taxonomy, emended_description, genome_sequence, review, biochemical_characterization, ecological_study, metabolic_study, physiology_study>
+
+
+  Text:
+  Title: Nitrite-driven anaerobic methane oxidation by oxygenic bacteria.
+
+  Authors: Ettwig KF, Butler MK, Le Paslier D, Pelletier E, Mangenot S, Kuypers MM, Schreiber F, Dutilh BE, Zedelius J, de Beer D, Gloerich J, Wessels HJ, van Alen T, Luesken F, Wu ML, van de Pas-Schoonen KT, Op den Camp HJ, Janssen-Megens EM, Francoijs KJ, Stunnenberg H, Weissenbach J, Jetten MS, Strous M.
+
+  Journal:  (2010)
+
+  DOI: 10.1038/nature08883
+  PMID: 20336137
+
+  Abstract:
+  Only three biological pathways are known to produce oxygen: photosynthesis, chlorate respiration and the detoxification of reactive oxygen species. Here we present evidence for a fourth pathway, possibly of considerable geochemical and evolutionary importance. The pathway was discovered after metagenomic sequencing of an enrichment culture that couples anaerobic oxidation of methane with the reduction of nitrite to dinitrogen. The complete genome of the dominant bacterium, named 'Candidatus Methylomirabilis oxyfera', was assembled. This apparently anaerobic, denitrifying bacterium encoded, transcribed and expressed the well-established aerobic pathway for methane oxidation, whereas it lacked known genes for dinitrogen production. Subsequent isotopic labelling indicated that 'M. oxyfera' bypassed the denitrification intermediate nitrous oxide by the conversion of two nitric oxide molecules to dinitrogen and oxygen, which was used to oxidize methane. These results extend our understanding of hydrocarbon degradation under anoxic conditions and explain the biochemical mechanism of a poorly understood freshwater methane sink. Because nitrogen oxides were already present on early Earth, our finding opens up the possibility that oxygen was available to microbial metabolism before the evolution of oxygenic photosynthesis.
+
+
+  ===
+
+extracted_object:
+  pmid: '20336137'
+  study_taxa:
+    - AUTO:Candidatus%20Methylomirabilis%20oxyfera
+named_entities:
+  - id: AUTO:Candidatus%20Methylomirabilis%20oxyfera
+    label: Candidatus Methylomirabilis oxyfera
+    original_spans:
+      - 935:969

@@ -1,0 +1,97 @@
+---
+input_text: |-
+  Agarilytica rhodophyticola gen. nov., sp. nov., isolated from Gracilaria blodgettii.
+
+  A novel Gram-stain-negative, rod-shaped, non-spore-forming, aerobic, agarolytic bacterium, designated 017T, was isolated from Gracilaria blodgettii collected at the coast of Lingshui county, Hainan province, China. Optimal growth occurred at 28-33 °C (range 15-40 °C), with 3 % (w/v) NaCl (range 2-4 %) and at pH 8.0 (range pH 6.5-8.5). Cells of strain 017T were motile and formed yellow colonies on marine agar 2216. Phylogenetic analysis based on 16S rRNA gene sequences revealed that strain 017T shared the highest similarity with Teredinibacter turnerae T7902T (94.4 %). The predominant polar lipids of the novel isolate consisted of phosphatidylglycerol, phosphatidylethanolamine, aminophospholipid and some other unknown lipids. Major cellular fatty acids (>10 %) were C16 : 0, C18 : 1ω7c and summed feature 3 (C16 : 1ω7c/iso-C15 : 0 2-OH), and the sole respiratory lipoquinone was Q-8. The DNA G+C content of strain 017T was 40.2 mol%. Comparative analysis of 16S rRNA gene sequences and phenotypic characterization indicated that strain 017T represents a novel species in a new genus of the family Cellvibrionaceae, order Cellvibrionales, for which the name Agarilytica rhodophyticola gen. nov., sp. nov. is proposed. The type strain of Agarilytica rhodophyticola is 017T (=KCTC 42584T=MCCC 1H00123T).
+
+  PMID:28879838
+raw_completion_output: |-
+  pmid: 28879838  
+  study_taxa: Agarilytica rhodophyticola  
+  strains: 017; KCTC 42584; MCCC 1H00123  
+  chemicals_mentioned: NaCl; phosphatidylglycerol; phosphatidylethanolamine; C16:0; C18:1ω7c; Q-8  
+  chemical_utilizations:   
+  strain_relationships: 017 type_strain_of Agarilytica rhodophyticola; KCTC 42584 type_strain_of Agarilytica rhodophyticola; MCCC 1H00123 type_strain_of Agarilytica rhodophyticola  
+  article_type: novel_species  
+prompt: |+
+  From the text below, extract the following entities in the following format:
+
+  pmid: <PubMed ID of the article (e.g., 23996836)>
+  study_taxa: <semicolon-separated list of the main bacterial or archaeal taxa being studied for chemical utilization>
+  strains: <Extract ONLY the strain designation part (e.g., "DA-C8", "MG1655", "ATCC 25922") WITHOUT genus/species prefixes. Focus on strain numbers, culture collection codes, and isolate identifiers. Automatically remove terminal "T" or "(T)" suffixes as these indicate type strain status (e.g., "DA-C8T" becomes "DA-C8", "K13T" becomes "K13"). Include strain numbers, culture collection numbers, and isolate names, but NOT the full taxonomic context.>
+  chemicals_mentioned: <Identify all chemical compounds mentioned in the text that are relevant to bacterial metabolism, growth, or biochemical activities. Include: carbon sources (glucose, acetate), nitrogen sources (ammonia, nitrate), vitamins (B12, biotin), metabolic intermediates, enzyme substrates, electron acceptors/donors, and any other chemicals involved in bacterial physiology. If no relevant chemicals are mentioned,  leave this field completely empty. DO NOT include entries like "None  explicitly mentioned" or similar phrases.>
+  chemical_utilizations: <A semicolon-separated list of strain-chemical relationships. Use EXACTLY THE SAME strain identifiers from the strains field.
+  Extract ALL relationships mentioned in the text. Be comprehensive - include both what strains CAN do and what they CANNOT do. Use specific predicates (uses_as_carbon_source, degrades, oxidizes) rather than generic ones when the text specifies the interaction type.>
+  strain_relationships: <A semicolon-separated list of strain-species relationships, where each relationship connects a strain identifier to its parent taxon. CRITICAL: Use EXACTLY THE SAME strain identifiers as listed in the strains field above - copy them verbatim, character-for-character. Do not modify, abbreviate, or expand the strain identifiers. Each relationship should have the strain identifier, relationship type, and parent species/genus. For example: "DA-C8 type_strain_of Insulambacter thermoxylanivorax; MG1655 strain_of Escherichia coli; ATCC 25922 type_strain_of Klebsiella pneumoniae". The strain identifiers MUST be identical to those used in the strains and chemical_utilizations fields. If no strain relationships are found, leave this field empty. DO NOT write "none".>
+  article_type: <The type of study or article. Choose the most appropriate category based on the content, with emphasis on metabolic_study for articles focusing on chemical utilization, degradation, or metabolic pathways.Must be one of: novel_species, novel_genus, taxonomic_revision, phylogenetic_analysis, comparative_taxonomy, emended_description, genome_sequence, review, biochemical_characterization, ecological_study, metabolic_study, physiology_study>
+
+
+  Text:
+  Agarilytica rhodophyticola gen. nov., sp. nov., isolated from Gracilaria blodgettii.
+
+  A novel Gram-stain-negative, rod-shaped, non-spore-forming, aerobic, agarolytic bacterium, designated 017T, was isolated from Gracilaria blodgettii collected at the coast of Lingshui county, Hainan province, China. Optimal growth occurred at 28-33 °C (range 15-40 °C), with 3 % (w/v) NaCl (range 2-4 %) and at pH 8.0 (range pH 6.5-8.5). Cells of strain 017T were motile and formed yellow colonies on marine agar 2216. Phylogenetic analysis based on 16S rRNA gene sequences revealed that strain 017T shared the highest similarity with Teredinibacter turnerae T7902T (94.4 %). The predominant polar lipids of the novel isolate consisted of phosphatidylglycerol, phosphatidylethanolamine, aminophospholipid and some other unknown lipids. Major cellular fatty acids (>10 %) were C16 : 0, C18 : 1ω7c and summed feature 3 (C16 : 1ω7c/iso-C15 : 0 2-OH), and the sole respiratory lipoquinone was Q-8. The DNA G+C content of strain 017T was 40.2 mol%. Comparative analysis of 16S rRNA gene sequences and phenotypic characterization indicated that strain 017T represents a novel species in a new genus of the family Cellvibrionaceae, order Cellvibrionales, for which the name Agarilytica rhodophyticola gen. nov., sp. nov. is proposed. The type strain of Agarilytica rhodophyticola is 017T (=KCTC 42584T=MCCC 1H00123T).
+
+  PMID:28879838
+
+  ===
+
+extracted_object:
+  pmid: '28879838'
+  study_taxa:
+    - NCBITaxon:1737490
+  strains:
+    - AUTO:017
+    - AUTO:KCTC%2042584
+    - AUTO:MCCC%201H00123
+  chemicals_mentioned:
+    - CHEBI:26710
+    - CHEBI:17517
+    - CHEBI:16038
+    - CHEBI:15756
+    - AUTO:C18%3A1%CF%897c
+    - AUTO:Q-8
+  article_type: novel_species
+named_entities:
+  - id: NCBITaxon:1737490
+    label: Agarilytica rhodophyticola
+    original_spans:
+      - 0:25
+      - 1252:1277
+      - 1331:1356
+  - id: AUTO:017
+    label: '017'
+    original_spans:
+      - 188:190
+      - 439:441
+      - 580:582
+      - 1009:1011
+      - 1131:1133
+      - 1361:1363
+  - id: AUTO:KCTC%2042584
+    label: KCTC 42584
+    original_spans:
+      - 1368:1377
+  - id: AUTO:MCCC%201H00123
+    label: MCCC 1H00123
+    original_spans:
+      - 1380:1391
+  - id: CHEBI:26710
+    label: NaCl
+    original_spans:
+      - 370:373
+  - id: CHEBI:17517
+    label: phosphatidylglycerol
+    original_spans:
+      - 724:743
+  - id: CHEBI:16038
+    label: phosphatidylethanolamine
+    original_spans:
+      - 746:769
+  - id: CHEBI:15756
+    label: C16:0
+  - id: AUTO:C18%3A1%CF%897c
+    label: C18:1ω7c
+  - id: AUTO:Q-8
+    label: Q-8
+    original_spans:
+      - 974:976
