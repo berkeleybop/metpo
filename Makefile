@@ -131,24 +131,24 @@ data/generated/bacdive_oxygen_phenotype_mappings.tsv: sparql/bacdive_oxygen_phen
 		--input $(word 2,$^)
 
 # Extract terms from external ontologies for embedding generation
-# Pattern: notebooks/non-ols-terms/<ontology-id>_terms.tsv
-# Usage: make notebooks/non-ols-terms/D3O.tsv
+# Pattern: data/pipeline/non-ols-terms/<ontology-id>_terms.tsv
+# Usage: make data/pipeline/non-ols-terms/D3O.tsv
 # Make calls robot directly with catalog to handle broken imports
 # Python validates output
-notebooks/non-ols-terms/%.tsv: external/ontologies/bioportal/%.owl sparql/extract_for_embeddings.rq
+data/pipeline/non-ols-terms/%.tsv: external/ontologies/bioportal/%.owl sparql/extract_for_embeddings.rq
 	@mkdir -p $(dir $@)
 	@echo "Querying $* with ROBOT..."
 	-@robot query --input $< --catalog catalog-v001.xml --query $(word 2,$^) $@ 2>&1 | tee -a .robot_query.log
 	-@uv run validate-tsv $* --tsv $@
 
-notebooks/non-ols-terms/%.tsv: external/ontologies/bioportal/%.ttl sparql/extract_for_embeddings.rq
+data/pipeline/non-ols-terms/%.tsv: external/ontologies/bioportal/%.ttl sparql/extract_for_embeddings.rq
 	@mkdir -p $(dir $@)
 	@echo "Querying $* with ROBOT..."
 	-@robot query --input $< --catalog catalog-v001.xml --query $(word 2,$^) $@ 2>&1 | tee -a .robot_query.log
 	-@uv run validate-tsv $* --tsv $@
 
 # Manual ontologies (like n4l_merged.owl)
-notebooks/non-ols-terms/%.tsv: external/ontologies/manual/%.owl sparql/extract_for_embeddings.rq
+data/pipeline/non-ols-terms/%.tsv: external/ontologies/manual/%.owl sparql/extract_for_embeddings.rq
 	@mkdir -p $(dir $@)
 	@echo "Querying $* with ROBOT..."
 	-@robot query --input $< --catalog catalog-v001.xml --query $(word 2,$^) $@ 2>&1 | tee -a .robot_query.log
@@ -441,7 +441,7 @@ clean-external-pipeline:
 	@echo "Removing BioPortal downloads..."
 	rm -f $(foreach ont,$(NON_OLS_BIOPORTAL_ONTOLOGIES),external/ontologies/bioportal/$(ont).owl)
 	@echo "Removing ROBOT query outputs..."
-	rm -f notebooks/non-ols-terms/*.tsv
+	rm -f data/pipeline/non-ols-terms/*.tsv
 	@echo "Removing logs and manifest..."
 	rm -f .ontology_manifest.json .ontology_fetch.log .robot_query.log
 	@echo ""
@@ -521,19 +521,19 @@ list-bioportal-releases:
 # Individual pipeline steps
 alignment-fetch-ontology-names: notebooks/ontology_catalog.csv
 
-notebooks/ontology_catalog.csv: notebooks/ontology_sizes.csv
+notebooks/ontology_catalog.csv: data/ontology_assessments/ontology_sizes.csv
 	@echo "Fetching ontology metadata from OLS4 API..."
-	cd notebooks && python fetch_ontology_names.py \
-		--sizes-csv ontology_sizes.csv \
-		--output-csv ontology_catalog.csv
+	python scripts/pipeline/fetch_ontology_names.py \
+		--sizes-csv data/ontology_assessments/ontology_sizes.csv \
+		--output-csv notebooks/ontology_catalog.csv
 
 alignment-categorize-ontologies: notebooks/ontologies_very_appealing.csv
 
 notebooks/ontologies_very_appealing.csv: notebooks/ontology_catalog.csv
 	@echo "Categorizing ontologies by relevance..."
-	cd notebooks && python categorize_ontologies.py \
-		--input-csv ontology_catalog.csv \
-		--output-prefix ontologies
+	python scripts/pipeline/categorize_ontologies.py \
+		--input-csv notebooks/ontology_catalog.csv \
+		--output-prefix notebooks/ontologies
 
 alignment-query-metpo-terms: notebooks/metpo_relevant_mappings.sssom.tsv
 
@@ -543,37 +543,37 @@ notebooks/metpo_relevant_mappings.sssom.tsv: notebooks/metpo_relevant_chroma
 		echo "ERROR: OPENAI_API_KEY environment variable not set"; \
 		exit 1; \
 	fi
-	cd notebooks && python chromadb_semantic_mapper.py \
-		--metpo-tsv ../src/templates/metpo_sheet.tsv \
-		--chroma-path ./metpo_relevant_chroma \
+	python scripts/pipeline/chromadb_semantic_mapper.py \
+		--metpo-tsv src/templates/metpo_sheet.tsv \
+		--chroma-path notebooks/metpo_relevant_chroma \
 		--collection-name metpo_relevant_embeddings \
-		--output metpo_relevant_mappings.sssom.tsv \
+		--output notebooks/metpo_relevant_mappings.sssom.tsv \
 		--top-n 10 \
 		--label-only \
 		--distance-cutoff 0.35
 
 alignment-analyze-matches: notebooks/metpo_relevant_mappings.sssom.tsv
 	@echo "Analyzing match quality..."
-	cd notebooks && python analyze_matches.py \
-		--input-csv metpo_relevant_mappings.sssom.tsv \
+	python scripts/pipeline/analyze_matches.py \
+		--input-csv notebooks/metpo_relevant_mappings.sssom.tsv \
 		--good-match-threshold 0.9
 
 alignment-analyze-coherence: notebooks/full_coherence_results.csv
 
 notebooks/full_coherence_results.csv: notebooks/metpo_relevant_mappings.sssom.tsv
 	@echo "Computing structural coherence (this may take a while)..."
-	cd notebooks && python analyze_sibling_coherence.py \
-		--input-csv metpo_relevant_mappings.sssom.tsv \
-		--metpo-owl ../src/ontology/metpo.owl \
-		--output-csv full_coherence_results.csv
+	python scripts/pipeline/analyze_sibling_coherence.py \
+		--input-csv notebooks/metpo_relevant_mappings.sssom.tsv \
+		--metpo-owl src/ontology/metpo.owl \
+		--output-csv notebooks/full_coherence_results.csv
 
 alignment-identify-candidates: notebooks/alignment_candidates.csv
 
 notebooks/alignment_candidates.csv: notebooks/full_coherence_results.csv
 	@echo "Identifying alignment candidates..."
-	cd notebooks && python analyze_coherence_results.py \
-		--results-csv full_coherence_results.csv \
-		--matches-csv metpo_relevant_mappings.sssom.tsv
+	python scripts/pipeline/analyze_coherence_results.py \
+		--results-csv notebooks/full_coherence_results.csv \
+		--matches-csv notebooks/metpo_relevant_mappings.sssom.tsv
 
 # Run complete pipeline
 alignment-run-all: alignment-identify-candidates
@@ -600,7 +600,7 @@ clean-alignment-results:
 # Non-OLS Embedding Targets
 # =====================================================
 
-NON_OLS_TSV_FILES = $(foreach ont,$(NON_OLS_BIOPORTAL_ONTOLOGIES),notebooks/non-ols-terms/$(ont).tsv)
+NON_OLS_TSV_FILES = $(foreach ont,$(NON_OLS_BIOPORTAL_ONTOLOGIES),data/pipeline/non-ols-terms/$(ont).tsv)
 
 .PHONY: embed-non-ols-terms clean-non-ols-terms scan-manifest view-manifest view-logs
 
@@ -634,8 +634,8 @@ view-logs:
 
 embed-non-ols-terms:
 	@echo "Embedding non-OLS terms into ChromaDB..."
-	uv run python notebooks/embed_ontology_to_chromadb.py \
-		$(foreach tsv,$(wildcard notebooks/non-ols-terms/*.tsv),--tsv-file $(tsv)) \
+	uv run python scripts/pipeline/embed_ontology_to_chromadb.py \
+		$(foreach tsv,$(wildcard data/pipeline/non-ols-terms/*.tsv),--tsv-file $(tsv)) \
 		--chroma-path ./embeddings_chroma \
 		--collection-name non_ols_embeddings
 	@echo "Non-OLS terms embedded successfully."

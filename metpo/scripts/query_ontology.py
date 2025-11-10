@@ -3,7 +3,7 @@
 Query ontology with ROBOT.
 
 Usage:
-    query-ontology D3O --input external/ontologies/bioportal/D3O.owl --query sparql/extract_for_embeddings.rq --output notebooks/non-ols-terms/D3O.tsv
+    query-ontology D3O --input external/ontologies/bioportal/D3O.owl --query sparql/extract_for_embeddings.rq --output data/pipeline/non-ols-terms/D3O.tsv
 
 Exit codes:
     0: Success (terms extracted)
