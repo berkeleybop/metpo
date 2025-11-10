@@ -25,8 +25,8 @@ clean-data:
 	rm -rf local/taxdmp/
 	rm -f local/noderanks.ttl
 	rm -f data/generated/bacdive_oxygen_phenotype_mappings.tsv
-	rm -rf data/bioportal_owl/
-	rm -rf data/entity_extracts/
+	rm -rf metadata/historical_usage_analysis/bioportal_owl/
+	rm -rf metadata/historical_usage_analysis/entity_extracts/
 	rm -rf data/reports/
 	rm -rf downloads/sheets/
 	@echo "All generated data files cleaned"
@@ -278,11 +278,11 @@ METPO_SUBMISSIONS = \
 .PHONY: download-all-bioportal-submissions clean-bioportal-submissions list-bioportal-submissions
 
 # Download all METPO submissions from BiPortal
-download-all-bioportal-submissions: $(foreach sub,$(METPO_SUBMISSIONS),data/bioportal_owl/metpo_submission_$(word 1,$(subst :, ,$(sub))).owl)
-	@echo "All BiPortal METPO submissions downloaded to data/bioportal_owl/"
+download-all-bioportal-submissions: $(foreach sub,$(METPO_SUBMISSIONS),metadata/historical_usage_analysis/bioportal_owl/metpo_submission_$(word 1,$(subst :, ,$(sub))).owl)
+	@echo "All BiPortal METPO submissions downloaded to metadata/historical_usage_analysis/bioportal_owl/"
 
 # Individual submission download targets
-data/bioportal_owl/metpo_submission_%.owl: | data/bioportal_owl
+metadata/historical_usage_analysis/bioportal_owl/metpo_submission_%.owl: | metadata/historical_usage_analysis/bioportal_owl
 	@echo "Downloading METPO submission $*..."
 	@curl -L -s "$(BIOPORTAL_SUBMISSION_BASE)/$*/download?apikey=$$BIOPORTAL_API_KEY" -o $@
 	@if [ -s $@ ]; then \
@@ -293,8 +293,8 @@ data/bioportal_owl/metpo_submission_%.owl: | data/bioportal_owl
 		rm -f $@; \
 	fi
 
-# Ensure data/bioportal_owl directory exists
-data/bioportal_owl:
+# Ensure bioportal_owl directory exists
+metadata/historical_usage_analysis/bioportal_owl:
 	mkdir -p $@
 
 # Clean downloaded BiPortal submissions
@@ -364,7 +364,7 @@ clean-non-ols-pipeline:
 	@if [ -f non-ols/MISO.owl ]; then echo "✓ Kept manual files: non-ols/MISO.owl"; fi
 
 clean-bioportal-submissions:
-	rm -rf data/bioportal_owl/
+	rm -rf metadata/historical_usage_analysis/bioportal_owl/
 	@echo "Downloaded BiPortal submissions cleaned"
 
 # List available submissions
@@ -377,7 +377,7 @@ list-bioportal-submissions:
 	done
 	@echo ""
 	@echo "To download all: make download-all-bioportal-submissions"
-	@echo "To download specific submission: make data/bioportal_owl/metpo_submission_5.owl"
+	@echo "To download specific submission: make metadata/historical_usage_analysis/bioportal_owl/metpo_submission_5.owl"
 
 # =====================================================
 # METPO Entity Extraction Targets
@@ -386,21 +386,21 @@ list-bioportal-submissions:
 .PHONY: extract-all-metpo-entities clean-entity-extracts
 
 # Extract METPO entities from all submissions
-extract-all-metpo-entities: $(foreach sub,$(METPO_SUBMISSIONS),data/entity_extracts/metpo_submission_$(word 1,$(subst :, ,$(sub)))_all_entities.tsv)
-	@echo "All METPO entities extracted to data/entity_extracts/"
+extract-all-metpo-entities: $(foreach sub,$(METPO_SUBMISSIONS),metadata/historical_usage_analysis/entity_extracts/metpo_submission_$(word 1,$(subst :, ,$(sub)))_all_entities.tsv)
+	@echo "All METPO entities extracted to metadata/historical_usage_analysis/entity_extracts/"
 
 # Individual entity extraction targets
-data/entity_extracts/metpo_submission_%_all_entities.tsv: data/bioportal_owl/metpo_submission_%.owl | data/entity_extracts
+metadata/historical_usage_analysis/entity_extracts/metpo_submission_%_all_entities.tsv: metadata/historical_usage_analysis/bioportal_owl/metpo_submission_%.owl | metadata/historical_usage_analysis/entity_extracts
 	@echo "Extracting entities from METPO submission $*..."
 	robot query -i $< -s sparql/query_metpo_entities.sparql $@
 
-# Ensure data/entity_extracts directory exists
-data/entity_extracts:
+# Ensure entity_extracts directory exists
+metadata/historical_usage_analysis/entity_extracts:
 	mkdir -p $@
 
 # Clean extracted entity files
 clean-entity-extracts:
-	rm -rf data/entity_extracts/
+	rm -rf metadata/historical_usage_analysis/entity_extracts/
 	@echo "Extracted entity files cleaned"
 
 # Ensure downloads/bioportal directory exists
