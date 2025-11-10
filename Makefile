@@ -24,7 +24,7 @@ clean-data:
 	rm -f downloads/taxdmp.zip
 	rm -rf local/taxdmp/
 	rm -f local/noderanks.ttl
-	rm -f generated/bacdive_oxygen_phenotype_mappings.tsv
+	rm -f data/generated/bacdive_oxygen_phenotype_mappings.tsv
 	rm -rf data/bioportal_owl/
 	rm -rf data/entity_extracts/
 	rm -rf data/reports/
@@ -45,7 +45,7 @@ local/taxdmp/nodes.dmp: local/taxdmp
 local/noderanks.ttl: local/taxdmp/nodes.dmp
 	uv run extract-rank-triples --input-file $< --output-file $@
 
-generated/bacdive_oxygen_phenotype_mappings.tsv: sparql/bacdive_oxygen_phenotype_mappings.rq src/ontology/metpo.owl
+data/generated/bacdive_oxygen_phenotype_mappings.tsv: sparql/bacdive_oxygen_phenotype_mappings.rq src/ontology/metpo.owl
 	mkdir -p $(dir $@)
 	robot query \
 		--query $(word 1,$^) $@ \

@@ -89,7 +89,7 @@ def analyze_bacdive_alignment() -> Dict:
 
 def analyze_bactotraits_alignment() -> Dict:
     """Analyze METPO alignment with BactoTraits 19 functional traits."""
-    # From mongodb/1-s2.0-S1470160X21007123-main.pdf (Cébron et al. 2021)
+    # From data/bactotraits/1-s2.0-S1470160X21007123-main.pdf (Cébron et al. 2021)
     bactotraits_traits = {
         'oxygen_requirement': {
             'metpo_coverage': ['aerobic', 'facultative anaerobic', 'anaerobic', 'microaerophilic'],
@@ -339,7 +339,7 @@ def main():
         f.write("\n")
         f.write("Reference papers:\n")
         f.write("  BacDive: docs/icbo_2025_prep/bacdive_reimer_et_al_2022.pdf\n")
-        f.write("  BactoTraits: mongodb/1-s2.0-S1470160X21007123-main.pdf\n")
+        f.write("  BactoTraits: data/bactotraits/1-s2.0-S1470160X21007123-main.pdf\n")
         f.write("  Madin: docs/icbo_2025_prep/madin_et_al_2020_trait_synthesis.pdf\n")
         f.write("\n")
         f.write("METPO documentation:\n")
