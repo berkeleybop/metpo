@@ -9,6 +9,7 @@ For ICBO 2025 talk preparation.
 
 import yaml
 import re
+import click
 from pathlib import Path
 from collections import defaultdict, Counter
 from typing import Dict, List, Tuple
@@ -29,7 +30,7 @@ def extract_entities_from_yaml(yaml_path: Path) -> Dict[str, List[str]]:
             entities[prefix].append(local_id)
 
     except Exception as e:
-        print(f"Error processing {yaml_path}: {e}")
+        click.echo(f"Error processing {yaml_path}: {e}")
 
     return entities
 
@@ -71,7 +72,7 @@ def extract_template_info(yaml_path: Path) -> Dict:
             }
 
     except Exception as e:
-        print(f"Error extracting template info from {yaml_path}: {e}")
+        click.echo(f"Error extracting template info from {yaml_path}: {e}")
         return {'id': 'unknown', 'name': 'unknown', 'title': 'unknown', 'description': 'unknown'}
 
 def find_auto_terms_with_context(yaml_path: Path, limit=10) -> List[Dict]:
@@ -121,7 +122,7 @@ def find_auto_terms_with_context(yaml_path: Path, limit=10) -> List[Dict]:
                     })
 
     except Exception as e:
-        print(f"Error finding AUTO terms in {yaml_path}: {e}")
+        click.echo(f"Error finding AUTO terms in {yaml_path}: {e}")
 
     return auto_examples
 
@@ -158,7 +159,7 @@ def find_metpo_successes_with_context(yaml_path: Path, limit=10) -> List[Dict]:
                     })
 
     except Exception as e:
-        print(f"Error finding METPO terms in {yaml_path}: {e}")
+        click.echo(f"Error finding METPO terms in {yaml_path}: {e}")
 
     return metpo_examples
 
@@ -200,13 +201,13 @@ def analyze_directory(dir_path: Path) -> Dict:
 
     yaml_files = list(dir_path.glob('*.yaml'))
 
-    print(f"Found {len(yaml_files)} YAML files in {dir_path}")
+    click.echo(f"Found {len(yaml_files)} YAML files in {dir_path}")
 
     for yaml_file in yaml_files:
         if yaml_file.stat().st_size == 0:
             continue
 
-        print(f"Analyzing {yaml_file.name}...")
+        click.echo(f"Analyzing {yaml_file.name}...")
         results['files_analyzed'].append(yaml_file.name)
 
         # Count all entity types
@@ -225,24 +226,38 @@ def analyze_directory(dir_path: Path) -> Dict:
 
     return results
 
-def main():
-    """Main analysis."""
-    outputs_dir = Path(__file__).parent / 'outputs'
+@click.command()
+@click.argument('yaml_dir', type=click.Path(exists=True, file_okay=False, path_type=Path),
+                default=None, required=False)
+@click.option('-o', '--output', 'output_file', type=click.Path(path_type=Path),
+              help='Output file for detailed results')
+@click.option('--format', type=click.Choice(['text', 'tsv'], case_sensitive=False),
+              default='text', show_default=True, help='Output format')
+def main(yaml_dir, output_file, format):
+    """Analyze OntoGPT YAML outputs for METPO grounding coverage.
 
-    print("=" * 80)
-    print("METPO Grounding Analysis for ICBO 2025")
-    print("=" * 80)
-    print()
+    Identifies examples where METPO successfully grounded text extractions
+    and where AUTO: terms indicate gaps in METPO coverage.
 
-    results = analyze_directory(outputs_dir)
+    YAML_DIR: Directory containing OntoGPT YAML output files (default: ./outputs)
+    """
+    if not yaml_dir:
+        yaml_dir = Path(__file__).parent / 'outputs'
 
-    print("\n" + "=" * 80)
-    print("SUMMARY STATISTICS")
-    print("=" * 80)
-    print(f"\nFiles analyzed: {len(results['files_analyzed'])}")
-    print("\nEntity type counts:")
+    click.echo("=" * 80)
+    click.echo("METPO Grounding Analysis for ICBO 2025")
+    click.echo("=" * 80)
+    click.echo()
+
+    results = analyze_directory(yaml_dir)
+
+    click.echo("\n" + "=" * 80)
+    click.echo("SUMMARY STATISTICS")
+    click.echo("=" * 80)
+    click.echo(f"\nFiles analyzed: {len(results['files_analyzed'])}")
+    click.echo("\nEntity type counts:")
     for prefix, count in sorted(results['summary'].items(), key=lambda x: -x[1]):
-        print(f"  {prefix:15s}: {count:6d}")
+        click.echo(f"  {prefix:15s}: {count:6d}")
 
     # Calculate grounding rate
     metpo_count = results['summary'].get('METPO', 0)
@@ -251,45 +266,45 @@ def main():
 
     if total_phenotype > 0:
         grounding_rate = (metpo_count / total_phenotype) * 100
-        print(f"\nPhenotype grounding rate: {grounding_rate:.1f}% ({metpo_count}/{total_phenotype})")
-        print(f"AUTO term rate: {100-grounding_rate:.1f}% ({auto_count}/{total_phenotype})")
+        click.echo(f"\nPhenotype grounding rate: {grounding_rate:.1f}% ({metpo_count}/{total_phenotype})")
+        click.echo(f"AUTO term rate: {100-grounding_rate:.1f}% ({auto_count}/{total_phenotype})")
 
     # Show examples
-    print("\n" + "=" * 80)
-    print("EXAMPLES: SUCCESSFUL METPO GROUNDING")
-    print("=" * 80)
-    print(f"\nFound {len(results['metpo_examples'])} examples where METPO successfully grounded terms\n")
+    click.echo("\n" + "=" * 80)
+    click.echo("EXAMPLES: SUCCESSFUL METPO GROUNDING")
+    click.echo("=" * 80)
+    click.echo(f"\nFound {len(results['metpo_examples'])} examples where METPO successfully grounded terms\n")
 
     for i, example in enumerate(results['metpo_examples'][:10], 1):
-        print(f"\n{i}. File: {example['file']}")
+        click.echo(f"\n{i}. File: {example['file']}")
         if example['pmid']:
-            print(f"   PMID: {example['pmid']}")
-        print(f"   METPO terms: {', '.join('METPO:' + t for t in example['metpo_terms'])}")
-        print(f"   Context: {example['context'][:150]}...")
+            click.echo(f"   PMID: {example['pmid']}")
+        click.echo(f"   METPO terms: {', '.join('METPO:' + t for t in example['metpo_terms'])}")
+        click.echo(f"   Context: {example['context'][:150]}...")
 
-    print("\n" + "=" * 80)
-    print("EXAMPLES: AUTO: TERMS INDICATING METPO GAPS")
-    print("=" * 80)
-    print(f"\nFound {len(results['auto_examples'])} examples with AUTO: terms\n")
+    click.echo("\n" + "=" * 80)
+    click.echo("EXAMPLES: AUTO: TERMS INDICATING METPO GAPS")
+    click.echo("=" * 80)
+    click.echo(f"\nFound {len(results['auto_examples'])} examples with AUTO: terms\n")
 
     for i, example in enumerate(results['auto_examples'][:15], 1):
-        print(f"\n{i}. Extraction: {example['file']}")
-        print(f"   Template: {example.get('template_name', 'unknown')}")
-        print(f"   Template title: {example.get('template_title', 'unknown')}")
+        click.echo(f"\n{i}. Extraction: {example['file']}")
+        click.echo(f"   Template: {example.get('template_name', 'unknown')}")
+        click.echo(f"   Template title: {example.get('template_title', 'unknown')}")
         if example.get('pmid'):
-            print(f"   PMID: {example['pmid']}")
+            click.echo(f"   PMID: {example['pmid']}")
         if example.get('doi'):
-            print(f"   DOI: {example['doi']}")
+            click.echo(f"   DOI: {example['doi']}")
         if example.get('title'):
-            print(f"   Paper title: {example['title'][:80]}...")
-        print(f"   AUTO terms: {', '.join(example['auto_terms'])}")
+            click.echo(f"   Paper title: {example['title'][:80]}...")
+        click.echo(f"   AUTO terms: {', '.join(example['auto_terms'])}")
         if example['context'] != "No context":
-            print(f"   Context: {example['context'][:150]}...")
+            click.echo(f"   Context: {example['context'][:150]}...")
 
-    print("\n" + "=" * 80)
-    print("RECOMMENDATIONS FOR ICBO TALK")
-    print("=" * 80)
-    print("""
+    click.echo("\n" + "=" * 80)
+    click.echo("RECOMMENDATIONS FOR ICBO TALK")
+    click.echo("=" * 80)
+    click.echo("""
     1. Use METPO success examples to show ontology-guided text mining working
     2. Use AUTO: term examples to show where METPO needs expansion
     3. Grounding rate metric shows percentage of phenotype terms successfully mapped
@@ -297,7 +312,8 @@ def main():
     """)
 
     # Save detailed results
-    output_file = Path(__file__).parent / 'metpo_grounding_analysis_icbo2025.txt'
+    if not output_file:
+        output_file = Path(__file__).parent / 'metpo_grounding_analysis_icbo2025.txt'
     with open(output_file, 'w') as f:
         f.write("METPO Grounding Analysis for ICBO 2025\n")
         f.write("=" * 80 + "\n\n")
@@ -328,7 +344,7 @@ def main():
             f.write(f"Context: {example['context']}\n")
             f.write("-" * 80 + "\n")
 
-    print(f"\nDetailed results saved to: {output_file}")
+    click.echo(f"\nDetailed results saved to: {output_file}")
 
 if __name__ == '__main__':
     main()
