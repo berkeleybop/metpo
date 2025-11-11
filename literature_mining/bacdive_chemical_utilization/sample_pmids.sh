@@ -9,7 +9,7 @@
 
 N=${1:-10}
 SEED=${2:-}
-CSV_PATH="../assets/N4L_phenotypic_ontology_2016/reference_id_mapping.csv"
+CSV_PATH="../inputs/n4l/reference_id_mapping.csv"
 OUTPUT_FILE="sampled_pmids.txt"
 
 # Check if CSV exists

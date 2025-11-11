@@ -94,13 +94,13 @@ classes:
       Microbial phenotypic characteristics including morphology, physiology,
       and growth characteristics
     annotations:
-      annotators: sqlite:intermediates/db/annotator_test/omp.db
+      annotators: sqlite:obo:omp
 
   CultureMedium:
     is_a: NamedEntity
     description: Culture media and growth substrates
     annotations:
-      annotators: sqlite:intermediates/db/annotator_test/omp.db, sqlite:obo:chebi
+      annotators: sqlite:obo:omp, sqlite:obo:chebi
 
   StrainToTaxonRelationship:
     is_a: CompoundExpression

@@ -1,0 +1,102 @@
+---
+input_text: |-
+  Bacillus terrae sp. nov. isolated from Cistus ladanifer rhizosphere soil.
+
+  A bacterial strain designated RA9T was isolated from a root of Cistus ladanifer in Spain. Phylogenetic analyses based on 16S rRNA gene sequences placed the isolate into the genus Bacillus with its closest relatives being Bacillus fortis R-6514T and Bacillus fordii R-7190T with 98.2 % similarity in both cases. DNA-DNA hybridization studies showed mean relatedness values of 29 and 30 %, respectively, between strain RA9T and the type strains of B. fortis and B. fordii. Cells of the isolate were Gram-stain-positive, motile, sporulating rods. Catalase and oxidase were positive. Gelatin, starch and casein were not hydrolysed. Menaquinone MK-7 was the only menaquinone detected and iso-C15 : 0 and anteiso-C15 : 0 were the major fatty acids. The polar lipid profile consisted of diphosphatidylglycerol, phosphatidylglycerol, phosphatidylethanolamine, one unidentified aminophospholipid, one unidentified phospholipid, one unidentifed glycolipid and one unidentified lipid. meso-Diaminopimelic acid was detected in the peptidoglycan. The DNA G+C content was 43.1 mol%. Phylogenetic, chemotaxonomic and phenotypic analyses showed that strain RA9T should be considered as representing a novel species of the genus Bacillus, for which the name Bacillus terrae sp. nov. is proposed. The type strain is RA9T (=LMG 29736T=CECT 9170T).
+
+  PMID:27983469
+raw_completion_output: |-
+  pmid: 27983469  
+  study_taxa: Bacillus  
+  strains: RA9; LMG 29736; CECT 9170  
+  strain_to_taxon: RA9 belongs_to Bacillus terrae; LMG 29736 belongs_to Bacillus terrae; CECT 9170 belongs_to Bacillus terrae  
+  strain_to_phenotype: RA9 has_phenotype Gram-stain-positive; RA9 has_phenotype motile; RA9 has_phenotype sporulating; RA9 has_phenotype rod-shaped  
+  strain_to_medium:  
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  subject: <The strain with this phenotype>
+  predicate: <Always "has_phenotype"Must be one of: has_phenotype>
+  object: <The phenotypic characteristic>
+
+
+  Text:
+  RA9 has_phenotype rod-shaped
+
+  ===
+
+extracted_object:
+  pmid: '27983469'
+  study_taxa:
+    - NCBITaxon:1386
+  strains:
+    - AUTO:RA9
+    - AUTO:LMG%2029736
+    - AUTO:CECT%209170
+  strain_to_taxon:
+    - subject: AUTO:RA9
+      predicate: strain_of
+      object: NCBITaxon:1914933
+    - subject: AUTO:LMG%2029736
+      predicate: strain_of
+      object: NCBITaxon:1914933
+    - subject: AUTO:CECT%209170
+      predicate: strain_of
+      object: NCBITaxon:1914933
+  strain_to_phenotype:
+    - subject: AUTO:RA9
+      predicate: has_phenotype
+      object: AUTO:Gram-stain-positive
+    - subject: AUTO:RA9
+      predicate: has_phenotype
+      object: OMP:0000005
+    - subject: AUTO:RA9
+      predicate: has_phenotype
+      object: AUTO:sporulating
+    - subject: AUTO:RA9
+      predicate: has_phenotype
+      object: AUTO:rod-shaped
+named_entities:
+  - id: NCBITaxon:1386
+    label: Bacillus
+    original_spans:
+      - 0:7
+      - 254:261
+      - 296:303
+      - 324:331
+      - 1287:1294
+      - 1316:1323
+  - id: AUTO:RA9
+    label: RA9
+    original_spans:
+      - 105:107
+      - 492:494
+      - 1216:1218
+      - 1373:1375
+  - id: AUTO:LMG%2029736
+    label: LMG 29736
+    original_spans:
+      - 1380:1388
+  - id: AUTO:CECT%209170
+    label: CECT 9170
+    original_spans:
+      - 1391:1399
+  - id: NCBITaxon:1914933
+    label: Bacillus terrae
+    original_spans:
+      - 0:14
+      - 1316:1330
+  - id: AUTO:Gram-stain-positive
+    label: Gram-stain-positive
+    original_spans:
+      - 572:590
+  - id: OMP:0000005
+    label: motile
+    original_spans:
+      - 593:598
+  - id: AUTO:sporulating
+    label: sporulating
+    original_spans:
+      - 601:611
+  - id: AUTO:rod-shaped
+    label: rod-shaped

@@ -1,0 +1,131 @@
+id: http://w3id.org/ontogpt/microbial_phenotype_relations
+name: microbial_phenotype_relations
+title: microbial phenotype relations ontogpt template
+description: >-
+  A template to recognize patterns of microbial phenotype terms 
+  in literature abstracts and then assemble them into subject predicate object
+  triples
+license: https://creativecommons.org/publicdomain/zero/1.0/
+prefixes:
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  linkml: https://w3id.org/linkml/
+  mpr: http://w3id.org/ontogpt/microbial_phenotype_relations/
+
+default_prefix: mpr
+default_range: string
+
+imports:
+  - linkml:types
+  - core
+
+classes:
+  MicrobialPhenotypeRelationExtract:
+    tree_root: true
+    attributes:
+      organisms:
+        description: semicolon-separated list of microorganism species or strains mentioned in the source_text
+        multivalued: true
+        range: Organism
+      chemical_compounds:
+        description: semicolon-separated list of chemical compounds mentioned in the source_text
+        multivalued: true
+        range: ChemicalCompound
+      phenotypes:
+        description: semicolon-separated list of microbial phonotypes mentioned in the source_text
+        multivalued: true
+        range: Phenotype
+      environments:
+        description: semicolon-separated list of environments mentioned in the source_text
+        multivalued: true
+        range: Environment
+      organism_phenotype_relationships:
+        description: semicolon-separated list of organism to phenotype or trait relations found in the source_text, e.g., "IA91T is round", "IA91T is a mesophile"
+        multivalued: true
+        range: OrganismPhenotypeRelationship
+      organism_compound_relationships:
+        description: semicolon-separated list of organism to chemical compound relationships found in the source_text, e.g., "IA91T utilizes acetate"
+        multivalued: true
+        range: OrganismCompoundRelationship
+      organism_environment_relationships:
+        description: semicolon-separated list of organism to chemical compound relationships found in the source_text, e.g., "IA91T lives in marine environment"
+        multivalued: true
+        range: OrganismEnvironmentRelationship
+      compound_organism_relationships:
+        description: semicolon-separated list of chemical compound to organism relationships found in the source_text, e.g., "acetate is predominant in IA91T "
+        multivalued: true
+        range: CompoundOrganismRelationship
+
+
+      source_text:
+        range: string
+        annotations:
+          prompt.skip: "true"
+
+  ChemicalCompound:
+    is_a: NamedEntity
+    annotations:
+      annotators: sqlite:obo:chebi
+
+  Organism:
+    is_a: NamedEntity
+    annotations:
+      annotators: sqlite:obo:ncbitaxon
+
+  Phenotype:
+    is_a: NamedEntity
+    annotations:
+      annotators: MicrO-for-metpo.owl
+
+  Environment:
+    is_a: NamedEntity
+    annotations:
+      annotators: sqlite:obo:envo
+
+  OrganismEnvironmentRelationship:
+    attributes:
+      organism:
+        description: the organism or strain. when ambiguous, extract the organism identifier from the title of the abstract
+        range: Organism
+      relationship_type:
+        description: the type of relationship (e.g., "found in", "lives_in")
+        range: string
+      environment:
+        description: the environment
+        range: Environment
+
+
+  OrganismCompoundRelationship:
+    attributes:
+      organism:
+        description: the organism or strain. when ambiguous, extract the organism identifier from the title of the abstract
+        range: Organism
+      relationship_type:
+        description: the type of relationship (e.g., "utilizes", "produces", "requires", "is sensitive to", "is resistant to")
+        range: string
+      compound:
+        description: the chemical compound
+        range: ChemicalCompound
+
+  CompoundOrganismRelationship:
+    attributes:
+      compound:
+        description: the chemical compound
+        range: ChemicalCompound
+      relationship_type:
+        description: the type of relationship (e.g., "is predominant in")
+        range: string
+      organism:
+        description: the organism or strain
+        range: Organism
+
+  OrganismPhenotypeRelationship:
+    attributes:
+      organism:
+        description: the organism or strain. when ambiguous, extract the organism identifier from the title of the abstract
+        range: Organism
+      relationship_type:
+        description: the type of relationship (e.g., "has_phenotype", "grows at", "does_not_grow_at")
+        range: string
+      phenotype:
+        description: the phenotype or trait
+        range: Phenotype

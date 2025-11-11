@@ -1,0 +1,155 @@
+---
+input_text: |-
+  Agarilytica rhodophyticola gen. nov., sp. nov., isolated from Gracilaria blodgettii.
+
+  A novel Gram-stain-negative, rod-shaped, non-spore-forming, aerobic, agarolytic bacterium, designated 017T, was isolated from Gracilaria blodgettii collected at the coast of Lingshui county, Hainan province, China. Optimal growth occurred at 28-33 °C (range 15-40 °C), with 3 % (w/v) NaCl (range 2-4 %) and at pH 8.0 (range pH 6.5-8.5). Cells of strain 017T were motile and formed yellow colonies on marine agar 2216. Phylogenetic analysis based on 16S rRNA gene sequences revealed that strain 017T shared the highest similarity with Teredinibacter turnerae T7902T (94.4 %). The predominant polar lipids of the novel isolate consisted of phosphatidylglycerol, phosphatidylethanolamine, aminophospholipid and some other unknown lipids. Major cellular fatty acids (>10 %) were C16 : 0, C18 : 1ω7c and summed feature 3 (C16 : 1ω7c/iso-C15 : 0 2-OH), and the sole respiratory lipoquinone was Q-8. The DNA G+C content of strain 017T was 40.2 mol%. Comparative analysis of 16S rRNA gene sequences and phenotypic characterization indicated that strain 017T represents a novel species in a new genus of the family Cellvibrionaceae, order Cellvibrionales, for which the name Agarilytica rhodophyticola gen. nov., sp. nov. is proposed. The type strain of Agarilytica rhodophyticola is 017T (=KCTC 42584T=MCCC 1H00123T).
+
+  PMID:28879838
+raw_completion_output: |-
+  pmid: 28879838  
+  study_taxa: Agarilytica rhodophyticola  
+  strains: 017; KCTC 42584; MCCC 1H00123  
+  strain_to_taxon: 017 belongs_to Agarilytica rhodophyticola; KCTC 42584 belongs_to Agarilytica rhodophyticola; MCCC 1H00123 belongs_to Agarilytica rhodophyticola  
+  strain_to_phenotype: 017 has_phenotype Gram-stain-negative; 017 has_phenotype rod-shaped; 017 has_phenotype non-spore-forming; 017 has_phenotype aerobic; 017 has_phenotype agarolytic; 017 has_phenotype motile; 017 has_phenotype yellow colonies; 017 has_phenotype optimal_growth_28-33°C; 017 has_phenotype growth_range_15-40°C; 017 has_phenotype optimal_NaCl_3%; 017 has_phenotype NaCl_range_2-4%; 017 has_phenotype optimal_pH_8.0; 017 has_phenotype pH_range_6.5-8.5  
+  strain_to_medium: 017 grows_on_medium marine_agar_2216  
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  subject: <The strain that grows on this medium>
+  predicate: <Type of medium relationshipMust be one of: grows_on_medium, requires_medium>
+  object: <The culture medium>
+
+
+  Text:
+  017 grows_on_medium marine_agar_2216
+
+  ===
+
+extracted_object:
+  pmid: '28879838'
+  study_taxa:
+    - NCBITaxon:1737490
+  strains:
+    - AUTO:017
+    - AUTO:KCTC%2042584
+    - AUTO:MCCC%201H00123
+  strain_to_taxon:
+    - subject: AUTO:017
+      predicate: strain_of
+      object: NCBITaxon:1737490
+    - subject: AUTO:KCTC%2042584
+      predicate: strain_of
+      object: NCBITaxon:1737490
+    - subject: AUTO:MCCC%201H00123
+      predicate: strain_of
+      object: NCBITaxon:1737490
+  strain_to_phenotype:
+    - subject: AUTO:017
+      predicate: has_phenotype
+      object: AUTO:Gram-stain-negative
+    - subject: AUTO:017
+      predicate: has_phenotype
+      object: AUTO:rod-shaped
+    - subject: AUTO:017
+      predicate: has_phenotype
+      object: AUTO:non-spore-forming
+    - subject: AUTO:017
+      predicate: has_phenotype
+      object: AUTO:aerobic
+    - subject: AUTO:017
+      predicate: has_phenotype
+      object: AUTO:agarolytic
+    - subject: AUTO:017
+      predicate: has_phenotype
+      object: OMP:0000005
+    - subject: AUTO:017
+      predicate: has_phenotype
+      object: AUTO:yellow%20colonies
+    - subject: AUTO:017
+      predicate: has_phenotype
+      object: AUTO:optimal_growth_28-33%C2%B0C
+    - subject: AUTO:017
+      predicate: has_phenotype
+      object: AUTO:growth_range_15-40%C2%B0C
+    - subject: AUTO:017
+      predicate: has_phenotype
+      object: AUTO:optimal_NaCl_3%25
+    - subject: AUTO:017
+      predicate: has_phenotype
+      object: AUTO:NaCl_range_2-4%25
+    - subject: AUTO:017
+      predicate: has_phenotype
+      object: AUTO:optimal_pH_8.0
+    - subject: AUTO:017
+      predicate: has_phenotype
+      object: AUTO:pH_range_6.5-8.5
+  strain_to_medium:
+    - subject: AUTO:017
+      predicate: grows_on_medium
+      object: AUTO:marine_agar_2216
+named_entities:
+  - id: NCBITaxon:1737490
+    label: Agarilytica rhodophyticola
+    original_spans:
+      - 0:25
+      - 1252:1277
+      - 1331:1356
+  - id: AUTO:017
+    label: '017'
+    original_spans:
+      - 188:190
+      - 439:441
+      - 580:582
+      - 1009:1011
+      - 1131:1133
+      - 1361:1363
+  - id: AUTO:KCTC%2042584
+    label: KCTC 42584
+    original_spans:
+      - 1368:1377
+  - id: AUTO:MCCC%201H00123
+    label: MCCC 1H00123
+    original_spans:
+      - 1380:1391
+  - id: AUTO:Gram-stain-negative
+    label: Gram-stain-negative
+    original_spans:
+      - 94:112
+  - id: AUTO:rod-shaped
+    label: rod-shaped
+    original_spans:
+      - 115:124
+  - id: AUTO:non-spore-forming
+    label: non-spore-forming
+    original_spans:
+      - 127:143
+  - id: AUTO:aerobic
+    label: aerobic
+    original_spans:
+      - 146:152
+  - id: AUTO:agarolytic
+    label: agarolytic
+    original_spans:
+      - 155:164
+  - id: OMP:0000005
+    label: motile
+    original_spans:
+      - 449:454
+  - id: AUTO:yellow%20colonies
+    label: yellow colonies
+    original_spans:
+      - 467:481
+  - id: AUTO:optimal_growth_28-33%C2%B0C
+    label: optimal_growth_28-33°C
+  - id: AUTO:growth_range_15-40%C2%B0C
+    label: growth_range_15-40°C
+  - id: AUTO:optimal_NaCl_3%25
+    label: optimal_NaCl_3%
+  - id: AUTO:NaCl_range_2-4%25
+    label: NaCl_range_2-4%
+  - id: AUTO:optimal_pH_8.0
+    label: optimal_pH_8.0
+  - id: AUTO:pH_range_6.5-8.5
+    label: pH_range_6.5-8.5
+  - id: AUTO:marine_agar_2216
+    label: marine_agar_2216

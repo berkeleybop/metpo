@@ -1,0 +1,88 @@
+---
+input_text: |
+  Title: Pyrroloquinoline Quinone Ethanol Dehydrogenase in Methylobacterium extorquens AM1 Extends Lanthanide-Dependent Metabolism to Multicarbon Substrates.
+
+  Authors: Good NM, Vu HN, Suriano CJ, Subuyuj GA, Skovran E, Martinez-Gomez NC.
+
+  Journal:  (2016)
+
+  DOI: 10.1128/jb.00478-16
+  PMID: 27573017
+  PMCID: PMC5075040
+
+  Abstract:
+  Lanthanides are utilized by microbial methanol dehydrogenases, and it has been proposed that lanthanides may be important for other type I alcohol dehydrogenases. A triple mutant strain (mxaF xoxF1 xoxF2; named MDH-3), deficient in the three known methanol dehydrogenases of the model methylotroph Methylobacterium extorquens AM1, is able to grow poorly with methanol if exogenous lanthanides are added to the growth medium. When the gene encoding a putative quinoprotein ethanol dehydrogenase, exaF, was mutated in the MDH-3 background, the quadruple mutant strain could no longer grow on methanol in minimal medium with added lanthanum (La<sup>3+</sup>). ExaF was purified from cells grown with both calcium (Ca<sup>2+</sup>) and La<sup>3+</sup> and with Ca<sup>2+</sup> only, and the protein species were studied biochemically. Purified ExaF is a 126-kDa homodimer that preferentially binds La<sup>3+</sup> over Ca<sup>2+</sup> in the active site. UV-visible spectroscopy indicates the presence of pyrroloquinoline quinone (PQQ) as a cofactor. ExaF purified from the Ca<sup>2+</sup>-plus-La<sup>3+</sup> condition readily oxidizes ethanol and has secondary activities with formaldehyde, acetaldehyde, and methanol, whereas ExaF purified from the Ca<sup>2+</sup>-only condition has minimal activity with ethanol as the substrate and activity with methanol is not detectable. The exaF mutant is not affected for growth with ethanol; however, kinetic and in vivo data show that ExaF contributes to ethanol metabolism when La<sup>3+</sup> is present, expanding the role of lanthanides to multicarbon metabolism.<h4>Importance</h4>ExaF is the most efficient PQQ-dependent ethanol dehydrogenase reported to date and, to our knowledge, the first non-XoxF-type alcohol oxidation system reported to use lanthanides as a cofactor, expanding the importance of lanthanides in biochemistry and bacterial metabolism beyond methanol dehydrogenases to multicarbon metabolism. These results support an earlier proposal that an aspartate residue near the catalytic aspartate residue may be an indicator of rare-earth element utilization by type I alcohol dehydrogenases.
+raw_completion_output: |-
+  pmid: 27573017  
+  study_taxa: Methylobacterium extorquens  
+  strains: AM1; MDH-3  
+  strain_to_taxon: AM1 belongs_to Methylobacterium extorquens; MDH-3 belongs_to Methylobacterium extorquens  
+  strain_to_phenotype: MDH-3 has_phenotype grows_poorly_with_methanol_with_exogenous_lanthanides; quadruple_mutant has_phenotype cannot_grow_on_methanol_in_minimal_medium_with_added_lanthanum  
+  strain_to_medium: MDH-3 grows_on_medium minimal_medium_with_exogenous_lanthanides; quadruple_mutant cannot_grow_on_medium minimal_medium_with_added_lanthanum  
+prompt: |+
+  From the text below, extract the following entities in the following format:
+
+  subject: <The strain that grows on this medium>
+  predicate: <Type of medium relationshipMust be one of: grows_on_medium, requires_medium>
+  object: <The culture medium>
+
+
+  Text:
+  quadruple_mutant cannot_grow_on_medium minimal_medium_with_added_lanthanum
+
+  ===
+
+extracted_object:
+  pmid: '27573017'
+  study_taxa:
+    - NCBITaxon:408
+  strains:
+    - AUTO:AM1
+    - AUTO:MDH-3
+  strain_to_taxon:
+    - subject: AUTO:AM1
+      predicate: strain_of
+      object: NCBITaxon:408
+    - subject: AUTO:MDH-3
+      predicate: strain_of
+      object: NCBITaxon:408
+  strain_to_phenotype:
+    - subject: AUTO:MDH-3
+      predicate: has_phenotype
+      object: AUTO:grows_poorly_with_methanol_with_exogenous_lanthanides
+    - subject: AUTO:quadruple_mutant
+      predicate: has_phenotype
+      object: 
+        AUTO:cannot_grow_on_methanol_in_minimal_medium_with_added_lanthanum
+  strain_to_medium:
+    - subject: AUTO:MDH-3
+      predicate: grows_on_medium
+      object: AUTO:minimal_medium_with_exogenous_lanthanides
+    - subject: AUTO:quadruple_mutant
+      object: AUTO:minimal_medium_with_added_lanthanum
+named_entities:
+  - id: NCBITaxon:408
+    label: Methylobacterium extorquens
+    original_spans:
+      - 57:83
+      - 622:648
+  - id: AUTO:AM1
+    label: AM1
+    original_spans:
+      - 85:87
+      - 650:652
+  - id: AUTO:MDH-3
+    label: MDH-3
+    original_spans:
+      - 535:539
+      - 844:848
+  - id: AUTO:grows_poorly_with_methanol_with_exogenous_lanthanides
+    label: grows_poorly_with_methanol_with_exogenous_lanthanides
+  - id: AUTO:quadruple_mutant
+    label: quadruple_mutant
+  - id: AUTO:cannot_grow_on_methanol_in_minimal_medium_with_added_lanthanum
+    label: cannot_grow_on_methanol_in_minimal_medium_with_added_lanthanum
+  - id: AUTO:minimal_medium_with_exogenous_lanthanides
+    label: minimal_medium_with_exogenous_lanthanides
+  - id: AUTO:minimal_medium_with_added_lanthanum
+    label: minimal_medium_with_added_lanthanum

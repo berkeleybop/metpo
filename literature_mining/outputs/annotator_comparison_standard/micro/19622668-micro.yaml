@@ -1,0 +1,117 @@
+---
+input_text: |-
+  Bavariicoccus seileri gen. nov., sp. nov., isolated from the surface and smear water of German red smear soft cheese.
+
+  The phylogenetic position and physiological characters of six hitherto-unknown lactic acid bacterial isolates, which form part of the surface microbiota of German red smear soft cheese, are reported. The coccoid cells are aerotolerant, Gram-positive, catalase-negative and non-motile. The cell-wall peptidoglycan contains alanine, glutamic acid, lysine and aspartic acid and is of the A4alpha type (l-Lys-d-Asp). The sequences of the 16S rRNA, groEL and rpoB genes of the six isolates are identical and reveal that these isolates represent an independent lineage within the radiation of the family Enterococcaceae in the phylum Firmicutes. Their closest phylogenetic neighbour is the lactic acid bacterium Atopobacter phocae M1590/94/2(T), with which they share 94.9 % 16S rRNA gene sequence similarity; representatives of other genera such as Granulicatella, Carnobacterium and Trichococcus are more distantly related. DNA-DNA hybridization studies reveal that the six isolates are members of a single species, and this is confirmed by similarities in biochemical characteristics. The six isolates were assigned four different groups by Fourier-transform infrared and randomly amplified polymorphic DNA typing. Therefore, it is formally proposed that these isolates should be classified in a single novel species of a novel genus and be named Bavariicoccus seileri gen. nov., sp. nov. The type strain of Bavariicoccus seileri is WCC 4188(T) (=DSM 19936(T) =CCUG 55508(T)).
+
+  PMID:19622668
+raw_completion_output: |-
+  pmid: 19622668  
+  study_taxa: Bavariicoccus seileri  
+  strains: WCC 4188; DSM 19936; CCUG 55508  
+  strain_to_taxon: WCC 4188 belongs_to Bavariicoccus seileri; DSM 19936 belongs_to Bavariicoccus seileri; CCUG 55508 belongs_to Bavariicoccus seileri  
+  strain_to_phenotype: WCC 4188 has_phenotype coccoid; WCC 4188 has_phenotype aerotolerant; WCC 4188 has_phenotype Gram-positive; WCC 4188 has_phenotype non-motile; DSM 19936 has_phenotype coccoid; DSM 19936 has_phenotype aerotolerant; DSM 19936 has_phenotype Gram-positive; DSM 19936 has_phenotype non-motile; CCUG 55508 has_phenotype coccoid; CCUG 55508 has_phenotype aerotolerant; CCUG 55508 has_phenotype Gram-positive; CCUG 55508 has_phenotype non-motile  
+  strain_to_medium:  
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  subject: <The strain with this phenotype>
+  predicate: <Always "has_phenotype"Must be one of: has_phenotype>
+  object: <The phenotypic characteristic>
+
+
+  Text:
+  CCUG 55508 has_phenotype non-motile
+
+  ===
+
+extracted_object:
+  pmid: '19622668'
+  study_taxa:
+    - NCBITaxon:549685
+  strains:
+    - AUTO:WCC%204188
+    - AUTO:DSM%2019936
+    - AUTO:CCUG%2055508
+  strain_to_taxon:
+    - subject: AUTO:WCC%204188
+      predicate: strain_of
+      object: NCBITaxon:549685
+    - subject: AUTO:DSM%2019936
+      predicate: strain_of
+      object: NCBITaxon:549685
+    - subject: AUTO:CCUG%2055508
+      predicate: strain_of
+      object: NCBITaxon:549685
+  strain_to_phenotype:
+    - subject: AUTO:WCC%204188
+      predicate: has_phenotype
+      object: AUTO:coccoid
+    - subject: AUTO:WCC%204188
+      predicate: has_phenotype
+      object: MICRO:0000502
+    - subject: AUTO:WCC%204188
+      predicate: has_phenotype
+      object: AUTO:Gram-positive
+    - subject: AUTO:WCC%204188
+      predicate: has_phenotype
+      object: AUTO:non-motile
+    - subject: AUTO:DSM%2019936
+      predicate: has_phenotype
+      object: AUTO:coccoid
+    - subject: AUTO:DSM%2019936
+      predicate: has_phenotype
+      object: MICRO:0000502
+    - subject: AUTO:DSM%2019936
+      predicate: has_phenotype
+      object: AUTO:Gram-positive
+    - subject: AUTO:DSM%2019936
+      predicate: has_phenotype
+      object: AUTO:non-motile
+    - subject: AUTO:CCUG%2055508
+      predicate: has_phenotype
+      object: AUTO:coccoid
+    - subject: AUTO:CCUG%2055508
+      predicate: has_phenotype
+      object: MICRO:0000502
+    - subject: AUTO:CCUG%2055508
+      predicate: has_phenotype
+      object: AUTO:Gram-positive
+    - subject: AUTO:CCUG%2055508
+      predicate: has_phenotype
+      object: AUTO:non-motile
+named_entities:
+  - id: NCBITaxon:549685
+    label: Bavariicoccus seileri
+    original_spans:
+      - 0:20
+      - 1463:1483
+      - 1524:1544
+  - id: AUTO:WCC%204188
+    label: WCC 4188
+    original_spans:
+      - 1549:1556
+  - id: AUTO:DSM%2019936
+    label: DSM 19936
+    original_spans:
+      - 1563:1571
+  - id: AUTO:CCUG%2055508
+    label: CCUG 55508
+    original_spans:
+      - 1577:1586
+  - id: AUTO:coccoid
+    label: coccoid
+    original_spans:
+      - 323:329
+  - id: MICRO:0000502
+    label: aerotolerant
+    original_spans:
+      - 341:352
+  - id: AUTO:Gram-positive
+    label: Gram-positive
+    original_spans:
+      - 355:367
+  - id: AUTO:non-motile
+    label: non-motile
+    original_spans:
+      - 392:401
