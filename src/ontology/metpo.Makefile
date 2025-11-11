@@ -46,8 +46,8 @@ clean-templates:
 #			--axioms equivalent \
 #			--output $@
 
-../templates/stubs.tsv: ../templates/metpo_sheet.tsv ../templates/metpo-properties.tsv ../../metpo/scripts/create_stubs.py
-	python ../../metpo/scripts/create_stubs.py $@ ../templates/metpo_sheet.tsv ../templates/metpo-properties.tsv
+../templates/stubs.tsv: ../templates/metpo_sheet.tsv ../templates/metpo-properties.tsv ../../metpo/bactotraits/create_stubs.py
+	python ../../metpo/bactotraits/create_stubs.py -o $@ ../templates/metpo_sheet.tsv ../templates/metpo-properties.tsv
 
 components/metpo_sheet.owl: ../templates/stubs.tsv ../templates/metpo-properties.tsv ../templates/metpo_sheet.tsv
 	$(ROBOT) template \
