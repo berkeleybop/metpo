@@ -8,6 +8,7 @@ Uses keyword-based scoring learned from domain expert feedback patterns.
 import csv
 from pathlib import Path
 import click
+from metpo.cli_common import input_csv_option
 
 
 def score_ontology(onto):
@@ -135,11 +136,12 @@ def score_ontology(onto):
 
 
 @click.command()
-@click.option('--input-csv', default='ontology_catalog.csv', help='Input ontology catalog CSV')
+@input_csv_option(required=False, help_text='Input ontology catalog CSV')
 @click.option('--output-prefix', default='ontologies', help='Output file prefix')
-def main(input_csv, output_prefix):
+def main(input_file, output_prefix):
     """Categorize ontologies by relevance to microbial phenotypes."""
-    
+    input_csv = input_file or 'ontology_catalog.csv'
+
     # Read ontology catalog
     ontologies = []
     with open(input_csv, 'r') as f:

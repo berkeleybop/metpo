@@ -14,6 +14,8 @@ import sys
 from pathlib import Path
 from typing import Dict, Optional, Tuple
 
+import click
+
 
 def normalize_id(id_str: str) -> str:
     """Convert various ID formats to METPO:XXXXXXX format."""
@@ -242,76 +244,90 @@ def enhance_minimal_classes(minimal_path: Path,
     return stats
 
 
-def main():
-    import argparse
+@click.command()
+@click.option(
+    '--execute',
+    is_flag=True,
+    default=False,
+    help='Actually write the enhanced file (default is dry-run)'
+)
+@click.option(
+    '--bactotraits',
+    type=click.Path(exists=True, dir_okay=False, path_type=Path),
+    default=Path('downloads/sheets/bactotraits.tsv'),
+    help='Path to bactotraits.tsv'
+)
+@click.option(
+    '--minimal',
+    type=click.Path(exists=True, dir_okay=False, path_type=Path),
+    default=Path('downloads/sheets/minimal_classes.tsv'),
+    help='Path to minimal_classes.tsv'
+)
+@click.option(
+    '--output',
+    type=click.Path(dir_okay=False, path_type=Path),
+    default=Path('downloads/sheets/minimal_classes_enhanced.tsv'),
+    help='Output path for enhanced file'
+)
+def main(execute, bactotraits, minimal, output):
+    """Migrate range metadata to minimal_classes.tsv.
 
-    parser = argparse.ArgumentParser(description='Migrate range metadata to minimal_classes.tsv')
-    parser.add_argument('--dry-run', action='store_true', default=True,
-                        help='Preview changes without writing (default: True)')
-    parser.add_argument('--execute', action='store_true',
-                        help='Actually write the enhanced file')
-    parser.add_argument('--bactotraits', type=Path,
-                        default=Path('/Users/MAM/Documents/gitrepos/metpo/downloads/sheets/bactotraits.tsv'),
-                        help='Path to bactotraits.tsv')
-    parser.add_argument('--minimal', type=Path,
-                        default=Path('/Users/MAM/Documents/gitrepos/metpo/downloads/sheets/minimal_classes.tsv'),
-                        help='Path to minimal_classes.tsv')
-    parser.add_argument('--output', type=Path,
-                        default=Path('/Users/MAM/Documents/gitrepos/metpo/downloads/sheets/minimal_classes_enhanced.tsv'),
-                        help='Output path for enhanced file')
+    By default, runs in dry-run mode to preview changes.
+    Use --execute to actually write the enhanced file.
 
-    args = parser.parse_args()
+    Example:
+        uv run migrate-range-metadata --execute
+    """
+    dry_run = not execute
 
-    dry_run = not args.execute
-
-    print("="*80)
-    print("Range Metadata Migration Tool v2")
-    print("Column-based approach with Google Sheets formula support")
-    print("="*80)
-    print(f"Mode: {'DRY RUN (preview only)' if dry_run else 'EXECUTE (will write file)'}")
-    print()
+    click.echo("=" * 80)
+    click.echo("Range Metadata Migration Tool v2")
+    click.echo("Column-based approach with Google Sheets formula support")
+    click.echo("=" * 80)
+    click.echo(f"Mode: {'DRY RUN (preview only)' if dry_run else 'EXECUTE (will write file)'}")
+    click.echo()
 
     # Load range metadata
-    print("Loading range metadata from bactotraits.tsv...")
-    range_data = load_range_metadata(args.bactotraits)
-    print(f"Found {len(range_data)} classes with range metadata")
-    print()
+    click.echo("Loading range metadata from bactotraits.tsv...")
+    range_data = load_range_metadata(bactotraits)
+    click.echo(f"Found {len(range_data)} classes with range metadata")
+    click.echo()
 
     # Enhance minimal_classes
-    print("Processing minimal_classes.tsv...")
+    click.echo("Processing minimal_classes.tsv...")
     if dry_run:
-        print("\nPreview of changes (first 5 classes):")
-        print("-" * 80)
+        click.echo("\nPreview of changes (first 5 classes):")
+        click.echo("-" * 80)
 
-    stats = enhance_minimal_classes(args.minimal, range_data, args.output, dry_run)
+    stats = enhance_minimal_classes(minimal, range_data, output, dry_run)
 
-    print()
-    print("="*80)
-    print("Summary")
-    print("="*80)
-    print(f"Total classes in minimal_classes.tsv: {stats['total']}")
-    print(f"Classes enhanced with ranges: {stats['enhanced']}")
-    print(f"Classes without ranges: {stats['skipped']}")
+    click.echo()
+    click.echo("=" * 80)
+    click.echo("Summary")
+    click.echo("=" * 80)
+    click.echo(f"Total classes in minimal_classes.tsv: {stats['total']}")
+    click.echo(f"Classes enhanced with ranges: {stats['enhanced']}")
+    click.echo(f"Classes without ranges: {stats['skipped']}")
 
     if dry_run:
-        print()
-        print("ℹ️  This was a DRY RUN. No files were modified.")
-        print(f"To execute: python {Path(__file__).name} --execute")
+        click.echo()
+        click.echo("ℹ️  This was a DRY RUN. No files were modified.")
+        click.echo("To execute: uv run migrate-range-metadata --execute")
     else:
-        print()
-        print(f"✓ Enhanced file written to: {args.output}")
-        print()
-        print("Next steps:")
-        print("1. Review the enhanced TSV file")
-        print("2. Import to Google Sheets:")
-        print("   - Open minimal_classes sheet")
-        print("   - Add 4 new columns: measurement_unit_ucum, range_min, range_max, equivalent_class_formula")
-        print("   - Copy data from enhanced TSV")
-        print("3. IMPORTANT: Add Google Sheets formula to equivalent_class_formula column:")
-        print("   Formula: =IF(AND(NOT(ISBLANK(range_min)), NOT(ISBLANK(range_max))),")
-        print('            "\'has measurement value\' some float[>= " & range_min & " , <= " & range_max & "]", "")')
-        print("4. Test download: make download-all-sheets")
-        print("5. Test build: cd src/ontology && make metpo.owl")
+        click.echo()
+        click.echo(f"✓ Enhanced file written to: {output}")
+        click.echo()
+        click.echo("Next steps:")
+        click.echo("1. Review the enhanced TSV file")
+        click.echo("2. Import to Google Sheets:")
+        click.echo("   - Open minimal_classes sheet")
+        click.echo("   - Add 4 new columns: measurement_unit_ucum, range_min, range_max, equivalent_class_formula")
+        click.echo("   - Copy data from enhanced TSV")
+        click.echo("3. IMPORTANT: Add Google Sheets formula to equivalent_class_formula column:")
+        click.echo("   Formula: =IF(AND(NOT(ISBLANK(range_min)), NOT(ISBLANK(range_max))),")
+        click.echo('            "\'has measurement value\' some float[>= " & range_min & " , <= " & range_max & "]", "")')
+        click.echo("4. Test download: make download-all-sheets")
+        click.echo("5. Test build: cd src/ontology && make metpo.owl")
 
 
 if __name__ == "__main__":

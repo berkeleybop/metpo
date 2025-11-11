@@ -5,10 +5,61 @@ UNZIP=unzip
 export
 
 # ==============================================================================
+# Default Target
+# ==============================================================================
+
+.DEFAULT_GOAL := help
+
+# ==============================================================================
 # Environment Setup Targets
 # ==============================================================================
 
-.PHONY: install install-dev install-literature install-databases install-notebooks install-all check-env clean-env clean-data metpo-report
+.PHONY: help install install-dev install-literature install-databases install-notebooks install-all check-env clean-env clean-data metpo-report
+
+# Show available targets and usage information
+help:
+	@echo "METPO Project - Main Makefile"
+	@echo ""
+	@echo "Environment Setup:"
+	@echo "  make install              - Install core dependencies"
+	@echo "  make install-dev          - Install development environment"
+	@echo "  make install-literature   - Install literature mining environment"
+	@echo "  make install-databases    - Install database workflows environment"
+	@echo "  make install-notebooks    - Install notebooks environment"
+	@echo "  make install-all          - Install all optional dependencies"
+	@echo "  make check-env            - Check environment status"
+	@echo ""
+	@echo "Quality Control:"
+	@echo "  make metpo-report.tsv     - Generate ROBOT quality control report"
+	@echo ""
+	@echo "Data Import:"
+	@echo "  make import-all           - Import all datasets (BactoTraits + Madin)"
+	@echo "  make import-bactotraits   - Import BactoTraits data to MongoDB"
+	@echo "  make import-madin         - Import Madin et al. data to MongoDB"
+	@echo ""
+	@echo "Analysis Reports:"
+	@echo "  make all-reports          - Generate all analysis reports"
+	@echo ""
+	@echo "Ontology Alignment Pipeline:"
+	@echo "  make help-alignment       - Show detailed alignment pipeline help"
+	@echo "  make alignment-run-all    - Run complete alignment pipeline"
+	@echo ""
+	@echo "External Ontology Downloads:"
+	@echo "  make download-external-bioportal-ontologies  - Download non-OLS ontologies"
+	@echo "  make generate-non-ols-tsvs                   - Extract terms for embeddings"
+	@echo "  make scan-manifest                           - Update ontology manifest"
+	@echo ""
+	@echo "Literature Mining:"
+	@echo "  make -C literature_mining help               - Show literature mining help"
+	@echo ""
+	@echo "Cleanup:"
+	@echo "  make clean-all            - Complete cleanup (env + data + databases)"
+	@echo "  make clean-env            - Remove virtual environments"
+	@echo "  make clean-data           - Remove generated data files"
+	@echo "  make clean-reports        - Remove analysis reports"
+	@echo ""
+	@echo "Testing:"
+	@echo "  make test-workflow        - Test complete workflow reproducibility"
 
 # Base installation (core dependencies only: click, python-dotenv, pyyaml, requests)
 install:
@@ -79,7 +130,7 @@ clean-data:
 	rm -f local/noderanks.ttl
 	rm -f data/generated/bacdive_oxygen_phenotype_mappings.tsv
 	rm -rf external/metpo_historical/
-	rm -rf metadata/historical_usage_analysis/entity_extracts/
+	rm -rf metadata/ontology/historical_submissions/entity_extracts/
 	rm -rf downloads/sheets/
 	@echo "All generated data files cleaned"
 
@@ -228,19 +279,19 @@ import-bactotraits:
 	uv run import-bactotraits
 
 .PHONY: import-bactotraits-metadata
-import-bactotraits-metadata: metadata/bactotraits_field_mappings.json metadata/bactotraits_files.json
-	jq '.mappings' metadata/bactotraits_field_mappings.json | \
+import-bactotraits-metadata: metadata/databases/bactotraits/bactotraits_field_mappings.json metadata/databases/bactotraits/bactotraits_files.json
+	jq '.mappings' metadata/databases/bactotraits/bactotraits_field_mappings.json | \
 		mongoimport --db bactotraits --collection field_mappings \
 		--jsonArray --drop
 	mongoimport --db bactotraits --collection files \
-		--file metadata/bactotraits_files.json \
+		--file metadata/databases/bactotraits/bactotraits_files.json \
 		--jsonArray --drop
 	@echo "BactoTraits metadata collections imported"
 
 .PHONY: import-madin-metadata
-import-madin-metadata: metadata/madin_files.json
+import-madin-metadata: metadata/databases/madin/madin_files.json
 	mongoimport --db madin --collection files \
-		--file metadata/madin_files.json \
+		--file metadata/databases/madin/madin_files.json \
 		--jsonArray --drop
 	@echo "Madin metadata collections imported"
 
@@ -259,7 +310,7 @@ reports/bactotraits-metpo-reconciliation.yaml: metpo/bactotraits/reconcile_bacto
 		--output $@
 
 # BactoTraits field mappings - generates JSON and loads to MongoDB
-metadata/bactotraits_field_mappings.json: local/bactotraits/BactoTraits_databaseV2_Jun2022.csv local/bactotraits/BactoTraits.tsv
+metadata/databases/bactotraits/bactotraits_field_mappings.json: local/bactotraits/BactoTraits_databaseV2_Jun2022.csv local/bactotraits/BactoTraits.tsv
 	uv run create-bactotraits-field-mappings \
 		--provider-file local/bactotraits/BactoTraits_databaseV2_Jun2022.csv \
 		--kg-microbe-file local/bactotraits/BactoTraits.tsv \
@@ -471,21 +522,21 @@ list-bioportal-submissions:
 .PHONY: extract-all-metpo-entities clean-entity-extracts
 
 # Extract METPO entities from all submissions
-extract-all-metpo-entities: $(foreach sub,$(METPO_SUBMISSIONS),metadata/historical_usage_analysis/entity_extracts/metpo_submission_$(word 1,$(subst :, ,$(sub)))_all_entities.tsv)
-	@echo "All METPO entities extracted to metadata/historical_usage_analysis/entity_extracts/"
+extract-all-metpo-entities: $(foreach sub,$(METPO_SUBMISSIONS),metadata/ontology/historical_submissions/entity_extracts/metpo_submission_$(word 1,$(subst :, ,$(sub)))_all_entities.tsv)
+	@echo "All METPO entities extracted to metadata/ontology/historical_submissions/entity_extracts/"
 
 # Individual entity extraction targets
-metadata/historical_usage_analysis/entity_extracts/metpo_submission_%_all_entities.tsv: external/metpo_historical/metpo_submission_%.owl | metadata/historical_usage_analysis/entity_extracts
+metadata/ontology/historical_submissions/entity_extracts/metpo_submission_%_all_entities.tsv: external/metpo_historical/metpo_submission_%.owl | metadata/ontology/historical_submissions/entity_extracts
 	@echo "Extracting entities from METPO submission $*..."
 	robot query -i $< -s sparql/query_metpo_entities.sparql $@
 
 # Ensure entity_extracts directory exists
-metadata/historical_usage_analysis/entity_extracts:
+metadata/ontology/historical_submissions/entity_extracts:
 	mkdir -p $@
 
 # Clean extracted entity files
 clean-entity-extracts:
-	rm -rf metadata/historical_usage_analysis/entity_extracts/
+	rm -rf metadata/ontology/historical_submissions/entity_extracts/
 	@echo "Extracted entity files cleaned"
 
 # Ensure downloads/bioportal directory exists
@@ -523,7 +574,7 @@ alignment-fetch-ontology-names: notebooks/ontology_catalog.csv
 
 notebooks/ontology_catalog.csv: data/ontology_assessments/ontology_sizes.csv
 	@echo "Fetching ontology metadata from OLS4 API..."
-	python metpo/pipeline/fetch_ontology_names.py \
+	uv run python metpo/pipeline/fetch_ontology_names.py \
 		--sizes-csv data/ontology_assessments/ontology_sizes.csv \
 		--output-csv notebooks/ontology_catalog.csv
 
@@ -531,7 +582,7 @@ alignment-categorize-ontologies: notebooks/ontologies_very_appealing.csv
 
 notebooks/ontologies_very_appealing.csv: notebooks/ontology_catalog.csv
 	@echo "Categorizing ontologies by relevance..."
-	python metpo/pipeline/categorize_ontologies.py \
+	uv run python metpo/pipeline/categorize_ontologies.py \
 		--input-csv notebooks/ontology_catalog.csv \
 		--output-prefix notebooks/ontologies
 
@@ -543,7 +594,7 @@ notebooks/metpo_relevant_mappings.sssom.tsv: notebooks/metpo_relevant_chroma
 		echo "ERROR: OPENAI_API_KEY environment variable not set"; \
 		exit 1; \
 	fi
-	python metpo/pipeline/chromadb_semantic_mapper.py \
+	uv run python metpo/pipeline/chromadb_semantic_mapper.py \
 		--metpo-tsv src/templates/metpo_sheet.tsv \
 		--chroma-path notebooks/metpo_relevant_chroma \
 		--collection-name metpo_relevant_embeddings \
@@ -554,7 +605,7 @@ notebooks/metpo_relevant_mappings.sssom.tsv: notebooks/metpo_relevant_chroma
 
 alignment-analyze-matches: notebooks/metpo_relevant_mappings.sssom.tsv
 	@echo "Analyzing match quality..."
-	python metpo/pipeline/analyze_matches.py \
+	uv run python metpo/pipeline/analyze_matches.py \
 		--input-csv notebooks/metpo_relevant_mappings.sssom.tsv \
 		--good-match-threshold 0.9
 
@@ -562,7 +613,7 @@ alignment-analyze-coherence: notebooks/full_coherence_results.csv
 
 notebooks/full_coherence_results.csv: notebooks/metpo_relevant_mappings.sssom.tsv
 	@echo "Computing structural coherence (this may take a while)..."
-	python metpo/pipeline/analyze_sibling_coherence.py \
+	uv run python metpo/pipeline/analyze_sibling_coherence.py \
 		--input-csv notebooks/metpo_relevant_mappings.sssom.tsv \
 		--metpo-owl src/ontology/metpo.owl \
 		--output-csv notebooks/full_coherence_results.csv
@@ -571,7 +622,7 @@ alignment-identify-candidates: notebooks/alignment_candidates.csv
 
 notebooks/alignment_candidates.csv: notebooks/full_coherence_results.csv
 	@echo "Identifying alignment candidates..."
-	python metpo/pipeline/analyze_coherence_results.py \
+	uv run python metpo/pipeline/analyze_coherence_results.py \
 		--results-csv notebooks/full_coherence_results.csv \
 		--matches-csv notebooks/metpo_relevant_mappings.sssom.tsv
 

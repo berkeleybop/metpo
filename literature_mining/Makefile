@@ -13,6 +13,9 @@ INPUT_DIR ?= abstracts/test-taxa-minimal
 DIRS := inputs intermediates templates abstracts outputs logs assessments cache
 TIMESTAMP := $(shell date +"%Y%m%d_%H%M%S")
 
+# Default target
+.DEFAULT_GOAL := help
+
 .PHONY: help setup pmids abstracts intermediates templates validate-templates extract assess clean icbo-setup icbo-phenotypes icbo-chemicals icbo-analyze icbo-convert-turtle icbo-clean icbo-clean-all
 
 help:

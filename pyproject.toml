@@ -68,19 +68,43 @@ notebooks = [
 ]
 
 [project.scripts]
+# Tools
 extract-rank-triples = "metpo.tools.extract_rank_triples:extract_taxon_ranks"
 convert-chem-props = "metpo.tools.convert_chem_props:convert_chem_props"
 import-bactotraits = "metpo.tools.import_bactotraits:import_bactotraits"
+
+# BactoTraits
 reconcile-bactotraits-coverage = "metpo.bactotraits.reconcile_bactotraits_coverage:main"
 reconcile-madin-coverage = "metpo.bactotraits.reconcile_madin_coverage:main"
 bactotraits-metpo-set-difference = "metpo.bactotraits.bactotraits_metpo_set_difference:main"
 create-bactotraits-field-mappings = "metpo.bactotraits.create_bactotraits_header_mapping:main"
 create-bactotraits-file-versions = "metpo.bactotraits.create_bactotraits_file_versions:main"
 create-bactotraits-files = "metpo.bactotraits.create_bactotraits_files:main"
+create-stubs = "metpo.bactotraits.create_stubs:main"
+migrate-range-metadata = "metpo.bactotraits.migrate_range_metadata_v2:main"
 update-manifest = "metpo.bactotraits.update_manifest:main"
 scan-manifest = "metpo.bactotraits.scan_manifest:main"
 download-ontology = "metpo.bactotraits.download_ontology:main"
 query-ontology = "metpo.bactotraits.query_ontology:main"
+
+# Pipeline
+categorize-ontologies = "metpo.pipeline.categorize_ontologies:main"
+analyze-matches = "metpo.pipeline.analyze_matches:main"
+embed-ontology-to-chromadb = "metpo.pipeline.embed_ontology_to_chromadb:main"
+fetch-ontology-names = "metpo.pipeline.fetch_ontology_names:main"
+chromadb-semantic-mapper = "metpo.pipeline.chromadb_semantic_mapper:main"
+analyze-sibling-coherence = "metpo.pipeline.analyze_sibling_coherence:main"
+analyze-coherence-results = "metpo.pipeline.analyze_coherence_results:main"
+
+# Database
+migrate-to-chromadb = "metpo.database.migrate_to_chromadb_resilient:main"
+audit-chromadb = "metpo.database.audit_chromadb:main"
+combine-chromadb = "metpo.database.combine_chromadb:main"
+filter-ols-chromadb = "metpo.database.filter_ols_chromadb:main"
+
+# Analysis
+analyze-ontology-value = "metpo.analysis.analyze_ontology_value:main"
+analyze-match-quality = "metpo.analysis.analyze_match_quality:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["metpo"]

@@ -8,6 +8,7 @@ from oaklib.datamodels.vocabulary import IS_A, PART_OF
 import re
 from dotenv import load_dotenv, find_dotenv
 from tqdm import tqdm
+from metpo.cli_common import input_csv_option, output_option, distance_threshold_option, debug_option
 
 
 class ExternalOntologyHelper:
@@ -242,35 +243,22 @@ class OaklibHierarchy:
 
 
 @click.command()
-@click.option(
-    '--input-csv',
-    type=click.Path(exists=True, dir_okay=False, path_type=str),
-    default='../metpo_relevant_mappings.sssom.tsv',
-    help="Path to the SSSOM TSV file containing METPO term mappings."
-)
+@input_csv_option(required=False, help_text="Path to the SSSOM TSV file containing METPO term mappings")
 @click.option(
     '--metpo-owl',
     type=click.Path(exists=True, dir_okay=False, path_type=str),
     default='../src/ontology/metpo.owl',
     help="Path to the METPO OWL file for hierarchy parsing."
 )
-@click.option(
-    '--good-match-threshold',
-    type=float,
-    default=0.9,
-    help="Distance threshold below which a match is considered 'good'."
-)
-@click.option("--debug", is_flag=True, help="Enable verbose debug output.")
-@click.option(
-    '--output-csv',
-    type=click.Path(dir_okay=False, path_type=str),
-    default='../data/coherence/sibling_coherence_analysis_output.csv',
-    help="Path to save coherence results CSV."
-)
-def main(input_csv: str, metpo_owl: str, good_match_threshold: float, debug: bool, output_csv: str):
-    """
-    Analyzes sibling coherence for METPO term mappings from SSSOM TSV.
-    """
+@distance_threshold_option(default=0.9, help_text="Distance threshold below which a match is considered 'good'")
+@debug_option(help_text="Enable verbose debug output")
+@output_option(default='../data/coherence/sibling_coherence_analysis_output.csv', help_text="Path to save coherence results CSV")
+def main(input_file: str, metpo_owl: str, distance_threshold: float, debug: bool, output: str):
+    """Analyzes sibling coherence for METPO term mappings from SSSOM TSV."""
+    input_csv = input_file or '../metpo_relevant_mappings.sssom.tsv'
+    good_match_threshold = distance_threshold
+    output_csv = output
+
     # Load environment variables from .env file, searching from the current working directory upwards
     # This allows the script to find the .env file in the parent metpo directory
     load_dotenv(find_dotenv(usecwd=True))

@@ -1,3 +1,9 @@
+"""Extract taxonomy rank triples from NCBI nodes.dmp file.
+
+This tool processes the NCBI taxonomy nodes.dmp file and extracts
+taxonomic rank information as RDF triples in Turtle format.
+"""
+
 import click
 from rdflib import Graph, URIRef, Literal
 from tqdm import tqdm

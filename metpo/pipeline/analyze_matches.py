@@ -1,23 +1,15 @@
 import pandas as pd
 import click
+from metpo.cli_common import input_csv_option, distance_threshold_option
 
 @click.command()
-@click.option(
-    '--input-csv',
-    type=click.Path(exists=True, dir_okay=False, path_type=str),
-    default='../metpo_relevant_mappings.sssom.tsv',
-    help="Path to the SSSOM TSV file containing METPO term mappings."
-)
-@click.option(
-    '--good-match-threshold',
-    type=float,
-    default=0.9,
-    help="Distance threshold below which a match is considered 'good'."
-)
-def main(input_csv: str, good_match_threshold: float):
-    """
-    Analyzes METPO term match quality from an SSSOM TSV file.
-    """
+@input_csv_option(required=False, help_text="Path to the SSSOM TSV file containing METPO term mappings")
+@distance_threshold_option(default=0.9, help_text="Distance threshold below which a match is considered 'good'")
+def main(input_file: str, distance_threshold: float):
+    """Analyzes METPO term match quality from an SSSOM TSV file."""
+    input_csv = input_file or '../metpo_relevant_mappings.sssom.tsv'
+    good_match_threshold = distance_threshold
+
     print(f"Loading mappings from: {input_csv}")
     try:
         # Read SSSOM TSV (skip metadata lines starting with #)

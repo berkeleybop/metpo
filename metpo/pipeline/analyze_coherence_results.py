@@ -11,10 +11,18 @@ import click
 
 
 @click.command()
-@click.option('--results-csv', default='../data/coherence/sibling_coherence_analysis_output.csv', help='Coherence results CSV')
-@click.option('--matches-csv', default='../data/mappings/metpo_mappings_combined_relaxed.sssom.tsv', help='SSSOM TSV mappings file')
-def main(results_csv: str, matches_csv: str):
+@click.option('--results-file', '-r',
+              type=click.Path(exists=True, dir_okay=False),
+              default='../data/coherence/sibling_coherence_analysis_output.csv',
+              help='Coherence results CSV file')
+@click.option('--mappings-file', '-m',
+              type=click.Path(exists=True, dir_okay=False),
+              default='../data/mappings/metpo_mappings_combined_relaxed.sssom.tsv',
+              help='SSSOM TSV mappings file')
+def main(results_file: str, mappings_file: str):
     """Analyze coherence results to find strong alignments."""
+    results_csv = results_file
+    matches_csv = mappings_file
 
     print("Loading data...")
     coherence_df = pd.read_csv(results_csv)

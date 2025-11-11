@@ -5,15 +5,18 @@ import requests
 import csv
 import time
 import click
+from metpo.cli_common import input_csv_option, output_option
 
 
 @click.command()
-@click.option('--sizes-csv', default='../data/ontology_assessments/ontology_sizes.csv', help='Input CSV with ontology sizes')
-@click.option('--output-csv', default='ontology_catalog.csv', help='Output merged catalog CSV')
+@input_csv_option(required=False, help_text='Input CSV with ontology sizes')
+@output_option(default='ontology_catalog.csv', help_text='Output merged catalog CSV')
 @click.option('--api-delay', default=0.5, type=float, help='Delay between API requests (seconds)')
-def main(sizes_csv, output_csv, api_delay):
-    """Fetch ontology metadata from OLS4 API and merge with size data."""
-    
+def main(input_file, output, api_delay):
+    """Fetch ontology names from OLS4 API and merge with size data."""
+    sizes_csv = input_file or '../data/ontology_assessments/ontology_sizes.csv'
+    output_csv = output
+
     # Load our ontology sizes
     sizes = {}
     with open(sizes_csv, 'r') as f:

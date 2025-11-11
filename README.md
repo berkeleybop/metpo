@@ -215,8 +215,10 @@ make notebooks/non-ols-terms/D3O.tsv
 ## Key Documentation
 
 - **Ontology editing**: `src/ontology/README-editors.md`
+- **CLI reference**: `docs/cli-reference.md` - Complete guide to all 30+ command-line tools
 - **Literature mining**: `literature_mining/README.md`
-- **Historical analysis**: `metadata/historical_usage_analysis/README.md`
+- **Historical analysis**: `metadata/ontology/historical_submissions/README.md`
+- **Database metadata**: `metadata/databases/README.md`
 - **Development guide**: `CLAUDE.md`
 - **Analysis reports**: `reports/`
 
