@@ -97,6 +97,8 @@ Environmental preferences and metabolic capabilities that define where and how m
 - Value representations (qualitative vs. quantitative)
 - Taxon identifiers
 
+**Integration into KG-Microbe:** 328K nodes, 1.86M edges from **observation-based** phenotypes (not genome predictions)
+
 **Solution:** We need an ontology to provide semantic interoperability.
 
 ---
@@ -116,7 +118,18 @@ We evaluated existing ontologies for microbial trait coverage:
 **Key findings:**
 - No single ontology provides comprehensive coverage for BacDive, BactoTraits, and Madin datasets
 - Many domain-specific ontologies lack active maintenance
-- Integration of multiple ontologies introduces significant complexity
+
+---
+
+## The Gap: Technical Issues with Existing Ontologies
+
+**Technical issues limit their use:**
+- MicrO has 7,130 validation errors and 60 unsatisfiable classes when imported
+- MPO embeddings are close to METPO but definitions are just label repetitions
+
+**Reality check:** Mean structural coherence = 8.2%
+- Semantic matches exist, but hierarchical organization differs significantly
+- Justifies purpose-built ontology over importing external structures
 
 ---
 
@@ -134,7 +147,34 @@ We evaluated existing ontologies for microbial trait coverage:
 
 ---
 
+## METPO's Phenotype Hierarchies: Temperature Preference
+
+![width:800px](figures/metpo_viz/temperature_preference_examples.png)
+
+---
+
+## METPO's Phenotype Hierarchies: Cell Shape
+
+![width:800px](figures/metpo_viz/cell_shape_examples.png)
+
+---
+
+## METPO's Phenotype Hierarchies: Respiration
+
+![width:800px](figures/metpo_viz/respiration_examples.png)
+
+---
+
 ## Synonym provenance tracking using annotated axioms
+
+**Direct synonym assertion (no provenance):**
+
+```turtle
+metpo:1000644 oboInOwl:hasRelatedSynonym "aerobic_heterotrophy" .
+metpo:1000644 oboInOwl:hasRelatedSynonym "heterotroph" .
+```
+
+**Annotated axioms (with provenance):**
 
 ```turtle
 [] a owl:Axiom ;
@@ -236,9 +276,9 @@ Three formats, three schemas, different representations.
 
 ```tsv
 subject          predicate              object
-NCBITaxon:100   biolink:has_phenotype  METPO:1000615
-NCBITaxon:200   biolink:has_phenotype  METPO:1000615
-NCBITaxon:300   biolink:has_phenotype  METPO:1000615
+NCBITaxon:227942  biolink:has_phenotype  METPO:1000615
+NCBITaxon:438751  biolink:has_phenotype  METPO:1000615
+NCBITaxon:552064  biolink:has_phenotype  METPO:1000615
 ```
 
 All variations normalized to single METPO CURIE.
@@ -259,16 +299,20 @@ SELECT ?taxon WHERE {
 
 **Real-world usage across three major datasets:**
 
-| Dataset | Source Records | Total KG Edges | METPO Object Edges | METPO Coverage* | METPO Terms |
+| Dataset | Source Records | Total KG Edges | METPO Object Edges | METPO Utilization so far* | METPO Terms |
 |---------|----------------|----------------|-------------------|----------------|-------------|
 | **BactoTraits** | 19,455 strains | 87,688 | 87,688 | 100% | 91 |
 | **Madin et al.** | 172,324 taxa | 115,399 | 45,851 | 39.7% | 36 |
 | **BacDive** | 196,169 strains | 1,656,667 | 120,266 | 7.3% | 61 |
 | **Combined** | — | 1,859,754 | 253,805 | 13.6% | **152 unique** |
 
-**METPO Coverage*** = % of edges using METPO terms in object position (semantic grounding)
+**Object prefix distribution (top 3 by edge count):**
+- **Madin**: METPO (45,851), CHEBI (37,173), NCBITaxon (26,649)
+- **BacDive**: NCBITaxon (678,379), CHEBI (428,815), EC (186,014), *then* METPO (120,266)
 
-*Coverage is ETL-dependent: reflects what was extracted, not full METPO potential
+**METPO Utilization so far*** = % of edges using METPO terms in object position (semantic grounding)
+
+*Utilization is ETL-dependent: reflects what was extracted, not full METPO potential
 
 ---
 
@@ -280,7 +324,21 @@ SELECT ?taxon WHERE {
 
 ---
 
-## Applications: CultureBot & DOE CMM-REE
+## KG-Microbe: Key for Medium Prediction
+
+**Top 3 METPO Objects:**
+- **aerobic** (26,611 edges)
+- **anaerobic** (14,637 edges)
+- **mesophilic** (53,850 edges)
+
+**Impact:**
+- **37% of all METPO edges**
+- Directly determine growth medium requirements (oxygen atmosphere and temperature ranges)
+- Carry high weight in CultureBot's machine learning models
+
+---
+
+## KG-Microbe Applications: CultureBot & DOE CMM-REE
 
 **KG-Microbe → METPO dependency chain**
 
@@ -315,21 +373,6 @@ Joachimiak + Deutschbauer (EGSB)
 
 ---
 
-## Interoperability: METPO is a Good Citizen
-
-**SSSOM Mappings:** ~3,000 via embedding search (OLS + BioPortal + n4l_merged)
-- Relaxed: 3,008 mappings (mostly broadMatch/relatedMatch)
-- Optimized: 2,883 mappings (73 exactMatch)
-- Method: `text-embedding-3-small`
-
-**Reality check:** Mean structural coherence = 8.2%
-- Semantic matches exist, but hierarchical organization differs significantly
-- Justifies purpose-built ontology over importing external structures
-
-**Availability:** BioPortal, GitHub (berkeleybop/metpo), standard OWL/RDF formats, works with OAK, ROBOT, Protégé
-
----
-
 ## OntoGPT Grounding: Literature-Driven Expansion
 
 **Structured data integration (Phase 1):** Near completion
@@ -346,7 +389,7 @@ Joachimiak + Deutschbauer (EGSB)
 
 ---
 
-## Future Work: Optimize Literature-Based Discovery
+## Literature-Based Discovery with OntoGPT
 
 **Expanding METPO through OntoGPT experiments:**
 
@@ -378,14 +421,28 @@ AUTO:BW863 has_phenotype AUTO:rod-shaped . # gap!
 AUTO:BW863 has_phenotype METPO:1000181 . # mesophilic
 ```
 
-**Results (10 PubMed abstracts):**
-- Phenotype: 41.0% to METPO (25/61)
-- Chemical: 75.0% to ChEBI (33/44)
-- Taxonomy: 93.3% to NCBITaxon (14/15)
+</div>
+</div>
+
+---
+
+## OntoGPT Grounding Rates
+
+**10 PubMed abstracts:**
+- Phenotype: **41.0%** grounded to METPO (25/61)
+- Chemical: **75.0%** grounded to ChEBI (33/44)
+- Taxonomy: **93.3%** grounded to NCBITaxon (14/15)
 - 36 AUTO phenotype terms → coverage gaps
 
-</div>
-</div>
+---
+
+## Comparative Annotator Performance
+
+**10 ICBO abstracts, GPT-4o:**
+- **METPO**: 26 groundings (**9 unique terms**)
+- **OMP**: 8 groundings (**2 unique terms**) — narrow coverage
+- **PATO**: 8 groundings (**2 unique terms**) — too general
+- **MicrO**: 10 groundings (**4 unique terms**)
 
 ---
 
@@ -398,6 +455,23 @@ AUTO:BW863 has_phenotype METPO:1000181 . # mesophilic
 3. Triggers curation workflow
 4. Domain expert adds term to METPO
 5. Future extractions ground successfully
+
+---
+
+## Interoperability: METPO is a Good Citizen
+
+**SSSOM Mappings:** ~3,000 via embedding search (OLS + BioPortal + n4l_merged)
+- Relaxed: 3,008 mappings (mostly broadMatch/relatedMatch)
+- Optimized: 2,883 mappings (73 exactMatch)
+- Method: `text-embedding-3-small`
+- **Note:** Only 19.6% exact matches - embeddings alone insufficient for precise integration
+
+**Availability:**
+- BioPortal, GitHub (berkeleybop/metpo)
+
+**Formats:** OWL/RDF
+
+**Compatible tools:** OAK, ROBOT, Protégé
 
 ---
 
@@ -419,7 +493,7 @@ AUTO:BW863 has_phenotype METPO:1000181 . # mesophilic
 
 **METPO demonstrates an application-driven approach:**
 
-- **Production validation:** 253,805 edges in 1.86M-edge knowledge graph
+- **Production validation:** 253,805 METPO edges in BacDive, BactoTraits, and Madin integration (KG-Microbe includes additional node and edge sources)
 - **Sustainability:** Active funding, real dependencies, modern tooling
 - **Institutional support:** Candidate for BER Data Lake House
 - **Transparency:** All claims traceable to primary sources
@@ -430,9 +504,23 @@ AUTO:BW863 has_phenotype METPO:1000181 . # mesophilic
 
 ---
 
-<!-- _class: lead -->
+<style scoped>
+section {
+  font-size: 20px;
+  line-height: 1.2;
+}
+h1 {
+  font-size: 36px;
+  margin-bottom: 0.3em;
+}
+p {
+  margin: 0.3em 0;
+}
+</style>
 
 # Thank You
+
+<div style="font-size: 18px;">
 
 **Resources:**
 github.com/berkeleybop/metpo
@@ -442,9 +530,18 @@ bioportal.bioontology.org/ontologies/METPO
 **PI:** Marcin Joachimiak
 
 **Acknowledgments:**
-CultureBot LDRD • DOE CMM Program
+Chris Mungall, Sujay Patil, Nomi Harris, Adam Deutschbauer, Ning Sun, Charlie Parker, Valerie Skye
 
-Questions?
+**Berkeley Undergraduates:**
+Anthea Guo, Jed Dongjin Kim-Ozaeta, Luke Wang
+
+**Funding:** Lawrence Berkeley National Laboratory LDRD (CultureBot, FY24-25), Department of Energy BER CMM Pilot (FY26)
+
+**Data:** [BactoTraits](https://doi.org/10.1016/j.ecolind.2021.108047), [Madin et al.](https://github.com/bacteria-archaea-traits/bacteria-archaea-traits), [BacDive](https://bacdive.dsmz.de/), Names for Life
+
+**Infrastructure:** OBO Foundry, NCBO BioPortal, ODK/ROBOT/OAK, OntoGPT
+
+</div>
 
 ---
 
@@ -487,24 +584,6 @@ Questions?
 
 ---
 
-## METPO's Phenotype Hierarchies: Temperature
-
-![width:800px](figures/metpo_viz/temperature_preference_examples.png)
-
----
-
-## METPO's Phenotype Hierarchies: Cell Shape
-
-![width:800px](figures/metpo_viz/cell_shape_examples.png)
-
----
-
-## METPO's Phenotype Hierarchies: Respiration
-
-![width:800px](figures/metpo_viz/respiration_examples.png)
-
----
-
 ## Technical Details: METPO Development
 
 **Source of truth:** ROBOT-compatible spreadsheets (Google Sheets)
@@ -516,6 +595,8 @@ Questions?
 **Semantic search:** OLS + BioPortal + n4l_merged embeddings, generates SSSOM mappings
 
 **Data infrastructure:** All three datasets (BacDive, BactoTraits, Madin) staged in MongoDB alongside IJSEM metadata and text mining results from ePMC
+
+**AI Usage:** Literature extraction (OntoGPT/GPT-4o), definition quality assessment (Claude 3.5). NOT used for: class design, final definitions, hierarchy (all human-curated)
 
 **Statistics:** 255 terms, 118 with definitions (46.3%), 158 mapped to 24 external ontologies
 
