@@ -269,7 +269,7 @@ benchmark: | outputs logs
 	echo ""; \
 	echo "Analyzing extraction results..."; \
 	if [ -f "$(BENCH_OUTPUT)" ]; then \
-		COUNTS=$$(uv run python scripts/count_extraction_results.py --json $(BENCH_OUTPUT)); \
+		COUNTS=$$(uv run python ../metpo/literature_mining/scripts/count_extraction_results.py --json $(BENCH_OUTPUT)); \
 		ENTITIES=$$(echo "$$COUNTS" | jq -r '.entities'); \
 		RELATIONSHIPS=$$(echo "$$COUNTS" | jq -r '.relationships'); \
 		echo "  Entities: $$ENTITIES"; \
@@ -281,7 +281,7 @@ benchmark: | outputs logs
 	fi; \
 	echo ""; \
 	echo "Calculating metrics..."; \
-	METRICS=$$(uv run python scripts/calculate_metrics.py \
+	METRICS=$$(uv run calculate-extraction-metrics \
 		--cost $$COST \
 		--abstracts $$NUM_ABSTRACTS \
 		--abstract-chars $$TOTAL_CHARS \
@@ -334,13 +334,13 @@ benchmark: | outputs logs
 
 assess: assess-templates assess-extractions
 
-assess-templates: metpo_assessor.py | assessments
+assess-templates: | assessments
 	@echo "📊 Assessing template designs..."
-	uv run python metpo_assessor.py analyze-templates templates/ --pattern "*_base.yaml" --output assessments/template_analysis_$(TIMESTAMP).yaml
+	uv run metpo-assessor analyze-templates templates/ --pattern "*_base.yaml" --output assessments/template_analysis_$(TIMESTAMP).yaml
 
-assess-extractions: metpo_assessor.py | assessments 
+assess-extractions: | assessments 
 	@echo "📈 Assessing extraction performance..."
-	uv run python metpo_assessor.py analyze-extractions outputs/ --output assessments/extraction_analysis_$(TIMESTAMP).yaml
+	uv run metpo-assessor analyze-extractions outputs/ --output assessments/extraction_analysis_$(TIMESTAMP).yaml
 
 # =============================================================================
 # 9. CLEANUP TARGETS

@@ -11,6 +11,8 @@ from pathlib import Path
 from collections import defaultdict, Counter
 from typing import Dict, List
 
+import click
+
 def analyze_bacdive_alignment() -> Dict:
     """Analyze METPO alignment with BacDive field structure."""
     # From docs/bacdive_keywords_analysis.md and bacdive_oxygen_tolerance_analysis.md
