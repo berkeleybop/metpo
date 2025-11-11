@@ -4,17 +4,23 @@
 
 Microbial ecophysiological trait and phenotype ontology
 
-More information can be found at http://obofoundry.org/ontology/metpo
-
 ## Versions
 
 ### Stable release versions
 
-The latest version of the ontology can always be found at:
+METPO releases are available from multiple sources:
 
-http://purl.obolibrary.org/obo/metpo.owl
+**BioPortal** (Recommended for browsing and search):
+- https://bioportal.bioontology.org/ontologies/METPO
+- Browse classes, search terms, and visualize the hierarchy
+- API access available
 
-(note this will not show up until the request has been approved by obofoundry.org)
+**GitHub Releases**:
+- See [Releases](https://github.com/berkeleybop/metpo/releases)
+- Download OWL, OBO, and JSON formats
+
+**Direct OWL file**:
+- Latest release: `metpo.owl` in this repository
 
 ### Editors' version
 
@@ -56,13 +62,18 @@ make install-all
 
 This ontology repository was created using the [Ontology Development Kit (ODK)](https://github.com/INCATools/ontology-development-kit).
 
+**METPO research relies on numerous external data sources and ontologies. See [ACKNOWLEDGMENTS.md](ACKNOWLEDGMENTS.md) for complete citations and attributions for:**
+- BactoTraits, Madin et al., and BacDive microbial trait databases
+- 24+ ontologies from OBO Foundry and BioPortal
+- Semsql databases, embedding infrastructure, and software tools
+
 ----
 
 ## Input:
 - https://docs.google.com/spreadsheets/d/1_Lr-9_5QHi8QLvRyTZFSciUhzGKD4DbUObyTpJ16_RU/edit?gid=0#gid=0
 
-## Notes
-- https://github.com/berkeleybop/group-meetings/issues/155#issuecomment-2715444097
+## Development Notes
+- Historical development discussion: [berkeleybop/group-meetings #155](https://github.com/berkeleybop/group-meetings/issues/155) *(Note: May require repository access)*
 
 ----
 
