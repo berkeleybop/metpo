@@ -1,3 +1,8 @@
+# Backend: METPO OWL file (src/ontology/metpo.owl)
+# Purpose: Quality control - find leaf classes missing synonym attribution
+# Used by: Manual QC workflow
+# Returns: METPO classes (leaf nodes) that have synonyms without IAO:0000119 attribution
+
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX obo: <http://purl.obolibrary.org/obo/>

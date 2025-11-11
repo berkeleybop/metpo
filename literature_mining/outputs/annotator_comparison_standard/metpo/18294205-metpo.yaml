@@ -1,0 +1,61 @@
+---
+input_text: |
+  Title: Marine methylotrophs revealed by stable-isotope probing, multiple displacement amplification and metagenomics.
+
+  Authors: Neufeld JD, Chen Y, Dumont MG, Murrell JC.
+
+  Journal:  (2008)
+
+  DOI: 10.1111/j.1462-2920.2008.01568.x
+  PMID: 18294205
+
+  Abstract:
+  The concentrations of one-carbon substrates that fuel methylotrophic microbial communities in the ocean are limited and the specialized guilds of bacteria that use these molecules may exist at low relative abundance. As a result, these organisms are difficult to identify and are often missed with existing cultivation and gene retrieval methods. Here, we demonstrate a novel proof of concept: using environmentally-relevant substrate concentrations in stable-isotope probing (SIP) incubations to yield sufficient DNA for large-insert metagenomic analysis through multiple displacement amplification (MDA). A marine surface-water sample was labelled sufficiently by incubation with near in situ concentrations of methanol. Picogram quantities of labelled (13)C-DNA were purified from caesium chloride gradients, amplified with MDA to produce microgram amounts of high-molecular-weight DNA (<or= 40 kb) and cloned to produce a fosmid library of > 10 000 clones. Denaturing gradient gel electrophoresis (DGGE) demonstrated minimal bias associated with the MDA step and implicated Methylophaga-like phylotypes with the marine metabolism of methanol. Polymerase chain reaction screening of 1500 clones revealed a methanol dehydrogenase (MDH) containing insert and shotgun sequencing of this insert resulted in the assembly of a 9-kb fragment of DNA encoding a cluster of enzymes involved in MDH biosynthesis, regulation and assembly. This novel combination of methodology enables future structure-function studies of microbial communities to achieve the long-desired goal of identifying active microbial populations using in situ conditions and performing a directed metagenomic analysis for these ecologically relevant microorganisms.
+raw_completion_output: |-
+  pmid: 18294205  
+  study_taxa: Methylophaga  
+  strains:  
+  strain_to_taxon:  
+  strain_to_phenotype:  
+  strain_to_medium:  
+prompt: |+
+  From the text below, extract the following entities in the following format:
+
+  pmid: <PubMed ID of the article>
+  study_taxa: <Main bacterial or archaeal taxa studied>
+  strains: <Extract strain designations WITHOUT genus/species prefixes. Remove terminal "T" or "(T)" suffixes indicating type strain status. Examples: "DSM 12345T" becomes "DSM 12345", "strain ABC" becomes "ABC".>
+  strain_to_taxon: <Extract strain-to-species relationships using exactly the same strain identifiers from the strains field above. Connect each strain to its parent taxon.>
+  strain_to_phenotype: <Extract ALL strain-phenotype relationships mentioned in the text. Be COMPREHENSIVE - do not omit any phenotypes. Use EXACTLY the same strain identifiers from the strains field above.
+  OUTPUT FORMAT: semicolon-separated on a single line. DO NOT use YAML list format with dashes (-).
+  Example: 017 has_phenotype rod-shaped; 017 has_phenotype Gram-negative; 017 has_phenotype motile
+  Extract phenotypes including: cell shape (rod-shaped, coccus-shaped, spiral, curved), Gram staining (Gram-positive, Gram-negative, Gram-stain-negative, Gram-variable), motility (motile, non-motile, flagellated), oxygen requirements (aerobic, anaerobic, facultatively_anaerobic, microaerophilic), temperature preferences (mesophilic, thermophilic, psychrophilic), pH preferences (acidophilic, alkaliphilic, neutrophilic), salinity tolerance (halophilic), and pigmentation colors.>
+  strain_to_medium: <Extract ALL strain-medium relationships mentioned in the text. Use EXACTLY the same strain identifiers from the strains field above.
+  For example: 017 grows_on_medium marine_agar_2216; MG1655 grows_on_medium LB; K12 requires_medium R2A; StrainXYZ grows_on_medium TSA
+  Include standard media names (TSA, R2A, LB, nutrient agar, marine agar) and specific formulations mentioned.>
+
+
+  Text:
+  Title: Marine methylotrophs revealed by stable-isotope probing, multiple displacement amplification and metagenomics.
+
+  Authors: Neufeld JD, Chen Y, Dumont MG, Murrell JC.
+
+  Journal:  (2008)
+
+  DOI: 10.1111/j.1462-2920.2008.01568.x
+  PMID: 18294205
+
+  Abstract:
+  The concentrations of one-carbon substrates that fuel methylotrophic microbial communities in the ocean are limited and the specialized guilds of bacteria that use these molecules may exist at low relative abundance. As a result, these organisms are difficult to identify and are often missed with existing cultivation and gene retrieval methods. Here, we demonstrate a novel proof of concept: using environmentally-relevant substrate concentrations in stable-isotope probing (SIP) incubations to yield sufficient DNA for large-insert metagenomic analysis through multiple displacement amplification (MDA). A marine surface-water sample was labelled sufficiently by incubation with near in situ concentrations of methanol. Picogram quantities of labelled (13)C-DNA were purified from caesium chloride gradients, amplified with MDA to produce microgram amounts of high-molecular-weight DNA (<or= 40 kb) and cloned to produce a fosmid library of > 10 000 clones. Denaturing gradient gel electrophoresis (DGGE) demonstrated minimal bias associated with the MDA step and implicated Methylophaga-like phylotypes with the marine metabolism of methanol. Polymerase chain reaction screening of 1500 clones revealed a methanol dehydrogenase (MDH) containing insert and shotgun sequencing of this insert resulted in the assembly of a 9-kb fragment of DNA encoding a cluster of enzymes involved in MDH biosynthesis, regulation and assembly. This novel combination of methodology enables future structure-function studies of microbial communities to achieve the long-desired goal of identifying active microbial populations using in situ conditions and performing a directed metagenomic analysis for these ecologically relevant microorganisms.
+
+
+  ===
+
+extracted_object:
+  pmid: '18294205'
+  study_taxa:
+    - NCBITaxon:40222
+named_entities:
+  - id: NCBITaxon:40222
+    label: Methylophaga
+    original_spans:
+      - 1332:1343

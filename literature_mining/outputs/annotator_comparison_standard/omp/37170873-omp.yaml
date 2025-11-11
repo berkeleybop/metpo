@@ -1,0 +1,131 @@
+---
+input_text: |-
+  Halomonas dongshanensis sp. nov., isolated from the seawater of Dongshan Island.
+
+  A taxonomic study was carried out on strain yzlin-01T, isolated from Dongshan Island seawater. The bacterium was Gram-stain-negative, catalase-positive, oxidase-negative, rod-shaped, and motile by polar flagella. Growth was observed at temperatures of 10-40 °C, at salinities of 0.5-18 %, and at pH of 6-10. Phylogenetic analysis based on 16S rRNA gene sequences indicated that strain yzlin-01T belonged to the genus Halomonas, with the highest sequence similarity to Halomonas malpeensis YU-PRIM-29T (96.7 %), followed by Halomonas johnsoniae T68687T (96.4 %) and Halomonas gomseomensis M12T (96.4 %), and other species of the genus Halomonas (93.4-96.3 %). The ANI and digital DNA-DNA hybridization estimate values between strain yzlin-01T and the closest type strain Halomonas malpeensis YU-PRIM-29T were 77.44 and 21.6 %, respectively. The principal fatty acids were summed feature 8 (consisting of C18 : 1 ω7c and/or C18 : 1 ω6c; 55.7 %), C16 : 0 (20.6 %), C12 : 0 3-OH (6.8 %), summed feature 3 (consisting of C16 : 1 ω7c and/or C16 : 1 ω6c; 5.1 %). The G+C content of the chromosomal DNA was 60.0 mol %. The respiratory quinone was identified as Q-9 (100 %). Phosphatidylethanolamine, phosphatidylglycerol, diphosphatidylglycerol, aminophospholipid, and three unidentified phospholipids were present. Combined genotypic and phenotypic data suggest that strain yzlin-01T represents a novel species within the genus Halomonas, for which the name Halomonas dongshanensis sp. nov. is proposed, with the type strain yzlin-01T (=GDMCC 1.3202T=KCTC 92467T).
+
+  PMID:37170873
+raw_completion_output: |-
+  pmid: 37170873  
+  study_taxa: Halomonas  
+  strains: yzlin-01; GDMCC 1.3202; KCTC 92467  
+  strain_to_taxon: yzlin-01 belongs_to Halomonas dongshanensis  
+  strain_to_phenotype: yzlin-01 has_phenotype Gram-stain-negative; yzlin-01 has_phenotype rod-shaped; yzlin-01 has_phenotype motile; yzlin-01 has_phenotype catalase-positive; yzlin-01 has_phenotype oxidase-negative; yzlin-01 has_phenotype grows_at_10-40_°C; yzlin-01 has_phenotype grows_at_salinities_0.5-18%; yzlin-01 has_phenotype grows_at_pH_6-10  
+  strain_to_medium: (No specific medium mentioned in the text)
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  subject: <The strain that grows on this medium>
+  predicate: <Type of medium relationshipMust be one of: grows_on_medium, requires_medium>
+  object: <The culture medium>
+
+
+  Text:
+  (No specific medium mentioned in the text)
+
+  ===
+
+extracted_object:
+  pmid: '37170873'
+  study_taxa:
+    - NCBITaxon:2745
+  strains:
+    - AUTO:yzlin-01
+    - AUTO:GDMCC%201.3202
+    - AUTO:KCTC%2092467
+  strain_to_taxon:
+    - subject: AUTO:yzlin-01
+      predicate: strain_of
+      object: NCBITaxon:2890835
+  strain_to_phenotype:
+    - subject: AUTO:yzlin-01
+      predicate: has_phenotype
+      object: AUTO:Gram-stain-negative
+    - subject: AUTO:yzlin-01
+      predicate: has_phenotype
+      object: AUTO:rod-shaped
+    - subject: AUTO:yzlin-01
+      predicate: has_phenotype
+      object: OMP:0000005
+    - subject: AUTO:yzlin-01
+      predicate: has_phenotype
+      object: AUTO:catalase-positive
+    - subject: AUTO:yzlin-01
+      predicate: has_phenotype
+      object: AUTO:oxidase-negative
+    - subject: AUTO:yzlin-01
+      predicate: has_phenotype
+      object: AUTO:grows_at_10-40_%C2%B0C
+    - subject: AUTO:yzlin-01
+      predicate: has_phenotype
+      object: AUTO:grows_at_salinities_0.5-18%25
+    - subject: AUTO:yzlin-01
+      predicate: has_phenotype
+      object: AUTO:grows_at_pH_6-10
+  strain_to_medium:
+    - subject: AUTO:%3CThe%20strain%20that%20grows%20on%20this%20medium%3E
+      object: AUTO:%3CNo%20specific%20medium%20mentioned%20in%20the%20text%3E
+named_entities:
+  - id: NCBITaxon:2745
+    label: Halomonas
+    original_spans:
+      - 0:8
+      - 499:507
+      - 550:558
+      - 605:613
+      - 647:655
+      - 716:724
+      - 852:860
+      - 1503:1511
+      - 1533:1541
+  - id: AUTO:yzlin-01
+    label: yzlin-01
+    original_spans:
+      - 126:133
+      - 467:474
+      - 814:821
+      - 1449:1456
+      - 1600:1607
+  - id: AUTO:GDMCC%201.3202
+    label: GDMCC 1.3202
+    original_spans:
+      - 1612:1623
+  - id: AUTO:KCTC%2092467
+    label: KCTC 92467
+    original_spans:
+      - 1626:1635
+  - id: NCBITaxon:2890835
+    label: Halomonas dongshanensis
+    original_spans:
+      - 0:22
+      - 1533:1555
+  - id: AUTO:Gram-stain-negative
+    label: Gram-stain-negative
+    original_spans:
+      - 195:213
+  - id: AUTO:rod-shaped
+    label: rod-shaped
+    original_spans:
+      - 253:262
+  - id: OMP:0000005
+    label: motile
+    original_spans:
+      - 269:274
+  - id: AUTO:catalase-positive
+    label: catalase-positive
+    original_spans:
+      - 216:232
+  - id: AUTO:oxidase-negative
+    label: oxidase-negative
+    original_spans:
+      - 235:250
+  - id: AUTO:grows_at_10-40_%C2%B0C
+    label: grows_at_10-40_°C
+  - id: AUTO:grows_at_salinities_0.5-18%25
+    label: grows_at_salinities_0.5-18%
+  - id: AUTO:grows_at_pH_6-10
+    label: grows_at_pH_6-10
+  - id: AUTO:%3CThe%20strain%20that%20grows%20on%20this%20medium%3E
+    label: <The strain that grows on this medium>
+  - id: AUTO:%3CNo%20specific%20medium%20mentioned%20in%20the%20text%3E
+    label: <No specific medium mentioned in the text>

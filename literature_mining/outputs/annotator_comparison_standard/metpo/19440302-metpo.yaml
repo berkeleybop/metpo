@@ -1,0 +1,105 @@
+---
+input_text: |
+  Title: Methylobacterium genome sequences: a reference blueprint to investigate microbial metabolism of C1 compounds from natural and industrial sources.
+
+  Authors: Vuilleumier S, Chistoserdova L, Lee MC, Bringel F, Lajus A, Zhou Y, Gourion B, Barbe V, Chang J, Cruveiller S, Dossat C, Gillett W, Gruffaz C, Haugen E, Hourcade E, Levy R, Mangenot S, Muller E, Nadalig T, Pagni M, Penny C, Peyraud R, Robinson DG, Roche D, Rouy Z, Saenampechek C, Salvignol G, Vallenet D, Wu Z, Marx CJ, Vorholt JA, Olson MV, Kaul R, Weissenbach J, Médigue C, Lidstrom ME.
+
+  Journal:  (2009)
+
+  DOI: 10.1371/journal.pone.0005584
+  PMID: 19440302
+  PMCID: PMC2680597
+
+  Abstract:
+  <h4>Background</h4>Methylotrophy describes the ability of organisms to grow on reduced organic compounds without carbon-carbon bonds. The genomes of two pink-pigmented facultative methylotrophic bacteria of the Alpha-proteobacterial genus Methylobacterium, the reference species Methylobacterium extorquens strain AM1 and the dichloromethane-degrading strain DM4, were compared.<h4>Methodology/principal findings</h4>The 6.88 Mb genome of strain AM1 comprises a 5.51 Mb chromosome, a 1.26 Mb megaplasmid and three plasmids, while the 6.12 Mb genome of strain DM4 features a 5.94 Mb chromosome and two plasmids. The chromosomes are highly syntenic and share a large majority of genes, while plasmids are mostly strain-specific, with the exception of a 130 kb region of the strain AM1 megaplasmid which is syntenic to a chromosomal region of strain DM4. Both genomes contain large sets of insertion elements, many of them strain-specific, suggesting an important potential for genomic plasticity. Most of the genomic determinants associated with methylotrophy are nearly identical, with two exceptions that illustrate the metabolic and genomic versatility of Methylobacterium. A 126 kb dichloromethane utilization (dcm) gene cluster is essential for the ability of strain DM4 to use DCM as the sole carbon and energy source for growth and is unique to strain DM4. The methylamine utilization (mau) gene cluster is only found in strain AM1, indicating that strain DM4 employs an alternative system for growth with methylamine. The dcm and mau clusters represent two of the chromosomal genomic islands (AM1: 28; DM4: 17) that were defined. The mau cluster is flanked by mobile elements, but the dcm cluster disrupts a gene annotated as chelatase and for which we propose the name "island integration determinant" (iid).<h4>Conclusion/significance</h4>These two genome sequences provide a platform for intra- and interspecies genomic comparisons in the genus Methylobacterium, and for investigations of the adaptive mechanisms which allow bacterial lineages to acquire methylotrophic lifestyles.
+raw_completion_output: |-
+  pmid: 19440302  
+  study_taxa: Methylobacterium  
+  strains: AM1; DM4  
+  strain_to_taxon: AM1 belongs_to Methylobacterium extorquens; DM4 belongs_to Methylobacterium  
+  strain_to_phenotype: AM1 has_phenotype pink-pigmented; AM1 has_phenotype facultative_methylotrophic; DM4 has_phenotype pink-pigmented; DM4 has_phenotype facultative_methylotrophic  
+  strain_to_medium: DM4 grows_on_medium dichloromethane
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  subject: <The strain that grows on this medium>
+  predicate: <Type of medium relationshipMust be one of: grows_on_medium, requires_medium>
+  object: <The culture medium>
+
+
+  Text:
+  DM4 grows_on_medium dichloromethane
+
+  ===
+
+extracted_object:
+  pmid: '19440302'
+  study_taxa:
+    - NCBITaxon:407
+  strains:
+    - AUTO:AM1
+    - AUTO:DM4
+  strain_to_taxon:
+    - subject: AUTO:AM1
+      predicate: strain_of
+      object: NCBITaxon:408
+    - subject: AUTO:DM4
+      predicate: strain_of
+      object: NCBITaxon:407
+  strain_to_phenotype:
+    - subject: AUTO:AM1
+      predicate: has_phenotype
+      object: AUTO:pink-pigmented
+    - subject: AUTO:AM1
+      predicate: has_phenotype
+      object: AUTO:facultative_methylotrophic
+    - subject: AUTO:DM4
+      predicate: has_phenotype
+      object: AUTO:pink-pigmented
+    - subject: AUTO:DM4
+      predicate: has_phenotype
+      object: AUTO:facultative_methylotrophic
+  strain_to_medium:
+    - subject: AUTO:%3CDM4%3E
+      object: AUTO:%3Cdichloromethane%3E
+named_entities:
+  - id: NCBITaxon:407
+    label: Methylobacterium
+    original_spans:
+      - 7:22
+      - 889:904
+      - 929:944
+      - 1807:1822
+      - 2604:2619
+  - id: AUTO:AM1
+    label: AM1
+    original_spans:
+      - 964:966
+      - 1096:1098
+      - 1429:1431
+      - 2083:2085
+      - 2249:2251
+  - id: AUTO:DM4
+    label: DM4
+    original_spans:
+      - 1009:1011
+      - 1209:1211
+      - 1497:1499
+      - 1920:1922
+      - 2007:2009
+      - 2111:2113
+      - 2258:2260
+  - id: NCBITaxon:408
+    label: Methylobacterium extorquens
+    original_spans:
+      - 929:955
+  - id: AUTO:pink-pigmented
+    label: pink-pigmented
+    original_spans:
+      - 803:816
+  - id: AUTO:facultative_methylotrophic
+    label: facultative_methylotrophic
+  - id: AUTO:%3CDM4%3E
+    label: <DM4>
+  - id: AUTO:%3Cdichloromethane%3E
+    label: <dichloromethane>

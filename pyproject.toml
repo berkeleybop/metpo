@@ -41,6 +41,12 @@ dev = [
     "tqdm>=4.67.1",
     "litellm>=1.79.0",
     "openai>=2.6.1",
+    # Code quality tools
+    "ruff>=0.8.4",
+    "mypy>=1.13.0",
+    "pre-commit>=4.0.1",
+    "types-PyYAML>=6.0.12",
+    "types-requests>=2.32.0",
 ]
 literature = [
     "artl-mcp>=0.34.0",
@@ -105,6 +111,37 @@ filter-ols-chromadb = "metpo.database.filter_ols_chromadb:main"
 # Analysis
 analyze-ontology-value = "metpo.analysis.analyze_ontology_value:main"
 analyze-match-quality = "metpo.analysis.analyze_match_quality:main"
+analyze-definition-opportunities = "metpo.scripts.analyze_definition_opportunities:main"
+bootstrap-definition-enrichment = "metpo.scripts.bootstrap_definition_enrichment:main"
+plot-embedding-similarity = "metpo.scripts.plot_embedding_similarity:main"
+find-best-definitions = "metpo.scripts.find_best_definitions:main"
+find-best-definitions-comprehensive = "metpo.scripts.find_best_definitions_comprehensive:main"
+compare-definitions-with-hierarchy = "metpo.scripts.compare_definitions_with_hierarchy:main"
+
+# Quality Control
+qc-metpo-sheets = "metpo.scripts.qc_metpo_sheets:main"
+propose-definitions-with-llm = "metpo.scripts.propose_definitions_with_llm:main"
+
+# Literature Mining - Analysis
+visualize-ner = "metpo.literature_mining.analysis.visualize_ner:main"
+metpo-assessor = "metpo.literature_mining.analysis.metpo_assessor:cli"
+analyze-metpo-grounding = "metpo.literature_mining.analysis.analyze_metpo_grounding:main"
+analyze-metpo-grounding-filtered = "metpo.literature_mining.analysis.analyze_metpo_grounding_filtered:main"
+extract-metpo-entities = "metpo.literature_mining.analysis.extract_metpo_entities:main"
+find-metpo-terms = "metpo.literature_mining.analysis.find_metpo_terms:main"
+analyze-extractions = "metpo.literature_mining.analysis.analyze_extractions:main"
+analyze-coverage-by-source = "metpo.literature_mining.analysis.analyze_coverage_by_source_type:main"
+analyze-metpo-efficiency = "metpo.literature_mining.analysis.analyze_metpo_efficiency:main"
+analyze-metpo-database-alignment = "metpo.literature_mining.analysis.analyze_metpo_database_alignment:main"
+compare-extractions = "metpo.literature_mining.analysis.compare_extractions:main"
+validate-extractions = "metpo.literature_mining.analysis.validate_extractions:main"
+
+# Literature Mining - Utilities
+fetch-abstracts-from-dois = "metpo.literature_mining.scripts.fetch_abstracts_from_dois:main"
+extract-abstracts-from-files = "metpo.literature_mining.scripts.extract_abstracts_from_files:main"
+dedupe-and-filter-abstracts = "metpo.literature_mining.scripts.dedupe_and_filter_abstracts:main"
+dedupe-by-content = "metpo.literature_mining.scripts.dedupe_by_content:main"
+calculate-extraction-metrics = "metpo.literature_mining.scripts.calculate_metrics:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["metpo"]

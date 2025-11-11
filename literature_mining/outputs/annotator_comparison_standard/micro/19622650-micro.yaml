@@ -1,0 +1,178 @@
+---
+input_text: |-
+  Methylovirgula ligni gen. nov., sp. nov., an obligately acidophilic, facultatively methylotrophic bacterium with a highly divergent mxaF gene.
+
+  Two strains of Gram-negative, aerobic, non-pigmented, non-motile, rod-shaped bacteria were isolated from beechwood blocks during decay by the white-rot fungus Hypholoma fasciculare and were designated strains BW863(T) and BW872. They are capable of methylotrophic growth and assimilate carbon via the ribulose-bisphosphate pathway. In addition to methanol, the novel isolates utilized ethanol, pyruvate and malate. Strains BW863(T) and BW872 are obligately acidophilic, mesophilic organisms capable of growth at pH 3.1-6.5 (with an optimum at pH 4.5-5.0) and at 4-30 degrees C. Phospholipid fatty acid profiles of these bacteria contain unusually large amounts (about 90 %) of C(18 : 1)omega7c, thereby resembling the profiles of Methylobacterium strains. The predominant quinone is Q-10. The DNA G+C content of the novel isolates is 61.8-62.8 mol%. On the basis of 16S rRNA gene sequence similarity, strains BW863(T) and BW872 are most closely related to the acidophilic methanotroph Methylocapsa acidiphila B2(T) (96.5-97 %). Comparative sequence analysis of mxaF, the gene encoding the large subunit of methanol dehydrogenase, placed the MxaF sequences of the two novel strains in a cluster that is distinct from all previously described MxaF sequences of cultivated methylotrophs. The identity between the MxaF sequences of the acidophilic isolates and those from known alpha-, beta- and gammaproteobacterial methylotrophs was respectively 69-75, 61-63 and 64-67 %. The data therefore suggest that strains BW863(T) and BW872 represent a novel genus and species of methylotrophic bacteria, for which the name Methylovirgula ligni gen. nov., sp. nov. is proposed. Strain BW863(T) (=DSM 19998(T) =NCIMB 14408(T)) is the type strain of Methylovirgula ligni.
+
+  PMID:19622650
+raw_completion_output: |-
+  pmid: 19622650  
+  study_taxa: Methylovirgula ligni  
+  strains: BW863; BW872; DSM 19998; NCIMB 14408  
+  strain_to_taxon: BW863 belongs_to Methylovirgula ligni; BW872 belongs_to Methylovirgula ligni; DSM 19998 belongs_to Methylovirgula ligni; NCIMB 14408 belongs_to Methylovirgula ligni  
+  strain_to_phenotype: BW863 has_phenotype Gram-negative; BW863 has_phenotype aerobic; BW863 has_phenotype non-pigmented; BW863 has_phenotype non-motile; BW863 has_phenotype rod-shaped; BW863 has_phenotype methylotrophic; BW863 has_phenotype obligately_acidophilic; BW863 has_phenotype mesophilic; BW872 has_phenotype Gram-negative; BW872 has_phenotype aerobic; BW872 has_phenotype non-pigmented; BW872 has_phenotype non-motile; BW872 has_phenotype rod-shaped; BW872 has_phenotype methylotrophic; BW872 has_phenotype obligately_acidophilic; BW872 has_phenotype mesophilic  
+  strain_to_medium: BW863 grows_on_medium not_specified; BW872 grows_on_medium not_specified; DSM 19998 grows_on_medium not_specified; NCIMB 14408 grows_on_medium not_specified  
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  subject: <The strain that grows on this medium>
+  predicate: <Type of medium relationshipMust be one of: grows_on_medium, requires_medium>
+  object: <The culture medium>
+
+
+  Text:
+  NCIMB 14408 grows_on_medium not_specified
+
+  ===
+
+extracted_object:
+  pmid: '19622650'
+  study_taxa:
+    - NCBITaxon:569860
+  strains:
+    - AUTO:BW863
+    - AUTO:BW872
+    - AUTO:DSM%2019998
+    - AUTO:NCIMB%2014408
+  strain_to_taxon:
+    - subject: AUTO:BW863
+      predicate: strain_of
+      object: NCBITaxon:569860
+    - subject: AUTO:BW872
+      predicate: strain_of
+      object: NCBITaxon:569860
+    - subject: AUTO:DSM%2019998
+      predicate: strain_of
+      object: NCBITaxon:569860
+    - subject: AUTO:NCIMB%2014408
+      predicate: strain_of
+      object: NCBITaxon:569860
+  strain_to_phenotype:
+    - subject: AUTO:BW863
+      predicate: has_phenotype
+      object: AUTO:Gram-negative
+    - subject: AUTO:BW863
+      predicate: has_phenotype
+      object: MICRO:0000494
+    - subject: AUTO:BW863
+      predicate: has_phenotype
+      object: AUTO:non-pigmented
+    - subject: AUTO:BW863
+      predicate: has_phenotype
+      object: AUTO:non-motile
+    - subject: AUTO:BW863
+      predicate: has_phenotype
+      object: PATO:0001873
+    - subject: AUTO:BW863
+      predicate: has_phenotype
+      object: AUTO:methylotrophic
+    - subject: AUTO:BW863
+      predicate: has_phenotype
+      object: MICRO:0001566
+    - subject: AUTO:BW863
+      predicate: has_phenotype
+      object: MICRO:0000111
+    - subject: AUTO:BW872
+      predicate: has_phenotype
+      object: AUTO:Gram-negative
+    - subject: AUTO:BW872
+      predicate: has_phenotype
+      object: MICRO:0000494
+    - subject: AUTO:BW872
+      predicate: has_phenotype
+      object: AUTO:non-pigmented
+    - subject: AUTO:BW872
+      predicate: has_phenotype
+      object: AUTO:non-motile
+    - subject: AUTO:BW872
+      predicate: has_phenotype
+      object: PATO:0001873
+    - subject: AUTO:BW872
+      predicate: has_phenotype
+      object: AUTO:methylotrophic
+    - subject: AUTO:BW872
+      predicate: has_phenotype
+      object: MICRO:0001566
+    - subject: AUTO:BW872
+      predicate: has_phenotype
+      object: MICRO:0000111
+  strain_to_medium:
+    - subject: AUTO:%3CBW863%3E
+      object: AUTO:%3Cnot_specified%3E
+    - subject: AUTO:BW872
+      predicate: grows_on_medium
+      object: AUTO:not_specified
+    - subject: AUTO:DSM%2019998
+      predicate: grows_on_medium
+      object: AUTO:not_specified
+    - subject: AUTO:NCIMB%2014408
+      predicate: grows_on_medium
+      object: AUTO:not_specified
+named_entities:
+  - id: NCBITaxon:569860
+    label: Methylovirgula ligni
+    original_spans:
+      - 0:19
+      - 1756:1775
+      - 1880:1899
+  - id: AUTO:BW863
+    label: BW863
+    original_spans:
+      - 353:357
+      - 567:571
+      - 1053:1057
+      - 1654:1658
+      - 1817:1821
+  - id: AUTO:BW872
+    label: BW872
+    original_spans:
+      - 366:370
+      - 580:584
+      - 1066:1070
+      - 1667:1671
+  - id: AUTO:DSM%2019998
+    label: DSM 19998
+    original_spans:
+      - 1828:1836
+  - id: AUTO:NCIMB%2014408
+    label: NCIMB 14408
+    original_spans:
+      - 1842:1852
+  - id: AUTO:Gram-negative
+    label: Gram-negative
+    original_spans:
+      - 159:171
+  - id: MICRO:0000494
+    label: aerobic
+    original_spans:
+      - 174:180
+  - id: AUTO:non-pigmented
+    label: non-pigmented
+    original_spans:
+      - 183:195
+  - id: AUTO:non-motile
+    label: non-motile
+    original_spans:
+      - 198:207
+  - id: PATO:0001873
+    label: rod-shaped
+    original_spans:
+      - 210:219
+  - id: AUTO:methylotrophic
+    label: methylotrophic
+    original_spans:
+      - 83:96
+      - 393:406
+      - 1712:1725
+  - id: MICRO:0001566
+    label: obligately_acidophilic
+  - id: MICRO:0000111
+    label: mesophilic
+    original_spans:
+      - 614:623
+  - id: AUTO:%3CBW863%3E
+    label: <BW863>
+  - id: AUTO:%3Cnot_specified%3E
+    label: <not_specified>
+  - id: AUTO:not_specified
+    label: not_specified

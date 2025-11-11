@@ -269,7 +269,7 @@ benchmark: | outputs logs
 	echo ""; \
 	echo "Analyzing extraction results..."; \
 	if [ -f "$(BENCH_OUTPUT)" ]; then \
-		COUNTS=$$(uv run python scripts/count_extraction_results.py --json $(BENCH_OUTPUT)); \
+		COUNTS=$$(uv run python ../metpo/literature_mining/scripts/count_extraction_results.py --json $(BENCH_OUTPUT)); \
 		ENTITIES=$$(echo "$$COUNTS" | jq -r '.entities'); \
 		RELATIONSHIPS=$$(echo "$$COUNTS" | jq -r '.relationships'); \
 		echo "  Entities: $$ENTITIES"; \
@@ -281,7 +281,7 @@ benchmark: | outputs logs
 	fi; \
 	echo ""; \
 	echo "Calculating metrics..."; \
-	METRICS=$$(uv run python scripts/calculate_metrics.py \
+	METRICS=$$(uv run calculate-extraction-metrics \
 		--cost $$COST \
 		--abstracts $$NUM_ABSTRACTS \
 		--abstract-chars $$TOTAL_CHARS \
@@ -334,13 +334,13 @@ benchmark: | outputs logs
 
 assess: assess-templates assess-extractions
 
-assess-templates: metpo_assessor.py | assessments
+assess-templates: | assessments
 	@echo "📊 Assessing template designs..."
-	uv run python metpo_assessor.py analyze-templates templates/ --pattern "*_base.yaml" --output assessments/template_analysis_$(TIMESTAMP).yaml
+	uv run metpo-assessor analyze-templates templates/ --pattern "*_base.yaml" --output assessments/template_analysis_$(TIMESTAMP).yaml
 
-assess-extractions: metpo_assessor.py | assessments 
+assess-extractions: | assessments 
 	@echo "📈 Assessing extraction performance..."
-	uv run python metpo_assessor.py analyze-extractions outputs/ --output assessments/extraction_analysis_$(TIMESTAMP).yaml
+	uv run metpo-assessor analyze-extractions outputs/ --output assessments/extraction_analysis_$(TIMESTAMP).yaml
 
 # =============================================================================
 # 9. CLEANUP TARGETS
@@ -550,3 +550,265 @@ icbo-clean-all: icbo-clean
 	@echo "Removing ICBO log files..."
 	rm -rf $(ICBO_LOGS_DIR)
 	@echo "Clean all complete"
+
+# =============================================================================
+# ANNOTATOR COMPARISON
+# =============================================================================
+
+# Annotator comparison targets
+ANNOTATOR_TEST_INPUTS := abstracts/icbo_examples/19622650-abstract.txt abstracts/icbo_examples/19622668-abstract.txt
+ANNOTATOR_TEST_DIR := outputs/annotator_comparison
+ANNOTATORS := metpo omp pato
+
+annotator-test: annotator-test-metpo annotator-test-omp annotator-test-pato
+	@echo "✅ All annotator tests complete. Run 'make annotator-analyze' to compare results."
+
+annotator-test-metpo:
+	@echo "=== Testing METPO annotator ==="
+	@mkdir -p $(ANNOTATOR_TEST_DIR)/metpo
+	@for input in $(ANNOTATOR_TEST_INPUTS); do \
+		pmid=$$(basename $$input -abstract.txt); \
+		echo "Extracting $$pmid with METPO..."; \
+		uv run ontogpt extract \
+			--template templates/strain_phenotype_metpo.yaml \
+			--inputfile $$input \
+			--model $(ICBO_MODEL) \
+			--temperature $(ICBO_TEMPERATURE) \
+			--output $(ANNOTATOR_TEST_DIR)/metpo/$$pmid-metpo.yaml \
+			2>&1 | tee $(ANNOTATOR_TEST_DIR)/metpo/$$pmid-metpo.log; \
+	done
+
+annotator-test-omp:
+	@echo "=== Testing OMP annotator ==="
+	@mkdir -p $(ANNOTATOR_TEST_DIR)/omp
+	@for input in $(ANNOTATOR_TEST_INPUTS); do \
+		pmid=$$(basename $$input -abstract.txt); \
+		echo "Extracting $$pmid with OMP..."; \
+		uv run ontogpt extract \
+			--template templates/strain_phenotype_omp.yaml \
+			--inputfile $$input \
+			--model $(ICBO_MODEL) \
+			--temperature $(ICBO_TEMPERATURE) \
+			--output $(ANNOTATOR_TEST_DIR)/omp/$$pmid-omp.yaml \
+			2>&1 | tee $(ANNOTATOR_TEST_DIR)/omp/$$pmid-omp.log; \
+	done
+
+annotator-test-pato:
+	@echo "=== Testing PATO annotator ==="
+	@mkdir -p $(ANNOTATOR_TEST_DIR)/pato
+	@for input in $(ANNOTATOR_TEST_INPUTS); do \
+		pmid=$$(basename $$input -abstract.txt); \
+		echo "Extracting $$pmid with PATO..."; \
+		uv run ontogpt extract \
+			--template templates/strain_phenotype_pato.yaml \
+			--inputfile $$input \
+			--model $(ICBO_MODEL) \
+			--temperature $(ICBO_TEMPERATURE) \
+			--output $(ANNOTATOR_TEST_DIR)/pato/$$pmid-pato.yaml \
+			2>&1 | tee $(ANNOTATOR_TEST_DIR)/pato/$$pmid-pato.log; \
+	done
+
+annotator-analyze:
+	@echo "=== Annotator Comparison Analysis ==="
+	@echo ""
+	@for annotator in $(ANNOTATORS); do \
+		echo "$$annotator Results:"; \
+		for f in $(ANNOTATOR_TEST_DIR)/$$annotator/*-$$annotator.yaml; do \
+			if [ -f "$$f" ]; then \
+				pmid=$$(basename $$f -$$annotator.yaml); \
+				grounded=$$(grep -E "http://purl.obolibrary.org/obo/|https://w3id.org/metpo/" "$$f" 2>/dev/null | wc -l | tr -d ' '); \
+				auto=$$(grep "AUTO:" "$$f" 2>/dev/null | wc -l | tr -d ' '); \
+				total=$$(($$grounded + $$auto)); \
+				printf "  %-15s: %3d groundings (%3d ontology URIs, %3d AUTO terms)\n" "$$pmid" "$$total" "$$grounded" "$$auto"; \
+			fi \
+		done; \
+		echo ""; \
+	done
+
+annotator-clean:
+	@echo "Cleaning annotator comparison outputs..."
+	rm -rf $(ANNOTATOR_TEST_DIR)
+	@echo "Clean complete"
+
+# =============================================================================
+# FAIR ANNOTATOR COMPARISON (Full ICBO set, sqlite:obo: auto-download)
+# =============================================================================
+
+FAIR_TEST_INPUTS := $(wildcard abstracts/icbo_examples/*-abstract.txt)
+FAIR_TEST_DIR := outputs/annotator_comparison_fair
+FAIR_ANNOTATORS := metpo omp pato micro
+
+fair-annotator-test: fair-annotator-test-metpo fair-annotator-test-omp fair-annotator-test-pato fair-annotator-test-micro
+	@echo "✅ Fair annotator comparison complete (all 10 ICBO abstracts). Run 'make fair-annotator-analyze' to compare results."
+
+fair-annotator-test-metpo:
+	@echo "=== Testing METPO annotator (fair comparison) ==="
+	@mkdir -p $(FAIR_TEST_DIR)/metpo
+	@for input in $(FAIR_TEST_INPUTS); do \
+		pmid=$$(basename $$input -abstract.txt); \
+		echo "Extracting $$pmid with METPO..."; \
+		uv run ontogpt extract \
+			--template templates/strain_phenotype_metpo_fair.yaml \
+			--inputfile $$input \
+			--model $(ICBO_MODEL) \
+			--temperature $(ICBO_TEMPERATURE) \
+			--output $(FAIR_TEST_DIR)/metpo/$$pmid-metpo.yaml \
+			2>&1 | tee $(FAIR_TEST_DIR)/metpo/$$pmid-metpo.log; \
+	done
+
+fair-annotator-test-omp:
+	@echo "=== Testing OMP annotator (fair comparison) ==="
+	@mkdir -p $(FAIR_TEST_DIR)/omp
+	@for input in $(FAIR_TEST_INPUTS); do \
+		pmid=$$(basename $$input -abstract.txt); \
+		echo "Extracting $$pmid with OMP..."; \
+		uv run ontogpt extract \
+			--template templates/strain_phenotype_omp_fair.yaml \
+			--inputfile $$input \
+			--model $(ICBO_MODEL) \
+			--temperature $(ICBO_TEMPERATURE) \
+			--output $(FAIR_TEST_DIR)/omp/$$pmid-omp.yaml \
+			2>&1 | tee $(FAIR_TEST_DIR)/omp/$$pmid-omp.log; \
+	done
+
+fair-annotator-test-pato:
+	@echo "=== Testing PATO annotator (fair comparison) ==="
+	@mkdir -p $(FAIR_TEST_DIR)/pato
+	@for input in $(FAIR_TEST_INPUTS); do \
+		pmid=$$(basename $$input -abstract.txt); \
+		echo "Extracting $$pmid with PATO..."; \
+		uv run ontogpt extract \
+			--template templates/strain_phenotype_pato_fair.yaml \
+			--inputfile $$input \
+			--model $(ICBO_MODEL) \
+			--temperature $(ICBO_TEMPERATURE) \
+			--output $(FAIR_TEST_DIR)/pato/$$pmid-pato.yaml \
+			2>&1 | tee $(FAIR_TEST_DIR)/pato/$$pmid-pato.log; \
+	done
+
+fair-annotator-test-micro:
+	@echo "=== Testing MICRO annotator (fair comparison) ==="
+	@mkdir -p $(FAIR_TEST_DIR)/micro
+	@for input in $(FAIR_TEST_INPUTS); do \
+		pmid=$$(basename $$input -abstract.txt); \
+		echo "Extracting $$pmid with MICRO..."; \
+		uv run ontogpt extract \
+			--template templates/strain_phenotype_micro_fair.yaml \
+			--inputfile $$input \
+			--model $(ICBO_MODEL) \
+			--temperature $(ICBO_TEMPERATURE) \
+			--output $(FAIR_TEST_DIR)/micro/$$pmid-micro.yaml \
+			2>&1 | tee $(FAIR_TEST_DIR)/micro/$$pmid-micro.log; \
+	done
+
+fair-annotator-analyze:
+	@echo "=== Fair Annotator Comparison Analysis (10 abstracts) ==="
+	@echo ""
+	@for annotator in $(FAIR_ANNOTATORS); do \
+		echo "$$annotator Results:"; \
+		total_grounded=0; total_auto=0; total_all=0; \
+		for f in $(FAIR_TEST_DIR)/$$annotator/*-$$annotator.yaml; do \
+			if [ -f "$$f" ]; then \
+				pmid=$$(basename $$f -$$annotator.yaml); \
+				grounded=$$(grep -E "http://purl.obolibrary.org/obo/|https://w3id.org/metpo/|METPO:[0-9]|MICRO:[0-9]|OMP:[0-9]|PATO:[0-9]|NCBITaxon:[0-9]|CHEBI:[0-9]" "$$f" 2>/dev/null | wc -l | tr -d ' '); \
+				auto=$$(grep "AUTO:" "$$f" 2>/dev/null | wc -l | tr -d ' '); \
+				total=$$(($$grounded + $$auto)); \
+				total_grounded=$$(($$total_grounded + $$grounded)); \
+				total_auto=$$(($$total_auto + $$auto)); \
+				total_all=$$(($$total_all + $$total)); \
+				printf "  %-15s: %3d groundings (%3d ontology URIs, %3d AUTO terms)\n" "$$pmid" "$$total" "$$grounded" "$$auto"; \
+			fi \
+		done; \
+		if [ $$total_all -gt 0 ]; then \
+			grounding_pct=$$(($$total_grounded * 100 / $$total_all)); \
+			printf "  %-15s  %3d total      (%3d URIs = %2d%%, %3d AUTO)\n" "TOTAL:" "$$total_all" "$$total_grounded" "$$grounding_pct" "$$total_auto"; \
+		fi; \
+		echo ""; \
+	done
+
+fair-annotator-analyze-phenotypes:
+	@echo "=== Fair Annotator Comparison: PHENOTYPE COVERAGE ONLY (10 abstracts) ==="
+	@echo ""
+	@echo "Counting UNIQUE phenotype terms grounded (not taxa, not duplicates)"
+	@echo ""
+	@for annotator in $(FAIR_ANNOTATORS); do \
+		echo "$$annotator Results:"; \
+		if [ "$$annotator" = "metpo" ]; then \
+			unique=$$(grep "predicate: has_phenotype" $(FAIR_TEST_DIR)/$$annotator/*-$$annotator.yaml -A1 2>/dev/null | \
+				grep "object: <https://w3id.org/metpo" | sed 's/.*metpo\///' | sed 's/>//' | sort -u | wc -l | tr -d ' '); \
+			total_instances=$$(grep "predicate: has_phenotype" $(FAIR_TEST_DIR)/$$annotator/*-$$annotator.yaml -A1 2>/dev/null | \
+				grep "object: <https://w3id.org/metpo" | wc -l | tr -d ' '); \
+		elif [ "$$annotator" = "micro" ]; then \
+			unique=$$(grep "predicate: has_phenotype" $(FAIR_TEST_DIR)/$$annotator/*-$$annotator.yaml -A1 2>/dev/null | \
+				grep "object: \(MICRO\|PATO\):" | sed 's/.*object: //' | sort -u | wc -l | tr -d ' '); \
+			total_instances=$$(grep "predicate: has_phenotype" $(FAIR_TEST_DIR)/$$annotator/*-$$annotator.yaml -A1 2>/dev/null | \
+				grep "object: \(MICRO\|PATO\):" | wc -l | tr -d ' '); \
+		elif [ "$$annotator" = "omp" ]; then \
+			unique=$$(grep "predicate: has_phenotype" $(FAIR_TEST_DIR)/$$annotator/*-$$annotator.yaml -A1 2>/dev/null | \
+				grep "object: \(OMP\|PATO\):" | sed 's/.*object: //' | sort -u | wc -l | tr -d ' '); \
+			total_instances=$$(grep "predicate: has_phenotype" $(FAIR_TEST_DIR)/$$annotator/*-$$annotator.yaml -A1 2>/dev/null | \
+				grep "object: \(OMP\|PATO\):" | wc -l | tr -d ' '); \
+		elif [ "$$annotator" = "pato" ]; then \
+			unique=$$(grep "predicate: has_phenotype" $(FAIR_TEST_DIR)/$$annotator/*-$$annotator.yaml -A1 2>/dev/null | \
+				grep "object: PATO:" | sed 's/.*object: //' | sort -u | wc -l | tr -d ' '); \
+			total_instances=$$(grep "predicate: has_phenotype" $(FAIR_TEST_DIR)/$$annotator/*-$$annotator.yaml -A1 2>/dev/null | \
+				grep "object: PATO:" | wc -l | tr -d ' '); \
+		else \
+			unique=0; total_instances=0; \
+		fi; \
+		if [ $$unique -gt 0 ]; then \
+			printf "  Unique phenotype terms: %2d\n" "$$unique"; \
+			printf "  Total uses (w/ duplicates): %2d\n" "$$total_instances"; \
+			echo "  Terms:"; \
+			if [ "$$annotator" = "metpo" ]; then \
+				grep "predicate: has_phenotype" $(FAIR_TEST_DIR)/$$annotator/*-$$annotator.yaml -A1 2>/dev/null | \
+					grep "object: <https://w3id.org/metpo" | sed 's/.*metpo\///' | sed 's/>//' | sort -u | \
+					while read id; do \
+						label=$$(grep -A1 "id: <https://w3id.org/metpo/$$id>" $(FAIR_TEST_DIR)/$$annotator/*.yaml 2>/dev/null | \
+							grep "label:" | head -1 | sed 's/.*label: //'); \
+						echo "    - $$label"; \
+					done; \
+			else \
+				grep -A1 "id: \(MICRO\|PATO\|OMP\):" $(FAIR_TEST_DIR)/$$annotator/*.yaml 2>/dev/null | \
+					grep "label:" | sed 's/.*label: //' | sort -u | while read label; do \
+						echo "    - $$label"; \
+					done; \
+			fi; \
+		else \
+			echo "  No phenotype groundings found"; \
+		fi; \
+		echo ""; \
+	done
+	@echo "=== SUMMARY ==="
+	@echo ""
+	@printf "%-10s  Unique Terms  Total Uses\n" "Ontology"
+	@printf "%-10s  ------------  ----------\n" "--------"
+	@for annotator in $(FAIR_ANNOTATORS); do \
+		if [ "$$annotator" = "metpo" ]; then \
+			unique=$$(grep "predicate: has_phenotype" $(FAIR_TEST_DIR)/$$annotator/*-$$annotator.yaml -A1 2>/dev/null | \
+				grep "object: <https://w3id.org/metpo" | sed 's/.*metpo\///' | sed 's/>//' | sort -u | wc -l | tr -d ' '); \
+			total=$$(grep "predicate: has_phenotype" $(FAIR_TEST_DIR)/$$annotator/*-$$annotator.yaml -A1 2>/dev/null | \
+				grep "object: <https://w3id.org/metpo" | wc -l | tr -d ' '); \
+		elif [ "$$annotator" = "micro" ]; then \
+			unique=$$(grep "predicate: has_phenotype" $(FAIR_TEST_DIR)/$$annotator/*-$$annotator.yaml -A1 2>/dev/null | \
+				grep "object: \(MICRO\|PATO\):" | sed 's/.*object: //' | sort -u | wc -l | tr -d ' '); \
+			total=$$(grep "predicate: has_phenotype" $(FAIR_TEST_DIR)/$$annotator/*-$$annotator.yaml -A1 2>/dev/null | \
+				grep "object: \(MICRO\|PATO\):" | wc -l | tr -d ' '); \
+		elif [ "$$annotator" = "omp" ]; then \
+			unique=$$(grep "predicate: has_phenotype" $(FAIR_TEST_DIR)/$$annotator/*-$$annotator.yaml -A1 2>/dev/null | \
+				grep "object: \(OMP\|PATO\):" | sed 's/.*object: //' | sort -u | wc -l | tr -d ' '); \
+			total=$$(grep "predicate: has_phenotype" $(FAIR_TEST_DIR)/$$annotator/*-$$annotator.yaml -A1 2>/dev/null | \
+				grep "object: \(OMP\|PATO\):" | wc -l | tr -d ' '); \
+		elif [ "$$annotator" = "pato" ]; then \
+			unique=$$(grep "predicate: has_phenotype" $(FAIR_TEST_DIR)/$$annotator/*-$$annotator.yaml -A1 2>/dev/null | \
+				grep "object: PATO:" | sed 's/.*object: //' | sort -u | wc -l | tr -d ' '); \
+			total=$$(grep "predicate: has_phenotype" $(FAIR_TEST_DIR)/$$annotator/*-$$annotator.yaml -A1 2>/dev/null | \
+				grep "object: PATO:" | wc -l | tr -d ' '); \
+		fi; \
+		printf "%-10s  %12d  %10d\n" "$$annotator" "$$unique" "$$total"; \
+	done
+
+fair-annotator-clean:
+	@echo "Cleaning fair annotator comparison outputs..."
+	rm -rf $(FAIR_TEST_DIR)
+	@echo "Clean complete"
