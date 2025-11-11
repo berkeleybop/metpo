@@ -8,6 +8,7 @@ and filters for papers that mention bacterial taxa.
 
 import re
 import shutil
+import click
 from pathlib import Path
 from typing import Set, Tuple
 
@@ -47,35 +48,28 @@ def get_abstract_text(filepath: Path) -> str:
     return content
 
 
-def main():
-    import argparse
+@click.command()
+@click.option('--source-dirs', multiple=True,
+              default=['literature_mining/abstracts', 'literature_mining/cmm_pfas_abstracts'],
+              help='Source directories to scan (can specify multiple)', show_default=True)
+@click.option('--output-dir', default='literature_mining/abstracts_filtered',
+              help='Output directory for filtered abstracts', show_default=True)
+@click.option('--dry-run', is_flag=True,
+              help='Show what would be done without copying files')
+@click.option('--require-bacteria', is_flag=True,
+              help='Only include abstracts mentioning bacterial taxa')
+def main(source_dirs, output_dir, dry_run, require_bacteria):
+    """Dedupe and filter abstracts for bacterial taxa mentions.
 
-    parser = argparse.ArgumentParser(
-        description="Dedupe and filter abstracts for bacterial taxa mentions"
-    )
-    parser.add_argument(
-        '--source-dirs',
-        nargs='+',
-        default=['literature_mining/abstracts', 'literature_mining/cmm_pfas_abstracts'],
-        help='Source directories to scan'
-    )
-    parser.add_argument(
-        '--output-dir',
-        default='literature_mining/abstracts_filtered',
-        help='Output directory for filtered abstracts'
-    )
-    parser.add_argument(
-        '--dry-run',
-        action='store_true',
-        help='Show what would be done without copying files'
-    )
-    parser.add_argument(
-        '--require-bacteria',
-        action='store_true',
-        help='Only include abstracts mentioning bacterial taxa'
-    )
-
-    args = parser.parse_args()
+    Consolidates abstracts from multiple directories, removes duplicates,
+    and optionally filters for papers mentioning bacterial taxa.
+    """
+    args = type('Args', (), {
+        'source_dirs': source_dirs,
+        'output_dir': output_dir,
+        'dry_run': dry_run,
+        'require_bacteria': require_bacteria
+    })()
 
     # Collect all abstracts
     print("Scanning source directories...")
@@ -147,8 +141,6 @@ def main():
 
         print(f"✓ Done! {len(files_to_copy)} abstracts in {args.output_dir}")
 
-    return 0
-
 
 if __name__ == '__main__':
-    exit(main())
+    main()

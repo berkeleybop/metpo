@@ -5,9 +5,9 @@ Takes numbers in via arguments, outputs JSON metrics to stdout.
 No I/O, no subprocess - just pure calculations.
 """
 
-import argparse
 import json
 import sys
+import click
 
 
 def calculate_metrics(
@@ -48,40 +48,39 @@ def calculate_metrics(
     }
 
 
-def main():
-    parser = argparse.ArgumentParser(
-        description="Calculate OntoGPT benchmark metrics",
-        formatter_class=argparse.RawDescriptionHelpFormatter,
-        epilog="""
-Example:
-  calculate_metrics.py --cost 0.05 --abstracts 10 --abstract-chars 15000 \\
-                       --input-chars 50000 --duration 300 --entities 45 --relationships 12
-        """
-    )
+@click.command()
+@click.option('--cost', type=float, required=True, help='Total cost in dollars')
+@click.option('--abstracts', type=int, required=True, help='Number of abstracts')
+@click.option('--abstract-chars', type=int, required=True, help='Total abstract characters')
+@click.option('--input-chars', type=int, required=True, help='Total input characters (template + abstracts)')
+@click.option('--duration', type=int, required=True, help='Total duration in seconds')
+@click.option('--entities', type=int, required=True, help='Total entities extracted')
+@click.option('--relationships', type=int, required=True, help='Total relationships extracted')
+def main(cost, abstracts, abstract_chars, input_chars, duration, entities, relationships):
+    """Calculate OntoGPT benchmark metrics.
 
-    parser.add_argument("--cost", type=float, required=True, help="Total cost in dollars")
-    parser.add_argument("--abstracts", type=int, required=True, help="Number of abstracts")
-    parser.add_argument("--abstract-chars", type=int, required=True, help="Total abstract characters")
-    parser.add_argument("--input-chars", type=int, required=True, help="Total input characters (template + abstracts)")
-    parser.add_argument("--duration", type=int, required=True, help="Total duration in seconds")
-    parser.add_argument("--entities", type=int, required=True, help="Total entities extracted")
-    parser.add_argument("--relationships", type=int, required=True, help="Total relationships extracted")
+    Takes numbers in via arguments, outputs JSON metrics to stdout.
+    No I/O, no subprocess - just pure calculations.
 
-    args = parser.parse_args()
+    Example:
 
+        calculate-extraction-metrics --cost 0.05 --abstracts 10 \\
+            --abstract-chars 15000 --input-chars 50000 --duration 300 \\
+            --entities 45 --relationships 12
+    """
     metrics = calculate_metrics(
-        cost=args.cost,
-        num_abstracts=args.abstracts,
-        abstract_chars=args.abstract_chars,
-        input_chars=args.input_chars,
-        duration=args.duration,
-        entities=args.entities,
-        relationships=args.relationships
+        cost=cost,
+        num_abstracts=abstracts,
+        abstract_chars=abstract_chars,
+        input_chars=input_chars,
+        duration=duration,
+        entities=entities,
+        relationships=relationships
     )
 
     # Output JSON to stdout
     json.dump(metrics, sys.stdout, indent=2)
-    print()  # Newline for readability
+    click.echo()  # Newline for readability
 
 
 if __name__ == "__main__":

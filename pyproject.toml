@@ -112,6 +112,17 @@ filter-ols-chromadb = "metpo.database.filter_ols_chromadb:main"
 analyze-ontology-value = "metpo.analysis.analyze_ontology_value:main"
 analyze-match-quality = "metpo.analysis.analyze_match_quality:main"
 
+# Literature Mining - Analysis
+visualize-ner = "metpo.literature_mining.analysis.visualize_ner:main"
+metpo-assessor = "metpo.literature_mining.analysis.metpo_assessor:cli"
+
+# Literature Mining - Utilities
+fetch-abstracts-from-dois = "metpo.literature_mining.scripts.fetch_abstracts_from_dois:main"
+extract-abstracts-from-files = "metpo.literature_mining.scripts.extract_abstracts_from_files:main"
+dedupe-and-filter-abstracts = "metpo.literature_mining.scripts.dedupe_and_filter_abstracts:main"
+dedupe-by-content = "metpo.literature_mining.scripts.dedupe_by_content:main"
+calculate-extraction-metrics = "metpo.literature_mining.scripts.calculate_metrics:main"
+
 [tool.hatch.build.targets.wheel]
 packages = ["metpo"]
 

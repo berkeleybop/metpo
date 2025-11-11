@@ -7,6 +7,7 @@ their abstracts from local PDF/MD files.
 """
 
 import re
+import click
 from pathlib import Path
 from typing import Optional, Dict, List
 
@@ -227,28 +228,23 @@ def process_failed_papers():
     return results
 
 
-def main():
-    """Main entry point."""
-    import argparse
+@click.command()
+@click.option('--dry-run', is_flag=True,
+              help="Show what would be extracted without saving files")
+def main(dry_run):
+    """Extract abstracts from local PDF/MD files for failed API retrievals.
 
-    parser = argparse.ArgumentParser(
-        description="Extract abstracts from local PDF/MD files for failed API retrievals"
-    )
-    parser.add_argument(
-        '--dry-run',
-        action='store_true',
-        help="Show what would be extracted without saving files"
-    )
-
-    args = parser.parse_args()
-
-    if args.dry_run:
-        print("DRY RUN MODE - No files will be saved\n")
+    Processes papers in ../CMM-AI/papers/ that failed to fetch via API,
+    extracting abstracts directly from the source files.
+    """
+    if dry_run:
+        click.echo("DRY RUN MODE - No files will be saved\n")
 
     results = process_failed_papers()
 
-    return 0 if not results['failed'] else 1
+    if results['failed']:
+        raise click.Abort()
 
 
 if __name__ == '__main__':
-    exit(main())
+    main()

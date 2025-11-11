@@ -2,11 +2,12 @@
 """
 Fetch abstracts from DOIs using artl-mcp's Europe PMC integration.
 
-This script uses artl-mcp directly to retrieve abstracts for papers 
+This script uses artl-mcp directly to retrieve abstracts for papers
 that have DOIs but not PMIDs.
 """
 
 import json
+import click
 from pathlib import Path
 from typing import Optional
 
@@ -94,57 +95,46 @@ def fetch_abstracts_from_file(input_file: Path, output_file: Path, doi_column: s
         print(f"\nWrote {len(results)} results to {output_file}")
 
 
-def main():
-    import argparse
-    
-    parser = argparse.ArgumentParser(
-        description="Fetch abstracts from DOIs using Europe PMC"
-    )
-    parser.add_argument(
-        "--doi",
-        help="Single DOI to fetch"
-    )
-    parser.add_argument(
-        "--input-file",
-        type=Path,
-        help="TSV file containing DOIs"
-    )
-    parser.add_argument(
-        "--output-file",
-        type=Path,
-        help="Output TSV file (required with --input-file)"
-    )
-    parser.add_argument(
-        "--doi-column",
-        default="doi",
-        help="Name of the DOI column in input file (default: doi)"
-    )
-    
-    args = parser.parse_args()
-    
-    if args.doi:
+@click.command()
+@click.option('--doi', help='Single DOI to fetch and print to stdout')
+@click.option('--input-file', type=click.Path(exists=True, path_type=Path),
+              help='TSV file containing DOIs (batch mode)')
+@click.option('--output-file', type=click.Path(path_type=Path),
+              help='Output TSV file (required with --input-file)')
+@click.option('--doi-column', default='doi', show_default=True,
+              help='Name of the DOI column in input file')
+def main(doi, input_file, output_file, doi_column):
+    """Fetch abstracts from DOIs using Europe PMC API via artl-mcp.
+
+    Two modes of operation:
+
+    1. Single DOI mode: --doi DOI_STRING (prints JSON to stdout)
+
+    2. Batch mode: --input-file FILE --output-file FILE
+    """
+    if doi:
         # Single DOI mode
-        result = get_abstract_from_doi(args.doi)
+        result = get_abstract_from_doi(doi)
         if result:
-            print(json.dumps(result, indent=2))
+            click.echo(json.dumps(result, indent=2))
         else:
-            print("No abstract found")
-            return 1
-    
-    elif args.input_file:
+            click.echo("No abstract found", err=True)
+            raise click.Abort()
+
+    elif input_file:
         # Batch mode
-        if not args.output_file:
-            print("Error: --output-file required with --input-file")
-            return 1
-        
-        fetch_abstracts_from_file(args.input_file, args.output_file, args.doi_column)
-    
+        if not output_file:
+            click.echo("Error: --output-file required with --input-file", err=True)
+            raise click.Abort()
+
+        fetch_abstracts_from_file(input_file, output_file, doi_column)
+
     else:
-        parser.print_help()
-        return 1
-    
-    return 0
+        click.echo("Error: Must provide either --doi or --input-file", err=True)
+        ctx = click.get_current_context()
+        click.echo(ctx.get_help())
+        raise click.Abort()
 
 
 if __name__ == "__main__":
-    exit(main())
+    main()

@@ -6,6 +6,7 @@ Uses PMID/DOI matching and text similarity to find duplicates.
 """
 
 import re
+import click
 from pathlib import Path
 from typing import Dict, Set, Tuple
 from collections import defaultdict
@@ -124,25 +125,22 @@ def find_duplicates(source_dirs):
     return duplicates, all_files
 
 
-def main():
-    import argparse
+@click.command()
+@click.option('--source-dirs', multiple=True,
+              default=['literature_mining/abstracts', 'literature_mining/cmm_pfas_abstracts'],
+              help='Source directories to scan (can specify multiple)', show_default=True)
+@click.option('--show-details', is_flag=True,
+              help='Show details of each duplicate group')
+def main(source_dirs, show_details):
+    """Find duplicate abstracts by content comparison.
 
-    parser = argparse.ArgumentParser(
-        description="Find duplicate abstracts by content comparison"
-    )
-    parser.add_argument(
-        '--source-dirs',
-        nargs='+',
-        default=['literature_mining/abstracts', 'literature_mining/cmm_pfas_abstracts'],
-        help='Source directories to scan'
-    )
-    parser.add_argument(
-        '--show-details',
-        action='store_true',
-        help='Show details of each duplicate group'
-    )
-
-    args = parser.parse_args()
+    Scans abstract files and identifies duplicates based on content similarity,
+    even when filenames differ.
+    """
+    args = type('Args', (), {
+        'source_dirs': source_dirs,
+        'show_details': show_details
+    })()
 
     duplicates, all_files = find_duplicates(args.source_dirs)
 
@@ -177,8 +175,6 @@ def main():
             for dupe in dupes:
                 print(f"    - {dupe.name} (from {dupe.parent.name}/)")
 
-    return 0
-
 
 if __name__ == '__main__':
-    exit(main())
+    main()
