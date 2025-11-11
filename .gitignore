@@ -70,6 +70,10 @@ literature_mining/abstracts/
 assets/chebi.lex
 assets/*.zip
 
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
 # ChromaDB directories (vector databases can be multi-GB)
 notebooks/*.db
 notebooks/metpo_relevant_chroma/
@@ -84,16 +88,17 @@ embeddings_chroma/
 .ontology_fetch.log
 .robot_query.log
 
+# ROBOT quality control report (regenerate with: make metpo-report.tsv)
+metpo-report.tsv
+
 # N4L phenotypic ontology generated docs (4000+ HTML files)
 assets/N4L_phenotypic_ontology_2016/N4L_phenotypic_ontology/20160406_docs/
 assets/N4L_phenotypic_ontology_2016/N4L_phenotypic_ontology/20160406_docs/doc/
 
 # Ontologies directory - ignore large OWL files but keep analysis results
-ontologies/*.owl
-ontologies/*.obo
-ontologies/*.ttl
-ontologies/robot_test_results/
-ontologies/validation_results/*.owl
-ontologies/validation_results/*.obo
-ontologies/validation_results/*.ttl
+# External ontology files
+# Tracked in git since total size is reasonable (~17 MB)
+# Only ignore derived databases
+external/databases/*.db
 .~lock.*#
+data/chromadb/chroma_ols20_nonols4/

@@ -7,58 +7,104 @@ authors = [
 ]
 readme = "README.md"
 requires-python = ">=3.11"
-dependencies = [
-    "artl-mcp>=0.34.0",
-    "click==8.3.0",
-    "dotenv>=0.9.9",
-    "matplotlib>=3.10.7",
-    "numpy>=2.0.2",
-    "oaklib>=0.6.23",
-    "ontogpt>=1.0.18",
-    "pandas>=2.3.3",
-    "pymongo==4.15.3",
-    "pyyaml==6.0.3",
-    "requests>=2.32.0",
+keywords = ["ontology", "microbiology", "phenotypes", "traits", "obo"]
+license = {text = "CC-BY-4.0"}
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
 ]
+
+dependencies = [
+    "click>=8.3.0",
+    "python-dotenv>=1.2.1",
+    "pyyaml>=6.0.3",
+    "requests>=2.32.5",
+]
+
+[project.urls]
+Homepage = "https://github.com/berkeleybop/metpo"
+Repository = "https://github.com/berkeleybop/metpo"
+Issues = "https://github.com/berkeleybop/metpo/issues"
+Documentation = "https://github.com/berkeleybop/metpo/blob/main/README.md"
 
 [project.optional-dependencies]
 dev = [
-    "ontogpt>=1.0.18",
+    "oaklib>=0.6.23",
     "pandas>=2.3.3",
+    "pymongo>=4.15.3",
     "rdflib>=7.1.4",
     "semsql>=0.4.0",
+    "tqdm>=4.67.1",
     "litellm>=1.79.0",
     "openai>=2.6.1",
-    "oaklib>=0.6.23",
+]
+literature = [
     "artl-mcp>=0.34.0",
+    "linkml>=1.8.5",
+    "oaklib>=0.6.23",
+    "ontogpt>=1.0.18",
+    "pandas>=2.3.3",
+    "litellm>=1.79.0",
+    "openai>=2.6.1",
+    "semsql>=0.4.0",
+]
+databases = [
+    "pandas>=2.3.3",
+    "pymongo>=4.15.3",
 ]
 notebooks = [
     "jupyter>=1.1.1",
     "notebook>=7.4.7",
-    "python-dotenv>=1.2.1",
-    "python-levenshtein>=0.27.1",
-    "requests>=2.32.5",
+    "matplotlib>=3.10.7",
     "numpy>=2.0.2",
-    "pandas>=2.3.3",
+    "python-levenshtein>=0.27.1",
     "chromadb>=1.2.2",
     "tqdm>=4.67.1",
     "openai>=2.6.1",
 ]
 
 [project.scripts]
-extract-rank-triples = "metpo.extract_rank_triples:extract_taxon_ranks"
-convert-chem-props = "metpo.convert_chem_props:convert_chem_props"
-import-bactotraits = "metpo.import_bactotraits:import_bactotraits"
-reconcile-bactotraits-coverage = "metpo.scripts.reconcile_bactotraits_coverage:main"
-reconcile-madin-coverage = "metpo.scripts.reconcile_madin_coverage:main"
-bactotraits-metpo-set-difference = "metpo.scripts.bactotraits_metpo_set_difference:main"
-create-bactotraits-field-mappings = "metpo.scripts.create_bactotraits_header_mapping:main"
-create-bactotraits-file-versions = "metpo.scripts.create_bactotraits_file_versions:main"
-create-bactotraits-files = "metpo.scripts.create_bactotraits_files:main"
-update-manifest = "metpo.scripts.update_manifest:main"
-scan-manifest = "metpo.scripts.scan_manifest:main"
-download-ontology = "metpo.scripts.download_ontology:main"
-query-ontology = "metpo.scripts.query_ontology:main"
+# Tools
+extract-rank-triples = "metpo.tools.extract_rank_triples:extract_taxon_ranks"
+convert-chem-props = "metpo.tools.convert_chem_props:convert_chem_props"
+import-bactotraits = "metpo.tools.import_bactotraits:import_bactotraits"
+
+# BactoTraits
+reconcile-bactotraits-coverage = "metpo.bactotraits.reconcile_bactotraits_coverage:main"
+reconcile-madin-coverage = "metpo.bactotraits.reconcile_madin_coverage:main"
+bactotraits-metpo-set-difference = "metpo.bactotraits.bactotraits_metpo_set_difference:main"
+create-bactotraits-field-mappings = "metpo.bactotraits.create_bactotraits_header_mapping:main"
+create-bactotraits-file-versions = "metpo.bactotraits.create_bactotraits_file_versions:main"
+create-bactotraits-files = "metpo.bactotraits.create_bactotraits_files:main"
+create-stubs = "metpo.bactotraits.create_stubs:main"
+migrate-range-metadata = "metpo.bactotraits.migrate_range_metadata_v2:main"
+update-manifest = "metpo.bactotraits.update_manifest:main"
+scan-manifest = "metpo.bactotraits.scan_manifest:main"
+download-ontology = "metpo.bactotraits.download_ontology:main"
+query-ontology = "metpo.bactotraits.query_ontology:main"
+
+# Pipeline
+categorize-ontologies = "metpo.pipeline.categorize_ontologies:main"
+analyze-matches = "metpo.pipeline.analyze_matches:main"
+embed-ontology-to-chromadb = "metpo.pipeline.embed_ontology_to_chromadb:main"
+fetch-ontology-names = "metpo.pipeline.fetch_ontology_names:main"
+chromadb-semantic-mapper = "metpo.pipeline.chromadb_semantic_mapper:main"
+analyze-sibling-coherence = "metpo.pipeline.analyze_sibling_coherence:main"
+analyze-coherence-results = "metpo.pipeline.analyze_coherence_results:main"
+
+# Database
+migrate-to-chromadb = "metpo.database.migrate_to_chromadb_resilient:main"
+audit-chromadb = "metpo.database.audit_chromadb:main"
+combine-chromadb = "metpo.database.combine_chromadb:main"
+filter-ols-chromadb = "metpo.database.filter_ols_chromadb:main"
+
+# Analysis
+analyze-ontology-value = "metpo.analysis.analyze_ontology_value:main"
+analyze-match-quality = "metpo.analysis.analyze_match_quality:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["metpo"]

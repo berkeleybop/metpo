@@ -1,0 +1,80 @@
+# Git attributes for cross-platform consistency
+
+# Auto-detect text files and perform LF normalization
+* text=auto
+
+# Source code
+*.py text eol=lf
+*.sh text eol=lf
+*.bash text eol=lf
+*.js text eol=lf
+*.ts text eol=lf
+
+# Configuration files
+*.yaml text eol=lf
+*.yml text eol=lf
+*.json text eol=lf
+*.toml text eol=lf
+*.ini text eol=lf
+*.cfg text eol=lf
+.env* text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf
+
+# Documentation
+*.md text eol=lf
+*.txt text eol=lf
+*.rst text eol=lf
+LICENSE text eol=lf
+README text eol=lf
+
+# Data files
+*.tsv text eol=lf
+*.csv text eol=lf
+*.sssom.tsv text eol=lf
+
+# Ontology files
+*.owl text eol=lf
+*.obo text eol=lf
+*.rdf text eol=lf
+*.ttl text eol=lf
+*.ofn text eol=lf
+
+# ROBOT templates
+*.robot text eol=lf
+
+# Makefiles (MUST use LF)
+Makefile text eol=lf
+makefile text eol=lf
+*.mk text eol=lf
+
+# Shell scripts (MUST use LF)
+run.sh text eol=lf
+
+# Binary files
+*.db binary
+*.sqlite binary
+*.sqlite3 binary
+*.pkl binary
+*.pickle binary
+
+# Images
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.svg text
+
+# Archives
+*.zip binary
+*.tar binary
+*.gz binary
+*.bz2 binary
+*.xz binary
+
+# Office documents
+*.docx binary
+*.xlsx binary
+*.pptx binary
+*.pdf binary

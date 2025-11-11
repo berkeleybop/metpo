@@ -4,11 +4,115 @@ UNZIP=unzip
 -include .env
 export
 
-.PHONY: install clean-env clean-data
+# ==============================================================================
+# Default Target
+# ==============================================================================
 
-# Environment setup target
+.DEFAULT_GOAL := help
+
+# ==============================================================================
+# Environment Setup Targets
+# ==============================================================================
+
+.PHONY: help install install-dev install-literature install-databases install-notebooks install-all check-env clean-env clean-data metpo-report
+
+# Show available targets and usage information
+help:
+	@echo "METPO Project - Main Makefile"
+	@echo ""
+	@echo "Environment Setup:"
+	@echo "  make install              - Install core dependencies"
+	@echo "  make install-dev          - Install development environment"
+	@echo "  make install-literature   - Install literature mining environment"
+	@echo "  make install-databases    - Install database workflows environment"
+	@echo "  make install-notebooks    - Install notebooks environment"
+	@echo "  make install-all          - Install all optional dependencies"
+	@echo "  make check-env            - Check environment status"
+	@echo ""
+	@echo "Quality Control:"
+	@echo "  make metpo-report.tsv     - Generate ROBOT quality control report"
+	@echo ""
+	@echo "Data Import:"
+	@echo "  make import-all           - Import all datasets (BactoTraits + Madin)"
+	@echo "  make import-bactotraits   - Import BactoTraits data to MongoDB"
+	@echo "  make import-madin         - Import Madin et al. data to MongoDB"
+	@echo ""
+	@echo "Analysis Reports:"
+	@echo "  make all-reports          - Generate all analysis reports"
+	@echo ""
+	@echo "Ontology Alignment Pipeline:"
+	@echo "  make help-alignment       - Show detailed alignment pipeline help"
+	@echo "  make alignment-run-all    - Run complete alignment pipeline"
+	@echo ""
+	@echo "External Ontology Downloads:"
+	@echo "  make download-external-bioportal-ontologies  - Download non-OLS ontologies"
+	@echo "  make generate-non-ols-tsvs                   - Extract terms for embeddings"
+	@echo "  make scan-manifest                           - Update ontology manifest"
+	@echo ""
+	@echo "Literature Mining:"
+	@echo "  make -C literature_mining help               - Show literature mining help"
+	@echo ""
+	@echo "Cleanup:"
+	@echo "  make clean-all            - Complete cleanup (env + data + databases)"
+	@echo "  make clean-env            - Remove virtual environments"
+	@echo "  make clean-data           - Remove generated data files"
+	@echo "  make clean-reports        - Remove analysis reports"
+	@echo ""
+	@echo "Testing:"
+	@echo "  make test-workflow        - Test complete workflow reproducibility"
+
+# Base installation (core dependencies only: click, python-dotenv, pyyaml, requests)
 install:
+	uv sync
+
+# Development environment (adds: oaklib, pandas, pymongo, rdflib, semsql, tqdm, litellm, openai)
+install-dev:
+	uv sync --extra dev
+
+# Literature mining environment (adds: artl-mcp, oaklib, ontogpt, pandas, litellm, openai, semsql)
+install-literature:
+	uv sync --extra literature
+
+# Database workflows (adds: pandas, pymongo for BactoTraits/Madin imports)
+install-databases:
+	uv sync --extra databases
+
+# Notebooks environment (adds: jupyter, notebook, matplotlib, numpy, chromadb, etc.)
+install-notebooks:
+	uv sync --extra notebooks
+
+# Install all optional dependencies
+install-all:
 	uv sync --all-extras
+
+# Check environment status
+check-env:
+	@echo "=== METPO Environment Status ==="
+	@echo ""
+	@echo "Python:"
+	@which python3 || echo "  ✗ python3 not found"
+	@python3 --version 2>/dev/null || true
+	@echo ""
+	@echo "UV:"
+	@which uv || echo "  ✗ uv not found (install: curl -LsSf https://astral.sh/uv/install.sh | sh)"
+	@uv --version 2>/dev/null || true
+	@echo ""
+	@echo "Virtual Environment:"
+	@test -d .venv && echo "  ✓ .venv exists" || echo "  ✗ .venv not found (run: make install)"
+	@test -f .venv/bin/python && .venv/bin/python --version || true
+	@echo ""
+	@echo "MongoDB:"
+	@which mongosh || echo "  ✗ mongosh not found"
+	@mongosh --version 2>/dev/null || true
+	@echo ""
+	@echo "ROBOT:"
+	@which robot || echo "  ✗ robot not found"
+	@robot --version 2>/dev/null || true
+	@echo ""
+	@echo "Environment Variables:"
+	@test -f .env && echo "  ✓ .env file exists" || echo "  ✗ .env file not found"
+	@test -n "$$BIOPORTAL_API_KEY" && echo "  ✓ BIOPORTAL_API_KEY set" || echo "  ✗ BIOPORTAL_API_KEY not set"
+	@test -n "$$OPENAI_API_KEY" && echo "  ✓ OPENAI_API_KEY set" || echo "  ✗ OPENAI_API_KEY not set (required for literature mining)"
 
 # Aggressively remove all UV and Poetry environment files
 clean-env:
@@ -24,12 +128,38 @@ clean-data:
 	rm -f downloads/taxdmp.zip
 	rm -rf local/taxdmp/
 	rm -f local/noderanks.ttl
-	rm -f generated/bacdive_oxygen_phenotype_mappings.tsv
-	rm -rf data/bioportal_owl/
-	rm -rf data/entity_extracts/
-	rm -rf data/reports/
+	rm -f data/generated/bacdive_oxygen_phenotype_mappings.tsv
+	rm -rf external/metpo_historical/
+	rm -rf metadata/ontology/historical_submissions/entity_extracts/
 	rm -rf downloads/sheets/
 	@echo "All generated data files cleaned"
+
+# ==============================================================================
+# METPO Quality Control Report
+# ==============================================================================
+
+# Generate ROBOT quality control report from the main release file
+# Usage: make metpo-report.tsv
+# Note: This file is gitignored and can be regenerated anytime
+metpo-report.tsv: metpo.owl
+	@echo "Generating ROBOT quality control report..."
+	robot report -i $< \
+		-l true \
+		--fail-on None \
+		--base-iri https://w3id.org/metpo/METPO_ \
+		--base-iri https://w3id.org/metpo/metpo \
+		--print 5 \
+		-o $@
+	@echo "Report generated: $@"
+	@echo ""
+	@wc -l $@ | awk '{print "Total issues:", $$1-1}'
+	@grep "^ERROR" $@ | wc -l | awk '{print "Errors:", $$1}'
+	@grep "^WARN" $@ | wc -l | awk '{print "Warnings:", $$1}'
+	@grep "^INFO" $@ | wc -l | awk '{print "Info:", $$1}'
+
+# ==============================================================================
+# Taxonomy Data
+# ==============================================================================
 
 # see https://ftp.ncbi.nlm.nih.gov/pub/taxonomy/taxdump_readme.txt regarding nodes.dmp
 
@@ -45,24 +175,31 @@ local/taxdmp/nodes.dmp: local/taxdmp
 local/noderanks.ttl: local/taxdmp/nodes.dmp
 	uv run extract-rank-triples --input-file $< --output-file $@
 
-generated/bacdive_oxygen_phenotype_mappings.tsv: sparql/bacdive_oxygen_phenotype_mappings.rq src/ontology/metpo.owl
+data/generated/bacdive_oxygen_phenotype_mappings.tsv: sparql/bacdive_oxygen_phenotype_mappings.rq src/ontology/metpo.owl
 	mkdir -p $(dir $@)
 	robot query \
 		--query $(word 1,$^) $@ \
 		--input $(word 2,$^)
 
-# Extract terms from non-OLS ontologies for embedding generation
-# Pattern: notebooks/non-ols-terms/<ontology-id>_terms.tsv
-# Usage: make notebooks/non-ols-terms/D3O.tsv
+# Extract terms from external ontologies for embedding generation
+# Pattern: data/pipeline/non-ols-terms/<ontology-id>_terms.tsv
+# Usage: make data/pipeline/non-ols-terms/D3O.tsv
 # Make calls robot directly with catalog to handle broken imports
 # Python validates output
-notebooks/non-ols-terms/%.tsv: non-ols/%.owl sparql/extract_for_embeddings.rq
+data/pipeline/non-ols-terms/%.tsv: external/ontologies/bioportal/%.owl sparql/extract_for_embeddings.rq
 	@mkdir -p $(dir $@)
 	@echo "Querying $* with ROBOT..."
 	-@robot query --input $< --catalog catalog-v001.xml --query $(word 2,$^) $@ 2>&1 | tee -a .robot_query.log
 	-@uv run validate-tsv $* --tsv $@
 
-notebooks/non-ols-terms/%.tsv: non-ols/%.ttl sparql/extract_for_embeddings.rq
+data/pipeline/non-ols-terms/%.tsv: external/ontologies/bioportal/%.ttl sparql/extract_for_embeddings.rq
+	@mkdir -p $(dir $@)
+	@echo "Querying $* with ROBOT..."
+	-@robot query --input $< --catalog catalog-v001.xml --query $(word 2,$^) $@ 2>&1 | tee -a .robot_query.log
+	-@uv run validate-tsv $* --tsv $@
+
+# Manual ontologies (like n4l_merged.owl)
+data/pipeline/non-ols-terms/%.tsv: external/ontologies/manual/%.owl sparql/extract_for_embeddings.rq
 	@mkdir -p $(dir $@)
 	@echo "Querying $* with ROBOT..."
 	-@robot query --input $< --catalog catalog-v001.xml --query $(word 2,$^) $@ 2>&1 | tee -a .robot_query.log
@@ -142,30 +279,30 @@ import-bactotraits:
 	uv run import-bactotraits
 
 .PHONY: import-bactotraits-metadata
-import-bactotraits-metadata: metadata/bactotraits_field_mappings.json metadata/bactotraits_files.json
-	jq '.mappings' metadata/bactotraits_field_mappings.json | \
+import-bactotraits-metadata: metadata/databases/bactotraits/bactotraits_field_mappings.json metadata/databases/bactotraits/bactotraits_files.json
+	jq '.mappings' metadata/databases/bactotraits/bactotraits_field_mappings.json | \
 		mongoimport --db bactotraits --collection field_mappings \
 		--jsonArray --drop
 	mongoimport --db bactotraits --collection files \
-		--file metadata/bactotraits_files.json \
+		--file metadata/databases/bactotraits/bactotraits_files.json \
 		--jsonArray --drop
 	@echo "BactoTraits metadata collections imported"
 
 .PHONY: import-madin-metadata
-import-madin-metadata: metadata/madin_files.json
+import-madin-metadata: metadata/databases/madin/madin_files.json
 	mongoimport --db madin --collection files \
-		--file metadata/madin_files.json \
+		--file metadata/databases/madin/madin_files.json \
 		--jsonArray --drop
 	@echo "Madin metadata collections imported"
 
-reports/bactotraits-metpo-set-diff.yaml: metpo/scripts/bactotraits_metpo_set_difference.py reports/synonym-sources.tsv local/bactotraits/BactoTraits.tsv
+reports/bactotraits-metpo-set-diff.yaml: metpo/bactotraits/bactotraits_metpo_set_difference.py reports/synonym-sources.tsv local/bactotraits/BactoTraits.tsv
 	uv run bactotraits-metpo-set-difference \
 		--bactotraits-file $(word 3, $^) \
 		--synonyms-file $(word 2, $^) \
 		--format yaml \
 		--output $@
 
-reports/bactotraits-metpo-reconciliation.yaml: metpo/scripts/reconcile_bactotraits_coverage.py reports/synonym-sources.tsv
+reports/bactotraits-metpo-reconciliation.yaml: metpo/bactotraits/reconcile_bactotraits_coverage.py reports/synonym-sources.tsv
 	uv run reconcile-bactotraits-coverage \
 		--mode field_names \
 		--tsv $(word 2, $^) \
@@ -173,7 +310,7 @@ reports/bactotraits-metpo-reconciliation.yaml: metpo/scripts/reconcile_bactotrai
 		--output $@
 
 # BactoTraits field mappings - generates JSON and loads to MongoDB
-metadata/bactotraits_field_mappings.json: local/bactotraits/BactoTraits_databaseV2_Jun2022.csv local/bactotraits/BactoTraits.tsv
+metadata/databases/bactotraits/bactotraits_field_mappings.json: local/bactotraits/BactoTraits_databaseV2_Jun2022.csv local/bactotraits/BactoTraits.tsv
 	uv run create-bactotraits-field-mappings \
 		--provider-file local/bactotraits/BactoTraits_databaseV2_Jun2022.csv \
 		--kg-microbe-file local/bactotraits/BactoTraits.tsv \
@@ -278,11 +415,11 @@ METPO_SUBMISSIONS = \
 .PHONY: download-all-bioportal-submissions clean-bioportal-submissions list-bioportal-submissions
 
 # Download all METPO submissions from BiPortal
-download-all-bioportal-submissions: $(foreach sub,$(METPO_SUBMISSIONS),data/bioportal_owl/metpo_submission_$(word 1,$(subst :, ,$(sub))).owl)
-	@echo "All BiPortal METPO submissions downloaded to data/bioportal_owl/"
+download-all-bioportal-submissions: $(foreach sub,$(METPO_SUBMISSIONS),external/metpo_historical/metpo_submission_$(word 1,$(subst :, ,$(sub))).owl)
+	@echo "All BiPortal METPO submissions downloaded to external/metpo_historical/"
 
 # Individual submission download targets
-data/bioportal_owl/metpo_submission_%.owl: | data/bioportal_owl
+external/metpo_historical/metpo_submission_%.owl: | external/metpo_historical
 	@echo "Downloading METPO submission $*..."
 	@curl -L -s "$(BIOPORTAL_SUBMISSION_BASE)/$*/download?apikey=$$BIOPORTAL_API_KEY" -o $@
 	@if [ -s $@ ]; then \
@@ -293,8 +430,8 @@ data/bioportal_owl/metpo_submission_%.owl: | data/bioportal_owl
 		rm -f $@; \
 	fi
 
-# Ensure data/bioportal_owl directory exists
-data/bioportal_owl:
+# Ensure metpo_historical directory exists
+external/metpo_historical:
 	mkdir -p $@
 
 # Clean downloaded BiPortal submissions
@@ -305,7 +442,7 @@ data/bioportal_owl:
 
 
 
-# List of non-OLS ontologies to process from BioPortal
+# List of external ontologies to process from BioPortal
 # MPO: MPO/RIKEN Microbial Phenotype Ontology
 # OMP: Ontology of Microbial Phenotypes
 # BIPON: Bacterial interlocked Process Ontology
@@ -321,9 +458,9 @@ data/bioportal_owl:
 # TYPON: Microbial Typing Ontology
 NON_OLS_BIOPORTAL_ONTOLOGIES = MPO OMP BIPON D3O FMPM GMO HMADO ID-AMR MCCV MEO miso OFSMR TYPON
 
-.PHONY: download-non-ols-bioportal-ontologies clean-non-ols-bioportal-ontologies
+.PHONY: download-external-bioportal-ontologies clean-external-bioportal-ontologies
 
-download-non-ols-bioportal-ontologies: $(foreach ont,$(NON_OLS_BIOPORTAL_ONTOLOGIES),non-ols/$(ont).owl)
+download-external-bioportal-ontologies: $(foreach ont,$(NON_OLS_BIOPORTAL_ONTOLOGIES),external/ontologies/bioportal/$(ont).owl)
 	@echo ""
 	@echo "=========================================="
 	@echo "Download phase complete"
@@ -335,36 +472,35 @@ download-non-ols-bioportal-ontologies: $(foreach ont,$(NON_OLS_BIOPORTAL_ONTOLOG
 # Download ontology from BioPortal
 # Python script handles all error checking, logging, and validation
 # Exit code 0 = success, 1 = failure
-non-ols/%.owl: | non-ols
+external/ontologies/bioportal/%.owl: | external/ontologies/bioportal
 	-@uv run download-ontology $* --output $@
 
-non-ols/%.ttl: | non-ols
+external/ontologies/bioportal/%.ttl: | external/ontologies/bioportal
 	-@uv run download-ontology $* --output $@
 
-non-ols:
+external/ontologies/bioportal:
 	mkdir -p $@
 
-clean-non-ols-bioportal-ontologies:
-	@echo "Cleaning downloaded non-OLS BioPortal ontologies..."
-	@echo "Keeping manually added files: n4l_merged.owl, MISO.owl (if present)"
-	rm -f $(foreach ont,$(NON_OLS_BIOPORTAL_ONTOLOGIES),non-ols/$(ont).owl)
-	@echo "Cleaned non-OLS BioPortal ontologies"
+clean-external-bioportal-ontologies:
+	@echo "Cleaning downloaded external BioPortal ontologies..."
+	@echo "Keeping manually added files in external/ontologies/manual/"
+	rm -f $(foreach ont,$(NON_OLS_BIOPORTAL_ONTOLOGIES),external/ontologies/bioportal/$(ont).owl)
+	@echo "Cleaned external BioPortal ontologies"
 
-clean-non-ols-pipeline:
+clean-external-pipeline:
 	@echo "Cleaning pipeline-generated files (keeping manual downloads)..."
 	@echo "Removing BioPortal downloads..."
-	rm -f $(foreach ont,$(NON_OLS_BIOPORTAL_ONTOLOGIES),non-ols/$(ont).owl)
+	rm -f $(foreach ont,$(NON_OLS_BIOPORTAL_ONTOLOGIES),external/ontologies/bioportal/$(ont).owl)
 	@echo "Removing ROBOT query outputs..."
-	rm -f notebooks/non-ols-terms/*.tsv
+	rm -f data/pipeline/non-ols-terms/*.tsv
 	@echo "Removing logs and manifest..."
 	rm -f .ontology_manifest.json .ontology_fetch.log .robot_query.log
 	@echo ""
 	@echo "✓ Cleaned pipeline files"
-	@echo "✓ Kept manual files: non-ols/n4l_merged.owl"
-	@if [ -f non-ols/MISO.owl ]; then echo "✓ Kept manual files: non-ols/MISO.owl"; fi
+	@echo "✓ Kept manual files: external/ontologies/manual/n4l_merged.owl"
 
 clean-bioportal-submissions:
-	rm -rf data/bioportal_owl/
+	rm -rf external/metpo_historical/
 	@echo "Downloaded BiPortal submissions cleaned"
 
 # List available submissions
@@ -377,7 +513,7 @@ list-bioportal-submissions:
 	done
 	@echo ""
 	@echo "To download all: make download-all-bioportal-submissions"
-	@echo "To download specific submission: make data/bioportal_owl/metpo_submission_5.owl"
+	@echo "To download specific submission: make external/metpo_historical/metpo_submission_5.owl"
 
 # =====================================================
 # METPO Entity Extraction Targets
@@ -386,21 +522,21 @@ list-bioportal-submissions:
 .PHONY: extract-all-metpo-entities clean-entity-extracts
 
 # Extract METPO entities from all submissions
-extract-all-metpo-entities: $(foreach sub,$(METPO_SUBMISSIONS),data/entity_extracts/metpo_submission_$(word 1,$(subst :, ,$(sub)))_all_entities.tsv)
-	@echo "All METPO entities extracted to data/entity_extracts/"
+extract-all-metpo-entities: $(foreach sub,$(METPO_SUBMISSIONS),metadata/ontology/historical_submissions/entity_extracts/metpo_submission_$(word 1,$(subst :, ,$(sub)))_all_entities.tsv)
+	@echo "All METPO entities extracted to metadata/ontology/historical_submissions/entity_extracts/"
 
 # Individual entity extraction targets
-data/entity_extracts/metpo_submission_%_all_entities.tsv: data/bioportal_owl/metpo_submission_%.owl | data/entity_extracts
+metadata/ontology/historical_submissions/entity_extracts/metpo_submission_%_all_entities.tsv: external/metpo_historical/metpo_submission_%.owl | metadata/ontology/historical_submissions/entity_extracts
 	@echo "Extracting entities from METPO submission $*..."
-	robot query -i $< -s analysis/sparql_queries/query_metpo_entities.sparql $@
+	robot query -i $< -s sparql/query_metpo_entities.sparql $@
 
-# Ensure data/entity_extracts directory exists
-data/entity_extracts:
+# Ensure entity_extracts directory exists
+metadata/ontology/historical_submissions/entity_extracts:
 	mkdir -p $@
 
 # Clean extracted entity files
 clean-entity-extracts:
-	rm -rf data/entity_extracts/
+	rm -rf metadata/ontology/historical_submissions/entity_extracts/
 	@echo "Extracted entity files cleaned"
 
 # Ensure downloads/bioportal directory exists
@@ -436,19 +572,19 @@ list-bioportal-releases:
 # Individual pipeline steps
 alignment-fetch-ontology-names: notebooks/ontology_catalog.csv
 
-notebooks/ontology_catalog.csv: notebooks/ontology_sizes.csv
+notebooks/ontology_catalog.csv: data/ontology_assessments/ontology_sizes.csv
 	@echo "Fetching ontology metadata from OLS4 API..."
-	cd notebooks && python fetch_ontology_names.py \
-		--sizes-csv ontology_sizes.csv \
-		--output-csv ontology_catalog.csv
+	uv run python metpo/pipeline/fetch_ontology_names.py \
+		--sizes-csv data/ontology_assessments/ontology_sizes.csv \
+		--output-csv notebooks/ontology_catalog.csv
 
 alignment-categorize-ontologies: notebooks/ontologies_very_appealing.csv
 
 notebooks/ontologies_very_appealing.csv: notebooks/ontology_catalog.csv
 	@echo "Categorizing ontologies by relevance..."
-	cd notebooks && python categorize_ontologies.py \
-		--input-csv ontology_catalog.csv \
-		--output-prefix ontologies
+	uv run python metpo/pipeline/categorize_ontologies.py \
+		--input-csv notebooks/ontology_catalog.csv \
+		--output-prefix notebooks/ontologies
 
 alignment-query-metpo-terms: notebooks/metpo_relevant_mappings.sssom.tsv
 
@@ -458,37 +594,37 @@ notebooks/metpo_relevant_mappings.sssom.tsv: notebooks/metpo_relevant_chroma
 		echo "ERROR: OPENAI_API_KEY environment variable not set"; \
 		exit 1; \
 	fi
-	cd notebooks && python chromadb_semantic_mapper.py \
-		--metpo-tsv ../src/templates/metpo_sheet.tsv \
-		--chroma-path ./metpo_relevant_chroma \
+	uv run python metpo/pipeline/chromadb_semantic_mapper.py \
+		--metpo-tsv src/templates/metpo_sheet.tsv \
+		--chroma-path notebooks/metpo_relevant_chroma \
 		--collection-name metpo_relevant_embeddings \
-		--output metpo_relevant_mappings.sssom.tsv \
+		--output notebooks/metpo_relevant_mappings.sssom.tsv \
 		--top-n 10 \
 		--label-only \
 		--distance-cutoff 0.35
 
 alignment-analyze-matches: notebooks/metpo_relevant_mappings.sssom.tsv
 	@echo "Analyzing match quality..."
-	cd notebooks && python analyze_matches.py \
-		--input-csv metpo_relevant_mappings.sssom.tsv \
+	uv run python metpo/pipeline/analyze_matches.py \
+		--input-csv notebooks/metpo_relevant_mappings.sssom.tsv \
 		--good-match-threshold 0.9
 
 alignment-analyze-coherence: notebooks/full_coherence_results.csv
 
 notebooks/full_coherence_results.csv: notebooks/metpo_relevant_mappings.sssom.tsv
 	@echo "Computing structural coherence (this may take a while)..."
-	cd notebooks && python analyze_sibling_coherence.py \
-		--input-csv metpo_relevant_mappings.sssom.tsv \
-		--metpo-owl ../src/ontology/metpo.owl \
-		--output-csv full_coherence_results.csv
+	uv run python metpo/pipeline/analyze_sibling_coherence.py \
+		--input-csv notebooks/metpo_relevant_mappings.sssom.tsv \
+		--metpo-owl src/ontology/metpo.owl \
+		--output-csv notebooks/full_coherence_results.csv
 
 alignment-identify-candidates: notebooks/alignment_candidates.csv
 
 notebooks/alignment_candidates.csv: notebooks/full_coherence_results.csv
 	@echo "Identifying alignment candidates..."
-	cd notebooks && python analyze_coherence_results.py \
-		--results-csv full_coherence_results.csv \
-		--matches-csv metpo_relevant_mappings.sssom.tsv
+	uv run python metpo/pipeline/analyze_coherence_results.py \
+		--results-csv notebooks/full_coherence_results.csv \
+		--matches-csv notebooks/metpo_relevant_mappings.sssom.tsv
 
 # Run complete pipeline
 alignment-run-all: alignment-identify-candidates
@@ -515,7 +651,7 @@ clean-alignment-results:
 # Non-OLS Embedding Targets
 # =====================================================
 
-NON_OLS_TSV_FILES = $(foreach ont,$(NON_OLS_BIOPORTAL_ONTOLOGIES),notebooks/non-ols-terms/$(ont).tsv)
+NON_OLS_TSV_FILES = $(foreach ont,$(NON_OLS_BIOPORTAL_ONTOLOGIES),data/pipeline/non-ols-terms/$(ont).tsv)
 
 .PHONY: embed-non-ols-terms clean-non-ols-terms scan-manifest view-manifest view-logs
 
@@ -549,8 +685,8 @@ view-logs:
 
 embed-non-ols-terms:
 	@echo "Embedding non-OLS terms into ChromaDB..."
-	uv run python notebooks/embed_ontology_to_chromadb.py \
-		$(foreach tsv,$(wildcard notebooks/non-ols-terms/*.tsv),--tsv-file $(tsv)) \
+	uv run python metpo/pipeline/embed_ontology_to_chromadb.py \
+		$(foreach tsv,$(wildcard data/pipeline/non-ols-terms/*.tsv),--tsv-file $(tsv)) \
 		--chroma-path ./embeddings_chroma \
 		--collection-name non_ols_embeddings
 	@echo "Non-OLS terms embedded successfully."
@@ -590,3 +726,20 @@ help-alignment:
 	@echo "  Prerequisites:"
 	@echo "    - Set OPENAI_API_KEY environment variable"
 	@echo "    - Ensure ChromaDB collection exists at notebooks/metpo_relevant_chroma"
+
+# ==============================================================================
+# Sub-Makefile Integration
+# ==============================================================================
+# Literature mining (including ICBO examples) has its own Makefile.
+# Run from root using: make -C literature_mining <target>
+#
+# Examples:
+#   make -C literature_mining help
+#   make -C literature_mining pmids SOURCE=ijsem
+#   make -C literature_mining extract TEMPLATE=growth_conditions
+#   make -C literature_mining icbo-phenotypes
+#   make -C literature_mining icbo-chemicals
+#   make -C literature_mining icbo-analyze
+#
+# See literature_mining/Makefile for full documentation.
+# ==============================================================================

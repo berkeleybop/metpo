@@ -17,22 +17,25 @@ import requests
 from dotenv import load_dotenv
 
 def load_cborg_key():
-    """Load CBORG API key from local/.env file"""
-    env_path = Path(__file__).parent.parent / "local" / ".env"
-    
+    """Load CBORG API key from root .env file"""
+    # Point to repository root .env file
+    env_path = Path(__file__).parent.parent.parent / ".env"
+
     if not env_path.exists():
         print(f"ERROR: Environment file not found at {env_path}")
-        print("Please create local/.env with:")
+        print("Please create .env file in repository root with:")
         print("CBORG_API_KEY=sk-your-key-here")
+        print("You can copy .env.template to .env and fill in your key.")
         sys.exit(1)
-    
+
     load_dotenv(env_path)
     cborg_key = os.getenv("CBORG_API_KEY")
-    
+
     if not cborg_key:
-        print("ERROR: CBORG_API_KEY not found in local/.env")
+        print("ERROR: CBORG_API_KEY not found in .env")
+        print("Please add CBORG_API_KEY=sk-your-key-here to your .env file")
         sys.exit(1)
-    
+
     return cborg_key
 
 def get_cborg_usage(api_key):
