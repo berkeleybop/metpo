@@ -318,10 +318,11 @@ def generate_icbo_summary() -> str:
 
     return "\n".join(summary)
 
+@click.command()
 def main():
     """Generate ICBO analysis."""
     summary = generate_icbo_summary()
-    print(summary)
+    click.echo(summary)
 
     # Save to file
     output_file = Path(__file__).parent / 'metpo_database_alignment_icbo2025.txt'
@@ -348,7 +349,7 @@ def main():
         f.write("  docs/kg_microbe_bacdive_implementation_analysis.md\n")
         f.write("  docs/bacdive_oxygen_tolerance_analysis.md\n")
 
-    print(f"\n\nDetailed analysis saved to: {output_file}")
+    click.echo(f"\n\nDetailed analysis saved to: {output_file}")
 
 if __name__ == '__main__':
     main()

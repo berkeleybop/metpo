@@ -8,6 +8,7 @@ Repeatable script to analyze METPO coverage and gaps by data source type:
 For ICBO 2025 - provides evidence of METPO's strengths and gaps.
 """
 
+import click
 import csv
 import re
 from pathlib import Path
@@ -196,26 +197,27 @@ def compare_source_types(results: Dict) -> str:
 
     return "\n".join(lines)
 
+@click.command()
 def main():
     """Main analysis."""
     repo_root = Path(__file__).parent.parent
     template_path = repo_root / 'src' / 'templates' / 'metpo_sheet.tsv'
 
-    print("=" * 80)
-    print("METPO COVERAGE ANALYSIS BY SOURCE TYPE")
-    print("For ICBO 2025 - Evidence of Strengths and Gaps")
-    print("=" * 80)
-    print()
+    click.echo("=" * 80)
+    click.echo("METPO COVERAGE ANALYSIS BY SOURCE TYPE")
+    click.echo("For ICBO 2025 - Evidence of Strengths and Gaps")
+    click.echo("=" * 80)
+    click.echo()
 
     results = {}
 
     # 1. Analyze structured DB coverage (from attributed synonyms)
-    print("Loading METPO attributed synonyms...")
+    click.echo("Loading METPO attributed synonyms...")
     synonyms = load_metpo_database_synonyms(template_path)
 
-    print(f"Found attributed synonyms:")
+    click.echo(f"Found attributed synonyms:")
     for db, syn_list in synonyms.items():
-        print(f"  {db}: {len(syn_list)} mappings")
+        click.echo(f"  {db}: {len(syn_list)} mappings")
 
     structured_coverage = analyze_structured_db_coverage(synonyms)
     results['structured_db'] = structured_coverage
@@ -223,17 +225,17 @@ def main():
     # 2. Analyze IJSEM extractions (if available)
     ijsem_extraction = Path(__file__).parent / 'test_results' / 'ijsem_optimized_extraction.yaml'
     if ijsem_extraction.exists():
-        print(f"\nAnalyzing IJSEM extraction: {ijsem_extraction.name}")
+        click.echo(f"\nAnalyzing IJSEM extraction: {ijsem_extraction.name}")
         results['ijsem_abstracts'] = analyze_extraction_grounding(ijsem_extraction)
     else:
-        print(f"\nIJSEM extraction not found (run Experiment 1 first)")
+        click.echo(f"\nIJSEM extraction not found (run Experiment 1 first)")
 
     # 3. Analyze full paper extractions (production corpus)
     outputs_dir = Path(__file__).parent / 'outputs'
     fullcorpus_files = list(outputs_dir.glob('*_fullcorpus_*.yaml'))
 
     if fullcorpus_files:
-        print(f"\nAnalyzing {len(fullcorpus_files)} full-corpus extractions...")
+        click.echo(f"\nAnalyzing {len(fullcorpus_files)} full-corpus extractions...")
 
         combined_stats = {
             'metpo_count': 0,
@@ -260,7 +262,7 @@ def main():
 
     # Generate report
     report = compare_source_types(results)
-    print("\n" + report)
+    click.echo("\n" + report)
 
     # Save results
     output_file = Path(__file__).parent / 'METPO_coverage_by_source_type.txt'
@@ -271,7 +273,7 @@ def main():
         f.write("=" * 80 + "\n\n")
         f.write(json.dumps(results, indent=2))
 
-    print(f"\nDetailed results saved to: {output_file}")
+    click.echo(f"\nDetailed results saved to: {output_file}")
 
     # Save synonym mappings for ICBO slides
     synonym_file = Path(__file__).parent / 'METPO_database_synonyms.tsv'
@@ -283,10 +285,10 @@ def main():
             for metpo_id, metpo_label, db_term in sorted(syn_list):
                 writer.writerow([db, metpo_id, metpo_label, db_term])
 
-    print(f"Synonym mappings saved to: {synonym_file}")
-    print("\nUse these files for ICBO evidence:")
-    print(f"  1. {output_file.name} - Coverage comparison")
-    print(f"  2. {synonym_file.name} - Database alignment proof")
+    click.echo(f"Synonym mappings saved to: {synonym_file}")
+    click.echo("\nUse these files for ICBO evidence:")
+    click.echo(f"  1. {output_file.name} - Coverage comparison")
+    click.echo(f"  2. {synonym_file.name} - Database alignment proof")
 
 if __name__ == '__main__':
     main()

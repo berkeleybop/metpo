@@ -6,6 +6,7 @@ Parse YAML properly to find METPO IDs in nested structures.
 
 import yaml
 import json
+import click
 from pathlib import Path
 from collections import defaultdict
 
@@ -29,18 +30,18 @@ def find_metpo_in_obj(obj, path=""):
 
 def analyze_yaml_file(yaml_path):
     """Parse YAML file and find all METPO terms."""
-    print(f"\n{'='*80}")
-    print(f"Analyzing: {yaml_path.name}")
-    print(f"{'='*80}")
+    click.echo(f"\n{'='*80}")
+    click.echo(f"Analyzing: {yaml_path.name}")
+    click.echo(f"{'='*80}")
 
     with open(yaml_path) as f:
         try:
             docs = list(yaml.safe_load_all(f))
         except yaml.YAMLError as e:
-            print(f"ERROR parsing YAML: {e}")
+            click.echo(f"ERROR parsing YAML: {e}")
             return None
 
-    print(f"Number of documents in file: {len(docs)}")
+    click.echo(f"Number of documents in file: {len(docs)}")
 
     all_metpo_terms = []
     auto_terms = []
@@ -60,27 +61,27 @@ def analyze_yaml_file(yaml_path):
 
         # Show extracted_object structure for first few docs
         if i < 3 and 'extracted_object' in doc:
-            print(f"\nDocument {i} extracted_object structure:")
-            print(json.dumps(doc['extracted_object'], indent=2)[:500])
+            click.echo(f"\nDocument {i} extracted_object structure:")
+            click.echo(json.dumps(doc['extracted_object'], indent=2)[:500])
 
-    print(f"\n{'='*80}")
-    print(f"RESULTS FOR {yaml_path.name}")
-    print(f"{'='*80}")
-    print(f"Total METPO terms found: {len(all_metpo_terms)}")
-    print(f"Total AUTO terms found: {len(auto_terms)}")
+    click.echo(f"\n{'='*80}")
+    click.echo(f"RESULTS FOR {yaml_path.name}")
+    click.echo(f"{'='*80}")
+    click.echo(f"Total METPO terms found: {len(all_metpo_terms)}")
+    click.echo(f"Total AUTO terms found: {len(auto_terms)}")
 
     if all_metpo_terms:
-        print(f"\n✓ METPO TERMS FOUND:")
+        click.echo(f"\n✓ METPO TERMS FOUND:")
         # Show first 20
         for doc_idx, path, term in all_metpo_terms[:20]:
-            print(f"  Doc {doc_idx}: {path} = {term}")
+            click.echo(f"  Doc {doc_idx}: {path} = {term}")
         if len(all_metpo_terms) > 20:
-            print(f"  ... and {len(all_metpo_terms) - 20} more")
+            click.echo(f"  ... and {len(all_metpo_terms) - 20} more")
     else:
-        print(f"\n✗ NO METPO TERMS FOUND")
-        print(f"\nAUTO terms (first 10):")
+        click.echo(f"\n✗ NO METPO TERMS FOUND")
+        click.echo(f"\nAUTO terms (first 10):")
         for doc_idx, path, term in auto_terms[:10]:
-            print(f"  Doc {doc_idx}: {path} = {term}")
+            click.echo(f"  Doc {doc_idx}: {path} = {term}")
 
     return {
         'file': yaml_path.name,
@@ -90,15 +91,26 @@ def analyze_yaml_file(yaml_path):
         'auto_terms': auto_terms
     }
 
-def main():
-    """Search all production YAML files for METPO terms."""
-    outputs_dir = Path(__file__).parent / 'outputs'
+@click.command()
+@click.argument('yaml_dir', type=click.Path(exists=True, file_okay=False, path_type=Path),
+                default=None, required=False)
+@click.option('--pattern', default='*_fullcorpus_gpt4o_t00_20251031*.yaml',
+              help='File pattern to match')
+def main(yaml_dir, pattern):
+    """Thoroughly search extraction YAML files for METPO terms.
 
-    # Production files from fullcorpus_strict filter
-    production_files = sorted(outputs_dir.glob('*_fullcorpus_gpt4o_t00_20251031*.yaml'))
+    Parses YAML properly to find METPO IDs in nested structures.
 
-    print(f"Searching {len(production_files)} production YAML files for METPO terms...")
-    print(f"Using proper YAML parsing to find nested METPO IDs")
+    YAML_DIR: Directory containing YAML files (default: ./outputs)
+    """
+    if not yaml_dir:
+        yaml_dir = Path(__file__).parent / 'outputs'
+
+    # Production files from pattern filter
+    production_files = sorted(yaml_dir.glob(pattern))
+
+    click.echo(f"Searching {len(production_files)} production YAML files for METPO terms...")
+    click.echo(f"Using proper YAML parsing to find nested METPO IDs")
 
     results = []
     for yaml_file in production_files:
@@ -106,28 +118,28 @@ def main():
         results.append(result)
 
     # Summary
-    print(f"\n{'='*80}")
-    print(f"OVERALL SUMMARY")
-    print(f"{'='*80}")
+    click.echo(f"\n{'='*80}")
+    click.echo(f"OVERALL SUMMARY")
+    click.echo(f"{'='*80}")
 
     total_metpo = sum(r['metpo_count'] for r in results)
     total_auto = sum(r['auto_count'] for r in results)
 
-    print(f"\nTotal METPO terms across all files: {total_metpo}")
-    print(f"Total AUTO terms across all files: {total_auto}")
+    click.echo(f"\nTotal METPO terms across all files: {total_metpo}")
+    click.echo(f"Total AUTO terms across all files: {total_auto}")
 
     if total_metpo > 0:
-        print(f"\n✓ SUCCESS! Found METPO terms in extraction files!")
-        print(f"\nFiles with METPO terms:")
+        click.echo(f"\n✓ SUCCESS! Found METPO terms in extraction files!")
+        click.echo(f"\nFiles with METPO terms:")
         for r in results:
             if r['metpo_count'] > 0:
-                print(f"  {r['file']}: {r['metpo_count']} METPO terms")
+                click.echo(f"  {r['file']}: {r['metpo_count']} METPO terms")
     else:
-        print(f"\n✗ No METPO terms found in any production files")
-        print(f"\nThis suggests:")
-        print(f"  1. Templates may not have METPO annotators configured")
-        print(f"  2. METPO path in templates may be incorrect")
-        print(f"  3. Genuine grounding failures")
+        click.echo(f"\n✗ No METPO terms found in any production files")
+        click.echo(f"\nThis suggests:")
+        click.echo(f"  1. Templates may not have METPO annotators configured")
+        click.echo(f"  2. METPO path in templates may be incorrect")
+        click.echo(f"  3. Genuine grounding failures")
 
 if __name__ == '__main__':
     main()

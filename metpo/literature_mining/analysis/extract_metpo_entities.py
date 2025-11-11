@@ -6,6 +6,7 @@ Shows which METPO classes were successfully grounded.
 
 import yaml
 import re
+import click
 from pathlib import Path
 from collections import defaultdict
 
@@ -17,7 +18,7 @@ def extract_metpo_entities(yaml_file):
         try:
             docs = list(yaml.safe_load_all(f))
         except yaml.YAMLError as e:
-            print(f"Error parsing {yaml_file}: {e}")
+            click.echo(f"Error parsing {yaml_file}: {e}")
             return []
 
     for doc in docs:
@@ -35,30 +36,46 @@ def extract_metpo_entities(yaml_file):
 
     return metpo_entities
 
-def main():
-    """Extract METPO entities from all extraction files."""
-    outputs_dir = Path('literature_mining/outputs')
+@click.command()
+@click.argument('yaml_dir', type=click.Path(exists=True, file_okay=False, path_type=Path),
+                default=None, required=False)
+@click.option('-o', '--output', 'output_file', type=click.Path(path_type=Path),
+              help='Output TSV file for results')
+@click.option('--recursive/--no-recursive', default=True,
+              help='Search subdirectories recursively')
+def main(yaml_dir, output_file, recursive):
+    """Extract METPO entities from OntoGPT extraction YAML files.
+
+    Shows which METPO classes were successfully grounded during extraction.
+
+    YAML_DIR: Directory containing YAML files (default: literature_mining/outputs)
+    """
+    if not yaml_dir:
+        yaml_dir = Path('literature_mining/outputs')
 
     all_metpo_entities = []
     files_with_metpo = []
 
     # Search all YAML files
-    yaml_files = list(outputs_dir.rglob('*.yaml'))
+    if recursive:
+        yaml_files = list(yaml_dir.rglob('*.yaml'))
+    else:
+        yaml_files = list(yaml_dir.glob('*.yaml'))
 
-    print(f"Searching {len(yaml_files)} YAML files for METPO entities...")
-    print()
+    click.echo(f"Searching {len(yaml_files)} YAML files for METPO entities...")
+    click.echo()
 
     for yaml_file in yaml_files:
         entities = extract_metpo_entities(yaml_file)
         if entities:
             all_metpo_entities.extend(entities)
             files_with_metpo.append((yaml_file, len(entities)))
-            print(f"✓ {yaml_file.name}: {len(entities)} METPO entities")
+            click.echo(f"✓ {yaml_file.name}: {len(entities)} METPO entities")
 
-    print()
-    print(f"Total files with METPO: {len(files_with_metpo)}")
-    print(f"Total METPO entities: {len(all_metpo_entities)}")
-    print()
+    click.echo()
+    click.echo(f"Total files with METPO: {len(files_with_metpo)}")
+    click.echo(f"Total METPO entities: {len(all_metpo_entities)}")
+    click.echo()
 
     # Get unique METPO classes
     unique_classes = {}
@@ -76,25 +93,26 @@ def main():
             unique_classes[metpo_id]['labels'].add(entity['label'])
             unique_classes[metpo_id]['count'] += 1
 
-    print(f"Unique METPO classes: {len(unique_classes)}")
-    print()
-    print("=" * 80)
-    print("METPO CLASSES SUCCESSFULLY GROUNDED")
-    print("=" * 80)
-    print()
+    click.echo(f"Unique METPO classes: {len(unique_classes)}")
+    click.echo()
+    click.echo("=" * 80)
+    click.echo("METPO CLASSES SUCCESSFULLY GROUNDED")
+    click.echo("=" * 80)
+    click.echo()
 
     for metpo_id in sorted(unique_classes.keys()):
         info = unique_classes[metpo_id]
-        print(f"METPO:{metpo_id}")
-        print(f"  URI: {info['uri']}")
-        print(f"  Occurrences: {info['count']}")
-        print(f"  Labels extracted:")
+        click.echo(f"METPO:{metpo_id}")
+        click.echo(f"  URI: {info['uri']}")
+        click.echo(f"  Occurrences: {info['count']}")
+        click.echo(f"  Labels extracted:")
         for label in sorted(info['labels']):
-            print(f"    - {label}")
-        print()
+            click.echo(f"    - {label}")
+        click.echo()
 
     # Save results
-    output_file = Path('literature_mining/METPO_GROUNDED_CLASSES.tsv')
+    if not output_file:
+        output_file = Path('literature_mining/METPO_GROUNDED_CLASSES.tsv')
     with open(output_file, 'w') as f:
         f.write("METPO_ID\tURI\tLabel\tOccurrences\tFiles\n")
         for metpo_id in sorted(unique_classes.keys()):
@@ -105,7 +123,7 @@ def main():
             file_str = "; ".join(sorted(files))
             f.write(f"METPO:{metpo_id}\t{info['uri']}\t{label_str}\t{info['count']}\t{file_str}\n")
 
-    print(f"Results saved to: {output_file}")
+    click.echo(f"Results saved to: {output_file}")
 
 if __name__ == '__main__':
     main()

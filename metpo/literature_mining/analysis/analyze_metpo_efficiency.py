@@ -6,6 +6,7 @@ Analyze METPO grounding efficiency:
 3. Check if other ontologies use CURIE format
 """
 
+import click
 import yaml
 from pathlib import Path
 from collections import defaultdict
@@ -17,7 +18,7 @@ def analyze_file(yaml_file):
         try:
             docs = list(yaml.safe_load_all(f))
         except yaml.YAMLError as e:
-            print(f"Error parsing {yaml_file}: {e}")
+            click.echo(f"Error parsing {yaml_file}: {e}")
             return None
 
     total_input_size = 0
@@ -74,6 +75,7 @@ def analyze_file(yaml_file):
         'other_formats': other_ontology_formats
     }
 
+@click.command()
 def main():
     """Analyze all extraction files."""
     outputs_dir = Path('literature_mining/outputs')
@@ -84,8 +86,8 @@ def main():
     # Search all YAML files
     yaml_files = list(outputs_dir.rglob('*.yaml'))
 
-    print(f"Analyzing {len(yaml_files)} YAML files...")
-    print()
+    click.echo(f"Analyzing {len(yaml_files)} YAML files...")
+    click.echo()
 
     for yaml_file in yaml_files:
         result = analyze_file(yaml_file)
@@ -98,61 +100,61 @@ def main():
     # Sort by METPO count (descending)
     all_results.sort(key=lambda x: x['metpo_count'], reverse=True)
 
-    print("=" * 100)
-    print("ONTOLOGY ID FORMAT ANALYSIS")
-    print("=" * 100)
-    print()
+    click.echo("=" * 100)
+    click.echo("ONTOLOGY ID FORMAT ANALYSIS")
+    click.echo("=" * 100)
+    click.echo()
 
-    print("ID formats used by each ontology:")
+    click.echo("ID formats used by each ontology:")
     for ontology in sorted(all_formats.keys()):
         formats = ', '.join(sorted(all_formats[ontology]))
-        print(f"  {ontology:20s} → {formats}")
+        click.echo(f"  {ontology:20s} → {formats}")
 
-    print()
-    print("**FINDING:** Only METPO uses URI format; all others use CURIE format")
-    print()
+    click.echo()
+    click.echo("**FINDING:** Only METPO uses URI format; all others use CURIE format")
+    click.echo()
 
-    print("=" * 100)
-    print("FILES WITH MOST METPO GROUNDINGS (absolute count)")
-    print("=" * 100)
-    print()
-    print(f"{'Rank':<6}{'File':<60}{'METPO':<10}{'Input KB':<12}{'METPO/KB':<10}")
-    print("-" * 100)
+    click.echo("=" * 100)
+    click.echo("FILES WITH MOST METPO GROUNDINGS (absolute count)")
+    click.echo("=" * 100)
+    click.echo()
+    click.echo(f"{'Rank':<6}{'File':<60}{'METPO':<10}{'Input KB':<12}{'METPO/KB':<10}")
+    click.echo("-" * 100)
 
     for i, result in enumerate(all_results, 1):
-        print(f"{i:<6}{result['file']:<60}{result['metpo_count']:<10}{result['input_kb']:<12.1f}{result['metpo_per_kb']:<10.3f}")
+        click.echo(f"{i:<6}{result['file']:<60}{result['metpo_count']:<10}{result['input_kb']:<12.1f}{result['metpo_per_kb']:<10.3f}")
 
-    print()
+    click.echo()
 
     # Sort by efficiency (METPO per KB)
     all_results.sort(key=lambda x: x['metpo_per_kb'], reverse=True)
 
-    print("=" * 100)
-    print("FILES WITH HIGHEST METPO GROUNDING EFFICIENCY (per KB of input)")
-    print("=" * 100)
-    print()
-    print(f"{'Rank':<6}{'File':<60}{'METPO/KB':<12}{'METPO':<10}{'Input KB':<10}")
-    print("-" * 100)
+    click.echo("=" * 100)
+    click.echo("FILES WITH HIGHEST METPO GROUNDING EFFICIENCY (per KB of input)")
+    click.echo("=" * 100)
+    click.echo()
+    click.echo(f"{'Rank':<6}{'File':<60}{'METPO/KB':<12}{'METPO':<10}{'Input KB':<10}")
+    click.echo("-" * 100)
 
     for i, result in enumerate(all_results, 1):
-        print(f"{i:<6}{result['file']:<60}{result['metpo_per_kb']:<12.3f}{result['metpo_count']:<10}{result['input_kb']:<10.1f}")
+        click.echo(f"{i:<6}{result['file']:<60}{result['metpo_per_kb']:<12.3f}{result['metpo_count']:<10}{result['input_kb']:<10.1f}")
 
-    print()
-    print("=" * 100)
-    print("SUMMARY")
-    print("=" * 100)
-    print()
+    click.echo()
+    click.echo("=" * 100)
+    click.echo("SUMMARY")
+    click.echo("=" * 100)
+    click.echo()
 
     if all_results:
         total_metpo = sum(r['metpo_count'] for r in all_results)
         total_kb = sum(r['input_kb'] for r in all_results)
         avg_efficiency = total_metpo / total_kb if total_kb > 0 else 0
 
-        print(f"Files with METPO grounding: {len(all_results)}")
-        print(f"Total METPO groundings: {total_metpo}")
-        print(f"Total input size: {total_kb:.1f} KB ({total_kb/1024:.2f} MB)")
-        print(f"Average efficiency: {avg_efficiency:.3f} METPO groundings per KB")
-        print()
+        click.echo(f"Files with METPO grounding: {len(all_results)}")
+        click.echo(f"Total METPO groundings: {total_metpo}")
+        click.echo(f"Total input size: {total_kb:.1f} KB ({total_kb/1024:.2f} MB)")
+        click.echo(f"Average efficiency: {avg_efficiency:.3f} METPO groundings per KB")
+        click.echo()
 
         # Best file
         best_count = all_results[0] if all_results else None
@@ -160,9 +162,9 @@ def main():
         best_efficiency = all_results[0] if all_results else None
 
         if best_count:
-            print(f"Most METPO groundings: {best_count['file']} ({best_count['metpo_count']} groundings)")
+            click.echo(f"Most METPO groundings: {best_count['file']} ({best_count['metpo_count']} groundings)")
         if best_efficiency:
-            print(f"Best efficiency: {best_efficiency['file']} ({best_efficiency['metpo_per_kb']:.3f} per KB)")
+            click.echo(f"Best efficiency: {best_efficiency['file']} ({best_efficiency['metpo_per_kb']:.3f} per KB)")
 
     # Save results
     output_file = Path('literature_mining/METPO_GROUNDING_EFFICIENCY.tsv')
@@ -173,8 +175,8 @@ def main():
         for result in all_results:
             f.write(f"{result['file']}\t{result['metpo_count']}\t{result['input_bytes']}\t{result['input_kb']:.2f}\t{result['metpo_per_kb']:.4f}\n")
 
-    print()
-    print(f"Detailed results saved to: {output_file}")
+    click.echo()
+    click.echo(f"Detailed results saved to: {output_file}")
 
 if __name__ == '__main__':
     main()

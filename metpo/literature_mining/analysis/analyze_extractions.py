@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Analyze OntoGPT extraction results to compare template performance."""
 
+import click
 import yaml
 import sys
 from pathlib import Path
@@ -65,39 +66,47 @@ def count_entities_and_grounding(yaml_file):
 
         return stats
 
-def main():
-    outputs_dir = Path('/Users/MAM/Documents/gitrepos/metpo/literature_mining/outputs')
+@click.command()
+@click.argument('yaml_dir', type=click.Path(exists=True, file_okay=False, path_type=Path),
+                default=None, required=False)
+def main(yaml_dir):
+    """Analyze OntoGPT extraction results by template.
 
-    print("=" * 80)
-    print("CMM Abstract Extraction Analysis")
-    print("=" * 80)
-    print()
+    YAML_DIR: Directory containing YAML files (default: literature_mining/outputs)
+    """
+    if not yaml_dir:
+        yaml_dir = Path('/Users/MAM/Documents/gitrepos/metpo/literature_mining/outputs')
+
+    click.echo("=" * 80)
+    click.echo("CMM Abstract Extraction Analysis")
+    click.echo("=" * 80)
+    click.echo()
 
     results = {}
 
-    for yaml_file in sorted(outputs_dir.glob('*.yaml')):
+    for yaml_file in sorted(yaml_dir.glob('*.yaml')):
         template_name = yaml_file.stem.rsplit('_', 2)[0]  # Remove timestamp
         stats = count_entities_and_grounding(yaml_file)
         results[template_name] = stats
 
-        print(f"Template: {template_name}")
-        print(f"  File: {yaml_file.name}")
-        print(f"  Extractions: {stats['total_extractions']}")
-        print(f"  Total entities (non-'none'): {stats['total_entities']}")
-        print(f"  Grounded entities (non-AUTO): {stats['grounded_entities']}")
-        print(f"  AUTO entities: {stats['auto_entities']}")
-        print(f"  'none' entities: {stats['none_entities']}")
-        print(f"  Total relations: {stats['total_relations']}")
-        print(f"  Avg entities per abstract: {stats['total_entities']/max(stats['total_extractions'], 1):.1f}")
-        print(f"  Avg relations per abstract: {stats['total_relations']/max(stats['total_extractions'], 1):.1f}")
-        print(f"  Grounding rate: {100*stats['grounded_entities']/max(stats['total_entities'], 1):.1f}%")
-        print(f"  Namespaces used: {dict(stats['namespace_counts'])}")
-        print()
+        click.echo(f"Template: {template_name}")
+        click.echo(f"  File: {yaml_file.name}")
+        click.echo(f"  Extractions: {stats['total_extractions']}")
+        click.echo(f"  Total entities (non-'none'): {stats['total_entities']}")
+        click.echo(f"  Grounded entities (non-AUTO): {stats['grounded_entities']}")
+        click.echo(f"  AUTO entities: {stats['auto_entities']}")
+        click.echo(f"  'none' entities: {stats['none_entities']}")
+        click.echo(f"  Total relations: {stats['total_relations']}")
+        click.echo(f"  Avg entities per abstract: {stats['total_entities']/max(stats['total_extractions'], 1):.1f}")
+        click.echo(f"  Avg relations per abstract: {stats['total_relations']/max(stats['total_extractions'], 1):.1f}")
+        click.echo(f"  Grounding rate: {100*stats['grounded_entities']/max(stats['total_entities'], 1):.1f}%")
+        click.echo(f"  Namespaces used: {dict(stats['namespace_counts'])}")
+        click.echo()
 
-    print("=" * 80)
-    print("SUMMARY - Ranked by Total Entities + Relations")
-    print("=" * 80)
-    print()
+    click.echo("=" * 80)
+    click.echo("SUMMARY - Ranked by Total Entities + Relations")
+    click.echo("=" * 80)
+    click.echo()
 
     ranked = sorted(results.items(),
                    key=lambda x: x[1]['total_entities'] + x[1]['total_relations'],
@@ -105,7 +114,7 @@ def main():
 
     for template_name, stats in ranked:
         total_extracted = stats['total_entities'] + stats['total_relations']
-        print(f"{template_name:30} | Entities: {stats['total_entities']:4} | Relations: {stats['total_relations']:4} | Total: {total_extracted:4} | Grounded: {stats['grounded_entities']:4} ({100*stats['grounded_entities']/max(stats['total_entities'], 1):5.1f}%)")
+        click.echo(f"{template_name:30} | Entities: {stats['total_entities']:4} | Relations: {stats['total_relations']:4} | Total: {total_extracted:4} | Grounded: {stats['grounded_entities']:4} ({100*stats['grounded_entities']/max(stats['total_entities'], 1):5.1f}%)")
 
 if __name__ == '__main__':
     main()

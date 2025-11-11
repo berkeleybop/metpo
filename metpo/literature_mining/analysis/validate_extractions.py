@@ -4,6 +4,7 @@ Validation script for OntoGPT extraction quality.
 Flags suspicious patterns that might indicate poor extraction.
 """
 
+import click
 import yaml
 import sys
 from pathlib import Path
@@ -224,13 +225,13 @@ class ExtractionValidator:
 
     def print_report(self):
         """Print validation report."""
-        print("=" * 80)
-        print(f"EXTRACTION VALIDATION REPORT: {self.yaml_file.name}")
-        print("=" * 80)
-        print()
+        click.echo("=" * 80)
+        click.echo(f"EXTRACTION VALIDATION REPORT: {self.yaml_file.name}")
+        click.echo("=" * 80)
+        click.echo()
 
         if not self.issues:
-            print("✅ No issues found!")
+            click.echo("✅ No issues found!")
             return
 
         # Group by severity
@@ -239,12 +240,12 @@ class ExtractionValidator:
             by_severity[issue['severity']].append(issue)
 
         # Print summary
-        print(f"Total documents: {len(self.docs)}")
-        print(f"Total issues: {len(self.issues)}")
-        print(f"  ERROR: {len(by_severity['ERROR'])}")
-        print(f"  WARNING: {len(by_severity['WARNING'])}")
-        print(f"  INFO: {len(by_severity['INFO'])}")
-        print()
+        click.echo(f"Total documents: {len(self.docs)}")
+        click.echo(f"Total issues: {len(self.issues)}")
+        click.echo(f"  ERROR: {len(by_severity['ERROR'])}")
+        click.echo(f"  WARNING: {len(by_severity['WARNING'])}")
+        click.echo(f"  INFO: {len(by_severity['INFO'])}")
+        click.echo()
 
         # Print details
         for severity in ['ERROR', 'WARNING', 'INFO']:
@@ -252,25 +253,26 @@ class ExtractionValidator:
             if not issues:
                 continue
 
-            print(f"\n{severity} ISSUES ({len(issues)}):")
-            print("-" * 80)
+            click.echo(f"\n{severity} ISSUES ({len(issues)}):")
+            click.echo("-" * 80)
 
             for issue in issues:
-                print(f"Document {issue['document']}: {issue['issue']}")
-                print(f"  └─ {issue['details']}")
+                click.echo(f"Document {issue['document']}: {issue['issue']}")
+                click.echo(f"  └─ {issue['details']}")
 
-        print("\n" + "=" * 80)
+        click.echo("\n" + "=" * 80)
 
 
+@click.command()
 def main():
     if len(sys.argv) < 2:
-        print("Usage: python validate_extractions.py <extraction_output.yaml>")
+        click.echo("Usage: python validate_extractions.py <extraction_output.yaml>")
         sys.exit(1)
 
     yaml_file = Path(sys.argv[1])
 
     if not yaml_file.exists():
-        print(f"Error: File not found: {yaml_file}")
+        click.echo(f"Error: File not found: {yaml_file}")
         sys.exit(1)
 
     validator = ExtractionValidator(yaml_file)
