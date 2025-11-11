@@ -5,10 +5,11 @@ Excludes experimental/superseded runs to show realistic, representative results.
 """
 
 import sys
+import click
 from pathlib import Path
 from typing import Dict, List
 from collections import Counter
-from analyze_metpo_grounding import (
+from metpo.literature_mining.analysis.analyze_metpo_grounding import (
     extract_entities_from_yaml,
     find_auto_terms_with_context,
     find_metpo_successes_with_context
@@ -80,18 +81,18 @@ def analyze_directory_filtered(dir_path: Path, pattern_set: str = 'fullcorpus_st
 
     yaml_files = filter_yaml_files(dir_path, pattern_set)
 
-    print(f"Pattern set: {pattern_set}")
-    print(f"Found {len(yaml_files)} production-quality YAML files in {dir_path}")
-    print("\nFiles included:")
+    click.echo(f"Pattern set: {pattern_set}")
+    click.echo(f"Found {len(yaml_files)} production-quality YAML files in {dir_path}")
+    click.echo("\nFiles included:")
     for f in yaml_files:
-        print(f"  - {f.name}")
-    print()
+        click.echo(f"  - {f.name}")
+    click.echo()
 
     for yaml_file in yaml_files:
         if yaml_file.stat().st_size == 0:
             continue
 
-        print(f"Analyzing {yaml_file.name}...")
+        click.echo(f"Analyzing {yaml_file.name}...")
         results['files_analyzed'].append(yaml_file.name)
 
         # Count all entity types
@@ -110,41 +111,46 @@ def analyze_directory_filtered(dir_path: Path, pattern_set: str = 'fullcorpus_st
 
     return results
 
-def main():
-    """Main analysis with pattern set selection."""
-    outputs_dir = Path(__file__).parent / 'outputs'
+@click.command()
+@click.argument('yaml_dir', type=click.Path(exists=True, file_okay=False, path_type=Path),
+                default=None, required=False)
+@click.option('--pattern-set', type=click.Choice(list(PRODUCTION_PATTERNS.keys())),
+              default='fullcorpus_strict', show_default=True,
+              help='File pattern set to use for filtering')
+@click.option('-o', '--output', 'output_file', type=click.Path(path_type=Path),
+              help='Output file for detailed results')
+def main(yaml_dir, pattern_set, output_file):
+    """Filtered METPO grounding analysis - production-quality extractions only.
 
-    # Parse command line argument for pattern set
-    pattern_set = 'fullcorpus_strict'
-    if len(sys.argv) > 1:
-        pattern_set = sys.argv[1]
-        if pattern_set not in PRODUCTION_PATTERNS:
-            print(f"Unknown pattern set: {pattern_set}")
-            print(f"Available: {list(PRODUCTION_PATTERNS.keys())}")
-            sys.exit(1)
+    Excludes experimental/superseded runs to show realistic, representative results.
 
-    print("=" * 80)
-    print("METPO GROUNDING ANALYSIS - PRODUCTION QUALITY ONLY")
-    print("For ICBO 2025 - Representative Results")
-    print("=" * 80)
-    print()
+    YAML_DIR: Directory containing OntoGPT YAML output files (default: ./outputs)
+    """
+    if not yaml_dir:
+        yaml_dir = Path(__file__).parent / 'outputs'
 
-    results = analyze_directory_filtered(outputs_dir, pattern_set)
+    click.echo("=" * 80)
+    click.echo("METPO GROUNDING ANALYSIS - PRODUCTION QUALITY ONLY")
+    click.echo("For ICBO 2025 - Representative Results")
+    click.echo("=" * 80)
+    click.echo()
 
-    print("\n" + "=" * 80)
-    print("PRODUCTION FILE SUMMARY")
-    print("=" * 80)
-    print(f"\nPattern set: {pattern_set}")
-    print(f"Files analyzed: {len(results['files_analyzed'])}")
+    results = analyze_directory_filtered(yaml_dir, pattern_set)
+
+    click.echo("\n" + "=" * 80)
+    click.echo("PRODUCTION FILE SUMMARY")
+    click.echo("=" * 80)
+    click.echo(f"\nPattern set: {pattern_set}")
+    click.echo(f"Files analyzed: {len(results['files_analyzed'])}")
     for fname in results['files_analyzed']:
-        print(f"  - {fname}")
+        click.echo(f"  - {fname}")
 
-    print("\n" + "=" * 80)
-    print("ENTITY STATISTICS")
-    print("=" * 80)
-    print(f"\nEntity type counts:")
+    click.echo("\n" + "=" * 80)
+    click.echo("ENTITY STATISTICS")
+    click.echo("=" * 80)
+    click.echo(f"\nEntity type counts:")
     for prefix, count in sorted(results['summary'].items(), key=lambda x: -x[1]):
-        print(f"  {prefix:15s}: {count:6d}")
+        click.echo(f"  {prefix:15s}: {count:6d}")
 
     # Calculate grounding rate
     metpo_count = results['summary'].get('METPO', 0)
@@ -153,59 +159,59 @@ def main():
 
     if total_phenotype > 0:
         grounding_rate = (metpo_count / total_phenotype) * 100
-        print(f"\nPhenotype grounding rate: {grounding_rate:.1f}% ({metpo_count}/{total_phenotype})")
-        print(f"AUTO term rate: {100-grounding_rate:.1f}% ({auto_count}/{total_phenotype})")
+        click.echo(f"\nPhenotype grounding rate: {grounding_rate:.1f}% ({metpo_count}/{total_phenotype})")
+        click.echo(f"AUTO term rate: {100-grounding_rate:.1f}% ({auto_count}/{total_phenotype})")
     else:
-        print(f"\nNo METPO or AUTO terms found")
+        click.echo(f"\nNo METPO or AUTO terms found")
 
     # Count total extractions
     total_extractions = 0
     for fname in results['files_analyzed']:
-        fpath = outputs_dir / fname
+        fpath = yaml_dir / fname
         with open(fpath) as f:
             total_extractions += f.read().count('input_text:')
 
-    print(f"\nTotal paper extractions: {total_extractions}")
+    click.echo(f"\nTotal paper extractions: {total_extractions}")
 
     # Show examples
-    print("\n" + "=" * 80)
-    print("EXAMPLES: SUCCESSFUL METPO GROUNDING")
-    print("=" * 80)
-    print(f"\nFound {len(results['metpo_examples'])} examples where METPO successfully grounded terms\n")
+    click.echo("\n" + "=" * 80)
+    click.echo("EXAMPLES: SUCCESSFUL METPO GROUNDING")
+    click.echo("=" * 80)
+    click.echo(f"\nFound {len(results['metpo_examples'])} examples where METPO successfully grounded terms\n")
 
     for i, example in enumerate(results['metpo_examples'][:10], 1):
-        print(f"\n{i}. File: {example['file']}")
-        print(f"   Template: {example.get('template_name', 'unknown')}")
+        click.echo(f"\n{i}. File: {example['file']}")
+        click.echo(f"   Template: {example.get('template_name', 'unknown')}")
         if example.get('pmid'):
-            print(f"   PMID: {example['pmid']}")
+            click.echo(f"   PMID: {example['pmid']}")
         if example.get('doi'):
-            print(f"   DOI: {example['doi']}")
-        print(f"   METPO terms: {', '.join('METPO:' + t for t in example['metpo_terms'])}")
+            click.echo(f"   DOI: {example['doi']}")
+        click.echo(f"   METPO terms: {', '.join('METPO:' + t for t in example['metpo_terms'])}")
         if example['context'] != "No context":
-            print(f"   Context: {example['context'][:150]}...")
+            click.echo(f"   Context: {example['context'][:150]}...")
 
-    print("\n" + "=" * 80)
-    print("EXAMPLES: AUTO: TERMS INDICATING METPO GAPS")
-    print("=" * 80)
-    print(f"\nFound {len(results['auto_examples'])} examples with AUTO: terms\n")
+    click.echo("\n" + "=" * 80)
+    click.echo("EXAMPLES: AUTO: TERMS INDICATING METPO GAPS")
+    click.echo("=" * 80)
+    click.echo(f"\nFound {len(results['auto_examples'])} examples with AUTO: terms\n")
 
     for i, example in enumerate(results['auto_examples'][:20], 1):
-        print(f"\n{i}. Extraction: {example['file']}")
-        print(f"   Template: {example.get('template_name', 'unknown')}")
+        click.echo(f"\n{i}. Extraction: {example['file']}")
+        click.echo(f"   Template: {example.get('template_name', 'unknown')}")
         if example.get('pmid'):
-            print(f"   PMID: {example['pmid']}")
+            click.echo(f"   PMID: {example['pmid']}")
         if example.get('doi'):
-            print(f"   DOI: {example['doi']}")
+            click.echo(f"   DOI: {example['doi']}")
         if example.get('title'):
-            print(f"   Paper title: {example['title'][:80]}...")
-        print(f"   AUTO terms: {', '.join(example['auto_terms'])}")
+            click.echo(f"   Paper title: {example['title'][:80]}...")
+        click.echo(f"   AUTO terms: {', '.join(example['auto_terms'])}")
         if example['context'] != "No context":
-            print(f"   Context: {example['context'][:150]}...")
+            click.echo(f"   Context: {example['context'][:150]}...")
 
-    print("\n" + "=" * 80)
-    print("INTERPRETATION FOR ICBO TALK")
-    print("=" * 80)
-    print(f"""
+    click.echo("\n" + "=" * 80)
+    click.echo("INTERPRETATION FOR ICBO TALK")
+    click.echo("=" * 80)
+    click.echo(f"""
 This analysis uses ONLY production-quality extractions ({pattern_set}):
 - Late October 2025 runs (mature templates)
 - Full corpus or hybrid optimized templates
@@ -223,7 +229,8 @@ Recommendation: Report these numbers for ICBO - honest, representative, reproduc
 """)
 
     # Save results
-    output_file = Path(__file__).parent / f'metpo_grounding_production_{pattern_set}.txt'
+    if not output_file:
+        output_file = Path(__file__).parent / f'metpo_grounding_production_{pattern_set}.txt'
     with open(output_file, 'w') as f:
         f.write("METPO Grounding Analysis - Production Quality\n")
         f.write("=" * 80 + "\n\n")
@@ -254,11 +261,7 @@ Recommendation: Report these numbers for ICBO - honest, representative, reproduc
                 f.write(f"Context: {example['context'][:200]}\n")
             f.write("-" * 80 + "\n")
 
-    print(f"\nDetailed results saved to: {output_file}")
-    print("\nTo run with different pattern sets:")
-    print(f"  uv run python {Path(__file__).name} fullcorpus_strict")
-    print(f"  uv run python {Path(__file__).name} fullcorpus_and_hybrid")
-    print(f"  uv run python {Path(__file__).name} all_oct31_production")
+    click.echo(f"\nDetailed results saved to: {output_file}")
 
 if __name__ == '__main__':
     main()

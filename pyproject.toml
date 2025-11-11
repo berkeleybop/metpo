@@ -111,11 +111,13 @@ filter-ols-chromadb = "metpo.database.filter_ols_chromadb:main"
 # Analysis
 analyze-ontology-value = "metpo.analysis.analyze_ontology_value:main"
 analyze-match-quality = "metpo.analysis.analyze_match_quality:main"
+analyze-definition-opportunities = "metpo.scripts.analyze_definition_opportunities:main"
 
 # Literature Mining - Analysis
 visualize-ner = "metpo.literature_mining.analysis.visualize_ner:main"
 metpo-assessor = "metpo.literature_mining.analysis.metpo_assessor:cli"
 analyze-metpo-grounding = "metpo.literature_mining.analysis.analyze_metpo_grounding:main"
+analyze-metpo-grounding-filtered = "metpo.literature_mining.analysis.analyze_metpo_grounding_filtered:main"
 
 # Literature Mining - Utilities
 fetch-abstracts-from-dois = "metpo.literature_mining.scripts.fetch_abstracts_from_dois:main"
