@@ -24,13 +24,13 @@ def load_manifest():
             return json.load(f)
     return {
         "_comment": "Tracking successful ontology fetches to avoid re-downloading",
-        "ontologies": {}
+        "ontologies": {},
     }
 
 
 def save_manifest(manifest):
     """Save manifest with pretty formatting."""
-    with Path(MANIFEST_PATH).open( "w") as f:
+    with Path(MANIFEST_PATH).open("w") as f:
         json.dump(manifest, f, indent=2)
 
 
@@ -103,14 +103,15 @@ def main(verbose: bool):
             # Update timestamp only if not already set
             if "fetched_at" not in entry:
                 entry["fetched_at"] = datetime.fromtimestamp(
-                    file_path.stat().st_mtime,
-                    tz=UTC
+                    file_path.stat().st_mtime, tz=UTC
                 ).isoformat()
 
             if verbose:
-                click.echo(f"  {ont_id}: {entry['status']} "
-                          f"({file_size:,} bytes, "
-                          f"robot: {entry.get('robot_query_status', 'unknown')})")
+                click.echo(
+                    f"  {ont_id}: {entry['status']} "
+                    f"({file_size:,} bytes, "
+                    f"robot: {entry.get('robot_query_status', 'unknown')})"
+                )
 
     save_manifest(manifest)
 

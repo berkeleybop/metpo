@@ -101,7 +101,7 @@ def forward_fill_units(units_row, category_row):
 
 def read_provider_headers(provider_file):
     """Read the 3-row header structure from provider's CSV."""
-    with Path(provider_file).open( encoding="ISO-8859-1") as f:
+    with Path(provider_file).open(encoding="ISO-8859-1") as f:
         # Read first 3 lines
         row1 = f.readline().strip().split(";")  # Category row
         row2 = f.readline().strip().split(";")  # Units row
@@ -125,7 +125,7 @@ def read_kg_microbe_header(kg_microbe_file):
         print(f"Warning: kg-microbe file not found at {kg_microbe_file}")
         return None
 
-    with Path(kg_microbe_file).open( encoding="utf-8") as f:
+    with Path(kg_microbe_file).open(encoding="utf-8") as f:
         header = f.readline().strip().split("\t")
 
     return header
@@ -140,7 +140,7 @@ def get_mongodb_fields_from_kg_microbe(kg_microbe_file):
         print(f"Warning: kg-microbe file not found at {kg_microbe_file}")
         return None
 
-    with Path(kg_microbe_file).open( encoding="utf-8") as f:
+    with Path(kg_microbe_file).open(encoding="utf-8") as f:
         header = f.readline().strip().split("\t")
 
     # Apply same sanitization as import script
@@ -168,44 +168,48 @@ def create_field_mappings(provider_file, kg_microbe_file):
 
     # Handle the first two columns specially
     # Provider col 0: strain nÁ → removed in kg-microbe
-    mappings.append({
-        "position": 0,
-        "provider": {
-            "category": category_row[0] if len(category_row) > 0 else "",
-            "units": units_row[0] if len(units_row) > 0 else "",
-            "field_name": fields_row[0] if len(fields_row) > 0 else ""
-        },
-        "kg_microbe": "",
-        "mongodb": "",
-        "notes": "Row number column - removed in kg-microbe transformation"
-    })
+    mappings.append(
+        {
+            "position": 0,
+            "provider": {
+                "category": category_row[0] if len(category_row) > 0 else "",
+                "units": units_row[0] if len(units_row) > 0 else "",
+                "field_name": fields_row[0] if len(fields_row) > 0 else "",
+            },
+            "kg_microbe": "",
+            "mongodb": "",
+            "notes": "Row number column - removed in kg-microbe transformation",
+        }
+    )
 
     # Provider col 1: Bacdive_ID → becomes col 0 in kg-microbe/MongoDB
-    mappings.append({
-        "position": 1,
-        "provider": {
-            "category": category_row[1] if len(category_row) > 1 else "",
-            "units": units_row[1] if len(units_row) > 1 else "",
-            "field_name": fields_row[1] if len(fields_row) > 1 else ""
-        },
-        "kg_microbe": kg_microbe_header[0] if kg_microbe_header and len(kg_microbe_header) > 0 else "",
-        "mongodb": mongodb_fields[0] if mongodb_fields and len(mongodb_fields) > 0 else "",
-        "notes": "Moved from provider position 2 to position 1"
-    })
+    mappings.append(
+        {
+            "position": 1,
+            "provider": {
+                "category": category_row[1] if len(category_row) > 1 else "",
+                "units": units_row[1] if len(units_row) > 1 else "",
+                "field_name": fields_row[1] if len(fields_row) > 1 else "",
+            },
+            "kg_microbe": kg_microbe_header[0]
+            if kg_microbe_header and len(kg_microbe_header) > 0
+            else "",
+            "mongodb": mongodb_fields[0] if mongodb_fields and len(mongodb_fields) > 0 else "",
+            "notes": "Moved from provider position 2 to position 1",
+        }
+    )
 
     # Special: ncbitaxon_id (new in kg-microbe at position 1)
     if kg_microbe_header and len(kg_microbe_header) > 1:
-        mappings.append({
-            "position": 2,
-            "provider": {
-                "category": "",
-                "units": "",
-                "field_name": ""
-            },
-            "kg_microbe": kg_microbe_header[1],
-            "mongodb": mongodb_fields[1] if mongodb_fields and len(mongodb_fields) > 1 else "",
-            "notes": "New column added by kg-microbe transformation (not in provider file)"
-        })
+        mappings.append(
+            {
+                "position": 2,
+                "provider": {"category": "", "units": "", "field_name": ""},
+                "kg_microbe": kg_microbe_header[1],
+                "mongodb": mongodb_fields[1] if mongodb_fields and len(mongodb_fields) > 1 else "",
+                "notes": "New column added by kg-microbe transformation (not in provider file)",
+            }
+        )
 
     # Map remaining fields (provider 2+ → kg-microbe 2+ → mongodb 2+)
     for i in range(2, min(len(fields_row), 105)):
@@ -222,11 +226,11 @@ def create_field_mappings(provider_file, kg_microbe_file):
             "provider": {
                 "category": provider_category,
                 "units": provider_units,
-                "field_name": provider_field
+                "field_name": provider_field,
             },
             "kg_microbe": kg_field,
             "mongodb": mongo_field,
-            "notes": ""
+            "notes": "",
         }
 
         # Add notes about transformations applied
@@ -237,7 +241,9 @@ def create_field_mappings(provider_file, kg_microbe_file):
             notes.append("kg-microbe contains hyphen")
         if kg_field and ("." in kg_field):
             notes.append("kg-microbe contains period")
-        if kg_field and ("<=" in kg_field or ">=" in kg_field or ">" in kg_field or "<" in kg_field):
+        if kg_field and (
+            "<=" in kg_field or ">=" in kg_field or ">" in kg_field or "<" in kg_field
+        ):
             notes.append("kg-microbe contains comparison operator")
 
         # Note sanitization transformations
@@ -256,35 +262,23 @@ def create_field_mappings(provider_file, kg_microbe_file):
     "--provider-file",
     type=click.Path(exists=True, path_type=Path),
     default=Path("local/bactotraits/BactoTraits_databaseV2_Jun2022.csv"),
-    help="Path to provider CSV file"
+    help="Path to provider CSV file",
 )
 @click.option(
     "--kg-microbe-file",
     type=click.Path(exists=True, path_type=Path),
     default=Path("local/bactotraits/BactoTraits.tsv"),
-    help="Path to kg-microbe TSV file"
+    help="Path to kg-microbe TSV file",
 )
 @click.option(
     "--output-json",
     type=click.Path(path_type=Path),
     default=Path("metadata/bactotraits_field_mappings.json"),
-    help="Path for output JSON file"
+    help="Path for output JSON file",
 )
-@click.option(
-    "--db-name",
-    default="bactotraits",
-    help="MongoDB database name"
-)
-@click.option(
-    "--collection-name",
-    default="field_mappings",
-    help="MongoDB collection name"
-)
-@click.option(
-    "--mongo-uri",
-    default="mongodb://localhost:27017/",
-    help="MongoDB connection URI"
-)
+@click.option("--db-name", default="bactotraits", help="MongoDB database name")
+@click.option("--collection-name", default="field_mappings", help="MongoDB collection name")
+@click.option("--mongo-uri", default="mongodb://localhost:27017/", help="MongoDB connection URI")
 def main(provider_file, kg_microbe_file, output_json, db_name, collection_name, mongo_uri):
     """Create BactoTraits field mappings collection and JSON export."""
     print("=" * 80)
@@ -299,17 +293,22 @@ def main(provider_file, kg_microbe_file, output_json, db_name, collection_name, 
     print(f"\nSaving mappings to {output_json}...")
     output_json.parent.mkdir(parents=True, exist_ok=True)
 
-    with Path(output_json).open( "w", encoding="utf-8") as f:
-        json.dump({
-            "metadata": {
-                "total_fields": len(mappings),
-                "description": "Mapping of BactoTraits field names across provider, kg-microbe, and MongoDB versions",
-                "provider_file": provider_file.name,
-                "kg_microbe_file": kg_microbe_file.name,
-                "mongodb_collection": f"{db_name}.{collection_name}"
+    with Path(output_json).open("w", encoding="utf-8") as f:
+        json.dump(
+            {
+                "metadata": {
+                    "total_fields": len(mappings),
+                    "description": "Mapping of BactoTraits field names across provider, kg-microbe, and MongoDB versions",
+                    "provider_file": provider_file.name,
+                    "kg_microbe_file": kg_microbe_file.name,
+                    "mongodb_collection": f"{db_name}.{collection_name}",
+                },
+                "mappings": mappings,
             },
-            "mappings": mappings
-        }, f, indent=2, ensure_ascii=False)
+            f,
+            indent=2,
+            ensure_ascii=False,
+        )
 
     print(f"✓ Saved {len(mappings)} field mappings to JSON")
 
@@ -341,12 +340,16 @@ def main(provider_file, kg_microbe_file, output_json, db_name, collection_name, 
     print("=" * 80)
 
     total_fields = len(mappings)
-    fields_with_categories = sum(1 for m in mappings
-                                 if m.get("provider", {}).get("category")
-                                 and m["provider"]["category"] not in ["", "NEW"])
-    fields_with_units = sum(1 for m in mappings
-                           if m.get("provider", {}).get("units")
-                           and m["provider"]["units"] not in ["", "NEW"])
+    fields_with_categories = sum(
+        1
+        for m in mappings
+        if m.get("provider", {}).get("category") and m["provider"]["category"] not in ["", "NEW"]
+    )
+    fields_with_units = sum(
+        1
+        for m in mappings
+        if m.get("provider", {}).get("units") and m["provider"]["units"] not in ["", "NEW"]
+    )
     fields_with_issues = sum(1 for m in mappings if m.get("notes"))
 
     print(f"Total fields: {total_fields}")

@@ -1,6 +1,7 @@
 """
 Visualize cosine distance and similarity score distributions from SSSOM file.
 """
+
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -16,18 +17,18 @@ distances = df["cosine_distance"].values
 similarities = df["similarity_score"].values
 
 # Statistics
-print(f"\n{'='*70}")
+print(f"\n{'=' * 70}")
 print("COSINE DISTANCE STATISTICS")
-print(f"{'='*70}")
+print(f"{'=' * 70}")
 print(f"Min:    {distances.min():.6f}")
 print(f"Max:    {distances.max():.6f}")
 print(f"Mean:   {distances.mean():.6f}")
 print(f"Median: {np.median(distances):.6f}")
 print(f"Std:    {distances.std():.6f}")
 
-print(f"\n{'='*70}")
+print(f"\n{'=' * 70}")
 print("SIMILARITY SCORE STATISTICS")
-print(f"{'='*70}")
+print(f"{'=' * 70}")
 print(f"Min:    {similarities.min():.6f}")
 print(f"Max:    {similarities.max():.6f}")
 print(f"Mean:   {similarities.mean():.6f}")
@@ -37,9 +38,9 @@ print(f"Std:    {similarities.std():.6f}")
 # Verify formula: similarity = 1 - (distance / 2)
 computed_sim = 1 - (distances / 2)
 formula_check = np.allclose(similarities, computed_sim)
-print(f"\n{'='*70}")
+print(f"\n{'=' * 70}")
 print("FORMULA VERIFICATION")
-print(f"{'='*70}")
+print(f"{'=' * 70}")
 print(f"similarity = 1 - (distance / 2): {formula_check}")
 if formula_check:
     print("✓ Formula is correct!")
@@ -48,30 +49,30 @@ else:
     print(f"✗ Formula mismatch! Max difference: {max_diff:.10f}")
 
 # Distribution bins
-print(f"\n{'='*70}")
+print(f"\n{'=' * 70}")
 print("COSINE DISTANCE DISTRIBUTION")
-print(f"{'='*70}")
+print(f"{'=' * 70}")
 bins = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.5, 2.0]
 for i in range(len(bins) - 1):
-    count = ((distances >= bins[i]) & (distances < bins[i+1])).sum()
+    count = ((distances >= bins[i]) & (distances < bins[i + 1])).sum()
     pct = 100 * count / len(distances)
     bar = "█" * int(pct / 2)
-    print(f"[{bins[i]:.1f}, {bins[i+1]:.1f}): {count:5d} ({pct:5.1f}%) {bar}")
+    print(f"[{bins[i]:.1f}, {bins[i + 1]:.1f}): {count:5d} ({pct:5.1f}%) {bar}")
 
-print(f"\n{'='*70}")
+print(f"\n{'=' * 70}")
 print("SIMILARITY SCORE DISTRIBUTION")
-print(f"{'='*70}")
+print(f"{'=' * 70}")
 sim_bins = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
 for i in range(len(sim_bins) - 1):
-    count = ((similarities >= sim_bins[i]) & (similarities < sim_bins[i+1])).sum()
+    count = ((similarities >= sim_bins[i]) & (similarities < sim_bins[i + 1])).sum()
     pct = 100 * count / len(similarities)
     bar = "█" * int(pct / 2)
-    print(f"[{sim_bins[i]:.1f}, {sim_bins[i+1]:.1f}): {count:5d} ({pct:5.1f}%) {bar}")
+    print(f"[{sim_bins[i]:.1f}, {sim_bins[i + 1]:.1f}): {count:5d} ({pct:5.1f}%) {bar}")
 
 # Predicate distribution
-print(f"\n{'='*70}")
+print(f"\n{'=' * 70}")
 print("PREDICATE DISTRIBUTION")
-print(f"{'='*70}")
+print(f"{'=' * 70}")
 pred_counts = df["predicate_id"].value_counts()
 for pred, count in pred_counts.items():
     pct = 100 * count / len(df)
@@ -83,8 +84,20 @@ fig, axes = plt.subplots(2, 2, figsize=(14, 10))
 # 1. Cosine distance histogram
 ax1 = axes[0, 0]
 ax1.hist(distances, bins=50, color="steelblue", alpha=0.7, edgecolor="black")
-ax1.axvline(distances.mean(), color="red", linestyle="--", linewidth=2, label=f"Mean: {distances.mean():.3f}")
-ax1.axvline(np.median(distances), color="orange", linestyle="--", linewidth=2, label=f"Median: {np.median(distances):.3f}")
+ax1.axvline(
+    distances.mean(),
+    color="red",
+    linestyle="--",
+    linewidth=2,
+    label=f"Mean: {distances.mean():.3f}",
+)
+ax1.axvline(
+    np.median(distances),
+    color="orange",
+    linestyle="--",
+    linewidth=2,
+    label=f"Median: {np.median(distances):.3f}",
+)
 ax1.set_xlabel("Cosine Distance", fontsize=12)
 ax1.set_ylabel("Count", fontsize=12)
 ax1.set_title("Cosine Distance Distribution", fontsize=14, fontweight="bold")
@@ -94,8 +107,20 @@ ax1.grid(axis="y", alpha=0.3)
 # 2. Similarity score histogram
 ax2 = axes[0, 1]
 ax2.hist(similarities, bins=50, color="forestgreen", alpha=0.7, edgecolor="black")
-ax2.axvline(similarities.mean(), color="red", linestyle="--", linewidth=2, label=f"Mean: {similarities.mean():.3f}")
-ax2.axvline(np.median(similarities), color="orange", linestyle="--", linewidth=2, label=f"Median: {np.median(similarities):.3f}")
+ax2.axvline(
+    similarities.mean(),
+    color="red",
+    linestyle="--",
+    linewidth=2,
+    label=f"Mean: {similarities.mean():.3f}",
+)
+ax2.axvline(
+    np.median(similarities),
+    color="orange",
+    linestyle="--",
+    linewidth=2,
+    label=f"Median: {np.median(similarities):.3f}",
+)
 ax2.set_xlabel("Similarity Score", fontsize=12)
 ax2.set_ylabel("Count", fontsize=12)
 ax2.set_title("Similarity Score Distribution", fontsize=14, fontweight="bold")
@@ -126,7 +151,9 @@ ax4.plot(sorted_dist, cumulative_dist, linewidth=2, label="Cosine Distance", col
 sorted_sim = np.sort(similarities)
 cumulative_sim = np.arange(1, len(sorted_sim) + 1) / len(sorted_sim)
 ax4_twin = ax4.twinx()
-ax4_twin.plot(sorted_sim, cumulative_sim, linewidth=2, label="Similarity Score", color="forestgreen")
+ax4_twin.plot(
+    sorted_sim, cumulative_sim, linewidth=2, label="Similarity Score", color="forestgreen"
+)
 
 ax4.set_xlabel("Cosine Distance", fontsize=12)
 ax4.set_ylabel("Cumulative Probability", fontsize=12, color="steelblue")
@@ -140,9 +167,9 @@ ax4_twin.legend(loc="lower right")
 
 plt.tight_layout()
 plt.savefig("/tmp/cosine_distance_distributions.png", dpi=150, bbox_inches="tight")
-print(f"\n{'='*70}")
+print(f"\n{'=' * 70}")
 print("VISUALIZATION SAVED")
-print(f"{'='*70}")
+print(f"{'=' * 70}")
 print("Saved to: /tmp/cosine_distance_distributions.png")
 
 # Show plot

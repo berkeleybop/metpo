@@ -22,29 +22,42 @@ def load_manifest():
             return json.load(f)
     return {
         "_comment": "Tracking successful ontology fetches to avoid re-downloading",
-        "ontologies": {}
+        "ontologies": {},
     }
 
 
 def save_manifest(manifest):
     """Save manifest with pretty formatting."""
-    with Path(MANIFEST_PATH).open( "w") as f:
+    with Path(MANIFEST_PATH).open("w") as f:
         json.dump(manifest, f, indent=2)
 
 
 @click.command()
 @click.option("--ontology", required=True, help="Ontology ID (e.g., D3O, OMP)")
-@click.option("--status", type=click.Choice(["success", "failed", "empty"]),
-              help="Fetch status")
-@click.option("--robot-status", type=click.Choice(["success", "failed", "empty", "not_run"]),
-              help="ROBOT query status")
+@click.option("--status", type=click.Choice(["success", "failed", "empty"]), help="Fetch status")
+@click.option(
+    "--robot-status",
+    type=click.Choice(["success", "failed", "empty", "not_run"]),
+    help="ROBOT query status",
+)
 @click.option("--file", "file_path", type=Path, help="Path to OWL/TTL file")
 @click.option("--tsv", "tsv_path", type=Path, help="Path to TSV output")
-@click.option("--source", type=click.Choice(["bioportal", "manual"]), default="bioportal",
-              help="Source of ontology")
+@click.option(
+    "--source",
+    type=click.Choice(["bioportal", "manual"]),
+    default="bioportal",
+    help="Source of ontology",
+)
 @click.option("--term-count", type=int, help="Number of terms extracted")
-def main(ontology: str, status: str, robot_status: str, file_path: Path,
-         tsv_path: Path, source: str, term_count: int):
+def main(
+    ontology: str,
+    status: str,
+    robot_status: str,
+    file_path: Path,
+    tsv_path: Path,
+    source: str,
+    term_count: int,
+):
     """Update ontology manifest with fetch/query status."""
     manifest = load_manifest()
 

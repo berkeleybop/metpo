@@ -11,6 +11,7 @@ Strategy:
 
 This combines all improvement sources in one pass.
 """
+
 import csv
 import os
 import re
@@ -25,14 +26,14 @@ from tqdm import tqdm
 def load_ready_improvements(ready_path: str) -> dict[str, dict]:
     """Load undergraduate curator improvements."""
     improvements = {}
-    with Path(ready_path).open( encoding="utf-8") as f:
+    with Path(ready_path).open(encoding="utf-8") as f:
         reader = csv.DictReader(f, delimiter="\t")
         for row in reader:
             improvements[row["METPO_ID"]] = {
                 "definition": row["Definition"],
                 "sources": row.get("Foreign_Sources", ""),
                 "curator": row.get("Curator", ""),
-                "reasoning": row.get("Comment_Reasoning", "")
+                "reasoning": row.get("Comment_Reasoning", ""),
             }
     return improvements
 
@@ -56,7 +57,6 @@ def fix_genus_for_parent(definition: str, parent: str, label: str) -> str | None
         # Missing genus entirely
         r"^A (difference|range|concentration|temperature|pH|value|span)": f"A {parent}",
         r"^An (observation|organism)": f"An {parent}",
-
         # Wrong genus
         r"^A quality": f"A {parent}",
         r"^A process": f"A {parent}",
@@ -137,12 +137,7 @@ def check_definition_quality(definition: str, parent: str, label: str) -> tuple[
 
 
 def query_chromadb_for_definition(
-    term_id: str,
-    label: str,
-    definition: str,
-    collection,
-    openai_client,
-    n_results: int = 10
+    term_id: str, label: str, definition: str, collection, openai_client, n_results: int = 10
 ) -> list[dict]:
     """Query ChromaDB to find similar terms with definitions."""
     # Create query text (use current definition or just label)
@@ -150,17 +145,14 @@ def query_chromadb_for_definition(
 
     try:
         # Get embedding
-        response = openai_client.embeddings.create(
-            model="text-embedding-3-small",
-            input=query_text
-        )
+        response = openai_client.embeddings.create(model="text-embedding-3-small", input=query_text)
         query_embedding = response.data[0].embedding
 
         # Query ChromaDB
         results = collection.query(
             query_embeddings=[query_embedding],
             n_results=n_results,
-            include=["metadatas", "distances"]
+            include=["metadatas", "distances"],
         )
 
         # Extract matches
@@ -178,14 +170,16 @@ def query_chromadb_for_definition(
                 if not foreign_def or len(foreign_def) < 20:
                     continue
 
-                matches.append({
-                    "iri": match_id,
-                    "label": metadata.get("label", ""),
-                    "definition": foreign_def,
-                    "ontology": metadata.get("ontology_prefix", ""),
-                    "similarity": similarity,
-                    "distance": distance
-                })
+                matches.append(
+                    {
+                        "iri": match_id,
+                        "label": metadata.get("label", ""),
+                        "definition": foreign_def,
+                        "ontology": metadata.get("ontology_prefix", ""),
+                        "similarity": similarity,
+                        "distance": distance,
+                    }
+                )
 
         return matches
 
@@ -195,9 +189,7 @@ def query_chromadb_for_definition(
 
 
 def choose_best_definition(
-    candidates: dict[str, dict],
-    parent: str,
-    label: str
+    candidates: dict[str, dict], parent: str, label: str
 ) -> tuple[str, str, str, int]:
     """
     Choose best definition from candidates.
@@ -221,15 +213,17 @@ def choose_best_definition(
         if source_type == "foreign" and candidate.get("similarity", 0) >= 0.90:
             score += 5
 
-        scored.append({
-            "definition": definition,
-            "source": candidate.get("source", source_type),
-            "source_type": source_type,
-            "score": score,
-            "issues": issues,
-            "curator": candidate.get("curator", ""),
-            "iri": candidate.get("iri", "")
-        })
+        scored.append(
+            {
+                "definition": definition,
+                "source": candidate.get("source", source_type),
+                "source_type": source_type,
+                "score": score,
+                "issues": issues,
+                "curator": candidate.get("curator", ""),
+                "iri": candidate.get("iri", ""),
+            }
+        )
 
     # Sort by score (highest first)
     scored.sort(key=lambda x: x["score"], reverse=True)
@@ -250,45 +244,48 @@ def choose_best_definition(
     "--metpo-tsv",
     type=click.Path(exists=True),
     default="src/templates/metpo_sheet_improved.tsv",
-    help="Input METPO template TSV"
+    help="Input METPO template TSV",
 )
 @click.option(
     "--ready-file",
     type=click.Path(exists=True),
     default="data/undergraduate_definitions/READY_FOR_GOOGLE_SHEETS.tsv",
-    help="Undergraduate improvements file"
+    help="Undergraduate improvements file",
 )
 @click.option(
     "--chroma-path",
     type=click.Path(exists=True),
     default="data/chromadb/chroma_ols20_nonols4",
-    help="ChromaDB directory"
+    help="ChromaDB directory",
 )
-@click.option(
-    "--collection-name",
-    default="combined_embeddings",
-    help="ChromaDB collection name"
-)
+@click.option("--collection-name", default="combined_embeddings", help="ChromaDB collection name")
 @click.option(
     "--output",
     type=click.Path(),
     default="src/templates/metpo_sheet_improved_v2.tsv",
-    help="Output TSV file"
+    help="Output TSV file",
 )
 @click.option(
     "--report",
     type=click.Path(),
     default="data/definitions/improvement_report.tsv",
-    help="Improvement report file"
+    help="Improvement report file",
 )
 @click.option(
     "--min-similarity",
     type=float,
     default=0.80,
-    help="Minimum similarity for foreign definitions (default: 0.80)"
+    help="Minimum similarity for foreign definitions (default: 0.80)",
 )
-def main(metpo_tsv: str, ready_file: str, chroma_path: str, collection_name: str,
-         output: str, report: str, min_similarity: float):
+def main(
+    metpo_tsv: str,
+    ready_file: str,
+    chroma_path: str,
+    collection_name: str,
+    output: str,
+    report: str,
+    min_similarity: float,
+):
     """
     Iteratively improve METPO definitions.
 
@@ -319,7 +316,7 @@ def main(metpo_tsv: str, ready_file: str, chroma_path: str, collection_name: str
     # Load current METPO terms
     click.echo(f"\n📥 Loading METPO terms from {metpo_tsv}...")
     terms = []
-    with Path(metpo_tsv).open( encoding="utf-8") as f:
+    with Path(metpo_tsv).open(encoding="utf-8") as f:
         reader = csv.DictReader(f, delimiter="\t")
         fieldnames = reader.fieldnames
         for row in reader:
@@ -357,7 +354,7 @@ def main(metpo_tsv: str, ready_file: str, chroma_path: str, collection_name: str
             candidates["READY"] = {
                 "definition": ready["definition"],
                 "source": ready["sources"],
-                "curator": ready["curator"]
+                "curator": ready["curator"],
             }
 
         # Try to fix genus
@@ -365,7 +362,7 @@ def main(metpo_tsv: str, ready_file: str, chroma_path: str, collection_name: str
         if fixed_def:
             candidates["genus_fixed"] = {
                 "definition": fixed_def,
-                "source": current_source or "METPO (genus corrected)"
+                "source": current_source or "METPO (genus corrected)",
             }
 
         # Query ChromaDB for foreign definitions
@@ -380,7 +377,7 @@ def main(metpo_tsv: str, ready_file: str, chroma_path: str, collection_name: str
                 "definition": best_foreign["definition"],
                 "source": best_foreign["iri"],
                 "similarity": best_foreign["similarity"],
-                "iri": best_foreign["iri"]
+                "iri": best_foreign["iri"],
             }
 
         # Choose best definition
@@ -408,23 +405,29 @@ def main(metpo_tsv: str, ready_file: str, chroma_path: str, collection_name: str
             improvements.append(term_id)
 
         # Add to report
-        report_data.append({
-            "term_id": term_id,
-            "label": label,
-            "parent": parent,
-            "current_definition": current_def[:100] + "..." if len(current_def) > 100 else current_def,
-            "new_definition": best_def[:100] + "..." if best_def and len(best_def) > 100 else best_def,
-            "current_source": current_source,
-            "new_source": best_source,
-            "improved": "Yes" if improved else "No",
-            "reason": reason,
-            "score": score
-        })
+        report_data.append(
+            {
+                "term_id": term_id,
+                "label": label,
+                "parent": parent,
+                "current_definition": current_def[:100] + "..."
+                if len(current_def) > 100
+                else current_def,
+                "new_definition": best_def[:100] + "..."
+                if best_def and len(best_def) > 100
+                else best_def,
+                "current_source": current_source,
+                "new_source": best_source,
+                "improved": "Yes" if improved else "No",
+                "reason": reason,
+                "score": score,
+            }
+        )
 
     # Write output
     click.echo(f"\n💾 Writing output to {output}...")
     Path(output).parent.mkdir(parents=True, exist_ok=True)
-    with Path(output).open( "w", encoding="utf-8", newline="") as f:
+    with Path(output).open("w", encoding="utf-8", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames, delimiter="\t")
         writer.writeheader()
         writer.writerows(terms)
@@ -432,7 +435,7 @@ def main(metpo_tsv: str, ready_file: str, chroma_path: str, collection_name: str
     # Write report
     click.echo(f"💾 Writing report to {report}...")
     Path(report).parent.mkdir(parents=True, exist_ok=True)
-    with Path(report).open( "w", encoding="utf-8", newline="") as f:
+    with Path(report).open("w", encoding="utf-8", newline="") as f:
         if report_data:
             writer = csv.DictWriter(f, fieldnames=report_data[0].keys(), delimiter="\t")
             writer.writeheader()
@@ -441,8 +444,12 @@ def main(metpo_tsv: str, ready_file: str, chroma_path: str, collection_name: str
     # Summary
     click.echo("\n✅ Complete!")
     click.echo(f"  Total terms processed: {len(terms)}")
-    click.echo(f"  Terms improved: {len(improvements)} ({len(improvements)/len(terms)*100:.1f}%)")
-    click.echo(f"  READY improvements used: {len([t for t in terms if t['ID'] in ready_improvements])}")
+    click.echo(
+        f"  Terms improved: {len(improvements)} ({len(improvements) / len(terms) * 100:.1f}%)"
+    )
+    click.echo(
+        f"  READY improvements used: {len([t for t in terms if t['ID'] in ready_improvements])}"
+    )
     click.echo("\n📄 Files:")
     click.echo(f"  Output: {output}")
     click.echo(f"  Report: {report}")

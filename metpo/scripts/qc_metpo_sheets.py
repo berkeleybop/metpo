@@ -51,7 +51,7 @@ class SheetData:
 
     def load(self):
         """Load TSV file and extract key information."""
-        with Path(self.filename).open( encoding="utf-8") as f:
+        with Path(self.filename).open(encoding="utf-8") as f:
             reader = csv.reader(f, delimiter="\t")
             for row_num, row in enumerate(reader, start=1):
                 self.rows.append(row)
@@ -82,7 +82,12 @@ class SheetData:
                     self.ids[row_id] = (row_num, label, row_type, is_stub)
 
                 # Store label mapping
-                if label and row_type in ["owl:Class", "owl:ObjectProperty", "owl:DataProperty", "owl:AnnotationProperty"]:
+                if label and row_type in [
+                    "owl:Class",
+                    "owl:ObjectProperty",
+                    "owl:DataProperty",
+                    "owl:AnnotationProperty",
+                ]:
                     self.labels[label].append((row_num, row_id, row_type, is_stub))
 
                 # Extract parent reference (column 3 for classes, column 6 for properties)
@@ -134,12 +139,14 @@ def check_id_clashes(sheets: list[SheetData]) -> list[QCIssue]:
                 # Within same sheet
                 sheet_name = next(iter(by_sheet.keys()))
                 locations = ", ".join([f"row {r}" for r, _, _, _ in by_sheet[sheet_name]])
-                issues.append(QCIssue(
-                    "ERROR",
-                    "ID_CLASH_WITHIN_SHEET",
-                    f"ID '{id_val}' appears {len(occurrences)} times in same sheet",
-                    f"{sheet_name}: {locations}"
-                ))
+                issues.append(
+                    QCIssue(
+                        "ERROR",
+                        "ID_CLASH_WITHIN_SHEET",
+                        f"ID '{id_val}' appears {len(occurrences)} times in same sheet",
+                        f"{sheet_name}: {locations}",
+                    )
+                )
             else:
                 # Across sheets - check if all are stubs or all are real
                 all_stubs = all(is_stub for _, _, _, _, is_stub in occurrences)
@@ -147,16 +154,20 @@ def check_id_clashes(sheets: list[SheetData]) -> list[QCIssue]:
 
                 if all_stubs or all_real:
                     # Multiple stubs or multiple real definitions - this is an error
-                    details = "; ".join([
-                        f"{sheet}: rows {', '.join([f'{r} (' + ('stub' if s else 'real') + ')' for r, _, _, s in rows])}"
-                        for sheet, rows in by_sheet.items()
-                    ])
-                    issues.append(QCIssue(
-                        "ERROR",
-                        "ID_CLASH_ACROSS_SHEETS",
-                        f"ID '{id_val}' appears in multiple sheets (all {'stubs' if all_stubs else 'real definitions'})",
-                        details
-                    ))
+                    details = "; ".join(
+                        [
+                            f"{sheet}: rows {', '.join([f'{r} (' + ('stub' if s else 'real') + ')' for r, _, _, s in rows])}"
+                            for sheet, rows in by_sheet.items()
+                        ]
+                    )
+                    issues.append(
+                        QCIssue(
+                            "ERROR",
+                            "ID_CLASH_ACROSS_SHEETS",
+                            f"ID '{id_val}' appears in multiple sheets (all {'stubs' if all_stubs else 'real definitions'})",
+                            details,
+                        )
+                    )
 
     return issues
 
@@ -197,14 +208,18 @@ def check_label_clashes(sheets: list[SheetData]) -> list[QCIssue]:
                 # Within same sheet
                 sheet_name = next(iter(by_sheet.keys()))
                 ids = [id_val for _, id_val, _, _ in by_sheet[sheet_name]]
-                locations = ", ".join([f"row {r} ({id_val})" for r, id_val, _, _ in by_sheet[sheet_name]])
+                locations = ", ".join(
+                    [f"row {r} ({id_val})" for r, id_val, _, _ in by_sheet[sheet_name]]
+                )
 
-                issues.append(QCIssue(
-                    severity,
-                    "LABEL_CLASH_WITHIN_SHEET",
-                    f"Label '{label}' appears {len(occurrences)} times in same sheet with IDs: {', '.join(ids)}",
-                    f"{sheet_name}: {locations}"
-                ))
+                issues.append(
+                    QCIssue(
+                        severity,
+                        "LABEL_CLASH_WITHIN_SHEET",
+                        f"Label '{label}' appears {len(occurrences)} times in same sheet with IDs: {', '.join(ids)}",
+                        f"{sheet_name}: {locations}",
+                    )
+                )
             else:
                 # Across sheets - check if all are stubs or all are real
                 all_stubs = all(is_stub for _, _, _, _, is_stub in occurrences)
@@ -212,16 +227,20 @@ def check_label_clashes(sheets: list[SheetData]) -> list[QCIssue]:
 
                 if all_stubs or all_real:
                     # Multiple stubs or multiple real definitions - this is an error
-                    details = "; ".join([
-                        f"{sheet}: rows {', '.join([f'{r} ({id_val}, ' + ('stub' if s else 'real') + ')' for r, id_val, _, s in rows])}"
-                        for sheet, rows in by_sheet.items()
-                    ])
-                    issues.append(QCIssue(
-                        severity,
-                        "LABEL_CLASH_ACROSS_SHEETS",
-                        f"Label '{label}' appears in multiple sheets (all {'stubs' if all_stubs else 'real definitions'})",
-                        details
-                    ))
+                    details = "; ".join(
+                        [
+                            f"{sheet}: rows {', '.join([f'{r} ({id_val}, ' + ('stub' if s else 'real') + ')' for r, id_val, _, s in rows])}"
+                            for sheet, rows in by_sheet.items()
+                        ]
+                    )
+                    issues.append(
+                        QCIssue(
+                            severity,
+                            "LABEL_CLASH_ACROSS_SHEETS",
+                            f"Label '{label}' appears in multiple sheets (all {'stubs' if all_stubs else 'real definitions'})",
+                            details,
+                        )
+                    )
 
     return issues
 
@@ -254,37 +273,45 @@ def check_undefined_parents(sheets: list[SheetData]) -> list[QCIssue]:
             is_label = not is_id
 
             if is_id and parent_ref not in all_ids:
-                issues.append(QCIssue(
-                    "ERROR",
-                    "UNDEFINED_PARENT_ID",
-                    f"Parent ID '{parent_ref}' not defined anywhere",
-                    f"{sheet.filename}: row {row_num}, ID {id_val}"
-                ))
+                issues.append(
+                    QCIssue(
+                        "ERROR",
+                        "UNDEFINED_PARENT_ID",
+                        f"Parent ID '{parent_ref}' not defined anywhere",
+                        f"{sheet.filename}: row {row_num}, ID {id_val}",
+                    )
+                )
             elif is_label and parent_ref not in all_labels:
-                issues.append(QCIssue(
-                    "WARNING",
-                    "UNDEFINED_PARENT_LABEL",
-                    f"Parent label '{parent_ref}' not defined anywhere (using labels for parents may cause issues)",
-                    f"{sheet.filename}: row {row_num}, ID {id_val}"
-                ))
+                issues.append(
+                    QCIssue(
+                        "WARNING",
+                        "UNDEFINED_PARENT_LABEL",
+                        f"Parent label '{parent_ref}' not defined anywhere (using labels for parents may cause issues)",
+                        f"{sheet.filename}: row {row_num}, ID {id_val}",
+                    )
+                )
 
             # Check for self-referential parents
             # Get the label for this ID
             current_label = sheet.ids.get(id_val, (None, None, None, None))[1]
             if parent_ref == id_val:
-                issues.append(QCIssue(
-                    "ERROR",
-                    "SELF_REFERENTIAL_PARENT_ID",
-                    "Parent references itself via ID",
-                    f"{sheet.filename}: row {row_num}, ID {id_val}"
-                ))
+                issues.append(
+                    QCIssue(
+                        "ERROR",
+                        "SELF_REFERENTIAL_PARENT_ID",
+                        "Parent references itself via ID",
+                        f"{sheet.filename}: row {row_num}, ID {id_val}",
+                    )
+                )
             elif parent_ref == current_label:
-                issues.append(QCIssue(
-                    "ERROR",
-                    "SELF_REFERENTIAL_PARENT_LABEL",
-                    f"Parent references itself via label '{parent_ref}'",
-                    f"{sheet.filename}: row {row_num}, ID {id_val}"
-                ))
+                issues.append(
+                    QCIssue(
+                        "ERROR",
+                        "SELF_REFERENTIAL_PARENT_LABEL",
+                        f"Parent references itself via label '{parent_ref}'",
+                        f"{sheet.filename}: row {row_num}, ID {id_val}",
+                    )
+                )
 
     return issues
 
@@ -311,53 +338,64 @@ def check_structural_issues(sheets: list[SheetData]) -> list[QCIssue]:
 
             # Check for missing ID
             if not id_val and row_type in ["owl:Class", "owl:ObjectProperty", "owl:DataProperty"]:
-                issues.append(QCIssue(
-                    "ERROR",
-                    "MISSING_ID",
-                    f"Row has label '{label}' but no ID",
-                    f"{sheet.filename}: row {row_num}"
-                ))
+                issues.append(
+                    QCIssue(
+                        "ERROR",
+                        "MISSING_ID",
+                        f"Row has label '{label}' but no ID",
+                        f"{sheet.filename}: row {row_num}",
+                    )
+                )
 
             # Check for missing label
-            if id_val and not label and row_type in ["owl:Class", "owl:ObjectProperty", "owl:DataProperty"]:
-                issues.append(QCIssue(
-                    "WARNING",
-                    "MISSING_LABEL",
-                    f"ID '{id_val}' has no label",
-                    f"{sheet.filename}: row {row_num}"
-                ))
+            if (
+                id_val
+                and not label
+                and row_type in ["owl:Class", "owl:ObjectProperty", "owl:DataProperty"]
+            ):
+                issues.append(
+                    QCIssue(
+                        "WARNING",
+                        "MISSING_LABEL",
+                        f"ID '{id_val}' has no label",
+                        f"{sheet.filename}: row {row_num}",
+                    )
+                )
 
             # Check ID format
-            if id_val and not id_val.startswith("METPO:") and not id_val.startswith("IAO:") and row_type != "":
-                issues.append(QCIssue(
-                    "WARNING",
-                    "NON_METPO_ID",
-                    f"ID '{id_val}' doesn't start with METPO: or IAO:",
-                    f"{sheet.filename}: row {row_num}"
-                ))
+            if (
+                id_val
+                and not id_val.startswith("METPO:")
+                and not id_val.startswith("IAO:")
+                and row_type != ""
+            ):
+                issues.append(
+                    QCIssue(
+                        "WARNING",
+                        "NON_METPO_ID",
+                        f"ID '{id_val}' doesn't start with METPO: or IAO:",
+                        f"{sheet.filename}: row {row_num}",
+                    )
+                )
 
     return issues
 
 
 @click.command()
-@click.option(
-    "--download",
-    is_flag=True,
-    help="Download sheets directly from Google Sheets"
-)
+@click.option("--download", is_flag=True, help="Download sheets directly from Google Sheets")
 @click.option(
     "--main-sheet",
     "-m",
     type=click.Path(exists=True),
     default="src/templates/metpo_sheet.tsv",
-    help="Path to metpo_sheet.tsv (default: src/templates/metpo_sheet.tsv)"
+    help="Path to metpo_sheet.tsv (default: src/templates/metpo_sheet.tsv)",
 )
 @click.option(
     "--properties-sheet",
     "-p",
     type=click.Path(exists=True),
     default="src/templates/metpo-properties.tsv",
-    help="Path to metpo-properties.tsv (default: src/templates/metpo-properties.tsv)"
+    help="Path to metpo-properties.tsv (default: src/templates/metpo-properties.tsv)",
 )
 def main(download: bool, main_sheet: str, properties_sheet: str):
     """
@@ -402,7 +440,9 @@ def main(download: bool, main_sheet: str, properties_sheet: str):
         sheet = SheetData(filename)
         sheet.load()
         sheets.append(sheet)
-        click.echo(f"  ✓ {len(sheet.ids)} entities ({len(sheet.stubs)} stubs), {len(sheet.parents)} parent references")
+        click.echo(
+            f"  ✓ {len(sheet.ids)} entities ({len(sheet.stubs)} stubs), {len(sheet.parents)} parent references"
+        )
 
     click.echo()
 

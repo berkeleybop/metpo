@@ -39,6 +39,7 @@ def load_cborg_key():
 
     return cborg_key
 
+
 def get_cborg_usage(api_key):
     """Get current CBORG usage/cost information"""
     headers = {"Authorization": f"Bearer {api_key}"}
@@ -50,6 +51,7 @@ def get_cborg_usage(api_key):
     except requests.RequestException as e:
         print(f"WARNING: Could not fetch CBORG usage: {e}")
         return None
+
 
 def run_extraction(api_key):
     """Run the chemical utilization extraction with timing and logging"""
@@ -68,25 +70,35 @@ def run_extraction(api_key):
 
     # Build OntoGPT command
     cmd = [
-        "uv", "run", "ontogpt", "-vv", "extract",
-        "-t", "templates/chemical_utilization_populated.yaml",
-        "-i", "test-chemical-rich/",
-        "-m", "openai/gpt-5",
-        "--model-provider", "openai",
-        "--api-base", os.environ.get("CBORG_API_BASE", "https://api.cborg.lbl.gov"),
-        "-o", output_file
+        "uv",
+        "run",
+        "ontogpt",
+        "-vv",
+        "extract",
+        "-t",
+        "templates/chemical_utilization_populated.yaml",
+        "-i",
+        "test-chemical-rich/",
+        "-m",
+        "openai/gpt-5",
+        "--model-provider",
+        "openai",
+        "--api-base",
+        os.environ.get("CBORG_API_BASE", "https://api.cborg.lbl.gov"),
+        "-o",
+        output_file,
     ]
 
-    print("="*60)
+    print("=" * 60)
     print("CBORG Chemical Utilization Extraction")
-    print("="*60)
+    print("=" * 60)
     print("Model: openai/gpt-5")
     print("Template: chemical_utilization_populated.yaml")
     print("Input: test-chemical-rich/")
     print(f"Output: {output_file}")
     print(f"Verbose log: {log_file}")
     print(f"Timestamp: {timestamp}")
-    print("="*60)
+    print("=" * 60)
 
     # Record start time
     start_time = time.time()
@@ -94,24 +106,23 @@ def run_extraction(api_key):
 
     print(f"Starting extraction at {start_timestamp}")
     print("Command:", " ".join(cmd))
-    print("-"*60)
+    print("-" * 60)
 
     # Run extraction with logging
     try:
-        with Path(log_file).open( "w") as logf:
+        with Path(log_file).open("w") as logf:
             # Write header to log file
             logf.write(f"OntoGPT Verbose Log - {start_timestamp}\n")
             logf.write(f"Command: {' '.join(cmd)}\n")
-            logf.write("="*60 + "\n\n")
+            logf.write("=" * 60 + "\n\n")
             logf.flush()
 
             # Run with stdout/stderr captured to log file
-            subprocess.run(cmd, env=env, check=True,
-                                  stdout=logf, stderr=subprocess.STDOUT)
+            subprocess.run(cmd, env=env, check=True, stdout=logf, stderr=subprocess.STDOUT)
 
         execution_time = time.time() - start_time
 
-        print("-"*60)
+        print("-" * 60)
         print("✅ Extraction completed successfully")
         print(f"⏱️  Execution time: {execution_time:.2f} seconds")
         print(f"📁 Output file: {output_file}")
@@ -124,7 +135,7 @@ def run_extraction(api_key):
             "execution_time": execution_time,
             "start_time": start_timestamp,
             "end_time": datetime.now(UTC).isoformat(),
-            "command": " ".join(cmd)
+            "command": " ".join(cmd),
         }
 
     except subprocess.CalledProcessError as e:
@@ -139,8 +150,9 @@ def run_extraction(api_key):
             "error_code": e.returncode,
             "log_file": log_file,
             "start_time": start_timestamp,
-            "end_time": datetime.now(UTC).isoformat()
+            "end_time": datetime.now(UTC).isoformat(),
         }
+
 
 def run_assessment(output_file):
     """Run quality assessment on the extraction output"""
@@ -148,9 +160,9 @@ def run_assessment(output_file):
         print(f"WARNING: Output file {output_file} not found, skipping assessment")
         return None
 
-    print("\n" + "="*60)
+    print("\n" + "=" * 60)
     print("Running Quality Assessment")
-    print("="*60)
+    print("=" * 60)
 
     try:
         # Run assessment on outputs directory with pattern matching the specific file
@@ -159,10 +171,16 @@ def run_assessment(output_file):
         assessment_output = f"logs/unified_assessment_{timestamp}.yaml"
 
         cmd = [
-            "uv", "run", "python", "metpo_assessor.py",
-            "analyze-extractions", "outputs/",
-            "--pattern", output_path.name,
-            "--output", assessment_output
+            "uv",
+            "run",
+            "python",
+            "metpo_assessor.py",
+            "analyze-extractions",
+            "outputs/",
+            "--pattern",
+            output_path.name,
+            "--output",
+            assessment_output,
         ]
         result = subprocess.run(cmd, capture_output=True, text=True, check=True)
 
@@ -170,20 +188,13 @@ def run_assessment(output_file):
         print("✅ Assessment completed")
         print(f"📊 Assessment file: {assessment_output}")
 
-        return {
-            "success": True,
-            "assessment_file": assessment_output,
-            "output": result.stdout
-        }
+        return {"success": True, "assessment_file": assessment_output, "output": result.stdout}
 
     except subprocess.CalledProcessError as e:
         print(f"❌ Assessment failed: {e}")
         print(f"Error output: {e.stderr}")
-        return {
-            "success": False,
-            "error": str(e),
-            "stderr": e.stderr
-        }
+        return {"success": False, "error": str(e), "stderr": e.stderr}
+
 
 def main():
     print("CBORG Chemical Utilization Extraction with Performance Tracking")
@@ -224,9 +235,9 @@ def main():
         assessment_result = run_assessment(extraction_result["output_file"])
 
     # Generate summary report
-    print("\n" + "="*60)
+    print("\n" + "=" * 60)
     print("EXECUTION SUMMARY")
-    print("="*60)
+    print("=" * 60)
     print(f"Status: {'✅ SUCCESS' if extraction_result['success'] else '❌ FAILED'}")
     print(f"Execution time: {extraction_result['execution_time']:.2f} seconds")
     print(f"Start time: {extraction_result['start_time']}")
@@ -252,14 +263,15 @@ def main():
         "initial_usage": initial_usage,
         "final_usage": final_usage,
         "extraction": extraction_result,
-        "assessment": assessment_result
+        "assessment": assessment_result,
     }
 
-    with Path(results_file).open( "w") as f:
+    with Path(results_file).open("w") as f:
         json.dump(results, f, indent=2)
 
     print(f"\n📄 Detailed results saved to: {results_file}")
-    print("="*60)
+    print("=" * 60)
+
 
 if __name__ == "__main__":
     main()

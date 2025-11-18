@@ -85,7 +85,7 @@ def fetch_abstracts_from_file(input_file: Path, output_file: Path, doi_column: s
     # Write results
     if results:
         fieldnames = list(results[0].keys())
-        with Path(output_file).open( "w", newline="") as f_out:
+        with Path(output_file).open("w", newline="") as f_out:
             writer = csv.DictWriter(f_out, fieldnames=fieldnames, delimiter="\t")
             writer.writeheader()
             writer.writerows(results)
@@ -95,12 +95,19 @@ def fetch_abstracts_from_file(input_file: Path, output_file: Path, doi_column: s
 
 @click.command()
 @click.option("--doi", help="Single DOI to fetch and print to stdout")
-@click.option("--input-file", type=click.Path(exists=True, path_type=Path),
-              help="TSV file containing DOIs (batch mode)")
-@click.option("--output-file", type=click.Path(path_type=Path),
-              help="Output TSV file (required with --input-file)")
-@click.option("--doi-column", default="doi", show_default=True,
-              help="Name of the DOI column in input file")
+@click.option(
+    "--input-file",
+    type=click.Path(exists=True, path_type=Path),
+    help="TSV file containing DOIs (batch mode)",
+)
+@click.option(
+    "--output-file",
+    type=click.Path(path_type=Path),
+    help="Output TSV file (required with --input-file)",
+)
+@click.option(
+    "--doi-column", default="doi", show_default=True, help="Name of the DOI column in input file"
+)
 def main(doi, input_file, output_file, doi_column):
     """Fetch abstracts from DOIs using Europe PMC API via artl-mcp.
 

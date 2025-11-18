@@ -7,9 +7,9 @@ from collections import defaultdict
 
 import pandas as pd
 
-print("="*80)
+print("=" * 80)
 print("METPO COVERAGE LANDSCAPE SUMMARY")
-print("="*80)
+print("=" * 80)
 
 # Load data
 print("\nLoading METPO template...")
@@ -35,12 +35,14 @@ for _, row in df.iterrows():
                 parent_id = label_to_id[parent_label]
                 children_map[parent_id].append(row["ID"])
 
+
 def get_descendants(node_id):
     desc = set()
     for child in children_map.get(node_id, []):
         desc.add(child)
         desc.update(get_descendants(child))
     return desc
+
 
 # Find branches
 all_nodes = set(id_to_label.keys())
@@ -52,13 +54,15 @@ for parent_id in sorted(parent_nodes):
     descendants = get_descendants(parent_id)
     leaf_desc = descendants & leaf_nodes
     if len(leaf_desc) >= 5:
-        branches.append({
-            "id": parent_id,
-            "label": id_to_label[parent_id],
-            "total_desc": len(descendants),
-            "leaf_desc": len(leaf_desc),
-            "leaves": leaf_desc
-        })
+        branches.append(
+            {
+                "id": parent_id,
+                "label": id_to_label[parent_id],
+                "total_desc": len(descendants),
+                "leaf_desc": len(leaf_desc),
+                "leaves": leaf_desc,
+            }
+        )
 
 branches.sort(key=lambda x: x["leaf_desc"], reverse=True)
 
@@ -76,16 +80,18 @@ for branch in branches:
     branch_hq = hq_df[hq_df["metpo_id"].isin(leaves)]
 
     if len(branch_hq) == 0:
-        landscape.append({
-            "branch": branch["label"],
-            "leaf_count": len(leaves),
-            "best_ontology": "none",
-            "best_coverage_pct": 0.0,
-            "onts_for_50pct": 0,
-            "onts_for_90pct": 0,
-            "total_onts_with_matches": 0,
-            "fragmentation_score": "UNCOVERED"
-        })
+        landscape.append(
+            {
+                "branch": branch["label"],
+                "leaf_count": len(leaves),
+                "best_ontology": "none",
+                "best_coverage_pct": 0.0,
+                "onts_for_50pct": 0,
+                "onts_for_90pct": 0,
+                "total_onts_with_matches": 0,
+                "fragmentation_score": "UNCOVERED",
+            }
+        )
         continue
 
     # Coverage by ontology
@@ -99,7 +105,7 @@ for branch in branches:
     ont_sorted = sorted(
         [(ont, data) for ont, data in ont_cov.items()],
         key=lambda x: len(x[1]["leaves"]),
-        reverse=True
+        reverse=True,
     )
 
     # Best single ontology (excluding METPO)
@@ -152,26 +158,30 @@ for branch in branches:
     else:
         frag = "EXTREME"
 
-    landscape.append({
-        "branch": branch["label"],
-        "leaf_count": len(leaves),
-        "best_ontology": best_ont or "none",
-        "best_coverage_pct": best_cov_pct,
-        "onts_for_50pct": onts_50,
-        "onts_for_90pct": onts_90,
-        "total_onts_with_matches": total_onts,
-        "fragmentation_score": frag
-    })
+    landscape.append(
+        {
+            "branch": branch["label"],
+            "leaf_count": len(leaves),
+            "best_ontology": best_ont or "none",
+            "best_coverage_pct": best_cov_pct,
+            "onts_for_50pct": onts_50,
+            "onts_for_90pct": onts_90,
+            "total_onts_with_matches": total_onts,
+            "fragmentation_score": frag,
+        }
+    )
 
 # Create DataFrame and save
 landscape_df = pd.DataFrame(landscape)
 landscape_df = landscape_df.sort_values("onts_for_90pct", ascending=False)
-landscape_df.to_csv("../../data/ontology_assessments/coverage/metpo_coverage_landscape.tsv", sep="\t", index=False)
+landscape_df.to_csv(
+    "../../data/ontology_assessments/coverage/metpo_coverage_landscape.tsv", sep="\t", index=False
+)
 
 # Display summary
-print("\n" + "="*80)
+print("\n" + "=" * 80)
 print("COVERAGE LANDSCAPE BY FRAGMENTATION")
-print("="*80)
+print("=" * 80)
 
 for frag_level in ["EXTREME", "HIGH", "MODERATE", "LOW", "CONSOLIDATED", "UNCOVERED"]:
     subset = landscape_df[landscape_df["fragmentation_score"] == frag_level]
@@ -183,13 +193,15 @@ for frag_level in ["EXTREME", "HIGH", "MODERATE", "LOW", "CONSOLIDATED", "UNCOVE
     print("-" * 80)
 
     for _, row in subset.iterrows():
-        print(f"{row['branch']:<35} {row['leaf_count']:<7} "
-              f"{row['best_ontology']:<12} {row['best_coverage_pct']:>5.1f}% "
-              f"{row['onts_for_90pct']}")
+        print(
+            f"{row['branch']:<35} {row['leaf_count']:<7} "
+            f"{row['best_ontology']:<12} {row['best_coverage_pct']:>5.1f}% "
+            f"{row['onts_for_90pct']}"
+        )
 
-print("\n" + "="*80)
+print("\n" + "=" * 80)
 print("SUMMARY STATISTICS")
-print("="*80)
+print("=" * 80)
 
 print("\nFragmentation distribution:")
 for frag_level in ["CONSOLIDATED", "LOW", "MODERATE", "HIGH", "EXTREME", "UNCOVERED"]:
@@ -207,4 +219,4 @@ for _, row in worst.iterrows():
     print(f"  {row['branch']:<35} {row['onts_for_90pct']:>3} ontologies")
 
 print("\n✓ Saved to ../../data/ontology_assessments/coverage/metpo_coverage_landscape.tsv")
-print("="*80)
+print("=" * 80)

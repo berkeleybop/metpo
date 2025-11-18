@@ -23,8 +23,8 @@ OUTPUT_DIR = Path("../../data/definitions")
 
 # Thresholds
 HIGH_CONFIDENCE_DISTANCE = 0.35  # Distance < 0.35 for automatic proposals
-GOOD_MATCH_DISTANCE = 0.60       # Distance < 0.60 for review queue
-MIN_CONFIDENCE = 0.6             # Minimum confidence score
+GOOD_MATCH_DISTANCE = 0.60  # Distance < 0.60 for review queue
+MIN_CONFIDENCE = 0.6  # Minimum confidence score
 
 
 def extract_distance_from_comment(comment: str) -> float:
@@ -75,12 +75,28 @@ def load_metpo_sheet() -> pd.DataFrame:
     """Load METPO template sheet."""
     df = pd.read_csv(METPO_SHEET, sep="\t", skiprows=1)
     # Column names from actual data
-    df.columns = ["ID", "label", "TYPE", "parent", "description",
-                  "definition_source", "comment", "biolink_equivalent",
-                  "confirmed_exact_synonym", "literature_mining_synonyms",
-                  "madin_synonym", "synonym_source_1", "bacdive_keyword",
-                  "synonym_source_2", "bactotraits_synonym", "synonym_source_3",
-                  "measurement_unit", "range_min", "range_max", "equivalent_class"]
+    df.columns = [
+        "ID",
+        "label",
+        "TYPE",
+        "parent",
+        "description",
+        "definition_source",
+        "comment",
+        "biolink_equivalent",
+        "confirmed_exact_synonym",
+        "literature_mining_synonyms",
+        "madin_synonym",
+        "synonym_source_1",
+        "bacdive_keyword",
+        "synonym_source_2",
+        "bactotraits_synonym",
+        "synonym_source_3",
+        "measurement_unit",
+        "range_min",
+        "range_max",
+        "equivalent_class",
+    ]
     return df
 
 
@@ -119,11 +135,7 @@ def get_best_match_per_term(mappings_df: pd.DataFrame) -> pd.DataFrame:
     good_matches = mappings_df[mappings_df["distance"] < GOOD_MATCH_DISTANCE].copy()
 
     # Sort by distance and get first (best) per subject
-    best_matches = (good_matches
-                   .sort_values("distance")
-                   .groupby("subject_id")
-                   .first()
-                   .reset_index())
+    best_matches = good_matches.sort_values("distance").groupby("subject_id").first().reset_index()
 
     return best_matches
 
@@ -151,25 +163,29 @@ def propose_definitions(metpo_df: pd.DataFrame, mappings_df: pd.DataFrame) -> pd
         metpo_id = term["ID"]
         metpo_label = term["label"]
         has_definition = pd.notna(term["description"]) and term["description"].strip() != ""
-        has_def_source = pd.notna(term["definition_source"]) and term["definition_source"].strip() != ""
+        has_def_source = (
+            pd.notna(term["definition_source"]) and term["definition_source"].strip() != ""
+        )
 
         # Get matches for this term
         term_matches = mappings_df[mappings_df["subject_id"] == metpo_id].copy()
 
         if len(term_matches) == 0:
-            results.append({
-                "metpo_id": metpo_id,
-                "metpo_label": metpo_label,
-                "has_definition": has_definition,
-                "has_def_source": has_def_source,
-                "best_match_distance": None,
-                "best_match_ontology": None,
-                "best_match_label": None,
-                "proposed_definition": None,
-                "proposed_def_source": None,
-                "confidence_level": "none",
-                "action_needed": "No matches found - manual definition required"
-            })
+            results.append(
+                {
+                    "metpo_id": metpo_id,
+                    "metpo_label": metpo_label,
+                    "has_definition": has_definition,
+                    "has_def_source": has_def_source,
+                    "best_match_distance": None,
+                    "best_match_ontology": None,
+                    "best_match_label": None,
+                    "proposed_definition": None,
+                    "proposed_def_source": None,
+                    "confidence_level": "none",
+                    "action_needed": "No matches found - manual definition required",
+                }
+            )
             continue
 
         # Sort by distance
@@ -201,25 +217,29 @@ def propose_definitions(metpo_df: pd.DataFrame, mappings_df: pd.DataFrame) -> pd
             proposed_source = None
             action = f"{action} - but no definition available in match"
 
-        results.append({
-            "metpo_id": metpo_id,
-            "metpo_label": metpo_label,
-            "has_definition": has_definition,
-            "has_def_source": has_def_source,
-            "best_match_distance": distance,
-            "best_match_ontology": ontology,
-            "best_match_label": match_label,
-            "best_match_iri": best_match["object_id"],
-            "proposed_definition": proposed_def,
-            "proposed_def_source": proposed_source,
-            "confidence_level": confidence,
-            "action_needed": action
-        })
+        results.append(
+            {
+                "metpo_id": metpo_id,
+                "metpo_label": metpo_label,
+                "has_definition": has_definition,
+                "has_def_source": has_def_source,
+                "best_match_distance": distance,
+                "best_match_ontology": ontology,
+                "best_match_label": match_label,
+                "best_match_iri": best_match["object_id"],
+                "proposed_definition": proposed_def,
+                "proposed_def_source": proposed_source,
+                "confidence_level": confidence,
+                "action_needed": action,
+            }
+        )
 
     return pd.DataFrame(results)
 
 
-def generate_cross_references(mappings_df: pd.DataFrame, distance_threshold: float = 0.60) -> pd.DataFrame:
+def generate_cross_references(
+    mappings_df: pd.DataFrame, distance_threshold: float = 0.60
+) -> pd.DataFrame:
     """
     Generate database cross-references for all METPO terms with good matches.
 
@@ -233,17 +253,30 @@ def generate_cross_references(mappings_df: pd.DataFrame, distance_threshold: flo
     """
     good_matches = mappings_df[mappings_df["distance"] < distance_threshold].copy()
 
-    grouped = good_matches.groupby("subject_id").agg({
-        "subject_label": "first",
-        "object_id": list,
-        "clean_object_label": list,
-        "predicate_id": list,
-        "distance": list,
-        "ontology": list
-    }).reset_index()
+    grouped = (
+        good_matches.groupby("subject_id")
+        .agg(
+            {
+                "subject_label": "first",
+                "object_id": list,
+                "clean_object_label": list,
+                "predicate_id": list,
+                "distance": list,
+                "ontology": list,
+            }
+        )
+        .reset_index()
+    )
 
-    grouped.columns = ["metpo_id", "metpo_label", "xref_iris", "xref_labels",
-                      "mapping_types", "distances", "ontologies"]
+    grouped.columns = [
+        "metpo_id",
+        "metpo_label",
+        "xref_iris",
+        "xref_labels",
+        "mapping_types",
+        "distances",
+        "ontologies",
+    ]
 
     return grouped
 
@@ -262,9 +295,15 @@ def main():
     terms_with_def_source = metpo_df["definition_source"].notna().sum()
 
     print("\n=== Current Status ===")
-    print(f"Terms with definitions: {terms_with_defs} ({terms_with_defs/len(metpo_df)*100:.1f}%)")
-    print(f"Terms without definitions: {terms_without_defs} ({terms_without_defs/len(metpo_df)*100:.1f}%)")
-    print(f"Terms with definition sources: {terms_with_def_source} ({terms_with_def_source/len(metpo_df)*100:.1f}%)")
+    print(
+        f"Terms with definitions: {terms_with_defs} ({terms_with_defs / len(metpo_df) * 100:.1f}%)"
+    )
+    print(
+        f"Terms without definitions: {terms_without_defs} ({terms_without_defs / len(metpo_df) * 100:.1f}%)"
+    )
+    print(
+        f"Terms with definition sources: {terms_with_def_source} ({terms_with_def_source / len(metpo_df) * 100:.1f}%)"
+    )
 
     # Propose definitions
     print("\n=== Proposing Definitions ===")
@@ -283,9 +322,9 @@ def main():
 
     # High-confidence proposals (distance < 0.35) without definitions
     high_conf = proposals[
-        (proposals["confidence_level"] == "high") &
-        (~proposals["has_definition"]) &
-        (proposals["proposed_definition"].notna())
+        (proposals["confidence_level"] == "high")
+        & (~proposals["has_definition"])
+        & (proposals["proposed_definition"].notna())
     ]
     print(f"\nHigh-confidence auto-proposals ready: {len(high_conf)}")
 
@@ -296,8 +335,19 @@ def main():
 
         # Show sample
         print("\nSample high-confidence proposals:")
-        print(high_conf[["metpo_id", "metpo_label", "best_match_distance",
-                         "best_match_ontology", "proposed_definition"]].head(10).to_string())
+        print(
+            high_conf[
+                [
+                    "metpo_id",
+                    "metpo_label",
+                    "best_match_distance",
+                    "best_match_ontology",
+                    "proposed_definition",
+                ]
+            ]
+            .head(10)
+            .to_string()
+        )
 
     # Generate cross-references
     print("\n=== Generating Cross-References ===")
@@ -309,10 +359,10 @@ def main():
 
     # Terms needing definition sources
     needs_def_source = proposals[
-        (proposals["has_definition"]) &
-        (~proposals["has_def_source"]) &
-        (proposals["best_match_distance"].notna()) &
-        (proposals["best_match_distance"] < 0.60)
+        (proposals["has_definition"])
+        & (~proposals["has_def_source"])
+        & (proposals["best_match_distance"].notna())
+        & (proposals["best_match_distance"] < 0.60)
     ]
     print("\n=== Definition Sources Needed ===")
     print(f"Terms with definitions but no source: {len(needs_def_source)}")
@@ -325,9 +375,13 @@ def main():
     # Final summary
     print("\n=== Action Items ===")
     print(f"1. Review {len(high_conf)} high-confidence definition proposals (distance < 0.35)")
-    print(f"2. Manually review {len(proposals[proposals['confidence_level'] == 'medium'])} medium-confidence proposals (distance 0.35-0.60)")
+    print(
+        f"2. Manually review {len(proposals[proposals['confidence_level'] == 'medium'])} medium-confidence proposals (distance 0.35-0.60)"
+    )
     print(f"3. Add definition sources for {len(needs_def_source)} terms")
-    print(f"4. Create {len(proposals[proposals['confidence_level'] == 'none'])} definitions from scratch (no good matches)")
+    print(
+        f"4. Create {len(proposals[proposals['confidence_level'] == 'none'])} definitions from scratch (no good matches)"
+    )
 
     print("\n=== Files Generated ===")
     print(f"- {output_file}: Full proposal report")

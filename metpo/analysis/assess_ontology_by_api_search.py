@@ -53,12 +53,15 @@ def search_ols(label, rows=OLS_ROWS):
         if response.status_code == 200:
             data = response.json()
             docs = data.get("response", {}).get("docs", [])
-            return [{
-                "label": d.get("label"),
-                "iri": d.get("iri"),
-                "ontology": d.get("ontology_name"),
-                "definition": d.get("description", [""])[0] if d.get("description") else ""
-            } for d in docs]
+            return [
+                {
+                    "label": d.get("label"),
+                    "iri": d.get("iri"),
+                    "ontology": d.get("ontology_name"),
+                    "definition": d.get("description", [""])[0] if d.get("description") else "",
+                }
+                for d in docs
+            ]
         return []
     except Exception as e:
         print(f"  ⚠️  OLS error for '{label}': {e}")
@@ -84,12 +87,16 @@ def search_bioportal(label, api_key, pagesize=BIOPORTAL_PAGESIZE):
                 ontology_url = item.get("links", {}).get("ontology", "")
                 ontology = ontology_url.split("/")[-1] if ontology_url else "unknown"
 
-                results.append({
-                    "label": item.get("prefLabel"),
-                    "iri": item.get("@id"),
-                    "ontology": ontology,
-                    "definition": item.get("definition", [""])[0] if isinstance(item.get("definition"), list) else item.get("definition", "")
-                })
+                results.append(
+                    {
+                        "label": item.get("prefLabel"),
+                        "iri": item.get("@id"),
+                        "ontology": ontology,
+                        "definition": item.get("definition", [""])[0]
+                        if isinstance(item.get("definition"), list)
+                        else item.get("definition", ""),
+                    }
+                )
             return results
         return []
     except Exception as e:
@@ -112,16 +119,18 @@ def calculate_similarity(metpo_label, match_label):
 
 
 def main():
-    print("\n" + "="*70)
+    print("\n" + "=" * 70)
     print("Phase 1 Batch Search: METPO Label Discovery")
-    print("="*70 + "\n")
+    print("=" * 70 + "\n")
 
     # Load METPO sample labels
     sample_path = OUTPUT_DIR / SAMPLE_FILE
     if not sample_path.exists():
         print(f"❌ Error: Sample file not found at {sample_path}")
         print("   Please create it first using:")
-        print(f"   awk -F'\\t' 'NR>2 {{print $1 \"\\t\" $2}}' ../src/templates/metpo_sheet.tsv | grep \"^METPO:\" | shuf -n 50 > {SAMPLE_FILE}")
+        print(
+            f"   awk -F'\\t' 'NR>2 {{print $1 \"\\t\" $2}}' ../src/templates/metpo_sheet.tsv | grep \"^METPO:\" | shuf -n 50 > {SAMPLE_FILE}"
+        )
         sys.exit(1)
 
     metpo_df = pd.read_csv(sample_path, sep="\t", names=["metpo_id", "metpo_label"])
@@ -139,22 +148,24 @@ def main():
         metpo_id = row["metpo_id"]
         metpo_label = row["metpo_label"]
 
-        print(f"[{idx+1}/{len(metpo_df)}] {metpo_label}")
+        print(f"[{idx + 1}/{len(metpo_df)}] {metpo_label}")
 
         # Search OLS
         ols_results = search_ols(metpo_label)
         print(f"  OLS: {len(ols_results)} results")
 
         for result in ols_results:
-            all_results.append({
-                "metpo_id": metpo_id,
-                "metpo_label": metpo_label,
-                "source": "OLS",
-                "match_label": result["label"],
-                "match_iri": result["iri"],
-                "match_ontology": result["ontology"],
-                "match_definition": result["definition"]
-            })
+            all_results.append(
+                {
+                    "metpo_id": metpo_id,
+                    "metpo_label": metpo_label,
+                    "source": "OLS",
+                    "match_label": result["label"],
+                    "match_iri": result["iri"],
+                    "match_ontology": result["ontology"],
+                    "match_definition": result["definition"],
+                }
+            )
 
         # Rate limiting between API calls
         time.sleep(RATE_LIMIT_SLEEP)
@@ -164,34 +175,34 @@ def main():
         print(f"  BioPortal: {len(bp_results)} results")
 
         for result in bp_results:
-            all_results.append({
-                "metpo_id": metpo_id,
-                "metpo_label": metpo_label,
-                "source": "BioPortal",
-                "match_label": result["label"],
-                "match_iri": result["iri"],
-                "match_ontology": result["ontology"],
-                "match_definition": result["definition"]
-            })
+            all_results.append(
+                {
+                    "metpo_id": metpo_id,
+                    "metpo_label": metpo_label,
+                    "source": "BioPortal",
+                    "match_label": result["label"],
+                    "match_iri": result["iri"],
+                    "match_ontology": result["ontology"],
+                    "match_definition": result["definition"],
+                }
+            )
 
         # Rate limiting between METPO terms
         time.sleep(RATE_LIMIT_SLEEP)
 
     elapsed = time.time() - start_time
-    print(f"\n✓ Search complete: {len(all_results)} total results in {elapsed/60:.1f} minutes\n")
+    print(f"\n✓ Search complete: {len(all_results)} total results in {elapsed / 60:.1f} minutes\n")
 
     # Convert to DataFrame and calculate string distances
     print("Calculating string similarity scores...")
     results_df = pd.DataFrame(all_results)
 
     results_df["levenshtein_distance"] = results_df.apply(
-        lambda row: calculate_similarity(row["metpo_label"], row["match_label"])[0],
-        axis=1
+        lambda row: calculate_similarity(row["metpo_label"], row["match_label"])[0], axis=1
     )
 
     results_df["similarity_ratio"] = results_df.apply(
-        lambda row: calculate_similarity(row["metpo_label"], row["match_label"])[1],
-        axis=1
+        lambda row: calculate_similarity(row["metpo_label"], row["match_label"])[1], axis=1
     )
 
     print("✓ Calculated similarity scores\n")
@@ -212,10 +223,9 @@ def main():
 
     # Analyze ontology rankings by high-quality matches
     hq_ontology_counts = high_quality["match_ontology"].value_counts()
-    ontology_rankings = pd.DataFrame({
-        "ontology": hq_ontology_counts.index,
-        "high_quality_matches": hq_ontology_counts.values
-    })
+    ontology_rankings = pd.DataFrame(
+        {"ontology": hq_ontology_counts.index, "high_quality_matches": hq_ontology_counts.values}
+    )
 
     # Add average similarity by ontology
     avg_similarity = results_df.groupby("match_ontology")["similarity_ratio"].mean()
@@ -242,28 +252,32 @@ def main():
         "avg_similarity": float(results_df["similarity_ratio"].mean()),
         "median_similarity": float(results_df["similarity_ratio"].median()),
         "top_10_ontologies": ontology_rankings.head(10).to_dict("records"),
-        "runtime_minutes": elapsed / 60
+        "runtime_minutes": elapsed / 60,
     }
 
     summary_output = OUTPUT_DIR / "phase1_summary_stats.json"
-    with Path(summary_output).open( "w") as f:
+    with Path(summary_output).open("w") as f:
         json.dump(summary_stats, f, indent=2)
     print(f"✓ Saved summary statistics to {summary_output}")
 
     # Print summary
-    print("\n" + "="*70)
+    print("\n" + "=" * 70)
     print("SUMMARY")
-    print("="*70)
+    print("=" * 70)
     print(f"Total METPO terms searched: {len(metpo_df)}")
     print(f"Total results found: {len(results_df)}")
-    print(f"High-quality matches (≥{HIGH_QUALITY_THRESHOLD}): {len(high_quality)} ({len(high_quality)/len(results_df)*100:.1f}%)")
+    print(
+        f"High-quality matches (≥{HIGH_QUALITY_THRESHOLD}): {len(high_quality)} ({len(high_quality) / len(results_df) * 100:.1f}%)"
+    )
     print(f"Unique ontologies found: {results_df['match_ontology'].nunique()}")
     print(f"Average similarity: {results_df['similarity_ratio'].mean():.3f}")
     print(f"Median similarity: {results_df['similarity_ratio'].median():.3f}")
     print("\nTop 10 ontologies by high-quality matches:")
     for _i, row in ontology_rankings.head(10).iterrows():
-        print(f"  {row['ontology']:20s} {int(row['high_quality_matches']):4d} HQ matches, {row['avg_similarity']:.3f} avg similarity")
-    print("="*70 + "\n")
+        print(
+            f"  {row['ontology']:20s} {int(row['high_quality_matches']):4d} HQ matches, {row['avg_similarity']:.3f} avg similarity"
+        )
+    print("=" * 70 + "\n")
 
 
 if __name__ == "__main__":

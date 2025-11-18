@@ -25,11 +25,7 @@ def load_metpo_database_synonyms(template_path: Path) -> dict[str, list[str]]:
         'madin': [(metpo_id, metpo_label, madin_synonym), ...]
     }
     """
-    synonyms = {
-        "bacdive": [],
-        "bactotraits": [],
-        "madin": []
-    }
+    synonyms = {"bacdive": [], "bactotraits": [], "madin": []}
 
     with Path(template_path).open() as f:
         reader = csv.DictReader(f, delimiter="\t")
@@ -63,6 +59,7 @@ def load_metpo_database_synonyms(template_path: Path) -> dict[str, list[str]]:
 
     return synonyms
 
+
 def analyze_structured_db_coverage(synonyms: dict) -> dict:
     """Analyze METPO coverage of structured database vocabularies."""
     coverage = {}
@@ -74,10 +71,11 @@ def analyze_structured_db_coverage(synonyms: dict) -> dict:
         coverage[db] = {
             "metpo_classes": len(unique_classes),
             "db_terms_mapped": len(unique_terms),
-            "mappings": syn_list
+            "mappings": syn_list,
         }
 
     return coverage
+
 
 def analyze_extraction_grounding(yaml_path: Path) -> dict:
     """
@@ -112,8 +110,9 @@ def analyze_extraction_grounding(yaml_path: Path) -> dict:
         "metpo_terms": metpo_terms,
         "auto_terms": auto_terms,
         "grounding_rate": grounding_rate,
-        "total_extractions": content.count("input_text:")
+        "total_extractions": content.count("input_text:"),
     }
+
 
 def compare_source_types(results: dict) -> str:
     """Generate comparison report across source types."""
@@ -139,7 +138,7 @@ def compare_source_types(results: dict) -> str:
             for metpo_id, metpo_label, db_term in stats["mappings"][:5]:
                 lines.append(f"      {metpo_id} ({metpo_label}) ← {db_term}")
             if len(stats["mappings"]) > 5:
-                lines.append(f"      ... and {len(stats['mappings'])-5} more")
+                lines.append(f"      ... and {len(stats['mappings']) - 5} more")
             lines.append("")
 
     # IJSEM abstracts (structured text)
@@ -173,14 +172,18 @@ def compare_source_types(results: dict) -> str:
         bactotraits_classes = results["structured_db"]["bactotraits"]["metpo_classes"]
         madin_classes = results["structured_db"]["madin"]["metpo_classes"]
 
-        lines.append(f"Structured DB vocabulary alignment: {bacdive_classes}-{madin_classes} METPO classes")
+        lines.append(
+            f"Structured DB vocabulary alignment: {bacdive_classes}-{madin_classes} METPO classes"
+        )
         lines.append(f"  → BacDive: {bacdive_classes} classes with attributed synonyms")
         lines.append(f"  → BactoTraits: {bactotraits_classes} classes with attributed synonyms")
         lines.append(f"  → Madin: {madin_classes} classes with attributed synonyms")
         lines.append("")
 
     if "ijsem_abstracts" in results:
-        lines.append(f"IJSEM abstracts grounding: {results['ijsem_abstracts']['grounding_rate']:.1f}%")
+        lines.append(
+            f"IJSEM abstracts grounding: {results['ijsem_abstracts']['grounding_rate']:.1f}%"
+        )
         lines.append("  → Structured format helps text mining")
         lines.append("")
 
@@ -196,6 +199,7 @@ def compare_source_types(results: dict) -> str:
     lines.append("")
 
     return "\n".join(lines)
+
 
 @click.command()
 def main():
@@ -242,7 +246,7 @@ def main():
             "auto_count": 0,
             "chebi_count": 0,
             "ncbitaxon_count": 0,
-            "total_extractions": 0
+            "total_extractions": 0,
         }
 
         for f in fullcorpus_files:
@@ -266,7 +270,7 @@ def main():
 
     # Save results
     output_file = Path(__file__).parent / "METPO_coverage_by_source_type.txt"
-    with Path(output_file).open( "w") as f:
+    with Path(output_file).open("w") as f:
         f.write(report)
         f.write("\n\n" + "=" * 80 + "\n")
         f.write("RAW DATA\n")
@@ -277,7 +281,7 @@ def main():
 
     # Save synonym mappings for ICBO slides
     synonym_file = Path(__file__).parent / "METPO_database_synonyms.tsv"
-    with Path(synonym_file).open( "w", newline="") as f:
+    with Path(synonym_file).open("w", newline="") as f:
         writer = csv.writer(f, delimiter="\t")
         writer.writerow(["Database", "METPO_ID", "METPO_Label", "Database_Term"])
 
@@ -289,6 +293,7 @@ def main():
     click.echo("\nUse these files for ICBO evidence:")
     click.echo(f"  1. {output_file.name} - Coverage comparison")
     click.echo(f"  2. {synonym_file.name} - Database alignment proof")
+
 
 if __name__ == "__main__":
     main()

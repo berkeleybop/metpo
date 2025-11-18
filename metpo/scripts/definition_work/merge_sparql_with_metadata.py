@@ -15,16 +15,24 @@ with Path("/tmp/source_metadata_complete.tsv").open() as f:
             "label": row.get("label", ""),
             "definition": row.get("definition", ""),
             "synonyms": row.get("synonyms", ""),
-            "api_source": row.get("api_source", "")
+            "api_source": row.get("api_source", ""),
         }
 
 # Read SPARQL results and merge
 with Path("/tmp/metpo_sources_current.tsv").open() as f_in:
-    with Path("/tmp/metpo_sources_with_metadata.tsv").open( "w", newline="") as f_out:
+    with Path("/tmp/metpo_sources_with_metadata.tsv").open("w", newline="") as f_out:
         reader = csv.DictReader(f_in, delimiter="\t")
 
-        fieldnames = ["metpo_id", "metpo_label", "metpo_definition", "definition_source_iri",
-                      "source_label", "source_definition", "source_synonyms", "source_api"]
+        fieldnames = [
+            "metpo_id",
+            "metpo_label",
+            "metpo_definition",
+            "definition_source_iri",
+            "source_label",
+            "source_definition",
+            "source_synonyms",
+            "source_api",
+        ]
         writer = csv.DictWriter(f_out, fieldnames=fieldnames, delimiter="\t")
         writer.writeheader()
 
@@ -37,27 +45,31 @@ with Path("/tmp/metpo_sources_current.tsv").open() as f_in:
             # Look up source metadata
             if source_iri in source_metadata:
                 meta = source_metadata[source_iri]
-                writer.writerow({
-                    "metpo_id": metpo_id,
-                    "metpo_label": metpo_label,
-                    "metpo_definition": metpo_def,
-                    "definition_source_iri": source_iri,
-                    "source_label": meta["label"],
-                    "source_definition": meta["definition"],
-                    "source_synonyms": meta["synonyms"],
-                    "source_api": meta["api_source"]
-                })
+                writer.writerow(
+                    {
+                        "metpo_id": metpo_id,
+                        "metpo_label": metpo_label,
+                        "metpo_definition": metpo_def,
+                        "definition_source_iri": source_iri,
+                        "source_label": meta["label"],
+                        "source_definition": meta["definition"],
+                        "source_synonyms": meta["synonyms"],
+                        "source_api": meta["api_source"],
+                    }
+                )
             else:
                 # Source not found in metadata (shouldn't happen)
-                writer.writerow({
-                    "metpo_id": metpo_id,
-                    "metpo_label": metpo_label,
-                    "metpo_definition": metpo_def,
-                    "definition_source_iri": source_iri,
-                    "source_label": "",
-                    "source_definition": "",
-                    "source_synonyms": "",
-                    "source_api": "NOT_FOUND"
-                })
+                writer.writerow(
+                    {
+                        "metpo_id": metpo_id,
+                        "metpo_label": metpo_label,
+                        "metpo_definition": metpo_def,
+                        "definition_source_iri": source_iri,
+                        "source_label": "",
+                        "source_definition": "",
+                        "source_synonyms": "",
+                        "source_api": "NOT_FOUND",
+                    }
+                )
 
 print("✓ Created integrated output: /tmp/metpo_sources_with_metadata.tsv")

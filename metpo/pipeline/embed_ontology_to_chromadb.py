@@ -29,7 +29,7 @@ def parse_robot_output(tsv_path: str, ontology_id: str) -> list[dict]:
     """
     terms = []
 
-    with Path(tsv_path).open( encoding="utf-8") as f:
+    with Path(tsv_path).open(encoding="utf-8") as f:
         reader = csv.DictReader(f, delimiter="\t")
 
         for row in reader:
@@ -50,11 +50,17 @@ def parse_robot_output(tsv_path: str, ontology_id: str) -> list[dict]:
 
             # Parse synonyms
             synonyms_str = row.get("?synonyms") or row.get("synonyms", "")
-            synonyms = [s.strip() for s in synonyms_str.split("|") if s.strip()] if synonyms_str else []
+            synonyms = (
+                [s.strip() for s in synonyms_str.split("|") if s.strip()] if synonyms_str else []
+            )
 
             # Parse definitions (take first)
             definitions_str = row.get("?definitions") or row.get("definitions", "")
-            definitions = [d.strip() for d in definitions_str.split("|") if d.strip()] if definitions_str else []
+            definitions = (
+                [d.strip() for d in definitions_str.split("|") if d.strip()]
+                if definitions_str
+                else []
+            )
             definition = definitions[0] if definitions else ""
 
             # Create document text: "label; synonym1; synonym2; definition"
@@ -64,26 +70,27 @@ def parse_robot_output(tsv_path: str, ontology_id: str) -> list[dict]:
                 parts.append(definition)
             document = "; ".join(parts)
 
-            terms.append({
-                "iri": iri,
-                "label": label,
-                "synonyms": synonyms,
-                "definition": definition,
-                "document": document,
-                "ontologyId": ontology_id,
-                "entityType": "class"
-            })
+            terms.append(
+                {
+                    "iri": iri,
+                    "label": label,
+                    "synonyms": synonyms,
+                    "definition": definition,
+                    "document": document,
+                    "ontologyId": ontology_id,
+                    "entityType": "class",
+                }
+            )
 
     return terms
 
 
-def generate_embedding(text: str, api_key: str, model: str = "text-embedding-3-small") -> list[float]:
+def generate_embedding(
+    text: str, api_key: str, model: str = "text-embedding-3-small"
+) -> list[float]:
     """Generate OpenAI embedding for text."""
     client = openai.OpenAI(api_key=api_key)
-    response = client.embeddings.create(
-        model=model,
-        input=text
-    )
+    response = client.embeddings.create(model=model, input=text)
     return response.data[0].embedding
 
 
@@ -93,7 +100,7 @@ def insert_into_chromadb(
     collection_name: str,
     api_key: str,
     batch_size: int = 100,
-    skip_existing: bool = True
+    skip_existing: bool = True,
 ):
     """
     Insert terms with embeddings into ChromaDB.
@@ -108,13 +115,11 @@ def insert_into_chromadb(
     """
     # Initialize ChromaDB
     client = chromadb.PersistentClient(
-        path=chroma_path,
-        settings=Settings(anonymized_telemetry=False)
+        path=chroma_path, settings=Settings(anonymized_telemetry=False)
     )
 
     collection = client.get_or_create_collection(
-        name=collection_name,
-        metadata={"description": "OLS + custom ontology embeddings"}
+        name=collection_name, metadata={"description": "OLS + custom ontology embeddings"}
     )
 
     # Get existing IRIs if skip_existing is True
@@ -123,10 +128,7 @@ def insert_into_chromadb(
         try:
             # Get all existing entries for this ontology
             ontology_id = terms[0]["ontologyId"]
-            results = collection.get(
-                where={"ontologyId": ontology_id},
-                include=["metadatas"]
-            )
+            results = collection.get(where={"ontologyId": ontology_id}, include=["metadatas"])
             existing_iris = {meta["iri"] for meta in results["metadatas"]}
             if existing_iris:
                 print(f"Found {len(existing_iris)} existing terms for {ontology_id}")
@@ -139,7 +141,7 @@ def insert_into_chromadb(
     errors = 0
 
     for i in tqdm(range(0, len(terms), batch_size), desc="Generating embeddings"):
-        batch = terms[i:i + batch_size]
+        batch = terms[i : i + batch_size]
 
         batch_ids = []
         batch_embeddings = []
@@ -162,11 +164,13 @@ def insert_into_chromadb(
                 batch_ids.append(term_id)
                 batch_embeddings.append(embedding)
                 batch_documents.append(term["document"])
-                batch_metadatas.append({
-                    "ontologyId": term["ontologyId"],
-                    "entityType": term["entityType"],
-                    "iri": term["iri"]
-                })
+                batch_metadatas.append(
+                    {
+                        "ontologyId": term["ontologyId"],
+                        "entityType": term["entityType"],
+                        "iri": term["iri"],
+                    }
+                )
 
             except Exception as e:
                 errors += 1
@@ -180,7 +184,7 @@ def insert_into_chromadb(
                     ids=batch_ids,
                     embeddings=batch_embeddings,
                     documents=batch_documents,
-                    metadatas=batch_metadatas
+                    metadatas=batch_metadatas,
                 )
                 added += len(batch_ids)
             except Exception as e:
@@ -200,39 +204,30 @@ def insert_into_chromadb(
     type=click.Path(exists=True, dir_okay=False),
     multiple=True,
     required=True,
-    help="Path(s) to ROBOT query TSV output"
+    help="Path(s) to ROBOT query TSV output",
 )
-
 @click.option(
     "--chroma-path",
     type=click.Path(),
     default="./embeddings_chroma",
-    help="Path to ChromaDB storage directory"
+    help="Path to ChromaDB storage directory",
 )
 @click.option(
-    "--collection-name",
-    type=str,
-    default="ols_embeddings",
-    help="Name of ChromaDB collection"
+    "--collection-name", type=str, default="ols_embeddings", help="Name of ChromaDB collection"
 )
+@click.option("--batch-size", type=int, default=100, help="Batch size for embedding generation")
+@click.option("--dry-run", is_flag=True, help="Show terms without generating embeddings")
 @click.option(
-    "--batch-size",
-    type=int,
-    default=100,
-    help="Batch size for embedding generation"
+    "--no-skip-existing", is_flag=True, help="Don't skip existing terms (will error on duplicates)"
 )
-@click.option(
-    "--dry-run",
-    is_flag=True,
-    help="Show terms without generating embeddings"
-)
-@click.option(
-    "--no-skip-existing",
-    is_flag=True,
-    help="Don't skip existing terms (will error on duplicates)"
-)
-def main(tsv_file: tuple[str], chroma_path: str, collection_name: str,
-         batch_size: int, dry_run: bool, no_skip_existing: bool):
+def main(
+    tsv_file: tuple[str],
+    chroma_path: str,
+    collection_name: str,
+    batch_size: int,
+    dry_run: bool,
+    no_skip_existing: bool,
+):
     """
     Generate embeddings from ROBOT query TSV and insert into ChromaDB.
 
@@ -296,7 +291,9 @@ def main(tsv_file: tuple[str], chroma_path: str, collection_name: str,
             print(f"  IRI: {term['iri']}")
             if term["synonyms"]:
                 print(f"  Synonyms: {', '.join(term['synonyms'][:3])}")
-            doc_preview = term["document"][:200] + "..." if len(term["document"]) > 200 else term["document"]
+            doc_preview = (
+                term["document"][:200] + "..." if len(term["document"]) > 200 else term["document"]
+            )
             print(f"  Doc: {doc_preview}")
         return
 
@@ -310,7 +307,7 @@ def main(tsv_file: tuple[str], chroma_path: str, collection_name: str,
         collection_name,
         api_key,
         batch_size,
-        skip_existing=not no_skip_existing
+        skip_existing=not no_skip_existing,
     )
 
 

@@ -58,7 +58,7 @@ def main(input_file, output, api_delay):
 
                 ontology_info[onto_id] = {
                     "title": title,
-                    "description": description[:200] if description else ""
+                    "description": description[:200] if description else "",
                 }
 
             page += 1
@@ -72,20 +72,20 @@ def main(input_file, output, api_delay):
 
     # Merge data and write output
     print("\nCreating merged CSV...")
-    with Path(output_csv).open( "w", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=[
-            "ontologyId", "title", "count", "description"
-        ])
+    with Path(output_csv).open("w", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=["ontologyId", "title", "count", "description"])
         writer.writeheader()
 
         for onto_id in sorted(sizes.keys(), key=lambda x: sizes[x], reverse=True):
             info = ontology_info.get(onto_id.lower(), {})
-            writer.writerow({
-                "ontologyId": onto_id,
-                "title": info.get("title", "Unknown"),
-                "count": sizes[onto_id],
-                "description": info.get("description", "")
-            })
+            writer.writerow(
+                {
+                    "ontologyId": onto_id,
+                    "title": info.get("title", "Unknown"),
+                    "count": sizes[onto_id],
+                    "description": info.get("description", ""),
+                }
+            )
 
     print("✓ Created ontology_catalog.csv")
 

@@ -13,7 +13,9 @@ import yaml
 
 # Primary source files
 ONTOLOGY_SELECTION_DOC = Path("/home/mark/gitrepos/metpo/docs/ONTOLOGY_SELECTION_SUMMARY.md")
-SEMSQL_REGISTRY = Path("/home/mark/gitrepos/semantic-sql/src/semsql/builder/registry/ontologies.yaml")
+SEMSQL_REGISTRY = Path(
+    "/home/mark/gitrepos/semantic-sql/src/semsql/builder/registry/ontologies.yaml"
+)
 
 # Ontologies kept in ChromaDB (from ONTOLOGY_SELECTION_SUMMARY.md)
 ONTOLOGIES_KEPT_OLS = [
@@ -56,6 +58,7 @@ ONTOLOGIES_REMOVED_OLS = [
     ("ddpheno", "Dictyostelium", 1397, 0, 0.000),
 ]
 
+
 def load_semsql_registry():
     """Load semantic-sql ontology registry"""
     if not SEMSQL_REGISTRY.exists():
@@ -72,6 +75,7 @@ def load_semsql_registry():
             ontologies.add(ont_id.lower())
 
     return ontologies
+
 
 def analyze_ontology_landscape():
     """Comprehensive analysis of ontology landscape"""
@@ -92,7 +96,9 @@ def analyze_ontology_landscape():
     print("=" * 80)
 
     print("\n--- OLS Ontologies (20) ---\n")
-    print(f"{'ID':<12} {'Description':<30} {'Embeddings':<12} {'Matches':<10} {'ROI':<8} {'semsql':<8}")
+    print(
+        f"{'ID':<12} {'Description':<30} {'Embeddings':<12} {'Matches':<10} {'ROI':<8} {'semsql':<8}"
+    )
     print("-" * 90)
 
     total_embeddings = 0
@@ -108,10 +114,12 @@ def analyze_ontology_landscape():
         print(f"{ont_id:<12} {desc:<30} {emb:<12,} {matches:<10} {roi:<8.2f} {in_registry:<8}")
 
     print(f"\nOLS Summary: {total_embeddings:,} embeddings, {total_matches} METPO matches")
-    print(f"In semsql registry: {in_semsql}/20 ({in_semsql/20*100:.1f}%)")
+    print(f"In semsql registry: {in_semsql}/20 ({in_semsql / 20 * 100:.1f}%)")
 
     print("\n--- Non-OLS Ontologies (4) ---\n")
-    print(f"{'ID':<15} {'Description':<35} {'Embeddings':<12} {'Matches':<10} {'ROI':<10} {'Source':<20}")
+    print(
+        f"{'ID':<15} {'Description':<35} {'Embeddings':<12} {'Matches':<10} {'ROI':<10} {'Source':<20}"
+    )
     print("-" * 100)
 
     nonols_embeddings = 0
@@ -194,6 +202,7 @@ def analyze_ontology_landscape():
         print(f"\nNot in registry: {', '.join(sorted(not_in_semsql))}")
         print("(May use different IDs or not yet in semantic-sql collection)")
 
+
 def main():
     analyze_ontology_landscape()
 
@@ -203,6 +212,7 @@ def main():
     print("  - docs/ONTOLOGY_CROSSREFERENCE_HISTORY.md")
     print("  - semantic-sql/src/semsql/builder/registry/ontologies.yaml")
     print("=" * 80)
+
 
 if __name__ == "__main__":
     main()

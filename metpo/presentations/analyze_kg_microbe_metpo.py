@@ -6,6 +6,7 @@ Primary sources:
 - /home/mark/gitrepos/kg-microbe/data/transformed/madin_etal/edges.tsv
 - /home/mark/gitrepos/kg-microbe/data/transformed/bacdive/edges.tsv
 """
+
 import csv
 from collections import Counter
 from pathlib import Path
@@ -18,6 +19,7 @@ mpl.use("Agg")
 # Primary source directories
 KG_MICROBE_ROOT = Path("/home/mark/gitrepos/kg-microbe/data/transformed")
 DATASETS = ["bactotraits", "madin_etal", "bacdive"]
+
 
 def analyze_dataset(dataset_name):
     """Analyze METPO usage in a single KG-Microbe dataset"""
@@ -55,8 +57,9 @@ def analyze_dataset(dataset_name):
         "unique_metpo_terms": unique_metpo_terms,
         "metpo_distribution": metpo_counter,
         "predicates": predicates,
-        "source_file": str(edges_file)
+        "source_file": str(edges_file),
     }
+
 
 def load_metpo_labels():
     """Load METPO ID to label mapping"""
@@ -73,6 +76,7 @@ def load_metpo_labels():
             label = row["label"]
             labels[f"METPO:{metpo_id}"] = label
     return labels
+
 
 def main():
     print("=" * 80)
@@ -101,7 +105,11 @@ def main():
             print(f"\nSource: {result['source_file']}")
             print(f"Total edges: {result['total_edges']:,}")
             print(f"METPO edges: {result['metpo_edges']:,}")
-            pct = (result["metpo_edges"]/result["total_edges"])*100 if result["total_edges"] > 0 else 0
+            pct = (
+                (result["metpo_edges"] / result["total_edges"]) * 100
+                if result["total_edges"] > 0
+                else 0
+            )
             print(f"Percentage: {pct:.1f}%")
             print(f"Unique METPO terms: {result['unique_metpo_terms']}")
 
@@ -119,15 +127,17 @@ def main():
 
     print(f"\nTotal edges across all datasets: {total_edges_all:,}")
     print(f"Total METPO edges: {total_metpo_edges_all:,}")
-    print(f"Overall percentage: {(total_metpo_edges_all/total_edges_all)*100:.1f}%")
+    print(f"Overall percentage: {(total_metpo_edges_all / total_edges_all) * 100:.1f}%")
     print(f"Total unique METPO terms used: {len(all_metpo_terms)}")
 
     print("\nPer-dataset breakdown:")
     print(f"{'Dataset':<20} {'Total Edges':>15} {'METPO Edges':>15} {'%':>8} {'Unique Terms':>15}")
     print("-" * 80)
     for r in all_results:
-        pct = (r["metpo_edges"]/r["total_edges"])*100 if r["total_edges"] > 0 else 0
-        print(f"{r['dataset']:<20} {r['total_edges']:>15,} {r['metpo_edges']:>15,} {pct:>7.1f}% {r['unique_metpo_terms']:>15}")
+        pct = (r["metpo_edges"] / r["total_edges"]) * 100 if r["total_edges"] > 0 else 0
+        print(
+            f"{r['dataset']:<20} {r['total_edges']:>15,} {r['metpo_edges']:>15,} {pct:>7.1f}% {r['unique_metpo_terms']:>15}"
+        )
 
     # Combine all METPO term counts
     combined_metpo = Counter()
@@ -158,7 +168,7 @@ def main():
 
         # Add value labels on bars
         for i, v in enumerate(counts):
-            ax.text(v + max(counts)*0.01, i, f"{v:,}", va="center", fontsize=10)
+            ax.text(v + max(counts) * 0.01, i, f"{v:,}", va="center", fontsize=10)
 
         plt.tight_layout()
 
@@ -174,6 +184,7 @@ def main():
     for r in all_results:
         print(f"  - {r['source_file']}")
     print("=" * 80)
+
 
 if __name__ == "__main__":
     main()

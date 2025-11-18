@@ -25,10 +25,12 @@ def extract_embedding_vector(embedding_json: str) -> list[float]:
     if isinstance(data, list):
         return data
     if isinstance(data, dict):
-        return (data.get("embedding") or
-                data.get("values") or
-                data.get("data") or
-                next(iter(data.values())))
+        return (
+            data.get("embedding")
+            or data.get("values")
+            or data.get("data")
+            or next(iter(data.values()))
+        )
     raise ValueError(f"Unexpected embedding format: {type(data)}")
 
 
@@ -39,7 +41,7 @@ def migrate_embeddings_resilient(
     limit: int | None = None,
     resume: bool = True,
     include_ontos: tuple[str, ...] = (),
-    exclude_ontos: tuple[str, ...] = ()
+    exclude_ontos: tuple[str, ...] = (),
 ):
     """Migrate embeddings with error recovery and optional ontology filtering."""
 
@@ -52,13 +54,12 @@ def migrate_embeddings_resilient(
     # Initialize ChromaDB first
     print(f"Initializing ChromaDB at: {chroma_path}")
     client = chromadb.PersistentClient(
-        path=chroma_path,
-        settings=Settings(anonymized_telemetry=False)
+        path=chroma_path, settings=Settings(anonymized_telemetry=False)
     )
 
     collection = client.get_or_create_collection(
         name="ols_embeddings",
-        metadata={"description": "OLS ontology term embeddings from text-embedding-3-small"}
+        metadata={"description": "OLS ontology term embeddings from text-embedding-3-small"},
     )
 
     existing_count = collection.count()
@@ -101,7 +102,9 @@ def migrate_embeddings_resilient(
         print(f"Resuming from offset {offset:,}")
 
     # Query with filtering, offset and limit
-    query = f"SELECT ontologyId, entityType, iri, document, embeddings FROM embeddings {where_clause}"
+    query = (
+        f"SELECT ontologyId, entityType, iri, document, embeddings FROM embeddings {where_clause}"
+    )
     if offset > 0:
         query += f" LIMIT -1 OFFSET {offset}"
     elif limit:
@@ -114,7 +117,7 @@ def migrate_embeddings_resilient(
 
     processed = offset
     errors = 0
-    error_log = Path("migration_errors.log").open( "a")
+    error_log = Path("migration_errors.log").open("a")
 
     print("\nStarting migration...")
 
@@ -136,18 +139,18 @@ def migrate_embeddings_resilient(
                             batch_ids.append(unique_id)
                             batch_embeddings.append(embedding_vector)
                             batch_documents.append(document)
-                            batch_metadatas.append({
-                                "ontologyId": ontology_id,
-                                "entityType": entity_type,
-                                "iri": iri
-                            })
+                            batch_metadatas.append(
+                                {"ontologyId": ontology_id, "entityType": entity_type, "iri": iri}
+                            )
 
                             processed += 1
                             pbar.update(1)
 
                         except Exception as e:
                             errors += 1
-                            error_log.write(f"Error processing {ontology_id}:{entity_type}:{iri}: {e}\n")
+                            error_log.write(
+                                f"Error processing {ontology_id}:{entity_type}:{iri}: {e}\n"
+                            )
                             error_log.flush()
                             continue
 
@@ -158,7 +161,7 @@ def migrate_embeddings_resilient(
                                 ids=batch_ids,
                                 embeddings=batch_embeddings,
                                 documents=batch_documents,
-                                metadatas=batch_metadatas
+                                metadatas=batch_metadatas,
                             )
                         except Exception:
                             # Try one by one if batch fails
@@ -168,7 +171,7 @@ def migrate_embeddings_resilient(
                                         ids=[batch_ids[i]],
                                         embeddings=[batch_embeddings[i]],
                                         documents=[batch_documents[i]],
-                                        metadatas=[batch_metadatas[i]]
+                                        metadatas=[batch_metadatas[i]],
                                     )
                                 except Exception as e2:
                                     errors += 1
@@ -227,45 +230,40 @@ def migrate_embeddings_resilient(
     "--db-path",
     type=click.Path(exists=True, dir_okay=False, path_type=str),
     required=True,
-    help="Path to SQLite embeddings database"
+    help="Path to SQLite embeddings database",
 )
 @click.option(
     "--chroma-path",
     type=click.Path(path_type=str),
     default="./chroma_db",
-    help="Path to ChromaDB storage directory"
+    help="Path to ChromaDB storage directory",
 )
+@click.option("--batch-size", type=int, default=1000, help="Batch size for migration")
 @click.option(
-    "--batch-size",
-    type=int,
-    default=1000,
-    help="Batch size for migration"
+    "--limit", type=int, default=None, help="Limit migration to first N embeddings (for testing)"
 )
-@click.option(
-    "--limit",
-    type=int,
-    default=None,
-    help="Limit migration to first N embeddings (for testing)"
-)
-@click.option(
-    "--no-resume",
-    is_flag=True,
-    help="Start from beginning instead of resuming"
-)
+@click.option("--no-resume", is_flag=True, help="Start from beginning instead of resuming")
 @click.option(
     "--include",
     "include_ontos",
     multiple=True,
-    help="Include only these ontologies (can specify multiple times)"
+    help="Include only these ontologies (can specify multiple times)",
 )
 @click.option(
     "--exclude",
     "exclude_ontos",
     multiple=True,
-    help="Exclude these ontologies (can specify multiple times)"
+    help="Exclude these ontologies (can specify multiple times)",
 )
-def main(db_path: str, chroma_path: str, batch_size: int, limit: int | None, no_resume: bool,
-         include_ontos: tuple[str, ...], exclude_ontos: tuple[str, ...]):
+def main(
+    db_path: str,
+    chroma_path: str,
+    batch_size: int,
+    limit: int | None,
+    no_resume: bool,
+    include_ontos: tuple[str, ...],
+    exclude_ontos: tuple[str, ...],
+):
     """
     Resilient migration from SQLite to ChromaDB with error recovery and ontology filtering.
 
@@ -288,7 +286,7 @@ def main(db_path: str, chroma_path: str, batch_size: int, limit: int | None, no_
         limit=limit,
         resume=not no_resume,
         include_ontos=include_ontos,
-        exclude_ontos=exclude_ontos
+        exclude_ontos=exclude_ontos,
     )
 
 

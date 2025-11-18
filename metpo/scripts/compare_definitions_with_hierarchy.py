@@ -44,7 +44,7 @@ def get_genus_from_definition(definition: str) -> str | None:
 
     for start, sep in patterns:
         if definition.startswith(start) and sep in definition:
-            genus_part = definition[len(start):definition.index(sep)]
+            genus_part = definition[len(start) : definition.index(sep)]
             return genus_part.strip()
 
     return None
@@ -78,11 +78,7 @@ def similarity(s1: str, s2: str) -> float:
     return SequenceMatcher(None, s1.lower(), s2.lower()).ratio()
 
 
-def suggest_tweak(
-    matched_def: str,
-    parent_labels: list[str],
-    metpo_label: str
-) -> str | None:
+def suggest_tweak(matched_def: str, parent_labels: list[str], metpo_label: str) -> str | None:
     """
     Suggest how to tweak the matched definition to better fit METPO hierarchy.
     """
@@ -105,10 +101,10 @@ def suggest_tweak(
 
         # Try to preserve the differentia
         if " that " in matched_def:
-            differentia = matched_def[matched_def.index(" that "):].strip()
+            differentia = matched_def[matched_def.index(" that ") :].strip()
             return f"Replace genus '{genus}' with '{parent}': A {parent} {differentia}"
         if " which " in matched_def:
-            differentia = matched_def[matched_def.index(" which "):].strip()
+            differentia = matched_def[matched_def.index(" which ") :].strip()
             return f"Replace genus '{genus}' with '{parent}': A {parent} {differentia}"
         return f"Replace genus '{genus}' with '{parent}' to match METPO hierarchy"
 
@@ -121,34 +117,24 @@ def suggest_tweak(
     "-b",
     type=click.Path(exists=True, path_type=Path),
     default="reports/best_definition_per_term_final.tsv",
-    help="Path to best definitions TSV"
+    help="Path to best definitions TSV",
 )
 @click.option(
     "--metpo-terms",
     "-t",
     type=click.Path(exists=True, path_type=Path),
     default="src/templates/metpo_sheet.tsv",
-    help="Path to METPO terms template"
+    help="Path to METPO terms template",
 )
 @click.option(
     "--output",
     "-o",
     type=click.Path(path_type=Path),
     default="reports/definition_comparison_with_hierarchy.tsv",
-    help="Output comparison TSV"
+    help="Output comparison TSV",
 )
-@click.option(
-    "--verbose",
-    "-v",
-    is_flag=True,
-    help="Show detailed analysis"
-)
-def main(
-    best_definitions: Path,
-    metpo_terms: Path,
-    output: Path,
-    verbose: bool
-):
+@click.option("--verbose", "-v", is_flag=True, help="Show detailed analysis")
+def main(best_definitions: Path, metpo_terms: Path, output: Path, verbose: bool):
     """
     Compare best matched definitions with METPO's asserted definitions.
 
@@ -160,7 +146,7 @@ def main(
     click.echo(f"Loading METPO terms from {metpo_terms}...")
     metpo_data = {}
 
-    with Path(metpo_terms).open( encoding="utf-8") as f:
+    with Path(metpo_terms).open(encoding="utf-8") as f:
         reader = csv.reader(f, delimiter="\t")
         next(reader)  # Skip ROBOT header row 1
         next(reader)  # Skip ROBOT header row 2
@@ -179,7 +165,7 @@ def main(
                 metpo_data[metpo_id] = {
                     "label": metpo_label,
                     "parents": parents,
-                    "current_definition": current_def
+                    "current_definition": current_def,
                 }
 
     click.echo(f"Loaded {len(metpo_data)} METPO terms")
@@ -188,7 +174,7 @@ def main(
     click.echo(f"\nLoading best matched definitions from {best_definitions}...")
     best_defs = {}
 
-    with Path(best_definitions).open( encoding="utf-8") as f:
+    with Path(best_definitions).open(encoding="utf-8") as f:
         reader = csv.DictReader(f, delimiter="\t")
         for row in reader:
             metpo_id = row["metpo_id"]
@@ -290,35 +276,58 @@ def main(
     click.echo(f"\nWriting comparison to {output}...")
     output.parent.mkdir(parents=True, exist_ok=True)
 
-    with Path(output).open( "w", encoding="utf-8", newline="") as f:
+    with Path(output).open("w", encoding="utf-8", newline="") as f:
         fieldnames = [
-            "metpo_id", "metpo_label", "parent_classes",
-            "current_definition", "has_current_definition",
-            "matched_definition", "matched_source", "matched_quality",
-            "def_similarity", "extracted_genus", "genus_status",
-            "matched_parent", "suggested_tweak", "needs_tweak"
+            "metpo_id",
+            "metpo_label",
+            "parent_classes",
+            "current_definition",
+            "has_current_definition",
+            "matched_definition",
+            "matched_source",
+            "matched_quality",
+            "def_similarity",
+            "extracted_genus",
+            "genus_status",
+            "matched_parent",
+            "suggested_tweak",
+            "needs_tweak",
         ]
         writer = csv.DictWriter(f, fieldnames=fieldnames, delimiter="\t")
         writer.writeheader()
         writer.writerows(results)
 
     # Summary
-    click.echo("\n" + "="*70)
+    click.echo("\n" + "=" * 70)
     click.echo("SUMMARY")
-    click.echo("="*70)
+    click.echo("=" * 70)
     click.echo(f"Terms analyzed: {len(results)}")
     click.echo("\nCurrent definitions:")
-    click.echo(f"  Has definition: {stats['has_current']} ({stats['has_current']/len(results)*100:.1f}%)")
-    click.echo(f"  Needs definition: {stats['needs_current']} ({stats['needs_current']/len(results)*100:.1f}%)")
+    click.echo(
+        f"  Has definition: {stats['has_current']} ({stats['has_current'] / len(results) * 100:.1f}%)"
+    )
+    click.echo(
+        f"  Needs definition: {stats['needs_current']} ({stats['needs_current'] / len(results) * 100:.1f}%)"
+    )
 
     click.echo("\nGenus-differentia analysis:")
-    click.echo(f"  Genus matches parent: {stats['genus_matches_parent']} ({stats['genus_matches_parent']/len(results)*100:.1f}%)")
-    click.echo(f"  Genus doesn't match parent: {stats['genus_missing_parent']} ({stats['genus_missing_parent']/len(results)*100:.1f}%)")
-    click.echo(f"  No genus found: {stats['no_genus']} ({stats['no_genus']/len(results)*100:.1f}%)")
+    click.echo(
+        f"  Genus matches parent: {stats['genus_matches_parent']} ({stats['genus_matches_parent'] / len(results) * 100:.1f}%)"
+    )
+    click.echo(
+        f"  Genus doesn't match parent: {stats['genus_missing_parent']} ({stats['genus_missing_parent'] / len(results) * 100:.1f}%)"
+    )
+    click.echo(
+        f"  No genus found: {stats['no_genus']} ({stats['no_genus'] / len(results) * 100:.1f}%)"
+    )
 
     click.echo("\nRecommendations:")
-    click.echo(f"  Compatible (no tweak needed): {stats['compatible']} ({stats['compatible']/len(results)*100:.1f}%)")
-    click.echo(f"  Needs tweak: {stats['needs_tweak']} ({stats['needs_tweak']/len(results)*100:.1f}%)")
+    click.echo(
+        f"  Compatible (no tweak needed): {stats['compatible']} ({stats['compatible'] / len(results) * 100:.1f}%)"
+    )
+    click.echo(
+        f"  Needs tweak: {stats['needs_tweak']} ({stats['needs_tweak'] / len(results) * 100:.1f}%)"
+    )
 
 
 if __name__ == "__main__":

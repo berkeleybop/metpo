@@ -23,13 +23,13 @@ def main(host, port, db_name, collection_name):
         {
             "euphemism": "provider",
             "file_name": "BactoTraits_databaseV2_Jun2022.csv",
-            "comments": "Original 3-row header CSV from ORDaR; semicolon-delimited; ISO-8859-1 encoding; contains periods and spaces in field names"
+            "comments": "Original 3-row header CSV from ORDaR; semicolon-delimited; ISO-8859-1 encoding; contains periods and spaces in field names",
         },
         {
             "euphemism": "kg_microbe",
             "file_name": "BactoTraits.tsv",
-            "comments": "Processed single-row header TSV; tab-delimited; UTF-8 encoding; periods and spaces still present in field names"
-        }
+            "comments": "Processed single-row header TSV; tab-delimited; UTF-8 encoding; periods and spaces still present in field names",
+        },
     ]
 
     # Connect to MongoDB
@@ -48,6 +48,7 @@ def main(host, port, db_name, collection_name):
     print()
     print("Query with:")
     print("  mongosh bactotraits --eval 'db.files.find().pretty()'")
+
 
 if __name__ == "__main__":
     main()

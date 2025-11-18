@@ -16,8 +16,7 @@ def audit_collection(chroma_path: str, collection_name: str):
 
     try:
         client = chromadb.PersistentClient(
-            path=chroma_path,
-            settings=Settings(anonymized_telemetry=False)
+            path=chroma_path, settings=Settings(anonymized_telemetry=False)
         )
 
         collection = client.get_collection(name=collection_name)
@@ -40,7 +39,7 @@ def audit_collection(chroma_path: str, collection_name: str):
             results = collection.get(
                 limit=min(batch_size, total - offset),
                 offset=offset,
-                include=["metadatas", "embeddings"]
+                include=["metadatas", "embeddings"],
             )
 
             for metadata in results["metadatas"]:
@@ -87,7 +86,7 @@ def audit_collection(chroma_path: str, collection_name: str):
             "ontologies": set(ont_counts.keys()),
             "vector_dims": vector_dims,
             "ont_counts": ont_counts,
-            "sampled": len(all_ontologies)
+            "sampled": len(all_ontologies),
         }
 
     except Exception as e:
@@ -134,7 +133,11 @@ def main():
             print(f"  ⚠️  Combined count off by {diff:,}")
 
         print("\nVector Dimensions:")
-        all_dims = ols_result["vector_dims"] | non_ols_result["vector_dims"] | combined_result["vector_dims"]
+        all_dims = (
+            ols_result["vector_dims"]
+            | non_ols_result["vector_dims"]
+            | combined_result["vector_dims"]
+        )
         if len(all_dims) == 1:
             print(f"  ✓ All databases use same dimension: {next(iter(all_dims))}")
         else:
@@ -167,12 +170,16 @@ def main():
                 print(f"     - {ont}")
 
         # List OLS-only and Non-OLS-only
-        print(f"\nOLS-only ontologies ({len(ols_result['ontologies'] - non_ols_result['ontologies'])}):")
+        print(
+            f"\nOLS-only ontologies ({len(ols_result['ontologies'] - non_ols_result['ontologies'])}):"
+        )
         for ont in sorted(ols_result["ontologies"] - non_ols_result["ontologies"]):
             count = ols_result["ont_counts"].get(ont, 0)
             print(f"  - {ont:<20} {count:,}")
 
-        print(f"\nNon-OLS-only ontologies ({len(non_ols_result['ontologies'] - ols_result['ontologies'])}):")
+        print(
+            f"\nNon-OLS-only ontologies ({len(non_ols_result['ontologies'] - ols_result['ontologies'])}):"
+        )
         for ont in sorted(non_ols_result["ontologies"] - ols_result["ontologies"]):
             count = non_ols_result["ont_counts"].get(ont, 0)
             print(f"  - {ont:<20} {count:,}")

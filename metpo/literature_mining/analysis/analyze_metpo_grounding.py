@@ -34,6 +34,7 @@ def extract_entities_from_yaml(yaml_path: Path) -> dict[str, list[str]]:
 
     return entities
 
+
 def extract_template_info(yaml_path: Path) -> dict:
     """Extract template metadata from YAML file."""
     try:
@@ -56,7 +57,7 @@ def extract_template_info(yaml_path: Path) -> dict:
                         "id": first_doc.get("id", "unknown"),
                         "name": first_doc.get("name", "unknown"),
                         "title": first_doc.get("title", "unknown"),
-                        "description": first_doc.get("description", "unknown")
+                        "description": first_doc.get("description", "unknown"),
                     }
             except yaml.YAMLError:
                 # Could not parse YAML header, fall through to filename extraction
@@ -68,12 +69,13 @@ def extract_template_info(yaml_path: Path) -> dict:
                 "id": f"metpo:{name}",
                 "name": name,
                 "title": name.replace("_", " ").title(),
-                "description": f"Extraction template: {name}"
+                "description": f"Extraction template: {name}",
             }
 
     except Exception as e:
         click.echo(f"Error extracting template info from {yaml_path}: {e}")
         return {"id": "unknown", "name": "unknown", "title": "unknown", "description": "unknown"}
+
 
 def find_auto_terms_with_context(yaml_path: Path, limit=10) -> list[dict]:
     """Find AUTO: terms with surrounding context to understand what's missing."""
@@ -107,24 +109,31 @@ def find_auto_terms_with_context(yaml_path: Path, limit=10) -> list[dict]:
 
                 if auto_terms and len(auto_examples) < limit:
                     # Get some context
-                    context_match = re.search(r"input_text:\s*\|[+\-]?\s*\n(.{0,300})", block, re.DOTALL)
-                    context = context_match.group(1).strip()[:200] if context_match else "No context"
+                    context_match = re.search(
+                        r"input_text:\s*\|[+\-]?\s*\n(.{0,300})", block, re.DOTALL
+                    )
+                    context = (
+                        context_match.group(1).strip()[:200] if context_match else "No context"
+                    )
 
-                    auto_examples.append({
-                        "file": yaml_path.name,
-                        "template_name": template_info["name"],
-                        "template_title": template_info["title"],
-                        "pmid": pmid,
-                        "doi": doi,
-                        "title": title,
-                        "auto_terms": list(set(auto_terms))[:5],  # First 5 unique
-                        "context": context
-                    })
+                    auto_examples.append(
+                        {
+                            "file": yaml_path.name,
+                            "template_name": template_info["name"],
+                            "template_title": template_info["title"],
+                            "pmid": pmid,
+                            "doi": doi,
+                            "title": title,
+                            "auto_terms": list(set(auto_terms))[:5],  # First 5 unique
+                            "context": context,
+                        }
+                    )
 
     except Exception as e:
         click.echo(f"Error finding AUTO terms in {yaml_path}: {e}")
 
     return auto_examples
+
 
 def find_metpo_successes_with_context(yaml_path: Path, limit=10) -> list[dict]:
     """Find examples where METPO terms successfully grounded extractions."""
@@ -148,20 +157,27 @@ def find_metpo_successes_with_context(yaml_path: Path, limit=10) -> list[dict]:
 
                 if metpo_terms and len(metpo_examples) < limit:
                     # Get some context
-                    context_match = re.search(r"input_text:\s*\|[+\-]?\s*\n(.{0,300})", block, re.DOTALL)
-                    context = context_match.group(1).strip()[:200] if context_match else "No context"
+                    context_match = re.search(
+                        r"input_text:\s*\|[+\-]?\s*\n(.{0,300})", block, re.DOTALL
+                    )
+                    context = (
+                        context_match.group(1).strip()[:200] if context_match else "No context"
+                    )
 
-                    metpo_examples.append({
-                        "file": yaml_path.name,
-                        "pmid": pmid,
-                        "metpo_terms": list(set(metpo_terms))[:5],  # First 5 unique
-                        "context": context
-                    })
+                    metpo_examples.append(
+                        {
+                            "file": yaml_path.name,
+                            "pmid": pmid,
+                            "metpo_terms": list(set(metpo_terms))[:5],  # First 5 unique
+                            "context": context,
+                        }
+                    )
 
     except Exception as e:
         click.echo(f"Error finding METPO terms in {yaml_path}: {e}")
 
     return metpo_examples
+
 
 def extract_annotators_from_template(template_path: Path) -> list[str]:
     """Extract annotator ontologies from template YAML."""
@@ -189,6 +205,7 @@ def extract_annotators_from_template(template_path: Path) -> list[str]:
 
     return list(set(annotators))
 
+
 def analyze_directory(dir_path: Path) -> dict:
     """Analyze all YAML files in directory."""
     results = {
@@ -196,7 +213,7 @@ def analyze_directory(dir_path: Path) -> dict:
         "auto_examples": [],
         "metpo_examples": [],
         "files_analyzed": [],
-        "template_annotators": {}
+        "template_annotators": {},
     }
 
     yaml_files = list(dir_path.glob("*.yaml"))
@@ -226,13 +243,28 @@ def analyze_directory(dir_path: Path) -> dict:
 
     return results
 
+
 @click.command()
-@click.argument("yaml_dir", type=click.Path(exists=True, file_okay=False, path_type=Path),
-                default=None, required=False)
-@click.option("-o", "--output", "output_file", type=click.Path(path_type=Path),
-              help="Output file for detailed results")
-@click.option("--format", type=click.Choice(["text", "tsv"], case_sensitive=False),
-              default="text", show_default=True, help="Output format")
+@click.argument(
+    "yaml_dir",
+    type=click.Path(exists=True, file_okay=False, path_type=Path),
+    default=None,
+    required=False,
+)
+@click.option(
+    "-o",
+    "--output",
+    "output_file",
+    type=click.Path(path_type=Path),
+    help="Output file for detailed results",
+)
+@click.option(
+    "--format",
+    type=click.Choice(["text", "tsv"], case_sensitive=False),
+    default="text",
+    show_default=True,
+    help="Output format",
+)
 def main(yaml_dir, output_file, format):
     """Analyze OntoGPT YAML outputs for METPO grounding coverage.
 
@@ -266,14 +298,18 @@ def main(yaml_dir, output_file, format):
 
     if total_phenotype > 0:
         grounding_rate = (metpo_count / total_phenotype) * 100
-        click.echo(f"\nPhenotype grounding rate: {grounding_rate:.1f}% ({metpo_count}/{total_phenotype})")
-        click.echo(f"AUTO term rate: {100-grounding_rate:.1f}% ({auto_count}/{total_phenotype})")
+        click.echo(
+            f"\nPhenotype grounding rate: {grounding_rate:.1f}% ({metpo_count}/{total_phenotype})"
+        )
+        click.echo(f"AUTO term rate: {100 - grounding_rate:.1f}% ({auto_count}/{total_phenotype})")
 
     # Show examples
     click.echo("\n" + "=" * 80)
     click.echo("EXAMPLES: SUCCESSFUL METPO GROUNDING")
     click.echo("=" * 80)
-    click.echo(f"\nFound {len(results['metpo_examples'])} examples where METPO successfully grounded terms\n")
+    click.echo(
+        f"\nFound {len(results['metpo_examples'])} examples where METPO successfully grounded terms\n"
+    )
 
     for i, example in enumerate(results["metpo_examples"][:10], 1):
         click.echo(f"\n{i}. File: {example['file']}")
@@ -314,7 +350,7 @@ def main(yaml_dir, output_file, format):
     # Save detailed results
     if not output_file:
         output_file = Path(__file__).parent / "metpo_grounding_analysis_icbo2025.txt"
-    with Path(output_file).open( "w") as f:
+    with Path(output_file).open("w") as f:
         f.write("METPO Grounding Analysis for ICBO 2025\n")
         f.write("=" * 80 + "\n\n")
         f.write(f"Generated: {Path(__file__).stat().st_mtime}\n\n")
@@ -345,6 +381,7 @@ def main(yaml_dir, output_file, format):
             f.write("-" * 80 + "\n")
 
     click.echo(f"\nDetailed results saved to: {output_file}")
+
 
 if __name__ == "__main__":
     main()

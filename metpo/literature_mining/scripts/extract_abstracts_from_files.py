@@ -25,7 +25,7 @@ def extract_abstract_from_markdown(md_path: Path) -> str | None:
     Returns:
         Abstract text, or None if not found
     """
-    with Path(md_path).open( encoding="utf-8") as f:
+    with Path(md_path).open(encoding="utf-8") as f:
         content = f.read()
 
     # Try to find abstract section
@@ -80,7 +80,7 @@ def extract_doi_from_filename(filename: str) -> str | None:
         return None
 
     prefix = parts[0]  # e.g., "10"
-    suffix = parts[1]   # e.g., "3390-su151814000"
+    suffix = parts[1]  # e.g., "3390-su151814000"
 
     # Replace hyphens with appropriate characters
     # Common pattern: publisher-journal_year_issue
@@ -107,8 +107,8 @@ def sanitize_doi_for_filename(doi: str) -> str:
     # Replace forward slashes with hyphens
     # Replace remaining dots with underscores
     result = doi.replace(".", "_", 1)  # First dot becomes underscore
-    result = result.replace("/", "-")   # Slashes become hyphens
-    result = result.replace(".", "_")   # Remaining dots become underscores
+    result = result.replace("/", "-")  # Slashes become hyphens
+    result = result.replace(".", "_")  # Remaining dots become underscores
     return result
 
 
@@ -122,12 +122,7 @@ def extract_metadata_from_markdown(md_path: Path) -> dict[str, str]:
     Returns:
         Dictionary with metadata fields
     """
-    metadata = {
-        "title": "",
-        "authors": "",
-        "journal": "",
-        "year": ""
-    }
+    metadata = {"title": "", "authors": "", "journal": "", "year": ""}
 
     # For now, return empty metadata - can be enhanced if needed
     # The markdown files from PDF conversion may not have structured metadata
@@ -161,10 +156,7 @@ def process_failed_papers():
     output_dir = Path("literature_mining/abstracts")
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    results = {
-        "success": [],
-        "failed": []
-    }
+    results = {"success": [], "failed": []}
 
     for doi, pub_dir in papers:
         print(f"\nProcessing: {doi}")
@@ -197,7 +189,7 @@ def process_failed_papers():
         # Save to file
         output_file = output_dir / f"doi_{safe_doi}-abstract.txt"
 
-        with Path(output_file).open( "w", encoding="utf-8") as f:
+        with Path(output_file).open("w", encoding="utf-8") as f:
             f.write("Title: [Extracted from local file]\n\n")
             f.write("Authors: [See PDF for full details]\n\n")
             f.write("Journal: [See PDF for full details]\n\n")
@@ -228,8 +220,7 @@ def process_failed_papers():
 
 
 @click.command()
-@click.option("--dry-run", is_flag=True,
-              help="Show what would be extracted without saving files")
+@click.option("--dry-run", is_flag=True, help="Show what would be extracted without saving files")
 def main(dry_run):
     """Extract abstracts from local PDF/MD files for failed API retrievals.
 

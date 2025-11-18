@@ -1,4 +1,5 @@
 """Import BactoTraits data into MongoDB."""
+
 import csv
 from pathlib import Path
 
@@ -49,31 +50,16 @@ def sanitize_field_name(field_name):
 
 @click.command()
 @click.option(
-    "--input-file", "-i",
+    "--input-file",
+    "-i",
     type=click.Path(exists=True, path_type=Path),
     default=Path("local/bactotraits/BactoTraits.tsv"),
-    help="Path to kg-microbe BactoTraits.tsv file"
+    help="Path to kg-microbe BactoTraits.tsv file",
 )
-@click.option(
-    "--database", "-d",
-    default="bactotraits",
-    help="MongoDB database name"
-)
-@click.option(
-    "--collection", "-c",
-    default="bactotraits",
-    help="MongoDB collection name"
-)
-@click.option(
-    "--drop/--no-drop",
-    default=True,
-    help="Drop existing collection before import"
-)
-@click.option(
-    "--mongo-uri",
-    default="mongodb://localhost:27017/",
-    help="MongoDB connection URI"
-)
+@click.option("--database", "-d", default="bactotraits", help="MongoDB database name")
+@click.option("--collection", "-c", default="bactotraits", help="MongoDB collection name")
+@click.option("--drop/--no-drop", default=True, help="Drop existing collection before import")
+@click.option("--mongo-uri", default="mongodb://localhost:27017/", help="MongoDB connection URI")
 def import_bactotraits(input_file, database, collection, drop, mongo_uri):
     """
     Import BactoTraits TSV data into MongoDB.
@@ -110,7 +96,9 @@ def import_bactotraits(input_file, database, collection, drop, mongo_uri):
         click.echo(f"❌ Error: Input file not found: {input_file}", err=True)
         click.echo()
         click.echo("Expected location:")
-        click.echo("  /Users/MAM/Documents/gitrepos/kg-microbe/kg_microbe/transform_utils/bactotraits/tmp/BactoTraits.tsv")
+        click.echo(
+            "  /Users/MAM/Documents/gitrepos/kg-microbe/kg_microbe/transform_utils/bactotraits/tmp/BactoTraits.tsv"
+        )
         click.echo()
         click.echo("Or use --input-file to specify a different location")
         raise click.Abort
@@ -136,7 +124,7 @@ def import_bactotraits(input_file, database, collection, drop, mongo_uri):
     # Read and process TSV file
     click.echo(f"\nReading {input_file.name}...")
 
-    with Path(input_file).open( encoding="utf-8") as f:
+    with Path(input_file).open(encoding="utf-8") as f:
         reader = csv.reader(f, delimiter="\t")
 
         # Read header and sanitize field names
@@ -148,7 +136,9 @@ def import_bactotraits(input_file, database, collection, drop, mongo_uri):
         click.echo(f"✓ Read header with {len(sanitized_header)} fields")
 
         # Show field name transformations
-        transformations = [(orig, san) for orig, san in zip(header, sanitized_header, strict=False) if orig != san]
+        transformations = [
+            (orig, san) for orig, san in zip(header, sanitized_header, strict=False) if orig != san
+        ]
         if transformations:
             click.echo(f"\n{len(transformations)} field names sanitized:")
             for orig, san in transformations[:10]:

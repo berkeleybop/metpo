@@ -37,7 +37,10 @@ def score_ontology(onto):
         score += 15
         reasons.append("bacterial/microbial")
 
-    if any(kw in title_desc for kw in ["phenotype", "trait", "character"]) and "microb" in title_desc:
+    if (
+        any(kw in title_desc for kw in ["phenotype", "trait", "character"])
+        and "microb" in title_desc
+    ):
         score += 10
         reasons.append("microbial phenotype focus")
 
@@ -116,10 +119,22 @@ def score_ontology(onto):
 
     # STRONGLY NEGATIVE: Clearly unrelated domains
     irrelevant = [
-        "disease", "drug", "clinical", "human phenotype", "mammal",
-        "zebrafish", "geographic", "lipid", "chemical entities",
-        "protein ontology", "food", "taxonomy", "genes and genomes",
-        "transcription", "cell line", "developmental stages"
+        "disease",
+        "drug",
+        "clinical",
+        "human phenotype",
+        "mammal",
+        "zebrafish",
+        "geographic",
+        "lipid",
+        "chemical entities",
+        "protein ontology",
+        "food",
+        "taxonomy",
+        "genes and genomes",
+        "transcription",
+        "cell line",
+        "developmental stages",
     ]
     if any(kw in title_desc for kw in irrelevant):
         score -= 12
@@ -149,19 +164,17 @@ def main(input_file, output_prefix):
         reader = csv.DictReader(f)
         for row in reader:
             if row["ontologyId"] and row["count"]:
-                ontologies.append({
-                    "id": row["ontologyId"],
-                    "title": row["title"],
-                    "count": int(row["count"]),
-                    "description": row["description"]
-                })
+                ontologies.append(
+                    {
+                        "id": row["ontologyId"],
+                        "title": row["title"],
+                        "count": int(row["count"]),
+                        "description": row["description"],
+                    }
+                )
 
     # Score and categorize all ontologies
-    categorized = {
-        "very_appealing": [],
-        "in_between": [],
-        "not_appealing": []
-    }
+    categorized = {"very_appealing": [], "in_between": [], "not_appealing": []}
 
     for onto in ontologies:
         category, score, reason = score_ontology(onto)
@@ -196,7 +209,9 @@ def main(input_file, output_prefix):
         total += onto["count"]
     if len(categorized["in_between"]) > 40:
         remaining = sum(o["count"] for o in categorized["in_between"][40:])
-        print(f"... and {len(categorized['in_between']) - 40} more ontologies ({remaining:,} records)")
+        print(
+            f"... and {len(categorized['in_between']) - 40} more ontologies ({remaining:,} records)"
+        )
         total += remaining
     print(f"\nSubtotal: {len(categorized['in_between'])} ontologies, {total:,} records")
 
@@ -211,7 +226,9 @@ def main(input_file, output_prefix):
         total += onto["count"]
     if len(categorized["not_appealing"]) > 30:
         remaining = sum(o["count"] for o in categorized["not_appealing"][30:])
-        print(f"... and {len(categorized['not_appealing']) - 30} more ontologies ({remaining:,} records)")
+        print(
+            f"... and {len(categorized['not_appealing']) - 30} more ontologies ({remaining:,} records)"
+        )
         total += remaining
     else:
         total = sum(o["count"] for o in categorized["not_appealing"])
@@ -220,26 +237,38 @@ def main(input_file, output_prefix):
     print("\n" + "=" * 100)
     print("SUMMARY")
     print("=" * 100)
-    print(f"Very Appealing:  {len(categorized['very_appealing']):>3} ontologies, {sum(o['count'] for o in categorized['very_appealing']):>10,} records")
-    print(f"In-Between:      {len(categorized['in_between']):>3} ontologies, {sum(o['count'] for o in categorized['in_between']):>10,} records")
-    print(f"Not Appealing:   {len(categorized['not_appealing']):>3} ontologies, {sum(o['count'] for o in categorized['not_appealing']):>10,} records")
-    print(f"Total:           {len(ontologies):>3} ontologies, {sum(o['count'] for o in ontologies):>10,} records")
+    print(
+        f"Very Appealing:  {len(categorized['very_appealing']):>3} ontologies, {sum(o['count'] for o in categorized['very_appealing']):>10,} records"
+    )
+    print(
+        f"In-Between:      {len(categorized['in_between']):>3} ontologies, {sum(o['count'] for o in categorized['in_between']):>10,} records"
+    )
+    print(
+        f"Not Appealing:   {len(categorized['not_appealing']):>3} ontologies, {sum(o['count'] for o in categorized['not_appealing']):>10,} records"
+    )
+    print(
+        f"Total:           {len(ontologies):>3} ontologies, {sum(o['count'] for o in ontologies):>10,} records"
+    )
 
     # Write to CSV files
     for category_name in ["very_appealing", "in_between", "not_appealing"]:
         output_file = f"{output_prefix}_{category_name}.csv"
-        with Path(output_file).open( "w", newline="") as f:
-            writer = csv.DictWriter(f, fieldnames=["ontologyId", "title", "count", "score", "reason", "description"])
+        with Path(output_file).open("w", newline="") as f:
+            writer = csv.DictWriter(
+                f, fieldnames=["ontologyId", "title", "count", "score", "reason", "description"]
+            )
             writer.writeheader()
             for onto in categorized[category_name]:
-                writer.writerow({
-                    "ontologyId": onto["id"],
-                    "title": onto["title"],
-                    "count": onto["count"],
-                    "score": onto["score"],
-                    "reason": onto["reason"],
-                    "description": onto["description"]
-                })
+                writer.writerow(
+                    {
+                        "ontologyId": onto["id"],
+                        "title": onto["title"],
+                        "count": onto["count"],
+                        "score": onto["score"],
+                        "reason": onto["reason"],
+                        "description": onto["description"],
+                    }
+                )
 
     print("\n✓ Created categorized CSV files:")
     print(f"  - {output_prefix}_very_appealing.csv")

@@ -6,7 +6,11 @@ from pathlib import Path
 # Curator info mapping
 curator_info = {
     "curator4_all_terms.tsv": {"number": 4, "name": "Anthea Guo", "github": "crocodile27"},
-    "curator5_all_terms_v3.tsv": {"number": 5, "name": "Jed Dongjin Kim-Ozaeta", "github": "jedkim-ozaeta"},
+    "curator5_all_terms_v3.tsv": {
+        "number": 5,
+        "name": "Jed Dongjin Kim-Ozaeta",
+        "github": "jedkim-ozaeta",
+    },
     "curator6_all_terms.tsv": {"number": 6, "name": "Luke Wang", "github": "lukewangCS121"},
 }
 
@@ -83,10 +87,10 @@ fieldnames = [
     "subclass_of_label",
     "subclass_of_id",
     "reasoning",
-    "quantitative_values"
+    "quantitative_values",
 ]
 
-with Path(output_file).open( "w", newline="") as f:
+with Path(output_file).open("w", newline="") as f:
     writer = csv.DictWriter(f, fieldnames=fieldnames, delimiter="\t")
     writer.writeheader()
     writer.writerows(all_rows)

@@ -5,6 +5,7 @@ Primary sources:
 - /home/mark/gitrepos/kg-microbe/data/transformed/bactotraits/edges.tsv
 - /home/mark/gitrepos/kg-microbe/data/transformed/bactotraits/nodes.tsv
 """
+
 import csv
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -13,6 +14,7 @@ from pathlib import Path
 RAW_FILE = Path("/home/mark/gitrepos/kg-microbe/data/raw/BactoTraits_databaseV2_Jun2022.csv")
 TRANSFORMED_EDGES = Path("/home/mark/gitrepos/kg-microbe/data/transformed/bactotraits/edges.tsv")
 TRANSFORMED_NODES = Path("/home/mark/gitrepos/kg-microbe/data/transformed/bactotraits/nodes.tsv")
+
 
 def analyze_raw_bactotraits():
     """Analyze the raw BactoTraits CSV file"""
@@ -23,7 +25,7 @@ def analyze_raw_bactotraits():
     print("\n=== BactoTraits Raw Data Analysis ===")
     print(f"Source: {RAW_FILE}")
 
-    with Path(RAW_FILE).open( encoding="utf-8", errors="ignore") as f:
+    with Path(RAW_FILE).open(encoding="utf-8", errors="ignore") as f:
         # Skip first two header rows (units and descriptions)
         f.readline()
         f.readline()
@@ -47,10 +49,8 @@ def analyze_raw_bactotraits():
             pct = (count / total_strains) * 100
             print(f"  {trait:40s}: {count:6,} ({pct:5.1f}%)")
 
-        return {
-            "total_strains": total_strains,
-            "trait_coverage": trait_coverage
-        }
+        return {"total_strains": total_strains, "trait_coverage": trait_coverage}
+
 
 def analyze_transformed_bactotraits():
     """Analyze METPO usage in transformed BactoTraits data"""
@@ -76,7 +76,7 @@ def analyze_transformed_bactotraits():
 
     print(f"\nTotal edges: {total_edges:,}")
     print(f"Edges using METPO: {metpo_edges:,}")
-    print(f"Percentage: {(metpo_edges/total_edges)*100:.1f}%")
+    print(f"Percentage: {(metpo_edges / total_edges) * 100:.1f}%")
 
     # Count unique METPO terms
     metpo_counter = Counter(metpo_objects)
@@ -91,8 +91,9 @@ def analyze_transformed_bactotraits():
         "total_edges": total_edges,
         "metpo_edges": metpo_edges,
         "unique_metpo_terms": unique_metpo_terms,
-        "metpo_distribution": metpo_counter
+        "metpo_distribution": metpo_counter,
     }
+
 
 def analyze_transformed_nodes():
     """Analyze nodes in transformed BactoTraits data"""
@@ -122,10 +123,8 @@ def analyze_transformed_nodes():
         pct = (count / total_nodes) * 100
         print(f"  {prefix:20s}: {count:8,} ({pct:5.1f}%)")
 
-    return {
-        "total_nodes": total_nodes,
-        "node_types": node_types
-    }
+    return {"total_nodes": total_nodes, "node_types": node_types}
+
 
 def main():
     print("=" * 70)
@@ -147,6 +146,7 @@ def main():
         print(f"Unique METPO terms: {transformed_stats['unique_metpo_terms']}")
     if node_stats:
         print(f"Total nodes: {node_stats['total_nodes']:,}")
+
 
 if __name__ == "__main__":
     main()

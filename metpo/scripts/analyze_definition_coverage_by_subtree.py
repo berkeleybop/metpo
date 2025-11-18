@@ -4,6 +4,7 @@ Analyze definition coverage by parent class (subtree analysis).
 Identifies near-terminal parents where most children have definitions,
 helping with iterative definition strategy.
 """
+
 import csv
 from collections import defaultdict
 from pathlib import Path
@@ -16,7 +17,7 @@ def load_metpo_hierarchy(tsv_path: str) -> dict:
     terms = {}
     parent_to_children = defaultdict(list)
 
-    with Path(tsv_path).open( encoding="utf-8") as f:
+    with Path(tsv_path).open(encoding="utf-8") as f:
         reader = csv.DictReader(f, delimiter="\t")
         for row in reader:
             term_id = row["ID"]
@@ -32,7 +33,7 @@ def load_metpo_hierarchy(tsv_path: str) -> dict:
                 "label": label,
                 "definition": definition,
                 "has_definition": bool(definition),
-                "parents": parent_list
+                "parents": parent_list,
             }
 
             # Build parent-child index
@@ -66,7 +67,9 @@ def analyze_coverage(terms: dict, parent_to_children: dict) -> list:
 
         # Find parent term ID
         parent_id = find_parent_id_by_label(terms, parent_label)
-        parent_has_def = terms.get(parent_id, {}).get("has_definition", False) if parent_id else False
+        parent_has_def = (
+            terms.get(parent_id, {}).get("has_definition", False) if parent_id else False
+        )
 
         # Identify stragglers (children without definitions)
         stragglers = [
@@ -82,17 +85,19 @@ def analyze_coverage(terms: dict, parent_to_children: dict) -> list:
             if terms.get(cid, {}).get("has_definition")
         ][:5]  # Limit to 5 examples
 
-        results.append({
-            "parent_label": parent_label,
-            "parent_id": parent_id or "",
-            "parent_has_definition": parent_has_def,
-            "total_children": total_children,
-            "children_with_definitions": children_with_defs,
-            "coverage_percent": round(coverage_pct, 1),
-            "stragglers": " | ".join(stragglers) if stragglers else "",
-            "straggler_count": len(stragglers),
-            "example_defined_children": " | ".join(examples)
-        })
+        results.append(
+            {
+                "parent_label": parent_label,
+                "parent_id": parent_id or "",
+                "parent_has_definition": parent_has_def,
+                "total_children": total_children,
+                "children_with_definitions": children_with_defs,
+                "coverage_percent": round(coverage_pct, 1),
+                "stragglers": " | ".join(stragglers) if stragglers else "",
+                "straggler_count": len(stragglers),
+                "example_defined_children": " | ".join(examples),
+            }
+        )
 
     return results
 
@@ -102,25 +107,25 @@ def analyze_coverage(terms: dict, parent_to_children: dict) -> list:
     "--metpo-tsv",
     type=click.Path(exists=True),
     default="src/templates/metpo_sheet_improved.tsv",
-    help="Path to METPO template TSV file"
+    help="Path to METPO template TSV file",
 )
 @click.option(
     "--output",
     type=click.Path(),
     default="reports/definition_coverage_by_parent.tsv",
-    help="Output TSV file path"
+    help="Output TSV file path",
 )
 @click.option(
     "--min-children",
     type=int,
     default=2,
-    help="Minimum number of children to include parent in analysis (default: 2)"
+    help="Minimum number of children to include parent in analysis (default: 2)",
 )
 @click.option(
     "--sort-by",
     type=click.Choice(["coverage", "stragglers", "total"]),
     default="coverage",
-    help="Sort results by: coverage (desc), stragglers (asc), or total children (desc)"
+    help="Sort results by: coverage (desc), stragglers (asc), or total children (desc)",
 )
 def main(metpo_tsv: str, output: str, min_children: int, sort_by: str):
     """
@@ -152,7 +157,7 @@ def main(metpo_tsv: str, output: str, min_children: int, sort_by: str):
 
     # Write output
     Path(output).parent.mkdir(parents=True, exist_ok=True)
-    with Path(output).open( "w", encoding="utf-8", newline="") as f:
+    with Path(output).open("w", encoding="utf-8", newline="") as f:
         if results:
             writer = csv.DictWriter(f, fieldnames=results[0].keys(), delimiter="\t")
             writer.writeheader()
@@ -174,10 +179,16 @@ def main(metpo_tsv: str, output: str, min_children: int, sort_by: str):
         click.echo(f"  Low coverage (<50%): {len(low_coverage)} parents")
 
         # Show top candidates for pattern-based definition
-        click.echo("\n🎯 Top candidates for pattern-based definition (high coverage, few stragglers):")
-        candidates = [r for r in results if r["coverage_percent"] >= 70 and 1 <= r["straggler_count"] <= 5]
+        click.echo(
+            "\n🎯 Top candidates for pattern-based definition (high coverage, few stragglers):"
+        )
+        candidates = [
+            r for r in results if r["coverage_percent"] >= 70 and 1 <= r["straggler_count"] <= 5
+        ]
         for i, r in enumerate(candidates[:10], 1):
-            click.echo(f"  {i}. {r['parent_label']} ({r['coverage_percent']}% coverage, {r['straggler_count']} stragglers)")
+            click.echo(
+                f"  {i}. {r['parent_label']} ({r['coverage_percent']}% coverage, {r['straggler_count']} stragglers)"
+            )
 
 
 if __name__ == "__main__":

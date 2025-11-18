@@ -18,8 +18,11 @@ CHROMA_OLS_20 = Path("/home/mark/gitrepos/metpo/notebooks/chroma_ols_20/chroma.s
 CHROMA_NONOLS_4 = Path("/home/mark/gitrepos/metpo/notebooks/chroma_nonols_4/chroma.sqlite3")
 
 # PRIMARY SOURCE 2: SSSOM mappings
-SSSOM_RELAXED = Path("/home/mark/gitrepos/metpo/data/mappings/metpo_mappings_combined_relaxed.sssom.tsv")
+SSSOM_RELAXED = Path(
+    "/home/mark/gitrepos/metpo/data/mappings/metpo_mappings_combined_relaxed.sssom.tsv"
+)
 SSSOM_OPTIMIZED = Path("/home/mark/gitrepos/metpo/data/mappings/metpo_mappings_optimized.sssom.tsv")
+
 
 def query_chromadb(db_path, description):
     """Query a ChromaDB SQLite database for ontology statistics"""
@@ -52,6 +55,7 @@ def query_chromadb(db_path, description):
 
     conn.close()
     return ontologies, total
+
 
 def analyze_sssom(sssom_path):
     """Analyze SSSOM mapping file PRIMARY SOURCE"""
@@ -101,6 +105,7 @@ def analyze_sssom(sssom_path):
 
     return target_prefixes, predicates, total_mappings
 
+
 def main():
     print("=" * 80)
     print("PRIMARY SOURCE ANALYSIS - ChromaDB + SSSOM")
@@ -112,7 +117,9 @@ def main():
     print("PRIMARY SOURCE 1: ChromaDB SQLite Databases")
     print("=" * 80)
 
-    combined_onts, combined_total = query_chromadb(CHROMA_COMBINED, "Combined ChromaDB (All 39 ontologies tested)")
+    combined_onts, combined_total = query_chromadb(
+        CHROMA_COMBINED, "Combined ChromaDB (All 39 ontologies tested)"
+    )
     ols20_onts, ols20_total = query_chromadb(CHROMA_OLS_20, "Filtered OLS-20 ChromaDB")
     nonols_onts, nonols_total = query_chromadb(CHROMA_NONOLS_4, "Non-OLS 4 ChromaDB")
 
@@ -159,6 +166,7 @@ def main():
     print("  - SSSOM .tsv files (direct parsing)")
     print("  - NO markdown documentation used")
     print("=" * 80)
+
 
 if __name__ == "__main__":
     main()

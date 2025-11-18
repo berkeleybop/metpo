@@ -27,11 +27,12 @@ def find_metpo_in_obj(obj, path=""):
 
     return metpo_terms
 
+
 def analyze_yaml_file(yaml_path):
     """Parse YAML file and find all METPO terms."""
-    click.echo(f"\n{'='*80}")
+    click.echo(f"\n{'=' * 80}")
     click.echo(f"Analyzing: {yaml_path.name}")
-    click.echo(f"{'='*80}")
+    click.echo(f"{'=' * 80}")
 
     with Path(yaml_path).open() as f:
         try:
@@ -54,8 +55,11 @@ def analyze_yaml_file(yaml_path):
         all_metpo_terms.extend([(i, path, term) for path, term in metpo_in_doc])
 
         # Also find AUTO terms for comparison
-        auto_in_doc = [(path, term) for path, term in find_metpo_in_obj(doc)
-                       if isinstance(term, str) and term.startswith("AUTO:")]
+        auto_in_doc = [
+            (path, term)
+            for path, term in find_metpo_in_obj(doc)
+            if isinstance(term, str) and term.startswith("AUTO:")
+        ]
         auto_terms.extend([(i, path, term) for path, term in auto_in_doc])
 
         # Show extracted_object structure for first few docs
@@ -63,9 +67,9 @@ def analyze_yaml_file(yaml_path):
             click.echo(f"\nDocument {i} extracted_object structure:")
             click.echo(json.dumps(doc["extracted_object"], indent=2)[:500])
 
-    click.echo(f"\n{'='*80}")
+    click.echo(f"\n{'=' * 80}")
     click.echo(f"RESULTS FOR {yaml_path.name}")
-    click.echo(f"{'='*80}")
+    click.echo(f"{'=' * 80}")
     click.echo(f"Total METPO terms found: {len(all_metpo_terms)}")
     click.echo(f"Total AUTO terms found: {len(auto_terms)}")
 
@@ -87,14 +91,20 @@ def analyze_yaml_file(yaml_path):
         "metpo_count": len(all_metpo_terms),
         "auto_count": len(auto_terms),
         "metpo_terms": all_metpo_terms,
-        "auto_terms": auto_terms
+        "auto_terms": auto_terms,
     }
 
+
 @click.command()
-@click.argument("yaml_dir", type=click.Path(exists=True, file_okay=False, path_type=Path),
-                default=None, required=False)
-@click.option("--pattern", default="*_fullcorpus_gpt4o_t00_20251031*.yaml",
-              help="File pattern to match")
+@click.argument(
+    "yaml_dir",
+    type=click.Path(exists=True, file_okay=False, path_type=Path),
+    default=None,
+    required=False,
+)
+@click.option(
+    "--pattern", default="*_fullcorpus_gpt4o_t00_20251031*.yaml", help="File pattern to match"
+)
 def main(yaml_dir, pattern):
     """Thoroughly search extraction YAML files for METPO terms.
 
@@ -117,9 +127,9 @@ def main(yaml_dir, pattern):
         results.append(result)
 
     # Summary
-    click.echo(f"\n{'='*80}")
+    click.echo(f"\n{'=' * 80}")
     click.echo("OVERALL SUMMARY")
-    click.echo(f"{'='*80}")
+    click.echo(f"{'=' * 80}")
 
     total_metpo = sum(r["metpo_count"] for r in results)
     total_auto = sum(r["auto_count"] for r in results)
@@ -139,6 +149,7 @@ def main(yaml_dir, pattern):
         click.echo("  1. Templates may not have METPO annotators configured")
         click.echo("  2. METPO path in templates may be incorrect")
         click.echo("  3. Genuine grounding failures")
+
 
 if __name__ == "__main__":
     main()

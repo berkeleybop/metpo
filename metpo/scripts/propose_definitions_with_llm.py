@@ -61,7 +61,7 @@ def load_metpo_terms(template_path: Path) -> dict[str, dict]:
     """Load METPO terms with parents and current definitions."""
     terms = {}
 
-    with Path(template_path).open( encoding="utf-8") as f:
+    with Path(template_path).open(encoding="utf-8") as f:
         reader = csv.reader(f, delimiter="\t")
         next(reader)  # Skip row 1
         next(reader)  # Skip row 2
@@ -80,7 +80,7 @@ def load_metpo_terms(template_path: Path) -> dict[str, dict]:
                 terms[metpo_id] = {
                     "label": label,
                     "parents": parents,
-                    "current_definition": current_def
+                    "current_definition": current_def,
                 }
 
     return terms
@@ -93,7 +93,7 @@ def load_matched_definitions(matched_path: Path) -> dict[str, dict]:
     if not matched_path.exists():
         return matched
 
-    with Path(matched_path).open( encoding="utf-8") as f:
+    with Path(matched_path).open(encoding="utf-8") as f:
         reader = csv.DictReader(f, delimiter="\t")
         for row in reader:
             metpo_id = row["metpo_id"]
@@ -109,7 +109,7 @@ def load_all_candidates(candidates_path: Path) -> dict[str, list[dict]]:
     if not candidates_path.exists():
         return candidates
 
-    with Path(candidates_path).open( encoding="utf-8") as f:
+    with Path(candidates_path).open(encoding="utf-8") as f:
         reader = csv.DictReader(f, delimiter="\t")
         for row in reader:
             metpo_id = row["metpo_id"]
@@ -126,7 +126,7 @@ def build_prompt(
     parents: list[str],
     current_def: str,
     matched_def: dict | None,
-    all_candidates: list[dict]
+    all_candidates: list[dict],
 ) -> str:
     """Build LLM prompt for definition proposal."""
 
@@ -134,7 +134,7 @@ def build_prompt(
 
 TERM: {metpo_id} "{label}"
 
-PARENT CLASS(ES): {', '.join(parents) if parents else '[ROOT CLASS]'}
+PARENT CLASS(ES): {", ".join(parents) if parents else "[ROOT CLASS]"}
 (Your definition's genus MUST be one of these parents)
 
 """
@@ -146,16 +146,18 @@ PARENT CLASS(ES): {', '.join(parents) if parents else '[ROOT CLASS]'}
 """
 
     if matched_def:
-        prompt += f"""BEST MATCHED DEFINITION (from {matched_def.get('source_ontology', 'unknown')}):
-{matched_def.get('definition', '')}
-Quality: {matched_def.get('quality_label', 'unknown')}
+        prompt += f"""BEST MATCHED DEFINITION (from {matched_def.get("source_ontology", "unknown")}):
+{matched_def.get("definition", "")}
+Quality: {matched_def.get("quality_label", "unknown")}
 
 """
 
     if all_candidates:
         prompt += "OTHER CANDIDATE DEFINITIONS:\n"
         for i, cand in enumerate(all_candidates[:3], 1):
-            prompt += f"{i}. [{cand.get('source_ontology', '?')}] {cand.get('definition', '')[:100]}...\n"
+            prompt += (
+                f"{i}. [{cand.get('source_ontology', '?')}] {cand.get('definition', '')[:100]}...\n"
+            )
         prompt += "\n"
 
     prompt += """TASK:
@@ -180,47 +182,34 @@ Respond with ONLY the definition text, nothing else.
     "-t",
     type=click.Path(exists=True, path_type=Path),
     default="src/templates/metpo_sheet.tsv",
-    help="Path to METPO terms template"
+    help="Path to METPO terms template",
 )
 @click.option(
     "--best-definitions",
     "-b",
     type=click.Path(path_type=Path),
     default="reports/best_definition_per_term_final.tsv",
-    help="Path to best matched definitions"
+    help="Path to best matched definitions",
 )
 @click.option(
     "--all-candidates",
     "-c",
     type=click.Path(path_type=Path),
     default="reports/comprehensive_definition_candidates.tsv",
-    help="Path to all candidate definitions"
+    help="Path to all candidate definitions",
 )
 @click.option(
     "--output",
     "-o",
     type=click.Path(path_type=Path),
     default="reports/llm_proposed_definitions.tsv",
-    help="Output TSV with proposed definitions"
+    help="Output TSV with proposed definitions",
 )
+@click.option("--model", "-m", default="gpt-4", help="OpenAI model to use")
 @click.option(
-    "--model",
-    "-m",
-    default="gpt-4",
-    help="OpenAI model to use"
+    "--limit", type=int, default=None, help="Limit number of terms to process (for testing)"
 )
-@click.option(
-    "--limit",
-    type=int,
-    default=None,
-    help="Limit number of terms to process (for testing)"
-)
-@click.option(
-    "--verbose",
-    "-v",
-    is_flag=True,
-    help="Show detailed progress"
-)
+@click.option("--verbose", "-v", is_flag=True, help="Show detailed progress")
 def main(
     metpo_terms: Path,
     best_definitions: Path,
@@ -228,7 +217,7 @@ def main(
     output: Path,
     model: str,
     limit: int | None,
-    verbose: bool
+    verbose: bool,
 ):
     """
     Use LLM to propose definitions for all METPO classes.
@@ -278,10 +267,7 @@ def main(
         candidates = all_cands.get(metpo_id, [])
 
         # Build prompt
-        prompt = build_prompt(
-            metpo_id, label, parents, current_def,
-            matched, candidates
-        )
+        prompt = build_prompt(metpo_id, label, parents, current_def, matched, candidates)
 
         if verbose:
             click.echo(f"\n{metpo_id} ({label})")
@@ -293,10 +279,10 @@ def main(
                 model=model,
                 messages=[
                     {"role": "system", "content": DEFINITION_GUIDELINES},
-                    {"role": "user", "content": prompt}
+                    {"role": "user", "content": prompt},
                 ],
                 temperature=0.3,  # Lower temperature for more consistent output
-                max_tokens=300
+                max_tokens=300,
             )
 
             proposed_def = response.choices[0].message.content.strip()
@@ -315,68 +301,84 @@ def main(
             # Track sources
             sources_used = []
             if matched:
-                sources_used.append(f"{matched.get('source_ontology')}:{matched.get('source_iri', '')}")
+                sources_used.append(
+                    f"{matched.get('source_ontology')}:{matched.get('source_iri', '')}"
+                )
             if candidates:
                 for cand in candidates[:3]:
                     src = f"{cand.get('source_ontology')}:{cand.get('source_iri', '')}"
                     if src not in sources_used:
                         sources_used.append(src)
 
-            results.append({
-                "metpo_id": metpo_id,
-                "metpo_label": label,
-                "parent_classes": "|".join(parents),
-                "current_definition": current_def,
-                "proposed_definition": proposed_def,
-                "has_current": "yes" if current_def else "no",
-                "sources_consulted": "; ".join(sources_used),
-                "num_sources": len(sources_used),
-                "model_used": model,
-            })
+            results.append(
+                {
+                    "metpo_id": metpo_id,
+                    "metpo_label": label,
+                    "parent_classes": "|".join(parents),
+                    "current_definition": current_def,
+                    "proposed_definition": proposed_def,
+                    "has_current": "yes" if current_def else "no",
+                    "sources_consulted": "; ".join(sources_used),
+                    "num_sources": len(sources_used),
+                    "model_used": model,
+                }
+            )
 
             processed += 1
 
         except Exception as e:
             click.echo(f"✗ {metpo_id:20s} ERROR: {e}", err=True)
-            results.append({
-                "metpo_id": metpo_id,
-                "metpo_label": label,
-                "parent_classes": "|".join(parents),
-                "current_definition": current_def,
-                "proposed_definition": f"[ERROR: {e}]",
-                "has_current": "yes" if current_def else "no",
-                "sources_consulted": "",
-                "num_sources": 0,
-                "model_used": model,
-            })
+            results.append(
+                {
+                    "metpo_id": metpo_id,
+                    "metpo_label": label,
+                    "parent_classes": "|".join(parents),
+                    "current_definition": current_def,
+                    "proposed_definition": f"[ERROR: {e}]",
+                    "has_current": "yes" if current_def else "no",
+                    "sources_consulted": "",
+                    "num_sources": 0,
+                    "model_used": model,
+                }
+            )
             processed += 1
 
     # Write output
     click.echo(f"\nWriting proposed definitions to {output}...")
     output.parent.mkdir(parents=True, exist_ok=True)
 
-    with Path(output).open( "w", encoding="utf-8", newline="") as f:
+    with Path(output).open("w", encoding="utf-8", newline="") as f:
         fieldnames = [
-            "metpo_id", "metpo_label", "parent_classes",
-            "current_definition", "proposed_definition",
-            "has_current", "sources_consulted", "num_sources", "model_used"
+            "metpo_id",
+            "metpo_label",
+            "parent_classes",
+            "current_definition",
+            "proposed_definition",
+            "has_current",
+            "sources_consulted",
+            "num_sources",
+            "model_used",
         ]
         writer = csv.DictWriter(f, fieldnames=fieldnames, delimiter="\t")
         writer.writeheader()
         writer.writerows(results)
 
     # Summary
-    click.echo("\n" + "="*70)
+    click.echo("\n" + "=" * 70)
     click.echo("SUMMARY")
-    click.echo("="*70)
+    click.echo("=" * 70)
     click.echo(f"Total terms processed: {len(results)}")
 
     had_current = sum(1 for r in results if r["has_current"] == "yes")
-    click.echo(f"Had current definition: {had_current} ({had_current/len(results)*100:.1f}%)")
-    click.echo(f"Needed definition: {len(results) - had_current} ({(len(results)-had_current)/len(results)*100:.1f}%)")
+    click.echo(f"Had current definition: {had_current} ({had_current / len(results) * 100:.1f}%)")
+    click.echo(
+        f"Needed definition: {len(results) - had_current} ({(len(results) - had_current) / len(results) * 100:.1f}%)"
+    )
 
     with_sources = sum(1 for r in results if r["num_sources"] > 0)
-    click.echo(f"\nBased on foreign ontology terms: {with_sources} ({with_sources/len(results)*100:.1f}%)")
+    click.echo(
+        f"\nBased on foreign ontology terms: {with_sources} ({with_sources / len(results) * 100:.1f}%)"
+    )
     click.echo(f"Based on parent class only: {len(results) - with_sources}")
 
     click.echo(f"\nModel used: {model}")

@@ -24,7 +24,7 @@ MIN_FILE_SIZE = 1000  # Bytes - anything smaller is likely an error response
 def log_failure(ontology_id: str, file_size: int, message: str):
     """Log fetch failure."""
     timestamp = datetime.now(UTC).isoformat()
-    with Path(LOG_PATH).open( "a") as f:
+    with Path(LOG_PATH).open("a") as f:
         f.write(f"{timestamp} | FETCH_FAILED | {ontology_id} | {file_size} bytes | {message}\n")
 
 
@@ -56,7 +56,10 @@ def main(ontology_id: str, output: Path):
 
         # Check if successful
         if file_size < MIN_FILE_SIZE:
-            click.echo(f"✗ Failed to download {ontology_id} (empty or error response: {file_size} bytes)", err=True)
+            click.echo(
+                f"✗ Failed to download {ontology_id} (empty or error response: {file_size} bytes)",
+                err=True,
+            )
             log_failure(ontology_id, file_size, "File too small")
             output.unlink(missing_ok=True)
             sys.exit(1)

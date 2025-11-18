@@ -9,9 +9,7 @@ import click
 from chromadb.config import Settings
 
 # OLS ontologies to REMOVE (7 total)
-OLS_TO_REMOVE = {
-    "chebi", "foodon", "cl", "fypo", "ecto", "aro", "ddpheno"
-}
+OLS_TO_REMOVE = {"chebi", "foodon", "cl", "fypo", "ecto", "aro", "ddpheno"}
 
 
 @click.command()
@@ -33,8 +31,7 @@ def main(input_path, input_collection, output_path, output_collection, batch_siz
     # Connect to input
     print("\nConnecting to input ChromaDB...")
     input_client = chromadb.PersistentClient(
-        path=input_path,
-        settings=Settings(anonymized_telemetry=False)
+        path=input_path, settings=Settings(anonymized_telemetry=False)
     )
 
     input_coll = input_client.get_collection(name=input_collection)
@@ -44,8 +41,7 @@ def main(input_path, input_collection, output_path, output_collection, batch_siz
     # Connect to output
     print("\nConnecting to output ChromaDB...")
     output_client = chromadb.PersistentClient(
-        path=output_path,
-        settings=Settings(anonymized_telemetry=False)
+        path=output_path, settings=Settings(anonymized_telemetry=False)
     )
 
     # Create output collection (delete if exists)
@@ -56,8 +52,7 @@ def main(input_path, input_collection, output_path, output_collection, batch_siz
         pass
 
     output_coll = output_client.create_collection(
-        name=output_collection,
-        metadata={"description": "OLS embeddings - 20 high-ROI ontologies"}
+        name=output_collection, metadata={"description": "OLS embeddings - 20 high-ROI ontologies"}
     )
     print(f"✓ Output collection created: {output_collection}")
 
@@ -72,9 +67,7 @@ def main(input_path, input_collection, output_path, output_collection, batch_siz
     while offset < total_input:
         # Get batch
         batch = input_coll.get(
-            limit=batch_size,
-            offset=offset,
-            include=["documents", "metadatas", "embeddings"]
+            limit=batch_size, offset=offset, include=["documents", "metadatas", "embeddings"]
         )
 
         if not batch["ids"]:
@@ -110,21 +103,23 @@ def main(input_path, input_collection, output_path, output_collection, batch_siz
                     ids=filtered_ids[i:end],
                     embeddings=filtered_embeddings[i:end],
                     metadatas=filtered_metadatas[i:end],
-                    documents=filtered_documents[i:end]
+                    documents=filtered_documents[i:end],
                 )
 
         offset += len(batch["ids"])
 
         if offset % 50000 == 0 or offset >= total_input:
-            print(f"  [{offset:,}/{total_input:,}] Copied: {total_copied:,}, Skipped: {total_skipped:,}")
+            print(
+                f"  [{offset:,}/{total_input:,}] Copied: {total_copied:,}, Skipped: {total_skipped:,}"
+            )
 
     # Summary
     print(f"\n{'=' * 80}")
     print("FILTERING COMPLETE")
     print(f"{'=' * 80}")
     print(f"\nInput:   {total_input:,} embeddings (27 ontologies)")
-    print(f"Copied:  {total_copied:,} embeddings ({100*total_copied/total_input:.1f}%)")
-    print(f"Removed: {total_skipped:,} embeddings ({100*total_skipped/total_input:.1f}%)")
+    print(f"Copied:  {total_copied:,} embeddings ({100 * total_copied / total_input:.1f}%)")
+    print(f"Removed: {total_skipped:,} embeddings ({100 * total_skipped / total_input:.1f}%)")
 
     print("\nOntology distribution in filtered database:")
     print(f"{'Ontology':<20} {'Count':<12}")

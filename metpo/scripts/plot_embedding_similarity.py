@@ -6,6 +6,7 @@ This helps assess the overall quality of SSSOM mappings by showing:
 2. Breakdown by match type (exactMatch, closeMatch, relatedMatch)
 3. Comparison across source ontologies
 """
+
 import csv
 from collections import defaultdict
 from pathlib import Path
@@ -19,7 +20,7 @@ def read_best_matches(sssom_path: Path) -> dict[str, dict]:
     """Read SSSOM mappings and get best match per METPO term."""
     best_matches = {}
 
-    with Path(sssom_path).open( encoding="utf-8") as f:
+    with Path(sssom_path).open(encoding="utf-8") as f:
         lines = [line for line in f if not line.startswith("#")]
         reader = csv.DictReader(lines, delimiter="\t")
 
@@ -32,7 +33,10 @@ def read_best_matches(sssom_path: Path) -> dict[str, dict]:
             confidence = float(row.get("confidence", 0))
 
             # Keep only the best match per term
-            if subject_id not in best_matches or similarity > best_matches[subject_id]["similarity"]:
+            if (
+                subject_id not in best_matches
+                or similarity > best_matches[subject_id]["similarity"]
+            ):
                 predicate = row.get("predicate_id", "")
                 match_type = "other"
                 if "exactMatch" in predicate:
@@ -61,20 +65,20 @@ def read_best_matches(sssom_path: Path) -> dict[str, dict]:
     "-m",
     type=click.Path(exists=True, path_type=Path),
     default="data/mappings/metpo_mappings_combined_relaxed.sssom.tsv",
-    help="Path to SSSOM mappings file"
+    help="Path to SSSOM mappings file",
 )
 @click.option(
     "--output",
     "-o",
     type=click.Path(path_type=Path),
     default="reports/embedding_similarity_distribution.png",
-    help="Output PNG file"
+    help="Output PNG file",
 )
 @click.option(
     "--stats-output",
     type=click.Path(path_type=Path),
     default="reports/embedding_similarity_stats.tsv",
-    help="Output TSV file with statistics"
+    help="Output TSV file with statistics",
 )
 def main(mappings: Path, output: Path, stats_output: Path):
     """
@@ -101,10 +105,18 @@ def main(mappings: Path, output: Path, stats_output: Path):
     # 1. Overall distribution (histogram)
     ax1 = axes[0, 0]
     ax1.hist(similarities, bins=50, edgecolor="black", alpha=0.7)
-    ax1.axvline(np.median(similarities), color="red", linestyle="--",
-                label=f"Median: {np.median(similarities):.3f}")
-    ax1.axvline(np.mean(similarities), color="orange", linestyle="--",
-                label=f"Mean: {np.mean(similarities):.3f}")
+    ax1.axvline(
+        np.median(similarities),
+        color="red",
+        linestyle="--",
+        label=f"Median: {np.median(similarities):.3f}",
+    )
+    ax1.axvline(
+        np.mean(similarities),
+        color="orange",
+        linestyle="--",
+        label=f"Mean: {np.mean(similarities):.3f}",
+    )
     ax1.set_xlabel("Similarity Score", fontsize=12)
     ax1.set_ylabel("Number of METPO Terms", fontsize=12)
     ax1.set_title("Distribution of Best Similarity Scores", fontsize=13, fontweight="bold")
@@ -137,8 +149,14 @@ def main(mappings: Path, output: Path, stats_output: Path):
         ax3.axvline(threshold, color="red", linestyle=":", alpha=0.5)
         count = sum(1 for s in similarities if s >= threshold)
         pct = count / len(similarities) * 100
-        ax3.text(threshold, 50, f"{pct:.1f}%\n≥{threshold}",
-                ha="center", fontsize=9, bbox={"boxstyle": "round", "facecolor": "wheat", "alpha": 0.5})
+        ax3.text(
+            threshold,
+            50,
+            f"{pct:.1f}%\n≥{threshold}",
+            ha="center",
+            fontsize=9,
+            bbox={"boxstyle": "round", "facecolor": "wheat", "alpha": 0.5},
+        )
 
     ax3.set_xlabel("Similarity Score", fontsize=12)
     ax3.set_ylabel("Cumulative Percentage (%)", fontsize=12)
@@ -155,8 +173,7 @@ def main(mappings: Path, output: Path, stats_output: Path):
         ontology_counts[ont]["avg_sim"].append(match["similarity"])
 
     # Get top 10 ontologies by count
-    top_onts = sorted(ontology_counts.items(),
-                     key=lambda x: x[1]["count"], reverse=True)[:10]
+    top_onts = sorted(ontology_counts.items(), key=lambda x: x[1]["count"], reverse=True)[:10]
 
     ont_names = [ont for ont, _ in top_onts]
     ont_counts = [data["count"] for _, data in top_onts]
@@ -172,7 +189,9 @@ def main(mappings: Path, output: Path, stats_output: Path):
         bar.set_color(sm.to_rgba(avg_sim))
 
     ax4.set_ylabel("Number of Best Matches", fontsize=12)
-    ax4.set_title("Top 10 Source Ontologies (colored by avg similarity)", fontsize=13, fontweight="bold")
+    ax4.set_title(
+        "Top 10 Source Ontologies (colored by avg similarity)", fontsize=13, fontweight="bold"
+    )
     ax4.set_xticks(x_pos)
     ax4.set_xticklabels(ont_names, rotation=45, ha="right")
     ax4.grid(True, alpha=0.3, axis="y")
@@ -192,57 +211,74 @@ def main(mappings: Path, output: Path, stats_output: Path):
     stats = []
 
     # Overall statistics
-    stats.append({
-        "metric": "Overall",
-        "category": "All terms",
-        "count": len(similarities),
-        "min": f"{np.min(similarities):.4f}",
-        "max": f"{np.max(similarities):.4f}",
-        "mean": f"{np.mean(similarities):.4f}",
-        "median": f"{np.median(similarities):.4f}",
-        "std": f"{np.std(similarities):.4f}",
-        "q25": f"{np.percentile(similarities, 25):.4f}",
-        "q75": f"{np.percentile(similarities, 75):.4f}",
-    })
+    stats.append(
+        {
+            "metric": "Overall",
+            "category": "All terms",
+            "count": len(similarities),
+            "min": f"{np.min(similarities):.4f}",
+            "max": f"{np.max(similarities):.4f}",
+            "mean": f"{np.mean(similarities):.4f}",
+            "median": f"{np.median(similarities):.4f}",
+            "std": f"{np.std(similarities):.4f}",
+            "q25": f"{np.percentile(similarities, 25):.4f}",
+            "q75": f"{np.percentile(similarities, 75):.4f}",
+        }
+    )
 
     # By match type
     for match_type in ["exactMatch", "closeMatch", "relatedMatch", "other"]:
         sims = by_match_type.get(match_type, [])
         if sims:
-            stats.append({
-                "metric": "By match type",
-                "category": match_type,
-                "count": len(sims),
-                "min": f"{np.min(sims):.4f}",
-                "max": f"{np.max(sims):.4f}",
-                "mean": f"{np.mean(sims):.4f}",
-                "median": f"{np.median(sims):.4f}",
-                "std": f"{np.std(sims):.4f}",
-                "q25": f"{np.percentile(sims, 25):.4f}",
-                "q75": f"{np.percentile(sims, 75):.4f}",
-            })
+            stats.append(
+                {
+                    "metric": "By match type",
+                    "category": match_type,
+                    "count": len(sims),
+                    "min": f"{np.min(sims):.4f}",
+                    "max": f"{np.max(sims):.4f}",
+                    "mean": f"{np.mean(sims):.4f}",
+                    "median": f"{np.median(sims):.4f}",
+                    "std": f"{np.std(sims):.4f}",
+                    "q25": f"{np.percentile(sims, 25):.4f}",
+                    "q75": f"{np.percentile(sims, 75):.4f}",
+                }
+            )
 
     # Thresholds
     for threshold in [0.5, 0.6, 0.7, 0.8, 0.9]:
         count = sum(1 for s in similarities if s >= threshold)
         pct = count / len(similarities) * 100
-        stats.append({
-            "metric": f"≥ {threshold} threshold",
-            "category": f"Similarity ≥ {threshold}",
-            "count": count,
-            "min": f"{pct:.1f}%",
-            "max": "",
-            "mean": "",
-            "median": "",
-            "std": "",
-            "q25": "",
-            "q75": "",
-        })
+        stats.append(
+            {
+                "metric": f"≥ {threshold} threshold",
+                "category": f"Similarity ≥ {threshold}",
+                "count": count,
+                "min": f"{pct:.1f}%",
+                "max": "",
+                "mean": "",
+                "median": "",
+                "std": "",
+                "q25": "",
+                "q75": "",
+            }
+        )
 
     # Write statistics
     stats_output.parent.mkdir(parents=True, exist_ok=True)
-    with Path(stats_output).open( "w", encoding="utf-8", newline="") as f:
-        fieldnames = ["metric", "category", "count", "min", "max", "mean", "median", "std", "q25", "q75"]
+    with Path(stats_output).open("w", encoding="utf-8", newline="") as f:
+        fieldnames = [
+            "metric",
+            "category",
+            "count",
+            "min",
+            "max",
+            "mean",
+            "median",
+            "std",
+            "q25",
+            "q75",
+        ]
         writer = csv.DictWriter(f, fieldnames=fieldnames, delimiter="\t")
         writer.writeheader()
         writer.writerows(stats)
@@ -250,9 +286,9 @@ def main(mappings: Path, output: Path, stats_output: Path):
     click.echo(f"✓ Statistics saved to {stats_output}")
 
     # Print summary
-    click.echo("\n" + "="*60)
+    click.echo("\n" + "=" * 60)
     click.echo("SUMMARY STATISTICS")
-    click.echo("="*60)
+    click.echo("=" * 60)
     click.echo(f"Total METPO terms with mappings: {len(best_matches)}")
     click.echo(f"Mean similarity: {np.mean(similarities):.4f}")
     click.echo(f"Median similarity: {np.median(similarities):.4f}")

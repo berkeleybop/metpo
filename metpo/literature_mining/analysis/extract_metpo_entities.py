@@ -28,21 +28,32 @@ def extract_metpo_entities(yaml_file):
         for entity in doc.get("named_entities", []):
             entity_id = entity.get("id", "")
             if isinstance(entity_id, str) and "w3id.org/metpo/" in entity_id:
-                metpo_entities.append({
-                    "id": entity_id,
-                    "label": entity.get("label", "NO LABEL"),
-                    "file": yaml_file.name
-                })
+                metpo_entities.append(
+                    {
+                        "id": entity_id,
+                        "label": entity.get("label", "NO LABEL"),
+                        "file": yaml_file.name,
+                    }
+                )
 
     return metpo_entities
 
+
 @click.command()
-@click.argument("yaml_dir", type=click.Path(exists=True, file_okay=False, path_type=Path),
-                default=None, required=False)
-@click.option("-o", "--output", "output_file", type=click.Path(path_type=Path),
-              help="Output TSV file for results")
-@click.option("--recursive/--no-recursive", default=True,
-              help="Search subdirectories recursively")
+@click.argument(
+    "yaml_dir",
+    type=click.Path(exists=True, file_okay=False, path_type=Path),
+    default=None,
+    required=False,
+)
+@click.option(
+    "-o",
+    "--output",
+    "output_file",
+    type=click.Path(path_type=Path),
+    help="Output TSV file for results",
+)
+@click.option("--recursive/--no-recursive", default=True, help="Search subdirectories recursively")
 def main(yaml_dir, output_file, recursive):
     """Extract METPO entities from OntoGPT extraction YAML files.
 
@@ -82,11 +93,7 @@ def main(yaml_dir, output_file, recursive):
         if match:
             metpo_id = match.group(1)
             if metpo_id not in unique_classes:
-                unique_classes[metpo_id] = {
-                    "uri": entity["id"],
-                    "labels": set(),
-                    "count": 0
-                }
+                unique_classes[metpo_id] = {"uri": entity["id"], "labels": set(), "count": 0}
             unique_classes[metpo_id]["labels"].add(entity["label"])
             unique_classes[metpo_id]["count"] += 1
 
@@ -110,17 +117,19 @@ def main(yaml_dir, output_file, recursive):
     # Save results
     if not output_file:
         output_file = Path("literature_mining/METPO_GROUNDED_CLASSES.tsv")
-    with Path(output_file).open( "w") as f:
+    with Path(output_file).open("w") as f:
         f.write("METPO_ID\tURI\tLabel\tOccurrences\tFiles\n")
         for metpo_id in sorted(unique_classes.keys()):
             info = unique_classes[metpo_id]
-            files = {e["file"] for e in all_metpo_entities
-                       if re.search(f"metpo/{metpo_id}", e["id"])}
+            files = {
+                e["file"] for e in all_metpo_entities if re.search(f"metpo/{metpo_id}", e["id"])
+            }
             label_str = "; ".join(sorted(info["labels"]))
             file_str = "; ".join(sorted(files))
             f.write(f"METPO:{metpo_id}\t{info['uri']}\t{label_str}\t{info['count']}\t{file_str}\n")
 
     click.echo(f"Results saved to: {output_file}")
+
 
 if __name__ == "__main__":
     main()

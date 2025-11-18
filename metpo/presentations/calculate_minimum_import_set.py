@@ -9,7 +9,10 @@ import csv
 from collections import Counter, defaultdict
 from pathlib import Path
 
-SSSOM_FILE = Path("/home/mark/gitrepos/metpo/data/mappings/metpo_mappings_combined_relaxed.sssom.tsv")
+SSSOM_FILE = Path(
+    "/home/mark/gitrepos/metpo/data/mappings/metpo_mappings_combined_relaxed.sssom.tsv"
+)
+
 
 def analyze_by_quality_threshold(sssom_path):
     """Analyze which ontologies provide high-quality matches at different thresholds"""
@@ -75,7 +78,9 @@ def analyze_by_quality_threshold(sssom_path):
             cumulative += count
             cum_pct = (cumulative / total_at_threshold * 100) if total_at_threshold > 0 else 0
             if i <= 5 or cum_pct >= 90:
-                print(f"  Top {i:2d} ontologies: {cumulative:4d} matches ({cum_pct:5.1f}% coverage)")
+                print(
+                    f"  Top {i:2d} ontologies: {cumulative:4d} matches ({cum_pct:5.1f}% coverage)"
+                )
             if cum_pct >= 90 and i <= 10:
                 print(f"  → {i} ontologies needed for 90% coverage")
                 break
@@ -133,6 +138,7 @@ def analyze_by_quality_threshold(sssom_path):
 
     print("\n✓ = Available, ✗ = Not available, ? = Not verified")
 
+
 def main():
     analyze_by_quality_threshold(SSSOM_FILE)
 
@@ -155,6 +161,7 @@ IMPORT vs MAP decision:
   - METPO with SSSOM mappings: structural independence, clean hierarchies
   - Both approaches achieve interoperability, but METPO maintains focus
 """)
+
 
 if __name__ == "__main__":
     main()

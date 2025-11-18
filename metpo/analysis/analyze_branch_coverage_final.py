@@ -9,9 +9,9 @@ from collections import defaultdict
 
 import pandas as pd
 
-print("="*80)
+print("=" * 80)
 print("METPO BRANCH COVERAGE ANALYSIS")
-print("="*80)
+print("=" * 80)
 
 # Load METPO template
 print("\nLoading METPO template...")
@@ -42,6 +42,7 @@ for _, row in df.iterrows():
 print(f"Classes: {len(id_to_label)}")
 print(f"Parent nodes: {len(children_map)}")
 
+
 # Get all descendants recursively
 def get_descendants(node_id):
     desc = set()
@@ -49,6 +50,7 @@ def get_descendants(node_id):
         desc.add(child)
         desc.update(get_descendants(child))
     return desc
+
 
 # Find leaf nodes
 all_nodes = set(id_to_label.keys())
@@ -64,13 +66,15 @@ for parent_id in sorted(parent_nodes):
     leaf_desc = descendants & leaf_nodes
 
     if len(leaf_desc) >= 5:  # At least 5 leaf descendants
-        branches.append({
-            "id": parent_id,
-            "label": id_to_label[parent_id],
-            "total_desc": len(descendants),
-            "leaf_desc": len(leaf_desc),
-            "leaves": leaf_desc
-        })
+        branches.append(
+            {
+                "id": parent_id,
+                "label": id_to_label[parent_id],
+                "total_desc": len(descendants),
+                "leaf_desc": len(leaf_desc),
+                "leaves": leaf_desc,
+            }
+        )
 
 branches.sort(key=lambda x: x["leaf_desc"], reverse=True)
 
@@ -85,9 +89,9 @@ print(f"Total results: {len(search_df)}")
 print(f"High-quality matches (≥0.5): {len(hq_df)}")
 
 # Analyze each branch
-print("\n" + "="*80)
+print("\n" + "=" * 80)
 print("COVERAGE BY BRANCH")
-print("="*80)
+print("=" * 80)
 
 coverage_results = []
 
@@ -117,54 +121,66 @@ for branch in branches:
         cov_pct = (len(data["leaves"]) / len(leaves)) * 100
         avg_sim = sum(data["sims"]) / len(data["sims"])
 
-        stats.append({
-            "ont": ont,
-            "covered": len(data["leaves"]),
-            "total": len(leaves),
-            "pct": cov_pct,
-            "matches": data["count"],
-            "avg_sim": avg_sim
-        })
+        stats.append(
+            {
+                "ont": ont,
+                "covered": len(data["leaves"]),
+                "total": len(leaves),
+                "pct": cov_pct,
+                "matches": data["count"],
+                "avg_sim": avg_sim,
+            }
+        )
 
     stats.sort(key=lambda x: x["pct"], reverse=True)
 
     # Show top ontologies
     print(f"\n  {'Ontology':<15} {'Coverage':<12} {'%':<7} {'Matches':<9} {'Avg Sim'}")
-    print(f"  {'-'*65}")
+    print(f"  {'-' * 65}")
 
     for s in stats[:10]:
         marker = "★" if s["pct"] >= 50 else " "
-        print(f"  {marker}{s['ont']:<14} {s['covered']}/{s['total']:<9} {s['pct']:>5.1f}% {s['matches']:<9} {s['avg_sim']:.3f}")
+        print(
+            f"  {marker}{s['ont']:<14} {s['covered']}/{s['total']:<9} {s['pct']:>5.1f}% {s['matches']:<9} {s['avg_sim']:.3f}"
+        )
 
         if s["pct"] >= 50:
-            coverage_results.append({
-                "branch": branch["label"],
-                "branch_id": branch["id"],
-                "ontology": s["ont"],
-                "coverage_pct": s["pct"],
-                "covered_leaves": s["covered"],
-                "total_leaves": s["total"],
-                "avg_similarity": s["avg_sim"]
-            })
+            coverage_results.append(
+                {
+                    "branch": branch["label"],
+                    "branch_id": branch["id"],
+                    "ontology": s["ont"],
+                    "coverage_pct": s["pct"],
+                    "covered_leaves": s["covered"],
+                    "total_leaves": s["total"],
+                    "avg_similarity": s["avg_sim"],
+                }
+            )
 
 # Final summary
-print("\n" + "="*80)
+print("\n" + "=" * 80)
 print("SUMMARY: ONTOLOGIES WITH ≥50% BRANCH COVERAGE")
-print("="*80)
+print("=" * 80)
 
 if coverage_results:
     df_cov = pd.DataFrame(coverage_results)
-    df_cov.to_csv("../../data/ontology_assessments/coverage/metpo_branch_coverage_summary.tsv", sep="\t", index=False)
+    df_cov.to_csv(
+        "../../data/ontology_assessments/coverage/metpo_branch_coverage_summary.tsv",
+        sep="\t",
+        index=False,
+    )
 
     # Group by ontology
     ont_branches = defaultdict(list)
     for r in coverage_results:
-        ont_branches[r["ontology"]].append({
-            "branch": r["branch"],
-            "pct": r["coverage_pct"],
-            "cov": r["covered_leaves"],
-            "tot": r["total_leaves"]
-        })
+        ont_branches[r["ontology"]].append(
+            {
+                "branch": r["branch"],
+                "pct": r["coverage_pct"],
+                "cov": r["covered_leaves"],
+                "tot": r["total_leaves"],
+            }
+        )
 
     # Sort by number of branches covered
     for ont, branches_list in sorted(ont_branches.items(), key=lambda x: len(x[1]), reverse=True):
@@ -172,7 +188,9 @@ if coverage_results:
         for b in sorted(branches_list, key=lambda x: x["pct"], reverse=True):
             print(f"  • {b['branch']}: {b['cov']}/{b['tot']} leaves ({b['pct']:.1f}%)")
 
-    print("\n✓ Saved detailed results to ../../data/ontology_assessments/coverage/metpo_branch_coverage_summary.tsv")
+    print(
+        "\n✓ Saved detailed results to ../../data/ontology_assessments/coverage/metpo_branch_coverage_summary.tsv"
+    )
 else:
     print("\nNo ontology provides ≥50% coverage for any major branch")
     print("\nShowing best partial coverage for largest branch:")
@@ -186,8 +204,9 @@ else:
             ont_cov[row["match_ontology"]]["leaves"].add(row["metpo_id"])
             ont_cov[row["match_ontology"]]["sims"].append(row["similarity_ratio"])
 
-        stats = [(ont, len(d["leaves"]), sum(d["sims"])/len(d["sims"]))
-                 for ont, d in ont_cov.items()]
+        stats = [
+            (ont, len(d["leaves"]), sum(d["sims"]) / len(d["sims"])) for ont, d in ont_cov.items()
+        ]
         stats.sort(key=lambda x: x[1], reverse=True)
 
         print(f"\n{largest['label']} ({len(leaves)} leaves):")
@@ -195,4 +214,4 @@ else:
             pct = (cov / len(leaves)) * 100
             print(f"  {ont:<15} {cov}/{len(leaves):<7} {pct:>5.1f}% avg_sim={avg:.3f}")
 
-print("\n" + "="*80)
+print("\n" + "=" * 80)

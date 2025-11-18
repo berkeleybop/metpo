@@ -62,7 +62,7 @@ class MetpoAssessor:
             "quality_metrics": {},
             "issues": [],
             "recommendations": [],
-            "patterns": {}
+            "patterns": {},
         }
 
         classes = template.get("classes", {})
@@ -73,7 +73,7 @@ class MetpoAssessor:
             "compound_expressions": self._analyze_compound_expressions(classes),
             "semicolon_requests": self._check_semicolon_requests(classes),
             "multivalued_fields": self._check_multivalued_fields(classes),
-            "annotator_quality": self._check_annotators(classes)
+            "annotator_quality": self._check_annotators(classes),
         }
 
         # Quality pattern detection
@@ -99,7 +99,7 @@ class MetpoAssessor:
         return {
             "found": True,
             "attribute_count": len(attributes),
-            "attributes": list(attributes.keys())
+            "attributes": list(attributes.keys()),
         }
 
     def _analyze_compound_expressions(self, classes: dict) -> dict[str, Any]:
@@ -125,7 +125,7 @@ class MetpoAssessor:
             "total_count": len(compound_expressions),
             "compliant_count": compliant_count,
             "compliance_rate": (compliant_count / max(len(compound_expressions), 1)) * 100,
-            "issues": issues[:3]  # Limit output
+            "issues": issues[:3],  # Limit output
         }
 
     def _check_semicolon_requests(self, classes: dict) -> dict[str, Any]:
@@ -150,7 +150,7 @@ class MetpoAssessor:
         return {
             "total_fields": total_fields,
             "semicolon_fields": semicolon_fields,
-            "rate": (semicolon_fields / max(total_fields, 1)) * 100
+            "rate": (semicolon_fields / max(total_fields, 1)) * 100,
         }
 
     def _check_multivalued_fields(self, classes: dict) -> dict[str, Any]:
@@ -173,7 +173,7 @@ class MetpoAssessor:
         return {
             "total_fields": total_fields,
             "multivalued_fields": multivalued_fields,
-            "rate": (multivalued_fields / max(total_fields, 1)) * 100
+            "rate": (multivalued_fields / max(total_fields, 1)) * 100,
         }
 
     def _check_annotators(self, classes: dict) -> dict[str, Any]:
@@ -217,7 +217,7 @@ class MetpoAssessor:
             "total_entities": total_entities,
             "well_annotated": well_annotated,
             "rate": (well_annotated / max(total_entities, 1)) * 100,
-            "issues": annotator_issues[:3]
+            "issues": annotator_issues[:3],
         }
 
     def _detect_template_patterns(self, classes: dict) -> dict[str, Any]:
@@ -226,29 +226,33 @@ class MetpoAssessor:
             "good_practices": [],
             "anti_patterns": [],
             "entity_types": [],
-            "predicate_types": []
+            "predicate_types": [],
         }
 
         # Detect entity types and annotation patterns
         for class_name, class_def in classes.items():
             if class_def.get("is_a") == "NamedEntity":
                 annotators = class_def.get("annotations", {}).get("annotators", "")
-                patterns["entity_types"].append({
-                    "name": class_name,
-                    "annotators": annotators,
-                    "description": class_def.get("description", "")[:100]
-                })
+                patterns["entity_types"].append(
+                    {
+                        "name": class_name,
+                        "annotators": annotators,
+                        "description": class_def.get("description", "")[:100],
+                    }
+                )
 
         # Detect predicate enumeration patterns
         enums = classes.get("enums", {})
         for enum_name, enum_def in enums.items():
             if "Type" in enum_name or "Enum" in enum_name:
                 values = enum_def.get("permissible_values", {})
-                patterns["predicate_types"].append({
-                    "name": enum_name,
-                    "value_count": len(values),
-                    "sample_values": list(values.keys())[:5]
-                })
+                patterns["predicate_types"].append(
+                    {
+                        "name": enum_name,
+                        "value_count": len(values),
+                        "sample_values": list(values.keys())[:5],
+                    }
+                )
 
         return patterns
 
@@ -260,7 +264,9 @@ class MetpoAssessor:
         ce_rate = compliance["compound_expressions"]["compliance_rate"]
         if ce_rate < 100:
             result["issues"].append(f"CompoundExpression compliance: {ce_rate:.1f}%")
-            result["recommendations"].append("Fix CompoundExpression structure to use exactly subject/predicate/object")
+            result["recommendations"].append(
+                "Fix CompoundExpression structure to use exactly subject/predicate/object"
+            )
 
         # Semicolon request compliance
         semi_rate = compliance["semicolon_requests"]["rate"]
@@ -278,7 +284,9 @@ class MetpoAssessor:
         ann_rate = compliance["annotator_quality"]["rate"]
         if ann_rate < 80:
             result["issues"].append(f"Well-annotated entities: {ann_rate:.1f}%")
-            result["recommendations"].append("Add multiple comma-separated annotators to NamedEntity classes")
+            result["recommendations"].append(
+                "Add multiple comma-separated annotators to NamedEntity classes"
+            )
 
     # ===== PHASE 2: EXTRACTION ANALYSIS =====
 
@@ -307,7 +315,7 @@ class MetpoAssessor:
             "success_metrics": {},
             "performance": {},
             "issues": [],
-            "strengths": []
+            "strengths": [],
         }
 
         # Aggregate metrics across all extractions
@@ -336,7 +344,12 @@ class MetpoAssessor:
         result["success_metrics"]["primary_success"] = successful_extractions > 0
 
         # Aggregate CompoundExpression analysis across all extractions
-        ce_analysis = {"total_compound_expressions": 0, "grounded_subjects": 0, "grounded_predicates": 0, "metpo_predicates": 0}
+        ce_analysis = {
+            "total_compound_expressions": 0,
+            "grounded_subjects": 0,
+            "grounded_predicates": 0,
+            "metpo_predicates": 0,
+        }
         all_predicate_validations = []
         for extracted_obj in all_extracted_objects:
             obj_analysis = self._analyze_compound_expression_grounding(extracted_obj)
@@ -348,9 +361,15 @@ class MetpoAssessor:
 
         # Calculate final rates
         total_ces = ce_analysis["total_compound_expressions"]
-        ce_analysis["subject_grounding_rate"] = round((ce_analysis["grounded_subjects"] / max(total_ces, 1)) * 100, 1)
-        ce_analysis["predicate_grounding_rate"] = round((ce_analysis["grounded_predicates"] / max(total_ces, 1)) * 100, 1)
-        ce_analysis["metpo_predicate_usage"] = round((ce_analysis["metpo_predicates"] / max(total_ces, 1)) * 100, 1)
+        ce_analysis["subject_grounding_rate"] = round(
+            (ce_analysis["grounded_subjects"] / max(total_ces, 1)) * 100, 1
+        )
+        ce_analysis["predicate_grounding_rate"] = round(
+            (ce_analysis["grounded_predicates"] / max(total_ces, 1)) * 100, 1
+        )
+        ce_analysis["metpo_predicate_usage"] = round(
+            (ce_analysis["metpo_predicates"] / max(total_ces, 1)) * 100, 1
+        )
 
         # Analyze predicate validation results
         predicate_analysis = self._analyze_predicate_validation(all_predicate_validations)
@@ -358,13 +377,15 @@ class MetpoAssessor:
 
         # Performance analysis using aggregated data
         result["performance"] = {
-            "raw_output": self._analyze_raw_output(extractions[0].get("raw_completion_output", "") if extractions else ""),
+            "raw_output": self._analyze_raw_output(
+                extractions[0].get("raw_completion_output", "") if extractions else ""
+            ),
             "grounding": self._analyze_grounding(all_entities),
             "compound_expression_grounding": ce_analysis,
             "coverage": self._analyze_coverage(extractions[0] if extractions else {}),
             "span_distances": self._assess_span_distances(extractions),
             "verbatim_traceability": self._assess_verbatim_traceability(extractions),
-            "strain_taxon_consistency": self._assess_strain_taxon_consistency(extractions)
+            "strain_taxon_consistency": self._assess_strain_taxon_consistency(extractions),
         }
 
         # Generate insights
@@ -382,10 +403,10 @@ class MetpoAssessor:
             "performance": {
                 "raw_output": {"populated_fields": 0, "total_entities": 0},
                 "grounding": {"total": 0, "grounded": 0, "rate": 0},
-                "coverage": {"span_rate": 0}
+                "coverage": {"span_rate": 0},
             },
             "issues": ["Failed to parse extraction file"],
-            "strengths": []
+            "strengths": [],
         }
 
     def _extract_template_name(self, extraction_path: Path) -> str:
@@ -442,7 +463,7 @@ class MetpoAssessor:
             "populated_fields": populated_fields,
             "total_entities": total_entities,
             "avg_entities_per_field": total_entities / max(populated_fields, 1),
-            "quality": quality
+            "quality": quality,
         }
 
     def _analyze_grounding(self, named_entities: list[dict]) -> dict[str, Any]:
@@ -469,8 +490,9 @@ class MetpoAssessor:
                 entity_duplicates[entity_id] = entity_duplicates.get(entity_id, 0) + 1
 
         # Find most duplicated entities (excluding expected NCBI taxonomy)
-        duplicated_entities = {k: v for k, v in entity_duplicates.items()
-                             if v > 1 and not k.startswith("NCBITaxon:")}
+        duplicated_entities = {
+            k: v for k, v in entity_duplicates.items() if v > 1 and not k.startswith("NCBITaxon:")
+        }
 
         # Calculate auto vs grounded ratio
         auto_vs_grounded_ratio = auto / max(grounded, 1) if grounded > 0 else float("inf")
@@ -484,7 +506,7 @@ class MetpoAssessor:
             "ontologies_used": ontologies,
             "ontology_diversity": len(ontologies),
             "duplicated_entities": duplicated_entities,
-            "excessive_duplication": len(duplicated_entities) > 5
+            "excessive_duplication": len(duplicated_entities) > 5,
         }
 
     def _analyze_compound_expression_grounding(self, extracted_obj: dict) -> dict[str, Any]:
@@ -499,12 +521,18 @@ class MetpoAssessor:
         for field_name, field_value in extracted_obj.items():
             if isinstance(field_value, list):
                 for item in field_value:
-                    if isinstance(item, dict) and all(k in item for k in ["subject", "predicate", "object"]):
+                    if isinstance(item, dict) and all(
+                        k in item for k in ["subject", "predicate", "object"]
+                    ):
                         total_ces += 1
 
                         # Check subject grounding
                         subject = item.get("subject", "")
-                        if isinstance(subject, str) and ":" in subject and not subject.startswith("AUTO:"):
+                        if (
+                            isinstance(subject, str)
+                            and ":" in subject
+                            and not subject.startswith("AUTO:")
+                        ):
                             grounded_subjects += 1
 
                         # Check predicate grounding and validation
@@ -512,20 +540,26 @@ class MetpoAssessor:
                         if isinstance(predicate, str):
                             if ":" in predicate and not predicate.startswith("AUTO:"):
                                 grounded_predicates += 1
-                            if "METPO:" in str(predicate) or predicate in ["uses_as_carbon_source", "degrades", "ferments"]:
+                            if "METPO:" in str(predicate) or predicate in [
+                                "uses_as_carbon_source",
+                                "degrades",
+                                "ferments",
+                            ]:
                                 metpo_predicates += 1
 
                             # Validate predicate against expected enumeration
                             validation_result = self._validate_predicate(field_name, predicate)
-                            predicate_validation_details.append({
-                                "field": field_name,
-                                "predicate": predicate,
-                                "subject": subject,
-                                "object": item.get("object", ""),
-                                "expected_enum": validation_result["expected_enum"],
-                                "is_valid": validation_result["is_valid"],
-                                "reason": validation_result.get("reason", "")
-                            })
+                            predicate_validation_details.append(
+                                {
+                                    "field": field_name,
+                                    "predicate": predicate,
+                                    "subject": subject,
+                                    "object": item.get("object", ""),
+                                    "expected_enum": validation_result["expected_enum"],
+                                    "is_valid": validation_result["is_valid"],
+                                    "reason": validation_result.get("reason", ""),
+                                }
+                            )
 
         return {
             "total_compound_expressions": total_ces,
@@ -535,7 +569,7 @@ class MetpoAssessor:
             "predicate_validation_details": predicate_validation_details,
             "subject_grounding_rate": round((grounded_subjects / max(total_ces, 1)) * 100, 1),
             "predicate_grounding_rate": round((grounded_predicates / max(total_ces, 1)) * 100, 1),
-            "metpo_predicate_usage": round((metpo_predicates / max(total_ces, 1)) * 100, 1)
+            "metpo_predicate_usage": round((metpo_predicates / max(total_ces, 1)) * 100, 1),
         }
 
     def _validate_predicate(self, field_name: str, predicate: str) -> dict[str, Any]:
@@ -551,7 +585,7 @@ class MetpoAssessor:
             return {
                 "expected_enum": "unknown",
                 "is_valid": True,  # Can't validate if we don't know the expected enum
-                "reason": "No enumeration mapping found for this field"
+                "reason": "No enumeration mapping found for this field",
             }
 
         # Check if predicate is in the expected enumeration
@@ -562,7 +596,7 @@ class MetpoAssessor:
             "expected_enum": expected_enum,
             "is_valid": is_valid,
             "reason": "Valid METPO predicate" if is_valid else f"Not found in {expected_enum}",
-            "available_values": list(enum_values.keys()) if not is_valid else None
+            "available_values": list(enum_values.keys()) if not is_valid else None,
         }
 
     def _load_template_enumerations(self) -> dict[str, Any]:
@@ -576,7 +610,7 @@ class MetpoAssessor:
             "templates/growth_conditions_populated.yaml",
             "templates/morphology_populated.yaml",
             "templates/taxa_populated.yaml",
-            "templates/biochemical_populated.yaml"
+            "templates/biochemical_populated.yaml",
         ]
 
         for template_path in template_paths:
@@ -608,7 +642,7 @@ class MetpoAssessor:
             "cellular_inclusion_relationships": "MorphologyType",
             "enzyme_relationships": "BiochemicalInteractionType",
             "api_result_relationships": "BiochemicalInteractionType",
-            "fatty_acid_relationships": "BiochemicalInteractionType"
+            "fatty_acid_relationships": "BiochemicalInteractionType",
         }
 
         return field_enum_mapping.get(field_name)
@@ -622,7 +656,7 @@ class MetpoAssessor:
                 "compliance_rate": 0.0,
                 "enumeration_usage": {},
                 "invalid_predicates": [],
-                "summary": "No predicate validation data available"
+                "summary": "No predicate validation data available",
             }
 
         total_predicates = len(validation_details)
@@ -636,11 +670,7 @@ class MetpoAssessor:
         for validation in validation_details:
             enum_name = validation.get("expected_enum", "unknown")
             if enum_name not in enumeration_usage:
-                enumeration_usage[enum_name] = {
-                    "total": 0,
-                    "valid": 0,
-                    "invalid_predicates": []
-                }
+                enumeration_usage[enum_name] = {"total": 0, "valid": 0, "invalid_predicates": []}
 
             enumeration_usage[enum_name]["total"] += 1
 
@@ -653,7 +683,7 @@ class MetpoAssessor:
                     "expected_enum": enum_name,
                     "reason": validation.get("reason", ""),
                     "subject": validation.get("subject", ""),
-                    "object": validation.get("object", "")
+                    "object": validation.get("object", ""),
                 }
                 enumeration_usage[enum_name]["invalid_predicates"].append(predicate_info)
                 invalid_predicates.append(predicate_info)
@@ -668,7 +698,7 @@ class MetpoAssessor:
             "compliance_rate": compliance_rate,
             "enumeration_usage": enumeration_usage,
             "invalid_predicates": invalid_predicates,
-            "summary": f"{compliance_rate}% predicate compliance ({valid_predicates}/{total_predicates} valid)"
+            "summary": f"{compliance_rate}% predicate compliance ({valid_predicates}/{total_predicates} valid)",
         }
 
     def _analyze_coverage(self, extraction: dict) -> dict[str, Any]:
@@ -679,7 +709,7 @@ class MetpoAssessor:
         return {
             "entities_with_spans": entities_with_spans,
             "total_entities": len(named_entities),
-            "span_rate": (entities_with_spans / max(len(named_entities), 1)) * 100
+            "span_rate": (entities_with_spans / max(len(named_entities), 1)) * 100,
         }
 
     def _assess_span_distances(self, extractions: list[dict]) -> dict[str, Any]:
@@ -688,12 +718,12 @@ class MetpoAssessor:
             "total_compound_expressions": 0,
             "expressions_with_spans": 0,
             "distance_distribution": {
-                "close": 0,      # <100 chars
-                "medium": 0,     # 100-500 chars
-                "far": 0,        # >500 chars
-                "cross_section": 0  # spans in different parts
+                "close": 0,  # <100 chars
+                "medium": 0,  # 100-500 chars
+                "far": 0,  # >500 chars
+                "cross_section": 0,  # spans in different parts
             },
-            "detailed_analysis": []
+            "detailed_analysis": [],
         }
 
         for extraction in extractions:
@@ -715,7 +745,9 @@ class MetpoAssessor:
             for field_name, field_value in extracted_obj.items():
                 if isinstance(field_value, list):
                     for item in field_value:
-                        if isinstance(item, dict) and all(k in item for k in ["subject", "predicate", "object"]):
+                        if isinstance(item, dict) and all(
+                            k in item for k in ["subject", "predicate", "object"]
+                        ):
                             results["total_compound_expressions"] += 1
 
                             subject_id = item.get("subject", "")
@@ -777,24 +809,27 @@ class MetpoAssessor:
                                         return span
                                     return 0
 
-                                is_cross_section = any(get_span_start(span) < 100 for span in subject_spans) and \
-                                                 any(get_span_start(span) > 500 for span in object_spans)
+                                is_cross_section = any(
+                                    get_span_start(span) < 100 for span in subject_spans
+                                ) and any(get_span_start(span) > 500 for span in object_spans)
                                 if is_cross_section:
                                     category = "cross_section"
 
                                 results["distance_distribution"][category] += 1
 
-                                results["detailed_analysis"].append({
-                                    "field": field_name,
-                                    "subject": subject_id,
-                                    "predicate": predicate,
-                                    "object": object_id,
-                                    "min_distance": min_distance,
-                                    "category": category,
-                                    "subject_spans": subject_spans,
-                                    "object_spans": object_spans,
-                                    "closest_pair": closest_pair
-                                })
+                                results["detailed_analysis"].append(
+                                    {
+                                        "field": field_name,
+                                        "subject": subject_id,
+                                        "predicate": predicate,
+                                        "object": object_id,
+                                        "min_distance": min_distance,
+                                        "category": category,
+                                        "subject_spans": subject_spans,
+                                        "object_spans": object_spans,
+                                        "closest_pair": closest_pair,
+                                    }
+                                )
 
         # Calculate percentages
         total_with_spans = results["expressions_with_spans"]
@@ -802,7 +837,9 @@ class MetpoAssessor:
             categories = list(results["distance_distribution"].keys())
             for category in categories:
                 count = results["distance_distribution"][category]
-                results["distance_distribution"][f"{category}_percentage"] = round(count / total_with_spans * 100, 1)
+                results["distance_distribution"][f"{category}_percentage"] = round(
+                    count / total_with_spans * 100, 1
+                )
 
         return results
 
@@ -812,7 +849,7 @@ class MetpoAssessor:
             "documents_analyzed": 0,
             "traceability_issues": [],
             "entity_traceability": [],
-            "content_extraction_success": 0
+            "content_extraction_success": 0,
         }
 
         for doc_idx, extraction in enumerate(extractions):
@@ -826,11 +863,13 @@ class MetpoAssessor:
             content_text = self._extract_content_text(input_text)
 
             if not content_text:
-                results["traceability_issues"].append({
-                    "doc_index": doc_idx,
-                    "issue": "Could not extract content from input_text",
-                    "input_text_type": type(input_text).__name__
-                })
+                results["traceability_issues"].append(
+                    {
+                        "doc_index": doc_idx,
+                        "issue": "Could not extract content from input_text",
+                        "input_text_type": type(input_text).__name__,
+                    }
+                )
                 continue
 
             results["content_extraction_success"] += 1
@@ -846,18 +885,20 @@ class MetpoAssessor:
                 # Verify entity appears in content at specified spans
                 span_matches = self._verify_spans(content_text, entity_label, spans)
 
-                results["entity_traceability"].append({
-                    "doc_index": doc_idx,
-                    "entity_id": entity_id,
-                    "entity_label": entity_label,
-                    "spans_verified": span_matches["all_match"],
-                    "spans_total": len(spans),
-                    "spans_matched": span_matches["matched_count"],
-                    "prefix_matches": span_matches["prefix_matches"],
-                    "off_by_one_errors": span_matches["off_by_one_errors"],
-                    "span_coverage_rate": span_matches["span_coverage_rate"],
-                    "prefix_match_rate": span_matches["prefix_match_rate"]
-                })
+                results["entity_traceability"].append(
+                    {
+                        "doc_index": doc_idx,
+                        "entity_id": entity_id,
+                        "entity_label": entity_label,
+                        "spans_verified": span_matches["all_match"],
+                        "spans_total": len(spans),
+                        "spans_matched": span_matches["matched_count"],
+                        "prefix_matches": span_matches["prefix_matches"],
+                        "off_by_one_errors": span_matches["off_by_one_errors"],
+                        "span_coverage_rate": span_matches["span_coverage_rate"],
+                        "prefix_match_rate": span_matches["prefix_match_rate"],
+                    }
+                )
 
         # Aggregate span quality metrics
         all_entities = results["entity_traceability"]
@@ -874,7 +915,9 @@ class MetpoAssessor:
                 "exact_match_rate": round(exact_match_entities / max(total_entities, 1) * 100, 1),
                 "prefix_match_rate": round(prefix_match_entities / max(total_entities, 1) * 100, 1),
                 "off_by_one_rate": round(off_by_one_entities / max(total_entities, 1) * 100, 1),
-                "span_diagnostic": "Systematic off-by-one truncation" if off_by_one_entities > total_entities * 0.8 else "Mixed patterns"
+                "span_diagnostic": "Systematic off-by-one truncation"
+                if off_by_one_entities > total_entities * 0.8
+                else "Mixed patterns",
             }
 
         return results
@@ -885,7 +928,7 @@ class MetpoAssessor:
             "documents_analyzed": 0,
             "consistency_checks": [],
             "violations": [],
-            "strain_usage_patterns": defaultdict(list)
+            "strain_usage_patterns": defaultdict(list),
         }
 
         for doc_idx, extraction in enumerate(extractions):
@@ -904,9 +947,15 @@ class MetpoAssessor:
                             subject = item.get("subject", "")
                             if subject.startswith("AUTO:"):
                                 # Extract strain identifier (clean up encoding)
-                                strain_id = subject.replace("AUTO:", "").replace("%20", " ").replace("%2034211", " 34211")
+                                strain_id = (
+                                    subject.replace("AUTO:", "")
+                                    .replace("%20", " ")
+                                    .replace("%2034211", " 34211")
+                                )
                                 strain_subjects.add(strain_id)
-                                results["strain_usage_patterns"][strain_id].append(f"{field_name}_{doc_idx}")
+                                results["strain_usage_patterns"][strain_id].append(
+                                    f"{field_name}_{doc_idx}"
+                                )
 
             # Extract strain subjects from strain relationships
             strain_rels = extracted_obj.get("strain_relationships", [])
@@ -922,7 +971,9 @@ class MetpoAssessor:
                         strain_id = subject.replace("AUTO:", "").replace("%20", " ")
                         strain_rel_subjects.add(strain_id)
                         strain_to_taxon[strain_id] = object_taxon
-                        results["strain_usage_patterns"][strain_id].append(f"strain_relationship_{doc_idx}")
+                        results["strain_usage_patterns"][strain_id].append(
+                            f"strain_relationship_{doc_idx}"
+                        )
 
             # Check consistency
             check_result = {
@@ -932,25 +983,29 @@ class MetpoAssessor:
                 "consistent_strains": list(strain_subjects & strain_rel_subjects),
                 "orphan_ce_strains": list(strain_subjects - strain_rel_subjects),
                 "orphan_rel_strains": list(strain_rel_subjects - strain_subjects),
-                "strain_taxon_mappings": strain_to_taxon
+                "strain_taxon_mappings": strain_to_taxon,
             }
 
             results["consistency_checks"].append(check_result)
 
             # Flag violations
             if check_result["orphan_ce_strains"]:
-                results["violations"].append({
-                    "doc_index": doc_idx,
-                    "type": "compound_expression_strain_without_relationship",
-                    "strains": check_result["orphan_ce_strains"]
-                })
+                results["violations"].append(
+                    {
+                        "doc_index": doc_idx,
+                        "type": "compound_expression_strain_without_relationship",
+                        "strains": check_result["orphan_ce_strains"],
+                    }
+                )
 
             if check_result["orphan_rel_strains"]:
-                results["violations"].append({
-                    "doc_index": doc_idx,
-                    "type": "relationship_strain_without_usage",
-                    "strains": check_result["orphan_rel_strains"]
-                })
+                results["violations"].append(
+                    {
+                        "doc_index": doc_idx,
+                        "type": "relationship_strain_without_usage",
+                        "strains": check_result["orphan_rel_strains"],
+                    }
+                )
 
         return results
 
@@ -1019,7 +1074,7 @@ class MetpoAssessor:
             "off_by_one_errors": off_by_one,
             "off_by_two_errors": off_by_two,
             "span_coverage_rate": round(valid_spans / max(len(spans), 1) * 100, 1),
-            "prefix_match_rate": round(prefix_matches / max(valid_spans, 1) * 100, 1)
+            "prefix_match_rate": round(prefix_matches / max(valid_spans, 1) * 100, 1),
         }
 
     def _generate_extraction_insights(self, result: dict):
@@ -1031,7 +1086,9 @@ class MetpoAssessor:
         if success["compound_expressions"] == 0:
             result["issues"].append("CRITICAL: No CompoundExpressions extracted")
         elif success["compound_expressions"] > 10:
-            result["strengths"].append(f"Excellent relationship extraction: {success['compound_expressions']} CEs")
+            result["strengths"].append(
+                f"Excellent relationship extraction: {success['compound_expressions']} CEs"
+            )
 
         # Raw output quality
         raw_quality = performance["raw_output"]["quality"]
@@ -1048,7 +1105,9 @@ class MetpoAssessor:
             result["strengths"].append(f"Excellent grounding rate: {grounding_rate:.1f}%")
 
         # Predicate validation insights
-        predicate_validation = performance.get("compound_expression_grounding", {}).get("predicate_validation", {})
+        predicate_validation = performance.get("compound_expression_grounding", {}).get(
+            "predicate_validation", {}
+        )
         if predicate_validation:
             compliance_rate = predicate_validation.get("compliance_rate", 0)
             if compliance_rate < 80:
@@ -1057,7 +1116,9 @@ class MetpoAssessor:
                 if invalid_count > 0:
                     result["issues"].append(f"Found {invalid_count} invalid predicates")
             elif compliance_rate > 95:
-                result["strengths"].append(f"Excellent predicate compliance: {compliance_rate:.1f}%")
+                result["strengths"].append(
+                    f"Excellent predicate compliance: {compliance_rate:.1f}%"
+                )
 
         # Span distance insights
         span_distances = performance.get("span_distances", {})
@@ -1067,9 +1128,13 @@ class MetpoAssessor:
             close_percentage = dist.get("close_percentage", 0)
 
             if far_percentage > 20:
-                result["issues"].append(f"Many far-apart relationships: {far_percentage:.1f}% (may indicate weak semantic links)")
+                result["issues"].append(
+                    f"Many far-apart relationships: {far_percentage:.1f}% (may indicate weak semantic links)"
+                )
             elif close_percentage > 40:
-                result["strengths"].append(f"Good semantic proximity: {close_percentage:.1f}% close relationships")
+                result["strengths"].append(
+                    f"Good semantic proximity: {close_percentage:.1f}% close relationships"
+                )
 
         # Verbatim traceability insights
         traceability = performance.get("verbatim_traceability", {})
@@ -1080,7 +1145,9 @@ class MetpoAssessor:
                 verification_rate = (verified_entities / len(entities)) * 100
 
                 if verification_rate < 20:
-                    result["issues"].append(f"Low span verification: {verification_rate:.1f}% (potential preprocessing issues)")
+                    result["issues"].append(
+                        f"Low span verification: {verification_rate:.1f}% (potential preprocessing issues)"
+                    )
                 elif verification_rate > 70:
                     result["strengths"].append(f"Excellent span accuracy: {verification_rate:.1f}%")
 
@@ -1090,10 +1157,12 @@ class MetpoAssessor:
         if violations:
             violation_count = len(violations)
             docs_analyzed = consistency.get("documents_analyzed", 1)
-            violation_rate = (violation_count / docs_analyzed)
+            violation_rate = violation_count / docs_analyzed
 
             if violation_rate > 1:
-                result["issues"].append(f"Strain-taxon inconsistencies: {violation_count} violations across {docs_analyzed} documents")
+                result["issues"].append(
+                    f"Strain-taxon inconsistencies: {violation_count} violations across {docs_analyzed} documents"
+                )
 
             # Categorize violation types
             violation_types = {}
@@ -1105,8 +1174,11 @@ class MetpoAssessor:
                 if count > 2:
                     result["issues"].append(f"Repeated {vtype}: {count} cases")
         else:
-            docs_with_strains = sum(1 for check in consistency.get("consistency_checks", [])
-                                  if check.get("compound_expression_strains") or check.get("relationship_strains"))
+            docs_with_strains = sum(
+                1
+                for check in consistency.get("consistency_checks", [])
+                if check.get("compound_expression_strains") or check.get("relationship_strains")
+            )
             if docs_with_strains > 0:
                 result["strengths"].append("Perfect strain-taxon consistency across all documents")
 
@@ -1132,11 +1204,13 @@ class MetpoAssessor:
 
             # Collect entity types and annotators
             for entity in patterns.get("entity_types", []):
-                all_patterns["entities"].append({
-                    "template": template_name,
-                    "name": entity["name"],
-                    "annotators": entity["annotators"]
-                })
+                all_patterns["entities"].append(
+                    {
+                        "template": template_name,
+                        "name": entity["name"],
+                        "annotators": entity["annotators"],
+                    }
+                )
 
         # Find best practices to propagate
         best_practices = []
@@ -1153,15 +1227,18 @@ class MetpoAssessor:
             "recommendations": [
                 "Standardize annotator patterns across similar entity types",
                 "Propagate successful CompoundExpression patterns",
-                "Harmonize field description patterns"
-            ]
+                "Harmonize field description patterns",
+            ],
         }
 
+
 # ===== CLI INTERFACE =====
+
 
 @click.group()
 def cli():
     """METPO Literature Mining Assessment Tool"""
+
 
 @cli.command()
 @click.argument("templates_dir", type=click.Path(exists=True, path_type=Path))
@@ -1196,6 +1273,7 @@ def analyze_templates(templates_dir, output, pattern):
     else:
         click.echo("\\n" + report)
 
+
 @cli.command()
 @click.argument("extractions_dir", type=click.Path(exists=True, path_type=Path))
 @click.option("--output", "-o", type=click.Path(path_type=Path), help="Output file")
@@ -1226,14 +1304,13 @@ def analyze_extractions(extractions_dir, output, pattern):
     else:
         click.echo("\\n" + report)
 
+
 def generate_template_report(results: list[dict], cross_analysis: dict) -> str:
     """Generate template analysis report in YAML format."""
     report = {
         "generated": datetime.now(UTC).strftime("%Y-%m-%d %H:%M"),
-        "summary": {
-            "templates_analyzed": len(results)
-        },
-        "templates": {}
+        "summary": {"templates_analyzed": len(results)},
+        "templates": {},
     }
 
     # Individual template results
@@ -1243,16 +1320,19 @@ def generate_template_report(results: list[dict], cross_analysis: dict) -> str:
 
         report["templates"][name] = {
             "compliance_metrics": {
-                "compound_expression_compliance": round(compliance["compound_expressions"]["compliance_rate"], 1),
+                "compound_expression_compliance": round(
+                    compliance["compound_expressions"]["compliance_rate"], 1
+                ),
                 "semicolon_requests": round(compliance["semicolon_requests"]["rate"], 1),
                 "multivalued_fields": round(compliance["multivalued_fields"]["rate"], 1),
-                "well_annotated_entities": round(compliance["annotator_quality"]["rate"], 1)
+                "well_annotated_entities": round(compliance["annotator_quality"]["rate"], 1),
             },
             "issues": result["issues"],
-            "recommendations": result["recommendations"]
+            "recommendations": result["recommendations"],
         }
 
     return yaml.dump(report, default_flow_style=False, sort_keys=False)
+
 
 def generate_extraction_report(results: list[dict]) -> str:
     """Generate extraction performance report in YAML format."""
@@ -1265,11 +1345,11 @@ def generate_extraction_report(results: list[dict]) -> str:
         "summary": {
             "extractions_analyzed": total,
             "successful_extractions": successful,
-            "success_rate": round(successful/max(total,1)*100, 1),
+            "success_rate": round(successful / max(total, 1) * 100, 1),
             "total_compound_expressions": total_ces,
-            "average_ces_per_extraction": round(total_ces/max(total,1), 1)
+            "average_ces_per_extraction": round(total_ces / max(total, 1), 1),
         },
-        "templates": {}
+        "templates": {},
     }
 
     # Group by template
@@ -1279,19 +1359,34 @@ def generate_extraction_report(results: list[dict]) -> str:
         by_template[template_name].append(result)
 
     for template_name, template_results in by_template.items():
-        successful_count = sum(1 for r in template_results if r["success_metrics"]["primary_success"])
+        successful_count = sum(
+            1 for r in template_results if r["success_metrics"]["primary_success"]
+        )
         total_count = len(template_results)
         ces = sum(r["success_metrics"]["compound_expressions"] for r in template_results)
         abstracts_processed = sum(r.get("abstracts_processed", 1) for r in template_results)
 
         # Aggregate grounding metrics
-        avg_grounding = sum(r["performance"]["grounding"]["rate"] for r in template_results) / len(template_results)
-        avg_auto_vs_grounded = sum(r["performance"]["grounding"]["auto_vs_grounded_ratio"] for r in template_results) / len(template_results)
+        avg_grounding = sum(r["performance"]["grounding"]["rate"] for r in template_results) / len(
+            template_results
+        )
+        avg_auto_vs_grounded = sum(
+            r["performance"]["grounding"]["auto_vs_grounded_ratio"] for r in template_results
+        ) / len(template_results)
 
         # Aggregate CompoundExpression metrics
-        avg_subject_grounding = sum(r["performance"]["compound_expression_grounding"]["subject_grounding_rate"] for r in template_results) / len(template_results)
-        avg_predicate_grounding = sum(r["performance"]["compound_expression_grounding"]["predicate_grounding_rate"] for r in template_results) / len(template_results)
-        avg_metpo_usage = sum(r["performance"]["compound_expression_grounding"]["metpo_predicate_usage"] for r in template_results) / len(template_results)
+        avg_subject_grounding = sum(
+            r["performance"]["compound_expression_grounding"]["subject_grounding_rate"]
+            for r in template_results
+        ) / len(template_results)
+        avg_predicate_grounding = sum(
+            r["performance"]["compound_expression_grounding"]["predicate_grounding_rate"]
+            for r in template_results
+        ) / len(template_results)
+        avg_metpo_usage = sum(
+            r["performance"]["compound_expression_grounding"]["metpo_predicate_usage"]
+            for r in template_results
+        ) / len(template_results)
 
         # Aggregate ontology usage
         all_ontologies = {}
@@ -1314,7 +1409,7 @@ def generate_extraction_report(results: list[dict]) -> str:
                 advanced_metrics["span_distances"] = {
                     "total_compound_expressions": span_data.get("total_compound_expressions", 0),
                     "expressions_with_spans": span_data.get("expressions_with_spans", 0),
-                    "distance_distribution": span_data.get("distance_distribution", {})
+                    "distance_distribution": span_data.get("distance_distribution", {}),
                 }
 
             # Verbatim traceability (from latest result) with enhanced diagnostics
@@ -1328,7 +1423,9 @@ def generate_extraction_report(results: list[dict]) -> str:
                     "exact_match_rate": span_summary.get("exact_match_rate", 0),
                     "prefix_match_rate": span_summary.get("prefix_match_rate", 0),
                     "off_by_one_rate": span_summary.get("off_by_one_rate", 0),
-                    "span_diagnostic": span_summary.get("span_diagnostic", "No diagnostic available")
+                    "span_diagnostic": span_summary.get(
+                        "span_diagnostic", "No diagnostic available"
+                    ),
                 }
 
             # Strain-taxon consistency (from latest result)
@@ -1338,29 +1435,33 @@ def generate_extraction_report(results: list[dict]) -> str:
                 advanced_metrics["strain_taxon_consistency"] = {
                     "documents_analyzed": consistency_data.get("documents_analyzed", 0),
                     "total_violations": len(violations),
-                    "violation_types": {}
+                    "violation_types": {},
                 }
                 # Count violation types
                 for violation in violations:
                     vtype = violation.get("type", "unknown")
-                    advanced_metrics["strain_taxon_consistency"]["violation_types"][vtype] = \
-                        advanced_metrics["strain_taxon_consistency"]["violation_types"].get(vtype, 0) + 1
+                    advanced_metrics["strain_taxon_consistency"]["violation_types"][vtype] = (
+                        advanced_metrics["strain_taxon_consistency"]["violation_types"].get(
+                            vtype, 0
+                        )
+                        + 1
+                    )
 
         template_report = {
             "abstracts_processed": abstracts_processed,
             "success_rate": f"{successful_count}/{total_count}",
-            "success_percentage": round(successful_count/total_count*100, 1),
+            "success_percentage": round(successful_count / total_count * 100, 1),
             "compound_expressions": ces,
-            "average_ces": round(ces/total_count, 1),
+            "average_ces": round(ces / total_count, 1),
             "grounding_metrics": {
                 "overall_grounding_rate": round(avg_grounding, 1),
                 "auto_vs_grounded_ratio": round(avg_auto_vs_grounded, 2),
                 "subject_grounding_rate": round(avg_subject_grounding, 1),
                 "predicate_grounding_rate": round(avg_predicate_grounding, 1),
-                "metpo_predicate_usage": round(avg_metpo_usage, 1)
+                "metpo_predicate_usage": round(avg_metpo_usage, 1),
             },
             "ontology_usage": all_ontologies,
-            "problematic_duplicates": {k: v for k, v in all_duplicates.items() if v > 2}
+            "problematic_duplicates": {k: v for k, v in all_duplicates.items() if v > 2},
         }
 
         # Add advanced metrics if available
@@ -1370,6 +1471,7 @@ def generate_extraction_report(results: list[dict]) -> str:
         report["templates"][template_name] = template_report
 
     return yaml.dump(report, default_flow_style=False, sort_keys=False)
+
 
 if __name__ == "__main__":
     cli()

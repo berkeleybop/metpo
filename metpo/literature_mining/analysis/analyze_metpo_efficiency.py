@@ -73,8 +73,9 @@ def analyze_file(yaml_file):
         "input_kb": input_kb,
         "metpo_count": metpo_count,
         "metpo_per_kb": metpo_per_kb,
-        "other_formats": other_ontology_formats
+        "other_formats": other_ontology_formats,
     }
+
 
 @click.command()
 def main():
@@ -123,7 +124,9 @@ def main():
     click.echo("-" * 100)
 
     for i, result in enumerate(all_results, 1):
-        click.echo(f"{i:<6}{result['file']:<60}{result['metpo_count']:<10}{result['input_kb']:<12.1f}{result['metpo_per_kb']:<10.3f}")
+        click.echo(
+            f"{i:<6}{result['file']:<60}{result['metpo_count']:<10}{result['input_kb']:<12.1f}{result['metpo_per_kb']:<10.3f}"
+        )
 
     click.echo()
 
@@ -138,7 +141,9 @@ def main():
     click.echo("-" * 100)
 
     for i, result in enumerate(all_results, 1):
-        click.echo(f"{i:<6}{result['file']:<60}{result['metpo_per_kb']:<12.3f}{result['metpo_count']:<10}{result['input_kb']:<10.1f}")
+        click.echo(
+            f"{i:<6}{result['file']:<60}{result['metpo_per_kb']:<12.3f}{result['metpo_count']:<10}{result['input_kb']:<10.1f}"
+        )
 
     click.echo()
     click.echo("=" * 100)
@@ -153,7 +158,7 @@ def main():
 
         click.echo(f"Files with METPO grounding: {len(all_results)}")
         click.echo(f"Total METPO groundings: {total_metpo}")
-        click.echo(f"Total input size: {total_kb:.1f} KB ({total_kb/1024:.2f} MB)")
+        click.echo(f"Total input size: {total_kb:.1f} KB ({total_kb / 1024:.2f} MB)")
         click.echo(f"Average efficiency: {avg_efficiency:.3f} METPO groundings per KB")
         click.echo()
 
@@ -163,21 +168,28 @@ def main():
         best_efficiency = all_results[0] if all_results else None
 
         if best_count:
-            click.echo(f"Most METPO groundings: {best_count['file']} ({best_count['metpo_count']} groundings)")
+            click.echo(
+                f"Most METPO groundings: {best_count['file']} ({best_count['metpo_count']} groundings)"
+            )
         if best_efficiency:
-            click.echo(f"Best efficiency: {best_efficiency['file']} ({best_efficiency['metpo_per_kb']:.3f} per KB)")
+            click.echo(
+                f"Best efficiency: {best_efficiency['file']} ({best_efficiency['metpo_per_kb']:.3f} per KB)"
+            )
 
     # Save results
     output_file = Path("literature_mining/METPO_GROUNDING_EFFICIENCY.tsv")
-    with Path(output_file).open( "w") as f:
+    with Path(output_file).open("w") as f:
         f.write("File\tMETPO_Count\tInput_Bytes\tInput_KB\tMETPO_per_KB\n")
         # Re-sort by count for output
         all_results.sort(key=lambda x: x["metpo_count"], reverse=True)
         for result in all_results:
-            f.write(f"{result['file']}\t{result['metpo_count']}\t{result['input_bytes']}\t{result['input_kb']:.2f}\t{result['metpo_per_kb']:.4f}\n")
+            f.write(
+                f"{result['file']}\t{result['metpo_count']}\t{result['input_bytes']}\t{result['input_kb']:.2f}\t{result['metpo_per_kb']:.4f}\n"
+            )
 
     click.echo()
     click.echo(f"Detailed results saved to: {output_file}")
+
 
 if __name__ == "__main__":
     main()

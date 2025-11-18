@@ -15,13 +15,7 @@ def count_groundings(yaml_file):
     with Path(yaml_file).open() as f:
         data = yaml.safe_load(f)
 
-    counts = {
-        "metpo": 0,
-        "chebi": 0,
-        "ncbitaxon": 0,
-        "auto": 0,
-        "total": 0
-    }
+    counts = {"metpo": 0, "chebi": 0, "ncbitaxon": 0, "auto": 0, "total": 0}
 
     # Helper to check object field
     def check_object(obj):
@@ -71,6 +65,7 @@ def count_groundings(yaml_file):
 
     return counts
 
+
 def main():
     outputs_dir = Path("outputs")
 
@@ -108,7 +103,9 @@ def main():
         phenotype_total = totals["metpo"] + totals["auto"]
         if phenotype_total > 0:
             metpo_rate = 100 * totals["metpo"] / phenotype_total
-            print(f"METPO phenotype success rate: {metpo_rate:.1f}% ({totals['metpo']}/{phenotype_total})")
+            print(
+                f"METPO phenotype success rate: {metpo_rate:.1f}% ({totals['metpo']}/{phenotype_total})"
+            )
 
         chem_total = totals["chebi"]
         if chem_total > 0:
@@ -125,11 +122,14 @@ def main():
     for filename in sorted(per_file.keys()):
         counts = per_file[filename]
         if counts["total"] > 0:
-            print(f"{filename:30s} METPO:{counts['metpo']:3d}  ChEBI:{counts['chebi']:3d}  "
-                  f"NCBITaxon:{counts['ncbitaxon']:3d}  AUTO:{counts['auto']:3d}")
+            print(
+                f"{filename:30s} METPO:{counts['metpo']:3d}  ChEBI:{counts['chebi']:3d}  "
+                f"NCBITaxon:{counts['ncbitaxon']:3d}  AUTO:{counts['auto']:3d}"
+            )
 
     # Return data for plotting
     return totals, per_file
+
 
 if __name__ == "__main__":
     totals, per_file = main()

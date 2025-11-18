@@ -4,6 +4,7 @@ Filter 'none' placeholder values from OntoGPT extraction output.
 Removes AUTO:none and incorrectly grounded 'none' entities (like NCBITaxon:32644)
 while preserving legitimate AUTO: CURIEs for real ungrounded entities.
 """
+
 import sys
 from pathlib import Path
 
@@ -109,7 +110,7 @@ def main():
     filtered_docs = [process_document(doc) for doc in docs]
 
     # Write filtered documents
-    with Path(output_file).open( "w") as f:
+    with Path(output_file).open("w") as f:
         yaml.dump_all(filtered_docs, f, default_flow_style=False, sort_keys=False)
 
     print(f"Filtered {len(filtered_docs)} documents: {input_file} → {output_file}")

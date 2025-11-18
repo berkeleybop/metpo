@@ -19,7 +19,7 @@ def count_entities_and_grounding(yaml_file):
             "auto_entities": 0,
             "none_entities": 0,
             "total_relations": 0,
-            "namespace_counts": defaultdict(int)
+            "namespace_counts": defaultdict(int),
         }
 
         for doc in data:
@@ -66,9 +66,14 @@ def count_entities_and_grounding(yaml_file):
 
         return stats
 
+
 @click.command()
-@click.argument("yaml_dir", type=click.Path(exists=True, file_okay=False, path_type=Path),
-                default=None, required=False)
+@click.argument(
+    "yaml_dir",
+    type=click.Path(exists=True, file_okay=False, path_type=Path),
+    default=None,
+    required=False,
+)
 def main(yaml_dir):
     """Analyze OntoGPT extraction results by template.
 
@@ -97,9 +102,15 @@ def main(yaml_dir):
         click.echo(f"  AUTO entities: {stats['auto_entities']}")
         click.echo(f"  'none' entities: {stats['none_entities']}")
         click.echo(f"  Total relations: {stats['total_relations']}")
-        click.echo(f"  Avg entities per abstract: {stats['total_entities']/max(stats['total_extractions'], 1):.1f}")
-        click.echo(f"  Avg relations per abstract: {stats['total_relations']/max(stats['total_extractions'], 1):.1f}")
-        click.echo(f"  Grounding rate: {100*stats['grounded_entities']/max(stats['total_entities'], 1):.1f}%")
+        click.echo(
+            f"  Avg entities per abstract: {stats['total_entities'] / max(stats['total_extractions'], 1):.1f}"
+        )
+        click.echo(
+            f"  Avg relations per abstract: {stats['total_relations'] / max(stats['total_extractions'], 1):.1f}"
+        )
+        click.echo(
+            f"  Grounding rate: {100 * stats['grounded_entities'] / max(stats['total_entities'], 1):.1f}%"
+        )
         click.echo(f"  Namespaces used: {dict(stats['namespace_counts'])}")
         click.echo()
 
@@ -108,13 +119,18 @@ def main(yaml_dir):
     click.echo("=" * 80)
     click.echo()
 
-    ranked = sorted(results.items(),
-                   key=lambda x: x[1]["total_entities"] + x[1]["total_relations"],
-                   reverse=True)
+    ranked = sorted(
+        results.items(),
+        key=lambda x: x[1]["total_entities"] + x[1]["total_relations"],
+        reverse=True,
+    )
 
     for template_name, stats in ranked:
         total_extracted = stats["total_entities"] + stats["total_relations"]
-        click.echo(f"{template_name:30} | Entities: {stats['total_entities']:4} | Relations: {stats['total_relations']:4} | Total: {total_extracted:4} | Grounded: {stats['grounded_entities']:4} ({100*stats['grounded_entities']/max(stats['total_entities'], 1):5.1f}%)")
+        click.echo(
+            f"{template_name:30} | Entities: {stats['total_entities']:4} | Relations: {stats['total_relations']:4} | Total: {total_extracted:4} | Grounded: {stats['grounded_entities']:4} ({100 * stats['grounded_entities'] / max(stats['total_entities'], 1):5.1f}%)"
+        )
+
 
 if __name__ == "__main__":
     main()

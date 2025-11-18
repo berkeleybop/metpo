@@ -36,12 +36,14 @@ class ExtractionValidator:
         issues = []
 
         if not doc or "extracted_object" not in doc:
-            issues.append({
-                "document": doc_num,
-                "severity": "ERROR",
-                "issue": "Missing extracted_object",
-                "details": "Document has no extracted_object field"
-            })
+            issues.append(
+                {
+                    "document": doc_num,
+                    "severity": "ERROR",
+                    "issue": "Missing extracted_object",
+                    "details": "Document has no extracted_object field",
+                }
+            )
             return issues
 
         extracted = doc["extracted_object"]
@@ -76,35 +78,44 @@ class ExtractionValidator:
             chem_rels = [chem_rels] if chem_rels else []
 
         # Count valid relationships (have subject, predicate, object)
-        valid_rels = [r for r in chem_rels if isinstance(r, dict)
-                      and all(k in r for k in ["subject", "predicate", "object"])]
+        valid_rels = [
+            r
+            for r in chem_rels
+            if isinstance(r, dict) and all(k in r for k in ["subject", "predicate", "object"])
+        ]
 
         # For full papers (>10K chars), expect many relationships
         if input_len > 10000:
             if len(valid_rels) < 5:
-                issues.append({
-                    "document": doc_num,
-                    "severity": "ERROR",
-                    "issue": "LOW EXTRACTION YIELD - Critical for KG",
-                    "details": f"Only {len(valid_rels)} valid chemical relationships from {input_len:,} char full paper. Expected ≥5 for useful knowledge graph."
-                })
+                issues.append(
+                    {
+                        "document": doc_num,
+                        "severity": "ERROR",
+                        "issue": "LOW EXTRACTION YIELD - Critical for KG",
+                        "details": f"Only {len(valid_rels)} valid chemical relationships from {input_len:,} char full paper. Expected ≥5 for useful knowledge graph.",
+                    }
+                )
         elif input_len > 5000:  # Medium papers
             if len(valid_rels) < 2:
-                issues.append({
-                    "document": doc_num,
-                    "severity": "WARNING",
-                    "issue": "Low extraction yield",
-                    "details": f"Only {len(valid_rels)} relationships from {input_len:,} chars. Expected ≥2."
-                })
+                issues.append(
+                    {
+                        "document": doc_num,
+                        "severity": "WARNING",
+                        "issue": "Low extraction yield",
+                        "details": f"Only {len(valid_rels)} relationships from {input_len:,} chars. Expected ≥2.",
+                    }
+                )
 
         # If chemicals mentioned but no relationships - MAJOR ISSUE
         if chemicals and not valid_rels:
-            issues.append({
-                "document": doc_num,
-                "severity": "ERROR",
-                "issue": "No relationships despite chemicals present",
-                "details": f"{len(chemicals) if isinstance(chemicals, list) else 1} chemicals found, but 0 valid relationships. Cannot build knowledge graph!"
-            })
+            issues.append(
+                {
+                    "document": doc_num,
+                    "severity": "ERROR",
+                    "issue": "No relationships despite chemicals present",
+                    "details": f"{len(chemicals) if isinstance(chemicals, list) else 1} chemicals found, but 0 valid relationships. Cannot build knowledge graph!",
+                }
+            )
 
         return issues
 
@@ -118,12 +129,14 @@ class ExtractionValidator:
 
         named_entities = doc.get("named_entities", [])
         if not named_entities:
-            issues.append({
-                "document": doc_num,
-                "severity": "WARNING",
-                "issue": "No named entities",
-                "details": "No entities grounded. May affect KG quality."
-            })
+            issues.append(
+                {
+                    "document": doc_num,
+                    "severity": "WARNING",
+                    "issue": "No named entities",
+                    "details": "No entities grounded. May affect KG quality.",
+                }
+            )
             return issues
 
         auto_count = sum(1 for e in named_entities if "AUTO:" in str(e.get("id", "")))
@@ -140,27 +153,33 @@ class ExtractionValidator:
 
             # Flag if >50% are AUTO (poor grounding - major issue for KG)
             if auto_ratio > 0.5:
-                issues.append({
-                    "document": doc_num,
-                    "severity": "ERROR",
-                    "issue": "POOR GROUNDING - Critical for KG",
-                    "details": f"{auto_count}/{total_count} ({auto_ratio*100:.0f}%) entities are AUTO. Need CHEBI/NCBITaxon for quality knowledge graph. Only {chebi_count} CHEBI, {ncbi_count} NCBITaxon."
-                })
+                issues.append(
+                    {
+                        "document": doc_num,
+                        "severity": "ERROR",
+                        "issue": "POOR GROUNDING - Critical for KG",
+                        "details": f"{auto_count}/{total_count} ({auto_ratio * 100:.0f}%) entities are AUTO. Need CHEBI/NCBITaxon for quality knowledge graph. Only {chebi_count} CHEBI, {ncbi_count} NCBITaxon.",
+                    }
+                )
             elif auto_ratio > 0.3:
-                issues.append({
-                    "document": doc_num,
-                    "severity": "WARNING",
-                    "issue": "Moderate AUTO usage",
-                    "details": f"{auto_count}/{total_count} ({auto_ratio*100:.0f}%) entities are AUTO. {grounded_count} grounded ({grounded_ratio*100:.0f}%): {chebi_count} CHEBI, {ncbi_count} NCBITaxon."
-                })
+                issues.append(
+                    {
+                        "document": doc_num,
+                        "severity": "WARNING",
+                        "issue": "Moderate AUTO usage",
+                        "details": f"{auto_count}/{total_count} ({auto_ratio * 100:.0f}%) entities are AUTO. {grounded_count} grounded ({grounded_ratio * 100:.0f}%): {chebi_count} CHEBI, {ncbi_count} NCBITaxon.",
+                    }
+                )
             else:
                 # Good grounding - report it!
-                issues.append({
-                    "document": doc_num,
-                    "severity": "INFO",
-                    "issue": "✅ Good grounding quality",
-                    "details": f"{grounded_count}/{total_count} ({grounded_ratio*100:.0f}%) entities grounded: {chebi_count} CHEBI, {ncbi_count} NCBITaxon. Only {auto_count} AUTO."
-                })
+                issues.append(
+                    {
+                        "document": doc_num,
+                        "severity": "INFO",
+                        "issue": "✅ Good grounding quality",
+                        "details": f"{grounded_count}/{total_count} ({grounded_ratio * 100:.0f}%) entities grounded: {chebi_count} CHEBI, {ncbi_count} NCBITaxon. Only {auto_count} AUTO.",
+                    }
+                )
 
         return issues
 
@@ -170,12 +189,14 @@ class ExtractionValidator:
 
         # Check for study taxa
         if not extracted.get("study_taxa"):
-            issues.append({
-                "document": doc_num,
-                "severity": "WARNING",
-                "issue": "Missing study_taxa",
-                "details": "No organism taxa extracted"
-            })
+            issues.append(
+                {
+                    "document": doc_num,
+                    "severity": "WARNING",
+                    "issue": "Missing study_taxa",
+                    "details": "No organism taxa extracted",
+                }
+            )
 
         return issues
 
@@ -214,12 +235,14 @@ class ExtractionValidator:
 
         unrecognized = (chem_subjects | strain_subjects) - strain_ids
         if unrecognized:
-            issues.append({
-                "document": doc_num,
-                "severity": "INFO",
-                "issue": "Inconsistent strain identifiers",
-                "details": f'Strains used in relationships but not in strains list: {", ".join(unrecognized)}'
-            })
+            issues.append(
+                {
+                    "document": doc_num,
+                    "severity": "INFO",
+                    "issue": "Inconsistent strain identifiers",
+                    "details": f"Strains used in relationships but not in strains list: {', '.join(unrecognized)}",
+                }
+            )
 
         return issues
 

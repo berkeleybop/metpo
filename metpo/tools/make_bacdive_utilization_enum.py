@@ -8,20 +8,39 @@ import yaml
 # Click CLI
 @click.command()
 @click.argument("tsv_file", type=click.Path(exists=True, dir_okay=False, path_type=Path))
-@click.option("-o", "--output", "output_file", type=click.Path(dir_okay=False, path_type=Path),
-              help="Output YAML file path. If not specified, will use input filename with .yaml extension")
-@click.option("--enum-name", default="OrganismChemicalRelationship",
-              help="Name for the LinkML enumeration (default: OrganismChemicalRelationship)")
-@click.option("--id-prefix", default="https://example.org/metpo-relationships",
-              help="Base ID/URI for the LinkML schema (default: https://example.org/metpo-relationships)")
-@click.option("--default-prefix", default="metpo",
-              help="Default prefix for the schema (default: metpo)")
-@click.option("--stats/--no-stats", default=True,
-              help="Print summary statistics (default: True)")
-@click.option("--preview/--no-preview", default=True,
-              help="Show preview of generated YAML (default: True)")
-def convert_tsv_to_linkml(tsv_file: Path, output_file: Path, enum_name: str,
-                          id_prefix: str, default_prefix: str, stats: bool, preview: bool):
+@click.option(
+    "-o",
+    "--output",
+    "output_file",
+    type=click.Path(dir_okay=False, path_type=Path),
+    help="Output YAML file path. If not specified, will use input filename with .yaml extension",
+)
+@click.option(
+    "--enum-name",
+    default="OrganismChemicalRelationship",
+    help="Name for the LinkML enumeration (default: OrganismChemicalRelationship)",
+)
+@click.option(
+    "--id-prefix",
+    default="https://example.org/metpo-relationships",
+    help="Base ID/URI for the LinkML schema (default: https://example.org/metpo-relationships)",
+)
+@click.option(
+    "--default-prefix", default="metpo", help="Default prefix for the schema (default: metpo)"
+)
+@click.option("--stats/--no-stats", default=True, help="Print summary statistics (default: True)")
+@click.option(
+    "--preview/--no-preview", default=True, help="Show preview of generated YAML (default: True)"
+)
+def convert_tsv_to_linkml(
+    tsv_file: Path,
+    output_file: Path,
+    enum_name: str,
+    id_prefix: str,
+    default_prefix: str,
+    stats: bool,
+    preview: bool,
+):
     """
     Convert a robot template TSV with two header rows into a LinkML enumeration.
 
@@ -46,7 +65,7 @@ def convert_tsv_to_linkml(tsv_file: Path, output_file: Path, enum_name: str,
             str(output_file),
             enum_name=enum_name,
             id_prefix=id_prefix,
-            default_prefix=default_prefix
+            default_prefix=default_prefix,
         )
 
         click.echo(f"✅ LinkML enumeration written to {output_file}")
@@ -64,10 +83,13 @@ def convert_tsv_to_linkml(tsv_file: Path, output_file: Path, enum_name: str,
         raise click.Abort from e
 
 
-def convert_tsv_to_linkml_enum(tsv_file: str, output_file: str | None = None,
-                               enum_name: str = "OrganismChemicalRelationship",
-                               id_prefix: str = "https://example.org/metpo-relationships",
-                               default_prefix: str = "metpo") -> str:
+def convert_tsv_to_linkml_enum(
+    tsv_file: str,
+    output_file: str | None = None,
+    enum_name: str = "OrganismChemicalRelationship",
+    id_prefix: str = "https://example.org/metpo-relationships",
+    default_prefix: str = "metpo",
+) -> str:
     """
     Convert a robot template TSV with two header rows into a LinkML enumeration.
 
@@ -91,17 +113,14 @@ def convert_tsv_to_linkml_enum(tsv_file: str, output_file: str | None = None,
         "name": id_prefix.split("/")[-1] if "/" in id_prefix else id_prefix,
         "title": f"{enum_name} Enumeration",
         "description": "Enumeration of relationships between organisms and chemicals derived from BacDive metabolic utilization data",
-        "prefixes": {
-            "linkml": "https://w3id.org/linkml/",
-            default_prefix: "http://example.com/"
-        },
+        "prefixes": {"linkml": "https://w3id.org/linkml/", default_prefix: "http://example.com/"},
         "default_prefix": default_prefix,
         "enums": {
             enum_name: {
                 "description": "Types of relationships between organisms and chemicals",
-                "permissible_values": {}
+                "permissible_values": {},
             }
-        }
+        },
     }
 
     # Process each relationship
@@ -141,14 +160,16 @@ def convert_tsv_to_linkml_enum(tsv_file: str, output_file: str | None = None,
         linkml_enum["enums"][enum_name]["permissible_values"][key] = pv_entry
 
     # Convert to YAML
-    yaml_output = yaml.dump(linkml_enum, default_flow_style=False, sort_keys=False, allow_unicode=True)
+    yaml_output = yaml.dump(
+        linkml_enum, default_flow_style=False, sort_keys=False, allow_unicode=True
+    )
 
     # Clean up the YAML formatting
     yaml_output = yaml_output.replace("'", "")  # Remove unnecessary quotes
 
     # Write to file if specified
     if output_file:
-        with Path(output_file).open( "w") as f:
+        with Path(output_file).open("w") as f:
             f.write(yaml_output)
 
     return yaml_output

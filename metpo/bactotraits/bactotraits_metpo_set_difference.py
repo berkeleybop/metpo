@@ -16,14 +16,17 @@ import click
 import yaml
 
 # File paths
-BACTOTRAITS_SOURCE_URI = "https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"
+BACTOTRAITS_SOURCE_URI = (
+    "https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"
+)
+
 
 def read_kg_microbe_headers(kg_microbe_file: Path) -> set[str]:
     """Read field names from kg-microbe BactoTraits.tsv header."""
     if not kg_microbe_file.exists():
         raise FileNotFoundError(f"kg-microbe file not found: {kg_microbe_file}")
 
-    with Path(kg_microbe_file).open( encoding="utf-8") as f:
+    with Path(kg_microbe_file).open(encoding="utf-8") as f:
         header = f.readline().strip().split("\t")
 
     return set(header)
@@ -49,7 +52,7 @@ def read_metpo_bactotraits_synonyms(synonym_sources_tsv: Path) -> dict[str, dict
                     synonyms[syn_value] = {
                         "entity": entity,
                         "entity_type": entity_type,
-                        "source": src
+                        "source": src,
                     }
 
     return synonyms
@@ -78,20 +81,16 @@ def find_close_matches(missing: set[str], present: set[str]) -> dict[str, list[s
             if norm_missing == norm_present:
                 diff = describe_difference(missing_item, present_item)
                 if diff and diff != "unknown variation":
-                    candidates.append({
-                        "match": present_item,
-                        "type": "normalized_exact",
-                        "difference": diff
-                    })
+                    candidates.append(
+                        {"match": present_item, "type": "normalized_exact", "difference": diff}
+                    )
             # Very close match (edit distance or substring)
             elif norm_missing in norm_present or norm_present in norm_missing:
                 diff = describe_difference(missing_item, present_item)
                 if diff and diff != "unknown variation":
-                    candidates.append({
-                        "match": present_item,
-                        "type": "substring",
-                        "difference": diff
-                    })
+                    candidates.append(
+                        {"match": present_item, "type": "substring", "difference": diff}
+                    )
 
         if candidates:
             matches[missing_item] = candidates
@@ -142,7 +141,9 @@ def describe_difference(str1: str, str2: str) -> str:
     return ", ".join(differences) if differences else "unknown variation"
 
 
-def categorize_by_issue(items_with_matches: dict[str, list[dict]]) -> dict[str, list[tuple[str, str]]]:
+def categorize_by_issue(
+    items_with_matches: dict[str, list[dict]],
+) -> dict[str, list[tuple[str, str]]]:
     """Categorize items by the type of issue (case, whitespace, operators, etc.)."""
     categories = {
         "case_only": [],
@@ -187,24 +188,22 @@ def categorize_by_issue(items_with_matches: dict[str, list[dict]]) -> dict[str, 
     "output_format",
     type=click.Choice(["text", "yaml"], case_sensitive=False),
     default="text",
-    help="Output format"
+    help="Output format",
 )
 @click.option(
-    "--output",
-    type=click.Path(),
-    help="Output file path. If not specified, prints to stdout."
+    "--output", type=click.Path(), help="Output file path. If not specified, prints to stdout."
 )
 @click.option(
     "--bactotraits-file",
     type=click.Path(exists=True, path_type=Path),
     default=Path("local/BactoTraits.tsv"),
-    help="Path to the BactoTraits.tsv file."
+    help="Path to the BactoTraits.tsv file.",
 )
 @click.option(
     "--synonyms-file",
     type=click.Path(exists=True, path_type=Path),
     default=Path("reports/synonym-sources.tsv"),
-    help="Path to the synonym-sources.tsv file."
+    help="Path to the synonym-sources.tsv file.",
 )
 def main(output_format, output, bactotraits_file, synonyms_file):
     """
@@ -249,30 +248,57 @@ def main(output_format, output, bactotraits_file, synonyms_file):
             },
             "bactotraits_fields_not_in_metpo": {
                 "close_matches_by_issue": {
-                    "case_differences": [{"bt": bt, "metpo": mp} for bt, mp in bt_categories["case_only"]],
-                    "whitespace_differences": [{"bt": bt, "metpo": mp} for bt, mp in bt_categories["whitespace_only"]],
-                    "comparison_operator_differences": [{"bt": bt, "metpo": mp} for bt, mp in bt_categories["comparison_operators"]],
-                    "hyphen_underscore_differences": [{"bt": bt, "metpo": mp} for bt, mp in bt_categories["hyphen_underscore"]],
-                    "period_underscore_differences": [{"bt": bt, "metpo": mp} for bt, mp in bt_categories["period_underscore"]],
-                    "multiple_issues": [{"bt": bt, "metpo": mp} for bt, mp in bt_categories["multiple_issues"]],
+                    "case_differences": [
+                        {"bt": bt, "metpo": mp} for bt, mp in bt_categories["case_only"]
+                    ],
+                    "whitespace_differences": [
+                        {"bt": bt, "metpo": mp} for bt, mp in bt_categories["whitespace_only"]
+                    ],
+                    "comparison_operator_differences": [
+                        {"bt": bt, "metpo": mp} for bt, mp in bt_categories["comparison_operators"]
+                    ],
+                    "hyphen_underscore_differences": [
+                        {"bt": bt, "metpo": mp} for bt, mp in bt_categories["hyphen_underscore"]
+                    ],
+                    "period_underscore_differences": [
+                        {"bt": bt, "metpo": mp} for bt, mp in bt_categories["period_underscore"]
+                    ],
+                    "multiple_issues": [
+                        {"bt": bt, "metpo": mp} for bt, mp in bt_categories["multiple_issues"]
+                    ],
                 },
-                "truly_missing": sorted(bt_truly_missing)
+                "truly_missing": sorted(bt_truly_missing),
             },
             "metpo_synonyms_not_in_bactotraits": {
                 "close_matches_by_issue": {
-                    "case_differences": [{"metpo": mp, "bt": bt} for mp, bt in metpo_categories["case_only"]],
-                    "whitespace_differences": [{"metpo": mp, "bt": bt} for mp, bt in metpo_categories["whitespace_only"]],
-                    "comparison_operator_differences": [{"metpo": mp, "bt": bt} for mp, bt in metpo_categories["comparison_operators"]],
-                    "hyphen_underscore_differences": [{"metpo": mp, "bt": bt} for mp, bt in metpo_categories["hyphen_underscore"]],
-                    "period_underscore_differences": [{"metpo": mp, "bt": bt} for mp, bt in metpo_categories["period_underscore"]],
-                    "multiple_issues": [{"metpo": mp, "bt": bt} for mp, bt in metpo_categories["multiple_issues"]],
+                    "case_differences": [
+                        {"metpo": mp, "bt": bt} for mp, bt in metpo_categories["case_only"]
+                    ],
+                    "whitespace_differences": [
+                        {"metpo": mp, "bt": bt} for mp, bt in metpo_categories["whitespace_only"]
+                    ],
+                    "comparison_operator_differences": [
+                        {"metpo": mp, "bt": bt}
+                        for mp, bt in metpo_categories["comparison_operators"]
+                    ],
+                    "hyphen_underscore_differences": [
+                        {"metpo": mp, "bt": bt} for mp, bt in metpo_categories["hyphen_underscore"]
+                    ],
+                    "period_underscore_differences": [
+                        {"metpo": mp, "bt": bt} for mp, bt in metpo_categories["period_underscore"]
+                    ],
+                    "multiple_issues": [
+                        {"metpo": mp, "bt": bt} for mp, bt in metpo_categories["multiple_issues"]
+                    ],
                 },
-                "truly_orphaned": sorted(metpo_truly_orphaned)
+                "truly_orphaned": sorted(metpo_truly_orphaned),
             },
-            "exact_matches": sorted(in_both)
+            "exact_matches": sorted(in_both),
         }
 
-        output_str = yaml.dump(result, default_flow_style=False, sort_keys=False, allow_unicode=True)
+        output_str = yaml.dump(
+            result, default_flow_style=False, sort_keys=False, allow_unicode=True
+        )
     else:
         # Text format
         lines = []
@@ -286,7 +312,9 @@ def main(output_format, output, bactotraits_file, synonyms_file):
         lines.append("")
 
         lines.append("=" * 80)
-        lines.append(f"PART 1: BactoTraits fields NOT in METPO ({len(in_bactotraits_not_metpo)} total)")
+        lines.append(
+            f"PART 1: BactoTraits fields NOT in METPO ({len(in_bactotraits_not_metpo)} total)"
+        )
         lines.append("=" * 80)
         lines.append("")
 
@@ -305,7 +333,9 @@ def main(output_format, output, bactotraits_file, synonyms_file):
                     lines.append(f"  '{bt}' ≈ '{mp}'")
 
             if bt_categories["comparison_operators"]:
-                lines.append(f"\nComparison operator differences ({len(bt_categories['comparison_operators'])}):")
+                lines.append(
+                    f"\nComparison operator differences ({len(bt_categories['comparison_operators'])}):"
+                )
                 for bt, mp in bt_categories["comparison_operators"]:
                     lines.append(f"  '{bt}' ≈ '{mp}'")
 
@@ -326,14 +356,18 @@ def main(output_format, output, bactotraits_file, synonyms_file):
 
         if bt_truly_missing:
             lines.append("")
-            lines.append(f"Truly Missing ({len(bt_truly_missing)} fields - no close matches in METPO):")
+            lines.append(
+                f"Truly Missing ({len(bt_truly_missing)} fields - no close matches in METPO):"
+            )
             lines.append("-" * 80)
             for field in sorted(bt_truly_missing):
                 lines.append(f"  ✗ '{field}'")
 
         lines.append("")
         lines.append("=" * 80)
-        lines.append(f"PART 2: METPO synonyms NOT in BactoTraits ({len(in_metpo_not_bactotraits)} total)")
+        lines.append(
+            f"PART 2: METPO synonyms NOT in BactoTraits ({len(in_metpo_not_bactotraits)} total)"
+        )
         lines.append("=" * 80)
         lines.append("")
 
@@ -347,22 +381,30 @@ def main(output_format, output, bactotraits_file, synonyms_file):
                     lines.append(f"  '{mp}' ≈ '{bt}'")
 
             if metpo_categories["whitespace_only"]:
-                lines.append(f"\nWhitespace differences ({len(metpo_categories['whitespace_only'])}):")
+                lines.append(
+                    f"\nWhitespace differences ({len(metpo_categories['whitespace_only'])}):"
+                )
                 for mp, bt in metpo_categories["whitespace_only"]:
                     lines.append(f"  '{mp}' ≈ '{bt}'")
 
             if metpo_categories["comparison_operators"]:
-                lines.append(f"\nComparison operator differences ({len(metpo_categories['comparison_operators'])}):")
+                lines.append(
+                    f"\nComparison operator differences ({len(metpo_categories['comparison_operators'])}):"
+                )
                 for mp, bt in metpo_categories["comparison_operators"]:
                     lines.append(f"  '{mp}' ≈ '{bt}' (METPO should use <=, not <)")
 
             if metpo_categories["hyphen_underscore"]:
-                lines.append(f"\nHyphen vs underscore ({len(metpo_categories['hyphen_underscore'])}):")
+                lines.append(
+                    f"\nHyphen vs underscore ({len(metpo_categories['hyphen_underscore'])}):"
+                )
                 for mp, bt in metpo_categories["hyphen_underscore"]:
                     lines.append(f"  '{mp}' ≈ '{bt}'")
 
             if metpo_categories["period_underscore"]:
-                lines.append(f"\nPeriod vs underscore ({len(metpo_categories['period_underscore'])}):")
+                lines.append(
+                    f"\nPeriod vs underscore ({len(metpo_categories['period_underscore'])}):"
+                )
                 for mp, bt in metpo_categories["period_underscore"]:
                     lines.append(f"  '{mp}' ≈ '{bt}'")
 
@@ -373,7 +415,9 @@ def main(output_format, output, bactotraits_file, synonyms_file):
 
         if metpo_truly_orphaned:
             lines.append("")
-            lines.append(f"Truly Orphaned ({len(metpo_truly_orphaned)} synonyms - no close matches in BactoTraits):")
+            lines.append(
+                f"Truly Orphaned ({len(metpo_truly_orphaned)} synonyms - no close matches in BactoTraits):"
+            )
             lines.append("-" * 80)
             for syn in sorted(metpo_truly_orphaned):
                 lines.append(f"  ⚠ '{syn}'")
@@ -384,7 +428,7 @@ def main(output_format, output, bactotraits_file, synonyms_file):
         output_str = "\n".join(lines)
 
     if output:
-        with Path(output).open( "w") as f:
+        with Path(output).open("w") as f:
             f.write(output_str)
         print(f"Report written to {output}")
     else:

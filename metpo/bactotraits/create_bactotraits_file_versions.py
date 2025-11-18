@@ -38,8 +38,8 @@ def create_file_versions():
                 "Official release from Université de Lorraine",
                 "Contains periods in field names",
                 "Some fields have leading spaces",
-                "June 2022 release (v2)"
-            ]
+                "June 2022 release (v2)",
+            ],
         },
         {
             "version_key": "kg_microbe",
@@ -59,8 +59,8 @@ def create_file_versions():
                 "Adds ncbitaxon_id column",
                 "Converts NA to empty strings",
                 "Periods still present in field names",
-                "Leading spaces still present in some fields"
-            ]
+                "Leading spaces still present in some fields",
+            ],
         },
         {
             "version_key": "mongodb",
@@ -80,8 +80,8 @@ def create_file_versions():
                 "Leading spaces still present in some fields",
                 "Hyphens preserved (non-motile)",
                 "Comparison operators preserved (<=, >)",
-                "Ready for querying but field names need sanitization"
-            ]
+                "Ready for querying but field names need sanitization",
+            ],
         },
         {
             "version_key": "sanitized",
@@ -101,9 +101,9 @@ def create_file_versions():
                 "Hyphens converted to underscores",
                 "Consistent snake_case",
                 "URL-safe and JSON-safe",
-                "Not yet implemented - requires migration"
-            ]
-        }
+                "Not yet implemented - requires migration",
+            ],
+        },
     ]
 
     return versions
@@ -152,8 +152,8 @@ def main(host, port, db_name, collection_name):
         "purpose": "Document naming conventions and file versions across BactoTraits pipeline",
         "related_collections": [
             "bactotraits.bactotraits (data)",
-            "bactotraits.field_mappings (field name mappings)"
-        ]
+            "bactotraits.field_mappings (field name mappings)",
+        ],
     }
     collection.insert_one(metadata)
     print("✓ Added metadata document")
@@ -198,10 +198,14 @@ def main(host, port, db_name, collection_name):
     print("=" * 80)
     print()
     print("Query the collection with:")
-    print("  mongosh bactotraits --eval 'db.file_versions.find({version_key: {$ne: \"_metadata\"}}).pretty()'")
+    print(
+        "  mongosh bactotraits --eval 'db.file_versions.find({version_key: {$ne: \"_metadata\"}}).pretty()'"
+    )
     print()
     print("Get euphemism for a specific version:")
-    print("  mongosh bactotraits --eval 'db.file_versions.findOne({version_key: \"provider\"}, {euphemism: 1, filename: 1})'")
+    print(
+        "  mongosh bactotraits --eval 'db.file_versions.findOne({version_key: \"provider\"}, {euphemism: 1, filename: 1})'"
+    )
     print()
 
 

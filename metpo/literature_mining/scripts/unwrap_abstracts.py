@@ -29,7 +29,7 @@ def unwrap_abstract(filepath):
 
             # Extract content if it's a dict with 'content' key
             if isinstance(data, dict) and "content" in data:
-                with Path(filepath).open( "w") as f:
+                with Path(filepath).open("w") as f:
                     f.write(data["content"])
                 print(f"Unwrapped: {filepath}")
                 return True

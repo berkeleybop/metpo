@@ -39,7 +39,12 @@ def count_entities_and_relationships(yaml_file: Path) -> tuple[int, int]:
                     for _key, value in extracted.items():
                         if isinstance(value, list):
                             for item in value:
-                                if isinstance(item, dict) and "subject" in item and "predicate" in item and "object" in item:
+                                if (
+                                    isinstance(item, dict)
+                                    and "subject" in item
+                                    and "predicate" in item
+                                    and "object" in item
+                                ):
                                     relationship_count += 1
 
             return entity_count, relationship_count
@@ -54,7 +59,7 @@ def count_entities_and_relationships(yaml_file: Path) -> tuple[int, int]:
 def main():
     parser = argparse.ArgumentParser(
         description="Count entities and relationships from OntoGPT YAML output",
-        formatter_class=argparse.RawDescriptionHelpFormatter
+        formatter_class=argparse.RawDescriptionHelpFormatter,
     )
     parser.add_argument("yaml_file", type=Path, help="Path to OntoGPT YAML output file")
     parser.add_argument("--json", action="store_true", help="Output as JSON")
@@ -65,6 +70,7 @@ def main():
 
     if args.json:
         import json
+
         print(json.dumps({"entities": entities, "relationships": relationships}))
     else:
         print(f"Entities: {entities}")

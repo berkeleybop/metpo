@@ -17,7 +17,7 @@ def calculate_metrics(
     input_chars: int,
     duration: int,
     entities: int,
-    relationships: int
+    relationships: int,
 ) -> dict:
     """
     Calculate all benchmark metrics.
@@ -44,7 +44,7 @@ def calculate_metrics(
         "time_per_abstract": round(time_per_abstract, 1),
         "time_per_1k_input_chars": round(time_per_1k_input_chars, 1),
         "entities_per_1k_input": round(entities_per_1k_input, 2),
-        "relationships_per_1k_input": round(relationships_per_1k_input, 2)
+        "relationships_per_1k_input": round(relationships_per_1k_input, 2),
     }
 
 
@@ -52,7 +52,9 @@ def calculate_metrics(
 @click.option("--cost", type=float, required=True, help="Total cost in dollars")
 @click.option("--abstracts", type=int, required=True, help="Number of abstracts")
 @click.option("--abstract-chars", type=int, required=True, help="Total abstract characters")
-@click.option("--input-chars", type=int, required=True, help="Total input characters (template + abstracts)")
+@click.option(
+    "--input-chars", type=int, required=True, help="Total input characters (template + abstracts)"
+)
 @click.option("--duration", type=int, required=True, help="Total duration in seconds")
 @click.option("--entities", type=int, required=True, help="Total entities extracted")
 @click.option("--relationships", type=int, required=True, help="Total relationships extracted")
@@ -75,7 +77,7 @@ def main(cost, abstracts, abstract_chars, input_chars, duration, entities, relat
         input_chars=input_chars,
         duration=duration,
         entities=entities,
-        relationships=relationships
+        relationships=relationships,
     )
 
     # Output JSON to stdout

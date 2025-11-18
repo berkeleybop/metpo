@@ -13,32 +13,27 @@ from tqdm import tqdm
     "--ols-path",
     type=click.Path(exists=True),
     default="notebooks/chroma_ols_27",
-    help="Path to OLS ChromaDB"
+    help="Path to OLS ChromaDB",
 )
 @click.option(
     "--non-ols-path",
     type=click.Path(exists=True),
     default="embeddings_chroma",
-    help="Path to non-OLS ChromaDB"
+    help="Path to non-OLS ChromaDB",
 )
 @click.option(
     "--output-path",
     type=click.Path(),
     default="notebooks/chroma_combined",
-    help="Path for combined ChromaDB output"
+    help="Path for combined ChromaDB output",
 )
 @click.option(
     "--output-collection",
     type=str,
     default="combined_embeddings",
-    help="Name of combined collection"
+    help="Name of combined collection",
 )
-@click.option(
-    "--batch-size",
-    type=int,
-    default=1000,
-    help="Batch size for copying embeddings"
-)
+@click.option("--batch-size", type=int, default=1000, help="Batch size for copying embeddings")
 def main(ols_path, non_ols_path, output_path, output_collection, batch_size):
     """
     Combine OLS and non-OLS ChromaDB databases into a unified database.
@@ -53,26 +48,24 @@ def main(ols_path, non_ols_path, output_path, output_collection, batch_size):
     # Check if output already exists
     if os.path.exists(output_path):
         click.confirm(
-            f"\nWarning: Output path '{output_path}' already exists. Overwrite?",
-            abort=True
+            f"\nWarning: Output path '{output_path}' already exists. Overwrite?", abort=True
         )
         import shutil
+
         shutil.rmtree(output_path)
 
     # Connect to source databases
     print("\n1. Connecting to source databases...")
 
     ols_client = chromadb.PersistentClient(
-        path=ols_path,
-        settings=Settings(anonymized_telemetry=False)
+        path=ols_path, settings=Settings(anonymized_telemetry=False)
     )
     ols_collection = ols_client.get_collection(name="ols_embeddings")
     ols_count = ols_collection.count()
     print(f"   OLS database: {ols_count:,} embeddings")
 
     non_ols_client = chromadb.PersistentClient(
-        path=non_ols_path,
-        settings=Settings(anonymized_telemetry=False)
+        path=non_ols_path, settings=Settings(anonymized_telemetry=False)
     )
     non_ols_collection = non_ols_client.get_collection(name="non_ols_embeddings")
     non_ols_count = non_ols_collection.count()
@@ -84,13 +77,12 @@ def main(ols_path, non_ols_path, output_path, output_collection, batch_size):
     # Create output database
     print(f"\n2. Creating combined database at: {output_path}")
     output_client = chromadb.PersistentClient(
-        path=output_path,
-        settings=Settings(anonymized_telemetry=False)
+        path=output_path, settings=Settings(anonymized_telemetry=False)
     )
 
     output_collection = output_client.get_or_create_collection(
         name=output_collection,
-        metadata={"description": "Combined OLS and non-OLS ontology embeddings"}
+        metadata={"description": "Combined OLS and non-OLS ontology embeddings"},
     )
 
     # Copy OLS embeddings
@@ -135,9 +127,7 @@ def copy_collection(source_collection, dest_collection, batch_size):
         while offset < total:
             # Fetch a chunk
             chunk_data = source_collection.get(
-                limit=batch_size,
-                offset=offset,
-                include=["embeddings", "documents", "metadatas"]
+                limit=batch_size, offset=offset, include=["embeddings", "documents", "metadatas"]
             )
 
             # Check if we got data
@@ -149,7 +139,7 @@ def copy_collection(source_collection, dest_collection, batch_size):
                 ids=chunk_data["ids"],
                 embeddings=chunk_data["embeddings"],
                 documents=chunk_data["documents"],
-                metadatas=chunk_data["metadatas"]
+                metadatas=chunk_data["metadatas"],
             )
 
             chunk_size = len(chunk_data["ids"])

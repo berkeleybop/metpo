@@ -45,11 +45,41 @@ def curie_to_iri(curie_or_url: str) -> str:
     prefix_upper = prefix.upper()
 
     obo_ontologies = [
-        "GO", "CHEBI", "PATO", "OBI", "UBERON", "CL", "SO", "BFO",
-        "IAO", "RO", "ENVO", "HP", "MONDO", "DOID", "NCBITaxon",
-        "OMP", "MICRO", "PHIPO", "MPO", "OBA", "BTO", "DDANAT",
-        "ECOCORE", "MEO", "NCIT", "OGMS", "OHMI", "PO", "TO",
-        "ZFA", "APOLLO_SV", "FBcv", "WBPhenotype", "UPHENO", "IDO"
+        "GO",
+        "CHEBI",
+        "PATO",
+        "OBI",
+        "UBERON",
+        "CL",
+        "SO",
+        "BFO",
+        "IAO",
+        "RO",
+        "ENVO",
+        "HP",
+        "MONDO",
+        "DOID",
+        "NCBITaxon",
+        "OMP",
+        "MICRO",
+        "PHIPO",
+        "MPO",
+        "OBA",
+        "BTO",
+        "DDANAT",
+        "ECOCORE",
+        "MEO",
+        "NCIT",
+        "OGMS",
+        "OHMI",
+        "PO",
+        "TO",
+        "ZFA",
+        "APOLLO_SV",
+        "FBcv",
+        "WBPhenotype",
+        "UPHENO",
+        "IDO",
     ]
 
     if prefix_upper in obo_ontologies:
@@ -72,16 +102,41 @@ def get_ontology_from_curie(curie: str) -> str | None:
     prefix = curie.split(":", 1)[0].lower()
 
     ontology_map = {
-        "go": "go", "chebi": "chebi", "pato": "pato", "obi": "obi",
-        "bfo": "bfo", "envo": "envo", "omp": "omp", "micro": "micro",
-        "mpo": "mpo", "phipo": "phipo", "oba": "oba", "bto": "bto",
-        "ncit": "ncit", "ogms": "ogms", "ddanat": "ddanat",
-        "ecocore": "ecocore", "meo": "meo", "ohmi": "ohmi",
-        "po": "po", "to": "to", "zfa": "zfa", "apollo_sv": "apollo_sv",
-        "fbcv": "fbcv", "wbphenotype": "wbphenotype", "iao": "iao",
-        "ro": "ro", "uberon": "uberon", "cl": "cl", "so": "so",
-        "hp": "hp", "mondo": "mondo", "doid": "doid",
-        "ncbitaxon": "ncbitaxon", "upheno": "upheno", "ido": "ido"
+        "go": "go",
+        "chebi": "chebi",
+        "pato": "pato",
+        "obi": "obi",
+        "bfo": "bfo",
+        "envo": "envo",
+        "omp": "omp",
+        "micro": "micro",
+        "mpo": "mpo",
+        "phipo": "phipo",
+        "oba": "oba",
+        "bto": "bto",
+        "ncit": "ncit",
+        "ogms": "ogms",
+        "ddanat": "ddanat",
+        "ecocore": "ecocore",
+        "meo": "meo",
+        "ohmi": "ohmi",
+        "po": "po",
+        "to": "to",
+        "zfa": "zfa",
+        "apollo_sv": "apollo_sv",
+        "fbcv": "fbcv",
+        "wbphenotype": "wbphenotype",
+        "iao": "iao",
+        "ro": "ro",
+        "uberon": "uberon",
+        "cl": "cl",
+        "so": "so",
+        "hp": "hp",
+        "mondo": "mondo",
+        "doid": "doid",
+        "ncbitaxon": "ncbitaxon",
+        "upheno": "upheno",
+        "ido": "ido",
     }
 
     return ontology_map.get(prefix)
@@ -133,7 +188,7 @@ def fetch_metadata_from_bioportal_d3o(iri: str) -> dict | None:
             "label": label,
             "definition": definition,
             "synonyms": synonyms,
-            "source": "BioPortal-D3O"
+            "source": "BioPortal-D3O",
         }
 
     except Exception:
@@ -160,7 +215,11 @@ def fetch_metadata_from_ols(curie: str, iri: str) -> dict | None:
         # Extract definition
         definition = ""
         if data.get("description"):
-            definition = data["description"][0] if isinstance(data["description"], list) else data["description"]
+            definition = (
+                data["description"][0]
+                if isinstance(data["description"], list)
+                else data["description"]
+            )
 
         if not definition and "annotation" in data:
             annotations = data["annotation"]
@@ -178,7 +237,12 @@ def fetch_metadata_from_ols(curie: str, iri: str) -> dict | None:
 
         if "annotation" in data:
             annotations = data["annotation"]
-            for syn_type in ["hasExactSynonym", "hasRelatedSynonym", "hasBroadSynonym", "hasNarrowSynonym"]:
+            for syn_type in [
+                "hasExactSynonym",
+                "hasRelatedSynonym",
+                "hasBroadSynonym",
+                "hasNarrowSynonym",
+            ]:
                 if syn_type in annotations:
                     syns = annotations[syn_type]
                     if isinstance(syns, list):
@@ -190,7 +254,7 @@ def fetch_metadata_from_ols(curie: str, iri: str) -> dict | None:
             "label": label,
             "definition": definition,
             "synonyms": sorted(synonyms),
-            "source": "OLS"
+            "source": "OLS",
         }
 
     except Exception:
@@ -208,7 +272,7 @@ def fetch_metadata_from_bioportal_search(curie: str, iri: str) -> dict | None:
             "q": iri,
             "apikey": BIOPORTAL_API_KEY,
             "require_exact_match": "true",
-            "also_search_properties": "true"
+            "also_search_properties": "true",
         }
 
         response = requests.get(url, params=params, timeout=15)
@@ -246,7 +310,7 @@ def fetch_metadata_from_bioportal_search(curie: str, iri: str) -> dict | None:
             "label": label,
             "definition": definition,
             "synonyms": synonyms,
-            "source": "BioPortal-Search"
+            "source": "BioPortal-Search",
         }
 
     except Exception:
@@ -339,14 +403,16 @@ def main():
         if metadata and metadata["label"]:
             synonyms_str = "|".join(metadata["synonyms"]) if metadata["synonyms"] else ""
 
-            results.append({
-                "source_curie": source_curie,
-                "source_iri": source_iri,
-                "label": metadata["label"],
-                "definition": metadata["definition"],
-                "synonyms": synonyms_str,
-                "api_source": metadata["source"]
-            })
+            results.append(
+                {
+                    "source_curie": source_curie,
+                    "source_iri": source_iri,
+                    "label": metadata["label"],
+                    "definition": metadata["definition"],
+                    "synonyms": synonyms_str,
+                    "api_source": metadata["source"],
+                }
+            )
 
             print(f"  ✓ [{metadata['source']}] {metadata['label']}")
             if metadata["definition"]:
@@ -355,21 +421,23 @@ def main():
                 print(f"    Synonyms: {len(metadata['synonyms'])} found")
         else:
             failed.append(source_curie)
-            results.append({
-                "source_curie": source_curie,
-                "source_iri": source_iri,
-                "label": "",
-                "definition": "",
-                "synonyms": "",
-                "api_source": "NOT_FOUND"
-            })
+            results.append(
+                {
+                    "source_curie": source_curie,
+                    "source_iri": source_iri,
+                    "label": "",
+                    "definition": "",
+                    "synonyms": "",
+                    "api_source": "NOT_FOUND",
+                }
+            )
             print("  ✗ Not found in any API")
 
         time.sleep(0.2)
         print()
 
     # Save results
-    with Path(output_file).open( "w", newline="") as f:
+    with Path(output_file).open("w", newline="") as f:
         fieldnames = ["source_curie", "source_iri", "label", "definition", "synonyms", "api_source"]
         writer = csv.DictWriter(f, fieldnames=fieldnames, delimiter="\t")
         writer.writeheader()
@@ -380,7 +448,9 @@ def main():
     print("=" * 80)
     print(f"Total sources: {len(sources)}")
     total_success = ols_success + bioportal_search_success + bioportal_d3o_success
-    print(f"Successfully resolved: {total_success} ({total_success*100//len(sources) if sources else 0}%)")
+    print(
+        f"Successfully resolved: {total_success} ({total_success * 100 // len(sources) if sources else 0}%)"
+    )
     print(f"  - via BioPortal D3O: {bioportal_d3o_success}")
     print(f"  - via OLS: {ols_success}")
     print(f"  - via BioPortal search: {bioportal_search_success}")

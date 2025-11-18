@@ -49,7 +49,7 @@ def load_metpo_terms(
     id_column: str = "ID",
     label_column: str = "label",
     definition_column: str = "description",
-    parent_column: str = "parent class"
+    parent_column: str = "parent class",
 ) -> list[dict[str, str]]:
     """
     Load terms from TSV file with flexible column mapping.
@@ -67,15 +67,13 @@ def load_metpo_terms(
     """
     terms = []
 
-    with Path(tsv_path).open( encoding="utf-8") as f:
+    with Path(tsv_path).open(encoding="utf-8") as f:
         lines = f.readlines()
 
         # Read header from first non-skipped row
         header_line = lines[skip_rows - 1] if skip_rows > 0 else lines[0]
         reader = csv.DictReader(
-            lines[skip_rows:],
-            delimiter="\t",
-            fieldnames=header_line.strip().split("\t")
+            lines[skip_rows:], delimiter="\t", fieldnames=header_line.strip().split("\t")
         )
 
         for row in reader:
@@ -89,20 +87,28 @@ def load_metpo_terms(
                 continue
 
             # Parse parent classes (pipe-separated)
-            parents = [p.strip() for p in parent_classes.split("|") if p.strip()] if parent_classes else []
+            parents = (
+                [p.strip() for p in parent_classes.split("|") if p.strip()]
+                if parent_classes
+                else []
+            )
 
-            terms.append({
-                "id": metpo_id,
-                "label": label,
-                "parents": parents,
-                "parent_str": parent_classes,
-                "definition": definition
-            })
+            terms.append(
+                {
+                    "id": metpo_id,
+                    "label": label,
+                    "parents": parents,
+                    "parent_str": parent_classes,
+                    "definition": definition,
+                }
+            )
 
     return terms
 
 
-def create_query_text(label: str, definition: str = "", parents: list[str] | None = None, label_only: bool = False) -> str:
+def create_query_text(
+    label: str, definition: str = "", parents: list[str] | None = None, label_only: bool = False
+) -> str:
     """
     Create query text from label, definition, and/or parent labels.
 
@@ -159,7 +165,9 @@ def similarity_to_predicate(similarity: float) -> str:
     return "skos:mappingRelation"
 
 
-def write_sssom_output(matches: list[dict], output_path: str, min_similarity: float, always_include_best: bool = True):
+def write_sssom_output(
+    matches: list[dict], output_path: str, min_similarity: float, always_include_best: bool = True
+):
     """Write matches in SSSOM TSV format."""
     # Filter by minimum similarity, optionally keeping rank=1 (best match) for each term
     # similarity = 1 - (distance / 2), so distance = 2 * (1 - similarity)
@@ -170,36 +178,54 @@ def write_sssom_output(matches: list[dict], output_path: str, min_similarity: fl
     else:
         filtered = [m for m in matches if m["distance"] <= max_distance]
 
-    with Path(output_path).open( "w", encoding="utf-8", newline="") as f:
+    with Path(output_path).open("w", encoding="utf-8", newline="") as f:
         # Write metadata block
         f.write("# curie_map:\n")
         f.write("#   METPO: http://purl.obolibrary.org/obo/METPO_\n")
         f.write("#   skos: http://www.w3.org/2004/02/skos/core#\n")
         f.write("#   semapv: https://w3id.org/semapv/vocab/\n")
-        f.write(f"# mapping_set_id: metpo-ontology-mappings-{datetime.now(UTC).date().isoformat()}\n")
+        f.write(
+            f"# mapping_set_id: metpo-ontology-mappings-{datetime.now(UTC).date().isoformat()}\n"
+        )
         f.write(f"# mapping_date: {datetime.now(UTC).date().isoformat()}\n")
         f.write("# mapping_tool: openai_text-embedding-3-small\n")
         f.write("# mapping_provider: https://github.com/berkeleybop/metpo\n")
         f.write("# license: https://creativecommons.org/publicdomain/zero/1.0/\n")
-        f.write(f"# comment: Semantic mappings generated using OpenAI text-embedding-3-small with minimum similarity {min_similarity}.\n")
+        f.write(
+            f"# comment: Semantic mappings generated using OpenAI text-embedding-3-small with minimum similarity {min_similarity}.\n"
+        )
         if always_include_best:
-            f.write("#   Note: Best match (rank 1) is always included for each term, even if below threshold.\n")
+            f.write(
+                "#   Note: Best match (rank 1) is always included for each term, even if below threshold.\n"
+            )
         f.write("#\n")
         f.write("# IMPORTANT - Manual review recommended:\n")
-        f.write("#   Embedding-based similarity is agnostic to ontological categories. High similarity scores\n")
-        f.write("#   may occur between semantically related terms of incompatible types (e.g., 'thermophile'\n")
-        f.write("#   [material entity] vs 'thermophilic' [quality]). Review mappings to ensure ontological\n")
+        f.write(
+            "#   Embedding-based similarity is agnostic to ontological categories. High similarity scores\n"
+        )
+        f.write(
+            "#   may occur between semantically related terms of incompatible types (e.g., 'thermophile'\n"
+        )
+        f.write(
+            "#   [material entity] vs 'thermophilic' [quality]). Review mappings to ensure ontological\n"
+        )
         f.write("#   compatibility before accepting exactMatch or closeMatch predicates.\n")
         f.write("#\n")
         f.write("# Similarity calculation method:\n")
-        f.write("#   1. Query and candidate terms embedded using OpenAI text-embedding-3-small (1536 dimensions, L2-normalized)\n")
-        f.write("#   2. Cosine similarity computed as dot product of normalized embeddings: cos_sim = dot(query, candidate)\n")
+        f.write(
+            "#   1. Query and candidate terms embedded using OpenAI text-embedding-3-small (1536 dimensions, L2-normalized)\n"
+        )
+        f.write(
+            "#   2. Cosine similarity computed as dot product of normalized embeddings: cos_sim = dot(query, candidate)\n"
+        )
         f.write("#   3. Similarity score normalized to [0,1]: similarity = (1 + cos_sim) / 2\n")
         f.write("#\n")
         f.write("# Predicate assignment thresholds:\n")
         f.write("#   Data source for threshold calibration:\n")
         f.write("#   - Input terms: src/templates/metpo_sheet_improved.tsv (254 METPO terms)\n")
-        f.write("#   - Reference database: data/chromadb/chroma_ols20_nonols4 (452,942 embeddings)\n")
+        f.write(
+            "#   - Reference database: data/chromadb/chroma_ols20_nonols4 (452,942 embeddings)\n"
+        )
         f.write("#   - Analysis: 5,080 mappings (254 terms × 20 ranks)\n")
         f.write("#   - Query format: 'label; definition' (or 'label parent_labels' as fallback)\n")
         f.write("#\n")
@@ -207,56 +233,60 @@ def write_sssom_output(matches: list[dict], output_path: str, min_similarity: fl
         f.write("#   - exactMatch: similarity >= 0.90 (rounded from 95th percentile: 0.886)\n")
         f.write("#   - closeMatch: similarity >= 0.85 (rounded from 75th percentile: 0.845)\n")
         f.write("#   - relatedMatch: similarity >= 0.80 (rounded from 25th percentile: 0.783)\n")
-        f.write("#   - mappingRelation: similarity < 0.80 (below 25th percentile, weakest matches)\n")
+        f.write(
+            "#   - mappingRelation: similarity < 0.80 (below 25th percentile, weakest matches)\n"
+        )
         f.write("#\n")
         f.write("# Notes:\n")
         f.write("#   - ChromaDB used for efficient retrieval (uses L2 distance internally)\n")
         f.write("#   - True cosine similarity computed from retrieved embeddings\n")
         f.write("#   - similarity_measure field: 'cosine_similarity'\n")
-        f.write("#   - Embeddings from 'label; definition' format when definition available, else 'label parent_labels'\n")
+        f.write(
+            "#   - Embeddings from 'label; definition' format when definition available, else 'label parent_labels'\n"
+        )
         f.write("#\n")
 
         # Write TSV header and data
         writer = csv.writer(f, delimiter="\t")
-        writer.writerow([
-            "subject_id",
-            "subject_label",
-            "predicate_id",
-            "object_id",
-            "object_label",
-            "mapping_justification",
-            "similarity_score",
-            "similarity_measure",
-            "mapping_tool",
-            "subject_source",
-            "object_source"
-        ])
+        writer.writerow(
+            [
+                "subject_id",
+                "subject_label",
+                "predicate_id",
+                "object_id",
+                "object_label",
+                "mapping_justification",
+                "similarity_score",
+                "similarity_measure",
+                "mapping_tool",
+                "subject_source",
+                "object_source",
+            ]
+        )
 
         for m in filtered:
             similarity = 1.0 - (m["distance"] / 2.0)
-            writer.writerow([
-                m["metpo_id"],
-                m["metpo_label"],
-                similarity_to_predicate(similarity),
-                m["match_iri"],
-                m["match_document"],
-                "semapv:SemanticSimilarityThresholdMatching",
-                f"{similarity:.6f}",
-                "cosine_similarity",
-                "openai_text-embedding-3-small",
-                "METPO",
-                m["match_ontology"]
-            ])
+            writer.writerow(
+                [
+                    m["metpo_id"],
+                    m["metpo_label"],
+                    similarity_to_predicate(similarity),
+                    m["match_iri"],
+                    m["match_document"],
+                    "semapv:SemanticSimilarityThresholdMatching",
+                    f"{similarity:.6f}",
+                    "cosine_similarity",
+                    "openai_text-embedding-3-small",
+                    "METPO",
+                    m["match_ontology"],
+                ]
+            )
 
     return len(filtered)
 
 
 def query_chromadb_for_term(
-    term: dict[str, str],
-    collection,
-    openai_api_key: str,
-    top_n: int = 5,
-    label_only: bool = False
+    term: dict[str, str], collection, openai_api_key: str, top_n: int = 5, label_only: bool = False
 ) -> list[dict[str, any]]:
     """Generate embedding for a METPO term and query ChromaDB."""
 
@@ -265,21 +295,18 @@ def query_chromadb_for_term(
         label=term["label"],
         definition=term.get("definition", ""),
         parents=term.get("parents", []),
-        label_only=label_only
+        label_only=label_only,
     )
 
     # Generate embedding
-    response = openai.embeddings.create(
-        model="text-embedding-3-small",
-        input=query_text
-    )
+    response = openai.embeddings.create(model="text-embedding-3-small", input=query_text)
     query_embedding = response.data[0].embedding
 
     # Query ChromaDB (request embeddings to compute true cosine distance)
     results = collection.query(
         query_embeddings=[query_embedding],
         n_results=top_n,
-        include=["documents", "metadatas", "embeddings"]  # Get embeddings, not L2 distances
+        include=["documents", "metadatas", "embeddings"],  # Get embeddings, not L2 distances
     )
 
     # Compute true cosine distances from embeddings
@@ -296,18 +323,20 @@ def query_chromadb_for_term(
         cosine_sim = float(np.dot(query_embedding, result_embedding))
         cosine_dist = 1.0 - cosine_sim
 
-        matches.append({
-            "metpo_id": term["id"],
-            "metpo_label": term["label"],
-            "metpo_parents": term["parent_str"],
-            "query_text": query_text,
-            "match_id": results["ids"][0][i],
-            "match_document": results["documents"][0][i],
-            "match_ontology": results["metadatas"][0][i].get("ontologyId", "unknown"),
-            "match_iri": results["metadatas"][0][i].get("iri", "unknown"),
-            "distance": cosine_dist,  # True cosine distance, not L2!
-            "rank": i + 1
-        })
+        matches.append(
+            {
+                "metpo_id": term["id"],
+                "metpo_label": term["label"],
+                "metpo_parents": term["parent_str"],
+                "query_text": query_text,
+                "match_id": results["ids"][0][i],
+                "match_document": results["documents"][0][i],
+                "match_ontology": results["metadatas"][0][i].get("ontologyId", "unknown"),
+                "match_iri": results["metadatas"][0][i].get("iri", "unknown"),
+                "distance": cosine_dist,  # True cosine distance, not L2!
+                "rank": i + 1,
+            }
+        )
 
     return matches
 
@@ -317,84 +346,78 @@ def query_chromadb_for_term(
     "--metpo-tsv",
     type=click.Path(exists=True, dir_okay=False, path_type=str),
     default="../src/templates/metpo_sheet.tsv",
-    help="Path to METPO template TSV file"
+    help="Path to METPO template TSV file",
 )
 @click.option(
     "--chroma-path",
     type=click.Path(path_type=str),
     default="./embeddings_chroma",
-    help="Path to ChromaDB storage directory"
+    help="Path to ChromaDB storage directory",
 )
 @click.option(
     "--collection-name",
     type=str,
     default="ols_embeddings",
-    help="Name of the ChromaDB collection to query"
+    help="Name of the ChromaDB collection to query",
 )
 @click.option(
     "--output",
     type=click.Path(path_type=str),
     default="../data/mappings/metpo_mappings.sssom.tsv",
-    help="Output SSSOM TSV file path"
+    help="Output SSSOM TSV file path",
 )
 @click.option(
     "--max-rank",
     type=int,
     default=None,
-    help="Maximum number of matches to retrieve per term (default: no limit, retrieve all above min-similarity)"
+    help="Maximum number of matches to retrieve per term (default: no limit, retrieve all above min-similarity)",
 )
 @click.option(
-    "--limit",
-    type=int,
-    default=None,
-    help="Limit number of METPO terms to process (for testing)"
+    "--limit", type=int, default=None, help="Limit number of METPO terms to process (for testing)"
 )
 @click.option(
     "--label-only",
     is_flag=True,
     default=False,
-    help="Use only label for embedding (exclude parent labels)"
+    help="Use only label for embedding (exclude parent labels)",
 )
 @click.option(
     "--min-similarity",
     type=float,
     default=0.85,
-    help="Minimum similarity score to include in SSSOM output (default: 0.85, range: 0.0-1.0)"
+    help="Minimum similarity score to include in SSSOM output (default: 0.85, range: 0.0-1.0)",
 )
 @click.option(
     "--always-include-best/--no-always-include-best",
     default=True,
-    help="Always include best match (rank 1) even if below min-similarity (default: True)"
+    help="Always include best match (rank 1) even if below min-similarity (default: True)",
 )
 @click.option(
     "--skip-rows",
     type=int,
     default=2,
-    help="Number of header rows to skip (ROBOT template=2, standard TSV=1)"
+    help="Number of header rows to skip (ROBOT template=2, standard TSV=1)",
 )
 @click.option(
-    "--id-column",
-    type=str,
-    default="ID",
-    help="Column name for term CURIE/ID (default: 'ID')"
+    "--id-column", type=str, default="ID", help="Column name for term CURIE/ID (default: 'ID')"
 )
 @click.option(
     "--label-column",
     type=str,
     default="label",
-    help="Column name for term label (default: 'label')"
+    help="Column name for term label (default: 'label')",
 )
 @click.option(
     "--definition-column",
     type=str,
     default="description",
-    help="Column name for definition text (default: 'description')"
+    help="Column name for definition text (default: 'description')",
 )
 @click.option(
     "--parent-column",
     type=str,
     default="parent class",
-    help="Column name for parent classes (default: 'parent class')"
+    help="Column name for parent classes (default: 'parent class')",
 )
 def main(
     metpo_tsv: str,
@@ -410,7 +433,7 @@ def main(
     id_column: str,
     label_column: str,
     definition_column: str,
-    parent_column: str
+    parent_column: str,
 ):
     """Query METPO terms against ChromaDB embeddings and generate SSSOM TSV mappings."""
 
@@ -422,7 +445,9 @@ def main(
         raise ValueError("OPENAI_API_KEY not found in .env file or environment variables.")
 
     print(f"Loading METPO terms from: {metpo_tsv}")
-    print(f"  Column mapping: ID={id_column}, Label={label_column}, Definition={definition_column}, Parent={parent_column}")
+    print(
+        f"  Column mapping: ID={id_column}, Label={label_column}, Definition={definition_column}, Parent={parent_column}"
+    )
     print(f"  Skipping {skip_rows} header row(s)")
     terms = load_metpo_terms(
         metpo_tsv,
@@ -430,7 +455,7 @@ def main(
         id_column=id_column,
         label_column=label_column,
         definition_column=definition_column,
-        parent_column=parent_column
+        parent_column=parent_column,
     )
     if limit:
         terms = terms[:limit]
@@ -441,8 +466,7 @@ def main(
     # Connect to ChromaDB
     print(f"\nConnecting to ChromaDB at: {chroma_path}")
     client = chromadb.PersistentClient(
-        path=chroma_path,
-        settings=Settings(anonymized_telemetry=False)
+        path=chroma_path, settings=Settings(anonymized_telemetry=False)
     )
     print("✓ ChromaDB client initialized")
 
@@ -465,7 +489,9 @@ def main(
     if max_rank is not None:
         print(f"\nQuerying ChromaDB for top {max_rank} matches per term...")
     else:
-        print(f"\nQuerying ChromaDB (retrieving up to {retrieval_limit} candidates, filtering by similarity)...")
+        print(
+            f"\nQuerying ChromaDB (retrieving up to {retrieval_limit} candidates, filtering by similarity)..."
+        )
 
     print(f"This will make {len(terms)} OpenAI API calls (~{len(terms) * 0.5:.0f} seconds)")
     all_matches = []
@@ -473,7 +499,9 @@ def main(
 
     for term in tqdm(terms, desc="Processing METPO terms"):
         try:
-            matches = query_chromadb_for_term(term, collection, openai.api_key, retrieval_limit, label_only)
+            matches = query_chromadb_for_term(
+                term, collection, openai.api_key, retrieval_limit, label_only
+            )
             all_matches.extend(matches)
         except Exception as e:
             errors += 1

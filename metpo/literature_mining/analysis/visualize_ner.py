@@ -15,7 +15,7 @@ import yaml
 
 def load_ontogpt_output(yaml_file: str) -> dict:
     """Load OntoGPT output YAML file."""
-    with Path(yaml_file).open( encoding="utf-8") as f:
+    with Path(yaml_file).open(encoding="utf-8") as f:
         return yaml.safe_load(f)
 
 
@@ -29,19 +29,19 @@ def extract_text_and_entities(data: dict) -> tuple[str, list[dict]]:
 def get_entity_type_colors() -> dict[str, str]:
     """Define color scheme for different entity types."""
     return {
-        "chemical": "#FF6B6B",      # Red
-        "enzyme": "#4ECDC4",        # Teal
-        "lipid": "#45B7D1",         # Blue
-        "organism": "#96CEB4",      # Green
-        "species": "#FECA57",       # Yellow
-        "strain": "#FF9FF3",        # Pink
-        "type_strain": "#E74C3C",   # Dark Red (type strains)
-        "phenotype": "#54A0FF",     # Light Blue
-        "chebi": "#FF6B6B",         # Red (chemicals)
-        "ncbitaxon": "#96CEB4",     # Green (organisms)
-        "micro": "#54A0FF",         # Light Blue (phenotypes)
-        "auto": "#DDA0DD",          # Plum (auto-generated)
-        "default": "#E0E0E0"        # Light Gray
+        "chemical": "#FF6B6B",  # Red
+        "enzyme": "#4ECDC4",  # Teal
+        "lipid": "#45B7D1",  # Blue
+        "organism": "#96CEB4",  # Green
+        "species": "#FECA57",  # Yellow
+        "strain": "#FF9FF3",  # Pink
+        "type_strain": "#E74C3C",  # Dark Red (type strains)
+        "phenotype": "#54A0FF",  # Light Blue
+        "chebi": "#FF6B6B",  # Red (chemicals)
+        "ncbitaxon": "#96CEB4",  # Green (organisms)
+        "micro": "#54A0FF",  # Light Blue (phenotypes)
+        "auto": "#DDA0DD",  # Plum (auto-generated)
+        "default": "#E0E0E0",  # Light Gray
     }
 
 
@@ -101,7 +101,7 @@ def calculate_coverage_metrics(text: str, entities: list[dict]) -> dict:
         "total_entities": len(entities),
         "total_spans": total_spans,
         "entity_density": round(len(entities) / text_length * 1000, 2),  # entities per 1000 chars
-        "type_distribution": dict(type_counts)
+        "type_distribution": dict(type_counts),
     }
 
 
@@ -122,14 +122,16 @@ def create_html_visualization(text: str, entities: list[dict], metrics: dict) ->
                 start, end = map(int, span.split(":"))
                 # Fix OntoGPT span issue - add 1 to end coordinate to include last character
                 end = end + 1
-                spans.append({
-                    "start": start,
-                    "end": end,
-                    "label": label,
-                    "id": entity_id,
-                    "type": entity_type,
-                    "color": color
-                })
+                spans.append(
+                    {
+                        "start": start,
+                        "end": end,
+                        "label": label,
+                        "id": entity_id,
+                        "type": entity_type,
+                        "color": color,
+                    }
+                )
 
     # Sort spans by start position
     spans.sort(key=lambda x: x["start"])
@@ -141,15 +143,15 @@ def create_html_visualization(text: str, entities: list[dict], metrics: dict) ->
     for span in spans:
         # Add unhighlighted text before this span
         if span["start"] > last_pos:
-            html_parts.append(text[last_pos:span["start"]])
+            html_parts.append(text[last_pos : span["start"]])
 
         # Add highlighted span
-        span_text = text[span["start"]:span["end"]]
+        span_text = text[span["start"] : span["end"]]
         tooltip = f"{span['type']}: {span['label']} ({span['id']})"
         html_parts.append(
             f'<span class="entity {span["type"]}" style="background-color: {span["color"]}; '
             f'padding: 1px 2px; margin: 1px; border-radius: 2px;" title="{tooltip}">'
-            f'{span_text}</span>'
+            f"{span_text}</span>"
         )
 
         last_pos = max(last_pos, span["end"])
@@ -165,12 +167,12 @@ def create_html_visualization(text: str, entities: list[dict], metrics: dict) ->
     <div class="metrics">
         <h3>Coverage Metrics</h3>
         <table>
-            <tr><td>Text Length:</td><td>{metrics['text_length']} characters</td></tr>
-            <tr><td>Covered Characters:</td><td>{metrics['covered_characters']}</td></tr>
-            <tr><td>Coverage Percentage:</td><td>{metrics['coverage_percentage']}%</td></tr>
-            <tr><td>Total Entities:</td><td>{metrics['total_entities']}</td></tr>
-            <tr><td>Total Spans:</td><td>{metrics['total_spans']}</td></tr>
-            <tr><td>Entity Density:</td><td>{metrics['entity_density']} per 1000 chars</td></tr>
+            <tr><td>Text Length:</td><td>{metrics["text_length"]} characters</td></tr>
+            <tr><td>Covered Characters:</td><td>{metrics["covered_characters"]}</td></tr>
+            <tr><td>Coverage Percentage:</td><td>{metrics["coverage_percentage"]}%</td></tr>
+            <tr><td>Total Entities:</td><td>{metrics["total_entities"]}</td></tr>
+            <tr><td>Total Spans:</td><td>{metrics["total_spans"]}</td></tr>
+            <tr><td>Entity Density:</td><td>{metrics["entity_density"]} per 1000 chars</td></tr>
         </table>
 
         <h4>Entity Type Distribution</h4>
@@ -234,12 +236,24 @@ def create_html_visualization(text: str, entities: list[dict], metrics: dict) ->
 
 @click.command()
 @click.argument("input_file", type=click.Path(exists=True, readable=True))
-@click.option("-o", "--output", "output_file", default="ner_visualization.html",
-              help="Output HTML file", show_default=True)
+@click.option(
+    "-o",
+    "--output",
+    "output_file",
+    default="ner_visualization.html",
+    help="Output HTML file",
+    show_default=True,
+)
 @click.option("--quiet", "-q", is_flag=True, help="Suppress output messages")
 @click.option("--stats-only", is_flag=True, help="Only print statistics, do not generate HTML")
-@click.option("--format", "output_format", type=click.Choice(["html", "json"], case_sensitive=False),
-              default="html", help="Output format", show_default=True)
+@click.option(
+    "--format",
+    "output_format",
+    type=click.Choice(["html", "json"], case_sensitive=False),
+    default="html",
+    help="Output format",
+    show_default=True,
+)
 def main(input_file, output_file, quiet, stats_only, output_format):
     """Visualize NER coverage from OntoGPT output.
 
@@ -281,7 +295,7 @@ def main(input_file, output_file, quiet, stats_only, output_format):
         if output_format.lower() == "html":
             html = create_html_visualization(text, entities, metrics)
             try:
-                with Path(output_file).open( "w", encoding="utf-8") as f:
+                with Path(output_file).open("w", encoding="utf-8") as f:
                     f.write(html)
                 if not quiet:
                     click.echo(f"\nVisualization saved to {output_file}")
@@ -291,13 +305,10 @@ def main(input_file, output_file, quiet, stats_only, output_format):
 
         elif output_format.lower() == "json":
             import json
-            output_data = {
-                "metrics": metrics,
-                "entities": entities,
-                "text_length": len(text)
-            }
+
+            output_data = {"metrics": metrics, "entities": entities, "text_length": len(text)}
             try:
-                with Path(output_file).open( "w", encoding="utf-8") as f:
+                with Path(output_file).open("w", encoding="utf-8") as f:
                     json.dump(output_data, f, indent=2, ensure_ascii=False)
                 if not quiet:
                     click.echo(f"\nJSON data saved to {output_file}")

@@ -47,12 +47,7 @@ def extract_term_source(iri: str) -> str:
 
 
 @click.command()
-@click.option(
-    "--input",
-    type=click.Path(exists=True),
-    required=True,
-    help="Input SSSOM TSV file"
-)
+@click.option("--input", type=click.Path(exists=True), required=True, help="Input SSSOM TSV file")
 def main(input):
     """Analyze unique value of each ontology source."""
 
@@ -82,19 +77,23 @@ def main(input):
         # Get unique term sources provided
         term_sources = ont_df["term_source"].value_counts().to_dict()
 
-        ontology_analysis.append({
-            "ontology_file": ont_file,
-            "total_matches": len(ont_df),
-            "native_matches": len(native),
-            "imported_matches": len(imported),
-            "native_pct": 100 * len(native) / len(ont_df) if len(ont_df) > 0 else 0,
-            "term_sources": term_sources,
-            "unique_metpo_terms": ont_df["subject_id"].nunique()
-        })
+        ontology_analysis.append(
+            {
+                "ontology_file": ont_file,
+                "total_matches": len(ont_df),
+                "native_matches": len(native),
+                "imported_matches": len(imported),
+                "native_pct": 100 * len(native) / len(ont_df) if len(ont_df) > 0 else 0,
+                "term_sources": term_sources,
+                "unique_metpo_terms": ont_df["subject_id"].nunique(),
+            }
+        )
 
     ont_df = pd.DataFrame(ontology_analysis).sort_values("total_matches", ascending=False)
 
-    print(f"\n{'Ontology':<15} {'Total':<8} {'Native':<8} {'Imported':<10} {'Native %':<10} {'METPO Terms':<12} {'Provides'}")
+    print(
+        f"\n{'Ontology':<15} {'Total':<8} {'Native':<8} {'Imported':<10} {'Native %':<10} {'METPO Terms':<12} {'Provides'}"
+    )
     print("-" * 100)
 
     for _, row in ont_df.iterrows():
@@ -102,8 +101,10 @@ def main(input):
         top_sources = sorted(row["term_sources"].items(), key=lambda x: x[1], reverse=True)[:3]
         sources_str = ", ".join([f"{src}({cnt})" for src, cnt in top_sources])
 
-        print(f"{row['ontology_file']:<15} {row['total_matches']:<8} {row['native_matches']:<8} "
-              f"{row['imported_matches']:<10} {row['native_pct']:<10.1f} {row['unique_metpo_terms']:<12} {sources_str}")
+        print(
+            f"{row['ontology_file']:<15} {row['total_matches']:<8} {row['native_matches']:<8} "
+            f"{row['imported_matches']:<10} {row['native_pct']:<10.1f} {row['unique_metpo_terms']:<12} {sources_str}"
+        )
 
     # Analysis 2: Term source redundancy
     print("\n" + "=" * 100)
@@ -117,14 +118,17 @@ def main(input):
     print(f"\n{'Term Source':<15} {'Available in N files':<25} {'Ontology Files'}")
     print("-" * 100)
 
-    for term_src, ont_files in sorted(term_source_availability.items(),
-                                      key=lambda x: len(x[1]), reverse=True):
+    for term_src, ont_files in sorted(
+        term_source_availability.items(), key=lambda x: len(x[1]), reverse=True
+    ):
         if len(ont_files) > 1:  # Only show redundant sources
             len(df[df["term_source"] == term_src])
             # Filter out NaN values from ont_files
             ont_files_clean = [f for f in ont_files if pd.notna(f)]
             if ont_files_clean:
-                print(f"{term_src:<15} {len(ont_files_clean):<25} {', '.join(sorted(ont_files_clean))}")
+                print(
+                    f"{term_src:<15} {len(ont_files_clean):<25} {', '.join(sorted(ont_files_clean))}"
+                )
 
     # Analysis 3: Ontologies providing ONLY imported terms
     print("\n" + "=" * 100)
@@ -143,10 +147,14 @@ def main(input):
 
             # Check if these terms are available natively elsewhere
             for term_src, _count in top_sources:
-                native_available = df[(df["term_source"] == term_src) &
-                                     (df["object_source"].str.lower() == term_src.lower())]
+                native_available = df[
+                    (df["term_source"] == term_src)
+                    & (df["object_source"].str.lower() == term_src.lower())
+                ]
                 if len(native_available) > 0:
-                    print(f"  └─ {term_src}: {len(native_available)} matches available natively from {term_src.lower()}")
+                    print(
+                        f"  └─ {term_src}: {len(native_available)} matches available natively from {term_src.lower()}"
+                    )
     else:
         print("None - all ontologies provide at least some native terms.")
 
@@ -168,19 +176,23 @@ def main(input):
         native_matches = term_matches[term_matches["object_source"].str.lower() == term_src.lower()]
 
         if len(native_matches) > 0 and len(providing_files) == 1:
-            unique_contributions.append({
-                "term_source": term_src,
-                "ontology_file": providing_files[0],
-                "match_count": len(native_matches),
-                "metpo_terms": native_matches["subject_id"].nunique()
-            })
+            unique_contributions.append(
+                {
+                    "term_source": term_src,
+                    "ontology_file": providing_files[0],
+                    "match_count": len(native_matches),
+                    "metpo_terms": native_matches["subject_id"].nunique(),
+                }
+            )
 
     if unique_contributions:
         unique_df = pd.DataFrame(unique_contributions).sort_values("match_count", ascending=False)
         print(f"{'Term Source':<15} {'Ontology File':<15} {'Matches':<10} {'METPO Terms'}")
         print("-" * 60)
         for _, row in unique_df.iterrows():
-            print(f"{row['term_source']:<15} {row['ontology_file']:<15} {row['match_count']:<10} {row['metpo_terms']}")
+            print(
+                f"{row['term_source']:<15} {row['ontology_file']:<15} {row['match_count']:<10} {row['metpo_terms']}"
+            )
     else:
         print("All term sources appear in multiple ontology files.")
 
@@ -198,20 +210,30 @@ def main(input):
         # Check if ALL terms are available natively elsewhere
         all_redundant = True
         for term_src in row["term_sources"]:
-            native_available = df[(df["term_source"] == term_src) &
-                                 (df["object_source"].str.lower() == term_src.lower())]
+            native_available = df[
+                (df["term_source"] == term_src)
+                & (df["object_source"].str.lower() == term_src.lower())
+            ]
             if len(native_available) == 0:
                 all_redundant = False
                 break
 
         if all_redundant:
-            removal_candidates.append({
-                "ontology": ont_file,
-                "matches": row["total_matches"],
-                "metpo_terms": row["unique_metpo_terms"],
-                "provides": ", ".join([f"{src}({cnt})" for src, cnt in
-                                      sorted(row["term_sources"].items(), key=lambda x: x[1], reverse=True)])
-            })
+            removal_candidates.append(
+                {
+                    "ontology": ont_file,
+                    "matches": row["total_matches"],
+                    "metpo_terms": row["unique_metpo_terms"],
+                    "provides": ", ".join(
+                        [
+                            f"{src}({cnt})"
+                            for src, cnt in sorted(
+                                row["term_sources"].items(), key=lambda x: x[1], reverse=True
+                            )
+                        ]
+                    ),
+                }
+            )
 
     if removal_candidates:
         print(f"Found {len(removal_candidates)} candidates:\n")

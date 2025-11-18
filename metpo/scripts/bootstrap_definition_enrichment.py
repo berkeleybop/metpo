@@ -9,6 +9,7 @@ This script:
 4. Assesses definition quality against Seppälä-Ruttenberg-Smith guidelines
 5. Generates prioritized recommendations
 """
+
 import csv
 import time
 from collections import defaultdict
@@ -23,7 +24,7 @@ def read_sssom_mappings(sssom_path: Path, min_confidence: float) -> dict[str, li
     """Read SSSOM mappings and organize by METPO term, filtering by confidence."""
     mappings = defaultdict(list)
 
-    with Path(sssom_path).open( encoding="utf-8") as f:
+    with Path(sssom_path).open(encoding="utf-8") as f:
         lines = [line for line in f if not line.startswith("#")]
         reader = csv.DictReader(lines, delimiter="\t")
 
@@ -147,7 +148,11 @@ def assess_definition_quality_detailed(definition: str) -> dict[str, any]:
     if "usually" in definition.lower() or "generally" in definition.lower():
         issues.append("Contains generalizing expression (usually/generally)")
 
-    if "such as" in definition.lower() or "e.g." in definition.lower() or "for example" in definition.lower():
+    if (
+        "such as" in definition.lower()
+        or "e.g." in definition.lower()
+        or "for example" in definition.lower()
+    ):
         issues.append("Contains examples (such as/e.g./for example)")
 
     if definition.count(";") > 1:
@@ -179,39 +184,26 @@ def assess_definition_quality_detailed(definition: str) -> dict[str, any]:
     "-m",
     type=click.Path(exists=True, path_type=Path),
     default="data/mappings/metpo_mappings_combined_relaxed.sssom.tsv",
-    help="Path to SSSOM mappings file"
+    help="Path to SSSOM mappings file",
 )
 @click.option(
     "--output",
     "-o",
     type=click.Path(path_type=Path),
     default="reports/definition_enrichment_bootstrap.tsv",
-    help="Output TSV file for recommendations"
+    help="Output TSV file for recommendations",
 )
 @click.option(
     "--min-confidence",
     type=float,
     default=0.85,
-    help="Minimum confidence threshold for considering mappings"
+    help="Minimum confidence threshold for considering mappings",
 )
 @click.option(
-    "--fetch-from-ols/--no-fetch",
-    default=True,
-    help="Fetch additional metadata from OLS API"
+    "--fetch-from-ols/--no-fetch", default=True, help="Fetch additional metadata from OLS API"
 )
-@click.option(
-    "--top-n",
-    type=int,
-    default=20,
-    help="Number of top mappings to analyze in detail"
-)
-def main(
-    mappings: Path,
-    output: Path,
-    min_confidence: float,
-    fetch_from_ols: bool,
-    top_n: int
-):
+@click.option("--top-n", type=int, default=20, help="Number of top mappings to analyze in detail")
+def main(mappings: Path, output: Path, min_confidence: float, fetch_from_ols: bool, top_n: int):
     """
     Bootstrap METPO definition enrichment by fetching real definitions
     and assessing quality with PageRank-like term importance.
@@ -233,16 +225,18 @@ def main(
             sssom_def = extract_definition_from_label(mapping["object_label"])
 
             if sssom_def:
-                candidates.append({
-                    "metpo_id": metpo_id,
-                    "metpo_label": metpo_label,
-                    "source_iri": mapping["object_id"],
-                    "source_ontology": mapping["object_source"],
-                    "match_type": mapping["predicate_id"].split("#")[-1].split(":")[-1],
-                    "confidence": mapping["confidence"],
-                    "definition_source": "sssom",
-                    "definition": sssom_def,
-                })
+                candidates.append(
+                    {
+                        "metpo_id": metpo_id,
+                        "metpo_label": metpo_label,
+                        "source_iri": mapping["object_id"],
+                        "source_ontology": mapping["object_source"],
+                        "match_type": mapping["predicate_id"].split("#")[-1].split(":")[-1],
+                        "confidence": mapping["confidence"],
+                        "definition_source": "sssom",
+                        "definition": sssom_def,
+                    }
+                )
 
     click.echo(f"\nFound {len(candidates)} candidate definitions from SSSOM file")
 
@@ -254,7 +248,9 @@ def main(
         top_candidates = sorted(candidates, key=lambda x: x["confidence"], reverse=True)[:top_n]
 
         for i, candidate in enumerate(top_candidates, 1):
-            click.echo(f"  [{i}/{len(top_candidates)}] Fetching {candidate['source_iri']}...", nl=False)
+            click.echo(
+                f"  [{i}/{len(top_candidates)}] Fetching {candidate['source_iri']}...", nl=False
+            )
 
             # Fetch term from OLS
             ols_data = fetch_term_from_ols(candidate["source_iri"])
@@ -318,7 +314,7 @@ def main(
             "definition",
         ]
 
-        with Path(output).open( "w", encoding="utf-8", newline="") as f:
+        with Path(output).open("w", encoding="utf-8", newline="") as f:
             writer = csv.DictWriter(f, fieldnames=fieldnames, delimiter="\t")
             writer.writeheader()
 
@@ -344,9 +340,11 @@ def main(
         click.echo("\nTop 5 recommendations:")
         for i, candidate in enumerate(candidates[:5], 1):
             click.echo(f"\n  {i}. {candidate['metpo_id']} ({candidate['metpo_label']})")
-            click.echo(f"     Quality: {candidate['quality_overall']} | "
-                      f"Used in {candidate.get('ontology_usage_count', '?')} ontologies | "
-                      f"Confidence: {candidate['confidence']:.3f}")
+            click.echo(
+                f"     Quality: {candidate['quality_overall']} | "
+                f"Used in {candidate.get('ontology_usage_count', '?')} ontologies | "
+                f"Confidence: {candidate['confidence']:.3f}"
+            )
             click.echo(f"     Definition: {candidate['definition'][:100]}...")
     else:
         click.echo("\n✗ No candidate definitions found")

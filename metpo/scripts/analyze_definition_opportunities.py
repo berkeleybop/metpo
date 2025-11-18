@@ -9,6 +9,7 @@ This script:
 4. Extracts definitions from matched terms where available
 5. Generates recommendations for definition improvements
 """
+
 import csv
 from collections import defaultdict
 from pathlib import Path
@@ -20,7 +21,7 @@ def read_metpo_terms(template_path: Path) -> dict[str, dict]:
     """Read METPO terms from the ROBOT template TSV."""
     terms = {}
 
-    with Path(template_path).open( encoding="utf-8") as f:
+    with Path(template_path).open(encoding="utf-8") as f:
         reader = csv.DictReader(f, delimiter="\t")
         for row in reader:
             term_id = row.get("ID", "").strip()
@@ -43,7 +44,7 @@ def read_sssom_mappings(sssom_path: Path) -> dict[str, list[dict]]:
     """Read SSSOM mappings and organize by METPO term."""
     mappings = defaultdict(list)
 
-    with Path(sssom_path).open( encoding="utf-8") as f:
+    with Path(sssom_path).open(encoding="utf-8") as f:
         # Skip comment lines
         lines = [line for line in f if not line.startswith("#")]
 
@@ -137,15 +138,17 @@ def find_best_definition_candidates(mappings: list[dict]) -> list[dict]:
         elif "relatedMatch" in predicate:
             priority = 1
 
-        candidates.append({
-            "definition": definition,
-            "source_label": label,
-            "source_id": mapping["object_id"],
-            "source": mapping["object_source"],
-            "confidence": mapping["confidence"],
-            "predicate": predicate,
-            "priority": priority,
-        })
+        candidates.append(
+            {
+                "definition": definition,
+                "source_label": label,
+                "source_id": mapping["object_id"],
+                "source": mapping["object_source"],
+                "confidence": mapping["confidence"],
+                "predicate": predicate,
+                "priority": priority,
+            }
+        )
 
     # Sort by priority (match type) then confidence
     candidates.sort(key=lambda x: (x["priority"], x["confidence"]), reverse=True)
@@ -159,37 +162,37 @@ def find_best_definition_candidates(mappings: list[dict]) -> list[dict]:
     "-t",
     type=click.Path(exists=True, path_type=Path),
     default="src/templates/metpo_sheet.tsv",
-    help="Path to METPO ROBOT template TSV"
+    help="Path to METPO ROBOT template TSV",
 )
 @click.option(
     "--mappings",
     "-m",
     type=click.Path(exists=True, path_type=Path),
     default="data/mappings/metpo_mappings_optimized.sssom.tsv",
-    help="Path to SSSOM mappings file"
+    help="Path to SSSOM mappings file",
 )
 @click.option(
     "--output",
     "-o",
     type=click.Path(path_type=Path),
     default="reports/definition_improvement_opportunities.tsv",
-    help="Output TSV file for recommendations"
+    help="Output TSV file for recommendations",
 )
 @click.option(
     "--min-confidence",
     type=float,
     default=0.7,
-    help="Minimum confidence threshold for considering mappings"
+    help="Minimum confidence threshold for considering mappings",
 )
 @click.option(
     "--match-types",
     default="exactMatch,closeMatch",
-    help="Comma-separated list of match types to consider"
+    help="Comma-separated list of match types to consider",
 )
 @click.option(
     "--include-existing/--missing-only",
     default=False,
-    help="Include terms with existing definitions (show all improvement opportunities)"
+    help="Include terms with existing definitions (show all improvement opportunities)",
 )
 def main(
     template: Path,
@@ -197,7 +200,7 @@ def main(
     output: Path,
     min_confidence: float,
     match_types: str,
-    include_existing: bool
+    include_existing: bool,
 ):
     """
     Analyze METPO terms to identify opportunities for adding or improving
@@ -229,7 +232,8 @@ def main(
 
         # Filter by confidence and match type
         filtered_mappings = [
-            m for m in term_mappings
+            m
+            for m in term_mappings
             if m["confidence"] >= min_confidence
             and any(mt in m["predicate_id"] for mt in allowed_match_types)
         ]
@@ -247,25 +251,26 @@ def main(
         for i, candidate in enumerate(candidates[:3], 1):
             # Check genus compatibility with parent class
             genus_compatible = check_genus_compatibility(
-                term_info["parent_classes"],
-                candidate["definition"]
+                term_info["parent_classes"], candidate["definition"]
             )
 
-            recommendations.append({
-                "metpo_id": term_id,
-                "metpo_label": term_info["label"],
-                "parent_classes": term_info["parent_classes"],
-                "current_definition": term_info["definition"],
-                "definition_quality": definition_quality,
-                "rank": i,
-                "candidate_definition": candidate["definition"],
-                "genus_compatible": "yes" if genus_compatible else "no",
-                "source_id": candidate["source_id"],
-                "source_label": candidate["source_label"],
-                "source_ontology": candidate["source"],
-                "match_type": candidate["predicate"].split("#")[-1],
-                "confidence": f"{candidate['confidence']:.4f}",
-            })
+            recommendations.append(
+                {
+                    "metpo_id": term_id,
+                    "metpo_label": term_info["label"],
+                    "parent_classes": term_info["parent_classes"],
+                    "current_definition": term_info["definition"],
+                    "definition_quality": definition_quality,
+                    "rank": i,
+                    "candidate_definition": candidate["definition"],
+                    "genus_compatible": "yes" if genus_compatible else "no",
+                    "source_id": candidate["source_id"],
+                    "source_label": candidate["source_label"],
+                    "source_ontology": candidate["source"],
+                    "match_type": candidate["predicate"].split("#")[-1],
+                    "confidence": f"{candidate['confidence']:.4f}",
+                }
+            )
 
     # Write output
     output.parent.mkdir(parents=True, exist_ok=True)
@@ -287,7 +292,7 @@ def main(
             "confidence",
         ]
 
-        with Path(output).open( "w", encoding="utf-8", newline="") as f:
+        with Path(output).open("w", encoding="utf-8", newline="") as f:
             writer = csv.DictWriter(f, fieldnames=fieldnames, delimiter="\t")
             writer.writeheader()
             writer.writerows(recommendations)
@@ -297,8 +302,12 @@ def main(
 
         # Summary statistics
         terms_with_recommendations = len({r["metpo_id"] for r in recommendations})
-        missing_count = sum(1 for r in recommendations if r["definition_quality"] == "missing" and r["rank"] == 1)
-        minimal_count = sum(1 for r in recommendations if r["definition_quality"] == "minimal" and r["rank"] == 1)
+        missing_count = sum(
+            1 for r in recommendations if r["definition_quality"] == "missing" and r["rank"] == 1
+        )
+        minimal_count = sum(
+            1 for r in recommendations if r["definition_quality"] == "minimal" and r["rank"] == 1
+        )
 
         click.echo("\nSummary:")
         click.echo(f"  Terms needing improvement: {terms_with_recommendations}")
@@ -311,7 +320,9 @@ def main(
             click.echo(f"\n  {rec['metpo_id']} ({rec['metpo_label']})")
             click.echo(f"    Current: {rec['current_definition'] or '[MISSING]'}")
             click.echo(f"    Candidate: {rec['candidate_definition'][:100]}...")
-            click.echo(f"    Source: {rec['source_ontology']} ({rec['match_type']}, conf={rec['confidence']})")
+            click.echo(
+                f"    Source: {rec['source_ontology']} ({rec['match_type']}, conf={rec['confidence']})"
+            )
     else:
         click.echo("\n✓ No recommendations found with current criteria")
         click.echo("  Try lowering --min-confidence or adding more --match-types")

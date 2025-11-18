@@ -37,6 +37,7 @@ def analyze_sssom(sssom_file):
 
     return total_mappings, target_ontologies, match_types
 
+
 def main():
     metpo_root = Path("/home/mark/gitrepos/metpo")
     sssom_dir = metpo_root / "data" / "mappings"
@@ -44,8 +45,10 @@ def main():
     print("=== METPO SSSOM Mappings Analysis (PRIMARY SOURCE) ===\n")
 
     # Try both SSSOM files
-    for sssom_file in ["metpo_mappings_combined_relaxed.sssom.tsv",
-                       "metpo_mappings_optimized.sssom.tsv"]:
+    for sssom_file in [
+        "metpo_mappings_combined_relaxed.sssom.tsv",
+        "metpo_mappings_optimized.sssom.tsv",
+    ]:
         filepath = sssom_dir / sssom_file
 
         if not filepath.exists():
@@ -65,7 +68,8 @@ def main():
             short_type = match_type.split("/")[-1] if "/" in match_type else match_type
             print(f"  {short_type:30s} {count:4d}")
 
-        print("\n" + "="*70 + "\n")
+        print("\n" + "=" * 70 + "\n")
+
 
 if __name__ == "__main__":
     main()

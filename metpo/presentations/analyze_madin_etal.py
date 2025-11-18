@@ -5,6 +5,7 @@ Primary sources:
 - /home/mark/gitrepos/kg-microbe/data/transformed/madin_etal/edges.tsv
 - /home/mark/gitrepos/kg-microbe/data/transformed/madin_etal/nodes.tsv
 """
+
 import csv
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -13,6 +14,7 @@ from pathlib import Path
 RAW_FILE = Path("/home/mark/gitrepos/kg-microbe/data/raw/madin_etal.csv")
 TRANSFORMED_EDGES = Path("/home/mark/gitrepos/kg-microbe/data/transformed/madin_etal/edges.tsv")
 TRANSFORMED_NODES = Path("/home/mark/gitrepos/kg-microbe/data/transformed/madin_etal/nodes.tsv")
+
 
 def analyze_raw_madin():
     """Analyze the raw Madin et al CSV file"""
@@ -23,7 +25,7 @@ def analyze_raw_madin():
     print("\n=== Madin et al Raw Data Analysis ===")
     print(f"Source: {RAW_FILE}")
 
-    with Path(RAW_FILE).open( encoding="utf-8") as f:
+    with Path(RAW_FILE).open(encoding="utf-8") as f:
         reader = csv.DictReader(f)
 
         total_records = 0
@@ -70,8 +72,9 @@ def analyze_raw_madin():
             "total_records": total_records,
             "trait_coverage": trait_coverage,
             "data_sources": data_sources,
-            "domains": domains
+            "domains": domains,
         }
+
 
 def analyze_transformed_madin():
     """Analyze METPO usage in transformed Madin et al data"""
@@ -103,7 +106,7 @@ def analyze_transformed_madin():
     print(f"\nTotal edges: {total_edges:,}")
     print(f"Edges using METPO: {metpo_edges:,}")
     if total_edges > 0:
-        print(f"Percentage: {(metpo_edges/total_edges)*100:.1f}%")
+        print(f"Percentage: {(metpo_edges / total_edges) * 100:.1f}%")
 
     # Count unique METPO terms
     metpo_counter = Counter(metpo_objects)
@@ -125,8 +128,9 @@ def analyze_transformed_madin():
         "metpo_edges": metpo_edges,
         "unique_metpo_terms": unique_metpo_terms,
         "metpo_distribution": metpo_counter,
-        "predicates": predicate_counter
+        "predicates": predicate_counter,
     }
+
 
 def analyze_transformed_nodes():
     """Analyze nodes in transformed Madin et al data"""
@@ -156,10 +160,8 @@ def analyze_transformed_nodes():
         pct = (count / total_nodes) * 100
         print(f"  {prefix:20s}: {count:8,} ({pct:5.1f}%)")
 
-    return {
-        "total_nodes": total_nodes,
-        "node_types": node_types
-    }
+    return {"total_nodes": total_nodes, "node_types": node_types}
+
 
 def main():
     print("=" * 70)
@@ -181,6 +183,7 @@ def main():
         print(f"Unique METPO terms: {transformed_stats['unique_metpo_terms']}")
     if node_stats:
         print(f"Total nodes: {node_stats['total_nodes']:,}")
+
 
 if __name__ == "__main__":
     main()

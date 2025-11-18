@@ -18,7 +18,7 @@ def extract_identifiers(filepath: Path) -> tuple[str, str, str]:
     Returns:
         (pmid, doi, normalized_abstract_text)
     """
-    with Path(filepath).open( encoding="utf-8") as f:
+    with Path(filepath).open(encoding="utf-8") as f:
         content = f.read()
 
     # Extract PMID
@@ -97,8 +97,12 @@ def find_duplicates(source_dirs):
     for doi, files in by_doi.items():
         if len(files) > 1:
             # Filter out already-found duplicates
-            remaining = [f for f in files if f not in duplicates and
-                        f not in [d for dlist in duplicates.values() for d in dlist]]
+            remaining = [
+                f
+                for f in files
+                if f not in duplicates
+                and f not in [d for dlist in duplicates.values() for d in dlist]
+            ]
 
             if len(remaining) > 1:
                 canonical = remaining[0]
@@ -111,8 +115,12 @@ def find_duplicates(source_dirs):
     for text_hash, files in by_text_hash.items():
         if len(files) > 1:
             # Filter out already-found duplicates
-            remaining = [f for f in files if f not in duplicates and
-                        f not in [d for dlist in duplicates.values() for d in dlist]]
+            remaining = [
+                f
+                for f in files
+                if f not in duplicates
+                and f not in [d for dlist in duplicates.values() for d in dlist]
+            ]
 
             if len(remaining) > 1:
                 canonical = remaining[0]
@@ -125,27 +133,27 @@ def find_duplicates(source_dirs):
 
 
 @click.command()
-@click.option("--source-dirs", multiple=True,
-              default=["literature_mining/abstracts", "literature_mining/cmm_pfas_abstracts"],
-              help="Source directories to scan (can specify multiple)", show_default=True)
-@click.option("--show-details", is_flag=True,
-              help="Show details of each duplicate group")
+@click.option(
+    "--source-dirs",
+    multiple=True,
+    default=["literature_mining/abstracts", "literature_mining/cmm_pfas_abstracts"],
+    help="Source directories to scan (can specify multiple)",
+    show_default=True,
+)
+@click.option("--show-details", is_flag=True, help="Show details of each duplicate group")
 def main(source_dirs, show_details):
     """Find duplicate abstracts by content comparison.
 
     Scans abstract files and identifies duplicates based on content similarity,
     even when filenames differ.
     """
-    args = type("Args", (), {
-        "source_dirs": source_dirs,
-        "show_details": show_details
-    })()
+    args = type("Args", (), {"source_dirs": source_dirs, "show_details": show_details})()
 
     duplicates, all_files = find_duplicates(args.source_dirs)
 
-    print(f"\n{'='*70}")
+    print(f"\n{'=' * 70}")
     print("DEDUPLICATION RESULTS")
-    print(f"{'='*70}")
+    print(f"{'=' * 70}")
 
     total_files = len(all_files)
     duplicate_files = sum(len(dupes) for dupes in duplicates.values())
@@ -157,9 +165,9 @@ def main(source_dirs, show_details):
     print(f"Duplicate groups: {len(duplicates)}")
 
     if args.show_details and duplicates:
-        print(f"\n{'='*70}")
+        print(f"\n{'=' * 70}")
         print("DUPLICATE GROUPS")
-        print(f"{'='*70}")
+        print(f"{'=' * 70}")
 
         for i, (canonical, dupes) in enumerate(duplicates.items(), 1):
             pmid, doi, _ = extract_identifiers(canonical)

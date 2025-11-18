@@ -31,7 +31,7 @@ class ExternalOntologyHelper:
         "mpo": "mpo_v0.74.en_only.db",
         "n4l_merged": "n4l_merged.db",
         "omp": "omp.db",
-        "fao": "fao.db"
+        "fao": "fao.db",
     }
 
     def __init__(self, debug: bool = False):
@@ -42,7 +42,7 @@ class ExternalOntologyHelper:
         """Convert IRI to CURIE format expected by OAKLib."""
         for iri_prefix, curie_prefix in self.IRI_TO_CURIE_PATTERNS.items():
             if iri.startswith(iri_prefix):
-                remainder = iri[len(iri_prefix):]
+                remainder = iri[len(iri_prefix) :]
                 remainder = re.sub(r"([A-Za-z]+)_(\d+)", r"\1:\2", remainder)
                 curie = curie_prefix + remainder
                 if self.debug:
@@ -109,7 +109,7 @@ class ExternalOntologyHelper:
                             adapter = get_adapter(f"pronto:{local_owl_path}")
                             if self.debug:
                                 print(f"    ✓ Connected via Local OWL: {local_owl_path}")
-                            break # Stop if found
+                            break  # Stop if found
                         except Exception as e:
                             if self.debug:
                                 print(f"    ✗ Local OWL failed: {type(e).__name__}")
@@ -117,9 +117,9 @@ class ExternalOntologyHelper:
             # Strategy 3 & onwards: Web-based strategies
             if not adapter:
                 web_strategies = [
-                    ("bioportal", "BioPortal API"), # Use original case for BioPortal
+                    ("bioportal", "BioPortal API"),  # Use original case for BioPortal
                     ("ubergraph", "Ubergraph SPARQL"),
-                    ("ols", "OLS4 API")
+                    ("ols", "OLS4 API"),
                 ]
 
                 for strategy, name in web_strategies:
@@ -131,7 +131,7 @@ class ExternalOntologyHelper:
                         adapter = get_adapter(f"{strategy}:{prefix_to_use}")
                         if self.debug:
                             print(f"    ✓ Connected via {name}")
-                        break # Found a working strategy
+                        break  # Found a working strategy
                     except Exception as e:
                         if self.debug:
                             print(f"    ✗ {name} failed: {type(e).__name__}")
@@ -247,16 +247,23 @@ class OaklibHierarchy:
 
 
 @click.command()
-@input_csv_option(required=False, help_text="Path to the SSSOM TSV file containing METPO term mappings")
+@input_csv_option(
+    required=False, help_text="Path to the SSSOM TSV file containing METPO term mappings"
+)
 @click.option(
     "--metpo-owl",
     type=click.Path(exists=True, dir_okay=False, path_type=str),
     default="../src/ontology/metpo.owl",
-    help="Path to the METPO OWL file for hierarchy parsing."
+    help="Path to the METPO OWL file for hierarchy parsing.",
 )
-@distance_threshold_option(default=0.9, help_text="Distance threshold below which a match is considered 'good'")
+@distance_threshold_option(
+    default=0.9, help_text="Distance threshold below which a match is considered 'good'"
+)
 @debug_option(help_text="Enable verbose debug output")
-@output_option(default="../data/coherence/sibling_coherence_analysis_output.csv", help_text="Path to save coherence results CSV")
+@output_option(
+    default="../data/coherence/sibling_coherence_analysis_output.csv",
+    help_text="Path to save coherence results CSV",
+)
 def main(input_file: str, metpo_owl: str, distance_threshold: float, debug: bool, output: str):
     """Analyzes sibling coherence for METPO term mappings from SSSOM TSV."""
     input_csv = input_file or "../metpo_relevant_mappings.sssom.tsv"
@@ -309,7 +316,9 @@ def main(input_file: str, metpo_owl: str, distance_threshold: float, debug: bool
     metpo_match_lookup = df.groupby("metpo_id")["match_iri"].apply(set).to_dict()
 
     coherence_scores = []
-    for _index, row in tqdm(best_matches_df.iterrows(), total=len(best_matches_df), desc="Analyzing Sibling Coherence"):
+    for _index, row in tqdm(
+        best_matches_df.iterrows(), total=len(best_matches_df), desc="Analyzing Sibling Coherence"
+    ):
         metpo_id = row["metpo_id"]
         metpo_label = row["metpo_label"]
         match_iri = row["match_iri"]
@@ -318,7 +327,9 @@ def main(input_file: str, metpo_owl: str, distance_threshold: float, debug: bool
 
         if debug:
             print(f"\n--- Analyzing {metpo_label} ({metpo_id}) ---")
-            print(f"  Best match: {row['match_document']} ({match_iri}) from {match_ontology}, distance: {match_distance:.3f}")
+            print(
+                f"  Best match: {row['match_document']} ({match_iri}) from {match_ontology}, distance: {match_distance:.3f}"
+            )
 
         # Get METPO siblings
         metpo_siblings = metpo_hierarchy.get_siblings(metpo_id)
@@ -346,7 +357,9 @@ def main(input_file: str, metpo_owl: str, distance_threshold: float, debug: bool
                     coherent_siblings += 1
                     if debug:
                         matching_iris = sibling_matches & external_siblings
-                        print(f"    {metpo_sibling_id} matches external sibling: {next(iter(matching_iris))}")
+                        print(
+                            f"    {metpo_sibling_id} matches external sibling: {next(iter(matching_iris))}"
+                        )
 
         # Calculate coherence score
         if metpo_siblings:
@@ -356,21 +369,25 @@ def main(input_file: str, metpo_owl: str, distance_threshold: float, debug: bool
 
         if debug:
             if coherence_score is not None:
-                print(f"  Coherence: {coherent_siblings}/{len(metpo_siblings)} = {coherence_score:.3f}")
+                print(
+                    f"  Coherence: {coherent_siblings}/{len(metpo_siblings)} = {coherence_score:.3f}"
+                )
             else:
                 print("  Coherence: N/A (no siblings to compare)")
 
-        coherence_scores.append({
-            "metpo_id": metpo_id,
-            "metpo_label": metpo_label,
-            "match_iri": match_iri,
-            "match_ontology": match_ontology,
-            "match_distance": match_distance,
-            "metpo_sibling_count": len(metpo_siblings),
-            "external_sibling_count": len(external_siblings),
-            "coherent_sibling_count": coherent_siblings,
-            "coherence_score": coherence_score
-        })
+        coherence_scores.append(
+            {
+                "metpo_id": metpo_id,
+                "metpo_label": metpo_label,
+                "match_iri": match_iri,
+                "match_ontology": match_ontology,
+                "match_distance": match_distance,
+                "metpo_sibling_count": len(metpo_siblings),
+                "external_sibling_count": len(external_siblings),
+                "coherent_sibling_count": coherent_siblings,
+                "coherence_score": coherence_score,
+            }
+        )
 
     print("\n=== Sibling Coherence Analysis Summary ===")
     summary_df = pd.DataFrame(coherence_scores)
@@ -390,13 +407,19 @@ def main(input_file: str, metpo_owl: str, distance_threshold: float, debug: bool
         mean_coherence = median_coherence = high_coherence_count = 0
 
     print(f"\nTotal terms analyzed: {total_terms}")
-    print(f"Terms with METPO siblings: {terms_with_siblings} ({terms_with_siblings/total_terms*100:.1f}%)")
-    print(f"Terms with external siblings retrieved: {terms_with_external_siblings} ({terms_with_external_siblings/total_terms*100:.1f}%)")
+    print(
+        f"Terms with METPO siblings: {terms_with_siblings} ({terms_with_siblings / total_terms * 100:.1f}%)"
+    )
+    print(
+        f"Terms with external siblings retrieved: {terms_with_external_siblings} ({terms_with_external_siblings / total_terms * 100:.1f}%)"
+    )
     print(f"Terms with coherence scores: {len(coherence_values)}")
     print("\nCoherence Statistics:")
     print(f"  Mean coherence: {mean_coherence:.3f}")
     print(f"  Median coherence: {median_coherence:.3f}")
-    print(f"  High coherence (≥0.5): {high_coherence_count}/{len(coherence_values)} ({high_coherence_count/len(coherence_values)*100 if len(coherence_values) > 0 else 0:.1f}%)")
+    print(
+        f"  High coherence (≥0.5): {high_coherence_count}/{len(coherence_values)} ({high_coherence_count / len(coherence_values) * 100 if len(coherence_values) > 0 else 0:.1f}%)"
+    )
 
     # Show top coherent matches
     print("\n=== Top 10 Most Coherent Matches ===")
@@ -404,17 +427,23 @@ def main(input_file: str, metpo_owl: str, distance_threshold: float, debug: bool
     for _idx, row in top_coherent.iterrows():
         print(f"{row['metpo_label']} ({row['metpo_id']})")
         print(f"  → {row['match_ontology']}: {row['match_iri']}")
-        print(f"  Coherence: {row['coherence_score']:.3f} ({row['coherent_sibling_count']}/{row['metpo_sibling_count']} siblings align)")
+        print(
+            f"  Coherence: {row['coherence_score']:.3f} ({row['coherent_sibling_count']}/{row['metpo_sibling_count']} siblings align)"
+        )
         print()
 
     # Show low coherence matches for review
     print("\n=== Terms with Low Coherence (<0.3) ===")
-    low_coherent = summary_df[summary_df["coherence_score"] < 0.3].dropna(subset=["coherence_score"])
+    low_coherent = summary_df[summary_df["coherence_score"] < 0.3].dropna(
+        subset=["coherence_score"]
+    )
     if len(low_coherent) > 0:
         for _idx, row in low_coherent.head(10).iterrows():
             print(f"{row['metpo_label']} ({row['metpo_id']})")
             print(f"  → {row['match_ontology']}: {row['match_iri']}")
-            print(f"  Coherence: {row['coherence_score']:.3f} ({row['coherent_sibling_count']}/{row['metpo_sibling_count']} siblings align)")
+            print(
+                f"  Coherence: {row['coherence_score']:.3f} ({row['coherent_sibling_count']}/{row['metpo_sibling_count']} siblings align)"
+            )
             print()
     else:
         print("  No terms with low coherence found!")

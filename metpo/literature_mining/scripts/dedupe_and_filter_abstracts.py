@@ -37,7 +37,7 @@ def has_bacterial_taxa(content: str) -> tuple[bool, str]:
 
 def get_abstract_text(filepath: Path) -> str:
     """Extract just the abstract portion from a file."""
-    with Path(filepath).open( encoding="utf-8") as f:
+    with Path(filepath).open(encoding="utf-8") as f:
         content = f.read()
 
     # Extract abstract section
@@ -48,27 +48,39 @@ def get_abstract_text(filepath: Path) -> str:
 
 
 @click.command()
-@click.option("--source-dirs", multiple=True,
-              default=["literature_mining/abstracts", "literature_mining/cmm_pfas_abstracts"],
-              help="Source directories to scan (can specify multiple)", show_default=True)
-@click.option("--output-dir", default="literature_mining/abstracts_filtered",
-              help="Output directory for filtered abstracts", show_default=True)
-@click.option("--dry-run", is_flag=True,
-              help="Show what would be done without copying files")
-@click.option("--require-bacteria", is_flag=True,
-              help="Only include abstracts mentioning bacterial taxa")
+@click.option(
+    "--source-dirs",
+    multiple=True,
+    default=["literature_mining/abstracts", "literature_mining/cmm_pfas_abstracts"],
+    help="Source directories to scan (can specify multiple)",
+    show_default=True,
+)
+@click.option(
+    "--output-dir",
+    default="literature_mining/abstracts_filtered",
+    help="Output directory for filtered abstracts",
+    show_default=True,
+)
+@click.option("--dry-run", is_flag=True, help="Show what would be done without copying files")
+@click.option(
+    "--require-bacteria", is_flag=True, help="Only include abstracts mentioning bacterial taxa"
+)
 def main(source_dirs, output_dir, dry_run, require_bacteria):
     """Dedupe and filter abstracts for bacterial taxa mentions.
 
     Consolidates abstracts from multiple directories, removes duplicates,
     and optionally filters for papers mentioning bacterial taxa.
     """
-    args = type("Args", (), {
-        "source_dirs": source_dirs,
-        "output_dir": output_dir,
-        "dry_run": dry_run,
-        "require_bacteria": require_bacteria
-    })()
+    args = type(
+        "Args",
+        (),
+        {
+            "source_dirs": source_dirs,
+            "output_dir": output_dir,
+            "dry_run": dry_run,
+            "require_bacteria": require_bacteria,
+        },
+    )()
 
     # Collect all abstracts
     print("Scanning source directories...")

@@ -9,11 +9,15 @@ import yaml
 
 
 @click.command()
-@click.option("--input-file", "-i",
-              default="literature_mining/chem_interaction_props.tsv",
-              help="Input TSV file path")
-@click.option("--output-file", "-o",
-              help="Output YAML file path (if not specified, prints to stdout)")
+@click.option(
+    "--input-file",
+    "-i",
+    default="literature_mining/chem_interaction_props.tsv",
+    help="Input TSV file path",
+)
+@click.option(
+    "--output-file", "-o", help="Output YAML file path (if not specified, prints to stdout)"
+)
 def convert_chem_props(input_file, output_file):
     """Convert chem_interaction_props.tsv to LinkML enumeration format."""
 
@@ -36,18 +40,11 @@ def convert_chem_props(input_file, output_file):
         # Extract CURIE from IRI
         curie = iri.replace("<https://w3id.org/metpo/", "METPO:").replace(">", "")
 
-        permissible_values[enum_key] = {
-            "description": label,
-            "meaning": curie
-        }
+        permissible_values[enum_key] = {"description": label, "meaning": curie}
 
     # Create the final structure
     data = {
-        "enums": {
-            "ChemicalInteractionPropertyEnum": {
-                "permissible_values": permissible_values
-            }
-        }
+        "enums": {"ChemicalInteractionPropertyEnum": {"permissible_values": permissible_values}}
     }
 
     # Output YAML
