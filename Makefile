@@ -456,7 +456,7 @@ external/metpo_historical:
 # miso: Microbial Conditions Ontology
 # OFSMR: Open Predictive Microbiology Ontology
 # TYPON: Microbial Typing Ontology
-NON_OLS_BIOPORTAL_ONTOLOGIES = MPO OMP BIPON D3O FMPM GMO HMADO ID-AMR MCCV MEO miso OFSMR TYPON
+NON_OLS_BIOPORTAL_ONTOLOGIES = D3O MPO OMP
 
 .PHONY: download-external-bioportal-ontologies clean-external-bioportal-ontologies
 
