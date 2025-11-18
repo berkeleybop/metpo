@@ -12,7 +12,7 @@ Output:
     - MongoDB collection: bactotraits.file_versions
 """
 
-from datetime import datetime
+from datetime import UTC, datetime
 
 import click
 from pymongo import MongoClient
@@ -148,7 +148,7 @@ def main(host, port, db_name, collection_name):
     metadata = {
         "version_key": "_metadata",
         "description": "Metadata about this collection",
-        "created_at": datetime.utcnow(),
+        "created_at": datetime.now(UTC),
         "purpose": "Document naming conventions and file versions across BactoTraits pipeline",
         "related_collections": [
             "bactotraits.bactotraits (data)",

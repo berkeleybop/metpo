@@ -87,6 +87,12 @@ line-ending = "auto"
 "metpo/tools/*.py" = ["T201"]
 "metpo/scripts/*.py" = ["T201"]
 "literature_mining/scripts/*.py" = ["T201"]
+# Complexity warnings for specific analysis/utility scripts - refactoring would require significant restructuring
+"metpo/bactotraits/bactotraits_metpo_set_difference.py" = ["PLR0915", "PLR0912"]
+"metpo/bactotraits/create_bactotraits_file_versions.py" = ["PLR0915"]
+"metpo/analysis/assess_ontology_by_api_search.py" = ["PLR0915"]
+"metpo/analysis/extract_definitions_from_mappings.py" = ["PLR0915"]
+"metpo/analysis/analyze_ontology_value.py" = ["PLR0915", "PLR0912"]
 
 [lint.isort]
 known-first-party = ["metpo"]

@@ -44,12 +44,11 @@ def read_metpo_bactotraits_synonyms(synonym_sources_tsv: Path) -> dict[str, dict
             entity = row.get("?entity", "").strip("<>")
             entity_type = row.get("?entityType", "").strip('"')
 
-            if src == BACTOTRAITS_SOURCE_URI and syn_value:
-                if syn_value not in synonyms:
-                    synonyms[syn_value] = {
-                        "entity": entity,
-                        "entity_type": entity_type,
-                        "source": src
+            if src == BACTOTRAITS_SOURCE_URI and syn_value and syn_value not in synonyms:
+                synonyms[syn_value] = {
+                    "entity": entity,
+                    "entity_type": entity_type,
+                    "source": src
                     }
 
     return synonyms
@@ -116,9 +115,8 @@ def describe_difference(str1: str, str2: str) -> str:
         differences.append("leading/trailing whitespace")
 
     # Check if they're the same after removing all whitespace
-    if str1.replace(" ", "") == str2.replace(" ", "") and str1 != str2:
-        if "leading/trailing whitespace" not in differences:
-            differences.append("whitespace")
+    if str1.replace(" ", "") == str2.replace(" ", "") and str1 != str2 and "leading/trailing whitespace" not in differences:
+        differences.append("whitespace")
 
     # Check hyphen vs underscore
     if str1.replace("-", "_") == str2.replace("-", "_"):
