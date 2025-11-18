@@ -14,7 +14,7 @@ Outputs term count to stdout on success for Make to capture.
 import csv
 import subprocess
 import sys
-from datetime import datetime
+from datetime import UTC, datetime
 from pathlib import Path
 
 import click
@@ -24,7 +24,7 @@ LOG_PATH = Path(".robot_query.log")
 
 def log_event(ontology_id: str, input_file: str, message: str, log_type: str = "QUERY_FAILED"):
     """Log query event."""
-    timestamp = datetime.now().isoformat()
+    timestamp = datetime.now(UTC).isoformat()
     with Path(LOG_PATH).open( "a") as f:
         f.write(f"{timestamp} | {log_type} | {ontology_id} | {input_file} | {message}\n")
 

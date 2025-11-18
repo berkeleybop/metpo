@@ -11,7 +11,7 @@ Exit codes:
 
 import os
 import sys
-from datetime import datetime
+from datetime import UTC, datetime
 from pathlib import Path
 
 import click
@@ -23,7 +23,7 @@ MIN_FILE_SIZE = 1000  # Bytes - anything smaller is likely an error response
 
 def log_failure(ontology_id: str, file_size: int, message: str):
     """Log fetch failure."""
-    timestamp = datetime.now().isoformat()
+    timestamp = datetime.now(UTC).isoformat()
     with Path(LOG_PATH).open( "a") as f:
         f.write(f"{timestamp} | FETCH_FAILED | {ontology_id} | {file_size} bytes | {message}\n")
 

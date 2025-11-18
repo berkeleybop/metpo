@@ -7,7 +7,7 @@ Usage:
 
 import csv
 import json
-from datetime import datetime
+from datetime import UTC, datetime
 from pathlib import Path
 
 import click
@@ -103,7 +103,8 @@ def main(verbose: bool):
             # Update timestamp only if not already set
             if "fetched_at" not in entry:
                 entry["fetched_at"] = datetime.fromtimestamp(
-                    file_path.stat().st_mtime
+                    file_path.stat().st_mtime,
+                    tz=UTC
                 ).isoformat()
 
             if verbose:

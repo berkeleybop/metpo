@@ -93,6 +93,11 @@ line-ending = "auto"
 "metpo/analysis/assess_ontology_by_api_search.py" = ["PLR0915"]
 "metpo/analysis/extract_definitions_from_mappings.py" = ["PLR0915"]
 "metpo/analysis/analyze_ontology_value.py" = ["PLR0915", "PLR0912"]
+# Ignore complexity checks in analysis scripts
+"metpo/analysis/*.py" = ["PLR0912", "PLR0915"]
+"literature_mining/analyze_*.py" = ["PLR0912", "PLR0915"]
+# Ignore complexity and minor issues in bactotraits data processing scripts
+"metpo/bactotraits/*.py" = ["PLR0911", "PLR0912", "PLR0915", "SIM102", "B007", "RUF001", "N806", "EXE002"]
 
 [lint.isort]
 known-first-party = ["metpo"]

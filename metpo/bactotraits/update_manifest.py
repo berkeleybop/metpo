@@ -7,7 +7,7 @@ Usage:
 """
 
 import json
-from datetime import datetime
+from datetime import UTC, datetime
 from pathlib import Path
 
 import click
@@ -58,7 +58,7 @@ def main(ontology: str, status: str, robot_status: str, file_path: Path,
     # Update fetch status
     if status:
         entry["status"] = status
-        entry["fetched_at"] = datetime.now().isoformat()
+        entry["fetched_at"] = datetime.now(UTC).isoformat()
         entry["source"] = source
 
     # Update file info
