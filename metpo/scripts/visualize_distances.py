@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Visualize cosine distance and similarity score distributions from SSSOM file.
 """

@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Pure metric calculator for OntoGPT benchmarks.
 Takes numbers in via arguments, outputs JSON metrics to stdout.

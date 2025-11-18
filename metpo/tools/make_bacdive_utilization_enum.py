@@ -61,7 +61,7 @@ def convert_tsv_to_linkml(tsv_file: Path, output_file: Path, enum_name: str,
 
     except Exception as e:
         click.echo(f"❌ Error: {e}", err=True)
-        raise click.Abort
+        raise click.Abort from e
 
 
 def convert_tsv_to_linkml_enum(tsv_file: str, output_file: str | None = None,
@@ -148,7 +148,7 @@ def convert_tsv_to_linkml_enum(tsv_file: str, output_file: str | None = None,
 
     # Write to file if specified
     if output_file:
-        with open(output_file, "w") as f:
+        with Path(output_file).open( "w") as f:
             f.write(yaml_output)
 
     return yaml_output

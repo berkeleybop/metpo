@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 """
 Query ontology with ROBOT.
 
@@ -26,14 +25,14 @@ LOG_PATH = Path(".robot_query.log")
 def log_event(ontology_id: str, input_file: str, message: str, log_type: str = "QUERY_FAILED"):
     """Log query event."""
     timestamp = datetime.now().isoformat()
-    with open(LOG_PATH, "a") as f:
+    with Path(LOG_PATH).open( "a") as f:
         f.write(f"{timestamp} | {log_type} | {ontology_id} | {input_file} | {message}\n")
 
 
 def count_tsv_terms(tsv_path: Path) -> int:
     """Count rows in TSV (excluding header)."""
     try:
-        with open(tsv_path) as f:
+        with Path(tsv_path).open() as f:
             return sum(1 for _ in csv.reader(f, delimiter="\t")) - 1
     except Exception:
         return 0

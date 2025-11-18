@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Analyze METPO terms to identify opportunities for adding or improving definitions
 based on high-confidence SSSOM mapping matches.
@@ -21,7 +20,7 @@ def read_metpo_terms(template_path: Path) -> dict[str, dict]:
     """Read METPO terms from the ROBOT template TSV."""
     terms = {}
 
-    with open(template_path, encoding="utf-8") as f:
+    with Path(template_path).open( encoding="utf-8") as f:
         reader = csv.DictReader(f, delimiter="\t")
         for row in reader:
             term_id = row.get("ID", "").strip()
@@ -44,7 +43,7 @@ def read_sssom_mappings(sssom_path: Path) -> dict[str, list[dict]]:
     """Read SSSOM mappings and organize by METPO term."""
     mappings = defaultdict(list)
 
-    with open(sssom_path, encoding="utf-8") as f:
+    with Path(sssom_path).open( encoding="utf-8") as f:
         # Skip comment lines
         lines = [line for line in f if not line.startswith("#")]
 
@@ -288,7 +287,7 @@ def main(
             "confidence",
         ]
 
-        with open(output, "w", encoding="utf-8", newline="") as f:
+        with Path(output).open( "w", encoding="utf-8", newline="") as f:
             writer = csv.DictWriter(f, fieldnames=fieldnames, delimiter="\t")
             writer.writeheader()
             writer.writerows(recommendations)

@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Analyze OntoGPT grounding success from PRIMARY SOURCE YAML files.
 
@@ -13,7 +12,7 @@ import yaml
 
 def count_groundings(yaml_file):
     """Count METPO, ChEBI, NCBITaxon, and AUTO terms from YAML."""
-    with open(yaml_file) as f:
+    with Path(yaml_file).open() as f:
         data = yaml.safe_load(f)
 
     counts = {

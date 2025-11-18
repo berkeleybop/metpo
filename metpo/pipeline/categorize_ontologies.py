@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 """
 Categorize ontologies by relevance to microbial phenotypes and size.
 
@@ -6,6 +5,7 @@ Uses keyword-based scoring learned from domain expert feedback patterns.
 """
 
 import csv
+from pathlib import Path
 
 import click
 
@@ -145,7 +145,7 @@ def main(input_file, output_prefix):
 
     # Read ontology catalog
     ontologies = []
-    with open(input_csv) as f:
+    with Path(input_csv).open() as f:
         reader = csv.DictReader(f)
         for row in reader:
             if row["ontologyId"] and row["count"]:
@@ -228,7 +228,7 @@ def main(input_file, output_prefix):
     # Write to CSV files
     for category_name in ["very_appealing", "in_between", "not_appealing"]:
         output_file = f"{output_prefix}_{category_name}.csv"
-        with open(output_file, "w", newline="") as f:
+        with Path(output_file).open( "w", newline="") as f:
             writer = csv.DictWriter(f, fieldnames=["ontologyId", "title", "count", "score", "reason", "description"])
             writer.writeheader()
             for onto in categorized[category_name]:

@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Create comprehensive coverage landscape summary for METPO branches.
 Shows best coverage, fragmentation score, and coverage distribution for each branch.

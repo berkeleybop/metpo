@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Comprehensive definition finder combining multiple sources.
 
@@ -147,7 +146,7 @@ def load_sssom_candidates(sssom_path: Path, metpo_label: str) -> list[dict]:
     """Load candidate definitions from SSSOM mappings."""
     candidates = []
 
-    with open(sssom_path, encoding="utf-8") as f:
+    with Path(sssom_path).open( encoding="utf-8") as f:
         lines = [line for line in f if not line.startswith("#")]
         reader = csv.DictReader(lines, delimiter="\t")
 
@@ -315,7 +314,7 @@ def main(
     # Load METPO terms
     click.echo(f"Loading METPO terms from {metpo_terms}...")
     terms = []
-    with open(metpo_terms, encoding="utf-8") as f:
+    with Path(metpo_terms).open( encoding="utf-8") as f:
         reader = csv.reader(f, delimiter="\t")
         next(reader)  # Skip ROBOT header row 1
         next(reader)  # Skip ROBOT header row 2
@@ -399,7 +398,7 @@ def main(
             "definition_length", "source_iri", "source_ontology", "source_label",
             "match_type", "confidence", "quality_label", "quality_score", "total_score"
         ]
-        with open(output, "w", encoding="utf-8", newline="") as f:
+        with Path(output).open( "w", encoding="utf-8", newline="") as f:
             writer = csv.DictWriter(f, fieldnames=fieldnames, delimiter="\t")
             writer.writeheader()
             writer.writerows(all_candidates)
@@ -413,7 +412,7 @@ def main(
             "source_iri", "source_ontology", "source_label", "match_type",
             "confidence", "quality_label", "quality_score", "total_score"
         ]
-        with open(best_output, "w", encoding="utf-8", newline="") as f:
+        with Path(best_output).open( "w", encoding="utf-8", newline="") as f:
             writer = csv.DictWriter(f, fieldnames=fieldnames, delimiter="\t")
             writer.writeheader()
             writer.writerows(best_per_term)

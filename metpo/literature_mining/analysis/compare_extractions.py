@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Compare two extraction outputs to evaluate template improvements.
 Usage: python compare_extractions.py <v1.yaml> <v2.yaml>
@@ -14,7 +13,7 @@ import yaml
 
 def analyze_extraction(yaml_file: Path) -> dict:
     """Analyze an extraction file and return statistics."""
-    with open(yaml_file) as f:
+    with Path(yaml_file).open() as f:
         docs = list(yaml.safe_load_all(f))
 
     stats = {

@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Analyze OntoGPT YAML outputs to identify:
 1. Examples where METPO successfully grounded text extractions
@@ -20,7 +19,7 @@ def extract_entities_from_yaml(yaml_path: Path) -> dict[str, list[str]]:
     entities = defaultdict(list)
 
     try:
-        with open(yaml_path) as f:
+        with Path(yaml_path).open() as f:
             content = f.read()
 
         # Find all CURIE-style identifiers
@@ -38,7 +37,7 @@ def extract_entities_from_yaml(yaml_path: Path) -> dict[str, list[str]]:
 def extract_template_info(yaml_path: Path) -> dict:
     """Extract template metadata from YAML file."""
     try:
-        with open(yaml_path) as f:
+        with Path(yaml_path).open() as f:
             # Read just the header
             lines = []
             for i, line in enumerate(f):
@@ -81,7 +80,7 @@ def find_auto_terms_with_context(yaml_path: Path, limit=10) -> list[dict]:
     auto_examples = []
 
     try:
-        with open(yaml_path) as f:
+        with Path(yaml_path).open() as f:
             content = f.read()
 
         # Extract template info
@@ -132,7 +131,7 @@ def find_metpo_successes_with_context(yaml_path: Path, limit=10) -> list[dict]:
     metpo_examples = []
 
     try:
-        with open(yaml_path) as f:
+        with Path(yaml_path).open() as f:
             content = f.read()
 
         # Split into extraction blocks
@@ -168,7 +167,7 @@ def extract_annotators_from_template(template_path: Path) -> list[str]:
     """Extract annotator ontologies from template YAML."""
     annotators = []
     try:
-        with open(template_path) as f:
+        with Path(template_path).open() as f:
             content = yaml.safe_load(f)
 
         # Search for annotators in classes
@@ -315,7 +314,7 @@ def main(yaml_dir, output_file, format):
     # Save detailed results
     if not output_file:
         output_file = Path(__file__).parent / "metpo_grounding_analysis_icbo2025.txt"
-    with open(output_file, "w") as f:
+    with Path(output_file).open( "w") as f:
         f.write("METPO Grounding Analysis for ICBO 2025\n")
         f.write("=" * 80 + "\n\n")
         f.write(f"Generated: {Path(__file__).stat().st_mtime}\n\n")

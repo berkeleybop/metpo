@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 CBORG Chemical Utilization Extraction with Cost and Performance Tracking
 
@@ -99,7 +98,7 @@ def run_extraction(api_key):
 
     # Run extraction with logging
     try:
-        with open(log_file, "w") as logf:
+        with Path(log_file).open( "w") as logf:
             # Write header to log file
             logf.write(f"OntoGPT Verbose Log - {start_timestamp}\n")
             logf.write(f"Command: {' '.join(cmd)}\n")
@@ -256,7 +255,7 @@ def main():
         "assessment": assessment_result
     }
 
-    with open(results_file, "w") as f:
+    with Path(results_file).open( "w") as f:
         json.dump(results, f, indent=2)
 
     print(f"\n📄 Detailed results saved to: {results_file}")

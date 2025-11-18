@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Validation script for OntoGPT extraction quality.
 Flags suspicious patterns that might indicate poor extraction.
@@ -20,7 +19,7 @@ class ExtractionValidator:
         self.docs = []
         self.issues = []
 
-        with open(yaml_file) as f:
+        with Path(yaml_file).open() as f:
             self.docs = list(yaml.safe_load_all(f))
 
     def validate_all(self) -> list[dict]:

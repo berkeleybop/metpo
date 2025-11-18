@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Count entities and relationships from OntoGPT YAML extraction output.
 Properly parses the YAML structure instead of using grep.
@@ -19,7 +18,7 @@ def count_entities_and_relationships(yaml_file: Path) -> tuple[int, int]:
         (entity_count, relationship_count)
     """
     try:
-        with open(yaml_file) as f:
+        with Path(yaml_file).open() as f:
             # Standard YAML method for multi-document files
             documents = yaml.safe_load_all(f)
 

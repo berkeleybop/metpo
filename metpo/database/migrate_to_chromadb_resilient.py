@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 """
 Resilient ChromaDB migration that handles database corruption.
 
@@ -11,6 +10,7 @@ This version:
 
 import json
 import sqlite3
+from pathlib import Path
 
 import chromadb
 import click
@@ -114,7 +114,7 @@ def migrate_embeddings_resilient(
 
     processed = offset
     errors = 0
-    error_log = open("migration_errors.log", "a")
+    error_log = Path("migration_errors.log").open( "a")
 
     print("\nStarting migration...")
 

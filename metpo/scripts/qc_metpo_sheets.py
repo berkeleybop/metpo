@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Quality Control script for METPO Google Sheets templates.
 
@@ -14,6 +13,7 @@ import csv
 import sys
 import urllib.request
 from collections import defaultdict
+from pathlib import Path
 
 import click
 
@@ -51,7 +51,7 @@ class SheetData:
 
     def load(self):
         """Load TSV file and extract key information."""
-        with open(self.filename, encoding="utf-8") as f:
+        with Path(self.filename).open( encoding="utf-8") as f:
             reader = csv.reader(f, delimiter="\t")
             for row_num, row in enumerate(reader, start=1):
                 self.rows.append(row)

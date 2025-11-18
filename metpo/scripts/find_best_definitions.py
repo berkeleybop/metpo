@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Find the best available definition for each METPO term from SSSOM mappings.
 
@@ -87,7 +86,7 @@ def load_sssom_mappings(sssom_path: Path) -> dict[str, list[dict]]:
     """
     mappings_by_subject = defaultdict(list)
 
-    with open(sssom_path, encoding="utf-8") as f:
+    with Path(sssom_path).open( encoding="utf-8") as f:
         lines = [line for line in f if not line.startswith("#")]
         reader = csv.DictReader(lines, delimiter="\t")
 
@@ -297,7 +296,7 @@ def main(
     click.echo(f"\nWriting results to {output}...")
     output.parent.mkdir(parents=True, exist_ok=True)
 
-    with open(output, "w", encoding="utf-8", newline="") as f:
+    with Path(output).open( "w", encoding="utf-8", newline="") as f:
         fieldnames = [
             "metpo_id", "metpo_label", "definition", "definition_length",
             "source_iri", "source_ontology", "source_label",

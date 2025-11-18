@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Comprehensive workflow to fetch definition source metadata from OLS and BioPortal.
 

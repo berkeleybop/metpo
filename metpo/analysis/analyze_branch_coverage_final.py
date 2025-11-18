@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Analyze METPO branch coverage by other ontologies.
 

@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Merge SPARQL query results with fetched API metadata.
 """

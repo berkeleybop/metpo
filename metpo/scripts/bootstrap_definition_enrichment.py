@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Bootstrap METPO definition enrichment by fetching real definitions from source
 ontologies and assessing their quality and reuse.
@@ -24,7 +23,7 @@ def read_sssom_mappings(sssom_path: Path, min_confidence: float) -> dict[str, li
     """Read SSSOM mappings and organize by METPO term, filtering by confidence."""
     mappings = defaultdict(list)
 
-    with open(sssom_path, encoding="utf-8") as f:
+    with Path(sssom_path).open( encoding="utf-8") as f:
         lines = [line for line in f if not line.startswith("#")]
         reader = csv.DictReader(lines, delimiter="\t")
 
@@ -319,7 +318,7 @@ def main(
             "definition",
         ]
 
-        with open(output, "w", encoding="utf-8", newline="") as f:
+        with Path(output).open( "w", encoding="utf-8", newline="") as f:
             writer = csv.DictWriter(f, fieldnames=fieldnames, delimiter="\t")
             writer.writeheader()
 

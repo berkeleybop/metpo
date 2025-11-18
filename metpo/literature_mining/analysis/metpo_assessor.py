@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 METPO Literature Mining Assessor
 
@@ -52,7 +51,7 @@ class MetpoAssessor:
 
     def analyze_template(self, template_path: Path) -> dict[str, Any]:
         """Analyze template design quality in isolation."""
-        with open(template_path) as f:
+        with Path(template_path).open() as f:
             template = yaml.safe_load(f)
 
         result = {
@@ -285,7 +284,7 @@ class MetpoAssessor:
 
     def analyze_extraction(self, extraction_path: Path) -> dict[str, Any]:
         """Analyze extraction output performance."""
-        with open(extraction_path) as f:
+        with Path(extraction_path).open() as f:
             docs = list(yaml.safe_load_all(f))
 
             if not docs:
@@ -583,7 +582,7 @@ class MetpoAssessor:
         for template_path in template_paths:
             try:
                 if Path(template_path).exists():
-                    with open(template_path) as f:
+                    with Path(template_path).open() as f:
                         template_data = yaml.safe_load(f)
                         if "enums" in template_data:
                             enums.update(template_data["enums"])

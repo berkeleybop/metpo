@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 """Audit ChromaDB collections for ontology distribution and vector dimensions."""
 
 from collections import Counter

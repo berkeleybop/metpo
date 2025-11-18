@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Script to convert BactoTraits sheet to minimal_classes format
 Handles column mapping, duplicate resolution, and OBO standardization
@@ -134,7 +133,7 @@ def main():
 
     migrated_rows = []
 
-    with open(bactotraits_file, encoding="utf-8") as f:
+    with Path(bactotraits_file).open( encoding="utf-8") as f:
         reader = csv.reader(f, delimiter="\t")
         next(reader)  # Skip header row
         next(reader)  # Skip robot template row
@@ -198,7 +197,7 @@ def main():
             migrated_rows.append(output_row)
 
     # Write output file
-    with open(output_file, "w", encoding="utf-8", newline="") as f:
+    with Path(output_file).open( "w", encoding="utf-8", newline="") as f:
         writer = csv.writer(f, delimiter="\t")
         writer.writerow(output_header)
         writer.writerow(robot_row)

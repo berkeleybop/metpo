@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Analyze Madin et al data and METPO usage - 100% TRACEABLE
 Primary sources:
@@ -24,7 +23,7 @@ def analyze_raw_madin():
     print("\n=== Madin et al Raw Data Analysis ===")
     print(f"Source: {RAW_FILE}")
 
-    with open(RAW_FILE, encoding="utf-8") as f:
+    with Path(RAW_FILE).open( encoding="utf-8") as f:
         reader = csv.DictReader(f)
 
         total_records = 0
@@ -88,7 +87,7 @@ def analyze_transformed_madin():
     metpo_edges = 0
     predicate_counter = Counter()
 
-    with open(TRANSFORMED_EDGES) as f:
+    with Path(TRANSFORMED_EDGES).open() as f:
         reader = csv.DictReader(f, delimiter="\t")
         for row in reader:
             total_edges += 1
@@ -141,7 +140,7 @@ def analyze_transformed_nodes():
     node_types = Counter()
     total_nodes = 0
 
-    with open(TRANSFORMED_NODES) as f:
+    with Path(TRANSFORMED_NODES).open() as f:
         reader = csv.DictReader(f, delimiter="\t")
         for row in reader:
             total_nodes += 1

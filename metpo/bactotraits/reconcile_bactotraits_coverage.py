@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Reconcile BactoTraits MongoDB field values against METPO synonyms attributed to BactoTraits source.
 
@@ -18,6 +17,7 @@ BactoTraits specifics:
 import csv
 import re
 import sys
+from pathlib import Path
 
 import click
 import yaml
@@ -118,7 +118,7 @@ def load_bactotraits_synonyms(tsv_path: str) -> dict[str, dict[str, str]]:
     bactotraits_synonyms = {}
     entity_labels = {}
 
-    with open(tsv_path) as f:
+    with Path(tsv_path).open() as f:
         reader = csv.DictReader(f, delimiter="\t")
 
         for row in reader:
@@ -166,7 +166,7 @@ def load_all_metpo_synonyms(tsv_path: str) -> dict[str, dict[str, str]]:
     all_synonyms = {}
     entity_labels = {}
 
-    with open(tsv_path) as f:
+    with Path(tsv_path).open() as f:
         reader = csv.DictReader(f, delimiter="\t")
 
         for row in reader:
@@ -421,7 +421,7 @@ def reconcile_all_field_names(tsv_path: str, output_format: str = "text", output
         output_content = yaml.dump(result, default_flow_style=False, sort_keys=False, allow_unicode=True)
 
         if output_file:
-            with open(output_file, "w") as f:
+            with Path(output_file).open( "w") as f:
                 f.write(output_content)
             print(f"Report written to {output_file}")
         else:

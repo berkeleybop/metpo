@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Filter 'none' placeholder values from OntoGPT extraction output.
 
@@ -103,14 +102,14 @@ def main():
         sys.exit(1)
 
     # Load all documents from YAML
-    with open(input_file) as f:
+    with Path(input_file).open() as f:
         docs = list(yaml.safe_load_all(f))
 
     # Process each document
     filtered_docs = [process_document(doc) for doc in docs]
 
     # Write filtered documents
-    with open(output_file, "w") as f:
+    with Path(output_file).open( "w") as f:
         yaml.dump_all(filtered_docs, f, default_flow_style=False, sort_keys=False)
 
     print(f"Filtered {len(filtered_docs)} documents: {input_file} → {output_file}")

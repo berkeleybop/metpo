@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Comprehensive analysis of ontologies considered for METPO - 100% TRACEABLE
 
@@ -63,7 +62,7 @@ def load_semsql_registry():
         print(f"WARNING: {SEMSQL_REGISTRY} not found")
         return {}
 
-    with open(SEMSQL_REGISTRY) as f:
+    with Path(SEMSQL_REGISTRY).open() as f:
         data = yaml.safe_load(f)
 
     # Extract ontology IDs

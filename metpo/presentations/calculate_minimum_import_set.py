@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Calculate MINIMUM set of ontologies needed for import based on HIGH-QUALITY matches only
 PRIMARY SOURCES:
@@ -33,7 +32,7 @@ def analyze_by_quality_threshold(sssom_path):
     all_matches_by_ont = Counter()
     matches_by_threshold = {}
 
-    with open(sssom_path) as f:
+    with Path(sssom_path).open() as f:
         reader = csv.DictReader(f, delimiter="\t")
         rows = [row for row in reader if not row["subject_id"].startswith("#")]
 

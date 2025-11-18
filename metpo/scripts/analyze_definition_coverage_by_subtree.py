@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Analyze definition coverage by parent class (subtree analysis).
 
@@ -17,7 +16,7 @@ def load_metpo_hierarchy(tsv_path: str) -> dict:
     terms = {}
     parent_to_children = defaultdict(list)
 
-    with open(tsv_path, encoding="utf-8") as f:
+    with Path(tsv_path).open( encoding="utf-8") as f:
         reader = csv.DictReader(f, delimiter="\t")
         for row in reader:
             term_id = row["ID"]
@@ -153,7 +152,7 @@ def main(metpo_tsv: str, output: str, min_children: int, sort_by: str):
 
     # Write output
     Path(output).parent.mkdir(parents=True, exist_ok=True)
-    with open(output, "w", encoding="utf-8", newline="") as f:
+    with Path(output).open( "w", encoding="utf-8", newline="") as f:
         if results:
             writer = csv.DictWriter(f, fieldnames=results[0].keys(), delimiter="\t")
             writer.writeheader()

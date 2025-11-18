@@ -136,7 +136,7 @@ def import_bactotraits(input_file, database, collection, drop, mongo_uri):
     # Read and process TSV file
     click.echo(f"\nReading {input_file.name}...")
 
-    with open(input_file, encoding="utf-8") as f:
+    with Path(input_file).open( encoding="utf-8") as f:
         reader = csv.reader(f, delimiter="\t")
 
         # Read header and sanitize field names

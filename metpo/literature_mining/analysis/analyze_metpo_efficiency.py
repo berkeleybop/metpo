@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Analyze METPO grounding efficiency:
 1. Which inputs had most METPO groundings?
@@ -16,7 +15,7 @@ import yaml
 def analyze_file(yaml_file):
     """Analyze a single YAML file for METPO grounding efficiency."""
 
-    with open(yaml_file) as f:
+    with Path(yaml_file).open() as f:
         try:
             docs = list(yaml.safe_load_all(f))
         except yaml.YAMLError as e:
@@ -170,7 +169,7 @@ def main():
 
     # Save results
     output_file = Path("literature_mining/METPO_GROUNDING_EFFICIENCY.tsv")
-    with open(output_file, "w") as f:
+    with Path(output_file).open( "w") as f:
         f.write("File\tMETPO_Count\tInput_Bytes\tInput_KB\tMETPO_per_KB\n")
         # Re-sort by count for output
         all_results.sort(key=lambda x: x["metpo_count"], reverse=True)

@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Analyze METPO alignment with structured trait databases (BacDive, BactoTraits, Madin).
 Show how METPO classes map to database fields - for ICBO 2025 talk.
@@ -327,7 +326,7 @@ def main():
 
     # Save to file
     output_file = Path(__file__).parent / "metpo_database_alignment_icbo2025.txt"
-    with open(output_file, "w") as f:
+    with Path(output_file).open( "w") as f:
         f.write(summary)
         f.write("\n\n")
         f.write("=" * 80 + "\n")

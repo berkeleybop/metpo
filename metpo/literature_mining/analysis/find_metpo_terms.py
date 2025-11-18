@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Thoroughly search extraction YAML files for METPO terms.
 Parse YAML properly to find METPO IDs in nested structures.
@@ -34,7 +33,7 @@ def analyze_yaml_file(yaml_path):
     click.echo(f"Analyzing: {yaml_path.name}")
     click.echo(f"{'='*80}")
 
-    with open(yaml_path) as f:
+    with Path(yaml_path).open() as f:
         try:
             docs = list(yaml.safe_load_all(f))
         except yaml.YAMLError as e:

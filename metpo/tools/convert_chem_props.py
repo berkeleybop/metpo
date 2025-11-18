@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Convert chem_interaction_props.tsv to LinkML enumeration format."""
 
 import re

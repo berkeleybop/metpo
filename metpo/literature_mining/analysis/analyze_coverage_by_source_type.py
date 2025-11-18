@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Repeatable script to analyze METPO coverage and gaps by data source type:
 1. IJSEM abstracts (structured)
@@ -9,6 +8,7 @@ For ICBO 2025 - provides evidence of METPO's strengths and gaps.
 """
 
 import csv
+import json
 import re
 from pathlib import Path
 
@@ -31,7 +31,7 @@ def load_metpo_database_synonyms(template_path: Path) -> dict[str, list[str]]:
         "madin": []
     }
 
-    with open(template_path) as f:
+    with Path(template_path).open() as f:
         reader = csv.DictReader(f, delimiter="\t")
         for row in reader:
             metpo_id = row.get("ID", "")
@@ -93,7 +93,7 @@ def analyze_extraction_grounding(yaml_path: Path) -> dict:
         'grounding_rate': float
     }
     """
-    with open(yaml_path) as f:
+    with Path(yaml_path).open() as f:
         content = f.read()
 
     metpo_terms = re.findall(r"METPO:(\d+)", content)
@@ -266,7 +266,7 @@ def main():
 
     # Save results
     output_file = Path(__file__).parent / "METPO_coverage_by_source_type.txt"
-    with open(output_file, "w") as f:
+    with Path(output_file).open( "w") as f:
         f.write(report)
         f.write("\n\n" + "=" * 80 + "\n")
         f.write("RAW DATA\n")
@@ -277,7 +277,7 @@ def main():
 
     # Save synonym mappings for ICBO slides
     synonym_file = Path(__file__).parent / "METPO_database_synonyms.tsv"
-    with open(synonym_file, "w", newline="") as f:
+    with Path(synonym_file).open( "w", newline="") as f:
         writer = csv.writer(f, delimiter="\t")
         writer.writerow(["Database", "METPO_ID", "METPO_Label", "Database_Term"])
 

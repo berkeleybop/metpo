@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 """Analyze match quality by distance for each ontology.
 
 This tool analyzes SSSOM mapping files to assess the quality of matches

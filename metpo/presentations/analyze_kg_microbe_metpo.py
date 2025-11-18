@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Comprehensive analysis of METPO usage across all KG-Microbe datasets - 100% TRACEABLE
 
@@ -33,7 +32,7 @@ def analyze_dataset(dataset_name):
     metpo_edges = 0
     predicates = Counter()
 
-    with open(edges_file) as f:
+    with Path(edges_file).open() as f:
         reader = csv.DictReader(f, delimiter="\t")
         for row in reader:
             total_edges += 1
@@ -67,7 +66,7 @@ def load_metpo_labels():
         return {}
 
     labels = {}
-    with open(labels_file) as f:
+    with Path(labels_file).open() as f:
         reader = csv.DictReader(f)
         for row in reader:
             metpo_id = row["id"]

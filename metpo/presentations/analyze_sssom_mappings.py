@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Analyze METPO SSSOM mappings from PRIMARY SOURCE files.
 
@@ -13,7 +12,7 @@ from pathlib import Path
 
 def analyze_sssom(sssom_file):
     """Parse SSSOM file and count mappings by target ontology."""
-    with open(sssom_file) as f:
+    with Path(sssom_file).open() as f:
         # Skip comment lines
         lines = [line for line in f if not line.startswith("#")]
 

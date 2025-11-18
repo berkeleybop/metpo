@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 """
 Generate embeddings from ROBOT query TSV output and insert into ChromaDB.
 
@@ -12,6 +11,7 @@ Follows the methodology from https://cthoyt.com/2025/08/04/ontology-text-embeddi
 
 import csv
 import os
+from pathlib import Path
 
 import chromadb
 import click
@@ -29,7 +29,7 @@ def parse_robot_output(tsv_path: str, ontology_id: str) -> list[dict]:
     """
     terms = []
 
-    with open(tsv_path, encoding="utf-8") as f:
+    with Path(tsv_path).open( encoding="utf-8") as f:
         reader = csv.DictReader(f, delimiter="\t")
 
         for row in reader:
@@ -45,7 +45,7 @@ def parse_robot_output(tsv_path: str, ontology_id: str) -> list[dict]:
             if not labels_str:
                 continue  # Skip if no label
 
-            labels = [l.strip() for l in labels_str.split("|") if l.strip()]
+            labels = [lbl.strip() for lbl in labels_str.split("|") if lbl.strip()]
             label = labels[0]
 
             # Parse synonyms

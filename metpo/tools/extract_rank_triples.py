@@ -4,6 +4,8 @@ This tool processes the NCBI taxonomy nodes.dmp file and extracts
 taxonomic rank information as RDF triples in Turtle format.
 """
 
+from pathlib import Path
+
 import click
 from rdflib import Graph, Literal, URIRef
 from tqdm import tqdm
@@ -29,7 +31,7 @@ def extract_taxon_ranks(input_file, output_file):
     """Extract RDF triples from NCBI nodes.dmp linking taxon IDs to textual ranks."""
     g = Graph()
 
-    with open(input_file, encoding="utf-8") as f:
+    with Path(input_file).open( encoding="utf-8") as f:
         lines = f.readlines()
 
     for line in tqdm(lines, desc="Processing nodes.dmp"):

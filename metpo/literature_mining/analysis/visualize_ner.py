@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 NER Coverage Visualization Tool
 
@@ -8,6 +7,7 @@ Creates HTML visualization showing text spans and coverage metrics.
 
 import re
 from collections import Counter
+from pathlib import Path
 
 import click
 import yaml
@@ -15,7 +15,7 @@ import yaml
 
 def load_ontogpt_output(yaml_file: str) -> dict:
     """Load OntoGPT output YAML file."""
-    with open(yaml_file, encoding="utf-8") as f:
+    with Path(yaml_file).open( encoding="utf-8") as f:
         return yaml.safe_load(f)
 
 
@@ -253,7 +253,7 @@ def main(input_file, output_file, quiet, stats_only, output_format):
         data = load_ontogpt_output(input_file)
     except Exception as e:
         click.echo(f"Error loading file: {e}", err=True)
-        raise click.Abort
+        raise click.Abort from e
 
     # Extract text and entities
     text, entities = extract_text_and_entities(data)
@@ -281,13 +281,13 @@ def main(input_file, output_file, quiet, stats_only, output_format):
         if output_format.lower() == "html":
             html = create_html_visualization(text, entities, metrics)
             try:
-                with open(output_file, "w", encoding="utf-8") as f:
+                with Path(output_file).open( "w", encoding="utf-8") as f:
                     f.write(html)
                 if not quiet:
                     click.echo(f"\nVisualization saved to {output_file}")
             except Exception as e:
                 click.echo(f"Error writing output file: {e}", err=True)
-                raise click.Abort
+                raise click.Abort from e
 
         elif output_format.lower() == "json":
             import json
@@ -297,13 +297,13 @@ def main(input_file, output_file, quiet, stats_only, output_format):
                 "text_length": len(text)
             }
             try:
-                with open(output_file, "w", encoding="utf-8") as f:
+                with Path(output_file).open( "w", encoding="utf-8") as f:
                     json.dump(output_data, f, indent=2, ensure_ascii=False)
                 if not quiet:
                     click.echo(f"\nJSON data saved to {output_file}")
             except Exception as e:
                 click.echo(f"Error writing JSON file: {e}", err=True)
-                raise click.Abort
+                raise click.Abort from e
 
 
 if __name__ == "__main__":

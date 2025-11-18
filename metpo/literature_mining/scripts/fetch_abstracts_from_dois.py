@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Fetch abstracts from DOIs using artl-mcp's Europe PMC integration.
 
@@ -61,7 +60,7 @@ def fetch_abstracts_from_file(input_file: Path, output_file: Path, doi_column: s
     """
     import csv
 
-    with open(input_file) as f_in:
+    with Path(input_file).open() as f_in:
         reader = csv.DictReader(f_in, delimiter="\t")
         rows = list(reader)
 
@@ -86,7 +85,7 @@ def fetch_abstracts_from_file(input_file: Path, output_file: Path, doi_column: s
     # Write results
     if results:
         fieldnames = list(results[0].keys())
-        with open(output_file, "w", newline="") as f_out:
+        with Path(output_file).open( "w", newline="") as f_out:
             writer = csv.DictWriter(f_out, fieldnames=fieldnames, delimiter="\t")
             writer.writeheader()
             writer.writerows(results)

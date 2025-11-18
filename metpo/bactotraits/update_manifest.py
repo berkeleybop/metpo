@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 """
 Update .ontology_manifest.json with fetch/query status.
 
@@ -19,7 +18,7 @@ MANIFEST_PATH = Path(".ontology_manifest.json")
 def load_manifest():
     """Load manifest or create if doesn't exist."""
     if MANIFEST_PATH.exists():
-        with open(MANIFEST_PATH) as f:
+        with Path(MANIFEST_PATH).open() as f:
             return json.load(f)
     return {
         "_comment": "Tracking successful ontology fetches to avoid re-downloading",
@@ -29,7 +28,7 @@ def load_manifest():
 
 def save_manifest(manifest):
     """Save manifest with pretty formatting."""
-    with open(MANIFEST_PATH, "w") as f:
+    with Path(MANIFEST_PATH).open( "w") as f:
         json.dump(manifest, f, indent=2)
 
 

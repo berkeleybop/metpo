@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Filtered METPO grounding analysis - analyze only production-quality extractions.
 Excludes experimental/superseded runs to show realistic, representative results.
@@ -168,7 +167,7 @@ def main(yaml_dir, pattern_set, output_file):
     total_extractions = 0
     for fname in results["files_analyzed"]:
         fpath = yaml_dir / fname
-        with open(fpath) as f:
+        with Path(fpath).open() as f:
             total_extractions += f.read().count("input_text:")
 
     click.echo(f"\nTotal paper extractions: {total_extractions}")
@@ -231,7 +230,7 @@ Recommendation: Report these numbers for ICBO - honest, representative, reproduc
     # Save results
     if not output_file:
         output_file = Path(__file__).parent / f"metpo_grounding_production_{pattern_set}.txt"
-    with open(output_file, "w") as f:
+    with Path(output_file).open( "w") as f:
         f.write("METPO Grounding Analysis - Production Quality\n")
         f.write("=" * 80 + "\n\n")
         f.write(f"Pattern set: {pattern_set}\n")

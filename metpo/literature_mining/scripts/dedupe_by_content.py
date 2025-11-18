@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Deduplicate abstracts by comparing content, not just filenames.
 
@@ -19,7 +18,7 @@ def extract_identifiers(filepath: Path) -> tuple[str, str, str]:
     Returns:
         (pmid, doi, normalized_abstract_text)
     """
-    with open(filepath, encoding="utf-8") as f:
+    with Path(filepath).open( encoding="utf-8") as f:
         content = f.read()
 
     # Extract PMID

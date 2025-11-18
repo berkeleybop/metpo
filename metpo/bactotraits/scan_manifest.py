@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 """
 Scan external/ontologies/ directories and update manifest with current state.
 
@@ -21,7 +20,7 @@ TSV_DIR = Path("notebooks/non-ols-terms")
 def load_manifest():
     """Load manifest or create if doesn't exist."""
     if MANIFEST_PATH.exists():
-        with open(MANIFEST_PATH) as f:
+        with Path(MANIFEST_PATH).open() as f:
             return json.load(f)
     return {
         "_comment": "Tracking successful ontology fetches to avoid re-downloading",
@@ -31,14 +30,14 @@ def load_manifest():
 
 def save_manifest(manifest):
     """Save manifest with pretty formatting."""
-    with open(MANIFEST_PATH, "w") as f:
+    with Path(MANIFEST_PATH).open( "w") as f:
         json.dump(manifest, f, indent=2)
 
 
 def count_tsv_terms(tsv_path: Path) -> int:
     """Count rows in TSV (excluding header)."""
     try:
-        with open(tsv_path) as f:
+        with Path(tsv_path).open() as f:
             return sum(1 for _ in csv.reader(f, delimiter="\t")) - 1
     except Exception:
         return 0

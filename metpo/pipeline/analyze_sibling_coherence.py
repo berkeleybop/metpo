@@ -156,7 +156,7 @@ class ExternalOntologyHelper:
                 label = adapter.label(curie)
                 if self.debug:
                     print(f"    Term found: '{label}'")
-            except:
+            except Exception:
                 if self.debug:
                     print(f"    Warning: Term not found or label unavailable for {curie}")
 

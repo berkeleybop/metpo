@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 BactoTraits ↔ METPO Set Difference Analysis
 
@@ -24,7 +23,7 @@ def read_kg_microbe_headers(kg_microbe_file: Path) -> set[str]:
     if not kg_microbe_file.exists():
         raise FileNotFoundError(f"kg-microbe file not found: {kg_microbe_file}")
 
-    with open(kg_microbe_file, encoding="utf-8") as f:
+    with Path(kg_microbe_file).open( encoding="utf-8") as f:
         header = f.readline().strip().split("\t")
 
     return set(header)
@@ -37,7 +36,7 @@ def read_metpo_bactotraits_synonyms(synonym_sources_tsv: Path) -> dict[str, dict
 
     synonyms = {}
 
-    with open(synonym_sources_tsv) as f:
+    with Path(synonym_sources_tsv).open() as f:
         reader = csv.DictReader(f, delimiter="\t")
         for row in reader:
             src = row.get("?src", "").strip("<>")
@@ -385,7 +384,7 @@ def main(output_format, output, bactotraits_file, synonyms_file):
         output_str = "\n".join(lines)
 
     if output:
-        with open(output, "w") as f:
+        with Path(output).open( "w") as f:
             f.write(output_str)
         print(f"Report written to {output}")
     else:

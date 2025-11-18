@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Extract abstracts from PDF and markdown files for papers that couldn't be fetched via API.
 
@@ -26,7 +25,7 @@ def extract_abstract_from_markdown(md_path: Path) -> str | None:
     Returns:
         Abstract text, or None if not found
     """
-    with open(md_path, encoding="utf-8") as f:
+    with Path(md_path).open( encoding="utf-8") as f:
         content = f.read()
 
     # Try to find abstract section
@@ -198,7 +197,7 @@ def process_failed_papers():
         # Save to file
         output_file = output_dir / f"doi_{safe_doi}-abstract.txt"
 
-        with open(output_file, "w", encoding="utf-8") as f:
+        with Path(output_file).open( "w", encoding="utf-8") as f:
             f.write("Title: [Extracted from local file]\n\n")
             f.write("Authors: [See PDF for full details]\n\n")
             f.write("Journal: [See PDF for full details]\n\n")

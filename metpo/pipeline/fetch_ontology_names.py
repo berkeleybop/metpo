@@ -1,8 +1,8 @@
-#!/usr/bin/env python3
 """Fetch ontology names from OLS4 API and merge with size data."""
 
 import csv
 import time
+from pathlib import Path
 
 import click
 import requests
@@ -21,7 +21,7 @@ def main(input_file, output, api_delay):
 
     # Load our ontology sizes
     sizes = {}
-    with open(sizes_csv) as f:
+    with Path(sizes_csv).open() as f:
         reader = csv.DictReader(f)
         for row in reader:
             sizes[row["ontologyId"]] = int(row["count"])
@@ -72,7 +72,7 @@ def main(input_file, output, api_delay):
 
     # Merge data and write output
     print("\nCreating merged CSV...")
-    with open(output_csv, "w", newline="") as f:
+    with Path(output_csv).open( "w", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=[
             "ontologyId", "title", "count", "description"
         ])

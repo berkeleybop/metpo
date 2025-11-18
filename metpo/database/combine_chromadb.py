@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 """Combine OLS and non-OLS ChromaDB databases into a single unified database."""
 
 import os

@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Extract all METPO entities from OntoGPT extraction YAML files.
 Shows which METPO classes were successfully grounded.
@@ -15,7 +14,7 @@ def extract_metpo_entities(yaml_file):
     """Extract METPO entities from a single YAML file."""
     metpo_entities = []
 
-    with open(yaml_file) as f:
+    with Path(yaml_file).open() as f:
         try:
             docs = list(yaml.safe_load_all(f))
         except yaml.YAMLError as e:
@@ -111,7 +110,7 @@ def main(yaml_dir, output_file, recursive):
     # Save results
     if not output_file:
         output_file = Path("literature_mining/METPO_GROUNDED_CLASSES.tsv")
-    with open(output_file, "w") as f:
+    with Path(output_file).open( "w") as f:
         f.write("METPO_ID\tURI\tLabel\tOccurrences\tFiles\n")
         for metpo_id in sorted(unique_classes.keys()):
             info = unique_classes[metpo_id]

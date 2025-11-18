@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Generate OntoGPT feedback loop diagram for ICBO slides
 """

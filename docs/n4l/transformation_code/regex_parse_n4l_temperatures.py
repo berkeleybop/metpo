@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 csv_temperature_to_rdf_simple.py
 One-pass, no-frills temperature parser that covers

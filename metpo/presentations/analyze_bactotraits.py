@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Analyze BactoTraits data and METPO usage - 100% TRACEABLE
 Primary sources:
@@ -24,7 +23,7 @@ def analyze_raw_bactotraits():
     print("\n=== BactoTraits Raw Data Analysis ===")
     print(f"Source: {RAW_FILE}")
 
-    with open(RAW_FILE, encoding="utf-8", errors="ignore") as f:
+    with Path(RAW_FILE).open( encoding="utf-8", errors="ignore") as f:
         # Skip first two header rows (units and descriptions)
         f.readline()
         f.readline()
@@ -66,7 +65,7 @@ def analyze_transformed_bactotraits():
     total_edges = 0
     metpo_edges = 0
 
-    with open(TRANSFORMED_EDGES) as f:
+    with Path(TRANSFORMED_EDGES).open() as f:
         reader = csv.DictReader(f, delimiter="\t")
         for row in reader:
             total_edges += 1
@@ -107,7 +106,7 @@ def analyze_transformed_nodes():
     node_types = Counter()
     total_nodes = 0
 
-    with open(TRANSFORMED_NODES) as f:
+    with Path(TRANSFORMED_NODES).open() as f:
         reader = csv.DictReader(f, delimiter="\t")
         for row in reader:
             total_nodes += 1

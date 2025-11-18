@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Comprehensive workflow to fetch definition source metadata from OLS and BioPortal.
 
@@ -16,6 +15,7 @@ import csv
 import os
 import sys
 import time
+from pathlib import Path
 from urllib.parse import quote
 
 import requests
@@ -281,7 +281,7 @@ def main():
 
     # Load unique sources
     sources = set()
-    with open(input_file) as f:
+    with Path(input_file).open() as f:
         reader = csv.DictReader(f, delimiter="\t")
         for row in reader:
             source = row.get("?definition_source", "").strip()
@@ -369,7 +369,7 @@ def main():
         print()
 
     # Save results
-    with open(output_file, "w", newline="") as f:
+    with Path(output_file).open( "w", newline="") as f:
         fieldnames = ["source_curie", "source_iri", "label", "definition", "synonyms", "api_source"]
         writer = csv.DictWriter(f, fieldnames=fieldnames, delimiter="\t")
         writer.writeheader()

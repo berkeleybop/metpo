@@ -5,6 +5,7 @@ containing only the ID, label, and TYPE for each METPO entity.
 """
 
 import csv
+from pathlib import Path
 
 import click
 
@@ -37,7 +38,7 @@ def main(output, input_files):
 
     for file_path in input_files:
         try:
-            with open(file_path, newline="") as infile:
+            with Path(file_path).open( newline="") as infile:
                 reader = csv.reader(infile, delimiter="\t")
 
                 # Find the ROBOT header row (the one with 'LABEL')
@@ -61,7 +62,7 @@ def main(output, input_files):
         except ValueError:
             click.echo(f"Warning: Could not find required columns (ID, LABEL, TYPE) in {file_header} in {file_path}", err=True)
 
-    with open(output, "w", newline="") as outfile:
+    with Path(output).open( "w", newline="") as outfile:
         writer = csv.writer(outfile, delimiter="\t")
         writer.writerow(("ID", "label", "TYPE"))  # Human-readable header
         writer.writerow(("ID", "LABEL", "TYPE"))  # ROBOT template header

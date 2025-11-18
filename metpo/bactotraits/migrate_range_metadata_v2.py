@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Migrate range metadata from bactotraits.tsv to minimal_classes.tsv.
 
@@ -75,7 +74,7 @@ def load_range_metadata(bactotraits_path: Path) -> dict[str, dict[str, str]]:
     """Load range metadata from bactotraits.tsv."""
     range_data = {}
 
-    with open(bactotraits_path, encoding="utf-8") as f:
+    with Path(bactotraits_path).open( encoding="utf-8") as f:
         reader = csv.DictReader(f, delimiter="\t")
 
         for row in reader:
@@ -150,7 +149,7 @@ def enhance_minimal_classes(minimal_path: Path,
     stats = {"total": 0, "enhanced": 0, "skipped": 0}
 
     # Read existing data
-    with open(minimal_path, encoding="utf-8") as f:
+    with Path(minimal_path).open( encoding="utf-8") as f:
         reader = csv.DictReader(f, delimiter="\t")
         header = list(reader.fieldnames)
 
@@ -207,7 +206,7 @@ def enhance_minimal_classes(minimal_path: Path,
         new_columns = ["measurement_unit_ucum", "range_min", "range_max", "equivalent_class_formula"]
         new_header = list(header) + new_columns
 
-        with open(output_path, "w", encoding="utf-8", newline="") as f:
+        with Path(output_path).open( "w", encoding="utf-8", newline="") as f:
             writer = csv.DictWriter(f, fieldnames=new_header, delimiter="\t", extrasaction="ignore")
             writer.writeheader()
 

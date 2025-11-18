@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Analyze overlap between minimal_classes.tsv (canonical) and other class sheets.
 
@@ -37,7 +36,7 @@ def load_minimal_classes(tsv_path: Path) -> tuple[set[str], dict[str, str]]:
     canonical_ids = set()
     id_to_label = {}
 
-    with open(tsv_path, encoding="utf-8") as f:
+    with Path(tsv_path).open( encoding="utf-8") as f:
         reader = csv.DictReader(f, delimiter="\t")
         for row in reader:
             class_id = row.get("ID", "").strip()
@@ -64,7 +63,7 @@ def analyze_sheet(sheet_path: Path, sheet_name: str, canonical_ids: set[str], id
         "metadata_at_risk": []
     }
 
-    with open(sheet_path, encoding="utf-8") as f:
+    with Path(sheet_path).open( encoding="utf-8") as f:
         reader = csv.DictReader(f, delimiter="\t")
 
         for row in reader:

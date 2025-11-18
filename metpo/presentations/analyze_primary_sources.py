@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Analyze PRIMARY SOURCES ONLY - NO MARKDOWN DOCUMENTATION
 
@@ -63,7 +62,7 @@ def analyze_sssom(sssom_path):
     predicates = Counter()
     total_mappings = 0
 
-    with open(sssom_path) as f:
+    with Path(sssom_path).open() as f:
         reader = csv.DictReader(f, delimiter="\t")
         for row in reader:
             total_mappings += 1

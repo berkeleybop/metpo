@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Analyze OntoGPT extraction results to compare template performance."""
 
 from collections import defaultdict
@@ -10,7 +9,7 @@ import yaml
 
 def count_entities_and_grounding(yaml_file):
     """Count entities and grounding quality in a YAML extraction file."""
-    with open(yaml_file) as f:
+    with Path(yaml_file).open() as f:
         data = yaml.safe_load_all(f)
 
         stats = {

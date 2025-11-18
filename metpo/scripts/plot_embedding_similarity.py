@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Plot distribution of best embedding similarity scores for METPO terms.
 
@@ -20,7 +19,7 @@ def read_best_matches(sssom_path: Path) -> dict[str, dict]:
     """Read SSSOM mappings and get best match per METPO term."""
     best_matches = {}
 
-    with open(sssom_path, encoding="utf-8") as f:
+    with Path(sssom_path).open( encoding="utf-8") as f:
         lines = [line for line in f if not line.startswith("#")]
         reader = csv.DictReader(lines, delimiter="\t")
 
@@ -242,7 +241,7 @@ def main(mappings: Path, output: Path, stats_output: Path):
 
     # Write statistics
     stats_output.parent.mkdir(parents=True, exist_ok=True)
-    with open(stats_output, "w", encoding="utf-8", newline="") as f:
+    with Path(stats_output).open( "w", encoding="utf-8", newline="") as f:
         fieldnames = ["metric", "category", "count", "min", "max", "mean", "median", "std", "q25", "q75"]
         writer = csv.DictWriter(f, fieldnames=fieldnames, delimiter="\t")
         writer.writeheader()

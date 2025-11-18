@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Use LLM to propose definitions for all METPO classes.
 
@@ -62,7 +61,7 @@ def load_metpo_terms(template_path: Path) -> dict[str, dict]:
     """Load METPO terms with parents and current definitions."""
     terms = {}
 
-    with open(template_path, encoding="utf-8") as f:
+    with Path(template_path).open( encoding="utf-8") as f:
         reader = csv.reader(f, delimiter="\t")
         next(reader)  # Skip row 1
         next(reader)  # Skip row 2
@@ -94,7 +93,7 @@ def load_matched_definitions(matched_path: Path) -> dict[str, dict]:
     if not matched_path.exists():
         return matched
 
-    with open(matched_path, encoding="utf-8") as f:
+    with Path(matched_path).open( encoding="utf-8") as f:
         reader = csv.DictReader(f, delimiter="\t")
         for row in reader:
             metpo_id = row["metpo_id"]
@@ -110,7 +109,7 @@ def load_all_candidates(candidates_path: Path) -> dict[str, list[dict]]:
     if not candidates_path.exists():
         return candidates
 
-    with open(candidates_path, encoding="utf-8") as f:
+    with Path(candidates_path).open( encoding="utf-8") as f:
         reader = csv.DictReader(f, delimiter="\t")
         for row in reader:
             metpo_id = row["metpo_id"]
@@ -356,7 +355,7 @@ def main(
     click.echo(f"\nWriting proposed definitions to {output}...")
     output.parent.mkdir(parents=True, exist_ok=True)
 
-    with open(output, "w", encoding="utf-8", newline="") as f:
+    with Path(output).open( "w", encoding="utf-8", newline="") as f:
         fieldnames = [
             "metpo_id", "metpo_label", "parent_classes",
             "current_definition", "proposed_definition",

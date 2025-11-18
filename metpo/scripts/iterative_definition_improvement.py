@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Iteratively improve METPO definitions using multiple sources.
 
@@ -26,7 +25,7 @@ from tqdm import tqdm
 def load_ready_improvements(ready_path: str) -> dict[str, dict]:
     """Load undergraduate curator improvements."""
     improvements = {}
-    with open(ready_path, encoding="utf-8") as f:
+    with Path(ready_path).open( encoding="utf-8") as f:
         reader = csv.DictReader(f, delimiter="\t")
         for row in reader:
             improvements[row["METPO_ID"]] = {
@@ -320,7 +319,7 @@ def main(metpo_tsv: str, ready_file: str, chroma_path: str, collection_name: str
     # Load current METPO terms
     click.echo(f"\n📥 Loading METPO terms from {metpo_tsv}...")
     terms = []
-    with open(metpo_tsv, encoding="utf-8") as f:
+    with Path(metpo_tsv).open( encoding="utf-8") as f:
         reader = csv.DictReader(f, delimiter="\t")
         fieldnames = reader.fieldnames
         for row in reader:
@@ -425,7 +424,7 @@ def main(metpo_tsv: str, ready_file: str, chroma_path: str, collection_name: str
     # Write output
     click.echo(f"\n💾 Writing output to {output}...")
     Path(output).parent.mkdir(parents=True, exist_ok=True)
-    with open(output, "w", encoding="utf-8", newline="") as f:
+    with Path(output).open( "w", encoding="utf-8", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames, delimiter="\t")
         writer.writeheader()
         writer.writerows(terms)
@@ -433,7 +432,7 @@ def main(metpo_tsv: str, ready_file: str, chroma_path: str, collection_name: str
     # Write report
     click.echo(f"💾 Writing report to {report}...")
     Path(report).parent.mkdir(parents=True, exist_ok=True)
-    with open(report, "w", encoding="utf-8", newline="") as f:
+    with Path(report).open( "w", encoding="utf-8", newline="") as f:
         if report_data:
             writer = csv.DictWriter(f, fieldnames=report_data[0].keys(), delimiter="\t")
             writer.writeheader()

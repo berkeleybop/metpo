@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 """
 Analyze the unique value provided by each ontology source.
 

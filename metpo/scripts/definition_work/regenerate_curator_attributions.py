@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Regenerate curator_proposed_definitions.tsv from undergraduate source files"""
 
 import csv
@@ -31,7 +30,7 @@ for filename, info in curator_info.items():
         print(f"Warning: {filepath} not found")
         continue
 
-    with open(filepath) as f:
+    with Path(filepath).open() as f:
         lines = f.readlines()
 
     # Skip header rows (both say "ID")
@@ -87,7 +86,7 @@ fieldnames = [
     "quantitative_values"
 ]
 
-with open(output_file, "w", newline="") as f:
+with Path(output_file).open( "w", newline="") as f:
     writer = csv.DictWriter(f, fieldnames=fieldnames, delimiter="\t")
     writer.writeheader()
     writer.writerows(all_rows)

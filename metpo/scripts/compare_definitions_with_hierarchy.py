@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Compare best matched definitions with METPO's asserted definitions.
 
@@ -161,7 +160,7 @@ def main(
     click.echo(f"Loading METPO terms from {metpo_terms}...")
     metpo_data = {}
 
-    with open(metpo_terms, encoding="utf-8") as f:
+    with Path(metpo_terms).open( encoding="utf-8") as f:
         reader = csv.reader(f, delimiter="\t")
         next(reader)  # Skip ROBOT header row 1
         next(reader)  # Skip ROBOT header row 2
@@ -189,7 +188,7 @@ def main(
     click.echo(f"\nLoading best matched definitions from {best_definitions}...")
     best_defs = {}
 
-    with open(best_definitions, encoding="utf-8") as f:
+    with Path(best_definitions).open( encoding="utf-8") as f:
         reader = csv.DictReader(f, delimiter="\t")
         for row in reader:
             metpo_id = row["metpo_id"]
@@ -291,7 +290,7 @@ def main(
     click.echo(f"\nWriting comparison to {output}...")
     output.parent.mkdir(parents=True, exist_ok=True)
 
-    with open(output, "w", encoding="utf-8", newline="") as f:
+    with Path(output).open( "w", encoding="utf-8", newline="") as f:
         fieldnames = [
             "metpo_id", "metpo_label", "parent_classes",
             "current_definition", "has_current_definition",

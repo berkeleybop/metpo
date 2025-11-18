@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Phase 1 Batch Search: METPO Label Discovery
 
@@ -247,7 +246,7 @@ def main():
     }
 
     summary_output = OUTPUT_DIR / "phase1_summary_stats.json"
-    with open(summary_output, "w") as f:
+    with Path(summary_output).open( "w") as f:
         json.dump(summary_stats, f, indent=2)
     print(f"✓ Saved summary statistics to {summary_output}")
 

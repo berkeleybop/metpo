@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Create BactoTraits Header Mapping Collection
 
@@ -102,7 +101,7 @@ def forward_fill_units(units_row, category_row):
 
 def read_provider_headers(provider_file):
     """Read the 3-row header structure from provider's CSV."""
-    with open(provider_file, encoding="ISO-8859-1") as f:
+    with Path(provider_file).open( encoding="ISO-8859-1") as f:
         # Read first 3 lines
         row1 = f.readline().strip().split(";")  # Category row
         row2 = f.readline().strip().split(";")  # Units row
@@ -126,7 +125,7 @@ def read_kg_microbe_header(kg_microbe_file):
         print(f"Warning: kg-microbe file not found at {kg_microbe_file}")
         return None
 
-    with open(kg_microbe_file, encoding="utf-8") as f:
+    with Path(kg_microbe_file).open( encoding="utf-8") as f:
         header = f.readline().strip().split("\t")
 
     return header
@@ -141,7 +140,7 @@ def get_mongodb_fields_from_kg_microbe(kg_microbe_file):
         print(f"Warning: kg-microbe file not found at {kg_microbe_file}")
         return None
 
-    with open(kg_microbe_file, encoding="utf-8") as f:
+    with Path(kg_microbe_file).open( encoding="utf-8") as f:
         header = f.readline().strip().split("\t")
 
     # Apply same sanitization as import script
@@ -300,7 +299,7 @@ def main(provider_file, kg_microbe_file, output_json, db_name, collection_name, 
     print(f"\nSaving mappings to {output_json}...")
     output_json.parent.mkdir(parents=True, exist_ok=True)
 
-    with open(output_json, "w", encoding="utf-8") as f:
+    with Path(output_json).open( "w", encoding="utf-8") as f:
         json.dump({
             "metadata": {
                 "total_fields": len(mappings),

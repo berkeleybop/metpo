@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Extract definitions, definition sources, and cross-references from SSSOM mapping results.
 
@@ -88,7 +87,7 @@ def load_metpo_sheet() -> pd.DataFrame:
 def load_sssom_mappings() -> pd.DataFrame:
     """Load SSSOM mapping file, skipping header comments."""
     # Find where actual TSV data starts (after comment lines)
-    with open(SSSOM_FILE) as f:
+    with Path(SSSOM_FILE).open() as f:
         lines = f.readlines()
 
     data_start = 0

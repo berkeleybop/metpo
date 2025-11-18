@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 """
 Generate SSSOM mappings by querying ChromaDB with semantic embeddings.
 
@@ -34,6 +33,7 @@ SSSOM TSV with:
 import csv
 import os
 from datetime import date
+from pathlib import Path
 
 import chromadb
 import click
@@ -67,7 +67,7 @@ def load_metpo_terms(
     """
     terms = []
 
-    with open(tsv_path, encoding="utf-8") as f:
+    with Path(tsv_path).open( encoding="utf-8") as f:
         lines = f.readlines()
 
         # Read header from first non-skipped row
@@ -170,7 +170,7 @@ def write_sssom_output(matches: list[dict], output_path: str, min_similarity: fl
     else:
         filtered = [m for m in matches if m["distance"] <= max_distance]
 
-    with open(output_path, "w", encoding="utf-8", newline="") as f:
+    with Path(output_path).open( "w", encoding="utf-8", newline="") as f:
         # Write metadata block
         f.write("# curie_map:\n")
         f.write("#   METPO: http://purl.obolibrary.org/obo/METPO_\n")

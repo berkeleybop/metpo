@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Deduplicate abstracts and filter for papers mentioning bacterial taxa.
 
@@ -38,7 +37,7 @@ def has_bacterial_taxa(content: str) -> tuple[bool, str]:
 
 def get_abstract_text(filepath: Path) -> str:
     """Extract just the abstract portion from a file."""
-    with open(filepath, encoding="utf-8") as f:
+    with Path(filepath).open( encoding="utf-8") as f:
         content = f.read()
 
     # Extract abstract section
