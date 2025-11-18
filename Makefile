@@ -685,7 +685,7 @@ view-logs:
 
 embed-non-ols-terms:
 	@echo "Embedding non-OLS terms into ChromaDB..."
-	uv run python metpo/pipeline/embed_ontology_to_chromadb.py \
+	uv run embed-ontology-to-chromadb \
 		$(foreach tsv,$(wildcard data/pipeline/non-ols-terms/*.tsv),--tsv-file $(tsv)) \
 		--chroma-path ./embeddings_chroma \
 		--collection-name non_ols_embeddings
@@ -695,6 +695,42 @@ clean-non-ols-terms:
 	@echo "Cleaning generated non-OLS TSV files..."
 	rm -f $(NON_OLS_TSV_FILES)
 	@echo "Cleaned non-OLS TSV files"
+
+# ChromaDB Management Targets
+.PHONY: chromadb-audit chromadb-combine chromadb-filter assess-ontology-by-api
+
+chromadb-audit:
+	@echo "Auditing ChromaDB collection..."
+	uv run audit-chromadb \
+		--chroma-path data/chromadb/chroma_ols20_nonols4 \
+		--collection-name combined_embeddings
+
+chromadb-combine:
+	@echo "Combining ChromaDB collections..."
+	uv run combine-chromadb \
+		--ols-path data/chromadb/chroma_ols_20 \
+		--non-ols-path data/chromadb/embeddings_chroma \
+		--output-path data/chromadb/chroma_ols20_nonols4 \
+		--output-collection combined_embeddings
+
+chromadb-filter:
+	@echo "Filtering OLS ChromaDB collection..."
+	@echo "Note: Edit the removal list in metpo/database/filter_ols_chromadb.py"
+	uv run filter-ols-chromadb \
+		--input-path data/chromadb/chroma_ols_27 \
+		--input-collection ols_embeddings \
+		--output-path data/chromadb/chroma_ols_20 \
+		--output-collection ols_embeddings
+
+assess-ontology-by-api:
+	@echo "Assessing ontologies via OLS/BioPortal API search..."
+	uv run assess-ontology-by-api-search \
+		--input-file data/metpo_terms/metpo_all_labels.tsv \
+		--output-dir data/ontology_assessments \
+		--ols-rows 75 \
+		--bioportal-pagesize 75 \
+		--rate-limit 1.0 \
+		--similarity-threshold 0.5
 
 clean-alignment-all: clean-alignment-results
 	@echo "Cleaning all alignment files including ontology catalog..."

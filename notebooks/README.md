@@ -10,15 +10,18 @@ Since these notebooks only import standard libraries and external packages (no l
 
 ## Contents
 
-### Jupyter Notebooks (3 files)
+### Jupyter Notebooks (2 files)
 
 Educational/exploratory notebooks for understanding METPO workflows:
 
 - `ols_search_example.ipynb` - OLS4 and BioPortal API examples
 - `explore_embeddings.ipynb` - SQLite embedding similarity search demo
-- `assess_ontology_by_api_search.ipynb` - Frequency-based ontology assessment (complementary to semantic embeddings)
 
-**Note**: ChromaDB querying is now handled by the production CLI tool `chromadb-semantic-mapper` (see `docs/cli-reference.md`)
+**Note**: Production tools now available as CLI commands:
+- ChromaDB querying: `uv run chromadb-semantic-mapper`
+- Ontology assessment via API: `uv run assess-ontology-by-api-search`
+
+See `docs/cli-reference.md` for complete documentation.
 
 ## Related Directories
 
