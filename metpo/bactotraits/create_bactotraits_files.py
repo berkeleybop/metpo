@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Create BactoTraits Files Collection
 
@@ -11,11 +10,12 @@ Usage:
 import click
 from pymongo import MongoClient
 
+
 @click.command()
-@click.option('--host', default='localhost', help='MongoDB host.')
-@click.option('--port', default=27017, type=int, help='MongoDB port.')
-@click.option('--db-name', default='bactotraits', help='MongoDB database name.')
-@click.option('--collection-name', default='files', help='MongoDB collection name.')
+@click.option("--host", default="localhost", help="MongoDB host.")
+@click.option("--port", default=27017, type=int, help="MongoDB port.")
+@click.option("--db-name", default="bactotraits", help="MongoDB database name.")
+@click.option("--collection-name", default="files", help="MongoDB collection name.")
 def main(host, port, db_name, collection_name):
     """Create simple files collection."""
 
@@ -40,7 +40,7 @@ def main(host, port, db_name, collection_name):
     # Drop and recreate
     collection.drop()
     collection.insert_many(files)
-    collection.create_index('euphemism', unique=True)
+    collection.create_index("euphemism", unique=True)
 
     print("Created bactotraits.files collection with 2 documents:")
     for f in files:
@@ -49,5 +49,5 @@ def main(host, port, db_name, collection_name):
     print("Query with:")
     print("  mongosh bactotraits --eval 'db.files.find().pretty()'")
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

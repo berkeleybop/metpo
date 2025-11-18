@@ -89,6 +89,8 @@ line-ending = "auto"
 # Ignore complexity checks in analysis scripts
 "metpo/analysis/*.py" = ["PLR0912", "PLR0915"]
 "literature_mining/analyze_*.py" = ["PLR0912", "PLR0915"]
+# Ignore complexity and minor issues in bactotraits data processing scripts
+"metpo/bactotraits/*.py" = ["PLR0911", "PLR0912", "PLR0915", "SIM102", "B007", "RUF001", "N806", "EXE002"]
 
 [lint.isort]
 known-first-party = ["metpo"]
