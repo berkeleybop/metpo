@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Analyze overlap between minimal_classes.tsv (canonical) and other class sheets.
 
@@ -9,10 +8,7 @@ This script identifies:
 """
 
 import csv
-import sys
 from pathlib import Path
-from typing import Dict, List, Set, Tuple
-from collections import defaultdict
 
 
 def normalize_id(id_str: str) -> str:
@@ -35,18 +31,18 @@ def normalize_id(id_str: str) -> str:
     return id_str
 
 
-def load_minimal_classes(tsv_path: Path) -> Tuple[Set[str], Dict[str, str]]:
+def load_minimal_classes(tsv_path: Path) -> tuple[set[str], dict[str, str]]:
     """Load canonical class IDs and labels from minimal_classes.tsv."""
     canonical_ids = set()
     id_to_label = {}
 
-    with open(tsv_path, 'r', encoding='utf-8') as f:
-        reader = csv.DictReader(f, delimiter='\t')
+    with Path(tsv_path).open( encoding="utf-8") as f:
+        reader = csv.DictReader(f, delimiter="\t")
         for row in reader:
-            class_id = row.get('ID', '').strip()
-            label = row.get('label', '').strip()
+            class_id = row.get("ID", "").strip()
+            label = row.get("label", "").strip()
 
-            if class_id and class_id != 'ID':  # Skip header row
+            if class_id and class_id != "ID":  # Skip header row
                 normalized_id = normalize_id(class_id)
                 canonical_ids.add(normalized_id)
                 id_to_label[normalized_id] = label
@@ -54,65 +50,65 @@ def load_minimal_classes(tsv_path: Path) -> Tuple[Set[str], Dict[str, str]]:
     return canonical_ids, id_to_label
 
 
-def analyze_sheet(sheet_path: Path, sheet_name: str, canonical_ids: Set[str], id_to_label: Dict[str, str]) -> Dict:
+def analyze_sheet(sheet_path: Path, sheet_name: str, canonical_ids: set[str], id_to_label: dict[str, str]) -> dict:
     """Analyze a single sheet for overlaps and important metadata."""
 
     results = {
-        'sheet_name': sheet_name,
-        'total_rows': 0,
-        'in_canonical': [],
-        'not_in_canonical': [],
-        'has_range_metadata': [],
-        'safe_to_delete': [],
-        'metadata_at_risk': []
+        "sheet_name": sheet_name,
+        "total_rows": 0,
+        "in_canonical": [],
+        "not_in_canonical": [],
+        "has_range_metadata": [],
+        "safe_to_delete": [],
+        "metadata_at_risk": []
     }
 
-    with open(sheet_path, 'r', encoding='utf-8') as f:
-        reader = csv.DictReader(f, delimiter='\t')
+    with Path(sheet_path).open( encoding="utf-8") as f:
+        reader = csv.DictReader(f, delimiter="\t")
 
         for row in reader:
             # Get the ID from first column (varies by sheet)
-            first_col = row.get('First column') or row.get('class') or ''
+            first_col = row.get("First column") or row.get("class") or ""
             class_id = first_col.strip()
 
-            if not class_id or class_id in ['First column', 'class', 'ID']:
+            if not class_id or class_id in ["First column", "class", "ID"]:
                 continue
 
-            results['total_rows'] += 1
+            results["total_rows"] += 1
 
             normalized_id = normalize_id(class_id)
-            label = row.get('Values', '') or row.get('labels', '')
-            units = row.get('Units', '').strip()
-            range_min = row.get('RangeMins', '').strip()
-            range_max = row.get('RangeMaxes', '').strip()
+            label = row.get("Values", "") or row.get("labels", "")
+            units = row.get("Units", "").strip()
+            range_min = row.get("RangeMins", "").strip()
+            range_max = row.get("RangeMaxes", "").strip()
 
             # Check for range metadata
             has_ranges = bool(units or range_min or range_max)
 
             row_info = {
-                'id': normalized_id,
-                'label': label,
-                'units': units,
-                'range_min': range_min,
-                'range_max': range_max,
-                'canonical_label': id_to_label.get(normalized_id, '')
+                "id": normalized_id,
+                "label": label,
+                "units": units,
+                "range_min": range_min,
+                "range_max": range_max,
+                "canonical_label": id_to_label.get(normalized_id, "")
             }
 
             if normalized_id in canonical_ids:
-                results['in_canonical'].append(row_info)
+                results["in_canonical"].append(row_info)
 
                 if has_ranges:
-                    results['has_range_metadata'].append(row_info)
-                    results['metadata_at_risk'].append(row_info)
+                    results["has_range_metadata"].append(row_info)
+                    results["metadata_at_risk"].append(row_info)
                 else:
-                    results['safe_to_delete'].append(row_info)
+                    results["safe_to_delete"].append(row_info)
             else:
-                results['not_in_canonical'].append(row_info)
+                results["not_in_canonical"].append(row_info)
 
     return results
 
 
-def print_summary(results: Dict):
+def print_summary(results: dict):
     """Print a summary of the analysis."""
     print(f"\n{'='*80}")
     print(f"Sheet: {results['sheet_name']}")
@@ -125,13 +121,13 @@ def print_summary(results: Dict):
     print(f"  METADATA AT RISK (in canonical, has ranges): {len(results['metadata_at_risk'])}")
 
 
-def print_detailed_ranges(results: Dict):
+def print_detailed_ranges(results: dict):
     """Print details of classes with range metadata."""
-    if results['metadata_at_risk']:
-        print(f"\n⚠️  Classes with range metadata that would be LOST if deleted:")
+    if results["metadata_at_risk"]:
+        print("\n⚠️  Classes with range metadata that would be LOST if deleted:")
         print(f"{'ID':<20} {'Label':<30} {'Units':<10} {'Min':<8} {'Max':<8}")
         print("-" * 80)
-        for row in results['metadata_at_risk']:
+        for row in results["metadata_at_risk"]:
             print(f"{row['id']:<20} {row['label'][:28]:<30} {row['units']:<10} {row['range_min']:<8} {row['range_max']:<8}")
 
 
@@ -145,9 +141,9 @@ def main():
 
     # Analyze each non-canonical sheet
     sheets_to_analyze = [
-        ('bactotraits.tsv', 'bactotraits'),
-        ('more_classes___inconsistent.tsv', 'more_classes___inconsistent'),
-        ('attic_classes.tsv', 'attic_classes')
+        ("bactotraits.tsv", "bactotraits"),
+        ("more_classes___inconsistent.tsv", "more_classes___inconsistent"),
+        ("attic_classes.tsv", "attic_classes")
     ]
 
     all_results = []
@@ -166,8 +162,8 @@ def main():
     print("OVERALL SUMMARY")
     print(f"{'='*80}")
 
-    total_metadata_at_risk = sum(len(r['metadata_at_risk']) for r in all_results)
-    total_safe_to_delete = sum(len(r['safe_to_delete']) for r in all_results)
+    total_metadata_at_risk = sum(len(r["metadata_at_risk"]) for r in all_results)
+    total_safe_to_delete = sum(len(r["safe_to_delete"]) for r in all_results)
 
     print(f"\nTotal classes with range metadata at risk: {total_metadata_at_risk}")
     print(f"Total classes SAFE to delete: {total_safe_to_delete}")

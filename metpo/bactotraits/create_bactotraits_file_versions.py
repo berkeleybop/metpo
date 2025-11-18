@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Create BactoTraits File Versions Collection
 
@@ -13,9 +12,11 @@ Output:
     - MongoDB collection: bactotraits.file_versions
 """
 
+from datetime import UTC, datetime
+
 import click
 from pymongo import MongoClient
-from datetime import datetime
+
 
 def create_file_versions():
     """Create file versions metadata collection."""
@@ -109,10 +110,10 @@ def create_file_versions():
 
 
 @click.command()
-@click.option('--host', default='localhost', help='MongoDB host.')
-@click.option('--port', default=27017, type=int, help='MongoDB port.')
-@click.option('--db-name', default='bactotraits', help='MongoDB database name.')
-@click.option('--collection-name', default='file_versions', help='MongoDB collection name.')
+@click.option("--host", default="localhost", help="MongoDB host.")
+@click.option("--port", default=27017, type=int, help="MongoDB port.")
+@click.option("--db-name", default="bactotraits", help="MongoDB database name.")
+@click.option("--collection-name", default="file_versions", help="MongoDB collection name.")
 def main(host, port, db_name, collection_name):
     """Main execution function."""
     print("=" * 80)
@@ -139,15 +140,15 @@ def main(host, port, db_name, collection_name):
     print(f"✓ Inserted {len(versions)} version documents")
 
     # Create indexes
-    collection.create_index('version_key', unique=True)
-    collection.create_index('filename')
+    collection.create_index("version_key", unique=True)
+    collection.create_index("filename")
     print("✓ Created indexes")
 
     # Add metadata document
     metadata = {
         "version_key": "_metadata",
         "description": "Metadata about this collection",
-        "created_at": datetime.utcnow(),
+        "created_at": datetime.now(UTC),
         "purpose": "Document naming conventions and file versions across BactoTraits pipeline",
         "related_collections": [
             "bactotraits.bactotraits (data)",
@@ -204,5 +205,5 @@ def main(host, port, db_name, collection_name):
     print()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
