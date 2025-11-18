@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Calculate MINIMUM set of ontologies needed for import based on HIGH-QUALITY matches only
 PRIMARY SOURCES:
@@ -7,10 +6,13 @@ PRIMARY SOURCES:
 """
 
 import csv
-from pathlib import Path
 from collections import Counter, defaultdict
+from pathlib import Path
 
-SSSOM_FILE = Path("/home/mark/gitrepos/metpo/data/mappings/metpo_mappings_combined_relaxed.sssom.tsv")
+SSSOM_FILE = Path(
+    "/home/mark/gitrepos/metpo/data/mappings/metpo_mappings_combined_relaxed.sssom.tsv"
+)
+
 
 def analyze_by_quality_threshold(sssom_path):
     """Analyze which ontologies provide high-quality matches at different thresholds"""
@@ -33,9 +35,9 @@ def analyze_by_quality_threshold(sssom_path):
     all_matches_by_ont = Counter()
     matches_by_threshold = {}
 
-    with open(sssom_path) as f:
-        reader = csv.DictReader(f, delimiter='\t')
-        rows = [row for row in reader if not row['subject_id'].startswith('#')]
+    with Path(sssom_path).open() as f:
+        reader = csv.DictReader(f, delimiter="\t")
+        rows = [row for row in reader if not row["subject_id"].startswith("#")]
 
     total_mappings = len(rows)
     print(f"Total mappings in SSSOM file: {total_mappings:,}\n")
@@ -46,10 +48,10 @@ def analyze_by_quality_threshold(sssom_path):
 
         for row in rows:
             try:
-                similarity = float(row['similarity_score'])
+                similarity = float(row["similarity_score"])
                 if similarity >= sim_threshold:
-                    ont = row['object_source']
-                    metpo_term = row['subject_id']
+                    ont = row["object_source"]
+                    metpo_term = row["subject_id"]
                     ont_counts[ont] += 1
                     metpo_terms_covered[ont].add(metpo_term)
                     all_matches_by_ont[ont] += 1
@@ -62,7 +64,7 @@ def analyze_by_quality_threshold(sssom_path):
         print(f"=== {quality_label} Matches (similarity ≥ {sim_threshold}, {distance_label}) ===")
         print(f"Total matches: {total_at_threshold:,}")
         print(f"Unique ontologies with matches: {len(ont_counts)}")
-        print(f"\nOntologies ranked by match count:")
+        print("\nOntologies ranked by match count:")
 
         for i, (ont, count) in enumerate(ont_counts.most_common(), 1):
             pct = (count / total_at_threshold * 100) if total_at_threshold > 0 else 0
@@ -70,13 +72,15 @@ def analyze_by_quality_threshold(sssom_path):
             print(f"  {i:2d}. {ont:<15} {count:4d} matches ({pct:5.1f}%), {terms:3d} METPO terms")
 
         # Calculate cumulative coverage
-        print(f"\nCumulative coverage analysis:")
+        print("\nCumulative coverage analysis:")
         cumulative = 0
         for i, (ont, count) in enumerate(ont_counts.most_common(), 1):
             cumulative += count
             cum_pct = (cumulative / total_at_threshold * 100) if total_at_threshold > 0 else 0
             if i <= 5 or cum_pct >= 90:
-                print(f"  Top {i:2d} ontologies: {cumulative:4d} matches ({cum_pct:5.1f}% coverage)")
+                print(
+                    f"  Top {i:2d} ontologies: {cumulative:4d} matches ({cum_pct:5.1f}% coverage)"
+                )
             if cum_pct >= 90 and i <= 10:
                 print(f"  → {i} ontologies needed for 90% coverage")
                 break
@@ -115,24 +119,25 @@ def analyze_by_quality_threshold(sssom_path):
 
     # Known status (from our API checks)
     status_map = {
-        'micro': ('✓', '✓', 'MicrO - in both'),
-        'd3o': ('✗', '✓', 'DSMZ D3O - BioPortal only'),
-        'meo': ('✗', '✓', 'Metagenome - BioPortal only'),
-        'miso': ('✗', '✓', 'DSMZ MISO - BioPortal only'),
-        'n4l_merged': ('✗', '✗', 'Names4Life - not in registries'),
-        'mpo': ('✗', '✓', 'MPO (RIKEN) - BioPortal only'),
-        'upheno': ('✓', '✓', 'Unified Phenotype - both'),
-        'oba': ('✓', '✓', 'OBA - both'),
-        'flopo': ('✓', '✓', 'FLOPO - both'),
-        'envo': ('✓', '✓', 'ENVO - both'),
-        'biolink': ('✓', '✓', 'Biolink Model - both'),
+        "micro": ("✓", "✓", "MicrO - in both"),
+        "d3o": ("✗", "✓", "DSMZ D3O - BioPortal only"),
+        "meo": ("✗", "✓", "Metagenome - BioPortal only"),
+        "miso": ("✗", "✓", "DSMZ MISO - BioPortal only"),
+        "n4l_merged": ("✗", "✗", "Names4Life - not in registries"),
+        "mpo": ("✗", "✓", "MPO (RIKEN) - BioPortal only"),
+        "upheno": ("✓", "✓", "Unified Phenotype - both"),
+        "oba": ("✓", "✓", "OBA - both"),
+        "flopo": ("✓", "✓", "FLOPO - both"),
+        "envo": ("✓", "✓", "ENVO - both"),
+        "biolink": ("✓", "✓", "Biolink Model - both"),
     }
 
     for ont, count in very_good_onts.most_common(15):
-        ols, bp, notes = status_map.get(ont, ('?', '?', 'Unknown'))
+        ols, bp, notes = status_map.get(ont, ("?", "?", "Unknown"))
         print(f"{ont:<15} {count:<10} {ols:<8} {bp:<12} {notes}")
 
     print("\n✓ = Available, ✗ = Not available, ? = Not verified")
+
 
 def main():
     analyze_by_quality_threshold(SSSOM_FILE)
@@ -156,6 +161,7 @@ IMPORT vs MAP decision:
   - METPO with SSSOM mappings: structural independence, clean hierarchies
   - Both approaches achieve interoperability, but METPO maintains focus
 """)
+
 
 if __name__ == "__main__":
     main()

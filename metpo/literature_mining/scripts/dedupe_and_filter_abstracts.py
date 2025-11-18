@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Deduplicate abstracts and filter for papers mentioning bacterial taxa.
 
@@ -8,12 +7,12 @@ and filters for papers that mention bacterial taxa.
 
 import re
 import shutil
-import click
 from pathlib import Path
-from typing import Set, Tuple
+
+import click
 
 
-def has_bacterial_taxa(content: str) -> Tuple[bool, str]:
+def has_bacterial_taxa(content: str) -> tuple[bool, str]:
     """
     Check if abstract mentions bacterial taxa.
 
@@ -22,11 +21,11 @@ def has_bacterial_taxa(content: str) -> Tuple[bool, str]:
     """
     # Patterns for bacterial mentions
     patterns = {
-        'genus_species': r'\b[A-Z][a-z]+\s+[a-z]+\s+(strain|sp\.|isolate)',
-        'bacteria_word': r'\bbacteri(a|um|al|ology)\b',
-        'microbe_word': r'\bmicrob(e|ial|iome)\b',
-        'specific_genera': r'\b(Pseudomonas|Methylobacterium|Bradyrhizobium|Methylococcus|Methylotroph)\b',
-        'strain': r'\bstrain\s+[A-Z0-9]+\b',
+        "genus_species": r"\b[A-Z][a-z]+\s+[a-z]+\s+(strain|sp\.|isolate)",
+        "bacteria_word": r"\bbacteri(a|um|al|ology)\b",
+        "microbe_word": r"\bmicrob(e|ial|iome)\b",
+        "specific_genera": r"\b(Pseudomonas|Methylobacterium|Bradyrhizobium|Methylococcus|Methylotroph)\b",
+        "strain": r"\bstrain\s+[A-Z0-9]+\b",
     }
 
     for pattern_name, pattern in patterns.items():
@@ -38,38 +37,50 @@ def has_bacterial_taxa(content: str) -> Tuple[bool, str]:
 
 def get_abstract_text(filepath: Path) -> str:
     """Extract just the abstract portion from a file."""
-    with open(filepath, 'r', encoding='utf-8') as f:
+    with Path(filepath).open(encoding="utf-8") as f:
         content = f.read()
 
     # Extract abstract section
-    match = re.search(r'Abstract:\n(.+)', content, re.DOTALL)
+    match = re.search(r"Abstract:\n(.+)", content, re.DOTALL)
     if match:
         return match.group(1)
     return content
 
 
 @click.command()
-@click.option('--source-dirs', multiple=True,
-              default=['literature_mining/abstracts', 'literature_mining/cmm_pfas_abstracts'],
-              help='Source directories to scan (can specify multiple)', show_default=True)
-@click.option('--output-dir', default='literature_mining/abstracts_filtered',
-              help='Output directory for filtered abstracts', show_default=True)
-@click.option('--dry-run', is_flag=True,
-              help='Show what would be done without copying files')
-@click.option('--require-bacteria', is_flag=True,
-              help='Only include abstracts mentioning bacterial taxa')
+@click.option(
+    "--source-dirs",
+    multiple=True,
+    default=["literature_mining/abstracts", "literature_mining/cmm_pfas_abstracts"],
+    help="Source directories to scan (can specify multiple)",
+    show_default=True,
+)
+@click.option(
+    "--output-dir",
+    default="literature_mining/abstracts_filtered",
+    help="Output directory for filtered abstracts",
+    show_default=True,
+)
+@click.option("--dry-run", is_flag=True, help="Show what would be done without copying files")
+@click.option(
+    "--require-bacteria", is_flag=True, help="Only include abstracts mentioning bacterial taxa"
+)
 def main(source_dirs, output_dir, dry_run, require_bacteria):
     """Dedupe and filter abstracts for bacterial taxa mentions.
 
     Consolidates abstracts from multiple directories, removes duplicates,
     and optionally filters for papers mentioning bacterial taxa.
     """
-    args = type('Args', (), {
-        'source_dirs': source_dirs,
-        'output_dir': output_dir,
-        'dry_run': dry_run,
-        'require_bacteria': require_bacteria
-    })()
+    args = type(
+        "Args",
+        (),
+        {
+            "source_dirs": source_dirs,
+            "output_dir": output_dir,
+            "dry_run": dry_run,
+            "require_bacteria": require_bacteria,
+        },
+    )()
 
     # Collect all abstracts
     print("Scanning source directories...")
@@ -142,5 +153,5 @@ def main(source_dirs, output_dir, dry_run, require_bacteria):
         print(f"✓ Done! {len(files_to_copy)} abstracts in {args.output_dir}")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

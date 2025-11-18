@@ -1,17 +1,16 @@
-#!/usr/bin/env python3
 """
 csv_temperature_to_rdf_simple.py
 One-pass, no-frills temperature parser that covers
 ranges, lists, single values + basic qualifiers.
 """
 
-import re, sys
+import re
+import sys
 from decimal import Decimal
 from pathlib import Path
-from typing import List, Dict, Tuple
 
 import pandas as pd
-from rdflib import Graph, Namespace, Literal, BNode, URIRef
+from rdflib import BNode, Graph, Literal, Namespace, URIRef
 from rdflib.namespace import RDF, XSD
 
 ENV = Namespace("http://example.org/env-parse#")
@@ -40,8 +39,8 @@ LIST_SEP = re.compile(r"\s*(?:,|and|or)\s*", re.I)
 QUAL_RX = re.compile(r"(up to|upto|above|below|≤|>=?|≥|<)", re.I)
 
 
-def extract_components(text: str) -> List[Dict]:
-    comps: List[Dict] = []
+def extract_components(text: str) -> list[dict]:
+    comps: list[dict] = []
     tokens = [(m.start(), m.group("val")) for m in TOKEN_RX.finditer(text)]
     i = 0
     while i < len(tokens):
@@ -52,10 +51,10 @@ def extract_components(text: str) -> List[Dict]:
             between = text[pos + len(v1): tokens[i + 1][0]]
             if RANGE_SEP.fullmatch(between):
                 v2 = tokens[i + 1][1]
-                comps.append(dict(component_text=f"{v1}-{v2} °C",
-                                  minimum_value=Decimal(v1),
-                                  maximum_value=Decimal(v2),
-                                  unit="Cel"))
+                comps.append({"component_text": f"{v1}-{v2} °C",
+                                  "minimum_value": Decimal(v1),
+                                  "maximum_value": Decimal(v2),
+                                  "unit": "Cel"})
                 i += 2
                 continue
 
@@ -67,9 +66,9 @@ def extract_components(text: str) -> List[Dict]:
                 tail = text[tokens[i + 1][0] + len(tokens[i + 1][1]):]
                 if re.match(r"\s*°?C", tail, re.I):
                     for v in (v1, tokens[i + 1][1]):
-                        comps.append(dict(component_text=f"{v} °C",
-                                          spot_value=Decimal(v),
-                                          unit="Cel"))
+                        comps.append({"component_text": f"{v} °C",
+                                          "spot_value": Decimal(v),
+                                          "unit": "Cel"})
                     i += 2
                     continue
 
@@ -82,12 +81,12 @@ def extract_components(text: str) -> List[Dict]:
             qual = {"up to": "maximum", "upto": "maximum",
                     "above": "minimum", "below": "maximum",
                     ">": "minimum", "<": "maximum",
-                    "≥": "minimum", "≤": "maximum"}.get(qual_token, None)
+                    "≥": "minimum", "≤": "maximum"}.get(qual_token)
 
-        comps.append(dict(component_text=f"{v1} °C",
-                          spot_value=Decimal(v1),
-                          qualifier_label=qual,
-                          unit="Cel"))
+        comps.append({"component_text": f"{v1} °C",
+                          "spot_value": Decimal(v1),
+                          "qualifier_label": qual,
+                          "unit": "Cel"})
         i += 1
     return comps
 
@@ -98,10 +97,10 @@ CATS = {"mesophile": r"\bmesophil(?:e|ic)\b",
 CATS_RX = {k: re.compile(v, re.I) for k, v in CATS.items()}
 
 
-def categorical(text: str) -> List[Dict]:
+def categorical(text: str) -> list[dict]:
     for lbl, rx in CATS_RX.items():
         if rx.search(text):
-            return [dict(component_text=text, categorical_label=lbl)]
+            return [{"component_text": text, "categorical_label": lbl}]
     return []
 
 
@@ -110,7 +109,7 @@ def csv_to_graph(csv: Path, s="subject", p="predicate", o="object") -> Graph:
     df = pd.read_csv(csv, dtype=str).fillna("")
     g, pg_cnt, pc_cnt = Graph(), 0, 0
     g.bind("env", ENV)
-    seen: Dict[Tuple[str, str, str], BNode] = {}
+    seen: dict[tuple[str, str, str], BNode] = {}
 
     for _, row in df.iterrows():
         subj, pred, raw = row[s].strip(), row[p].strip(), _clean(row[o]).strip()
@@ -127,7 +126,7 @@ def csv_to_graph(csv: Path, s="subject", p="predicate", o="object") -> Graph:
             g.add((pg, ENV.raw_text, Literal(raw)))
 
             comps = extract_components(raw) or categorical(raw) \
-                    or [dict(component_text=raw, unparsed_text=raw)]
+                    or [{"component_text": raw, "unparsed_text": raw}]
 
             for c in comps:
                 pc_cnt += 1

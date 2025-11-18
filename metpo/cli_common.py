@@ -16,14 +16,13 @@ Example:
 """
 
 import click
-from pathlib import Path
-
 
 # =============================================================================
 # File I/O Options
 # =============================================================================
 
-def input_file_option(required=True, help_text='Input file path'):
+
+def input_file_option(required=True, help_text="Input file path"):
     """Standard single input file option.
 
     Args:
@@ -34,14 +33,15 @@ def input_file_option(required=True, help_text='Input file path'):
         Click option decorator for --input-file, -i
     """
     return click.option(
-        '--input-file', '-i',
+        "--input-file",
+        "-i",
         type=click.Path(exists=True, dir_okay=False, path_type=str),
         required=required,
-        help=help_text
+        help=help_text,
     )
 
 
-def input_csv_option(required=True, help_text='Input CSV/TSV file path'):
+def input_csv_option(required=True, help_text="Input CSV/TSV file path"):
     """Standard CSV/TSV input file option.
 
     Args:
@@ -52,14 +52,15 @@ def input_csv_option(required=True, help_text='Input CSV/TSV file path'):
         Click option decorator for --input-file, -i
     """
     return click.option(
-        '--input-file', '-i',
+        "--input-file",
+        "-i",
         type=click.Path(exists=True, dir_okay=False, path_type=str),
         required=required,
-        help=help_text
+        help=help_text,
     )
 
 
-def output_option(required=False, default=None, help_text='Output file path'):
+def output_option(required=False, default=None, help_text="Output file path"):
     """Standard output file option.
 
     Args:
@@ -71,15 +72,16 @@ def output_option(required=False, default=None, help_text='Output file path'):
         Click option decorator for --output, -o
     """
     return click.option(
-        '--output', '-o',
+        "--output",
+        "-o",
         type=click.Path(dir_okay=False, path_type=str),
         required=required,
         default=default,
-        help=help_text
+        help=help_text,
     )
 
 
-def output_dir_option(required=False, default=None, help_text='Output directory path'):
+def output_dir_option(required=False, default=None, help_text="Output directory path"):
     """Standard output directory option.
 
     Args:
@@ -91,11 +93,11 @@ def output_dir_option(required=False, default=None, help_text='Output directory 
         Click option decorator for --output-dir
     """
     return click.option(
-        '--output-dir',
+        "--output-dir",
         type=click.Path(exists=True, file_okay=False, path_type=str),
         required=required,
         default=default,
-        help=help_text
+        help=help_text,
     )
 
 
@@ -103,7 +105,8 @@ def output_dir_option(required=False, default=None, help_text='Output directory 
 # Database Connection Options
 # =============================================================================
 
-def chroma_path_option(default='./chroma_db', help_text='ChromaDB storage directory path'):
+
+def chroma_path_option(default="./chroma_db", help_text="ChromaDB storage directory path"):
     """Standard ChromaDB storage path option.
 
     Args:
@@ -114,14 +117,11 @@ def chroma_path_option(default='./chroma_db', help_text='ChromaDB storage direct
         Click option decorator for --chroma-path
     """
     return click.option(
-        '--chroma-path',
-        type=click.Path(path_type=str),
-        default=default,
-        help=help_text
+        "--chroma-path", type=click.Path(path_type=str), default=default, help=help_text
     )
 
 
-def db_path_option(required=True, help_text='SQLite database file path'):
+def db_path_option(required=True, help_text="SQLite database file path"):
     """Standard SQLite database path option.
 
     Args:
@@ -132,14 +132,14 @@ def db_path_option(required=True, help_text='SQLite database file path'):
         Click option decorator for --db-path
     """
     return click.option(
-        '--db-path',
+        "--db-path",
         type=click.Path(exists=True, dir_okay=False, path_type=str),
         required=required,
-        help=help_text
+        help=help_text,
     )
 
 
-def mongo_uri_option(default='mongodb://localhost:27017/', help_text='MongoDB connection URI'):
+def mongo_uri_option(default="mongodb://localhost:27017/", help_text="MongoDB connection URI"):
     """Standard MongoDB URI option.
 
     Args:
@@ -149,14 +149,10 @@ def mongo_uri_option(default='mongodb://localhost:27017/', help_text='MongoDB co
     Returns:
         Click option decorator for --mongo-uri
     """
-    return click.option(
-        '--mongo-uri',
-        default=default,
-        help=help_text
-    )
+    return click.option("--mongo-uri", default=default, help=help_text)
 
 
-def database_option(default='bactotraits', help_text='Database name'):
+def database_option(default="bactotraits", help_text="Database name"):
     """Standard database name option.
 
     Args:
@@ -166,14 +162,10 @@ def database_option(default='bactotraits', help_text='Database name'):
     Returns:
         Click option decorator for --database, -d
     """
-    return click.option(
-        '--database', '-d',
-        default=default,
-        help=help_text
-    )
+    return click.option("--database", "-d", default=default, help=help_text)
 
 
-def collection_option(default='bactotraits', help_text='Collection name'):
+def collection_option(default="bactotraits", help_text="Collection name"):
     """Standard collection name option.
 
     Args:
@@ -183,18 +175,15 @@ def collection_option(default='bactotraits', help_text='Collection name'):
     Returns:
         Click option decorator for --collection, -c
     """
-    return click.option(
-        '--collection', '-c',
-        default=default,
-        help=help_text
-    )
+    return click.option("--collection", "-c", default=default, help=help_text)
 
 
 # =============================================================================
 # Processing Options
 # =============================================================================
 
-def batch_size_option(default=1000, help_text='Batch processing size'):
+
+def batch_size_option(default=1000, help_text="Batch processing size"):
     """Standard batch size option.
 
     Args:
@@ -204,15 +193,10 @@ def batch_size_option(default=1000, help_text='Batch processing size'):
     Returns:
         Click option decorator for --batch-size
     """
-    return click.option(
-        '--batch-size',
-        type=int,
-        default=default,
-        help=help_text
-    )
+    return click.option("--batch-size", type=int, default=default, help=help_text)
 
 
-def limit_option(default=None, help_text='Limit number of items to process'):
+def limit_option(default=None, help_text="Limit number of items to process"):
     """Standard limit option.
 
     Args:
@@ -222,15 +206,10 @@ def limit_option(default=None, help_text='Limit number of items to process'):
     Returns:
         Click option decorator for --limit
     """
-    return click.option(
-        '--limit',
-        type=int,
-        default=default,
-        help=help_text
-    )
+    return click.option("--limit", type=int, default=default, help=help_text)
 
 
-def offset_option(default=0, help_text='Starting offset for processing'):
+def offset_option(default=0, help_text="Starting offset for processing"):
     """Standard offset option.
 
     Args:
@@ -240,19 +219,15 @@ def offset_option(default=0, help_text='Starting offset for processing'):
     Returns:
         Click option decorator for --offset
     """
-    return click.option(
-        '--offset',
-        type=int,
-        default=default,
-        help=help_text
-    )
+    return click.option("--offset", type=int, default=default, help=help_text)
 
 
 # =============================================================================
 # Threshold Options
 # =============================================================================
 
-def distance_threshold_option(default=0.35, help_text='Distance threshold for matching'):
+
+def distance_threshold_option(default=0.35, help_text="Distance threshold for matching"):
     """Standard distance threshold option.
 
     Args:
@@ -262,15 +237,10 @@ def distance_threshold_option(default=0.35, help_text='Distance threshold for ma
     Returns:
         Click option decorator for --distance-threshold
     """
-    return click.option(
-        '--distance-threshold',
-        type=float,
-        default=default,
-        help=help_text
-    )
+    return click.option("--distance-threshold", type=float, default=default, help=help_text)
 
 
-def confidence_threshold_option(default=0.9, help_text='Confidence threshold'):
+def confidence_threshold_option(default=0.9, help_text="Confidence threshold"):
     """Standard confidence threshold option.
 
     Args:
@@ -280,19 +250,15 @@ def confidence_threshold_option(default=0.9, help_text='Confidence threshold'):
     Returns:
         Click option decorator for --confidence-threshold
     """
-    return click.option(
-        '--confidence-threshold',
-        type=float,
-        default=default,
-        help=help_text
-    )
+    return click.option("--confidence-threshold", type=float, default=default, help=help_text)
 
 
 # =============================================================================
 # Behavioral Flags
 # =============================================================================
 
-def verbose_option(help_text='Enable verbose output'):
+
+def verbose_option(help_text="Enable verbose output"):
     """Standard verbose flag option.
 
     Args:
@@ -301,15 +267,10 @@ def verbose_option(help_text='Enable verbose output'):
     Returns:
         Click option decorator for --verbose, -v
     """
-    return click.option(
-        '--verbose', '-v',
-        is_flag=True,
-        default=False,
-        help=help_text
-    )
+    return click.option("--verbose", "-v", is_flag=True, default=False, help=help_text)
 
 
-def debug_option(help_text='Enable debug mode'):
+def debug_option(help_text="Enable debug mode"):
     """Standard debug flag option.
 
     Args:
@@ -318,15 +279,10 @@ def debug_option(help_text='Enable debug mode'):
     Returns:
         Click option decorator for --debug
     """
-    return click.option(
-        '--debug',
-        is_flag=True,
-        default=False,
-        help=help_text
-    )
+    return click.option("--debug", is_flag=True, default=False, help=help_text)
 
 
-def dry_run_option(help_text='Dry run mode (preview only) / Execute mode (write changes)'):
+def dry_run_option(help_text="Dry run mode (preview only) / Execute mode (write changes)"):
     """Standard dry-run/execute flag option.
 
     Args:
@@ -335,18 +291,15 @@ def dry_run_option(help_text='Dry run mode (preview only) / Execute mode (write 
     Returns:
         Click option decorator for --dry-run/--execute
     """
-    return click.option(
-        '--dry-run/--execute',
-        default=True,
-        help=help_text
-    )
+    return click.option("--dry-run/--execute", default=True, help=help_text)
 
 
 # =============================================================================
 # Format Options
 # =============================================================================
 
-def format_option(default='text', formats=None, help_text='Output format'):
+
+def format_option(default="text", formats=None, help_text="Output format"):
     """Standard format selection option.
 
     Args:
@@ -358,11 +311,12 @@ def format_option(default='text', formats=None, help_text='Output format'):
         Click option decorator for --format, -f
     """
     if formats is None:
-        formats = ['text', 'yaml', 'json', 'csv']
+        formats = ["text", "yaml", "json", "csv"]
 
     return click.option(
-        '--format', '-f',
+        "--format",
+        "-f",
         type=click.Choice(formats, case_sensitive=False),
         default=default,
-        help=help_text
+        help=help_text,
     )

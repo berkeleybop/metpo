@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Analyze BactoTraits data and METPO usage - 100% TRACEABLE
 Primary sources:
@@ -6,14 +5,16 @@ Primary sources:
 - /home/mark/gitrepos/kg-microbe/data/transformed/bactotraits/edges.tsv
 - /home/mark/gitrepos/kg-microbe/data/transformed/bactotraits/nodes.tsv
 """
+
 import csv
-from pathlib import Path
 from collections import Counter, defaultdict
+from pathlib import Path
 
 # Primary source files
 RAW_FILE = Path("/home/mark/gitrepos/kg-microbe/data/raw/BactoTraits_databaseV2_Jun2022.csv")
 TRANSFORMED_EDGES = Path("/home/mark/gitrepos/kg-microbe/data/transformed/bactotraits/edges.tsv")
 TRANSFORMED_NODES = Path("/home/mark/gitrepos/kg-microbe/data/transformed/bactotraits/nodes.tsv")
+
 
 def analyze_raw_bactotraits():
     """Analyze the raw BactoTraits CSV file"""
@@ -21,15 +22,15 @@ def analyze_raw_bactotraits():
         print(f"ERROR: Raw file not found: {RAW_FILE}")
         return None
 
-    print(f"\n=== BactoTraits Raw Data Analysis ===")
+    print("\n=== BactoTraits Raw Data Analysis ===")
     print(f"Source: {RAW_FILE}")
 
-    with open(RAW_FILE, 'r', encoding='utf-8', errors='ignore') as f:
+    with Path(RAW_FILE).open(encoding="utf-8", errors="ignore") as f:
         # Skip first two header rows (units and descriptions)
         f.readline()
         f.readline()
 
-        reader = csv.DictReader(f, delimiter=';')
+        reader = csv.DictReader(f, delimiter=";")
 
         total_strains = 0
         trait_coverage = defaultdict(int)
@@ -43,15 +44,13 @@ def analyze_raw_bactotraits():
                     trait_coverage[key] += 1
 
         print(f"\nTotal strains: {total_strains:,}")
-        print(f"\nTop 20 traits by coverage:")
+        print("\nTop 20 traits by coverage:")
         for trait, count in sorted(trait_coverage.items(), key=lambda x: x[1], reverse=True)[:20]:
             pct = (count / total_strains) * 100
             print(f"  {trait:40s}: {count:6,} ({pct:5.1f}%)")
 
-        return {
-            'total_strains': total_strains,
-            'trait_coverage': trait_coverage
-        }
+        return {"total_strains": total_strains, "trait_coverage": trait_coverage}
+
 
 def analyze_transformed_bactotraits():
     """Analyze METPO usage in transformed BactoTraits data"""
@@ -59,41 +58,42 @@ def analyze_transformed_bactotraits():
         print(f"ERROR: Transformed edges not found: {TRANSFORMED_EDGES}")
         return None
 
-    print(f"\n=== BactoTraits Transformed Data (METPO Usage) ===")
+    print("\n=== BactoTraits Transformed Data (METPO Usage) ===")
     print(f"Source: {TRANSFORMED_EDGES}")
 
     metpo_objects = []
     total_edges = 0
     metpo_edges = 0
 
-    with open(TRANSFORMED_EDGES, 'r') as f:
-        reader = csv.DictReader(f, delimiter='\t')
+    with Path(TRANSFORMED_EDGES).open() as f:
+        reader = csv.DictReader(f, delimiter="\t")
         for row in reader:
             total_edges += 1
-            obj = row.get('object', '')
-            if obj.startswith('METPO:'):
+            obj = row.get("object", "")
+            if obj.startswith("METPO:"):
                 metpo_edges += 1
                 metpo_objects.append(obj)
 
     print(f"\nTotal edges: {total_edges:,}")
     print(f"Edges using METPO: {metpo_edges:,}")
-    print(f"Percentage: {(metpo_edges/total_edges)*100:.1f}%")
+    print(f"Percentage: {(metpo_edges / total_edges) * 100:.1f}%")
 
     # Count unique METPO terms
     metpo_counter = Counter(metpo_objects)
     unique_metpo_terms = len(metpo_counter)
 
     print(f"\nUnique METPO terms used: {unique_metpo_terms}")
-    print(f"\nTop 20 most frequently used METPO terms:")
+    print("\nTop 20 most frequently used METPO terms:")
     for term, count in metpo_counter.most_common(20):
         print(f"  {term}: {count:,}")
 
     return {
-        'total_edges': total_edges,
-        'metpo_edges': metpo_edges,
-        'unique_metpo_terms': unique_metpo_terms,
-        'metpo_distribution': metpo_counter
+        "total_edges": total_edges,
+        "metpo_edges": metpo_edges,
+        "unique_metpo_terms": unique_metpo_terms,
+        "metpo_distribution": metpo_counter,
     }
+
 
 def analyze_transformed_nodes():
     """Analyze nodes in transformed BactoTraits data"""
@@ -101,32 +101,30 @@ def analyze_transformed_nodes():
         print(f"ERROR: Transformed nodes not found: {TRANSFORMED_NODES}")
         return None
 
-    print(f"\n=== BactoTraits Transformed Nodes ===")
+    print("\n=== BactoTraits Transformed Nodes ===")
     print(f"Source: {TRANSFORMED_NODES}")
 
     node_types = Counter()
     total_nodes = 0
 
-    with open(TRANSFORMED_NODES, 'r') as f:
-        reader = csv.DictReader(f, delimiter='\t')
+    with Path(TRANSFORMED_NODES).open() as f:
+        reader = csv.DictReader(f, delimiter="\t")
         for row in reader:
             total_nodes += 1
-            node_id = row.get('id', '')
+            node_id = row.get("id", "")
             # Extract prefix
-            if ':' in node_id:
-                prefix = node_id.split(':')[0]
+            if ":" in node_id:
+                prefix = node_id.split(":")[0]
                 node_types[prefix] += 1
 
     print(f"\nTotal nodes: {total_nodes:,}")
-    print(f"\nNode types (by prefix):")
+    print("\nNode types (by prefix):")
     for prefix, count in node_types.most_common():
         pct = (count / total_nodes) * 100
         print(f"  {prefix:20s}: {count:8,} ({pct:5.1f}%)")
 
-    return {
-        'total_nodes': total_nodes,
-        'node_types': node_types
-    }
+    return {"total_nodes": total_nodes, "node_types": node_types}
+
 
 def main():
     print("=" * 70)
@@ -148,6 +146,7 @@ def main():
         print(f"Unique METPO terms: {transformed_stats['unique_metpo_terms']}")
     if node_stats:
         print(f"Total nodes: {node_stats['total_nodes']:,}")
+
 
 if __name__ == "__main__":
     main()

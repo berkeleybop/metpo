@@ -4,8 +4,10 @@ This tool processes the NCBI taxonomy nodes.dmp file and extracts
 taxonomic rank information as RDF triples in Turtle format.
 """
 
+from pathlib import Path
+
 import click
-from rdflib import Graph, URIRef, Literal
+from rdflib import Graph, Literal, URIRef
 from tqdm import tqdm
 
 NCBI_TAXON_PREFIX = "http://purl.obolibrary.org/obo/NCBITaxon_"
@@ -14,22 +16,24 @@ HAS_RANK_PREDICATE = URIRef("http://purl.obolibrary.org/obo/ncbitaxon#has_rank")
 
 @click.command()
 @click.option(
-    "--input-file", "-i",
+    "--input-file",
+    "-i",
     type=click.Path(exists=True),
     required=True,
-    help="Path to nodes.dmp input file"
+    help="Path to nodes.dmp input file",
 )
 @click.option(
-    "--output-file", "-o",
+    "--output-file",
+    "-o",
     type=click.Path(writable=True),
     required=True,
-    help="Path to output Turtle (.ttl) RDF file"
+    help="Path to output Turtle (.ttl) RDF file",
 )
 def extract_taxon_ranks(input_file, output_file):
     """Extract RDF triples from NCBI nodes.dmp linking taxon IDs to textual ranks."""
     g = Graph()
 
-    with open(input_file, encoding="utf-8") as f:
+    with Path(input_file).open(encoding="utf-8") as f:
         lines = f.readlines()
 
     for line in tqdm(lines, desc="Processing nodes.dmp"):

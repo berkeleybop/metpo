@@ -25,7 +25,7 @@ LOG_PATH = Path(".robot_query.log")
 def log_event(ontology_id: str, input_file: str, message: str, log_type: str = "QUERY_FAILED"):
     """Log query event."""
     timestamp = datetime.now(UTC).isoformat()
-    with Path(LOG_PATH).open( "a") as f:
+    with Path(LOG_PATH).open("a") as f:
         f.write(f"{timestamp} | {log_type} | {ontology_id} | {input_file} | {message}\n")
 
 
@@ -59,19 +59,23 @@ def main(ontology_id: str, input_file: Path, query_file: Path, output_file: Path
     click.echo(f"Querying {ontology_id} with ROBOT...")
 
     cmd = [
-        "robot", "query",
-        "--input", str(input_file),
-        "--query", str(query_file),
-        str(output_file)
+        "robot",
+        "query",
+        "--input",
+        str(input_file),
+        "--query",
+        str(query_file),
+        str(output_file),
     ]
 
     try:
         # Run ROBOT
         result = subprocess.run(
             cmd,
-            check=False, capture_output=True,
+            check=False,
+            capture_output=True,
             text=True,
-            timeout=600  # 10 minute timeout
+            timeout=600,  # 10 minute timeout
         )
 
         # Log ROBOT stderr if present

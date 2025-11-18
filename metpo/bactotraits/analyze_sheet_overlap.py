@@ -36,7 +36,7 @@ def load_minimal_classes(tsv_path: Path) -> tuple[set[str], dict[str, str]]:
     canonical_ids = set()
     id_to_label = {}
 
-    with Path(tsv_path).open( encoding="utf-8") as f:
+    with Path(tsv_path).open(encoding="utf-8") as f:
         reader = csv.DictReader(f, delimiter="\t")
         for row in reader:
             class_id = row.get("ID", "").strip()
@@ -50,7 +50,9 @@ def load_minimal_classes(tsv_path: Path) -> tuple[set[str], dict[str, str]]:
     return canonical_ids, id_to_label
 
 
-def analyze_sheet(sheet_path: Path, sheet_name: str, canonical_ids: set[str], id_to_label: dict[str, str]) -> dict:
+def analyze_sheet(
+    sheet_path: Path, sheet_name: str, canonical_ids: set[str], id_to_label: dict[str, str]
+) -> dict:
     """Analyze a single sheet for overlaps and important metadata."""
 
     results = {
@@ -60,10 +62,10 @@ def analyze_sheet(sheet_path: Path, sheet_name: str, canonical_ids: set[str], id
         "not_in_canonical": [],
         "has_range_metadata": [],
         "safe_to_delete": [],
-        "metadata_at_risk": []
+        "metadata_at_risk": [],
     }
 
-    with Path(sheet_path).open( encoding="utf-8") as f:
+    with Path(sheet_path).open(encoding="utf-8") as f:
         reader = csv.DictReader(f, delimiter="\t")
 
         for row in reader:
@@ -91,7 +93,7 @@ def analyze_sheet(sheet_path: Path, sheet_name: str, canonical_ids: set[str], id
                 "units": units,
                 "range_min": range_min,
                 "range_max": range_max,
-                "canonical_label": id_to_label.get(normalized_id, "")
+                "canonical_label": id_to_label.get(normalized_id, ""),
             }
 
             if normalized_id in canonical_ids:
@@ -110,13 +112,15 @@ def analyze_sheet(sheet_path: Path, sheet_name: str, canonical_ids: set[str], id
 
 def print_summary(results: dict):
     """Print a summary of the analysis."""
-    print(f"\n{'='*80}")
+    print(f"\n{'=' * 80}")
     print(f"Sheet: {results['sheet_name']}")
-    print(f"{'='*80}")
+    print(f"{'=' * 80}")
     print(f"Total rows: {results['total_rows']}")
     print(f"  In canonical (minimal_classes.tsv): {len(results['in_canonical'])}")
     print(f"  NOT in canonical: {len(results['not_in_canonical'])}")
-    print(f"  With range metadata (Units/RangeMins/RangeMaxes): {len(results['has_range_metadata'])}")
+    print(
+        f"  With range metadata (Units/RangeMins/RangeMaxes): {len(results['has_range_metadata'])}"
+    )
     print(f"  SAFE to delete (in canonical, no unique metadata): {len(results['safe_to_delete'])}")
     print(f"  METADATA AT RISK (in canonical, has ranges): {len(results['metadata_at_risk'])}")
 
@@ -128,7 +132,9 @@ def print_detailed_ranges(results: dict):
         print(f"{'ID':<20} {'Label':<30} {'Units':<10} {'Min':<8} {'Max':<8}")
         print("-" * 80)
         for row in results["metadata_at_risk"]:
-            print(f"{row['id']:<20} {row['label'][:28]:<30} {row['units']:<10} {row['range_min']:<8} {row['range_max']:<8}")
+            print(
+                f"{row['id']:<20} {row['label'][:28]:<30} {row['units']:<10} {row['range_min']:<8} {row['range_max']:<8}"
+            )
 
 
 def main():
@@ -143,7 +149,7 @@ def main():
     sheets_to_analyze = [
         ("bactotraits.tsv", "bactotraits"),
         ("more_classes___inconsistent.tsv", "more_classes___inconsistent"),
-        ("attic_classes.tsv", "attic_classes")
+        ("attic_classes.tsv", "attic_classes"),
     ]
 
     all_results = []
@@ -158,9 +164,9 @@ def main():
             print_detailed_ranges(results)
 
     # Overall summary
-    print(f"\n\n{'='*80}")
+    print(f"\n\n{'=' * 80}")
     print("OVERALL SUMMARY")
-    print(f"{'='*80}")
+    print(f"{'=' * 80}")
 
     total_metadata_at_risk = sum(len(r["metadata_at_risk"]) for r in all_results)
     total_safe_to_delete = sum(len(r["safe_to_delete"]) for r in all_results)

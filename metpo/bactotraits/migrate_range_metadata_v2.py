@@ -74,7 +74,7 @@ def load_range_metadata(bactotraits_path: Path) -> dict[str, dict[str, str]]:
     """Load range metadata from bactotraits.tsv."""
     range_data = {}
 
-    with Path(bactotraits_path).open( encoding="utf-8") as f:
+    with Path(bactotraits_path).open(encoding="utf-8") as f:
         reader = csv.DictReader(f, delimiter="\t")
 
         for row in reader:
@@ -100,15 +100,13 @@ def load_range_metadata(bactotraits_path: Path) -> dict[str, dict[str, str]]:
                     "unit_raw": units_raw,
                     "unit_ucum": ucum_unit,
                     "range_min": range_min,
-                    "range_max": range_max
+                    "range_max": range_max,
                 }
 
     return range_data
 
 
-def generate_google_sheets_formula(row_number: int,
-                                   min_col: str,
-                                   max_col: str) -> str:
+def generate_google_sheets_formula(row_number: int, min_col: str, max_col: str) -> str:
     """
     Generate Google Sheets formula for equivalent_class_formula column.
 
@@ -125,11 +123,11 @@ def generate_google_sheets_formula(row_number: int,
     max_ref = f"{max_col}{row_number}"
 
     formula = (
-        f'=IF(AND(NOT(ISBLANK({min_ref})), NOT(ISBLANK({max_ref}))), '
+        f"=IF(AND(NOT(ISBLANK({min_ref})), NOT(ISBLANK({max_ref}))), "
         f'"\'has measurement value\' some float[>= " & {min_ref} & " , <= " & {max_ref} & "]", '
-        f'IF(NOT(ISBLANK({max_ref})), '
+        f"IF(NOT(ISBLANK({max_ref})), "
         f'"\'has measurement value\' some float[<= " & {max_ref} & "]", '
-        f'IF(NOT(ISBLANK({min_ref})), '
+        f"IF(NOT(ISBLANK({min_ref})), "
         f'"\'has measurement value\' some float[>= " & {min_ref} & "]", '
         f'"")))'
     )
@@ -137,10 +135,12 @@ def generate_google_sheets_formula(row_number: int,
     return formula
 
 
-def enhance_minimal_classes(minimal_path: Path,
-                            range_data: dict[str, dict[str, str]],
-                            output_path: Path,
-                            dry_run: bool = True):
+def enhance_minimal_classes(
+    minimal_path: Path,
+    range_data: dict[str, dict[str, str]],
+    output_path: Path,
+    dry_run: bool = True,
+):
     """
     Add range metadata columns to minimal_classes.tsv.
     """
@@ -149,7 +149,7 @@ def enhance_minimal_classes(minimal_path: Path,
     stats = {"total": 0, "enhanced": 0, "skipped": 0}
 
     # Read existing data
-    with Path(minimal_path).open( encoding="utf-8") as f:
+    with Path(minimal_path).open(encoding="utf-8") as f:
         reader = csv.DictReader(f, delimiter="\t")
         header = list(reader.fieldnames)
 
@@ -184,7 +184,9 @@ def enhance_minimal_classes(minimal_path: Path,
                     if dry_run:
                         label = row.get("label", "")[:40]
                         print(f"✓ {class_id}: {label:<40}")
-                        if metadata["unit_raw"] and metadata["unit_raw"] != metadata.get("label", ""):
+                        if metadata["unit_raw"] and metadata["unit_raw"] != metadata.get(
+                            "label", ""
+                        ):
                             print(f"  Unit: {metadata['unit_raw']:<10} → {metadata['unit_ucum']}")
                         else:
                             print(f"  Unit: {metadata['unit_ucum']}")
@@ -203,26 +205,33 @@ def enhance_minimal_classes(minimal_path: Path,
     # Write enhanced data
     if not dry_run:
         # Add new columns to header
-        new_columns = ["measurement_unit_ucum", "range_min", "range_max", "equivalent_class_formula"]
+        new_columns = [
+            "measurement_unit_ucum",
+            "range_min",
+            "range_max",
+            "equivalent_class_formula",
+        ]
         new_header = list(header) + new_columns
 
-        with Path(output_path).open( "w", encoding="utf-8", newline="") as f:
+        with Path(output_path).open("w", encoding="utf-8", newline="") as f:
             writer = csv.DictWriter(f, fieldnames=new_header, delimiter="\t", extrasaction="ignore")
             writer.writeheader()
 
             # Write ROBOT template row
             robot_row = dict.fromkeys(new_header, "")
-            robot_row.update({
-                "ID": "ID",
-                "label": "LABEL",
-                "TYPE": "TYPE",
-                "parent class": "SC %",
-                "description": "A IAO:0000115",
-                "measurement_unit_ucum": "",  # blank - not used in ROBOT
-                "range_min": "",  # blank - not used in ROBOT
-                "range_max": "",  # blank - not used in ROBOT
-                "equivalent_class_formula": "EC %"  # ROBOT directive
-            })
+            robot_row.update(
+                {
+                    "ID": "ID",
+                    "label": "LABEL",
+                    "TYPE": "TYPE",
+                    "parent class": "SC %",
+                    "description": "A IAO:0000115",
+                    "measurement_unit_ucum": "",  # blank - not used in ROBOT
+                    "range_min": "",  # blank - not used in ROBOT
+                    "range_max": "",  # blank - not used in ROBOT
+                    "equivalent_class_formula": "EC %",  # ROBOT directive
+                }
+            )
 
             # Preserve existing ROBOT directives
             for col in header:
@@ -246,25 +255,25 @@ def enhance_minimal_classes(minimal_path: Path,
     "--execute",
     is_flag=True,
     default=False,
-    help="Actually write the enhanced file (default is dry-run)"
+    help="Actually write the enhanced file (default is dry-run)",
 )
 @click.option(
     "--bactotraits",
     type=click.Path(exists=True, dir_okay=False, path_type=Path),
     default=Path("downloads/sheets/bactotraits.tsv"),
-    help="Path to bactotraits.tsv"
+    help="Path to bactotraits.tsv",
 )
 @click.option(
     "--minimal",
     type=click.Path(exists=True, dir_okay=False, path_type=Path),
     default=Path("downloads/sheets/minimal_classes.tsv"),
-    help="Path to minimal_classes.tsv"
+    help="Path to minimal_classes.tsv",
 )
 @click.option(
     "--output",
     type=click.Path(dir_okay=False, path_type=Path),
     default=Path("downloads/sheets/minimal_classes_enhanced.tsv"),
-    help="Output path for enhanced file"
+    help="Output path for enhanced file",
 )
 def main(execute, bactotraits, minimal, output):
     """Migrate range metadata to minimal_classes.tsv.
@@ -318,11 +327,15 @@ def main(execute, bactotraits, minimal, output):
         click.echo("1. Review the enhanced TSV file")
         click.echo("2. Import to Google Sheets:")
         click.echo("   - Open minimal_classes sheet")
-        click.echo("   - Add 4 new columns: measurement_unit_ucum, range_min, range_max, equivalent_class_formula")
+        click.echo(
+            "   - Add 4 new columns: measurement_unit_ucum, range_min, range_max, equivalent_class_formula"
+        )
         click.echo("   - Copy data from enhanced TSV")
         click.echo("3. IMPORTANT: Add Google Sheets formula to equivalent_class_formula column:")
         click.echo("   Formula: =IF(AND(NOT(ISBLANK(range_min)), NOT(ISBLANK(range_max))),")
-        click.echo('            "\'has measurement value\' some float[>= " & range_min & " , <= " & range_max & "]", "")')
+        click.echo(
+            '            "\'has measurement value\' some float[>= " & range_min & " , <= " & range_max & "]", "")'
+        )
         click.echo("4. Test download: make download-all-sheets")
         click.echo("5. Test build: cd src/ontology && make metpo.owl")
 

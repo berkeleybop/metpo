@@ -16,13 +16,13 @@ import click
     "-o",
     type=click.Path(dir_okay=False, writable=True, path_type=str),
     required=True,
-    help="Output file for the generated stubs"
+    help="Output file for the generated stubs",
 )
 @click.argument(
     "input_files",
     nargs=-1,
     required=True,
-    type=click.Path(exists=True, dir_okay=False, path_type=str)
+    type=click.Path(exists=True, dir_okay=False, path_type=str),
 )
 def main(output, input_files):
     """
@@ -38,7 +38,7 @@ def main(output, input_files):
 
     for file_path in input_files:
         try:
-            with Path(file_path).open( newline="") as infile:
+            with Path(file_path).open(newline="") as infile:
                 reader = csv.reader(infile, delimiter="\t")
 
                 # Find the ROBOT header row (the one with 'LABEL')
@@ -53,16 +53,25 @@ def main(output, input_files):
                 type_index = stripped_header.index("TYPE")
 
                 for row in reader:
-                    if row and len(row) > max(id_index, label_index, type_index) and row[id_index].startswith("METPO:"):
+                    if (
+                        row
+                        and len(row) > max(id_index, label_index, type_index)
+                        and row[id_index].startswith("METPO:")
+                    ):
                         stubs.add((row[id_index], row[label_index], row[type_index]))
         except FileNotFoundError:
             click.echo(f"Warning: Input file not found: {file_path}", err=True)
         except StopIteration:
-            click.echo(f"Warning: Could not find a valid ROBOT template header in {file_path}", err=True)
+            click.echo(
+                f"Warning: Could not find a valid ROBOT template header in {file_path}", err=True
+            )
         except ValueError:
-            click.echo(f"Warning: Could not find required columns (ID, LABEL, TYPE) in {file_header} in {file_path}", err=True)
+            click.echo(
+                f"Warning: Could not find required columns (ID, LABEL, TYPE) in {file_header} in {file_path}",
+                err=True,
+            )
 
-    with Path(output).open( "w", newline="") as outfile:
+    with Path(output).open("w", newline="") as outfile:
         writer = csv.writer(outfile, delimiter="\t")
         writer.writerow(("ID", "label", "TYPE"))  # Human-readable header
         writer.writerow(("ID", "LABEL", "TYPE"))  # ROBOT template header

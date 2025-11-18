@@ -1,7 +1,9 @@
 """Import BactoTraits data into MongoDB."""
-import click
+
 import csv
 from pathlib import Path
+
+import click
 from pymongo import MongoClient
 from tqdm import tqdm
 
@@ -26,53 +28,38 @@ def sanitize_field_name(field_name):
     sanitized = field_name.strip()
 
     # Replace comparison operators (order matters!)
-    sanitized = sanitized.replace('<=', '_lte_')
-    sanitized = sanitized.replace('>=', '_gte_')
-    sanitized = sanitized.replace('>', '_gt_')
-    sanitized = sanitized.replace('<', '_lt_')
+    sanitized = sanitized.replace("<=", "_lte_")
+    sanitized = sanitized.replace(">=", "_gte_")
+    sanitized = sanitized.replace(">", "_gt_")
+    sanitized = sanitized.replace("<", "_lt_")
 
     # Replace other problematic characters
-    sanitized = sanitized.replace('.', '_')
-    sanitized = sanitized.replace('-', '_')
-    sanitized = sanitized.replace(' ', '_')
+    sanitized = sanitized.replace(".", "_")
+    sanitized = sanitized.replace("-", "_")
+    sanitized = sanitized.replace(" ", "_")
 
     # Clean up multiple consecutive underscores
-    while '__' in sanitized:
-        sanitized = sanitized.replace('__', '_')
+    while "__" in sanitized:
+        sanitized = sanitized.replace("__", "_")
 
     # Remove trailing underscores
-    sanitized = sanitized.rstrip('_')
+    sanitized = sanitized.rstrip("_")
 
     return sanitized
 
 
 @click.command()
 @click.option(
-    "--input-file", "-i",
+    "--input-file",
+    "-i",
     type=click.Path(exists=True, path_type=Path),
     default=Path("local/bactotraits/BactoTraits.tsv"),
-    help="Path to kg-microbe BactoTraits.tsv file"
+    help="Path to kg-microbe BactoTraits.tsv file",
 )
-@click.option(
-    "--database", "-d",
-    default="bactotraits",
-    help="MongoDB database name"
-)
-@click.option(
-    "--collection", "-c",
-    default="bactotraits",
-    help="MongoDB collection name"
-)
-@click.option(
-    "--drop/--no-drop",
-    default=True,
-    help="Drop existing collection before import"
-)
-@click.option(
-    "--mongo-uri",
-    default="mongodb://localhost:27017/",
-    help="MongoDB connection URI"
-)
+@click.option("--database", "-d", default="bactotraits", help="MongoDB database name")
+@click.option("--collection", "-c", default="bactotraits", help="MongoDB collection name")
+@click.option("--drop/--no-drop", default=True, help="Drop existing collection before import")
+@click.option("--mongo-uri", default="mongodb://localhost:27017/", help="MongoDB connection URI")
 def import_bactotraits(input_file, database, collection, drop, mongo_uri):
     """
     Import BactoTraits TSV data into MongoDB.
@@ -109,10 +96,12 @@ def import_bactotraits(input_file, database, collection, drop, mongo_uri):
         click.echo(f"❌ Error: Input file not found: {input_file}", err=True)
         click.echo()
         click.echo("Expected location:")
-        click.echo("  /Users/MAM/Documents/gitrepos/kg-microbe/kg_microbe/transform_utils/bactotraits/tmp/BactoTraits.tsv")
+        click.echo(
+            "  /Users/MAM/Documents/gitrepos/kg-microbe/kg_microbe/transform_utils/bactotraits/tmp/BactoTraits.tsv"
+        )
         click.echo()
         click.echo("Or use --input-file to specify a different location")
-        raise click.Abort()
+        raise click.Abort
 
     click.echo(f"Input file:  {input_file}")
     click.echo(f"Database:    {database}")
@@ -135,8 +124,8 @@ def import_bactotraits(input_file, database, collection, drop, mongo_uri):
     # Read and process TSV file
     click.echo(f"\nReading {input_file.name}...")
 
-    with open(input_file, 'r', encoding='utf-8') as f:
-        reader = csv.reader(f, delimiter='\t')
+    with Path(input_file).open(encoding="utf-8") as f:
+        reader = csv.reader(f, delimiter="\t")
 
         # Read header and sanitize field names
         header = next(reader)
@@ -147,7 +136,9 @@ def import_bactotraits(input_file, database, collection, drop, mongo_uri):
         click.echo(f"✓ Read header with {len(sanitized_header)} fields")
 
         # Show field name transformations
-        transformations = [(orig, san) for orig, san in zip(header, sanitized_header) if orig != san]
+        transformations = [
+            (orig, san) for orig, san in zip(header, sanitized_header, strict=False) if orig != san
+        ]
         if transformations:
             click.echo(f"\n{len(transformations)} field names sanitized:")
             for orig, san in transformations[:10]:
@@ -170,12 +161,12 @@ def import_bactotraits(input_file, database, collection, drop, mongo_uri):
         for row in tqdm(reader, total=row_count, desc="Processing"):
             # Create document from row
             doc = {}
-            for field_name, value in zip(sanitized_header, row):
+            for field_name, value in zip(sanitized_header, row, strict=False):
                 # Convert empty strings to empty (preserve for field_mappings compatibility)
                 # Convert numeric-like strings appropriately
-                if value == '':
-                    doc[field_name] = ''
-                elif value in ('0', '1'):
+                if value == "":
+                    doc[field_name] = ""
+                elif value in ("0", "1"):
                     # Binary trait values - store as integers
                     doc[field_name] = int(value)
                 else:
@@ -197,9 +188,9 @@ def import_bactotraits(input_file, database, collection, drop, mongo_uri):
 
     # Create indexes
     click.echo("\nCreating indexes...")
-    coll.create_index('Bacdive_ID')
-    coll.create_index('ncbitaxon_id')
-    coll.create_index([('Kingdom', 1), ('Phylum', 1), ('Class', 1)])
+    coll.create_index("Bacdive_ID")
+    coll.create_index("ncbitaxon_id")
+    coll.create_index([("Kingdom", 1), ("Phylum", 1), ("Class", 1)])
     click.echo("✓ Created indexes on Bacdive_ID, ncbitaxon_id, and taxonomy fields")
 
     # Verify import
@@ -208,10 +199,10 @@ def import_bactotraits(input_file, database, collection, drop, mongo_uri):
 
     # Show sample document
     click.echo("\nSample document:")
-    sample = coll.find_one({}, {'_id': 0})
+    sample = coll.find_one({}, {"_id": 0})
     if sample:
         # Show first 10 fields
-        for i, (key, value) in enumerate(list(sample.items())[:10]):
+        for _i, (key, value) in enumerate(list(sample.items())[:10]):
             click.echo(f"  {key}: {repr(value)[:50]}")
         if len(sample) > 10:
             click.echo(f"  ... and {len(sample) - 10} more fields")

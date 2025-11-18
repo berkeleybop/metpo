@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Unwrap abstracts from artl-cli dict format to plain text.
 
@@ -12,25 +11,26 @@ Usage:
     python unwrap_abstracts.py inputs/*.txt
 """
 
-import sys
 import ast
+import sys
+from pathlib import Path
 
 
 def unwrap_abstract(filepath):
     """Unwrap a single abstract file from dict format to plain text."""
-    with open(filepath, 'r') as f:
+    with Path(filepath).open() as f:
         content = f.read()
 
     # Check if file starts with dict format
-    if content.strip().startswith('{'):
+    if content.strip().startswith("{"):
         try:
             # Parse the dict string
             data = ast.literal_eval(content)
 
             # Extract content if it's a dict with 'content' key
-            if isinstance(data, dict) and 'content' in data:
-                with open(filepath, 'w') as f:
-                    f.write(data['content'])
+            if isinstance(data, dict) and "content" in data:
+                with Path(filepath).open("w") as f:
+                    f.write(data["content"])
                 print(f"Unwrapped: {filepath}")
                 return True
         except (SyntaxError, ValueError) as e:
@@ -53,5 +53,5 @@ def main():
     print(f"\nUnwrapped {unwrapped_count} of {len(sys.argv) - 1} files")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
