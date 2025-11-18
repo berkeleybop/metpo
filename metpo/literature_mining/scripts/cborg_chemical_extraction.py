@@ -10,7 +10,7 @@ import os
 import subprocess
 import sys
 import time
-from datetime import datetime
+from datetime import UTC, datetime
 from pathlib import Path
 
 import requests
@@ -59,7 +59,7 @@ def run_extraction(api_key):
     env["OPENAI_API_KEY"] = api_key
 
     # Generate timestamped output filename
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    timestamp = datetime.now(UTC).strftime("%Y%m%d_%H%M%S")
     output_file = f"outputs/chemical_utilization_cborg_gpt5_{timestamp}.yaml"
     log_file = f"logs/ontogpt_verbose_{timestamp}.log"
 
@@ -90,7 +90,7 @@ def run_extraction(api_key):
 
     # Record start time
     start_time = time.time()
-    start_timestamp = datetime.now().isoformat()
+    start_timestamp = datetime.now(UTC).isoformat()
 
     print(f"Starting extraction at {start_timestamp}")
     print("Command:", " ".join(cmd))
@@ -123,7 +123,7 @@ def run_extraction(api_key):
             "log_file": log_file,
             "execution_time": execution_time,
             "start_time": start_timestamp,
-            "end_time": datetime.now().isoformat(),
+            "end_time": datetime.now(UTC).isoformat(),
             "command": " ".join(cmd)
         }
 
@@ -139,7 +139,7 @@ def run_extraction(api_key):
             "error_code": e.returncode,
             "log_file": log_file,
             "start_time": start_timestamp,
-            "end_time": datetime.now().isoformat()
+            "end_time": datetime.now(UTC).isoformat()
         }
 
 def run_assessment(output_file):
@@ -155,7 +155,7 @@ def run_assessment(output_file):
     try:
         # Run assessment on outputs directory with pattern matching the specific file
         output_path = Path(output_file)
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        timestamp = datetime.now(UTC).strftime("%Y%m%d_%H%M%S")
         assessment_output = f"logs/unified_assessment_{timestamp}.yaml"
 
         cmd = [
@@ -238,7 +238,7 @@ def main():
             print(f"Assessment: {assessment_result['assessment_file']}")
 
     # Save detailed results
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    timestamp = datetime.now(UTC).strftime("%Y%m%d_%H%M%S")
     results_file = f"logs/cborg_extraction_results_{timestamp}.json"
 
     Path("logs").mkdir(exist_ok=True)

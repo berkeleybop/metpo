@@ -13,7 +13,7 @@ Integrates with:
 
 import json
 from collections import defaultdict
-from datetime import datetime
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
@@ -57,7 +57,7 @@ class MetpoAssessor:
         result = {
             "template_path": str(template_path),
             "template_name": template_path.stem,
-            "analysis_timestamp": datetime.now().isoformat(),
+            "analysis_timestamp": datetime.now(UTC).isoformat(),
             "compliance": {},
             "quality_metrics": {},
             "issues": [],
@@ -302,7 +302,7 @@ class MetpoAssessor:
         result = {
             "extraction_path": str(extraction_path),
             "template_name": self._extract_template_name(extraction_path),
-            "analysis_timestamp": datetime.now().isoformat(),
+            "analysis_timestamp": datetime.now(UTC).isoformat(),
             "abstracts_processed": len(extractions),
             "success_metrics": {},
             "performance": {},
@@ -377,7 +377,7 @@ class MetpoAssessor:
         return {
             "extraction_path": str(extraction_path),
             "template_name": self._extract_template_name(extraction_path),
-            "analysis_timestamp": datetime.now().isoformat(),
+            "analysis_timestamp": datetime.now(UTC).isoformat(),
             "success_metrics": {"compound_expressions": 0, "primary_success": False},
             "performance": {
                 "raw_output": {"populated_fields": 0, "total_entities": 0},
@@ -1229,7 +1229,7 @@ def analyze_extractions(extractions_dir, output, pattern):
 def generate_template_report(results: list[dict], cross_analysis: dict) -> str:
     """Generate template analysis report in YAML format."""
     report = {
-        "generated": datetime.now().strftime("%Y-%m-%d %H:%M"),
+        "generated": datetime.now(UTC).strftime("%Y-%m-%d %H:%M"),
         "summary": {
             "templates_analyzed": len(results)
         },
@@ -1261,7 +1261,7 @@ def generate_extraction_report(results: list[dict]) -> str:
     total_ces = sum(r["success_metrics"]["compound_expressions"] for r in results)
 
     report = {
-        "generated": datetime.now().strftime("%Y-%m-%d %H:%M"),
+        "generated": datetime.now(UTC).strftime("%Y-%m-%d %H:%M"),
         "summary": {
             "extractions_analyzed": total,
             "successful_extractions": successful,

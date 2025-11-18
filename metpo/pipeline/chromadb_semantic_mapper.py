@@ -32,7 +32,7 @@ SSSOM TSV with:
 
 import csv
 import os
-from datetime import date
+from datetime import UTC, datetime
 from pathlib import Path
 
 import chromadb
@@ -176,8 +176,8 @@ def write_sssom_output(matches: list[dict], output_path: str, min_similarity: fl
         f.write("#   METPO: http://purl.obolibrary.org/obo/METPO_\n")
         f.write("#   skos: http://www.w3.org/2004/02/skos/core#\n")
         f.write("#   semapv: https://w3id.org/semapv/vocab/\n")
-        f.write(f"# mapping_set_id: metpo-ontology-mappings-{date.today().isoformat()}\n")
-        f.write(f"# mapping_date: {date.today().isoformat()}\n")
+        f.write(f"# mapping_set_id: metpo-ontology-mappings-{datetime.now(UTC).date().isoformat()}\n")
+        f.write(f"# mapping_date: {datetime.now(UTC).date().isoformat()}\n")
         f.write("# mapping_tool: openai_text-embedding-3-small\n")
         f.write("# mapping_provider: https://github.com/berkeleybop/metpo\n")
         f.write("# license: https://creativecommons.org/publicdomain/zero/1.0/\n")
