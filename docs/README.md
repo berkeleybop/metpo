@@ -224,7 +224,7 @@ python analyze_coherence_results.py \
 ## Interactive Notebooks
 
 - `explore_embeddings.ipynb` - Explore embedding space, visualize clusters
-- `query_chromadb.ipynb` - Interactive queries and experiments
+- Use `chromadb-semantic-mapper` CLI tool for querying (see cli-reference.md)
 
 ## Typical Workflow
 

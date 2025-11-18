@@ -121,13 +121,21 @@ Host ubuntu
 
 ## Usage
 
-### In Jupyter Notebook
+### Via CLI Tool (Recommended)
 
-The `notebooks/query_chromadb.ipynb` notebook demonstrates:
-- Fast semantic similarity search across all 24 ontologies
-- Filtering by specific ontology (e.g., `where={"ontologyId": "envo"}`)
-- Multi-ontology filtering (e.g., `where={"ontologyId": {"$in": ["envo", "go", "micro"]}}`)
-- Distance thresholds for match quality
+Use the `chromadb-semantic-mapper` CLI tool for production workflows:
+
+```bash
+uv run chromadb-semantic-mapper \
+  --metpo-tsv src/templates/metpo_sheet.tsv \
+  --chroma-path data/chromadb/chroma_ols20_nonols4 \
+  --collection-name combined_embeddings \
+  --output data/mappings/metpo_mappings.sssom.tsv \
+  --max-rank 20 \
+  --min-similarity 0.85
+```
+
+See `docs/cli-reference.md` for complete options.
 
 ### In Python Scripts
 
@@ -177,7 +185,12 @@ Each embedding in the `combined_embeddings` collection has:
 
 ## Related Files
 
-- **Notebooks**: `notebooks/query_chromadb.ipynb` - Interactive queries
-- **Scripts**: `scripts/pipeline/chromadb_semantic_mapper.py` - Generate SSSOM mappings
+- **CLI Tools**:
+  - `metpo/pipeline/chromadb_semantic_mapper.py` - Generate SSSOM mappings
+  - `metpo/pipeline/embed_ontology_to_chromadb.py` - Create embeddings
+  - `metpo/database/audit_chromadb.py` - Inspect/diagnose collections
+  - `metpo/database/combine_chromadb.py` - Merge collections
+  - `metpo/database/filter_ols_chromadb.py` - Subset by ontology
 - **Data**: `data/mappings/metpo_mappings*.sssom.tsv` - Output mappings
 - **Pipeline**: `data/pipeline/non-ols-terms/*.tsv` - Non-OLS term extractions
+- **Docs**: `docs/cli-reference.md` - CLI tool documentation
