@@ -9,13 +9,13 @@ This version:
 - Logs errors for investigation
 """
 
-import sqlite3
 import json
-import click
-from pathlib import Path
-from tqdm import tqdm
+import sqlite3
+
 import chromadb
+import click
 from chromadb.config import Settings
+from tqdm import tqdm
 
 
 def extract_embedding_vector(embedding_json: str) -> list[float]:
@@ -24,13 +24,12 @@ def extract_embedding_vector(embedding_json: str) -> list[float]:
 
     if isinstance(data, list):
         return data
-    elif isinstance(data, dict):
+    if isinstance(data, dict):
         return (data.get("embedding") or
                 data.get("values") or
                 data.get("data") or
-                list(data.values())[0])
-    else:
-        raise ValueError(f"Unexpected embedding format: {type(data)}")
+                next(iter(data.values())))
+    raise ValueError(f"Unexpected embedding format: {type(data)}")
 
 
 def migrate_embeddings_resilient(
@@ -43,7 +42,7 @@ def migrate_embeddings_resilient(
     exclude_ontos: tuple[str, ...] = ()
 ):
     """Migrate embeddings with error recovery and optional ontology filtering."""
-    
+
     # Validate mutually exclusive options
     if include_ontos and exclude_ontos:
         raise click.UsageError("Cannot use both --include and --exclude. Choose one approach.")
@@ -68,11 +67,11 @@ def migrate_embeddings_resilient(
     # Open connection with isolation level for better error handling
     conn = sqlite3.connect(db_path, isolation_level=None, timeout=30.0)
     cursor = conn.cursor()
-    
+
     # Build WHERE clause for ontology filtering
     where_clause = ""
     filter_params = []
-    
+
     if include_ontos:
         placeholders = ",".join("?" * len(include_ontos))
         where_clause = f"WHERE ontologyId IN ({placeholders})"
@@ -117,7 +116,7 @@ def migrate_embeddings_resilient(
     errors = 0
     error_log = open("migration_errors.log", "a")
 
-    print(f"\nStarting migration...")
+    print("\nStarting migration...")
 
     with tqdm(total=total, initial=offset, desc="Migrating embeddings") as pbar:
         try:
@@ -161,7 +160,7 @@ def migrate_embeddings_resilient(
                                 documents=batch_documents,
                                 metadatas=batch_metadatas
                             )
-                        except Exception as e:
+                        except Exception:
                             # Try one by one if batch fails
                             for i in range(len(batch_ids)):
                                 try:
@@ -214,12 +213,12 @@ def migrate_embeddings_resilient(
             conn.close()
 
     final_count = collection.count()
-    print(f"\n✓ Migration complete!")
+    print("\n✓ Migration complete!")
     print(f"  Processed: {processed:,} rows")
     print(f"  ChromaDB collection size: {final_count:,}")
     print(f"  Errors encountered: {errors}")
     if errors > 0:
-        print(f"  See migration_errors.log for details")
+        print("  See migration_errors.log for details")
     print(f"\nCollection stored at: {chroma_path}")
 
 
@@ -269,15 +268,15 @@ def main(db_path: str, chroma_path: str, batch_size: int, limit: int | None, no_
          include_ontos: tuple[str, ...], exclude_ontos: tuple[str, ...]):
     """
     Resilient migration from SQLite to ChromaDB with error recovery and ontology filtering.
-    
+
     Examples:
         # Migrate everything
         python migrate_to_chromadb_resilient.py --db-path embeddings.db
-        
+
         # Migrate only specific ontologies
         python migrate_to_chromadb_resilient.py --db-path embeddings.db \\
             --include oba --include pato --include omp
-        
+
         # Migrate everything except large ontologies
         python migrate_to_chromadb_resilient.py --db-path embeddings.db \\
             --exclude ncbitaxon --exclude slm

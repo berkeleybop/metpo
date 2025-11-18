@@ -7,33 +7,32 @@ that have DOIs but not PMIDs.
 """
 
 import json
-import click
 from pathlib import Path
-from typing import Optional
 
+import click
 from artl_mcp.tools import get_europepmc_paper_by_id
 
 
-def get_abstract_from_doi(doi: str) -> Optional[dict]:
+def get_abstract_from_doi(doi: str) -> dict | None:
     """
     Fetch abstract from a DOI using artl-mcp.
-    
+
     Args:
         doi: The DOI to fetch (with or without "doi:" prefix)
-    
+
     Returns:
         Dictionary with title, abstract, and metadata, or None if not found
     """
     # Clean the DOI
     clean_doi = doi.replace("doi:", "").replace("DOI:", "").strip()
-    
+
     try:
         # Get paper data from Europe PMC
         data = get_europepmc_paper_by_id(clean_doi)
-        
+
         if not data:
             return None
-        
+
         return {
             "doi": data.get("doi", clean_doi),
             "pmid": data.get("pmid"),
@@ -45,7 +44,7 @@ def get_abstract_from_doi(doi: str) -> Optional[dict]:
             "year": data.get("pubYear"),
             "source": "Europe PMC",
         }
-        
+
     except Exception as e:
         print(f"Error fetching DOI {clean_doi}: {e}")
         return None
@@ -54,36 +53,36 @@ def get_abstract_from_doi(doi: str) -> Optional[dict]:
 def fetch_abstracts_from_file(input_file: Path, output_file: Path, doi_column: str = "doi"):
     """
     Read DOIs from a TSV file and fetch abstracts.
-    
+
     Args:
         input_file: Path to TSV file containing DOIs
         output_file: Path to write results (TSV format)
         doi_column: Name of the column containing DOIs
     """
     import csv
-    
-    with open(input_file, "r") as f_in:
+
+    with open(input_file) as f_in:
         reader = csv.DictReader(f_in, delimiter="\t")
         rows = list(reader)
-    
+
     results = []
     for row in rows:
         doi = row.get(doi_column)
         if not doi:
             continue
-        
+
         print(f"Fetching abstract for DOI: {doi}")
         abstract_data = get_abstract_from_doi(doi)
-        
+
         if abstract_data:
             # Merge with original row
             result_row = {**row, **abstract_data}
             results.append(result_row)
             print(f"  ✓ Found: {abstract_data['title'][:60]}...")
         else:
-            print(f"  ✗ Not found")
+            print("  ✗ Not found")
             results.append(row)
-    
+
     # Write results
     if results:
         fieldnames = list(results[0].keys())
@@ -91,7 +90,7 @@ def fetch_abstracts_from_file(input_file: Path, output_file: Path, doi_column: s
             writer = csv.DictWriter(f_out, fieldnames=fieldnames, delimiter="\t")
             writer.writeheader()
             writer.writerows(results)
-        
+
         print(f"\nWrote {len(results)} results to {output_file}")
 
 
@@ -119,13 +118,13 @@ def main(doi, input_file, output_file, doi_column):
             click.echo(json.dumps(result, indent=2))
         else:
             click.echo("No abstract found", err=True)
-            raise click.Abort()
+            raise click.Abort
 
     elif input_file:
         # Batch mode
         if not output_file:
             click.echo("Error: --output-file required with --input-file", err=True)
-            raise click.Abort()
+            raise click.Abort
 
         fetch_abstracts_from_file(input_file, output_file, doi_column)
 
@@ -133,7 +132,7 @@ def main(doi, input_file, output_file, doi_column):
         click.echo("Error: Must provide either --doi or --input-file", err=True)
         ctx = click.get_current_context()
         click.echo(ctx.get_help())
-        raise click.Abort()
+        raise click.Abort
 
 
 if __name__ == "__main__":

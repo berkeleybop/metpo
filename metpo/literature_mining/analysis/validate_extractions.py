@@ -4,12 +4,13 @@ Validation script for OntoGPT extraction quality.
 Flags suspicious patterns that might indicate poor extraction.
 """
 
+import sys
+from collections import defaultdict
+from pathlib import Path
+
 import click
 import yaml
-import sys
-from pathlib import Path
-from collections import defaultdict
-from typing import List, Dict, Tuple
+
 
 class ExtractionValidator:
     """Validates extraction quality and flags issues."""
@@ -22,7 +23,7 @@ class ExtractionValidator:
         with open(yaml_file) as f:
             self.docs = list(yaml.safe_load_all(f))
 
-    def validate_all(self) -> List[Dict]:
+    def validate_all(self) -> list[dict]:
         """Run all validation checks."""
         for i, doc in enumerate(self.docs, 1):
             doc_issues = self.validate_document(doc, i)
@@ -31,7 +32,7 @@ class ExtractionValidator:
 
         return self.issues
 
-    def validate_document(self, doc: Dict, doc_num: int) -> List[Dict]:
+    def validate_document(self, doc: dict, doc_num: int) -> list[dict]:
         """Validate a single document extraction."""
         issues = []
 
@@ -62,7 +63,7 @@ class ExtractionValidator:
 
         return issues
 
-    def _check_extraction_yield(self, doc_num: int, extracted: Dict, input_len: int) -> List[Dict]:
+    def _check_extraction_yield(self, doc_num: int, extracted: dict, input_len: int) -> list[dict]:
         """Check if extraction yield is suspiciously low for long inputs.
 
         GOAL: Extract many well-formed relationships for knowledge graph construction.
@@ -108,7 +109,7 @@ class ExtractionValidator:
 
         return issues
 
-    def _check_grounding_quality(self, doc_num: int, doc: Dict) -> List[Dict]:
+    def _check_grounding_quality(self, doc_num: int, doc: dict) -> list[dict]:
         """Check grounding quality of entities.
 
         GOAL: Minimize AUTO: prefixes for high-quality knowledge graph.
@@ -164,7 +165,7 @@ class ExtractionValidator:
 
         return issues
 
-    def _check_missing_fields(self, doc_num: int, extracted: Dict) -> List[Dict]:
+    def _check_missing_fields(self, doc_num: int, extracted: dict) -> list[dict]:
         """Check for missing critical fields."""
         issues = []
 
@@ -179,7 +180,7 @@ class ExtractionValidator:
 
         return issues
 
-    def _check_strain_consistency(self, doc_num: int, extracted: Dict) -> List[Dict]:
+    def _check_strain_consistency(self, doc_num: int, extracted: dict) -> list[dict]:
         """Check if strain identifiers are consistent across fields."""
         issues = []
 
@@ -210,7 +211,7 @@ class ExtractionValidator:
                 strain_subjects.add(subj)
 
         # Check if relationship subjects are in the strains list
-        strain_ids = set(str(s).split(":")[-1] for s in strains)
+        strain_ids = {str(s).split(":")[-1] for s in strains}
 
         unrecognized = (chem_subjects | strain_subjects) - strain_ids
         if unrecognized:

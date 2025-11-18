@@ -4,15 +4,15 @@ Filtered METPO grounding analysis - analyze only production-quality extractions.
 Excludes experimental/superseded runs to show realistic, representative results.
 """
 
-import sys
-import click
-from pathlib import Path
-from typing import Dict, List
 from collections import Counter
+from pathlib import Path
+
+import click
+
 from metpo.literature_mining.analysis.analyze_metpo_grounding import (
     extract_entities_from_yaml,
     find_auto_terms_with_context,
-    find_metpo_successes_with_context
+    find_metpo_successes_with_context,
 )
 
 # Define production-quality file patterns
@@ -44,7 +44,7 @@ EXCLUDE_PATTERNS = [
     "*_v4_*"
 ]
 
-def filter_yaml_files(dir_path: Path, pattern_set: str = "fullcorpus_strict") -> List[Path]:
+def filter_yaml_files(dir_path: Path, pattern_set: str = "fullcorpus_strict") -> list[Path]:
     """Filter YAML files based on production quality criteria."""
     patterns = PRODUCTION_PATTERNS.get(pattern_set, PRODUCTION_PATTERNS["fullcorpus_strict"])
 
@@ -68,7 +68,7 @@ def filter_yaml_files(dir_path: Path, pattern_set: str = "fullcorpus_strict") ->
 
     return sorted(filtered_files)
 
-def analyze_directory_filtered(dir_path: Path, pattern_set: str = "fullcorpus_strict") -> Dict:
+def analyze_directory_filtered(dir_path: Path, pattern_set: str = "fullcorpus_strict") -> dict:
     """Analyze only production-quality YAML files."""
     results = {
         "summary": Counter(),
@@ -148,7 +148,7 @@ def main(yaml_dir, pattern_set, output_file):
     click.echo("\n" + "=" * 80)
     click.echo("ENTITY STATISTICS")
     click.echo("=" * 80)
-    click.echo(f"\nEntity type counts:")
+    click.echo("\nEntity type counts:")
     for prefix, count in sorted(results["summary"].items(), key=lambda x: -x[1]):
         click.echo(f"  {prefix:15s}: {count:6d}")
 
@@ -162,7 +162,7 @@ def main(yaml_dir, pattern_set, output_file):
         click.echo(f"\nPhenotype grounding rate: {grounding_rate:.1f}% ({metpo_count}/{total_phenotype})")
         click.echo(f"AUTO term rate: {100-grounding_rate:.1f}% ({auto_count}/{total_phenotype})")
     else:
-        click.echo(f"\nNo METPO or AUTO terms found")
+        click.echo("\nNo METPO or AUTO terms found")
 
     # Count total extractions
     total_extractions = 0
@@ -240,7 +240,7 @@ Recommendation: Report these numbers for ICBO - honest, representative, reproduc
             f.write(f"  {fname}\n")
 
         f.write(f"\nTotal extractions: {total_extractions}\n")
-        f.write(f"\nEntity counts:\n")
+        f.write("\nEntity counts:\n")
         for prefix, count in sorted(results["summary"].items(), key=lambda x: -x[1]):
             f.write(f"  {prefix}: {count}\n")
 

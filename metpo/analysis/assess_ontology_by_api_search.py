@@ -13,20 +13,20 @@ Output files:
 - phase1_ontology_rankings.tsv: Ontologies ranked by high-quality match count
 """
 
-import requests
 import json
 import os
-import pandas as pd
+import sys
 import time
 from pathlib import Path
-from dotenv import load_dotenv
+
 import Levenshtein
-from collections import Counter
-import sys
+import pandas as pd
+import requests
+from dotenv import load_dotenv
 
 # Configuration
 SAMPLE_FILE = "../../data/metpo_terms/metpo_all_labels.tsv"
-OUTPUT_DIR = Path(".")
+OUTPUT_DIR = Path()
 OLS_ROWS = 75
 BIOPORTAL_PAGESIZE = 75
 RATE_LIMIT_SLEEP = 1.0  # seconds
@@ -121,7 +121,7 @@ def main():
     sample_path = OUTPUT_DIR / SAMPLE_FILE
     if not sample_path.exists():
         print(f"❌ Error: Sample file not found at {sample_path}")
-        print(f"   Please create it first using:")
+        print("   Please create it first using:")
         print(f"   awk -F'\\t' 'NR>2 {{print $1 \"\\t\" $2}}' ../src/templates/metpo_sheet.tsv | grep \"^METPO:\" | shuf -n 50 > {SAMPLE_FILE}")
         sys.exit(1)
 
@@ -195,7 +195,7 @@ def main():
         axis=1
     )
 
-    print(f"✓ Calculated similarity scores\n")
+    print("✓ Calculated similarity scores\n")
     print("Similarity statistics:")
     print(results_df["similarity_ratio"].describe())
     print()
@@ -261,8 +261,8 @@ def main():
     print(f"Unique ontologies found: {results_df['match_ontology'].nunique()}")
     print(f"Average similarity: {results_df['similarity_ratio'].mean():.3f}")
     print(f"Median similarity: {results_df['similarity_ratio'].median():.3f}")
-    print(f"\nTop 10 ontologies by high-quality matches:")
-    for i, row in ontology_rankings.head(10).iterrows():
+    print("\nTop 10 ontologies by high-quality matches:")
+    for _i, row in ontology_rankings.head(10).iterrows():
         print(f"  {row['ontology']:20s} {int(row['high_quality_matches']):4d} HQ matches, {row['avg_similarity']:.3f} avg similarity")
     print("="*70 + "\n")
 

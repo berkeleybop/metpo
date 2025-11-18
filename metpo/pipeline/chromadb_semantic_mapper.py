@@ -33,16 +33,14 @@ SSSOM TSV with:
 
 import csv
 import os
-from pathlib import Path
-from typing import List, Dict
 from datetime import date
 
 import chromadb
+import click
 import openai
 from chromadb.config import Settings
 from dotenv import load_dotenv
 from tqdm import tqdm
-import click
 
 
 def load_metpo_terms(
@@ -52,7 +50,7 @@ def load_metpo_terms(
     label_column: str = "label",
     definition_column: str = "description",
     parent_column: str = "parent class"
-) -> List[Dict[str, str]]:
+) -> list[dict[str, str]]:
     """
     Load terms from TSV file with flexible column mapping.
 
@@ -69,7 +67,7 @@ def load_metpo_terms(
     """
     terms = []
 
-    with open(tsv_path, "r", encoding="utf-8") as f:
+    with open(tsv_path, encoding="utf-8") as f:
         lines = f.readlines()
 
         # Read header from first non-skipped row
@@ -104,7 +102,7 @@ def load_metpo_terms(
     return terms
 
 
-def create_query_text(label: str, definition: str = "", parents: List[str] = None, label_only: bool = False) -> str:
+def create_query_text(label: str, definition: str = "", parents: list[str] | None = None, label_only: bool = False) -> str:
     """
     Create query text from label, definition, and/or parent labels.
 
@@ -154,15 +152,14 @@ def similarity_to_predicate(similarity: float) -> str:
     """
     if similarity >= 0.90:
         return "skos:exactMatch"
-    elif similarity >= 0.85:
+    if similarity >= 0.85:
         return "skos:closeMatch"
-    elif similarity >= 0.80:
+    if similarity >= 0.80:
         return "skos:relatedMatch"
-    else:
-        return "skos:mappingRelation"
+    return "skos:mappingRelation"
 
 
-def write_sssom_output(matches: List[Dict], output_path: str, min_similarity: float, always_include_best: bool = True):
+def write_sssom_output(matches: list[dict], output_path: str, min_similarity: float, always_include_best: bool = True):
     """Write matches in SSSOM TSV format."""
     # Filter by minimum similarity, optionally keeping rank=1 (best match) for each term
     # similarity = 1 - (distance / 2), so distance = 2 * (1 - similarity)
@@ -255,12 +252,12 @@ def write_sssom_output(matches: List[Dict], output_path: str, min_similarity: fl
 
 
 def query_chromadb_for_term(
-    term: Dict[str, str],
+    term: dict[str, str],
     collection,
     openai_api_key: str,
     top_n: int = 5,
     label_only: bool = False
-) -> List[Dict[str, any]]:
+) -> list[dict[str, any]]:
     """Generate embedding for a METPO term and query ChromaDB."""
 
     # Create query text (default: "label; definition", fallback: "label parents", or just label)
@@ -504,13 +501,13 @@ def main(
         pred = similarity_to_predicate(similarity)
         by_predicate[pred] = by_predicate.get(pred, 0) + 1
 
-    print(f"\n✓ Complete!")
+    print("\n✓ Complete!")
     print(f"  METPO terms processed: {len(terms)}")
     print(f"  Successful queries: {len(terms) - errors}")
     print(f"  Errors: {errors}")
     print(f"  Total matches retrieved: {len(all_matches)}")
     print(f"  Matches written (similarity >= {min_similarity}): {written}")
-    print(f"\n  Mappings by predicate:")
+    print("\n  Mappings by predicate:")
     for pred, count in sorted(by_predicate.items()):
         print(f"    {pred}: {count}")
     print(f"\n  Output file: {output}")

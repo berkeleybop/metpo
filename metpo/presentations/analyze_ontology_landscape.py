@@ -8,9 +8,9 @@ Primary sources:
 - /home/mark/gitrepos/semantic-sql/src/semsql/builder/registry/ontologies.yaml
 """
 
-import yaml
 from pathlib import Path
-from collections import defaultdict
+
+import yaml
 
 # Primary source files
 ONTOLOGY_SELECTION_DOC = Path("/home/mark/gitrepos/metpo/docs/ONTOLOGY_SELECTION_SUMMARY.md")
@@ -69,7 +69,7 @@ def load_semsql_registry():
     # Extract ontology IDs
     ontologies = set()
     if "ontologies" in data:
-        for ont_id in data["ontologies"].keys():
+        for ont_id in data["ontologies"]:
             ontologies.add(ont_id.lower())
 
     return ontologies
@@ -80,7 +80,7 @@ def analyze_ontology_landscape():
     print("=" * 80)
     print("METPO Ontology Landscape Analysis - 100% TRACEABLE")
     print("=" * 80)
-    print(f"\nPrimary sources:")
+    print("\nPrimary sources:")
     print(f"  - {ONTOLOGY_SELECTION_DOC}")
     print(f"  - {SEMSQL_REGISTRY}")
 
@@ -124,7 +124,7 @@ def analyze_ontology_landscape():
         print(f"{ont_id:<15} {desc:<35} {emb:<12,} {matches:<10} {roi:<10.2f} {source:<20}")
 
     print(f"\nNon-OLS Summary: {nonols_embeddings:,} embeddings, {nonols_matches} METPO matches")
-    print(f"In semsql registry: 0/4 (specialized sources)")
+    print("In semsql registry: 0/4 (specialized sources)")
 
     print("\n" + "=" * 80)
     print("ONTOLOGIES REMOVED (15 total)")

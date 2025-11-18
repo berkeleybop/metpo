@@ -12,13 +12,13 @@ Usage:
     python unwrap_abstracts.py inputs/*.txt
 """
 
-import sys
 import ast
+import sys
 
 
 def unwrap_abstract(filepath):
     """Unwrap a single abstract file from dict format to plain text."""
-    with open(filepath, "r") as f:
+    with open(filepath) as f:
         content = f.read()
 
     # Check if file starts with dict format

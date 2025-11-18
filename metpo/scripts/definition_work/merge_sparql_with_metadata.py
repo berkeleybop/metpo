@@ -7,7 +7,7 @@ import csv
 
 # Read source metadata
 source_metadata = {}
-with open("/tmp/source_metadata_complete.tsv", "r") as f:
+with open("/tmp/source_metadata_complete.tsv") as f:
     reader = csv.DictReader(f, delimiter="\t")
     for row in reader:
         source_iri = row["source_iri"]
@@ -19,7 +19,7 @@ with open("/tmp/source_metadata_complete.tsv", "r") as f:
         }
 
 # Read SPARQL results and merge
-with open("/tmp/metpo_sources_current.tsv", "r") as f_in:
+with open("/tmp/metpo_sources_current.tsv") as f_in:
     with open("/tmp/metpo_sources_with_metadata.tsv", "w", newline="") as f_out:
         reader = csv.DictReader(f_in, delimiter="\t")
 

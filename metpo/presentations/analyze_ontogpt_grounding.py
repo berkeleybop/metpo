@@ -5,9 +5,11 @@ Analyze OntoGPT grounding success from PRIMARY SOURCE YAML files.
 Parses outputs/*.yaml directly - 100% traceable.
 """
 
-import yaml
-from pathlib import Path
 from collections import defaultdict
+from pathlib import Path
+
+import yaml
+
 
 def count_groundings(yaml_file):
     """Count METPO, ChEBI, NCBITaxon, and AUTO terms from YAML."""
@@ -29,11 +31,11 @@ def count_groundings(yaml_file):
         obj_str = str(obj)
         if "w3id.org/metpo" in obj_str or obj_str.startswith("METPO:"):
             return "metpo"
-        elif obj_str.startswith("CHEBI:"):
+        if obj_str.startswith("CHEBI:"):
             return "chebi"
-        elif obj_str.startswith("NCBITaxon:"):
+        if obj_str.startswith("NCBITaxon:"):
             return "ncbitaxon"
-        elif obj_str.startswith("AUTO:"):
+        if obj_str.startswith("AUTO:"):
             return "auto"
         return None
 

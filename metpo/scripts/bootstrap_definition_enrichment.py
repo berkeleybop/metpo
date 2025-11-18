@@ -11,20 +11,20 @@ This script:
 5. Generates prioritized recommendations
 """
 import csv
-import click
-import requests
 import time
-from pathlib import Path
-from typing import Dict, List, Optional, Tuple
 from collections import defaultdict
+from pathlib import Path
 from urllib.parse import quote
 
+import click
+import requests
 
-def read_sssom_mappings(sssom_path: Path, min_confidence: float) -> Dict[str, List[Dict]]:
+
+def read_sssom_mappings(sssom_path: Path, min_confidence: float) -> dict[str, list[dict]]:
     """Read SSSOM mappings and organize by METPO term, filtering by confidence."""
     mappings = defaultdict(list)
 
-    with open(sssom_path, "r", encoding="utf-8") as f:
+    with open(sssom_path, encoding="utf-8") as f:
         lines = [line for line in f if not line.startswith("#")]
         reader = csv.DictReader(lines, delimiter="\t")
 
@@ -53,7 +53,7 @@ def read_sssom_mappings(sssom_path: Path, min_confidence: float) -> Dict[str, Li
     return mappings
 
 
-def extract_definition_from_label(object_label: str) -> Optional[str]:
+def extract_definition_from_label(object_label: str) -> str | None:
     """Extract definition from object_label if it contains one (label; definition format)."""
     if ";" not in object_label:
         return None
@@ -70,7 +70,7 @@ def extract_definition_from_label(object_label: str) -> Optional[str]:
     return definition
 
 
-def fetch_term_from_ols(term_iri: str, max_retries: int = 3) -> Optional[Dict]:
+def fetch_term_from_ols(term_iri: str, max_retries: int = 3) -> dict | None:
     """Fetch term information from OLS4 API."""
     encoded_iri = quote(term_iri, safe="")
     url = f"https://www.ebi.ac.uk/ols4/api/terms/{encoded_iri}"
@@ -115,7 +115,7 @@ def count_ontology_usage_ols(term_iri: str) -> int:
     return 0
 
 
-def assess_definition_quality_detailed(definition: str) -> Dict[str, any]:
+def assess_definition_quality_detailed(definition: str) -> dict[str, any]:
     """
     Assess definition quality against Seppälä-Ruttenberg-Smith guidelines.
     Returns dict with quality metrics.
@@ -263,7 +263,7 @@ def main(
             if ols_data:
                 # Get definition from OLS (more authoritative)
                 ols_def = None
-                if "description" in ols_data and ols_data["description"]:
+                if ols_data.get("description"):
                     ols_def = " ".join(ols_data["description"])
 
                 if ols_def and len(ols_def) > len(candidate["definition"]):
@@ -280,7 +280,7 @@ def main(
                 click.echo(" ✗ (not found in OLS)")
 
     # Assess quality of all definitions
-    click.echo(f"\nAssessing definition quality...")
+    click.echo("\nAssessing definition quality...")
     for candidate in candidates:
         quality = assess_definition_quality_detailed(candidate["definition"])
         candidate["quality_overall"] = quality["overall"]
@@ -336,13 +336,13 @@ def main(
         for c in candidates:
             by_quality[c["quality_overall"]] += 1
 
-        click.echo(f"\nQuality distribution:")
+        click.echo("\nQuality distribution:")
         for quality in ["excellent", "good", "adequate", "poor", "missing"]:
             if quality in by_quality:
                 click.echo(f"  {quality}: {by_quality[quality]}")
 
         # Show top 5
-        click.echo(f"\nTop 5 recommendations:")
+        click.echo("\nTop 5 recommendations:")
         for i, candidate in enumerate(candidates[:5], 1):
             click.echo(f"\n  {i}. {candidate['metpo_id']} ({candidate['metpo_label']})")
             click.echo(f"     Quality: {candidate['quality_overall']} | "

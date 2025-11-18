@@ -6,9 +6,8 @@ Creates chroma_ols_20 from chroma_ols_27 by removing 7 low-value ontologies.
 """
 
 import chromadb
-from chromadb.config import Settings
 import click
-
+from chromadb.config import Settings
 
 # OLS ontologies to REMOVE (7 total)
 OLS_TO_REMOVE = {
@@ -25,7 +24,7 @@ OLS_TO_REMOVE = {
 def main(input_path, input_collection, output_path, output_collection, batch_size):
     """Filter OLS ChromaDB to remove low-ROI ontologies."""
 
-    print(f"Creating filtered OLS ChromaDB")
+    print("Creating filtered OLS ChromaDB")
     print(f"Input:  {input_path}/{input_collection}")
     print(f"Output: {output_path}/{output_collection}")
     print(f"\nRemoving {len(OLS_TO_REMOVE)} ontologies:")
@@ -33,7 +32,7 @@ def main(input_path, input_collection, output_path, output_collection, batch_siz
         print(f"  - {ont}")
 
     # Connect to input
-    print(f"\nConnecting to input ChromaDB...")
+    print("\nConnecting to input ChromaDB...")
     input_client = chromadb.PersistentClient(
         path=input_path,
         settings=Settings(anonymized_telemetry=False)
@@ -44,7 +43,7 @@ def main(input_path, input_collection, output_path, output_collection, batch_siz
     print(f"✓ Input collection: {total_input:,} embeddings")
 
     # Connect to output
-    print(f"\nConnecting to output ChromaDB...")
+    print("\nConnecting to output ChromaDB...")
     output_client = chromadb.PersistentClient(
         path=output_path,
         settings=Settings(anonymized_telemetry=False)
@@ -122,13 +121,13 @@ def main(input_path, input_collection, output_path, output_collection, batch_siz
 
     # Summary
     print(f"\n{'=' * 80}")
-    print(f"FILTERING COMPLETE")
+    print("FILTERING COMPLETE")
     print(f"{'=' * 80}")
     print(f"\nInput:   {total_input:,} embeddings (27 ontologies)")
     print(f"Copied:  {total_copied:,} embeddings ({100*total_copied/total_input:.1f}%)")
     print(f"Removed: {total_skipped:,} embeddings ({100*total_skipped/total_input:.1f}%)")
 
-    print(f"\nOntology distribution in filtered database:")
+    print("\nOntology distribution in filtered database:")
     print(f"{'Ontology':<20} {'Count':<12}")
     print("-" * 35)
     for ont, count in sorted(ontology_counts.items(), key=lambda x: -x[1]):
@@ -143,7 +142,7 @@ def main(input_path, input_collection, output_path, output_collection, batch_siz
     if final_count != total_copied:
         print(f"⚠️  WARNING: Count mismatch! Expected {total_copied:,}, got {final_count:,}")
     else:
-        print(f"✓ Count verified!")
+        print("✓ Count verified!")
 
     print(f"\nFiltered OLS ChromaDB created at: {output_path}")
 

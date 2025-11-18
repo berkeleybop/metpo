@@ -8,11 +8,13 @@ Primary sources:
 - /home/mark/gitrepos/kg-microbe/data/transformed/bacdive/edges.tsv
 """
 import csv
+from collections import Counter
 from pathlib import Path
-from collections import Counter, defaultdict
+
+import matplotlib as mpl
 import matplotlib.pyplot as plt
-import matplotlib
-matplotlib.use("Agg")
+
+mpl.use("Agg")
 
 # Primary source directories
 KG_MICROBE_ROOT = Path("/home/mark/gitrepos/kg-microbe/data/transformed")
@@ -31,7 +33,7 @@ def analyze_dataset(dataset_name):
     metpo_edges = 0
     predicates = Counter()
 
-    with open(edges_file, "r") as f:
+    with open(edges_file) as f:
         reader = csv.DictReader(f, delimiter="\t")
         for row in reader:
             total_edges += 1
@@ -65,7 +67,7 @@ def load_metpo_labels():
         return {}
 
     labels = {}
-    with open(labels_file, "r") as f:
+    with open(labels_file) as f:
         reader = csv.DictReader(f)
         for row in reader:
             metpo_id = row["id"]
@@ -104,7 +106,7 @@ def main():
             print(f"Percentage: {pct:.1f}%")
             print(f"Unique METPO terms: {result['unique_metpo_terms']}")
 
-            print(f"\nTop 10 METPO terms:")
+            print("\nTop 10 METPO terms:")
             for term, count in result["metpo_distribution"].most_common(10):
                 print(f"  {term}: {count:,}")
 
@@ -121,7 +123,7 @@ def main():
     print(f"Overall percentage: {(total_metpo_edges_all/total_edges_all)*100:.1f}%")
     print(f"Total unique METPO terms used: {len(all_metpo_terms)}")
 
-    print(f"\nPer-dataset breakdown:")
+    print("\nPer-dataset breakdown:")
     print(f"{'Dataset':<20} {'Total Edges':>15} {'METPO Edges':>15} {'%':>8} {'Unique Terms':>15}")
     print("-" * 80)
     for r in all_results:
@@ -141,7 +143,7 @@ def main():
 
     # Generate visualization - only Top 15 METPO terms
     try:
-        fig, ax = plt.subplots(figsize=(10, 8))
+        _fig, ax = plt.subplots(figsize=(10, 8))
 
         # Top 15 METPO terms (with labels)
         top_terms = combined_metpo.most_common(15)

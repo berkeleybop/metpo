@@ -2,8 +2,9 @@
 """Combine OLS and non-OLS ChromaDB databases into a single unified database."""
 
 import os
-import click
+
 import chromadb
+import click
 from chromadb.config import Settings
 from tqdm import tqdm
 
@@ -60,7 +61,7 @@ def main(ols_path, non_ols_path, output_path, output_collection, batch_size):
         shutil.rmtree(output_path)
 
     # Connect to source databases
-    print(f"\n1. Connecting to source databases...")
+    print("\n1. Connecting to source databases...")
 
     ols_client = chromadb.PersistentClient(
         path=ols_path,
@@ -103,7 +104,7 @@ def main(ols_path, non_ols_path, output_path, output_collection, batch_size):
 
     # Verify
     final_count = output_collection.count()
-    print(f"\n5. Verification:")
+    print("\n5. Verification:")
     print(f"   Expected: {total_count:,}")
     print(f"   Actual:   {final_count:,}")
 

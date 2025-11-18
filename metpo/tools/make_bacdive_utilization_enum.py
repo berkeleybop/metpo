@@ -1,8 +1,8 @@
+from pathlib import Path
+
+import click
 import pandas as pd
 import yaml
-import click
-from typing import Dict, Any
-from pathlib import Path
 
 
 # Click CLI
@@ -61,10 +61,10 @@ def convert_tsv_to_linkml(tsv_file: Path, output_file: Path, enum_name: str,
 
     except Exception as e:
         click.echo(f"❌ Error: {e}", err=True)
-        raise click.Abort()
+        raise click.Abort
 
 
-def convert_tsv_to_linkml_enum(tsv_file: str, output_file: str = None,
+def convert_tsv_to_linkml_enum(tsv_file: str, output_file: str | None = None,
                                enum_name: str = "OrganismChemicalRelationship",
                                id_prefix: str = "https://example.org/metpo-relationships",
                                default_prefix: str = "metpo") -> str:
@@ -108,7 +108,7 @@ def convert_tsv_to_linkml_enum(tsv_file: str, output_file: str = None,
     for _, row in object_properties.iterrows():
         # Extract the ID number from the full URI
         id_uri = row["ID"]
-        id_num = id_uri.split("/")[-1]
+        id_uri.split("/")[-1]
 
         # Create a code-friendly key from the label
         label = str(row["LABEL"])

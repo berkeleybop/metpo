@@ -6,20 +6,20 @@ Uses PMID/DOI matching and text similarity to find duplicates.
 """
 
 import re
-import click
-from pathlib import Path
-from typing import Dict, Set, Tuple
 from collections import defaultdict
+from pathlib import Path
+
+import click
 
 
-def extract_identifiers(filepath: Path) -> Tuple[str, str, str]:
+def extract_identifiers(filepath: Path) -> tuple[str, str, str]:
     """
     Extract PMID, DOI, and normalized abstract text.
 
     Returns:
         (pmid, doi, normalized_abstract_text)
     """
-    with open(filepath, "r", encoding="utf-8") as f:
+    with open(filepath, encoding="utf-8") as f:
         content = f.read()
 
     # Extract PMID

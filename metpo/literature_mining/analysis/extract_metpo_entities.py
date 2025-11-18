@@ -4,11 +4,12 @@ Extract all METPO entities from OntoGPT extraction YAML files.
 Shows which METPO classes were successfully grounded.
 """
 
-import yaml
 import re
-import click
 from pathlib import Path
-from collections import defaultdict
+
+import click
+import yaml
+
 
 def extract_metpo_entities(yaml_file):
     """Extract METPO entities from a single YAML file."""
@@ -57,10 +58,7 @@ def main(yaml_dir, output_file, recursive):
     files_with_metpo = []
 
     # Search all YAML files
-    if recursive:
-        yaml_files = list(yaml_dir.rglob("*.yaml"))
-    else:
-        yaml_files = list(yaml_dir.glob("*.yaml"))
+    yaml_files = list(yaml_dir.rglob("*.yaml")) if recursive else list(yaml_dir.glob("*.yaml"))
 
     click.echo(f"Searching {len(yaml_files)} YAML files for METPO entities...")
     click.echo()
@@ -105,7 +103,7 @@ def main(yaml_dir, output_file, recursive):
         click.echo(f"METPO:{metpo_id}")
         click.echo(f"  URI: {info['uri']}")
         click.echo(f"  Occurrences: {info['count']}")
-        click.echo(f"  Labels extracted:")
+        click.echo("  Labels extracted:")
         for label in sorted(info["labels"]):
             click.echo(f"    - {label}")
         click.echo()
@@ -117,8 +115,8 @@ def main(yaml_dir, output_file, recursive):
         f.write("METPO_ID\tURI\tLabel\tOccurrences\tFiles\n")
         for metpo_id in sorted(unique_classes.keys()):
             info = unique_classes[metpo_id]
-            files = set(e["file"] for e in all_metpo_entities
-                       if re.search(f"metpo/{metpo_id}", e["id"]))
+            files = {e["file"] for e in all_metpo_entities
+                       if re.search(f"metpo/{metpo_id}", e["id"])}
             label_str = "; ".join(sorted(info["labels"]))
             file_str = "; ".join(sorted(files))
             f.write(f"METPO:{metpo_id}\t{info['uri']}\t{label_str}\t{info['count']}\t{file_str}\n")

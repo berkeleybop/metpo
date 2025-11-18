@@ -5,7 +5,7 @@ containing only the ID, label, and TYPE for each METPO entity.
 """
 
 import csv
-import sys
+
 import click
 
 
@@ -37,7 +37,7 @@ def main(output, input_files):
 
     for file_path in input_files:
         try:
-            with open(file_path, "r", newline="") as infile:
+            with open(file_path, newline="") as infile:
                 reader = csv.reader(infile, delimiter="\t")
 
                 # Find the ROBOT header row (the one with 'LABEL')
@@ -66,7 +66,7 @@ def main(output, input_files):
         writer.writerow(("ID", "label", "TYPE"))  # Human-readable header
         writer.writerow(("ID", "LABEL", "TYPE"))  # ROBOT template header
         # Sort for consistent output
-        sorted_stubs = sorted(list(stubs))
+        sorted_stubs = sorted(stubs)
         writer.writerows(sorted_stubs)
 
     click.echo(f"Created stubs file with {len(sorted_stubs)} entities: {output}")

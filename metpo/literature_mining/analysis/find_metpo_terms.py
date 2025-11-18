@@ -4,11 +4,12 @@ Thoroughly search extraction YAML files for METPO terms.
 Parse YAML properly to find METPO IDs in nested structures.
 """
 
-import yaml
 import json
-import click
 from pathlib import Path
-from collections import defaultdict
+
+import click
+import yaml
+
 
 def find_metpo_in_obj(obj, path=""):
     """Recursively search for METPO terms in nested data structures."""
@@ -22,9 +23,8 @@ def find_metpo_in_obj(obj, path=""):
         for i, item in enumerate(obj):
             new_path = f"{path}[{i}]"
             metpo_terms.extend(find_metpo_in_obj(item, new_path))
-    elif isinstance(obj, str):
-        if obj.startswith("METPO:"):
-            metpo_terms.append((path, obj))
+    elif isinstance(obj, str) and obj.startswith("METPO:"):
+        metpo_terms.append((path, obj))
 
     return metpo_terms
 
@@ -71,15 +71,15 @@ def analyze_yaml_file(yaml_path):
     click.echo(f"Total AUTO terms found: {len(auto_terms)}")
 
     if all_metpo_terms:
-        click.echo(f"\n✓ METPO TERMS FOUND:")
+        click.echo("\n✓ METPO TERMS FOUND:")
         # Show first 20
         for doc_idx, path, term in all_metpo_terms[:20]:
             click.echo(f"  Doc {doc_idx}: {path} = {term}")
         if len(all_metpo_terms) > 20:
             click.echo(f"  ... and {len(all_metpo_terms) - 20} more")
     else:
-        click.echo(f"\n✗ NO METPO TERMS FOUND")
-        click.echo(f"\nAUTO terms (first 10):")
+        click.echo("\n✗ NO METPO TERMS FOUND")
+        click.echo("\nAUTO terms (first 10):")
         for doc_idx, path, term in auto_terms[:10]:
             click.echo(f"  Doc {doc_idx}: {path} = {term}")
 
@@ -110,7 +110,7 @@ def main(yaml_dir, pattern):
     production_files = sorted(yaml_dir.glob(pattern))
 
     click.echo(f"Searching {len(production_files)} production YAML files for METPO terms...")
-    click.echo(f"Using proper YAML parsing to find nested METPO IDs")
+    click.echo("Using proper YAML parsing to find nested METPO IDs")
 
     results = []
     for yaml_file in production_files:
@@ -119,7 +119,7 @@ def main(yaml_dir, pattern):
 
     # Summary
     click.echo(f"\n{'='*80}")
-    click.echo(f"OVERALL SUMMARY")
+    click.echo("OVERALL SUMMARY")
     click.echo(f"{'='*80}")
 
     total_metpo = sum(r["metpo_count"] for r in results)
@@ -129,17 +129,17 @@ def main(yaml_dir, pattern):
     click.echo(f"Total AUTO terms across all files: {total_auto}")
 
     if total_metpo > 0:
-        click.echo(f"\n✓ SUCCESS! Found METPO terms in extraction files!")
-        click.echo(f"\nFiles with METPO terms:")
+        click.echo("\n✓ SUCCESS! Found METPO terms in extraction files!")
+        click.echo("\nFiles with METPO terms:")
         for r in results:
             if r["metpo_count"] > 0:
                 click.echo(f"  {r['file']}: {r['metpo_count']} METPO terms")
     else:
-        click.echo(f"\n✗ No METPO terms found in any production files")
-        click.echo(f"\nThis suggests:")
-        click.echo(f"  1. Templates may not have METPO annotators configured")
-        click.echo(f"  2. METPO path in templates may be incorrect")
-        click.echo(f"  3. Genuine grounding failures")
+        click.echo("\n✗ No METPO terms found in any production files")
+        click.echo("\nThis suggests:")
+        click.echo("  1. Templates may not have METPO annotators configured")
+        click.echo("  2. METPO path in templates may be incorrect")
+        click.echo("  3. Genuine grounding failures")
 
 if __name__ == "__main__":
     main()

@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """Analyze OntoGPT extraction results to compare template performance."""
 
+from collections import defaultdict
+from pathlib import Path
+
 import click
 import yaml
-import sys
-from pathlib import Path
-from collections import defaultdict
+
 
 def count_entities_and_grounding(yaml_file):
     """Count entities and grounding quality in a YAML extraction file."""

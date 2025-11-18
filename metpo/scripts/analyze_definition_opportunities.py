@@ -11,17 +11,17 @@ This script:
 5. Generates recommendations for definition improvements
 """
 import csv
-import click
-from pathlib import Path
-from typing import Dict, List, Tuple
 from collections import defaultdict
+from pathlib import Path
+
+import click
 
 
-def read_metpo_terms(template_path: Path) -> Dict[str, Dict]:
+def read_metpo_terms(template_path: Path) -> dict[str, dict]:
     """Read METPO terms from the ROBOT template TSV."""
     terms = {}
 
-    with open(template_path, "r", encoding="utf-8") as f:
+    with open(template_path, encoding="utf-8") as f:
         reader = csv.DictReader(f, delimiter="\t")
         for row in reader:
             term_id = row.get("ID", "").strip()
@@ -40,11 +40,11 @@ def read_metpo_terms(template_path: Path) -> Dict[str, Dict]:
     return terms
 
 
-def read_sssom_mappings(sssom_path: Path) -> Dict[str, List[Dict]]:
+def read_sssom_mappings(sssom_path: Path) -> dict[str, list[dict]]:
     """Read SSSOM mappings and organize by METPO term."""
     mappings = defaultdict(list)
 
-    with open(sssom_path, "r", encoding="utf-8") as f:
+    with open(sssom_path, encoding="utf-8") as f:
         # Skip comment lines
         lines = [line for line in f if not line.startswith("#")]
 
@@ -72,7 +72,7 @@ def read_sssom_mappings(sssom_path: Path) -> Dict[str, List[Dict]]:
     return mappings
 
 
-def extract_definition_from_object_label(object_label: str) -> Tuple[str, str]:
+def extract_definition_from_object_label(object_label: str) -> tuple[str, str]:
     """
     Extract definition from object_label if it contains one.
     Format is often: 'label; definition'
@@ -88,12 +88,11 @@ def assess_definition_quality(definition: str) -> str:
     """Assess the quality/completeness of a definition."""
     if not definition:
         return "missing"
-    elif len(definition) < 30:
+    if len(definition) < 30:
         return "minimal"
-    elif len(definition) < 100:
+    if len(definition) < 100:
         return "adequate"
-    else:
-        return "comprehensive"
+    return "comprehensive"
 
 
 def check_genus_compatibility(parent_class: str, candidate_definition: str) -> bool:
@@ -112,14 +111,10 @@ def check_genus_compatibility(parent_class: str, candidate_definition: str) -> b
     # Handle cases like "temperature phenotype" parent and "temperature" in definition
     parent_terms = parent_lower.split("|")[0].strip().split()  # Take first parent if multiple
 
-    for term in parent_terms:
-        if term in definition_lower:
-            return True
-
-    return False
+    return any(term in definition_lower for term in parent_terms)
 
 
-def find_best_definition_candidates(mappings: List[Dict]) -> List[Dict]:
+def find_best_definition_candidates(mappings: list[dict]) -> list[dict]:
     """
     Find the best candidate definitions from mappings.
     Prioritize exactMatch and closeMatch with high confidence.
@@ -302,17 +297,17 @@ def main(
         click.echo(f"✓ Output written to {output}")
 
         # Summary statistics
-        terms_with_recommendations = len(set(r["metpo_id"] for r in recommendations))
+        terms_with_recommendations = len({r["metpo_id"] for r in recommendations})
         missing_count = sum(1 for r in recommendations if r["definition_quality"] == "missing" and r["rank"] == 1)
         minimal_count = sum(1 for r in recommendations if r["definition_quality"] == "minimal" and r["rank"] == 1)
 
-        click.echo(f"\nSummary:")
+        click.echo("\nSummary:")
         click.echo(f"  Terms needing improvement: {terms_with_recommendations}")
         click.echo(f"  - Missing definitions: {missing_count}")
         click.echo(f"  - Minimal definitions: {minimal_count}")
 
         # Show a few examples
-        click.echo(f"\nExample recommendations:")
+        click.echo("\nExample recommendations:")
         for rec in recommendations[:5]:
             click.echo(f"\n  {rec['metpo_id']} ({rec['metpo_label']})")
             click.echo(f"    Current: {rec['current_definition'] or '[MISSING]'}")
@@ -320,7 +315,7 @@ def main(
             click.echo(f"    Source: {rec['source_ontology']} ({rec['match_type']}, conf={rec['confidence']})")
     else:
         click.echo("\n✓ No recommendations found with current criteria")
-        click.echo(f"  Try lowering --min-confidence or adding more --match-types")
+        click.echo("  Try lowering --min-confidence or adding more --match-types")
 
 
 if __name__ == "__main__":

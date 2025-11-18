@@ -8,6 +8,7 @@ import csv
 import sys
 from pathlib import Path
 
+
 def convert_iri_to_curie(iri):
     """Convert full IRI to METPO CURIE format"""
     if iri.startswith("https://w3id.org/metpo/"):
@@ -20,22 +21,22 @@ def resolve_duplicate_labels(label, iri, all_rows):
     if label == "pH optimum":
         if "1000233" in iri:
             return "pH optimum (growth range)"
-        elif "1000331" in iri:
+        if "1000331" in iri:
             return "pH optimum (metabolic efficiency)"
     elif label == "pH range":
         if "1000235" in iri:
             return "pH range (growth tolerance)"
-        elif "1000332" in iri:
+        if "1000332" in iri:
             return "pH range (cellular homeostasis)"
     elif label == "temperature optimum":
         if "1000304" in iri:
             return "temperature optimum (growth range)"
-        elif "1000329" in iri:
+        if "1000329" in iri:
             return "temperature optimum (metabolic activity)"
     elif label == "temperature range":
         if "1000306" in iri:
             return "temperature range (growth tolerance)"
-        elif "1000330" in iri:
+        if "1000330" in iri:
             return "temperature range (metabolic viability)"
 
     # Return original label if no conflicts
@@ -110,7 +111,6 @@ def main():
         sys.exit(1)
 
     # Track labels to resolve duplicates
-    existing_labels = {}
 
     # Output header matching exactly minimal_classes format
     output_header = [
@@ -134,10 +134,10 @@ def main():
 
     migrated_rows = []
 
-    with open(bactotraits_file, "r", encoding="utf-8") as f:
+    with open(bactotraits_file, encoding="utf-8") as f:
         reader = csv.reader(f, delimiter="\t")
-        headers = next(reader)  # Skip header row
-        robot_template = next(reader)  # Skip robot template row
+        next(reader)  # Skip header row
+        next(reader)  # Skip robot template row
 
         for row in reader:
             if len(row) < 4:  # Skip incomplete rows

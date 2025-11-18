@@ -17,13 +17,12 @@ For each METPO term:
 """
 
 import csv
-import click
 import os
 from pathlib import Path
-from typing import Dict, List, Optional
-from openai import OpenAI
-from dotenv import load_dotenv
 
+import click
+from dotenv import load_dotenv
+from openai import OpenAI
 
 # Load environment
 load_dotenv()
@@ -59,11 +58,11 @@ BAD: "Organisms that use light for energy." (wrong form, uses examples)
 """
 
 
-def load_metpo_terms(template_path: Path) -> Dict[str, Dict]:
+def load_metpo_terms(template_path: Path) -> dict[str, dict]:
     """Load METPO terms with parents and current definitions."""
     terms = {}
 
-    with open(template_path, "r", encoding="utf-8") as f:
+    with open(template_path, encoding="utf-8") as f:
         reader = csv.reader(f, delimiter="\t")
         next(reader)  # Skip row 1
         next(reader)  # Skip row 2
@@ -88,14 +87,14 @@ def load_metpo_terms(template_path: Path) -> Dict[str, Dict]:
     return terms
 
 
-def load_matched_definitions(matched_path: Path) -> Dict[str, Dict]:
+def load_matched_definitions(matched_path: Path) -> dict[str, dict]:
     """Load matched definitions from foreign ontologies."""
     matched = {}
 
     if not matched_path.exists():
         return matched
 
-    with open(matched_path, "r", encoding="utf-8") as f:
+    with open(matched_path, encoding="utf-8") as f:
         reader = csv.DictReader(f, delimiter="\t")
         for row in reader:
             metpo_id = row["metpo_id"]
@@ -104,14 +103,14 @@ def load_matched_definitions(matched_path: Path) -> Dict[str, Dict]:
     return matched
 
 
-def load_all_candidates(candidates_path: Path) -> Dict[str, List[Dict]]:
+def load_all_candidates(candidates_path: Path) -> dict[str, list[dict]]:
     """Load all candidate definitions (top 5 per term)."""
     candidates = {}
 
     if not candidates_path.exists():
         return candidates
 
-    with open(candidates_path, "r", encoding="utf-8") as f:
+    with open(candidates_path, encoding="utf-8") as f:
         reader = csv.DictReader(f, delimiter="\t")
         for row in reader:
             metpo_id = row["metpo_id"]
@@ -125,10 +124,10 @@ def load_all_candidates(candidates_path: Path) -> Dict[str, List[Dict]]:
 def build_prompt(
     metpo_id: str,
     label: str,
-    parents: List[str],
+    parents: list[str],
     current_def: str,
-    matched_def: Optional[Dict],
-    all_candidates: List[Dict]
+    matched_def: dict | None,
+    all_candidates: list[dict]
 ) -> str:
     """Build LLM prompt for definition proposal."""
 
@@ -155,7 +154,7 @@ Quality: {matched_def.get('quality_label', 'unknown')}
 """
 
     if all_candidates:
-        prompt += f"OTHER CANDIDATE DEFINITIONS:\n"
+        prompt += "OTHER CANDIDATE DEFINITIONS:\n"
         for i, cand in enumerate(all_candidates[:3], 1):
             prompt += f"{i}. [{cand.get('source_ontology', '?')}] {cand.get('definition', '')[:100]}...\n"
         prompt += "\n"
@@ -229,7 +228,7 @@ def main(
     all_candidates: Path,
     output: Path,
     model: str,
-    limit: Optional[int],
+    limit: int | None,
     verbose: bool
 ):
     """
@@ -252,11 +251,11 @@ def main(
     metpo_data = load_metpo_terms(metpo_terms)
     click.echo(f"Loaded {len(metpo_data)} METPO terms")
 
-    click.echo(f"\nLoading matched definitions...")
+    click.echo("\nLoading matched definitions...")
     matched_defs = load_matched_definitions(best_definitions)
     click.echo(f"Loaded {len(matched_defs)} matched definitions")
 
-    click.echo(f"\nLoading all candidates...")
+    click.echo("\nLoading all candidates...")
     all_cands = load_all_candidates(all_candidates)
     click.echo(f"Loaded candidates for {len(all_cands)} terms")
 
@@ -383,6 +382,7 @@ def main(
 
     click.echo(f"\nModel used: {model}")
     click.echo(f"Output file: {output}")
+    return None
 
 
 if __name__ == "__main__":

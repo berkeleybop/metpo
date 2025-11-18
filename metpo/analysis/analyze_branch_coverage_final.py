@@ -6,8 +6,9 @@ For each major METPO branch, determine which ontologies provide
 substantial coverage of the leaf nodes.
 """
 
-import pandas as pd
 from collections import defaultdict
+
+import pandas as pd
 
 print("="*80)
 print("METPO BRANCH COVERAGE ANALYSIS")
@@ -172,7 +173,7 @@ if coverage_results:
         for b in sorted(branches_list, key=lambda x: x["pct"], reverse=True):
             print(f"  • {b['branch']}: {b['cov']}/{b['tot']} leaves ({b['pct']:.1f}%)")
 
-    print(f"\n✓ Saved detailed results to ../../data/ontology_assessments/coverage/metpo_branch_coverage_summary.tsv")
+    print("\n✓ Saved detailed results to ../../data/ontology_assessments/coverage/metpo_branch_coverage_summary.tsv")
 else:
     print("\nNo ontology provides ≥50% coverage for any major branch")
     print("\nShowing best partial coverage for largest branch:")

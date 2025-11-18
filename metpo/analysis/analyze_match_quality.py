@@ -7,6 +7,7 @@ for non-OLS ontologies based on distance metrics.
 
 import click
 import pandas as pd
+
 from metpo.cli_common import distance_threshold_option
 
 

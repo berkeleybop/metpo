@@ -2,12 +2,12 @@
 """
 Generate OntoGPT feedback loop diagram for ICBO slides
 """
-import matplotlib.pyplot as plt
+import matplotlib as mpl
 import matplotlib.patches as mpatches
-from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
-import matplotlib
+import matplotlib.pyplot as plt
+from matplotlib.patches import FancyArrowPatch, FancyBboxPatch
 
-matplotlib.use("Agg")
+mpl.use("Agg")
 
 fig, ax = plt.subplots(1, 1, figsize=(12, 8))
 ax.set_xlim(0, 10)

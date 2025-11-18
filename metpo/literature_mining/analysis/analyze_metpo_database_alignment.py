@@ -8,12 +8,11 @@ with semi-structured data sources vs. lower grounding rates for free text.
 """
 
 from pathlib import Path
-from collections import defaultdict, Counter
-from typing import Dict, List
 
 import click
 
-def analyze_bacdive_alignment() -> Dict:
+
+def analyze_bacdive_alignment() -> dict:
     """Analyze METPO alignment with BacDive field structure."""
     # From docs/bacdive_keywords_analysis.md and bacdive_oxygen_tolerance_analysis.md
     bacdive_field_coverage = {
@@ -89,7 +88,7 @@ def analyze_bacdive_alignment() -> Dict:
 
     return bacdive_field_coverage
 
-def analyze_bactotraits_alignment() -> Dict:
+def analyze_bactotraits_alignment() -> dict:
     """Analyze METPO alignment with BactoTraits 19 functional traits."""
     # From data/bactotraits/1-s2.0-S1470160X21007123-main.pdf (Cébron et al. 2021)
     bactotraits_traits = {
@@ -152,7 +151,7 @@ def analyze_bactotraits_alignment() -> Dict:
 
     return bactotraits_traits
 
-def analyze_madin_alignment() -> Dict:
+def analyze_madin_alignment() -> dict:
     """Analyze METPO alignment with Madin et al. 23 phenotypic traits."""
     # From docs/metpo_madin_pathway_coverage.md
     madin_traits = {
@@ -225,7 +224,7 @@ def generate_icbo_summary() -> str:
 
     # BacDive summary
     summary.append("## 1. BacDive Database Alignment")
-    summary.append(f"   Database: 99,392 bacterial strains with standardized phenotypic data")
+    summary.append("   Database: 99,392 bacterial strains with standardized phenotypic data")
     summary.append(f"   Field categories analyzed: {len(bacdive)}")
     summary.append("")
 
@@ -251,7 +250,7 @@ def generate_icbo_summary() -> str:
 
     # BactoTraits summary
     summary.append("## 2. BactoTraits Database Alignment")
-    summary.append(f"   Database: 19,455 bacterial strains with 19 functional traits")
+    summary.append("   Database: 19,455 bacterial strains with 19 functional traits")
     summary.append(f"   Traits analyzed: {len(bactotraits)}")
     summary.append("")
 
@@ -270,7 +269,7 @@ def generate_icbo_summary() -> str:
 
     # Madin summary
     summary.append("## 3. Madin et al. Database Alignment")
-    summary.append(f"   Database: 172,324 records with 23 phenotypic/genomic traits")
+    summary.append("   Database: 172,324 records with 23 phenotypic/genomic traits")
     summary.append(f"   Traits analyzed: {len(madin)}")
     summary.append("")
 

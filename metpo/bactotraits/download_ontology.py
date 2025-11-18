@@ -14,9 +14,9 @@ import os
 import sys
 from datetime import datetime
 from pathlib import Path
+
 import click
 import requests
-
 
 LOG_PATH = Path(".ontology_fetch.log")
 MIN_FILE_SIZE = 1000  # Bytes - anything smaller is likely an error response

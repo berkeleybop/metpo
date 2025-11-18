@@ -8,10 +8,10 @@ Primary sources:
 3. KG-Microbe transformed TSV files
 """
 
-import sqlite3
 import csv
-from pathlib import Path
+import sqlite3
 from collections import Counter
+from pathlib import Path
 
 # PRIMARY SOURCE 1: ChromaDB databases
 CHROMA_COMBINED = Path("/home/mark/gitrepos/metpo/notebooks/chroma_combined/chroma.sqlite3")
@@ -46,7 +46,7 @@ def query_chromadb(db_path, description):
 
     ontologies = cursor.fetchall()
     print(f"Unique ontologies: {len(ontologies)}")
-    print(f"\nTop 20 by embedding count:")
+    print("\nTop 20 by embedding count:")
     for ont, count in ontologies[:20]:
         pct = (count / total * 100) if total > 0 else 0
         print(f"  {ont:<15} {count:>8,} ({pct:5.1f}%)")
@@ -56,7 +56,7 @@ def query_chromadb(db_path, description):
 
 def analyze_sssom(sssom_path):
     """Analyze SSSOM mapping file PRIMARY SOURCE"""
-    print(f"\n=== SSSOM Mappings ===")
+    print("\n=== SSSOM Mappings ===")
     print(f"Source: {sssom_path}")
 
     target_prefixes = Counter()
@@ -91,11 +91,11 @@ def analyze_sssom(sssom_path):
             predicates[pred] += 1
 
     print(f"Total mappings: {total_mappings:,}")
-    print(f"\nTop 20 target ontologies:")
+    print("\nTop 20 target ontologies:")
     for prefix, count in target_prefixes.most_common(20):
         print(f"  {prefix:<15} {count:>6}")
 
-    print(f"\nMapping types:")
+    print("\nMapping types:")
     for pred, count in predicates.most_common():
         pred_name = pred.split("/")[-1] if "/" in pred else pred
         print(f"  {pred_name:<30} {count:>6}")
@@ -122,23 +122,23 @@ def main():
     print("PRIMARY SOURCE 2: SSSOM Mapping Files")
     print("=" * 80)
 
-    print(f"\n--- Relaxed Mappings (distance < 0.80) ---")
-    relaxed_targets, relaxed_preds, relaxed_total = analyze_sssom(SSSOM_RELAXED)
+    print("\n--- Relaxed Mappings (distance < 0.80) ---")
+    relaxed_targets, _relaxed_preds, relaxed_total = analyze_sssom(SSSOM_RELAXED)
 
-    print(f"\n--- Optimized Mappings (tighter thresholds) ---")
-    opt_targets, opt_preds, opt_total = analyze_sssom(SSSOM_OPTIMIZED)
+    print("\n--- Optimized Mappings (tighter thresholds) ---")
+    _opt_targets, _opt_preds, opt_total = analyze_sssom(SSSOM_OPTIMIZED)
 
     # Summary
     print("\n" + "=" * 80)
     print("SUMMARY FROM PRIMARY SOURCES")
     print("=" * 80)
 
-    print(f"\nChromaDB Ontology Counts (from SQLite queries):")
+    print("\nChromaDB Ontology Counts (from SQLite queries):")
     print(f"  Combined (tested): {len(combined_onts)} ontologies, {combined_total:,} embeddings")
     print(f"  OLS-20 (filtered): {len(ols20_onts)} ontologies, {ols20_total:,} embeddings")
     print(f"  Non-OLS-4: {len(nonols_onts)} ontologies, {nonols_total:,} embeddings")
 
-    print(f"\nSSOM Mappings (from TSV files):")
+    print("\nSSOM Mappings (from TSV files):")
     print(f"  Relaxed: {relaxed_total:,} mappings")
     print(f"  Optimized: {opt_total:,} mappings")
 
@@ -146,12 +146,12 @@ def main():
 
     # Which ontologies in ChromaDB OLS-20?
     ols20_names = [ont[0] for ont in ols20_onts]
-    print(f"\nOLS-20 ontologies (from ChromaDB query):")
+    print("\nOLS-20 ontologies (from ChromaDB query):")
     print(f"  {', '.join(ols20_names)}")
 
     # Which in non-OLS?
     nonols_names = [ont[0] for ont in nonols_onts]
-    print(f"\nNon-OLS-4 ontologies (from ChromaDB query):")
+    print("\nNon-OLS-4 ontologies (from ChromaDB query):")
     print(f"  {', '.join(nonols_names)}")
 
     print("\n" + "=" * 80)

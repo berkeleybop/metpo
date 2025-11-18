@@ -8,12 +8,12 @@ and filters for papers that mention bacterial taxa.
 
 import re
 import shutil
-import click
 from pathlib import Path
-from typing import Set, Tuple
+
+import click
 
 
-def has_bacterial_taxa(content: str) -> Tuple[bool, str]:
+def has_bacterial_taxa(content: str) -> tuple[bool, str]:
     """
     Check if abstract mentions bacterial taxa.
 
@@ -38,7 +38,7 @@ def has_bacterial_taxa(content: str) -> Tuple[bool, str]:
 
 def get_abstract_text(filepath: Path) -> str:
     """Extract just the abstract portion from a file."""
-    with open(filepath, "r", encoding="utf-8") as f:
+    with open(filepath, encoding="utf-8") as f:
         content = f.read()
 
     # Extract abstract section

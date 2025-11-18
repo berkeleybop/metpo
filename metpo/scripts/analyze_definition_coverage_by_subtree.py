@@ -5,10 +5,11 @@ Analyze definition coverage by parent class (subtree analysis).
 Identifies near-terminal parents where most children have definitions,
 helping with iterative definition strategy.
 """
-import click
 import csv
 from collections import defaultdict
 from pathlib import Path
+
+import click
 
 
 def load_metpo_hierarchy(tsv_path: str) -> dict:
@@ -16,7 +17,7 @@ def load_metpo_hierarchy(tsv_path: str) -> dict:
     terms = {}
     parent_to_children = defaultdict(list)
 
-    with open(tsv_path, "r", encoding="utf-8") as f:
+    with open(tsv_path, encoding="utf-8") as f:
         reader = csv.DictReader(f, delimiter="\t")
         for row in reader:
             term_id = row["ID"]
@@ -158,7 +159,7 @@ def main(metpo_tsv: str, output: str, min_children: int, sort_by: str):
             writer.writeheader()
             writer.writerows(results)
 
-    click.echo(f"\n✓ Analysis complete!")
+    click.echo("\n✓ Analysis complete!")
     click.echo(f"  Output: {output}")
     click.echo(f"  Parents analyzed: {len(results)}")
 
@@ -168,13 +169,13 @@ def main(metpo_tsv: str, output: str, min_children: int, sort_by: str):
         medium_coverage = [r for r in results if 50 <= r["coverage_percent"] < 80]
         low_coverage = [r for r in results if r["coverage_percent"] < 50]
 
-        click.echo(f"\nCoverage Summary:")
+        click.echo("\nCoverage Summary:")
         click.echo(f"  High coverage (≥80%): {len(high_coverage)} parents")
         click.echo(f"  Medium coverage (50-79%): {len(medium_coverage)} parents")
         click.echo(f"  Low coverage (<50%): {len(low_coverage)} parents")
 
         # Show top candidates for pattern-based definition
-        click.echo(f"\n🎯 Top candidates for pattern-based definition (high coverage, few stragglers):")
+        click.echo("\n🎯 Top candidates for pattern-based definition (high coverage, few stragglers):")
         candidates = [r for r in results if r["coverage_percent"] >= 70 and 1 <= r["straggler_count"] <= 5]
         for i, r in enumerate(candidates[:10], 1):
             click.echo(f"  {i}. {r['parent_label']} ({r['coverage_percent']}% coverage, {r['straggler_count']} stragglers)")

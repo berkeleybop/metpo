@@ -6,8 +6,9 @@ Uses keyword-based scoring learned from domain expert feedback patterns.
 """
 
 import csv
-from pathlib import Path
+
 import click
+
 from metpo.cli_common import input_csv_option
 
 
@@ -144,7 +145,7 @@ def main(input_file, output_prefix):
 
     # Read ontology catalog
     ontologies = []
-    with open(input_csv, "r") as f:
+    with open(input_csv) as f:
         reader = csv.DictReader(f)
         for row in reader:
             if row["ontologyId"] and row["count"]:

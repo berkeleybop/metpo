@@ -6,10 +6,12 @@ Analyze METPO grounding efficiency:
 3. Check if other ontologies use CURIE format
 """
 
+from collections import defaultdict
+from pathlib import Path
+
 import click
 import yaml
-from pathlib import Path
-from collections import defaultdict
+
 
 def analyze_file(yaml_file):
     """Analyze a single YAML file for METPO grounding efficiency."""

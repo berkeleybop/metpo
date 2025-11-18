@@ -12,10 +12,11 @@ This helps identify:
 3. Redundant sources that could be removed
 """
 
-import pandas as pd
-import click
-from collections import defaultdict
 import re
+from collections import defaultdict
+
+import click
+import pandas as pd
 
 
 def extract_term_source(iri: str) -> str:
@@ -120,7 +121,7 @@ def main(input):
     for term_src, ont_files in sorted(term_source_availability.items(),
                                       key=lambda x: len(x[1]), reverse=True):
         if len(ont_files) > 1:  # Only show redundant sources
-            count = len(df[df["term_source"] == term_src])
+            len(df[df["term_source"] == term_src])
             # Filter out NaN values from ont_files
             ont_files_clean = [f for f in ont_files if pd.notna(f)]
             if ont_files_clean:
@@ -142,7 +143,7 @@ def main(input):
             print(f"{row['ontology_file']:<15} {row['total_matches']:<15} {sources_str}")
 
             # Check if these terms are available natively elsewhere
-            for term_src, count in top_sources:
+            for term_src, _count in top_sources:
                 native_available = df[(df["term_source"] == term_src) &
                                      (df["object_source"].str.lower() == term_src.lower())]
                 if len(native_available) > 0:
@@ -193,11 +194,11 @@ def main(input):
     removal_candidates = []
     for _, row in only_imported.iterrows():
         ont_file = row["ontology_file"]
-        ont_matches = df[df["object_source"] == ont_file]
+        df[df["object_source"] == ont_file]
 
         # Check if ALL terms are available natively elsewhere
         all_redundant = True
-        for term_src in row["term_sources"].keys():
+        for term_src in row["term_sources"]:
             native_available = df[(df["term_source"] == term_src) &
                                  (df["object_source"].str.lower() == term_src.lower())]
             if len(native_available) == 0:
@@ -218,7 +219,7 @@ def main(input):
         for c in removal_candidates:
             print(f"• {c['ontology']}: {c['matches']} matches to {c['metpo_terms']} METPO terms")
             print(f"  Provides: {c['provides']}")
-            print(f"  → All terms available from native sources\n")
+            print("  → All terms available from native sources\n")
     else:
         print("No clear removal candidates found.")
         print("All ontologies either provide native terms or unique imported terms.")

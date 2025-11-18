@@ -5,7 +5,7 @@ taxonomic rank information as RDF triples in Turtle format.
 """
 
 import click
-from rdflib import Graph, URIRef, Literal
+from rdflib import Graph, Literal, URIRef
 from tqdm import tqdm
 
 NCBI_TAXON_PREFIX = "http://purl.obolibrary.org/obo/NCBITaxon_"

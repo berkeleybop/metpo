@@ -1,6 +1,8 @@
-import pandas as pd
 import click
-from metpo.cli_common import input_csv_option, distance_threshold_option
+import pandas as pd
+
+from metpo.cli_common import distance_threshold_option, input_csv_option
+
 
 @click.command()
 @input_csv_option(required=False, help_text="Path to the SSSOM TSV file containing METPO term mappings")

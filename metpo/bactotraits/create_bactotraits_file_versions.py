@@ -13,9 +13,11 @@ Output:
     - MongoDB collection: bactotraits.file_versions
 """
 
+from datetime import datetime
+
 import click
 from pymongo import MongoClient
-from datetime import datetime
+
 
 def create_file_versions():
     """Create file versions metadata collection."""

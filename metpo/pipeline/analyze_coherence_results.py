@@ -6,8 +6,8 @@ Looks for cases where:
 2. Low distance (<0.5): Good semantic similarity
 3. Multiple siblings: Enough structure to be meaningful
 """
-import pandas as pd
 import click
+import pandas as pd
 
 
 @click.command()
@@ -59,7 +59,7 @@ def main(results_file: str, mappings_file: str):
 
     if len(high_coherence) > 0:
         print(f"\nFound {len(high_coherence)} high-coherence terms:\n")
-        for idx, row in high_coherence.iterrows():
+        for _idx, row in high_coherence.iterrows():
             print(f"{'='*80}")
             print(f"METPO: {row['metpo_label']} ({row['metpo_id']})")
             print(f"  → External: {row['match_ontology']} {row['match_iri']}")
@@ -71,7 +71,7 @@ def main(results_file: str, mappings_file: str):
             metpo_id = row["metpo_id"]
             all_matches = matches_df[matches_df["metpo_id"] == metpo_id].nsmallest(10, "distance")
             if len(all_matches) > 1:
-                print(f"\n  Top matches for this term:")
+                print("\n  Top matches for this term:")
                 for _, match in all_matches.head(5).iterrows():
                     print(f"    {match['match_document'][:50]:50} ({match['match_ontology']:8}) dist={match['distance']:.3f}")
     else:
@@ -89,7 +89,7 @@ def main(results_file: str, mappings_file: str):
 
     if len(moderate) > 0:
         print(f"\nFound {len(moderate)} moderate-coherence terms (showing top 10):\n")
-        for idx, row in moderate.head(10).iterrows():
+        for _idx, row in moderate.head(10).iterrows():
             print(f"{row['metpo_label']:30} → {row['match_ontology']:10} "
                   f"coherence={row['coherence_score']:.1%} "
                   f"({row['coherent_sibling_count']}/{row['metpo_sibling_count']}) "
@@ -120,11 +120,11 @@ def main(results_file: str, mappings_file: str):
     meaningful["alignment_score"] = meaningful["coherence_score"] * (1 - meaningful["match_distance"])
     best_candidates = meaningful.nlargest(20, "alignment_score")
 
-    print(f"\nTop 20 candidates for importing/aligning with external ontologies:\n")
+    print("\nTop 20 candidates for importing/aligning with external ontologies:\n")
     print(f"{'Rank':<5} {'METPO Term':<35} {'Ontology':<10} {'Coherence':<12} {'Distance':<10} {'Score':<8}")
     print("-" * 90)
 
-    for rank, (idx, row) in enumerate(best_candidates.iterrows(), 1):
+    for rank, (_idx, row) in enumerate(best_candidates.iterrows(), 1):
         print(f"{rank:<5} {row['metpo_label'][:33]:<35} {row['match_ontology']:<10} "
               f"{row['coherence_score']:>6.1%} ({row['coherent_sibling_count']:>2}/{row['metpo_sibling_count']:<2}) "
               f"{row['match_distance']:>8.3f} {row['alignment_score']:>8.3f}")

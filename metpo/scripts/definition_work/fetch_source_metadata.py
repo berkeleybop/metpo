@@ -13,13 +13,12 @@ Usage:
 """
 
 import csv
-import requests
-import time
 import os
 import sys
+import time
 from urllib.parse import quote
-from typing import Optional, Dict
 
+import requests
 
 BIOPORTAL_API_KEY = os.environ.get("BIOPORTAL_API_KEY", "")
 
@@ -36,7 +35,7 @@ def iri_to_curie(iri: str) -> str:
 
 def curie_to_iri(curie_or_url: str) -> str:
     """Convert CURIE to IRI for OLS lookup."""
-    if curie_or_url.startswith("http://") or curie_or_url.startswith("https://"):
+    if curie_or_url.startswith(("http://", "https://")):
         return curie_or_url
 
     if ":" not in curie_or_url:
@@ -65,7 +64,7 @@ def curie_to_iri(curie_or_url: str) -> str:
     return f"http://purl.obolibrary.org/obo/{prefix_upper}_{local_id}"
 
 
-def get_ontology_from_curie(curie: str) -> Optional[str]:
+def get_ontology_from_curie(curie: str) -> str | None:
     """Extract ontology prefix from CURIE for OLS lookup."""
     if ":" not in curie:
         return None
@@ -88,7 +87,7 @@ def get_ontology_from_curie(curie: str) -> Optional[str]:
     return ontology_map.get(prefix)
 
 
-def fetch_metadata_from_bioportal_d3o(iri: str) -> Optional[Dict]:
+def fetch_metadata_from_bioportal_d3o(iri: str) -> dict | None:
     """Fetch DSMZ term directly from BioPortal D3O ontology."""
     if not BIOPORTAL_API_KEY:
         return None
@@ -137,11 +136,11 @@ def fetch_metadata_from_bioportal_d3o(iri: str) -> Optional[Dict]:
             "source": "BioPortal-D3O"
         }
 
-    except Exception as e:
+    except Exception:
         return None
 
 
-def fetch_metadata_from_ols(curie: str, iri: str) -> Optional[Dict]:
+def fetch_metadata_from_ols(curie: str, iri: str) -> dict | None:
     """Fetch comprehensive metadata from OLS4 API."""
     try:
         ontology = get_ontology_from_curie(curie)
@@ -160,7 +159,7 @@ def fetch_metadata_from_ols(curie: str, iri: str) -> Optional[Dict]:
 
         # Extract definition
         definition = ""
-        if "description" in data and data["description"]:
+        if data.get("description"):
             definition = data["description"][0] if isinstance(data["description"], list) else data["description"]
 
         if not definition and "annotation" in data:
@@ -174,7 +173,7 @@ def fetch_metadata_from_ols(curie: str, iri: str) -> Optional[Dict]:
 
         # Extract synonyms
         synonyms = set()
-        if "synonyms" in data and data["synonyms"]:
+        if data.get("synonyms"):
             synonyms.update(data["synonyms"])
 
         if "annotation" in data:
@@ -190,15 +189,15 @@ def fetch_metadata_from_ols(curie: str, iri: str) -> Optional[Dict]:
         return {
             "label": label,
             "definition": definition,
-            "synonyms": sorted(list(synonyms)),
+            "synonyms": sorted(synonyms),
             "source": "OLS"
         }
 
-    except Exception as e:
+    except Exception:
         return None
 
 
-def fetch_metadata_from_bioportal_search(curie: str, iri: str) -> Optional[Dict]:
+def fetch_metadata_from_bioportal_search(curie: str, iri: str) -> dict | None:
     """Fetch metadata from BioPortal search API."""
     if not BIOPORTAL_API_KEY:
         return None
@@ -241,10 +240,7 @@ def fetch_metadata_from_bioportal_search(curie: str, iri: str) -> Optional[Dict]
                 # Extract synonyms
                 if "synonym" in term_data:
                     syns = term_data["synonym"]
-                    if isinstance(syns, list):
-                        synonyms = syns
-                    else:
-                        synonyms = [syns]
+                    synonyms = syns if isinstance(syns, list) else [syns]
 
         return {
             "label": label,
@@ -253,7 +249,7 @@ def fetch_metadata_from_bioportal_search(curie: str, iri: str) -> Optional[Dict]
             "source": "BioPortal-Search"
         }
 
-    except Exception as e:
+    except Exception:
         return None
 
 
@@ -285,7 +281,7 @@ def main():
 
     # Load unique sources
     sources = set()
-    with open(input_file, "r") as f:
+    with open(input_file) as f:
         reader = csv.DictReader(f, delimiter="\t")
         for row in reader:
             source = row.get("?definition_source", "").strip()
@@ -334,7 +330,7 @@ def main():
 
         # Strategy 3: Try BioPortal general search
         if not (metadata and metadata["label"]) and BIOPORTAL_API_KEY:
-            print(f"  → Trying BioPortal search...")
+            print("  → Trying BioPortal search...")
             time.sleep(0.5)
             metadata = fetch_metadata_from_bioportal_search(source_curie, source_iri)
             if metadata and metadata["label"]:
@@ -367,7 +363,7 @@ def main():
                 "synonyms": "",
                 "api_source": "NOT_FOUND"
             })
-            print(f"  ✗ Not found in any API")
+            print("  ✗ Not found in any API")
 
         time.sleep(0.2)
         print()

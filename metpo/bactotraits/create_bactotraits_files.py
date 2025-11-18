@@ -11,6 +11,7 @@ Usage:
 import click
 from pymongo import MongoClient
 
+
 @click.command()
 @click.option("--host", default="localhost", help="MongoDB host.")
 @click.option("--port", default=27017, type=int, help="MongoDB port.")

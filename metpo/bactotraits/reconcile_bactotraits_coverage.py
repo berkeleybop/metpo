@@ -15,15 +15,13 @@ BactoTraits specifics:
 - We need to handle both underscore and period variations when matching
 """
 
-import click
 import csv
 import re
 import sys
+
+import click
 import yaml
-from typing import Dict, List, Set
-
 from pymongo import MongoClient
-
 
 BACTOTRAITS_SOURCE_URI = "https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"
 
@@ -55,7 +53,7 @@ def normalize_whitespace(text: str) -> str:
     return re.sub(r"\s+", " ", text.strip())
 
 
-def normalize_punctuation_variants(text: str) -> List[str]:
+def normalize_punctuation_variants(text: str) -> list[str]:
     """
     Generate punctuation variants for BactoTraits field names.
 
@@ -84,7 +82,7 @@ def normalize_punctuation_variants(text: str) -> List[str]:
     return list(set(variants))  # Remove duplicates
 
 
-def get_bactotraits_field_values(field_path: str, db_name: str = "bactotraits", collection_name: str = "bactotraits") -> Dict[str, str]:
+def get_bactotraits_field_values(field_path: str, db_name: str = "bactotraits", collection_name: str = "bactotraits") -> dict[str, str]:
     """
     Extract unique values from a BactoTraits MongoDB field.
 
@@ -103,14 +101,14 @@ def get_bactotraits_field_values(field_path: str, db_name: str = "bactotraits", 
     for v in values:
         # BactoTraits uses 0/1 for binary traits, NA for missing, and actual values for categories
         # Filter out: 0 (false values), empty strings, and 'NA'
-        if v and v != "NA" and v != "" and v != 0 and v != "0":
+        if v and v not in {"NA", "", 0, "0"}:
             normalized = normalize_whitespace(str(v))
             value_map[normalized] = v
 
     return value_map
 
 
-def load_bactotraits_synonyms(tsv_path: str) -> Dict[str, Dict[str, str]]:
+def load_bactotraits_synonyms(tsv_path: str) -> dict[str, dict[str, str]]:
     """
     Load synonyms attributed to BactoTraits source from synonym-sources.tsv.
 
@@ -120,7 +118,7 @@ def load_bactotraits_synonyms(tsv_path: str) -> Dict[str, Dict[str, str]]:
     bactotraits_synonyms = {}
     entity_labels = {}
 
-    with open(tsv_path, "r") as f:
+    with open(tsv_path) as f:
         reader = csv.DictReader(f, delimiter="\t")
 
         for row in reader:
@@ -158,7 +156,7 @@ def load_bactotraits_synonyms(tsv_path: str) -> Dict[str, Dict[str, str]]:
     return bactotraits_synonyms
 
 
-def load_all_metpo_synonyms(tsv_path: str) -> Dict[str, Dict[str, str]]:
+def load_all_metpo_synonyms(tsv_path: str) -> dict[str, dict[str, str]]:
     """
     Load ALL synonyms from METPO regardless of source attribution.
 
@@ -168,7 +166,7 @@ def load_all_metpo_synonyms(tsv_path: str) -> Dict[str, Dict[str, str]]:
     all_synonyms = {}
     entity_labels = {}
 
-    with open(tsv_path, "r") as f:
+    with open(tsv_path) as f:
         reader = csv.DictReader(f, delimiter="\t")
 
         for row in reader:
@@ -205,7 +203,7 @@ def load_all_metpo_synonyms(tsv_path: str) -> Dict[str, Dict[str, str]]:
     return all_synonyms
 
 
-def get_all_bactotraits_fields(db_name: str = "bactotraits", collection_name: str = "bactotraits") -> List[str]:
+def get_all_bactotraits_fields(db_name: str = "bactotraits", collection_name: str = "bactotraits") -> list[str]:
     """
     Get all field names from the BactoTraits MongoDB collection.
 
@@ -220,11 +218,11 @@ def get_all_bactotraits_fields(db_name: str = "bactotraits", collection_name: st
     sample_doc = collection.find_one()
 
     if sample_doc:
-        return [key for key in sample_doc.keys() if key != "_id"]
+        return [key for key in sample_doc if key != "_id"]
     return []
 
 
-def get_all_bactotraits_values_with_fields(db_name: str = "bactotraits", collection_name: str = "bactotraits") -> Dict[str, List[str]]:
+def get_all_bactotraits_values_with_fields(db_name: str = "bactotraits", collection_name: str = "bactotraits") -> dict[str, list[str]]:
     """
     Get ALL unique values from ALL fields in the BactoTraits MongoDB collection.
 
@@ -243,7 +241,7 @@ def get_all_bactotraits_values_with_fields(db_name: str = "bactotraits", collect
         values = collection.distinct(field)
         for v in values:
             # Filter out binary 0/1 values, empty strings, and 'NA'
-            if v and v != "NA" and v != "" and v != 0 and v != "0" and v != 1 and v != "1":
+            if v and v not in {"NA", "", 0, "0", 1, "1"}:
                 normalized = normalize_whitespace(str(v))
                 if normalized not in value_to_fields:
                     value_to_fields[normalized] = []
@@ -252,7 +250,7 @@ def get_all_bactotraits_values_with_fields(db_name: str = "bactotraits", collect
     return value_to_fields
 
 
-def reconcile_all_field_names(tsv_path: str, output_format: str = "text", output_file: str = None) -> None:
+def reconcile_all_field_names(tsv_path: str, output_format: str = "text", output_file: str | None = None) -> None:
     """
     Check if ALL BactoTraits field names are synonyms in METPO.
 
@@ -269,18 +267,18 @@ def reconcile_all_field_names(tsv_path: str, output_format: str = "text", output
     # 1. Load data and mappings
     client = MongoClient()
     db = client["bactotraits"]
-    
+
     # Create a map from sanitized mongo names to original kg-microbe names
     mappings_collection = db["field_mappings"]
     mongo_to_kgmicrobe_map = {
-        doc["mongodb"]: doc["kg_microbe"] 
-        for doc in mappings_collection.find({}) 
+        doc["mongodb"]: doc["kg_microbe"]
+        for doc in mappings_collection.find({})
         if "mongodb" in doc and doc["mongodb"] and "kg_microbe" in doc and doc["kg_microbe"]
     }
 
     # Get all sanitized field names from the main data collection
     sanitized_fields = get_all_bactotraits_fields()
-    
+
     # Load METPO synonyms
     bactotraits_synonyms = load_bactotraits_synonyms(tsv_path)
     all_metpo_synonyms = load_all_metpo_synonyms(tsv_path)
@@ -291,7 +289,7 @@ def reconcile_all_field_names(tsv_path: str, output_format: str = "text", output
     field_value_distributions = {}
     for field in sanitized_fields:
         values = data_collection.distinct(field)
-        non_na_count = sum(1 for v in values if v and v != "NA" and v != "" and v != 0 and v != "0")
+        non_na_count = sum(1 for v in values if v and v not in {"NA", "", 0, "0"})
         field_value_counts[field] = non_na_count
 
         if 1 <= non_na_count <= 20:
@@ -318,7 +316,7 @@ def reconcile_all_field_names(tsv_path: str, output_format: str = "text", output
 
         # Use the ORIGINAL field name for all matching logic
         field_path_clean = original_field.strip()
-        
+
         field_variants = normalize_punctuation_variants(field_path_clean)
         field_name_spaced = normalize_whitespace(field_path_clean.replace("_", " "))
         field_variants.extend(normalize_punctuation_variants(field_name_spaced))
@@ -335,7 +333,7 @@ def reconcile_all_field_names(tsv_path: str, output_format: str = "text", output
                         value_part + "-shaped", value_part + " shaped",
                         value_part_spaced + "-shaped", value_part_spaced + " shaped"
                     ])
-        
+
         value_count = field_value_counts.get(sanitized_field, 0)
 
         matched = False
@@ -348,7 +346,7 @@ def reconcile_all_field_names(tsv_path: str, output_format: str = "text", output
             if variant in bactotraits_synonyms:
                 matched, matched_info, matched_variant, matched_source = True, bactotraits_synonyms[variant], variant, "bactotraits"
                 break
-        
+
         # If not found, check all METPO synonyms
         if not matched:
             for variant in set(field_variants):
@@ -388,7 +386,7 @@ def reconcile_all_field_names(tsv_path: str, output_format: str = "text", output
 
     # 5. Categorize and generate final report
     missing_entries.sort(key=lambda x: x["unique_values"], reverse=True)
-    
+
     missing_permanently_excluded = [e for e in missing_entries if e["field"] in PERMANENTLY_EXCLUDED_FIELDS]
     missing_identifiers = [e for e in missing_entries if e["field"] in IDENTIFIER_FIELDS]
     missing_traits = [e for e in missing_entries if e["field"] not in PERMANENTLY_EXCLUDED_FIELDS and e["field"] not in IDENTIFIER_FIELDS]
@@ -431,14 +429,14 @@ def reconcile_all_field_names(tsv_path: str, output_format: str = "text", output
     else:
         # Text output for console
         print(f"\n{'='*80}")
-        print(f"BactoTraits Field Name Reconciliation")
+        print("BactoTraits Field Name Reconciliation")
         print(f"{'='*80}\n")
         print(f"Total Fields: {total_fields}")
         print(f"Trait Fields (for coverage calculation): {total_traits}\n")
         print(f"COVERED ({len(covered_entries)}/{total_traits} = {traits_coverage_pct:.1f}%):")
 
 
-def reconcile_coverage(field_path: str, tsv_path: str, output_format: str = "text", output_file: str = None) -> None:
+def reconcile_coverage(field_path: str, tsv_path: str, output_format: str = "text", output_file: str | None = None) -> None:
     """
     Reconcile BactoTraits field values against METPO synonyms.
 

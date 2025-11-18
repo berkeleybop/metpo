@@ -10,9 +10,7 @@ Creates separate columns for:
 """
 
 import csv
-import sys
 from pathlib import Path
-from typing import Dict, Optional, Tuple
 
 import click
 
@@ -73,11 +71,11 @@ def map_unit_to_ucum(bactotraits_unit: str, class_label: str = "") -> str:
     return ""
 
 
-def load_range_metadata(bactotraits_path: Path) -> Dict[str, Dict[str, str]]:
+def load_range_metadata(bactotraits_path: Path) -> dict[str, dict[str, str]]:
     """Load range metadata from bactotraits.tsv."""
     range_data = {}
 
-    with open(bactotraits_path, "r", encoding="utf-8") as f:
+    with open(bactotraits_path, encoding="utf-8") as f:
         reader = csv.DictReader(f, delimiter="\t")
 
         for row in reader:
@@ -141,7 +139,7 @@ def generate_google_sheets_formula(row_number: int,
 
 
 def enhance_minimal_classes(minimal_path: Path,
-                            range_data: Dict[str, Dict[str, str]],
+                            range_data: dict[str, dict[str, str]],
                             output_path: Path,
                             dry_run: bool = True):
     """
@@ -152,11 +150,11 @@ def enhance_minimal_classes(minimal_path: Path,
     stats = {"total": 0, "enhanced": 0, "skipped": 0}
 
     # Read existing data
-    with open(minimal_path, "r", encoding="utf-8") as f:
+    with open(minimal_path, encoding="utf-8") as f:
         reader = csv.DictReader(f, delimiter="\t")
         header = list(reader.fieldnames)
 
-        for idx, row in enumerate(reader):
+        for _idx, row in enumerate(reader):
             class_id = row.get("ID", "").strip()
 
             if class_id and class_id != "ID":
@@ -214,7 +212,7 @@ def enhance_minimal_classes(minimal_path: Path,
             writer.writeheader()
 
             # Write ROBOT template row
-            robot_row = {col: "" for col in new_header}
+            robot_row = dict.fromkeys(new_header, "")
             robot_row.update({
                 "ID": "ID",
                 "label": "LABEL",

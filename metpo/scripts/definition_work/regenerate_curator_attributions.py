@@ -2,7 +2,6 @@
 """Regenerate curator_proposed_definitions.tsv from undergraduate source files"""
 
 import csv
-import os
 from pathlib import Path
 
 # Curator info mapping
@@ -32,7 +31,7 @@ for filename, info in curator_info.items():
         print(f"Warning: {filepath} not found")
         continue
 
-    with open(filepath, "r") as f:
+    with open(filepath) as f:
         lines = f.readlines()
 
     # Skip header rows (both say "ID")
@@ -95,4 +94,4 @@ with open(output_file, "w", newline="") as f:
 
 print(f"✓ Regenerated {output_file}")
 print(f"  Total rows: {len(all_rows)}")
-print(f"  Unique terms: {len(set(r['metpo_id'] for r in all_rows))}")
+print(f"  Unique terms: {len({r['metpo_id'] for r in all_rows})}")

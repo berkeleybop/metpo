@@ -9,15 +9,13 @@ This script:
 4. Reports which Madin values are covered/missing in METPO
 """
 
-import click
 import csv
 import re
 import sys
+
+import click
 import yaml
-from typing import Dict, List, Set
-
 from pymongo import MongoClient
-
 
 MADIN_SOURCE_URI = "https://github.com/jmadin/bacteria_archaea_traits"
 
@@ -49,7 +47,7 @@ def normalize_whitespace(text: str) -> str:
     return re.sub(r"\s+", " ", text.strip())
 
 
-def get_madin_field_values(field_path: str, db_name: str = "madin", collection_name: str = "madin") -> Dict[str, str]:
+def get_madin_field_values(field_path: str, db_name: str = "madin", collection_name: str = "madin") -> dict[str, str]:
     """
     Extract unique values from a Madin MongoDB field.
 
@@ -73,7 +71,7 @@ def get_madin_field_values(field_path: str, db_name: str = "madin", collection_n
     return value_map
 
 
-def load_madin_synonyms(tsv_path: str) -> Dict[str, Dict[str, str]]:
+def load_madin_synonyms(tsv_path: str) -> dict[str, dict[str, str]]:
     """
     Load synonyms attributed to Madin source from synonym-sources.tsv.
 
@@ -83,7 +81,7 @@ def load_madin_synonyms(tsv_path: str) -> Dict[str, Dict[str, str]]:
     madin_synonyms = {}
     entity_labels = {}
 
-    with open(tsv_path, "r") as f:
+    with open(tsv_path) as f:
         reader = csv.DictReader(f, delimiter="\t")
 
         for row in reader:
@@ -116,7 +114,7 @@ def load_madin_synonyms(tsv_path: str) -> Dict[str, Dict[str, str]]:
     return madin_synonyms
 
 
-def get_all_madin_fields(db_name: str = "madin", collection_name: str = "madin") -> List[str]:
+def get_all_madin_fields(db_name: str = "madin", collection_name: str = "madin") -> list[str]:
     """
     Get all field names from the Madin MongoDB collection.
 
@@ -131,11 +129,11 @@ def get_all_madin_fields(db_name: str = "madin", collection_name: str = "madin")
     sample_doc = collection.find_one()
 
     if sample_doc:
-        return [key for key in sample_doc.keys() if key != "_id"]
+        return [key for key in sample_doc if key != "_id"]
     return []
 
 
-def get_all_madin_values_with_fields(db_name: str = "madin", collection_name: str = "madin") -> Dict[str, List[str]]:
+def get_all_madin_values_with_fields(db_name: str = "madin", collection_name: str = "madin") -> dict[str, list[str]]:
     """
     Get ALL unique values from ALL fields in the Madin MongoDB collection.
 
@@ -162,7 +160,7 @@ def get_all_madin_values_with_fields(db_name: str = "madin", collection_name: st
     return value_to_fields
 
 
-def reconcile_all_field_names(tsv_path: str, output_format: str = "text", output_file: str = None) -> None:
+def reconcile_all_field_names(tsv_path: str, output_format: str = "text", output_file: str | None = None) -> None:
     """
     Check if ALL Madin field names are synonyms in METPO.
 
@@ -247,7 +245,7 @@ def reconcile_all_field_names(tsv_path: str, output_format: str = "text", output
         print(yaml.dump(result, default_flow_style=False, sort_keys=False, allow_unicode=True))
     else:
         print(f"\n{'='*80}")
-        print(f"Checking ALL Madin field names against METPO synonyms")
+        print("Checking ALL Madin field names against METPO synonyms")
         print(f"{'='*80}\n")
         print(f"Total Madin fields: {total}\n")
         print(f"COVERED ({covered_count}/{total} = {coverage_pct:.1f}%):")
@@ -275,7 +273,7 @@ def reconcile_all_field_names(tsv_path: str, output_format: str = "text", output
         print(f"\n{'='*80}\n")
 
 
-def reconcile_coverage(field_path: str, tsv_path: str, output_format: str = "text", output_file: str = None) -> None:
+def reconcile_coverage(field_path: str, tsv_path: str, output_format: str = "text", output_file: str | None = None) -> None:
     """
     Reconcile Madin field values against METPO synonyms.
 
@@ -358,7 +356,7 @@ def reconcile_coverage(field_path: str, tsv_path: str, output_format: str = "tex
         print(f"\n{'='*80}\n")
 
 
-def verify_madin_synonyms(tsv_path: str, output_format: str = "text", output_file: str = None) -> None:
+def verify_madin_synonyms(tsv_path: str, output_format: str = "text", output_file: str | None = None) -> None:
     """
     Verify that all METPO synonyms attributed to Madin actually exist in the Madin MongoDB.
 
@@ -422,7 +420,7 @@ def verify_madin_synonyms(tsv_path: str, output_format: str = "text", output_fil
         print(yaml.dump(result, default_flow_style=False, sort_keys=False, allow_unicode=True))
     else:
         print(f"\n{'='*80}")
-        print(f"Verifying METPO Madin synonyms against actual Madin data")
+        print("Verifying METPO Madin synonyms against actual Madin data")
         print(f"{'='*80}\n")
         print("Loading all Madin values from MongoDB...")
         print(f"Total unique Madin values found: {total_madin_values}\n")
@@ -452,7 +450,7 @@ def verify_madin_synonyms(tsv_path: str, output_format: str = "text", output_fil
         print(f"\n{'='*80}\n")
 
 
-def generate_integrated_report(tsv_path: str, output_format: str = "yaml", output_file: str = None) -> None:
+def generate_integrated_report(tsv_path: str, output_format: str = "yaml", output_file: str | None = None) -> None:
     """
     Generate integrated reconciliation report combining field mappings, value coverage, and false claims.
 
@@ -632,14 +630,14 @@ def generate_integrated_report(tsv_path: str, output_format: str = "yaml", outpu
             print(output_content)
     else:
         print(f"\n{'='*80}")
-        print(f"Integrated Madin-METPO Reconciliation Report")
+        print("Integrated Madin-METPO Reconciliation Report")
         print(f"{'='*80}\n")
 
         total_fields = len(madin_fields)
         fields_mapped = sum(1 for f in field_analysis if f["field_mapped"])
         fields_full_coverage = sum(1 for f in field_analysis if f.get("value_coverage_percentage") == 100)
 
-        print(f"SUMMARY:")
+        print("SUMMARY:")
         print(f"  Total Madin fields: {total_fields}")
         print(f"  Fields with name mapping: {fields_mapped} ({100*fields_mapped/total_fields:.1f}%)")
         print(f"  Fields with 100% value coverage: {fields_full_coverage} ({100*fields_full_coverage/total_fields:.1f}%)")
@@ -647,7 +645,7 @@ def generate_integrated_report(tsv_path: str, output_format: str = "yaml", outpu
         print(f"  Verified synonyms: {len(verified_synonyms)} ({100*len(verified_synonyms)/len(madin_synonyms):.1f}%)")
         print(f"  False synonym claims: {len(false_claims)} ({100*len(false_claims)/len(madin_synonyms):.1f}%)\n")
 
-        print(f"FIELD ANALYSIS:")
+        print("FIELD ANALYSIS:")
         print("-" * 80)
         for field in field_analysis:
             status = "✓ MAPPED" if field["field_mapped"] else "✗ UNMAPPED"
@@ -659,7 +657,7 @@ def generate_integrated_report(tsv_path: str, output_format: str = "yaml", outpu
                 print(f"  Values: {field['covered_values_count']}/{field['total_values']} covered ({coverage})")
 
                 if field["covered_values"] and len(field["covered_values"]) <= 10:
-                    print(f"  Covered values:")
+                    print("  Covered values:")
                     for val in field["covered_values"][:5]:
                         print(f"    • {val['value']} → {val['metpo_id']}")
 

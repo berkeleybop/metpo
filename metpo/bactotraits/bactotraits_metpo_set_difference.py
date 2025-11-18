@@ -11,33 +11,33 @@ Usage:
 """
 
 import csv
+from pathlib import Path
+
 import click
 import yaml
-from pathlib import Path
-from typing import Set, List, Dict, Tuple
 
 # File paths
 BACTOTRAITS_SOURCE_URI = "https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"
 
-def read_kg_microbe_headers(kg_microbe_file: Path) -> Set[str]:
+def read_kg_microbe_headers(kg_microbe_file: Path) -> set[str]:
     """Read field names from kg-microbe BactoTraits.tsv header."""
     if not kg_microbe_file.exists():
         raise FileNotFoundError(f"kg-microbe file not found: {kg_microbe_file}")
 
-    with open(kg_microbe_file, "r", encoding="utf-8") as f:
+    with open(kg_microbe_file, encoding="utf-8") as f:
         header = f.readline().strip().split("\t")
 
     return set(header)
 
 
-def read_metpo_bactotraits_synonyms(synonym_sources_tsv: Path) -> Dict[str, Dict]:
+def read_metpo_bactotraits_synonyms(synonym_sources_tsv: Path) -> dict[str, dict]:
     """Read synonyms attributed to BactoTraits from synonym-sources.tsv."""
     if not synonym_sources_tsv.exists():
         raise FileNotFoundError(f"Synonym sources file not found: {synonym_sources_tsv}")
 
     synonyms = {}
 
-    with open(synonym_sources_tsv, "r") as f:
+    with open(synonym_sources_tsv) as f:
         reader = csv.DictReader(f, delimiter="\t")
         for row in reader:
             src = row.get("?src", "").strip("<>")
@@ -61,7 +61,7 @@ def normalize_variant(text: str) -> str:
     return text.lower().replace(" ", "").replace("-", "").replace("_", "")
 
 
-def find_close_matches(missing: Set[str], present: Set[str]) -> Dict[str, List[str]]:
+def find_close_matches(missing: set[str], present: set[str]) -> dict[str, list[str]]:
     """
     Find close matches between missing and present sets.
     Returns dict mapping missing items to list of close matches.
@@ -143,7 +143,7 @@ def describe_difference(str1: str, str2: str) -> str:
     return ", ".join(differences) if differences else "unknown variation"
 
 
-def categorize_by_issue(items_with_matches: Dict[str, List[Dict]]) -> Dict[str, List[Tuple[str, str]]]:
+def categorize_by_issue(items_with_matches: dict[str, list[dict]]) -> dict[str, list[tuple[str, str]]]:
     """Categorize items by the type of issue (case, whitespace, operators, etc.)."""
     categories = {
         "case_only": [],

@@ -12,21 +12,21 @@ Strategy:
 
 This combines all improvement sources in one pass.
 """
-import click
 import csv
 import os
 import re
 from pathlib import Path
-from typing import Dict, List, Optional, Tuple
-from tqdm import tqdm
+
 import chromadb
+import click
 from openai import OpenAI
+from tqdm import tqdm
 
 
-def load_ready_improvements(ready_path: str) -> Dict[str, Dict]:
+def load_ready_improvements(ready_path: str) -> dict[str, dict]:
     """Load undergraduate curator improvements."""
     improvements = {}
-    with open(ready_path, "r", encoding="utf-8") as f:
+    with open(ready_path, encoding="utf-8") as f:
         reader = csv.DictReader(f, delimiter="\t")
         for row in reader:
             improvements[row["METPO_ID"]] = {
@@ -38,7 +38,7 @@ def load_ready_improvements(ready_path: str) -> Dict[str, Dict]:
     return improvements
 
 
-def fix_genus_for_parent(definition: str, parent: str, label: str) -> Optional[str]:
+def fix_genus_for_parent(definition: str, parent: str, label: str) -> str | None:
     """Fix definition genus to match parent class."""
     if not definition or not parent:
         return None
@@ -49,7 +49,7 @@ def fix_genus_for_parent(definition: str, parent: str, label: str) -> Optional[s
     # Skip if already has correct genus
     def_lower = definition.lower()
     parent_lower = parent.lower()
-    if def_lower.startswith(f"a {parent_lower}") or def_lower.startswith(f"an {parent_lower}"):
+    if def_lower.startswith((f"a {parent_lower}", f"an {parent_lower}")):
         return None  # Already correct
 
     # Common patterns to fix
@@ -79,7 +79,7 @@ def fix_genus_for_parent(definition: str, parent: str, label: str) -> Optional[s
     return None
 
 
-def check_definition_quality(definition: str, parent: str, label: str) -> Tuple[int, List[str]]:
+def check_definition_quality(definition: str, parent: str, label: str) -> tuple[int, list[str]]:
     """
     Score definition quality (0-100) and return issues.
 
@@ -100,7 +100,7 @@ def check_definition_quality(definition: str, parent: str, label: str) -> Tuple[
     parent_lower = parent.split("|")[0].strip().lower() if parent else ""
 
     # Check genus matches parent (40 points)
-    if parent_lower and (def_lower.startswith(f"a {parent_lower}") or def_lower.startswith(f"an {parent_lower}")):
+    if parent_lower and (def_lower.startswith((f"a {parent_lower}", f"an {parent_lower}"))):
         score += 40
     else:
         issues.append(f"Genus mismatch (parent: {parent})")
@@ -144,7 +144,7 @@ def query_chromadb_for_definition(
     collection,
     openai_client,
     n_results: int = 10
-) -> List[Dict]:
+) -> list[dict]:
     """Query ChromaDB to find similar terms with definitions."""
     # Create query text (use current definition or just label)
     query_text = f"{label}; {definition}" if definition else label
@@ -196,10 +196,10 @@ def query_chromadb_for_definition(
 
 
 def choose_best_definition(
-    candidates: Dict[str, Dict],
+    candidates: dict[str, dict],
     parent: str,
     label: str
-) -> Tuple[str, str, str, int]:
+) -> tuple[str, str, str, int]:
     """
     Choose best definition from candidates.
 
@@ -320,7 +320,7 @@ def main(metpo_tsv: str, ready_file: str, chroma_path: str, collection_name: str
     # Load current METPO terms
     click.echo(f"\n📥 Loading METPO terms from {metpo_tsv}...")
     terms = []
-    with open(metpo_tsv, "r", encoding="utf-8") as f:
+    with open(metpo_tsv, encoding="utf-8") as f:
         reader = csv.DictReader(f, delimiter="\t")
         fieldnames = reader.fieldnames
         for row in reader:
@@ -328,7 +328,7 @@ def main(metpo_tsv: str, ready_file: str, chroma_path: str, collection_name: str
     click.echo(f"  Loaded {len(terms)} terms")
 
     # Process each term
-    click.echo(f"\n🔄 Processing terms...")
+    click.echo("\n🔄 Processing terms...")
     improvements = []
     report_data = []
 
@@ -440,11 +440,11 @@ def main(metpo_tsv: str, ready_file: str, chroma_path: str, collection_name: str
             writer.writerows(report_data)
 
     # Summary
-    click.echo(f"\n✅ Complete!")
+    click.echo("\n✅ Complete!")
     click.echo(f"  Total terms processed: {len(terms)}")
     click.echo(f"  Terms improved: {len(improvements)} ({len(improvements)/len(terms)*100:.1f}%)")
     click.echo(f"  READY improvements used: {len([t for t in terms if t['ID'] in ready_improvements])}")
-    click.echo(f"\n📄 Files:")
+    click.echo("\n📄 Files:")
     click.echo(f"  Output: {output}")
     click.echo(f"  Report: {report}")
 

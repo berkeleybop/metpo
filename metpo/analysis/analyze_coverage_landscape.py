@@ -4,8 +4,9 @@ Create comprehensive coverage landscape summary for METPO branches.
 Shows best coverage, fragmentation score, and coverage distribution for each branch.
 """
 
-import pandas as pd
 from collections import defaultdict
+
+import pandas as pd
 
 print("="*80)
 print("METPO COVERAGE LANDSCAPE SUMMARY")
@@ -191,20 +192,20 @@ print("\n" + "="*80)
 print("SUMMARY STATISTICS")
 print("="*80)
 
-print(f"\nFragmentation distribution:")
+print("\nFragmentation distribution:")
 for frag_level in ["CONSOLIDATED", "LOW", "MODERATE", "HIGH", "EXTREME", "UNCOVERED"]:
     count = len(landscape_df[landscape_df["fragmentation_score"] == frag_level])
     print(f"  {frag_level:<15} {count:>3} branches")
 
-print(f"\nBest single-ontology coverage:")
+print("\nBest single-ontology coverage:")
 best_overall = landscape_df.nlargest(5, "best_coverage_pct")
 for _, row in best_overall.iterrows():
     print(f"  {row['branch']:<35} {row['best_ontology']:<12} {row['best_coverage_pct']:>5.1f}%")
 
-print(f"\nMost fragmented (require most ontologies for 90%):")
+print("\nMost fragmented (require most ontologies for 90%):")
 worst = landscape_df.nlargest(5, "onts_for_90pct")
 for _, row in worst.iterrows():
     print(f"  {row['branch']:<35} {row['onts_for_90pct']:>3} ontologies")
 
-print(f"\n✓ Saved to ../../data/ontology_assessments/coverage/metpo_coverage_landscape.tsv")
+print("\n✓ Saved to ../../data/ontology_assessments/coverage/metpo_coverage_landscape.tsv")
 print("="*80)

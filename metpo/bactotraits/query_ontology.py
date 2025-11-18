@@ -12,13 +12,13 @@ Exit codes:
 Outputs term count to stdout on success for Make to capture.
 """
 
-import sys
 import csv
 import subprocess
+import sys
 from datetime import datetime
 from pathlib import Path
-import click
 
+import click
 
 LOG_PATH = Path(".robot_query.log")
 
@@ -70,7 +70,7 @@ def main(ontology_id: str, input_file: Path, query_file: Path, output_file: Path
         # Run ROBOT
         result = subprocess.run(
             cmd,
-            capture_output=True,
+            check=False, capture_output=True,
             text=True,
             timeout=600  # 10 minute timeout
         )

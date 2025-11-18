@@ -7,14 +7,15 @@ Analyze OntoGPT YAML outputs to identify:
 For ICBO 2025 talk preparation.
 """
 
-import yaml
 import re
-import click
+from collections import Counter, defaultdict
 from pathlib import Path
-from collections import defaultdict, Counter
-from typing import Dict, List, Tuple
 
-def extract_entities_from_yaml(yaml_path: Path) -> Dict[str, List[str]]:
+import click
+import yaml
+
+
+def extract_entities_from_yaml(yaml_path: Path) -> dict[str, list[str]]:
     """Extract all entity references (METPO:, AUTO:, CHEBI:, etc.) from YAML."""
     entities = defaultdict(list)
 
@@ -34,7 +35,7 @@ def extract_entities_from_yaml(yaml_path: Path) -> Dict[str, List[str]]:
 
     return entities
 
-def extract_template_info(yaml_path: Path) -> Dict:
+def extract_template_info(yaml_path: Path) -> dict:
     """Extract template metadata from YAML file."""
     try:
         with open(yaml_path) as f:
@@ -75,7 +76,7 @@ def extract_template_info(yaml_path: Path) -> Dict:
         click.echo(f"Error extracting template info from {yaml_path}: {e}")
         return {"id": "unknown", "name": "unknown", "title": "unknown", "description": "unknown"}
 
-def find_auto_terms_with_context(yaml_path: Path, limit=10) -> List[Dict]:
+def find_auto_terms_with_context(yaml_path: Path, limit=10) -> list[dict]:
     """Find AUTO: terms with surrounding context to understand what's missing."""
     auto_examples = []
 
@@ -126,7 +127,7 @@ def find_auto_terms_with_context(yaml_path: Path, limit=10) -> List[Dict]:
 
     return auto_examples
 
-def find_metpo_successes_with_context(yaml_path: Path, limit=10) -> List[Dict]:
+def find_metpo_successes_with_context(yaml_path: Path, limit=10) -> list[dict]:
     """Find examples where METPO terms successfully grounded extractions."""
     metpo_examples = []
 
@@ -163,7 +164,7 @@ def find_metpo_successes_with_context(yaml_path: Path, limit=10) -> List[Dict]:
 
     return metpo_examples
 
-def extract_annotators_from_template(template_path: Path) -> List[str]:
+def extract_annotators_from_template(template_path: Path) -> list[str]:
     """Extract annotator ontologies from template YAML."""
     annotators = []
     try:
@@ -172,9 +173,9 @@ def extract_annotators_from_template(template_path: Path) -> List[str]:
 
         # Search for annotators in classes
         if "classes" in content:
-            for class_name, class_def in content["classes"].items():
+            for _class_name, class_def in content["classes"].items():
                 if isinstance(class_def, dict) and "attributes" in class_def:
-                    for attr_name, attr_def in class_def["attributes"].items():
+                    for _attr_name, attr_def in class_def["attributes"].items():
                         if isinstance(attr_def, dict) and "annotations" in attr_def:
                             if "annotators" in attr_def["annotations"]:
                                 annotators.append(attr_def["annotations"]["annotators"])
@@ -189,7 +190,7 @@ def extract_annotators_from_template(template_path: Path) -> List[str]:
 
     return list(set(annotators))
 
-def analyze_directory(dir_path: Path) -> Dict:
+def analyze_directory(dir_path: Path) -> dict:
     """Analyze all YAML files in directory."""
     results = {
         "summary": Counter(),

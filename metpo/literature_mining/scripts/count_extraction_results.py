@@ -7,6 +7,7 @@ Properly parses the YAML structure instead of using grep.
 import argparse
 import sys
 from pathlib import Path
+
 import yaml
 
 
@@ -18,7 +19,7 @@ def count_entities_and_relationships(yaml_file: Path) -> tuple[int, int]:
         (entity_count, relationship_count)
     """
     try:
-        with open(yaml_file, "r") as f:
+        with open(yaml_file) as f:
             # Standard YAML method for multi-document files
             documents = yaml.safe_load_all(f)
 
@@ -36,7 +37,7 @@ def count_entities_and_relationships(yaml_file: Path) -> tuple[int, int]:
                 # Relationships are in the extracted_object field
                 extracted = doc.get("extracted_object", {})
                 if isinstance(extracted, dict):
-                    for key, value in extracted.items():
+                    for _key, value in extracted.items():
                         if isinstance(value, list):
                             for item in value:
                                 if isinstance(item, dict) and "subject" in item and "predicate" in item and "object" in item:

@@ -15,15 +15,12 @@ For each METPO term, ranks all candidate definitions by:
 """
 
 import csv
-import click
-import chromadb
-from chromadb.config import Settings
-from pathlib import Path
-from typing import Dict, List, Optional, Tuple
 from collections import defaultdict
 from difflib import SequenceMatcher
-import pandas as pd
+from pathlib import Path
 
+import click
+import pandas as pd
 
 # Ontology quality tiers for prioritization
 ONTOLOGY_TIERS = {
@@ -74,10 +71,7 @@ def is_real_definition(label: str, definition: str, min_length: int = 30) -> boo
 
     # Check similarity ratio (labels very similar to definitions are suspect)
     similarity = SequenceMatcher(None, label_clean, definition_clean).ratio()
-    if similarity > 0.85:
-        return False
-
-    return True
+    return not similarity > 0.85
 
 
 def has_genus_term(definition: str) -> bool:
@@ -96,7 +90,7 @@ def has_genus_term(definition: str) -> bool:
     return any(genus_indicators)
 
 
-def assess_definition_quality(definition: str, ontology: str) -> Tuple[str, int]:
+def assess_definition_quality(definition: str, ontology: str) -> tuple[str, int]:
     """
     Assess definition quality.
 
@@ -137,7 +131,7 @@ def assess_definition_quality(definition: str, ontology: str) -> Tuple[str, int]
     return quality, score
 
 
-def extract_definition_from_document(document: str) -> Tuple[str, str]:
+def extract_definition_from_document(document: str) -> tuple[str, str]:
     """Extract label and definition from ChromaDB document field."""
     if not document:
         return "", ""
@@ -149,11 +143,11 @@ def extract_definition_from_document(document: str) -> Tuple[str, str]:
     return label, definition
 
 
-def load_sssom_candidates(sssom_path: Path, metpo_label: str) -> List[Dict]:
+def load_sssom_candidates(sssom_path: Path, metpo_label: str) -> list[dict]:
     """Load candidate definitions from SSSOM mappings."""
     candidates = []
 
-    with open(sssom_path, "r", encoding="utf-8") as f:
+    with open(sssom_path, encoding="utf-8") as f:
         lines = [line for line in f if not line.startswith("#")]
         reader = csv.DictReader(lines, delimiter="\t")
 
@@ -177,7 +171,7 @@ def load_sssom_candidates(sssom_path: Path, metpo_label: str) -> List[Dict]:
     return candidates
 
 
-def load_api_candidates(api_results_path: Path, metpo_id: str) -> List[Dict]:
+def load_api_candidates(api_results_path: Path, metpo_id: str) -> list[dict]:
     """Load candidate definitions from OLS/BioPortal API search results."""
     candidates = []
 
@@ -197,7 +191,7 @@ def load_api_candidates(api_results_path: Path, metpo_id: str) -> List[Dict]:
                 "match_type": "exactMatch" if row.get("similarity_ratio", 0) == 1.0 else "closeMatch",
                 "confidence": float(row.get("similarity_ratio", 0)),
             })
-    except Exception as e:
+    except Exception:
         # API results file may not exist
         pass
 
@@ -205,10 +199,10 @@ def load_api_candidates(api_results_path: Path, metpo_id: str) -> List[Dict]:
 
 
 def rank_candidates(
-    candidates: List[Dict],
+    candidates: list[dict],
     metpo_label: str,
     min_length: int = 30
-) -> List[Dict]:
+) -> list[dict]:
     """
     Rank and score all candidate definitions.
 
@@ -321,7 +315,7 @@ def main(
     # Load METPO terms
     click.echo(f"Loading METPO terms from {metpo_terms}...")
     terms = []
-    with open(metpo_terms, "r", encoding="utf-8") as f:
+    with open(metpo_terms, encoding="utf-8") as f:
         reader = csv.reader(f, delimiter="\t")
         next(reader)  # Skip ROBOT header row 1
         next(reader)  # Skip ROBOT header row 2
@@ -392,9 +386,8 @@ def main(
                     "rank": rank,
                     **cand
                 })
-        else:
-            if not verbose:
-                click.echo(f"✗ {metpo_id:20s} no valid definitions found")
+        elif not verbose:
+            click.echo(f"✗ {metpo_id:20s} no valid definitions found")
 
     # Write comprehensive output
     click.echo(f"\nWriting comprehensive results to {output}...")
@@ -439,7 +432,7 @@ def main(
         for item in best_per_term:
             quality_counts[item["quality_label"]] += 1
 
-        click.echo(f"\nBest definition quality:")
+        click.echo("\nBest definition quality:")
         for quality in ["excellent", "good", "adequate", "poor"]:
             count = quality_counts.get(quality, 0)
             if count > 0:
@@ -450,7 +443,7 @@ def main(
         for item in best_per_term:
             source_counts[item["source"]] += 1
 
-        click.echo(f"\nBest definition source:")
+        click.echo("\nBest definition source:")
         for source, count in sorted(source_counts.items(), key=lambda x: x[1], reverse=True):
             click.echo(f"  {source:12s}: {count:4d} ({count/len(best_per_term)*100:5.1f}%)")
 
@@ -459,7 +452,7 @@ def main(
         for item in best_per_term:
             onto_counts[item["source_ontology"]] += 1
 
-        click.echo(f"\nBest definition ontology (top 10):")
+        click.echo("\nBest definition ontology (top 10):")
         for onto, count in sorted(onto_counts.items(), key=lambda x: x[1], reverse=True)[:10]:
             click.echo(f"  {onto:15s}: {count:4d} ({count/len(best_per_term)*100:5.1f}%)")
 

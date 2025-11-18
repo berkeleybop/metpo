@@ -14,13 +14,13 @@ Quality criteria for a "real" definition:
 """
 
 import csv
-import click
-import chromadb
-from chromadb.config import Settings
-from pathlib import Path
-from typing import Dict, List, Optional
 from collections import defaultdict
 from difflib import SequenceMatcher
+from pathlib import Path
+
+import chromadb
+import click
+from chromadb.config import Settings
 
 
 def is_real_definition(label: str, definition: str, min_length: int = 30) -> bool:
@@ -55,10 +55,7 @@ def is_real_definition(label: str, definition: str, min_length: int = 30) -> boo
 
     # Check similarity ratio (labels very similar to definitions are suspect)
     similarity = SequenceMatcher(None, label_clean, definition_clean).ratio()
-    if similarity > 0.85:
-        return False
-
-    return True
+    return not similarity > 0.85
 
 
 def extract_definition_from_document(document: str) -> tuple[str, str]:
@@ -81,7 +78,7 @@ def extract_definition_from_document(document: str) -> tuple[str, str]:
     return label, definition
 
 
-def load_sssom_mappings(sssom_path: Path) -> Dict[str, List[Dict]]:
+def load_sssom_mappings(sssom_path: Path) -> dict[str, list[dict]]:
     """
     Load SSSOM mappings grouped by METPO subject_id, sorted by similarity.
 
@@ -90,7 +87,7 @@ def load_sssom_mappings(sssom_path: Path) -> Dict[str, List[Dict]]:
     """
     mappings_by_subject = defaultdict(list)
 
-    with open(sssom_path, "r", encoding="utf-8") as f:
+    with open(sssom_path, encoding="utf-8") as f:
         lines = [line for line in f if not line.startswith("#")]
         reader = csv.DictReader(lines, delimiter="\t")
 
@@ -125,7 +122,7 @@ def get_definition_from_chromadb(
     term_iri: str,
     collection,
     ontology_id: str
-) -> Optional[str]:
+) -> str | None:
     """
     Query ChromaDB to get the definition for a specific term IRI.
 
@@ -149,7 +146,7 @@ def get_definition_from_chromadb(
 
         if results and results["documents"]:
             document = results["documents"][0]
-            label, definition = extract_definition_from_document(document)
+            _label, definition = extract_definition_from_document(document)
             return definition if definition else None
 
         return None
@@ -323,7 +320,7 @@ def main(
         avg_length = sum(r["definition_length"] for r in results) / len(results)
         avg_rank = sum(r["rank"] for r in results) / len(results)
 
-        click.echo(f"\nDefinition Quality:")
+        click.echo("\nDefinition Quality:")
         click.echo(f"  Average similarity: {avg_similarity:.3f}")
         click.echo(f"  Average length: {avg_length:.0f} chars")
         click.echo(f"  Average rank: {avg_rank:.1f} (how many mappings checked)")
@@ -333,7 +330,7 @@ def main(
         for r in results:
             by_ontology[r["source_ontology"]] += 1
 
-        click.echo(f"\nDefinitions by source ontology:")
+        click.echo("\nDefinitions by source ontology:")
         for ont, count in sorted(by_ontology.items(), key=lambda x: x[1], reverse=True):
             pct = count / len(results) * 100
             click.echo(f"  {ont:15s}: {count:4d} ({pct:5.1f}%)")

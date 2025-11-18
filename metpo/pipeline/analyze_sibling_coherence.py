@@ -1,14 +1,18 @@
-import pandas as pd
-import click
-from typing import Dict, List, Set, Tuple
 import os
-
-from oaklib import get_adapter
-from oaklib.datamodels.vocabulary import IS_A, PART_OF
 import re
-from dotenv import load_dotenv, find_dotenv
+
+import click
+import pandas as pd
+from dotenv import find_dotenv, load_dotenv
+from oaklib import get_adapter
 from tqdm import tqdm
-from metpo.cli_common import input_csv_option, output_option, distance_threshold_option, debug_option
+
+from metpo.cli_common import (
+    debug_option,
+    distance_threshold_option,
+    input_csv_option,
+    output_option,
+)
 
 
 class ExternalOntologyHelper:
@@ -92,7 +96,7 @@ class ExternalOntologyHelper:
                 except Exception as e:
                     if self.debug:
                         print(f"    ✗ Local SQLite DB failed: {type(e).__name__}")
-            
+
             # Strategy 2: Local OWL files
             if not adapter:
                 # Check for case-sensitive match first, then uppercase
@@ -137,7 +141,7 @@ class ExternalOntologyHelper:
 
         return self.adapter_cache.get(ontology_prefix)
 
-    def get_siblings(self, iri: str, ontology_prefix: str = None) -> Set[str]:
+    def get_siblings(self, iri: str, ontology_prefix: str | None = None) -> set[str]:
         """Get siblings of a term from its external ontology."""
         adapter = self._get_adapter(ontology_prefix, iri_for_fallback=iri)
 
@@ -206,7 +210,7 @@ class OaklibHierarchy:
             return iri.replace(self.METPO_BASE_IRI, "METPO:")
         return iri
 
-    def get_parents(self, curie: str) -> Set[str]:
+    def get_parents(self, curie: str) -> set[str]:
         """Get direct parents of a term."""
         iri = self._curie_to_iri(curie)
         parent_iris = list(self.adapter.hierarchical_parents(iri))
@@ -215,7 +219,7 @@ class OaklibHierarchy:
             print(f"  Debug: Parents for {curie}: {parents}")
         return parents
 
-    def get_children(self, curie: str) -> Set[str]:
+    def get_children(self, curie: str) -> set[str]:
         """Get direct children of a term."""
         iri = self._curie_to_iri(curie)
         # incoming_relationships returns (predicate, subject) tuples
@@ -227,7 +231,7 @@ class OaklibHierarchy:
             print(f"  Debug: Children for {curie}: {children}")
         return children
 
-    def get_siblings(self, curie: str) -> Set[str]:
+    def get_siblings(self, curie: str) -> set[str]:
         """Get siblings of a term (terms sharing the same parent)."""
         siblings = set()
         parents = self.get_parents(curie)
@@ -305,7 +309,7 @@ def main(input_file: str, metpo_owl: str, distance_threshold: float, debug: bool
     metpo_match_lookup = df.groupby("metpo_id")["match_iri"].apply(set).to_dict()
 
     coherence_scores = []
-    for index, row in tqdm(best_matches_df.iterrows(), total=len(best_matches_df), desc="Analyzing Sibling Coherence"):
+    for _index, row in tqdm(best_matches_df.iterrows(), total=len(best_matches_df), desc="Analyzing Sibling Coherence"):
         metpo_id = row["metpo_id"]
         metpo_label = row["metpo_label"]
         match_iri = row["match_iri"]
@@ -342,7 +346,7 @@ def main(input_file: str, metpo_owl: str, distance_threshold: float, debug: bool
                     coherent_siblings += 1
                     if debug:
                         matching_iris = sibling_matches & external_siblings
-                        print(f"    {metpo_sibling_id} matches external sibling: {list(matching_iris)[0]}")
+                        print(f"    {metpo_sibling_id} matches external sibling: {next(iter(matching_iris))}")
 
         # Calculate coherence score
         if metpo_siblings:
@@ -354,7 +358,7 @@ def main(input_file: str, metpo_owl: str, distance_threshold: float, debug: bool
             if coherence_score is not None:
                 print(f"  Coherence: {coherent_siblings}/{len(metpo_siblings)} = {coherence_score:.3f}")
             else:
-                print(f"  Coherence: N/A (no siblings to compare)")
+                print("  Coherence: N/A (no siblings to compare)")
 
         coherence_scores.append({
             "metpo_id": metpo_id,
@@ -389,25 +393,25 @@ def main(input_file: str, metpo_owl: str, distance_threshold: float, debug: bool
     print(f"Terms with METPO siblings: {terms_with_siblings} ({terms_with_siblings/total_terms*100:.1f}%)")
     print(f"Terms with external siblings retrieved: {terms_with_external_siblings} ({terms_with_external_siblings/total_terms*100:.1f}%)")
     print(f"Terms with coherence scores: {len(coherence_values)}")
-    print(f"\nCoherence Statistics:")
+    print("\nCoherence Statistics:")
     print(f"  Mean coherence: {mean_coherence:.3f}")
     print(f"  Median coherence: {median_coherence:.3f}")
     print(f"  High coherence (≥0.5): {high_coherence_count}/{len(coherence_values)} ({high_coherence_count/len(coherence_values)*100 if len(coherence_values) > 0 else 0:.1f}%)")
 
     # Show top coherent matches
-    print(f"\n=== Top 10 Most Coherent Matches ===")
+    print("\n=== Top 10 Most Coherent Matches ===")
     top_coherent = summary_df.dropna(subset=["coherence_score"]).nlargest(10, "coherence_score")
-    for idx, row in top_coherent.iterrows():
+    for _idx, row in top_coherent.iterrows():
         print(f"{row['metpo_label']} ({row['metpo_id']})")
         print(f"  → {row['match_ontology']}: {row['match_iri']}")
         print(f"  Coherence: {row['coherence_score']:.3f} ({row['coherent_sibling_count']}/{row['metpo_sibling_count']} siblings align)")
         print()
 
     # Show low coherence matches for review
-    print(f"\n=== Terms with Low Coherence (<0.3) ===")
+    print("\n=== Terms with Low Coherence (<0.3) ===")
     low_coherent = summary_df[summary_df["coherence_score"] < 0.3].dropna(subset=["coherence_score"])
     if len(low_coherent) > 0:
-        for idx, row in low_coherent.head(10).iterrows():
+        for _idx, row in low_coherent.head(10).iterrows():
             print(f"{row['metpo_label']} ({row['metpo_id']})")
             print(f"  → {row['match_ontology']}: {row['match_iri']}")
             print(f"  Coherence: {row['coherence_score']:.3f} ({row['coherent_sibling_count']}/{row['metpo_sibling_count']} siblings align)")

@@ -2,9 +2,9 @@
 """
 Visualize cosine distance and similarity score distributions from SSSOM file.
 """
-import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
 
 # Read SSSOM file (skip comment lines starting with #)
 df = pd.read_csv("/tmp/metpo_true_cosine.sssom.tsv", sep="\t", comment="#")

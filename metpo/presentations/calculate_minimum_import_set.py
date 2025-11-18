@@ -7,8 +7,8 @@ PRIMARY SOURCES:
 """
 
 import csv
-from pathlib import Path
 from collections import Counter, defaultdict
+from pathlib import Path
 
 SSSOM_FILE = Path("/home/mark/gitrepos/metpo/data/mappings/metpo_mappings_combined_relaxed.sssom.tsv")
 
@@ -62,7 +62,7 @@ def analyze_by_quality_threshold(sssom_path):
         print(f"=== {quality_label} Matches (similarity ≥ {sim_threshold}, {distance_label}) ===")
         print(f"Total matches: {total_at_threshold:,}")
         print(f"Unique ontologies with matches: {len(ont_counts)}")
-        print(f"\nOntologies ranked by match count:")
+        print("\nOntologies ranked by match count:")
 
         for i, (ont, count) in enumerate(ont_counts.most_common(), 1):
             pct = (count / total_at_threshold * 100) if total_at_threshold > 0 else 0
@@ -70,7 +70,7 @@ def analyze_by_quality_threshold(sssom_path):
             print(f"  {i:2d}. {ont:<15} {count:4d} matches ({pct:5.1f}%), {terms:3d} METPO terms")
 
         # Calculate cumulative coverage
-        print(f"\nCumulative coverage analysis:")
+        print("\nCumulative coverage analysis:")
         cumulative = 0
         for i, (ont, count) in enumerate(ont_counts.most_common(), 1):
             cumulative += count

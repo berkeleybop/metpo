@@ -7,6 +7,7 @@ No I/O, no subprocess - just pure calculations.
 
 import json
 import sys
+
 import click
 
 

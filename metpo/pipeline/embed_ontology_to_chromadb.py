@@ -10,18 +10,18 @@ Follows the methodology from https://cthoyt.com/2025/08/04/ontology-text-embeddi
 - Stores in ChromaDB with metadata (ontologyId, entityType, iri)
 """
 
-import os
-from typing import List, Dict
 import csv
-import click
-from tqdm import tqdm
-from dotenv import load_dotenv
-import openai
+import os
+
 import chromadb
+import click
+import openai
 from chromadb.config import Settings
+from dotenv import load_dotenv
+from tqdm import tqdm
 
 
-def parse_robot_output(tsv_path: str, ontology_id: str) -> List[Dict]:
+def parse_robot_output(tsv_path: str, ontology_id: str) -> list[dict]:
     """
     Parse ROBOT query TSV output into term dictionaries.
 
@@ -29,7 +29,7 @@ def parse_robot_output(tsv_path: str, ontology_id: str) -> List[Dict]:
     """
     terms = []
 
-    with open(tsv_path, "r", encoding="utf-8") as f:
+    with open(tsv_path, encoding="utf-8") as f:
         reader = csv.DictReader(f, delimiter="\t")
 
         for row in reader:
@@ -77,7 +77,7 @@ def parse_robot_output(tsv_path: str, ontology_id: str) -> List[Dict]:
     return terms
 
 
-def generate_embedding(text: str, api_key: str, model: str = "text-embedding-3-small") -> List[float]:
+def generate_embedding(text: str, api_key: str, model: str = "text-embedding-3-small") -> list[float]:
     """Generate OpenAI embedding for text."""
     client = openai.OpenAI(api_key=api_key)
     response = client.embeddings.create(
@@ -88,7 +88,7 @@ def generate_embedding(text: str, api_key: str, model: str = "text-embedding-3-s
 
 
 def insert_into_chromadb(
-    terms: List[Dict],
+    terms: list[dict],
     chroma_path: str,
     collection_name: str,
     api_key: str,
@@ -187,7 +187,7 @@ def insert_into_chromadb(
                 errors += len(batch_ids)
                 tqdm.write(f"Error adding batch to ChromaDB: {e}")
 
-    print(f"\n✓ Complete!")
+    print("\n✓ Complete!")
     print(f"  Added: {added}")
     print(f"  Skipped (existing): {skipped}")
     print(f"  Errors: {errors}")
@@ -279,7 +279,7 @@ def main(tsv_file: tuple[str], chroma_path: str, collection_name: str,
         return
 
     # Show sample from the first term in the aggregated list
-    print(f"\nSample term:")
+    print("\nSample term:")
     sample = all_terms[0]
     print(f"  IRI: {sample['iri']}")
     print(f"  Label: {sample['label']}")
@@ -290,7 +290,7 @@ def main(tsv_file: tuple[str], chroma_path: str, collection_name: str,
 
     if dry_run:
         print("\n✓ Dry run complete (no embeddings generated)")
-        print(f"\nFirst 5 terms (from all aggregated):")
+        print("\nFirst 5 terms (from all aggregated):")
         for term in all_terms[:5]:
             print(f"\n{term['label']} (Ontology: {term['ontologyId']})")
             print(f"  IRI: {term['iri']}")
@@ -300,7 +300,7 @@ def main(tsv_file: tuple[str], chroma_path: str, collection_name: str,
             print(f"  Doc: {doc_preview}")
         return
 
-    print(f"\nGenerating embeddings and inserting into ChromaDB...")
+    print("\nGenerating embeddings and inserting into ChromaDB...")
     print(f"  This will make {total_api_calls} OpenAI API calls")
     print(f"  Estimated cost: ~${total_api_calls * 0.00002:.4f}")
 

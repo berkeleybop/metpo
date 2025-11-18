@@ -8,11 +8,10 @@ Usage:
 """
 
 import json
-import os
 from datetime import datetime
 from pathlib import Path
-import click
 
+import click
 
 MANIFEST_PATH = Path(".ontology_manifest.json")
 

@@ -15,9 +15,10 @@ Output:
     - JSON file: metadata/bactotraits_field_mappings.json
 """
 
-import click
 import json
 from pathlib import Path
+
+import click
 from pymongo import MongoClient
 
 
@@ -84,7 +85,7 @@ def forward_fill_units(units_row, category_row):
     last_unit = ""
     last_category = ""
 
-    for unit, category in zip(units_row, category_row):
+    for unit, category in zip(units_row, category_row, strict=False):
         # If category changed, reset the unit carry-forward
         if category != last_category:
             last_unit = ""
@@ -101,7 +102,7 @@ def forward_fill_units(units_row, category_row):
 
 def read_provider_headers(provider_file):
     """Read the 3-row header structure from provider's CSV."""
-    with open(provider_file, "r", encoding="ISO-8859-1") as f:
+    with open(provider_file, encoding="ISO-8859-1") as f:
         # Read first 3 lines
         row1 = f.readline().strip().split(";")  # Category row
         row2 = f.readline().strip().split(";")  # Units row
@@ -125,7 +126,7 @@ def read_kg_microbe_header(kg_microbe_file):
         print(f"Warning: kg-microbe file not found at {kg_microbe_file}")
         return None
 
-    with open(kg_microbe_file, "r", encoding="utf-8") as f:
+    with open(kg_microbe_file, encoding="utf-8") as f:
         header = f.readline().strip().split("\t")
 
     return header
@@ -140,7 +141,7 @@ def get_mongodb_fields_from_kg_microbe(kg_microbe_file):
         print(f"Warning: kg-microbe file not found at {kg_microbe_file}")
         return None
 
-    with open(kg_microbe_file, "r", encoding="utf-8") as f:
+    with open(kg_microbe_file, encoding="utf-8") as f:
         header = f.readline().strip().split("\t")
 
     # Apply same sanitization as import script
@@ -371,9 +372,9 @@ def main(provider_file, kg_microbe_file, output_json, db_name, collection_name, 
     print("\n" + "=" * 80)
     print("Done!")
     print("=" * 80)
-    print(f"\nQuery the collection with:")
+    print("\nQuery the collection with:")
     print(f"  mongosh {db_name} --eval 'db.{collection_name}.find().pretty()'")
-    print(f"\nOr view the JSON file:")
+    print("\nOr view the JSON file:")
     print(f"  cat {output_json}")
     print()
 

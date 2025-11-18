@@ -10,15 +10,12 @@ Checks for:
 - Structural issues (missing IDs, labels, malformed IDs)
 """
 
-import sys
 import csv
-from collections import defaultdict
-from typing import List, Dict
-from pathlib import Path
+import sys
 import urllib.request
+from collections import defaultdict
 
 import click
-
 
 GOOGLE_SHEET_ID = "1_Lr-9_5QHi8QLvRyTZFSciUhzGKD4DbUObyTpJ16_RU"
 SHEET_GIDS = {
@@ -54,7 +51,7 @@ class SheetData:
 
     def load(self):
         """Load TSV file and extract key information."""
-        with open(self.filename, "r", encoding="utf-8") as f:
+        with open(self.filename, encoding="utf-8") as f:
             reader = csv.reader(f, delimiter="\t")
             for row_num, row in enumerate(reader, start=1):
                 self.rows.append(row)
@@ -107,7 +104,7 @@ def download_sheet(gid: str, output_file: str):
     click.echo(f"  ✓ Downloaded to {output_file}")
 
 
-def check_id_clashes(sheets: List[SheetData]) -> List[QCIssue]:
+def check_id_clashes(sheets: list[SheetData]) -> list[QCIssue]:
     """Check for duplicate IDs within and across sheets."""
     issues = []
     all_ids = defaultdict(list)  # id -> [(sheet_name, row_num, label, type, is_stub)]
@@ -135,7 +132,7 @@ def check_id_clashes(sheets: List[SheetData]) -> List[QCIssue]:
 
             if len(by_sheet) == 1:
                 # Within same sheet
-                sheet_name = list(by_sheet.keys())[0]
+                sheet_name = next(iter(by_sheet.keys()))
                 locations = ", ".join([f"row {r}" for r, _, _, _ in by_sheet[sheet_name]])
                 issues.append(QCIssue(
                     "ERROR",
@@ -164,7 +161,7 @@ def check_id_clashes(sheets: List[SheetData]) -> List[QCIssue]:
     return issues
 
 
-def check_label_clashes(sheets: List[SheetData]) -> List[QCIssue]:
+def check_label_clashes(sheets: list[SheetData]) -> list[QCIssue]:
     """Check for duplicate labels within and across sheets."""
     issues = []
     all_labels = defaultdict(list)  # label -> [(sheet_name, row_num, id, type, is_stub)]
@@ -187,7 +184,7 @@ def check_label_clashes(sheets: List[SheetData]) -> List[QCIssue]:
                 continue
 
             # Check if same type
-            types = set(t for _, _, _, t, _ in occurrences)
+            types = {t for _, _, _, t, _ in occurrences}
 
             # Group by sheet
             by_sheet = defaultdict(list)
@@ -198,7 +195,7 @@ def check_label_clashes(sheets: List[SheetData]) -> List[QCIssue]:
 
             if len(by_sheet) == 1:
                 # Within same sheet
-                sheet_name = list(by_sheet.keys())[0]
+                sheet_name = next(iter(by_sheet.keys()))
                 ids = [id_val for _, id_val, _, _ in by_sheet[sheet_name]]
                 locations = ", ".join([f"row {r} ({id_val})" for r, id_val, _, _ in by_sheet[sheet_name]])
 
@@ -229,7 +226,7 @@ def check_label_clashes(sheets: List[SheetData]) -> List[QCIssue]:
     return issues
 
 
-def check_undefined_parents(sheets: List[SheetData]) -> List[QCIssue]:
+def check_undefined_parents(sheets: list[SheetData]) -> list[QCIssue]:
     """Check for parent references that are not defined."""
     issues = []
 
@@ -243,7 +240,7 @@ def check_undefined_parents(sheets: List[SheetData]) -> List[QCIssue]:
 
     # Check each parent reference
     for sheet in sheets:
-        for row_num, id_val, parent_ref, row_type in sheet.parents:
+        for row_num, id_val, parent_ref, _row_type in sheet.parents:
             # Skip empty parents
             if not parent_ref:
                 continue
@@ -278,7 +275,7 @@ def check_undefined_parents(sheets: List[SheetData]) -> List[QCIssue]:
                 issues.append(QCIssue(
                     "ERROR",
                     "SELF_REFERENTIAL_PARENT_ID",
-                    f"Parent references itself via ID",
+                    "Parent references itself via ID",
                     f"{sheet.filename}: row {row_num}, ID {id_val}"
                 ))
             elif parent_ref == current_label:
@@ -292,7 +289,7 @@ def check_undefined_parents(sheets: List[SheetData]) -> List[QCIssue]:
     return issues
 
 
-def check_structural_issues(sheets: List[SheetData]) -> List[QCIssue]:
+def check_structural_issues(sheets: list[SheetData]) -> list[QCIssue]:
     """Check for other structural issues."""
     issues = []
 

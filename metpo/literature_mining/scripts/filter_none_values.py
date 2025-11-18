@@ -5,9 +5,10 @@ Filter 'none' placeholder values from OntoGPT extraction output.
 Removes AUTO:none and incorrectly grounded 'none' entities (like NCBITaxon:32644)
 while preserving legitimate AUTO: CURIEs for real ungrounded entities.
 """
-import yaml
 import sys
 from pathlib import Path
+
+import yaml
 
 
 def is_none_value(value):

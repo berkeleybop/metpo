@@ -7,8 +7,9 @@ Parses /home/mark/gitrepos/metpo/data/mappings/metpo_mappings_*.sssom.tsv direct
 """
 
 import csv
-from pathlib import Path
 from collections import Counter
+from pathlib import Path
+
 
 def analyze_sssom(sssom_file):
     """Parse SSSOM file and count mappings by target ontology."""
@@ -56,11 +57,11 @@ def main():
         total, targets, matches = analyze_sssom(filepath)
 
         print(f"Total mappings: {total}")
-        print(f"\nTarget ontologies (top 10):")
+        print("\nTarget ontologies (top 10):")
         for onto, count in targets.most_common(10):
             print(f"  {onto:15s} {count:4d} mappings")
 
-        print(f"\nMatch types:")
+        print("\nMatch types:")
         for match_type, count in matches.most_common():
             short_type = match_type.split("/")[-1] if "/" in match_type else match_type
             print(f"  {short_type:30s} {count:4d}")

@@ -15,9 +15,8 @@ Example:
         pass
 """
 
-import click
-from pathlib import Path
 
+import click
 
 # =============================================================================
 # File I/O Options

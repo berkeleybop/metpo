@@ -9,10 +9,7 @@ This script identifies:
 """
 
 import csv
-import sys
 from pathlib import Path
-from typing import Dict, List, Set, Tuple
-from collections import defaultdict
 
 
 def normalize_id(id_str: str) -> str:
@@ -35,12 +32,12 @@ def normalize_id(id_str: str) -> str:
     return id_str
 
 
-def load_minimal_classes(tsv_path: Path) -> Tuple[Set[str], Dict[str, str]]:
+def load_minimal_classes(tsv_path: Path) -> tuple[set[str], dict[str, str]]:
     """Load canonical class IDs and labels from minimal_classes.tsv."""
     canonical_ids = set()
     id_to_label = {}
 
-    with open(tsv_path, "r", encoding="utf-8") as f:
+    with open(tsv_path, encoding="utf-8") as f:
         reader = csv.DictReader(f, delimiter="\t")
         for row in reader:
             class_id = row.get("ID", "").strip()
@@ -54,7 +51,7 @@ def load_minimal_classes(tsv_path: Path) -> Tuple[Set[str], Dict[str, str]]:
     return canonical_ids, id_to_label
 
 
-def analyze_sheet(sheet_path: Path, sheet_name: str, canonical_ids: Set[str], id_to_label: Dict[str, str]) -> Dict:
+def analyze_sheet(sheet_path: Path, sheet_name: str, canonical_ids: set[str], id_to_label: dict[str, str]) -> dict:
     """Analyze a single sheet for overlaps and important metadata."""
 
     results = {
@@ -67,7 +64,7 @@ def analyze_sheet(sheet_path: Path, sheet_name: str, canonical_ids: Set[str], id
         "metadata_at_risk": []
     }
 
-    with open(sheet_path, "r", encoding="utf-8") as f:
+    with open(sheet_path, encoding="utf-8") as f:
         reader = csv.DictReader(f, delimiter="\t")
 
         for row in reader:
@@ -112,7 +109,7 @@ def analyze_sheet(sheet_path: Path, sheet_name: str, canonical_ids: Set[str], id
     return results
 
 
-def print_summary(results: Dict):
+def print_summary(results: dict):
     """Print a summary of the analysis."""
     print(f"\n{'='*80}")
     print(f"Sheet: {results['sheet_name']}")
@@ -125,10 +122,10 @@ def print_summary(results: Dict):
     print(f"  METADATA AT RISK (in canonical, has ranges): {len(results['metadata_at_risk'])}")
 
 
-def print_detailed_ranges(results: Dict):
+def print_detailed_ranges(results: dict):
     """Print details of classes with range metadata."""
     if results["metadata_at_risk"]:
-        print(f"\n⚠️  Classes with range metadata that would be LOST if deleted:")
+        print("\n⚠️  Classes with range metadata that would be LOST if deleted:")
         print(f"{'ID':<20} {'Label':<30} {'Units':<10} {'Min':<8} {'Max':<8}")
         print("-" * 80)
         for row in results["metadata_at_risk"]:

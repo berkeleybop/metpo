@@ -4,11 +4,13 @@ Compare two extraction outputs to evaluate template improvements.
 Usage: python compare_extractions.py <v1.yaml> <v2.yaml>
 """
 
+import sys
+from collections import defaultdict
+from pathlib import Path
+
 import click
 import yaml
-import sys
-from pathlib import Path
-from collections import defaultdict
+
 
 def analyze_extraction(yaml_file: Path) -> dict:
     """Analyze an extraction file and return statistics."""
@@ -180,7 +182,7 @@ def print_comparison(v1_stats: dict, v2_stats: dict):
     elif v2_rels < v1_rels:
         click.echo(f"❌ V2 extracted {v1_rels - v2_rels} FEWER relationships ({100*(v1_rels-v2_rels)/v1_rels:.1f}%)")
     else:
-        click.echo(f"⚠️  V2 extracted SAME number of relationships")
+        click.echo("⚠️  V2 extracted SAME number of relationships")
 
     if v2_grounded > v1_grounded:
         v2_better_count += 1

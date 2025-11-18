@@ -8,14 +8,14 @@ Repeatable script to analyze METPO coverage and gaps by data source type:
 For ICBO 2025 - provides evidence of METPO's strengths and gaps.
 """
 
-import click
 import csv
 import re
 from pathlib import Path
-from collections import defaultdict, Counter
-from typing import Dict, List
 
-def load_metpo_database_synonyms(template_path: Path) -> Dict[str, List[str]]:
+import click
+
+
+def load_metpo_database_synonyms(template_path: Path) -> dict[str, list[str]]:
     """
     Load METPO attributed synonyms showing alignment with structured DBs.
 
@@ -63,13 +63,13 @@ def load_metpo_database_synonyms(template_path: Path) -> Dict[str, List[str]]:
 
     return synonyms
 
-def analyze_structured_db_coverage(synonyms: Dict) -> Dict:
+def analyze_structured_db_coverage(synonyms: dict) -> dict:
     """Analyze METPO coverage of structured database vocabularies."""
     coverage = {}
 
     for db, syn_list in synonyms.items():
-        unique_classes = set(metpo_id for metpo_id, _, _ in syn_list)
-        unique_terms = set(syn for _, _, syn in syn_list)
+        unique_classes = {metpo_id for metpo_id, _, _ in syn_list}
+        unique_terms = {syn for _, _, syn in syn_list}
 
         coverage[db] = {
             "metpo_classes": len(unique_classes),
@@ -79,7 +79,7 @@ def analyze_structured_db_coverage(synonyms: Dict) -> Dict:
 
     return coverage
 
-def analyze_extraction_grounding(yaml_path: Path) -> Dict:
+def analyze_extraction_grounding(yaml_path: Path) -> dict:
     """
     Analyze grounding in OntoGPT extraction YAML.
 
@@ -115,7 +115,7 @@ def analyze_extraction_grounding(yaml_path: Path) -> Dict:
         "total_extractions": content.count("input_text:")
     }
 
-def compare_source_types(results: Dict) -> str:
+def compare_source_types(results: dict) -> str:
     """Generate comparison report across source types."""
     lines = []
     lines.append("=" * 80)
@@ -181,12 +181,12 @@ def compare_source_types(results: Dict) -> str:
 
     if "ijsem_abstracts" in results:
         lines.append(f"IJSEM abstracts grounding: {results['ijsem_abstracts']['grounding_rate']:.1f}%")
-        lines.append(f"  → Structured format helps text mining")
+        lines.append("  → Structured format helps text mining")
         lines.append("")
 
     if "full_papers" in results:
         lines.append(f"Full papers grounding: {results['full_papers']['grounding_rate']:.1f}%")
-        lines.append(f"  → Unstructured text + varied terminology = more AUTO: terms")
+        lines.append("  → Unstructured text + varied terminology = more AUTO: terms")
         lines.append("")
 
     lines.append("KEY FINDING:")
@@ -215,7 +215,7 @@ def main():
     click.echo("Loading METPO attributed synonyms...")
     synonyms = load_metpo_database_synonyms(template_path)
 
-    click.echo(f"Found attributed synonyms:")
+    click.echo("Found attributed synonyms:")
     for db, syn_list in synonyms.items():
         click.echo(f"  {db}: {len(syn_list)} mappings")
 
@@ -228,7 +228,7 @@ def main():
         click.echo(f"\nAnalyzing IJSEM extraction: {ijsem_extraction.name}")
         results["ijsem_abstracts"] = analyze_extraction_grounding(ijsem_extraction)
     else:
-        click.echo(f"\nIJSEM extraction not found (run Experiment 1 first)")
+        click.echo("\nIJSEM extraction not found (run Experiment 1 first)")
 
     # 3. Analyze full paper extractions (production corpus)
     outputs_dir = Path(__file__).parent / "outputs"

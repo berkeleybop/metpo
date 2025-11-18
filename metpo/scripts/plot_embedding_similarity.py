@@ -8,19 +8,19 @@ This helps assess the overall quality of SSSOM mappings by showing:
 3. Comparison across source ontologies
 """
 import csv
+from collections import defaultdict
+from pathlib import Path
+
 import click
 import matplotlib.pyplot as plt
 import numpy as np
-from pathlib import Path
-from typing import Dict, List, Tuple
-from collections import defaultdict
 
 
-def read_best_matches(sssom_path: Path) -> Dict[str, Dict]:
+def read_best_matches(sssom_path: Path) -> dict[str, dict]:
     """Read SSSOM mappings and get best match per METPO term."""
     best_matches = {}
 
-    with open(sssom_path, "r", encoding="utf-8") as f:
+    with open(sssom_path, encoding="utf-8") as f:
         lines = [line for line in f if not line.startswith("#")]
         reader = csv.DictReader(lines, delimiter="\t")
 
@@ -88,7 +88,7 @@ def main(mappings: Path, output: Path, stats_output: Path):
 
     # Extract data for plotting
     similarities = [m["similarity"] for m in best_matches.values()]
-    confidences = [m["confidence"] for m in best_matches.values()]
+    [m["confidence"] for m in best_matches.values()]
 
     # Group by match type
     by_match_type = defaultdict(list)
@@ -119,7 +119,7 @@ def main(mappings: Path, output: Path, stats_output: Path):
 
     bp = ax2.boxplot(data_by_type, labels=match_types, patch_artist=True)
     colors = ["#2ecc71", "#3498db", "#f39c12", "#95a5a6"]
-    for patch, color in zip(bp["boxes"], colors):
+    for patch, color in zip(bp["boxes"], colors, strict=False):
         patch.set_facecolor(color)
 
     ax2.set_ylabel("Similarity Score", fontsize=12)
@@ -134,12 +134,12 @@ def main(mappings: Path, output: Path, stats_output: Path):
     ax3.plot(sorted_sims, cumulative, linewidth=2, color="#3498db")
 
     # Add reference lines
-    for threshold, label in [(0.5, "50%"), (0.7, "70%"), (0.9, "90%")]:
+    for threshold, _label in [(0.5, "50%"), (0.7, "70%"), (0.9, "90%")]:
         ax3.axvline(threshold, color="red", linestyle=":", alpha=0.5)
         count = sum(1 for s in similarities if s >= threshold)
         pct = count / len(similarities) * 100
         ax3.text(threshold, 50, f"{pct:.1f}%\n≥{threshold}",
-                ha="center", fontsize=9, bbox=dict(boxstyle="round", facecolor="wheat", alpha=0.5))
+                ha="center", fontsize=9, bbox={"boxstyle": "round", "facecolor": "wheat", "alpha": 0.5})
 
     ax3.set_xlabel("Similarity Score", fontsize=12)
     ax3.set_ylabel("Cumulative Percentage (%)", fontsize=12)
@@ -169,7 +169,7 @@ def main(mappings: Path, output: Path, stats_output: Path):
     # Color bars by average similarity
     norm = plt.Normalize(min(ont_avg_sims), max(ont_avg_sims))
     sm = plt.cm.ScalarMappable(cmap="RdYlGn", norm=norm)
-    for bar, avg_sim in zip(bars, ont_avg_sims):
+    for bar, avg_sim in zip(bars, ont_avg_sims, strict=False):
         bar.set_color(sm.to_rgba(avg_sim))
 
     ax4.set_ylabel("Number of Best Matches", fontsize=12)
@@ -258,13 +258,13 @@ def main(mappings: Path, output: Path, stats_output: Path):
     click.echo(f"Mean similarity: {np.mean(similarities):.4f}")
     click.echo(f"Median similarity: {np.median(similarities):.4f}")
     click.echo(f"Std deviation: {np.std(similarities):.4f}")
-    click.echo(f"\nThreshold breakdown:")
+    click.echo("\nThreshold breakdown:")
     for threshold in [0.9, 0.8, 0.7, 0.6, 0.5]:
         count = sum(1 for s in similarities if s >= threshold)
         pct = count / len(similarities) * 100
         click.echo(f"  ≥ {threshold}: {count:4d} terms ({pct:5.1f}%)")
 
-    click.echo(f"\nMatch type breakdown:")
+    click.echo("\nMatch type breakdown:")
     for match_type in ["exactMatch", "closeMatch", "relatedMatch", "other"]:
         count = len(by_match_type.get(match_type, []))
         if count > 0:

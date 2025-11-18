@@ -12,10 +12,10 @@ Usage:
     uv run python extract_definitions_from_mappings.py
 """
 
-import pandas as pd
 import re
 from pathlib import Path
-from typing import Tuple, Optional
+
+import pandas as pd
 
 # Configuration
 SSSOM_FILE = "../../data/mappings/metpo_mappings_combined_relaxed.sssom.tsv"
@@ -36,7 +36,7 @@ def extract_distance_from_comment(comment: str) -> float:
     return 1.0  # Max distance if not found
 
 
-def parse_object_label(label: str) -> Tuple[str, Optional[str]]:
+def parse_object_label(label: str) -> tuple[str, str | None]:
     """
     Parse object_label field which may contain label; definition format.
 
@@ -88,7 +88,7 @@ def load_metpo_sheet() -> pd.DataFrame:
 def load_sssom_mappings() -> pd.DataFrame:
     """Load SSSOM mapping file, skipping header comments."""
     # Find where actual TSV data starts (after comment lines)
-    with open(SSSOM_FILE, "r") as f:
+    with open(SSSOM_FILE) as f:
         lines = f.readlines()
 
     data_start = 0
@@ -262,13 +262,13 @@ def main():
     terms_without_defs = len(metpo_df) - terms_with_defs
     terms_with_def_source = metpo_df["definition_source"].notna().sum()
 
-    print(f"\n=== Current Status ===")
+    print("\n=== Current Status ===")
     print(f"Terms with definitions: {terms_with_defs} ({terms_with_defs/len(metpo_df)*100:.1f}%)")
     print(f"Terms without definitions: {terms_without_defs} ({terms_without_defs/len(metpo_df)*100:.1f}%)")
     print(f"Terms with definition sources: {terms_with_def_source} ({terms_with_def_source/len(metpo_df)*100:.1f}%)")
 
     # Propose definitions
-    print(f"\n=== Proposing Definitions ===")
+    print("\n=== Proposing Definitions ===")
     proposals = propose_definitions(metpo_df, mappings_df)
 
     # Save full proposal report
@@ -277,7 +277,7 @@ def main():
     print(f"Saved full proposal report to: {output_file}")
 
     # Summary by confidence level
-    print(f"\n=== Proposal Summary ===")
+    print("\n=== Proposal Summary ===")
     for level in ["high", "medium", "low", "none"]:
         count = len(proposals[proposals["confidence_level"] == level])
         print(f"{level.capitalize()} confidence: {count} terms")
@@ -296,12 +296,12 @@ def main():
         print(f"Saved to: {high_conf_file}")
 
         # Show sample
-        print(f"\nSample high-confidence proposals:")
+        print("\nSample high-confidence proposals:")
         print(high_conf[["metpo_id", "metpo_label", "best_match_distance",
                          "best_match_ontology", "proposed_definition"]].head(10).to_string())
 
     # Generate cross-references
-    print(f"\n=== Generating Cross-References ===")
+    print("\n=== Generating Cross-References ===")
     xrefs = generate_cross_references(mappings_df, distance_threshold=0.60)
     xref_file = OUTPUT_DIR / "metpo_cross_references.tsv"
     xrefs.to_csv(xref_file, sep="\t", index=False)
@@ -315,7 +315,7 @@ def main():
         (proposals["best_match_distance"].notna()) &
         (proposals["best_match_distance"] < 0.60)
     ]
-    print(f"\n=== Definition Sources Needed ===")
+    print("\n=== Definition Sources Needed ===")
     print(f"Terms with definitions but no source: {len(needs_def_source)}")
 
     if len(needs_def_source) > 0:
@@ -324,13 +324,13 @@ def main():
         print(f"Saved to: {def_source_file}")
 
     # Final summary
-    print(f"\n=== Action Items ===")
+    print("\n=== Action Items ===")
     print(f"1. Review {len(high_conf)} high-confidence definition proposals (distance < 0.35)")
     print(f"2. Manually review {len(proposals[proposals['confidence_level'] == 'medium'])} medium-confidence proposals (distance 0.35-0.60)")
     print(f"3. Add definition sources for {len(needs_def_source)} terms")
     print(f"4. Create {len(proposals[proposals['confidence_level'] == 'none'])} definitions from scratch (no good matches)")
 
-    print(f"\n=== Files Generated ===")
+    print("\n=== Files Generated ===")
     print(f"- {output_file}: Full proposal report")
     if len(high_conf) > 0:
         print(f"- {high_conf_file}: High-confidence proposals")

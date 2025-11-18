@@ -7,12 +7,12 @@ their abstracts from local PDF/MD files.
 """
 
 import re
-import click
 from pathlib import Path
-from typing import Optional, Dict, List
+
+import click
 
 
-def extract_abstract_from_markdown(md_path: Path) -> Optional[str]:
+def extract_abstract_from_markdown(md_path: Path) -> str | None:
     """
     Extract abstract from a markdown file.
 
@@ -26,7 +26,7 @@ def extract_abstract_from_markdown(md_path: Path) -> Optional[str]:
     Returns:
         Abstract text, or None if not found
     """
-    with open(md_path, "r", encoding="utf-8") as f:
+    with open(md_path, encoding="utf-8") as f:
         content = f.read()
 
     # Try to find abstract section
@@ -58,7 +58,7 @@ def extract_abstract_from_markdown(md_path: Path) -> Optional[str]:
     return None
 
 
-def extract_doi_from_filename(filename: str) -> Optional[str]:
+def extract_doi_from_filename(filename: str) -> str | None:
     """
     Extract DOI from filename.
 
@@ -113,7 +113,7 @@ def sanitize_doi_for_filename(doi: str) -> str:
     return result
 
 
-def extract_metadata_from_markdown(md_path: Path) -> Dict[str, str]:
+def extract_metadata_from_markdown(md_path: Path) -> dict[str, str]:
     """
     Extract metadata (title, authors, journal) from markdown if available.
 
@@ -199,11 +199,11 @@ def process_failed_papers():
         output_file = output_dir / f"doi_{safe_doi}-abstract.txt"
 
         with open(output_file, "w", encoding="utf-8") as f:
-            f.write(f"Title: [Extracted from local file]\n\n")
-            f.write(f"Authors: [See PDF for full details]\n\n")
-            f.write(f"Journal: [See PDF for full details]\n\n")
+            f.write("Title: [Extracted from local file]\n\n")
+            f.write("Authors: [See PDF for full details]\n\n")
+            f.write("Journal: [See PDF for full details]\n\n")
             f.write(f"DOI: {doi}\n")
-            f.write(f"Source: Local file extraction\n")
+            f.write("Source: Local file extraction\n")
             f.write(f"\nAbstract:\n{abstract}\n")
 
         print(f"  💾 Saved to: {output_file.name}")
@@ -243,7 +243,7 @@ def main(dry_run):
     results = process_failed_papers()
 
     if results["failed"]:
-        raise click.Abort()
+        raise click.Abort
 
 
 if __name__ == "__main__":
