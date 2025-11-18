@@ -30,35 +30,35 @@ def analyze_file(yaml_file):
             continue
 
         # Get input text size
-        input_text = doc.get('input_text', '')
+        input_text = doc.get("input_text", "")
         total_input_size += len(input_text)
 
         # Count METPO entities and check formats
-        if 'named_entities' in doc:
-            for entity in doc.get('named_entities', []):
-                entity_id = entity.get('id', '')
+        if "named_entities" in doc:
+            for entity in doc.get("named_entities", []):
+                entity_id = entity.get("id", "")
 
                 # Check METPO (URI format)
-                if isinstance(entity_id, str) and 'w3id.org/metpo/' in entity_id:
+                if isinstance(entity_id, str) and "w3id.org/metpo/" in entity_id:
                     metpo_count += 1
 
                 # Track other ontology formats
                 if isinstance(entity_id, str):
-                    if entity_id.startswith('CHEBI:'):
-                        other_ontology_formats['CHEBI'].add('CURIE')
-                    elif entity_id.startswith('NCBITaxon:'):
-                        other_ontology_formats['NCBITaxon'].add('CURIE')
-                    elif entity_id.startswith('GO:'):
-                        other_ontology_formats['GO'].add('CURIE')
-                    elif entity_id.startswith('RHEA:'):
-                        other_ontology_formats['RHEA'].add('CURIE')
-                    elif entity_id.startswith('AUTO:'):
-                        other_ontology_formats['AUTO'].add('CURIE-like')
-                    elif 'w3id.org' in entity_id or 'purl.obolibrary.org' in entity_id:
+                    if entity_id.startswith("CHEBI:"):
+                        other_ontology_formats["CHEBI"].add("CURIE")
+                    elif entity_id.startswith("NCBITaxon:"):
+                        other_ontology_formats["NCBITaxon"].add("CURIE")
+                    elif entity_id.startswith("GO:"):
+                        other_ontology_formats["GO"].add("CURIE")
+                    elif entity_id.startswith("RHEA:"):
+                        other_ontology_formats["RHEA"].add("CURIE")
+                    elif entity_id.startswith("AUTO:"):
+                        other_ontology_formats["AUTO"].add("CURIE-like")
+                    elif "w3id.org" in entity_id or "purl.obolibrary.org" in entity_id:
                         # Check if any other ontology uses URI format
-                        if 'metpo' not in entity_id:
-                            prefix = entity_id.split('/')[-2] if '/' in entity_id else 'unknown'
-                            other_ontology_formats[prefix].add('URI')
+                        if "metpo" not in entity_id:
+                            prefix = entity_id.split("/")[-2] if "/" in entity_id else "unknown"
+                            other_ontology_formats[prefix].add("URI")
 
     if total_input_size == 0:
         return None
@@ -67,38 +67,38 @@ def analyze_file(yaml_file):
     metpo_per_kb = metpo_count / input_kb if input_kb > 0 else 0
 
     return {
-        'file': yaml_file.name,
-        'input_bytes': total_input_size,
-        'input_kb': input_kb,
-        'metpo_count': metpo_count,
-        'metpo_per_kb': metpo_per_kb,
-        'other_formats': other_ontology_formats
+        "file": yaml_file.name,
+        "input_bytes": total_input_size,
+        "input_kb": input_kb,
+        "metpo_count": metpo_count,
+        "metpo_per_kb": metpo_per_kb,
+        "other_formats": other_ontology_formats
     }
 
 @click.command()
 def main():
     """Analyze all extraction files."""
-    outputs_dir = Path('literature_mining/outputs')
+    outputs_dir = Path("literature_mining/outputs")
 
     all_results = []
     all_formats = defaultdict(set)
 
     # Search all YAML files
-    yaml_files = list(outputs_dir.rglob('*.yaml'))
+    yaml_files = list(outputs_dir.rglob("*.yaml"))
 
     click.echo(f"Analyzing {len(yaml_files)} YAML files...")
     click.echo()
 
     for yaml_file in yaml_files:
         result = analyze_file(yaml_file)
-        if result and result['metpo_count'] > 0:
+        if result and result["metpo_count"] > 0:
             all_results.append(result)
             # Aggregate format info
-            for ontology, formats in result['other_formats'].items():
+            for ontology, formats in result["other_formats"].items():
                 all_formats[ontology].update(formats)
 
     # Sort by METPO count (descending)
-    all_results.sort(key=lambda x: x['metpo_count'], reverse=True)
+    all_results.sort(key=lambda x: x["metpo_count"], reverse=True)
 
     click.echo("=" * 100)
     click.echo("ONTOLOGY ID FORMAT ANALYSIS")
@@ -107,7 +107,7 @@ def main():
 
     click.echo("ID formats used by each ontology:")
     for ontology in sorted(all_formats.keys()):
-        formats = ', '.join(sorted(all_formats[ontology]))
+        formats = ", ".join(sorted(all_formats[ontology]))
         click.echo(f"  {ontology:20s} → {formats}")
 
     click.echo()
@@ -127,7 +127,7 @@ def main():
     click.echo()
 
     # Sort by efficiency (METPO per KB)
-    all_results.sort(key=lambda x: x['metpo_per_kb'], reverse=True)
+    all_results.sort(key=lambda x: x["metpo_per_kb"], reverse=True)
 
     click.echo("=" * 100)
     click.echo("FILES WITH HIGHEST METPO GROUNDING EFFICIENCY (per KB of input)")
@@ -146,8 +146,8 @@ def main():
     click.echo()
 
     if all_results:
-        total_metpo = sum(r['metpo_count'] for r in all_results)
-        total_kb = sum(r['input_kb'] for r in all_results)
+        total_metpo = sum(r["metpo_count"] for r in all_results)
+        total_kb = sum(r["input_kb"] for r in all_results)
         avg_efficiency = total_metpo / total_kb if total_kb > 0 else 0
 
         click.echo(f"Files with METPO grounding: {len(all_results)}")
@@ -158,7 +158,7 @@ def main():
 
         # Best file
         best_count = all_results[0] if all_results else None
-        all_results.sort(key=lambda x: x['metpo_per_kb'], reverse=True)
+        all_results.sort(key=lambda x: x["metpo_per_kb"], reverse=True)
         best_efficiency = all_results[0] if all_results else None
 
         if best_count:
@@ -167,16 +167,16 @@ def main():
             click.echo(f"Best efficiency: {best_efficiency['file']} ({best_efficiency['metpo_per_kb']:.3f} per KB)")
 
     # Save results
-    output_file = Path('literature_mining/METPO_GROUNDING_EFFICIENCY.tsv')
-    with open(output_file, 'w') as f:
+    output_file = Path("literature_mining/METPO_GROUNDING_EFFICIENCY.tsv")
+    with open(output_file, "w") as f:
         f.write("File\tMETPO_Count\tInput_Bytes\tInput_KB\tMETPO_per_KB\n")
         # Re-sort by count for output
-        all_results.sort(key=lambda x: x['metpo_count'], reverse=True)
+        all_results.sort(key=lambda x: x["metpo_count"], reverse=True)
         for result in all_results:
             f.write(f"{result['file']}\t{result['metpo_count']}\t{result['input_bytes']}\t{result['input_kb']:.2f}\t{result['metpo_per_kb']:.4f}\n")
 
     click.echo()
     click.echo(f"Detailed results saved to: {output_file}")
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

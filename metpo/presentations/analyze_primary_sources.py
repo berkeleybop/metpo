@@ -64,30 +64,30 @@ def analyze_sssom(sssom_path):
     total_mappings = 0
 
     with open(sssom_path) as f:
-        reader = csv.DictReader(f, delimiter='\t')
+        reader = csv.DictReader(f, delimiter="\t")
         for row in reader:
             total_mappings += 1
 
             # Extract prefix from object_id
-            obj_id = row.get('object_id', '')
-            if '/obo/' in obj_id:
+            obj_id = row.get("object_id", "")
+            if "/obo/" in obj_id:
                 # e.g., http://purl.obolibrary.org/obo/PATO_0000001
-                prefix = obj_id.split('/obo/')[1].split('_')[0] if '_' in obj_id else ''
+                prefix = obj_id.split("/obo/")[1].split("_")[0] if "_" in obj_id else ""
                 if prefix:
                     target_prefixes[prefix] += 1
-            elif 'doi.org/10.1601' in obj_id:
-                target_prefixes['N4L'] += 1
-            elif 'purl.dsmz.de' in obj_id:
-                if 'd3o' in obj_id.lower():
-                    target_prefixes['D3O'] += 1
-                elif 'miso' in obj_id.lower():
-                    target_prefixes['MISO'] += 1
-            elif 'mdatahub.org' in obj_id.lower():
-                target_prefixes['MEO'] += 1
-            elif 'biolink' in obj_id.lower():
-                target_prefixes['BIOLINK'] += 1
+            elif "doi.org/10.1601" in obj_id:
+                target_prefixes["N4L"] += 1
+            elif "purl.dsmz.de" in obj_id:
+                if "d3o" in obj_id.lower():
+                    target_prefixes["D3O"] += 1
+                elif "miso" in obj_id.lower():
+                    target_prefixes["MISO"] += 1
+            elif "mdatahub.org" in obj_id.lower():
+                target_prefixes["MEO"] += 1
+            elif "biolink" in obj_id.lower():
+                target_prefixes["BIOLINK"] += 1
 
-            pred = row.get('predicate_id', '')
+            pred = row.get("predicate_id", "")
             predicates[pred] += 1
 
     print(f"Total mappings: {total_mappings:,}")
@@ -97,7 +97,7 @@ def analyze_sssom(sssom_path):
 
     print(f"\nMapping types:")
     for pred, count in predicates.most_common():
-        pred_name = pred.split('/')[-1] if '/' in pred else pred
+        pred_name = pred.split("/")[-1] if "/" in pred else pred
         print(f"  {pred_name:<30} {count:>6}")
 
     return target_prefixes, predicates, total_mappings

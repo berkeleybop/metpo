@@ -10,8 +10,8 @@ from pathlib import Path
 
 def convert_iri_to_curie(iri):
     """Convert full IRI to METPO CURIE format"""
-    if iri.startswith('https://w3id.org/metpo/'):
-        return iri.replace('https://w3id.org/metpo/', 'METPO:')
+    if iri.startswith("https://w3id.org/metpo/"):
+        return iri.replace("https://w3id.org/metpo/", "METPO:")
     return iri
 
 def resolve_duplicate_labels(label, iri, all_rows):
@@ -44,25 +44,25 @@ def resolve_duplicate_labels(label, iri, all_rows):
 def map_parent_iri_to_label(parent_iri):
     """Map parent class IRIs to their corresponding labels from minimal_classes"""
     parent_mapping = {
-        'https://w3id.org/metpo/1000523': 'phenotype',  # pH adaptation parent
-        'https://w3id.org/metpo/1000245': 'phenotype',  # pH/temp metrics
-        'https://w3id.org/metpo/1000147': 'quality',    # general measurement quality
-        'https://w3id.org/metpo/1000522': 'phenotype',  # salinity tolerance
-        'https://w3id.org/metpo/1000217': 'biological process',  # metabolic process
-        'https://w3id.org/metpo/1000232': 'pH delta',   # pH delta subclasses
-        'https://w3id.org/metpo/1000303': 'temperature delta',  # temp delta subclasses
-        'https://w3id.org/metpo/1000331': 'pH optimum (metabolic efficiency)',  # pH optimum subclasses
-        'https://w3id.org/metpo/1000332': 'pH range (cellular homeostasis)',   # pH range subclasses
-        'https://w3id.org/metpo/1000333': 'NaCl optimum',  # NaCl optimum subclasses
-        'https://w3id.org/metpo/1000334': 'NaCl range',    # NaCl range subclasses
-        'https://w3id.org/metpo/1000335': 'NaCl delta',    # NaCl delta subclasses
-        'https://w3id.org/metpo/1000304': 'temperature optimum (growth range)',  # temp optimum subclasses
-        'https://w3id.org/metpo/1000306': 'temperature range (growth tolerance)',   # temp range subclasses
-        'https://w3id.org/metpo/1000127': 'GC content',    # GC content subclasses
-        'https://w3id.org/metpo/1000139': 'quality',      # genomic feature
-        'https://w3id.org/metpo/1000300': 'material entity'  # genomic component
+        "https://w3id.org/metpo/1000523": "phenotype",  # pH adaptation parent
+        "https://w3id.org/metpo/1000245": "phenotype",  # pH/temp metrics
+        "https://w3id.org/metpo/1000147": "quality",    # general measurement quality
+        "https://w3id.org/metpo/1000522": "phenotype",  # salinity tolerance
+        "https://w3id.org/metpo/1000217": "biological process",  # metabolic process
+        "https://w3id.org/metpo/1000232": "pH delta",   # pH delta subclasses
+        "https://w3id.org/metpo/1000303": "temperature delta",  # temp delta subclasses
+        "https://w3id.org/metpo/1000331": "pH optimum (metabolic efficiency)",  # pH optimum subclasses
+        "https://w3id.org/metpo/1000332": "pH range (cellular homeostasis)",   # pH range subclasses
+        "https://w3id.org/metpo/1000333": "NaCl optimum",  # NaCl optimum subclasses
+        "https://w3id.org/metpo/1000334": "NaCl range",    # NaCl range subclasses
+        "https://w3id.org/metpo/1000335": "NaCl delta",    # NaCl delta subclasses
+        "https://w3id.org/metpo/1000304": "temperature optimum (growth range)",  # temp optimum subclasses
+        "https://w3id.org/metpo/1000306": "temperature range (growth tolerance)",   # temp range subclasses
+        "https://w3id.org/metpo/1000127": "GC content",    # GC content subclasses
+        "https://w3id.org/metpo/1000139": "quality",      # genomic feature
+        "https://w3id.org/metpo/1000300": "material entity"  # genomic component
     }
-    return parent_mapping.get(parent_iri.strip(), 'phenotype')  # default to phenotype
+    return parent_mapping.get(parent_iri.strip(), "phenotype")  # default to phenotype
 
 def process_parent_classes(parent_str):
     """Convert parent class IRIs to single label, taking first parent if multiple"""
@@ -70,7 +70,7 @@ def process_parent_classes(parent_str):
         return ""
 
     # Take only the first parent if multiple (split by |)
-    first_parent = parent_str.split('|')[0].strip()
+    first_parent = parent_str.split("|")[0].strip()
     return map_parent_iri_to_label(first_parent)
 
 def integrate_range_into_description(description, range_min, range_max, units):
@@ -92,7 +92,7 @@ def integrate_range_into_description(description, range_min, range_max, units):
 
     if range_parts:
         range_clause = " ".join(range_parts)
-        if description and not description.endswith('.'):
+        if description and not description.endswith("."):
             description += "."
         if description:
             description += f" Values {range_clause}."
@@ -134,8 +134,8 @@ def main():
 
     migrated_rows = []
 
-    with open(bactotraits_file, 'r', encoding='utf-8') as f:
-        reader = csv.reader(f, delimiter='\t')
+    with open(bactotraits_file, "r", encoding="utf-8") as f:
+        reader = csv.reader(f, delimiter="\t")
         headers = next(reader)  # Skip header row
         robot_template = next(reader)  # Skip robot template row
 
@@ -144,7 +144,7 @@ def main():
                 continue
 
             iri = row[0].strip()
-            if not iri.startswith('https://w3id.org/metpo/'):
+            if not iri.startswith("https://w3id.org/metpo/"):
                 continue
 
             # Convert IRI to CURIE
@@ -198,8 +198,8 @@ def main():
             migrated_rows.append(output_row)
 
     # Write output file
-    with open(output_file, 'w', encoding='utf-8', newline='') as f:
-        writer = csv.writer(f, delimiter='\t')
+    with open(output_file, "w", encoding="utf-8", newline="") as f:
+        writer = csv.writer(f, delimiter="\t")
         writer.writerow(output_header)
         writer.writerow(robot_row)
         writer.writerows(migrated_rows)

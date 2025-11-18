@@ -16,23 +16,23 @@ def load_metpo_hierarchy(tsv_path: str) -> dict:
     terms = {}
     parent_to_children = defaultdict(list)
 
-    with open(tsv_path, 'r', encoding='utf-8') as f:
-        reader = csv.DictReader(f, delimiter='\t')
+    with open(tsv_path, "r", encoding="utf-8") as f:
+        reader = csv.DictReader(f, delimiter="\t")
         for row in reader:
-            term_id = row['ID']
-            label = row['label']
-            definition = row.get('description', '').strip()
-            parents = row.get('parent classes (one strongly preferred)', '').strip()
+            term_id = row["ID"]
+            label = row["label"]
+            definition = row.get("description", "").strip()
+            parents = row.get("parent classes (one strongly preferred)", "").strip()
 
             # Parse parents (pipe-separated)
-            parent_list = [p.strip() for p in parents.split('|') if p.strip()]
+            parent_list = [p.strip() for p in parents.split("|") if p.strip()]
 
             terms[term_id] = {
-                'id': term_id,
-                'label': label,
-                'definition': definition,
-                'has_definition': bool(definition),
-                'parents': parent_list
+                "id": term_id,
+                "label": label,
+                "definition": definition,
+                "has_definition": bool(definition),
+                "parents": parent_list
             }
 
             # Build parent-child index
@@ -45,7 +45,7 @@ def load_metpo_hierarchy(tsv_path: str) -> dict:
 def find_parent_id_by_label(terms: dict, parent_label: str) -> str:
     """Find term ID by label."""
     for term_id, term_data in terms.items():
-        if term_data['label'] == parent_label:
+        if term_data["label"] == parent_label:
             return term_id
     return None
 
@@ -61,37 +61,37 @@ def analyze_coverage(terms: dict, parent_to_children: dict) -> list:
 
         # Count children with definitions
         total_children = len(child_ids)
-        children_with_defs = sum(1 for cid in child_ids if terms.get(cid, {}).get('has_definition'))
+        children_with_defs = sum(1 for cid in child_ids if terms.get(cid, {}).get("has_definition"))
         coverage_pct = (children_with_defs / total_children) * 100 if total_children > 0 else 0
 
         # Find parent term ID
         parent_id = find_parent_id_by_label(terms, parent_label)
-        parent_has_def = terms.get(parent_id, {}).get('has_definition', False) if parent_id else False
+        parent_has_def = terms.get(parent_id, {}).get("has_definition", False) if parent_id else False
 
         # Identify stragglers (children without definitions)
         stragglers = [
             f"{terms[cid]['label']} ({cid})"
             for cid in child_ids
-            if not terms.get(cid, {}).get('has_definition')
+            if not terms.get(cid, {}).get("has_definition")
         ]
 
         # Get examples of defined children
         examples = [
             f"{terms[cid]['label']} ({cid})"
             for cid in child_ids
-            if terms.get(cid, {}).get('has_definition')
+            if terms.get(cid, {}).get("has_definition")
         ][:5]  # Limit to 5 examples
 
         results.append({
-            'parent_label': parent_label,
-            'parent_id': parent_id or '',
-            'parent_has_definition': parent_has_def,
-            'total_children': total_children,
-            'children_with_definitions': children_with_defs,
-            'coverage_percent': round(coverage_pct, 1),
-            'stragglers': ' | '.join(stragglers) if stragglers else '',
-            'straggler_count': len(stragglers),
-            'example_defined_children': ' | '.join(examples)
+            "parent_label": parent_label,
+            "parent_id": parent_id or "",
+            "parent_has_definition": parent_has_def,
+            "total_children": total_children,
+            "children_with_definitions": children_with_defs,
+            "coverage_percent": round(coverage_pct, 1),
+            "stragglers": " | ".join(stragglers) if stragglers else "",
+            "straggler_count": len(stragglers),
+            "example_defined_children": " | ".join(examples)
         })
 
     return results
@@ -99,28 +99,28 @@ def analyze_coverage(terms: dict, parent_to_children: dict) -> list:
 
 @click.command()
 @click.option(
-    '--metpo-tsv',
+    "--metpo-tsv",
     type=click.Path(exists=True),
-    default='src/templates/metpo_sheet_improved.tsv',
-    help='Path to METPO template TSV file'
+    default="src/templates/metpo_sheet_improved.tsv",
+    help="Path to METPO template TSV file"
 )
 @click.option(
-    '--output',
+    "--output",
     type=click.Path(),
-    default='reports/definition_coverage_by_parent.tsv',
-    help='Output TSV file path'
+    default="reports/definition_coverage_by_parent.tsv",
+    help="Output TSV file path"
 )
 @click.option(
-    '--min-children',
+    "--min-children",
     type=int,
     default=2,
-    help='Minimum number of children to include parent in analysis (default: 2)'
+    help="Minimum number of children to include parent in analysis (default: 2)"
 )
 @click.option(
-    '--sort-by',
-    type=click.Choice(['coverage', 'stragglers', 'total']),
-    default='coverage',
-    help='Sort results by: coverage (desc), stragglers (asc), or total children (desc)'
+    "--sort-by",
+    type=click.Choice(["coverage", "stragglers", "total"]),
+    default="coverage",
+    help="Sort results by: coverage (desc), stragglers (asc), or total children (desc)"
 )
 def main(metpo_tsv: str, output: str, min_children: int, sort_by: str):
     """
@@ -140,21 +140,21 @@ def main(metpo_tsv: str, output: str, min_children: int, sort_by: str):
     results = analyze_coverage(terms, parent_to_children)
 
     # Filter by minimum children
-    results = [r for r in results if r['total_children'] >= min_children]
+    results = [r for r in results if r["total_children"] >= min_children]
 
     # Sort results
-    if sort_by == 'coverage':
-        results.sort(key=lambda x: x['coverage_percent'], reverse=True)
-    elif sort_by == 'stragglers':
-        results.sort(key=lambda x: x['straggler_count'])
+    if sort_by == "coverage":
+        results.sort(key=lambda x: x["coverage_percent"], reverse=True)
+    elif sort_by == "stragglers":
+        results.sort(key=lambda x: x["straggler_count"])
     else:  # total
-        results.sort(key=lambda x: x['total_children'], reverse=True)
+        results.sort(key=lambda x: x["total_children"], reverse=True)
 
     # Write output
     Path(output).parent.mkdir(parents=True, exist_ok=True)
-    with open(output, 'w', encoding='utf-8', newline='') as f:
+    with open(output, "w", encoding="utf-8", newline="") as f:
         if results:
-            writer = csv.DictWriter(f, fieldnames=results[0].keys(), delimiter='\t')
+            writer = csv.DictWriter(f, fieldnames=results[0].keys(), delimiter="\t")
             writer.writeheader()
             writer.writerows(results)
 
@@ -164,9 +164,9 @@ def main(metpo_tsv: str, output: str, min_children: int, sort_by: str):
 
     # Show summary statistics
     if results:
-        high_coverage = [r for r in results if r['coverage_percent'] >= 80]
-        medium_coverage = [r for r in results if 50 <= r['coverage_percent'] < 80]
-        low_coverage = [r for r in results if r['coverage_percent'] < 50]
+        high_coverage = [r for r in results if r["coverage_percent"] >= 80]
+        medium_coverage = [r for r in results if 50 <= r["coverage_percent"] < 80]
+        low_coverage = [r for r in results if r["coverage_percent"] < 50]
 
         click.echo(f"\nCoverage Summary:")
         click.echo(f"  High coverage (≥80%): {len(high_coverage)} parents")
@@ -175,10 +175,10 @@ def main(metpo_tsv: str, output: str, min_children: int, sort_by: str):
 
         # Show top candidates for pattern-based definition
         click.echo(f"\n🎯 Top candidates for pattern-based definition (high coverage, few stragglers):")
-        candidates = [r for r in results if r['coverage_percent'] >= 70 and 1 <= r['straggler_count'] <= 5]
+        candidates = [r for r in results if r["coverage_percent"] >= 70 and 1 <= r["straggler_count"] <= 5]
         for i, r in enumerate(candidates[:10], 1):
             click.echo(f"  {i}. {r['parent_label']} ({r['coverage_percent']}% coverage, {r['straggler_count']} stragglers)")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

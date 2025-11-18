@@ -26,22 +26,22 @@ def sanitize_field_name(field_name):
     sanitized = field_name.strip()
 
     # Replace comparison operators (order matters!)
-    sanitized = sanitized.replace('<=', '_lte_')
-    sanitized = sanitized.replace('>=', '_gte_')
-    sanitized = sanitized.replace('>', '_gt_')
-    sanitized = sanitized.replace('<', '_lt_')
+    sanitized = sanitized.replace("<=", "_lte_")
+    sanitized = sanitized.replace(">=", "_gte_")
+    sanitized = sanitized.replace(">", "_gt_")
+    sanitized = sanitized.replace("<", "_lt_")
 
     # Replace other problematic characters
-    sanitized = sanitized.replace('.', '_')
-    sanitized = sanitized.replace('-', '_')
-    sanitized = sanitized.replace(' ', '_')
+    sanitized = sanitized.replace(".", "_")
+    sanitized = sanitized.replace("-", "_")
+    sanitized = sanitized.replace(" ", "_")
 
     # Clean up multiple consecutive underscores
-    while '__' in sanitized:
-        sanitized = sanitized.replace('__', '_')
+    while "__" in sanitized:
+        sanitized = sanitized.replace("__", "_")
 
     # Remove trailing underscores
-    sanitized = sanitized.rstrip('_')
+    sanitized = sanitized.rstrip("_")
 
     return sanitized
 
@@ -135,8 +135,8 @@ def import_bactotraits(input_file, database, collection, drop, mongo_uri):
     # Read and process TSV file
     click.echo(f"\nReading {input_file.name}...")
 
-    with open(input_file, 'r', encoding='utf-8') as f:
-        reader = csv.reader(f, delimiter='\t')
+    with open(input_file, "r", encoding="utf-8") as f:
+        reader = csv.reader(f, delimiter="\t")
 
         # Read header and sanitize field names
         header = next(reader)
@@ -173,9 +173,9 @@ def import_bactotraits(input_file, database, collection, drop, mongo_uri):
             for field_name, value in zip(sanitized_header, row):
                 # Convert empty strings to empty (preserve for field_mappings compatibility)
                 # Convert numeric-like strings appropriately
-                if value == '':
-                    doc[field_name] = ''
-                elif value in ('0', '1'):
+                if value == "":
+                    doc[field_name] = ""
+                elif value in ("0", "1"):
                     # Binary trait values - store as integers
                     doc[field_name] = int(value)
                 else:
@@ -197,9 +197,9 @@ def import_bactotraits(input_file, database, collection, drop, mongo_uri):
 
     # Create indexes
     click.echo("\nCreating indexes...")
-    coll.create_index('Bacdive_ID')
-    coll.create_index('ncbitaxon_id')
-    coll.create_index([('Kingdom', 1), ('Phylum', 1), ('Class', 1)])
+    coll.create_index("Bacdive_ID")
+    coll.create_index("ncbitaxon_id")
+    coll.create_index([("Kingdom", 1), ("Phylum", 1), ("Class", 1)])
     click.echo("✓ Created indexes on Bacdive_ID, ncbitaxon_id, and taxonomy fields")
 
     # Verify import
@@ -208,7 +208,7 @@ def import_bactotraits(input_file, database, collection, drop, mongo_uri):
 
     # Show sample document
     click.echo("\nSample document:")
-    sample = coll.find_one({}, {'_id': 0})
+    sample = coll.find_one({}, {"_id": 0})
     if sample:
         # Show first 10 fields
         for i, (key, value) in enumerate(list(sample.items())[:10]):

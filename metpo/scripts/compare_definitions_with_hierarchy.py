@@ -17,7 +17,7 @@ def parse_parent_classes(parent_str: str) -> List[str]:
     """Parse pipe-separated parent classes."""
     if not parent_str:
         return []
-    return [p.strip() for p in parent_str.split('|') if p.strip()]
+    return [p.strip() for p in parent_str.split("|") if p.strip()]
 
 
 def get_genus_from_definition(definition: str) -> Optional[str]:
@@ -120,31 +120,31 @@ def suggest_tweak(
 
 @click.command()
 @click.option(
-    '--best-definitions',
-    '-b',
+    "--best-definitions",
+    "-b",
     type=click.Path(exists=True, path_type=Path),
-    default='reports/best_definition_per_term_final.tsv',
-    help='Path to best definitions TSV'
+    default="reports/best_definition_per_term_final.tsv",
+    help="Path to best definitions TSV"
 )
 @click.option(
-    '--metpo-terms',
-    '-t',
+    "--metpo-terms",
+    "-t",
     type=click.Path(exists=True, path_type=Path),
-    default='src/templates/metpo_sheet.tsv',
-    help='Path to METPO terms template'
+    default="src/templates/metpo_sheet.tsv",
+    help="Path to METPO terms template"
 )
 @click.option(
-    '--output',
-    '-o',
+    "--output",
+    "-o",
     type=click.Path(path_type=Path),
-    default='reports/definition_comparison_with_hierarchy.tsv',
-    help='Output comparison TSV'
+    default="reports/definition_comparison_with_hierarchy.tsv",
+    help="Output comparison TSV"
 )
 @click.option(
-    '--verbose',
-    '-v',
+    "--verbose",
+    "-v",
     is_flag=True,
-    help='Show detailed analysis'
+    help="Show detailed analysis"
 )
 def main(
     best_definitions: Path,
@@ -163,8 +163,8 @@ def main(
     click.echo(f"Loading METPO terms from {metpo_terms}...")
     metpo_data = {}
 
-    with open(metpo_terms, 'r', encoding='utf-8') as f:
-        reader = csv.reader(f, delimiter='\t')
+    with open(metpo_terms, "r", encoding="utf-8") as f:
+        reader = csv.reader(f, delimiter="\t")
         next(reader)  # Skip ROBOT header row 1
         next(reader)  # Skip ROBOT header row 2
 
@@ -180,9 +180,9 @@ def main(
             if metpo_id:
                 parents = parse_parent_classes(parent_str)
                 metpo_data[metpo_id] = {
-                    'label': metpo_label,
-                    'parents': parents,
-                    'current_definition': current_def
+                    "label": metpo_label,
+                    "parents": parents,
+                    "current_definition": current_def
                 }
 
     click.echo(f"Loaded {len(metpo_data)} METPO terms")
@@ -191,10 +191,10 @@ def main(
     click.echo(f"\nLoading best matched definitions from {best_definitions}...")
     best_defs = {}
 
-    with open(best_definitions, 'r', encoding='utf-8') as f:
-        reader = csv.DictReader(f, delimiter='\t')
+    with open(best_definitions, "r", encoding="utf-8") as f:
+        reader = csv.DictReader(f, delimiter="\t")
         for row in reader:
-            metpo_id = row['metpo_id']
+            metpo_id = row["metpo_id"]
             best_defs[metpo_id] = row
 
     click.echo(f"Loaded {len(best_defs)} best matched definitions")
@@ -202,13 +202,13 @@ def main(
     # Compare
     results = []
     stats = {
-        'has_current': 0,
-        'needs_current': 0,
-        'genus_matches_parent': 0,
-        'genus_missing_parent': 0,
-        'no_genus': 0,
-        'needs_tweak': 0,
-        'compatible': 0,
+        "has_current": 0,
+        "needs_current": 0,
+        "genus_matches_parent": 0,
+        "genus_missing_parent": 0,
+        "no_genus": 0,
+        "needs_tweak": 0,
+        "compatible": 0,
     }
 
     for metpo_id in sorted(best_defs.keys()):
@@ -218,65 +218,65 @@ def main(
         metpo = metpo_data[metpo_id]
         matched = best_defs[metpo_id]
 
-        metpo_label = metpo['label']
-        parents = metpo['parents']
-        current_def = metpo['current_definition']
-        matched_def = matched['definition']
+        metpo_label = metpo["label"]
+        parents = metpo["parents"]
+        current_def = metpo["current_definition"]
+        matched_def = matched["definition"]
 
         # Check if METPO has a current definition
         has_current = bool(current_def)
-        stats['has_current'] += has_current
-        stats['needs_current'] += not has_current
+        stats["has_current"] += has_current
+        stats["needs_current"] += not has_current
 
         # Extract genus from matched definition
         genus = get_genus_from_definition(matched_def)
 
         if not genus:
-            stats['no_genus'] += 1
-            genus_status = 'no_genus'
+            stats["no_genus"] += 1
+            genus_status = "no_genus"
             genus_match = False
             matched_parent = None
         else:
             genus_match, matched_parent = check_genus_match(genus, parents)
 
             if genus_match:
-                stats['genus_matches_parent'] += 1
-                genus_status = 'genus_matches_parent'
+                stats["genus_matches_parent"] += 1
+                genus_status = "genus_matches_parent"
             else:
-                stats['genus_missing_parent'] += 1
-                genus_status = 'genus_missing_parent'
+                stats["genus_missing_parent"] += 1
+                genus_status = "genus_missing_parent"
 
         # Suggest tweak if needed
         tweak = suggest_tweak(matched_def, parents, metpo_label)
 
         if tweak:
-            stats['needs_tweak'] += 1
+            stats["needs_tweak"] += 1
         else:
-            stats['compatible'] += 1
+            stats["compatible"] += 1
 
         # Calculate similarity with current definition
         def_similarity = similarity(matched_def, current_def) if current_def else 0.0
 
         result = {
-            'metpo_id': metpo_id,
-            'metpo_label': metpo_label,
-            'parent_classes': '|'.join(parents),
-            'current_definition': current_def,
-            'has_current_definition': 'yes' if has_current else 'no',
-            'matched_definition': matched_def,
-            'matched_source': matched['source_ontology'],
-            'matched_quality': matched['quality_label'],
-            'def_similarity': f"{def_similarity:.3f}",
-            'extracted_genus': genus or '',
-            'genus_status': genus_status,
-            'matched_parent': matched_parent or '',
-            'suggested_tweak': tweak or '',
-            'needs_tweak': 'yes' if tweak else 'no',
+            "metpo_id": metpo_id,
+            "metpo_label": metpo_label,
+            "parent_classes": "|".join(parents),
+            "current_definition": current_def,
+            "has_current_definition": "yes" if has_current else "no",
+            "matched_definition": matched_def,
+            "matched_source": matched["source_ontology"],
+            "matched_quality": matched["quality_label"],
+            "def_similarity": f"{def_similarity:.3f}",
+            "extracted_genus": genus or "",
+            "genus_status": genus_status,
+            "matched_parent": matched_parent or "",
+            "suggested_tweak": tweak or "",
+            "needs_tweak": "yes" if tweak else "no",
         }
 
         results.append(result)
 
-        if verbose and (tweak or not has_current or genus_status != 'genus_matches_parent'):
+        if verbose and (tweak or not has_current or genus_status != "genus_matches_parent"):
             click.echo(f"\n{metpo_id} ({metpo_label})")
             click.echo(f"  Parents: {', '.join(parents)}")
             if current_def:
@@ -293,15 +293,15 @@ def main(
     click.echo(f"\nWriting comparison to {output}...")
     output.parent.mkdir(parents=True, exist_ok=True)
 
-    with open(output, 'w', encoding='utf-8', newline='') as f:
+    with open(output, "w", encoding="utf-8", newline="") as f:
         fieldnames = [
-            'metpo_id', 'metpo_label', 'parent_classes',
-            'current_definition', 'has_current_definition',
-            'matched_definition', 'matched_source', 'matched_quality',
-            'def_similarity', 'extracted_genus', 'genus_status',
-            'matched_parent', 'suggested_tweak', 'needs_tweak'
+            "metpo_id", "metpo_label", "parent_classes",
+            "current_definition", "has_current_definition",
+            "matched_definition", "matched_source", "matched_quality",
+            "def_similarity", "extracted_genus", "genus_status",
+            "matched_parent", "suggested_tweak", "needs_tweak"
         ]
-        writer = csv.DictWriter(f, fieldnames=fieldnames, delimiter='\t')
+        writer = csv.DictWriter(f, fieldnames=fieldnames, delimiter="\t")
         writer.writeheader()
         writer.writerows(results)
 
@@ -324,5 +324,5 @@ def main(
     click.echo(f"  Needs tweak: {stats['needs_tweak']} ({stats['needs_tweak']/len(results)*100:.1f}%)")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

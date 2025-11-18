@@ -15,14 +15,14 @@ def is_none_value(value):
     if isinstance(value, str):
         val_lower = value.lower()
         # Check for obvious none placeholders
-        if val_lower in ('none', 'auto:none', 'ncbitaxon:32644'):
+        if val_lower in ("none", "auto:none", "ncbitaxon:32644"):
             return True
         # Check for AUTO:none with URL encoding
-        if 'auto:none' in val_lower or 'auto%3anone' in val_lower:
+        if "auto:none" in val_lower or "auto%3anone" in val_lower:
             return True
     elif isinstance(value, dict):
         # For relationship objects, check if subject/object is 'none'
-        if is_none_value(value.get('subject')) or is_none_value(value.get('object')):
+        if is_none_value(value.get("subject")) or is_none_value(value.get("object")):
             return True
     return False
 
@@ -69,7 +69,7 @@ def filter_named_entities(entities):
     filtered = []
     for entity in entities:
         # Skip entities with 'none' as label or ID
-        if is_none_value(entity.get('id')) or is_none_value(entity.get('label')):
+        if is_none_value(entity.get("id")) or is_none_value(entity.get("label")):
             continue
         filtered.append(entity)
 
@@ -79,12 +79,12 @@ def filter_named_entities(entities):
 def process_document(doc):
     """Process a single YAML document."""
     # Filter extracted_object
-    if 'extracted_object' in doc:
-        doc['extracted_object'] = filter_none_from_dict(doc['extracted_object'])
+    if "extracted_object" in doc:
+        doc["extracted_object"] = filter_none_from_dict(doc["extracted_object"])
 
     # Filter named_entities
-    if 'named_entities' in doc:
-        doc['named_entities'] = filter_named_entities(doc['named_entities'])
+    if "named_entities" in doc:
+        doc["named_entities"] = filter_named_entities(doc["named_entities"])
 
     return doc
 
@@ -109,11 +109,11 @@ def main():
     filtered_docs = [process_document(doc) for doc in docs]
 
     # Write filtered documents
-    with open(output_file, 'w') as f:
+    with open(output_file, "w") as f:
         yaml.dump_all(filtered_docs, f, default_flow_style=False, sort_keys=False)
 
     print(f"Filtered {len(filtered_docs)} documents: {input_file} → {output_file}")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

@@ -97,7 +97,7 @@ def run_extraction(api_key):
     
     # Run extraction with logging
     try:
-        with open(log_file, 'w') as logf:
+        with open(log_file, "w") as logf:
             # Write header to log file
             logf.write(f"OntoGPT Verbose Log - {start_timestamp}\n")
             logf.write(f"Command: {' '.join(cmd)}\n")
@@ -254,7 +254,7 @@ def main():
         "assessment": assessment_result
     }
     
-    with open(results_file, 'w') as f:
+    with open(results_file, "w") as f:
         json.dump(results, f, indent=2)
     
     print(f"\n📄 Detailed results saved to: {results_file}")

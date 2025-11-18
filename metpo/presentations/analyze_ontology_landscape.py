@@ -68,8 +68,8 @@ def load_semsql_registry():
 
     # Extract ontology IDs
     ontologies = set()
-    if 'ontologies' in data:
-        for ont_id in data['ontologies'].keys():
+    if "ontologies" in data:
+        for ont_id in data["ontologies"].keys():
             ontologies.add(ont_id.lower())
 
     return ontologies

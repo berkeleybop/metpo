@@ -63,8 +63,8 @@ def load_metpo_terms(template_path: Path) -> Dict[str, Dict]:
     """Load METPO terms with parents and current definitions."""
     terms = {}
 
-    with open(template_path, 'r', encoding='utf-8') as f:
-        reader = csv.reader(f, delimiter='\t')
+    with open(template_path, "r", encoding="utf-8") as f:
+        reader = csv.reader(f, delimiter="\t")
         next(reader)  # Skip row 1
         next(reader)  # Skip row 2
 
@@ -78,11 +78,11 @@ def load_metpo_terms(template_path: Path) -> Dict[str, Dict]:
             current_def = row[4].strip() if len(row) > 4 else ""
 
             if metpo_id:
-                parents = [p.strip() for p in parent_str.split('|') if p.strip()]
+                parents = [p.strip() for p in parent_str.split("|") if p.strip()]
                 terms[metpo_id] = {
-                    'label': label,
-                    'parents': parents,
-                    'current_definition': current_def
+                    "label": label,
+                    "parents": parents,
+                    "current_definition": current_def
                 }
 
     return terms
@@ -95,10 +95,10 @@ def load_matched_definitions(matched_path: Path) -> Dict[str, Dict]:
     if not matched_path.exists():
         return matched
 
-    with open(matched_path, 'r', encoding='utf-8') as f:
-        reader = csv.DictReader(f, delimiter='\t')
+    with open(matched_path, "r", encoding="utf-8") as f:
+        reader = csv.DictReader(f, delimiter="\t")
         for row in reader:
-            metpo_id = row['metpo_id']
+            metpo_id = row["metpo_id"]
             matched[metpo_id] = row
 
     return matched
@@ -111,10 +111,10 @@ def load_all_candidates(candidates_path: Path) -> Dict[str, List[Dict]]:
     if not candidates_path.exists():
         return candidates
 
-    with open(candidates_path, 'r', encoding='utf-8') as f:
-        reader = csv.DictReader(f, delimiter='\t')
+    with open(candidates_path, "r", encoding="utf-8") as f:
+        reader = csv.DictReader(f, delimiter="\t")
         for row in reader:
-            metpo_id = row['metpo_id']
+            metpo_id = row["metpo_id"]
             if metpo_id not in candidates:
                 candidates[metpo_id] = []
             candidates[metpo_id].append(row)
@@ -178,50 +178,50 @@ Respond with ONLY the definition text, nothing else.
 
 @click.command()
 @click.option(
-    '--metpo-terms',
-    '-t',
+    "--metpo-terms",
+    "-t",
     type=click.Path(exists=True, path_type=Path),
-    default='src/templates/metpo_sheet.tsv',
-    help='Path to METPO terms template'
+    default="src/templates/metpo_sheet.tsv",
+    help="Path to METPO terms template"
 )
 @click.option(
-    '--best-definitions',
-    '-b',
+    "--best-definitions",
+    "-b",
     type=click.Path(path_type=Path),
-    default='reports/best_definition_per_term_final.tsv',
-    help='Path to best matched definitions'
+    default="reports/best_definition_per_term_final.tsv",
+    help="Path to best matched definitions"
 )
 @click.option(
-    '--all-candidates',
-    '-c',
+    "--all-candidates",
+    "-c",
     type=click.Path(path_type=Path),
-    default='reports/comprehensive_definition_candidates.tsv',
-    help='Path to all candidate definitions'
+    default="reports/comprehensive_definition_candidates.tsv",
+    help="Path to all candidate definitions"
 )
 @click.option(
-    '--output',
-    '-o',
+    "--output",
+    "-o",
     type=click.Path(path_type=Path),
-    default='reports/llm_proposed_definitions.tsv',
-    help='Output TSV with proposed definitions'
+    default="reports/llm_proposed_definitions.tsv",
+    help="Output TSV with proposed definitions"
 )
 @click.option(
-    '--model',
-    '-m',
-    default='gpt-4',
-    help='OpenAI model to use'
+    "--model",
+    "-m",
+    default="gpt-4",
+    help="OpenAI model to use"
 )
 @click.option(
-    '--limit',
+    "--limit",
     type=int,
     default=None,
-    help='Limit number of terms to process (for testing)'
+    help="Limit number of terms to process (for testing)"
 )
 @click.option(
-    '--verbose',
-    '-v',
+    "--verbose",
+    "-v",
     is_flag=True,
-    help='Show detailed progress'
+    help="Show detailed progress"
 )
 def main(
     metpo_terms: Path,
@@ -239,7 +239,7 @@ def main(
     """
 
     # Check for API key
-    api_key = os.getenv('OPENAI_API_KEY')
+    api_key = os.getenv("OPENAI_API_KEY")
     if not api_key:
         click.echo("Error: OPENAI_API_KEY not found in environment", err=True)
         click.echo("Please set it in your .env file", err=True)
@@ -272,9 +272,9 @@ def main(
             break
 
         term = metpo_data[metpo_id]
-        label = term['label']
-        parents = term['parents']
-        current_def = term['current_definition']
+        label = term["label"]
+        parents = term["parents"]
+        current_def = term["current_definition"]
 
         matched = matched_defs.get(metpo_id)
         candidates = all_cands.get(metpo_id, [])
@@ -325,15 +325,15 @@ def main(
                         sources_used.append(src)
 
             results.append({
-                'metpo_id': metpo_id,
-                'metpo_label': label,
-                'parent_classes': '|'.join(parents),
-                'current_definition': current_def,
-                'proposed_definition': proposed_def,
-                'has_current': 'yes' if current_def else 'no',
-                'sources_consulted': '; '.join(sources_used),
-                'num_sources': len(sources_used),
-                'model_used': model,
+                "metpo_id": metpo_id,
+                "metpo_label": label,
+                "parent_classes": "|".join(parents),
+                "current_definition": current_def,
+                "proposed_definition": proposed_def,
+                "has_current": "yes" if current_def else "no",
+                "sources_consulted": "; ".join(sources_used),
+                "num_sources": len(sources_used),
+                "model_used": model,
             })
 
             processed += 1
@@ -341,15 +341,15 @@ def main(
         except Exception as e:
             click.echo(f"✗ {metpo_id:20s} ERROR: {e}", err=True)
             results.append({
-                'metpo_id': metpo_id,
-                'metpo_label': label,
-                'parent_classes': '|'.join(parents),
-                'current_definition': current_def,
-                'proposed_definition': f"[ERROR: {e}]",
-                'has_current': 'yes' if current_def else 'no',
-                'sources_consulted': '',
-                'num_sources': 0,
-                'model_used': model,
+                "metpo_id": metpo_id,
+                "metpo_label": label,
+                "parent_classes": "|".join(parents),
+                "current_definition": current_def,
+                "proposed_definition": f"[ERROR: {e}]",
+                "has_current": "yes" if current_def else "no",
+                "sources_consulted": "",
+                "num_sources": 0,
+                "model_used": model,
             })
             processed += 1
 
@@ -357,13 +357,13 @@ def main(
     click.echo(f"\nWriting proposed definitions to {output}...")
     output.parent.mkdir(parents=True, exist_ok=True)
 
-    with open(output, 'w', encoding='utf-8', newline='') as f:
+    with open(output, "w", encoding="utf-8", newline="") as f:
         fieldnames = [
-            'metpo_id', 'metpo_label', 'parent_classes',
-            'current_definition', 'proposed_definition',
-            'has_current', 'sources_consulted', 'num_sources', 'model_used'
+            "metpo_id", "metpo_label", "parent_classes",
+            "current_definition", "proposed_definition",
+            "has_current", "sources_consulted", "num_sources", "model_used"
         ]
-        writer = csv.DictWriter(f, fieldnames=fieldnames, delimiter='\t')
+        writer = csv.DictWriter(f, fieldnames=fieldnames, delimiter="\t")
         writer.writeheader()
         writer.writerows(results)
 
@@ -373,11 +373,11 @@ def main(
     click.echo("="*70)
     click.echo(f"Total terms processed: {len(results)}")
 
-    had_current = sum(1 for r in results if r['has_current'] == 'yes')
+    had_current = sum(1 for r in results if r["has_current"] == "yes")
     click.echo(f"Had current definition: {had_current} ({had_current/len(results)*100:.1f}%)")
     click.echo(f"Needed definition: {len(results) - had_current} ({(len(results)-had_current)/len(results)*100:.1f}%)")
 
-    with_sources = sum(1 for r in results if r['num_sources'] > 0)
+    with_sources = sum(1 for r in results if r["num_sources"] > 0)
     click.echo(f"\nBased on foreign ontology terms: {with_sources} ({with_sources/len(results)*100:.1f}%)")
     click.echo(f"Based on parent class only: {len(results) - with_sources}")
 
@@ -385,5 +385,5 @@ def main(
     click.echo(f"Output file: {output}")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

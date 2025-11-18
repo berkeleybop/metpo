@@ -54,8 +54,8 @@ class SheetData:
 
     def load(self):
         """Load TSV file and extract key information."""
-        with open(self.filename, 'r', encoding='utf-8') as f:
-            reader = csv.reader(f, delimiter='\t')
+        with open(self.filename, "r", encoding="utf-8") as f:
+            reader = csv.reader(f, delimiter="\t")
             for row_num, row in enumerate(reader, start=1):
                 self.rows.append(row)
 
@@ -85,14 +85,14 @@ class SheetData:
                     self.ids[row_id] = (row_num, label, row_type, is_stub)
 
                 # Store label mapping
-                if label and row_type in ['owl:Class', 'owl:ObjectProperty', 'owl:DataProperty', 'owl:AnnotationProperty']:
+                if label and row_type in ["owl:Class", "owl:ObjectProperty", "owl:DataProperty", "owl:AnnotationProperty"]:
                     self.labels[label].append((row_num, row_id, row_type, is_stub))
 
                 # Extract parent reference (column 3 for classes, column 6 for properties)
                 parent_ref = ""
-                if row_type == 'owl:Class' and len(row) > 3:
+                if row_type == "owl:Class" and len(row) > 3:
                     parent_ref = row[3].strip()
-                elif row_type in ['owl:ObjectProperty', 'owl:DataProperty'] and len(row) > 6:
+                elif row_type in ["owl:ObjectProperty", "owl:DataProperty"] and len(row) > 6:
                     parent_ref = row[6].strip()
 
                 if parent_ref and "stub" not in parent_ref.lower():  # Don't track stub as parent
@@ -313,7 +313,7 @@ def check_structural_issues(sheets: List[SheetData]) -> List[QCIssue]:
                 continue
 
             # Check for missing ID
-            if not id_val and row_type in ['owl:Class', 'owl:ObjectProperty', 'owl:DataProperty']:
+            if not id_val and row_type in ["owl:Class", "owl:ObjectProperty", "owl:DataProperty"]:
                 issues.append(QCIssue(
                     "ERROR",
                     "MISSING_ID",
@@ -322,7 +322,7 @@ def check_structural_issues(sheets: List[SheetData]) -> List[QCIssue]:
                 ))
 
             # Check for missing label
-            if id_val and not label and row_type in ['owl:Class', 'owl:ObjectProperty', 'owl:DataProperty']:
+            if id_val and not label and row_type in ["owl:Class", "owl:ObjectProperty", "owl:DataProperty"]:
                 issues.append(QCIssue(
                     "WARNING",
                     "MISSING_LABEL",
@@ -344,23 +344,23 @@ def check_structural_issues(sheets: List[SheetData]) -> List[QCIssue]:
 
 @click.command()
 @click.option(
-    '--download',
+    "--download",
     is_flag=True,
-    help='Download sheets directly from Google Sheets'
+    help="Download sheets directly from Google Sheets"
 )
 @click.option(
-    '--main-sheet',
-    '-m',
+    "--main-sheet",
+    "-m",
     type=click.Path(exists=True),
-    default='src/templates/metpo_sheet.tsv',
-    help='Path to metpo_sheet.tsv (default: src/templates/metpo_sheet.tsv)'
+    default="src/templates/metpo_sheet.tsv",
+    help="Path to metpo_sheet.tsv (default: src/templates/metpo_sheet.tsv)"
 )
 @click.option(
-    '--properties-sheet',
-    '-p',
+    "--properties-sheet",
+    "-p",
     type=click.Path(exists=True),
-    default='src/templates/metpo-properties.tsv',
-    help='Path to metpo-properties.tsv (default: src/templates/metpo-properties.tsv)'
+    default="src/templates/metpo-properties.tsv",
+    help="Path to metpo-properties.tsv (default: src/templates/metpo-properties.tsv)"
 )
 def main(download: bool, main_sheet: str, properties_sheet: str):
     """
@@ -432,7 +432,7 @@ def main(download: bool, main_sheet: str, properties_sheet: str):
     click.echo()
 
     if not all_issues:
-        click.secho("✅ No issues found!", fg='green', bold=True)
+        click.secho("✅ No issues found!", fg="green", bold=True)
         click.echo()
         sys.exit(0)
 
@@ -442,21 +442,21 @@ def main(download: bool, main_sheet: str, properties_sheet: str):
     infos = [i for i in all_issues if i.severity == "INFO"]
 
     if errors:
-        click.secho(f"❌ {len(errors)} ERROR(S):", fg='red', bold=True)
+        click.secho(f"❌ {len(errors)} ERROR(S):", fg="red", bold=True)
         click.echo("-" * 80)
         for issue in errors:
             click.echo(f"  {issue}")
         click.echo()
 
     if warnings:
-        click.secho(f"⚠️  {len(warnings)} WARNING(S):", fg='yellow', bold=True)
+        click.secho(f"⚠️  {len(warnings)} WARNING(S):", fg="yellow", bold=True)
         click.echo("-" * 80)
         for issue in warnings:
             click.echo(f"  {issue}")
         click.echo()
 
     if infos:
-        click.secho(f"ℹ️  {len(infos)} INFO:", fg='blue', bold=True)
+        click.secho(f"ℹ️  {len(infos)} INFO:", fg="blue", bold=True)
         click.echo("-" * 80)
         for issue in infos:
             click.echo(f"  {issue}")

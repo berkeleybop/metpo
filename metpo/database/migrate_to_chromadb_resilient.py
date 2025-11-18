@@ -25,9 +25,9 @@ def extract_embedding_vector(embedding_json: str) -> list[float]:
     if isinstance(data, list):
         return data
     elif isinstance(data, dict):
-        return (data.get('embedding') or
-                data.get('values') or
-                data.get('data') or
+        return (data.get("embedding") or
+                data.get("values") or
+                data.get("data") or
                 list(data.values())[0])
     else:
         raise ValueError(f"Unexpected embedding format: {type(data)}")
@@ -74,12 +74,12 @@ def migrate_embeddings_resilient(
     filter_params = []
     
     if include_ontos:
-        placeholders = ','.join('?' * len(include_ontos))
+        placeholders = ",".join("?" * len(include_ontos))
         where_clause = f"WHERE ontologyId IN ({placeholders})"
         filter_params = list(include_ontos)
         print(f"Filtering to include ontologies: {', '.join(include_ontos)}")
     elif exclude_ontos:
-        placeholders = ','.join('?' * len(exclude_ontos))
+        placeholders = ",".join("?" * len(exclude_ontos))
         where_clause = f"WHERE ontologyId NOT IN ({placeholders})"
         filter_params = list(exclude_ontos)
         print(f"Filtering to exclude ontologies: {', '.join(exclude_ontos)}")
@@ -225,43 +225,43 @@ def migrate_embeddings_resilient(
 
 @click.command()
 @click.option(
-    '--db-path',
+    "--db-path",
     type=click.Path(exists=True, dir_okay=False, path_type=str),
     required=True,
     help="Path to SQLite embeddings database"
 )
 @click.option(
-    '--chroma-path',
+    "--chroma-path",
     type=click.Path(path_type=str),
     default="./chroma_db",
     help="Path to ChromaDB storage directory"
 )
 @click.option(
-    '--batch-size',
+    "--batch-size",
     type=int,
     default=1000,
     help="Batch size for migration"
 )
 @click.option(
-    '--limit',
+    "--limit",
     type=int,
     default=None,
     help="Limit migration to first N embeddings (for testing)"
 )
 @click.option(
-    '--no-resume',
+    "--no-resume",
     is_flag=True,
     help="Start from beginning instead of resuming"
 )
 @click.option(
-    '--include',
-    'include_ontos',
+    "--include",
+    "include_ontos",
     multiple=True,
     help="Include only these ontologies (can specify multiple times)"
 )
 @click.option(
-    '--exclude',
-    'exclude_ontos',
+    "--exclude",
+    "exclude_ontos",
     multiple=True,
     help="Exclude these ontologies (can specify multiple times)"
 )

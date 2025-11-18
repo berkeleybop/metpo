@@ -17,72 +17,72 @@ def analyze_bacdive_alignment() -> Dict:
     """Analyze METPO alignment with BacDive field structure."""
     # From docs/bacdive_keywords_analysis.md and bacdive_oxygen_tolerance_analysis.md
     bacdive_field_coverage = {
-        'morphology_physiology': {
-            'temperature_range': {
-                'metpo_classes': ['METPO:0000024 (psychrotolerant)', 'METPO:0000025 (mesophilic)',
-                                  'METPO:0000026 (thermophilic)', 'METPO:0000027 (hyperthermophilic)'],
-                'coverage': 'full',
-                'notes': 'All major temperature phenotypes covered'
+        "morphology_physiology": {
+            "temperature_range": {
+                "metpo_classes": ["METPO:0000024 (psychrotolerant)", "METPO:0000025 (mesophilic)",
+                                  "METPO:0000026 (thermophilic)", "METPO:0000027 (hyperthermophilic)"],
+                "coverage": "full",
+                "notes": "All major temperature phenotypes covered"
             },
-            'oxygen_tolerance': {
-                'metpo_classes': ['METPO:0000028 (aerobic)', 'METPO:0000029 (anaerobic)',
-                                  'METPO:0000030 (facultative anaerobic)', 'METPO:0000031 (microaerophilic)'],
-                'coverage': 'full',
-                'notes': 'Comprehensive oxygen requirement coverage'
+            "oxygen_tolerance": {
+                "metpo_classes": ["METPO:0000028 (aerobic)", "METPO:0000029 (anaerobic)",
+                                  "METPO:0000030 (facultative anaerobic)", "METPO:0000031 (microaerophilic)"],
+                "coverage": "full",
+                "notes": "Comprehensive oxygen requirement coverage"
             },
-            'pH_range': {
-                'metpo_classes': ['METPO:0000032 (acidophilic)', 'METPO:0000033 (neutrophilic)',
-                                  'METPO:0000034 (alkaliphilic)'],
-                'coverage': 'full',
-                'notes': 'pH phenotype classes well represented'
+            "pH_range": {
+                "metpo_classes": ["METPO:0000032 (acidophilic)", "METPO:0000033 (neutrophilic)",
+                                  "METPO:0000034 (alkaliphilic)"],
+                "coverage": "full",
+                "notes": "pH phenotype classes well represented"
             },
-            'salt_concentration': {
-                'metpo_classes': ['METPO:0000035 (halophilic)', 'METPO:0000036 (halotolerant)',
-                                  'METPO:0000037 (non-halophilic)'],
-                'coverage': 'full',
-                'notes': 'Salinity tolerance well covered'
+            "salt_concentration": {
+                "metpo_classes": ["METPO:0000035 (halophilic)", "METPO:0000036 (halotolerant)",
+                                  "METPO:0000037 (non-halophilic)"],
+                "coverage": "full",
+                "notes": "Salinity tolerance well covered"
             },
-            'cell_shape': {
-                'metpo_classes': ['METPO:0000001 (rod-shaped)', 'METPO:0000002 (coccoid)',
-                                  'METPO:0000003 (spiral)', 'METPO:0000004 (filamentous)'],
-                'coverage': 'partial',
-                'notes': 'Basic morphologies covered, but needs more specific classes (Issue #271)'
+            "cell_shape": {
+                "metpo_classes": ["METPO:0000001 (rod-shaped)", "METPO:0000002 (coccoid)",
+                                  "METPO:0000003 (spiral)", "METPO:0000004 (filamentous)"],
+                "coverage": "partial",
+                "notes": "Basic morphologies covered, but needs more specific classes (Issue #271)"
             },
-            'motility': {
-                'metpo_classes': ['METPO:0000005 (motile)', 'METPO:0000006 (non-motile)'],
-                'coverage': 'partial',
-                'notes': 'Basic motility covered, needs flagellation detail (Issue #271)'
+            "motility": {
+                "metpo_classes": ["METPO:0000005 (motile)", "METPO:0000006 (non-motile)"],
+                "coverage": "partial",
+                "notes": "Basic motility covered, needs flagellation detail (Issue #271)"
             },
-            'spore_formation': {
-                'metpo_classes': ['METPO:0000007 (spore-forming)', 'METPO:0000008 (non-spore-forming)'],
-                'coverage': 'partial',
-                'notes': 'Basic coverage, needs spore type detail (Issue #270)'
+            "spore_formation": {
+                "metpo_classes": ["METPO:0000007 (spore-forming)", "METPO:0000008 (non-spore-forming)"],
+                "coverage": "partial",
+                "notes": "Basic coverage, needs spore type detail (Issue #270)"
             },
-            'Gram_stain': {
-                'metpo_classes': ['METPO:0000009 (Gram-positive)', 'METPO:0000010 (Gram-negative)',
-                                  'METPO:0000011 (Gram-variable)'],
-                'coverage': 'full',
-                'notes': 'Complete Gram stain coverage'
+            "Gram_stain": {
+                "metpo_classes": ["METPO:0000009 (Gram-positive)", "METPO:0000010 (Gram-negative)",
+                                  "METPO:0000011 (Gram-variable)"],
+                "coverage": "full",
+                "notes": "Complete Gram stain coverage"
             }
         },
-        'physiology_metabolism': {
-            'metabolism_type': {
-                'metpo_classes': ['METPO:0000040 (chemoheterotroph)', 'METPO:0000041 (chemoautotroph)',
-                                  'METPO:0000042 (photoheterotroph)', 'METPO:0000043 (photoautotroph)'],
-                'coverage': 'full',
-                'notes': 'Metabolic strategies well represented'
+        "physiology_metabolism": {
+            "metabolism_type": {
+                "metpo_classes": ["METPO:0000040 (chemoheterotroph)", "METPO:0000041 (chemoautotroph)",
+                                  "METPO:0000042 (photoheterotroph)", "METPO:0000043 (photoautotroph)"],
+                "coverage": "full",
+                "notes": "Metabolic strategies well represented"
             },
-            'carbon_source_utilization': {
-                'metpo_classes': ['METPO:0000050 (methylotroph)', 'METPO:0000051 (methanotroph)',
-                                  'METPO:0000052 (acetoclastic)', 'numerous substrate utilization classes'],
-                'coverage': 'extensive',
-                'notes': 'Large set of carbon source utilization classes'
+            "carbon_source_utilization": {
+                "metpo_classes": ["METPO:0000050 (methylotroph)", "METPO:0000051 (methanotroph)",
+                                  "METPO:0000052 (acetoclastic)", "numerous substrate utilization classes"],
+                "coverage": "extensive",
+                "notes": "Large set of carbon source utilization classes"
             },
-            'nitrogen_metabolism': {
-                'metpo_classes': ['METPO:0000060 (nitrogen-fixing)', 'METPO:0000061 (denitrifying)',
-                                  'METPO:0000062 (nitrifying)'],
-                'coverage': 'good',
-                'notes': 'Key nitrogen transformations covered'
+            "nitrogen_metabolism": {
+                "metpo_classes": ["METPO:0000060 (nitrogen-fixing)", "METPO:0000061 (denitrifying)",
+                                  "METPO:0000062 (nitrifying)"],
+                "coverage": "good",
+                "notes": "Key nitrogen transformations covered"
             }
         }
     }
@@ -93,60 +93,60 @@ def analyze_bactotraits_alignment() -> Dict:
     """Analyze METPO alignment with BactoTraits 19 functional traits."""
     # From data/bactotraits/1-s2.0-S1470160X21007123-main.pdf (Cébron et al. 2021)
     bactotraits_traits = {
-        'oxygen_requirement': {
-            'metpo_coverage': ['aerobic', 'facultative anaerobic', 'anaerobic', 'microaerophilic'],
-            'coverage': 'full',
-            'notes': 'All 4 BactoTraits oxygen categories mapped to METPO'
+        "oxygen_requirement": {
+            "metpo_coverage": ["aerobic", "facultative anaerobic", "anaerobic", "microaerophilic"],
+            "coverage": "full",
+            "notes": "All 4 BactoTraits oxygen categories mapped to METPO"
         },
-        'gram_stain': {
-            'metpo_coverage': ['Gram-positive', 'Gram-negative', 'Gram-variable'],
-            'coverage': 'full',
-            'notes': 'Complete coverage'
+        "gram_stain": {
+            "metpo_coverage": ["Gram-positive", "Gram-negative", "Gram-variable"],
+            "coverage": "full",
+            "notes": "Complete coverage"
         },
-        'endospore_formation': {
-            'metpo_coverage': ['spore-forming', 'non-spore-forming'],
-            'coverage': 'partial',
-            'notes': 'Basic coverage, BactoTraits distinguishes sporulation capability'
+        "endospore_formation": {
+            "metpo_coverage": ["spore-forming", "non-spore-forming"],
+            "coverage": "partial",
+            "notes": "Basic coverage, BactoTraits distinguishes sporulation capability"
         },
-        'motility': {
-            'metpo_coverage': ['motile', 'non-motile'],
-            'coverage': 'partial',
-            'notes': 'Basic coverage, BactoTraits has motility types (flagellar, gliding)'
+        "motility": {
+            "metpo_coverage": ["motile", "non-motile"],
+            "coverage": "partial",
+            "notes": "Basic coverage, BactoTraits has motility types (flagellar, gliding)"
         },
-        'salt_requirement': {
-            'metpo_coverage': ['halophilic', 'halotolerant', 'non-halophilic'],
-            'coverage': 'full',
-            'notes': 'METPO has finer-grained salinity classes'
+        "salt_requirement": {
+            "metpo_coverage": ["halophilic", "halotolerant", "non-halophilic"],
+            "coverage": "full",
+            "notes": "METPO has finer-grained salinity classes"
         },
-        'optimum_temperature': {
-            'metpo_coverage': ['psychrophilic', 'mesophilic', 'thermophilic'],
-            'coverage': 'full',
-            'notes': 'Temperature phenotypes well aligned'
+        "optimum_temperature": {
+            "metpo_coverage": ["psychrophilic", "mesophilic", "thermophilic"],
+            "coverage": "full",
+            "notes": "Temperature phenotypes well aligned"
         },
-        'optimum_pH': {
-            'metpo_coverage': ['acidophilic', 'neutrophilic', 'alkaliphilic'],
-            'coverage': 'full',
-            'notes': 'pH phenotypes well aligned'
+        "optimum_pH": {
+            "metpo_coverage": ["acidophilic", "neutrophilic", "alkaliphilic"],
+            "coverage": "full",
+            "notes": "pH phenotypes well aligned"
         },
-        'pigmentation': {
-            'metpo_coverage': [],
-            'coverage': 'none',
-            'notes': 'METPO does not currently have pigmentation classes - potential gap'
+        "pigmentation": {
+            "metpo_coverage": [],
+            "coverage": "none",
+            "notes": "METPO does not currently have pigmentation classes - potential gap"
         },
-        'antibiotic_resistance': {
-            'metpo_coverage': ['some resistance traits'],
-            'coverage': 'partial',
-            'notes': 'BactoTraits tracks antibiotic sensitivity profiles'
+        "antibiotic_resistance": {
+            "metpo_coverage": ["some resistance traits"],
+            "coverage": "partial",
+            "notes": "BactoTraits tracks antibiotic sensitivity profiles"
         },
-        'carbon_source_utilization': {
-            'metpo_coverage': ['extensive carbon source classes'],
-            'coverage': 'extensive',
-            'notes': 'METPO has large set of substrate utilization classes'
+        "carbon_source_utilization": {
+            "metpo_coverage": ["extensive carbon source classes"],
+            "coverage": "extensive",
+            "notes": "METPO has large set of substrate utilization classes"
         },
-        'nitrogen_source_utilization': {
-            'metpo_coverage': ['nitrogen-fixing', 'denitrifying', 'nitrifying'],
-            'coverage': 'good',
-            'notes': 'Key nitrogen transformations covered'
+        "nitrogen_source_utilization": {
+            "metpo_coverage": ["nitrogen-fixing", "denitrifying", "nitrifying"],
+            "coverage": "good",
+            "notes": "Key nitrogen transformations covered"
         }
     }
 
@@ -156,55 +156,55 @@ def analyze_madin_alignment() -> Dict:
     """Analyze METPO alignment with Madin et al. 23 phenotypic traits."""
     # From docs/metpo_madin_pathway_coverage.md
     madin_traits = {
-        'temperature_range': {
-            'metpo_coverage': ['complete thermal phenotype classes'],
-            'coverage': 'full',
-            'notes': 'Madin: temperature optimum, min, max → METPO thermal phenotypes'
+        "temperature_range": {
+            "metpo_coverage": ["complete thermal phenotype classes"],
+            "coverage": "full",
+            "notes": "Madin: temperature optimum, min, max → METPO thermal phenotypes"
         },
-        'pH_range': {
-            'metpo_coverage': ['complete pH phenotype classes'],
-            'coverage': 'full',
-            'notes': 'Madin: pH optimum, min, max → METPO pH phenotypes'
+        "pH_range": {
+            "metpo_coverage": ["complete pH phenotype classes"],
+            "coverage": "full",
+            "notes": "Madin: pH optimum, min, max → METPO pH phenotypes"
         },
-        'oxygen_tolerance': {
-            'metpo_coverage': ['aerobic', 'anaerobic', 'facultative', 'microaerophilic'],
-            'coverage': 'full',
-            'notes': 'Direct alignment with Madin oxygen categories'
+        "oxygen_tolerance": {
+            "metpo_coverage": ["aerobic", "anaerobic", "facultative", "microaerophilic"],
+            "coverage": "full",
+            "notes": "Direct alignment with Madin oxygen categories"
         },
-        'salinity': {
-            'metpo_coverage': ['halophilic', 'halotolerant', 'non-halophilic'],
-            'coverage': 'full',
-            'notes': 'Salinity tolerance well represented'
+        "salinity": {
+            "metpo_coverage": ["halophilic", "halotolerant", "non-halophilic"],
+            "coverage": "full",
+            "notes": "Salinity tolerance well represented"
         },
-        'cell_shape': {
-            'metpo_coverage': ['rod', 'coccoid', 'spiral', 'filamentous'],
-            'coverage': 'partial',
-            'notes': 'Basic shapes covered, Madin has more morphology detail'
+        "cell_shape": {
+            "metpo_coverage": ["rod", "coccoid", "spiral", "filamentous"],
+            "coverage": "partial",
+            "notes": "Basic shapes covered, Madin has more morphology detail"
         },
-        'motility': {
-            'metpo_coverage': ['motile', 'non-motile'],
-            'coverage': 'partial',
-            'notes': 'Basic motility, Madin tracks flagellation types'
+        "motility": {
+            "metpo_coverage": ["motile", "non-motile"],
+            "coverage": "partial",
+            "notes": "Basic motility, Madin tracks flagellation types"
         },
-        'metabolism': {
-            'metpo_coverage': ['chemo/photo + auto/heterotroph combinations'],
-            'coverage': 'full',
-            'notes': 'Metabolic strategies comprehensively covered'
+        "metabolism": {
+            "metpo_coverage": ["chemo/photo + auto/heterotroph combinations"],
+            "coverage": "full",
+            "notes": "Metabolic strategies comprehensively covered"
         },
-        'carbon_metabolism': {
-            'metpo_coverage': ['methylotroph', 'methanotroph', 'acetoclastic', 'many substrates'],
-            'coverage': 'extensive',
-            'notes': 'Madin pathways map to METPO substrate classes'
+        "carbon_metabolism": {
+            "metpo_coverage": ["methylotroph", "methanotroph", "acetoclastic", "many substrates"],
+            "coverage": "extensive",
+            "notes": "Madin pathways map to METPO substrate classes"
         },
-        'genome_size': {
-            'metpo_coverage': [],
-            'coverage': 'none',
-            'notes': 'METPO focuses on phenotypes, not genomic features'
+        "genome_size": {
+            "metpo_coverage": [],
+            "coverage": "none",
+            "notes": "METPO focuses on phenotypes, not genomic features"
         },
-        'GC_content': {
-            'metpo_coverage': [],
-            'coverage': 'none',
-            'notes': 'METPO focuses on phenotypes, not genomic features'
+        "GC_content": {
+            "metpo_coverage": [],
+            "coverage": "none",
+            "notes": "METPO focuses on phenotypes, not genomic features"
         }
     }
 
@@ -235,13 +235,13 @@ def generate_icbo_summary() -> str:
     for category, fields in bacdive.items():
         summary.append(f"   {category}:")
         for field, info in fields.items():
-            coverage_symbol = "✓" if info['coverage'] == 'full' else "◐" if info['coverage'] == 'partial' else "✗"
+            coverage_symbol = "✓" if info["coverage"] == "full" else "◐" if info["coverage"] == "partial" else "✗"
             summary.append(f"      {coverage_symbol} {field}: {info['coverage']} coverage")
             summary.append(f"         {info['notes']}")
 
-            if info['coverage'] == 'full':
+            if info["coverage"] == "full":
                 full_coverage_count += 1
-            elif info['coverage'] == 'partial':
+            elif info["coverage"] == "partial":
                 partial_coverage_count += 1
 
     total_fields = sum(len(fields) for fields in bacdive.values())
@@ -255,12 +255,12 @@ def generate_icbo_summary() -> str:
     summary.append(f"   Traits analyzed: {len(bactotraits)}")
     summary.append("")
 
-    full_bt = sum(1 for t in bactotraits.values() if t['coverage'] == 'full')
-    partial_bt = sum(1 for t in bactotraits.values() if t['coverage'] == 'partial')
-    extensive_bt = sum(1 for t in bactotraits.values() if t['coverage'] == 'extensive')
+    full_bt = sum(1 for t in bactotraits.values() if t["coverage"] == "full")
+    partial_bt = sum(1 for t in bactotraits.values() if t["coverage"] == "partial")
+    extensive_bt = sum(1 for t in bactotraits.values() if t["coverage"] == "extensive")
 
     for trait, info in bactotraits.items():
-        coverage_symbol = "✓" if info['coverage'] in ['full', 'extensive'] else "◐" if info['coverage'] == 'partial' else "✗"
+        coverage_symbol = "✓" if info["coverage"] in ["full", "extensive"] else "◐" if info["coverage"] == "partial" else "✗"
         summary.append(f"   {coverage_symbol} {trait}: {info['coverage']} coverage")
         summary.append(f"      {info['notes']}")
 
@@ -274,12 +274,12 @@ def generate_icbo_summary() -> str:
     summary.append(f"   Traits analyzed: {len(madin)}")
     summary.append("")
 
-    full_md = sum(1 for t in madin.values() if t['coverage'] == 'full')
-    partial_md = sum(1 for t in madin.values() if t['coverage'] == 'partial')
-    extensive_md = sum(1 for t in madin.values() if t['coverage'] == 'extensive')
+    full_md = sum(1 for t in madin.values() if t["coverage"] == "full")
+    partial_md = sum(1 for t in madin.values() if t["coverage"] == "partial")
+    extensive_md = sum(1 for t in madin.values() if t["coverage"] == "extensive")
 
     for trait, info in madin.items():
-        coverage_symbol = "✓" if info['coverage'] in ['full', 'extensive'] else "◐" if info['coverage'] == 'partial' else "✗"
+        coverage_symbol = "✓" if info["coverage"] in ["full", "extensive"] else "◐" if info["coverage"] == "partial" else "✗"
         summary.append(f"   {coverage_symbol} {trait}: {info['coverage']} coverage")
         summary.append(f"      {info['notes']}")
 
@@ -327,8 +327,8 @@ def main():
     click.echo(summary)
 
     # Save to file
-    output_file = Path(__file__).parent / 'metpo_database_alignment_icbo2025.txt'
-    with open(output_file, 'w') as f:
+    output_file = Path(__file__).parent / "metpo_database_alignment_icbo2025.txt"
+    with open(output_file, "w") as f:
         f.write(summary)
         f.write("\n\n")
         f.write("=" * 80 + "\n")
@@ -353,5 +353,5 @@ def main():
 
     click.echo(f"\n\nDetailed analysis saved to: {output_file}")
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

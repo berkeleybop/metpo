@@ -10,34 +10,34 @@ from tqdm import tqdm
 
 @click.command()
 @click.option(
-    '--ols-path',
+    "--ols-path",
     type=click.Path(exists=True),
-    default='notebooks/chroma_ols_27',
-    help='Path to OLS ChromaDB'
+    default="notebooks/chroma_ols_27",
+    help="Path to OLS ChromaDB"
 )
 @click.option(
-    '--non-ols-path',
+    "--non-ols-path",
     type=click.Path(exists=True),
-    default='embeddings_chroma',
-    help='Path to non-OLS ChromaDB'
+    default="embeddings_chroma",
+    help="Path to non-OLS ChromaDB"
 )
 @click.option(
-    '--output-path',
+    "--output-path",
     type=click.Path(),
-    default='notebooks/chroma_combined',
-    help='Path for combined ChromaDB output'
+    default="notebooks/chroma_combined",
+    help="Path for combined ChromaDB output"
 )
 @click.option(
-    '--output-collection',
+    "--output-collection",
     type=str,
-    default='combined_embeddings',
-    help='Name of combined collection'
+    default="combined_embeddings",
+    help="Name of combined collection"
 )
 @click.option(
-    '--batch-size',
+    "--batch-size",
     type=int,
     default=1000,
-    help='Batch size for copying embeddings'
+    help="Batch size for copying embeddings"
 )
 def main(ols_path, non_ols_path, output_path, output_collection, batch_size):
     """
@@ -141,18 +141,18 @@ def copy_collection(source_collection, dest_collection, batch_size):
             )
 
             # Check if we got data
-            if not chunk_data['ids']:
+            if not chunk_data["ids"]:
                 break
 
             # Add to destination
             dest_collection.add(
-                ids=chunk_data['ids'],
-                embeddings=chunk_data['embeddings'],
-                documents=chunk_data['documents'],
-                metadatas=chunk_data['metadatas']
+                ids=chunk_data["ids"],
+                embeddings=chunk_data["embeddings"],
+                documents=chunk_data["documents"],
+                metadatas=chunk_data["metadatas"]
             )
 
-            chunk_size = len(chunk_data['ids'])
+            chunk_size = len(chunk_data["ids"])
             copied += chunk_size
             offset += chunk_size
             pbar.update(chunk_size)

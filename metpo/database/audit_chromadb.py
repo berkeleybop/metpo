@@ -40,15 +40,15 @@ def audit_collection(chroma_path: str, collection_name: str):
             results = collection.get(
                 limit=min(batch_size, total - offset),
                 offset=offset,
-                include=['metadatas', 'embeddings']
+                include=["metadatas", "embeddings"]
             )
 
-            for metadata in results['metadatas']:
-                if 'ontologyId' in metadata:
-                    all_ontologies.append(metadata['ontologyId'])
+            for metadata in results["metadatas"]:
+                if "ontologyId" in metadata:
+                    all_ontologies.append(metadata["ontologyId"])
 
             # Check vector dimensions
-            for embedding in results['embeddings']:
+            for embedding in results["embeddings"]:
                 if embedding is not None and len(embedding) > 0:
                     vector_dims.add(len(embedding))
 
@@ -83,11 +83,11 @@ def audit_collection(chroma_path: str, collection_name: str):
                 print(f"  {ont:<20} {count:>5,} ({pct:>5.2f}%)")
 
         return {
-            'total': total,
-            'ontologies': set(ont_counts.keys()),
-            'vector_dims': vector_dims,
-            'ont_counts': ont_counts,
-            'sampled': len(all_ontologies)
+            "total": total,
+            "ontologies": set(ont_counts.keys()),
+            "vector_dims": vector_dims,
+            "ont_counts": ont_counts,
+            "sampled": len(all_ontologies)
         }
 
     except Exception as e:
@@ -100,9 +100,9 @@ def main():
     """Audit all ChromaDB collections."""
 
     collections = [
-        ('./chroma_ols_27', 'ols_embeddings'),
-        ('../embeddings_chroma', 'non_ols_embeddings'),
-        ('./chroma_combined', 'combined_embeddings'),
+        ("./chroma_ols_27", "ols_embeddings"),
+        ("../embeddings_chroma", "non_ols_embeddings"),
+        ("./chroma_combined", "combined_embeddings"),
     ]
 
     results = {}
@@ -116,9 +116,9 @@ def main():
     print(f"CROSS-DATABASE COMPARISON")
     print(f"{'=' * 80}")
 
-    ols_result = results.get('./chroma_ols_27/ols_embeddings')
-    non_ols_result = results.get('../embeddings_chroma/non_ols_embeddings')
-    combined_result = results.get('./chroma_combined/combined_embeddings')
+    ols_result = results.get("./chroma_ols_27/ols_embeddings")
+    non_ols_result = results.get("../embeddings_chroma/non_ols_embeddings")
+    combined_result = results.get("./chroma_combined/combined_embeddings")
 
     if ols_result and non_ols_result and combined_result:
         print(f"\nTotal Counts:")
@@ -127,14 +127,14 @@ def main():
         print(f"  Combined:  {combined_result['total']:>10,}")
         print(f"  Expected:  {ols_result['total'] + non_ols_result['total']:>10,}")
 
-        if combined_result['total'] == ols_result['total'] + non_ols_result['total']:
+        if combined_result["total"] == ols_result["total"] + non_ols_result["total"]:
             print(f"  ✓ Combined count matches OLS + Non-OLS")
         else:
-            diff = combined_result['total'] - (ols_result['total'] + non_ols_result['total'])
+            diff = combined_result["total"] - (ols_result["total"] + non_ols_result["total"])
             print(f"  ⚠️  Combined count off by {diff:,}")
 
         print(f"\nVector Dimensions:")
-        all_dims = ols_result['vector_dims'] | non_ols_result['vector_dims'] | combined_result['vector_dims']
+        all_dims = ols_result["vector_dims"] | non_ols_result["vector_dims"] | combined_result["vector_dims"]
         if len(all_dims) == 1:
             print(f"  ✓ All databases use same dimension: {list(all_dims)[0]}")
         else:
@@ -150,8 +150,8 @@ def main():
         print(f"  Expected: {len(ols_result['ontologies'] | non_ols_result['ontologies'])}")
 
         # Check for missing ontologies
-        expected_ontologies = ols_result['ontologies'] | non_ols_result['ontologies']
-        missing = expected_ontologies - combined_result['ontologies']
+        expected_ontologies = ols_result["ontologies"] | non_ols_result["ontologies"]
+        missing = expected_ontologies - combined_result["ontologies"]
         if missing:
             print(f"\n  ⚠️  Ontologies missing from combined:")
             for ont in sorted(missing):
@@ -160,7 +160,7 @@ def main():
             print(f"  ✓ All ontologies present in combined")
 
         # Check for unexpected ontologies in combined
-        unexpected = combined_result['ontologies'] - expected_ontologies
+        unexpected = combined_result["ontologies"] - expected_ontologies
         if unexpected:
             print(f"\n  ⚠️  Unexpected ontologies in combined:")
             for ont in sorted(unexpected):
@@ -168,13 +168,13 @@ def main():
 
         # List OLS-only and Non-OLS-only
         print(f"\nOLS-only ontologies ({len(ols_result['ontologies'] - non_ols_result['ontologies'])}):")
-        for ont in sorted(ols_result['ontologies'] - non_ols_result['ontologies']):
-            count = ols_result['ont_counts'].get(ont, 0)
+        for ont in sorted(ols_result["ontologies"] - non_ols_result["ontologies"]):
+            count = ols_result["ont_counts"].get(ont, 0)
             print(f"  - {ont:<20} {count:,}")
 
         print(f"\nNon-OLS-only ontologies ({len(non_ols_result['ontologies'] - ols_result['ontologies'])}):")
-        for ont in sorted(non_ols_result['ontologies'] - ols_result['ontologies']):
-            count = non_ols_result['ont_counts'].get(ont, 0)
+        for ont in sorted(non_ols_result["ontologies"] - ols_result["ontologies"]):
+            count = non_ols_result["ont_counts"].get(ont, 0)
             print(f"  - {ont:<20} {count:,}")
 
     print(f"\n{'=' * 80}")

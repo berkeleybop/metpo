@@ -15,11 +15,11 @@ def count_groundings(yaml_file):
         data = yaml.safe_load(f)
 
     counts = {
-        'metpo': 0,
-        'chebi': 0,
-        'ncbitaxon': 0,
-        'auto': 0,
-        'total': 0
+        "metpo": 0,
+        "chebi": 0,
+        "ncbitaxon": 0,
+        "auto": 0,
+        "total": 0
     }
 
     # Helper to check object field
@@ -27,54 +27,54 @@ def count_groundings(yaml_file):
         if not obj:
             return None
         obj_str = str(obj)
-        if 'w3id.org/metpo' in obj_str or obj_str.startswith('METPO:'):
-            return 'metpo'
-        elif obj_str.startswith('CHEBI:'):
-            return 'chebi'
-        elif obj_str.startswith('NCBITaxon:'):
-            return 'ncbitaxon'
-        elif obj_str.startswith('AUTO:'):
-            return 'auto'
+        if "w3id.org/metpo" in obj_str or obj_str.startswith("METPO:"):
+            return "metpo"
+        elif obj_str.startswith("CHEBI:"):
+            return "chebi"
+        elif obj_str.startswith("NCBITaxon:"):
+            return "ncbitaxon"
+        elif obj_str.startswith("AUTO:"):
+            return "auto"
         return None
 
     # Check extracted_object for relationships
-    ext_obj = data.get('extracted_object', {})
+    ext_obj = data.get("extracted_object", {})
 
     # Strain to phenotype relationships
-    for rel in ext_obj.get('strain_to_phenotype', []):
-        obj_type = check_object(rel.get('object'))
+    for rel in ext_obj.get("strain_to_phenotype", []):
+        obj_type = check_object(rel.get("object"))
         if obj_type:
             counts[obj_type] += 1
-            counts['total'] += 1
+            counts["total"] += 1
 
     # Chemical utilizations
-    for rel in ext_obj.get('chemical_utilizations', []):
-        obj_type = check_object(rel.get('object'))
+    for rel in ext_obj.get("chemical_utilizations", []):
+        obj_type = check_object(rel.get("object"))
         if obj_type:
             counts[obj_type] += 1
-            counts['total'] += 1
+            counts["total"] += 1
 
     # Study taxa
-    for taxon in ext_obj.get('study_taxa', []):
+    for taxon in ext_obj.get("study_taxa", []):
         obj_type = check_object(taxon)
         if obj_type:
             counts[obj_type] += 1
-            counts['total'] += 1
+            counts["total"] += 1
 
     # Chemicals mentioned
-    for chem in ext_obj.get('chemicals_mentioned', []):
+    for chem in ext_obj.get("chemicals_mentioned", []):
         obj_type = check_object(chem)
         if obj_type:
             counts[obj_type] += 1
-            counts['total'] += 1
+            counts["total"] += 1
 
     return counts
 
 def main():
-    outputs_dir = Path('outputs')
+    outputs_dir = Path("outputs")
 
-    phenotype_files = sorted(outputs_dir.glob('*-phenotype.yaml'))
-    chemical_files = sorted(outputs_dir.glob('*-chemical.yaml'))
+    phenotype_files = sorted(outputs_dir.glob("*-phenotype.yaml"))
+    chemical_files = sorted(outputs_dir.glob("*-chemical.yaml"))
 
     print("=== OntoGPT Grounding Analysis (PRIMARY SOURCE) ===\n")
     print(f"Source: {outputs_dir.absolute()}")
@@ -103,17 +103,17 @@ def main():
     print()
 
     # Calculate success rates
-    if totals['total'] > 0:
-        phenotype_total = totals['metpo'] + totals['auto']
+    if totals["total"] > 0:
+        phenotype_total = totals["metpo"] + totals["auto"]
         if phenotype_total > 0:
-            metpo_rate = 100 * totals['metpo'] / phenotype_total
+            metpo_rate = 100 * totals["metpo"] / phenotype_total
             print(f"METPO phenotype success rate: {metpo_rate:.1f}% ({totals['metpo']}/{phenotype_total})")
 
-        chem_total = totals['chebi']
+        chem_total = totals["chebi"]
         if chem_total > 0:
             print(f"ChEBI chemical success rate: 100.0% ({chem_total}/{chem_total})")
 
-        taxon_total = totals['ncbitaxon']
+        taxon_total = totals["ncbitaxon"]
         if taxon_total > 0:
             print(f"NCBITaxon success rate: 100.0% ({taxon_total}/{taxon_total})")
 
@@ -123,12 +123,12 @@ def main():
     print("=== PER-FILE BREAKDOWN ===")
     for filename in sorted(per_file.keys()):
         counts = per_file[filename]
-        if counts['total'] > 0:
+        if counts["total"] > 0:
             print(f"{filename:30s} METPO:{counts['metpo']:3d}  ChEBI:{counts['chebi']:3d}  "
                   f"NCBITaxon:{counts['ncbitaxon']:3d}  AUTO:{counts['auto']:3d}")
 
     # Return data for plotting
     return totals, per_file
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     totals, per_file = main()

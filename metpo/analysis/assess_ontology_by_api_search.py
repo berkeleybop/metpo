@@ -242,7 +242,7 @@ def main():
         "unique_ontologies": results_df["match_ontology"].nunique(),
         "avg_similarity": float(results_df["similarity_ratio"].mean()),
         "median_similarity": float(results_df["similarity_ratio"].median()),
-        "top_10_ontologies": ontology_rankings.head(10).to_dict('records'),
+        "top_10_ontologies": ontology_rankings.head(10).to_dict("records"),
         "runtime_minutes": elapsed / 60
     }
 

@@ -24,7 +24,7 @@ def analyze_raw_madin():
     print(f"\n=== Madin et al Raw Data Analysis ===")
     print(f"Source: {RAW_FILE}")
 
-    with open(RAW_FILE, 'r', encoding='utf-8') as f:
+    with open(RAW_FILE, "r", encoding="utf-8") as f:
         reader = csv.DictReader(f)
 
         total_records = 0
@@ -36,18 +36,18 @@ def analyze_raw_madin():
             total_records += 1
 
             # Count data sources
-            source = row.get('data_source', '')
+            source = row.get("data_source", "")
             if source:
                 data_sources[source] += 1
 
             # Count domains (superkingdom)
-            domain = row.get('superkingdom', '')
+            domain = row.get("superkingdom", "")
             if domain:
                 domains[domain] += 1
 
             # Check which traits are present (non-empty, not NA)
             for key, value in row.items():
-                if value and value.strip() and value.strip().upper() != 'NA':
+                if value and value.strip() and value.strip().upper() != "NA":
                     trait_coverage[key] += 1
 
         print(f"\nTotal records: {total_records:,}")
@@ -68,10 +68,10 @@ def analyze_raw_madin():
             print(f"  {trait:30s}: {count:8,} ({pct:5.1f}%)")
 
         return {
-            'total_records': total_records,
-            'trait_coverage': trait_coverage,
-            'data_sources': data_sources,
-            'domains': domains
+            "total_records": total_records,
+            "trait_coverage": trait_coverage,
+            "data_sources": data_sources,
+            "domains": domains
         }
 
 def analyze_transformed_madin():
@@ -88,16 +88,16 @@ def analyze_transformed_madin():
     metpo_edges = 0
     predicate_counter = Counter()
 
-    with open(TRANSFORMED_EDGES, 'r') as f:
-        reader = csv.DictReader(f, delimiter='\t')
+    with open(TRANSFORMED_EDGES, "r") as f:
+        reader = csv.DictReader(f, delimiter="\t")
         for row in reader:
             total_edges += 1
-            obj = row.get('object', '')
-            pred = row.get('predicate', '')
+            obj = row.get("object", "")
+            pred = row.get("predicate", "")
 
             predicate_counter[pred] += 1
 
-            if obj.startswith('METPO:'):
+            if obj.startswith("METPO:"):
                 metpo_edges += 1
                 metpo_objects.append(obj)
 
@@ -122,11 +122,11 @@ def analyze_transformed_madin():
         print(f"  {term}: {count:,}")
 
     return {
-        'total_edges': total_edges,
-        'metpo_edges': metpo_edges,
-        'unique_metpo_terms': unique_metpo_terms,
-        'metpo_distribution': metpo_counter,
-        'predicates': predicate_counter
+        "total_edges": total_edges,
+        "metpo_edges": metpo_edges,
+        "unique_metpo_terms": unique_metpo_terms,
+        "metpo_distribution": metpo_counter,
+        "predicates": predicate_counter
     }
 
 def analyze_transformed_nodes():
@@ -141,14 +141,14 @@ def analyze_transformed_nodes():
     node_types = Counter()
     total_nodes = 0
 
-    with open(TRANSFORMED_NODES, 'r') as f:
-        reader = csv.DictReader(f, delimiter='\t')
+    with open(TRANSFORMED_NODES, "r") as f:
+        reader = csv.DictReader(f, delimiter="\t")
         for row in reader:
             total_nodes += 1
-            node_id = row.get('id', '')
+            node_id = row.get("id", "")
             # Extract prefix
-            if ':' in node_id:
-                prefix = node_id.split(':')[0]
+            if ":" in node_id:
+                prefix = node_id.split(":")[0]
                 node_types[prefix] += 1
 
     print(f"\nTotal nodes: {total_nodes:,}")
@@ -158,8 +158,8 @@ def analyze_transformed_nodes():
         print(f"  {prefix:20s}: {count:8,} ({pct:5.1f}%)")
 
     return {
-        'total_nodes': total_nodes,
-        'node_types': node_types
+        "total_nodes": total_nodes,
+        "node_types": node_types
     }
 
 def main():

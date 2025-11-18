@@ -28,7 +28,7 @@ def normalize_id(id_str: str) -> str:
     return id_str
 
 
-def map_unit_to_ucum(bactotraits_unit: str, class_label: str = '') -> str:
+def map_unit_to_ucum(bactotraits_unit: str, class_label: str = "") -> str:
     """
     Map BactoTraits unit notation to UCUM codes.
 
@@ -40,58 +40,58 @@ def map_unit_to_ucum(bactotraits_unit: str, class_label: str = '') -> str:
     # Infer from class label if unit seems wrong
     label_lower = class_label.lower()
 
-    if 'nacl' in label_lower or 'salt' in label_lower:
+    if "nacl" in label_lower or "salt" in label_lower:
         # NaCl classes should be % (percent)
-        return '%'
+        return "%"
 
-    if 'temperature' in label_lower or 'temp' in label_lower:
+    if "temperature" in label_lower or "temp" in label_lower:
         # Temperature classes should be Cel (Celsius)
-        return 'Cel'
+        return "Cel"
 
-    if 'ph ' in label_lower or label_lower.startswith('ph '):
+    if "ph " in label_lower or label_lower.startswith("ph "):
         # pH is unitless
-        return ''
+        return ""
 
-    if 'gc ' in label_lower or label_lower.startswith('gc ') or 'gc content' in label_lower:
+    if "gc " in label_lower or label_lower.startswith("gc ") or "gc content" in label_lower:
         # GC content is unitless
-        return ''
+        return ""
 
     # Otherwise use the provided unit
     # Temperature
-    if unit == 'C':
-        return 'Cel'
+    if unit == "C":
+        return "Cel"
 
     # NaCl concentration
-    if unit == '% NaCl':
-        return '%'
+    if unit == "% NaCl":
+        return "%"
 
     # Unitless quantities
-    if unit in ['pH', '% GC']:
-        return ''
+    if unit in ["pH", "% GC"]:
+        return ""
 
     # Unknown or empty
-    return ''
+    return ""
 
 
 def load_range_metadata(bactotraits_path: Path) -> Dict[str, Dict[str, str]]:
     """Load range metadata from bactotraits.tsv."""
     range_data = {}
 
-    with open(bactotraits_path, 'r', encoding='utf-8') as f:
-        reader = csv.DictReader(f, delimiter='\t')
+    with open(bactotraits_path, "r", encoding="utf-8") as f:
+        reader = csv.DictReader(f, delimiter="\t")
 
         for row in reader:
-            first_col = row.get('First column', '').strip()
-            if not first_col or first_col == 'First column':
+            first_col = row.get("First column", "").strip()
+            if not first_col or first_col == "First column":
                 continue
 
             class_id = normalize_id(first_col)
 
             # Get raw values
-            label = row.get('Values', '').strip()
-            units_raw = row.get('Units', '').strip()
-            range_min = row.get('RangeMins', '').strip()
-            range_max = row.get('RangeMaxes', '').strip()
+            label = row.get("Values", "").strip()
+            units_raw = row.get("Units", "").strip()
+            range_min = row.get("RangeMins", "").strip()
+            range_max = row.get("RangeMaxes", "").strip()
 
             # Map to UCUM (using label as fallback)
             ucum_unit = map_unit_to_ucum(units_raw, label)
@@ -99,11 +99,11 @@ def load_range_metadata(bactotraits_path: Path) -> Dict[str, Dict[str, str]]:
             # Only include if there's range data
             if range_min or range_max:
                 range_data[class_id] = {
-                    'label': label,
-                    'unit_raw': units_raw,
-                    'unit_ucum': ucum_unit,
-                    'range_min': range_min,
-                    'range_max': range_max
+                    "label": label,
+                    "unit_raw": units_raw,
+                    "unit_ucum": ucum_unit,
+                    "range_min": range_min,
+                    "range_max": range_max
                 }
 
     return range_data
@@ -149,45 +149,45 @@ def enhance_minimal_classes(minimal_path: Path,
     """
     rows = []
     header = None
-    stats = {'total': 0, 'enhanced': 0, 'skipped': 0}
+    stats = {"total": 0, "enhanced": 0, "skipped": 0}
 
     # Read existing data
-    with open(minimal_path, 'r', encoding='utf-8') as f:
-        reader = csv.DictReader(f, delimiter='\t')
+    with open(minimal_path, "r", encoding="utf-8") as f:
+        reader = csv.DictReader(f, delimiter="\t")
         header = list(reader.fieldnames)
 
         for idx, row in enumerate(reader):
-            class_id = row.get('ID', '').strip()
+            class_id = row.get("ID", "").strip()
 
-            if class_id and class_id != 'ID':
-                stats['total'] += 1
+            if class_id and class_id != "ID":
+                stats["total"] += 1
                 normalized_id = normalize_id(class_id)
 
                 # Add range metadata if available
                 if normalized_id in range_data:
                     metadata = range_data[normalized_id]
-                    row['measurement_unit_ucum'] = metadata['unit_ucum']
-                    row['range_min'] = metadata['range_min']
-                    row['range_max'] = metadata['range_max']
+                    row["measurement_unit_ucum"] = metadata["unit_ucum"]
+                    row["range_min"] = metadata["range_min"]
+                    row["range_max"] = metadata["range_max"]
 
                     # For TSV export, we'll use the computed value instead of formula
                     # User will add formula in Google Sheets
-                    if metadata['range_min'] and metadata['range_max']:
+                    if metadata["range_min"] and metadata["range_max"]:
                         equiv = f"'has measurement value' some float[>= {metadata['range_min']} , <= {metadata['range_max']}]"
-                    elif metadata['range_max']:
+                    elif metadata["range_max"]:
                         equiv = f"'has measurement value' some float[<= {metadata['range_max']}]"
-                    elif metadata['range_min']:
+                    elif metadata["range_min"]:
                         equiv = f"'has measurement value' some float[>= {metadata['range_min']}]"
                     else:
                         equiv = ""
 
-                    row['equivalent_class_formula'] = equiv
-                    stats['enhanced'] += 1
+                    row["equivalent_class_formula"] = equiv
+                    stats["enhanced"] += 1
 
                     if dry_run:
-                        label = row.get('label', '')[:40]
+                        label = row.get("label", "")[:40]
                         print(f"✓ {class_id}: {label:<40}")
-                        if metadata['unit_raw'] and metadata['unit_raw'] != metadata.get('label', ''):
+                        if metadata["unit_raw"] and metadata["unit_raw"] != metadata.get("label", ""):
                             print(f"  Unit: {metadata['unit_raw']:<10} → {metadata['unit_ucum']}")
                         else:
                             print(f"  Unit: {metadata['unit_ucum']}")
@@ -195,48 +195,48 @@ def enhance_minimal_classes(minimal_path: Path,
                         print(f"  Axiom: {equiv}")
                         print()
                 else:
-                    row['measurement_unit_ucum'] = ''
-                    row['range_min'] = ''
-                    row['range_max'] = ''
-                    row['equivalent_class_formula'] = ''
-                    stats['skipped'] += 1
+                    row["measurement_unit_ucum"] = ""
+                    row["range_min"] = ""
+                    row["range_max"] = ""
+                    row["equivalent_class_formula"] = ""
+                    stats["skipped"] += 1
 
             rows.append(row)
 
     # Write enhanced data
     if not dry_run:
         # Add new columns to header
-        new_columns = ['measurement_unit_ucum', 'range_min', 'range_max', 'equivalent_class_formula']
+        new_columns = ["measurement_unit_ucum", "range_min", "range_max", "equivalent_class_formula"]
         new_header = list(header) + new_columns
 
-        with open(output_path, 'w', encoding='utf-8', newline='') as f:
-            writer = csv.DictWriter(f, fieldnames=new_header, delimiter='\t', extrasaction='ignore')
+        with open(output_path, "w", encoding="utf-8", newline="") as f:
+            writer = csv.DictWriter(f, fieldnames=new_header, delimiter="\t", extrasaction="ignore")
             writer.writeheader()
 
             # Write ROBOT template row
-            robot_row = {col: '' for col in new_header}
+            robot_row = {col: "" for col in new_header}
             robot_row.update({
-                'ID': 'ID',
-                'label': 'LABEL',
-                'TYPE': 'TYPE',
-                'parent class': 'SC %',
-                'description': 'A IAO:0000115',
-                'measurement_unit_ucum': '',  # blank - not used in ROBOT
-                'range_min': '',  # blank - not used in ROBOT
-                'range_max': '',  # blank - not used in ROBOT
-                'equivalent_class_formula': 'EC %'  # ROBOT directive
+                "ID": "ID",
+                "label": "LABEL",
+                "TYPE": "TYPE",
+                "parent class": "SC %",
+                "description": "A IAO:0000115",
+                "measurement_unit_ucum": "",  # blank - not used in ROBOT
+                "range_min": "",  # blank - not used in ROBOT
+                "range_max": "",  # blank - not used in ROBOT
+                "equivalent_class_formula": "EC %"  # ROBOT directive
             })
 
             # Preserve existing ROBOT directives
             for col in header:
-                if col in ['definition source', 'comment', 'biolink equivalent']:
-                    robot_row[col] = rows[0].get(col, '') if rows else ''
+                if col in ["definition source", "comment", "biolink equivalent"]:
+                    robot_row[col] = rows[0].get(col, "") if rows else ""
 
             writer.writerow(robot_row)
 
             # Write data rows (skip original ROBOT template row)
             for row in rows:
-                if row.get('ID') != 'ID':
+                if row.get("ID") != "ID":
                     writer.writerow(row)
 
         print(f"\n✓ Enhanced minimal_classes.tsv written to: {output_path}")
@@ -246,28 +246,28 @@ def enhance_minimal_classes(minimal_path: Path,
 
 @click.command()
 @click.option(
-    '--execute',
+    "--execute",
     is_flag=True,
     default=False,
-    help='Actually write the enhanced file (default is dry-run)'
+    help="Actually write the enhanced file (default is dry-run)"
 )
 @click.option(
-    '--bactotraits',
+    "--bactotraits",
     type=click.Path(exists=True, dir_okay=False, path_type=Path),
-    default=Path('downloads/sheets/bactotraits.tsv'),
-    help='Path to bactotraits.tsv'
+    default=Path("downloads/sheets/bactotraits.tsv"),
+    help="Path to bactotraits.tsv"
 )
 @click.option(
-    '--minimal',
+    "--minimal",
     type=click.Path(exists=True, dir_okay=False, path_type=Path),
-    default=Path('downloads/sheets/minimal_classes.tsv'),
-    help='Path to minimal_classes.tsv'
+    default=Path("downloads/sheets/minimal_classes.tsv"),
+    help="Path to minimal_classes.tsv"
 )
 @click.option(
-    '--output',
+    "--output",
     type=click.Path(dir_okay=False, path_type=Path),
-    default=Path('downloads/sheets/minimal_classes_enhanced.tsv'),
-    help='Output path for enhanced file'
+    default=Path("downloads/sheets/minimal_classes_enhanced.tsv"),
+    help="Output path for enhanced file"
 )
 def main(execute, bactotraits, minimal, output):
     """Migrate range metadata to minimal_classes.tsv.

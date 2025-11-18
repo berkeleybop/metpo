@@ -34,8 +34,8 @@ def analyze_by_quality_threshold(sssom_path):
     matches_by_threshold = {}
 
     with open(sssom_path) as f:
-        reader = csv.DictReader(f, delimiter='\t')
-        rows = [row for row in reader if not row['subject_id'].startswith('#')]
+        reader = csv.DictReader(f, delimiter="\t")
+        rows = [row for row in reader if not row["subject_id"].startswith("#")]
 
     total_mappings = len(rows)
     print(f"Total mappings in SSSOM file: {total_mappings:,}\n")
@@ -46,10 +46,10 @@ def analyze_by_quality_threshold(sssom_path):
 
         for row in rows:
             try:
-                similarity = float(row['similarity_score'])
+                similarity = float(row["similarity_score"])
                 if similarity >= sim_threshold:
-                    ont = row['object_source']
-                    metpo_term = row['subject_id']
+                    ont = row["object_source"]
+                    metpo_term = row["subject_id"]
                     ont_counts[ont] += 1
                     metpo_terms_covered[ont].add(metpo_term)
                     all_matches_by_ont[ont] += 1
@@ -115,21 +115,21 @@ def analyze_by_quality_threshold(sssom_path):
 
     # Known status (from our API checks)
     status_map = {
-        'micro': ('✓', '✓', 'MicrO - in both'),
-        'd3o': ('✗', '✓', 'DSMZ D3O - BioPortal only'),
-        'meo': ('✗', '✓', 'Metagenome - BioPortal only'),
-        'miso': ('✗', '✓', 'DSMZ MISO - BioPortal only'),
-        'n4l_merged': ('✗', '✗', 'Names4Life - not in registries'),
-        'mpo': ('✗', '✓', 'MPO (RIKEN) - BioPortal only'),
-        'upheno': ('✓', '✓', 'Unified Phenotype - both'),
-        'oba': ('✓', '✓', 'OBA - both'),
-        'flopo': ('✓', '✓', 'FLOPO - both'),
-        'envo': ('✓', '✓', 'ENVO - both'),
-        'biolink': ('✓', '✓', 'Biolink Model - both'),
+        "micro": ("✓", "✓", "MicrO - in both"),
+        "d3o": ("✗", "✓", "DSMZ D3O - BioPortal only"),
+        "meo": ("✗", "✓", "Metagenome - BioPortal only"),
+        "miso": ("✗", "✓", "DSMZ MISO - BioPortal only"),
+        "n4l_merged": ("✗", "✗", "Names4Life - not in registries"),
+        "mpo": ("✗", "✓", "MPO (RIKEN) - BioPortal only"),
+        "upheno": ("✓", "✓", "Unified Phenotype - both"),
+        "oba": ("✓", "✓", "OBA - both"),
+        "flopo": ("✓", "✓", "FLOPO - both"),
+        "envo": ("✓", "✓", "ENVO - both"),
+        "biolink": ("✓", "✓", "Biolink Model - both"),
     }
 
     for ont, count in very_good_onts.most_common(15):
-        ols, bp, notes = status_map.get(ont, ('?', '?', 'Unknown'))
+        ols, bp, notes = status_map.get(ont, ("?", "?", "Unknown"))
         print(f"{ont:<15} {count:<10} {ols:<8} {bp:<12} {notes}")
 
     print("\n✓ = Available, ✗ = Not available, ? = Not verified")

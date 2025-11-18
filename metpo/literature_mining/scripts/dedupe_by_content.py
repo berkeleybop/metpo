@@ -19,24 +19,24 @@ def extract_identifiers(filepath: Path) -> Tuple[str, str, str]:
     Returns:
         (pmid, doi, normalized_abstract_text)
     """
-    with open(filepath, 'r', encoding='utf-8') as f:
+    with open(filepath, "r", encoding="utf-8") as f:
         content = f.read()
 
     # Extract PMID
-    pmid_match = re.search(r'PMID:\s*(\d+)', content)
+    pmid_match = re.search(r"PMID:\s*(\d+)", content)
     pmid = pmid_match.group(1) if pmid_match else None
 
     # Extract DOI
-    doi_match = re.search(r'DOI:\s*(10\.\S+)', content)
+    doi_match = re.search(r"DOI:\s*(10\.\S+)", content)
     doi = doi_match.group(1) if doi_match else None
 
     # Extract and normalize abstract text
-    abstract_match = re.search(r'Abstract:\n(.+)', content, re.DOTALL)
+    abstract_match = re.search(r"Abstract:\n(.+)", content, re.DOTALL)
     if abstract_match:
         abstract = abstract_match.group(1)
         # Normalize: lowercase, remove extra whitespace, remove HTML tags
-        abstract = re.sub(r'<[^>]+>', '', abstract)  # Remove HTML
-        abstract = re.sub(r'\s+', ' ', abstract)  # Normalize whitespace
+        abstract = re.sub(r"<[^>]+>", "", abstract)  # Remove HTML
+        abstract = re.sub(r"\s+", " ", abstract)  # Normalize whitespace
         abstract = abstract.lower().strip()
     else:
         abstract = None
@@ -126,20 +126,20 @@ def find_duplicates(source_dirs):
 
 
 @click.command()
-@click.option('--source-dirs', multiple=True,
-              default=['literature_mining/abstracts', 'literature_mining/cmm_pfas_abstracts'],
-              help='Source directories to scan (can specify multiple)', show_default=True)
-@click.option('--show-details', is_flag=True,
-              help='Show details of each duplicate group')
+@click.option("--source-dirs", multiple=True,
+              default=["literature_mining/abstracts", "literature_mining/cmm_pfas_abstracts"],
+              help="Source directories to scan (can specify multiple)", show_default=True)
+@click.option("--show-details", is_flag=True,
+              help="Show details of each duplicate group")
 def main(source_dirs, show_details):
     """Find duplicate abstracts by content comparison.
 
     Scans abstract files and identifies duplicates based on content similarity,
     even when filenames differ.
     """
-    args = type('Args', (), {
-        'source_dirs': source_dirs,
-        'show_details': show_details
+    args = type("Args", (), {
+        "source_dirs": source_dirs,
+        "show_details": show_details
     })()
 
     duplicates, all_files = find_duplicates(args.source_dirs)
@@ -176,5 +176,5 @@ def main(source_dirs, show_details):
                 print(f"    - {dupe.name} (from {dupe.parent.name}/)")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

@@ -24,12 +24,12 @@ def analyze_raw_bactotraits():
     print(f"\n=== BactoTraits Raw Data Analysis ===")
     print(f"Source: {RAW_FILE}")
 
-    with open(RAW_FILE, 'r', encoding='utf-8', errors='ignore') as f:
+    with open(RAW_FILE, "r", encoding="utf-8", errors="ignore") as f:
         # Skip first two header rows (units and descriptions)
         f.readline()
         f.readline()
 
-        reader = csv.DictReader(f, delimiter=';')
+        reader = csv.DictReader(f, delimiter=";")
 
         total_strains = 0
         trait_coverage = defaultdict(int)
@@ -49,8 +49,8 @@ def analyze_raw_bactotraits():
             print(f"  {trait:40s}: {count:6,} ({pct:5.1f}%)")
 
         return {
-            'total_strains': total_strains,
-            'trait_coverage': trait_coverage
+            "total_strains": total_strains,
+            "trait_coverage": trait_coverage
         }
 
 def analyze_transformed_bactotraits():
@@ -66,12 +66,12 @@ def analyze_transformed_bactotraits():
     total_edges = 0
     metpo_edges = 0
 
-    with open(TRANSFORMED_EDGES, 'r') as f:
-        reader = csv.DictReader(f, delimiter='\t')
+    with open(TRANSFORMED_EDGES, "r") as f:
+        reader = csv.DictReader(f, delimiter="\t")
         for row in reader:
             total_edges += 1
-            obj = row.get('object', '')
-            if obj.startswith('METPO:'):
+            obj = row.get("object", "")
+            if obj.startswith("METPO:"):
                 metpo_edges += 1
                 metpo_objects.append(obj)
 
@@ -89,10 +89,10 @@ def analyze_transformed_bactotraits():
         print(f"  {term}: {count:,}")
 
     return {
-        'total_edges': total_edges,
-        'metpo_edges': metpo_edges,
-        'unique_metpo_terms': unique_metpo_terms,
-        'metpo_distribution': metpo_counter
+        "total_edges": total_edges,
+        "metpo_edges": metpo_edges,
+        "unique_metpo_terms": unique_metpo_terms,
+        "metpo_distribution": metpo_counter
     }
 
 def analyze_transformed_nodes():
@@ -107,14 +107,14 @@ def analyze_transformed_nodes():
     node_types = Counter()
     total_nodes = 0
 
-    with open(TRANSFORMED_NODES, 'r') as f:
-        reader = csv.DictReader(f, delimiter='\t')
+    with open(TRANSFORMED_NODES, "r") as f:
+        reader = csv.DictReader(f, delimiter="\t")
         for row in reader:
             total_nodes += 1
-            node_id = row.get('id', '')
+            node_id = row.get("id", "")
             # Extract prefix
-            if ':' in node_id:
-                prefix = node_id.split(':')[0]
+            if ":" in node_id:
+                prefix = node_id.split(":")[0]
                 node_types[prefix] += 1
 
     print(f"\nTotal nodes: {total_nodes:,}")
@@ -124,8 +124,8 @@ def analyze_transformed_nodes():
         print(f"  {prefix:20s}: {count:8,} ({pct:5.1f}%)")
 
     return {
-        'total_nodes': total_nodes,
-        'node_types': node_types
+        "total_nodes": total_nodes,
+        "node_types": node_types
     }
 
 def main():

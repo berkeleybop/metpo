@@ -49,13 +49,13 @@ def calculate_metrics(
 
 
 @click.command()
-@click.option('--cost', type=float, required=True, help='Total cost in dollars')
-@click.option('--abstracts', type=int, required=True, help='Number of abstracts')
-@click.option('--abstract-chars', type=int, required=True, help='Total abstract characters')
-@click.option('--input-chars', type=int, required=True, help='Total input characters (template + abstracts)')
-@click.option('--duration', type=int, required=True, help='Total duration in seconds')
-@click.option('--entities', type=int, required=True, help='Total entities extracted')
-@click.option('--relationships', type=int, required=True, help='Total relationships extracted')
+@click.option("--cost", type=float, required=True, help="Total cost in dollars")
+@click.option("--abstracts", type=int, required=True, help="Number of abstracts")
+@click.option("--abstract-chars", type=int, required=True, help="Total abstract characters")
+@click.option("--input-chars", type=int, required=True, help="Total input characters (template + abstracts)")
+@click.option("--duration", type=int, required=True, help="Total duration in seconds")
+@click.option("--entities", type=int, required=True, help="Total entities extracted")
+@click.option("--relationships", type=int, required=True, help="Total relationships extracted")
 def main(cost, abstracts, abstract_chars, input_chars, duration, entities, relationships):
     """Calculate OntoGPT benchmark metrics.
 

@@ -16,18 +16,18 @@ class ExternalOntologyHelper:
 
     # Mapping of IRI patterns to CURIE prefixes
     IRI_TO_CURIE_PATTERNS = {
-        'http://purl.obolibrary.org/obo/': '',  # Removes prefix, keeps GO_0008152
-        'https://w3id.org/biolink/vocab/': 'biolink:',
+        "http://purl.obolibrary.org/obo/": "",  # Removes prefix, keeps GO_0008152
+        "https://w3id.org/biolink/vocab/": "biolink:",
     }
 
     # Manual mapping from ontology prefix to local DB file
     LOCAL_DB_MAP = {
-        'mco': 'mco.db',
-        'micro': 'MicrO-2025-03-20-merged.db',
-        'mpo': 'mpo_v0.74.en_only.db',
-        'n4l_merged': 'n4l_merged.db',
-        'omp': 'omp.db',
-        'fao': 'fao.db'
+        "mco": "mco.db",
+        "micro": "MicrO-2025-03-20-merged.db",
+        "mpo": "mpo_v0.74.en_only.db",
+        "n4l_merged": "n4l_merged.db",
+        "omp": "omp.db",
+        "fao": "fao.db"
     }
 
     def __init__(self, debug: bool = False):
@@ -39,7 +39,7 @@ class ExternalOntologyHelper:
         for iri_prefix, curie_prefix in self.IRI_TO_CURIE_PATTERNS.items():
             if iri.startswith(iri_prefix):
                 remainder = iri[len(iri_prefix):]
-                remainder = re.sub(r'([A-Za-z]+)_(\d+)', r'\1:\2', remainder)
+                remainder = re.sub(r"([A-Za-z]+)_(\d+)", r"\1:\2", remainder)
                 curie = curie_prefix + remainder
                 if self.debug:
                     print(f"    Converted IRI to CURIE: {iri} -> {curie}")
@@ -48,24 +48,24 @@ class ExternalOntologyHelper:
 
     def _curie_to_iri(self, curie: str) -> str:
         """Convert CURIE back to IRI format for comparison."""
-        if re.match(r'[A-Za-z]+:\d+', curie):
-            prefix, local_id = curie.split(':', 1)
+        if re.match(r"[A-Za-z]+:\d+", curie):
+            prefix, local_id = curie.split(":", 1)
             return f"http://purl.obolibrary.org/obo/{prefix}_{local_id}"
-        if curie.startswith('biolink:'):
+        if curie.startswith("biolink:"):
             remainder = curie[8:]
             return f"https://w3id.org/biolink/vocab/{remainder}"
         return curie
 
     def _extract_ontology_prefix_from_iri(self, iri: str) -> str:
         """Extract ontology prefix from IRI as a fallback."""
-        match = re.search(r'/([A-Za-z]+)[_#]', iri)
+        match = re.search(r"/([A-Za-z]+)[_#]", iri)
         if match:
             prefix = match.group(1)
             if self.debug:
                 print(f"    Extracted prefix from IRI: {prefix} from {iri}")
             return prefix
-        if 'biolink' in iri:
-            return 'biolink'
+        if "biolink" in iri:
+            return "biolink"
         return None
 
     def _get_adapter(self, ontology_prefix: str, iri_for_fallback: str):
@@ -113,15 +113,15 @@ class ExternalOntologyHelper:
             # Strategy 3 & onwards: Web-based strategies
             if not adapter:
                 web_strategies = [
-                    ('bioportal', 'BioPortal API'), # Use original case for BioPortal
-                    ('ubergraph', 'Ubergraph SPARQL'),
-                    ('ols', 'OLS4 API')
+                    ("bioportal", "BioPortal API"), # Use original case for BioPortal
+                    ("ubergraph", "Ubergraph SPARQL"),
+                    ("ols", "OLS4 API")
                 ]
 
                 for strategy, name in web_strategies:
                     try:
                         # Use original case for bioportal, lowercase for others
-                        prefix_to_use = ontology_prefix if strategy == 'bioportal' else prefix_lower
+                        prefix_to_use = ontology_prefix if strategy == "bioportal" else prefix_lower
                         if self.debug:
                             print(f"    Trying {name} for {prefix_to_use}...")
                         adapter = get_adapter(f"{strategy}:{prefix_to_use}")
@@ -163,7 +163,7 @@ class ExternalOntologyHelper:
             siblings = set()
             for parent in parents:
                 incoming = list(adapter.incoming_relationships(parent))
-                children = [subj for pred, subj in incoming if 'subClassOf' in pred]
+                children = [subj for pred, subj in incoming if "subClassOf" in pred]
                 if self.debug:
                     print(f"      Parent has {len(children)} children")
                 siblings.update(children)
@@ -221,7 +221,7 @@ class OaklibHierarchy:
         # incoming_relationships returns (predicate, subject) tuples
         # We want subjects where predicate is rdfs:subClassOf
         relationships = list(self.adapter.incoming_relationships(iri))
-        children_iris = [subj for pred, subj in relationships if pred == 'rdfs:subClassOf']
+        children_iris = [subj for pred, subj in relationships if pred == "rdfs:subClassOf"]
         children = {self._iri_to_curie(c) for c in children_iris}
         if self.debug:
             print(f"  Debug: Children for {curie}: {children}")
@@ -245,17 +245,17 @@ class OaklibHierarchy:
 @click.command()
 @input_csv_option(required=False, help_text="Path to the SSSOM TSV file containing METPO term mappings")
 @click.option(
-    '--metpo-owl',
+    "--metpo-owl",
     type=click.Path(exists=True, dir_okay=False, path_type=str),
-    default='../src/ontology/metpo.owl',
+    default="../src/ontology/metpo.owl",
     help="Path to the METPO OWL file for hierarchy parsing."
 )
 @distance_threshold_option(default=0.9, help_text="Distance threshold below which a match is considered 'good'")
 @debug_option(help_text="Enable verbose debug output")
-@output_option(default='../data/coherence/sibling_coherence_analysis_output.csv', help_text="Path to save coherence results CSV")
+@output_option(default="../data/coherence/sibling_coherence_analysis_output.csv", help_text="Path to save coherence results CSV")
 def main(input_file: str, metpo_owl: str, distance_threshold: float, debug: bool, output: str):
     """Analyzes sibling coherence for METPO term mappings from SSSOM TSV."""
-    input_csv = input_file or '../metpo_relevant_mappings.sssom.tsv'
+    input_csv = input_file or "../metpo_relevant_mappings.sssom.tsv"
     good_match_threshold = distance_threshold
     output_csv = output
 
@@ -266,7 +266,7 @@ def main(input_file: str, metpo_owl: str, distance_threshold: float, debug: bool
     print(f"Loading mappings from: {input_csv}")
     try:
         # Read SSSOM TSV (skip metadata lines starting with #)
-        df = pd.read_csv(input_csv, sep='\t', comment='#')
+        df = pd.read_csv(input_csv, sep="\t", comment="#")
     except FileNotFoundError:
         print(f"Error: Input file not found at {input_csv}")
         return
@@ -275,18 +275,18 @@ def main(input_file: str, metpo_owl: str, distance_threshold: float, debug: bool
         return
 
     # Drop rows with missing similarity_score to prevent NaN distances
-    df.dropna(subset=['similarity_score'], inplace=True)
+    df.dropna(subset=["similarity_score"], inplace=True)
 
     # Map SSSOM columns to expected column names
-    df['distance'] = 1.0 - df['similarity_score']
-    df['metpo_id'] = df['subject_id']
-    df['metpo_label'] = df['subject_label']
-    df['match_document'] = df['object_label']
-    df['match_ontology'] = df['object_source']
-    df['match_iri'] = df['object_id']
+    df["distance"] = 1.0 - df["similarity_score"]
+    df["metpo_id"] = df["subject_id"]
+    df["metpo_label"] = df["subject_label"]
+    df["match_document"] = df["object_label"]
+    df["match_ontology"] = df["object_source"]
+    df["match_iri"] = df["object_id"]
 
     # Drop rows with missing subject_id to prevent key errors
-    df.dropna(subset=['metpo_id'], inplace=True)
+    df.dropna(subset=["metpo_id"], inplace=True)
 
     print(f"Loaded {len(df)} mapping records.")
     print(f"Using good match threshold: {good_match_threshold}")
@@ -299,18 +299,18 @@ def main(input_file: str, metpo_owl: str, distance_threshold: float, debug: bool
 
     # Filter for best matches for each METPO term
     # We only care about the single best match for sibling coherence
-    best_matches_df = df.loc[df.groupby('metpo_id')['distance'].idxmin()]
+    best_matches_df = df.loc[df.groupby("metpo_id")["distance"].idxmin()]
 
     # Create lookup: metpo_id -> list of all match IRIs
-    metpo_match_lookup = df.groupby('metpo_id')['match_iri'].apply(set).to_dict()
+    metpo_match_lookup = df.groupby("metpo_id")["match_iri"].apply(set).to_dict()
 
     coherence_scores = []
     for index, row in tqdm(best_matches_df.iterrows(), total=len(best_matches_df), desc="Analyzing Sibling Coherence"):
-        metpo_id = row['metpo_id']
-        metpo_label = row['metpo_label']
-        match_iri = row['match_iri']
-        match_ontology = row['match_ontology']
-        match_distance = row['distance']
+        metpo_id = row["metpo_id"]
+        metpo_label = row["metpo_label"]
+        match_iri = row["match_iri"]
+        match_ontology = row["match_ontology"]
+        match_distance = row["distance"]
 
         if debug:
             print(f"\n--- Analyzing {metpo_label} ({metpo_id}) ---")
@@ -357,15 +357,15 @@ def main(input_file: str, metpo_owl: str, distance_threshold: float, debug: bool
                 print(f"  Coherence: N/A (no siblings to compare)")
 
         coherence_scores.append({
-            'metpo_id': metpo_id,
-            'metpo_label': metpo_label,
-            'match_iri': match_iri,
-            'match_ontology': match_ontology,
-            'match_distance': match_distance,
-            'metpo_sibling_count': len(metpo_siblings),
-            'external_sibling_count': len(external_siblings),
-            'coherent_sibling_count': coherent_siblings,
-            'coherence_score': coherence_score
+            "metpo_id": metpo_id,
+            "metpo_label": metpo_label,
+            "match_iri": match_iri,
+            "match_ontology": match_ontology,
+            "match_distance": match_distance,
+            "metpo_sibling_count": len(metpo_siblings),
+            "external_sibling_count": len(external_siblings),
+            "coherent_sibling_count": coherent_siblings,
+            "coherence_score": coherence_score
         })
 
     print("\n=== Sibling Coherence Analysis Summary ===")
@@ -373,11 +373,11 @@ def main(input_file: str, metpo_owl: str, distance_threshold: float, debug: bool
 
     # Calculate overall statistics
     total_terms = len(summary_df)
-    terms_with_siblings = len(summary_df[summary_df['metpo_sibling_count'] > 0])
-    terms_with_external_siblings = len(summary_df[summary_df['external_sibling_count'] > 0])
+    terms_with_siblings = len(summary_df[summary_df["metpo_sibling_count"] > 0])
+    terms_with_external_siblings = len(summary_df[summary_df["external_sibling_count"] > 0])
 
     # Get coherence statistics (excluding None values)
-    coherence_values = summary_df['coherence_score'].dropna()
+    coherence_values = summary_df["coherence_score"].dropna()
     if len(coherence_values) > 0:
         mean_coherence = coherence_values.mean()
         median_coherence = coherence_values.median()
@@ -396,7 +396,7 @@ def main(input_file: str, metpo_owl: str, distance_threshold: float, debug: bool
 
     # Show top coherent matches
     print(f"\n=== Top 10 Most Coherent Matches ===")
-    top_coherent = summary_df.dropna(subset=['coherence_score']).nlargest(10, 'coherence_score')
+    top_coherent = summary_df.dropna(subset=["coherence_score"]).nlargest(10, "coherence_score")
     for idx, row in top_coherent.iterrows():
         print(f"{row['metpo_label']} ({row['metpo_id']})")
         print(f"  → {row['match_ontology']}: {row['match_iri']}")
@@ -405,7 +405,7 @@ def main(input_file: str, metpo_owl: str, distance_threshold: float, debug: bool
 
     # Show low coherence matches for review
     print(f"\n=== Terms with Low Coherence (<0.3) ===")
-    low_coherent = summary_df[summary_df['coherence_score'] < 0.3].dropna(subset=['coherence_score'])
+    low_coherent = summary_df[summary_df["coherence_score"] < 0.3].dropna(subset=["coherence_score"])
     if len(low_coherent) > 0:
         for idx, row in low_coherent.head(10).iterrows():
             print(f"{row['metpo_label']} ({row['metpo_id']})")

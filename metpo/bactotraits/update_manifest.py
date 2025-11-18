@@ -30,21 +30,21 @@ def load_manifest():
 
 def save_manifest(manifest):
     """Save manifest with pretty formatting."""
-    with open(MANIFEST_PATH, 'w') as f:
+    with open(MANIFEST_PATH, "w") as f:
         json.dump(manifest, f, indent=2)
 
 
 @click.command()
-@click.option('--ontology', required=True, help='Ontology ID (e.g., D3O, OMP)')
-@click.option('--status', type=click.Choice(['success', 'failed', 'empty']),
-              help='Fetch status')
-@click.option('--robot-status', type=click.Choice(['success', 'failed', 'empty', 'not_run']),
-              help='ROBOT query status')
-@click.option('--file', 'file_path', type=Path, help='Path to OWL/TTL file')
-@click.option('--tsv', 'tsv_path', type=Path, help='Path to TSV output')
-@click.option('--source', type=click.Choice(['bioportal', 'manual']), default='bioportal',
-              help='Source of ontology')
-@click.option('--term-count', type=int, help='Number of terms extracted')
+@click.option("--ontology", required=True, help="Ontology ID (e.g., D3O, OMP)")
+@click.option("--status", type=click.Choice(["success", "failed", "empty"]),
+              help="Fetch status")
+@click.option("--robot-status", type=click.Choice(["success", "failed", "empty", "not_run"]),
+              help="ROBOT query status")
+@click.option("--file", "file_path", type=Path, help="Path to OWL/TTL file")
+@click.option("--tsv", "tsv_path", type=Path, help="Path to TSV output")
+@click.option("--source", type=click.Choice(["bioportal", "manual"]), default="bioportal",
+              help="Source of ontology")
+@click.option("--term-count", type=int, help="Number of terms extracted")
 def main(ontology: str, status: str, robot_status: str, file_path: Path,
          tsv_path: Path, source: str, term_count: int):
     """Update ontology manifest with fetch/query status."""
@@ -52,45 +52,45 @@ def main(ontology: str, status: str, robot_status: str, file_path: Path,
 
     # Get or create ontology entry
     ont_id = ontology.upper()
-    if ont_id not in manifest['ontologies']:
-        manifest['ontologies'][ont_id] = {}
+    if ont_id not in manifest["ontologies"]:
+        manifest["ontologies"][ont_id] = {}
 
-    entry = manifest['ontologies'][ont_id]
+    entry = manifest["ontologies"][ont_id]
 
     # Update fetch status
     if status:
-        entry['status'] = status
-        entry['fetched_at'] = datetime.now().isoformat()
-        entry['source'] = source
+        entry["status"] = status
+        entry["fetched_at"] = datetime.now().isoformat()
+        entry["source"] = source
 
     # Update file info
     if file_path and file_path.exists():
-        entry['file_path'] = str(file_path)
-        entry['file_size_bytes'] = file_path.stat().st_size
-        if entry['file_size_bytes'] < 1000:  # < 1KB likely error
-            entry['status'] = 'empty'
+        entry["file_path"] = str(file_path)
+        entry["file_size_bytes"] = file_path.stat().st_size
+        if entry["file_size_bytes"] < 1000:  # < 1KB likely error
+            entry["status"] = "empty"
 
     # Update ROBOT query status
     if robot_status:
-        entry['robot_query_status'] = robot_status
+        entry["robot_query_status"] = robot_status
 
     # Update TSV info
     if tsv_path:
-        entry['tsv_path'] = str(tsv_path)
+        entry["tsv_path"] = str(tsv_path)
         if tsv_path.exists():
-            entry['tsv_size_bytes'] = tsv_path.stat().st_size
-            if entry['tsv_size_bytes'] == 0:
-                entry['robot_query_status'] = 'empty'
+            entry["tsv_size_bytes"] = tsv_path.stat().st_size
+            if entry["tsv_size_bytes"] == 0:
+                entry["robot_query_status"] = "empty"
         else:
-            entry['robot_query_status'] = 'failed'
+            entry["robot_query_status"] = "failed"
 
     # Update term count
     if term_count is not None:
-        entry['term_count'] = term_count
+        entry["term_count"] = term_count
 
     save_manifest(manifest)
     click.echo(f"✓ Updated manifest for {ont_id}")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

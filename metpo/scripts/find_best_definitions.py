@@ -49,7 +49,7 @@ def is_real_definition(label: str, definition: str, min_length: int = 30) -> boo
     # Check if definition starts with label and has minimal additional content
     # e.g., "Thermophilic; Thermophilic" or "Coccus-shaped; Coccus"
     if definition_clean.startswith(label_clean):
-        extra = definition_clean[len(label_clean):].strip(' ;,.-')
+        extra = definition_clean[len(label_clean):].strip(" ;,.-")
         if len(extra) < min_length:
             return False
 
@@ -74,7 +74,7 @@ def extract_definition_from_document(document: str) -> tuple[str, str]:
         return "", ""
 
     # Split on first semicolon
-    parts = document.split(';', 1)
+    parts = document.split(";", 1)
     label = parts[0].strip()
     definition = parts[1].strip() if len(parts) > 1 else ""
 
@@ -90,31 +90,31 @@ def load_sssom_mappings(sssom_path: Path) -> Dict[str, List[Dict]]:
     """
     mappings_by_subject = defaultdict(list)
 
-    with open(sssom_path, 'r', encoding='utf-8') as f:
-        lines = [line for line in f if not line.startswith('#')]
-        reader = csv.DictReader(lines, delimiter='\t')
+    with open(sssom_path, "r", encoding="utf-8") as f:
+        lines = [line for line in f if not line.startswith("#")]
+        reader = csv.DictReader(lines, delimiter="\t")
 
         for row in reader:
-            subject_id = row.get('subject_id', '').strip()
-            if not subject_id.startswith('METPO:'):
+            subject_id = row.get("subject_id", "").strip()
+            if not subject_id.startswith("METPO:"):
                 continue
 
             mappings_by_subject[subject_id].append({
-                'subject_id': subject_id,
-                'subject_label': row.get('subject_label', '').strip(),
-                'object_id': row.get('object_id', '').strip(),
-                'object_label': row.get('object_label', '').strip(),
-                'object_source': row.get('object_source', '').strip(),
-                'predicate_id': row.get('predicate_id', '').strip(),
-                'confidence': float(row.get('confidence', 0)),
-                'similarity_score': float(row.get('similarity_score', 0)),
-                'comment': row.get('comment', '').strip(),
+                "subject_id": subject_id,
+                "subject_label": row.get("subject_label", "").strip(),
+                "object_id": row.get("object_id", "").strip(),
+                "object_label": row.get("object_label", "").strip(),
+                "object_source": row.get("object_source", "").strip(),
+                "predicate_id": row.get("predicate_id", "").strip(),
+                "confidence": float(row.get("confidence", 0)),
+                "similarity_score": float(row.get("similarity_score", 0)),
+                "comment": row.get("comment", "").strip(),
             })
 
     # Sort each term's mappings by similarity (highest first)
     for subject_id in mappings_by_subject:
         mappings_by_subject[subject_id].sort(
-            key=lambda x: x['similarity_score'],
+            key=lambda x: x["similarity_score"],
             reverse=True
         )
 
@@ -147,8 +147,8 @@ def get_definition_from_chromadb(
             include=["documents", "metadatas"]
         )
 
-        if results and results['documents']:
-            document = results['documents'][0]
+        if results and results["documents"]:
+            document = results["documents"][0]
             label, definition = extract_definition_from_document(document)
             return definition if definition else None
 
@@ -161,37 +161,37 @@ def get_definition_from_chromadb(
 
 @click.command()
 @click.option(
-    '--mappings',
-    '-m',
+    "--mappings",
+    "-m",
     type=click.Path(exists=True, path_type=Path),
-    default='data/mappings/metpo_mappings_combined_relaxed.sssom.tsv',
-    help='Path to SSSOM mappings file'
+    default="data/mappings/metpo_mappings_combined_relaxed.sssom.tsv",
+    help="Path to SSSOM mappings file"
 )
 @click.option(
-    '--chromadb-path',
-    '-c',
+    "--chromadb-path",
+    "-c",
     type=click.Path(exists=True, path_type=Path),
-    default='data/chromadb/chroma_ols20_nonols4',
-    help='Path to ChromaDB directory'
+    default="data/chromadb/chroma_ols20_nonols4",
+    help="Path to ChromaDB directory"
 )
 @click.option(
-    '--output',
-    '-o',
+    "--output",
+    "-o",
     type=click.Path(path_type=Path),
-    default='reports/best_definitions_per_term.tsv',
-    help='Output TSV file'
+    default="reports/best_definitions_per_term.tsv",
+    help="Output TSV file"
 )
 @click.option(
-    '--min-length',
+    "--min-length",
     type=int,
     default=30,
-    help='Minimum definition length to consider'
+    help="Minimum definition length to consider"
 )
 @click.option(
-    '--verbose',
-    '-v',
+    "--verbose",
+    "-v",
     is_flag=True,
-    help='Show detailed progress for each term'
+    help="Show detailed progress for each term"
 )
 def main(
     mappings: Path,
@@ -228,7 +228,7 @@ def main(
 
     for subject_id in sorted(mappings_by_term.keys()):
         term_mappings = mappings_by_term[subject_id]
-        subject_label = term_mappings[0]['subject_label']
+        subject_label = term_mappings[0]["subject_label"]
 
         if verbose:
             click.echo(f"\n{subject_id} ({subject_label})")
@@ -241,15 +241,15 @@ def main(
         # Try each mapping in order of similarity
         for mapping in term_mappings:
             checked_count += 1
-            object_iri = mapping['object_id']
-            object_source = mapping['object_source']
-            similarity = mapping['similarity_score']
+            object_iri = mapping["object_id"]
+            object_source = mapping["object_source"]
+            similarity = mapping["similarity_score"]
 
             if verbose:
                 click.echo(f"  [{checked_count}] {object_source} (sim={similarity:.3f}): {object_iri}")
 
             # First try the object_label from SSSOM (which may have semicolon format)
-            sssom_label, sssom_def = extract_definition_from_document(mapping['object_label'])
+            sssom_label, sssom_def = extract_definition_from_document(mapping["object_label"])
 
             if is_real_definition(subject_label, sssom_def, min_length):
                 best_definition = sssom_def
@@ -274,19 +274,19 @@ def main(
         # Record result
         if best_definition:
             found_count += 1
-            match_type = best_mapping['predicate_id'].split(':')[-1]
+            match_type = best_mapping["predicate_id"].split(":")[-1]
             results.append({
-                'metpo_id': subject_id,
-                'metpo_label': subject_label,
-                'definition': best_definition,
-                'definition_length': len(best_definition),
-                'source_iri': best_mapping['object_id'],
-                'source_ontology': best_mapping['object_source'],
-                'source_label': sssom_label if best_definition == sssom_def else
-                                extract_definition_from_document(best_mapping['object_label'])[0],
-                'similarity_score': best_mapping['similarity_score'],
-                'match_type': match_type,
-                'rank': checked_count,
+                "metpo_id": subject_id,
+                "metpo_label": subject_label,
+                "definition": best_definition,
+                "definition_length": len(best_definition),
+                "source_iri": best_mapping["object_id"],
+                "source_ontology": best_mapping["object_source"],
+                "source_label": sssom_label if best_definition == sssom_def else
+                                extract_definition_from_document(best_mapping["object_label"])[0],
+                "similarity_score": best_mapping["similarity_score"],
+                "match_type": match_type,
+                "rank": checked_count,
             })
 
             if not verbose:
@@ -300,13 +300,13 @@ def main(
     click.echo(f"\nWriting results to {output}...")
     output.parent.mkdir(parents=True, exist_ok=True)
 
-    with open(output, 'w', encoding='utf-8', newline='') as f:
+    with open(output, "w", encoding="utf-8", newline="") as f:
         fieldnames = [
-            'metpo_id', 'metpo_label', 'definition', 'definition_length',
-            'source_iri', 'source_ontology', 'source_label',
-            'similarity_score', 'match_type', 'rank'
+            "metpo_id", "metpo_label", "definition", "definition_length",
+            "source_iri", "source_ontology", "source_label",
+            "similarity_score", "match_type", "rank"
         ]
-        writer = csv.DictWriter(f, fieldnames=fieldnames, delimiter='\t')
+        writer = csv.DictWriter(f, fieldnames=fieldnames, delimiter="\t")
         writer.writeheader()
         writer.writerows(results)
 
@@ -319,9 +319,9 @@ def main(
     click.echo(f"No definition found: {not_found_count} ({not_found_count/len(mappings_by_term)*100:.1f}%)")
 
     if results:
-        avg_similarity = sum(r['similarity_score'] for r in results) / len(results)
-        avg_length = sum(r['definition_length'] for r in results) / len(results)
-        avg_rank = sum(r['rank'] for r in results) / len(results)
+        avg_similarity = sum(r["similarity_score"] for r in results) / len(results)
+        avg_length = sum(r["definition_length"] for r in results) / len(results)
+        avg_rank = sum(r["rank"] for r in results) / len(results)
 
         click.echo(f"\nDefinition Quality:")
         click.echo(f"  Average similarity: {avg_similarity:.3f}")
@@ -331,7 +331,7 @@ def main(
         # By ontology
         by_ontology = defaultdict(int)
         for r in results:
-            by_ontology[r['source_ontology']] += 1
+            by_ontology[r["source_ontology"]] += 1
 
         click.echo(f"\nDefinitions by source ontology:")
         for ont, count in sorted(by_ontology.items(), key=lambda x: x[1], reverse=True):
@@ -339,5 +339,5 @@ def main(
             click.echo(f"  {ont:15s}: {count:4d} ({pct:5.1f}%)")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

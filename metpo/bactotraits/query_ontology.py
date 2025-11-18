@@ -26,7 +26,7 @@ LOG_PATH = Path(".robot_query.log")
 def log_event(ontology_id: str, input_file: str, message: str, log_type: str = "QUERY_FAILED"):
     """Log query event."""
     timestamp = datetime.now().isoformat()
-    with open(LOG_PATH, 'a') as f:
+    with open(LOG_PATH, "a") as f:
         f.write(f"{timestamp} | {log_type} | {ontology_id} | {input_file} | {message}\n")
 
 
@@ -34,16 +34,16 @@ def count_tsv_terms(tsv_path: Path) -> int:
     """Count rows in TSV (excluding header)."""
     try:
         with open(tsv_path) as f:
-            return sum(1 for _ in csv.reader(f, delimiter='\t')) - 1
+            return sum(1 for _ in csv.reader(f, delimiter="\t")) - 1
     except Exception:
         return 0
 
 
 @click.command()
-@click.argument('ontology_id')
-@click.option('--input', 'input_file', type=Path, required=True, help='Input OWL/TTL file')
-@click.option('--query', 'query_file', type=Path, required=True, help='SPARQL query file')
-@click.option('--output', 'output_file', type=Path, required=True, help='Output TSV file')
+@click.argument("ontology_id")
+@click.option("--input", "input_file", type=Path, required=True, help="Input OWL/TTL file")
+@click.option("--query", "query_file", type=Path, required=True, help="SPARQL query file")
+@click.option("--output", "output_file", type=Path, required=True, help="Output TSV file")
 def main(ontology_id: str, input_file: Path, query_file: Path, output_file: Path):
     """Query ontology with ROBOT."""
 
@@ -60,9 +60,9 @@ def main(ontology_id: str, input_file: Path, query_file: Path, output_file: Path
     click.echo(f"Querying {ontology_id} with ROBOT...")
 
     cmd = [
-        'robot', 'query',
-        '--input', str(input_file),
-        '--query', str(query_file),
+        "robot", "query",
+        "--input", str(input_file),
+        "--query", str(query_file),
         str(output_file)
     ]
 
@@ -109,5 +109,5 @@ def main(ontology_id: str, input_file: Path, query_file: Path, output_file: Path
         sys.exit(1)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

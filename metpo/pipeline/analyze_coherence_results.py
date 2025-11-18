@@ -11,14 +11,14 @@ import click
 
 
 @click.command()
-@click.option('--results-file', '-r',
+@click.option("--results-file", "-r",
               type=click.Path(exists=True, dir_okay=False),
-              default='../data/coherence/sibling_coherence_analysis_output.csv',
-              help='Coherence results CSV file')
-@click.option('--mappings-file', '-m',
+              default="../data/coherence/sibling_coherence_analysis_output.csv",
+              help="Coherence results CSV file")
+@click.option("--mappings-file", "-m",
               type=click.Path(exists=True, dir_okay=False),
-              default='../data/mappings/metpo_mappings_combined_relaxed.sssom.tsv',
-              help='SSSOM TSV mappings file')
+              default="../data/mappings/metpo_mappings_combined_relaxed.sssom.tsv",
+              help="SSSOM TSV mappings file")
 def main(results_file: str, mappings_file: str):
     """Analyze coherence results to find strong alignments."""
     results_csv = results_file
@@ -28,22 +28,22 @@ def main(results_file: str, mappings_file: str):
     coherence_df = pd.read_csv(results_csv)
 
     # Load SSSOM TSV mappings
-    matches_df = pd.read_csv(matches_csv, sep='\t', comment='#')
+    matches_df = pd.read_csv(matches_csv, sep="\t", comment="#")
     # Map SSSOM columns to expected column names
-    matches_df['distance'] = 1.0 - matches_df['similarity_score']
-    matches_df['metpo_id'] = matches_df['subject_id']
-    matches_df['metpo_label'] = matches_df['subject_label']
-    matches_df['match_document'] = matches_df['object_label']
-    matches_df['match_ontology'] = matches_df['object_source']
+    matches_df["distance"] = 1.0 - matches_df["similarity_score"]
+    matches_df["metpo_id"] = matches_df["subject_id"]
+    matches_df["metpo_label"] = matches_df["subject_label"]
+    matches_df["match_document"] = matches_df["object_label"]
+    matches_df["match_ontology"] = matches_df["object_source"]
 
     # Filter for meaningful cases
     # - Has siblings (at least 3 for meaningful structure)
     # - Has external siblings retrieved
     # - Has coherence score
     meaningful = coherence_df[
-        (coherence_df['metpo_sibling_count'] >= 3) &
-        (coherence_df['external_sibling_count'] > 0) &
-        (coherence_df['coherence_score'].notna())
+        (coherence_df["metpo_sibling_count"] >= 3) &
+        (coherence_df["external_sibling_count"] > 0) &
+        (coherence_df["coherence_score"].notna())
     ].copy()
 
     print(f"\nFiltered to {len(meaningful)} terms with meaningful structure (≥3 siblings)")
@@ -53,8 +53,8 @@ def main(results_file: str, mappings_file: str):
     print("HIGH COHERENCE CASES (≥0.5): METPO structure aligns with external ontology")
     print("="*80)
 
-    high_coherence = meaningful[meaningful['coherence_score'] >= 0.5].sort_values(
-        'coherence_score', ascending=False
+    high_coherence = meaningful[meaningful["coherence_score"] >= 0.5].sort_values(
+        "coherence_score", ascending=False
     )
 
     if len(high_coherence) > 0:
@@ -68,8 +68,8 @@ def main(results_file: str, mappings_file: str):
             print(f"  External has {row['external_sibling_count']} siblings")
 
             # Show which siblings matched
-            metpo_id = row['metpo_id']
-            all_matches = matches_df[matches_df['metpo_id'] == metpo_id].nsmallest(10, 'distance')
+            metpo_id = row["metpo_id"]
+            all_matches = matches_df[matches_df["metpo_id"] == metpo_id].nsmallest(10, "distance")
             if len(all_matches) > 1:
                 print(f"\n  Top matches for this term:")
                 for _, match in all_matches.head(5).iterrows():
@@ -83,9 +83,9 @@ def main(results_file: str, mappings_file: str):
     print("="*80)
 
     moderate = meaningful[
-        (meaningful['coherence_score'] >= 0.3) &
-        (meaningful['coherence_score'] < 0.5)
-    ].sort_values('coherence_score', ascending=False)
+        (meaningful["coherence_score"] >= 0.3) &
+        (meaningful["coherence_score"] < 0.5)
+    ].sort_values("coherence_score", ascending=False)
 
     if len(moderate) > 0:
         print(f"\nFound {len(moderate)} moderate-coherence terms (showing top 10):\n")
@@ -102,12 +102,12 @@ def main(results_file: str, mappings_file: str):
     print("COHERENCE BY ONTOLOGY: Which ontologies align best with METPO?")
     print("="*80)
 
-    ontology_stats = meaningful.groupby('match_ontology').agg({
-        'coherence_score': ['mean', 'median', 'count'],
-        'match_distance': ['mean', 'median']
+    ontology_stats = meaningful.groupby("match_ontology").agg({
+        "coherence_score": ["mean", "median", "count"],
+        "match_distance": ["mean", "median"]
     }).round(3)
-    ontology_stats.columns = ['_'.join(col).strip() for col in ontology_stats.columns]
-    ontology_stats = ontology_stats.sort_values('coherence_score_mean', ascending=False)
+    ontology_stats.columns = ["_".join(col).strip() for col in ontology_stats.columns]
+    ontology_stats = ontology_stats.sort_values("coherence_score_mean", ascending=False)
 
     print("\n", ontology_stats.to_string())
 
@@ -117,8 +117,8 @@ def main(results_file: str, mappings_file: str):
     print("="*80)
 
     # Score = coherence * (1 - distance) to balance both factors
-    meaningful['alignment_score'] = meaningful['coherence_score'] * (1 - meaningful['match_distance'])
-    best_candidates = meaningful.nlargest(20, 'alignment_score')
+    meaningful["alignment_score"] = meaningful["coherence_score"] * (1 - meaningful["match_distance"])
+    best_candidates = meaningful.nlargest(20, "alignment_score")
 
     print(f"\nTop 20 candidates for importing/aligning with external ontologies:\n")
     print(f"{'Rank':<5} {'METPO Term':<35} {'Ontology':<10} {'Coherence':<12} {'Distance':<10} {'Score':<8}")
@@ -130,7 +130,7 @@ def main(results_file: str, mappings_file: str):
               f"{row['match_distance']:>8.3f} {row['alignment_score']:>8.3f}")
 
     # Save candidates
-    candidates_file = 'alignment_candidates.csv'
+    candidates_file = "alignment_candidates.csv"
     best_candidates.to_csv(candidates_file, index=False)
     print(f"\n✓ Saved top candidates to: {candidates_file}")
 

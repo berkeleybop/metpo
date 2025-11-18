@@ -29,8 +29,8 @@ BACTOTRAITS_SOURCE_URI = "https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/Ba
 
 # Entity type mappings to OWL CURIEs
 ENTITY_TYPE_MAP = {
-    'class': 'owl:Class',
-    'property': 'owl:ObjectProperty'  # Default for properties
+    "class": "owl:Class",
+    "property": "owl:ObjectProperty"  # Default for properties
 }
 
 def get_entity_curie(entity_uri: str) -> str:
@@ -40,8 +40,8 @@ def get_entity_curie(entity_uri: str) -> str:
     :param entity_uri: Full URI like 'https://w3id.org/metpo/1000602'
     :return: CURIE like 'METPO:1000602'
     """
-    if entity_uri.startswith('https://w3id.org/metpo/'):
-        return 'METPO:' + entity_uri.split('/')[-1]
+    if entity_uri.startswith("https://w3id.org/metpo/"):
+        return "METPO:" + entity_uri.split("/")[-1]
     return entity_uri
 
 
@@ -52,7 +52,7 @@ def normalize_whitespace(text: str) -> str:
     :param text: Input text
     :return: Normalized text
     """
-    return re.sub(r'\s+', ' ', text.strip())
+    return re.sub(r"\s+", " ", text.strip())
 
 
 def normalize_punctuation_variants(text: str) -> List[str]:
@@ -71,13 +71,13 @@ def normalize_punctuation_variants(text: str) -> List[str]:
 
     # Convert underscores to periods in numeric contexts
     # Pattern: digit_digit -> digit.digit
-    period_variant = re.sub(r'(\d)_(\d)', r'\1.\2', text)
+    period_variant = re.sub(r"(\d)_(\d)", r"\1.\2", text)
     if period_variant != text:
         variants.append(period_variant)
 
     # Convert periods to underscores in numeric contexts
     # Pattern: digit.digit -> digit_digit
-    underscore_variant = re.sub(r'(\d)\.(\d)', r'\1_\2', text)
+    underscore_variant = re.sub(r"(\d)\.(\d)", r"\1_\2", text)
     if underscore_variant != text:
         variants.append(underscore_variant)
 
@@ -120,18 +120,18 @@ def load_bactotraits_synonyms(tsv_path: str) -> Dict[str, Dict[str, str]]:
     bactotraits_synonyms = {}
     entity_labels = {}
 
-    with open(tsv_path, 'r') as f:
-        reader = csv.DictReader(f, delimiter='\t')
+    with open(tsv_path, "r") as f:
+        reader = csv.DictReader(f, delimiter="\t")
 
         for row in reader:
-            entity = row.get('?entity', '').strip('<>')
-            entity_type = row.get('?entityType', '').strip('"')
-            pred = row.get('?synonymPred', '').strip('<>')
-            syn_value = row.get('?synValue', '').strip('"')
-            src = row.get('?src', '').strip('<>')
+            entity = row.get("?entity", "").strip("<>")
+            entity_type = row.get("?entityType", "").strip('"')
+            pred = row.get("?synonymPred", "").strip("<>")
+            syn_value = row.get("?synValue", "").strip('"')
+            src = row.get("?src", "").strip("<>")
 
             if entity and pred and syn_value:
-                if pred == 'http://www.w3.org/2000/01/rdf-schema#label':
+                if pred == "http://www.w3.org/2000/01/rdf-schema#label":
                     entity_labels[entity] = syn_value
 
                 if src == BACTOTRAITS_SOURCE_URI:
@@ -142,18 +142,18 @@ def load_bactotraits_synonyms(tsv_path: str) -> Dict[str, Dict[str, str]]:
                     for variant in variants:
                         if variant not in bactotraits_synonyms:
                             bactotraits_synonyms[variant] = {
-                                'entity': entity,
-                                'entity_type': entity_type,
-                                'predicate': pred,
-                                'source': src,
-                                'label': None,
-                                'original_synonym': normalized_syn  # Track original form
+                                "entity": entity,
+                                "entity_type": entity_type,
+                                "predicate": pred,
+                                "source": src,
+                                "label": None,
+                                "original_synonym": normalized_syn  # Track original form
                             }
 
     for syn_value, info in bactotraits_synonyms.items():
-        entity = info['entity']
+        entity = info["entity"]
         if entity in entity_labels:
-            info['label'] = entity_labels[entity]
+            info["label"] = entity_labels[entity]
 
     return bactotraits_synonyms
 
@@ -168,18 +168,18 @@ def load_all_metpo_synonyms(tsv_path: str) -> Dict[str, Dict[str, str]]:
     all_synonyms = {}
     entity_labels = {}
 
-    with open(tsv_path, 'r') as f:
-        reader = csv.DictReader(f, delimiter='\t')
+    with open(tsv_path, "r") as f:
+        reader = csv.DictReader(f, delimiter="\t")
 
         for row in reader:
-            entity = row.get('?entity', '').strip('<>')
-            entity_type = row.get('?entityType', '').strip('"')
-            pred = row.get('?synonymPred', '').strip('<>')
-            syn_value = row.get('?synValue', '').strip('"')
-            src = row.get('?src', '').strip('<>')
+            entity = row.get("?entity", "").strip("<>")
+            entity_type = row.get("?entityType", "").strip('"')
+            pred = row.get("?synonymPred", "").strip("<>")
+            syn_value = row.get("?synValue", "").strip('"')
+            src = row.get("?src", "").strip("<>")
 
             if entity and pred and syn_value:
-                if pred == 'http://www.w3.org/2000/01/rdf-schema#label':
+                if pred == "http://www.w3.org/2000/01/rdf-schema#label":
                     entity_labels[entity] = syn_value
 
                 normalized_syn = normalize_whitespace(syn_value)
@@ -189,18 +189,18 @@ def load_all_metpo_synonyms(tsv_path: str) -> Dict[str, Dict[str, str]]:
                 for variant in variants:
                     if variant not in all_synonyms:
                         all_synonyms[variant] = {
-                            'entity': entity,
-                            'entity_type': entity_type,
-                            'predicate': pred,
-                            'source': src,
-                            'label': None,
-                            'original_synonym': normalized_syn
+                            "entity": entity,
+                            "entity_type": entity_type,
+                            "predicate": pred,
+                            "source": src,
+                            "label": None,
+                            "original_synonym": normalized_syn
                         }
 
     for syn_value, info in all_synonyms.items():
-        entity = info['entity']
+        entity = info["entity"]
         if entity in entity_labels:
-            info['label'] = entity_labels[entity]
+            info["label"] = entity_labels[entity]
 
     return all_synonyms
 
@@ -220,7 +220,7 @@ def get_all_bactotraits_fields(db_name: str = "bactotraits", collection_name: st
     sample_doc = collection.find_one()
 
     if sample_doc:
-        return [key for key in sample_doc.keys() if key != '_id']
+        return [key for key in sample_doc.keys() if key != "_id"]
     return []
 
 
@@ -261,10 +261,10 @@ def reconcile_all_field_names(tsv_path: str, output_format: str = "text", output
     """
     # Define field categories for reporting
     PERMANENTLY_EXCLUDED_FIELDS = {
-        'Kingdom', 'Phylum', 'Class', 'Order', 'Family', 'Genus', 'Species',
-        'culture_collection_codes', 'Bacdive_ID'
+        "Kingdom", "Phylum", "Class", "Order", "Family", "Genus", "Species",
+        "culture_collection_codes", "Bacdive_ID"
     }
-    IDENTIFIER_FIELDS = {'Full_name', 'ncbitaxon_id'}
+    IDENTIFIER_FIELDS = {"Full_name", "ncbitaxon_id"}
 
     # 1. Load data and mappings
     client = MongoClient()
@@ -273,9 +273,9 @@ def reconcile_all_field_names(tsv_path: str, output_format: str = "text", output
     # Create a map from sanitized mongo names to original kg-microbe names
     mappings_collection = db["field_mappings"]
     mongo_to_kgmicrobe_map = {
-        doc['mongodb']: doc['kg_microbe'] 
+        doc["mongodb"]: doc["kg_microbe"] 
         for doc in mappings_collection.find({}) 
-        if 'mongodb' in doc and doc['mongodb'] and 'kg_microbe' in doc and doc['kg_microbe']
+        if "mongodb" in doc and doc["mongodb"] and "kg_microbe" in doc and doc["kg_microbe"]
     }
 
     # Get all sanitized field names from the main data collection
@@ -320,20 +320,20 @@ def reconcile_all_field_names(tsv_path: str, output_format: str = "text", output
         field_path_clean = original_field.strip()
         
         field_variants = normalize_punctuation_variants(field_path_clean)
-        field_name_spaced = normalize_whitespace(field_path_clean.replace('_', ' '))
+        field_name_spaced = normalize_whitespace(field_path_clean.replace("_", " "))
         field_variants.extend(normalize_punctuation_variants(field_name_spaced))
 
-        if '_' in field_path_clean:
-            parts = field_path_clean.split('_', 1)
+        if "_" in field_path_clean:
+            parts = field_path_clean.split("_", 1)
             if len(parts) == 2:
                 prefix, value_part = parts
                 field_variants.extend(normalize_punctuation_variants(value_part))
-                value_part_spaced = value_part.replace('_', ' ')
+                value_part_spaced = value_part.replace("_", " ")
                 field_variants.extend(normalize_punctuation_variants(value_part_spaced))
-                if prefix == 'S':
+                if prefix == "S":
                     field_variants.extend([
-                        value_part + '-shaped', value_part + ' shaped',
-                        value_part_spaced + '-shaped', value_part_spaced + ' shaped'
+                        value_part + "-shaped", value_part + " shaped",
+                        value_part_spaced + "-shaped", value_part_spaced + " shaped"
                     ])
         
         value_count = field_value_counts.get(sanitized_field, 0)
@@ -353,45 +353,45 @@ def reconcile_all_field_names(tsv_path: str, output_format: str = "text", output
         if not matched:
             for variant in set(field_variants):
                 if variant in all_metpo_synonyms:
-                    matched, matched_info, matched_variant, matched_source = True, all_metpo_synonyms[variant], variant, all_metpo_synonyms[variant].get('source', 'unknown')
+                    matched, matched_info, matched_variant, matched_source = True, all_metpo_synonyms[variant], variant, all_metpo_synonyms[variant].get("source", "unknown")
                     break
 
         # 4. Build report entries
         if matched:
-            metpo_curie = get_entity_curie(matched_info['entity'])
-            label = matched_info.get('label', '')
-            entity_type_raw = matched_info.get('entity_type', 'unknown')
+            metpo_curie = get_entity_curie(matched_info["entity"])
+            label = matched_info.get("label", "")
+            entity_type_raw = matched_info.get("entity_type", "unknown")
             entity_type = ENTITY_TYPE_MAP.get(entity_type_raw, entity_type_raw)
 
             entry = {
-                'field': sanitized_field,
-                'original_kgmicrobe_name': original_field if original_field != sanitized_field else None,
-                'matched_as': matched_variant if matched_variant != field_path_clean else None,
-                'metpo_id': metpo_curie,
-                'label': label,
-                'entity_type': entity_type,
-                'unique_values': value_count,
-                'matched_from_source': matched_source if matched_source != "bactotraits" else None
+                "field": sanitized_field,
+                "original_kgmicrobe_name": original_field if original_field != sanitized_field else None,
+                "matched_as": matched_variant if matched_variant != field_path_clean else None,
+                "metpo_id": metpo_curie,
+                "label": label,
+                "entity_type": entity_type,
+                "unique_values": value_count,
+                "matched_from_source": matched_source if matched_source != "bactotraits" else None
             }
             if sanitized_field in field_value_distributions:
-                entry['value_distribution'] = field_value_distributions[sanitized_field]
+                entry["value_distribution"] = field_value_distributions[sanitized_field]
             covered_entries.append(entry)
         else:
             entry = {
-                'field': sanitized_field,
-                'original_kgmicrobe_name': original_field if original_field != sanitized_field else None,
-                'unique_values': value_count
+                "field": sanitized_field,
+                "original_kgmicrobe_name": original_field if original_field != sanitized_field else None,
+                "unique_values": value_count
             }
             if sanitized_field in field_value_distributions:
-                entry['value_distribution'] = field_value_distributions[sanitized_field]
+                entry["value_distribution"] = field_value_distributions[sanitized_field]
             missing_entries.append(entry)
 
     # 5. Categorize and generate final report
-    missing_entries.sort(key=lambda x: x['unique_values'], reverse=True)
+    missing_entries.sort(key=lambda x: x["unique_values"], reverse=True)
     
-    missing_permanently_excluded = [e for e in missing_entries if e['field'] in PERMANENTLY_EXCLUDED_FIELDS]
-    missing_identifiers = [e for e in missing_entries if e['field'] in IDENTIFIER_FIELDS]
-    missing_traits = [e for e in missing_entries if e['field'] not in PERMANENTLY_EXCLUDED_FIELDS and e['field'] not in IDENTIFIER_FIELDS]
+    missing_permanently_excluded = [e for e in missing_entries if e["field"] in PERMANENTLY_EXCLUDED_FIELDS]
+    missing_identifiers = [e for e in missing_entries if e["field"] in IDENTIFIER_FIELDS]
+    missing_traits = [e for e in missing_entries if e["field"] not in PERMANENTLY_EXCLUDED_FIELDS and e["field"] not in IDENTIFIER_FIELDS]
 
     total_fields = len(sanitized_fields)
     total_traits = total_fields - len(PERMANENTLY_EXCLUDED_FIELDS) - len(IDENTIFIER_FIELDS)
@@ -401,29 +401,29 @@ def reconcile_all_field_names(tsv_path: str, output_format: str = "text", output
 
     if output_format == "yaml":
         high_value_missing = [
-            {'field': e['field'], 'unique_values': e['unique_values']}
-            for e in missing_traits if 2 <= e['unique_values'] <= 20
+            {"field": e["field"], "unique_values": e["unique_values"]}
+            for e in missing_traits if 2 <= e["unique_values"] <= 20
         ]
         result = {
-            'field_name_reconciliation': {
-                'summary': {
-                    'total_fields': total_fields,
-                    'total_trait_fields': total_traits,
-                    'covered': covered_count,
-                    'missing_traits': missing_traits_count,
-                    'traits_coverage_percentage': round(traits_coverage_pct, 1)
+            "field_name_reconciliation": {
+                "summary": {
+                    "total_fields": total_fields,
+                    "total_trait_fields": total_traits,
+                    "covered": covered_count,
+                    "missing_traits": missing_traits_count,
+                    "traits_coverage_percentage": round(traits_coverage_pct, 1)
                 },
-                'covered_fields': covered_entries,
-                'missing_trait_fields': missing_traits,
-                'missing_identifier_fields': missing_identifiers,
-                'permanently_excluded_fields': missing_permanently_excluded,
-                'high_value_missing_fields': high_value_missing
+                "covered_fields": covered_entries,
+                "missing_trait_fields": missing_traits,
+                "missing_identifier_fields": missing_identifiers,
+                "permanently_excluded_fields": missing_permanently_excluded,
+                "high_value_missing_fields": high_value_missing
             }
         }
         output_content = yaml.dump(result, default_flow_style=False, sort_keys=False, allow_unicode=True)
 
         if output_file:
-            with open(output_file, 'w') as f:
+            with open(output_file, "w") as f:
                 f.write(output_content)
             print(f"Report written to {output_file}")
         else:
@@ -470,23 +470,23 @@ def reconcile_coverage(field_path: str, tsv_path: str, output_format: str = "tex
                 break
 
         if matched:
-            metpo_curie = get_entity_curie(matched_info['entity'])
-            label = matched_info.get('label', '')
-            entity_type_raw = matched_info.get('entity_type', 'unknown')
+            metpo_curie = get_entity_curie(matched_info["entity"])
+            label = matched_info.get("label", "")
+            entity_type_raw = matched_info.get("entity_type", "unknown")
             entity_type = ENTITY_TYPE_MAP.get(entity_type_raw, entity_type_raw)
 
             covered_entries.append({
-                'value': normalized_value,
-                'original_value': original_value if was_normalized else None,
-                'matched_as': matched_variant if matched_variant != normalized_value else None,
-                'metpo_id': metpo_curie,
-                'label': label,
-                'entity_type': entity_type
+                "value": normalized_value,
+                "original_value": original_value if was_normalized else None,
+                "matched_as": matched_variant if matched_variant != normalized_value else None,
+                "metpo_id": metpo_curie,
+                "label": label,
+                "entity_type": entity_type
             })
         else:
             missing_entries.append({
-                'value': normalized_value,
-                'original_value': original_value if was_normalized else None
+                "value": normalized_value,
+                "original_value": original_value if was_normalized else None
             })
 
     total = len(bactotraits_value_map)
@@ -496,16 +496,16 @@ def reconcile_coverage(field_path: str, tsv_path: str, output_format: str = "tex
 
     if output_format == "yaml":
         result = {
-            'field_value_reconciliation': {
-                'field': field_path,
-                'summary': {
-                    'total_values': total,
-                    'covered': covered_count,
-                    'missing': missing_count,
-                    'coverage_percentage': round(coverage_pct, 1)
+            "field_value_reconciliation": {
+                "field": field_path,
+                "summary": {
+                    "total_values": total,
+                    "covered": covered_count,
+                    "missing": missing_count,
+                    "coverage_percentage": round(coverage_pct, 1)
                 },
-                'covered_values': covered_entries,
-                'missing_values': missing_entries
+                "covered_values": covered_entries,
+                "missing_values": missing_entries
             }
         }
         print(yaml.dump(result, default_flow_style=False, sort_keys=False, allow_unicode=True))
@@ -518,9 +518,9 @@ def reconcile_coverage(field_path: str, tsv_path: str, output_format: str = "tex
         print(f"COVERED ({covered_count}/{total} = {coverage_pct:.1f}%):")
         print("-" * 80)
         for entry in covered_entries:
-            normalization_note = f" [NORMALIZED from '{entry['original_value']}']" if entry['original_value'] else ""
-            matched_note = f" [matched as '{entry['matched_as']}']" if entry['matched_as'] else ""
-            if entry['label']:
+            normalization_note = f" [NORMALIZED from '{entry['original_value']}']" if entry["original_value"] else ""
+            matched_note = f" [matched as '{entry['matched_as']}']" if entry["matched_as"] else ""
+            if entry["label"]:
                 print(f"  ✓ '{entry['value']}' → {entry['metpo_id']} ({entry['label']}){normalization_note}{matched_note}")
             else:
                 print(f"  ✓ '{entry['value']}' → {entry['metpo_id']}{normalization_note}{matched_note}")
@@ -529,7 +529,7 @@ def reconcile_coverage(field_path: str, tsv_path: str, output_format: str = "tex
             print(f"\nMISSING ({missing_count}/{total} = {100*missing_count/total:.1f}%):")
             print("-" * 80)
             for entry in missing_entries:
-                normalization_note = f" [NORMALIZED from '{entry['original_value']}']" if entry['original_value'] else ""
+                normalization_note = f" [NORMALIZED from '{entry['original_value']}']" if entry["original_value"] else ""
                 print(f"  ✗ '{entry['value']}'{normalization_note}")
 
         print(f"\n{'='*80}\n")
@@ -537,31 +537,31 @@ def reconcile_coverage(field_path: str, tsv_path: str, output_format: str = "tex
 
 @click.command()
 @click.option(
-    '--mode',
-    type=click.Choice(['values', 'field_names'], case_sensitive=False),
-    default='values',
+    "--mode",
+    type=click.Choice(["values", "field_names"], case_sensitive=False),
+    default="values",
     help="Reconciliation mode: 'values' checks field values, 'field_names' checks ALL field names"
 )
 @click.option(
-    '--field',
+    "--field",
     type=str,
     help="MongoDB field path to reconcile (e.g., 'Ox_anaerobic', 'G_negative'). Required for 'values' mode."
 )
 @click.option(
-    '--tsv',
+    "--tsv",
     type=click.Path(exists=True),
-    default='reports/synonym-sources.tsv',
+    default="reports/synonym-sources.tsv",
     help="Path to synonym-sources.tsv report"
 )
 @click.option(
-    '--format',
-    'output_format',
-    type=click.Choice(['text', 'yaml'], case_sensitive=False),
-    default='text',
+    "--format",
+    "output_format",
+    type=click.Choice(["text", "yaml"], case_sensitive=False),
+    default="text",
     help="Output format: 'text' for console output, 'yaml' for structured YAML"
 )
 @click.option(
-    '--output',
+    "--output",
     type=click.Path(),
     help="Output file path. If not specified, prints to stdout."
 )

@@ -25,16 +25,16 @@ MIN_FILE_SIZE = 1000  # Bytes - anything smaller is likely an error response
 def log_failure(ontology_id: str, file_size: int, message: str):
     """Log fetch failure."""
     timestamp = datetime.now().isoformat()
-    with open(LOG_PATH, 'a') as f:
+    with open(LOG_PATH, "a") as f:
         f.write(f"{timestamp} | FETCH_FAILED | {ontology_id} | {file_size} bytes | {message}\n")
 
 
 @click.command()
-@click.argument('ontology_id')
-@click.option('--output', type=Path, required=True, help='Output file path')
+@click.argument("ontology_id")
+@click.option("--output", type=Path, required=True, help="Output file path")
 def main(ontology_id: str, output: Path):
     """Download ontology from BioPortal."""
-    api_key = os.getenv('BIOPORTAL_API_KEY')
+    api_key = os.getenv("BIOPORTAL_API_KEY")
 
     if not api_key:
         click.echo("✗ BIOPORTAL_API_KEY environment variable not set", err=True)
@@ -48,7 +48,7 @@ def main(ontology_id: str, output: Path):
     click.echo(f"Downloading BioPortal ontology {ontology_id}...")
 
     try:
-        response = requests.get(url, params={'apikey': api_key}, timeout=300)
+        response = requests.get(url, params={"apikey": api_key}, timeout=300)
         response.raise_for_status()
 
         # Write to file
@@ -72,5 +72,5 @@ def main(ontology_id: str, output: Path):
         sys.exit(1)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

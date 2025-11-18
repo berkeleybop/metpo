@@ -12,16 +12,16 @@ import click
 
 # OLS ontologies to REMOVE (7 total)
 OLS_TO_REMOVE = {
-    'chebi', 'foodon', 'cl', 'fypo', 'ecto', 'aro', 'ddpheno'
+    "chebi", "foodon", "cl", "fypo", "ecto", "aro", "ddpheno"
 }
 
 
 @click.command()
-@click.option('--input-path', default='./chroma_ols_27', help='Path to input ChromaDB')
-@click.option('--input-collection', default='ols_embeddings', help='Input collection name')
-@click.option('--output-path', default='./chroma_ols_20', help='Path to output ChromaDB')
-@click.option('--output-collection', default='ols_embeddings', help='Output collection name')
-@click.option('--batch-size', default=10000, help='Batch size for processing')
+@click.option("--input-path", default="./chroma_ols_27", help="Path to input ChromaDB")
+@click.option("--input-collection", default="ols_embeddings", help="Input collection name")
+@click.option("--output-path", default="./chroma_ols_20", help="Path to output ChromaDB")
+@click.option("--output-collection", default="ols_embeddings", help="Output collection name")
+@click.option("--batch-size", default=10000, help="Batch size for processing")
 def main(input_path, input_collection, output_path, output_collection, batch_size):
     """Filter OLS ChromaDB to remove low-ROI ontologies."""
 
@@ -76,10 +76,10 @@ def main(input_path, input_collection, output_path, output_collection, batch_siz
         batch = input_coll.get(
             limit=batch_size,
             offset=offset,
-            include=['documents', 'metadatas', 'embeddings']
+            include=["documents", "metadatas", "embeddings"]
         )
 
-        if not batch['ids']:
+        if not batch["ids"]:
             break
 
         # Filter to keep only desired ontologies
@@ -88,14 +88,14 @@ def main(input_path, input_collection, output_path, output_collection, batch_siz
         filtered_metadatas = []
         filtered_documents = []
 
-        for i, metadata in enumerate(batch['metadatas']):
-            ont_id = metadata.get('ontologyId', 'unknown')
+        for i, metadata in enumerate(batch["metadatas"]):
+            ont_id = metadata.get("ontologyId", "unknown")
 
             if ont_id not in OLS_TO_REMOVE:
-                filtered_ids.append(batch['ids'][i])
-                filtered_embeddings.append(batch['embeddings'][i])
+                filtered_ids.append(batch["ids"][i])
+                filtered_embeddings.append(batch["embeddings"][i])
                 filtered_metadatas.append(metadata)
-                filtered_documents.append(batch['documents'][i])
+                filtered_documents.append(batch["documents"][i])
 
                 # Track counts
                 ontology_counts[ont_id] = ontology_counts.get(ont_id, 0) + 1
@@ -115,7 +115,7 @@ def main(input_path, input_collection, output_path, output_collection, batch_siz
                     documents=filtered_documents[i:end]
                 )
 
-        offset += len(batch['ids'])
+        offset += len(batch["ids"])
 
         if offset % 50000 == 0 or offset >= total_input:
             print(f"  [{offset:,}/{total_input:,}] Copied: {total_copied:,}, Skipped: {total_skipped:,}")
