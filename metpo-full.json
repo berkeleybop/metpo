@@ -22,9 +22,9 @@
         "val" : "METPO"
       }, {
         "pred" : "http://www.w3.org/2002/07/owl#versionInfo",
-        "val" : "2025-11-07"
+        "val" : "2025-11-17"
       } ],
-      "version" : "https://w3id.org/metpo/metpo/releases/2025-11-07/metpo-full.json"
+      "version" : "https://w3id.org/metpo/metpo/releases/2025-11-17/metpo-full.json"
     },
     "nodes" : [ {
       "id" : "https://w3id.org/metpo/1000059",
@@ -32,9 +32,15 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A (combination of) quality(ies) of an organism determined by the interaction of its genetic make-up and environment that differentiates specific instances of a species from other instances of the same species."
+          "val" : "A quality that differentiates specific instances of a species from other instances of the same species."
         },
         "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Anthea Guo"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Luke Wang"
+        }, {
           "pred" : "http://www.w3.org/2004/02/skos/core#closeMatch",
           "val" : "https://biolink.github.io/biolink-model/PhenotypicQuality"
         } ]
@@ -42,15 +48,28 @@
     }, {
       "id" : "https://w3id.org/metpo/1000060",
       "lbl" : "metabolism",
-      "type" : "CLASS"
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A biological process that maintain life in an organism."
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Anthea Guo"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/1000127",
       "lbl" : "GC content",
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "The percentage of guanine and cytosine nucleotides in DNA"
-        }
+          "val" : "A quality that is describing the percentage of guanine and cytosine nucleotides in genomic DNA, calculated as the ratio of GC base pairs to total base pairs."
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Luke Wang"
+        } ]
       }
     }, {
       "id" : "https://w3id.org/metpo/1000186",
@@ -59,7 +78,11 @@
       "meta" : {
         "definition" : {
           "val" : "An object or portion of a substance or mixture of substances that consists of matter"
-        }
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Anthea Guo"
+        } ]
       }
     }, {
       "id" : "https://w3id.org/metpo/1000188",
@@ -67,52 +90,41 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A dependent entity that inheres in a bearer by virtue of how the bearer is related to other entities"
+          "val" : "A characteristic of an entity that depends on the entity's existence, size, color, and physiological traits."
         }
       }
     }, {
       "id" : "https://w3id.org/metpo/1000232",
       "lbl" : "pH delta",
-      "type" : "CLASS",
-      "meta" : {
-        "definition" : {
-          "val" : "A measure of the breadth of hydrogen ion concentrations that a microorganism can tolerate, calculated as the difference between the maximum and minimum viable pH values"
-        }
-      }
+      "type" : "CLASS"
     }, {
       "id" : "https://w3id.org/metpo/1000303",
       "lbl" : "temperature delta",
-      "type" : "CLASS",
-      "meta" : {
-        "definition" : {
-          "val" : "A measure of the breadth of thermal conditions that a microorganism can withstand, calculated as the difference between the maximum and minimum viable temperature values"
-        }
-      }
+      "type" : "CLASS"
     }, {
       "id" : "https://w3id.org/metpo/1000304",
       "lbl" : "temperature optimum",
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "The specific temperature at which an organism exhibits maximum growth rate"
-        }
+          "val" : "A temperature phenotype with numerical limits that represents the conditions at which an organism exhibits the most efficient growth and reproduction."
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Anthea Guo"
+        } ]
       }
     }, {
       "id" : "https://w3id.org/metpo/1000306",
       "lbl" : "temperature range",
-      "type" : "CLASS",
-      "meta" : {
-        "definition" : {
-          "val" : "The span of temperatures within which an organism can grow"
-        }
-      }
+      "type" : "CLASS"
     }, {
       "id" : "https://w3id.org/metpo/1000331",
       "lbl" : "pH optimum",
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "The specific hydrogen ion concentration at which a microorganism achieves its maximum growth rate and metabolic efficiency."
+          "val" : "A pH phenotype with numerical limits that represents the conditions at which an organism exhibits the most efficient growth and reproduction."
         }
       }
     }, {
@@ -120,9 +132,10 @@
       "lbl" : "pH range",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "The span of hydrogen ion concentrations within which a microorganism can maintain cellular homeostasis and sustain growth."
-        }
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Luke Wang"
+        } ]
       }
     }, {
       "id" : "https://w3id.org/metpo/1000333",
@@ -130,38 +143,35 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "The specific concentration of sodium chloride at which a microorganism exhibits maximum growth rate and metabolic efficiency."
-        }
+          "val" : "A salinity phenotype with numerical limits that supports the most efficient growth and reproduction of an organism."
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Luke Wang"
+        } ]
       }
     }, {
       "id" : "https://w3id.org/metpo/1000334",
       "lbl" : "NaCl range",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "The span of sodium chloride concentrations within which a microorganism can maintain osmotic balance and cellular functions."
-        }
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Anthea Guo"
+        } ]
       }
     }, {
       "id" : "https://w3id.org/metpo/1000335",
       "lbl" : "NaCl delta",
-      "type" : "CLASS",
-      "meta" : {
-        "definition" : {
-          "val" : "A measure of the breadth of sodium chloride concentrations that a microorganism can tolerate, calculated as the difference between the maximum and minimum viable salinity values."
-        }
-      }
+      "type" : "CLASS"
     }, {
       "id" : "https://w3id.org/metpo/1000429",
       "lbl" : "GC low",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A genomic feature characterized by a guanine-cytosine content percentage below 42.65% in an organism's DNA. Values with maximum value of 42.65 % GC."
-        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
-          "val" : " GC_42.65_57.0"
+          "val" : "GC_42.65_57.0"
         } ],
         "basicPropertyValues" : [ {
           "pred" : "https://w3id.org/metpo/range_max",
@@ -173,9 +183,6 @@
       "lbl" : "GC mid1",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A genomic feature characterized by a guanine-cytosine content percentage between 42.65% and 57% in an organism's DNA. Values ranging from 42.65 to 57 % GC."
-        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "GC_>66.3"
@@ -193,9 +200,6 @@
       "lbl" : "GC mid2",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A genomic feature characterized by a guanine-cytosine content percentage between 57% and 66.3% in an organism's DNA. Values ranging from 57 to 66.3 % GC."
-        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "GC_57.0_66.3"
@@ -213,9 +217,6 @@
       "lbl" : "GC high",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A genomic feature characterized by a guanine-cytosine content percentage above 66.3% in an organism's DNA. Values with minimum value of 66.3 % GC."
-        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "GC_<=42.65"
@@ -230,9 +231,6 @@
       "lbl" : "temperature optimum very low",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A temperature optimum manifested as maximum microbial growth at temperatures below 10°C, typical of psychrophilic organisms. Values with maximum value of 10 C."
-        },
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "Psychrophile"
@@ -253,9 +251,6 @@
       "lbl" : "temperature optimum low",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A temperature optimum manifested as maximum microbial growth at temperatures between 10°C and 22°C, common in psychrophilic or psychrotolerant organisms. Values ranging from 10 to 22 C."
-        },
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "Psychrophile"
@@ -282,9 +277,6 @@
       "lbl" : "temperature optimum mid1",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A temperature optimum manifested as maximum microbial growth at temperatures between 22°C and 27°C, characteristic of mesophilic organisms. Values ranging from 22 to 27 C."
-        },
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "Mesophilie"
@@ -308,9 +300,6 @@
       "lbl" : "temperature optimum mid2",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A temperature optimum manifested as maximum microbial growth at temperatures between 27°C and 30°C, characteristic of mesophilic organisms. Values ranging from 27 to 30 C."
-        },
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "Mesophilie"
@@ -334,9 +323,6 @@
       "lbl" : "temperature optimum mid3",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A temperature optimum manifested as maximum microbial growth at temperatures between 30°C and 34°C, characteristic of mesophilic organisms. Values ranging from 30 to 34 C."
-        },
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "Mesophilie"
@@ -360,9 +346,6 @@
       "lbl" : "temperature optimum mid4",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A temperature optimum manifested as maximum microbial growth at temperatures between 34°C and 40°C, characteristic of mesophilic organisms. Values ranging from 34 to 40 C."
-        },
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "Mesophilie"
@@ -386,9 +369,6 @@
       "lbl" : "temperature optimum high",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A temperature optimum manifested as maximum microbial growth at temperatures above 40°C, typical of thermophilic organisms. Values with minimum value of 40 C."
-        },
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "Thermophile"
@@ -409,9 +389,6 @@
       "lbl" : "temperature range very low",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A temperature range allowing microbial growth at temperatures below 10°C, characteristic of psychrophilic organisms. Values with maximum value of 10 C."
-        },
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "Psychrophile"
@@ -432,9 +409,6 @@
       "lbl" : "temperature range low",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A temperature range allowing microbial growth at temperatures between 10°C and 22°C, characteristic of psychrophilic or psychrotolerant organisms. Values ranging from 10 to 22 C."
-        },
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "Psychrophile"
@@ -461,9 +435,6 @@
       "lbl" : "temperature range mid1",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A temperature range allowing microbial growth at temperatures between 22°C and 27°C, characteristic of mesophilic organisms. Values ranging from 22 to 27 C."
-        },
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "Mesophilie"
@@ -487,9 +458,6 @@
       "lbl" : "temperature range mid2",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A temperature range allowing microbial growth at temperatures between 27°C and 30°C, characteristic of mesophilic organisms. Values ranging from 27 to 30 C."
-        },
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "Mesophilie"
@@ -513,9 +481,6 @@
       "lbl" : "temperature range mid3",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A temperature range allowing microbial growth at temperatures between 30°C and 34°C, characteristic of mesophilic organisms. Values ranging from 30 to 34 C."
-        },
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "Mesophilie"
@@ -539,9 +504,6 @@
       "lbl" : "temperature range mid4",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A temperature range allowing microbial growth at temperatures between 34°C and 40°C, characteristic of mesophilic organisms. Values ranging from 34 to 40 C."
-        },
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "Mesophilie"
@@ -565,9 +527,6 @@
       "lbl" : "temperature range high",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A temperature range allowing microbial growth at temperatures above 40°C, characteristic of thermophilic organisms. Values with minimum value of 40 C."
-        },
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "Thermophile"
@@ -588,9 +547,6 @@
       "lbl" : "pH optimum low",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A pH optimum manifested as maximum microbial growth at hydrogen ion concentrations between pH 0 and 6, characteristic of acidophilic organisms. Values ranging from 0 to 6 pH."
-        },
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "Acid Tolerant"
@@ -623,9 +579,6 @@
       "lbl" : "pH optimum mid1",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A pH optimum manifested as maximum microbial growth at hydrogen ion concentrations between pH 6 and 7, characteristic of neutrophilic or alkali-tolerant organisms. Values ranging from 6 to 7 pH."
-        },
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "Alkali Tolerant"
@@ -649,9 +602,6 @@
       "lbl" : "pH optimum mid2",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A pH optimum manifested as maximum microbial growth at hydrogen ion concentrations between pH 7 and 8, characteristic of neutrophilic, alkaliphilic, or alkali-tolerant organisms. Values ranging from 7 to 8 pH."
-        },
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "Alkali Tolerant"
@@ -678,9 +628,6 @@
       "lbl" : "pH optimum high",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A pH optimum manifested as maximum microbial growth at hydrogen ion concentrations between pH 8 and 14, characteristic of alkaliphilic or extremely alkaliphilic organisms. Values ranging from 8 to 14 pH."
-        },
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "Alkali Tolerant"
@@ -707,9 +654,6 @@
       "lbl" : "pH range very low",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A pH range allowing microbial growth at hydrogen ion concentrations between pH 0 and 4, characteristic of extremely acidophilic organisms. Values ranging from 0 to 4 pH."
-        },
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "Acid Tolerant"
@@ -742,9 +686,6 @@
       "lbl" : "pH range low",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A pH range allowing microbial growth at hydrogen ion concentrations between pH 4 and 6, characteristic of acidophilic organisms. Values ranging from 4 to 6 pH."
-        },
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "Acid Tolerant"
@@ -774,9 +715,6 @@
       "lbl" : "pH range mid1",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A pH range allowing microbial growth at hydrogen ion concentrations between pH 6 and 7, characteristic of neutrophilic organisms. Values ranging from 6 to 7 pH."
-        },
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "Alkali Tolerant"
@@ -803,9 +741,6 @@
       "lbl" : "pH range mid2",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A pH range allowing microbial growth at hydrogen ion concentrations between pH 7 and 8, characteristic of neutrophilic or alkaliphilic organisms. Values ranging from 7 to 8 pH."
-        },
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "Alkali Tolerant"
@@ -835,9 +770,6 @@
       "lbl" : "pH range mid3",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A pH range allowing microbial growth at hydrogen ion concentrations between pH 8 and 10, characteristic of alkaliphilic organisms. Values ranging from 8 to 10 pH."
-        },
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "Alkali Tolerant"
@@ -867,9 +799,6 @@
       "lbl" : "pH range high",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A pH range allowing microbial growth at hydrogen ion concentrations between pH 10 and 14, characteristic of extremely alkaliphilic organisms. Values ranging from 10 to 14 pH."
-        },
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "Alkali Tolerant"
@@ -896,9 +825,6 @@
       "lbl" : "NaCl optimum low",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A salinity optimum manifested as maximum microbial growth at sodium chloride concentrations below 1%, characteristic of non-halophilic or halotolerant organisms. Values with maximum value of 1 % NaCl."
-        },
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "Halotolerant"
@@ -922,9 +848,6 @@
       "lbl" : "NaCl optimum mid1",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A salinity optimum manifested as maximum microbial growth at sodium chloride concentrations between 1% and 3%, characteristic of slight halophiles or halotolerant organisms. Values ranging from 1 to 3 % NaCl."
-        },
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "Halotolerant"
@@ -951,9 +874,6 @@
       "lbl" : "NaCl optimum mid2",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A salinity optimum manifested as maximum microbial growth at sodium chloride concentrations between 3% and 8%, characteristic of moderate halophiles or halotolerant organisms. Values ranging from 3 to 8 % NaCl."
-        },
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "Halotolerant"
@@ -980,9 +900,6 @@
       "lbl" : "NaCl optimum high",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A salinity optimum manifested as maximum microbial growth at sodium chloride concentrations above 8%, characteristic of extreme halophiles. Values with minimum value of 8 % NaCl."
-        },
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "Extreme halophile"
@@ -1003,9 +920,6 @@
       "lbl" : "NaCl range low",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A salinity range allowing microbial growth at sodium chloride concentrations below 1%, characteristic of non-halophilic organisms. Values with maximum value of 1 % NaCl."
-        },
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "Halotolerant"
@@ -1029,9 +943,6 @@
       "lbl" : "NaCl range mid1",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A salinity range allowing microbial growth at sodium chloride concentrations between 1% and 3%, characteristic of slight halophiles. Values ranging from 1 to 3 % NaCl."
-        },
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "Halotolerant"
@@ -1058,9 +969,6 @@
       "lbl" : "NaCl range mid2",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A salinity range allowing microbial growth at sodium chloride concentrations between 3% and 8%, characteristic of moderate halophiles. Values ranging from 3 to 8 % NaCl."
-        },
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "Halotolerant"
@@ -1087,9 +995,6 @@
       "lbl" : "NaCl range high",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A salinity range allowing microbial growth at sodium chloride concentrations above 8%, characteristic of extreme halophiles. Values with minimum value of 8 % NaCl."
-        },
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "Extreme halophile"
@@ -1110,9 +1015,6 @@
       "lbl" : "pH delta very low",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A growth tolerance metric measuring the span of pH conditions that support an organism's growth, with a narrow range less than 1 pH unit. Values with maximum value of 1 pH."
-        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "pHd_<=1"
@@ -1127,9 +1029,6 @@
       "lbl" : "pH delta low",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A growth tolerance metric measuring the span of pH conditions that support an organism's growth, with a range between 1 and 2 pH units. Values ranging from 1 to 2 pH."
-        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "pHd_1_2"
@@ -1147,9 +1046,6 @@
       "lbl" : "pH delta mid1",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A growth tolerance metric measuring the span of pH conditions that support an organism's growth, with a range between 2 and 3 pH units. Values ranging from 2 to 3 pH."
-        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "pHd_2_3"
@@ -1167,9 +1063,6 @@
       "lbl" : "pH delta mid2",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A growth tolerance metric measuring the span of pH conditions that support an organism's growth, with a range between 3 and 4 pH units. Values ranging from 3 to 4 pH."
-        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "pHd_3_4"
@@ -1187,9 +1080,6 @@
       "lbl" : "pH delta mid3",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A growth tolerance metric measuring the span of pH conditions that support an organism's growth, with a range between 4 and 5 pH units. Values ranging from 4 to 5 pH."
-        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "pHd_4_5"
@@ -1207,9 +1097,6 @@
       "lbl" : "pH delta high",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A growth tolerance metric measuring the span of pH conditions that support an organism's growth, with a wide range between 5 and 9 pH units. Values ranging from 5 to 9 pH."
-        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "pHd_5_9"
@@ -1227,9 +1114,6 @@
       "lbl" : "NaCl delta low",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A growth tolerance metric measuring the span of sodium chloride concentrations that support an organism's growth, with a narrow range less than 1%. Values with maximum value of 1 C."
-        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "Nad_<=1"
@@ -1247,9 +1131,6 @@
       "lbl" : "NaCl delta mid1",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A growth tolerance metric measuring the span of sodium chloride concentrations that support an organism's growth, with a range between 1% and 3%. Values ranging from 1 to 3 C."
-        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "Nad_1_3"
@@ -1270,9 +1151,6 @@
       "lbl" : "NaCl delta mid2",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A growth tolerance metric measuring the span of sodium chloride concentrations that support an organism's growth, with a range between 3% and 8%. Values ranging from 3 to 8 C."
-        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "Nad_3_8"
@@ -1293,9 +1171,6 @@
       "lbl" : "NaCl delta high",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A growth tolerance metric measuring the span of sodium chloride concentrations that support an organism's growth, with a wide range greater than 8%. Values with maximum value of 8 C."
-        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "Nad_>8"
@@ -1313,9 +1188,6 @@
       "lbl" : "temperature delta very low",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A growth tolerance metric measuring the span of temperatures that support an organism's growth, with a narrow range between 1°C and 5°C. Values ranging from 1 to 5 C."
-        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "Td_1_5"
@@ -1336,9 +1208,6 @@
       "lbl" : "temperature delta low",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A growth tolerance metric measuring the span of temperatures that support an organism's growth, with a range between 5°C and 10°C. Values ranging from 5 to 10 C."
-        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "Td_5_10"
@@ -1359,9 +1228,6 @@
       "lbl" : "temperature delta mid1",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A growth tolerance metric measuring the span of temperatures that support an organism's growth, with a range between 10°C and 20°C. Values ranging from 10 to 20 C."
-        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "Td_10_20"
@@ -1382,9 +1248,6 @@
       "lbl" : "temperature delta mid2",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A growth tolerance metric measuring the span of temperatures that support an organism's growth, with a range between 20°C and 30°C. Values ranging from 20 to 30 C."
-        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "Td_20_30"
@@ -1405,9 +1268,6 @@
       "lbl" : "temperature delta high",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A growth tolerance metric measuring the span of temperatures that support an organism's growth, with a wide range greater than 30°C. Values with minimum value of 30 C."
-        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "Td_>30"
@@ -1426,10 +1286,13 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "An organism or virus or viron that is too small to be viewed by the unaided eye."
+          "val" : "A material entity that is too small to be viewed by the unaided eye, typically requiring microscopy for observation."
         },
         "comments" : [ "METPO is primarily concerned with unicellular, prokaryotic life forms, i.e. bacteria and archea, including the cases of giant bacteria like Thiomargarita" ],
         "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Luke Wang"
+        }, {
           "pred" : "http://www.w3.org/2004/02/skos/core#closeMatch",
           "val" : "https://biolink.github.io/biolink-model/OrganismTaxon"
         } ]
@@ -1440,7 +1303,7 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A physical entity of interest in chemistry including molecular entities, parts thereof, and chemical substances."
+          "val" : "A material entity that is a physical entity of interest in chemistry including molecular entities, parts thereof, and chemical substances."
         },
         "basicPropertyValues" : [ {
           "pred" : "http://www.w3.org/2004/02/skos/core#closeMatch",
@@ -1450,36 +1313,66 @@
     }, {
       "id" : "https://w3id.org/metpo/1000531",
       "lbl" : "pH phenotype with numerical limits",
-      "type" : "CLASS"
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A phenotype characterized by specific pH values or ranges that define growth or activity limits."
+        }
+      }
     }, {
       "id" : "https://w3id.org/metpo/1000532",
       "lbl" : "salinity phenotype with numerical limits",
-      "type" : "CLASS"
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A phenotype characterized by specific salt concentration values or ranges that define growth or activity limits."
+        }
+      }
     }, {
       "id" : "https://w3id.org/metpo/1000533",
       "lbl" : "temperature phenotype with numerical limits",
-      "type" : "CLASS"
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A phenotype characterized by specific temperature values or ranges that define growth or activity limits."
+        }
+      }
     }, {
       "id" : "https://w3id.org/metpo/1000534",
       "lbl" : "delta phenotype with numerical limits",
-      "type" : "CLASS"
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A phenotype characterized by the difference between maximum and minimum values of a growth parameter."
+        }
+      }
     }, {
       "id" : "https://w3id.org/metpo/1000535",
       "lbl" : "growth range phenotype with numerical limits",
-      "type" : "CLASS"
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A phenotype characterized by the span of values within which an organism can maintain growth."
+        }
+      }
     }, {
       "id" : "https://w3id.org/metpo/1000536",
       "lbl" : "optimum phenotype with numerical limits",
-      "type" : "CLASS"
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A phenotype characterized by the value at which an organism exhibits maximum growth rate or activity."
+        }
+      }
     }, {
       "id" : "https://w3id.org/metpo/1000601",
       "lbl" : "oxygen preference",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A phenotype that is relating to an organism's oxygen requirements or tolerance for growth."
+        },
         "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "General.keywords"
-        }, {
           "pred" : "hasRelatedSynonym",
           "val" : "Physiology and metabolism.oxygen tolerance.oxygen tolerance"
         }, {
@@ -1493,7 +1386,7 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A microbial oxygen preference phenotype in which growth occurs in the presence of molecular oxygen (O₂), typically using O₂ as the terminal electron acceptor."
+          "val" : "An oxygen preference in which growth occurs in the presence of molecular oxygen (O₂), typically using O₂ as the terminal electron acceptor."
         },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
@@ -1512,7 +1405,7 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A microbial oxygen preference phenotype in which growth occurs in the absence of molecular oxygen (O₂)."
+          "val" : "An oxygen preference in which growth occurs in the absence of molecular oxygen (O₂)."
         },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
@@ -1531,7 +1424,7 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A microbial oxygen preference phenotype that requires molecular oxygen (O₂) at concentrations lower than atmospheric."
+          "val" : "An oxygen preference that requires molecular oxygen (O₂) at concentrations lower than atmospheric."
         },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
@@ -1550,7 +1443,7 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A microbial oxygen preference phenotype in which growth can occur with or without molecular oxygen (O₂)."
+          "val" : "An oxygen preference in which growth can occur with or without molecular oxygen (O₂)."
         },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
@@ -1566,7 +1459,7 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A microbial oxygen preference phenotype that requires molecular oxygen (O₂) for growth."
+          "val" : "An oxygen preference that requires molecular oxygen (O₂) for growth."
         },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
@@ -1582,7 +1475,7 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A microbial oxygen preference phenotype in which molecular oxygen (O₂) inhibits or prevents growth."
+          "val" : "An oxygen preference in which molecular oxygen (O₂) inhibits or prevents growth."
         },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
@@ -1598,7 +1491,7 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A microbial oxygen preference phenotype in which growth can occur without oxygen but is capable of aerobic growth."
+          "val" : "An oxygen preference in which growth can occur without oxygen but is capable of aerobic growth."
         },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
@@ -1614,7 +1507,7 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A microbial oxygen preference phenotype that does not use O₂ for growth but tolerates its presence."
+          "val" : "An oxygen preference that does not use O₂ for growth but tolerates its presence."
         },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
@@ -1627,7 +1520,7 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A microbial oxygen preference phenotype that tolerates low levels of molecular oxygen (O₂) without requiring it."
+          "val" : "An oxygen preference that tolerates low levels of molecular oxygen (O₂) without requiring it."
         },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
@@ -1640,7 +1533,7 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A microbial oxygen preference phenotype reported as “strictly anaerobic” in Madin; modeled distinctly and placed under obligately anaerobic."
+          "val" : "An obligately anaerobic where a microorganism does not grow in the presence of oxygen gas (O2)."
         },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
@@ -1653,7 +1546,7 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A microbial oxygen preference phenotype reported generically as “facultative” (no direction specified); kept as its own class to avoid collapsing specific subclasses."
+          "val" : "An oxygen preference that describes a microorganism that can grow with or without molecular oxygen."
         },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
@@ -1666,12 +1559,9 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A microbial phenotype describing characteristic growth with respect to environmental temperature (e.g., preference classes such as psychrophilic, mesophilic, thermophilic, hyperthermophilic)."
+          "val" : "A phenotype that describes characteristic growth with respect to environmental temperature."
         },
         "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "General.keywords"
-        }, {
           "pred" : "hasRelatedSynonym",
           "val" : "Physiology and metabolism.culture temp.temperature"
         }, {
@@ -1685,7 +1575,7 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A temperature preference phenotype in which growth is favored at low temperatures, typically near or below ~15 °C."
+          "val" : "A temperature preference in which growth is favored at low temperatures, typically near or below ~15 °C."
         },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
@@ -1701,7 +1591,7 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A temperature preference phenotype in which growth is favored at intermediate temperatures, typically ~20–45 °C."
+          "val" : "A temperature preference in which growth is favored at intermediate temperatures, typically ~20–45 °C."
         },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
@@ -1717,7 +1607,7 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A temperature preference phenotype in which growth is favored at elevated temperatures, typically ≥45 °C."
+          "val" : "A temperature preference in which growth is favored at elevated temperatures, typically ≥45 °C."
         },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
@@ -1733,7 +1623,7 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A temperature preference phenotype in which growth is favored at very high temperatures, typically ≥80 °C."
+          "val" : "A temperature preference in which growth is favored at very high temperatures, typically ≥80 °C."
         },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
@@ -1749,7 +1639,7 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A temperature tolerance phenotype in which growth can occur at low temperatures without an obligate low-temperature preference."
+          "val" : "A temperature preference in which growth can occur at low temperatures without an obligate low-temperature preference."
         },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
@@ -1762,7 +1652,7 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A temperature tolerance phenotype in which growth can occur at elevated temperatures without an obligate high-temperature preference."
+          "val" : "A temperature preference in which growth can occur at elevated temperatures without an obligate high-temperature preference."
         },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
@@ -1774,6 +1664,9 @@
       "lbl" : "halophilic",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A halophily preference in which an organism requires high concentrations of salt for growth and survival."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "halophilic"
@@ -1787,6 +1680,9 @@
       "lbl" : "haloalkaliphilic",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A halophily preference in which an organism requires both high salt concentrations and alkaline pH for optimal growth."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "haloalkaliphilic"
@@ -1797,6 +1693,9 @@
       "lbl" : "halotolerant",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A halophily preference in which an organism can tolerate high salt concentrations but does not require them for growth."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "halotolerant"
@@ -1810,12 +1709,19 @@
       "lbl" : "moderately halophilic",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A halophily preference where growth and proliferation requires high levels of sodium chloride, usually above or about 0.2 M."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "moderate-halophilic"
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "moderately halophilic"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Anthea Guo"
         } ]
       }
     }, {
@@ -1823,6 +1729,9 @@
       "lbl" : "non halophilic",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A halophily preference in which an organism does not require or prefer elevated salt concentrations for growth."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "non-halophilic"
@@ -1836,6 +1745,9 @@
       "lbl" : "slightly halophilic",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A halophily preference in which an organism requires low to moderate salt concentrations (0.3 to 0.8 M NaCl) for optimal growth."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "slightly halophilic"
@@ -1846,9 +1758,19 @@
       "lbl" : "stenohaline",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A halophily preference in which an organism can only tolerate a narrow range of salinity concentrations and cannot survive significant changes in environmental salt levels."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "stenohaline"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Jed Dongjin Kim-Ozaeta"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Luke Wang"
         } ]
       }
     }, {
@@ -1856,6 +1778,9 @@
       "lbl" : "euryhaline",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A halophily preference in which an organism can tolerate a wide range of salinity conditions."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "euryhaline"
@@ -1866,12 +1791,19 @@
       "lbl" : "extremely halophilic",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A halophily preference in which an organism requires very high salt concentrations (typically 15-30% NaCl or higher) for optimal growth and cannot grow at salt concentrations below approximately 12%."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "extreme-halophilic"
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "extremely halophilic"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Jed Dongjin Kim-Ozaeta"
         } ]
       }
     }, {
@@ -1879,10 +1811,10 @@
       "lbl" : "halophily preference",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A phenotype that is relating to an organism's salt concentration requirements or tolerance for growth."
+        },
         "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "General.keywords"
-        }, {
           "pred" : "hasRelatedSynonym",
           "val" : "Physiology and metabolism.halophily.halophily level"
         }, {
@@ -1896,7 +1828,7 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "The execution of a genetically-encoded biological module or program. It consists of all the steps required to achieve the specific biological objective of the module. A biological process is accomplished by a particular set of molecular functions carried out by specific gene products (or macromolecular complexes), often in a highly regulated manner and in a particular temporal sequence."
+          "val" : "A execution of a genetically-encoded biological module or program. It consists of all the steps required to achieve the specific biological objective of the module. A biological process is accomplished by a particular set of molecular functions carried out by specific gene products (or macromolecular complexes), often in a highly regulated manner and in a particular temporal sequence."
         }
       }
     }, {
@@ -1905,12 +1837,9 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "The quality of how an organism obtains its carbon and energy."
+          "val" : "A phenotype that is describing how an organism obtains carbon and energy for growth and metabolism."
         },
         "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "General.keywords"
-        }, {
           "pred" : "hasRelatedSynonym",
           "val" : "Physiology and metabolism.nutrition type.type"
         }, {
@@ -1919,6 +1848,10 @@
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "pathways"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Luke Wang"
         } ]
       }
     }, {
@@ -1926,6 +1859,9 @@
       "lbl" : "autotrophic",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A trophic type in which an organism produces organic compounds from inorganic carbon sources (primarily carbon dioxide or bicarbonate) using energy from light (photoautotrophy) or from the oxidation of inorganic compounds (chemoautotrophy)."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "TT_autotroph"
@@ -1935,20 +1871,36 @@
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "autotrophy"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Jed Dongjin Kim-Ozaeta"
         } ]
       }
     }, {
       "id" : "https://w3id.org/metpo/1000633",
       "lbl" : "carboxydotrophic",
-      "type" : "CLASS"
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A trophic type in which an organism derives energy from the oxidation of carbon monoxide."
+        }
+      }
     }, {
       "id" : "https://w3id.org/metpo/1000634",
       "lbl" : "chemoautolithotrophic",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A trophic type in which an organism uses chemical oxidation of inorganic compounds as the energy source and carbon dioxide as the primary carbon source for biosynthesis."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "chemoautolithotroph"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Luke Wang"
         } ]
       }
     }, {
@@ -1956,6 +1908,9 @@
       "lbl" : "chemoautotrophic",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A trophic type in which an organism obtains energy from oxidation of inorganic compounds and carbon from carbon dioxide."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "chemoautotroph"
@@ -1966,6 +1921,9 @@
       "lbl" : "chemoheterotrophic",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A trophic type in which an organism obtains both energy and carbon from organic compounds."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "aerobic_chemo_heterotrophy"
@@ -1979,6 +1937,9 @@
       "lbl" : "chemolithoautotrophic",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A trophic type in which an organism obtains energy from oxidation of inorganic compounds (lithotrophy) and carbon from carbon dioxide."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "chemolithoautotroph"
@@ -1989,9 +1950,16 @@
       "lbl" : "chemolithoheterotrophic",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A trophic type characterized by the use of inorganic chemical compounds as electron donors for energy generation while utilizing organic compounds as the primary carbon source."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "chemolithoheterotroph"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Anthea Guo"
         } ]
       }
     }, {
@@ -1999,9 +1967,16 @@
       "lbl" : "chemolithotrophic",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A trophic type characterized by the use of inorganic chemical compounds as electron donors and carbon dioxide as the primary carbon source for energy generation and biosynthesis."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "chemolithotroph"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Anthea Guo"
         } ]
       }
     }, {
@@ -2009,6 +1984,9 @@
       "lbl" : "chemoorganoheterotrophic",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A trophic type in which an organism obtains both energy and carbon from organic compounds through oxidation."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "chemoorganoheterotroph"
@@ -2019,6 +1997,9 @@
       "lbl" : "chemotrophic",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A trophic type in which an organism obtains energy from chemical oxidation of either inorganic or organic compounds."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "TT_chemotroph"
@@ -2032,9 +2013,16 @@
       "lbl" : "copiotrophic",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A nutrient adaptation in which an organism thrives in environments with high nutrient concentrations, typically exhibiting rapid growth rates and utilizing diverse carbon sources."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "copiotroph"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Jed Dongjin Kim-Ozaeta"
         } ]
       }
     }, {
@@ -2042,6 +2030,9 @@
       "lbl" : "heterotrophic",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A trophic type in which an organism obtains carbon from organic compounds rather than from carbon dioxide."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "TT_heterotroph"
@@ -2059,12 +2050,27 @@
     }, {
       "id" : "https://w3id.org/metpo/1000646",
       "lbl" : "hydrogenotrophic",
-      "type" : "CLASS"
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A trophic type in which an organism uses molecular hydrogen as an electron donor for energy generation and carbon dioxide as the primary carbon source."
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Jed Dongjin Kim-Ozaeta"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Luke Wang"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/1000647",
       "lbl" : "lithoautotrophic",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A trophic type in which an organism obtains energy from inorganic electron donors and carbon from carbon dioxide."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "lithoautotroph"
@@ -2075,9 +2081,16 @@
       "lbl" : "lithoheterotrophic",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A trophic type in which an organism obtains energy from the oxidation of inorganic compounds while using organic compounds as the primary carbon source for biosynthesis."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "lithoheterotroph"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Jed Dongjin Kim-Ozaeta"
         } ]
       }
     }, {
@@ -2085,12 +2098,19 @@
       "lbl" : "lithotrophic",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A trophic type in which an organism uses inorganic compounds as electron donors for energy generation."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "TT_lithotroph"
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "lithotroph"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Luke Wang"
         } ]
       }
     }, {
@@ -2098,9 +2118,16 @@
       "lbl" : "methanotrophic",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A trophic type in which an organism uses methane as the primary carbon and energy source through oxidation of methane to carbon dioxide."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "methanotroph"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Luke Wang"
         } ]
       }
     }, {
@@ -2108,6 +2135,9 @@
       "lbl" : "methylotrophic",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A trophic type in which an organism obtains energy and carbon from reduced one-carbon compounds."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "TT_methylotroph"
@@ -2124,6 +2154,9 @@
       "lbl" : "mixotrophic",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A trophic type in which an organism can use both organic and inorganic carbon sources for growth."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "mixotroph"
@@ -2134,12 +2167,22 @@
       "lbl" : "oligotrophic",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A nutrient adaptation characterized by the ability to thrive in environments with very low nutrient concentrations, typically possessing efficient nutrient uptake and utilization systems."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "TT_oligotroph"
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "oligotroph"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Anthea Guo"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Jed Dongjin Kim-Ozaeta"
         } ]
       }
     }, {
@@ -2147,6 +2190,9 @@
       "lbl" : "organotrophic",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A trophic type in which an organism obtains energy from the oxidation of organic compounds."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "TT_organotroph"
@@ -2160,6 +2206,9 @@
       "lbl" : "photoautotrophic",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A trophic type characterized by the use of light as the energy source and carbon dioxide as the primary carbon source for biosynthesis."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "anoxygenic_photoautotrophy"
@@ -2178,6 +2227,10 @@
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "photoautotrophy"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Anthea Guo"
         } ]
       }
     }, {
@@ -2185,12 +2238,19 @@
       "lbl" : "photoheterotrophic",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A trophic type in which an organism uses light as the energy source and organic compounds as the primary carbon source for biosynthesis."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "photoheterotroph"
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "photoheterotrophy"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Luke Wang"
         } ]
       }
     }, {
@@ -2198,9 +2258,19 @@
       "lbl" : "photolithotrophic",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A trophic type in which an organism uses light as the energy source and inorganic compounds as electron donors, typically with carbon dioxide as the primary carbon source."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "photolithotroph"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Jed Dongjin Kim-Ozaeta"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Luke Wang"
         } ]
       }
     }, {
@@ -2208,6 +2278,9 @@
       "lbl" : "photoorganoheterotrophic",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A trophic type in which an organism obtains energy from light and carbon from organic compounds."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "photoorganoheterotroph"
@@ -2218,6 +2291,9 @@
       "lbl" : "phototrophic",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A trophic type characterized by the use of light as the primary energy source for metabolic processes, regardless of carbon source."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "TT_phototroph"
@@ -2227,6 +2303,10 @@
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "phototroph"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Anthea Guo"
         } ]
       }
     }, {
@@ -2234,9 +2314,16 @@
       "lbl" : "chemoorganotrophic",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A trophic type in which an organism obtains energy through chemical oxidation of organic compounds that also serve as the carbon source for biosynthesis."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "chemoorganotroph"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Jed Dongjin Kim-Ozaeta"
         } ]
       }
     }, {
@@ -2244,9 +2331,16 @@
       "lbl" : "organoheterotrophic",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A trophic type characterized by the use of organic compounds as both electron donors and primary carbon sources for energy generation and biosynthesis."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "organoheterotroph"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Anthea Guo"
         } ]
       }
     }, {
@@ -2254,6 +2348,9 @@
       "lbl" : "photolithoautotrophic",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A trophic type in which an organism obtains energy from light and carbon from carbon dioxide using inorganic electron donors."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "photolithoautotroph"
@@ -2264,15 +2361,22 @@
       "lbl" : "cell shape",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A phenotype that describes the characteristic three-dimensional morphological form of a microbial cell, determined by cell wall structure, cytoskeletal elements, and environmental factors."
+        },
         "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "General.keywords"
-        }, {
           "pred" : "hasRelatedSynonym",
           "val" : "Morphology.cell morphology.cell shape"
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "cell_shape"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Jed Dongjin Kim-Ozaeta"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Luke Wang"
         } ]
       }
     }, {
@@ -2280,9 +2384,16 @@
       "lbl" : "bacillus shaped",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A cell shape characterized by an elongated, rod cylindrical morphology with relatively parallel sides and rounded ends."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "bacillus"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Anthea Guo"
         } ]
       }
     }, {
@@ -2290,12 +2401,19 @@
       "lbl" : "coccus shaped",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A cell shape in which an organism has a spherical or nearly spherical morphology, with roughly equal dimensions in all directions."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "coccus"
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "coccus-shaped"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Jed Dongjin Kim-Ozaeta"
         } ]
       }
     }, {
@@ -2306,6 +2424,10 @@
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "crescent-shaped"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Luke Wang"
         } ]
       }
     }, {
@@ -2315,10 +2437,14 @@
       "meta" : {
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
-          "val" : " S_curved_spiral"
+          "val" : "S_curved_spiral"
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "curved-shaped"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Anthea Guo"
         } ]
       }
     }, {
@@ -2326,9 +2452,16 @@
       "lbl" : "diplococcus shaped",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A cell shape in which spherical cells remain attached in pairs following cell division, forming characteristic doublets."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "diplococcus-shaped"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Luke Wang"
         } ]
       }
     }, {
@@ -2349,9 +2482,19 @@
       "lbl" : "ellipsoidal",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A cell shape in which an organism has an oval or ellipse morphology, elongated along one axis with rounded ends, intermediate between spherical and rod-shaped."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "ellipsoidal"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Jed Dongjin Kim-Ozaeta"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Luke Wang"
         } ]
       }
     }, {
@@ -2361,13 +2504,17 @@
       "meta" : {
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
-          "val" : " S_filament"
+          "val" : "S_filament"
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "filament"
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "filament-shaped"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Luke Wang"
         } ]
       }
     }, {
@@ -2391,6 +2538,13 @@
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "helical-shaped"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Anthea Guo"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Jed Dongjin Kim-Ozaeta"
         } ]
       }
     }, {
@@ -2398,12 +2552,19 @@
       "lbl" : "ovoid shaped",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A cell shape in which an organism has an oval morphology, rounded at both ends with one end often slightly broader than the other."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
-          "val" : " S_ovoid"
+          "val" : "S_ovoid"
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "ovoid-shaped"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Luke Wang"
         } ]
       }
     }, {
@@ -2411,9 +2572,16 @@
       "lbl" : "oval shaped",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A cell shape characterized by an ellipsoidal morphology with rounded ends, resembling an elongated sphere."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "oval-shaped"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Anthea Guo"
         } ]
       }
     }, {
@@ -2421,6 +2589,9 @@
       "lbl" : "pleomorphic shaped",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A cell shape characterized by variable and irregular morphology, where individual cells within a population exhibit multiple distinct shapes."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "S_star_dumbbell_pleomorphic"
@@ -2430,6 +2601,13 @@
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "pleomorphic-shaped"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Anthea Guo"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Jed Dongjin Kim-Ozaeta"
         } ]
       }
     }, {
@@ -2437,6 +2615,9 @@
       "lbl" : "ring shaped",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A cell shape in which an organism forms circular or toroidal structures."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "ring"
@@ -2450,12 +2631,19 @@
       "lbl" : "rod shaped",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A cell shape in which an organism has an elongated, cylindrical morphology with relatively straight sides and rounded or flat ends."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
-          "val" : " S_rod"
+          "val" : "S_rod"
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "rod-shaped"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Luke Wang"
         } ]
       }
     }, {
@@ -2466,6 +2654,10 @@
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "spore-shaped"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Anthea Guo"
         } ]
       }
     }, {
@@ -2475,10 +2667,14 @@
       "meta" : {
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
-          "val" : " S_sphere"
+          "val" : "S_sphere"
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "sphere-shaped"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Anthea Guo"
         } ]
       }
     }, {
@@ -2488,13 +2684,17 @@
       "meta" : {
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
-          "val" : " S_curved_spiral"
+          "val" : "S_curved_spiral"
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "spiral"
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "spiral-shaped"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Luke Wang"
         } ]
       }
     }, {
@@ -2502,6 +2702,9 @@
       "lbl" : "star shaped",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A cell shape in which an organism has multiple radiating projections from a central body."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "S_star_dumbbell_pleomorphic"
@@ -2518,12 +2721,19 @@
       "lbl" : "vibrio shaped",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A cell shape in which an organism has a curved rod or comma morphology, characterized by a short curved cylindrical form with a single arc."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "vibrio"
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "vibrio-shaped"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Jed Dongjin Kim-Ozaeta"
         } ]
       }
     }, {
@@ -2551,6 +2761,9 @@
       "lbl" : "disc shaped",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A cell shape in which an organism is flat and circular."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "disc"
@@ -2561,6 +2774,9 @@
       "lbl" : "fusiform shaped",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A cell shape that is wide in the middle and tapers at both ends."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "fusiform"
@@ -2584,6 +2800,10 @@
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "spindle"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Anthea Guo"
         } ]
       }
     }, {
@@ -2591,9 +2811,16 @@
       "lbl" : "spirochete shaped",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A cell shape in which an organism has an elongated, tightly coiled helical morphology with periplasmic flagella (endoflagella) located between the cell wall and outer membrane."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "spirochete"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Jed Dongjin Kim-Ozaeta"
         } ]
       }
     }, {
@@ -2631,15 +2858,22 @@
       "lbl" : "gram stain",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A phenotype where microorganisms are grouped based on their ability to retain crystal violet dye in the Gram staining procedure."
+        },
         "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "General.keywords"
-        }, {
           "pred" : "hasRelatedSynonym",
           "val" : "Morphology.cell morphology.gram stain"
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "gram_stain"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Jed Dongjin Kim-Ozaeta"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Luke Wang"
         } ]
       }
     }, {
@@ -2647,6 +2881,9 @@
       "lbl" : "gram positive",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A gram stain in which an organism retains crystal violet dye and appears purple under microscopy due to a thick peptidoglycan cell wall."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "G_positive"
@@ -2663,6 +2900,9 @@
       "lbl" : "gram negative",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A gram stain in which bacteria do not retain crystal violet dye and appear pink or red after staining, indicating a thin peptidoglycan layer and presence of an outer membrane."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "G_negative"
@@ -2672,6 +2912,10 @@
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "negative"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Luke Wang"
         } ]
       }
     }, {
@@ -2679,9 +2923,16 @@
       "lbl" : "gram variable",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A gram stain in which bacteria from the same culture show both gram-positive and gram-negative staining characteristics, often due to age of culture or cell wall degradation."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "variable"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Luke Wang"
         } ]
       }
     }, {
@@ -2689,15 +2940,19 @@
       "lbl" : "motility",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A phenotype in which an organism has the capability to move independently through its environment, typically by means of flagella, pili, gliding mechanisms, or other locomotory structures."
+        },
         "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "General.keywords"
-        }, {
           "pred" : "hasRelatedSynonym",
           "val" : "Morphology.cell morphology.motility"
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "motility"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Jed Dongjin Kim-Ozaeta"
         } ]
       }
     }, {
@@ -2705,6 +2960,9 @@
       "lbl" : "motile",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A motility in which an organism has the ability to move independently using metabolic energy."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "motile"
@@ -2721,6 +2979,9 @@
       "lbl" : "non motile",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A motility in which an organism lacks the ability to move independently under its own power."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "no"
@@ -2737,6 +2998,9 @@
       "lbl" : "flagellated",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A motile in which an organism possesses flagella for locomotion."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "flagella"
@@ -2747,9 +3011,16 @@
       "lbl" : "axially filamented",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A motility where the flagellum filament of an organism is located in the periplasm and does not extend past the cell envelope."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "axial filament"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Luke Wang"
         } ]
       }
     }, {
@@ -2757,6 +3028,9 @@
       "lbl" : "gliding",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A motile in which an organism moves smoothly along solid surfaces without flagella or pili."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "gliding"
@@ -2767,12 +3041,19 @@
       "lbl" : "facultative psychrophilic",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A temperature preference characterized by the ability to grow at low temperatures (typically below 20Â°C) while maintaining optimal growth at moderate temperatures."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "facultative psychrophile"
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "facultative psychrophilic"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Anthea Guo"
         } ]
       }
     }, {
@@ -2781,7 +3062,7 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A microorganism that grows optimally at temperatures above 90°C."
+          "val" : "A temperature preference that grows optimally at temperatures above 90°C."
         },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
@@ -2794,18 +3075,31 @@
     }, {
       "id" : "https://w3id.org/metpo/1000731",
       "lbl" : "nutrient adaptation",
-      "type" : "CLASS"
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A trophic type that involves an organism's physiological and metabolic adaptations to specific nutrient availability."
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Luke Wang"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/1000800",
       "lbl" : "respiration",
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "An organism's observable and characteristic method of performing cellular respiration, distinguished primarily by the specific terminal electron acceptor its metabolic pathways utilize for the purpose of producing cellular energy."
+          "val" : "A metabolism that is characterized by the method of performing cellular respiration, distinguished primarily by the specific terminal electron acceptor utilized for producing cellular energy."
         },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "pathways"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Anthea Guo"
         } ]
       }
     }, {
@@ -2813,12 +3107,19 @@
       "lbl" : "Aerobic respiration",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A respiration in which molecular oxygen serves as the terminal electron acceptor in the electron transport chain, generating ATP through oxidative phosphorylation with water as the final product."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "Oxic respiration"
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "Oxygen respiration"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Jed Dongjin Kim-Ozaeta"
         } ]
       }
     }, {
@@ -2826,6 +3127,9 @@
       "lbl" : "Anaerobic respiration",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A respiration in which an organism uses electron acceptors other than oxygen for energy production."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "Anoxic respiration"
@@ -2837,24 +3141,59 @@
     }, {
       "id" : "https://w3id.org/metpo/1000803",
       "lbl" : "Oxidative phosphorylation",
-      "type" : "CLASS"
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A metabolism that generates ATP through the transfer of electrons from electron donors to electron acceptors via redox reactions, coupled to the pumping of protons across a membrane to create an electrochemical gradient."
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Anthea Guo"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/1000804",
       "lbl" : "Substrate-level phosphorylation",
-      "type" : "CLASS"
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A metabolism in which ATP is formed directly by transfer of a phosphoryl group from a substrate to ADP."
+        }
+      }
     }, {
       "id" : "https://w3id.org/metpo/1000805",
       "lbl" : "Electron transfer",
-      "type" : "CLASS"
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A metabolism in which electrons are transferred from an electron donor to an electron acceptor."
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Jed Dongjin Kim-Ozaeta"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/1000806",
       "lbl" : "Disproportionation",
-      "type" : "CLASS"
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A metabolism in which a single substrate simultaneously undergoes both oxidation and reduction reactions, with part of the substrate serving as the electron donor and another part serving as the electron acceptor."
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Jed Dongjin Kim-Ozaeta"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/1000844",
       "lbl" : "Methanogenesis",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A metabolism in which methane is produced as the primary end product through the reduction of carbon-containing compounds, formate, methanol, or acetate, exclusively performed by methanogenic archaea under strictly anaerobic conditions."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "Biological methanation"
@@ -2867,6 +3206,13 @@
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "methanogenesis"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Jed Dongjin Kim-Ozaeta"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Luke Wang"
         } ]
       }
     }, {
@@ -2874,12 +3220,22 @@
       "lbl" : "Acetogenesis",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A metabolism that produces acetate as the primary end product through the reduction of carbon dioxide or other carbon compounds using the Wood-Ljungdahl pathway, typically performed by acetogenic bacteria under anaerobic conditions."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "Acetate fermentation"
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "acetogenesis"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Anthea Guo"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Jed Dongjin Kim-Ozaeta"
         } ]
       }
     }, {
@@ -2887,6 +3243,9 @@
       "lbl" : "Homoacetogenesis",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A metabolism in which acetate is produced as the sole reduced end product from reduction of CO2 via the acetyl-CoA pathway."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "Reductive acetyl-CoA pathway"
@@ -2900,6 +3259,9 @@
       "lbl" : "sporulation",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A phenotype that is relating to an organism's ability to form dormant, stress-resistant endospores."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "General.keywords"
@@ -2916,6 +3278,9 @@
       "lbl" : "spore forming",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A sporulation in which an organism has the ability to produce endospores."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "spore"
@@ -2932,6 +3297,9 @@
       "lbl" : "non-spore forming",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A sporulation in which an organism lacks the ability to produce endospores."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "no"
@@ -2949,7 +3317,7 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A quality of a cell relating to its measurement from end to end."
+          "val" : "A phenotype that inheres in a cell by virtue of its longer dimension when viewed on a plane."
         }
       }
     }, {
@@ -2958,7 +3326,7 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A quality of a cell relating to its measurement from side to side."
+          "val" : "A phenotype that inheres in a cell by virtue of its shorter dimension when viewed on a plane."
         }
       }
     }, {
@@ -2966,9 +3334,6 @@
       "lbl" : "cell length very small",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A cell length quality of being less than or equal to 1.3 micrometers."
-        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "L_<=1.3"
@@ -2986,12 +3351,9 @@
       "lbl" : "cell length small",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A cell length quality of being between 1.3 and 2 micrometers."
-        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
-          "val" : " L_1.3_2"
+          "val" : "L_1.3_2"
         } ],
         "basicPropertyValues" : [ {
           "pred" : "http://qudt.org/schema/qudt/ucumCode",
@@ -3009,9 +3371,6 @@
       "lbl" : "cell length medium",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A cell length quality of being between 2 and 3 micrometers."
-        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "L_2_3"
@@ -3032,9 +3391,6 @@
       "lbl" : "cell length large",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A cell length quality of being greater than 3 micrometers."
-        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "L_>3"
@@ -3052,9 +3408,6 @@
       "lbl" : "cell width very small",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A cell width quality of being less than or equal to 0.5 micrometers."
-        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "W_<=0.5"
@@ -3072,12 +3425,9 @@
       "lbl" : "cell width small",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A cell width quality of being between 0.5 and 0.65 micrometers."
-        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
-          "val" : " W_0.5_0.65"
+          "val" : "W_0.5_0.65"
         } ],
         "basicPropertyValues" : [ {
           "pred" : "http://qudt.org/schema/qudt/ucumCode",
@@ -3095,9 +3445,6 @@
       "lbl" : "cell width medium",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A cell width quality of being between 0.65 and 0.9 micrometers."
-        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "W_0.65_0.9"
@@ -3118,9 +3465,6 @@
       "lbl" : "cell width large",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A cell width quality of being greater than 0.9 micrometers."
-        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "W_>0.9"
@@ -3136,48 +3480,32 @@
     }, {
       "id" : "https://w3id.org/metpo/1001000",
       "lbl" : "observation",
-      "type" : "CLASS",
-      "meta" : {
-        "definition" : {
-          "val" : "A recording of the output of a measurement such as produced by a device."
-        }
-      }
+      "type" : "CLASS"
     }, {
       "id" : "https://w3id.org/metpo/1001001",
       "lbl" : "optimum temperature observation",
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "An observation specializing temperature observation for optimum temperature data."
-        }
+          "val" : "An observation that identifies the temperature at which a microorganism exhibits maximum growth rate or metabolic activity."
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Luke Wang"
+        } ]
       }
     }, {
       "id" : "https://w3id.org/metpo/1001002",
       "lbl" : "growth temperature observation",
-      "type" : "CLASS",
-      "meta" : {
-        "definition" : {
-          "val" : "An observation specializing temperature observation for general growth temperature data."
-        }
-      }
+      "type" : "CLASS"
     }, {
       "id" : "https://w3id.org/metpo/1001003",
       "lbl" : "temperature range observation",
-      "type" : "CLASS",
-      "meta" : {
-        "definition" : {
-          "val" : "An observation specializing temperature observation for growth temperature range data."
-        }
-      }
+      "type" : "CLASS"
     }, {
       "id" : "https://w3id.org/metpo/1001004",
       "lbl" : "temperature delta observation",
-      "type" : "CLASS",
-      "meta" : {
-        "definition" : {
-          "val" : "An observation specializing temperature observation for tolerance breadth (delta) data."
-        }
-      }
+      "type" : "CLASS"
     }, {
       "id" : "https://w3id.org/metpo/1001007",
       "lbl" : "growth NaCl observation",
@@ -3247,6 +3575,9 @@
       "lbl" : "biosafety level",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A quality that categorizes biological agents according to their hazard level and required containment measures."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "Safety information.risk assessment.biosafety level"
@@ -3257,9 +3588,16 @@
       "lbl" : "biosafety level 1",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A biosafety level that pose minimal potential hazard to laboratory workers and the environment, requiring only standard microbiological practices."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "1"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Anthea Guo"
         } ]
       }
     }, {
@@ -3267,6 +3605,9 @@
       "lbl" : "biosafety level 2",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A biosafety level that pose moderate risk and are associated with human diseases present in the community."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "2"
@@ -3277,12 +3618,19 @@
       "lbl" : "biosafety level 3",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A biosafety level that can cause serious or potentially lethal disease through inhalation or other routes, requiring specialized containment facilities with controlled access, directional airflow, and strict safety protocols."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "3"
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "3**"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Jed Dongjin Kim-Ozaeta"
         } ]
       }
     }, {
@@ -3290,6 +3638,9 @@
       "lbl" : "biosafety level 4",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A biosafety level that pose extreme risk of life-threatening disease through aerosol transmission with no available treatment."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "4"
@@ -3300,6 +3651,9 @@
       "lbl" : "biosafety level 5",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A biosafety level that is proposed as a classification beyond BSL-4 for hypothetical biological agents requiring enhanced containment."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "5"
@@ -3308,30 +3662,59 @@
     }, {
       "id" : "https://w3id.org/metpo/1002003",
       "lbl" : "Cable bacteria metabolism",
-      "type" : "CLASS"
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A metabolism in which electrons are transferred over centimeter-scale distances through multicellular filaments."
+        }
+      }
     }, {
       "id" : "https://w3id.org/metpo/1002005",
       "lbl" : "Fermentation",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A respiration that generates energy through the oxidation of organic compounds without using an external electron acceptor, using organic molecules as both electron donors and final electron acceptors."
+        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "fermentation"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Luke Wang"
         } ]
       }
     }, {
       "id" : "https://w3id.org/metpo/1002006",
       "lbl" : "Syntrophy",
-      "type" : "CLASS"
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A metabolism in which the metabolism of one species is thermodynamically dependent on the removal of its products by another species."
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Jed Dongjin Kim-Ozaeta"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/1003000",
       "lbl" : "pH growth preference",
-      "type" : "CLASS"
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A phenotype that describes how the rate and extent of population growth are affected by environmental pH."
+        }
+      }
     }, {
       "id" : "https://w3id.org/metpo/1003001",
       "lbl" : "neutrophilic",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A pH growth preference characterized by optimal growth at near-neutral pH values, typically between pH 6.5 and 7.5."
+        },
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "neutralophile"
@@ -3341,6 +3724,10 @@
         }, {
           "pred" : "hasExactSynonym",
           "val" : "neutrophile"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Anthea Guo"
         } ]
       }
     }, {
@@ -3348,6 +3735,9 @@
       "lbl" : "alkaphilic",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A pH growth preference in which an organism grows optimally at pH values above 9."
+        },
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "alkaliphile"
@@ -3367,6 +3757,9 @@
       "lbl" : "acidophilic",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A pH growth preference in which an organism grows optimally at pH values below 5."
+        },
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "acidophil"
@@ -3380,6 +3773,9 @@
       "lbl" : "obligately alkaphilic",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A pH growth preference in which an organism requires alkaline conditions (typically pH above 8.5) for growth and cannot grow at neutral or acidic pH."
+        },
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "obligate alkaliphile"
@@ -3389,6 +3785,10 @@
         }, {
           "pred" : "hasExactSynonym",
           "val" : "obligately alkaliphilic"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Luke Wang"
         } ]
       }
     }, {
@@ -3396,6 +3796,9 @@
       "lbl" : "facultatively alkaphilic",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A pH growth preference in which an organism can grow at alkaline pH but does not require it."
+        },
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "facultative alkaliphile"
@@ -3412,12 +3815,22 @@
       "lbl" : "obligately acidophilic",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A pH growth preference characterized by the requirement for acidic environments (pH below 5.5) for growth, with inability to grow at neutral or alkaline pH values."
+        },
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "obligate acidophile"
         }, {
           "pred" : "hasExactSynonym",
           "val" : "obligately acidophilic"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Anthea Guo"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Jed Dongjin Kim-Ozaeta"
         } ]
       }
     }, {
@@ -3425,12 +3838,22 @@
       "lbl" : "facultatively acidophilic",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A pH growth preference characterized by optimal growth in acidic environments (pH below 5.5) with the capacity to also grow at near-neutral pH values."
+        },
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "facultative acidophile"
         }, {
           "pred" : "hasExactSynonym",
           "val" : "facultatively acidophilic"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Anthea Guo"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Jed Dongjin Kim-Ozaeta"
         } ]
       }
     }, {
@@ -3438,9 +3861,19 @@
       "lbl" : "acidotolerant",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A pH growth preference characterized by the ability to tolerate acidic environments (typically pH below 5.5) while maintaining optimal growth near neutral pH."
+        },
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "aciduric"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Anthea Guo"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Jed Dongjin Kim-Ozaeta"
         } ]
       }
     }, {
@@ -3448,6 +3881,9 @@
       "lbl" : "alkalotolerant",
       "type" : "CLASS",
       "meta" : {
+        "definition" : {
+          "val" : "A pH growth preference in which an organism can tolerate alkaline pH but grows optimally at neutral pH."
+        },
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "alkalitolerant"
@@ -3467,9 +3903,6 @@
       "lbl" : "black pigmented",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A phenotype characterized by the production of black-colored pigments."
-        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "Pigment_black"
@@ -3480,9 +3913,6 @@
       "lbl" : "brown pigmented",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A phenotype characterized by the production of brown-colored pigments."
-        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "Pigment_brown"
@@ -3493,9 +3923,6 @@
       "lbl" : "cream pigmented",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A phenotype characterized by the production of cream-colored pigments."
-        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "Pigment_cream"
@@ -3506,9 +3933,6 @@
       "lbl" : "green pigmented",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A phenotype characterized by the production of green-colored pigments."
-        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "Pigment_green"
@@ -3519,9 +3943,6 @@
       "lbl" : "orange pigmented",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A phenotype characterized by the production of orange-colored pigments."
-        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "Pigment_orange"
@@ -3532,9 +3953,6 @@
       "lbl" : "pink pigmented",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A phenotype characterized by the production of pink-colored pigments."
-        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "Pigment_pink"
@@ -3545,9 +3963,6 @@
       "lbl" : "red pigmented",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A phenotype characterized by the production of red-colored pigments."
-        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "Pigment_red"
@@ -3558,9 +3973,6 @@
       "lbl" : "white pigmented",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A phenotype characterized by the production of white-colored pigments."
-        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "Pigment_white"
@@ -3571,9 +3983,6 @@
       "lbl" : "yellow pigmented",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A phenotype characterized by the production of yellow-colored pigments."
-        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "Pigment_yellow"
@@ -3584,9 +3993,6 @@
       "lbl" : "carotenoid pigmentation",
       "type" : "CLASS",
       "meta" : {
-        "definition" : {
-          "val" : "A phenotype characterized by the production of carotenoid pigments."
-        },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "Pigment_carotenoid"
@@ -3598,8 +4004,15 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A pathogenicity phenotype where a microbe is a pathogen of of some host organism."
-        }
+          "val" : "A phenotype where a microbe is a pathogen of of some host organism."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "General.keywords"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "Safety information.risk assessment"
+        } ]
       }
     }, {
       "id" : "https://w3id.org/metpo/1004002",
@@ -3607,7 +4020,7 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A pathogenicity phenotype where a microbe is a pathogen of animals (Metazoa)."
+          "val" : "A pathogen that infects organisms in the kingdom Metazoa."
         },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
@@ -3620,7 +4033,7 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A pathogenicity phenotype where a microbe is a pathogen of plants (Viridiplantae)."
+          "val" : "A pathogen that infects organisms in the kingdom Viridiplantae."
         },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
@@ -3633,7 +4046,7 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A pathogenicity phenotype where a microbe is a pathogen of humans (Homo sapiens)."
+          "val" : "A pathogen that infects organisms of the species Homo sapiens."
         },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
@@ -4705,6 +5118,11 @@
     }, {
       "id" : "http://purl.obolibrary.org/obo/IAO_0000115",
       "lbl" : "definition",
+      "type" : "PROPERTY",
+      "propertyType" : "ANNOTATION"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/IAO_0000117",
+      "lbl" : "term editor",
       "type" : "PROPERTY",
       "propertyType" : "ANNOTATION"
     }, {

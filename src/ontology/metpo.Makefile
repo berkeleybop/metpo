@@ -5,11 +5,12 @@
 
 # Sheet IDs:
 # gid=1427185859 = comprehensive classes sheet (disabled - too comprehensive for current build)
-# gid=355012485 = minimal set of classes (currently used)
+# gid=355012485 = minimal set of classes (previous)
+# gid=121955004 = cleaned definition sources (currently used)
 # gid=907926993 = synonyms sheet
 # gid=2094089867 = properties sheet
 
-SRC_URL_MAIN = 'https://docs.google.com/spreadsheets/d/1_Lr-9_5QHi8QLvRyTZFSciUhzGKD4DbUObyTpJ16_RU/export?exportFormat=tsv&gid=355012485'
+SRC_URL_MAIN = 'https://docs.google.com/spreadsheets/d/1_Lr-9_5QHi8QLvRyTZFSciUhzGKD4DbUObyTpJ16_RU/export?exportFormat=tsv&gid=121955004'
 # SRC_URL_SYNONYMS = 'https://docs.google.com/spreadsheets/d/1_Lr-9_5QHi8QLvRyTZFSciUhzGKD4DbUObyTpJ16_RU/export?exportFormat=tsv&gid=907926993'
 SRC_URL_PROPERTIES = 'https://docs.google.com/spreadsheets/d/1_Lr-9_5QHi8QLvRyTZFSciUhzGKD4DbUObyTpJ16_RU/export?exportFormat=tsv&gid=2094089867'
 
