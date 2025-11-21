@@ -61,11 +61,13 @@ def analyze_dataset(dataset_name):
     }
 
 
-def load_metpo_labels():
+def load_metpo_labels(labels_file: Path | None = None):
     """Load METPO ID to label mapping"""
-    labels_file = Path("/tmp/metpo_labels.csv")
+    if labels_file is None:
+        labels_file = Path("data/metpo_terms/metpo_labels.csv")
+
     if not labels_file.exists():
-        print("WARNING: METPO labels file not found, using IDs")
+        print(f"WARNING: METPO labels file not found at {labels_file}, using IDs")
         return {}
 
     labels = {}

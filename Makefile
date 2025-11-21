@@ -764,6 +764,80 @@ help-alignment:
 	@echo "    - Ensure ChromaDB collection exists at notebooks/metpo_relevant_chroma"
 
 # ==============================================================================
+# Definition Work Pipeline
+# ==============================================================================
+# Workflow for extracting and enriching METPO term definitions using external
+# ontology sources via OLS and BioPortal APIs.
+
+# Step 1: Extract definition source IRIs from METPO ontology using ROBOT query
+data/definitions/definition_sources.tsv: src/ontology/metpo.owl sparql/definition_sources.rq
+	@echo "Extracting definition sources from METPO ontology..."
+	@mkdir -p data/definitions
+	cd src/ontology && sh run.sh robot query \
+		--input ../../$< \
+		--query ../../$(word 2,$^) ../../$@
+
+# Step 2: Fetch metadata for definition sources from OLS4 and BioPortal APIs
+data/definitions/source_metadata.tsv: data/definitions/definition_sources.tsv
+	@echo "Fetching metadata for definition sources (requires BIOPORTAL_API_KEY)..."
+	uv run fetch-source-metadata \
+		--input-file $< \
+		--output-file $@
+
+# Step 3: Merge SPARQL results with fetched metadata
+data/definitions/sources_with_metadata.tsv: data/definitions/definition_sources.tsv data/definitions/source_metadata.tsv
+	@echo "Merging SPARQL results with metadata..."
+	uv run merge-source-metadata \
+		--sparql-results $(word 1,$^) \
+		--source-metadata $(word 2,$^) \
+		--output-file $@
+
+# Regenerate curator proposed definitions from undergraduate source files
+data/undergraduate_definitions/curator_proposed_definitions.tsv: \
+	data/undergraduate_definitions/curator4_all_terms.tsv \
+	data/undergraduate_definitions/curator5_all_terms_v3.tsv \
+	data/undergraduate_definitions/curator6_all_terms.tsv
+	@echo "Regenerating curator proposed definitions..."
+	uv run regenerate-curator-attributions \
+		--curator-dir data/undergraduate_definitions \
+		--output-file $@
+
+# Phony targets
+.PHONY: definitions-workflow definitions-clean
+
+definitions-workflow: data/definitions/sources_with_metadata.tsv
+	@echo "Definition enrichment workflow complete!"
+	@echo "Results in: data/definitions/sources_with_metadata.tsv"
+
+definitions-clean:
+	@echo "Cleaning definition workflow outputs..."
+	rm -f data/definitions/definition_sources.tsv
+	rm -f data/definitions/source_metadata.tsv
+	rm -f data/definitions/sources_with_metadata.tsv
+
+help-definitions:
+	@echo "Definition Work Pipeline Targets:"
+	@echo ""
+	@echo "  Complete workflow:"
+	@echo "    make definitions-workflow                - Run full definition enrichment pipeline"
+	@echo ""
+	@echo "  Individual steps:"
+	@echo "    make data/definitions/definition_sources.tsv    - Extract sources via ROBOT"
+	@echo "    make data/definitions/source_metadata.tsv       - Fetch metadata from APIs"
+	@echo "    make data/definitions/sources_with_metadata.tsv - Merge results"
+	@echo ""
+	@echo "  Utilities:"
+	@echo "    make data/undergraduate_definitions/curator_proposed_definitions.tsv"
+	@echo "                                                    - Regenerate curator attributions"
+	@echo ""
+	@echo "  Cleanup:"
+	@echo "    make definitions-clean                   - Remove generated files"
+	@echo ""
+	@echo "  Prerequisites:"
+	@echo "    - Set BIOPORTAL_API_KEY environment variable for BioPortal access"
+	@echo "    - Built METPO ontology in src/ontology/metpo.owl"
+
+# ==============================================================================
 # Sub-Makefile Integration
 # ==============================================================================
 # Literature mining (including ICBO examples) has its own Makefile.

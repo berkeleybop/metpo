@@ -1,0 +1,20 @@
+ROBOT ?= robot
+
+METPO_MAPPING_HEADER    ?= metpo-mapping-header.ttl
+METPO_MAPPINGS_TEMPLATE ?= metpo-mappings-template.tsv
+METPO_MAPPINGS_TTL      ?= metpo-mappings.ttl
+
+metpo-mappings.ttl: $(METPO_MAPPING_HEADER) $(METPO_MAPPINGS_TEMPLATE)
+	$(ROBOT) template \
+		--prefix "metpo: https://w3id.org/metpo/" \
+		--prefix "metpo-map: https://w3id.org/metpo/mapping/" \
+		--prefix "prov: http://www.w3.org/ns/prov#" \
+		--prefix "skos: http://www.w3.org/2004/02/skos/core#" \
+		--prefix "schema: http://schema.org/" \
+		--input $(METPO_MAPPING_HEADER) \
+		--template $(METPO_MAPPINGS_TEMPLATE) \
+		--output $(METPO_MAPPINGS_TTL)
+
+.PHONY: metpo-mappings
+metpo-mappings: metpo-mappings.ttl
+

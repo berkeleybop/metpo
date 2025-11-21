@@ -11,6 +11,7 @@ Checks for:
 
 import csv
 import sys
+import tempfile
 import urllib.request
 from collections import defaultdict
 from pathlib import Path
@@ -425,9 +426,13 @@ def main(download: bool, main_sheet: str, properties_sheet: str):
     click.echo()
 
     if download:
+        # Use temporary directory for downloaded sheets
+        temp_dir = Path(tempfile.gettempdir()) / "metpo_qc"
+        temp_dir.mkdir(parents=True, exist_ok=True)
+
         files = []
         for name, gid in SHEET_GIDS.items():
-            filename = f"/tmp/{name}.tsv"
+            filename = str(temp_dir / f"{name}.tsv")
             download_sheet(gid, filename)
             files.append(filename)
     else:

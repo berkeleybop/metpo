@@ -5,22 +5,16 @@ Tries multiple strategies:
 1. BioPortal D3O ontology direct lookup for DSMZ terms (prioritized)
 2. OLS API for standard ontology terms
 3. BioPortal search API for terms not in OLS
-
-Usage:
-    export BIOPORTAL_API_KEY='your-api-key-here'
-    python3 fetch_all_source_metadata_fixed.py <sparql_output.tsv>
 """
 
 import csv
 import os
-import sys
 import time
 from pathlib import Path
 from urllib.parse import quote
 
+import click
 import requests
-
-BIOPORTAL_API_KEY = os.environ.get("BIOPORTAL_API_KEY", "")
 
 
 def iri_to_curie(iri: str) -> str:
@@ -142,9 +136,9 @@ def get_ontology_from_curie(curie: str) -> str | None:
     return ontology_map.get(prefix)
 
 
-def fetch_metadata_from_bioportal_d3o(iri: str) -> dict | None:
+def fetch_metadata_from_bioportal_d3o(iri: str, bioportal_api_key: str) -> dict | None:
     """Fetch DSMZ term directly from BioPortal D3O ontology."""
-    if not BIOPORTAL_API_KEY:
+    if not bioportal_api_key:
         return None
 
     # Only try D3O for DSMZ IRIs
@@ -157,7 +151,7 @@ def fetch_metadata_from_bioportal_d3o(iri: str) -> dict | None:
         encoded_iri = quote(iri, safe="")
         url = f"https://data.bioontology.org/ontologies/D3O/classes/{encoded_iri}"
 
-        params = {"apikey": BIOPORTAL_API_KEY}
+        params = {"apikey": bioportal_api_key}
         response = requests.get(url, params=params, timeout=15)
 
         if response.status_code != 200:
@@ -261,16 +255,16 @@ def fetch_metadata_from_ols(curie: str, iri: str) -> dict | None:
         return None
 
 
-def fetch_metadata_from_bioportal_search(curie: str, iri: str) -> dict | None:
+def fetch_metadata_from_bioportal_search(curie: str, iri: str, bioportal_api_key: str) -> dict | None:
     """Fetch metadata from BioPortal search API."""
-    if not BIOPORTAL_API_KEY:
+    if not bioportal_api_key:
         return None
 
     try:
         url = "https://data.bioontology.org/search"
         params = {
             "q": iri,
-            "apikey": BIOPORTAL_API_KEY,
+            "apikey": bioportal_api_key,
             "require_exact_match": "true",
             "also_search_properties": "true",
         }
@@ -291,7 +285,7 @@ def fetch_metadata_from_bioportal_search(curie: str, iri: str) -> dict | None:
         # Fetch full term details
         if "@id" in result:
             term_url = result["@id"]
-            term_response = requests.get(term_url, params={"apikey": BIOPORTAL_API_KEY}, timeout=15)
+            term_response = requests.get(term_url, params={"apikey": bioportal_api_key}, timeout=15)
 
             if term_response.status_code == 200:
                 term_data = term_response.json()
@@ -317,17 +311,35 @@ def fetch_metadata_from_bioportal_search(curie: str, iri: str) -> dict | None:
         return None
 
 
-def main():
-    if len(sys.argv) < 2:
-        print("Usage: python3 fetch_all_source_metadata_fixed.py <sparql_output.tsv>")
-        print()
-        print("Set BIOPORTAL_API_KEY environment variable for BioPortal fallback:")
-        print("  export BIOPORTAL_API_KEY='your-key-here'")
-        sys.exit(1)
+@click.command()
+@click.option(
+    "--input-file",
+    "-i",
+    type=click.Path(exists=True, path_type=Path),
+    required=True,
+    help="SPARQL query output TSV with definition source IRIs",
+)
+@click.option(
+    "--output-file",
+    "-o",
+    type=click.Path(path_type=Path),
+    default="data/definitions/source_metadata.tsv",
+    help="Output TSV file with source metadata",
+)
+@click.option(
+    "--bioportal-api-key",
+    envvar="BIOPORTAL_API_KEY",
+    help="BioPortal API key (or set BIOPORTAL_API_KEY env var)",
+)
+def main(input_file: Path, output_file: Path, bioportal_api_key: str):
+    """
+    Fetch metadata for definition source IRIs from OLS and BioPortal APIs.
 
-    input_file = sys.argv[1]
-    output_file = "/tmp/source_metadata_complete.tsv"
-
+    Tries multiple strategies:
+    1. BioPortal D3O ontology direct lookup for DSMZ terms (prioritized)
+    2. OLS API for standard ontology terms
+    3. BioPortal search API for terms not in OLS
+    """
     print("=" * 80)
     print("COMPREHENSIVE SOURCE METADATA FETCHING WORKFLOW")
     print("=" * 80)
@@ -336,8 +348,8 @@ def main():
     print(f"Output: {output_file}")
     print()
 
-    if BIOPORTAL_API_KEY:
-        print(f"✓ BioPortal API key found ({BIOPORTAL_API_KEY[:10]}...)")
+    if bioportal_api_key:
+        print(f"✓ BioPortal API key found ({bioportal_api_key[:10]}...)")
     else:
         print("⚠ No BioPortal API key - only OLS will be used")
         print("  Set with: export BIOPORTAL_API_KEY='your-key-here'")
@@ -382,7 +394,7 @@ def main():
 
         # Strategy 1: Try BioPortal D3O for DSMZ terms FIRST
         if "purl.dsmz.de" in source_iri:
-            metadata = fetch_metadata_from_bioportal_d3o(source_iri)
+            metadata = fetch_metadata_from_bioportal_d3o(source_iri, bioportal_api_key)
             if metadata and metadata["label"]:
                 bioportal_d3o_success += 1
 
@@ -393,10 +405,10 @@ def main():
                 ols_success += 1
 
         # Strategy 3: Try BioPortal general search
-        if not (metadata and metadata["label"]) and BIOPORTAL_API_KEY:
+        if not (metadata and metadata["label"]) and bioportal_api_key:
             print("  → Trying BioPortal search...")
             time.sleep(0.5)
-            metadata = fetch_metadata_from_bioportal_search(source_curie, source_iri)
+            metadata = fetch_metadata_from_bioportal_search(source_curie, source_iri, bioportal_api_key)
             if metadata and metadata["label"]:
                 bioportal_search_success += 1
 
@@ -435,6 +447,9 @@ def main():
 
         time.sleep(0.2)
         print()
+
+    # Create output directory
+    output_file.parent.mkdir(parents=True, exist_ok=True)
 
     # Save results
     with Path(output_file).open("w", newline="") as f:

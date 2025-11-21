@@ -3,8 +3,10 @@
 import csv
 from pathlib import Path
 
+import click
+
 # Curator info mapping
-curator_info = {
+CURATOR_INFO = {
     "curator4_all_terms.tsv": {"number": 4, "name": "Anthea Guo", "github": "crocodile27"},
     "curator5_all_terms_v3.tsv": {
         "number": 5,
@@ -14,25 +16,36 @@ curator_info = {
     "curator6_all_terms.tsv": {"number": 6, "name": "Luke Wang", "github": "lukewangCS121"},
 }
 
-# Get script directory and repo root
-script_dir = Path(__file__).parent
-repo_root = script_dir.parent.parent.parent
+@click.command()
+@click.option(
+    "--curator-dir",
+    type=click.Path(exists=True, path_type=Path),
+    default="data/undergraduate_definitions",
+    help="Directory containing curator TSV files",
+)
+@click.option(
+    "--output-file",
+    "-o",
+    type=click.Path(path_type=Path),
+    default="data/undergraduate_definitions/curator_proposed_definitions.tsv",
+    help="Output consolidated TSV file",
+)
+def main(curator_dir: Path, output_file: Path):
+    """
+    Regenerate consolidated curator definitions from individual curator files.
 
-# Directory with curator files
-curator_dir = repo_root / "data" / "undergraduate_definitions"
+    Combines curator4_all_terms.tsv, curator5_all_terms_v3.tsv, and
+    curator6_all_terms.tsv into a single integrated file with proper attributions.
+    """
+    # Collect all rows
+    all_rows = []
 
-# Output file
-output_file = repo_root / "data" / "undergraduate_definitions" / "curator_proposed_definitions.tsv"
+    for filename, info in CURATOR_INFO.items():
+        filepath = curator_dir / filename
 
-# Collect all rows
-all_rows = []
-
-for filename, info in curator_info.items():
-    filepath = curator_dir / filename
-
-    if not filepath.exists():
-        print(f"Warning: {filepath} not found")
-        continue
+        if not filepath.exists():
+            click.echo(f"Warning: {filepath} not found")
+            continue
 
     with Path(filepath).open() as f:
         lines = f.readlines()
@@ -69,32 +82,39 @@ for filename, info in curator_info.items():
             "quantitative_values": safe_get(row, "quantitative_values"),
         }
 
-        all_rows.append(output_row)
+            all_rows.append(output_row)
 
-# Sort by metpo_id
-all_rows.sort(key=lambda x: x["metpo_id"])
+    # Sort by metpo_id
+    all_rows.sort(key=lambda x: x["metpo_id"])
 
-# Write to output file
-fieldnames = [
-    "metpo_id",
-    "label",
-    "curator_number",
-    "curator_name",
-    "github_handle",
-    "proposed_definition",
-    "definition_source",
-    "has_definition_source",
-    "subclass_of_label",
-    "subclass_of_id",
-    "reasoning",
-    "quantitative_values",
-]
+    # Create output directory
+    output_file.parent.mkdir(parents=True, exist_ok=True)
 
-with Path(output_file).open("w", newline="") as f:
-    writer = csv.DictWriter(f, fieldnames=fieldnames, delimiter="\t")
-    writer.writeheader()
-    writer.writerows(all_rows)
+    # Write to output file
+    fieldnames = [
+        "metpo_id",
+        "label",
+        "curator_number",
+        "curator_name",
+        "github_handle",
+        "proposed_definition",
+        "definition_source",
+        "has_definition_source",
+        "subclass_of_label",
+        "subclass_of_id",
+        "reasoning",
+        "quantitative_values",
+    ]
 
-print(f"✓ Regenerated {output_file}")
-print(f"  Total rows: {len(all_rows)}")
-print(f"  Unique terms: {len({r['metpo_id'] for r in all_rows})}")
+    with Path(output_file).open("w", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames, delimiter="\t")
+        writer.writeheader()
+        writer.writerows(all_rows)
+
+    click.echo(f"✓ Regenerated {output_file}")
+    click.echo(f"  Total rows: {len(all_rows)}")
+    click.echo(f"  Unique terms: {len({r['metpo_id'] for r in all_rows})}")
+
+
+if __name__ == "__main__":
+    main()
