@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: https://w3id.org/metpo/metpo/releases/2025-11-17/metpo-full.owl
+data-version: https://w3id.org/metpo/metpo/releases/2025-11-21/metpo-full.owl
 idspace: dce http://purl.org/dc/elements/1.1/ 
 idspace: dcterms http://purl.org/dc/terms/ 
 idspace: metpo https://w3id.org/metpo/ 
@@ -13,7 +13,7 @@ property_value: dcterms:issued "2024-01-01" xsd:string
 property_value: dcterms:license https://creativecommons.org/licenses/by/4.0/
 property_value: dcterms:modified "2025-09-29" xsd:string
 property_value: dcterms:title "METPO" xsd:string
-property_value: owl:versionInfo "2025-11-17" xsd:string
+property_value: owl:versionInfo "2025-11-21" xsd:string
 
 [Term]
 id: metpo:1000059
@@ -2404,7 +2404,7 @@ range: metpo:1000630 ! biological process
 [Typedef]
 id: metpo:2000200
 name: disproportionates
-synonym: "dismutates" RELATED []
+synonym: "dismutates" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
@@ -2415,8 +2415,8 @@ is_a: metpo:2000001 ! organism interacts with chemical
 [Typedef]
 id: metpo:2000202
 name: synthesizes
-synonym: "anabolizes" RELATED []
-synonym: "produces" RELATED []
+synonym: "anabolizes" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
+synonym: "produces" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]

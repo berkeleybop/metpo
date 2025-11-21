@@ -7,8 +7,8 @@ Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
 
 
 Ontology(<https://w3id.org/metpo/metpo/components/metpo_sheet.owl>
-<https://w3id.org/metpo/metpo/releases/2025-11-17/components/metpo_sheet.owl>
-Annotation(owl:versionInfo "2025-11-17")
+<https://w3id.org/metpo/metpo/releases/2025-11-21/components/metpo_sheet.owl>
+Annotation(owl:versionInfo "2025-11-21")
 
 Declaration(Class(<https://w3id.org/metpo/1000059>))
 Declaration(Class(<https://w3id.org/metpo/1000060>))
@@ -781,7 +781,7 @@ ObjectPropertyRange(<https://w3id.org/metpo/2000103> <https://w3id.org/metpo/100
 
 # Object Property: <https://w3id.org/metpo/2000200> (disproportionates)
 
-AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000200> "dismutates")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000200> "dismutates")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000200> "disproportionates")
 SubObjectPropertyOf(<https://w3id.org/metpo/2000200> <https://w3id.org/metpo/2000001>)
 
@@ -792,8 +792,8 @@ SubObjectPropertyOf(<https://w3id.org/metpo/2000201> <https://w3id.org/metpo/200
 
 # Object Property: <https://w3id.org/metpo/2000202> (synthesizes)
 
-AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000202> "anabolizes")
-AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000202> "produces")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000202> "anabolizes")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000202> "produces")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000202> "synthesizes")
 SubObjectPropertyOf(<https://w3id.org/metpo/2000202> <https://w3id.org/metpo/2000001>)
 
