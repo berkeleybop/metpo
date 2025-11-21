@@ -685,7 +685,7 @@ view-logs:
 
 embed-non-ols-terms:
 	@echo "Embedding non-OLS terms into ChromaDB..."
-	uv run python metpo/pipeline/embed_ontology_to_chromadb.py \
+	uv run embed-ontology-to-chromadb \
 		$(foreach tsv,$(wildcard data/pipeline/non-ols-terms/*.tsv),--tsv-file $(tsv)) \
 		--chroma-path ./embeddings_chroma \
 		--collection-name non_ols_embeddings
@@ -695,6 +695,42 @@ clean-non-ols-terms:
 	@echo "Cleaning generated non-OLS TSV files..."
 	rm -f $(NON_OLS_TSV_FILES)
 	@echo "Cleaned non-OLS TSV files"
+
+# ChromaDB Management Targets
+.PHONY: chromadb-audit chromadb-combine chromadb-filter assess-ontology-by-api
+
+chromadb-audit:
+	@echo "Auditing ChromaDB collection..."
+	uv run audit-chromadb \
+		--chroma-path data/chromadb/chroma_ols20_nonols4 \
+		--collection-name combined_embeddings
+
+chromadb-combine:
+	@echo "Combining ChromaDB collections..."
+	uv run combine-chromadb \
+		--ols-path data/chromadb/chroma_ols_20 \
+		--non-ols-path data/chromadb/embeddings_chroma \
+		--output-path data/chromadb/chroma_ols20_nonols4 \
+		--output-collection combined_embeddings
+
+chromadb-filter:
+	@echo "Filtering OLS ChromaDB collection..."
+	@echo "Note: Edit the removal list in metpo/database/filter_ols_chromadb.py"
+	uv run filter-ols-chromadb \
+		--input-path data/chromadb/chroma_ols_27 \
+		--input-collection ols_embeddings \
+		--output-path data/chromadb/chroma_ols_20 \
+		--output-collection ols_embeddings
+
+assess-ontology-by-api:
+	@echo "Assessing ontologies via OLS/BioPortal API search..."
+	uv run assess-ontology-by-api-search \
+		--input-file data/metpo_terms/metpo_all_labels.tsv \
+		--output-dir data/ontology_assessments \
+		--ols-rows 75 \
+		--bioportal-pagesize 75 \
+		--rate-limit 1.0 \
+		--similarity-threshold 0.5
 
 clean-alignment-all: clean-alignment-results
 	@echo "Cleaning all alignment files including ontology catalog..."
@@ -726,6 +762,80 @@ help-alignment:
 	@echo "  Prerequisites:"
 	@echo "    - Set OPENAI_API_KEY environment variable"
 	@echo "    - Ensure ChromaDB collection exists at notebooks/metpo_relevant_chroma"
+
+# ==============================================================================
+# Definition Work Pipeline
+# ==============================================================================
+# Workflow for extracting and enriching METPO term definitions using external
+# ontology sources via OLS and BioPortal APIs.
+
+# Step 1: Extract definition source IRIs from METPO ontology using ROBOT query
+data/definitions/definition_sources.tsv: src/ontology/metpo.owl sparql/definition_sources.rq
+	@echo "Extracting definition sources from METPO ontology..."
+	@mkdir -p data/definitions
+	cd src/ontology && sh run.sh robot query \
+		--input ../../$< \
+		--query ../../$(word 2,$^) ../../$@
+
+# Step 2: Fetch metadata for definition sources from OLS4 and BioPortal APIs
+data/definitions/source_metadata.tsv: data/definitions/definition_sources.tsv
+	@echo "Fetching metadata for definition sources (requires BIOPORTAL_API_KEY)..."
+	uv run fetch-source-metadata \
+		--input-file $< \
+		--output-file $@
+
+# Step 3: Merge SPARQL results with fetched metadata
+data/definitions/sources_with_metadata.tsv: data/definitions/definition_sources.tsv data/definitions/source_metadata.tsv
+	@echo "Merging SPARQL results with metadata..."
+	uv run merge-source-metadata \
+		--sparql-results $(word 1,$^) \
+		--source-metadata $(word 2,$^) \
+		--output-file $@
+
+# Regenerate curator proposed definitions from undergraduate source files
+data/undergraduate_definitions/curator_proposed_definitions.tsv: \
+	data/undergraduate_definitions/curator4_all_terms.tsv \
+	data/undergraduate_definitions/curator5_all_terms_v3.tsv \
+	data/undergraduate_definitions/curator6_all_terms.tsv
+	@echo "Regenerating curator proposed definitions..."
+	uv run regenerate-curator-attributions \
+		--curator-dir data/undergraduate_definitions \
+		--output-file $@
+
+# Phony targets
+.PHONY: definitions-workflow definitions-clean
+
+definitions-workflow: data/definitions/sources_with_metadata.tsv
+	@echo "Definition enrichment workflow complete!"
+	@echo "Results in: data/definitions/sources_with_metadata.tsv"
+
+definitions-clean:
+	@echo "Cleaning definition workflow outputs..."
+	rm -f data/definitions/definition_sources.tsv
+	rm -f data/definitions/source_metadata.tsv
+	rm -f data/definitions/sources_with_metadata.tsv
+
+help-definitions:
+	@echo "Definition Work Pipeline Targets:"
+	@echo ""
+	@echo "  Complete workflow:"
+	@echo "    make definitions-workflow                - Run full definition enrichment pipeline"
+	@echo ""
+	@echo "  Individual steps:"
+	@echo "    make data/definitions/definition_sources.tsv    - Extract sources via ROBOT"
+	@echo "    make data/definitions/source_metadata.tsv       - Fetch metadata from APIs"
+	@echo "    make data/definitions/sources_with_metadata.tsv - Merge results"
+	@echo ""
+	@echo "  Utilities:"
+	@echo "    make data/undergraduate_definitions/curator_proposed_definitions.tsv"
+	@echo "                                                    - Regenerate curator attributions"
+	@echo ""
+	@echo "  Cleanup:"
+	@echo "    make definitions-clean                   - Remove generated files"
+	@echo ""
+	@echo "  Prerequisites:"
+	@echo "    - Set BIOPORTAL_API_KEY environment variable for BioPortal access"
+	@echo "    - Built METPO ontology in src/ontology/metpo.owl"
 
 # ==============================================================================
 # Sub-Makefile Integration

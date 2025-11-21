@@ -1,0 +1,5 @@
+ID	TYPE	label	METPO_ID	DATASET	PATH	VALUE	NOTE
+ID	TYPE	LABEL	I prov:entity	I prov:wasDerivedFrom	A skos:notation	A schema:value	A skos:note
+metpo-map:1	metpo:Mapping	"thermophile (Madin temp_pref)"	metpo:0000001	metpo:MadinDataset	temp_pref	thermophile	""
+metpo-map:2	metpo:Mapping	"heat loving (BacDive growth_conditions.label)"	metpo:0000001	metpo:BacDiveDataset	growth_conditions.label	"heat loving"	""
+metpo-map:3	metpo:Mapping	"does not ferment (BacDive multi-field rule)"	metpo:doesNotFerment	metpo:BacDiveDataset	"physiology.chemical_util[*]"	"utilization=ferments; outcome=-"	"Maps BacDive ferments/- record to METPO doesNotFerment predicate between organism and chemical."

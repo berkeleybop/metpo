@@ -74,20 +74,7 @@ Match types:
 - other: 115 terms (53.7%, avg 0.422) ← LOW QUALITY
 ```
 
-### 4. find-best-definitions
-**File**: `metpo/scripts/find_best_definitions.py`
-**Purpose**: Find best definition per term by iterating through mappings by similarity
-**Output**: `reports/best_definition_per_term.tsv`
-
-Strategy:
-- For each METPO term, check mappings in descending similarity order
-- Stop at first real definition (not just label repetition)
-- Check both SSSOM file and ChromaDB for definitions
-- Filters label-like "definitions" (e.g., MPO's "Thermophilic; Thermophile")
-
-**Results**: Found definitions for 104/214 terms (48.6%)
-
-### 5. find-best-definitions-comprehensive
+### 4. find-best-definitions-comprehensive
 **File**: `metpo/scripts/find_best_definitions_comprehensive.py`
 **Purpose**: Combine SSSOM embeddings + OLS/BioPortal API search with quality ranking
 **Outputs**:
@@ -339,7 +326,6 @@ For each definition, verify:
 analyze-definition-opportunities = "metpo.scripts.analyze_definition_opportunities:main"
 bootstrap-definition-enrichment = "metpo.scripts.bootstrap_definition_enrichment:main"
 plot-embedding-similarity = "metpo.scripts.plot_embedding_similarity:main"
-find-best-definitions = "metpo.scripts.find_best_definitions:main"
 find-best-definitions-comprehensive = "metpo.scripts.find_best_definitions_comprehensive:main"
 compare-definitions-with-hierarchy = "metpo.scripts.compare_definitions_with_hierarchy:main"
 propose-definitions-with-llm = "metpo.scripts.propose_definitions_with_llm:main"
