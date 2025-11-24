@@ -7,8 +7,8 @@ Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
 
 
 Ontology(<https://w3id.org/metpo/metpo/components/metpo_sheet.owl>
-<https://w3id.org/metpo/metpo/releases/2025-11-21/components/metpo_sheet.owl>
-Annotation(owl:versionInfo "2025-11-21")
+<https://w3id.org/metpo/metpo/releases/2025-11-24/components/metpo_sheet.owl>
+Annotation(owl:versionInfo "2025-11-24")
 
 Declaration(Class(<https://w3id.org/metpo/1000059>))
 Declaration(Class(<https://w3id.org/metpo/1000060>))
@@ -77,6 +77,7 @@ Declaration(Class(<https://w3id.org/metpo/1000486>))
 Declaration(Class(<https://w3id.org/metpo/1000487>))
 Declaration(Class(<https://w3id.org/metpo/1000525>))
 Declaration(Class(<https://w3id.org/metpo/1000526>))
+Declaration(Class(<https://w3id.org/metpo/1000527>))
 Declaration(Class(<https://w3id.org/metpo/1000531>))
 Declaration(Class(<https://w3id.org/metpo/1000532>))
 Declaration(Class(<https://w3id.org/metpo/1000533>))
@@ -364,6 +365,8 @@ Declaration(ObjectProperty(<https://w3id.org/metpo/2000236>))
 Declaration(ObjectProperty(<https://w3id.org/metpo/2000237>))
 Declaration(ObjectProperty(<https://w3id.org/metpo/2000238>))
 Declaration(ObjectProperty(<https://w3id.org/metpo/2000239>))
+Declaration(ObjectProperty(<https://w3id.org/metpo/2000301>))
+Declaration(ObjectProperty(<https://w3id.org/metpo/2000302>))
 Declaration(ObjectProperty(<https://w3id.org/metpo/2000501>))
 Declaration(ObjectProperty(<https://w3id.org/metpo/2000502>))
 Declaration(ObjectProperty(<https://w3id.org/metpo/2000503>))
@@ -1000,6 +1003,18 @@ AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000239> "has pH observat
 SubObjectPropertyOf(<https://w3id.org/metpo/2000239> <https://w3id.org/metpo/2000511>)
 ObjectPropertyDomain(<https://w3id.org/metpo/2000239> <https://w3id.org/metpo/1000525>)
 ObjectPropertyRange(<https://w3id.org/metpo/2000239> <https://w3id.org/metpo/1001023>)
+
+# Object Property: <https://w3id.org/metpo/2000301> (shows activity of)
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000301> "shows activity of")
+ObjectPropertyDomain(<https://w3id.org/metpo/2000301> <https://w3id.org/metpo/1000525>)
+ObjectPropertyRange(<https://w3id.org/metpo/2000301> <https://w3id.org/metpo/1000527>)
+
+# Object Property: <https://w3id.org/metpo/2000302> (does not show activity of)
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000302> "does not show activity of")
+ObjectPropertyDomain(<https://w3id.org/metpo/2000302> <https://w3id.org/metpo/1000525>)
+ObjectPropertyRange(<https://w3id.org/metpo/2000302> <https://w3id.org/metpo/1000527>)
 
 # Object Property: <https://w3id.org/metpo/2000501> (has optimum pH observation)
 
@@ -1832,6 +1847,11 @@ AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <htt
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000526> "chemical entity")
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/metpo/1000526> <https://biolink.github.io/biolink-model/ChemicalEntity>)
 SubClassOf(<https://w3id.org/metpo/1000526> <https://w3id.org/metpo/1000186>)
+
+# Class: <https://w3id.org/metpo/1000527> (enzyme)
+
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000527> "enzyme")
+SubClassOf(<https://w3id.org/metpo/1000527> <https://w3id.org/metpo/1000186>)
 
 # Class: <https://w3id.org/metpo/1000531> (pH phenotype with numerical limits)
 
