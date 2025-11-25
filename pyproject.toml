@@ -26,6 +26,7 @@ dependencies = [
     "pyyaml>=6.0.3",
     "rdflib>=7.1.4",
     "requests>=2.32.5",
+    "rich>=13.0.0",
     "tqdm>=4.67.1",
 ]
 
@@ -148,6 +149,24 @@ extract-abstracts-from-files = "metpo.literature_mining.scripts.extract_abstract
 dedupe-and-filter-abstracts = "metpo.literature_mining.scripts.dedupe_and_filter_abstracts:main"
 dedupe-by-content = "metpo.literature_mining.scripts.dedupe_by_content:main"
 calculate-extraction-metrics = "metpo.literature_mining.scripts.calculate_metrics:main"
+
+# Madin et al. Analysis
+madin-field-summary = "metpo.scripts.madin.generate_field_summary_table:cli"
+madin-field-value-reports = "metpo.scripts.madin.generate_field_value_reports:cli"
+madin-field-values-analysis = "metpo.scripts.madin.madin_field_values_analysis:cli"
+madin-unique-values = "metpo.scripts.madin.madin_unique_values_analysis:cli"
+madin-carbon-substrates = "metpo.scripts.madin.madin_carbon_substrates_unpacked:cli"
+madin-tax-validation = "metpo.scripts.madin.madin_tax_id_validation:cli"
+madin-sample-ids = "metpo.scripts.madin.madin_sample_ids:cli"
+madin-load-refs = "metpo.scripts.madin.load_madin_references:cli"
+madin-query-refs = "metpo.scripts.madin.query_madin_references:cli"
+madin-analyze-cell-shape = "metpo.scripts.madin.analyze_cell_shape:cli"
+madin-analyze-isolation = "metpo.scripts.madin.analyze_isolation_source:cli"
+madin-analyze-pathways = "metpo.scripts.madin.analyze_pathways_format:cli"
+madin-analyze-ref-id = "metpo.scripts.madin.analyze_ref_id_format:cli"
+madin-analyze-categorical = "metpo.scripts.madin.analyze_remaining_categorical:cli"
+madin-verify-edge-taxids = "metpo.scripts.madin.verify_edge_taxids:cli"
+madin-verify-ncbi-taxids = "metpo.scripts.madin.verify_ncbi_taxids:cli"
 
 [tool.hatch.build.targets.wheel]
 packages = ["metpo"]
