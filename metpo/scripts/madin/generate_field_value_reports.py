@@ -106,8 +106,7 @@ def generate_list_report(
         output_file: Path to output TSV file
         total_docs: Total number of documents in collection
     """
-    # Count documents with field
-    coll.count_documents({field_name: {"$exists": True, "$nin": [None, "NA"]}})
+    # Note: We count documents for each element, not overall field presence
 
     # Unpack and count individual elements
     unpacked_counter = Counter()

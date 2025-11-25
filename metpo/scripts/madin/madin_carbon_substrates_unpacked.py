@@ -27,7 +27,6 @@ def analyze_unpacked_substrates(
     connection_string: str,
     database_name: str,
     collection_name: str,
-    _top_n: int = 50,
 ) -> tuple[Counter, int, int]:
     """Analyze individual carbon substrates after unpacking lists.
 
@@ -35,7 +34,6 @@ def analyze_unpacked_substrates(
         connection_string: MongoDB connection URI
         database_name: Name of the database
         collection_name: Name of the collection
-        top_n: Number of most common values to return
 
     Returns:
         Tuple of (substrate_counts, total_docs, docs_with_substrates)
@@ -126,7 +124,7 @@ def display_results(
         "100+ occurrences": 0,
     }
 
-    for _substrate, count in substrate_counts.items():
+    for count in substrate_counts.values():
         if count == 1:
             freq_buckets["1 occurrence"] += 1
         elif count <= 5:
@@ -186,7 +184,7 @@ def cli(
     try:
         # Analyze substrates
         substrate_counts, total_docs, docs_with_substrates = (
-            analyze_unpacked_substrates(mongo_uri, database, collection, top_n)
+            analyze_unpacked_substrates(mongo_uri, database, collection)
         )
 
         # Display results

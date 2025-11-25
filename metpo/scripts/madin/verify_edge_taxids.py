@@ -107,11 +107,15 @@ def cli(mongo_uri: str, database: str, collection: str, output_tsv: str | None) 
     table.add_column("NCBI Name", style="white", no_wrap=False)
     table.add_column("NCBI Rank", style="blue")
 
+    # Cache results to avoid duplicate API calls
+    cached_results: list[tuple[str, dict, bool, str, str]] = []
+
     for case_type, doc in edge_cases:
         tax_id = doc.get("tax_id")
         org_name = doc.get("org_name", "")
 
         is_valid, ncbi_name, rank = check_ncbi_taxid(tax_id)
+        cached_results.append((case_type, doc, is_valid, ncbi_name, rank))
 
         table.add_row(
             case_type,
@@ -137,7 +141,7 @@ def cli(mongo_uri: str, database: str, collection: str, output_tsv: str | None) 
     else:
         console.print("  ✗ tax_id=7 not found in NCBI")
 
-    # Save to TSV if requested
+    # Save to TSV if requested (use cached results to avoid duplicate API calls)
     if output_tsv:
         output_path = Path(output_tsv)
         with output_path.open("w", newline="") as f:
@@ -153,10 +157,9 @@ def cli(mongo_uri: str, database: str, collection: str, output_tsv: str | None) 
                 ]
             )
 
-            for case_type, doc in edge_cases:
+            for case_type, doc, is_valid, ncbi_name, rank in cached_results:
                 tax_id = doc.get("tax_id")
                 org_name = doc.get("org_name", "")
-                is_valid, ncbi_name, rank = check_ncbi_taxid(tax_id)
 
                 writer.writerow(
                     [
@@ -168,7 +171,6 @@ def cli(mongo_uri: str, database: str, collection: str, output_tsv: str | None) 
                         rank,
                     ]
                 )
-                time.sleep(0.4)  # Rate limiting
 
         console.print(f"\n[green]Results saved to {output_path}[/green]")
 

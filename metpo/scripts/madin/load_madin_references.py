@@ -90,7 +90,7 @@ def show_verification(coll: Collection) -> None:
 @click.option("--mongo-uri", default="mongodb://localhost:27017", help="MongoDB connection URI", show_default=True)
 @click.option("--database", default="madin", help="Database name", show_default=True)
 @click.option("--collection", default="references", help="Collection name for references", show_default=True)
-@click.option("--references-file", default="/Users/MAM/Documents/gitrepos/bacteria-archaea-traits/output/prepared_references/references.csv", help="Path to references.csv file", show_default=True, type=click.Path(exists=True))
+@click.option("--references-file", required=True, help="Path to references.csv file", type=click.Path(exists=True))
 @click.option("--drop-existing", is_flag=True, help="Drop existing collection before loading")
 def cli(mongo_uri: str, database: str, collection: str, references_file: str, drop_existing: bool) -> None:
     """Load madin references from CSV into MongoDB."""
