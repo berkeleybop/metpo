@@ -12,6 +12,7 @@ import click
 from pymongo import MongoClient
 from rich.console import Console
 
+
 # Default output directory for madin analysis
 def get_madin_output_dir() -> Path:
     """Get the default output directory for madin analysis."""
@@ -28,7 +29,7 @@ def load_field_summary(tsv_path: Path) -> dict[str, dict]:
     """
     fields = {}
 
-    with open(tsv_path) as f:
+    with tsv_path.open() as f:
         reader = csv.DictReader(f, delimiter="\t")
         for row in reader:
             field_name = row["Field Name"]
@@ -75,7 +76,7 @@ def generate_categorical_report(
             value_counter[value] += 1
 
     # Write TSV
-    with open(output_file, "w", newline="") as f:
+    with output_file.open("w", newline="") as f:
         writer = csv.writer(f, delimiter="\t")
         writer.writerow([field_name, "count", "percentage", "pct_of_total"])
 
@@ -124,7 +125,7 @@ def generate_list_report(
             unpacked_counter.update(individual_values)
 
     # Write TSV
-    with open(output_file, "w", newline="") as f:
+    with output_file.open("w", newline="") as f:
         writer = csv.writer(f, delimiter="\t")
         writer.writerow([f"{field_name}_element", "count", "percentage"])
 

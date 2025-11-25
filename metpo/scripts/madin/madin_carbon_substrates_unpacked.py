@@ -5,7 +5,9 @@ individual substrate occurrences.
 """
 
 import csv
+import logging
 from collections import Counter
+from pathlib import Path
 
 import click
 from pymongo import MongoClient
@@ -13,7 +15,6 @@ from pymongo.errors import ConnectionFailure, OperationFailure
 from rich.console import Console
 from rich.table import Table
 
-import logging
 
 def get_logger(name: str) -> logging.Logger:
     return logging.getLogger(name)
@@ -200,7 +201,7 @@ def cli(
 
         # Optionally save to TSV
         if output_tsv:
-            with open(output_tsv, "w", newline="") as f:
+            with Path(output_tsv).open("w", newline="") as f:
                 writer = csv.writer(f, delimiter="\t")
                 writer.writerow(["substrate", "count", "percent_of_docs_with_data"])
 

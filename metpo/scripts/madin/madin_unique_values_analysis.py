@@ -4,13 +4,16 @@ This script connects to the local madin database and generates a table
 showing the number of unique values for each field.
 """
 
+import csv
+import logging
+from pathlib import Path
+
 import click
 from pymongo import MongoClient
 from pymongo.errors import ConnectionFailure, OperationFailure
 from rich.console import Console
 from rich.table import Table
 
-import logging
 
 def get_logger(name: str) -> logging.Logger:
     return logging.getLogger(name)
@@ -76,23 +79,33 @@ def analyze_unique_values(
     return unique_counts
 
 
+def get_cardinality_category(count: int, total_docs: int, percentage: float) -> str:
+    """Determine cardinality category for a field."""
+    if count == 1:
+        return "Single value"
+    if count == total_docs:
+        return "Unique key"
+
+    # Determine cardinality by thresholds
+    thresholds = [(10, "Very low"), (100, "Low"), (1000, "Medium")]
+    for threshold, category in thresholds:
+        if count < threshold:
+            return category
+
+    return "Very high" if percentage > 90 else "High"
+
+
 def display_results_table(
     unique_counts: dict[str, int],
     total_docs: int,
 ) -> None:
-    """Display results in a formatted table.
-
-    Args:
-        unique_counts: Dictionary mapping field names to unique value counts
-        total_docs: Total number of documents in collection
-    """
+    """Display results in a formatted table."""
     table = Table(title="Unique Values Per Field in Madin Dataset")
     table.add_column("Field Name", style="cyan", no_wrap=True)
     table.add_column("Unique Values", justify="right", style="green")
     table.add_column("% of Total", justify="right", style="yellow")
     table.add_column("Cardinality", style="magenta")
 
-    # Sort by field name
     for field in sorted(unique_counts.keys()):
         count = unique_counts[field]
 
@@ -100,33 +113,32 @@ def display_results_table(
             table.add_row(field, "ERROR", "-", "-")
             continue
 
-        # Calculate percentage
         percentage = (count / total_docs * 100) if total_docs > 0 else 0
+        cardinality = get_cardinality_category(count, total_docs, percentage)
 
-        # Determine cardinality category
-        if count == 1:
-            cardinality = "Single value"
-        elif count == total_docs:
-            cardinality = "Unique key"
-        elif count < 10:
-            cardinality = "Very low"
-        elif count < 100:
-            cardinality = "Low"
-        elif count < 1000:
-            cardinality = "Medium"
-        elif percentage > 90:
-            cardinality = "Very high"
-        else:
-            cardinality = "High"
-
-        table.add_row(
-            field,
-            f"{count:,}",
-            f"{percentage:.1f}%",
-            cardinality,
-        )
+        table.add_row(field, f"{count:,}", f"{percentage:.1f}%", cardinality)
 
     console.print(table)
+
+
+def save_results_to_tsv(output_tsv: str, unique_counts: dict[str, int], total_docs: int) -> None:
+    """Save analysis results to TSV file."""
+    with Path(output_tsv).open("w", newline="") as f:
+        writer = csv.writer(f, delimiter="\t")
+        writer.writerow(["field_name", "unique_values", "percent_of_total", "cardinality"])
+
+        for field in sorted(unique_counts.keys()):
+            count = unique_counts[field]
+            if count == -1:
+                writer.writerow([field, "ERROR", "-", "-"])
+                continue
+
+            percentage = (count / total_docs * 100) if total_docs > 0 else 0
+            cardinality = get_cardinality_category(count, total_docs, percentage)
+            writer.writerow([field, count, f"{percentage:.1f}", cardinality])
+
+    logger.info(f"Results saved to {output_tsv}")
+    console.print(f"\n[green]Results saved to {output_tsv}[/green]")
 
 
 @click.command()
@@ -176,41 +188,7 @@ def cli(
 
         # Optionally save to TSV
         if output_tsv:
-            import csv
-
-            with open(output_tsv, "w", newline="") as f:
-                writer = csv.writer(f, delimiter="\t")
-                writer.writerow(
-                    ["field_name", "unique_values", "percent_of_total", "cardinality"]
-                )
-
-                for field in sorted(unique_counts.keys()):
-                    count = unique_counts[field]
-                    if count == -1:
-                        writer.writerow([field, "ERROR", "-", "-"])
-                        continue
-
-                    percentage = (count / total_docs * 100) if total_docs > 0 else 0
-
-                    if count == 1:
-                        cardinality = "Single value"
-                    elif count == total_docs:
-                        cardinality = "Unique key"
-                    elif count < 10:
-                        cardinality = "Very low"
-                    elif count < 100:
-                        cardinality = "Low"
-                    elif count < 1000:
-                        cardinality = "Medium"
-                    elif percentage > 90:
-                        cardinality = "Very high"
-                    else:
-                        cardinality = "High"
-
-                    writer.writerow([field, count, f"{percentage:.1f}", cardinality])
-
-            logger.info(f"Results saved to {output_tsv}")
-            console.print(f"\n[green]Results saved to {output_tsv}[/green]")
+            save_results_to_tsv(output_tsv, unique_counts, total_docs)
 
         # Print summary
         console.print("\n[bold]Summary:[/bold]")

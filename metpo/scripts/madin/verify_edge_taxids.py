@@ -42,8 +42,7 @@ def check_ncbi_taxid(tax_id: int) -> tuple[bool, str, str]:
                 rank = response.text[rank_start:rank_end]
 
             return True, sci_name, rank
-        else:
-            return False, "NOT FOUND", "N/A"
+        return False, "NOT FOUND", "N/A"
 
     except Exception as e:
         return False, f"ERROR: {e}", "N/A"
@@ -141,7 +140,7 @@ def cli(mongo_uri: str, database: str, collection: str, output_tsv: str | None) 
     # Save to TSV if requested
     if output_tsv:
         output_path = Path(output_tsv)
-        with open(output_path, "w", newline="") as f:
+        with output_path.open("w", newline="") as f:
             writer = csv.writer(f, delimiter="\t")
             writer.writerow(
                 [

@@ -4,6 +4,7 @@ This script analyzes all fields in the madin collection and generates a summary
 table with unique value counts, data types, and categorization.
 """
 
+import csv
 from collections import Counter
 from pathlib import Path
 
@@ -11,6 +12,7 @@ import click
 from pymongo import MongoClient
 from rich.console import Console
 from rich.table import Table
+
 
 # Default output directory for madin analysis
 def get_madin_output_dir() -> Path:
@@ -78,12 +80,11 @@ def detect_field_type(
     # Determine field type
     if all_integer:
         return "integer", metadata
-    elif all_numeric:
+    if all_numeric:
         return "float", metadata
-    elif "str" in types_seen:
+    if "str" in types_seen:
         return "string", metadata
-    else:
-        return "mixed", metadata
+    return "mixed", metadata
 
 
 def analyze_field(coll, field_name: str, total_docs: int) -> dict:
@@ -147,6 +148,119 @@ def analyze_field(coll, field_name: str, total_docs: int) -> dict:
     }
 
 
+# Field categorization constants
+TAXONOMY_ID_FIELDS = {"tax_id", "species_tax_id"}
+TAXONOMY_NAME_FIELDS = {
+    "org_name", "species", "genus", "family", "order", "class", "phylum", "superkingdom"
+}
+LIST_FIELD_NOTES = {
+    "carbon_substrates": "comma-space delimited, quoted compounds, underscore pairs",
+    "pathways": "comma-space delimited, hierarchical underscores",
+}
+
+
+def _categorize_taxonomy_id(field_name: str) -> dict | None:
+    """Categorize taxonomy identifier fields."""
+    if field_name in TAXONOMY_ID_FIELDS:
+        return {
+            "data_type": "identifier",
+            "subtype": "integer",
+            "namespace": "NCBITaxon",
+            "notes": "",
+        }
+    return None
+
+
+def _categorize_ref_id(field_name: str) -> dict | None:
+    """Categorize reference ID field."""
+    if field_name == "ref_id":
+        return {
+            "data_type": "identifier",
+            "subtype": "integer",
+            "namespace": "internal",
+            "notes": "foreign key to references collection",
+        }
+    return None
+
+
+def _categorize_taxonomy_name(field_name: str) -> dict | None:
+    """Categorize taxonomy name fields."""
+    if field_name in TAXONOMY_NAME_FIELDS:
+        return {
+            "data_type": "identifier",
+            "subtype": "text",
+            "namespace": "",
+            "notes": "taxonomic name",
+        }
+    return None
+
+
+def _categorize_data_source(field_name: str) -> dict | None:
+    """Categorize data source field."""
+    if field_name == "data_source":
+        return {
+            "data_type": "identifier",
+            "subtype": "text",
+            "namespace": "",
+            "notes": "source database name",
+        }
+    return None
+
+
+def _categorize_list_field(field_name: str, is_list: bool) -> dict | None:
+    """Categorize comma-separated list fields."""
+    if is_list:
+        notes = LIST_FIELD_NOTES.get(field_name, "comma-space delimited")
+        return {"data_type": "list", "subtype": "", "namespace": "", "notes": notes}
+    return None
+
+
+def _categorize_isolation_source(field_name: str) -> dict | None:
+    """Categorize isolation source field."""
+    if field_name == "isolation_source":
+        return {
+            "data_type": "categorical",
+            "subtype": "text",
+            "namespace": "",
+            "notes": "hierarchical underscores",
+        }
+    return None
+
+
+def _categorize_numeric_field(
+    field_name: str, field_type: str, unique_count: int
+) -> dict | None:
+    """Categorize numeric continuous fields."""
+    if field_type not in ["integer", "float"]:
+        return None
+
+    # Gene count fields
+    if field_name.endswith("_genes"):
+        return {
+            "data_type": "continuous",
+            "subtype": "count",
+            "namespace": "",
+            "notes": "gene count",
+        }
+
+    # Dimension fields (d1_lo, d1_up, d2_lo, d2_up)
+    if field_name.startswith(("d1_", "d2_")):
+        return {
+            "data_type": "continuous",
+            "subtype": "float",
+            "namespace": "",
+            "notes": "cell dimension (μm)",
+        }
+
+    # Other numeric fields
+    return {
+        "data_type": "continuous",
+        "subtype": field_type,
+        "namespace": "",
+        "notes": "",
+    }
+
+
 def categorize_field(
     field_name: str,
     unique_count: int,
@@ -164,103 +278,104 @@ def categorize_field(
         - namespace: for identifiers (e.g., NCBITaxon)
         - notes: additional information
     """
+    # Try each categorization strategy in order
+    categorizers = [
+        lambda: _categorize_taxonomy_id(field_name),
+        lambda: _categorize_ref_id(field_name),
+        lambda: _categorize_taxonomy_name(field_name),
+        lambda: _categorize_data_source(field_name),
+        lambda: _categorize_list_field(field_name, is_list),
+        lambda: _categorize_isolation_source(field_name),
+        lambda: (
+            {"data_type": "categorical", "subtype": "text", "namespace": "", "notes": ""}
+            if field_type == "string" and unique_count <= 30
+            else None
+        ),
+        lambda: _categorize_numeric_field(field_name, field_type, unique_count),
+    ]
 
-    result = {"data_type": "", "subtype": "", "namespace": "", "notes": ""}
-
-    # Taxonomy identifiers
-    if field_name in ["tax_id", "species_tax_id"]:
-        result["data_type"] = "identifier"
-        result["subtype"] = "integer"
-        result["namespace"] = "NCBITaxon"
-        return result
-
-    # Reference ID
-    if field_name == "ref_id":
-        result["data_type"] = "identifier"
-        result["subtype"] = "integer"
-        result["namespace"] = "internal"
-        result["notes"] = "foreign key to references collection"
-        return result
-
-    # Taxonomy names
-    if field_name in [
-        "org_name",
-        "species",
-        "genus",
-        "family",
-        "order",
-        "class",
-        "phylum",
-        "superkingdom",
-    ]:
-        result["data_type"] = "identifier"
-        result["subtype"] = "text"
-        result["notes"] = "taxonomic name"
-        return result
-
-    # Data source
-    if field_name == "data_source":
-        result["data_type"] = "identifier"
-        result["subtype"] = "text"
-        result["notes"] = "source database name"
-        return result
-
-    # Comma-separated lists
-    if is_list:
-        result["data_type"] = "list"
-        if field_name == "carbon_substrates":
-            result["notes"] = (
-                "comma-space delimited, quoted compounds, underscore pairs"
-            )
-        elif field_name == "pathways":
-            result["notes"] = "comma-space delimited, hierarchical underscores"
-        else:
-            result["notes"] = "comma-space delimited"
-        return result
-
-    # Categorical with hierarchy
-    if field_name == "isolation_source":
-        result["data_type"] = "categorical"
-        result["subtype"] = "text"
-        result["notes"] = "hierarchical underscores"
-        return result
-
-    # Simple categorical (low cardinality)
-    if field_type == "string" and unique_count <= 30:
-        result["data_type"] = "categorical"
-        result["subtype"] = "text"
-        return result
-
-    # Numeric continuous fields - dimension measurements, etc.
-    if field_type in ["integer", "float"]:
-        # All _genes fields are counts
-        if field_name.endswith("_genes"):
-            result["data_type"] = "continuous"
-            result["subtype"] = "count"
-            result["notes"] = "gene count"
-            return result
-
-        # Dimension fields (d1_lo, d1_up, d2_lo, d2_up) are measurements
-        if field_name.startswith("d1_") or field_name.startswith("d2_"):
-            result["data_type"] = "continuous"
-            result["subtype"] = "float"
-            result["notes"] = "cell dimension (μm)"
-            return result
-
-        # Other numeric with high cardinality
-        if unique_count > 50:
-            result["data_type"] = "continuous"
-            result["subtype"] = field_type
-            return result
-        else:
-            # Low cardinality numeric might be categorical
-            result["data_type"] = "continuous"
-            result["subtype"] = field_type
+    for categorizer in categorizers:
+        result = categorizer()
+        if result is not None:
             return result
 
     # Default
-    result["data_type"] = "text"
-    return result
+    return {"data_type": "text", "subtype": "", "namespace": "", "notes": ""}
+
+
+def display_results_table(results: list[dict]) -> None:
+    """Display field analysis results in a rich table."""
+    console.print("\n[bold]Field Summary Table:[/bold]\n")
+
+    table = Table(title="Madin Collection Fields")
+    table.add_column("Field Name", style="cyan")
+    table.add_column("Unique Values", style="green", justify="right")
+    table.add_column("Unpacked", style="yellow", justify="right")
+    table.add_column("Coverage %", style="blue", justify="right")
+    table.add_column("Data Type", style="magenta")
+    table.add_column("Subtype", style="white")
+    table.add_column("Namespace", style="cyan")
+    table.add_column("Notes", style="white", no_wrap=False)
+
+    for result in results:
+        unpacked_str = f"{result['unpacked_count']:,}" if result["unpacked_count"] else ""
+        coverage_str = f"{result['coverage_pct']:.1f}%"
+        category = result["category"]
+
+        table.add_row(
+            result["field_name"],
+            f"{result['unique_count']:,}",
+            unpacked_str,
+            coverage_str,
+            category.get("data_type", ""),
+            category.get("subtype", ""),
+            category.get("namespace", ""),
+            category.get("notes", ""),
+        )
+
+    console.print(table)
+
+
+def save_results_to_tsv(results: list[dict], output_path: Path) -> None:
+    """Save field analysis results to TSV file."""
+    with output_path.open("w", newline="") as f:
+        writer = csv.writer(f, delimiter="\t")
+        writer.writerow([
+            "Field Name", "Unique Values", "Unpacked Unique", "Coverage %",
+            "Data Type", "Subtype", "Namespace", "Notes",
+        ])
+
+        for result in results:
+            unpacked_str = str(result["unpacked_count"]) if result["unpacked_count"] else ""
+            category = result["category"]
+            writer.writerow([
+                result["field_name"],
+                result["unique_count"],
+                unpacked_str,
+                f"{result['coverage_pct']:.2f}",
+                category.get("data_type", ""),
+                category.get("subtype", ""),
+                category.get("namespace", ""),
+                category.get("notes", ""),
+            ])
+
+    console.print(f"\n[green]Table saved to {output_path}[/green]")
+
+
+def print_summary_statistics(results: list[dict]) -> None:
+    """Print summary statistics for field analysis."""
+    console.print("\n[bold]Summary Statistics:[/bold]")
+    console.print(f"  Total fields: {len(results)}")
+    console.print(
+        f"  Categorical fields: {sum(1 for r in results if r['category'].get('data_type') == 'categorical')}"
+    )
+    console.print(
+        f"  Continuous fields: {sum(1 for r in results if r['category'].get('data_type') == 'continuous')}"
+    )
+    console.print(
+        f"  Identifier fields: {sum(1 for r in results if r['category'].get('data_type') == 'identifier')}"
+    )
+    console.print(f"  List fields: {sum(1 for r in results if r['is_list'])}")
 
 
 @click.command()
@@ -289,12 +404,8 @@ def categorize_field(
 )
 def cli(mongo_uri: str, database: str, collection: str, output_tsv: str | None) -> None:
     """Generate field summary table for madin collection."""
-    # Set default output path using project paths
-    if output_tsv is None:
-        output_path = get_madin_output_dir() / "madin_field_summary.tsv"
-        output_path.parent.mkdir(parents=True, exist_ok=True)
-    else:
-        output_path = Path(output_tsv)
+    output_path = Path(output_tsv) if output_tsv else get_madin_output_dir() / "madin_field_summary.tsv"
+    output_path.parent.mkdir(parents=True, exist_ok=True)
 
     client = MongoClient(mongo_uri)
     db = client[database]
@@ -304,110 +415,22 @@ def cli(mongo_uri: str, database: str, collection: str, output_tsv: str | None) 
     console.print(f"[bold]Total documents:[/bold] {total_docs:,}\n")
     console.print("[bold]Analyzing all fields...[/bold]\n")
 
-    # Get one sample document to find all field names
     sample = coll.find_one()
     if not sample:
         console.print("[red]No documents found in collection[/red]")
         return
 
     field_names = [key for key in sample if key != "_id"]
-
     results = []
-
     for field_name in field_names:
         console.print(f"  Analyzing: {field_name}")
-        result = analyze_field(coll, field_name, total_docs)
-        results.append(result)
+        results.append(analyze_field(coll, field_name, total_docs))
 
-    # Sort by unique count descending
     results.sort(key=lambda x: x["unique_count"], reverse=True)
 
-    # Display table
-    console.print("\n[bold]Field Summary Table:[/bold]\n")
-
-    table = Table(title="Madin Collection Fields")
-    table.add_column("Field Name", style="cyan")
-    table.add_column("Unique Values", style="green", justify="right")
-    table.add_column("Unpacked", style="yellow", justify="right")
-    table.add_column("Coverage %", style="blue", justify="right")
-    table.add_column("Data Type", style="magenta")
-    table.add_column("Subtype", style="white")
-    table.add_column("Namespace", style="cyan")
-    table.add_column("Notes", style="white", no_wrap=False)
-
-    for result in results:
-        unpacked_str = ""
-        if result["unpacked_count"]:
-            unpacked_str = f"{result['unpacked_count']:,}"
-
-        coverage_str = f"{result['coverage_pct']:.1f}%"
-
-        category = result["category"]
-
-        table.add_row(
-            result["field_name"],
-            f"{result['unique_count']:,}",
-            unpacked_str,
-            coverage_str,
-            category.get("data_type", ""),
-            category.get("subtype", ""),
-            category.get("namespace", ""),
-            category.get("notes", ""),
-        )
-
-    console.print(table)
-
-    # Save to TSV
-    import csv
-
-    with open(output_path, "w", newline="") as f:
-        writer = csv.writer(f, delimiter="\t")
-        writer.writerow(
-            [
-                "Field Name",
-                "Unique Values",
-                "Unpacked Unique",
-                "Coverage %",
-                "Data Type",
-                "Subtype",
-                "Namespace",
-                "Notes",
-            ]
-        )
-
-        for result in results:
-            unpacked_str = (
-                str(result["unpacked_count"]) if result["unpacked_count"] else ""
-            )
-            category = result["category"]
-            writer.writerow(
-                [
-                    result["field_name"],
-                    result["unique_count"],
-                    unpacked_str,
-                    f"{result['coverage_pct']:.2f}",
-                    category.get("data_type", ""),
-                    category.get("subtype", ""),
-                    category.get("namespace", ""),
-                    category.get("notes", ""),
-                ]
-            )
-
-    console.print(f"\n[green]Table saved to {output_path}[/green]")
-
-    # Print summary statistics
-    console.print("\n[bold]Summary Statistics:[/bold]")
-    console.print(f"  Total fields: {len(results)}")
-    console.print(
-        f"  Categorical fields: {sum(1 for r in results if r['category'].get('data_type') == 'categorical')}"
-    )
-    console.print(
-        f"  Continuous fields: {sum(1 for r in results if r['category'].get('data_type') == 'continuous')}"
-    )
-    console.print(
-        f"  Identifier fields: {sum(1 for r in results if r['category'].get('data_type') == 'identifier')}"
-    )
-    console.print(f"  List fields: {sum(1 for r in results if r['is_list'])}")
+    display_results_table(results)
+    save_results_to_tsv(results, output_path)
+    print_summary_statistics(results)
 
     client.close()
 

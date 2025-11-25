@@ -83,7 +83,7 @@ def cli(
     # Save to TSV if requested
     if output_tsv:
         output_path = Path(output_tsv)
-        with open(output_path, "w", newline="") as f:
+        with output_path.open("w", newline="") as f:
             writer = csv.writer(f, delimiter="\t")
             writer.writerow(
                 ["sample_type", "org_name", "tax_id", "species_tax_id", "ref_id"]

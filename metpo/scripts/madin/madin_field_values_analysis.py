@@ -4,6 +4,7 @@ This script shows common and rare values for a given field.
 """
 
 import csv
+import logging
 from pathlib import Path
 
 import click
@@ -12,7 +13,6 @@ from pymongo.errors import ConnectionFailure, OperationFailure
 from rich.console import Console
 from rich.table import Table
 
-import logging
 
 def get_logger(name: str) -> logging.Logger:
     return logging.getLogger(name)
@@ -201,7 +201,7 @@ def cli(
         # Save to TSV if requested
         if output_tsv:
             output_path = Path(output_tsv)
-            with open(output_path, "w", newline="") as f:
+            with output_path.open("w", newline="") as f:
                 writer = csv.writer(f, delimiter="\t")
                 writer.writerow(
                     ["category", "rank", "value", "count", "percent_of_total"]
