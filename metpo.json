@@ -22,9 +22,9 @@
         "val" : "METPO"
       }, {
         "pred" : "http://www.w3.org/2002/07/owl#versionInfo",
-        "val" : "2025-11-21"
+        "val" : "2025-11-25"
       } ],
-      "version" : "https://w3id.org/metpo/metpo/releases/2025-11-21/metpo.json"
+      "version" : "https://w3id.org/metpo/metpo/releases/2025-11-25/metpo.json"
     },
     "nodes" : [ {
       "id" : "https://w3id.org/metpo/1000059",
@@ -1310,6 +1310,10 @@
           "val" : "https://biolink.github.io/biolink-model/ChemicalEntity"
         } ]
       }
+    }, {
+      "id" : "https://w3id.org/metpo/1000527",
+      "lbl" : "enzyme",
+      "type" : "CLASS"
     }, {
       "id" : "https://w3id.org/metpo/1000531",
       "lbl" : "pH phenotype with numerical limits",
@@ -4697,44 +4701,16 @@
         } ]
       }
     }, {
-      "id" : "https://w3id.org/metpo/2000201",
-      "lbl" : "lyses",
-      "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
-    }, {
       "id" : "https://w3id.org/metpo/2000202",
-      "lbl" : "synthesizes",
+      "lbl" : "produces",
       "type" : "PROPERTY",
       "propertyType" : "OBJECT",
       "meta" : {
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
-          "val" : "anabolizes"
-        }, {
-          "pred" : "hasRelatedSynonym",
           "val" : "produces"
         } ]
       }
-    }, {
-      "id" : "https://w3id.org/metpo/2000203",
-      "lbl" : "fixes",
-      "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
-    }, {
-      "id" : "https://w3id.org/metpo/2000204",
-      "lbl" : "catabolizes",
-      "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
-    }, {
-      "id" : "https://w3id.org/metpo/2000205",
-      "lbl" : "mineralizes",
-      "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
-    }, {
-      "id" : "https://w3id.org/metpo/2000206",
-      "lbl" : "conjugates",
-      "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
     }, {
       "id" : "https://w3id.org/metpo/2000207",
       "lbl" : "transports",
@@ -4766,75 +4742,27 @@
       "type" : "PROPERTY",
       "propertyType" : "OBJECT"
     }, {
-      "id" : "https://w3id.org/metpo/2000213",
-      "lbl" : "binds",
-      "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
-    }, {
-      "id" : "https://w3id.org/metpo/2000214",
-      "lbl" : "chelates",
-      "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
-    }, {
-      "id" : "https://w3id.org/metpo/2000215",
-      "lbl" : "precipitates",
-      "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
-    }, {
-      "id" : "https://w3id.org/metpo/2000216",
-      "lbl" : "solubilizes",
-      "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
-    }, {
-      "id" : "https://w3id.org/metpo/2000217",
-      "lbl" : "volatilizes",
-      "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
-    }, {
-      "id" : "https://w3id.org/metpo/2000218",
-      "lbl" : "crystallizes",
-      "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
-    }, {
-      "id" : "https://w3id.org/metpo/2000219",
-      "lbl" : "adsorbs",
-      "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
-    }, {
       "id" : "https://w3id.org/metpo/2000220",
       "lbl" : "does not disproportionate",
       "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
-    }, {
-      "id" : "https://w3id.org/metpo/2000221",
-      "lbl" : "does not lyse",
-      "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "dismutates"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/2000222",
       "lbl" : "does not produce",
       "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
-    }, {
-      "id" : "https://w3id.org/metpo/2000223",
-      "lbl" : "does not fix",
-      "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
-    }, {
-      "id" : "https://w3id.org/metpo/2000224",
-      "lbl" : "does not catabolize",
-      "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
-    }, {
-      "id" : "https://w3id.org/metpo/2000225",
-      "lbl" : "does not mineralize",
-      "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
-    }, {
-      "id" : "https://w3id.org/metpo/2000226",
-      "lbl" : "does not conjugate",
-      "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "produces"
+        } ]
+      }
     }, {
       "id" : "https://w3id.org/metpo/2000227",
       "lbl" : "does not transport",
@@ -4866,36 +4794,6 @@
       "type" : "PROPERTY",
       "propertyType" : "OBJECT"
     }, {
-      "id" : "https://w3id.org/metpo/2000233",
-      "lbl" : "does not bind",
-      "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
-    }, {
-      "id" : "https://w3id.org/metpo/2000234",
-      "lbl" : "does not chelate",
-      "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
-    }, {
-      "id" : "https://w3id.org/metpo/2000235",
-      "lbl" : "does not precipitate",
-      "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
-    }, {
-      "id" : "https://w3id.org/metpo/2000236",
-      "lbl" : "does not solubilize",
-      "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
-    }, {
-      "id" : "https://w3id.org/metpo/2000237",
-      "lbl" : "does not volatilize",
-      "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
-    }, {
-      "id" : "https://w3id.org/metpo/2000238",
-      "lbl" : "does not crystallize",
-      "type" : "PROPERTY",
-      "propertyType" : "OBJECT"
-    }, {
       "id" : "https://w3id.org/metpo/2000239",
       "lbl" : "has pH observation",
       "type" : "PROPERTY",
@@ -4904,6 +4802,39 @@
         "definition" : {
           "val" : "Relates a microbe to a pH observation."
         }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000301",
+      "lbl" : "enzyme activity analyzed",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "Physiology and metabolism.enzymes.[].activity"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000302",
+      "lbl" : "shows activity of",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "Physiology and metabolism.enzymes.[].activity"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000303",
+      "lbl" : "does not show activity of",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "Physiology and metabolism.enzymes.[].activity"
+        } ]
       }
     }, {
       "id" : "https://w3id.org/metpo/2000501",
@@ -5480,6 +5411,10 @@
       "obj" : "https://w3id.org/metpo/1000186"
     }, {
       "sub" : "https://w3id.org/metpo/1000526",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000186"
+    }, {
+      "sub" : "https://w3id.org/metpo/1000527",
       "pred" : "is_a",
       "obj" : "https://w3id.org/metpo/1000186"
     }, {
@@ -6455,27 +6390,7 @@
       "pred" : "subPropertyOf",
       "obj" : "https://w3id.org/metpo/2000001"
     }, {
-      "sub" : "https://w3id.org/metpo/2000201",
-      "pred" : "subPropertyOf",
-      "obj" : "https://w3id.org/metpo/2000001"
-    }, {
       "sub" : "https://w3id.org/metpo/2000202",
-      "pred" : "subPropertyOf",
-      "obj" : "https://w3id.org/metpo/2000001"
-    }, {
-      "sub" : "https://w3id.org/metpo/2000203",
-      "pred" : "subPropertyOf",
-      "obj" : "https://w3id.org/metpo/2000001"
-    }, {
-      "sub" : "https://w3id.org/metpo/2000204",
-      "pred" : "subPropertyOf",
-      "obj" : "https://w3id.org/metpo/2000001"
-    }, {
-      "sub" : "https://w3id.org/metpo/2000205",
-      "pred" : "subPropertyOf",
-      "obj" : "https://w3id.org/metpo/2000001"
-    }, {
-      "sub" : "https://w3id.org/metpo/2000206",
       "pred" : "subPropertyOf",
       "obj" : "https://w3id.org/metpo/2000001"
     }, {
@@ -6503,59 +6418,11 @@
       "pred" : "subPropertyOf",
       "obj" : "https://w3id.org/metpo/2000210"
     }, {
-      "sub" : "https://w3id.org/metpo/2000213",
-      "pred" : "subPropertyOf",
-      "obj" : "https://w3id.org/metpo/2000001"
-    }, {
-      "sub" : "https://w3id.org/metpo/2000214",
-      "pred" : "subPropertyOf",
-      "obj" : "https://w3id.org/metpo/2000001"
-    }, {
-      "sub" : "https://w3id.org/metpo/2000215",
-      "pred" : "subPropertyOf",
-      "obj" : "https://w3id.org/metpo/2000001"
-    }, {
-      "sub" : "https://w3id.org/metpo/2000216",
-      "pred" : "subPropertyOf",
-      "obj" : "https://w3id.org/metpo/2000001"
-    }, {
-      "sub" : "https://w3id.org/metpo/2000217",
-      "pred" : "subPropertyOf",
-      "obj" : "https://w3id.org/metpo/2000001"
-    }, {
-      "sub" : "https://w3id.org/metpo/2000218",
-      "pred" : "subPropertyOf",
-      "obj" : "https://w3id.org/metpo/2000001"
-    }, {
-      "sub" : "https://w3id.org/metpo/2000219",
-      "pred" : "subPropertyOf",
-      "obj" : "https://w3id.org/metpo/2000001"
-    }, {
       "sub" : "https://w3id.org/metpo/2000220",
       "pred" : "subPropertyOf",
       "obj" : "https://w3id.org/metpo/2000001"
     }, {
-      "sub" : "https://w3id.org/metpo/2000221",
-      "pred" : "subPropertyOf",
-      "obj" : "https://w3id.org/metpo/2000001"
-    }, {
       "sub" : "https://w3id.org/metpo/2000222",
-      "pred" : "subPropertyOf",
-      "obj" : "https://w3id.org/metpo/2000001"
-    }, {
-      "sub" : "https://w3id.org/metpo/2000223",
-      "pred" : "subPropertyOf",
-      "obj" : "https://w3id.org/metpo/2000001"
-    }, {
-      "sub" : "https://w3id.org/metpo/2000224",
-      "pred" : "subPropertyOf",
-      "obj" : "https://w3id.org/metpo/2000001"
-    }, {
-      "sub" : "https://w3id.org/metpo/2000225",
-      "pred" : "subPropertyOf",
-      "obj" : "https://w3id.org/metpo/2000001"
-    }, {
-      "sub" : "https://w3id.org/metpo/2000226",
       "pred" : "subPropertyOf",
       "obj" : "https://w3id.org/metpo/2000001"
     }, {
@@ -6583,33 +6450,17 @@
       "pred" : "subPropertyOf",
       "obj" : "https://w3id.org/metpo/2000230"
     }, {
-      "sub" : "https://w3id.org/metpo/2000233",
-      "pred" : "subPropertyOf",
-      "obj" : "https://w3id.org/metpo/2000001"
-    }, {
-      "sub" : "https://w3id.org/metpo/2000234",
-      "pred" : "subPropertyOf",
-      "obj" : "https://w3id.org/metpo/2000001"
-    }, {
-      "sub" : "https://w3id.org/metpo/2000235",
-      "pred" : "subPropertyOf",
-      "obj" : "https://w3id.org/metpo/2000001"
-    }, {
-      "sub" : "https://w3id.org/metpo/2000236",
-      "pred" : "subPropertyOf",
-      "obj" : "https://w3id.org/metpo/2000001"
-    }, {
-      "sub" : "https://w3id.org/metpo/2000237",
-      "pred" : "subPropertyOf",
-      "obj" : "https://w3id.org/metpo/2000001"
-    }, {
-      "sub" : "https://w3id.org/metpo/2000238",
-      "pred" : "subPropertyOf",
-      "obj" : "https://w3id.org/metpo/2000001"
-    }, {
       "sub" : "https://w3id.org/metpo/2000239",
       "pred" : "subPropertyOf",
       "obj" : "https://w3id.org/metpo/2000511"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000302",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000301"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000303",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000301"
     }, {
       "sub" : "https://w3id.org/metpo/2000501",
       "pred" : "subPropertyOf",
@@ -6739,6 +6590,18 @@
       "predicateId" : "https://w3id.org/metpo/2000239",
       "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
       "rangeClassIds" : [ "https://w3id.org/metpo/1001023" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000301",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1000527" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000302",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1000527" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000303",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1000527" ]
     }, {
       "predicateId" : "https://w3id.org/metpo/2000501",
       "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
