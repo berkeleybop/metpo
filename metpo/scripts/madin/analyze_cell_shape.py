@@ -140,9 +140,7 @@ def cli(mongo_uri: str, database: str, collection: str, output_tsv: str | None) 
     console.print(f"[bold]Total documents:[/bold] {total_docs:,}\n")
 
     # Count documents with cell_shape
-    has_cell_shape = coll.count_documents(
-        {"cell_shape": {"$exists": True, "$nin": [None, "NA"]}}
-    )
+    has_cell_shape = coll.count_documents({"cell_shape": {"$exists": True, "$nin": [None, "NA"]}})
     console.print("[bold]Analyzing cell_shape field:[/bold]")
     console.print(
         f"  Documents with cell_shape (non-NA): {has_cell_shape:,} "

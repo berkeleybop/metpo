@@ -83,17 +83,27 @@ def validate_samples(samples: list[dict]) -> tuple[Table, int, float, list[dict[
         if is_valid and ncbi_name != "NOT FOUND":
             names_match, score = compare_names(org_name, ncbi_name)
             name_match_score += score
-            match_type = "exact" if names_match == "✓" else ("partial" if names_match == "~" else "no")
+            match_type = (
+                "exact" if names_match == "✓" else ("partial" if names_match == "~" else "no")
+            )
 
         table.add_row(
-            str(tax_id), org_name[:40], "✓" if is_valid else "✗",
-            ncbi_name[:40] if ncbi_name else "N/A", names_match
+            str(tax_id),
+            org_name[:40],
+            "✓" if is_valid else "✗",
+            ncbi_name[:40] if ncbi_name else "N/A",
+            names_match,
         )
 
-        results.append({
-            "tax_id": tax_id, "org_name": org_name, "is_valid": is_valid,
-            "ncbi_name": ncbi_name, "match_type": match_type
-        })
+        results.append(
+            {
+                "tax_id": tax_id,
+                "org_name": org_name,
+                "is_valid": is_valid,
+                "ncbi_name": ncbi_name,
+                "match_type": match_type,
+            }
+        )
 
         if i < len(samples) - 1:
             time.sleep(0.4)
@@ -105,8 +115,12 @@ def print_summary(samples: list, valid_count: int, name_match_score: float) -> N
     """Print validation summary."""
     console.print("\n[bold]Summary:[/bold]")
     console.print(f"  Samples checked: {len(samples)}")
-    console.print(f"  Valid NCBI tax_ids: {valid_count}/{len(samples)} ({valid_count / len(samples) * 100:.1f}%)")
-    console.print(f"  Name matches: {name_match_score}/{len(samples)} ({name_match_score / len(samples) * 100:.1f}%)")
+    console.print(
+        f"  Valid NCBI tax_ids: {valid_count}/{len(samples)} ({valid_count / len(samples) * 100:.1f}%)"
+    )
+    console.print(
+        f"  Name matches: {name_match_score}/{len(samples)} ({name_match_score / len(samples) * 100:.1f}%)"
+    )
 
     if valid_count == len(samples):
         console.print("\n[green]✓ All sampled tax_ids are valid NCBI Taxonomy IDs![/green]")
@@ -118,9 +132,19 @@ def save_results_tsv(results: list[dict[str, Any]], output_path: Path) -> None:
     """Save validation results to TSV file."""
     with output_path.open("w", newline="") as f:
         writer = csv.writer(f, delimiter="\t")
-        writer.writerow(["madin_tax_id", "madin_org_name", "ncbi_valid", "ncbi_scientific_name", "names_match"])
+        writer.writerow(
+            ["madin_tax_id", "madin_org_name", "ncbi_valid", "ncbi_scientific_name", "names_match"]
+        )
         for r in results:
-            writer.writerow([r["tax_id"], r["org_name"], "yes" if r["is_valid"] else "no", r["ncbi_name"], r["match_type"]])
+            writer.writerow(
+                [
+                    r["tax_id"],
+                    r["org_name"],
+                    "yes" if r["is_valid"] else "no",
+                    r["ncbi_name"],
+                    r["match_type"],
+                ]
+            )
     console.print(f"\n[green]Results saved to {output_path}[/green]")
 
 
@@ -130,13 +154,17 @@ def save_results_tsv(results: list[dict[str, Any]], output_path: Path) -> None:
 @click.option("--collection", default="madin", help="Collection name")
 @click.option("--sample-size", default=20, help="Number of random tax_ids to verify")
 @click.option("--output-tsv", type=click.Path(), help="Optional: Save results to TSV file")
-def cli(mongo_uri: str, database: str, collection: str, sample_size: int, output_tsv: str | None) -> None:
+def cli(
+    mongo_uri: str, database: str, collection: str, sample_size: int, output_tsv: str | None
+) -> None:
     """Verify random sample of tax_ids against NCBI Taxonomy API."""
     client = MongoClient(mongo_uri)
     db = client[database]
     coll = db[collection]
 
-    console.print(f"[bold]Verifying {sample_size} random tax_ids against NCBI Taxonomy API[/bold]\n")
+    console.print(
+        f"[bold]Verifying {sample_size} random tax_ids against NCBI Taxonomy API[/bold]\n"
+    )
     console.print("[yellow]Note: This will make API calls to NCBI (rate-limited)[/yellow]\n")
 
     samples = get_random_samples(coll, sample_size)

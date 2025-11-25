@@ -19,12 +19,11 @@ def get_madin_output_dir() -> Path:
     """Get the default output directory for madin analysis."""
     return Path(__file__).parent.parent.parent.parent / "docs" / "madin_paths"
 
+
 console = Console()
 
 
-def detect_field_type(
-    coll, field_name: str, sample_size: int = 1000
-) -> tuple[str, dict]:
+def detect_field_type(coll, field_name: str, sample_size: int = 1000) -> tuple[str, dict]:
     """Detect field type and characteristics.
 
     Returns:
@@ -32,9 +31,9 @@ def detect_field_type(
     """
     # Get sample documents
     samples = list(
-        coll.find(
-            {field_name: {"$exists": True, "$nin": [None, "NA"]}}, {field_name: 1}
-        ).limit(sample_size)
+        coll.find({field_name: {"$exists": True, "$nin": [None, "NA"]}}, {field_name: 1}).limit(
+            sample_size
+        )
     )
 
     if not samples:
@@ -70,9 +69,7 @@ def detect_field_type(
     metadata = {
         "types_seen": types_seen,
         "contains_comma_pct": (contains_comma / len(samples) * 100) if samples else 0,
-        "contains_underscore_pct": (contains_underscore / len(samples) * 100)
-        if samples
-        else 0,
+        "contains_underscore_pct": (contains_underscore / len(samples) * 100) if samples else 0,
         "all_numeric": all_numeric,
         "all_integer": all_integer,
     }
@@ -94,9 +91,7 @@ def analyze_field(coll, field_name: str, total_docs: int) -> dict:
         Dictionary with analysis results
     """
     # Count documents with field
-    has_field = coll.count_documents(
-        {field_name: {"$exists": True, "$nin": [None, "NA"]}}
-    )
+    has_field = coll.count_documents({field_name: {"$exists": True, "$nin": [None, "NA"]}})
 
     # Get unique count
     unique_values = coll.distinct(field_name, {field_name: {"$nin": [None, "NA"]}})
@@ -151,7 +146,14 @@ def analyze_field(coll, field_name: str, total_docs: int) -> dict:
 # Field categorization constants
 TAXONOMY_ID_FIELDS = {"tax_id", "species_tax_id"}
 TAXONOMY_NAME_FIELDS = {
-    "org_name", "species", "genus", "family", "order", "class", "phylum", "superkingdom"
+    "org_name",
+    "species",
+    "genus",
+    "family",
+    "order",
+    "class",
+    "phylum",
+    "superkingdom",
 }
 LIST_FIELD_NOTES = {
     "carbon_substrates": "comma-space delimited, quoted compounds, underscore pairs",
@@ -227,9 +229,7 @@ def _categorize_isolation_source(field_name: str) -> dict | None:
     return None
 
 
-def _categorize_numeric_field(
-    field_name: str, field_type: str, unique_count: int
-) -> dict | None:
+def _categorize_numeric_field(field_name: str, field_type: str, unique_count: int) -> dict | None:
     """Categorize numeric continuous fields."""
     if field_type not in ["integer", "float"]:
         return None
@@ -340,24 +340,34 @@ def save_results_to_tsv(results: list[dict], output_path: Path) -> None:
     """Save field analysis results to TSV file."""
     with output_path.open("w", newline="") as f:
         writer = csv.writer(f, delimiter="\t")
-        writer.writerow([
-            "Field Name", "Unique Values", "Unpacked Unique", "Coverage %",
-            "Data Type", "Subtype", "Namespace", "Notes",
-        ])
+        writer.writerow(
+            [
+                "Field Name",
+                "Unique Values",
+                "Unpacked Unique",
+                "Coverage %",
+                "Data Type",
+                "Subtype",
+                "Namespace",
+                "Notes",
+            ]
+        )
 
         for result in results:
             unpacked_str = str(result["unpacked_count"]) if result["unpacked_count"] else ""
             category = result["category"]
-            writer.writerow([
-                result["field_name"],
-                result["unique_count"],
-                unpacked_str,
-                f"{result['coverage_pct']:.2f}",
-                category.get("data_type", ""),
-                category.get("subtype", ""),
-                category.get("namespace", ""),
-                category.get("notes", ""),
-            ])
+            writer.writerow(
+                [
+                    result["field_name"],
+                    result["unique_count"],
+                    unpacked_str,
+                    f"{result['coverage_pct']:.2f}",
+                    category.get("data_type", ""),
+                    category.get("subtype", ""),
+                    category.get("namespace", ""),
+                    category.get("notes", ""),
+                ]
+            )
 
     console.print(f"\n[green]Table saved to {output_path}[/green]")
 
@@ -404,7 +414,9 @@ def print_summary_statistics(results: list[dict]) -> None:
 )
 def cli(mongo_uri: str, database: str, collection: str, output_tsv: str | None) -> None:
     """Generate field summary table for madin collection."""
-    output_path = Path(output_tsv) if output_tsv else get_madin_output_dir() / "madin_field_summary.tsv"
+    output_path = (
+        Path(output_tsv) if output_tsv else get_madin_output_dir() / "madin_field_summary.tsv"
+    )
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
     client = MongoClient(mongo_uri)

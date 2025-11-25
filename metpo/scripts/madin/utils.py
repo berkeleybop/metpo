@@ -168,8 +168,7 @@ def print_field_stats(
     has_field = coll.count_documents({field: {"$exists": True, "$nin": [None, "NA"]}})
     console.print(f"[bold]Analyzing {field} field:[/bold]")
     console.print(
-        f"  Documents with {field} (non-NA): {has_field:,} "
-        f"({has_field / total_docs * 100:.2f}%)"
+        f"  Documents with {field} (non-NA): {has_field:,} ({has_field / total_docs * 100:.2f}%)"
     )
     return has_field
 

@@ -17,6 +17,7 @@ from rich.table import Table
 def get_logger(name: str) -> logging.Logger:
     return logging.getLogger(name)
 
+
 logger = get_logger(__name__)
 console = Console()
 
@@ -49,9 +50,7 @@ def analyze_field_values(
     collection = db[collection_name]
 
     # Count documents with this field
-    docs_with_field = collection.count_documents(
-        {field_name: {"$exists": True, "$ne": None}}
-    )
+    docs_with_field = collection.count_documents({field_name: {"$exists": True, "$ne": None}})
     total_docs = collection.count_documents({})
 
     logger.info(f"Total documents: {total_docs:,}")
@@ -203,16 +202,12 @@ def cli(
             output_path = Path(output_tsv)
             with output_path.open("w", newline="") as f:
                 writer = csv.writer(f, delimiter="\t")
-                writer.writerow(
-                    ["category", "rank", "value", "count", "percent_of_total"]
-                )
+                writer.writerow(["category", "rank", "value", "count", "percent_of_total"])
 
                 # Write most common
                 for i, (value, count) in enumerate(most_common, 1):
                     percentage = (count / total_docs * 100) if total_docs > 0 else 0
-                    writer.writerow(
-                        ["most_common", i, value, count, f"{percentage:.2f}"]
-                    )
+                    writer.writerow(["most_common", i, value, count, f"{percentage:.2f}"])
 
                 # Write rarest
                 for i, (value, count) in enumerate(rarest, 1):

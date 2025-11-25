@@ -76,18 +76,14 @@ def cli(
         ref_id = doc.get("ref_id", "N/A")
         # Truncate long ref_ids
         display_ref = ref_id if len(str(ref_id)) <= 100 else str(ref_id)[:97] + "..."
-        console.print(
-            f"  org_name: {doc.get('org_name', 'N/A')[:50]}\n  ref_id: {display_ref}\n"
-        )
+        console.print(f"  org_name: {doc.get('org_name', 'N/A')[:50]}\n  ref_id: {display_ref}\n")
 
     # Save to TSV if requested
     if output_tsv:
         output_path = Path(output_tsv)
         with output_path.open("w", newline="") as f:
             writer = csv.writer(f, delimiter="\t")
-            writer.writerow(
-                ["sample_type", "org_name", "tax_id", "species_tax_id", "ref_id"]
-            )
+            writer.writerow(["sample_type", "org_name", "tax_id", "species_tax_id", "ref_id"])
 
             # Re-query to get all samples for TSV
             tax_samples = list(

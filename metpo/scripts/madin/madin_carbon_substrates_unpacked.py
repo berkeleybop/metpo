@@ -19,6 +19,7 @@ from rich.table import Table
 def get_logger(name: str) -> logging.Logger:
     return logging.getLogger(name)
 
+
 logger = get_logger(__name__)
 console = Console()
 
@@ -97,9 +98,7 @@ def display_results(
     table.add_column("% of Docs w/ Data", justify="right", style="magenta")
 
     for i, (substrate, count) in enumerate(substrate_counts.most_common(top_n), 1):
-        percentage = (
-            (count / docs_with_substrates * 100) if docs_with_substrates > 0 else 0
-        )
+        percentage = (count / docs_with_substrates * 100) if docs_with_substrates > 0 else 0
         # Truncate long values
         display_value = substrate if len(substrate) <= 50 else substrate[:47] + "..."
         table.add_row(
@@ -183,8 +182,8 @@ def cli(
     """Analyze individual carbon substrates after unpacking comma-separated lists."""
     try:
         # Analyze substrates
-        substrate_counts, total_docs, docs_with_substrates = (
-            analyze_unpacked_substrates(mongo_uri, database, collection)
+        substrate_counts, total_docs, docs_with_substrates = analyze_unpacked_substrates(
+            mongo_uri, database, collection
         )
 
         # Display results
@@ -205,9 +204,7 @@ def cli(
 
                 for substrate, count in substrate_counts.most_common():
                     percentage = (
-                        (count / docs_with_substrates * 100)
-                        if docs_with_substrates > 0
-                        else 0
+                        (count / docs_with_substrates * 100) if docs_with_substrates > 0 else 0
                     )
                     writer.writerow([substrate, count, f"{percentage:.2f}"])
 

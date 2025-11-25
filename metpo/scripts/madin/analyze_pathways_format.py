@@ -89,9 +89,7 @@ def get_length_distribution(coll: Collection) -> list[dict]:
 def count_individual_pathways(coll: Collection) -> Counter:
     """Unpack comma-separated pathways and count individual ones."""
     pathway_counter: Counter = Counter()
-    cursor = coll.find(
-        {"pathways": {"$exists": True, "$nin": [None, "NA"]}}, {"pathways": 1}
-    )
+    cursor = coll.find({"pathways": {"$exists": True, "$nin": [None, "NA"]}}, {"pathways": 1})
 
     for doc in cursor:
         pathways_str = doc.get("pathways", "")

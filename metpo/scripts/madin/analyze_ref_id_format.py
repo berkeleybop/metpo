@@ -16,10 +16,12 @@ console = Console()
 def get_ref_id_type_counts(coll: Collection) -> list[dict]:
     """Get counts of different data types in ref_id field."""
     return list(
-        coll.aggregate([
-            {"$match": {"ref_id": {"$exists": True, "$nin": [None, "NA"]}}},
-            {"$group": {"_id": {"$type": "$ref_id"}, "count": {"$sum": 1}}},
-        ])
+        coll.aggregate(
+            [
+                {"$match": {"ref_id": {"$exists": True, "$nin": [None, "NA"]}}},
+                {"$group": {"_id": {"$type": "$ref_id"}, "count": {"$sum": 1}}},
+            ]
+        )
     )
 
 
@@ -79,12 +81,14 @@ def count_comma_ref_ids(coll: Collection) -> int:
 def get_longest_ref_ids(coll: Collection) -> list[dict]:
     """Get the longest ref_id string values."""
     return list(
-        coll.aggregate([
-            {"$match": {"ref_id": {"$type": "string", "$ne": "NA"}}},
-            {"$project": {"ref_id": 1, "org_name": 1, "length": {"$strLenCP": "$ref_id"}}},
-            {"$sort": {"length": -1}},
-            {"$limit": 10},
-        ])
+        coll.aggregate(
+            [
+                {"$match": {"ref_id": {"$type": "string", "$ne": "NA"}}},
+                {"$project": {"ref_id": 1, "org_name": 1, "length": {"$strLenCP": "$ref_id"}}},
+                {"$sort": {"length": -1}},
+                {"$limit": 10},
+            ]
+        )
     )
 
 
@@ -153,7 +157,9 @@ def save_longest_refs_tsv(longest_refs: list[dict], output_path: Path) -> None:
 )
 @click.option("--database", default="madin", help="Database name", show_default=True)
 @click.option("--collection", default="madin", help="Collection name", show_default=True)
-@click.option("--output-tsv", type=click.Path(), help="Optional: Save longest ref_id analysis to TSV file")
+@click.option(
+    "--output-tsv", type=click.Path(), help="Optional: Save longest ref_id analysis to TSV file"
+)
 def cli(mongo_uri: str, database: str, collection: str, output_tsv: str | None) -> None:
     """Analyze ref_id field format."""
     client = MongoClient(mongo_uri)
@@ -165,7 +171,9 @@ def cli(mongo_uri: str, database: str, collection: str, output_tsv: str | None) 
     console.print("[bold]Analyzing ref_id field:[/bold]")
 
     has_ref_id = coll.count_documents({"ref_id": {"$exists": True, "$nin": [None, "NA"]}})
-    console.print(f"  Documents with ref_id (non-NA): {has_ref_id:,} ({has_ref_id / total_docs * 100:.2f}%)")
+    console.print(
+        f"  Documents with ref_id (non-NA): {has_ref_id:,} ({has_ref_id / total_docs * 100:.2f}%)"
+    )
 
     console.print("\n  Data types found in ref_id:")
     for item in get_ref_id_type_counts(coll):

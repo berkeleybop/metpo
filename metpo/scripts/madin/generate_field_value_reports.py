@@ -18,6 +18,7 @@ def get_madin_output_dir() -> Path:
     """Get the default output directory for madin analysis."""
     return Path(__file__).parent.parent.parent.parent / "docs" / "madin_paths"
 
+
 console = Console()
 
 
@@ -58,9 +59,7 @@ def generate_categorical_report(
         total_docs: Total number of documents in collection
     """
     # Count documents with field
-    has_field = coll.count_documents(
-        {field_name: {"$exists": True, "$nin": [None, "NA"]}}
-    )
+    has_field = coll.count_documents({field_name: {"$exists": True, "$nin": [None, "NA"]}})
 
     # Count occurrences
     value_counter = Counter()
@@ -83,9 +82,7 @@ def generate_categorical_report(
         for value, count in value_counter.most_common():
             pct_of_has_field = (count / has_field * 100) if has_field > 0 else 0
             pct_of_total = (count / total_docs * 100) if total_docs > 0 else 0
-            writer.writerow(
-                [value, count, f"{pct_of_has_field:.2f}", f"{pct_of_total:.2f}"]
-            )
+            writer.writerow([value, count, f"{pct_of_has_field:.2f}", f"{pct_of_total:.2f}"])
 
     console.print(
         f"  [green]✓[/green] {field_name}: {len(value_counter)} unique values → {output_file.name}"
@@ -211,9 +208,7 @@ def cli(
     ]
     list_fields = [name for name, meta in fields.items() if meta["data_type"] == "list"]
 
-    console.print(
-        f"[bold cyan]Categorical fields:[/bold cyan] {len(categorical_fields)}"
-    )
+    console.print(f"[bold cyan]Categorical fields:[/bold cyan] {len(categorical_fields)}")
     console.print(f"[bold cyan]List fields:[/bold cyan] {len(list_fields)}\n")
 
     # Generate categorical reports
@@ -232,9 +227,7 @@ def cli(
             generate_list_report(coll, field_name, output_file, total_docs)
         console.print()
 
-    console.print(
-        f"[bold green]✓ Complete![/bold green] All reports saved to {output_path}/"
-    )
+    console.print(f"[bold green]✓ Complete![/bold green] All reports saved to {output_path}/")
 
     client.close()
 

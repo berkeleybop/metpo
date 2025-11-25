@@ -15,10 +15,14 @@ console = Console()
 
 def get_tax_id_type_counts(coll: Collection) -> list[dict]:
     """Get counts of different data types in tax_id field."""
-    return list(coll.aggregate([
-        {"$match": {"tax_id": {"$exists": True, "$ne": None}}},
-        {"$group": {"_id": {"$type": "$tax_id"}, "count": {"$sum": 1}}},
-    ]))
+    return list(
+        coll.aggregate(
+            [
+                {"$match": {"tax_id": {"$exists": True, "$ne": None}}},
+                {"$group": {"_id": {"$type": "$tax_id"}, "count": {"$sum": 1}}},
+            ]
+        )
+    )
 
 
 def get_anomaly_counts(coll: Collection) -> dict[str, int]:
@@ -42,10 +46,15 @@ def print_anomaly_counts(counts: dict[str, int]) -> None:
 
 def compare_tax_ids(coll: Collection) -> tuple[int, int, list[dict]]:
     """Compare tax_id and species_tax_id fields."""
-    both_fields = list(coll.find(
-        {"tax_id": {"$exists": True, "$ne": None}, "species_tax_id": {"$exists": True, "$ne": None}},
-        {"tax_id": 1, "species_tax_id": 1, "org_name": 1, "species": 1},
-    ).limit(100))
+    both_fields = list(
+        coll.find(
+            {
+                "tax_id": {"$exists": True, "$ne": None},
+                "species_tax_id": {"$exists": True, "$ne": None},
+            },
+            {"tax_id": 1, "species_tax_id": 1, "org_name": 1, "species": 1},
+        ).limit(100)
+    )
 
     same_count = 0
     different_count = 0
@@ -87,8 +96,12 @@ def display_different_examples(different_examples: list[dict]) -> None:
 
 def get_tax_id_range(coll: Collection) -> tuple[Any, Any]:
     """Get min and max tax_id values."""
-    min_tax = list(coll.find({"tax_id": {"$type": "number"}}, {"tax_id": 1}).sort("tax_id", 1).limit(1))
-    max_tax = list(coll.find({"tax_id": {"$type": "number"}}, {"tax_id": 1}).sort("tax_id", -1).limit(1))
+    min_tax = list(
+        coll.find({"tax_id": {"$type": "number"}}, {"tax_id": 1}).sort("tax_id", 1).limit(1)
+    )
+    max_tax = list(
+        coll.find({"tax_id": {"$type": "number"}}, {"tax_id": 1}).sort("tax_id", -1).limit(1)
+    )
 
     min_val = min_tax[0]["tax_id"] if min_tax else None
     max_val = max_tax[0]["tax_id"] if max_tax else None
@@ -126,13 +139,23 @@ def save_analysis_tsv(
         writer.writerow(["metric", "value"])
         writer.writerow(["total_documents", total_docs])
         writer.writerow(["docs_with_tax_id", has_tax_id])
-        writer.writerow(["tax_id_coverage_pct", f"{has_tax_id / total_docs * 100:.2f}" if total_docs > 0 else "0"])
+        writer.writerow(
+            [
+                "tax_id_coverage_pct",
+                f"{has_tax_id / total_docs * 100:.2f}" if total_docs > 0 else "0",
+            ]
+        )
         writer.writerow(["string_tax_ids", anomaly_counts["string_tax_ids"]])
         writer.writerow(["negative_tax_ids", anomaly_counts["negative_tax_ids"]])
         writer.writerow(["zero_tax_ids", anomaly_counts["zero_tax_ids"]])
         writer.writerow(["large_tax_ids_over_10M", anomaly_counts["large_tax_ids"]])
         writer.writerow(["docs_with_species_tax_id", has_species_tax_id])
-        writer.writerow(["species_tax_id_coverage_pct", f"{has_species_tax_id / total_docs * 100:.2f}" if total_docs > 0 else "0"])
+        writer.writerow(
+            [
+                "species_tax_id_coverage_pct",
+                f"{has_species_tax_id / total_docs * 100:.2f}" if total_docs > 0 else "0",
+            ]
+        )
         if min_tax is not None:
             writer.writerow(["min_tax_id", min_tax])
         if max_tax is not None:
@@ -170,7 +193,9 @@ def cli(mongo_uri: str, database: str, collection: str, output_tsv: str | None) 
     # Analyze species_tax_id field
     console.print("\n[bold]Analyzing species_tax_id field:[/bold]")
     has_species_tax_id = coll.count_documents({"species_tax_id": {"$exists": True, "$ne": None}})
-    console.print(f"  Documents with species_tax_id: {has_species_tax_id:,} ({has_species_tax_id / total_docs * 100:.2f}%)")
+    console.print(
+        f"  Documents with species_tax_id: {has_species_tax_id:,} ({has_species_tax_id / total_docs * 100:.2f}%)"
+    )
 
     # Compare tax_id and species_tax_id
     console.print("\n[bold]Comparing tax_id and species_tax_id:[/bold]")
@@ -190,7 +215,15 @@ def cli(mongo_uri: str, database: str, collection: str, output_tsv: str | None) 
     print_string_tax_id_samples(coll)
 
     if output_tsv:
-        save_analysis_tsv(Path(output_tsv), total_docs, has_tax_id, anomaly_counts, has_species_tax_id, min_tax, max_tax)
+        save_analysis_tsv(
+            Path(output_tsv),
+            total_docs,
+            has_tax_id,
+            anomaly_counts,
+            has_species_tax_id,
+            min_tax,
+            max_tax,
+        )
 
     client.close()
 

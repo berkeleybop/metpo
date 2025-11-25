@@ -135,9 +135,7 @@ def cli(mongo_uri: str, database: str, collection: str, output_tsv: str | None) 
     is_valid, name, rank = check_ncbi_taxid(7)
     if is_valid:
         console.print(f"  ✓ tax_id=7 is valid: {name} (rank: {rank})")
-        console.print(
-            "  Note: Low tax_ids were assigned early in NCBI Taxonomy history"
-        )
+        console.print("  Note: Low tax_ids were assigned early in NCBI Taxonomy history")
     else:
         console.print("  ✗ tax_id=7 not found in NCBI")
 

@@ -29,11 +29,13 @@ def read_references_csv(ref_path: Path) -> list[dict]:
             with ref_path.open(encoding=encoding) as f:
                 reader = csv.DictReader(f)
                 for row in reader:
-                    documents.append({
-                        "ref_id": int(row["ref_id"]),
-                        "ref_type": row["ref_type"],
-                        "reference": row["reference"],
-                    })
+                    documents.append(
+                        {
+                            "ref_id": int(row["ref_id"]),
+                            "ref_type": row["ref_type"],
+                            "reference": row["reference"],
+                        }
+                    )
 
             logger.info(f"Successfully read file with encoding: {encoding}")
             console.print(f"[green]File encoding detected: {encoding}[/green]")
@@ -69,7 +71,9 @@ def check_duplicates(coll: Collection) -> None:
     ]
     dup_result = list(coll.aggregate(pipeline))
     if dup_result:
-        console.print(f"[yellow]Warning: Found {dup_result[0]['total_duplicates']} ref_ids with duplicates[/yellow]")
+        console.print(
+            f"[yellow]Warning: Found {dup_result[0]['total_duplicates']} ref_ids with duplicates[/yellow]"
+        )
     else:
         console.print("[green]No duplicate ref_ids found[/green]")
 
@@ -87,12 +91,26 @@ def show_verification(coll: Collection) -> None:
 
 
 @click.command()
-@click.option("--mongo-uri", default="mongodb://localhost:27017", help="MongoDB connection URI", show_default=True)
+@click.option(
+    "--mongo-uri",
+    default="mongodb://localhost:27017",
+    help="MongoDB connection URI",
+    show_default=True,
+)
 @click.option("--database", default="madin", help="Database name", show_default=True)
-@click.option("--collection", default="references", help="Collection name for references", show_default=True)
-@click.option("--references-file", required=True, help="Path to references.csv file", type=click.Path(exists=True))
+@click.option(
+    "--collection", default="references", help="Collection name for references", show_default=True
+)
+@click.option(
+    "--references-file",
+    required=True,
+    help="Path to references.csv file",
+    type=click.Path(exists=True),
+)
 @click.option("--drop-existing", is_flag=True, help="Drop existing collection before loading")
-def cli(mongo_uri: str, database: str, collection: str, references_file: str, drop_existing: bool) -> None:
+def cli(
+    mongo_uri: str, database: str, collection: str, references_file: str, drop_existing: bool
+) -> None:
     """Load madin references from CSV into MongoDB."""
     try:
         ref_path = Path(references_file)

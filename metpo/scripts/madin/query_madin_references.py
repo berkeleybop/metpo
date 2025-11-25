@@ -70,7 +70,11 @@ def display_top_refs_table(top_refs: list[dict], ref_coll: Collection) -> None:
         ref_doc = ref_coll.find_one({"ref_id": ref_id})
         ref_text = "NOT FOUND"
         if ref_doc:
-            ref_text = ref_doc["reference"][:80] + "..." if len(ref_doc["reference"]) > 80 else ref_doc["reference"]
+            ref_text = (
+                ref_doc["reference"][:80] + "..."
+                if len(ref_doc["reference"]) > 80
+                else ref_doc["reference"]
+            )
         table.add_row(str(i), str(ref_id), f"{item['count']:,}", ref_text)
 
     console.print(table)
@@ -90,7 +94,9 @@ def save_top_refs_tsv(top_refs: list[dict], ref_coll: Collection, output_path: P
     console.print(f"\n[green]Results saved to {output_path}[/green]")
 
 
-def show_collection_statistics(ref_coll: Collection, madin_coll: Collection, output_tsv: str | None) -> None:
+def show_collection_statistics(
+    ref_coll: Collection, madin_coll: Collection, output_tsv: str | None
+) -> None:
     """Show statistics about the reference collection."""
     total_refs = ref_coll.count_documents({})
     console.print("\n[bold]Reference Collection Statistics:[/bold]")
@@ -112,7 +118,12 @@ def show_collection_statistics(ref_coll: Collection, madin_coll: Collection, out
 
 
 @click.command()
-@click.option("--mongo-uri", default="mongodb://localhost:27017", help="MongoDB connection URI", show_default=True)
+@click.option(
+    "--mongo-uri",
+    default="mongodb://localhost:27017",
+    help="MongoDB connection URI",
+    show_default=True,
+)
 @click.option("--database", default="madin", help="Database name", show_default=True)
 @click.option("--ref-id", type=int, help="Specific ref_id to look up")
 @click.option("--output-tsv", type=click.Path(), help="Optional: Save results to TSV file")
