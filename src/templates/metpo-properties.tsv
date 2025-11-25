@@ -68,46 +68,48 @@ METPO:2000071	has value	owl:DataProperty			xsd:decimal			Relates any instance to
 METPO:2000101	has quality	owl:ObjectProperty		microbe	quality						
 METPO:2000102	has phenotype	owl:ObjectProperty		microbe	phenotype	has quality	https://biolink.github.io/biolink-model/has_phenotype				
 METPO:2000103	capable of	owl:ObjectProperty		microbe	biological process		https://biolink.github.io/biolink-model/capable_of				
-METPO:2000200	disproportionates	owl:ObjectProperty	lost anabolizes synonym			organism interacts with chemical			oboInOwl:hasRelatedSynonym 'dismutates'	https://bacdive.dsmz.de/	+
-METPO:2000201	lyses	owl:ObjectProperty				organism interacts with chemical					
-METPO:2000202	synthesizes	owl:ObjectProperty				organism interacts with chemical			oboInOwl:hasRelatedSynonym 'produces'|oboInOwl:hasRelatedSynonym 'anabolizes'	https://bacdive.dsmz.de/	+
-METPO:2000203	fixes	owl:ObjectProperty				organism interacts with chemical					
-METPO:2000204	catabolizes	owl:ObjectProperty				organism interacts with chemical					
-METPO:2000205	mineralizes	owl:ObjectProperty				organism interacts with chemical					
-METPO:2000206	conjugates	owl:ObjectProperty				organism interacts with chemical					
+METPO:2000200	disproportionates	owl:ObjectProperty				organism interacts with chemical			oboInOwl:hasRelatedSynonym 'dismutates'	https://bacdive.dsmz.de/	+
 METPO:2000207	transports	owl:ObjectProperty				organism interacts with chemical					
+METPO:2000202	produces	owl:ObjectProperty				organism interacts with chemical			oboInOwl:hasRelatedSynonym 'produces'	https://bacdive.dsmz.de/	+
+METPO:2000227	does not transport	owl:ObjectProperty				organism interacts with chemical					
+METPO:2000210	accumulates	owl:ObjectProperty				organism interacts with chemical					
+METPO:2000230	does not accumulate	owl:ObjectProperty				organism interacts with chemical					
+											
+											
 METPO:2000208	imports	owl:ObjectProperty		microbe	chemical entity	transports					
 METPO:2000209	exports	owl:ObjectProperty		microbe	chemical entity	transports					
-METPO:2000210	accumulates	owl:ObjectProperty				organism interacts with chemical					
+											
 METPO:2000211	sequesters	owl:ObjectProperty		microbe	chemical entity	accumulates					
 METPO:2000212	compartmentalizes	owl:ObjectProperty		microbe	chemical entity	accumulates					
-METPO:2000213	binds	owl:ObjectProperty				organism interacts with chemical					
-METPO:2000214	chelates	owl:ObjectProperty				organism interacts with chemical					
-METPO:2000215	precipitates	owl:ObjectProperty				organism interacts with chemical					
-METPO:2000216	solubilizes	owl:ObjectProperty				organism interacts with chemical					
-METPO:2000217	volatilizes	owl:ObjectProperty				organism interacts with chemical					
-METPO:2000218	crystallizes	owl:ObjectProperty				organism interacts with chemical					
-METPO:2000219	adsorbs	owl:ObjectProperty				organism interacts with chemical					
-METPO:2000220	does not disproportionate	owl:ObjectProperty				organism interacts with chemical					
-METPO:2000221	does not lyse	owl:ObjectProperty				organism interacts with chemical					
-METPO:2000222	does not produce	owl:ObjectProperty				organism interacts with chemical					
-METPO:2000223	does not fix	owl:ObjectProperty				organism interacts with chemical					
-METPO:2000224	does not catabolize	owl:ObjectProperty				organism interacts with chemical					
-METPO:2000225	does not mineralize	owl:ObjectProperty				organism interacts with chemical					
-METPO:2000226	does not conjugate	owl:ObjectProperty				organism interacts with chemical					
-METPO:2000227	does not transport	owl:ObjectProperty				organism interacts with chemical					
+											
+											
+											
+											
+											
+											
+											
+METPO:2000220	does not disproportionate	owl:ObjectProperty				organism interacts with chemical			oboInOwl:hasRelatedSynonym 'dismutates'	https://bacdive.dsmz.de/	-
+											
+METPO:2000222	does not produce	owl:ObjectProperty				organism interacts with chemical			oboInOwl:hasRelatedSynonym 'produces'	https://bacdive.dsmz.de/	-
+											
+											
+											
+											
+											
 METPO:2000228	does not import	owl:ObjectProperty		microbe	chemical entity	does not transport					
 METPO:2000229	does not export	owl:ObjectProperty		microbe	chemical entity	does not transport					
-METPO:2000230	does not accumulate	owl:ObjectProperty				organism interacts with chemical					
+											
 METPO:2000231	does not sequester	owl:ObjectProperty		microbe	chemical entity	does not accumulate					
 METPO:2000232	does not compartmentalize	owl:ObjectProperty		microbe	chemical entity	does not accumulate					
-METPO:2000233	does not bind	owl:ObjectProperty				organism interacts with chemical					
-METPO:2000234	does not chelate	owl:ObjectProperty				organism interacts with chemical					
-METPO:2000235	does not precipitate	owl:ObjectProperty				organism interacts with chemical					
-METPO:2000236	does not solubilize	owl:ObjectProperty				organism interacts with chemical					
-METPO:2000237	does not volatilize	owl:ObjectProperty				organism interacts with chemical					
-METPO:2000238	does not crystallize	owl:ObjectProperty				organism interacts with chemical					
+											
+											
+											
+											
+											
+											
 METPO:2000239	has pH observation	owl:ObjectProperty		microbe	pH observation	has observation		Relates a microbe to a pH observation.			
+METPO:2000301	enzyme activity analyzed	owl:ObjectProperty		microbe	enzyme				oboInOwl:hasRelatedSynonym 'Physiology and metabolism.enzymes.[].activity'	https://bacdive.dsmz.de/	
+METPO:2000302	shows activity of	owl:ObjectProperty		microbe	enzyme	enzyme activity analyzed			oboInOwl:hasRelatedSynonym 'Physiology and metabolism.enzymes.[].activity'	https://bacdive.dsmz.de/	+
 METPO:2000501	has optimum pH observation	owl:ObjectProperty		microbe	optimum pH observation	has pH observation		Relates a microbe to an optimum pH observation.			
 METPO:2000502	has growth pH observation	owl:ObjectProperty		microbe	growth pH observation	has pH observation		Relates a microbe to a growth pH observation.			
 METPO:2000503	has range pH observation	owl:ObjectProperty		microbe	pH range observation	has pH observation		Relates a microbe to a growth pH range observation.			
@@ -123,3 +125,4 @@ METPO:2000513	has optimum oxygen observation	owl:ObjectProperty		microbe	optimum
 METPO:2000514	has growth oxygen observation	owl:ObjectProperty		microbe	growth oxygen observation	has oxygen observation		Relates a microbe to a growth oxygen observation.			
 METPO:2000515	has range oxygen observation	owl:ObjectProperty		microbe	oxygen range observation	has oxygen observation		Relates a microbe to a growth oxygen range observation.			
 METPO:2000516	has oxygen delta observation	owl:ObjectProperty		microbe	oxygen delta observation	has oxygen observation		Relates a microbe to a oxygen tolerance breadth (delta) observation.			
+METPO:2000303	does not show activity of	owl:ObjectProperty		microbe	enzyme	enzyme activity analyzed			oboInOwl:hasRelatedSynonym 'Physiology and metabolism.enzymes.[].activity'	https://bacdive.dsmz.de/	-

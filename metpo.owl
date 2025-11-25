@@ -15,14 +15,14 @@
      xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="https://w3id.org/metpo/metpo.owl">
-        <owl:versionIRI rdf:resource="https://w3id.org/metpo/metpo/releases/2025-11-21/metpo.owl"/>
+        <owl:versionIRI rdf:resource="https://w3id.org/metpo/metpo/releases/2025-11-25/metpo.owl"/>
         <dcterms:creator>METPO Development Team</dcterms:creator>
         <dcterms:description>Microbial ecophysiological trait and phenotype ontology</dcterms:description>
         <dcterms:issued>2024-01-01</dcterms:issued>
         <dcterms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
         <dcterms:modified>2025-09-29</dcterms:modified>
         <dcterms:title>METPO</dcterms:title>
-        <owl:versionInfo>2025-11-21</owl:versionInfo>
+        <owl:versionInfo>2025-11-25</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -1073,71 +1073,19 @@
     
 
 
-    <!-- https://w3id.org/metpo/2000201 -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000201">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
-        <rdfs:label>lyses</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://w3id.org/metpo/2000202 -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000202">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
-        <oboInOwl:hasRelatedSynonym>anabolizes</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>produces</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>synthesizes</rdfs:label>
+        <rdfs:label>produces</rdfs:label>
     </owl:ObjectProperty>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000202"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>anabolizes</owl:annotatedTarget>
-        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
-    </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000202"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>produces</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
     </owl:Axiom>
-    
-
-
-    <!-- https://w3id.org/metpo/2000203 -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000203">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
-        <rdfs:label>fixes</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/metpo/2000204 -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000204">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
-        <rdfs:label>catabolizes</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/metpo/2000205 -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000205">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
-        <rdfs:label>mineralizes</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/metpo/2000206 -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000206">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
-        <rdfs:label>conjugates</rdfs:label>
-    </owl:ObjectProperty>
     
 
 
@@ -1203,84 +1151,19 @@
     
 
 
-    <!-- https://w3id.org/metpo/2000213 -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000213">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
-        <rdfs:label>binds</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/metpo/2000214 -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000214">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
-        <rdfs:label>chelates</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/metpo/2000215 -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000215">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
-        <rdfs:label>precipitates</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/metpo/2000216 -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000216">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
-        <rdfs:label>solubilizes</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/metpo/2000217 -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000217">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
-        <rdfs:label>volatilizes</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/metpo/2000218 -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000218">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
-        <rdfs:label>crystallizes</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/metpo/2000219 -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000219">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
-        <rdfs:label>adsorbs</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://w3id.org/metpo/2000220 -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000220">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>dismutates</oboInOwl:hasRelatedSynonym>
         <rdfs:label>does not disproportionate</rdfs:label>
     </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/metpo/2000221 -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000221">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
-        <rdfs:label>does not lyse</rdfs:label>
-    </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000220"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>dismutates</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -1288,44 +1171,15 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000222">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>produces</oboInOwl:hasRelatedSynonym>
         <rdfs:label>does not produce</rdfs:label>
     </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/metpo/2000223 -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000223">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
-        <rdfs:label>does not fix</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/metpo/2000224 -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000224">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
-        <rdfs:label>does not catabolize</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/metpo/2000225 -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000225">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
-        <rdfs:label>does not mineralize</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/metpo/2000226 -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000226">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
-        <rdfs:label>does not conjugate</rdfs:label>
-    </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000222"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>produces</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -1391,60 +1245,6 @@
     
 
 
-    <!-- https://w3id.org/metpo/2000233 -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000233">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
-        <rdfs:label>does not bind</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/metpo/2000234 -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000234">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
-        <rdfs:label>does not chelate</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/metpo/2000235 -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000235">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
-        <rdfs:label>does not precipitate</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/metpo/2000236 -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000236">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
-        <rdfs:label>does not solubilize</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/metpo/2000237 -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000237">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
-        <rdfs:label>does not volatilize</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/metpo/2000238 -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000238">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
-        <rdfs:label>does not crystallize</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://w3id.org/metpo/2000239 -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000239">
@@ -1454,6 +1254,59 @@
         <obo:IAO_0000115>Relates a microbe to a pH observation.</obo:IAO_0000115>
         <rdfs:label>has pH observation</rdfs:label>
     </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000301 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000301">
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1000527"/>
+        <oboInOwl:hasRelatedSynonym>Physiology and metabolism.enzymes.[].activity</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>enzyme activity analyzed</rdfs:label>
+    </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000301"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>Physiology and metabolism.enzymes.[].activity</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/2000302 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000302">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000301"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1000527"/>
+        <oboInOwl:hasRelatedSynonym>Physiology and metabolism.enzymes.[].activity</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>shows activity of</rdfs:label>
+    </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000302"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>Physiology and metabolism.enzymes.[].activity</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/2000303 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000303">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000301"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1000527"/>
+        <oboInOwl:hasRelatedSynonym>Physiology and metabolism.enzymes.[].activity</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>does not show activity of</rdfs:label>
+    </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000303"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>Physiology and metabolism.enzymes.[].activity</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
     
 
 
@@ -4088,6 +3941,15 @@
         <owl:annotatedTarget>A material entity that is a physical entity of interest in chemistry including molecular entities, parts thereof, and chemical substances.</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/CHEBI_24431"/>
     </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1000527 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1000527">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000186"/>
+        <rdfs:label>enzyme</rdfs:label>
+    </owl:Class>
     
 
 
