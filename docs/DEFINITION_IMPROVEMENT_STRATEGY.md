@@ -615,8 +615,7 @@ All in `metpo/scripts/`, callable via `uv run <command>`:
 - `chromadb-semantic-mapper` - Query ChromaDB for semantic matches
 - `analyze-definition-opportunities` - Identify terms needing definitions
 - `bootstrap-definition-enrichment` - Fetch definitions from OLS4 API
-- `find-best-definitions` - Find best definition per term from SSSOM
-- `find-best-definitions-comprehensive` - Combined SSSOM + API search
+- `find-best-definitions-comprehensive` - Combined SSSOM + API search with quality ranking
 - `compare-definitions-with-hierarchy` - Check genus compatibility
 
 ### New Scripts Needed (Prioritized)

@@ -108,7 +108,6 @@ notebooks/
 │
 ├── Jupyter Notebooks:
 ├── explore_embeddings.ipynb
-├── query_chromadb.ipynb
 │
 └── Data Files (12 CSV files with results)
 ```

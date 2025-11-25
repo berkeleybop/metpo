@@ -1,0 +1,66 @@
+source	subject_category	subject_prefix	predicate	object_category	object_prefix	count	status	violation
+bacdive	biolink:PhenotypicQuality	assay	biolink:assesses	biolink:OrganismTaxon	NCBITaxon	404550	OK	
+bacdive	biolink:OrganismTaxon	NCBITaxon	biolink:consumes	biolink:ChemicalEntity	CHEBI	260019	OK	
+bacdive	biolink:OrganismTaxon	strain	biolink:subclass_of	biolink:OrganismTaxon	NCBITaxon	159751	OK	
+bacdive	biolink:OrganismTaxon	strain	biolink:consumes	biolink:ChemicalEntity	CHEBI	132698	OK	
+bacdive	biolink:OrganismTaxon	NCBITaxon	biolink:capable_of	biolink:PhenotypicQuality	EC	129045	VIOLATION	Range violation: biolink:PhenotypicQuality is not a Occurrent
+bacdive	biolink:PhenotypicQuality	assay	biolink:assesses	biolink:OrganismTaxon	strain	117849	OK	
+bacdive	biolink:EnvironmentalFeature	isolation_source	biolink:location_of	biolink:OrganismTaxon	NCBITaxon	100296	OK	
+bacdive	biolink:OrganismTaxon	NCBITaxon	biolink:has_phenotype	biolink:PhenotypicQuality	METPO	92898	OK	
+bactotraits	biolink:OrganismTaxon	NCBITaxon	biolink:has_phenotype	biolink:PhenotypicQuality	METPO	90768	OK	
+bacdive	biolink:EnvironmentalFeature	isolation_source	biolink:location_of	biolink:OrganismTaxon	strain	68079	OK	
+bacdive	biolink:OrganismTaxon	strain	biolink:capable_of	biolink:PhenotypicQuality	EC	56969	VIOLATION	Range violation: biolink:PhenotypicQuality is not a Occurrent
+madin_etal	biolink:OrganismTaxon	NCBITaxon	biolink:has_phenotype	(empty)	METPO	44081	VIOLATION	Range violation: (empty) is not a PhenotypicFeature
+madin_etal	biolink:OrganismTaxon	NCBITaxon	biolink:consumes	biolink:ChemicalEntity	CHEBI	36816	OK	
+bacdive	biolink:OrganismTaxon	NCBITaxon	biolink:occurs_in	biolink:ChemicalEntity	medium	36521	OK	
+bacdive	biolink:OrganismTaxon	strain	biolink:has_phenotype	biolink:PhenotypicQuality	METPO	26160	OK	
+bacdive	biolink:OrganismTaxon	strain	biolink:occurs_in	biolink:ChemicalEntity	medium	16474	OK	
+madin_etal	(unknown)	ENVO	biolink:location_of	biolink:OrganismTaxon	NCBITaxon	14888	VIOLATION	Domain violation: (unknown) is not a NamedThing
+bacdive	biolink:OrganismTaxon	strain	biolink:subclass_of	(unknown)	NCBITaxon	13010	VIOLATION	Range violation: (unknown) is not a OntologyClass
+bacdive	biolink:OrganismTaxon	NCBITaxon	biolink:associated_with_sensitivity_to	biolink:ChemicalEntity	CHEBI	12511	OK	
+bacdive	biolink:OrganismTaxon	NCBITaxon	biolink:associated_with_resistance_to	biolink:ChemicalEntity	CHEBI	10296	UNKNOWN_PREDICATE	Predicate biolink:associated_with_resistance_to not in Biolink Model
+bacdive	biolink:OrganismTaxon	NCBITaxon	biolink:produces	biolink:ChemicalEntity	CHEBI	8620	UNKNOWN_PREDICATE	Predicate biolink:produces not in Biolink Model
+madin_etal	(empty)	isolation_source	biolink:location_of	biolink:OrganismTaxon	NCBITaxon	6775	VIOLATION	Domain violation: (empty) is not a NamedThing
+madin_etal	biolink:OrganismTaxon	NCBITaxon	biolink:capable_of	biolink:BiologicalProcess	pathways	4407	OK	
+madin_etal	biolink:EnvironmentalFeature	UBERON	biolink:location_of	biolink:OrganismTaxon	NCBITaxon	2802	OK	
+bacdive	biolink:OrganismTaxon	NCBITaxon	biolink:has_phenotype	biolink:PhenotypicQuality	pathogen	2676	OK	
+bacdive	biolink:OrganismTaxon	strain	biolink:produces	biolink:ChemicalEntity	CHEBI	2651	UNKNOWN_PREDICATE	Predicate biolink:produces not in Biolink Model
+madin_etal	biolink:OrganismTaxon	NCBITaxon	biolink:capable_of	(empty)	METPO	1770	VIOLATION	Range violation: (empty) is not a Occurrent
+madin_etal	biolink:OrganismTaxon	NCBITaxon	biolink:capable_of	biolink:BiologicalProcess	GO	1316	OK	
+bacdive	(unknown)	NCBITaxon	biolink:has_phenotype	biolink:PhenotypicQuality	METPO	1208	VIOLATION	Domain violation: (unknown) is not a BiologicalEntity
+madin_etal	biolink:EnvironmentalFeature	CHEBI	biolink:location_of	biolink:OrganismTaxon	NCBITaxon	910	OK	
+bacdive	biolink:OrganismTaxon	NCBITaxon	biolink:produces	biolink:ChemicalSubstance	CHEBI	792	UNKNOWN_PREDICATE	Predicate biolink:produces not in Biolink Model
+bacdive	biolink:EnvironmentalFeature	isolation_source	biolink:location_of	(unknown)	NCBITaxon	755	VIOLATION	Range violation: (unknown) is not a NamedThing
+bacdive	biolink:OrganismTaxon	strain	biolink:has_phenotype	biolink:PhenotypicQuality	pathogen	735	OK	
+bacdive	(unknown)	NCBITaxon	biolink:consumes	biolink:ChemicalEntity	CHEBI	730	VIOLATION	Domain violation: (unknown) is not a NamedThing
+madin_etal	biolink:EnvironmentalFeature	NCBITaxon	biolink:location_of	biolink:OrganismTaxon	NCBITaxon	624	OK	
+madin_etal	(unknown)	PATO	biolink:location_of	biolink:OrganismTaxon	NCBITaxon	569	VIOLATION	Domain violation: (unknown) is not a NamedThing
+bacdive	biolink:OrganismTaxon	strain	biolink:produces	biolink:ChemicalSubstance	CHEBI	446	UNKNOWN_PREDICATE	Predicate biolink:produces not in Biolink Model
+bacdive	biolink:ChemicalEntity	CHEBI	biolink:occurs_in	biolink:PhenotypicQuality	assay	258	OK	
+madin_etal	biolink:ChemicalEntity	CHEBI	biolink:has_chemical_role	biolink:ChemicalRole	CHEBI	236	UNKNOWN_PREDICATE	Predicate biolink:has_chemical_role not in Biolink Model
+bacdive	biolink:OrganismTaxon	NCBITaxon	biolink:capable_of	biolink:PhenotypicQuality	pathways	157	VIOLATION	Range violation: biolink:PhenotypicQuality is not a Occurrent
+madin_etal	(unknown)	CHEBI	biolink:has_chemical_role	biolink:ChemicalRole	CHEBI	121	UNKNOWN_PREDICATE	Predicate biolink:has_chemical_role not in Biolink Model
+bacdive	biolink:PhenotypicQuality	EC	biolink:is_assessed_by	biolink:PhenotypicQuality	assay	98	UNKNOWN_PREDICATE	Predicate biolink:is_assessed_by not in Biolink Model
+bacdive	biolink:OrganismTaxon	NCBITaxon	biolink:has_phenotype	biolink:PhenotypicQuality	salinity	95	OK	
+bacdive	biolink:OrganismTaxon	strain	biolink:has_phenotype	biolink:PhenotypicQuality	salinity	95	OK	
+madin_etal	(unknown)	PO	biolink:location_of	biolink:OrganismTaxon	NCBITaxon	77	VIOLATION	Domain violation: (unknown) is not a NamedThing
+bacdive	biolink:ChemicalEntity	CAS-RN	biolink:occurs_in	biolink:PhenotypicQuality	assay	68	OK	
+bacdive	biolink:PhenotypicQuality	EC	biolink:consumes	biolink:ChemicalEntity	CAS-RN	28	OK	
+bacdive	biolink:OrganismTaxon	strain	biolink:capable_of	biolink:PhenotypicQuality	pathways	26	VIOLATION	Range violation: biolink:PhenotypicQuality is not a Occurrent
+bacdive	biolink:PhenotypicQuality	assay	biolink:assesses	(unknown)	NCBITaxon	17	OK	
+bacdive	biolink:PhenotypicQuality	EC	biolink:consumes	biolink:ChemicalEntity	CHEBI	16	OK	
+bacdive	biolink:ChemicalEntity	CHEBI	biolink:occurs_in	(unknown)	assay	13	VIOLATION	Range violation: (unknown) is not a NamedThing
+bacdive	(unknown)	NCBITaxon	biolink:produces	biolink:ChemicalEntity	CHEBI	13	UNKNOWN_PREDICATE	Predicate biolink:produces not in Biolink Model
+bacdive	biolink:PhenotypicQuality	EC	biolink:is_assessed_by	(unknown)	assay	9	UNKNOWN_PREDICATE	Predicate biolink:is_assessed_by not in Biolink Model
+bacdive	(unknown)	NCBITaxon	biolink:associated_with_sensitivity_to	biolink:ChemicalEntity	CHEBI	7	VIOLATION	Domain violation: (unknown) is not a NamedThing
+bacdive	biolink:OrganismTaxon	NCBITaxon	biolink:consumes	biolink:ChemicalSubstance	CHEBI	7	OK	
+bacdive	biolink:OrganismTaxon	strain	biolink:consumes	biolink:ChemicalSubstance	CHEBI	7	OK	
+madin_etal	(unknown)	FOODON	biolink:location_of	biolink:OrganismTaxon	NCBITaxon	4	VIOLATION	Domain violation: (unknown) is not a NamedThing
+bacdive	biolink:Enzyme	EC	biolink:is_assessed_by	biolink:PhenotypicQuality	assay	4	UNKNOWN_PREDICATE	Predicate biolink:is_assessed_by not in Biolink Model
+bacdive	biolink:ChemicalEntity	CAS-RN	biolink:occurs_in	(unknown)	assay	3	VIOLATION	Range violation: (unknown) is not a NamedThing
+bacdive	biolink:Enzyme	EC	biolink:consumes	biolink:ChemicalEntity	CAS-RN	3	OK	
+madin_etal	biolink:OrganismTaxon	NCBITaxon	biolink:consumes	(unknown)	carbon_substrates	1	VIOLATION	Range violation: (unknown) is not a NamedThing
+bacdive	biolink:Enzyme	EC	biolink:is_assessed_by	(unknown)	assay	1	UNKNOWN_PREDICATE	Predicate biolink:is_assessed_by not in Biolink Model
+bacdive	biolink:ChemicalEntity	KEGG	biolink:occurs_in	biolink:PhenotypicQuality	assay	1	OK	
+bacdive	(unknown)	NCBITaxon	biolink:associated_with_resistance_to	biolink:ChemicalEntity	CHEBI	1	UNKNOWN_PREDICATE	Predicate biolink:associated_with_resistance_to not in Biolink Model
+bacdive	(unknown)	NCBITaxon	biolink:produces	biolink:ChemicalSubstance	CHEBI	1	UNKNOWN_PREDICATE	Predicate biolink:produces not in Biolink Model
