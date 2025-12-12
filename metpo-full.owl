@@ -15,14 +15,14 @@
      xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="https://w3id.org/metpo/metpo/metpo-full.owl">
-        <owl:versionIRI rdf:resource="https://w3id.org/metpo/metpo/releases/2025-11-25/metpo-full.owl"/>
+        <owl:versionIRI rdf:resource="https://w3id.org/metpo/metpo/releases/2025-12-12/metpo-full.owl"/>
         <dcterms:creator>METPO Development Team</dcterms:creator>
         <dcterms:description>Microbial ecophysiological trait and phenotype ontology</dcterms:description>
         <dcterms:issued>2024-01-01</dcterms:issued>
         <dcterms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
         <dcterms:modified>2025-09-29</dcterms:modified>
         <dcterms:title>METPO</dcterms:title>
-        <owl:versionInfo>2025-11-25</owl:versionInfo>
+        <owl:versionInfo>2025-12-12</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -1484,6 +1484,28 @@
         <rdfs:range rdf:resource="https://w3id.org/metpo/1001019"/>
         <obo:IAO_0000115>Relates a microbe to a oxygen tolerance breadth (delta) observation.</obo:IAO_0000115>
         <rdfs:label>has oxygen delta observation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000517 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000517">
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1004005"/>
+        <obo:IAO_0000115>A relation between a microbe and a growth medium indicating that the microbe has been demonstrated to grow in that medium under some set of conditions. This relation represents a generalization from experimental observations reported in the literature or databases; it does not imply that the microbe will grow in the medium under all conditions.</obo:IAO_0000115>
+        <rdfs:label>grows in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000518 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000518">
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1004005"/>
+        <obo:IAO_0000115>A relation between a microbe and a growth medium indicating that the microbe has been demonstrated to fail to grow in that medium under some set of conditions. This relation represents a generalization from experimental observations reported in the literature or databases; it does not imply that the microbe cannot grow in the medium under any conditions.</obo:IAO_0000115>
+        <rdfs:label>does not grow in</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -8289,6 +8311,24 @@
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>human pathogen</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1004005 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1004005">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000186"/>
+        <obo:IAO_0000115>A processed material that provides the nutrients and environmental conditions necessary for the cultivation of microorganisms in vitro. Growth media may be liquid (broth) or solid (agar-based) and are formulated to support the growth of specific types of organisms.</obo:IAO_0000115>
+        <rdfs:comment>This class is equivalent to OBI:0000079 &apos;culture medium&apos;. It is included in METPO to serve as the range for growth-related object properties.</rdfs:comment>
+        <rdfs:label>growth medium</rdfs:label>
+        <skos:closeMatch rdf:resource="https://biolink.github.io/biolink-model/ChemicalEntity"/>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1004005"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A processed material that provides the nutrients and environmental conditions necessary for the cultivation of microorganisms in vitro. Growth media may be liquid (broth) or solid (agar-based) and are formulated to support the growth of specific types of organisms.</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OBI_0000079"/>
     </owl:Axiom>
 </rdf:RDF>
 
