@@ -7,8 +7,8 @@ Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
 
 
 Ontology(<https://w3id.org/metpo/metpo/components/metpo_sheet.owl>
-<https://w3id.org/metpo/metpo/releases/2025-11-25/components/metpo_sheet.owl>
-Annotation(owl:versionInfo "2025-11-25")
+<https://w3id.org/metpo/metpo/releases/2025-12-12/components/metpo_sheet.owl>
+Annotation(owl:versionInfo "2025-12-12")
 
 Declaration(Class(<https://w3id.org/metpo/1000059>))
 Declaration(Class(<https://w3id.org/metpo/1000060>))
@@ -266,6 +266,7 @@ Declaration(Class(<https://w3id.org/metpo/1004000>))
 Declaration(Class(<https://w3id.org/metpo/1004002>))
 Declaration(Class(<https://w3id.org/metpo/1004003>))
 Declaration(Class(<https://w3id.org/metpo/1004004>))
+Declaration(Class(<https://w3id.org/metpo/1004005>))
 Declaration(ObjectProperty(<https://w3id.org/metpo/2000001>))
 Declaration(ObjectProperty(<https://w3id.org/metpo/2000002>))
 Declaration(ObjectProperty(<https://w3id.org/metpo/2000003>))
@@ -360,6 +361,8 @@ Declaration(ObjectProperty(<https://w3id.org/metpo/2000513>))
 Declaration(ObjectProperty(<https://w3id.org/metpo/2000514>))
 Declaration(ObjectProperty(<https://w3id.org/metpo/2000515>))
 Declaration(ObjectProperty(<https://w3id.org/metpo/2000516>))
+Declaration(ObjectProperty(<https://w3id.org/metpo/2000517>))
+Declaration(ObjectProperty(<https://w3id.org/metpo/2000518>))
 Declaration(DataProperty(<https://w3id.org/metpo/2000058>))
 Declaration(DataProperty(<https://w3id.org/metpo/2000059>))
 Declaration(DataProperty(<https://w3id.org/metpo/2000060>))
@@ -1008,6 +1011,20 @@ AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000516> "has oxygen delt
 SubObjectPropertyOf(<https://w3id.org/metpo/2000516> <https://w3id.org/metpo/2000512>)
 ObjectPropertyDomain(<https://w3id.org/metpo/2000516> <https://w3id.org/metpo/1000525>)
 ObjectPropertyRange(<https://w3id.org/metpo/2000516> <https://w3id.org/metpo/1001019>)
+
+# Object Property: <https://w3id.org/metpo/2000517> (grows in)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000517> "A relation between a microbe and a growth medium indicating that the microbe has been demonstrated to grow in that medium under some set of conditions. This relation represents a generalization from experimental observations reported in the literature or databases; it does not imply that the microbe will grow in the medium under all conditions.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000517> "grows in")
+ObjectPropertyDomain(<https://w3id.org/metpo/2000517> <https://w3id.org/metpo/1000525>)
+ObjectPropertyRange(<https://w3id.org/metpo/2000517> <https://w3id.org/metpo/1004005>)
+
+# Object Property: <https://w3id.org/metpo/2000518> (does not grow in)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000518> "A relation between a microbe and a growth medium indicating that the microbe has been demonstrated to fail to grow in that medium under some set of conditions. This relation represents a generalization from experimental observations reported in the literature or databases; it does not imply that the microbe cannot grow in the medium under any conditions.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000518> "does not grow in")
+ObjectPropertyDomain(<https://w3id.org/metpo/2000518> <https://w3id.org/metpo/1000525>)
+ObjectPropertyRange(<https://w3id.org/metpo/2000518> <https://w3id.org/metpo/1004005>)
 
 
 ############################
@@ -3152,6 +3169,14 @@ AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <htt
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1004004> "human pathogen")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1004004> "human pathogen")
 SubClassOf(<https://w3id.org/metpo/1004004> <https://w3id.org/metpo/1004000>)
+
+# Class: <https://w3id.org/metpo/1004005> (growth medium)
+
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/OBI_0000079>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1004005> "A processed material that provides the nutrients and environmental conditions necessary for the cultivation of microorganisms in vitro. Growth media may be liquid (broth) or solid (agar-based) and are formulated to support the growth of specific types of organisms.")
+AnnotationAssertion(rdfs:comment <https://w3id.org/metpo/1004005> "This class is equivalent to OBI:0000079 'culture medium'. It is included in METPO to serve as the range for growth-related object properties.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1004005> "growth medium")
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/metpo/1004005> <https://biolink.github.io/biolink-model/ChemicalEntity>)
+SubClassOf(<https://w3id.org/metpo/1004005> <https://w3id.org/metpo/1000186>)
 
 
 )
