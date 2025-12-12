@@ -22,9 +22,9 @@
         "val" : "METPO"
       }, {
         "pred" : "http://www.w3.org/2002/07/owl#versionInfo",
-        "val" : "2025-11-25"
+        "val" : "2025-12-12"
       } ],
-      "version" : "https://w3id.org/metpo/metpo/releases/2025-11-25/metpo-full.json"
+      "version" : "https://w3id.org/metpo/metpo/releases/2025-12-12/metpo-full.json"
     },
     "nodes" : [ {
       "id" : "https://w3id.org/metpo/1000059",
@@ -4058,6 +4058,20 @@
         } ]
       }
     }, {
+      "id" : "https://w3id.org/metpo/1004005",
+      "lbl" : "growth medium",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A processed material that provides the nutrients and environmental conditions necessary for the cultivation of microorganisms in vitro. Growth media may be liquid (broth) or solid (agar-based) and are formulated to support the growth of specific types of organisms."
+        },
+        "comments" : [ "This class is equivalent to OBI:0000079 'culture medium'. It is included in METPO to serve as the range for growth-related object properties." ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.w3.org/2004/02/skos/core#closeMatch",
+          "val" : "https://biolink.github.io/biolink-model/ChemicalEntity"
+        } ]
+      }
+    }, {
       "id" : "https://w3id.org/metpo/2000001",
       "lbl" : "organism interacts with chemical",
       "type" : "PROPERTY",
@@ -4979,6 +4993,26 @@
       "meta" : {
         "definition" : {
           "val" : "Relates a microbe to a oxygen tolerance breadth (delta) observation."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000517",
+      "lbl" : "grows in",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "definition" : {
+          "val" : "A relation between a microbe and a growth medium indicating that the microbe has been demonstrated to grow in that medium under some set of conditions. This relation represents a generalization from experimental observations reported in the literature or databases; it does not imply that the microbe will grow in the medium under all conditions."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000518",
+      "lbl" : "does not grow in",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "definition" : {
+          "val" : "A relation between a microbe and a growth medium indicating that the microbe has been demonstrated to fail to grow in that medium under some set of conditions. This relation represents a generalization from experimental observations reported in the literature or databases; it does not imply that the microbe cannot grow in the medium under any conditions."
         }
       }
     }, {
@@ -6162,6 +6196,10 @@
       "pred" : "is_a",
       "obj" : "https://w3id.org/metpo/1004000"
     }, {
+      "sub" : "https://w3id.org/metpo/1004005",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000186"
+    }, {
       "sub" : "https://w3id.org/metpo/2000002",
       "pred" : "subPropertyOf",
       "obj" : "https://w3id.org/metpo/2000001"
@@ -6662,6 +6700,14 @@
       "predicateId" : "https://w3id.org/metpo/2000516",
       "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
       "rangeClassIds" : [ "https://w3id.org/metpo/1001019" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000517",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1004005" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000518",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1004005" ]
     } ]
   } ]
 }
