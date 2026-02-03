@@ -743,3 +743,36 @@ help-alignment:
 #
 # See literature_mining/Makefile for full documentation.
 # ==============================================================================
+
+# ==============================================================================
+# MetaTraits Mappings
+# ==============================================================================
+
+# Path to METPO OWL file from KG-Microbe (adjust as needed)
+METPO_OWL ?= /Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe/data/raw/metpo.owl
+
+.PHONY: metatraits-mappings
+
+# Create SSSOM mappings between MetaTraits and METPO
+data/mappings/metatraits_metpo_kgmicrobe.sssom.tsv: \
+	data/mappings/metatraits_cards.tsv \
+	$(METPO_OWL) \
+	metpo/scripts/create_metatraits_mappings.py
+	@echo "Creating MetaTraits → METPO mappings..."
+	uv run create-metatraits-mappings \
+		--metatraits-input $< \
+		--metpo-owl $(METPO_OWL) \
+		--output $@ \
+		--report reports/metatraits_mapping_analysis.md \
+		--fuzzy-threshold 85
+
+# Fetch MetaTraits trait cards from metatraits.embl.de
+data/mappings/metatraits_cards.tsv: metpo/scripts/fetch_metatraits.py
+	@echo "Fetching MetaTraits trait cards..."
+	uv run fetch-metatraits --output $@
+
+# Convenience target
+metatraits-mappings: data/mappings/metatraits_metpo_kgmicrobe.sssom.tsv
+	@echo "✓ MetaTraits mappings created successfully"
+	@echo "  Output: data/mappings/metatraits_metpo_kgmicrobe.sssom.tsv"
+	@echo "  Report: reports/metatraits_mapping_analysis.md"

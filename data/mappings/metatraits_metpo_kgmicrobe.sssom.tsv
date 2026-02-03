@@ -1,0 +1,433 @@
+# curie_map:
+#   METPO: http://purl.obolibrary.org/obo/METPO_
+#   metatraits: https://metatraits.embl.de/traits#
+#   skos: http://www.w3.org/2004/02/skos/core#
+#   semapv: https://w3id.org/semapv/vocab/
+# mapping_set_id: metatraits-metpo-2026-02-03
+# mapping_date: 2026-02-03
+# mapping_tool: metpo/scripts/create_metatraits_mappings.py
+# mapping_provider: https://github.com/berkeleybop/metpo
+# license: https://creativecommons.org/publicdomain/zero/1.0/
+# comment: Mappings between MetaTraits trait cards and METPO terms (from OWL ontology)
+#
+subject_id	subject_label	predicate_id	object_id	object_label	mapping_justification	confidence	comment
+metatraits:acidophilic	acidophilic	skos:exactMatch	METPO:1003003	acidophilic	semapv:LexicalMatching	1.0	Exact normalized label match
+metatraits:acidophilic	acidophilic	skos:relatedMatch	METPO:1003002	alkaphilic	semapv:MappingChaining	0.85	Both reference OMP:0005009
+metatraits:acidophilic	acidophilic	skos:relatedMatch	METPO:1003005	facultatively alkaphilic	semapv:MappingChaining	0.85	Both reference OMP:0005009
+metatraits:acidophilic	acidophilic	skos:relatedMatch	METPO:1003007	facultatively acidophilic	semapv:MappingChaining	0.85	Both reference OMP:0005009
+metatraits:acidophilic	acidophilic	skos:relatedMatch	METPO:1003009	alkalotolerant	semapv:MappingChaining	0.85	Both reference OMP:0005009
+metatraits:aerobic-catabolization	aerobic catabolization	skos:closeMatch	METPO:2000021	does not use for aerobic catabolization	semapv:LexicalMatching	0.95	MetaTraits name matches METPO synonym
+metatraits:aerobic-catabolization	aerobic catabolization	skos:closeMatch	METPO:2000032	uses for aerobic catabolization	semapv:LexicalMatching	0.95	MetaTraits name matches METPO synonym
+metatraits:aerobic-catabolization	aerobic catabolization	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0009060
+metatraits:aerobic-catabolization	aerobic catabolization	skos:relatedMatch	METPO:1000801	Aerobic respiration	semapv:MappingChaining	0.85	Both reference GO:0009060
+metatraits:aerobic-catabolization-2-oxoglutarate	aerobic catabolization: 2-oxoglutarate	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0009060
+metatraits:aerobic-catabolization-2-oxoglutarate	aerobic catabolization: 2-oxoglutarate	skos:relatedMatch	METPO:1000801	Aerobic respiration	semapv:MappingChaining	0.85	Both reference GO:0009060
+metatraits:aerobic-catabolization-4-hydroxybutyrate	aerobic catabolization: 4-hydroxybutyrate	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0009060
+metatraits:aerobic-catabolization-4-hydroxybutyrate	aerobic catabolization: 4-hydroxybutyrate	skos:relatedMatch	METPO:1000801	Aerobic respiration	semapv:MappingChaining	0.85	Both reference GO:0009060
+metatraits:aerobic-catabolization-acetate	aerobic catabolization: acetate	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0009060
+metatraits:aerobic-catabolization-acetate	aerobic catabolization: acetate	skos:relatedMatch	METPO:1000801	Aerobic respiration	semapv:MappingChaining	0.85	Both reference GO:0009060
+metatraits:aerobic-catabolization-alpha-d-glucose	aerobic catabolization: alpha-D-glucose	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0009060
+metatraits:aerobic-catabolization-alpha-d-glucose	aerobic catabolization: alpha-D-glucose	skos:relatedMatch	METPO:1000801	Aerobic respiration	semapv:MappingChaining	0.85	Both reference GO:0009060
+metatraits:aerobic-catabolization-cellobiose	aerobic catabolization: cellobiose	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0009060
+metatraits:aerobic-catabolization-cellobiose	aerobic catabolization: cellobiose	skos:relatedMatch	METPO:1000801	Aerobic respiration	semapv:MappingChaining	0.85	Both reference GO:0009060
+metatraits:aerobic-catabolization-cis-aconitate	aerobic catabolization: cis-aconitate	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0009060
+metatraits:aerobic-catabolization-cis-aconitate	aerobic catabolization: cis-aconitate	skos:relatedMatch	METPO:1000801	Aerobic respiration	semapv:MappingChaining	0.85	Both reference GO:0009060
+metatraits:aerobic-catabolization-d-fructose	aerobic catabolization: D-fructose	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0009060
+metatraits:aerobic-catabolization-d-fructose	aerobic catabolization: D-fructose	skos:relatedMatch	METPO:1000801	Aerobic respiration	semapv:MappingChaining	0.85	Both reference GO:0009060
+metatraits:aerobic-catabolization-d-galactose	aerobic catabolization: D-galactose	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0009060
+metatraits:aerobic-catabolization-d-galactose	aerobic catabolization: D-galactose	skos:relatedMatch	METPO:1000801	Aerobic respiration	semapv:MappingChaining	0.85	Both reference GO:0009060
+metatraits:aerobic-catabolization-dihydrogen	aerobic catabolization: dihydrogen	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0009060
+metatraits:aerobic-catabolization-dihydrogen	aerobic catabolization: dihydrogen	skos:relatedMatch	METPO:1000801	Aerobic respiration	semapv:MappingChaining	0.85	Both reference GO:0009060
+metatraits:aerobic-catabolization-quinic-acid	aerobic catabolization: (-)-quinic acid	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0009060
+metatraits:aerobic-catabolization-quinic-acid	aerobic catabolization: (-)-quinic acid	skos:relatedMatch	METPO:1000801	Aerobic respiration	semapv:MappingChaining	0.85	Both reference GO:0009060
+metatraits:aerobic-growth	aerobic growth	skos:closeMatch	METPO:2000022	does not use for aerobic growth	semapv:LexicalMatching	0.95	MetaTraits name matches METPO synonym
+metatraits:aerobic-growth	aerobic growth	skos:closeMatch	METPO:2000043	uses for aerobic growth	semapv:LexicalMatching	0.95	MetaTraits name matches METPO synonym
+metatraits:aerobic-growth-anoxygenic-phototrophy	aerobic growth: anoxygenic phototrophy	skos:relatedMatch	METPO:1000657	photoheterotrophic	semapv:MappingChaining	0.85	Both reference ECOCORE:00000131
+metatraits:aerobic-growth-chemoheterotrophy	aerobic growth: chemoheterotrophy	skos:relatedMatch	METPO:1000636	chemoheterotrophic	semapv:MappingChaining	0.85	Both reference ECOCORE:00000132
+metatraits:aerotolerant	aerotolerant	skos:exactMatch	METPO:1000609	aerotolerant	semapv:LexicalMatching	1.0	Exact normalized label match
+metatraits:anaerobic-catabolization	anaerobic catabolization	skos:closeMatch	METPO:2000023	does not use for anaerobic catabolization	semapv:LexicalMatching	0.95	MetaTraits name matches METPO synonym
+metatraits:anaerobic-catabolization	anaerobic catabolization	skos:closeMatch	METPO:2000048	uses for anaerobic catabolization	semapv:LexicalMatching	0.95	MetaTraits name matches METPO synonym
+metatraits:anaerobic-catabolization	anaerobic catabolization	skos:relatedMatch	METPO:1000802	Anaerobic respiration	semapv:MappingChaining	0.85	Both reference GO:0009061
+metatraits:anaerobic-catabolization-acetate	anaerobic catabolization: acetate	skos:relatedMatch	METPO:1000802	Anaerobic respiration	semapv:MappingChaining	0.85	Both reference GO:0009061
+metatraits:anaerobic-catabolization-cellobiose	anaerobic catabolization: cellobiose	skos:relatedMatch	METPO:1000802	Anaerobic respiration	semapv:MappingChaining	0.85	Both reference GO:0009061
+metatraits:anaerobic-catabolization-d-arabinose	anaerobic catabolization: D-arabinose	skos:relatedMatch	METPO:1000802	Anaerobic respiration	semapv:MappingChaining	0.85	Both reference GO:0009061
+metatraits:anaerobic-catabolization-d-fructose	anaerobic catabolization: D-fructose	skos:relatedMatch	METPO:1000802	Anaerobic respiration	semapv:MappingChaining	0.85	Both reference GO:0009061
+metatraits:anaerobic-growth	anaerobic growth	skos:closeMatch	METPO:2000024	does not use for anaerobic growth	semapv:LexicalMatching	0.95	MetaTraits name matches METPO synonym
+metatraits:anaerobic-growth	anaerobic growth	skos:closeMatch	METPO:2000049	uses for anaerobic growth	semapv:LexicalMatching	0.95	MetaTraits name matches METPO synonym
+metatraits:anaerobic-growth-in-the-dark	anaerobic growth in the dark	skos:closeMatch	METPO:2000025	does not use for anaerobic growth in the dark	semapv:LexicalMatching	0.95	MetaTraits name matches METPO synonym
+metatraits:anaerobic-growth-in-the-dark	anaerobic growth in the dark	skos:closeMatch	METPO:2000050	uses for anaerobic growth in the dark	semapv:LexicalMatching	0.95	MetaTraits name matches METPO synonym
+metatraits:anaerobic-growth-with-light	anaerobic growth with light	skos:closeMatch	METPO:2000026	does not use for anaerobic growth with light	semapv:LexicalMatching	0.95	MetaTraits name matches METPO synonym
+metatraits:anaerobic-growth-with-light	anaerobic growth with light	skos:closeMatch	METPO:2000051	uses for anaerobic growth with light	semapv:LexicalMatching	0.95	MetaTraits name matches METPO synonym
+metatraits:assimilation	assimilation	skos:closeMatch	METPO:2000002	assimilates	semapv:LexicalMatching	0.95	MetaTraits name matches METPO synonym
+metatraits:assimilation	assimilation	skos:closeMatch	METPO:2000027	does not assimilate	semapv:LexicalMatching	0.95	MetaTraits name matches METPO synonym
+metatraits:biosafety-level	biosafety level	skos:exactMatch	METPO:1001101	biosafety level	semapv:LexicalMatching	1.0	Exact normalized label match
+metatraits:biosafety-level	biosafety level	skos:closeMatch	METPO:1001102	biosafety level 1	semapv:LexicalMatching	0.938	Fuzzy string similarity: 93.75%
+metatraits:biosafety-level	biosafety level	skos:closeMatch	METPO:1001103	biosafety level 2	semapv:LexicalMatching	0.938	Fuzzy string similarity: 93.75%
+metatraits:biosafety-level	biosafety level	skos:closeMatch	METPO:1001104	biosafety level 3	semapv:LexicalMatching	0.938	Fuzzy string similarity: 93.75%
+metatraits:builds-acid-from	builds acid from	skos:exactMatch	METPO:2000003	builds acid from	semapv:LexicalMatching	1.0	Exact normalized label match
+metatraits:builds-acid-from	builds acid from	skos:closeMatch	METPO:2000028	does not build acid from	semapv:LexicalMatching	0.95	MetaTraits name matches METPO synonym
+metatraits:builds-base-from	builds base from	skos:exactMatch	METPO:2000004	builds base from	semapv:LexicalMatching	1.0	Exact normalized label match
+metatraits:builds-base-from	builds base from	skos:closeMatch	METPO:2000029	does not build base from	semapv:LexicalMatching	0.95	MetaTraits name matches METPO synonym
+metatraits:builds-base-from	builds base from	skos:closeMatch	METPO:2000005	builds gas from	semapv:LexicalMatching	0.903	Fuzzy string similarity: 90.32258064516128%
+metatraits:builds-base-from	builds base from	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:builds-base-from-2-dehydro-d-gluconate	builds base from: 2-dehydro-D-gluconate	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:builds-base-from-5-dehydro-d-gluconate	builds base from: 5-dehydro-D-gluconate	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:builds-base-from-acetamide	builds base from: acetamide	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:builds-base-from-acetate	builds base from: acetate	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:builds-base-from-adipate	builds base from: adipate	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:builds-base-from-allantoin	builds base from: allantoin	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:builds-base-from-betaine	builds base from: betaine	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:builds-base-from-citrate	builds base from: citrate	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:builds-base-from-d-glucose	builds base from: D-glucose	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:builds-base-from-s-lactate	builds base from: (S)-lactate	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:builds-gas-from	builds gas from	skos:exactMatch	METPO:2000005	builds gas from	semapv:LexicalMatching	1.0	Exact normalized label match
+metatraits:builds-gas-from	builds gas from	skos:closeMatch	METPO:2000030	does not build gas from	semapv:LexicalMatching	0.95	MetaTraits name matches METPO synonym
+metatraits:builds-gas-from	builds gas from	skos:closeMatch	METPO:2000004	builds base from	semapv:LexicalMatching	0.903	Fuzzy string similarity: 90.32258064516128%
+metatraits:builds-gas-from	builds gas from	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:builds-gas-from-amygdalin	builds gas from: amygdalin	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:builds-gas-from-arabinose	builds gas from: arabinose	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:builds-gas-from-arbutin	builds gas from: arbutin	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:builds-gas-from-cellobiose	builds gas from: cellobiose	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:builds-gas-from-d-fructose	builds gas from: (-)-D-fructose	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:builds-gas-from-d-galactose	builds gas from: D-galactose	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:builds-gas-from-d-glucose	builds gas from: (+)-D-glucose	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:builds-gas-from-d-mannose	builds gas from: D-mannose	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:builds-gas-from-d-ribose	builds gas from: D-ribose	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:builds-gas-from-fructose	builds gas from: fructose	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:builds-gas-from-galactose	builds gas from: galactose	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:builds-gas-from-glucose	builds gas from: glucose	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:builds-gas-from-nitrate	builds gas from: nitrate	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:builds-gas-from-nitrite	builds gas from: nitrite	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:builds-gas-from-sodium-thiosulfate	builds gas from: sodium thiosulfate	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:carbon-source	carbon source	skos:closeMatch	METPO:2000006	uses as carbon source	semapv:LexicalMatching	0.95	MetaTraits name matches METPO synonym
+metatraits:carbon-source	carbon source	skos:closeMatch	METPO:2000031	does not use as carbon source	semapv:LexicalMatching	0.95	MetaTraits name matches METPO synonym
+metatraits:cell-length	cell length	skos:exactMatch	METPO:1000881	cell length	semapv:LexicalMatching	1.0	Exact normalized label match
+metatraits:cell-length-maximum	cell length maximum	skos:closeMatch	METPO:1000885	cell length medium	semapv:LexicalMatching	0.865	Fuzzy string similarity: 86.48648648648648%
+metatraits:cell-length-minimum	cell length minimum	skos:closeMatch	METPO:1000885	cell length medium	semapv:LexicalMatching	0.865	Fuzzy string similarity: 86.48648648648648%
+metatraits:cell-shape	cell shape	skos:exactMatch	METPO:1000666	cell shape	semapv:LexicalMatching	1.0	Exact normalized label match
+metatraits:cell-width	cell width	skos:exactMatch	METPO:1000882	cell width	semapv:LexicalMatching	1.0	Exact normalized label match
+metatraits:cell-width-maximum	cell width maximum	skos:closeMatch	METPO:1000889	cell width medium	semapv:LexicalMatching	0.857	Fuzzy string similarity: 85.71428571428572%
+metatraits:cell-width-minimum	cell width minimum	skos:closeMatch	METPO:1000889	cell width medium	semapv:LexicalMatching	0.857	Fuzzy string similarity: 85.71428571428572%
+metatraits:degradation	degradation	skos:closeMatch	METPO:2000007	degrades	semapv:LexicalMatching	0.95	MetaTraits name matches METPO synonym
+metatraits:degradation	degradation	skos:closeMatch	METPO:2000033	does not degrade	semapv:LexicalMatching	0.95	MetaTraits name matches METPO synonym
+metatraits:electron-acceptor	electron acceptor	skos:closeMatch	METPO:2000008	uses as electron acceptor	semapv:LexicalMatching	0.95	MetaTraits name matches METPO synonym
+metatraits:electron-acceptor	electron acceptor	skos:closeMatch	METPO:2000034	does not use as electron acceptor	semapv:LexicalMatching	0.95	MetaTraits name matches METPO synonym
+metatraits:electron-donor	electron donor	skos:closeMatch	METPO:2000009	uses as electron donor	semapv:LexicalMatching	0.95	MetaTraits name matches METPO synonym
+metatraits:electron-donor	electron donor	skos:closeMatch	METPO:2000035	does not use as electron donor	semapv:LexicalMatching	0.95	MetaTraits name matches METPO synonym
+metatraits:energy-source	energy source	skos:closeMatch	METPO:2000010	uses as energy source	semapv:LexicalMatching	0.95	MetaTraits name matches METPO synonym
+metatraits:energy-source	energy source	skos:closeMatch	METPO:2000036	does not use as energy source	semapv:LexicalMatching	0.95	MetaTraits name matches METPO synonym
+metatraits:facultative-anaerobe	facultative anaerobe	skos:closeMatch	METPO:1000605	facultatively anaerobic	semapv:LexicalMatching	0.95	MetaTraits name matches METPO synonym
+metatraits:facultative-anaerobe	facultative anaerobe	skos:relatedMatch	METPO:1000608	facultatively aerobic	semapv:MappingChaining	0.85	Both reference OMP:0000087
+metatraits:facultative-anaerobe	facultative anaerobe	skos:relatedMatch	METPO:1000610	microaerotolerant	semapv:MappingChaining	0.85	Both reference OMP:0000087
+metatraits:facultative-anaerobe	facultative anaerobe	skos:relatedMatch	METPO:1000612	facultative oxygen preference	semapv:MappingChaining	0.85	Both reference OMP:0000087
+metatraits:fermentation	fermentation	skos:exactMatch	METPO:1002005	Fermentation	semapv:LexicalMatching	1.0	Exact normalized label match
+metatraits:fermentation	fermentation	skos:closeMatch	METPO:2000011	ferments	semapv:LexicalMatching	0.95	MetaTraits name matches METPO synonym
+metatraits:fermentation	fermentation	skos:closeMatch	METPO:2000037	does not ferment	semapv:LexicalMatching	0.95	MetaTraits name matches METPO synonym
+metatraits:fermentation-1-2-propandiol	fermentation: 1,2-propandiol	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-2-d-lactose	fermentation: (2)-D-lactose	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-2-dehydro-d-gluconate	fermentation: 2-dehydro-D-gluconate	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-2-oxogluconate	fermentation: 2-oxogluconate	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-2-oxoglutarate	fermentation: 2-oxoglutarate	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-3-o-methyl-alpha-d-glucopyranoside	fermentation: 3-O-methyl alpha-D-glucopyranoside	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-4-nitrophenyl-beta-d-galactopyranoside	fermentation: 4-nitrophenyl beta-D-galactopyranoside	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-5-dehydro-d-gluconate	fermentation: 5-dehydro-D-gluconate	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-acetate	fermentation: acetate	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-adipate	fermentation: adipate	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-agarose	fermentation: agarose	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-alginate	fermentation: alginate	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-amygdalin	fermentation: amygdalin	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-arabinitol	fermentation: arabinitol	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-arabinogalactan	fermentation: arabinogalactan	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-arabinose	fermentation: arabinose	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-arbutin	fermentation: arbutin	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-arginine	fermentation: arginine	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-aspartate	fermentation: aspartate	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-beef-extract	fermentation: beef extract	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-beta-d-glucose	fermentation: beta-d-glucose	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-betaine	fermentation: betaine	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-butanol	fermentation: butanol	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-carbon-monoxide	fermentation: carbon monoxide	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-carboxymethylcellulose	fermentation: carboxymethylcellulose	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-casamino-acids	fermentation: casamino acids	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-casein-hydrolysate	fermentation: casein hydrolysate	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-cellobiose	fermentation: cellobiose	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-cellotetraose	fermentation: cellotetraose	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-cellotriose	fermentation: cellotriose	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-cellulose	fermentation: cellulose	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-chitin	fermentation: chitin	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-choline	fermentation: choline	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-citrate	fermentation: citrate	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-crotonate	fermentation: crotonate	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-cysteine	fermentation: cysteine	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-d-arabinose	fermentation: D-arabinose	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-d-arabitol	fermentation: D-arabitol	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-d-fructose	fermentation: D-fructose	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-d-fucose	fermentation: D-fucose	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-d-galactose	fermentation: D-galactose	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-d-galacturonic-acid	fermentation: D-galacturonic acid	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-d-glucose	fermentation: D-glucose	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-d-lyxose	fermentation: D-lyxose	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-d-mannitol	fermentation: D-mannitol	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-d-mannose	fermentation: D-mannose	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-d-rhamnose	fermentation: D-rhamnose	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-d-ribose	fermentation: D-ribose	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-d-sorbitol	fermentation: D-sorbitol	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-d-xylose	fermentation: D-xylose	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-decanoate	fermentation: decanoate	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-dextrin	fermentation: dextrin	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-dihydrogen	fermentation: dihydrogen	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-erythritol	fermentation: erythritol	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-esculin	fermentation: esculin	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-ethanol	fermentation: ethanol	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-formate	fermentation: formate	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-fructose	fermentation: fructose	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-fucose	fermentation: fucose	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-fumarate	fermentation: fumarate	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-galactitol	fermentation: galactitol	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-galactose	fermentation: galactose	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-gelatin	fermentation: gelatin	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-gentiobiose	fermentation: gentiobiose	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-gluconate	fermentation: gluconate	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-glucosamine	fermentation: glucosamine	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-glucose	fermentation: glucose	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-glycerol	fermentation: glycerol	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-glycine	fermentation: glycine	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-glycogen	fermentation: glycogen	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-hippurate	fermentation: hippurate	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-histidine	fermentation: histidine	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-indole	fermentation: indole	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-inositol	fermentation: inositol	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-inulin	fermentation: inulin	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-inuline	fermentation: inuline	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-l-arabinose	fermentation: L-arabinose	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-l-fructose	fermentation: L-fructose	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-l-glutamate	fermentation: L-glutamate	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-l-rhamnose	fermentation: L-rhamnose	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-lactate	fermentation: lactate	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-lactose	fermentation: lactose	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-lactulose	fermentation: lactulose	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-malate	fermentation: malate	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-maleic-acid	fermentation: maleic acid	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-maltose	fermentation: maltose	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-maltose-hydrate	fermentation: maltose hydrate	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-mannitol	fermentation: mannitol	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-mannose	fermentation: mannose	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-melezitose	fermentation: melezitose	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-melibiose	fermentation: melibiose	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-myo-inositol	fermentation: myo-inositol	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-n-acetylglucosamine	fermentation: N-acetylglucosamine	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-oxaloacetate	fermentation: oxaloacetate	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-peptone	fermentation: peptone	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-pyruvate	fermentation: pyruvate	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-raffinose	fermentation: raffinose	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-rhamnose	fermentation: rhamnose	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-ribose	fermentation: ribose	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-sorbitol	fermentation: sorbitol	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-sucrose	fermentation: sucrose	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:fermentation-xylose	fermentation: xylose	skos:relatedMatch	METPO:1002005	Fermentation	semapv:MappingChaining	0.85	Both reference GO:0006113
+metatraits:gram-negative	gram negative	skos:exactMatch	METPO:1000699	gram negative	semapv:LexicalMatching	1.0	Exact normalized label match
+metatraits:gram-positive	gram positive	skos:exactMatch	METPO:1000698	gram positive	semapv:LexicalMatching	1.0	Exact normalized label match
+metatraits:growth	growth	skos:closeMatch	METPO:2000012	uses for growth	semapv:LexicalMatching	0.95	MetaTraits name matches METPO synonym
+metatraits:growth	growth	skos:closeMatch	METPO:2000038	does not use for growth	semapv:LexicalMatching	0.95	MetaTraits name matches METPO synonym
+metatraits:growth-42-degrees-celsius	growth: 42 degrees Celsius	skos:relatedMatch	METPO:1000613	temperature preference	semapv:MappingChaining	0.85	Both reference OMP:0005002
+metatraits:growth-chemoheterotrophy	growth: chemoheterotrophy	skos:relatedMatch	METPO:1000636	chemoheterotrophic	semapv:MappingChaining	0.85	Both reference ECOCORE:00000132
+metatraits:growth-photoheterotrophy	growth: photoheterotrophy	skos:relatedMatch	METPO:1000657	photoheterotrophic	semapv:MappingChaining	0.85	Both reference ECOCORE:00000131
+metatraits:growth-phototrophy	growth: phototrophy	skos:relatedMatch	METPO:1000656	photoautotrophic	semapv:MappingChaining	0.85	Both reference ECOCORE:00000017
+metatraits:hydrolysis	hydrolysis	skos:closeMatch	METPO:2000013	hydrolyzes	semapv:LexicalMatching	0.95	MetaTraits name matches METPO synonym
+metatraits:hydrolysis	hydrolysis	skos:closeMatch	METPO:2000039	does not hydrolyze	semapv:LexicalMatching	0.95	MetaTraits name matches METPO synonym
+metatraits:nitrogen-source	nitrogen source	skos:closeMatch	METPO:2000014	uses as nitrogen source	semapv:LexicalMatching	0.95	MetaTraits name matches METPO synonym
+metatraits:nitrogen-source	nitrogen source	skos:closeMatch	METPO:2000040	does not use as nitrogen source	semapv:LexicalMatching	0.95	MetaTraits name matches METPO synonym
+metatraits:obligate-aerobic	obligate aerobic	skos:closeMatch	METPO:1000606	obligately aerobic	semapv:LexicalMatching	0.95	MetaTraits name matches METPO synonym
+metatraits:obligate-aerobic	obligate aerobic	skos:closeMatch	METPO:1000607	obligately anaerobic	semapv:LexicalMatching	0.889	Fuzzy string similarity: 88.88888888888889%
+metatraits:obligate-anaerobic	obligate anaerobic	skos:closeMatch	METPO:1000607	obligately anaerobic	semapv:LexicalMatching	0.95	MetaTraits name matches METPO synonym
+metatraits:obligate-anaerobic	obligate anaerobic	skos:closeMatch	METPO:1000606	obligately aerobic	semapv:LexicalMatching	0.889	Fuzzy string similarity: 88.88888888888889%
+metatraits:obligate-anaerobic	obligate anaerobic	skos:relatedMatch	METPO:1000611	strictly anaerobic	semapv:MappingChaining	0.85	Both reference OMP:0000184
+metatraits:oxidation	oxidation	skos:closeMatch	METPO:2000016	oxidizes	semapv:LexicalMatching	0.95	MetaTraits name matches METPO synonym
+metatraits:oxidation	oxidation	skos:closeMatch	METPO:2000042	does not oxidize	semapv:LexicalMatching	0.95	MetaTraits name matches METPO synonym
+metatraits:oxygen-preference	oxygen preference	skos:exactMatch	METPO:1000601	oxygen preference	semapv:LexicalMatching	1.0	Exact normalized label match
+metatraits:ph-growth	pH growth	skos:relatedMatch	METPO:1003000	pH growth preference	semapv:MappingChaining	0.85	Both reference OMP:0005008
+metatraits:ph-maximum	pH maximum	skos:relatedMatch	METPO:1003000	pH growth preference	semapv:MappingChaining	0.85	Both reference OMP:0005008
+metatraits:ph-minimum	pH minimum	skos:relatedMatch	METPO:1003000	pH growth preference	semapv:MappingChaining	0.85	Both reference OMP:0005008
+metatraits:ph-preference	pH preference	skos:relatedMatch	METPO:1003000	pH growth preference	semapv:MappingChaining	0.85	Both reference OMP:0005008
+metatraits:presence-of-motility	presence of motility	skos:relatedMatch	METPO:1000702	motile	semapv:MappingChaining	0.85	Both reference OMP:0000005
+metatraits:produces	produces	skos:exactMatch	METPO:2000202	produces	semapv:LexicalMatching	1.0	Exact normalized label match
+metatraits:produces	produces	skos:closeMatch	METPO:2000222	does not produce	semapv:LexicalMatching	0.95	MetaTraits name matches METPO synonym
+metatraits:psychrophilic	psychrophilic	skos:exactMatch	METPO:1000614	psychrophilic	semapv:LexicalMatching	1.0	Exact normalized label match
+metatraits:psychrophilic	psychrophilic	skos:relatedMatch	METPO:1000720	facultative psychrophilic	semapv:MappingChaining	0.85	Both reference MICRO:0001306
+metatraits:reduction	reduction	skos:closeMatch	METPO:2000017	reduces	semapv:LexicalMatching	0.95	MetaTraits name matches METPO synonym
+metatraits:reduction	reduction	skos:closeMatch	METPO:2000044	does not reduce	semapv:LexicalMatching	0.95	MetaTraits name matches METPO synonym
+metatraits:required-for-growth	required for growth	skos:closeMatch	METPO:2000018	requires for growth	semapv:LexicalMatching	0.95	MetaTraits name matches METPO synonym
+metatraits:required-for-growth	required for growth	skos:closeMatch	METPO:2000045	is not required for growth	semapv:LexicalMatching	0.95	MetaTraits name matches METPO synonym
+metatraits:respiration	respiration	skos:exactMatch	METPO:1000800	respiration	semapv:LexicalMatching	1.0	Exact normalized label match
+metatraits:respiration	respiration	skos:closeMatch	METPO:2000019	uses for respiration	semapv:LexicalMatching	0.95	MetaTraits name matches METPO synonym
+metatraits:respiration	respiration	skos:closeMatch	METPO:2000046	does not use for respiration	semapv:LexicalMatching	0.95	MetaTraits name matches METPO synonym
+metatraits:respiration-1-sodium-lactate	respiration: 1 % sodium lactate	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-2-3-butanediol	respiration: 2,3-butanediol	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-2-deoxyadenosine	respiration: 2-deoxyadenosine	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-2-hydroxybutyrate	respiration: 2-hydroxybutyrate	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-2-oxobutanoate	respiration: 2-oxobutanoate	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-2-oxogluconate	respiration: 2-oxogluconate	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-2-oxoglutarate	respiration: 2-oxoglutarate	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-2-oxopentanoate	respiration: 2-oxopentanoate	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-3-hydroxybutyrate	respiration: 3-hydroxybutyrate	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-3-o-methyl-d-glucose	respiration: 3-O-methyl-D-glucose	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-4-hydroxy-l-proline	respiration: 4-hydroxy-L-proline	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-4-hydroxybenzoate	respiration: 4-hydroxybenzoate	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-4-hydroxybutyrate	respiration: 4-hydroxybutyrate	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-4-hydroxyphenylacetic-acid	respiration: 4-hydroxyphenylacetic acid	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-5-oxoproline	respiration: 5-oxoproline	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-acetate	respiration: acetate	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-acetic-acid	respiration: acetic acid	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-acetoacetate	respiration: acetoacetate	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-adenosine	respiration: adenosine	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-alpha-cyclodextrin	respiration: alpha-cyclodextrin	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-alpha-d-glucose	respiration: alpha-D-glucose	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-alpha-d-glucose-6-phosphate	respiration: alpha-D-glucose 6-phosphate	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-alpha-lactose	respiration: alpha-lactose	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-amygdalin	respiration: amygdalin	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-arbutin	respiration: arbutin	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-aspartate	respiration: aspartate	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-aztreonam	respiration: aztreonam	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-beta-cyclodextrin	respiration: beta-cyclodextrin	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-beta-d-glucose	respiration: beta-d-glucose	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-beta-hydroxybutyrate	respiration: beta-hydroxybutyrate	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-bromosuccinate	respiration: bromosuccinate	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-butyrate	respiration: butyrate	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-carnitine	respiration: carnitine	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-cellobiose	respiration: cellobiose	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-cis-aconitate	respiration: cis-aconitate	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-citrate	respiration: citrate	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-citric-acid	respiration: citric acid	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-d-alanine	respiration: D-alanine	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-d-arabitol	respiration: D-arabitol	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-d-aspartate	respiration: D-aspartate	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-d-fructose	respiration: D-fructose	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-d-fructose-6-phosphate	respiration: D-fructose 6-phosphate	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-d-fucose	respiration: D-fucose	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-d-galactonate	respiration: D-galactonate	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-d-galactonic-acid-lactone	respiration: D-galactonic acid lactone	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-d-galactose	respiration: D-galactose	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-d-galacturonic-acid	respiration: D-galacturonic acid	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-d-glucarate	respiration: D-glucarate	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-d-gluconate	respiration: D-gluconate	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-d-glucosaminic-acid	respiration: D-glucosaminic acid	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-d-glucose	respiration: D-glucose	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-d-glucose-6-phosphate	respiration: D-glucose 6-phosphate	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-d-glucuronate	respiration: D-glucuronate	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-d-mannitol	respiration: D-mannitol	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-d-mannose	respiration: D-mannose	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-d-psicose	respiration: D-psicose	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-d-ribose	respiration: D-ribose	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-d-saccharate	respiration: D-saccharate	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-d-serine	respiration: D-serine	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-d-sorbitol	respiration: D-sorbitol	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-d-trehalose	respiration: D-trehalose	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-dextrin	respiration: dextrin	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-dl-carnitine	respiration: DL-carnitine	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-elemental-sulfur	respiration: elemental sulfur	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-formate	respiration: formate	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-galactarate	respiration: galactarate	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-gamma-aminobutyric-acid	respiration: gamma-aminobutyric acid	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-gelatin	respiration: gelatin	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-gentiobiose	respiration: gentiobiose	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-glucose	respiration: glucose	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-glycogen	respiration: glycogen	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-glycyl-l-aspartic-acid	respiration: glycyl L-aspartic acid	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-iron	respiration: iron	skos:relatedMatch	METPO:1000802	Anaerobic respiration	semapv:MappingChaining	0.85	Both reference GO:0009061
+metatraits:respiration-l-glutamate	respiration: L-glutamate	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-l-proline	respiration: L-proline	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-l-rhamnose	respiration: L-rhamnose	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-maltose	respiration: maltose	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-nitrate	respiration: nitrate	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-nitrogen	respiration: nitrogen	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-quinic-acid	respiration: (-)-quinic acid	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-r-lactate	respiration: (R)-lactate	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-s-lactate	respiration: (S)-lactate	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-tween-40	respiration: tween 40	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:respiration-tween-80	respiration: tween 80	skos:relatedMatch	METPO:1000800	respiration	semapv:MappingChaining	0.85	Both reference GO:0045333
+metatraits:sporulation	sporulation	skos:exactMatch	METPO:1000870	sporulation	semapv:LexicalMatching	1.0	Exact normalized label match
+metatraits:sulfur-source	sulfur source	skos:closeMatch	METPO:2000020	uses as sulfur source	semapv:LexicalMatching	0.95	MetaTraits name matches METPO synonym
+metatraits:sulfur-source	sulfur source	skos:closeMatch	METPO:2000047	does not use as sulfur source	semapv:LexicalMatching	0.95	MetaTraits name matches METPO synonym
+metatraits:temperature-growth	temperature growth	skos:relatedMatch	METPO:1000613	temperature preference	semapv:MappingChaining	0.85	Both reference OMP:0005002
+metatraits:temperature-maximum	temperature maximum	skos:relatedMatch	METPO:1000613	temperature preference	semapv:MappingChaining	0.85	Both reference OMP:0005002
+metatraits:temperature-minimum	temperature minimum	skos:relatedMatch	METPO:1000613	temperature preference	semapv:MappingChaining	0.85	Both reference OMP:0005002
+metatraits:temperature-preference	temperature preference	skos:exactMatch	METPO:1000613	temperature preference	semapv:LexicalMatching	1.0	Exact normalized label match
+metatraits:thermophilic	thermophilic	skos:exactMatch	METPO:1000616	thermophilic	semapv:LexicalMatching	1.0	Exact normalized label match
+metatraits:utilizes	utilizes	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-1-2-butandiol	utilizes: 1,2-butandiol	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-1-2-propandiol	utilizes: 1,2-propandiol	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-2-3-butanediol	utilizes: 2,3-butanediol	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-2-d-fructose	utilizes: (2)-D-fructose	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-2-dehydro-d-gluconate	utilizes: 2-dehydro-D-gluconate	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-2-hydroxybutyrate	utilizes: 2-hydroxybutyrate	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-2-oxogluconate	utilizes: 2-oxogluconate	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-2-oxoglutarate	utilizes: 2-oxoglutarate	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-2-oxopentanoate	utilizes: 2-oxopentanoate	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-3-hydroxybenzoate	utilizes: 3-hydroxybenzoate	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-4-aminobenzoate	utilizes: 4-aminobenzoate	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-4-hydroxy-l-proline	utilizes: 4-hydroxy-L-proline	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-4-hydroxybenzoate	utilizes: 4-hydroxybenzoate	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-4-hydroxybutyrate	utilizes: 4-hydroxybutyrate	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-4-nitrophenyl-beta-d-galactopyranoside	utilizes: 4-nitrophenyl beta-D-galactopyranoside	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-4-nitrophenyl-beta-d-galactopyranoside-hydrolysate	utilizes: 4-nitrophenyl beta-D-galactopyranoside hydrolysate	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-4-oxopentanoate	utilizes: 4-oxopentanoate	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-5-dehydro-d-gluconate	utilizes: 5-dehydro-D-gluconate	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-5-oxoproline	utilizes: 5-oxoproline	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-acetamide	utilizes: acetamide	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-acetate	utilizes: acetate	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-acetoin	utilizes: acetoin	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-adenine	utilizes: adenine	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-adipate	utilizes: adipate	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-alanine	utilizes: alanine	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-arabinose	utilizes: arabinose	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-arbutin	utilizes: arbutin	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-arginine	utilizes: arginine	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-bromosuccinate	utilizes: bromosuccinate	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-butyrate	utilizes: butyrate	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-casein	utilizes: casein	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-cellobiose	utilizes: cellobiose	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-cellulose	utilizes: cellulose	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-cephalexin	utilizes: cephalexin	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-cis-aconitate	utilizes: cis-aconitate	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-citrate	utilizes: citrate	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-d-arabitol	utilizes: D-arabitol	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-d-galactose	utilizes: (+)-D-galactose	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-d-glucosamine	utilizes: (+)-D-glucosamine	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-d-glucose	utilizes: D-glucose	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-d-mannitol	utilizes: D-mannitol	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-d-mannose	utilizes: (+)-D-mannose	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-d-sorbitol	utilizes: D-sorbitol	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-d-xylose	utilizes: (+)-D-xylose	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-decanoate	utilizes: decanoate	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-dihydroxyacetone	utilizes: dihydroxyacetone	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-elemental-sulfur	utilizes: elemental sulfur	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-esculin	utilizes: esculin	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-ferric-citrate	utilizes: ferric citrate	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-fructose	utilizes: fructose	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-galactarate	utilizes: galactarate	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-galactitol	utilizes: galactitol	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-gelatin	utilizes: gelatin	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-glucose	utilizes: glucose	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-glycine	utilizes: glycine	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-hydrogen-sulfide	utilizes: hydrogen sulfide	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-indole	utilizes: indole	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-l-aspartate	utilizes: (+)-L-aspartate	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-l-glutamate	utilizes: (+)-L-glutamate	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-l-lyxitol	utilizes: (+)-L-lyxitol	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-l-ornithine	utilizes: (+)-L-ornithine	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-l-phenylalanine	utilizes: L-phenylalanine	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-l-rhamnose	utilizes: (+)-L-rhamnose	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-lactose	utilizes: lactose	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-leucine	utilizes: leucine	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-lysine	utilizes: lysine	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-mannitol	utilizes: mannitol	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-mannose	utilizes: mannose	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-methionine	utilizes: methionine	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-methyl-pyruvate	utilizes: methyl pyruvate	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-milk	utilizes: milk	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-myo-inositol	utilizes: myo-inositol	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-proline	utilizes: proline	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-raffinose	utilizes: raffinose	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-rhamnose	utilizes: rhamnose	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-sucrose	utilizes: sucrose	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152
+metatraits:utilizes-xylose	utilizes: xylose	skos:relatedMatch	METPO:1000060	metabolism	semapv:MappingChaining	0.85	Both reference GO:0008152

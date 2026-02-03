@@ -238,6 +238,94 @@ grep -r "filename" . --exclude-dir=.venv --exclude-dir=.git
 
 ---
 
+## MetaTraits Mapping Workflow
+
+METPO integrates with the MetaTraits database (metatraits.embl.de), a comprehensive collection of microbial trait data. We maintain formal SSSOM mappings between MetaTraits trait cards, METPO terms, and KG-Microbe nodes.
+
+### Data Sources
+
+1. **MetaTraits Database** - 2,860+ microbial trait cards with ontology cross-references (OMP, PATO, GO, CHEBI, etc.)
+2. **METPO in KG-Microbe** - 360+ METPO terms integrated into the KG-Microbe knowledge graph
+3. **METPO Ontology** - Primary source ontology with definitions and cross-references
+
+### Fetching MetaTraits Data
+
+```bash
+# Fetch latest trait cards from metatraits.embl.de
+uv run fetch-metatraits --output data/mappings/metatraits_cards.tsv
+
+# Or use Makefile
+make data/mappings/metatraits_cards.tsv
+```
+
+### Creating Mappings
+
+The mapping pipeline uses four strategies:
+
+1. **Direct label matching** (exactMatch) - Exact string matches after normalization
+2. **Synonym matching** (closeMatch) - MetaTraits names matching METPO synonyms
+3. **Shared ontology references** (relatedMatch) - Both reference same OMP/PATO/etc term
+4. **Fuzzy string matching** (closeMatch) - Similarity-based matching with configurable threshold
+
+```bash
+# Create mappings with all strategies
+uv run create-metatraits-mappings \
+  --metatraits-input data/mappings/metatraits_cards.tsv \
+  --kgmicrobe-nodes /path/to/merged-kg_nodes.tsv \
+  --output data/mappings/metatraits_metpo_kgmicrobe.sssom.tsv \
+  --report reports/metatraits_mapping_analysis.md \
+  --fuzzy-threshold 85
+
+# Or use Makefile (recommended)
+make metatraits-mappings
+```
+
+### Output Files
+
+- **SSSOM TSV**: `data/mappings/metatraits_metpo_kgmicrobe.sssom.tsv` - Formal mappings following SSSOM standard
+- **Summary Report**: `reports/metatraits_mapping_analysis.md` - Coverage statistics and examples
+
+### Mapping Quality
+
+The pipeline produces high-quality mappings with:
+- Mean confidence: ~0.95
+- exactMatch mappings: 1.0 confidence
+- closeMatch (synonyms): 0.95 confidence
+- relatedMatch (shared refs): 0.85 confidence
+- Fuzzy matches: 0.85-0.95 confidence based on similarity
+
+### Customizing Mapping Parameters
+
+```bash
+# Disable fuzzy matching (faster, fewer mappings)
+uv run create-metatraits-mappings --no-fuzzy ...
+
+# Adjust fuzzy threshold (higher = stricter)
+uv run create-metatraits-mappings --fuzzy-threshold 90 ...
+```
+
+### Integration with KG-Microbe
+
+Set the `KGMICROBE_NODES` environment variable or Makefile variable:
+
+```bash
+# In .env file
+KGMICROBE_NODES=/path/to/merged-kg_nodes.tsv
+
+# Or override in Makefile
+make metatraits-mappings KGMICROBE_NODES=/custom/path/merged-kg_nodes.tsv
+```
+
+### Validation
+
+SSSOM files can be validated using sssom-py:
+
+```bash
+uv run sssom validate data/mappings/metatraits_metpo_kgmicrobe.sssom.tsv
+```
+
+---
+
 ## Environment Setup
 
 **Install dependencies:**
@@ -292,6 +380,8 @@ sh run.sh make <target>
 | Test ontology | `cd src/ontology && sh run.sh make test_fast` |
 | Run script | `uv run script-name --help` |
 | Install deps | `uv sync` |
+| Fetch MetaTraits | `uv run fetch-metatraits --output data/mappings/metatraits_cards.tsv` |
+| Create MetaTraits mappings | `make metatraits-mappings` |
 | Check Makefile usage | `grep "filename" Makefile` |
 | Find recent files | `find . -newermt "7 days ago" -type f` |
 | List CLI scripts | `grep "project.scripts" -A 20 pyproject.toml` |

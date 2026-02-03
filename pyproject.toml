@@ -24,6 +24,7 @@ dependencies = [
     "pymongo>=4.15.3",
     "python-dotenv>=1.2.1",
     "pyyaml>=6.0.3",
+    "rapidfuzz>=3.0.0",
     "rdflib>=7.1.4",
     "requests>=2.32.5",
     "tqdm>=4.67.1",
@@ -83,6 +84,7 @@ extract-rank-triples = "metpo.tools.extract_rank_triples:extract_taxon_ranks"
 convert-chem-props = "metpo.tools.convert_chem_props:convert_chem_props"
 import-bactotraits = "metpo.tools.import_bactotraits:import_bactotraits"
 fetch-metatraits = "metpo.scripts.fetch_metatraits:main"
+create-metatraits-mappings = "metpo.scripts.create_metatraits_mappings:main"
 
 # BactoTraits
 reconcile-bactotraits-coverage = "metpo.bactotraits.reconcile_bactotraits_coverage:main"
