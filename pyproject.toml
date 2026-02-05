@@ -83,6 +83,7 @@ notebooks = [
 extract-rank-triples = "metpo.tools.extract_rank_triples:extract_taxon_ranks"
 convert-chem-props = "metpo.tools.convert_chem_props:convert_chem_props"
 import-bactotraits = "metpo.tools.import_bactotraits:import_bactotraits"
+make-bacdive-utilization-enum = "metpo.tools.make_bacdive_utilization_enum:convert_tsv_to_linkml"
 
 # BactoTraits
 reconcile-bactotraits-coverage = "metpo.bactotraits.reconcile_bactotraits_coverage:main"
@@ -128,6 +129,11 @@ iterative-definition-improvement = "metpo.scripts.iterative_definition_improveme
 # Quality Control
 qc-metpo-sheets = "metpo.scripts.qc_metpo_sheets:main"
 propose-definitions-with-llm = "metpo.scripts.propose_definitions_with_llm:main"
+
+# Definition Work
+fetch-source-metadata = "metpo.scripts.definition_work.fetch_source_metadata:main"
+merge-sparql-with-metadata = "metpo.scripts.definition_work.merge_sparql_with_metadata:main"
+regenerate-curator-attributions = "metpo.scripts.definition_work.regenerate_curator_attributions:main"
 
 # Literature Mining - Analysis
 visualize-ner = "metpo.literature_mining.analysis.visualize_ner:main"

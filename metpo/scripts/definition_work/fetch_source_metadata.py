@@ -1,23 +1,19 @@
 """
-Comprehensive workflow to fetch definition source metadata from OLS and BioPortal.
+Fetch definition source metadata from OLS and BioPortal APIs.
 
 Tries multiple strategies:
 1. BioPortal D3O ontology direct lookup for DSMZ terms (prioritized)
 2. OLS API for standard ontology terms
 3. BioPortal search API for terms not in OLS
-
-Usage:
-    export BIOPORTAL_API_KEY='your-api-key-here'
-    python3 fetch_all_source_metadata_fixed.py <sparql_output.tsv>
 """
 
 import csv
 import os
-import sys
 import time
 from pathlib import Path
 from urllib.parse import quote
 
+import click
 import requests
 
 BIOPORTAL_API_KEY = os.environ.get("BIOPORTAL_API_KEY", "")
@@ -45,41 +41,10 @@ def curie_to_iri(curie_or_url: str) -> str:
     prefix_upper = prefix.upper()
 
     obo_ontologies = [
-        "GO",
-        "CHEBI",
-        "PATO",
-        "OBI",
-        "UBERON",
-        "CL",
-        "SO",
-        "BFO",
-        "IAO",
-        "RO",
-        "ENVO",
-        "HP",
-        "MONDO",
-        "DOID",
-        "NCBITaxon",
-        "OMP",
-        "MICRO",
-        "PHIPO",
-        "MPO",
-        "OBA",
-        "BTO",
-        "DDANAT",
-        "ECOCORE",
-        "MEO",
-        "NCIT",
-        "OGMS",
-        "OHMI",
-        "PO",
-        "TO",
-        "ZFA",
-        "APOLLO_SV",
-        "FBcv",
-        "WBPhenotype",
-        "UPHENO",
-        "IDO",
+        "GO", "CHEBI", "PATO", "OBI", "UBERON", "CL", "SO", "BFO", "IAO", "RO",
+        "ENVO", "HP", "MONDO", "DOID", "NCBITaxon", "OMP", "MICRO", "PHIPO",
+        "MPO", "OBA", "BTO", "DDANAT", "ECOCORE", "MEO", "NCIT", "OGMS", "OHMI",
+        "PO", "TO", "ZFA", "APOLLO_SV", "FBcv", "WBPhenotype", "UPHENO", "IDO",
     ]
 
     if prefix_upper in obo_ontologies:
@@ -102,41 +67,14 @@ def get_ontology_from_curie(curie: str) -> str | None:
     prefix = curie.split(":", 1)[0].lower()
 
     ontology_map = {
-        "go": "go",
-        "chebi": "chebi",
-        "pato": "pato",
-        "obi": "obi",
-        "bfo": "bfo",
-        "envo": "envo",
-        "omp": "omp",
-        "micro": "micro",
-        "mpo": "mpo",
-        "phipo": "phipo",
-        "oba": "oba",
-        "bto": "bto",
-        "ncit": "ncit",
-        "ogms": "ogms",
-        "ddanat": "ddanat",
-        "ecocore": "ecocore",
-        "meo": "meo",
-        "ohmi": "ohmi",
-        "po": "po",
-        "to": "to",
-        "zfa": "zfa",
-        "apollo_sv": "apollo_sv",
-        "fbcv": "fbcv",
-        "wbphenotype": "wbphenotype",
-        "iao": "iao",
-        "ro": "ro",
-        "uberon": "uberon",
-        "cl": "cl",
-        "so": "so",
-        "hp": "hp",
-        "mondo": "mondo",
-        "doid": "doid",
-        "ncbitaxon": "ncbitaxon",
-        "upheno": "upheno",
-        "ido": "ido",
+        "go": "go", "chebi": "chebi", "pato": "pato", "obi": "obi", "bfo": "bfo",
+        "envo": "envo", "omp": "omp", "micro": "micro", "mpo": "mpo", "phipo": "phipo",
+        "oba": "oba", "bto": "bto", "ncit": "ncit", "ogms": "ogms", "ddanat": "ddanat",
+        "ecocore": "ecocore", "meo": "meo", "ohmi": "ohmi", "po": "po", "to": "to",
+        "zfa": "zfa", "apollo_sv": "apollo_sv", "fbcv": "fbcv", "wbphenotype": "wbphenotype",
+        "iao": "iao", "ro": "ro", "uberon": "uberon", "cl": "cl", "so": "so",
+        "hp": "hp", "mondo": "mondo", "doid": "doid", "ncbitaxon": "ncbitaxon",
+        "upheno": "upheno", "ido": "ido",
     }
 
     return ontology_map.get(prefix)
@@ -147,13 +85,10 @@ def fetch_metadata_from_bioportal_d3o(iri: str) -> dict | None:
     if not BIOPORTAL_API_KEY:
         return None
 
-    # Only try D3O for DSMZ IRIs
     if "purl.dsmz.de" not in iri:
         return None
 
     try:
-        # BioPortal pattern: /ontologies/{ACRONYM}/classes/{encoded_iri}
-        # Single encoding - correct domain is data.bioontology.org
         encoded_iri = quote(iri, safe="")
         url = f"https://data.bioontology.org/ontologies/D3O/classes/{encoded_iri}"
 
@@ -166,7 +101,6 @@ def fetch_metadata_from_bioportal_d3o(iri: str) -> dict | None:
         data = response.json()
         label = data.get("prefLabel", "")
 
-        # Extract definition
         definition = ""
         if "definition" in data:
             defs = data["definition"]
@@ -175,7 +109,6 @@ def fetch_metadata_from_bioportal_d3o(iri: str) -> dict | None:
             elif isinstance(defs, str):
                 definition = defs
 
-        # Extract synonyms
         synonyms = []
         if "synonym" in data:
             syns = data["synonym"]
@@ -212,7 +145,6 @@ def fetch_metadata_from_ols(curie: str, iri: str) -> dict | None:
         data = response.json()
         label = data.get("label", "")
 
-        # Extract definition
         definition = ""
         if data.get("description"):
             definition = (
@@ -230,7 +162,6 @@ def fetch_metadata_from_ols(curie: str, iri: str) -> dict | None:
                 defs = annotations["IAO:0000115"]
                 definition = defs[0] if isinstance(defs, list) and defs else defs
 
-        # Extract synonyms
         synonyms = set()
         if data.get("synonyms"):
             synonyms.update(data["synonyms"])
@@ -238,10 +169,8 @@ def fetch_metadata_from_ols(curie: str, iri: str) -> dict | None:
         if "annotation" in data:
             annotations = data["annotation"]
             for syn_type in [
-                "hasExactSynonym",
-                "hasRelatedSynonym",
-                "hasBroadSynonym",
-                "hasNarrowSynonym",
+                "hasExactSynonym", "hasRelatedSynonym",
+                "hasBroadSynonym", "hasNarrowSynonym",
             ]:
                 if syn_type in annotations:
                     syns = annotations[syn_type]
@@ -288,20 +217,19 @@ def fetch_metadata_from_bioportal_search(curie: str, iri: str) -> dict | None:
         definition = ""
         synonyms = []
 
-        # Fetch full term details
         if "@id" in result:
             term_url = result["@id"]
-            term_response = requests.get(term_url, params={"apikey": BIOPORTAL_API_KEY}, timeout=15)
+            term_response = requests.get(
+                term_url, params={"apikey": BIOPORTAL_API_KEY}, timeout=15
+            )
 
             if term_response.status_code == 200:
                 term_data = term_response.json()
 
-                # Extract definition
                 if "definition" in term_data:
                     defs = term_data["definition"]
                     definition = defs[0] if isinstance(defs, list) and defs else defs
 
-                # Extract synonyms
                 if "synonym" in term_data:
                     syns = term_data["synonym"]
                     synonyms = syns if isinstance(syns, list) else [syns]
@@ -317,31 +245,45 @@ def fetch_metadata_from_bioportal_search(curie: str, iri: str) -> dict | None:
         return None
 
 
-def main():
-    if len(sys.argv) < 2:
-        print("Usage: python3 fetch_all_source_metadata_fixed.py <sparql_output.tsv>")
-        print()
-        print("Set BIOPORTAL_API_KEY environment variable for BioPortal fallback:")
-        print("  export BIOPORTAL_API_KEY='your-key-here'")
-        sys.exit(1)
+@click.command()
+@click.option(
+    "--input", "-i", "input_file", required=True,
+    type=click.Path(exists=True),
+    help="SPARQL output TSV with definition sources"
+)
+@click.option(
+    "--output", "-o", "output_file", required=True,
+    type=click.Path(),
+    help="Output TSV with fetched metadata"
+)
+@click.option(
+    "--bioportal-key", envvar="BIOPORTAL_API_KEY",
+    help="BioPortal API key (or set BIOPORTAL_API_KEY env var)"
+)
+@click.option(
+    "--delay", default=0.2, type=float,
+    help="Delay between API requests in seconds"
+)
+def main(input_file: str, output_file: str, bioportal_key: str | None, delay: float):
+    """Fetch definition source metadata from OLS and BioPortal APIs."""
+    global BIOPORTAL_API_KEY
+    if bioportal_key:
+        BIOPORTAL_API_KEY = bioportal_key
 
-    input_file = sys.argv[1]
-    output_file = "/tmp/source_metadata_complete.tsv"
-
-    print("=" * 80)
-    print("COMPREHENSIVE SOURCE METADATA FETCHING WORKFLOW")
-    print("=" * 80)
-    print()
-    print(f"Input: {input_file}")
-    print(f"Output: {output_file}")
-    print()
+    click.echo("=" * 80)
+    click.echo("COMPREHENSIVE SOURCE METADATA FETCHING WORKFLOW")
+    click.echo("=" * 80)
+    click.echo()
+    click.echo(f"Input: {input_file}")
+    click.echo(f"Output: {output_file}")
+    click.echo()
 
     if BIOPORTAL_API_KEY:
-        print(f"✓ BioPortal API key found ({BIOPORTAL_API_KEY[:10]}...)")
+        click.echo(f"✓ BioPortal API key found ({BIOPORTAL_API_KEY[:10]}...)")
     else:
-        print("⚠ No BioPortal API key - only OLS will be used")
-        print("  Set with: export BIOPORTAL_API_KEY='your-key-here'")
-    print()
+        click.echo("⚠ No BioPortal API key - only OLS will be used")
+        click.echo("  Set with: --bioportal-key or BIOPORTAL_API_KEY env var")
+    click.echo()
 
     # Load unique sources
     sources = set()
@@ -359,10 +301,10 @@ def main():
     other_sources = sorted([s for s in sources if "purl.dsmz.de" not in s])
     sorted_sources = dsmz_sources + other_sources
 
-    print(f"Total unique sources: {len(sources)}")
-    print(f"  - DSMZ sources: {len(dsmz_sources)} (prioritized)")
-    print(f"  - Other sources: {len(other_sources)}")
-    print()
+    click.echo(f"Total unique sources: {len(sources)}")
+    click.echo(f"  - DSMZ sources: {len(dsmz_sources)} (prioritized)")
+    click.echo(f"  - Other sources: {len(other_sources)}")
+    click.echo()
 
     # Fetch metadata
     results = []
@@ -374,9 +316,9 @@ def main():
     for i, source_iri in enumerate(sorted_sources, 1):
         source_curie = iri_to_curie(source_iri)
 
-        print(f"[{i}/{len(sources)}] {source_curie}")
+        click.echo(f"[{i}/{len(sources)}] {source_curie}")
         if source_iri != source_curie:
-            print(f"  IRI: {source_iri}")
+            click.echo(f"  IRI: {source_iri}")
 
         metadata = None
 
@@ -394,7 +336,7 @@ def main():
 
         # Strategy 3: Try BioPortal general search
         if not (metadata and metadata["label"]) and BIOPORTAL_API_KEY:
-            print("  → Trying BioPortal search...")
+            click.echo("  → Trying BioPortal search...")
             time.sleep(0.5)
             metadata = fetch_metadata_from_bioportal_search(source_curie, source_iri)
             if metadata and metadata["label"]:
@@ -403,38 +345,34 @@ def main():
         if metadata and metadata["label"]:
             synonyms_str = "|".join(metadata["synonyms"]) if metadata["synonyms"] else ""
 
-            results.append(
-                {
-                    "source_curie": source_curie,
-                    "source_iri": source_iri,
-                    "label": metadata["label"],
-                    "definition": metadata["definition"],
-                    "synonyms": synonyms_str,
-                    "api_source": metadata["source"],
-                }
-            )
+            results.append({
+                "source_curie": source_curie,
+                "source_iri": source_iri,
+                "label": metadata["label"],
+                "definition": metadata["definition"],
+                "synonyms": synonyms_str,
+                "api_source": metadata["source"],
+            })
 
-            print(f"  ✓ [{metadata['source']}] {metadata['label']}")
+            click.echo(f"  ✓ [{metadata['source']}] {metadata['label']}")
             if metadata["definition"]:
-                print(f"    Definition: {metadata['definition'][:80]}...")
+                click.echo(f"    Definition: {metadata['definition'][:80]}...")
             if metadata["synonyms"]:
-                print(f"    Synonyms: {len(metadata['synonyms'])} found")
+                click.echo(f"    Synonyms: {len(metadata['synonyms'])} found")
         else:
             failed.append(source_curie)
-            results.append(
-                {
-                    "source_curie": source_curie,
-                    "source_iri": source_iri,
-                    "label": "",
-                    "definition": "",
-                    "synonyms": "",
-                    "api_source": "NOT_FOUND",
-                }
-            )
-            print("  ✗ Not found in any API")
+            results.append({
+                "source_curie": source_curie,
+                "source_iri": source_iri,
+                "label": "",
+                "definition": "",
+                "synonyms": "",
+                "api_source": "NOT_FOUND",
+            })
+            click.echo("  ✗ Not found in any API")
 
-        time.sleep(0.2)
-        print()
+        time.sleep(delay)
+        click.echo()
 
     # Save results
     with Path(output_file).open("w", newline="") as f:
@@ -443,28 +381,28 @@ def main():
         writer.writeheader()
         writer.writerows(results)
 
-    print("=" * 80)
-    print("SUMMARY")
-    print("=" * 80)
-    print(f"Total sources: {len(sources)}")
+    click.echo("=" * 80)
+    click.echo("SUMMARY")
+    click.echo("=" * 80)
+    click.echo(f"Total sources: {len(sources)}")
     total_success = ols_success + bioportal_search_success + bioportal_d3o_success
-    print(
+    click.echo(
         f"Successfully resolved: {total_success} ({total_success * 100 // len(sources) if sources else 0}%)"
     )
-    print(f"  - via BioPortal D3O: {bioportal_d3o_success}")
-    print(f"  - via OLS: {ols_success}")
-    print(f"  - via BioPortal search: {bioportal_search_success}")
-    print(f"Failed to resolve: {len(failed)}")
-    print()
-    print(f"✓ Saved results to {output_file}")
-    print()
+    click.echo(f"  - via BioPortal D3O: {bioportal_d3o_success}")
+    click.echo(f"  - via OLS: {ols_success}")
+    click.echo(f"  - via BioPortal search: {bioportal_search_success}")
+    click.echo(f"Failed to resolve: {len(failed)}")
+    click.echo()
+    click.echo(f"✓ Saved results to {output_file}")
+    click.echo()
 
     if failed:
-        print("Failed sources:")
+        click.echo("Failed sources:")
         for source in failed[:20]:
-            print(f"  - {source}")
+            click.echo(f"  - {source}")
         if len(failed) > 20:
-            print(f"  ... and {len(failed) - 20} more")
+            click.echo(f"  ... and {len(failed) - 20} more")
 
 
 if __name__ == "__main__":

@@ -256,6 +256,49 @@ import-all: import-bactotraits import-madin import-bactotraits-metadata import-m
 all-reports: reports/synonym-sources.tsv reports/bactotraits-metpo-set-diff.yaml reports/bactotraits-metpo-reconciliation.yaml reports/madin-metpo-reconciliation.yaml
 	@echo "All analysis reports generated successfully"
 
+# ==============================================================================
+# Definition Analysis Reports
+# ==============================================================================
+# These reports analyze definition coverage and quality in METPO.
+# Most require the SSSOM mappings file from the alignment pipeline.
+
+reports/definition_improvement_opportunities.tsv: src/templates/metpo_sheet.tsv notebooks/metpo_relevant_mappings.sssom.tsv
+	uv run analyze-definition-opportunities \
+		--template $< \
+		--mappings $(word 2,$^) \
+		--output $@
+
+reports/definition_coverage_by_parent.tsv: src/templates/metpo_sheet.tsv
+	uv run analyze-definition-coverage-by-subtree \
+		--metpo-tsv $< \
+		--output $@ \
+		--sort-by stragglers
+
+# Note: find-best-definitions requires chromadb optional dependency
+# Install with: uv sync --extra notebooks
+reports/best_definitions_per_term.tsv: src/templates/metpo_sheet.tsv
+	uv run find-best-definitions \
+		--metpo-tsv $< \
+		--output $@
+
+reports/definition_comparison_with_hierarchy.tsv: reports/best_definitions_per_term.tsv src/templates/metpo_sheet.tsv
+	uv run compare-definitions-with-hierarchy \
+		--best-definitions $< \
+		--metpo-terms $(word 2,$^) \
+		--output $@
+
+.PHONY: definition-reports
+definition-reports: reports/definition_improvement_opportunities.tsv reports/definition_coverage_by_parent.tsv
+	@echo "Definition analysis reports generated"
+
+.PHONY: clean-definition-reports
+clean-definition-reports:
+	rm -f reports/definition_improvement_opportunities.tsv
+	rm -f reports/definition_coverage_by_parent.tsv
+	rm -f reports/best_definitions_per_term.tsv
+	rm -f reports/definition_comparison_with_hierarchy.tsv
+	@echo "Definition reports cleaned"
+
 .PHONY: test-workflow
 test-workflow: clean-all import-all all-reports
 	@echo ""
