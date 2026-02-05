@@ -56,9 +56,7 @@ def main(curator_dir: str | None, output: str | None):
     else:
         curator_path = repo_root / "data" / "undergraduate_definitions"
 
-    output_file = (
-        Path(output) if output else curator_path / "curator_proposed_definitions.tsv"
-    )
+    output_file = Path(output) if output else curator_path / "curator_proposed_definitions.tsv"
 
     click.echo(f"Curator directory: {curator_path}")
     click.echo(f"Output file: {output_file}")
@@ -104,13 +102,9 @@ def main(curator_dir: str | None, output: str | None):
                 "github_handle": info["github"],
                 "proposed_definition": safe_get(row, "description"),
                 "definition_source": safe_get(row, "definition source"),
-                "has_definition_source": (
-                    "Yes" if safe_get(row, "definition source") else "No"
-                ),
+                "has_definition_source": ("Yes" if safe_get(row, "definition source") else "No"),
                 "subclass_of_label": safe_get(row, "parent class"),
-                "subclass_of_id": safe_get(
-                    row, "parent classes (one strongly preferred)"
-                ),
+                "subclass_of_id": safe_get(row, "parent classes (one strongly preferred)"),
                 "reasoning": safe_get(row, "comment"),
                 "quantitative_values": safe_get(row, "quantitative_values"),
             }

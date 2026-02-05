@@ -194,9 +194,7 @@ def fetch_metadata_from_ols(curie: str, iri: str) -> dict | None:
             return None
 
         encoded_iri = quote(quote(iri, safe=""), safe="")
-        url = (
-            f"https://www.ebi.ac.uk/ols4/api/ontologies/{ontology}/terms/{encoded_iri}"
-        )
+        url = f"https://www.ebi.ac.uk/ols4/api/ontologies/{ontology}/terms/{encoded_iri}"
 
         response = requests.get(url, timeout=10)
         if response.status_code != 200:
@@ -281,9 +279,7 @@ def fetch_metadata_from_bioportal_search(curie: str, iri: str) -> dict | None:
 
         if "@id" in result:
             term_url = result["@id"]
-            term_response = requests.get(
-                term_url, params={"apikey": BIOPORTAL_API_KEY}, timeout=15
-            )
+            term_response = requests.get(term_url, params={"apikey": BIOPORTAL_API_KEY}, timeout=15)
 
             if term_response.status_code == 200:
                 term_data = term_response.json()
@@ -329,9 +325,7 @@ def fetch_metadata_from_bioportal_search(curie: str, iri: str) -> dict | None:
     envvar="BIOPORTAL_API_KEY",
     help="BioPortal API key (or set BIOPORTAL_API_KEY env var)",
 )
-@click.option(
-    "--delay", default=0.2, type=float, help="Delay between API requests in seconds"
-)
+@click.option("--delay", default=0.2, type=float, help="Delay between API requests in seconds")
 def main(input_file: str, output_file: str, bioportal_key: str | None, delay: float):
     """Fetch definition source metadata from OLS and BioPortal APIs."""
     api_key = bioportal_key or BIOPORTAL_API_KEY
@@ -409,9 +403,7 @@ def main(input_file: str, output_file: str, bioportal_key: str | None, delay: fl
                 bioportal_search_success += 1
 
         if metadata and metadata["label"]:
-            synonyms_str = (
-                "|".join(metadata["synonyms"]) if metadata["synonyms"] else ""
-            )
+            synonyms_str = "|".join(metadata["synonyms"]) if metadata["synonyms"] else ""
 
             results.append(
                 {
