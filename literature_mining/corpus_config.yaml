@@ -1,0 +1,439 @@
+# Literature Mining Corpus Configuration
+# Machine-readable index for automated extraction pipelines
+#
+# STRUCTURE:
+#   corpus/abstracts/     - All abstracts with source prefix (cmm_, pfas_, other_, test_morphology_)
+#   corpus/fulltexts/     - All PDFs/markdown with source prefix (cmm_ai_, pfas_ai_)
+#   corpus/icbo_examples_pmids.txt - PMIDs for ICBO demo subset
+#   templates/            - Active OntoGPT templates
+#   templates/archive/    - Superseded templates
+#   outputs/              - Extraction results
+#   workspace/            - Temporary working directory (gitignored)
+#
+# Usage examples:
+#   # Extract all CMM abstracts with chemical_utilization template
+#   uv run ontogpt extract -t templates/chemical_utilization_hybrid.yaml -i corpus/abstracts/cmm_*.txt -o outputs/cmm/
+#
+#   # Run annotator comparison on icbo_examples
+#   make fair-annotator-test
+#
+# Last updated: 2025-11-25
+
+# =============================================================================
+# COLLECTIONS - Literature inputs organized by project/topic
+# =============================================================================
+# Note: All files now in corpus/abstracts/ or corpus/fulltexts/ with source prefixes
+
+collections:
+  cmm:
+    description: "Critical Mineral Microbes project - REE/lanthanide phenotypes"
+    path: corpus/abstracts
+    file_pattern: "cmm_*-abstract.txt"
+    input_type: abstract
+    count: 57
+    recommended_templates:
+      - chemical_utilization_hybrid
+      - biochemical_hybrid
+      - growth_conditions_hybrid
+    rich_in:
+      - chemical_utilization
+      - rare_earth_elements
+      - metal_tolerance
+    notes: "Focus on rare earth element utilization and metal tolerance phenotypes"
+
+  cmm_fulltext:
+    description: "CMM full papers for detailed extraction"
+    path: corpus/fulltexts
+    input_type: fulltext
+    file_patterns:
+      pdf: "cmm_ai_*.pdf"
+      markdown: "cmm_ai_*.md"
+    count_pdf: 24
+    count_md: 5  # Updated 2025-11-25: 18 stub/OCR files deleted
+    recommended_templates:
+      - chemical_utilization_hybrid
+      - biochemical_hybrid
+    rich_in:
+      - chemical_utilization
+      - metabolic_pathways
+    available_md:  # In corpus/fulltexts/ with cmm_ai_ prefix
+      - cmm_ai_e00266-15.md  # Methylobacterium aquaticum 22A genome
+      - cmm_ai_fmicb-13-921635.md
+      - cmm_ai_fmicb-14-1258452.md
+      - cmm_ai_doi_10_3389-fbioe_2023_1130939.md
+      - cmm_ai_Machine_learning-led_semi-automated_medium_optimiz.md
+    needs_redownload:
+      # PMC stubs (PDF download failed - got "Preparing to download" page)
+      - {id: PMC4859581, url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4859581/"}
+      - {id: PMC5018670, url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5018670/"}
+      - {id: PMC6764073, url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6764073/"}
+      - {id: PMC9301485, url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9301485/"}
+      # PubMed webpage OCR (captured website UI, not paper)
+      - {id: PMID_24816778, url: "https://pubmed.ncbi.nlm.nih.gov/24816778/"}
+      - {id: PMID_25943904, url: "https://pubmed.ncbi.nlm.nih.gov/25943904/"}
+      - {id: PMID_28686571, url: "https://pubmed.ncbi.nlm.nih.gov/28686571/"}
+      - {id: PMID_31421721, url: "https://pubmed.ncbi.nlm.nih.gov/31421721/"}
+      - {id: PMID_31552950, url: "https://pubmed.ncbi.nlm.nih.gov/31552950/"}
+      - {id: PMID_36719530, url: "https://pubmed.ncbi.nlm.nih.gov/36719530/"}
+      - {id: PMID_38269599, url: "https://pubmed.ncbi.nlm.nih.gov/38269599/"}
+      - {id: PMID_40328142, url: "https://pubmed.ncbi.nlm.nih.gov/40328142/"}
+      # Publisher paywall OCR (captured subscription page, not paper)
+      - {id: doi_10_1016-j_seppur_2025_131701, url: "https://doi.org/10.1016/j.seppur.2025.131701"}
+      - {id: doi_10_1038-nature16174, url: "https://doi.org/10.1038/nature16174"}
+      - {id: doi_10_1038-nchembio_1947, url: "https://doi.org/10.1038/nchembio.1947"}
+      - {id: doi_10_1073-pnas_1600558113, url: "https://doi.org/10.1073/pnas.1600558113"}
+      - {id: doi_10_1101-2023_08_22_554321v1, url: "https://doi.org/10.1101/2023.08.22.554321"}
+      - {id: doi_10_1101-2023_09_15_557123v1, url: "https://doi.org/10.1101/2023.09.15.557123"}
+      # arXiv OCR (captured navigation, not paper)
+      - {id: Machine_Learning_Approaches_to_Predicting_Lanthani, url: "search arXiv for ML lanthanide prediction"}
+    notes: "5 usable markdown files; 18 deleted 2025-11-25 (stub/OCR failures) - see needs_redownload"
+
+  pfas:
+    description: "PFAS biodegradation abstracts"
+    path: corpus/abstracts
+    file_pattern: "pfas_*-abstract.txt"
+    input_type: abstract
+    count: 13
+    recommended_templates:
+      - chemical_utilization_hybrid
+      - biochemical_hybrid
+    rich_in:
+      - chemical_degradation
+      - fluorinated_compounds
+    notes: "Focus on PFAS and fluorinated compound biodegradation"
+
+  pfas_fulltext:
+    description: "PFAS full papers"
+    path: corpus/fulltexts
+    input_type: fulltext
+    file_patterns:
+      pdf: "pfas_ai_*.pdf"
+      markdown: "pfas_ai_*.md"
+    count_pdf: 14
+    count_md: 7  # Updated 2025-11-25: 7 stub/OCR files deleted
+    recommended_templates:
+      - chemical_utilization_hybrid
+    rich_in:
+      - chemical_degradation
+    available_md:  # In corpus/fulltexts/ with pfas_ai_ prefix
+      - pfas_ai_doi_10_1016-j_jhazmat_2023_133217.md
+      - pfas_ai_doi_10_1016-j_scitotenv_2024_172996.md
+      - pfas_ai_doi_10_1016-j_scitotenv_2024_176801.md
+      - pfas_ai_doi_10_1101-2025_09_19_677392.md  # bioRxiv preprint
+      - pfas_ai_doi_10_1371-journal_pone_0303904.md  # PLOS ONE open access
+      - pfas_ai_doi_10_3390-su151814000.md  # MDPI Sustainability
+      - pfas_ai_doi_10_3390-toxics11121001.md  # MDPI Toxics
+    needs_redownload:
+      # PMC stub (PDF download failed)
+      - {id: PMC10748008, url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10748008/"}
+      # Publisher paywall/OCR failures
+      - {id: doi_10_1007-s11756-024-01654-0, url: "https://doi.org/10.1007/s11756-024-01654-0"}
+      - {id: doi_10_1016-j_chemosphere_2014_01_072, url: "https://doi.org/10.1016/j.chemosphere.2014.01.072"}
+      - {id: doi_10_1016-j_funbio_2025_101586, url: "https://doi.org/10.1016/j.funbio.2025.101586"}
+      - {id: doi_10_1016-j_jhazmat_2024_136426, url: "https://doi.org/10.1016/j.jhazmat.2024.136426"}
+      - {id: doi_10_1021-acs_est_5c06771, url: "https://doi.org/10.1021/acs.est.5c06771"}
+      - {id: doi_10_1134-S0003683817050027, url: "https://doi.org/10.1134/S0003683817050027"}
+    notes: "7 usable markdown files; 7 deleted 2025-11-25 (stub/OCR failures) - see needs_redownload"
+
+  icbo_examples:
+    description: "Curated IJSEM species descriptions for ICBO 2025 demo and annotator comparison"
+    path: corpus/abstracts
+    pmid_list: corpus/icbo_examples_pmids.txt
+    input_type: abstract
+    count: 10
+    recommended_templates:
+      - strain_phenotype_metpo
+      - strain_phenotype_omp
+      - strain_phenotype_pato
+      - strain_phenotype_micro
+      - chemical_utilization_hybrid
+      - growth_conditions_hybrid
+      - morphology_template_base
+    rich_in:
+      - phenotype
+      - morphology
+      - growth_conditions
+      - taxonomy
+    pmids:
+      - "18294205"  # Methylovirgula ligni
+      - "19440302"  # Methylocella tundrae
+      - "19622650"  # Methylovirgula ligni (detailed)
+      - "19622668"  # Bavariicoccus seileri
+      - "20336137"  # Methyloferula stellata
+      - "22740660"  # Methylocystis bryophila
+      - "27573017"  # Methylocapsa palsarum
+      - "27983469"  # Methylacidimicrobium
+      - "28879838"  # Methylomonas paludis
+      - "37170873"  # Methylocystis silviterrae
+    notes: |
+      Selected for high phenotype density in novel species descriptions.
+      These PMIDs exist in cmm_ or other_ prefixed files - use pmid_list to select subset.
+
+  other:
+    description: "Miscellaneous microbiology abstracts"
+    path: corpus/abstracts
+    file_pattern: "other_*-abstract.txt"
+    input_type: abstract
+    count: 121
+    recommended_templates:
+      - growth_conditions_hybrid
+      - morphology_template_base
+      - taxa_template_base
+    rich_in:
+      - mixed
+    notes: "General collection, mixed content"
+
+  test_morphology:
+    description: "Small test set for morphology template development"
+    path: corpus/abstracts
+    file_pattern: "test-morphology_*-abstract.txt"
+    input_type: abstract
+    count: 3
+    recommended_templates:
+      - morphology_template_base
+    rich_in:
+      - morphology
+      - cell_shape
+    notes: "Used for template iteration and testing"
+
+# =============================================================================
+# TEMPLATES - OntoGPT extraction templates
+# =============================================================================
+
+templates:
+  # Strain phenotype templates (annotator comparison variants)
+  strain_phenotype_metpo:
+    path: templates/strain_phenotype_metpo.yaml
+    annotators:
+      phenotype: sqlite:../src/ontology/metpo.owl
+      chemical: sqlite:obo:chebi
+    extracts:
+      - phenotype
+      - chemical
+      - taxon
+    description: "Strain phenotypes grounded to METPO"
+    use_for:
+      - annotator_comparison
+      - phenotype_extraction
+
+  strain_phenotype_omp:
+    path: templates/strain_phenotype_omp.yaml
+    annotators:
+      phenotype: sqlite:obo:omp
+      chemical: sqlite:obo:chebi
+    extracts:
+      - phenotype
+      - chemical
+      - taxon
+    description: "Strain phenotypes grounded to OMP"
+    use_for:
+      - annotator_comparison
+
+  strain_phenotype_pato:
+    path: templates/strain_phenotype_pato.yaml
+    annotators:
+      phenotype: sqlite:obo:pato
+      chemical: sqlite:obo:chebi
+    extracts:
+      - phenotype
+      - chemical
+      - taxon
+    description: "Strain phenotypes grounded to PATO"
+    use_for:
+      - annotator_comparison
+
+  strain_phenotype_micro:
+    path: templates/strain_phenotype_micro.yaml
+    annotators:
+      phenotype: sqlite:obo:micro
+      chemical: sqlite:obo:chebi
+    extracts:
+      - phenotype
+      - chemical
+      - taxon
+    description: "Strain phenotypes grounded to MICRO"
+    use_for:
+      - annotator_comparison
+
+  # Domain-specific templates
+  chemical_utilization_hybrid:
+    path: templates/chemical_utilization_hybrid.yaml
+    annotators:
+      chemical: sqlite:obo:chebi
+      predicate: metpo_properties  # Populated from METPO property hierarchy
+    extracts:
+      - chemical
+      - chemical_relationship
+    description: "Chemical substrate utilization with CHEBI grounding"
+    use_for:
+      - chemical_extraction
+      - substrate_utilization
+    notes: "Predicate enum populated from METPO chemical interaction properties"
+
+  growth_conditions_hybrid:
+    path: templates/growth_conditions_hybrid.yaml
+    annotators:
+      phenotype: sqlite:../src/ontology/metpo.owl
+    extracts:
+      - temperature
+      - ph
+      - salinity
+      - oxygen_requirement
+    description: "Temperature, pH, salinity growth conditions"
+    use_for:
+      - growth_conditions
+      - environmental_tolerance
+
+  biochemical_hybrid:
+    path: templates/biochemical_hybrid.yaml
+    annotators:
+      process: sqlite:obo:go
+      phenotype: sqlite:../src/ontology/metpo.owl
+    extracts:
+      - metabolic_pathway
+      - enzyme
+      - biochemical_process
+    description: "Metabolic pathways and biochemical processes"
+    use_for:
+      - metabolic_extraction
+      - pathway_analysis
+
+  morphology_template_base:
+    path: templates/morphology_template_base.yaml
+    annotators:
+      phenotype: sqlite:../src/ontology/metpo.owl
+    extracts:
+      - cell_shape
+      - motility
+      - gram_stain
+      - pigmentation
+      - cell_arrangement
+    description: "Cell morphology, motility, Gram stain, pigmentation"
+    use_for:
+      - morphology_extraction
+
+  taxa_template_base:
+    path: templates/taxa_template_base.yaml
+    annotators:
+      taxon: sqlite:obo:ncbitaxon
+    extracts:
+      - taxon
+      - strain
+      - isolation_source
+    description: "Taxonomic information extraction"
+    use_for:
+      - taxonomy_extraction
+
+  # Archived templates (superseded)
+  strain_phenotype_icbo:
+    path: templates/archive/strain_phenotype_icbo.yaml
+    status: archived
+    superseded_by: strain_phenotype_metpo
+    description: "ICBO demo version - use strain_phenotype_metpo instead"
+
+  chemical_utilization_icbo:
+    path: templates/archive/chemical_utilization_icbo.yaml
+    status: archived
+    superseded_by: chemical_utilization_hybrid
+    description: "ICBO demo version - use chemical_utilization_hybrid instead"
+
+# =============================================================================
+# RICHNESS TAGS - What entity types each collection is good for
+# =============================================================================
+# Instead of separate directories, use these tags to filter collections
+# for specific extraction tasks
+
+richness_definitions:
+  chemical_utilization:
+    description: "Papers discussing substrate usage, carbon sources, chemical transformations"
+    collections: [cmm, cmm_fulltext, pfas, pfas_fulltext]
+
+  rare_earth_elements:
+    description: "Papers on REE/lanthanide utilization by microbes"
+    collections: [cmm, cmm_fulltext]
+
+  chemical_degradation:
+    description: "Papers on biodegradation of chemicals"
+    collections: [pfas, pfas_fulltext]
+
+  phenotype:
+    description: "Papers with rich phenotype descriptions"
+    collections: [icbo_examples]
+
+  morphology:
+    description: "Papers with detailed cell morphology descriptions"
+    collections: [icbo_examples, test_morphology]
+
+  growth_conditions:
+    description: "Papers with temperature, pH, salinity data"
+    collections: [icbo_examples, cmm]
+
+  taxonomy:
+    description: "Papers with taxonomic information"
+    collections: [icbo_examples, other]
+
+  metabolic_pathways:
+    description: "Papers discussing metabolic pathways"
+    collections: [cmm_fulltext]
+
+# =============================================================================
+# DEFAULT SETTINGS
+# =============================================================================
+
+defaults:
+  model: gpt-4o
+  temperature: 0.0
+  output_dir: outputs
+  log_dir: logs
+
+# =============================================================================
+# PMID SOURCES - Where abstracts come from
+# =============================================================================
+# PMIDs can be sourced from multiple databases. Some require MongoDB access.
+#
+# Sources:
+#   n4l:
+#     description: "Names for Life taxonomic reference database"
+#     requires: inputs/n4l/reference_id_mapping.csv (local CSV file)
+#     stats: ~23,535 references, ~18,636 with valid PMIDs
+#     makefile_target: inputs/random-n4l-pmids.txt
+#
+#   bacdive:
+#     description: "DSMZ Bacterial Diversity Metadatabase"
+#     requires: MongoDB (bacdive.strains_api collection)
+#     connection: mongosh --quiet bacdive
+#     stats: Strains with Pubmed links in External links.literature
+#     makefile_target: inputs/random-bacdive-pmids.txt
+#
+#   ijsem:
+#     description: "International Journal of Systematic and Evolutionary Microbiology"
+#     requires: MongoDB (europepmc.ijsem_articles collection)
+#     connection: mongosh --quiet europepmc
+#     stats: ~13,925 IJSEM articles with PMIDs
+#     makefile_target: inputs/random-ijsem-pmids.txt
+#
+# MongoDB Setup Notes:
+#   - Default assumes local MongoDB or remote at 192.168.0.218:27017
+#   - Collections used:
+#     - europepmc.ijsem_articles - IJSEM abstracts from Europe PMC
+#     - bacdive.strains_api - BacDive strain data with literature links
+#   - If MongoDB unavailable, use pre-curated PMID lists or N4L CSV source
+
+# =============================================================================
+# TEMPLATE POPULATION NOTES
+# =============================================================================
+# Some templates require dynamic population of enumerations from METPO:
+#
+# chemical_utilization_hybrid.yaml:
+#   - ChemicalInteractionPropertyEnum populated from METPO property hierarchy
+#   - Generated via: make templates/chemical_utilization_populated.yaml
+#   - Source query: sparql/chem_interaction_props.rq
+#
+# Workflow:
+#   1. METPO ontology updated (src/ontology/metpo.owl)
+#   2. Run: cd literature_mining && make intermediates
+#   3. This generates intermediates/yaml/chem_interaction_props_enum.yaml
+#   4. Run: make templates/chemical_utilization_populated.yaml
+#   5. Populated template has METPO predicates injected
+#
+# TODO: Automate keeping predicate enumerations in sync with METPO properties
