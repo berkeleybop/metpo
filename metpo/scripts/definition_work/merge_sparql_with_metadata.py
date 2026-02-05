@@ -13,19 +13,25 @@ import click
 
 @click.command()
 @click.option(
-    "--sparql-output", "-s", required=True,
+    "--sparql-output",
+    "-s",
+    required=True,
     type=click.Path(exists=True),
-    help="SPARQL output TSV with METPO terms and definition sources"
+    help="SPARQL output TSV with METPO terms and definition sources",
 )
 @click.option(
-    "--metadata", "-m", required=True,
+    "--metadata",
+    "-m",
+    required=True,
     type=click.Path(exists=True),
-    help="Source metadata TSV from fetch-source-metadata"
+    help="Source metadata TSV from fetch-source-metadata",
 )
 @click.option(
-    "--output", "-o", required=True,
+    "--output",
+    "-o",
+    required=True,
     type=click.Path(),
-    help="Output TSV with merged data"
+    help="Output TSV with merged data",
 )
 def main(sparql_output: str, metadata: str, output: str):
     """Merge SPARQL query results with fetched API metadata."""
@@ -72,28 +78,32 @@ def main(sparql_output: str, metadata: str, output: str):
                 # Look up source metadata
                 if source_iri in source_metadata:
                     meta = source_metadata[source_iri]
-                    writer.writerow({
-                        "metpo_id": metpo_id,
-                        "metpo_label": metpo_label,
-                        "metpo_definition": metpo_def,
-                        "definition_source_iri": source_iri,
-                        "source_label": meta["label"],
-                        "source_definition": meta["definition"],
-                        "source_synonyms": meta["synonyms"],
-                        "source_api": meta["api_source"],
-                    })
+                    writer.writerow(
+                        {
+                            "metpo_id": metpo_id,
+                            "metpo_label": metpo_label,
+                            "metpo_definition": metpo_def,
+                            "definition_source_iri": source_iri,
+                            "source_label": meta["label"],
+                            "source_definition": meta["definition"],
+                            "source_synonyms": meta["synonyms"],
+                            "source_api": meta["api_source"],
+                        }
+                    )
                 else:
                     # Source not found in metadata
-                    writer.writerow({
-                        "metpo_id": metpo_id,
-                        "metpo_label": metpo_label,
-                        "metpo_definition": metpo_def,
-                        "definition_source_iri": source_iri,
-                        "source_label": "",
-                        "source_definition": "",
-                        "source_synonyms": "",
-                        "source_api": "NOT_FOUND",
-                    })
+                    writer.writerow(
+                        {
+                            "metpo_id": metpo_id,
+                            "metpo_label": metpo_label,
+                            "metpo_definition": metpo_def,
+                            "definition_source_iri": source_iri,
+                            "source_label": "",
+                            "source_definition": "",
+                            "source_synonyms": "",
+                            "source_api": "NOT_FOUND",
+                        }
+                    )
 
                 row_count += 1
 
