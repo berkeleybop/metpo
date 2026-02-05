@@ -1,0 +1,452 @@
+id: http://w3id.org/metpo/chemical_utilization_extraction
+name: chemical_utilization_extraction
+title: METPO Chemical Utilization Extraction Template V3 (balanced examples)
+description: >-
+  A focused OntoGPT template for extracting organism-chemical utilization relationships from bacterial literature. Uses a two-step approach: first identifies chemicals mentioned in text, then extracts specific utilization relationships with METPO interaction predicates. V3 includes balanced examples covering positive, negative, and specific predicates.
+license: https://creativecommons.org/publicdomain/zero/1.0/
+prefixes:
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  linkml: https://w3id.org/linkml/
+  metpo_chem: http://w3id.org/metpo/chemical_utilization_extraction/
+  ontogpt: http://w3id.org/ontogpt/
+  METPO: http://purl.obolibrary.org/obo/METPO_
+  NCBITaxon: http://purl.obolibrary.org/obo/NCBITaxon_
+  CHEBI: http://purl.obolibrary.org/obo/CHEBI_
+default_prefix: metpo_chem
+default_range: string
+imports:
+  - linkml:types
+  - ontogpt:core
+classes:
+  ChemicalUtilizationLiteratureExtraction:
+    tree_root: true
+    description: >-
+      Extract chemical utilization relationships with consistent strain identification. CRITICAL: Use identical strain identifiers across strains, chemical_utilizations,  and strain_relationships fields. Extract clean strain designators (e.g., "DA-C8",  "MG1655") consistently throughout all fields.
+    attributes:
+      pmid:
+        description: >-
+          PubMed ID of the article (e.g., 23996836)
+        range: string
+      study_taxa:
+        description: >-
+          semicolon-separated list of the main bacterial or archaeal taxa being studied for chemical utilization
+        multivalued: true
+        range: Taxon
+      strains:
+        description: >-
+          semicolon-separated list of specific strain designations mentioned in the text
+        multivalued: true
+        range: Strain
+        annotations:
+          prompt: >-
+            Extract ONLY the strain designation part (e.g., "DA-C8", "MG1655", "ATCC 25922") WITHOUT genus/species prefixes. Focus on strain numbers, culture collection codes, and isolate identifiers. Automatically remove terminal "T" or "(T)" suffixes as these indicate type strain status (e.g., "DA-C8T" becomes "DA-C8", "K13T" becomes "K13"). Include strain numbers, culture collection numbers, and isolate names, but NOT the full taxonomic context.
+      chemicals_mentioned:
+        description: >-
+          List of chemical compounds mentioned in the text that could be involved in metabolic processes, growth, or biochemical reactions
+        multivalued: true
+        range: ChemicalCompound
+        annotations:
+          prompt: >-
+            Identify all chemical compounds mentioned in the text that are relevant to bacterial metabolism, growth, or biochemical activities. Include: carbon sources (glucose, acetate), nitrogen sources (ammonia, nitrate), vitamins (B12, biotin), metabolic intermediates, enzyme substrates, electron acceptors/donors, and any other chemicals involved in bacterial physiology. If no relevant chemicals are mentioned,  leave this field completely empty. DO NOT include entries like "None  explicitly mentioned" or similar phrases.
+      chemical_utilizations:
+        description: >-
+          List of specific organism-chemical utilization relationships with their interaction types from METPO ontology
+        multivalued: true
+        range: ChemicalUtilization
+        annotations:
+          prompt: >-
+            A semicolon-separated list of strain-chemical relationships. Use EXACTLY THE SAME strain identifiers from the strains field.
+
+            Extract ALL relationships mentioned in the text. Be comprehensive - include both what strains CAN do and what they CANNOT do. Use specific predicates (uses_as_carbon_source, degrades, oxidizes) rather than generic ones when the text specifies the interaction type.
+      strain_relationships:
+        description: >-
+          semicolon-separated list of strain-species relationships found in the text
+        multivalued: true
+        range: StrainRelationship
+        annotations:
+          prompt: >-
+            A semicolon-separated list of strain-species relationships, where each relationship connects a strain identifier to its parent taxon. CRITICAL: Use EXACTLY THE SAME strain identifiers as listed in the strains field above - copy them verbatim, character-for-character. Do not modify, abbreviate, or expand the strain identifiers. Each relationship should have the strain identifier, relationship type, and parent species/genus. For example: "DA-C8 type_strain_of Insulambacter thermoxylanivorax; MG1655 strain_of Escherichia coli; ATCC 25922 type_strain_of Klebsiella pneumoniae". The strain identifiers MUST be identical to those used in the strains and chemical_utilizations fields. If no strain relationships are found, leave this field empty. DO NOT write "none".
+      article_type:
+        description: >-
+          the type of study described in this article
+        range: ArticleType
+        annotations:
+          prompt: >-
+            The type of study or article. Choose the most appropriate category based on the content, with emphasis on metabolic_study for articles focusing on chemical utilization, degradation, or metabolic pathways.
+      source_text:
+        range: string
+        annotations:
+          prompt.skip: "true"
+  Taxon:
+    is_a: NamedEntity
+    description: >-
+      Bacterial, archaeal, or other microbial taxa utilizing chemicals.
+    annotations:
+      annotators: sqlite:obo:ncbitaxon
+  Strain:
+    is_a: NamedEntity
+    description: >-
+      Specific bacterial or archaeal strain designations including culture collection numbers, type strains, and isolate identifiers.
+  ChemicalUtilization:
+    is_a: CompoundExpression
+    description: >-
+      Specific relationships between strains and chemical compounds focusing on utilization, degradation, and metabolic interactions
+    attributes:
+      subject:
+        description: the strain that utilizes the chemical compound
+        range: Strain
+      predicate:
+        description: the type of chemical utilization relationship from METPO ontology
+        range: ChemicalInteractionPropertyEnum
+        annotations:
+          prompt: >-
+            Select the MOST SPECIFIC predicate that matches the text. Guidelines:
+
+            GROWTH (use these when text mentions growth, cultivation, or culture):
+            - uses_for_growth (general growth)
+            - uses_as_carbon_source (explicitly mentioned as carbon source)
+            - uses_as_nitrogen_source (nitrogen source)
+            - uses_as_energy_source (energy source)
+            - uses_for_aerobic_growth (aerobic conditions)
+            - uses_for_anaerobic_growth (anaerobic conditions)
+            - requires_for_growth (required/essential)
+
+            TRANSFORMATIONS (use these for metabolic activities):
+            - degrades (breaks down)
+            - catabolizes (catabolism/breakdown for energy)
+            - oxidizes (oxidation)
+            - reduces (reduction)
+            - ferments (fermentation)
+            - hydrolyzes (hydrolysis)
+            - mineralizes (complete degradation to minerals)
+            - synthesizes (produces/makes)
+
+            NEGATIVE (use these for "does not", "cannot", "unable to"):
+            - does_not_use_for_growth
+            - does_not_use_as_carbon_source
+            - does_not_degrade
+            - does_not_ferment
+            - does_not_oxidize
+            - does_not_reduce
+            - (etc. - any does_not_* predicate)
+
+            OTHER (only when none of the above fit):
+            - uses_in_other_way (chemotaxis, tolerance, resistance, other)
+
+            Always prefer SPECIFIC predicates over generic ones.
+      object:
+        description: the specific chemical compound being utilized
+        range: ChemicalCompound
+  ChemicalCompound:
+    is_a: NamedEntity
+    description: >-
+      Chemical compounds involved in bacterial metabolism including carbon sources, nitrogen sources, electron acceptors/donors, vitamins, enzyme substrates, and other metabolic compounds.
+    annotations:
+      annotators: sqlite:obo:chebi
+  StrainRelationship:
+    is_a: CompoundExpression
+    description: >-
+      Specific relationships between strain designations and their parent taxonomic groups
+    attributes:
+      subject:
+        description: the specific strain designation or identifier
+        range: Strain
+      predicate:
+        description: the type of strain-taxon relationship (strain_of, type_strain_of, isolate_of, etc.)
+        range: StrainRelationshipType
+      object:
+        description: the parent species or genus this strain belongs to
+        range: Taxon
+enums:
+  StrainRelationshipType:
+    description: Type of relationship between strain and parent taxon
+    permissible_values:
+      strain_of:
+        description: Regular strain of a species
+      type_strain_of:
+        description: Type strain of a species
+      reference_strain_of:
+        description: Reference strain of a species
+      isolate_of:
+        description: Clinical or environmental isolate of a species
+      variant_of:
+        description: Variant or mutant strain of a species
+      derived_from:
+        description: Strain derived from another strain (e.g., mutants, subcultures)
+      identical_to:
+        description: Strain is identical or equivalent to another designation
+      deposited_as:
+        description: Strain deposited in culture collection under this designation
+  ArticleType:
+    description: Type of study or article
+    permissible_values:
+      novel_species:
+        description: Description of new species
+      novel_genus:
+        description: Description of new genus
+      taxonomic_revision:
+        description: Revision or reclassification of existing taxa
+      phylogenetic_analysis:
+        description: Phylogenetic or evolutionary study
+      comparative_taxonomy:
+        description: Comparative analysis of multiple taxa
+      emended_description:
+        description: Emended or updated taxonomic description
+      genome_sequence:
+        description: Complete or draft genome sequence publication
+      review:
+        description: Review article or perspective
+      biochemical_characterization:
+        description: Biochemical or physiological characterization study
+      ecological_study:
+        description: Ecological distribution or environmental survey
+      metabolic_study:
+        description: Study focused on metabolism, chemical utilization, or degradation pathways
+      physiology_study:
+        description: Physiological characterization or growth studies
+  ChemicalInteractionPropertyEnum:
+    permissible_values:
+      catabolizes:
+        description: catabolizes
+        meaning: METPO:2000204
+      builds_base_from:
+        description: builds base from
+        meaning: METPO:2000004
+      does_not_conjugate:
+        description: does not conjugate
+        meaning: METPO:2000226
+      does_not_catabolize:
+        description: does not catabolize
+        meaning: METPO:2000224
+      does_not_use_for_aerobic_growth:
+        description: does not use for aerobic growth
+        meaning: METPO:2000022
+      mineralizes:
+        description: mineralizes
+        meaning: METPO:2000205
+      uses_as_carbon_source:
+        description: uses as carbon source
+        meaning: METPO:2000006
+      crystallizes:
+        description: crystallizes
+        meaning: METPO:2000218
+      fixes:
+        description: fixes
+        meaning: METPO:2000203
+      accumulates:
+        description: accumulates
+        meaning: METPO:2000210
+      binds:
+        description: binds
+        meaning: METPO:2000213
+      does_not_reduce:
+        description: does not reduce
+        meaning: METPO:2000044
+      does_not_mineralize:
+        description: does not mineralize
+        meaning: METPO:2000225
+      does_not_use_for_anaerobic_catabolization:
+        description: does not use for anaerobic catabolization
+        meaning: METPO:2000023
+      precipitates:
+        description: precipitates
+        meaning: METPO:2000215
+      degrades:
+        description: degrades
+        meaning: METPO:2000007
+      does_not_use_as_energy_source:
+        description: does not use as energy source
+        meaning: METPO:2000036
+      does_not_use_as_nitrogen_source:
+        description: does not use as nitrogen source
+        meaning: METPO:2000040
+      builds_gas_from:
+        description: builds gas from
+        meaning: METPO:2000005
+      does_not_transport:
+        description: does not transport
+        meaning: METPO:2000227
+      uses_for_growth:
+        description: uses for growth
+        meaning: METPO:2000012
+      uses_in_other_way:
+        description: uses in other way
+        meaning: METPO:2000015
+      does_not_volatilize:
+        description: does not volatilize
+        meaning: METPO:2000237
+      does_not_precipitate:
+        description: does not precipitate
+        meaning: METPO:2000235
+      does_not_degrade:
+        description: does not degrade
+        meaning: METPO:2000033
+      reduces:
+        description: reduces
+        meaning: METPO:2000017
+      is_not_required_for_growth:
+        description: is not required for growth
+        meaning: METPO:2000045
+      conjugates:
+        description: conjugates
+        meaning: METPO:2000206
+      does_not_use_in_other_way:
+        description: does not use in other way
+        meaning: METPO:2000041
+      uses_for_anaerobic_growth_with_light:
+        description: uses for anaerobic growth with light
+        meaning: METPO:2000051
+      does_not_use_for_anaerobic_growth:
+        description: does not use for anaerobic growth
+        meaning: METPO:2000024
+      uses_as_electron_acceptor:
+        description: uses as electron acceptor
+        meaning: METPO:2000008
+      does_not_disproportionate:
+        description: does not disproportionate
+        meaning: METPO:2000220
+      transports:
+        description: transports
+        meaning: METPO:2000207
+      volatilizes:
+        description: volatilizes
+        meaning: METPO:2000217
+      does_not_use_for_respiration:
+        description: does not use for respiration
+        meaning: METPO:2000046
+      does_not_lyse:
+        description: does not lyse
+        meaning: METPO:2000221
+      does_not_use_for_anaerobic_growth_in_the_dark:
+        description: does not use for anaerobic growth in the dark
+        meaning: METPO:2000025
+      does_not_chelate:
+        description: does not chelate
+        meaning: METPO:2000234
+      uses_as_electron_donor:
+        description: uses as electron donor
+        meaning: METPO:2000009
+      does_not_use_for_growth:
+        description: does not use for growth
+        meaning: METPO:2000038
+      uses_for_aerobic_catabolization:
+        description: uses for aerobic catabolization
+        meaning: METPO:2000032
+      uses_as_nitrogen_source:
+        description: uses as nitrogen source
+        meaning: METPO:2000014
+      does_not_use_as_electron_donor:
+        description: does not use as electron donor
+        meaning: METPO:2000035
+      uses_for_respiration:
+        description: uses for respiration
+        meaning: METPO:2000019
+      does_not_use_as_sulfur_source:
+        description: does not use as sulfur source
+        meaning: METPO:2000047
+      ferments:
+        description: ferments
+        meaning: METPO:2000011
+      disproportionates:
+        description: disproportionates
+        meaning: METPO:2000200
+      uses_for_anaerobic_growth_in_the_dark:
+        description: uses for anaerobic growth in the dark
+        meaning: METPO:2000050
+      does_not_build_acid_from:
+        description: does not build acid from
+        meaning: METPO:2000028
+      does_not_produce:
+        description: does not produce
+        meaning: METPO:2000222
+      does_not_use_for_anaerobic_growth_with_light:
+        description: does not use for anaerobic growth with light
+        meaning: METPO:2000026
+      uses_as_sulfur_source:
+        description: uses as sulfur source
+        meaning: METPO:2000020
+      lyses:
+        description: lyses
+        meaning: METPO:2000201
+      assimilates:
+        description: assimilates
+        meaning: METPO:2000002
+      chelates:
+        description: chelates
+        meaning: METPO:2000214
+      uses_for_anaerobic_catabolization:
+        description: uses for anaerobic catabolization
+        meaning: METPO:2000048
+      solubilizes:
+        description: solubilizes
+        meaning: METPO:2000216
+      does_not_assimilate:
+        description: does not assimilate
+        meaning: METPO:2000027
+      adsorbs:
+        description: adsorbs
+        meaning: METPO:2000219
+      does_not_oxidize:
+        description: does not oxidize
+        meaning: METPO:2000042
+      builds_acid_from:
+        description: builds acid from
+        meaning: METPO:2000003
+      oxidizes:
+        description: oxidizes
+        meaning: METPO:2000016
+      does_not_crystallize:
+        description: does not crystallize
+        meaning: METPO:2000238
+      does_not_build_base_from:
+        description: does not build base from
+        meaning: METPO:2000029
+      does_not_fix:
+        description: does not fix
+        meaning: METPO:2000223
+      does_not_solubilize:
+        description: does not solubilize
+        meaning: METPO:2000236
+      does_not_use_for_aerobic_catabolization:
+        description: does not use for aerobic catabolization
+        meaning: METPO:2000021
+      does_not_accumulate:
+        description: does not accumulate
+        meaning: METPO:2000230
+      does_not_use_as_electron_acceptor:
+        description: does not use as electron_acceptor
+        meaning: METPO:2000034
+      requires_for_growth:
+        description: requires for growth
+        meaning: METPO:2000018
+      does_not_bind:
+        description: does not bind
+        meaning: METPO:2000233
+      does_not_hydrolyze:
+        description: does not hydrolyze
+        meaning: METPO:2000039
+      uses_as_energy_source:
+        description: uses as energy source
+        meaning: METPO:2000010
+      does_not_ferment:
+        description: does not ferment
+        meaning: METPO:2000037
+      does_not_use_as_carbon_source:
+        description: does not use as carbon source
+        meaning: METPO:2000031
+      does_not_build_gas_from:
+        description: does not build gas from
+        meaning: METPO:2000030
+      uses_for_anaerobic_growth:
+        description: uses for anaerobic growth
+        meaning: METPO:2000049
+      hydrolyzes:
+        description: hydrolyzes
+        meaning: METPO:2000013
+      uses_for_aerobic_growth:
+        description: uses for aerobic growth
+        meaning: METPO:2000043
+      synthesizes:
+        description: synthesizes
+        meaning: METPO:2000202
+# ChemicalInteractionPropertyEnum will be dynamically injected here
