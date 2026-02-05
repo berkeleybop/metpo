@@ -266,9 +266,7 @@ def fetch_metadata_from_bioportal_search(curie: str, iri: str) -> dict | None:
 )
 def main(input_file: str, output_file: str, bioportal_key: str | None, delay: float):
     """Fetch definition source metadata from OLS and BioPortal APIs."""
-    global BIOPORTAL_API_KEY
-    if bioportal_key:
-        BIOPORTAL_API_KEY = bioportal_key
+    api_key = bioportal_key or BIOPORTAL_API_KEY
 
     click.echo("=" * 80)
     click.echo("COMPREHENSIVE SOURCE METADATA FETCHING WORKFLOW")
@@ -278,8 +276,8 @@ def main(input_file: str, output_file: str, bioportal_key: str | None, delay: fl
     click.echo(f"Output: {output_file}")
     click.echo()
 
-    if BIOPORTAL_API_KEY:
-        click.echo(f"✓ BioPortal API key found ({BIOPORTAL_API_KEY[:10]}...)")
+    if api_key:
+        click.echo(f"✓ BioPortal API key found ({api_key[:10]}...)")
     else:
         click.echo("⚠ No BioPortal API key - only OLS will be used")
         click.echo("  Set with: --bioportal-key or BIOPORTAL_API_KEY env var")
@@ -335,7 +333,7 @@ def main(input_file: str, output_file: str, bioportal_key: str | None, delay: fl
                 ols_success += 1
 
         # Strategy 3: Try BioPortal general search
-        if not (metadata and metadata["label"]) and BIOPORTAL_API_KEY:
+        if not (metadata and metadata["label"]) and api_key:
             click.echo("  → Trying BioPortal search...")
             time.sleep(0.5)
             metadata = fetch_metadata_from_bioportal_search(source_curie, source_iri)

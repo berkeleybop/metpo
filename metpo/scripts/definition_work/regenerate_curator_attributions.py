@@ -46,10 +46,7 @@ def main(curator_dir: str | None, output: str | None):
     else:
         curator_path = repo_root / "data" / "undergraduate_definitions"
 
-    if output:
-        output_file = Path(output)
-    else:
-        output_file = curator_path / "curator_proposed_definitions.tsv"
+    output_file = Path(output) if output else curator_path / "curator_proposed_definitions.tsv"
 
     click.echo(f"Curator directory: {curator_path}")
     click.echo(f"Output file: {output_file}")
