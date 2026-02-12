@@ -3,9 +3,18 @@
 ## Problem
 
 [MetaTraits](https://metatraits.embl.de/) is an EMBL database that unifies microbial
-trait data from BacDive, BV-BRC, JGI/GOLD, JGI/IMG, and prediction tools across 2.2M
-genomes. It publishes 2,860 trait cards, each annotated with ontology CURIEs (GO, CHEBI,
-OMP, MICRO, etc.).
+trait data across 2.2M genomes from two categories of sources:
+
+- **Observed/curated data**: BacDive (culture-based assay results), BV-BRC, JGI/GOLD
+  (genome metadata with curated phenotypes)
+- **Genomic predictions**: BacDive-AI, GenomeSPOT, SPIRE (computational phenotype
+  inference from genome sequences)
+
+MetaTraits publishes 2,860 traits, each annotated with ontology CURIEs (GO, CHEBI,
+OMP, MICRO, etc.). The trait definitions themselves are source-agnostic — "fermentation:
+glucose" means the same thing whether it was observed in a culture assay or predicted
+from a genome. The distinction between observed and predicted is carried at the
+**per-organism assertion level**, not the trait definition level.
 
 The goal is to express MetaTraits knowledge as KG-Microbe triples:
 
@@ -67,7 +76,7 @@ utilizes. These need new METPO properties or synonym additions.
 
 | File | Description |
 |------|-------------|
-| `metatraits_cards.tsv` | 2,860 trait cards scraped from metatraits.embl.de/traits (input) |
+| `metatraits_cards.tsv` | 2,860 traits scraped from metatraits.embl.de/traits (input) |
 | `metatraits_metpo_curie_join.sssom.tsv` | 250 SSSOM mappings: MetaTraits terms to METPO classes |
 | `metatraits_kgx_edge_templates.tsv` | 2,557 rows: METPO predicate + CHEBI object per composed trait |
 | `metatraits_metpo_curie_join_report.md` | Detailed results with property resolution table |
@@ -76,13 +85,18 @@ utilizes. These need new METPO properties or synonym additions.
 
 Scraped by Marcin's `fetch_metatraits.py` (on the `metatraits` branch) from the
 MetaTraits website. The website is the only source that publishes ontology CURIEs
-per trait; the API and bulk downloads do not include them.
+per trait; the API and bulk downloads do not include them. (The filename uses "cards"
+because Marcin's scraper parses Bootstrap `<div class="card">` HTML elements;
+MetaTraits itself calls these "traits".)
 
 Columns: `card_id`, `name`, `type`, `ontology_curies`, `ontology_urls`, `description`
 
 - 81 base traits, 2,779 composed traits
 - 826 unique CURIEs dominated by GO (2,530 references) and CHEBI (2,372)
 - Types: boolean (2,825), factor (9), measurement units (um, Celsius, %, etc.)
+
+This file captures **trait definitions only**, not per-organism assertions. It does not
+indicate which organisms have which traits, nor whether a trait was observed or predicted.
 
 ### metatraits_metpo_curie_join.sssom.tsv
 
@@ -105,6 +119,13 @@ To generate actual KG-Microbe edges, a script should:
 2. Look up the METPO predicate from this table (or embed the logic directly)
 3. Emit: `organism_curie → METPO:2000011 → CHEBI:17234`
 4. For negative results, use the `negative_predicate_id` column instead
+5. Set `knowledge_level` and `agent_type` based on the **source database**:
+   - Observed data (BacDive, BV-BRC, GOLD): `knowledge_assertion` / `manual_agent`
+   - Predictions (BacDive-AI, GenomeSPOT, SPIRE): `prediction` / `automated_agent`
+
+The MetaTraits API exposes which database each per-organism assertion comes from
+(via the `?databases=` parameter), so observed vs. predicted can be resolved at
+edge generation time.
 
 The `cmm-ai-automation` repo provides the reference implementation for KGX edge
 generation — scripts there query MongoDB/APIs and emit `KGXEdge` objects directly
@@ -158,11 +179,28 @@ uv run curie-join-metatraits \
 | `metpo_mappings_optimized.sssom.tsv` | Alignment pipeline | Optimized semantic matches |
 | (on `metatraits` branch) `metatraits_metpo_kgmicrobe.sssom.tsv` | Marcin's script | Fuzzy label matching |
 
+## Observed vs. predicted data
+
+MetaTraits integrates both culture-based observations and computational predictions,
+but this distinction is **not captured in the trait definitions** — it exists only in the
+per-organism assertion data. When generating KG-Microbe edges, the source database
+determines the appropriate KGX provenance metadata:
+
+| Source type | Databases | `knowledge_level` | `agent_type` |
+|------------|-----------|-------------------|-------------|
+| Observed/curated | BacDive, BV-BRC, JGI/GOLD, JGI/IMG | `knowledge_assertion` | `manual_agent` |
+| Predicted | BacDive-AI, GenomeSPOT, SPIRE, proGenomes | `prediction` | `automated_agent` |
+
+The current edge template file hardcodes `knowledge_assertion` / `manual_agent` for
+all rows. This is a placeholder — the actual values must be set per-assertion at edge
+generation time based on which MetaTraits database the assertion came from.
+
 ## Next steps
 
 1. **Generate actual KG-Microbe edges**: Write a script (following `cmm-ai-automation`
    patterns) that queries MetaTraits per-organism data and emits KGX edges using the
-   METPO predicate resolution logic built here.
+   METPO predicate resolution logic built here. Must handle observed vs. predicted
+   provenance correctly.
 2. **Fix METPO:2000045** assay outcome (issue #342).
 3. **Add METPO properties** for the 6 unresolved categories.
 4. **Improve CHEBI coverage** for the 394 substrates without CURIEs.
