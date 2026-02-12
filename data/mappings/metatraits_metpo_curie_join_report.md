@@ -55,8 +55,8 @@ METPO object properties resolved from MetaTraits base categories via synonym mat
 | growth | `METPO:2000012` uses for growth | `METPO:2000038` does not use for growth | 252 |
 | builds acid from | `METPO:2000003` builds acid from | `METPO:2000028` does not build acid from | 176 |
 | enzyme activity | *unresolved* | *unresolved* | 132 |
-| oxidation | `METPO:2000016` oxidizes | `METPO:2000042` does not oxidize | 124 |
 | energy source | `METPO:2000010` uses as energy source | `METPO:2000036` does not use as energy source | 124 |
+| oxidation | `METPO:2000016` oxidizes | `METPO:2000042` does not oxidize | 124 |
 | hydrolysis | `METPO:2000013` hydrolyzes | `METPO:2000039` does not hydrolyze | 110 |
 | fermentation | `METPO:2000011` ferments | `METPO:2000037` does not ferment | 102 |
 | degradation | `METPO:2000007` degrades | `METPO:2000033` does not degrade | 85 |
@@ -77,8 +77,8 @@ METPO object properties resolved from MetaTraits base categories via synonym mat
 | anaerobic catabolization | `METPO:2000048` uses for anaerobic catabolization | `METPO:2000023` does not use for anaerobic catabolization | 4 |
 | denitrification | *unresolved* | *unresolved* | 3 |
 | anaerobic growth in the dark | `METPO:2000050` uses for anaerobic growth in the dark | `METPO:2000025` does not use for anaerobic growth in the dark | 3 |
-| ammonification | *unresolved* | *unresolved* | 2 |
 | sulfur source | `METPO:2000020` uses as sulfur source | `METPO:2000047` does not use as sulfur source | 2 |
+| ammonification | *unresolved* | *unresolved* | 2 |
 | cell color | *unresolved* | *unresolved* | 1 |
 
 ### Sample KGX Edge Templates

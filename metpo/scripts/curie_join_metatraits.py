@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 CURIE-based MetaTraits-to-METPO mapping with KGX edge template generation.
 
@@ -25,11 +24,10 @@ Outputs:
 import csv
 import re
 from collections import defaultdict
-from datetime import date
+from datetime import UTC, datetime
 from pathlib import Path
 
 import click
-
 
 # CURIEs that are too generic to produce meaningful joins.
 # These map to top-level concepts and create fan-out noise.
@@ -52,9 +50,9 @@ def parse_metpo_template(path: str) -> tuple:
     curie_to_metpo = defaultdict(list)
     metpo_labels = {}
 
-    with open(path, newline="") as f:
+    with Path(path).open(newline="") as f:
         reader = csv.reader(f, delimiter="\t")
-        header = next(reader)  # human-readable header
+        next(reader)  # human-readable header
         next(reader)  # ROBOT template header
 
         id_col = 0
@@ -76,15 +74,17 @@ def parse_metpo_template(path: str) -> tuple:
             if not def_sources:
                 continue
 
-            for source in def_sources.split("|"):
-                source = source.strip()
-                if re.match(r"^[A-Za-z][A-Za-z0-9_]+:\S+$", source) and "://" not in source:
-                    curie_to_metpo[source].append({"id": metpo_id, "label": label})
+            for raw_source in def_sources.split("|"):
+                src = raw_source.strip()
+                if re.match(r"^[A-Za-z][A-Za-z0-9_]+:\S+$", src) and "://" not in src:
+                    curie_to_metpo[src].append({"id": metpo_id, "label": label})
 
     return curie_to_metpo, metpo_labels
 
 
-def parse_metpo_properties(path: str) -> dict:
+def parse_metpo_properties(
+    path: str,
+) -> tuple[dict[str, dict[str, dict[str, str] | None]], dict[str, dict[str, str]]]:
     """Parse METPO properties TSV and build category-to-property lookup.
 
     Uses the synonym column to match MetaTraits base category names
@@ -97,12 +97,14 @@ def parse_metpo_properties(path: str) -> dict:
         }
         all_props: dict mapping METPO property id -> full row info
     """
-    category_to_props = defaultdict(lambda: {"positive": None, "negative": None})
+    category_to_props: dict[str, dict[str, dict[str, str] | None]] = defaultdict(
+        lambda: {"positive": None, "negative": None}
+    )
     all_props = {}
 
-    with open(path, newline="") as f:
+    with Path(path).open(newline="") as f:
         reader = csv.reader(f, delimiter="\t")
-        header = next(reader)  # human-readable header
+        next(reader)  # human-readable header
         next(reader)  # ROBOT template header
 
         # Column indices from metpo-properties.tsv
@@ -154,16 +156,12 @@ def parse_metatraits_cards(path: str) -> list[dict]:
       base_category (str or None), substrate (str or None)
     """
     cards = []
-    with open(path, newline="") as f:
+    with Path(path).open(newline="") as f:
         reader = csv.DictReader(f, delimiter="\t")
         for row in reader:
             name = row["name"].strip()
             curies_raw = row.get("ontology_curies", "")
-            curies = set()
-            for c in curies_raw.split(";"):
-                c = c.strip()
-                if c:
-                    curies.add(c)
+            curies = {c.strip() for c in curies_raw.split(";") if c.strip()}
 
             if ": " in name:
                 parts = name.split(": ", 1)
@@ -183,18 +181,20 @@ def parse_metatraits_cards(path: str) -> list[dict]:
                 else:
                     process_curies.add(c)
 
-            cards.append({
-                "card_id": row["card_id"].strip(),
-                "name": name,
-                "trait_type": row.get("type", "").strip(),
-                "all_curies": curies,
-                "process_curies": process_curies,
-                "substrate_curies": substrate_curies,
-                "description": row.get("description", "").strip(),
-                "is_composed": is_composed,
-                "base_category": base_category,
-                "substrate": substrate,
-            })
+            cards.append(
+                {
+                    "card_id": row["card_id"].strip(),
+                    "name": name,
+                    "trait_type": row.get("type", "").strip(),
+                    "all_curies": curies,
+                    "process_curies": process_curies,
+                    "substrate_curies": substrate_curies,
+                    "description": row.get("description", "").strip(),
+                    "is_composed": is_composed,
+                    "base_category": base_category,
+                    "substrate": substrate,
+                }
+            )
 
     return cards
 
@@ -212,36 +212,40 @@ def join_base_traits(cards, curie_to_metpo):
         for curie in sorted(joinable_curies):
             if curie in curie_to_metpo:
                 for metpo in curie_to_metpo[curie]:
-                    mappings.append({
-                        "subject_id": f"metatraits:{card['card_id']}",
-                        "subject_label": card["name"],
-                        "predicate_id": "skos:closeMatch",
-                        "object_id": metpo["id"],
-                        "object_label": metpo["label"],
-                        "mapping_justification": "semapv:MappingChaining",
-                        "confidence": 0.9,
-                        "subject_source": "metatraits",
-                        "object_source": "METPO",
-                        "comment": f"Shared CURIE: {curie}",
-                    })
+                    mappings.append(
+                        {
+                            "subject_id": f"metatraits:{card['card_id']}",
+                            "subject_label": card["name"],
+                            "predicate_id": "skos:closeMatch",
+                            "object_id": metpo["id"],
+                            "object_label": metpo["label"],
+                            "mapping_justification": "semapv:MappingChaining",
+                            "confidence": 0.9,
+                            "subject_source": "metatraits",
+                            "object_source": "METPO",
+                            "comment": f"Shared CURIE: {curie}",
+                        }
+                    )
                     matched = True
 
         if not matched:
             for curie in sorted(card["all_curies"] & GENERIC_CURIES):
                 if curie in curie_to_metpo:
                     for metpo in curie_to_metpo[curie]:
-                        mappings.append({
-                            "subject_id": f"metatraits:{card['card_id']}",
-                            "subject_label": card["name"],
-                            "predicate_id": "skos:relatedMatch",
-                            "object_id": metpo["id"],
-                            "object_label": metpo["label"],
-                            "mapping_justification": "semapv:MappingChaining",
-                            "confidence": 0.5,
-                            "subject_source": "metatraits",
-                            "object_source": "METPO",
-                            "comment": f"Generic CURIE fallback: {curie}",
-                        })
+                        mappings.append(
+                            {
+                                "subject_id": f"metatraits:{card['card_id']}",
+                                "subject_label": card["name"],
+                                "predicate_id": "skos:relatedMatch",
+                                "object_id": metpo["id"],
+                                "object_label": metpo["label"],
+                                "mapping_justification": "semapv:MappingChaining",
+                                "confidence": 0.5,
+                                "subject_source": "metatraits",
+                                "object_source": "METPO",
+                                "comment": f"Generic CURIE fallback: {curie}",
+                            }
+                        )
                         matched = True
 
         if not matched:
@@ -250,12 +254,8 @@ def join_base_traits(cards, curie_to_metpo):
     return mappings, unmatched
 
 
-def join_composed_traits(cards, curie_to_metpo):
-    """Join composed traits using two-part model: process + substrate."""
-    mappings = []
-    unmatched = []
-    composed_cards = [c for c in cards if c["is_composed"]]
-
+def _build_base_category_metpo(cards, curie_to_metpo):
+    """Build lookup from base category name to METPO terms via CURIE join."""
     base_category_metpo = defaultdict(list)
     for card in cards:
         if not card["is_composed"]:
@@ -266,44 +266,49 @@ def join_composed_traits(cards, curie_to_metpo):
                     for metpo in curie_to_metpo[curie]:
                         if metpo not in base_category_metpo[norm]:
                             base_category_metpo[norm].append(metpo)
+    return base_category_metpo
+
+
+def _make_mapping(card, predicate_id, metpo, confidence, comment):
+    """Create a single SSSOM mapping dict."""
+    return {
+        "subject_id": f"metatraits:{card['card_id']}",
+        "subject_label": card["name"],
+        "predicate_id": predicate_id,
+        "object_id": metpo["id"],
+        "object_label": metpo["label"],
+        "mapping_justification": "semapv:MappingChaining",
+        "confidence": confidence,
+        "subject_source": "metatraits",
+        "object_source": "METPO",
+        "comment": comment,
+    }
+
+
+def join_composed_traits(cards, curie_to_metpo):
+    """Join composed traits using two-part model: process + substrate."""
+    mappings = []
+    unmatched = []
+    composed_cards = [c for c in cards if c["is_composed"]]
+    base_category_metpo = _build_base_category_metpo(cards, curie_to_metpo)
 
     for card in composed_cards:
         base_norm = card["base_category"].lower().strip() if card["base_category"] else ""
-        substrate_curies_str = "; ".join(sorted(card["substrate_curies"])) if card["substrate_curies"] else ""
+        sub_str = "; ".join(sorted(card["substrate_curies"])) if card["substrate_curies"] else ""
         matched = False
 
         joinable_process = card["process_curies"] - GENERIC_CURIES
         for curie in sorted(joinable_process):
             if curie in curie_to_metpo:
                 for metpo in curie_to_metpo[curie]:
-                    mappings.append({
-                        "subject_id": f"metatraits:{card['card_id']}",
-                        "subject_label": card["name"],
-                        "predicate_id": "skos:closeMatch",
-                        "object_id": metpo["id"],
-                        "object_label": metpo["label"],
-                        "mapping_justification": "semapv:MappingChaining",
-                        "confidence": 0.85,
-                        "subject_source": "metatraits",
-                        "object_source": "METPO",
-                        "comment": f"Process CURIE: {curie} | Substrate: {card['substrate']} ({substrate_curies_str})",
-                    })
+                    comment = f"Process CURIE: {curie} | Substrate: {card['substrate']} ({sub_str})"
+                    mappings.append(_make_mapping(card, "skos:closeMatch", metpo, 0.85, comment))
                     matched = True
 
         if not matched and base_norm in base_category_metpo:
             for metpo in base_category_metpo[base_norm]:
-                mappings.append({
-                    "subject_id": f"metatraits:{card['card_id']}",
-                    "subject_label": card["name"],
-                    "predicate_id": "skos:relatedMatch",
-                    "object_id": metpo["id"],
-                    "object_label": metpo["label"],
-                    "mapping_justification": "semapv:MappingChaining",
-                    "confidence": 0.7,
-                    "subject_source": "metatraits",
-                    "object_source": "METPO",
-                    "comment": f"Inherited from base '{card['base_category']}' | Substrate: {card['substrate']} ({substrate_curies_str})",
-                })
+                comment = f"Inherited from base '{card['base_category']}' | Substrate: {card['substrate']} ({sub_str})"
+                mappings.append(_make_mapping(card, "skos:relatedMatch", metpo, 0.7, comment))
                 matched = True
 
         if not matched:
@@ -349,19 +354,23 @@ def resolve_kgx_edges(cards, category_to_props):
         chebi_curies = sorted(card["substrate_curies"])
         chebi_curie = chebi_curies[0] if chebi_curies else ""
 
-        edges.append({
-            "metatraits_card_id": card["card_id"],
-            "metatraits_trait": card["name"],
-            "predicate_id": prop["id"],
-            "predicate_label": prop["label"],
-            "object_id": chebi_curie,
-            "object_label": card["substrate"] or "",
-            "negative_predicate_id": props["negative"]["id"] if props.get("negative") else "",
-            "negative_predicate_label": props["negative"]["label"] if props.get("negative") else "",
-            "knowledge_level": "knowledge_assertion",
-            "agent_type": "manual_agent",
-            "primary_knowledge_source": "infores:metatraits",
-        })
+        edges.append(
+            {
+                "metatraits_card_id": card["card_id"],
+                "metatraits_trait": card["name"],
+                "predicate_id": prop["id"],
+                "predicate_label": prop["label"],
+                "object_id": chebi_curie,
+                "object_label": card["substrate"] or "",
+                "negative_predicate_id": props["negative"]["id"] if props.get("negative") else "",
+                "negative_predicate_label": props["negative"]["label"]
+                if props.get("negative")
+                else "",
+                "knowledge_level": "knowledge_assertion",
+                "agent_type": "manual_agent",
+                "primary_knowledge_source": "infores:metatraits",
+            }
+        )
 
     return edges, resolved_categories, unresolved_categories
 
@@ -378,18 +387,24 @@ def deduplicate(mappings):
 
 def write_sssom(mappings, output_path):
     """Write SSSOM TSV with metadata header."""
-    today = date.today().isoformat()
+    today = datetime.now(tz=UTC).date().isoformat()
     outpath = Path(output_path)
     outpath.parent.mkdir(parents=True, exist_ok=True)
 
     fieldnames = [
-        "subject_id", "subject_label", "predicate_id",
-        "object_id", "object_label",
-        "mapping_justification", "confidence",
-        "subject_source", "object_source", "comment",
+        "subject_id",
+        "subject_label",
+        "predicate_id",
+        "object_id",
+        "object_label",
+        "mapping_justification",
+        "confidence",
+        "subject_source",
+        "object_source",
+        "comment",
     ]
 
-    with open(outpath, "w", newline="") as f:
+    with outpath.open("w", newline="") as f:
         f.write("# curie_map:\n")
         f.write("#   METPO: https://w3id.org/metpo/\n")
         f.write("#   metatraits: https://metatraits.embl.de/traits#\n")
@@ -401,7 +416,9 @@ def write_sssom(mappings, output_path):
         f.write("# mapping_tool_version: 0.2.0\n")
         f.write("# mapping_provider: https://github.com/berkeleybop/metpo\n")
         f.write("# license: https://creativecommons.org/publicdomain/zero/1.0/\n")
-        f.write("# comment: CURIE-based join (no fuzzy matching). Composed traits use two-part model: process (METPO) + substrate (CHEBI).\n")
+        f.write(
+            "# comment: CURIE-based join (no fuzzy matching). Composed traits use two-part model: process (METPO) + substrate (CHEBI).\n"
+        )
         f.write("#\n")
 
         writer = csv.DictWriter(f, fieldnames=fieldnames, delimiter="\t")
@@ -435,15 +452,17 @@ def write_kgx_edges(edges, output_path):
         "primary_knowledge_source",
     ]
 
-    with open(outpath, "w", newline="") as f:
+    with outpath.open("w", newline="") as f:
         f.write("# KGX edge templates for MetaTraits composed traits\n")
         f.write("# Subject is left blank — fill with strain/genome CURIE per source database\n")
-        f.write(f"# Generated: {date.today().isoformat()}\n")
+        f.write(f"# Generated: {datetime.now(tz=UTC).date().isoformat()}\n")
         f.write("# Tool: metpo/scripts/curie_join_metatraits.py v0.2.0\n")
         f.write("# Pattern: <subject> --[predicate_id]--> <object_id>\n")
         f.write("#   e.g.: NCBITaxon:562 --[METPO:2000011 ferments]--> CHEBI:17234 (glucose)\n")
         f.write("# Use negative_predicate_id for negative assay results\n")
-        f.write("#   e.g.: NCBITaxon:562 --[METPO:2000037 does not ferment]--> CHEBI:17057 (cellobiose)\n")
+        f.write(
+            "#   e.g.: NCBITaxon:562 --[METPO:2000037 does not ferment]--> CHEBI:17057 (cellobiose)\n"
+        )
         f.write("#\n")
 
         writer = csv.DictWriter(f, fieldnames=fieldnames, delimiter="\t")
@@ -452,21 +471,30 @@ def write_kgx_edges(edges, output_path):
 
 
 def write_report(
-    mappings, base_mappings, base_unmatched,
-    composed_mappings, composed_unmatched,
-    cards, curie_to_metpo, category_to_props,
-    kgx_edges, resolved_categories, unresolved_categories,
+    mappings,
+    base_mappings,
+    base_unmatched,
+    composed_mappings,
+    composed_unmatched,
+    cards,
+    curie_to_metpo,
+    category_to_props,
+    kgx_edges,
+    resolved_categories,
+    unresolved_categories,
     output_path,
 ):
     """Write markdown summary report."""
-    today = date.today().isoformat()
+    today = datetime.now(tz=UTC).date().isoformat()
     base_cards = [c for c in cards if not c["is_composed"]]
     composed_cards = [c for c in cards if c["is_composed"]]
 
     lines = []
-    lines.append(f"# MetaTraits-to-METPO CURIE Join Report\n")
+    lines.append("# MetaTraits-to-METPO CURIE Join Report\n")
     lines.append(f"**Date:** {today}\n")
-    lines.append("**Method:** Deterministic CURIE set intersection + METPO property synonym resolution\n\n")
+    lines.append(
+        "**Method:** Deterministic CURIE set intersection + METPO property synonym resolution\n\n"
+    )
 
     # --- Input Summary ---
     lines.append("## Input Summary\n\n")
@@ -474,21 +502,25 @@ def write_report(
     lines.append(f"| MetaTraits cards total | {len(cards)} |\n")
     lines.append(f"| Base (uncomposed) traits | {len(base_cards)} |\n")
     lines.append(f"| Composed traits | {len(composed_cards)} |\n")
-    lines.append(f"| METPO CURIE cross-references | {sum(len(v) for v in curie_to_metpo.values())} |\n")
+    lines.append(
+        f"| METPO CURIE cross-references | {sum(len(v) for v in curie_to_metpo.values())} |\n"
+    )
     lines.append(f"| Unique bridging CURIEs in METPO | {len(curie_to_metpo)} |\n")
     lines.append(f"| METPO object properties with synonyms | {len(category_to_props)} |\n")
     lines.append(f"| Generic CURIEs excluded | {len(GENERIC_CURIES)} |\n\n")
 
     # --- SSSOM Results ---
     lines.append("## SSSOM Mapping Results\n\n")
-    mapped_subjects = set(m["subject_id"] for m in mappings)
-    mapped_objects = set(m["object_id"] for m in mappings)
+    mapped_subjects = {m["subject_id"] for m in mappings}
+    mapped_objects = {m["object_id"] for m in mappings}
     lines.append("| Metric | Count |\n|--------|------:|\n")
     lines.append(f"| Total mappings (deduplicated) | {len(mappings)} |\n")
     lines.append(f"| Base trait mappings | {len(base_mappings)} |\n")
     lines.append(f"| Composed trait mappings | {len(composed_mappings)} |\n")
     lines.append(f"| Base traits unmatched | {len(base_unmatched)} / {len(base_cards)} |\n")
-    lines.append(f"| Composed traits unmatched | {len(composed_unmatched)} / {len(composed_cards)} |\n")
+    lines.append(
+        f"| Composed traits unmatched | {len(composed_unmatched)} / {len(composed_cards)} |\n"
+    )
     lines.append(f"| Unique MetaTraits terms mapped | {len(mapped_subjects)} |\n")
     lines.append(f"| Unique METPO terms matched | {len(mapped_objects)} |\n\n")
 
@@ -505,7 +537,9 @@ def write_report(
 
     # --- KGX Edge Template Results ---
     lines.append("## KGX Edge Template Results\n\n")
-    lines.append("METPO object properties resolved from MetaTraits base categories via synonym matching.\n\n")
+    lines.append(
+        "METPO object properties resolved from MetaTraits base categories via synonym matching.\n\n"
+    )
     lines.append("| Metric | Count |\n|--------|------:|\n")
     lines.append(f"| KGX edge templates generated | {len(kgx_edges)} |\n")
     lines.append(f"| With CHEBI object | {sum(1 for e in kgx_edges if e['object_id'])} |\n")
@@ -515,7 +549,9 @@ def write_report(
 
     # Property resolution table
     lines.append("### Category → METPO Property Resolution\n\n")
-    lines.append("| MetaTraits Category | METPO Predicate (+) | METPO Predicate (-) | Composed Traits |\n")
+    lines.append(
+        "| MetaTraits Category | METPO Predicate (+) | METPO Predicate (-) | Composed Traits |\n"
+    )
     lines.append("|--------------------|--------------------|--------------------|---------:|\n")
     cat_counts = defaultdict(int)
     for card in composed_cards:
@@ -566,8 +602,12 @@ def write_report(
     lines.append("| MetaTraits | METPO | Bridging CURIE | Confidence |\n")
     lines.append("|------------|-------|----------------|----------:|\n")
     for m in sorted(base_mappings, key=lambda x: x["subject_label"]):
-        curie_part = m["comment"].replace("Shared CURIE: ", "").replace("Generic CURIE fallback: ", "")
-        lines.append(f"| {m['subject_label']} | {m['object_label']} | `{curie_part}` | {m['confidence']} |\n")
+        curie_part = (
+            m["comment"].replace("Shared CURIE: ", "").replace("Generic CURIE fallback: ", "")
+        )
+        lines.append(
+            f"| {m['subject_label']} | {m['object_label']} | `{curie_part}` | {m['confidence']} |\n"
+        )
     lines.append("\n")
 
     # --- Unmatched base traits ---
@@ -610,7 +650,9 @@ def write_report(
     if fully_unmatched:
         lines.append("## Fully Unmatched Base Categories (SSSOM)\n\n")
         lines.append("No composed traits in these categories matched via CURIE join.\n")
-        lines.append("Many of these **do** resolve to METPO properties (see KGX section above).\n\n")
+        lines.append(
+            "Many of these **do** resolve to METPO properties (see KGX section above).\n\n"
+        )
         for cat in sorted(fully_unmatched):
             cat_norm = cat.lower().strip()
             prop_note = ""
@@ -640,8 +682,12 @@ def write_report(
     lines.append("- Composed traits preserve substrate identity via CHEBI CURIEs.\n")
     lines.append("- METPO property resolution covers **all 25 composed base categories**,\n")
     lines.append("  enabling KGX-ready edge generation for the full MetaTraits catalog.\n")
-    lines.append("- Coverage gaps in SSSOM indicate where embeddings or manual curation would add value.\n")
-    lines.append("- The two approaches are complementary: CURIE join for grounded SSSOM mappings,\n")
+    lines.append(
+        "- Coverage gaps in SSSOM indicate where embeddings or manual curation would add value.\n"
+    )
+    lines.append(
+        "- The two approaches are complementary: CURIE join for grounded SSSOM mappings,\n"
+    )
     lines.append("  property resolution for KGX edge templates.\n")
 
     outpath = Path(output_path)
@@ -651,35 +697,41 @@ def write_report(
 
 @click.command()
 @click.option(
-    "--metatraits-cards", "-m",
+    "--metatraits-cards",
+    "-m",
     required=True,
     type=click.Path(exists=True),
     help="MetaTraits cards TSV (from fetch_metatraits.py)",
 )
 @click.option(
-    "--metpo-template", "-t",
+    "--metpo-template",
+    "-t",
     required=True,
     type=click.Path(exists=True),
     help="METPO class template TSV (src/templates/metpo_sheet.tsv)",
 )
 @click.option(
-    "--metpo-properties", "-p",
+    "--metpo-properties",
+    "-p",
     type=click.Path(exists=True),
     help="METPO properties TSV (src/templates/metpo-properties.tsv)",
 )
 @click.option(
-    "--output", "-o",
+    "--output",
+    "-o",
     required=True,
     type=click.Path(),
     help="Output SSSOM TSV path",
 )
 @click.option(
-    "--kgx-edges", "-k",
+    "--kgx-edges",
+    "-k",
     type=click.Path(),
     help="Output KGX edge template TSV path",
 )
 @click.option(
-    "--report", "-r",
+    "--report",
+    "-r",
     type=click.Path(),
     help="Output markdown report path",
 )
@@ -688,7 +740,9 @@ def write_report(
     default=True,
     help="Include generic CURIE fallbacks at lower confidence (default: yes)",
 )
-def main(metatraits_cards, metpo_template, metpo_properties, output, kgx_edges, report, include_generic):
+def main(
+    metatraits_cards, metpo_template, metpo_properties, output, kgx_edges, report, include_generic
+):
     """Join MetaTraits to METPO via shared ontology CURIEs.
 
     Decomposes composed traits (e.g., 'fermentation: glucose') into
@@ -760,7 +814,9 @@ def main(metatraits_cards, metpo_template, metpo_properties, output, kgx_edges, 
             cards, category_to_props
         )
         click.echo(f"  {len(kgx_edge_list)} KGX edge templates")
-        click.echo(f"  {len(resolved_categories)} categories resolved, {len(unresolved_categories)} unresolved")
+        click.echo(
+            f"  {len(resolved_categories)} categories resolved, {len(unresolved_categories)} unresolved"
+        )
 
         if unresolved_categories:
             click.echo(f"  Unresolved: {sorted(unresolved_categories)}")
@@ -772,10 +828,17 @@ def main(metatraits_cards, metpo_template, metpo_properties, output, kgx_edges, 
     # Write report
     if report:
         write_report(
-            mappings, base_mappings_raw, base_unmatched_all,
-            composed_mappings_raw, composed_unmatched,
-            cards, curie_to_metpo, category_to_props,
-            kgx_edge_list, resolved_categories, unresolved_categories,
+            mappings,
+            base_mappings_raw,
+            base_unmatched_all,
+            composed_mappings_raw,
+            composed_unmatched,
+            cards,
+            curie_to_metpo,
+            category_to_props,
+            kgx_edge_list,
+            resolved_categories,
+            unresolved_categories,
             report,
         )
         click.echo(f"Wrote report: {report}")
