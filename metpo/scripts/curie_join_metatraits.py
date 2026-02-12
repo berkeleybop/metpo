@@ -40,7 +40,9 @@ GENERIC_CURIES = {
 }
 
 
-def parse_metpo_template(path: str) -> tuple:
+def parse_metpo_template(
+    path: str,
+) -> tuple[defaultdict[str, list[dict[str, str]]], dict[str, str]]:
     """Parse METPO template TSV and extract CURIE cross-references.
 
     Returns:
@@ -350,7 +352,12 @@ def resolve_kgx_edges(cards, category_to_props):
             unresolved_categories.add(card["base_category"] or "")
             continue
 
-        # Determine the CHEBI object
+        # Determine the CHEBI object.
+        # TODO: 130 composed traits have multiple CHEBI CURIEs — typically a
+        # process-level CHEBI (e.g., CHEBI:17654 "electron acceptor") plus the
+        # substrate-specific CHEBI. Taking sorted()[0] may pick the wrong one.
+        # A future fix should exclude process-level CHEBIs (those shared across
+        # all traits in a category) and keep only the substrate-specific CURIE.
         chebi_curies = sorted(card["substrate_curies"])
         chebi_curie = chebi_curies[0] if chebi_curies else ""
 
@@ -680,8 +687,10 @@ def write_report(
     lines.append("## Implications\n\n")
     lines.append("- The CURIE join approach produces **zero semantic errors** by construction.\n")
     lines.append("- Composed traits preserve substrate identity via CHEBI CURIEs.\n")
-    lines.append("- METPO property resolution covers **all 25 composed base categories**,\n")
-    lines.append("  enabling KGX-ready edge generation for the full MetaTraits catalog.\n")
+    lines.append("- METPO property resolution covers **25 of 31 composed base categories**,\n")
+    lines.append(
+        "  enabling KGX-ready edge generation for the majority of the MetaTraits catalog.\n"
+    )
     lines.append(
         "- Coverage gaps in SSSOM indicate where embeddings or manual curation would add value.\n"
     )

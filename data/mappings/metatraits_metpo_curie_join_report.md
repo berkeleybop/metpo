@@ -70,13 +70,13 @@ METPO object properties resolved from MetaTraits base categories via synonym mat
 | required for growth | `METPO:2000045` is not required for growth | - | 26 |
 | aerobic growth | `METPO:2000043` uses for aerobic growth | `METPO:2000022` does not use for aerobic growth | 20 |
 | builds gas from | `METPO:2000005` builds gas from | `METPO:2000030` does not build gas from | 17 |
-| aerobic catabolization | `METPO:2000032` uses for aerobic catabolization | `METPO:2000021` does not use for aerobic catabolization | 10 |
 | builds base from | `METPO:2000004` builds base from | `METPO:2000029` does not build base from | 10 |
+| aerobic catabolization | `METPO:2000032` uses for aerobic catabolization | `METPO:2000021` does not use for aerobic catabolization | 10 |
 | anaerobic growth with light | `METPO:2000051` uses for anaerobic growth with light | `METPO:2000026` does not use for anaerobic growth with light | 8 |
 | oxidation in darkness | *unresolved* | *unresolved* | 4 |
 | anaerobic catabolization | `METPO:2000048` uses for anaerobic catabolization | `METPO:2000023` does not use for anaerobic catabolization | 4 |
-| denitrification | *unresolved* | *unresolved* | 3 |
 | anaerobic growth in the dark | `METPO:2000050` uses for anaerobic growth in the dark | `METPO:2000025` does not use for anaerobic growth in the dark | 3 |
+| denitrification | *unresolved* | *unresolved* | 3 |
 | sulfur source | `METPO:2000020` uses as sulfur source | `METPO:2000047` does not use as sulfur source | 2 |
 | ammonification | *unresolved* | *unresolved* | 2 |
 | cell color | *unresolved* | *unresolved* | 1 |
@@ -298,8 +298,8 @@ Many of these **do** resolve to METPO properties (see KGX section above).
 
 - The CURIE join approach produces **zero semantic errors** by construction.
 - Composed traits preserve substrate identity via CHEBI CURIEs.
-- METPO property resolution covers **all 25 composed base categories**,
-  enabling KGX-ready edge generation for the full MetaTraits catalog.
+- METPO property resolution covers **25 of 31 composed base categories**,
+  enabling KGX-ready edge generation for the majority of the MetaTraits catalog.
 - Coverage gaps in SSSOM indicate where embeddings or manual curation would add value.
 - The two approaches are complementary: CURIE join for grounded SSSOM mappings,
   property resolution for KGX edge templates.
