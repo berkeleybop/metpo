@@ -40,6 +40,9 @@ help:
 	@echo "Analysis Reports:"
 	@echo "  make all-reports          - Generate all analysis reports"
 	@echo ""
+	@echo "MetaTraits Mapping:"
+	@echo "  make data/mappings/metatraits_metpo_curie_join.sssom.tsv  - CURIE join + KGX edges"
+	@echo ""
 	@echo "Ontology Alignment Pipeline:"
 	@echo "  make help-alignment       - Show detailed alignment pipeline help"
 	@echo "  make alignment-run-all    - Run complete alignment pipeline"
@@ -769,6 +772,23 @@ help-alignment:
 	@echo "  Prerequisites:"
 	@echo "    - Set OPENAI_API_KEY environment variable"
 	@echo "    - Ensure ChromaDB collection exists at notebooks/metpo_relevant_chroma"
+
+# ==============================================================================
+# MetaTraits Mapping (issue #341)
+# ==============================================================================
+# CURIE-based join of MetaTraits trait cards to METPO, with KGX edge template
+# generation via METPO property synonym resolution.
+# Input: metatraits_cards.tsv is scraped from metatraits.embl.de/traits
+#        (see metpo/scripts/fetch_metatraits.py on the metatraits branch)
+
+data/mappings/metatraits_metpo_curie_join.sssom.tsv: data/mappings/metatraits_cards.tsv src/templates/metpo_sheet.tsv src/templates/metpo-properties.tsv metpo/scripts/curie_join_metatraits.py
+	uv run curie-join-metatraits \
+		-m $< \
+		-t $(word 2,$^) \
+		-p $(word 3,$^) \
+		-o $@ \
+		-k data/mappings/metatraits_kgx_edge_templates.tsv \
+		-r data/mappings/metatraits_metpo_curie_join_report.md
 
 # ==============================================================================
 # Sub-Makefile Integration
