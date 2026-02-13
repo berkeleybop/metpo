@@ -10,11 +10,22 @@ export
 
 .DEFAULT_GOAL := help
 
+# MetaTraits Mongo demo defaults (override at invocation time if needed)
+METATRAITS_MONGO_URI ?= mongodb://localhost:27017
+METATRAITS_DB ?= metatraits
+METATRAITS_COLLECTION ?= genome_traits
+METATRAITS_LIMIT ?= 50
+METATRAITS_CARDS ?= data/mappings/metatraits_cards.tsv
+METATRAITS_RESOLUTION_TABLE ?= data/mappings/metatraits_in_sheet_resolution.tsv
+METATRAITS_RESOLUTION_REPORT ?= data/mappings/metatraits_in_sheet_resolution_report.md
+METATRAITS_DEMO_OUTPUT_PREFIX ?= data/mappings/demo_metatraits_mongo_kgx
+METATRAITS_DEMO_FORMAT ?= tsv
+
 # ==============================================================================
 # Environment Setup Targets
 # ==============================================================================
 
-.PHONY: help install install-dev install-literature install-databases install-notebooks install-all check-env clean-env clean-data metpo-report
+.PHONY: help install install-dev install-literature install-databases install-notebooks install-all check-env clean-env clean-data metpo-report metatraits-helper-files clean-metatraits-helper-files demo-metatraits-mongo clean-metatraits-demo
 
 # Show available targets and usage information
 help:
@@ -36,6 +47,8 @@ help:
 	@echo "  make import-all           - Import all datasets (BactoTraits + Madin)"
 	@echo "  make import-bactotraits   - Import BactoTraits data to MongoDB"
 	@echo "  make import-madin         - Import Madin et al. data to MongoDB"
+	@echo "  make metatraits-helper-files - Generate deterministic MetaTraits helper files"
+	@echo "  make demo-metatraits-mongo - Build KGX demo edges from MongoDB MetaTraits records"
 	@echo ""
 	@echo "Analysis Reports:"
 	@echo "  make all-reports          - Generate all analysis reports"
@@ -56,6 +69,8 @@ help:
 	@echo "  make clean-all            - Complete cleanup (env + data + databases)"
 	@echo "  make clean-env            - Remove virtual environments"
 	@echo "  make clean-data           - Remove generated data files"
+	@echo "  make clean-metatraits-helper-files - Remove generated MetaTraits helper files"
+	@echo "  make clean-metatraits-demo - Remove generated MetaTraits demo KGX outputs"
 	@echo "  make clean-reports        - Remove analysis reports"
 	@echo ""
 	@echo "Testing:"
@@ -132,7 +147,63 @@ clean-data:
 	rm -rf external/metpo_historical/
 	rm -rf metadata/ontology/historical_submissions/entity_extracts/
 	rm -rf downloads/sheets/
+	rm -f data/mappings/metatraits_cards.tsv
+	rm -f data/mappings/metatraits_in_sheet_resolution.tsv
+	rm -f data/mappings/metatraits_in_sheet_resolution_report.md
+	rm -f data/mappings/demo_metatraits_mongo_kgx_*.*sv
 	@echo "All generated data files cleaned"
+
+# ==============================================================================
+# MetaTraits MongoDB Demo
+# ==============================================================================
+
+# Build helper files used by deterministic MetaTraits -> KGX transforms.
+# Runtime code should consume these files directly, with no fuzzy matching.
+$(METATRAITS_CARDS):
+	uv run fetch-metatraits -o $(METATRAITS_CARDS)
+
+# Note: resolver writes both $(METATRAITS_RESOLUTION_TABLE) and
+# $(METATRAITS_RESOLUTION_REPORT) in one pass.
+$(METATRAITS_RESOLUTION_TABLE): $(METATRAITS_CARDS) metpo/scripts/resolve_metatraits_in_sheets.py src/templates/metpo-properties.tsv src/templates/metpo_sheet.tsv
+	uv run resolve-metatraits-in-sheets \
+		-m $(METATRAITS_CARDS) \
+		-o $(METATRAITS_RESOLUTION_TABLE) \
+		-r $(METATRAITS_RESOLUTION_REPORT)
+
+.PHONY: metatraits-helper-files
+metatraits-helper-files: $(METATRAITS_RESOLUTION_TABLE)
+	@test -f "$(METATRAITS_RESOLUTION_REPORT)" || (echo "Missing $(METATRAITS_RESOLUTION_REPORT) after resolver run" && exit 1)
+	@echo "Helper files ready:"
+	@echo "  - $(METATRAITS_CARDS)"
+	@echo "  - $(METATRAITS_RESOLUTION_TABLE)"
+	@echo "  - $(METATRAITS_RESOLUTION_REPORT)"
+
+.PHONY: clean-metatraits-helper-files
+clean-metatraits-helper-files:
+	rm -f data/mappings/metatraits_cards.tsv
+	rm -f data/mappings/metatraits_in_sheet_resolution.tsv
+	rm -f data/mappings/metatraits_in_sheet_resolution_report.md
+	@echo "MetaTraits helper files cleaned"
+
+.PHONY: demo-metatraits-mongo
+demo-metatraits-mongo: $(METATRAITS_RESOLUTION_TABLE)
+	uv run demo-metatraits-mongo-to-kgx \
+		--mongo-uri $(METATRAITS_MONGO_URI) \
+		--db $(METATRAITS_DB) \
+		--collection $(METATRAITS_COLLECTION) \
+		--resolution-table $(METATRAITS_RESOLUTION_TABLE) \
+		--limit $(METATRAITS_LIMIT) \
+		--format $(METATRAITS_DEMO_FORMAT) \
+		--output-prefix $(METATRAITS_DEMO_OUTPUT_PREFIX)
+	@echo ""
+	@echo "Wrote KGX files with prefix: $(METATRAITS_DEMO_OUTPUT_PREFIX)"
+	@echo "Tip: override defaults, e.g."
+	@echo "  make demo-metatraits-mongo METATRAITS_COLLECTION=genome_traits METATRAITS_LIMIT=200"
+
+.PHONY: clean-metatraits-demo
+clean-metatraits-demo:
+	rm -f data/mappings/demo_metatraits_mongo_kgx_*.*sv
+	@echo "MetaTraits demo outputs cleaned"
 
 # ==============================================================================
 # METPO Quality Control Report

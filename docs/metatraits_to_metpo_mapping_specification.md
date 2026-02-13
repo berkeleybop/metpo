@@ -11,6 +11,11 @@
 Express ALL MetaTraits trait assertions as KGX edges using METPO and Biolink predicates,
 with METPO objects or objects from high-quality encyclopedic ontologies (CHEBI, GO, OMP, etc.).
 
+Companion implementation guide with runnable commands and concrete KGX examples:
+`docs/metatraits_kgx_encoding_examples.md`
+External-repo implementation handoff guide:
+`docs/metatraits_external_repo_handoff.md`
+
 **Design constraints:**
 - One canonical edge per fact (no multiple ways of saying the same thing)
 - Easy for humans to make new assertions in the future
@@ -125,18 +130,17 @@ NCBITaxon:1299 -> METPO:2000011 (ferments) -> CHEBI:4167 (D-glucose)
 NCBITaxon:1299 -> METPO:2000037 (does not ferment) -> CHEBI:4167 (D-glucose)
 ```
 
-For enzyme activities, use GO molecular function terms as objects (NOT the generic
-SNOMED:424017009 that MetaTraits assigns to all enzymes):
+For enzyme activities, use native MetaTraits enzyme object CURIEs first
+(typically `EC:*`), and avoid generic SNOMED:424017009 placeholders:
 ```
-NCBITaxon:1299 -> METPO:2000302 (shows activity of) -> GO:0004096 (catalase activity)
-NCBITaxon:1299 -> METPO:2000303 (does not show activity of) -> GO:0004096
+NCBITaxon:1299 -> METPO:2000302 (shows activity of) -> EC:1.11.1.6
+NCBITaxon:1299 -> METPO:2000303 (does not show activity of) -> EC:1.11.1.6
 ```
 
-EC numbers map to GO MF terms via the maintained ec2go mapping file at
-https://current.geneontology.org/ontology/external2go/ec2go
-
-EC is a flat classification; GO molecular function terms are in a DAG.
-Use GO terms as KGX objects; record EC as an xref/annotation if needed.
+Optional later normalization: map EC to GO MF via ec2go for interoperability.
+Operational ingestion should preserve native MetaTraits object CURIEs first
+(e.g., `EC:*`) and treat EC->GO as a derived view, not a required transform.
+This is not required for initial operational ingest.
 
 **Coverage:** 27 of 31 MetaTraits composed bases have existing METPO predicates.
 3 new predicate pairs needed (see Section 5).
@@ -577,7 +581,7 @@ Map them in SSSOM (issue #344): `METPO:2000102 skos:exactMatch biolink:has_pheno
 
 MetaTraits' own ontology mappings have several known issues that our pipeline must handle:
 
-- **Enzyme activities:** All mapped to generic SNOMED:424017009 regardless of enzyme. Replace with specific GO MF terms using ec2go.
+- **Enzyme activities:** Often mapped to generic SNOMED:424017009 regardless of enzyme. Prefer native EC CURIEs first; optional GO MF normalization can be layered later.
 - **EC number format:** MetaTraits uses `EC3.2.1.4` (no colon). Standard CURIE is `EC:3.2.1.4`.
 - **BRENDA URLs:** Malformed ecno parameter (e.g., `ecno=.2.1.4` -- first digit missing).
 - **Nitrification:** Mapped to OMIT:0027217 (a miRNA ontology term -- wrong ontology entirely).
