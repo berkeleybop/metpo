@@ -5,6 +5,7 @@ that are not present in the MetaTraits API or bulk taxonomy exports.
 """
 
 import csv
+import html as html_lib
 import json
 import re
 from pathlib import Path
@@ -34,7 +35,8 @@ def extract_traits(html: str) -> list[dict[str, object]]:
         trait_type = _extract_first(r'rounded-pill">(.*?)</span>', section)
 
         description_html = _extract_first(r'<p class="card-text[^\"]*">(.*?)</p>', section)
-        description = re.sub(r"<[^>]+>", "", description_html).strip()
+        # Strip tags and decode HTML entities so downstream matching uses plain text.
+        description = html_lib.unescape(re.sub(r"<[^>]+>", "", description_html)).strip()
 
         ontology_refs = []
         for href, curie in re.findall(r'class="btn btn-cta" href=([^>]+)>([^<]+)</a>', section):

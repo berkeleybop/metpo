@@ -26,6 +26,12 @@ GENERIC_PROCESS_CURIES = {
     "GO:0009056",  # catabolic process
 }
 
+RESOLVED_STATUSES = {
+    "resolved",
+    "resolved_with_notes",
+    "resolved_nonchebi_with_notes",
+}
+
 
 @dataclass(frozen=True)
 class PropertyRef:
@@ -192,13 +198,18 @@ def resolve_cards(
                 blocking_bits.append("missing_positive_predicate")
             if negative is None:
                 blocking_bits.append("missing_negative_predicate")
-            if not card.substrate_curies:
+            has_chebi = bool(card.substrate_curies)
+            if not has_chebi and not matched_process_terms:
                 blocking_bits.append("missing_chebi")
             if not matched_process_terms:
                 note_bits.append("missing_process_term")
+            if not has_chebi and matched_process_terms:
+                note_bits.append("non_chebi_substrate")
 
             if blocking_bits:
                 status = "; ".join(blocking_bits + note_bits)
+            elif "non_chebi_substrate" in note_bits:
+                status = "resolved_nonchebi_with_notes"
             elif note_bits:
                 status = "resolved_with_notes"
             else:
@@ -282,13 +293,13 @@ def write_report(rows: list[dict[str, str]], report_path: Path) -> None:
     total = len(rows)
     composed = [row for row in rows if row["mapping_kind"] == "composed"]
     base = [row for row in rows if row["mapping_kind"] == "base"]
-    resolved = [row for row in rows if row["status"] in {"resolved", "resolved_with_notes"}]
+    resolved = [row for row in rows if row["status"] in RESOLVED_STATUSES]
 
     status_counts = Counter(row["status"] for row in rows)
     unresolved_categories = Counter(
         row["base_category"]
         for row in composed
-        if row["status"] not in {"resolved", "resolved_with_notes"} and row["base_category"]
+        if row["status"] not in RESOLVED_STATUSES and row["base_category"]
     )
 
     report_path.parent.mkdir(parents=True, exist_ok=True)
@@ -371,7 +382,7 @@ def main(
     write_resolution_table(rows, output)
     write_report(rows, report)
 
-    resolved_count = sum(1 for row in rows if row["status"] in {"resolved", "resolved_with_notes"})
+    resolved_count = sum(1 for row in rows if row["status"] in RESOLVED_STATUSES)
     click.echo(f"Resolved {resolved_count}/{len(rows)} traits")
     click.echo(f"Wrote {output}")
     click.echo(f"Wrote {report}")
