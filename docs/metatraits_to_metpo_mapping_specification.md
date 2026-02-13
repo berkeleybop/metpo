@@ -11,6 +11,9 @@
 Express ALL MetaTraits trait assertions as KGX edges using METPO and Biolink predicates,
 with METPO objects or objects from high-quality encyclopedic ontologies (CHEBI, GO, OMP, etc.).
 
+Companion implementation guide with runnable commands and concrete KGX examples:
+`docs/metatraits_kgx_encoding_examples.md`
+
 **Design constraints:**
 - One canonical edge per fact (no multiple ways of saying the same thing)
 - Easy for humans to make new assertions in the future
