@@ -14,7 +14,7 @@ export
 # Environment Setup Targets
 # ==============================================================================
 
-.PHONY: help install install-dev install-literature install-databases install-notebooks install-all check-env clean-env clean-data metpo-report
+.PHONY: help install install-dev install-literature install-databases install-notebooks install-all check-env clean-env clean-data metpo-report clean-metatraits
 
 # Show available targets and usage information
 help:
@@ -41,7 +41,9 @@ help:
 	@echo "  make all-reports          - Generate all analysis reports"
 	@echo ""
 	@echo "MetaTraits Mapping:"
+	@echo "  make data/mappings/metatraits_cards.tsv                   - Fetch trait cards from metatraits.embl.de"
 	@echo "  make data/mappings/metatraits_metpo_curie_join.sssom.tsv  - CURIE join + KGX edges"
+	@echo "  make clean-metatraits                                     - Remove all generated MetaTraits outputs"
 	@echo ""
 	@echo "Ontology Alignment Pipeline:"
 	@echo "  make help-alignment       - Show detailed alignment pipeline help"
@@ -121,7 +123,7 @@ check-env:
 clean-env:
 	rm -rf .venv/
 	rm -f uv.lock poetry.lock
-	rm -rf venv/ .python-version .uv/ 
+	rm -rf venv/ .python-version .uv/
 	find . -name "__pycache__" -type d -exec rm -rf {} + 2>/dev/null || true
 	find . -name "*.pyc" -delete 2>/dev/null || true
 	@echo "All python environment files cleaned"
@@ -776,11 +778,14 @@ help-alignment:
 # ==============================================================================
 # MetaTraits Mapping (issue #341)
 # ==============================================================================
-# CURIE-based join of MetaTraits trait cards to METPO, with KGX edge template
-# generation via METPO property synonym resolution.
-# Input: metatraits_cards.tsv is scraped from metatraits.embl.de/traits
-#        (see metpo/scripts/fetch_metatraits.py on the metatraits branch)
+# Pipeline: fetch trait cards from metatraits.embl.de → CURIE-based join to
+# METPO classes → KGX edge template generation via METPO property resolution.
 
+# Step 1: Fetch MetaTraits trait cards (scrapes metatraits.embl.de/traits HTML)
+data/mappings/metatraits_cards.tsv: metpo/scripts/fetch_metatraits.py
+	uv run fetch-metatraits --output $@
+
+# Step 2: CURIE join + KGX edge templates
 data/mappings/metatraits_metpo_curie_join.sssom.tsv: data/mappings/metatraits_cards.tsv src/templates/metpo_sheet.tsv src/templates/metpo-properties.tsv metpo/scripts/curie_join_metatraits.py
 	uv run curie-join-metatraits \
 		-m $< \
@@ -789,6 +794,13 @@ data/mappings/metatraits_metpo_curie_join.sssom.tsv: data/mappings/metatraits_ca
 		-o $@ \
 		-k data/mappings/metatraits_kgx_edge_templates.tsv \
 		-r data/mappings/metatraits_metpo_curie_join_report.md
+
+# Clean all MetaTraits generated outputs (keeps scripts and templates)
+clean-metatraits:
+	rm -f data/mappings/metatraits_cards.tsv
+	rm -f data/mappings/metatraits_metpo_curie_join.sssom.tsv
+	rm -f data/mappings/metatraits_kgx_edge_templates.tsv
+	rm -f data/mappings/metatraits_metpo_curie_join_report.md
 
 # ==============================================================================
 # Sub-Makefile Integration
