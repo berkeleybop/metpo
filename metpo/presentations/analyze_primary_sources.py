@@ -12,6 +12,8 @@ import sqlite3
 from collections import Counter
 from pathlib import Path
 
+from metpo.utils.sssom_utils import extract_prefix, parse_sssom_curie_map
+
 # PRIMARY SOURCE 1: ChromaDB databases
 CHROMA_COMBINED = Path("/home/mark/gitrepos/metpo/notebooks/chroma_combined/chroma.sqlite3")
 CHROMA_OLS_20 = Path("/home/mark/gitrepos/metpo/notebooks/chroma_ols_20/chroma.sqlite3")
@@ -65,30 +67,18 @@ def analyze_sssom(sssom_path):
     target_prefixes = Counter()
     predicates = Counter()
     total_mappings = 0
+    curie_map = parse_sssom_curie_map(sssom_path)
 
     with Path(sssom_path).open() as f:
-        reader = csv.DictReader(f, delimiter="\t")
+        data_lines = (line for line in f if not line.startswith("#"))
+        reader = csv.DictReader(data_lines, delimiter="\t")
         for row in reader:
             total_mappings += 1
 
             # Extract prefix from object_id
-            obj_id = row.get("object_id", "")
-            if "/obo/" in obj_id:
-                # e.g., http://purl.obolibrary.org/obo/PATO_0000001
-                prefix = obj_id.split("/obo/")[1].split("_")[0] if "_" in obj_id else ""
-                if prefix:
-                    target_prefixes[prefix] += 1
-            elif "doi.org/10.1601" in obj_id:
-                target_prefixes["N4L"] += 1
-            elif "purl.dsmz.de" in obj_id:
-                if "d3o" in obj_id.lower():
-                    target_prefixes["D3O"] += 1
-                elif "miso" in obj_id.lower():
-                    target_prefixes["MISO"] += 1
-            elif "mdatahub.org" in obj_id.lower():
-                target_prefixes["MEO"] += 1
-            elif "biolink" in obj_id.lower():
-                target_prefixes["BIOLINK"] += 1
+            prefix = extract_prefix(row.get("object_id", ""), curie_map)
+            if prefix:
+                target_prefixes[prefix.upper()] += 1
 
             pred = row.get("predicate_id", "")
             predicates[pred] += 1

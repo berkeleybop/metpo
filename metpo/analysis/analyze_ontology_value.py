@@ -11,14 +11,15 @@ This helps identify:
 3. Redundant sources that could be removed
 """
 
-import re
 from collections import defaultdict
 
 import click
 import pandas as pd
 
+from metpo.utils.sssom_utils import extract_prefix, parse_sssom_curie_map
 
-def extract_term_source(iri: str) -> str:
+
+def extract_term_source(iri: str, curie_map: dict[str, str] | None = None) -> str:
     """
     Extract the defining ontology from an IRI.
 
@@ -27,22 +28,9 @@ def extract_term_source(iri: str) -> str:
     - http://purl.obolibrary.org/obo/GO_0008150 → GO
     - https://w3id.org/biolink/vocab/phenotype → biolink
     """
-    # OBO pattern: .../obo/PREFIX_ID
-    obo_match = re.search(r"/obo/([A-Za-z]+)_\d+", iri)
-    if obo_match:
-        return obo_match.group(1).upper()
-
-    # Biolink pattern
-    if "biolink" in iri:
-        return "biolink"
-
-    # DOI pattern
-    if "doi.org" in iri:
-        doi_match = re.search(r"doi\.org/[^/]+/([A-Za-z]+)", iri)
-        if doi_match:
-            return doi_match.group(1)
-
-    # Default: return as-is
+    extracted = extract_prefix(iri, curie_map)
+    if extracted:
+        return extracted.upper()
     return "unknown"
 
 
@@ -53,9 +41,10 @@ def main(input):
 
     print(f"Loading mappings from: {input}")
     df = pd.read_csv(input, sep="\t", comment="#")
+    curie_map = parse_sssom_curie_map(input)
 
     # Extract term source from IRI
-    df["term_source"] = df["object_id"].apply(extract_term_source)
+    df["term_source"] = df["object_id"].apply(lambda x: extract_term_source(x, curie_map))
 
     print(f"\nLoaded {len(df)} mappings")
     print(f"Unique ontology files (object_source): {df['object_source'].nunique()}")
