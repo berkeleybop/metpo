@@ -270,50 +270,53 @@ def check_undefined_parents(sheets: list[SheetData]) -> list[QCIssue]:
             if "stub" in parent_ref.lower():
                 continue
 
-            # Check if parent is defined (could be ID or label)
-            is_id = parent_ref.startswith("METPO:") or ":" in parent_ref
-            is_label = not is_id
+            # ROBOT templates use pipe-separated multiple parents (SPLIT=|)
+            parent_parts = [p.strip() for p in parent_ref.split("|") if p.strip()]
 
-            if is_id and parent_ref not in all_ids:
-                issues.append(
-                    QCIssue(
-                        "ERROR",
-                        "UNDEFINED_PARENT_ID",
-                        f"Parent ID '{parent_ref}' not defined anywhere",
-                        f"{sheet.filename}: row {row_num}, ID {id_val}",
-                    )
-                )
-            elif is_label and parent_ref not in all_labels:
-                issues.append(
-                    QCIssue(
-                        "WARNING",
-                        "UNDEFINED_PARENT_LABEL",
-                        f"Parent label '{parent_ref}' not defined anywhere (using labels for parents may cause issues)",
-                        f"{sheet.filename}: row {row_num}, ID {id_val}",
-                    )
-                )
+            for part in parent_parts:
+                # Check if parent is defined (could be ID or label)
+                is_id = part.startswith("METPO:") or ":" in part
+                is_label = not is_id
 
-            # Check for self-referential parents
-            # Get the label for this ID
-            current_label = sheet.ids.get(id_val, (None, None, None, None))[1]
-            if parent_ref == id_val:
-                issues.append(
-                    QCIssue(
-                        "ERROR",
-                        "SELF_REFERENTIAL_PARENT_ID",
-                        "Parent references itself via ID",
-                        f"{sheet.filename}: row {row_num}, ID {id_val}",
+                if is_id and part not in all_ids:
+                    issues.append(
+                        QCIssue(
+                            "ERROR",
+                            "UNDEFINED_PARENT_ID",
+                            f"Parent ID '{part}' not defined anywhere",
+                            f"{sheet.filename}: row {row_num}, ID {id_val}",
+                        )
                     )
-                )
-            elif parent_ref == current_label:
-                issues.append(
-                    QCIssue(
-                        "ERROR",
-                        "SELF_REFERENTIAL_PARENT_LABEL",
-                        f"Parent references itself via label '{parent_ref}'",
-                        f"{sheet.filename}: row {row_num}, ID {id_val}",
+                elif is_label and part not in all_labels:
+                    issues.append(
+                        QCIssue(
+                            "WARNING",
+                            "UNDEFINED_PARENT_LABEL",
+                            f"Parent label '{part}' not defined anywhere (using labels for parents may cause issues)",
+                            f"{sheet.filename}: row {row_num}, ID {id_val}",
+                        )
                     )
-                )
+
+                # Check for self-referential parents
+                current_label = sheet.ids.get(id_val, (None, None, None, None))[1]
+                if part == id_val:
+                    issues.append(
+                        QCIssue(
+                            "ERROR",
+                            "SELF_REFERENTIAL_PARENT_ID",
+                            "Parent references itself via ID",
+                            f"{sheet.filename}: row {row_num}, ID {id_val}",
+                        )
+                    )
+                elif part == current_label:
+                    issues.append(
+                        QCIssue(
+                            "ERROR",
+                            "SELF_REFERENTIAL_PARENT_LABEL",
+                            f"Parent references itself via label '{part}'",
+                            f"{sheet.filename}: row {row_num}, ID {id_val}",
+                        )
+                    )
 
     return issues
 
