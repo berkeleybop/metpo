@@ -11,6 +11,10 @@ Encode MetaTraits assertions as deterministic KGX statements using METPO templat
 This is the operational path.
 Do not use SSSOM as the runtime mapping artifact for this ingestion path.
 
+If implementation happens in external repos (`Knowledge-Graph-Hub/kg-microbe` or
+`CultureBotAI/KG-Microbe-search`), use:
+`docs/metatraits_external_repo_handoff.md`
+
 ## Inputs and In-Repo Resources
 
 - Trait catalog scraper: `metpo/scripts/fetch_metatraits.py`
@@ -48,13 +52,24 @@ mongosh metatraits --quiet --eval 'db.genome_traits.findOne()'
 
 ## Runbook
 
-1. Refresh MetaTraits card catalog.
+1. Generate deterministic helper files (one command).
+
+```bash
+make metatraits-helper-files
+```
+
+This produces:
+- `data/mappings/metatraits_cards.tsv`
+- `data/mappings/metatraits_in_sheet_resolution.tsv`
+- `data/mappings/metatraits_in_sheet_resolution_report.md`
+
+2. (Optional manual equivalent) refresh MetaTraits card catalog.
 
 ```bash
 uv run fetch-metatraits -o data/mappings/metatraits_cards.tsv
 ```
 
-2. Build deterministic in-sheet resolution table.
+3. (Optional manual equivalent) build deterministic in-sheet resolution table.
 
 ```bash
 uv run resolve-metatraits-in-sheets \
@@ -63,7 +78,15 @@ uv run resolve-metatraits-in-sheets \
   -r data/mappings/metatraits_in_sheet_resolution_report.md
 ```
 
-3. Use `data/mappings/metatraits_in_sheet_resolution.tsv` as your lookup while transforming per-organism MetaTraits assertions.
+4. Use `data/mappings/metatraits_in_sheet_resolution.tsv` as your lookup while transforming per-organism MetaTraits assertions.
+
+5. Optional: run the Mongo-backed demo exporter that writes KGX with official sinks.
+
+```bash
+make demo-metatraits-mongo
+# writes data/mappings/demo_metatraits_mongo_kgx_nodes.tsv
+# and    data/mappings/demo_metatraits_mongo_kgx_edges.tsv
+```
 
 ## Predicate Selection Rules
 
@@ -77,8 +100,9 @@ Use `biolink:has_phenotype` with a METPO class object.
 Use `METPO:2000103` (`capable of`) with GO or METPO process object.
 
 4. Enzyme activity assertions:
-Use `METPO:2000302` / `METPO:2000303` with specific GO molecular function object.
-Do not use generic SNOMED placeholders as enzyme objects.
+Use `METPO:2000302` / `METPO:2000303` with native MetaTraits object CURIEs
+first (e.g., `EC:*` when present). Avoid generic SNOMED placeholders as enzyme
+objects. GO normalization is optional later, not required for initial ingest.
 
 5. Numeric measurements:
 Prefer dedicated METPO data properties once added/approved.
@@ -170,25 +194,28 @@ Input assertion:
 - trait: `enzyme activity: catalase (EC1.11.1.6)`
 - value: true
 
-Preferred object:
-- map EC to GO MF via ec2go
-- example GO MF: `GO:0004096` (catalase activity)
+Preferred object (native-first):
+- keep native EC CURIE from MetaTraits when present
+- optional later: add GO MF normalization layer
 
 KGX edge:
 
 ```tsv
 subject	predicate	object
-NCBITaxon:<id>	METPO:2000302	GO:0004096
+NCBITaxon:<id>	METPO:2000302	EC:1.11.1.6
 ```
 
 ## Implementation Skeleton
 
-Use this minimal transform flow.
+Use this minimal transform flow with KGX sink classes (no ad hoc TSV writer).
 
 ```python
-# Pseudocode only: adapt to kg-microbe transform classes.
+from kgx.sink import TsvSink
+from kgx.transformer import Transformer
 
 resolution = load_resolution_table("data/mappings/metatraits_in_sheet_resolution.tsv")
+nodes = {}
+edges = []
 
 for assertion in metatraits_assertions_for_taxon:
     trait = assertion["feature"]
@@ -198,11 +225,29 @@ for assertion in metatraits_assertions_for_taxon:
     if row and row["mapping_kind"] == "composed":
         predicate = row["predicate_positive_id"] if is_true(value) else row["predicate_negative_id"]
         obj = resolve_object_curie(assertion, row)  # CHEBI for most composed traits
-        emit_edge(subject_taxon, predicate, obj)
+        edge = {
+            "subject": subject_taxon,
+            "predicate": predicate,
+            "object": obj,
+            "knowledge_level": "knowledge_assertion",
+            "agent_type": "manual_agent",
+            "primary_knowledge_source": ["infores:metatraits"],
+        }
+        edges.append(edge)
+        nodes.setdefault(subject_taxon, {"id": subject_taxon, "category": ["biolink:Genome"]})
+        nodes.setdefault(obj, {"id": obj, "category": infer_object_category(obj)})
         continue
 
     # fallback routes for base boolean/factor/process/numeric
-    emit_via_class_or_process_rules(assertion)
+    edges.extend(emit_via_class_or_process_rules(assertion))
+
+transformer = Transformer()
+sink = TsvSink(owner=transformer, filename="output/metatraits_demo", format="tsv")
+for node in nodes.values():
+    sink.write_node(node)
+for edge in edges:
+    sink.write_edge(edge)
+sink.finalize()
 ```
 
 ## MongoDB-First Example (No API Calls Yet)
