@@ -332,6 +332,16 @@ def check_assay_outcome_pairing(sheets: list[SheetData]) -> list[QCIssue]:
     issues: list[QCIssue] = []
 
     for sheet in sheets:
+        # Only process sheets that declare an "assay outcome" column.
+        # This avoids mis-parsing files with different schemas (e.g., metpo_sheet.tsv).
+        header_cells: list[str] = []
+        for header_row in sheet.rows[:2]:
+            for cell in header_row:
+                if cell:
+                    header_cells.append(str(cell).strip().lower())
+        if not any("assay outcome" in cell for cell in header_cells):
+            continue
+
         # synonym column (index 9) and assay outcome column (index 11)
         synonym_map: dict[str, list[tuple[int, str, str, str]]] = defaultdict(list)
 
