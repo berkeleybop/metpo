@@ -371,7 +371,9 @@ def main(
     write_resolution_table(rows, output)
     write_report(rows, report)
 
-    resolved_count = sum(1 for row in rows if row["status"] == "resolved")
+    resolved_count = sum(
+        1 for row in rows if row["status"] in {"resolved", "resolved_with_notes"}
+    )
     click.echo(f"Resolved {resolved_count}/{len(rows)} traits")
     click.echo(f"Wrote {output}")
     click.echo(f"Wrote {report}")
