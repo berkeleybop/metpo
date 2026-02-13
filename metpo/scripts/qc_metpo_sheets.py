@@ -6,10 +6,12 @@ Checks for:
 - Label clashes within and across sheets
 - Parent classes/properties referenced but not defined
 - Self-referential parent definitions
+- Assay outcome pairing (synonym +/- pairs must be consistent)
 - Structural issues (missing IDs, labels, malformed IDs)
 """
 
 import csv
+import re
 import sys
 import urllib.request
 from collections import defaultdict
@@ -268,50 +270,166 @@ def check_undefined_parents(sheets: list[SheetData]) -> list[QCIssue]:
             if "stub" in parent_ref.lower():
                 continue
 
-            # Check if parent is defined (could be ID or label)
-            is_id = parent_ref.startswith("METPO:") or ":" in parent_ref
-            is_label = not is_id
+            # ROBOT templates use pipe-separated multiple parents (SPLIT=|)
+            parent_parts = [p.strip() for p in parent_ref.split("|") if p.strip()]
 
-            if is_id and parent_ref not in all_ids:
-                issues.append(
-                    QCIssue(
-                        "ERROR",
-                        "UNDEFINED_PARENT_ID",
-                        f"Parent ID '{parent_ref}' not defined anywhere",
-                        f"{sheet.filename}: row {row_num}, ID {id_val}",
+            for part in parent_parts:
+                # Check if parent is defined (could be ID or label)
+                is_id = part.startswith("METPO:") or ":" in part
+                is_label = not is_id
+
+                if is_id and part not in all_ids:
+                    issues.append(
+                        QCIssue(
+                            "ERROR",
+                            "UNDEFINED_PARENT_ID",
+                            f"Parent ID '{part}' not defined anywhere",
+                            f"{sheet.filename}: row {row_num}, ID {id_val}",
+                        )
                     )
+                elif is_label and part not in all_labels:
+                    issues.append(
+                        QCIssue(
+                            "WARNING",
+                            "UNDEFINED_PARENT_LABEL",
+                            f"Parent label '{part}' not defined anywhere (using labels for parents may cause issues)",
+                            f"{sheet.filename}: row {row_num}, ID {id_val}",
+                        )
+                    )
+
+                # Check for self-referential parents
+                current_label = sheet.ids.get(id_val, (None, None, None, None))[1]
+                if part == id_val:
+                    issues.append(
+                        QCIssue(
+                            "ERROR",
+                            "SELF_REFERENTIAL_PARENT_ID",
+                            "Parent references itself via ID",
+                            f"{sheet.filename}: row {row_num}, ID {id_val}",
+                        )
+                    )
+                elif part == current_label:
+                    issues.append(
+                        QCIssue(
+                            "ERROR",
+                            "SELF_REFERENTIAL_PARENT_LABEL",
+                            f"Parent references itself via label '{part}'",
+                            f"{sheet.filename}: row {row_num}, ID {id_val}",
+                        )
+                    )
+
+    return issues
+
+
+def check_assay_outcome_pairing(sheets: list[SheetData]) -> list[QCIssue]:
+    """Check that synonym/assay-outcome pairs in metpo-properties.tsv are consistent.
+
+    Every synonym string shared by two properties should have exactly one '+'
+    and one '-' assay outcome. Flags:
+    - ERROR if two properties share a synonym and both have the same outcome
+    - WARNING if a property has a synonym + outcome but no counterpart
+    """
+    issues: list[QCIssue] = []
+
+    for sheet in sheets:
+        if not _sheet_has_assay_outcome_column(sheet):
+            continue
+
+        synonym_map = _extract_synonym_map_for_assay_outcomes(sheet)
+        issues.extend(_build_assay_outcome_issues(sheet, synonym_map))
+
+    return issues
+
+
+def _sheet_has_assay_outcome_column(sheet: SheetData) -> bool:
+    """Return True when a sheet header includes an assay outcome column."""
+    header_cells: list[str] = []
+    for header_row in sheet.rows[:2]:
+        for cell in header_row:
+            if cell:
+                header_cells.append(str(cell).strip().lower())
+    return any("assay outcome" in cell for cell in header_cells)
+
+
+def _extract_synonym_map_for_assay_outcomes(
+    sheet: SheetData,
+) -> dict[str, list[tuple[int, str, str, str]]]:
+    """Extract synonym -> [(row_num, id, label, assay_outcome)] from a sheet."""
+    synonym_map: dict[str, list[tuple[int, str, str, str]]] = defaultdict(list)
+
+    for row_num, row in enumerate(sheet.rows, start=1):
+        if row_num <= 2 or len(row) < 12:
+            continue
+
+        row_id = row[0].strip() if row[0] else ""
+        label = row[1].strip() if len(row) > 1 and row[1] else ""
+        synonym_tuples = row[9].strip() if len(row) > 9 and row[9] else ""
+        assay_outcome = row[11].strip() if len(row) > 11 and row[11] else ""
+
+        if not (row_id and synonym_tuples and assay_outcome):
+            continue
+
+        # Extract synonym string from tuple like "oboInOwl:hasRelatedSynonym 'fermentation'"
+        match = re.search(r"'([^']+)'", synonym_tuples)
+        if match:
+            synonym = match.group(1)
+            synonym_map[synonym].append((row_num, row_id, label, assay_outcome))
+
+    return synonym_map
+
+
+def _build_assay_outcome_issues(
+    sheet: SheetData,
+    synonym_map: dict[str, list[tuple[int, str, str, str]]],
+) -> list[QCIssue]:
+    """Build assay outcome QC issues for a parsed synonym map."""
+    issues: list[QCIssue] = []
+
+    for synonym, entries in synonym_map.items():
+        entry_count = len(entries)
+        outcomes = [e[3] for e in entries]
+
+        if entry_count == 2 and outcomes[0] == outcomes[1]:
+            id1, label1 = entries[0][1], entries[0][2]
+            id2, label2 = entries[1][1], entries[1][2]
+            issues.append(
+                QCIssue(
+                    "ERROR",
+                    "ASSAY_OUTCOME_MISMATCH",
+                    f"Synonym '{synonym}' has two properties with same outcome "
+                    f"'{outcomes[0]}': {id1} ({label1}) and {id2} ({label2}). "
+                    f"One should be '+' and the other '-'.",
+                    f"{sheet.filename}: rows {entries[0][0]}, {entries[1][0]}",
                 )
-            elif is_label and parent_ref not in all_labels:
+            )
+            continue
+
+        if entry_count == 1:
+            row_num, row_id, label, outcome = entries[0]
+            # Single entry with outcome is OK for parent properties (e.g. enzyme activity analyzed)
+            # but warn for +/- properties that lack a counterpart
+            if outcome in ("+", "-"):
                 issues.append(
                     QCIssue(
                         "WARNING",
-                        "UNDEFINED_PARENT_LABEL",
-                        f"Parent label '{parent_ref}' not defined anywhere (using labels for parents may cause issues)",
-                        f"{sheet.filename}: row {row_num}, ID {id_val}",
+                        "UNPAIRED_ASSAY_OUTCOME",
+                        f"Synonym '{synonym}' has only one property with outcome "
+                        f"'{outcome}': {row_id} ({label}). Expected a +/- pair.",
+                        f"{sheet.filename}: row {row_num}",
                     )
                 )
+            continue
 
-            # Check for self-referential parents
-            # Get the label for this ID
-            current_label = sheet.ids.get(id_val, (None, None, None, None))[1]
-            if parent_ref == id_val:
-                issues.append(
-                    QCIssue(
-                        "ERROR",
-                        "SELF_REFERENTIAL_PARENT_ID",
-                        "Parent references itself via ID",
-                        f"{sheet.filename}: row {row_num}, ID {id_val}",
-                    )
+        if entry_count > 2:
+            ids = ", ".join(f"{e[1]} ({e[2]}, {e[3]})" for e in entries)
+            issues.append(
+                QCIssue(
+                    "WARNING",
+                    "MULTIPLE_ASSAY_OUTCOMES",
+                    f"Synonym '{synonym}' has {entry_count} properties: {ids}",
+                    sheet.filename,
                 )
-            elif parent_ref == current_label:
-                issues.append(
-                    QCIssue(
-                        "ERROR",
-                        "SELF_REFERENTIAL_PARENT_LABEL",
-                        f"Parent references itself via label '{parent_ref}'",
-                        f"{sheet.filename}: row {row_num}, ID {id_val}",
-                    )
-                )
+            )
 
     return issues
 
@@ -457,6 +575,9 @@ def main(download: bool, main_sheet: str, properties_sheet: str):
 
     click.echo("Checking for undefined parents...")
     all_issues.extend(check_undefined_parents(sheets))
+
+    click.echo("Checking for assay outcome pairing...")
+    all_issues.extend(check_assay_outcome_pairing(sheets))
 
     click.echo("Checking for structural issues...")
     all_issues.extend(check_structural_issues(sheets))
