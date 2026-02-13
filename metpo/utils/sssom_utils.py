@@ -55,7 +55,9 @@ def parse_sssom_curie_map(sssom_path: str | Path) -> dict[str, str]:
     return curie_map
 
 
-def iri_to_curie(iri: str, known_iri_prefixes: dict[str, str] | None = None) -> tuple[str, str] | None:
+def iri_to_curie(
+    iri: str, known_iri_prefixes: dict[str, str] | None = None
+) -> tuple[str, str] | None:
     """Convert common IRI forms to CURIEs when safely possible."""
     prefixes = known_iri_prefixes or KNOWN_IRI_PREFIXES
 
