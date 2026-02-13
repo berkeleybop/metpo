@@ -16,6 +16,8 @@ from pathlib import Path
 
 import pandas as pd
 
+from metpo.utils.sssom_utils import extract_prefix, parse_sssom_curie_map
+
 # Configuration
 SSSOM_FILE = "../../data/mappings/metpo_mappings_combined_relaxed.sssom.tsv"
 METPO_SHEET = "../../src/templates/metpo_sheet.tsv"
@@ -48,27 +50,34 @@ def parse_object_label(label: str) -> tuple[str, str | None]:
     return label.strip(), None
 
 
-def extract_ontology_prefix(iri: str) -> str:
+def extract_ontology_prefix(
+    iri: str,
+    curie_map: dict[str, str] | None = None,
+) -> str:
     """Extract ontology prefix from IRI."""
-    # Handle obo format
-    if "obo/" in iri:
-        match = re.search(r"/obo/([A-Z]+)_", iri)
+    text = str(iri).strip().strip("<>").strip()
+    prefix = "UNKNOWN"
+    if not text:
+        return prefix
+
+    extracted = extract_prefix(text, curie_map)
+    if extracted:
+        return extracted.upper()
+
+    if "obo/" in text:
+        match = re.search(r"/obo/([A-Z]+)_", text)
         if match:
-            return match.group(1)
+            prefix = match.group(1)
+    elif "doi.org" in text.lower():
+        prefix = "DOI"
+    elif "biolink" in text.lower():
+        prefix = "BIOLINK"
+    elif "dsmz" in text.lower():
+        prefix = "D3O"
+    elif "mdatahub" in text.lower():
+        prefix = "MEO"
 
-    # Handle DOI format
-    if "doi.org" in iri:
-        return "DOI"
-
-    # Handle other formats
-    if "biolink" in iri.lower():
-        return "BIOLINK"
-    if "dsmz" in iri.lower():
-        return "D3O"
-    if "mdatahub" in iri.lower():
-        return "MEO"
-
-    return "UNKNOWN"
+    return prefix
 
 
 def load_metpo_sheet() -> pd.DataFrame:
@@ -114,6 +123,7 @@ def load_sssom_mappings() -> pd.DataFrame:
 
     # Read from data start
     df = pd.read_csv(SSSOM_FILE, sep="\t", skiprows=data_start)
+    curie_map = parse_sssom_curie_map(SSSOM_FILE)
 
     # Extract distance from comment
     df["distance"] = df["comment"].apply(extract_distance_from_comment)
@@ -124,7 +134,7 @@ def load_sssom_mappings() -> pd.DataFrame:
     )
 
     # Extract ontology prefix
-    df["ontology"] = df["object_id"].apply(extract_ontology_prefix)
+    df["ontology"] = df["object_id"].apply(lambda x: extract_ontology_prefix(x, curie_map))
 
     return df
 
