@@ -64,7 +64,7 @@ In practice: **1xxxxxx = classes**, **2xxxxxx = properties**.
 | 1001101-1001106 | 6 IDs | Biosafety levels 1-5 + parent | 6 |
 | 1002003-1002006 | 4 IDs | Cable bacteria metabolism, fermentation, syntrophy | 4 |
 | 1003000-1003031 | ~20 IDs | pH preference (10) + pigmentation (12) | ~22 |
-| 1004000-1004005 | ~5 IDs | Pathogenicity (4) + growth medium (1) | 5 |
+| 1004000-1004005 | 5 IDs | Pathogenicity (4) + growth medium (1) | 5 |
 
 ### Gaps in Class IDs
 
@@ -124,7 +124,7 @@ In practice: **1xxxxxx = classes**, **2xxxxxx = properties**.
 
 | Proposed Range | Purpose | Count needed |
 |----------------|---------|-------------|
-| METPO:1005001-1005010 | Nitrogen cycle process classes | ~1 (nitrification) |
+| METPO:1005001-1005010 | Nitrogen cycle process classes (nitrification + reserved for future N-cycle terms) | ~10 |
 | METPO:1005011-1005020 | Biochemical test phenotypes (indole/MR/VP +/-) | ~6 |
 | METPO:1005021-1005030 | Missing phenotypes (capnophilic, hemolytic) | ~3 |
 | METPO:1005031-1005050 | Flagellum arrangement types | ~7 |

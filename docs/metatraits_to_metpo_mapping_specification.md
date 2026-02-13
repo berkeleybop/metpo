@@ -134,6 +134,7 @@ NCBITaxon:1299 -> METPO:2000303 (does not show activity of) -> GO:0004096
 
 EC numbers map to GO MF terms via the maintained ec2go mapping file at
 https://current.geneontology.org/ontology/external2go/ec2go
+
 EC is a flat classification; GO molecular function terms are in a DAG.
 Use GO terms as KGX objects; record EC as an xref/annotation if needed.
 
@@ -312,10 +313,10 @@ Domain: microbe. Range: xsd:decimal.
 | METPO:2000714 | has estimated gene count value | genes | estimated gene count |
 | METPO:2000715 | has GC percentage value | % | GC percentage |
 | METPO:2000716 | has coding density value | % | coding density |
-| METPO:2000721 | has cell length value | um | cell length |
-| METPO:2000722 | has cell width value | um | cell width |
+| METPO:2000721 | has cell length value | µm | cell length |
+| METPO:2000722 | has cell width value | µm | cell width |
 
-### 5.3 New Phenotype Classes (~18 classes)
+### 5.3 New Phenotype Classes (17 classes)
 
 | Proposed ID | Label | Parent | MetaTraits trait | External mapping |
 |-------------|-------|--------|------------------|-----------------|
