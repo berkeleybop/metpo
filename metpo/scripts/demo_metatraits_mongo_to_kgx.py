@@ -15,6 +15,8 @@ from pathlib import Path
 from typing import Literal
 
 import click
+from kgx.sink import JsonlSink, TsvSink
+from kgx.transformer import Transformer
 from pymongo import MongoClient
 
 
@@ -40,7 +42,11 @@ def parse_boolean_from_majority_label(label: str) -> bool | None:
 
 def choose_object_curie(ontologies: list[str], row: dict[str, str]) -> str:
     if row.get("mapping_kind") == "composed":
-        chebis = [curie.strip() for curie in (row.get("substrate_chebi_ids") or "").split(";") if curie.strip()]
+        chebis = [
+            curie.strip()
+            for curie in (row.get("substrate_chebi_ids") or "").split(";")
+            if curie.strip()
+        ]
         if chebis:
             return chebis[0]
         for curie in ontologies:
@@ -67,7 +73,11 @@ def map_record_to_edge(record: dict, row: dict[str, str]) -> dict[str, str] | No
     mapping_kind = row.get("mapping_kind", "")
 
     if mapping_kind == "composed":
-        predicate = row.get("predicate_positive_id", "") if bool_value else row.get("predicate_negative_id", "")
+        predicate = (
+            row.get("predicate_positive_id", "")
+            if bool_value
+            else row.get("predicate_negative_id", "")
+        )
     else:
         # Demo fallback for base terms: emit has_phenotype if we have a METPO class match.
         predicate = "biolink:has_phenotype"
@@ -110,15 +120,6 @@ def write_kgx(
     output_prefix: Path,
     output_format: Literal["tsv", "jsonl"],
 ) -> tuple[Path, Path]:
-    try:
-        from kgx.sink import JsonlSink, TsvSink
-        from kgx.transformer import Transformer
-    except ModuleNotFoundError as exc:
-        raise RuntimeError(
-            "kgx is required for output writing. Run via Makefile target "
-            "`make demo-metatraits-mongo` or install kgx in the environment."
-        ) from exc
-
     output_prefix.parent.mkdir(parents=True, exist_ok=True)
 
     transformer = Transformer()
@@ -166,7 +167,13 @@ def write_kgx(
     show_default=True,
 )
 @click.option("--limit", type=int, default=50, show_default=True)
-@click.option("--format", "output_format", type=click.Choice(["tsv", "jsonl"]), default="tsv", show_default=True)
+@click.option(
+    "--format",
+    "output_format",
+    type=click.Choice(["tsv", "jsonl"]),
+    default="tsv",
+    show_default=True,
+)
 @click.option(
     "--output-prefix",
     type=click.Path(path_type=Path),
