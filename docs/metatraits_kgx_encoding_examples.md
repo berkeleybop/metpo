@@ -19,6 +19,32 @@ Do not use SSSOM as the runtime mapping artifact for this ingestion path.
 - METPO property template: `src/templates/metpo-properties.tsv`
 - Generated resolution table: `data/mappings/metatraits_in_sheet_resolution.tsv`
 - Coverage report: `data/mappings/metatraits_in_sheet_resolution_report.md`
+- MongoDB fixture records: `docs/examples_metatraits_mongodb_api_like_records.json`
+
+## Do We Already Have API-Like MongoDB Records?
+
+Yes, on this machine.
+
+Local MongoDB has a `metatraits` database with collections including:
+- `genome_traits` (one document per assertion-like record)
+- `genome_records` (one genome document with nested trait array)
+- `ncbi_species_summary` / `ncbi_genus_summary` / `ncbi_family_summary` (aggregated trait summaries)
+
+`genome_traits` is the closest shape to what Anthea is likely to pull from the MetaTraits API/taxonomy endpoints:
+- `name`
+- `majority_label`
+- `percentages`
+- `is_ai`
+- `ontologies`
+- `genome_accession`
+
+I cannot directly inspect your LBL MacBook Pro from this session, but she can run the same checks there:
+
+```bash
+mongosh --quiet --eval 'db.adminCommand({listDatabases:1}).databases.map(d=>d.name).join("\\n")'
+mongosh metatraits --quiet --eval 'db.getCollectionNames().join("\\n")'
+mongosh metatraits --quiet --eval 'db.genome_traits.findOne()'
+```
 
 ## Runbook
 
@@ -177,6 +203,39 @@ for assertion in metatraits_assertions_for_taxon:
 
     # fallback routes for base boolean/factor/process/numeric
     emit_via_class_or_process_rules(assertion)
+```
+
+## MongoDB-First Example (No API Calls Yet)
+
+Anthea can prototype the transform logic against local Mongo records and later swap in API fetch code.
+
+```python
+# Pseudocode for assertion records from metatraits.genome_traits
+
+record = {
+    "name": "denitrification: nitrate",
+    "majority_label": "false: (100%)",
+    "percentages": {"false": 100},
+    "ontologies": ["GO:0019333", "CHEBI:17632"],
+    "genome_accession": "GCA_000008565.1",
+}
+
+subject = map_genome_to_subject_curie(record["genome_accession"])  # e.g., NCBITaxon or assembly CURIE
+trait_name = record["name"]
+is_true = parse_majority_label_to_boolean(record["majority_label"])  # false here
+
+row = resolution_table[trait_name]  # from metatraits_in_sheet_resolution.tsv
+predicate = row["predicate_positive_id"] if is_true else row["predicate_negative_id"]
+obj = choose_object_curie(record["ontologies"], row)  # CHEBI first for composed chemical traits
+
+emit_kgx_edge(
+    subject=subject,
+    predicate=predicate,
+    object=obj,
+    knowledge_level="knowledge_assertion",
+    agent_type="automated_agent" if record.get("is_ai") else "manual_agent",
+    primary_knowledge_source="infores:metatraits",
+)
 ```
 
 ## Best Practices
