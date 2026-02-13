@@ -332,80 +332,104 @@ def check_assay_outcome_pairing(sheets: list[SheetData]) -> list[QCIssue]:
     issues: list[QCIssue] = []
 
     for sheet in sheets:
-        # Only process sheets that declare an "assay outcome" column.
-        # This avoids mis-parsing files with different schemas (e.g., metpo_sheet.tsv).
-        header_cells: list[str] = []
-        for header_row in sheet.rows[:2]:
-            for cell in header_row:
-                if cell:
-                    header_cells.append(str(cell).strip().lower())
-        if not any("assay outcome" in cell for cell in header_cells):
+        if not _sheet_has_assay_outcome_column(sheet):
             continue
 
-        # synonym column (index 9) and assay outcome column (index 11)
-        synonym_map: dict[str, list[tuple[int, str, str, str]]] = defaultdict(list)
+        synonym_map = _extract_synonym_map_for_assay_outcomes(sheet)
+        issues.extend(_build_assay_outcome_issues(sheet, synonym_map))
 
-        for row_num, row in enumerate(sheet.rows, start=1):
-            if row_num <= 2:
-                continue
-            if len(row) < 12:
-                continue
+    return issues
 
-            row_id = row[0].strip() if row[0] else ""
-            label = row[1].strip() if len(row) > 1 and row[1] else ""
-            synonym_tuples = row[9].strip() if len(row) > 9 and row[9] else ""
-            assay_outcome = row[11].strip() if len(row) > 11 and row[11] else ""
 
-            if not (row_id and synonym_tuples and assay_outcome):
-                continue
+def _sheet_has_assay_outcome_column(sheet: SheetData) -> bool:
+    """Return True when a sheet header includes an assay outcome column."""
+    header_cells: list[str] = []
+    for header_row in sheet.rows[:2]:
+        for cell in header_row:
+            if cell:
+                header_cells.append(str(cell).strip().lower())
+    return any("assay outcome" in cell for cell in header_cells)
 
-            # Extract synonym string from tuple like "oboInOwl:hasRelatedSynonym 'fermentation'"
-            match = re.search(r"'([^']+)'", synonym_tuples)
-            if match:
-                synonym = match.group(1)
-                synonym_map[synonym].append((row_num, row_id, label, assay_outcome))
 
-        for synonym, entries in synonym_map.items():
-            outcomes = [e[3] for e in entries]
+def _extract_synonym_map_for_assay_outcomes(
+    sheet: SheetData,
+) -> dict[str, list[tuple[int, str, str, str]]]:
+    """Extract synonym -> [(row_num, id, label, assay_outcome)] from a sheet."""
+    synonym_map: dict[str, list[tuple[int, str, str, str]]] = defaultdict(list)
 
-            if len(entries) == 2:
-                if outcomes[0] == outcomes[1]:
-                    id1, label1 = entries[0][1], entries[0][2]
-                    id2, label2 = entries[1][1], entries[1][2]
-                    issues.append(
-                        QCIssue(
-                            "ERROR",
-                            "ASSAY_OUTCOME_MISMATCH",
-                            f"Synonym '{synonym}' has two properties with same outcome "
-                            f"'{outcomes[0]}': {id1} ({label1}) and {id2} ({label2}). "
-                            f"One should be '+' and the other '-'.",
-                            f"{sheet.filename}: rows {entries[0][0]}, {entries[1][0]}",
-                        )
-                    )
-            elif len(entries) == 1:
-                row_num, row_id, label, outcome = entries[0]
-                # Single entry with outcome is OK for parent properties (e.g. enzyme activity analyzed)
-                # but warn for +/- properties that lack a counterpart
-                if outcome in ("+", "-"):
-                    issues.append(
-                        QCIssue(
-                            "WARNING",
-                            "UNPAIRED_ASSAY_OUTCOME",
-                            f"Synonym '{synonym}' has only one property with outcome "
-                            f"'{outcome}': {row_id} ({label}). Expected a +/- pair.",
-                            f"{sheet.filename}: row {row_num}",
-                        )
-                    )
-            elif len(entries) > 2:
-                ids = ", ".join(f"{e[1]} ({e[2]}, {e[3]})" for e in entries)
+    for row_num, row in enumerate(sheet.rows, start=1):
+        if row_num <= 2 or len(row) < 12:
+            continue
+
+        row_id = row[0].strip() if row[0] else ""
+        label = row[1].strip() if len(row) > 1 and row[1] else ""
+        synonym_tuples = row[9].strip() if len(row) > 9 and row[9] else ""
+        assay_outcome = row[11].strip() if len(row) > 11 and row[11] else ""
+
+        if not (row_id and synonym_tuples and assay_outcome):
+            continue
+
+        # Extract synonym string from tuple like "oboInOwl:hasRelatedSynonym 'fermentation'"
+        match = re.search(r"'([^']+)'", synonym_tuples)
+        if match:
+            synonym = match.group(1)
+            synonym_map[synonym].append((row_num, row_id, label, assay_outcome))
+
+    return synonym_map
+
+
+def _build_assay_outcome_issues(
+    sheet: SheetData,
+    synonym_map: dict[str, list[tuple[int, str, str, str]]],
+) -> list[QCIssue]:
+    """Build assay outcome QC issues for a parsed synonym map."""
+    issues: list[QCIssue] = []
+
+    for synonym, entries in synonym_map.items():
+        entry_count = len(entries)
+        outcomes = [e[3] for e in entries]
+
+        if entry_count == 2 and outcomes[0] == outcomes[1]:
+            id1, label1 = entries[0][1], entries[0][2]
+            id2, label2 = entries[1][1], entries[1][2]
+            issues.append(
+                QCIssue(
+                    "ERROR",
+                    "ASSAY_OUTCOME_MISMATCH",
+                    f"Synonym '{synonym}' has two properties with same outcome "
+                    f"'{outcomes[0]}': {id1} ({label1}) and {id2} ({label2}). "
+                    f"One should be '+' and the other '-'.",
+                    f"{sheet.filename}: rows {entries[0][0]}, {entries[1][0]}",
+                )
+            )
+            continue
+
+        if entry_count == 1:
+            row_num, row_id, label, outcome = entries[0]
+            # Single entry with outcome is OK for parent properties (e.g. enzyme activity analyzed)
+            # but warn for +/- properties that lack a counterpart
+            if outcome in ("+", "-"):
                 issues.append(
                     QCIssue(
                         "WARNING",
-                        "MULTIPLE_ASSAY_OUTCOMES",
-                        f"Synonym '{synonym}' has {len(entries)} properties: {ids}",
-                        sheet.filename,
+                        "UNPAIRED_ASSAY_OUTCOME",
+                        f"Synonym '{synonym}' has only one property with outcome "
+                        f"'{outcome}': {row_id} ({label}). Expected a +/- pair.",
+                        f"{sheet.filename}: row {row_num}",
                     )
                 )
+            continue
+
+        if entry_count > 2:
+            ids = ", ".join(f"{e[1]} ({e[2]}, {e[3]})" for e in entries)
+            issues.append(
+                QCIssue(
+                    "WARNING",
+                    "MULTIPLE_ASSAY_OUTCOMES",
+                    f"Synonym '{synonym}' has {entry_count} properties: {ids}",
+                    sheet.filename,
+                )
+            )
 
     return issues
 
