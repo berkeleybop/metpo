@@ -11,7 +11,6 @@ This helps identify:
 3. Redundant sources that could be removed
 """
 
-import re
 from collections import defaultdict
 
 import click
@@ -29,29 +28,10 @@ def extract_term_source(iri: str, curie_map: dict[str, str] | None = None) -> st
     - http://purl.obolibrary.org/obo/GO_0008150 → GO
     - https://w3id.org/biolink/vocab/phenotype → biolink
     """
-    text = str(iri).strip()
-    source = "unknown"
-    if not text:
-        return source
-
-    extracted = extract_prefix(text, curie_map)
+    extracted = extract_prefix(iri, curie_map)
     if extracted:
-        source = extracted.upper()
-    else:
-        # OBO pattern: .../obo/PREFIX_ID
-        obo_match = re.search(r"/obo/([A-Za-z]+)_\d+", text)
-        if obo_match:
-            source = obo_match.group(1).upper()
-        elif "biolink" in text.lower():
-            source = "biolink"
-        elif "doi.org" in text.lower():
-            doi_match = re.search(r"doi\.org/[^/]+/([A-Za-z]+)", text, flags=re.IGNORECASE)
-            if doi_match:
-                source = doi_match.group(1)
-        elif "purl.dsmz.de" in text.lower():
-            source = "D3O"
-
-    return source
+        return extracted.upper()
+    return "unknown"
 
 
 @click.command()

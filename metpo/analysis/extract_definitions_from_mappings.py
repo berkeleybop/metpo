@@ -54,30 +54,11 @@ def extract_ontology_prefix(
     iri: str,
     curie_map: dict[str, str] | None = None,
 ) -> str:
-    """Extract ontology prefix from IRI."""
-    text = str(iri).strip().strip("<>").strip()
-    prefix = "UNKNOWN"
-    if not text:
-        return prefix
-
-    extracted = extract_prefix(text, curie_map)
+    """Extract ontology prefix from CURIE/IRI with SSSOM-aware logic."""
+    extracted = extract_prefix(iri, curie_map)
     if extracted:
         return extracted.upper()
-
-    if "obo/" in text:
-        match = re.search(r"/obo/([A-Z]+)_", text)
-        if match:
-            prefix = match.group(1)
-    elif "doi.org" in text.lower():
-        prefix = "DOI"
-    elif "biolink" in text.lower():
-        prefix = "BIOLINK"
-    elif "dsmz" in text.lower():
-        prefix = "D3O"
-    elif "mdatahub" in text.lower():
-        prefix = "MEO"
-
-    return prefix
+    return "UNKNOWN"
 
 
 def load_metpo_sheet() -> pd.DataFrame:

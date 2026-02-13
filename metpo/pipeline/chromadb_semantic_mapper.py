@@ -42,67 +42,13 @@ from chromadb.config import Settings
 from dotenv import load_dotenv
 from tqdm import tqdm
 
+from metpo.utils.sssom_utils import normalize_object_id
+
 CORE_CURIE_MAP = {
     "METPO": "http://purl.obolibrary.org/obo/METPO_",
     "skos": "http://www.w3.org/2004/02/skos/core#",
     "semapv": "https://w3id.org/semapv/vocab/",
 }
-
-KNOWN_IRI_PREFIXES = {
-    "biolink": "https://w3id.org/biolink/vocab/",
-    "d3o": "https://purl.dsmz.de/schema/",
-    "doi": "http://doi.org/",
-    "bipon": "http://www.semanticweb.org/BiPON/",
-}
-
-
-def strip_angle_brackets(identifier: str) -> str:
-    text = identifier.strip()
-    if text.startswith("<") and text.endswith(">"):
-        return text[1:-1]
-    return text
-
-
-def iri_to_curie(iri: str) -> tuple[str, str] | None:
-    """Convert common IRI forms to CURIEs when safely possible."""
-    # OBO-style compact form, e.g. http://purl.obolibrary.org/obo/GO_0008152 -> GO:0008152
-    if iri.startswith("http://purl.obolibrary.org/obo/"):
-        local = iri.removeprefix("http://purl.obolibrary.org/obo/")
-        if "_" in local:
-            prefix, suffix = local.split("_", 1)
-            if prefix and suffix:
-                return f"{prefix}:{suffix}", f"http://purl.obolibrary.org/obo/{prefix}_"
-        return None
-
-    for prefix, base in KNOWN_IRI_PREFIXES.items():
-        if iri.startswith(base):
-            local = iri.removeprefix(base)
-            if local:
-                return f"{prefix}:{local}", base
-
-    # Accept https variant for doi
-    if iri.startswith("https://doi.org/"):
-        local = iri.removeprefix("https://doi.org/")
-        if local:
-            return f"doi:{local}", KNOWN_IRI_PREFIXES["doi"]
-
-    return None
-
-
-def normalize_object_id(raw_identifier: str) -> tuple[str, dict[str, str]]:
-    """Normalize mapping object id to CURIE where possible, else plain IRI (no <>)."""
-    clean = strip_angle_brackets(raw_identifier)
-    if not clean:
-        return clean, {}
-
-    converted = iri_to_curie(clean)
-    if converted is not None:
-        curie, expansion = converted
-        prefix = curie.split(":", 1)[0]
-        return curie, {prefix: expansion}
-
-    # Keep plain IRI if no safe CURIE normalization is available.
-    return clean, {}
 
 
 def load_metpo_terms(

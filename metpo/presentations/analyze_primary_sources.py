@@ -70,7 +70,7 @@ def analyze_sssom(sssom_path):
     curie_map = parse_sssom_curie_map(sssom_path)
 
     with Path(sssom_path).open() as f:
-        data_lines = [line for line in f if not line.startswith("#")]
+        data_lines = (line for line in f if not line.startswith("#"))
         reader = csv.DictReader(data_lines, delimiter="\t")
         for row in reader:
             total_mappings += 1
