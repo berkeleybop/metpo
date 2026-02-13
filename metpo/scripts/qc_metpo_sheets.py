@@ -6,10 +6,12 @@ Checks for:
 - Label clashes within and across sheets
 - Parent classes/properties referenced but not defined
 - Self-referential parent definitions
+- Assay outcome pairing (synonym +/- pairs must be consistent)
 - Structural issues (missing IDs, labels, malformed IDs)
 """
 
 import csv
+import re
 import sys
 import urllib.request
 from collections import defaultdict
@@ -316,6 +318,85 @@ def check_undefined_parents(sheets: list[SheetData]) -> list[QCIssue]:
     return issues
 
 
+def check_assay_outcome_pairing(sheets: list[SheetData]) -> list[QCIssue]:
+    """Check that synonym/assay-outcome pairs in metpo-properties.tsv are consistent.
+
+    Every synonym string shared by two properties should have exactly one '+'
+    and one '-' assay outcome. Flags:
+    - ERROR if two properties share a synonym and both have the same outcome
+    - WARNING if a property has a synonym + outcome but no counterpart
+    """
+    issues: list[QCIssue] = []
+
+    for sheet in sheets:
+        # synonym column (index 9) and assay outcome column (index 11)
+        synonym_map: dict[str, list[tuple[int, str, str, str]]] = defaultdict(list)
+
+        for row_num, row in enumerate(sheet.rows, start=1):
+            if row_num <= 2:
+                continue
+            if len(row) < 12:
+                continue
+
+            row_id = row[0].strip() if row[0] else ""
+            label = row[1].strip() if len(row) > 1 and row[1] else ""
+            synonym_tuples = row[9].strip() if len(row) > 9 and row[9] else ""
+            assay_outcome = row[11].strip() if len(row) > 11 and row[11] else ""
+
+            if not (row_id and synonym_tuples and assay_outcome):
+                continue
+
+            # Extract synonym string from tuple like "oboInOwl:hasRelatedSynonym 'fermentation'"
+            match = re.search(r"'([^']+)'", synonym_tuples)
+            if match:
+                synonym = match.group(1)
+                synonym_map[synonym].append((row_num, row_id, label, assay_outcome))
+
+        for synonym, entries in synonym_map.items():
+            outcomes = [e[3] for e in entries]
+
+            if len(entries) == 2:
+                if outcomes[0] == outcomes[1]:
+                    id1, label1 = entries[0][1], entries[0][2]
+                    id2, label2 = entries[1][1], entries[1][2]
+                    issues.append(
+                        QCIssue(
+                            "ERROR",
+                            "ASSAY_OUTCOME_MISMATCH",
+                            f"Synonym '{synonym}' has two properties with same outcome "
+                            f"'{outcomes[0]}': {id1} ({label1}) and {id2} ({label2}). "
+                            f"One should be '+' and the other '-'.",
+                            f"{sheet.filename}: rows {entries[0][0]}, {entries[1][0]}",
+                        )
+                    )
+            elif len(entries) == 1:
+                row_num, row_id, label, outcome = entries[0]
+                # Single entry with outcome is OK for parent properties (e.g. enzyme activity analyzed)
+                # but warn for +/- properties that lack a counterpart
+                if outcome in ("+", "-"):
+                    issues.append(
+                        QCIssue(
+                            "WARNING",
+                            "UNPAIRED_ASSAY_OUTCOME",
+                            f"Synonym '{synonym}' has only one property with outcome "
+                            f"'{outcome}': {row_id} ({label}). Expected a +/- pair.",
+                            f"{sheet.filename}: row {row_num}",
+                        )
+                    )
+            elif len(entries) > 2:
+                ids = ", ".join(f"{e[1]} ({e[2]}, {e[3]})" for e in entries)
+                issues.append(
+                    QCIssue(
+                        "WARNING",
+                        "MULTIPLE_ASSAY_OUTCOMES",
+                        f"Synonym '{synonym}' has {len(entries)} properties: {ids}",
+                        sheet.filename,
+                    )
+                )
+
+    return issues
+
+
 def check_structural_issues(sheets: list[SheetData]) -> list[QCIssue]:
     """Check for other structural issues."""
     issues = []
@@ -457,6 +538,9 @@ def main(download: bool, main_sheet: str, properties_sheet: str):
 
     click.echo("Checking for undefined parents...")
     all_issues.extend(check_undefined_parents(sheets))
+
+    click.echo("Checking for assay outcome pairing...")
+    all_issues.extend(check_assay_outcome_pairing(sheets))
 
     click.echo("Checking for structural issues...")
     all_issues.extend(check_structural_issues(sheets))
