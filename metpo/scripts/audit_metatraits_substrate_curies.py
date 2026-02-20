@@ -151,15 +151,11 @@ def compare_labels(substrate_label: str, chebi_label: str | None) -> str:
     """Compare substrate label against CHEBI label. Returns match status."""
     if chebi_label is None:
         return "no_oak_label"
-    norm_sub = normalize_text(substrate_label)
-    norm_chebi = normalize_text(chebi_label)
-    if norm_sub == norm_chebi:
+    sub_stripped = substrate_label.strip()
+    chebi_stripped = chebi_label.strip()
+    if sub_stripped == chebi_stripped:
         return "exact"
-    # Case-insensitive is the same as exact here since both are lowered,
-    # but check original casing
-    if substrate_label.strip().lower() == chebi_label.strip().lower():
-        return "exact"
-    if substrate_label.strip() != chebi_label.strip() and norm_sub == norm_chebi:
+    if sub_stripped.lower() == chebi_stripped.lower():
         return "case_insensitive"
     return "mismatch"
 
@@ -380,7 +376,7 @@ def write_audit_report(rows: list[AuditRow], report_path: Path) -> None:
     "-r",
     type=click.Path(path_type=Path),
     default=None,
-    help="Output markdown report path (default: <output>.md sibling)",
+    help="Output markdown report path (default: <output_stem>_report.md sibling)",
 )
 @click.option(
     "--kgm-mappings",
