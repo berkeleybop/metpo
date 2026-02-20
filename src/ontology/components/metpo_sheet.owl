@@ -7,8 +7,8 @@ Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
 
 
 Ontology(<https://w3id.org/metpo/metpo/components/metpo_sheet.owl>
-<https://w3id.org/metpo/metpo/releases/2025-12-12/components/metpo_sheet.owl>
-Annotation(owl:versionInfo "2025-12-12")
+<https://w3id.org/metpo/metpo/releases/2026-02-19/components/metpo_sheet.owl>
+Annotation(owl:versionInfo "2026-02-19")
 
 Declaration(Class(<https://w3id.org/metpo/1000059>))
 Declaration(Class(<https://w3id.org/metpo/1000060>))
@@ -363,6 +363,12 @@ Declaration(ObjectProperty(<https://w3id.org/metpo/2000515>))
 Declaration(ObjectProperty(<https://w3id.org/metpo/2000516>))
 Declaration(ObjectProperty(<https://w3id.org/metpo/2000517>))
 Declaration(ObjectProperty(<https://w3id.org/metpo/2000518>))
+Declaration(ObjectProperty(<https://w3id.org/metpo/2000601>))
+Declaration(ObjectProperty(<https://w3id.org/metpo/2000602>))
+Declaration(ObjectProperty(<https://w3id.org/metpo/2000603>))
+Declaration(ObjectProperty(<https://w3id.org/metpo/2000604>))
+Declaration(ObjectProperty(<https://w3id.org/metpo/2000605>))
+Declaration(ObjectProperty(<https://w3id.org/metpo/2000606>))
 Declaration(DataProperty(<https://w3id.org/metpo/2000058>))
 Declaration(DataProperty(<https://w3id.org/metpo/2000059>))
 Declaration(DataProperty(<https://w3id.org/metpo/2000060>))
@@ -1026,6 +1032,42 @@ AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000518> "does not grow i
 ObjectPropertyDomain(<https://w3id.org/metpo/2000518> <https://w3id.org/metpo/1000525>)
 ObjectPropertyRange(<https://w3id.org/metpo/2000518> <https://w3id.org/metpo/1004005>)
 
+# Object Property: <https://w3id.org/metpo/2000601> (denitrifies)
+
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000601> "denitrification")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000601> "denitrifies")
+SubObjectPropertyOf(<https://w3id.org/metpo/2000601> <https://w3id.org/metpo/2000001>)
+
+# Object Property: <https://w3id.org/metpo/2000602> (does not denitrify)
+
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000602> "denitrification")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000602> "does not denitrify")
+SubObjectPropertyOf(<https://w3id.org/metpo/2000602> <https://w3id.org/metpo/2000001>)
+
+# Object Property: <https://w3id.org/metpo/2000603> (ammonifies)
+
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000603> "ammonification")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000603> "ammonifies")
+SubObjectPropertyOf(<https://w3id.org/metpo/2000603> <https://w3id.org/metpo/2000001>)
+
+# Object Property: <https://w3id.org/metpo/2000604> (does not ammonify)
+
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000604> "ammonification")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000604> "does not ammonify")
+SubObjectPropertyOf(<https://w3id.org/metpo/2000604> <https://w3id.org/metpo/2000001>)
+
+# Object Property: <https://w3id.org/metpo/2000605> (oxidizes in darkness)
+
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000605> "oxidation in darkness")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000605> "oxidizes in darkness")
+SubObjectPropertyOf(<https://w3id.org/metpo/2000605> <https://w3id.org/metpo/2000001>)
+
+# Object Property: <https://w3id.org/metpo/2000606> (does not oxidize in darkness)
+
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000606> "oxidation in darkness")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000606> "does not oxidize in darkness")
+SubObjectPropertyOf(<https://w3id.org/metpo/2000606> <https://w3id.org/metpo/2000001>)
+
 
 ############################
 #   Data Properties
@@ -1107,6 +1149,7 @@ SubClassOf(<https://w3id.org/metpo/1000060> <https://w3id.org/metpo/1000630>)
 
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://purl.dsmz.de/schema/GCContent>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000127> "A quality that is describing the percentage of guanine and cytosine nucleotides in genomic DNA, calculated as the ratio of GC base pairs to total base pairs.")
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000117> <https://w3id.org/metpo/1000127> "Luke Wang")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000127> "GC percentage")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000127> "GC content")
 SubClassOf(<https://w3id.org/metpo/1000127> <https://w3id.org/metpo/1000188>)
 
@@ -1786,6 +1829,7 @@ SubClassOf(<https://w3id.org/metpo/1000536> <https://w3id.org/metpo/1000059>)
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/UPHENO_0049673>) Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://purl.dsmz.de/schema/OxygenTolerance>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000601> "A phenotype that is relating to an organism's oxygen requirements or tolerance for growth.")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000601> "Physiology and metabolism.oxygen tolerance.oxygen tolerance")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://github.com/jmadin/bacteria_archaea_traits>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000601> "metabolism")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000601> "oxygen preference")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000601> "oxygen preference")
 SubClassOf(<https://w3id.org/metpo/1000601> <https://w3id.org/metpo/1000059>)
 
@@ -1821,6 +1865,7 @@ SubClassOf(<https://w3id.org/metpo/1000604> <https://w3id.org/metpo/1000601>)
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/MICRO_0001520>) Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/OMP_0000087>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000605> "An oxygen preference in which growth can occur with or without molecular oxygen (O₂).")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://github.com/jmadin/bacteria_archaea_traits>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000605> "facultative")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000605> "facultative anaerobe")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000605> "facultative anaerobe")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000605> "facultatively anaerobic")
 SubClassOf(<https://w3id.org/metpo/1000605> <https://w3id.org/metpo/1000601>)
 
@@ -1829,6 +1874,7 @@ SubClassOf(<https://w3id.org/metpo/1000605> <https://w3id.org/metpo/1000601>)
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/MICRO_0000516>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000606> "An oxygen preference that requires molecular oxygen (O₂) for growth.")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000606> "obligate aerobe")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://github.com/jmadin/bacteria_archaea_traits>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000606> "obligate aerobic")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000606> "obligate aerobic")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000606> "obligately aerobic")
 SubClassOf(<https://w3id.org/metpo/1000606> <https://w3id.org/metpo/1000601>)
 
@@ -1852,6 +1898,7 @@ SubClassOf(<https://w3id.org/metpo/1000608> <https://w3id.org/metpo/1000601>)
 
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/MICRO_0000502>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000609> "An oxygen preference that does not use O₂ for growth but tolerates its presence.")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000609> "aerotolerant")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000609> "aerotolerant")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000609> "aerotolerant")
 SubClassOf(<https://w3id.org/metpo/1000609> <https://w3id.org/metpo/1000601>)
 
@@ -1865,6 +1912,7 @@ SubClassOf(<https://w3id.org/metpo/1000610> <https://w3id.org/metpo/1000601>)
 # Class: <https://w3id.org/metpo/1000611> (strictly anaerobic)
 
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/OMP_0000184>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000611> "An obligately anaerobic where a microorganism does not grow in the presence of oxygen gas (O2).")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000611> "obligate anaerobic")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://github.com/jmadin/bacteria_archaea_traits>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000611> "strictly anaerobic")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000611> "strictly anaerobic")
 SubClassOf(<https://w3id.org/metpo/1000611> <https://w3id.org/metpo/1000607>)
@@ -1881,6 +1929,7 @@ SubClassOf(<https://w3id.org/metpo/1000612> <https://w3id.org/metpo/1000601>)
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/OMP_0005002>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000613> "A phenotype that describes characteristic growth with respect to environmental temperature.")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000613> "Physiology and metabolism.culture temp.temperature")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://github.com/jmadin/bacteria_archaea_traits>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000613> "range_tmp")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000613> "temperature preference")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000613> "temperature preference")
 SubClassOf(<https://w3id.org/metpo/1000613> <https://w3id.org/metpo/1000059>)
 
@@ -1889,6 +1938,7 @@ SubClassOf(<https://w3id.org/metpo/1000613> <https://w3id.org/metpo/1000059>)
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/MICRO_0001306>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000614> "A temperature preference in which growth is favored at low temperatures, typically near or below ~15 °C.")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000614> "psychrophilic")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://github.com/jmadin/bacteria_archaea_traits>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000614> "psychrophilic")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000614> "psychrophilic")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000614> "psychrophilic")
 SubClassOf(<https://w3id.org/metpo/1000614> <https://w3id.org/metpo/1000613>)
 
@@ -1905,6 +1955,7 @@ SubClassOf(<https://w3id.org/metpo/1000615> <https://w3id.org/metpo/1000613>)
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/MICRO_0000118>) Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/OMP_0005003>) Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/OMP_0005004>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000616> "A temperature preference in which growth is favored at elevated temperatures, typically ≥45 °C.")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000616> "thermophilic")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://github.com/jmadin/bacteria_archaea_traits>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000616> "thermophilic")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000616> "thermophilic")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000616> "thermophilic")
 SubClassOf(<https://w3id.org/metpo/1000616> <https://w3id.org/metpo/1000613>)
 
@@ -2271,6 +2322,7 @@ AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <htt
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000117> <https://w3id.org/metpo/1000666> "Jed Dongjin Kim-Ozaeta")
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000117> <https://w3id.org/metpo/1000666> "Luke Wang")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000666> "Morphology.cell morphology.cell shape")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000666> "cell shape")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://github.com/jmadin/bacteria_archaea_traits>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000666> "cell_shape")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000666> "cell shape")
 SubClassOf(<https://w3id.org/metpo/1000666> <https://w3id.org/metpo/1000059>)
@@ -2521,6 +2573,7 @@ SubClassOf(<https://w3id.org/metpo/1000697> <https://w3id.org/metpo/1000059>)
 
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/OMP_0000188>) Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://purl.dsmz.de/schema/GramPositiveBacteria>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000698> "A gram stain in which an organism retains crystal violet dye and appears purple under microscopy due to a thick peptidoglycan cell wall.")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000698> "G_positive")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000698> "gram positive")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000698> "positive")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://github.com/jmadin/bacteria_archaea_traits>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000698> "positive")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000698> "gram positive")
@@ -2531,6 +2584,7 @@ SubClassOf(<https://w3id.org/metpo/1000698> <https://w3id.org/metpo/1000697>)
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000699> "A gram stain in which bacteria do not retain crystal violet dye and appear pink or red after staining, indicating a thin peptidoglycan layer and presence of an outer membrane.")
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000117> <https://w3id.org/metpo/1000699> "Luke Wang")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000699> "G_negative")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000699> "gram negative")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000699> "negative")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://github.com/jmadin/bacteria_archaea_traits>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000699> "negative")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000699> "gram negative")
@@ -2550,6 +2604,7 @@ AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <htt
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000117> <https://w3id.org/metpo/1000701> "Jed Dongjin Kim-Ozaeta")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000701> "Morphology.cell morphology.motility")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://github.com/jmadin/bacteria_archaea_traits>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000701> "motility")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000701> "presence of motility")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000701> "motility")
 SubClassOf(<https://w3id.org/metpo/1000701> <https://w3id.org/metpo/1000059>)
 
@@ -2622,6 +2677,7 @@ SubClassOf(<https://w3id.org/metpo/1000731> <https://w3id.org/metpo/1000631>)
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/GO_0009060>) Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/GO_0045333>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000800> "A metabolism that is characterized by the method of performing cellular respiration, distinguished primarily by the specific terminal electron acceptor utilized for producing cellular energy.")
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000117> <https://w3id.org/metpo/1000800> "Anthea Guo")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://github.com/jmadin/bacteria_archaea_traits>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000800> "pathways")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000800> "respiration")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000800> "respiration")
 SubClassOf(<https://w3id.org/metpo/1000800> <https://w3id.org/metpo/1000060>)
 
@@ -2705,6 +2761,7 @@ AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <htt
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000870> "General.keywords")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000870> "Physiology and metabolism.spore formation.spore formation")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://github.com/jmadin/bacteria_archaea_traits>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000870> "sporulation")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000870> "sporulation")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000870> "sporulation")
 SubClassOf(<https://w3id.org/metpo/1000870> <https://w3id.org/metpo/1000059>)
 
@@ -2729,12 +2786,14 @@ SubClassOf(<https://w3id.org/metpo/1000872> <https://w3id.org/metpo/1000870>)
 # Class: <https://w3id.org/metpo/1000881> (cell length)
 
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/OBA_2040145>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000881> "A phenotype that inheres in a cell by virtue of its longer dimension when viewed on a plane.")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000881> "cell length")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000881> "cell length")
 SubClassOf(<https://w3id.org/metpo/1000881> <https://w3id.org/metpo/1000059>)
 
 # Class: <https://w3id.org/metpo/1000882> (cell width)
 
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/OBA_2040146>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000882> "A phenotype that inheres in a cell by virtue of its shorter dimension when viewed on a plane.")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000882> "cell width")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000882> "cell width")
 SubClassOf(<https://w3id.org/metpo/1000882> <https://w3id.org/metpo/1000059>)
 
@@ -2924,6 +2983,7 @@ SubClassOf(<https://w3id.org/metpo/1001023> <https://w3id.org/metpo/1001000>)
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1001101> "A quality that categorizes biological agents according to their hazard level and required containment measures.")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1001101> "Safety information.risk assessment.biosafety level")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1001101> "biosafety level")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1001101> "biosafety level")
 SubClassOf(<https://w3id.org/metpo/1001101> <https://w3id.org/metpo/1000188>)
 
@@ -2976,6 +3036,7 @@ SubClassOf(<https://w3id.org/metpo/1002003> <https://w3id.org/metpo/1000060>)
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/GO_0006113>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1002005> "A respiration that generates energy through the oxidation of organic compounds without using an external electron acceptor, using organic molecules as both electron donors and final electron acceptors.")
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000117> <https://w3id.org/metpo/1002005> "Luke Wang")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://github.com/jmadin/bacteria_archaea_traits>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1002005> "fermentation")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1002005> "fermentation")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1002005> "Fermentation")
 SubClassOf(<https://w3id.org/metpo/1002005> <https://w3id.org/metpo/1000800>)
 
@@ -2989,6 +3050,7 @@ SubClassOf(<https://w3id.org/metpo/1002006> <https://w3id.org/metpo/1000060>)
 # Class: <https://w3id.org/metpo/1003000> (pH growth preference)
 
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/OMP_0005008>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1003000> "A phenotype that describes how the rate and extent of population growth are affected by environmental pH.")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1003000> "pH growth")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1003000> "pH growth preference")
 SubClassOf(<https://w3id.org/metpo/1003000> <https://w3id.org/metpo/1000059>)
 
@@ -3017,6 +3079,7 @@ SubClassOf(<https://w3id.org/metpo/1003002> <https://w3id.org/metpo/1003000>)
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/MICRO_0001549>) Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/OMP_0005009>) Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/OMP_0005010>) Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/OMP_0005011>) Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/OMP_0007945>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1003003> "A pH growth preference in which an organism grows optimally at pH values below 5.")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1003003> "acidophil")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1003003> "acidophile")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1003003> "acidophilic")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1003003> "acidophilic")
 SubClassOf(<https://w3id.org/metpo/1003003> <https://w3id.org/metpo/1003000>)
 
