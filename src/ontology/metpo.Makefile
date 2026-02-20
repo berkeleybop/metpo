@@ -22,14 +22,14 @@ DRAFTS_DIR = ../templates/drafts
 .PHONY: squeaky-clean clean-templates save-drafts install-drafts diff-drafts
 
 # Save current templates to drafts (before squeaky-clean)
-save-drafts:
+save-drafts: ../templates/metpo_sheet.tsv ../templates/metpo-properties.tsv
 	mkdir -p $(DRAFTS_DIR)
 	cp ../templates/metpo_sheet.tsv $(DRAFTS_DIR)/metpo_sheet.tsv
 	cp ../templates/metpo-properties.tsv $(DRAFTS_DIR)/metpo-properties.tsv
 	@echo "Templates saved to $(DRAFTS_DIR)/"
 
 # Install drafts over Google Sheets downloads (after squeaky-clean + curl)
-install-drafts: ../templates/metpo_sheet.tsv ../templates/metpo-properties.tsv
+install-drafts: $(DRAFTS_DIR)/metpo_sheet.tsv $(DRAFTS_DIR)/metpo-properties.tsv
 	cp $(DRAFTS_DIR)/metpo_sheet.tsv ../templates/metpo_sheet.tsv
 	cp $(DRAFTS_DIR)/metpo-properties.tsv ../templates/metpo-properties.tsv
 	@echo "Draft templates installed over Google Sheets versions"
