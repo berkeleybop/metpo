@@ -7,8 +7,8 @@ Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
 
 
 Ontology(<https://w3id.org/metpo/metpo/components/metpo_sheet.owl>
-<https://w3id.org/metpo/metpo/releases/2026-02-19/components/metpo_sheet.owl>
-Annotation(owl:versionInfo "2026-02-19")
+<https://w3id.org/metpo/metpo/releases/2026-02-20/components/metpo_sheet.owl>
+Annotation(owl:versionInfo "2026-02-20")
 
 Declaration(Class(<https://w3id.org/metpo/1000059>))
 Declaration(Class(<https://w3id.org/metpo/1000060>))
@@ -267,6 +267,27 @@ Declaration(Class(<https://w3id.org/metpo/1004002>))
 Declaration(Class(<https://w3id.org/metpo/1004003>))
 Declaration(Class(<https://w3id.org/metpo/1004004>))
 Declaration(Class(<https://w3id.org/metpo/1004005>))
+Declaration(Class(<https://w3id.org/metpo/1005001>))
+Declaration(Class(<https://w3id.org/metpo/1005010>))
+Declaration(Class(<https://w3id.org/metpo/1005011>))
+Declaration(Class(<https://w3id.org/metpo/1005012>))
+Declaration(Class(<https://w3id.org/metpo/1005013>))
+Declaration(Class(<https://w3id.org/metpo/1005014>))
+Declaration(Class(<https://w3id.org/metpo/1005015>))
+Declaration(Class(<https://w3id.org/metpo/1005016>))
+Declaration(Class(<https://w3id.org/metpo/1005017>))
+Declaration(Class(<https://w3id.org/metpo/1005018>))
+Declaration(Class(<https://w3id.org/metpo/1005021>))
+Declaration(Class(<https://w3id.org/metpo/1005025>))
+Declaration(Class(<https://w3id.org/metpo/1005026>))
+Declaration(Class(<https://w3id.org/metpo/1005027>))
+Declaration(Class(<https://w3id.org/metpo/1005031>))
+Declaration(Class(<https://w3id.org/metpo/1005032>))
+Declaration(Class(<https://w3id.org/metpo/1005033>))
+Declaration(Class(<https://w3id.org/metpo/1005034>))
+Declaration(Class(<https://w3id.org/metpo/1005035>))
+Declaration(Class(<https://w3id.org/metpo/1005036>))
+Declaration(Class(<https://w3id.org/metpo/1005037>))
 Declaration(ObjectProperty(<https://w3id.org/metpo/2000001>))
 Declaration(ObjectProperty(<https://w3id.org/metpo/2000002>))
 Declaration(ObjectProperty(<https://w3id.org/metpo/2000003>))
@@ -376,6 +397,23 @@ Declaration(DataProperty(<https://w3id.org/metpo/2000061>))
 Declaration(DataProperty(<https://w3id.org/metpo/2000062>))
 Declaration(DataProperty(<https://w3id.org/metpo/2000063>))
 Declaration(DataProperty(<https://w3id.org/metpo/2000071>))
+Declaration(DataProperty(<https://w3id.org/metpo/2000701>))
+Declaration(DataProperty(<https://w3id.org/metpo/2000702>))
+Declaration(DataProperty(<https://w3id.org/metpo/2000703>))
+Declaration(DataProperty(<https://w3id.org/metpo/2000704>))
+Declaration(DataProperty(<https://w3id.org/metpo/2000705>))
+Declaration(DataProperty(<https://w3id.org/metpo/2000706>))
+Declaration(DataProperty(<https://w3id.org/metpo/2000707>))
+Declaration(DataProperty(<https://w3id.org/metpo/2000708>))
+Declaration(DataProperty(<https://w3id.org/metpo/2000709>))
+Declaration(DataProperty(<https://w3id.org/metpo/2000711>))
+Declaration(DataProperty(<https://w3id.org/metpo/2000712>))
+Declaration(DataProperty(<https://w3id.org/metpo/2000713>))
+Declaration(DataProperty(<https://w3id.org/metpo/2000714>))
+Declaration(DataProperty(<https://w3id.org/metpo/2000715>))
+Declaration(DataProperty(<https://w3id.org/metpo/2000716>))
+Declaration(DataProperty(<https://w3id.org/metpo/2000721>))
+Declaration(DataProperty(<https://w3id.org/metpo/2000722>))
 Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/IAO_0000115>))
 Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/IAO_0000117>))
 Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/IAO_0000119>))
@@ -1122,6 +1160,142 @@ AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000063> "observation dat
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000071> "Relates any instance to a numerical value")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000071> "has value")
 DataPropertyRange(<https://w3id.org/metpo/2000071> xsd:decimal)
+
+# Data Property: <https://w3id.org/metpo/2000701> (has growth temperature value)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000701> "The growth temperature (Celsius) reported for this organism.")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000701> "temperature growth")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000701> "has growth temperature value")
+DataPropertyDomain(<https://w3id.org/metpo/2000701> <https://w3id.org/metpo/1000525>)
+DataPropertyRange(<https://w3id.org/metpo/2000701> xsd:decimal)
+
+# Data Property: <https://w3id.org/metpo/2000702> (has minimum temperature value)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000702> "The minimum growth temperature (Celsius) reported for this organism.")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000702> "temperature minimum")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000702> "has minimum temperature value")
+DataPropertyDomain(<https://w3id.org/metpo/2000702> <https://w3id.org/metpo/1000525>)
+DataPropertyRange(<https://w3id.org/metpo/2000702> xsd:decimal)
+
+# Data Property: <https://w3id.org/metpo/2000703> (has maximum temperature value)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000703> "The maximum growth temperature (Celsius) reported for this organism.")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000703> "temperature maximum")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000703> "has maximum temperature value")
+DataPropertyDomain(<https://w3id.org/metpo/2000703> <https://w3id.org/metpo/1000525>)
+DataPropertyRange(<https://w3id.org/metpo/2000703> xsd:decimal)
+
+# Data Property: <https://w3id.org/metpo/2000704> (has growth pH value)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000704> "The growth pH reported for this organism.")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000704> "pH growth")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000704> "has growth pH value")
+DataPropertyDomain(<https://w3id.org/metpo/2000704> <https://w3id.org/metpo/1000525>)
+DataPropertyRange(<https://w3id.org/metpo/2000704> xsd:decimal)
+
+# Data Property: <https://w3id.org/metpo/2000705> (has minimum pH value)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000705> "The minimum growth pH reported for this organism.")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000705> "pH minimum")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000705> "has minimum pH value")
+DataPropertyDomain(<https://w3id.org/metpo/2000705> <https://w3id.org/metpo/1000525>)
+DataPropertyRange(<https://w3id.org/metpo/2000705> xsd:decimal)
+
+# Data Property: <https://w3id.org/metpo/2000706> (has maximum pH value)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000706> "The maximum growth pH reported for this organism.")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000706> "pH maximum")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000706> "has maximum pH value")
+DataPropertyDomain(<https://w3id.org/metpo/2000706> <https://w3id.org/metpo/1000525>)
+DataPropertyRange(<https://w3id.org/metpo/2000706> xsd:decimal)
+
+# Data Property: <https://w3id.org/metpo/2000707> (has growth salinity value)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000707> "The growth salinity (% NaCl w/v) reported for this organism.")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000707> "salinity growth")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000707> "has growth salinity value")
+DataPropertyDomain(<https://w3id.org/metpo/2000707> <https://w3id.org/metpo/1000525>)
+DataPropertyRange(<https://w3id.org/metpo/2000707> xsd:decimal)
+
+# Data Property: <https://w3id.org/metpo/2000708> (has minimum salinity value)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000708> "The minimum growth salinity (% NaCl w/v) reported for this organism.")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000708> "salinity minimum")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000708> "has minimum salinity value")
+DataPropertyDomain(<https://w3id.org/metpo/2000708> <https://w3id.org/metpo/1000525>)
+DataPropertyRange(<https://w3id.org/metpo/2000708> xsd:decimal)
+
+# Data Property: <https://w3id.org/metpo/2000709> (has maximum salinity value)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000709> "The maximum growth salinity (% NaCl w/v) reported for this organism.")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000709> "salinity maximum")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000709> "has maximum salinity value")
+DataPropertyDomain(<https://w3id.org/metpo/2000709> <https://w3id.org/metpo/1000525>)
+DataPropertyRange(<https://w3id.org/metpo/2000709> xsd:decimal)
+
+# Data Property: <https://w3id.org/metpo/2000711> (has genome size value)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000711> "The genome size (bp) reported for this organism.")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000711> "genome size")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000711> "has genome size value")
+DataPropertyDomain(<https://w3id.org/metpo/2000711> <https://w3id.org/metpo/1000525>)
+DataPropertyRange(<https://w3id.org/metpo/2000711> xsd:decimal)
+
+# Data Property: <https://w3id.org/metpo/2000712> (has estimated genome size value)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000712> "The estimated genome size (bp) reported for this organism.")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000712> "estimated genome size")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000712> "has estimated genome size value")
+DataPropertyDomain(<https://w3id.org/metpo/2000712> <https://w3id.org/metpo/1000525>)
+DataPropertyRange(<https://w3id.org/metpo/2000712> xsd:decimal)
+
+# Data Property: <https://w3id.org/metpo/2000713> (has gene count value)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000713> "The gene count reported for this organism.")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000713> "gene count")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000713> "has gene count value")
+DataPropertyDomain(<https://w3id.org/metpo/2000713> <https://w3id.org/metpo/1000525>)
+DataPropertyRange(<https://w3id.org/metpo/2000713> xsd:decimal)
+
+# Data Property: <https://w3id.org/metpo/2000714> (has estimated gene count value)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000714> "The estimated gene count reported for this organism.")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000714> "estimated gene count")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000714> "has estimated gene count value")
+DataPropertyDomain(<https://w3id.org/metpo/2000714> <https://w3id.org/metpo/1000525>)
+DataPropertyRange(<https://w3id.org/metpo/2000714> xsd:decimal)
+
+# Data Property: <https://w3id.org/metpo/2000715> (has GC percentage value)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000715> "The GC content percentage reported for this organism.")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000715> "GC percentage")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000715> "has GC percentage value")
+DataPropertyDomain(<https://w3id.org/metpo/2000715> <https://w3id.org/metpo/1000525>)
+DataPropertyRange(<https://w3id.org/metpo/2000715> xsd:decimal)
+
+# Data Property: <https://w3id.org/metpo/2000716> (has coding density value)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000716> "The coding density percentage reported for this organism.")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000716> "coding density")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000716> "has coding density value")
+DataPropertyDomain(<https://w3id.org/metpo/2000716> <https://w3id.org/metpo/1000525>)
+DataPropertyRange(<https://w3id.org/metpo/2000716> xsd:decimal)
+
+# Data Property: <https://w3id.org/metpo/2000721> (has cell length value)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000721> "The cell length (micrometers) reported for this organism.")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000721> "cell length")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000721> "has cell length value")
+DataPropertyDomain(<https://w3id.org/metpo/2000721> <https://w3id.org/metpo/1000525>)
+DataPropertyRange(<https://w3id.org/metpo/2000721> xsd:decimal)
+
+# Data Property: <https://w3id.org/metpo/2000722> (has cell width value)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000722> "The cell width (micrometers) reported for this organism.")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/2000722> "cell width")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000722> "has cell width value")
+DataPropertyDomain(<https://w3id.org/metpo/2000722> <https://w3id.org/metpo/1000525>)
+DataPropertyRange(<https://w3id.org/metpo/2000722> xsd:decimal)
 
 
 
@@ -3240,6 +3414,144 @@ AnnotationAssertion(rdfs:comment <https://w3id.org/metpo/1004005> "This class is
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1004005> "growth medium")
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/metpo/1004005> <https://biolink.github.io/biolink-model/ChemicalEntity>)
 SubClassOf(<https://w3id.org/metpo/1004005> <https://w3id.org/metpo/1000186>)
+
+# Class: <https://w3id.org/metpo/1005001> (nitrification)
+
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/GO_0019329>) Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/GO_0019332>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1005001> "A two-step biological process in which ammonia is oxidized to nitrite (ammonia oxidation) and nitrite is oxidized to nitrate (nitrite oxidation).")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1005001> "nitrification")
+AnnotationAssertion(rdfs:comment <https://w3id.org/metpo/1005001> "MetaTraits maps to OMIT:0027217 (wrong ontology). Correct GO terms are GO:0019329 (ammonia oxidation) and GO:0019332 (nitrite oxidation).")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1005001> "nitrification")
+SubClassOf(<https://w3id.org/metpo/1005001> <https://w3id.org/metpo/1000630>)
+
+# Class: <https://w3id.org/metpo/1005010> (indole test)
+
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/MICRO_0000430>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1005010> "An assay that tests the ability of an organism to produce indole from tryptophan.")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1005010> "indole test")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1005010> "indole test")
+SubClassOf(<https://w3id.org/metpo/1005010> <https://w3id.org/metpo/1000059>)
+
+# Class: <https://w3id.org/metpo/1005011> (indole test positive)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1005011> "A phenotype in which an organism tests positive in the indole test, indicating it produces indole from tryptophan.")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1005011> "indole test")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1005011> "indole test positive")
+SubClassOf(<https://w3id.org/metpo/1005011> <https://w3id.org/metpo/1005010>)
+
+# Class: <https://w3id.org/metpo/1005012> (indole test negative)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1005012> "A phenotype in which an organism tests negative in the indole test, indicating it does not produce indole from tryptophan.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1005012> "indole test negative")
+SubClassOf(<https://w3id.org/metpo/1005012> <https://w3id.org/metpo/1005010>)
+
+# Class: <https://w3id.org/metpo/1005013> (methyl red test)
+
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <SNOMED:5894006>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1005013> "An assay that tests the ability of an organism to produce and maintain stable acid end products from glucose fermentation.")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1005013> "methyl red test")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1005013> "methyl red test")
+SubClassOf(<https://w3id.org/metpo/1005013> <https://w3id.org/metpo/1000059>)
+
+# Class: <https://w3id.org/metpo/1005014> (methyl red test positive)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1005014> "A phenotype in which an organism tests positive in the methyl red test, indicating mixed acid fermentation.")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1005014> "methyl red test")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1005014> "methyl red test positive")
+SubClassOf(<https://w3id.org/metpo/1005014> <https://w3id.org/metpo/1005013>)
+
+# Class: <https://w3id.org/metpo/1005015> (methyl red test negative)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1005015> "A phenotype in which an organism tests negative in the methyl red test.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1005015> "methyl red test negative")
+SubClassOf(<https://w3id.org/metpo/1005015> <https://w3id.org/metpo/1005013>)
+
+# Class: <https://w3id.org/metpo/1005016> (Voges-Proskauer test)
+
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <SNOMED:66592006>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1005016> "An assay that tests the ability of an organism to produce acetoin from glucose via the butanediol fermentation pathway.")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1005016> "voges-proskauer test")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1005016> "Voges-Proskauer test")
+SubClassOf(<https://w3id.org/metpo/1005016> <https://w3id.org/metpo/1000059>)
+
+# Class: <https://w3id.org/metpo/1005017> (Voges-Proskauer test positive)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1005017> "A phenotype in which an organism tests positive in the Voges-Proskauer test, indicating acetoin production.")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1005017> "voges-proskauer test")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1005017> "Voges-Proskauer test positive")
+SubClassOf(<https://w3id.org/metpo/1005017> <https://w3id.org/metpo/1005016>)
+
+# Class: <https://w3id.org/metpo/1005018> (Voges-Proskauer test negative)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1005018> "A phenotype in which an organism tests negative in the Voges-Proskauer test.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1005018> "Voges-Proskauer test negative")
+SubClassOf(<https://w3id.org/metpo/1005018> <https://w3id.org/metpo/1005016>)
+
+# Class: <https://w3id.org/metpo/1005021> (capnophilic)
+
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <SNOMED:413748004>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1005021> "A phenotype describing an organism that requires elevated concentrations of carbon dioxide for growth.")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1005021> "capnophilic")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1005021> "capnophilic")
+SubClassOf(<https://w3id.org/metpo/1005021> <https://w3id.org/metpo/1000601>)
+
+# Class: <https://w3id.org/metpo/1005025> (hemolysis)
+
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/OMP_0005117>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1005025> "A phenotype describing the ability of an organism to lyse red blood cells.")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1005025> "presence of hemolysis")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1005025> "hemolysis")
+SubClassOf(<https://w3id.org/metpo/1005025> <https://w3id.org/metpo/1000059>)
+
+# Class: <https://w3id.org/metpo/1005026> (hemolytic)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1005026> "A phenotype in which an organism is capable of lysing red blood cells.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1005026> "hemolytic")
+SubClassOf(<https://w3id.org/metpo/1005026> <https://w3id.org/metpo/1005025>)
+
+# Class: <https://w3id.org/metpo/1005027> (non-hemolytic)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1005027> "A phenotype in which an organism does not lyse red blood cells.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1005027> "non-hemolytic")
+SubClassOf(<https://w3id.org/metpo/1005027> <https://w3id.org/metpo/1005025>)
+
+# Class: <https://w3id.org/metpo/1005031> (peritrichous flagellation)
+
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/OMP_0000078>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1005031> "A motility phenotype in which flagella are distributed over the entire cell surface.")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1005031> "flagellum arrangement")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1005031> "peritrichous flagellation")
+SubClassOf(<https://w3id.org/metpo/1005031> <https://w3id.org/metpo/1000704>)
+
+# Class: <https://w3id.org/metpo/1005032> (polar flagellation)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1005032> "A motility phenotype in which one or more flagella are located at one or both poles of the cell.")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1005032> "flagellum arrangement")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1005032> "polar flagellation")
+SubClassOf(<https://w3id.org/metpo/1005032> <https://w3id.org/metpo/1000704>)
+
+# Class: <https://w3id.org/metpo/1005033> (amphitrichous flagellation)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1005033> "A motility phenotype in which a single flagellum is present at each pole of the cell.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1005033> "amphitrichous flagellation")
+SubClassOf(<https://w3id.org/metpo/1005033> <https://w3id.org/metpo/1000704>)
+
+# Class: <https://w3id.org/metpo/1005034> (lophotrichous flagellation)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1005034> "A motility phenotype in which a tuft of flagella is present at one or both poles of the cell.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1005034> "lophotrichous flagellation")
+SubClassOf(<https://w3id.org/metpo/1005034> <https://w3id.org/metpo/1000704>)
+
+# Class: <https://w3id.org/metpo/1005035> (monotrichous flagellation)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1005035> "A motility phenotype in which a single flagellum is present at one pole of the cell.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1005035> "monotrichous flagellation")
+SubClassOf(<https://w3id.org/metpo/1005035> <https://w3id.org/metpo/1000704>)
+
+# Class: <https://w3id.org/metpo/1005036> (lateral flagellation)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1005036> "A motility phenotype in which flagella emerge from the lateral side of the cell.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1005036> "lateral flagellation")
+SubClassOf(<https://w3id.org/metpo/1005036> <https://w3id.org/metpo/1000704>)
+
+# Class: <https://w3id.org/metpo/1005037> (subpolar flagellation)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1005037> "A motility phenotype in which flagella are located near but not at the cell pole.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1005037> "subpolar flagellation")
+SubClassOf(<https://w3id.org/metpo/1005037> <https://w3id.org/metpo/1000704>)
 
 
 )
