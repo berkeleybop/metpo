@@ -20,6 +20,8 @@ METATRAITS_RESOLUTION_TABLE ?= data/mappings/metatraits_in_sheet_resolution.tsv
 METATRAITS_RESOLUTION_REPORT ?= data/mappings/metatraits_in_sheet_resolution_report.md
 METATRAITS_DEMO_OUTPUT_PREFIX ?= data/mappings/demo_metatraits_mongo_kgx
 METATRAITS_DEMO_FORMAT ?= tsv
+METATRAITS_CURIE_AUDIT ?= data/mappings/metatraits_substrate_curie_audit.tsv
+KGM_COMPOUND_MAPPINGS ?= $(HOME)/gitrepos/kg-microbe/data/raw/compound_mappings_strict_hydrate.tsv
 
 # ==============================================================================
 # Environment Setup Targets
@@ -150,6 +152,8 @@ clean-data:
 	rm -f data/mappings/metatraits_cards.tsv
 	rm -f data/mappings/metatraits_in_sheet_resolution.tsv
 	rm -f data/mappings/metatraits_in_sheet_resolution_report.md
+	rm -f data/mappings/metatraits_substrate_curie_audit.tsv
+	rm -f data/mappings/metatraits_substrate_curie_audit_report.md
 	rm -f data/mappings/demo_metatraits_mongo_kgx_*.*sv
 	@echo "All generated data files cleaned"
 
@@ -170,6 +174,12 @@ $(METATRAITS_RESOLUTION_TABLE): $(METATRAITS_CARDS) metpo/scripts/resolve_metatr
 		-o $(METATRAITS_RESOLUTION_TABLE) \
 		-r $(METATRAITS_RESOLUTION_REPORT)
 
+$(METATRAITS_CURIE_AUDIT): $(METATRAITS_CARDS) metpo/scripts/audit_metatraits_substrate_curies.py
+	uv run audit-metatraits-curies \
+		-m $(METATRAITS_CARDS) \
+		-o $(METATRAITS_CURIE_AUDIT) \
+		$(if $(wildcard $(KGM_COMPOUND_MAPPINGS)),--kgm-mappings $(KGM_COMPOUND_MAPPINGS))
+
 .PHONY: metatraits-helper-files
 metatraits-helper-files: $(METATRAITS_RESOLUTION_TABLE)
 	@test -f "$(METATRAITS_RESOLUTION_REPORT)" || (echo "Missing $(METATRAITS_RESOLUTION_REPORT) after resolver run" && exit 1)
@@ -183,6 +193,8 @@ clean-metatraits-helper-files:
 	rm -f data/mappings/metatraits_cards.tsv
 	rm -f data/mappings/metatraits_in_sheet_resolution.tsv
 	rm -f data/mappings/metatraits_in_sheet_resolution_report.md
+	rm -f data/mappings/metatraits_substrate_curie_audit.tsv
+	rm -f data/mappings/metatraits_substrate_curie_audit_report.md
 	@echo "MetaTraits helper files cleaned"
 
 .PHONY: demo-metatraits-mongo

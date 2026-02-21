@@ -17,7 +17,27 @@ SRC_URL_PROPERTIES = 'https://docs.google.com/spreadsheets/d/1_Lr-9_5QHi8QLvRyTZ
 # Disabled comprehensive classes sheet:
 # SRC_URL_COMPREHENSIVE = 'https://docs.google.com/spreadsheets/d/1_Lr-9_5QHi8QLvRyTZFSciUhzGKD4DbUObyTpJ16_RU/export?exportFormat=tsv&gid=1427185859'
 
-.PHONY: squeaky-clean clean-templates
+DRAFTS_DIR = ../templates/drafts
+
+.PHONY: squeaky-clean clean-templates save-drafts install-drafts diff-drafts
+
+# Save current templates to drafts (before squeaky-clean)
+save-drafts: ../templates/metpo_sheet.tsv ../templates/metpo-properties.tsv
+	mkdir -p $(DRAFTS_DIR)
+	cp ../templates/metpo_sheet.tsv $(DRAFTS_DIR)/metpo_sheet.tsv
+	cp ../templates/metpo-properties.tsv $(DRAFTS_DIR)/metpo-properties.tsv
+	@echo "Templates saved to $(DRAFTS_DIR)/"
+
+# Install drafts over Google Sheets downloads (after squeaky-clean + curl)
+install-drafts: $(DRAFTS_DIR)/metpo_sheet.tsv $(DRAFTS_DIR)/metpo-properties.tsv
+	cp $(DRAFTS_DIR)/metpo_sheet.tsv ../templates/metpo_sheet.tsv
+	cp $(DRAFTS_DIR)/metpo-properties.tsv ../templates/metpo-properties.tsv
+	@echo "Draft templates installed over Google Sheets versions"
+
+# Show what changed between Google Sheets and drafts
+diff-drafts: ../templates/metpo_sheet.tsv ../templates/metpo-properties.tsv
+	@diff $(DRAFTS_DIR)/metpo_sheet.tsv ../templates/metpo_sheet.tsv || true
+	@diff $(DRAFTS_DIR)/metpo-properties.tsv ../templates/metpo-properties.tsv || true
 
 ../templates/metpo_sheet.tsv:
 	curl -L -s $(SRC_URL_MAIN) > $@
