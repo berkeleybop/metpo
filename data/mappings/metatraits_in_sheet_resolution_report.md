@@ -5,36 +5,62 @@
 - Total cards: 2860
 - Base cards: 81
 - Composed cards: 2779
-- Fully resolved cards: 2210
+- Fully resolved (METPO): 2316
+- Cards with usable external CURIEs (CHEBI/GO/EC): 2750
+- **Effective KGX coverage: 2801/2860 (97%)**
+- Truly unmapped (no METPO, no external CURIEs): 59
 
-## Status Counts
+## Trait Format Breakdown
 
-- `resolved_with_notes`: 1981
-- `missing_chebi; missing_process_term`: 379
-- `resolved`: 213
-- `missing_positive_predicate; missing_negative_predicate; missing_chebi; missing_process_term`: 145
-- `missing_positive_predicate; missing_negative_predicate; missing_process_term`: 68
-- `missing_process_term`: 58
-- `resolved_nonchebi_with_notes`: 16
+| Format | Cards | METPO resolved | Effective KGX | KGX mapping strategy |
+|--------|-------|---------------|--------------|---------------------|
+| `composed_boolean` | 2779 | 2258 | 2721 | METPO predicate + CHEBI/GO/EC object |
+| `uncomposed_boolean` | 47 | 24 | 46 | has_phenotype / capable_of + METPO class |
+| `uncomposed_factor` | 9 | 9 | 9 | has_phenotype + METPO value class |
+| `uncomposed_numeric` | 25 | 25 | 25 | METPO data property + xsd:decimal |
+
+## CURIE Pattern Distribution
+
+- 0 CURIEs: 1
+- 1 CURIE: 524
+- 2 CURIEs: 2249
+- 3+ CURIEs: 86
+
+## METPO Resolution Status Counts
+
+- `resolved_with_notes`: 2048
+- `missing_chebi; missing_process_term`: 521
+- `resolved`: 250
+- `missing_process_term`: 23
+- `resolved_nonchebi_with_notes`: 18
 
 ## Unresolved Composed Categories
 
-- `produces`: 232
-- `enzyme activity`: 132
-- `utilizes`: 80
-- `assimilation`: 29
-- `growth`: 27
-- `carbon source`: 20
-- `builds acid from`: 16
-- `degradation`: 13
-- `hydrolysis`: 13
-- `energy source`: 6
-- `nitrogen source`: 6
-- `oxidation`: 6
-- `reduction`: 4
-- `aerobic growth`: 2
-- `anaerobic growth with light`: 2
-- `cell color`: 1
-- `anaerobic growth`: 1
-- `denitrification`: 1
-- `electron donor`: 1
+| Category | Unresolved | Have predicates | Have ext CURIEs | Blocker |
+|----------|-----------|----------------|----------------|--------|
+| `produces` | 232 | 232 | 231 | missing CHEBI |
+| `enzyme activity` | 132 | 132 | 77 | missing CHEBI |
+| `assimilation` | 29 | 29 | 29 | missing CHEBI (ext CURIEs usable) |
+| `growth` | 27 | 27 | 26 | missing CHEBI |
+| `carbon source` | 20 | 20 | 20 | missing CHEBI (ext CURIEs usable) |
+| `builds acid from` | 16 | 16 | 16 | missing CHEBI (ext CURIEs usable) |
+| `degradation` | 13 | 13 | 12 | missing CHEBI |
+| `hydrolysis` | 13 | 13 | 13 | missing CHEBI (ext CURIEs usable) |
+| `utilizes` | 12 | 12 | 12 | missing CHEBI (ext CURIEs usable) |
+| `energy source` | 6 | 6 | 6 | missing CHEBI (ext CURIEs usable) |
+| `nitrogen source` | 6 | 6 | 6 | missing CHEBI (ext CURIEs usable) |
+| `oxidation` | 6 | 6 | 6 | missing CHEBI (ext CURIEs usable) |
+| `reduction` | 4 | 4 | 4 | missing CHEBI (ext CURIEs usable) |
+| `aerobic growth` | 2 | 2 | 2 | missing CHEBI (ext CURIEs usable) |
+| `anaerobic growth with light` | 2 | 2 | 2 | missing CHEBI (ext CURIEs usable) |
+| `anaerobic growth` | 1 | 1 | 1 | missing CHEBI (ext CURIEs usable) |
+
+## Truly Unmapped Cards
+
+59 cards have no METPO resolution and no usable external CURIEs (CHEBI, GO, EC):
+
+- `enzyme activity`: 55
+- `base`: 1
+- `degradation`: 1
+- `growth`: 1
+- `produces`: 1

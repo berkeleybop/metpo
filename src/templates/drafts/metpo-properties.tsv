@@ -16,7 +16,7 @@ METPO:2000011	ferments	owl:ObjectProperty				organism interacts with chemical			
 METPO:2000012	uses for growth	owl:ObjectProperty				organism interacts with chemical			oboInOwl:hasRelatedSynonym 'growth'	https://bacdive.dsmz.de/	+
 METPO:2000013	hydrolyzes	owl:ObjectProperty				organism interacts with chemical			oboInOwl:hasRelatedSynonym 'hydrolysis'	https://bacdive.dsmz.de/	+
 METPO:2000014	uses as nitrogen source	owl:ObjectProperty				organism interacts with chemical			oboInOwl:hasRelatedSynonym 'nitrogen source'	https://bacdive.dsmz.de/	+
-METPO:2000015	uses in other way	owl:ObjectProperty				organism interacts with chemical			oboInOwl:hasRelatedSynonym 'other'	https://bacdive.dsmz.de/	+
+METPO:2000015	uses in other way	owl:ObjectProperty				organism interacts with chemical			oboInOwl:hasRelatedSynonym 'other'|oboInOwl:hasRelatedSynonym 'utilizes'	https://bacdive.dsmz.de/|https://metatraits.embl.de/	+
 METPO:2000016	oxidizes	owl:ObjectProperty				organism interacts with chemical			oboInOwl:hasRelatedSynonym 'oxidation'	https://bacdive.dsmz.de/	+
 METPO:2000017	reduces	owl:ObjectProperty				organism interacts with chemical			oboInOwl:hasRelatedSynonym 'reduction'	https://bacdive.dsmz.de/	+
 METPO:2000018	requires for growth	owl:ObjectProperty				organism interacts with chemical			oboInOwl:hasRelatedSynonym 'required for growth'	https://bacdive.dsmz.de/	+
@@ -42,7 +42,7 @@ METPO:2000037	does not ferment	owl:ObjectProperty				organism interacts with che
 METPO:2000038	does not use for growth	owl:ObjectProperty				organism interacts with chemical			oboInOwl:hasRelatedSynonym 'growth'	https://bacdive.dsmz.de/	-
 METPO:2000039	does not hydrolyze	owl:ObjectProperty				organism interacts with chemical			oboInOwl:hasRelatedSynonym 'hydrolysis'	https://bacdive.dsmz.de/	-
 METPO:2000040	does not use as nitrogen source	owl:ObjectProperty				organism interacts with chemical			oboInOwl:hasRelatedSynonym 'nitrogen source'	https://bacdive.dsmz.de/	-
-METPO:2000041	does not use in other way	owl:ObjectProperty				organism interacts with chemical			oboInOwl:hasRelatedSynonym 'other'	https://bacdive.dsmz.de/	-
+METPO:2000041	does not use in other way	owl:ObjectProperty				organism interacts with chemical			oboInOwl:hasRelatedSynonym 'other'|oboInOwl:hasRelatedSynonym 'utilizes'	https://bacdive.dsmz.de/|https://metatraits.embl.de/	-
 METPO:2000042	does not oxidize	owl:ObjectProperty				organism interacts with chemical			oboInOwl:hasRelatedSynonym 'oxidation'	https://bacdive.dsmz.de/	-
 METPO:2000043	uses for aerobic growth	owl:ObjectProperty				organism interacts with chemical			oboInOwl:hasRelatedSynonym 'aerobic growth'	https://bacdive.dsmz.de/	+
 METPO:2000044	does not reduce	owl:ObjectProperty				organism interacts with chemical			oboInOwl:hasRelatedSynonym 'reduction'	https://bacdive.dsmz.de/	-
@@ -127,4 +127,13 @@ METPO:2000714	has estimated gene count value	owl:DataProperty		microbe	xsd:decim
 METPO:2000715	has GC percentage value	owl:DataProperty		microbe	xsd:decimal			The GC content percentage reported for this organism.	oboInOwl:hasRelatedSynonym 'GC percentage'	https://metatraits.embl.de/	
 METPO:2000716	has coding density value	owl:DataProperty		microbe	xsd:decimal			The coding density percentage reported for this organism.	oboInOwl:hasRelatedSynonym 'coding density'	https://metatraits.embl.de/	
 METPO:2000721	has cell length value	owl:DataProperty		microbe	xsd:decimal			The cell length (micrometers) reported for this organism.	oboInOwl:hasRelatedSynonym 'cell length'	https://metatraits.embl.de/	
-METPO:2000722	has cell width value	owl:DataProperty		microbe	xsd:decimal			The cell width (micrometers) reported for this organism.	oboInOwl:hasRelatedSynonym 'cell width'	https://metatraits.embl.de/	
+METPO:2000722	has cell width value	owl:DataProperty		microbe	xsd:decimal			The cell width (micrometers) reported for this organism.	oboInOwl:hasRelatedSynonym 'cell width'	https://metatraits.embl.de/
+METPO:2000723	has minimum cell length value	owl:DataProperty		microbe	xsd:decimal			The minimum cell length (micrometers) reported for this organism.	oboInOwl:hasRelatedSynonym 'cell length minimum'	https://metatraits.embl.de/
+METPO:2000724	has maximum cell length value	owl:DataProperty		microbe	xsd:decimal			The maximum cell length (micrometers) reported for this organism.	oboInOwl:hasRelatedSynonym 'cell length maximum'	https://metatraits.embl.de/
+METPO:2000725	has minimum cell width value	owl:DataProperty		microbe	xsd:decimal			The minimum cell width (micrometers) reported for this organism.	oboInOwl:hasRelatedSynonym 'cell width minimum'	https://metatraits.embl.de/
+METPO:2000726	has maximum cell width value	owl:DataProperty		microbe	xsd:decimal			The maximum cell width (micrometers) reported for this organism.	oboInOwl:hasRelatedSynonym 'cell width maximum'	https://metatraits.embl.de/
+METPO:2000730	has ecology metric value	owl:DataProperty		microbe	xsd:decimal	observation data property		A derived ecological or genomic metric computed from genome or community data.
+METPO:2000731	has generalism score value	owl:DataProperty		microbe	xsd:decimal	has ecology metric value		The ecological generalism score for this organism, reflecting niche breadth.	oboInOwl:hasRelatedSynonym 'generalism_score'	https://metatraits.embl.de/
+METPO:2000732	has habitat count value	owl:DataProperty		microbe	xsd:decimal	has ecology metric value		The number of distinct habitats in which this organism has been observed.	oboInOwl:hasRelatedSynonym 'habitat_count'	https://metatraits.embl.de/
+METPO:2000733	has pangenome openness value	owl:DataProperty		microbe	xsd:decimal	has ecology metric value		The pangenome openness score for this organism, indicating the rate of new gene acquisition.	oboInOwl:hasRelatedSynonym 'pangenome_openness'	https://metatraits.embl.de/
+METPO:2000734	has nucleotide diversity value	owl:DataProperty		microbe	xsd:decimal	has ecology metric value		The intra-species nucleotide diversity percentage for this organism.	oboInOwl:hasRelatedSynonym 'intra_species_nucleotide_diversity'	https://metatraits.embl.de/
