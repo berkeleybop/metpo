@@ -26,7 +26,7 @@
 **Total deleted: 1,379 lines**
 
 ### Created in Option B reorganization:
-1. `ICBO_PREP.md` (487 lines) - Main reference
+1. `docs/ICBO_PREP.md` (487 lines) - Main reference
 2. `docs/icbo_validation_evidence.md` (287 lines) - Validation findings
 3. `docs/icbo_cmm_details.md` (253 lines) - CMM project details
 4. `docs/icbo_open_questions.md` (151 lines) - Questions & issues
@@ -40,12 +40,12 @@
 
 ### ✅ Talk Narrative (Slides 1-9)
 **Source:** `docs/icbo_2025_talk_prep.md`
-**Destination:** `ICBO_PREP.md` Section 2
+**Destination:** `docs/ICBO_PREP.md` Section 2
 **Verified:** Complete slide-by-slide speaker notes for all 9 slides preserved
 
 ### ✅ CMM Project Details
 **Source:** `ICBO_PREP_SUMMARY_UPDATED.md`
-**Destination:** `ICBO_PREP.md` Section 1 + `docs/icbo_cmm_details.md`
+**Destination:** `docs/ICBO_PREP.md` Section 1 + `docs/icbo_cmm_details.md`
 **Verified:**
 - Total Budget ($850,000) ✓
 - All 5 Co-PIs with budget breakdowns ✓
@@ -77,7 +77,7 @@
 
 ### ✅ Background Context
 **Source:** `docs/icbo_2025_background_summary.md` & `docs/icbo_2025_background_summary_additions.md`
-**Destination:** `ICBO_PREP.md` + `docs/icbo_cmm_details.md`
+**Destination:** `docs/ICBO_PREP.md` + `docs/icbo_cmm_details.md`
 **Verified:**
 - CMM definition (Critical Minerals and Materials) ✓
 - Key people and roles (Marcin, Cici) ✓
@@ -87,7 +87,7 @@
 
 ### ✅ Definition Workflow
 **Source:** `ICBO_PREP_SUMMARY_UPDATED.md`
-**Destination:** `ICBO_PREP.md` Section 4
+**Destination:** `docs/ICBO_PREP.md` Section 4
 **Verified:**
 - Current status (255 terms, 46.3% with definitions) ✓
 - Semantic mapping analysis results ✓

@@ -389,7 +389,7 @@ A: No! Shows honest science: strong on structured data (main use case), gaps rev
 **Conference:** ICBO 2025
 
 **Related Documentation:**
-- ICBO preparation: `/home/mark/gitrepos/metpo/ICBO_PREP.md`
+- ICBO preparation: `../docs/ICBO_PREP.md`
 - ChromaDB status: `docs/icbo_2025_prep/CHROMADB_QDRANT_STATUS.md`
 - Document inventory: `docs/icbo_2025_prep/DOCUMENT_INVENTORY_ICBO_2025.md`
 

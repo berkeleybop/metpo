@@ -208,7 +208,7 @@ Recent papers on PFAS biodegradation (last 3 months):
 
 ### ✅ ICBO Preparation (FOUND)
 
-**Location:** `/home/mark/gitrepos/metpo/ICBO_PREP.md`
+**Location:** `../ICBO_PREP.md`
 **Size:** Comprehensive guide
 **Content:**
 - CMM project context and budget details
@@ -315,7 +315,7 @@ Recent papers on PFAS biodegradation (last 3 months):
 
 | File | Purpose | Status |
 |------|---------|--------|
-| `ICBO_PREP.md` | Main preparation document | ✅ Complete |
+| `../ICBO_PREP.md` | Main preparation document | ✅ Complete |
 | `docs/icbo_validation_evidence.md` | ROBOT validation analysis | ✅ Complete |
 | `docs/icbo_cmm_details.md` | CMM project details | ✅ Complete |
 | `docs/icbo_analysis_notes.md` | Technical analysis | ✅ Complete |
@@ -533,7 +533,7 @@ db.madin.find({ trait_name: /salinity/ }).limit(5)
 
 ## 8. Undergraduate Assistants' Work
 
-**From ICBO_PREP.md:**
+**From `../ICBO_PREP.md`:**
 - Marcin has 3 undergraduate assistants
 - Working on LLM-assisted approaches for METPO definitions
 - Trying to satisfy OBO Foundry principles
@@ -545,7 +545,7 @@ db.madin.find({ trait_name: /salinity/ }).limit(5)
 
 ## 9. KG-Microbe Status
 
-**From ICBO_PREP.md:**
+**From `../ICBO_PREP.md`:**
 - Uses METPO CURIEs
 - Powers CMM project (KG-CMREE extension)
 - BioRxiv paper: https://www.biorxiv.org/content/10.1101/2025.02.24.639989v1
@@ -610,7 +610,7 @@ db.madin.find({ trait_name: /salinity/ }).limit(5)
 8. Review BioRxiv KG-Microbe paper
 
 ### Evening (1-2 hours)
-9. Update ICBO_PREP.md with progress
+9. Update `../ICBO_PREP.md` with progress
 10. Prepare queries for tomorrow's definition work
 11. Review slide narrative with new examples
 
@@ -691,7 +691,7 @@ All critical documentation is complete! Optional improvements:
 ~/LLM_PROVIDER_FUNDING_GUIDE.md  # ⭐ NEW
 
 # METPO repo - ICBO 2025 prep
-~/gitrepos/metpo/ICBO_PREP.md
+~/gitrepos/metpo/docs/ICBO_PREP.md
 ~/gitrepos/metpo/docs/icbo_2025_prep/DOCUMENT_INVENTORY_ICBO_2025.md (this file)
 ~/gitrepos/metpo/docs/icbo_2025_prep/CHROMADB_QDRANT_STATUS.md
 ~/gitrepos/metpo/docs/icbo_2025_prep/madin_et_al_2020_trait_synthesis.pdf
