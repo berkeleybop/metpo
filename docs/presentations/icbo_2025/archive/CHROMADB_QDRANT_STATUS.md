@@ -343,7 +343,7 @@
    - Update #258 (non-OLS embeddings completed)
    - Document #256 decision (defer or close)
 
-6. **Update ICBO_PREP.md with ChromaDB stats**
+6. **Update `docs/ICBO_PREP.md` with ChromaDB stats**
    - Add ROI improvement numbers
    - Add semantic mapping statistics
    - Reference this document

@@ -994,7 +994,7 @@ graph TD
 
 **Tasks:**
 1. ⬜ Create `icbo_metpo_slides.md` (Marp format)
-2. ⬜ Write slide content based on ICBO_PREP.md structure:
+2. ⬜ Write slide content based on docs/ICBO_PREP.md structure:
    - ⬜ Slide 1: Title
    - ⬜ Slide 2: Data Integration Challenge
    - ⬜ Slide 3: Gap in Ontology Landscape
@@ -1196,7 +1196,7 @@ vim icbo_metpo_slides.md
 
 2. **MicrO has 103 errors, MPO has 155, MCO has 65**
    - Re-run validations on all three
-   - Verify from ICBO_PREP.md table
+   - Verify from docs/ICBO_PREP.md table
 
 3. **158 terms mapped to 24 ontologies**
    - Count: `wc -l metpo_cross_references.tsv`
@@ -1231,7 +1231,7 @@ vim icbo_metpo_slides.md
 ### Lower Priority (Nice to have)
 
 10. **CMM project: $850K, FY26**
-    - Verify from ICBO_PREP.md (unlikely to change)
+    - Verify from docs/ICBO_PREP.md (unlikely to change)
 
 11. **Expert designation correlation**
     - "2.4× worse coverage, 14× worse quality"
