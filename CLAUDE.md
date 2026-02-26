@@ -184,7 +184,6 @@ metpo/
 **Root directory:**
 - ✅ README.md, LICENSE, pyproject.toml, Makefile
 - ✅ CLAUDE.md (this file)
-- ✅ ICBO_PREP.md (temporary for conference prep)
 - ❌ Analysis scripts (.py)
 - ❌ Cleanup planning docs (.md)
 - ❌ Data files (.tsv, .csv)
