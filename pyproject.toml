@@ -38,6 +38,9 @@ Issues = "https://github.com/berkeleybop/metpo/issues"
 Documentation = "https://github.com/berkeleybop/metpo/blob/main/README.md"
 
 [project.optional-dependencies]
+test = [
+    "pytest>=8.0.0",
+]
 dev = [
     "oaklib>=0.6.23",
     "pandas>=2.3.3",
@@ -45,8 +48,9 @@ dev = [
     "rdflib>=7.1.4",
     "semsql>=0.4.0",
     "tqdm>=4.67.1",
-    "litellm>=1.79.0",
     "openai>=2.6.1",
+    # Testing
+    "pytest>=8.0.0",
     # Code quality tools
     "black>=24.0.0",
     "ruff>=0.8.4",
@@ -59,9 +63,7 @@ literature = [
     "artl-mcp>=0.34.0",
     "linkml>=1.8.5",
     "oaklib>=0.6.23",
-    "ontogpt>=1.0.18",
     "pandas>=2.3.3",
-    "litellm>=1.79.0",
     "openai>=2.6.1",
     "semsql>=0.4.0",
 ]
@@ -129,6 +131,7 @@ analyze-definition-coverage-by-subtree = "metpo.scripts.analyze_definition_cover
 iterative-definition-improvement = "metpo.scripts.iterative_definition_improvement:main"
 
 # Quality Control
+diff-templates = "metpo.scripts.diff_templates:main"
 qc-metpo-sheets = "metpo.scripts.qc_metpo_sheets:main"
 fetch-metatraits = "metpo.scripts.fetch_metatraits:main"
 resolve-metatraits-in-sheets = "metpo.scripts.resolve_metatraits_in_sheets:main"

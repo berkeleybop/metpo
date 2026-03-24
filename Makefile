@@ -25,7 +25,7 @@ METATRAITS_DEMO_FORMAT ?= tsv
 # Environment Setup Targets
 # ==============================================================================
 
-.PHONY: help install install-dev install-literature install-databases install-notebooks install-all check-env clean-env clean-data metpo-report metatraits-helper-files clean-metatraits-helper-files demo-metatraits-mongo clean-metatraits-demo
+.PHONY: help install install-dev install-literature install-databases install-notebooks install-all check-env clean-env clean-data metpo-report metatraits-helper-files clean-metatraits-helper-files demo-metatraits-mongo clean-metatraits-demo test lint
 
 # Show available targets and usage information
 help:
@@ -74,6 +74,8 @@ help:
 	@echo "  make clean-reports        - Remove analysis reports"
 	@echo ""
 	@echo "Testing:"
+	@echo "  make test                 - Run pytest test suite"
+	@echo "  make lint                 - Run ruff linter and formatter check"
 	@echo "  make test-workflow        - Test complete workflow reproducibility"
 
 # Base installation (core dependencies only: click, python-dotenv, pyyaml, requests)
@@ -369,6 +371,14 @@ clean-definition-reports:
 	rm -f reports/best_definitions_per_term.tsv
 	rm -f reports/definition_comparison_with_hierarchy.tsv
 	@echo "Definition reports cleaned"
+
+.PHONY: test lint
+test:
+	uv run pytest tests/ -v
+
+lint:
+	uv run ruff check .
+	uv run ruff format --check .
 
 .PHONY: test-workflow
 test-workflow: clean-all import-all all-reports
