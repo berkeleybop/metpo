@@ -22,9 +22,9 @@
         "val" : "METPO"
       }, {
         "pred" : "http://www.w3.org/2002/07/owl#versionInfo",
-        "val" : "2025-12-12"
+        "val" : "2026-03-24"
       } ],
-      "version" : "https://w3id.org/metpo/metpo/releases/2025-12-12/metpo-full.json"
+      "version" : "https://w3id.org/metpo/metpo/releases/2026-03-24/metpo-full.json"
     },
     "nodes" : [ {
       "id" : "https://w3id.org/metpo/1000059",
@@ -66,6 +66,10 @@
         "definition" : {
           "val" : "A quality that is describing the percentage of guanine and cytosine nucleotides in genomic DNA, calculated as the ratio of GC base pairs to total base pairs."
         },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "GC percentage"
+        } ],
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
           "val" : "Luke Wang"
@@ -1288,7 +1292,7 @@
         "definition" : {
           "val" : "A material entity that is too small to be viewed by the unaided eye, typically requiring microscopy for observation."
         },
-        "comments" : [ "METPO is primarily concerned with unicellular, prokaryotic life forms, i.e. bacteria and archea, including the cases of giant bacteria like Thiomargarita" ],
+        "comments" : [ "METPO is primarily concerned with unicellular, prokaryotic life forms, i.e. bacteria and archaea, including the cases of giant bacteria like Thiomargarita" ],
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
           "val" : "Luke Wang"
@@ -1382,6 +1386,9 @@
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "metabolism"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "oxygen preference"
         } ]
       }
     }, {
@@ -1455,6 +1462,9 @@
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "facultative anaerobe"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "facultative anaerobe"
         } ]
       }
     }, {
@@ -1468,6 +1478,9 @@
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "obligate aerobe"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "obligate aerobic"
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "obligate aerobic"
@@ -1516,6 +1529,9 @@
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "aerotolerant"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "aerotolerant"
         } ]
       }
     }, {
@@ -1540,6 +1556,9 @@
           "val" : "An obligately anaerobic where a microorganism does not grow in the presence of oxygen gas (O2)."
         },
         "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "obligate anaerobic"
+        }, {
           "pred" : "hasRelatedSynonym",
           "val" : "strictly anaerobic"
         } ]
@@ -1571,6 +1590,9 @@
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "range_tmp"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "temperature preference"
         } ]
       }
     }, {
@@ -1582,6 +1604,9 @@
           "val" : "A temperature preference in which growth is favored at low temperatures, typically near or below ~15 °C."
         },
         "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "psychrophilic"
+        }, {
           "pred" : "hasRelatedSynonym",
           "val" : "psychrophilic"
         }, {
@@ -1614,6 +1639,9 @@
           "val" : "A temperature preference in which growth is favored at elevated temperatures, typically ≥45 °C."
         },
         "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "thermophilic"
+        }, {
           "pred" : "hasRelatedSynonym",
           "val" : "thermophilic"
         }, {
@@ -1824,6 +1852,9 @@
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "range_salinity"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "salinity preference"
         } ]
       }
     }, {
@@ -2373,6 +2404,9 @@
           "val" : "Morphology.cell morphology.cell shape"
         }, {
           "pred" : "hasRelatedSynonym",
+          "val" : "cell shape"
+        }, {
+          "pred" : "hasRelatedSynonym",
           "val" : "cell_shape"
         } ],
         "basicPropertyValues" : [ {
@@ -2893,6 +2927,9 @@
           "val" : "G_positive"
         }, {
           "pred" : "hasRelatedSynonym",
+          "val" : "gram positive"
+        }, {
+          "pred" : "hasRelatedSynonym",
           "val" : "positive"
         }, {
           "pred" : "hasRelatedSynonym",
@@ -2910,6 +2947,9 @@
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "G_negative"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "gram negative"
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "negative"
@@ -2953,6 +2993,9 @@
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "motility"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "presence of motility"
         } ],
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
@@ -3046,7 +3089,7 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A temperature preference characterized by the ability to grow at low temperatures (typically below 20Â°C) while maintaining optimal growth at moderate temperatures."
+          "val" : "A temperature preference characterized by the ability to grow at low temperatures (typically below 20°C) while maintaining optimal growth at moderate temperatures."
         },
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
@@ -3100,6 +3143,9 @@
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "pathways"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "respiration"
         } ],
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
@@ -3275,6 +3321,9 @@
         }, {
           "pred" : "hasRelatedSynonym",
           "val" : "sporulation"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "sporulation"
         } ]
       }
     }, {
@@ -3322,7 +3371,11 @@
       "meta" : {
         "definition" : {
           "val" : "A phenotype that inheres in a cell by virtue of its longer dimension when viewed on a plane."
-        }
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "cell length"
+        } ]
       }
     }, {
       "id" : "https://w3id.org/metpo/1000882",
@@ -3331,7 +3384,11 @@
       "meta" : {
         "definition" : {
           "val" : "A phenotype that inheres in a cell by virtue of its shorter dimension when viewed on a plane."
-        }
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "cell width"
+        } ]
       }
     }, {
       "id" : "https://w3id.org/metpo/1000883",
@@ -3585,6 +3642,9 @@
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "Safety information.risk assessment.biosafety level"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "biosafety level"
         } ]
       }
     }, {
@@ -3683,6 +3743,9 @@
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "fermentation"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "fermentation"
         } ],
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
@@ -3709,7 +3772,11 @@
       "meta" : {
         "definition" : {
           "val" : "A phenotype that describes how the rate and extent of population growth are affected by environmental pH."
-        }
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "pH growth"
+        } ]
       }
     }, {
       "id" : "https://w3id.org/metpo/1003001",
@@ -3770,6 +3837,9 @@
         }, {
           "pred" : "hasExactSynonym",
           "val" : "acidophile"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "acidophilic"
         } ]
       }
     }, {
@@ -3900,7 +3970,11 @@
       "meta" : {
         "definition" : {
           "val" : "A phenotype characterized by the color of pigments produced by a microorganism."
-        }
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "cell color"
+        } ]
       }
     }, {
       "id" : "https://w3id.org/metpo/1003022",
@@ -3990,6 +4064,9 @@
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "Pigment_yellow"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "yellow pigment"
         } ]
       }
     }, {
@@ -4069,6 +4146,279 @@
         "basicPropertyValues" : [ {
           "pred" : "http://www.w3.org/2004/02/skos/core#closeMatch",
           "val" : "https://biolink.github.io/biolink-model/ChemicalEntity"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1005001",
+      "lbl" : "nitrification",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A two-step biological process in which ammonia is oxidized to nitrite (ammonia oxidation) and nitrite is oxidized to nitrate (nitrite oxidation)."
+        },
+        "comments" : [ "MetaTraits maps to OMIT:0027217 (wrong ontology). Correct GO terms are GO:0019329 (ammonia oxidation) and GO:0019332 (nitrite oxidation)." ],
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "nitrification"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1005010",
+      "lbl" : "indole test",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An assay that tests the ability of an organism to produce indole from tryptophan."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "indole test"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1005011",
+      "lbl" : "indole test positive",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A phenotype in which an organism tests positive in the indole test, indicating it produces indole from tryptophan."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "indole test"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1005012",
+      "lbl" : "indole test negative",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A phenotype in which an organism tests negative in the indole test, indicating it does not produce indole from tryptophan."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1005013",
+      "lbl" : "methyl red test",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An assay that tests the ability of an organism to produce and maintain stable acid end products from glucose fermentation."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "methyl red test"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1005014",
+      "lbl" : "methyl red test positive",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A phenotype in which an organism tests positive in the methyl red test, indicating mixed acid fermentation."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "methyl red test"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1005015",
+      "lbl" : "methyl red test negative",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A phenotype in which an organism tests negative in the methyl red test."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1005016",
+      "lbl" : "Voges-Proskauer test",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An assay that tests the ability of an organism to produce acetoin from glucose via the butanediol fermentation pathway."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "voges-proskauer test"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1005017",
+      "lbl" : "Voges-Proskauer test positive",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A phenotype in which an organism tests positive in the Voges-Proskauer test, indicating acetoin production."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "voges-proskauer test"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1005018",
+      "lbl" : "Voges-Proskauer test negative",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A phenotype in which an organism tests negative in the Voges-Proskauer test."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1005021",
+      "lbl" : "capnophilic",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A phenotype describing an organism that requires elevated concentrations of carbon dioxide for growth."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "capnophilic"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1005025",
+      "lbl" : "hemolysis",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A phenotype describing the ability of an organism to lyse red blood cells."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "presence of hemolysis"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1005026",
+      "lbl" : "hemolytic",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A phenotype in which an organism is capable of lysing red blood cells."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1005027",
+      "lbl" : "non-hemolytic",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A phenotype in which an organism does not lyse red blood cells."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1005031",
+      "lbl" : "peritrichous flagellation",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A motility phenotype in which flagella are distributed over the entire cell surface."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "flagellum arrangement"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1005032",
+      "lbl" : "polar flagellation",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A motility phenotype in which one or more flagella are located at one or both poles of the cell."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "flagellum arrangement"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1005033",
+      "lbl" : "amphitrichous flagellation",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A motility phenotype in which a single flagellum is present at each pole of the cell."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1005034",
+      "lbl" : "lophotrichous flagellation",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A motility phenotype in which a tuft of flagella is present at one or both poles of the cell."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1005035",
+      "lbl" : "monotrichous flagellation",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A motility phenotype in which a single flagellum is present at one pole of the cell."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1005036",
+      "lbl" : "lateral flagellation",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A motility phenotype in which flagella emerge from the lateral side of the cell."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1005037",
+      "lbl" : "subpolar flagellation",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A motility phenotype in which flagella are located near but not at the cell pole."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1005038",
+      "lbl" : "denitrification",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A biological process in which nitrate or nitrite is reduced to gaseous nitrogen compounds (NO, N2O, or N2) under anaerobic or microaerobic conditions."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "denitrification pathway"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1005039",
+      "lbl" : "nitrogen fixation",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A biological process in which atmospheric dinitrogen is reduced to ammonia, catalyzed by nitrogenase."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "nitrogen fixation"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1005040",
+      "lbl" : "generalist",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A phenotype describing an organism with a broad ecological niche, capable of thriving across diverse environments or utilizing varied resources."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "generalist"
         } ]
       }
     }, {
@@ -4228,6 +4578,9 @@
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "other"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "utilizes"
         } ]
       }
     }, {
@@ -4514,6 +4867,9 @@
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "other"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "utilizes"
         } ]
       }
     }, {
@@ -5016,6 +5372,72 @@
         }
       }
     }, {
+      "id" : "https://w3id.org/metpo/2000601",
+      "lbl" : "denitrifies",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "denitrification"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000602",
+      "lbl" : "does not denitrify",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "denitrification"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000603",
+      "lbl" : "ammonifies",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "ammonification"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000604",
+      "lbl" : "does not ammonify",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "ammonification"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000605",
+      "lbl" : "oxidizes in darkness",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "oxidation in darkness"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000606",
+      "lbl" : "does not oxidize in darkness",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "oxidation in darkness"
+        } ]
+      }
+    }, {
       "id" : "https://w3id.org/metpo/2000058",
       "lbl" : "has observed spot value",
       "type" : "PROPERTY",
@@ -5079,6 +5501,366 @@
         "definition" : {
           "val" : "Relates any instance to a numerical value"
         }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000701",
+      "lbl" : "has growth temperature value",
+      "type" : "PROPERTY",
+      "propertyType" : "DATA",
+      "meta" : {
+        "definition" : {
+          "val" : "The growth temperature (Celsius) reported for this organism."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "temperature growth"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000702",
+      "lbl" : "has minimum temperature value",
+      "type" : "PROPERTY",
+      "propertyType" : "DATA",
+      "meta" : {
+        "definition" : {
+          "val" : "The minimum growth temperature (Celsius) reported for this organism."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "temperature minimum"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000703",
+      "lbl" : "has maximum temperature value",
+      "type" : "PROPERTY",
+      "propertyType" : "DATA",
+      "meta" : {
+        "definition" : {
+          "val" : "The maximum growth temperature (Celsius) reported for this organism."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "temperature maximum"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000704",
+      "lbl" : "has growth pH value",
+      "type" : "PROPERTY",
+      "propertyType" : "DATA",
+      "meta" : {
+        "definition" : {
+          "val" : "The growth pH reported for this organism."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "pH growth"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000705",
+      "lbl" : "has minimum pH value",
+      "type" : "PROPERTY",
+      "propertyType" : "DATA",
+      "meta" : {
+        "definition" : {
+          "val" : "The minimum growth pH reported for this organism."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "pH minimum"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000706",
+      "lbl" : "has maximum pH value",
+      "type" : "PROPERTY",
+      "propertyType" : "DATA",
+      "meta" : {
+        "definition" : {
+          "val" : "The maximum growth pH reported for this organism."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "pH maximum"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000707",
+      "lbl" : "has growth salinity value",
+      "type" : "PROPERTY",
+      "propertyType" : "DATA",
+      "meta" : {
+        "definition" : {
+          "val" : "The growth salinity (% NaCl w/v) reported for this organism."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "salinity growth"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000708",
+      "lbl" : "has minimum salinity value",
+      "type" : "PROPERTY",
+      "propertyType" : "DATA",
+      "meta" : {
+        "definition" : {
+          "val" : "The minimum growth salinity (% NaCl w/v) reported for this organism."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "salinity minimum"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000709",
+      "lbl" : "has maximum salinity value",
+      "type" : "PROPERTY",
+      "propertyType" : "DATA",
+      "meta" : {
+        "definition" : {
+          "val" : "The maximum growth salinity (% NaCl w/v) reported for this organism."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "salinity maximum"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000711",
+      "lbl" : "has genome size value",
+      "type" : "PROPERTY",
+      "propertyType" : "DATA",
+      "meta" : {
+        "definition" : {
+          "val" : "The genome size (bp) reported for this organism."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "genome size"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000712",
+      "lbl" : "has estimated genome size value",
+      "type" : "PROPERTY",
+      "propertyType" : "DATA",
+      "meta" : {
+        "definition" : {
+          "val" : "The estimated genome size (bp) reported for this organism."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "estimated genome size"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000713",
+      "lbl" : "has gene count value",
+      "type" : "PROPERTY",
+      "propertyType" : "DATA",
+      "meta" : {
+        "definition" : {
+          "val" : "The gene count reported for this organism."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "gene count"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000714",
+      "lbl" : "has estimated gene count value",
+      "type" : "PROPERTY",
+      "propertyType" : "DATA",
+      "meta" : {
+        "definition" : {
+          "val" : "The estimated gene count reported for this organism."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "estimated gene count"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000715",
+      "lbl" : "has GC percentage value",
+      "type" : "PROPERTY",
+      "propertyType" : "DATA",
+      "meta" : {
+        "definition" : {
+          "val" : "The GC content percentage reported for this organism."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "GC percentage"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000716",
+      "lbl" : "has coding density value",
+      "type" : "PROPERTY",
+      "propertyType" : "DATA",
+      "meta" : {
+        "definition" : {
+          "val" : "The coding density percentage reported for this organism."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "coding density"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000721",
+      "lbl" : "has cell length value",
+      "type" : "PROPERTY",
+      "propertyType" : "DATA",
+      "meta" : {
+        "definition" : {
+          "val" : "The cell length (micrometers) reported for this organism."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "cell length"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000722",
+      "lbl" : "has cell width value",
+      "type" : "PROPERTY",
+      "propertyType" : "DATA",
+      "meta" : {
+        "definition" : {
+          "val" : "The cell width (micrometers) reported for this organism."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "cell width"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000723",
+      "lbl" : "has minimum cell length value",
+      "type" : "PROPERTY",
+      "propertyType" : "DATA",
+      "meta" : {
+        "definition" : {
+          "val" : "The minimum cell length (micrometers) reported for this organism."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "cell length minimum"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000724",
+      "lbl" : "has maximum cell length value",
+      "type" : "PROPERTY",
+      "propertyType" : "DATA",
+      "meta" : {
+        "definition" : {
+          "val" : "The maximum cell length (micrometers) reported for this organism."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "cell length maximum"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000725",
+      "lbl" : "has minimum cell width value",
+      "type" : "PROPERTY",
+      "propertyType" : "DATA",
+      "meta" : {
+        "definition" : {
+          "val" : "The minimum cell width (micrometers) reported for this organism."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "cell width minimum"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000726",
+      "lbl" : "has maximum cell width value",
+      "type" : "PROPERTY",
+      "propertyType" : "DATA",
+      "meta" : {
+        "definition" : {
+          "val" : "The maximum cell width (micrometers) reported for this organism."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "cell width maximum"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000730",
+      "lbl" : "has ecology metric value",
+      "type" : "PROPERTY",
+      "propertyType" : "DATA",
+      "meta" : {
+        "definition" : {
+          "val" : "A derived ecological or genomic metric computed from genome or community data."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000731",
+      "lbl" : "has generalism score value",
+      "type" : "PROPERTY",
+      "propertyType" : "DATA",
+      "meta" : {
+        "definition" : {
+          "val" : "The ecological generalism score for this organism, reflecting niche breadth."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "generalism_score"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000732",
+      "lbl" : "has habitat count value",
+      "type" : "PROPERTY",
+      "propertyType" : "DATA",
+      "meta" : {
+        "definition" : {
+          "val" : "The number of distinct habitats in which this organism has been observed."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "habitat_count"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000733",
+      "lbl" : "has pangenome openness value",
+      "type" : "PROPERTY",
+      "propertyType" : "DATA",
+      "meta" : {
+        "definition" : {
+          "val" : "The pangenome openness score for this organism, indicating the rate of new gene acquisition."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "pangenome_openness"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000734",
+      "lbl" : "has nucleotide diversity value",
+      "type" : "PROPERTY",
+      "propertyType" : "DATA",
+      "meta" : {
+        "definition" : {
+          "val" : "The intra-species nucleotide diversity percentage for this organism."
+        },
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "intra_species_nucleotide_diversity"
+        } ]
       }
     }, {
       "id" : "http://purl.obolibrary.org/obo/IAO_0000115",
@@ -6200,6 +6982,102 @@
       "pred" : "is_a",
       "obj" : "https://w3id.org/metpo/1000186"
     }, {
+      "sub" : "https://w3id.org/metpo/1005001",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000630"
+    }, {
+      "sub" : "https://w3id.org/metpo/1005010",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000059"
+    }, {
+      "sub" : "https://w3id.org/metpo/1005011",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1005010"
+    }, {
+      "sub" : "https://w3id.org/metpo/1005012",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1005010"
+    }, {
+      "sub" : "https://w3id.org/metpo/1005013",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000059"
+    }, {
+      "sub" : "https://w3id.org/metpo/1005014",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1005013"
+    }, {
+      "sub" : "https://w3id.org/metpo/1005015",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1005013"
+    }, {
+      "sub" : "https://w3id.org/metpo/1005016",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000059"
+    }, {
+      "sub" : "https://w3id.org/metpo/1005017",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1005016"
+    }, {
+      "sub" : "https://w3id.org/metpo/1005018",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1005016"
+    }, {
+      "sub" : "https://w3id.org/metpo/1005021",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000601"
+    }, {
+      "sub" : "https://w3id.org/metpo/1005025",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000059"
+    }, {
+      "sub" : "https://w3id.org/metpo/1005026",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1005025"
+    }, {
+      "sub" : "https://w3id.org/metpo/1005027",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1005025"
+    }, {
+      "sub" : "https://w3id.org/metpo/1005031",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000704"
+    }, {
+      "sub" : "https://w3id.org/metpo/1005032",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000704"
+    }, {
+      "sub" : "https://w3id.org/metpo/1005033",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000704"
+    }, {
+      "sub" : "https://w3id.org/metpo/1005034",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000704"
+    }, {
+      "sub" : "https://w3id.org/metpo/1005035",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000704"
+    }, {
+      "sub" : "https://w3id.org/metpo/1005036",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000704"
+    }, {
+      "sub" : "https://w3id.org/metpo/1005037",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000704"
+    }, {
+      "sub" : "https://w3id.org/metpo/1005038",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000630"
+    }, {
+      "sub" : "https://w3id.org/metpo/1005039",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000630"
+    }, {
+      "sub" : "https://w3id.org/metpo/1005040",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000059"
+    }, {
       "sub" : "https://w3id.org/metpo/2000002",
       "pred" : "subPropertyOf",
       "obj" : "https://w3id.org/metpo/2000001"
@@ -6555,6 +7433,30 @@
       "sub" : "https://w3id.org/metpo/2000516",
       "pred" : "subPropertyOf",
       "obj" : "https://w3id.org/metpo/2000512"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000601",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000001"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000602",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000001"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000603",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000001"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000604",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000001"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000605",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000001"
+    }, {
+      "sub" : "https://w3id.org/metpo/2000606",
+      "pred" : "subPropertyOf",
+      "obj" : "https://w3id.org/metpo/2000001"
     } ],
     "domainRangeAxioms" : [ {
       "predicateId" : "https://w3id.org/metpo/2000001",
