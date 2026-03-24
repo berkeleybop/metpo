@@ -1,5 +1,37 @@
 # METPO Sheet Version History
 
+## Google Sheets Tab Inventory (as of 2026-03-24)
+
+Spreadsheet: `1_Lr-9_5QHi8QLvRyTZFSciUhzGKD4DbUObyTpJ16_RU`
+
+### Known / confirmed
+
+| Tab name | gid | Status | Notes |
+|---|---|---|---|
+| `classes` | `1569766102` | **Current primary** | Makefile SRC_URL_MAIN points here; matches PR #355 |
+| `properties` | `681401984` | **Current primary** | Makefile SRC_URL_PROPERTIES points here; matches PR #355 |
+| `classes-pre-20260324` | `121955004` | Superseded | Previous primary; safe to delete after release |
+| `properties-pre-20260324` | `2094089867` | Superseded | Previous primary; safe to delete after release |
+
+### Unknown — content not yet reviewed
+
+| Tab name | Notes |
+|---|---|
+| `Sheet38` | Default name; likely scratch |
+| `properties_test` | Unknown origin and content |
+| `bactotraits` | Unknown |
+| `more synonyms` | Unknown — may or may not be incorporated into templates |
+| `more classes - inconsistent` | Unknown — "inconsistent" flag origin unclear |
+| `metabolic and respiratory robot` | Unknown — may be a ROBOT template or superseded draft |
+| `metabolic_and_respiratory_llm` | Unknown — may be an LLM-generated draft |
+| `attic classes` | Unknown — name implies archived content |
+| `attic properties` | Unknown — name implies archived content |
+| `source mappings` | Unknown — may be reference data |
+| `non-bacdive chemical utilization` | Unknown |
+| `4 retired minimal classes` | Unknown — name implies retired content |
+
+No action taken on unknown tabs. Review each before deleting.
+
 **Date:** 2025-11-15
 
 ---
