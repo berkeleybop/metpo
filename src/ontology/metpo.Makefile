@@ -17,7 +17,7 @@ SRC_URL_PROPERTIES = 'https://docs.google.com/spreadsheets/d/1_Lr-9_5QHi8QLvRyTZ
 # Disabled comprehensive classes sheet:
 # SRC_URL_COMPREHENSIVE = 'https://docs.google.com/spreadsheets/d/1_Lr-9_5QHi8QLvRyTZFSciUhzGKD4DbUObyTpJ16_RU/export?exportFormat=tsv&gid=1427185859'
 
-.PHONY: squeaky-clean clean-templates
+.PHONY: squeaky-clean clean-templates diff-sheets diff-release
 
 ../templates/metpo_sheet.tsv:
 	curl -L -s $(SRC_URL_MAIN) > $@
@@ -37,6 +37,14 @@ clean-templates:
 	rm -rf components/metpo_sheet.owl
 	#rm -rf components/metpo-synonyms.owl
 	rm -rf components/metpo-properties.owl
+
+# Diff current working templates against Google Sheets
+diff-sheets:
+	cd ../.. && uv run diff-templates -a gsheet -b HEAD --cell-diffs
+
+# Diff current working templates against the last tagged release
+diff-release:
+	cd ../.. && uv run diff-templates -a $(shell git describe --tags --abbrev=0 2>/dev/null || echo "main") -b HEAD --cell-diffs
 
 #$(MIRRORDIR)/mpo.owl: ../../assets/mpo_v0.74.en_only.owl
 #	cp $^ $@
