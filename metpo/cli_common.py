@@ -15,6 +15,9 @@ Example:
         pass
 """
 
+import os
+from pathlib import Path
+
 import click
 
 # =============================================================================
@@ -106,16 +109,23 @@ def output_dir_option(required=False, default=None, help_text="Output directory 
 # =============================================================================
 
 
-def chroma_path_option(default="./chroma_db", help_text="ChromaDB storage directory path"):
+CHROMADB_ROOT = Path(os.environ.get("METPO_CHROMADB_ROOT", "data/chromadb"))
+
+
+def chroma_path_option(collection="chroma_db", help_text="ChromaDB storage directory path"):
     """Standard ChromaDB storage path option.
 
+    Resolves the default from METPO_CHROMADB_ROOT env var (fallback: data/chromadb)
+    joined with the collection name.
+
     Args:
-        default: Default ChromaDB path (default: './chroma_db')
+        collection: Collection subdirectory name under CHROMADB_ROOT
         help_text: Custom help text
 
     Returns:
         Click option decorator for --chroma-path
     """
+    default = str(CHROMADB_ROOT / collection)
     return click.option(
         "--chroma-path", type=click.Path(path_type=str), default=default, help=help_text
     )

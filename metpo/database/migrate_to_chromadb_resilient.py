@@ -17,6 +17,8 @@ import click
 from chromadb.config import Settings
 from tqdm import tqdm
 
+from metpo.cli_common import CHROMADB_ROOT
+
 
 def extract_embedding_vector(embedding_json: str) -> list[float]:
     """Extract embedding vector from JSON, handling dict or list formats."""
@@ -235,7 +237,7 @@ def migrate_embeddings_resilient(
 @click.option(
     "--chroma-path",
     type=click.Path(path_type=str),
-    default="./chroma_db",
+    default=str(CHROMADB_ROOT / "chroma_db"),
     help="Path to ChromaDB storage directory",
 )
 @click.option("--batch-size", type=int, default=1000, help="Batch size for migration")

@@ -42,6 +42,7 @@ from chromadb.config import Settings
 from dotenv import load_dotenv
 from tqdm import tqdm
 
+from metpo.cli_common import CHROMADB_ROOT
 from metpo.utils.sssom_utils import normalize_object_id
 
 CORE_CURIE_MAP = {
@@ -365,7 +366,7 @@ def query_chromadb_for_term(
 @click.option(
     "--chroma-path",
     type=click.Path(path_type=str),
-    default="./embeddings_chroma",
+    default=str(CHROMADB_ROOT / "embeddings_chroma"),
     help="Path to ChromaDB storage directory",
 )
 @click.option(
