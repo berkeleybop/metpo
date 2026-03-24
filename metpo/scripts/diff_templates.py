@@ -9,6 +9,7 @@ Sources can be local files, git refs, or the live Google Sheet.
 """
 
 import csv
+import os
 import subprocess
 import tempfile
 import urllib.request
@@ -26,6 +27,8 @@ TEMPLATE_PATHS = {
     "properties": "src/templates/metpo-properties.tsv",
 }
 
+_temp_files: list[Path] = []
+
 
 def resolve_source(source: str, template: str) -> Path:
     """Resolve a source specifier to a local file path.
@@ -38,7 +41,10 @@ def resolve_source(source: str, template: str) -> Path:
     if source == "gsheet":
         gid = SHEET_GIDS[template]
         url = f"https://docs.google.com/spreadsheets/d/{SPREADSHEET_ID}/export?exportFormat=tsv&gid={gid}"
-        tmp = Path(tempfile.mktemp(suffix=".tsv"))
+        fd, name = tempfile.mkstemp(suffix=".tsv")
+        os.close(fd)
+        tmp = Path(name)
+        _temp_files.append(tmp)
         urllib.request.urlretrieve(url, tmp)
         return tmp
 
@@ -51,16 +57,21 @@ def resolve_source(source: str, template: str) -> Path:
             text=True,
             check=True,
         )
-        tmp = Path(tempfile.mktemp(suffix=".tsv"))
-        tmp.write_text(result.stdout)
+        fd, name = tempfile.mkstemp(suffix=".tsv")
+        os.close(fd)
+        tmp = Path(name)
+        _temp_files.append(tmp)
+        tmp.write_text(result.stdout, encoding="utf-8")
         return tmp
     except subprocess.CalledProcessError:
         pass
 
     # Try as file path
     p = Path(source)
-    if p.exists():
+    if p.is_file():
         return p
+    if p.is_dir():
+        raise click.BadParameter(f"Expected a TSV file for '{source}', but got a directory")
 
     raise click.BadParameter(f"Cannot resolve '{source}' as gsheet, git ref, or file path")
 
@@ -102,8 +113,8 @@ def load_headers(path: Path) -> list[str]:
     return []
 
 
-def _print_cell_diffs(path_a: Path, path_b: Path, common: list[str], max_cell_diffs: int) -> None:
-    """Print cell-level diffs for common IDs between two template files."""
+def _print_cell_diffs(path_a: Path, path_b: Path, common: list[str], max_cell_diffs: int) -> int:
+    """Print cell-level diffs for common IDs between two template files. Returns diff count."""
     headers = load_headers(path_b)
     rows_a = load_full_rows(path_a)
     rows_b = load_full_rows(path_b)
@@ -124,6 +135,7 @@ def _print_cell_diffs(path_a: Path, path_b: Path, common: list[str], max_cell_di
             click.echo(f"    {mid} [{col_name}]: '{va}' -> '{vb}'")
         if len(diffs) > max_cell_diffs:
             click.echo(f"    ... and {len(diffs) - max_cell_diffs} more")
+    return len(diffs)
 
 
 def compare(
@@ -159,7 +171,7 @@ def compare(
             click.echo(f"    {mid}\t{ids_a[mid]}")
 
     if only_b:
-        click.echo(f"\n  +++ Only in {name_b} ({len(only_b)}) ---")
+        click.echo(f"\n  +++ Only in {name_b} ({len(only_b)}) +++")
         for mid in only_b:
             click.echo(f"    {mid}\t{ids_b[mid]}")
 
@@ -168,10 +180,11 @@ def compare(
         for mid, la, lb in label_changes:
             click.echo(f"    {mid}: '{la}' -> '{lb}'")
 
+    cell_diff_count = 0
     if cell_diffs and common:
-        _print_cell_diffs(path_a, path_b, common, max_cell_diffs)
+        cell_diff_count = _print_cell_diffs(path_a, path_b, common, max_cell_diffs)
 
-    if not only_a and not only_b and not label_changes:
+    if not only_a and not only_b and not label_changes and not cell_diff_count:
         click.echo("\n  IDs and labels are identical.")
 
     return {
@@ -179,6 +192,7 @@ def compare(
         "only_b": only_b,
         "common": len(common),
         "label_changes": len(label_changes),
+        "cell_diffs": cell_diff_count,
     }
 
 
@@ -231,22 +245,27 @@ def main(
     """
     templates = ["classes", "properties"] if template == "both" else [template]
 
-    for tmpl in templates:
-        click.echo(f"\n{'#' * 70}")
-        click.echo(f"# {tmpl.upper()} TEMPLATE ({TEMPLATE_PATHS[tmpl]})")
-        click.echo(f"{'#' * 70}")
+    try:
+        for tmpl in templates:
+            click.echo(f"\n{'#' * 70}")
+            click.echo(f"# {tmpl.upper()} TEMPLATE ({TEMPLATE_PATHS[tmpl]})")
+            click.echo(f"{'#' * 70}")
 
-        path_a = resolve_source(source_a, tmpl)
-        path_b = resolve_source(source_b, tmpl)
+            path_a = resolve_source(source_a, tmpl)
+            path_b = resolve_source(source_b, tmpl)
 
-        compare(
-            source_a,
-            path_a,
-            source_b,
-            path_b,
-            cell_diffs=cell_diffs,
-            max_cell_diffs=max_cell_diffs,
-        )
+            compare(
+                source_a,
+                path_a,
+                source_b,
+                path_b,
+                cell_diffs=cell_diffs,
+                max_cell_diffs=max_cell_diffs,
+            )
+    finally:
+        for tmp in _temp_files:
+            tmp.unlink(missing_ok=True)
+        _temp_files.clear()
 
 
 if __name__ == "__main__":
