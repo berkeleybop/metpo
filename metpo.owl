@@ -15,14 +15,14 @@
      xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="https://w3id.org/metpo/metpo.owl">
-        <owl:versionIRI rdf:resource="https://w3id.org/metpo/metpo/releases/2025-12-12/metpo.owl"/>
+        <owl:versionIRI rdf:resource="https://w3id.org/metpo/metpo/releases/2026-03-24/metpo.owl"/>
         <dcterms:creator>METPO Development Team</dcterms:creator>
         <dcterms:description>Microbial ecophysiological trait and phenotype ontology</dcterms:description>
         <dcterms:issued>2024-01-01</dcterms:issued>
         <dcterms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
         <dcterms:modified>2025-09-29</dcterms:modified>
         <dcterms:title>METPO</dcterms:title>
-        <owl:versionInfo>2025-12-12</owl:versionInfo>
+        <owl:versionInfo>2026-03-24</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -377,12 +377,19 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000015">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
         <oboInOwl:hasRelatedSynonym>other</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>utilizes</oboInOwl:hasRelatedSynonym>
         <rdfs:label>uses in other way</rdfs:label>
     </owl:ObjectProperty>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000015"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>other</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000015"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>utilizes</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
     </owl:Axiom>
     
@@ -793,12 +800,19 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000041">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
         <oboInOwl:hasRelatedSynonym>other</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>utilizes</oboInOwl:hasRelatedSynonym>
         <rdfs:label>does not use in other way</rdfs:label>
     </owl:ObjectProperty>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000041"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>other</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000041"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>utilizes</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
     </owl:Axiom>
     
@@ -1510,6 +1524,102 @@
     
 
 
+    <!-- https://w3id.org/metpo/2000601 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000601">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>denitrification</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>denitrifies</rdfs:label>
+    </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000601"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>denitrification</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/2000602 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000602">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>denitrification</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>does not denitrify</rdfs:label>
+    </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000602"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>denitrification</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/2000603 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000603">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>ammonification</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>ammonifies</rdfs:label>
+    </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000603"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>ammonification</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/2000604 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000604">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>ammonification</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>does not ammonify</rdfs:label>
+    </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000604"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>ammonification</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/2000605 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000605">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>oxidation in darkness</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>oxidizes in darkness</rdfs:label>
+    </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000605"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>oxidation in darkness</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/2000606 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000606">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000001"/>
+        <oboInOwl:hasRelatedSynonym>oxidation in darkness</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>does not oxidize in darkness</rdfs:label>
+    </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000606"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>oxidation in darkness</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
+    </owl:Axiom>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -1599,6 +1709,472 @@
     
 
 
+    <!-- https://w3id.org/metpo/2000701 -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/metpo/2000701">
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <obo:IAO_0000115>The growth temperature (Celsius) reported for this organism.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>temperature growth</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>has growth temperature value</rdfs:label>
+    </owl:DatatypeProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000701"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>temperature growth</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/2000702 -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/metpo/2000702">
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <obo:IAO_0000115>The minimum growth temperature (Celsius) reported for this organism.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>temperature minimum</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>has minimum temperature value</rdfs:label>
+    </owl:DatatypeProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000702"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>temperature minimum</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/2000703 -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/metpo/2000703">
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <obo:IAO_0000115>The maximum growth temperature (Celsius) reported for this organism.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>temperature maximum</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>has maximum temperature value</rdfs:label>
+    </owl:DatatypeProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000703"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>temperature maximum</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/2000704 -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/metpo/2000704">
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <obo:IAO_0000115>The growth pH reported for this organism.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>pH growth</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>has growth pH value</rdfs:label>
+    </owl:DatatypeProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000704"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>pH growth</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/2000705 -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/metpo/2000705">
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <obo:IAO_0000115>The minimum growth pH reported for this organism.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>pH minimum</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>has minimum pH value</rdfs:label>
+    </owl:DatatypeProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000705"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>pH minimum</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/2000706 -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/metpo/2000706">
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <obo:IAO_0000115>The maximum growth pH reported for this organism.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>pH maximum</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>has maximum pH value</rdfs:label>
+    </owl:DatatypeProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000706"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>pH maximum</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/2000707 -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/metpo/2000707">
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <obo:IAO_0000115>The growth salinity (% NaCl w/v) reported for this organism.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>salinity growth</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>has growth salinity value</rdfs:label>
+    </owl:DatatypeProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000707"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>salinity growth</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/2000708 -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/metpo/2000708">
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <obo:IAO_0000115>The minimum growth salinity (% NaCl w/v) reported for this organism.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>salinity minimum</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>has minimum salinity value</rdfs:label>
+    </owl:DatatypeProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000708"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>salinity minimum</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/2000709 -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/metpo/2000709">
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <obo:IAO_0000115>The maximum growth salinity (% NaCl w/v) reported for this organism.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>salinity maximum</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>has maximum salinity value</rdfs:label>
+    </owl:DatatypeProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000709"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>salinity maximum</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/2000711 -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/metpo/2000711">
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <obo:IAO_0000115>The genome size (bp) reported for this organism.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>genome size</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>has genome size value</rdfs:label>
+    </owl:DatatypeProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000711"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>genome size</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/2000712 -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/metpo/2000712">
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <obo:IAO_0000115>The estimated genome size (bp) reported for this organism.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>estimated genome size</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>has estimated genome size value</rdfs:label>
+    </owl:DatatypeProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000712"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>estimated genome size</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/2000713 -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/metpo/2000713">
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <obo:IAO_0000115>The gene count reported for this organism.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>gene count</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>has gene count value</rdfs:label>
+    </owl:DatatypeProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000713"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>gene count</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/2000714 -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/metpo/2000714">
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <obo:IAO_0000115>The estimated gene count reported for this organism.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>estimated gene count</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>has estimated gene count value</rdfs:label>
+    </owl:DatatypeProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000714"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>estimated gene count</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/2000715 -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/metpo/2000715">
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <obo:IAO_0000115>The GC content percentage reported for this organism.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>GC percentage</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>has GC percentage value</rdfs:label>
+    </owl:DatatypeProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000715"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>GC percentage</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/2000716 -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/metpo/2000716">
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <obo:IAO_0000115>The coding density percentage reported for this organism.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>coding density</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>has coding density value</rdfs:label>
+    </owl:DatatypeProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000716"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>coding density</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/2000721 -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/metpo/2000721">
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <obo:IAO_0000115>The cell length (micrometers) reported for this organism.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>cell length</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>has cell length value</rdfs:label>
+    </owl:DatatypeProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000721"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>cell length</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/2000722 -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/metpo/2000722">
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <obo:IAO_0000115>The cell width (micrometers) reported for this organism.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>cell width</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>has cell width value</rdfs:label>
+    </owl:DatatypeProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000722"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>cell width</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/2000723 -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/metpo/2000723">
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <obo:IAO_0000115>The minimum cell length (micrometers) reported for this organism.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>cell length minimum</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>has minimum cell length value</rdfs:label>
+    </owl:DatatypeProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000723"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>cell length minimum</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/2000724 -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/metpo/2000724">
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <obo:IAO_0000115>The maximum cell length (micrometers) reported for this organism.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>cell length maximum</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>has maximum cell length value</rdfs:label>
+    </owl:DatatypeProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000724"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>cell length maximum</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/2000725 -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/metpo/2000725">
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <obo:IAO_0000115>The minimum cell width (micrometers) reported for this organism.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>cell width minimum</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>has minimum cell width value</rdfs:label>
+    </owl:DatatypeProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000725"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>cell width minimum</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/2000726 -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/metpo/2000726">
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <obo:IAO_0000115>The maximum cell width (micrometers) reported for this organism.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>cell width maximum</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>has maximum cell width value</rdfs:label>
+    </owl:DatatypeProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000726"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>cell width maximum</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/2000730 -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/metpo/2000730">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000063"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <obo:IAO_0000115>A derived ecological or genomic metric computed from genome or community data.</obo:IAO_0000115>
+        <rdfs:label>has ecology metric value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000731 -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/metpo/2000731">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000730"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <obo:IAO_0000115>The ecological generalism score for this organism, reflecting niche breadth.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>generalism_score</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>has generalism score value</rdfs:label>
+    </owl:DatatypeProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000731"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>generalism_score</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/2000732 -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/metpo/2000732">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000730"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <obo:IAO_0000115>The number of distinct habitats in which this organism has been observed.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>habitat_count</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>has habitat count value</rdfs:label>
+    </owl:DatatypeProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000732"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>habitat_count</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/2000733 -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/metpo/2000733">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000730"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <obo:IAO_0000115>The pangenome openness score for this organism, indicating the rate of new gene acquisition.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>pangenome_openness</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>has pangenome openness value</rdfs:label>
+    </owl:DatatypeProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000733"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>pangenome_openness</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/2000734 -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/metpo/2000734">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/metpo/2000730"/>
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <obo:IAO_0000115>The intra-species nucleotide diversity percentage for this organism.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>intra_species_nucleotide_diversity</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>has nucleotide diversity value</rdfs:label>
+    </owl:DatatypeProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/2000734"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>intra_species_nucleotide_diversity</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
+    </owl:Axiom>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -1653,6 +2229,7 @@
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000188"/>
         <obo:IAO_0000115>A quality that is describing the percentage of guanine and cytosine nucleotides in genomic DNA, calculated as the ratio of GC base pairs to total base pairs.</obo:IAO_0000115>
         <obo:IAO_0000117>Luke Wang</obo:IAO_0000117>
+        <oboInOwl:hasRelatedSynonym>GC percentage</oboInOwl:hasRelatedSynonym>
         <rdfs:label>GC content</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -1660,6 +2237,12 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A quality that is describing the percentage of guanine and cytosine nucleotides in genomic DNA, calculated as the ratio of GC base pairs to total base pairs.</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="https://purl.dsmz.de/schema/GCContent"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000127"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>GC percentage</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
     </owl:Axiom>
     
 
@@ -3936,7 +4519,7 @@
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000186"/>
         <obo:IAO_0000115>A material entity that is too small to be viewed by the unaided eye, typically requiring microscopy for observation.</obo:IAO_0000115>
         <obo:IAO_0000117>Luke Wang</obo:IAO_0000117>
-        <rdfs:comment>METPO is primarily concerned with unicellular, prokaryotic life forms, i.e. bacteria and archea, including the cases of giant bacteria like Thiomargarita</rdfs:comment>
+        <rdfs:comment>METPO is primarily concerned with unicellular, prokaryotic life forms, i.e. bacteria and archaea, including the cases of giant bacteria like Thiomargarita</rdfs:comment>
         <rdfs:label>microbe</rdfs:label>
         <skos:closeMatch rdf:resource="https://biolink.github.io/biolink-model/OrganismTaxon"/>
     </owl:Class>
@@ -4042,6 +4625,7 @@
         <obo:IAO_0000115>A phenotype that is relating to an organism&apos;s oxygen requirements or tolerance for growth.</obo:IAO_0000115>
         <oboInOwl:hasRelatedSynonym>Physiology and metabolism.oxygen tolerance.oxygen tolerance</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>metabolism</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>oxygen preference</oboInOwl:hasRelatedSynonym>
         <rdfs:label>oxygen preference</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -4062,6 +4646,12 @@
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>metabolism</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000601"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>oxygen preference</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
     </owl:Axiom>
     
 
@@ -4208,6 +4798,12 @@
         <owl:annotatedTarget>facultative anaerobe</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
     </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000605"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>facultative anaerobe</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
+    </owl:Axiom>
     
 
 
@@ -4237,6 +4833,12 @@
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>obligate aerobic</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000606"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>obligate aerobic</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
     </owl:Axiom>
     
 
@@ -4322,6 +4924,12 @@
         <owl:annotatedTarget>aerotolerant</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
     </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000609"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>aerotolerant</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
+    </owl:Axiom>
     
 
 
@@ -4356,6 +4964,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000611">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000607"/>
         <obo:IAO_0000115>An obligately anaerobic where a microorganism does not grow in the presence of oxygen gas (O2).</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>obligate anaerobic</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>strictly anaerobic</oboInOwl:hasRelatedSynonym>
         <rdfs:label>strictly anaerobic</rdfs:label>
     </owl:Class>
@@ -4364,6 +4973,12 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>An obligately anaerobic where a microorganism does not grow in the presence of oxygen gas (O2).</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OMP_0000184"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000611"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>obligate anaerobic</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000611"/>
@@ -4404,6 +5019,7 @@
         <obo:IAO_0000115>A phenotype that describes characteristic growth with respect to environmental temperature.</obo:IAO_0000115>
         <oboInOwl:hasRelatedSynonym>Physiology and metabolism.culture temp.temperature</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>range_tmp</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>temperature preference</oboInOwl:hasRelatedSynonym>
         <rdfs:label>temperature preference</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -4423,6 +5039,12 @@
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>range_tmp</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000613"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>temperature preference</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
     </owl:Axiom>
     
 
@@ -4452,6 +5074,12 @@
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>psychrophilic</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000614"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>psychrophilic</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
     </owl:Axiom>
     
 
@@ -4512,6 +5140,12 @@
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>thermophilic</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000616"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>thermophilic</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
     </owl:Axiom>
     
 
@@ -4839,6 +5473,7 @@
         <obo:IAO_0000115>A phenotype that is relating to an organism&apos;s salt concentration requirements or tolerance for growth.</obo:IAO_0000115>
         <oboInOwl:hasRelatedSynonym>Physiology and metabolism.halophily.halophily level</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>range_salinity</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>salinity preference</oboInOwl:hasRelatedSynonym>
         <rdfs:label>halophily preference</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -4859,6 +5494,12 @@
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>range_salinity</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000629"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>salinity preference</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
     </owl:Axiom>
     
 
@@ -5726,6 +6367,7 @@
         <obo:IAO_0000117>Jed Dongjin Kim-Ozaeta</obo:IAO_0000117>
         <obo:IAO_0000117>Luke Wang</obo:IAO_0000117>
         <oboInOwl:hasRelatedSynonym>Morphology.cell morphology.cell shape</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>cell shape</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>cell_shape</oboInOwl:hasRelatedSynonym>
         <rdfs:label>cell shape</rdfs:label>
     </owl:Class>
@@ -5740,6 +6382,12 @@
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>Morphology.cell morphology.cell shape</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000666"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>cell shape</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000666"/>
@@ -6506,6 +7154,7 @@
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000697"/>
         <obo:IAO_0000115>A gram stain in which an organism retains crystal violet dye and appears purple under microscopy due to a thick peptidoglycan cell wall.</obo:IAO_0000115>
         <oboInOwl:hasRelatedSynonym>G_positive</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>gram positive</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>positive</oboInOwl:hasRelatedSynonym>
         <rdfs:label>gram positive</rdfs:label>
     </owl:Class>
@@ -6521,6 +7170,12 @@
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>G_positive</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000698"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>gram positive</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000698"/>
@@ -6544,6 +7199,7 @@
         <obo:IAO_0000115>A gram stain in which bacteria do not retain crystal violet dye and appear pink or red after staining, indicating a thin peptidoglycan layer and presence of an outer membrane.</obo:IAO_0000115>
         <obo:IAO_0000117>Luke Wang</obo:IAO_0000117>
         <oboInOwl:hasRelatedSynonym>G_negative</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>gram negative</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>negative</oboInOwl:hasRelatedSynonym>
         <rdfs:label>gram negative</rdfs:label>
     </owl:Class>
@@ -6552,6 +7208,12 @@
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>G_negative</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000699"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>gram negative</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000699"/>
@@ -6600,6 +7262,7 @@
         <obo:IAO_0000117>Jed Dongjin Kim-Ozaeta</obo:IAO_0000117>
         <oboInOwl:hasRelatedSynonym>Morphology.cell morphology.motility</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>motility</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>presence of motility</oboInOwl:hasRelatedSynonym>
         <rdfs:label>motility</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -6619,6 +7282,12 @@
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>motility</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000701"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>presence of motility</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
     </owl:Axiom>
     
 
@@ -6780,7 +7449,7 @@
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000720">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000613"/>
-        <obo:IAO_0000115>A temperature preference characterized by the ability to grow at low temperatures (typically below 20Â°C) while maintaining optimal growth at moderate temperatures.</obo:IAO_0000115>
+        <obo:IAO_0000115>A temperature preference characterized by the ability to grow at low temperatures (typically below 20°C) while maintaining optimal growth at moderate temperatures.</obo:IAO_0000115>
         <obo:IAO_0000117>Anthea Guo</obo:IAO_0000117>
         <oboInOwl:hasRelatedSynonym>facultative psychrophile</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>facultative psychrophilic</oboInOwl:hasRelatedSynonym>
@@ -6789,7 +7458,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000720"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A temperature preference characterized by the ability to grow at low temperatures (typically below 20Â°C) while maintaining optimal growth at moderate temperatures.</owl:annotatedTarget>
+        <owl:annotatedTarget>A temperature preference characterized by the ability to grow at low temperatures (typically below 20°C) while maintaining optimal growth at moderate temperatures.</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/MICRO_0001306"/>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/MICRO_0001417"/>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OMP_0005007"/>
@@ -6848,6 +7517,7 @@
         <obo:IAO_0000115>A metabolism that is characterized by the method of performing cellular respiration, distinguished primarily by the specific terminal electron acceptor utilized for producing cellular energy.</obo:IAO_0000115>
         <obo:IAO_0000117>Anthea Guo</obo:IAO_0000117>
         <oboInOwl:hasRelatedSynonym>pathways</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>respiration</oboInOwl:hasRelatedSynonym>
         <rdfs:label>respiration</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -6862,6 +7532,12 @@
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>pathways</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000800"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>respiration</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
     </owl:Axiom>
     
 
@@ -7052,6 +7728,12 @@
         <owl:annotatedTarget>sporulation</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
     </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000870"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>sporulation</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
+    </owl:Axiom>
     
 
 
@@ -7138,6 +7820,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000881">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
         <obo:IAO_0000115>A phenotype that inheres in a cell by virtue of its longer dimension when viewed on a plane.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>cell length</oboInOwl:hasRelatedSynonym>
         <rdfs:label>cell length</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -7145,6 +7828,12 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A phenotype that inheres in a cell by virtue of its longer dimension when viewed on a plane.</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OBA_2040145"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000881"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>cell length</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
     </owl:Axiom>
     
 
@@ -7154,6 +7843,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000882">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
         <obo:IAO_0000115>A phenotype that inheres in a cell by virtue of its shorter dimension when viewed on a plane.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>cell width</oboInOwl:hasRelatedSynonym>
         <rdfs:label>cell width</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -7161,6 +7851,12 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A phenotype that inheres in a cell by virtue of its shorter dimension when viewed on a plane.</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OBA_2040146"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000882"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>cell width</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
     </owl:Axiom>
     
 
@@ -7687,6 +8383,7 @@
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000188"/>
         <obo:IAO_0000115>A quality that categorizes biological agents according to their hazard level and required containment measures.</obo:IAO_0000115>
         <oboInOwl:hasRelatedSynonym>Safety information.risk assessment.biosafety level</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>biosafety level</oboInOwl:hasRelatedSynonym>
         <rdfs:label>biosafety level</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -7694,6 +8391,12 @@
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>Safety information.risk assessment.biosafety level</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="https://bacdive.dsmz.de/"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1001101"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>biosafety level</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
     </owl:Axiom>
     
 
@@ -7823,6 +8526,12 @@
         <owl:annotatedTarget>fermentation</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="https://github.com/jmadin/bacteria_archaea_traits"/>
     </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1002005"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>fermentation</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
+    </owl:Axiom>
     
 
 
@@ -7842,6 +8551,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1003000">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
         <obo:IAO_0000115>A phenotype that describes how the rate and extent of population growth are affected by environmental pH.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>pH growth</oboInOwl:hasRelatedSynonym>
         <rdfs:label>pH growth preference</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -7849,6 +8559,12 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A phenotype that describes how the rate and extent of population growth are affected by environmental pH.</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OMP_0005008"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1003000"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>pH growth</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
     </owl:Axiom>
     
 
@@ -7905,6 +8621,7 @@
         <obo:IAO_0000115>A pH growth preference in which an organism grows optimally at pH values below 5.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym>acidophil</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>acidophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>acidophilic</oboInOwl:hasRelatedSynonym>
         <rdfs:label>acidophilic</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -7916,6 +8633,12 @@
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OMP_0005010"/>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OMP_0005011"/>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OMP_0007945"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1003003"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>acidophilic</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
     </owl:Axiom>
     
 
@@ -8056,6 +8779,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1003021">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
         <obo:IAO_0000115>A phenotype characterized by the color of pigments produced by a microorganism.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>cell color</oboInOwl:hasRelatedSynonym>
         <rdfs:label>pigmentation</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -8063,6 +8787,12 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A phenotype characterized by the color of pigments produced by a microorganism.</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/GO_0043473"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1003021"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>cell color</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
     </owl:Axiom>
     
 
@@ -8200,6 +8930,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1003030">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1003021"/>
         <oboInOwl:hasRelatedSynonym>Pigment_yellow</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>yellow pigment</oboInOwl:hasRelatedSynonym>
         <rdfs:label>yellow pigmented</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -8207,6 +8938,12 @@
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>Pigment_yellow</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1003030"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>yellow pigment</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
     </owl:Axiom>
     
 
@@ -8329,6 +9066,406 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A processed material that provides the nutrients and environmental conditions necessary for the cultivation of microorganisms in vitro. Growth media may be liquid (broth) or solid (agar-based) and are formulated to support the growth of specific types of organisms.</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OBI_0000079"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1005001 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1005001">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000630"/>
+        <obo:IAO_0000115>A two-step biological process in which ammonia is oxidized to nitrite (ammonia oxidation) and nitrite is oxidized to nitrate (nitrite oxidation).</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>nitrification</oboInOwl:hasRelatedSynonym>
+        <rdfs:comment>MetaTraits maps to OMIT:0027217 (wrong ontology). Correct GO terms are GO:0019329 (ammonia oxidation) and GO:0019332 (nitrite oxidation).</rdfs:comment>
+        <rdfs:label>nitrification</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1005001"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A two-step biological process in which ammonia is oxidized to nitrite (ammonia oxidation) and nitrite is oxidized to nitrate (nitrite oxidation).</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/GO_0019329"/>
+        <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/GO_0019332"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1005001"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>nitrification</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1005010 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1005010">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
+        <obo:IAO_0000115>An assay that tests the ability of an organism to produce indole from tryptophan.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>indole test</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>indole test</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1005010"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>An assay that tests the ability of an organism to produce indole from tryptophan.</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/MICRO_0000430"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1005010"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>indole test</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1005011 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1005011">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1005010"/>
+        <obo:IAO_0000115>A phenotype in which an organism tests positive in the indole test, indicating it produces indole from tryptophan.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>indole test</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>indole test positive</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1005011"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>indole test</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1005012 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1005012">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1005010"/>
+        <obo:IAO_0000115>A phenotype in which an organism tests negative in the indole test, indicating it does not produce indole from tryptophan.</obo:IAO_0000115>
+        <rdfs:label>indole test negative</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/1005013 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1005013">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
+        <obo:IAO_0000115>An assay that tests the ability of an organism to produce and maintain stable acid end products from glucose fermentation.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>methyl red test</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>methyl red test</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1005013"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>An assay that tests the ability of an organism to produce and maintain stable acid end products from glucose fermentation.</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="SNOMED:5894006"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1005013"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>methyl red test</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1005014 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1005014">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1005013"/>
+        <obo:IAO_0000115>A phenotype in which an organism tests positive in the methyl red test, indicating mixed acid fermentation.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>methyl red test</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>methyl red test positive</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1005014"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>methyl red test</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1005015 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1005015">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1005013"/>
+        <obo:IAO_0000115>A phenotype in which an organism tests negative in the methyl red test.</obo:IAO_0000115>
+        <rdfs:label>methyl red test negative</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/1005016 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1005016">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
+        <obo:IAO_0000115>An assay that tests the ability of an organism to produce acetoin from glucose via the butanediol fermentation pathway.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>voges-proskauer test</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>Voges-Proskauer test</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1005016"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>An assay that tests the ability of an organism to produce acetoin from glucose via the butanediol fermentation pathway.</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="SNOMED:66592006"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1005016"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>voges-proskauer test</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1005017 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1005017">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1005016"/>
+        <obo:IAO_0000115>A phenotype in which an organism tests positive in the Voges-Proskauer test, indicating acetoin production.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>voges-proskauer test</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>Voges-Proskauer test positive</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1005017"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>voges-proskauer test</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1005018 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1005018">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1005016"/>
+        <obo:IAO_0000115>A phenotype in which an organism tests negative in the Voges-Proskauer test.</obo:IAO_0000115>
+        <rdfs:label>Voges-Proskauer test negative</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/1005021 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1005021">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000601"/>
+        <obo:IAO_0000115>A phenotype describing an organism that requires elevated concentrations of carbon dioxide for growth.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>capnophilic</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>capnophilic</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1005021"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A phenotype describing an organism that requires elevated concentrations of carbon dioxide for growth.</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="SNOMED:413748004"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1005021"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>capnophilic</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1005025 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1005025">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
+        <obo:IAO_0000115>A phenotype describing the ability of an organism to lyse red blood cells.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>presence of hemolysis</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>hemolysis</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1005025"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>presence of hemolysis</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1005025"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A phenotype describing the ability of an organism to lyse red blood cells.</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OMP_0005117"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1005026 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1005026">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1005025"/>
+        <obo:IAO_0000115>A phenotype in which an organism is capable of lysing red blood cells.</obo:IAO_0000115>
+        <rdfs:label>hemolytic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/1005027 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1005027">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1005025"/>
+        <obo:IAO_0000115>A phenotype in which an organism does not lyse red blood cells.</obo:IAO_0000115>
+        <rdfs:label>non-hemolytic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/1005031 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1005031">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000704"/>
+        <obo:IAO_0000115>A motility phenotype in which flagella are distributed over the entire cell surface.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>flagellum arrangement</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>peritrichous flagellation</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1005031"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A motility phenotype in which flagella are distributed over the entire cell surface.</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OMP_0000078"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1005031"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>flagellum arrangement</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1005032 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1005032">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000704"/>
+        <obo:IAO_0000115>A motility phenotype in which one or more flagella are located at one or both poles of the cell.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>flagellum arrangement</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>polar flagellation</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1005032"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>flagellum arrangement</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1005033 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1005033">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000704"/>
+        <obo:IAO_0000115>A motility phenotype in which a single flagellum is present at each pole of the cell.</obo:IAO_0000115>
+        <rdfs:label>amphitrichous flagellation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/1005034 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1005034">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000704"/>
+        <obo:IAO_0000115>A motility phenotype in which a tuft of flagella is present at one or both poles of the cell.</obo:IAO_0000115>
+        <rdfs:label>lophotrichous flagellation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/1005035 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1005035">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000704"/>
+        <obo:IAO_0000115>A motility phenotype in which a single flagellum is present at one pole of the cell.</obo:IAO_0000115>
+        <rdfs:label>monotrichous flagellation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/1005036 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1005036">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000704"/>
+        <obo:IAO_0000115>A motility phenotype in which flagella emerge from the lateral side of the cell.</obo:IAO_0000115>
+        <rdfs:label>lateral flagellation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/1005037 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1005037">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000704"/>
+        <obo:IAO_0000115>A motility phenotype in which flagella are located near but not at the cell pole.</obo:IAO_0000115>
+        <rdfs:label>subpolar flagellation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/metpo/1005038 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1005038">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000630"/>
+        <obo:IAO_0000115>A biological process in which nitrate or nitrite is reduced to gaseous nitrogen compounds (NO, N2O, or N2) under anaerobic or microaerobic conditions.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>denitrification pathway</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>denitrification</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1005038"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A biological process in which nitrate or nitrite is reduced to gaseous nitrogen compounds (NO, N2O, or N2) under anaerobic or microaerobic conditions.</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/GO_0019333"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1005038"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>denitrification pathway</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1005039 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1005039">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000630"/>
+        <obo:IAO_0000115>A biological process in which atmospheric dinitrogen is reduced to ammonia, catalyzed by nitrogenase.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>nitrogen fixation</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>nitrogen fixation</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1005039"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A biological process in which atmospheric dinitrogen is reduced to ammonia, catalyzed by nitrogenase.</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/GO_0009399"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1005039"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>nitrogen fixation</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1005040 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1005040">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
+        <obo:IAO_0000115>A phenotype describing an organism with a broad ecological niche, capable of thriving across diverse environments or utilizing varied resources.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>generalist</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>generalist</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1005040"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A phenotype describing an organism with a broad ecological niche, capable of thriving across diverse environments or utilizing varied resources.</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="inbio:000022"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1005040"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>generalist</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
     </owl:Axiom>
 </rdf:RDF>
 

@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: https://w3id.org/metpo/metpo/releases/2025-12-12/metpo-full.owl
+data-version: https://w3id.org/metpo/metpo/releases/2026-03-24/metpo-full.owl
 idspace: dce http://purl.org/dc/elements/1.1/ 
 idspace: dcterms http://purl.org/dc/terms/ 
 idspace: metpo https://w3id.org/metpo/ 
@@ -13,7 +13,7 @@ property_value: dcterms:issued "2024-01-01" xsd:string
 property_value: dcterms:license https://creativecommons.org/licenses/by/4.0/
 property_value: dcterms:modified "2025-09-29" xsd:string
 property_value: dcterms:title "METPO" xsd:string
-property_value: owl:versionInfo "2025-12-12" xsd:string
+property_value: owl:versionInfo "2026-03-24" xsd:string
 
 [Term]
 id: metpo:1000059
@@ -35,6 +35,7 @@ property_value: IAO:0000117 "Anthea Guo" xsd:string
 id: metpo:1000127
 name: GC content
 def: "A quality that is describing the percentage of guanine and cytosine nucleotides in genomic DNA, calculated as the ratio of GC base pairs to total base pairs." [] {IAO:0000119="https://purl.dsmz.de/schema/GCContent"}
+synonym: "GC percentage" RELATED [] {IAO:0000119="https://metatraits.embl.de/"}
 is_a: metpo:1000188 ! quality
 property_value: IAO:0000117 "Luke Wang" xsd:string
 
@@ -605,7 +606,7 @@ property_value: qudt:ucumCode "Cel" xsd:string
 id: metpo:1000525
 name: microbe
 def: "A material entity that is too small to be viewed by the unaided eye, typically requiring microscopy for observation." [] {IAO:0000119="OHMI:0000460"}
-comment: METPO is primarily concerned with unicellular, prokaryotic life forms, i.e. bacteria and archea, including the cases of giant bacteria like Thiomargarita
+comment: METPO is primarily concerned with unicellular, prokaryotic life forms, i.e. bacteria and archaea, including the cases of giant bacteria like Thiomargarita
 is_a: metpo:1000186 ! material entity
 property_value: IAO:0000117 "Luke Wang" xsd:string
 property_value: skos:closeMatch https://biolink.github.io/biolink-model/OrganismTaxon
@@ -663,6 +664,7 @@ id: metpo:1000601
 name: oxygen preference
 def: "A phenotype that is relating to an organism's oxygen requirements or tolerance for growth." [] {IAO:0000119="UPHENO:0049673", IAO:0000119="https://purl.dsmz.de/schema/OxygenTolerance"}
 synonym: "metabolism" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
+synonym: "oxygen preference" RELATED [] {IAO:0000119="https://metatraits.embl.de/"}
 synonym: "Physiology and metabolism.oxygen tolerance.oxygen tolerance" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:1000059 ! phenotype
 
@@ -699,6 +701,7 @@ name: facultatively anaerobic
 def: "An oxygen preference in which growth can occur with or without molecular oxygen (O₂)." [] {IAO:0000119="OMP:0000087", IAO:0000119="MICRO:0001520"}
 synonym: "facultative" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 synonym: "facultative anaerobe" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
+synonym: "facultative anaerobe" RELATED [] {IAO:0000119="https://metatraits.embl.de/"}
 is_a: metpo:1000601 ! oxygen preference
 
 [Term]
@@ -706,6 +709,7 @@ id: metpo:1000606
 name: obligately aerobic
 def: "An oxygen preference that requires molecular oxygen (O₂) for growth." [] {IAO:0000119="MICRO:0000516"}
 synonym: "obligate aerobe" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
+synonym: "obligate aerobic" RELATED [] {IAO:0000119="https://metatraits.embl.de/"}
 synonym: "obligate aerobic" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 is_a: metpo:1000601 ! oxygen preference
 
@@ -730,6 +734,7 @@ id: metpo:1000609
 name: aerotolerant
 def: "An oxygen preference that does not use O₂ for growth but tolerates its presence." [] {IAO:0000119="MICRO:0000502"}
 synonym: "aerotolerant" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
+synonym: "aerotolerant" RELATED [] {IAO:0000119="https://metatraits.embl.de/"}
 is_a: metpo:1000601 ! oxygen preference
 
 [Term]
@@ -743,6 +748,7 @@ is_a: metpo:1000601 ! oxygen preference
 id: metpo:1000611
 name: strictly anaerobic
 def: "An obligately anaerobic where a microorganism does not grow in the presence of oxygen gas (O2)." [] {IAO:0000119="OMP:0000184"}
+synonym: "obligate anaerobic" RELATED [] {IAO:0000119="https://metatraits.embl.de/"}
 synonym: "strictly anaerobic" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 is_a: metpo:1000607 ! obligately anaerobic
 
@@ -759,6 +765,7 @@ name: temperature preference
 def: "A phenotype that describes characteristic growth with respect to environmental temperature." [] {IAO:0000119="OMP:0005002"}
 synonym: "Physiology and metabolism.culture temp.temperature" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 synonym: "range_tmp" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
+synonym: "temperature preference" RELATED [] {IAO:0000119="https://metatraits.embl.de/"}
 is_a: metpo:1000059 ! phenotype
 
 [Term]
@@ -767,6 +774,7 @@ name: psychrophilic
 def: "A temperature preference in which growth is favored at low temperatures, typically near or below ~15 °C." [] {IAO:0000119="MICRO:0001306"}
 synonym: "psychrophilic" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 synonym: "psychrophilic" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
+synonym: "psychrophilic" RELATED [] {IAO:0000119="https://metatraits.embl.de/"}
 is_a: metpo:1000613 ! temperature preference
 
 [Term]
@@ -781,6 +789,7 @@ is_a: metpo:1000613 ! temperature preference
 id: metpo:1000616
 name: thermophilic
 def: "A temperature preference in which growth is favored at elevated temperatures, typically ≥45 °C." [] {IAO:0000119="OMP:0005003", IAO:0000119="OMP:0005004", IAO:0000119="MICRO:0000118"}
+synonym: "thermophilic" RELATED [] {IAO:0000119="https://metatraits.embl.de/"}
 synonym: "thermophilic" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 synonym: "thermophilic" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 is_a: metpo:1000613 ! temperature preference
@@ -885,6 +894,7 @@ name: halophily preference
 def: "A phenotype that is relating to an organism's salt concentration requirements or tolerance for growth." [] {IAO:0000119="https://purl.dsmz.de/schema/SaltTolerance", IAO:0000119="OMP:0005016"}
 synonym: "Physiology and metabolism.halophily.halophily level" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 synonym: "range_salinity" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
+synonym: "salinity preference" RELATED [] {IAO:0000119="https://metatraits.embl.de/"}
 is_a: metpo:1000059 ! phenotype
 
 [Term]
@@ -1146,6 +1156,7 @@ is_a: metpo:1000631 ! trophic type
 id: metpo:1000666
 name: cell shape
 def: "A phenotype that describes the characteristic three-dimensional morphological form of a microbial cell, determined by cell wall structure, cytoskeletal elements, and environmental factors." [] {IAO:0000119="OMP:0000073"}
+synonym: "cell shape" RELATED [] {IAO:0000119="https://metatraits.embl.de/"}
 synonym: "cell_shape" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 synonym: "Morphology.cell morphology.cell shape" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:1000059 ! phenotype
@@ -1399,6 +1410,7 @@ id: metpo:1000698
 name: gram positive
 def: "A gram stain in which an organism retains crystal violet dye and appears purple under microscopy due to a thick peptidoglycan cell wall." [] {IAO:0000119="OMP:0000188", IAO:0000119="https://purl.dsmz.de/schema/GramPositiveBacteria"}
 synonym: "G_positive" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
+synonym: "gram positive" RELATED [] {IAO:0000119="https://metatraits.embl.de/"}
 synonym: "positive" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 synonym: "positive" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 is_a: metpo:1000697 ! gram stain
@@ -1408,6 +1420,7 @@ id: metpo:1000699
 name: gram negative
 def: "A gram stain in which bacteria do not retain crystal violet dye and appear pink or red after staining, indicating a thin peptidoglycan layer and presence of an outer membrane." []
 synonym: "G_negative" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
+synonym: "gram negative" RELATED [] {IAO:0000119="https://metatraits.embl.de/"}
 synonym: "negative" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 synonym: "negative" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 is_a: metpo:1000697 ! gram stain
@@ -1427,6 +1440,7 @@ name: motility
 def: "A phenotype in which an organism has the capability to move independently through its environment, typically by means of flagella, pili, gliding mechanisms, or other locomotory structures." [] {IAO:0000119="OMP:0000001"}
 synonym: "Morphology.cell morphology.motility" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 synonym: "motility" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
+synonym: "presence of motility" RELATED [] {IAO:0000119="https://metatraits.embl.de/"}
 is_a: metpo:1000059 ! phenotype
 property_value: IAO:0000117 "Jed Dongjin Kim-Ozaeta" xsd:string
 
@@ -1473,7 +1487,7 @@ is_a: metpo:1000702 ! motile
 [Term]
 id: metpo:1000720
 name: facultative psychrophilic
-def: "A temperature preference characterized by the ability to grow at low temperatures (typically below 20Â°C) while maintaining optimal growth at moderate temperatures." [] {IAO:0000119="OMP:0005007", IAO:0000119="MICRO:0001306", IAO:0000119="MICRO:0001417"}
+def: "A temperature preference characterized by the ability to grow at low temperatures (typically below 20°C) while maintaining optimal growth at moderate temperatures." [] {IAO:0000119="OMP:0005007", IAO:0000119="MICRO:0001306", IAO:0000119="MICRO:0001417"}
 synonym: "facultative psychrophile" RELATED []
 synonym: "facultative psychrophilic" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 is_a: metpo:1000613 ! temperature preference
@@ -1499,6 +1513,7 @@ id: metpo:1000800
 name: respiration
 def: "A metabolism that is characterized by the method of performing cellular respiration, distinguished primarily by the specific terminal electron acceptor utilized for producing cellular energy." [] {IAO:0000119="GO:0045333", IAO:0000119="GO:0009060"}
 synonym: "pathways" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
+synonym: "respiration" RELATED [] {IAO:0000119="https://metatraits.embl.de/"}
 is_a: metpo:1000060 ! metabolism
 property_value: IAO:0000117 "Anthea Guo" xsd:string
 
@@ -1582,6 +1597,7 @@ name: sporulation
 def: "A phenotype that is relating to an organism's ability to form dormant, stress-resistant endospores." [] {IAO:0000119="GO:0043934"}
 synonym: "General.keywords" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 synonym: "Physiology and metabolism.spore formation.spore formation" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
+synonym: "sporulation" RELATED [] {IAO:0000119="https://metatraits.embl.de/"}
 synonym: "sporulation" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 is_a: metpo:1000059 ! phenotype
 
@@ -1607,12 +1623,14 @@ is_a: metpo:1000870 ! sporulation
 id: metpo:1000881
 name: cell length
 def: "A phenotype that inheres in a cell by virtue of its longer dimension when viewed on a plane." [] {IAO:0000119="OBA:2040145"}
+synonym: "cell length" RELATED [] {IAO:0000119="https://metatraits.embl.de/"}
 is_a: metpo:1000059 ! phenotype
 
 [Term]
 id: metpo:1000882
 name: cell width
 def: "A phenotype that inheres in a cell by virtue of its shorter dimension when viewed on a plane." [] {IAO:0000119="OBA:2040146"}
+synonym: "cell width" RELATED [] {IAO:0000119="https://metatraits.embl.de/"}
 is_a: metpo:1000059 ! phenotype
 
 [Term]
@@ -1793,6 +1811,7 @@ is_a: metpo:1001000 ! observation
 id: metpo:1001101
 name: biosafety level
 def: "A quality that categorizes biological agents according to their hazard level and required containment measures." []
+synonym: "biosafety level" RELATED [] {IAO:0000119="https://metatraits.embl.de/"}
 synonym: "Safety information.risk assessment.biosafety level" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:1000188 ! quality
 
@@ -1845,6 +1864,7 @@ id: metpo:1002005
 name: Fermentation
 def: "A respiration that generates energy through the oxidation of organic compounds without using an external electron acceptor, using organic molecules as both electron donors and final electron acceptors." [] {IAO:0000119="GO:0006113"}
 synonym: "fermentation" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
+synonym: "fermentation" RELATED [] {IAO:0000119="https://metatraits.embl.de/"}
 is_a: metpo:1000800 ! respiration
 property_value: IAO:0000117 "Luke Wang" xsd:string
 
@@ -1859,6 +1879,7 @@ property_value: IAO:0000117 "Jed Dongjin Kim-Ozaeta" xsd:string
 id: metpo:1003000
 name: pH growth preference
 def: "A phenotype that describes how the rate and extent of population growth are affected by environmental pH." [] {IAO:0000119="OMP:0005008"}
+synonym: "pH growth" RELATED [] {IAO:0000119="https://metatraits.embl.de/"}
 is_a: metpo:1000059 ! phenotype
 
 [Term]
@@ -1887,6 +1908,7 @@ name: acidophilic
 def: "A pH growth preference in which an organism grows optimally at pH values below 5." [] {IAO:0000119="OMP:0007945", IAO:0000119="OMP:0005009", IAO:0000119="MICRO:0001549", IAO:0000119="OMP:0005010", IAO:0000119="OMP:0005011"}
 synonym: "acidophil" EXACT []
 synonym: "acidophile" EXACT []
+synonym: "acidophilic" RELATED [] {IAO:0000119="https://metatraits.embl.de/"}
 is_a: metpo:1003000 ! pH growth preference
 
 [Term]
@@ -1948,6 +1970,7 @@ is_a: metpo:1003000 ! pH growth preference
 id: metpo:1003021
 name: pigmentation
 def: "A phenotype characterized by the color of pigments produced by a microorganism." [] {IAO:0000119="GO:0043473"}
+synonym: "cell color" RELATED [] {IAO:0000119="https://metatraits.embl.de/"}
 is_a: metpo:1000059 ! phenotype
 
 [Term]
@@ -2002,6 +2025,7 @@ is_a: metpo:1003021 ! pigmentation
 id: metpo:1003030
 name: yellow pigmented
 synonym: "Pigment_yellow" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
+synonym: "yellow pigment" RELATED [] {IAO:0000119="https://metatraits.embl.de/"}
 is_a: metpo:1003021 ! pigmentation
 
 [Term]
@@ -2046,6 +2070,165 @@ def: "A processed material that provides the nutrients and environmental conditi
 comment: This class is equivalent to OBI:0000079 'culture medium'. It is included in METPO to serve as the range for growth-related object properties.
 is_a: metpo:1000186 ! material entity
 property_value: skos:closeMatch https://biolink.github.io/biolink-model/ChemicalEntity
+
+[Term]
+id: metpo:1005001
+name: nitrification
+def: "A two-step biological process in which ammonia is oxidized to nitrite (ammonia oxidation) and nitrite is oxidized to nitrate (nitrite oxidation)." [] {IAO:0000119="GO:0019332", IAO:0000119="GO:0019329"}
+comment: MetaTraits maps to OMIT:0027217 (wrong ontology). Correct GO terms are GO:0019329 (ammonia oxidation) and GO:0019332 (nitrite oxidation).
+synonym: "nitrification" RELATED [] {IAO:0000119="https://metatraits.embl.de/"}
+is_a: metpo:1000630 ! biological process
+
+[Term]
+id: metpo:1005010
+name: indole test
+def: "An assay that tests the ability of an organism to produce indole from tryptophan." [] {IAO:0000119="MICRO:0000430"}
+synonym: "indole test" RELATED [] {IAO:0000119="https://metatraits.embl.de/"}
+is_a: metpo:1000059 ! phenotype
+
+[Term]
+id: metpo:1005011
+name: indole test positive
+def: "A phenotype in which an organism tests positive in the indole test, indicating it produces indole from tryptophan." []
+synonym: "indole test" RELATED [] {IAO:0000119="https://metatraits.embl.de/"}
+is_a: metpo:1005010 ! indole test
+
+[Term]
+id: metpo:1005012
+name: indole test negative
+def: "A phenotype in which an organism tests negative in the indole test, indicating it does not produce indole from tryptophan." []
+is_a: metpo:1005010 ! indole test
+
+[Term]
+id: metpo:1005013
+name: methyl red test
+def: "An assay that tests the ability of an organism to produce and maintain stable acid end products from glucose fermentation." [] {IAO:0000119="SNOMED:5894006"}
+synonym: "methyl red test" RELATED [] {IAO:0000119="https://metatraits.embl.de/"}
+is_a: metpo:1000059 ! phenotype
+
+[Term]
+id: metpo:1005014
+name: methyl red test positive
+def: "A phenotype in which an organism tests positive in the methyl red test, indicating mixed acid fermentation." []
+synonym: "methyl red test" RELATED [] {IAO:0000119="https://metatraits.embl.de/"}
+is_a: metpo:1005013 ! methyl red test
+
+[Term]
+id: metpo:1005015
+name: methyl red test negative
+def: "A phenotype in which an organism tests negative in the methyl red test." []
+is_a: metpo:1005013 ! methyl red test
+
+[Term]
+id: metpo:1005016
+name: Voges-Proskauer test
+def: "An assay that tests the ability of an organism to produce acetoin from glucose via the butanediol fermentation pathway." [] {IAO:0000119="SNOMED:66592006"}
+synonym: "voges-proskauer test" RELATED [] {IAO:0000119="https://metatraits.embl.de/"}
+is_a: metpo:1000059 ! phenotype
+
+[Term]
+id: metpo:1005017
+name: Voges-Proskauer test positive
+def: "A phenotype in which an organism tests positive in the Voges-Proskauer test, indicating acetoin production." []
+synonym: "voges-proskauer test" RELATED [] {IAO:0000119="https://metatraits.embl.de/"}
+is_a: metpo:1005016 ! Voges-Proskauer test
+
+[Term]
+id: metpo:1005018
+name: Voges-Proskauer test negative
+def: "A phenotype in which an organism tests negative in the Voges-Proskauer test." []
+is_a: metpo:1005016 ! Voges-Proskauer test
+
+[Term]
+id: metpo:1005021
+name: capnophilic
+def: "A phenotype describing an organism that requires elevated concentrations of carbon dioxide for growth." [] {IAO:0000119="SNOMED:413748004"}
+synonym: "capnophilic" RELATED [] {IAO:0000119="https://metatraits.embl.de/"}
+is_a: metpo:1000601 ! oxygen preference
+
+[Term]
+id: metpo:1005025
+name: hemolysis
+def: "A phenotype describing the ability of an organism to lyse red blood cells." [] {IAO:0000119="OMP:0005117"}
+synonym: "presence of hemolysis" RELATED [] {IAO:0000119="https://metatraits.embl.de/"}
+is_a: metpo:1000059 ! phenotype
+
+[Term]
+id: metpo:1005026
+name: hemolytic
+def: "A phenotype in which an organism is capable of lysing red blood cells." []
+is_a: metpo:1005025 ! hemolysis
+
+[Term]
+id: metpo:1005027
+name: non-hemolytic
+def: "A phenotype in which an organism does not lyse red blood cells." []
+is_a: metpo:1005025 ! hemolysis
+
+[Term]
+id: metpo:1005031
+name: peritrichous flagellation
+def: "A motility phenotype in which flagella are distributed over the entire cell surface." [] {IAO:0000119="OMP:0000078"}
+synonym: "flagellum arrangement" RELATED [] {IAO:0000119="https://metatraits.embl.de/"}
+is_a: metpo:1000704 ! flagellated
+
+[Term]
+id: metpo:1005032
+name: polar flagellation
+def: "A motility phenotype in which one or more flagella are located at one or both poles of the cell." []
+synonym: "flagellum arrangement" RELATED [] {IAO:0000119="https://metatraits.embl.de/"}
+is_a: metpo:1000704 ! flagellated
+
+[Term]
+id: metpo:1005033
+name: amphitrichous flagellation
+def: "A motility phenotype in which a single flagellum is present at each pole of the cell." []
+is_a: metpo:1000704 ! flagellated
+
+[Term]
+id: metpo:1005034
+name: lophotrichous flagellation
+def: "A motility phenotype in which a tuft of flagella is present at one or both poles of the cell." []
+is_a: metpo:1000704 ! flagellated
+
+[Term]
+id: metpo:1005035
+name: monotrichous flagellation
+def: "A motility phenotype in which a single flagellum is present at one pole of the cell." []
+is_a: metpo:1000704 ! flagellated
+
+[Term]
+id: metpo:1005036
+name: lateral flagellation
+def: "A motility phenotype in which flagella emerge from the lateral side of the cell." []
+is_a: metpo:1000704 ! flagellated
+
+[Term]
+id: metpo:1005037
+name: subpolar flagellation
+def: "A motility phenotype in which flagella are located near but not at the cell pole." []
+is_a: metpo:1000704 ! flagellated
+
+[Term]
+id: metpo:1005038
+name: denitrification
+def: "A biological process in which nitrate or nitrite is reduced to gaseous nitrogen compounds (NO, N2O, or N2) under anaerobic or microaerobic conditions." [] {IAO:0000119="GO:0019333"}
+synonym: "denitrification pathway" RELATED [] {IAO:0000119="https://metatraits.embl.de/"}
+is_a: metpo:1000630 ! biological process
+
+[Term]
+id: metpo:1005039
+name: nitrogen fixation
+def: "A biological process in which atmospheric dinitrogen is reduced to ammonia, catalyzed by nitrogenase." [] {IAO:0000119="GO:0009399"}
+synonym: "nitrogen fixation" RELATED [] {IAO:0000119="https://metatraits.embl.de/"}
+is_a: metpo:1000630 ! biological process
+
+[Term]
+id: metpo:1005040
+name: generalist
+def: "A phenotype describing an organism with a broad ecological niche, capable of thriving across diverse environments or utilizing varied resources." [] {IAO:0000119="inbio:000022"}
+synonym: "generalist" RELATED [] {IAO:0000119="https://metatraits.embl.de/"}
+is_a: metpo:1000059 ! phenotype
 
 [Typedef]
 id: metpo:2000001
@@ -2135,6 +2318,7 @@ is_a: metpo:2000001 ! organism interacts with chemical
 id: metpo:2000015
 name: uses in other way
 synonym: "other" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
+synonym: "utilizes" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
@@ -2291,6 +2475,7 @@ is_a: metpo:2000001 ! organism interacts with chemical
 id: metpo:2000041
 name: does not use in other way
 synonym: "other" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
+synonym: "utilizes" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: metpo:2000001 ! organism interacts with chemical
 
 [Typedef]
@@ -2676,4 +2861,40 @@ name: does not grow in
 def: "A relation between a microbe and a growth medium indicating that the microbe has been demonstrated to fail to grow in that medium under some set of conditions. This relation represents a generalization from experimental observations reported in the literature or databases; it does not imply that the microbe cannot grow in the medium under any conditions." []
 domain: metpo:1000525 ! microbe
 range: metpo:1004005 ! growth medium
+
+[Typedef]
+id: metpo:2000601
+name: denitrifies
+synonym: "denitrification" RELATED [] {IAO:0000119="https://metatraits.embl.de/"}
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000602
+name: does not denitrify
+synonym: "denitrification" RELATED [] {IAO:0000119="https://metatraits.embl.de/"}
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000603
+name: ammonifies
+synonym: "ammonification" RELATED [] {IAO:0000119="https://metatraits.embl.de/"}
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000604
+name: does not ammonify
+synonym: "ammonification" RELATED [] {IAO:0000119="https://metatraits.embl.de/"}
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000605
+name: oxidizes in darkness
+synonym: "oxidation in darkness" RELATED [] {IAO:0000119="https://metatraits.embl.de/"}
+is_a: metpo:2000001 ! organism interacts with chemical
+
+[Typedef]
+id: metpo:2000606
+name: does not oxidize in darkness
+synonym: "oxidation in darkness" RELATED [] {IAO:0000119="https://metatraits.embl.de/"}
+is_a: metpo:2000001 ! organism interacts with chemical
 
