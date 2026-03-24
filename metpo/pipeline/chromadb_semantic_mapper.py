@@ -366,13 +366,13 @@ def query_chromadb_for_term(
 @click.option(
     "--chroma-path",
     type=click.Path(path_type=str),
-    default=str(CHROMADB_ROOT / "embeddings_chroma"),
+    default=str(CHROMADB_ROOT / "chroma_ols20_nonols4"),
     help="Path to ChromaDB storage directory",
 )
 @click.option(
     "--collection-name",
     type=str,
-    default="ols_embeddings",
+    default="combined_embeddings",
     help="Name of the ChromaDB collection to query",
 )
 @click.option(
