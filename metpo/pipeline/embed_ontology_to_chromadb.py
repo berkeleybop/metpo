@@ -20,6 +20,8 @@ from chromadb.config import Settings
 from dotenv import load_dotenv
 from tqdm import tqdm
 
+from metpo.cli_common import CHROMADB_ROOT
+
 
 def parse_robot_output(tsv_path: str, ontology_id: str) -> list[dict]:
     """
@@ -209,7 +211,7 @@ def insert_into_chromadb(
 @click.option(
     "--chroma-path",
     type=click.Path(),
-    default="./embeddings_chroma",
+    default=str(CHROMADB_ROOT / "embeddings_chroma"),
     help="Path to ChromaDB storage directory",
 )
 @click.option(
