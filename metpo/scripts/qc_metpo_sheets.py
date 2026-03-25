@@ -19,11 +19,10 @@ from pathlib import Path
 
 import click
 
-GOOGLE_SHEET_ID = "1_Lr-9_5QHi8QLvRyTZFSciUhzGKD4DbUObyTpJ16_RU"
-SHEET_GIDS = {
-    "metpo_sheet": "355012485",
-    "metpo-properties": "2094089867",
-}
+from metpo.sheets_config import SHEET_GIDS, SPREADSHEET_ID
+
+# Map from download filename stems to sheets_config keys
+_SHEET_NAMES = {"metpo_sheet": "classes", "metpo-properties": "properties"}
 
 
 class QCIssue:
@@ -105,7 +104,9 @@ class SheetData:
 
 def download_sheet(gid: str, output_file: str):
     """Download TSV from Google Sheets."""
-    url = f"https://docs.google.com/spreadsheets/d/{GOOGLE_SHEET_ID}/export?exportFormat=tsv&gid={gid}"
+    url = (
+        f"https://docs.google.com/spreadsheets/d/{SPREADSHEET_ID}/export?exportFormat=tsv&gid={gid}"
+    )
     click.echo(f"Downloading {output_file} from Google Sheets...")
     urllib.request.urlretrieve(url, output_file)
     click.echo(f"  ✓ Downloaded to {output_file}")
@@ -544,8 +545,9 @@ def main(download: bool, main_sheet: str, properties_sheet: str):
 
     if download:
         files = []
-        for name, gid in SHEET_GIDS.items():
-            filename = f"/tmp/{name}.tsv"
+        for file_stem, config_key in _SHEET_NAMES.items():
+            gid = SHEET_GIDS[config_key]
+            filename = f"/tmp/{file_stem}.tsv"
             download_sheet(gid, filename)
             files.append(filename)
     else:

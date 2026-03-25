@@ -1,0 +1,59 @@
+## METPO Google Sheets configuration
+## Single source of truth — all scripts and Makefiles read from here.
+## See https://github.com/berkeleybop/metpo/issues/372
+
+spreadsheet_id: "1_Lr-9_5QHi8QLvRyTZFSciUhzGKD4DbUObyTpJ16_RU"
+
+# Primary sheets used in the ontology build
+primary:
+  classes:
+    gid: "1569766102"
+    tab_name: "classes-2026-03-24"
+    template_path: "src/templates/metpo_sheet.tsv"
+  properties:
+    gid: "681401984"
+    tab_name: "properties-2026-03-24"
+    template_path: "src/templates/metpo-properties.tsv"
+
+# Secondary sheets (bulk download, not used in build)
+secondary:
+  bactotraits:
+    gid: "1192666692"
+    tab_name: "bactotraits"
+  more_synonyms:
+    gid: "907926993"
+    tab_name: "more_synonyms"
+  more_classes_inconsistent:
+    gid: "1427185859"
+    tab_name: "more_classes___inconsistent"
+  metabolic_and_respiratory_robot:
+    gid: "2135183176"
+    tab_name: "metabolic_and_respiratory_robot"
+  metabolic_and_respiratory_llm:
+    gid: "499077032"
+    tab_name: "metabolic_and_respiratory_llm"
+
+# Deprecated sheets — DO NOT USE for builds or diffs.
+# Kept here so the GIDs are documented, not lost.
+deprecated:
+  minimal_classes:
+    gid: "355012485"
+    tab_name: "minimal set of classes"
+    superseded_by: "classes"
+  relabeled_classes:
+    gid: "121955004"
+    tab_name: "relabeled classes"
+    superseded_by: "classes"
+  old_properties:
+    gid: "2094089867"
+    tab_name: "properties (old)"
+    superseded_by: "properties"
+  trophic_mapping_bacdive:
+    gid: "44169923"
+    tab_name: "trophic_mapping_bacdive__tbdeleted"
+  attic_classes:
+    gid: "1347388120"
+    tab_name: "attic_classes"
+  attic_properties:
+    gid: "565614186"
+    tab_name: "attic_properties"

@@ -466,31 +466,28 @@ create-bactotraits-files:
 # Google Sheets Download Targets
 # =====================================================
 
-# Default spreadsheet ID (from metpo.Makefile)
-SPREADSHEET_ID = 1_Lr-9_5QHi8QLvRyTZFSciUhzGKD4DbUObyTpJ16_RU
+# Sheet GIDs are centralized in sheets.yaml at repo root.
+# See https://github.com/berkeleybop/metpo/issues/372
+SPREADSHEET_ID = $(shell python3 -c "from metpo.sheets_config import SPREADSHEET_ID; print(SPREADSHEET_ID)")
 BASE_URL = https://docs.google.com/spreadsheets/d/$(SPREADSHEET_ID)/export
-
-# All sheet gids discovered via Google Apps Script (10 total sheets)
-GID_MINIMAL_CLASSES = 121955004
-GID_PROPERTIES = 2094089867
-GID_BACTOTRAITS = 1192666692
-GID_MORE_SYNONYMS = 907926993
-GID_MORE_CLASSES___INCONSISTENT = 1427185859
-GID_METABOLIC_AND_RESPIRATORY_ROBOT = 2135183176
-GID_METABOLIC_AND_RESPIRATORY_LLM = 499077032
-GID_TROPHIC_MAPPING_BACDIVE__TBDELETED = 44169923
-GID_ATTIC_CLASSES = 1347388120
-GID_ATTIC_PROPERTIES = 565614186
+_SHEETS_YAML = $(shell python3 -c "import yaml; print(yaml.safe_load(open('sheets.yaml')))" 2>/dev/null)
+GID_CLASSES = $(shell python3 -c "import yaml; print(yaml.safe_load(open('sheets.yaml'))['primary']['classes']['gid'])")
+GID_PROPERTIES = $(shell python3 -c "import yaml; print(yaml.safe_load(open('sheets.yaml'))['primary']['properties']['gid'])")
+GID_BACTOTRAITS = $(shell python3 -c "import yaml; print(yaml.safe_load(open('sheets.yaml'))['secondary']['bactotraits']['gid'])")
+GID_MORE_SYNONYMS = $(shell python3 -c "import yaml; print(yaml.safe_load(open('sheets.yaml'))['secondary']['more_synonyms']['gid'])")
+GID_MORE_CLASSES___INCONSISTENT = $(shell python3 -c "import yaml; print(yaml.safe_load(open('sheets.yaml'))['secondary']['more_classes_inconsistent']['gid'])")
+GID_METABOLIC_AND_RESPIRATORY_ROBOT = $(shell python3 -c "import yaml; print(yaml.safe_load(open('sheets.yaml'))['secondary']['metabolic_and_respiratory_robot']['gid'])")
+GID_METABOLIC_AND_RESPIRATORY_LLM = $(shell python3 -c "import yaml; print(yaml.safe_load(open('sheets.yaml'))['secondary']['metabolic_and_respiratory_llm']['gid'])")
 
 .PHONY: download-all-sheets clean-sheets
 
-# Download all discovered sheets to downloads/sheets/
-download-all-sheets: downloads/sheets/minimal_classes.tsv downloads/sheets/properties.tsv downloads/sheets/bactotraits.tsv downloads/sheets/more_synonyms.tsv downloads/sheets/more_classes___inconsistent.tsv downloads/sheets/metabolic_and_respiratory_robot.tsv downloads/sheets/metabolic_and_respiratory_llm.tsv downloads/sheets/trophic_mapping_bacdive__tbdeleted.tsv downloads/sheets/attic_classes.tsv downloads/sheets/attic_properties.tsv
-	@echo "All 10 sheets downloaded to downloads/sheets/"
+# Download primary + secondary sheets to downloads/sheets/
+download-all-sheets: downloads/sheets/classes.tsv downloads/sheets/properties.tsv downloads/sheets/bactotraits.tsv downloads/sheets/more_synonyms.tsv downloads/sheets/more_classes___inconsistent.tsv downloads/sheets/metabolic_and_respiratory_robot.tsv downloads/sheets/metabolic_and_respiratory_llm.tsv
+	@echo "All sheets downloaded to downloads/sheets/"
 
 # Individual sheet download targets
-downloads/sheets/minimal_classes.tsv: | downloads/sheets
-	curl -L -s '$(BASE_URL)?exportFormat=tsv&gid=$(GID_MINIMAL_CLASSES)' > $@
+downloads/sheets/classes.tsv: | downloads/sheets
+	curl -L -s '$(BASE_URL)?exportFormat=tsv&gid=$(GID_CLASSES)' > $@
 
 downloads/sheets/properties.tsv: | downloads/sheets
 	curl -L -s '$(BASE_URL)?exportFormat=tsv&gid=$(GID_PROPERTIES)' > $@
@@ -509,15 +506,6 @@ downloads/sheets/metabolic_and_respiratory_robot.tsv: | downloads/sheets
 
 downloads/sheets/metabolic_and_respiratory_llm.tsv: | downloads/sheets
 	curl -L -s '$(BASE_URL)?exportFormat=tsv&gid=$(GID_METABOLIC_AND_RESPIRATORY_LLM)' > $@
-
-downloads/sheets/trophic_mapping_bacdive__tbdeleted.tsv: | downloads/sheets
-	curl -L -s '$(BASE_URL)?exportFormat=tsv&gid=$(GID_TROPHIC_MAPPING_BACDIVE__TBDELETED)' > $@
-
-downloads/sheets/attic_classes.tsv: | downloads/sheets
-	curl -L -s '$(BASE_URL)?exportFormat=tsv&gid=$(GID_ATTIC_CLASSES)' > $@
-
-downloads/sheets/attic_properties.tsv: | downloads/sheets
-	curl -L -s '$(BASE_URL)?exportFormat=tsv&gid=$(GID_ATTIC_PROPERTIES)' > $@
 
 # Ensure downloads/sheets directory exists
 downloads/sheets:

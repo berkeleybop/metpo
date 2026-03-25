@@ -17,15 +17,7 @@ from pathlib import Path
 
 import click
 
-SPREADSHEET_ID = "1_Lr-9_5QHi8QLvRyTZFSciUhzGKD4DbUObyTpJ16_RU"
-SHEET_GIDS = {
-    "classes": "121955004",
-    "properties": "2094089867",
-}
-TEMPLATE_PATHS = {
-    "classes": "src/templates/metpo_sheet.tsv",
-    "properties": "src/templates/metpo-properties.tsv",
-}
+from metpo.sheets_config import SHEET_GIDS, SPREADSHEET_ID, TEMPLATE_PATHS
 
 _temp_files: list[Path] = []
 

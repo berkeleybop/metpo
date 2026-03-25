@@ -3,21 +3,10 @@
 ## If you need to customize your Makefile, make
 ## changes here rather than in the main Makefile
 
-# Sheet IDs (spreadsheet: 1_Lr-9_5QHi8QLvRyTZFSciUhzGKD4DbUObyTpJ16_RU):
-# gid=1427185859 = comprehensive classes sheet (disabled - too comprehensive for current build)
-# gid=355012485 = minimal set of classes (previous)
-# gid=121955004 = relabeled classes (previous primary, superseded 2026-03-24)
-# gid=907926993 = synonyms sheet
-# gid=2094089867 = properties (previous primary, superseded 2026-03-24)
-# gid=1569766102 = classes-2026-03-24 (current primary, matches PR #355)
-# gid=681401984  = properties-2026-03-24 (current primary, matches PR #355)
-
-SRC_URL_MAIN = 'https://docs.google.com/spreadsheets/d/1_Lr-9_5QHi8QLvRyTZFSciUhzGKD4DbUObyTpJ16_RU/export?exportFormat=tsv&gid=1569766102'
-# SRC_URL_SYNONYMS = 'https://docs.google.com/spreadsheets/d/1_Lr-9_5QHi8QLvRyTZFSciUhzGKD4DbUObyTpJ16_RU/export?exportFormat=tsv&gid=907926993'
-SRC_URL_PROPERTIES = 'https://docs.google.com/spreadsheets/d/1_Lr-9_5QHi8QLvRyTZFSciUhzGKD4DbUObyTpJ16_RU/export?exportFormat=tsv&gid=681401984'
-
-# Disabled comprehensive classes sheet:
-# SRC_URL_COMPREHENSIVE = 'https://docs.google.com/spreadsheets/d/1_Lr-9_5QHi8QLvRyTZFSciUhzGKD4DbUObyTpJ16_RU/export?exportFormat=tsv&gid=1427185859'
+# Sheet GIDs are centralized in sheets.yaml at repo root.
+# See https://github.com/berkeleybop/metpo/issues/372
+SRC_URL_MAIN = $(shell cd ../.. && python3 -c "from metpo.sheets_config import export_url; print(export_url('classes'))")
+SRC_URL_PROPERTIES = $(shell cd ../.. && python3 -c "from metpo.sheets_config import export_url; print(export_url('properties'))")
 
 DRAFTS_DIR = ../templates/drafts
 
