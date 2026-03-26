@@ -234,6 +234,7 @@ make notebooks/non-ols-terms/D3O.tsv
 - **Ontology editing**: `src/ontology/README-editors.md`
 - **CLI reference**: `docs/cli-reference.md` - Complete guide to all 30+ command-line tools
 - **Literature mining**: `literature_mining/README.md`
+- **Deprecation workflow**: `docs/deprecation-workflow.md` — how to deprecate terms and allocate new IDs
 - **ID allocation and deprecation**: `reports/id-allocation-audit.md` — auto-generated list of all active and burned IDs, next safe IDs to allocate
 - **Historical analysis**: `metadata/ontology/historical_submissions/README.md`
 - **Database metadata**: `metadata/databases/README.md`
