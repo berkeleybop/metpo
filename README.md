@@ -170,19 +170,25 @@ make all-reports
 - `reports/madin-metpo-reconciliation.yaml`
 - `reports/synonym-sources.tsv`
 
-### 5. Historical ID Tracking (`metadata/historical_usage_analysis/`)
+### 5. ID Allocation and Deprecation
 
-Track METPO entity stability and IRI evolution across BioPortal submissions.
+METPO has gone through three numbering eras. All IDs ever used — across current templates,
+historical BioPortal submissions, and tagged releases — are tracked to prevent reuse.
 
 ```bash
-# Download historical submissions
-make download-all-bioportal-submissions
+# Regenerate the id allocation audit report
+make audit-ids                   # writes reports/id-allocation-audit.md
 
-# Extract entities from each version
-make extract-all-metpo-entities
+# Regenerate the deprecated terms OWL component
+make -C src/ontology -f metpo.Makefile regenerate-deprecated
+# or just let the normal build pick it up:
+make -C src/ontology -f metpo.Makefile components/metpo_sheet.owl
 ```
 
-Analyzes IRI numbering scheme changes, entity additions/removals, and ID reuse violations. See `metadata/historical_usage_analysis/README.md` for comprehensive findings.
+`src/templates/deprecated.tsv` is a ROBOT template that marks every burned ID as
+`owl:deprecated true` with an `"obsolete ..."` label. It is committed to the repo and
+merged into `metpo.owl` during every release build. **Never reuse a burned ID** — consult
+`reports/id-allocation-audit.md` for the full list and the next safe IDs to allocate.
 
 ### 6. Ontology Alignment Pipeline (`notebooks/`)
 
@@ -228,6 +234,7 @@ make notebooks/non-ols-terms/D3O.tsv
 - **Ontology editing**: `src/ontology/README-editors.md`
 - **CLI reference**: `docs/cli-reference.md` - Complete guide to all 30+ command-line tools
 - **Literature mining**: `literature_mining/README.md`
+- **ID allocation and deprecation**: `reports/id-allocation-audit.md` — auto-generated list of all active and burned IDs, next safe IDs to allocate
 - **Historical analysis**: `metadata/ontology/historical_submissions/README.md`
 - **Database metadata**: `metadata/databases/README.md`
 - **Development guide**: `CLAUDE.md`
