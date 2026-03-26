@@ -83,7 +83,7 @@ These properties appeared in tagged releases or BioPortal submissions but are no
 | Era 1 | 6-digit (000xxx), submissions 2-3 | 274 |
 | Era 2 | 7-digit (0000xxx), submissions 3-5 | 301 |
 | Era 3 classes | 1xxxxxx, retired literature-mining terms | 587 |
-| Era 3 properties | 2xxxxxx, removed without deprecation | 53 |
+| Era 3 properties | 2xxxxxx, burned (removed or deprecated) | 53 |
 | Test | 9999999 | 1 |
 
 ## Safe Ranges for New Terms
