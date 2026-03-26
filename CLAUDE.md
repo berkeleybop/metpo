@@ -76,6 +76,56 @@ When cleaning up or organizing the repository:
 
 ---
 
+## ID Allocation and Term Deprecation
+
+### The invariants — read these before touching any ID
+
+1. **`src/templates/deprecated.tsv` is the source of truth** for all deprecated METPO terms.
+   It is committed to the repo and merged into `metpo.owl` on every build. Do not treat it
+   as a generated artifact — it is hand-maintained.
+
+2. **Never reuse a burned ID.** An ID is burned if it appears in `deprecated.tsv`, in any
+   BioPortal submission extract, or in any tagged release. Check before allocating.
+
+3. **The research tools were a one-time bootstrap.** `generate-deprecated-template` and
+   `audit-id-allocation` scanned BioPortal submissions and git history in March 2026 (PR #375)
+   to produce the initial `deprecated.tsv`. Do not re-run `generate-deprecated-template` as
+   part of routine maintenance — you will overwrite any hand-edits made since then. Run it
+   only as a recovery tool if `deprecated.tsv` is believed to be corrupt or badly out of sync.
+
+4. **The BioPortal submission extracts under `metadata/ontology/historical_submissions/`
+   may eventually be removed.** If they are, `deprecated.tsv` still encodes everything that
+   mattered in them.
+
+### Deprecating a term (the normal workflow)
+
+1. Remove the row from `src/templates/metpo_sheet.tsv` or `metpo-properties.tsv`.
+2. Add a row to `src/templates/deprecated.tsv` with `owl:deprecated true`, label
+   `"obsolete <former label>"`, and an obsolescence reason (`IAO:0000226` or `OMO:0001000`).
+3. Commit both changes in the same commit.
+
+Full details, column format, and examples: `docs/deprecation-workflow.md`.
+
+### Allocating a new ID
+
+```bash
+make audit-ids          # regenerates reports/id-allocation-audit.md
+```
+
+The report's "Safe Ranges" section gives the next available class and property IDs.
+Also run a grep sanity-check: `grep "METPO:<candidate>" src/templates/*.tsv src/templates/deprecated.tsv`
+
+### Quick reference
+
+| Task | Command |
+|------|---------|
+| See all burned IDs | `cat reports/id-allocation-audit.md` |
+| Regenerate audit report | `make audit-ids` |
+| Rebuild deprecated OWL component | `make -C src/ontology -f metpo.Makefile regenerate-deprecated` |
+| Verify an ID is safe to use | `grep "METPO:XXXXXXX" src/templates/*.tsv src/templates/deprecated.tsv reports/id-allocation-audit.md` |
+
+---
+
 ## Ontology Development
 
 ### Build Commands

@@ -337,9 +337,16 @@ clean-all: clean-env clean-data clean-bactotraits-db clean-madin-db clean-report
 import-all: import-bactotraits import-madin import-bactotraits-metadata import-madin-metadata
 	@echo "All datasets and metadata imported successfully"
 
-.PHONY: all-reports
-all-reports: reports/synonym-sources.tsv reports/bactotraits-metpo-set-diff.yaml reports/bactotraits-metpo-reconciliation.yaml reports/madin-metpo-reconciliation.yaml
+.PHONY: all-reports audit-ids
+all-reports: reports/synonym-sources.tsv reports/bactotraits-metpo-set-diff.yaml reports/bactotraits-metpo-reconciliation.yaml reports/madin-metpo-reconciliation.yaml reports/id-allocation-audit.md
 	@echo "All analysis reports generated successfully"
+
+reports/id-allocation-audit.md: src/templates/metpo_sheet.tsv src/templates/metpo-properties.tsv metpo/scripts/audit_id_allocation.py
+	mkdir -p $(dir $@)
+	uv run audit-id-allocation -o $@
+
+audit-ids: reports/id-allocation-audit.md
+	@cat $<
 
 # ==============================================================================
 # Definition Analysis Reports

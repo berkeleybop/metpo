@@ -274,22 +274,17 @@ Tagged release on GitHub
 Knowledge-Graph-Hub/kg-microbe download.yaml
 ```
 
-### Sheet gid values (from metpo.Makefile)
+### Sheet gid values
 
-| gid | Sheet Name | Status |
-|-----|-----------|--------|
-| 121955004 | Cleaned definition sources (classes) | **Active** — used for metpo_sheet.tsv |
-| 2094089867 | Properties | **Active** — used for metpo-properties.tsv |
-| 907926993 | Synonyms | **Disabled** (commented out) |
-| 1427185859 | Comprehensive classes | **Disabled** (commented out — "too comprehensive") |
-| 355012485 | Minimal set of classes | **Superseded** by gid=121955004 |
+> **Superseded.** All Google Sheets GIDs are now centralized in `sheets.yaml` at the repo root.
+> See https://github.com/berkeleybop/metpo/issues/372 and PR #373.
+> The GID table that was here (dated 2026-02-19) listed stale/deprecated tabs as "Active."
 
-### Sync status as of 2026-02-19
+### Sync status
 
-The Google Drive TSV (`19T2jBfEuL19EkZijPSgYNrj5WBN1pcFD`) was read via MCP and visually matches the git version of `src/templates/metpo_sheet.tsv`. Both contain the same 257 classes with identical structure.
-
-**Important**: Any changes to robot template TSVs in git MUST be manually propagated back to the Google Sheet. The flow is one-directional (Sheets → git), so git-only changes will be overwritten on next `squeaky-clean` + rebuild.
+> **Superseded.** Run `make -C src/ontology -f metpo.Makefile diff-sheets` to check live sync status.
+> As of PR #373, `diff-sheets` correctly targets the promoted Google Sheets tabs.
 
 ---
 
-*Last updated: 2026-02-19. All CLI queries, Google Drive reads, and BioPortal entity extract analyses performed on this date.*
+*Research performed: 2026-02-19. Sheets/sync sections superseded by #372/#373 (2026-03-26).*
