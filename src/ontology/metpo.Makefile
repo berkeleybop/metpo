@@ -69,13 +69,24 @@ diff-release:
 ../templates/stubs.tsv: ../templates/metpo_sheet.tsv ../templates/metpo-properties.tsv ../../metpo/bactotraits/create_stubs.py
 	python ../../metpo/bactotraits/create_stubs.py -o $@ ../templates/metpo_sheet.tsv ../templates/metpo-properties.tsv
 
-components/metpo_sheet.owl: ../templates/stubs.tsv ../templates/metpo-properties.tsv ../templates/metpo_sheet.tsv
+# Generated from historical BioPortal submissions + tagged releases.
+# Repo-only — not in Google Sheets. Regenerate with: make -f metpo.Makefile regenerate-deprecated
+../templates/deprecated.tsv: ../../metpo/scripts/generate_deprecated_template.py
+	cd ../.. && uv run generate-deprecated-template -o $@
+
+.PHONY: regenerate-deprecated
+regenerate-deprecated:
+	rm -f ../templates/deprecated.tsv
+	$(MAKE) -f metpo.Makefile ../templates/deprecated.tsv
+
+components/metpo_sheet.owl: ../templates/stubs.tsv ../templates/metpo-properties.tsv ../templates/metpo_sheet.tsv ../templates/deprecated.tsv
 	$(ROBOT) template \
 		--add-prefix 'METPO: https://w3id.org/metpo/' \
 		--add-prefix 'qudt: http://qudt.org/schema/qudt/' \
 		--template ../templates/stubs.tsv \
 		--template ../templates/metpo_sheet.tsv \
 		--template ../templates/metpo-properties.tsv \
+		--template ../templates/deprecated.tsv \
 		annotate --ontology-iri $(ONTBASE)/$@ \
 		annotate -V $(ONTBASE)/releases/$(TODAY)/$@ \
 		--annotation owl:versionInfo $(TODAY) \
