@@ -179,7 +179,7 @@ historical BioPortal submissions, and tagged releases — are tracked to prevent
 # Regenerate the id allocation audit report
 make audit-ids                   # writes reports/id-allocation-audit.md
 
-# Regenerate the deprecated terms OWL component
+# Regenerate the deprecated IDs template (TSV) used to build the OWL component
 make -C src/ontology -f metpo.Makefile regenerate-deprecated
 # or just let the normal build pick it up:
 make -C src/ontology -f metpo.Makefile components/metpo_sheet.owl

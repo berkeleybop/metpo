@@ -5,8 +5,8 @@ Each burned ID gets proper OBO deprecation axioms:
 - rdfs:label prefixed with "obsolete "
 - IAO:0000231 (has obsolescence reason)
 
-The output TSV is consumed by ROBOT to produce components/deprecated.owl,
-which is merged into the ontology during prepare_release.
+The output TSV is used as an additional ROBOT template when generating
+components/metpo_sheet.owl in the build pipeline.
 
 See https://github.com/berkeleybop/metpo/issues/374
 """
@@ -244,11 +244,7 @@ def main(output: str) -> None:
     for numeric_id in sorted(burned_ids):
         label, owl_type, _source = labels.get(numeric_id, ("", "owl:Class", "unknown"))
 
-        # Format the CURIE correctly for the era
-        if len(numeric_id) <= 7 and numeric_id.startswith("0"):
-            curie = f"METPO:{numeric_id}"
-        else:
-            curie = f"METPO:{numeric_id}"
+        curie = f"METPO:{numeric_id}"
 
         obsolete_label = f"obsolete {label}" if label else f"obsolete METPO:{numeric_id}"
         reason = classify_reason(numeric_id)

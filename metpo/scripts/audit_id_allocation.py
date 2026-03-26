@@ -40,6 +40,36 @@ def extract_ids_from_entity_extract(path: Path) -> set[str]:
     return ids
 
 
+def labels_from_entity_extracts(extracts_dir: Path, numeric_ids: set[str]) -> dict[str, str]:
+    """Scan entity extract TSVs (newest submission first) and return the last-known label per ID.
+
+    The TSV columns are: entity, type, label, deprecated, synonym_type, synonym.
+    We take the label from the most recent submission that has a non-empty value.
+    """
+    labels: dict[str, str] = {}
+    extract_files = sorted(
+        extracts_dir.glob("metpo_submission_*_all_entities.tsv"),
+        key=lambda p: int(re.search(r"submission_(\d+)", p.name).group(1)),  # type: ignore[union-attr]
+        reverse=True,
+    )
+    for path in extract_files:
+        sub_match = re.search(r"submission_(\d+)", path.name)
+        sub_label = f"sub{sub_match.group(1)}" if sub_match else path.name
+        with path.open(encoding="utf-8") as f:
+            for line in f:
+                m = re.search(r"w3id\.org/metpo/(\d+)", line)
+                if not m:
+                    continue
+                numeric_id = m.group(1)
+                if numeric_id not in numeric_ids or numeric_id in labels:
+                    continue
+                cols = line.rstrip("\n").split("\t")
+                raw_label = cols[2].strip().strip('"')
+                if len(cols) >= 3 and raw_label:
+                    labels[numeric_id] = f"{raw_label} (last in {sub_label})"
+    return labels
+
+
 def extract_ids_from_git_ref(ref: str, template_path: str, *, cwd: Path | None = None) -> set[str]:
     """Extract METPO numeric IDs from a template at a given git ref."""
     try:
@@ -160,10 +190,15 @@ def classify_burned(burned_ids: set[str]) -> dict[str, list[str]]:
 def resolve_burned_prop_labels(
     era3_props: list[str],
     release_ids: dict[str, set[str]],
+    extracts_dir: Path | None = None,
     *,
     cwd: Path | None = None,
 ) -> dict[str, str]:
-    """Find the last known label for each burned property ID."""
+    """Find the last known label for each burned property ID.
+
+    Checks tagged releases first (most precise provenance), then falls back
+    to BioPortal entity extract TSVs for IDs that never appeared in a tagged release.
+    """
     labels: dict[str, str] = {}
     for pid in era3_props:
         for tag in reversed(list(release_ids.keys())):
@@ -172,6 +207,13 @@ def resolve_burned_prop_labels(
                 if label:
                     labels[pid] = f"{label} (last in {tag})"
                     break
+
+    # Fall back to entity extract TSVs for IDs with no tag label
+    unlabeled = set(era3_props) - set(labels)
+    if unlabeled and extracts_dir and extracts_dir.is_dir():
+        extract_labels = labels_from_entity_extracts(extracts_dir, unlabeled)
+        labels.update(extract_labels)
+
     return labels
 
 
@@ -193,8 +235,11 @@ def build_provenance(
 
 def format_report(audit: AuditResult, *, cwd: Path | None = None) -> str:
     """Format the audit result as a markdown report."""
+    extracts_dir = (cwd or Path.cwd()) / "metadata/ontology/historical_submissions/entity_extracts"
     classified = classify_burned(audit.burned_ids)
-    prop_labels = resolve_burned_prop_labels(classified["era3_props"], audit.release_ids, cwd=cwd)
+    prop_labels = resolve_burned_prop_labels(
+        classified["era3_props"], audit.release_ids, extracts_dir, cwd=cwd
+    )
     provenance = build_provenance(audit.burned_ids, audit.submission_ids, audit.release_ids)
 
     highest_class = max((i for i in audit.current_ids if i.startswith("1")), default="?")

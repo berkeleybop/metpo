@@ -22,7 +22,7 @@ These properties appeared in tagged releases or BioPortal submissions but are no
 
 | ID | Label | Provenance |
 |---|---|---|
-| METPO:2000000 | unknown | sub6 |
+| METPO:2000000 | has susceptibility profile (last in sub6) | sub6 |
 | METPO:2000057 | has culture temperature observation (last in 2025-10-03) | sub9, sub10, tag:2025-09-23, tag:2025-10-03 |
 | METPO:2000201 | lyses (last in 2025-11-21) | tag:2025-10-03, tag:2025-10-15, tag:2025-10-31, tag:2025-11-17, tag:2025-11-21 |
 | METPO:2000203 | fixes (last in 2025-11-21) | tag:2025-10-03, tag:2025-10-15, tag:2025-10-31, tag:2025-11-17, tag:2025-11-21 |
