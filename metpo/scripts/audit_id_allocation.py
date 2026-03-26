@@ -40,7 +40,7 @@ def extract_ids_from_entity_extract(path: Path) -> set[str]:
     return ids
 
 
-def extract_ids_from_git_ref(ref: str, template_path: str) -> set[str]:
+def extract_ids_from_git_ref(ref: str, template_path: str, *, cwd: Path | None = None) -> set[str]:
     """Extract METPO numeric IDs from a template at a given git ref."""
     try:
         result = subprocess.run(
@@ -48,6 +48,7 @@ def extract_ids_from_git_ref(ref: str, template_path: str) -> set[str]:
             capture_output=True,
             text=True,
             check=True,
+            cwd=cwd,
         )
     except subprocess.CalledProcessError:
         return set()
@@ -59,7 +60,9 @@ def extract_ids_from_git_ref(ref: str, template_path: str) -> set[str]:
     return ids
 
 
-def get_label_from_git(ref: str, template_path: str, metpo_id: str) -> str:
+def get_label_from_git(
+    ref: str, template_path: str, metpo_id: str, *, cwd: Path | None = None
+) -> str:
     """Look up a label for a METPO ID from a template at a given git ref."""
     try:
         result = subprocess.run(
@@ -67,6 +70,7 @@ def get_label_from_git(ref: str, template_path: str, metpo_id: str) -> str:
             capture_output=True,
             text=True,
             check=True,
+            cwd=cwd,
         )
     except subprocess.CalledProcessError:
         return ""
@@ -127,7 +131,7 @@ def collect_ids(repo_root: Path) -> AuditResult:
             continue
         ids = set()
         for tmpl in TEMPLATE_PATHS:
-            ids |= extract_ids_from_git_ref(tag, tmpl)
+            ids |= extract_ids_from_git_ref(tag, tmpl, cwd=repo_root)
         if ids:
             result.release_ids[tag] = ids
 
@@ -154,14 +158,17 @@ def classify_burned(burned_ids: set[str]) -> dict[str, list[str]]:
 
 
 def resolve_burned_prop_labels(
-    era3_props: list[str], release_ids: dict[str, set[str]]
+    era3_props: list[str],
+    release_ids: dict[str, set[str]],
+    *,
+    cwd: Path | None = None,
 ) -> dict[str, str]:
     """Find the last known label for each burned property ID."""
     labels: dict[str, str] = {}
     for pid in era3_props:
         for tag in reversed(list(release_ids.keys())):
             if pid in release_ids[tag]:
-                label = get_label_from_git(tag, "src/templates/metpo-properties.tsv", pid)
+                label = get_label_from_git(tag, "src/templates/metpo-properties.tsv", pid, cwd=cwd)
                 if label:
                     labels[pid] = f"{label} (last in {tag})"
                     break
@@ -175,19 +182,19 @@ def build_provenance(
 ) -> dict[str, list[str]]:
     """Build provenance chains for burned IDs."""
     prov: dict[str, list[str]] = defaultdict(list)
-    for sub, ids in sorted(submission_ids.items()):
+    for sub, ids in sorted(submission_ids.items(), key=lambda item: int(item[0])):
         for i in ids & burned_ids:
             prov[i].append(f"sub{sub}")
-    for tag, ids in sorted(release_ids.items()):
+    for tag, ids in release_ids.items():
         for i in ids & burned_ids:
             prov[i].append(f"tag:{tag}")
     return dict(prov)
 
 
-def format_report(audit: AuditResult) -> str:
+def format_report(audit: AuditResult, *, cwd: Path | None = None) -> str:
     """Format the audit result as a markdown report."""
     classified = classify_burned(audit.burned_ids)
-    prop_labels = resolve_burned_prop_labels(classified["era3_props"], audit.release_ids)
+    prop_labels = resolve_burned_prop_labels(classified["era3_props"], audit.release_ids, cwd=cwd)
     provenance = build_provenance(audit.burned_ids, audit.submission_ids, audit.release_ids)
 
     highest_class = max((i for i in audit.current_ids if i.startswith("1")), default="?")
@@ -214,7 +221,7 @@ def format_report(audit: AuditResult) -> str:
         "",
         "## Burned Era 3 Property IDs (never reuse)",
         "",
-        "These properties appeared in tagged releases but are no longer in the templates.",
+        "These properties appeared in tagged releases or BioPortal submissions but are no longer in the templates.",
         "",
         "| ID | Label | Provenance |",
         "|---|---|---|",
@@ -270,7 +277,7 @@ def main(output: str | None) -> None:
     """Audit all METPO IDs ever allocated and report active vs burned."""
     repo_root = Path(__file__).resolve().parent.parent.parent
     audit = collect_ids(repo_root)
-    report = format_report(audit)
+    report = format_report(audit, cwd=repo_root)
 
     if output:
         Path(output).write_text(report, encoding="utf-8")

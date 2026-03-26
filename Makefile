@@ -342,6 +342,7 @@ all-reports: reports/synonym-sources.tsv reports/bactotraits-metpo-set-diff.yaml
 	@echo "All analysis reports generated successfully"
 
 reports/id-allocation-audit.md: src/templates/metpo_sheet.tsv src/templates/metpo-properties.tsv metpo/scripts/audit_id_allocation.py
+	mkdir -p $(dir $@)
 	uv run audit-id-allocation -o $@
 
 audit-ids: reports/id-allocation-audit.md
