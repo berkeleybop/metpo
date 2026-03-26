@@ -1,8 +1,12 @@
 # METPO ID Allocation Reference
 
-**Date:** 2026-02-13
-**Purpose:** Prevent ID reuse when adding new terms. This is the definitive record of
-all METPO IDs ever allocated, including historical BioPortal submissions.
+> **This document is partially superseded.** For the current, machine-generated
+> allocation audit, run `make audit-ids` or see `reports/id-allocation-audit.md`.
+> The automated report scans all templates, BioPortal submissions, and tagged releases.
+> This document retains the block layout and policy sections as human-curated context.
+
+**Date:** 2026-02-13 (last manual update); see `reports/id-allocation-audit.md` for current counts
+**Purpose:** Prevent ID reuse when adding new terms.
 
 ---
 
@@ -37,7 +41,8 @@ In practice: **1xxxxxx = classes**, **2xxxxxx = properties**.
 | submission 10 (2025-09-23) | -- | METPO:2000103 |
 | submissions 3-5 | METPO:9999999 (TEST -- ignore) | -- |
 
-**Absolute highest real IDs: METPO:1004005 (class), METPO:2000518 (property)**
+**As of 2026-02-13: METPO:1004005 (class), METPO:2000518 (property)**
+**Run `make audit-ids` for current highest IDs.**
 
 ---
 
