@@ -1,0 +1,74 @@
+## METPO Google Sheets configuration
+## Single source of truth — all scripts and Makefiles read from here.
+## See https://github.com/berkeleybop/metpo/issues/372
+##
+## KEEPING THIS UP TO DATE:
+## Run the Apps Script (listAllSheets) in the spreadsheet to discover all
+## tabs and GIDs, then reconcile against this file. The Apps Script URL is:
+##   https://script.google.com/home/projects/1gsSC1R9Mus0YOyIHG4WW-pbMbkfGbo-yVTkHNn8Q_mdz4pwdZwt4L_XL/edit
+## Last reconciled: 2026-03-26 (16 tabs in spreadsheet)
+
+spreadsheet_id: "1_Lr-9_5QHi8QLvRyTZFSciUhzGKD4DbUObyTpJ16_RU"
+
+# Primary sheets used in the ontology build
+primary:
+  classes:
+    gid: "1569766102"
+    tab_name: "classes"
+    template_path: "src/templates/metpo_sheet.tsv"
+  properties:
+    gid: "681401984"
+    tab_name: "properties"
+    template_path: "src/templates/metpo-properties.tsv"
+
+# Secondary sheets (bulk download, not used in build)
+secondary:
+  bactotraits:
+    gid: "1192666692"
+    tab_name: "bactotraits"
+  more_synonyms:
+    gid: "907926993"
+    tab_name: "more synonyms"
+  more_classes_inconsistent:
+    gid: "1427185859"
+    tab_name: "more classes - inconsistent"
+  metabolic_and_respiratory_robot:
+    gid: "2135183176"
+    tab_name: "metabolic and respiratory robot"
+  metabolic_and_respiratory_llm:
+    gid: "499077032"
+    tab_name: "metabolic_and_respiratory llm"
+  source_mappings:
+    gid: "441302857"
+    tab_name: "source mappings"
+  non_bacdive_chemical_utilization:
+    gid: "1914079860"
+    tab_name: "non-bacdive chemical utilization"
+  properties_test:
+    gid: "1709826934"
+    tab_name: "properties_test"
+  sheet38:
+    gid: "1830972953"
+    tab_name: "Sheet38"
+
+# Deprecated sheets — DO NOT USE for builds or diffs.
+# Kept here so the GIDs are documented, not lost.
+deprecated:
+  retired_minimal_classes:
+    gid: "355012485"
+    tab_name: "retired minimal classes"
+    superseded_by: "classes"
+  classes_pre_20260324:
+    gid: "121955004"
+    tab_name: "classes-pre-20260324"
+    superseded_by: "classes"
+  properties_pre_20260324:
+    gid: "2094089867"
+    tab_name: "properties-pre-20260324"
+    superseded_by: "properties"
+  attic_classes:
+    gid: "1347388120"
+    tab_name: "attic classes"
+  attic_properties:
+    gid: "565614186"
+    tab_name: "attic properties"

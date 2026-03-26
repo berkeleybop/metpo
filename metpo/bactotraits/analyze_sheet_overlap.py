@@ -138,11 +138,11 @@ def print_detailed_ranges(results: dict):
 
 
 def main():
-    base_path = Path("/Users/MAM/Documents/gitrepos/metpo/downloads/sheets")
+    base_path = Path("downloads/sheets")
 
     # Load canonical classes
-    print("Loading canonical classes from minimal_classes.tsv...")
-    canonical_ids, id_to_label = load_minimal_classes(base_path / "minimal_classes.tsv")
+    print("Loading canonical classes from classes.tsv...")
+    canonical_ids, id_to_label = load_minimal_classes(base_path / "classes.tsv")
     print(f"Found {len(canonical_ids)} canonical classes")
 
     # Analyze each non-canonical sheet
