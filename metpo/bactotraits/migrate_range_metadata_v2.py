@@ -266,8 +266,8 @@ def enhance_minimal_classes(
 @click.option(
     "--minimal",
     type=click.Path(exists=True, dir_okay=False, path_type=Path),
-    default=Path("downloads/sheets/minimal_classes.tsv"),
-    help="Path to minimal_classes.tsv",
+    default=Path("downloads/sheets/classes.tsv"),
+    help="Path to classes.tsv (primary classes sheet)",
 )
 @click.option(
     "--output",
