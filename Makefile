@@ -468,16 +468,15 @@ create-bactotraits-files:
 
 # Sheet GIDs are centralized in sheets.yaml at repo root.
 # See https://github.com/berkeleybop/metpo/issues/372
-SPREADSHEET_ID = $(shell python3 -c "from metpo.sheets_config import SPREADSHEET_ID; print(SPREADSHEET_ID)")
-BASE_URL = https://docs.google.com/spreadsheets/d/$(SPREADSHEET_ID)/export
-_SHEETS_YAML = $(shell python3 -c "import yaml; print(yaml.safe_load(open('sheets.yaml')))" 2>/dev/null)
-GID_CLASSES = $(shell python3 -c "import yaml; print(yaml.safe_load(open('sheets.yaml'))['primary']['classes']['gid'])")
-GID_PROPERTIES = $(shell python3 -c "import yaml; print(yaml.safe_load(open('sheets.yaml'))['primary']['properties']['gid'])")
-GID_BACTOTRAITS = $(shell python3 -c "import yaml; print(yaml.safe_load(open('sheets.yaml'))['secondary']['bactotraits']['gid'])")
-GID_MORE_SYNONYMS = $(shell python3 -c "import yaml; print(yaml.safe_load(open('sheets.yaml'))['secondary']['more_synonyms']['gid'])")
-GID_MORE_CLASSES___INCONSISTENT = $(shell python3 -c "import yaml; print(yaml.safe_load(open('sheets.yaml'))['secondary']['more_classes_inconsistent']['gid'])")
-GID_METABOLIC_AND_RESPIRATORY_ROBOT = $(shell python3 -c "import yaml; print(yaml.safe_load(open('sheets.yaml'))['secondary']['metabolic_and_respiratory_robot']['gid'])")
-GID_METABOLIC_AND_RESPIRATORY_LLM = $(shell python3 -c "import yaml; print(yaml.safe_load(open('sheets.yaml'))['secondary']['metabolic_and_respiratory_llm']['gid'])")
+SPREADSHEET_ID := $(shell uv run python -c "from metpo.sheets_config import SPREADSHEET_ID; print(SPREADSHEET_ID)")
+BASE_URL := https://docs.google.com/spreadsheets/d/$(SPREADSHEET_ID)/export
+GID_CLASSES := $(shell uv run python -c "from metpo.sheets_config import SHEET_GIDS; print(SHEET_GIDS['classes'])")
+GID_PROPERTIES := $(shell uv run python -c "from metpo.sheets_config import SHEET_GIDS; print(SHEET_GIDS['properties'])")
+GID_BACTOTRAITS := $(shell uv run python -c "import yaml; print(yaml.safe_load(open('sheets.yaml'))['secondary']['bactotraits']['gid'])")
+GID_MORE_SYNONYMS := $(shell uv run python -c "import yaml; print(yaml.safe_load(open('sheets.yaml'))['secondary']['more_synonyms']['gid'])")
+GID_MORE_CLASSES___INCONSISTENT := $(shell uv run python -c "import yaml; print(yaml.safe_load(open('sheets.yaml'))['secondary']['more_classes_inconsistent']['gid'])")
+GID_METABOLIC_AND_RESPIRATORY_ROBOT := $(shell uv run python -c "import yaml; print(yaml.safe_load(open('sheets.yaml'))['secondary']['metabolic_and_respiratory_robot']['gid'])")
+GID_METABOLIC_AND_RESPIRATORY_LLM := $(shell uv run python -c "import yaml; print(yaml.safe_load(open('sheets.yaml'))['secondary']['metabolic_and_respiratory_llm']['gid'])")
 
 .PHONY: download-all-sheets clean-sheets
 

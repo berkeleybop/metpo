@@ -12,7 +12,7 @@ _CONFIG_PATH = Path(__file__).resolve().parent.parent / "sheets.yaml"
 
 
 def _load() -> dict:
-    with _CONFIG_PATH.open() as f:
+    with _CONFIG_PATH.open(encoding="utf-8") as f:
         return yaml.safe_load(f)
 
 

@@ -5,8 +5,8 @@
 
 # Sheet GIDs are centralized in sheets.yaml at repo root.
 # See https://github.com/berkeleybop/metpo/issues/372
-SRC_URL_MAIN = $(shell cd ../.. && python3 -c "from metpo.sheets_config import export_url; print(export_url('classes'))")
-SRC_URL_PROPERTIES = $(shell cd ../.. && python3 -c "from metpo.sheets_config import export_url; print(export_url('properties'))")
+SRC_URL_MAIN := $(shell cd ../.. && uv run python -c "from metpo.sheets_config import export_url; print(export_url('classes'))")
+SRC_URL_PROPERTIES := $(shell cd ../.. && uv run python -c "from metpo.sheets_config import export_url; print(export_url('properties'))")
 
 DRAFTS_DIR = ../templates/drafts
 
