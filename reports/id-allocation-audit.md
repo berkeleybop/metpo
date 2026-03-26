@@ -6,10 +6,10 @@
 
 | Metric | Count |
 |--------|-------|
-| Active IDs (current templates) | 416 |
-| Active classes | 281 |
-| Active properties | 135 |
-| Burned IDs (ever used, not currently active) | 1168 |
+| Active IDs (current templates) | 368 |
+| Active classes | 260 |
+| Active properties | 108 |
+| Burned IDs (ever used, not currently active) | 1216 |
 | Total unique IDs ever allocated | 1584 |
 | Highest active class ID | METPO:1005040 |
 | Highest active property ID | METPO:2000734 |
@@ -23,7 +23,18 @@ These properties appeared in tagged releases or BioPortal submissions but are no
 | ID | Label | Provenance |
 |---|---|---|
 | METPO:2000000 | has susceptibility profile (last in sub6) | sub6 |
+| METPO:2000052 | has temperature observation (last in 2026-03-24) | sub9, sub10, tag:2025-09-23, tag:2025-10-03, tag:2025-10-15, tag:2025-10-31, tag:2025-11-17, tag:2025-11-21, tag:2025-11-24, tag:2025-12-12, tag:2026-03-24 |
+| METPO:2000053 | has optimum temperature observation (last in 2026-03-24) | sub9, sub10, tag:2025-09-23, tag:2025-10-03, tag:2025-10-15, tag:2025-10-31, tag:2025-11-17, tag:2025-11-21, tag:2025-11-24, tag:2025-12-12, tag:2026-03-24 |
+| METPO:2000054 | has growth temperature observation (last in 2026-03-24) | sub9, sub10, tag:2025-09-23, tag:2025-10-03, tag:2025-10-15, tag:2025-10-31, tag:2025-11-17, tag:2025-11-21, tag:2025-11-24, tag:2025-12-12, tag:2026-03-24 |
+| METPO:2000055 | has range temperature observation (last in 2026-03-24) | sub9, sub10, tag:2025-09-23, tag:2025-10-03, tag:2025-10-15, tag:2025-10-31, tag:2025-11-17, tag:2025-11-21, tag:2025-11-24, tag:2025-12-12, tag:2026-03-24 |
+| METPO:2000056 | has temperature delta observation (last in 2026-03-24) | sub9, sub10, tag:2025-09-23, tag:2025-10-03, tag:2025-10-15, tag:2025-10-31, tag:2025-11-17, tag:2025-11-21, tag:2025-11-24, tag:2025-12-12, tag:2026-03-24 |
 | METPO:2000057 | has culture temperature observation (last in 2025-10-03) | sub9, sub10, tag:2025-09-23, tag:2025-10-03 |
+| METPO:2000058 | has observed spot value (last in 2026-03-24) | sub9, sub10, tag:2025-09-23, tag:2025-10-03, tag:2025-10-15, tag:2025-10-31, tag:2025-11-17, tag:2025-11-21, tag:2025-11-24, tag:2025-12-12, tag:2026-03-24 |
+| METPO:2000059 | has minimum observed value (last in 2026-03-24) | sub9, sub10, tag:2025-09-23, tag:2025-10-03, tag:2025-10-15, tag:2025-10-31, tag:2025-11-17, tag:2025-11-21, tag:2025-11-24, tag:2025-12-12, tag:2026-03-24 |
+| METPO:2000060 | has maximum observed value (last in 2026-03-24) | sub9, sub10, tag:2025-09-23, tag:2025-10-03, tag:2025-10-15, tag:2025-10-31, tag:2025-11-17, tag:2025-11-21, tag:2025-11-24, tag:2025-12-12, tag:2026-03-24 |
+| METPO:2000061 | has value comments (last in 2026-03-24) | sub9, sub10, tag:2025-09-23, tag:2025-10-03, tag:2025-10-15, tag:2025-10-31, tag:2025-11-17, tag:2025-11-21, tag:2025-11-24, tag:2025-12-12, tag:2026-03-24 |
+| METPO:2000062 | is negative data (last in 2026-03-24) | sub9, sub10, tag:2025-09-23, tag:2025-10-03, tag:2025-10-15, tag:2025-10-31, tag:2025-11-17, tag:2025-11-21, tag:2025-11-24, tag:2025-12-12, tag:2026-03-24 |
+| METPO:2000063 | observation data property (last in 2026-03-24) | sub9, sub10, tag:2025-09-23, tag:2025-10-03, tag:2025-10-15, tag:2025-10-31, tag:2025-11-17, tag:2025-11-21, tag:2025-11-24, tag:2025-12-12, tag:2026-03-24 |
 | METPO:2000201 | lyses (last in 2025-11-21) | tag:2025-10-03, tag:2025-10-15, tag:2025-10-31, tag:2025-11-17, tag:2025-11-21 |
 | METPO:2000203 | fixes (last in 2025-11-21) | tag:2025-10-03, tag:2025-10-15, tag:2025-10-31, tag:2025-11-17, tag:2025-11-21 |
 | METPO:2000204 | catabolizes (last in 2025-11-21) | tag:2025-10-03, tag:2025-10-15, tag:2025-10-31, tag:2025-11-17, tag:2025-11-21 |
@@ -47,7 +58,23 @@ These properties appeared in tagged releases or BioPortal submissions but are no
 | METPO:2000236 | does not solubilize (last in 2025-11-21) | tag:2025-10-03, tag:2025-10-15, tag:2025-10-31, tag:2025-11-17, tag:2025-11-21 |
 | METPO:2000237 | does not volatilize (last in 2025-11-21) | tag:2025-10-03, tag:2025-10-15, tag:2025-10-31, tag:2025-11-17, tag:2025-11-21 |
 | METPO:2000238 | does not crystallize (last in 2025-11-21) | tag:2025-10-03, tag:2025-10-15, tag:2025-10-31, tag:2025-11-17, tag:2025-11-21 |
+| METPO:2000239 | has pH observation (last in 2026-03-24) | tag:2025-10-03, tag:2025-10-15, tag:2025-10-31, tag:2025-11-17, tag:2025-11-21, tag:2025-11-24, tag:2025-12-12, tag:2026-03-24 |
+| METPO:2000501 | has optimum pH observation (last in 2026-03-24) | tag:2025-10-03, tag:2025-10-15, tag:2025-10-31, tag:2025-11-17, tag:2025-11-21, tag:2025-11-24, tag:2025-12-12, tag:2026-03-24 |
+| METPO:2000502 | has growth pH observation (last in 2026-03-24) | tag:2025-10-03, tag:2025-10-15, tag:2025-10-31, tag:2025-11-17, tag:2025-11-21, tag:2025-11-24, tag:2025-12-12, tag:2026-03-24 |
+| METPO:2000503 | has range pH observation (last in 2026-03-24) | tag:2025-10-03, tag:2025-10-15, tag:2025-10-31, tag:2025-11-17, tag:2025-11-21, tag:2025-11-24, tag:2025-12-12, tag:2026-03-24 |
+| METPO:2000504 | has pH delta observation (last in 2026-03-24) | tag:2025-10-03, tag:2025-10-15, tag:2025-10-31, tag:2025-11-17, tag:2025-11-21, tag:2025-11-24, tag:2025-12-12, tag:2026-03-24 |
 | METPO:2000505 | has culture pH observation (last in 2025-10-03) | tag:2025-10-03 |
+| METPO:2000506 | has NaCl observation (last in 2026-03-24) | tag:2025-10-03, tag:2025-10-15, tag:2025-10-31, tag:2025-11-17, tag:2025-11-21, tag:2025-11-24, tag:2025-12-12, tag:2026-03-24 |
+| METPO:2000507 | has optimum NaCl observation (last in 2026-03-24) | tag:2025-10-03, tag:2025-10-15, tag:2025-10-31, tag:2025-11-17, tag:2025-11-21, tag:2025-11-24, tag:2025-12-12, tag:2026-03-24 |
+| METPO:2000508 | has growth NaCl observation (last in 2026-03-24) | tag:2025-10-03, tag:2025-10-15, tag:2025-10-31, tag:2025-11-17, tag:2025-11-21, tag:2025-11-24, tag:2025-12-12, tag:2026-03-24 |
+| METPO:2000509 | has range NaCl observation (last in 2026-03-24) | tag:2025-10-03, tag:2025-10-15, tag:2025-10-31, tag:2025-11-17, tag:2025-11-21, tag:2025-11-24, tag:2025-12-12, tag:2026-03-24 |
+| METPO:2000510 | has NaCl delta observation (last in 2026-03-24) | tag:2025-10-03, tag:2025-10-15, tag:2025-10-31, tag:2025-11-17, tag:2025-11-21, tag:2025-11-24, tag:2025-12-12, tag:2026-03-24 |
+| METPO:2000511 | has observation (last in 2026-03-24) | tag:2025-10-03, tag:2025-10-15, tag:2025-10-31, tag:2025-11-17, tag:2025-11-21, tag:2025-11-24, tag:2025-12-12, tag:2026-03-24 |
+| METPO:2000512 | has oxygen observation (last in 2026-03-24) | tag:2025-10-15, tag:2025-10-31, tag:2025-11-17, tag:2025-11-21, tag:2025-11-24, tag:2025-12-12, tag:2026-03-24 |
+| METPO:2000513 | has optimum oxygen observation (last in 2026-03-24) | tag:2025-10-15, tag:2025-10-31, tag:2025-11-17, tag:2025-11-21, tag:2025-11-24, tag:2025-12-12, tag:2026-03-24 |
+| METPO:2000514 | has growth oxygen observation (last in 2026-03-24) | tag:2025-10-15, tag:2025-10-31, tag:2025-11-17, tag:2025-11-21, tag:2025-11-24, tag:2025-12-12, tag:2026-03-24 |
+| METPO:2000515 | has range oxygen observation (last in 2026-03-24) | tag:2025-10-15, tag:2025-10-31, tag:2025-11-17, tag:2025-11-21, tag:2025-11-24, tag:2025-12-12, tag:2026-03-24 |
+| METPO:2000516 | has oxygen delta observation (last in 2026-03-24) | tag:2025-10-15, tag:2025-10-31, tag:2025-11-17, tag:2025-11-21, tag:2025-11-24, tag:2025-12-12, tag:2026-03-24 |
 
 ## Burned ID Counts by Era
 
@@ -55,8 +82,8 @@ These properties appeared in tagged releases or BioPortal submissions but are no
 |-----|-------------|-----------|
 | Era 1 | 6-digit (000xxx), submissions 2-3 | 274 |
 | Era 2 | 7-digit (0000xxx), submissions 3-5 | 301 |
-| Era 3 classes | 1xxxxxx, retired literature-mining terms | 566 |
-| Era 3 properties | 2xxxxxx, removed without deprecation | 26 |
+| Era 3 classes | 1xxxxxx, retired literature-mining terms | 587 |
+| Era 3 properties | 2xxxxxx, removed without deprecation | 53 |
 | Test | 9999999 | 1 |
 
 ## Safe Ranges for New Terms
@@ -70,8 +97,8 @@ These properties appeared in tagged releases or BioPortal submissions but are no
 
 | Source | IDs found |
 |--------|----------|
-| `src/templates/metpo_sheet.tsv` | 281 |
-| `src/templates/metpo-properties.tsv` | 135 |
+| `src/templates/metpo_sheet.tsv` | 260 |
+| `src/templates/metpo-properties.tsv` | 108 |
 | BioPortal submission 2 | 274 |
 | BioPortal submission 3 | 300 |
 | BioPortal submission 4 | 296 |
