@@ -4,7 +4,6 @@ Each burned ID gets proper OBO deprecation axioms:
 - owl:deprecated true
 - rdfs:label prefixed with "obsolete "
 - IAO:0000231 (has obsolescence reason)
-- IAO:0100001 (term replaced by) where a replacement exists
 
 The output TSV is consumed by ROBOT to produce components/deprecated.owl,
 which is merged into the ontology during prepare_release.
@@ -23,15 +22,8 @@ TEMPLATE_PATHS = [
     "src/templates/metpo-properties.tsv",
 ]
 
-# Observation class IDs → flat data property replacements (from #371)
-OBSERVATION_REPLACEMENTS: dict[str, str] = {
-    # Observation classes have no 1:1 replacement — they're a pattern change.
-    # Use oboInOwl:consider to point at the flat data property parent.
-}
-
 # Obsolescence reasons (IAO individuals)
 REASON_PLACEHOLDER_REMOVED = "IAO:0000226"
-REASON_TERMS_MERGED = "IAO:0000227"
 REASON_OUT_OF_SCOPE = "OMO:0001000"
 
 
@@ -56,7 +48,7 @@ def extract_ids_from_entity_extract(path: Path) -> set[str]:
     return ids
 
 
-def extract_ids_from_git_ref(ref: str, template_path: str) -> set[str]:
+def extract_ids_from_git_ref(ref: str, template_path: str, *, cwd: Path | None = None) -> set[str]:
     """Extract METPO numeric IDs from a template at a given git ref."""
     try:
         result = subprocess.run(
@@ -64,6 +56,7 @@ def extract_ids_from_git_ref(ref: str, template_path: str) -> set[str]:
             capture_output=True,
             text=True,
             check=True,
+            cwd=cwd,
         )
     except subprocess.CalledProcessError:
         return set()
@@ -102,7 +95,7 @@ def collect_all_ids(repo_root: Path) -> tuple[set[str], set[str]]:
         if not tag:
             continue
         for tmpl in TEMPLATE_PATHS:
-            all_ids |= extract_ids_from_git_ref(tag, tmpl)
+            all_ids |= extract_ids_from_git_ref(tag, tmpl, cwd=repo_root)
 
     return current_ids, all_ids
 
@@ -131,9 +124,13 @@ def _labels_from_extracts(extracts_dir: Path) -> dict[str, tuple[str, str, str]]
     return labels
 
 
-def _labels_from_tags(repo_root: Path) -> dict[str, tuple[str, str, str]]:
-    """Collect labels from tagged releases (higher priority — overwrites)."""
-    labels: dict[str, tuple[str, str, str]] = {}
+def _labels_from_tags(repo_root: Path) -> dict[str, tuple[str, str | None, str]]:
+    """Collect labels from tagged releases (higher priority — overwrites).
+
+    Returns owl_type=None when the template column is not a real owl: type
+    (e.g., old templates had parent CURIEs in column 3).
+    """
+    labels: dict[str, tuple[str, str | None, str]] = {}
     tags_out = subprocess.run(
         ["git", "tag", "--sort=creatordate"],
         capture_output=True,
@@ -152,6 +149,7 @@ def _labels_from_tags(repo_root: Path) -> dict[str, tuple[str, str, str]]:
                     capture_output=True,
                     text=True,
                     check=True,
+                    cwd=repo_root,
                 )
             except subprocess.CalledProcessError:
                 continue
@@ -162,8 +160,9 @@ def _labels_from_tags(repo_root: Path) -> dict[str, tuple[str, str, str]]:
                 numeric_id = parts[0].strip().replace("METPO:", "")
                 label = parts[1].strip() if len(parts) > 1 else ""
                 raw_type = parts[2].strip() if len(parts) > 2 else ""
-                # Old templates had parent CURIEs in column 3, not owl:Type
-                owl_type = raw_type if raw_type.startswith("owl:") else "owl:Class"
+                # Old templates had parent CURIEs in column 3, not owl:Type.
+                # Return None so collect_labels can preserve the extract's type.
+                owl_type = raw_type if raw_type.startswith("owl:") else None
                 if label:
                     labels[numeric_id] = (label, owl_type, f"tag:{tag}")
     return labels
@@ -177,14 +176,15 @@ def collect_labels(repo_root: Path) -> dict[str, tuple[str, str, str]]:
     """
     extracts_dir = repo_root / "metadata/ontology/historical_submissions/entity_extracts"
     labels = _labels_from_extracts(extracts_dir)
-    # Tag labels take priority, but only update type if the tag has a valid owl: type
+    # Tag labels take priority, but only update type if the tag provides a real owl: type
     for numeric_id, (label, owl_type, source) in _labels_from_tags(repo_root).items():
-        if numeric_id in labels and not owl_type.startswith("owl:"):
+        if numeric_id in labels and owl_type is None:
             # Keep the extract's type, just update label and source
             _, existing_type, _ = labels[numeric_id]
             labels[numeric_id] = (label, existing_type, source)
         else:
-            labels[numeric_id] = (label, owl_type, source)
+            resolved_type = owl_type if owl_type is not None else "owl:Class"
+            labels[numeric_id] = (label, resolved_type, source)
     return labels
 
 
@@ -209,8 +209,8 @@ def classify_reason(numeric_id: str) -> str:
     # Test ID
     if numeric_id == "9999999":
         return REASON_PLACEHOLDER_REMOVED
-    # Era 3 literature-mining terms (1000001-1000327 range, retired in sub 9)
-    if 1000001 <= n <= 1000058:
+    # Era 3 literature-mining terms (1000001-1000327, retired in sub 9)
+    if 1000001 <= n <= 1000327:
         return REASON_OUT_OF_SCOPE
     # Properties removed without deprecation (PR #317)
     if 2000200 <= n <= 2000299:

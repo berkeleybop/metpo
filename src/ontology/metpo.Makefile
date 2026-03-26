@@ -72,7 +72,7 @@ diff-release:
 # Generated from historical BioPortal submissions + tagged releases.
 # Repo-only — not in Google Sheets. Regenerate with: make -f metpo.Makefile regenerate-deprecated
 ../templates/deprecated.tsv: ../../metpo/scripts/generate_deprecated_template.py
-	cd ../.. && uv run generate-deprecated-template -o $@
+	cd ../.. && uv run generate-deprecated-template -o $(abspath $@)
 
 .PHONY: regenerate-deprecated
 regenerate-deprecated:
