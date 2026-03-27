@@ -285,7 +285,7 @@ def format_report(audit: AuditResult, *, cwd: Path | None = None) -> str:
         f"| Era 1 | 6-digit (000xxx), submissions 2-3 | {len(classified['era1'])} |",
         f"| Era 2 | 7-digit (0000xxx), submissions 3-5 | {len(classified['era2'])} |",
         f"| Era 3 classes | 1xxxxxx, retired literature-mining terms | {len(classified['era3_classes'])} |",
-        f"| Era 3 properties | 2xxxxxx, removed without deprecation | {len(classified['era3_props'])} |",
+        f"| Era 3 properties | 2xxxxxx, burned (removed or deprecated) | {len(classified['era3_props'])} |",
         f"| Test | 9999999 | {len(classified['test'])} |",
         "",
         "## Safe Ranges for New Terms",
