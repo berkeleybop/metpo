@@ -273,7 +273,7 @@ def main():
     print()
 
     if BIOPORTAL_API_KEY:
-        print(f"✓ BioPortal API key found ({BIOPORTAL_API_KEY[:10]}...)")
+        print("✓ BioPortal API key found")
     else:
         print("⚠ No BioPortal API key - only OLS will be used")
         print("  Set with: export BIOPORTAL_API_KEY='your-key-here'")
