@@ -135,13 +135,20 @@ def extract_prefix(identifier: str, curie_map: dict[str, str] | None = None) -> 
     if detected is None:
         if "/obo/" in text and "_" in text:
             detected = text.split("/obo/")[1].split("_")[0]
-        elif "doi.org" in lowered:
+        elif lowered.startswith(("https://doi.org/", "http://doi.org/")):
             detected = "doi"
-        elif "biolink" in lowered:
+        elif lowered.startswith(
+            (
+                "https://w3id.org/biolink/vocab/",
+                "http://w3id.org/biolink/vocab/",
+                "https://w3id.org/biolink/",
+                "http://w3id.org/biolink/",
+            )
+        ):
             detected = "biolink"
-        elif "purl.dsmz.de" in lowered:
+        elif lowered.startswith(("https://purl.dsmz.de/", "http://purl.dsmz.de/")):
             detected = "d3o"
-        elif "mdatahub.org" in lowered:
+        elif lowered.startswith(("https://mdatahub.org/", "http://mdatahub.org/")):
             detected = "meo"
         elif "semanticweb.org/bipon/" in lowered:
             detected = "bipon"

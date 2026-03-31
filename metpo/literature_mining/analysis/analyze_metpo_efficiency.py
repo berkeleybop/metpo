@@ -55,7 +55,14 @@ def analyze_file(yaml_file):
                         other_ontology_formats["RHEA"].add("CURIE")
                     elif entity_id.startswith("AUTO:"):
                         other_ontology_formats["AUTO"].add("CURIE-like")
-                    elif "w3id.org" in entity_id or "purl.obolibrary.org" in entity_id:
+                    elif entity_id.startswith(
+                        (
+                            "https://w3id.org/",
+                            "http://w3id.org/",
+                            "https://purl.obolibrary.org/",
+                            "http://purl.obolibrary.org/",
+                        )
+                    ):
                         # Check if any other ontology uses URI format
                         if "metpo" not in entity_id:
                             prefix = entity_id.split("/")[-2] if "/" in entity_id else "unknown"
