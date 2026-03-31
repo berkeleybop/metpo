@@ -137,7 +137,14 @@ def extract_prefix(identifier: str, curie_map: dict[str, str] | None = None) -> 
             detected = text.split("/obo/")[1].split("_")[0]
         elif lowered.startswith(("https://doi.org/", "http://doi.org/")):
             detected = "doi"
-        elif lowered.startswith(("https://biolink", "http://biolink")):
+        elif lowered.startswith(
+            (
+                "https://w3id.org/biolink/vocab/",
+                "http://w3id.org/biolink/vocab/",
+                "https://w3id.org/biolink/",
+                "http://w3id.org/biolink/",
+            )
+        ):
             detected = "biolink"
         elif lowered.startswith(("https://purl.dsmz.de/", "http://purl.dsmz.de/")):
             detected = "d3o"
