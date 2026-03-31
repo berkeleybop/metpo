@@ -14,4 +14,4 @@ Only the latest release is supported with security updates.
 
 ## Security Updates
 
-Dependencies are monitored by Dependabot. Security updates are applied as they become available.
+Dependencies are updated weekly via a scheduled `uv lock --upgrade` workflow. Security fixes land as part of those updates.
