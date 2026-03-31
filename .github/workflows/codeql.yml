@@ -7,12 +7,14 @@ on:
     branches: [main]
   schedule:
     - cron: '0 6 * * 1'  # Monday 6am UTC
+  workflow_dispatch:
 
 jobs:
   analyze:
     name: Analyze
     runs-on: ubuntu-latest
     permissions:
+      actions: read
       security-events: write
       contents: read
     strategy:
@@ -26,7 +28,6 @@ jobs:
         uses: github/codeql-action/init@v3
         with:
           languages: ${{ matrix.language }}
-      - name: Autobuild
-        uses: github/codeql-action/autobuild@v3
+          build-mode: none
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
