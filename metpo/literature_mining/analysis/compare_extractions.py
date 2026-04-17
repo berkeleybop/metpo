@@ -187,8 +187,9 @@ def print_comparison(v1_stats: dict, v2_stats: dict):
     )
     top_predicates = sorted(
         all_predicates,
-        key=lambda p: v1_stats["predicate_counts"].get(p, 0)
-        + v2_stats["predicate_counts"].get(p, 0),
+        key=lambda p: (
+            v1_stats["predicate_counts"].get(p, 0) + v2_stats["predicate_counts"].get(p, 0)
+        ),
         reverse=True,
     )[:10]
 
