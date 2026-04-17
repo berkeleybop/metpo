@@ -43,7 +43,7 @@ def analyze_extraction(yaml_file: Path) -> dict:
 
             entity_id = str(entity.get("id", ""))
             if ":" in entity_id:
-                namespace = entity_id.split(":")[0]
+                namespace = entity_id.split(":", maxsplit=1)[0]
                 stats["namespace_counts"][namespace] += 1
 
                 if namespace != "AUTO":
