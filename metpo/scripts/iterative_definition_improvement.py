@@ -44,7 +44,7 @@ def fix_genus_for_parent(definition: str, parent: str, label: str) -> str | None
         return None
 
     # Handle multi-parent (take first)
-    parent = parent.split("|")[0].strip()
+    parent = parent.split("|", maxsplit=1)[0].strip()
 
     # Skip if already has correct genus
     def_lower = definition.lower()
@@ -96,7 +96,7 @@ def check_definition_quality(definition: str, parent: str, label: str) -> tuple[
         return 0, ["No definition"]
 
     def_lower = definition.lower()
-    parent_lower = parent.split("|")[0].strip().lower() if parent else ""
+    parent_lower = parent.split("|", maxsplit=1)[0].strip().lower() if parent else ""
 
     # Check genus matches parent (40 points)
     if parent_lower and (def_lower.startswith((f"a {parent_lower}", f"an {parent_lower}"))):

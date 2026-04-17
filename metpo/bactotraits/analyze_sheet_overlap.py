@@ -18,7 +18,7 @@ def normalize_id(id_str: str) -> str:
 
     # Handle URL format: https://w3id.org/metpo/1000335 -> METPO:1000335
     if id_str.startswith("https://w3id.org/metpo/"):
-        return f"METPO:{id_str.split('/')[-1]}"
+        return f"METPO:{id_str.rsplit('/', maxsplit=1)[-1]}"
 
     # Already in CURIE format
     if id_str.startswith("METPO:"):
