@@ -42,7 +42,7 @@ def get_entity_curie(entity_uri: str) -> str:
     :return: CURIE like 'METPO:1000602'
     """
     if entity_uri.startswith("https://w3id.org/metpo/"):
-        return "METPO:" + entity_uri.split("/")[-1]
+        return "METPO:" + entity_uri.rsplit("/", maxsplit=1)[-1]
     return entity_uri
 
 
