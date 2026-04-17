@@ -6,6 +6,8 @@ import chromadb
 import click
 from chromadb.config import Settings
 
+from metpo.cli_common import CHROMADB_ROOT
+
 
 def audit_collection(chroma_path: str, collection_name: str):
     """Audit a ChromaDB collection."""
@@ -99,9 +101,9 @@ def main():
     """Audit all ChromaDB collections."""
 
     collections = [
-        ("./chroma_ols_27", "ols_embeddings"),
-        ("../embeddings_chroma", "non_ols_embeddings"),
-        ("./chroma_combined", "combined_embeddings"),
+        (str(CHROMADB_ROOT / "chroma_ols_27"), "ols_embeddings"),
+        (str(CHROMADB_ROOT / "embeddings_chroma"), "non_ols_embeddings"),
+        (str(CHROMADB_ROOT / "chroma_combined"), "combined_embeddings"),
     ]
 
     results = {}
@@ -115,9 +117,9 @@ def main():
     print("CROSS-DATABASE COMPARISON")
     print(f"{'=' * 80}")
 
-    ols_result = results.get("./chroma_ols_27/ols_embeddings")
-    non_ols_result = results.get("../embeddings_chroma/non_ols_embeddings")
-    combined_result = results.get("./chroma_combined/combined_embeddings")
+    ols_result = results.get(f"{CHROMADB_ROOT / 'chroma_ols_27'}/ols_embeddings")
+    non_ols_result = results.get(f"{CHROMADB_ROOT / 'embeddings_chroma'}/non_ols_embeddings")
+    combined_result = results.get(f"{CHROMADB_ROOT / 'chroma_combined'}/combined_embeddings")
 
     if ols_result and non_ols_result and combined_result:
         print("\nTotal Counts:")

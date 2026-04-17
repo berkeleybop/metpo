@@ -22,6 +22,8 @@ import click
 from openai import OpenAI
 from tqdm import tqdm
 
+from metpo.cli_common import CHROMADB_ROOT
+
 
 def load_ready_improvements(ready_path: str) -> dict[str, dict]:
     """Load undergraduate curator improvements."""
@@ -255,7 +257,7 @@ def choose_best_definition(
 @click.option(
     "--chroma-path",
     type=click.Path(exists=True),
-    default="data/chromadb/chroma_ols20_nonols4",
+    default=str(CHROMADB_ROOT / "chroma_ols20_nonols4"),
     help="ChromaDB directory",
 )
 @click.option("--collection-name", default="combined_embeddings", help="ChromaDB collection name")

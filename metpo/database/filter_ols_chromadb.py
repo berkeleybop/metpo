@@ -8,14 +8,24 @@ import chromadb
 import click
 from chromadb.config import Settings
 
+from metpo.cli_common import CHROMADB_ROOT
+
 # OLS ontologies to REMOVE (7 total)
 OLS_TO_REMOVE = {"chebi", "foodon", "cl", "fypo", "ecto", "aro", "ddpheno"}
 
 
 @click.command()
-@click.option("--input-path", default="./chroma_ols_27", help="Path to input ChromaDB")
+@click.option(
+    "--input-path",
+    default=str(CHROMADB_ROOT / "chroma_ols_27"),
+    help="Path to input ChromaDB",
+)
 @click.option("--input-collection", default="ols_embeddings", help="Input collection name")
-@click.option("--output-path", default="./chroma_ols_20", help="Path to output ChromaDB")
+@click.option(
+    "--output-path",
+    default=str(CHROMADB_ROOT / "chroma_ols_20"),
+    help="Path to output ChromaDB",
+)
 @click.option("--output-collection", default="ols_embeddings", help="Output collection name")
 @click.option("--batch-size", default=10000, help="Batch size for processing")
 def main(input_path, input_collection, output_path, output_collection, batch_size):
