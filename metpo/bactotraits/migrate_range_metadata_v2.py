@@ -17,7 +17,7 @@ import click
 def normalize_id(id_str: str) -> str:
     """Convert various ID formats to METPO:XXXXXXX format."""
     if id_str.startswith("https://w3id.org/metpo/"):
-        return f"METPO:{id_str.split('/')[-1]}"
+        return f"METPO:{id_str.rsplit('/', maxsplit=1)[-1]}"
     if id_str.startswith("METPO:"):
         return id_str
     if id_str.isdigit():

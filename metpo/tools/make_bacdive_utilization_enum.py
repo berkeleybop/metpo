@@ -110,7 +110,7 @@ def convert_tsv_to_linkml_enum(
     # Create the LinkML enumeration structure
     linkml_enum = {
         "id": id_prefix,
-        "name": id_prefix.split("/")[-1] if "/" in id_prefix else id_prefix,
+        "name": id_prefix.rsplit("/", maxsplit=1)[-1] if "/" in id_prefix else id_prefix,
         "title": f"{enum_name} Enumeration",
         "description": "Enumeration of relationships between organisms and chemicals derived from BacDive metabolic utilization data",
         "prefixes": {"linkml": "https://w3id.org/linkml/", default_prefix: "http://example.com/"},

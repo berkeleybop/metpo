@@ -22,7 +22,7 @@ BIOPORTAL_API_KEY = os.environ.get("BIOPORTAL_API_KEY", "")
 def iri_to_curie(iri: str) -> str:
     """Convert IRI to CURIE if possible."""
     if "purl.obolibrary.org/obo/" in iri:
-        local_part = iri.split("purl.obolibrary.org/obo/")[-1]
+        local_part = iri.rsplit("purl.obolibrary.org/obo/", maxsplit=1)[-1]
         if "_" in local_part:
             prefix, local_id = local_part.split("_", 1)
             return f"{prefix}:{local_id}"
