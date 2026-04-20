@@ -8,22 +8,23 @@ Primary sources:
 """
 
 import csv
+import os
 import sqlite3
 from collections import Counter
 from pathlib import Path
 
 from metpo.utils.sssom_utils import extract_prefix, parse_sssom_curie_map
 
+_CHROMADB_ROOT = Path(os.environ.get("METPO_CHROMADB_ROOT", "data/chromadb"))
+
 # PRIMARY SOURCE 1: ChromaDB databases
-CHROMA_COMBINED = Path("/home/mark/gitrepos/metpo/notebooks/chroma_combined/chroma.sqlite3")
-CHROMA_OLS_20 = Path("/home/mark/gitrepos/metpo/notebooks/chroma_ols_20/chroma.sqlite3")
-CHROMA_NONOLS_4 = Path("/home/mark/gitrepos/metpo/notebooks/chroma_nonols_4/chroma.sqlite3")
+CHROMA_COMBINED = _CHROMADB_ROOT / "chroma_combined" / "chroma.sqlite3"
+CHROMA_OLS_20 = _CHROMADB_ROOT / "chroma_ols_20" / "chroma.sqlite3"
+CHROMA_NONOLS_4 = _CHROMADB_ROOT / "chroma_nonols_4" / "chroma.sqlite3"
 
 # PRIMARY SOURCE 2: SSSOM mappings
-SSSOM_RELAXED = Path(
-    "/home/mark/gitrepos/metpo/data/mappings/metpo_mappings_combined_relaxed.sssom.tsv"
-)
-SSSOM_OPTIMIZED = Path("/home/mark/gitrepos/metpo/data/mappings/metpo_mappings_optimized.sssom.tsv")
+SSSOM_RELAXED = Path("data/mappings/metpo_mappings_combined_relaxed.sssom.tsv")
+SSSOM_OPTIMIZED = Path("data/mappings/metpo_mappings_optimized.sssom.tsv")
 
 
 def query_chromadb(db_path, description):

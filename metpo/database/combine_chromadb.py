@@ -1,30 +1,32 @@
 """Combine OLS and non-OLS ChromaDB databases into a single unified database."""
 
-import os
+from pathlib import Path
 
 import chromadb
 import click
 from chromadb.config import Settings
 from tqdm import tqdm
 
+from metpo.cli_common import CHROMADB_ROOT
+
 
 @click.command()
 @click.option(
     "--ols-path",
     type=click.Path(exists=True),
-    default="notebooks/chroma_ols_27",
+    default=str(CHROMADB_ROOT / "chroma_ols_27"),
     help="Path to OLS ChromaDB",
 )
 @click.option(
     "--non-ols-path",
     type=click.Path(exists=True),
-    default="embeddings_chroma",
+    default=str(CHROMADB_ROOT / "embeddings_chroma"),
     help="Path to non-OLS ChromaDB",
 )
 @click.option(
     "--output-path",
     type=click.Path(),
-    default="notebooks/chroma_combined",
+    default=str(CHROMADB_ROOT / "chroma_combined"),
     help="Path for combined ChromaDB output",
 )
 @click.option(
@@ -46,7 +48,7 @@ def main(ols_path, non_ols_path, output_path, output_collection, batch_size):
     print("=" * 80)
 
     # Check if output already exists
-    if os.path.exists(output_path):
+    if Path(output_path).exists():
         click.confirm(
             f"\nWarning: Output path '{output_path}' already exists. Overwrite?", abort=True
         )

@@ -21,6 +21,8 @@ import chromadb
 import click
 from chromadb.config import Settings
 
+from metpo.cli_common import CHROMADB_ROOT
+
 
 def is_real_definition(label: str, definition: str, min_length: int = 30) -> bool:
     """
@@ -159,7 +161,7 @@ def get_definition_from_chromadb(term_iri: str, collection, ontology_id: str) ->
     "--chromadb-path",
     "-c",
     type=click.Path(exists=True, path_type=Path),
-    default="data/chromadb/chroma_ols20_nonols4",
+    default=str(CHROMADB_ROOT / "chroma_ols20_nonols4"),
     help="Path to ChromaDB directory",
 )
 @click.option(

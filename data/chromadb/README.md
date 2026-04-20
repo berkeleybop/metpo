@@ -1,8 +1,19 @@
 # ChromaDB Setup for query_chromadb.ipynb
 
+## Configuration
+
+Set `METPO_CHROMADB_ROOT` to point to your local ChromaDB directory:
+
+```bash
+export METPO_CHROMADB_ROOT=/path/to/your/chromadb/metpo
+```
+
+If unset, defaults to `data/chromadb` (project-relative). All CLI scripts
+accept `--chroma-path` overrides.
+
 ## Database: chroma_ols20_nonols4
 
-**Location**: `data/chromadb/chroma_ols20_nonols4/`
+**Location**: `$METPO_CHROMADB_ROOT/chroma_ols20_nonols4/`
 **Collection**: `combined_embeddings`
 **Size**: 3.4GB (gitignored)
 **Embeddings**: 452,942 embeddings from 24 curated ontologies
