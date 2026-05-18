@@ -3,10 +3,34 @@
 ## If you need to customize your Makefile, make
 ## changes here rather than in the main Makefile
 
-# Sheet GIDs are centralized in sheets.yaml at repo root.
+# Sheet GIDs and spreadsheet ID are centralized in sheets.yaml at repo root.
 # See https://github.com/berkeleybop/metpo/issues/372
-SRC_URL_MAIN := $(shell cd ../.. && uv run python -c "from metpo.sheets_config import export_url; print(export_url('classes'))")
-SRC_URL_PROPERTIES := $(shell cd ../.. && uv run python -c "from metpo.sheets_config import export_url; print(export_url('properties'))")
+#
+# Two-tier resolution so the build works on both host and inside the ODK
+# container (which does not ship `uv`):
+#
+#   1. Hardcoded defaults below ALWAYS work: container has no python deps,
+#      host with no pyyaml, etc.
+#   2. If python3 + pyyaml are available (true in the ODK container, and on
+#      hosts with `pip install pyyaml` or an active uv venv), we override
+#      the defaults by reading sheets.yaml via metpo/sheets_config.py
+#      invoked as a script (no package install required).
+#
+# If the sheet's GIDs ever change, update both the hardcoded defaults here
+# AND sheets.yaml. See docs/google_sheets_template_sync.md.
+SPREADSHEET_ID := 1_Lr-9_5QHi8QLvRyTZFSciUhzGKD4DbUObyTpJ16_RU
+SRC_URL_MAIN := https://docs.google.com/spreadsheets/d/$(SPREADSHEET_ID)/export?exportFormat=tsv&gid=1569766102
+SRC_URL_PROPERTIES := https://docs.google.com/spreadsheets/d/$(SPREADSHEET_ID)/export?exportFormat=tsv&gid=681401984
+
+SRC_URL_MAIN_FROM_YAML := $(shell python3 ../../metpo/sheets_config.py classes 2>/dev/null)
+ifneq ($(SRC_URL_MAIN_FROM_YAML),)
+SRC_URL_MAIN := $(SRC_URL_MAIN_FROM_YAML)
+endif
+
+SRC_URL_PROPERTIES_FROM_YAML := $(shell python3 ../../metpo/sheets_config.py properties 2>/dev/null)
+ifneq ($(SRC_URL_PROPERTIES_FROM_YAML),)
+SRC_URL_PROPERTIES := $(SRC_URL_PROPERTIES_FROM_YAML)
+endif
 
 DRAFTS_DIR = ../templates/drafts
 

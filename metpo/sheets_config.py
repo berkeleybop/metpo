@@ -46,3 +46,13 @@ def all_export_urls() -> dict[str, str]:
                 f"/export?exportFormat=tsv&gid={gid}"
             )
     return urls
+
+
+if __name__ == "__main__":
+    # Callable directly as a script without installing the metpo package:
+    #   python3 metpo/sheets_config.py classes
+    #   python3 metpo/sheets_config.py properties
+    # Lets the ODK Makefile resolve sheet URLs using only python3 + pyyaml
+    # (both present in the ODK container), without needing `uv run`.
+    import sys
+    print(export_url(sys.argv[1]))

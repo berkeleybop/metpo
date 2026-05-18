@@ -97,7 +97,34 @@ curl -sL 'https://docs.google.com/spreadsheets/d/1_Lr-9_5QHi8QLvRyTZFSciUhzGKD4D
 
 Google Sheets also maintains version history (File → Version history) which can restore any prior state.
 
+## Build-time URL resolution (host vs ODK container)
+
+The Makefile rules that download templates from the Google Sheet need to resolve the export URL at parse time. Resolution has to work in two environments:
+
+| Environment | python3 | pyyaml | uv | metpo package importable |
+|---|---|---|---|---|
+| ODK container (`sh run.sh make ...`) | yes | yes | **no** | no |
+| Host with active uv venv | yes (venv) | yes | yes | yes (editable install) |
+| Host plain (`python3` from Homebrew or system) | yes | usually **no** | maybe | no |
+
+`src/ontology/metpo.Makefile` uses a two-tier fallback:
+
+1. **Hardcoded defaults** (`SPREADSHEET_ID`, `SRC_URL_MAIN`, `SRC_URL_PROPERTIES` at the top of the file) — always work regardless of environment.
+2. **Override from sheets.yaml** — runs `python3 ../../metpo/sheets_config.py classes` (and `properties`). If python3 + pyyaml are present, this prints the URL derived from `sheets.yaml`, and Make overrides the hardcoded default. If anything fails (`ModuleNotFoundError`, missing file, etc.), stderr is swallowed and the hardcoded default stands.
+
+`metpo/sheets_config.py` is **both** an importable module (used by Python scripts in the repo) **and** a runnable script (used by Makefiles). The `if __name__ == "__main__":` block at the bottom calls `export_url(sys.argv[1])`.
+
+### Why two tiers instead of one
+
+Earlier, the Makefile invoked `uv run python -c "from metpo.sheets_config import export_url; ..."`. That worked on host but failed silently inside the ODK container with `/bin/sh: 1: uv: not found`, returning an empty URL and producing a zero-byte `metpo_sheet.tsv`. The two-tier setup keeps the central-source-of-truth benefit of `sheets.yaml` (issue [#372](https://github.com/berkeleybop/metpo/issues/372)) while making the build robust to environments that lack `uv` or `pyyaml`.
+
+### When sheet GIDs change
+
+Update both `sheets.yaml` AND the hardcoded `SRC_URL_MAIN` / `SRC_URL_PROPERTIES` defaults in `src/ontology/metpo.Makefile`. The yaml-derived value is preferred when available, but the hardcoded fallback should not drift far from reality.
+
 ## Related issues
 
 - [#366](https://github.com/berkeleybop/metpo/issues/366) — Template lifecycle: diff, sync, and push workflow
 - [#365](https://github.com/berkeleybop/metpo/issues/365) — Properties template needs per-source synonym columns
+- [#372](https://github.com/berkeleybop/metpo/issues/372) — Centralize Google Sheets GIDs in single config file (introduced `sheets.yaml`)
+- [#433](https://github.com/berkeleybop/metpo/issues/433) — Umbrella: SoT switch + agentic-maintenance guardrails
