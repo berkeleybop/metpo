@@ -10,14 +10,19 @@ Prefix(IAO:=<http://purl.obolibrary.org/obo/IAO_>)
 
 
 Ontology(<http://purl.obolibrary.org/obo/metpo.owl>
+Annotation(dcterms:title "METPO: Microbial Ecophysiological Trait and Phenotype Ontology")
+Annotation(dcterms:description "METPO provides standardized terms for the phenotypic traits, growth conditions, metabolic capabilities, and morphology of bacteria and archaea. It integrates heterogeneous microbial trait resources (BactoTraits, BacDive, Madin et al.) and supports knowledge-graph and literature-mining workflows in projects such as KG-Microbe. METPO follows OBO Foundry conventions and reuses terms from PATO, GO, CHEBI, NCBITaxon, and related ontologies where possible.")
 Annotation(dcterms:creator "METPO Development Team")
-Annotation(dcterms:description "Microbial ecophysiological trait and phenotype ontology")
-Annotation(dcterms:issued "2024-01-01")
+Annotation(dcterms:contributor <https://orcid.org/0000-0001-9076-6066>)
 Annotation(dcterms:license <https://creativecommons.org/licenses/by/4.0/>)
-Annotation(dcterms:modified "2025-09-29")
-Annotation(dcterms:title "METPO")
+Annotation(dcterms:issued "2024-01-01")
+Annotation(dcterms:modified "2026-05-18")
+Annotation(rdfs:seeAlso <https://github.com/berkeleybop/metpo>)
+Annotation(rdfs:seeAlso <https://bioregistry.io/registry/metpo>)
+Annotation(rdfs:seeAlso <https://bioportal.bioontology.org/ontologies/METPO>)
 
 
+Declaration(AnnotationProperty(dcterms:contributor))
 Declaration(AnnotationProperty(dcterms:creator))
 Declaration(AnnotationProperty(dcterms:description))
 Declaration(AnnotationProperty(dcterms:issued))

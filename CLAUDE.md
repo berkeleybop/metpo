@@ -190,6 +190,41 @@ sh run.sh make prepare_release
 5. **Follow naming patterns** - Consistent with existing terms in the ontology
 6. **Place imports appropriately** - Keep imported terms in imports directory
 
+### Synonym Column Conventions (source-bound vs ontology-native)
+
+The classes-tab template has two kinds of synonym columns; they have different editing rules.
+
+**Source-bound columns** (always paired with a source URL column):
+
+| Column | Source column | Holds |
+|---|---|---|
+| `madin synonym or field` | `Madin synonym source` | Verbatim field name or value from Madin et al. |
+| `bacdive keyword synonym` | `Bacdive synonym source` | Verbatim keyword from BacDive |
+| `bactotraits related synonym` | `Bactotraits synonym source` | Verbatim column name from the BactoTraits CSV |
+| `metatraits synonym` | `MetaTraits synonym source` | Verbatim term from MetaTraits |
+
+**Rule:** values in source-bound columns are verbatim from the named source. Do **not** normalize them, even when the source contains:
+
+- typos (BactoTraits `Ox_microerophile` for microaerophile)
+- inconsistent prefixes (BactoTraits header has `pHR_8_to_10` then `10_to_14` for the next bin, no `pHR_` prefix)
+- non-English forms
+- unusual capitalization or punctuation
+
+The implicit contract is that downstream consumers (e.g. `kg-microbe`'s BactoTraits transformer) match on the exact source string. Normalizing breaks matching.
+
+**Ontology-native columns:**
+
+| Column | Holds |
+|---|---|
+| `confirmed exact synonym` | Clean US English synonyms curated for METPO itself (`oboInOwl:hasExactSynonym`) |
+| `literature mining related synonyms` | OntoGPT-derived candidates (`oboInOwl:hasRelatedSynonym`) |
+| `biolink close match` | `skos:closeMatch` to a Biolink class |
+| `biolink broad match` | `skos:broadMatch` to a Biolink class (when METPO term is more specific) |
+
+**Rule:** ontology-native columns use normal, consistent US English orthography. Foreign-language forms, source typos, and one-off transcriptions belong in source-bound columns or in `literature mining related synonyms`, not here.
+
+When a source value happens to coincide with the desired ontology-native synonym, write it in *both* columns; do not rely on the source-bound column carrying English semantics.
+
 ---
 
 ## Project Organization
