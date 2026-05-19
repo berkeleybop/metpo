@@ -221,9 +221,17 @@ The implicit contract is that downstream consumers (e.g. `kg-microbe`'s BactoTra
 | `biolink close match` | `skos:closeMatch` to a Biolink class |
 | `biolink broad match` *(added to sheet 2026-05-18; appears in `src/templates/metpo_sheet.tsv` after any build that re-fetches; not in the committed snapshot at this PR's HEAD)* | `skos:broadMatch` to a Biolink class (when METPO term is more specific) |
 
-**Important nuance about the committed TSV vs the Google Sheet:** the Google Sheet is the source of truth for ontology content. `src/templates/metpo_sheet.tsv` in the repo is a build cache: `make squeaky-clean && make all` deletes the local copy and re-curls it from the sheet, so every build runs against current sheet data. The committed TSV is a snapshot from the last time someone ran the build and `git add`ed the result; it can lag behind the sheet without affecting builds. Contributors who browse the repo via GitHub may see a stale snapshot of column structure, but the build always sees what is in the sheet right now.
+**Important nuance about the committed TSV vs the Google Sheet (today's flow):** the Google Sheet is the conceptual source of truth for ontology content. `src/templates/metpo_sheet.tsv` in the repo is a build cache. The Makefile rule `../templates/metpo_sheet.tsv:` has *no* prerequisites, so Make re-fetches from the sheet **only when the local file is missing**. Three concrete cases:
 
-The cache rule is unconditional (`../templates/metpo_sheet.tsv:` has no prerequisites), so direct local edits to the TSV survive subsequent `make all` invocations until the next `squeaky-clean`. Don't rely on this for durable changes; commit them via the sheet.
+| Invocation | TSV state | Uses sheet? |
+|---|---|---|
+| `make all` after `make squeaky-clean` (or otherwise missing TSV) | absent → re-fetched via curl | yes (live sheet) |
+| `make all` on a fresh clone / CI run | present (committed snapshot) | no — uses committed TSV as-is |
+| `make all` after local edits to the TSV | present (locally edited) | no — local edits survive until next `squeaky-clean` |
+
+CI runs `make test IMP=false PAT=false MIR=false` from `.github/workflows/qc.yml` (no `squeaky-clean`), so CI tests against the **committed** TSV and the **committed** `components/metpo_sheet.owl`, not the live sheet. To get sheet edits into CI, someone has to run `squeaky-clean && make all`, then commit the regenerated `src/templates/*.tsv` and `src/ontology/components/*.owl`. Until then the committed snapshot is what gets tested.
+
+This is mostly fine because the cadence of sheet edits is "edit then run a verifying build then commit," not "edit and forget." But it does mean contributors browsing the repo via GitHub see whatever was last committed, and that's also what CI is checking.
 
 **Rule:** ontology-native columns use normal, consistent US English orthography. Foreign-language forms, source typos, and one-off transcriptions belong in source-bound columns or in `literature mining related synonyms`, not here.
 
