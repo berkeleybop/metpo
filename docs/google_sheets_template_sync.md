@@ -99,7 +99,7 @@ Google Sheets also maintains version history (File → Version history) which ca
 
 ## Build-time URL resolution (host vs ODK container)
 
-The Makefile rules that download templates from the Google Sheet need to resolve the export URL at parse time. Resolution has to work in two environments:
+The Makefile rules that download templates from the Google Sheet need to resolve the export URL at parse time. Resolution has to work across three distinct setups (one container target plus two host variants):
 
 | Environment | python3 | pyyaml | uv | metpo package importable |
 |---|---|---|---|---|

@@ -9,12 +9,14 @@
 # Two-tier resolution so the build works on both host and inside the ODK
 # container (which does not ship `uv`):
 #
-#   1. Hardcoded defaults below ALWAYS work: container has no python deps,
-#      host with no pyyaml, etc.
-#   2. If python3 + pyyaml are available (true in the ODK container, and on
-#      hosts with `pip install pyyaml` or an active uv venv), we override
-#      the defaults by reading sheets.yaml via metpo/sheets_config.py
-#      invoked as a script (no package install required).
+#   1. Hardcoded defaults below always work, even if python3 or pyyaml are
+#      unavailable, since they require nothing beyond Make itself.
+#   2. If python3 + pyyaml ARE available (true in the ODK container, on
+#      hosts with `pip install pyyaml`, and inside an active uv venv), we
+#      override the defaults by reading sheets.yaml via
+#      metpo/sheets_config.py invoked as a script (no package install
+#      required). The shell command's stderr is swallowed so a missing
+#      python3 or pyyaml falls through silently to the hardcoded defaults.
 #
 # If the sheet's GIDs ever change, update both the hardcoded defaults here
 # AND sheets.yaml. See docs/google_sheets_template_sync.md.
