@@ -55,13 +55,13 @@ diff-drafts: ../templates/metpo_sheet.tsv ../templates/metpo-properties.tsv
 	@diff $(DRAFTS_DIR)/metpo-properties.tsv ../templates/metpo-properties.tsv || true
 
 ../templates/metpo_sheet.tsv:
-	curl -L -s $(SRC_URL_MAIN) > $@
+	curl -L -s "$(SRC_URL_MAIN)" > $@
 
 #../templates/metpo-synonyms.tsv:
-#	curl -L -s $(SRC_URL_SYNONYMS) > $@
+#	curl -L -s "$(SRC_URL_SYNONYMS)" > $@
 
 ../templates/metpo-properties.tsv:
-	curl -L -s $(SRC_URL_PROPERTIES) > $@
+	curl -L -s "$(SRC_URL_PROPERTIES)" > $@
 
 squeaky-clean: clean clean-templates
 

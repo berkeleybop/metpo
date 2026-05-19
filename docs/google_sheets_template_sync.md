@@ -122,6 +122,20 @@ Earlier, the Makefile invoked `uv run python -c "from metpo.sheets_config import
 
 Update both `sheets.yaml` AND the hardcoded `SRC_URL_MAIN` / `SRC_URL_PROPERTIES` defaults in `src/ontology/metpo.Makefile`. The yaml-derived value is preferred when available, but the hardcoded fallback should not drift far from reality.
 
+## Other build environment quirks
+
+### `useradd` warning on macOS hosts
+
+When running `sh run.sh make <anything>` on a macOS host, the ODK container's entrypoint prints:
+
+```
+useradd warning: odkuser's uid 502 outside of the UID_MIN 1000 and UID_MAX 60000 range.
+```
+
+**Benign, ignore.** The entrypoint creates a Linux user inside the container that matches your macOS UID (501/502 for the first non-system user on macOS) so files the container writes to the mounted repo come out owned by you on the host. Linux convention reserves UIDs below 1000 for system accounts; `useradd` accepts the out-of-range UID and continues, just complaining. Same warning shows up with any Docker image that UID-matches a macOS host (OAK, GO build containers, etc.).
+
+If you want to silence it long-term, the fix is upstream in [`INCATools/ontology-development-kit`](https://github.com/INCATools/ontology-development-kit) (have the entrypoint pre-check the macOS-typical UID range and skip the warning, or pass `-K UID_MIN=0` to `useradd`). Low-priority and mostly cosmetic.
+
 ## Related issues
 
 - [#366](https://github.com/berkeleybop/metpo/issues/366) — Template lifecycle: diff, sync, and push workflow
