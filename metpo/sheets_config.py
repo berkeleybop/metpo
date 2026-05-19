@@ -55,4 +55,13 @@ if __name__ == "__main__":
     # Lets the ODK Makefile resolve sheet URLs using only python3 + pyyaml
     # (both present in the ODK container), without needing `uv run`.
     import sys
-    print(export_url(sys.argv[1]))
+
+    if len(sys.argv) != 2:
+        print(f"usage: {sys.argv[0]} <sheet_name>", file=sys.stderr)
+        sys.exit(2)
+    sheet = sys.argv[1]
+    if sheet not in SHEET_GIDS:
+        valid = ", ".join(sorted(SHEET_GIDS))
+        print(f"unknown sheet '{sheet}'; valid: {valid}", file=sys.stderr)
+        sys.exit(1)
+    print(export_url(sheet))
