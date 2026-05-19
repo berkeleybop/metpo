@@ -190,6 +190,53 @@ sh run.sh make prepare_release
 5. **Follow naming patterns** - Consistent with existing terms in the ontology
 6. **Place imports appropriately** - Keep imported terms in imports directory
 
+### Synonym Column Conventions (source-bound vs ontology-native)
+
+The classes-tab template has two kinds of synonym columns; they have different editing rules.
+
+**Source-bound columns** (always paired with a source URL column):
+
+| Column | Source column | Holds |
+|---|---|---|
+| `madin synonym or field` | `Madin synonym source` | Verbatim field name or value from Madin et al. |
+| `bacdive keyword synonym` | `Bacdive synonym source` | Verbatim keyword from BacDive |
+| `bactotraits related synonym` | `Bactotraits synonym source` | Verbatim column name from the BactoTraits CSV |
+| `metatraits synonym` | `MetaTraits synonym source` | Verbatim term from MetaTraits |
+
+**Rule:** values in source-bound columns are verbatim from the named source. Do **not** normalize them, even when the source contains:
+
+- typos (BactoTraits `Ox_microerophile` for microaerophile)
+- inconsistent prefixes (BactoTraits header has `pHR_8_to_10` then `10_to_14` for the next bin, no `pHR_` prefix)
+- non-English forms
+- unusual capitalization or punctuation
+
+The implicit contract is that downstream consumers (e.g. `kg-microbe`'s BactoTraits transformer) match on the exact source string. Normalizing breaks matching.
+
+**Ontology-native columns:**
+
+| Column | Holds |
+|---|---|
+| `confirmed exact synonym` | Clean US English synonyms curated for METPO itself (`oboInOwl:hasExactSynonym`) |
+| `literature mining related synonyms` | OntoGPT-derived candidates (`oboInOwl:hasRelatedSynonym`) |
+| `biolink close match` | `skos:closeMatch` to a Biolink class |
+| `biolink broad match` *(added to sheet 2026-05-18; appears in `src/templates/metpo_sheet.tsv` after any build that re-fetches; not in the committed snapshot at this PR's HEAD)* | `skos:broadMatch` to a Biolink class (when METPO term is more specific) |
+
+**Important nuance about the committed TSV vs the Google Sheet (today's flow):** the Google Sheet is the conceptual source of truth for ontology content. `src/templates/metpo_sheet.tsv` in the repo is a build cache. The Makefile rule `../templates/metpo_sheet.tsv:` has *no* prerequisites, so Make re-fetches from the sheet **only when the local file is missing**. Three concrete cases:
+
+| Invocation | TSV state | Uses sheet? |
+|---|---|---|
+| `make all` after `make squeaky-clean` (or otherwise missing TSV) | absent → re-fetched via curl | yes (live sheet) |
+| `make all` on a fresh clone / CI run | present (committed snapshot) | no — uses committed TSV as-is |
+| `make all` after local edits to the TSV | present (locally edited) | no — local edits survive until next `squeaky-clean` |
+
+CI runs `make test IMP=false PAT=false MIR=false` from `.github/workflows/qc.yml` (no `squeaky-clean`), so CI tests against the **committed** TSV and the **committed** `components/metpo_sheet.owl`, not the live sheet. To get sheet edits into CI, someone has to run `squeaky-clean && make all`, then commit the regenerated `src/templates/*.tsv` and `src/ontology/components/*.owl`. Until then the committed snapshot is what gets tested.
+
+This is mostly fine because the cadence of sheet edits is "edit then run a verifying build then commit," not "edit and forget." But it does mean contributors browsing the repo via GitHub see whatever was last committed, and that's also what CI is checking.
+
+**Rule:** ontology-native columns use normal, consistent US English orthography. Foreign-language forms, source typos, and one-off transcriptions belong in source-bound columns or in `literature mining related synonyms`, not here.
+
+When a source value happens to coincide with the desired ontology-native synonym, write it in *both* columns; do not rely on the source-bound column carrying English semantics.
+
 ---
 
 ## Project Organization
