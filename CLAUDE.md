@@ -219,9 +219,11 @@ The implicit contract is that downstream consumers (e.g. `kg-microbe`'s BactoTra
 | `confirmed exact synonym` | Clean US English synonyms curated for METPO itself (`oboInOwl:hasExactSynonym`) |
 | `literature mining related synonyms` | OntoGPT-derived candidates (`oboInOwl:hasRelatedSynonym`) |
 | `biolink close match` | `skos:closeMatch` to a Biolink class |
-| `biolink broad match` *(added 2026-05-18; not yet in committed `src/templates/metpo_sheet.tsv` until the next Sheet → TSV sync per #366)* | `skos:broadMatch` to a Biolink class (when METPO term is more specific) |
+| `biolink broad match` *(added to sheet 2026-05-18; appears in `src/templates/metpo_sheet.tsv` after any build that re-fetches; not in the committed snapshot at this PR's HEAD)* | `skos:broadMatch` to a Biolink class (when METPO term is more specific) |
 
-The `biolink broad match` column exists today only in the Google Sheet (`classes` tab, column X with ROBOT directive `AI skos:broadMatch`). It will appear in the repo TSVs the next time `make squeaky-clean && make all` re-downloads from the sheet. Until then, contributors editing the local TSV file directly will not see it.
+**Important nuance about the committed TSV vs the Google Sheet:** the Google Sheet is the source of truth for ontology content. `src/templates/metpo_sheet.tsv` in the repo is a build cache: `make squeaky-clean && make all` deletes the local copy and re-curls it from the sheet, so every build runs against current sheet data. The committed TSV is a snapshot from the last time someone ran the build and `git add`ed the result; it can lag behind the sheet without affecting builds. Contributors who browse the repo via GitHub may see a stale snapshot of column structure, but the build always sees what is in the sheet right now.
+
+The cache rule is unconditional (`../templates/metpo_sheet.tsv:` has no prerequisites), so direct local edits to the TSV survive subsequent `make all` invocations until the next `squeaky-clean`. Don't rely on this for durable changes; commit them via the sheet.
 
 **Rule:** ontology-native columns use normal, consistent US English orthography. Foreign-language forms, source typos, and one-off transcriptions belong in source-bound columns or in `literature mining related synonyms`, not here.
 
