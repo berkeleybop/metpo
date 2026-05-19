@@ -219,7 +219,9 @@ The implicit contract is that downstream consumers (e.g. `kg-microbe`'s BactoTra
 | `confirmed exact synonym` | Clean US English synonyms curated for METPO itself (`oboInOwl:hasExactSynonym`) |
 | `literature mining related synonyms` | OntoGPT-derived candidates (`oboInOwl:hasRelatedSynonym`) |
 | `biolink close match` | `skos:closeMatch` to a Biolink class |
-| `biolink broad match` | `skos:broadMatch` to a Biolink class (when METPO term is more specific) |
+| `biolink broad match` *(added 2026-05-18; not yet in committed `src/templates/metpo_sheet.tsv` until the next Sheet → TSV sync per #366)* | `skos:broadMatch` to a Biolink class (when METPO term is more specific) |
+
+The `biolink broad match` column exists today only in the Google Sheet (`classes` tab, column X with ROBOT directive `AI skos:broadMatch`). It will appear in the repo TSVs the next time `make squeaky-clean && make all` re-downloads from the sheet. Until then, contributors editing the local TSV file directly will not see it.
 
 **Rule:** ontology-native columns use normal, consistent US English orthography. Foreign-language forms, source typos, and one-off transcriptions belong in source-bound columns or in `literature mining related synonyms`, not here.
 
