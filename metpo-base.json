@@ -6,11 +6,14 @@
         "pred" : "http://purl.org/dc/elements/1.1/type",
         "val" : "http://purl.obolibrary.org/obo/IAO_8000001"
       }, {
+        "pred" : "http://purl.org/dc/terms/contributor",
+        "val" : "https://orcid.org/0000-0001-9076-6066"
+      }, {
         "pred" : "http://purl.org/dc/terms/creator",
         "val" : "METPO Development Team"
       }, {
         "pred" : "http://purl.org/dc/terms/description",
-        "val" : "Microbial ecophysiological trait and phenotype ontology"
+        "val" : "METPO provides standardized terms for the phenotypic traits, growth conditions, metabolic capabilities, and morphology of bacteria and archaea. It integrates heterogeneous microbial trait resources (BactoTraits, BacDive, Madin et al.) and supports knowledge-graph and literature-mining workflows in projects such as KG-Microbe. METPO follows OBO Foundry conventions and reuses terms from PATO, GO, CHEBI, NCBITaxon, and related ontologies where possible."
       }, {
         "pred" : "http://purl.org/dc/terms/issued",
         "val" : "2024-01-01"
@@ -19,18 +22,31 @@
         "val" : "https://creativecommons.org/licenses/by/4.0/"
       }, {
         "pred" : "http://purl.org/dc/terms/modified",
-        "val" : "2025-09-29"
+        "val" : "2026-05-18"
       }, {
         "pred" : "http://purl.org/dc/terms/title",
-        "val" : "METPO"
+        "val" : "METPO: Microbial Ecophysiological Trait and Phenotype Ontology"
+      }, {
+        "pred" : "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+        "val" : "https://bioportal.bioontology.org/ontologies/METPO"
+      }, {
+        "pred" : "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+        "val" : "https://bioregistry.io/registry/metpo"
+      }, {
+        "pred" : "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+        "val" : "https://github.com/berkeleybop/metpo"
       }, {
         "pred" : "http://www.w3.org/2002/07/owl#versionInfo",
-        "val" : "2026-03-24"
+        "val" : "2026-05-19"
       } ],
-      "version" : "https://w3id.org/metpo/metpo/releases/2026-03-24/metpo-base.json"
+      "version" : "https://w3id.org/metpo/metpo/releases/2026-05-19/metpo-base.json"
     },
     "nodes" : [ {
       "id" : "http://purl.org/dc/elements/1.1/type",
+      "type" : "PROPERTY",
+      "propertyType" : "ANNOTATION"
+    }, {
+      "id" : "http://purl.org/dc/terms/contributor",
       "type" : "PROPERTY",
       "propertyType" : "ANNOTATION"
     }, {
