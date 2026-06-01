@@ -49,6 +49,7 @@ def main(input_path, input_collection, output_path, output_collection, batch_siz
         output_client.delete_collection(name=output_collection)
         print(f"  Deleted existing collection: {output_collection}")
     except Exception:
+        # Collection may not exist yet (e.g. first run); nothing to delete.
         pass
 
     output_coll = output_client.create_collection(
