@@ -249,16 +249,21 @@ def main(output: str) -> None:
         obsolete_label = f"obsolete {label}" if label else f"obsolete METPO:{numeric_id}"
         reason = classify_reason(numeric_id)
 
-        rows.append([curie, obsolete_label, owl_type, "true", reason])
+        # Parent obsolete CLASSES under oboInOwl:ObsoleteClass so they do not surface
+        # as root nodes in BioPortal (issue #449); properties take no parent.
+        obsolete_parent = "oboInOwl:ObsoleteClass" if owl_type == "owl:Class" else ""
+        rows.append([curie, obsolete_label, owl_type, "true", reason, obsolete_parent])
 
     # Write ROBOT template
     out_path = Path(output)
     out_path.parent.mkdir(parents=True, exist_ok=True)
     with out_path.open("w", encoding="utf-8") as f:
         # Row 1: human-readable headers
-        f.write("ID\tlabel\tTYPE\tdeprecated\tobsolescence reason\n")
+        f.write("ID\tlabel\tTYPE\tdeprecated\tobsolescence reason\tobsolete parent class\n")
         # Row 2: ROBOT directives
-        f.write("ID\tLABEL\tTYPE\tA owl:deprecated\tAI IAO:0000231\n")
+        f.write("ID\tLABEL\tTYPE\tA owl:deprecated\tAI IAO:0000231\tSC %\n")
+        # Declare oboInOwl:ObsoleteClass so it can serve as the parent of obsolete classes (#449).
+        f.write("oboInOwl:ObsoleteClass\tObsolete Class\towl:Class\t\t\t\n")
         for row in rows:
             f.write("\t".join(row) + "\n")
 
