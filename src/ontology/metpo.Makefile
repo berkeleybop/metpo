@@ -109,6 +109,7 @@ components/metpo_sheet.owl: ../templates/stubs.tsv ../templates/metpo-properties
 	$(ROBOT) template \
 		--add-prefix 'METPO: https://w3id.org/metpo/' \
 		--add-prefix 'qudt: http://qudt.org/schema/qudt/' \
+		--add-prefix 'oboInOwl: http://www.geneontology.org/formats/oboInOwl#' \
 		--template ../templates/stubs.tsv \
 		--template ../templates/metpo_sheet.tsv \
 		--template ../templates/metpo-properties.tsv \
