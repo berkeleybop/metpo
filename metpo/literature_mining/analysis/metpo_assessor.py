@@ -1023,6 +1023,7 @@ class MetpoAssessor:
                     if isinstance(data, dict) and "content" in data:
                         return data["content"]
                 except yaml.YAMLError:
+                    # Not valid YAML either; fall through and return the raw input text.
                     pass
                 return input_text
         elif isinstance(input_text, dict):

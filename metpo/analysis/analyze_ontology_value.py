@@ -194,7 +194,6 @@ def main(input):
     removal_candidates = []
     for _, row in only_imported.iterrows():
         ont_file = row["ontology_file"]
-        df[df["object_source"] == ont_file]
 
         # Check if ALL terms are available natively elsewhere
         all_redundant = True
