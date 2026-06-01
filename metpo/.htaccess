@@ -1,0 +1,7 @@
+Options +FollowSymLinks
+RewriteEngine On
+
+# Temporary term resolver until METPO classes are available in OLS.
+# Keep the requested term IRI in an encoded query parameter for downstream resolvers.
+RewriteRule ^$ https://github.com/berkeleybop/metpo/blob/main/docs/README.md [R=302,L]
+RewriteRule ^(.*)$ https://github.com/berkeleybop/metpo/blob/main/docs/README.md?iri=https%3A%2F%2Fw3id.org%2Fmetpo%2F$1 [R=302,L,B]
