@@ -117,7 +117,10 @@ def cell(r, i):
 
 
 def fnum(s):
-    return float(s) if re.match(r"^-?[0-9.]+$", (s or "x").strip()) else None
+    try:
+        return float((s or "").strip())
+    except ValueError:
+        return None
 
 
 def load_known(paths):
@@ -148,11 +151,19 @@ def parse_bound(formula):
 
 
 def parse_syn_threshold(v):
-    """(lower, upper) from a threshold-encoded synonym (GC_<=42.65, GC_42.65_57.0, TO_10_to_22)."""
-    m = re.match(r"^[A-Za-z]{1,6}_(.+)$", v.strip())
-    if not m:
+    """(lower, upper) from a threshold-encoded synonym.
+
+    Handles an optional short prefix code and prefix-less forms, e.g.
+    ``GC_<=42.65``, ``GC_42.65_57.0``, ``TO_10_to_22``, and bare ``10_to_14`` /
+    ``8_to_10`` (the pH-range synonyms that drop their ``pHR_`` prefix). Returns
+    ``(None, None)`` unless the whole (prefix-stripped) token is a threshold
+    expression, so ordinary synonyms with stray digits are not misread.
+    """
+    body = re.sub(r"^[A-Za-z]{1,6}_", "", v.strip())
+    if not re.fullmatch(
+        r"(?:<=|>=|<|>)?\s*\d+(?:\.\d+)?(?:\s*(?:_to_|_|-)\s*\d+(?:\.\d+)?)?\+?", body
+    ):
         return (None, None)
-    body = m.group(1)
     nums = [float(x) for x in re.findall(r"[0-9]+\.?[0-9]*", body)]
     if not nums:
         return (None, None)
@@ -361,7 +372,7 @@ def ols_lookup(curie):
     try:
         req = urllib.request.Request(
             url,
-            headers={"Accept": "application/json", "User-Agent": "metpo-lint/1.0 (MAM@lbl.gov)"},
+            headers={"Accept": "application/json", "User-Agent": "metpo-proposal-lint"},
         )
         with urllib.request.urlopen(req, timeout=30) as resp:
             for e in json.load(resp).get("elements", []):
