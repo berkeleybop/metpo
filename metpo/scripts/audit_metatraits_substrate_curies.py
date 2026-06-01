@@ -330,18 +330,10 @@ def _report_sections(rows: list[AuditRow]) -> list[str]:
         [
             "## Related Files\n",
             "\n",
-            "- [`docs/casamino_acids_curie_mapping_case_study.md`]"
-            "(../../docs/casamino_acids_curie_mapping_case_study.md) "
-            "-- CHEBI:78020 error case study\n",
-            "- [`docs/linkml_embedding_and_validation_tools.md`]"
-            "(../../docs/linkml_embedding_and_validation_tools.md) "
-            "-- OAK/linkml-store tooling research\n",
-            "- [`data/mappings/metatraits_in_sheet_resolution.tsv`]"
-            "(metatraits_in_sheet_resolution.tsv) "
-            "-- in-sheet resolution table\n",
-            "- [`data/mappings/metatraits_external_curie_coverage.tsv`]"
-            "(metatraits_external_curie_coverage.tsv) "
-            "-- external CURIE coverage\n",
+            "- [`docs/casamino_acids_curie_mapping_case_study.md`](../../docs/casamino_acids_curie_mapping_case_study.md) -- CHEBI:78020 error case study\n",
+            "- [`docs/linkml_embedding_and_validation_tools.md`](../../docs/linkml_embedding_and_validation_tools.md) -- OAK/linkml-store tooling research\n",
+            "- [`data/mappings/metatraits_in_sheet_resolution.tsv`](metatraits_in_sheet_resolution.tsv) -- in-sheet resolution table\n",
+            "- [`data/mappings/metatraits_external_curie_coverage.tsv`](metatraits_external_curie_coverage.tsv) -- external CURIE coverage\n",
         ]
     )
 

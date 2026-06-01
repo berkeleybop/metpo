@@ -132,4 +132,4 @@ def main():
 
 
 if __name__ == "__main__":
-    totals, per_file = main()
+    main()

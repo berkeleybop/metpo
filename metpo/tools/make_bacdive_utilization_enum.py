@@ -140,22 +140,6 @@ def convert_tsv_to_linkml_enum(
             "meaning": id_uri
         }
 
-        # # Add description if we have bacdive key info
-        # if pd.notna(row['bacdive key']) and row['bacdive key']:
-        #     bacdive_key = row['bacdive key']
-        #     description_parts = [f"Relationship type: {bacdive_key}"]
-        #
-        #     # Add count if available
-        #     if pd.notna(row['bacdive count']) and str(row['bacdive count']).isdigit():
-        #         count = int(row['bacdive count'])
-        #         description_parts.append(f"BacDive occurrences: {count:,}")
-        #
-        #     # Add notes if available
-        #     if pd.notna(row['notes']) and row['notes']:
-        #         description_parts.append(f"Notes: {row['notes']}")
-        #
-        #     pv_entry['description'] = '; '.join(description_parts)
-
         # Add to permissible values
         linkml_enum["enums"][enum_name]["permissible_values"][key] = pv_entry
 
