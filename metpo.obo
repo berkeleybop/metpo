@@ -10263,6 +10263,290 @@ synonym: "generalist" RELATED [] {IAO:0000119="https://metatraits.embl.de/"}
 is_a: metpo:1000059 ! phenotype
 
 [Term]
+id: metpo:1007005
+name: flagellar arrangement
+def: "A phenotypic quality describing the arrangement pattern of flagella on a bacterial or archaeal cell. Parent class for METPO:1005031-1005037 (peritrichous, polar, amphitrichous, lophotrichous, monotrichous, lateral, subpolar)." [] {IAO:0000119="OMP:0000078"}
+comment: subset=metpo_proposal_2026_04; priority=HIGH; xrefs=GO:0001539
+synonym: "flagellation pattern" EXACT []
+is_a: metpo:1000059 ! phenotype
+property_value: IAO:0000117 "Marcin Joachimiak" xsd:string
+
+[Term]
+id: metpo:1007006
+name: polytrichous flagellation
+def: "Multiple flagella per cell (typically a tuft); often combined with polar attachment." [] {IAO:0000119="MICRO:0000271"}
+comment: subset=metpo_proposal_2026_04; priority=MEDIUM; observations=4
+synonym: "polytrichous" EXACT []
+is_a: metpo:1007005 ! flagellar arrangement
+property_value: IAO:0000117 "Marcin Joachimiak" xsd:string
+
+[Term]
+id: metpo:1007062
+name: colony morphology
+def: "A phenotypic quality describing macroscopic colony characteristics (shape, margin, elevation, surface, color, size)." [] {IAO:0000119="OMP:0000100"}
+comment: subset=metpo_proposal_2026_04; priority=LOW; xrefs=PATO:0000052
+is_a: metpo:1000059 ! phenotype
+property_value: IAO:0000117 "Marcin Joachimiak" xsd:string
+
+[Term]
+id: metpo:1007063
+name: colony shape
+def: "Subaspect of colony morphology describing the overall macroscopic colony outline as observed on solid medium." [] {IAO:0000119="OMP:0000103"}
+comment: subset=metpo_proposal_2026_04; priority=LOW; xrefs=PATO:0000052
+is_a: metpo:1007062 ! colony morphology
+property_value: IAO:0000117 "Marcin Joachimiak" xsd:string
+
+[Term]
+id: metpo:1007064
+name: circular colony
+def: "Colony with a regular round outline." [] {IAO:0000119="OMP:0000166"}
+comment: subset=metpo_proposal_2026_04; priority=LOW; observations=2649
+synonym: "round colony" EXACT []
+is_a: metpo:1007063 ! colony shape
+property_value: IAO:0000117 "Marcin Joachimiak" xsd:string
+
+[Term]
+id: metpo:1007065
+name: irregular colony
+def: "Colony with an irregular (non-round, non-rhizoid) outline." [] {IAO:0000119="OMP:0000167"}
+comment: subset=metpo_proposal_2026_04; priority=LOW; observations=148
+is_a: metpo:1007063 ! colony shape
+property_value: IAO:0000117 "Marcin Joachimiak" xsd:string
+
+[Term]
+id: metpo:1007066
+name: filamentous colony
+def: "Colony with thread-like or filamentous outline." [] {IAO:0000119="OMP:0000088"}
+comment: subset=metpo_proposal_2026_04; priority=LOW; observations=16
+is_a: metpo:1007063 ! colony shape
+property_value: IAO:0000117 "Marcin Joachimiak" xsd:string
+
+[Term]
+id: metpo:1007067
+name: punctiform colony
+def: "Very small (pinpoint) colony, typically <1 mm diameter." [] {IAO:0000119="OMP:0000240"}
+comment: subset=metpo_proposal_2026_04; priority=LOW; observations=11
+is_a: metpo:1007063 ! colony shape
+property_value: IAO:0000117 "Marcin Joachimiak" xsd:string
+
+[Term]
+id: metpo:1007068
+name: rhizoid colony
+def: "Colony with branching, root-like outline." [] {IAO:0000119="OMP:0000168"}
+comment: subset=metpo_proposal_2026_04; priority=LOW; observations=8
+is_a: metpo:1007063 ! colony shape
+property_value: IAO:0000117 "Marcin Joachimiak" xsd:string
+
+[Term]
+id: metpo:1007069
+name: fried-egg-shaped colony
+def: "Colony with raised opaque centre and translucent peripheral zone, resembling a fried egg." [] {IAO:0000119="MICRO:0000349"}
+comment: subset=metpo_proposal_2026_04; priority=LOW; observations=6
+synonym: "fried-egg colony" EXACT []
+is_a: metpo:1007063 ! colony shape
+property_value: IAO:0000117 "Marcin Joachimiak" xsd:string
+
+[Term]
+id: metpo:1007070
+name: pressure tolerance
+def: "A phenotypic quality describing the ability to grow under elevated hydrostatic pressure." [] {IAO:0000119="OMP:0005012"}
+comment: subset=metpo_proposal_2026_04; priority=MEDIUM
+synonym: "barophile" EXACT []
+synonym: "piezophile" EXACT []
+is_a: metpo:1000059 ! phenotype
+property_value: IAO:0000117 "Marcin Joachimiak" xsd:string
+
+[Term]
+id: metpo:1007071
+name: barophile phenotype
+def: "An organism that requires or tolerates elevated hydrostatic pressure for growth." [] {IAO:0000119="MICRO:0001359"}
+comment: subset=metpo_proposal_2026_04; priority=MEDIUM
+is_a: metpo:1007070 ! pressure tolerance
+property_value: IAO:0000117 "Marcin Joachimiak" xsd:string
+
+[Term]
+id: metpo:1007072
+name: radiation tolerance
+def: "A phenotypic quality describing the ability to withstand ionizing or UV radiation." [] {IAO:0000119="wikidata:Q2353022"}
+comment: subset=metpo_proposal_2026_04; priority=MEDIUM
+synonym: "radioresistant" EXACT []
+is_a: metpo:1000059 ! phenotype
+property_value: IAO:0000117 "Marcin Joachimiak" xsd:string
+
+[Term]
+id: metpo:1007073
+name: osmotic tolerance
+def: "A phenotypic quality describing the ability to grow under high osmotic pressure (non-NaCl)." [] {IAO:0000119="OMP:0005015"}
+comment: subset=metpo_proposal_2026_04; priority=MEDIUM
+synonym: "osmophile" EXACT []
+is_a: metpo:1000059 ! phenotype
+property_value: IAO:0000117 "Marcin Joachimiak" xsd:string
+
+[Term]
+id: metpo:1007074
+name: metal tolerance
+def: "A phenotypic quality describing the ability to grow in the presence of elevated metal concentrations." [] {IAO:0000119="OMP:0007890"}
+comment: subset=metpo_proposal_2026_04; priority=MEDIUM
+synonym: "metallophile" EXACT []
+is_a: metpo:1000059 ! phenotype
+property_value: IAO:0000117 "Marcin Joachimiak" xsd:string
+
+[Term]
+id: metpo:1007076
+name: capsule presence
+def: "A phenotypic quality describing the presence of an extracellular polysaccharide capsule." [] {IAO:0000119="OMP:0000203"}
+comment: subset=metpo_proposal_2026_04; priority=LOW; xrefs=GO:0042603
+is_a: metpo:1000059 ! phenotype
+property_value: IAO:0000117 "Marcin Joachimiak" xsd:string
+
+[Term]
+id: metpo:1007077
+name: biofilm formation capability
+def: "A phenotypic capability describing the ability to form surface-attached biofilms." [] {IAO:0000119="OMP:0000176"}
+comment: subset=metpo_proposal_2026_04; priority=MEDIUM; xrefs=GO:0042710
+is_a: metpo:1000059 ! phenotype
+property_value: IAO:0000117 "Marcin Joachimiak" xsd:string
+
+[Term]
+id: metpo:1007080
+name: catalase test
+def: "A biochemical test that detects catalase enzyme activity by exposing cells to hydrogen peroxide and observing for visible bubbling. The test outcome (positive or negative) is captured by its child classes; this class itself does not assert that the organism has catalase activity." [] {IAO:0000119="OMP:0000218"}
+comment: subset=metpo_proposal_2026_04; priority=MEDIUM
+synonym: "catalase activity test" EXACT []
+synonym: "catalase assay" EXACT []
+is_a: metpo:1000059 ! phenotype
+property_value: IAO:0000117 "Marcin Joachimiak" xsd:string
+
+[Term]
+id: metpo:1007081
+name: oxidase test
+def: "A biochemical test that detects cytochrome c oxidase activity using a redox indicator. The test outcome (positive or negative) is captured by its child classes; this class itself does not assert oxidase activity." [] {IAO:0000119="OMP:0000220"}
+comment: subset=metpo_proposal_2026_04; priority=MEDIUM
+synonym: "cytochrome oxidase test" EXACT []
+synonym: "oxidase activity test" EXACT []
+is_a: metpo:1000059 ! phenotype
+property_value: IAO:0000117 "Marcin Joachimiak" xsd:string
+
+[Term]
+id: metpo:1007082
+name: urease test
+def: "A biochemical test that detects urease enzyme activity by observing urea hydrolysis (typically via a pH-indicator color change). The test outcome (positive or negative) is captured by its child classes; this class itself does not assert urease activity." [] {IAO:0000119="OMP:0000222"}
+comment: subset=metpo_proposal_2026_04; priority=MEDIUM
+synonym: "urea hydrolysis test" EXACT []
+synonym: "urease activity test" EXACT []
+is_a: metpo:1000059 ! phenotype
+property_value: IAO:0000117 "Marcin Joachimiak" xsd:string
+
+[Term]
+id: metpo:1007083
+name: catalase positive
+def: "Test-outcome phenotype where the catalase test yields a positive result (visible bubbling on H2O2). The underlying enzyme-organism relation should additionally be asserted via <organism> METPO:2000302 'shows activity of' GO:0004096 'catalase activity'." [] {IAO:0000119="OMP:0000194"}
+comment: subset=metpo_proposal_2026_04; priority=MEDIUM; xrefs=GO:0004096
+synonym: "catalase +" EXACT []
+synonym: "catalase test positive" EXACT []
+is_a: metpo:1007080 ! catalase test
+property_value: IAO:0000117 "Marcin Joachimiak" xsd:string
+
+[Term]
+id: metpo:1007084
+name: catalase negative
+def: "Test-outcome phenotype where the catalase test yields a negative result (no bubbling on H2O2). The underlying enzyme-organism relation should additionally be asserted via <organism> METPO:2000303 'does not show activity of' GO:0004096 'catalase activity'." [] {IAO:0000119="OMP:0000198"}
+comment: subset=metpo_proposal_2026_04; priority=MEDIUM
+synonym: "catalase -" EXACT []
+synonym: "catalase test negative" EXACT []
+is_a: metpo:1007080 ! catalase test
+property_value: IAO:0000117 "Marcin Joachimiak" xsd:string
+
+[Term]
+id: metpo:1007085
+name: oxidase positive
+def: "Test-outcome phenotype where the oxidase test yields a positive result. The underlying enzyme-organism relation should additionally be asserted via <organism> METPO:2000302 'shows activity of' GO:0004129 'cytochrome-c oxidase activity'." [] {IAO:0000119="OMP:0006085"}
+comment: subset=metpo_proposal_2026_04; priority=MEDIUM; xrefs=GO:0004129
+synonym: "oxidase +" EXACT []
+synonym: "oxidase test positive" EXACT []
+is_a: metpo:1007081 ! oxidase test
+property_value: IAO:0000117 "Marcin Joachimiak" xsd:string
+
+[Term]
+id: metpo:1007086
+name: oxidase negative
+def: "Test-outcome phenotype where the oxidase test yields a negative result. The underlying enzyme-organism relation should additionally be asserted via <organism> METPO:2000303 'does not show activity of' GO:0004129 'cytochrome-c oxidase activity'." [] {IAO:0000119="OMP:0006084"}
+comment: subset=metpo_proposal_2026_04; priority=MEDIUM
+synonym: "oxidase -" EXACT []
+synonym: "oxidase test negative" EXACT []
+is_a: metpo:1007081 ! oxidase test
+property_value: IAO:0000117 "Marcin Joachimiak" xsd:string
+
+[Term]
+id: metpo:1007087
+name: urease positive
+def: "Test-outcome phenotype where the urease test yields a positive result. The underlying enzyme-organism relation should additionally be asserted via <organism> METPO:2000302 'shows activity of' GO:0009039 'urease activity'." [] {IAO:0000119="OMP:0006089"}
+comment: subset=metpo_proposal_2026_04; priority=MEDIUM; xrefs=GO:0009039
+synonym: "urease +" EXACT []
+synonym: "urease test positive" EXACT []
+is_a: metpo:1007082 ! urease test
+property_value: IAO:0000117 "Marcin Joachimiak" xsd:string
+
+[Term]
+id: metpo:1007088
+name: urease negative
+def: "Test-outcome phenotype where the urease test yields a negative result. The underlying enzyme-organism relation should additionally be asserted via <organism> METPO:2000303 'does not show activity of' GO:0009039 'urease activity'." [] {IAO:0000119="OMP:0006090"}
+comment: subset=metpo_proposal_2026_04; priority=MEDIUM
+synonym: "urease -" EXACT []
+synonym: "urease test negative" EXACT []
+is_a: metpo:1007082 ! urease test
+property_value: IAO:0000117 "Marcin Joachimiak" xsd:string
+
+[Term]
+id: metpo:1007089
+name: coagulase activity
+def: "A phenotypic quality describing coagulase enzyme activity (clotting of blood plasma). Diagnostic marker, e.g. for Staphylococcus aureus." [] {IAO:0000119="MICRO:0000991"}
+comment: subset=metpo_proposal_2026_04; priority=MEDIUM
+synonym: "coagulase test" EXACT []
+is_a: metpo:1000059 ! phenotype
+property_value: IAO:0000117 "Marcin Joachimiak" xsd:string
+
+[Term]
+id: metpo:1007090
+name: coagulase positive
+def: "Test-outcome phenotype where the coagulase test yields a positive result (plasma clotting). The underlying enzyme-organism relation should additionally be asserted via <organism> METPO:2000302 'shows activity of' <coagulase enzyme term> once a sufficiently specific enzyme term is selected (no GO/EC term currently exists at the bacteriological coagulase test granularity)." [] {IAO:0000119="wikidata:Q98095684"}
+comment: subset=metpo_proposal_2026_04; priority=MEDIUM
+synonym: "coagulase +" EXACT []
+synonym: "coagulase test positive" EXACT []
+is_a: metpo:1007089 ! coagulase activity
+property_value: IAO:0000117 "Marcin Joachimiak" xsd:string
+
+[Term]
+id: metpo:1007091
+name: coagulase negative
+def: "Test-outcome phenotype where the coagulase test yields a negative result. The underlying enzyme-organism relation should additionally be asserted via <organism> METPO:2000303 'does not show activity of' <coagulase enzyme term> once a sufficiently specific enzyme term is selected." [] {IAO:0000119="wikidata:Q98095684"}
+comment: subset=metpo_proposal_2026_04; priority=MEDIUM
+synonym: "coagulase -" EXACT []
+synonym: "coagulase test negative" EXACT []
+is_a: metpo:1007089 ! coagulase activity
+property_value: IAO:0000117 "Marcin Joachimiak" xsd:string
+
+[Term]
+id: metpo:1007092
+name: xerophilic phenotype
+def: "A phenotypic quality describing a microbe that thrives in low water-activity environments (typically aw < 0.85). Sibling concept of osmotic and metal tolerance; distinct from halophily and from osmotic tolerance because the limiting factor is water activity (aw) rather than solute concentration." [] {IAO:0000119="wikidata:Q980491"}
+comment: subset=metpo_proposal_2026_04; priority=MEDIUM
+synonym: "xerophile" EXACT []
+synonym: "xerotolerant" EXACT []
+is_a: metpo:1000059 ! phenotype
+property_value: IAO:0000117 "Marcin Joachimiak" xsd:string
+
+[Term]
+id: metpo:1007093
+name: epibiont phenotype
+def: "A phenotypic quality describing a microbe that lives on the external surface of a host organism or substrate, as distinct from endosymbionts (which live inside the host). Captures host-association mode, not specific host taxonomy." [] {IAO:0000119="wikidata:Q640114"}
+comment: subset=metpo_proposal_2026_04; priority=LOW
+synonym: "ectosymbiont" EXACT []
+synonym: "epibiont" EXACT []
+is_a: metpo:1000059 ! phenotype
+property_value: IAO:0000117 "Marcin Joachimiak" xsd:string
+
+[Term]
 id: metpo:9999999
 name: obsolete obsolete
 is_a: oboInOwl:ObsoleteClass ! Obsolete Class
@@ -10622,6 +10906,34 @@ id: metpo:2000057
 name: obsolete has culture temperature observation
 property_value: IAO:0000231 IAO:0000226
 is_obsolete: true
+
+[Typedef]
+id: metpo:2000064
+name: tolerates
+def: "A relation between a microbe and a chemical entity indicating that the microbe's growth is not inhibited by the chemical at the concentration tested. Positive form of the chemical-tolerance pair; the negative form is METPO:2000065 'does not tolerate'." []
+domain: metpo:1000525 ! microbe
+range: metpo:1000526 ! chemical entity
+
+[Typedef]
+id: metpo:2000065
+name: does not tolerate
+def: "A relation between a microbe and a chemical entity indicating that the microbe's growth is inhibited by the chemical at the concentration tested. Negative form of the chemical-tolerance pair; positive form is METPO:2000064 'tolerates'. Equivalent in meaning to 'is susceptible to' and 'is sensitive to'; the canonical label uses the 'does not X' convention so the metatraits pairing logic auto-detects it as the negative member." []
+domain: metpo:1000525 ! microbe
+range: metpo:1000526 ! chemical entity
+
+[Typedef]
+id: metpo:2000067
+name: isolated from host with quality
+def: "A relation between a microbe and a quality of the host from which the microbe was isolated. Examples: a microbe isolated from a juvenile host has the relation `<microbe> METPO:2000067 PATO:0001190 'juvenile'`; a microbe isolated from a female host has the relation `<microbe> METPO:2000067 PATO:0000383 'female'`. The relation is one-directional: it asserts that the host bore the named quality at isolation time, not that the microbe itself has the quality." []
+domain: metpo:1000525 ! microbe
+range: metpo:1000188 ! quality
+
+[Typedef]
+id: metpo:2000068
+name: isolated from environment with quality
+def: "A relation between a microbe and a quality of the environment from which the microbe was isolated. Examples: a microbe isolated from an acidic environment has the relation `<microbe> METPO:2000068 PATO:0001429 'acidic'`; a microbe isolated from an anaerobic environment has `<microbe> METPO:2000068 PATO:0001456 'anaerobic'`. The relation does not by itself entail that the microbe is acidophilic, anaerobic, etc. as a phenotype — it only records the environment's quality at the time of isolation. Microbe phenotype assertions belong on a separate edge (e.g. METPO:1000615 acidophilic via has_phenotype)." []
+domain: metpo:1000525 ! microbe
+range: metpo:1000188 ! quality
 
 [Typedef]
 id: metpo:2000101

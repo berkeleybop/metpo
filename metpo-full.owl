@@ -1070,6 +1070,50 @@
     
 
 
+    <!-- https://w3id.org/metpo/2000064 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000064">
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1000526"/>
+        <obo:IAO_0000115>A relation between a microbe and a chemical entity indicating that the microbe&apos;s growth is not inhibited by the chemical at the concentration tested. Positive form of the chemical-tolerance pair; the negative form is METPO:2000065 &apos;does not tolerate&apos;.</obo:IAO_0000115>
+        <rdfs:label>tolerates</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000065 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000065">
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1000526"/>
+        <obo:IAO_0000115>A relation between a microbe and a chemical entity indicating that the microbe&apos;s growth is inhibited by the chemical at the concentration tested. Negative form of the chemical-tolerance pair; positive form is METPO:2000064 &apos;tolerates&apos;. Equivalent in meaning to &apos;is susceptible to&apos; and &apos;is sensitive to&apos;; the canonical label uses the &apos;does not X&apos; convention so the metatraits pairing logic auto-detects it as the negative member.</obo:IAO_0000115>
+        <rdfs:label>does not tolerate</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000067 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000067">
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1000188"/>
+        <obo:IAO_0000115>A relation between a microbe and a quality of the host from which the microbe was isolated. Examples: a microbe isolated from a juvenile host has the relation `&lt;microbe&gt; METPO:2000067 PATO:0001190 &apos;juvenile&apos;`; a microbe isolated from a female host has the relation `&lt;microbe&gt; METPO:2000067 PATO:0000383 &apos;female&apos;`. The relation is one-directional: it asserts that the host bore the named quality at isolation time, not that the microbe itself has the quality.</obo:IAO_0000115>
+        <rdfs:label>isolated from host with quality</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/metpo/2000068 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000068">
+        <rdfs:domain rdf:resource="https://w3id.org/metpo/1000525"/>
+        <rdfs:range rdf:resource="https://w3id.org/metpo/1000188"/>
+        <obo:IAO_0000115>A relation between a microbe and a quality of the environment from which the microbe was isolated. Examples: a microbe isolated from an acidic environment has the relation `&lt;microbe&gt; METPO:2000068 PATO:0001429 &apos;acidic&apos;`; a microbe isolated from an anaerobic environment has `&lt;microbe&gt; METPO:2000068 PATO:0001456 &apos;anaerobic&apos;`. The relation does not by itself entail that the microbe is acidophilic, anaerobic, etc. as a phenotype — it only records the environment&apos;s quality at the time of isolation. Microbe phenotype assertions belong on a separate edge (e.g. METPO:1000615 acidophilic via has_phenotype).</obo:IAO_0000115>
+        <rdfs:label>isolated from environment with quality</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/metpo/2000101 -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/metpo/2000101">
@@ -22294,6 +22338,600 @@
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>generalist</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1007005 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1007005">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
+        <obo:IAO_0000115>A phenotypic quality describing the arrangement pattern of flagella on a bacterial or archaeal cell. Parent class for METPO:1005031-1005037 (peritrichous, polar, amphitrichous, lophotrichous, monotrichous, lateral, subpolar).</obo:IAO_0000115>
+        <obo:IAO_0000117>Marcin Joachimiak</obo:IAO_0000117>
+        <oboInOwl:hasExactSynonym>flagellation pattern</oboInOwl:hasExactSynonym>
+        <rdfs:comment>subset=metpo_proposal_2026_04; priority=HIGH; xrefs=GO:0001539</rdfs:comment>
+        <rdfs:label>flagellar arrangement</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1007005"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A phenotypic quality describing the arrangement pattern of flagella on a bacterial or archaeal cell. Parent class for METPO:1005031-1005037 (peritrichous, polar, amphitrichous, lophotrichous, monotrichous, lateral, subpolar).</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OMP_0000078"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1007006 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1007006">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1007005"/>
+        <obo:IAO_0000115>Multiple flagella per cell (typically a tuft); often combined with polar attachment.</obo:IAO_0000115>
+        <obo:IAO_0000117>Marcin Joachimiak</obo:IAO_0000117>
+        <oboInOwl:hasExactSynonym>polytrichous</oboInOwl:hasExactSynonym>
+        <rdfs:comment>subset=metpo_proposal_2026_04; priority=MEDIUM; observations=4</rdfs:comment>
+        <rdfs:label>polytrichous flagellation</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1007006"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Multiple flagella per cell (typically a tuft); often combined with polar attachment.</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/MICRO_0000271"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1007062 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1007062">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
+        <obo:IAO_0000115>A phenotypic quality describing macroscopic colony characteristics (shape, margin, elevation, surface, color, size).</obo:IAO_0000115>
+        <obo:IAO_0000117>Marcin Joachimiak</obo:IAO_0000117>
+        <rdfs:comment>subset=metpo_proposal_2026_04; priority=LOW; xrefs=PATO:0000052</rdfs:comment>
+        <rdfs:label>colony morphology</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1007062"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A phenotypic quality describing macroscopic colony characteristics (shape, margin, elevation, surface, color, size).</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OMP_0000100"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1007063 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1007063">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1007062"/>
+        <obo:IAO_0000115>Subaspect of colony morphology describing the overall macroscopic colony outline as observed on solid medium.</obo:IAO_0000115>
+        <obo:IAO_0000117>Marcin Joachimiak</obo:IAO_0000117>
+        <rdfs:comment>subset=metpo_proposal_2026_04; priority=LOW; xrefs=PATO:0000052</rdfs:comment>
+        <rdfs:label>colony shape</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1007063"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Subaspect of colony morphology describing the overall macroscopic colony outline as observed on solid medium.</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OMP_0000103"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1007064 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1007064">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1007063"/>
+        <obo:IAO_0000115>Colony with a regular round outline.</obo:IAO_0000115>
+        <obo:IAO_0000117>Marcin Joachimiak</obo:IAO_0000117>
+        <oboInOwl:hasExactSynonym>round colony</oboInOwl:hasExactSynonym>
+        <rdfs:comment>subset=metpo_proposal_2026_04; priority=LOW; observations=2649</rdfs:comment>
+        <rdfs:label>circular colony</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1007064"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Colony with a regular round outline.</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OMP_0000166"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1007065 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1007065">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1007063"/>
+        <obo:IAO_0000115>Colony with an irregular (non-round, non-rhizoid) outline.</obo:IAO_0000115>
+        <obo:IAO_0000117>Marcin Joachimiak</obo:IAO_0000117>
+        <rdfs:comment>subset=metpo_proposal_2026_04; priority=LOW; observations=148</rdfs:comment>
+        <rdfs:label>irregular colony</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1007065"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Colony with an irregular (non-round, non-rhizoid) outline.</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OMP_0000167"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1007066 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1007066">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1007063"/>
+        <obo:IAO_0000115>Colony with thread-like or filamentous outline.</obo:IAO_0000115>
+        <obo:IAO_0000117>Marcin Joachimiak</obo:IAO_0000117>
+        <rdfs:comment>subset=metpo_proposal_2026_04; priority=LOW; observations=16</rdfs:comment>
+        <rdfs:label>filamentous colony</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1007066"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Colony with thread-like or filamentous outline.</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OMP_0000088"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1007067 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1007067">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1007063"/>
+        <obo:IAO_0000115>Very small (pinpoint) colony, typically &lt;1 mm diameter.</obo:IAO_0000115>
+        <obo:IAO_0000117>Marcin Joachimiak</obo:IAO_0000117>
+        <rdfs:comment>subset=metpo_proposal_2026_04; priority=LOW; observations=11</rdfs:comment>
+        <rdfs:label>punctiform colony</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1007067"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Very small (pinpoint) colony, typically &lt;1 mm diameter.</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OMP_0000240"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1007068 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1007068">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1007063"/>
+        <obo:IAO_0000115>Colony with branching, root-like outline.</obo:IAO_0000115>
+        <obo:IAO_0000117>Marcin Joachimiak</obo:IAO_0000117>
+        <rdfs:comment>subset=metpo_proposal_2026_04; priority=LOW; observations=8</rdfs:comment>
+        <rdfs:label>rhizoid colony</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1007068"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Colony with branching, root-like outline.</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OMP_0000168"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1007069 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1007069">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1007063"/>
+        <obo:IAO_0000115>Colony with raised opaque centre and translucent peripheral zone, resembling a fried egg.</obo:IAO_0000115>
+        <obo:IAO_0000117>Marcin Joachimiak</obo:IAO_0000117>
+        <oboInOwl:hasExactSynonym>fried-egg colony</oboInOwl:hasExactSynonym>
+        <rdfs:comment>subset=metpo_proposal_2026_04; priority=LOW; observations=6</rdfs:comment>
+        <rdfs:label>fried-egg-shaped colony</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1007069"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Colony with raised opaque centre and translucent peripheral zone, resembling a fried egg.</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/MICRO_0000349"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1007070 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1007070">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
+        <obo:IAO_0000115>A phenotypic quality describing the ability to grow under elevated hydrostatic pressure.</obo:IAO_0000115>
+        <obo:IAO_0000117>Marcin Joachimiak</obo:IAO_0000117>
+        <oboInOwl:hasExactSynonym>barophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>piezophile</oboInOwl:hasExactSynonym>
+        <rdfs:comment>subset=metpo_proposal_2026_04; priority=MEDIUM</rdfs:comment>
+        <rdfs:label>pressure tolerance</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1007070"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A phenotypic quality describing the ability to grow under elevated hydrostatic pressure.</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OMP_0005012"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1007071 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1007071">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1007070"/>
+        <obo:IAO_0000115>An organism that requires or tolerates elevated hydrostatic pressure for growth.</obo:IAO_0000115>
+        <obo:IAO_0000117>Marcin Joachimiak</obo:IAO_0000117>
+        <rdfs:comment>subset=metpo_proposal_2026_04; priority=MEDIUM</rdfs:comment>
+        <rdfs:label>barophile phenotype</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1007071"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>An organism that requires or tolerates elevated hydrostatic pressure for growth.</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/MICRO_0001359"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1007072 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1007072">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
+        <obo:IAO_0000115>A phenotypic quality describing the ability to withstand ionizing or UV radiation.</obo:IAO_0000115>
+        <obo:IAO_0000117>Marcin Joachimiak</obo:IAO_0000117>
+        <oboInOwl:hasExactSynonym>radioresistant</oboInOwl:hasExactSynonym>
+        <rdfs:comment>subset=metpo_proposal_2026_04; priority=MEDIUM</rdfs:comment>
+        <rdfs:label>radiation tolerance</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1007072"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A phenotypic quality describing the ability to withstand ionizing or UV radiation.</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="wikidata:Q2353022"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1007073 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1007073">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
+        <obo:IAO_0000115>A phenotypic quality describing the ability to grow under high osmotic pressure (non-NaCl).</obo:IAO_0000115>
+        <obo:IAO_0000117>Marcin Joachimiak</obo:IAO_0000117>
+        <oboInOwl:hasExactSynonym>osmophile</oboInOwl:hasExactSynonym>
+        <rdfs:comment>subset=metpo_proposal_2026_04; priority=MEDIUM</rdfs:comment>
+        <rdfs:label>osmotic tolerance</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1007073"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A phenotypic quality describing the ability to grow under high osmotic pressure (non-NaCl).</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OMP_0005015"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1007074 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1007074">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
+        <obo:IAO_0000115>A phenotypic quality describing the ability to grow in the presence of elevated metal concentrations.</obo:IAO_0000115>
+        <obo:IAO_0000117>Marcin Joachimiak</obo:IAO_0000117>
+        <oboInOwl:hasExactSynonym>metallophile</oboInOwl:hasExactSynonym>
+        <rdfs:comment>subset=metpo_proposal_2026_04; priority=MEDIUM</rdfs:comment>
+        <rdfs:label>metal tolerance</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1007074"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A phenotypic quality describing the ability to grow in the presence of elevated metal concentrations.</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OMP_0007890"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1007076 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1007076">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
+        <obo:IAO_0000115>A phenotypic quality describing the presence of an extracellular polysaccharide capsule.</obo:IAO_0000115>
+        <obo:IAO_0000117>Marcin Joachimiak</obo:IAO_0000117>
+        <rdfs:comment>subset=metpo_proposal_2026_04; priority=LOW; xrefs=GO:0042603</rdfs:comment>
+        <rdfs:label>capsule presence</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1007076"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A phenotypic quality describing the presence of an extracellular polysaccharide capsule.</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OMP_0000203"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1007077 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1007077">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
+        <obo:IAO_0000115>A phenotypic capability describing the ability to form surface-attached biofilms.</obo:IAO_0000115>
+        <obo:IAO_0000117>Marcin Joachimiak</obo:IAO_0000117>
+        <rdfs:comment>subset=metpo_proposal_2026_04; priority=MEDIUM; xrefs=GO:0042710</rdfs:comment>
+        <rdfs:label>biofilm formation capability</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1007077"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A phenotypic capability describing the ability to form surface-attached biofilms.</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OMP_0000176"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1007080 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1007080">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
+        <obo:IAO_0000115>A biochemical test that detects catalase enzyme activity by exposing cells to hydrogen peroxide and observing for visible bubbling. The test outcome (positive or negative) is captured by its child classes; this class itself does not assert that the organism has catalase activity.</obo:IAO_0000115>
+        <obo:IAO_0000117>Marcin Joachimiak</obo:IAO_0000117>
+        <oboInOwl:hasExactSynonym>catalase activity test</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>catalase assay</oboInOwl:hasExactSynonym>
+        <rdfs:comment>subset=metpo_proposal_2026_04; priority=MEDIUM</rdfs:comment>
+        <rdfs:label>catalase test</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1007080"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A biochemical test that detects catalase enzyme activity by exposing cells to hydrogen peroxide and observing for visible bubbling. The test outcome (positive or negative) is captured by its child classes; this class itself does not assert that the organism has catalase activity.</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OMP_0000218"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1007081 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1007081">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
+        <obo:IAO_0000115>A biochemical test that detects cytochrome c oxidase activity using a redox indicator. The test outcome (positive or negative) is captured by its child classes; this class itself does not assert oxidase activity.</obo:IAO_0000115>
+        <obo:IAO_0000117>Marcin Joachimiak</obo:IAO_0000117>
+        <oboInOwl:hasExactSynonym>cytochrome oxidase test</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>oxidase activity test</oboInOwl:hasExactSynonym>
+        <rdfs:comment>subset=metpo_proposal_2026_04; priority=MEDIUM</rdfs:comment>
+        <rdfs:label>oxidase test</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1007081"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A biochemical test that detects cytochrome c oxidase activity using a redox indicator. The test outcome (positive or negative) is captured by its child classes; this class itself does not assert oxidase activity.</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OMP_0000220"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1007082 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1007082">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
+        <obo:IAO_0000115>A biochemical test that detects urease enzyme activity by observing urea hydrolysis (typically via a pH-indicator color change). The test outcome (positive or negative) is captured by its child classes; this class itself does not assert urease activity.</obo:IAO_0000115>
+        <obo:IAO_0000117>Marcin Joachimiak</obo:IAO_0000117>
+        <oboInOwl:hasExactSynonym>urea hydrolysis test</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>urease activity test</oboInOwl:hasExactSynonym>
+        <rdfs:comment>subset=metpo_proposal_2026_04; priority=MEDIUM</rdfs:comment>
+        <rdfs:label>urease test</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1007082"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A biochemical test that detects urease enzyme activity by observing urea hydrolysis (typically via a pH-indicator color change). The test outcome (positive or negative) is captured by its child classes; this class itself does not assert urease activity.</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OMP_0000222"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1007083 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1007083">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1007080"/>
+        <obo:IAO_0000115>Test-outcome phenotype where the catalase test yields a positive result (visible bubbling on H2O2). The underlying enzyme-organism relation should additionally be asserted via &lt;organism&gt; METPO:2000302 &apos;shows activity of&apos; GO:0004096 &apos;catalase activity&apos;.</obo:IAO_0000115>
+        <obo:IAO_0000117>Marcin Joachimiak</obo:IAO_0000117>
+        <oboInOwl:hasExactSynonym>catalase +</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>catalase test positive</oboInOwl:hasExactSynonym>
+        <rdfs:comment>subset=metpo_proposal_2026_04; priority=MEDIUM; xrefs=GO:0004096</rdfs:comment>
+        <rdfs:label>catalase positive</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1007083"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Test-outcome phenotype where the catalase test yields a positive result (visible bubbling on H2O2). The underlying enzyme-organism relation should additionally be asserted via &lt;organism&gt; METPO:2000302 &apos;shows activity of&apos; GO:0004096 &apos;catalase activity&apos;.</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OMP_0000194"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1007084 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1007084">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1007080"/>
+        <obo:IAO_0000115>Test-outcome phenotype where the catalase test yields a negative result (no bubbling on H2O2). The underlying enzyme-organism relation should additionally be asserted via &lt;organism&gt; METPO:2000303 &apos;does not show activity of&apos; GO:0004096 &apos;catalase activity&apos;.</obo:IAO_0000115>
+        <obo:IAO_0000117>Marcin Joachimiak</obo:IAO_0000117>
+        <oboInOwl:hasExactSynonym>catalase -</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>catalase test negative</oboInOwl:hasExactSynonym>
+        <rdfs:comment>subset=metpo_proposal_2026_04; priority=MEDIUM</rdfs:comment>
+        <rdfs:label>catalase negative</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1007084"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Test-outcome phenotype where the catalase test yields a negative result (no bubbling on H2O2). The underlying enzyme-organism relation should additionally be asserted via &lt;organism&gt; METPO:2000303 &apos;does not show activity of&apos; GO:0004096 &apos;catalase activity&apos;.</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OMP_0000198"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1007085 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1007085">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1007081"/>
+        <obo:IAO_0000115>Test-outcome phenotype where the oxidase test yields a positive result. The underlying enzyme-organism relation should additionally be asserted via &lt;organism&gt; METPO:2000302 &apos;shows activity of&apos; GO:0004129 &apos;cytochrome-c oxidase activity&apos;.</obo:IAO_0000115>
+        <obo:IAO_0000117>Marcin Joachimiak</obo:IAO_0000117>
+        <oboInOwl:hasExactSynonym>oxidase +</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>oxidase test positive</oboInOwl:hasExactSynonym>
+        <rdfs:comment>subset=metpo_proposal_2026_04; priority=MEDIUM; xrefs=GO:0004129</rdfs:comment>
+        <rdfs:label>oxidase positive</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1007085"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Test-outcome phenotype where the oxidase test yields a positive result. The underlying enzyme-organism relation should additionally be asserted via &lt;organism&gt; METPO:2000302 &apos;shows activity of&apos; GO:0004129 &apos;cytochrome-c oxidase activity&apos;.</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OMP_0006085"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1007086 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1007086">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1007081"/>
+        <obo:IAO_0000115>Test-outcome phenotype where the oxidase test yields a negative result. The underlying enzyme-organism relation should additionally be asserted via &lt;organism&gt; METPO:2000303 &apos;does not show activity of&apos; GO:0004129 &apos;cytochrome-c oxidase activity&apos;.</obo:IAO_0000115>
+        <obo:IAO_0000117>Marcin Joachimiak</obo:IAO_0000117>
+        <oboInOwl:hasExactSynonym>oxidase -</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>oxidase test negative</oboInOwl:hasExactSynonym>
+        <rdfs:comment>subset=metpo_proposal_2026_04; priority=MEDIUM</rdfs:comment>
+        <rdfs:label>oxidase negative</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1007086"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Test-outcome phenotype where the oxidase test yields a negative result. The underlying enzyme-organism relation should additionally be asserted via &lt;organism&gt; METPO:2000303 &apos;does not show activity of&apos; GO:0004129 &apos;cytochrome-c oxidase activity&apos;.</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OMP_0006084"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1007087 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1007087">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1007082"/>
+        <obo:IAO_0000115>Test-outcome phenotype where the urease test yields a positive result. The underlying enzyme-organism relation should additionally be asserted via &lt;organism&gt; METPO:2000302 &apos;shows activity of&apos; GO:0009039 &apos;urease activity&apos;.</obo:IAO_0000115>
+        <obo:IAO_0000117>Marcin Joachimiak</obo:IAO_0000117>
+        <oboInOwl:hasExactSynonym>urease +</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>urease test positive</oboInOwl:hasExactSynonym>
+        <rdfs:comment>subset=metpo_proposal_2026_04; priority=MEDIUM; xrefs=GO:0009039</rdfs:comment>
+        <rdfs:label>urease positive</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1007087"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Test-outcome phenotype where the urease test yields a positive result. The underlying enzyme-organism relation should additionally be asserted via &lt;organism&gt; METPO:2000302 &apos;shows activity of&apos; GO:0009039 &apos;urease activity&apos;.</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OMP_0006089"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1007088 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1007088">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1007082"/>
+        <obo:IAO_0000115>Test-outcome phenotype where the urease test yields a negative result. The underlying enzyme-organism relation should additionally be asserted via &lt;organism&gt; METPO:2000303 &apos;does not show activity of&apos; GO:0009039 &apos;urease activity&apos;.</obo:IAO_0000115>
+        <obo:IAO_0000117>Marcin Joachimiak</obo:IAO_0000117>
+        <oboInOwl:hasExactSynonym>urease -</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>urease test negative</oboInOwl:hasExactSynonym>
+        <rdfs:comment>subset=metpo_proposal_2026_04; priority=MEDIUM</rdfs:comment>
+        <rdfs:label>urease negative</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1007088"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Test-outcome phenotype where the urease test yields a negative result. The underlying enzyme-organism relation should additionally be asserted via &lt;organism&gt; METPO:2000303 &apos;does not show activity of&apos; GO:0009039 &apos;urease activity&apos;.</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OMP_0006090"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1007089 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1007089">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
+        <obo:IAO_0000115>A phenotypic quality describing coagulase enzyme activity (clotting of blood plasma). Diagnostic marker, e.g. for Staphylococcus aureus.</obo:IAO_0000115>
+        <obo:IAO_0000117>Marcin Joachimiak</obo:IAO_0000117>
+        <oboInOwl:hasExactSynonym>coagulase test</oboInOwl:hasExactSynonym>
+        <rdfs:comment>subset=metpo_proposal_2026_04; priority=MEDIUM</rdfs:comment>
+        <rdfs:label>coagulase activity</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1007089"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A phenotypic quality describing coagulase enzyme activity (clotting of blood plasma). Diagnostic marker, e.g. for Staphylococcus aureus.</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/MICRO_0000991"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1007090 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1007090">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1007089"/>
+        <obo:IAO_0000115>Test-outcome phenotype where the coagulase test yields a positive result (plasma clotting). The underlying enzyme-organism relation should additionally be asserted via &lt;organism&gt; METPO:2000302 &apos;shows activity of&apos; &lt;coagulase enzyme term&gt; once a sufficiently specific enzyme term is selected (no GO/EC term currently exists at the bacteriological coagulase test granularity).</obo:IAO_0000115>
+        <obo:IAO_0000117>Marcin Joachimiak</obo:IAO_0000117>
+        <oboInOwl:hasExactSynonym>coagulase +</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>coagulase test positive</oboInOwl:hasExactSynonym>
+        <rdfs:comment>subset=metpo_proposal_2026_04; priority=MEDIUM</rdfs:comment>
+        <rdfs:label>coagulase positive</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1007090"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Test-outcome phenotype where the coagulase test yields a positive result (plasma clotting). The underlying enzyme-organism relation should additionally be asserted via &lt;organism&gt; METPO:2000302 &apos;shows activity of&apos; &lt;coagulase enzyme term&gt; once a sufficiently specific enzyme term is selected (no GO/EC term currently exists at the bacteriological coagulase test granularity).</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="wikidata:Q98095684"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1007091 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1007091">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1007089"/>
+        <obo:IAO_0000115>Test-outcome phenotype where the coagulase test yields a negative result. The underlying enzyme-organism relation should additionally be asserted via &lt;organism&gt; METPO:2000303 &apos;does not show activity of&apos; &lt;coagulase enzyme term&gt; once a sufficiently specific enzyme term is selected.</obo:IAO_0000115>
+        <obo:IAO_0000117>Marcin Joachimiak</obo:IAO_0000117>
+        <oboInOwl:hasExactSynonym>coagulase -</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>coagulase test negative</oboInOwl:hasExactSynonym>
+        <rdfs:comment>subset=metpo_proposal_2026_04; priority=MEDIUM</rdfs:comment>
+        <rdfs:label>coagulase negative</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1007091"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Test-outcome phenotype where the coagulase test yields a negative result. The underlying enzyme-organism relation should additionally be asserted via &lt;organism&gt; METPO:2000303 &apos;does not show activity of&apos; &lt;coagulase enzyme term&gt; once a sufficiently specific enzyme term is selected.</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="wikidata:Q98095684"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1007092 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1007092">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
+        <obo:IAO_0000115>A phenotypic quality describing a microbe that thrives in low water-activity environments (typically aw &lt; 0.85). Sibling concept of osmotic and metal tolerance; distinct from halophily and from osmotic tolerance because the limiting factor is water activity (aw) rather than solute concentration.</obo:IAO_0000115>
+        <obo:IAO_0000117>Marcin Joachimiak</obo:IAO_0000117>
+        <oboInOwl:hasExactSynonym>xerophile</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>xerotolerant</oboInOwl:hasExactSynonym>
+        <rdfs:comment>subset=metpo_proposal_2026_04; priority=MEDIUM</rdfs:comment>
+        <rdfs:label>xerophilic phenotype</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1007092"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A phenotypic quality describing a microbe that thrives in low water-activity environments (typically aw &lt; 0.85). Sibling concept of osmotic and metal tolerance; distinct from halophily and from osmotic tolerance because the limiting factor is water activity (aw) rather than solute concentration.</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="wikidata:Q980491"/>
+    </owl:Axiom>
+    
+
+
+    <!-- https://w3id.org/metpo/1007093 -->
+
+    <owl:Class rdf:about="https://w3id.org/metpo/1007093">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
+        <obo:IAO_0000115>A phenotypic quality describing a microbe that lives on the external surface of a host organism or substrate, as distinct from endosymbionts (which live inside the host). Captures host-association mode, not specific host taxonomy.</obo:IAO_0000115>
+        <obo:IAO_0000117>Marcin Joachimiak</obo:IAO_0000117>
+        <oboInOwl:hasExactSynonym>ectosymbiont</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>epibiont</oboInOwl:hasExactSynonym>
+        <rdfs:comment>subset=metpo_proposal_2026_04; priority=LOW</rdfs:comment>
+        <rdfs:label>epibiont phenotype</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1007093"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A phenotypic quality describing a microbe that lives on the external surface of a host organism or substrate, as distinct from endosymbionts (which live inside the host). Captures host-association mode, not specific host taxonomy.</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="wikidata:Q640114"/>
     </owl:Axiom>
     
 
