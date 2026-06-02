@@ -122,7 +122,11 @@ def test_def_form(tmp_path):
     p = tmp_path / "defform.tsv"
     p.write_text(DEF_FORM_TEMPLATE, encoding="utf-8")
     findings, _ = lint(
-        str(p), {"phenotype", "trophic type", "cell shape", "halophilic"}, set(), "submit", external_known=False
+        str(p),
+        {"phenotype", "trophic type", "cell shape", "halophilic"},
+        set(),
+        "submit",
+        external_known=False,
     )
     by_id = {}
     for f in findings:
