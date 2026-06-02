@@ -112,13 +112,17 @@ DEF_FORM_TEMPLATE = (
     "METPO:1007101\tgood def\towl:Class\tphenotype\tA phenotype that is observable.\tPMID:1\n"
     "METPO:1007102\twrong genus\towl:Class\tphenotype\tA biochemical test that detects catalase.\tPMID:1\n"
     "METPO:1007103\tno that-form\towl:Class\tphenotype\tDetects catalase activity.\tPMID:1\n"
+    "METPO:1007104\tin-which ok\towl:Class\ttrophic type\tA trophic type in which an organism fixes carbon.\tPMID:1\n"
+    "METPO:1007105\tcharacterized ok\towl:Class\tcell shape\tA cell shape characterized by a rod morphology.\tPMID:1\n"
 )
 
 
 def test_def_form(tmp_path):
     p = tmp_path / "defform.tsv"
     p.write_text(DEF_FORM_TEMPLATE, encoding="utf-8")
-    findings, _ = lint(str(p), {"phenotype"}, set(), "submit", external_known=False)
+    findings, _ = lint(
+        str(p), {"phenotype", "trophic type", "cell shape"}, set(), "submit", external_known=False
+    )
     by_id = {}
     for f in findings:
         by_id.setdefault(f.rid, set()).add(f.code)
@@ -126,8 +130,11 @@ def test_def_form(tmp_path):
     assert "DEF-FORM" not in by_id.get("METPO:1007101", set())
     # genus 'biochemical test' != parent 'phenotype' -> DEF-FORM
     assert "DEF-FORM" in by_id["METPO:1007102"]
-    # missing the 'A <genus> that ...' shape -> DEF-FORM
+    # missing the 'A <genus> <connector> ...' shape -> DEF-FORM
     assert "DEF-FORM" in by_id["METPO:1007103"]
+    # 'in which' / 'characterized by' are valid connectors when genus == parent
+    assert "DEF-FORM" not in by_id.get("METPO:1007104", set())
+    assert "DEF-FORM" not in by_id.get("METPO:1007105", set())
 
 
 def test_baseline_ratchet(tmp_path):

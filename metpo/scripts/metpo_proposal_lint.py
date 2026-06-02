@@ -270,25 +270,46 @@ def check_definition(rid, r, roles, mode):
     return out
 
 
+# Genus-differentia connectors that may follow the genus in a definition. The strict
+# Aristotelian form uses "that", but "in which", "where", "characterized by", etc. are
+# equally valid differentia introductions for disposition/quality/process classes
+# ("A trophic type in which an organism ...") and are MORE accurate than forcing
+# "that". The compatibility requirement (genus == parent label) is enforced regardless.
+_GENUS_CONNECTORS = (
+    "that",
+    "in which",
+    "in whom",
+    "where",
+    "wherein",
+    "characterized by",
+    "characterised by",
+    "describing",
+)
+_DEF_GENUS_RE = re.compile(
+    r"^[Aa]n? (.+?) (?:" + "|".join(c.replace(" ", r"\s+") for c in _GENUS_CONNECTORS) + r")\b",
+)
+
+
 def check_definition_form(rid, typ, definition, parent_cell, mode):
     """Aristotelian form + hierarchy/label/definition compatibility (METPO principle).
 
-    A class definition must read "A <genus> that <differentia>" where <genus> is the
-    asserted parent's label, so hierarchy, label, and definition stay compatible.
-    See feedback-metpo-modeling-principles, issues #64 and #377.
+    A class definition must read "A <genus> <connector> <differentia>" where <genus> is
+    the asserted parent's label and <connector> is a genus-differentia connector
+    (``that``, ``in which``, ``characterized by`` ...), so hierarchy, label, and
+    definition stay compatible. See feedback-metpo-modeling-principles, #64 and #377.
     """
     if typ != "owl:Class" or not definition:
         return []
     sev = "ERROR" if mode == "submit" else "WARN"
     parents = [p.strip() for p in parent_cell.split("|") if p.strip()]
-    m = re.match(r"^[Aa]n? (.+?) that ", definition)
+    m = _DEF_GENUS_RE.match(definition)
     if not m:
         return [
             Finding(
                 sev,
                 "DEF-FORM",
                 rid,
-                "definition is not Aristotelian 'A <genus> that <differentia>' "
+                "definition is not Aristotelian 'A <genus> that/in-which/... <differentia>' "
                 f"(genus must be the parent label {parents or ['<none>']})",
             )
         ]
