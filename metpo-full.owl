@@ -15,7 +15,7 @@
      xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="https://w3id.org/metpo/metpo/metpo-full.owl">
-        <owl:versionIRI rdf:resource="https://w3id.org/metpo/metpo/releases/2026-06-01/metpo-full.owl"/>
+        <owl:versionIRI rdf:resource="https://w3id.org/metpo/metpo/releases/2026-06-02/metpo-full.owl"/>
         <dcterms:contributor rdf:resource="https://orcid.org/0000-0001-9076-6066"/>
         <dcterms:creator>METPO Development Team</dcterms:creator>
         <dcterms:description>METPO provides standardized terms for the phenotypic traits, growth conditions, metabolic capabilities, and morphology of bacteria and archaea. It integrates heterogeneous microbial trait resources (BactoTraits, BacDive, Madin et al.) and supports knowledge-graph and literature-mining workflows in projects such as KG-Microbe. METPO follows OBO Foundry conventions and reuses terms from PATO, GO, CHEBI, NCBITaxon, and related ontologies where possible.</dcterms:description>
@@ -26,7 +26,7 @@
         <rdfs:seeAlso rdf:resource="https://bioportal.bioontology.org/ontologies/METPO"/>
         <rdfs:seeAlso rdf:resource="https://bioregistry.io/registry/metpo"/>
         <rdfs:seeAlso rdf:resource="https://github.com/berkeleybop/metpo"/>
-        <owl:versionInfo>2026-06-01</owl:versionInfo>
+        <owl:versionInfo>2026-06-02</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -13570,14 +13570,14 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000127"/>
-        <oboInOwl:hasRelatedSynonym>GC_42.65_57.0</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>GC_&lt;=42.65</oboInOwl:hasRelatedSynonym>
         <rdfs:label>GC low</rdfs:label>
         <metpo:range_max>42.65</metpo:range_max>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000429"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>GC_42.65_57.0</owl:annotatedTarget>
+        <owl:annotatedTarget>GC_&lt;=42.65</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
     </owl:Axiom>
     
@@ -13610,7 +13610,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000127"/>
-        <oboInOwl:hasRelatedSynonym>GC_&gt;66.3</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>GC_42.65_57.0</oboInOwl:hasRelatedSynonym>
         <rdfs:label>GC mid1</rdfs:label>
         <metpo:range_max>57</metpo:range_max>
         <metpo:range_min>42.65</metpo:range_min>
@@ -13618,7 +13618,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000430"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>GC_&gt;66.3</owl:annotatedTarget>
+        <owl:annotatedTarget>GC_42.65_57.0</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
     </owl:Axiom>
     
@@ -13689,14 +13689,14 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000127"/>
-        <oboInOwl:hasRelatedSynonym>GC_&lt;=42.65</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>GC_&gt;66.3</oboInOwl:hasRelatedSynonym>
         <rdfs:label>GC high</rdfs:label>
         <metpo:range_min>66.3</metpo:range_min>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000432"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>GC_&lt;=42.65</owl:annotatedTarget>
+        <owl:annotatedTarget>GC_&gt;66.3</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"/>
     </owl:Axiom>
     
@@ -15536,7 +15536,7 @@
                                 <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
                                 <owl:withRestrictions rdf:parseType="Collection">
                                     <rdf:Description>
-                                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">8</xsd:maxInclusive>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">8</xsd:minInclusive>
                                     </rdf:Description>
                                 </owl:withRestrictions>
                             </rdfs:Datatype>
@@ -19136,7 +19136,7 @@
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000705">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000702"/>
-        <obo:IAO_0000115>A motility where the flagellum filament of an organism is located in the periplasm and does not extend past the cell envelope.</obo:IAO_0000115>
+        <obo:IAO_0000115>A motile in which the flagellum filament of an organism is located in the periplasm and does not extend past the cell envelope.</obo:IAO_0000115>
         <obo:IAO_0000117>Luke Wang</obo:IAO_0000117>
         <oboInOwl:hasRelatedSynonym>axial filament</oboInOwl:hasRelatedSynonym>
         <rdfs:label>axially filamented</rdfs:label>
@@ -19144,7 +19144,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000705"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A motility where the flagellum filament of an organism is located in the periplasm and does not extend past the cell envelope.</owl:annotatedTarget>
+        <owl:annotatedTarget>A motile in which the flagellum filament of an organism is located in the periplasm and does not extend past the cell envelope.</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/GO_0055040"/>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OMP_0000023"/>
     </owl:Axiom>
@@ -21928,7 +21928,7 @@
 
     <owl:Class rdf:about="https://w3id.org/metpo/1004005">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000186"/>
-        <obo:IAO_0000115>A processed material that provides the nutrients and environmental conditions necessary for the cultivation of microorganisms in vitro. Growth media may be liquid (broth) or solid (agar-based) and are formulated to support the growth of specific types of organisms.</obo:IAO_0000115>
+        <obo:IAO_0000115>A material entity that provides the nutrients and environmental conditions necessary for the cultivation of microorganisms in vitro. Growth media may be liquid (broth) or solid (agar-based) and are formulated to support the growth of specific types of organisms.</obo:IAO_0000115>
         <rdfs:comment>This class is equivalent to OBI:0000079 &apos;culture medium&apos;. It is included in METPO to serve as the range for growth-related object properties.</rdfs:comment>
         <rdfs:label>growth medium</rdfs:label>
         <skos:broadMatch rdf:resource="https://biolink.github.io/biolink-model/ProcessedMaterial"/>
@@ -21936,7 +21936,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1004005"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A processed material that provides the nutrients and environmental conditions necessary for the cultivation of microorganisms in vitro. Growth media may be liquid (broth) or solid (agar-based) and are formulated to support the growth of specific types of organisms.</owl:annotatedTarget>
+        <owl:annotatedTarget>A material entity that provides the nutrients and environmental conditions necessary for the cultivation of microorganisms in vitro. Growth media may be liquid (broth) or solid (agar-based) and are formulated to support the growth of specific types of organisms.</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OBI_0000079"/>
     </owl:Axiom>
     
@@ -21946,7 +21946,7 @@
 
     <owl:Class rdf:about="https://w3id.org/metpo/1005001">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000630"/>
-        <obo:IAO_0000115>A two-step biological process in which ammonia is oxidized to nitrite (ammonia oxidation) and nitrite is oxidized to nitrate (nitrite oxidation).</obo:IAO_0000115>
+        <obo:IAO_0000115>A biological process in which ammonia is oxidized to nitrite (ammonia oxidation) and nitrite is oxidized to nitrate (nitrite oxidation), in two steps.</obo:IAO_0000115>
         <oboInOwl:hasRelatedSynonym>nitrification</oboInOwl:hasRelatedSynonym>
         <rdfs:comment>MetaTraits maps to OMIT:0027217 (wrong ontology). Correct GO terms are GO:0019329 (ammonia oxidation) and GO:0019332 (nitrite oxidation).</rdfs:comment>
         <rdfs:label>nitrification</rdfs:label>
@@ -21954,7 +21954,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1005001"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A two-step biological process in which ammonia is oxidized to nitrite (ammonia oxidation) and nitrite is oxidized to nitrate (nitrite oxidation).</owl:annotatedTarget>
+        <owl:annotatedTarget>A biological process in which ammonia is oxidized to nitrite (ammonia oxidation) and nitrite is oxidized to nitrate (nitrite oxidation), in two steps.</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/GO_0019329"/>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/GO_0019332"/>
     </owl:Axiom>
@@ -22346,7 +22346,7 @@
 
     <owl:Class rdf:about="https://w3id.org/metpo/1007005">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
-        <obo:IAO_0000115>A phenotypic quality describing the arrangement pattern of flagella on a bacterial or archaeal cell. Parent class for METPO:1005031-1005037 (peritrichous, polar, amphitrichous, lophotrichous, monotrichous, lateral, subpolar).</obo:IAO_0000115>
+        <obo:IAO_0000115>A phenotype characterized by the arrangement pattern of flagella on a bacterial or archaeal cell (e.g. peritrichous, polar, amphitrichous, lophotrichous, monotrichous, lateral, subpolar).</obo:IAO_0000115>
         <obo:IAO_0000117>Marcin Joachimiak</obo:IAO_0000117>
         <oboInOwl:hasExactSynonym>flagellation pattern</oboInOwl:hasExactSynonym>
         <rdfs:comment>subset=metpo_proposal_2026_04; priority=HIGH; xrefs=GO:0001539</rdfs:comment>
@@ -22355,7 +22355,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1007005"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A phenotypic quality describing the arrangement pattern of flagella on a bacterial or archaeal cell. Parent class for METPO:1005031-1005037 (peritrichous, polar, amphitrichous, lophotrichous, monotrichous, lateral, subpolar).</owl:annotatedTarget>
+        <owl:annotatedTarget>A phenotype characterized by the arrangement pattern of flagella on a bacterial or archaeal cell (e.g. peritrichous, polar, amphitrichous, lophotrichous, monotrichous, lateral, subpolar).</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OMP_0000078"/>
     </owl:Axiom>
     
@@ -22365,7 +22365,7 @@
 
     <owl:Class rdf:about="https://w3id.org/metpo/1007006">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1007005"/>
-        <obo:IAO_0000115>Multiple flagella per cell (typically a tuft); often combined with polar attachment.</obo:IAO_0000115>
+        <obo:IAO_0000115>A flagellar arrangement in which multiple flagella (typically a tuft) are present per cell, often combined with polar attachment.</obo:IAO_0000115>
         <obo:IAO_0000117>Marcin Joachimiak</obo:IAO_0000117>
         <oboInOwl:hasExactSynonym>polytrichous</oboInOwl:hasExactSynonym>
         <rdfs:comment>subset=metpo_proposal_2026_04; priority=MEDIUM; observations=4</rdfs:comment>
@@ -22374,7 +22374,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1007006"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Multiple flagella per cell (typically a tuft); often combined with polar attachment.</owl:annotatedTarget>
+        <owl:annotatedTarget>A flagellar arrangement in which multiple flagella (typically a tuft) are present per cell, often combined with polar attachment.</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/MICRO_0000271"/>
     </owl:Axiom>
     
@@ -22384,7 +22384,7 @@
 
     <owl:Class rdf:about="https://w3id.org/metpo/1007062">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
-        <obo:IAO_0000115>A phenotypic quality describing macroscopic colony characteristics (shape, margin, elevation, surface, color, size).</obo:IAO_0000115>
+        <obo:IAO_0000115>A phenotype characterized by macroscopic colony characteristics such as shape, margin, elevation, surface, colour, and size.</obo:IAO_0000115>
         <obo:IAO_0000117>Marcin Joachimiak</obo:IAO_0000117>
         <rdfs:comment>subset=metpo_proposal_2026_04; priority=LOW; xrefs=PATO:0000052</rdfs:comment>
         <rdfs:label>colony morphology</rdfs:label>
@@ -22392,7 +22392,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1007062"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A phenotypic quality describing macroscopic colony characteristics (shape, margin, elevation, surface, color, size).</owl:annotatedTarget>
+        <owl:annotatedTarget>A phenotype characterized by macroscopic colony characteristics such as shape, margin, elevation, surface, colour, and size.</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OMP_0000100"/>
     </owl:Axiom>
     
@@ -22402,7 +22402,7 @@
 
     <owl:Class rdf:about="https://w3id.org/metpo/1007063">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1007062"/>
-        <obo:IAO_0000115>Subaspect of colony morphology describing the overall macroscopic colony outline as observed on solid medium.</obo:IAO_0000115>
+        <obo:IAO_0000115>A colony morphology characterized by the overall macroscopic colony outline as observed on solid medium.</obo:IAO_0000115>
         <obo:IAO_0000117>Marcin Joachimiak</obo:IAO_0000117>
         <rdfs:comment>subset=metpo_proposal_2026_04; priority=LOW; xrefs=PATO:0000052</rdfs:comment>
         <rdfs:label>colony shape</rdfs:label>
@@ -22410,7 +22410,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1007063"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Subaspect of colony morphology describing the overall macroscopic colony outline as observed on solid medium.</owl:annotatedTarget>
+        <owl:annotatedTarget>A colony morphology characterized by the overall macroscopic colony outline as observed on solid medium.</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OMP_0000103"/>
     </owl:Axiom>
     
@@ -22420,7 +22420,7 @@
 
     <owl:Class rdf:about="https://w3id.org/metpo/1007064">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1007063"/>
-        <obo:IAO_0000115>Colony with a regular round outline.</obo:IAO_0000115>
+        <obo:IAO_0000115>A colony shape that has a regular round outline.</obo:IAO_0000115>
         <obo:IAO_0000117>Marcin Joachimiak</obo:IAO_0000117>
         <oboInOwl:hasExactSynonym>round colony</oboInOwl:hasExactSynonym>
         <rdfs:comment>subset=metpo_proposal_2026_04; priority=LOW; observations=2649</rdfs:comment>
@@ -22429,7 +22429,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1007064"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Colony with a regular round outline.</owl:annotatedTarget>
+        <owl:annotatedTarget>A colony shape that has a regular round outline.</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OMP_0000166"/>
     </owl:Axiom>
     
@@ -22439,7 +22439,7 @@
 
     <owl:Class rdf:about="https://w3id.org/metpo/1007065">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1007063"/>
-        <obo:IAO_0000115>Colony with an irregular (non-round, non-rhizoid) outline.</obo:IAO_0000115>
+        <obo:IAO_0000115>A colony shape that has an irregular (non-round, non-rhizoid) outline.</obo:IAO_0000115>
         <obo:IAO_0000117>Marcin Joachimiak</obo:IAO_0000117>
         <rdfs:comment>subset=metpo_proposal_2026_04; priority=LOW; observations=148</rdfs:comment>
         <rdfs:label>irregular colony</rdfs:label>
@@ -22447,7 +22447,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1007065"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Colony with an irregular (non-round, non-rhizoid) outline.</owl:annotatedTarget>
+        <owl:annotatedTarget>A colony shape that has an irregular (non-round, non-rhizoid) outline.</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OMP_0000167"/>
     </owl:Axiom>
     
@@ -22457,7 +22457,7 @@
 
     <owl:Class rdf:about="https://w3id.org/metpo/1007066">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1007063"/>
-        <obo:IAO_0000115>Colony with thread-like or filamentous outline.</obo:IAO_0000115>
+        <obo:IAO_0000115>A colony shape that has a thread-like or filamentous outline.</obo:IAO_0000115>
         <obo:IAO_0000117>Marcin Joachimiak</obo:IAO_0000117>
         <rdfs:comment>subset=metpo_proposal_2026_04; priority=LOW; observations=16</rdfs:comment>
         <rdfs:label>filamentous colony</rdfs:label>
@@ -22465,7 +22465,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1007066"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Colony with thread-like or filamentous outline.</owl:annotatedTarget>
+        <owl:annotatedTarget>A colony shape that has a thread-like or filamentous outline.</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OMP_0000088"/>
     </owl:Axiom>
     
@@ -22475,7 +22475,7 @@
 
     <owl:Class rdf:about="https://w3id.org/metpo/1007067">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1007063"/>
-        <obo:IAO_0000115>Very small (pinpoint) colony, typically &lt;1 mm diameter.</obo:IAO_0000115>
+        <obo:IAO_0000115>A colony shape that is very small (pinpoint), typically &lt;1 mm in diameter.</obo:IAO_0000115>
         <obo:IAO_0000117>Marcin Joachimiak</obo:IAO_0000117>
         <rdfs:comment>subset=metpo_proposal_2026_04; priority=LOW; observations=11</rdfs:comment>
         <rdfs:label>punctiform colony</rdfs:label>
@@ -22483,7 +22483,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1007067"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Very small (pinpoint) colony, typically &lt;1 mm diameter.</owl:annotatedTarget>
+        <owl:annotatedTarget>A colony shape that is very small (pinpoint), typically &lt;1 mm in diameter.</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OMP_0000240"/>
     </owl:Axiom>
     
@@ -22493,7 +22493,7 @@
 
     <owl:Class rdf:about="https://w3id.org/metpo/1007068">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1007063"/>
-        <obo:IAO_0000115>Colony with branching, root-like outline.</obo:IAO_0000115>
+        <obo:IAO_0000115>A colony shape that has a branching, root-like outline.</obo:IAO_0000115>
         <obo:IAO_0000117>Marcin Joachimiak</obo:IAO_0000117>
         <rdfs:comment>subset=metpo_proposal_2026_04; priority=LOW; observations=8</rdfs:comment>
         <rdfs:label>rhizoid colony</rdfs:label>
@@ -22501,7 +22501,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1007068"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Colony with branching, root-like outline.</owl:annotatedTarget>
+        <owl:annotatedTarget>A colony shape that has a branching, root-like outline.</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OMP_0000168"/>
     </owl:Axiom>
     
@@ -22511,7 +22511,7 @@
 
     <owl:Class rdf:about="https://w3id.org/metpo/1007069">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1007063"/>
-        <obo:IAO_0000115>Colony with raised opaque centre and translucent peripheral zone, resembling a fried egg.</obo:IAO_0000115>
+        <obo:IAO_0000115>A colony shape that has a raised opaque centre and a translucent peripheral zone, resembling a fried egg.</obo:IAO_0000115>
         <obo:IAO_0000117>Marcin Joachimiak</obo:IAO_0000117>
         <oboInOwl:hasExactSynonym>fried-egg colony</oboInOwl:hasExactSynonym>
         <rdfs:comment>subset=metpo_proposal_2026_04; priority=LOW; observations=6</rdfs:comment>
@@ -22520,7 +22520,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1007069"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Colony with raised opaque centre and translucent peripheral zone, resembling a fried egg.</owl:annotatedTarget>
+        <owl:annotatedTarget>A colony shape that has a raised opaque centre and a translucent peripheral zone, resembling a fried egg.</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/MICRO_0000349"/>
     </owl:Axiom>
     
@@ -22530,7 +22530,7 @@
 
     <owl:Class rdf:about="https://w3id.org/metpo/1007070">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
-        <obo:IAO_0000115>A phenotypic quality describing the ability to grow under elevated hydrostatic pressure.</obo:IAO_0000115>
+        <obo:IAO_0000115>A phenotype characterized by the ability to grow under elevated hydrostatic pressure.</obo:IAO_0000115>
         <obo:IAO_0000117>Marcin Joachimiak</obo:IAO_0000117>
         <oboInOwl:hasExactSynonym>barophile</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>piezophile</oboInOwl:hasExactSynonym>
@@ -22540,7 +22540,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1007070"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A phenotypic quality describing the ability to grow under elevated hydrostatic pressure.</owl:annotatedTarget>
+        <owl:annotatedTarget>A phenotype characterized by the ability to grow under elevated hydrostatic pressure.</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OMP_0005012"/>
     </owl:Axiom>
     
@@ -22550,7 +22550,7 @@
 
     <owl:Class rdf:about="https://w3id.org/metpo/1007071">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1007070"/>
-        <obo:IAO_0000115>An organism that requires or tolerates elevated hydrostatic pressure for growth.</obo:IAO_0000115>
+        <obo:IAO_0000115>A pressure tolerance in which an organism requires or tolerates elevated hydrostatic pressure for growth.</obo:IAO_0000115>
         <obo:IAO_0000117>Marcin Joachimiak</obo:IAO_0000117>
         <rdfs:comment>subset=metpo_proposal_2026_04; priority=MEDIUM</rdfs:comment>
         <rdfs:label>barophile phenotype</rdfs:label>
@@ -22558,7 +22558,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1007071"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>An organism that requires or tolerates elevated hydrostatic pressure for growth.</owl:annotatedTarget>
+        <owl:annotatedTarget>A pressure tolerance in which an organism requires or tolerates elevated hydrostatic pressure for growth.</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/MICRO_0001359"/>
     </owl:Axiom>
     
@@ -22568,7 +22568,7 @@
 
     <owl:Class rdf:about="https://w3id.org/metpo/1007072">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
-        <obo:IAO_0000115>A phenotypic quality describing the ability to withstand ionizing or UV radiation.</obo:IAO_0000115>
+        <obo:IAO_0000115>A phenotype characterized by the ability to withstand ionizing or UV radiation.</obo:IAO_0000115>
         <obo:IAO_0000117>Marcin Joachimiak</obo:IAO_0000117>
         <oboInOwl:hasExactSynonym>radioresistant</oboInOwl:hasExactSynonym>
         <rdfs:comment>subset=metpo_proposal_2026_04; priority=MEDIUM</rdfs:comment>
@@ -22577,7 +22577,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1007072"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A phenotypic quality describing the ability to withstand ionizing or UV radiation.</owl:annotatedTarget>
+        <owl:annotatedTarget>A phenotype characterized by the ability to withstand ionizing or UV radiation.</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="wikidata:Q2353022"/>
     </owl:Axiom>
     
@@ -22587,7 +22587,7 @@
 
     <owl:Class rdf:about="https://w3id.org/metpo/1007073">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
-        <obo:IAO_0000115>A phenotypic quality describing the ability to grow under high osmotic pressure (non-NaCl).</obo:IAO_0000115>
+        <obo:IAO_0000115>A phenotype characterized by the ability to grow under high osmotic pressure (non-NaCl).</obo:IAO_0000115>
         <obo:IAO_0000117>Marcin Joachimiak</obo:IAO_0000117>
         <oboInOwl:hasExactSynonym>osmophile</oboInOwl:hasExactSynonym>
         <rdfs:comment>subset=metpo_proposal_2026_04; priority=MEDIUM</rdfs:comment>
@@ -22596,7 +22596,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1007073"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A phenotypic quality describing the ability to grow under high osmotic pressure (non-NaCl).</owl:annotatedTarget>
+        <owl:annotatedTarget>A phenotype characterized by the ability to grow under high osmotic pressure (non-NaCl).</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OMP_0005015"/>
     </owl:Axiom>
     
@@ -22606,7 +22606,7 @@
 
     <owl:Class rdf:about="https://w3id.org/metpo/1007074">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
-        <obo:IAO_0000115>A phenotypic quality describing the ability to grow in the presence of elevated metal concentrations.</obo:IAO_0000115>
+        <obo:IAO_0000115>A phenotype characterized by the ability to grow in the presence of elevated metal concentrations.</obo:IAO_0000115>
         <obo:IAO_0000117>Marcin Joachimiak</obo:IAO_0000117>
         <oboInOwl:hasExactSynonym>metallophile</oboInOwl:hasExactSynonym>
         <rdfs:comment>subset=metpo_proposal_2026_04; priority=MEDIUM</rdfs:comment>
@@ -22615,7 +22615,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1007074"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A phenotypic quality describing the ability to grow in the presence of elevated metal concentrations.</owl:annotatedTarget>
+        <owl:annotatedTarget>A phenotype characterized by the ability to grow in the presence of elevated metal concentrations.</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OMP_0007890"/>
     </owl:Axiom>
     
@@ -22625,7 +22625,7 @@
 
     <owl:Class rdf:about="https://w3id.org/metpo/1007076">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
-        <obo:IAO_0000115>A phenotypic quality describing the presence of an extracellular polysaccharide capsule.</obo:IAO_0000115>
+        <obo:IAO_0000115>A phenotype characterized by the presence of an extracellular polysaccharide capsule.</obo:IAO_0000115>
         <obo:IAO_0000117>Marcin Joachimiak</obo:IAO_0000117>
         <rdfs:comment>subset=metpo_proposal_2026_04; priority=LOW; xrefs=GO:0042603</rdfs:comment>
         <rdfs:label>capsule presence</rdfs:label>
@@ -22633,7 +22633,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1007076"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A phenotypic quality describing the presence of an extracellular polysaccharide capsule.</owl:annotatedTarget>
+        <owl:annotatedTarget>A phenotype characterized by the presence of an extracellular polysaccharide capsule.</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OMP_0000203"/>
     </owl:Axiom>
     
@@ -22643,7 +22643,7 @@
 
     <owl:Class rdf:about="https://w3id.org/metpo/1007077">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
-        <obo:IAO_0000115>A phenotypic capability describing the ability to form surface-attached biofilms.</obo:IAO_0000115>
+        <obo:IAO_0000115>A phenotype characterized by the ability to form surface-attached biofilms.</obo:IAO_0000115>
         <obo:IAO_0000117>Marcin Joachimiak</obo:IAO_0000117>
         <rdfs:comment>subset=metpo_proposal_2026_04; priority=MEDIUM; xrefs=GO:0042710</rdfs:comment>
         <rdfs:label>biofilm formation capability</rdfs:label>
@@ -22651,7 +22651,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1007077"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A phenotypic capability describing the ability to form surface-attached biofilms.</owl:annotatedTarget>
+        <owl:annotatedTarget>A phenotype characterized by the ability to form surface-attached biofilms.</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OMP_0000176"/>
     </owl:Axiom>
     
@@ -22841,7 +22841,7 @@
 
     <owl:Class rdf:about="https://w3id.org/metpo/1007089">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
-        <obo:IAO_0000115>A phenotypic quality describing coagulase enzyme activity (clotting of blood plasma). Diagnostic marker, e.g. for Staphylococcus aureus.</obo:IAO_0000115>
+        <obo:IAO_0000115>A phenotype characterized by coagulase enzyme activity (clotting of blood plasma); a diagnostic marker, e.g. for Staphylococcus aureus.</obo:IAO_0000115>
         <obo:IAO_0000117>Marcin Joachimiak</obo:IAO_0000117>
         <oboInOwl:hasExactSynonym>coagulase test</oboInOwl:hasExactSynonym>
         <rdfs:comment>subset=metpo_proposal_2026_04; priority=MEDIUM</rdfs:comment>
@@ -22850,7 +22850,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1007089"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A phenotypic quality describing coagulase enzyme activity (clotting of blood plasma). Diagnostic marker, e.g. for Staphylococcus aureus.</owl:annotatedTarget>
+        <owl:annotatedTarget>A phenotype characterized by coagulase enzyme activity (clotting of blood plasma); a diagnostic marker, e.g. for Staphylococcus aureus.</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/MICRO_0000991"/>
     </owl:Axiom>
     
@@ -22900,7 +22900,7 @@
 
     <owl:Class rdf:about="https://w3id.org/metpo/1007092">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
-        <obo:IAO_0000115>A phenotypic quality describing a microbe that thrives in low water-activity environments (typically aw &lt; 0.85). Sibling concept of osmotic and metal tolerance; distinct from halophily and from osmotic tolerance because the limiting factor is water activity (aw) rather than solute concentration.</obo:IAO_0000115>
+        <obo:IAO_0000115>A phenotype characterized by a microbe that thrives in low water-activity environments (typically aw &lt; 0.85), where the limiting factor is water activity (aw) rather than solute concentration; distinct from halophily and osmotic tolerance.</obo:IAO_0000115>
         <obo:IAO_0000117>Marcin Joachimiak</obo:IAO_0000117>
         <oboInOwl:hasExactSynonym>xerophile</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>xerotolerant</oboInOwl:hasExactSynonym>
@@ -22910,7 +22910,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1007092"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A phenotypic quality describing a microbe that thrives in low water-activity environments (typically aw &lt; 0.85). Sibling concept of osmotic and metal tolerance; distinct from halophily and from osmotic tolerance because the limiting factor is water activity (aw) rather than solute concentration.</owl:annotatedTarget>
+        <owl:annotatedTarget>A phenotype characterized by a microbe that thrives in low water-activity environments (typically aw &lt; 0.85), where the limiting factor is water activity (aw) rather than solute concentration; distinct from halophily and osmotic tolerance.</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="wikidata:Q980491"/>
     </owl:Axiom>
     
@@ -22920,7 +22920,7 @@
 
     <owl:Class rdf:about="https://w3id.org/metpo/1007093">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
-        <obo:IAO_0000115>A phenotypic quality describing a microbe that lives on the external surface of a host organism or substrate, as distinct from endosymbionts (which live inside the host). Captures host-association mode, not specific host taxonomy.</obo:IAO_0000115>
+        <obo:IAO_0000115>A phenotype characterized by a microbe that lives on the external surface of a host organism or substrate, as distinct from endosymbionts (which live inside the host); captures host-association mode, not specific host taxonomy.</obo:IAO_0000115>
         <obo:IAO_0000117>Marcin Joachimiak</obo:IAO_0000117>
         <oboInOwl:hasExactSynonym>ectosymbiont</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>epibiont</oboInOwl:hasExactSynonym>
@@ -22930,7 +22930,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1007093"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A phenotypic quality describing a microbe that lives on the external surface of a host organism or substrate, as distinct from endosymbionts (which live inside the host). Captures host-association mode, not specific host taxonomy.</owl:annotatedTarget>
+        <owl:annotatedTarget>A phenotype characterized by a microbe that lives on the external surface of a host organism or substrate, as distinct from endosymbionts (which live inside the host); captures host-association mode, not specific host taxonomy.</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="wikidata:Q640114"/>
     </owl:Axiom>
     
