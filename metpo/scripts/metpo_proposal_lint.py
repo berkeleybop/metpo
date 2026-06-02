@@ -20,7 +20,7 @@ definition_source (#344), parents that bypass ROBOT's label-resolution safety ne
 via CURIE form, and definitions whose genus disagrees with the asserted parent
 (DEF-FORM; the hierarchy/label/definition compatibility principle, #64/#377).
 
-Baseline ratchet: ``--write-baseline PATH`` records the currently-accepted findings;
+Baseline ratchet: ``--baseline PATH --write-baseline`` records the currently-accepted findings;
 a later run with ``--baseline PATH`` fails only on findings BEYOND that floor, so a
 large existing-debt audit can gate new additions without first paying down the debt.
 Regenerate the baseline as debt is fixed -- the count can only go down.
@@ -303,6 +303,11 @@ def check_definition_form(rid, typ, definition, parent_cell, mode):
         return []
     sev = "ERROR" if mode == "submit" else "WARN"
     parents = [p.strip() for p in parent_cell.split("|") if p.strip()]
+    # CURIE-form parents (e.g. METPO:1000000) are governed by PARENT/HOUSE-STYLE; the
+    # genus is compared only against LABEL-form parents (the sheet convention), so a
+    # CURIE parent never triggers a spurious DEF-FORM mismatch and is not cited as the
+    # expected genus.
+    label_parents = [p for p in parents if not re.match(r"^[A-Za-z][\w.]*:\S", p)]
     m = _DEF_GENUS_RE.match(definition)
     if not m:
         return [
@@ -311,7 +316,7 @@ def check_definition_form(rid, typ, definition, parent_cell, mode):
                 "DEF-FORM",
                 rid,
                 "definition is not Aristotelian 'A <genus> that/in-which/... <differentia>' "
-                f"(genus must be the parent label {parents or ['<none>']})",
+                f"(genus must be the parent label {label_parents or ['<none>']})",
             )
         ]
     genus = m.group(1).strip()
@@ -322,15 +327,15 @@ def check_definition_form(rid, typ, definition, parent_cell, mode):
     # still hierarchy/label/definition compatible.
     _heads = ("phenotype", "preference", "quality")
     genus_ok = any(
-        glow == p.lower() or glow in {f"{p.lower()} {h}" for h in _heads} for p in parents
+        glow == p.lower() or glow in {f"{p.lower()} {h}" for h in _heads} for p in label_parents
     )
-    if parents and not genus_ok:
+    if label_parents and not genus_ok:
         return [
             Finding(
                 sev,
                 "DEF-FORM",
                 rid,
-                f"definition genus '{genus}' does not match asserted parent(s) {parents} "
+                f"definition genus '{genus}' does not match asserted parent(s) {label_parents} "
                 "(hierarchy/label/definition must be compatible)",
             )
         ]
@@ -537,13 +542,15 @@ def main(template, known, mode, do_validate_curies, as_json, warn_only, baseline
     if write_baseline:
         if not baseline:
             raise click.UsageError("--write-baseline requires --baseline PATH")
-        Path(baseline).write_text(json.dumps(sorted({_fp(f) for f in findings}), indent=1) + "\n")
+        Path(baseline).write_text(
+            json.dumps(sorted({_fp(f) for f in findings}), indent=1) + "\n", encoding="utf-8"
+        )
         click.echo(f"# wrote baseline: {baseline}  ({len(findings)} findings recorded)")
         raise SystemExit(0)
 
     baseline_set = set()
     if baseline and Path(baseline).exists():
-        baseline_set = set(json.loads(Path(baseline).read_text()))
+        baseline_set = set(json.loads(Path(baseline).read_text(encoding="utf-8")))
     new_findings = [f for f in findings if _fp(f) not in baseline_set]
     baselined = len(findings) - len(new_findings)
     # When a baseline is in play, only findings beyond it count toward pass/fail.
