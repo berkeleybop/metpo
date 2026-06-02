@@ -32,8 +32,9 @@ def test_load_semsql_registry_uses_timeout(monkeypatch):
     assert captured["timeout"] == 10
 
 
-def test_analyze_grounding_handles_entities_without_labels():
-    assessor = MetpoAssessor.__new__(MetpoAssessor)
+def test_analyze_grounding_handles_entities_without_labels(monkeypatch):
+    monkeypatch.setattr(MetpoAssessor, "_load_semsql_registry", lambda self: {})
+    assessor = MetpoAssessor()
 
     result = assessor._analyze_grounding([{"id": "CHEBI:1"}, {"id": "AUTO:tmp"}])
 
