@@ -115,6 +115,7 @@ DEF_FORM_TEMPLATE = (
     "METPO:1007104\tin-which ok\towl:Class\ttrophic type\tA trophic type in which an organism fixes carbon.\tPMID:1\n"
     "METPO:1007105\tcharacterized ok\towl:Class\tcell shape\tA cell shape characterized by a rod morphology.\tPMID:1\n"
     "METPO:1007106\tparent phenotype genus\towl:Class\thalophilic\tA halophilic phenotype in which an organism requires high salt.\tPMID:1\n"
+    "METPO:1007107\tcurie parent\towl:Class\tMETPO:9999999\tA phenotype that is observable.\tPMID:1\n"
 )
 
 
@@ -140,6 +141,8 @@ def test_def_form(tmp_path):
     # 'in which' / 'characterized by' are valid connectors when genus == parent
     assert "DEF-FORM" not in by_id.get("METPO:1007104", set())
     assert "DEF-FORM" not in by_id.get("METPO:1007105", set())
+    # CURIE-form parent: genus comparison is skipped (PARENT/HOUSE-STYLE governs it)
+    assert "DEF-FORM" not in by_id.get("METPO:1007107", set())
     # genus "<parent> phenotype" (adjectival parent) is accepted
     assert "DEF-FORM" not in by_id.get("METPO:1007106", set())
 
