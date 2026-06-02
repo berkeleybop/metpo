@@ -19,9 +19,9 @@ CONFIG_HASH=                b36e24392153d51eead1fd6d833e68e831bdb46877e7485056d8
 # these can be overwritten on the command line
 
 OBOBASE=                    http://purl.obolibrary.org/obo
-URIBASE=                    https://w3id.org/metpo
+URIBASE=                    https://w3id.org
 ONT=                        metpo
-ONTBASE=                    https://w3id.org/metpo/metpo
+ONTBASE=                    https://w3id.org/metpo
 EDIT_FORMAT=                owl
 SRC =                       $(ONT)-edit.$(EDIT_FORMAT)
 MAKE_FAST=                  $(MAKE) IMP=false PAT=false COMP=false MIR=false
