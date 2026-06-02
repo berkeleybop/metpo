@@ -315,7 +315,16 @@ def check_definition_form(rid, typ, definition, parent_cell, mode):
             )
         ]
     genus = m.group(1).strip()
-    if parents and genus.lower() not in [p.lower() for p in parents]:
+    glow = genus.lower()
+    # Accept the parent label itself, or the parent label qualified as a head noun
+    # ("a <parent> phenotype/preference in which ..."). For adjectival parents (e.g.
+    # 'halophilic', 'anaerobic') the natural genus is "<parent> phenotype", which is
+    # still hierarchy/label/definition compatible.
+    _heads = ("phenotype", "preference", "quality")
+    genus_ok = any(
+        glow == p.lower() or glow in {f"{p.lower()} {h}" for h in _heads} for p in parents
+    )
+    if parents and not genus_ok:
         return [
             Finding(
                 sev,
