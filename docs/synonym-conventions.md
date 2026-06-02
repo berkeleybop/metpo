@@ -1,4 +1,4 @@
-# METPO Synonym Conventions
+# METPO (Microbial Ecology Trait and Phenotype Ontology) Synonym Conventions
 
 **Purpose:** How METPO records synonyms, which annotation property each Google-Sheet
 column maps to, and the rules a curator (or an automated check) must follow. The
@@ -28,11 +28,11 @@ classes tab has two *kinds* of synonym column with different rules.
 | `madin synonym or field` | `A oboInOwl:hasRelatedSynonym SPLIT=\|` | related synonym | source-bound |
 | `Madin synonym source` | `>AI IAO:0000119 SPLIT=\|` | (axiom annotation) | source provenance |
 | `bacdive keyword synonym` | `A oboInOwl:hasRelatedSynonym SPLIT=\|` | related synonym | source-bound |
-| `Bacdive synonym source` | `>AI IAO:0000119` | (axiom annotation) | source provenance |
+| `Bacdive synonym source` | `>AI IAO:0000119 SPLIT=\|` | (axiom annotation) | source provenance |
 | `bactotraits related synonym` | `A oboInOwl:hasRelatedSynonym SPLIT=\|` | related synonym | source-bound |
-| `Bactotraits synonym source` | `>AI IAO:0000119` | (axiom annotation) | source provenance |
+| `Bactotraits synonym source` | `>AI IAO:0000119 SPLIT=\|` | (axiom annotation) | source provenance |
 | `metatraits synonym` | `A oboInOwl:hasRelatedSynonym SPLIT=\|` | related synonym | source-bound |
-| `MetaTraits synonym source` | `>AI IAO:0000119` | (axiom annotation) | source provenance |
+| `MetaTraits synonym source` | `>AI IAO:0000119 SPLIT=\|` | (axiom annotation) | source provenance |
 
 The leading `>` on each `*source*` column is a ROBOT template directive that **annotates
 the preceding synonym assertion** rather than the term. The result is a reified
