@@ -12489,7 +12489,7 @@
           "pred" : "http://qudt.org/schema/qudt/ucumCode",
           "val" : "%"
         }, {
-          "pred" : "https://w3id.org/metpo/range_max",
+          "pred" : "https://w3id.org/metpo/range_min",
           "val" : "8"
         } ]
       }
@@ -13385,7 +13385,7 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "An oxygen preference that requires molecular oxygen (O₂) for growth.",
+          "val" : "An aerobic phenotype that requires molecular oxygen (O2) for growth.",
           "meta" : {
             "basicPropertyValues" : [ {
               "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
@@ -13428,7 +13428,7 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "An oxygen preference in which molecular oxygen (O₂) inhibits or prevents growth.",
+          "val" : "An anaerobic phenotype in which molecular oxygen (O2) inhibits or prevents growth.",
           "meta" : {
             "basicPropertyValues" : [ {
               "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
@@ -13996,7 +13996,7 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A halophily preference where growth and proliferation requires high levels of sodium chloride, usually above or about 0.2 M.",
+          "val" : "A halophilic phenotype in which an organism requires high levels of sodium chloride, usually above or about 0.2 M.",
           "meta" : {
             "basicPropertyValues" : [ {
               "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
@@ -14062,7 +14062,7 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A halophily preference in which an organism requires low to moderate salt concentrations (0.3 to 0.8 M NaCl) for optimal growth.",
+          "val" : "A halophilic phenotype in which an organism requires low to moderate salt concentrations (0.3 to 0.8 M NaCl) for optimal growth.",
           "meta" : {
             "basicPropertyValues" : [ {
               "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
@@ -14138,7 +14138,7 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A halophily preference in which an organism requires very high salt concentrations (typically 15-30% NaCl or higher) for optimal growth and cannot grow at salt concentrations below approximately 12%.",
+          "val" : "A halophilic phenotype in which an organism requires very high salt concentrations (typically 15-30% NaCl or higher) for optimal growth and cannot grow at salt concentrations below approximately 12%.",
           "meta" : {
             "basicPropertyValues" : [ {
               "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
@@ -16726,7 +16726,7 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A temperature preference that grows optimally at temperatures above 90°C.",
+          "val" : "A hyperthermophilic phenotype in which an organism grows optimally at temperatures above 90 °C.",
           "meta" : {
             "basicPropertyValues" : [ {
               "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
@@ -18519,7 +18519,7 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A respiration that generates energy through the oxidation of organic compounds without using an external electron acceptor, using organic molecules as both electron donors and final electron acceptors.",
+          "val" : "A metabolism in which energy is generated through the oxidation of organic compounds without using an external electron acceptor, using organic molecules as both electron donors and final electron acceptors.",
           "meta" : {
             "basicPropertyValues" : [ {
               "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
@@ -18997,7 +18997,7 @@
       }
     }, {
       "id" : "https://w3id.org/metpo/1003002",
-      "lbl" : "alkaphilic",
+      "lbl" : "alkaliphilic",
       "type" : "CLASS",
       "meta" : {
         "definition" : {
@@ -19080,11 +19080,11 @@
       }
     }, {
       "id" : "https://w3id.org/metpo/1003004",
-      "lbl" : "obligately alkaphilic",
+      "lbl" : "obligately alkaliphilic",
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A pH growth preference in which an organism requires alkaline conditions (typically pH above 8.5) for growth and cannot grow at neutral or acidic pH.",
+          "val" : "An alkaliphilic phenotype in which an organism requires alkaline conditions (typically pH above 8.5) for growth and cannot grow at neutral or acidic pH.",
           "meta" : {
             "basicPropertyValues" : [ {
               "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
@@ -19121,7 +19121,7 @@
       }
     }, {
       "id" : "https://w3id.org/metpo/1003005",
-      "lbl" : "facultatively alkaphilic",
+      "lbl" : "facultatively alkaliphilic",
       "type" : "CLASS",
       "meta" : {
         "definition" : {
@@ -19162,7 +19162,7 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A pH growth preference characterized by the requirement for acidic environments (pH below 5.5) for growth, with inability to grow at neutral or alkaline pH values.",
+          "val" : "An acidophilic phenotype in which an organism requires acidic environments (pH below 5.5) for growth, with inability to grow at neutral or alkaline pH values.",
           "meta" : {
             "basicPropertyValues" : [ {
               "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
@@ -27743,11 +27743,11 @@
     }, {
       "sub" : "https://w3id.org/metpo/1000606",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000601"
+      "obj" : "https://w3id.org/metpo/1000602"
     }, {
       "sub" : "https://w3id.org/metpo/1000607",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000601"
+      "obj" : "https://w3id.org/metpo/1000603"
     }, {
       "sub" : "https://w3id.org/metpo/1000608",
       "pred" : "is_a",
@@ -27811,7 +27811,7 @@
     }, {
       "sub" : "https://w3id.org/metpo/1000623",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000629"
+      "obj" : "https://w3id.org/metpo/1000620"
     }, {
       "sub" : "https://w3id.org/metpo/1000624",
       "pred" : "is_a",
@@ -27819,7 +27819,7 @@
     }, {
       "sub" : "https://w3id.org/metpo/1000625",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000629"
+      "obj" : "https://w3id.org/metpo/1000620"
     }, {
       "sub" : "https://w3id.org/metpo/1000626",
       "pred" : "is_a",
@@ -27831,7 +27831,7 @@
     }, {
       "sub" : "https://w3id.org/metpo/1000628",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000629"
+      "obj" : "https://w3id.org/metpo/1000620"
     }, {
       "sub" : "https://w3id.org/metpo/1000629",
       "pred" : "is_a",
@@ -28147,7 +28147,7 @@
     }, {
       "sub" : "https://w3id.org/metpo/1000721",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000613"
+      "obj" : "https://w3id.org/metpo/1000617"
     }, {
       "sub" : "https://w3id.org/metpo/1000731",
       "pred" : "is_a",
@@ -28623,7 +28623,7 @@
     }, {
       "sub" : "https://w3id.org/metpo/1002005",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1000800"
+      "obj" : "https://w3id.org/metpo/1000060"
     }, {
       "sub" : "https://w3id.org/metpo/1002006",
       "pred" : "is_a",
@@ -28783,7 +28783,7 @@
     }, {
       "sub" : "https://w3id.org/metpo/1003004",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1003000"
+      "obj" : "https://w3id.org/metpo/1003002"
     }, {
       "sub" : "https://w3id.org/metpo/1003005",
       "pred" : "is_a",
@@ -28791,7 +28791,7 @@
     }, {
       "sub" : "https://w3id.org/metpo/1003006",
       "pred" : "is_a",
-      "obj" : "https://w3id.org/metpo/1003000"
+      "obj" : "https://w3id.org/metpo/1003003"
     }, {
       "sub" : "https://w3id.org/metpo/1003007",
       "pred" : "is_a",

@@ -7538,7 +7538,7 @@ id: metpo:1000482
 name: NaCl delta high
 synonym: "Nad_>8" RELATED [] {IAO:0000119="https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv"}
 is_a: metpo:1000335 ! NaCl delta
-property_value: metpo:range_max "8" xsd:string
+property_value: metpo:range_min "8" xsd:string
 property_value: qudt:ucumCode "%" xsd:string
 
 [Term]
@@ -7963,19 +7963,19 @@ is_a: metpo:1000601 ! oxygen preference
 [Term]
 id: metpo:1000606
 name: obligately aerobic
-def: "An oxygen preference that requires molecular oxygen (O₂) for growth." [] {IAO:0000119="MICRO:0000516"}
+def: "An aerobic phenotype that requires molecular oxygen (O2) for growth." [] {IAO:0000119="MICRO:0000516"}
 synonym: "obligate aerobe" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 synonym: "obligate aerobic" RELATED [] {IAO:0000119="https://metatraits.embl.de/"}
 synonym: "obligate aerobic" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: metpo:1000601 ! oxygen preference
+is_a: metpo:1000602 ! aerobic
 
 [Term]
 id: metpo:1000607
 name: obligately anaerobic
-def: "An oxygen preference in which molecular oxygen (O₂) inhibits or prevents growth." [] {IAO:0000119="MICRO:0000504"}
+def: "An anaerobic phenotype in which molecular oxygen (O2) inhibits or prevents growth." [] {IAO:0000119="MICRO:0000504"}
 synonym: "obligate anaerobe" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 synonym: "obligate anaerobic" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
-is_a: metpo:1000601 ! oxygen preference
+is_a: metpo:1000603 ! anaerobic
 
 [Term]
 id: metpo:1000608
@@ -8098,10 +8098,10 @@ is_a: metpo:1000629 ! halophily preference
 [Term]
 id: metpo:1000623
 name: moderately halophilic
-def: "A halophily preference where growth and proliferation requires high levels of sodium chloride, usually above or about 0.2 M." [] {IAO:0000119="OMP:0005016"}
+def: "A halophilic phenotype in which an organism requires high levels of sodium chloride, usually above or about 0.2 M." [] {IAO:0000119="OMP:0005016"}
 synonym: "moderate-halophilic" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 synonym: "moderately halophilic" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: metpo:1000629 ! halophily preference
+is_a: metpo:1000620 ! halophilic
 property_value: IAO:0000117 "Anthea Guo" xsd:string
 
 [Term]
@@ -8115,9 +8115,9 @@ is_a: metpo:1000629 ! halophily preference
 [Term]
 id: metpo:1000625
 name: slightly halophilic
-def: "A halophily preference in which an organism requires low to moderate salt concentrations (0.3 to 0.8 M NaCl) for optimal growth." [] {IAO:0000119="OMP:0005016"}
+def: "A halophilic phenotype in which an organism requires low to moderate salt concentrations (0.3 to 0.8 M NaCl) for optimal growth." [] {IAO:0000119="OMP:0005016"}
 synonym: "slightly halophilic" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: metpo:1000629 ! halophily preference
+is_a: metpo:1000620 ! halophilic
 
 [Term]
 id: metpo:1000626
@@ -8138,10 +8138,10 @@ is_a: metpo:1000629 ! halophily preference
 [Term]
 id: metpo:1000628
 name: extremely halophilic
-def: "A halophily preference in which an organism requires very high salt concentrations (typically 15-30% NaCl or higher) for optimal growth and cannot grow at salt concentrations below approximately 12%." [] {IAO:0000119="OMP:0005016", IAO:0000119="MICRO:0001314"}
+def: "A halophilic phenotype in which an organism requires very high salt concentrations (typically 15-30% NaCl or higher) for optimal growth and cannot grow at salt concentrations below approximately 12%." [] {IAO:0000119="OMP:0005016", IAO:0000119="MICRO:0001314"}
 synonym: "extreme-halophilic" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 synonym: "extremely halophilic" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
-is_a: metpo:1000629 ! halophily preference
+is_a: metpo:1000620 ! halophilic
 property_value: IAO:0000117 "Jed Dongjin Kim-Ozaeta" xsd:string
 
 [Term]
@@ -8787,10 +8787,10 @@ property_value: IAO:0000117 "Anthea Guo" xsd:string
 [Term]
 id: metpo:1000721
 name: extreme hyperthermophilic
-def: "A temperature preference that grows optimally at temperatures above 90°C." [] {IAO:0000119="ENVO:00002027", IAO:0000119="OMP:0005003", IAO:0000119="MICRO:0001294", IAO:0000119="MICRO:0001538"}
+def: "A hyperthermophilic phenotype in which an organism grows optimally at temperatures above 90 °C." [] {IAO:0000119="ENVO:00002027", IAO:0000119="OMP:0005003", IAO:0000119="MICRO:0001294", IAO:0000119="MICRO:0001538"}
 synonym: "extreme hyperthermophile" RELATED []
 synonym: "extremely hyperthermophilic" RELATED []
-is_a: metpo:1000613 ! temperature preference
+is_a: metpo:1000617 ! hyperthermophilic
 
 [Term]
 id: metpo:1000731
@@ -9656,10 +9656,10 @@ is_a: metpo:1000060 ! metabolism
 [Term]
 id: metpo:1002005
 name: Fermentation
-def: "A respiration that generates energy through the oxidation of organic compounds without using an external electron acceptor, using organic molecules as both electron donors and final electron acceptors." [] {IAO:0000119="GO:0006113"}
+def: "A metabolism in which energy is generated through the oxidation of organic compounds without using an external electron acceptor, using organic molecules as both electron donors and final electron acceptors." [] {IAO:0000119="GO:0006113"}
 synonym: "fermentation" RELATED [] {IAO:0000119="https://github.com/jmadin/bacteria_archaea_traits"}
 synonym: "fermentation" RELATED [] {IAO:0000119="https://metatraits.embl.de/"}
-is_a: metpo:1000800 ! respiration
+is_a: metpo:1000060 ! metabolism
 property_value: IAO:0000117 "Luke Wang" xsd:string
 
 [Term]
@@ -9926,7 +9926,7 @@ property_value: IAO:0000117 "Anthea Guo" xsd:string
 
 [Term]
 id: metpo:1003002
-name: alkaphilic
+name: alkaliphilic
 def: "A pH growth preference in which an organism grows optimally at pH values above 9." [] {IAO:0000119="OMP:0005009", IAO:0000119="MICRO:0001549", IAO:0000119="OMP:0005010", IAO:0000119="ENVO:00002022", IAO:0000119="OMP:0005011"}
 synonym: "alkaliphile" EXACT []
 synonym: "alkaliphilic" EXACT []
@@ -9945,17 +9945,17 @@ is_a: metpo:1003000 ! pH growth preference
 
 [Term]
 id: metpo:1003004
-name: obligately alkaphilic
-def: "A pH growth preference in which an organism requires alkaline conditions (typically pH above 8.5) for growth and cannot grow at neutral or acidic pH." [] {IAO:0000119="OMP:0007947", IAO:0000119="ENVO:00002022", IAO:0000119="MICRO:0001565", IAO:0000119="OMP:0005011", IAO:0000119="OMP:0007771"}
+name: obligately alkaliphilic
+def: "An alkaliphilic phenotype in which an organism requires alkaline conditions (typically pH above 8.5) for growth and cannot grow at neutral or acidic pH." [] {IAO:0000119="OMP:0007947", IAO:0000119="ENVO:00002022", IAO:0000119="MICRO:0001565", IAO:0000119="OMP:0005011", IAO:0000119="OMP:0007771"}
 synonym: "obligate alkaliphile" EXACT []
 synonym: "obligate alkaphilic" EXACT []
 synonym: "obligately alkaliphilic" EXACT []
-is_a: metpo:1003000 ! pH growth preference
+is_a: metpo:1003002 ! alkaliphilic
 property_value: IAO:0000117 "Luke Wang" xsd:string
 
 [Term]
 id: metpo:1003005
-name: facultatively alkaphilic
+name: facultatively alkaliphilic
 def: "A pH growth preference in which an organism can grow at alkaline pH but does not require it." [] {IAO:0000119="MICRO:0001558", IAO:0000119="OMP:0005009", IAO:0000119="OMP:0007947", IAO:0000119="OMP:0005011", IAO:0000119="OMP:0007771"}
 synonym: "facultative alkaliphile" EXACT []
 synonym: "facultative alkaphilic" EXACT []
@@ -9965,10 +9965,10 @@ is_a: metpo:1003000 ! pH growth preference
 [Term]
 id: metpo:1003006
 name: obligately acidophilic
-def: "A pH growth preference characterized by the requirement for acidic environments (pH below 5.5) for growth, with inability to grow at neutral or alkaline pH values." [] {IAO:0000119="MICRO:0001566"}
+def: "An acidophilic phenotype in which an organism requires acidic environments (pH below 5.5) for growth, with inability to grow at neutral or alkaline pH values." [] {IAO:0000119="MICRO:0001566"}
 synonym: "obligate acidophile" EXACT []
 synonym: "obligately acidophilic" EXACT []
-is_a: metpo:1003000 ! pH growth preference
+is_a: metpo:1003003 ! acidophilic
 property_value: IAO:0000117 "Anthea Guo" xsd:string
 property_value: IAO:0000117 "Jed Dongjin Kim-Ozaeta" xsd:string
 

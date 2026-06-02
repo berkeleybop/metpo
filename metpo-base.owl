@@ -15539,7 +15539,7 @@
         <qudt:ucumCode>%</qudt:ucumCode>
         <oboInOwl:hasRelatedSynonym>Nad_&gt;8</oboInOwl:hasRelatedSynonym>
         <rdfs:label>NaCl delta high</rdfs:label>
-        <metpo:range_max>8</metpo:range_max>
+        <metpo:range_min>8</metpo:range_min>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000482"/>
@@ -16482,8 +16482,8 @@
     <!-- https://w3id.org/metpo/1000606 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000606">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000601"/>
-        <obo:IAO_0000115>An oxygen preference that requires molecular oxygen (O₂) for growth.</obo:IAO_0000115>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000602"/>
+        <obo:IAO_0000115>An aerobic phenotype that requires molecular oxygen (O2) for growth.</obo:IAO_0000115>
         <oboInOwl:hasRelatedSynonym>obligate aerobe</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>obligate aerobic</oboInOwl:hasRelatedSynonym>
         <rdfs:label>obligately aerobic</rdfs:label>
@@ -16491,7 +16491,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000606"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>An oxygen preference that requires molecular oxygen (O₂) for growth.</owl:annotatedTarget>
+        <owl:annotatedTarget>An aerobic phenotype that requires molecular oxygen (O2) for growth.</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/MICRO_0000516"/>
     </owl:Axiom>
     <owl:Axiom>
@@ -16518,8 +16518,8 @@
     <!-- https://w3id.org/metpo/1000607 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000607">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000601"/>
-        <obo:IAO_0000115>An oxygen preference in which molecular oxygen (O₂) inhibits or prevents growth.</obo:IAO_0000115>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000603"/>
+        <obo:IAO_0000115>An anaerobic phenotype in which molecular oxygen (O2) inhibits or prevents growth.</obo:IAO_0000115>
         <oboInOwl:hasRelatedSynonym>obligate anaerobe</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>obligate anaerobic</oboInOwl:hasRelatedSynonym>
         <rdfs:label>obligately anaerobic</rdfs:label>
@@ -16527,7 +16527,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000607"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>An oxygen preference in which molecular oxygen (O₂) inhibits or prevents growth.</owl:annotatedTarget>
+        <owl:annotatedTarget>An anaerobic phenotype in which molecular oxygen (O2) inhibits or prevents growth.</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/MICRO_0000504"/>
     </owl:Axiom>
     <owl:Axiom>
@@ -16990,8 +16990,8 @@
     <!-- https://w3id.org/metpo/1000623 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000623">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000629"/>
-        <obo:IAO_0000115>A halophily preference where growth and proliferation requires high levels of sodium chloride, usually above or about 0.2 M.</obo:IAO_0000115>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000620"/>
+        <obo:IAO_0000115>A halophilic phenotype in which an organism requires high levels of sodium chloride, usually above or about 0.2 M.</obo:IAO_0000115>
         <obo:IAO_0000117>Anthea Guo</obo:IAO_0000117>
         <oboInOwl:hasRelatedSynonym>moderate-halophilic</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>moderately halophilic</oboInOwl:hasRelatedSynonym>
@@ -17000,7 +17000,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000623"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A halophily preference where growth and proliferation requires high levels of sodium chloride, usually above or about 0.2 M.</owl:annotatedTarget>
+        <owl:annotatedTarget>A halophilic phenotype in which an organism requires high levels of sodium chloride, usually above or about 0.2 M.</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OMP_0005016"/>
     </owl:Axiom>
     <owl:Axiom>
@@ -17044,15 +17044,15 @@
     <!-- https://w3id.org/metpo/1000625 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000625">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000629"/>
-        <obo:IAO_0000115>A halophily preference in which an organism requires low to moderate salt concentrations (0.3 to 0.8 M NaCl) for optimal growth.</obo:IAO_0000115>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000620"/>
+        <obo:IAO_0000115>A halophilic phenotype in which an organism requires low to moderate salt concentrations (0.3 to 0.8 M NaCl) for optimal growth.</obo:IAO_0000115>
         <oboInOwl:hasRelatedSynonym>slightly halophilic</oboInOwl:hasRelatedSynonym>
         <rdfs:label>slightly halophilic</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000625"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A halophily preference in which an organism requires low to moderate salt concentrations (0.3 to 0.8 M NaCl) for optimal growth.</owl:annotatedTarget>
+        <owl:annotatedTarget>A halophilic phenotype in which an organism requires low to moderate salt concentrations (0.3 to 0.8 M NaCl) for optimal growth.</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OMP_0005016"/>
     </owl:Axiom>
     <owl:Axiom>
@@ -17109,8 +17109,8 @@
     <!-- https://w3id.org/metpo/1000628 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000628">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000629"/>
-        <obo:IAO_0000115>A halophily preference in which an organism requires very high salt concentrations (typically 15-30% NaCl or higher) for optimal growth and cannot grow at salt concentrations below approximately 12%.</obo:IAO_0000115>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000620"/>
+        <obo:IAO_0000115>A halophilic phenotype in which an organism requires very high salt concentrations (typically 15-30% NaCl or higher) for optimal growth and cannot grow at salt concentrations below approximately 12%.</obo:IAO_0000115>
         <obo:IAO_0000117>Jed Dongjin Kim-Ozaeta</obo:IAO_0000117>
         <oboInOwl:hasRelatedSynonym>extreme-halophilic</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>extremely halophilic</oboInOwl:hasRelatedSynonym>
@@ -17119,7 +17119,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000628"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A halophily preference in which an organism requires very high salt concentrations (typically 15-30% NaCl or higher) for optimal growth and cannot grow at salt concentrations below approximately 12%.</owl:annotatedTarget>
+        <owl:annotatedTarget>A halophilic phenotype in which an organism requires very high salt concentrations (typically 15-30% NaCl or higher) for optimal growth and cannot grow at salt concentrations below approximately 12%.</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/MICRO_0001314"/>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OMP_0005016"/>
     </owl:Axiom>
@@ -19202,8 +19202,8 @@
     <!-- https://w3id.org/metpo/1000721 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1000721">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000613"/>
-        <obo:IAO_0000115>A temperature preference that grows optimally at temperatures above 90°C.</obo:IAO_0000115>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000617"/>
+        <obo:IAO_0000115>A hyperthermophilic phenotype in which an organism grows optimally at temperatures above 90 °C.</obo:IAO_0000115>
         <oboInOwl:hasRelatedSynonym>extreme hyperthermophile</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>extremely hyperthermophilic</oboInOwl:hasRelatedSynonym>
         <rdfs:label>extreme hyperthermophilic</rdfs:label>
@@ -19211,7 +19211,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1000721"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A temperature preference that grows optimally at temperatures above 90°C.</owl:annotatedTarget>
+        <owl:annotatedTarget>A hyperthermophilic phenotype in which an organism grows optimally at temperatures above 90 °C.</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/ENVO_00002027"/>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/MICRO_0001294"/>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/MICRO_0001538"/>
@@ -20996,8 +20996,8 @@
     <!-- https://w3id.org/metpo/1002005 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1002005">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000800"/>
-        <obo:IAO_0000115>A respiration that generates energy through the oxidation of organic compounds without using an external electron acceptor, using organic molecules as both electron donors and final electron acceptors.</obo:IAO_0000115>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000060"/>
+        <obo:IAO_0000115>A metabolism in which energy is generated through the oxidation of organic compounds without using an external electron acceptor, using organic molecules as both electron donors and final electron acceptors.</obo:IAO_0000115>
         <obo:IAO_0000117>Luke Wang</obo:IAO_0000117>
         <oboInOwl:hasRelatedSynonym>fermentation</oboInOwl:hasRelatedSynonym>
         <rdfs:label>Fermentation</rdfs:label>
@@ -21005,7 +21005,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1002005"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A respiration that generates energy through the oxidation of organic compounds without using an external electron acceptor, using organic molecules as both electron donors and final electron acceptors.</owl:annotatedTarget>
+        <owl:annotatedTarget>A metabolism in which energy is generated through the oxidation of organic compounds without using an external electron acceptor, using organic molecules as both electron donors and final electron acceptors.</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/GO_0006113"/>
     </owl:Axiom>
     <owl:Axiom>
@@ -21461,7 +21461,7 @@
         <oboInOwl:hasExactSynonym>alkaliphilic</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>alkalophile</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>alkalophilic</oboInOwl:hasExactSynonym>
-        <rdfs:label>alkaphilic</rdfs:label>
+        <rdfs:label>alkaliphilic</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1003002"/>
@@ -21508,18 +21508,18 @@
     <!-- https://w3id.org/metpo/1003004 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1003004">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1003000"/>
-        <obo:IAO_0000115>A pH growth preference in which an organism requires alkaline conditions (typically pH above 8.5) for growth and cannot grow at neutral or acidic pH.</obo:IAO_0000115>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1003002"/>
+        <obo:IAO_0000115>An alkaliphilic phenotype in which an organism requires alkaline conditions (typically pH above 8.5) for growth and cannot grow at neutral or acidic pH.</obo:IAO_0000115>
         <obo:IAO_0000117>Luke Wang</obo:IAO_0000117>
         <oboInOwl:hasExactSynonym>obligate alkaliphile</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>obligate alkaphilic</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>obligately alkaliphilic</oboInOwl:hasExactSynonym>
-        <rdfs:label>obligately alkaphilic</rdfs:label>
+        <rdfs:label>obligately alkaliphilic</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1003004"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A pH growth preference in which an organism requires alkaline conditions (typically pH above 8.5) for growth and cannot grow at neutral or acidic pH.</owl:annotatedTarget>
+        <owl:annotatedTarget>An alkaliphilic phenotype in which an organism requires alkaline conditions (typically pH above 8.5) for growth and cannot grow at neutral or acidic pH.</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/ENVO_00002022"/>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/MICRO_0001565"/>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OMP_0005011"/>
@@ -21537,7 +21537,7 @@
         <oboInOwl:hasExactSynonym>facultative alkaliphile</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>facultative alkaphilic</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>facultatively alkaliphilic</oboInOwl:hasExactSynonym>
-        <rdfs:label>facultatively alkaphilic</rdfs:label>
+        <rdfs:label>facultatively alkaliphilic</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1003005"/>
@@ -21555,8 +21555,8 @@
     <!-- https://w3id.org/metpo/1003006 -->
 
     <owl:Class rdf:about="https://w3id.org/metpo/1003006">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1003000"/>
-        <obo:IAO_0000115>A pH growth preference characterized by the requirement for acidic environments (pH below 5.5) for growth, with inability to grow at neutral or alkaline pH values.</obo:IAO_0000115>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1003003"/>
+        <obo:IAO_0000115>An acidophilic phenotype in which an organism requires acidic environments (pH below 5.5) for growth, with inability to grow at neutral or alkaline pH values.</obo:IAO_0000115>
         <obo:IAO_0000117>Anthea Guo</obo:IAO_0000117>
         <obo:IAO_0000117>Jed Dongjin Kim-Ozaeta</obo:IAO_0000117>
         <oboInOwl:hasExactSynonym>obligate acidophile</oboInOwl:hasExactSynonym>
@@ -21566,7 +21566,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1003006"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A pH growth preference characterized by the requirement for acidic environments (pH below 5.5) for growth, with inability to grow at neutral or alkaline pH values.</owl:annotatedTarget>
+        <owl:annotatedTarget>An acidophilic phenotype in which an organism requires acidic environments (pH below 5.5) for growth, with inability to grow at neutral or alkaline pH values.</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/MICRO_0001566"/>
     </owl:Axiom>
     
