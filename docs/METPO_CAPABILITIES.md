@@ -536,22 +536,15 @@ Stubs contain only ID, LABEL, and TYPE columns, allowing templates to reference 
 
 ---
 
-## 18. KG-Microbe Integration Analysis
+## 18. KG-Microbe Integration Analysis (retired)
 
-Scripts to analyze how METPO terms are used across the KG-Microbe knowledge graph datasets.
+A set of analysis scripts that examined METPO usage across the KG-Microbe knowledge graph datasets (BactoTraits, Madin et al., BacDive) and produced figures for the ICBO 2025 talk. The scripts were one-shot and were not maintained as ongoing CLI tools.
 
-Located in `metpo/presentations/`:
+The scripts have been removed from `main` to keep the repository focused on ontology maintenance. They are preserved at the release tag `2025-11-17` and can be recovered with:
 
-| Script | Purpose |
-|--------|---------|
-| `analyze_kg_microbe_metpo.py` | METPO usage across all KG-Microbe datasets |
-| `analyze_bactotraits.py` | BactoTraits-specific analysis |
-| `analyze_madin_etal.py` | Madin et al. dataset analysis |
-| `analyze_primary_sources.py` | Primary source comparison |
-| `analyze_ontogpt_grounding.py` | OntoGPT grounding quality |
-| `analyze_ontology_landscape.py` | Related ontology comparison |
-| `calculate_minimum_import_set.py` | Compute minimal import closure |
-| `generate_feedback_loop.py` | Generate feedback for improvements |
+```bash
+git checkout 2025-11-17 -- metpo/presentations/
+```
 
 ---
 

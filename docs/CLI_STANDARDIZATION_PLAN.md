@@ -90,28 +90,9 @@
 
 ---
 
-### **Category 4: Presentation Scripts (9 scripts) - OPTIONAL**
+### **Category 4: Presentation Scripts - RETIRED**
 
-**Location**: `metpo/presentations/` (ICBO 2025)
-
-| Script | Lines | Effort | Priority | Notes |
-|--------|-------|--------|----------|-------|
-| analyze_bactotraits.py | 153 | Low | Optional | One-time figure generation |
-| analyze_kg_microbe_metpo.py | 178 | Low | Optional | One-time figure generation |
-| analyze_madin_etal.py | 187 | Low | Optional | One-time figure generation |
-| analyze_ontogpt_grounding.py | 134 | Low | Optional | One-time figure generation |
-| analyze_ontology_landscape.py | 209 | Low | Optional | One-time figure generation |
-| analyze_primary_sources.py | 165 | Low | Optional | One-time figure generation |
-| analyze_sssom_mappings.py | 71 | Low | Optional | One-time figure generation |
-| calculate_minimum_import_set.py | 161 | Low | Optional | One-time figure generation |
-| generate_feedback_loop.py | 213 | Low | Optional | One-time figure generation |
-
-**Recommendation**: Leave as-is unless they need to be rerun frequently
-- These are research output scripts for a specific presentation
-- Already executed and generated figures
-- Low value in CLI standardization unless reusability is important
-
-**Total for Category 4**: 9-18 hours if standardized (not recommended)
+The 9 scripts that previously lived under `metpo/presentations/` were one-shot code for the ICBO 2025 talk. They have been removed from `main` and are preserved at the release tag `2025-11-17`. Recover with `git checkout 2025-11-17 -- metpo/presentations/`. No CLI standardization work is planned for these scripts.
 
 ---
 
