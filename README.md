@@ -34,7 +34,7 @@ The canonical IRI for every METPO term is under the `https://w3id.org/metpo/` na
 - The ontology prefix `METPO:` expands to `https://w3id.org/metpo/`
 - Ontology document IRI: `https://w3id.org/metpo.owl` (release products and version IRIs live under `https://w3id.org/metpo/`, e.g. `https://w3id.org/metpo/releases/<date>/metpo.owl`)
 
-**Do not use `http://purl.obolibrary.org/obo/METPO_<id>`.** METPO is not registered in the OBO Foundry, so those PURLs do not resolve (HTTP 404) and are not METPO identifiers. `https://w3id.org/` is the only canonical resolution base for METPO. (Term-IRI resolution behavior is still being finalized; see issues #450 and #435.)
+**Do not use `http://purl.obolibrary.org/obo/METPO_<id>`.** METPO is not registered in the OBO Foundry, so those PURLs do not resolve (HTTP 404) and are not METPO identifiers. The canonical METPO identifier namespace is `https://w3id.org/metpo/` (resolved through the `w3id.org` host); `purl.obolibrary.org` is not used by METPO. (Term-IRI resolution behavior is still being finalized; see issues #450 and #435.)
 
 ## Contact
 
