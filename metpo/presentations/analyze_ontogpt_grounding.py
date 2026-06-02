@@ -15,7 +15,15 @@ def count_groundings(yaml_file):
     with Path(yaml_file).open() as f:
         data = yaml.safe_load(f)
 
-    counts = {"metpo": 0, "chebi": 0, "ncbitaxon": 0, "auto": 0, "total": 0}
+    counts = {
+        "metpo": 0,
+        "chebi": 0,
+        "ncbitaxon": 0,
+        "auto": 0,
+        "auto_chemical": 0,
+        "auto_taxon": 0,
+        "total": 0,
+    }
 
     # Helper to check object field
     def check_object(obj):
@@ -47,6 +55,8 @@ def count_groundings(yaml_file):
         obj_type = check_object(rel.get("object"))
         if obj_type:
             counts[obj_type] += 1
+            if obj_type == "auto":
+                counts["auto_chemical"] += 1
             counts["total"] += 1
 
     # Study taxa
@@ -54,6 +64,8 @@ def count_groundings(yaml_file):
         obj_type = check_object(taxon)
         if obj_type:
             counts[obj_type] += 1
+            if obj_type == "auto":
+                counts["auto_taxon"] += 1
             counts["total"] += 1
 
     # Chemicals mentioned
@@ -107,13 +119,19 @@ def main():
                 f"METPO phenotype success rate: {metpo_rate:.1f}% ({totals['metpo']}/{phenotype_total})"
             )
 
-        chem_total = totals["chebi"]
+        chem_total = totals["chebi"] + totals["auto_chemical"]
         if chem_total > 0:
-            print(f"ChEBI chemical success rate: 100.0% ({chem_total}/{chem_total})")
+            chebi_rate = 100 * totals["chebi"] / chem_total
+            print(
+                f"ChEBI chemical success rate: {chebi_rate:.1f}% ({totals['chebi']}/{chem_total})"
+            )
 
-        taxon_total = totals["ncbitaxon"]
+        taxon_total = totals["ncbitaxon"] + totals["auto_taxon"]
         if taxon_total > 0:
-            print(f"NCBITaxon success rate: 100.0% ({taxon_total}/{taxon_total})")
+            taxon_rate = 100 * totals["ncbitaxon"] / taxon_total
+            print(
+                f"NCBITaxon success rate: {taxon_rate:.1f}% ({totals['ncbitaxon']}/{taxon_total})"
+            )
 
     print()
 
