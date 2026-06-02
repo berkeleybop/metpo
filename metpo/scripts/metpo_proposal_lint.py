@@ -303,6 +303,11 @@ def check_definition_form(rid, typ, definition, parent_cell, mode):
         return []
     sev = "ERROR" if mode == "submit" else "WARN"
     parents = [p.strip() for p in parent_cell.split("|") if p.strip()]
+    # CURIE-form parents (e.g. METPO:1000000) are governed by PARENT/HOUSE-STYLE; the
+    # genus is compared only against LABEL-form parents (the sheet convention), so a
+    # CURIE parent never triggers a spurious DEF-FORM mismatch and is not cited as the
+    # expected genus.
+    label_parents = [p for p in parents if not re.match(r"^[A-Za-z][\w.]*:\S", p)]
     m = _DEF_GENUS_RE.match(definition)
     if not m:
         return [
@@ -311,15 +316,11 @@ def check_definition_form(rid, typ, definition, parent_cell, mode):
                 "DEF-FORM",
                 rid,
                 "definition is not Aristotelian 'A <genus> that/in-which/... <differentia>' "
-                f"(genus must be the parent label {parents or ['<none>']})",
+                f"(genus must be the parent label {label_parents or ['<none>']})",
             )
         ]
     genus = m.group(1).strip()
     glow = genus.lower()
-    # CURIE-form parents (e.g. METPO:1000000) are governed by PARENT/HOUSE-STYLE;
-    # the genus is compared only against LABEL-form parents (the sheet convention),
-    # so a CURIE parent does not trigger a spurious DEF-FORM mismatch.
-    label_parents = [p for p in parents if not re.match(r"^[A-Za-z][\w.]*:\S", p)]
     # Accept the parent label itself, or the parent label qualified as a head noun
     # ("a <parent> phenotype/preference in which ..."). For adjectival parents (e.g.
     # 'halophilic', 'anaerobic') the natural genus is "<parent> phenotype", which is
