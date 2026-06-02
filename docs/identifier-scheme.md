@@ -26,7 +26,7 @@ or editing ODK configuration.
 | Term (class/property) | `https://w3id.org/metpo/<id>` |
 | Main ontology document | `https://w3id.org/metpo/metpo.owl` |
 | Version IRI | `https://w3id.org/metpo/releases/<date>/metpo.owl` |
-| Products (`-base`, `-full`) | `https://w3id.org/metpo/metpo-base.owl`, `…/metpo-full.owl` |
+| Products (`-base`, `-full`) | `https://w3id.org/metpo/metpo-base.owl`, `https://w3id.org/metpo/metpo-full.owl` |
 
 All of these are under `https://w3id.org/metpo/`. An IRI **above** that path (e.g.
 `https://w3id.org/metpo.owl`) is **not resolvable** — it falls outside w3id's `/metpo/`
@@ -47,13 +47,19 @@ redirects `https://w3id.org/metpo/*`:
 
 The IRI base lives in **`src/ontology/metpo-odk.yaml`** (`uribase`) and flows into the
 **generated** `src/ontology/Makefile` as `URIBASE` / `ONTBASE` and the report/base-artifact
-`--base-iri`. The correct values for the scheme above are:
+`--base-iri`. The **target** values that produce the scheme above are:
 
 ```
 URIBASE  = https://w3id.org/metpo
 ONTBASE  = https://w3id.org/metpo
 --base-iri = $(URIBASE)        # i.e. https://w3id.org/metpo, which matches term IRIs
 ```
+
+> Current state: the repo ships `uribase: https://w3id.org` in `metpo-odk.yaml` and a
+> generated `URIBASE = https://w3id.org` (with `ONTBASE = https://w3id.org/metpo`), which
+> makes the main ontology IRI resolve *above* the delegation as the non-resolving
+> `https://w3id.org/metpo.owl`. Aligning the generated values with the target above is
+> tracked in #465 (it must be done via `odk.yaml` regeneration, not a Makefile edit).
 
 **Do not hand-edit `src/ontology/Makefile`.** It is ODK-generated ("DO NOT EDIT THIS
 FILE"); `make update_repo` regenerates it and would overwrite manual edits. Configure the

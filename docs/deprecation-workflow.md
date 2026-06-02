@@ -71,7 +71,9 @@ Add one row per deprecated term. Use:
   (`<owl:deprecated>true</owl:deprecated>`), which ROBOT/OWL API do not recognize as a
   deprecation — that previously caused ~4000 spurious default-profile report findings
   (deprecated terms not excluded from `missing_definition`/`duplicate_label`, plus
-  `deprecated_boolean_datatype` and `misused_obsolete_label`). Fixed in #467; keep it typed.
+  `deprecated_boolean_datatype` and `misused_obsolete_label`). The typed directive is the
+  fix in #467; keep it typed so this does not regress. (If `deprecated.tsv` still shows the
+  bare `A owl:deprecated`, #467 has not yet landed — apply the typed form.)
 - **obsolescence reason**: use `OMO:0001000` (out of scope) or `IAO:0000226`
   (placeholder removed) — see the existing rows for precedent. When in doubt, use
   `IAO:0000226`.
