@@ -114,6 +114,7 @@ DEF_FORM_TEMPLATE = (
     "METPO:1007103\tno that-form\towl:Class\tphenotype\tDetects catalase activity.\tPMID:1\n"
     "METPO:1007104\tin-which ok\towl:Class\ttrophic type\tA trophic type in which an organism fixes carbon.\tPMID:1\n"
     "METPO:1007105\tcharacterized ok\towl:Class\tcell shape\tA cell shape characterized by a rod morphology.\tPMID:1\n"
+    "METPO:1007106\tparent phenotype genus\towl:Class\thalophilic\tA halophilic phenotype in which an organism requires high salt.\tPMID:1\n"
 )
 
 
@@ -121,7 +122,7 @@ def test_def_form(tmp_path):
     p = tmp_path / "defform.tsv"
     p.write_text(DEF_FORM_TEMPLATE, encoding="utf-8")
     findings, _ = lint(
-        str(p), {"phenotype", "trophic type", "cell shape"}, set(), "submit", external_known=False
+        str(p), {"phenotype", "trophic type", "cell shape", "halophilic"}, set(), "submit", external_known=False
     )
     by_id = {}
     for f in findings:
@@ -135,6 +136,8 @@ def test_def_form(tmp_path):
     # 'in which' / 'characterized by' are valid connectors when genus == parent
     assert "DEF-FORM" not in by_id.get("METPO:1007104", set())
     assert "DEF-FORM" not in by_id.get("METPO:1007105", set())
+    # genus "<parent> phenotype" (adjectival parent) is accepted
+    assert "DEF-FORM" not in by_id.get("METPO:1007106", set())
 
 
 def test_baseline_ratchet(tmp_path):
