@@ -1,0 +1,62 @@
+name: METPO content lint
+
+# Decisive guardrail on METPO ontology content. The Google Sheet is the source of
+# truth (the src/templates/*.tsv are a derived build cache), so this job lints a
+# FRESH Sheet download rather than the committed TSV. The committed baselines under
+# lint-baselines/ record the currently-accepted debt; only findings BEYOND the
+# baseline fail the build. Tighten the baseline (regenerate it) as that debt is paid
+# down -- it can only go down.
+#
+# Runs on every PR/push (so a rebuild that pulls in a bad Sheet edit is caught) AND
+# on a weekly schedule (so a bad Sheet edit is caught even with no PR open), without
+# anyone having to summon it.
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '0 13 * * 1'   # Mondays 13:00 UTC
+  workflow_dispatch:
+
+jobs:
+  content-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Install uv
+        run: |
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Download live Sheet tabs (source of truth)
+        run: |
+          set -euo pipefail
+          curl -sL "$(uv run --quiet python metpo/sheets_config.py classes)"    -o /tmp/classes.tsv
+          curl -sL "$(uv run --quiet python metpo/sheets_config.py properties)" -o /tmp/properties.tsv
+          # Guard: a login/HTML page instead of TSV means the Sheet stopped being
+          # link-shareable; fail loudly rather than silently passing on garbage.
+          head -1 /tmp/classes.tsv    | grep -q $'^ID\t' || { echo "::error::classes download is not a TSV (Sheet sharing changed?)";    exit 1; }
+          head -1 /tmp/properties.tsv | grep -q $'^ID\t' || { echo "::error::properties download is not a TSV (Sheet sharing changed?)"; exit 1; }
+
+      - name: Lint classes against baseline (fail only on NEW findings)
+        run: |
+          uv run metpo-proposal-lint /tmp/classes.tsv \
+            --known /tmp/properties.tsv --mode submit \
+            --baseline lint-baselines/classes.json
+
+      - name: Lint properties against baseline (fail only on NEW findings)
+        run: |
+          uv run metpo-proposal-lint /tmp/properties.tsv \
+            --known /tmp/classes.tsv --mode submit \
+            --baseline lint-baselines/properties.json
