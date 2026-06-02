@@ -7,8 +7,8 @@ Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
 
 
 Ontology(<https://w3id.org/metpo/metpo/components/metpo_sheet.owl>
-<https://w3id.org/metpo/metpo/releases/2026-06-01/components/metpo_sheet.owl>
-Annotation(owl:versionInfo "2026-06-01")
+<https://w3id.org/metpo/metpo/releases/2026-06-02/components/metpo_sheet.owl>
+Annotation(owl:versionInfo "2026-06-02")
 
 Declaration(Class(<http://www.geneontology.org/formats/oboInOwl#ObsoleteClass>))
 Declaration(Class(<https://w3id.org/metpo/0000001>))
@@ -1433,6 +1433,37 @@ Declaration(Class(<https://w3id.org/metpo/1005037>))
 Declaration(Class(<https://w3id.org/metpo/1005038>))
 Declaration(Class(<https://w3id.org/metpo/1005039>))
 Declaration(Class(<https://w3id.org/metpo/1005040>))
+Declaration(Class(<https://w3id.org/metpo/1007005>))
+Declaration(Class(<https://w3id.org/metpo/1007006>))
+Declaration(Class(<https://w3id.org/metpo/1007062>))
+Declaration(Class(<https://w3id.org/metpo/1007063>))
+Declaration(Class(<https://w3id.org/metpo/1007064>))
+Declaration(Class(<https://w3id.org/metpo/1007065>))
+Declaration(Class(<https://w3id.org/metpo/1007066>))
+Declaration(Class(<https://w3id.org/metpo/1007067>))
+Declaration(Class(<https://w3id.org/metpo/1007068>))
+Declaration(Class(<https://w3id.org/metpo/1007069>))
+Declaration(Class(<https://w3id.org/metpo/1007070>))
+Declaration(Class(<https://w3id.org/metpo/1007071>))
+Declaration(Class(<https://w3id.org/metpo/1007072>))
+Declaration(Class(<https://w3id.org/metpo/1007073>))
+Declaration(Class(<https://w3id.org/metpo/1007074>))
+Declaration(Class(<https://w3id.org/metpo/1007076>))
+Declaration(Class(<https://w3id.org/metpo/1007077>))
+Declaration(Class(<https://w3id.org/metpo/1007080>))
+Declaration(Class(<https://w3id.org/metpo/1007081>))
+Declaration(Class(<https://w3id.org/metpo/1007082>))
+Declaration(Class(<https://w3id.org/metpo/1007083>))
+Declaration(Class(<https://w3id.org/metpo/1007084>))
+Declaration(Class(<https://w3id.org/metpo/1007085>))
+Declaration(Class(<https://w3id.org/metpo/1007086>))
+Declaration(Class(<https://w3id.org/metpo/1007087>))
+Declaration(Class(<https://w3id.org/metpo/1007088>))
+Declaration(Class(<https://w3id.org/metpo/1007089>))
+Declaration(Class(<https://w3id.org/metpo/1007090>))
+Declaration(Class(<https://w3id.org/metpo/1007091>))
+Declaration(Class(<https://w3id.org/metpo/1007092>))
+Declaration(Class(<https://w3id.org/metpo/1007093>))
 Declaration(Class(<https://w3id.org/metpo/9999999>))
 Declaration(ObjectProperty(<https://w3id.org/metpo/2000000>))
 Declaration(ObjectProperty(<https://w3id.org/metpo/2000001>))
@@ -1492,6 +1523,10 @@ Declaration(ObjectProperty(<https://w3id.org/metpo/2000054>))
 Declaration(ObjectProperty(<https://w3id.org/metpo/2000055>))
 Declaration(ObjectProperty(<https://w3id.org/metpo/2000056>))
 Declaration(ObjectProperty(<https://w3id.org/metpo/2000057>))
+Declaration(ObjectProperty(<https://w3id.org/metpo/2000064>))
+Declaration(ObjectProperty(<https://w3id.org/metpo/2000065>))
+Declaration(ObjectProperty(<https://w3id.org/metpo/2000067>))
+Declaration(ObjectProperty(<https://w3id.org/metpo/2000068>))
 Declaration(ObjectProperty(<https://w3id.org/metpo/2000101>))
 Declaration(ObjectProperty(<https://w3id.org/metpo/2000102>))
 Declaration(ObjectProperty(<https://w3id.org/metpo/2000103>))
@@ -1972,6 +2007,34 @@ AnnotationAssertion(owl:deprecated <https://w3id.org/metpo/2000056> "true")
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000231> <https://w3id.org/metpo/2000057> <http://purl.obolibrary.org/obo/IAO_0000226>)
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000057> "obsolete has culture temperature observation")
 AnnotationAssertion(owl:deprecated <https://w3id.org/metpo/2000057> "true")
+
+# Object Property: <https://w3id.org/metpo/2000064> (tolerates)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000064> "A relation between a microbe and a chemical entity indicating that the microbe's growth is not inhibited by the chemical at the concentration tested. Positive form of the chemical-tolerance pair; the negative form is METPO:2000065 'does not tolerate'.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000064> "tolerates")
+ObjectPropertyDomain(<https://w3id.org/metpo/2000064> <https://w3id.org/metpo/1000525>)
+ObjectPropertyRange(<https://w3id.org/metpo/2000064> <https://w3id.org/metpo/1000526>)
+
+# Object Property: <https://w3id.org/metpo/2000065> (does not tolerate)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000065> "A relation between a microbe and a chemical entity indicating that the microbe's growth is inhibited by the chemical at the concentration tested. Negative form of the chemical-tolerance pair; positive form is METPO:2000064 'tolerates'. Equivalent in meaning to 'is susceptible to' and 'is sensitive to'; the canonical label uses the 'does not X' convention so the metatraits pairing logic auto-detects it as the negative member.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000065> "does not tolerate")
+ObjectPropertyDomain(<https://w3id.org/metpo/2000065> <https://w3id.org/metpo/1000525>)
+ObjectPropertyRange(<https://w3id.org/metpo/2000065> <https://w3id.org/metpo/1000526>)
+
+# Object Property: <https://w3id.org/metpo/2000067> (isolated from host with quality)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000067> "A relation between a microbe and a quality of the host from which the microbe was isolated. Examples: a microbe isolated from a juvenile host has the relation `<microbe> METPO:2000067 PATO:0001190 'juvenile'`; a microbe isolated from a female host has the relation `<microbe> METPO:2000067 PATO:0000383 'female'`. The relation is one-directional: it asserts that the host bore the named quality at isolation time, not that the microbe itself has the quality.")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000067> "isolated from host with quality")
+ObjectPropertyDomain(<https://w3id.org/metpo/2000067> <https://w3id.org/metpo/1000525>)
+ObjectPropertyRange(<https://w3id.org/metpo/2000067> <https://w3id.org/metpo/1000188>)
+
+# Object Property: <https://w3id.org/metpo/2000068> (isolated from environment with quality)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/2000068> "A relation between a microbe and a quality of the environment from which the microbe was isolated. Examples: a microbe isolated from an acidic environment has the relation `<microbe> METPO:2000068 PATO:0001429 'acidic'`; a microbe isolated from an anaerobic environment has `<microbe> METPO:2000068 PATO:0001456 'anaerobic'`. The relation does not by itself entail that the microbe is acidophilic, anaerobic, etc. as a phenotype — it only records the environment's quality at the time of isolation. Microbe phenotype assertions belong on a separate edge (e.g. METPO:1000615 acidophilic via has_phenotype).")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/2000068> "isolated from environment with quality")
+ObjectPropertyDomain(<https://w3id.org/metpo/2000068> <https://w3id.org/metpo/1000525>)
+ObjectPropertyRange(<https://w3id.org/metpo/2000068> <https://w3id.org/metpo/1000188>)
 
 # Object Property: <https://w3id.org/metpo/2000101> (has quality)
 
@@ -9697,7 +9760,7 @@ SubClassOf(<https://w3id.org/metpo/1000428> <http://www.geneontology.org/formats
 
 # Class: <https://w3id.org/metpo/1000429> (GC low)
 
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000429> "GC_42.65_57.0")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000429> "GC_<=42.65")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000429> "GC low")
 AnnotationAssertion(<https://w3id.org/metpo/range_max> <https://w3id.org/metpo/1000429> "42.65")
 EquivalentClasses(<https://w3id.org/metpo/1000429> ObjectIntersectionOf(<https://w3id.org/metpo/1000127> DataSomeValuesFrom(<https://w3id.org/metpo/2000071> DatatypeRestriction(xsd:decimal xsd:maxInclusive "42.65"^^xsd:decimal))))
@@ -9705,7 +9768,7 @@ SubClassOf(<https://w3id.org/metpo/1000429> <https://w3id.org/metpo/1000127>)
 
 # Class: <https://w3id.org/metpo/1000430> (GC mid1)
 
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000430> "GC_>66.3")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000430> "GC_42.65_57.0")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000430> "GC mid1")
 AnnotationAssertion(<https://w3id.org/metpo/range_max> <https://w3id.org/metpo/1000430> "57")
 AnnotationAssertion(<https://w3id.org/metpo/range_min> <https://w3id.org/metpo/1000430> "42.65")
@@ -9723,7 +9786,7 @@ SubClassOf(<https://w3id.org/metpo/1000431> <https://w3id.org/metpo/1000127>)
 
 # Class: <https://w3id.org/metpo/1000432> (GC high)
 
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000432> "GC_<=42.65")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000432> "GC_>66.3")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000432> "GC high")
 AnnotationAssertion(<https://w3id.org/metpo/range_min> <https://w3id.org/metpo/1000432> "66.3")
 EquivalentClasses(<https://w3id.org/metpo/1000432> ObjectIntersectionOf(<https://w3id.org/metpo/1000127> DataSomeValuesFrom(<https://w3id.org/metpo/2000071> DatatypeRestriction(xsd:decimal xsd:minInclusive "66.3"^^xsd:decimal))))
@@ -10241,7 +10304,7 @@ AnnotationAssertion(<http://qudt.org/schema/qudt/ucumCode> <https://w3id.org/met
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://ordar.otelo.univ-lorraine.fr/files/ORDAR-53/BactoTraits_databaseV2_Jun2022.csv>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000482> "Nad_>8")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000482> "NaCl delta high")
 AnnotationAssertion(<https://w3id.org/metpo/range_max> <https://w3id.org/metpo/1000482> "8")
-EquivalentClasses(<https://w3id.org/metpo/1000482> ObjectIntersectionOf(<https://w3id.org/metpo/1000335> DataSomeValuesFrom(<https://w3id.org/metpo/2000071> DatatypeRestriction(xsd:decimal xsd:maxInclusive "8"^^xsd:decimal))))
+EquivalentClasses(<https://w3id.org/metpo/1000482> ObjectIntersectionOf(<https://w3id.org/metpo/1000335> DataSomeValuesFrom(<https://w3id.org/metpo/2000071> DatatypeRestriction(xsd:decimal xsd:minInclusive "8"^^xsd:decimal))))
 SubClassOf(<https://w3id.org/metpo/1000482> <https://w3id.org/metpo/1000335>)
 
 # Class: <https://w3id.org/metpo/1000483> (temperature delta very low)
@@ -11470,7 +11533,7 @@ SubClassOf(<https://w3id.org/metpo/1000704> <https://w3id.org/metpo/1000702>)
 
 # Class: <https://w3id.org/metpo/1000705> (axially filamented)
 
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/GO_0055040>) Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/OMP_0000023>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000705> "A motility where the flagellum filament of an organism is located in the periplasm and does not extend past the cell envelope.")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/GO_0055040>) Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/OMP_0000023>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1000705> "A motile in which the flagellum filament of an organism is located in the periplasm and does not extend past the cell envelope.")
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000117> <https://w3id.org/metpo/1000705> "Luke Wang")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://github.com/jmadin/bacteria_archaea_traits>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1000705> "axial filament")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1000705> "axially filamented")
@@ -12813,7 +12876,7 @@ SubClassOf(<https://w3id.org/metpo/1004004> <https://w3id.org/metpo/1004000>)
 
 # Class: <https://w3id.org/metpo/1004005> (growth medium)
 
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/OBI_0000079>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1004005> "A processed material that provides the nutrients and environmental conditions necessary for the cultivation of microorganisms in vitro. Growth media may be liquid (broth) or solid (agar-based) and are formulated to support the growth of specific types of organisms.")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/OBI_0000079>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1004005> "A material entity that provides the nutrients and environmental conditions necessary for the cultivation of microorganisms in vitro. Growth media may be liquid (broth) or solid (agar-based) and are formulated to support the growth of specific types of organisms.")
 AnnotationAssertion(rdfs:comment <https://w3id.org/metpo/1004005> "This class is equivalent to OBI:0000079 'culture medium'. It is included in METPO to serve as the range for growth-related object properties.")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1004005> "growth medium")
 AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#broadMatch> <https://w3id.org/metpo/1004005> <https://biolink.github.io/biolink-model/ProcessedMaterial>)
@@ -12821,7 +12884,7 @@ SubClassOf(<https://w3id.org/metpo/1004005> <https://w3id.org/metpo/1000186>)
 
 # Class: <https://w3id.org/metpo/1005001> (nitrification)
 
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/GO_0019329>) Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/GO_0019332>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1005001> "A two-step biological process in which ammonia is oxidized to nitrite (ammonia oxidation) and nitrite is oxidized to nitrate (nitrite oxidation).")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/GO_0019329>) Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/GO_0019332>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1005001> "A biological process in which ammonia is oxidized to nitrite (ammonia oxidation) and nitrite is oxidized to nitrate (nitrite oxidation), in two steps.")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1005001> "nitrification")
 AnnotationAssertion(rdfs:comment <https://w3id.org/metpo/1005001> "MetaTraits maps to OMIT:0027217 (wrong ontology). Correct GO terms are GO:0019329 (ammonia oxidation) and GO:0019332 (nitrite oxidation).")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1005001> "nitrification")
@@ -12977,6 +13040,290 @@ AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <inb
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://metatraits.embl.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1005040> "generalist")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1005040> "generalist")
 SubClassOf(<https://w3id.org/metpo/1005040> <https://w3id.org/metpo/1000059>)
+
+# Class: <https://w3id.org/metpo/1007005> (flagellar arrangement)
+
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/OMP_0000078>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1007005> "A phenotype characterized by the arrangement pattern of flagella on a bacterial or archaeal cell (e.g. peritrichous, polar, amphitrichous, lophotrichous, monotrichous, lateral, subpolar).")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000117> <https://w3id.org/metpo/1007005> "Marcin Joachimiak")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1007005> "flagellation pattern")
+AnnotationAssertion(rdfs:comment <https://w3id.org/metpo/1007005> "subset=metpo_proposal_2026_04; priority=HIGH; xrefs=GO:0001539")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1007005> "flagellar arrangement")
+SubClassOf(<https://w3id.org/metpo/1007005> <https://w3id.org/metpo/1000059>)
+
+# Class: <https://w3id.org/metpo/1007006> (polytrichous flagellation)
+
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/MICRO_0000271>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1007006> "A flagellar arrangement in which multiple flagella (typically a tuft) are present per cell, often combined with polar attachment.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000117> <https://w3id.org/metpo/1007006> "Marcin Joachimiak")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1007006> "polytrichous")
+AnnotationAssertion(rdfs:comment <https://w3id.org/metpo/1007006> "subset=metpo_proposal_2026_04; priority=MEDIUM; observations=4")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1007006> "polytrichous flagellation")
+SubClassOf(<https://w3id.org/metpo/1007006> <https://w3id.org/metpo/1007005>)
+
+# Class: <https://w3id.org/metpo/1007062> (colony morphology)
+
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/OMP_0000100>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1007062> "A phenotype characterized by macroscopic colony characteristics such as shape, margin, elevation, surface, colour, and size.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000117> <https://w3id.org/metpo/1007062> "Marcin Joachimiak")
+AnnotationAssertion(rdfs:comment <https://w3id.org/metpo/1007062> "subset=metpo_proposal_2026_04; priority=LOW; xrefs=PATO:0000052")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1007062> "colony morphology")
+SubClassOf(<https://w3id.org/metpo/1007062> <https://w3id.org/metpo/1000059>)
+
+# Class: <https://w3id.org/metpo/1007063> (colony shape)
+
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/OMP_0000103>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1007063> "A colony morphology characterized by the overall macroscopic colony outline as observed on solid medium.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000117> <https://w3id.org/metpo/1007063> "Marcin Joachimiak")
+AnnotationAssertion(rdfs:comment <https://w3id.org/metpo/1007063> "subset=metpo_proposal_2026_04; priority=LOW; xrefs=PATO:0000052")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1007063> "colony shape")
+SubClassOf(<https://w3id.org/metpo/1007063> <https://w3id.org/metpo/1007062>)
+
+# Class: <https://w3id.org/metpo/1007064> (circular colony)
+
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/OMP_0000166>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1007064> "A colony shape that has a regular round outline.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000117> <https://w3id.org/metpo/1007064> "Marcin Joachimiak")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1007064> "round colony")
+AnnotationAssertion(rdfs:comment <https://w3id.org/metpo/1007064> "subset=metpo_proposal_2026_04; priority=LOW; observations=2649")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1007064> "circular colony")
+SubClassOf(<https://w3id.org/metpo/1007064> <https://w3id.org/metpo/1007063>)
+
+# Class: <https://w3id.org/metpo/1007065> (irregular colony)
+
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/OMP_0000167>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1007065> "A colony shape that has an irregular (non-round, non-rhizoid) outline.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000117> <https://w3id.org/metpo/1007065> "Marcin Joachimiak")
+AnnotationAssertion(rdfs:comment <https://w3id.org/metpo/1007065> "subset=metpo_proposal_2026_04; priority=LOW; observations=148")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1007065> "irregular colony")
+SubClassOf(<https://w3id.org/metpo/1007065> <https://w3id.org/metpo/1007063>)
+
+# Class: <https://w3id.org/metpo/1007066> (filamentous colony)
+
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/OMP_0000088>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1007066> "A colony shape that has a thread-like or filamentous outline.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000117> <https://w3id.org/metpo/1007066> "Marcin Joachimiak")
+AnnotationAssertion(rdfs:comment <https://w3id.org/metpo/1007066> "subset=metpo_proposal_2026_04; priority=LOW; observations=16")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1007066> "filamentous colony")
+SubClassOf(<https://w3id.org/metpo/1007066> <https://w3id.org/metpo/1007063>)
+
+# Class: <https://w3id.org/metpo/1007067> (punctiform colony)
+
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/OMP_0000240>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1007067> "A colony shape that is very small (pinpoint), typically <1 mm in diameter.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000117> <https://w3id.org/metpo/1007067> "Marcin Joachimiak")
+AnnotationAssertion(rdfs:comment <https://w3id.org/metpo/1007067> "subset=metpo_proposal_2026_04; priority=LOW; observations=11")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1007067> "punctiform colony")
+SubClassOf(<https://w3id.org/metpo/1007067> <https://w3id.org/metpo/1007063>)
+
+# Class: <https://w3id.org/metpo/1007068> (rhizoid colony)
+
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/OMP_0000168>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1007068> "A colony shape that has a branching, root-like outline.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000117> <https://w3id.org/metpo/1007068> "Marcin Joachimiak")
+AnnotationAssertion(rdfs:comment <https://w3id.org/metpo/1007068> "subset=metpo_proposal_2026_04; priority=LOW; observations=8")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1007068> "rhizoid colony")
+SubClassOf(<https://w3id.org/metpo/1007068> <https://w3id.org/metpo/1007063>)
+
+# Class: <https://w3id.org/metpo/1007069> (fried-egg-shaped colony)
+
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/MICRO_0000349>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1007069> "A colony shape that has a raised opaque centre and a translucent peripheral zone, resembling a fried egg.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000117> <https://w3id.org/metpo/1007069> "Marcin Joachimiak")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1007069> "fried-egg colony")
+AnnotationAssertion(rdfs:comment <https://w3id.org/metpo/1007069> "subset=metpo_proposal_2026_04; priority=LOW; observations=6")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1007069> "fried-egg-shaped colony")
+SubClassOf(<https://w3id.org/metpo/1007069> <https://w3id.org/metpo/1007063>)
+
+# Class: <https://w3id.org/metpo/1007070> (pressure tolerance)
+
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/OMP_0005012>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1007070> "A phenotype characterized by the ability to grow under elevated hydrostatic pressure.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000117> <https://w3id.org/metpo/1007070> "Marcin Joachimiak")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1007070> "barophile")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1007070> "piezophile")
+AnnotationAssertion(rdfs:comment <https://w3id.org/metpo/1007070> "subset=metpo_proposal_2026_04; priority=MEDIUM")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1007070> "pressure tolerance")
+SubClassOf(<https://w3id.org/metpo/1007070> <https://w3id.org/metpo/1000059>)
+
+# Class: <https://w3id.org/metpo/1007071> (barophile phenotype)
+
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/MICRO_0001359>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1007071> "A pressure tolerance in which an organism requires or tolerates elevated hydrostatic pressure for growth.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000117> <https://w3id.org/metpo/1007071> "Marcin Joachimiak")
+AnnotationAssertion(rdfs:comment <https://w3id.org/metpo/1007071> "subset=metpo_proposal_2026_04; priority=MEDIUM")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1007071> "barophile phenotype")
+SubClassOf(<https://w3id.org/metpo/1007071> <https://w3id.org/metpo/1007070>)
+
+# Class: <https://w3id.org/metpo/1007072> (radiation tolerance)
+
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <wikidata:Q2353022>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1007072> "A phenotype characterized by the ability to withstand ionizing or UV radiation.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000117> <https://w3id.org/metpo/1007072> "Marcin Joachimiak")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1007072> "radioresistant")
+AnnotationAssertion(rdfs:comment <https://w3id.org/metpo/1007072> "subset=metpo_proposal_2026_04; priority=MEDIUM")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1007072> "radiation tolerance")
+SubClassOf(<https://w3id.org/metpo/1007072> <https://w3id.org/metpo/1000059>)
+
+# Class: <https://w3id.org/metpo/1007073> (osmotic tolerance)
+
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/OMP_0005015>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1007073> "A phenotype characterized by the ability to grow under high osmotic pressure (non-NaCl).")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000117> <https://w3id.org/metpo/1007073> "Marcin Joachimiak")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1007073> "osmophile")
+AnnotationAssertion(rdfs:comment <https://w3id.org/metpo/1007073> "subset=metpo_proposal_2026_04; priority=MEDIUM")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1007073> "osmotic tolerance")
+SubClassOf(<https://w3id.org/metpo/1007073> <https://w3id.org/metpo/1000059>)
+
+# Class: <https://w3id.org/metpo/1007074> (metal tolerance)
+
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/OMP_0007890>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1007074> "A phenotype characterized by the ability to grow in the presence of elevated metal concentrations.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000117> <https://w3id.org/metpo/1007074> "Marcin Joachimiak")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1007074> "metallophile")
+AnnotationAssertion(rdfs:comment <https://w3id.org/metpo/1007074> "subset=metpo_proposal_2026_04; priority=MEDIUM")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1007074> "metal tolerance")
+SubClassOf(<https://w3id.org/metpo/1007074> <https://w3id.org/metpo/1000059>)
+
+# Class: <https://w3id.org/metpo/1007076> (capsule presence)
+
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/OMP_0000203>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1007076> "A phenotype characterized by the presence of an extracellular polysaccharide capsule.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000117> <https://w3id.org/metpo/1007076> "Marcin Joachimiak")
+AnnotationAssertion(rdfs:comment <https://w3id.org/metpo/1007076> "subset=metpo_proposal_2026_04; priority=LOW; xrefs=GO:0042603")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1007076> "capsule presence")
+SubClassOf(<https://w3id.org/metpo/1007076> <https://w3id.org/metpo/1000059>)
+
+# Class: <https://w3id.org/metpo/1007077> (biofilm formation capability)
+
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/OMP_0000176>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1007077> "A phenotype characterized by the ability to form surface-attached biofilms.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000117> <https://w3id.org/metpo/1007077> "Marcin Joachimiak")
+AnnotationAssertion(rdfs:comment <https://w3id.org/metpo/1007077> "subset=metpo_proposal_2026_04; priority=MEDIUM; xrefs=GO:0042710")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1007077> "biofilm formation capability")
+SubClassOf(<https://w3id.org/metpo/1007077> <https://w3id.org/metpo/1000059>)
+
+# Class: <https://w3id.org/metpo/1007080> (catalase test)
+
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/OMP_0000218>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1007080> "A biochemical test that detects catalase enzyme activity by exposing cells to hydrogen peroxide and observing for visible bubbling. The test outcome (positive or negative) is captured by its child classes; this class itself does not assert that the organism has catalase activity.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000117> <https://w3id.org/metpo/1007080> "Marcin Joachimiak")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1007080> "catalase activity test")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1007080> "catalase assay")
+AnnotationAssertion(rdfs:comment <https://w3id.org/metpo/1007080> "subset=metpo_proposal_2026_04; priority=MEDIUM")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1007080> "catalase test")
+SubClassOf(<https://w3id.org/metpo/1007080> <https://w3id.org/metpo/1000059>)
+
+# Class: <https://w3id.org/metpo/1007081> (oxidase test)
+
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/OMP_0000220>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1007081> "A biochemical test that detects cytochrome c oxidase activity using a redox indicator. The test outcome (positive or negative) is captured by its child classes; this class itself does not assert oxidase activity.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000117> <https://w3id.org/metpo/1007081> "Marcin Joachimiak")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1007081> "cytochrome oxidase test")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1007081> "oxidase activity test")
+AnnotationAssertion(rdfs:comment <https://w3id.org/metpo/1007081> "subset=metpo_proposal_2026_04; priority=MEDIUM")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1007081> "oxidase test")
+SubClassOf(<https://w3id.org/metpo/1007081> <https://w3id.org/metpo/1000059>)
+
+# Class: <https://w3id.org/metpo/1007082> (urease test)
+
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/OMP_0000222>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1007082> "A biochemical test that detects urease enzyme activity by observing urea hydrolysis (typically via a pH-indicator color change). The test outcome (positive or negative) is captured by its child classes; this class itself does not assert urease activity.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000117> <https://w3id.org/metpo/1007082> "Marcin Joachimiak")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1007082> "urea hydrolysis test")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1007082> "urease activity test")
+AnnotationAssertion(rdfs:comment <https://w3id.org/metpo/1007082> "subset=metpo_proposal_2026_04; priority=MEDIUM")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1007082> "urease test")
+SubClassOf(<https://w3id.org/metpo/1007082> <https://w3id.org/metpo/1000059>)
+
+# Class: <https://w3id.org/metpo/1007083> (catalase positive)
+
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/OMP_0000194>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1007083> "Test-outcome phenotype where the catalase test yields a positive result (visible bubbling on H2O2). The underlying enzyme-organism relation should additionally be asserted via <organism> METPO:2000302 'shows activity of' GO:0004096 'catalase activity'.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000117> <https://w3id.org/metpo/1007083> "Marcin Joachimiak")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1007083> "catalase +")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1007083> "catalase test positive")
+AnnotationAssertion(rdfs:comment <https://w3id.org/metpo/1007083> "subset=metpo_proposal_2026_04; priority=MEDIUM; xrefs=GO:0004096")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1007083> "catalase positive")
+SubClassOf(<https://w3id.org/metpo/1007083> <https://w3id.org/metpo/1007080>)
+
+# Class: <https://w3id.org/metpo/1007084> (catalase negative)
+
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/OMP_0000198>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1007084> "Test-outcome phenotype where the catalase test yields a negative result (no bubbling on H2O2). The underlying enzyme-organism relation should additionally be asserted via <organism> METPO:2000303 'does not show activity of' GO:0004096 'catalase activity'.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000117> <https://w3id.org/metpo/1007084> "Marcin Joachimiak")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1007084> "catalase -")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1007084> "catalase test negative")
+AnnotationAssertion(rdfs:comment <https://w3id.org/metpo/1007084> "subset=metpo_proposal_2026_04; priority=MEDIUM")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1007084> "catalase negative")
+SubClassOf(<https://w3id.org/metpo/1007084> <https://w3id.org/metpo/1007080>)
+
+# Class: <https://w3id.org/metpo/1007085> (oxidase positive)
+
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/OMP_0006085>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1007085> "Test-outcome phenotype where the oxidase test yields a positive result. The underlying enzyme-organism relation should additionally be asserted via <organism> METPO:2000302 'shows activity of' GO:0004129 'cytochrome-c oxidase activity'.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000117> <https://w3id.org/metpo/1007085> "Marcin Joachimiak")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1007085> "oxidase +")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1007085> "oxidase test positive")
+AnnotationAssertion(rdfs:comment <https://w3id.org/metpo/1007085> "subset=metpo_proposal_2026_04; priority=MEDIUM; xrefs=GO:0004129")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1007085> "oxidase positive")
+SubClassOf(<https://w3id.org/metpo/1007085> <https://w3id.org/metpo/1007081>)
+
+# Class: <https://w3id.org/metpo/1007086> (oxidase negative)
+
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/OMP_0006084>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1007086> "Test-outcome phenotype where the oxidase test yields a negative result. The underlying enzyme-organism relation should additionally be asserted via <organism> METPO:2000303 'does not show activity of' GO:0004129 'cytochrome-c oxidase activity'.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000117> <https://w3id.org/metpo/1007086> "Marcin Joachimiak")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1007086> "oxidase -")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1007086> "oxidase test negative")
+AnnotationAssertion(rdfs:comment <https://w3id.org/metpo/1007086> "subset=metpo_proposal_2026_04; priority=MEDIUM")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1007086> "oxidase negative")
+SubClassOf(<https://w3id.org/metpo/1007086> <https://w3id.org/metpo/1007081>)
+
+# Class: <https://w3id.org/metpo/1007087> (urease positive)
+
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/OMP_0006089>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1007087> "Test-outcome phenotype where the urease test yields a positive result. The underlying enzyme-organism relation should additionally be asserted via <organism> METPO:2000302 'shows activity of' GO:0009039 'urease activity'.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000117> <https://w3id.org/metpo/1007087> "Marcin Joachimiak")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1007087> "urease +")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1007087> "urease test positive")
+AnnotationAssertion(rdfs:comment <https://w3id.org/metpo/1007087> "subset=metpo_proposal_2026_04; priority=MEDIUM; xrefs=GO:0009039")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1007087> "urease positive")
+SubClassOf(<https://w3id.org/metpo/1007087> <https://w3id.org/metpo/1007082>)
+
+# Class: <https://w3id.org/metpo/1007088> (urease negative)
+
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/OMP_0006090>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1007088> "Test-outcome phenotype where the urease test yields a negative result. The underlying enzyme-organism relation should additionally be asserted via <organism> METPO:2000303 'does not show activity of' GO:0009039 'urease activity'.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000117> <https://w3id.org/metpo/1007088> "Marcin Joachimiak")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1007088> "urease -")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1007088> "urease test negative")
+AnnotationAssertion(rdfs:comment <https://w3id.org/metpo/1007088> "subset=metpo_proposal_2026_04; priority=MEDIUM")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1007088> "urease negative")
+SubClassOf(<https://w3id.org/metpo/1007088> <https://w3id.org/metpo/1007082>)
+
+# Class: <https://w3id.org/metpo/1007089> (coagulase activity)
+
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/MICRO_0000991>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1007089> "A phenotype characterized by coagulase enzyme activity (clotting of blood plasma); a diagnostic marker, e.g. for Staphylococcus aureus.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000117> <https://w3id.org/metpo/1007089> "Marcin Joachimiak")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1007089> "coagulase test")
+AnnotationAssertion(rdfs:comment <https://w3id.org/metpo/1007089> "subset=metpo_proposal_2026_04; priority=MEDIUM")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1007089> "coagulase activity")
+SubClassOf(<https://w3id.org/metpo/1007089> <https://w3id.org/metpo/1000059>)
+
+# Class: <https://w3id.org/metpo/1007090> (coagulase positive)
+
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <wikidata:Q98095684>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1007090> "Test-outcome phenotype where the coagulase test yields a positive result (plasma clotting). The underlying enzyme-organism relation should additionally be asserted via <organism> METPO:2000302 'shows activity of' <coagulase enzyme term> once a sufficiently specific enzyme term is selected (no GO/EC term currently exists at the bacteriological coagulase test granularity).")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000117> <https://w3id.org/metpo/1007090> "Marcin Joachimiak")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1007090> "coagulase +")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1007090> "coagulase test positive")
+AnnotationAssertion(rdfs:comment <https://w3id.org/metpo/1007090> "subset=metpo_proposal_2026_04; priority=MEDIUM")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1007090> "coagulase positive")
+SubClassOf(<https://w3id.org/metpo/1007090> <https://w3id.org/metpo/1007089>)
+
+# Class: <https://w3id.org/metpo/1007091> (coagulase negative)
+
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <wikidata:Q98095684>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1007091> "Test-outcome phenotype where the coagulase test yields a negative result. The underlying enzyme-organism relation should additionally be asserted via <organism> METPO:2000303 'does not show activity of' <coagulase enzyme term> once a sufficiently specific enzyme term is selected.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000117> <https://w3id.org/metpo/1007091> "Marcin Joachimiak")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1007091> "coagulase -")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1007091> "coagulase test negative")
+AnnotationAssertion(rdfs:comment <https://w3id.org/metpo/1007091> "subset=metpo_proposal_2026_04; priority=MEDIUM")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1007091> "coagulase negative")
+SubClassOf(<https://w3id.org/metpo/1007091> <https://w3id.org/metpo/1007089>)
+
+# Class: <https://w3id.org/metpo/1007092> (xerophilic phenotype)
+
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <wikidata:Q980491>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1007092> "A phenotype characterized by a microbe that thrives in low water-activity environments (typically aw < 0.85), where the limiting factor is water activity (aw) rather than solute concentration; distinct from halophily and osmotic tolerance.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000117> <https://w3id.org/metpo/1007092> "Marcin Joachimiak")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1007092> "xerophile")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1007092> "xerotolerant")
+AnnotationAssertion(rdfs:comment <https://w3id.org/metpo/1007092> "subset=metpo_proposal_2026_04; priority=MEDIUM")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1007092> "xerophilic phenotype")
+SubClassOf(<https://w3id.org/metpo/1007092> <https://w3id.org/metpo/1000059>)
+
+# Class: <https://w3id.org/metpo/1007093> (epibiont phenotype)
+
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <wikidata:Q640114>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1007093> "A phenotype characterized by a microbe that lives on the external surface of a host organism or substrate, as distinct from endosymbionts (which live inside the host); captures host-association mode, not specific host taxonomy.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000117> <https://w3id.org/metpo/1007093> "Marcin Joachimiak")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1007093> "ectosymbiont")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1007093> "epibiont")
+AnnotationAssertion(rdfs:comment <https://w3id.org/metpo/1007093> "subset=metpo_proposal_2026_04; priority=LOW")
+AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1007093> "epibiont phenotype")
+SubClassOf(<https://w3id.org/metpo/1007093> <https://w3id.org/metpo/1000059>)
 
 # Class: <https://w3id.org/metpo/9999999> (obsolete obsolete)
 

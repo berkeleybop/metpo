@@ -34,9 +34,9 @@
         "val" : "https://github.com/berkeleybop/metpo"
       }, {
         "pred" : "http://www.w3.org/2002/07/owl#versionInfo",
-        "val" : "2026-06-01"
+        "val" : "2026-06-02"
       } ],
-      "version" : "https://w3id.org/metpo/metpo/releases/2026-06-01/metpo-full.json"
+      "version" : "https://w3id.org/metpo/metpo/releases/2026-06-02/metpo-full.json"
     },
     "nodes" : [ {
       "id" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteClass",
@@ -13093,7 +13093,7 @@
       "meta" : {
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
-          "val" : "GC_42.65_57.0",
+          "val" : "GC_<=42.65",
           "meta" : {
             "basicPropertyValues" : [ {
               "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
@@ -13113,7 +13113,7 @@
       "meta" : {
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
-          "val" : "GC_>66.3",
+          "val" : "GC_42.65_57.0",
           "meta" : {
             "basicPropertyValues" : [ {
               "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
@@ -13159,7 +13159,7 @@
       "meta" : {
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
-          "val" : "GC_<=42.65",
+          "val" : "GC_>66.3",
           "meta" : {
             "basicPropertyValues" : [ {
               "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
@@ -18705,7 +18705,7 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A motility where the flagellum filament of an organism is located in the periplasm and does not extend past the cell envelope.",
+          "val" : "A motile in which the flagellum filament of an organism is located in the periplasm and does not extend past the cell envelope.",
           "meta" : {
             "basicPropertyValues" : [ {
               "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
@@ -21905,7 +21905,7 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A processed material that provides the nutrients and environmental conditions necessary for the cultivation of microorganisms in vitro. Growth media may be liquid (broth) or solid (agar-based) and are formulated to support the growth of specific types of organisms.",
+          "val" : "A material entity that provides the nutrients and environmental conditions necessary for the cultivation of microorganisms in vitro. Growth media may be liquid (broth) or solid (agar-based) and are formulated to support the growth of specific types of organisms.",
           "meta" : {
             "basicPropertyValues" : [ {
               "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
@@ -21925,7 +21925,7 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A two-step biological process in which ammonia is oxidized to nitrite (ammonia oxidation) and nitrite is oxidized to nitrate (nitrite oxidation).",
+          "val" : "A biological process in which ammonia is oxidized to nitrite (ammonia oxidation) and nitrite is oxidized to nitrate (nitrite oxidation), in two steps.",
           "meta" : {
             "basicPropertyValues" : [ {
               "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
@@ -22337,6 +22337,756 @@
               "val" : "https://metatraits.embl.de/"
             } ]
           }
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1007005",
+      "lbl" : "flagellar arrangement",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A phenotype characterized by the arrangement pattern of flagella on a bacterial or archaeal cell (e.g. peritrichous, polar, amphitrichous, lophotrichous, monotrichous, lateral, subpolar).",
+          "meta" : {
+            "basicPropertyValues" : [ {
+              "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
+              "val" : "http://purl.obolibrary.org/obo/OMP_0000078"
+            } ]
+          }
+        },
+        "comments" : [ "subset=metpo_proposal_2026_04; priority=HIGH; xrefs=GO:0001539" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "flagellation pattern"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Marcin Joachimiak"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1007006",
+      "lbl" : "polytrichous flagellation",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A flagellar arrangement in which multiple flagella (typically a tuft) are present per cell, often combined with polar attachment.",
+          "meta" : {
+            "basicPropertyValues" : [ {
+              "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
+              "val" : "http://purl.obolibrary.org/obo/MICRO_0000271"
+            } ]
+          }
+        },
+        "comments" : [ "subset=metpo_proposal_2026_04; priority=MEDIUM; observations=4" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "polytrichous"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Marcin Joachimiak"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1007062",
+      "lbl" : "colony morphology",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A phenotype characterized by macroscopic colony characteristics such as shape, margin, elevation, surface, colour, and size.",
+          "meta" : {
+            "basicPropertyValues" : [ {
+              "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
+              "val" : "http://purl.obolibrary.org/obo/OMP_0000100"
+            } ]
+          }
+        },
+        "comments" : [ "subset=metpo_proposal_2026_04; priority=LOW; xrefs=PATO:0000052" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Marcin Joachimiak"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1007063",
+      "lbl" : "colony shape",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A colony morphology characterized by the overall macroscopic colony outline as observed on solid medium.",
+          "meta" : {
+            "basicPropertyValues" : [ {
+              "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
+              "val" : "http://purl.obolibrary.org/obo/OMP_0000103"
+            } ]
+          }
+        },
+        "comments" : [ "subset=metpo_proposal_2026_04; priority=LOW; xrefs=PATO:0000052" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Marcin Joachimiak"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1007064",
+      "lbl" : "circular colony",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A colony shape that has a regular round outline.",
+          "meta" : {
+            "basicPropertyValues" : [ {
+              "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
+              "val" : "http://purl.obolibrary.org/obo/OMP_0000166"
+            } ]
+          }
+        },
+        "comments" : [ "subset=metpo_proposal_2026_04; priority=LOW; observations=2649" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "round colony"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Marcin Joachimiak"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1007065",
+      "lbl" : "irregular colony",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A colony shape that has an irregular (non-round, non-rhizoid) outline.",
+          "meta" : {
+            "basicPropertyValues" : [ {
+              "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
+              "val" : "http://purl.obolibrary.org/obo/OMP_0000167"
+            } ]
+          }
+        },
+        "comments" : [ "subset=metpo_proposal_2026_04; priority=LOW; observations=148" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Marcin Joachimiak"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1007066",
+      "lbl" : "filamentous colony",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A colony shape that has a thread-like or filamentous outline.",
+          "meta" : {
+            "basicPropertyValues" : [ {
+              "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
+              "val" : "http://purl.obolibrary.org/obo/OMP_0000088"
+            } ]
+          }
+        },
+        "comments" : [ "subset=metpo_proposal_2026_04; priority=LOW; observations=16" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Marcin Joachimiak"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1007067",
+      "lbl" : "punctiform colony",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A colony shape that is very small (pinpoint), typically <1 mm in diameter.",
+          "meta" : {
+            "basicPropertyValues" : [ {
+              "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
+              "val" : "http://purl.obolibrary.org/obo/OMP_0000240"
+            } ]
+          }
+        },
+        "comments" : [ "subset=metpo_proposal_2026_04; priority=LOW; observations=11" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Marcin Joachimiak"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1007068",
+      "lbl" : "rhizoid colony",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A colony shape that has a branching, root-like outline.",
+          "meta" : {
+            "basicPropertyValues" : [ {
+              "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
+              "val" : "http://purl.obolibrary.org/obo/OMP_0000168"
+            } ]
+          }
+        },
+        "comments" : [ "subset=metpo_proposal_2026_04; priority=LOW; observations=8" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Marcin Joachimiak"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1007069",
+      "lbl" : "fried-egg-shaped colony",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A colony shape that has a raised opaque centre and a translucent peripheral zone, resembling a fried egg.",
+          "meta" : {
+            "basicPropertyValues" : [ {
+              "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
+              "val" : "http://purl.obolibrary.org/obo/MICRO_0000349"
+            } ]
+          }
+        },
+        "comments" : [ "subset=metpo_proposal_2026_04; priority=LOW; observations=6" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "fried-egg colony"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Marcin Joachimiak"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1007070",
+      "lbl" : "pressure tolerance",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A phenotype characterized by the ability to grow under elevated hydrostatic pressure.",
+          "meta" : {
+            "basicPropertyValues" : [ {
+              "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
+              "val" : "http://purl.obolibrary.org/obo/OMP_0005012"
+            } ]
+          }
+        },
+        "comments" : [ "subset=metpo_proposal_2026_04; priority=MEDIUM" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "barophile"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "piezophile"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Marcin Joachimiak"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1007071",
+      "lbl" : "barophile phenotype",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A pressure tolerance in which an organism requires or tolerates elevated hydrostatic pressure for growth.",
+          "meta" : {
+            "basicPropertyValues" : [ {
+              "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
+              "val" : "http://purl.obolibrary.org/obo/MICRO_0001359"
+            } ]
+          }
+        },
+        "comments" : [ "subset=metpo_proposal_2026_04; priority=MEDIUM" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Marcin Joachimiak"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1007072",
+      "lbl" : "radiation tolerance",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A phenotype characterized by the ability to withstand ionizing or UV radiation.",
+          "meta" : {
+            "basicPropertyValues" : [ {
+              "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
+              "val" : "wikidata:Q2353022"
+            } ]
+          }
+        },
+        "comments" : [ "subset=metpo_proposal_2026_04; priority=MEDIUM" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "radioresistant"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Marcin Joachimiak"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1007073",
+      "lbl" : "osmotic tolerance",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A phenotype characterized by the ability to grow under high osmotic pressure (non-NaCl).",
+          "meta" : {
+            "basicPropertyValues" : [ {
+              "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
+              "val" : "http://purl.obolibrary.org/obo/OMP_0005015"
+            } ]
+          }
+        },
+        "comments" : [ "subset=metpo_proposal_2026_04; priority=MEDIUM" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "osmophile"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Marcin Joachimiak"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1007074",
+      "lbl" : "metal tolerance",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A phenotype characterized by the ability to grow in the presence of elevated metal concentrations.",
+          "meta" : {
+            "basicPropertyValues" : [ {
+              "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
+              "val" : "http://purl.obolibrary.org/obo/OMP_0007890"
+            } ]
+          }
+        },
+        "comments" : [ "subset=metpo_proposal_2026_04; priority=MEDIUM" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "metallophile"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Marcin Joachimiak"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1007076",
+      "lbl" : "capsule presence",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A phenotype characterized by the presence of an extracellular polysaccharide capsule.",
+          "meta" : {
+            "basicPropertyValues" : [ {
+              "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
+              "val" : "http://purl.obolibrary.org/obo/OMP_0000203"
+            } ]
+          }
+        },
+        "comments" : [ "subset=metpo_proposal_2026_04; priority=LOW; xrefs=GO:0042603" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Marcin Joachimiak"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1007077",
+      "lbl" : "biofilm formation capability",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A phenotype characterized by the ability to form surface-attached biofilms.",
+          "meta" : {
+            "basicPropertyValues" : [ {
+              "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
+              "val" : "http://purl.obolibrary.org/obo/OMP_0000176"
+            } ]
+          }
+        },
+        "comments" : [ "subset=metpo_proposal_2026_04; priority=MEDIUM; xrefs=GO:0042710" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Marcin Joachimiak"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1007080",
+      "lbl" : "catalase test",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A biochemical test that detects catalase enzyme activity by exposing cells to hydrogen peroxide and observing for visible bubbling. The test outcome (positive or negative) is captured by its child classes; this class itself does not assert that the organism has catalase activity.",
+          "meta" : {
+            "basicPropertyValues" : [ {
+              "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
+              "val" : "http://purl.obolibrary.org/obo/OMP_0000218"
+            } ]
+          }
+        },
+        "comments" : [ "subset=metpo_proposal_2026_04; priority=MEDIUM" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "catalase activity test"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "catalase assay"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Marcin Joachimiak"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1007081",
+      "lbl" : "oxidase test",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A biochemical test that detects cytochrome c oxidase activity using a redox indicator. The test outcome (positive or negative) is captured by its child classes; this class itself does not assert oxidase activity.",
+          "meta" : {
+            "basicPropertyValues" : [ {
+              "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
+              "val" : "http://purl.obolibrary.org/obo/OMP_0000220"
+            } ]
+          }
+        },
+        "comments" : [ "subset=metpo_proposal_2026_04; priority=MEDIUM" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "cytochrome oxidase test"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "oxidase activity test"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Marcin Joachimiak"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1007082",
+      "lbl" : "urease test",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A biochemical test that detects urease enzyme activity by observing urea hydrolysis (typically via a pH-indicator color change). The test outcome (positive or negative) is captured by its child classes; this class itself does not assert urease activity.",
+          "meta" : {
+            "basicPropertyValues" : [ {
+              "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
+              "val" : "http://purl.obolibrary.org/obo/OMP_0000222"
+            } ]
+          }
+        },
+        "comments" : [ "subset=metpo_proposal_2026_04; priority=MEDIUM" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "urea hydrolysis test"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "urease activity test"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Marcin Joachimiak"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1007083",
+      "lbl" : "catalase positive",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "Test-outcome phenotype where the catalase test yields a positive result (visible bubbling on H2O2). The underlying enzyme-organism relation should additionally be asserted via <organism> METPO:2000302 'shows activity of' GO:0004096 'catalase activity'.",
+          "meta" : {
+            "basicPropertyValues" : [ {
+              "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
+              "val" : "http://purl.obolibrary.org/obo/OMP_0000194"
+            } ]
+          }
+        },
+        "comments" : [ "subset=metpo_proposal_2026_04; priority=MEDIUM; xrefs=GO:0004096" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "catalase +"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "catalase test positive"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Marcin Joachimiak"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1007084",
+      "lbl" : "catalase negative",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "Test-outcome phenotype where the catalase test yields a negative result (no bubbling on H2O2). The underlying enzyme-organism relation should additionally be asserted via <organism> METPO:2000303 'does not show activity of' GO:0004096 'catalase activity'.",
+          "meta" : {
+            "basicPropertyValues" : [ {
+              "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
+              "val" : "http://purl.obolibrary.org/obo/OMP_0000198"
+            } ]
+          }
+        },
+        "comments" : [ "subset=metpo_proposal_2026_04; priority=MEDIUM" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "catalase -"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "catalase test negative"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Marcin Joachimiak"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1007085",
+      "lbl" : "oxidase positive",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "Test-outcome phenotype where the oxidase test yields a positive result. The underlying enzyme-organism relation should additionally be asserted via <organism> METPO:2000302 'shows activity of' GO:0004129 'cytochrome-c oxidase activity'.",
+          "meta" : {
+            "basicPropertyValues" : [ {
+              "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
+              "val" : "http://purl.obolibrary.org/obo/OMP_0006085"
+            } ]
+          }
+        },
+        "comments" : [ "subset=metpo_proposal_2026_04; priority=MEDIUM; xrefs=GO:0004129" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "oxidase +"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "oxidase test positive"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Marcin Joachimiak"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1007086",
+      "lbl" : "oxidase negative",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "Test-outcome phenotype where the oxidase test yields a negative result. The underlying enzyme-organism relation should additionally be asserted via <organism> METPO:2000303 'does not show activity of' GO:0004129 'cytochrome-c oxidase activity'.",
+          "meta" : {
+            "basicPropertyValues" : [ {
+              "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
+              "val" : "http://purl.obolibrary.org/obo/OMP_0006084"
+            } ]
+          }
+        },
+        "comments" : [ "subset=metpo_proposal_2026_04; priority=MEDIUM" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "oxidase -"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "oxidase test negative"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Marcin Joachimiak"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1007087",
+      "lbl" : "urease positive",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "Test-outcome phenotype where the urease test yields a positive result. The underlying enzyme-organism relation should additionally be asserted via <organism> METPO:2000302 'shows activity of' GO:0009039 'urease activity'.",
+          "meta" : {
+            "basicPropertyValues" : [ {
+              "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
+              "val" : "http://purl.obolibrary.org/obo/OMP_0006089"
+            } ]
+          }
+        },
+        "comments" : [ "subset=metpo_proposal_2026_04; priority=MEDIUM; xrefs=GO:0009039" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "urease +"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "urease test positive"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Marcin Joachimiak"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1007088",
+      "lbl" : "urease negative",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "Test-outcome phenotype where the urease test yields a negative result. The underlying enzyme-organism relation should additionally be asserted via <organism> METPO:2000303 'does not show activity of' GO:0009039 'urease activity'.",
+          "meta" : {
+            "basicPropertyValues" : [ {
+              "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
+              "val" : "http://purl.obolibrary.org/obo/OMP_0006090"
+            } ]
+          }
+        },
+        "comments" : [ "subset=metpo_proposal_2026_04; priority=MEDIUM" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "urease -"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "urease test negative"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Marcin Joachimiak"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1007089",
+      "lbl" : "coagulase activity",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A phenotype characterized by coagulase enzyme activity (clotting of blood plasma); a diagnostic marker, e.g. for Staphylococcus aureus.",
+          "meta" : {
+            "basicPropertyValues" : [ {
+              "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
+              "val" : "http://purl.obolibrary.org/obo/MICRO_0000991"
+            } ]
+          }
+        },
+        "comments" : [ "subset=metpo_proposal_2026_04; priority=MEDIUM" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "coagulase test"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Marcin Joachimiak"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1007090",
+      "lbl" : "coagulase positive",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "Test-outcome phenotype where the coagulase test yields a positive result (plasma clotting). The underlying enzyme-organism relation should additionally be asserted via <organism> METPO:2000302 'shows activity of' <coagulase enzyme term> once a sufficiently specific enzyme term is selected (no GO/EC term currently exists at the bacteriological coagulase test granularity).",
+          "meta" : {
+            "basicPropertyValues" : [ {
+              "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
+              "val" : "wikidata:Q98095684"
+            } ]
+          }
+        },
+        "comments" : [ "subset=metpo_proposal_2026_04; priority=MEDIUM" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "coagulase +"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "coagulase test positive"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Marcin Joachimiak"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1007091",
+      "lbl" : "coagulase negative",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "Test-outcome phenotype where the coagulase test yields a negative result. The underlying enzyme-organism relation should additionally be asserted via <organism> METPO:2000303 'does not show activity of' <coagulase enzyme term> once a sufficiently specific enzyme term is selected.",
+          "meta" : {
+            "basicPropertyValues" : [ {
+              "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
+              "val" : "wikidata:Q98095684"
+            } ]
+          }
+        },
+        "comments" : [ "subset=metpo_proposal_2026_04; priority=MEDIUM" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "coagulase -"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "coagulase test negative"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Marcin Joachimiak"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1007092",
+      "lbl" : "xerophilic phenotype",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A phenotype characterized by a microbe that thrives in low water-activity environments (typically aw < 0.85), where the limiting factor is water activity (aw) rather than solute concentration; distinct from halophily and osmotic tolerance.",
+          "meta" : {
+            "basicPropertyValues" : [ {
+              "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
+              "val" : "wikidata:Q980491"
+            } ]
+          }
+        },
+        "comments" : [ "subset=metpo_proposal_2026_04; priority=MEDIUM" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "xerophile"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "xerotolerant"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Marcin Joachimiak"
+        } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/1007093",
+      "lbl" : "epibiont phenotype",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A phenotype characterized by a microbe that lives on the external surface of a host organism or substrate, as distinct from endosymbionts (which live inside the host); captures host-association mode, not specific host taxonomy.",
+          "meta" : {
+            "basicPropertyValues" : [ {
+              "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
+              "val" : "wikidata:Q640114"
+            } ]
+          }
+        },
+        "comments" : [ "subset=metpo_proposal_2026_04; priority=LOW" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "ectosymbiont"
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "epibiont"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "Marcin Joachimiak"
         } ]
       }
     }, {
@@ -23322,6 +24072,46 @@
           "pred" : "http://www.w3.org/2002/07/owl#deprecated",
           "val" : "true"
         } ]
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000064",
+      "lbl" : "tolerates",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "definition" : {
+          "val" : "A relation between a microbe and a chemical entity indicating that the microbe's growth is not inhibited by the chemical at the concentration tested. Positive form of the chemical-tolerance pair; the negative form is METPO:2000065 'does not tolerate'."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000065",
+      "lbl" : "does not tolerate",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "definition" : {
+          "val" : "A relation between a microbe and a chemical entity indicating that the microbe's growth is inhibited by the chemical at the concentration tested. Negative form of the chemical-tolerance pair; positive form is METPO:2000064 'tolerates'. Equivalent in meaning to 'is susceptible to' and 'is sensitive to'; the canonical label uses the 'does not X' convention so the metatraits pairing logic auto-detects it as the negative member."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000067",
+      "lbl" : "isolated from host with quality",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "definition" : {
+          "val" : "A relation between a microbe and a quality of the host from which the microbe was isolated. Examples: a microbe isolated from a juvenile host has the relation `<microbe> METPO:2000067 PATO:0001190 'juvenile'`; a microbe isolated from a female host has the relation `<microbe> METPO:2000067 PATO:0000383 'female'`. The relation is one-directional: it asserts that the host bore the named quality at isolation time, not that the microbe itself has the quality."
+        }
+      }
+    }, {
+      "id" : "https://w3id.org/metpo/2000068",
+      "lbl" : "isolated from environment with quality",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "definition" : {
+          "val" : "A relation between a microbe and a quality of the environment from which the microbe was isolated. Examples: a microbe isolated from an acidic environment has the relation `<microbe> METPO:2000068 PATO:0001429 'acidic'`; a microbe isolated from an anaerobic environment has `<microbe> METPO:2000068 PATO:0001456 'anaerobic'`. The relation does not by itself entail that the microbe is acidophilic, anaerobic, etc. as a phenotype — it only records the environment's quality at the time of isolation. Microbe phenotype assertions belong on a separate edge (e.g. METPO:1000615 acidophilic via has_phenotype)."
+        }
       }
     }, {
       "id" : "https://w3id.org/metpo/2000101",
@@ -30611,6 +31401,130 @@
       "pred" : "is_a",
       "obj" : "https://w3id.org/metpo/1000059"
     }, {
+      "sub" : "https://w3id.org/metpo/1007005",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000059"
+    }, {
+      "sub" : "https://w3id.org/metpo/1007006",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1007005"
+    }, {
+      "sub" : "https://w3id.org/metpo/1007062",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000059"
+    }, {
+      "sub" : "https://w3id.org/metpo/1007063",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1007062"
+    }, {
+      "sub" : "https://w3id.org/metpo/1007064",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1007063"
+    }, {
+      "sub" : "https://w3id.org/metpo/1007065",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1007063"
+    }, {
+      "sub" : "https://w3id.org/metpo/1007066",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1007063"
+    }, {
+      "sub" : "https://w3id.org/metpo/1007067",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1007063"
+    }, {
+      "sub" : "https://w3id.org/metpo/1007068",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1007063"
+    }, {
+      "sub" : "https://w3id.org/metpo/1007069",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1007063"
+    }, {
+      "sub" : "https://w3id.org/metpo/1007070",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000059"
+    }, {
+      "sub" : "https://w3id.org/metpo/1007071",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1007070"
+    }, {
+      "sub" : "https://w3id.org/metpo/1007072",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000059"
+    }, {
+      "sub" : "https://w3id.org/metpo/1007073",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000059"
+    }, {
+      "sub" : "https://w3id.org/metpo/1007074",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000059"
+    }, {
+      "sub" : "https://w3id.org/metpo/1007076",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000059"
+    }, {
+      "sub" : "https://w3id.org/metpo/1007077",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000059"
+    }, {
+      "sub" : "https://w3id.org/metpo/1007080",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000059"
+    }, {
+      "sub" : "https://w3id.org/metpo/1007081",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000059"
+    }, {
+      "sub" : "https://w3id.org/metpo/1007082",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000059"
+    }, {
+      "sub" : "https://w3id.org/metpo/1007083",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1007080"
+    }, {
+      "sub" : "https://w3id.org/metpo/1007084",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1007080"
+    }, {
+      "sub" : "https://w3id.org/metpo/1007085",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1007081"
+    }, {
+      "sub" : "https://w3id.org/metpo/1007086",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1007081"
+    }, {
+      "sub" : "https://w3id.org/metpo/1007087",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1007082"
+    }, {
+      "sub" : "https://w3id.org/metpo/1007088",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1007082"
+    }, {
+      "sub" : "https://w3id.org/metpo/1007089",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000059"
+    }, {
+      "sub" : "https://w3id.org/metpo/1007090",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1007089"
+    }, {
+      "sub" : "https://w3id.org/metpo/1007091",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1007089"
+    }, {
+      "sub" : "https://w3id.org/metpo/1007092",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000059"
+    }, {
+      "sub" : "https://w3id.org/metpo/1007093",
+      "pred" : "is_a",
+      "obj" : "https://w3id.org/metpo/1000059"
+    }, {
       "sub" : "https://w3id.org/metpo/9999999",
       "pred" : "is_a",
       "obj" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"
@@ -30919,6 +31833,22 @@
       "predicateId" : "https://w3id.org/metpo/2000001",
       "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
       "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000064",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000065",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1000526" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000067",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1000188" ]
+    }, {
+      "predicateId" : "https://w3id.org/metpo/2000068",
+      "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
+      "rangeClassIds" : [ "https://w3id.org/metpo/1000188" ]
     }, {
       "predicateId" : "https://w3id.org/metpo/2000101",
       "domainClassIds" : [ "https://w3id.org/metpo/1000525" ],
