@@ -38,7 +38,7 @@ This directory contains SPARQL queries for different RDF backends used in the ME
 **Purpose:** Browse METPO class hierarchy with parent relationships
 **Used by:** Ontology exploration
 **Key patterns:**
-- Filters for METPO OBO-style IRI: `http://purl.obolibrary.org/obo/METPO_`
+- Filters for METPO term IRI: `https://w3id.org/metpo/`
 - Includes parent class labels
 - LIMITED to 100 results
 

@@ -25,9 +25,10 @@ a later run with ``--baseline PATH`` fails only on findings BEYOND that floor, s
 large existing-debt audit can gate new additions without first paying down the debt.
 Regenerate the baseline as debt is fixed -- the count can only go down.
 
-NOTE: ID-RANGE encodes the current observed convention (classes METPO:1xxxxxx,
-properties METPO:2xxxxxx). The term-IRI scheme is an open question (#16/#434/#436);
-revisit this check when that settles.
+NOTE: ID-RANGE encodes the METPO convention (classes METPO:1xxxxxx, properties
+METPO:2xxxxxx). Term IRIs are https://w3id.org/metpo/<7-digit id> (no obolibrary
+PURLs); the w3id scheme is settled (#458). Remaining ODK-config/IRI cleanup
+(resolvable ontology IRI, base-IRI vestiges) is tracked in #465.
 """
 
 import csv
