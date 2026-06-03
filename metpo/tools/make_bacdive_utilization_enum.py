@@ -1,3 +1,4 @@
+import re
 from pathlib import Path
 
 import click
@@ -132,12 +133,14 @@ def convert_tsv_to_linkml_enum(
         # Create a code-friendly key from the label
         label = str(row["LABEL"])
         # Convert label to snake_case for the key
-        key = label.lower().replace(" ", "_").replace("-", "_")
+        key = re.sub(r"[^a-z0-9\s_-]", "", label.lower())
+        key = re.sub(r"[\s-]+", "_", key)
+        key = re.sub(r"_+", "_", key).strip("_")
 
         # Create the permissible value entry
         pv_entry = {
-            # 'text': label,
-            "meaning": id_uri
+            "description": label,
+            "meaning": id_uri,
         }
 
         # Add to permissible values
