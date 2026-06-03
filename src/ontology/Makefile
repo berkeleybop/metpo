@@ -57,7 +57,7 @@ OTHER_SRC =                 $(COMPONENTSDIR)/metpo_sheet.owl
 ONTOLOGYTERMS =             $(TMPDIR)/ontologyterms.txt
 EDIT_PREPROCESSED =         $(TMPDIR)/$(ONT)-preprocess.owl
 
-FORMATS = $(sort  owl obo json owl)
+FORMATS = $(sort  owl obo json)
 FORMATS_INCL_TSV = $(sort $(FORMATS) tsv)
 RELEASE_ARTEFACTS = $(sort $(ONT)-base $(ONT)-full )
 
@@ -82,7 +82,7 @@ all_odk: odkversion config_check test custom_reports all_assets
 test: odkversion reason_test sparql_test robot_reports $(REPORTDIR)/validate_profile_owl2dl_$(ONT).owl.txt
 	echo "Finished running all tests successfully."
 
-.PHONY: test
+.PHONY: test_fast
 test_fast:
 	$(MAKE_FAST) test
 
@@ -449,7 +449,7 @@ $(MIRRORDIR)/%.owl: mirror-% | $(MIRRORDIR)
 
 else # MIR=false
 $(MIRRORDIR)/%.owl:
-	@echo "Not refreshing $@ because the mirrorring pipeline is disabled (MIR=$(MIR))."
+	@echo "Not refreshing $@ because the mirroring pipeline is disabled (MIR=$(MIR))."
 endif
 
 
@@ -650,7 +650,7 @@ Imports management:
 
 Editor utilities:
 * validate_idranges:	Make sure your ID ranges file is formatted correctly
-* normalize_src:	Load and save your metpo-edit file after you to make sure its serialised correctly
+* normalize_src:	Load and save your metpo-edit file after editing to make sure it's serialised correctly
 * explain_unsat:	If you have unsatisfiable classes, this command will create a markdown file (tmp/explain_unsat.md) which will explain all your unsatisfiable classes
 * validate-all-tsv:	Check all your tsv files for possible problems in syntax. Use ALL_TSV_FILES variable to list files
 * validate-tsv:		Check a tsv file for syntactic problems with tsvalid. Use TSV variable to pass filepath, e.g. make TSV=../my.tsv validate-tsv.
