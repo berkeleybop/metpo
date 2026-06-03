@@ -118,3 +118,18 @@ components/metpo_sheet.owl: ../templates/stubs.tsv ../templates/metpo-properties
 		annotate -V $(ONTBASE)/releases/$(TODAY)/$@ \
 		--annotation owl:versionInfo $(TODAY) \
 		convert -f ofn --output $@.tmp.owl && mv $@.tmp.owl $@
+
+# Upstream ODK template bug: $(ONT).owl and $(ONT).json use $(URIBASE)/$@
+# which expands to https://w3id.org/metpo.owl (missing /metpo/ path segment).
+# Correct IRI is https://w3id.org/metpo/metpo.owl = $(ONTBASE)/$@.
+# Remove these overrides once the ODK template is fixed upstream.
+# Tracked at: https://github.com/berkeleybop/metpo/issues/465
+
+$(ONT).owl: $(ONT)-full.owl
+	$(ROBOT) annotate --input $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
+		convert -o $@.tmp.owl && mv $@.tmp.owl $@
+
+$(ONT).json: $(ONT).owl
+	$(ROBOT) annotate --input $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
+		convert --check false -f json -o $@.tmp.json &&\
+		mv $@.tmp.json $@
