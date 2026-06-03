@@ -31,7 +31,7 @@ class MetpoAssessor:
         """Load semsql ontology registry for annotator validation."""
         url = "https://raw.githubusercontent.com/INCATools/semantic-sql/refs/heads/main/src/semsql/builder/registry/ontologies.yaml"
         try:
-            response = requests.get(url)
+            response = requests.get(url, timeout=10)
             response.raise_for_status()
             return yaml.safe_load(response.text)
         except Exception as e:
@@ -478,7 +478,6 @@ class MetpoAssessor:
 
         for entity in named_entities:
             entity_id = entity.get("id", "")
-            entity.get("label", "")
 
             # Track ontology usage
             if ":" in entity_id and not entity_id.startswith("AUTO:"):
