@@ -28,7 +28,8 @@ def test_preserves_apostrophes_in_yaml_values(tmp_path):
     parsed = yaml.safe_load(yaml_output)
 
     permissible_values = parsed["enums"]["RelationshipTypeEnum"]["permissible_values"]
-    assert "doesn't_utilize" in permissible_values
+    entry = permissible_values["doesnt_utilize"]
+    assert entry["description"] == "doesn't utilize"
 
 
 def test_permissible_value_meaning_uses_full_uri(tmp_path):
