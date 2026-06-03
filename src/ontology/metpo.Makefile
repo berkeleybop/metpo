@@ -119,6 +119,11 @@ components/metpo_sheet.owl: ../templates/stubs.tsv ../templates/metpo-properties
 		--annotation owl:versionInfo $(TODAY) \
 		convert -f ofn --output $@.tmp.owl && mv $@.tmp.owl $@
 
+# CURRENT_RELEASE is used by release_diff to download the live OWL for comparison.
+# The generated value $(ONTBASE).owl = https://w3id.org/metpo.owl (404).
+# Correct URL is https://w3id.org/metpo/metpo.owl = $(ONTBASE)/$(ONT).owl.
+CURRENT_RELEASE = $(ONTBASE)/$(ONT).owl
+
 # The generated $(ONT).owl and $(ONT).json recipes use $(URIBASE)/$@ which
 # expands to https://w3id.org/metpo.owl — wrong (missing /metpo/ path segment).
 # The correct IRI is https://w3id.org/metpo/metpo.owl = $(ONTBASE)/$@.
