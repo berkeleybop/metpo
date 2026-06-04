@@ -118,3 +118,43 @@ components/metpo_sheet.owl: ../templates/stubs.tsv ../templates/metpo-properties
 		annotate -V $(ONTBASE)/releases/$(TODAY)/$@ \
 		--annotation owl:versionInfo $(TODAY) \
 		convert -f ofn --output $@.tmp.owl && mv $@.tmp.owl $@
+
+# CURRENT_RELEASE is used by release_diff to download the live OWL for comparison.
+# The generated value $(ONTBASE).owl = https://w3id.org/metpo.owl (404).
+# Correct URL is https://w3id.org/metpo/metpo.owl = $(ONTBASE)/$(ONT).owl.
+CURRENT_RELEASE = $(ONTBASE)/$(ONT).owl
+
+# The generated $(ONT).owl and $(ONT).json recipes use $(URIBASE)/$@ which
+# expands to https://w3id.org/metpo.owl — wrong (missing /metpo/ path segment).
+# The correct IRI is https://w3id.org/metpo/metpo.owl = $(ONTBASE)/$@.
+# Root cause: metpo-odk.yaml sets uribase: https://w3id.org (the bare domain)
+# because the ODK Python tooling derives ONTBASE as $(URIBASE)/$(id), and
+# changing uribase to https://w3id.org/metpo would give ONTBASE
+# https://w3id.org/metpo/metpo (double segment) and break all sub-artifact IRIs.
+# These recipe overrides are the correct long-term fix until ODK provides a way
+# to set URIBASE and ONTBASE independently in the config.
+# Tracked at: https://github.com/berkeleybop/metpo/issues/465
+
+$(ONT).owl: $(ONT)-full.owl
+	$(ROBOT) annotate --input $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
+		convert -o $@.tmp.owl && mv $@.tmp.owl $@
+
+$(ONT).json: $(ONT).owl
+	$(ROBOT) annotate --input $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
+		convert --check false -f json -o $@.tmp.json &&\
+		mv $@.tmp.json $@
+
+# The generated $(ONT)-base.owl recipe uses --base-iri $(URIBASE)/METPO (uppercase)
+# which matches no METPO terms (all IRIs are lowercase https://w3id.org/metpo/<id>),
+# silently producing empty base artifacts. Fixed in https://github.com/berkeleybop/metpo/issues/463
+# and tracked as a known ODK upgrade regression in https://github.com/berkeleybop/metpo/issues/465.
+$(ONT)-base.owl: $(EDIT_PREPROCESSED) $(OTHER_SRC) $(IMPORT_FILES)
+	$(ROBOT_RELEASE_IMPORT_MODE) \
+	reason --reasoner $(REASONER) --equivalent-classes-allowed asserted-only --exclude-tautologies structural --annotate-inferred-axioms false \
+	relax $(RELAX_OPTIONS) \
+	reduce -r $(REASONER) $(REDUCE_OPTIONS) \
+	remove --base-iri $(URIBASE)/metpo --axioms external --preserve-structure false --trim false \
+	$(SHARED_ROBOT_COMMANDS) \
+	annotate --link-annotation http://purl.org/dc/elements/1.1/type http://purl.obolibrary.org/obo/IAO_8000001 \
+		--ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
+		--output $@.tmp.owl && mv $@.tmp.owl $@
