@@ -1,13 +1,22 @@
 id: metpo
-title: "METPO"
+title: "Microbial Ecophysiological Trait and Phenotype Ontology"
+description: "An ontology of ecophysiological traits of microbes, including preferred and tolerated growth conditions (temperature, pH, salinity, oxygen), harmonizing terminology across major trait databases (BacDive, BactoTraits, Madin bacteria_archaea_traits, MetaTraits). Developed for use in NMDC and KG-Microbe."
 git_main_branch: main
 github_org: berkeleybop
 repo: metpo
+contact: MAM@lbl.gov
+creators:
+  - "Mark Andrew Miller"
+  - "Marcin P. Joachimiak"
+contributors:
+  - "Chris Mungall"
 license: https://creativecommons.org/licenses/by/4.0/
 release_artefacts:
   - base
   - full
 primary_release: full
+public_release: none
+release_diff: true
 export_formats:
   - owl
   - obo
@@ -15,6 +24,8 @@ export_formats:
 robot_java_args: '-Xmx8G'
 use_robot_templates: TRUE
 robot_template_directory: src/templates
+create_obo_metadata: FALSE
+export_project_yaml: true
 components:
   products:
     - filename: metpo_sheet.owl
@@ -45,3 +56,5 @@ use_mappings: FALSE
 use_edit_file_imports: FALSE
 manage_import_declarations: FALSE
 uribase: https://w3id.org
+namespaces:
+  - https://w3id.org/metpo/

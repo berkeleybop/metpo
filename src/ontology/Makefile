@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                8096b911a4839ce81687e319d882faadcc7ade76444aa4f39f842dfd1bc94ca0
+CONFIG_HASH=                c4f7a6f5aa6f4cc632eb0723bd325b124be2aae21cc704ad9a288e36bad62cdf
 
 
 # ----------------------------------------
@@ -62,7 +62,7 @@ ONTOLOGYTERMS =             $(TMPDIR)/ontologyterms.txt
 EDIT_PREPROCESSED =         $(TMPDIR)/$(ONT)-preprocess.owl
 
 
-FORMATS = $(sort  owl obo json)
+FORMATS = $(sort  owl obo json owl)
 FORMATS_INCL_TSV = $(sort $(FORMATS) tsv)
 RELEASE_ARTEFACTS = $(sort $(ONT)-base $(ONT)-full )
 
@@ -104,13 +104,13 @@ PAT = true
 all: all_odk
 
 .PHONY: all_odk
-all_odk: odkversion config_check test custom_reports all_assets
+all_odk: odkversion config_check test custom_reports all_assets release_diff
 
 .PHONY: test
 test: odkversion validate_idranges reason_test sparql_test robot_reports $(REPORTDIR)/validate_profile_owl2dl_$(ONT).owl.txt
 	echo "Finished running all tests successfully."
 
-.PHONY: test_fast
+.PHONY: test
 test_fast:
 	$(MAKE_FAST) test
 
@@ -273,10 +273,10 @@ endif
 # ----------------------------------------
 
 $(REPORTDIR)/$(SRC)-obo-report.tsv: $(SRCMERGED) | $(REPORTDIR)
-	$(ROBOT) report -i $< $(REPORT_LABEL) $(REPORT_PROFILE_OPTS) --fail-on $(REPORT_FAIL_ON) --base-iri $(URIBASE)/METPO_ --base-iri $(URIBASE)/metpo --print 5 -o $@
+	$(ROBOT) report -i $< $(REPORT_LABEL) $(REPORT_PROFILE_OPTS) --fail-on $(REPORT_FAIL_ON) --base-iri https://w3id.org/metpo/ --print 5 -o $@
 
 $(REPORTDIR)/%-obo-report.tsv: % | $(REPORTDIR)
-	$(ROBOT) report -i $< $(REPORT_LABEL) $(REPORT_PROFILE_OPTS) --fail-on $(REPORT_FAIL_ON) --base-iri $(URIBASE)/METPO_ --base-iri $(URIBASE)/metpo --print 5 -o $@
+	$(ROBOT) report -i $< $(REPORT_LABEL) $(REPORT_PROFILE_OPTS) --fail-on $(REPORT_FAIL_ON) --base-iri https://w3id.org/metpo/ --print 5 -o $@
 
 check_for_robot_updates:
 	echo "You are not using a custom profile, so you are getting the joy of the latest ROBOT report!"
@@ -547,7 +547,7 @@ $(ONT)-base.owl: $(EDIT_PREPROCESSED) $(OTHER_SRC) $(IMPORT_FILES)
 	reason --reasoner $(REASONER) --equivalent-classes-allowed asserted-only --exclude-tautologies structural --annotate-inferred-axioms false \
 	relax $(RELAX_OPTIONS) \
 	reduce -r $(REASONER) $(REDUCE_OPTIONS) \
-	remove --base-iri $(URIBASE)/METPO --axioms external --preserve-structure false --trim false \
+	remove --base-iri https://w3id.org/metpo/ --axioms external --preserve-structure false --trim false \
 	$(SHARED_ROBOT_COMMANDS) \
 	annotate --link-annotation http://purl.org/dc/elements/1.1/type http://purl.obolibrary.org/obo/IAO_8000001 \
 		--ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
@@ -667,7 +667,7 @@ Imports management:
 
 Editor utilities:
 * validate_idranges:	Make sure your ID ranges file is formatted correctly
-* normalize_src:	Load and save your metpo-edit file after editing to make sure it's serialised correctly
+* normalize_src:	Load and save your metpo-edit file after you to make sure its serialised correctly
 * explain_unsat:	If you have unsatisfiable classes, this command will create a markdown file (tmp/explain_unsat.md) which will explain all your unsatisfiable classes
 * validate-all-tsv:	Check all your tsv files for possible problems in syntax. Use ALL_TSV_FILES variable to list files
 * validate-tsv:		Check a tsv file for syntactic problems with tsvalid. Use TSV variable to pass filepath, e.g. make TSV=../my.tsv validate-tsv.
