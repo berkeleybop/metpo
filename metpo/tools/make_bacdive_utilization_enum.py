@@ -1,3 +1,4 @@
+import re
 from pathlib import Path
 
 import click
@@ -73,9 +74,10 @@ def convert_tsv_to_linkml(
         # Show preview if requested
         if preview:
             click.echo("\n=== Preview (first 30 lines) ===")
-            preview_lines = linkml_yaml.split("\n")[:30]
+            all_lines = linkml_yaml.split("\n")
+            preview_lines = all_lines[:30]
             click.echo("\n".join(preview_lines))
-            if len(linkml_yaml.split("\n")) > 30:
+            if len(all_lines) > 30:
                 click.echo("...")
 
     except Exception as e:
@@ -125,19 +127,20 @@ def convert_tsv_to_linkml_enum(
 
     # Process each relationship
     for _, row in object_properties.iterrows():
-        # Extract the ID number from the full URI
+        # Use the full URI as the permissible value meaning
         id_uri = row["ID"]
-        id_uri.split("/")[-1]
 
         # Create a code-friendly key from the label
         label = str(row["LABEL"])
         # Convert label to snake_case for the key
-        key = label.lower().replace(" ", "_").replace("-", "_")
+        key = re.sub(r"[^a-z0-9\s_-]", "", label.lower())
+        key = re.sub(r"[\s-]+", "_", key)
+        key = re.sub(r"_+", "_", key).strip("_")
 
         # Create the permissible value entry
         pv_entry = {
-            # 'text': label,
-            "meaning": id_uri
+            "description": label,
+            "meaning": id_uri,
         }
 
         # Add to permissible values
@@ -147,9 +150,6 @@ def convert_tsv_to_linkml_enum(
     yaml_output = yaml.dump(
         linkml_enum, default_flow_style=False, sort_keys=False, allow_unicode=True
     )
-
-    # Clean up the YAML formatting
-    yaml_output = yaml_output.replace("'", "")  # Remove unnecessary quotes
 
     # Write to file if specified
     if output_file:
