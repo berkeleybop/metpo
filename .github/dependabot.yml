@@ -1,7 +1,25 @@
 version: 2
 updates:
+  # GitHub Actions workflow dependencies
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "weekly"
     open-pull-requests-limit: 5
+
+  # Python dependencies (uv / pyproject.toml + uv.lock).
+  # Replaces the home-grown uv-upgrade.yml bot, whose PRs could never trigger
+  # the required CI checks (GITHUB_TOKEN-opened PRs do not fire workflows), so
+  # branch protection blocked them forever (#416). Dependabot-opened PRs do run
+  # CI. The `python-deps` group batches all Python updates into a single weekly
+  # PR (mirroring the old bot's bulk `uv lock --upgrade`, with less PR noise
+  # than per-dependency PRs).
+  - package-ecosystem: "uv"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    groups:
+      python-deps:
+        patterns:
+          - "*"
