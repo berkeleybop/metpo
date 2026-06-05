@@ -1,7 +1,12 @@
 # QC SPARQL meta-test
 
-This directory proves that the QC violation queries in `../*-violation.sparql`
+This directory proves that the QC violation queries in `src/sparql/*-violation.sparql`
 can actually fail. It exists because they once could not.
+
+It lives here, under `tests/`, on purpose: the ODK-managed tree
+(`src/ontology/`, `src/sparql/`) holds only ODK-owned scaffolding and the
+ontology itself. This harness only *reads* the queries under `src/sparql/`; it
+writes nothing there.
 
 ## The problem it guards against
 
@@ -48,7 +53,7 @@ only in this directory; they are never merged into the ontology.
 In the ODK container, from `src/ontology`:
 
 ```sh
-sh run.sh bash ../sparql/tests/run_sparql_metatest.sh
+sh run.sh bash ../../tests/sparql_qc/run_sparql_metatest.sh
 ```
 
 CI runs it on every push/PR via `.github/workflows/sparql-metatest.yml`.

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Meta-test for the QC SPARQL violation queries (berkeleybop/metpo#500).
 #
-# Runs every ../*-violation.sparql against the positive-control fixture
+# Runs every src/sparql/*-violation.sparql against the positive-control fixture
 # (qc-positive-fixture.ttl) and asserts each returns >= 1 row. This proves the
 # checks actually MATCH METPO terms: four of them filter on the term namespace
 # with STRSTARTS(str(?term), "https://w3id.org/metpo/"), and that filter was
@@ -9,16 +9,19 @@
 # reported "0 violations" (#487, #465). A check that cannot fail is worse than
 # no check.
 #
-# Discovers the queries dynamically: a new *-violation.sparql with no seeded
-# fixture case fails here, which forces the fixture to stay complete.
+# This harness lives OUTSIDE the ODK-managed tree (src/ontology, src/sparql): it
+# only READS the queries under src/sparql. Queries are discovered dynamically,
+# so a new *-violation.sparql with no seeded fixture case fails here, which
+# forces the fixture to stay complete.
 #
 # Run locally from src/ontology:
-#   sh run.sh bash ../sparql/tests/run_sparql_metatest.sh
+#   sh run.sh bash ../../tests/sparql_qc/run_sparql_metatest.sh
 # Requires: robot on PATH (present in the obolibrary/odkfull container).
 set -euo pipefail
 
 HERE="$(cd "$(dirname "$0")" && pwd)"
-SPARQLDIR="$(cd "$HERE/.." && pwd)"
+REPO_ROOT="$(cd "$HERE/../.." && pwd)"
+SPARQLDIR="$REPO_ROOT/src/sparql"
 FIXTURE="$HERE/qc-positive-fixture.ttl"
 OUT="$(mktemp -d)"
 trap 'rm -rf "$OUT"' EXIT
@@ -47,7 +50,7 @@ done
 if [ "$fail" -ne 0 ]; then
   echo
   echo "One or more QC violation queries matched nothing they are meant to catch."
-  echo "Fix: seed the missing case in src/sparql/tests/qc-positive-fixture.ttl, or"
+  echo "Fix: seed the missing case in tests/sparql_qc/qc-positive-fixture.ttl, or"
   echo "correct the query's term-namespace filter (https://w3id.org/metpo/)."
   exit 1
 fi

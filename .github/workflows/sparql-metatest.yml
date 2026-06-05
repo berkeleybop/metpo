@@ -26,4 +26,4 @@ jobs:
 
       - name: Assert each QC violation query matches its positive-control fixture
         shell: bash
-        run: bash src/sparql/tests/run_sparql_metatest.sh
+        run: bash tests/sparql_qc/run_sparql_metatest.sh
