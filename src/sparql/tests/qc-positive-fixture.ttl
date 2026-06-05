@@ -1,0 +1,50 @@
+# Positive-control fixture for the QC SPARQL violation queries.
+#
+# Guardrail for berkeleybop/metpo#500. Each subject below is a METPO-namespaced
+# IRI (https://w3id.org/metpo/<digits>) deliberately seeded with exactly one
+# violation, so the matching query in ../*-violation.sparql MUST return >= 1 row.
+#
+# Why this exists: four of the five violation queries filter terms with
+#   STRSTARTS(str(?term), "https://w3id.org/metpo/")
+# That filter was once written as "https://w3id.org/METPO_", which matches no
+# real METPO term, so every check silently reported "0 violations" (#487, #465).
+# A check that cannot fail is false confidence. run_sparql_metatest.sh asserts
+# each query still matches a known-bad term in the real namespace.
+#
+# These IRIs are fixture-only (9999xxx range, never allocated); they live only
+# in this file and are never merged into the ontology.
+
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix dce:     <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix IAO:     <http://purl.obolibrary.org/obo/IAO_> .
+@prefix metpo:   <https://w3id.org/metpo/> .
+
+# -> dc-properties-violation.sparql : deprecated DC Elements 1.1 predicate on a METPO term
+metpo:9999001 a owl:Class ;
+    rdfs:label "fixture: deprecated dc-elements predicate" ;
+    dce:creator "should be dcterms:creator" .
+
+# -> iri-range-violation.sparql : a property whose value must be an IRI, given a literal
+metpo:9999002 a owl:Class ;
+    rdfs:label "fixture: contributor as a literal, not an IRI" ;
+    dcterms:contributor "Jane Doe" .
+
+# -> label-with-iri-violation.sparql : an rdfs:label containing a URL
+metpo:9999003 a owl:Class ;
+    rdfs:label "fixture: a label that wrongly embeds http://example.org/foo" .
+
+# -> multiple-replaced_by-violation.sparql : two distinct IAO:0100001 (term replaced by) values
+metpo:9999004 a owl:Class ;
+    rdfs:label "fixture: two different replacements" ;
+    IAO:0100001 metpo:1000000 , metpo:2000000 .
+
+# -> owldef-self-reference-violation.sparql : equivalent-class definition that references itself
+metpo:9999005 a owl:Class ;
+    rdfs:label "fixture: self-referential equivalent class" ;
+    owl:equivalentClass [
+        a owl:Class ;
+        owl:intersectionOf ( metpo:9999005 )
+    ] .
