@@ -1,0 +1,43 @@
+# Ontology-header metadata QC (berkeleybop/metpo#502).
+#
+# This check lives OUTSIDE the ODK-managed tree on purpose (it does not edit any
+# ODK query). The meta-test runner runs it against the real metpo.owl, where it
+# must return 0 rows, and against qc-positive-fixture.ttl, where it must return
+# >= 1 row (so the check is proven able to fail).
+#
+# It returns a row for each problem on the ontology node:
+#   (1) creator/contributor given as a literal instead of an agent IRI (ORCID);
+#   (2) dcterms:modified disagreeing with the automated owl:versionInfo.
+# The header drifted unchecked until #495 (placeholder creator, fake
+# dcterms:issued, dcterms:modified contradicting owl:versionInfo). The deprecated
+# DC Elements 1.1 namespace is already caught by ODK's dc-properties-violation
+# (which scopes to https://w3id.org/metpo/ subjects, including the ontology node),
+# so it is not repeated here.
+
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+SELECT DISTINCT ?ontology ?predicate ?value ?problem WHERE {
+  # Scope to the METPO ontology node only, so a merged/imported ontology header
+  # in the input cannot raise a false positive (per Copilot review on #506).
+  ?ontology a owl:Ontology .
+  FILTER(isIRI(?ontology) && STRSTARTS(STR(?ontology), "https://w3id.org/metpo/"))
+  {
+    # (1) creator/contributor that is not an agent IRI (a literal placeholder, or
+    #     a blank node) -- anything non-IRI fails the "must be an ORCID" rule.
+    VALUES ?predicate { dcterms:creator dcterms:contributor }
+    ?ontology ?predicate ?value .
+    FILTER(!isIRI(?value))
+    BIND("creator/contributor must be an agent IRI (e.g. ORCID), not a literal placeholder" AS ?problem)
+  }
+  UNION
+  {
+    # (2) dcterms:modified disagreeing with the automated owl:versionInfo
+    ?ontology dcterms:modified ?value ;
+              owl:versionInfo ?vi .
+    FILTER(STR(?value) != STR(?vi))
+    BIND(dcterms:modified AS ?predicate)
+    BIND(CONCAT("dcterms:modified '", STR(?value),
+                "' disagrees with owl:versionInfo '", STR(?vi), "'") AS ?problem)
+  }
+}

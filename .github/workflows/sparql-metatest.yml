@@ -1,0 +1,34 @@
+name: SPARQL QC meta-test
+
+# Guardrail for berkeleybop/metpo#500: prove the QC SPARQL violation queries
+# actually match METPO terms, so they cannot silently become no-ops.
+#
+# The queries in src/sparql/*-violation.sparql filter terms with
+#   STRSTARTS(str(?term), "https://w3id.org/metpo/")
+# That filter was once "https://w3id.org/METPO_" (matches nothing), so every
+# check reported "0 violations" for a long time and CI stayed green (#487,
+# #465). This job runs each query against a positive-control fixture seeded
+# with one known violation per query and fails if any matches 0 rows.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  sparql-metatest:
+    runs-on: ubuntu-latest
+    container: obolibrary/odkfull:v1.6.1
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+
+      - name: Assert each QC violation query matches its positive-control fixture
+        shell: bash
+        run: bash tests/sparql_qc/run_sparql_metatest.sh
