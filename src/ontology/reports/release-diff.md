@@ -25,8 +25,6 @@
 
 - [description](http://purl.org/dc/terms/description) "METPO provides terms for microbial ecophysiological traits and phenotypes: growth preferences (temperature, pH, salinity, oxygen), metabolism, and cell morphology of bacteria and archaea. Its primary purpose is to harmonize terminology across major microbial trait databases (BacDive, BactoTraits, Madin bacteria_archaea_traits, MetaTraits) for use in NMDC and KG-Microbe. METPO uses OBO-style annotation patterns (IAO textual definitions, oboInOwl synonyms) and cites terms from OMP, MicrO, GO, ECOCORE, and PATO as definition sources." 
 
-- [issued](http://purl.org/dc/terms/issued) "2024-01-01" 
-
 - [license](http://purl.org/dc/terms/license) [<https://creativecommons.org/licenses/by/4.0/>](https://creativecommons.org/licenses/by/4.0/) 
 
 - [title](http://purl.org/dc/terms/title) "METPO: Microbial Ecophysiological Trait and Phenotype Ontology" 
@@ -4147,12 +4145,6 @@
 - [isolated from host with quality](https://w3id.org/metpo/2000067) Domain [microbe](https://w3id.org/metpo/1000525) 
 
 - [isolated from host with quality](https://w3id.org/metpo/2000067) Range [quality](https://w3id.org/metpo/1000188) 
-
-
-### issued `http://purl.org/dc/terms/issued`
-
-#### Added
-- AnnotationProperty: [issued](http://purl.org/dc/terms/issued) 
 
 
 ### lateral flagellation `https://w3id.org/metpo/1005036`
