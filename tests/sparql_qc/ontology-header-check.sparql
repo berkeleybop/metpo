@@ -18,19 +18,22 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 
 SELECT DISTINCT ?ontology ?predicate ?value ?problem WHERE {
+  # Scope to the METPO ontology node only, so a merged/imported ontology header
+  # in the input cannot raise a false positive (per Copilot review on #506).
+  ?ontology a owl:Ontology .
+  FILTER(isIRI(?ontology) && STRSTARTS(STR(?ontology), "https://w3id.org/metpo/"))
   {
-    # (1) creator/contributor as a literal placeholder instead of an agent IRI
-    ?ontology a owl:Ontology .
+    # (1) creator/contributor that is not an agent IRI (a literal placeholder, or
+    #     a blank node) -- anything non-IRI fails the "must be an ORCID" rule.
     VALUES ?predicate { dcterms:creator dcterms:contributor }
     ?ontology ?predicate ?value .
-    FILTER(isLiteral(?value))
+    FILTER(!isIRI(?value))
     BIND("creator/contributor must be an agent IRI (e.g. ORCID), not a literal placeholder" AS ?problem)
   }
   UNION
   {
     # (2) dcterms:modified disagreeing with the automated owl:versionInfo
-    ?ontology a owl:Ontology ;
-              dcterms:modified ?value ;
+    ?ontology dcterms:modified ?value ;
               owl:versionInfo ?vi .
     FILTER(STR(?value) != STR(?vi))
     BIND(dcterms:modified AS ?predicate)
