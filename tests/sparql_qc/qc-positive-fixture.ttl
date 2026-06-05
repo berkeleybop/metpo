@@ -1,8 +1,10 @@
 # Positive-control fixture for the QC SPARQL violation queries.
 #
 # Guardrail for berkeleybop/metpo#500. Each subject below is a METPO-namespaced
-# IRI (https://w3id.org/metpo/<digits>) deliberately seeded with exactly one
-# violation, so the matching query in ../*-violation.sparql MUST return >= 1 row.
+# IRI (https://w3id.org/metpo/<digits>) seeded with one deliberate violation case
+# for one query, so that query MUST return >= 1 row. (A query may emit more than
+# one row for a single case -- e.g. multiple-replaced_by joins the value pair in
+# both orderings -- which is fine; the meta-test only requires at least one.)
 #
 # Why this exists: four of the five violation queries filter terms with
 #   STRSTARTS(str(?term), "https://w3id.org/metpo/")
