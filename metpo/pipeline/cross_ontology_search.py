@@ -72,9 +72,7 @@ def embed(text, model, embed_url=DEFAULT_EMBED_URL):
     Returns None if the endpoint/model is unavailable (caller falls back gracefully).
     """
     body = json.dumps({"model": model, "prompt": text}).encode()
-    req = urllib.request.Request(
-        embed_url, data=body, headers={"Content-Type": "application/json"}
-    )
+    req = urllib.request.Request(embed_url, data=body, headers={"Content-Type": "application/json"})
     try:
         with urllib.request.urlopen(req, timeout=20) as r:
             return json.load(r).get("embedding")
@@ -107,7 +105,9 @@ def load_terms(metpo_tsv, label, definition):
                 {
                     "id": row[id_i].strip() if len(row) > id_i else "",
                     "label": row[lbl_i].strip(),
-                    "definition": row[def_i].strip() if def_i is not None and len(row) > def_i else "",
+                    "definition": row[def_i].strip()
+                    if def_i is not None and len(row) > def_i
+                    else "",
                 }
             )
     return terms
@@ -155,17 +155,67 @@ def write_matches(rows, output):
 
 
 @click.command()
-@click.option("--metpo-tsv", "-i", type=click.Path(exists=True, dir_okay=False), help="TSV with ID,LABEL[,definition] columns.")
+@click.option(
+    "--metpo-tsv",
+    "-i",
+    type=click.Path(exists=True, dir_okay=False),
+    help="TSV with ID,LABEL[,definition] columns.",
+)
 @click.option("--label", "-l", help="Single METPO term label (alternative to --metpo-tsv).")
-@click.option("--definition", "-d", default="", help="Optional definition for the single-label mode (improves ranking).")
-@click.option("--output", "-o", type=click.Path(dir_okay=False), help="Output SSSOM-ish TSV (default: stdout).")
-@click.option("--rows", default=20, show_default=True, help="OLS candidate classes to retrieve per term.")
-@click.option("--top-n", default=5, show_default=True, help="Top matches to keep per term after re-ranking.")
-@click.option("--model", default=DEFAULT_EMBED_MODEL, show_default=True, help="Embedding model (free + local by default; any Ollama-served model works).")
-@click.option("--embed-url", default=DEFAULT_EMBED_URL, show_default=True, help="Ollama-compatible /api/embeddings endpoint (point at a remote host or other local server to run elsewhere).")
-@click.option("--no-embeddings", is_flag=True, help="Skip embeddings entirely; rank by OLS lexical order only.")
-@click.option("--min-similarity", default=0.0, show_default=True, type=float, help="Drop matches below this cosine similarity.")
-def main(metpo_tsv, label, definition, output, rows, top_n, model, embed_url, no_embeddings, min_similarity):
+@click.option(
+    "--definition",
+    "-d",
+    default="",
+    help="Optional definition for the single-label mode (improves ranking).",
+)
+@click.option(
+    "--output",
+    "-o",
+    type=click.Path(dir_okay=False),
+    help="Output SSSOM-ish TSV (default: stdout).",
+)
+@click.option(
+    "--rows", default=20, show_default=True, help="OLS candidate classes to retrieve per term."
+)
+@click.option(
+    "--top-n", default=5, show_default=True, help="Top matches to keep per term after re-ranking."
+)
+@click.option(
+    "--model",
+    default=DEFAULT_EMBED_MODEL,
+    show_default=True,
+    help="Embedding model (free + local by default; any Ollama-served model works).",
+)
+@click.option(
+    "--embed-url",
+    default=DEFAULT_EMBED_URL,
+    show_default=True,
+    help="Ollama-compatible /api/embeddings endpoint (point at a remote host or other local server to run elsewhere).",
+)
+@click.option(
+    "--no-embeddings",
+    is_flag=True,
+    help="Skip embeddings entirely; rank by OLS lexical order only.",
+)
+@click.option(
+    "--min-similarity",
+    default=0.0,
+    show_default=True,
+    type=float,
+    help="Drop matches below this cosine similarity.",
+)
+def main(
+    metpo_tsv,
+    label,
+    definition,
+    output,
+    rows,
+    top_n,
+    model,
+    embed_url,
+    no_embeddings,
+    min_similarity,
+):
     """Find cross-ontology matches (definitions/synonyms/mappings) for METPO terms.
 
     OLS4 search for candidates + local (free) embeddings for ranking. This is the
@@ -189,7 +239,9 @@ def main(metpo_tsv, label, definition, output, rows, top_n, model, embed_url, no
 
     out_rows = []
     for t in terms:
-        cands = rank_candidates(t, ols_candidates(t["label"], rows=rows), use_embeddings, model, embed_url)
+        cands = rank_candidates(
+            t, ols_candidates(t["label"], rows=rows), use_embeddings, model, embed_url
+        )
         for c in cands[:top_n]:
             if c["similarity"] < min_similarity:
                 continue
