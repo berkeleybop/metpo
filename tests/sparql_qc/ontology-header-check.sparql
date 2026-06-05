@@ -1,0 +1,40 @@
+# Ontology-header metadata QC (berkeleybop/metpo#502).
+#
+# This check lives OUTSIDE the ODK-managed tree on purpose (it does not edit any
+# ODK query). The meta-test runner runs it against the real metpo.owl, where it
+# must return 0 rows, and against qc-positive-fixture.ttl, where it must return
+# >= 1 row (so the check is proven able to fail).
+#
+# It returns a row for each problem on the ontology node:
+#   (1) creator/contributor given as a literal instead of an agent IRI (ORCID);
+#   (2) dcterms:modified disagreeing with the automated owl:versionInfo.
+# The header drifted unchecked until #495 (placeholder creator, fake
+# dcterms:issued, dcterms:modified contradicting owl:versionInfo). The deprecated
+# DC Elements 1.1 namespace is already caught by ODK's dc-properties-violation
+# (which scopes to https://w3id.org/metpo/ subjects, including the ontology node),
+# so it is not repeated here.
+
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+SELECT DISTINCT ?ontology ?predicate ?value ?problem WHERE {
+  {
+    # (1) creator/contributor as a literal placeholder instead of an agent IRI
+    ?ontology a owl:Ontology .
+    VALUES ?predicate { dcterms:creator dcterms:contributor }
+    ?ontology ?predicate ?value .
+    FILTER(isLiteral(?value))
+    BIND("creator/contributor must be an agent IRI (e.g. ORCID), not a literal placeholder" AS ?problem)
+  }
+  UNION
+  {
+    # (2) dcterms:modified disagreeing with the automated owl:versionInfo
+    ?ontology a owl:Ontology ;
+              dcterms:modified ?value ;
+              owl:versionInfo ?vi .
+    FILTER(STR(?value) != STR(?vi))
+    BIND(dcterms:modified AS ?predicate)
+    BIND(CONCAT("dcterms:modified '", STR(?value),
+                "' disagrees with owl:versionInfo '", STR(?vi), "'") AS ?problem)
+  }
+}
