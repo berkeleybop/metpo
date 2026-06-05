@@ -15,7 +15,7 @@
      xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="https://w3id.org/metpo/metpo.owl">
-        <owl:versionIRI rdf:resource="https://w3id.org/metpo/releases/2026-06-03/metpo.owl"/>
+        <owl:versionIRI rdf:resource="https://w3id.org/metpo/releases/2026-06-04/metpo.owl"/>
         <dcterms:contributor rdf:resource="https://orcid.org/0000-0001-9076-6066"/>
         <dcterms:creator>METPO Development Team</dcterms:creator>
         <dcterms:description>METPO provides standardized terms for the phenotypic traits, growth conditions, metabolic capabilities, and morphology of bacteria and archaea. It integrates heterogeneous microbial trait resources (BactoTraits, BacDive, Madin et al.) and supports knowledge-graph and literature-mining workflows in projects such as KG-Microbe. METPO follows OBO Foundry conventions and reuses terms from PATO, GO, CHEBI, NCBITaxon, and related ontologies where possible.</dcterms:description>
@@ -26,7 +26,7 @@
         <rdfs:seeAlso rdf:resource="https://bioportal.bioontology.org/ontologies/METPO"/>
         <rdfs:seeAlso rdf:resource="https://bioregistry.io/registry/metpo"/>
         <rdfs:seeAlso rdf:resource="https://github.com/berkeleybop/metpo"/>
-        <owl:versionInfo>2026-06-03</owl:versionInfo>
+        <owl:versionInfo>2026-06-04</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -69,6 +69,12 @@
     <!-- http://purl.obolibrary.org/obo/IAO_0000231 -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000231"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0100001 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0100001"/>
     
 
 
@@ -2521,6 +2527,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000005">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000631"/>
         <rdfs:label>obsolete Trophic type</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -2532,6 +2539,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000006">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000701"/>
         <rdfs:label>obsolete Motility</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -2543,6 +2551,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000007">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000870"/>
         <rdfs:label>obsolete Sporulation</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -2565,6 +2574,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000009">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000127"/>
         <rdfs:label>obsolete GC content</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -2587,6 +2597,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000010">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000882"/>
         <rdfs:label>obsolete Cell Width</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -2598,6 +2609,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000011">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000881"/>
         <rdfs:label>obsolete Cell Length</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -2609,6 +2621,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000012">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000304"/>
         <rdfs:label>obsolete Temperature Optimum</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -2620,6 +2633,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000013">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000306"/>
         <rdfs:label>obsolete Temperature Range</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -2631,6 +2645,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000014">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000331"/>
         <rdfs:label>obsolete pH Optimum</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -2642,6 +2657,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000015">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000332"/>
         <rdfs:label>obsolete pH Range</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -2653,6 +2669,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000016">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000333"/>
         <rdfs:label>obsolete NaCl Optimum</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -2664,6 +2681,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000017">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000334"/>
         <rdfs:label>obsolete NaCl Range</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -2675,6 +2693,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000018">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000232"/>
         <rdfs:label>obsolete pH delta</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -2686,6 +2705,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000019">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000335"/>
         <rdfs:label>obsolete NaCl delta</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -2708,6 +2728,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000020">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000303"/>
         <rdfs:label>obsolete Temperature Delta</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -2730,6 +2751,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000022">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000614"/>
         <rdfs:label>obsolete Psychrophile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -2741,6 +2763,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000023">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000618"/>
         <rdfs:label>obsolete Psychrotolerant</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -2763,6 +2786,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000025">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000619"/>
         <rdfs:label>obsolete Thermotolerant</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -2774,6 +2798,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000026">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000616"/>
         <rdfs:label>obsolete Thermophile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -2785,6 +2810,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000027">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000721"/>
         <rdfs:label>obsolete Extreme thermophile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -2796,6 +2822,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000028">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000617"/>
         <rdfs:label>obsolete Hyperthermophile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -2807,6 +2834,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000029">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000721"/>
         <rdfs:label>obsolete Extreme hyperthermophile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -2829,6 +2857,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000030">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000620"/>
         <rdfs:label>obsolete Halophile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -2840,6 +2869,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000031">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000624"/>
         <rdfs:label>obsolete Non-halophile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -2851,6 +2881,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000032">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000625"/>
         <rdfs:label>obsolete Slight halophile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -2862,6 +2893,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000033">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000623"/>
         <rdfs:label>obsolete Moderate halophile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -2873,6 +2905,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000034">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000628"/>
         <rdfs:label>obsolete Extreme halophile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -2884,6 +2917,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000035">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000622"/>
         <rdfs:label>obsolete Halotolerant</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -2895,6 +2929,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000036">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000621"/>
         <rdfs:label>obsolete Haloalkaliphile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -2917,6 +2952,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000038">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1003003"/>
         <rdfs:label>obsolete Acidophile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -2928,6 +2964,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000039">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1003001"/>
         <rdfs:label>obsolete Neutrophile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -2950,6 +2987,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000040">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1003002"/>
         <rdfs:label>obsolete Alkaliphile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -2994,6 +3032,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000044">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1003007"/>
         <rdfs:label>obsolete Facultative acidophile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -3005,6 +3044,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000045">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1003006"/>
         <rdfs:label>obsolete Obligative acidophile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -3027,6 +3067,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000047">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000603"/>
         <rdfs:label>obsolete Anaerobe</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -3038,6 +3079,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000048">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000605"/>
         <rdfs:label>obsolete Facultative anaerobe</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -3049,6 +3091,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000049">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000608"/>
         <rdfs:label>obsolete Facultative aerobe</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -3060,6 +3103,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000005">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000631"/>
         <rdfs:label>obsolete Trophic type</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -3071,6 +3115,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000050">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000604"/>
         <rdfs:label>obsolete Microaerophile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -3082,6 +3127,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000051">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000609"/>
         <rdfs:label>obsolete Aerotolerant</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -3093,6 +3139,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000052">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000610"/>
         <rdfs:label>obsolete Microaerotolerant</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -3115,6 +3162,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000054">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000606"/>
         <rdfs:label>obsolete Obligate aerobe</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -3126,6 +3174,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000055">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000607"/>
         <rdfs:label>obsolete Obligate anaerobe</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -3159,6 +3208,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000058">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000632"/>
         <rdfs:label>obsolete Autotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -3170,6 +3220,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000059">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000656"/>
         <rdfs:label>obsolete Photoautotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -3181,6 +3232,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000006">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000701"/>
         <rdfs:label>obsolete Motility</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -3192,6 +3244,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000060">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000635"/>
         <rdfs:label>obsolete Chemoautotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -3203,6 +3256,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000061">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000644"/>
         <rdfs:label>obsolete Heterotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -3214,6 +3268,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000062">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000657"/>
         <rdfs:label>obsolete Photoheterotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -3225,6 +3280,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000063">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000636"/>
         <rdfs:label>obsolete Chemoheterotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -3236,6 +3292,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000064">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000649"/>
         <rdfs:label>obsolete Lithotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -3247,6 +3304,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000065">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000655"/>
         <rdfs:label>obsolete Organotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -3258,6 +3316,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000066">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000660"/>
         <rdfs:label>obsolete Phototroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -3269,6 +3328,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000067">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000641"/>
         <rdfs:label>obsolete Chemotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -3280,6 +3340,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000068">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000654"/>
         <rdfs:label>obsolete Oligotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -3291,6 +3352,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000069">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000642"/>
         <rdfs:label>obsolete Copiotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -3302,6 +3364,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000007">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000870"/>
         <rdfs:label>obsolete Sporulation</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -3313,6 +3376,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000070">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000647"/>
         <rdfs:label>obsolete Lithoautotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -3324,6 +3388,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000071">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000652"/>
         <rdfs:label>obsolete Mixotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -3335,6 +3400,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000072">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000648"/>
         <rdfs:label>obsolete Lithoheterotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -3346,6 +3412,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000073">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000640"/>
         <rdfs:label>obsolete Chemoorganoheterotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -3357,6 +3424,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000074">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000637"/>
         <rdfs:label>obsolete Chemolithoautotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -3368,6 +3436,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000075">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000651"/>
         <rdfs:label>obsolete Methylotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -3379,6 +3448,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000076">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000650"/>
         <rdfs:label>obsolete Methanotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -3390,6 +3460,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000077">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000633"/>
         <rdfs:label>obsolete Carboxydotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -3401,6 +3472,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000078">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000646"/>
         <rdfs:label>obsolete Hydrogenotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -3500,6 +3572,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000086">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1005021"/>
         <rdfs:label>obsolete Capnophile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -3511,6 +3584,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000087">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000702"/>
         <rdfs:label>obsolete Motile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -3522,6 +3596,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000088">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000703"/>
         <rdfs:label>obsolete Non-motile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -3533,6 +3608,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000089">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000704"/>
         <rdfs:label>obsolete Flagellated</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -3544,6 +3620,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000009">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000127"/>
         <rdfs:label>obsolete GC content</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -3599,6 +3676,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000094">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000706"/>
         <rdfs:label>obsolete Gliding</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -3665,6 +3743,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000010">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000882"/>
         <rdfs:label>obsolete Cell Width</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -3786,6 +3865,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000011">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000881"/>
         <rdfs:label>obsolete Cell Length</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -3907,6 +3987,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000012">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000304"/>
         <rdfs:label>obsolete Temperature Optimum</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4028,6 +4109,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000013">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000306"/>
         <rdfs:label>obsolete Temperature Range</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4149,6 +4231,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000014">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000331"/>
         <rdfs:label>obsolete pH Optimum</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4237,6 +4320,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000147">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000636"/>
         <rdfs:label>obsolete Piezo-chemoheterotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4270,6 +4354,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000015">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000332"/>
         <rdfs:label>obsolete pH Range</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4292,6 +4377,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000151">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000429"/>
         <rdfs:label>obsolete GC low</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4303,6 +4389,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000152">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000430"/>
         <rdfs:label>obsolete GC mid1</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4314,6 +4401,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000153">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000431"/>
         <rdfs:label>obsolete GC mid2</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4325,6 +4413,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000154">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000432"/>
         <rdfs:label>obsolete GC high</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4336,6 +4425,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000155">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000887"/>
         <rdfs:label>obsolete Cell width very low</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4347,6 +4437,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000156">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000882"/>
         <rdfs:label>obsolete Cell width low</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4358,6 +4449,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000157">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000889"/>
         <rdfs:label>obsolete Cell width mid</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4369,6 +4461,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000158">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000882"/>
         <rdfs:label>obsolete Cell width high</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4380,6 +4473,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000159">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000883"/>
         <rdfs:label>obsolete Cell length very low</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4391,6 +4485,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000016">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000333"/>
         <rdfs:label>obsolete NaCl Optimum</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4402,6 +4497,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000160">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000881"/>
         <rdfs:label>obsolete Cell length low</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4413,6 +4509,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000161">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000885"/>
         <rdfs:label>obsolete Cell length mid</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4424,6 +4521,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000162">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000881"/>
         <rdfs:label>obsolete Cell length high</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4435,6 +4533,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000163">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000441"/>
         <rdfs:label>obsolete Temperature Optimum very low</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4446,6 +4545,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000164">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000442"/>
         <rdfs:label>obsolete Temperature Optimum low</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4457,6 +4557,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000165">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000443"/>
         <rdfs:label>obsolete Temperature Optimum mid1</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4468,6 +4569,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000166">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000444"/>
         <rdfs:label>obsolete Temperature Optimum mid2</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4479,6 +4581,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000167">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000445"/>
         <rdfs:label>obsolete Temperature Optimum mid3</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4490,6 +4593,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000168">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000446"/>
         <rdfs:label>obsolete Temperature Optimum mid4</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4501,6 +4605,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000169">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000447"/>
         <rdfs:label>obsolete Temperature Optimum high</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4512,6 +4617,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000017">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000334"/>
         <rdfs:label>obsolete NaCl Range</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4523,6 +4629,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000170">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000448"/>
         <rdfs:label>obsolete Temperature Range very low</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4534,6 +4641,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000171">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000449"/>
         <rdfs:label>obsolete Temperature Range low</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4545,6 +4653,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000172">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000450"/>
         <rdfs:label>obsolete Temperature Range mid1</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4556,6 +4665,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000173">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000451"/>
         <rdfs:label>obsolete Temperature Range mid2</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4567,6 +4677,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000174">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000452"/>
         <rdfs:label>obsolete Temperature Range mid3</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4578,6 +4689,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000175">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000453"/>
         <rdfs:label>obsolete Temperature Range mid4</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4589,6 +4701,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000176">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000454"/>
         <rdfs:label>obsolete Temperature Range high</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4600,6 +4713,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000177">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000455"/>
         <rdfs:label>obsolete pH Optimum low</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4611,6 +4725,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000178">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000456"/>
         <rdfs:label>obsolete pH Optimum mid1</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4622,6 +4737,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000179">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000457"/>
         <rdfs:label>obsolete pH Optimum mid2</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4633,6 +4749,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000018">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000232"/>
         <rdfs:label>obsolete pH delta</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4644,6 +4761,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000180">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000458"/>
         <rdfs:label>obsolete pH Optimum high</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4655,6 +4773,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000181">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000459"/>
         <rdfs:label>obsolete pH Range very low</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4666,6 +4785,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000182">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000460"/>
         <rdfs:label>obsolete pH Range low</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4677,6 +4797,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000183">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000461"/>
         <rdfs:label>obsolete pH Range mid1</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4688,6 +4809,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000184">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000462"/>
         <rdfs:label>obsolete pH Range mid2</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4699,6 +4821,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000185">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000463"/>
         <rdfs:label>obsolete pH Range mid3</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4710,6 +4833,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000186">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000464"/>
         <rdfs:label>obsolete pH Range high</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4721,6 +4845,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000187">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000465"/>
         <rdfs:label>obsolete NaCl Optimum low</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4732,6 +4857,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000188">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000466"/>
         <rdfs:label>obsolete NaCl Optimum mid1</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4743,6 +4869,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000189">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000467"/>
         <rdfs:label>obsolete NaCl Optimum mid2</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4754,6 +4881,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000019">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000335"/>
         <rdfs:label>obsolete NaCl delta</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4765,6 +4893,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000190">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000468"/>
         <rdfs:label>obsolete NaCl Optimum high</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4776,6 +4905,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000191">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000469"/>
         <rdfs:label>obsolete NaCl Range low</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4787,6 +4917,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000192">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000470"/>
         <rdfs:label>obsolete NaCl Range mid1</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4798,6 +4929,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000193">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000471"/>
         <rdfs:label>obsolete NaCl Range mid2</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4809,6 +4941,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000194">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000472"/>
         <rdfs:label>obsolete NaCl Range high</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4820,6 +4953,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000195">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000473"/>
         <rdfs:label>obsolete pH Delta very low</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4831,6 +4965,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000196">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000474"/>
         <rdfs:label>obsolete pH Delta low</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4842,6 +4977,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000197">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000475"/>
         <rdfs:label>obsolete pH Delta mid1</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4853,6 +4989,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000198">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000476"/>
         <rdfs:label>obsolete pH Delta mid2</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4864,6 +5001,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000199">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000477"/>
         <rdfs:label>obsolete pH Delta mid3</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4875,6 +5013,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000020">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000303"/>
         <rdfs:label>obsolete Temperature Delta</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4886,6 +5025,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000200">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000478"/>
         <rdfs:label>obsolete pH Delta high</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4897,6 +5037,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000201">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000479"/>
         <rdfs:label>obsolete NaCl Delta low</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4908,6 +5049,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000202">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000481"/>
         <rdfs:label>obsolete NaCl Delta mid2</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4919,6 +5061,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000203">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000481"/>
         <rdfs:label>obsolete NaCl Delta mid2</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4930,6 +5073,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000204">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000482"/>
         <rdfs:label>obsolete NaCl Delta high</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4941,6 +5085,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000205">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000483"/>
         <rdfs:label>obsolete Temperature Delta very low</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4952,6 +5097,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000206">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000484"/>
         <rdfs:label>obsolete Temperature Delta low</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4963,6 +5109,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000207">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000485"/>
         <rdfs:label>obsolete Temperature Delta mid1</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4974,6 +5121,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000208">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000486"/>
         <rdfs:label>obsolete Temperature Delta mid2</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -4985,6 +5133,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000209">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000487"/>
         <rdfs:label>obsolete Temperature Delta high</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -5128,6 +5277,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000220">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000673"/>
         <rdfs:label>obsolete Ellipsoidal</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -5238,6 +5388,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000023">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000614"/>
         <rdfs:label>obsolete Psychrophile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -5359,6 +5510,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000024">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000618"/>
         <rdfs:label>obsolete Psychrotolerant</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -5601,6 +5753,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000026">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000619"/>
         <rdfs:label>obsolete Thermotolerant</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -5667,6 +5820,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000265">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1007070"/>
         <rdfs:label>obsolete Pressure Tolerance Range</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -5722,6 +5876,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000027">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000616"/>
         <rdfs:label>obsolete Thermophile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -5744,6 +5899,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000271">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000666"/>
         <rdfs:label>obsolete Cell Shape</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -5755,6 +5911,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000272">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1007005"/>
         <rdfs:label>obsolete Cell Arrangement</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -5766,6 +5923,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000273">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1007062"/>
         <rdfs:label>obsolete Colony Morphology</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -5799,6 +5957,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000276">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000630"/>
         <rdfs:label>obsolete Biological Property</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -5832,6 +5991,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000279">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000630"/>
         <rdfs:label>obsolete METPO Biological Process</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -5843,6 +6003,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000028">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000721"/>
         <rdfs:label>obsolete Extreme thermophile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -5865,6 +6026,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000281">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000699"/>
         <rdfs:label>obsolete Gram-stain negative</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -5876,6 +6038,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0000282">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000698"/>
         <rdfs:label>obsolete Gram-stain positive</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -5887,6 +6050,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000029">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000617"/>
         <rdfs:label>obsolete Hyperthermophile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -5898,6 +6062,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000030">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000721"/>
         <rdfs:label>obsolete Extreme hyperthermophile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -5909,6 +6074,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000031">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000620"/>
         <rdfs:label>obsolete Halophile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -5920,6 +6086,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000032">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000624"/>
         <rdfs:label>obsolete Non-halophile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -5931,6 +6098,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000033">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000625"/>
         <rdfs:label>obsolete Slight halophile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -5942,6 +6110,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000034">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000623"/>
         <rdfs:label>obsolete Moderate halophile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -5953,6 +6122,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000035">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000628"/>
         <rdfs:label>obsolete Extreme halophile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -5964,6 +6134,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000036">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000622"/>
         <rdfs:label>obsolete Halotolerant</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -5975,6 +6146,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000037">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000621"/>
         <rdfs:label>obsolete Haloalkaliphile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -5997,6 +6169,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000039">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1003003"/>
         <rdfs:label>obsolete Acidophile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -6008,6 +6181,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000040">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1003001"/>
         <rdfs:label>obsolete Neutrophile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -6019,6 +6193,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000041">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1003002"/>
         <rdfs:label>obsolete Alkaliphile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -6063,6 +6238,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000045">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1003007"/>
         <rdfs:label>obsolete Facultative acidophile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -6074,6 +6250,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000046">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1003006"/>
         <rdfs:label>obsolete Obligative acidophile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -6096,6 +6273,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000048">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000603"/>
         <rdfs:label>obsolete Anaerobe</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -6107,6 +6285,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000049">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000605"/>
         <rdfs:label>obsolete Facultative anaerobe</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -6118,6 +6297,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000050">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000608"/>
         <rdfs:label>obsolete Facultative aerobe</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -6129,6 +6309,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000051">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000604"/>
         <rdfs:label>obsolete Microaerophile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -6140,6 +6321,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000052">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000609"/>
         <rdfs:label>obsolete Aerotolerant</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -6151,6 +6333,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000053">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000610"/>
         <rdfs:label>obsolete Microaerotolerant</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -6173,6 +6356,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000055">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000606"/>
         <rdfs:label>obsolete Obligate aerobe</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -6184,6 +6368,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000056">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000607"/>
         <rdfs:label>obsolete Obligate anaerobe</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -6217,6 +6402,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000059">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000632"/>
         <rdfs:label>obsolete Autotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -6228,6 +6414,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000060">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000656"/>
         <rdfs:label>obsolete Photoautotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -6239,6 +6426,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000061">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000635"/>
         <rdfs:label>obsolete Chemoautotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -6250,6 +6438,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000062">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000644"/>
         <rdfs:label>obsolete Heterotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -6261,6 +6450,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000063">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000657"/>
         <rdfs:label>obsolete Photoheterotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -6272,6 +6462,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000064">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000636"/>
         <rdfs:label>obsolete Chemoheterotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -6283,6 +6474,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000065">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000649"/>
         <rdfs:label>obsolete Lithotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -6294,6 +6486,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000066">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000655"/>
         <rdfs:label>obsolete Organotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -6305,6 +6498,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000067">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000660"/>
         <rdfs:label>obsolete Phototroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -6316,6 +6510,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000068">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000641"/>
         <rdfs:label>obsolete Chemotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -6327,6 +6522,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000069">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000654"/>
         <rdfs:label>obsolete Oligotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -6338,6 +6534,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000070">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000642"/>
         <rdfs:label>obsolete Copiotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -6349,6 +6546,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000071">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000647"/>
         <rdfs:label>obsolete Lithoautotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -6360,6 +6558,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000072">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000652"/>
         <rdfs:label>obsolete Mixotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -6371,6 +6570,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000073">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000648"/>
         <rdfs:label>obsolete Lithoheterotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -6382,6 +6582,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000074">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000640"/>
         <rdfs:label>obsolete Chemoorganoheterotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -6393,6 +6594,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000075">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000637"/>
         <rdfs:label>obsolete Chemolithoautotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -6404,6 +6606,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000076">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000651"/>
         <rdfs:label>obsolete Methylotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -6415,6 +6618,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000077">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000650"/>
         <rdfs:label>obsolete Methanotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -6426,6 +6630,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000078">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000633"/>
         <rdfs:label>obsolete Carboxydotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -6437,6 +6642,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000079">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000646"/>
         <rdfs:label>obsolete Hydrogenotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -6525,6 +6731,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000087">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1005021"/>
         <rdfs:label>obsolete Capnophile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -6536,6 +6743,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000088">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000702"/>
         <rdfs:label>obsolete Motile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -6547,6 +6755,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000089">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000703"/>
         <rdfs:label>obsolete Non-motile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -6558,6 +6767,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000090">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000704"/>
         <rdfs:label>obsolete Flagellated</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -6613,6 +6823,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000095">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000706"/>
         <rdfs:label>obsolete Gliding</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -6723,6 +6934,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/0001004">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000188"/>
         <rdfs:label>obsolete &apos;quality&apos;</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -7405,6 +7617,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000148">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000636"/>
         <rdfs:label>obsolete Piezo-chemoheterotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -7581,6 +7794,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000164">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000441"/>
         <rdfs:label>obsolete Temperature Optimum C very low (&lt;= 10)</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -7603,6 +7817,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000166">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000443"/>
         <rdfs:label>obsolete Temperature Optimum C mid1 (22 - 27)</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -7614,6 +7829,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000167">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000444"/>
         <rdfs:label>obsolete Temperature Optimum C mid2 (27 - 30)</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -7625,6 +7841,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000168">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000445"/>
         <rdfs:label>obsolete Temperature Optimum C mid3 (30 - 34)</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -7636,6 +7853,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000169">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000445"/>
         <rdfs:label>obsolete Temperature Optimum C mid4 (34 - 40)</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -7647,6 +7865,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000170">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000447"/>
         <rdfs:label>obsolete Temperature Optimum C high (&gt; 40)</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -7658,6 +7877,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000171">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000448"/>
         <rdfs:label>obsolete Temperature Range C very low (&lt;= 10)</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -7724,6 +7944,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000177">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000454"/>
         <rdfs:label>obsolete Temperature Range C high (&gt; 40)</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -7779,6 +8000,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000182">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000459"/>
         <rdfs:label>obsolete pH Range very low (0 - 4)</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -7878,6 +8100,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000191">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000468"/>
         <rdfs:label>obsolete % NaCl Optimum high (&gt; 8)</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -7933,6 +8156,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000196">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000473"/>
         <rdfs:label>obsolete pH delta very low (&lt;= 1)</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -8043,6 +8267,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000206">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000483"/>
         <rdfs:label>obsolete Temperature C delta very low (1 - 5)</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -8087,6 +8312,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000210">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000487"/>
         <rdfs:label>obsolete Temperature C delta high (&gt;= 30)</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -8208,6 +8434,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000221">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000673"/>
         <rdfs:label>obsolete ellipsoidal</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -8703,6 +8930,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000266">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1007070"/>
         <rdfs:label>obsolete Pressure Tolerance Range</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -8769,6 +8997,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000272">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000666"/>
         <rdfs:label>obsolete Cell Shape</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -8780,6 +9009,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000273">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1007005"/>
         <rdfs:label>obsolete Cell Arrangement</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -8791,6 +9021,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/000274">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1007062"/>
         <rdfs:label>obsolete Colony Morphology</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -8813,6 +9044,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000002">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1003003"/>
         <rdfs:label>obsolete acidophile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -8890,6 +9122,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000009">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000801"/>
         <rdfs:label>obsolete aerobic respiration</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -8901,6 +9134,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000010">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000609"/>
         <rdfs:label>obsolete aerotolerant</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -8934,6 +9168,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000013">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1003002"/>
         <rdfs:label>obsolete alkaliphile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -8967,6 +9202,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000016">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000603"/>
         <rdfs:label>obsolete anaerobe</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -8978,6 +9214,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000017">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000802"/>
         <rdfs:label>obsolete anaerobic respiration</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -9066,6 +9303,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000025">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000632"/>
         <rdfs:label>obsolete autotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -9242,6 +9480,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000041">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1005021"/>
         <rdfs:label>obsolete capnophile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -9286,6 +9525,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000045">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000633"/>
         <rdfs:label>obsolete carboxydotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -9297,6 +9537,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000046">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1007005"/>
         <rdfs:label>obsolete cell arrangement</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -9330,6 +9571,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000049">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000666"/>
         <rdfs:label>obsolete cell shape</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -9477,6 +9719,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000061">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000636"/>
         <rdfs:label>obsolete chemoheterotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -9598,6 +9841,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000072">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1007062"/>
         <rdfs:label>obsolete colony morphology</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -9752,6 +9996,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000086">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1005038"/>
         <rdfs:label>obsolete denitrification</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -9873,6 +10118,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000097">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000672"/>
         <rdfs:label>obsolete dumbbell-shaped cell</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -9895,6 +10141,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000099">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000630"/>
         <rdfs:label>obsolete ecological process</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -10060,6 +10307,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000114">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000628"/>
         <rdfs:label>obsolete extreme halophile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -10093,6 +10341,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000117">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000605"/>
         <rdfs:label>obsolete facultative anaerobe</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -10126,6 +10375,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000120">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1002005"/>
         <rdfs:label>obsolete fermentation</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -10227,6 +10477,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000128">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000127"/>
         <rdfs:label>obsolete high GC content</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -10238,6 +10489,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000129">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000127"/>
         <rdfs:label>obsolete low GC content</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -10392,6 +10644,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000143">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000699"/>
         <rdfs:label>obsolete Gram-negative</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -10403,6 +10656,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000144">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000698"/>
         <rdfs:label>obsolete Gram-positive</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -10414,6 +10668,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000145">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000697"/>
         <rdfs:label>obsolete Gram stain</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -10480,6 +10735,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000151">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000620"/>
         <rdfs:label>obsolete halophile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -10491,6 +10747,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000152">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000622"/>
         <rdfs:label>obsolete halotolerant</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -10524,6 +10781,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000155">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1005025"/>
         <rdfs:label>obsolete hemolysis</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -10546,6 +10804,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000157">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000644"/>
         <rdfs:label>obsolete heterotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -10590,6 +10849,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000161">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000617"/>
         <rdfs:label>obsolete hyperthermophile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -10810,6 +11070,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000181">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000615"/>
         <rdfs:label>obsolete mesophile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -10843,6 +11104,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000184">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000844"/>
         <rdfs:label>obsolete methanogenesis</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -10912,6 +11174,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000190">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000604"/>
         <rdfs:label>obsolete microaerophile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -10934,6 +11197,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000192">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000623"/>
         <rdfs:label>obsolete moderate halophile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -11011,6 +11275,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000199">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1003001"/>
         <rdfs:label>obsolete neutrophile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -11022,6 +11287,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000200">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1005001"/>
         <rdfs:label>obsolete nitrification</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -11033,6 +11299,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000201">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1005039"/>
         <rdfs:label>obsolete nitrogen fixation</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -11088,6 +11355,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000206">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000606"/>
         <rdfs:label>obsolete obligate aerobe</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -11099,6 +11367,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000207">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000607"/>
         <rdfs:label>obsolete obligate anaerobe</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -11439,6 +11708,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000238">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000656"/>
         <rdfs:label>obsolete photoautotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -11450,6 +11720,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000239">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000657"/>
         <rdfs:label>obsolete photoheterotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -11494,6 +11765,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000243">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000630"/>
         <rdfs:label>obsolete physiological process</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -11549,6 +11821,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000248">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1003021"/>
         <rdfs:label>obsolete pigmentation</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -11670,6 +11943,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000259">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000614"/>
         <rdfs:label>obsolete psychrophile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -11758,6 +12032,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000267">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000800"/>
         <rdfs:label>obsolete respiration</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -11967,6 +12242,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000286">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000870"/>
         <rdfs:label>obsolete sporulation</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -12110,6 +12386,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000299">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1002006"/>
         <rdfs:label>obsolete syntrophy</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -12182,6 +12459,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000305">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000613"/>
         <rdfs:label>obsolete temperature preference</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -12214,6 +12492,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000308">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/OMO_0001000"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000616"/>
         <rdfs:label>obsolete thermophile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -12528,6 +12807,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000336">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000226"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000618"/>
         <rdfs:label>obsolete psychrotolerant</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -12539,6 +12819,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000337">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000226"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000619"/>
         <rdfs:label>obsolete thermotolerant</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -12550,6 +12831,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000338">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000226"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000721"/>
         <rdfs:label>obsolete extreme thermophile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -12561,6 +12843,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000339">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000226"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000721"/>
         <rdfs:label>obsolete extreme hyperthermophile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -12572,6 +12855,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000340">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000226"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000624"/>
         <rdfs:label>obsolete non-halophile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -12583,6 +12867,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000341">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000226"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000625"/>
         <rdfs:label>obsolete slight halophile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -12594,6 +12879,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000342">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000226"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000621"/>
         <rdfs:label>obsolete haloalkaliphile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -12649,6 +12935,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000347">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000226"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1003007"/>
         <rdfs:label>obsolete facultative acidophile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -12660,6 +12947,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000348">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000226"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1003006"/>
         <rdfs:label>obsolete obligative acidophile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -12671,6 +12959,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000349">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000226"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000608"/>
         <rdfs:label>obsolete facultative aerobe</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -12682,6 +12971,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000350">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000226"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000604"/>
         <rdfs:label>obsolete microaerophile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -12693,6 +12983,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000351">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000226"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000610"/>
         <rdfs:label>obsolete microaerotolerant</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -12715,6 +13006,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000353">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000226"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000606"/>
         <rdfs:label>obsolete obligate aerobe</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -12726,6 +13018,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000354">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000226"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000607"/>
         <rdfs:label>obsolete obligate anaerobe</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -12759,6 +13052,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000357">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000226"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000635"/>
         <rdfs:label>obsolete chemoautotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -12770,6 +13064,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000358">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000226"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000636"/>
         <rdfs:label>obsolete chemoheterotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -12781,6 +13076,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000359">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000226"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000649"/>
         <rdfs:label>obsolete lithotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -12792,6 +13088,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000360">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000226"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000655"/>
         <rdfs:label>obsolete organotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -12803,6 +13100,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000361">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000226"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000660"/>
         <rdfs:label>obsolete phototroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -12814,6 +13112,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000362">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000226"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000641"/>
         <rdfs:label>obsolete chemotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -12825,6 +13124,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000363">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000226"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000654"/>
         <rdfs:label>obsolete oligotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -12836,6 +13136,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000364">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000226"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000642"/>
         <rdfs:label>obsolete copiotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -12847,6 +13148,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000365">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000226"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000647"/>
         <rdfs:label>obsolete lithoautotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -12858,6 +13160,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000366">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000226"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000652"/>
         <rdfs:label>obsolete mixotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -12869,6 +13172,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000367">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000226"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000648"/>
         <rdfs:label>obsolete lithoheterotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -12880,6 +13184,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000368">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000226"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000640"/>
         <rdfs:label>obsolete chemoorganoheterotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -12891,6 +13196,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000369">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000226"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000637"/>
         <rdfs:label>obsolete chemolithoautotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -12902,6 +13208,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000370">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000226"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000651"/>
         <rdfs:label>obsolete methylotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -12913,6 +13220,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000371">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000226"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000650"/>
         <rdfs:label>obsolete methanotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -12924,6 +13232,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000372">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000226"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000646"/>
         <rdfs:label>obsolete hydrogenotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -13001,6 +13310,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000379">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000226"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000702"/>
         <rdfs:label>obsolete motile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -13012,6 +13322,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000380">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000226"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000703"/>
         <rdfs:label>obsolete non-motile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -13023,6 +13334,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000381">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000226"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000704"/>
         <rdfs:label>obsolete flagellated</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -13078,6 +13390,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000386">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000226"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000706"/>
         <rdfs:label>obsolete gliding</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -13507,6 +13820,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000425">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000226"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000636"/>
         <rdfs:label>obsolete piezo-chemoheterotroph</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -13707,6 +14021,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000433">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000226"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000887"/>
         <rdfs:label>obsolete cell width very low</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -13718,6 +14033,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000434">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000226"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000882"/>
         <rdfs:label>obsolete cell width low</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -13729,6 +14045,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000435">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000226"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000889"/>
         <rdfs:label>obsolete cell width mid</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -13740,6 +14057,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000436">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000226"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000882"/>
         <rdfs:label>obsolete cell width high</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -13751,6 +14069,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000437">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000226"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000883"/>
         <rdfs:label>obsolete cell length very low</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -13762,6 +14081,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000438">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000226"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000881"/>
         <rdfs:label>obsolete cell length low</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -13773,6 +14093,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000439">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000226"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000885"/>
         <rdfs:label>obsolete cell length mid</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -13784,6 +14105,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000440">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000226"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000881"/>
         <rdfs:label>obsolete cell length high</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -15837,6 +16159,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000494">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000226"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000673"/>
         <rdfs:label>obsolete ellipsoidal</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -16057,6 +16380,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000514">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000226"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1007070"/>
         <rdfs:label>obsolete pressure tolerance range</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -16234,6 +16558,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000529">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000226"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000720"/>
         <rdfs:label>obsolete facultative psychrophile</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -17748,6 +18073,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000653">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000226"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1005039"/>
         <rdfs:label>obsolete nitrogen-fixing</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -19398,6 +19724,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000809">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000226"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1005038"/>
         <rdfs:label>obsolete Denitrification</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -19997,6 +20324,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1000861">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000226"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1005001"/>
         <rdfs:label>obsolete Nitrification</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -21049,6 +21377,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1002007">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000226"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1000806"/>
         <rdfs:label>obsolete Sulfur disproportionation</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -21060,6 +21389,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1002008">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000226"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1005039"/>
         <rdfs:label>obsolete Nitrogen fixation</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -21412,6 +21742,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1002040">
         <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000226"/>
+        <obo:IAO_0100001 rdf:resource="https://w3id.org/metpo/1005039"/>
         <rdfs:label>obsolete Nitrogen-fixing</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -21802,7 +22133,7 @@
     <owl:Class rdf:about="https://w3id.org/metpo/1003030">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1003021"/>
         <oboInOwl:hasRelatedSynonym>Pigment_yellow</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>yellow pigment</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>cell color: yellow pigment</oboInOwl:hasRelatedSynonym>
         <rdfs:label>yellow pigmented</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -21814,7 +22145,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1003030"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>yellow pigment</owl:annotatedTarget>
+        <owl:annotatedTarget>cell color: yellow pigment</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="https://metatraits.embl.de/"/>
     </owl:Axiom>
     
