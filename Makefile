@@ -57,7 +57,6 @@ help:
 	@echo ""
 	@echo "Ontology Alignment Pipeline:"
 	@echo "  make help-alignment       - Show detailed alignment pipeline help"
-	@echo "  make alignment-run-all    - Run complete alignment pipeline"
 	@echo ""
 	@echo "External Ontology Downloads:"
 	@echo "  make download-external-bioportal-ontologies  - Download non-OLS ontologies"
@@ -96,7 +95,7 @@ install-literature:
 install-databases:
 	uv sync --extra databases
 
-# Notebooks environment (adds: jupyter, notebook, matplotlib, numpy, chromadb, etc.)
+# Notebooks environment (adds: jupyter, notebook, matplotlib, numpy, etc.)
 install-notebooks:
 	uv sync --extra notebooks
 
@@ -354,33 +353,14 @@ audit-ids: reports/id-allocation-audit.md
 # These reports analyze definition coverage and quality in METPO.
 # Most require the SSSOM mappings file from the alignment pipeline.
 
-reports/definition_improvement_opportunities.tsv: src/templates/metpo_sheet.tsv notebooks/metpo_relevant_mappings.sssom.tsv
-	uv run analyze-definition-opportunities \
-		--template $< \
-		--mappings $(word 2,$^) \
-		--output $@
-
 reports/definition_coverage_by_parent.tsv: src/templates/metpo_sheet.tsv
 	uv run analyze-definition-coverage-by-subtree \
 		--metpo-tsv $< \
 		--output $@ \
 		--sort-by stragglers
 
-# Note: find-best-definitions requires chromadb optional dependency
-# Install with: uv sync --extra notebooks
-reports/best_definitions_per_term.tsv: src/templates/metpo_sheet.tsv
-	uv run find-best-definitions \
-		--metpo-tsv $< \
-		--output $@
-
-reports/definition_comparison_with_hierarchy.tsv: reports/best_definitions_per_term.tsv src/templates/metpo_sheet.tsv
-	uv run compare-definitions-with-hierarchy \
-		--best-definitions $< \
-		--metpo-terms $(word 2,$^) \
-		--output $@
-
 .PHONY: definition-reports
-definition-reports: reports/definition_improvement_opportunities.tsv reports/definition_coverage_by_parent.tsv
+definition-reports: reports/definition_coverage_by_parent.tsv
 	@echo "Definition analysis reports generated"
 
 .PHONY: clean-definition-reports
@@ -689,173 +669,6 @@ list-bioportal-releases:
 	@echo "To download specific release: make downloads/bioportal/metpo-2025-09-23.owl"
 	@echo ""
 	@echo "Note: Set BIOPORTAL_API_KEY environment variable for authenticated downloads"
-
-# ==============================================================================
-# Ontology Alignment Pipeline - Granular Targets
-# ==============================================================================
-
-.PHONY: alignment-fetch-ontology-names alignment-categorize-ontologies \
-        alignment-query-metpo-terms alignment-analyze-matches \
-        alignment-analyze-coherence alignment-identify-candidates \
-        alignment-run-all clean-alignment-results clean-alignment-all help-alignment
-
-# Individual pipeline steps
-alignment-fetch-ontology-names: notebooks/ontology_catalog.csv
-
-notebooks/ontology_catalog.csv: data/ontology_assessments/ontology_sizes.csv
-	@echo "Fetching ontology metadata from OLS4 API..."
-	uv run python metpo/pipeline/fetch_ontology_names.py \
-		--sizes-csv data/ontology_assessments/ontology_sizes.csv \
-		--output-csv notebooks/ontology_catalog.csv
-
-alignment-categorize-ontologies: notebooks/ontologies_very_appealing.csv
-
-notebooks/ontologies_very_appealing.csv: notebooks/ontology_catalog.csv
-	@echo "Categorizing ontologies by relevance..."
-	uv run python metpo/pipeline/categorize_ontologies.py \
-		--input-csv notebooks/ontology_catalog.csv \
-		--output-prefix notebooks/ontologies
-
-alignment-query-metpo-terms: notebooks/metpo_relevant_mappings.sssom.tsv
-
-notebooks/metpo_relevant_mappings.sssom.tsv: notebooks/metpo_relevant_chroma
-	@echo "Generating SSSOM mappings from METPO terms via ChromaDB..."
-	@if [ -z "$$OPENAI_API_KEY" ]; then \
-		echo "ERROR: OPENAI_API_KEY environment variable not set"; \
-		exit 1; \
-	fi
-	uv run python metpo/pipeline/chromadb_semantic_mapper.py \
-		--metpo-tsv src/templates/metpo_sheet.tsv \
-		--chroma-path notebooks/metpo_relevant_chroma \
-		--collection-name metpo_relevant_embeddings \
-		--output notebooks/metpo_relevant_mappings.sssom.tsv \
-		--top-n 10 \
-		--label-only \
-		--distance-cutoff 0.35
-
-alignment-analyze-matches: notebooks/metpo_relevant_mappings.sssom.tsv
-	@echo "Analyzing match quality..."
-	uv run python metpo/pipeline/analyze_matches.py \
-		--input-csv notebooks/metpo_relevant_mappings.sssom.tsv \
-		--good-match-threshold 0.9
-
-alignment-analyze-coherence: notebooks/full_coherence_results.csv
-
-notebooks/full_coherence_results.csv: notebooks/metpo_relevant_mappings.sssom.tsv
-	@echo "Computing structural coherence (this may take a while)..."
-	uv run python metpo/pipeline/analyze_sibling_coherence.py \
-		--input-csv notebooks/metpo_relevant_mappings.sssom.tsv \
-		--metpo-owl src/ontology/metpo.owl \
-		--output-csv notebooks/full_coherence_results.csv
-
-alignment-identify-candidates: notebooks/alignment_candidates.csv
-
-notebooks/alignment_candidates.csv: notebooks/full_coherence_results.csv
-	@echo "Identifying alignment candidates..."
-	uv run python metpo/pipeline/analyze_coherence_results.py \
-		--results-csv notebooks/full_coherence_results.csv \
-		--matches-csv notebooks/metpo_relevant_mappings.sssom.tsv
-
-# Run complete pipeline
-alignment-run-all: alignment-identify-candidates
-	@echo ""
-	@echo "========================================="
-	@echo "Alignment pipeline complete!"
-	@echo "========================================="
-	@echo "Output files:"
-	@echo "  - notebooks/metpo_relevant_mappings.sssom.tsv"
-	@echo "  - notebooks/full_coherence_results.csv"
-	@echo "  - notebooks/alignment_candidates.csv"
-
-# Clean alignment results
-clean-alignment-results:
-	@echo "Cleaning alignment pipeline results..."
-	rm -f notebooks/metpo_*_matches.csv
-	rm -f notebooks/*_coherence_results.csv
-	rm -f notebooks/alignment_candidates.csv
-	@echo "Alignment results cleaned (ontology catalog preserved)"
-
-# Clean everything including ontology catalog
-
-# =====================================================
-# Non-OLS Embedding Targets
-# =====================================================
-
-NON_OLS_TSV_FILES = $(foreach ont,$(NON_OLS_BIOPORTAL_ONTOLOGIES),data/pipeline/non-ols-terms/$(ont).tsv)
-
-.PHONY: embed-non-ols-terms clean-non-ols-terms scan-manifest view-manifest view-logs
-
-.PHONY: generate-non-ols-tsvs
-generate-non-ols-tsvs: $(NON_OLS_TSV_FILES)
-	@echo ""
-	@echo "=========================================="
-	@echo "Query phase complete"
-	@echo "=========================================="
-	@echo "Run 'make scan-manifest' to update tracking"
-	@echo "Run 'make view-logs' to see any failures"
-
-# Manifest and logging targets
-scan-manifest:
-	@echo "Scanning directories and updating manifest..."
-	uv run scan-manifest --verbose
-
-view-manifest:
-	@if [ -f .ontology_manifest.json ]; then \
-		cat .ontology_manifest.json | python -m json.tool; \
-	else \
-		echo "No manifest found. Run 'make scan-manifest' first."; \
-	fi
-
-view-logs:
-	@echo "=== Recent Fetch Failures ==="
-	@if [ -f .ontology_fetch.log ]; then tail -20 .ontology_fetch.log; else echo "No fetch failures logged"; fi
-	@echo ""
-	@echo "=== Recent Query Failures ==="
-	@if [ -f .robot_query.log ]; then grep -E "QUERY_FAILED|QUERY_EMPTY" .robot_query.log | tail -20 || echo "No query failures logged"; else echo "No query log found"; fi
-
-embed-non-ols-terms:
-	@echo "Embedding non-OLS terms into ChromaDB..."
-	uv run python metpo/pipeline/embed_ontology_to_chromadb.py \
-		$(foreach tsv,$(wildcard data/pipeline/non-ols-terms/*.tsv),--tsv-file $(tsv)) \
-		--chroma-path ./embeddings_chroma \
-		--collection-name non_ols_embeddings
-	@echo "Non-OLS terms embedded successfully."
-
-clean-non-ols-terms:
-	@echo "Cleaning generated non-OLS TSV files..."
-	rm -f $(NON_OLS_TSV_FILES)
-	@echo "Cleaned non-OLS TSV files"
-
-clean-alignment-all: clean-alignment-results
-	@echo "Cleaning all alignment files including ontology catalog..."
-	rm -f notebooks/ontology_catalog.csv
-	rm -f notebooks/ontologies_*.csv
-	@echo "All alignment files cleaned"
-
-# Help target
-help-alignment:
-	@echo "METPO Ontology Alignment Pipeline Targets:"
-	@echo ""
-	@echo "  Preparation:"
-	@echo "    make alignment-fetch-ontology-names  - Fetch ontology metadata from OLS4"
-	@echo "    make alignment-categorize-ontologies - Categorize by relevance"
-	@echo ""
-	@echo "  Analysis:"
-	@echo "    make alignment-query-metpo-terms     - Query METPO against ChromaDB"
-	@echo "    make alignment-analyze-matches       - Analyze match quality"
-	@echo "    make alignment-analyze-coherence     - Compute structural coherence"
-	@echo "    make alignment-identify-candidates   - Find high-quality candidates"
-	@echo ""
-	@echo "  Complete workflow:"
-	@echo "    make alignment-run-all               - Run entire pipeline"
-	@echo ""
-	@echo "  Cleanup:"
-	@echo "    make clean-alignment-results         - Clean results only"
-	@echo "    make clean-alignment-all             - Clean all including catalog"
-	@echo ""
-	@echo "  Prerequisites:"
-	@echo "    - Set OPENAI_API_KEY environment variable"
-	@echo "    - Ensure ChromaDB collection exists at notebooks/metpo_relevant_chroma"
 
 # ==============================================================================
 # Sub-Makefile Integration

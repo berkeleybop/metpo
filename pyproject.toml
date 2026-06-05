@@ -82,7 +82,6 @@ notebooks = [
     "matplotlib>=3.10.7",
     "numpy>=2.0.2",
     "python-levenshtein>=0.27.1",
-    "chromadb>=1.2.2",
     "tqdm>=4.67.1",
     "openai>=2.6.1",
 ]
@@ -111,17 +110,9 @@ query-ontology = "metpo.bactotraits.query_ontology:main"
 # Pipeline
 categorize-ontologies = "metpo.pipeline.categorize_ontologies:main"
 analyze-matches = "metpo.pipeline.analyze_matches:main"
-embed-ontology-to-chromadb = "metpo.pipeline.embed_ontology_to_chromadb:main"
 fetch-ontology-names = "metpo.pipeline.fetch_ontology_names:main"
-chromadb-semantic-mapper = "metpo.pipeline.chromadb_semantic_mapper:main"
 analyze-sibling-coherence = "metpo.pipeline.analyze_sibling_coherence:main"
 analyze-coherence-results = "metpo.pipeline.analyze_coherence_results:main"
-
-# Database
-migrate-to-chromadb = "metpo.database.migrate_to_chromadb_resilient:main"
-audit-chromadb = "metpo.database.audit_chromadb:main"
-combine-chromadb = "metpo.database.combine_chromadb:main"
-filter-ols-chromadb = "metpo.database.filter_ols_chromadb:main"
 
 # Analysis
 analyze-ontology-value = "metpo.analysis.analyze_ontology_value:main"
@@ -129,11 +120,9 @@ analyze-match-quality = "metpo.analysis.analyze_match_quality:main"
 analyze-definition-opportunities = "metpo.scripts.analyze_definition_opportunities:main"
 bootstrap-definition-enrichment = "metpo.scripts.bootstrap_definition_enrichment:main"
 plot-embedding-similarity = "metpo.scripts.plot_embedding_similarity:main"
-find-best-definitions = "metpo.scripts.find_best_definitions:main"
 find-best-definitions-comprehensive = "metpo.scripts.find_best_definitions_comprehensive:main"
 compare-definitions-with-hierarchy = "metpo.scripts.compare_definitions_with_hierarchy:main"
 analyze-definition-coverage-by-subtree = "metpo.scripts.analyze_definition_coverage_by_subtree:main"
-iterative-definition-improvement = "metpo.scripts.iterative_definition_improvement:main"
 
 # Quality Control
 audit-id-allocation = "metpo.scripts.audit_id_allocation:main"
