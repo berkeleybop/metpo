@@ -24,6 +24,7 @@ jobs:
         run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
 
       - name: Rebuild release artifacts from source and compare with the committed copies
+        shell: bash
         run: |
           set -euo pipefail
           # Rebuild with the SAME version date the committed artifacts carry, so the
