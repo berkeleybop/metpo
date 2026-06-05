@@ -155,6 +155,15 @@ cd src/ontology
 sh run.sh make reason_test sparql_test
 ```
 
+> **QC SPARQL checks must be provable.** The `sparql_test` violation queries in
+> `src/sparql/*-violation.sparql` filter on the METPO namespace; a wrong filter
+> once matched nothing and reported "0 violations" while CI stayed green (#487).
+> Every `*-violation.sparql` therefore needs a seeded case in
+> `src/sparql/tests/qc-positive-fixture.ttl`; the meta-test
+> (`.github/workflows/sparql-metatest.yml`) fails if any query matches zero rows.
+> When you add or edit a check, add/adjust its fixture case in the same PR. See
+> `src/sparql/tests/README.md`.
+
 **Maintenance:**
 ```bash
 cd src/ontology
