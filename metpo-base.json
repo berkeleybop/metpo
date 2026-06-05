@@ -7,22 +7,19 @@
         "val" : "http://purl.obolibrary.org/obo/IAO_8000001"
       }, {
         "pred" : "http://purl.org/dc/terms/contributor",
-        "val" : "https://orcid.org/0000-0001-9076-6066"
+        "val" : "https://orcid.org/0000-0001-8175-045X"
+      }, {
+        "pred" : "http://purl.org/dc/terms/contributor",
+        "val" : "https://orcid.org/0000-0002-6601-2165"
       }, {
         "pred" : "http://purl.org/dc/terms/creator",
-        "val" : "METPO Development Team"
+        "val" : "https://orcid.org/0000-0001-9076-6066"
       }, {
         "pred" : "http://purl.org/dc/terms/description",
-        "val" : "METPO provides standardized terms for the phenotypic traits, growth conditions, metabolic capabilities, and morphology of bacteria and archaea. It integrates heterogeneous microbial trait resources (BactoTraits, BacDive, Madin et al.) and supports knowledge-graph and literature-mining workflows in projects such as KG-Microbe. METPO follows OBO Foundry conventions and reuses terms from PATO, GO, CHEBI, NCBITaxon, and related ontologies where possible."
-      }, {
-        "pred" : "http://purl.org/dc/terms/issued",
-        "val" : "2024-01-01"
+        "val" : "METPO provides terms for microbial ecophysiological traits and phenotypes: growth preferences (temperature, pH, salinity, oxygen), metabolism, and cell morphology of bacteria and archaea. Its primary purpose is to harmonize terminology across major microbial trait databases (BacDive, BactoTraits, Madin bacteria_archaea_traits, MetaTraits) for use in NMDC and KG-Microbe. METPO uses OBO-style annotation patterns (IAO textual definitions, oboInOwl synonyms) and cites terms from OMP, MicrO, GO, ECOCORE, and PATO as definition sources."
       }, {
         "pred" : "http://purl.org/dc/terms/license",
         "val" : "https://creativecommons.org/licenses/by/4.0/"
-      }, {
-        "pred" : "http://purl.org/dc/terms/modified",
-        "val" : "2026-05-18"
       }, {
         "pred" : "http://purl.org/dc/terms/title",
         "val" : "METPO: Microbial Ecophysiological Trait and Phenotype Ontology"
@@ -37,9 +34,9 @@
         "val" : "https://github.com/berkeleybop/metpo"
       }, {
         "pred" : "http://www.w3.org/2002/07/owl#versionInfo",
-        "val" : "2026-06-03"
+        "val" : "2026-06-05"
       } ],
-      "version" : "https://w3id.org/metpo/releases/2026-06-03/metpo-base.json"
+      "version" : "https://w3id.org/metpo/releases/2026-06-05/metpo-base.json"
     },
     "nodes" : [ {
       "id" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteClass",
@@ -96,6 +93,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000631"
         } ],
         "deprecated" : true
       }
@@ -107,6 +107,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000701"
         } ],
         "deprecated" : true
       }
@@ -118,6 +121,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000870"
         } ],
         "deprecated" : true
       }
@@ -140,6 +146,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000127"
         } ],
         "deprecated" : true
       }
@@ -162,6 +171,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000882"
         } ],
         "deprecated" : true
       }
@@ -173,6 +185,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000881"
         } ],
         "deprecated" : true
       }
@@ -184,6 +199,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000304"
         } ],
         "deprecated" : true
       }
@@ -195,6 +213,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000306"
         } ],
         "deprecated" : true
       }
@@ -206,6 +227,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000331"
         } ],
         "deprecated" : true
       }
@@ -217,6 +241,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000332"
         } ],
         "deprecated" : true
       }
@@ -228,6 +255,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000333"
         } ],
         "deprecated" : true
       }
@@ -239,6 +269,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000334"
         } ],
         "deprecated" : true
       }
@@ -250,6 +283,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000232"
         } ],
         "deprecated" : true
       }
@@ -261,6 +297,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000335"
         } ],
         "deprecated" : true
       }
@@ -283,6 +322,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000303"
         } ],
         "deprecated" : true
       }
@@ -305,6 +347,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000614"
         } ],
         "deprecated" : true
       }
@@ -316,6 +361,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000618"
         } ],
         "deprecated" : true
       }
@@ -338,6 +386,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000619"
         } ],
         "deprecated" : true
       }
@@ -349,6 +400,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000616"
         } ],
         "deprecated" : true
       }
@@ -360,6 +414,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000721"
         } ],
         "deprecated" : true
       }
@@ -371,6 +428,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000617"
         } ],
         "deprecated" : true
       }
@@ -382,6 +442,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000721"
         } ],
         "deprecated" : true
       }
@@ -404,6 +467,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000620"
         } ],
         "deprecated" : true
       }
@@ -415,6 +481,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000624"
         } ],
         "deprecated" : true
       }
@@ -426,6 +495,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000625"
         } ],
         "deprecated" : true
       }
@@ -437,6 +509,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000623"
         } ],
         "deprecated" : true
       }
@@ -448,6 +523,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000628"
         } ],
         "deprecated" : true
       }
@@ -459,6 +537,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000622"
         } ],
         "deprecated" : true
       }
@@ -470,6 +551,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000621"
         } ],
         "deprecated" : true
       }
@@ -492,6 +576,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1003003"
         } ],
         "deprecated" : true
       }
@@ -503,6 +590,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1003001"
         } ],
         "deprecated" : true
       }
@@ -525,6 +615,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1003002"
         } ],
         "deprecated" : true
       }
@@ -569,6 +662,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1003007"
         } ],
         "deprecated" : true
       }
@@ -580,6 +676,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1003006"
         } ],
         "deprecated" : true
       }
@@ -602,6 +701,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000603"
         } ],
         "deprecated" : true
       }
@@ -613,6 +715,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000605"
         } ],
         "deprecated" : true
       }
@@ -624,6 +729,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000608"
         } ],
         "deprecated" : true
       }
@@ -635,6 +743,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000631"
         } ],
         "deprecated" : true
       }
@@ -646,6 +757,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000604"
         } ],
         "deprecated" : true
       }
@@ -657,6 +771,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000609"
         } ],
         "deprecated" : true
       }
@@ -668,6 +785,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000610"
         } ],
         "deprecated" : true
       }
@@ -690,6 +810,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000606"
         } ],
         "deprecated" : true
       }
@@ -701,6 +824,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000607"
         } ],
         "deprecated" : true
       }
@@ -734,6 +860,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000632"
         } ],
         "deprecated" : true
       }
@@ -745,6 +874,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000656"
         } ],
         "deprecated" : true
       }
@@ -756,6 +888,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000701"
         } ],
         "deprecated" : true
       }
@@ -767,6 +902,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000635"
         } ],
         "deprecated" : true
       }
@@ -778,6 +916,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000644"
         } ],
         "deprecated" : true
       }
@@ -789,6 +930,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000657"
         } ],
         "deprecated" : true
       }
@@ -800,6 +944,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000636"
         } ],
         "deprecated" : true
       }
@@ -811,6 +958,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000649"
         } ],
         "deprecated" : true
       }
@@ -822,6 +972,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000655"
         } ],
         "deprecated" : true
       }
@@ -833,6 +986,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000660"
         } ],
         "deprecated" : true
       }
@@ -844,6 +1000,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000641"
         } ],
         "deprecated" : true
       }
@@ -855,6 +1014,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000654"
         } ],
         "deprecated" : true
       }
@@ -866,6 +1028,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000642"
         } ],
         "deprecated" : true
       }
@@ -877,6 +1042,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000870"
         } ],
         "deprecated" : true
       }
@@ -888,6 +1056,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000647"
         } ],
         "deprecated" : true
       }
@@ -899,6 +1070,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000652"
         } ],
         "deprecated" : true
       }
@@ -910,6 +1084,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000648"
         } ],
         "deprecated" : true
       }
@@ -921,6 +1098,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000640"
         } ],
         "deprecated" : true
       }
@@ -932,6 +1112,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000637"
         } ],
         "deprecated" : true
       }
@@ -943,6 +1126,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000651"
         } ],
         "deprecated" : true
       }
@@ -954,6 +1140,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000650"
         } ],
         "deprecated" : true
       }
@@ -965,6 +1154,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000633"
         } ],
         "deprecated" : true
       }
@@ -976,6 +1168,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000646"
         } ],
         "deprecated" : true
       }
@@ -1075,6 +1270,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1005021"
         } ],
         "deprecated" : true
       }
@@ -1086,6 +1284,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000702"
         } ],
         "deprecated" : true
       }
@@ -1097,6 +1298,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000703"
         } ],
         "deprecated" : true
       }
@@ -1108,6 +1312,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000704"
         } ],
         "deprecated" : true
       }
@@ -1119,6 +1326,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000127"
         } ],
         "deprecated" : true
       }
@@ -1174,6 +1384,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000706"
         } ],
         "deprecated" : true
       }
@@ -1240,6 +1453,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000882"
         } ],
         "deprecated" : true
       }
@@ -1361,6 +1577,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000881"
         } ],
         "deprecated" : true
       }
@@ -1482,6 +1701,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000304"
         } ],
         "deprecated" : true
       }
@@ -1603,6 +1825,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000306"
         } ],
         "deprecated" : true
       }
@@ -1724,6 +1949,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000331"
         } ],
         "deprecated" : true
       }
@@ -1812,6 +2040,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000636"
         } ],
         "deprecated" : true
       }
@@ -1845,6 +2076,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000332"
         } ],
         "deprecated" : true
       }
@@ -1867,6 +2101,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000429"
         } ],
         "deprecated" : true
       }
@@ -1878,6 +2115,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000430"
         } ],
         "deprecated" : true
       }
@@ -1889,6 +2129,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000431"
         } ],
         "deprecated" : true
       }
@@ -1900,6 +2143,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000432"
         } ],
         "deprecated" : true
       }
@@ -1911,6 +2157,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000887"
         } ],
         "deprecated" : true
       }
@@ -1922,6 +2171,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000882"
         } ],
         "deprecated" : true
       }
@@ -1933,6 +2185,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000889"
         } ],
         "deprecated" : true
       }
@@ -1944,6 +2199,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000882"
         } ],
         "deprecated" : true
       }
@@ -1955,6 +2213,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000883"
         } ],
         "deprecated" : true
       }
@@ -1966,6 +2227,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000333"
         } ],
         "deprecated" : true
       }
@@ -1977,6 +2241,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000881"
         } ],
         "deprecated" : true
       }
@@ -1988,6 +2255,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000885"
         } ],
         "deprecated" : true
       }
@@ -1999,6 +2269,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000881"
         } ],
         "deprecated" : true
       }
@@ -2010,6 +2283,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000441"
         } ],
         "deprecated" : true
       }
@@ -2021,6 +2297,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000442"
         } ],
         "deprecated" : true
       }
@@ -2032,6 +2311,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000443"
         } ],
         "deprecated" : true
       }
@@ -2043,6 +2325,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000444"
         } ],
         "deprecated" : true
       }
@@ -2054,6 +2339,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000445"
         } ],
         "deprecated" : true
       }
@@ -2065,6 +2353,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000446"
         } ],
         "deprecated" : true
       }
@@ -2076,6 +2367,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000447"
         } ],
         "deprecated" : true
       }
@@ -2087,6 +2381,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000334"
         } ],
         "deprecated" : true
       }
@@ -2098,6 +2395,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000448"
         } ],
         "deprecated" : true
       }
@@ -2109,6 +2409,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000449"
         } ],
         "deprecated" : true
       }
@@ -2120,6 +2423,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000450"
         } ],
         "deprecated" : true
       }
@@ -2131,6 +2437,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000451"
         } ],
         "deprecated" : true
       }
@@ -2142,6 +2451,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000452"
         } ],
         "deprecated" : true
       }
@@ -2153,6 +2465,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000453"
         } ],
         "deprecated" : true
       }
@@ -2164,6 +2479,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000454"
         } ],
         "deprecated" : true
       }
@@ -2175,6 +2493,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000455"
         } ],
         "deprecated" : true
       }
@@ -2186,6 +2507,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000456"
         } ],
         "deprecated" : true
       }
@@ -2197,6 +2521,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000457"
         } ],
         "deprecated" : true
       }
@@ -2208,6 +2535,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000232"
         } ],
         "deprecated" : true
       }
@@ -2219,6 +2549,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000458"
         } ],
         "deprecated" : true
       }
@@ -2230,6 +2563,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000459"
         } ],
         "deprecated" : true
       }
@@ -2241,6 +2577,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000460"
         } ],
         "deprecated" : true
       }
@@ -2252,6 +2591,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000461"
         } ],
         "deprecated" : true
       }
@@ -2263,6 +2605,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000462"
         } ],
         "deprecated" : true
       }
@@ -2274,6 +2619,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000463"
         } ],
         "deprecated" : true
       }
@@ -2285,6 +2633,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000464"
         } ],
         "deprecated" : true
       }
@@ -2296,6 +2647,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000465"
         } ],
         "deprecated" : true
       }
@@ -2307,6 +2661,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000466"
         } ],
         "deprecated" : true
       }
@@ -2318,6 +2675,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000467"
         } ],
         "deprecated" : true
       }
@@ -2329,6 +2689,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000335"
         } ],
         "deprecated" : true
       }
@@ -2340,6 +2703,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000468"
         } ],
         "deprecated" : true
       }
@@ -2351,6 +2717,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000469"
         } ],
         "deprecated" : true
       }
@@ -2362,6 +2731,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000470"
         } ],
         "deprecated" : true
       }
@@ -2373,6 +2745,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000471"
         } ],
         "deprecated" : true
       }
@@ -2384,6 +2759,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000472"
         } ],
         "deprecated" : true
       }
@@ -2395,6 +2773,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000473"
         } ],
         "deprecated" : true
       }
@@ -2406,6 +2787,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000474"
         } ],
         "deprecated" : true
       }
@@ -2417,6 +2801,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000475"
         } ],
         "deprecated" : true
       }
@@ -2428,6 +2815,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000476"
         } ],
         "deprecated" : true
       }
@@ -2439,6 +2829,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000477"
         } ],
         "deprecated" : true
       }
@@ -2450,6 +2843,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000303"
         } ],
         "deprecated" : true
       }
@@ -2461,6 +2857,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000478"
         } ],
         "deprecated" : true
       }
@@ -2472,6 +2871,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000479"
         } ],
         "deprecated" : true
       }
@@ -2483,6 +2885,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000481"
         } ],
         "deprecated" : true
       }
@@ -2494,6 +2899,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000481"
         } ],
         "deprecated" : true
       }
@@ -2505,6 +2913,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000482"
         } ],
         "deprecated" : true
       }
@@ -2516,6 +2927,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000483"
         } ],
         "deprecated" : true
       }
@@ -2527,6 +2941,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000484"
         } ],
         "deprecated" : true
       }
@@ -2538,6 +2955,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000485"
         } ],
         "deprecated" : true
       }
@@ -2549,6 +2969,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000486"
         } ],
         "deprecated" : true
       }
@@ -2560,6 +2983,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000487"
         } ],
         "deprecated" : true
       }
@@ -2703,6 +3129,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000673"
         } ],
         "deprecated" : true
       }
@@ -2813,6 +3242,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000614"
         } ],
         "deprecated" : true
       }
@@ -2934,6 +3366,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000618"
         } ],
         "deprecated" : true
       }
@@ -3176,6 +3611,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000619"
         } ],
         "deprecated" : true
       }
@@ -3242,6 +3680,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1007070"
         } ],
         "deprecated" : true
       }
@@ -3297,6 +3738,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000616"
         } ],
         "deprecated" : true
       }
@@ -3319,6 +3763,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000666"
         } ],
         "deprecated" : true
       }
@@ -3330,6 +3777,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1007005"
         } ],
         "deprecated" : true
       }
@@ -3341,6 +3791,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1007062"
         } ],
         "deprecated" : true
       }
@@ -3374,6 +3827,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000630"
         } ],
         "deprecated" : true
       }
@@ -3407,6 +3863,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000630"
         } ],
         "deprecated" : true
       }
@@ -3418,6 +3877,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000721"
         } ],
         "deprecated" : true
       }
@@ -3440,6 +3902,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000699"
         } ],
         "deprecated" : true
       }
@@ -3451,6 +3916,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000698"
         } ],
         "deprecated" : true
       }
@@ -3462,6 +3930,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000617"
         } ],
         "deprecated" : true
       }
@@ -3473,6 +3944,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000721"
         } ],
         "deprecated" : true
       }
@@ -3484,6 +3958,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000620"
         } ],
         "deprecated" : true
       }
@@ -3495,6 +3972,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000624"
         } ],
         "deprecated" : true
       }
@@ -3506,6 +3986,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000625"
         } ],
         "deprecated" : true
       }
@@ -3517,6 +4000,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000623"
         } ],
         "deprecated" : true
       }
@@ -3528,6 +4014,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000628"
         } ],
         "deprecated" : true
       }
@@ -3539,6 +4028,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000622"
         } ],
         "deprecated" : true
       }
@@ -3550,6 +4042,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000621"
         } ],
         "deprecated" : true
       }
@@ -3572,6 +4067,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1003003"
         } ],
         "deprecated" : true
       }
@@ -3583,6 +4081,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1003001"
         } ],
         "deprecated" : true
       }
@@ -3594,6 +4095,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1003002"
         } ],
         "deprecated" : true
       }
@@ -3638,6 +4142,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1003007"
         } ],
         "deprecated" : true
       }
@@ -3649,6 +4156,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1003006"
         } ],
         "deprecated" : true
       }
@@ -3671,6 +4181,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000603"
         } ],
         "deprecated" : true
       }
@@ -3682,6 +4195,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000605"
         } ],
         "deprecated" : true
       }
@@ -3693,6 +4209,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000608"
         } ],
         "deprecated" : true
       }
@@ -3704,6 +4223,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000604"
         } ],
         "deprecated" : true
       }
@@ -3715,6 +4237,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000609"
         } ],
         "deprecated" : true
       }
@@ -3726,6 +4251,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000610"
         } ],
         "deprecated" : true
       }
@@ -3748,6 +4276,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000606"
         } ],
         "deprecated" : true
       }
@@ -3759,6 +4290,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000607"
         } ],
         "deprecated" : true
       }
@@ -3792,6 +4326,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000632"
         } ],
         "deprecated" : true
       }
@@ -3803,6 +4340,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000656"
         } ],
         "deprecated" : true
       }
@@ -3814,6 +4354,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000635"
         } ],
         "deprecated" : true
       }
@@ -3825,6 +4368,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000644"
         } ],
         "deprecated" : true
       }
@@ -3836,6 +4382,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000657"
         } ],
         "deprecated" : true
       }
@@ -3847,6 +4396,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000636"
         } ],
         "deprecated" : true
       }
@@ -3858,6 +4410,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000649"
         } ],
         "deprecated" : true
       }
@@ -3869,6 +4424,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000655"
         } ],
         "deprecated" : true
       }
@@ -3880,6 +4438,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000660"
         } ],
         "deprecated" : true
       }
@@ -3891,6 +4452,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000641"
         } ],
         "deprecated" : true
       }
@@ -3902,6 +4466,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000654"
         } ],
         "deprecated" : true
       }
@@ -3913,6 +4480,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000642"
         } ],
         "deprecated" : true
       }
@@ -3924,6 +4494,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000647"
         } ],
         "deprecated" : true
       }
@@ -3935,6 +4508,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000652"
         } ],
         "deprecated" : true
       }
@@ -3946,6 +4522,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000648"
         } ],
         "deprecated" : true
       }
@@ -3957,6 +4536,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000640"
         } ],
         "deprecated" : true
       }
@@ -3968,6 +4550,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000637"
         } ],
         "deprecated" : true
       }
@@ -3979,6 +4564,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000651"
         } ],
         "deprecated" : true
       }
@@ -3990,6 +4578,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000650"
         } ],
         "deprecated" : true
       }
@@ -4001,6 +4592,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000633"
         } ],
         "deprecated" : true
       }
@@ -4012,6 +4606,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000646"
         } ],
         "deprecated" : true
       }
@@ -4100,6 +4697,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1005021"
         } ],
         "deprecated" : true
       }
@@ -4111,6 +4711,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000702"
         } ],
         "deprecated" : true
       }
@@ -4122,6 +4725,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000703"
         } ],
         "deprecated" : true
       }
@@ -4133,6 +4739,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000704"
         } ],
         "deprecated" : true
       }
@@ -4188,6 +4797,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000706"
         } ],
         "deprecated" : true
       }
@@ -4298,6 +4910,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000188"
         } ],
         "deprecated" : true
       }
@@ -4980,6 +5595,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000636"
         } ],
         "deprecated" : true
       }
@@ -5156,6 +5774,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000441"
         } ],
         "deprecated" : true
       }
@@ -5178,6 +5799,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000443"
         } ],
         "deprecated" : true
       }
@@ -5189,6 +5813,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000444"
         } ],
         "deprecated" : true
       }
@@ -5200,6 +5827,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000445"
         } ],
         "deprecated" : true
       }
@@ -5211,6 +5841,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000445"
         } ],
         "deprecated" : true
       }
@@ -5222,6 +5855,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000447"
         } ],
         "deprecated" : true
       }
@@ -5233,6 +5869,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000448"
         } ],
         "deprecated" : true
       }
@@ -5299,6 +5938,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000454"
         } ],
         "deprecated" : true
       }
@@ -5354,6 +5996,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000459"
         } ],
         "deprecated" : true
       }
@@ -5453,6 +6098,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000468"
         } ],
         "deprecated" : true
       }
@@ -5508,6 +6156,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000473"
         } ],
         "deprecated" : true
       }
@@ -5618,6 +6269,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000483"
         } ],
         "deprecated" : true
       }
@@ -5662,6 +6316,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000487"
         } ],
         "deprecated" : true
       }
@@ -5783,6 +6440,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000673"
         } ],
         "deprecated" : true
       }
@@ -6278,6 +6938,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1007070"
         } ],
         "deprecated" : true
       }
@@ -6344,6 +7007,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000666"
         } ],
         "deprecated" : true
       }
@@ -6355,6 +7021,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1007005"
         } ],
         "deprecated" : true
       }
@@ -6366,6 +7035,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1007062"
         } ],
         "deprecated" : true
       }
@@ -6388,6 +7060,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1003003"
         } ],
         "deprecated" : true
       }
@@ -6465,6 +7140,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000801"
         } ],
         "deprecated" : true
       }
@@ -6476,6 +7154,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000609"
         } ],
         "deprecated" : true
       }
@@ -6509,6 +7190,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1003002"
         } ],
         "deprecated" : true
       }
@@ -6542,6 +7226,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000603"
         } ],
         "deprecated" : true
       }
@@ -6553,6 +7240,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000802"
         } ],
         "deprecated" : true
       }
@@ -6641,6 +7331,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000632"
         } ],
         "deprecated" : true
       }
@@ -6817,6 +7510,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1005021"
         } ],
         "deprecated" : true
       }
@@ -6861,6 +7557,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000633"
         } ],
         "deprecated" : true
       }
@@ -6872,6 +7571,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1007005"
         } ],
         "deprecated" : true
       }
@@ -6905,6 +7607,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000666"
         } ],
         "deprecated" : true
       }
@@ -7062,6 +7767,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000636"
         } ],
         "deprecated" : true
       }
@@ -7183,6 +7891,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1007062"
         } ],
         "deprecated" : true
       }
@@ -7337,6 +8048,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1005038"
         } ],
         "deprecated" : true
       }
@@ -7458,6 +8172,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000672"
         } ],
         "deprecated" : true
       }
@@ -7480,6 +8197,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000630"
         } ],
         "deprecated" : true
       }
@@ -7645,6 +8365,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000628"
         } ],
         "deprecated" : true
       }
@@ -7678,6 +8401,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000605"
         } ],
         "deprecated" : true
       }
@@ -7711,6 +8437,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1002005"
         } ],
         "deprecated" : true
       }
@@ -7817,6 +8546,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000127"
         } ],
         "deprecated" : true
       }
@@ -7828,6 +8560,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000127"
         } ],
         "deprecated" : true
       }
@@ -7982,6 +8717,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000699"
         } ],
         "deprecated" : true
       }
@@ -7993,6 +8731,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000698"
         } ],
         "deprecated" : true
       }
@@ -8004,6 +8745,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000697"
         } ],
         "deprecated" : true
       }
@@ -8070,6 +8814,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000620"
         } ],
         "deprecated" : true
       }
@@ -8081,6 +8828,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000622"
         } ],
         "deprecated" : true
       }
@@ -8114,6 +8864,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1005025"
         } ],
         "deprecated" : true
       }
@@ -8136,6 +8889,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000644"
         } ],
         "deprecated" : true
       }
@@ -8180,6 +8936,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000617"
         } ],
         "deprecated" : true
       }
@@ -8400,6 +9159,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000615"
         } ],
         "deprecated" : true
       }
@@ -8433,6 +9195,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000844"
         } ],
         "deprecated" : true
       }
@@ -8505,6 +9270,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000604"
         } ],
         "deprecated" : true
       }
@@ -8527,6 +9295,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000623"
         } ],
         "deprecated" : true
       }
@@ -8604,6 +9375,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1003001"
         } ],
         "deprecated" : true
       }
@@ -8615,6 +9389,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1005001"
         } ],
         "deprecated" : true
       }
@@ -8626,6 +9403,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1005039"
         } ],
         "deprecated" : true
       }
@@ -8681,6 +9461,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000606"
         } ],
         "deprecated" : true
       }
@@ -8692,6 +9475,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000607"
         } ],
         "deprecated" : true
       }
@@ -9026,6 +9812,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000656"
         } ],
         "deprecated" : true
       }
@@ -9037,6 +9826,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000657"
         } ],
         "deprecated" : true
       }
@@ -9081,6 +9873,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000630"
         } ],
         "deprecated" : true
       }
@@ -9136,6 +9931,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1003021"
         } ],
         "deprecated" : true
       }
@@ -9257,6 +10055,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000614"
         } ],
         "deprecated" : true
       }
@@ -9345,6 +10146,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000800"
         } ],
         "deprecated" : true
       }
@@ -9554,6 +10358,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000870"
         } ],
         "deprecated" : true
       }
@@ -9697,6 +10504,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1002006"
         } ],
         "deprecated" : true
       }
@@ -9764,6 +10574,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000613"
         } ],
         "deprecated" : true
       }
@@ -9790,6 +10603,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/OMO_0001000"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000616"
         } ],
         "deprecated" : true
       }
@@ -10095,6 +10911,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000226"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000618"
         } ],
         "deprecated" : true
       }
@@ -10106,6 +10925,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000226"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000619"
         } ],
         "deprecated" : true
       }
@@ -10117,6 +10939,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000226"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000721"
         } ],
         "deprecated" : true
       }
@@ -10128,6 +10953,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000226"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000721"
         } ],
         "deprecated" : true
       }
@@ -10139,6 +10967,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000226"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000624"
         } ],
         "deprecated" : true
       }
@@ -10150,6 +10981,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000226"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000625"
         } ],
         "deprecated" : true
       }
@@ -10161,6 +10995,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000226"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000621"
         } ],
         "deprecated" : true
       }
@@ -10216,6 +11053,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000226"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1003007"
         } ],
         "deprecated" : true
       }
@@ -10227,6 +11067,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000226"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1003006"
         } ],
         "deprecated" : true
       }
@@ -10238,6 +11081,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000226"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000608"
         } ],
         "deprecated" : true
       }
@@ -10249,6 +11095,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000226"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000604"
         } ],
         "deprecated" : true
       }
@@ -10260,6 +11109,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000226"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000610"
         } ],
         "deprecated" : true
       }
@@ -10282,6 +11134,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000226"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000606"
         } ],
         "deprecated" : true
       }
@@ -10293,6 +11148,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000226"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000607"
         } ],
         "deprecated" : true
       }
@@ -10326,6 +11184,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000226"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000635"
         } ],
         "deprecated" : true
       }
@@ -10337,6 +11198,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000226"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000636"
         } ],
         "deprecated" : true
       }
@@ -10348,6 +11212,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000226"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000649"
         } ],
         "deprecated" : true
       }
@@ -10359,6 +11226,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000226"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000655"
         } ],
         "deprecated" : true
       }
@@ -10370,6 +11240,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000226"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000660"
         } ],
         "deprecated" : true
       }
@@ -10381,6 +11254,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000226"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000641"
         } ],
         "deprecated" : true
       }
@@ -10392,6 +11268,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000226"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000654"
         } ],
         "deprecated" : true
       }
@@ -10403,6 +11282,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000226"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000642"
         } ],
         "deprecated" : true
       }
@@ -10414,6 +11296,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000226"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000647"
         } ],
         "deprecated" : true
       }
@@ -10425,6 +11310,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000226"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000652"
         } ],
         "deprecated" : true
       }
@@ -10436,6 +11324,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000226"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000648"
         } ],
         "deprecated" : true
       }
@@ -10447,6 +11338,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000226"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000640"
         } ],
         "deprecated" : true
       }
@@ -10458,6 +11352,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000226"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000637"
         } ],
         "deprecated" : true
       }
@@ -10469,6 +11366,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000226"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000651"
         } ],
         "deprecated" : true
       }
@@ -10480,6 +11380,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000226"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000650"
         } ],
         "deprecated" : true
       }
@@ -10491,6 +11394,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000226"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000646"
         } ],
         "deprecated" : true
       }
@@ -10568,6 +11474,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000226"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000702"
         } ],
         "deprecated" : true
       }
@@ -10579,6 +11488,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000226"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000703"
         } ],
         "deprecated" : true
       }
@@ -10590,6 +11502,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000226"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000704"
         } ],
         "deprecated" : true
       }
@@ -10645,6 +11560,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000226"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000706"
         } ],
         "deprecated" : true
       }
@@ -11074,6 +11992,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000226"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000636"
         } ],
         "deprecated" : true
       }
@@ -11204,6 +12125,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000226"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000887"
         } ],
         "deprecated" : true
       }
@@ -11215,6 +12139,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000226"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000882"
         } ],
         "deprecated" : true
       }
@@ -11226,6 +12153,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000226"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000889"
         } ],
         "deprecated" : true
       }
@@ -11237,6 +12167,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000226"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000882"
         } ],
         "deprecated" : true
       }
@@ -11248,6 +12181,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000226"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000883"
         } ],
         "deprecated" : true
       }
@@ -11259,6 +12195,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000226"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000881"
         } ],
         "deprecated" : true
       }
@@ -11270,6 +12209,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000226"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000885"
         } ],
         "deprecated" : true
       }
@@ -11281,6 +12223,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000226"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000881"
         } ],
         "deprecated" : true
       }
@@ -12694,6 +13639,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000226"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000673"
         } ],
         "deprecated" : true
       }
@@ -12914,6 +13862,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000226"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1007070"
         } ],
         "deprecated" : true
       }
@@ -13092,6 +14043,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000226"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000720"
         } ],
         "deprecated" : true
       }
@@ -14928,6 +15882,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000226"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1005039"
         } ],
         "deprecated" : true
       }
@@ -16949,6 +17906,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000226"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1005038"
         } ],
         "deprecated" : true
       }
@@ -17574,6 +18534,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000226"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1005001"
         } ],
         "deprecated" : true
       }
@@ -18572,6 +19535,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000226"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1000806"
         } ],
         "deprecated" : true
       }
@@ -18583,6 +19549,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000226"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1005039"
         } ],
         "deprecated" : true
       }
@@ -18935,6 +19904,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000231",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000226"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
+          "val" : "https://w3id.org/metpo/1005039"
         } ],
         "deprecated" : true
       }
@@ -19452,7 +20424,7 @@
           }
         }, {
           "pred" : "hasRelatedSynonym",
-          "val" : "yellow pigment",
+          "val" : "cell color: yellow pigment",
           "meta" : {
             "basicPropertyValues" : [ {
               "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
@@ -23192,6 +24164,10 @@
       "type" : "PROPERTY",
       "propertyType" : "ANNOTATION"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/IAO_0100001",
+      "type" : "PROPERTY",
+      "propertyType" : "ANNOTATION"
+    }, {
       "id" : "http://purl.org/dc/elements/1.1/type",
       "type" : "PROPERTY",
       "propertyType" : "ANNOTATION"
@@ -23208,15 +24184,7 @@
       "type" : "PROPERTY",
       "propertyType" : "ANNOTATION"
     }, {
-      "id" : "http://purl.org/dc/terms/issued",
-      "type" : "PROPERTY",
-      "propertyType" : "ANNOTATION"
-    }, {
       "id" : "http://purl.org/dc/terms/license",
-      "type" : "PROPERTY",
-      "propertyType" : "ANNOTATION"
-    }, {
-      "id" : "http://purl.org/dc/terms/modified",
       "type" : "PROPERTY",
       "propertyType" : "ANNOTATION"
     }, {
