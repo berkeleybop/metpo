@@ -155,6 +155,23 @@ cd src/ontology
 sh run.sh make reason_test sparql_test
 ```
 
+### GitHub Actions workflow tooling
+
+The CI workflows are linted and security-audited in GitHub Actions (deliberately
+not wired into local pre-commit hooks):
+
+- **actionlint** (`.github/workflows/actionlint.yml`) checks workflow syntax and
+  runs shellcheck on every `run:` block. It would have caught the `set -o
+  pipefail` that fails under the odk container's default dash shell.
+- **zizmor** (`.github/workflows/zizmor.yml`, config `.github/zizmor.yml`) is a
+  static security auditor for the workflows (unpinned actions, excessive
+  permissions, credential persistence, Dependabot cooldown, ...).
+
+Actions are pinned to full commit SHAs (with a `# vX.Y.Z` comment) via
+`pinact run --update --min-age 7`, following the NMDC convention; Dependabot keeps
+them current. The ODK-generated `qc.yml` is excluded from both tools because
+`sh run.sh make update_repo` regenerates it, so hardening there would not persist.
+
 **Maintenance:**
 ```bash
 cd src/ontology
