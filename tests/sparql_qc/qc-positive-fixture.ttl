@@ -29,6 +29,17 @@ metpo:9999001 a owl:Class ;
     rdfs:label "fixture: deprecated dc-elements predicate" ;
     dce:creator "should be dcterms:creator" .
 
+# -> ontology-header-check.sparql : a bad ontology header.
+#    (1) creator as a literal placeholder, not an agent IRI;
+#    (2) dcterms:modified disagreeing with owl:versionInfo.
+#    Uses dcterms: (not the dc-elements namespace) and dcterms:creator (not
+#    contributor), so it trips only the header check, not the ODK dc-properties
+#    or iri-range queries.
+<https://w3id.org/metpo/fixture-ontology> a owl:Ontology ;
+    dcterms:creator "METPO Development Team" ;
+    dcterms:modified "2024-01-01" ;
+    owl:versionInfo "2026-06-05" .
+
 # -> iri-range-violation.sparql : a property whose value must be an IRI, given a literal
 metpo:9999002 a owl:Class ;
     rdfs:label "fixture: contributor as a literal, not an IRI" ;

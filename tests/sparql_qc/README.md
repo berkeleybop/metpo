@@ -48,6 +48,16 @@ So:
 The fixture IRIs are fixture-only (`9999xxx` range, never allocated) and live
 only in this directory; they are never merged into the ontology.
 
+## Ontology-header check (#502)
+
+`ontology-header-check.sparql` is a QC check kept here rather than as an edit to
+an ODK query. The runner runs it twice: against the bad-header node in
+`qc-positive-fixture.ttl` (must match >= 1 row, so it is proven able to fail)
+and against the real `metpo.owl` (must match 0 rows). It flags a creator or
+contributor given as a literal placeholder instead of an agent IRI, and a
+`dcterms:modified` that disagrees with `owl:versionInfo`. Deprecated DC Elements
+1.1 is already caught by ODK's `dc-properties-violation` and is not repeated.
+
 ## Running it
 
 In the ODK container, from `src/ontology`:

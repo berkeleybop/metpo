@@ -56,3 +56,41 @@ if [ "$fail" -ne 0 ]; then
 fi
 
 echo "All ${#queries[@]} QC violation queries matched their positive-control fixture."
+
+# ---------------------------------------------------------------------------
+# Ontology-header QC (berkeleybop/metpo#502). This check is maintained here,
+# outside the ODK tree, rather than as an edit to an ODK query. It must:
+#   (a) match >= 1 row against the bad-header fixture (proven able to fail), and
+#   (b) match 0 rows against the real released metpo.owl (the actual assertion).
+# ---------------------------------------------------------------------------
+echo
+HEADER_Q="$HERE/ontology-header-check.sparql"
+REAL_OWL="$REPO_ROOT/metpo.owl"
+
+robot query --input "$FIXTURE" --query "$HEADER_Q" "$OUT/header-fixture.tsv"
+hrows=$(($(wc -l < "$OUT/header-fixture.tsv") - 1))
+if [ "$hrows" -ge 1 ]; then
+  echo "OK   ontology-header-check.sparql matched $hrows fixture violation(s)"
+else
+  echo "::error::ontology-header-check.sparql matched 0 rows against the fixture: the check is a silent no-op."
+  fail=1
+fi
+
+if [ -f "$REAL_OWL" ]; then
+  robot query --input "$REAL_OWL" --query "$HEADER_Q" "$OUT/header-real.tsv"
+  rrows=$(($(wc -l < "$OUT/header-real.tsv") - 1))
+  if [ "$rrows" -le 0 ]; then
+    echo "OK   ontology-header-check.sparql found no problems in metpo.owl"
+  else
+    echo "::error::the ontology header in metpo.owl has $rrows metadata problem(s):"
+    cat "$OUT/header-real.tsv"
+    fail=1
+  fi
+else
+  echo "::error::expected released ontology at $REAL_OWL but it is missing."
+  fail=1
+fi
+
+if [ "$fail" -ne 0 ]; then
+  exit 1
+fi
