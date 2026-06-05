@@ -1,0 +1,47 @@
+name: Artifact freshness
+
+# Guardrail for berkeleybop/metpo#499: the committed release artifacts
+# (metpo.owl / -full / -base + .obo/.json) must equal a fresh build from the
+# current source (templates + component). They drifted once (PR #495 shipped a
+# metpo.owl missing 327 IAO:0100001 redirects because the artifacts were never
+# rebuilt after the source changed); this catches that automatically.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  freshness:
+    runs-on: ubuntu-latest
+    container: obolibrary/odkfull:v1.6.1
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+
+      - name: Avoid git "dubious ownership" in the container
+        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
+      - name: Rebuild release artifacts from source and compare with the committed copies
+        shell: bash
+        run: |
+          set -euo pipefail
+          # Rebuild with the SAME version date the committed artifacts carry, so the
+          # version IRI/info annotations match and only real content drift shows up.
+          DATE=$(grep -m1 -oE '<owl:versionInfo>[0-9-]+' metpo.owl | grep -oE '[0-9]{4}-[0-9]{2}-[0-9]{2}')
+          echo "Rebuilding release artifacts with version date ${DATE} ..."
+          make -C src/ontology IMP=false PAT=false MIR=false TODAY="${DATE}" prepare_release
+          if git diff --quiet -- 'metpo*.owl' 'metpo*.obo' 'metpo*.json'; then
+            echo "OK: committed release artifacts match a fresh build from source."
+          else
+            echo "::error::Committed release artifacts are out of sync with the source."
+            echo "Fix: run 'cd src/ontology && sh run.sh make prepare_release' and commit the rebuilt metpo*.{owl,obo,json}."
+            git diff --stat -- 'metpo*.owl' 'metpo*.obo' 'metpo*.json'
+            exit 1
+          fi

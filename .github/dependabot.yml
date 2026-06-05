@@ -5,6 +5,10 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    # Wait 7 days before adopting a new release (supply-chain cooldown, mirrors
+    # the pinact --min-age 7 used when SHA-pinning the actions).
+    cooldown:
+      default-days: 7
     open-pull-requests-limit: 5
 
   # Python dependencies (uv / pyproject.toml + uv.lock).
@@ -18,6 +22,8 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    cooldown:
+      default-days: 7
     open-pull-requests-limit: 5
     groups:
       python-deps:

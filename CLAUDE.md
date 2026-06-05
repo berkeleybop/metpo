@@ -165,6 +165,39 @@ sh run.sh make reason_test sparql_test
 > harness lives under `tests/` (not the ODK-managed `src/` tree); see
 > `tests/sparql_qc/README.md`.
 
+### GitHub Actions workflow tooling
+
+The CI workflows are linted and security-audited in GitHub Actions (deliberately
+not wired into local pre-commit hooks):
+
+- **actionlint** (`.github/workflows/actionlint.yml`) checks workflow syntax and
+  runs shellcheck on every `run:` block. It would have caught the `set -o
+  pipefail` that fails under the odk container's default dash shell.
+- **zizmor** (`.github/workflows/zizmor.yml`, config `.github/zizmor.yml`) is a
+  static security auditor for the workflows (unpinned actions, excessive
+  permissions, credential persistence, Dependabot cooldown, ...).
+
+**Run these locally, do not wait for CI.** Whenever you are developing on a
+machine where the tools are in the active environment (the M5 has Docker for
+actionlint and `uvx` for zizmor), run BOTH after editing any workflow or
+`dependabot.yml`, and again before pushing a branch that touches `.github/`:
+
+```bash
+# from the repo root
+docker run --rm -v "$PWD":/repo:ro --workdir /repo rhysd/actionlint:1.7.12
+GH_TOKEN=$(gh auth token) uvx zizmor@1.25.2 --config .github/zizmor.yml .github/
+```
+
+Both must be clean (actionlint exits 0; zizmor reports "No findings"). Fix
+findings before pushing; CI is the backstop, not the first line of defense. If
+the tools are not installed, do not block, but say so rather than skipping
+silently. After a `pinact` upgrade or a manual workflow change, re-run them.
+
+Actions are pinned to full commit SHAs (with a `# vX.Y.Z` comment) via
+`pinact run --update --min-age 7`, following the NMDC convention; Dependabot keeps
+them current. The ODK-generated `qc.yml` is excluded from both tools because
+`sh run.sh make update_repo` regenerates it, so hardening there would not persist.
+
 **Maintenance:**
 ```bash
 cd src/ontology
