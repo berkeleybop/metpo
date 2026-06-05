@@ -4,22 +4,22 @@
     "meta" : {
       "basicPropertyValues" : [ {
         "pred" : "http://purl.org/dc/terms/contributor",
-        "val" : "https://orcid.org/0000-0001-9076-6066"
+        "val" : "https://orcid.org/0000-0001-8175-045X"
+      }, {
+        "pred" : "http://purl.org/dc/terms/contributor",
+        "val" : "https://orcid.org/0000-0002-6601-2165"
       }, {
         "pred" : "http://purl.org/dc/terms/creator",
-        "val" : "METPO Development Team"
+        "val" : "https://orcid.org/0000-0001-9076-6066"
       }, {
         "pred" : "http://purl.org/dc/terms/description",
-        "val" : "METPO provides standardized terms for the phenotypic traits, growth conditions, metabolic capabilities, and morphology of bacteria and archaea. It integrates heterogeneous microbial trait resources (BactoTraits, BacDive, Madin et al.) and supports knowledge-graph and literature-mining workflows in projects such as KG-Microbe. METPO follows OBO Foundry conventions and reuses terms from PATO, GO, CHEBI, NCBITaxon, and related ontologies where possible."
+        "val" : "METPO provides terms for microbial ecophysiological traits and phenotypes: growth preferences (temperature, pH, salinity, oxygen), metabolism, and cell morphology of bacteria and archaea. Its primary purpose is to harmonize terminology across major microbial trait databases (BacDive, BactoTraits, Madin bacteria_archaea_traits, MetaTraits) for use in NMDC and KG-Microbe. METPO uses OBO-style annotation patterns (IAO textual definitions, oboInOwl synonyms) and cites terms from OMP, MicrO, GO, ECOCORE, and PATO as definition sources."
       }, {
         "pred" : "http://purl.org/dc/terms/issued",
         "val" : "2024-01-01"
       }, {
         "pred" : "http://purl.org/dc/terms/license",
         "val" : "https://creativecommons.org/licenses/by/4.0/"
-      }, {
-        "pred" : "http://purl.org/dc/terms/modified",
-        "val" : "2026-05-18"
       }, {
         "pred" : "http://purl.org/dc/terms/title",
         "val" : "METPO: Microbial Ecophysiological Trait and Phenotype Ontology"
@@ -34,9 +34,9 @@
         "val" : "https://github.com/berkeleybop/metpo"
       }, {
         "pred" : "http://www.w3.org/2002/07/owl#versionInfo",
-        "val" : "2026-06-04"
+        "val" : "2026-06-05"
       } ],
-      "version" : "https://w3id.org/metpo/releases/2026-06-04/metpo.json"
+      "version" : "https://w3id.org/metpo/releases/2026-06-05/metpo.json"
     },
     "nodes" : [ {
       "id" : "http://www.geneontology.org/formats/oboInOwl#ObsoleteClass",
@@ -24191,10 +24191,6 @@
     }, {
       "id" : "http://purl.org/dc/terms/license",
       "lbl" : "license",
-      "type" : "PROPERTY",
-      "propertyType" : "ANNOTATION"
-    }, {
-      "id" : "http://purl.org/dc/terms/modified",
       "type" : "PROPERTY",
       "propertyType" : "ANNOTATION"
     }, {

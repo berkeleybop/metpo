@@ -7,7 +7,7 @@
 
 ## Right
 - Ontology IRI: `https://w3id.org/metpo/metpo.owl`
-- Version IRI: `https://w3id.org/metpo/releases/2026-06-04/metpo.owl`
+- Version IRI: `https://w3id.org/metpo/releases/2026-06-05/metpo.owl`
 - Loaded from: `file:/work/src/ontology/metpo.owl`
 
 ### Ontology imports 
@@ -17,21 +17,21 @@
 ### Ontology annotations 
 
 #### Added
-- [contributor](http://purl.org/dc/terms/contributor) [0000-0001-9076-6066](https://orcid.org/0000-0001-9076-6066) 
+- [contributor](http://purl.org/dc/terms/contributor) [X](https://orcid.org/0000-0001-8175-045X) 
 
-- [creator](http://purl.org/dc/terms/creator) "METPO Development Team" 
+- [contributor](http://purl.org/dc/terms/contributor) [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165) 
 
-- [description](http://purl.org/dc/terms/description) "METPO provides standardized terms for the phenotypic traits, growth conditions, metabolic capabilities, and morphology of bacteria and archaea. It integrates heterogeneous microbial trait resources (BactoTraits, BacDive, Madin et al.) and supports knowledge-graph and literature-mining workflows in projects such as KG-Microbe. METPO follows OBO Foundry conventions and reuses terms from PATO, GO, CHEBI, NCBITaxon, and related ontologies where possible." 
+- [creator](http://purl.org/dc/terms/creator) [0000-0001-9076-6066](https://orcid.org/0000-0001-9076-6066) 
+
+- [description](http://purl.org/dc/terms/description) "METPO provides terms for microbial ecophysiological traits and phenotypes: growth preferences (temperature, pH, salinity, oxygen), metabolism, and cell morphology of bacteria and archaea. Its primary purpose is to harmonize terminology across major microbial trait databases (BacDive, BactoTraits, Madin bacteria_archaea_traits, MetaTraits) for use in NMDC and KG-Microbe. METPO uses OBO-style annotation patterns (IAO textual definitions, oboInOwl synonyms) and cites terms from OMP, MicrO, GO, ECOCORE, and PATO as definition sources." 
 
 - [issued](http://purl.org/dc/terms/issued) "2024-01-01" 
 
 - [license](http://purl.org/dc/terms/license) [<https://creativecommons.org/licenses/by/4.0/>](https://creativecommons.org/licenses/by/4.0/) 
 
-- [modified](http://purl.org/dc/terms/modified) "2026-05-18" 
-
 - [title](http://purl.org/dc/terms/title) "METPO: Microbial Ecophysiological Trait and Phenotype Ontology" 
 
-- [versionInfo](http://www.w3.org/2002/07/owl#versionInfo) "2026-06-04" 
+- [versionInfo](http://www.w3.org/2002/07/owl#versionInfo) "2026-06-05" 
 
 - [seeAlso](http://www.w3.org/2000/01/rdf-schema#seeAlso) [METPO](https://bioportal.bioontology.org/ontologies/METPO) 
 
@@ -4509,12 +4509,6 @@
 - [moderately halophilic](https://w3id.org/metpo/1000623) [label](http://www.w3.org/2000/01/rdf-schema#label) "moderately halophilic" 
 
 - [moderately halophilic](https://w3id.org/metpo/1000623) SubClassOf [halophilic](https://w3id.org/metpo/1000620) 
-
-
-### modified `http://purl.org/dc/terms/modified`
-
-#### Added
-- AnnotationProperty: [modified](http://purl.org/dc/terms/modified) 
 
 
 ### monotrichous flagellation `https://w3id.org/metpo/1005035`
