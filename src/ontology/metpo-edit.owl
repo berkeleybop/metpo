@@ -27,6 +27,8 @@ Declaration(AnnotationProperty(dcterms:license))
 Declaration(AnnotationProperty(dcterms:title))
 Declaration(AnnotationProperty(<http://qudt.org/schema/qudt/ucumCode>))
 Declaration(AnnotationProperty(IAO:0000117))
+Declaration(AnnotationProperty(IAO:0000231))
+Declaration(AnnotationProperty(IAO:0100001))
 
 
 ############################
@@ -48,6 +50,14 @@ AnnotationAssertion(rdfs:label dcterms:title "title")
 # Annotation Property: IAO:0000117 (term editor)
 
 AnnotationAssertion(rdfs:label IAO:0000117 "term editor")
+
+# Annotation Property: IAO:0000231 (has obsolescence reason)
+
+AnnotationAssertion(rdfs:label IAO:0000231 "has obsolescence reason")
+
+# Annotation Property: IAO:0100001 (term replaced by)
+
+AnnotationAssertion(rdfs:label IAO:0100001 "term replaced by")
 
 
 ############################

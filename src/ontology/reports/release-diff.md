@@ -7,7 +7,7 @@
 
 ## Right
 - Ontology IRI: `https://w3id.org/metpo/metpo.owl`
-- Version IRI: `https://w3id.org/metpo/releases/2026-06-05/metpo.owl`
+- Version IRI: `https://w3id.org/metpo/releases/2026-06-06/metpo.owl`
 - Loaded from: `file:/work/src/ontology/metpo.owl`
 
 ### Ontology imports 
@@ -29,7 +29,7 @@
 
 - [title](http://purl.org/dc/terms/title) "METPO: Microbial Ecophysiological Trait and Phenotype Ontology" 
 
-- [versionInfo](http://www.w3.org/2002/07/owl#versionInfo) "2026-06-05" 
+- [versionInfo](http://www.w3.org/2002/07/owl#versionInfo) "2026-06-06" 
 
 - [seeAlso](http://www.w3.org/2000/01/rdf-schema#seeAlso) [METPO](https://bioportal.bioontology.org/ontologies/METPO) 
 
@@ -261,18 +261,6 @@
 - [Homoacetogenesis](https://w3id.org/metpo/1000846) [label](http://www.w3.org/2000/01/rdf-schema#label) "Homoacetogenesis" 
 
 - [Homoacetogenesis](https://w3id.org/metpo/1000846) SubClassOf [metabolism](https://w3id.org/metpo/1000060) 
-
-
-### IAO_0000231 `http://purl.obolibrary.org/obo/IAO_0000231`
-
-#### Added
-- AnnotationProperty: [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) 
-
-
-### IAO_0100001 `http://purl.obolibrary.org/obo/IAO_0100001`
-
-#### Added
-- AnnotationProperty: [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) 
 
 
 ### Methanogenesis `https://w3id.org/metpo/1000844`
@@ -3814,6 +3802,14 @@
 - [has nucleotide diversity value](https://w3id.org/metpo/2000734) SubPropertyOf: [has ecology metric value](https://w3id.org/metpo/2000730) 
 
 
+### has obsolescence reason `http://purl.obolibrary.org/obo/IAO_0000231`
+
+#### Added
+- AnnotationProperty: [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) 
+
+- [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [label](http://www.w3.org/2000/01/rdf-schema#label) "has obsolescence reason" 
+
+
 ### has pangenome openness value `https://w3id.org/metpo/2000733`
 
 #### Added
@@ -4823,9 +4819,9 @@
 #### Added
 - Class: [obsolete % NaCl Optimum high (> 8)](https://w3id.org/metpo/000191) 
 
-- [obsolete % NaCl Optimum high (> 8)](https://w3id.org/metpo/000191) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete % NaCl Optimum high (> 8)](https://w3id.org/metpo/000191) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete % NaCl Optimum high (> 8)](https://w3id.org/metpo/000191) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [NaCl optimum high](https://w3id.org/metpo/1000468) 
+- [obsolete % NaCl Optimum high (> 8)](https://w3id.org/metpo/000191) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [NaCl optimum high](https://w3id.org/metpo/1000468) 
 
 - [obsolete % NaCl Optimum high (> 8)](https://w3id.org/metpo/000191) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -4839,7 +4835,7 @@
 #### Added
 - Class: [obsolete % NaCl Optimum low (<= 1)](https://w3id.org/metpo/000188) 
 
-- [obsolete % NaCl Optimum low (<= 1)](https://w3id.org/metpo/000188) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete % NaCl Optimum low (<= 1)](https://w3id.org/metpo/000188) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete % NaCl Optimum low (<= 1)](https://w3id.org/metpo/000188) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -4853,7 +4849,7 @@
 #### Added
 - Class: [obsolete % NaCl Optimum mid1 (1 - 3)](https://w3id.org/metpo/000189) 
 
-- [obsolete % NaCl Optimum mid1 (1 - 3)](https://w3id.org/metpo/000189) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete % NaCl Optimum mid1 (1 - 3)](https://w3id.org/metpo/000189) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete % NaCl Optimum mid1 (1 - 3)](https://w3id.org/metpo/000189) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -4867,7 +4863,7 @@
 #### Added
 - Class: [obsolete % NaCl Optimum mid2 (3 - 8)](https://w3id.org/metpo/000190) 
 
-- [obsolete % NaCl Optimum mid2 (3 - 8)](https://w3id.org/metpo/000190) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete % NaCl Optimum mid2 (3 - 8)](https://w3id.org/metpo/000190) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete % NaCl Optimum mid2 (3 - 8)](https://w3id.org/metpo/000190) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -4881,7 +4877,7 @@
 #### Added
 - Class: [obsolete % NaCl Range high (> 8)](https://w3id.org/metpo/000195) 
 
-- [obsolete % NaCl Range high (> 8)](https://w3id.org/metpo/000195) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete % NaCl Range high (> 8)](https://w3id.org/metpo/000195) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete % NaCl Range high (> 8)](https://w3id.org/metpo/000195) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -4895,7 +4891,7 @@
 #### Added
 - Class: [obsolete % NaCl Range low (<= 1)](https://w3id.org/metpo/000192) 
 
-- [obsolete % NaCl Range low (<= 1)](https://w3id.org/metpo/000192) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete % NaCl Range low (<= 1)](https://w3id.org/metpo/000192) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete % NaCl Range low (<= 1)](https://w3id.org/metpo/000192) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -4909,7 +4905,7 @@
 #### Added
 - Class: [obsolete % NaCl Range mid1 (1 - 3)](https://w3id.org/metpo/000193) 
 
-- [obsolete % NaCl Range mid1 (1 - 3)](https://w3id.org/metpo/000193) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete % NaCl Range mid1 (1 - 3)](https://w3id.org/metpo/000193) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete % NaCl Range mid1 (1 - 3)](https://w3id.org/metpo/000193) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -4923,7 +4919,7 @@
 #### Added
 - Class: [obsolete % NaCl Range mid2 (3 - 8)](https://w3id.org/metpo/000194) 
 
-- [obsolete % NaCl Range mid2 (3 - 8)](https://w3id.org/metpo/000194) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete % NaCl Range mid2 (3 - 8)](https://w3id.org/metpo/000194) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete % NaCl Range mid2 (3 - 8)](https://w3id.org/metpo/000194) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -4937,7 +4933,7 @@
 #### Added
 - Class: [obsolete % NaCl delta high (>= 8)](https://w3id.org/metpo/000205) 
 
-- [obsolete % NaCl delta high (>= 8)](https://w3id.org/metpo/000205) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete % NaCl delta high (>= 8)](https://w3id.org/metpo/000205) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete % NaCl delta high (>= 8)](https://w3id.org/metpo/000205) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -4951,7 +4947,7 @@
 #### Added
 - Class: [obsolete % NaCl delta low (<= 1)](https://w3id.org/metpo/000202) 
 
-- [obsolete % NaCl delta low (<= 1)](https://w3id.org/metpo/000202) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete % NaCl delta low (<= 1)](https://w3id.org/metpo/000202) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete % NaCl delta low (<= 1)](https://w3id.org/metpo/000202) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -4965,7 +4961,7 @@
 #### Added
 - Class: [obsolete % NaCl delta mid2 (1 - 3)](https://w3id.org/metpo/000203) 
 
-- [obsolete % NaCl delta mid2 (1 - 3)](https://w3id.org/metpo/000203) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete % NaCl delta mid2 (1 - 3)](https://w3id.org/metpo/000203) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete % NaCl delta mid2 (1 - 3)](https://w3id.org/metpo/000203) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -4979,7 +4975,7 @@
 #### Added
 - Class: [obsolete % NaCl delta mid2 (3 - 8)](https://w3id.org/metpo/000204) 
 
-- [obsolete % NaCl delta mid2 (3 - 8)](https://w3id.org/metpo/000204) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete % NaCl delta mid2 (3 - 8)](https://w3id.org/metpo/000204) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete % NaCl delta mid2 (3 - 8)](https://w3id.org/metpo/000204) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -4993,7 +4989,7 @@
 #### Added
 - Class: [obsolete 'organismal quality'](https://w3id.org/metpo/0001002) 
 
-- [obsolete 'organismal quality'](https://w3id.org/metpo/0001002) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete 'organismal quality'](https://w3id.org/metpo/0001002) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete 'organismal quality'](https://w3id.org/metpo/0001002) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5007,7 +5003,7 @@
 #### Added
 - Class: [obsolete 'physicial object quality'](https://w3id.org/metpo/0001003) 
 
-- [obsolete 'physicial object quality'](https://w3id.org/metpo/0001003) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete 'physicial object quality'](https://w3id.org/metpo/0001003) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete 'physicial object quality'](https://w3id.org/metpo/0001003) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5021,7 +5017,7 @@
 #### Added
 - Class: [obsolete 'prokaryotic metabolically differentiated cell'](https://w3id.org/metpo/0001010) 
 
-- [obsolete 'prokaryotic metabolically differentiated cell'](https://w3id.org/metpo/0001010) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete 'prokaryotic metabolically differentiated cell'](https://w3id.org/metpo/0001010) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete 'prokaryotic metabolically differentiated cell'](https://w3id.org/metpo/0001010) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5035,9 +5031,9 @@
 #### Added
 - Class: [obsolete 'quality'](https://w3id.org/metpo/0001004) 
 
-- [obsolete 'quality'](https://w3id.org/metpo/0001004) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete 'quality'](https://w3id.org/metpo/0001004) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete 'quality'](https://w3id.org/metpo/0001004) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [quality](https://w3id.org/metpo/1000188) 
+- [obsolete 'quality'](https://w3id.org/metpo/0001004) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [quality](https://w3id.org/metpo/1000188) 
 
 - [obsolete 'quality'](https://w3id.org/metpo/0001004) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5051,7 +5047,7 @@
 #### Added
 - Class: [obsolete (Per)chlorate respiration](https://w3id.org/metpo/1000852) 
 
-- [obsolete (Per)chlorate respiration](https://w3id.org/metpo/1000852) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete (Per)chlorate respiration](https://w3id.org/metpo/1000852) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete (Per)chlorate respiration](https://w3id.org/metpo/1000852) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5065,7 +5061,7 @@
 #### Added
 - Class: [obsolete 1-D extent](https://w3id.org/metpo/1000518) 
 
-- [obsolete 1-D extent](https://w3id.org/metpo/1000518) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete 1-D extent](https://w3id.org/metpo/1000518) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete 1-D extent](https://w3id.org/metpo/1000518) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5079,7 +5075,7 @@
 #### Added
 - Class: [obsolete 1-D extent](https://w3id.org/metpo/0001007) 
 
-- [obsolete 1-D extent](https://w3id.org/metpo/0001007) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete 1-D extent](https://w3id.org/metpo/0001007) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete 1-D extent](https://w3id.org/metpo/0001007) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5093,7 +5089,7 @@
 #### Added
 - Class: [obsolete Acetoclastic methanogenesis](https://w3id.org/metpo/1000865) 
 
-- [obsolete Acetoclastic methanogenesis](https://w3id.org/metpo/1000865) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Acetoclastic methanogenesis](https://w3id.org/metpo/1000865) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Acetoclastic methanogenesis](https://w3id.org/metpo/1000865) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5107,7 +5103,7 @@
 #### Added
 - Class: [obsolete Acid Tolerant](https://w3id.org/metpo/000042) 
 
-- [obsolete Acid Tolerant](https://w3id.org/metpo/000042) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Acid Tolerant](https://w3id.org/metpo/000042) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Acid Tolerant](https://w3id.org/metpo/000042) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5121,7 +5117,7 @@
 #### Added
 - Class: [obsolete Acid Tolerant](https://w3id.org/metpo/0000041) 
 
-- [obsolete Acid Tolerant](https://w3id.org/metpo/0000041) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Acid Tolerant](https://w3id.org/metpo/0000041) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Acid Tolerant](https://w3id.org/metpo/0000041) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5135,9 +5131,9 @@
 #### Added
 - Class: [obsolete Acidophile](https://w3id.org/metpo/0000038) 
 
-- [obsolete Acidophile](https://w3id.org/metpo/0000038) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Acidophile](https://w3id.org/metpo/0000038) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Acidophile](https://w3id.org/metpo/0000038) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [acidophilic](https://w3id.org/metpo/1003003) 
+- [obsolete Acidophile](https://w3id.org/metpo/0000038) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [acidophilic](https://w3id.org/metpo/1003003) 
 
 - [obsolete Acidophile](https://w3id.org/metpo/0000038) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5151,9 +5147,9 @@
 #### Added
 - Class: [obsolete Acidophile](https://w3id.org/metpo/000039) 
 
-- [obsolete Acidophile](https://w3id.org/metpo/000039) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Acidophile](https://w3id.org/metpo/000039) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Acidophile](https://w3id.org/metpo/000039) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [acidophilic](https://w3id.org/metpo/1003003) 
+- [obsolete Acidophile](https://w3id.org/metpo/000039) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [acidophilic](https://w3id.org/metpo/1003003) 
 
 - [obsolete Acidophile](https://w3id.org/metpo/000039) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5167,7 +5163,7 @@
 #### Added
 - Class: [obsolete Acriospores](https://w3id.org/metpo/0000122) 
 
-- [obsolete Acriospores](https://w3id.org/metpo/0000122) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Acriospores](https://w3id.org/metpo/0000122) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Acriospores](https://w3id.org/metpo/0000122) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5181,7 +5177,7 @@
 #### Added
 - Class: [obsolete Acriospores](https://w3id.org/metpo/000123) 
 
-- [obsolete Acriospores](https://w3id.org/metpo/000123) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Acriospores](https://w3id.org/metpo/000123) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Acriospores](https://w3id.org/metpo/000123) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5195,7 +5191,7 @@
 #### Added
 - Class: [obsolete Aerobe](https://w3id.org/metpo/0000046) 
 
-- [obsolete Aerobe](https://w3id.org/metpo/0000046) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Aerobe](https://w3id.org/metpo/0000046) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Aerobe](https://w3id.org/metpo/0000046) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5209,7 +5205,7 @@
 #### Added
 - Class: [obsolete Aerobe](https://w3id.org/metpo/000047) 
 
-- [obsolete Aerobe](https://w3id.org/metpo/000047) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Aerobe](https://w3id.org/metpo/000047) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Aerobe](https://w3id.org/metpo/000047) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5223,9 +5219,9 @@
 #### Added
 - Class: [obsolete Aerotolerant](https://w3id.org/metpo/0000051) 
 
-- [obsolete Aerotolerant](https://w3id.org/metpo/0000051) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Aerotolerant](https://w3id.org/metpo/0000051) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Aerotolerant](https://w3id.org/metpo/0000051) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [aerotolerant](https://w3id.org/metpo/1000609) 
+- [obsolete Aerotolerant](https://w3id.org/metpo/0000051) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [aerotolerant](https://w3id.org/metpo/1000609) 
 
 - [obsolete Aerotolerant](https://w3id.org/metpo/0000051) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5239,9 +5235,9 @@
 #### Added
 - Class: [obsolete Aerotolerant](https://w3id.org/metpo/000052) 
 
-- [obsolete Aerotolerant](https://w3id.org/metpo/000052) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Aerotolerant](https://w3id.org/metpo/000052) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Aerotolerant](https://w3id.org/metpo/000052) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [aerotolerant](https://w3id.org/metpo/1000609) 
+- [obsolete Aerotolerant](https://w3id.org/metpo/000052) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [aerotolerant](https://w3id.org/metpo/1000609) 
 
 - [obsolete Aerotolerant](https://w3id.org/metpo/000052) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5255,7 +5251,7 @@
 #### Added
 - Class: [obsolete Aerotolerant anaerobe](https://w3id.org/metpo/000054) 
 
-- [obsolete Aerotolerant anaerobe](https://w3id.org/metpo/000054) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Aerotolerant anaerobe](https://w3id.org/metpo/000054) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Aerotolerant anaerobe](https://w3id.org/metpo/000054) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5269,7 +5265,7 @@
 #### Added
 - Class: [obsolete Aerotolerant anaerobe](https://w3id.org/metpo/0000053) 
 
-- [obsolete Aerotolerant anaerobe](https://w3id.org/metpo/0000053) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Aerotolerant anaerobe](https://w3id.org/metpo/0000053) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Aerotolerant anaerobe](https://w3id.org/metpo/0000053) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5283,7 +5279,7 @@
 #### Added
 - Class: [obsolete Akinetes](https://w3id.org/metpo/000106) 
 
-- [obsolete Akinetes](https://w3id.org/metpo/000106) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Akinetes](https://w3id.org/metpo/000106) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Akinetes](https://w3id.org/metpo/000106) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5297,7 +5293,7 @@
 #### Added
 - Class: [obsolete Akinetes](https://w3id.org/metpo/0000105) 
 
-- [obsolete Akinetes](https://w3id.org/metpo/0000105) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Akinetes](https://w3id.org/metpo/0000105) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Akinetes](https://w3id.org/metpo/0000105) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5311,7 +5307,7 @@
 #### Added
 - Class: [obsolete Aleuriospores](https://w3id.org/metpo/0000115) 
 
-- [obsolete Aleuriospores](https://w3id.org/metpo/0000115) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Aleuriospores](https://w3id.org/metpo/0000115) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Aleuriospores](https://w3id.org/metpo/0000115) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5325,7 +5321,7 @@
 #### Added
 - Class: [obsolete Aleuriospores](https://w3id.org/metpo/000116) 
 
-- [obsolete Aleuriospores](https://w3id.org/metpo/000116) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Aleuriospores](https://w3id.org/metpo/000116) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Aleuriospores](https://w3id.org/metpo/000116) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5339,7 +5335,7 @@
 #### Added
 - Class: [obsolete Alkali Tolerant](https://w3id.org/metpo/000043) 
 
-- [obsolete Alkali Tolerant](https://w3id.org/metpo/000043) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Alkali Tolerant](https://w3id.org/metpo/000043) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Alkali Tolerant](https://w3id.org/metpo/000043) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5353,7 +5349,7 @@
 #### Added
 - Class: [obsolete Alkali Tolerant](https://w3id.org/metpo/0000042) 
 
-- [obsolete Alkali Tolerant](https://w3id.org/metpo/0000042) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Alkali Tolerant](https://w3id.org/metpo/0000042) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Alkali Tolerant](https://w3id.org/metpo/0000042) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5367,9 +5363,9 @@
 #### Added
 - Class: [obsolete Alkaliphile](https://w3id.org/metpo/0000040) 
 
-- [obsolete Alkaliphile](https://w3id.org/metpo/0000040) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Alkaliphile](https://w3id.org/metpo/0000040) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Alkaliphile](https://w3id.org/metpo/0000040) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [alkaliphilic](https://w3id.org/metpo/1003002) 
+- [obsolete Alkaliphile](https://w3id.org/metpo/0000040) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [alkaliphilic](https://w3id.org/metpo/1003002) 
 
 - [obsolete Alkaliphile](https://w3id.org/metpo/0000040) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5383,9 +5379,9 @@
 #### Added
 - Class: [obsolete Alkaliphile](https://w3id.org/metpo/000041) 
 
-- [obsolete Alkaliphile](https://w3id.org/metpo/000041) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Alkaliphile](https://w3id.org/metpo/000041) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Alkaliphile](https://w3id.org/metpo/000041) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [alkaliphilic](https://w3id.org/metpo/1003002) 
+- [obsolete Alkaliphile](https://w3id.org/metpo/000041) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [alkaliphilic](https://w3id.org/metpo/1003002) 
 
 - [obsolete Alkaliphile](https://w3id.org/metpo/000041) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5399,7 +5395,7 @@
 #### Added
 - Class: [obsolete Ammonia oxidation](https://w3id.org/metpo/1002035) 
 
-- [obsolete Ammonia oxidation](https://w3id.org/metpo/1002035) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Ammonia oxidation](https://w3id.org/metpo/1002035) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Ammonia oxidation](https://w3id.org/metpo/1002035) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5413,9 +5409,9 @@
 #### Added
 - Class: [obsolete Anaerobe](https://w3id.org/metpo/000048) 
 
-- [obsolete Anaerobe](https://w3id.org/metpo/000048) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Anaerobe](https://w3id.org/metpo/000048) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Anaerobe](https://w3id.org/metpo/000048) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [anaerobic](https://w3id.org/metpo/1000603) 
+- [obsolete Anaerobe](https://w3id.org/metpo/000048) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [anaerobic](https://w3id.org/metpo/1000603) 
 
 - [obsolete Anaerobe](https://w3id.org/metpo/000048) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5429,9 +5425,9 @@
 #### Added
 - Class: [obsolete Anaerobe](https://w3id.org/metpo/0000047) 
 
-- [obsolete Anaerobe](https://w3id.org/metpo/0000047) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Anaerobe](https://w3id.org/metpo/0000047) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Anaerobe](https://w3id.org/metpo/0000047) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [anaerobic](https://w3id.org/metpo/1000603) 
+- [obsolete Anaerobe](https://w3id.org/metpo/0000047) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [anaerobic](https://w3id.org/metpo/1000603) 
 
 - [obsolete Anaerobe](https://w3id.org/metpo/0000047) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5445,7 +5441,7 @@
 #### Added
 - Class: [obsolete Anaerobic ammonium oxidation](https://w3id.org/metpo/1000812) 
 
-- [obsolete Anaerobic ammonium oxidation](https://w3id.org/metpo/1000812) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Anaerobic ammonium oxidation](https://w3id.org/metpo/1000812) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Anaerobic ammonium oxidation](https://w3id.org/metpo/1000812) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5459,7 +5455,7 @@
 #### Added
 - Class: [obsolete Anaerobic ammonium-oxidizing](https://w3id.org/metpo/1002010) 
 
-- [obsolete Anaerobic ammonium-oxidizing](https://w3id.org/metpo/1002010) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Anaerobic ammonium-oxidizing](https://w3id.org/metpo/1002010) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Anaerobic ammonium-oxidizing](https://w3id.org/metpo/1002010) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5473,7 +5469,7 @@
 #### Added
 - Class: [obsolete Anaerobic methane oxidation](https://w3id.org/metpo/1000867) 
 
-- [obsolete Anaerobic methane oxidation](https://w3id.org/metpo/1000867) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Anaerobic methane oxidation](https://w3id.org/metpo/1000867) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Anaerobic methane oxidation](https://w3id.org/metpo/1000867) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5487,7 +5483,7 @@
 #### Added
 - Class: [obsolete Anoxygenic phototroph](https://w3id.org/metpo/0000057) 
 
-- [obsolete Anoxygenic phototroph](https://w3id.org/metpo/0000057) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Anoxygenic phototroph](https://w3id.org/metpo/0000057) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Anoxygenic phototroph](https://w3id.org/metpo/0000057) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5501,7 +5497,7 @@
 #### Added
 - Class: [obsolete Anoxygenic phototroph](https://w3id.org/metpo/000058) 
 
-- [obsolete Anoxygenic phototroph](https://w3id.org/metpo/000058) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Anoxygenic phototroph](https://w3id.org/metpo/000058) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Anoxygenic phototroph](https://w3id.org/metpo/000058) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5515,7 +5511,7 @@
 #### Added
 - Class: [obsolete Aplanospores](https://w3id.org/metpo/0000123) 
 
-- [obsolete Aplanospores](https://w3id.org/metpo/0000123) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Aplanospores](https://w3id.org/metpo/0000123) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Aplanospores](https://w3id.org/metpo/0000123) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5529,7 +5525,7 @@
 #### Added
 - Class: [obsolete Aplanospores](https://w3id.org/metpo/000124) 
 
-- [obsolete Aplanospores](https://w3id.org/metpo/000124) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Aplanospores](https://w3id.org/metpo/000124) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Aplanospores](https://w3id.org/metpo/000124) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5543,7 +5539,7 @@
 #### Added
 - Class: [obsolete Arsenate reduction](https://w3id.org/metpo/1000839) 
 
-- [obsolete Arsenate reduction](https://w3id.org/metpo/1000839) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Arsenate reduction](https://w3id.org/metpo/1000839) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Arsenate reduction](https://w3id.org/metpo/1000839) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5557,7 +5553,7 @@
 #### Added
 - Class: [obsolete Arsenate-reducing](https://w3id.org/metpo/1002026) 
 
-- [obsolete Arsenate-reducing](https://w3id.org/metpo/1002026) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Arsenate-reducing](https://w3id.org/metpo/1002026) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Arsenate-reducing](https://w3id.org/metpo/1002026) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5571,7 +5567,7 @@
 #### Added
 - Class: [obsolete Arsenite oxidation](https://w3id.org/metpo/1000840) 
 
-- [obsolete Arsenite oxidation](https://w3id.org/metpo/1000840) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Arsenite oxidation](https://w3id.org/metpo/1000840) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Arsenite oxidation](https://w3id.org/metpo/1000840) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5585,7 +5581,7 @@
 #### Added
 - Class: [obsolete Arthrospores](https://w3id.org/metpo/000102) 
 
-- [obsolete Arthrospores](https://w3id.org/metpo/000102) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Arthrospores](https://w3id.org/metpo/000102) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Arthrospores](https://w3id.org/metpo/000102) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5599,7 +5595,7 @@
 #### Added
 - Class: [obsolete Arthrospores](https://w3id.org/metpo/0000101) 
 
-- [obsolete Arthrospores](https://w3id.org/metpo/0000101) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Arthrospores](https://w3id.org/metpo/0000101) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Arthrospores](https://w3id.org/metpo/0000101) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5613,7 +5609,7 @@
 #### Added
 - Class: [obsolete Ascospores](https://w3id.org/metpo/0000113) 
 
-- [obsolete Ascospores](https://w3id.org/metpo/0000113) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Ascospores](https://w3id.org/metpo/0000113) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Ascospores](https://w3id.org/metpo/0000113) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5627,7 +5623,7 @@
 #### Added
 - Class: [obsolete Ascospores](https://w3id.org/metpo/000114) 
 
-- [obsolete Ascospores](https://w3id.org/metpo/000114) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Ascospores](https://w3id.org/metpo/000114) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Ascospores](https://w3id.org/metpo/000114) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5641,7 +5637,7 @@
 #### Added
 - Class: [obsolete Atmospheric pressure-adapted](https://w3id.org/metpo/000134) 
 
-- [obsolete Atmospheric pressure-adapted](https://w3id.org/metpo/000134) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Atmospheric pressure-adapted](https://w3id.org/metpo/000134) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Atmospheric pressure-adapted](https://w3id.org/metpo/000134) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5655,7 +5651,7 @@
 #### Added
 - Class: [obsolete Atmospheric pressure-adapted](https://w3id.org/metpo/0000133) 
 
-- [obsolete Atmospheric pressure-adapted](https://w3id.org/metpo/0000133) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Atmospheric pressure-adapted](https://w3id.org/metpo/0000133) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Atmospheric pressure-adapted](https://w3id.org/metpo/0000133) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5669,9 +5665,9 @@
 #### Added
 - Class: [obsolete Autotroph](https://w3id.org/metpo/0000058) 
 
-- [obsolete Autotroph](https://w3id.org/metpo/0000058) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Autotroph](https://w3id.org/metpo/0000058) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Autotroph](https://w3id.org/metpo/0000058) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [autotrophic](https://w3id.org/metpo/1000632) 
+- [obsolete Autotroph](https://w3id.org/metpo/0000058) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [autotrophic](https://w3id.org/metpo/1000632) 
 
 - [obsolete Autotroph](https://w3id.org/metpo/0000058) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5685,9 +5681,9 @@
 #### Added
 - Class: [obsolete Autotroph](https://w3id.org/metpo/000059) 
 
-- [obsolete Autotroph](https://w3id.org/metpo/000059) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Autotroph](https://w3id.org/metpo/000059) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Autotroph](https://w3id.org/metpo/000059) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [autotrophic](https://w3id.org/metpo/1000632) 
+- [obsolete Autotroph](https://w3id.org/metpo/000059) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [autotrophic](https://w3id.org/metpo/1000632) 
 
 - [obsolete Autotroph](https://w3id.org/metpo/000059) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5701,7 +5697,7 @@
 #### Added
 - Class: [obsolete Azygospores](https://w3id.org/metpo/000112) 
 
-- [obsolete Azygospores](https://w3id.org/metpo/000112) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Azygospores](https://w3id.org/metpo/000112) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Azygospores](https://w3id.org/metpo/000112) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5715,7 +5711,7 @@
 #### Added
 - Class: [obsolete Azygospores](https://w3id.org/metpo/0000111) 
 
-- [obsolete Azygospores](https://w3id.org/metpo/0000111) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Azygospores](https://w3id.org/metpo/0000111) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Azygospores](https://w3id.org/metpo/0000111) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5729,7 +5725,7 @@
 #### Added
 - Class: [obsolete Bacillus](https://w3id.org/metpo/0000210) 
 
-- [obsolete Bacillus](https://w3id.org/metpo/0000210) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Bacillus](https://w3id.org/metpo/0000210) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Bacillus](https://w3id.org/metpo/0000210) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5743,7 +5739,7 @@
 #### Added
 - Class: [obsolete Bacterial Spore Type](https://w3id.org/metpo/0000260) 
 
-- [obsolete Bacterial Spore Type](https://w3id.org/metpo/0000260) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Bacterial Spore Type](https://w3id.org/metpo/0000260) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Bacterial Spore Type](https://w3id.org/metpo/0000260) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5757,7 +5753,7 @@
 #### Added
 - Class: [obsolete Bacterial Spore Type](https://w3id.org/metpo/000261) 
 
-- [obsolete Bacterial Spore Type](https://w3id.org/metpo/000261) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Bacterial Spore Type](https://w3id.org/metpo/000261) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Bacterial Spore Type](https://w3id.org/metpo/000261) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5771,7 +5767,7 @@
 #### Added
 - Class: [obsolete Barotolerant](https://w3id.org/metpo/0000125) 
 
-- [obsolete Barotolerant](https://w3id.org/metpo/0000125) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Barotolerant](https://w3id.org/metpo/0000125) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Barotolerant](https://w3id.org/metpo/0000125) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5785,7 +5781,7 @@
 #### Added
 - Class: [obsolete Barotolerant](https://w3id.org/metpo/000126) 
 
-- [obsolete Barotolerant](https://w3id.org/metpo/000126) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Barotolerant](https://w3id.org/metpo/000126) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Barotolerant](https://w3id.org/metpo/000126) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5799,7 +5795,7 @@
 #### Added
 - Class: [obsolete Basidiospores](https://w3id.org/metpo/000115) 
 
-- [obsolete Basidiospores](https://w3id.org/metpo/000115) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Basidiospores](https://w3id.org/metpo/000115) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Basidiospores](https://w3id.org/metpo/000115) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5813,7 +5809,7 @@
 #### Added
 - Class: [obsolete Basidiospores](https://w3id.org/metpo/0000114) 
 
-- [obsolete Basidiospores](https://w3id.org/metpo/0000114) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Basidiospores](https://w3id.org/metpo/0000114) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Basidiospores](https://w3id.org/metpo/0000114) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5827,9 +5823,9 @@
 #### Added
 - Class: [obsolete Biological Property](https://w3id.org/metpo/0000276) 
 
-- [obsolete Biological Property](https://w3id.org/metpo/0000276) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Biological Property](https://w3id.org/metpo/0000276) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Biological Property](https://w3id.org/metpo/0000276) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [biological process](https://w3id.org/metpo/1000630) 
+- [obsolete Biological Property](https://w3id.org/metpo/0000276) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [biological process](https://w3id.org/metpo/1000630) 
 
 - [obsolete Biological Property](https://w3id.org/metpo/0000276) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5843,7 +5839,7 @@
 #### Added
 - Class: [obsolete Branced](https://w3id.org/metpo/0000211) 
 
-- [obsolete Branced](https://w3id.org/metpo/0000211) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Branced](https://w3id.org/metpo/0000211) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Branced](https://w3id.org/metpo/0000211) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5857,7 +5853,7 @@
 #### Added
 - Class: [obsolete Bromate reduction](https://w3id.org/metpo/1000855) 
 
-- [obsolete Bromate reduction](https://w3id.org/metpo/1000855) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Bromate reduction](https://w3id.org/metpo/1000855) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Bromate reduction](https://w3id.org/metpo/1000855) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5871,7 +5867,7 @@
 #### Added
 - Class: [obsolete Bromate-reducing](https://w3id.org/metpo/1002031) 
 
-- [obsolete Bromate-reducing](https://w3id.org/metpo/1002031) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Bromate-reducing](https://w3id.org/metpo/1002031) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Bromate-reducing](https://w3id.org/metpo/1002031) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5885,7 +5881,7 @@
 #### Added
 - Class: [obsolete CRISPR](https://w3id.org/metpo/1000082) 
 
-- [obsolete CRISPR](https://w3id.org/metpo/1000082) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete CRISPR](https://w3id.org/metpo/1000082) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete CRISPR](https://w3id.org/metpo/1000082) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5899,9 +5895,9 @@
 #### Added
 - Class: [obsolete Capnophile](https://w3id.org/metpo/000087) 
 
-- [obsolete Capnophile](https://w3id.org/metpo/000087) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Capnophile](https://w3id.org/metpo/000087) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Capnophile](https://w3id.org/metpo/000087) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [capnophilic](https://w3id.org/metpo/1005021) 
+- [obsolete Capnophile](https://w3id.org/metpo/000087) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [capnophilic](https://w3id.org/metpo/1005021) 
 
 - [obsolete Capnophile](https://w3id.org/metpo/000087) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5915,9 +5911,9 @@
 #### Added
 - Class: [obsolete Capnophile](https://w3id.org/metpo/0000086) 
 
-- [obsolete Capnophile](https://w3id.org/metpo/0000086) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Capnophile](https://w3id.org/metpo/0000086) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Capnophile](https://w3id.org/metpo/0000086) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [capnophilic](https://w3id.org/metpo/1005021) 
+- [obsolete Capnophile](https://w3id.org/metpo/0000086) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [capnophilic](https://w3id.org/metpo/1005021) 
 
 - [obsolete Capnophile](https://w3id.org/metpo/0000086) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5931,7 +5927,7 @@
 #### Added
 - Class: [obsolete Carbon Source Utilization](https://w3id.org/metpo/000256) 
 
-- [obsolete Carbon Source Utilization](https://w3id.org/metpo/000256) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Carbon Source Utilization](https://w3id.org/metpo/000256) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Carbon Source Utilization](https://w3id.org/metpo/000256) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5945,7 +5941,7 @@
 #### Added
 - Class: [obsolete Carbon Source Utilization](https://w3id.org/metpo/0000255) 
 
-- [obsolete Carbon Source Utilization](https://w3id.org/metpo/0000255) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Carbon Source Utilization](https://w3id.org/metpo/0000255) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Carbon Source Utilization](https://w3id.org/metpo/0000255) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5959,7 +5955,7 @@
 #### Added
 - Class: [obsolete Carbon and organic compound respiration](https://w3id.org/metpo/1000843) 
 
-- [obsolete Carbon and organic compound respiration](https://w3id.org/metpo/1000843) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Carbon and organic compound respiration](https://w3id.org/metpo/1000843) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Carbon and organic compound respiration](https://w3id.org/metpo/1000843) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5973,7 +5969,7 @@
 #### Added
 - Class: [obsolete Carbon monoxide oxidation](https://w3id.org/metpo/1000863) 
 
-- [obsolete Carbon monoxide oxidation](https://w3id.org/metpo/1000863) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Carbon monoxide oxidation](https://w3id.org/metpo/1000863) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Carbon monoxide oxidation](https://w3id.org/metpo/1000863) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -5987,7 +5983,7 @@
 #### Added
 - Class: [obsolete Carbon monoxide-oxidizing](https://w3id.org/metpo/1002039) 
 
-- [obsolete Carbon monoxide-oxidizing](https://w3id.org/metpo/1002039) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Carbon monoxide-oxidizing](https://w3id.org/metpo/1002039) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Carbon monoxide-oxidizing](https://w3id.org/metpo/1002039) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6001,9 +5997,9 @@
 #### Added
 - Class: [obsolete Carboxydotroph](https://w3id.org/metpo/000078) 
 
-- [obsolete Carboxydotroph](https://w3id.org/metpo/000078) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Carboxydotroph](https://w3id.org/metpo/000078) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Carboxydotroph](https://w3id.org/metpo/000078) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [carboxydotrophic](https://w3id.org/metpo/1000633) 
+- [obsolete Carboxydotroph](https://w3id.org/metpo/000078) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [carboxydotrophic](https://w3id.org/metpo/1000633) 
 
 - [obsolete Carboxydotroph](https://w3id.org/metpo/000078) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6017,9 +6013,9 @@
 #### Added
 - Class: [obsolete Carboxydotroph](https://w3id.org/metpo/0000077) 
 
-- [obsolete Carboxydotroph](https://w3id.org/metpo/0000077) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Carboxydotroph](https://w3id.org/metpo/0000077) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Carboxydotroph](https://w3id.org/metpo/0000077) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [carboxydotrophic](https://w3id.org/metpo/1000633) 
+- [obsolete Carboxydotroph](https://w3id.org/metpo/0000077) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [carboxydotrophic](https://w3id.org/metpo/1000633) 
 
 - [obsolete Carboxydotroph](https://w3id.org/metpo/0000077) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6033,9 +6029,9 @@
 #### Added
 - Class: [obsolete Cell Arrangement](https://w3id.org/metpo/0000272) 
 
-- [obsolete Cell Arrangement](https://w3id.org/metpo/0000272) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Cell Arrangement](https://w3id.org/metpo/0000272) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Cell Arrangement](https://w3id.org/metpo/0000272) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [flagellar arrangement](https://w3id.org/metpo/1007005) 
+- [obsolete Cell Arrangement](https://w3id.org/metpo/0000272) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [flagellar arrangement](https://w3id.org/metpo/1007005) 
 
 - [obsolete Cell Arrangement](https://w3id.org/metpo/0000272) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6049,9 +6045,9 @@
 #### Added
 - Class: [obsolete Cell Arrangement](https://w3id.org/metpo/000273) 
 
-- [obsolete Cell Arrangement](https://w3id.org/metpo/000273) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Cell Arrangement](https://w3id.org/metpo/000273) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Cell Arrangement](https://w3id.org/metpo/000273) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [flagellar arrangement](https://w3id.org/metpo/1007005) 
+- [obsolete Cell Arrangement](https://w3id.org/metpo/000273) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [flagellar arrangement](https://w3id.org/metpo/1007005) 
 
 - [obsolete Cell Arrangement](https://w3id.org/metpo/000273) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6065,7 +6061,7 @@
 #### Added
 - Class: [obsolete Cell Dimension](https://w3id.org/metpo/0000267) 
 
-- [obsolete Cell Dimension](https://w3id.org/metpo/0000267) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Cell Dimension](https://w3id.org/metpo/0000267) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Cell Dimension](https://w3id.org/metpo/0000267) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6079,7 +6075,7 @@
 #### Added
 - Class: [obsolete Cell Dimension](https://w3id.org/metpo/000268) 
 
-- [obsolete Cell Dimension](https://w3id.org/metpo/000268) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Cell Dimension](https://w3id.org/metpo/000268) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Cell Dimension](https://w3id.org/metpo/000268) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6093,9 +6089,9 @@
 #### Added
 - Class: [obsolete Cell Length](https://w3id.org/metpo/000011) 
 
-- [obsolete Cell Length](https://w3id.org/metpo/000011) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Cell Length](https://w3id.org/metpo/000011) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Cell Length](https://w3id.org/metpo/000011) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [cell length](https://w3id.org/metpo/1000881) 
+- [obsolete Cell Length](https://w3id.org/metpo/000011) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [cell length](https://w3id.org/metpo/1000881) 
 
 - [obsolete Cell Length](https://w3id.org/metpo/000011) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6109,9 +6105,9 @@
 #### Added
 - Class: [obsolete Cell Length](https://w3id.org/metpo/0000011) 
 
-- [obsolete Cell Length](https://w3id.org/metpo/0000011) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Cell Length](https://w3id.org/metpo/0000011) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Cell Length](https://w3id.org/metpo/0000011) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [cell length](https://w3id.org/metpo/1000881) 
+- [obsolete Cell Length](https://w3id.org/metpo/0000011) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [cell length](https://w3id.org/metpo/1000881) 
 
 - [obsolete Cell Length](https://w3id.org/metpo/0000011) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6125,9 +6121,9 @@
 #### Added
 - Class: [obsolete Cell Shape](https://w3id.org/metpo/0000271) 
 
-- [obsolete Cell Shape](https://w3id.org/metpo/0000271) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Cell Shape](https://w3id.org/metpo/0000271) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Cell Shape](https://w3id.org/metpo/0000271) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [cell shape](https://w3id.org/metpo/1000666) 
+- [obsolete Cell Shape](https://w3id.org/metpo/0000271) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [cell shape](https://w3id.org/metpo/1000666) 
 
 - [obsolete Cell Shape](https://w3id.org/metpo/0000271) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6141,9 +6137,9 @@
 #### Added
 - Class: [obsolete Cell Shape](https://w3id.org/metpo/000272) 
 
-- [obsolete Cell Shape](https://w3id.org/metpo/000272) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Cell Shape](https://w3id.org/metpo/000272) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Cell Shape](https://w3id.org/metpo/000272) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [cell shape](https://w3id.org/metpo/1000666) 
+- [obsolete Cell Shape](https://w3id.org/metpo/000272) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [cell shape](https://w3id.org/metpo/1000666) 
 
 - [obsolete Cell Shape](https://w3id.org/metpo/000272) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6157,9 +6153,9 @@
 #### Added
 - Class: [obsolete Cell Width](https://w3id.org/metpo/0000010) 
 
-- [obsolete Cell Width](https://w3id.org/metpo/0000010) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Cell Width](https://w3id.org/metpo/0000010) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Cell Width](https://w3id.org/metpo/0000010) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [cell width](https://w3id.org/metpo/1000882) 
+- [obsolete Cell Width](https://w3id.org/metpo/0000010) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [cell width](https://w3id.org/metpo/1000882) 
 
 - [obsolete Cell Width](https://w3id.org/metpo/0000010) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6173,9 +6169,9 @@
 #### Added
 - Class: [obsolete Cell Width](https://w3id.org/metpo/000010) 
 
-- [obsolete Cell Width](https://w3id.org/metpo/000010) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Cell Width](https://w3id.org/metpo/000010) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Cell Width](https://w3id.org/metpo/000010) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [cell width](https://w3id.org/metpo/1000882) 
+- [obsolete Cell Width](https://w3id.org/metpo/000010) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [cell width](https://w3id.org/metpo/1000882) 
 
 - [obsolete Cell Width](https://w3id.org/metpo/000010) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6189,9 +6185,9 @@
 #### Added
 - Class: [obsolete Cell length high](https://w3id.org/metpo/0000162) 
 
-- [obsolete Cell length high](https://w3id.org/metpo/0000162) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Cell length high](https://w3id.org/metpo/0000162) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Cell length high](https://w3id.org/metpo/0000162) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [cell length](https://w3id.org/metpo/1000881) 
+- [obsolete Cell length high](https://w3id.org/metpo/0000162) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [cell length](https://w3id.org/metpo/1000881) 
 
 - [obsolete Cell length high](https://w3id.org/metpo/0000162) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6205,9 +6201,9 @@
 #### Added
 - Class: [obsolete Cell length low](https://w3id.org/metpo/0000160) 
 
-- [obsolete Cell length low](https://w3id.org/metpo/0000160) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Cell length low](https://w3id.org/metpo/0000160) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Cell length low](https://w3id.org/metpo/0000160) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [cell length](https://w3id.org/metpo/1000881) 
+- [obsolete Cell length low](https://w3id.org/metpo/0000160) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [cell length](https://w3id.org/metpo/1000881) 
 
 - [obsolete Cell length low](https://w3id.org/metpo/0000160) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6221,9 +6217,9 @@
 #### Added
 - Class: [obsolete Cell length mid](https://w3id.org/metpo/0000161) 
 
-- [obsolete Cell length mid](https://w3id.org/metpo/0000161) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Cell length mid](https://w3id.org/metpo/0000161) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Cell length mid](https://w3id.org/metpo/0000161) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [cell length medium](https://w3id.org/metpo/1000885) 
+- [obsolete Cell length mid](https://w3id.org/metpo/0000161) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [cell length medium](https://w3id.org/metpo/1000885) 
 
 - [obsolete Cell length mid](https://w3id.org/metpo/0000161) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6237,7 +6233,7 @@
 #### Added
 - Class: [obsolete Cell length uM high (> 3)](https://w3id.org/metpo/000163) 
 
-- [obsolete Cell length uM high (> 3)](https://w3id.org/metpo/000163) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Cell length uM high (> 3)](https://w3id.org/metpo/000163) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Cell length uM high (> 3)](https://w3id.org/metpo/000163) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6251,7 +6247,7 @@
 #### Added
 - Class: [obsolete Cell length uM low (1.3 - 2)](https://w3id.org/metpo/000161) 
 
-- [obsolete Cell length uM low (1.3 - 2)](https://w3id.org/metpo/000161) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Cell length uM low (1.3 - 2)](https://w3id.org/metpo/000161) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Cell length uM low (1.3 - 2)](https://w3id.org/metpo/000161) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6265,7 +6261,7 @@
 #### Added
 - Class: [obsolete Cell length uM mid (2 - 3)](https://w3id.org/metpo/000162) 
 
-- [obsolete Cell length uM mid (2 - 3)](https://w3id.org/metpo/000162) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Cell length uM mid (2 - 3)](https://w3id.org/metpo/000162) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Cell length uM mid (2 - 3)](https://w3id.org/metpo/000162) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6279,7 +6275,7 @@
 #### Added
 - Class: [obsolete Cell length uM very low (<= 1.3)](https://w3id.org/metpo/000160) 
 
-- [obsolete Cell length uM very low (<= 1.3)](https://w3id.org/metpo/000160) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Cell length uM very low (<= 1.3)](https://w3id.org/metpo/000160) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Cell length uM very low (<= 1.3)](https://w3id.org/metpo/000160) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6293,9 +6289,9 @@
 #### Added
 - Class: [obsolete Cell length very low](https://w3id.org/metpo/0000159) 
 
-- [obsolete Cell length very low](https://w3id.org/metpo/0000159) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Cell length very low](https://w3id.org/metpo/0000159) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Cell length very low](https://w3id.org/metpo/0000159) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [cell length very small](https://w3id.org/metpo/1000883) 
+- [obsolete Cell length very low](https://w3id.org/metpo/0000159) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [cell length very small](https://w3id.org/metpo/1000883) 
 
 - [obsolete Cell length very low](https://w3id.org/metpo/0000159) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6309,9 +6305,9 @@
 #### Added
 - Class: [obsolete Cell width high](https://w3id.org/metpo/0000158) 
 
-- [obsolete Cell width high](https://w3id.org/metpo/0000158) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Cell width high](https://w3id.org/metpo/0000158) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Cell width high](https://w3id.org/metpo/0000158) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [cell width](https://w3id.org/metpo/1000882) 
+- [obsolete Cell width high](https://w3id.org/metpo/0000158) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [cell width](https://w3id.org/metpo/1000882) 
 
 - [obsolete Cell width high](https://w3id.org/metpo/0000158) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6325,9 +6321,9 @@
 #### Added
 - Class: [obsolete Cell width low](https://w3id.org/metpo/0000156) 
 
-- [obsolete Cell width low](https://w3id.org/metpo/0000156) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Cell width low](https://w3id.org/metpo/0000156) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Cell width low](https://w3id.org/metpo/0000156) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [cell width](https://w3id.org/metpo/1000882) 
+- [obsolete Cell width low](https://w3id.org/metpo/0000156) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [cell width](https://w3id.org/metpo/1000882) 
 
 - [obsolete Cell width low](https://w3id.org/metpo/0000156) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6341,9 +6337,9 @@
 #### Added
 - Class: [obsolete Cell width mid](https://w3id.org/metpo/0000157) 
 
-- [obsolete Cell width mid](https://w3id.org/metpo/0000157) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Cell width mid](https://w3id.org/metpo/0000157) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Cell width mid](https://w3id.org/metpo/0000157) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [cell width medium](https://w3id.org/metpo/1000889) 
+- [obsolete Cell width mid](https://w3id.org/metpo/0000157) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [cell width medium](https://w3id.org/metpo/1000889) 
 
 - [obsolete Cell width mid](https://w3id.org/metpo/0000157) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6357,7 +6353,7 @@
 #### Added
 - Class: [obsolete Cell width uM high (> 0.9)](https://w3id.org/metpo/000159) 
 
-- [obsolete Cell width uM high (> 0.9)](https://w3id.org/metpo/000159) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Cell width uM high (> 0.9)](https://w3id.org/metpo/000159) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Cell width uM high (> 0.9)](https://w3id.org/metpo/000159) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6371,7 +6367,7 @@
 #### Added
 - Class: [obsolete Cell width uM low (0.5 - 0.65)](https://w3id.org/metpo/000157) 
 
-- [obsolete Cell width uM low (0.5 - 0.65)](https://w3id.org/metpo/000157) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Cell width uM low (0.5 - 0.65)](https://w3id.org/metpo/000157) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Cell width uM low (0.5 - 0.65)](https://w3id.org/metpo/000157) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6385,7 +6381,7 @@
 #### Added
 - Class: [obsolete Cell width uM mid (0.65 - 0.9)](https://w3id.org/metpo/000158) 
 
-- [obsolete Cell width uM mid (0.65 - 0.9)](https://w3id.org/metpo/000158) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Cell width uM mid (0.65 - 0.9)](https://w3id.org/metpo/000158) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Cell width uM mid (0.65 - 0.9)](https://w3id.org/metpo/000158) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6399,7 +6395,7 @@
 #### Added
 - Class: [obsolete Cell width uM very low (< 0.5)](https://w3id.org/metpo/000156) 
 
-- [obsolete Cell width uM very low (< 0.5)](https://w3id.org/metpo/000156) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Cell width uM very low (< 0.5)](https://w3id.org/metpo/000156) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Cell width uM very low (< 0.5)](https://w3id.org/metpo/000156) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6413,9 +6409,9 @@
 #### Added
 - Class: [obsolete Cell width very low](https://w3id.org/metpo/0000155) 
 
-- [obsolete Cell width very low](https://w3id.org/metpo/0000155) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Cell width very low](https://w3id.org/metpo/0000155) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Cell width very low](https://w3id.org/metpo/0000155) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [cell width very small](https://w3id.org/metpo/1000887) 
+- [obsolete Cell width very low](https://w3id.org/metpo/0000155) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [cell width very small](https://w3id.org/metpo/1000887) 
 
 - [obsolete Cell width very low](https://w3id.org/metpo/0000155) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6429,7 +6425,7 @@
 #### Added
 - Class: [obsolete Cellular Characteristic](https://w3id.org/metpo/000247) 
 
-- [obsolete Cellular Characteristic](https://w3id.org/metpo/000247) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Cellular Characteristic](https://w3id.org/metpo/000247) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Cellular Characteristic](https://w3id.org/metpo/000247) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6443,7 +6439,7 @@
 #### Added
 - Class: [obsolete Cellular Characteristic](https://w3id.org/metpo/0000246) 
 
-- [obsolete Cellular Characteristic](https://w3id.org/metpo/0000246) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Cellular Characteristic](https://w3id.org/metpo/0000246) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Cellular Characteristic](https://w3id.org/metpo/0000246) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6457,9 +6453,9 @@
 #### Added
 - Class: [obsolete Chemoautotroph](https://w3id.org/metpo/0000060) 
 
-- [obsolete Chemoautotroph](https://w3id.org/metpo/0000060) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Chemoautotroph](https://w3id.org/metpo/0000060) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Chemoautotroph](https://w3id.org/metpo/0000060) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [chemoautotrophic](https://w3id.org/metpo/1000635) 
+- [obsolete Chemoautotroph](https://w3id.org/metpo/0000060) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [chemoautotrophic](https://w3id.org/metpo/1000635) 
 
 - [obsolete Chemoautotroph](https://w3id.org/metpo/0000060) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6473,9 +6469,9 @@
 #### Added
 - Class: [obsolete Chemoautotroph](https://w3id.org/metpo/000061) 
 
-- [obsolete Chemoautotroph](https://w3id.org/metpo/000061) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Chemoautotroph](https://w3id.org/metpo/000061) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Chemoautotroph](https://w3id.org/metpo/000061) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [chemoautotrophic](https://w3id.org/metpo/1000635) 
+- [obsolete Chemoautotroph](https://w3id.org/metpo/000061) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [chemoautotrophic](https://w3id.org/metpo/1000635) 
 
 - [obsolete Chemoautotroph](https://w3id.org/metpo/000061) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6489,9 +6485,9 @@
 #### Added
 - Class: [obsolete Chemoheterotroph](https://w3id.org/metpo/0000063) 
 
-- [obsolete Chemoheterotroph](https://w3id.org/metpo/0000063) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Chemoheterotroph](https://w3id.org/metpo/0000063) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Chemoheterotroph](https://w3id.org/metpo/0000063) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [chemoheterotrophic](https://w3id.org/metpo/1000636) 
+- [obsolete Chemoheterotroph](https://w3id.org/metpo/0000063) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [chemoheterotrophic](https://w3id.org/metpo/1000636) 
 
 - [obsolete Chemoheterotroph](https://w3id.org/metpo/0000063) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6505,9 +6501,9 @@
 #### Added
 - Class: [obsolete Chemoheterotroph](https://w3id.org/metpo/000064) 
 
-- [obsolete Chemoheterotroph](https://w3id.org/metpo/000064) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Chemoheterotroph](https://w3id.org/metpo/000064) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Chemoheterotroph](https://w3id.org/metpo/000064) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [chemoheterotrophic](https://w3id.org/metpo/1000636) 
+- [obsolete Chemoheterotroph](https://w3id.org/metpo/000064) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [chemoheterotrophic](https://w3id.org/metpo/1000636) 
 
 - [obsolete Chemoheterotroph](https://w3id.org/metpo/000064) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6521,9 +6517,9 @@
 #### Added
 - Class: [obsolete Chemolithoautotroph](https://w3id.org/metpo/000075) 
 
-- [obsolete Chemolithoautotroph](https://w3id.org/metpo/000075) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Chemolithoautotroph](https://w3id.org/metpo/000075) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Chemolithoautotroph](https://w3id.org/metpo/000075) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [chemolithoautotrophic](https://w3id.org/metpo/1000637) 
+- [obsolete Chemolithoautotroph](https://w3id.org/metpo/000075) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [chemolithoautotrophic](https://w3id.org/metpo/1000637) 
 
 - [obsolete Chemolithoautotroph](https://w3id.org/metpo/000075) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6537,9 +6533,9 @@
 #### Added
 - Class: [obsolete Chemolithoautotroph](https://w3id.org/metpo/0000074) 
 
-- [obsolete Chemolithoautotroph](https://w3id.org/metpo/0000074) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Chemolithoautotroph](https://w3id.org/metpo/0000074) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Chemolithoautotroph](https://w3id.org/metpo/0000074) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [chemolithoautotrophic](https://w3id.org/metpo/1000637) 
+- [obsolete Chemolithoautotroph](https://w3id.org/metpo/0000074) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [chemolithoautotrophic](https://w3id.org/metpo/1000637) 
 
 - [obsolete Chemolithoautotroph](https://w3id.org/metpo/0000074) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6553,9 +6549,9 @@
 #### Added
 - Class: [obsolete Chemoorganoheterotroph](https://w3id.org/metpo/000074) 
 
-- [obsolete Chemoorganoheterotroph](https://w3id.org/metpo/000074) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Chemoorganoheterotroph](https://w3id.org/metpo/000074) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Chemoorganoheterotroph](https://w3id.org/metpo/000074) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [chemoorganoheterotrophic](https://w3id.org/metpo/1000640) 
+- [obsolete Chemoorganoheterotroph](https://w3id.org/metpo/000074) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [chemoorganoheterotrophic](https://w3id.org/metpo/1000640) 
 
 - [obsolete Chemoorganoheterotroph](https://w3id.org/metpo/000074) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6569,9 +6565,9 @@
 #### Added
 - Class: [obsolete Chemoorganoheterotroph](https://w3id.org/metpo/0000073) 
 
-- [obsolete Chemoorganoheterotroph](https://w3id.org/metpo/0000073) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Chemoorganoheterotroph](https://w3id.org/metpo/0000073) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Chemoorganoheterotroph](https://w3id.org/metpo/0000073) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [chemoorganoheterotrophic](https://w3id.org/metpo/1000640) 
+- [obsolete Chemoorganoheterotroph](https://w3id.org/metpo/0000073) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [chemoorganoheterotrophic](https://w3id.org/metpo/1000640) 
 
 - [obsolete Chemoorganoheterotroph](https://w3id.org/metpo/0000073) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6585,9 +6581,9 @@
 #### Added
 - Class: [obsolete Chemotroph](https://w3id.org/metpo/000068) 
 
-- [obsolete Chemotroph](https://w3id.org/metpo/000068) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Chemotroph](https://w3id.org/metpo/000068) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Chemotroph](https://w3id.org/metpo/000068) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [chemotrophic](https://w3id.org/metpo/1000641) 
+- [obsolete Chemotroph](https://w3id.org/metpo/000068) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [chemotrophic](https://w3id.org/metpo/1000641) 
 
 - [obsolete Chemotroph](https://w3id.org/metpo/000068) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6601,9 +6597,9 @@
 #### Added
 - Class: [obsolete Chemotroph](https://w3id.org/metpo/0000067) 
 
-- [obsolete Chemotroph](https://w3id.org/metpo/0000067) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Chemotroph](https://w3id.org/metpo/0000067) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Chemotroph](https://w3id.org/metpo/0000067) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [chemotrophic](https://w3id.org/metpo/1000641) 
+- [obsolete Chemotroph](https://w3id.org/metpo/0000067) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [chemotrophic](https://w3id.org/metpo/1000641) 
 
 - [obsolete Chemotroph](https://w3id.org/metpo/0000067) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6617,7 +6613,7 @@
 #### Added
 - Class: [obsolete Chlamydospores](https://w3id.org/metpo/0000106) 
 
-- [obsolete Chlamydospores](https://w3id.org/metpo/0000106) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Chlamydospores](https://w3id.org/metpo/0000106) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Chlamydospores](https://w3id.org/metpo/0000106) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6631,7 +6627,7 @@
 #### Added
 - Class: [obsolete Chlamydospores](https://w3id.org/metpo/000107) 
 
-- [obsolete Chlamydospores](https://w3id.org/metpo/000107) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Chlamydospores](https://w3id.org/metpo/000107) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Chlamydospores](https://w3id.org/metpo/000107) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6645,7 +6641,7 @@
 #### Added
 - Class: [obsolete Chlorate respiration](https://w3id.org/metpo/1000854) 
 
-- [obsolete Chlorate respiration](https://w3id.org/metpo/1000854) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Chlorate respiration](https://w3id.org/metpo/1000854) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Chlorate respiration](https://w3id.org/metpo/1000854) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6659,7 +6655,7 @@
 #### Added
 - Class: [obsolete Chlorate-reducing](https://w3id.org/metpo/1002030) 
 
-- [obsolete Chlorate-reducing](https://w3id.org/metpo/1002030) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Chlorate-reducing](https://w3id.org/metpo/1002030) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Chlorate-reducing](https://w3id.org/metpo/1002030) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6673,7 +6669,7 @@
 #### Added
 - Class: [obsolete Chromium reduction](https://w3id.org/metpo/1000836) 
 
-- [obsolete Chromium reduction](https://w3id.org/metpo/1000836) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Chromium reduction](https://w3id.org/metpo/1000836) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Chromium reduction](https://w3id.org/metpo/1000836) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6687,7 +6683,7 @@
 #### Added
 - Class: [obsolete Ciliated](https://w3id.org/metpo/000094) 
 
-- [obsolete Ciliated](https://w3id.org/metpo/000094) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Ciliated](https://w3id.org/metpo/000094) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Ciliated](https://w3id.org/metpo/000094) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6701,7 +6697,7 @@
 #### Added
 - Class: [obsolete Ciliated](https://w3id.org/metpo/0000093) 
 
-- [obsolete Ciliated](https://w3id.org/metpo/0000093) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Ciliated](https://w3id.org/metpo/0000093) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Ciliated](https://w3id.org/metpo/0000093) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6715,7 +6711,7 @@
 #### Added
 - Class: [obsolete Classification Property](https://w3id.org/metpo/0000278) 
 
-- [obsolete Classification Property](https://w3id.org/metpo/0000278) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Classification Property](https://w3id.org/metpo/0000278) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Classification Property](https://w3id.org/metpo/0000278) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6729,7 +6725,7 @@
 #### Added
 - Class: [obsolete Cobalt reduction](https://w3id.org/metpo/1000838) 
 
-- [obsolete Cobalt reduction](https://w3id.org/metpo/1000838) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Cobalt reduction](https://w3id.org/metpo/1000838) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Cobalt reduction](https://w3id.org/metpo/1000838) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6743,7 +6739,7 @@
 #### Added
 - Class: [obsolete Coccobacillus](https://w3id.org/metpo/0000212) 
 
-- [obsolete Coccobacillus](https://w3id.org/metpo/0000212) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Coccobacillus](https://w3id.org/metpo/0000212) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Coccobacillus](https://w3id.org/metpo/0000212) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6757,7 +6753,7 @@
 #### Added
 - Class: [obsolete Coccus](https://w3id.org/metpo/0000213) 
 
-- [obsolete Coccus](https://w3id.org/metpo/0000213) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Coccus](https://w3id.org/metpo/0000213) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Coccus](https://w3id.org/metpo/0000213) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6771,9 +6767,9 @@
 #### Added
 - Class: [obsolete Colony Morphology](https://w3id.org/metpo/0000273) 
 
-- [obsolete Colony Morphology](https://w3id.org/metpo/0000273) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Colony Morphology](https://w3id.org/metpo/0000273) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Colony Morphology](https://w3id.org/metpo/0000273) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [colony morphology](https://w3id.org/metpo/1007062) 
+- [obsolete Colony Morphology](https://w3id.org/metpo/0000273) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [colony morphology](https://w3id.org/metpo/1007062) 
 
 - [obsolete Colony Morphology](https://w3id.org/metpo/0000273) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6787,9 +6783,9 @@
 #### Added
 - Class: [obsolete Colony Morphology](https://w3id.org/metpo/000274) 
 
-- [obsolete Colony Morphology](https://w3id.org/metpo/000274) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Colony Morphology](https://w3id.org/metpo/000274) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Colony Morphology](https://w3id.org/metpo/000274) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [colony morphology](https://w3id.org/metpo/1007062) 
+- [obsolete Colony Morphology](https://w3id.org/metpo/000274) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [colony morphology](https://w3id.org/metpo/1007062) 
 
 - [obsolete Colony Morphology](https://w3id.org/metpo/000274) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6803,7 +6799,7 @@
 #### Added
 - Class: [obsolete Complete ammonia oxidation](https://w3id.org/metpo/1000862) 
 
-- [obsolete Complete ammonia oxidation](https://w3id.org/metpo/1000862) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Complete ammonia oxidation](https://w3id.org/metpo/1000862) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Complete ammonia oxidation](https://w3id.org/metpo/1000862) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6817,7 +6813,7 @@
 #### Added
 - Class: [obsolete Complete ammonia-oxidizing](https://w3id.org/metpo/1002037) 
 
-- [obsolete Complete ammonia-oxidizing](https://w3id.org/metpo/1002037) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Complete ammonia-oxidizing](https://w3id.org/metpo/1002037) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Complete ammonia-oxidizing](https://w3id.org/metpo/1002037) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6831,7 +6827,7 @@
 #### Added
 - Class: [obsolete Conidia](https://w3id.org/metpo/000103) 
 
-- [obsolete Conidia](https://w3id.org/metpo/000103) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Conidia](https://w3id.org/metpo/000103) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Conidia](https://w3id.org/metpo/000103) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6845,7 +6841,7 @@
 #### Added
 - Class: [obsolete Conidia](https://w3id.org/metpo/0000102) 
 
-- [obsolete Conidia](https://w3id.org/metpo/0000102) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Conidia](https://w3id.org/metpo/0000102) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Conidia](https://w3id.org/metpo/0000102) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6859,9 +6855,9 @@
 #### Added
 - Class: [obsolete Copiotroph](https://w3id.org/metpo/000070) 
 
-- [obsolete Copiotroph](https://w3id.org/metpo/000070) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Copiotroph](https://w3id.org/metpo/000070) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Copiotroph](https://w3id.org/metpo/000070) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [copiotrophic](https://w3id.org/metpo/1000642) 
+- [obsolete Copiotroph](https://w3id.org/metpo/000070) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [copiotrophic](https://w3id.org/metpo/1000642) 
 
 - [obsolete Copiotroph](https://w3id.org/metpo/000070) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6875,9 +6871,9 @@
 #### Added
 - Class: [obsolete Copiotroph](https://w3id.org/metpo/0000069) 
 
-- [obsolete Copiotroph](https://w3id.org/metpo/0000069) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Copiotroph](https://w3id.org/metpo/0000069) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Copiotroph](https://w3id.org/metpo/0000069) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [copiotrophic](https://w3id.org/metpo/1000642) 
+- [obsolete Copiotroph](https://w3id.org/metpo/0000069) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [copiotrophic](https://w3id.org/metpo/1000642) 
 
 - [obsolete Copiotroph](https://w3id.org/metpo/0000069) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6891,7 +6887,7 @@
 #### Added
 - Class: [obsolete Crescent](https://w3id.org/metpo/0000214) 
 
-- [obsolete Crescent](https://w3id.org/metpo/0000214) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Crescent](https://w3id.org/metpo/0000214) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Crescent](https://w3id.org/metpo/0000214) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6905,7 +6901,7 @@
 #### Added
 - Class: [obsolete Curved](https://w3id.org/metpo/0000215) 
 
-- [obsolete Curved](https://w3id.org/metpo/0000215) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Curved](https://w3id.org/metpo/0000215) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Curved](https://w3id.org/metpo/0000215) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6919,7 +6915,7 @@
 #### Added
 - Class: [obsolete Curved Spiral](https://w3id.org/metpo/0000216) 
 
-- [obsolete Curved Spiral](https://w3id.org/metpo/0000216) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Curved Spiral](https://w3id.org/metpo/0000216) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Curved Spiral](https://w3id.org/metpo/0000216) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6933,7 +6929,7 @@
 #### Added
 - Class: [obsolete Cysts](https://w3id.org/metpo/000113) 
 
-- [obsolete Cysts](https://w3id.org/metpo/000113) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Cysts](https://w3id.org/metpo/000113) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Cysts](https://w3id.org/metpo/000113) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6947,7 +6943,7 @@
 #### Added
 - Class: [obsolete Cysts](https://w3id.org/metpo/0000112) 
 
-- [obsolete Cysts](https://w3id.org/metpo/0000112) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Cysts](https://w3id.org/metpo/0000112) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Cysts](https://w3id.org/metpo/0000112) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6961,9 +6957,9 @@
 #### Added
 - Class: [obsolete Denitrification](https://w3id.org/metpo/1000809) 
 
-- [obsolete Denitrification](https://w3id.org/metpo/1000809) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Denitrification](https://w3id.org/metpo/1000809) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
-- [obsolete Denitrification](https://w3id.org/metpo/1000809) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [denitrification](https://w3id.org/metpo/1005038) 
+- [obsolete Denitrification](https://w3id.org/metpo/1000809) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [denitrification](https://w3id.org/metpo/1005038) 
 
 - [obsolete Denitrification](https://w3id.org/metpo/1000809) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6977,7 +6973,7 @@
 #### Added
 - Class: [obsolete Denitrifier](https://w3id.org/metpo/0000085) 
 
-- [obsolete Denitrifier](https://w3id.org/metpo/0000085) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Denitrifier](https://w3id.org/metpo/0000085) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Denitrifier](https://w3id.org/metpo/0000085) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -6991,7 +6987,7 @@
 #### Added
 - Class: [obsolete Denitrifier](https://w3id.org/metpo/000086) 
 
-- [obsolete Denitrifier](https://w3id.org/metpo/000086) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Denitrifier](https://w3id.org/metpo/000086) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Denitrifier](https://w3id.org/metpo/000086) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7005,7 +7001,7 @@
 #### Added
 - Class: [obsolete Dimethyl sulfoxide respiration](https://w3id.org/metpo/1000821) 
 
-- [obsolete Dimethyl sulfoxide respiration](https://w3id.org/metpo/1000821) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Dimethyl sulfoxide respiration](https://w3id.org/metpo/1000821) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Dimethyl sulfoxide respiration](https://w3id.org/metpo/1000821) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7019,7 +7015,7 @@
 #### Added
 - Class: [obsolete Diplococcus](https://w3id.org/metpo/0000217) 
 
-- [obsolete Diplococcus](https://w3id.org/metpo/0000217) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Diplococcus](https://w3id.org/metpo/0000217) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Diplococcus](https://w3id.org/metpo/0000217) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7033,7 +7029,7 @@
 #### Added
 - Class: [obsolete Disc](https://w3id.org/metpo/0000218) 
 
-- [obsolete Disc](https://w3id.org/metpo/0000218) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Disc](https://w3id.org/metpo/0000218) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Disc](https://w3id.org/metpo/0000218) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7047,7 +7043,7 @@
 #### Added
 - Class: [obsolete Dissimilatory nitrate reduction to ammonium](https://w3id.org/metpo/1000810) 
 
-- [obsolete Dissimilatory nitrate reduction to ammonium](https://w3id.org/metpo/1000810) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Dissimilatory nitrate reduction to ammonium](https://w3id.org/metpo/1000810) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Dissimilatory nitrate reduction to ammonium](https://w3id.org/metpo/1000810) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7061,7 +7057,7 @@
 #### Added
 - Class: [obsolete Dormancy Structure](https://w3id.org/metpo/0000263) 
 
-- [obsolete Dormancy Structure](https://w3id.org/metpo/0000263) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Dormancy Structure](https://w3id.org/metpo/0000263) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Dormancy Structure](https://w3id.org/metpo/0000263) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7075,7 +7071,7 @@
 #### Added
 - Class: [obsolete Dormancy Structure](https://w3id.org/metpo/000264) 
 
-- [obsolete Dormancy Structure](https://w3id.org/metpo/000264) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Dormancy Structure](https://w3id.org/metpo/000264) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Dormancy Structure](https://w3id.org/metpo/000264) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7089,7 +7085,7 @@
 #### Added
 - Class: [obsolete Dumbbell](https://w3id.org/metpo/0000219) 
 
-- [obsolete Dumbbell](https://w3id.org/metpo/0000219) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Dumbbell](https://w3id.org/metpo/0000219) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Dumbbell](https://w3id.org/metpo/0000219) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7103,7 +7099,7 @@
 #### Added
 - Class: [obsolete Electron Donor Type](https://w3id.org/metpo/0000257) 
 
-- [obsolete Electron Donor Type](https://w3id.org/metpo/0000257) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Electron Donor Type](https://w3id.org/metpo/0000257) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Electron Donor Type](https://w3id.org/metpo/0000257) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7117,7 +7113,7 @@
 #### Added
 - Class: [obsolete Electron Donor Type](https://w3id.org/metpo/000258) 
 
-- [obsolete Electron Donor Type](https://w3id.org/metpo/000258) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Electron Donor Type](https://w3id.org/metpo/000258) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Electron Donor Type](https://w3id.org/metpo/000258) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7131,9 +7127,9 @@
 #### Added
 - Class: [obsolete Ellipsoidal](https://w3id.org/metpo/0000220) 
 
-- [obsolete Ellipsoidal](https://w3id.org/metpo/0000220) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Ellipsoidal](https://w3id.org/metpo/0000220) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Ellipsoidal](https://w3id.org/metpo/0000220) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [ellipsoidal](https://w3id.org/metpo/1000673) 
+- [obsolete Ellipsoidal](https://w3id.org/metpo/0000220) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [ellipsoidal](https://w3id.org/metpo/1000673) 
 
 - [obsolete Ellipsoidal](https://w3id.org/metpo/0000220) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7147,7 +7143,7 @@
 #### Added
 - Class: [obsolete Endospores](https://w3id.org/metpo/0000098) 
 
-- [obsolete Endospores](https://w3id.org/metpo/0000098) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Endospores](https://w3id.org/metpo/0000098) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Endospores](https://w3id.org/metpo/0000098) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7161,7 +7157,7 @@
 #### Added
 - Class: [obsolete Endospores](https://w3id.org/metpo/000099) 
 
-- [obsolete Endospores](https://w3id.org/metpo/000099) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Endospores](https://w3id.org/metpo/000099) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Endospores](https://w3id.org/metpo/000099) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7175,7 +7171,7 @@
 #### Added
 - Class: [obsolete Energy Acquisition Mode](https://w3id.org/metpo/000257) 
 
-- [obsolete Energy Acquisition Mode](https://w3id.org/metpo/000257) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Energy Acquisition Mode](https://w3id.org/metpo/000257) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Energy Acquisition Mode](https://w3id.org/metpo/000257) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7189,7 +7185,7 @@
 #### Added
 - Class: [obsolete Energy Acquisition Mode](https://w3id.org/metpo/0000256) 
 
-- [obsolete Energy Acquisition Mode](https://w3id.org/metpo/0000256) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Energy Acquisition Mode](https://w3id.org/metpo/0000256) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Energy Acquisition Mode](https://w3id.org/metpo/0000256) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7203,7 +7199,7 @@
 #### Added
 - Class: [obsolete Environmental Context](https://w3id.org/metpo/0000275) 
 
-- [obsolete Environmental Context](https://w3id.org/metpo/0000275) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Environmental Context](https://w3id.org/metpo/0000275) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Environmental Context](https://w3id.org/metpo/0000275) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7217,7 +7213,7 @@
 #### Added
 - Class: [obsolete Environmental Parameter](https://w3id.org/metpo/000243) 
 
-- [obsolete Environmental Parameter](https://w3id.org/metpo/000243) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Environmental Parameter](https://w3id.org/metpo/000243) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Environmental Parameter](https://w3id.org/metpo/000243) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7231,7 +7227,7 @@
 #### Added
 - Class: [obsolete Environmental Parameter](https://w3id.org/metpo/0000242) 
 
-- [obsolete Environmental Parameter](https://w3id.org/metpo/0000242) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Environmental Parameter](https://w3id.org/metpo/0000242) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Environmental Parameter](https://w3id.org/metpo/0000242) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7245,7 +7241,7 @@
 #### Added
 - Class: [obsolete Eurypiezic](https://w3id.org/metpo/0000137) 
 
-- [obsolete Eurypiezic](https://w3id.org/metpo/0000137) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Eurypiezic](https://w3id.org/metpo/0000137) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Eurypiezic](https://w3id.org/metpo/0000137) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7259,7 +7255,7 @@
 #### Added
 - Class: [obsolete Eurypiezic](https://w3id.org/metpo/000138) 
 
-- [obsolete Eurypiezic](https://w3id.org/metpo/000138) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Eurypiezic](https://w3id.org/metpo/000138) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Eurypiezic](https://w3id.org/metpo/000138) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7273,7 +7269,7 @@
 #### Added
 - Class: [obsolete Exospores](https://w3id.org/metpo/0000099) 
 
-- [obsolete Exospores](https://w3id.org/metpo/0000099) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Exospores](https://w3id.org/metpo/0000099) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Exospores](https://w3id.org/metpo/0000099) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7287,7 +7283,7 @@
 #### Added
 - Class: [obsolete Exospores](https://w3id.org/metpo/000100) 
 
-- [obsolete Exospores](https://w3id.org/metpo/000100) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Exospores](https://w3id.org/metpo/000100) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Exospores](https://w3id.org/metpo/000100) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7301,7 +7297,7 @@
 #### Added
 - Class: [obsolete Extreme Acidophile](https://w3id.org/metpo/0000037) 
 
-- [obsolete Extreme Acidophile](https://w3id.org/metpo/0000037) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Extreme Acidophile](https://w3id.org/metpo/0000037) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Extreme Acidophile](https://w3id.org/metpo/0000037) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7315,7 +7311,7 @@
 #### Added
 - Class: [obsolete Extreme Acidophile](https://w3id.org/metpo/000038) 
 
-- [obsolete Extreme Acidophile](https://w3id.org/metpo/000038) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Extreme Acidophile](https://w3id.org/metpo/000038) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Extreme Acidophile](https://w3id.org/metpo/000038) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7329,7 +7325,7 @@
 #### Added
 - Class: [obsolete Extreme Alkaliphile](https://w3id.org/metpo/000044) 
 
-- [obsolete Extreme Alkaliphile](https://w3id.org/metpo/000044) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Extreme Alkaliphile](https://w3id.org/metpo/000044) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Extreme Alkaliphile](https://w3id.org/metpo/000044) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7343,7 +7339,7 @@
 #### Added
 - Class: [obsolete Extreme Alkaliphile](https://w3id.org/metpo/0000043) 
 
-- [obsolete Extreme Alkaliphile](https://w3id.org/metpo/0000043) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Extreme Alkaliphile](https://w3id.org/metpo/0000043) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Extreme Alkaliphile](https://w3id.org/metpo/0000043) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7357,9 +7353,9 @@
 #### Added
 - Class: [obsolete Extreme halophile](https://w3id.org/metpo/000035) 
 
-- [obsolete Extreme halophile](https://w3id.org/metpo/000035) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Extreme halophile](https://w3id.org/metpo/000035) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Extreme halophile](https://w3id.org/metpo/000035) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [extremely halophilic](https://w3id.org/metpo/1000628) 
+- [obsolete Extreme halophile](https://w3id.org/metpo/000035) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [extremely halophilic](https://w3id.org/metpo/1000628) 
 
 - [obsolete Extreme halophile](https://w3id.org/metpo/000035) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7373,9 +7369,9 @@
 #### Added
 - Class: [obsolete Extreme halophile](https://w3id.org/metpo/0000034) 
 
-- [obsolete Extreme halophile](https://w3id.org/metpo/0000034) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Extreme halophile](https://w3id.org/metpo/0000034) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Extreme halophile](https://w3id.org/metpo/0000034) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [extremely halophilic](https://w3id.org/metpo/1000628) 
+- [obsolete Extreme halophile](https://w3id.org/metpo/0000034) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [extremely halophilic](https://w3id.org/metpo/1000628) 
 
 - [obsolete Extreme halophile](https://w3id.org/metpo/0000034) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7389,9 +7385,9 @@
 #### Added
 - Class: [obsolete Extreme hyperthermophile](https://w3id.org/metpo/000030) 
 
-- [obsolete Extreme hyperthermophile](https://w3id.org/metpo/000030) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Extreme hyperthermophile](https://w3id.org/metpo/000030) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Extreme hyperthermophile](https://w3id.org/metpo/000030) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [extreme hyperthermophilic](https://w3id.org/metpo/1000721) 
+- [obsolete Extreme hyperthermophile](https://w3id.org/metpo/000030) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [extreme hyperthermophilic](https://w3id.org/metpo/1000721) 
 
 - [obsolete Extreme hyperthermophile](https://w3id.org/metpo/000030) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7405,9 +7401,9 @@
 #### Added
 - Class: [obsolete Extreme hyperthermophile](https://w3id.org/metpo/0000029) 
 
-- [obsolete Extreme hyperthermophile](https://w3id.org/metpo/0000029) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Extreme hyperthermophile](https://w3id.org/metpo/0000029) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Extreme hyperthermophile](https://w3id.org/metpo/0000029) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [extreme hyperthermophilic](https://w3id.org/metpo/1000721) 
+- [obsolete Extreme hyperthermophile](https://w3id.org/metpo/0000029) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [extreme hyperthermophilic](https://w3id.org/metpo/1000721) 
 
 - [obsolete Extreme hyperthermophile](https://w3id.org/metpo/0000029) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7421,7 +7417,7 @@
 #### Added
 - Class: [obsolete Extreme piezophile](https://w3id.org/metpo/0000135) 
 
-- [obsolete Extreme piezophile](https://w3id.org/metpo/0000135) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Extreme piezophile](https://w3id.org/metpo/0000135) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Extreme piezophile](https://w3id.org/metpo/0000135) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7435,7 +7431,7 @@
 #### Added
 - Class: [obsolete Extreme piezophile](https://w3id.org/metpo/000136) 
 
-- [obsolete Extreme piezophile](https://w3id.org/metpo/000136) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Extreme piezophile](https://w3id.org/metpo/000136) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Extreme piezophile](https://w3id.org/metpo/000136) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7449,9 +7445,9 @@
 #### Added
 - Class: [obsolete Extreme thermophile](https://w3id.org/metpo/0000027) 
 
-- [obsolete Extreme thermophile](https://w3id.org/metpo/0000027) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Extreme thermophile](https://w3id.org/metpo/0000027) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Extreme thermophile](https://w3id.org/metpo/0000027) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [extreme hyperthermophilic](https://w3id.org/metpo/1000721) 
+- [obsolete Extreme thermophile](https://w3id.org/metpo/0000027) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [extreme hyperthermophilic](https://w3id.org/metpo/1000721) 
 
 - [obsolete Extreme thermophile](https://w3id.org/metpo/0000027) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7465,9 +7461,9 @@
 #### Added
 - Class: [obsolete Extreme thermophile](https://w3id.org/metpo/000028) 
 
-- [obsolete Extreme thermophile](https://w3id.org/metpo/000028) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Extreme thermophile](https://w3id.org/metpo/000028) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Extreme thermophile](https://w3id.org/metpo/000028) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [extreme hyperthermophilic](https://w3id.org/metpo/1000721) 
+- [obsolete Extreme thermophile](https://w3id.org/metpo/000028) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [extreme hyperthermophilic](https://w3id.org/metpo/1000721) 
 
 - [obsolete Extreme thermophile](https://w3id.org/metpo/000028) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7481,9 +7477,9 @@
 #### Added
 - Class: [obsolete Facultative acidophile](https://w3id.org/metpo/0000044) 
 
-- [obsolete Facultative acidophile](https://w3id.org/metpo/0000044) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Facultative acidophile](https://w3id.org/metpo/0000044) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Facultative acidophile](https://w3id.org/metpo/0000044) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [facultatively acidophilic](https://w3id.org/metpo/1003007) 
+- [obsolete Facultative acidophile](https://w3id.org/metpo/0000044) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [facultatively acidophilic](https://w3id.org/metpo/1003007) 
 
 - [obsolete Facultative acidophile](https://w3id.org/metpo/0000044) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7497,9 +7493,9 @@
 #### Added
 - Class: [obsolete Facultative acidophile](https://w3id.org/metpo/000045) 
 
-- [obsolete Facultative acidophile](https://w3id.org/metpo/000045) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Facultative acidophile](https://w3id.org/metpo/000045) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Facultative acidophile](https://w3id.org/metpo/000045) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [facultatively acidophilic](https://w3id.org/metpo/1003007) 
+- [obsolete Facultative acidophile](https://w3id.org/metpo/000045) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [facultatively acidophilic](https://w3id.org/metpo/1003007) 
 
 - [obsolete Facultative acidophile](https://w3id.org/metpo/000045) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7513,9 +7509,9 @@
 #### Added
 - Class: [obsolete Facultative aerobe](https://w3id.org/metpo/000050) 
 
-- [obsolete Facultative aerobe](https://w3id.org/metpo/000050) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Facultative aerobe](https://w3id.org/metpo/000050) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Facultative aerobe](https://w3id.org/metpo/000050) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [facultatively aerobic](https://w3id.org/metpo/1000608) 
+- [obsolete Facultative aerobe](https://w3id.org/metpo/000050) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [facultatively aerobic](https://w3id.org/metpo/1000608) 
 
 - [obsolete Facultative aerobe](https://w3id.org/metpo/000050) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7529,9 +7525,9 @@
 #### Added
 - Class: [obsolete Facultative aerobe](https://w3id.org/metpo/0000049) 
 
-- [obsolete Facultative aerobe](https://w3id.org/metpo/0000049) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Facultative aerobe](https://w3id.org/metpo/0000049) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Facultative aerobe](https://w3id.org/metpo/0000049) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [facultatively aerobic](https://w3id.org/metpo/1000608) 
+- [obsolete Facultative aerobe](https://w3id.org/metpo/0000049) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [facultatively aerobic](https://w3id.org/metpo/1000608) 
 
 - [obsolete Facultative aerobe](https://w3id.org/metpo/0000049) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7545,9 +7541,9 @@
 #### Added
 - Class: [obsolete Facultative anaerobe](https://w3id.org/metpo/000049) 
 
-- [obsolete Facultative anaerobe](https://w3id.org/metpo/000049) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Facultative anaerobe](https://w3id.org/metpo/000049) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Facultative anaerobe](https://w3id.org/metpo/000049) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [facultatively anaerobic](https://w3id.org/metpo/1000605) 
+- [obsolete Facultative anaerobe](https://w3id.org/metpo/000049) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [facultatively anaerobic](https://w3id.org/metpo/1000605) 
 
 - [obsolete Facultative anaerobe](https://w3id.org/metpo/000049) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7561,9 +7557,9 @@
 #### Added
 - Class: [obsolete Facultative anaerobe](https://w3id.org/metpo/0000048) 
 
-- [obsolete Facultative anaerobe](https://w3id.org/metpo/0000048) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Facultative anaerobe](https://w3id.org/metpo/0000048) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Facultative anaerobe](https://w3id.org/metpo/0000048) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [facultatively anaerobic](https://w3id.org/metpo/1000605) 
+- [obsolete Facultative anaerobe](https://w3id.org/metpo/0000048) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [facultatively anaerobic](https://w3id.org/metpo/1000605) 
 
 - [obsolete Facultative anaerobe](https://w3id.org/metpo/0000048) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7577,7 +7573,7 @@
 #### Added
 - Class: [obsolete Facultative barophile](https://w3id.org/metpo/0000130) 
 
-- [obsolete Facultative barophile](https://w3id.org/metpo/0000130) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Facultative barophile](https://w3id.org/metpo/0000130) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Facultative barophile](https://w3id.org/metpo/0000130) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7591,7 +7587,7 @@
 #### Added
 - Class: [obsolete Facultative barophile](https://w3id.org/metpo/000131) 
 
-- [obsolete Facultative barophile](https://w3id.org/metpo/000131) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Facultative barophile](https://w3id.org/metpo/000131) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Facultative barophile](https://w3id.org/metpo/000131) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7605,7 +7601,7 @@
 #### Added
 - Class: [obsolete Fe(III)-dependent methane oxidation](https://w3id.org/metpo/1002001) 
 
-- [obsolete Fe(III)-dependent methane oxidation](https://w3id.org/metpo/1002001) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Fe(III)-dependent methane oxidation](https://w3id.org/metpo/1002001) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Fe(III)-dependent methane oxidation](https://w3id.org/metpo/1002001) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7619,7 +7615,7 @@
 #### Added
 - Class: [obsolete Filament](https://w3id.org/metpo/0000221) 
 
-- [obsolete Filament](https://w3id.org/metpo/0000221) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Filament](https://w3id.org/metpo/0000221) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Filament](https://w3id.org/metpo/0000221) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7633,9 +7629,9 @@
 #### Added
 - Class: [obsolete Flagellated](https://w3id.org/metpo/000090) 
 
-- [obsolete Flagellated](https://w3id.org/metpo/000090) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Flagellated](https://w3id.org/metpo/000090) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Flagellated](https://w3id.org/metpo/000090) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [flagellated](https://w3id.org/metpo/1000704) 
+- [obsolete Flagellated](https://w3id.org/metpo/000090) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [flagellated](https://w3id.org/metpo/1000704) 
 
 - [obsolete Flagellated](https://w3id.org/metpo/000090) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7649,9 +7645,9 @@
 #### Added
 - Class: [obsolete Flagellated](https://w3id.org/metpo/0000089) 
 
-- [obsolete Flagellated](https://w3id.org/metpo/0000089) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Flagellated](https://w3id.org/metpo/0000089) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Flagellated](https://w3id.org/metpo/0000089) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [flagellated](https://w3id.org/metpo/1000704) 
+- [obsolete Flagellated](https://w3id.org/metpo/0000089) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [flagellated](https://w3id.org/metpo/1000704) 
 
 - [obsolete Flagellated](https://w3id.org/metpo/0000089) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7665,7 +7661,7 @@
 #### Added
 - Class: [obsolete Flask](https://w3id.org/metpo/0000222) 
 
-- [obsolete Flask](https://w3id.org/metpo/0000222) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Flask](https://w3id.org/metpo/0000222) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Flask](https://w3id.org/metpo/0000222) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7679,7 +7675,7 @@
 #### Added
 - Class: [obsolete Fumarate respiration](https://w3id.org/metpo/1000847) 
 
-- [obsolete Fumarate respiration](https://w3id.org/metpo/1000847) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Fumarate respiration](https://w3id.org/metpo/1000847) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Fumarate respiration](https://w3id.org/metpo/1000847) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7693,7 +7689,7 @@
 #### Added
 - Class: [obsolete Functional Classification](https://w3id.org/metpo/0000277) 
 
-- [obsolete Functional Classification](https://w3id.org/metpo/0000277) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Functional Classification](https://w3id.org/metpo/0000277) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Functional Classification](https://w3id.org/metpo/0000277) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7707,7 +7703,7 @@
 #### Added
 - Class: [obsolete Fungal Spore Type](https://w3id.org/metpo/000262) 
 
-- [obsolete Fungal Spore Type](https://w3id.org/metpo/000262) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Fungal Spore Type](https://w3id.org/metpo/000262) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Fungal Spore Type](https://w3id.org/metpo/000262) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7721,7 +7717,7 @@
 #### Added
 - Class: [obsolete Fungal Spore Type](https://w3id.org/metpo/0000261) 
 
-- [obsolete Fungal Spore Type](https://w3id.org/metpo/0000261) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Fungal Spore Type](https://w3id.org/metpo/0000261) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Fungal Spore Type](https://w3id.org/metpo/0000261) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7735,7 +7731,7 @@
 #### Added
 - Class: [obsolete Fusiform](https://w3id.org/metpo/0000223) 
 
-- [obsolete Fusiform](https://w3id.org/metpo/0000223) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Fusiform](https://w3id.org/metpo/0000223) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Fusiform](https://w3id.org/metpo/0000223) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7749,9 +7745,9 @@
 #### Added
 - Class: [obsolete GC content](https://w3id.org/metpo/0000009) 
 
-- [obsolete GC content](https://w3id.org/metpo/0000009) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete GC content](https://w3id.org/metpo/0000009) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete GC content](https://w3id.org/metpo/0000009) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [GC content](https://w3id.org/metpo/1000127) 
+- [obsolete GC content](https://w3id.org/metpo/0000009) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [GC content](https://w3id.org/metpo/1000127) 
 
 - [obsolete GC content](https://w3id.org/metpo/0000009) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7765,9 +7761,9 @@
 #### Added
 - Class: [obsolete GC content](https://w3id.org/metpo/000009) 
 
-- [obsolete GC content](https://w3id.org/metpo/000009) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete GC content](https://w3id.org/metpo/000009) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete GC content](https://w3id.org/metpo/000009) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [GC content](https://w3id.org/metpo/1000127) 
+- [obsolete GC content](https://w3id.org/metpo/000009) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [GC content](https://w3id.org/metpo/1000127) 
 
 - [obsolete GC content](https://w3id.org/metpo/000009) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7781,9 +7777,9 @@
 #### Added
 - Class: [obsolete GC high](https://w3id.org/metpo/0000154) 
 
-- [obsolete GC high](https://w3id.org/metpo/0000154) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete GC high](https://w3id.org/metpo/0000154) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete GC high](https://w3id.org/metpo/0000154) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [GC high](https://w3id.org/metpo/1000432) 
+- [obsolete GC high](https://w3id.org/metpo/0000154) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [GC high](https://w3id.org/metpo/1000432) 
 
 - [obsolete GC high](https://w3id.org/metpo/0000154) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7797,9 +7793,9 @@
 #### Added
 - Class: [obsolete GC low](https://w3id.org/metpo/0000151) 
 
-- [obsolete GC low](https://w3id.org/metpo/0000151) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete GC low](https://w3id.org/metpo/0000151) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete GC low](https://w3id.org/metpo/0000151) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [GC low](https://w3id.org/metpo/1000429) 
+- [obsolete GC low](https://w3id.org/metpo/0000151) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [GC low](https://w3id.org/metpo/1000429) 
 
 - [obsolete GC low](https://w3id.org/metpo/0000151) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7813,9 +7809,9 @@
 #### Added
 - Class: [obsolete GC mid1](https://w3id.org/metpo/0000152) 
 
-- [obsolete GC mid1](https://w3id.org/metpo/0000152) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete GC mid1](https://w3id.org/metpo/0000152) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete GC mid1](https://w3id.org/metpo/0000152) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [GC mid1](https://w3id.org/metpo/1000430) 
+- [obsolete GC mid1](https://w3id.org/metpo/0000152) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [GC mid1](https://w3id.org/metpo/1000430) 
 
 - [obsolete GC mid1](https://w3id.org/metpo/0000152) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7829,9 +7825,9 @@
 #### Added
 - Class: [obsolete GC mid2](https://w3id.org/metpo/0000153) 
 
-- [obsolete GC mid2](https://w3id.org/metpo/0000153) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete GC mid2](https://w3id.org/metpo/0000153) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete GC mid2](https://w3id.org/metpo/0000153) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [GC mid2](https://w3id.org/metpo/1000431) 
+- [obsolete GC mid2](https://w3id.org/metpo/0000153) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [GC mid2](https://w3id.org/metpo/1000431) 
 
 - [obsolete GC mid2](https://w3id.org/metpo/0000153) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7845,7 +7841,7 @@
 #### Added
 - Class: [obsolete GC% high ( > 66.3)](https://w3id.org/metpo/000155) 
 
-- [obsolete GC% high ( > 66.3)](https://w3id.org/metpo/000155) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete GC% high ( > 66.3)](https://w3id.org/metpo/000155) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete GC% high ( > 66.3)](https://w3id.org/metpo/000155) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7859,7 +7855,7 @@
 #### Added
 - Class: [obsolete GC% low ( < 42.65)](https://w3id.org/metpo/000152) 
 
-- [obsolete GC% low ( < 42.65)](https://w3id.org/metpo/000152) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete GC% low ( < 42.65)](https://w3id.org/metpo/000152) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete GC% low ( < 42.65)](https://w3id.org/metpo/000152) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7873,7 +7869,7 @@
 #### Added
 - Class: [obsolete GC% mid1 (42.65 - 57)](https://w3id.org/metpo/000153) 
 
-- [obsolete GC% mid1 (42.65 - 57)](https://w3id.org/metpo/000153) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete GC% mid1 (42.65 - 57)](https://w3id.org/metpo/000153) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete GC% mid1 (42.65 - 57)](https://w3id.org/metpo/000153) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7887,7 +7883,7 @@
 #### Added
 - Class: [obsolete GC% mid2 (57 - 66.3)](https://w3id.org/metpo/000154) 
 
-- [obsolete GC% mid2 (57 - 66.3)](https://w3id.org/metpo/000154) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete GC% mid2 (57 - 66.3)](https://w3id.org/metpo/000154) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete GC% mid2 (57 - 66.3)](https://w3id.org/metpo/000154) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7901,7 +7897,7 @@
 #### Added
 - Class: [obsolete Gemmae](https://w3id.org/metpo/0000109) 
 
-- [obsolete Gemmae](https://w3id.org/metpo/0000109) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Gemmae](https://w3id.org/metpo/0000109) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Gemmae](https://w3id.org/metpo/0000109) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7915,7 +7911,7 @@
 #### Added
 - Class: [obsolete Gemmae](https://w3id.org/metpo/000110) 
 
-- [obsolete Gemmae](https://w3id.org/metpo/000110) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Gemmae](https://w3id.org/metpo/000110) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Gemmae](https://w3id.org/metpo/000110) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7929,7 +7925,7 @@
 #### Added
 - Class: [obsolete Genomic Feature](https://w3id.org/metpo/0000266) 
 
-- [obsolete Genomic Feature](https://w3id.org/metpo/0000266) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Genomic Feature](https://w3id.org/metpo/0000266) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Genomic Feature](https://w3id.org/metpo/0000266) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7943,7 +7939,7 @@
 #### Added
 - Class: [obsolete GenomicFeature](https://w3id.org/metpo/000267) 
 
-- [obsolete GenomicFeature](https://w3id.org/metpo/000267) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete GenomicFeature](https://w3id.org/metpo/000267) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete GenomicFeature](https://w3id.org/metpo/000267) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7957,9 +7953,9 @@
 #### Added
 - Class: [obsolete Gliding](https://w3id.org/metpo/000095) 
 
-- [obsolete Gliding](https://w3id.org/metpo/000095) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Gliding](https://w3id.org/metpo/000095) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Gliding](https://w3id.org/metpo/000095) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [gliding](https://w3id.org/metpo/1000706) 
+- [obsolete Gliding](https://w3id.org/metpo/000095) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [gliding](https://w3id.org/metpo/1000706) 
 
 - [obsolete Gliding](https://w3id.org/metpo/000095) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7973,9 +7969,9 @@
 #### Added
 - Class: [obsolete Gliding](https://w3id.org/metpo/0000094) 
 
-- [obsolete Gliding](https://w3id.org/metpo/0000094) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Gliding](https://w3id.org/metpo/0000094) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Gliding](https://w3id.org/metpo/0000094) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [gliding](https://w3id.org/metpo/1000706) 
+- [obsolete Gliding](https://w3id.org/metpo/0000094) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [gliding](https://w3id.org/metpo/1000706) 
 
 - [obsolete Gliding](https://w3id.org/metpo/0000094) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -7989,9 +7985,9 @@
 #### Added
 - Class: [obsolete Gram stain](https://w3id.org/metpo/1000145) 
 
-- [obsolete Gram stain](https://w3id.org/metpo/1000145) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Gram stain](https://w3id.org/metpo/1000145) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Gram stain](https://w3id.org/metpo/1000145) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [gram stain](https://w3id.org/metpo/1000697) 
+- [obsolete Gram stain](https://w3id.org/metpo/1000145) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [gram stain](https://w3id.org/metpo/1000697) 
 
 - [obsolete Gram stain](https://w3id.org/metpo/1000145) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8005,9 +8001,9 @@
 #### Added
 - Class: [obsolete Gram-negative](https://w3id.org/metpo/1000143) 
 
-- [obsolete Gram-negative](https://w3id.org/metpo/1000143) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Gram-negative](https://w3id.org/metpo/1000143) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Gram-negative](https://w3id.org/metpo/1000143) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [gram negative](https://w3id.org/metpo/1000699) 
+- [obsolete Gram-negative](https://w3id.org/metpo/1000143) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [gram negative](https://w3id.org/metpo/1000699) 
 
 - [obsolete Gram-negative](https://w3id.org/metpo/1000143) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8021,9 +8017,9 @@
 #### Added
 - Class: [obsolete Gram-positive](https://w3id.org/metpo/1000144) 
 
-- [obsolete Gram-positive](https://w3id.org/metpo/1000144) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Gram-positive](https://w3id.org/metpo/1000144) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Gram-positive](https://w3id.org/metpo/1000144) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [gram positive](https://w3id.org/metpo/1000698) 
+- [obsolete Gram-positive](https://w3id.org/metpo/1000144) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [gram positive](https://w3id.org/metpo/1000698) 
 
 - [obsolete Gram-positive](https://w3id.org/metpo/1000144) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8037,9 +8033,9 @@
 #### Added
 - Class: [obsolete Gram-stain negative](https://w3id.org/metpo/0000281) 
 
-- [obsolete Gram-stain negative](https://w3id.org/metpo/0000281) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Gram-stain negative](https://w3id.org/metpo/0000281) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Gram-stain negative](https://w3id.org/metpo/0000281) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [gram negative](https://w3id.org/metpo/1000699) 
+- [obsolete Gram-stain negative](https://w3id.org/metpo/0000281) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [gram negative](https://w3id.org/metpo/1000699) 
 
 - [obsolete Gram-stain negative](https://w3id.org/metpo/0000281) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8053,9 +8049,9 @@
 #### Added
 - Class: [obsolete Gram-stain positive](https://w3id.org/metpo/0000282) 
 
-- [obsolete Gram-stain positive](https://w3id.org/metpo/0000282) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Gram-stain positive](https://w3id.org/metpo/0000282) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Gram-stain positive](https://w3id.org/metpo/0000282) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [gram positive](https://w3id.org/metpo/1000698) 
+- [obsolete Gram-stain positive](https://w3id.org/metpo/0000282) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [gram positive](https://w3id.org/metpo/1000698) 
 
 - [obsolete Gram-stain positive](https://w3id.org/metpo/0000282) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8069,7 +8065,7 @@
 #### Added
 - Class: [obsolete Growth Condition](https://w3id.org/metpo/0000243) 
 
-- [obsolete Growth Condition](https://w3id.org/metpo/0000243) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Growth Condition](https://w3id.org/metpo/0000243) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Growth Condition](https://w3id.org/metpo/0000243) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8083,7 +8079,7 @@
 #### Added
 - Class: [obsolete Growth Condition](https://w3id.org/metpo/000244) 
 
-- [obsolete Growth Condition](https://w3id.org/metpo/000244) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Growth Condition](https://w3id.org/metpo/000244) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Growth Condition](https://w3id.org/metpo/000244) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8097,7 +8093,7 @@
 #### Added
 - Class: [obsolete Growth Parameter](https://w3id.org/metpo/0000249) 
 
-- [obsolete Growth Parameter](https://w3id.org/metpo/0000249) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Growth Parameter](https://w3id.org/metpo/0000249) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Growth Parameter](https://w3id.org/metpo/0000249) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8111,7 +8107,7 @@
 #### Added
 - Class: [obsolete Growth Parameter](https://w3id.org/metpo/000250) 
 
-- [obsolete Growth Parameter](https://w3id.org/metpo/000250) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Growth Parameter](https://w3id.org/metpo/000250) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Growth Parameter](https://w3id.org/metpo/000250) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8125,7 +8121,7 @@
 #### Added
 - Class: [obsolete Growth Range Parameter](https://w3id.org/metpo/0000269) 
 
-- [obsolete Growth Range Parameter](https://w3id.org/metpo/0000269) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Growth Range Parameter](https://w3id.org/metpo/0000269) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Growth Range Parameter](https://w3id.org/metpo/0000269) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8139,7 +8135,7 @@
 #### Added
 - Class: [obsolete Growth Range Parameter](https://w3id.org/metpo/000270) 
 
-- [obsolete Growth Range Parameter](https://w3id.org/metpo/000270) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Growth Range Parameter](https://w3id.org/metpo/000270) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Growth Range Parameter](https://w3id.org/metpo/000270) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8153,7 +8149,7 @@
 #### Added
 - Class: [obsolete Growth Tolerance Metric](https://w3id.org/metpo/000271) 
 
-- [obsolete Growth Tolerance Metric](https://w3id.org/metpo/000271) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Growth Tolerance Metric](https://w3id.org/metpo/000271) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Growth Tolerance Metric](https://w3id.org/metpo/000271) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8167,7 +8163,7 @@
 #### Added
 - Class: [obsolete Growth Tolerance Metric](https://w3id.org/metpo/0000270) 
 
-- [obsolete Growth Tolerance Metric](https://w3id.org/metpo/0000270) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Growth Tolerance Metric](https://w3id.org/metpo/0000270) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Growth Tolerance Metric](https://w3id.org/metpo/0000270) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8181,9 +8177,9 @@
 #### Added
 - Class: [obsolete Haloalkaliphile](https://w3id.org/metpo/000037) 
 
-- [obsolete Haloalkaliphile](https://w3id.org/metpo/000037) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Haloalkaliphile](https://w3id.org/metpo/000037) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Haloalkaliphile](https://w3id.org/metpo/000037) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [haloalkaliphilic](https://w3id.org/metpo/1000621) 
+- [obsolete Haloalkaliphile](https://w3id.org/metpo/000037) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [haloalkaliphilic](https://w3id.org/metpo/1000621) 
 
 - [obsolete Haloalkaliphile](https://w3id.org/metpo/000037) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8197,9 +8193,9 @@
 #### Added
 - Class: [obsolete Haloalkaliphile](https://w3id.org/metpo/0000036) 
 
-- [obsolete Haloalkaliphile](https://w3id.org/metpo/0000036) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Haloalkaliphile](https://w3id.org/metpo/0000036) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Haloalkaliphile](https://w3id.org/metpo/0000036) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [haloalkaliphilic](https://w3id.org/metpo/1000621) 
+- [obsolete Haloalkaliphile](https://w3id.org/metpo/0000036) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [haloalkaliphilic](https://w3id.org/metpo/1000621) 
 
 - [obsolete Haloalkaliphile](https://w3id.org/metpo/0000036) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8213,7 +8209,7 @@
 #### Added
 - Class: [obsolete Halogenated compound respiration](https://w3id.org/metpo/1000850) 
 
-- [obsolete Halogenated compound respiration](https://w3id.org/metpo/1000850) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Halogenated compound respiration](https://w3id.org/metpo/1000850) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Halogenated compound respiration](https://w3id.org/metpo/1000850) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8227,9 +8223,9 @@
 #### Added
 - Class: [obsolete Halophile](https://w3id.org/metpo/0000030) 
 
-- [obsolete Halophile](https://w3id.org/metpo/0000030) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Halophile](https://w3id.org/metpo/0000030) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Halophile](https://w3id.org/metpo/0000030) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [halophilic](https://w3id.org/metpo/1000620) 
+- [obsolete Halophile](https://w3id.org/metpo/0000030) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [halophilic](https://w3id.org/metpo/1000620) 
 
 - [obsolete Halophile](https://w3id.org/metpo/0000030) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8243,9 +8239,9 @@
 #### Added
 - Class: [obsolete Halophile](https://w3id.org/metpo/000031) 
 
-- [obsolete Halophile](https://w3id.org/metpo/000031) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Halophile](https://w3id.org/metpo/000031) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Halophile](https://w3id.org/metpo/000031) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [halophilic](https://w3id.org/metpo/1000620) 
+- [obsolete Halophile](https://w3id.org/metpo/000031) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [halophilic](https://w3id.org/metpo/1000620) 
 
 - [obsolete Halophile](https://w3id.org/metpo/000031) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8259,9 +8255,9 @@
 #### Added
 - Class: [obsolete Halotolerant](https://w3id.org/metpo/000036) 
 
-- [obsolete Halotolerant](https://w3id.org/metpo/000036) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Halotolerant](https://w3id.org/metpo/000036) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Halotolerant](https://w3id.org/metpo/000036) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [halotolerant](https://w3id.org/metpo/1000622) 
+- [obsolete Halotolerant](https://w3id.org/metpo/000036) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [halotolerant](https://w3id.org/metpo/1000622) 
 
 - [obsolete Halotolerant](https://w3id.org/metpo/000036) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8275,9 +8271,9 @@
 #### Added
 - Class: [obsolete Halotolerant](https://w3id.org/metpo/0000035) 
 
-- [obsolete Halotolerant](https://w3id.org/metpo/0000035) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Halotolerant](https://w3id.org/metpo/0000035) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Halotolerant](https://w3id.org/metpo/0000035) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [halotolerant](https://w3id.org/metpo/1000622) 
+- [obsolete Halotolerant](https://w3id.org/metpo/0000035) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [halotolerant](https://w3id.org/metpo/1000622) 
 
 - [obsolete Halotolerant](https://w3id.org/metpo/0000035) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8291,7 +8287,7 @@
 #### Added
 - Class: [obsolete Helical](https://w3id.org/metpo/0000224) 
 
-- [obsolete Helical](https://w3id.org/metpo/0000224) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Helical](https://w3id.org/metpo/0000224) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Helical](https://w3id.org/metpo/0000224) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8305,9 +8301,9 @@
 #### Added
 - Class: [obsolete Heterotroph](https://w3id.org/metpo/0000061) 
 
-- [obsolete Heterotroph](https://w3id.org/metpo/0000061) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Heterotroph](https://w3id.org/metpo/0000061) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Heterotroph](https://w3id.org/metpo/0000061) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [heterotrophic](https://w3id.org/metpo/1000644) 
+- [obsolete Heterotroph](https://w3id.org/metpo/0000061) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [heterotrophic](https://w3id.org/metpo/1000644) 
 
 - [obsolete Heterotroph](https://w3id.org/metpo/0000061) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8321,9 +8317,9 @@
 #### Added
 - Class: [obsolete Heterotroph](https://w3id.org/metpo/000062) 
 
-- [obsolete Heterotroph](https://w3id.org/metpo/000062) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Heterotroph](https://w3id.org/metpo/000062) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Heterotroph](https://w3id.org/metpo/000062) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [heterotrophic](https://w3id.org/metpo/1000644) 
+- [obsolete Heterotroph](https://w3id.org/metpo/000062) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [heterotrophic](https://w3id.org/metpo/1000644) 
 
 - [obsolete Heterotroph](https://w3id.org/metpo/000062) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8337,7 +8333,7 @@
 #### Added
 - Class: [obsolete Humus respiration](https://w3id.org/metpo/1000849) 
 
-- [obsolete Humus respiration](https://w3id.org/metpo/1000849) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Humus respiration](https://w3id.org/metpo/1000849) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Humus respiration](https://w3id.org/metpo/1000849) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8351,7 +8347,7 @@
 #### Added
 - Class: [obsolete Hydrogen oxidation](https://w3id.org/metpo/1000859) 
 
-- [obsolete Hydrogen oxidation](https://w3id.org/metpo/1000859) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Hydrogen oxidation](https://w3id.org/metpo/1000859) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Hydrogen oxidation](https://w3id.org/metpo/1000859) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8365,7 +8361,7 @@
 #### Added
 - Class: [obsolete Hydrogen oxidizer](https://w3id.org/metpo/0000079) 
 
-- [obsolete Hydrogen oxidizer](https://w3id.org/metpo/0000079) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Hydrogen oxidizer](https://w3id.org/metpo/0000079) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Hydrogen oxidizer](https://w3id.org/metpo/0000079) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8379,7 +8375,7 @@
 #### Added
 - Class: [obsolete Hydrogen oxidizer](https://w3id.org/metpo/000080) 
 
-- [obsolete Hydrogen oxidizer](https://w3id.org/metpo/000080) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Hydrogen oxidizer](https://w3id.org/metpo/000080) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Hydrogen oxidizer](https://w3id.org/metpo/000080) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8393,7 +8389,7 @@
 #### Added
 - Class: [obsolete Hydrogen producer](https://w3id.org/metpo/0000080) 
 
-- [obsolete Hydrogen producer](https://w3id.org/metpo/0000080) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Hydrogen producer](https://w3id.org/metpo/0000080) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Hydrogen producer](https://w3id.org/metpo/0000080) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8407,7 +8403,7 @@
 #### Added
 - Class: [obsolete Hydrogen producer](https://w3id.org/metpo/000081) 
 
-- [obsolete Hydrogen producer](https://w3id.org/metpo/000081) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Hydrogen producer](https://w3id.org/metpo/000081) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Hydrogen producer](https://w3id.org/metpo/000081) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8421,7 +8417,7 @@
 #### Added
 - Class: [obsolete Hydrogen-oxidizing](https://w3id.org/metpo/1002033) 
 
-- [obsolete Hydrogen-oxidizing](https://w3id.org/metpo/1002033) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Hydrogen-oxidizing](https://w3id.org/metpo/1002033) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Hydrogen-oxidizing](https://w3id.org/metpo/1002033) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8435,9 +8431,9 @@
 #### Added
 - Class: [obsolete Hydrogenotroph](https://w3id.org/metpo/000079) 
 
-- [obsolete Hydrogenotroph](https://w3id.org/metpo/000079) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Hydrogenotroph](https://w3id.org/metpo/000079) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Hydrogenotroph](https://w3id.org/metpo/000079) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [hydrogenotrophic](https://w3id.org/metpo/1000646) 
+- [obsolete Hydrogenotroph](https://w3id.org/metpo/000079) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [hydrogenotrophic](https://w3id.org/metpo/1000646) 
 
 - [obsolete Hydrogenotroph](https://w3id.org/metpo/000079) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8451,9 +8447,9 @@
 #### Added
 - Class: [obsolete Hydrogenotroph](https://w3id.org/metpo/0000078) 
 
-- [obsolete Hydrogenotroph](https://w3id.org/metpo/0000078) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Hydrogenotroph](https://w3id.org/metpo/0000078) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Hydrogenotroph](https://w3id.org/metpo/0000078) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [hydrogenotrophic](https://w3id.org/metpo/1000646) 
+- [obsolete Hydrogenotroph](https://w3id.org/metpo/0000078) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [hydrogenotrophic](https://w3id.org/metpo/1000646) 
 
 - [obsolete Hydrogenotroph](https://w3id.org/metpo/0000078) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8467,7 +8463,7 @@
 #### Added
 - Class: [obsolete Hydrogenotrophic methanogenesis](https://w3id.org/metpo/1000864) 
 
-- [obsolete Hydrogenotrophic methanogenesis](https://w3id.org/metpo/1000864) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Hydrogenotrophic methanogenesis](https://w3id.org/metpo/1000864) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Hydrogenotrophic methanogenesis](https://w3id.org/metpo/1000864) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8481,7 +8477,7 @@
 #### Added
 - Class: [obsolete Hyperbarophile](https://w3id.org/metpo/000132) 
 
-- [obsolete Hyperbarophile](https://w3id.org/metpo/000132) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Hyperbarophile](https://w3id.org/metpo/000132) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Hyperbarophile](https://w3id.org/metpo/000132) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8495,7 +8491,7 @@
 #### Added
 - Class: [obsolete Hyperbarophile](https://w3id.org/metpo/0000131) 
 
-- [obsolete Hyperbarophile](https://w3id.org/metpo/0000131) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Hyperbarophile](https://w3id.org/metpo/0000131) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Hyperbarophile](https://w3id.org/metpo/0000131) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8509,9 +8505,9 @@
 #### Added
 - Class: [obsolete Hyperthermophile](https://w3id.org/metpo/0000028) 
 
-- [obsolete Hyperthermophile](https://w3id.org/metpo/0000028) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Hyperthermophile](https://w3id.org/metpo/0000028) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Hyperthermophile](https://w3id.org/metpo/0000028) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [hyperthermophilic](https://w3id.org/metpo/1000617) 
+- [obsolete Hyperthermophile](https://w3id.org/metpo/0000028) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [hyperthermophilic](https://w3id.org/metpo/1000617) 
 
 - [obsolete Hyperthermophile](https://w3id.org/metpo/0000028) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8525,9 +8521,9 @@
 #### Added
 - Class: [obsolete Hyperthermophile](https://w3id.org/metpo/000029) 
 
-- [obsolete Hyperthermophile](https://w3id.org/metpo/000029) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Hyperthermophile](https://w3id.org/metpo/000029) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Hyperthermophile](https://w3id.org/metpo/000029) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [hyperthermophilic](https://w3id.org/metpo/1000617) 
+- [obsolete Hyperthermophile](https://w3id.org/metpo/000029) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [hyperthermophilic](https://w3id.org/metpo/1000617) 
 
 - [obsolete Hyperthermophile](https://w3id.org/metpo/000029) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8541,7 +8537,7 @@
 #### Added
 - Class: [obsolete Hypnospores](https://w3id.org/metpo/0000108) 
 
-- [obsolete Hypnospores](https://w3id.org/metpo/0000108) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Hypnospores](https://w3id.org/metpo/0000108) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Hypnospores](https://w3id.org/metpo/0000108) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8555,7 +8551,7 @@
 #### Added
 - Class: [obsolete Hypnospores](https://w3id.org/metpo/000109) 
 
-- [obsolete Hypnospores](https://w3id.org/metpo/000109) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Hypnospores](https://w3id.org/metpo/000109) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Hypnospores](https://w3id.org/metpo/000109) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8569,7 +8565,7 @@
 #### Added
 - Class: [obsolete Hypobarophile](https://w3id.org/metpo/000133) 
 
-- [obsolete Hypobarophile](https://w3id.org/metpo/000133) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Hypobarophile](https://w3id.org/metpo/000133) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Hypobarophile](https://w3id.org/metpo/000133) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8583,7 +8579,7 @@
 #### Added
 - Class: [obsolete Hypobarophile](https://w3id.org/metpo/0000132) 
 
-- [obsolete Hypobarophile](https://w3id.org/metpo/0000132) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Hypobarophile](https://w3id.org/metpo/0000132) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Hypobarophile](https://w3id.org/metpo/0000132) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8597,7 +8593,7 @@
 #### Added
 - Class: [obsolete Iodate reduction](https://w3id.org/metpo/1000856) 
 
-- [obsolete Iodate reduction](https://w3id.org/metpo/1000856) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Iodate reduction](https://w3id.org/metpo/1000856) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Iodate reduction](https://w3id.org/metpo/1000856) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8611,7 +8607,7 @@
 #### Added
 - Class: [obsolete Iodate-reducing](https://w3id.org/metpo/1002032) 
 
-- [obsolete Iodate-reducing](https://w3id.org/metpo/1002032) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Iodate-reducing](https://w3id.org/metpo/1002032) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Iodate-reducing](https://w3id.org/metpo/1002032) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8625,7 +8621,7 @@
 #### Added
 - Class: [obsolete Iron oxidation](https://w3id.org/metpo/1000830) 
 
-- [obsolete Iron oxidation](https://w3id.org/metpo/1000830) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Iron oxidation](https://w3id.org/metpo/1000830) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Iron oxidation](https://w3id.org/metpo/1000830) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8639,7 +8635,7 @@
 #### Added
 - Class: [obsolete Iron reduction](https://w3id.org/metpo/1000829) 
 
-- [obsolete Iron reduction](https://w3id.org/metpo/1000829) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Iron reduction](https://w3id.org/metpo/1000829) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Iron reduction](https://w3id.org/metpo/1000829) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8653,7 +8649,7 @@
 #### Added
 - Class: [obsolete Iron-oxidizing](https://w3id.org/metpo/1002021) 
 
-- [obsolete Iron-oxidizing](https://w3id.org/metpo/1002021) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Iron-oxidizing](https://w3id.org/metpo/1002021) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Iron-oxidizing](https://w3id.org/metpo/1002021) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8667,7 +8663,7 @@
 #### Added
 - Class: [obsolete Iron-reducing](https://w3id.org/metpo/1002020) 
 
-- [obsolete Iron-reducing](https://w3id.org/metpo/1002020) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Iron-reducing](https://w3id.org/metpo/1002020) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Iron-reducing](https://w3id.org/metpo/1002020) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8681,7 +8677,7 @@
 #### Added
 - Class: [obsolete Irregular](https://w3id.org/metpo/0000225) 
 
-- [obsolete Irregular](https://w3id.org/metpo/0000225) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Irregular](https://w3id.org/metpo/0000225) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Irregular](https://w3id.org/metpo/0000225) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8695,7 +8691,7 @@
 #### Added
 - Class: [obsolete Lanthanide oxidation](https://w3id.org/metpo/1000869) 
 
-- [obsolete Lanthanide oxidation](https://w3id.org/metpo/1000869) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Lanthanide oxidation](https://w3id.org/metpo/1000869) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Lanthanide oxidation](https://w3id.org/metpo/1000869) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8709,7 +8705,7 @@
 #### Added
 - Class: [obsolete Lanthanide reduction](https://w3id.org/metpo/1000868) 
 
-- [obsolete Lanthanide reduction](https://w3id.org/metpo/1000868) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Lanthanide reduction](https://w3id.org/metpo/1000868) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Lanthanide reduction](https://w3id.org/metpo/1000868) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8723,9 +8719,9 @@
 #### Added
 - Class: [obsolete Lithoautotroph](https://w3id.org/metpo/000071) 
 
-- [obsolete Lithoautotroph](https://w3id.org/metpo/000071) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Lithoautotroph](https://w3id.org/metpo/000071) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Lithoautotroph](https://w3id.org/metpo/000071) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [lithoautotrophic](https://w3id.org/metpo/1000647) 
+- [obsolete Lithoautotroph](https://w3id.org/metpo/000071) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [lithoautotrophic](https://w3id.org/metpo/1000647) 
 
 - [obsolete Lithoautotroph](https://w3id.org/metpo/000071) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8739,9 +8735,9 @@
 #### Added
 - Class: [obsolete Lithoautotroph](https://w3id.org/metpo/0000070) 
 
-- [obsolete Lithoautotroph](https://w3id.org/metpo/0000070) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Lithoautotroph](https://w3id.org/metpo/0000070) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Lithoautotroph](https://w3id.org/metpo/0000070) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [lithoautotrophic](https://w3id.org/metpo/1000647) 
+- [obsolete Lithoautotroph](https://w3id.org/metpo/0000070) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [lithoautotrophic](https://w3id.org/metpo/1000647) 
 
 - [obsolete Lithoautotroph](https://w3id.org/metpo/0000070) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8755,9 +8751,9 @@
 #### Added
 - Class: [obsolete Lithoheterotroph](https://w3id.org/metpo/000073) 
 
-- [obsolete Lithoheterotroph](https://w3id.org/metpo/000073) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Lithoheterotroph](https://w3id.org/metpo/000073) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Lithoheterotroph](https://w3id.org/metpo/000073) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [lithoheterotrophic](https://w3id.org/metpo/1000648) 
+- [obsolete Lithoheterotroph](https://w3id.org/metpo/000073) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [lithoheterotrophic](https://w3id.org/metpo/1000648) 
 
 - [obsolete Lithoheterotroph](https://w3id.org/metpo/000073) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8771,9 +8767,9 @@
 #### Added
 - Class: [obsolete Lithoheterotroph](https://w3id.org/metpo/0000072) 
 
-- [obsolete Lithoheterotroph](https://w3id.org/metpo/0000072) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Lithoheterotroph](https://w3id.org/metpo/0000072) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Lithoheterotroph](https://w3id.org/metpo/0000072) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [lithoheterotrophic](https://w3id.org/metpo/1000648) 
+- [obsolete Lithoheterotroph](https://w3id.org/metpo/0000072) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [lithoheterotrophic](https://w3id.org/metpo/1000648) 
 
 - [obsolete Lithoheterotroph](https://w3id.org/metpo/0000072) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8787,9 +8783,9 @@
 #### Added
 - Class: [obsolete Lithotroph](https://w3id.org/metpo/0000064) 
 
-- [obsolete Lithotroph](https://w3id.org/metpo/0000064) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Lithotroph](https://w3id.org/metpo/0000064) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Lithotroph](https://w3id.org/metpo/0000064) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [lithotrophic](https://w3id.org/metpo/1000649) 
+- [obsolete Lithotroph](https://w3id.org/metpo/0000064) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [lithotrophic](https://w3id.org/metpo/1000649) 
 
 - [obsolete Lithotroph](https://w3id.org/metpo/0000064) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8803,9 +8799,9 @@
 #### Added
 - Class: [obsolete Lithotroph](https://w3id.org/metpo/000065) 
 
-- [obsolete Lithotroph](https://w3id.org/metpo/000065) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Lithotroph](https://w3id.org/metpo/000065) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Lithotroph](https://w3id.org/metpo/000065) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [lithotrophic](https://w3id.org/metpo/1000649) 
+- [obsolete Lithotroph](https://w3id.org/metpo/000065) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [lithotrophic](https://w3id.org/metpo/1000649) 
 
 - [obsolete Lithotroph](https://w3id.org/metpo/000065) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8819,7 +8815,7 @@
 #### Added
 - Class: [obsolete Lophotrichous](https://w3id.org/metpo/0000091) 
 
-- [obsolete Lophotrichous](https://w3id.org/metpo/0000091) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Lophotrichous](https://w3id.org/metpo/0000091) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Lophotrichous](https://w3id.org/metpo/0000091) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8833,7 +8829,7 @@
 #### Added
 - Class: [obsolete Lophotrichous](https://w3id.org/metpo/000092) 
 
-- [obsolete Lophotrichous](https://w3id.org/metpo/000092) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Lophotrichous](https://w3id.org/metpo/000092) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Lophotrichous](https://w3id.org/metpo/000092) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8847,9 +8843,9 @@
 #### Added
 - Class: [obsolete METPO Biological Process](https://w3id.org/metpo/0000279) 
 
-- [obsolete METPO Biological Process](https://w3id.org/metpo/0000279) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete METPO Biological Process](https://w3id.org/metpo/0000279) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete METPO Biological Process](https://w3id.org/metpo/0000279) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [biological process](https://w3id.org/metpo/1000630) 
+- [obsolete METPO Biological Process](https://w3id.org/metpo/0000279) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [biological process](https://w3id.org/metpo/1000630) 
 
 - [obsolete METPO Biological Process](https://w3id.org/metpo/0000279) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8863,7 +8859,7 @@
 #### Added
 - Class: [obsolete METPO Morphology](https://w3id.org/metpo/0000021) 
 
-- [obsolete METPO Morphology](https://w3id.org/metpo/0000021) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete METPO Morphology](https://w3id.org/metpo/0000021) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete METPO Morphology](https://w3id.org/metpo/0000021) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8877,7 +8873,7 @@
 #### Added
 - Class: [obsolete Manganese oxidation](https://w3id.org/metpo/1000833) 
 
-- [obsolete Manganese oxidation](https://w3id.org/metpo/1000833) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Manganese oxidation](https://w3id.org/metpo/1000833) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Manganese oxidation](https://w3id.org/metpo/1000833) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8891,7 +8887,7 @@
 #### Added
 - Class: [obsolete Manganese reduction](https://w3id.org/metpo/1000832) 
 
-- [obsolete Manganese reduction](https://w3id.org/metpo/1000832) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Manganese reduction](https://w3id.org/metpo/1000832) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Manganese reduction](https://w3id.org/metpo/1000832) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8905,7 +8901,7 @@
 #### Added
 - Class: [obsolete Manganese-oxidizing](https://w3id.org/metpo/1002024) 
 
-- [obsolete Manganese-oxidizing](https://w3id.org/metpo/1002024) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Manganese-oxidizing](https://w3id.org/metpo/1002024) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Manganese-oxidizing](https://w3id.org/metpo/1002024) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8919,7 +8915,7 @@
 #### Added
 - Class: [obsolete Manganese-reducing](https://w3id.org/metpo/1002023) 
 
-- [obsolete Manganese-reducing](https://w3id.org/metpo/1002023) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Manganese-reducing](https://w3id.org/metpo/1002023) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Manganese-reducing](https://w3id.org/metpo/1002023) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8933,7 +8929,7 @@
 #### Added
 - Class: [obsolete Measurable Property](https://w3id.org/metpo/0000280) 
 
-- [obsolete Measurable Property](https://w3id.org/metpo/0000280) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Measurable Property](https://w3id.org/metpo/0000280) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Measurable Property](https://w3id.org/metpo/0000280) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8947,7 +8943,7 @@
 #### Added
 - Class: [obsolete Mesophilie](https://w3id.org/metpo/0000024) 
 
-- [obsolete Mesophilie](https://w3id.org/metpo/0000024) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Mesophilie](https://w3id.org/metpo/0000024) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Mesophilie](https://w3id.org/metpo/0000024) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8961,7 +8957,7 @@
 #### Added
 - Class: [obsolete Mesophilie](https://w3id.org/metpo/000025) 
 
-- [obsolete Mesophilie](https://w3id.org/metpo/000025) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Mesophilie](https://w3id.org/metpo/000025) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Mesophilie](https://w3id.org/metpo/000025) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8975,7 +8971,7 @@
 #### Added
 - Class: [obsolete Metabolic Classification](https://w3id.org/metpo/0000245) 
 
-- [obsolete Metabolic Classification](https://w3id.org/metpo/0000245) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Metabolic Classification](https://w3id.org/metpo/0000245) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Metabolic Classification](https://w3id.org/metpo/0000245) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -8989,7 +8985,7 @@
 #### Added
 - Class: [obsolete Metabolic Classification](https://w3id.org/metpo/000246) 
 
-- [obsolete Metabolic Classification](https://w3id.org/metpo/000246) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Metabolic Classification](https://w3id.org/metpo/000246) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Metabolic Classification](https://w3id.org/metpo/000246) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9003,7 +8999,7 @@
 #### Added
 - Class: [obsolete Metal and metalloid respiration](https://w3id.org/metpo/1000828) 
 
-- [obsolete Metal and metalloid respiration](https://w3id.org/metpo/1000828) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Metal and metalloid respiration](https://w3id.org/metpo/1000828) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Metal and metalloid respiration](https://w3id.org/metpo/1000828) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9017,7 +9013,7 @@
 #### Added
 - Class: [obsolete Methane oxidation](https://w3id.org/metpo/1002038) 
 
-- [obsolete Methane oxidation](https://w3id.org/metpo/1002038) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Methane oxidation](https://w3id.org/metpo/1002038) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Methane oxidation](https://w3id.org/metpo/1002038) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9031,7 +9027,7 @@
 #### Added
 - Class: [obsolete Methanogen](https://w3id.org/metpo/000083) 
 
-- [obsolete Methanogen](https://w3id.org/metpo/000083) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Methanogen](https://w3id.org/metpo/000083) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Methanogen](https://w3id.org/metpo/000083) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9045,7 +9041,7 @@
 #### Added
 - Class: [obsolete Methanogen](https://w3id.org/metpo/0000082) 
 
-- [obsolete Methanogen](https://w3id.org/metpo/0000082) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Methanogen](https://w3id.org/metpo/0000082) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Methanogen](https://w3id.org/metpo/0000082) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9059,9 +9055,9 @@
 #### Added
 - Class: [obsolete Methanotroph](https://w3id.org/metpo/0000076) 
 
-- [obsolete Methanotroph](https://w3id.org/metpo/0000076) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Methanotroph](https://w3id.org/metpo/0000076) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Methanotroph](https://w3id.org/metpo/0000076) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [methanotrophic](https://w3id.org/metpo/1000650) 
+- [obsolete Methanotroph](https://w3id.org/metpo/0000076) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [methanotrophic](https://w3id.org/metpo/1000650) 
 
 - [obsolete Methanotroph](https://w3id.org/metpo/0000076) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9075,9 +9071,9 @@
 #### Added
 - Class: [obsolete Methanotroph](https://w3id.org/metpo/000077) 
 
-- [obsolete Methanotroph](https://w3id.org/metpo/000077) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Methanotroph](https://w3id.org/metpo/000077) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Methanotroph](https://w3id.org/metpo/000077) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [methanotrophic](https://w3id.org/metpo/1000650) 
+- [obsolete Methanotroph](https://w3id.org/metpo/000077) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [methanotrophic](https://w3id.org/metpo/1000650) 
 
 - [obsolete Methanotroph](https://w3id.org/metpo/000077) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9091,7 +9087,7 @@
 #### Added
 - Class: [obsolete Methionine sulfoxide respiration](https://w3id.org/metpo/1000822) 
 
-- [obsolete Methionine sulfoxide respiration](https://w3id.org/metpo/1000822) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Methionine sulfoxide respiration](https://w3id.org/metpo/1000822) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Methionine sulfoxide respiration](https://w3id.org/metpo/1000822) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9105,9 +9101,9 @@
 #### Added
 - Class: [obsolete Methylotroph](https://w3id.org/metpo/0000075) 
 
-- [obsolete Methylotroph](https://w3id.org/metpo/0000075) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Methylotroph](https://w3id.org/metpo/0000075) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Methylotroph](https://w3id.org/metpo/0000075) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [methylotrophic](https://w3id.org/metpo/1000651) 
+- [obsolete Methylotroph](https://w3id.org/metpo/0000075) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [methylotrophic](https://w3id.org/metpo/1000651) 
 
 - [obsolete Methylotroph](https://w3id.org/metpo/0000075) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9121,9 +9117,9 @@
 #### Added
 - Class: [obsolete Methylotroph](https://w3id.org/metpo/000076) 
 
-- [obsolete Methylotroph](https://w3id.org/metpo/000076) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Methylotroph](https://w3id.org/metpo/000076) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Methylotroph](https://w3id.org/metpo/000076) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [methylotrophic](https://w3id.org/metpo/1000651) 
+- [obsolete Methylotroph](https://w3id.org/metpo/000076) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [methylotrophic](https://w3id.org/metpo/1000651) 
 
 - [obsolete Methylotroph](https://w3id.org/metpo/000076) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9137,7 +9133,7 @@
 #### Added
 - Class: [obsolete Methylotrophic methanogenesis](https://w3id.org/metpo/1000866) 
 
-- [obsolete Methylotrophic methanogenesis](https://w3id.org/metpo/1000866) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Methylotrophic methanogenesis](https://w3id.org/metpo/1000866) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Methylotrophic methanogenesis](https://w3id.org/metpo/1000866) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9151,9 +9147,9 @@
 #### Added
 - Class: [obsolete Microaerophile](https://w3id.org/metpo/000051) 
 
-- [obsolete Microaerophile](https://w3id.org/metpo/000051) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Microaerophile](https://w3id.org/metpo/000051) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Microaerophile](https://w3id.org/metpo/000051) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [microaerophilic](https://w3id.org/metpo/1000604) 
+- [obsolete Microaerophile](https://w3id.org/metpo/000051) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [microaerophilic](https://w3id.org/metpo/1000604) 
 
 - [obsolete Microaerophile](https://w3id.org/metpo/000051) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9167,9 +9163,9 @@
 #### Added
 - Class: [obsolete Microaerophile](https://w3id.org/metpo/0000050) 
 
-- [obsolete Microaerophile](https://w3id.org/metpo/0000050) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Microaerophile](https://w3id.org/metpo/0000050) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Microaerophile](https://w3id.org/metpo/0000050) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [microaerophilic](https://w3id.org/metpo/1000604) 
+- [obsolete Microaerophile](https://w3id.org/metpo/0000050) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [microaerophilic](https://w3id.org/metpo/1000604) 
 
 - [obsolete Microaerophile](https://w3id.org/metpo/0000050) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9183,9 +9179,9 @@
 #### Added
 - Class: [obsolete Microaerotolerant](https://w3id.org/metpo/000053) 
 
-- [obsolete Microaerotolerant](https://w3id.org/metpo/000053) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Microaerotolerant](https://w3id.org/metpo/000053) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Microaerotolerant](https://w3id.org/metpo/000053) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [microaerotolerant](https://w3id.org/metpo/1000610) 
+- [obsolete Microaerotolerant](https://w3id.org/metpo/000053) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [microaerotolerant](https://w3id.org/metpo/1000610) 
 
 - [obsolete Microaerotolerant](https://w3id.org/metpo/000053) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9199,9 +9195,9 @@
 #### Added
 - Class: [obsolete Microaerotolerant](https://w3id.org/metpo/0000052) 
 
-- [obsolete Microaerotolerant](https://w3id.org/metpo/0000052) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Microaerotolerant](https://w3id.org/metpo/0000052) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Microaerotolerant](https://w3id.org/metpo/0000052) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [microaerotolerant](https://w3id.org/metpo/1000610) 
+- [obsolete Microaerotolerant](https://w3id.org/metpo/0000052) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [microaerotolerant](https://w3id.org/metpo/1000610) 
 
 - [obsolete Microaerotolerant](https://w3id.org/metpo/0000052) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9215,7 +9211,7 @@
 #### Added
 - Class: [obsolete Microbial Adaptation](https://w3id.org/metpo/000249) 
 
-- [obsolete Microbial Adaptation](https://w3id.org/metpo/000249) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Microbial Adaptation](https://w3id.org/metpo/000249) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Microbial Adaptation](https://w3id.org/metpo/000249) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9229,7 +9225,7 @@
 #### Added
 - Class: [obsolete Microbial Adaptation](https://w3id.org/metpo/0000248) 
 
-- [obsolete Microbial Adaptation](https://w3id.org/metpo/0000248) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Microbial Adaptation](https://w3id.org/metpo/0000248) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Microbial Adaptation](https://w3id.org/metpo/0000248) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9243,9 +9239,9 @@
 #### Added
 - Class: [obsolete Mixotroph](https://w3id.org/metpo/000072) 
 
-- [obsolete Mixotroph](https://w3id.org/metpo/000072) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Mixotroph](https://w3id.org/metpo/000072) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Mixotroph](https://w3id.org/metpo/000072) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [mixotrophic](https://w3id.org/metpo/1000652) 
+- [obsolete Mixotroph](https://w3id.org/metpo/000072) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [mixotrophic](https://w3id.org/metpo/1000652) 
 
 - [obsolete Mixotroph](https://w3id.org/metpo/000072) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9259,9 +9255,9 @@
 #### Added
 - Class: [obsolete Mixotroph](https://w3id.org/metpo/0000071) 
 
-- [obsolete Mixotroph](https://w3id.org/metpo/0000071) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Mixotroph](https://w3id.org/metpo/0000071) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Mixotroph](https://w3id.org/metpo/0000071) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [mixotrophic](https://w3id.org/metpo/1000652) 
+- [obsolete Mixotroph](https://w3id.org/metpo/0000071) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [mixotrophic](https://w3id.org/metpo/1000652) 
 
 - [obsolete Mixotroph](https://w3id.org/metpo/0000071) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9275,7 +9271,7 @@
 #### Added
 - Class: [obsolete Mn(IV)-dependent methane oxidation](https://w3id.org/metpo/1002002) 
 
-- [obsolete Mn(IV)-dependent methane oxidation](https://w3id.org/metpo/1002002) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Mn(IV)-dependent methane oxidation](https://w3id.org/metpo/1002002) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Mn(IV)-dependent methane oxidation](https://w3id.org/metpo/1002002) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9289,9 +9285,9 @@
 #### Added
 - Class: [obsolete Moderate halophile](https://w3id.org/metpo/0000033) 
 
-- [obsolete Moderate halophile](https://w3id.org/metpo/0000033) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Moderate halophile](https://w3id.org/metpo/0000033) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Moderate halophile](https://w3id.org/metpo/0000033) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [moderately halophilic](https://w3id.org/metpo/1000623) 
+- [obsolete Moderate halophile](https://w3id.org/metpo/0000033) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [moderately halophilic](https://w3id.org/metpo/1000623) 
 
 - [obsolete Moderate halophile](https://w3id.org/metpo/0000033) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9305,9 +9301,9 @@
 #### Added
 - Class: [obsolete Moderate halophile](https://w3id.org/metpo/000034) 
 
-- [obsolete Moderate halophile](https://w3id.org/metpo/000034) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Moderate halophile](https://w3id.org/metpo/000034) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Moderate halophile](https://w3id.org/metpo/000034) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [moderately halophilic](https://w3id.org/metpo/1000623) 
+- [obsolete Moderate halophile](https://w3id.org/metpo/000034) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [moderately halophilic](https://w3id.org/metpo/1000623) 
 
 - [obsolete Moderate halophile](https://w3id.org/metpo/000034) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9321,7 +9317,7 @@
 #### Added
 - Class: [obsolete Moderate piezophile](https://w3id.org/metpo/000135) 
 
-- [obsolete Moderate piezophile](https://w3id.org/metpo/000135) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Moderate piezophile](https://w3id.org/metpo/000135) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Moderate piezophile](https://w3id.org/metpo/000135) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9335,7 +9331,7 @@
 #### Added
 - Class: [obsolete Moderate piezophile](https://w3id.org/metpo/0000134) 
 
-- [obsolete Moderate piezophile](https://w3id.org/metpo/0000134) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Moderate piezophile](https://w3id.org/metpo/0000134) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Moderate piezophile](https://w3id.org/metpo/0000134) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9349,7 +9345,7 @@
 #### Added
 - Class: [obsolete Monotrichous](https://w3id.org/metpo/0000092) 
 
-- [obsolete Monotrichous](https://w3id.org/metpo/0000092) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Monotrichous](https://w3id.org/metpo/0000092) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Monotrichous](https://w3id.org/metpo/0000092) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9363,7 +9359,7 @@
 #### Added
 - Class: [obsolete Monotrichous](https://w3id.org/metpo/000093) 
 
-- [obsolete Monotrichous](https://w3id.org/metpo/000093) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Monotrichous](https://w3id.org/metpo/000093) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Monotrichous](https://w3id.org/metpo/000093) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9377,7 +9373,7 @@
 #### Added
 - Class: [obsolete Morphology](https://w3id.org/metpo/000021) 
 
-- [obsolete Morphology](https://w3id.org/metpo/000021) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Morphology](https://w3id.org/metpo/000021) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Morphology](https://w3id.org/metpo/000021) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9391,9 +9387,9 @@
 #### Added
 - Class: [obsolete Motile](https://w3id.org/metpo/000088) 
 
-- [obsolete Motile](https://w3id.org/metpo/000088) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Motile](https://w3id.org/metpo/000088) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Motile](https://w3id.org/metpo/000088) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [motile](https://w3id.org/metpo/1000702) 
+- [obsolete Motile](https://w3id.org/metpo/000088) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [motile](https://w3id.org/metpo/1000702) 
 
 - [obsolete Motile](https://w3id.org/metpo/000088) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9407,9 +9403,9 @@
 #### Added
 - Class: [obsolete Motile](https://w3id.org/metpo/0000087) 
 
-- [obsolete Motile](https://w3id.org/metpo/0000087) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Motile](https://w3id.org/metpo/0000087) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Motile](https://w3id.org/metpo/0000087) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [motile](https://w3id.org/metpo/1000702) 
+- [obsolete Motile](https://w3id.org/metpo/0000087) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [motile](https://w3id.org/metpo/1000702) 
 
 - [obsolete Motile](https://w3id.org/metpo/0000087) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9423,9 +9419,9 @@
 #### Added
 - Class: [obsolete Motility](https://w3id.org/metpo/0000006) 
 
-- [obsolete Motility](https://w3id.org/metpo/0000006) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Motility](https://w3id.org/metpo/0000006) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Motility](https://w3id.org/metpo/0000006) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [motility](https://w3id.org/metpo/1000701) 
+- [obsolete Motility](https://w3id.org/metpo/0000006) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [motility](https://w3id.org/metpo/1000701) 
 
 - [obsolete Motility](https://w3id.org/metpo/0000006) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9439,9 +9435,9 @@
 #### Added
 - Class: [obsolete Motility](https://w3id.org/metpo/000006) 
 
-- [obsolete Motility](https://w3id.org/metpo/000006) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Motility](https://w3id.org/metpo/000006) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Motility](https://w3id.org/metpo/000006) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [motility](https://w3id.org/metpo/1000701) 
+- [obsolete Motility](https://w3id.org/metpo/000006) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [motility](https://w3id.org/metpo/1000701) 
 
 - [obsolete Motility](https://w3id.org/metpo/000006) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9455,7 +9451,7 @@
 #### Added
 - Class: [obsolete Motility Mechanism](https://w3id.org/metpo/0000258) 
 
-- [obsolete Motility Mechanism](https://w3id.org/metpo/0000258) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Motility Mechanism](https://w3id.org/metpo/0000258) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Motility Mechanism](https://w3id.org/metpo/0000258) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9469,7 +9465,7 @@
 #### Added
 - Class: [obsolete Motility Mechanism](https://w3id.org/metpo/000259) 
 
-- [obsolete Motility Mechanism](https://w3id.org/metpo/000259) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Motility Mechanism](https://w3id.org/metpo/000259) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Motility Mechanism](https://w3id.org/metpo/000259) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9483,7 +9479,7 @@
 #### Added
 - Class: [obsolete Motility Structure](https://w3id.org/metpo/0000259) 
 
-- [obsolete Motility Structure](https://w3id.org/metpo/0000259) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Motility Structure](https://w3id.org/metpo/0000259) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Motility Structure](https://w3id.org/metpo/0000259) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9497,7 +9493,7 @@
 #### Added
 - Class: [obsolete Motility Structure](https://w3id.org/metpo/000260) 
 
-- [obsolete Motility Structure](https://w3id.org/metpo/000260) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Motility Structure](https://w3id.org/metpo/000260) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Motility Structure](https://w3id.org/metpo/000260) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9511,7 +9507,7 @@
 #### Added
 - Class: [obsolete Myxospores](https://w3id.org/metpo/000101) 
 
-- [obsolete Myxospores](https://w3id.org/metpo/000101) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Myxospores](https://w3id.org/metpo/000101) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Myxospores](https://w3id.org/metpo/000101) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9525,7 +9521,7 @@
 #### Added
 - Class: [obsolete Myxospores](https://w3id.org/metpo/0000100) 
 
-- [obsolete Myxospores](https://w3id.org/metpo/0000100) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Myxospores](https://w3id.org/metpo/0000100) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Myxospores](https://w3id.org/metpo/0000100) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9539,9 +9535,9 @@
 #### Added
 - Class: [obsolete NaCl Delta high](https://w3id.org/metpo/0000204) 
 
-- [obsolete NaCl Delta high](https://w3id.org/metpo/0000204) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete NaCl Delta high](https://w3id.org/metpo/0000204) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete NaCl Delta high](https://w3id.org/metpo/0000204) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [NaCl delta high](https://w3id.org/metpo/1000482) 
+- [obsolete NaCl Delta high](https://w3id.org/metpo/0000204) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [NaCl delta high](https://w3id.org/metpo/1000482) 
 
 - [obsolete NaCl Delta high](https://w3id.org/metpo/0000204) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9555,9 +9551,9 @@
 #### Added
 - Class: [obsolete NaCl Delta low](https://w3id.org/metpo/0000201) 
 
-- [obsolete NaCl Delta low](https://w3id.org/metpo/0000201) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete NaCl Delta low](https://w3id.org/metpo/0000201) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete NaCl Delta low](https://w3id.org/metpo/0000201) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [NaCl delta low](https://w3id.org/metpo/1000479) 
+- [obsolete NaCl Delta low](https://w3id.org/metpo/0000201) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [NaCl delta low](https://w3id.org/metpo/1000479) 
 
 - [obsolete NaCl Delta low](https://w3id.org/metpo/0000201) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9571,9 +9567,9 @@
 #### Added
 - Class: [obsolete NaCl Delta mid2](https://w3id.org/metpo/0000202) 
 
-- [obsolete NaCl Delta mid2](https://w3id.org/metpo/0000202) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete NaCl Delta mid2](https://w3id.org/metpo/0000202) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete NaCl Delta mid2](https://w3id.org/metpo/0000202) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [NaCl delta mid2](https://w3id.org/metpo/1000481) 
+- [obsolete NaCl Delta mid2](https://w3id.org/metpo/0000202) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [NaCl delta mid2](https://w3id.org/metpo/1000481) 
 
 - [obsolete NaCl Delta mid2](https://w3id.org/metpo/0000202) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9587,9 +9583,9 @@
 #### Added
 - Class: [obsolete NaCl Delta mid2](https://w3id.org/metpo/0000203) 
 
-- [obsolete NaCl Delta mid2](https://w3id.org/metpo/0000203) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete NaCl Delta mid2](https://w3id.org/metpo/0000203) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete NaCl Delta mid2](https://w3id.org/metpo/0000203) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [NaCl delta mid2](https://w3id.org/metpo/1000481) 
+- [obsolete NaCl Delta mid2](https://w3id.org/metpo/0000203) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [NaCl delta mid2](https://w3id.org/metpo/1000481) 
 
 - [obsolete NaCl Delta mid2](https://w3id.org/metpo/0000203) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9603,9 +9599,9 @@
 #### Added
 - Class: [obsolete NaCl Optimum](https://w3id.org/metpo/000016) 
 
-- [obsolete NaCl Optimum](https://w3id.org/metpo/000016) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete NaCl Optimum](https://w3id.org/metpo/000016) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete NaCl Optimum](https://w3id.org/metpo/000016) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [NaCl optimum](https://w3id.org/metpo/1000333) 
+- [obsolete NaCl Optimum](https://w3id.org/metpo/000016) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [NaCl optimum](https://w3id.org/metpo/1000333) 
 
 - [obsolete NaCl Optimum](https://w3id.org/metpo/000016) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9619,9 +9615,9 @@
 #### Added
 - Class: [obsolete NaCl Optimum](https://w3id.org/metpo/0000016) 
 
-- [obsolete NaCl Optimum](https://w3id.org/metpo/0000016) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete NaCl Optimum](https://w3id.org/metpo/0000016) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete NaCl Optimum](https://w3id.org/metpo/0000016) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [NaCl optimum](https://w3id.org/metpo/1000333) 
+- [obsolete NaCl Optimum](https://w3id.org/metpo/0000016) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [NaCl optimum](https://w3id.org/metpo/1000333) 
 
 - [obsolete NaCl Optimum](https://w3id.org/metpo/0000016) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9635,9 +9631,9 @@
 #### Added
 - Class: [obsolete NaCl Optimum high](https://w3id.org/metpo/0000190) 
 
-- [obsolete NaCl Optimum high](https://w3id.org/metpo/0000190) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete NaCl Optimum high](https://w3id.org/metpo/0000190) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete NaCl Optimum high](https://w3id.org/metpo/0000190) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [NaCl optimum high](https://w3id.org/metpo/1000468) 
+- [obsolete NaCl Optimum high](https://w3id.org/metpo/0000190) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [NaCl optimum high](https://w3id.org/metpo/1000468) 
 
 - [obsolete NaCl Optimum high](https://w3id.org/metpo/0000190) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9651,9 +9647,9 @@
 #### Added
 - Class: [obsolete NaCl Optimum low](https://w3id.org/metpo/0000187) 
 
-- [obsolete NaCl Optimum low](https://w3id.org/metpo/0000187) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete NaCl Optimum low](https://w3id.org/metpo/0000187) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete NaCl Optimum low](https://w3id.org/metpo/0000187) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [NaCl optimum low](https://w3id.org/metpo/1000465) 
+- [obsolete NaCl Optimum low](https://w3id.org/metpo/0000187) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [NaCl optimum low](https://w3id.org/metpo/1000465) 
 
 - [obsolete NaCl Optimum low](https://w3id.org/metpo/0000187) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9667,9 +9663,9 @@
 #### Added
 - Class: [obsolete NaCl Optimum mid1](https://w3id.org/metpo/0000188) 
 
-- [obsolete NaCl Optimum mid1](https://w3id.org/metpo/0000188) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete NaCl Optimum mid1](https://w3id.org/metpo/0000188) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete NaCl Optimum mid1](https://w3id.org/metpo/0000188) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [NaCl optimum mid1](https://w3id.org/metpo/1000466) 
+- [obsolete NaCl Optimum mid1](https://w3id.org/metpo/0000188) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [NaCl optimum mid1](https://w3id.org/metpo/1000466) 
 
 - [obsolete NaCl Optimum mid1](https://w3id.org/metpo/0000188) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9683,9 +9679,9 @@
 #### Added
 - Class: [obsolete NaCl Optimum mid2](https://w3id.org/metpo/0000189) 
 
-- [obsolete NaCl Optimum mid2](https://w3id.org/metpo/0000189) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete NaCl Optimum mid2](https://w3id.org/metpo/0000189) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete NaCl Optimum mid2](https://w3id.org/metpo/0000189) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [NaCl optimum mid2](https://w3id.org/metpo/1000467) 
+- [obsolete NaCl Optimum mid2](https://w3id.org/metpo/0000189) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [NaCl optimum mid2](https://w3id.org/metpo/1000467) 
 
 - [obsolete NaCl Optimum mid2](https://w3id.org/metpo/0000189) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9699,9 +9695,9 @@
 #### Added
 - Class: [obsolete NaCl Range](https://w3id.org/metpo/0000017) 
 
-- [obsolete NaCl Range](https://w3id.org/metpo/0000017) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete NaCl Range](https://w3id.org/metpo/0000017) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete NaCl Range](https://w3id.org/metpo/0000017) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [NaCl range](https://w3id.org/metpo/1000334) 
+- [obsolete NaCl Range](https://w3id.org/metpo/0000017) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [NaCl range](https://w3id.org/metpo/1000334) 
 
 - [obsolete NaCl Range](https://w3id.org/metpo/0000017) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9715,9 +9711,9 @@
 #### Added
 - Class: [obsolete NaCl Range](https://w3id.org/metpo/000017) 
 
-- [obsolete NaCl Range](https://w3id.org/metpo/000017) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete NaCl Range](https://w3id.org/metpo/000017) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete NaCl Range](https://w3id.org/metpo/000017) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [NaCl range](https://w3id.org/metpo/1000334) 
+- [obsolete NaCl Range](https://w3id.org/metpo/000017) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [NaCl range](https://w3id.org/metpo/1000334) 
 
 - [obsolete NaCl Range](https://w3id.org/metpo/000017) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9731,9 +9727,9 @@
 #### Added
 - Class: [obsolete NaCl Range high](https://w3id.org/metpo/0000194) 
 
-- [obsolete NaCl Range high](https://w3id.org/metpo/0000194) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete NaCl Range high](https://w3id.org/metpo/0000194) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete NaCl Range high](https://w3id.org/metpo/0000194) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [NaCl range high](https://w3id.org/metpo/1000472) 
+- [obsolete NaCl Range high](https://w3id.org/metpo/0000194) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [NaCl range high](https://w3id.org/metpo/1000472) 
 
 - [obsolete NaCl Range high](https://w3id.org/metpo/0000194) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9747,9 +9743,9 @@
 #### Added
 - Class: [obsolete NaCl Range low](https://w3id.org/metpo/0000191) 
 
-- [obsolete NaCl Range low](https://w3id.org/metpo/0000191) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete NaCl Range low](https://w3id.org/metpo/0000191) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete NaCl Range low](https://w3id.org/metpo/0000191) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [NaCl range low](https://w3id.org/metpo/1000469) 
+- [obsolete NaCl Range low](https://w3id.org/metpo/0000191) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [NaCl range low](https://w3id.org/metpo/1000469) 
 
 - [obsolete NaCl Range low](https://w3id.org/metpo/0000191) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9763,9 +9759,9 @@
 #### Added
 - Class: [obsolete NaCl Range mid1](https://w3id.org/metpo/0000192) 
 
-- [obsolete NaCl Range mid1](https://w3id.org/metpo/0000192) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete NaCl Range mid1](https://w3id.org/metpo/0000192) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete NaCl Range mid1](https://w3id.org/metpo/0000192) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [NaCl range mid1](https://w3id.org/metpo/1000470) 
+- [obsolete NaCl Range mid1](https://w3id.org/metpo/0000192) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [NaCl range mid1](https://w3id.org/metpo/1000470) 
 
 - [obsolete NaCl Range mid1](https://w3id.org/metpo/0000192) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9779,9 +9775,9 @@
 #### Added
 - Class: [obsolete NaCl Range mid2](https://w3id.org/metpo/0000193) 
 
-- [obsolete NaCl Range mid2](https://w3id.org/metpo/0000193) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete NaCl Range mid2](https://w3id.org/metpo/0000193) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete NaCl Range mid2](https://w3id.org/metpo/0000193) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [NaCl range mid2](https://w3id.org/metpo/1000471) 
+- [obsolete NaCl Range mid2](https://w3id.org/metpo/0000193) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [NaCl range mid2](https://w3id.org/metpo/1000471) 
 
 - [obsolete NaCl Range mid2](https://w3id.org/metpo/0000193) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9795,9 +9791,9 @@
 #### Added
 - Class: [obsolete NaCl delta](https://w3id.org/metpo/000019) 
 
-- [obsolete NaCl delta](https://w3id.org/metpo/000019) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete NaCl delta](https://w3id.org/metpo/000019) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete NaCl delta](https://w3id.org/metpo/000019) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [NaCl delta](https://w3id.org/metpo/1000335) 
+- [obsolete NaCl delta](https://w3id.org/metpo/000019) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [NaCl delta](https://w3id.org/metpo/1000335) 
 
 - [obsolete NaCl delta](https://w3id.org/metpo/000019) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9811,9 +9807,9 @@
 #### Added
 - Class: [obsolete NaCl delta](https://w3id.org/metpo/0000019) 
 
-- [obsolete NaCl delta](https://w3id.org/metpo/0000019) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete NaCl delta](https://w3id.org/metpo/0000019) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete NaCl delta](https://w3id.org/metpo/0000019) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [NaCl delta](https://w3id.org/metpo/1000335) 
+- [obsolete NaCl delta](https://w3id.org/metpo/0000019) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [NaCl delta](https://w3id.org/metpo/1000335) 
 
 - [obsolete NaCl delta](https://w3id.org/metpo/0000019) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9827,7 +9823,7 @@
 #### Added
 - Class: [obsolete NaCl delta observation](https://w3id.org/metpo/1001008) 
 
-- [obsolete NaCl delta observation](https://w3id.org/metpo/1001008) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete NaCl delta observation](https://w3id.org/metpo/1001008) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete NaCl delta observation](https://w3id.org/metpo/1001008) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9841,7 +9837,7 @@
 #### Added
 - Class: [obsolete NaCl observation](https://w3id.org/metpo/1001022) 
 
-- [obsolete NaCl observation](https://w3id.org/metpo/1001022) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete NaCl observation](https://w3id.org/metpo/1001022) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete NaCl observation](https://w3id.org/metpo/1001022) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9855,7 +9851,7 @@
 #### Added
 - Class: [obsolete NaCl range observation](https://w3id.org/metpo/1001009) 
 
-- [obsolete NaCl range observation](https://w3id.org/metpo/1001009) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete NaCl range observation](https://w3id.org/metpo/1001009) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete NaCl range observation](https://w3id.org/metpo/1001009) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9869,9 +9865,9 @@
 #### Added
 - Class: [obsolete Neutrophile](https://w3id.org/metpo/000040) 
 
-- [obsolete Neutrophile](https://w3id.org/metpo/000040) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Neutrophile](https://w3id.org/metpo/000040) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Neutrophile](https://w3id.org/metpo/000040) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [neutrophilic](https://w3id.org/metpo/1003001) 
+- [obsolete Neutrophile](https://w3id.org/metpo/000040) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [neutrophilic](https://w3id.org/metpo/1003001) 
 
 - [obsolete Neutrophile](https://w3id.org/metpo/000040) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9885,9 +9881,9 @@
 #### Added
 - Class: [obsolete Neutrophile](https://w3id.org/metpo/0000039) 
 
-- [obsolete Neutrophile](https://w3id.org/metpo/0000039) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Neutrophile](https://w3id.org/metpo/0000039) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Neutrophile](https://w3id.org/metpo/0000039) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [neutrophilic](https://w3id.org/metpo/1003001) 
+- [obsolete Neutrophile](https://w3id.org/metpo/0000039) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [neutrophilic](https://w3id.org/metpo/1003001) 
 
 - [obsolete Neutrophile](https://w3id.org/metpo/0000039) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9901,7 +9897,7 @@
 #### Added
 - Class: [obsolete Nitrate reduction](https://w3id.org/metpo/1000808) 
 
-- [obsolete Nitrate reduction](https://w3id.org/metpo/1000808) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Nitrate reduction](https://w3id.org/metpo/1000808) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Nitrate reduction](https://w3id.org/metpo/1000808) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9915,7 +9911,7 @@
 #### Added
 - Class: [obsolete Nitrate-dependent Fe(II) oxidation](https://w3id.org/metpo/1000831) 
 
-- [obsolete Nitrate-dependent Fe(II) oxidation](https://w3id.org/metpo/1000831) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Nitrate-dependent Fe(II) oxidation](https://w3id.org/metpo/1000831) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Nitrate-dependent Fe(II) oxidation](https://w3id.org/metpo/1000831) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9929,7 +9925,7 @@
 #### Added
 - Class: [obsolete Nitrate-dependent Fe(II)-oxidizing](https://w3id.org/metpo/1002022) 
 
-- [obsolete Nitrate-dependent Fe(II)-oxidizing](https://w3id.org/metpo/1002022) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Nitrate-dependent Fe(II)-oxidizing](https://w3id.org/metpo/1002022) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Nitrate-dependent Fe(II)-oxidizing](https://w3id.org/metpo/1002022) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9943,7 +9939,7 @@
 #### Added
 - Class: [obsolete Nitrate-dependent methane oxidation](https://w3id.org/metpo/1000858) 
 
-- [obsolete Nitrate-dependent methane oxidation](https://w3id.org/metpo/1000858) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Nitrate-dependent methane oxidation](https://w3id.org/metpo/1000858) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Nitrate-dependent methane oxidation](https://w3id.org/metpo/1000858) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9957,7 +9953,7 @@
 #### Added
 - Class: [obsolete Nitrate-reducing](https://w3id.org/metpo/1002009) 
 
-- [obsolete Nitrate-reducing](https://w3id.org/metpo/1002009) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Nitrate-reducing](https://w3id.org/metpo/1002009) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Nitrate-reducing](https://w3id.org/metpo/1002009) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9971,7 +9967,7 @@
 #### Added
 - Class: [obsolete Nitric oxide reduction](https://w3id.org/metpo/1000813) 
 
-- [obsolete Nitric oxide reduction](https://w3id.org/metpo/1000813) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Nitric oxide reduction](https://w3id.org/metpo/1000813) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Nitric oxide reduction](https://w3id.org/metpo/1000813) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -9985,9 +9981,9 @@
 #### Added
 - Class: [obsolete Nitrification](https://w3id.org/metpo/1000861) 
 
-- [obsolete Nitrification](https://w3id.org/metpo/1000861) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Nitrification](https://w3id.org/metpo/1000861) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
-- [obsolete Nitrification](https://w3id.org/metpo/1000861) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [nitrification](https://w3id.org/metpo/1005001) 
+- [obsolete Nitrification](https://w3id.org/metpo/1000861) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [nitrification](https://w3id.org/metpo/1005001) 
 
 - [obsolete Nitrification](https://w3id.org/metpo/1000861) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10001,7 +9997,7 @@
 #### Added
 - Class: [obsolete Nitrite oxidation](https://w3id.org/metpo/1002036) 
 
-- [obsolete Nitrite oxidation](https://w3id.org/metpo/1002036) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Nitrite oxidation](https://w3id.org/metpo/1002036) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Nitrite oxidation](https://w3id.org/metpo/1002036) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10015,7 +10011,7 @@
 #### Added
 - Class: [obsolete Nitrite reduction](https://w3id.org/metpo/1000811) 
 
-- [obsolete Nitrite reduction](https://w3id.org/metpo/1000811) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Nitrite reduction](https://w3id.org/metpo/1000811) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Nitrite reduction](https://w3id.org/metpo/1000811) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10029,7 +10025,7 @@
 #### Added
 - Class: [obsolete Nitrite-dependent methane oxidation](https://w3id.org/metpo/1000857) 
 
-- [obsolete Nitrite-dependent methane oxidation](https://w3id.org/metpo/1000857) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Nitrite-dependent methane oxidation](https://w3id.org/metpo/1000857) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Nitrite-dependent methane oxidation](https://w3id.org/metpo/1000857) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10043,7 +10039,7 @@
 #### Added
 - Class: [obsolete Nitrogen compound respiration](https://w3id.org/metpo/1000807) 
 
-- [obsolete Nitrogen compound respiration](https://w3id.org/metpo/1000807) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Nitrogen compound respiration](https://w3id.org/metpo/1000807) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Nitrogen compound respiration](https://w3id.org/metpo/1000807) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10057,9 +10053,9 @@
 #### Added
 - Class: [obsolete Nitrogen fixation](https://w3id.org/metpo/1002008) 
 
-- [obsolete Nitrogen fixation](https://w3id.org/metpo/1002008) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Nitrogen fixation](https://w3id.org/metpo/1002008) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
-- [obsolete Nitrogen fixation](https://w3id.org/metpo/1002008) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [nitrogen fixation](https://w3id.org/metpo/1005039) 
+- [obsolete Nitrogen fixation](https://w3id.org/metpo/1002008) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [nitrogen fixation](https://w3id.org/metpo/1005039) 
 
 - [obsolete Nitrogen fixation](https://w3id.org/metpo/1002008) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10073,7 +10069,7 @@
 #### Added
 - Class: [obsolete Nitrogen fixer](https://w3id.org/metpo/0000081) 
 
-- [obsolete Nitrogen fixer](https://w3id.org/metpo/0000081) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Nitrogen fixer](https://w3id.org/metpo/0000081) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Nitrogen fixer](https://w3id.org/metpo/0000081) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10087,7 +10083,7 @@
 #### Added
 - Class: [obsolete Nitrogen fixer](https://w3id.org/metpo/000082) 
 
-- [obsolete Nitrogen fixer](https://w3id.org/metpo/000082) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Nitrogen fixer](https://w3id.org/metpo/000082) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Nitrogen fixer](https://w3id.org/metpo/000082) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10101,9 +10097,9 @@
 #### Added
 - Class: [obsolete Nitrogen-fixing](https://w3id.org/metpo/1002040) 
 
-- [obsolete Nitrogen-fixing](https://w3id.org/metpo/1002040) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Nitrogen-fixing](https://w3id.org/metpo/1002040) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
-- [obsolete Nitrogen-fixing](https://w3id.org/metpo/1002040) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [nitrogen fixation](https://w3id.org/metpo/1005039) 
+- [obsolete Nitrogen-fixing](https://w3id.org/metpo/1002040) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [nitrogen fixation](https://w3id.org/metpo/1005039) 
 
 - [obsolete Nitrogen-fixing](https://w3id.org/metpo/1002040) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10117,7 +10113,7 @@
 #### Added
 - Class: [obsolete Nitrous oxide reduction](https://w3id.org/metpo/1000814) 
 
-- [obsolete Nitrous oxide reduction](https://w3id.org/metpo/1000814) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Nitrous oxide reduction](https://w3id.org/metpo/1000814) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Nitrous oxide reduction](https://w3id.org/metpo/1000814) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10131,7 +10127,7 @@
 #### Added
 - Class: [obsolete Nitrous oxide-reducing](https://w3id.org/metpo/1002011) 
 
-- [obsolete Nitrous oxide-reducing](https://w3id.org/metpo/1002011) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Nitrous oxide-reducing](https://w3id.org/metpo/1002011) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Nitrous oxide-reducing](https://w3id.org/metpo/1002011) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10145,9 +10141,9 @@
 #### Added
 - Class: [obsolete Non-halophile](https://w3id.org/metpo/000032) 
 
-- [obsolete Non-halophile](https://w3id.org/metpo/000032) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Non-halophile](https://w3id.org/metpo/000032) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Non-halophile](https://w3id.org/metpo/000032) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [non halophilic](https://w3id.org/metpo/1000624) 
+- [obsolete Non-halophile](https://w3id.org/metpo/000032) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [non halophilic](https://w3id.org/metpo/1000624) 
 
 - [obsolete Non-halophile](https://w3id.org/metpo/000032) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10161,9 +10157,9 @@
 #### Added
 - Class: [obsolete Non-halophile](https://w3id.org/metpo/0000031) 
 
-- [obsolete Non-halophile](https://w3id.org/metpo/0000031) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Non-halophile](https://w3id.org/metpo/0000031) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Non-halophile](https://w3id.org/metpo/0000031) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [non halophilic](https://w3id.org/metpo/1000624) 
+- [obsolete Non-halophile](https://w3id.org/metpo/0000031) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [non halophilic](https://w3id.org/metpo/1000624) 
 
 - [obsolete Non-halophile](https://w3id.org/metpo/0000031) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10177,9 +10173,9 @@
 #### Added
 - Class: [obsolete Non-motile](https://w3id.org/metpo/000089) 
 
-- [obsolete Non-motile](https://w3id.org/metpo/000089) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Non-motile](https://w3id.org/metpo/000089) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Non-motile](https://w3id.org/metpo/000089) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [non motile](https://w3id.org/metpo/1000703) 
+- [obsolete Non-motile](https://w3id.org/metpo/000089) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [non motile](https://w3id.org/metpo/1000703) 
 
 - [obsolete Non-motile](https://w3id.org/metpo/000089) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10193,9 +10189,9 @@
 #### Added
 - Class: [obsolete Non-motile](https://w3id.org/metpo/0000088) 
 
-- [obsolete Non-motile](https://w3id.org/metpo/0000088) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Non-motile](https://w3id.org/metpo/0000088) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Non-motile](https://w3id.org/metpo/0000088) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [non motile](https://w3id.org/metpo/1000703) 
+- [obsolete Non-motile](https://w3id.org/metpo/0000088) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [non motile](https://w3id.org/metpo/1000703) 
 
 - [obsolete Non-motile](https://w3id.org/metpo/0000088) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10209,9 +10205,9 @@
 #### Added
 - Class: [obsolete Obligate aerobe](https://w3id.org/metpo/000055) 
 
-- [obsolete Obligate aerobe](https://w3id.org/metpo/000055) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Obligate aerobe](https://w3id.org/metpo/000055) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Obligate aerobe](https://w3id.org/metpo/000055) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [obligately aerobic](https://w3id.org/metpo/1000606) 
+- [obsolete Obligate aerobe](https://w3id.org/metpo/000055) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [obligately aerobic](https://w3id.org/metpo/1000606) 
 
 - [obsolete Obligate aerobe](https://w3id.org/metpo/000055) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10225,9 +10221,9 @@
 #### Added
 - Class: [obsolete Obligate aerobe](https://w3id.org/metpo/0000054) 
 
-- [obsolete Obligate aerobe](https://w3id.org/metpo/0000054) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Obligate aerobe](https://w3id.org/metpo/0000054) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Obligate aerobe](https://w3id.org/metpo/0000054) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [obligately aerobic](https://w3id.org/metpo/1000606) 
+- [obsolete Obligate aerobe](https://w3id.org/metpo/0000054) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [obligately aerobic](https://w3id.org/metpo/1000606) 
 
 - [obsolete Obligate aerobe](https://w3id.org/metpo/0000054) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10241,9 +10237,9 @@
 #### Added
 - Class: [obsolete Obligate anaerobe](https://w3id.org/metpo/000056) 
 
-- [obsolete Obligate anaerobe](https://w3id.org/metpo/000056) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Obligate anaerobe](https://w3id.org/metpo/000056) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Obligate anaerobe](https://w3id.org/metpo/000056) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [obligately anaerobic](https://w3id.org/metpo/1000607) 
+- [obsolete Obligate anaerobe](https://w3id.org/metpo/000056) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [obligately anaerobic](https://w3id.org/metpo/1000607) 
 
 - [obsolete Obligate anaerobe](https://w3id.org/metpo/000056) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10257,9 +10253,9 @@
 #### Added
 - Class: [obsolete Obligate anaerobe](https://w3id.org/metpo/0000055) 
 
-- [obsolete Obligate anaerobe](https://w3id.org/metpo/0000055) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Obligate anaerobe](https://w3id.org/metpo/0000055) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Obligate anaerobe](https://w3id.org/metpo/0000055) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [obligately anaerobic](https://w3id.org/metpo/1000607) 
+- [obsolete Obligate anaerobe](https://w3id.org/metpo/0000055) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [obligately anaerobic](https://w3id.org/metpo/1000607) 
 
 - [obsolete Obligate anaerobe](https://w3id.org/metpo/0000055) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10273,7 +10269,7 @@
 #### Added
 - Class: [obsolete Obligate barophile](https://w3id.org/metpo/0000129) 
 
-- [obsolete Obligate barophile](https://w3id.org/metpo/0000129) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Obligate barophile](https://w3id.org/metpo/0000129) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Obligate barophile](https://w3id.org/metpo/0000129) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10287,7 +10283,7 @@
 #### Added
 - Class: [obsolete Obligate barophile](https://w3id.org/metpo/000130) 
 
-- [obsolete Obligate barophile](https://w3id.org/metpo/000130) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Obligate barophile](https://w3id.org/metpo/000130) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Obligate barophile](https://w3id.org/metpo/000130) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10301,9 +10297,9 @@
 #### Added
 - Class: [obsolete Obligative acidophile](https://w3id.org/metpo/0000045) 
 
-- [obsolete Obligative acidophile](https://w3id.org/metpo/0000045) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Obligative acidophile](https://w3id.org/metpo/0000045) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Obligative acidophile](https://w3id.org/metpo/0000045) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [obligately acidophilic](https://w3id.org/metpo/1003006) 
+- [obsolete Obligative acidophile](https://w3id.org/metpo/0000045) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [obligately acidophilic](https://w3id.org/metpo/1003006) 
 
 - [obsolete Obligative acidophile](https://w3id.org/metpo/0000045) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10317,9 +10313,9 @@
 #### Added
 - Class: [obsolete Obligative acidophile](https://w3id.org/metpo/000046) 
 
-- [obsolete Obligative acidophile](https://w3id.org/metpo/000046) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Obligative acidophile](https://w3id.org/metpo/000046) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Obligative acidophile](https://w3id.org/metpo/000046) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [obligately acidophilic](https://w3id.org/metpo/1003006) 
+- [obsolete Obligative acidophile](https://w3id.org/metpo/000046) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [obligately acidophilic](https://w3id.org/metpo/1003006) 
 
 - [obsolete Obligative acidophile](https://w3id.org/metpo/000046) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10333,9 +10329,9 @@
 #### Added
 - Class: [obsolete Oligotroph](https://w3id.org/metpo/0000068) 
 
-- [obsolete Oligotroph](https://w3id.org/metpo/0000068) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Oligotroph](https://w3id.org/metpo/0000068) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Oligotroph](https://w3id.org/metpo/0000068) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [oligotrophic](https://w3id.org/metpo/1000654) 
+- [obsolete Oligotroph](https://w3id.org/metpo/0000068) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [oligotrophic](https://w3id.org/metpo/1000654) 
 
 - [obsolete Oligotroph](https://w3id.org/metpo/0000068) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10349,9 +10345,9 @@
 #### Added
 - Class: [obsolete Oligotroph](https://w3id.org/metpo/000069) 
 
-- [obsolete Oligotroph](https://w3id.org/metpo/000069) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Oligotroph](https://w3id.org/metpo/000069) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Oligotroph](https://w3id.org/metpo/000069) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [oligotrophic](https://w3id.org/metpo/1000654) 
+- [obsolete Oligotroph](https://w3id.org/metpo/000069) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [oligotrophic](https://w3id.org/metpo/1000654) 
 
 - [obsolete Oligotroph](https://w3id.org/metpo/000069) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10365,7 +10361,7 @@
 #### Added
 - Class: [obsolete Oospores](https://w3id.org/metpo/000111) 
 
-- [obsolete Oospores](https://w3id.org/metpo/000111) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Oospores](https://w3id.org/metpo/000111) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Oospores](https://w3id.org/metpo/000111) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10379,7 +10375,7 @@
 #### Added
 - Class: [obsolete Oospores](https://w3id.org/metpo/0000110) 
 
-- [obsolete Oospores](https://w3id.org/metpo/0000110) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Oospores](https://w3id.org/metpo/0000110) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Oospores](https://w3id.org/metpo/0000110) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10393,7 +10389,7 @@
 #### Added
 - Class: [obsolete Optimal Growth Parameter](https://w3id.org/metpo/0000268) 
 
-- [obsolete Optimal Growth Parameter](https://w3id.org/metpo/0000268) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Optimal Growth Parameter](https://w3id.org/metpo/0000268) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Optimal Growth Parameter](https://w3id.org/metpo/0000268) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10407,7 +10403,7 @@
 #### Added
 - Class: [obsolete Optimal Growth Parameter](https://w3id.org/metpo/000269) 
 
-- [obsolete Optimal Growth Parameter](https://w3id.org/metpo/000269) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Optimal Growth Parameter](https://w3id.org/metpo/000269) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Optimal Growth Parameter](https://w3id.org/metpo/000269) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10421,7 +10417,7 @@
 #### Added
 - Class: [obsolete Organohalide respiration](https://w3id.org/metpo/1000851) 
 
-- [obsolete Organohalide respiration](https://w3id.org/metpo/1000851) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Organohalide respiration](https://w3id.org/metpo/1000851) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Organohalide respiration](https://w3id.org/metpo/1000851) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10435,9 +10431,9 @@
 #### Added
 - Class: [obsolete Organotroph](https://w3id.org/metpo/0000065) 
 
-- [obsolete Organotroph](https://w3id.org/metpo/0000065) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Organotroph](https://w3id.org/metpo/0000065) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Organotroph](https://w3id.org/metpo/0000065) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [organotrophic](https://w3id.org/metpo/1000655) 
+- [obsolete Organotroph](https://w3id.org/metpo/0000065) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [organotrophic](https://w3id.org/metpo/1000655) 
 
 - [obsolete Organotroph](https://w3id.org/metpo/0000065) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10451,9 +10447,9 @@
 #### Added
 - Class: [obsolete Organotroph](https://w3id.org/metpo/000066) 
 
-- [obsolete Organotroph](https://w3id.org/metpo/000066) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Organotroph](https://w3id.org/metpo/000066) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Organotroph](https://w3id.org/metpo/000066) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [organotrophic](https://w3id.org/metpo/1000655) 
+- [obsolete Organotroph](https://w3id.org/metpo/000066) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [organotrophic](https://w3id.org/metpo/1000655) 
 
 - [obsolete Organotroph](https://w3id.org/metpo/000066) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10467,7 +10463,7 @@
 #### Added
 - Class: [obsolete Other](https://w3id.org/metpo/000022) 
 
-- [obsolete Other](https://w3id.org/metpo/000022) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Other](https://w3id.org/metpo/000022) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Other](https://w3id.org/metpo/000022) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10481,7 +10477,7 @@
 #### Added
 - Class: [obsolete Oval](https://w3id.org/metpo/0000226) 
 
-- [obsolete Oval](https://w3id.org/metpo/0000226) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Oval](https://w3id.org/metpo/0000226) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Oval](https://w3id.org/metpo/0000226) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10495,7 +10491,7 @@
 #### Added
 - Class: [obsolete Ovoid](https://w3id.org/metpo/0000227) 
 
-- [obsolete Ovoid](https://w3id.org/metpo/0000227) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Ovoid](https://w3id.org/metpo/0000227) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Ovoid](https://w3id.org/metpo/0000227) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10509,7 +10505,7 @@
 #### Added
 - Class: [obsolete Oxygen](https://w3id.org/metpo/000004) 
 
-- [obsolete Oxygen](https://w3id.org/metpo/000004) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Oxygen](https://w3id.org/metpo/000004) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Oxygen](https://w3id.org/metpo/000004) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10523,7 +10519,7 @@
 #### Added
 - Class: [obsolete Oxygen](https://w3id.org/metpo/0000004) 
 
-- [obsolete Oxygen](https://w3id.org/metpo/0000004) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Oxygen](https://w3id.org/metpo/0000004) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Oxygen](https://w3id.org/metpo/0000004) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10537,7 +10533,7 @@
 #### Added
 - Class: [obsolete Oxygen Requirement](https://w3id.org/metpo/0000254) 
 
-- [obsolete Oxygen Requirement](https://w3id.org/metpo/0000254) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Oxygen Requirement](https://w3id.org/metpo/0000254) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Oxygen Requirement](https://w3id.org/metpo/0000254) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10551,7 +10547,7 @@
 #### Added
 - Class: [obsolete Oxygen Requirement](https://w3id.org/metpo/000255) 
 
-- [obsolete Oxygen Requirement](https://w3id.org/metpo/000255) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Oxygen Requirement](https://w3id.org/metpo/000255) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Oxygen Requirement](https://w3id.org/metpo/000255) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10565,7 +10561,7 @@
 #### Added
 - Class: [obsolete Oxygenic phototroph](https://w3id.org/metpo/000057) 
 
-- [obsolete Oxygenic phototroph](https://w3id.org/metpo/000057) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Oxygenic phototroph](https://w3id.org/metpo/000057) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Oxygenic phototroph](https://w3id.org/metpo/000057) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10579,7 +10575,7 @@
 #### Added
 - Class: [obsolete Oxygenic phototroph](https://w3id.org/metpo/0000056) 
 
-- [obsolete Oxygenic phototroph](https://w3id.org/metpo/0000056) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Oxygenic phototroph](https://w3id.org/metpo/0000056) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Oxygenic phototroph](https://w3id.org/metpo/0000056) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10593,7 +10589,7 @@
 #### Added
 - Class: [obsolete Perchlorate respiration](https://w3id.org/metpo/1000853) 
 
-- [obsolete Perchlorate respiration](https://w3id.org/metpo/1000853) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Perchlorate respiration](https://w3id.org/metpo/1000853) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Perchlorate respiration](https://w3id.org/metpo/1000853) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10607,7 +10603,7 @@
 #### Added
 - Class: [obsolete Perchlorate-reducing](https://w3id.org/metpo/1002029) 
 
-- [obsolete Perchlorate-reducing](https://w3id.org/metpo/1002029) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Perchlorate-reducing](https://w3id.org/metpo/1002029) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Perchlorate-reducing](https://w3id.org/metpo/1002029) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10621,7 +10617,7 @@
 #### Added
 - Class: [obsolete Peritrichous](https://w3id.org/metpo/0000090) 
 
-- [obsolete Peritrichous](https://w3id.org/metpo/0000090) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Peritrichous](https://w3id.org/metpo/0000090) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Peritrichous](https://w3id.org/metpo/0000090) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10635,7 +10631,7 @@
 #### Added
 - Class: [obsolete Peritrichous](https://w3id.org/metpo/000091) 
 
-- [obsolete Peritrichous](https://w3id.org/metpo/000091) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Peritrichous](https://w3id.org/metpo/000091) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Peritrichous](https://w3id.org/metpo/000091) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10649,9 +10645,9 @@
 #### Added
 - Class: [obsolete Photoautotroph](https://w3id.org/metpo/0000059) 
 
-- [obsolete Photoautotroph](https://w3id.org/metpo/0000059) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Photoautotroph](https://w3id.org/metpo/0000059) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Photoautotroph](https://w3id.org/metpo/0000059) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [photoautotrophic](https://w3id.org/metpo/1000656) 
+- [obsolete Photoautotroph](https://w3id.org/metpo/0000059) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [photoautotrophic](https://w3id.org/metpo/1000656) 
 
 - [obsolete Photoautotroph](https://w3id.org/metpo/0000059) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10665,9 +10661,9 @@
 #### Added
 - Class: [obsolete Photoautotroph](https://w3id.org/metpo/000060) 
 
-- [obsolete Photoautotroph](https://w3id.org/metpo/000060) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Photoautotroph](https://w3id.org/metpo/000060) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Photoautotroph](https://w3id.org/metpo/000060) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [photoautotrophic](https://w3id.org/metpo/1000656) 
+- [obsolete Photoautotroph](https://w3id.org/metpo/000060) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [photoautotrophic](https://w3id.org/metpo/1000656) 
 
 - [obsolete Photoautotroph](https://w3id.org/metpo/000060) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10681,9 +10677,9 @@
 #### Added
 - Class: [obsolete Photoheterotroph](https://w3id.org/metpo/000063) 
 
-- [obsolete Photoheterotroph](https://w3id.org/metpo/000063) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Photoheterotroph](https://w3id.org/metpo/000063) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Photoheterotroph](https://w3id.org/metpo/000063) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [photoheterotrophic](https://w3id.org/metpo/1000657) 
+- [obsolete Photoheterotroph](https://w3id.org/metpo/000063) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [photoheterotrophic](https://w3id.org/metpo/1000657) 
 
 - [obsolete Photoheterotroph](https://w3id.org/metpo/000063) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10697,9 +10693,9 @@
 #### Added
 - Class: [obsolete Photoheterotroph](https://w3id.org/metpo/0000062) 
 
-- [obsolete Photoheterotroph](https://w3id.org/metpo/0000062) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Photoheterotroph](https://w3id.org/metpo/0000062) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Photoheterotroph](https://w3id.org/metpo/0000062) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [photoheterotrophic](https://w3id.org/metpo/1000657) 
+- [obsolete Photoheterotroph](https://w3id.org/metpo/0000062) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [photoheterotrophic](https://w3id.org/metpo/1000657) 
 
 - [obsolete Photoheterotroph](https://w3id.org/metpo/0000062) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10713,9 +10709,9 @@
 #### Added
 - Class: [obsolete Phototroph](https://w3id.org/metpo/0000066) 
 
-- [obsolete Phototroph](https://w3id.org/metpo/0000066) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Phototroph](https://w3id.org/metpo/0000066) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Phototroph](https://w3id.org/metpo/0000066) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [phototrophic](https://w3id.org/metpo/1000660) 
+- [obsolete Phototroph](https://w3id.org/metpo/0000066) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [phototrophic](https://w3id.org/metpo/1000660) 
 
 - [obsolete Phototroph](https://w3id.org/metpo/0000066) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10729,9 +10725,9 @@
 #### Added
 - Class: [obsolete Phototroph](https://w3id.org/metpo/000067) 
 
-- [obsolete Phototroph](https://w3id.org/metpo/000067) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Phototroph](https://w3id.org/metpo/000067) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Phototroph](https://w3id.org/metpo/000067) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [phototrophic](https://w3id.org/metpo/1000660) 
+- [obsolete Phototroph](https://w3id.org/metpo/000067) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [phototrophic](https://w3id.org/metpo/1000660) 
 
 - [obsolete Phototroph](https://w3id.org/metpo/000067) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10745,7 +10741,7 @@
 #### Added
 - Class: [obsolete Physical Property](https://w3id.org/metpo/0000274) 
 
-- [obsolete Physical Property](https://w3id.org/metpo/0000274) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Physical Property](https://w3id.org/metpo/0000274) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Physical Property](https://w3id.org/metpo/0000274) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10759,7 +10755,7 @@
 #### Added
 - Class: [obsolete Physiological Trait](https://w3id.org/metpo/0000244) 
 
-- [obsolete Physiological Trait](https://w3id.org/metpo/0000244) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Physiological Trait](https://w3id.org/metpo/0000244) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Physiological Trait](https://w3id.org/metpo/0000244) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10773,7 +10769,7 @@
 #### Added
 - Class: [obsolete Physiological Trait](https://w3id.org/metpo/000245) 
 
-- [obsolete Physiological Trait](https://w3id.org/metpo/000245) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Physiological Trait](https://w3id.org/metpo/000245) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Physiological Trait](https://w3id.org/metpo/000245) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10787,7 +10783,7 @@
 #### Added
 - Class: [obsolete Piezo-acidophile](https://w3id.org/metpo/000142) 
 
-- [obsolete Piezo-acidophile](https://w3id.org/metpo/000142) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Piezo-acidophile](https://w3id.org/metpo/000142) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Piezo-acidophile](https://w3id.org/metpo/000142) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10801,7 +10797,7 @@
 #### Added
 - Class: [obsolete Piezo-acidophile](https://w3id.org/metpo/0000141) 
 
-- [obsolete Piezo-acidophile](https://w3id.org/metpo/0000141) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Piezo-acidophile](https://w3id.org/metpo/0000141) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Piezo-acidophile](https://w3id.org/metpo/0000141) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10815,7 +10811,7 @@
 #### Added
 - Class: [obsolete Piezo-alkaliphile](https://w3id.org/metpo/0000142) 
 
-- [obsolete Piezo-alkaliphile](https://w3id.org/metpo/0000142) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Piezo-alkaliphile](https://w3id.org/metpo/0000142) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Piezo-alkaliphile](https://w3id.org/metpo/0000142) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10829,7 +10825,7 @@
 #### Added
 - Class: [obsolete Piezo-alkaliphile](https://w3id.org/metpo/000143) 
 
-- [obsolete Piezo-alkaliphile](https://w3id.org/metpo/000143) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Piezo-alkaliphile](https://w3id.org/metpo/000143) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Piezo-alkaliphile](https://w3id.org/metpo/000143) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10843,9 +10839,9 @@
 #### Added
 - Class: [obsolete Piezo-chemoheterotroph](https://w3id.org/metpo/0000147) 
 
-- [obsolete Piezo-chemoheterotroph](https://w3id.org/metpo/0000147) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Piezo-chemoheterotroph](https://w3id.org/metpo/0000147) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Piezo-chemoheterotroph](https://w3id.org/metpo/0000147) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [chemoheterotrophic](https://w3id.org/metpo/1000636) 
+- [obsolete Piezo-chemoheterotroph](https://w3id.org/metpo/0000147) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [chemoheterotrophic](https://w3id.org/metpo/1000636) 
 
 - [obsolete Piezo-chemoheterotroph](https://w3id.org/metpo/0000147) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10859,9 +10855,9 @@
 #### Added
 - Class: [obsolete Piezo-chemoheterotroph](https://w3id.org/metpo/000148) 
 
-- [obsolete Piezo-chemoheterotroph](https://w3id.org/metpo/000148) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Piezo-chemoheterotroph](https://w3id.org/metpo/000148) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Piezo-chemoheterotroph](https://w3id.org/metpo/000148) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [chemoheterotrophic](https://w3id.org/metpo/1000636) 
+- [obsolete Piezo-chemoheterotroph](https://w3id.org/metpo/000148) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [chemoheterotrophic](https://w3id.org/metpo/1000636) 
 
 - [obsolete Piezo-chemoheterotroph](https://w3id.org/metpo/000148) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10875,7 +10871,7 @@
 #### Added
 - Class: [obsolete Piezo-endolithic](https://w3id.org/metpo/0000149) 
 
-- [obsolete Piezo-endolithic](https://w3id.org/metpo/0000149) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Piezo-endolithic](https://w3id.org/metpo/0000149) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Piezo-endolithic](https://w3id.org/metpo/0000149) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10889,7 +10885,7 @@
 #### Added
 - Class: [obsolete Piezo-endolithic](https://w3id.org/metpo/000150) 
 
-- [obsolete Piezo-endolithic](https://w3id.org/metpo/000150) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Piezo-endolithic](https://w3id.org/metpo/000150) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Piezo-endolithic](https://w3id.org/metpo/000150) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10903,7 +10899,7 @@
 #### Added
 - Class: [obsolete Piezo-halophile](https://w3id.org/metpo/0000143) 
 
-- [obsolete Piezo-halophile](https://w3id.org/metpo/0000143) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Piezo-halophile](https://w3id.org/metpo/0000143) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Piezo-halophile](https://w3id.org/metpo/0000143) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10917,7 +10913,7 @@
 #### Added
 - Class: [obsolete Piezo-halophile](https://w3id.org/metpo/000144) 
 
-- [obsolete Piezo-halophile](https://w3id.org/metpo/000144) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Piezo-halophile](https://w3id.org/metpo/000144) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Piezo-halophile](https://w3id.org/metpo/000144) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10931,7 +10927,7 @@
 #### Added
 - Class: [obsolete Piezo-lithoautotrophe](https://w3id.org/metpo/000147) 
 
-- [obsolete Piezo-lithoautotrophe](https://w3id.org/metpo/000147) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Piezo-lithoautotrophe](https://w3id.org/metpo/000147) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Piezo-lithoautotrophe](https://w3id.org/metpo/000147) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10945,7 +10941,7 @@
 #### Added
 - Class: [obsolete Piezo-lithoautotrophe](https://w3id.org/metpo/0000146) 
 
-- [obsolete Piezo-lithoautotrophe](https://w3id.org/metpo/0000146) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Piezo-lithoautotrophe](https://w3id.org/metpo/0000146) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Piezo-lithoautotrophe](https://w3id.org/metpo/0000146) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10959,7 +10955,7 @@
 #### Added
 - Class: [obsolete Piezo-oligotroph](https://w3id.org/metpo/000149) 
 
-- [obsolete Piezo-oligotroph](https://w3id.org/metpo/000149) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Piezo-oligotroph](https://w3id.org/metpo/000149) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Piezo-oligotroph](https://w3id.org/metpo/000149) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10973,7 +10969,7 @@
 #### Added
 - Class: [obsolete Piezo-oligotroph](https://w3id.org/metpo/0000148) 
 
-- [obsolete Piezo-oligotroph](https://w3id.org/metpo/0000148) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Piezo-oligotroph](https://w3id.org/metpo/0000148) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Piezo-oligotroph](https://w3id.org/metpo/0000148) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -10987,7 +10983,7 @@
 #### Added
 - Class: [obsolete Piezo-psychrophile](https://w3id.org/metpo/0000144) 
 
-- [obsolete Piezo-psychrophile](https://w3id.org/metpo/0000144) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Piezo-psychrophile](https://w3id.org/metpo/0000144) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Piezo-psychrophile](https://w3id.org/metpo/0000144) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11001,7 +10997,7 @@
 #### Added
 - Class: [obsolete Piezo-psychrophile](https://w3id.org/metpo/000145) 
 
-- [obsolete Piezo-psychrophile](https://w3id.org/metpo/000145) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Piezo-psychrophile](https://w3id.org/metpo/000145) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Piezo-psychrophile](https://w3id.org/metpo/000145) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11015,7 +11011,7 @@
 #### Added
 - Class: [obsolete Piezo-thermophile](https://w3id.org/metpo/000146) 
 
-- [obsolete Piezo-thermophile](https://w3id.org/metpo/000146) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Piezo-thermophile](https://w3id.org/metpo/000146) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Piezo-thermophile](https://w3id.org/metpo/000146) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11029,7 +11025,7 @@
 #### Added
 - Class: [obsolete Piezo-thermophile](https://w3id.org/metpo/0000145) 
 
-- [obsolete Piezo-thermophile](https://w3id.org/metpo/0000145) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Piezo-thermophile](https://w3id.org/metpo/0000145) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Piezo-thermophile](https://w3id.org/metpo/0000145) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11043,7 +11039,7 @@
 #### Added
 - Class: [obsolete Piezo-tolerant](https://w3id.org/metpo/0000150) 
 
-- [obsolete Piezo-tolerant](https://w3id.org/metpo/0000150) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Piezo-tolerant](https://w3id.org/metpo/0000150) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Piezo-tolerant](https://w3id.org/metpo/0000150) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11057,7 +11053,7 @@
 #### Added
 - Class: [obsolete Piezo-tolerant](https://w3id.org/metpo/000151) 
 
-- [obsolete Piezo-tolerant](https://w3id.org/metpo/000151) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Piezo-tolerant](https://w3id.org/metpo/000151) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Piezo-tolerant](https://w3id.org/metpo/000151) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11071,7 +11067,7 @@
 #### Added
 - Class: [obsolete Piezophile](https://w3id.org/metpo/0000126) 
 
-- [obsolete Piezophile](https://w3id.org/metpo/0000126) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Piezophile](https://w3id.org/metpo/0000126) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Piezophile](https://w3id.org/metpo/0000126) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11085,7 +11081,7 @@
 #### Added
 - Class: [obsolete Piezophile](https://w3id.org/metpo/000127) 
 
-- [obsolete Piezophile](https://w3id.org/metpo/000127) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Piezophile](https://w3id.org/metpo/000127) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Piezophile](https://w3id.org/metpo/000127) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11099,7 +11095,7 @@
 #### Added
 - Class: [obsolete Piezosensitive](https://w3id.org/metpo/0000128) 
 
-- [obsolete Piezosensitive](https://w3id.org/metpo/0000128) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Piezosensitive](https://w3id.org/metpo/0000128) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Piezosensitive](https://w3id.org/metpo/0000128) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11113,7 +11109,7 @@
 #### Added
 - Class: [obsolete Piezosensitive](https://w3id.org/metpo/000129) 
 
-- [obsolete Piezosensitive](https://w3id.org/metpo/000129) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Piezosensitive](https://w3id.org/metpo/000129) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Piezosensitive](https://w3id.org/metpo/000129) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11127,7 +11123,7 @@
 #### Added
 - Class: [obsolete Piezotolerant](https://w3id.org/metpo/000128) 
 
-- [obsolete Piezotolerant](https://w3id.org/metpo/000128) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Piezotolerant](https://w3id.org/metpo/000128) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Piezotolerant](https://w3id.org/metpo/000128) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11141,7 +11137,7 @@
 #### Added
 - Class: [obsolete Piezotolerant](https://w3id.org/metpo/0000127) 
 
-- [obsolete Piezotolerant](https://w3id.org/metpo/0000127) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Piezotolerant](https://w3id.org/metpo/0000127) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Piezotolerant](https://w3id.org/metpo/0000127) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11155,7 +11151,7 @@
 #### Added
 - Class: [obsolete Pleomorphic](https://w3id.org/metpo/0000228) 
 
-- [obsolete Pleomorphic](https://w3id.org/metpo/0000228) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Pleomorphic](https://w3id.org/metpo/0000228) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Pleomorphic](https://w3id.org/metpo/0000228) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11169,7 +11165,7 @@
 #### Added
 - Class: [obsolete Polysulfide reduction](https://w3id.org/metpo/1000827) 
 
-- [obsolete Polysulfide reduction](https://w3id.org/metpo/1000827) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Polysulfide reduction](https://w3id.org/metpo/1000827) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Polysulfide reduction](https://w3id.org/metpo/1000827) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11183,7 +11179,7 @@
 #### Added
 - Class: [obsolete Pressure](https://w3id.org/metpo/0000008) 
 
-- [obsolete Pressure](https://w3id.org/metpo/0000008) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Pressure](https://w3id.org/metpo/0000008) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Pressure](https://w3id.org/metpo/0000008) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11197,7 +11193,7 @@
 #### Added
 - Class: [obsolete Pressure](https://w3id.org/metpo/000008) 
 
-- [obsolete Pressure](https://w3id.org/metpo/000008) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Pressure](https://w3id.org/metpo/000008) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Pressure](https://w3id.org/metpo/000008) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11211,7 +11207,7 @@
 #### Added
 - Class: [obsolete Pressure Adaptation Type](https://w3id.org/metpo/000265) 
 
-- [obsolete Pressure Adaptation Type](https://w3id.org/metpo/000265) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Pressure Adaptation Type](https://w3id.org/metpo/000265) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Pressure Adaptation Type](https://w3id.org/metpo/000265) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11225,7 +11221,7 @@
 #### Added
 - Class: [obsolete Pressure Adaptation Type](https://w3id.org/metpo/0000264) 
 
-- [obsolete Pressure Adaptation Type](https://w3id.org/metpo/0000264) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Pressure Adaptation Type](https://w3id.org/metpo/0000264) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Pressure Adaptation Type](https://w3id.org/metpo/0000264) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11239,9 +11235,9 @@
 #### Added
 - Class: [obsolete Pressure Tolerance Range](https://w3id.org/metpo/000266) 
 
-- [obsolete Pressure Tolerance Range](https://w3id.org/metpo/000266) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Pressure Tolerance Range](https://w3id.org/metpo/000266) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Pressure Tolerance Range](https://w3id.org/metpo/000266) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [pressure tolerance](https://w3id.org/metpo/1007070) 
+- [obsolete Pressure Tolerance Range](https://w3id.org/metpo/000266) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [pressure tolerance](https://w3id.org/metpo/1007070) 
 
 - [obsolete Pressure Tolerance Range](https://w3id.org/metpo/000266) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11255,9 +11251,9 @@
 #### Added
 - Class: [obsolete Pressure Tolerance Range](https://w3id.org/metpo/0000265) 
 
-- [obsolete Pressure Tolerance Range](https://w3id.org/metpo/0000265) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Pressure Tolerance Range](https://w3id.org/metpo/0000265) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Pressure Tolerance Range](https://w3id.org/metpo/0000265) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [pressure tolerance](https://w3id.org/metpo/1007070) 
+- [obsolete Pressure Tolerance Range](https://w3id.org/metpo/0000265) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [pressure tolerance](https://w3id.org/metpo/1007070) 
 
 - [obsolete Pressure Tolerance Range](https://w3id.org/metpo/0000265) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11271,7 +11267,7 @@
 #### Added
 - Class: [obsolete Pressure-adapted](https://w3id.org/metpo/000141) 
 
-- [obsolete Pressure-adapted](https://w3id.org/metpo/000141) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Pressure-adapted](https://w3id.org/metpo/000141) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Pressure-adapted](https://w3id.org/metpo/000141) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11285,7 +11281,7 @@
 #### Added
 - Class: [obsolete Pressure-adapted](https://w3id.org/metpo/0000140) 
 
-- [obsolete Pressure-adapted](https://w3id.org/metpo/0000140) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Pressure-adapted](https://w3id.org/metpo/0000140) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Pressure-adapted](https://w3id.org/metpo/0000140) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11299,7 +11295,7 @@
 #### Added
 - Class: [obsolete Pressure-resistant](https://w3id.org/metpo/000140) 
 
-- [obsolete Pressure-resistant](https://w3id.org/metpo/000140) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Pressure-resistant](https://w3id.org/metpo/000140) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Pressure-resistant](https://w3id.org/metpo/000140) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11313,7 +11309,7 @@
 #### Added
 - Class: [obsolete Pressure-resistant](https://w3id.org/metpo/0000139) 
 
-- [obsolete Pressure-resistant](https://w3id.org/metpo/0000139) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Pressure-resistant](https://w3id.org/metpo/0000139) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Pressure-resistant](https://w3id.org/metpo/0000139) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11327,7 +11323,7 @@
 #### Added
 - Class: [obsolete Pressure-sensitive](https://w3id.org/metpo/0000138) 
 
-- [obsolete Pressure-sensitive](https://w3id.org/metpo/0000138) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Pressure-sensitive](https://w3id.org/metpo/0000138) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Pressure-sensitive](https://w3id.org/metpo/0000138) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11341,7 +11337,7 @@
 #### Added
 - Class: [obsolete Pressure-sensitive](https://w3id.org/metpo/000139) 
 
-- [obsolete Pressure-sensitive](https://w3id.org/metpo/000139) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Pressure-sensitive](https://w3id.org/metpo/000139) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Pressure-sensitive](https://w3id.org/metpo/000139) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11355,9 +11351,9 @@
 #### Added
 - Class: [obsolete Psychrophile](https://w3id.org/metpo/000023) 
 
-- [obsolete Psychrophile](https://w3id.org/metpo/000023) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Psychrophile](https://w3id.org/metpo/000023) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Psychrophile](https://w3id.org/metpo/000023) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [psychrophilic](https://w3id.org/metpo/1000614) 
+- [obsolete Psychrophile](https://w3id.org/metpo/000023) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [psychrophilic](https://w3id.org/metpo/1000614) 
 
 - [obsolete Psychrophile](https://w3id.org/metpo/000023) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11371,9 +11367,9 @@
 #### Added
 - Class: [obsolete Psychrophile](https://w3id.org/metpo/0000022) 
 
-- [obsolete Psychrophile](https://w3id.org/metpo/0000022) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Psychrophile](https://w3id.org/metpo/0000022) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Psychrophile](https://w3id.org/metpo/0000022) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [psychrophilic](https://w3id.org/metpo/1000614) 
+- [obsolete Psychrophile](https://w3id.org/metpo/0000022) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [psychrophilic](https://w3id.org/metpo/1000614) 
 
 - [obsolete Psychrophile](https://w3id.org/metpo/0000022) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11387,9 +11383,9 @@
 #### Added
 - Class: [obsolete Psychrotolerant](https://w3id.org/metpo/000024) 
 
-- [obsolete Psychrotolerant](https://w3id.org/metpo/000024) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Psychrotolerant](https://w3id.org/metpo/000024) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Psychrotolerant](https://w3id.org/metpo/000024) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [psychrotolerant](https://w3id.org/metpo/1000618) 
+- [obsolete Psychrotolerant](https://w3id.org/metpo/000024) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [psychrotolerant](https://w3id.org/metpo/1000618) 
 
 - [obsolete Psychrotolerant](https://w3id.org/metpo/000024) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11403,9 +11399,9 @@
 #### Added
 - Class: [obsolete Psychrotolerant](https://w3id.org/metpo/0000023) 
 
-- [obsolete Psychrotolerant](https://w3id.org/metpo/0000023) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Psychrotolerant](https://w3id.org/metpo/0000023) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Psychrotolerant](https://w3id.org/metpo/0000023) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [psychrotolerant](https://w3id.org/metpo/1000618) 
+- [obsolete Psychrotolerant](https://w3id.org/metpo/0000023) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [psychrotolerant](https://w3id.org/metpo/1000618) 
 
 - [obsolete Psychrotolerant](https://w3id.org/metpo/0000023) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11419,7 +11415,7 @@
 #### Added
 - Class: [obsolete Pycnidiospores](https://w3id.org/metpo/0000121) 
 
-- [obsolete Pycnidiospores](https://w3id.org/metpo/0000121) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Pycnidiospores](https://w3id.org/metpo/0000121) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Pycnidiospores](https://w3id.org/metpo/0000121) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11433,7 +11429,7 @@
 #### Added
 - Class: [obsolete Pycnidiospores](https://w3id.org/metpo/000122) 
 
-- [obsolete Pycnidiospores](https://w3id.org/metpo/000122) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Pycnidiospores](https://w3id.org/metpo/000122) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Pycnidiospores](https://w3id.org/metpo/000122) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11447,7 +11443,7 @@
 #### Added
 - Class: [obsolete Reproductive Structure](https://w3id.org/metpo/0000262) 
 
-- [obsolete Reproductive Structure](https://w3id.org/metpo/0000262) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Reproductive Structure](https://w3id.org/metpo/0000262) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Reproductive Structure](https://w3id.org/metpo/0000262) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11461,7 +11457,7 @@
 #### Added
 - Class: [obsolete Reproductive Structure](https://w3id.org/metpo/000263) 
 
-- [obsolete Reproductive Structure](https://w3id.org/metpo/000263) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Reproductive Structure](https://w3id.org/metpo/000263) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Reproductive Structure](https://w3id.org/metpo/000263) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11475,7 +11471,7 @@
 #### Added
 - Class: [obsolete Ring](https://w3id.org/metpo/0000229) 
 
-- [obsolete Ring](https://w3id.org/metpo/0000229) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Ring](https://w3id.org/metpo/0000229) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Ring](https://w3id.org/metpo/0000229) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11489,7 +11485,7 @@
 #### Added
 - Class: [obsolete Rod](https://w3id.org/metpo/0000230) 
 
-- [obsolete Rod](https://w3id.org/metpo/0000230) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Rod](https://w3id.org/metpo/0000230) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Rod](https://w3id.org/metpo/0000230) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11503,7 +11499,7 @@
 #### Added
 - Class: [obsolete S-layer](https://w3id.org/metpo/1000270) 
 
-- [obsolete S-layer](https://w3id.org/metpo/1000270) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete S-layer](https://w3id.org/metpo/1000270) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete S-layer](https://w3id.org/metpo/1000270) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11517,7 +11513,7 @@
 #### Added
 - Class: [obsolete Salinity](https://w3id.org/metpo/0000002) 
 
-- [obsolete Salinity](https://w3id.org/metpo/0000002) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Salinity](https://w3id.org/metpo/0000002) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Salinity](https://w3id.org/metpo/0000002) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11531,7 +11527,7 @@
 #### Added
 - Class: [obsolete Salinity](https://w3id.org/metpo/000002) 
 
-- [obsolete Salinity](https://w3id.org/metpo/000002) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Salinity](https://w3id.org/metpo/000002) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Salinity](https://w3id.org/metpo/000002) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11545,7 +11541,7 @@
 #### Added
 - Class: [obsolete Salinity Adaptation](https://w3id.org/metpo/000253) 
 
-- [obsolete Salinity Adaptation](https://w3id.org/metpo/000253) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Salinity Adaptation](https://w3id.org/metpo/000253) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Salinity Adaptation](https://w3id.org/metpo/000253) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11559,7 +11555,7 @@
 #### Added
 - Class: [obsolete Salinity Adaptation](https://w3id.org/metpo/0000252) 
 
-- [obsolete Salinity Adaptation](https://w3id.org/metpo/0000252) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Salinity Adaptation](https://w3id.org/metpo/0000252) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Salinity Adaptation](https://w3id.org/metpo/0000252) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11573,7 +11569,7 @@
 #### Added
 - Class: [obsolete Sclerotia](https://w3id.org/metpo/000118) 
 
-- [obsolete Sclerotia](https://w3id.org/metpo/000118) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Sclerotia](https://w3id.org/metpo/000118) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Sclerotia](https://w3id.org/metpo/000118) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11587,7 +11583,7 @@
 #### Added
 - Class: [obsolete Sclerotia](https://w3id.org/metpo/0000117) 
 
-- [obsolete Sclerotia](https://w3id.org/metpo/0000117) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Sclerotia](https://w3id.org/metpo/0000117) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Sclerotia](https://w3id.org/metpo/0000117) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11601,7 +11597,7 @@
 #### Added
 - Class: [obsolete Selenate reduction](https://w3id.org/metpo/1000841) 
 
-- [obsolete Selenate reduction](https://w3id.org/metpo/1000841) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Selenate reduction](https://w3id.org/metpo/1000841) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Selenate reduction](https://w3id.org/metpo/1000841) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11615,7 +11611,7 @@
 #### Added
 - Class: [obsolete Selenate-reducing](https://w3id.org/metpo/1002027) 
 
-- [obsolete Selenate-reducing](https://w3id.org/metpo/1002027) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Selenate-reducing](https://w3id.org/metpo/1002027) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Selenate-reducing](https://w3id.org/metpo/1002027) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11629,7 +11625,7 @@
 #### Added
 - Class: [obsolete Selenite reduction](https://w3id.org/metpo/1000842) 
 
-- [obsolete Selenite reduction](https://w3id.org/metpo/1000842) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Selenite reduction](https://w3id.org/metpo/1000842) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Selenite reduction](https://w3id.org/metpo/1000842) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11643,7 +11639,7 @@
 #### Added
 - Class: [obsolete Selenite-reducing](https://w3id.org/metpo/1002028) 
 
-- [obsolete Selenite-reducing](https://w3id.org/metpo/1002028) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Selenite-reducing](https://w3id.org/metpo/1002028) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Selenite-reducing](https://w3id.org/metpo/1002028) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11657,7 +11653,7 @@
 #### Added
 - Class: [obsolete Sliding](https://w3id.org/metpo/000097) 
 
-- [obsolete Sliding](https://w3id.org/metpo/000097) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Sliding](https://w3id.org/metpo/000097) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Sliding](https://w3id.org/metpo/000097) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11671,7 +11667,7 @@
 #### Added
 - Class: [obsolete Sliding](https://w3id.org/metpo/0000096) 
 
-- [obsolete Sliding](https://w3id.org/metpo/0000096) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Sliding](https://w3id.org/metpo/0000096) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Sliding](https://w3id.org/metpo/0000096) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11685,9 +11681,9 @@
 #### Added
 - Class: [obsolete Slight halophile](https://w3id.org/metpo/0000032) 
 
-- [obsolete Slight halophile](https://w3id.org/metpo/0000032) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Slight halophile](https://w3id.org/metpo/0000032) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Slight halophile](https://w3id.org/metpo/0000032) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [slightly halophilic](https://w3id.org/metpo/1000625) 
+- [obsolete Slight halophile](https://w3id.org/metpo/0000032) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [slightly halophilic](https://w3id.org/metpo/1000625) 
 
 - [obsolete Slight halophile](https://w3id.org/metpo/0000032) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11701,9 +11697,9 @@
 #### Added
 - Class: [obsolete Slight halophile](https://w3id.org/metpo/000033) 
 
-- [obsolete Slight halophile](https://w3id.org/metpo/000033) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Slight halophile](https://w3id.org/metpo/000033) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Slight halophile](https://w3id.org/metpo/000033) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [slightly halophilic](https://w3id.org/metpo/1000625) 
+- [obsolete Slight halophile](https://w3id.org/metpo/000033) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [slightly halophilic](https://w3id.org/metpo/1000625) 
 
 - [obsolete Slight halophile](https://w3id.org/metpo/000033) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11717,7 +11713,7 @@
 #### Added
 - Class: [obsolete Sphere](https://w3id.org/metpo/0000231) 
 
-- [obsolete Sphere](https://w3id.org/metpo/0000231) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Sphere](https://w3id.org/metpo/0000231) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Sphere](https://w3id.org/metpo/0000231) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11731,7 +11727,7 @@
 #### Added
 - Class: [obsolete Spindle](https://w3id.org/metpo/0000232) 
 
-- [obsolete Spindle](https://w3id.org/metpo/0000232) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Spindle](https://w3id.org/metpo/0000232) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Spindle](https://w3id.org/metpo/0000232) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11745,7 +11741,7 @@
 #### Added
 - Class: [obsolete Spiral](https://w3id.org/metpo/0000233) 
 
-- [obsolete Spiral](https://w3id.org/metpo/0000233) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Spiral](https://w3id.org/metpo/0000233) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Spiral](https://w3id.org/metpo/0000233) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11759,7 +11755,7 @@
 #### Added
 - Class: [obsolete Spirochete](https://w3id.org/metpo/0000234) 
 
-- [obsolete Spirochete](https://w3id.org/metpo/0000234) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Spirochete](https://w3id.org/metpo/0000234) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Spirochete](https://w3id.org/metpo/0000234) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11773,7 +11769,7 @@
 #### Added
 - Class: [obsolete Sporangiospores](https://w3id.org/metpo/000104) 
 
-- [obsolete Sporangiospores](https://w3id.org/metpo/000104) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Sporangiospores](https://w3id.org/metpo/000104) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Sporangiospores](https://w3id.org/metpo/000104) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11787,7 +11783,7 @@
 #### Added
 - Class: [obsolete Sporangiospores](https://w3id.org/metpo/0000103) 
 
-- [obsolete Sporangiospores](https://w3id.org/metpo/0000103) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Sporangiospores](https://w3id.org/metpo/0000103) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Sporangiospores](https://w3id.org/metpo/0000103) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11801,7 +11797,7 @@
 #### Added
 - Class: [obsolete Spore](https://w3id.org/metpo/0000235) 
 
-- [obsolete Spore](https://w3id.org/metpo/0000235) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Spore](https://w3id.org/metpo/0000235) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Spore](https://w3id.org/metpo/0000235) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11815,7 +11811,7 @@
 #### Added
 - Class: [obsolete Sporocysts](https://w3id.org/metpo/000108) 
 
-- [obsolete Sporocysts](https://w3id.org/metpo/000108) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Sporocysts](https://w3id.org/metpo/000108) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Sporocysts](https://w3id.org/metpo/000108) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11829,7 +11825,7 @@
 #### Added
 - Class: [obsolete Sporocysts](https://w3id.org/metpo/0000107) 
 
-- [obsolete Sporocysts](https://w3id.org/metpo/0000107) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Sporocysts](https://w3id.org/metpo/0000107) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Sporocysts](https://w3id.org/metpo/0000107) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11843,9 +11839,9 @@
 #### Added
 - Class: [obsolete Sporulation](https://w3id.org/metpo/000007) 
 
-- [obsolete Sporulation](https://w3id.org/metpo/000007) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Sporulation](https://w3id.org/metpo/000007) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Sporulation](https://w3id.org/metpo/000007) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [sporulation](https://w3id.org/metpo/1000870) 
+- [obsolete Sporulation](https://w3id.org/metpo/000007) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [sporulation](https://w3id.org/metpo/1000870) 
 
 - [obsolete Sporulation](https://w3id.org/metpo/000007) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11859,9 +11855,9 @@
 #### Added
 - Class: [obsolete Sporulation](https://w3id.org/metpo/0000007) 
 
-- [obsolete Sporulation](https://w3id.org/metpo/0000007) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Sporulation](https://w3id.org/metpo/0000007) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Sporulation](https://w3id.org/metpo/0000007) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [sporulation](https://w3id.org/metpo/1000870) 
+- [obsolete Sporulation](https://w3id.org/metpo/0000007) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [sporulation](https://w3id.org/metpo/1000870) 
 
 - [obsolete Sporulation](https://w3id.org/metpo/0000007) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11875,7 +11871,7 @@
 #### Added
 - Class: [obsolete Square](https://w3id.org/metpo/0000236) 
 
-- [obsolete Square](https://w3id.org/metpo/0000236) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Square](https://w3id.org/metpo/0000236) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Square](https://w3id.org/metpo/0000236) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11889,7 +11885,7 @@
 #### Added
 - Class: [obsolete Star](https://w3id.org/metpo/0000237) 
 
-- [obsolete Star](https://w3id.org/metpo/0000237) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Star](https://w3id.org/metpo/0000237) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Star](https://w3id.org/metpo/0000237) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11903,7 +11899,7 @@
 #### Added
 - Class: [obsolete Star - Dumbbell - Pleomorphic](https://w3id.org/metpo/0000238) 
 
-- [obsolete Star - Dumbbell - Pleomorphic](https://w3id.org/metpo/0000238) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Star - Dumbbell - Pleomorphic](https://w3id.org/metpo/0000238) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Star - Dumbbell - Pleomorphic](https://w3id.org/metpo/0000238) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11917,7 +11913,7 @@
 #### Added
 - Class: [obsolete Statismospores](https://w3id.org/metpo/0000124) 
 
-- [obsolete Statismospores](https://w3id.org/metpo/0000124) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Statismospores](https://w3id.org/metpo/0000124) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Statismospores](https://w3id.org/metpo/0000124) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11931,7 +11927,7 @@
 #### Added
 - Class: [obsolete Statismospores](https://w3id.org/metpo/000125) 
 
-- [obsolete Statismospores](https://w3id.org/metpo/000125) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Statismospores](https://w3id.org/metpo/000125) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Statismospores](https://w3id.org/metpo/000125) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11945,7 +11941,7 @@
 #### Added
 - Class: [obsolete Stenopiezic](https://w3id.org/metpo/0000136) 
 
-- [obsolete Stenopiezic](https://w3id.org/metpo/0000136) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Stenopiezic](https://w3id.org/metpo/0000136) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Stenopiezic](https://w3id.org/metpo/0000136) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11959,7 +11955,7 @@
 #### Added
 - Class: [obsolete Stenopiezic](https://w3id.org/metpo/000137) 
 
-- [obsolete Stenopiezic](https://w3id.org/metpo/000137) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Stenopiezic](https://w3id.org/metpo/000137) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Stenopiezic](https://w3id.org/metpo/000137) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11973,7 +11969,7 @@
 #### Added
 - Class: [obsolete Structural Feature](https://w3id.org/metpo/0000250) 
 
-- [obsolete Structural Feature](https://w3id.org/metpo/0000250) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Structural Feature](https://w3id.org/metpo/0000250) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Structural Feature](https://w3id.org/metpo/0000250) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -11987,7 +11983,7 @@
 #### Added
 - Class: [obsolete Structural Feature](https://w3id.org/metpo/000251) 
 
-- [obsolete Structural Feature](https://w3id.org/metpo/000251) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Structural Feature](https://w3id.org/metpo/000251) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Structural Feature](https://w3id.org/metpo/000251) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12001,7 +11997,7 @@
 #### Added
 - Class: [obsolete Stylospores](https://w3id.org/metpo/000117) 
 
-- [obsolete Stylospores](https://w3id.org/metpo/000117) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Stylospores](https://w3id.org/metpo/000117) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Stylospores](https://w3id.org/metpo/000117) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12015,7 +12011,7 @@
 #### Added
 - Class: [obsolete Stylospores](https://w3id.org/metpo/0000116) 
 
-- [obsolete Stylospores](https://w3id.org/metpo/0000116) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Stylospores](https://w3id.org/metpo/0000116) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Stylospores](https://w3id.org/metpo/0000116) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12029,7 +12025,7 @@
 #### Added
 - Class: [obsolete Sulfate reducer](https://w3id.org/metpo/0000083) 
 
-- [obsolete Sulfate reducer](https://w3id.org/metpo/0000083) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Sulfate reducer](https://w3id.org/metpo/0000083) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Sulfate reducer](https://w3id.org/metpo/0000083) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12043,7 +12039,7 @@
 #### Added
 - Class: [obsolete Sulfate reducer](https://w3id.org/metpo/000084) 
 
-- [obsolete Sulfate reducer](https://w3id.org/metpo/000084) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Sulfate reducer](https://w3id.org/metpo/000084) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Sulfate reducer](https://w3id.org/metpo/000084) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12057,7 +12053,7 @@
 #### Added
 - Class: [obsolete Sulfate reduction](https://w3id.org/metpo/1000816) 
 
-- [obsolete Sulfate reduction](https://w3id.org/metpo/1000816) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Sulfate reduction](https://w3id.org/metpo/1000816) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Sulfate reduction](https://w3id.org/metpo/1000816) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12071,7 +12067,7 @@
 #### Added
 - Class: [obsolete Sulfate-dependent methane oxidation](https://w3id.org/metpo/1002000) 
 
-- [obsolete Sulfate-dependent methane oxidation](https://w3id.org/metpo/1002000) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Sulfate-dependent methane oxidation](https://w3id.org/metpo/1002000) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Sulfate-dependent methane oxidation](https://w3id.org/metpo/1002000) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12085,7 +12081,7 @@
 #### Added
 - Class: [obsolete Sulfate-reducing](https://w3id.org/metpo/1002012) 
 
-- [obsolete Sulfate-reducing](https://w3id.org/metpo/1002012) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Sulfate-reducing](https://w3id.org/metpo/1002012) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Sulfate-reducing](https://w3id.org/metpo/1002012) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12099,7 +12095,7 @@
 #### Added
 - Class: [obsolete Sulfide oxidation](https://w3id.org/metpo/1000823) 
 
-- [obsolete Sulfide oxidation](https://w3id.org/metpo/1000823) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Sulfide oxidation](https://w3id.org/metpo/1000823) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Sulfide oxidation](https://w3id.org/metpo/1000823) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12113,7 +12109,7 @@
 #### Added
 - Class: [obsolete Sulfide-oxidizing](https://w3id.org/metpo/1002017) 
 
-- [obsolete Sulfide-oxidizing](https://w3id.org/metpo/1002017) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Sulfide-oxidizing](https://w3id.org/metpo/1002017) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Sulfide-oxidizing](https://w3id.org/metpo/1002017) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12127,7 +12123,7 @@
 #### Added
 - Class: [obsolete Sulfite oxidation](https://w3id.org/metpo/1000825) 
 
-- [obsolete Sulfite oxidation](https://w3id.org/metpo/1000825) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Sulfite oxidation](https://w3id.org/metpo/1000825) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Sulfite oxidation](https://w3id.org/metpo/1000825) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12141,7 +12137,7 @@
 #### Added
 - Class: [obsolete Sulfite reduction](https://w3id.org/metpo/1000818) 
 
-- [obsolete Sulfite reduction](https://w3id.org/metpo/1000818) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Sulfite reduction](https://w3id.org/metpo/1000818) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Sulfite reduction](https://w3id.org/metpo/1000818) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12155,7 +12151,7 @@
 #### Added
 - Class: [obsolete Sulfite-oxidizing](https://w3id.org/metpo/1002019) 
 
-- [obsolete Sulfite-oxidizing](https://w3id.org/metpo/1002019) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Sulfite-oxidizing](https://w3id.org/metpo/1002019) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Sulfite-oxidizing](https://w3id.org/metpo/1002019) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12169,7 +12165,7 @@
 #### Added
 - Class: [obsolete Sulfite-reducing](https://w3id.org/metpo/1002014) 
 
-- [obsolete Sulfite-reducing](https://w3id.org/metpo/1002014) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Sulfite-reducing](https://w3id.org/metpo/1002014) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Sulfite-reducing](https://w3id.org/metpo/1002014) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12183,7 +12179,7 @@
 #### Added
 - Class: [obsolete Sulfoxide respiration](https://w3id.org/metpo/1000820) 
 
-- [obsolete Sulfoxide respiration](https://w3id.org/metpo/1000820) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Sulfoxide respiration](https://w3id.org/metpo/1000820) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Sulfoxide respiration](https://w3id.org/metpo/1000820) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12197,7 +12193,7 @@
 #### Added
 - Class: [obsolete Sulfur and sulfoxide compound respiration](https://w3id.org/metpo/1000815) 
 
-- [obsolete Sulfur and sulfoxide compound respiration](https://w3id.org/metpo/1000815) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Sulfur and sulfoxide compound respiration](https://w3id.org/metpo/1000815) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Sulfur and sulfoxide compound respiration](https://w3id.org/metpo/1000815) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12211,9 +12207,9 @@
 #### Added
 - Class: [obsolete Sulfur disproportionation](https://w3id.org/metpo/1002007) 
 
-- [obsolete Sulfur disproportionation](https://w3id.org/metpo/1002007) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Sulfur disproportionation](https://w3id.org/metpo/1002007) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
-- [obsolete Sulfur disproportionation](https://w3id.org/metpo/1002007) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [Disproportionation](https://w3id.org/metpo/1000806) 
+- [obsolete Sulfur disproportionation](https://w3id.org/metpo/1002007) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [Disproportionation](https://w3id.org/metpo/1000806) 
 
 - [obsolete Sulfur disproportionation](https://w3id.org/metpo/1002007) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12227,7 +12223,7 @@
 #### Added
 - Class: [obsolete Sulfur oxidation](https://w3id.org/metpo/1000860) 
 
-- [obsolete Sulfur oxidation](https://w3id.org/metpo/1000860) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Sulfur oxidation](https://w3id.org/metpo/1000860) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Sulfur oxidation](https://w3id.org/metpo/1000860) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12241,7 +12237,7 @@
 #### Added
 - Class: [obsolete Sulfur oxidizer](https://w3id.org/metpo/0000084) 
 
-- [obsolete Sulfur oxidizer](https://w3id.org/metpo/0000084) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Sulfur oxidizer](https://w3id.org/metpo/0000084) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Sulfur oxidizer](https://w3id.org/metpo/0000084) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12255,7 +12251,7 @@
 #### Added
 - Class: [obsolete Sulfur oxidizer](https://w3id.org/metpo/000085) 
 
-- [obsolete Sulfur oxidizer](https://w3id.org/metpo/000085) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Sulfur oxidizer](https://w3id.org/metpo/000085) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Sulfur oxidizer](https://w3id.org/metpo/000085) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12269,7 +12265,7 @@
 #### Added
 - Class: [obsolete Sulfur reduction](https://w3id.org/metpo/1000817) 
 
-- [obsolete Sulfur reduction](https://w3id.org/metpo/1000817) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Sulfur reduction](https://w3id.org/metpo/1000817) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Sulfur reduction](https://w3id.org/metpo/1000817) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12283,7 +12279,7 @@
 #### Added
 - Class: [obsolete Sulfur-disproportionating](https://w3id.org/metpo/1002016) 
 
-- [obsolete Sulfur-disproportionating](https://w3id.org/metpo/1002016) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Sulfur-disproportionating](https://w3id.org/metpo/1002016) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Sulfur-disproportionating](https://w3id.org/metpo/1002016) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12297,7 +12293,7 @@
 #### Added
 - Class: [obsolete Sulfur-oxidizing](https://w3id.org/metpo/1002034) 
 
-- [obsolete Sulfur-oxidizing](https://w3id.org/metpo/1002034) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Sulfur-oxidizing](https://w3id.org/metpo/1002034) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Sulfur-oxidizing](https://w3id.org/metpo/1002034) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12311,7 +12307,7 @@
 #### Added
 - Class: [obsolete Sulfur-reducing](https://w3id.org/metpo/1002013) 
 
-- [obsolete Sulfur-reducing](https://w3id.org/metpo/1002013) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Sulfur-reducing](https://w3id.org/metpo/1002013) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Sulfur-reducing](https://w3id.org/metpo/1002013) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12325,7 +12321,7 @@
 #### Added
 - Class: [obsolete Swarming](https://w3id.org/metpo/000098) 
 
-- [obsolete Swarming](https://w3id.org/metpo/000098) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Swarming](https://w3id.org/metpo/000098) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Swarming](https://w3id.org/metpo/000098) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12339,7 +12335,7 @@
 #### Added
 - Class: [obsolete Swarming](https://w3id.org/metpo/0000097) 
 
-- [obsolete Swarming](https://w3id.org/metpo/0000097) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Swarming](https://w3id.org/metpo/0000097) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Swarming](https://w3id.org/metpo/0000097) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12353,7 +12349,7 @@
 #### Added
 - Class: [obsolete Tailed](https://w3id.org/metpo/0000239) 
 
-- [obsolete Tailed](https://w3id.org/metpo/0000239) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Tailed](https://w3id.org/metpo/0000239) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Tailed](https://w3id.org/metpo/0000239) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12367,7 +12363,7 @@
 #### Added
 - Class: [obsolete Taxonomic Feature](https://w3id.org/metpo/000248) 
 
-- [obsolete Taxonomic Feature](https://w3id.org/metpo/000248) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Taxonomic Feature](https://w3id.org/metpo/000248) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Taxonomic Feature](https://w3id.org/metpo/000248) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12381,7 +12377,7 @@
 #### Added
 - Class: [obsolete Taxonomic Feature](https://w3id.org/metpo/0000247) 
 
-- [obsolete Taxonomic Feature](https://w3id.org/metpo/0000247) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Taxonomic Feature](https://w3id.org/metpo/0000247) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Taxonomic Feature](https://w3id.org/metpo/0000247) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12395,7 +12391,7 @@
 #### Added
 - Class: [obsolete Technetium reduction](https://w3id.org/metpo/1000837) 
 
-- [obsolete Technetium reduction](https://w3id.org/metpo/1000837) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Technetium reduction](https://w3id.org/metpo/1000837) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Technetium reduction](https://w3id.org/metpo/1000837) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12409,7 +12405,7 @@
 #### Added
 - Class: [obsolete Teliospores](https://w3id.org/metpo/0000119) 
 
-- [obsolete Teliospores](https://w3id.org/metpo/0000119) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Teliospores](https://w3id.org/metpo/0000119) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Teliospores](https://w3id.org/metpo/0000119) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12423,7 +12419,7 @@
 #### Added
 - Class: [obsolete Teliospores](https://w3id.org/metpo/000120) 
 
-- [obsolete Teliospores](https://w3id.org/metpo/000120) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Teliospores](https://w3id.org/metpo/000120) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Teliospores](https://w3id.org/metpo/000120) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12437,7 +12433,7 @@
 #### Added
 - Class: [obsolete Temperature](https://w3id.org/metpo/0000001) 
 
-- [obsolete Temperature](https://w3id.org/metpo/0000001) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Temperature](https://w3id.org/metpo/0000001) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Temperature](https://w3id.org/metpo/0000001) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12451,7 +12447,7 @@
 #### Added
 - Class: [obsolete Temperature](https://w3id.org/metpo/000001) 
 
-- [obsolete Temperature](https://w3id.org/metpo/000001) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Temperature](https://w3id.org/metpo/000001) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Temperature](https://w3id.org/metpo/000001) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12465,7 +12461,7 @@
 #### Added
 - Class: [obsolete Temperature Adaptation](https://w3id.org/metpo/000252) 
 
-- [obsolete Temperature Adaptation](https://w3id.org/metpo/000252) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Temperature Adaptation](https://w3id.org/metpo/000252) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Temperature Adaptation](https://w3id.org/metpo/000252) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12479,7 +12475,7 @@
 #### Added
 - Class: [obsolete Temperature Adaptation](https://w3id.org/metpo/0000251) 
 
-- [obsolete Temperature Adaptation](https://w3id.org/metpo/0000251) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Temperature Adaptation](https://w3id.org/metpo/0000251) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Temperature Adaptation](https://w3id.org/metpo/0000251) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12493,9 +12489,9 @@
 #### Added
 - Class: [obsolete Temperature C delta high (>= 30)](https://w3id.org/metpo/000210) 
 
-- [obsolete Temperature C delta high (>= 30)](https://w3id.org/metpo/000210) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Temperature C delta high (>= 30)](https://w3id.org/metpo/000210) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Temperature C delta high (>= 30)](https://w3id.org/metpo/000210) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [temperature delta high](https://w3id.org/metpo/1000487) 
+- [obsolete Temperature C delta high (>= 30)](https://w3id.org/metpo/000210) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [temperature delta high](https://w3id.org/metpo/1000487) 
 
 - [obsolete Temperature C delta high (>= 30)](https://w3id.org/metpo/000210) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12509,7 +12505,7 @@
 #### Added
 - Class: [obsolete Temperature C delta low (5 - 10)](https://w3id.org/metpo/000207) 
 
-- [obsolete Temperature C delta low (5 - 10)](https://w3id.org/metpo/000207) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Temperature C delta low (5 - 10)](https://w3id.org/metpo/000207) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Temperature C delta low (5 - 10)](https://w3id.org/metpo/000207) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12523,7 +12519,7 @@
 #### Added
 - Class: [obsolete Temperature C delta mid1 (10 - 20)](https://w3id.org/metpo/000208) 
 
-- [obsolete Temperature C delta mid1 (10 - 20)](https://w3id.org/metpo/000208) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Temperature C delta mid1 (10 - 20)](https://w3id.org/metpo/000208) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Temperature C delta mid1 (10 - 20)](https://w3id.org/metpo/000208) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12537,7 +12533,7 @@
 #### Added
 - Class: [obsolete Temperature C delta mid2 (20 - 30)](https://w3id.org/metpo/000209) 
 
-- [obsolete Temperature C delta mid2 (20 - 30)](https://w3id.org/metpo/000209) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Temperature C delta mid2 (20 - 30)](https://w3id.org/metpo/000209) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Temperature C delta mid2 (20 - 30)](https://w3id.org/metpo/000209) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12551,9 +12547,9 @@
 #### Added
 - Class: [obsolete Temperature C delta very low (1 - 5)](https://w3id.org/metpo/000206) 
 
-- [obsolete Temperature C delta very low (1 - 5)](https://w3id.org/metpo/000206) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Temperature C delta very low (1 - 5)](https://w3id.org/metpo/000206) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Temperature C delta very low (1 - 5)](https://w3id.org/metpo/000206) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [temperature delta very low](https://w3id.org/metpo/1000483) 
+- [obsolete Temperature C delta very low (1 - 5)](https://w3id.org/metpo/000206) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [temperature delta very low](https://w3id.org/metpo/1000483) 
 
 - [obsolete Temperature C delta very low (1 - 5)](https://w3id.org/metpo/000206) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12567,9 +12563,9 @@
 #### Added
 - Class: [obsolete Temperature Delta](https://w3id.org/metpo/0000020) 
 
-- [obsolete Temperature Delta](https://w3id.org/metpo/0000020) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Temperature Delta](https://w3id.org/metpo/0000020) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Temperature Delta](https://w3id.org/metpo/0000020) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [temperature delta](https://w3id.org/metpo/1000303) 
+- [obsolete Temperature Delta](https://w3id.org/metpo/0000020) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [temperature delta](https://w3id.org/metpo/1000303) 
 
 - [obsolete Temperature Delta](https://w3id.org/metpo/0000020) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12583,9 +12579,9 @@
 #### Added
 - Class: [obsolete Temperature Delta](https://w3id.org/metpo/000020) 
 
-- [obsolete Temperature Delta](https://w3id.org/metpo/000020) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Temperature Delta](https://w3id.org/metpo/000020) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Temperature Delta](https://w3id.org/metpo/000020) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [temperature delta](https://w3id.org/metpo/1000303) 
+- [obsolete Temperature Delta](https://w3id.org/metpo/000020) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [temperature delta](https://w3id.org/metpo/1000303) 
 
 - [obsolete Temperature Delta](https://w3id.org/metpo/000020) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12599,9 +12595,9 @@
 #### Added
 - Class: [obsolete Temperature Delta high](https://w3id.org/metpo/0000209) 
 
-- [obsolete Temperature Delta high](https://w3id.org/metpo/0000209) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Temperature Delta high](https://w3id.org/metpo/0000209) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Temperature Delta high](https://w3id.org/metpo/0000209) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [temperature delta high](https://w3id.org/metpo/1000487) 
+- [obsolete Temperature Delta high](https://w3id.org/metpo/0000209) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [temperature delta high](https://w3id.org/metpo/1000487) 
 
 - [obsolete Temperature Delta high](https://w3id.org/metpo/0000209) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12615,9 +12611,9 @@
 #### Added
 - Class: [obsolete Temperature Delta low](https://w3id.org/metpo/0000206) 
 
-- [obsolete Temperature Delta low](https://w3id.org/metpo/0000206) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Temperature Delta low](https://w3id.org/metpo/0000206) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Temperature Delta low](https://w3id.org/metpo/0000206) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [temperature delta low](https://w3id.org/metpo/1000484) 
+- [obsolete Temperature Delta low](https://w3id.org/metpo/0000206) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [temperature delta low](https://w3id.org/metpo/1000484) 
 
 - [obsolete Temperature Delta low](https://w3id.org/metpo/0000206) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12631,9 +12627,9 @@
 #### Added
 - Class: [obsolete Temperature Delta mid1](https://w3id.org/metpo/0000207) 
 
-- [obsolete Temperature Delta mid1](https://w3id.org/metpo/0000207) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Temperature Delta mid1](https://w3id.org/metpo/0000207) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Temperature Delta mid1](https://w3id.org/metpo/0000207) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [temperature delta mid1](https://w3id.org/metpo/1000485) 
+- [obsolete Temperature Delta mid1](https://w3id.org/metpo/0000207) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [temperature delta mid1](https://w3id.org/metpo/1000485) 
 
 - [obsolete Temperature Delta mid1](https://w3id.org/metpo/0000207) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12647,9 +12643,9 @@
 #### Added
 - Class: [obsolete Temperature Delta mid2](https://w3id.org/metpo/0000208) 
 
-- [obsolete Temperature Delta mid2](https://w3id.org/metpo/0000208) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Temperature Delta mid2](https://w3id.org/metpo/0000208) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Temperature Delta mid2](https://w3id.org/metpo/0000208) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [temperature delta mid2](https://w3id.org/metpo/1000486) 
+- [obsolete Temperature Delta mid2](https://w3id.org/metpo/0000208) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [temperature delta mid2](https://w3id.org/metpo/1000486) 
 
 - [obsolete Temperature Delta mid2](https://w3id.org/metpo/0000208) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12663,9 +12659,9 @@
 #### Added
 - Class: [obsolete Temperature Delta very low](https://w3id.org/metpo/0000205) 
 
-- [obsolete Temperature Delta very low](https://w3id.org/metpo/0000205) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Temperature Delta very low](https://w3id.org/metpo/0000205) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Temperature Delta very low](https://w3id.org/metpo/0000205) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [temperature delta very low](https://w3id.org/metpo/1000483) 
+- [obsolete Temperature Delta very low](https://w3id.org/metpo/0000205) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [temperature delta very low](https://w3id.org/metpo/1000483) 
 
 - [obsolete Temperature Delta very low](https://w3id.org/metpo/0000205) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12679,9 +12675,9 @@
 #### Added
 - Class: [obsolete Temperature Optimum](https://w3id.org/metpo/000012) 
 
-- [obsolete Temperature Optimum](https://w3id.org/metpo/000012) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Temperature Optimum](https://w3id.org/metpo/000012) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Temperature Optimum](https://w3id.org/metpo/000012) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [temperature optimum](https://w3id.org/metpo/1000304) 
+- [obsolete Temperature Optimum](https://w3id.org/metpo/000012) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [temperature optimum](https://w3id.org/metpo/1000304) 
 
 - [obsolete Temperature Optimum](https://w3id.org/metpo/000012) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12695,9 +12691,9 @@
 #### Added
 - Class: [obsolete Temperature Optimum](https://w3id.org/metpo/0000012) 
 
-- [obsolete Temperature Optimum](https://w3id.org/metpo/0000012) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Temperature Optimum](https://w3id.org/metpo/0000012) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Temperature Optimum](https://w3id.org/metpo/0000012) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [temperature optimum](https://w3id.org/metpo/1000304) 
+- [obsolete Temperature Optimum](https://w3id.org/metpo/0000012) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [temperature optimum](https://w3id.org/metpo/1000304) 
 
 - [obsolete Temperature Optimum](https://w3id.org/metpo/0000012) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12711,9 +12707,9 @@
 #### Added
 - Class: [obsolete Temperature Optimum C high (> 40)](https://w3id.org/metpo/000170) 
 
-- [obsolete Temperature Optimum C high (> 40)](https://w3id.org/metpo/000170) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Temperature Optimum C high (> 40)](https://w3id.org/metpo/000170) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Temperature Optimum C high (> 40)](https://w3id.org/metpo/000170) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [temperature optimum high](https://w3id.org/metpo/1000447) 
+- [obsolete Temperature Optimum C high (> 40)](https://w3id.org/metpo/000170) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [temperature optimum high](https://w3id.org/metpo/1000447) 
 
 - [obsolete Temperature Optimum C high (> 40)](https://w3id.org/metpo/000170) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12727,7 +12723,7 @@
 #### Added
 - Class: [obsolete Temperature Optimum C low (10 - 22)](https://w3id.org/metpo/000165) 
 
-- [obsolete Temperature Optimum C low (10 - 22)](https://w3id.org/metpo/000165) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Temperature Optimum C low (10 - 22)](https://w3id.org/metpo/000165) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Temperature Optimum C low (10 - 22)](https://w3id.org/metpo/000165) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12741,9 +12737,9 @@
 #### Added
 - Class: [obsolete Temperature Optimum C mid1 (22 - 27)](https://w3id.org/metpo/000166) 
 
-- [obsolete Temperature Optimum C mid1 (22 - 27)](https://w3id.org/metpo/000166) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Temperature Optimum C mid1 (22 - 27)](https://w3id.org/metpo/000166) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Temperature Optimum C mid1 (22 - 27)](https://w3id.org/metpo/000166) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [temperature optimum mid1](https://w3id.org/metpo/1000443) 
+- [obsolete Temperature Optimum C mid1 (22 - 27)](https://w3id.org/metpo/000166) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [temperature optimum mid1](https://w3id.org/metpo/1000443) 
 
 - [obsolete Temperature Optimum C mid1 (22 - 27)](https://w3id.org/metpo/000166) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12757,9 +12753,9 @@
 #### Added
 - Class: [obsolete Temperature Optimum C mid2 (27 - 30)](https://w3id.org/metpo/000167) 
 
-- [obsolete Temperature Optimum C mid2 (27 - 30)](https://w3id.org/metpo/000167) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Temperature Optimum C mid2 (27 - 30)](https://w3id.org/metpo/000167) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Temperature Optimum C mid2 (27 - 30)](https://w3id.org/metpo/000167) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [temperature optimum mid2](https://w3id.org/metpo/1000444) 
+- [obsolete Temperature Optimum C mid2 (27 - 30)](https://w3id.org/metpo/000167) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [temperature optimum mid2](https://w3id.org/metpo/1000444) 
 
 - [obsolete Temperature Optimum C mid2 (27 - 30)](https://w3id.org/metpo/000167) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12773,9 +12769,9 @@
 #### Added
 - Class: [obsolete Temperature Optimum C mid3 (30 - 34)](https://w3id.org/metpo/000168) 
 
-- [obsolete Temperature Optimum C mid3 (30 - 34)](https://w3id.org/metpo/000168) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Temperature Optimum C mid3 (30 - 34)](https://w3id.org/metpo/000168) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Temperature Optimum C mid3 (30 - 34)](https://w3id.org/metpo/000168) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [temperature optimum mid3](https://w3id.org/metpo/1000445) 
+- [obsolete Temperature Optimum C mid3 (30 - 34)](https://w3id.org/metpo/000168) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [temperature optimum mid3](https://w3id.org/metpo/1000445) 
 
 - [obsolete Temperature Optimum C mid3 (30 - 34)](https://w3id.org/metpo/000168) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12789,9 +12785,9 @@
 #### Added
 - Class: [obsolete Temperature Optimum C mid4 (34 - 40)](https://w3id.org/metpo/000169) 
 
-- [obsolete Temperature Optimum C mid4 (34 - 40)](https://w3id.org/metpo/000169) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Temperature Optimum C mid4 (34 - 40)](https://w3id.org/metpo/000169) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Temperature Optimum C mid4 (34 - 40)](https://w3id.org/metpo/000169) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [temperature optimum mid3](https://w3id.org/metpo/1000445) 
+- [obsolete Temperature Optimum C mid4 (34 - 40)](https://w3id.org/metpo/000169) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [temperature optimum mid3](https://w3id.org/metpo/1000445) 
 
 - [obsolete Temperature Optimum C mid4 (34 - 40)](https://w3id.org/metpo/000169) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12805,9 +12801,9 @@
 #### Added
 - Class: [obsolete Temperature Optimum C very low (<= 10)](https://w3id.org/metpo/000164) 
 
-- [obsolete Temperature Optimum C very low (<= 10)](https://w3id.org/metpo/000164) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Temperature Optimum C very low (<= 10)](https://w3id.org/metpo/000164) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Temperature Optimum C very low (<= 10)](https://w3id.org/metpo/000164) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [temperature optimum very low](https://w3id.org/metpo/1000441) 
+- [obsolete Temperature Optimum C very low (<= 10)](https://w3id.org/metpo/000164) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [temperature optimum very low](https://w3id.org/metpo/1000441) 
 
 - [obsolete Temperature Optimum C very low (<= 10)](https://w3id.org/metpo/000164) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12821,9 +12817,9 @@
 #### Added
 - Class: [obsolete Temperature Optimum high](https://w3id.org/metpo/0000169) 
 
-- [obsolete Temperature Optimum high](https://w3id.org/metpo/0000169) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Temperature Optimum high](https://w3id.org/metpo/0000169) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Temperature Optimum high](https://w3id.org/metpo/0000169) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [temperature optimum high](https://w3id.org/metpo/1000447) 
+- [obsolete Temperature Optimum high](https://w3id.org/metpo/0000169) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [temperature optimum high](https://w3id.org/metpo/1000447) 
 
 - [obsolete Temperature Optimum high](https://w3id.org/metpo/0000169) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12837,9 +12833,9 @@
 #### Added
 - Class: [obsolete Temperature Optimum low](https://w3id.org/metpo/0000164) 
 
-- [obsolete Temperature Optimum low](https://w3id.org/metpo/0000164) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Temperature Optimum low](https://w3id.org/metpo/0000164) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Temperature Optimum low](https://w3id.org/metpo/0000164) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [temperature optimum low](https://w3id.org/metpo/1000442) 
+- [obsolete Temperature Optimum low](https://w3id.org/metpo/0000164) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [temperature optimum low](https://w3id.org/metpo/1000442) 
 
 - [obsolete Temperature Optimum low](https://w3id.org/metpo/0000164) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12853,9 +12849,9 @@
 #### Added
 - Class: [obsolete Temperature Optimum mid1](https://w3id.org/metpo/0000165) 
 
-- [obsolete Temperature Optimum mid1](https://w3id.org/metpo/0000165) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Temperature Optimum mid1](https://w3id.org/metpo/0000165) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Temperature Optimum mid1](https://w3id.org/metpo/0000165) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [temperature optimum mid1](https://w3id.org/metpo/1000443) 
+- [obsolete Temperature Optimum mid1](https://w3id.org/metpo/0000165) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [temperature optimum mid1](https://w3id.org/metpo/1000443) 
 
 - [obsolete Temperature Optimum mid1](https://w3id.org/metpo/0000165) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12869,9 +12865,9 @@
 #### Added
 - Class: [obsolete Temperature Optimum mid2](https://w3id.org/metpo/0000166) 
 
-- [obsolete Temperature Optimum mid2](https://w3id.org/metpo/0000166) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Temperature Optimum mid2](https://w3id.org/metpo/0000166) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Temperature Optimum mid2](https://w3id.org/metpo/0000166) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [temperature optimum mid2](https://w3id.org/metpo/1000444) 
+- [obsolete Temperature Optimum mid2](https://w3id.org/metpo/0000166) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [temperature optimum mid2](https://w3id.org/metpo/1000444) 
 
 - [obsolete Temperature Optimum mid2](https://w3id.org/metpo/0000166) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12885,9 +12881,9 @@
 #### Added
 - Class: [obsolete Temperature Optimum mid3](https://w3id.org/metpo/0000167) 
 
-- [obsolete Temperature Optimum mid3](https://w3id.org/metpo/0000167) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Temperature Optimum mid3](https://w3id.org/metpo/0000167) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Temperature Optimum mid3](https://w3id.org/metpo/0000167) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [temperature optimum mid3](https://w3id.org/metpo/1000445) 
+- [obsolete Temperature Optimum mid3](https://w3id.org/metpo/0000167) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [temperature optimum mid3](https://w3id.org/metpo/1000445) 
 
 - [obsolete Temperature Optimum mid3](https://w3id.org/metpo/0000167) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12901,9 +12897,9 @@
 #### Added
 - Class: [obsolete Temperature Optimum mid4](https://w3id.org/metpo/0000168) 
 
-- [obsolete Temperature Optimum mid4](https://w3id.org/metpo/0000168) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Temperature Optimum mid4](https://w3id.org/metpo/0000168) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Temperature Optimum mid4](https://w3id.org/metpo/0000168) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [temperature optimum mid4](https://w3id.org/metpo/1000446) 
+- [obsolete Temperature Optimum mid4](https://w3id.org/metpo/0000168) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [temperature optimum mid4](https://w3id.org/metpo/1000446) 
 
 - [obsolete Temperature Optimum mid4](https://w3id.org/metpo/0000168) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12917,9 +12913,9 @@
 #### Added
 - Class: [obsolete Temperature Optimum very low](https://w3id.org/metpo/0000163) 
 
-- [obsolete Temperature Optimum very low](https://w3id.org/metpo/0000163) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Temperature Optimum very low](https://w3id.org/metpo/0000163) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Temperature Optimum very low](https://w3id.org/metpo/0000163) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [temperature optimum very low](https://w3id.org/metpo/1000441) 
+- [obsolete Temperature Optimum very low](https://w3id.org/metpo/0000163) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [temperature optimum very low](https://w3id.org/metpo/1000441) 
 
 - [obsolete Temperature Optimum very low](https://w3id.org/metpo/0000163) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12933,9 +12929,9 @@
 #### Added
 - Class: [obsolete Temperature Range](https://w3id.org/metpo/0000013) 
 
-- [obsolete Temperature Range](https://w3id.org/metpo/0000013) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Temperature Range](https://w3id.org/metpo/0000013) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Temperature Range](https://w3id.org/metpo/0000013) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [temperature range](https://w3id.org/metpo/1000306) 
+- [obsolete Temperature Range](https://w3id.org/metpo/0000013) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [temperature range](https://w3id.org/metpo/1000306) 
 
 - [obsolete Temperature Range](https://w3id.org/metpo/0000013) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12949,9 +12945,9 @@
 #### Added
 - Class: [obsolete Temperature Range](https://w3id.org/metpo/000013) 
 
-- [obsolete Temperature Range](https://w3id.org/metpo/000013) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Temperature Range](https://w3id.org/metpo/000013) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Temperature Range](https://w3id.org/metpo/000013) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [temperature range](https://w3id.org/metpo/1000306) 
+- [obsolete Temperature Range](https://w3id.org/metpo/000013) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [temperature range](https://w3id.org/metpo/1000306) 
 
 - [obsolete Temperature Range](https://w3id.org/metpo/000013) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12965,9 +12961,9 @@
 #### Added
 - Class: [obsolete Temperature Range C high (> 40)](https://w3id.org/metpo/000177) 
 
-- [obsolete Temperature Range C high (> 40)](https://w3id.org/metpo/000177) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Temperature Range C high (> 40)](https://w3id.org/metpo/000177) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Temperature Range C high (> 40)](https://w3id.org/metpo/000177) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [temperature range high](https://w3id.org/metpo/1000454) 
+- [obsolete Temperature Range C high (> 40)](https://w3id.org/metpo/000177) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [temperature range high](https://w3id.org/metpo/1000454) 
 
 - [obsolete Temperature Range C high (> 40)](https://w3id.org/metpo/000177) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12981,7 +12977,7 @@
 #### Added
 - Class: [obsolete Temperature Range C low (10 - 22)](https://w3id.org/metpo/000172) 
 
-- [obsolete Temperature Range C low (10 - 22)](https://w3id.org/metpo/000172) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Temperature Range C low (10 - 22)](https://w3id.org/metpo/000172) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Temperature Range C low (10 - 22)](https://w3id.org/metpo/000172) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -12995,7 +12991,7 @@
 #### Added
 - Class: [obsolete Temperature Range C mid1 (22 - 27)](https://w3id.org/metpo/000173) 
 
-- [obsolete Temperature Range C mid1 (22 - 27)](https://w3id.org/metpo/000173) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Temperature Range C mid1 (22 - 27)](https://w3id.org/metpo/000173) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Temperature Range C mid1 (22 - 27)](https://w3id.org/metpo/000173) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13009,7 +13005,7 @@
 #### Added
 - Class: [obsolete Temperature Range C mid2 (27 - 30)](https://w3id.org/metpo/000174) 
 
-- [obsolete Temperature Range C mid2 (27 - 30)](https://w3id.org/metpo/000174) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Temperature Range C mid2 (27 - 30)](https://w3id.org/metpo/000174) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Temperature Range C mid2 (27 - 30)](https://w3id.org/metpo/000174) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13023,7 +13019,7 @@
 #### Added
 - Class: [obsolete Temperature Range C mid3 (30 - 34)](https://w3id.org/metpo/000175) 
 
-- [obsolete Temperature Range C mid3 (30 - 34)](https://w3id.org/metpo/000175) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Temperature Range C mid3 (30 - 34)](https://w3id.org/metpo/000175) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Temperature Range C mid3 (30 - 34)](https://w3id.org/metpo/000175) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13037,7 +13033,7 @@
 #### Added
 - Class: [obsolete Temperature Range C mid4 (34 - 40)](https://w3id.org/metpo/000176) 
 
-- [obsolete Temperature Range C mid4 (34 - 40)](https://w3id.org/metpo/000176) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Temperature Range C mid4 (34 - 40)](https://w3id.org/metpo/000176) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Temperature Range C mid4 (34 - 40)](https://w3id.org/metpo/000176) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13051,9 +13047,9 @@
 #### Added
 - Class: [obsolete Temperature Range C very low (<= 10)](https://w3id.org/metpo/000171) 
 
-- [obsolete Temperature Range C very low (<= 10)](https://w3id.org/metpo/000171) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Temperature Range C very low (<= 10)](https://w3id.org/metpo/000171) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Temperature Range C very low (<= 10)](https://w3id.org/metpo/000171) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [temperature range very low](https://w3id.org/metpo/1000448) 
+- [obsolete Temperature Range C very low (<= 10)](https://w3id.org/metpo/000171) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [temperature range very low](https://w3id.org/metpo/1000448) 
 
 - [obsolete Temperature Range C very low (<= 10)](https://w3id.org/metpo/000171) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13067,9 +13063,9 @@
 #### Added
 - Class: [obsolete Temperature Range high](https://w3id.org/metpo/0000176) 
 
-- [obsolete Temperature Range high](https://w3id.org/metpo/0000176) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Temperature Range high](https://w3id.org/metpo/0000176) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Temperature Range high](https://w3id.org/metpo/0000176) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [temperature range high](https://w3id.org/metpo/1000454) 
+- [obsolete Temperature Range high](https://w3id.org/metpo/0000176) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [temperature range high](https://w3id.org/metpo/1000454) 
 
 - [obsolete Temperature Range high](https://w3id.org/metpo/0000176) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13083,9 +13079,9 @@
 #### Added
 - Class: [obsolete Temperature Range low](https://w3id.org/metpo/0000171) 
 
-- [obsolete Temperature Range low](https://w3id.org/metpo/0000171) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Temperature Range low](https://w3id.org/metpo/0000171) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Temperature Range low](https://w3id.org/metpo/0000171) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [temperature range low](https://w3id.org/metpo/1000449) 
+- [obsolete Temperature Range low](https://w3id.org/metpo/0000171) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [temperature range low](https://w3id.org/metpo/1000449) 
 
 - [obsolete Temperature Range low](https://w3id.org/metpo/0000171) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13099,9 +13095,9 @@
 #### Added
 - Class: [obsolete Temperature Range mid1](https://w3id.org/metpo/0000172) 
 
-- [obsolete Temperature Range mid1](https://w3id.org/metpo/0000172) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Temperature Range mid1](https://w3id.org/metpo/0000172) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Temperature Range mid1](https://w3id.org/metpo/0000172) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [temperature range mid1](https://w3id.org/metpo/1000450) 
+- [obsolete Temperature Range mid1](https://w3id.org/metpo/0000172) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [temperature range mid1](https://w3id.org/metpo/1000450) 
 
 - [obsolete Temperature Range mid1](https://w3id.org/metpo/0000172) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13115,9 +13111,9 @@
 #### Added
 - Class: [obsolete Temperature Range mid2](https://w3id.org/metpo/0000173) 
 
-- [obsolete Temperature Range mid2](https://w3id.org/metpo/0000173) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Temperature Range mid2](https://w3id.org/metpo/0000173) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Temperature Range mid2](https://w3id.org/metpo/0000173) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [temperature range mid2](https://w3id.org/metpo/1000451) 
+- [obsolete Temperature Range mid2](https://w3id.org/metpo/0000173) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [temperature range mid2](https://w3id.org/metpo/1000451) 
 
 - [obsolete Temperature Range mid2](https://w3id.org/metpo/0000173) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13131,9 +13127,9 @@
 #### Added
 - Class: [obsolete Temperature Range mid3](https://w3id.org/metpo/0000174) 
 
-- [obsolete Temperature Range mid3](https://w3id.org/metpo/0000174) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Temperature Range mid3](https://w3id.org/metpo/0000174) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Temperature Range mid3](https://w3id.org/metpo/0000174) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [temperature range mid3](https://w3id.org/metpo/1000452) 
+- [obsolete Temperature Range mid3](https://w3id.org/metpo/0000174) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [temperature range mid3](https://w3id.org/metpo/1000452) 
 
 - [obsolete Temperature Range mid3](https://w3id.org/metpo/0000174) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13147,9 +13143,9 @@
 #### Added
 - Class: [obsolete Temperature Range mid4](https://w3id.org/metpo/0000175) 
 
-- [obsolete Temperature Range mid4](https://w3id.org/metpo/0000175) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Temperature Range mid4](https://w3id.org/metpo/0000175) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Temperature Range mid4](https://w3id.org/metpo/0000175) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [temperature range mid4](https://w3id.org/metpo/1000453) 
+- [obsolete Temperature Range mid4](https://w3id.org/metpo/0000175) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [temperature range mid4](https://w3id.org/metpo/1000453) 
 
 - [obsolete Temperature Range mid4](https://w3id.org/metpo/0000175) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13163,9 +13159,9 @@
 #### Added
 - Class: [obsolete Temperature Range very low](https://w3id.org/metpo/0000170) 
 
-- [obsolete Temperature Range very low](https://w3id.org/metpo/0000170) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Temperature Range very low](https://w3id.org/metpo/0000170) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Temperature Range very low](https://w3id.org/metpo/0000170) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [temperature range very low](https://w3id.org/metpo/1000448) 
+- [obsolete Temperature Range very low](https://w3id.org/metpo/0000170) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [temperature range very low](https://w3id.org/metpo/1000448) 
 
 - [obsolete Temperature Range very low](https://w3id.org/metpo/0000170) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13179,7 +13175,7 @@
 #### Added
 - Class: [obsolete Tetrathionate reduction](https://w3id.org/metpo/1000826) 
 
-- [obsolete Tetrathionate reduction](https://w3id.org/metpo/1000826) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Tetrathionate reduction](https://w3id.org/metpo/1000826) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Tetrathionate reduction](https://w3id.org/metpo/1000826) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13193,9 +13189,9 @@
 #### Added
 - Class: [obsolete Thermophile](https://w3id.org/metpo/0000026) 
 
-- [obsolete Thermophile](https://w3id.org/metpo/0000026) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Thermophile](https://w3id.org/metpo/0000026) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Thermophile](https://w3id.org/metpo/0000026) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [thermophilic](https://w3id.org/metpo/1000616) 
+- [obsolete Thermophile](https://w3id.org/metpo/0000026) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [thermophilic](https://w3id.org/metpo/1000616) 
 
 - [obsolete Thermophile](https://w3id.org/metpo/0000026) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13209,9 +13205,9 @@
 #### Added
 - Class: [obsolete Thermophile](https://w3id.org/metpo/000027) 
 
-- [obsolete Thermophile](https://w3id.org/metpo/000027) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Thermophile](https://w3id.org/metpo/000027) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Thermophile](https://w3id.org/metpo/000027) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [thermophilic](https://w3id.org/metpo/1000616) 
+- [obsolete Thermophile](https://w3id.org/metpo/000027) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [thermophilic](https://w3id.org/metpo/1000616) 
 
 - [obsolete Thermophile](https://w3id.org/metpo/000027) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13225,9 +13221,9 @@
 #### Added
 - Class: [obsolete Thermotolerant](https://w3id.org/metpo/0000025) 
 
-- [obsolete Thermotolerant](https://w3id.org/metpo/0000025) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Thermotolerant](https://w3id.org/metpo/0000025) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Thermotolerant](https://w3id.org/metpo/0000025) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [thermotolerant](https://w3id.org/metpo/1000619) 
+- [obsolete Thermotolerant](https://w3id.org/metpo/0000025) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [thermotolerant](https://w3id.org/metpo/1000619) 
 
 - [obsolete Thermotolerant](https://w3id.org/metpo/0000025) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13241,9 +13237,9 @@
 #### Added
 - Class: [obsolete Thermotolerant](https://w3id.org/metpo/000026) 
 
-- [obsolete Thermotolerant](https://w3id.org/metpo/000026) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Thermotolerant](https://w3id.org/metpo/000026) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Thermotolerant](https://w3id.org/metpo/000026) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [thermotolerant](https://w3id.org/metpo/1000619) 
+- [obsolete Thermotolerant](https://w3id.org/metpo/000026) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [thermotolerant](https://w3id.org/metpo/1000619) 
 
 - [obsolete Thermotolerant](https://w3id.org/metpo/000026) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13257,7 +13253,7 @@
 #### Added
 - Class: [obsolete Thiosulfate oxidation](https://w3id.org/metpo/1000824) 
 
-- [obsolete Thiosulfate oxidation](https://w3id.org/metpo/1000824) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Thiosulfate oxidation](https://w3id.org/metpo/1000824) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Thiosulfate oxidation](https://w3id.org/metpo/1000824) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13271,7 +13267,7 @@
 #### Added
 - Class: [obsolete Thiosulfate reduction](https://w3id.org/metpo/1000819) 
 
-- [obsolete Thiosulfate reduction](https://w3id.org/metpo/1000819) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Thiosulfate reduction](https://w3id.org/metpo/1000819) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Thiosulfate reduction](https://w3id.org/metpo/1000819) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13285,7 +13281,7 @@
 #### Added
 - Class: [obsolete Thiosulfate-oxidizing](https://w3id.org/metpo/1002018) 
 
-- [obsolete Thiosulfate-oxidizing](https://w3id.org/metpo/1002018) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Thiosulfate-oxidizing](https://w3id.org/metpo/1002018) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Thiosulfate-oxidizing](https://w3id.org/metpo/1002018) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13299,7 +13295,7 @@
 #### Added
 - Class: [obsolete Thiosulfate-reducing](https://w3id.org/metpo/1002015) 
 
-- [obsolete Thiosulfate-reducing](https://w3id.org/metpo/1002015) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Thiosulfate-reducing](https://w3id.org/metpo/1002015) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Thiosulfate-reducing](https://w3id.org/metpo/1002015) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13313,7 +13309,7 @@
 #### Added
 - Class: [obsolete Triangular](https://w3id.org/metpo/0000240) 
 
-- [obsolete Triangular](https://w3id.org/metpo/0000240) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Triangular](https://w3id.org/metpo/0000240) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Triangular](https://w3id.org/metpo/0000240) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13327,7 +13323,7 @@
 #### Added
 - Class: [obsolete Trimethylamine N-oxide respiration](https://w3id.org/metpo/1000848) 
 
-- [obsolete Trimethylamine N-oxide respiration](https://w3id.org/metpo/1000848) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Trimethylamine N-oxide respiration](https://w3id.org/metpo/1000848) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Trimethylamine N-oxide respiration](https://w3id.org/metpo/1000848) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13341,9 +13337,9 @@
 #### Added
 - Class: [obsolete Trophic type](https://w3id.org/metpo/0000005) 
 
-- [obsolete Trophic type](https://w3id.org/metpo/0000005) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Trophic type](https://w3id.org/metpo/0000005) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Trophic type](https://w3id.org/metpo/0000005) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [trophic type](https://w3id.org/metpo/1000631) 
+- [obsolete Trophic type](https://w3id.org/metpo/0000005) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [trophic type](https://w3id.org/metpo/1000631) 
 
 - [obsolete Trophic type](https://w3id.org/metpo/0000005) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13357,9 +13353,9 @@
 #### Added
 - Class: [obsolete Trophic type](https://w3id.org/metpo/000005) 
 
-- [obsolete Trophic type](https://w3id.org/metpo/000005) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Trophic type](https://w3id.org/metpo/000005) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete Trophic type](https://w3id.org/metpo/000005) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [trophic type](https://w3id.org/metpo/1000631) 
+- [obsolete Trophic type](https://w3id.org/metpo/000005) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [trophic type](https://w3id.org/metpo/1000631) 
 
 - [obsolete Trophic type](https://w3id.org/metpo/000005) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13373,7 +13369,7 @@
 #### Added
 - Class: [obsolete Twitching](https://w3id.org/metpo/0000095) 
 
-- [obsolete Twitching](https://w3id.org/metpo/0000095) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Twitching](https://w3id.org/metpo/0000095) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Twitching](https://w3id.org/metpo/0000095) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13387,7 +13383,7 @@
 #### Added
 - Class: [obsolete Twitching](https://w3id.org/metpo/000096) 
 
-- [obsolete Twitching](https://w3id.org/metpo/000096) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Twitching](https://w3id.org/metpo/000096) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Twitching](https://w3id.org/metpo/000096) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13401,7 +13397,7 @@
 #### Added
 - Class: [obsolete Uranium reduction](https://w3id.org/metpo/1000834) 
 
-- [obsolete Uranium reduction](https://w3id.org/metpo/1000834) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Uranium reduction](https://w3id.org/metpo/1000834) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Uranium reduction](https://w3id.org/metpo/1000834) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13415,7 +13411,7 @@
 #### Added
 - Class: [obsolete Uranium-reducing](https://w3id.org/metpo/1002025) 
 
-- [obsolete Uranium-reducing](https://w3id.org/metpo/1002025) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Uranium-reducing](https://w3id.org/metpo/1002025) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Uranium-reducing](https://w3id.org/metpo/1002025) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13429,7 +13425,7 @@
 #### Added
 - Class: [obsolete Urediniospores](https://w3id.org/metpo/000121) 
 
-- [obsolete Urediniospores](https://w3id.org/metpo/000121) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Urediniospores](https://w3id.org/metpo/000121) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Urediniospores](https://w3id.org/metpo/000121) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13443,7 +13439,7 @@
 #### Added
 - Class: [obsolete Urediniospores](https://w3id.org/metpo/0000120) 
 
-- [obsolete Urediniospores](https://w3id.org/metpo/0000120) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Urediniospores](https://w3id.org/metpo/0000120) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Urediniospores](https://w3id.org/metpo/0000120) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13457,7 +13453,7 @@
 #### Added
 - Class: [obsolete Vanadium reduction](https://w3id.org/metpo/1000835) 
 
-- [obsolete Vanadium reduction](https://w3id.org/metpo/1000835) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete Vanadium reduction](https://w3id.org/metpo/1000835) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete Vanadium reduction](https://w3id.org/metpo/1000835) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13471,7 +13467,7 @@
 #### Added
 - Class: [obsolete Vibrio](https://w3id.org/metpo/0000241) 
 
-- [obsolete Vibrio](https://w3id.org/metpo/0000241) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Vibrio](https://w3id.org/metpo/0000241) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Vibrio](https://w3id.org/metpo/0000241) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13485,7 +13481,7 @@
 #### Added
 - Class: [obsolete Zoospores](https://w3id.org/metpo/000119) 
 
-- [obsolete Zoospores](https://w3id.org/metpo/000119) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Zoospores](https://w3id.org/metpo/000119) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Zoospores](https://w3id.org/metpo/000119) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13499,7 +13495,7 @@
 #### Added
 - Class: [obsolete Zoospores](https://w3id.org/metpo/0000118) 
 
-- [obsolete Zoospores](https://w3id.org/metpo/0000118) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Zoospores](https://w3id.org/metpo/0000118) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Zoospores](https://w3id.org/metpo/0000118) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13513,7 +13509,7 @@
 #### Added
 - Class: [obsolete Zygospores](https://w3id.org/metpo/0000104) 
 
-- [obsolete Zygospores](https://w3id.org/metpo/0000104) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Zygospores](https://w3id.org/metpo/0000104) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Zygospores](https://w3id.org/metpo/0000104) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13527,7 +13523,7 @@
 #### Added
 - Class: [obsolete Zygospores](https://w3id.org/metpo/000105) 
 
-- [obsolete Zygospores](https://w3id.org/metpo/000105) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete Zygospores](https://w3id.org/metpo/000105) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete Zygospores](https://w3id.org/metpo/000105) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13541,7 +13537,7 @@
 #### Added
 - Class: [obsolete acid tolerant](https://w3id.org/metpo/1000344) 
 
-- [obsolete acid tolerant](https://w3id.org/metpo/1000344) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete acid tolerant](https://w3id.org/metpo/1000344) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete acid tolerant](https://w3id.org/metpo/1000344) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13555,7 +13551,7 @@
 #### Added
 - Class: [obsolete acid-fast](https://w3id.org/metpo/1000001) 
 
-- [obsolete acid-fast](https://w3id.org/metpo/1000001) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete acid-fast](https://w3id.org/metpo/1000001) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete acid-fast](https://w3id.org/metpo/1000001) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13569,9 +13565,9 @@
 #### Added
 - Class: [obsolete acidophile](https://w3id.org/metpo/1000002) 
 
-- [obsolete acidophile](https://w3id.org/metpo/1000002) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete acidophile](https://w3id.org/metpo/1000002) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete acidophile](https://w3id.org/metpo/1000002) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [acidophilic](https://w3id.org/metpo/1003003) 
+- [obsolete acidophile](https://w3id.org/metpo/1000002) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [acidophilic](https://w3id.org/metpo/1003003) 
 
 - [obsolete acidophile](https://w3id.org/metpo/1000002) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13585,7 +13581,7 @@
 #### Added
 - Class: [obsolete acriospores](https://w3id.org/metpo/1000402) 
 
-- [obsolete acriospores](https://w3id.org/metpo/1000402) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete acriospores](https://w3id.org/metpo/1000402) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete acriospores](https://w3id.org/metpo/1000402) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13599,7 +13595,7 @@
 #### Added
 - Class: [obsolete active transport](https://w3id.org/metpo/1000003) 
 
-- [obsolete active transport](https://w3id.org/metpo/1000003) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete active transport](https://w3id.org/metpo/1000003) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete active transport](https://w3id.org/metpo/1000003) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13613,7 +13609,7 @@
 #### Added
 - Class: [obsolete adaptation](https://w3id.org/metpo/1000004) 
 
-- [obsolete adaptation](https://w3id.org/metpo/1000004) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete adaptation](https://w3id.org/metpo/1000004) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete adaptation](https://w3id.org/metpo/1000004) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13627,7 +13623,7 @@
 #### Added
 - Class: [obsolete adaptive trait](https://w3id.org/metpo/1000005) 
 
-- [obsolete adaptive trait](https://w3id.org/metpo/1000005) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete adaptive trait](https://w3id.org/metpo/1000005) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete adaptive trait](https://w3id.org/metpo/1000005) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13641,7 +13637,7 @@
 #### Added
 - Class: [obsolete adhesin](https://w3id.org/metpo/1000006) 
 
-- [obsolete adhesin](https://w3id.org/metpo/1000006) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete adhesin](https://w3id.org/metpo/1000006) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete adhesin](https://w3id.org/metpo/1000006) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13655,7 +13651,7 @@
 #### Added
 - Class: [obsolete adhesion structure](https://w3id.org/metpo/1000007) 
 
-- [obsolete adhesion structure](https://w3id.org/metpo/1000007) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete adhesion structure](https://w3id.org/metpo/1000007) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete adhesion structure](https://w3id.org/metpo/1000007) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13669,7 +13665,7 @@
 #### Added
 - ObjectProperty: [obsolete adsorbs](https://w3id.org/metpo/2000219) 
 
-- [obsolete adsorbs](https://w3id.org/metpo/2000219) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete adsorbs](https://w3id.org/metpo/2000219) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete adsorbs](https://w3id.org/metpo/2000219) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13681,7 +13677,7 @@
 #### Added
 - Class: [obsolete aerobe](https://w3id.org/metpo/1000008) 
 
-- [obsolete aerobe](https://w3id.org/metpo/1000008) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete aerobe](https://w3id.org/metpo/1000008) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete aerobe](https://w3id.org/metpo/1000008) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13695,9 +13691,9 @@
 #### Added
 - Class: [obsolete aerobic respiration](https://w3id.org/metpo/1000009) 
 
-- [obsolete aerobic respiration](https://w3id.org/metpo/1000009) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete aerobic respiration](https://w3id.org/metpo/1000009) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete aerobic respiration](https://w3id.org/metpo/1000009) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [Aerobic respiration](https://w3id.org/metpo/1000801) 
+- [obsolete aerobic respiration](https://w3id.org/metpo/1000009) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [Aerobic respiration](https://w3id.org/metpo/1000801) 
 
 - [obsolete aerobic respiration](https://w3id.org/metpo/1000009) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13711,9 +13707,9 @@
 #### Added
 - Class: [obsolete aerotolerant](https://w3id.org/metpo/1000010) 
 
-- [obsolete aerotolerant](https://w3id.org/metpo/1000010) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete aerotolerant](https://w3id.org/metpo/1000010) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete aerotolerant](https://w3id.org/metpo/1000010) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [aerotolerant](https://w3id.org/metpo/1000609) 
+- [obsolete aerotolerant](https://w3id.org/metpo/1000010) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [aerotolerant](https://w3id.org/metpo/1000609) 
 
 - [obsolete aerotolerant](https://w3id.org/metpo/1000010) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13727,7 +13723,7 @@
 #### Added
 - Class: [obsolete aerotolerant anaerobe](https://w3id.org/metpo/1000352) 
 
-- [obsolete aerotolerant anaerobe](https://w3id.org/metpo/1000352) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete aerotolerant anaerobe](https://w3id.org/metpo/1000352) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete aerotolerant anaerobe](https://w3id.org/metpo/1000352) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13741,7 +13737,7 @@
 #### Added
 - Class: [obsolete aggregate](https://w3id.org/metpo/1000011) 
 
-- [obsolete aggregate](https://w3id.org/metpo/1000011) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete aggregate](https://w3id.org/metpo/1000011) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete aggregate](https://w3id.org/metpo/1000011) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13755,7 +13751,7 @@
 #### Added
 - Class: [obsolete akinete](https://w3id.org/metpo/1000012) 
 
-- [obsolete akinete](https://w3id.org/metpo/1000012) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete akinete](https://w3id.org/metpo/1000012) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete akinete](https://w3id.org/metpo/1000012) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13769,7 +13765,7 @@
 #### Added
 - Class: [obsolete aleuriospores](https://w3id.org/metpo/1000396) 
 
-- [obsolete aleuriospores](https://w3id.org/metpo/1000396) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete aleuriospores](https://w3id.org/metpo/1000396) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete aleuriospores](https://w3id.org/metpo/1000396) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13783,7 +13779,7 @@
 #### Added
 - Class: [obsolete alkali tolerant](https://w3id.org/metpo/1000345) 
 
-- [obsolete alkali tolerant](https://w3id.org/metpo/1000345) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete alkali tolerant](https://w3id.org/metpo/1000345) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete alkali tolerant](https://w3id.org/metpo/1000345) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13797,9 +13793,9 @@
 #### Added
 - Class: [obsolete alkaliphile](https://w3id.org/metpo/1000013) 
 
-- [obsolete alkaliphile](https://w3id.org/metpo/1000013) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete alkaliphile](https://w3id.org/metpo/1000013) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete alkaliphile](https://w3id.org/metpo/1000013) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [alkaliphilic](https://w3id.org/metpo/1003002) 
+- [obsolete alkaliphile](https://w3id.org/metpo/1000013) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [alkaliphilic](https://w3id.org/metpo/1003002) 
 
 - [obsolete alkaliphile](https://w3id.org/metpo/1000013) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13813,7 +13809,7 @@
 #### Added
 - Class: [obsolete ammonification](https://w3id.org/metpo/1000014) 
 
-- [obsolete ammonification](https://w3id.org/metpo/1000014) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete ammonification](https://w3id.org/metpo/1000014) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete ammonification](https://w3id.org/metpo/1000014) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13827,7 +13823,7 @@
 #### Added
 - Class: [obsolete amylolysis](https://w3id.org/metpo/1000015) 
 
-- [obsolete amylolysis](https://w3id.org/metpo/1000015) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete amylolysis](https://w3id.org/metpo/1000015) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete amylolysis](https://w3id.org/metpo/1000015) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13841,9 +13837,9 @@
 #### Added
 - Class: [obsolete anaerobe](https://w3id.org/metpo/1000016) 
 
-- [obsolete anaerobe](https://w3id.org/metpo/1000016) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete anaerobe](https://w3id.org/metpo/1000016) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete anaerobe](https://w3id.org/metpo/1000016) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [anaerobic](https://w3id.org/metpo/1000603) 
+- [obsolete anaerobe](https://w3id.org/metpo/1000016) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [anaerobic](https://w3id.org/metpo/1000603) 
 
 - [obsolete anaerobe](https://w3id.org/metpo/1000016) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13857,9 +13853,9 @@
 #### Added
 - Class: [obsolete anaerobic respiration](https://w3id.org/metpo/1000017) 
 
-- [obsolete anaerobic respiration](https://w3id.org/metpo/1000017) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete anaerobic respiration](https://w3id.org/metpo/1000017) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete anaerobic respiration](https://w3id.org/metpo/1000017) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [Anaerobic respiration](https://w3id.org/metpo/1000802) 
+- [obsolete anaerobic respiration](https://w3id.org/metpo/1000017) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [Anaerobic respiration](https://w3id.org/metpo/1000802) 
 
 - [obsolete anaerobic respiration](https://w3id.org/metpo/1000017) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13873,7 +13869,7 @@
 #### Added
 - Class: [obsolete anoxygenic photosynthesis](https://w3id.org/metpo/1000018) 
 
-- [obsolete anoxygenic photosynthesis](https://w3id.org/metpo/1000018) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete anoxygenic photosynthesis](https://w3id.org/metpo/1000018) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete anoxygenic photosynthesis](https://w3id.org/metpo/1000018) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13887,7 +13883,7 @@
 #### Added
 - Class: [obsolete anoxygenic phototroph](https://w3id.org/metpo/1000356) 
 
-- [obsolete anoxygenic phototroph](https://w3id.org/metpo/1000356) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete anoxygenic phototroph](https://w3id.org/metpo/1000356) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete anoxygenic phototroph](https://w3id.org/metpo/1000356) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13901,7 +13897,7 @@
 #### Added
 - Class: [obsolete antibiotic production](https://w3id.org/metpo/1000019) 
 
-- [obsolete antibiotic production](https://w3id.org/metpo/1000019) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete antibiotic production](https://w3id.org/metpo/1000019) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete antibiotic production](https://w3id.org/metpo/1000019) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13915,7 +13911,7 @@
 #### Added
 - Class: [obsolete antibiotic resistance](https://w3id.org/metpo/1000020) 
 
-- [obsolete antibiotic resistance](https://w3id.org/metpo/1000020) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete antibiotic resistance](https://w3id.org/metpo/1000020) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete antibiotic resistance](https://w3id.org/metpo/1000020) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13929,7 +13925,7 @@
 #### Added
 - Class: [obsolete antimicrobial resistance](https://w3id.org/metpo/1000021) 
 
-- [obsolete antimicrobial resistance](https://w3id.org/metpo/1000021) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete antimicrobial resistance](https://w3id.org/metpo/1000021) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete antimicrobial resistance](https://w3id.org/metpo/1000021) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13943,7 +13939,7 @@
 #### Added
 - Class: [obsolete aplanospores](https://w3id.org/metpo/1000403) 
 
-- [obsolete aplanospores](https://w3id.org/metpo/1000403) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete aplanospores](https://w3id.org/metpo/1000403) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete aplanospores](https://w3id.org/metpo/1000403) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13957,7 +13953,7 @@
 #### Added
 - Class: [obsolete appendage](https://w3id.org/metpo/1000022) 
 
-- [obsolete appendage](https://w3id.org/metpo/1000022) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete appendage](https://w3id.org/metpo/1000022) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete appendage](https://w3id.org/metpo/1000022) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13971,7 +13967,7 @@
 #### Added
 - Class: [obsolete arthrospore](https://w3id.org/metpo/1000023) 
 
-- [obsolete arthrospore](https://w3id.org/metpo/1000023) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete arthrospore](https://w3id.org/metpo/1000023) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete arthrospore](https://w3id.org/metpo/1000023) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13985,7 +13981,7 @@
 #### Added
 - Class: [obsolete ascospore](https://w3id.org/metpo/1000024) 
 
-- [obsolete ascospore](https://w3id.org/metpo/1000024) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete ascospore](https://w3id.org/metpo/1000024) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete ascospore](https://w3id.org/metpo/1000024) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -13999,7 +13995,7 @@
 #### Added
 - Class: [obsolete atmospheric pressure-adapted](https://w3id.org/metpo/1000411) 
 
-- [obsolete atmospheric pressure-adapted](https://w3id.org/metpo/1000411) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete atmospheric pressure-adapted](https://w3id.org/metpo/1000411) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete atmospheric pressure-adapted](https://w3id.org/metpo/1000411) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14013,9 +14009,9 @@
 #### Added
 - Class: [obsolete autotroph](https://w3id.org/metpo/1000025) 
 
-- [obsolete autotroph](https://w3id.org/metpo/1000025) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete autotroph](https://w3id.org/metpo/1000025) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete autotroph](https://w3id.org/metpo/1000025) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [autotrophic](https://w3id.org/metpo/1000632) 
+- [obsolete autotroph](https://w3id.org/metpo/1000025) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [autotrophic](https://w3id.org/metpo/1000632) 
 
 - [obsolete autotroph](https://w3id.org/metpo/1000025) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14029,7 +14025,7 @@
 #### Added
 - Class: [obsolete autotrophic process](https://w3id.org/metpo/1000026) 
 
-- [obsolete autotrophic process](https://w3id.org/metpo/1000026) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete autotrophic process](https://w3id.org/metpo/1000026) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete autotrophic process](https://w3id.org/metpo/1000026) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14043,7 +14039,7 @@
 #### Added
 - Class: [obsolete auxotroph](https://w3id.org/metpo/1000027) 
 
-- [obsolete auxotroph](https://w3id.org/metpo/1000027) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete auxotroph](https://w3id.org/metpo/1000027) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete auxotroph](https://w3id.org/metpo/1000027) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14057,7 +14053,7 @@
 #### Added
 - Class: [obsolete axial filament](https://w3id.org/metpo/1000028) 
 
-- [obsolete axial filament](https://w3id.org/metpo/1000028) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete axial filament](https://w3id.org/metpo/1000028) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete axial filament](https://w3id.org/metpo/1000028) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14071,7 +14067,7 @@
 #### Added
 - Class: [obsolete azygospores](https://w3id.org/metpo/1000395) 
 
-- [obsolete azygospores](https://w3id.org/metpo/1000395) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete azygospores](https://w3id.org/metpo/1000395) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete azygospores](https://w3id.org/metpo/1000395) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14085,7 +14081,7 @@
 #### Added
 - Class: [obsolete bacillus](https://w3id.org/metpo/1000029) 
 
-- [obsolete bacillus](https://w3id.org/metpo/1000029) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete bacillus](https://w3id.org/metpo/1000029) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete bacillus](https://w3id.org/metpo/1000029) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14099,7 +14095,7 @@
 #### Added
 - Class: [obsolete bacillus](https://w3id.org/metpo/000211) 
 
-- [obsolete bacillus](https://w3id.org/metpo/000211) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete bacillus](https://w3id.org/metpo/000211) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete bacillus](https://w3id.org/metpo/000211) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14113,7 +14109,7 @@
 #### Added
 - Class: [obsolete bacterial spore](https://w3id.org/metpo/1000512) 
 
-- [obsolete bacterial spore](https://w3id.org/metpo/1000512) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete bacterial spore](https://w3id.org/metpo/1000512) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete bacterial spore](https://w3id.org/metpo/1000512) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14127,7 +14123,7 @@
 #### Added
 - Class: [obsolete barophile](https://w3id.org/metpo/1000030) 
 
-- [obsolete barophile](https://w3id.org/metpo/1000030) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete barophile](https://w3id.org/metpo/1000030) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete barophile](https://w3id.org/metpo/1000030) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14141,7 +14137,7 @@
 #### Added
 - Class: [obsolete barotolerant](https://w3id.org/metpo/1000031) 
 
-- [obsolete barotolerant](https://w3id.org/metpo/1000031) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete barotolerant](https://w3id.org/metpo/1000031) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete barotolerant](https://w3id.org/metpo/1000031) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14155,7 +14151,7 @@
 #### Added
 - Class: [obsolete basidiospore](https://w3id.org/metpo/1000032) 
 
-- [obsolete basidiospore](https://w3id.org/metpo/1000032) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete basidiospore](https://w3id.org/metpo/1000032) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete basidiospore](https://w3id.org/metpo/1000032) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14169,7 +14165,7 @@
 #### Added
 - Class: [obsolete binary fission](https://w3id.org/metpo/1000033) 
 
-- [obsolete binary fission](https://w3id.org/metpo/1000033) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete binary fission](https://w3id.org/metpo/1000033) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete binary fission](https://w3id.org/metpo/1000033) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14183,7 +14179,7 @@
 #### Added
 - ObjectProperty: [obsolete binds](https://w3id.org/metpo/2000213) 
 
-- [obsolete binds](https://w3id.org/metpo/2000213) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete binds](https://w3id.org/metpo/2000213) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete binds](https://w3id.org/metpo/2000213) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14195,7 +14191,7 @@
 #### Added
 - Class: [obsolete biofilm](https://w3id.org/metpo/1000034) 
 
-- [obsolete biofilm](https://w3id.org/metpo/1000034) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete biofilm](https://w3id.org/metpo/1000034) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete biofilm](https://w3id.org/metpo/1000034) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14209,7 +14205,7 @@
 #### Added
 - Class: [obsolete biofilm component](https://w3id.org/metpo/1000035) 
 
-- [obsolete biofilm component](https://w3id.org/metpo/1000035) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete biofilm component](https://w3id.org/metpo/1000035) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete biofilm component](https://w3id.org/metpo/1000035) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14223,7 +14219,7 @@
 #### Added
 - Class: [obsolete biofilm formation](https://w3id.org/metpo/1000036) 
 
-- [obsolete biofilm formation](https://w3id.org/metpo/1000036) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete biofilm formation](https://w3id.org/metpo/1000036) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete biofilm formation](https://w3id.org/metpo/1000036) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14237,7 +14233,7 @@
 #### Added
 - Class: [obsolete biogeochemical cycling](https://w3id.org/metpo/1000037) 
 
-- [obsolete biogeochemical cycling](https://w3id.org/metpo/1000037) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete biogeochemical cycling](https://w3id.org/metpo/1000037) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete biogeochemical cycling](https://w3id.org/metpo/1000037) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14251,7 +14247,7 @@
 #### Added
 - Class: [obsolete bioluminescence](https://w3id.org/metpo/1000038) 
 
-- [obsolete bioluminescence](https://w3id.org/metpo/1000038) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete bioluminescence](https://w3id.org/metpo/1000038) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete bioluminescence](https://w3id.org/metpo/1000038) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14265,7 +14261,7 @@
 #### Added
 - Class: [obsolete branced](https://w3id.org/metpo/000212) 
 
-- [obsolete branced](https://w3id.org/metpo/000212) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete branced](https://w3id.org/metpo/000212) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete branced](https://w3id.org/metpo/000212) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14279,7 +14275,7 @@
 #### Added
 - Class: [obsolete branched](https://w3id.org/metpo/1000488) 
 
-- [obsolete branched](https://w3id.org/metpo/1000488) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete branched](https://w3id.org/metpo/1000488) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete branched](https://w3id.org/metpo/1000488) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14293,7 +14289,7 @@
 #### Added
 - Class: [obsolete budding](https://w3id.org/metpo/1000039) 
 
-- [obsolete budding](https://w3id.org/metpo/1000039) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete budding](https://w3id.org/metpo/1000039) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete budding](https://w3id.org/metpo/1000039) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14307,7 +14303,7 @@
 #### Added
 - Class: [obsolete buoyancy structure](https://w3id.org/metpo/1000040) 
 
-- [obsolete buoyancy structure](https://w3id.org/metpo/1000040) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete buoyancy structure](https://w3id.org/metpo/1000040) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete buoyancy structure](https://w3id.org/metpo/1000040) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14321,9 +14317,9 @@
 #### Added
 - Class: [obsolete capnophile](https://w3id.org/metpo/1000041) 
 
-- [obsolete capnophile](https://w3id.org/metpo/1000041) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete capnophile](https://w3id.org/metpo/1000041) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete capnophile](https://w3id.org/metpo/1000041) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [capnophilic](https://w3id.org/metpo/1005021) 
+- [obsolete capnophile](https://w3id.org/metpo/1000041) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [capnophilic](https://w3id.org/metpo/1005021) 
 
 - [obsolete capnophile](https://w3id.org/metpo/1000041) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14337,7 +14333,7 @@
 #### Added
 - Class: [obsolete capsule](https://w3id.org/metpo/1000042) 
 
-- [obsolete capsule](https://w3id.org/metpo/1000042) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete capsule](https://w3id.org/metpo/1000042) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete capsule](https://w3id.org/metpo/1000042) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14351,7 +14347,7 @@
 #### Added
 - Class: [obsolete carbon fixation](https://w3id.org/metpo/1000043) 
 
-- [obsolete carbon fixation](https://w3id.org/metpo/1000043) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete carbon fixation](https://w3id.org/metpo/1000043) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete carbon fixation](https://w3id.org/metpo/1000043) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14365,7 +14361,7 @@
 #### Added
 - Class: [obsolete carbon source](https://w3id.org/metpo/1000044) 
 
-- [obsolete carbon source](https://w3id.org/metpo/1000044) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete carbon source](https://w3id.org/metpo/1000044) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete carbon source](https://w3id.org/metpo/1000044) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14379,9 +14375,9 @@
 #### Added
 - Class: [obsolete carboxydotroph](https://w3id.org/metpo/1000045) 
 
-- [obsolete carboxydotroph](https://w3id.org/metpo/1000045) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete carboxydotroph](https://w3id.org/metpo/1000045) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete carboxydotroph](https://w3id.org/metpo/1000045) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [carboxydotrophic](https://w3id.org/metpo/1000633) 
+- [obsolete carboxydotroph](https://w3id.org/metpo/1000045) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [carboxydotrophic](https://w3id.org/metpo/1000633) 
 
 - [obsolete carboxydotroph](https://w3id.org/metpo/1000045) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14395,7 +14391,7 @@
 #### Added
 - ObjectProperty: [obsolete catabolizes](https://w3id.org/metpo/2000204) 
 
-- [obsolete catabolizes](https://w3id.org/metpo/2000204) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete catabolizes](https://w3id.org/metpo/2000204) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete catabolizes](https://w3id.org/metpo/2000204) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14407,9 +14403,9 @@
 #### Added
 - Class: [obsolete cell arrangement](https://w3id.org/metpo/1000046) 
 
-- [obsolete cell arrangement](https://w3id.org/metpo/1000046) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete cell arrangement](https://w3id.org/metpo/1000046) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete cell arrangement](https://w3id.org/metpo/1000046) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [flagellar arrangement](https://w3id.org/metpo/1007005) 
+- [obsolete cell arrangement](https://w3id.org/metpo/1000046) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [flagellar arrangement](https://w3id.org/metpo/1007005) 
 
 - [obsolete cell arrangement](https://w3id.org/metpo/1000046) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14423,7 +14419,7 @@
 #### Added
 - Class: [obsolete cell by chemical produced](https://w3id.org/metpo/0001021) 
 
-- [obsolete cell by chemical produced](https://w3id.org/metpo/0001021) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete cell by chemical produced](https://w3id.org/metpo/0001021) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete cell by chemical produced](https://w3id.org/metpo/0001021) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14437,7 +14433,7 @@
 #### Added
 - Class: [obsolete cell envelope](https://w3id.org/metpo/1000047) 
 
-- [obsolete cell envelope](https://w3id.org/metpo/1000047) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete cell envelope](https://w3id.org/metpo/1000047) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete cell envelope](https://w3id.org/metpo/1000047) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14451,7 +14447,7 @@
 #### Added
 - Class: [obsolete cell length category](https://w3id.org/metpo/1000048) 
 
-- [obsolete cell length category](https://w3id.org/metpo/1000048) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete cell length category](https://w3id.org/metpo/1000048) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete cell length category](https://w3id.org/metpo/1000048) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14465,9 +14461,9 @@
 #### Added
 - Class: [obsolete cell length high](https://w3id.org/metpo/1000440) 
 
-- [obsolete cell length high](https://w3id.org/metpo/1000440) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete cell length high](https://w3id.org/metpo/1000440) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
-- [obsolete cell length high](https://w3id.org/metpo/1000440) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [cell length](https://w3id.org/metpo/1000881) 
+- [obsolete cell length high](https://w3id.org/metpo/1000440) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [cell length](https://w3id.org/metpo/1000881) 
 
 - [obsolete cell length high](https://w3id.org/metpo/1000440) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14481,9 +14477,9 @@
 #### Added
 - Class: [obsolete cell length low](https://w3id.org/metpo/1000438) 
 
-- [obsolete cell length low](https://w3id.org/metpo/1000438) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete cell length low](https://w3id.org/metpo/1000438) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
-- [obsolete cell length low](https://w3id.org/metpo/1000438) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [cell length](https://w3id.org/metpo/1000881) 
+- [obsolete cell length low](https://w3id.org/metpo/1000438) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [cell length](https://w3id.org/metpo/1000881) 
 
 - [obsolete cell length low](https://w3id.org/metpo/1000438) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14497,9 +14493,9 @@
 #### Added
 - Class: [obsolete cell length mid](https://w3id.org/metpo/1000439) 
 
-- [obsolete cell length mid](https://w3id.org/metpo/1000439) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete cell length mid](https://w3id.org/metpo/1000439) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
-- [obsolete cell length mid](https://w3id.org/metpo/1000439) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [cell length medium](https://w3id.org/metpo/1000885) 
+- [obsolete cell length mid](https://w3id.org/metpo/1000439) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [cell length medium](https://w3id.org/metpo/1000885) 
 
 - [obsolete cell length mid](https://w3id.org/metpo/1000439) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14513,9 +14509,9 @@
 #### Added
 - Class: [obsolete cell length very low](https://w3id.org/metpo/1000437) 
 
-- [obsolete cell length very low](https://w3id.org/metpo/1000437) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete cell length very low](https://w3id.org/metpo/1000437) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
-- [obsolete cell length very low](https://w3id.org/metpo/1000437) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [cell length very small](https://w3id.org/metpo/1000883) 
+- [obsolete cell length very low](https://w3id.org/metpo/1000437) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [cell length very small](https://w3id.org/metpo/1000883) 
 
 - [obsolete cell length very low](https://w3id.org/metpo/1000437) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14529,9 +14525,9 @@
 #### Added
 - Class: [obsolete cell shape](https://w3id.org/metpo/1000049) 
 
-- [obsolete cell shape](https://w3id.org/metpo/1000049) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete cell shape](https://w3id.org/metpo/1000049) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete cell shape](https://w3id.org/metpo/1000049) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [cell shape](https://w3id.org/metpo/1000666) 
+- [obsolete cell shape](https://w3id.org/metpo/1000049) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [cell shape](https://w3id.org/metpo/1000666) 
 
 - [obsolete cell shape](https://w3id.org/metpo/1000049) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14545,7 +14541,7 @@
 #### Added
 - Class: [obsolete cell size](https://w3id.org/metpo/1000050) 
 
-- [obsolete cell size](https://w3id.org/metpo/1000050) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete cell size](https://w3id.org/metpo/1000050) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete cell size](https://w3id.org/metpo/1000050) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14559,7 +14555,7 @@
 #### Added
 - Class: [obsolete cell wall characteristic](https://w3id.org/metpo/1000051) 
 
-- [obsolete cell wall characteristic](https://w3id.org/metpo/1000051) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete cell wall characteristic](https://w3id.org/metpo/1000051) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete cell wall characteristic](https://w3id.org/metpo/1000051) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14573,7 +14569,7 @@
 #### Added
 - Class: [obsolete cell wall component](https://w3id.org/metpo/1000052) 
 
-- [obsolete cell wall component](https://w3id.org/metpo/1000052) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete cell wall component](https://w3id.org/metpo/1000052) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete cell wall component](https://w3id.org/metpo/1000052) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14587,7 +14583,7 @@
 #### Added
 - Class: [obsolete cell width category](https://w3id.org/metpo/1000053) 
 
-- [obsolete cell width category](https://w3id.org/metpo/1000053) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete cell width category](https://w3id.org/metpo/1000053) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete cell width category](https://w3id.org/metpo/1000053) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14601,9 +14597,9 @@
 #### Added
 - Class: [obsolete cell width high](https://w3id.org/metpo/1000436) 
 
-- [obsolete cell width high](https://w3id.org/metpo/1000436) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete cell width high](https://w3id.org/metpo/1000436) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
-- [obsolete cell width high](https://w3id.org/metpo/1000436) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [cell width](https://w3id.org/metpo/1000882) 
+- [obsolete cell width high](https://w3id.org/metpo/1000436) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [cell width](https://w3id.org/metpo/1000882) 
 
 - [obsolete cell width high](https://w3id.org/metpo/1000436) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14617,9 +14613,9 @@
 #### Added
 - Class: [obsolete cell width low](https://w3id.org/metpo/1000434) 
 
-- [obsolete cell width low](https://w3id.org/metpo/1000434) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete cell width low](https://w3id.org/metpo/1000434) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
-- [obsolete cell width low](https://w3id.org/metpo/1000434) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [cell width](https://w3id.org/metpo/1000882) 
+- [obsolete cell width low](https://w3id.org/metpo/1000434) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [cell width](https://w3id.org/metpo/1000882) 
 
 - [obsolete cell width low](https://w3id.org/metpo/1000434) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14633,9 +14629,9 @@
 #### Added
 - Class: [obsolete cell width mid](https://w3id.org/metpo/1000435) 
 
-- [obsolete cell width mid](https://w3id.org/metpo/1000435) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete cell width mid](https://w3id.org/metpo/1000435) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
-- [obsolete cell width mid](https://w3id.org/metpo/1000435) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [cell width medium](https://w3id.org/metpo/1000889) 
+- [obsolete cell width mid](https://w3id.org/metpo/1000435) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [cell width medium](https://w3id.org/metpo/1000889) 
 
 - [obsolete cell width mid](https://w3id.org/metpo/1000435) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14649,9 +14645,9 @@
 #### Added
 - Class: [obsolete cell width very low](https://w3id.org/metpo/1000433) 
 
-- [obsolete cell width very low](https://w3id.org/metpo/1000433) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete cell width very low](https://w3id.org/metpo/1000433) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
-- [obsolete cell width very low](https://w3id.org/metpo/1000433) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [cell width very small](https://w3id.org/metpo/1000887) 
+- [obsolete cell width very low](https://w3id.org/metpo/1000433) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [cell width very small](https://w3id.org/metpo/1000887) 
 
 - [obsolete cell width very low](https://w3id.org/metpo/1000433) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14665,7 +14661,7 @@
 #### Added
 - Class: [obsolete cellular characteristic](https://w3id.org/metpo/1000054) 
 
-- [obsolete cellular characteristic](https://w3id.org/metpo/1000054) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete cellular characteristic](https://w3id.org/metpo/1000054) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete cellular characteristic](https://w3id.org/metpo/1000054) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14679,7 +14675,7 @@
 #### Added
 - Class: [obsolete cellular component](https://w3id.org/metpo/1000055) 
 
-- [obsolete cellular component](https://w3id.org/metpo/1000055) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete cellular component](https://w3id.org/metpo/1000055) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete cellular component](https://w3id.org/metpo/1000055) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14693,7 +14689,7 @@
 #### Added
 - Class: [obsolete cellular process](https://w3id.org/metpo/1000056) 
 
-- [obsolete cellular process](https://w3id.org/metpo/1000056) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete cellular process](https://w3id.org/metpo/1000056) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete cellular process](https://w3id.org/metpo/1000056) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14707,7 +14703,7 @@
 #### Added
 - Class: [obsolete cellular product](https://w3id.org/metpo/1000057) 
 
-- [obsolete cellular product](https://w3id.org/metpo/1000057) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete cellular product](https://w3id.org/metpo/1000057) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete cellular product](https://w3id.org/metpo/1000057) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14721,7 +14717,7 @@
 #### Added
 - Class: [obsolete cellulolysis](https://w3id.org/metpo/1000058) 
 
-- [obsolete cellulolysis](https://w3id.org/metpo/1000058) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete cellulolysis](https://w3id.org/metpo/1000058) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete cellulolysis](https://w3id.org/metpo/1000058) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14735,7 +14731,7 @@
 #### Added
 - ObjectProperty: [obsolete chelates](https://w3id.org/metpo/2000214) 
 
-- [obsolete chelates](https://w3id.org/metpo/2000214) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete chelates](https://w3id.org/metpo/2000214) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete chelates](https://w3id.org/metpo/2000214) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14747,9 +14743,9 @@
 #### Added
 - Class: [obsolete chemoautotroph](https://w3id.org/metpo/1000357) 
 
-- [obsolete chemoautotroph](https://w3id.org/metpo/1000357) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete chemoautotroph](https://w3id.org/metpo/1000357) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
-- [obsolete chemoautotroph](https://w3id.org/metpo/1000357) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [chemoautotrophic](https://w3id.org/metpo/1000635) 
+- [obsolete chemoautotroph](https://w3id.org/metpo/1000357) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [chemoautotrophic](https://w3id.org/metpo/1000635) 
 
 - [obsolete chemoautotroph](https://w3id.org/metpo/1000357) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14763,9 +14759,9 @@
 #### Added
 - Class: [obsolete chemoheterotroph](https://w3id.org/metpo/1000061) 
 
-- [obsolete chemoheterotroph](https://w3id.org/metpo/1000061) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete chemoheterotroph](https://w3id.org/metpo/1000061) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete chemoheterotroph](https://w3id.org/metpo/1000061) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [chemoheterotrophic](https://w3id.org/metpo/1000636) 
+- [obsolete chemoheterotroph](https://w3id.org/metpo/1000061) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [chemoheterotrophic](https://w3id.org/metpo/1000636) 
 
 - [obsolete chemoheterotroph](https://w3id.org/metpo/1000061) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14779,9 +14775,9 @@
 #### Added
 - Class: [obsolete chemoheterotroph](https://w3id.org/metpo/1000358) 
 
-- [obsolete chemoheterotroph](https://w3id.org/metpo/1000358) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete chemoheterotroph](https://w3id.org/metpo/1000358) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
-- [obsolete chemoheterotroph](https://w3id.org/metpo/1000358) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [chemoheterotrophic](https://w3id.org/metpo/1000636) 
+- [obsolete chemoheterotroph](https://w3id.org/metpo/1000358) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [chemoheterotrophic](https://w3id.org/metpo/1000636) 
 
 - [obsolete chemoheterotroph](https://w3id.org/metpo/1000358) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14795,9 +14791,9 @@
 #### Added
 - Class: [obsolete chemolithoautotroph](https://w3id.org/metpo/1000369) 
 
-- [obsolete chemolithoautotroph](https://w3id.org/metpo/1000369) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete chemolithoautotroph](https://w3id.org/metpo/1000369) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
-- [obsolete chemolithoautotroph](https://w3id.org/metpo/1000369) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [chemolithoautotrophic](https://w3id.org/metpo/1000637) 
+- [obsolete chemolithoautotroph](https://w3id.org/metpo/1000369) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [chemolithoautotrophic](https://w3id.org/metpo/1000637) 
 
 - [obsolete chemolithoautotroph](https://w3id.org/metpo/1000369) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14811,9 +14807,9 @@
 #### Added
 - Class: [obsolete chemoorganoheterotroph](https://w3id.org/metpo/1000368) 
 
-- [obsolete chemoorganoheterotroph](https://w3id.org/metpo/1000368) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete chemoorganoheterotroph](https://w3id.org/metpo/1000368) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
-- [obsolete chemoorganoheterotroph](https://w3id.org/metpo/1000368) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [chemoorganoheterotrophic](https://w3id.org/metpo/1000640) 
+- [obsolete chemoorganoheterotroph](https://w3id.org/metpo/1000368) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [chemoorganoheterotrophic](https://w3id.org/metpo/1000640) 
 
 - [obsolete chemoorganoheterotroph](https://w3id.org/metpo/1000368) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14827,7 +14823,7 @@
 #### Added
 - Class: [obsolete chemotaxis](https://w3id.org/metpo/1000062) 
 
-- [obsolete chemotaxis](https://w3id.org/metpo/1000062) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete chemotaxis](https://w3id.org/metpo/1000062) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete chemotaxis](https://w3id.org/metpo/1000062) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14841,9 +14837,9 @@
 #### Added
 - Class: [obsolete chemotroph](https://w3id.org/metpo/1000362) 
 
-- [obsolete chemotroph](https://w3id.org/metpo/1000362) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete chemotroph](https://w3id.org/metpo/1000362) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
-- [obsolete chemotroph](https://w3id.org/metpo/1000362) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [chemotrophic](https://w3id.org/metpo/1000641) 
+- [obsolete chemotroph](https://w3id.org/metpo/1000362) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [chemotrophic](https://w3id.org/metpo/1000641) 
 
 - [obsolete chemotroph](https://w3id.org/metpo/1000362) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14857,7 +14853,7 @@
 #### Added
 - Class: [obsolete chlamydospore](https://w3id.org/metpo/1000063) 
 
-- [obsolete chlamydospore](https://w3id.org/metpo/1000063) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete chlamydospore](https://w3id.org/metpo/1000063) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete chlamydospore](https://w3id.org/metpo/1000063) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14871,7 +14867,7 @@
 #### Added
 - Class: [obsolete chlamydospores](https://w3id.org/metpo/1000391) 
 
-- [obsolete chlamydospores](https://w3id.org/metpo/1000391) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete chlamydospores](https://w3id.org/metpo/1000391) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete chlamydospores](https://w3id.org/metpo/1000391) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14885,7 +14881,7 @@
 #### Added
 - Class: [obsolete ciliated](https://w3id.org/metpo/1000385) 
 
-- [obsolete ciliated](https://w3id.org/metpo/1000385) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete ciliated](https://w3id.org/metpo/1000385) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete ciliated](https://w3id.org/metpo/1000385) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14899,7 +14895,7 @@
 #### Added
 - Class: [obsolete class](https://w3id.org/metpo/1000064) 
 
-- [obsolete class](https://w3id.org/metpo/1000064) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete class](https://w3id.org/metpo/1000064) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete class](https://w3id.org/metpo/1000064) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14913,7 +14909,7 @@
 #### Added
 - Class: [obsolete clinically relevant feature](https://w3id.org/metpo/1000065) 
 
-- [obsolete clinically relevant feature](https://w3id.org/metpo/1000065) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete clinically relevant feature](https://w3id.org/metpo/1000065) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete clinically relevant feature](https://w3id.org/metpo/1000065) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14927,7 +14923,7 @@
 #### Added
 - Class: [obsolete coccobacillus](https://w3id.org/metpo/000213) 
 
-- [obsolete coccobacillus](https://w3id.org/metpo/000213) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete coccobacillus](https://w3id.org/metpo/000213) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete coccobacillus](https://w3id.org/metpo/000213) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14941,7 +14937,7 @@
 #### Added
 - Class: [obsolete coccobacillus](https://w3id.org/metpo/1000489) 
 
-- [obsolete coccobacillus](https://w3id.org/metpo/1000489) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete coccobacillus](https://w3id.org/metpo/1000489) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete coccobacillus](https://w3id.org/metpo/1000489) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14955,7 +14951,7 @@
 #### Added
 - Class: [obsolete coccus](https://w3id.org/metpo/1000066) 
 
-- [obsolete coccus](https://w3id.org/metpo/1000066) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete coccus](https://w3id.org/metpo/1000066) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete coccus](https://w3id.org/metpo/1000066) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14969,7 +14965,7 @@
 #### Added
 - Class: [obsolete coccus](https://w3id.org/metpo/000214) 
 
-- [obsolete coccus](https://w3id.org/metpo/000214) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete coccus](https://w3id.org/metpo/000214) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete coccus](https://w3id.org/metpo/000214) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14983,7 +14979,7 @@
 #### Added
 - Class: [obsolete cold shock protein](https://w3id.org/metpo/1000067) 
 
-- [obsolete cold shock protein](https://w3id.org/metpo/1000067) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete cold shock protein](https://w3id.org/metpo/1000067) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete cold shock protein](https://w3id.org/metpo/1000067) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -14997,7 +14993,7 @@
 #### Added
 - Class: [obsolete cold shock response](https://w3id.org/metpo/1000068) 
 
-- [obsolete cold shock response](https://w3id.org/metpo/1000068) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete cold shock response](https://w3id.org/metpo/1000068) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete cold shock response](https://w3id.org/metpo/1000068) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15011,7 +15007,7 @@
 #### Added
 - Class: [obsolete colonization](https://w3id.org/metpo/1000069) 
 
-- [obsolete colonization](https://w3id.org/metpo/1000069) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete colonization](https://w3id.org/metpo/1000069) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete colonization](https://w3id.org/metpo/1000069) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15025,7 +15021,7 @@
 #### Added
 - Class: [obsolete colony elevation](https://w3id.org/metpo/1000070) 
 
-- [obsolete colony elevation](https://w3id.org/metpo/1000070) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete colony elevation](https://w3id.org/metpo/1000070) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete colony elevation](https://w3id.org/metpo/1000070) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15039,7 +15035,7 @@
 #### Added
 - Class: [obsolete colony margin](https://w3id.org/metpo/1000071) 
 
-- [obsolete colony margin](https://w3id.org/metpo/1000071) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete colony margin](https://w3id.org/metpo/1000071) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete colony margin](https://w3id.org/metpo/1000071) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15053,9 +15049,9 @@
 #### Added
 - Class: [obsolete colony morphology](https://w3id.org/metpo/1000072) 
 
-- [obsolete colony morphology](https://w3id.org/metpo/1000072) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete colony morphology](https://w3id.org/metpo/1000072) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete colony morphology](https://w3id.org/metpo/1000072) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [colony morphology](https://w3id.org/metpo/1007062) 
+- [obsolete colony morphology](https://w3id.org/metpo/1000072) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [colony morphology](https://w3id.org/metpo/1007062) 
 
 - [obsolete colony morphology](https://w3id.org/metpo/1000072) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15069,7 +15065,7 @@
 #### Added
 - Class: [obsolete colony texture](https://w3id.org/metpo/1000073) 
 
-- [obsolete colony texture](https://w3id.org/metpo/1000073) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete colony texture](https://w3id.org/metpo/1000073) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete colony texture](https://w3id.org/metpo/1000073) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15083,7 +15079,7 @@
 #### Added
 - Class: [obsolete commensalism](https://w3id.org/metpo/1000074) 
 
-- [obsolete commensalism](https://w3id.org/metpo/1000074) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete commensalism](https://w3id.org/metpo/1000074) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete commensalism](https://w3id.org/metpo/1000074) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15097,7 +15093,7 @@
 #### Added
 - Class: [obsolete community behavior](https://w3id.org/metpo/1000075) 
 
-- [obsolete community behavior](https://w3id.org/metpo/1000075) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete community behavior](https://w3id.org/metpo/1000075) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete community behavior](https://w3id.org/metpo/1000075) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15111,7 +15107,7 @@
 #### Added
 - Class: [obsolete community structure](https://w3id.org/metpo/1000076) 
 
-- [obsolete community structure](https://w3id.org/metpo/1000076) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete community structure](https://w3id.org/metpo/1000076) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete community structure](https://w3id.org/metpo/1000076) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15125,7 +15121,7 @@
 #### Added
 - Class: [obsolete compatible solute](https://w3id.org/metpo/1000077) 
 
-- [obsolete compatible solute](https://w3id.org/metpo/1000077) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete compatible solute](https://w3id.org/metpo/1000077) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete compatible solute](https://w3id.org/metpo/1000077) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15139,7 +15135,7 @@
 #### Added
 - Class: [obsolete competence](https://w3id.org/metpo/1000078) 
 
-- [obsolete competence](https://w3id.org/metpo/1000078) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete competence](https://w3id.org/metpo/1000078) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete competence](https://w3id.org/metpo/1000078) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15153,7 +15149,7 @@
 #### Added
 - Class: [obsolete component](https://w3id.org/metpo/1000079) 
 
-- [obsolete component](https://w3id.org/metpo/1000079) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete component](https://w3id.org/metpo/1000079) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete component](https://w3id.org/metpo/1000079) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15167,7 +15163,7 @@
 #### Added
 - Class: [obsolete conidia](https://w3id.org/metpo/1000390) 
 
-- [obsolete conidia](https://w3id.org/metpo/1000390) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete conidia](https://w3id.org/metpo/1000390) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete conidia](https://w3id.org/metpo/1000390) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15181,7 +15177,7 @@
 #### Added
 - Class: [obsolete conidium](https://w3id.org/metpo/1000080) 
 
-- [obsolete conidium](https://w3id.org/metpo/1000080) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete conidium](https://w3id.org/metpo/1000080) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete conidium](https://w3id.org/metpo/1000080) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15195,7 +15191,7 @@
 #### Added
 - ObjectProperty: [obsolete conjugates](https://w3id.org/metpo/2000206) 
 
-- [obsolete conjugates](https://w3id.org/metpo/2000206) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete conjugates](https://w3id.org/metpo/2000206) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete conjugates](https://w3id.org/metpo/2000206) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15207,7 +15203,7 @@
 #### Added
 - Class: [obsolete conjugation](https://w3id.org/metpo/1000081) 
 
-- [obsolete conjugation](https://w3id.org/metpo/1000081) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete conjugation](https://w3id.org/metpo/1000081) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete conjugation](https://w3id.org/metpo/1000081) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15221,9 +15217,9 @@
 #### Added
 - Class: [obsolete copiotroph](https://w3id.org/metpo/1000364) 
 
-- [obsolete copiotroph](https://w3id.org/metpo/1000364) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete copiotroph](https://w3id.org/metpo/1000364) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
-- [obsolete copiotroph](https://w3id.org/metpo/1000364) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [copiotrophic](https://w3id.org/metpo/1000642) 
+- [obsolete copiotroph](https://w3id.org/metpo/1000364) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [copiotrophic](https://w3id.org/metpo/1000642) 
 
 - [obsolete copiotroph](https://w3id.org/metpo/1000364) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15237,7 +15233,7 @@
 #### Added
 - Class: [obsolete crescent](https://w3id.org/metpo/000215) 
 
-- [obsolete crescent](https://w3id.org/metpo/000215) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete crescent](https://w3id.org/metpo/000215) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete crescent](https://w3id.org/metpo/000215) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15251,7 +15247,7 @@
 #### Added
 - Class: [obsolete crescent](https://w3id.org/metpo/1000490) 
 
-- [obsolete crescent](https://w3id.org/metpo/1000490) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete crescent](https://w3id.org/metpo/1000490) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete crescent](https://w3id.org/metpo/1000490) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15265,7 +15261,7 @@
 #### Added
 - ObjectProperty: [obsolete crystallizes](https://w3id.org/metpo/2000218) 
 
-- [obsolete crystallizes](https://w3id.org/metpo/2000218) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete crystallizes](https://w3id.org/metpo/2000218) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete crystallizes](https://w3id.org/metpo/2000218) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15277,7 +15273,7 @@
 #### Added
 - Class: [obsolete culturability](https://w3id.org/metpo/1000083) 
 
-- [obsolete culturability](https://w3id.org/metpo/1000083) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete culturability](https://w3id.org/metpo/1000083) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete culturability](https://w3id.org/metpo/1000083) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15291,7 +15287,7 @@
 #### Added
 - Class: [obsolete culture NaCl observation](https://w3id.org/metpo/1001006) 
 
-- [obsolete culture NaCl observation](https://w3id.org/metpo/1001006) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete culture NaCl observation](https://w3id.org/metpo/1001006) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete culture NaCl observation](https://w3id.org/metpo/1001006) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15305,7 +15301,7 @@
 #### Added
 - Class: [obsolete culture pH observation](https://w3id.org/metpo/1001011) 
 
-- [obsolete culture pH observation](https://w3id.org/metpo/1001011) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete culture pH observation](https://w3id.org/metpo/1001011) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete culture pH observation](https://w3id.org/metpo/1001011) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15319,7 +15315,7 @@
 #### Added
 - Class: [obsolete culture temperature observation](https://w3id.org/metpo/1001005) 
 
-- [obsolete culture temperature observation](https://w3id.org/metpo/1001005) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete culture temperature observation](https://w3id.org/metpo/1001005) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete culture temperature observation](https://w3id.org/metpo/1001005) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15333,7 +15329,7 @@
 #### Added
 - Class: [obsolete curved](https://w3id.org/metpo/000216) 
 
-- [obsolete curved](https://w3id.org/metpo/000216) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete curved](https://w3id.org/metpo/000216) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete curved](https://w3id.org/metpo/000216) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15347,7 +15343,7 @@
 #### Added
 - Class: [obsolete curved](https://w3id.org/metpo/1000491) 
 
-- [obsolete curved](https://w3id.org/metpo/1000491) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete curved](https://w3id.org/metpo/1000491) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete curved](https://w3id.org/metpo/1000491) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15361,7 +15357,7 @@
 #### Added
 - Class: [obsolete curved spiral](https://w3id.org/metpo/1000492) 
 
-- [obsolete curved spiral](https://w3id.org/metpo/1000492) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete curved spiral](https://w3id.org/metpo/1000492) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete curved spiral](https://w3id.org/metpo/1000492) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15375,7 +15371,7 @@
 #### Added
 - Class: [obsolete curved spiral](https://w3id.org/metpo/000217) 
 
-- [obsolete curved spiral](https://w3id.org/metpo/000217) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete curved spiral](https://w3id.org/metpo/000217) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete curved spiral](https://w3id.org/metpo/000217) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15389,7 +15385,7 @@
 #### Added
 - Class: [obsolete cyst](https://w3id.org/metpo/1000084) 
 
-- [obsolete cyst](https://w3id.org/metpo/1000084) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete cyst](https://w3id.org/metpo/1000084) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete cyst](https://w3id.org/metpo/1000084) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15403,7 +15399,7 @@
 #### Added
 - Class: [obsolete death phase](https://w3id.org/metpo/1000085) 
 
-- [obsolete death phase](https://w3id.org/metpo/1000085) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete death phase](https://w3id.org/metpo/1000085) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete death phase](https://w3id.org/metpo/1000085) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15417,9 +15413,9 @@
 #### Added
 - Class: [obsolete denitrification](https://w3id.org/metpo/1000086) 
 
-- [obsolete denitrification](https://w3id.org/metpo/1000086) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete denitrification](https://w3id.org/metpo/1000086) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete denitrification](https://w3id.org/metpo/1000086) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [denitrification](https://w3id.org/metpo/1005038) 
+- [obsolete denitrification](https://w3id.org/metpo/1000086) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [denitrification](https://w3id.org/metpo/1005038) 
 
 - [obsolete denitrification](https://w3id.org/metpo/1000086) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15433,7 +15429,7 @@
 #### Added
 - Class: [obsolete denitrifier](https://w3id.org/metpo/1000378) 
 
-- [obsolete denitrifier](https://w3id.org/metpo/1000378) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete denitrifier](https://w3id.org/metpo/1000378) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete denitrifier](https://w3id.org/metpo/1000378) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15447,7 +15443,7 @@
 #### Added
 - Class: [obsolete denitrifying](https://w3id.org/metpo/1000643) 
 
-- [obsolete denitrifying](https://w3id.org/metpo/1000643) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete denitrifying](https://w3id.org/metpo/1000643) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete denitrifying](https://w3id.org/metpo/1000643) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15461,7 +15457,7 @@
 #### Added
 - Class: [obsolete developmental process](https://w3id.org/metpo/1000087) 
 
-- [obsolete developmental process](https://w3id.org/metpo/1000087) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete developmental process](https://w3id.org/metpo/1000087) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete developmental process](https://w3id.org/metpo/1000087) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15475,7 +15471,7 @@
 #### Added
 - Class: [obsolete diagnostic enzyme](https://w3id.org/metpo/1000088) 
 
-- [obsolete diagnostic enzyme](https://w3id.org/metpo/1000088) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete diagnostic enzyme](https://w3id.org/metpo/1000088) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete diagnostic enzyme](https://w3id.org/metpo/1000088) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15489,7 +15485,7 @@
 #### Added
 - Class: [obsolete diagnostic feature](https://w3id.org/metpo/1000089) 
 
-- [obsolete diagnostic feature](https://w3id.org/metpo/1000089) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete diagnostic feature](https://w3id.org/metpo/1000089) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete diagnostic feature](https://w3id.org/metpo/1000089) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15503,7 +15499,7 @@
 #### Added
 - Class: [obsolete diazotroph](https://w3id.org/metpo/1000090) 
 
-- [obsolete diazotroph](https://w3id.org/metpo/1000090) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete diazotroph](https://w3id.org/metpo/1000090) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete diazotroph](https://w3id.org/metpo/1000090) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15517,7 +15513,7 @@
 #### Added
 - Class: [obsolete differentiation](https://w3id.org/metpo/1000091) 
 
-- [obsolete differentiation](https://w3id.org/metpo/1000091) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete differentiation](https://w3id.org/metpo/1000091) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete differentiation](https://w3id.org/metpo/1000091) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15531,7 +15527,7 @@
 #### Added
 - Class: [obsolete dimorphism](https://w3id.org/metpo/1000092) 
 
-- [obsolete dimorphism](https://w3id.org/metpo/1000092) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete dimorphism](https://w3id.org/metpo/1000092) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete dimorphism](https://w3id.org/metpo/1000092) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15545,7 +15541,7 @@
 #### Added
 - Class: [obsolete diplococcus](https://w3id.org/metpo/000218) 
 
-- [obsolete diplococcus](https://w3id.org/metpo/000218) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete diplococcus](https://w3id.org/metpo/000218) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete diplococcus](https://w3id.org/metpo/000218) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15559,7 +15555,7 @@
 #### Added
 - Class: [obsolete diplococcus](https://w3id.org/metpo/1000493) 
 
-- [obsolete diplococcus](https://w3id.org/metpo/1000493) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete diplococcus](https://w3id.org/metpo/1000493) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete diplococcus](https://w3id.org/metpo/1000493) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15573,7 +15569,7 @@
 #### Added
 - Class: [obsolete disc](https://w3id.org/metpo/000219) 
 
-- [obsolete disc](https://w3id.org/metpo/000219) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete disc](https://w3id.org/metpo/000219) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete disc](https://w3id.org/metpo/000219) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15587,7 +15583,7 @@
 #### Added
 - Class: [obsolete disc-shaped cell](https://w3id.org/metpo/1000093) 
 
-- [obsolete disc-shaped cell](https://w3id.org/metpo/1000093) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete disc-shaped cell](https://w3id.org/metpo/1000093) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete disc-shaped cell](https://w3id.org/metpo/1000093) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15601,7 +15597,7 @@
 #### Added
 - ObjectProperty: [obsolete does not bind](https://w3id.org/metpo/2000233) 
 
-- [obsolete does not bind](https://w3id.org/metpo/2000233) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete does not bind](https://w3id.org/metpo/2000233) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete does not bind](https://w3id.org/metpo/2000233) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15613,7 +15609,7 @@
 #### Added
 - ObjectProperty: [obsolete does not catabolize](https://w3id.org/metpo/2000224) 
 
-- [obsolete does not catabolize](https://w3id.org/metpo/2000224) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete does not catabolize](https://w3id.org/metpo/2000224) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete does not catabolize](https://w3id.org/metpo/2000224) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15625,7 +15621,7 @@
 #### Added
 - ObjectProperty: [obsolete does not chelate](https://w3id.org/metpo/2000234) 
 
-- [obsolete does not chelate](https://w3id.org/metpo/2000234) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete does not chelate](https://w3id.org/metpo/2000234) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete does not chelate](https://w3id.org/metpo/2000234) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15637,7 +15633,7 @@
 #### Added
 - ObjectProperty: [obsolete does not conjugate](https://w3id.org/metpo/2000226) 
 
-- [obsolete does not conjugate](https://w3id.org/metpo/2000226) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete does not conjugate](https://w3id.org/metpo/2000226) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete does not conjugate](https://w3id.org/metpo/2000226) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15649,7 +15645,7 @@
 #### Added
 - ObjectProperty: [obsolete does not crystallize](https://w3id.org/metpo/2000238) 
 
-- [obsolete does not crystallize](https://w3id.org/metpo/2000238) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete does not crystallize](https://w3id.org/metpo/2000238) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete does not crystallize](https://w3id.org/metpo/2000238) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15661,7 +15657,7 @@
 #### Added
 - ObjectProperty: [obsolete does not fix](https://w3id.org/metpo/2000223) 
 
-- [obsolete does not fix](https://w3id.org/metpo/2000223) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete does not fix](https://w3id.org/metpo/2000223) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete does not fix](https://w3id.org/metpo/2000223) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15673,7 +15669,7 @@
 #### Added
 - ObjectProperty: [obsolete does not lyse](https://w3id.org/metpo/2000221) 
 
-- [obsolete does not lyse](https://w3id.org/metpo/2000221) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete does not lyse](https://w3id.org/metpo/2000221) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete does not lyse](https://w3id.org/metpo/2000221) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15685,7 +15681,7 @@
 #### Added
 - ObjectProperty: [obsolete does not mineralize](https://w3id.org/metpo/2000225) 
 
-- [obsolete does not mineralize](https://w3id.org/metpo/2000225) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete does not mineralize](https://w3id.org/metpo/2000225) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete does not mineralize](https://w3id.org/metpo/2000225) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15697,7 +15693,7 @@
 #### Added
 - ObjectProperty: [obsolete does not precipitate](https://w3id.org/metpo/2000235) 
 
-- [obsolete does not precipitate](https://w3id.org/metpo/2000235) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete does not precipitate](https://w3id.org/metpo/2000235) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete does not precipitate](https://w3id.org/metpo/2000235) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15709,7 +15705,7 @@
 #### Added
 - ObjectProperty: [obsolete does not solubilize](https://w3id.org/metpo/2000236) 
 
-- [obsolete does not solubilize](https://w3id.org/metpo/2000236) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete does not solubilize](https://w3id.org/metpo/2000236) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete does not solubilize](https://w3id.org/metpo/2000236) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15721,7 +15717,7 @@
 #### Added
 - ObjectProperty: [obsolete does not volatilize](https://w3id.org/metpo/2000237) 
 
-- [obsolete does not volatilize](https://w3id.org/metpo/2000237) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete does not volatilize](https://w3id.org/metpo/2000237) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete does not volatilize](https://w3id.org/metpo/2000237) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15733,7 +15729,7 @@
 #### Added
 - Class: [obsolete domain](https://w3id.org/metpo/1000094) 
 
-- [obsolete domain](https://w3id.org/metpo/1000094) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete domain](https://w3id.org/metpo/1000094) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete domain](https://w3id.org/metpo/1000094) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15747,7 +15743,7 @@
 #### Added
 - Class: [obsolete dormancy](https://w3id.org/metpo/1000095) 
 
-- [obsolete dormancy](https://w3id.org/metpo/1000095) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete dormancy](https://w3id.org/metpo/1000095) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete dormancy](https://w3id.org/metpo/1000095) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15761,7 +15757,7 @@
 #### Added
 - Class: [obsolete dormancy structure](https://w3id.org/metpo/1000096) 
 
-- [obsolete dormancy structure](https://w3id.org/metpo/1000096) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete dormancy structure](https://w3id.org/metpo/1000096) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete dormancy structure](https://w3id.org/metpo/1000096) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15775,7 +15771,7 @@
 #### Added
 - Class: [obsolete dumbbell](https://w3id.org/metpo/000220) 
 
-- [obsolete dumbbell](https://w3id.org/metpo/000220) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete dumbbell](https://w3id.org/metpo/000220) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete dumbbell](https://w3id.org/metpo/000220) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15789,9 +15785,9 @@
 #### Added
 - Class: [obsolete dumbbell-shaped cell](https://w3id.org/metpo/1000097) 
 
-- [obsolete dumbbell-shaped cell](https://w3id.org/metpo/1000097) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete dumbbell-shaped cell](https://w3id.org/metpo/1000097) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete dumbbell-shaped cell](https://w3id.org/metpo/1000097) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [dumbbell shaped](https://w3id.org/metpo/1000672) 
+- [obsolete dumbbell-shaped cell](https://w3id.org/metpo/1000097) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [dumbbell shaped](https://w3id.org/metpo/1000672) 
 
 - [obsolete dumbbell-shaped cell](https://w3id.org/metpo/1000097) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15805,7 +15801,7 @@
 #### Added
 - Class: [obsolete ecological niche](https://w3id.org/metpo/1000098) 
 
-- [obsolete ecological niche](https://w3id.org/metpo/1000098) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete ecological niche](https://w3id.org/metpo/1000098) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete ecological niche](https://w3id.org/metpo/1000098) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15819,9 +15815,9 @@
 #### Added
 - Class: [obsolete ecological process](https://w3id.org/metpo/1000099) 
 
-- [obsolete ecological process](https://w3id.org/metpo/1000099) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete ecological process](https://w3id.org/metpo/1000099) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete ecological process](https://w3id.org/metpo/1000099) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [biological process](https://w3id.org/metpo/1000630) 
+- [obsolete ecological process](https://w3id.org/metpo/1000099) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [biological process](https://w3id.org/metpo/1000630) 
 
 - [obsolete ecological process](https://w3id.org/metpo/1000099) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15835,7 +15831,7 @@
 #### Added
 - Class: [obsolete ecological trait](https://w3id.org/metpo/1000100) 
 
-- [obsolete ecological trait](https://w3id.org/metpo/1000100) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete ecological trait](https://w3id.org/metpo/1000100) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete ecological trait](https://w3id.org/metpo/1000100) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15849,7 +15845,7 @@
 #### Added
 - Class: [obsolete ectosymbiosis](https://w3id.org/metpo/1000101) 
 
-- [obsolete ectosymbiosis](https://w3id.org/metpo/1000101) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete ectosymbiosis](https://w3id.org/metpo/1000101) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete ectosymbiosis](https://w3id.org/metpo/1000101) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15863,7 +15859,7 @@
 #### Added
 - Class: [obsolete electron acceptor](https://w3id.org/metpo/1000102) 
 
-- [obsolete electron acceptor](https://w3id.org/metpo/1000102) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete electron acceptor](https://w3id.org/metpo/1000102) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete electron acceptor](https://w3id.org/metpo/1000102) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15877,7 +15873,7 @@
 #### Added
 - Class: [obsolete electron donor](https://w3id.org/metpo/1000103) 
 
-- [obsolete electron donor](https://w3id.org/metpo/1000103) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete electron donor](https://w3id.org/metpo/1000103) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete electron donor](https://w3id.org/metpo/1000103) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15891,9 +15887,9 @@
 #### Added
 - Class: [obsolete ellipsoidal](https://w3id.org/metpo/1000494) 
 
-- [obsolete ellipsoidal](https://w3id.org/metpo/1000494) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete ellipsoidal](https://w3id.org/metpo/1000494) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
-- [obsolete ellipsoidal](https://w3id.org/metpo/1000494) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [ellipsoidal](https://w3id.org/metpo/1000673) 
+- [obsolete ellipsoidal](https://w3id.org/metpo/1000494) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [ellipsoidal](https://w3id.org/metpo/1000673) 
 
 - [obsolete ellipsoidal](https://w3id.org/metpo/1000494) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15907,9 +15903,9 @@
 #### Added
 - Class: [obsolete ellipsoidal](https://w3id.org/metpo/000221) 
 
-- [obsolete ellipsoidal](https://w3id.org/metpo/000221) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete ellipsoidal](https://w3id.org/metpo/000221) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete ellipsoidal](https://w3id.org/metpo/000221) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [ellipsoidal](https://w3id.org/metpo/1000673) 
+- [obsolete ellipsoidal](https://w3id.org/metpo/000221) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [ellipsoidal](https://w3id.org/metpo/1000673) 
 
 - [obsolete ellipsoidal](https://w3id.org/metpo/000221) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15923,7 +15919,7 @@
 #### Added
 - Class: [obsolete endospore](https://w3id.org/metpo/1000104) 
 
-- [obsolete endospore](https://w3id.org/metpo/1000104) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete endospore](https://w3id.org/metpo/1000104) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete endospore](https://w3id.org/metpo/1000104) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15937,7 +15933,7 @@
 #### Added
 - Class: [obsolete endosymbiosis](https://w3id.org/metpo/1000105) 
 
-- [obsolete endosymbiosis](https://w3id.org/metpo/1000105) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete endosymbiosis](https://w3id.org/metpo/1000105) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete endosymbiosis](https://w3id.org/metpo/1000105) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15951,7 +15947,7 @@
 #### Added
 - Class: [obsolete energy metabolism process](https://w3id.org/metpo/1000106) 
 
-- [obsolete energy metabolism process](https://w3id.org/metpo/1000106) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete energy metabolism process](https://w3id.org/metpo/1000106) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete energy metabolism process](https://w3id.org/metpo/1000106) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15965,7 +15961,7 @@
 #### Added
 - Class: [obsolete enzyme activity](https://w3id.org/metpo/1000107) 
 
-- [obsolete enzyme activity](https://w3id.org/metpo/1000107) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete enzyme activity](https://w3id.org/metpo/1000107) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete enzyme activity](https://w3id.org/metpo/1000107) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15979,7 +15975,7 @@
 #### Added
 - Class: [obsolete epigenetic modification](https://w3id.org/metpo/1000108) 
 
-- [obsolete epigenetic modification](https://w3id.org/metpo/1000108) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete epigenetic modification](https://w3id.org/metpo/1000108) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete epigenetic modification](https://w3id.org/metpo/1000108) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -15993,7 +15989,7 @@
 #### Added
 - Class: [obsolete eurypiezic](https://w3id.org/metpo/1000415) 
 
-- [obsolete eurypiezic](https://w3id.org/metpo/1000415) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete eurypiezic](https://w3id.org/metpo/1000415) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete eurypiezic](https://w3id.org/metpo/1000415) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16007,7 +16003,7 @@
 #### Added
 - Class: [obsolete evolutionary process](https://w3id.org/metpo/1000109) 
 
-- [obsolete evolutionary process](https://w3id.org/metpo/1000109) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete evolutionary process](https://w3id.org/metpo/1000109) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete evolutionary process](https://w3id.org/metpo/1000109) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16021,7 +16017,7 @@
 #### Added
 - Class: [obsolete exospore](https://w3id.org/metpo/1000110) 
 
-- [obsolete exospore](https://w3id.org/metpo/1000110) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete exospore](https://w3id.org/metpo/1000110) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete exospore](https://w3id.org/metpo/1000110) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16035,7 +16031,7 @@
 #### Added
 - Class: [obsolete exponential phase](https://w3id.org/metpo/1000111) 
 
-- [obsolete exponential phase](https://w3id.org/metpo/1000111) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete exponential phase](https://w3id.org/metpo/1000111) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete exponential phase](https://w3id.org/metpo/1000111) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16049,7 +16045,7 @@
 #### Added
 - Class: [obsolete extracellular](https://w3id.org/metpo/1000112) 
 
-- [obsolete extracellular](https://w3id.org/metpo/1000112) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete extracellular](https://w3id.org/metpo/1000112) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete extracellular](https://w3id.org/metpo/1000112) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16063,7 +16059,7 @@
 #### Added
 - Class: [obsolete extracellular polysaccharide](https://w3id.org/metpo/1000113) 
 
-- [obsolete extracellular polysaccharide](https://w3id.org/metpo/1000113) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete extracellular polysaccharide](https://w3id.org/metpo/1000113) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete extracellular polysaccharide](https://w3id.org/metpo/1000113) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16077,7 +16073,7 @@
 #### Added
 - Class: [obsolete extreme acidophile](https://w3id.org/metpo/1000343) 
 
-- [obsolete extreme acidophile](https://w3id.org/metpo/1000343) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete extreme acidophile](https://w3id.org/metpo/1000343) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete extreme acidophile](https://w3id.org/metpo/1000343) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16091,7 +16087,7 @@
 #### Added
 - Class: [obsolete extreme alkaliphile](https://w3id.org/metpo/1000346) 
 
-- [obsolete extreme alkaliphile](https://w3id.org/metpo/1000346) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete extreme alkaliphile](https://w3id.org/metpo/1000346) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete extreme alkaliphile](https://w3id.org/metpo/1000346) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16105,9 +16101,9 @@
 #### Added
 - Class: [obsolete extreme halophile](https://w3id.org/metpo/1000114) 
 
-- [obsolete extreme halophile](https://w3id.org/metpo/1000114) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete extreme halophile](https://w3id.org/metpo/1000114) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete extreme halophile](https://w3id.org/metpo/1000114) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [extremely halophilic](https://w3id.org/metpo/1000628) 
+- [obsolete extreme halophile](https://w3id.org/metpo/1000114) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [extremely halophilic](https://w3id.org/metpo/1000628) 
 
 - [obsolete extreme halophile](https://w3id.org/metpo/1000114) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16121,9 +16117,9 @@
 #### Added
 - Class: [obsolete extreme hyperthermophile](https://w3id.org/metpo/1000339) 
 
-- [obsolete extreme hyperthermophile](https://w3id.org/metpo/1000339) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete extreme hyperthermophile](https://w3id.org/metpo/1000339) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
-- [obsolete extreme hyperthermophile](https://w3id.org/metpo/1000339) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [extreme hyperthermophilic](https://w3id.org/metpo/1000721) 
+- [obsolete extreme hyperthermophile](https://w3id.org/metpo/1000339) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [extreme hyperthermophilic](https://w3id.org/metpo/1000721) 
 
 - [obsolete extreme hyperthermophile](https://w3id.org/metpo/1000339) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16137,7 +16133,7 @@
 #### Added
 - Class: [obsolete extreme piezophile](https://w3id.org/metpo/1000413) 
 
-- [obsolete extreme piezophile](https://w3id.org/metpo/1000413) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete extreme piezophile](https://w3id.org/metpo/1000413) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete extreme piezophile](https://w3id.org/metpo/1000413) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16151,9 +16147,9 @@
 #### Added
 - Class: [obsolete extreme thermophile](https://w3id.org/metpo/1000338) 
 
-- [obsolete extreme thermophile](https://w3id.org/metpo/1000338) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete extreme thermophile](https://w3id.org/metpo/1000338) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
-- [obsolete extreme thermophile](https://w3id.org/metpo/1000338) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [extreme hyperthermophilic](https://w3id.org/metpo/1000721) 
+- [obsolete extreme thermophile](https://w3id.org/metpo/1000338) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [extreme hyperthermophilic](https://w3id.org/metpo/1000721) 
 
 - [obsolete extreme thermophile](https://w3id.org/metpo/1000338) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16167,7 +16163,7 @@
 #### Added
 - Class: [obsolete extremophile](https://w3id.org/metpo/1000115) 
 
-- [obsolete extremophile](https://w3id.org/metpo/1000115) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete extremophile](https://w3id.org/metpo/1000115) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete extremophile](https://w3id.org/metpo/1000115) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16181,7 +16177,7 @@
 #### Added
 - Class: [obsolete facultative](https://w3id.org/metpo/1000116) 
 
-- [obsolete facultative](https://w3id.org/metpo/1000116) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete facultative](https://w3id.org/metpo/1000116) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete facultative](https://w3id.org/metpo/1000116) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16195,9 +16191,9 @@
 #### Added
 - Class: [obsolete facultative acidophile](https://w3id.org/metpo/1000347) 
 
-- [obsolete facultative acidophile](https://w3id.org/metpo/1000347) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete facultative acidophile](https://w3id.org/metpo/1000347) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
-- [obsolete facultative acidophile](https://w3id.org/metpo/1000347) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [facultatively acidophilic](https://w3id.org/metpo/1003007) 
+- [obsolete facultative acidophile](https://w3id.org/metpo/1000347) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [facultatively acidophilic](https://w3id.org/metpo/1003007) 
 
 - [obsolete facultative acidophile](https://w3id.org/metpo/1000347) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16211,9 +16207,9 @@
 #### Added
 - Class: [obsolete facultative aerobe](https://w3id.org/metpo/1000349) 
 
-- [obsolete facultative aerobe](https://w3id.org/metpo/1000349) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete facultative aerobe](https://w3id.org/metpo/1000349) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
-- [obsolete facultative aerobe](https://w3id.org/metpo/1000349) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [facultatively aerobic](https://w3id.org/metpo/1000608) 
+- [obsolete facultative aerobe](https://w3id.org/metpo/1000349) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [facultatively aerobic](https://w3id.org/metpo/1000608) 
 
 - [obsolete facultative aerobe](https://w3id.org/metpo/1000349) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16227,9 +16223,9 @@
 #### Added
 - Class: [obsolete facultative anaerobe](https://w3id.org/metpo/1000117) 
 
-- [obsolete facultative anaerobe](https://w3id.org/metpo/1000117) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete facultative anaerobe](https://w3id.org/metpo/1000117) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete facultative anaerobe](https://w3id.org/metpo/1000117) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [facultatively anaerobic](https://w3id.org/metpo/1000605) 
+- [obsolete facultative anaerobe](https://w3id.org/metpo/1000117) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [facultatively anaerobic](https://w3id.org/metpo/1000605) 
 
 - [obsolete facultative anaerobe](https://w3id.org/metpo/1000117) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16243,7 +16239,7 @@
 #### Added
 - Class: [obsolete facultative barophile](https://w3id.org/metpo/1000408) 
 
-- [obsolete facultative barophile](https://w3id.org/metpo/1000408) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete facultative barophile](https://w3id.org/metpo/1000408) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete facultative barophile](https://w3id.org/metpo/1000408) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16257,9 +16253,9 @@
 #### Added
 - Class: [obsolete facultative psychrophile](https://w3id.org/metpo/1000529) 
 
-- [obsolete facultative psychrophile](https://w3id.org/metpo/1000529) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete facultative psychrophile](https://w3id.org/metpo/1000529) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
-- [obsolete facultative psychrophile](https://w3id.org/metpo/1000529) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [facultative psychrophilic](https://w3id.org/metpo/1000720) 
+- [obsolete facultative psychrophile](https://w3id.org/metpo/1000529) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [facultative psychrophilic](https://w3id.org/metpo/1000720) 
 
 - [obsolete facultative psychrophile](https://w3id.org/metpo/1000529) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16273,7 +16269,7 @@
 #### Added
 - Class: [obsolete family](https://w3id.org/metpo/1000118) 
 
-- [obsolete family](https://w3id.org/metpo/1000118) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete family](https://w3id.org/metpo/1000118) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete family](https://w3id.org/metpo/1000118) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16287,7 +16283,7 @@
 #### Added
 - Class: [obsolete fastidious](https://w3id.org/metpo/1000119) 
 
-- [obsolete fastidious](https://w3id.org/metpo/1000119) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete fastidious](https://w3id.org/metpo/1000119) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete fastidious](https://w3id.org/metpo/1000119) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16301,9 +16297,9 @@
 #### Added
 - Class: [obsolete fermentation](https://w3id.org/metpo/1000120) 
 
-- [obsolete fermentation](https://w3id.org/metpo/1000120) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete fermentation](https://w3id.org/metpo/1000120) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete fermentation](https://w3id.org/metpo/1000120) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [Fermentation](https://w3id.org/metpo/1002005) 
+- [obsolete fermentation](https://w3id.org/metpo/1000120) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [Fermentation](https://w3id.org/metpo/1002005) 
 
 - [obsolete fermentation](https://w3id.org/metpo/1000120) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16317,7 +16313,7 @@
 #### Added
 - Class: [obsolete filament](https://w3id.org/metpo/000222) 
 
-- [obsolete filament](https://w3id.org/metpo/000222) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete filament](https://w3id.org/metpo/000222) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete filament](https://w3id.org/metpo/000222) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16331,7 +16327,7 @@
 #### Added
 - Class: [obsolete filament](https://w3id.org/metpo/1000495) 
 
-- [obsolete filament](https://w3id.org/metpo/1000495) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete filament](https://w3id.org/metpo/1000495) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete filament](https://w3id.org/metpo/1000495) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16345,7 +16341,7 @@
 #### Added
 - Class: [obsolete filamentous](https://w3id.org/metpo/1000121) 
 
-- [obsolete filamentous](https://w3id.org/metpo/1000121) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete filamentous](https://w3id.org/metpo/1000121) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete filamentous](https://w3id.org/metpo/1000121) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16359,7 +16355,7 @@
 #### Added
 - Class: [obsolete fimbriae](https://w3id.org/metpo/1000122) 
 
-- [obsolete fimbriae](https://w3id.org/metpo/1000122) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete fimbriae](https://w3id.org/metpo/1000122) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete fimbriae](https://w3id.org/metpo/1000122) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16373,7 +16369,7 @@
 #### Added
 - ObjectProperty: [obsolete fixes](https://w3id.org/metpo/2000203) 
 
-- [obsolete fixes](https://w3id.org/metpo/2000203) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete fixes](https://w3id.org/metpo/2000203) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete fixes](https://w3id.org/metpo/2000203) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16385,9 +16381,9 @@
 #### Added
 - Class: [obsolete flagellated](https://w3id.org/metpo/1000381) 
 
-- [obsolete flagellated](https://w3id.org/metpo/1000381) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete flagellated](https://w3id.org/metpo/1000381) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
-- [obsolete flagellated](https://w3id.org/metpo/1000381) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [flagellated](https://w3id.org/metpo/1000704) 
+- [obsolete flagellated](https://w3id.org/metpo/1000381) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [flagellated](https://w3id.org/metpo/1000704) 
 
 - [obsolete flagellated](https://w3id.org/metpo/1000381) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16401,7 +16397,7 @@
 #### Added
 - Class: [obsolete flagellum](https://w3id.org/metpo/1000123) 
 
-- [obsolete flagellum](https://w3id.org/metpo/1000123) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete flagellum](https://w3id.org/metpo/1000123) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete flagellum](https://w3id.org/metpo/1000123) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16415,7 +16411,7 @@
 #### Added
 - Class: [obsolete flask](https://w3id.org/metpo/000223) 
 
-- [obsolete flask](https://w3id.org/metpo/000223) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete flask](https://w3id.org/metpo/000223) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete flask](https://w3id.org/metpo/000223) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16429,7 +16425,7 @@
 #### Added
 - Class: [obsolete flask-shaped cell](https://w3id.org/metpo/1000124) 
 
-- [obsolete flask-shaped cell](https://w3id.org/metpo/1000124) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete flask-shaped cell](https://w3id.org/metpo/1000124) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete flask-shaped cell](https://w3id.org/metpo/1000124) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16443,7 +16439,7 @@
 #### Added
 - Class: [obsolete fungal spore](https://w3id.org/metpo/1000125) 
 
-- [obsolete fungal spore](https://w3id.org/metpo/1000125) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete fungal spore](https://w3id.org/metpo/1000125) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete fungal spore](https://w3id.org/metpo/1000125) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16457,7 +16453,7 @@
 #### Added
 - Class: [obsolete fusiform](https://w3id.org/metpo/1000496) 
 
-- [obsolete fusiform](https://w3id.org/metpo/1000496) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete fusiform](https://w3id.org/metpo/1000496) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete fusiform](https://w3id.org/metpo/1000496) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16471,7 +16467,7 @@
 #### Added
 - Class: [obsolete fusiform](https://w3id.org/metpo/000224) 
 
-- [obsolete fusiform](https://w3id.org/metpo/000224) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete fusiform](https://w3id.org/metpo/000224) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete fusiform](https://w3id.org/metpo/000224) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16485,7 +16481,7 @@
 #### Added
 - Class: [obsolete gas vesicle](https://w3id.org/metpo/1000126) 
 
-- [obsolete gas vesicle](https://w3id.org/metpo/1000126) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete gas vesicle](https://w3id.org/metpo/1000126) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete gas vesicle](https://w3id.org/metpo/1000126) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16499,7 +16495,7 @@
 #### Added
 - Class: [obsolete gemmae](https://w3id.org/metpo/1000394) 
 
-- [obsolete gemmae](https://w3id.org/metpo/1000394) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete gemmae](https://w3id.org/metpo/1000394) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete gemmae](https://w3id.org/metpo/1000394) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16513,7 +16509,7 @@
 #### Added
 - Class: [obsolete generation time](https://w3id.org/metpo/1000132) 
 
-- [obsolete generation time](https://w3id.org/metpo/1000132) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete generation time](https://w3id.org/metpo/1000132) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete generation time](https://w3id.org/metpo/1000132) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16527,7 +16523,7 @@
 #### Added
 - Class: [obsolete genetic element](https://w3id.org/metpo/1000133) 
 
-- [obsolete genetic element](https://w3id.org/metpo/1000133) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete genetic element](https://w3id.org/metpo/1000133) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete genetic element](https://w3id.org/metpo/1000133) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16541,7 +16537,7 @@
 #### Added
 - Class: [obsolete genetic exchange](https://w3id.org/metpo/1000134) 
 
-- [obsolete genetic exchange](https://w3id.org/metpo/1000134) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete genetic exchange](https://w3id.org/metpo/1000134) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete genetic exchange](https://w3id.org/metpo/1000134) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16555,7 +16551,7 @@
 #### Added
 - Class: [obsolete genetic process](https://w3id.org/metpo/1000135) 
 
-- [obsolete genetic process](https://w3id.org/metpo/1000135) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete genetic process](https://w3id.org/metpo/1000135) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete genetic process](https://w3id.org/metpo/1000135) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16569,7 +16565,7 @@
 #### Added
 - Class: [obsolete genome size](https://w3id.org/metpo/1000136) 
 
-- [obsolete genome size](https://w3id.org/metpo/1000136) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete genome size](https://w3id.org/metpo/1000136) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete genome size](https://w3id.org/metpo/1000136) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16583,7 +16579,7 @@
 #### Added
 - Class: [obsolete genomic element](https://w3id.org/metpo/1000137) 
 
-- [obsolete genomic element](https://w3id.org/metpo/1000137) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete genomic element](https://w3id.org/metpo/1000137) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete genomic element](https://w3id.org/metpo/1000137) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16597,7 +16593,7 @@
 #### Added
 - Class: [obsolete genomic island](https://w3id.org/metpo/1000138) 
 
-- [obsolete genomic island](https://w3id.org/metpo/1000138) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete genomic island](https://w3id.org/metpo/1000138) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete genomic island](https://w3id.org/metpo/1000138) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16611,7 +16607,7 @@
 #### Added
 - Class: [obsolete genomic trait](https://w3id.org/metpo/1000139) 
 
-- [obsolete genomic trait](https://w3id.org/metpo/1000139) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete genomic trait](https://w3id.org/metpo/1000139) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete genomic trait](https://w3id.org/metpo/1000139) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16625,7 +16621,7 @@
 #### Added
 - Class: [obsolete genus](https://w3id.org/metpo/1000140) 
 
-- [obsolete genus](https://w3id.org/metpo/1000140) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete genus](https://w3id.org/metpo/1000140) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete genus](https://w3id.org/metpo/1000140) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16639,9 +16635,9 @@
 #### Added
 - Class: [obsolete gliding](https://w3id.org/metpo/1000386) 
 
-- [obsolete gliding](https://w3id.org/metpo/1000386) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete gliding](https://w3id.org/metpo/1000386) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
-- [obsolete gliding](https://w3id.org/metpo/1000386) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [gliding](https://w3id.org/metpo/1000706) 
+- [obsolete gliding](https://w3id.org/metpo/1000386) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [gliding](https://w3id.org/metpo/1000706) 
 
 - [obsolete gliding](https://w3id.org/metpo/1000386) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16655,7 +16651,7 @@
 #### Added
 - Class: [obsolete gliding motility](https://w3id.org/metpo/1000141) 
 
-- [obsolete gliding motility](https://w3id.org/metpo/1000141) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete gliding motility](https://w3id.org/metpo/1000141) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete gliding motility](https://w3id.org/metpo/1000141) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16669,7 +16665,7 @@
 #### Added
 - Class: [obsolete global regulator](https://w3id.org/metpo/1000142) 
 
-- [obsolete global regulator](https://w3id.org/metpo/1000142) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete global regulator](https://w3id.org/metpo/1000142) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete global regulator](https://w3id.org/metpo/1000142) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16683,7 +16679,7 @@
 #### Added
 - Class: [obsolete growth NaCl observation](https://w3id.org/metpo/1001007) 
 
-- [obsolete growth NaCl observation](https://w3id.org/metpo/1001007) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete growth NaCl observation](https://w3id.org/metpo/1001007) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete growth NaCl observation](https://w3id.org/metpo/1001007) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16697,7 +16693,7 @@
 #### Added
 - Class: [obsolete growth characteristic](https://w3id.org/metpo/1000146) 
 
-- [obsolete growth characteristic](https://w3id.org/metpo/1000146) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete growth characteristic](https://w3id.org/metpo/1000146) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete growth characteristic](https://w3id.org/metpo/1000146) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16711,7 +16707,7 @@
 #### Added
 - Class: [obsolete growth conditions constraints](https://w3id.org/metpo/1000147) 
 
-- [obsolete growth conditions constraints](https://w3id.org/metpo/1000147) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete growth conditions constraints](https://w3id.org/metpo/1000147) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete growth conditions constraints](https://w3id.org/metpo/1000147) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16725,7 +16721,7 @@
 #### Added
 - Class: [obsolete growth oxygen observation](https://w3id.org/metpo/1001017) 
 
-- [obsolete growth oxygen observation](https://w3id.org/metpo/1001017) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete growth oxygen observation](https://w3id.org/metpo/1001017) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete growth oxygen observation](https://w3id.org/metpo/1001017) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16739,7 +16735,7 @@
 #### Added
 - Class: [obsolete growth pH observation](https://w3id.org/metpo/1001012) 
 
-- [obsolete growth pH observation](https://w3id.org/metpo/1001012) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete growth pH observation](https://w3id.org/metpo/1001012) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete growth pH observation](https://w3id.org/metpo/1001012) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16753,7 +16749,7 @@
 #### Added
 - Class: [obsolete growth pattern](https://w3id.org/metpo/1000148) 
 
-- [obsolete growth pattern](https://w3id.org/metpo/1000148) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete growth pattern](https://w3id.org/metpo/1000148) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete growth pattern](https://w3id.org/metpo/1000148) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16767,7 +16763,7 @@
 #### Added
 - Class: [obsolete growth rate](https://w3id.org/metpo/1000149) 
 
-- [obsolete growth rate](https://w3id.org/metpo/1000149) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete growth rate](https://w3id.org/metpo/1000149) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete growth rate](https://w3id.org/metpo/1000149) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16781,7 +16777,7 @@
 #### Added
 - Class: [obsolete growth temperature observation](https://w3id.org/metpo/1001002) 
 
-- [obsolete growth temperature observation](https://w3id.org/metpo/1001002) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete growth temperature observation](https://w3id.org/metpo/1001002) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete growth temperature observation](https://w3id.org/metpo/1001002) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16795,7 +16791,7 @@
 #### Added
 - Class: [obsolete habitat](https://w3id.org/metpo/1000150) 
 
-- [obsolete habitat](https://w3id.org/metpo/1000150) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete habitat](https://w3id.org/metpo/1000150) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete habitat](https://w3id.org/metpo/1000150) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16809,9 +16805,9 @@
 #### Added
 - Class: [obsolete haloalkaliphile](https://w3id.org/metpo/1000342) 
 
-- [obsolete haloalkaliphile](https://w3id.org/metpo/1000342) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete haloalkaliphile](https://w3id.org/metpo/1000342) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
-- [obsolete haloalkaliphile](https://w3id.org/metpo/1000342) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [haloalkaliphilic](https://w3id.org/metpo/1000621) 
+- [obsolete haloalkaliphile](https://w3id.org/metpo/1000342) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [haloalkaliphilic](https://w3id.org/metpo/1000621) 
 
 - [obsolete haloalkaliphile](https://w3id.org/metpo/1000342) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16825,9 +16821,9 @@
 #### Added
 - Class: [obsolete halophile](https://w3id.org/metpo/1000151) 
 
-- [obsolete halophile](https://w3id.org/metpo/1000151) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete halophile](https://w3id.org/metpo/1000151) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete halophile](https://w3id.org/metpo/1000151) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [halophilic](https://w3id.org/metpo/1000620) 
+- [obsolete halophile](https://w3id.org/metpo/1000151) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [halophilic](https://w3id.org/metpo/1000620) 
 
 - [obsolete halophile](https://w3id.org/metpo/1000151) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16841,9 +16837,9 @@
 #### Added
 - Class: [obsolete halotolerant](https://w3id.org/metpo/1000152) 
 
-- [obsolete halotolerant](https://w3id.org/metpo/1000152) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete halotolerant](https://w3id.org/metpo/1000152) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete halotolerant](https://w3id.org/metpo/1000152) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [halotolerant](https://w3id.org/metpo/1000622) 
+- [obsolete halotolerant](https://w3id.org/metpo/1000152) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [halotolerant](https://w3id.org/metpo/1000622) 
 
 - [obsolete halotolerant](https://w3id.org/metpo/1000152) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16857,7 +16853,7 @@
 #### Added
 - ObjectProperty: [obsolete has NaCl delta observation](https://w3id.org/metpo/2000510) 
 
-- [obsolete has NaCl delta observation](https://w3id.org/metpo/2000510) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete has NaCl delta observation](https://w3id.org/metpo/2000510) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete has NaCl delta observation](https://w3id.org/metpo/2000510) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16869,7 +16865,7 @@
 #### Added
 - ObjectProperty: [obsolete has NaCl observation](https://w3id.org/metpo/2000506) 
 
-- [obsolete has NaCl observation](https://w3id.org/metpo/2000506) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete has NaCl observation](https://w3id.org/metpo/2000506) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete has NaCl observation](https://w3id.org/metpo/2000506) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16881,7 +16877,7 @@
 #### Added
 - ObjectProperty: [obsolete has culture pH observation](https://w3id.org/metpo/2000505) 
 
-- [obsolete has culture pH observation](https://w3id.org/metpo/2000505) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete has culture pH observation](https://w3id.org/metpo/2000505) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete has culture pH observation](https://w3id.org/metpo/2000505) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16893,7 +16889,7 @@
 #### Added
 - ObjectProperty: [obsolete has culture temperature observation](https://w3id.org/metpo/2000057) 
 
-- [obsolete has culture temperature observation](https://w3id.org/metpo/2000057) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete has culture temperature observation](https://w3id.org/metpo/2000057) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete has culture temperature observation](https://w3id.org/metpo/2000057) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16905,7 +16901,7 @@
 #### Added
 - ObjectProperty: [obsolete has growth NaCl observation](https://w3id.org/metpo/2000508) 
 
-- [obsolete has growth NaCl observation](https://w3id.org/metpo/2000508) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete has growth NaCl observation](https://w3id.org/metpo/2000508) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete has growth NaCl observation](https://w3id.org/metpo/2000508) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16917,7 +16913,7 @@
 #### Added
 - ObjectProperty: [obsolete has growth oxygen observation](https://w3id.org/metpo/2000514) 
 
-- [obsolete has growth oxygen observation](https://w3id.org/metpo/2000514) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete has growth oxygen observation](https://w3id.org/metpo/2000514) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete has growth oxygen observation](https://w3id.org/metpo/2000514) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16929,7 +16925,7 @@
 #### Added
 - ObjectProperty: [obsolete has growth pH observation](https://w3id.org/metpo/2000502) 
 
-- [obsolete has growth pH observation](https://w3id.org/metpo/2000502) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete has growth pH observation](https://w3id.org/metpo/2000502) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete has growth pH observation](https://w3id.org/metpo/2000502) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16941,7 +16937,7 @@
 #### Added
 - ObjectProperty: [obsolete has growth temperature observation](https://w3id.org/metpo/2000054) 
 
-- [obsolete has growth temperature observation](https://w3id.org/metpo/2000054) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete has growth temperature observation](https://w3id.org/metpo/2000054) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete has growth temperature observation](https://w3id.org/metpo/2000054) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16953,7 +16949,7 @@
 #### Added
 - DataProperty: [obsolete has maximum observed value](https://w3id.org/metpo/2000060) 
 
-- [obsolete has maximum observed value](https://w3id.org/metpo/2000060) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete has maximum observed value](https://w3id.org/metpo/2000060) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete has maximum observed value](https://w3id.org/metpo/2000060) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16965,7 +16961,7 @@
 #### Added
 - DataProperty: [obsolete has minimum observed value](https://w3id.org/metpo/2000059) 
 
-- [obsolete has minimum observed value](https://w3id.org/metpo/2000059) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete has minimum observed value](https://w3id.org/metpo/2000059) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete has minimum observed value](https://w3id.org/metpo/2000059) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16977,7 +16973,7 @@
 #### Added
 - ObjectProperty: [obsolete has observation](https://w3id.org/metpo/2000511) 
 
-- [obsolete has observation](https://w3id.org/metpo/2000511) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete has observation](https://w3id.org/metpo/2000511) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete has observation](https://w3id.org/metpo/2000511) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -16989,7 +16985,7 @@
 #### Added
 - DataProperty: [obsolete has observed spot value](https://w3id.org/metpo/2000058) 
 
-- [obsolete has observed spot value](https://w3id.org/metpo/2000058) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete has observed spot value](https://w3id.org/metpo/2000058) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete has observed spot value](https://w3id.org/metpo/2000058) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17001,7 +16997,7 @@
 #### Added
 - ObjectProperty: [obsolete has optimum NaCl observation](https://w3id.org/metpo/2000507) 
 
-- [obsolete has optimum NaCl observation](https://w3id.org/metpo/2000507) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete has optimum NaCl observation](https://w3id.org/metpo/2000507) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete has optimum NaCl observation](https://w3id.org/metpo/2000507) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17013,7 +17009,7 @@
 #### Added
 - ObjectProperty: [obsolete has optimum oxygen observation](https://w3id.org/metpo/2000513) 
 
-- [obsolete has optimum oxygen observation](https://w3id.org/metpo/2000513) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete has optimum oxygen observation](https://w3id.org/metpo/2000513) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete has optimum oxygen observation](https://w3id.org/metpo/2000513) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17025,7 +17021,7 @@
 #### Added
 - ObjectProperty: [obsolete has optimum pH observation](https://w3id.org/metpo/2000501) 
 
-- [obsolete has optimum pH observation](https://w3id.org/metpo/2000501) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete has optimum pH observation](https://w3id.org/metpo/2000501) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete has optimum pH observation](https://w3id.org/metpo/2000501) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17037,7 +17033,7 @@
 #### Added
 - ObjectProperty: [obsolete has optimum temperature observation](https://w3id.org/metpo/2000053) 
 
-- [obsolete has optimum temperature observation](https://w3id.org/metpo/2000053) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete has optimum temperature observation](https://w3id.org/metpo/2000053) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete has optimum temperature observation](https://w3id.org/metpo/2000053) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17049,7 +17045,7 @@
 #### Added
 - ObjectProperty: [obsolete has oxygen delta observation](https://w3id.org/metpo/2000516) 
 
-- [obsolete has oxygen delta observation](https://w3id.org/metpo/2000516) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete has oxygen delta observation](https://w3id.org/metpo/2000516) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete has oxygen delta observation](https://w3id.org/metpo/2000516) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17061,7 +17057,7 @@
 #### Added
 - ObjectProperty: [obsolete has oxygen observation](https://w3id.org/metpo/2000512) 
 
-- [obsolete has oxygen observation](https://w3id.org/metpo/2000512) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete has oxygen observation](https://w3id.org/metpo/2000512) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete has oxygen observation](https://w3id.org/metpo/2000512) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17073,7 +17069,7 @@
 #### Added
 - ObjectProperty: [obsolete has pH delta observation](https://w3id.org/metpo/2000504) 
 
-- [obsolete has pH delta observation](https://w3id.org/metpo/2000504) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete has pH delta observation](https://w3id.org/metpo/2000504) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete has pH delta observation](https://w3id.org/metpo/2000504) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17085,7 +17081,7 @@
 #### Added
 - ObjectProperty: [obsolete has pH observation](https://w3id.org/metpo/2000239) 
 
-- [obsolete has pH observation](https://w3id.org/metpo/2000239) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete has pH observation](https://w3id.org/metpo/2000239) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete has pH observation](https://w3id.org/metpo/2000239) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17097,7 +17093,7 @@
 #### Added
 - ObjectProperty: [obsolete has range NaCl observation](https://w3id.org/metpo/2000509) 
 
-- [obsolete has range NaCl observation](https://w3id.org/metpo/2000509) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete has range NaCl observation](https://w3id.org/metpo/2000509) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete has range NaCl observation](https://w3id.org/metpo/2000509) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17109,7 +17105,7 @@
 #### Added
 - ObjectProperty: [obsolete has range oxygen observation](https://w3id.org/metpo/2000515) 
 
-- [obsolete has range oxygen observation](https://w3id.org/metpo/2000515) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete has range oxygen observation](https://w3id.org/metpo/2000515) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete has range oxygen observation](https://w3id.org/metpo/2000515) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17121,7 +17117,7 @@
 #### Added
 - ObjectProperty: [obsolete has range pH observation](https://w3id.org/metpo/2000503) 
 
-- [obsolete has range pH observation](https://w3id.org/metpo/2000503) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete has range pH observation](https://w3id.org/metpo/2000503) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete has range pH observation](https://w3id.org/metpo/2000503) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17133,7 +17129,7 @@
 #### Added
 - ObjectProperty: [obsolete has range temperature observation](https://w3id.org/metpo/2000055) 
 
-- [obsolete has range temperature observation](https://w3id.org/metpo/2000055) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete has range temperature observation](https://w3id.org/metpo/2000055) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete has range temperature observation](https://w3id.org/metpo/2000055) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17145,7 +17141,7 @@
 #### Added
 - ObjectProperty: [obsolete has susceptibility profile](https://w3id.org/metpo/2000000) 
 
-- [obsolete has susceptibility profile](https://w3id.org/metpo/2000000) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete has susceptibility profile](https://w3id.org/metpo/2000000) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete has susceptibility profile](https://w3id.org/metpo/2000000) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17157,7 +17153,7 @@
 #### Added
 - ObjectProperty: [obsolete has temperature delta observation](https://w3id.org/metpo/2000056) 
 
-- [obsolete has temperature delta observation](https://w3id.org/metpo/2000056) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete has temperature delta observation](https://w3id.org/metpo/2000056) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete has temperature delta observation](https://w3id.org/metpo/2000056) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17169,7 +17165,7 @@
 #### Added
 - ObjectProperty: [obsolete has temperature observation](https://w3id.org/metpo/2000052) 
 
-- [obsolete has temperature observation](https://w3id.org/metpo/2000052) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete has temperature observation](https://w3id.org/metpo/2000052) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete has temperature observation](https://w3id.org/metpo/2000052) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17181,7 +17177,7 @@
 #### Added
 - DataProperty: [obsolete has value comments](https://w3id.org/metpo/2000061) 
 
-- [obsolete has value comments](https://w3id.org/metpo/2000061) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete has value comments](https://w3id.org/metpo/2000061) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete has value comments](https://w3id.org/metpo/2000061) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17193,7 +17189,7 @@
 #### Added
 - Class: [obsolete heat shock protein](https://w3id.org/metpo/1000153) 
 
-- [obsolete heat shock protein](https://w3id.org/metpo/1000153) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete heat shock protein](https://w3id.org/metpo/1000153) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete heat shock protein](https://w3id.org/metpo/1000153) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17207,7 +17203,7 @@
 #### Added
 - Class: [obsolete heat shock response](https://w3id.org/metpo/1000154) 
 
-- [obsolete heat shock response](https://w3id.org/metpo/1000154) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete heat shock response](https://w3id.org/metpo/1000154) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete heat shock response](https://w3id.org/metpo/1000154) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17221,7 +17217,7 @@
 #### Added
 - Class: [obsolete helical](https://w3id.org/metpo/1000497) 
 
-- [obsolete helical](https://w3id.org/metpo/1000497) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete helical](https://w3id.org/metpo/1000497) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete helical](https://w3id.org/metpo/1000497) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17235,7 +17231,7 @@
 #### Added
 - Class: [obsolete helical](https://w3id.org/metpo/000225) 
 
-- [obsolete helical](https://w3id.org/metpo/000225) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete helical](https://w3id.org/metpo/000225) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete helical](https://w3id.org/metpo/000225) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17249,9 +17245,9 @@
 #### Added
 - Class: [obsolete hemolysis](https://w3id.org/metpo/1000155) 
 
-- [obsolete hemolysis](https://w3id.org/metpo/1000155) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete hemolysis](https://w3id.org/metpo/1000155) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete hemolysis](https://w3id.org/metpo/1000155) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [hemolysis](https://w3id.org/metpo/1005025) 
+- [obsolete hemolysis](https://w3id.org/metpo/1000155) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [hemolysis](https://w3id.org/metpo/1005025) 
 
 - [obsolete hemolysis](https://w3id.org/metpo/1000155) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17265,7 +17261,7 @@
 #### Added
 - Class: [obsolete heterocyst](https://w3id.org/metpo/1000156) 
 
-- [obsolete heterocyst](https://w3id.org/metpo/1000156) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete heterocyst](https://w3id.org/metpo/1000156) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete heterocyst](https://w3id.org/metpo/1000156) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17279,9 +17275,9 @@
 #### Added
 - Class: [obsolete heterotroph](https://w3id.org/metpo/1000157) 
 
-- [obsolete heterotroph](https://w3id.org/metpo/1000157) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete heterotroph](https://w3id.org/metpo/1000157) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete heterotroph](https://w3id.org/metpo/1000157) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [heterotrophic](https://w3id.org/metpo/1000644) 
+- [obsolete heterotroph](https://w3id.org/metpo/1000157) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [heterotrophic](https://w3id.org/metpo/1000644) 
 
 - [obsolete heterotroph](https://w3id.org/metpo/1000157) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17295,7 +17291,7 @@
 #### Added
 - Class: [obsolete heterotrophy](https://w3id.org/metpo/0001012) 
 
-- [obsolete heterotrophy](https://w3id.org/metpo/0001012) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete heterotrophy](https://w3id.org/metpo/0001012) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete heterotrophy](https://w3id.org/metpo/0001012) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17309,9 +17305,9 @@
 #### Added
 - Class: [obsolete high GC content](https://w3id.org/metpo/1000128) 
 
-- [obsolete high GC content](https://w3id.org/metpo/1000128) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete high GC content](https://w3id.org/metpo/1000128) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete high GC content](https://w3id.org/metpo/1000128) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [GC content](https://w3id.org/metpo/1000127) 
+- [obsolete high GC content](https://w3id.org/metpo/1000128) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [GC content](https://w3id.org/metpo/1000127) 
 
 - [obsolete high GC content](https://w3id.org/metpo/1000128) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17325,7 +17321,7 @@
 #### Added
 - Class: [obsolete holdfast](https://w3id.org/metpo/1000158) 
 
-- [obsolete holdfast](https://w3id.org/metpo/1000158) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete holdfast](https://w3id.org/metpo/1000158) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete holdfast](https://w3id.org/metpo/1000158) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17339,7 +17335,7 @@
 #### Added
 - Class: [obsolete horizontal gene transfer](https://w3id.org/metpo/1000159) 
 
-- [obsolete horizontal gene transfer](https://w3id.org/metpo/1000159) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete horizontal gene transfer](https://w3id.org/metpo/1000159) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete horizontal gene transfer](https://w3id.org/metpo/1000159) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17353,7 +17349,7 @@
 #### Added
 - Class: [obsolete hydrogen oxidizer](https://w3id.org/metpo/1000373) 
 
-- [obsolete hydrogen oxidizer](https://w3id.org/metpo/1000373) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete hydrogen oxidizer](https://w3id.org/metpo/1000373) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete hydrogen oxidizer](https://w3id.org/metpo/1000373) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17367,7 +17363,7 @@
 #### Added
 - Class: [obsolete hydrogen producer](https://w3id.org/metpo/1000374) 
 
-- [obsolete hydrogen producer](https://w3id.org/metpo/1000374) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete hydrogen producer](https://w3id.org/metpo/1000374) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete hydrogen producer](https://w3id.org/metpo/1000374) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17381,7 +17377,7 @@
 #### Added
 - Class: [obsolete hydrogen-oxidizing](https://w3id.org/metpo/1000645) 
 
-- [obsolete hydrogen-oxidizing](https://w3id.org/metpo/1000645) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete hydrogen-oxidizing](https://w3id.org/metpo/1000645) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete hydrogen-oxidizing](https://w3id.org/metpo/1000645) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17395,9 +17391,9 @@
 #### Added
 - Class: [obsolete hydrogenotroph](https://w3id.org/metpo/1000372) 
 
-- [obsolete hydrogenotroph](https://w3id.org/metpo/1000372) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete hydrogenotroph](https://w3id.org/metpo/1000372) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
-- [obsolete hydrogenotroph](https://w3id.org/metpo/1000372) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [hydrogenotrophic](https://w3id.org/metpo/1000646) 
+- [obsolete hydrogenotroph](https://w3id.org/metpo/1000372) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [hydrogenotrophic](https://w3id.org/metpo/1000646) 
 
 - [obsolete hydrogenotroph](https://w3id.org/metpo/1000372) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17411,7 +17407,7 @@
 #### Added
 - Class: [obsolete hydrolase](https://w3id.org/metpo/1000160) 
 
-- [obsolete hydrolase](https://w3id.org/metpo/1000160) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete hydrolase](https://w3id.org/metpo/1000160) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete hydrolase](https://w3id.org/metpo/1000160) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17425,7 +17421,7 @@
 #### Added
 - Class: [obsolete hyperbarophile](https://w3id.org/metpo/1000409) 
 
-- [obsolete hyperbarophile](https://w3id.org/metpo/1000409) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete hyperbarophile](https://w3id.org/metpo/1000409) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete hyperbarophile](https://w3id.org/metpo/1000409) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17439,9 +17435,9 @@
 #### Added
 - Class: [obsolete hyperthermophile](https://w3id.org/metpo/1000161) 
 
-- [obsolete hyperthermophile](https://w3id.org/metpo/1000161) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete hyperthermophile](https://w3id.org/metpo/1000161) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete hyperthermophile](https://w3id.org/metpo/1000161) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [hyperthermophilic](https://w3id.org/metpo/1000617) 
+- [obsolete hyperthermophile](https://w3id.org/metpo/1000161) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [hyperthermophilic](https://w3id.org/metpo/1000617) 
 
 - [obsolete hyperthermophile](https://w3id.org/metpo/1000161) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17455,7 +17451,7 @@
 #### Added
 - Class: [obsolete hypnospores](https://w3id.org/metpo/1000393) 
 
-- [obsolete hypnospores](https://w3id.org/metpo/1000393) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete hypnospores](https://w3id.org/metpo/1000393) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete hypnospores](https://w3id.org/metpo/1000393) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17469,7 +17465,7 @@
 #### Added
 - Class: [obsolete hypobarophile](https://w3id.org/metpo/1000410) 
 
-- [obsolete hypobarophile](https://w3id.org/metpo/1000410) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete hypobarophile](https://w3id.org/metpo/1000410) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete hypobarophile](https://w3id.org/metpo/1000410) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17483,7 +17479,7 @@
 #### Added
 - Class: [obsolete inclusion body](https://w3id.org/metpo/1000162) 
 
-- [obsolete inclusion body](https://w3id.org/metpo/1000162) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete inclusion body](https://w3id.org/metpo/1000162) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete inclusion body](https://w3id.org/metpo/1000162) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17497,7 +17493,7 @@
 #### Added
 - Class: [obsolete infection](https://w3id.org/metpo/1000163) 
 
-- [obsolete infection](https://w3id.org/metpo/1000163) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete infection](https://w3id.org/metpo/1000163) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete infection](https://w3id.org/metpo/1000163) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17511,7 +17507,7 @@
 #### Added
 - Class: [obsolete interaction](https://w3id.org/metpo/1000164) 
 
-- [obsolete interaction](https://w3id.org/metpo/1000164) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete interaction](https://w3id.org/metpo/1000164) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete interaction](https://w3id.org/metpo/1000164) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17525,7 +17521,7 @@
 #### Added
 - Class: [obsolete interaction with a phage](https://w3id.org/metpo/1000165) 
 
-- [obsolete interaction with a phage](https://w3id.org/metpo/1000165) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete interaction with a phage](https://w3id.org/metpo/1000165) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete interaction with a phage](https://w3id.org/metpo/1000165) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17539,7 +17535,7 @@
 #### Added
 - Class: [obsolete interaction with an environment](https://w3id.org/metpo/1000166) 
 
-- [obsolete interaction with an environment](https://w3id.org/metpo/1000166) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete interaction with an environment](https://w3id.org/metpo/1000166) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete interaction with an environment](https://w3id.org/metpo/1000166) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17553,7 +17549,7 @@
 #### Added
 - Class: [obsolete interaction with host](https://w3id.org/metpo/1000167) 
 
-- [obsolete interaction with host](https://w3id.org/metpo/1000167) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete interaction with host](https://w3id.org/metpo/1000167) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete interaction with host](https://w3id.org/metpo/1000167) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17567,7 +17563,7 @@
 #### Added
 - Class: [obsolete interaction within a community](https://w3id.org/metpo/1000168) 
 
-- [obsolete interaction within a community](https://w3id.org/metpo/1000168) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete interaction within a community](https://w3id.org/metpo/1000168) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete interaction within a community](https://w3id.org/metpo/1000168) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17581,7 +17577,7 @@
 #### Added
 - Class: [obsolete intracellular](https://w3id.org/metpo/1000169) 
 
-- [obsolete intracellular](https://w3id.org/metpo/1000169) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete intracellular](https://w3id.org/metpo/1000169) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete intracellular](https://w3id.org/metpo/1000169) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17595,7 +17591,7 @@
 #### Added
 - Class: [obsolete invasion](https://w3id.org/metpo/1000170) 
 
-- [obsolete invasion](https://w3id.org/metpo/1000170) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete invasion](https://w3id.org/metpo/1000170) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete invasion](https://w3id.org/metpo/1000170) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17609,7 +17605,7 @@
 #### Added
 - Class: [obsolete irregular](https://w3id.org/metpo/000226) 
 
-- [obsolete irregular](https://w3id.org/metpo/000226) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete irregular](https://w3id.org/metpo/000226) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete irregular](https://w3id.org/metpo/000226) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17623,7 +17619,7 @@
 #### Added
 - Class: [obsolete irregular](https://w3id.org/metpo/1000498) 
 
-- [obsolete irregular](https://w3id.org/metpo/1000498) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete irregular](https://w3id.org/metpo/1000498) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete irregular](https://w3id.org/metpo/1000498) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17637,7 +17633,7 @@
 #### Added
 - DataProperty: [obsolete is negative data](https://w3id.org/metpo/2000062) 
 
-- [obsolete is negative data](https://w3id.org/metpo/2000062) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete is negative data](https://w3id.org/metpo/2000062) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete is negative data](https://w3id.org/metpo/2000062) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17649,7 +17645,7 @@
 #### Added
 - Class: [obsolete laboratory characteristic](https://w3id.org/metpo/1000171) 
 
-- [obsolete laboratory characteristic](https://w3id.org/metpo/1000171) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete laboratory characteristic](https://w3id.org/metpo/1000171) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete laboratory characteristic](https://w3id.org/metpo/1000171) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17663,7 +17659,7 @@
 #### Added
 - Class: [obsolete lag phase](https://w3id.org/metpo/1000172) 
 
-- [obsolete lag phase](https://w3id.org/metpo/1000172) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete lag phase](https://w3id.org/metpo/1000172) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete lag phase](https://w3id.org/metpo/1000172) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17677,7 +17673,7 @@
 #### Added
 - Class: [obsolete length](https://w3id.org/metpo/0001009) 
 
-- [obsolete length](https://w3id.org/metpo/0001009) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete length](https://w3id.org/metpo/0001009) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete length](https://w3id.org/metpo/0001009) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17691,7 +17687,7 @@
 #### Added
 - Class: [obsolete length](https://w3id.org/metpo/1000520) 
 
-- [obsolete length](https://w3id.org/metpo/1000520) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete length](https://w3id.org/metpo/1000520) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete length](https://w3id.org/metpo/1000520) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17705,7 +17701,7 @@
 #### Added
 - Class: [obsolete life cycle](https://w3id.org/metpo/1000173) 
 
-- [obsolete life cycle](https://w3id.org/metpo/1000173) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete life cycle](https://w3id.org/metpo/1000173) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete life cycle](https://w3id.org/metpo/1000173) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17719,7 +17715,7 @@
 #### Added
 - Class: [obsolete life cycle phase](https://w3id.org/metpo/1000174) 
 
-- [obsolete life cycle phase](https://w3id.org/metpo/1000174) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete life cycle phase](https://w3id.org/metpo/1000174) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete life cycle phase](https://w3id.org/metpo/1000174) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17733,7 +17729,7 @@
 #### Added
 - Class: [obsolete lipolysis](https://w3id.org/metpo/1000175) 
 
-- [obsolete lipolysis](https://w3id.org/metpo/1000175) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete lipolysis](https://w3id.org/metpo/1000175) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete lipolysis](https://w3id.org/metpo/1000175) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17747,7 +17743,7 @@
 #### Added
 - Class: [obsolete lipopolysaccharide](https://w3id.org/metpo/1000176) 
 
-- [obsolete lipopolysaccharide](https://w3id.org/metpo/1000176) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete lipopolysaccharide](https://w3id.org/metpo/1000176) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete lipopolysaccharide](https://w3id.org/metpo/1000176) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17761,9 +17757,9 @@
 #### Added
 - Class: [obsolete lithoautotroph](https://w3id.org/metpo/1000365) 
 
-- [obsolete lithoautotroph](https://w3id.org/metpo/1000365) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete lithoautotroph](https://w3id.org/metpo/1000365) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
-- [obsolete lithoautotroph](https://w3id.org/metpo/1000365) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [lithoautotrophic](https://w3id.org/metpo/1000647) 
+- [obsolete lithoautotroph](https://w3id.org/metpo/1000365) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [lithoautotrophic](https://w3id.org/metpo/1000647) 
 
 - [obsolete lithoautotroph](https://w3id.org/metpo/1000365) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17777,9 +17773,9 @@
 #### Added
 - Class: [obsolete lithoheterotroph](https://w3id.org/metpo/1000367) 
 
-- [obsolete lithoheterotroph](https://w3id.org/metpo/1000367) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete lithoheterotroph](https://w3id.org/metpo/1000367) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
-- [obsolete lithoheterotroph](https://w3id.org/metpo/1000367) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [lithoheterotrophic](https://w3id.org/metpo/1000648) 
+- [obsolete lithoheterotroph](https://w3id.org/metpo/1000367) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [lithoheterotrophic](https://w3id.org/metpo/1000648) 
 
 - [obsolete lithoheterotroph](https://w3id.org/metpo/1000367) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17793,9 +17789,9 @@
 #### Added
 - Class: [obsolete lithotroph](https://w3id.org/metpo/1000359) 
 
-- [obsolete lithotroph](https://w3id.org/metpo/1000359) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete lithotroph](https://w3id.org/metpo/1000359) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
-- [obsolete lithotroph](https://w3id.org/metpo/1000359) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [lithotrophic](https://w3id.org/metpo/1000649) 
+- [obsolete lithotroph](https://w3id.org/metpo/1000359) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [lithotrophic](https://w3id.org/metpo/1000649) 
 
 - [obsolete lithotroph](https://w3id.org/metpo/1000359) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17809,7 +17805,7 @@
 #### Added
 - Class: [obsolete localization](https://w3id.org/metpo/1000177) 
 
-- [obsolete localization](https://w3id.org/metpo/1000177) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete localization](https://w3id.org/metpo/1000177) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete localization](https://w3id.org/metpo/1000177) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17823,7 +17819,7 @@
 #### Added
 - Class: [obsolete lophotrichous](https://w3id.org/metpo/1000383) 
 
-- [obsolete lophotrichous](https://w3id.org/metpo/1000383) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete lophotrichous](https://w3id.org/metpo/1000383) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete lophotrichous](https://w3id.org/metpo/1000383) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17837,9 +17833,9 @@
 #### Added
 - Class: [obsolete low GC content](https://w3id.org/metpo/1000129) 
 
-- [obsolete low GC content](https://w3id.org/metpo/1000129) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete low GC content](https://w3id.org/metpo/1000129) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete low GC content](https://w3id.org/metpo/1000129) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [GC content](https://w3id.org/metpo/1000127) 
+- [obsolete low GC content](https://w3id.org/metpo/1000129) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [GC content](https://w3id.org/metpo/1000127) 
 
 - [obsolete low GC content](https://w3id.org/metpo/1000129) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17853,7 +17849,7 @@
 #### Added
 - Class: [obsolete lower-mid GC content](https://w3id.org/metpo/1000130) 
 
-- [obsolete lower-mid GC content](https://w3id.org/metpo/1000130) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete lower-mid GC content](https://w3id.org/metpo/1000130) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete lower-mid GC content](https://w3id.org/metpo/1000130) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17867,7 +17863,7 @@
 #### Added
 - ObjectProperty: [obsolete lyses](https://w3id.org/metpo/2000201) 
 
-- [obsolete lyses](https://w3id.org/metpo/2000201) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete lyses](https://w3id.org/metpo/2000201) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete lyses](https://w3id.org/metpo/2000201) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17879,7 +17875,7 @@
 #### Added
 - Class: [obsolete lysogeny](https://w3id.org/metpo/1000178) 
 
-- [obsolete lysogeny](https://w3id.org/metpo/1000178) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete lysogeny](https://w3id.org/metpo/1000178) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete lysogeny](https://w3id.org/metpo/1000178) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17893,7 +17889,7 @@
 #### Added
 - Class: [obsolete macroscopic trait](https://w3id.org/metpo/1000179) 
 
-- [obsolete macroscopic trait](https://w3id.org/metpo/1000179) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete macroscopic trait](https://w3id.org/metpo/1000179) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete macroscopic trait](https://w3id.org/metpo/1000179) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17907,7 +17903,7 @@
 #### Added
 - Class: [obsolete magnetotaxis](https://w3id.org/metpo/1000180) 
 
-- [obsolete magnetotaxis](https://w3id.org/metpo/1000180) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete magnetotaxis](https://w3id.org/metpo/1000180) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete magnetotaxis](https://w3id.org/metpo/1000180) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17921,9 +17917,9 @@
 #### Added
 - Class: [obsolete mesophile](https://w3id.org/metpo/1000181) 
 
-- [obsolete mesophile](https://w3id.org/metpo/1000181) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete mesophile](https://w3id.org/metpo/1000181) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete mesophile](https://w3id.org/metpo/1000181) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [mesophilic](https://w3id.org/metpo/1000615) 
+- [obsolete mesophile](https://w3id.org/metpo/1000181) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [mesophilic](https://w3id.org/metpo/1000615) 
 
 - [obsolete mesophile](https://w3id.org/metpo/1000181) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17937,7 +17933,7 @@
 #### Added
 - Class: [obsolete metabolic constraints](https://w3id.org/metpo/0001020) 
 
-- [obsolete metabolic constraints](https://w3id.org/metpo/0001020) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete metabolic constraints](https://w3id.org/metpo/0001020) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete metabolic constraints](https://w3id.org/metpo/0001020) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17951,7 +17947,7 @@
 #### Added
 - Class: [obsolete metabolic partner](https://w3id.org/metpo/1000182) 
 
-- [obsolete metabolic partner](https://w3id.org/metpo/1000182) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete metabolic partner](https://w3id.org/metpo/1000182) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete metabolic partner](https://w3id.org/metpo/1000182) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17965,7 +17961,7 @@
 #### Added
 - Class: [obsolete metabolic trait](https://w3id.org/metpo/1000183) 
 
-- [obsolete metabolic trait](https://w3id.org/metpo/1000183) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete metabolic trait](https://w3id.org/metpo/1000183) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete metabolic trait](https://w3id.org/metpo/1000183) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17979,7 +17975,7 @@
 #### Added
 - Class: [obsolete methanogen](https://w3id.org/metpo/1000376) 
 
-- [obsolete methanogen](https://w3id.org/metpo/1000376) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete methanogen](https://w3id.org/metpo/1000376) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete methanogen](https://w3id.org/metpo/1000376) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -17993,9 +17989,9 @@
 #### Added
 - Class: [obsolete methanogenesis](https://w3id.org/metpo/1000184) 
 
-- [obsolete methanogenesis](https://w3id.org/metpo/1000184) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete methanogenesis](https://w3id.org/metpo/1000184) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete methanogenesis](https://w3id.org/metpo/1000184) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [Methanogenesis](https://w3id.org/metpo/1000844) 
+- [obsolete methanogenesis](https://w3id.org/metpo/1000184) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [Methanogenesis](https://w3id.org/metpo/1000844) 
 
 - [obsolete methanogenesis](https://w3id.org/metpo/1000184) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18009,9 +18005,9 @@
 #### Added
 - Class: [obsolete methanotroph](https://w3id.org/metpo/1000371) 
 
-- [obsolete methanotroph](https://w3id.org/metpo/1000371) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete methanotroph](https://w3id.org/metpo/1000371) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
-- [obsolete methanotroph](https://w3id.org/metpo/1000371) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [methanotrophic](https://w3id.org/metpo/1000650) 
+- [obsolete methanotroph](https://w3id.org/metpo/1000371) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [methanotrophic](https://w3id.org/metpo/1000650) 
 
 - [obsolete methanotroph](https://w3id.org/metpo/1000371) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18025,7 +18021,7 @@
 #### Added
 - Class: [obsolete methylation](https://w3id.org/metpo/1000185) 
 
-- [obsolete methylation](https://w3id.org/metpo/1000185) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete methylation](https://w3id.org/metpo/1000185) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete methylation](https://w3id.org/metpo/1000185) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18039,9 +18035,9 @@
 #### Added
 - Class: [obsolete methylotroph](https://w3id.org/metpo/1000370) 
 
-- [obsolete methylotroph](https://w3id.org/metpo/1000370) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete methylotroph](https://w3id.org/metpo/1000370) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
-- [obsolete methylotroph](https://w3id.org/metpo/1000370) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [methylotrophic](https://w3id.org/metpo/1000651) 
+- [obsolete methylotroph](https://w3id.org/metpo/1000370) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [methylotrophic](https://w3id.org/metpo/1000651) 
 
 - [obsolete methylotroph](https://w3id.org/metpo/1000370) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18055,9 +18051,9 @@
 #### Added
 - Class: [obsolete microaerophile](https://w3id.org/metpo/1000190) 
 
-- [obsolete microaerophile](https://w3id.org/metpo/1000190) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete microaerophile](https://w3id.org/metpo/1000190) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete microaerophile](https://w3id.org/metpo/1000190) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [microaerophilic](https://w3id.org/metpo/1000604) 
+- [obsolete microaerophile](https://w3id.org/metpo/1000190) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [microaerophilic](https://w3id.org/metpo/1000604) 
 
 - [obsolete microaerophile](https://w3id.org/metpo/1000190) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18071,9 +18067,9 @@
 #### Added
 - Class: [obsolete microaerophile](https://w3id.org/metpo/1000350) 
 
-- [obsolete microaerophile](https://w3id.org/metpo/1000350) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete microaerophile](https://w3id.org/metpo/1000350) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
-- [obsolete microaerophile](https://w3id.org/metpo/1000350) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [microaerophilic](https://w3id.org/metpo/1000604) 
+- [obsolete microaerophile](https://w3id.org/metpo/1000350) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [microaerophilic](https://w3id.org/metpo/1000604) 
 
 - [obsolete microaerophile](https://w3id.org/metpo/1000350) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18087,9 +18083,9 @@
 #### Added
 - Class: [obsolete microaerotolerant](https://w3id.org/metpo/1000351) 
 
-- [obsolete microaerotolerant](https://w3id.org/metpo/1000351) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete microaerotolerant](https://w3id.org/metpo/1000351) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
-- [obsolete microaerotolerant](https://w3id.org/metpo/1000351) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [microaerotolerant](https://w3id.org/metpo/1000610) 
+- [obsolete microaerotolerant](https://w3id.org/metpo/1000351) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [microaerotolerant](https://w3id.org/metpo/1000610) 
 
 - [obsolete microaerotolerant](https://w3id.org/metpo/1000351) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18103,7 +18099,7 @@
 #### Added
 - Class: [obsolete microbe characterized by growth conditions](https://w3id.org/metpo/1000210) 
 
-- [obsolete microbe characterized by growth conditions](https://w3id.org/metpo/1000210) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete microbe characterized by growth conditions](https://w3id.org/metpo/1000210) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete microbe characterized by growth conditions](https://w3id.org/metpo/1000210) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18117,7 +18113,7 @@
 #### Added
 - Class: [obsolete microbe characterized by nutritional requirement](https://w3id.org/metpo/1000211) 
 
-- [obsolete microbe characterized by nutritional requirement](https://w3id.org/metpo/1000211) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete microbe characterized by nutritional requirement](https://w3id.org/metpo/1000211) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete microbe characterized by nutritional requirement](https://w3id.org/metpo/1000211) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18131,7 +18127,7 @@
 #### Added
 - Class: [obsolete microbe characterized by product produced](https://w3id.org/metpo/1000212) 
 
-- [obsolete microbe characterized by product produced](https://w3id.org/metpo/1000212) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete microbe characterized by product produced](https://w3id.org/metpo/1000212) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete microbe characterized by product produced](https://w3id.org/metpo/1000212) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18145,7 +18141,7 @@
 #### Added
 - Class: [obsolete microbe characterized by relation to oxygen](https://w3id.org/metpo/1000213) 
 
-- [obsolete microbe characterized by relation to oxygen](https://w3id.org/metpo/1000213) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete microbe characterized by relation to oxygen](https://w3id.org/metpo/1000213) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete microbe characterized by relation to oxygen](https://w3id.org/metpo/1000213) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18159,7 +18155,7 @@
 #### Added
 - Class: [obsolete microbe characterized by relation to ph](https://w3id.org/metpo/1000214) 
 
-- [obsolete microbe characterized by relation to ph](https://w3id.org/metpo/1000214) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete microbe characterized by relation to ph](https://w3id.org/metpo/1000214) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete microbe characterized by relation to ph](https://w3id.org/metpo/1000214) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18173,7 +18169,7 @@
 #### Added
 - Class: [obsolete microbe characterized by relation to pressure](https://w3id.org/metpo/1000215) 
 
-- [obsolete microbe characterized by relation to pressure](https://w3id.org/metpo/1000215) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete microbe characterized by relation to pressure](https://w3id.org/metpo/1000215) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete microbe characterized by relation to pressure](https://w3id.org/metpo/1000215) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18187,7 +18183,7 @@
 #### Added
 - Class: [obsolete microbe characterized by relation to salt concentration](https://w3id.org/metpo/1000216) 
 
-- [obsolete microbe characterized by relation to salt concentration](https://w3id.org/metpo/1000216) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete microbe characterized by relation to salt concentration](https://w3id.org/metpo/1000216) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete microbe characterized by relation to salt concentration](https://w3id.org/metpo/1000216) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18201,7 +18197,7 @@
 #### Added
 - Class: [obsolete microbe characterized by relation to temperature](https://w3id.org/metpo/1000217) 
 
-- [obsolete microbe characterized by relation to temperature](https://w3id.org/metpo/1000217) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete microbe characterized by relation to temperature](https://w3id.org/metpo/1000217) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete microbe characterized by relation to temperature](https://w3id.org/metpo/1000217) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18215,7 +18211,7 @@
 #### Added
 - Class: [obsolete microbe characterized by shape](https://w3id.org/metpo/1000218) 
 
-- [obsolete microbe characterized by shape](https://w3id.org/metpo/1000218) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete microbe characterized by shape](https://w3id.org/metpo/1000218) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete microbe characterized by shape](https://w3id.org/metpo/1000218) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18229,7 +18225,7 @@
 #### Added
 - Class: [obsolete microbe characterized by trophic type](https://w3id.org/metpo/1000219) 
 
-- [obsolete microbe characterized by trophic type](https://w3id.org/metpo/1000219) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete microbe characterized by trophic type](https://w3id.org/metpo/1000219) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete microbe characterized by trophic type](https://w3id.org/metpo/1000219) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18243,7 +18239,7 @@
 #### Added
 - ObjectProperty: [obsolete mineralizes](https://w3id.org/metpo/2000205) 
 
-- [obsolete mineralizes](https://w3id.org/metpo/2000205) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete mineralizes](https://w3id.org/metpo/2000205) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete mineralizes](https://w3id.org/metpo/2000205) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18255,9 +18251,9 @@
 #### Added
 - Class: [obsolete mixotroph](https://w3id.org/metpo/1000366) 
 
-- [obsolete mixotroph](https://w3id.org/metpo/1000366) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete mixotroph](https://w3id.org/metpo/1000366) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
-- [obsolete mixotroph](https://w3id.org/metpo/1000366) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [mixotrophic](https://w3id.org/metpo/1000652) 
+- [obsolete mixotroph](https://w3id.org/metpo/1000366) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [mixotrophic](https://w3id.org/metpo/1000652) 
 
 - [obsolete mixotroph](https://w3id.org/metpo/1000366) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18271,7 +18267,7 @@
 #### Added
 - Class: [obsolete mobile genetic element](https://w3id.org/metpo/1000191) 
 
-- [obsolete mobile genetic element](https://w3id.org/metpo/1000191) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete mobile genetic element](https://w3id.org/metpo/1000191) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete mobile genetic element](https://w3id.org/metpo/1000191) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18285,9 +18281,9 @@
 #### Added
 - Class: [obsolete moderate halophile](https://w3id.org/metpo/1000192) 
 
-- [obsolete moderate halophile](https://w3id.org/metpo/1000192) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete moderate halophile](https://w3id.org/metpo/1000192) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete moderate halophile](https://w3id.org/metpo/1000192) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [moderately halophilic](https://w3id.org/metpo/1000623) 
+- [obsolete moderate halophile](https://w3id.org/metpo/1000192) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [moderately halophilic](https://w3id.org/metpo/1000623) 
 
 - [obsolete moderate halophile](https://w3id.org/metpo/1000192) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18301,7 +18297,7 @@
 #### Added
 - Class: [obsolete moderate piezophile](https://w3id.org/metpo/1000412) 
 
-- [obsolete moderate piezophile](https://w3id.org/metpo/1000412) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete moderate piezophile](https://w3id.org/metpo/1000412) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete moderate piezophile](https://w3id.org/metpo/1000412) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18315,7 +18311,7 @@
 #### Added
 - Class: [obsolete monotrichous](https://w3id.org/metpo/1000384) 
 
-- [obsolete monotrichous](https://w3id.org/metpo/1000384) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete monotrichous](https://w3id.org/metpo/1000384) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete monotrichous](https://w3id.org/metpo/1000384) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18329,7 +18325,7 @@
 #### Added
 - Class: [obsolete morphological trait](https://w3id.org/metpo/1000193) 
 
-- [obsolete morphological trait](https://w3id.org/metpo/1000193) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete morphological trait](https://w3id.org/metpo/1000193) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete morphological trait](https://w3id.org/metpo/1000193) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18343,9 +18339,9 @@
 #### Added
 - Class: [obsolete motile](https://w3id.org/metpo/1000379) 
 
-- [obsolete motile](https://w3id.org/metpo/1000379) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete motile](https://w3id.org/metpo/1000379) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
-- [obsolete motile](https://w3id.org/metpo/1000379) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [motile](https://w3id.org/metpo/1000702) 
+- [obsolete motile](https://w3id.org/metpo/1000379) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [motile](https://w3id.org/metpo/1000702) 
 
 - [obsolete motile](https://w3id.org/metpo/1000379) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18359,7 +18355,7 @@
 #### Added
 - Class: [obsolete motility process](https://w3id.org/metpo/1000194) 
 
-- [obsolete motility process](https://w3id.org/metpo/1000194) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete motility process](https://w3id.org/metpo/1000194) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete motility process](https://w3id.org/metpo/1000194) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18373,7 +18369,7 @@
 #### Added
 - Class: [obsolete motility structure](https://w3id.org/metpo/1000195) 
 
-- [obsolete motility structure](https://w3id.org/metpo/1000195) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete motility structure](https://w3id.org/metpo/1000195) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete motility structure](https://w3id.org/metpo/1000195) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18387,7 +18383,7 @@
 #### Added
 - Class: [obsolete mutualism](https://w3id.org/metpo/1000196) 
 
-- [obsolete mutualism](https://w3id.org/metpo/1000196) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete mutualism](https://w3id.org/metpo/1000196) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete mutualism](https://w3id.org/metpo/1000196) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18401,7 +18397,7 @@
 #### Added
 - Class: [obsolete mycolic acid](https://w3id.org/metpo/1000197) 
 
-- [obsolete mycolic acid](https://w3id.org/metpo/1000197) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete mycolic acid](https://w3id.org/metpo/1000197) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete mycolic acid](https://w3id.org/metpo/1000197) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18415,7 +18411,7 @@
 #### Added
 - Class: [obsolete mycorrhization](https://w3id.org/metpo/1000198) 
 
-- [obsolete mycorrhization](https://w3id.org/metpo/1000198) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete mycorrhization](https://w3id.org/metpo/1000198) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete mycorrhization](https://w3id.org/metpo/1000198) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18429,7 +18425,7 @@
 #### Added
 - Class: [obsolete myxospores](https://w3id.org/metpo/1000389) 
 
-- [obsolete myxospores](https://w3id.org/metpo/1000389) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete myxospores](https://w3id.org/metpo/1000389) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete myxospores](https://w3id.org/metpo/1000389) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18443,9 +18439,9 @@
 #### Added
 - Class: [obsolete neutrophile](https://w3id.org/metpo/1000199) 
 
-- [obsolete neutrophile](https://w3id.org/metpo/1000199) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete neutrophile](https://w3id.org/metpo/1000199) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete neutrophile](https://w3id.org/metpo/1000199) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [neutrophilic](https://w3id.org/metpo/1003001) 
+- [obsolete neutrophile](https://w3id.org/metpo/1000199) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [neutrophilic](https://w3id.org/metpo/1003001) 
 
 - [obsolete neutrophile](https://w3id.org/metpo/1000199) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18459,9 +18455,9 @@
 #### Added
 - Class: [obsolete nitrification](https://w3id.org/metpo/1000200) 
 
-- [obsolete nitrification](https://w3id.org/metpo/1000200) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete nitrification](https://w3id.org/metpo/1000200) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete nitrification](https://w3id.org/metpo/1000200) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [nitrification](https://w3id.org/metpo/1005001) 
+- [obsolete nitrification](https://w3id.org/metpo/1000200) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [nitrification](https://w3id.org/metpo/1005001) 
 
 - [obsolete nitrification](https://w3id.org/metpo/1000200) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18475,9 +18471,9 @@
 #### Added
 - Class: [obsolete nitrogen fixation](https://w3id.org/metpo/1000201) 
 
-- [obsolete nitrogen fixation](https://w3id.org/metpo/1000201) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete nitrogen fixation](https://w3id.org/metpo/1000201) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete nitrogen fixation](https://w3id.org/metpo/1000201) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [nitrogen fixation](https://w3id.org/metpo/1005039) 
+- [obsolete nitrogen fixation](https://w3id.org/metpo/1000201) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [nitrogen fixation](https://w3id.org/metpo/1005039) 
 
 - [obsolete nitrogen fixation](https://w3id.org/metpo/1000201) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18491,7 +18487,7 @@
 #### Added
 - Class: [obsolete nitrogen fixer](https://w3id.org/metpo/1000375) 
 
-- [obsolete nitrogen fixer](https://w3id.org/metpo/1000375) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete nitrogen fixer](https://w3id.org/metpo/1000375) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete nitrogen fixer](https://w3id.org/metpo/1000375) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18505,9 +18501,9 @@
 #### Added
 - Class: [obsolete nitrogen-fixing](https://w3id.org/metpo/1000653) 
 
-- [obsolete nitrogen-fixing](https://w3id.org/metpo/1000653) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete nitrogen-fixing](https://w3id.org/metpo/1000653) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
-- [obsolete nitrogen-fixing](https://w3id.org/metpo/1000653) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [nitrogen fixation](https://w3id.org/metpo/1005039) 
+- [obsolete nitrogen-fixing](https://w3id.org/metpo/1000653) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [nitrogen fixation](https://w3id.org/metpo/1005039) 
 
 - [obsolete nitrogen-fixing](https://w3id.org/metpo/1000653) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18521,7 +18517,7 @@
 #### Added
 - Class: [obsolete nodulation](https://w3id.org/metpo/1000202) 
 
-- [obsolete nodulation](https://w3id.org/metpo/1000202) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete nodulation](https://w3id.org/metpo/1000202) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete nodulation](https://w3id.org/metpo/1000202) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18535,9 +18531,9 @@
 #### Added
 - Class: [obsolete non-halophile](https://w3id.org/metpo/1000340) 
 
-- [obsolete non-halophile](https://w3id.org/metpo/1000340) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete non-halophile](https://w3id.org/metpo/1000340) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
-- [obsolete non-halophile](https://w3id.org/metpo/1000340) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [non halophilic](https://w3id.org/metpo/1000624) 
+- [obsolete non-halophile](https://w3id.org/metpo/1000340) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [non halophilic](https://w3id.org/metpo/1000624) 
 
 - [obsolete non-halophile](https://w3id.org/metpo/1000340) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18551,9 +18547,9 @@
 #### Added
 - Class: [obsolete non-motile](https://w3id.org/metpo/1000380) 
 
-- [obsolete non-motile](https://w3id.org/metpo/1000380) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete non-motile](https://w3id.org/metpo/1000380) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
-- [obsolete non-motile](https://w3id.org/metpo/1000380) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [non motile](https://w3id.org/metpo/1000703) 
+- [obsolete non-motile](https://w3id.org/metpo/1000380) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [non motile](https://w3id.org/metpo/1000703) 
 
 - [obsolete non-motile](https://w3id.org/metpo/1000380) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18567,7 +18563,7 @@
 #### Added
 - Class: [obsolete nucleoid](https://w3id.org/metpo/1000203) 
 
-- [obsolete nucleoid](https://w3id.org/metpo/1000203) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete nucleoid](https://w3id.org/metpo/1000203) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete nucleoid](https://w3id.org/metpo/1000203) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18581,7 +18577,7 @@
 #### Added
 - Class: [obsolete nutrient utilization](https://w3id.org/metpo/1000204) 
 
-- [obsolete nutrient utilization](https://w3id.org/metpo/1000204) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete nutrient utilization](https://w3id.org/metpo/1000204) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete nutrient utilization](https://w3id.org/metpo/1000204) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18595,7 +18591,7 @@
 #### Added
 - Class: [obsolete obligate](https://w3id.org/metpo/1000205) 
 
-- [obsolete obligate](https://w3id.org/metpo/1000205) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete obligate](https://w3id.org/metpo/1000205) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete obligate](https://w3id.org/metpo/1000205) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18609,9 +18605,9 @@
 #### Added
 - Class: [obsolete obligate aerobe](https://w3id.org/metpo/1000206) 
 
-- [obsolete obligate aerobe](https://w3id.org/metpo/1000206) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete obligate aerobe](https://w3id.org/metpo/1000206) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete obligate aerobe](https://w3id.org/metpo/1000206) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [obligately aerobic](https://w3id.org/metpo/1000606) 
+- [obsolete obligate aerobe](https://w3id.org/metpo/1000206) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [obligately aerobic](https://w3id.org/metpo/1000606) 
 
 - [obsolete obligate aerobe](https://w3id.org/metpo/1000206) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18625,9 +18621,9 @@
 #### Added
 - Class: [obsolete obligate aerobe](https://w3id.org/metpo/1000353) 
 
-- [obsolete obligate aerobe](https://w3id.org/metpo/1000353) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete obligate aerobe](https://w3id.org/metpo/1000353) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
-- [obsolete obligate aerobe](https://w3id.org/metpo/1000353) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [obligately aerobic](https://w3id.org/metpo/1000606) 
+- [obsolete obligate aerobe](https://w3id.org/metpo/1000353) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [obligately aerobic](https://w3id.org/metpo/1000606) 
 
 - [obsolete obligate aerobe](https://w3id.org/metpo/1000353) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18641,9 +18637,9 @@
 #### Added
 - Class: [obsolete obligate anaerobe](https://w3id.org/metpo/1000207) 
 
-- [obsolete obligate anaerobe](https://w3id.org/metpo/1000207) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete obligate anaerobe](https://w3id.org/metpo/1000207) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete obligate anaerobe](https://w3id.org/metpo/1000207) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [obligately anaerobic](https://w3id.org/metpo/1000607) 
+- [obsolete obligate anaerobe](https://w3id.org/metpo/1000207) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [obligately anaerobic](https://w3id.org/metpo/1000607) 
 
 - [obsolete obligate anaerobe](https://w3id.org/metpo/1000207) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18657,9 +18653,9 @@
 #### Added
 - Class: [obsolete obligate anaerobe](https://w3id.org/metpo/1000354) 
 
-- [obsolete obligate anaerobe](https://w3id.org/metpo/1000354) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete obligate anaerobe](https://w3id.org/metpo/1000354) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
-- [obsolete obligate anaerobe](https://w3id.org/metpo/1000354) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [obligately anaerobic](https://w3id.org/metpo/1000607) 
+- [obsolete obligate anaerobe](https://w3id.org/metpo/1000354) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [obligately anaerobic](https://w3id.org/metpo/1000607) 
 
 - [obsolete obligate anaerobe](https://w3id.org/metpo/1000354) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18673,7 +18669,7 @@
 #### Added
 - Class: [obsolete obligate barophile](https://w3id.org/metpo/1000407) 
 
-- [obsolete obligate barophile](https://w3id.org/metpo/1000407) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete obligate barophile](https://w3id.org/metpo/1000407) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete obligate barophile](https://w3id.org/metpo/1000407) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18687,9 +18683,9 @@
 #### Added
 - Class: [obsolete obligative acidophile](https://w3id.org/metpo/1000348) 
 
-- [obsolete obligative acidophile](https://w3id.org/metpo/1000348) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete obligative acidophile](https://w3id.org/metpo/1000348) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
-- [obsolete obligative acidophile](https://w3id.org/metpo/1000348) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [obligately acidophilic](https://w3id.org/metpo/1003006) 
+- [obsolete obligative acidophile](https://w3id.org/metpo/1000348) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [obligately acidophilic](https://w3id.org/metpo/1003006) 
 
 - [obsolete obligative acidophile](https://w3id.org/metpo/1000348) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18703,7 +18699,7 @@
 #### Added
 - Class: [obsolete observation](https://w3id.org/metpo/1001000) 
 
-- [obsolete observation](https://w3id.org/metpo/1001000) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete observation](https://w3id.org/metpo/1001000) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete observation](https://w3id.org/metpo/1001000) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18717,7 +18713,7 @@
 #### Added
 - DataProperty: [obsolete observation data property](https://w3id.org/metpo/2000063) 
 
-- [obsolete observation data property](https://w3id.org/metpo/2000063) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete observation data property](https://w3id.org/metpo/2000063) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete observation data property](https://w3id.org/metpo/2000063) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18729,7 +18725,7 @@
 #### Added
 - Class: [obsolete obsolete](https://w3id.org/metpo/9999999) 
 
-- [obsolete obsolete](https://w3id.org/metpo/9999999) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete obsolete](https://w3id.org/metpo/9999999) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete obsolete](https://w3id.org/metpo/9999999) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18743,9 +18739,9 @@
 #### Added
 - Class: [obsolete oligotroph](https://w3id.org/metpo/1000363) 
 
-- [obsolete oligotroph](https://w3id.org/metpo/1000363) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete oligotroph](https://w3id.org/metpo/1000363) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
-- [obsolete oligotroph](https://w3id.org/metpo/1000363) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [oligotrophic](https://w3id.org/metpo/1000654) 
+- [obsolete oligotroph](https://w3id.org/metpo/1000363) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [oligotrophic](https://w3id.org/metpo/1000654) 
 
 - [obsolete oligotroph](https://w3id.org/metpo/1000363) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18759,7 +18755,7 @@
 #### Added
 - Class: [obsolete oospore](https://w3id.org/metpo/1000208) 
 
-- [obsolete oospore](https://w3id.org/metpo/1000208) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete oospore](https://w3id.org/metpo/1000208) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete oospore](https://w3id.org/metpo/1000208) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18773,7 +18769,7 @@
 #### Added
 - Class: [obsolete optimum NaCl observation](https://w3id.org/metpo/1001010) 
 
-- [obsolete optimum NaCl observation](https://w3id.org/metpo/1001010) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete optimum NaCl observation](https://w3id.org/metpo/1001010) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete optimum NaCl observation](https://w3id.org/metpo/1001010) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18787,7 +18783,7 @@
 #### Added
 - Class: [obsolete optimum oxygen observation](https://w3id.org/metpo/1001016) 
 
-- [obsolete optimum oxygen observation](https://w3id.org/metpo/1001016) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete optimum oxygen observation](https://w3id.org/metpo/1001016) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete optimum oxygen observation](https://w3id.org/metpo/1001016) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18801,7 +18797,7 @@
 #### Added
 - Class: [obsolete optimum pH observation](https://w3id.org/metpo/1001013) 
 
-- [obsolete optimum pH observation](https://w3id.org/metpo/1001013) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete optimum pH observation](https://w3id.org/metpo/1001013) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete optimum pH observation](https://w3id.org/metpo/1001013) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18815,7 +18811,7 @@
 #### Added
 - Class: [obsolete optimum temperature observation](https://w3id.org/metpo/1001001) 
 
-- [obsolete optimum temperature observation](https://w3id.org/metpo/1001001) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete optimum temperature observation](https://w3id.org/metpo/1001001) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete optimum temperature observation](https://w3id.org/metpo/1001001) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18829,7 +18825,7 @@
 #### Added
 - Class: [obsolete order](https://w3id.org/metpo/1000209) 
 
-- [obsolete order](https://w3id.org/metpo/1000209) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete order](https://w3id.org/metpo/1000209) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete order](https://w3id.org/metpo/1000209) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18843,9 +18839,9 @@
 #### Added
 - Class: [obsolete organotroph](https://w3id.org/metpo/1000360) 
 
-- [obsolete organotroph](https://w3id.org/metpo/1000360) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete organotroph](https://w3id.org/metpo/1000360) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
-- [obsolete organotroph](https://w3id.org/metpo/1000360) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [organotrophic](https://w3id.org/metpo/1000655) 
+- [obsolete organotroph](https://w3id.org/metpo/1000360) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [organotrophic](https://w3id.org/metpo/1000655) 
 
 - [obsolete organotroph](https://w3id.org/metpo/1000360) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18859,7 +18855,7 @@
 #### Added
 - Class: [obsolete osmophile](https://w3id.org/metpo/1000220) 
 
-- [obsolete osmophile](https://w3id.org/metpo/1000220) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete osmophile](https://w3id.org/metpo/1000220) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete osmophile](https://w3id.org/metpo/1000220) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18873,7 +18869,7 @@
 #### Added
 - Class: [obsolete osmoregulation](https://w3id.org/metpo/1000221) 
 
-- [obsolete osmoregulation](https://w3id.org/metpo/1000221) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete osmoregulation](https://w3id.org/metpo/1000221) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete osmoregulation](https://w3id.org/metpo/1000221) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18887,7 +18883,7 @@
 #### Added
 - Class: [obsolete oval](https://w3id.org/metpo/000227) 
 
-- [obsolete oval](https://w3id.org/metpo/000227) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete oval](https://w3id.org/metpo/000227) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete oval](https://w3id.org/metpo/000227) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18901,7 +18897,7 @@
 #### Added
 - Class: [obsolete oval](https://w3id.org/metpo/1000499) 
 
-- [obsolete oval](https://w3id.org/metpo/1000499) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete oval](https://w3id.org/metpo/1000499) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete oval](https://w3id.org/metpo/1000499) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18915,7 +18911,7 @@
 #### Added
 - Class: [obsolete ovoid](https://w3id.org/metpo/1000500) 
 
-- [obsolete ovoid](https://w3id.org/metpo/1000500) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete ovoid](https://w3id.org/metpo/1000500) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete ovoid](https://w3id.org/metpo/1000500) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18929,7 +18925,7 @@
 #### Added
 - Class: [obsolete ovoid](https://w3id.org/metpo/000228) 
 
-- [obsolete ovoid](https://w3id.org/metpo/000228) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete ovoid](https://w3id.org/metpo/000228) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete ovoid](https://w3id.org/metpo/000228) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18943,7 +18939,7 @@
 #### Added
 - Class: [obsolete oxidative stress response](https://w3id.org/metpo/1000222) 
 
-- [obsolete oxidative stress response](https://w3id.org/metpo/1000222) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete oxidative stress response](https://w3id.org/metpo/1000222) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete oxidative stress response](https://w3id.org/metpo/1000222) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18957,7 +18953,7 @@
 #### Added
 - Class: [obsolete oxidoreductase](https://w3id.org/metpo/1000223) 
 
-- [obsolete oxidoreductase](https://w3id.org/metpo/1000223) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete oxidoreductase](https://w3id.org/metpo/1000223) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete oxidoreductase](https://w3id.org/metpo/1000223) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18971,7 +18967,7 @@
 #### Added
 - Class: [obsolete oxygen delta observation](https://w3id.org/metpo/1001019) 
 
-- [obsolete oxygen delta observation](https://w3id.org/metpo/1001019) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete oxygen delta observation](https://w3id.org/metpo/1001019) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete oxygen delta observation](https://w3id.org/metpo/1001019) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18985,7 +18981,7 @@
 #### Added
 - Class: [obsolete oxygen observation](https://w3id.org/metpo/1001020) 
 
-- [obsolete oxygen observation](https://w3id.org/metpo/1001020) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete oxygen observation](https://w3id.org/metpo/1001020) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete oxygen observation](https://w3id.org/metpo/1001020) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -18999,7 +18995,7 @@
 #### Added
 - Class: [obsolete oxygen range observation](https://w3id.org/metpo/1001018) 
 
-- [obsolete oxygen range observation](https://w3id.org/metpo/1001018) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete oxygen range observation](https://w3id.org/metpo/1001018) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete oxygen range observation](https://w3id.org/metpo/1001018) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19013,7 +19009,7 @@
 #### Added
 - Class: [obsolete oxygen requirement](https://w3id.org/metpo/1000224) 
 
-- [obsolete oxygen requirement](https://w3id.org/metpo/1000224) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete oxygen requirement](https://w3id.org/metpo/1000224) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete oxygen requirement](https://w3id.org/metpo/1000224) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19027,7 +19023,7 @@
 #### Added
 - Class: [obsolete oxygenic photosynthesis](https://w3id.org/metpo/1000225) 
 
-- [obsolete oxygenic photosynthesis](https://w3id.org/metpo/1000225) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete oxygenic photosynthesis](https://w3id.org/metpo/1000225) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete oxygenic photosynthesis](https://w3id.org/metpo/1000225) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19041,7 +19037,7 @@
 #### Added
 - Class: [obsolete oxygenic phototroph](https://w3id.org/metpo/1000355) 
 
-- [obsolete oxygenic phototroph](https://w3id.org/metpo/1000355) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete oxygenic phototroph](https://w3id.org/metpo/1000355) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete oxygenic phototroph](https://w3id.org/metpo/1000355) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19055,7 +19051,7 @@
 #### Added
 - Class: [obsolete pH](https://w3id.org/metpo/000003) 
 
-- [obsolete pH](https://w3id.org/metpo/000003) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pH](https://w3id.org/metpo/000003) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete pH](https://w3id.org/metpo/000003) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19069,7 +19065,7 @@
 #### Added
 - Class: [obsolete pH](https://w3id.org/metpo/0000003) 
 
-- [obsolete pH](https://w3id.org/metpo/0000003) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pH](https://w3id.org/metpo/0000003) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete pH](https://w3id.org/metpo/0000003) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19083,7 +19079,7 @@
 #### Added
 - Class: [obsolete pH Adaptation](https://w3id.org/metpo/000254) 
 
-- [obsolete pH Adaptation](https://w3id.org/metpo/000254) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pH Adaptation](https://w3id.org/metpo/000254) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete pH Adaptation](https://w3id.org/metpo/000254) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19097,7 +19093,7 @@
 #### Added
 - Class: [obsolete pH Adaptation](https://w3id.org/metpo/0000253) 
 
-- [obsolete pH Adaptation](https://w3id.org/metpo/0000253) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pH Adaptation](https://w3id.org/metpo/0000253) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete pH Adaptation](https://w3id.org/metpo/0000253) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19111,9 +19107,9 @@
 #### Added
 - Class: [obsolete pH Delta high](https://w3id.org/metpo/0000200) 
 
-- [obsolete pH Delta high](https://w3id.org/metpo/0000200) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pH Delta high](https://w3id.org/metpo/0000200) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete pH Delta high](https://w3id.org/metpo/0000200) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [pH delta high](https://w3id.org/metpo/1000478) 
+- [obsolete pH Delta high](https://w3id.org/metpo/0000200) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [pH delta high](https://w3id.org/metpo/1000478) 
 
 - [obsolete pH Delta high](https://w3id.org/metpo/0000200) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19127,9 +19123,9 @@
 #### Added
 - Class: [obsolete pH Delta low](https://w3id.org/metpo/0000196) 
 
-- [obsolete pH Delta low](https://w3id.org/metpo/0000196) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pH Delta low](https://w3id.org/metpo/0000196) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete pH Delta low](https://w3id.org/metpo/0000196) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [pH delta low](https://w3id.org/metpo/1000474) 
+- [obsolete pH Delta low](https://w3id.org/metpo/0000196) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [pH delta low](https://w3id.org/metpo/1000474) 
 
 - [obsolete pH Delta low](https://w3id.org/metpo/0000196) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19143,9 +19139,9 @@
 #### Added
 - Class: [obsolete pH Delta mid1](https://w3id.org/metpo/0000197) 
 
-- [obsolete pH Delta mid1](https://w3id.org/metpo/0000197) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pH Delta mid1](https://w3id.org/metpo/0000197) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete pH Delta mid1](https://w3id.org/metpo/0000197) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [pH delta mid1](https://w3id.org/metpo/1000475) 
+- [obsolete pH Delta mid1](https://w3id.org/metpo/0000197) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [pH delta mid1](https://w3id.org/metpo/1000475) 
 
 - [obsolete pH Delta mid1](https://w3id.org/metpo/0000197) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19159,9 +19155,9 @@
 #### Added
 - Class: [obsolete pH Delta mid2](https://w3id.org/metpo/0000198) 
 
-- [obsolete pH Delta mid2](https://w3id.org/metpo/0000198) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pH Delta mid2](https://w3id.org/metpo/0000198) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete pH Delta mid2](https://w3id.org/metpo/0000198) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [pH delta mid2](https://w3id.org/metpo/1000476) 
+- [obsolete pH Delta mid2](https://w3id.org/metpo/0000198) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [pH delta mid2](https://w3id.org/metpo/1000476) 
 
 - [obsolete pH Delta mid2](https://w3id.org/metpo/0000198) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19175,9 +19171,9 @@
 #### Added
 - Class: [obsolete pH Delta mid3](https://w3id.org/metpo/0000199) 
 
-- [obsolete pH Delta mid3](https://w3id.org/metpo/0000199) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pH Delta mid3](https://w3id.org/metpo/0000199) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete pH Delta mid3](https://w3id.org/metpo/0000199) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [pH delta mid3](https://w3id.org/metpo/1000477) 
+- [obsolete pH Delta mid3](https://w3id.org/metpo/0000199) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [pH delta mid3](https://w3id.org/metpo/1000477) 
 
 - [obsolete pH Delta mid3](https://w3id.org/metpo/0000199) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19191,9 +19187,9 @@
 #### Added
 - Class: [obsolete pH Delta very low](https://w3id.org/metpo/0000195) 
 
-- [obsolete pH Delta very low](https://w3id.org/metpo/0000195) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pH Delta very low](https://w3id.org/metpo/0000195) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete pH Delta very low](https://w3id.org/metpo/0000195) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [pH delta very low](https://w3id.org/metpo/1000473) 
+- [obsolete pH Delta very low](https://w3id.org/metpo/0000195) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [pH delta very low](https://w3id.org/metpo/1000473) 
 
 - [obsolete pH Delta very low](https://w3id.org/metpo/0000195) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19207,9 +19203,9 @@
 #### Added
 - Class: [obsolete pH Optimum](https://w3id.org/metpo/000014) 
 
-- [obsolete pH Optimum](https://w3id.org/metpo/000014) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pH Optimum](https://w3id.org/metpo/000014) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete pH Optimum](https://w3id.org/metpo/000014) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [pH optimum](https://w3id.org/metpo/1000331) 
+- [obsolete pH Optimum](https://w3id.org/metpo/000014) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [pH optimum](https://w3id.org/metpo/1000331) 
 
 - [obsolete pH Optimum](https://w3id.org/metpo/000014) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19223,9 +19219,9 @@
 #### Added
 - Class: [obsolete pH Optimum](https://w3id.org/metpo/0000014) 
 
-- [obsolete pH Optimum](https://w3id.org/metpo/0000014) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pH Optimum](https://w3id.org/metpo/0000014) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete pH Optimum](https://w3id.org/metpo/0000014) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [pH optimum](https://w3id.org/metpo/1000331) 
+- [obsolete pH Optimum](https://w3id.org/metpo/0000014) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [pH optimum](https://w3id.org/metpo/1000331) 
 
 - [obsolete pH Optimum](https://w3id.org/metpo/0000014) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19239,9 +19235,9 @@
 #### Added
 - Class: [obsolete pH Optimum high](https://w3id.org/metpo/0000180) 
 
-- [obsolete pH Optimum high](https://w3id.org/metpo/0000180) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pH Optimum high](https://w3id.org/metpo/0000180) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete pH Optimum high](https://w3id.org/metpo/0000180) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [pH optimum high](https://w3id.org/metpo/1000458) 
+- [obsolete pH Optimum high](https://w3id.org/metpo/0000180) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [pH optimum high](https://w3id.org/metpo/1000458) 
 
 - [obsolete pH Optimum high](https://w3id.org/metpo/0000180) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19255,7 +19251,7 @@
 #### Added
 - Class: [obsolete pH Optimum high (8 - 14)](https://w3id.org/metpo/000181) 
 
-- [obsolete pH Optimum high (8 - 14)](https://w3id.org/metpo/000181) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pH Optimum high (8 - 14)](https://w3id.org/metpo/000181) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete pH Optimum high (8 - 14)](https://w3id.org/metpo/000181) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19269,9 +19265,9 @@
 #### Added
 - Class: [obsolete pH Optimum low](https://w3id.org/metpo/0000177) 
 
-- [obsolete pH Optimum low](https://w3id.org/metpo/0000177) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pH Optimum low](https://w3id.org/metpo/0000177) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete pH Optimum low](https://w3id.org/metpo/0000177) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [pH optimum low](https://w3id.org/metpo/1000455) 
+- [obsolete pH Optimum low](https://w3id.org/metpo/0000177) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [pH optimum low](https://w3id.org/metpo/1000455) 
 
 - [obsolete pH Optimum low](https://w3id.org/metpo/0000177) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19285,7 +19281,7 @@
 #### Added
 - Class: [obsolete pH Optimum low (0 - 6)](https://w3id.org/metpo/000178) 
 
-- [obsolete pH Optimum low (0 - 6)](https://w3id.org/metpo/000178) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pH Optimum low (0 - 6)](https://w3id.org/metpo/000178) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete pH Optimum low (0 - 6)](https://w3id.org/metpo/000178) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19299,9 +19295,9 @@
 #### Added
 - Class: [obsolete pH Optimum mid1](https://w3id.org/metpo/0000178) 
 
-- [obsolete pH Optimum mid1](https://w3id.org/metpo/0000178) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pH Optimum mid1](https://w3id.org/metpo/0000178) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete pH Optimum mid1](https://w3id.org/metpo/0000178) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [pH optimum mid1](https://w3id.org/metpo/1000456) 
+- [obsolete pH Optimum mid1](https://w3id.org/metpo/0000178) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [pH optimum mid1](https://w3id.org/metpo/1000456) 
 
 - [obsolete pH Optimum mid1](https://w3id.org/metpo/0000178) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19315,7 +19311,7 @@
 #### Added
 - Class: [obsolete pH Optimum mid1 (6 - 7)](https://w3id.org/metpo/000179) 
 
-- [obsolete pH Optimum mid1 (6 - 7)](https://w3id.org/metpo/000179) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pH Optimum mid1 (6 - 7)](https://w3id.org/metpo/000179) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete pH Optimum mid1 (6 - 7)](https://w3id.org/metpo/000179) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19329,9 +19325,9 @@
 #### Added
 - Class: [obsolete pH Optimum mid2](https://w3id.org/metpo/0000179) 
 
-- [obsolete pH Optimum mid2](https://w3id.org/metpo/0000179) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pH Optimum mid2](https://w3id.org/metpo/0000179) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete pH Optimum mid2](https://w3id.org/metpo/0000179) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [pH optimum mid2](https://w3id.org/metpo/1000457) 
+- [obsolete pH Optimum mid2](https://w3id.org/metpo/0000179) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [pH optimum mid2](https://w3id.org/metpo/1000457) 
 
 - [obsolete pH Optimum mid2](https://w3id.org/metpo/0000179) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19345,7 +19341,7 @@
 #### Added
 - Class: [obsolete pH Optimum mid2 (7 - 8)](https://w3id.org/metpo/000180) 
 
-- [obsolete pH Optimum mid2 (7 - 8)](https://w3id.org/metpo/000180) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pH Optimum mid2 (7 - 8)](https://w3id.org/metpo/000180) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete pH Optimum mid2 (7 - 8)](https://w3id.org/metpo/000180) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19359,9 +19355,9 @@
 #### Added
 - Class: [obsolete pH Range](https://w3id.org/metpo/0000015) 
 
-- [obsolete pH Range](https://w3id.org/metpo/0000015) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pH Range](https://w3id.org/metpo/0000015) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete pH Range](https://w3id.org/metpo/0000015) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [pH range](https://w3id.org/metpo/1000332) 
+- [obsolete pH Range](https://w3id.org/metpo/0000015) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [pH range](https://w3id.org/metpo/1000332) 
 
 - [obsolete pH Range](https://w3id.org/metpo/0000015) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19375,9 +19371,9 @@
 #### Added
 - Class: [obsolete pH Range](https://w3id.org/metpo/000015) 
 
-- [obsolete pH Range](https://w3id.org/metpo/000015) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pH Range](https://w3id.org/metpo/000015) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete pH Range](https://w3id.org/metpo/000015) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [pH range](https://w3id.org/metpo/1000332) 
+- [obsolete pH Range](https://w3id.org/metpo/000015) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [pH range](https://w3id.org/metpo/1000332) 
 
 - [obsolete pH Range](https://w3id.org/metpo/000015) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19391,9 +19387,9 @@
 #### Added
 - Class: [obsolete pH Range high](https://w3id.org/metpo/0000186) 
 
-- [obsolete pH Range high](https://w3id.org/metpo/0000186) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pH Range high](https://w3id.org/metpo/0000186) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete pH Range high](https://w3id.org/metpo/0000186) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [pH range high](https://w3id.org/metpo/1000464) 
+- [obsolete pH Range high](https://w3id.org/metpo/0000186) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [pH range high](https://w3id.org/metpo/1000464) 
 
 - [obsolete pH Range high](https://w3id.org/metpo/0000186) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19407,7 +19403,7 @@
 #### Added
 - Class: [obsolete pH Range high (10 - 14)](https://w3id.org/metpo/000187) 
 
-- [obsolete pH Range high (10 - 14)](https://w3id.org/metpo/000187) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pH Range high (10 - 14)](https://w3id.org/metpo/000187) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete pH Range high (10 - 14)](https://w3id.org/metpo/000187) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19421,9 +19417,9 @@
 #### Added
 - Class: [obsolete pH Range low](https://w3id.org/metpo/0000182) 
 
-- [obsolete pH Range low](https://w3id.org/metpo/0000182) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pH Range low](https://w3id.org/metpo/0000182) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete pH Range low](https://w3id.org/metpo/0000182) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [pH range low](https://w3id.org/metpo/1000460) 
+- [obsolete pH Range low](https://w3id.org/metpo/0000182) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [pH range low](https://w3id.org/metpo/1000460) 
 
 - [obsolete pH Range low](https://w3id.org/metpo/0000182) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19437,7 +19433,7 @@
 #### Added
 - Class: [obsolete pH Range low (4 - 6)](https://w3id.org/metpo/000183) 
 
-- [obsolete pH Range low (4 - 6)](https://w3id.org/metpo/000183) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pH Range low (4 - 6)](https://w3id.org/metpo/000183) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete pH Range low (4 - 6)](https://w3id.org/metpo/000183) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19451,9 +19447,9 @@
 #### Added
 - Class: [obsolete pH Range mid1](https://w3id.org/metpo/0000183) 
 
-- [obsolete pH Range mid1](https://w3id.org/metpo/0000183) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pH Range mid1](https://w3id.org/metpo/0000183) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete pH Range mid1](https://w3id.org/metpo/0000183) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [pH range mid1](https://w3id.org/metpo/1000461) 
+- [obsolete pH Range mid1](https://w3id.org/metpo/0000183) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [pH range mid1](https://w3id.org/metpo/1000461) 
 
 - [obsolete pH Range mid1](https://w3id.org/metpo/0000183) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19467,7 +19463,7 @@
 #### Added
 - Class: [obsolete pH Range mid1 (6 - 7)](https://w3id.org/metpo/000184) 
 
-- [obsolete pH Range mid1 (6 - 7)](https://w3id.org/metpo/000184) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pH Range mid1 (6 - 7)](https://w3id.org/metpo/000184) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete pH Range mid1 (6 - 7)](https://w3id.org/metpo/000184) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19481,9 +19477,9 @@
 #### Added
 - Class: [obsolete pH Range mid2](https://w3id.org/metpo/0000184) 
 
-- [obsolete pH Range mid2](https://w3id.org/metpo/0000184) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pH Range mid2](https://w3id.org/metpo/0000184) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete pH Range mid2](https://w3id.org/metpo/0000184) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [pH range mid2](https://w3id.org/metpo/1000462) 
+- [obsolete pH Range mid2](https://w3id.org/metpo/0000184) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [pH range mid2](https://w3id.org/metpo/1000462) 
 
 - [obsolete pH Range mid2](https://w3id.org/metpo/0000184) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19497,7 +19493,7 @@
 #### Added
 - Class: [obsolete pH Range mid2 (7 - 8)](https://w3id.org/metpo/000185) 
 
-- [obsolete pH Range mid2 (7 - 8)](https://w3id.org/metpo/000185) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pH Range mid2 (7 - 8)](https://w3id.org/metpo/000185) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete pH Range mid2 (7 - 8)](https://w3id.org/metpo/000185) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19511,9 +19507,9 @@
 #### Added
 - Class: [obsolete pH Range mid3](https://w3id.org/metpo/0000185) 
 
-- [obsolete pH Range mid3](https://w3id.org/metpo/0000185) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pH Range mid3](https://w3id.org/metpo/0000185) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete pH Range mid3](https://w3id.org/metpo/0000185) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [pH range mid3](https://w3id.org/metpo/1000463) 
+- [obsolete pH Range mid3](https://w3id.org/metpo/0000185) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [pH range mid3](https://w3id.org/metpo/1000463) 
 
 - [obsolete pH Range mid3](https://w3id.org/metpo/0000185) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19527,7 +19523,7 @@
 #### Added
 - Class: [obsolete pH Range mid3 (8 - 10)](https://w3id.org/metpo/000186) 
 
-- [obsolete pH Range mid3 (8 - 10)](https://w3id.org/metpo/000186) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pH Range mid3 (8 - 10)](https://w3id.org/metpo/000186) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete pH Range mid3 (8 - 10)](https://w3id.org/metpo/000186) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19541,9 +19537,9 @@
 #### Added
 - Class: [obsolete pH Range very low](https://w3id.org/metpo/0000181) 
 
-- [obsolete pH Range very low](https://w3id.org/metpo/0000181) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pH Range very low](https://w3id.org/metpo/0000181) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete pH Range very low](https://w3id.org/metpo/0000181) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [pH range very low](https://w3id.org/metpo/1000459) 
+- [obsolete pH Range very low](https://w3id.org/metpo/0000181) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [pH range very low](https://w3id.org/metpo/1000459) 
 
 - [obsolete pH Range very low](https://w3id.org/metpo/0000181) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19557,9 +19553,9 @@
 #### Added
 - Class: [obsolete pH Range very low (0 - 4)](https://w3id.org/metpo/000182) 
 
-- [obsolete pH Range very low (0 - 4)](https://w3id.org/metpo/000182) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pH Range very low (0 - 4)](https://w3id.org/metpo/000182) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete pH Range very low (0 - 4)](https://w3id.org/metpo/000182) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [pH range very low](https://w3id.org/metpo/1000459) 
+- [obsolete pH Range very low (0 - 4)](https://w3id.org/metpo/000182) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [pH range very low](https://w3id.org/metpo/1000459) 
 
 - [obsolete pH Range very low (0 - 4)](https://w3id.org/metpo/000182) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19573,7 +19569,7 @@
 #### Added
 - Class: [obsolete pH adaptation](https://w3id.org/metpo/1000511) 
 
-- [obsolete pH adaptation](https://w3id.org/metpo/1000511) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete pH adaptation](https://w3id.org/metpo/1000511) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete pH adaptation](https://w3id.org/metpo/1000511) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19587,9 +19583,9 @@
 #### Added
 - Class: [obsolete pH delta](https://w3id.org/metpo/0000018) 
 
-- [obsolete pH delta](https://w3id.org/metpo/0000018) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pH delta](https://w3id.org/metpo/0000018) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete pH delta](https://w3id.org/metpo/0000018) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [pH delta](https://w3id.org/metpo/1000232) 
+- [obsolete pH delta](https://w3id.org/metpo/0000018) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [pH delta](https://w3id.org/metpo/1000232) 
 
 - [obsolete pH delta](https://w3id.org/metpo/0000018) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19603,9 +19599,9 @@
 #### Added
 - Class: [obsolete pH delta](https://w3id.org/metpo/000018) 
 
-- [obsolete pH delta](https://w3id.org/metpo/000018) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pH delta](https://w3id.org/metpo/000018) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete pH delta](https://w3id.org/metpo/000018) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [pH delta](https://w3id.org/metpo/1000232) 
+- [obsolete pH delta](https://w3id.org/metpo/000018) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [pH delta](https://w3id.org/metpo/1000232) 
 
 - [obsolete pH delta](https://w3id.org/metpo/000018) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19619,7 +19615,7 @@
 #### Added
 - Class: [obsolete pH delta high (5 - 9)](https://w3id.org/metpo/000201) 
 
-- [obsolete pH delta high (5 - 9)](https://w3id.org/metpo/000201) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pH delta high (5 - 9)](https://w3id.org/metpo/000201) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete pH delta high (5 - 9)](https://w3id.org/metpo/000201) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19633,7 +19629,7 @@
 #### Added
 - Class: [obsolete pH delta low (1 - 2)](https://w3id.org/metpo/000197) 
 
-- [obsolete pH delta low (1 - 2)](https://w3id.org/metpo/000197) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pH delta low (1 - 2)](https://w3id.org/metpo/000197) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete pH delta low (1 - 2)](https://w3id.org/metpo/000197) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19647,7 +19643,7 @@
 #### Added
 - Class: [obsolete pH delta mid1 (2 - 3)](https://w3id.org/metpo/000198) 
 
-- [obsolete pH delta mid1 (2 - 3)](https://w3id.org/metpo/000198) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pH delta mid1 (2 - 3)](https://w3id.org/metpo/000198) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete pH delta mid1 (2 - 3)](https://w3id.org/metpo/000198) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19661,7 +19657,7 @@
 #### Added
 - Class: [obsolete pH delta mid2 (3 - 4)](https://w3id.org/metpo/000199) 
 
-- [obsolete pH delta mid2 (3 - 4)](https://w3id.org/metpo/000199) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pH delta mid2 (3 - 4)](https://w3id.org/metpo/000199) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete pH delta mid2 (3 - 4)](https://w3id.org/metpo/000199) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19675,7 +19671,7 @@
 #### Added
 - Class: [obsolete pH delta mid3 (4 - 5)](https://w3id.org/metpo/000200) 
 
-- [obsolete pH delta mid3 (4 - 5)](https://w3id.org/metpo/000200) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pH delta mid3 (4 - 5)](https://w3id.org/metpo/000200) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete pH delta mid3 (4 - 5)](https://w3id.org/metpo/000200) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19689,7 +19685,7 @@
 #### Added
 - Class: [obsolete pH delta observation](https://w3id.org/metpo/1001014) 
 
-- [obsolete pH delta observation](https://w3id.org/metpo/1001014) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete pH delta observation](https://w3id.org/metpo/1001014) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete pH delta observation](https://w3id.org/metpo/1001014) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19703,9 +19699,9 @@
 #### Added
 - Class: [obsolete pH delta very low (<= 1)](https://w3id.org/metpo/000196) 
 
-- [obsolete pH delta very low (<= 1)](https://w3id.org/metpo/000196) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pH delta very low (<= 1)](https://w3id.org/metpo/000196) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete pH delta very low (<= 1)](https://w3id.org/metpo/000196) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [pH delta very low](https://w3id.org/metpo/1000473) 
+- [obsolete pH delta very low (<= 1)](https://w3id.org/metpo/000196) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [pH delta very low](https://w3id.org/metpo/1000473) 
 
 - [obsolete pH delta very low (<= 1)](https://w3id.org/metpo/000196) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19719,7 +19715,7 @@
 #### Added
 - Class: [obsolete pH observation](https://w3id.org/metpo/1001023) 
 
-- [obsolete pH observation](https://w3id.org/metpo/1001023) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete pH observation](https://w3id.org/metpo/1001023) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete pH observation](https://w3id.org/metpo/1001023) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19733,7 +19729,7 @@
 #### Added
 - Class: [obsolete pH optimum (growth range)](https://w3id.org/metpo/1000233) 
 
-- [obsolete pH optimum (growth range)](https://w3id.org/metpo/1000233) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pH optimum (growth range)](https://w3id.org/metpo/1000233) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete pH optimum (growth range)](https://w3id.org/metpo/1000233) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19747,7 +19743,7 @@
 #### Added
 - Class: [obsolete pH preference](https://w3id.org/metpo/1000234) 
 
-- [obsolete pH preference](https://w3id.org/metpo/1000234) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pH preference](https://w3id.org/metpo/1000234) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete pH preference](https://w3id.org/metpo/1000234) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19761,7 +19757,7 @@
 #### Added
 - Class: [obsolete pH range (growth tolerance)](https://w3id.org/metpo/1000235) 
 
-- [obsolete pH range (growth tolerance)](https://w3id.org/metpo/1000235) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pH range (growth tolerance)](https://w3id.org/metpo/1000235) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete pH range (growth tolerance)](https://w3id.org/metpo/1000235) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19775,7 +19771,7 @@
 #### Added
 - Class: [obsolete pH range observation](https://w3id.org/metpo/1001015) 
 
-- [obsolete pH range observation](https://w3id.org/metpo/1001015) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete pH range observation](https://w3id.org/metpo/1001015) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete pH range observation](https://w3id.org/metpo/1001015) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19789,7 +19785,7 @@
 #### Added
 - Class: [obsolete pH tolerance](https://w3id.org/metpo/1000236) 
 
-- [obsolete pH tolerance](https://w3id.org/metpo/1000236) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pH tolerance](https://w3id.org/metpo/1000236) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete pH tolerance](https://w3id.org/metpo/1000236) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19803,7 +19799,7 @@
 #### Added
 - Class: [obsolete pan-genome](https://w3id.org/metpo/1000226) 
 
-- [obsolete pan-genome](https://w3id.org/metpo/1000226) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pan-genome](https://w3id.org/metpo/1000226) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete pan-genome](https://w3id.org/metpo/1000226) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19817,7 +19813,7 @@
 #### Added
 - Class: [obsolete parasitism](https://w3id.org/metpo/1000227) 
 
-- [obsolete parasitism](https://w3id.org/metpo/1000227) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete parasitism](https://w3id.org/metpo/1000227) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete parasitism](https://w3id.org/metpo/1000227) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19831,7 +19827,7 @@
 #### Added
 - Class: [obsolete passive transport](https://w3id.org/metpo/1000228) 
 
-- [obsolete passive transport](https://w3id.org/metpo/1000228) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete passive transport](https://w3id.org/metpo/1000228) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete passive transport](https://w3id.org/metpo/1000228) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19845,7 +19841,7 @@
 #### Added
 - Class: [obsolete pathogenicity](https://w3id.org/metpo/1000229) 
 
-- [obsolete pathogenicity](https://w3id.org/metpo/1000229) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pathogenicity](https://w3id.org/metpo/1000229) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete pathogenicity](https://w3id.org/metpo/1000229) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19859,7 +19855,7 @@
 #### Added
 - Class: [obsolete pathogenicity island](https://w3id.org/metpo/1000230) 
 
-- [obsolete pathogenicity island](https://w3id.org/metpo/1000230) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pathogenicity island](https://w3id.org/metpo/1000230) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete pathogenicity island](https://w3id.org/metpo/1000230) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19873,7 +19869,7 @@
 #### Added
 - Class: [obsolete peptidoglycan](https://w3id.org/metpo/1000231) 
 
-- [obsolete peptidoglycan](https://w3id.org/metpo/1000231) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete peptidoglycan](https://w3id.org/metpo/1000231) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete peptidoglycan](https://w3id.org/metpo/1000231) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19887,7 +19883,7 @@
 #### Added
 - Class: [obsolete peritrichous](https://w3id.org/metpo/1000382) 
 
-- [obsolete peritrichous](https://w3id.org/metpo/1000382) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete peritrichous](https://w3id.org/metpo/1000382) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete peritrichous](https://w3id.org/metpo/1000382) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19901,7 +19897,7 @@
 #### Added
 - Class: [obsolete phage defense](https://w3id.org/metpo/1000237) 
 
-- [obsolete phage defense](https://w3id.org/metpo/1000237) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete phage defense](https://w3id.org/metpo/1000237) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete phage defense](https://w3id.org/metpo/1000237) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19915,9 +19911,9 @@
 #### Added
 - Class: [obsolete photoautotroph](https://w3id.org/metpo/1000238) 
 
-- [obsolete photoautotroph](https://w3id.org/metpo/1000238) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete photoautotroph](https://w3id.org/metpo/1000238) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete photoautotroph](https://w3id.org/metpo/1000238) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [photoautotrophic](https://w3id.org/metpo/1000656) 
+- [obsolete photoautotroph](https://w3id.org/metpo/1000238) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [photoautotrophic](https://w3id.org/metpo/1000656) 
 
 - [obsolete photoautotroph](https://w3id.org/metpo/1000238) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19931,9 +19927,9 @@
 #### Added
 - Class: [obsolete photoheterotroph](https://w3id.org/metpo/1000239) 
 
-- [obsolete photoheterotroph](https://w3id.org/metpo/1000239) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete photoheterotroph](https://w3id.org/metpo/1000239) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete photoheterotroph](https://w3id.org/metpo/1000239) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [photoheterotrophic](https://w3id.org/metpo/1000657) 
+- [obsolete photoheterotroph](https://w3id.org/metpo/1000239) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [photoheterotrophic](https://w3id.org/metpo/1000657) 
 
 - [obsolete photoheterotroph](https://w3id.org/metpo/1000239) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19947,7 +19943,7 @@
 #### Added
 - Class: [obsolete photosynthesis](https://w3id.org/metpo/1000240) 
 
-- [obsolete photosynthesis](https://w3id.org/metpo/1000240) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete photosynthesis](https://w3id.org/metpo/1000240) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete photosynthesis](https://w3id.org/metpo/1000240) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19961,7 +19957,7 @@
 #### Added
 - Class: [obsolete phototaxis](https://w3id.org/metpo/1000241) 
 
-- [obsolete phototaxis](https://w3id.org/metpo/1000241) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete phototaxis](https://w3id.org/metpo/1000241) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete phototaxis](https://w3id.org/metpo/1000241) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19975,9 +19971,9 @@
 #### Added
 - Class: [obsolete phototroph](https://w3id.org/metpo/1000361) 
 
-- [obsolete phototroph](https://w3id.org/metpo/1000361) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete phototroph](https://w3id.org/metpo/1000361) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
-- [obsolete phototroph](https://w3id.org/metpo/1000361) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [phototrophic](https://w3id.org/metpo/1000660) 
+- [obsolete phototroph](https://w3id.org/metpo/1000361) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [phototrophic](https://w3id.org/metpo/1000660) 
 
 - [obsolete phototroph](https://w3id.org/metpo/1000361) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -19991,7 +19987,7 @@
 #### Added
 - Class: [obsolete phylum](https://w3id.org/metpo/1000242) 
 
-- [obsolete phylum](https://w3id.org/metpo/1000242) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete phylum](https://w3id.org/metpo/1000242) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete phylum](https://w3id.org/metpo/1000242) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20005,9 +20001,9 @@
 #### Added
 - Class: [obsolete physiological process](https://w3id.org/metpo/1000243) 
 
-- [obsolete physiological process](https://w3id.org/metpo/1000243) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete physiological process](https://w3id.org/metpo/1000243) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete physiological process](https://w3id.org/metpo/1000243) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [biological process](https://w3id.org/metpo/1000630) 
+- [obsolete physiological process](https://w3id.org/metpo/1000243) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [biological process](https://w3id.org/metpo/1000630) 
 
 - [obsolete physiological process](https://w3id.org/metpo/1000243) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20021,7 +20017,7 @@
 #### Added
 - Class: [obsolete physiological state](https://w3id.org/metpo/1000244) 
 
-- [obsolete physiological state](https://w3id.org/metpo/1000244) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete physiological state](https://w3id.org/metpo/1000244) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete physiological state](https://w3id.org/metpo/1000244) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20035,7 +20031,7 @@
 #### Added
 - Class: [obsolete physiological trait](https://w3id.org/metpo/1000245) 
 
-- [obsolete physiological trait](https://w3id.org/metpo/1000245) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete physiological trait](https://w3id.org/metpo/1000245) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete physiological trait](https://w3id.org/metpo/1000245) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20049,7 +20045,7 @@
 #### Added
 - Class: [obsolete piezo-acidophile](https://w3id.org/metpo/1000419) 
 
-- [obsolete piezo-acidophile](https://w3id.org/metpo/1000419) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete piezo-acidophile](https://w3id.org/metpo/1000419) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete piezo-acidophile](https://w3id.org/metpo/1000419) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20063,7 +20059,7 @@
 #### Added
 - Class: [obsolete piezo-alkaliphile](https://w3id.org/metpo/1000420) 
 
-- [obsolete piezo-alkaliphile](https://w3id.org/metpo/1000420) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete piezo-alkaliphile](https://w3id.org/metpo/1000420) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete piezo-alkaliphile](https://w3id.org/metpo/1000420) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20077,9 +20073,9 @@
 #### Added
 - Class: [obsolete piezo-chemoheterotroph](https://w3id.org/metpo/1000425) 
 
-- [obsolete piezo-chemoheterotroph](https://w3id.org/metpo/1000425) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete piezo-chemoheterotroph](https://w3id.org/metpo/1000425) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
-- [obsolete piezo-chemoheterotroph](https://w3id.org/metpo/1000425) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [chemoheterotrophic](https://w3id.org/metpo/1000636) 
+- [obsolete piezo-chemoheterotroph](https://w3id.org/metpo/1000425) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [chemoheterotrophic](https://w3id.org/metpo/1000636) 
 
 - [obsolete piezo-chemoheterotroph](https://w3id.org/metpo/1000425) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20093,7 +20089,7 @@
 #### Added
 - Class: [obsolete piezo-endolithic](https://w3id.org/metpo/1000427) 
 
-- [obsolete piezo-endolithic](https://w3id.org/metpo/1000427) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete piezo-endolithic](https://w3id.org/metpo/1000427) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete piezo-endolithic](https://w3id.org/metpo/1000427) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20107,7 +20103,7 @@
 #### Added
 - Class: [obsolete piezo-halophile](https://w3id.org/metpo/1000421) 
 
-- [obsolete piezo-halophile](https://w3id.org/metpo/1000421) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete piezo-halophile](https://w3id.org/metpo/1000421) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete piezo-halophile](https://w3id.org/metpo/1000421) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20121,7 +20117,7 @@
 #### Added
 - Class: [obsolete piezo-lithoautotrophe](https://w3id.org/metpo/1000424) 
 
-- [obsolete piezo-lithoautotrophe](https://w3id.org/metpo/1000424) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete piezo-lithoautotrophe](https://w3id.org/metpo/1000424) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete piezo-lithoautotrophe](https://w3id.org/metpo/1000424) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20135,7 +20131,7 @@
 #### Added
 - Class: [obsolete piezo-oligotroph](https://w3id.org/metpo/1000426) 
 
-- [obsolete piezo-oligotroph](https://w3id.org/metpo/1000426) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete piezo-oligotroph](https://w3id.org/metpo/1000426) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete piezo-oligotroph](https://w3id.org/metpo/1000426) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20149,7 +20145,7 @@
 #### Added
 - Class: [obsolete piezo-psychrophile](https://w3id.org/metpo/1000422) 
 
-- [obsolete piezo-psychrophile](https://w3id.org/metpo/1000422) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete piezo-psychrophile](https://w3id.org/metpo/1000422) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete piezo-psychrophile](https://w3id.org/metpo/1000422) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20163,7 +20159,7 @@
 #### Added
 - Class: [obsolete piezo-thermophile](https://w3id.org/metpo/1000423) 
 
-- [obsolete piezo-thermophile](https://w3id.org/metpo/1000423) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete piezo-thermophile](https://w3id.org/metpo/1000423) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete piezo-thermophile](https://w3id.org/metpo/1000423) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20177,7 +20173,7 @@
 #### Added
 - Class: [obsolete piezo-tolerant](https://w3id.org/metpo/1000428) 
 
-- [obsolete piezo-tolerant](https://w3id.org/metpo/1000428) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete piezo-tolerant](https://w3id.org/metpo/1000428) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete piezo-tolerant](https://w3id.org/metpo/1000428) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20191,7 +20187,7 @@
 #### Added
 - Class: [obsolete piezophile](https://w3id.org/metpo/1000246) 
 
-- [obsolete piezophile](https://w3id.org/metpo/1000246) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete piezophile](https://w3id.org/metpo/1000246) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete piezophile](https://w3id.org/metpo/1000246) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20205,7 +20201,7 @@
 #### Added
 - Class: [obsolete piezosensitive](https://w3id.org/metpo/1000406) 
 
-- [obsolete piezosensitive](https://w3id.org/metpo/1000406) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete piezosensitive](https://w3id.org/metpo/1000406) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete piezosensitive](https://w3id.org/metpo/1000406) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20219,7 +20215,7 @@
 #### Added
 - Class: [obsolete piezotolerant](https://w3id.org/metpo/1000405) 
 
-- [obsolete piezotolerant](https://w3id.org/metpo/1000405) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete piezotolerant](https://w3id.org/metpo/1000405) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete piezotolerant](https://w3id.org/metpo/1000405) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20233,7 +20229,7 @@
 #### Added
 - Class: [obsolete pigment](https://w3id.org/metpo/1000247) 
 
-- [obsolete pigment](https://w3id.org/metpo/1000247) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pigment](https://w3id.org/metpo/1000247) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete pigment](https://w3id.org/metpo/1000247) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20247,9 +20243,9 @@
 #### Added
 - Class: [obsolete pigmentation](https://w3id.org/metpo/1000248) 
 
-- [obsolete pigmentation](https://w3id.org/metpo/1000248) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pigmentation](https://w3id.org/metpo/1000248) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete pigmentation](https://w3id.org/metpo/1000248) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [pigmentation](https://w3id.org/metpo/1003021) 
+- [obsolete pigmentation](https://w3id.org/metpo/1000248) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [pigmentation](https://w3id.org/metpo/1003021) 
 
 - [obsolete pigmentation](https://w3id.org/metpo/1000248) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20263,7 +20259,7 @@
 #### Added
 - Class: [obsolete pilus](https://w3id.org/metpo/1000249) 
 
-- [obsolete pilus](https://w3id.org/metpo/1000249) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pilus](https://w3id.org/metpo/1000249) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete pilus](https://w3id.org/metpo/1000249) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20277,7 +20273,7 @@
 #### Added
 - Class: [obsolete plant growth promotion](https://w3id.org/metpo/1000250) 
 
-- [obsolete plant growth promotion](https://w3id.org/metpo/1000250) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete plant growth promotion](https://w3id.org/metpo/1000250) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete plant growth promotion](https://w3id.org/metpo/1000250) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20291,7 +20287,7 @@
 #### Added
 - Class: [obsolete plasmid](https://w3id.org/metpo/1000251) 
 
-- [obsolete plasmid](https://w3id.org/metpo/1000251) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete plasmid](https://w3id.org/metpo/1000251) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete plasmid](https://w3id.org/metpo/1000251) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20305,7 +20301,7 @@
 #### Added
 - Class: [obsolete pleomorphic](https://w3id.org/metpo/000229) 
 
-- [obsolete pleomorphic](https://w3id.org/metpo/000229) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pleomorphic](https://w3id.org/metpo/000229) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete pleomorphic](https://w3id.org/metpo/000229) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20319,7 +20315,7 @@
 #### Added
 - Class: [obsolete pleomorphic](https://w3id.org/metpo/1000501) 
 
-- [obsolete pleomorphic](https://w3id.org/metpo/1000501) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete pleomorphic](https://w3id.org/metpo/1000501) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete pleomorphic](https://w3id.org/metpo/1000501) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20333,7 +20329,7 @@
 #### Added
 - Class: [obsolete pleomorphism](https://w3id.org/metpo/1000252) 
 
-- [obsolete pleomorphism](https://w3id.org/metpo/1000252) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete pleomorphism](https://w3id.org/metpo/1000252) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete pleomorphism](https://w3id.org/metpo/1000252) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20347,7 +20343,7 @@
 #### Added
 - ObjectProperty: [obsolete precipitates](https://w3id.org/metpo/2000215) 
 
-- [obsolete precipitates](https://w3id.org/metpo/2000215) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete precipitates](https://w3id.org/metpo/2000215) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete precipitates](https://w3id.org/metpo/2000215) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20359,7 +20355,7 @@
 #### Added
 - Class: [obsolete pressure](https://w3id.org/metpo/1000328) 
 
-- [obsolete pressure](https://w3id.org/metpo/1000328) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete pressure](https://w3id.org/metpo/1000328) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete pressure](https://w3id.org/metpo/1000328) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20373,7 +20369,7 @@
 #### Added
 - Class: [obsolete pressure adaptation type](https://w3id.org/metpo/1000513) 
 
-- [obsolete pressure adaptation type](https://w3id.org/metpo/1000513) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete pressure adaptation type](https://w3id.org/metpo/1000513) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete pressure adaptation type](https://w3id.org/metpo/1000513) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20387,9 +20383,9 @@
 #### Added
 - Class: [obsolete pressure tolerance range](https://w3id.org/metpo/1000514) 
 
-- [obsolete pressure tolerance range](https://w3id.org/metpo/1000514) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete pressure tolerance range](https://w3id.org/metpo/1000514) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
-- [obsolete pressure tolerance range](https://w3id.org/metpo/1000514) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [pressure tolerance](https://w3id.org/metpo/1007070) 
+- [obsolete pressure tolerance range](https://w3id.org/metpo/1000514) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [pressure tolerance](https://w3id.org/metpo/1007070) 
 
 - [obsolete pressure tolerance range](https://w3id.org/metpo/1000514) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20403,7 +20399,7 @@
 #### Added
 - Class: [obsolete pressure-adapted](https://w3id.org/metpo/1000418) 
 
-- [obsolete pressure-adapted](https://w3id.org/metpo/1000418) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete pressure-adapted](https://w3id.org/metpo/1000418) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete pressure-adapted](https://w3id.org/metpo/1000418) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20417,7 +20413,7 @@
 #### Added
 - Class: [obsolete pressure-resistant](https://w3id.org/metpo/1000417) 
 
-- [obsolete pressure-resistant](https://w3id.org/metpo/1000417) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete pressure-resistant](https://w3id.org/metpo/1000417) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete pressure-resistant](https://w3id.org/metpo/1000417) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20431,7 +20427,7 @@
 #### Added
 - Class: [obsolete pressure-sensitive](https://w3id.org/metpo/1000416) 
 
-- [obsolete pressure-sensitive](https://w3id.org/metpo/1000416) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete pressure-sensitive](https://w3id.org/metpo/1000416) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete pressure-sensitive](https://w3id.org/metpo/1000416) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20445,7 +20441,7 @@
 #### Added
 - Class: [obsolete process](https://w3id.org/metpo/1000253) 
 
-- [obsolete process](https://w3id.org/metpo/1000253) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete process](https://w3id.org/metpo/1000253) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete process](https://w3id.org/metpo/1000253) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20459,7 +20455,7 @@
 #### Added
 - Class: [obsolete process](https://w3id.org/metpo/1000187) 
 
-- [obsolete process](https://w3id.org/metpo/1000187) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete process](https://w3id.org/metpo/1000187) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete process](https://w3id.org/metpo/1000187) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20473,7 +20469,7 @@
 #### Added
 - Class: [obsolete prophage](https://w3id.org/metpo/1000254) 
 
-- [obsolete prophage](https://w3id.org/metpo/1000254) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete prophage](https://w3id.org/metpo/1000254) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete prophage](https://w3id.org/metpo/1000254) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20487,7 +20483,7 @@
 #### Added
 - Class: [obsolete prostheca](https://w3id.org/metpo/1000255) 
 
-- [obsolete prostheca](https://w3id.org/metpo/1000255) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete prostheca](https://w3id.org/metpo/1000255) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete prostheca](https://w3id.org/metpo/1000255) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20501,7 +20497,7 @@
 #### Added
 - Class: [obsolete protein synthesis](https://w3id.org/metpo/1000256) 
 
-- [obsolete protein synthesis](https://w3id.org/metpo/1000256) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete protein synthesis](https://w3id.org/metpo/1000256) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete protein synthesis](https://w3id.org/metpo/1000256) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20515,7 +20511,7 @@
 #### Added
 - Class: [obsolete proteolysis](https://w3id.org/metpo/1000257) 
 
-- [obsolete proteolysis](https://w3id.org/metpo/1000257) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete proteolysis](https://w3id.org/metpo/1000257) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete proteolysis](https://w3id.org/metpo/1000257) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20529,7 +20525,7 @@
 #### Added
 - Class: [obsolete prototroph](https://w3id.org/metpo/1000258) 
 
-- [obsolete prototroph](https://w3id.org/metpo/1000258) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete prototroph](https://w3id.org/metpo/1000258) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete prototroph](https://w3id.org/metpo/1000258) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20543,9 +20539,9 @@
 #### Added
 - Class: [obsolete psychrophile](https://w3id.org/metpo/1000259) 
 
-- [obsolete psychrophile](https://w3id.org/metpo/1000259) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete psychrophile](https://w3id.org/metpo/1000259) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete psychrophile](https://w3id.org/metpo/1000259) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [psychrophilic](https://w3id.org/metpo/1000614) 
+- [obsolete psychrophile](https://w3id.org/metpo/1000259) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [psychrophilic](https://w3id.org/metpo/1000614) 
 
 - [obsolete psychrophile](https://w3id.org/metpo/1000259) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20559,9 +20555,9 @@
 #### Added
 - Class: [obsolete psychrotolerant](https://w3id.org/metpo/1000336) 
 
-- [obsolete psychrotolerant](https://w3id.org/metpo/1000336) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete psychrotolerant](https://w3id.org/metpo/1000336) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
-- [obsolete psychrotolerant](https://w3id.org/metpo/1000336) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [psychrotolerant](https://w3id.org/metpo/1000618) 
+- [obsolete psychrotolerant](https://w3id.org/metpo/1000336) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [psychrotolerant](https://w3id.org/metpo/1000618) 
 
 - [obsolete psychrotolerant](https://w3id.org/metpo/1000336) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20575,7 +20571,7 @@
 #### Added
 - Class: [obsolete pycnidiospores](https://w3id.org/metpo/1000401) 
 
-- [obsolete pycnidiospores](https://w3id.org/metpo/1000401) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete pycnidiospores](https://w3id.org/metpo/1000401) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete pycnidiospores](https://w3id.org/metpo/1000401) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20589,7 +20585,7 @@
 #### Added
 - Class: [obsolete qualifier](https://w3id.org/metpo/1000260) 
 
-- [obsolete qualifier](https://w3id.org/metpo/1000260) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete qualifier](https://w3id.org/metpo/1000260) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete qualifier](https://w3id.org/metpo/1000260) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20603,7 +20599,7 @@
 #### Added
 - Class: [obsolete quorum sensing](https://w3id.org/metpo/1000261) 
 
-- [obsolete quorum sensing](https://w3id.org/metpo/1000261) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete quorum sensing](https://w3id.org/metpo/1000261) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete quorum sensing](https://w3id.org/metpo/1000261) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20617,7 +20613,7 @@
 #### Added
 - Class: [obsolete regulation](https://w3id.org/metpo/1000262) 
 
-- [obsolete regulation](https://w3id.org/metpo/1000262) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete regulation](https://w3id.org/metpo/1000262) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete regulation](https://w3id.org/metpo/1000262) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20631,7 +20627,7 @@
 #### Added
 - Class: [obsolete regulatory mechanism](https://w3id.org/metpo/1000263) 
 
-- [obsolete regulatory mechanism](https://w3id.org/metpo/1000263) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete regulatory mechanism](https://w3id.org/metpo/1000263) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete regulatory mechanism](https://w3id.org/metpo/1000263) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20645,7 +20641,7 @@
 #### Added
 - Class: [obsolete reproductive process](https://w3id.org/metpo/1000264) 
 
-- [obsolete reproductive process](https://w3id.org/metpo/1000264) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete reproductive process](https://w3id.org/metpo/1000264) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete reproductive process](https://w3id.org/metpo/1000264) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20659,7 +20655,7 @@
 #### Added
 - Class: [obsolete reproductive structure](https://w3id.org/metpo/1000265) 
 
-- [obsolete reproductive structure](https://w3id.org/metpo/1000265) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete reproductive structure](https://w3id.org/metpo/1000265) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete reproductive structure](https://w3id.org/metpo/1000265) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20673,7 +20669,7 @@
 #### Added
 - Class: [obsolete resistance mechanism](https://w3id.org/metpo/1000266) 
 
-- [obsolete resistance mechanism](https://w3id.org/metpo/1000266) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete resistance mechanism](https://w3id.org/metpo/1000266) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete resistance mechanism](https://w3id.org/metpo/1000266) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20687,9 +20683,9 @@
 #### Added
 - Class: [obsolete respiration](https://w3id.org/metpo/1000267) 
 
-- [obsolete respiration](https://w3id.org/metpo/1000267) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete respiration](https://w3id.org/metpo/1000267) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete respiration](https://w3id.org/metpo/1000267) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [respiration](https://w3id.org/metpo/1000800) 
+- [obsolete respiration](https://w3id.org/metpo/1000267) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [respiration](https://w3id.org/metpo/1000800) 
 
 - [obsolete respiration](https://w3id.org/metpo/1000267) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20703,7 +20699,7 @@
 #### Added
 - Class: [obsolete restriction-modification system](https://w3id.org/metpo/1000268) 
 
-- [obsolete restriction-modification system](https://w3id.org/metpo/1000268) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete restriction-modification system](https://w3id.org/metpo/1000268) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete restriction-modification system](https://w3id.org/metpo/1000268) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20717,7 +20713,7 @@
 #### Added
 - Class: [obsolete ribosome](https://w3id.org/metpo/1000269) 
 
-- [obsolete ribosome](https://w3id.org/metpo/1000269) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete ribosome](https://w3id.org/metpo/1000269) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete ribosome](https://w3id.org/metpo/1000269) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20731,7 +20727,7 @@
 #### Added
 - Class: [obsolete ring](https://w3id.org/metpo/000230) 
 
-- [obsolete ring](https://w3id.org/metpo/000230) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete ring](https://w3id.org/metpo/000230) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete ring](https://w3id.org/metpo/000230) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20745,7 +20741,7 @@
 #### Added
 - Class: [obsolete ring](https://w3id.org/metpo/1000502) 
 
-- [obsolete ring](https://w3id.org/metpo/1000502) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete ring](https://w3id.org/metpo/1000502) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete ring](https://w3id.org/metpo/1000502) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20759,7 +20755,7 @@
 #### Added
 - Class: [obsolete rod](https://w3id.org/metpo/000231) 
 
-- [obsolete rod](https://w3id.org/metpo/000231) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete rod](https://w3id.org/metpo/000231) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete rod](https://w3id.org/metpo/000231) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20773,7 +20769,7 @@
 #### Added
 - Class: [obsolete rod](https://w3id.org/metpo/1000503) 
 
-- [obsolete rod](https://w3id.org/metpo/1000503) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete rod](https://w3id.org/metpo/1000503) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete rod](https://w3id.org/metpo/1000503) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20787,7 +20783,7 @@
 #### Added
 - Class: [obsolete salinity adaptation](https://w3id.org/metpo/1000510) 
 
-- [obsolete salinity adaptation](https://w3id.org/metpo/1000510) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete salinity adaptation](https://w3id.org/metpo/1000510) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete salinity adaptation](https://w3id.org/metpo/1000510) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20801,7 +20797,7 @@
 #### Added
 - Class: [obsolete salinity delta](https://w3id.org/metpo/1000271) 
 
-- [obsolete salinity delta](https://w3id.org/metpo/1000271) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete salinity delta](https://w3id.org/metpo/1000271) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete salinity delta](https://w3id.org/metpo/1000271) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20815,7 +20811,7 @@
 #### Added
 - Class: [obsolete salinity preference](https://w3id.org/metpo/1000272) 
 
-- [obsolete salinity preference](https://w3id.org/metpo/1000272) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete salinity preference](https://w3id.org/metpo/1000272) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete salinity preference](https://w3id.org/metpo/1000272) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20829,7 +20825,7 @@
 #### Added
 - Class: [obsolete sclerotia](https://w3id.org/metpo/1000398) 
 
-- [obsolete sclerotia](https://w3id.org/metpo/1000398) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete sclerotia](https://w3id.org/metpo/1000398) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete sclerotia](https://w3id.org/metpo/1000398) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20843,7 +20839,7 @@
 #### Added
 - Class: [obsolete secondary metabolite](https://w3id.org/metpo/1000273) 
 
-- [obsolete secondary metabolite](https://w3id.org/metpo/1000273) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete secondary metabolite](https://w3id.org/metpo/1000273) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete secondary metabolite](https://w3id.org/metpo/1000273) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20857,7 +20853,7 @@
 #### Added
 - Class: [obsolete secretion](https://w3id.org/metpo/1000274) 
 
-- [obsolete secretion](https://w3id.org/metpo/1000274) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete secretion](https://w3id.org/metpo/1000274) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete secretion](https://w3id.org/metpo/1000274) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20871,7 +20867,7 @@
 #### Added
 - Class: [obsolete secretion system](https://w3id.org/metpo/1000275) 
 
-- [obsolete secretion system](https://w3id.org/metpo/1000275) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete secretion system](https://w3id.org/metpo/1000275) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete secretion system](https://w3id.org/metpo/1000275) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20885,7 +20881,7 @@
 #### Added
 - Class: [obsolete sensitivity to oxygen](https://w3id.org/metpo/1000515) 
 
-- [obsolete sensitivity to oxygen](https://w3id.org/metpo/1000515) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete sensitivity to oxygen](https://w3id.org/metpo/1000515) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete sensitivity to oxygen](https://w3id.org/metpo/1000515) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20899,7 +20895,7 @@
 #### Added
 - Class: [obsolete sensitivity to oxygen](https://w3id.org/metpo/0001000) 
 
-- [obsolete sensitivity to oxygen](https://w3id.org/metpo/0001000) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete sensitivity to oxygen](https://w3id.org/metpo/0001000) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete sensitivity to oxygen](https://w3id.org/metpo/0001000) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20913,7 +20909,7 @@
 #### Added
 - Class: [obsolete sensitivity toward](https://w3id.org/metpo/0001001) 
 
-- [obsolete sensitivity toward](https://w3id.org/metpo/0001001) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete sensitivity toward](https://w3id.org/metpo/0001001) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete sensitivity toward](https://w3id.org/metpo/0001001) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20927,7 +20923,7 @@
 #### Added
 - Class: [obsolete sensitivity toward](https://w3id.org/metpo/1000516) 
 
-- [obsolete sensitivity toward](https://w3id.org/metpo/1000516) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete sensitivity toward](https://w3id.org/metpo/1000516) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete sensitivity toward](https://w3id.org/metpo/1000516) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20941,7 +20937,7 @@
 #### Added
 - Class: [obsolete sensitivity toward NaCl](https://w3id.org/metpo/0001017) 
 
-- [obsolete sensitivity toward NaCl](https://w3id.org/metpo/0001017) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete sensitivity toward NaCl](https://w3id.org/metpo/0001017) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete sensitivity toward NaCl](https://w3id.org/metpo/0001017) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20955,7 +20951,7 @@
 #### Added
 - Class: [obsolete sensitivity toward nacl](https://w3id.org/metpo/1000522) 
 
-- [obsolete sensitivity toward nacl](https://w3id.org/metpo/1000522) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete sensitivity toward nacl](https://w3id.org/metpo/1000522) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete sensitivity toward nacl](https://w3id.org/metpo/1000522) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20969,7 +20965,7 @@
 #### Added
 - Class: [obsolete sensitivity toward pH](https://w3id.org/metpo/0001018) 
 
-- [obsolete sensitivity toward pH](https://w3id.org/metpo/0001018) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete sensitivity toward pH](https://w3id.org/metpo/0001018) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete sensitivity toward pH](https://w3id.org/metpo/0001018) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20983,7 +20979,7 @@
 #### Added
 - Class: [obsolete sensitivity toward ph](https://w3id.org/metpo/1000523) 
 
-- [obsolete sensitivity toward ph](https://w3id.org/metpo/1000523) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete sensitivity toward ph](https://w3id.org/metpo/1000523) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete sensitivity toward ph](https://w3id.org/metpo/1000523) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -20997,7 +20993,7 @@
 #### Added
 - Class: [obsolete sensitivity toward pressure](https://w3id.org/metpo/1000521) 
 
-- [obsolete sensitivity toward pressure](https://w3id.org/metpo/1000521) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete sensitivity toward pressure](https://w3id.org/metpo/1000521) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete sensitivity toward pressure](https://w3id.org/metpo/1000521) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21011,7 +21007,7 @@
 #### Added
 - Class: [obsolete sensitivity toward pressure](https://w3id.org/metpo/0001016) 
 
-- [obsolete sensitivity toward pressure](https://w3id.org/metpo/0001016) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete sensitivity toward pressure](https://w3id.org/metpo/0001016) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete sensitivity toward pressure](https://w3id.org/metpo/0001016) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21025,7 +21021,7 @@
 #### Added
 - Class: [obsolete sensitivity toward temperature](https://w3id.org/metpo/0001019) 
 
-- [obsolete sensitivity toward temperature](https://w3id.org/metpo/0001019) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete sensitivity toward temperature](https://w3id.org/metpo/0001019) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete sensitivity toward temperature](https://w3id.org/metpo/0001019) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21039,7 +21035,7 @@
 #### Added
 - Class: [obsolete sensitivity toward temperature](https://w3id.org/metpo/1000524) 
 
-- [obsolete sensitivity toward temperature](https://w3id.org/metpo/1000524) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete sensitivity toward temperature](https://w3id.org/metpo/1000524) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete sensitivity toward temperature](https://w3id.org/metpo/1000524) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21053,7 +21049,7 @@
 #### Added
 - Class: [obsolete sheathed](https://w3id.org/metpo/1000276) 
 
-- [obsolete sheathed](https://w3id.org/metpo/1000276) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete sheathed](https://w3id.org/metpo/1000276) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete sheathed](https://w3id.org/metpo/1000276) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21067,7 +21063,7 @@
 #### Added
 - Class: [obsolete siderophore](https://w3id.org/metpo/1000277) 
 
-- [obsolete siderophore](https://w3id.org/metpo/1000277) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete siderophore](https://w3id.org/metpo/1000277) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete siderophore](https://w3id.org/metpo/1000277) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21081,7 +21077,7 @@
 #### Added
 - Class: [obsolete sigma factor](https://w3id.org/metpo/1000278) 
 
-- [obsolete sigma factor](https://w3id.org/metpo/1000278) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete sigma factor](https://w3id.org/metpo/1000278) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete sigma factor](https://w3id.org/metpo/1000278) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21095,7 +21091,7 @@
 #### Added
 - Class: [obsolete signaling](https://w3id.org/metpo/1000279) 
 
-- [obsolete signaling](https://w3id.org/metpo/1000279) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete signaling](https://w3id.org/metpo/1000279) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete signaling](https://w3id.org/metpo/1000279) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21109,7 +21105,7 @@
 #### Added
 - Class: [obsolete size](https://w3id.org/metpo/1000517) 
 
-- [obsolete size](https://w3id.org/metpo/1000517) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete size](https://w3id.org/metpo/1000517) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete size](https://w3id.org/metpo/1000517) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21123,7 +21119,7 @@
 #### Added
 - Class: [obsolete size](https://w3id.org/metpo/0001006) 
 
-- [obsolete size](https://w3id.org/metpo/0001006) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete size](https://w3id.org/metpo/0001006) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete size](https://w3id.org/metpo/0001006) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21137,7 +21133,7 @@
 #### Added
 - Class: [obsolete sliding](https://w3id.org/metpo/1000388) 
 
-- [obsolete sliding](https://w3id.org/metpo/1000388) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete sliding](https://w3id.org/metpo/1000388) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete sliding](https://w3id.org/metpo/1000388) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21151,9 +21147,9 @@
 #### Added
 - Class: [obsolete slight halophile](https://w3id.org/metpo/1000341) 
 
-- [obsolete slight halophile](https://w3id.org/metpo/1000341) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete slight halophile](https://w3id.org/metpo/1000341) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
-- [obsolete slight halophile](https://w3id.org/metpo/1000341) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [slightly halophilic](https://w3id.org/metpo/1000625) 
+- [obsolete slight halophile](https://w3id.org/metpo/1000341) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [slightly halophilic](https://w3id.org/metpo/1000625) 
 
 - [obsolete slight halophile](https://w3id.org/metpo/1000341) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21167,7 +21163,7 @@
 #### Added
 - Class: [obsolete slime layer](https://w3id.org/metpo/1000280) 
 
-- [obsolete slime layer](https://w3id.org/metpo/1000280) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete slime layer](https://w3id.org/metpo/1000280) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete slime layer](https://w3id.org/metpo/1000280) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21181,7 +21177,7 @@
 #### Added
 - ObjectProperty: [obsolete solubilizes](https://w3id.org/metpo/2000216) 
 
-- [obsolete solubilizes](https://w3id.org/metpo/2000216) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete solubilizes](https://w3id.org/metpo/2000216) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete solubilizes](https://w3id.org/metpo/2000216) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21193,7 +21189,7 @@
 #### Added
 - Class: [obsolete specialized cell](https://w3id.org/metpo/1000281) 
 
-- [obsolete specialized cell](https://w3id.org/metpo/1000281) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete specialized cell](https://w3id.org/metpo/1000281) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete specialized cell](https://w3id.org/metpo/1000281) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21207,7 +21203,7 @@
 #### Added
 - Class: [obsolete species](https://w3id.org/metpo/1000282) 
 
-- [obsolete species](https://w3id.org/metpo/1000282) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete species](https://w3id.org/metpo/1000282) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete species](https://w3id.org/metpo/1000282) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21221,7 +21217,7 @@
 #### Added
 - Class: [obsolete sphere](https://w3id.org/metpo/000232) 
 
-- [obsolete sphere](https://w3id.org/metpo/000232) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete sphere](https://w3id.org/metpo/000232) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete sphere](https://w3id.org/metpo/000232) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21235,7 +21231,7 @@
 #### Added
 - Class: [obsolete sphere](https://w3id.org/metpo/1000504) 
 
-- [obsolete sphere](https://w3id.org/metpo/1000504) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete sphere](https://w3id.org/metpo/1000504) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete sphere](https://w3id.org/metpo/1000504) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21249,7 +21245,7 @@
 #### Added
 - Class: [obsolete spindle](https://w3id.org/metpo/000233) 
 
-- [obsolete spindle](https://w3id.org/metpo/000233) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete spindle](https://w3id.org/metpo/000233) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete spindle](https://w3id.org/metpo/000233) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21263,7 +21259,7 @@
 #### Added
 - Class: [obsolete spindle](https://w3id.org/metpo/1000505) 
 
-- [obsolete spindle](https://w3id.org/metpo/1000505) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete spindle](https://w3id.org/metpo/1000505) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete spindle](https://w3id.org/metpo/1000505) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21277,7 +21273,7 @@
 #### Added
 - Class: [obsolete spiral](https://w3id.org/metpo/000234) 
 
-- [obsolete spiral](https://w3id.org/metpo/000234) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete spiral](https://w3id.org/metpo/000234) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete spiral](https://w3id.org/metpo/000234) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21291,7 +21287,7 @@
 #### Added
 - Class: [obsolete spiral](https://w3id.org/metpo/1000506) 
 
-- [obsolete spiral](https://w3id.org/metpo/1000506) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete spiral](https://w3id.org/metpo/1000506) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete spiral](https://w3id.org/metpo/1000506) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21305,7 +21301,7 @@
 #### Added
 - Class: [obsolete spirillum](https://w3id.org/metpo/1000283) 
 
-- [obsolete spirillum](https://w3id.org/metpo/1000283) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete spirillum](https://w3id.org/metpo/1000283) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete spirillum](https://w3id.org/metpo/1000283) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21319,7 +21315,7 @@
 #### Added
 - Class: [obsolete spirochete](https://w3id.org/metpo/1000284) 
 
-- [obsolete spirochete](https://w3id.org/metpo/1000284) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete spirochete](https://w3id.org/metpo/1000284) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete spirochete](https://w3id.org/metpo/1000284) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21333,7 +21329,7 @@
 #### Added
 - Class: [obsolete spirochete](https://w3id.org/metpo/000235) 
 
-- [obsolete spirochete](https://w3id.org/metpo/000235) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete spirochete](https://w3id.org/metpo/000235) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete spirochete](https://w3id.org/metpo/000235) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21347,7 +21343,7 @@
 #### Added
 - Class: [obsolete sporangiospore](https://w3id.org/metpo/1000285) 
 
-- [obsolete sporangiospore](https://w3id.org/metpo/1000285) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete sporangiospore](https://w3id.org/metpo/1000285) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete sporangiospore](https://w3id.org/metpo/1000285) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21361,7 +21357,7 @@
 #### Added
 - Class: [obsolete spore](https://w3id.org/metpo/000236) 
 
-- [obsolete spore](https://w3id.org/metpo/000236) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete spore](https://w3id.org/metpo/000236) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete spore](https://w3id.org/metpo/000236) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21375,7 +21371,7 @@
 #### Added
 - Class: [obsolete spore type](https://w3id.org/metpo/0001014) 
 
-- [obsolete spore type](https://w3id.org/metpo/0001014) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete spore type](https://w3id.org/metpo/0001014) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete spore type](https://w3id.org/metpo/0001014) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21389,7 +21385,7 @@
 #### Added
 - Class: [obsolete sporocysts](https://w3id.org/metpo/1000392) 
 
-- [obsolete sporocysts](https://w3id.org/metpo/1000392) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete sporocysts](https://w3id.org/metpo/1000392) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete sporocysts](https://w3id.org/metpo/1000392) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21403,9 +21399,9 @@
 #### Added
 - Class: [obsolete sporulation](https://w3id.org/metpo/1000286) 
 
-- [obsolete sporulation](https://w3id.org/metpo/1000286) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete sporulation](https://w3id.org/metpo/1000286) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete sporulation](https://w3id.org/metpo/1000286) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [sporulation](https://w3id.org/metpo/1000870) 
+- [obsolete sporulation](https://w3id.org/metpo/1000286) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [sporulation](https://w3id.org/metpo/1000870) 
 
 - [obsolete sporulation](https://w3id.org/metpo/1000286) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21419,7 +21415,7 @@
 #### Added
 - Class: [obsolete square](https://w3id.org/metpo/000237) 
 
-- [obsolete square](https://w3id.org/metpo/000237) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete square](https://w3id.org/metpo/000237) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete square](https://w3id.org/metpo/000237) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21433,7 +21429,7 @@
 #### Added
 - Class: [obsolete square cell](https://w3id.org/metpo/1000287) 
 
-- [obsolete square cell](https://w3id.org/metpo/1000287) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete square cell](https://w3id.org/metpo/1000287) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete square cell](https://w3id.org/metpo/1000287) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21447,7 +21443,7 @@
 #### Added
 - Class: [obsolete stalk](https://w3id.org/metpo/1000288) 
 
-- [obsolete stalk](https://w3id.org/metpo/1000288) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete stalk](https://w3id.org/metpo/1000288) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete stalk](https://w3id.org/metpo/1000288) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21461,7 +21457,7 @@
 #### Added
 - Class: [obsolete star](https://w3id.org/metpo/000238) 
 
-- [obsolete star](https://w3id.org/metpo/000238) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete star](https://w3id.org/metpo/000238) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete star](https://w3id.org/metpo/000238) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21475,7 +21471,7 @@
 #### Added
 - Class: [obsolete star - dumbbell - pleomorphic](https://w3id.org/metpo/000239) 
 
-- [obsolete star - dumbbell - pleomorphic](https://w3id.org/metpo/000239) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete star - dumbbell - pleomorphic](https://w3id.org/metpo/000239) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete star - dumbbell - pleomorphic](https://w3id.org/metpo/000239) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21489,7 +21485,7 @@
 #### Added
 - Class: [obsolete star - dumbbell - pleomorphic](https://w3id.org/metpo/1000507) 
 
-- [obsolete star - dumbbell - pleomorphic](https://w3id.org/metpo/1000507) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete star - dumbbell - pleomorphic](https://w3id.org/metpo/1000507) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete star - dumbbell - pleomorphic](https://w3id.org/metpo/1000507) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21503,7 +21499,7 @@
 #### Added
 - Class: [obsolete star-shaped cell](https://w3id.org/metpo/1000289) 
 
-- [obsolete star-shaped cell](https://w3id.org/metpo/1000289) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete star-shaped cell](https://w3id.org/metpo/1000289) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete star-shaped cell](https://w3id.org/metpo/1000289) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21517,7 +21513,7 @@
 #### Added
 - Class: [obsolete stationary phase](https://w3id.org/metpo/1000290) 
 
-- [obsolete stationary phase](https://w3id.org/metpo/1000290) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete stationary phase](https://w3id.org/metpo/1000290) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete stationary phase](https://w3id.org/metpo/1000290) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21531,7 +21527,7 @@
 #### Added
 - Class: [obsolete statismospores](https://w3id.org/metpo/1000404) 
 
-- [obsolete statismospores](https://w3id.org/metpo/1000404) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete statismospores](https://w3id.org/metpo/1000404) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete statismospores](https://w3id.org/metpo/1000404) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21545,7 +21541,7 @@
 #### Added
 - Class: [obsolete stenopiezic](https://w3id.org/metpo/1000414) 
 
-- [obsolete stenopiezic](https://w3id.org/metpo/1000414) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete stenopiezic](https://w3id.org/metpo/1000414) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete stenopiezic](https://w3id.org/metpo/1000414) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21559,7 +21555,7 @@
 #### Added
 - Class: [obsolete storage structure](https://w3id.org/metpo/1000291) 
 
-- [obsolete storage structure](https://w3id.org/metpo/1000291) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete storage structure](https://w3id.org/metpo/1000291) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete storage structure](https://w3id.org/metpo/1000291) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21573,7 +21569,7 @@
 #### Added
 - Class: [obsolete strain](https://w3id.org/metpo/1000292) 
 
-- [obsolete strain](https://w3id.org/metpo/1000292) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete strain](https://w3id.org/metpo/1000292) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete strain](https://w3id.org/metpo/1000292) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21587,7 +21583,7 @@
 #### Added
 - Class: [obsolete stress response](https://w3id.org/metpo/1000293) 
 
-- [obsolete stress response](https://w3id.org/metpo/1000293) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete stress response](https://w3id.org/metpo/1000293) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete stress response](https://w3id.org/metpo/1000293) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21601,7 +21597,7 @@
 #### Added
 - Class: [obsolete structure](https://w3id.org/metpo/0001013) 
 
-- [obsolete structure](https://w3id.org/metpo/0001013) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete structure](https://w3id.org/metpo/0001013) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete structure](https://w3id.org/metpo/0001013) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21615,7 +21611,7 @@
 #### Added
 - Class: [obsolete structure](https://w3id.org/metpo/1000294) 
 
-- [obsolete structure](https://w3id.org/metpo/1000294) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete structure](https://w3id.org/metpo/1000294) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete structure](https://w3id.org/metpo/1000294) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21629,7 +21625,7 @@
 #### Added
 - Class: [obsolete structured susceptibility detail](https://w3id.org/metpo/1000528) 
 
-- [obsolete structured susceptibility detail](https://w3id.org/metpo/1000528) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete structured susceptibility detail](https://w3id.org/metpo/1000528) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete structured susceptibility detail](https://w3id.org/metpo/1000528) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21643,7 +21639,7 @@
 #### Added
 - Class: [obsolete stylospores](https://w3id.org/metpo/1000397) 
 
-- [obsolete stylospores](https://w3id.org/metpo/1000397) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete stylospores](https://w3id.org/metpo/1000397) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete stylospores](https://w3id.org/metpo/1000397) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21657,7 +21653,7 @@
 #### Added
 - Class: [obsolete sulfate reducer](https://w3id.org/metpo/1000295) 
 
-- [obsolete sulfate reducer](https://w3id.org/metpo/1000295) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete sulfate reducer](https://w3id.org/metpo/1000295) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete sulfate reducer](https://w3id.org/metpo/1000295) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21671,7 +21667,7 @@
 #### Added
 - Class: [obsolete sulfate-reducing](https://w3id.org/metpo/1000661) 
 
-- [obsolete sulfate-reducing](https://w3id.org/metpo/1000661) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete sulfate-reducing](https://w3id.org/metpo/1000661) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete sulfate-reducing](https://w3id.org/metpo/1000661) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21685,7 +21681,7 @@
 #### Added
 - Class: [obsolete sulfur oxidizer](https://w3id.org/metpo/1000377) 
 
-- [obsolete sulfur oxidizer](https://w3id.org/metpo/1000377) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete sulfur oxidizer](https://w3id.org/metpo/1000377) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete sulfur oxidizer](https://w3id.org/metpo/1000377) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21699,7 +21695,7 @@
 #### Added
 - Class: [obsolete sulfur-oxidizing](https://w3id.org/metpo/1000662) 
 
-- [obsolete sulfur-oxidizing](https://w3id.org/metpo/1000662) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete sulfur-oxidizing](https://w3id.org/metpo/1000662) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete sulfur-oxidizing](https://w3id.org/metpo/1000662) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21713,7 +21709,7 @@
 #### Added
 - Class: [obsolete swarming](https://w3id.org/metpo/1000296) 
 
-- [obsolete swarming](https://w3id.org/metpo/1000296) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete swarming](https://w3id.org/metpo/1000296) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete swarming](https://w3id.org/metpo/1000296) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21727,7 +21723,7 @@
 #### Added
 - Class: [obsolete symbiosis](https://w3id.org/metpo/1000297) 
 
-- [obsolete symbiosis](https://w3id.org/metpo/1000297) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete symbiosis](https://w3id.org/metpo/1000297) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete symbiosis](https://w3id.org/metpo/1000297) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21741,7 +21737,7 @@
 #### Added
 - Class: [obsolete symbiotic process](https://w3id.org/metpo/1000298) 
 
-- [obsolete symbiotic process](https://w3id.org/metpo/1000298) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete symbiotic process](https://w3id.org/metpo/1000298) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete symbiotic process](https://w3id.org/metpo/1000298) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21755,9 +21751,9 @@
 #### Added
 - Class: [obsolete syntrophy](https://w3id.org/metpo/1000299) 
 
-- [obsolete syntrophy](https://w3id.org/metpo/1000299) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete syntrophy](https://w3id.org/metpo/1000299) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete syntrophy](https://w3id.org/metpo/1000299) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [Syntrophy](https://w3id.org/metpo/1002006) 
+- [obsolete syntrophy](https://w3id.org/metpo/1000299) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [Syntrophy](https://w3id.org/metpo/1002006) 
 
 - [obsolete syntrophy](https://w3id.org/metpo/1000299) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21771,7 +21767,7 @@
 #### Added
 - Class: [obsolete system](https://w3id.org/metpo/1000189) 
 
-- [obsolete system](https://w3id.org/metpo/1000189) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete system](https://w3id.org/metpo/1000189) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete system](https://w3id.org/metpo/1000189) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21785,7 +21781,7 @@
 #### Added
 - Class: [obsolete tailed](https://w3id.org/metpo/1000508) 
 
-- [obsolete tailed](https://w3id.org/metpo/1000508) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete tailed](https://w3id.org/metpo/1000508) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete tailed](https://w3id.org/metpo/1000508) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21799,7 +21795,7 @@
 #### Added
 - Class: [obsolete tailed](https://w3id.org/metpo/000240) 
 
-- [obsolete tailed](https://w3id.org/metpo/000240) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete tailed](https://w3id.org/metpo/000240) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete tailed](https://w3id.org/metpo/000240) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21813,7 +21809,7 @@
 #### Added
 - Class: [obsolete taxonomic identifier](https://w3id.org/metpo/1000300) 
 
-- [obsolete taxonomic identifier](https://w3id.org/metpo/1000300) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete taxonomic identifier](https://w3id.org/metpo/1000300) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete taxonomic identifier](https://w3id.org/metpo/1000300) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21827,7 +21823,7 @@
 #### Added
 - Class: [obsolete taxonomic rank](https://w3id.org/metpo/1000301) 
 
-- [obsolete taxonomic rank](https://w3id.org/metpo/1000301) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete taxonomic rank](https://w3id.org/metpo/1000301) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete taxonomic rank](https://w3id.org/metpo/1000301) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21841,7 +21837,7 @@
 #### Added
 - Class: [obsolete teichoic acid](https://w3id.org/metpo/1000302) 
 
-- [obsolete teichoic acid](https://w3id.org/metpo/1000302) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete teichoic acid](https://w3id.org/metpo/1000302) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete teichoic acid](https://w3id.org/metpo/1000302) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21855,7 +21851,7 @@
 #### Added
 - Class: [obsolete teliospores](https://w3id.org/metpo/1000399) 
 
-- [obsolete teliospores](https://w3id.org/metpo/1000399) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete teliospores](https://w3id.org/metpo/1000399) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete teliospores](https://w3id.org/metpo/1000399) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21869,7 +21865,7 @@
 #### Added
 - Class: [obsolete temperature adaptation](https://w3id.org/metpo/1000509) 
 
-- [obsolete temperature adaptation](https://w3id.org/metpo/1000509) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete temperature adaptation](https://w3id.org/metpo/1000509) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete temperature adaptation](https://w3id.org/metpo/1000509) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21883,7 +21879,7 @@
 #### Added
 - Class: [obsolete temperature delta observation](https://w3id.org/metpo/1001004) 
 
-- [obsolete temperature delta observation](https://w3id.org/metpo/1001004) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete temperature delta observation](https://w3id.org/metpo/1001004) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete temperature delta observation](https://w3id.org/metpo/1001004) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21897,7 +21893,7 @@
 #### Added
 - Class: [obsolete temperature observation](https://w3id.org/metpo/1001021) 
 
-- [obsolete temperature observation](https://w3id.org/metpo/1001021) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete temperature observation](https://w3id.org/metpo/1001021) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete temperature observation](https://w3id.org/metpo/1001021) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21911,7 +21907,7 @@
 #### Added
 - Class: [obsolete temperature optimum (metabolic activity)](https://w3id.org/metpo/1000329) 
 
-- [obsolete temperature optimum (metabolic activity)](https://w3id.org/metpo/1000329) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete temperature optimum (metabolic activity)](https://w3id.org/metpo/1000329) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete temperature optimum (metabolic activity)](https://w3id.org/metpo/1000329) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21925,9 +21921,9 @@
 #### Added
 - Class: [obsolete temperature preference](https://w3id.org/metpo/1000305) 
 
-- [obsolete temperature preference](https://w3id.org/metpo/1000305) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete temperature preference](https://w3id.org/metpo/1000305) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete temperature preference](https://w3id.org/metpo/1000305) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [temperature preference](https://w3id.org/metpo/1000613) 
+- [obsolete temperature preference](https://w3id.org/metpo/1000305) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [temperature preference](https://w3id.org/metpo/1000613) 
 
 - [obsolete temperature preference](https://w3id.org/metpo/1000305) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21941,7 +21937,7 @@
 #### Added
 - Class: [obsolete temperature range (metabolic viability)](https://w3id.org/metpo/1000330) 
 
-- [obsolete temperature range (metabolic viability)](https://w3id.org/metpo/1000330) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete temperature range (metabolic viability)](https://w3id.org/metpo/1000330) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete temperature range (metabolic viability)](https://w3id.org/metpo/1000330) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21955,7 +21951,7 @@
 #### Added
 - Class: [obsolete temperature range observation](https://w3id.org/metpo/1001003) 
 
-- [obsolete temperature range observation](https://w3id.org/metpo/1001003) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete temperature range observation](https://w3id.org/metpo/1001003) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete temperature range observation](https://w3id.org/metpo/1001003) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21969,7 +21965,7 @@
 #### Added
 - Class: [obsolete thermal tolerance](https://w3id.org/metpo/1000307) 
 
-- [obsolete thermal tolerance](https://w3id.org/metpo/1000307) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete thermal tolerance](https://w3id.org/metpo/1000307) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete thermal tolerance](https://w3id.org/metpo/1000307) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21983,9 +21979,9 @@
 #### Added
 - Class: [obsolete thermophile](https://w3id.org/metpo/1000308) 
 
-- [obsolete thermophile](https://w3id.org/metpo/1000308) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete thermophile](https://w3id.org/metpo/1000308) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
-- [obsolete thermophile](https://w3id.org/metpo/1000308) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [thermophilic](https://w3id.org/metpo/1000616) 
+- [obsolete thermophile](https://w3id.org/metpo/1000308) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [thermophilic](https://w3id.org/metpo/1000616) 
 
 - [obsolete thermophile](https://w3id.org/metpo/1000308) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -21999,9 +21995,9 @@
 #### Added
 - Class: [obsolete thermotolerant](https://w3id.org/metpo/1000337) 
 
-- [obsolete thermotolerant](https://w3id.org/metpo/1000337) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete thermotolerant](https://w3id.org/metpo/1000337) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
-- [obsolete thermotolerant](https://w3id.org/metpo/1000337) [IAO_0100001](http://purl.obolibrary.org/obo/IAO_0100001) [thermotolerant](https://w3id.org/metpo/1000619) 
+- [obsolete thermotolerant](https://w3id.org/metpo/1000337) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [thermotolerant](https://w3id.org/metpo/1000619) 
 
 - [obsolete thermotolerant](https://w3id.org/metpo/1000337) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -22015,7 +22011,7 @@
 #### Added
 - Class: [obsolete toxin](https://w3id.org/metpo/1000309) 
 
-- [obsolete toxin](https://w3id.org/metpo/1000309) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete toxin](https://w3id.org/metpo/1000309) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete toxin](https://w3id.org/metpo/1000309) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -22029,7 +22025,7 @@
 #### Added
 - Class: [obsolete transcription factor](https://w3id.org/metpo/1000310) 
 
-- [obsolete transcription factor](https://w3id.org/metpo/1000310) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete transcription factor](https://w3id.org/metpo/1000310) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete transcription factor](https://w3id.org/metpo/1000310) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -22043,7 +22039,7 @@
 #### Added
 - Class: [obsolete transduction](https://w3id.org/metpo/1000311) 
 
-- [obsolete transduction](https://w3id.org/metpo/1000311) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete transduction](https://w3id.org/metpo/1000311) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete transduction](https://w3id.org/metpo/1000311) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -22057,7 +22053,7 @@
 #### Added
 - Class: [obsolete transferase](https://w3id.org/metpo/1000312) 
 
-- [obsolete transferase](https://w3id.org/metpo/1000312) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete transferase](https://w3id.org/metpo/1000312) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete transferase](https://w3id.org/metpo/1000312) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -22071,7 +22067,7 @@
 #### Added
 - Class: [obsolete transformation](https://w3id.org/metpo/1000313) 
 
-- [obsolete transformation](https://w3id.org/metpo/1000313) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete transformation](https://w3id.org/metpo/1000313) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete transformation](https://w3id.org/metpo/1000313) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -22085,7 +22081,7 @@
 #### Added
 - Class: [obsolete transport system](https://w3id.org/metpo/1000314) 
 
-- [obsolete transport system](https://w3id.org/metpo/1000314) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete transport system](https://w3id.org/metpo/1000314) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete transport system](https://w3id.org/metpo/1000314) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -22099,7 +22095,7 @@
 #### Added
 - Class: [obsolete transposon](https://w3id.org/metpo/1000315) 
 
-- [obsolete transposon](https://w3id.org/metpo/1000315) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete transposon](https://w3id.org/metpo/1000315) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete transposon](https://w3id.org/metpo/1000315) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -22113,7 +22109,7 @@
 #### Added
 - Class: [obsolete triangular](https://w3id.org/metpo/000241) 
 
-- [obsolete triangular](https://w3id.org/metpo/000241) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete triangular](https://w3id.org/metpo/000241) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete triangular](https://w3id.org/metpo/000241) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -22127,7 +22123,7 @@
 #### Added
 - Class: [obsolete triangular cell](https://w3id.org/metpo/1000316) 
 
-- [obsolete triangular cell](https://w3id.org/metpo/1000316) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete triangular cell](https://w3id.org/metpo/1000316) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete triangular cell](https://w3id.org/metpo/1000316) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -22141,7 +22137,7 @@
 #### Added
 - Class: [obsolete trichome](https://w3id.org/metpo/1000317) 
 
-- [obsolete trichome](https://w3id.org/metpo/1000317) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete trichome](https://w3id.org/metpo/1000317) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete trichome](https://w3id.org/metpo/1000317) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -22155,7 +22151,7 @@
 #### Added
 - Class: [obsolete twitching](https://w3id.org/metpo/1000387) 
 
-- [obsolete twitching](https://w3id.org/metpo/1000387) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete twitching](https://w3id.org/metpo/1000387) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete twitching](https://w3id.org/metpo/1000387) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -22169,7 +22165,7 @@
 #### Added
 - Class: [obsolete twitching motility](https://w3id.org/metpo/1000318) 
 
-- [obsolete twitching motility](https://w3id.org/metpo/1000318) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete twitching motility](https://w3id.org/metpo/1000318) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete twitching motility](https://w3id.org/metpo/1000318) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -22183,7 +22179,7 @@
 #### Added
 - Class: [obsolete two-component system](https://w3id.org/metpo/1000319) 
 
-- [obsolete two-component system](https://w3id.org/metpo/1000319) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete two-component system](https://w3id.org/metpo/1000319) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete two-component system](https://w3id.org/metpo/1000319) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -22197,7 +22193,7 @@
 #### Added
 - Class: [obsolete upper-mid GC content](https://w3id.org/metpo/1000131) 
 
-- [obsolete upper-mid GC content](https://w3id.org/metpo/1000131) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete upper-mid GC content](https://w3id.org/metpo/1000131) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete upper-mid GC content](https://w3id.org/metpo/1000131) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -22211,7 +22207,7 @@
 #### Added
 - Class: [obsolete urediniospores](https://w3id.org/metpo/1000400) 
 
-- [obsolete urediniospores](https://w3id.org/metpo/1000400) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete urediniospores](https://w3id.org/metpo/1000400) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete urediniospores](https://w3id.org/metpo/1000400) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -22225,7 +22221,7 @@
 #### Added
 - Class: [obsolete viable but non-culturable](https://w3id.org/metpo/1000320) 
 
-- [obsolete viable but non-culturable](https://w3id.org/metpo/1000320) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete viable but non-culturable](https://w3id.org/metpo/1000320) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete viable but non-culturable](https://w3id.org/metpo/1000320) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -22239,7 +22235,7 @@
 #### Added
 - Class: [obsolete vibrio](https://w3id.org/metpo/1000321) 
 
-- [obsolete vibrio](https://w3id.org/metpo/1000321) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete vibrio](https://w3id.org/metpo/1000321) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete vibrio](https://w3id.org/metpo/1000321) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -22253,7 +22249,7 @@
 #### Added
 - Class: [obsolete vibrio](https://w3id.org/metpo/000242) 
 
-- [obsolete vibrio](https://w3id.org/metpo/000242) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete vibrio](https://w3id.org/metpo/000242) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete vibrio](https://w3id.org/metpo/000242) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -22267,7 +22263,7 @@
 #### Added
 - Class: [obsolete virulence](https://w3id.org/metpo/1000322) 
 
-- [obsolete virulence](https://w3id.org/metpo/1000322) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete virulence](https://w3id.org/metpo/1000322) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete virulence](https://w3id.org/metpo/1000322) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -22281,7 +22277,7 @@
 #### Added
 - Class: [obsolete virulence factor](https://w3id.org/metpo/1000323) 
 
-- [obsolete virulence factor](https://w3id.org/metpo/1000323) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete virulence factor](https://w3id.org/metpo/1000323) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete virulence factor](https://w3id.org/metpo/1000323) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -22295,7 +22291,7 @@
 #### Added
 - Class: [obsolete virulence process](https://w3id.org/metpo/1000324) 
 
-- [obsolete virulence process](https://w3id.org/metpo/1000324) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete virulence process](https://w3id.org/metpo/1000324) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete virulence process](https://w3id.org/metpo/1000324) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -22309,7 +22305,7 @@
 #### Added
 - ObjectProperty: [obsolete volatilizes](https://w3id.org/metpo/2000217) 
 
-- [obsolete volatilizes](https://w3id.org/metpo/2000217) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete volatilizes](https://w3id.org/metpo/2000217) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete volatilizes](https://w3id.org/metpo/2000217) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -22321,7 +22317,7 @@
 #### Added
 - Class: [obsolete width](https://w3id.org/metpo/1000519) 
 
-- [obsolete width](https://w3id.org/metpo/1000519) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
+- [obsolete width](https://w3id.org/metpo/1000519) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000226](http://purl.obolibrary.org/obo/IAO_0000226) 
 
 - [obsolete width](https://w3id.org/metpo/1000519) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -22335,7 +22331,7 @@
 #### Added
 - Class: [obsolete width](https://w3id.org/metpo/0001008) 
 
-- [obsolete width](https://w3id.org/metpo/0001008) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete width](https://w3id.org/metpo/0001008) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete width](https://w3id.org/metpo/0001008) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -22349,7 +22345,7 @@
 #### Added
 - Class: [obsolete xylanolysis](https://w3id.org/metpo/1000325) 
 
-- [obsolete xylanolysis](https://w3id.org/metpo/1000325) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete xylanolysis](https://w3id.org/metpo/1000325) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete xylanolysis](https://w3id.org/metpo/1000325) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -22363,7 +22359,7 @@
 #### Added
 - Class: [obsolete zoospore](https://w3id.org/metpo/1000326) 
 
-- [obsolete zoospore](https://w3id.org/metpo/1000326) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete zoospore](https://w3id.org/metpo/1000326) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete zoospore](https://w3id.org/metpo/1000326) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -22377,7 +22373,7 @@
 #### Added
 - Class: [obsolete zygospore](https://w3id.org/metpo/1000327) 
 
-- [obsolete zygospore](https://w3id.org/metpo/1000327) [IAO_0000231](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
+- [obsolete zygospore](https://w3id.org/metpo/1000327) [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [OMO_0001000](http://purl.obolibrary.org/obo/OMO_0001000) 
 
 - [obsolete zygospore](https://w3id.org/metpo/1000327) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
@@ -24465,6 +24461,14 @@
 - AnnotationProperty: [term editor](http://purl.obolibrary.org/obo/IAO_0000117) 
 
 - [term editor](http://purl.obolibrary.org/obo/IAO_0000117) [label](http://www.w3.org/2000/01/rdf-schema#label) "term editor" 
+
+
+### term replaced by `http://purl.obolibrary.org/obo/IAO_0100001`
+
+#### Added
+- AnnotationProperty: [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) 
+
+- [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [label](http://www.w3.org/2000/01/rdf-schema#label) "term replaced by" 
 
 
 ### thermophilic `https://w3id.org/metpo/1000616`
