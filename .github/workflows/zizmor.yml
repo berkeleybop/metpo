@@ -1,0 +1,33 @@
+name: zizmor
+
+# Static security analysis of the GitHub Actions workflows themselves
+# (template injection, excessive permissions, credential persistence, unpinned
+# actions, Dependabot cooldown, ...). Complements actionlint (correctness) and
+# CodeQL (code). Configuration, including the exclusion of the ODK-generated
+# qc.yml, lives in .github/zizmor.yml.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  zizmor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+      - name: Install uv
+        run: |
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+      - name: Run zizmor
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: uvx zizmor@1.25.2 .github/
