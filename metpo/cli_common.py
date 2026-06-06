@@ -106,21 +106,6 @@ def output_dir_option(required=False, default=None, help_text="Output directory 
 # =============================================================================
 
 
-def chroma_path_option(default="./chroma_db", help_text="ChromaDB storage directory path"):
-    """Standard ChromaDB storage path option.
-
-    Args:
-        default: Default ChromaDB path (default: './chroma_db')
-        help_text: Custom help text
-
-    Returns:
-        Click option decorator for --chroma-path
-    """
-    return click.option(
-        "--chroma-path", type=click.Path(path_type=str), default=default, help=help_text
-    )
-
-
 def db_path_option(required=True, help_text="SQLite database file path"):
     """Standard SQLite database path option.
 
