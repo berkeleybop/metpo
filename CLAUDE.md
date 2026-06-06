@@ -1,6 +1,35 @@
 # METPO Development Guide for Claude Code
 
-**Last Updated:** 2025-11-10
+**Last Updated:** 2026-06-05
+
+---
+
+## Source of truth and project constraints
+
+Read these before editing ontology content or proposing architecture.
+
+- **The Google Sheet is the source of truth for ontology content** (term labels,
+  definitions, synonyms, biolink mappings, range bounds, equivalent-class
+  formulas): sheet `1_Lr-9_5QHi8QLvRyTZFSciUhzGKD4DbUObyTpJ16_RU`
+  ("METPO - growth_condition_terms"). The TSVs under `src/templates/` and
+  `src/ontology/components/metpo_sheet.owl` are a **build cache generated from the
+  sheet**.
+- **Never hand-edit the committed `src/templates/*.tsv` or `src/ontology/components/metpo_sheet.owl`**,
+  even to "fix" something a reviewer or Copilot flagged — the next sheet sync
+  overwrites it. Fix it in the sheet (e.g. `gog sheets update ...`), then rebuild
+  so the regenerated TSV/OWL are what you commit. (The `metpo-edit.owl` header
+  annotations are the exception: those are edited in-repo.)
+- **CI tests the committed snapshot, not the live sheet.** `qc.yml` runs
+  `make test ...` without `squeaky-clean`, so sheet edits only reach CI once
+  someone runs `squeaky-clean && make all` locally and commits the regenerated
+  `src/templates/*.tsv` and `src/ontology/components/*.owl`.
+- **ChromaDB is retired** (unpatchable critical CVE, #455/#401, removed in #498).
+  Do not propose new ChromaDB-based solutions. Cross-ontology/embedding work uses
+  OLS4 + local embeddings (nomic-embed-text via Ollama on the M5 GPU) +
+  linkml-store/OAK; see `metpo/pipeline/cross_ontology_search.py`.
+- **Scope-narrowing means relocate, not delete** (#433). Do not delete
+  non-ontology content (presentations, literature-mining, analysis scripts)
+  until its long-term home is decided; extraction PRs stay drafts until then.
 
 ---
 
@@ -85,7 +114,10 @@ When cleaning up or organizing the repository:
    as a generated artifact — it is hand-maintained.
 
 2. **Never reuse a burned ID.** An ID is burned if it appears in `deprecated.tsv`, in any
-   BioPortal submission extract, or in any tagged release. Check before allocating.
+   BioPortal submission extract, or in any tagged release. Check before allocating. This
+   spans historical numbering eras (early leading-zero IDs as well as the current
+   `1xxxxxx` classes / `2xxxxxx` properties); in particular the literature-mining range
+   `1000001`-`1000327` was retired and must not be reused.
 
 3. **The research tools were a one-time bootstrap.** `generate-deprecated-template` and
    `audit-id-allocation` scanned BioPortal submissions and git history in March 2026 (PR #375)
@@ -129,6 +161,15 @@ Also run a grep sanity-check: `grep "METPO:<candidate>" src/templates/*.tsv src/
 ## Ontology Development
 
 ### Build Commands
+
+**Host vs container targets.** Anything that runs ROBOT needs the ODK container,
+invoked with the `sh run.sh make ...` wrapper from `src/ontology/`: `all`, `test`,
+`test_fast`, `prepare_release`, `reason_test`, `sparql_test`, `robot_reports`,
+`components/*.owl`. Targets that only shell out to host tools (`curl`, `uv`, git)
+run faster **directly with `make ...`** (no container spin-up): `clean`,
+`squeaky-clean`, the `../templates/*.tsv` sheet downloads, and the `diff-*`
+targets. If `uv` isn't on PATH inside the container, resolve sheet URLs on the
+host and pass/curl them in.
 
 **Full build:**
 ```bash
@@ -224,12 +265,35 @@ sh run.sh make prepare_release
 - **Imports:** `src/ontology/imports/` - imported ontologies (bfo, obi, omp, pato, so, micro, mpo)
 - **Release files:** `metpo.owl`, `metpo.obo`, `metpo.json` - generated release formats
 
+### IRI and namespace scheme (read before touching any IRI)
+
+METPO term IRIs are **bare-numeric under w3id**: `https://w3id.org/metpo/<digits>`
+(e.g. `https://w3id.org/metpo/1000602`). There is **no `METPO_` infix**. The
+`METPO:` CURIE prefix is notation only; it expands to `https://w3id.org/metpo/`
+(declared in `metpo-odk.yaml` `namespaces:` and the template `--add-prefix`).
+
+- w3id delegates only the `/metpo/` path, so the resolvable base, the ontology
+  IRI, the version IRI, and all products must sit under `https://w3id.org/metpo/`.
+- The **main ontology IRI must be `https://w3id.org/metpo/metpo.owl`**.
+  `https://w3id.org/metpo.owl` is outside the delegation and 404s (#435, #465).
+- Do not introduce `http://purl.obolibrary.org/obo/METPO_...` PURLs — obolibrary
+  is not registered for METPO and those 404.
+- This is the exact scheme the QC SPARQL filters key on
+  (`STRSTARTS(str(?term), "https://w3id.org/metpo/")`); a wrong prefix silently
+  matches nothing (see the meta-test note above).
+
 ### OBO Foundry Coding Guidelines
 
-1. **Follow OBO Foundry ID formats** - Use METPO:XXXXXXX format
+1. **Use the IRI scheme above** - bare-numeric `https://w3id.org/metpo/<digits>`,
+   written `METPO:<digits>` in templates/sheets.
 2. **Include labels for all entities** - Every term must have rdfs:label
 3. **Use standard OWL Manchester syntax** - Follow OWL conventions
-4. **Document definitions** - Use IAO:0000115 for term definitions
+4. **Aristotelian definitions** - `IAO:0000115` definitions follow "A ⟨genus⟩ that
+   ⟨differentia⟩", where **the genus is literally the parent class's label** (not a
+   free-text noun phrase, not a non-existent class). This is enforced
+   deterministically by `metpo-proposal-lint` (DEF-FORM check, baseline ratchet);
+   accepted genus/differentia connectors include `that`, `in which`, `where`,
+   `characterized by`, `describing` (not `with`/`having`).
 5. **Follow naming patterns** - Consistent with existing terms in the ontology
 6. **Place imports appropriately** - Keep imported terms in imports directory
 
@@ -254,6 +318,10 @@ The classes-tab template has two kinds of synonym columns; they have different e
 - unusual capitalization or punctuation
 
 The implicit contract is that downstream consumers (e.g. `kg-microbe`'s BactoTraits transformer) match on the exact source string. Normalizing breaks matching.
+
+**Source-bound synonyms are reified, and duplicates across bins are intentional.** Each source-bound value is asserted as an `oboInOwl:hasRelatedSynonym` and reified on an `owl:Axiom` carrying the provenance source (`IAO:0000119` -> e.g. `https://bacdive.dsmz.de/`). The **same related synonym appearing on several classes (e.g. across temperature/pH/oxygen bins) is deliberate** - it maps distinct external-system values to METPO entities. Do **not** "de-duplicate" them. (The known *defect* is the separate `confirmed exact synonym` overload in #444, not these.)
+
+**How `kg-microbe` consumes METPO (why the verbatim rule matters):** it reads (1) `metpo.owl` from `main` for ontology nodes/edges, and (2) the ROBOT-template TSVs **pinned to a git tag** for its BacDive/BactoTraits/Madin/MetaTraits synonym-to-predicate mappings. So when METPO removes or renames a property, the pinned tag in kg-microbe must be bumped or the old mapping keeps being used. Treat source-bound synonym strings and property IRIs as a downstream contract.
 
 **Ontology-native columns:**
 
