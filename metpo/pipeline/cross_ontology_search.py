@@ -28,6 +28,7 @@ import csv
 import json
 import math
 import sys
+import urllib.error
 import urllib.parse
 import urllib.request
 from pathlib import Path
@@ -46,8 +47,13 @@ def ols_candidates(label, rows=20):
     """Lexical candidate classes from OLS4 for a label (IRI, curie, label, def, ontology)."""
     q = urllib.parse.urlencode({"q": label, "type": "class", "rows": rows})
     req = urllib.request.Request(f"{OLS_SEARCH}?{q}", headers={"Accept": "application/json"})
-    with urllib.request.urlopen(req, timeout=20) as r:
-        docs = json.load(r).get("response", {}).get("docs", [])
+    try:
+        with urllib.request.urlopen(req, timeout=20) as r:
+            docs = json.load(r).get("response", {}).get("docs", [])
+    except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as e:
+        # A transient OLS outage should skip this term, not abort the whole run.
+        print(f"warning: OLS query failed for {label!r}: {e}", file=sys.stderr)
+        return []
     out = []
     for d in docs:
         out.append(
@@ -92,7 +98,7 @@ def load_terms(metpo_tsv, label, definition):
     if label:
         return [{"id": "", "label": label, "definition": definition}]
     terms = []
-    with Path(metpo_tsv).open() as f:
+    with Path(metpo_tsv).open(encoding="utf-8") as f:
         reader = csv.reader(f, delimiter="\t")
         low = [h.lower() for h in next(reader, [])]
         id_i = low.index("id") if "id" in low else 0
@@ -100,6 +106,10 @@ def load_terms(metpo_tsv, label, definition):
         def_i = next((i for i, h in enumerate(low) if "definition" in h), None)
         for row in reader:
             if len(row) <= lbl_i or not row[lbl_i].strip():
+                continue
+            # Skip the ROBOT template spec row (row 2 of a ROBOT template TSV),
+            # whose cells are template directives such as ID / LABEL / "A IAO:0000115".
+            if row[lbl_i].strip() == "LABEL" or (len(row) > id_i and row[id_i].strip() == "ID"):
                 continue
             terms.append(
                 {
@@ -148,7 +158,7 @@ def _write(fh, rows):
 def write_matches(rows, output):
     """Write match rows as TSV to ``output`` (path) or stdout."""
     if output:
-        with Path(output).open("w", newline="") as fh:
+        with Path(output).open("w", newline="", encoding="utf-8") as fh:
             _write(fh, rows)
     else:
         _write(sys.stdout, rows)

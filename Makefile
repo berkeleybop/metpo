@@ -55,13 +55,8 @@ help:
 	@echo "Analysis Reports:"
 	@echo "  make all-reports          - Generate all analysis reports"
 	@echo ""
-	@echo "Ontology Alignment Pipeline:"
-	@echo "  make help-alignment       - Show detailed alignment pipeline help"
-	@echo ""
 	@echo "External Ontology Downloads:"
 	@echo "  make download-external-bioportal-ontologies  - Download non-OLS ontologies"
-	@echo "  make generate-non-ols-tsvs                   - Extract terms for embeddings"
-	@echo "  make scan-manifest                           - Update ontology manifest"
 	@echo ""
 	@echo "Literature Mining:"
 	@echo "  make -C literature_mining help               - Show literature mining help"
@@ -575,8 +570,6 @@ download-external-bioportal-ontologies: $(foreach ont,$(NON_OLS_BIOPORTAL_ONTOLO
 	@echo "=========================================="
 	@echo "Download phase complete"
 	@echo "=========================================="
-	@echo "Run 'make scan-manifest' to update tracking"
-	@echo "Run 'make view-logs' to see any failures"
 
 
 # Download ontology from BioPortal
