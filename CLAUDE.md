@@ -14,7 +14,7 @@ Read these before editing ontology content or proposing architecture.
   ("METPO - growth_condition_terms"). The TSVs under `src/templates/` and
   `src/ontology/components/metpo_sheet.owl` are a **build cache generated from the
   sheet**.
-- **Never hand-edit the committed `src/templates/*.tsv` or `components/metpo_sheet.owl`**,
+- **Never hand-edit the committed `src/templates/*.tsv` or `src/ontology/components/metpo_sheet.owl`**,
   even to "fix" something a reviewer or Copilot flagged — the next sheet sync
   overwrites it. Fix it in the sheet (e.g. `gog sheets update ...`), then rebuild
   so the regenerated TSV/OWL are what you commit. (The `metpo-edit.owl` header
