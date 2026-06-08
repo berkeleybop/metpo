@@ -105,6 +105,19 @@ regenerate-deprecated:
 	rm -f ../templates/deprecated.tsv
 	$(MAKE) -f metpo.Makefile ../templates/deprecated.tsv
 
+# Emission control for deprecated/obsolete terms (berkeleybop/metpo#378).
+# INCLUDE_OBSOLETE=true (default) merges ../templates/deprecated.tsv into the build,
+# so the release OWL carries the obsolete classes (current behaviour; the committed
+# artifacts and the artifact-freshness check reproduce with the default).
+# INCLUDE_OBSOLETE=false omits that template, producing an obsolete-free build, e.g.
+#   sh run.sh make INCLUDE_OBSOLETE=false prepare_release
+INCLUDE_OBSOLETE ?= true
+ifeq ($(INCLUDE_OBSOLETE),true)
+DEPRECATED_TEMPLATE_ARG := --template ../templates/deprecated.tsv
+else
+DEPRECATED_TEMPLATE_ARG :=
+endif
+
 components/metpo_sheet.owl: ../templates/stubs.tsv ../templates/metpo-properties.tsv ../templates/metpo_sheet.tsv ../templates/deprecated.tsv
 	$(ROBOT) template \
 		--add-prefix 'METPO: https://w3id.org/metpo/' \
@@ -113,7 +126,7 @@ components/metpo_sheet.owl: ../templates/stubs.tsv ../templates/metpo-properties
 		--template ../templates/stubs.tsv \
 		--template ../templates/metpo_sheet.tsv \
 		--template ../templates/metpo-properties.tsv \
-		--template ../templates/deprecated.tsv \
+		$(DEPRECATED_TEMPLATE_ARG) \
 		annotate --ontology-iri $(ONTBASE)/$@ \
 		annotate -V $(ONTBASE)/releases/$(TODAY)/$@ \
 		--annotation owl:versionInfo $(TODAY) \

@@ -183,6 +183,16 @@ cd src/ontology
 sh run.sh make IMP=false prepare_release
 ```
 
+**Obsolete-term emission toggle (#378):** deprecated/obsolete terms come only from
+`src/templates/deprecated.tsv`. `INCLUDE_OBSOLETE` controls whether they are built
+into the release OWL. Default is `true` (current behaviour; the committed artifacts
+and the artifact-freshness check reproduce with the default). To produce an
+obsolete-free build:
+```bash
+cd src/ontology
+sh run.sh make INCLUDE_OBSOLETE=false prepare_release
+```
+
 **Test:**
 ```bash
 cd src/ontology
