@@ -29,6 +29,8 @@ Declaration(AnnotationProperty(<http://qudt.org/schema/qudt/ucumCode>))
 Declaration(AnnotationProperty(IAO:0000117))
 Declaration(AnnotationProperty(IAO:0000231))
 Declaration(AnnotationProperty(IAO:0100001))
+Declaration(NamedIndividual(IAO:0000226))
+Declaration(NamedIndividual(<http://purl.obolibrary.org/obo/OMO_0001000>))
 
 
 ############################
@@ -58,6 +60,11 @@ AnnotationAssertion(rdfs:label IAO:0000231 "has obsolescence reason")
 # Annotation Property: IAO:0100001 (term replaced by)
 
 AnnotationAssertion(rdfs:label IAO:0100001 "term replaced by")
+
+# Obsolescence reason values (display labels; correct code ASSIGNMENT is tracked in #521)
+
+AnnotationAssertion(rdfs:label IAO:0000226 "placeholder removed")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/OMO_0001000> "out of scope")
 
 
 ############################
