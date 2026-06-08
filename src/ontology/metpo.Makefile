@@ -114,11 +114,13 @@ regenerate-deprecated:
 INCLUDE_OBSOLETE ?= true
 ifeq ($(INCLUDE_OBSOLETE),true)
 DEPRECATED_TEMPLATE_ARG := --template ../templates/deprecated.tsv
+DEPRECATED_PREREQ := ../templates/deprecated.tsv
 else
 DEPRECATED_TEMPLATE_ARG :=
+DEPRECATED_PREREQ :=
 endif
 
-components/metpo_sheet.owl: ../templates/stubs.tsv ../templates/metpo-properties.tsv ../templates/metpo_sheet.tsv ../templates/deprecated.tsv
+components/metpo_sheet.owl: ../templates/stubs.tsv ../templates/metpo-properties.tsv ../templates/metpo_sheet.tsv $(DEPRECATED_PREREQ)
 	$(ROBOT) template \
 		--add-prefix 'METPO: https://w3id.org/metpo/' \
 		--add-prefix 'qudt: http://qudt.org/schema/qudt/' \
