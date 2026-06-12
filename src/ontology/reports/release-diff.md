@@ -7,7 +7,7 @@
 
 ## Right
 - Ontology IRI: `https://w3id.org/metpo/metpo.owl`
-- Version IRI: `https://w3id.org/metpo/releases/2026-06-08/metpo.owl`
+- Version IRI: `https://w3id.org/metpo/releases/2026-06-12/metpo.owl`
 - Loaded from: `file:/work/src/ontology/metpo.owl`
 
 ### Ontology imports 
@@ -23,13 +23,13 @@
 
 - [creator](http://purl.org/dc/terms/creator) [0000-0001-9076-6066](https://orcid.org/0000-0001-9076-6066) 
 
-- [description](http://purl.org/dc/terms/description) "METPO provides terms for microbial ecophysiological traits and phenotypes: growth preferences (temperature, pH, salinity, oxygen), metabolism, and cell morphology of bacteria and archaea. Its primary purpose is to harmonize terminology across major microbial trait databases (BacDive, BactoTraits, Madin bacteria_archaea_traits, MetaTraits) for use in NMDC and KG-Microbe. METPO uses OBO-style annotation patterns (IAO textual definitions, oboInOwl synonyms) and cites terms from OMP, MicrO, GO, ECOCORE, and PATO as definition sources." 
+- [description](http://purl.org/dc/terms/description) "METPO provides terms for microbial ecophysiological traits and phenotypes: growth preferences (temperature, pH, salinity, oxygen), metabolism, and cell morphology of bacteria and archaea. Its primary purpose is to harmonize terminology across major microbial trait databases (BacDive, BactoTraits, Madin bacteria_archaea_traits, MetaTraits) for use in KG-Microbe. METPO uses OBO-style annotation patterns (IAO textual definitions, oboInOwl synonyms) and cites terms from OMP, MicrO, GO, ECOCORE, and PATO as definition sources." 
 
 - [license](http://purl.org/dc/terms/license) [<https://creativecommons.org/licenses/by/4.0/>](https://creativecommons.org/licenses/by/4.0/) 
 
 - [title](http://purl.org/dc/terms/title) "METPO: Microbial Ecophysiological Trait and Phenotype Ontology" 
 
-- [versionInfo](http://www.w3.org/2002/07/owl#versionInfo) "2026-06-08" 
+- [versionInfo](http://www.w3.org/2002/07/owl#versionInfo) "2026-06-12" 
 
 - [seeAlso](http://www.w3.org/2000/01/rdf-schema#seeAlso) [METPO](https://bioportal.bioontology.org/ontologies/METPO) 
 
