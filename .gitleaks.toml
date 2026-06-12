@@ -14,11 +14,11 @@ useDefault = true
 [[rules]]
 id = "bioportal-ncbo-api-key"
 description = "BioPortal / NCBO BioOntology API key (UUID in an apikey context)"
-regex = '''(?i)(?:bioportal[_-]?(?:api[_-]?key|token)|api[_-]?key|apikey)["'\s:=>]{0,4}(?:token=)?[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}'''
+regex = '''(?i)(?:bioportal[_-]?(?:api[_-]?key|token)|api[_-]?key|apikey)["'\s:=>]{0,4}(?:token\s*=\s*)?[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}'''
 keywords = ["apikey", "api_key", "bioportal", "bioontology"]
 
 [[rules]]
 id = "bioportal-ncbo-apikey-url"
 description = "BioPortal / NCBO API key embedded in a bioontology.org URL"
-regex = '''bioontology\.org[^\s"'<>]*apikey=[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}'''
+regex = '''(?i)bioontology\.org[^\s"'<>]*apikey=[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}'''
 keywords = ["bioontology"]
