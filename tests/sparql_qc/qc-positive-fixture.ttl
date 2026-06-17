@@ -27,7 +27,7 @@
 # -> dc-properties-violation.sparql : deprecated DC Elements 1.1 predicate on a METPO term
 metpo:9999001 a owl:Class ;
     rdfs:label "fixture: deprecated dc-elements predicate" ;
-    dce:creator "should be dcterms:creator" .
+    dce:creator "intentionally wrong for testing; production should use dcterms:creator" .
 
 # -> ontology-header-check.sparql : a bad ontology header.
 #    (1) creator as a literal placeholder, not an agent IRI;
