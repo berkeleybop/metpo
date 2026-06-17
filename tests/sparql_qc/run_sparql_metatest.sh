@@ -17,6 +17,12 @@
 # Run locally from src/ontology:
 #   sh run.sh bash ../../tests/sparql_qc/run_sparql_metatest.sh
 # Requires: robot on PATH (present in the obolibrary/odkfull container).
+# Requires bash (uses bash-only features: `set -o pipefail`, `shopt`, arrays).
+if [ -z "${BASH_VERSION:-}" ]; then
+  echo "::error::This script must be run with bash (not sh/dash)." >&2
+  echo "Hint: sh run.sh bash ../../tests/sparql_qc/run_sparql_metatest.sh" >&2
+  exit 1
+fi
 set -euo pipefail
 
 HERE="$(cd "$(dirname "$0")" && pwd)"
