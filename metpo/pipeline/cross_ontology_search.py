@@ -9,7 +9,7 @@ API for server-side semantic search. For each METPO term it:
 
 1. retrieves candidate classes from the EBI OLS4 search API (covers ~270 ontologies),
 2. re-ranks the candidates by semantic similarity using a LOCAL embedding model
-   served by Ollama (default: nomic-embed-text, runs on the M5 GPU; no OpenAI, no
+   served by Ollama (default: nomic-embed-text, runs on local GPU-capable hardware; no OpenAI, no
    300GB OLS SQLite, no ChromaDB),
 
 and emits, per match: the external IRI/CURIE, label, definition, ontology, and a
