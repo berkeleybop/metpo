@@ -82,7 +82,11 @@ def embed(text, model, embed_url=DEFAULT_EMBED_URL):
     try:
         with urllib.request.urlopen(req, timeout=20) as r:
             return json.load(r).get("embedding")
-    except Exception:
+    except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as e:
+        print(
+            f"warning: embedding request failed for model={model!r} at {embed_url!r}: {e}",
+            file=sys.stderr,
+        )
         return None
 
 
