@@ -15,21 +15,25 @@
 #      hosts with `pip install pyyaml`, and inside an active uv venv), we
 #      override the defaults by reading sheets.yaml via
 #      metpo/sheets_config.py invoked as a script (no package install
-#      required). The shell command's stderr is swallowed so a missing
-#      python3 or pyyaml falls through silently to the hardcoded defaults.
+#      required). The shell command's stderr is redirected to
+#      $(SHEETS_CONFIG_WARN_LOG) so a missing python3 or pyyaml still falls
+#      through silently to the hardcoded defaults, but errors are preserved
+#      for debugging.
 #
 # If the sheet's GIDs ever change, update both the hardcoded defaults here
 # AND sheets.yaml. See docs/google_sheets_template_sync.md.
 SPREADSHEET_ID := 1_Lr-9_5QHi8QLvRyTZFSciUhzGKD4DbUObyTpJ16_RU
 SRC_URL_MAIN := https://docs.google.com/spreadsheets/d/$(SPREADSHEET_ID)/export?exportFormat=tsv&gid=1569766102
 SRC_URL_PROPERTIES := https://docs.google.com/spreadsheets/d/$(SPREADSHEET_ID)/export?exportFormat=tsv&gid=681401984
+SHEETS_CONFIG_WARN_LOG := ../templates/sheets_config_warnings.log
+$(shell : > $(SHEETS_CONFIG_WARN_LOG))
 
-SRC_URL_MAIN_FROM_YAML := $(shell python3 ../../metpo/sheets_config.py classes 2>/dev/null)
+SRC_URL_MAIN_FROM_YAML := $(shell python3 ../../metpo/sheets_config.py classes 2>>$(SHEETS_CONFIG_WARN_LOG))
 ifneq ($(SRC_URL_MAIN_FROM_YAML),)
 SRC_URL_MAIN := $(SRC_URL_MAIN_FROM_YAML)
 endif
 
-SRC_URL_PROPERTIES_FROM_YAML := $(shell python3 ../../metpo/sheets_config.py properties 2>/dev/null)
+SRC_URL_PROPERTIES_FROM_YAML := $(shell python3 ../../metpo/sheets_config.py properties 2>>$(SHEETS_CONFIG_WARN_LOG))
 ifneq ($(SRC_URL_PROPERTIES_FROM_YAML),)
 SRC_URL_PROPERTIES := $(SRC_URL_PROPERTIES_FROM_YAML)
 endif
@@ -56,12 +60,18 @@ diff-drafts: ../templates/metpo_sheet.tsv ../templates/metpo-properties.tsv
 	@diff $(DRAFTS_DIR)/metpo_sheet.tsv ../templates/metpo_sheet.tsv || true
 	@diff $(DRAFTS_DIR)/metpo-properties.tsv ../templates/metpo-properties.tsv || true
 
+# Intentionally no prerequisites: Make fetches this file only if it is missing.
+# This preserves committed/local snapshots by default; run `make squeaky-clean`
+# (or delete the file) to force re-download from Google Sheets.
 ../templates/metpo_sheet.tsv:
 	curl -L -s "$(SRC_URL_MAIN)" > $@
 
 #../templates/metpo-synonyms.tsv:
 #	curl -L -s "$(SRC_URL_SYNONYMS)" > $@
 
+# Intentionally no prerequisites: Make fetches this file only if it is missing.
+# This preserves committed/local snapshots by default; run `make squeaky-clean`
+# (or delete the file) to force re-download from Google Sheets.
 ../templates/metpo-properties.tsv:
 	curl -L -s "$(SRC_URL_PROPERTIES)" > $@
 
@@ -77,11 +87,19 @@ clean-templates:
 
 # Diff current working templates against Google Sheets
 diff-sheets:
+	@command -v uv >/dev/null 2>&1 || { echo "Error: 'uv' is required for diff-sheets. Run this target on a host with uv installed."; exit 1; }
 	cd ../.. && uv run diff-templates -a gsheet -b HEAD --cell-diffs
 
 # Diff current working templates against the last tagged release
 diff-release:
-	cd ../.. && uv run diff-templates -a $(shell git describe --tags --abbrev=0 2>/dev/null || echo "main") -b HEAD --cell-diffs
+	@command -v uv >/dev/null 2>&1 || { echo "ERROR: 'uv' is required for diff-release (host-only target)."; exit 1; }
+	@command -v git >/dev/null 2>&1 || { echo "ERROR: 'git' is required for diff-release."; exit 1; }
+	@release_ref=$$(git describe --tags --abbrev=0 2>/dev/null); \
+	if [ -z "$$release_ref" ]; then \
+		echo "WARN: No git tags found; falling back to 'main'."; \
+		release_ref=main; \
+	fi; \
+	cd ../.. && uv run diff-templates -a "$$release_ref" -b HEAD --cell-diffs
 
 #$(MIRRORDIR)/mpo.owl: ../../assets/mpo_v0.74.en_only.owl
 #	cp $^ $@
@@ -95,12 +113,17 @@ diff-release:
 ../templates/stubs.tsv: ../templates/metpo_sheet.tsv ../templates/metpo-properties.tsv ../../metpo/bactotraits/create_stubs.py
 	python ../../metpo/bactotraits/create_stubs.py -o $@ ../templates/metpo_sheet.tsv ../templates/metpo-properties.tsv
 
-# Generated from historical BioPortal submissions + tagged releases.
-# Repo-only — not in Google Sheets. Regenerate with: make -f metpo.Makefile regenerate-deprecated
+# Repo-only — not in Google Sheets.
+# IMPORTANT: ../templates/deprecated.tsv is hand-maintained source-of-truth.
+# The generation rule below exists ONLY as a recovery/bootstrap tool from
+# historical BioPortal submissions + tagged releases, and should not be used
+# for routine maintenance.
 ../templates/deprecated.tsv: ../../metpo/scripts/generate_deprecated_template.py
 	cd ../.. && uv run generate-deprecated-template -o $(abspath $@)
 
 .PHONY: regenerate-deprecated
+# WARNING: recovery-only helper. Do not run as part of normal updates; prefer
+# manual edits to ../templates/deprecated.tsv.
 regenerate-deprecated:
 	rm -f ../templates/deprecated.tsv
 	$(MAKE) -f metpo.Makefile ../templates/deprecated.tsv
