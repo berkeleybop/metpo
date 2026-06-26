@@ -170,21 +170,21 @@ We evaluated existing ontologies for microbial trait coverage:
 **Direct synonym assertion (no provenance):**
 
 ```turtle
-metpo:1000644 oboInOwl:hasRelatedSynonym "aerobic_heterotrophy" .
-metpo:1000644 oboInOwl:hasRelatedSynonym "heterotroph" .
+METPO:1000644 oboInOwl:hasRelatedSynonym "aerobic_heterotrophy" .
+METPO:1000644 oboInOwl:hasRelatedSynonym "heterotroph" .
 ```
 
 **Annotated axioms (with provenance):**
 
 ```turtle
 [] a owl:Axiom ;
-  owl:annotatedSource metpo:1000644 ;
+  owl:annotatedSource METPO:1000644 ;
   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
   owl:annotatedTarget "aerobic_heterotrophy" ;
   IAO:0000119 <https://github.com/jmadin/bacteria_archaea_traits> .
 
 [] a owl:Axiom ;
-  owl:annotatedSource metpo:1000644 ;
+  owl:annotatedSource METPO:1000644 ;
   owl:annotatedProperty oboInOwl:hasRelatedSynonym ;
   owl:annotatedTarget "heterotroph" ;
   IAO:0000119 <https://bacdive.dsmz.de/> .
@@ -200,23 +200,23 @@ metpo:1000644 oboInOwl:hasRelatedSynonym "heterotroph" .
 **1. Phenotype Assertions**
 
 ```turtle
-metpo:2000102 a owl:ObjectProperty ;
+METPO:2000102 a owl:ObjectProperty ;
   rdfs:label "has phenotype" ;
-  rdfs:domain metpo:1000525 ;  # microbe
-  rdfs:range metpo:1000059 .   # phenotype
+  rdfs:domain METPO:1000525 ;  # microbe
+  rdfs:range METPO:1000059 .   # phenotype
 
 # Usage example:
-NCBITaxon:562 metpo:2000102 metpo:1000602 .
+NCBITaxon:562 METPO:2000102 METPO:1000602 .
 # E. coli has_phenotype aerobic
 ```
 
 **2. Process Capabilities**
 
 ```turtle
-metpo:2000103 a owl:ObjectProperty ;
+METPO:2000103 a owl:ObjectProperty ;
   rdfs:label "capable of" ;
-  rdfs:domain metpo:1000525 ;  # microbe
-  rdfs:range metpo:1000630 .   # process
+  rdfs:domain METPO:1000525 ;  # microbe
+  rdfs:range METPO:1000630 .   # process
 
 # B. subtilis capable_of sporulation
 ```
@@ -227,10 +227,10 @@ metpo:2000103 a owl:ObjectProperty ;
 **3. Chemical Interactions (20+ subproperties)**
 
 ```turtle
-metpo:2000001 a owl:ObjectProperty ;
+METPO:2000001 a owl:ObjectProperty ;
   rdfs:label "organism interacts with chemical" ;
-  rdfs:domain metpo:1000525 ;  # microbe
-  rdfs:range metpo:1000526 .   # chemical
+  rdfs:domain METPO:1000525 ;  # microbe
+  rdfs:range METPO:1000526 .   # chemical
 
 # Subproperties include:
 # ferments, uses_as_carbon_source, degrades,
@@ -238,7 +238,7 @@ metpo:2000001 a owl:ObjectProperty ;
 # ... 14 more
 
 # Example:
-NCBITaxon:562 metpo:2000011 CHEBI:17234 .
+NCBITaxon:562 METPO:2000011 CHEBI:17234 .
 # E. coli ferments glucose
 ```
 

@@ -22,10 +22,10 @@
 @prefix dce:     <http://purl.org/dc/elements/1.1/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix IAO:     <http://purl.obolibrary.org/obo/IAO_> .
-@prefix metpo:   <https://w3id.org/metpo/> .
+@prefix METPO:   <https://w3id.org/metpo/> .
 
 # -> dc-properties-violation.sparql : deprecated DC Elements 1.1 predicate on a METPO term
-metpo:9999001 a owl:Class ;
+METPO:9999001 a owl:Class ;
     rdfs:label "fixture: deprecated dc-elements predicate" ;
     dce:creator "intentionally wrong for testing; production should use dcterms:creator" .
 
@@ -41,23 +41,26 @@ metpo:9999001 a owl:Class ;
     owl:versionInfo "2026-06-05" .
 
 # -> iri-range-violation.sparql : a property whose value must be an IRI, given a literal
-metpo:9999002 a owl:Class ;
+METPO:9999002 a owl:Class ;
     rdfs:label "fixture: contributor as a literal, not an IRI" ;
     dcterms:contributor "Jane Doe" .
 
 # -> label-with-iri-violation.sparql : an rdfs:label containing a URL
-metpo:9999003 a owl:Class ;
+METPO:9999003 a owl:Class ;
     rdfs:label "fixture: a label that wrongly embeds http://example.org/foo" .
 
 # -> multiple-replaced_by-violation.sparql : two distinct IAO:0100001 (term replaced by) values
-metpo:9999004 a owl:Class ;
+# METPO:1000000 and METPO:2000000 are intentional fixture-only IRIs: they supply
+# two distinct replacement targets for this violation case and are not declared
+# here, nor expected to exist as production METPO terms.
+METPO:9999004 a owl:Class ;
     rdfs:label "fixture: two different replacements" ;
-    IAO:0100001 metpo:1000000 , metpo:2000000 .
+    IAO:0100001 METPO:1000000 , METPO:2000000 .
 
 # -> owldef-self-reference-violation.sparql : equivalent-class definition that references itself
-metpo:9999005 a owl:Class ;
+METPO:9999005 a owl:Class ;
     rdfs:label "fixture: self-referential equivalent class" ;
     owl:equivalentClass [
         a owl:Class ;
-        owl:intersectionOf ( metpo:9999005 )
+        owl:intersectionOf ( METPO:9999005 )
     ] .
