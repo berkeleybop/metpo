@@ -92,12 +92,12 @@ diff-sheets:
 
 # Diff current working templates against the last tagged release
 diff-release:
-	@command -v uv >/dev/null 2>&1 || { echo "ERROR: 'uv' is required for diff-release (host-only target)."; exit 1; }
-	@command -v git >/dev/null 2>&1 || { echo "ERROR: 'git' is required for diff-release."; exit 1; }
-	@git rev-parse --is-inside-work-tree >/dev/null 2>&1 || { echo "ERROR: diff-release must be run from within a git work tree."; exit 1; }
+	@command -v uv >/dev/null 2>&1 || { echo "Error: 'uv' is required for diff-release (host-only target)."; exit 1; }
+	@command -v git >/dev/null 2>&1 || { echo "Error: 'git' is required for diff-release."; exit 1; }
+	@git rev-parse --is-inside-work-tree >/dev/null 2>&1 || { echo "Error: diff-release must be run from within a git work tree."; exit 1; }
 	@release_ref=$$(git describe --tags --abbrev=0 2>/dev/null); \
 	if [ -z "$$release_ref" ]; then \
-		echo "WARN: No git tags found; falling back to 'main'."; \
+		echo "Warning: No git tags found; falling back to 'main'."; \
 		release_ref=main; \
 	fi; \
 	cd ../.. && uv run diff-templates -a "$$release_ref" -b HEAD --cell-diffs
