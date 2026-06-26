@@ -13,6 +13,9 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+# Deny all permissions by default; grant the minimum needed at the job level.
+permissions: {}
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "ontology_qc"
@@ -20,6 +23,9 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     container: obolibrary/odkfull:v1.6.1
+    # Only needs to read the repository to check it out and run the QC make target.
+    permissions:
+      contents: read
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
