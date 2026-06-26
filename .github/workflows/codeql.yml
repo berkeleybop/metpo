@@ -9,6 +9,9 @@ on:
     - cron: '0 6 * * 1'  # Monday 6am UTC
   workflow_dispatch:
 
+# Deny all permissions by default; the analyze job grants the minimum it needs.
+permissions: {}
+
 jobs:
   analyze:
     name: Analyze
