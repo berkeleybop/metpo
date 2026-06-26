@@ -50,6 +50,9 @@ metpo:9999003 a owl:Class ;
     rdfs:label "fixture: a label that wrongly embeds http://example.org/foo" .
 
 # -> multiple-replaced_by-violation.sparql : two distinct IAO:0100001 (term replaced by) values
+# metpo:1000000 and metpo:2000000 are intentional fixture-only IRIs: they supply
+# two distinct replacement targets for this violation case and are not declared
+# here, nor expected to exist as production METPO terms.
 metpo:9999004 a owl:Class ;
     rdfs:label "fixture: two different replacements" ;
     IAO:0100001 metpo:1000000 , metpo:2000000 .
