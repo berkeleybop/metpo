@@ -81,6 +81,9 @@ if [ "$hrows" -ge 1 ]; then
   if [ -f "$REAL_OWL" ]; then
     robot query --input "$REAL_OWL" --query "$HEADER_Q" "$OUT/header-real.tsv"
     rrows=$(($(wc -l < "$OUT/header-real.tsv") - 1))
+    # robot writes an empty TSV (no header row) when a query returns no results,
+    # so the "minus header row" subtraction can produce -1; normalize to 0.
+    if [ "$rrows" -lt 0 ]; then rrows=0; fi
     if [ "$rrows" -eq 0 ]; then
       echo "OK   ontology-header-check.sparql found no problems in metpo.owl"
     else
