@@ -36,11 +36,14 @@ from pathlib import Path
 import click
 
 OLS_SEARCH = "https://www.ebi.ac.uk/ols4/api/search"
-# Default embedding backend: free, local, runs on the M5 GPU. Nothing paid, no API
+# Default embedding backend: free, local, runs on CPU/GPU-capable hardware. Nothing paid, no API
 # key. Both the endpoint and the model are CLI-parameterized so anyone can point at
 # a different local model, a remote Ollama server, or other hardware.
 DEFAULT_EMBED_URL = "http://localhost:11434/api/embeddings"
 DEFAULT_EMBED_MODEL = "nomic-embed-text"
+
+# In-memory cache to avoid redundant embedding API calls within a run.
+_EMBED_CACHE = {}
 
 
 def ols_candidates(label, rows=20):
@@ -90,8 +93,19 @@ def embed(text, model, embed_url=DEFAULT_EMBED_URL):
         return None
 
 
+def _get_cached_embedding(text, model, embed_url):
+    normalized = text.strip(". ")
+    key = (model, embed_url, normalized)
+    if key not in _EMBED_CACHE:
+        _EMBED_CACHE[key] = embed(normalized, model, embed_url)
+    return _EMBED_CACHE[key]
+
+
 def cosine(a, b):
-    dot = sum(x * y for x, y in zip(a, b, strict=False))
+    if len(a) != len(b):
+        msg = f"cosine vector dimension mismatch: len(a)={len(a)} != len(b)={len(b)}"
+        raise ValueError(msg)
+    dot = sum(x * y for x, y in zip(a, b, strict=True))
     na = math.sqrt(sum(x * x for x in a))
     nb = math.sqrt(sum(x * x for x in b))
     return dot / (na * nb) if na and nb else 0.0
@@ -130,10 +144,14 @@ def load_terms(metpo_tsv, label, definition):
 def rank_candidates(term, cands, use_embeddings, model, embed_url):
     """Attach a 'similarity' score to each candidate (embedding cosine or lexical order)."""
     if use_embeddings and cands:
-        qv = embed((term["label"] + ". " + term["definition"]).strip(". "), model, embed_url)
+        qv = _get_cached_embedding(term["label"] + ". " + term["definition"], model, embed_url)
+        if not qv:
+            for rank, c in enumerate(cands):
+                c["similarity"] = round(1.0 - rank / max(len(cands), 1), 4)
+            return cands
         for c in cands:
-            cv = embed((c["label"] + ". " + c["definition"]).strip(". "), model, embed_url)
-            c["similarity"] = round(cosine(qv, cv), 4) if (qv and cv) else 0.0
+            cv = _get_cached_embedding(c["label"] + ". " + c["definition"], model, embed_url)
+            c["similarity"] = round(cosine(qv, cv), 4) if cv else 0.0
         cands.sort(key=lambda c: c["similarity"], reverse=True)
     else:
         for rank, c in enumerate(cands):
