@@ -77,23 +77,27 @@ robot query --input "$FIXTURE" --query "$HEADER_Q" "$OUT/header-fixture.tsv"
 hrows=$(($(wc -l < "$OUT/header-fixture.tsv") - 1))
 if [ "$hrows" -ge 1 ]; then
   echo "OK   ontology-header-check.sparql matched $hrows fixture violation(s)"
-else
-  echo "::error::ontology-header-check.sparql matched 0 rows against the fixture: the check is a silent no-op."
-  fail=1
-fi
 
-if [ -f "$REAL_OWL" ]; then
-  robot query --input "$REAL_OWL" --query "$HEADER_Q" "$OUT/header-real.tsv"
-  rrows=$(($(wc -l < "$OUT/header-real.tsv") - 1))
-  if [ "$rrows" -le 0 ]; then
-    echo "OK   ontology-header-check.sparql found no problems in metpo.owl"
+  if [ -f "$REAL_OWL" ]; then
+    robot query --input "$REAL_OWL" --query "$HEADER_Q" "$OUT/header-real.tsv"
+    rrows=$(($(wc -l < "$OUT/header-real.tsv") - 1))
+    # robot writes an empty TSV (no header row) when a query returns no results,
+    # so the "minus header row" subtraction can produce -1; normalize to 0.
+    if [ "$rrows" -lt 0 ]; then rrows=0; fi
+    if [ "$rrows" -eq 0 ]; then
+      echo "OK   ontology-header-check.sparql found no problems in metpo.owl"
+    else
+      echo "::error::the ontology header in metpo.owl has $rrows metadata problem(s):"
+      cat "$OUT/header-real.tsv"
+      fail=1
+    fi
   else
-    echo "::error::the ontology header in metpo.owl has $rrows metadata problem(s):"
-    cat "$OUT/header-real.tsv"
+    echo "::error::expected released ontology at $REAL_OWL but it is missing."
     fail=1
   fi
 else
-  echo "::error::expected released ontology at $REAL_OWL but it is missing."
+  echo "::error::ontology-header-check.sparql matched 0 rows against the fixture: the check is a silent no-op."
+  echo "Skipping check against metpo.owl because the fixture proof-of-failure did not pass."
   fail=1
 fi
 
