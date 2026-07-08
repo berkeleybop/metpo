@@ -507,7 +507,7 @@ sh run.sh make <target>
 
 The repo's custom ROBOT report profile can report "No violations" while the
 **default** ROBOT profile still flags thousands of findings. Typing
-`owl:deprecated` as `^^xsd:boolean` (issue #467) let ROBOT recognize the
+`owl:deprecated` as `^^xsd:boolean` (PR #467) let ROBOT recognize the
 deprecated terms and cleared most of them, but to see the true OBO-dashboard
 state run `robot report` with the DEFAULT profile, not the custom one.
 
@@ -529,8 +529,14 @@ are broader-landscape context, not source-bound.
 - `make diff-release`: TSV at the last git tag vs HEAD.
 - `make diff-drafts`: saved drafts vs current templates.
 
-Before opening a significant PR, show the OWL-level delta vs main:
+`diff-sheets`, `diff-release`, and `diff-drafts` are host-only targets (they run
+`uv`, and `diff-release` also needs `git`); run them on the host, not inside the
+ODK container.
 
+Before opening a significant PR, show the OWL-level delta vs main (run from
+`src/ontology`, where `run.sh` lives):
+
+    cd src/ontology
     sh run.sh make squeaky-clean
     sh run.sh make prepare_release   # re-fetches the Sheet, rebuilds artifacts
     sh run.sh make release_diff      # diffs the new build vs current w3id/main
@@ -545,7 +551,7 @@ BioPortal is configured with
 Its poller runs nightly and creates a new submission whenever that content
 changes, so a tagged release propagates within about 24 hours with no manual
 web-UI re-submission. The default
-`data.bioontology.org/ontologies/METPO/latest_submission` response omits
+`https://data.bioontology.org/ontologies/METPO/latest_submission` response omits
 `pullLocation` and similar infrastructure fields; query with `?display=all` to
 see the pull config.
 
