@@ -501,6 +501,63 @@ sh run.sh make <target>
 
 ---
 
+## QC, release-diff, and BioPortal mechanics
+
+### ROBOT report: run the default profile for the true dashboard state
+
+The repo's custom ROBOT report profile can report "No violations" while the
+**default** ROBOT profile still flags thousands of findings. Giving
+`owl:deprecated` a typed `xsd:boolean` value rather than the earlier untyped
+string literal (PR #467) let ROBOT recognize the deprecated terms and cleared
+most of them, but to see the true OBO-dashboard
+state run `robot report` with the DEFAULT profile, not the custom one.
+
+### Scope: exactly four source-bound databases
+
+METPO harmonizes exactly four source-bound databases, the only `IAO:0000119`
+synonym sources in `metpo.owl`: BacDive, BactoTraits, Madin
+(`jmadin/bacteria_archaea_traits`), and MetaTraits. kg-microbe is the downstream
+consumer. Do not name NMDC or BugSigDB in any METPO description or scope text
+(NMDC was removed from `dcterms:description` in PR #532). BugSigDB and MicroTrait
+are broader-landscape context, not source-bound.
+
+### Diff targets and the pre-PR release-diff workflow
+
+- `make release_diff` (generated Makefile): a ROBOT diff of the OWL currently
+  served at `https://w3id.org/metpo/metpo.owl` (GitHub main via w3id) against the
+  locally built `metpo.owl`, OWL-level. Output: `reports/release-diff.md`.
+- `make diff-sheets` (metpo.Makefile): live Google Sheet vs committed TSV at HEAD.
+- `make diff-release`: TSV at the last git tag vs HEAD.
+- `make diff-drafts`: saved drafts vs current templates.
+
+`diff-sheets`, `diff-release`, and `diff-drafts` are host-only targets (they run
+`uv`, and `diff-release` also needs `git`); run them on the host, not inside the
+ODK container.
+
+Before opening a significant PR, show the OWL-level delta vs main (run from
+`src/ontology`, where `run.sh` lives):
+
+    cd src/ontology
+    sh run.sh make squeaky-clean
+    sh run.sh make prepare_release   # re-fetches the Sheet, rebuilds artifacts
+    sh run.sh make release_diff      # diffs the new build vs current w3id/main
+
+`squeaky-clean` alone is not enough: `release_diff` needs a locally built
+`metpo.owl`, so `prepare_release` must run first.
+
+### BioPortal is pull-based
+
+BioPortal pulls the repo-root `metpo.owl` from raw GitHub `main`
+(`https://raw.githubusercontent.com/berkeleybop/metpo/main/metpo.owl`).
+Its poller runs nightly and creates a new submission whenever that content
+changes, so a tagged release propagates within about 24 hours with no manual
+web-UI re-submission. The default
+`https://data.bioontology.org/ontologies/METPO/latest_submission` response omits
+`pullLocation` and similar infrastructure fields; query with `?display=all` to
+see the pull config.
+
+---
+
 ## Quick Reference
 
 | Task | Command |
