@@ -87,7 +87,7 @@ clean-templates:
 
 # Diff current working templates against Google Sheets
 diff-sheets:
-	@command -v uv >/dev/null 2>&1 || { echo "Error: 'uv' is required for diff-sheets. Run this target on a host with uv installed."; exit 1; }
+	@command -v uv >/dev/null 2>&1 || { echo "Error: 'uv' is required for diff-sheets (host-only target)."; exit 1; }
 	cd ../.. && uv run diff-templates -a gsheet -b HEAD --cell-diffs
 
 # Diff current working templates against the last tagged release
@@ -112,7 +112,7 @@ diff-release:
 #			--output $@
 
 ../templates/stubs.tsv: ../templates/metpo_sheet.tsv ../templates/metpo-properties.tsv ../../metpo/bactotraits/create_stubs.py
-	python ../../metpo/bactotraits/create_stubs.py -o $@ ../templates/metpo_sheet.tsv ../templates/metpo-properties.tsv
+	python3 ../../metpo/bactotraits/create_stubs.py -o $@ ../templates/metpo_sheet.tsv ../templates/metpo-properties.tsv
 
 # Repo-only — not in Google Sheets.
 # IMPORTANT: ../templates/deprecated.tsv is hand-maintained source-of-truth.
@@ -144,7 +144,7 @@ DEPRECATED_TEMPLATE_ARG :=
 DEPRECATED_PREREQ :=
 endif
 
-components/metpo_sheet.owl: ../templates/stubs.tsv ../templates/metpo-properties.tsv ../templates/metpo_sheet.tsv $(DEPRECATED_PREREQ)
+components/metpo_sheet.owl: ../templates/stubs.tsv ../templates/metpo_sheet.tsv ../templates/metpo-properties.tsv $(DEPRECATED_PREREQ)
 	$(ROBOT) template \
 		--add-prefix 'METPO: https://w3id.org/metpo/' \
 		--add-prefix 'qudt: http://qudt.org/schema/qudt/' \
