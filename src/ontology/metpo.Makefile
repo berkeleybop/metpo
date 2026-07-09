@@ -87,7 +87,7 @@ clean-templates:
 
 # Diff current working templates against Google Sheets
 diff-sheets:
-	@command -v uv >/dev/null 2>&1 || { echo "Error: 'uv' is required for diff-sheets. Run this target on a host with uv installed."; exit 1; }
+	@command -v uv >/dev/null 2>&1 || { echo "Error: 'uv' is required for diff-sheets (host-only target)."; exit 1; }
 	cd ../.. && uv run diff-templates -a gsheet -b HEAD --cell-diffs
 
 # Diff current working templates against the last tagged release
