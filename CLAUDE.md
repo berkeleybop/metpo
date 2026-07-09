@@ -506,9 +506,10 @@ sh run.sh make <target>
 ### ROBOT report: run the default profile for the true dashboard state
 
 The repo's custom ROBOT report profile can report "No violations" while the
-**default** ROBOT profile still flags thousands of findings. Typing
-`owl:deprecated` as `^^xsd:boolean` (PR #467) let ROBOT recognize the
-deprecated terms and cleared most of them, but to see the true OBO-dashboard
+**default** ROBOT profile still flags thousands of findings. Giving
+`owl:deprecated` a typed `xsd:boolean` value rather than the earlier untyped
+string literal (PR #467) let ROBOT recognize the deprecated terms and cleared
+most of them, but to see the true OBO-dashboard
 state run `robot report` with the DEFAULT profile, not the custom one.
 
 ### Scope: exactly four source-bound databases
@@ -546,8 +547,8 @@ Before opening a significant PR, show the OWL-level delta vs main (run from
 
 ### BioPortal is pull-based
 
-BioPortal is configured with
-`pullLocation: https://raw.githubusercontent.com/berkeleybop/metpo/refs/heads/main/metpo.owl`.
+BioPortal pulls the repo-root `metpo.owl` from raw GitHub `main`
+(`https://raw.githubusercontent.com/berkeleybop/metpo/main/metpo.owl`).
 Its poller runs nightly and creates a new submission whenever that content
 changes, so a tagged release propagates within about 24 hours with no manual
 web-UI re-submission. The default
