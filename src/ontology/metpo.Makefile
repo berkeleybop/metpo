@@ -112,7 +112,7 @@ diff-release:
 #			--output $@
 
 ../templates/stubs.tsv: ../templates/metpo_sheet.tsv ../templates/metpo-properties.tsv ../../metpo/bactotraits/create_stubs.py
-	python ../../metpo/bactotraits/create_stubs.py -o $@ ../templates/metpo_sheet.tsv ../templates/metpo-properties.tsv
+	python3 ../../metpo/bactotraits/create_stubs.py -o $@ ../templates/metpo_sheet.tsv ../templates/metpo-properties.tsv
 
 # Repo-only — not in Google Sheets.
 # IMPORTANT: ../templates/deprecated.tsv is hand-maintained source-of-truth.
