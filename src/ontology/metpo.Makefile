@@ -144,7 +144,7 @@ DEPRECATED_TEMPLATE_ARG :=
 DEPRECATED_PREREQ :=
 endif
 
-components/metpo_sheet.owl: ../templates/stubs.tsv ../templates/metpo-properties.tsv ../templates/metpo_sheet.tsv $(DEPRECATED_PREREQ)
+components/metpo_sheet.owl: ../templates/stubs.tsv ../templates/metpo_sheet.tsv ../templates/metpo-properties.tsv $(DEPRECATED_PREREQ)
 	$(ROBOT) template \
 		--add-prefix 'METPO: https://w3id.org/metpo/' \
 		--add-prefix 'qudt: http://qudt.org/schema/qudt/' \
