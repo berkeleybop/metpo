@@ -94,7 +94,7 @@ def embed(text, model, embed_url=DEFAULT_EMBED_URL):
 
 
 def _get_cached_embedding(text, model, embed_url):
-    normalized = text.strip(". ")
+    normalized = text.strip()
     key = (model, embed_url, normalized)
     if key not in _EMBED_CACHE:
         v = embed(normalized, model, embed_url)
