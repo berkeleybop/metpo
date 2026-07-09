@@ -262,15 +262,17 @@ def main(
 
     terms = load_terms(metpo_tsv, label, definition)
 
-    use_embeddings = (not no_embeddings) and embed("test", model, embed_url) is not None
-    if not no_embeddings and not use_embeddings:
-        click.echo(
-            f"WARNING: embedding model '{model}' unavailable at {embed_url}; "
-            "falling back to OLS lexical order (no semantic re-ranking). Start Ollama "
-            f"and `ollama pull {model}`, point --embed-url elsewhere, or pass "
-            "--no-embeddings to silence this.",
-            err=True,
-        )
+    use_embeddings = False
+    if not no_embeddings:
+        use_embeddings = embed("test", model, embed_url) is not None
+        if not use_embeddings:
+            click.echo(
+                f"WARNING: embedding model '{model}' unavailable at {embed_url}; "
+                "falling back to OLS lexical order (no semantic re-ranking). Start Ollama "
+                f"and `ollama pull {model}`, point --embed-url elsewhere, or pass "
+                "--no-embeddings to silence this.",
+                err=True,
+            )
 
     out_rows = []
     for t in terms:
