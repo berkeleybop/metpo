@@ -144,16 +144,21 @@ def load_terms(metpo_tsv, label, definition):
     return terms
 
 
+def _embedding_text(label, definition):
+    """Build stable text used for embedding and cache-key normalization."""
+    return f"{label}. {definition}"
+
+
 def rank_candidates(term, cands, use_embeddings, model, embed_url):
     """Attach a 'similarity' score to each candidate (embedding cosine or lexical order)."""
     if use_embeddings and cands:
-        qv = _get_cached_embedding(term["label"] + ". " + term["definition"], model, embed_url)
+        qv = _get_cached_embedding(_embedding_text(term["label"], term["definition"]), model, embed_url)
         if not qv:
             for rank, c in enumerate(cands):
                 c["similarity"] = round(1.0 - rank / max(len(cands), 1), 4)
             return cands
         for c in cands:
-            cv = _get_cached_embedding(c["label"] + ". " + c["definition"], model, embed_url)
+            cv = _get_cached_embedding(_embedding_text(c["label"], c["definition"]), model, embed_url)
             c["similarity"] = round(cosine(qv, cv), 4) if cv else 0.0
         cands.sort(key=lambda c: c["similarity"], reverse=True)
     else:
