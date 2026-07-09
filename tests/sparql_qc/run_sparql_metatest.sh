@@ -44,7 +44,9 @@ for q in "${queries[@]}"; do
   name="$(basename "$q")"
   res="$OUT/$name.tsv"
   robot query --input "$FIXTURE" --query "$q" "$res"
-  rows=$(($(wc -l < "$res") - 1))   # the first line is the SELECT header
+  raw_rows=$(wc -l < "$res")
+  rows=$((raw_rows - 1))   # first line is SELECT header when present
+  if [ "$rows" -lt 0 ]; then rows=0; fi
   if [ "$rows" -ge 1 ]; then
     echo "OK   $name matched $rows fixture violation(s)"
   else
