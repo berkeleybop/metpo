@@ -94,7 +94,7 @@ def embed(text, model, embed_url=DEFAULT_EMBED_URL):
 
 
 def _get_cached_embedding(text, model, embed_url):
-    normalized = text.strip(". ")
+    normalized = text.strip()
     key = (model, embed_url, normalized)
     if key not in _EMBED_CACHE:
         v = embed(normalized, model, embed_url)
@@ -144,16 +144,25 @@ def load_terms(metpo_tsv, label, definition):
     return terms
 
 
+def _embedding_text(label, definition):
+    """Build stable text used for embedding and cache-key normalization."""
+    return f"{label}. {definition}"
+
+
 def rank_candidates(term, cands, use_embeddings, model, embed_url):
     """Attach a 'similarity' score to each candidate (embedding cosine or lexical order)."""
     if use_embeddings and cands:
-        qv = _get_cached_embedding(term["label"] + ". " + term["definition"], model, embed_url)
+        qv = _get_cached_embedding(
+            _embedding_text(term["label"], term["definition"]), model, embed_url
+        )
         if not qv:
             for rank, c in enumerate(cands):
                 c["similarity"] = round(1.0 - rank / max(len(cands), 1), 4)
             return cands
         for c in cands:
-            cv = _get_cached_embedding(c["label"] + ". " + c["definition"], model, embed_url)
+            cv = _get_cached_embedding(
+                _embedding_text(c["label"], c["definition"]), model, embed_url
+            )
             c["similarity"] = round(cosine(qv, cv), 4) if cv else 0.0
         cands.sort(key=lambda c: c["similarity"], reverse=True)
     else:
@@ -262,15 +271,17 @@ def main(
 
     terms = load_terms(metpo_tsv, label, definition)
 
-    use_embeddings = (not no_embeddings) and embed("test", model, embed_url) is not None
-    if not no_embeddings and not use_embeddings:
-        click.echo(
-            f"WARNING: embedding model '{model}' unavailable at {embed_url}; "
-            "falling back to OLS lexical order (no semantic re-ranking). Start Ollama "
-            f"and `ollama pull {model}`, point --embed-url elsewhere, or pass "
-            "--no-embeddings to silence this.",
-            err=True,
-        )
+    use_embeddings = False
+    if not no_embeddings:
+        use_embeddings = embed("test", model, embed_url) is not None
+        if not use_embeddings:
+            click.echo(
+                f"WARNING: embedding model '{model}' unavailable at {embed_url}; "
+                "falling back to OLS lexical order (no semantic re-ranking). Start Ollama "
+                f"and `ollama pull {model}`, point --embed-url elsewhere, or pass "
+                "--no-embeddings to silence this.",
+                err=True,
+            )
 
     out_rows = []
     for t in terms:
