@@ -6,7 +6,7 @@ ChromaDB was retired (CVE, removed in [#498](https://github.com/berkeleybop/metp
 
 ## Priority order
 
-1. **OLS4 embeddings search API.** Server-side semantic search, no local storage or compute, and it covers the roughly 270 OLS-hosted ontologies. Use it for candidate retrieval and ranking whenever OLS hosts the target ontology. Confirm the current endpoint against the [OLS4 API docs](https://www.ebi.ac.uk/ols4/help).
+1. **OLS4 embeddings search API.** Server-side semantic search, no local storage or compute, and it covers the roughly 270 OLS-hosted ontologies. Use it for candidate retrieval and ranking whenever OLS hosts the target ontology. Confirm the current endpoint against the [OLS4 API docs](https://www.ebi.ac.uk/ols4/help). Because OLS-hosted ontologies are queried live, there is no need to download or commit local OWL copies of them.
 2. **Proven tooling from projects we trust**, for anything OLS doesn't cover (BioPortal-only ontologies like MicrO, MPO, D3O) or for offline/batch work. Prefer components with a good track record in the ecosystems we already rely on (for example `linkml-store` with the `llm` library, tracked in [#364](https://github.com/berkeleybop/metpo/issues/364); OAK/oaklib in [#194](https://github.com/berkeleybop/metpo/issues/194)) over anything bespoke. The current implementation ranks with a local embedding model served by [Ollama](https://ollama.com/) (default `nomic-embed-text`).
 
 ## Implementations in this repo
