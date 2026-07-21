@@ -35,7 +35,7 @@ BIOPORTAL_SEARCH_URL = "https://data.bioontology.org/search"
 REQUEST_TIMEOUT = 10
 
 
-def search_ols(label: str, rows: int) -> list[dict[str, str]]:
+def search_ols(label: str, rows: int) -> list[dict[str, str | None]]:
     """Return OLS4 search hits for ``label`` as label/iri/ontology/definition dicts."""
     params: dict[str, str | int] = {"q": label, "type": "class", "rows": rows}
     try:
@@ -45,7 +45,11 @@ def search_ols(label: str, rows: int) -> list[dict[str, str]]:
         return []
     if response.status_code != 200:
         return []
-    docs = response.json().get("response", {}).get("docs", [])
+    try:
+        docs = response.json().get("response", {}).get("docs", [])
+    except ValueError as exc:
+        click.echo(f"  OLS non-JSON response for '{label}': {exc}", err=True)
+        return []
     return [
         {
             "label": doc.get("label"),
@@ -57,7 +61,7 @@ def search_ols(label: str, rows: int) -> list[dict[str, str]]:
     ]
 
 
-def search_bioportal(label: str, api_key: str | None, pagesize: int) -> list[dict[str, str]]:
+def search_bioportal(label: str, api_key: str | None, pagesize: int) -> list[dict[str, str | None]]:
     """Return BioPortal search hits for ``label`` as label/iri/ontology/definition dicts."""
     params: dict[str, str | int] = {"q": label, "pagesize": pagesize}
     headers = {"Authorization": f"apikey token={api_key}"} if api_key else {}
@@ -70,8 +74,13 @@ def search_bioportal(label: str, api_key: str | None, pagesize: int) -> list[dic
         return []
     if response.status_code != 200:
         return []
-    results = []
-    for item in response.json().get("collection", []):
+    try:
+        collection = response.json().get("collection", [])
+    except ValueError as exc:
+        click.echo(f"  BioPortal non-JSON response for '{label}': {exc}", err=True)
+        return []
+    results: list[dict[str, str | None]] = []
+    for item in collection:
         ontology_url = item.get("links", {}).get("ontology", "")
         definition = item.get("definition", "")
         if isinstance(definition, list):

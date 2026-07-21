@@ -1,4 +1,4 @@
-# scripts/analysis/
+# metpo/analysis/
 
 Standalone analysis tools for METPO data analysis and quality assessment.
 
