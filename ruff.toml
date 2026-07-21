@@ -85,7 +85,6 @@ line-ending = "auto"
 # Allow print statements in scripts
 "metpo/tools/*.py" = ["T201"]
 "metpo/scripts/*.py" = ["T201"]
-"literature_mining/scripts/*.py" = ["T201"]
 # Complexity warnings for specific analysis/utility scripts - refactoring would require significant restructuring
 "metpo/bactotraits/bactotraits_metpo_set_difference.py" = ["PLR0915", "PLR0912"]
 "metpo/bactotraits/create_bactotraits_file_versions.py" = ["PLR0915"]
@@ -94,7 +93,6 @@ line-ending = "auto"
 "metpo/analysis/analyze_ontology_value.py" = ["PLR0915", "PLR0912"]
 # Ignore complexity checks in analysis scripts
 "metpo/analysis/*.py" = ["PLR0912", "PLR0915"]
-"literature_mining/analyze_*.py" = ["PLR0912", "PLR0915"]
 # Ignore complexity and minor issues in bactotraits data processing scripts
 "metpo/bactotraits/*.py" = ["PLR0911", "PLR0912", "PLR0915", "SIM102", "B007", "RUF001", "N806", "EXE002"]
 # Database scripts - complexity and minor issues
@@ -103,21 +101,7 @@ line-ending = "auto"
 "metpo/database/filter_ols_chromadb.py" = ["PLR0912", "PLR0915"]
 "metpo/database/migrate_to_chromadb_resilient.py" = ["PLR0912", "PLR0915", "SIM115"]
 # Literature mining analysis - complexity and style issues
-"metpo/literature_mining/analysis/analyze_coverage_by_source_type.py" = ["PLR0915"]
-"metpo/literature_mining/analysis/analyze_extractions.py" = ["PLR0912"]
-"metpo/literature_mining/analysis/analyze_metpo_database_alignment.py" = ["PLR0915"]
-"metpo/literature_mining/analysis/analyze_metpo_efficiency.py" = ["PLR0912", "PLR0915", "SIM102"]
-"metpo/literature_mining/analysis/analyze_metpo_grounding.py" = ["PLR0912", "PLR0915", "SIM102"]
-"metpo/literature_mining/analysis/analyze_metpo_grounding_filtered.py" = ["PLR0912", "PLR0915"]
-"metpo/literature_mining/analysis/compare_extractions.py" = ["PLR0915"]
-"metpo/literature_mining/analysis/metpo_assessor.py" = ["B007", "PLR0912", "PLR0915"]
-"metpo/literature_mining/analysis/validate_extractions.py" = ["SIM102"]
-"metpo/literature_mining/analysis/visualize_ner.py" = ["PLC0415", "PLR0911", "PLR0912"]
 # Literature mining scripts
-"metpo/literature_mining/scripts/count_extraction_results.py" = ["PLC0415"]
-"metpo/literature_mining/scripts/dedupe_and_filter_abstracts.py" = ["PLR0912"]
-"metpo/literature_mining/scripts/dedupe_by_content.py" = ["B007", "PLR0912"]
-"metpo/literature_mining/scripts/fetch_abstracts_from_dois.py" = ["PLC0415"]
 # Pipeline scripts - complexity and minor issues
 "metpo/pipeline/analyze_coherence_results.py" = ["PLR0915"]
 "metpo/pipeline/analyze_sibling_coherence.py" = ["PLR0912", "PLR0915", "PTH110", "RUF012", "SIM108"]

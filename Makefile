@@ -27,7 +27,7 @@ KGM_COMPOUND_MAPPINGS ?= $(HOME)/gitrepos/kg-microbe/data/raw/compound_mappings_
 # Environment Setup Targets
 # ==============================================================================
 
-.PHONY: help install install-dev install-literature install-databases install-analysis install-all check-env clean-env clean-data metpo-report metatraits-helper-files clean-metatraits-helper-files demo-metatraits-mongo clean-metatraits-demo test lint
+.PHONY: help install install-dev install-databases install-analysis install-all check-env clean-env clean-data metpo-report metatraits-helper-files clean-metatraits-helper-files demo-metatraits-mongo clean-metatraits-demo test lint
 
 # Show available targets and usage information
 help:
@@ -36,7 +36,6 @@ help:
 	@echo "Environment Setup:"
 	@echo "  make install              - Install core dependencies"
 	@echo "  make install-dev          - Install development environment"
-	@echo "  make install-literature   - Install literature mining environment"
 	@echo "  make install-databases    - Install database workflows environment"
 	@echo "  make install-analysis     - Install analysis/visualization environment"
 	@echo "  make install-all          - Install all optional dependencies"
@@ -58,9 +57,6 @@ help:
 	@echo "External Ontology Downloads:"
 	@echo "  make download-external-bioportal-ontologies  - Download non-OLS ontologies"
 	@echo ""
-	@echo "Literature Mining:"
-	@echo "  make -C literature_mining help               - Show literature mining help"
-	@echo ""
 	@echo "Cleanup:"
 	@echo "  make clean-all            - Complete cleanup (env + data + databases)"
 	@echo "  make clean-env            - Remove virtual environments"
@@ -81,10 +77,6 @@ install:
 # Development environment (adds: oaklib, pandas, pymongo, rdflib, semsql, tqdm, litellm, openai)
 install-dev:
 	uv sync --extra dev
-
-# Literature mining environment (adds: artl-mcp, oaklib, ontogpt, pandas, litellm, openai, semsql)
-install-literature:
-	uv sync --extra literature
 
 # Database workflows (adds: pandas, pymongo for BactoTraits/Madin imports)
 install-databases:
@@ -125,7 +117,7 @@ check-env:
 	@echo "Environment Variables:"
 	@test -f .env && echo "  ✓ .env file exists" || echo "  ✗ .env file not found"
 	@test -n "$$BIOPORTAL_API_KEY" && echo "  ✓ BIOPORTAL_API_KEY set" || echo "  ✗ BIOPORTAL_API_KEY not set"
-	@test -n "$$OPENAI_API_KEY" && echo "  ✓ OPENAI_API_KEY set" || echo "  ✗ OPENAI_API_KEY not set (required for literature mining)"
+	@test -n "$$OPENAI_API_KEY" && echo "  ✓ OPENAI_API_KEY set" || echo "  ✗ OPENAI_API_KEY not set (used by LLM tools, e.g. propose-definitions-with-llm)"
 
 # Aggressively remove all UV and Poetry environment files
 clean-env:
@@ -673,20 +665,3 @@ list-bioportal-releases:
 # to query OLS4 only. Requires the analysis extra: make install-analysis
 data/ontology_assessments/phase1_summary_stats.json: data/metpo_terms/metpo_all_labels.tsv metpo/analysis/assess_ontology_by_api_search.py
 	uv run assess-ontology-by-api-search --input $< --output-dir $(@D) $(ARGS)
-
-# ==============================================================================
-# Sub-Makefile Integration
-# ==============================================================================
-# Literature mining (including ICBO examples) has its own Makefile.
-# Run from root using: make -C literature_mining <target>
-#
-# Examples:
-#   make -C literature_mining help
-#   make -C literature_mining pmids SOURCE=ijsem
-#   make -C literature_mining extract TEMPLATE=growth_conditions
-#   make -C literature_mining icbo-phenotypes
-#   make -C literature_mining icbo-chemicals
-#   make -C literature_mining icbo-analyze
-#
-# See literature_mining/Makefile for full documentation.
-# ==============================================================================

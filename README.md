@@ -60,7 +60,6 @@ make install
 
 # Install for specific workflows
 make install-dev           # Development tools (oaklib, rdflib, semsql)
-make install-literature    # Literature mining (ontogpt, artl-mcp)
 make install-databases     # BactoTraits/Madin workflows (pandas, pymongo)
 make install-analysis      # Analysis/visualization scripts (matplotlib, numpy, levenshtein)
 
@@ -119,48 +118,13 @@ cd src/ontology
 
 See `src/ontology/README-editors.md` for detailed instructions.
 
-### 2. Literature Mining Pipeline (`literature_mining/`)
+### 2. Literature mining and ICBO extractions (retired)
 
-Extract structured microbial trait data from research papers using OntoGPT with METPO grounding.
+The OntoGPT-based literature-mining pipeline (formerly `literature_mining/`) and the `metpo.literature_mining` package, including the ICBO 2025 extraction examples, were retired from this repo during scope-narrowing and archived at [turbomam/metpo-attic](https://github.com/turbomam/metpo-attic).
 
-**Quick start:**
-```bash
-make install-literature
+**Presentation materials**: See `docs/presentations/icbo_2025/` for slides and analysis from ICBO 2025. The Python scripts that generated the figures for that talk (formerly in `metpo/presentations/`) were also retired and are archived at [turbomam/metpo-attic](https://github.com/turbomam/metpo-attic).
 
-# Fetch abstracts and run extraction
-make -C literature_mining pmids SOURCE=ijsem
-make -C literature_mining abstracts SOURCE=ijsem N_ABSTRACTS=10
-make -C literature_mining extract TEMPLATE=growth_conditions
-```
-
-**Key features:**
-- OntoGPT-based extraction with custom templates
-- METPO-grounded entity recognition
-- Cost/performance benchmarking
-- Multiple extraction templates (growth conditions, chemical utilization, morphology, etc.)
-
-See `literature_mining/README.md` for full documentation.
-
-### 3. ICBO Example Extractions (`literature_mining/`)
-
-Example extractions demonstrating METPO's grounding strengths and weaknesses, used in ICBO 2025 presentation.
-
-```bash
-make install-literature
-
-# Extract phenotypes and chemical utilizations from example abstracts
-make -C literature_mining icbo-phenotypes
-make -C literature_mining icbo-chemicals
-
-# Analyze METPO grounding quality
-make -C literature_mining icbo-analyze
-```
-
-Example inputs, templates, and outputs are in `literature_mining/abstracts/icbo_examples/` and `literature_mining/outputs/icbo_examples/`.
-
-**Presentation materials**: See `docs/presentations/icbo_2025/` for slides and analysis from ICBO 2025. The Python scripts that generated the figures for that talk (formerly in `metpo/presentations/`) were retired from this repo and are archived at [turbomam/metpo-attic](https://github.com/turbomam/metpo-attic).
-
-### 4. Database Reconciliation (`metpo/scripts/`)
+### 3. Database Reconciliation (`metpo/scripts/`)
 
 Import and reconcile microbial trait databases (BactoTraits, Madin et al.) with METPO terminology.
 
@@ -180,7 +144,7 @@ make all-reports
 - `reports/madin-metpo-reconciliation.yaml`
 - `reports/synonym-sources.tsv`
 
-### 5. ID Allocation and Deprecation
+### 4. ID Allocation and Deprecation
 
 METPO has gone through three numbering eras. All IDs ever used — across current templates,
 historical BioPortal submissions, and tagged releases — are tracked to prevent reuse.
@@ -200,7 +164,7 @@ make -C src/ontology -f metpo.Makefile components/metpo_sheet.owl
 merged into `metpo.owl` during every release build. **Never reuse a burned ID** — consult
 `reports/id-allocation-audit.md` for the full list and the next safe IDs to allocate.
 
-### 6. Ontology Alignment Pipeline
+### 5. Ontology Alignment Pipeline
 
 Semantic matching between METPO and other microbial ontologies using ChromaDB embeddings.
 
@@ -220,7 +184,7 @@ make alignment-analyze-matches
 
 Identifies high-quality alignment candidates from OLS4 and non-OLS ontologies.
 
-### 7. External Ontology Integration (`external/`)
+### 6. External Ontology Integration (`external/`)
 
 Centralized storage for all external ontology files and derived databases.
 
@@ -244,8 +208,7 @@ make data/pipeline/non-ols-terms/D3O.tsv
 ## Key Documentation
 
 - **Ontology editing**: `src/ontology/README-editors.md`
-- **CLI reference**: `docs/cli-reference.md` - Complete guide to all 30+ command-line tools
-- **Literature mining**: `literature_mining/README.md`
+- **CLI reference**: `docs/cli-reference.md` - Complete guide to all command-line tools
 - **Deprecation workflow**: `docs/deprecation-workflow.md` — how to deprecate terms and allocate new IDs
 - **ID allocation and deprecation**: `reports/id-allocation-audit.md` — auto-generated list of all active and burned IDs, next safe IDs to allocate
 - **Historical analysis**: `metadata/ontology/historical_submissions/README.md`

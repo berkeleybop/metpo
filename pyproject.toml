@@ -65,14 +65,6 @@ dev = [
     "types-PyYAML>=6.0.12",
     "types-requests>=2.33.0.20260712",
 ]
-literature = [
-    "artl-mcp>=0.34.0",
-    "linkml>=1.11.1",
-    "oaklib>=0.6.23",
-    "pandas>=3.0.3",
-    "openai>=2.45.0",
-    "semsql>=0.4.0",
-]
 databases = [
     "pandas>=3.0.3",
     "pymongo>=4.17.0",
@@ -142,27 +134,6 @@ propose-definitions-with-llm = "metpo.scripts.propose_definitions_with_llm:main"
 fetch-source-metadata = "metpo.scripts.definition_work.fetch_source_metadata:main"
 merge-sparql-with-metadata = "metpo.scripts.definition_work.merge_sparql_with_metadata:main"
 regenerate-curator-attributions = "metpo.scripts.definition_work.regenerate_curator_attributions:main"
-
-# Literature Mining - Analysis
-visualize-ner = "metpo.literature_mining.analysis.visualize_ner:main"
-metpo-assessor = "metpo.literature_mining.analysis.metpo_assessor:cli"
-analyze-metpo-grounding = "metpo.literature_mining.analysis.analyze_metpo_grounding:main"
-analyze-metpo-grounding-filtered = "metpo.literature_mining.analysis.analyze_metpo_grounding_filtered:main"
-extract-metpo-entities = "metpo.literature_mining.analysis.extract_metpo_entities:main"
-find-metpo-terms = "metpo.literature_mining.analysis.find_metpo_terms:main"
-analyze-extractions = "metpo.literature_mining.analysis.analyze_extractions:main"
-analyze-coverage-by-source = "metpo.literature_mining.analysis.analyze_coverage_by_source_type:main"
-analyze-metpo-efficiency = "metpo.literature_mining.analysis.analyze_metpo_efficiency:main"
-analyze-metpo-database-alignment = "metpo.literature_mining.analysis.analyze_metpo_database_alignment:main"
-compare-extractions = "metpo.literature_mining.analysis.compare_extractions:main"
-validate-extractions = "metpo.literature_mining.analysis.validate_extractions:main"
-
-# Literature Mining - Utilities
-fetch-abstracts-from-dois = "metpo.literature_mining.scripts.fetch_abstracts_from_dois:main"
-extract-abstracts-from-files = "metpo.literature_mining.scripts.extract_abstracts_from_files:main"
-dedupe-and-filter-abstracts = "metpo.literature_mining.scripts.dedupe_and_filter_abstracts:main"
-dedupe-by-content = "metpo.literature_mining.scripts.dedupe_by_content:main"
-calculate-extraction-metrics = "metpo.literature_mining.scripts.calculate_metrics:main"
 
 # Madin et al. Analysis
 madin-field-summary = "metpo.scripts.madin.generate_field_summary_table:cli"
