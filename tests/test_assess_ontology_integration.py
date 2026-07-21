@@ -22,8 +22,9 @@ from metpo.analysis.assess_ontology_by_api_search import search_ols
 
 CASSETTE_DIR = Path(__file__).parent / "cassettes"
 
-# Replay-only in CI; set VCR_RECORD=1 locally to record against live OLS4.
-_record_mode = "once" if os.getenv("VCR_RECORD") else "none"
+# Replay-only in CI; set VCR_RECORD=1 locally to (re)record against live OLS4.
+# "all" overwrites the cassette so the documented re-record command actually refreshes it.
+_record_mode = "all" if os.getenv("VCR_RECORD") else "none"
 ols_vcr = vcr.VCR(
     cassette_library_dir=str(CASSETTE_DIR),
     record_mode=_record_mode,
