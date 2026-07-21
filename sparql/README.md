@@ -38,12 +38,12 @@ This directory contains SPARQL queries for different RDF backends used in the ME
 **Purpose:** Browse METPO class hierarchy with parent relationships
 **Used by:** Ontology exploration
 **Key patterns:**
-- Filters for METPO OBO-style IRI: `http://purl.obolibrary.org/obo/METPO_`
+- Filters for METPO term IRI: `https://w3id.org/metpo/`
 - Includes parent class labels
 - LIMITED to 100 results
 
 ### `chem_interaction_props.rq`
-**Purpose:** List chemical interaction properties (subproperties of metpo:2000001)
+**Purpose:** List chemical interaction properties (subproperties of METPO:2000001)
 **Used by:** Schema documentation
 **Key patterns:**
 - Queries METPO object property hierarchy
@@ -53,7 +53,7 @@ This directory contains SPARQL queries for different RDF backends used in the ME
 **Purpose:** Extract BacDive-to-METPO oxygen preference mappings
 **Used by:** Data integration workflows
 **Key patterns:**
-- Queries subclasses of `metpo:1000601` (oxygen preference)
+- Queries subclasses of `METPO:1000601` (oxygen preference)
 - Extracts BacDive labels from `oboInOwl:hasRelatedSynonym`
 - Maps to METPO CURIEs and labels
 

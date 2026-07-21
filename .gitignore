@@ -1,16 +1,6 @@
-*.db
-*sqlite
-.env
-.idea/
-.litellm_cache
-.venv/
-downloads/
-large/
-local/
-**/__pycache__/
-*.pyc
-*.pyo
-
+# ODK-managed rules, do not modify
+# If you need to add your own ignore rules, you may do so below
+# the "End ODK-managed rules" marker at the end of this file.
 .DS_Store
 semantic.cache
 bin/
@@ -19,8 +9,24 @@ bin/
 *.tmp.obo
 *.tmp.owl
 *.tmp.json
+*-relation-graph.tsv.gz
+.template.db
 
 .github/token.txt
+
+/metpo.owl
+/metpo.obo
+/metpo.json
+/metpo.db
+/metpo-base.*
+/metpo-basic.*
+/metpo-full.*
+/metpo-simple.*
+/metpo-simple-non-classified.*
+/mappings/
+/patterns/
+/reports/
+/subsets/
 
 src/ontology/mirror
 src/ontology/mirror/*
@@ -29,6 +35,7 @@ src/ontology/reports/*
 src/ontology/metpo.owl
 src/ontology/metpo.obo
 src/ontology/metpo.json
+src/ontology/metpo.db
 src/ontology/metpo-base.*
 src/ontology/metpo-basic.*
 src/ontology/metpo-full.*
@@ -42,6 +49,7 @@ src/ontology/ontologyterms.txt
 src/ontology/simple_seed.txt
 src/ontology/patterns
 src/ontology/merged-metpo-edit.owl
+src/ontology/metpo-edit.properties
 
 src/ontology/target/
 src/ontology/tmp/*
@@ -57,6 +65,42 @@ src/patterns/data/**/*.ofn
 src/patterns/data/**/*.txt
 src/patterns/pattern_owl_seed.txt
 src/patterns/all_pattern_terms.txt
+
+# End of ODK-managed rules
+
+# METPO commits release artifacts to the repo rather than using GitHub Releases.
+# Override the ODK-managed ignore rules above so these files stay tracked.
+!/metpo.owl
+!/metpo.obo
+!/metpo.json
+!/metpo-base.owl
+!/metpo-base.obo
+!/metpo-base.json
+!/metpo-full.owl
+!/metpo-full.obo
+!/metpo-full.json
+
+*.db
+*sqlite
+.env
+.idea/
+.litellm_cache
+.venv/
+downloads/
+large/
+local/
+**/__pycache__/
+*.pyc
+*.pyo
+
+
+
+
+
+
+
+
+
 
 literature_mining/random-*-pmids.txt
 

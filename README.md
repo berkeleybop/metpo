@@ -26,6 +26,16 @@ METPO releases are available from multiple sources:
 
 Editors of this ontology should use the edit version, [src/ontology/metpo-edit.owl](src/ontology/metpo-edit.owl)
 
+## Identifiers and resolution
+
+The canonical IRI for every METPO term is under the `https://w3id.org/metpo/` namespace, with a bare 7-digit local identifier:
+
+- Term IRI: `https://w3id.org/metpo/<id>` (e.g. `https://w3id.org/metpo/1000482`)
+- The ontology prefix `METPO:` expands to `https://w3id.org/metpo/`
+- Ontology document IRI: `https://w3id.org/metpo/metpo.owl` (it sits under the `https://w3id.org/metpo/` delegation, as do the version IRIs and release products, e.g. `https://w3id.org/metpo/releases/<date>/metpo.owl`; the bare `https://w3id.org/metpo.owl` is outside the delegation and does not resolve)
+
+**Do not use `http://purl.obolibrary.org/obo/METPO_<id>`.** METPO is not registered in the OBO Foundry, so those PURLs do not resolve (HTTP 404) and are not METPO identifiers. The canonical METPO identifier namespace is `https://w3id.org/metpo/` (resolved through the `w3id.org` host); `purl.obolibrary.org` is not used by METPO. (Term-IRI resolution behavior is still being finalized; see issues #450 and #435.)
+
 ## Contact
 
 Please use this GitHub repository's [Issue tracker](https://github.com/berkeleybop/metpo/issues) to request new terms/classes or report errors or specific concerns related to the ontology.

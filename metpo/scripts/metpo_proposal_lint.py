@@ -16,12 +16,19 @@ It is meant to run both as a METPO CI gate and as a pre-flight in the generator 
 (kg-microbe / TraitMech / metpo-kgm-studio) before a proposal PR is opened. It catches
 things the ODK build and ELK reasoner cannot: a logically-consistent-but-wrong bin
 formula (#357), scrambled threshold synonyms (#356/#432), mapping CURIEs parked in
-definition_source (#344), and parents that bypass ROBOT's label-resolution safety net
-via CURIE form.
+definition_source (#344), parents that bypass ROBOT's label-resolution safety net
+via CURIE form, and definitions whose genus disagrees with the asserted parent
+(DEF-FORM; the hierarchy/label/definition compatibility principle, #64/#377).
 
-NOTE: ID-RANGE encodes the current observed convention (classes METPO:1xxxxxx,
-properties METPO:2xxxxxx). The term-IRI scheme is an open question (#16/#434/#436);
-revisit this check when that settles.
+Baseline ratchet: ``--baseline PATH --write-baseline`` records the currently-accepted findings;
+a later run with ``--baseline PATH`` fails only on findings BEYOND that floor, so a
+large existing-debt audit can gate new additions without first paying down the debt.
+Regenerate the baseline as debt is fixed -- the count can only go down.
+
+NOTE: ID-RANGE encodes the METPO convention (classes METPO:1xxxxxx, properties
+METPO:2xxxxxx). Term IRIs are https://w3id.org/metpo/<7-digit id> (no obolibrary
+PURLs); the w3id scheme is settled (#458). Remaining ODK-config/IRI cleanup
+(resolvable ontology IRI, base-IRI vestiges) is tracked in #465.
 """
 
 import csv
@@ -264,6 +271,77 @@ def check_definition(rid, r, roles, mode):
     return out
 
 
+# Genus-differentia connectors that may follow the genus in a definition. The strict
+# Aristotelian form uses "that", but "in which", "where", "characterized by", etc. are
+# equally valid differentia introductions for disposition/quality/process classes
+# ("A trophic type in which an organism ...") and are MORE accurate than forcing
+# "that". The compatibility requirement (genus == parent label) is enforced regardless.
+_GENUS_CONNECTORS = (
+    "that",
+    "in which",
+    "in whom",
+    "where",
+    "wherein",
+    "characterized by",
+    "characterised by",
+    "describing",
+)
+_DEF_GENUS_RE = re.compile(
+    r"^[Aa]n? (.+?) (?:" + "|".join(c.replace(" ", r"\s+") for c in _GENUS_CONNECTORS) + r")\b",
+)
+
+
+def check_definition_form(rid, typ, definition, parent_cell, mode):
+    """Aristotelian form + hierarchy/label/definition compatibility (METPO principle).
+
+    A class definition must read "A <genus> <connector> <differentia>" where <genus> is
+    the asserted parent's label and <connector> is a genus-differentia connector
+    (``that``, ``in which``, ``characterized by`` ...), so hierarchy, label, and
+    definition stay compatible. See feedback-metpo-modeling-principles, #64 and #377.
+    """
+    if typ != "owl:Class" or not definition:
+        return []
+    sev = "ERROR" if mode == "submit" else "WARN"
+    parents = [p.strip() for p in parent_cell.split("|") if p.strip()]
+    # CURIE-form parents (e.g. METPO:1000000) are governed by PARENT/HOUSE-STYLE; the
+    # genus is compared only against LABEL-form parents (the sheet convention), so a
+    # CURIE parent never triggers a spurious DEF-FORM mismatch and is not cited as the
+    # expected genus.
+    label_parents = [p for p in parents if not re.match(r"^[A-Za-z][\w.]*:\S", p)]
+    m = _DEF_GENUS_RE.match(definition)
+    if not m:
+        return [
+            Finding(
+                sev,
+                "DEF-FORM",
+                rid,
+                "definition is not Aristotelian 'A <genus> that/in-which/... <differentia>' "
+                f"(genus must be the parent label {label_parents or ['<none>']})",
+            )
+        ]
+    genus = m.group(1).strip()
+    glow = genus.lower()
+    # Accept the parent label itself, or the parent label qualified as a head noun
+    # ("a <parent> phenotype/preference in which ..."). For adjectival parents (e.g.
+    # 'halophilic', 'anaerobic') the natural genus is "<parent> phenotype", which is
+    # still hierarchy/label/definition compatible.
+    _heads = ("phenotype", "preference", "quality")
+    genus_ok = any(
+        glow == p.lower() or glow in {f"{p.lower()} {h}" for h in _heads} for p in label_parents
+    )
+    if label_parents and not genus_ok:
+        return [
+            Finding(
+                sev,
+                "DEF-FORM",
+                rid,
+                f"definition genus '{genus}' does not match asserted parent(s) {label_parents} "
+                "(hierarchy/label/definition must be compatible)",
+            )
+        ]
+    return []
+
+
 def row_bounds(r, roles):
     """Authoritative numeric bounds for a row: EC formula preferred, then range_min/max."""
     alo, aup = parse_bound(cell(r, roles.get("ec")))
@@ -359,6 +437,9 @@ def lint(path, known_labels, known_ids, mode, external_known):
         out += check_id_type(rid, typ, rid.startswith("METPO:"))
         out += check_parent(rid, cell(r, roles.get("parent")), resolve_ids, resolve_labels)
         out += check_definition(rid, r, roles, mode)
+        out += check_definition_form(
+            rid, typ, cell(r, roles.get("definition")), cell(r, roles.get("parent")), mode
+        )
         alo, aup = row_bounds(r, roles)
         out += check_formula_synonym(rid, label_text, r, roles, alo, aup)
         out += check_synonym_scope(rid, r, roles)
@@ -436,21 +517,53 @@ def validate_curies(path):
 )
 @click.option("--json", "as_json", is_flag=True, help="Emit JSON instead of text.")
 @click.option("--warn-only", is_flag=True, help="Exit 0 even when ERROR findings are present.")
-def main(template, known, mode, do_validate_curies, as_json, warn_only):
+@click.option(
+    "--baseline",
+    type=click.Path(),
+    default=None,
+    help="JSON baseline of accepted findings; only findings NOT in it can fail the build (ratchet).",
+)
+@click.option(
+    "--write-baseline",
+    is_flag=True,
+    help="Write the current findings to --baseline as the new accepted floor, then exit 0.",
+)
+def main(template, known, mode, do_validate_curies, as_json, warn_only, baseline, write_baseline):
     """Lint a METPO ROBOT-template TSV (proposal review or released-content audit)."""
     external = bool(known)
     kl, ki = load_known(known) if external else (set(), set())
     findings, n = lint(template, kl, ki, mode, external)
     if do_validate_curies:
         findings += validate_curies(template)
-    errs = [f for f in findings if f.sev == "ERROR"]
-    warns = [f for f in findings if f.sev == "WARN"]
+
+    def _fp(f):
+        return f"{f.code}\t{f.rid}\t{f.msg}"
+
+    if write_baseline:
+        if not baseline:
+            raise click.UsageError("--write-baseline requires --baseline PATH")
+        Path(baseline).write_text(
+            json.dumps(sorted({_fp(f) for f in findings}), indent=1) + "\n", encoding="utf-8"
+        )
+        click.echo(f"# wrote baseline: {baseline}  ({len(findings)} findings recorded)")
+        raise SystemExit(0)
+
+    baseline_set = set()
+    if baseline and Path(baseline).exists():
+        baseline_set = set(json.loads(Path(baseline).read_text(encoding="utf-8")))
+    new_findings = [f for f in findings if _fp(f) not in baseline_set]
+    baselined = len(findings) - len(new_findings)
+    # When a baseline is in play, only findings beyond it count toward pass/fail.
+    scored = new_findings if baseline_set else findings
+    errs = [f for f in scored if f.sev == "ERROR"]
+    warns = [f for f in scored if f.sev == "WARN"]
     if as_json:
         click.echo(
             json.dumps(
                 {
                     "template": str(template),
                     "rows": n,
+                    "baselined": baselined,
                     "errors": [(f.code, f.rid, f.msg) for f in errs],
                     "warnings": [(f.code, f.rid, f.msg) for f in warns],
                 },
@@ -461,9 +574,11 @@ def main(template, known, mode, do_validate_curies, as_json, warn_only):
         click.echo(
             f"# metpo-proposal-lint: {template}  ({n} rows, mode={mode}, known={'yes' if external else 'self'})"
         )
-        for f in sorted(findings, key=lambda x: (x.sev != "ERROR", x.code)):
+        # Show only the scored (new) findings when ratcheting; the baseline is silent.
+        for f in sorted(scored, key=lambda x: (x.sev != "ERROR", x.code)):
             click.echo(f"  [{f.sev:5}] {f.code:13} {f.rid:14} {f.msg}")
-        click.echo(f"\n  {len(errs)} error(s), {len(warns)} warning(s)")
+        tail = f"  ({baselined} baselined/accepted, not scored)" if baseline_set else ""
+        click.echo(f"\n  {len(errs)} error(s), {len(warns)} warning(s){tail}")
     raise SystemExit(1 if errs and not warn_only else 0)
 
 

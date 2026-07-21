@@ -102,3 +102,80 @@ def test_cli_exits_nonzero_on_errors(tmp_path):
 def test_cli_warn_only_exits_zero(tmp_path):
     result = CliRunner().invoke(main, [str(_write(tmp_path)), "--mode", "draft", "--warn-only"])
     assert result.exit_code == 0
+
+
+# DEF-FORM: hierarchy/label/definition compatibility -- the genus of an Aristotelian
+# definition must be the asserted parent's label (Mark's modeling principle; #64/#377).
+DEF_FORM_TEMPLATE = (
+    "ID\tlabel\tTYPE\tparent\tdefinition\tdef_source\n"
+    "ID\tLABEL\tTYPE\tSC %\tA IAO:0000115\t>A IAO:0000119\n"
+    "METPO:1007101\tgood def\towl:Class\tphenotype\tA phenotype that is observable.\tPMID:1\n"
+    "METPO:1007102\twrong genus\towl:Class\tphenotype\tA biochemical test that detects catalase.\tPMID:1\n"
+    "METPO:1007103\tno that-form\towl:Class\tphenotype\tDetects catalase activity.\tPMID:1\n"
+    "METPO:1007104\tin-which ok\towl:Class\ttrophic type\tA trophic type in which an organism fixes carbon.\tPMID:1\n"
+    "METPO:1007105\tcharacterized ok\towl:Class\tcell shape\tA cell shape characterized by a rod morphology.\tPMID:1\n"
+    "METPO:1007106\tparent phenotype genus\towl:Class\thalophilic\tA halophilic phenotype in which an organism requires high salt.\tPMID:1\n"
+    "METPO:1007107\tcurie parent\towl:Class\tMETPO:9999999\tA phenotype that is observable.\tPMID:1\n"
+)
+
+
+def test_def_form(tmp_path):
+    p = tmp_path / "defform.tsv"
+    p.write_text(DEF_FORM_TEMPLATE, encoding="utf-8")
+    findings, _ = lint(
+        str(p),
+        {"phenotype", "trophic type", "cell shape", "halophilic"},
+        set(),
+        "submit",
+        external_known=False,
+    )
+    by_id = {}
+    for f in findings:
+        by_id.setdefault(f.rid, set()).add(f.code)
+    # genus == parent label -> compatible, no DEF-FORM
+    assert "DEF-FORM" not in by_id.get("METPO:1007101", set())
+    # genus 'biochemical test' != parent 'phenotype' -> DEF-FORM
+    assert "DEF-FORM" in by_id["METPO:1007102"]
+    # missing the 'A <genus> <connector> ...' shape -> DEF-FORM
+    assert "DEF-FORM" in by_id["METPO:1007103"]
+    # 'in which' / 'characterized by' are valid connectors when genus == parent
+    assert "DEF-FORM" not in by_id.get("METPO:1007104", set())
+    assert "DEF-FORM" not in by_id.get("METPO:1007105", set())
+    # CURIE-form parent: genus comparison is skipped (PARENT/HOUSE-STYLE governs it)
+    assert "DEF-FORM" not in by_id.get("METPO:1007107", set())
+    # genus "<parent> phenotype" (adjectival parent) is accepted
+    assert "DEF-FORM" not in by_id.get("METPO:1007106", set())
+
+
+def test_baseline_ratchet(tmp_path):
+    template = _write(tmp_path)
+    baseline = tmp_path / "baseline.json"
+    runner = CliRunner()
+
+    # 1. record the current findings as the accepted floor
+    r = runner.invoke(
+        main, [str(template), "--mode", "submit", "--baseline", str(baseline), "--write-baseline"]
+    )
+    assert r.exit_code == 0
+    assert baseline.exists()
+
+    # 2. re-running against that baseline: nothing new -> pass even though debt exists
+    r = runner.invoke(main, [str(template), "--mode", "submit", "--baseline", str(baseline)])
+    assert r.exit_code == 0
+    assert "baselined" in r.output
+
+    # 3. a NEW violation beyond the baseline -> fail
+    broken = tmp_path / "broken.tsv"
+    broken.write_text(
+        TEMPLATE
+        + "METPO:1007200\tnew bad\towl:Class\tMETPO:9999999\tA phenotype.\tPMID:1\t\t\t\t\n",
+        encoding="utf-8",
+    )
+    r = runner.invoke(main, [str(broken), "--mode", "submit", "--baseline", str(baseline)])
+    assert r.exit_code == 1
+    assert "METPO:1007200" in r.output
+
+
+def test_write_baseline_requires_path(tmp_path):
+    r = CliRunner().invoke(main, [str(_write(tmp_path)), "--write-baseline"])
+    assert r.exit_code != 0

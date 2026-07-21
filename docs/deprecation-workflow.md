@@ -57,16 +57,23 @@ by editing the upstream Google Sheet and running `make download-sheets`.
 The file is a ROBOT template. Column layout:
 
 ```
-ID            label                    TYPE              deprecated      obsolescence reason
-ID            LABEL                    TYPE              A owl:deprecated  AI IAO:0000231
-METPO:XXXXXXX obsolete <former label>  owl:Class         true            OMO:0001000
+ID            label                    TYPE              deprecated                        obsolescence reason
+ID            LABEL                    TYPE              AT owl:deprecated^^xsd:boolean    AI IAO:0000231
+METPO:XXXXXXX obsolete <former label>  owl:Class         true                              OMO:0001000
 ```
 
 Add one row per deprecated term. Use:
 - **label**: `obsolete ` + the former rdfs:label (e.g. `obsolete lyses`)
 - **TYPE**: `owl:Class` for classes, `owl:ObjectProperty` / `owl:DataProperty` /
   `owl:AnnotationProperty` for properties
-- **deprecated**: always `true`
+- **deprecated**: always `true`. The directive **must be typed** as
+  `AT owl:deprecated^^xsd:boolean`. A bare `A owl:deprecated` emits an *untyped* literal
+  (`<owl:deprecated>true</owl:deprecated>`), which ROBOT/OWL API do not recognize as a
+  deprecation — that previously caused ~4000 spurious default-profile report findings
+  (deprecated terms not excluded from `missing_definition`/`duplicate_label`, plus
+  `deprecated_boolean_datatype` and `misused_obsolete_label`). The typed directive is the
+  fix in #467; keep it typed so this does not regress. (If `deprecated.tsv` still shows the
+  bare `A owl:deprecated`, #467 has not yet landed — apply the typed form.)
 - **obsolescence reason**: use `OMO:0001000` (out of scope) or `IAO:0000226`
   (placeholder removed) — see the existing rows for precedent. When in doubt, use
   `IAO:0000226`.

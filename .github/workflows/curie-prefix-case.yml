@@ -1,0 +1,29 @@
+name: CURIE prefix case
+
+# Guardrail for the blessed METPO CURIE prefix case (berkeleybop/metpo#16):
+# uppercase METPO: over the lowercase URI path https://w3id.org/metpo/.
+# Keeps lowercase metpo: CURIE prefixes from creeping back into hand-authored
+# RDF, SPARQL, and documentation.
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+# Deny all permissions by default; the job grants the minimum it needs.
+permissions: {}
+
+jobs:
+  curie-prefix-case:
+    runs-on: ubuntu-latest
+    # Only needs to read the repository to grep tracked files.
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
+      - name: Check METPO CURIE prefix case
+        run: bash tests/check_curie_prefix_case.sh

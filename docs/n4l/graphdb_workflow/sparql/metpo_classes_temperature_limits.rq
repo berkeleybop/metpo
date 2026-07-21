@@ -3,22 +3,22 @@
 # Used by: N4L temperature categorization workflow (archived)
 # Returns: METPO temperature classes with RangeMin/RangeMax/Unit values
 
-PREFIX metpo: <https://w3id.org/metpo/>
+PREFIX METPO: <https://w3id.org/metpo/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 select
 distinct ?s ?l ?min ?max ?u
 where {
     values ?o  {
-        metpo:1000217 metpo:1000303 metpo:1000304 metpo:1000305 metpo:1000306
+        METPO:1000217 METPO:1000303 METPO:1000304 METPO:1000305 METPO:1000306
     }
     ?s rdfs:subClassOf+ ?o ;
     rdfs:label ?l ;
-    metpo:Unit ?u .
+    METPO:Unit ?u .
     optional {
-        ?s metpo:RangeMax ?max
+        ?s METPO:RangeMax ?max
     }
     optional {
-        ?s metpo:RangeMin ?min
+        ?s METPO:RangeMin ?min
     }
     FILTER(BOUND(?min) || BOUND(?max))
 }
