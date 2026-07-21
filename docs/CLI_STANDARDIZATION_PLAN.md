@@ -92,7 +92,7 @@
 
 ### **Category 4: Presentation Scripts - RETIRED**
 
-The 9 scripts that previously lived under `metpo/presentations/` were one-shot code for the ICBO 2025 talk. They have been removed from `main` and are preserved at the release tag `2025-11-17`. Recover with `git checkout 2025-11-17 -- metpo/presentations/`. No CLI standardization work is planned for these scripts.
+The 9 scripts that previously lived under `metpo/presentations/` were one-shot code for the ICBO 2025 talk. They have been removed from `main` and are archived at [turbomam/metpo-attic](https://github.com/turbomam/metpo-attic). No CLI standardization work is planned for these scripts.
 
 ---
 

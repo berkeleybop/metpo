@@ -540,11 +540,7 @@ Stubs contain only ID, LABEL, and TYPE columns, allowing templates to reference 
 
 A set of analysis scripts that examined METPO usage across the KG-Microbe knowledge graph datasets (BactoTraits, Madin et al., BacDive) and produced figures for the ICBO 2025 talk. The scripts were one-shot and were not maintained as ongoing CLI tools.
 
-The scripts have been removed from `main` to keep the repository focused on ontology maintenance. They are preserved at the release tag `2025-11-17` and can be recovered with:
-
-```bash
-git checkout 2025-11-17 -- metpo/presentations/
-```
+The scripts have been removed from `main` to keep the repository focused on ontology maintenance. They are archived at [turbomam/metpo-attic](https://github.com/turbomam/metpo-attic).
 
 ---
 
