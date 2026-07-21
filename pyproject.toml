@@ -45,6 +45,7 @@ Documentation = "https://github.com/berkeleybop/metpo/blob/main/README.md"
 [project.optional-dependencies]
 test = [
     "pytest>=9.1.1",
+    "vcrpy>=6.0.0",
 ]
 dev = [
     "oaklib>=0.6.23",
@@ -180,6 +181,12 @@ madin-analyze-ref-id = "metpo.scripts.madin.analyze_ref_id_format:cli"
 madin-analyze-categorical = "metpo.scripts.madin.analyze_remaining_categorical:cli"
 madin-verify-edge-taxids = "metpo.scripts.madin.verify_edge_taxids:cli"
 madin-verify-ncbi-taxids = "metpo.scripts.madin.verify_ncbi_taxids:cli"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "integration: tests that exercise external APIs; replayed from recorded vcrpy cassettes in CI",
+]
 
 [tool.hatch.build.targets.wheel]
 packages = ["metpo"]
