@@ -158,7 +158,7 @@ make -C literature_mining icbo-analyze
 
 Example inputs, templates, and outputs are in `literature_mining/abstracts/icbo_examples/` and `literature_mining/outputs/icbo_examples/`.
 
-**Presentation materials**: See `docs/presentations/icbo_2025/` for slides and analysis from ICBO 2025.
+**Presentation materials**: See `docs/presentations/icbo_2025/` for slides and analysis from ICBO 2025. The Python scripts that generated the figures for that talk (formerly in `metpo/presentations/`) were retired from this repo and are archived at [turbomam/metpo-attic](https://github.com/turbomam/metpo-attic).
 
 ### 4. Database Reconciliation (`metpo/scripts/`)
 
