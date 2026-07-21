@@ -23,10 +23,11 @@ Read these before editing ontology content or proposing architecture.
   `make test ...` without `squeaky-clean`, so sheet edits only reach CI once
   someone runs `squeaky-clean && make all` locally and commits the regenerated
   `src/templates/*.tsv` and `src/ontology/components/*.owl`.
-- **ChromaDB is retired** (unpatchable critical CVE, #455/#401, removed in #498).
-  Do not propose new ChromaDB-based solutions. Cross-ontology/embedding work uses
-  OLS4 + local embeddings (nomic-embed-text via Ollama on the M5 GPU) +
-  linkml-store/OAK; see `metpo/pipeline/cross_ontology_search.py`.
+- **ChromaDB is retired** (CVE, #455/#401, removed in #498). Don't add ChromaDB
+  or another committed local vector store. For embedding/semantic search: the
+  OLS4 embeddings search API first, then proven tooling from ecosystems we trust
+  for anything OLS doesn't cover. See `docs/embedding-strategy.md` and
+  `metpo/pipeline/cross_ontology_search.py`.
 - **Scope-narrowing means relocate, not delete** (#433). Retired non-ontology
   content is archived to [turbomam/metpo-attic](https://github.com/turbomam/metpo-attic),
   with metpo docs pointing there. The `presentations/`, `notebooks/`, and

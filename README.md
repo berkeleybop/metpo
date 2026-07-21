@@ -184,26 +184,18 @@ make alignment-analyze-matches
 
 Identifies high-quality alignment candidates from OLS4 and non-OLS ontologies.
 
-### 6. External Ontology Integration (`external/`)
+### 6. External Ontology Integration
 
-Centralized storage for all external ontology files and derived databases.
+External ontology files are treated as build artifacts, not committed. The `external/` directory is git-ignored; download what you need on demand:
 
 ```bash
 make install-dev
 
-# Download microbial ontologies from BioPortal
+# Download microbial ontologies from BioPortal into external/ontologies/bioportal/
 make download-external-bioportal-ontologies
-
-# Extract terms for embeddings
-make data/pipeline/non-ols-terms/MPO.tsv
-make data/pipeline/non-ols-terms/D3O.tsv
 ```
 
-**Structure:**
-- `external/ontologies/bioportal/` - Downloaded from BioPortal (13+ ontologies: MPO, OMP, D3O, GMO, MISO, etc.)
-- `external/ontologies/manual/` - Manually added files (e.g., n4l_merged.owl)
-- `external/databases/` - Derived semsql databases
-- `external/metpo_historical/` - Historical METPO BioPortal submissions
+Historical METPO BioPortal submissions were downloaded once and processed into `metadata/ontology/historical_submissions/entity_extracts/` (committed), which is what the ID-allocation audit reads. For semantic matching against external ontologies, see the embedding strategy in `docs/embedding-strategy.md`.
 
 ## Key Documentation
 

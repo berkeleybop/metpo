@@ -10,7 +10,6 @@
 # (`curie_to_metpo:`), none of which are CURIEs.
 #
 # Deliberately NOT scanned:
-#   - external/         : frozen historical BioPortal submissions (archival record)
 #   - generated release artifacts (metpo.owl / -base / -full / *.obo): their
 #     lowercase `idspace: metpo` is tracked in berkeleybop/metpo#557 and fixed at
 #     the generator, not by hand.
@@ -23,7 +22,6 @@ pattern='(^|[^A-Za-z0-9_-])metpo:'
 
 hits=$(git grep -nIE "$pattern" -- \
   '*.ttl' '*.rq' '*.sparql' '*.md' \
-  ':(exclude)external/**' \
   ':(exclude)tests/check_curie_prefix_case.sh' || true)
 
 if [ -n "$hits" ]; then
