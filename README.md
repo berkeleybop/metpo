@@ -62,7 +62,7 @@ make install
 make install-dev           # Development tools (oaklib, rdflib, semsql)
 make install-literature    # Literature mining (ontogpt, artl-mcp)
 make install-databases     # BactoTraits/Madin workflows (pandas, pymongo)
-make install-notebooks     # Jupyter notebooks (chromadb, matplotlib)
+make install-analysis      # Analysis/visualization scripts (matplotlib, numpy, levenshtein)
 
 # Install everything
 make install-all
@@ -200,12 +200,14 @@ make -C src/ontology -f metpo.Makefile components/metpo_sheet.owl
 merged into `metpo.owl` during every release build. **Never reuse a burned ID** — consult
 `reports/id-allocation-audit.md` for the full list and the next safe IDs to allocate.
 
-### 6. Ontology Alignment Pipeline (`notebooks/`)
+### 6. Ontology Alignment Pipeline
 
 Semantic matching between METPO and other microbial ontologies using ChromaDB embeddings.
 
+For a lighter-weight, label-based alternative (OLS4 + BioPortal search, no embeddings), see `assess-ontology-by-api-search` in `docs/cli-reference.md`.
+
 ```bash
-make install-notebooks
+make install-analysis
 
 # Run alignment pipeline
 make alignment-run-all
@@ -229,8 +231,8 @@ make install-dev
 make download-external-bioportal-ontologies
 
 # Extract terms for embeddings
-make notebooks/non-ols-terms/MPO.tsv
-make notebooks/non-ols-terms/D3O.tsv
+make data/pipeline/non-ols-terms/MPO.tsv
+make data/pipeline/non-ols-terms/D3O.tsv
 ```
 
 **Structure:**
