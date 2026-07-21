@@ -76,13 +76,13 @@ databases = [
     "pandas>=3.0.3",
     "pymongo>=4.17.0",
 ]
-notebooks = [
-    "jupyter>=1.1.1",
-    "notebook>=7.6.0",
+# Dependencies for the analysis/visualization scripts under metpo/analysis and
+# metpo/scripts (ontology-assessment search, embedding plots, distance plots).
+# The Jupyter stack that used to live here was removed with notebooks/ (#441).
+analysis = [
     "matplotlib>=3.11.0",
     "numpy>=2.4.6",
     "python-levenshtein>=0.27.1",
-    "tqdm>=4.68.4",
 ]
 
 [project.scripts]
@@ -117,6 +117,7 @@ analyze-coherence-results = "metpo.pipeline.analyze_coherence_results:main"
 # Analysis
 analyze-ontology-value = "metpo.analysis.analyze_ontology_value:main"
 analyze-match-quality = "metpo.analysis.analyze_match_quality:main"
+assess-ontology-by-api-search = "metpo.analysis.assess_ontology_by_api_search:main"
 analyze-definition-opportunities = "metpo.scripts.analyze_definition_opportunities:main"
 bootstrap-definition-enrichment = "metpo.scripts.bootstrap_definition_enrichment:main"
 plot-embedding-similarity = "metpo.scripts.plot_embedding_similarity:main"

@@ -27,7 +27,7 @@ KGM_COMPOUND_MAPPINGS ?= $(HOME)/gitrepos/kg-microbe/data/raw/compound_mappings_
 # Environment Setup Targets
 # ==============================================================================
 
-.PHONY: help install install-dev install-literature install-databases install-notebooks install-all check-env clean-env clean-data metpo-report metatraits-helper-files clean-metatraits-helper-files demo-metatraits-mongo clean-metatraits-demo test lint
+.PHONY: help install install-dev install-literature install-databases install-analysis install-all check-env clean-env clean-data metpo-report metatraits-helper-files clean-metatraits-helper-files demo-metatraits-mongo clean-metatraits-demo test lint
 
 # Show available targets and usage information
 help:
@@ -38,7 +38,7 @@ help:
 	@echo "  make install-dev          - Install development environment"
 	@echo "  make install-literature   - Install literature mining environment"
 	@echo "  make install-databases    - Install database workflows environment"
-	@echo "  make install-notebooks    - Install notebooks environment"
+	@echo "  make install-analysis     - Install analysis/visualization environment"
 	@echo "  make install-all          - Install all optional dependencies"
 	@echo "  make check-env            - Check environment status"
 	@echo ""
@@ -90,9 +90,9 @@ install-literature:
 install-databases:
 	uv sync --extra databases
 
-# Notebooks environment (adds: jupyter, notebook, matplotlib, numpy, etc.)
-install-notebooks:
-	uv sync --extra notebooks
+# Analysis/visualization environment (adds: matplotlib, numpy, python-levenshtein)
+install-analysis:
+	uv sync --extra analysis
 
 # Install all optional dependencies
 install-all:
@@ -662,6 +662,17 @@ list-bioportal-releases:
 	@echo "To download specific release: make downloads/bioportal/metpo-2025-09-23.owl"
 	@echo ""
 	@echo "Note: Set BIOPORTAL_API_KEY environment variable for authenticated downloads"
+
+# ==============================================================================
+# Ontology alignment assessment
+# ==============================================================================
+# Query OLS4 + BioPortal search for each METPO label and rank the external
+# ontologies whose labels align best. Replaces the retired
+# notebooks/assess_ontology_by_api_search.ipynb (#441).
+# Needs BIOPORTAL_API_KEY for the BioPortal half; pass ARGS="--skip-bioportal"
+# to query OLS4 only. Requires the analysis extra: make install-analysis
+data/ontology_assessments/phase1_summary_stats.json: data/metpo_terms/metpo_all_labels.tsv metpo/analysis/assess_ontology_by_api_search.py
+	uv run assess-ontology-by-api-search --input $< --output-dir $(@D) $(ARGS)
 
 # ==============================================================================
 # Sub-Makefile Integration

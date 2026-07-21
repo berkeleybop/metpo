@@ -12,7 +12,7 @@ make install
 make install-dev           # Development tools
 make install-literature    # Literature mining
 make install-databases     # Database workflows
-make install-notebooks     # Alignment pipeline
+make install-analysis      # Analysis/visualization scripts (matplotlib, numpy, levenshtein)
 
 # Or install everything
 make install-all
@@ -316,6 +316,44 @@ uv run analyze-match-quality \
 - `--distance-threshold`: Threshold for high-quality matches (default: 0.35)
 
 **Outputs:** Table showing match quality statistics per ontology
+
+---
+
+#### `assess-ontology-by-api-search`
+
+For each METPO label, query the OLS4 and BioPortal search APIs, score every
+returned class against the METPO label with Levenshtein similarity, and rank the
+external ontologies by high-quality match count. This replaces the retired
+`notebooks/assess_ontology_by_api_search.ipynb`.
+
+```bash
+# Generate the label list first (see data/metpo_terms/README.md), then:
+uv run assess-ontology-by-api-search \
+  --input data/metpo_terms/metpo_all_labels.tsv \
+  --output-dir data/ontology_assessments
+
+# OLS4 only, no BioPortal key needed:
+uv run assess-ontology-by-api-search --skip-bioportal
+```
+
+Or via the Makefile (regenerates when the label list or script changes):
+
+```bash
+make data/ontology_assessments/phase1_summary_stats.json
+make data/ontology_assessments/phase1_summary_stats.json ARGS="--skip-bioportal"
+```
+
+**Options:**
+- `--input, -i`: TSV of METPO labels, columns `metpo_id`, `metpo_label`, no header (default: `data/metpo_terms/metpo_all_labels.tsv`)
+- `--output-dir, -o`: Directory for output files (default: `data/ontology_assessments`)
+- `--rows`: Results requested per query from each of OLS and BioPortal (default: 75)
+- `--rate-limit`: Seconds between API calls (default: 1.0)
+- `--hq-threshold`: Minimum similarity ratio for a high-quality match (default: 0.5)
+- `--skip-bioportal`: Query OLS4 only (no `BIOPORTAL_API_KEY` required)
+
+**Outputs** (in `--output-dir`): `phase1_raw_results.tsv`, `phase1_high_quality_matches.tsv`, `phase1_ontology_rankings.tsv`, `phase1_summary_stats.json`
+
+**Requires:** `BIOPORTAL_API_KEY` for the BioPortal half (unless `--skip-bioportal`); the `analysis` extra (`make install-analysis`)
 
 ---
 

@@ -1,8 +1,8 @@
-# scripts/analysis/
+# metpo/analysis/
 
 Standalone analysis tools for METPO data analysis and quality assessment.
 
-These scripts are **not** part of the main Makefile workflow (unlike notebooks/ scripts), but provide valuable analysis capabilities.
+Most of these are standalone analysis capabilities invoked directly. Some are wired into the Makefile (for example `assess-ontology-by-api-search`).
 
 ## Scripts
 
@@ -12,11 +12,10 @@ These scripts are **not** part of the main Makefile workflow (unlike notebooks/ 
 - **Purpose**: Frequency-based ontology assessment using OLS4/BioPortal API queries
 - **Method**: Label matching with Levenshtein distance similarity scoring
 - **Output**: Ontology rankings by match count (see `data/ontology_assessments/`)
-- **Status**: Complementary method to semantic embeddings
-- **Notebook**: `notebooks/assess_ontology_by_api_search.ipynb` for interactive use
-- **Usage**: `python scripts/analysis/assess_ontology_by_api_search.py`
+- **Status**: Complementary method to semantic embeddings. Replaces the retired `notebooks/assess_ontology_by_api_search.ipynb` (#441)
+- **Usage**: `uv run assess-ontology-by-api-search` (add `--skip-bioportal` to query OLS4 only). See `docs/cli-reference.md`
+- **Automation**: `make data/ontology_assessments/phase1_summary_stats.json`
 - **When to use**: Initial ontology discovery, validating semantic results, label-based assessment
-- **Results**: October 2024 rankings available in `data/ontology_assessments/phase1_ontology_rankings.tsv`
 
 ### Coverage & Quality Analysis
 

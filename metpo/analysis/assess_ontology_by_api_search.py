@@ -1,283 +1,263 @@
-"""
-Phase 1 Batch Search: METPO Label Discovery
+"""Assess which external ontologies best align with METPO labels via search APIs.
 
-Searches METPO class labels through OLS4 and BioPortal APIs to discover
-which ontologies have the best label alignment with METPO. This is a bootstrap
-discovery phase - no filtering applied, let the data reveal patterns.
+For each METPO label in the input TSV, this queries the OLS4 and BioPortal
+search APIs, records every returned class, scores each match against the METPO
+label with Levenshtein similarity, and ranks the external ontologies by how many
+high-quality matches they produce. It is a discovery pass: no filtering beyond
+dropping METPO's own self-matches.
 
-Output files:
-- phase1_raw_results.tsv: All search results with similarity scores
-- phase1_high_quality_matches.tsv: Results with similarity >= 0.5
-- phase1_summary_stats.json: Summary statistics
-- phase1_ontology_rankings.tsv: Ontologies ranked by high-quality match count
+This CLI replaces the retired ``notebooks/assess_ontology_by_api_search.ipynb``.
+
+Outputs (written into ``--output-dir``):
+
+- ``phase1_raw_results.tsv``: every match with its similarity score
+- ``phase1_high_quality_matches.tsv``: matches at or above ``--hq-threshold``
+- ``phase1_ontology_rankings.tsv``: ontologies ranked by high-quality match count
+- ``phase1_summary_stats.json``: run-level summary statistics
+
+BioPortal queries need a ``BIOPORTAL_API_KEY`` (read from the environment or a
+local ``.env``). Without it, use ``--skip-bioportal`` to query OLS only.
 """
 
 import json
 import os
-import sys
 import time
 from pathlib import Path
 
+import click
 import Levenshtein
 import pandas as pd
 import requests
 from dotenv import load_dotenv
 
-# Configuration
-SAMPLE_FILE = "../../data/metpo_terms/metpo_all_labels.tsv"
-OUTPUT_DIR = Path()
-OLS_ROWS = 75
-BIOPORTAL_PAGESIZE = 75
-RATE_LIMIT_SLEEP = 1.0  # seconds
-HIGH_QUALITY_THRESHOLD = 0.5
-
-# Load environment variables
-env_path = Path("..") / ".env"
-load_dotenv(dotenv_path=env_path)
-BIOPORTAL_API_KEY = os.getenv("BIOPORTAL_API_KEY")
-
-if not BIOPORTAL_API_KEY:
-    print("⚠️  Warning: BIOPORTAL_API_KEY not set in .env file")
-    print("   BioPortal searches may fail")
-else:
-    print("✓ BioPortal API key loaded")
+OLS_SEARCH_URL = "https://www.ebi.ac.uk/ols4/api/search"
+BIOPORTAL_SEARCH_URL = "https://data.bioontology.org/search"
+REQUEST_TIMEOUT = 10
 
 
-def search_ols(label, rows=OLS_ROWS):
-    """Search OLS4 for a label"""
-    url = "https://www.ebi.ac.uk/ols4/api/search"
-    params = {"q": label, "type": "class", "rows": rows}
-
+def search_ols(label: str, rows: int) -> list[dict[str, str | None]]:
+    """Return OLS4 search hits for ``label`` as label/iri/ontology/definition dicts."""
+    params: dict[str, str | int] = {"q": label, "type": "class", "rows": rows}
     try:
-        response = requests.get(url, params=params, timeout=10)
-        if response.status_code == 200:
-            data = response.json()
-            docs = data.get("response", {}).get("docs", [])
-            return [
-                {
-                    "label": d.get("label"),
-                    "iri": d.get("iri"),
-                    "ontology": d.get("ontology_name"),
-                    "definition": d.get("description", [""])[0] if d.get("description") else "",
-                }
-                for d in docs
-            ]
+        response = requests.get(OLS_SEARCH_URL, params=params, timeout=REQUEST_TIMEOUT)
+    except requests.RequestException as exc:
+        click.echo(f"  OLS error for '{label}': {exc}", err=True)
         return []
-    except Exception as e:
-        print(f"  ⚠️  OLS error for '{label}': {e}")
+    if response.status_code != 200:
         return []
-
-
-def search_bioportal(label, api_key, pagesize=BIOPORTAL_PAGESIZE):
-    """Search BioPortal for a label"""
-    url = "https://data.bioontology.org/search"
-    params = {"q": label, "pagesize": pagesize}
-    headers = {}
-
-    if api_key:
-        headers["Authorization"] = f"apikey token={api_key}"
-
     try:
-        response = requests.get(url, params=params, headers=headers, timeout=10)
-        if response.status_code == 200:
-            data = response.json()
-            collection = data.get("collection", [])
-            results = []
-            for item in collection:
-                ontology_url = item.get("links", {}).get("ontology", "")
-                ontology = ontology_url.split("/")[-1] if ontology_url else "unknown"
-
-                results.append(
-                    {
-                        "label": item.get("prefLabel"),
-                        "iri": item.get("@id"),
-                        "ontology": ontology,
-                        "definition": item.get("definition", [""])[0]
-                        if isinstance(item.get("definition"), list)
-                        else item.get("definition", ""),
-                    }
-                )
-            return results
+        docs = response.json().get("response", {}).get("docs", [])
+    except ValueError as exc:
+        click.echo(f"  OLS non-JSON response for '{label}': {exc}", err=True)
         return []
-    except Exception as e:
-        print(f"  ⚠️  BioPortal error for '{label}': {e}")
-        return []
+    return [
+        {
+            "label": doc.get("label"),
+            "iri": doc.get("iri"),
+            "ontology": doc.get("ontology_name"),
+            "definition": doc.get("description", [""])[0] if doc.get("description") else "",
+        }
+        for doc in docs
+    ]
 
 
-def calculate_similarity(metpo_label, match_label):
-    """Calculate Levenshtein distance and similarity ratio"""
-    if pd.isna(match_label):
-        return None, None
-
-    str1 = str(metpo_label).lower()
-    str2 = str(match_label).lower()
-
-    distance = Levenshtein.distance(str1, str2)
-    ratio = Levenshtein.ratio(str1, str2)
-
-    return distance, ratio
-
-
-def main():
-    print("\n" + "=" * 70)
-    print("Phase 1 Batch Search: METPO Label Discovery")
-    print("=" * 70 + "\n")
-
-    # Load METPO sample labels
-    sample_path = OUTPUT_DIR / SAMPLE_FILE
-    if not sample_path.exists():
-        print(f"❌ Error: Sample file not found at {sample_path}")
-        print("   Please create it first using:")
-        print(
-            f"   awk -F'\\t' 'NR>2 {{print $1 \"\\t\" $2}}' ../src/templates/metpo_sheet.tsv | grep \"^METPO:\" | shuf -n 50 > {SAMPLE_FILE}"
+def search_bioportal(label: str, api_key: str | None, pagesize: int) -> list[dict[str, str | None]]:
+    """Return BioPortal search hits for ``label`` as label/iri/ontology/definition dicts."""
+    params: dict[str, str | int] = {"q": label, "pagesize": pagesize}
+    headers = {"Authorization": f"apikey token={api_key}"} if api_key else {}
+    try:
+        response = requests.get(
+            BIOPORTAL_SEARCH_URL, params=params, headers=headers, timeout=REQUEST_TIMEOUT
         )
-        sys.exit(1)
+    except requests.RequestException as exc:
+        click.echo(f"  BioPortal error for '{label}': {exc}", err=True)
+        return []
+    if response.status_code != 200:
+        return []
+    try:
+        collection = response.json().get("collection", [])
+    except ValueError as exc:
+        click.echo(f"  BioPortal non-JSON response for '{label}': {exc}", err=True)
+        return []
+    results: list[dict[str, str | None]] = []
+    for item in collection:
+        ontology_url = item.get("links", {}).get("ontology", "")
+        definition = item.get("definition", "")
+        if isinstance(definition, list):
+            definition = definition[0] if definition else ""
+        results.append(
+            {
+                "label": item.get("prefLabel"),
+                "iri": item.get("@id"),
+                "ontology": ontology_url.split("/")[-1] if ontology_url else "unknown",
+                "definition": definition,
+            }
+        )
+    return results
 
-    metpo_df = pd.read_csv(sample_path, sep="\t", names=["metpo_id", "metpo_label"])
-    print(f"✓ Loaded {len(metpo_df)} METPO labels (20% sample)\n")
-    print(f"Estimated runtime: ~{len(metpo_df) * 2 * RATE_LIMIT_SLEEP / 60:.1f} minutes")
-    print(f"  - {OLS_ROWS} results from OLS per query")
-    print(f"  - {BIOPORTAL_PAGESIZE} results from BioPortal per query")
-    print(f"  - {RATE_LIMIT_SLEEP}s rate limiting between API calls\n")
 
-    # Run batch search
-    all_results = []
-    start_time = time.time()
+def calculate_similarity(metpo_label: str, match_label: object) -> tuple[int | None, float | None]:
+    """Return (Levenshtein distance, ratio) between two labels, or (None, None) if unlabeled."""
+    if match_label is None or pd.isna(match_label):
+        return None, None
+    left = str(metpo_label).lower()
+    right = str(match_label).lower()
+    return Levenshtein.distance(left, right), Levenshtein.ratio(left, right)
 
-    for idx, row in metpo_df.iterrows():
+
+def _resolve_api_key() -> str | None:
+    """Load a BioPortal API key from the environment or a local .env, if present."""
+    load_dotenv()
+    return os.getenv("BIOPORTAL_API_KEY")
+
+
+@click.command()
+@click.option(
+    "--input",
+    "-i",
+    "input_file",
+    type=click.Path(exists=True, dir_okay=False, path_type=Path),
+    default="data/metpo_terms/metpo_all_labels.tsv",
+    show_default=True,
+    help="TSV of METPO labels (two columns: metpo_id, metpo_label; no header).",
+)
+@click.option(
+    "--output-dir",
+    "-o",
+    type=click.Path(file_okay=False, path_type=Path),
+    default="data/ontology_assessments",
+    show_default=True,
+    help="Directory for the phase1 output files (created if missing).",
+)
+@click.option(
+    "--rows",
+    type=int,
+    default=75,
+    show_default=True,
+    help="Results requested per query from each of OLS and BioPortal.",
+)
+@click.option(
+    "--rate-limit",
+    type=float,
+    default=1.0,
+    show_default=True,
+    help="Seconds to sleep between API calls.",
+)
+@click.option(
+    "--hq-threshold",
+    type=float,
+    default=0.5,
+    show_default=True,
+    help="Minimum Levenshtein similarity ratio for a high-quality match.",
+)
+@click.option(
+    "--skip-bioportal",
+    is_flag=True,
+    help="Query only OLS4 (no BioPortal API key required).",
+)
+def main(
+    input_file: Path,
+    output_dir: Path,
+    rows: int,
+    rate_limit: float,
+    hq_threshold: float,
+    skip_bioportal: bool,
+) -> None:
+    """Query OLS4/BioPortal for each METPO label and rank aligning ontologies."""
+    api_key = None if skip_bioportal else _resolve_api_key()
+    if not skip_bioportal and not api_key:
+        click.echo(
+            "BIOPORTAL_API_KEY not set; BioPortal queries will return nothing. "
+            "Pass --skip-bioportal to query OLS only.",
+            err=True,
+        )
+
+    metpo_df = pd.read_csv(input_file, sep="\t", names=["metpo_id", "metpo_label"])
+    click.echo(f"Loaded {len(metpo_df)} METPO labels from {input_file}")
+
+    all_results: list[dict[str, object]] = []
+    for position, (_, row) in enumerate(metpo_df.iterrows(), start=1):
         metpo_id = row["metpo_id"]
         metpo_label = row["metpo_label"]
+        click.echo(f"[{position}/{len(metpo_df)}] {metpo_label}")
 
-        print(f"[{idx + 1}/{len(metpo_df)}] {metpo_label}")
+        hits = [("OLS", hit) for hit in search_ols(metpo_label, rows)]
+        time.sleep(rate_limit)
+        if not skip_bioportal:
+            hits += [("BioPortal", hit) for hit in search_bioportal(metpo_label, api_key, rows)]
+            time.sleep(rate_limit)
 
-        # Search OLS
-        ols_results = search_ols(metpo_label)
-        print(f"  OLS: {len(ols_results)} results")
-
-        for result in ols_results:
+        for source, hit in hits:
             all_results.append(
                 {
                     "metpo_id": metpo_id,
                     "metpo_label": metpo_label,
-                    "source": "OLS",
-                    "match_label": result["label"],
-                    "match_iri": result["iri"],
-                    "match_ontology": result["ontology"],
-                    "match_definition": result["definition"],
+                    "source": source,
+                    "match_label": hit["label"],
+                    "match_iri": hit["iri"],
+                    "match_ontology": hit["ontology"],
+                    "match_definition": hit["definition"],
                 }
             )
 
-        # Rate limiting between API calls
-        time.sleep(RATE_LIMIT_SLEEP)
+    if not all_results:
+        raise click.ClickException("No search results returned; nothing to write.")
 
-        # Search BioPortal
-        bp_results = search_bioportal(metpo_label, BIOPORTAL_API_KEY)
-        print(f"  BioPortal: {len(bp_results)} results")
-
-        for result in bp_results:
-            all_results.append(
-                {
-                    "metpo_id": metpo_id,
-                    "metpo_label": metpo_label,
-                    "source": "BioPortal",
-                    "match_label": result["label"],
-                    "match_iri": result["iri"],
-                    "match_ontology": result["ontology"],
-                    "match_definition": result["definition"],
-                }
-            )
-
-        # Rate limiting between METPO terms
-        time.sleep(RATE_LIMIT_SLEEP)
-
-    elapsed = time.time() - start_time
-    print(f"\n✓ Search complete: {len(all_results)} total results in {elapsed / 60:.1f} minutes\n")
-
-    # Convert to DataFrame and calculate string distances
-    print("Calculating string similarity scores...")
     results_df = pd.DataFrame(all_results)
 
-    results_df["levenshtein_distance"] = results_df.apply(
-        lambda row: calculate_similarity(row["metpo_label"], row["match_label"])[0], axis=1
+    # Drop METPO's own classes so we measure alignment with external ontologies only.
+    before = len(results_df)
+    results_df = results_df[
+        ~results_df["match_iri"].str.contains("metpo", case=False, na=False)
+    ].reset_index(drop=True)
+    click.echo(f"Removed {before - len(results_df)} METPO self-matches ({len(results_df)} remain)")
+
+    scores = results_df.apply(
+        lambda r: calculate_similarity(r["metpo_label"], r["match_label"]), axis=1
     )
+    results_df["levenshtein_distance"] = [score[0] for score in scores]
+    results_df["similarity_ratio"] = [score[1] for score in scores]
 
-    results_df["similarity_ratio"] = results_df.apply(
-        lambda row: calculate_similarity(row["metpo_label"], row["match_label"])[1], axis=1
-    )
-
-    print("✓ Calculated similarity scores\n")
-    print("Similarity statistics:")
-    print(results_df["similarity_ratio"].describe())
-    print()
-
-    # Save raw results
-    raw_output = OUTPUT_DIR / "phase1_raw_results.tsv"
+    output_dir.mkdir(parents=True, exist_ok=True)
+    raw_output = output_dir / "phase1_raw_results.tsv"
     results_df.to_csv(raw_output, sep="\t", index=False)
-    print(f"✓ Saved raw results to {raw_output}")
 
-    # Save high-quality matches
-    high_quality = results_df[results_df["similarity_ratio"] >= HIGH_QUALITY_THRESHOLD]
-    hq_output = OUTPUT_DIR / "phase1_high_quality_matches.tsv"
+    high_quality = results_df[results_df["similarity_ratio"] >= hq_threshold]
+    hq_output = output_dir / "phase1_high_quality_matches.tsv"
     high_quality.to_csv(hq_output, sep="\t", index=False)
-    print(f"✓ Saved high-quality matches (similarity ≥ {HIGH_QUALITY_THRESHOLD}) to {hq_output}")
 
-    # Analyze ontology rankings by high-quality matches
-    hq_ontology_counts = high_quality["match_ontology"].value_counts()
-    ontology_rankings = pd.DataFrame(
-        {"ontology": hq_ontology_counts.index, "high_quality_matches": hq_ontology_counts.values}
-    )
-
-    # Add average similarity by ontology
+    hq_counts = high_quality["match_ontology"].value_counts()
     avg_similarity = results_df.groupby("match_ontology")["similarity_ratio"].mean()
-    ontology_rankings["avg_similarity"] = ontology_rankings["ontology"].map(avg_similarity)
-
-    # Add total matches
     total_matches = results_df["match_ontology"].value_counts()
-    ontology_rankings["total_matches"] = ontology_rankings["ontology"].map(total_matches)
+    rankings = pd.DataFrame(
+        {"ontology": hq_counts.index, "high_quality_matches": hq_counts.to_numpy()}
+    )
+    rankings["avg_similarity"] = rankings["ontology"].map(avg_similarity)
+    rankings["total_matches"] = rankings["ontology"].map(total_matches)
+    rankings = rankings.sort_values("high_quality_matches", ascending=False)
+    rankings_output = output_dir / "phase1_ontology_rankings.tsv"
+    rankings.to_csv(rankings_output, sep="\t", index=False)
 
-    # Sort by high-quality matches
-    ontology_rankings = ontology_rankings.sort_values("high_quality_matches", ascending=False)
-
-    rankings_output = OUTPUT_DIR / "phase1_ontology_rankings.tsv"
-    ontology_rankings.to_csv(rankings_output, sep="\t", index=False)
-    print(f"✓ Saved ontology rankings to {rankings_output}")
-
-    # Save summary statistics
-    summary_stats = {
+    summary = {
+        "input_file": str(input_file),
         "total_metpo_terms": len(metpo_df),
         "total_results": len(results_df),
         "high_quality_results": len(high_quality),
-        "high_quality_threshold": HIGH_QUALITY_THRESHOLD,
-        "unique_ontologies": results_df["match_ontology"].nunique(),
+        "high_quality_threshold": hq_threshold,
+        "unique_ontologies": int(results_df["match_ontology"].nunique()),
         "avg_similarity": float(results_df["similarity_ratio"].mean()),
         "median_similarity": float(results_df["similarity_ratio"].median()),
-        "top_10_ontologies": ontology_rankings.head(10).to_dict("records"),
-        "runtime_minutes": elapsed / 60,
+        "top_10_ontologies": rankings.head(10).to_dict("records"),
     }
+    summary_output = output_dir / "phase1_summary_stats.json"
+    with summary_output.open("w") as handle:
+        json.dump(summary, handle, indent=2)
 
-    summary_output = OUTPUT_DIR / "phase1_summary_stats.json"
-    with Path(summary_output).open("w") as f:
-        json.dump(summary_stats, f, indent=2)
-    print(f"✓ Saved summary statistics to {summary_output}")
-
-    # Print summary
-    print("\n" + "=" * 70)
-    print("SUMMARY")
-    print("=" * 70)
-    print(f"Total METPO terms searched: {len(metpo_df)}")
-    print(f"Total results found: {len(results_df)}")
-    print(
-        f"High-quality matches (≥{HIGH_QUALITY_THRESHOLD}): {len(high_quality)} ({len(high_quality) / len(results_df) * 100:.1f}%)"
+    click.echo(
+        f"\nWrote {raw_output}, {hq_output}, {rankings_output}, {summary_output}\n"
+        f"High-quality matches (>= {hq_threshold}): {len(high_quality)}/{len(results_df)}; "
+        f"{results_df['match_ontology'].nunique()} unique ontologies"
     )
-    print(f"Unique ontologies found: {results_df['match_ontology'].nunique()}")
-    print(f"Average similarity: {results_df['similarity_ratio'].mean():.3f}")
-    print(f"Median similarity: {results_df['similarity_ratio'].median():.3f}")
-    print("\nTop 10 ontologies by high-quality matches:")
-    for _i, row in ontology_rankings.head(10).iterrows():
-        print(
-            f"  {row['ontology']:20s} {int(row['high_quality_matches']):4d} HQ matches, {row['avg_similarity']:.3f} avg similarity"
-        )
-    print("=" * 70 + "\n")
 
 
 if __name__ == "__main__":
