@@ -12,7 +12,7 @@ import yaml
 @click.option(
     "--input-file",
     "-i",
-    default="literature_mining/chem_interaction_props.tsv",
+    default="chem_interaction_props.tsv",
     help="Input TSV file path",
 )
 @click.option(

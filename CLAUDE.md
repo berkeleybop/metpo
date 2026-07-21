@@ -27,9 +27,11 @@ Read these before editing ontology content or proposing architecture.
   Do not propose new ChromaDB-based solutions. Cross-ontology/embedding work uses
   OLS4 + local embeddings (nomic-embed-text via Ollama on the M5 GPU) +
   linkml-store/OAK; see `metpo/pipeline/cross_ontology_search.py`.
-- **Scope-narrowing means relocate, not delete** (#433). Do not delete
-  non-ontology content (presentations, literature-mining, analysis scripts)
-  until its long-term home is decided; extraction PRs stay drafts until then.
+- **Scope-narrowing means relocate, not delete** (#433). Retired non-ontology
+  content is archived to [turbomam/metpo-attic](https://github.com/turbomam/metpo-attic),
+  with metpo docs pointing there. The `presentations/`, `notebooks/`, and
+  `literature_mining/` subsystems have been moved; remaining analysis scripts
+  under `metpo/` still need per-script triage before removal.
 
 ---
 
@@ -372,8 +374,6 @@ metpo/
 ├── src/
 │   ├── ontology/            # ODK ontology development
 │   └── templates/           # ROBOT templates
-├── notebooks/               # Analysis notebooks (should have minimal .py files)
-├── literature_mining/       # OntoGPT extraction and analysis
 ├── docs/                    # Documentation
 └── reports/                 # Generated reports
 ```
@@ -386,18 +386,6 @@ metpo/
 - ✅ Scripts used in Makefile
 - ❌ One-off analysis scripts
 - ❌ Experimental/throwaway code
-
-**notebooks/:**
-- ✅ Jupyter notebooks (.ipynb)
-- ✅ Analysis results (.tsv, .csv)
-- ✅ ChromaDB analysis outputs
-- ⚠️ Python scripts (should be minimal, prefer moving to metpo/scripts/)
-
-**literature_mining/:**
-- ✅ OntoGPT templates (.yaml)
-- ✅ Extraction outputs (.yaml)
-- ✅ Analysis results (.md, .tsv)
-- ⚠️ Utility scripts (consider moving to metpo/scripts/)
 
 **Root directory:**
 - ✅ README.md, LICENSE, pyproject.toml, Makefile
