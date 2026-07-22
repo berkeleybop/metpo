@@ -569,20 +569,13 @@ All tools respect these environment variables (configure in `.env`):
 
 ```bash
 # API Keys
-OPENAI_API_KEY=sk-...           # Required for embedding tools
-NCBI_API_KEY=...                # Optional, for PubMed fetching
-BIOPORTAL_API_KEY=...           # Optional, for BioPortal downloads
+OPENAI_API_KEY=sk-...           # For LLM tools (e.g. propose-definitions-with-llm)
+BIOPORTAL_API_KEY=...           # Optional, for BioPortal search/downloads
 
 # Database
 MONGO_HOST=localhost            # MongoDB host
 MONGO_PORT=27017                # MongoDB port
 MONGO_DB=metpo                  # MongoDB database name
-CHROMA_PATH=./chroma_db         # ChromaDB storage path
-
-# Pipeline settings
-DISTANCE_THRESHOLD=0.35         # Semantic match threshold
-EMBEDDING_BATCH_SIZE=1000       # Batch size for embeddings
-API_DELAY=0.5                   # Delay between API requests (seconds)
 
 # Development
 DEBUG=false                     # Enable debug output

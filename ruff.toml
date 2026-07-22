@@ -96,18 +96,12 @@ line-ending = "auto"
 # Ignore complexity and minor issues in bactotraits data processing scripts
 "metpo/bactotraits/*.py" = ["PLR0911", "PLR0912", "PLR0915", "SIM102", "B007", "RUF001", "N806", "EXE002"]
 # Database scripts - complexity and minor issues
-"metpo/database/audit_chromadb.py" = ["PLR0912", "PLR0915"]
-"metpo/database/combine_chromadb.py" = ["PLC0415", "PTH110"]
-"metpo/database/filter_ols_chromadb.py" = ["PLR0912", "PLR0915"]
-"metpo/database/migrate_to_chromadb_resilient.py" = ["PLR0912", "PLR0915", "SIM115"]
 # Literature mining analysis - complexity and style issues
 # Literature mining scripts
 # Pipeline scripts - complexity and minor issues
 "metpo/pipeline/analyze_coherence_results.py" = ["PLR0915"]
 "metpo/pipeline/analyze_sibling_coherence.py" = ["PLR0912", "PLR0915", "PTH110", "RUF012", "SIM108"]
 "metpo/pipeline/categorize_ontologies.py" = ["PLC0206", "PLR0912", "PLR0915"]
-"metpo/pipeline/chromadb_semantic_mapper.py" = ["PLC0415", "PLR0912", "PLR0915", "RUF001"]
-"metpo/pipeline/embed_ontology_to_chromadb.py" = ["PTH119"]
 "metpo/pipeline/fetch_ontology_names.py" = ["SIM113"]
 # General scripts - complexity warnings
 "metpo/scripts/bootstrap_definition_enrichment.py" = ["PLR0912", "PLR0915"]

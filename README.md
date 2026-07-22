@@ -164,46 +164,29 @@ make -C src/ontology -f metpo.Makefile components/metpo_sheet.owl
 merged into `metpo.owl` during every release build. **Never reuse a burned ID** — consult
 `reports/id-allocation-audit.md` for the full list and the next safe IDs to allocate.
 
-### 5. Ontology Alignment Pipeline
+### 5. Ontology Alignment / Semantic Matching
 
-Semantic matching between METPO and other microbial ontologies using ChromaDB embeddings.
+Semantic matching between METPO and other microbial ontologies (mapping candidates, definition gap-filling, synonym discovery). The strategy is documented in `docs/embedding-strategy.md`: the OLS4 embeddings search API first, then proven tooling for anything OLS does not host.
 
-For a lighter-weight, label-based alternative (OLS4 + BioPortal search, no embeddings), see `assess-ontology-by-api-search` in `docs/cli-reference.md`.
+Implementations:
 
-```bash
-make install-analysis
+- `cross-ontology-search` (`metpo/pipeline/cross_ontology_search.py`) — OLS4 search with local embedding re-ranking.
+- `assess-ontology-by-api-search` — a label-based OLS4/BioPortal search baseline.
 
-# Run alignment pipeline
-make alignment-run-all
+See `docs/cli-reference.md` for options.
 
-# Or run individual steps
-make alignment-fetch-ontology-names
-make alignment-categorize-ontologies
-make alignment-analyze-matches
-```
+### 6. External Ontology Integration
 
-Identifies high-quality alignment candidates from OLS4 and non-OLS ontologies.
-
-### 6. External Ontology Integration (`external/`)
-
-Centralized storage for all external ontology files and derived databases.
+External ontology files are treated as build artifacts, not committed. The `external/` directory is git-ignored; download what you need on demand:
 
 ```bash
 make install-dev
 
-# Download microbial ontologies from BioPortal
+# Download microbial ontologies from BioPortal into external/ontologies/bioportal/
 make download-external-bioportal-ontologies
-
-# Extract terms for embeddings
-make data/pipeline/non-ols-terms/MPO.tsv
-make data/pipeline/non-ols-terms/D3O.tsv
 ```
 
-**Structure:**
-- `external/ontologies/bioportal/` - Downloaded from BioPortal (13+ ontologies: MPO, OMP, D3O, GMO, MISO, etc.)
-- `external/ontologies/manual/` - Manually added files (e.g., n4l_merged.owl)
-- `external/databases/` - Derived semsql databases
-- `external/metpo_historical/` - Historical METPO BioPortal submissions
+Historical METPO BioPortal submissions were downloaded once and processed into `metadata/ontology/historical_submissions/entity_extracts/` (committed), which is what the ID-allocation audit reads. For semantic matching against external ontologies, see the embedding strategy in `docs/embedding-strategy.md`.
 
 ## Key Documentation
 
