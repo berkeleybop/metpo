@@ -164,25 +164,16 @@ make -C src/ontology -f metpo.Makefile components/metpo_sheet.owl
 merged into `metpo.owl` during every release build. **Never reuse a burned ID** — consult
 `reports/id-allocation-audit.md` for the full list and the next safe IDs to allocate.
 
-### 5. Ontology Alignment Pipeline
+### 5. Ontology Alignment / Semantic Matching
 
-Semantic matching between METPO and other microbial ontologies using ChromaDB embeddings.
+Semantic matching between METPO and other microbial ontologies (mapping candidates, definition gap-filling, synonym discovery). The strategy is documented in `docs/embedding-strategy.md`: the OLS4 embeddings search API first, then proven tooling for anything OLS does not host.
 
-For a lighter-weight, label-based alternative (OLS4 + BioPortal search, no embeddings), see `assess-ontology-by-api-search` in `docs/cli-reference.md`.
+Implementations:
 
-```bash
-make install-analysis
+- `cross-ontology-search` (`metpo/pipeline/cross_ontology_search.py`) — OLS4 search with local embedding re-ranking.
+- `assess-ontology-by-api-search` — a label-based OLS4/BioPortal search baseline.
 
-# Run alignment pipeline
-make alignment-run-all
-
-# Or run individual steps
-make alignment-fetch-ontology-names
-make alignment-categorize-ontologies
-make alignment-analyze-matches
-```
-
-Identifies high-quality alignment candidates from OLS4 and non-OLS ontologies.
+See `docs/cli-reference.md` for options.
 
 ### 6. External Ontology Integration
 
