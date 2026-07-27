@@ -10,6 +10,16 @@ updates:
     cooldown:
       default-days: 7
     open-pull-requests-limit: 5
+    # codeql.yml uses github/codeql-action at two subpaths, init and analyze.
+    # CodeQL requires every step in a run to be on the same version, so an
+    # ungrouped bump splits into two PRs that each fail with "Loaded a
+    # configuration file for version X, but running version Y" until both
+    # land. Grouping keeps the pair in one PR.
+    groups:
+      codeql-action:
+        patterns:
+          - "github/codeql-action"
+          - "github/codeql-action/*"
 
   # Python dependencies (uv / pyproject.toml + uv.lock).
   # Replaces the home-grown uv-upgrade.yml bot, whose PRs could never trigger
