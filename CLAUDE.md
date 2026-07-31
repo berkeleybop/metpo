@@ -54,17 +54,20 @@ All scripts in this project MUST meet these standards:
 """
 Brief description of what this script does.
 """
+
 import click
 
+
 @click.command()
-@click.option('--input', '-i', required=True, help='Input file path')
-@click.option('--output', '-o', required=True, help='Output file path')
+@click.option("--input", "-i", required=True, help="Input file path")
+@click.option("--output", "-o", required=True, help="Output file path")
 def main(input: str, output: str):
     """Detailed description of the command."""
     # Implementation
     pass
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()
 ```
 

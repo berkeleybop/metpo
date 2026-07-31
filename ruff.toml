@@ -54,6 +54,8 @@ select = [
 ignore = [
     "E501",   # line-too-long (handled by formatter)
     "PLR0913", # too-many-arguments
+    "PLR0917", # too-many-positional-arguments (positional-only sibling of PLR0913,
+               # which is already ignored; stabilized in ruff 0.16.0)
     "PLR2004", # magic-value-comparison
     "PT009",   # pytest-unittest-assertion (we use assert)
     "RET504",  # unnecessary-assign (sometimes clearer)

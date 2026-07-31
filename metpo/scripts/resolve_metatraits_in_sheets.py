@@ -630,8 +630,10 @@ def write_report(rows: list[dict[str, str]], report_path: Path) -> None:
         f"- Composed cards: {len(composed)}\n",
         f"- Fully resolved (METPO): {len(resolved)}\n",
         f"- Cards with usable external CURIEs (CHEBI/GO/EC): {len(has_ext)}\n",
-        f"- **Effective KGX coverage: {effective_count}/{total}"
-        f" ({effective_count * 100 // total}%)**\n",
+        (
+            f"- **Effective KGX coverage: {effective_count}/{total}"
+            f" ({effective_count * 100 // total}%)**\n"
+        ),
         f"- Truly unmapped (no METPO, no external CURIEs): {len(truly_unmapped)}\n",
         "\n",
     ]
