@@ -63,8 +63,14 @@ diff-drafts: ../templates/metpo_sheet.tsv ../templates/metpo-properties.tsv
 # Intentionally no prerequisites: Make fetches this file only if it is missing.
 # This preserves committed/local snapshots by default; run `make squeaky-clean`
 # (or delete the file) to force re-download from Google Sheets.
+# -f makes curl exit non-zero on HTTP >= 400. Without it a deleted or renamed
+# tab returns 400, curl still exits 0, and Google's error page is written over
+# the template. The header check catches a 200 that is not a ROBOT template.
+# Both write to a temp file first so a failed fetch leaves no partial target.
 ../templates/metpo_sheet.tsv:
-	curl -L -s "$(SRC_URL_MAIN)" > $@
+	@curl -L -sf "$(SRC_URL_MAIN)" -o $@.tmp || { rm -f $@.tmp; echo "ERROR: fetch failed for $@ (tab deleted, renamed, or not shared?)" >&2; exit 1; }
+	@case "$$(head -1 $@.tmp | cut -f1)" in ID) ;; *) rm -f $@.tmp; echo "ERROR: $@ fetch returned a non-template response (line 1, column 1 is not 'ID')" >&2; exit 1 ;; esac
+	@mv $@.tmp $@
 
 #../templates/metpo-synonyms.tsv:
 #	curl -L -s "$(SRC_URL_SYNONYMS)" > $@
@@ -72,8 +78,11 @@ diff-drafts: ../templates/metpo_sheet.tsv ../templates/metpo-properties.tsv
 # Intentionally no prerequisites: Make fetches this file only if it is missing.
 # This preserves committed/local snapshots by default; run `make squeaky-clean`
 # (or delete the file) to force re-download from Google Sheets.
+# See the fetch notes on ../templates/metpo_sheet.tsv above.
 ../templates/metpo-properties.tsv:
-	curl -L -s "$(SRC_URL_PROPERTIES)" > $@
+	@curl -L -sf "$(SRC_URL_PROPERTIES)" -o $@.tmp || { rm -f $@.tmp; echo "ERROR: fetch failed for $@ (tab deleted, renamed, or not shared?)" >&2; exit 1; }
+	@case "$$(head -1 $@.tmp | cut -f1)" in ID) ;; *) rm -f $@.tmp; echo "ERROR: $@ fetch returned a non-template response (line 1, column 1 is not 'ID')" >&2; exit 1 ;; esac
+	@mv $@.tmp $@
 
 squeaky-clean: clean clean-templates
 
