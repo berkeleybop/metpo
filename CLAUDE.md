@@ -253,7 +253,7 @@ silently. After a `pinact` upgrade or a manual workflow change, re-run them.
 Actions are pinned to full commit SHAs (with a `# vX.Y.Z` comment) via
 `pinact run --update --min-age 7`, following the NMDC convention; Dependabot keeps
 them current. The ODK-generated `qc.yml` is excluded from both tools because
-`sh run.sh make update_repo` regenerates it, so hardening there would not persist.
+`sh run.sh odk.py update` regenerates it, so hardening there would not persist.
 
 **Maintenance:**
 ```bash
@@ -268,10 +268,21 @@ sh run.sh make squeaky-clean      # Deep clean
 ```bash
 cd src/ontology/
 sh run.sh make squeaky-clean
-sh run.sh make update_repo
 sh run.sh make refresh-imports
 sh run.sh make prepare_release
 ```
+
+**Updating the ODK scaffolding** is a separate, occasional task, not part of a
+normal build. The `update_repo` make target is deprecated; the current form is:
+
+```bash
+cd src/ontology/
+sh run.sh odk.py update
+```
+
+Run it on a branch and review the diff. It regenerates the ODK-managed files
+from `metpo-odk.yaml`, including `qc.yml` and the generated `Makefile` whose
+targets `metpo.Makefile` overrides in four places.
 
 ### Ontology Structure
 
