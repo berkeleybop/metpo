@@ -77,21 +77,11 @@ all_labels = pd.read_csv(
 )
 
 # Save all labels
-all_labels.to_csv(
-    "data/metpo_terms/metpo_all_labels.tsv",
-    sep="\t",
-    header=False,
-    index=False
-)
+all_labels.to_csv("data/metpo_terms/metpo_all_labels.tsv", sep="\t", header=False, index=False)
 
 # Create 20% sample
 sample = all_labels.sample(frac=0.2, random_state=42)
-sample.to_csv(
-    "data/metpo_terms/metpo_sample_labels.tsv",
-    sep="\t",
-    header=False,
-    index=False
-)
+sample.to_csv("data/metpo_terms/metpo_sample_labels.tsv", sep="\t", header=False, index=False)
 ```
 
 ## Why Two Files?
