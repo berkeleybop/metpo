@@ -68,8 +68,8 @@ diff-drafts: ../templates/metpo_sheet.tsv ../templates/metpo-properties.tsv
 # the template. The header check catches a 200 that is not a ROBOT template.
 # Both write to a temp file first so a failed fetch leaves no partial target.
 ../templates/metpo_sheet.tsv:
-	@curl -L -sf "$(SRC_URL_MAIN)" -o $@.tmp || { rm -f $@.tmp; echo "ERROR: fetch failed for $@ (tab deleted, renamed, or not shared?)" >&2; exit 1; }
-	@case "$$(head -1 $@.tmp | cut -f1)" in ID) ;; *) rm -f $@.tmp; echo "ERROR: $@ fetch returned a non-template response (line 1, column 1 is not 'ID')" >&2; exit 1 ;; esac
+	@curl -L -sSf "$(SRC_URL_MAIN)" -o $@.tmp || { rm -f $@.tmp; echo "ERROR: fetch failed for $@ (tab deleted, renamed, or not shared?)" >&2; exit 1; }
+	@case "$$(head -n 1 $@.tmp | cut -f1)" in ID) ;; *) rm -f $@.tmp; echo "ERROR: $@ fetch returned a non-template response (line 1, column 1 is not 'ID')" >&2; exit 1 ;; esac
 	@mv $@.tmp $@
 
 #../templates/metpo-synonyms.tsv:
@@ -80,8 +80,8 @@ diff-drafts: ../templates/metpo_sheet.tsv ../templates/metpo-properties.tsv
 # (or delete the file) to force re-download from Google Sheets.
 # See the fetch notes on ../templates/metpo_sheet.tsv above.
 ../templates/metpo-properties.tsv:
-	@curl -L -sf "$(SRC_URL_PROPERTIES)" -o $@.tmp || { rm -f $@.tmp; echo "ERROR: fetch failed for $@ (tab deleted, renamed, or not shared?)" >&2; exit 1; }
-	@case "$$(head -1 $@.tmp | cut -f1)" in ID) ;; *) rm -f $@.tmp; echo "ERROR: $@ fetch returned a non-template response (line 1, column 1 is not 'ID')" >&2; exit 1 ;; esac
+	@curl -L -sSf "$(SRC_URL_PROPERTIES)" -o $@.tmp || { rm -f $@.tmp; echo "ERROR: fetch failed for $@ (tab deleted, renamed, or not shared?)" >&2; exit 1; }
+	@case "$$(head -n 1 $@.tmp | cut -f1)" in ID) ;; *) rm -f $@.tmp; echo "ERROR: $@ fetch returned a non-template response (line 1, column 1 is not 'ID')" >&2; exit 1 ;; esac
 	@mv $@.tmp $@
 
 squeaky-clean: clean clean-templates
