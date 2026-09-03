@@ -10526,6 +10526,7 @@ name: peritrichous flagellation
 def: "A motility phenotype in which flagella are distributed over the entire cell surface." [] {IAO:0000119="OMP:0000078"}
 synonym: "flagellum arrangement" RELATED [] {IAO:0000119="https://metatraits.embl.de/"}
 is_a: METPO:1000704 ! flagellated
+is_a: METPO:1007005 ! flagellar arrangement
 
 [Term]
 id: METPO:1005032
@@ -10533,36 +10534,42 @@ name: polar flagellation
 def: "A motility phenotype in which one or more flagella are located at one or both poles of the cell." []
 synonym: "flagellum arrangement" RELATED [] {IAO:0000119="https://metatraits.embl.de/"}
 is_a: METPO:1000704 ! flagellated
+is_a: METPO:1007005 ! flagellar arrangement
 
 [Term]
 id: METPO:1005033
 name: amphitrichous flagellation
 def: "A motility phenotype in which a single flagellum is present at each pole of the cell." []
 is_a: METPO:1000704 ! flagellated
+is_a: METPO:1007005 ! flagellar arrangement
 
 [Term]
 id: METPO:1005034
 name: lophotrichous flagellation
 def: "A motility phenotype in which a tuft of flagella is present at one or both poles of the cell." []
 is_a: METPO:1000704 ! flagellated
+is_a: METPO:1007005 ! flagellar arrangement
 
 [Term]
 id: METPO:1005035
 name: monotrichous flagellation
 def: "A motility phenotype in which a single flagellum is present at one pole of the cell." []
 is_a: METPO:1000704 ! flagellated
+is_a: METPO:1007005 ! flagellar arrangement
 
 [Term]
 id: METPO:1005036
 name: lateral flagellation
 def: "A motility phenotype in which flagella emerge from the lateral side of the cell." []
 is_a: METPO:1000704 ! flagellated
+is_a: METPO:1007005 ! flagellar arrangement
 
 [Term]
 id: METPO:1005037
 name: subpolar flagellation
 def: "A motility phenotype in which flagella are located near but not at the cell pole." []
 is_a: METPO:1000704 ! flagellated
+is_a: METPO:1007005 ! flagellar arrangement
 
 [Term]
 id: METPO:1005038
@@ -10600,6 +10607,7 @@ name: polytrichous flagellation
 def: "A flagellar arrangement in which multiple flagella (typically a tuft) are present per cell, often combined with polar attachment." [] {IAO:0000119="MICRO:0000271"}
 comment: subset=metpo_proposal_2026_04; priority=MEDIUM; observations=4
 synonym: "polytrichous" EXACT []
+is_a: METPO:1000704 ! flagellated
 is_a: METPO:1007005 ! flagellar arrangement
 property_value: IAO:0000117 "Marcin Joachimiak" xsd:string
 
