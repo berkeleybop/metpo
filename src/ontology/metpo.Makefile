@@ -41,10 +41,11 @@ diff-release:
 
 # Repo-only — not in Google Sheets.
 # IMPORTANT: ../templates/deprecated.tsv is hand-maintained source-of-truth.
-# The generation rule below exists ONLY as a recovery/bootstrap tool from
-# historical BioPortal submissions + tagged releases, and should not be used
-# for routine maintenance.
-../templates/deprecated.tsv: ../../metpo/scripts/generate_deprecated_template.py
+# Intentionally no prerequisites: Make builds this file only if it is missing.
+# The generation rule exists ONLY as a recovery/bootstrap tool from historical
+# BioPortal submissions + tagged releases. Run `make regenerate-deprecated`
+# to rebuild it deliberately; it removes the target first.
+../templates/deprecated.tsv:
 	cd ../.. && uv run generate-deprecated-template -o $(abspath $@)
 
 .PHONY: regenerate-deprecated
