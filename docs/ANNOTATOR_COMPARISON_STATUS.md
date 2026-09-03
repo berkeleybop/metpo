@@ -14,7 +14,7 @@ Testing which ontology provides the best coverage for grounding microbial phenot
 1. **METPO** - Your custom Metagenomic Phenotype Ontology
 2. **OMP** - Ontology of Microbial Phenotypes (OBO Foundry)
 3. **PATO** - Phenotypic Quality Ontology (general purpose)
-4. **MICRO** - Pathogen Transmission Ontology
+4. **MICRO** - MicrO, Ontology of Prokaryotic Phenotypic and Metabolic Characters (Blank et al. 2016)
 
 ### Test Setup
 
