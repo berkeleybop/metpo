@@ -10394,30 +10394,38 @@ is_a: METPO:1003021 ! pigmentation
 [Term]
 id: METPO:1004000
 name: pathogenic to host
-def: "A phenotype where a microbe is a pathogen of of some host organism." [] {IAO:0000119="OMP:0000068", IAO:0000119="OMP:0007284"}
+def: "A phenotype in which a microbe is a pathogen of some host organism, having the ability to produce an infectious disease or disorder in that host." [] {IAO:0000119="OMP:0000197", IAO:0000119="RO:0002556", IAO:0000119="PATO:0040003"}
 synonym: "General.keywords" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
+synonym: "pathogenic" RELATED []
+synonym: "pathogenicity phenotype" RELATED []
 synonym: "Safety information.risk assessment" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: METPO:1000059 ! phenotype
 
 [Term]
 id: METPO:1004002
 name: animal pathogen
-def: "A pathogen that infects organisms in the kingdom Metazoa." []
+def: "A pathogenic to host phenotype in which the host organism is an animal (Metazoa)." [] {IAO:0000119="NCBITaxon:33208", IAO:0000119="RO:0002556"}
 synonym: "animal pathogen" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
+synonym: "pathogenic to animals" RELATED []
+synonym: "zoopathogen" EXACT []
 is_a: METPO:1004000 ! pathogenic to host
 
 [Term]
 id: METPO:1004003
 name: plant pathogen
-def: "A pathogen that infects organisms in the kingdom Viridiplantae." []
+def: "A pathogenic to host phenotype in which the host organism is a green plant (Viridiplantae)." [] {IAO:0000119="NCBITaxon:33090", IAO:0000119="RO:0002556"}
+synonym: "pathogenic to plants" RELATED []
+synonym: "phytopathogen" EXACT []
 synonym: "plant pathogen" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
 is_a: METPO:1004000 ! pathogenic to host
 
 [Term]
 id: METPO:1004004
 name: human pathogen
-def: "A pathogen that infects organisms of the species Homo sapiens." [] {IAO:0000119="IDO:0000639"}
+def: "A pathogenic to host phenotype in which the host organism is a human (Homo sapiens)." [] {IAO:0000119="IDO:0000666", IAO:0000119="IDO:0000639", IAO:0000119="RO:0002556", IAO:0000119="NCBITaxon:9606"}
 synonym: "human pathogen" RELATED [] {IAO:0000119="https://bacdive.dsmz.de/"}
+synonym: "human-infecting" RELATED []
+synonym: "infectious human pathogen" RELATED []
 is_a: METPO:1004000 ! pathogenic to host
 
 [Term]

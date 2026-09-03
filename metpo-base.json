@@ -20455,14 +20455,17 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A phenotype where a microbe is a pathogen of of some host organism.",
+          "val" : "A phenotype in which a microbe is a pathogen of some host organism, having the ability to produce an infectious disease or disorder in that host.",
           "meta" : {
             "basicPropertyValues" : [ {
               "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
-              "val" : "http://purl.obolibrary.org/obo/OMP_0000068"
+              "val" : "http://purl.obolibrary.org/obo/OMP_0000197"
             }, {
               "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
-              "val" : "http://purl.obolibrary.org/obo/OMP_0007284"
+              "val" : "http://purl.obolibrary.org/obo/PATO_0040003"
+            }, {
+              "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
+              "val" : "http://purl.obolibrary.org/obo/RO_0002556"
             } ]
           }
         },
@@ -20484,6 +20487,12 @@
               "val" : "https://bacdive.dsmz.de/"
             } ]
           }
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "pathogenic"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "pathogenicity phenotype"
         } ]
       }
     }, {
@@ -20492,9 +20501,21 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A pathogen that infects organisms in the kingdom Metazoa."
+          "val" : "A pathogenic to host phenotype in which the host organism is an animal (Metazoa).",
+          "meta" : {
+            "basicPropertyValues" : [ {
+              "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
+              "val" : "http://purl.obolibrary.org/obo/NCBITaxon_33208"
+            }, {
+              "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
+              "val" : "http://purl.obolibrary.org/obo/RO_0002556"
+            } ]
+          }
         },
         "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "zoopathogen"
+        }, {
           "pred" : "hasRelatedSynonym",
           "val" : "animal pathogen",
           "meta" : {
@@ -20503,6 +20524,9 @@
               "val" : "https://bacdive.dsmz.de/"
             } ]
           }
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "pathogenic to animals"
         } ]
       }
     }, {
@@ -20511,9 +20535,24 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A pathogen that infects organisms in the kingdom Viridiplantae."
+          "val" : "A pathogenic to host phenotype in which the host organism is a green plant (Viridiplantae).",
+          "meta" : {
+            "basicPropertyValues" : [ {
+              "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
+              "val" : "http://purl.obolibrary.org/obo/NCBITaxon_33090"
+            }, {
+              "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
+              "val" : "http://purl.obolibrary.org/obo/RO_0002556"
+            } ]
+          }
         },
         "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "phytopathogen"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "pathogenic to plants"
+        }, {
           "pred" : "hasRelatedSynonym",
           "val" : "plant pathogen",
           "meta" : {
@@ -20530,11 +20569,20 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A pathogen that infects organisms of the species Homo sapiens.",
+          "val" : "A pathogenic to host phenotype in which the host organism is a human (Homo sapiens).",
           "meta" : {
             "basicPropertyValues" : [ {
               "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
               "val" : "http://purl.obolibrary.org/obo/IDO_0000639"
+            }, {
+              "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
+              "val" : "http://purl.obolibrary.org/obo/IDO_0000666"
+            }, {
+              "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
+              "val" : "http://purl.obolibrary.org/obo/NCBITaxon_9606"
+            }, {
+              "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
+              "val" : "http://purl.obolibrary.org/obo/RO_0002556"
             } ]
           }
         },
@@ -20547,6 +20595,12 @@
               "val" : "https://bacdive.dsmz.de/"
             } ]
           }
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "human-infecting"
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "infectious human pathogen"
         } ]
       }
     }, {
