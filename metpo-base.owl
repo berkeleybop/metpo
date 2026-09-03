@@ -22148,17 +22148,20 @@
 
     <owl:Class rdf:about="https://w3id.org/metpo/1004000">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1000059"/>
-        <obo:IAO_0000115>A phenotype where a microbe is a pathogen of of some host organism.</obo:IAO_0000115>
+        <obo:IAO_0000115>A phenotype in which a microbe is a pathogen of some host organism, having the ability to produce an infectious disease or disorder in that host.</obo:IAO_0000115>
         <oboInOwl:hasRelatedSynonym>General.keywords</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Safety information.risk assessment</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>pathogenic</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>pathogenicity phenotype</oboInOwl:hasRelatedSynonym>
         <rdfs:label>pathogenic to host</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1004000"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A phenotype where a microbe is a pathogen of of some host organism.</owl:annotatedTarget>
-        <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OMP_0000068"/>
-        <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OMP_0007284"/>
+        <owl:annotatedTarget>A phenotype in which a microbe is a pathogen of some host organism, having the ability to produce an infectious disease or disorder in that host.</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/OMP_0000197"/>
+        <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/PATO_0040003"/>
+        <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/RO_0002556"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1004000"/>
@@ -22179,10 +22182,19 @@
 
     <owl:Class rdf:about="https://w3id.org/metpo/1004002">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1004000"/>
-        <obo:IAO_0000115>A pathogen that infects organisms in the kingdom Metazoa.</obo:IAO_0000115>
+        <obo:IAO_0000115>A pathogenic to host phenotype in which the host organism is an animal (Metazoa).</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>zoopathogen</oboInOwl:hasExactSynonym>
         <oboInOwl:hasRelatedSynonym>animal pathogen</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>pathogenic to animals</oboInOwl:hasRelatedSynonym>
         <rdfs:label>animal pathogen</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1004002"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A pathogenic to host phenotype in which the host organism is an animal (Metazoa).</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33208"/>
+        <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/RO_0002556"/>
+    </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1004002"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
@@ -22196,10 +22208,19 @@
 
     <owl:Class rdf:about="https://w3id.org/metpo/1004003">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1004000"/>
-        <obo:IAO_0000115>A pathogen that infects organisms in the kingdom Viridiplantae.</obo:IAO_0000115>
+        <obo:IAO_0000115>A pathogenic to host phenotype in which the host organism is a green plant (Viridiplantae).</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>phytopathogen</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>pathogenic to plants</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>plant pathogen</oboInOwl:hasRelatedSynonym>
         <rdfs:label>plant pathogen</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1004003"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A pathogenic to host phenotype in which the host organism is a green plant (Viridiplantae).</owl:annotatedTarget>
+        <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33090"/>
+        <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/RO_0002556"/>
+    </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1004003"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
@@ -22213,15 +22234,20 @@
 
     <owl:Class rdf:about="https://w3id.org/metpo/1004004">
         <rdfs:subClassOf rdf:resource="https://w3id.org/metpo/1004000"/>
-        <obo:IAO_0000115>A pathogen that infects organisms of the species Homo sapiens.</obo:IAO_0000115>
+        <obo:IAO_0000115>A pathogenic to host phenotype in which the host organism is a human (Homo sapiens).</obo:IAO_0000115>
         <oboInOwl:hasRelatedSynonym>human pathogen</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>human-infecting</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>infectious human pathogen</oboInOwl:hasRelatedSynonym>
         <rdfs:label>human pathogen</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1004004"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A pathogen that infects organisms of the species Homo sapiens.</owl:annotatedTarget>
+        <owl:annotatedTarget>A pathogenic to host phenotype in which the host organism is a human (Homo sapiens).</owl:annotatedTarget>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/IDO_0000639"/>
+        <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/IDO_0000666"/>
+        <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+        <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/RO_0002556"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://w3id.org/metpo/1004004"/>

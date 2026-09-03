@@ -13173,30 +13173,38 @@ SubClassOf(<https://w3id.org/metpo/1003031> <https://w3id.org/metpo/1003021>)
 
 # Class: <https://w3id.org/metpo/1004000> (pathogenic to host)
 
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/OMP_0000068>) Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/OMP_0007284>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1004000> "A phenotype where a microbe is a pathogen of of some host organism.")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/OMP_0000197>) Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/PATO_0040003>) Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/RO_0002556>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1004000> "A phenotype in which a microbe is a pathogen of some host organism, having the ability to produce an infectious disease or disorder in that host.")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1004000> "General.keywords")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1004000> "Safety information.risk assessment")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1004000> "pathogenic")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1004000> "pathogenicity phenotype")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1004000> "pathogenic to host")
 SubClassOf(<https://w3id.org/metpo/1004000> <https://w3id.org/metpo/1000059>)
 
 # Class: <https://w3id.org/metpo/1004002> (animal pathogen)
 
-AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1004002> "A pathogen that infects organisms in the kingdom Metazoa.")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/NCBITaxon_33208>) Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/RO_0002556>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1004002> "A pathogenic to host phenotype in which the host organism is an animal (Metazoa).")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1004002> "zoopathogen")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1004002> "animal pathogen")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1004002> "pathogenic to animals")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1004002> "animal pathogen")
 SubClassOf(<https://w3id.org/metpo/1004002> <https://w3id.org/metpo/1004000>)
 
 # Class: <https://w3id.org/metpo/1004003> (plant pathogen)
 
-AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1004003> "A pathogen that infects organisms in the kingdom Viridiplantae.")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/NCBITaxon_33090>) Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/RO_0002556>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1004003> "A pathogenic to host phenotype in which the host organism is a green plant (Viridiplantae).")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <https://w3id.org/metpo/1004003> "phytopathogen")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1004003> "pathogenic to plants")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1004003> "plant pathogen")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1004003> "plant pathogen")
 SubClassOf(<https://w3id.org/metpo/1004003> <https://w3id.org/metpo/1004000>)
 
 # Class: <https://w3id.org/metpo/1004004> (human pathogen)
 
-AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/IDO_0000639>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1004004> "A pathogen that infects organisms of the species Homo sapiens.")
+AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/IDO_0000639>) Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/IDO_0000666>) Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/NCBITaxon_9606>) Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <http://purl.obolibrary.org/obo/RO_0002556>) <http://purl.obolibrary.org/obo/IAO_0000115> <https://w3id.org/metpo/1004004> "A pathogenic to host phenotype in which the host organism is a human (Homo sapiens).")
 AnnotationAssertion(Annotation(<http://purl.obolibrary.org/obo/IAO_0000119> <https://bacdive.dsmz.de/>) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1004004> "human pathogen")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1004004> "human-infecting")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <https://w3id.org/metpo/1004004> "infectious human pathogen")
 AnnotationAssertion(rdfs:label <https://w3id.org/metpo/1004004> "human pathogen")
 SubClassOf(<https://w3id.org/metpo/1004004> <https://w3id.org/metpo/1004000>)
 
