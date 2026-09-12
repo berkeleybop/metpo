@@ -3,7 +3,7 @@
 ## If you need to customize your Makefile, make
 ## changes here rather than in the main Makefile
 
-.PHONY: squeaky-clean clean-templates diff-release
+.PHONY: squeaky-clean clean-templates
 
 #../templates/metpo-synonyms.tsv:
 #	curl -L -s "$(SRC_URL_SYNONYMS)" > $@
@@ -14,18 +14,6 @@ squeaky-clean: clean clean-templates
 clean-templates:
 	rm -rf components/metpo_sheet.owl
 	rm -rf components/metpo-properties.owl
-
-# Diff current working templates against the last tagged release
-diff-release:
-	@command -v uv >/dev/null 2>&1 || { echo "Error: 'uv' is required for diff-release (host-only target)."; exit 1; }
-	@command -v git >/dev/null 2>&1 || { echo "Error: 'git' is required for diff-release."; exit 1; }
-	@git rev-parse --is-inside-work-tree >/dev/null 2>&1 || { echo "Error: diff-release must be run from within a git work tree."; exit 1; }
-	@release_ref=$$(git describe --tags --abbrev=0 2>/dev/null); \
-	if [ -z "$$release_ref" ]; then \
-		echo "Warning: No git tags found; falling back to 'main'."; \
-		release_ref=main; \
-	fi; \
-	cd ../.. && uv run diff-templates -a "$$release_ref" -b HEAD --cell-diffs
 
 #$(MIRRORDIR)/mpo.owl: ../../assets/mpo_v0.74.en_only.owl
 #	cp $^ $@

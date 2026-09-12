@@ -282,8 +282,10 @@ Knowledge-Graph-Hub/kg-microbe download.yaml
 
 ### Sync status
 
-> **Superseded.** Run `make -C src/ontology -f metpo.Makefile diff-sheets` to check live sync status.
-> As of PR #373, `diff-sheets` correctly targets the promoted Google Sheets tabs.
+> **Superseded twice.** PR #373 pointed `diff-sheets` at the promoted tabs; on 2026-09-03 the
+> Google Sheet was retired as a build input (https://github.com/berkeleybop/metpo/issues/602) and
+> `diff-sheets` was removed. There is no live sync to check. The committed templates in
+> `src/templates/` are the source of truth.
 
 ---
 
