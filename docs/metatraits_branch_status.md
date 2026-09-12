@@ -87,19 +87,13 @@ Saved copies that survive `squeaky-clean` + re-download from Google Sheets:
 - `src/templates/drafts/metpo_sheet.tsv`
 - `src/templates/drafts/metpo-properties.tsv`
 
-These are created and restored via Makefile targets in `src/ontology/metpo.Makefile`:
+These were created and restored by the `save-drafts`, `install-drafts` and `diff-drafts` targets
+in `src/ontology/metpo.Makefile`.
 
-```bash
-# Save before squeaky-clean
-cd src/ontology
-sh run.sh make save-drafts
-
-# After squeaky-clean re-downloads from Google Sheets, restore local edits
-sh run.sh make install-drafts
-
-# Diff Google Sheets version vs saved drafts
-sh run.sh make diff-drafts
-```
+> **Superseded 2026-09-03.** The Google Sheet was retired as a build input
+> (https://github.com/berkeleybop/metpo/issues/602) and those three targets were removed with it.
+> `squeaky-clean` no longer re-downloads the templates, so the drafts directory has nothing left to
+> protect against.
 
 GitHub URL for the Makefile with these targets:
 - https://github.com/microbiomedata/metpo/blob/metatraits-entity-additions/src/ontology/metpo.Makefile

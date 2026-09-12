@@ -136,7 +136,6 @@ clean-data:
 	rm -f data/generated/bacdive_oxygen_phenotype_mappings.tsv
 	rm -rf external/metpo_historical/
 	rm -rf metadata/ontology/historical_submissions/entity_extracts/
-	rm -rf downloads/sheets/
 	rm -f data/mappings/metatraits_cards.tsv
 	rm -f data/mappings/metatraits_in_sheet_resolution.tsv
 	rm -f data/mappings/metatraits_in_sheet_resolution_report.md
@@ -435,59 +434,6 @@ create-bactotraits-file-versions:
 .PHONY: create-bactotraits-files
 create-bactotraits-files:
 	uv run create-bactotraits-files
-
-# =====================================================
-# Google Sheets Download Targets
-# =====================================================
-
-# Sheet GIDs are centralized in sheets.yaml at repo root.
-# See https://github.com/berkeleybop/metpo/issues/372
-SPREADSHEET_ID := $(shell uv run python -c "from metpo.sheets_config import SPREADSHEET_ID; print(SPREADSHEET_ID)")
-BASE_URL := https://docs.google.com/spreadsheets/d/$(SPREADSHEET_ID)/export
-GID_CLASSES := $(shell uv run python -c "from metpo.sheets_config import SHEET_GIDS; print(SHEET_GIDS['classes'])")
-GID_PROPERTIES := $(shell uv run python -c "from metpo.sheets_config import SHEET_GIDS; print(SHEET_GIDS['properties'])")
-GID_BACTOTRAITS := $(shell uv run python -c "import yaml; print(yaml.safe_load(open('sheets.yaml'))['secondary']['bactotraits']['gid'])")
-GID_MORE_SYNONYMS := $(shell uv run python -c "import yaml; print(yaml.safe_load(open('sheets.yaml'))['secondary']['more_synonyms']['gid'])")
-GID_MORE_CLASSES___INCONSISTENT := $(shell uv run python -c "import yaml; print(yaml.safe_load(open('sheets.yaml'))['secondary']['more_classes_inconsistent']['gid'])")
-GID_METABOLIC_AND_RESPIRATORY_ROBOT := $(shell uv run python -c "import yaml; print(yaml.safe_load(open('sheets.yaml'))['secondary']['metabolic_and_respiratory_robot']['gid'])")
-GID_METABOLIC_AND_RESPIRATORY_LLM := $(shell uv run python -c "import yaml; print(yaml.safe_load(open('sheets.yaml'))['secondary']['metabolic_and_respiratory_llm']['gid'])")
-
-.PHONY: download-all-sheets clean-sheets
-
-# Download primary + secondary sheets to downloads/sheets/
-download-all-sheets: downloads/sheets/classes.tsv downloads/sheets/properties.tsv downloads/sheets/bactotraits.tsv downloads/sheets/more_synonyms.tsv downloads/sheets/more_classes___inconsistent.tsv downloads/sheets/metabolic_and_respiratory_robot.tsv downloads/sheets/metabolic_and_respiratory_llm.tsv
-	@echo "All sheets downloaded to downloads/sheets/"
-
-# Individual sheet download targets
-downloads/sheets/classes.tsv: | downloads/sheets
-	curl -L -s '$(BASE_URL)?exportFormat=tsv&gid=$(GID_CLASSES)' > $@
-
-downloads/sheets/properties.tsv: | downloads/sheets
-	curl -L -s '$(BASE_URL)?exportFormat=tsv&gid=$(GID_PROPERTIES)' > $@
-
-downloads/sheets/bactotraits.tsv: | downloads/sheets
-	curl -L -s '$(BASE_URL)?exportFormat=tsv&gid=$(GID_BACTOTRAITS)' > $@
-
-downloads/sheets/more_synonyms.tsv: | downloads/sheets
-	curl -L -s '$(BASE_URL)?exportFormat=tsv&gid=$(GID_MORE_SYNONYMS)' > $@
-
-downloads/sheets/more_classes___inconsistent.tsv: | downloads/sheets
-	curl -L -s '$(BASE_URL)?exportFormat=tsv&gid=$(GID_MORE_CLASSES___INCONSISTENT)' > $@
-
-downloads/sheets/metabolic_and_respiratory_robot.tsv: | downloads/sheets
-	curl -L -s '$(BASE_URL)?exportFormat=tsv&gid=$(GID_METABOLIC_AND_RESPIRATORY_ROBOT)' > $@
-
-downloads/sheets/metabolic_and_respiratory_llm.tsv: | downloads/sheets
-	curl -L -s '$(BASE_URL)?exportFormat=tsv&gid=$(GID_METABOLIC_AND_RESPIRATORY_LLM)' > $@
-
-# Ensure downloads/sheets directory exists
-downloads/sheets:
-	mkdir -p $@
-
-# Clean downloaded sheets
-clean-sheets:
-	rm -rf downloads/sheets/
-	@echo "Downloaded sheets cleaned"
 
 # =====================================================
 # BiPortal METPO Releases Download Targets
