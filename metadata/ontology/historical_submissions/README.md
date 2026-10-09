@@ -13,9 +13,7 @@ Track METPO entity stability and ID reuse patterns over time to:
 ## Directory Structure
 
 ```
-metadata/historical_usage_analysis/
-├── scripts/
-│   └── download_bioportal_submissions.sh  # Download historical submissions
+metadata/ontology/historical_submissions/
 └── entity_extracts/                        # Extracted entities (generated)
     ├── metpo_submission_2_all_entities.tsv
     ├── metpo_submission_3_all_entities.tsv
@@ -31,7 +29,8 @@ external/metpo_historical/                  # Downloaded OWL files (generated)
 
 ### 1. Download BioPortal Submissions
 
-**Using Makefile (recommended):**
+Downloads need `BIOPORTAL_API_KEY` set in the environment (see `.env.template`).
+
 ```bash
 # Download all submissions (2-10)
 make download-all-bioportal-submissions
@@ -41,13 +40,6 @@ make external/metpo_historical/metpo_submission_5.owl
 
 # List available submissions
 make list-bioportal-submissions
-```
-
-**Using script directly:**
-```bash
-# Requires BIOPORTAL_API_KEY environment variable
-export BIOPORTAL_API_KEY="your-key-here"
-./metadata/historical_usage_analysis/scripts/download_bioportal_submissions.sh
 ```
 
 **Output:** OWL files in `external/metpo_historical/` (submissions 2-10, ~4.3 MB total)
