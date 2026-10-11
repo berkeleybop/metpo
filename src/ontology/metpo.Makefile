@@ -3,113 +3,17 @@
 ## If you need to customize your Makefile, make
 ## changes here rather than in the main Makefile
 
-# Sheet GIDs and spreadsheet ID are centralized in sheets.yaml at repo root.
-# See https://github.com/berkeleybop/metpo/issues/372
-#
-# Two-tier resolution so the build works on both host and inside the ODK
-# container (which does not ship `uv`):
-#
-#   1. Hardcoded defaults below always work, even if python3 or pyyaml are
-#      unavailable, since they require nothing beyond Make itself.
-#   2. If python3 + pyyaml ARE available (true in the ODK container, on
-#      hosts with `pip install pyyaml`, and inside an active uv venv), we
-#      override the defaults by reading sheets.yaml via
-#      metpo/sheets_config.py invoked as a script (no package install
-#      required). The shell command's stderr is redirected to
-#      $(SHEETS_CONFIG_WARN_LOG) so a missing python3 or pyyaml still falls
-#      through silently to the hardcoded defaults, but errors are preserved
-#      for debugging.
-#
-# If the sheet's GIDs ever change, update both the hardcoded defaults here
-# AND sheets.yaml. See docs/google_sheets_template_sync.md.
-SPREADSHEET_ID := 1_Lr-9_5QHi8QLvRyTZFSciUhzGKD4DbUObyTpJ16_RU
-SRC_URL_MAIN := https://docs.google.com/spreadsheets/d/$(SPREADSHEET_ID)/export?exportFormat=tsv&gid=1569766102
-SRC_URL_PROPERTIES := https://docs.google.com/spreadsheets/d/$(SPREADSHEET_ID)/export?exportFormat=tsv&gid=681401984
-SHEETS_CONFIG_WARN_LOG := ../templates/sheets_config_warnings.log
-$(shell : > $(SHEETS_CONFIG_WARN_LOG))
-
-SRC_URL_MAIN_FROM_YAML := $(shell python3 ../../metpo/sheets_config.py classes 2>>$(SHEETS_CONFIG_WARN_LOG))
-ifneq ($(SRC_URL_MAIN_FROM_YAML),)
-SRC_URL_MAIN := $(SRC_URL_MAIN_FROM_YAML)
-endif
-
-SRC_URL_PROPERTIES_FROM_YAML := $(shell python3 ../../metpo/sheets_config.py properties 2>>$(SHEETS_CONFIG_WARN_LOG))
-ifneq ($(SRC_URL_PROPERTIES_FROM_YAML),)
-SRC_URL_PROPERTIES := $(SRC_URL_PROPERTIES_FROM_YAML)
-endif
-
-DRAFTS_DIR = ../templates/drafts
-
-.PHONY: squeaky-clean clean-templates save-drafts install-drafts diff-drafts diff-sheets diff-release
-
-# Save current templates to drafts (before squeaky-clean)
-save-drafts: ../templates/metpo_sheet.tsv ../templates/metpo-properties.tsv
-	mkdir -p $(DRAFTS_DIR)
-	cp ../templates/metpo_sheet.tsv $(DRAFTS_DIR)/metpo_sheet.tsv
-	cp ../templates/metpo-properties.tsv $(DRAFTS_DIR)/metpo-properties.tsv
-	@echo "Templates saved to $(DRAFTS_DIR)/"
-
-# Install drafts over Google Sheets downloads (after squeaky-clean + curl)
-install-drafts: $(DRAFTS_DIR)/metpo_sheet.tsv $(DRAFTS_DIR)/metpo-properties.tsv
-	cp $(DRAFTS_DIR)/metpo_sheet.tsv ../templates/metpo_sheet.tsv
-	cp $(DRAFTS_DIR)/metpo-properties.tsv ../templates/metpo-properties.tsv
-	@echo "Draft templates installed over Google Sheets versions"
-
-# Show what changed between Google Sheets and drafts
-diff-drafts: ../templates/metpo_sheet.tsv ../templates/metpo-properties.tsv
-	@diff $(DRAFTS_DIR)/metpo_sheet.tsv ../templates/metpo_sheet.tsv || true
-	@diff $(DRAFTS_DIR)/metpo-properties.tsv ../templates/metpo-properties.tsv || true
-
-# Intentionally no prerequisites: Make fetches this file only if it is missing.
-# This preserves committed/local snapshots by default; run `make squeaky-clean`
-# (or delete the file) to force re-download from Google Sheets.
-# -f makes curl exit non-zero on HTTP >= 400. Without it a deleted or renamed
-# tab returns 400, curl still exits 0, and Google's error page is written over
-# the template. The header check catches a 200 that is not a ROBOT template.
-# Both write to a temp file first so a failed fetch leaves no partial target.
-../templates/metpo_sheet.tsv:
-	@curl -L -sSf "$(SRC_URL_MAIN)" -o $@.tmp || { rm -f $@.tmp; echo "ERROR: fetch failed for $@ (tab deleted, renamed, or not shared?)" >&2; exit 1; }
-	@case "$$(head -n 1 $@.tmp | cut -f1)" in ID) ;; *) rm -f $@.tmp; echo "ERROR: $@ fetch returned a non-template response (line 1, column 1 is not 'ID')" >&2; exit 1 ;; esac
-	@mv $@.tmp $@
+.PHONY: squeaky-clean clean-templates
 
 #../templates/metpo-synonyms.tsv:
 #	curl -L -s "$(SRC_URL_SYNONYMS)" > $@
 
-# Intentionally no prerequisites: Make fetches this file only if it is missing.
-# This preserves committed/local snapshots by default; run `make squeaky-clean`
-# (or delete the file) to force re-download from Google Sheets.
-# See the fetch notes on ../templates/metpo_sheet.tsv above.
-../templates/metpo-properties.tsv:
-	@curl -L -sSf "$(SRC_URL_PROPERTIES)" -o $@.tmp || { rm -f $@.tmp; echo "ERROR: fetch failed for $@ (tab deleted, renamed, or not shared?)" >&2; exit 1; }
-	@case "$$(head -n 1 $@.tmp | cut -f1)" in ID) ;; *) rm -f $@.tmp; echo "ERROR: $@ fetch returned a non-template response (line 1, column 1 is not 'ID')" >&2; exit 1 ;; esac
-	@mv $@.tmp $@
-
 squeaky-clean: clean clean-templates
 
+# Remove generated component outputs while preserving committed TSV templates.
 clean-templates:
-	rm -rf ../templates/metpo_sheet.tsv
-	#rm -rf ../templates/metpo-synonyms.tsv
-	rm -rf ../templates/metpo-properties.tsv
 	rm -rf components/metpo_sheet.owl
-	#rm -rf components/metpo-synonyms.owl
 	rm -rf components/metpo-properties.owl
-
-# Diff current working templates against Google Sheets
-diff-sheets:
-	@command -v uv >/dev/null 2>&1 || { echo "Error: 'uv' is required for diff-sheets (host-only target)."; exit 1; }
-	cd ../.. && uv run diff-templates -a gsheet -b HEAD --cell-diffs
-
-# Diff current working templates against the last tagged release
-diff-release:
-	@command -v uv >/dev/null 2>&1 || { echo "Error: 'uv' is required for diff-release (host-only target)."; exit 1; }
-	@command -v git >/dev/null 2>&1 || { echo "Error: 'git' is required for diff-release."; exit 1; }
-	@git rev-parse --is-inside-work-tree >/dev/null 2>&1 || { echo "Error: diff-release must be run from within a git work tree."; exit 1; }
-	@release_ref=$$(git describe --tags --abbrev=0 2>/dev/null); \
-	if [ -z "$$release_ref" ]; then \
-		echo "Warning: No git tags found; falling back to 'main'."; \
-		release_ref=main; \
-	fi; \
-	cd ../.. && uv run diff-templates -a "$$release_ref" -b HEAD --cell-diffs
 
 #$(MIRRORDIR)/mpo.owl: ../../assets/mpo_v0.74.en_only.owl
 #	cp $^ $@
