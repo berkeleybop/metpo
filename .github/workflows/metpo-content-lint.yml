@@ -44,15 +44,13 @@ jobs:
       - name: Install dependencies
         run: uv sync
 
-      - name: Download live Sheet tabs (source of truth)
+      - name: Use the committed templates (source of truth)
         run: |
           set -euo pipefail
-          curl -sL "$(uv run --quiet python metpo/sheets_config.py classes)"    -o /tmp/classes.tsv
-          curl -sL "$(uv run --quiet python metpo/sheets_config.py properties)" -o /tmp/properties.tsv
-          # Guard: a login/HTML page instead of TSV means the Sheet stopped being
-          # link-shareable; fail loudly rather than silently passing on garbage.
-          head -1 /tmp/classes.tsv    | grep -q $'^ID\t' || { echo "::error::classes download is not a TSV (Sheet sharing changed?)";    exit 1; }
-          head -1 /tmp/properties.tsv | grep -q $'^ID\t' || { echo "::error::properties download is not a TSV (Sheet sharing changed?)"; exit 1; }
+          cp src/templates/metpo_sheet.tsv      /tmp/classes.tsv
+          cp src/templates/metpo-properties.tsv /tmp/properties.tsv
+          head -1 /tmp/classes.tsv    | grep -q $'^ID\t' || { echo "::error::classes template is not a TSV"; exit 1; }
+          head -1 /tmp/properties.tsv | grep -q $'^ID\t' || { echo "::error::properties template is not a TSV"; exit 1; }
 
       - name: Lint classes against baseline (fail only on NEW findings)
         run: |

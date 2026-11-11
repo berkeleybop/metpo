@@ -529,13 +529,10 @@ are broader-landscape context, not source-bound.
 - `make release_diff` (generated Makefile): a ROBOT diff of the OWL currently
   served at `https://w3id.org/metpo/metpo.owl` (GitHub main via w3id) against the
   locally built `metpo.owl`, OWL-level. Output: `reports/release-diff.md`.
-- `make diff-sheets` (metpo.Makefile): live Google Sheet vs committed TSV at HEAD.
-- `make diff-release`: TSV at the last git tag vs HEAD.
-- `make diff-drafts`: saved drafts vs current templates.
 
-`diff-sheets`, `diff-release`, and `diff-drafts` are host-only targets (they run
-`uv`, and `diff-release` also needs `git`); run them on the host, not inside the
-ODK container.
+The Google Sheet was retired as a build input on 2026-09-03, and the `diff-sheets`, `diff-drafts`
+and `diff-release` targets were removed with the `diff-templates` script they all ran. Compare
+committed templates across refs with `git diff` instead.
 
 Before opening a significant PR, show the OWL-level delta vs main (run from
 `src/ontology`, where `run.sh` lives):
