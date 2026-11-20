@@ -276,14 +276,16 @@ Knowledge-Graph-Hub/kg-microbe download.yaml
 
 ### Sheet gid values
 
-> **Superseded.** All Google Sheets GIDs are now centralized in `sheets.yaml` at the repo root.
+> **Superseded twice.** GIDs were centralized in `sheets.yaml`, and on 2026-09-03 the Google Sheet was retired as a build input altogether (https://github.com/berkeleybop/metpo/issues/602); the committed templates in `src/templates/` are the source of truth.
 > See https://github.com/berkeleybop/metpo/issues/372 and PR #373.
 > The GID table that was here (dated 2026-02-19) listed stale/deprecated tabs as "Active."
 
 ### Sync status
 
-> **Superseded.** Run `make -C src/ontology -f metpo.Makefile diff-sheets` to check live sync status.
-> As of PR #373, `diff-sheets` correctly targets the promoted Google Sheets tabs.
+> **Superseded twice.** PR #373 pointed `diff-sheets` at the promoted tabs; on 2026-09-03 the
+> Google Sheet was retired as a build input (https://github.com/berkeleybop/metpo/issues/602) and
+> `diff-sheets` was removed. There is no live sync to check. The committed templates in
+> `src/templates/` are the source of truth.
 
 ---
 
